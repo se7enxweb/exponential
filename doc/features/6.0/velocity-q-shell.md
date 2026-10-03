@@ -116,3 +116,10 @@ The shell works from the phar, the packages, the container image and the static 
 - Needs a signed-in panel session; signed out the toolbar item is disabled.
 - The command check reads the line as text: it stops habitual mistakes, it is not a sandbox. Leave `Q.shell.allowSystem` off unless you need it.
 - `server reload` and `server restart` take the session with the server; the shell reconnects.
+
+## See also
+
+- Specification: [Engine settings](../../specifications/6.0/velocity-engine-settings.md) (programs, `qbixconsole`), [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md) (the admin surface).
+- Related: [Control panel and dashboard](velocity-control-panel.md) (the sign-in the shell needs), [Packages and binaries](velocity-packages-and-binaries.md) (`vc-qshell`).
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md).
+- History: [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).

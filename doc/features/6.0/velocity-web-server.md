@@ -91,6 +91,10 @@ The engine ships a migration page for each; the main differences:
 
 ## Related pages
 
+- Features: [Scheduler](velocity-scheduler.md), [Static files and images](velocity-static-files-and-images.md), [WebSockets, events and rooms](velocity-websockets-and-events.md), [Discovery, federation and deploy](velocity-discovery-federation-and-deploy.md), [Packages and binaries](velocity-packages-and-binaries.md), [uwebserver](velocity-uwebserver.md).
+- Reference: [Worker pool](../../specifications/6.0/velocity-worker-pool.md), [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md), [Engine settings](../../specifications/6.0/velocity-engine-settings.md) (logging, brand).
+- Month pages: [July](../../history/velocity/2026-07.md), [August](../../history/velocity/2026-08.md), [September](../../history/velocity/2026-09a.md).
+
 - [Velocity engines](../../bc/6.0/velocity-engines.md): choose and run an engine from Exponential; deploy a PHP change.
 - [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md): the `/etc/vc` tree.
 - [Engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md).

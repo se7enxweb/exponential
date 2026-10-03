@@ -142,3 +142,10 @@ Exponential's `exp:velocity` uses the Composer copy of the engine; the package i
 - The packages need PHP 8.1 or later; EL 9 needs the PHP stream enabled first.
 - Some recommended extensions (`mongodb`, `redis`, `memcached`) come from EPEL or Remi on EL; `qbixctl ext:check` names them.
 - Release assets exist only for tags that have a section in the engine's changelog; three early tags (`v0.0.4.21`, `v0.0.4.22`, `v0.0.4.26`) have no release.
+
+## See also
+
+- Specification: [Engine settings](../../specifications/6.0/velocity-engine-settings.md) (programs and the `sbin/` and `bin/` layout), [Velocity engines](../../bc/6.0/velocity-engines.md).
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (package and path renames), [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md).
+- Related: [uwebserver](velocity-uwebserver.md), [HTTPS and certificates](velocity-https-certificates.md), [Q shell](velocity-q-shell.md) (`vc-qshell`).
+- History: [August](../../history/velocity/2026-08.md), [23 September](../../history/velocity/2026-09c.md), [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).

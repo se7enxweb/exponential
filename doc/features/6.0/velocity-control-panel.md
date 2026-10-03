@@ -122,3 +122,10 @@ The dashboard, panel, documentation, directory listing and error pages read thei
 - The dashboard updates over a WebSocket; behind a proxy, the shell needs its public origin in `Q.shell.allowedOrigins`.
 - A panel store that fails the trust rule locks the panel by design; there is no looser fallback.
 - Settings saved in the Cache tab win over the site file.
+
+## See also
+
+- Specification: [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md) (the admin surface), [Engine settings](../../specifications/6.0/velocity-engine-settings.md) (`Q.dashboard`, brand, logging).
+- Related: [Q shell](velocity-q-shell.md), [HTTPS and certificates](velocity-https-certificates.md), [Response cache](velocity-response-cache.md), [Velocity web server](velocity-web-server.md).
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (credential store, trust rule), [Velocity engines](../../bc/6.0/velocity-engines.md) (views and who may open them from Exponential).
+- History: [July](../../history/velocity/2026-07.md), [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).

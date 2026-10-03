@@ -56,6 +56,9 @@ GNU style: `--name=VALUE`, `--name VALUE`, the one-dash spellings (`-root=/srv/w
 | `--hidden-files` | off | Serve names starting with a dot (otherwise `404`) |
 | `--symlinks=inside\|never` | `inside` | Follow links that stay inside the root, or none |
 | `--mime-types=FILE` | none | More types in `mime.types` format |
+| `--default-type=TYPE` | `application/octet-stream` | Type of other files |
+| `--charset=NAME` | `utf-8` | Added to text types (empty: none) |
+| `--server-name=NAME`, `--server-header` | `uwebserver`, on | Value of the `Server` header, and whether it is sent |
 | `--cache-control=VALUE` | none | `Cache-Control` of files |
 | `--etag` | on | `ETag`, `If-None-Match`, `If-Range` |
 | `--gzip-static` | off | Serve `FILE.gz` to clients that accept gzip |
@@ -69,16 +72,17 @@ GET and HEAD, `Last-Modified` and `ETag` with conditional requests (`304`), one 
 |---|---|---|
 | `-w`, `--workers=N` | `1` (at most 256) | Worker processes; one that ends is replaced |
 | `--max-connections=N` | `1024` | Per worker |
-| `--max-requests=N` | `1000` | Then `Connection: close` (0: no limit) |
+| `--max-requests=N` | `1000` | Requests on one connection, then `Connection: close` (0: no limit) |
 | `--max-header-size=SIZE` | `8k` | `431` |
 | `--max-uri-length=SIZE` | `4k` | `414` |
 | `--max-body-size=SIZE` | `1m` | `413` |
 | `--header-timeout=SECONDS` | `10` | The whole head must arrive |
-| `--read-timeout`, `--write-timeout` | `30`, `30` | Without progress |
+| `--read-timeout`, `--write-timeout` | `30`, `30` | Between reads of a request body; without progress sending a response |
 | `--keepalive-timeout=SECONDS` | `5` | Idle between requests |
 | `--tls-handshake-timeout=SECONDS` | `10` | A TLS handshake |
 | `--cert`, `--key`, `--chain` | none | PEM files; the key is refused when another user may change it |
 | `--tls-min-version=1.2\|1.3` | `1.2` | Oldest version accepted |
+| `--tls-ciphers=LIST`, `--tls-ciphersuites=LIST` | OpenSSL defaults | TLS 1.2 ciphers and TLS 1.3 suites, as OpenSSL lists them |
 
 TLS 1.2 offers only forward-secret AEAD ciphers; no session tickets, no compression, no renegotiation. Other options: `--access-log` (common, combined or json), `--error-log`, `--quiet`, `--verbose`, `--daemon`, `--pid-file` (locked), `--user`, `--group`, `--chroot`, `--allow-root`. **As root it serves only with `--user` (dropped after the ports are open) or `--allow-root`.**
 
@@ -94,3 +98,10 @@ TLS 1.2 offers only forward-secret AEAD ciphers; no session tickets, no compress
 
 - HTTP/1.1 only (ALPN `http/1.1`); no PHP.
 - Linux with OpenSSL 3; `openat2` containment needs kernel 5.6 or later (before it, every component is opened with `O_NOFOLLOW` and no link is followed).
+
+## See also
+
+- Related: [Packages and binaries](velocity-packages-and-binaries.md), [Velocity web server](velocity-web-server.md) (the application server), [Static files and images](velocity-static-files-and-images.md).
+- Specification: [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md), [Engine settings](../../specifications/6.0/velocity-engine-settings.md) (programs).
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (the `0.0.4.42` defaults).
+- History: [August](../../history/velocity/2026-08.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).

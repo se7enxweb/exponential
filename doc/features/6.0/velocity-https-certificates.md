@@ -132,3 +132,10 @@ Back up `ssl/`. Everything in it can be made again except the ACME account keys.
 - No external program is required for `files`, `pkcs12`, `.zip`/`.tar*`, self-signed or Let's Encrypt; PHP's openssl extension is enough.
 - Private keys are written `0600`, atomically, and never logged. External programs run with an argument list, never through a shell. The ACME client verifies the CA's certificate (turn `verify` off only for a test CA).
 - Wildcards need `dns-01` with a hook program.
+
+## See also
+
+- Specification: [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md), [Engine settings](../../specifications/6.0/velocity-engine-settings.md) (TLS session resumption, `--https-port`).
+- Related: [Control panel](velocity-control-panel.md) (SSL and Domains tabs), [Scheduler](velocity-scheduler.md) (renewal jobs), [Velocity web server](velocity-web-server.md).
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [Velocity engines](../../bc/6.0/velocity-engines.md) (`[HTTPSSettings]`).
+- History: [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).

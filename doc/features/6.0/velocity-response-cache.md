@@ -127,3 +127,10 @@ The panel's **Cache** tab (`/Q/panel`) offers switches for the cache, APCu and t
 - The in-memory layer saves about 12 percent CPU per hit for large pages and nothing for small ones; measure on your own site.
 
 Full upgrade steps: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md).
+
+## See also
+
+- Specification: [Worker pool](../../specifications/6.0/velocity-worker-pool.md), [Engine settings](../../specifications/6.0/velocity-engine-settings.md), [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md) (what is never cached).
+- Related: [Control panel](velocity-control-panel.md) (Cache tab), [Static files and images](velocity-static-files-and-images.md) (file caching), [Scheduler](velocity-scheduler.md) (the cache sweep).
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [HTTP cache](../../bc/6.0/http-caching.md), [Velocity engines](../../bc/6.0/velocity-engines.md).
+- History: [22 September](../../history/velocity/2026-09b.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).
