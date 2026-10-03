@@ -1,6 +1,6 @@
 # Coverage of the history: every change, accounted for
 
-This page is generated from the complete change record and from the classification of every change. It answers one question: is every change since December 2023 in the 105 repositories either explained in the documentation, listed as a small change, or marked as having no user benefit, with a reason? The answer is below, per repository and per month.
+This page shows that the history leaves nothing out. Every change made since December 2023 in the 105 repositories is either explained in the documentation, listed as a small change, or marked as having no user benefit, with a reason. The tables below prove it per repository and per month. Read it when you want to check that a change you know about is documented, or to see which repositories moved most. The page is generated from the change ledger and the classification of every change, so it is not edited by hand.
 
 ## In short
 

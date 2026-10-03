@@ -7,17 +7,33 @@ machine-made record of every commit. Between them nothing is missing, and [the c
 
 ## In short
 
-- Read **one month page** to learn what became possible that month; each starts with a short summary and ends with where to go next.
+- Read **one month page** to learn what became possible that month; each starts with a short summary and ends with related pages.
 - Every change carries its commit, for example `2ddbc4c624`. Open it with `git show 2ddbc4c624`.
 - The **ledger** lists all changes of a repository with date, kind, size and release tag: [ledger](ledger/README.md).
 - The **coverage** page shows, per repository and month, that every change is explained, listed as small, or marked as without user benefit: [coverage](coverage.md).
+
+## The story so far
+
+Read these lines first if you are new; each points to the month that tells it in full.
+
+- **December 2023: the code base changes hands.** The first outside change was merged on 11 December, the setup wizard was made to work on PHP 8, and update scripts from 5.4 were published. [December 2023](2023/2023-12.md)
+- **January 2024: 6.0.0 is stable, and SQLite arrives.** A database that needs no server, with a driver, a schema handler and a demonstration database. [January 2024, first half](2024/2024-01a.md)
+- **August to November 2024: admin3.** A complete, responsive administration design, then tested and corrected on real devices. [August 2024](2024/2024-08.md), [November 2024](2024/2024-11.md)
+- **April 2025: PHP 8.4 in, PHP 7 out.** Sites on PHP 7.4 stay on 6.0.7. [April 2025](2025/2025-04.md)
+- **August 2025: the product is called Exponential.** Identifiers, paths and tables did not change. [August 2025](2025/2025-08.md)
+- **December 2025: PHP 8.5 is supported.** [December 2025](2025/2025-12.md)
+- **June 2026: MongoDB 8 as a database, and 6.0.14.** [June 2026, first half](2026/2026-06a.md)
+- **July 2026: the command line grows up.** `ezpm` in the console, the Kickstarter, a password reset tool, a trustworthy template editor. [July 2026](2026/2026-07.md)
+- **August 2026: honest template debugging, six security patches, tests on every change.** [August 2026](2026/2026-08.md)
+- **September 2026: large lists that work, Velocity, a one-command install and a hardening sweep.** [First half](2026/2026-09a.md), [second half](2026/2026-09b.md)
+- **October 2026: jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs and TinyMCE 8.** [October 2026](2026/2026-10.md)
 
 ## How to read the chronicle
 
 1. Pick a month from the table below. A month page opens with **In short**: three to five lines you can read in half a minute.
 2. The body is grouped by day or by theme. Each paragraph names what changed, why it matters, and what you can do now that you could not do before. Commit hashes are in backticks.
 3. **Smaller changes** lists the changes that do not need a story of their own, each with its commit.
-4. **Where to go next** links the feature pages (how to use it), the specifications (every setting and class), the behaviour change notes (what to check when you upgrade) and the changelog of the release.
+4. **Related pages** links the feature pages (how to use it), the specifications (every setting and class), the behaviour change notes (what to check when you upgrade) and the changelog of the release.
 5. A month with two pages (`a` and `b`) was split by day because it was busy.
 
 A change that is not in the chronicle is in the ledger. A change that has no user benefit, such as a funding file, is marked as such, with a reason, on the coverage page.
@@ -45,7 +61,7 @@ the [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
 
 ## The chronicle, month by month
 
-| Month | What happened first | Also |
+| Month | Headline | Also |
 |---|---|---|
 | [December 2023](2023/2023-12.md) | The first outside change of the fork was merged on 11 December 2023 (upstream pull request #40). | [platform](ecosystem/months/2023-12.md) [extensions](extensions/months/2023-12.md) |
 | [January 2024, first half](2024/2024-01a.md) | 6.0.0 became stable on 1 January 2024. | [platform](ecosystem/months/2024-01.md) [extensions](extensions/months/2024-01.md) |
@@ -82,8 +98,8 @@ the [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
 | [June 2026, second half](2026/2026-06b.md) | 6.0.15 was in development. | [platform](ecosystem/months/2026-06.md) [extensions](extensions/months/2026-06.md) |
 | [July 2026](2026/2026-07.md) | The command line grew up: `ezpm` joined the console, a one command installer and the Kickstarter arrived, and a password reset tool. | [platform](ecosystem/months/2026-07.md) [extensions](extensions/months/2026-07.md) [Velocity](velocity/2026-07.md) |
 | [August 2026](2026/2026-08.md) | Template debugging tells the truth: path comments name the template that really ran, and the extension list sorts and downloads. | [extensions](extensions/months/2026-08.md) [Velocity](velocity/2026-08.md) |
-| [September 2026, first half](2026/2026-09a.md) | Long lists in the administration interface are paged, sortable and sized by settings, so installations with thousands of roles or locations draw... | [platform](ecosystem/months/2026-09.md) [extensions](extensions/months/2026-09.md) [Velocity](velocity/2026-09a.md) |
-| [September 2026, second half](2026/2026-09b.md) | Velocity, a persistent-worker web server for Exponential, arrived on 22 September and became the recommended way to be fast within two days. | [platform](ecosystem/months/2026-09.md) [extensions](extensions/months/2026-09.md) [Velocity](velocity/2026-09a.md) |
+| [September 2026, first half](2026/2026-09a.md) | Long lists in the administration interface are paged, sortable and sized by settings, so installations with thousands of roles or locations work again. | [platform](ecosystem/months/2026-09.md) [extensions](extensions/months/2026-09.md) [Velocity](velocity/2026-09a.md) |
+| [September 2026, second half](2026/2026-09b.md) | Velocity, a persistent-worker web server for Exponential, arrived on 22 September and became the recommended way to be fast within two days. | [platform](ecosystem/months/2026-09.md) [extensions](extensions/months/2026-09.md) [Velocity](velocity/2026-09b.md) |
 | [October 2026](2026/2026-10.md) | 354 changes in two days (1 and 2 October), no release tag; they belong to the 6.0.15 line. | [extensions](extensions/months/2026-10.md) [Velocity](velocity/2026-10.md) |
 
 ## The other chronicles
@@ -102,7 +118,7 @@ the [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
 - **You meet a word you do not know:** [glossary](../glossary.md).
 - **You hunt for one commit:** search the ledger of the repository, or run `git log --oneline -S"text"` in the installation.
 
-## Where to go next
+## Related pages
 
 - [Guides: the learning path](../guides/README.md)
 - [Glossary](../glossary.md)
