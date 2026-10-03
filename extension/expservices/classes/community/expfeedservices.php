@@ -49,6 +49,10 @@ class expFeedServices extends expServiceBase
             'args' => array( 'id' => 'int', 'fetch' => 'bool' ), 'returns' => 'fetchable, version' ),
         'importSetActive' => array( 'summary' => 'Switches an import on or off (the rssimport cronjob runs the active ones)', 'access' => array( 'rss', 'edit' ), 'write' => true,
             'args' => array( 'id' => 'int POST', 'active' => 'bool POST' ), 'returns' => 'the import' ),
+        'runImport' => array( 'summary' => 'Runs one RSS import the way the rssimport cronjob does (fetch the source, create and publish the new items below the destination); dry_run only reports what would be imported',
+            'access' => array( 'rss', 'edit' ), 'write' => true,
+            'args' => array( 'id' => 'int POST', 'dry_run' => 'bool POST (default 0)', 'max_items' => 'int POST (0 = all)' ),
+            'returns' => 'import_id, dry_run, version, found, new, created, items (title, id, state), log' ),
     );
 
     // ---------------------------------------------------------------- helpers
@@ -445,8 +449,8 @@ class expFeedServices extends expServiceBase
         $i = self::fetchImport( self::arg( $args, 0, 'int' ) );
         $id = (int)$i->attribute( 'id' );
         $db = eZDB::instance();
-        $n = (int)$db->arrayQuery( "SELECT COUNT(*) AS c FROM ezcontentobject WHERE remote_id LIKE 'RSSImport\\_" . $id . "\\_%'" )[0]['c'];
-        $last = $db->arrayQuery( "SELECT id, name, published FROM ezcontentobject WHERE remote_id LIKE 'RSSImport\\_" . $id . "\\_%' ORDER BY published DESC", array( 'limit' => 1 ) );
+        $n = (int)$db->arrayQuery( "SELECT COUNT(*) AS c FROM ezcontentobject WHERE remote_id LIKE 'RSSImport!_" . $id . "!_%' ESCAPE '!'" )[0]['c'];
+        $last = $db->arrayQuery( "SELECT id, name, published FROM ezcontentobject WHERE remote_id LIKE 'RSSImport!_" . $id . "!_%' ESCAPE '!' ORDER BY published DESC", array( 'limit' => 1 ) );
         return self::ok( array( 'import_id' => $id, 'active' => (bool)$i->attribute( 'active' ), 'objects' => $n, 'latest' => $last ? (int)$last[0]['id'] : null,
             'latest_name' => $last ? $last[0]['name'] : null, 'latest_date' => $last ? self::iso( $last[0]['published'] ) : null ) );
     }
@@ -473,5 +477,110 @@ class expFeedServices extends expServiceBase
         $i->setAttribute( 'active', self::post( 'active', 'bool' ) ? 1 : 0 );
         $i->store();
         return self::ok( expCommerceExport::rssImport( eZRSSImport::fetch( $i->attribute( 'id' ) ) ) );
+    }
+
+    /** The log lines of the cronjob code that a run collects instead of printing. */
+    protected static function importLog()
+    {
+        return new class
+        {
+            public $lines = array();
+            public function output( $text = '', $addEOL = true ) { $this->lines[] = (string)$text; }
+            public function error( $text = '', $addEOL = true ) { $this->lines[] = 'ERROR: ' . $text; }
+            public function warning( $text = '', $addEOL = true ) { $this->lines[] = 'WARNING: ' . $text; }
+            public function notice( $text = '', $addEOL = true ) { $this->lines[] = (string)$text; }
+        };
+    }
+
+    public static function runImport( array $args )
+    {
+        self::guard( 'runImport' );
+        $import = self::fetchImport( self::post( 'id', 'int' ) );
+        $dry = self::post( 'dry_run', 'bool', false );
+        $max = self::post( 'max_items', 'int', 0 );
+        if ( $max < 0 )
+            throw new expServiceException( 'max_items is 0 or more', 400 );
+        if ( (int)$import->attribute( 'status' ) !== eZRSSImport::STATUS_VALID )
+            throw new expServiceException( 'The import is a draft and cannot run', 409 );
+        $destination = (int)$import->attribute( 'destination_node_id' );
+        $parent = self::node( $destination, 'create' );
+
+        // The cronjob's own functions (importRSSItem, rssImportAudit, ...) are loaded with its class
+        if ( !function_exists( 'importRSSItem' ) )
+            class_exists( 'Exponential\\Cronjob\\Kernel\\Rssimport' );
+        if ( !function_exists( 'importRSSItem' ) )
+            throw new expServiceException( 'The rssimport cronjob code is not available', 500 );
+
+        $url = eZRSSImport::fetchableURL( $import->attribute( 'url' ) );
+        if ( $url === false )
+            throw new expServiceException( 'The source of the import is not an address that may be fetched', 422 );
+        $xml = eZHTTPTool::getDataByURL( $url, false, 'Exponential RSS Import' );
+        if ( $xml === false )
+            throw new expServiceException( 'The source could not be fetched', 422 );
+        $dom = new DOMDocument( '1.0', 'utf-8' );
+        if ( !@$dom->loadXML( $xml ) || !$dom->documentElement )
+            throw new expServiceException( 'The source is not a valid RSS document', 422 );
+        $root = $dom->documentElement;
+        $version = $root->getAttribute( 'version' );
+        $version = in_array( $version, array( '0.91', '0.92', '2.0' ), true ) ? $version : '1.0';
+        $description = $import->importDescription();
+        if ( !isset( $description['rss_version'] ) || $version != $description['rss_version'] )
+            throw new expServiceException( "RSS version mismatch: the source is $version, the import is set for "
+                . ( isset( $description['rss_version'] ) ? $description['rss_version'] : 'nothing' ), 409 );
+
+        $channel = $root->getElementsByTagName( 'channel' )->item( 0 );
+        if ( $version === '1.0' )
+            $domItems = $root->getElementsByTagName( 'item' );
+        else if ( $channel )
+            $domItems = $channel->getElementsByTagName( 'item' );
+        else
+            throw new expServiceException( 'The source has no channel', 422 );
+
+        $log = self::importLog();
+        $items = array();
+        $found = 0;
+        $new = 0;
+        $created = 0;
+        foreach ( $domItems as $item )
+        {
+            $found++;
+            $titleEl = $item->getElementsByTagName( 'title' )->item( 0 );
+            $title = $titleEl ? trim( $titleEl->textContent ) : '';
+            $link = $item->getElementsByTagName( 'link' )->item( 0 );
+            $guid = $item->getElementsByTagName( 'guid' )->item( 0 );
+            $rssId = $link && $link->textContent ? $link->textContent : ( $guid && $guid->textContent ? $guid->textContent : '' );
+            if ( $rssId === '' )
+            {
+                $items[] = array( 'title' => $title, 'id' => null, 'state' => 'no_identifier' );
+                continue;
+            }
+            $exists = eZPersistentObject::fetchObject( eZContentObject::definition(), null,
+                array( 'remote_id' => 'RSSImport_' . (int)$import->attribute( 'id' ) . '_' . md5( $rssId ) ) );
+            if ( $exists )
+            {
+                $items[] = array( 'title' => $title, 'id' => $rssId, 'state' => 'exists', 'object_id' => (int)$exists->attribute( 'id' ) );
+                continue;
+            }
+            if ( $max > 0 && $new >= $max )
+            {
+                $items[] = array( 'title' => $title, 'id' => $rssId, 'state' => 'skipped_max_items' );
+                continue;
+            }
+            $new++;
+            if ( $dry )
+            {
+                $items[] = array( 'title' => $title, 'id' => $rssId, 'state' => 'would_import' );
+                continue;
+            }
+            $created += (int)importRSSItem( $item, $import, $log, $channel );
+            $items[] = array( 'title' => $title, 'id' => $rssId, 'state' => 'imported' );
+        }
+        if ( !$dry )
+        {
+            if ( function_exists( 'rssImportAudit' ) )
+                rssImportAudit( $import, $created ); // data.import.rss, as the cronjob writes it
+        }
+        return self::ok( array( 'import_id' => (int)$import->attribute( 'id' ), 'dry_run' => (bool)$dry, 'version' => $version,
+                                'found' => $found, 'new' => $new, 'created' => $created, 'items' => $items, 'log' => $log->lines ) );
     }
 }
