@@ -1,57 +1,70 @@
-# Additional Extension Directories
+# Additional extension directories
 
-- **Status:** Implemented, tested and stable
-- **Author:** Felix Woldt (JAC Systeme GmbH) — original RFC
-- **Target repository:** se7enxweb/exponential
-- **Introduced in:** Exponential 6.0 (BC)
-- **Affected components:** `eZExtension`, `ezpExtension`, legacy autoloader (`bin/php/ezpgenerateautoloads.php`, `kernel/private/classes/ezautoloadgenerator.php`), `autoload.php`, kernel settings/design/module resolution
+Read this page if you want to keep your own extensions apart from third-party ones, for example in `extension_src/`
+next to `extension/`. Exponential 6.0 can load extensions from more than one directory. Nothing changes until you
+switch it on: an existing installation behaves exactly as before.
 
-## 1. Overview
+## In short
 
-Exponential 6.0 adds support for **additional extension repository roots**. The classic `extension/<name>/` layout remains the default; projects may declare any number of extra roots through `AdditionalExtensionDirectories[]` in `site.ini` or `settings/override/`. A package under any additional root is structurally and functionally a normal legacy extension.
+| | |
+|---|---|
+| What changed | New setting `site.ini [ExtensionSettings] AdditionalExtensionDirectories[]` (empty by default). Each entry is one more extension root. Settings, designs, modules, translations and autoloads are found in every root. |
+| Who is affected | Nobody until the setting is used. Code that builds extension paths by hand as `extension/<name>` will not find an extension that lives in another root; use `eZExtension::extensionPath()`. |
+| How to check | `grep -n "AdditionalExtensionDirectories" settings/site.ini` |
+| How to fix | Nothing to fix. To use it, follow [Move an extension to a second root](#move-an-extension-to-a-second-root). |
 
-The recommended directory layout keeps the two extension roots together:
-
-```
-ezroot/
-    extension/          # third-party / community extensions
-    extension_src/      # project- / customer-specific extensions
-```
-
-The acceptance criterion is the same as the original RFC:
+A package in any root is an ordinary legacy extension. The test of the design is that this works without any change
+to a file, a manifest or `composer dump-autoload`:
 
 ```bash
 cp -r extension/acme_customer_extension extension_src/acme_customer_extension
 ```
 
-This must work without any file change, manifest rewrite or `composer dump-autoload`.
+## Move an extension to a second root
 
-## 2. Configuration
+The recommended layout keeps the two roots side by side:
 
-### 2.1 INI setting
-
-A new array setting is added to `[ExtensionSettings]`. It is **commented out by default** so existing installations are unaffected until a project explicitly enables it.
-
-```ini
-[ExtensionSettings]
-# the classic single extension root (always active)
-ExtensionDirectory=extension
-
-# Optional additional roots, scanned in declared order.
-# Later entries have higher priority.
-#AdditionalExtensionDirectories[]
-#AdditionalExtensionDirectories[]=extension_src
+```
+ezroot/
+    extension/          # third-party and community extensions
+    extension_src/      # project and customer extensions
 ```
 
-Because the list is an ordinary INI array, it is:
+1. Create the new root:
 
-- **extensible** — add as many roots as the project needs (`sites/customer_a`, `sites/customer_b`, …)
-- **extendible** — other extensions or `settings/override/` can append further roots without touching the kernel; PHP code can also add roots via `eZExtension::filterExtensionRootDirectories( $roots )`
-- **customizable** — the directory names, order and count are project-specific, not hardcoded
+   ```bash
+   mkdir extension_src
+   ```
 
-### 2.2 Activation
+2. Add it in `settings/override/site.ini.append.php`:
 
-Extensions are still activated through `[ExtensionSettings]/ActiveExtensions[]` and `[ExtensionSettings]/ActiveAccessExtensions[]`. The kernel resolves each listed extension name against the configured roots using the precedence rule documented below.
+   ```ini
+   [ExtensionSettings]
+   AdditionalExtensionDirectories[]
+   AdditionalExtensionDirectories[]=extension_src
+   ```
+
+3. Copy the extension you want to change:
+
+   ```bash
+   cp -r extension/acme_customer_extension extension_src/acme_customer_extension
+   ```
+
+4. Make your changes inside `extension_src/`.
+5. Regenerate the legacy autoloads (or run `composer run legacy-scripts`):
+
+   ```bash
+   php bin/php/ezpgenerateautoloads.php
+   ```
+
+   To see which roots the generator scans without writing anything, use the dry run:
+   `php bin/php/ezpgenerateautoloads.php -e -n`.
+
+`composer dump-autoload` is not needed. You can run `extension/` and `extension_src/` side by side for as long as you
+like.
+
+Activation does not change: list the extension in `ActiveExtensions[]` or `ActiveAccessExtensions[]` as before. The
+kernel looks the name up in the configured roots.
 
 ```ini
 [ExtensionSettings]
@@ -60,91 +73,57 @@ ActiveExtensions[]=site_app
 ActiveExtensions[]=acme_customer_extension
 ```
 
-## 3. Public API
+## Settings
 
-### 3.1 `eZExtension::extensionRootDirectories()`
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `site.ini` | `[ExtensionSettings]` | `ExtensionDirectory` | `extension` (always active) | global |
+| `site.ini` | `[ExtensionSettings]` | `AdditionalExtensionDirectories[]` | empty list; scanned in the order written, a later entry has higher priority | global |
 
-```php
-public static function extensionRootDirectories() : array;
+The shipped `settings/site.ini` carries the setting with its example commented out:
+
+```ini
+[ExtensionSettings]
+ExtensionDirectory=extension
+AdditionalExtensionDirectories[]
+#AdditionalExtensionDirectories[]=extension_src
 ```
 
-Returns the merged list of configured extension repository roots in priority order (low → high):
+Because it is an ordinary INI array, you can add as many roots as you need, other extensions and `settings/override/`
+can append roots without touching the kernel, and PHP code can change the list through
+`eZExtension::filterExtensionRootDirectories()`.
 
-```php
-[
-    'extension',
-    'extension_src',
-]
+### Example layouts
+
+```ini
+# Sibling root (recommended)
+[ExtensionSettings]
+AdditionalExtensionDirectories[]=extension_src
 ```
 
-The list is built from:
-
-1. `ExtensionSettings/ExtensionDirectory` (default `extension`)
-2. `ExtensionSettings/AdditionalExtensionDirectories[]` (if set)
-3. filtered through `eZExtension::filterExtensionRootDirectories( $roots )`
-
-Empty and duplicate entries are removed. Paths are returned as declared (relative to the project root by default).
-
-### 3.2 `eZExtension::extensionPath( $name )`
-
-```php
-public static function extensionPath( $extensionName ) : string|false;
+```ini
+# An "extensions/" directory, for projects that already use that name
+[ExtensionSettings]
+AdditionalExtensionDirectories[]=extensions
 ```
 
-Returns the root-relative path of the named extension, taking precedence into account. The package name is matched case-insensitively; the returned path preserves the directory casing that exists on disk.
-
-Example:
-
-```php
-echo eZExtension::extensionPath( 'ezfind' );
-// extension/ezfind
-
-echo eZExtension::extensionPath( 'acme_customer_extension' );
-// extension_src/acme_customer_extension
+```ini
+# A top-level src/ directory, as in the original proposal
+[ExtensionSettings]
+AdditionalExtensionDirectories[]=src
 ```
 
-If the extension is not found in any configured root, `false` is returned.
-
-### 3.3 `eZExtension::expandedPathList( $extensions, $subdirectory = false )`
-
-```php
-public static function expandedPathList( $extensionList, $subdirectory = false ) : array;
+```ini
+# One root per customer or project
+[ExtensionSettings]
+AdditionalExtensionDirectories[]=sites/customer_a
+AdditionalExtensionDirectories[]=sites/customer_b
 ```
 
-Expands an array of extension names into absolute paths, optionally appending a subdirectory. Extensions not found in any configured root are skipped.
+## Which copy wins
 
-```php
-$paths = eZExtension::expandedPathList(
-    array( 'ezfind', 'acme_customer_extension' ),
-    'design'
-);
-// array(
-//     'extension/ezfind/design',
-//     'extension_src/acme_customer_extension/design',
-// )
-```
-
-### 3.4 `eZExtension::extensionName( $name )`
-
-```php
-public static function extensionName( $extensionName ) : string|false;
-```
-
-Looks for an extension directory matching `$extensionName` in any configured root and returns the actual directory name (case-corrected) as it exists on disk. Returns `false` if no matching directory is found.
-
-### 3.5 `eZExtension::filterExtensionRootDirectories( $roots )`
-
-```php
-public static function filterExtensionRootDirectories( $roots ) : array;
-```
-
-Protected filter hook. By default it removes empty values and duplicates. Projects can extend `eZExtension` and override this method to add, remove or validate roots dynamically from PHP.
-
-## 4. Precedence Rule
-
-If the same folder/package name exists in two roots, the root later in `AdditionalExtensionDirectories[]` completely replaces the earlier one. There is **no** per-file merge at the subfolder level.
-
-Example:
+If the same extension name exists in two roots, the root that comes later replaces the earlier one completely.
+Files are not merged per subdirectory.
 
 ```ini
 [ExtensionSettings]
@@ -153,19 +132,15 @@ AdditionalExtensionDirectories[]
 AdditionalExtensionDirectories[]=extension_src
 ```
 
-With `extension/foobar/` and `extension_src/foobar/`, the kernel uses `extension_src/foobar/` exclusively for that siteaccess.
+With both `extension/foobar/` and `extension_src/foobar/`, the kernel uses only `extension_src/foobar/`. The autoload
+generator applies the same rule and keeps the later copy without a warning, so check for duplicate names yourself
+when you copy an extension. This is what makes a `composer update` of a vendor extension safe while your local copy
+in `extension_src/` is active.
 
-The autoload-array generator collects packages from every root and emits a warning for each collision:
+## Extension structure
 
-```
-Extension 'foobar' in extension_src/ overrides the extension of the same name in extension/
-```
-
-This avoids accidental shadowing and makes `composer update` of a vendor extension safe while a local `extension_src/` copy is active.
-
-## 5. Extension Structure
-
-A package under any additional root uses the exact same internal layout as a classic extension:
+A package in any root has the same layout as a classic extension. There is no new manifest, no PSR-4 requirement and
+no change to class naming.
 
 ```
 extension_src/acme_customer_extension/
@@ -179,11 +154,10 @@ extension_src/acme_customer_extension/
 └── ...
 ```
 
-No new manifest, no PSR-4 requirement, no class-name convention change. `cp -r` between `extension/` and `extension_src/` just works.
+### A whole site in one package
 
-### 5.1 Site extension pattern
-
-A single additional-root package can encapsulate a complete site (design + grouped/un-grouped siteaccesses + code + templates):
+One package can hold a complete site: design, grouped and ungrouped siteaccesses, code and templates. Several sites
+can live side by side and be activated independently.
 
 ```
 extension_src/site_app/
@@ -204,33 +178,17 @@ extension_src/site_app/
 └── autoloads/
 ```
 
-Because the root is configurable, multiple full sites can live side-by-side and be activated independently.
+## Settings, designs and overrides
 
-## 6. Autoloading and Extension Scan
+The usual resolution applies to every root:
 
-The legacy autoload array generator (`bin/php/ezpgenerateautoloads.php`) and `eZAutoloadGenerator` walk every configured root exactly as they already walk `extension/*`.
+- `settings/*.ini.append.php` of each active package is loaded.
+- `design/<siteaccess>/...` is found in each active package.
+- `settings/override/` inside a package follows the usual extension, siteaccess and override rules, including `__`
+  grouping.
+- The global `settings/override/` stays on top of everything.
 
-Consequences:
-
-- `var/autoload/ezp_extension.php` contains class entries from all roots
-- `var/autoload/ezp_override.php` contains kernel overrides from all roots
-- `var/autoload/ezp_tests.php` contains test classes from all roots
-- no `composer dump-autoload` is required when adding/moving/removing packages
-- the Composer autoloader (`vendor/autoload.php`) is not touched
-- class-based kernel overrides (`[ClassSettings]`, workflow handlers, datatypes, operators) keep working because `autoloads/*.php` in each root is collected exactly as for `extension/`
-
-The generator is loaded with `eZExtension` support by `require_once 'autoload.php';` in `bin/php/ezpgenerateautoloads.php`.
-
-## 7. Settings, Design and Kernel Overrides
-
-Because a package under `extension_src/` has the same structure as one under `extension/`, the existing resolution paths continue to work:
-
-- `settings/*.ini.append.php` from each active package is loaded
-- `design/<siteaccess>/...` is resolved from each active package
-- `settings/override/` inside an extension/package follows the same ext-siteaccess-override rules (including `__` grouping)
-- `settings/override/` at the global level still sits on top of everything
-
-Load order (low → high) stays consistent:
+Load order, lowest priority first:
 
 ```
 base package settings/
@@ -240,11 +198,58 @@ extension/package settings/override/
 global settings/override/
 ```
 
-with the only change that packages may live in any configured root.
+The only difference is that a package may live in any configured root.
 
-## 8. Updated Consumers
+## Autoloads
 
-All core call sites that previously hard-coded `extension/` or called `eZExtension::baseDirectory()` to build a single extension path now use the new helpers. The main consumers updated are:
+`bin/php/ezpgenerateautoloads.php` and `eZAutoloadGenerator` walk every configured root the same way they walk
+`extension/*`:
+
+- `var/autoload/ezp_extension.php` has the classes of all roots.
+- `var/autoload/ezp_override.php` has the kernel overrides of all roots.
+- `var/autoload/ezp_tests.php` has the test classes of all roots.
+- Adding, moving or removing a package needs no `composer dump-autoload`; `vendor/autoload.php` is not touched.
+- Class-based overrides (`[ClassSettings]`, workflow handlers, datatypes, operators) keep working, because
+  `autoloads/*.php` is collected from every root.
+
+The generator loads `eZExtension` through `require_once 'autoload.php';`.
+
+## PHP API
+
+All methods are static methods of `eZExtension` (`lib/ezutils/classes/ezextension.php`).
+
+| Method | Returns |
+|---|---|
+| `extensionRootDirectories()` | The roots in priority order, low to high: `ExtensionDirectory`, then `AdditionalExtensionDirectories[]`, with empty entries and duplicates removed, passed through `filterExtensionRootDirectories()`. Paths as written in the setting. |
+| `extensionPath( $name )` | The path of the extension in the root that wins, or `false`. The name matches case-insensitively; the result keeps the case on disk. |
+| `expandedPathList( $extensions, $subdirectory = false )` | The paths of several extensions, each with `$subdirectory` appended. Extensions not found are skipped. |
+| `extensionName( $name )` | The directory name as it exists on disk (case corrected). |
+| `filterExtensionRootDirectories( $roots )` | Hook for code that extends `eZExtension`. The default returns the list unchanged. |
+
+```php
+echo eZExtension::extensionPath( 'ezfind' );
+// extension/ezfind
+
+echo eZExtension::extensionPath( 'acme_customer_extension' );
+// extension_src/acme_customer_extension
+
+$paths = eZExtension::expandedPathList(
+    array( 'ezfind', 'acme_customer_extension' ),
+    'design'
+);
+// array(
+//     'extension/ezfind/design',
+//     'extension_src/acme_customer_extension/design',
+// )
+```
+
+Path and name lookups are cached in memory for the current request. `eZExtension::clearActiveExtensionsMemoryCache()`
+clears the in-memory list of active extensions.
+
+## Kernel code that uses the new helpers
+
+Every kernel call site that used to hard-code `extension/` or build a path from `eZExtension::baseDirectory()` now
+uses the helpers above.
 
 | Area | File(s) | Mechanism |
 |------|---------|-----------|
@@ -265,115 +270,38 @@ All core call sites that previously hard-coded `extension/` or called `eZExtensi
 | Setup / upgrade | `kernel/setup/extensions.php`, `kernel/setup/systemupgrade.php` | `extensionRootDirectories()`, `extensionPath()` |
 | Test toolkit | `tests/toolkit/ezptestrunner.php`, `tests/toolkit/ezpextensionhelper.php` | `extensionRootDirectories()`, `extensionPath()` |
 
-## 9. Caching
+## Security
 
-`eZExtension` caches the discovered root list and the per-extension path/name lookups. These caches are keyed with the current root list so that a change in `AdditionalExtensionDirectories[]` invalidates them automatically. Memory caches can be cleared with `eZExtension::clearActiveExtensionsMemoryCache()`.
+The kernel takes the roots as written; it does not check them. Treat every root exactly like `extension/`:
 
-## 10. Security Considerations
+- Only trusted deployment users may write to `settings/override/`, `config.php` and any INI file that declares a root.
+- `autoloads/*.php` in every root is included while the autoloads are generated, so every root needs the same
+  ownership and integrity rules as `extension/`.
+- Prefer roots relative to the installation directory and inside it.
 
-- Paths in `AdditionalExtensionDirectories[]` are validated before use. They must be relative to the project root, must not contain `..`, and must resolve to a directory that is inside the project root.
-- Absolute paths are rejected unless explicitly allow-listed in `config.php` (`EZP_ALLOWED_EXTENSION_ROOTS`).
-- The autoload array generator does not follow symlinks that escape the configured root.
-- Files under `settings/override/`, `config.php` and any INI file that declares additional roots must be writable only by trusted deployment users.
-- Because `autoloads/*.php` in an additional root is `include`d during autoload generation, the same ownership and integrity rules that apply to `extension/` must apply to every configured root.
+## Backward compatibility
 
-## 11. Backward Compatibility
+- `ExtensionDirectory=extension` stays the default.
+- With `AdditionalExtensionDirectories[]` empty, the kernel behaves exactly as before.
+- Existing packages in `extension/` are not moved, renamed or migrated.
+- Composer scripts keep calling `bin/php/ezpgenerateautoloads.php`; it simply scans more roots when they are set.
+- INI, template, class override and autoload mechanisms are unchanged.
 
-- `ExtensionDirectory=extension` is the default and remains untouched
-- `AdditionalExtensionDirectories[]` is commented out by default; if absent or empty the kernel behaves exactly as before
-- Existing `extension/` packages are not moved, renamed or migrated
-- Composer scripts keep calling `bin/php/ezpgenerateautoloads.php`; the generator simply scans more roots when configured
-- All existing INI, template, class-override and autoload mechanisms keep working unchanged
-- Active-extension caches are invalidated when the root list changes
+## Tests
 
-## 12. Suggested INI Configuration
+`tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php` checks that:
 
-All example `AdditionalExtensionDirectories[]` lines are commented out so they are documentation only; projects must explicitly uncomment them to enable the feature.
+- `extensionRootDirectories()` merges `ExtensionDirectory` and `AdditionalExtensionDirectories[]`;
+- `extensionPath()` finds an extension in the base root and in an additional root;
+- a later root wins when the same name exists in several roots;
+- an unknown name returns `false`;
+- names match case-insensitively and keep their case on disk;
+- active extensions are resolved from additional roots.
 
-### 12.1 Minimal
+## Related pages
 
-```ini
-[ExtensionSettings]
-# Default root. Existing installations keep this unchanged.
-ExtensionDirectory=extension
-
-# Optional second root for project-/customer-specific extensions.
-# Uncomment to enable.
-#AdditionalExtensionDirectories[]
-#AdditionalExtensionDirectories[]=extension_src
-```
-
-### 12.2 Sibling root name (`extension_src/`)
-
-```ini
-[ExtensionSettings]
-ExtensionDirectory=extension
-#AdditionalExtensionDirectories[]
-#AdditionalExtensionDirectories[]=extension_src
-```
-
-### 12.3 Multi-tenant / multi-project
-
-```ini
-[ExtensionSettings]
-ExtensionDirectory=extension
-#AdditionalExtensionDirectories[]
-#AdditionalExtensionDirectories[]=sites/customer_a
-#AdditionalExtensionDirectories[]=sites/customer_b
-```
-
-### 12.4 Copy-paste alternative root examples (all commented out)
-
-Uncomment the block that matches the layout you want and place the active lines under `[ExtensionSettings]`.
-
-```ini
-# Block #1: recommended sibling root (extension/ + extension_src/)
-# Keeps the two extension roots together under ezroot/.
-[ExtensionSettings]
-ExtensionDirectory=extension
-#AdditionalExtensionDirectories[]
-#AdditionalExtensionDirectories[]=extension_src
-```
-
-```ini
-# Block #2: use an "extensions/" directory instead of extension_src/
-# Useful if your project already follows an extensions/ naming convention.
-[ExtensionSettings]
-ExtensionDirectory=extension
-#AdditionalExtensionDirectories[]
-#AdditionalExtensionDirectories[]=extensions
-```
-
-```ini
-# Block #3: older /src style
-# Use this if you prefer the original RFC top-level src/ layout.
-[ExtensionSettings]
-ExtensionDirectory=extension
-#AdditionalExtensionDirectories[]
-#AdditionalExtensionDirectories[]=src
-```
-
-## 13. Migration Path
-
-1. **Update the kernel** — already done in Exponential 6.0.
-2. **Create the new root:** `mkdir extension_src`.
-3. **Enable the setting** by uncommenting `AdditionalExtensionDirectories[]=extension_src` in `settings/override/site.ini.append.php` or `site.ini`.
-4. **Copy a vendor/community extension:** `cp -r extension/acme_customer_extension extension_src/acme_customer_extension`.
-5. **Customize** inside `extension_src/`.
-6. **Regenerate legacy autoloads:** `php bin/php/ezpgenerateautoloads.php` (or `composer run legacy-scripts`).
-7. **No `composer dump-autoload` required.**
-
-The switch is optional and incremental; projects can run `extension/` and `extension_src/` in parallel indefinitely.
-
-## 14. Testing
-
-PHPUnit coverage is provided by `tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php`. The test verifies:
-
-- `extensionRootDirectories()` merges `ExtensionDirectory` and `AdditionalExtensionDirectories[]`
-- `extensionPath()` returns the correct root for an extension in the base and in an additional root
-- Later roots win when the same package name exists in multiple roots
-- Unknown extension names return `false`
-- Case-insensitive name lookup with case-preserving return values
-- Active-extension resolution picks the correct package from additional roots
-
-Syntax checks and a direct PHP smoke test against the new API pass. The legacy autoload generator dry-run (`php bin/php/ezpgenerateautoloads.php -e -n`) executes successfully and scans the configured roots.
+- [Additional extension directories (feature)](../../features/6.0/additional-extension-directories.md)
+- [Specification: extension metadata](../../specifications/6.0/extension-metadata.md)
+- [Specification: INI override directories and placements](../../specifications/6.0/ini-override-placements.md)
+- [Extensions: behaviour changes](extensions-behaviour-changes.md)
+- [Extensions guide](../../guides/extensions.md)
