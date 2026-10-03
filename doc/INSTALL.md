@@ -1,5 +1,7 @@
 ## Exponential 6.0 INSTALL
 
+New to Exponential? The guide [Getting started](guides/getting-started.md) installs a working site in about ten
+minutes, step by step with the output to expect. All guides: [the learning path](guides/README.md).
 
 Requirements
 ------------
@@ -75,3 +77,14 @@ File based Composer Installation Guide
 `cd exponential; composer require se7enxweb/exponential:v6.0.0;`
 
 For the rest of the installation steps you will find the installation guide at https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
+
+
+After the installation
+------------------
+
+- [Getting started](guides/getting-started.md): install in one command, first login, first content, first template change.
+- [Deploying](guides/deploying.md): serve the site with Apache and PHP-FPM, Velocity or FrankenPHP, over HTTPS.
+- [Operating a site](guides/operating-a-site.md): caches, cronjobs, backups, logs and repairs.
+- [Security and audit](guides/security-and-audit.md): check the hardening, roles and policies, the audit trail.
+- [Upgrading](guides/upgrading.md): from 4.x, 5.x or an earlier 6.0.x to the current line.
+- Every guide: [the learning path](guides/README.md).
