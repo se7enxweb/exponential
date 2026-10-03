@@ -12,9 +12,17 @@ path of every row to print it, then asked again for the sub item count of every
 row. Fifty thousand locations meant a hundred thousand queries before the first
 byte, and the request died.
 
-The tab now fetches one page and sorts in the database.
+The tab now fetches one page and sorts in the database. Read this page if you have content with many locations, or
+if you override the admin templates named in the table below.
 
----
+## In short
+
+| | |
+|---|---|
+| What changed | The Locations tab pages (`content.ini [LocationsSettings] LocationsPerPage`, default `25`) and sorts in the database; `assignedNodes()` takes a window and a sort; new `assignedNodeCount()` and fetch `assigned_node_count`; the tab labels count with one query. |
+| Who is affected | Overrides of `design/admin/templates/locations.tpl`, `window_controls.tpl` (admin and admin3) and `navigator/google.tpl`; templates that included `rss/sortheader.tpl` (it moved to `parts/sortheader.tpl`). Existing PHP callers of `assignedNodes()` are unchanged. |
+| How to check | `grep -n "function assignedNodeCount\|function sortColumnsForAssignedNodes" kernel/classes/ezcontentobject.php` |
+| How to fix | Merge your template overrides with the shipped ones; replace `$node.object.assigned_nodes\|count` with `fetch( 'content', 'assigned_node_count', ... )`. |
 
 ## Using it
 
@@ -68,7 +76,6 @@ everything else on the address, the tab included.
 
 With no sort asked for, the list is in tree order exactly as it always was.
 
----
 
 ## What changed
 
@@ -194,7 +201,6 @@ so the two lists cannot drift apart. The column being sorted keeps the ordinary
 heading colour and is marked by the bold label and the arrow — not by
 repainting the cell.
 
----
 
 ## Files
 
@@ -210,7 +216,6 @@ repainting the cell.
 | `design/admin/stylesheets/content.css` | `th.sortable`, `th.sorted`, `.sort-arrow` |
 | `settings/content.ini` | `[LocationsSettings] LocationsPerPage` |
 
----
 
 ## The tab label counted the whole list
 
@@ -241,7 +246,6 @@ their entire permission set in PHP — asked for here only to count it. It is no
 the sum of `policy_count` per assigned role, which is one small query per role
 and no policy rows at all.
 
----
 
 ## Tests
 
@@ -256,7 +260,7 @@ Measured against an item with 2001 locations: the tab renders in about a second.
 
 Read-only check that the API is in place: `grep -n "function assignedNodeCount\|function sortColumnsForAssignedNodes" kernel/classes/ezcontentobject.php`.
 
-## See also
+## Related pages
 
 - [Paging, sorting and page sizes](../../features/6.0/admin-list-paging.md) and [Where the page sizes live](pagination-settings.md)
 - [RSS: the feed list sorts with the same headings](../../features/6.0/rss-podcast-and-feed-list.md)

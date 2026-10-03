@@ -1,14 +1,39 @@
 # Shop basket view name
 
+Read this page if you run a shop on Exponential: you can now give the basket page your own name (for example
+`/shop/cart/`), and four shop bugs were fixed on the way, one of which changes which address line a customer must
+fill in. Before, the basket was reachable only at `/shop/basket/`, with that name hard coded in twelve places across six
+kernel scripts and in every shipped template's form action; a site that wanted to call it a cart had to fork
+`kernel/shop`.
+
+## In short
+
+| | |
+|---|---|
+| What changed | New setting `shop.ini [BasketSettings] BasketViewName` (default `basket`); routing, redirects, form actions, breadcrumb and template lookup follow it. Fixes: add to basket, a PHP 8 fatal, checked-out baskets, address line 1 required. |
+| Who is affected | Everyone at the default only through the fixes. Custom `shop/userregister.tpl` templates that mark address line 2 as required. Designs that override `shop/basket.tpl` keep working. |
+| How to check | `grep -n -A8 BasketSettings settings/shop.ini` |
+| How to fix | Move the "required" asterisk in a custom `shop/userregister.tpl` from line 2 to line 1. Nothing else. |
+
+## Rename the basket in one minute
+
+```ini
+# settings/override/shop.ini.append.php
+[BasketSettings]
+BasketViewName=cart
+```
+
+```bash
+php bin/php/ezcache.php --clear-tag=ini --allow-root-user
+```
+
+`/shop/cart/` now shows the basket, and every redirect and form of the checkout uses it. `/shop/basket/` keeps
+working for old links.
+
 ## Added: a configurable name for the shop basket page
 
-The shop basket was reachable only at `/shop/basket/`, with that name hardcoded
-in twelve places across six kernel scripts and in every shipped template's form
-action. A site that wanted to call it a cart had to fork `kernel/shop`.
-
-The name is now a setting. Any simple token works, and the whole checkout
-follows it — routing, redirects, form actions, the breadcrumb and the template
-lookup.
+The name is a setting. Any simple token works, and the whole checkout follows it: routing, redirects, form actions,
+the breadcrumb and the template lookup.
 
 ### Setting
 
@@ -244,7 +269,7 @@ custom `shop/userregister.tpl` marking line 2 with an asterisk should move it.
 | US account handler | `kernel/classes/shopaccounthandlers/bcusausershopaccounthandler.php` (class `bcusauserShopAccountHandler`) |
 | Worked template example | `design/standard/templates/shop/cart.tpl` |
 
-## See also
+## Related pages
 
 - [Shop basket in the September 2026 chronicle](../../history/2026/2026-09a.md#11-september-the-basket-gets-a-name-you-choose)
 - [Order receipts](../../features/6.0/order-receipts.md) and [Store dashboard](../../features/6.0/store-dashboard.md)
