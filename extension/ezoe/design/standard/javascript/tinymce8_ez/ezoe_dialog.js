@@ -261,6 +261,29 @@ window.eZOe8Dialog = (function () {
         return null;
     };
 
+    /**
+     * Shows a message directly under a dialog field (and marks it invalid), so a rejected OK is not only a toast
+     * that is easy to miss. The message goes away when the field is edited. fieldName is the dialog component name.
+     */
+    var showFieldError = function ( fieldName, text ) {
+        var input = document.querySelector( '.tox-dialog [data-mce-name="' + fieldName + '"]' ), group, note;
+        if ( !input )
+            return;
+        group = input.closest( '.tox-form__group' ) || input.parentNode;
+        Array.prototype.forEach.call( group.querySelectorAll( '.ezoe-field-error' ), function ( n ) { n.remove(); } );
+        note = document.createElement( 'div' );
+        note.className = 'ezoe-field-error';
+        note.setAttribute( 'role', 'alert' );
+        note.textContent = text;
+        group.appendChild( note );
+        input.setAttribute( 'aria-invalid', 'true' );
+        input.addEventListener( 'input', function clear() {
+            note.remove();
+            input.removeAttribute( 'aria-invalid' );
+            input.removeEventListener( 'input', clear );
+        } );
+    };
+
     var escapeHtml = function ( value ) {
         return String( value === undefined || value === null ? '' : value )
             .replace( /&/g, '&amp;' ).replace( /"/g, '&quot;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
@@ -441,6 +464,7 @@ window.eZOe8Dialog = (function () {
         uploadLocations: uploadLocations,
         upload: upload,
         escapeHtml: escapeHtml,
+        showFieldError: showFieldError,
         decodeHtml: decodeHtml,
         renderList: renderList,
         parseCustomAttributes: parseCustomAttributes,

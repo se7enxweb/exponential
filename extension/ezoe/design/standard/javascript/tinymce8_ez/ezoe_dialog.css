@@ -134,3 +134,14 @@
     font-weight: bold;
     margin-right: .8em;
 }
+
+/* message under a dialog field that was rejected (required summary of a table, wrong number) */
+.tox .ezoe-field-error {
+    color: #b71c1c;
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: bold;
+}
+.tox [aria-invalid="true"] {
+    border-color: #b71c1c !important;
+}

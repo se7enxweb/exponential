@@ -133,7 +133,11 @@
         var warn = function ( api, text, field ) {
             editor.notificationManager.open( { text: text, type: 'warning', timeout: 4000 } );
             if ( field )
+            {
+                // message under the field as well, the toast alone is easy to miss
+                D.showFieldError( field, text );
                 api.focus( field );
+            }
         };
 
         // sets class, custom attributes (with mapped styles) and further attributes on an element
@@ -190,7 +194,18 @@
                     { type: 'submit', text: 'OK', primary: true }
                 ],
                 onSubmit: function ( api ) {
-                    var d = api.getData(), custom = collectAttributes( def, d, stored ), rows, cols, error;
+                    var d = api.getData(), custom, rows, cols, error;
+
+                    // an empty required summary is taken from the caption, the stored markup is the same as typing it twice
+                    def.attributes.forEach( function ( a ) {
+                        if ( a.id === 'summary' && a.required && !String( d[ D.attributeFieldName( a ) ] || '' ).trim() )
+                        {
+                            var captionAttr = def.attributes.filter( function ( c ) { return c.id === 'caption'; } )[0];
+                            if ( captionAttr && String( d[ D.attributeFieldName( captionAttr ) ] || '' ).trim() )
+                                d[ D.attributeFieldName( a ) ] = String( d[ D.attributeFieldName( captionAttr ) ] ).trim();
+                        }
+                    } );
+                    custom = collectAttributes( def, d, stored );
 
                     if ( !table )
                     {
