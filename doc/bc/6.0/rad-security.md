@@ -18,7 +18,7 @@ dozen places they are written:
 `expExtensionWizard::text()` — which every free-text field goes through — calls
 the first. A value that never enters the wizard cannot leave it.
 
-Tests: `ai/bin/one/test_rad_security.php`.
+Tests: the RAD security test script (see "Running the tests" below).
 
 ---
 
@@ -146,6 +146,12 @@ be reachable by fewer people — `setup/setup` policy — rather than made usele
 
 ## Running the tests
 
-```sh
-php ai/bin/one/test_rad_security.php --allow-root-user
-```
+The RAD security checks run on the installation's own code and write nothing outside `var/tmp`. They cover the points listed above: path validation, escaping of generated templates and the handling of the external-database password. Ask the maintainers for the test script of the release you run.
+
+## Related pages
+
+- [Specification: the 6.0.13 security and stability hardening](../../specifications/6.0/security-hardening-6.0.13.md)
+- [Specification: the August 2026 security patches](../../specifications/6.0/security-hardening-2026-08.md)
+- [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
+- [Datatype and input hardening (27 September 2026)](../../specifications/6.0/datatype-input-hardening.md)
+- [February 2026](../../history/2026/2026-02.md)

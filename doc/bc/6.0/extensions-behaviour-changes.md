@@ -154,3 +154,11 @@ Scripts that drove the API must fetch the token from `GET /explayouts_ui_api/app
 
 * [Release notes of all extensions](../../changelogs/extensions/README.md)
 * [History of the extensions](../../history/extensions/README.md)
+
+## Related pages
+
+- [An extension can replace a kernel module](../../features/6.0/extension-module-override.md)
+- [Extensions in more than one folder](../../features/6.0/additional-extension-directories.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [September 2024](../../history/2024/2024-09.md)
+- [October 2024](../../history/2024/2024-10.md)

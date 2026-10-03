@@ -362,3 +362,8 @@ php bin/php/console crontab:edit      # open it in $EDITOR
 Use these to see that the parts you run through `cron:<part>` are scheduled. The
 browser view of the same information is the
 [cronjobs console](../../features/6.0/cronjobs-console.md).
+
+## Related pages
+
+- [Commands, cronjob parts and module views as classes](cli_cronjob_view_abstractions.md)
+- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)

@@ -77,3 +77,12 @@ sweep so that every row of the about page has a version, license and website.
 - [Translations and languages](translations-and-languages.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [The product is called Exponential](rebranding-to-exponential.md)
+- [A clean installation that fits shared hosting and says Exponential](clean-install-defaults.md)
+- [Package licenses and Semantic Versioning](package-licenses-and-versions.md)
+- [January 2025](../../history/2025/2025-01.md)
+- [July 2025](../../history/2025/2025-07.md)
+- [August 2025](../../history/2025/2025-08.md)

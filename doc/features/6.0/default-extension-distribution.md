@@ -80,3 +80,14 @@ checkouts.
 ## See also
 
 Changelogs that changed the extension set: [6.0.0](../../changelogs/6.0/6.0.0.md), [6.0.1](../../changelogs/6.0/6.0.1.md), [6.0.2](../../changelogs/6.0/6.0.2.md), [6.0.3](../../changelogs/6.0/6.0.3.md), [6.0.4](../../changelogs/6.0/6.0.4.md), [6.0.5](../../changelogs/6.0/6.0.5.md), [6.0.6](../../changelogs/6.0/6.0.6.md), [6.0.9](../../changelogs/6.0/6.0.9.md), [6.0.10](../../changelogs/6.0/6.0.10.md); [PHP 8 support](../../bc/6.0/php8.md) for the PHP constraint.
+
+## Related pages
+
+- [Extension metadata: `ezinfo.php` and `extension.xml`](../../specifications/6.0/extension-metadata.md)
+- [Extension list: sort, inspect and download any extension](extension-list-and-downloads.md)
+- [Extensions, themes and packages](extensions/README.md)
+- [Setup > Extensions: loading order and safe saving](extension-loading-order.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [February 2024](../../history/2024/2024-02.md)
+- [March 2024](../../history/2024/2024-03.md)
+- [June 2024](../../history/2024/2024-06.md)

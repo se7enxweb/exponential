@@ -107,3 +107,9 @@ earlier sweep see [Security hardening 6.0.13](security-hardening-6.0.13.md).
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [Specification: the August 2026 security patches](security-hardening-2026-08.md)
+- [RAD tools — security](../../bc/6.0/rad-security.md)
+- [February 2026](../../history/2026/2026-02.md)

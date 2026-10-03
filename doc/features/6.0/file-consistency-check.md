@@ -105,3 +105,10 @@ order, and the reason for the rule.
 ## See also
 
 Specification-level detail of the options is the script's own help: `bash bin/shell/generatefilelist.sh --help`.
+
+## Related pages
+
+- [Package licenses and Semantic Versioning](package-licenses-and-versions.md)
+- [May 2026](../../history/2026/2026-05.md)
+- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

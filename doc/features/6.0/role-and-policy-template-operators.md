@@ -104,3 +104,8 @@ The idea comes from the community extension `bcmemberofrole`.
 [Chronicle: January 2026](../../history/2026/2026-01.md),
 [Changelog 6.0.12](../../changelogs/6.0/6.0.12.md),
 [String operators](string-template-operators.md).
+
+## Related pages
+
+- [Roles: policy IDs, sorting and order buttons](role-policy-order.md)
+- [Paging the role and policy screens](../../bc/6.0/role-policy-paging.md)

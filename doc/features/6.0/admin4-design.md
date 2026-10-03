@@ -71,3 +71,20 @@ Related: [setup wizard and editor siteaccess](setup-wizard-and-editor-siteaccess
 [jQuery 4 and YUI removal](jquery4-and-yui-removal.md), [October 2026 chronicle](../../history/2026/2026-10.md).
 
 See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [admin links follow permissions](admin-links-follow-permissions.md), [order list sorting](order-list-sorting.md).
+
+## Related pages
+
+- [The responsive admin design (admin3)](admin3-responsive-admin.md)
+- [Left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
+- [Copy selected subitems](subitems-copy-selected.md)
+- [The sub-items list: 129 columns, presets and CSV export](subitems-table-options.md)
+- [Subitems More actions expansion for Hide selected and Unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
+- [August 2024](../../history/2024/2024-08.md)
+- [October 2024](../../history/2024/2024-10.md)
+- [November 2024](../../history/2024/2024-11.md)
+
+## Related pages
+
+- [June 2025](../../history/2025/2025-06.md)
+- [January 2025](../../history/2025/2025-01.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

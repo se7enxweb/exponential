@@ -94,3 +94,7 @@ leaked into other engines. Fixed in the same weeks (`e0d617f28e`, `93cdd0cf47`,
 - [Package installer batching](package-installer-batching.md)
 - [Chronicle: June 2026, first half](../../history/2026/2026-06a.md)
 - [Changelog 6.0.14](../../changelogs/6.0/6.0.14.md)
+
+## Related pages
+
+- [Database drivers and installers: SQLite, PostgreSQL, MySQL and Oracle, 16 to 30 September 2026](../../specifications/6.0/database-drivers-2026-09.md)

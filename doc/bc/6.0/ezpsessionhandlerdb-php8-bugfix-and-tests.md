@@ -164,3 +164,19 @@ Runtime:       PHP 8.5.5
 
 OK (12 tests, 28 assertions)
 ```
+
+## Related pages
+
+- [PHP 8 support](php8.md)
+- [Steps to upgrade your Exponential 6.0.13 site to use PHPUnit 10 — what broke, how we fixed it, and how you run tests now](phpunitv10.md)
+- [PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite](phpunitv13.md)
+- [PHPUnit 13 / PHP 8.4.23 test suite cleanup](phpunitv13forPHP841.md)
+- [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [April 2025](../../history/2025/2025-04.md)
+- [September 2025](../../history/2025/2025-09.md)
+- [December 2025](../../history/2025/2025-12.md)
+
+## Related pages
+
+- [February 2026](../../history/2026/2026-02.md)
+- [March 2026](../../history/2026/2026-03.md)

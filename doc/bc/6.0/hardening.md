@@ -1238,3 +1238,12 @@ php tests/bin/ezptestrunner_all_tests.php --list-categories
 
 *End of document — eZ Publish Legacy 6.0.13 Security Hardening Notes*  
 *Prepared 2026-02-21 | Distribution: security@exponential.earth*
+
+## Related pages
+
+- [Specification: the 6.0.13 security and stability hardening](../../specifications/6.0/security-hardening-6.0.13.md)
+- [Specification: the August 2026 security patches](../../specifications/6.0/security-hardening-2026-08.md)
+- [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
+- [Datatype and input hardening (27 September 2026)](../../specifications/6.0/datatype-input-hardening.md)
+- [RAD tools — security](rad-security.md)
+- [February 2026](../../history/2026/2026-02.md)

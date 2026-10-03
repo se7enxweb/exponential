@@ -311,3 +311,7 @@ rendered fresh is listed: a cached page is not evidence of what a page uses.
 - [Role and policy order](../../features/6.0/role-policy-order.md) and [Role and policy template operators](../../features/6.0/role-and-policy-template-operators.md)
 - [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [January 2026](../../history/2026/2026-01.md)

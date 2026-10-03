@@ -99,7 +99,7 @@ November 2024 it is `ezadmin_menubar.js` and on by default.)
 - [Left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
 - [Copy selected subitems](subitems-copy-selected.md)
 - [Hide and unhide selected subitems](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
-- [Custom items per page](custom-items-per-page.md)
+- [Paging and page sizes](admin-list-paging.md)
 - [The yui removal](../../bc/6.0/yui-removal.md), which moved all admin designs to jQuery
 - Chronicles: [August 2024](../../history/2024/2024-08.md),
   [October 2024](../../history/2024/2024-10.md),
@@ -108,3 +108,10 @@ November 2024 it is `ezadmin_menubar.js` and on by default.)
 ## See also
 
 Changelogs: [6.0.4](../../changelogs/6.0/6.0.4.md), [6.0.6](../../changelogs/6.0/6.0.6.md), [6.0.10](../../changelogs/6.0/6.0.10.md). The June 2026 additions are in [the June 2026 chronicle](../../history/2026/2026-06b.md).
+
+## Related pages
+
+- [The sub-items list: 129 columns, presets and CSV export](subitems-table-options.md)
+- [The admin4 design](admin4-design.md)
+- [June 2025](../../history/2025/2025-06.md)
+- [January 2025](../../history/2025/2025-01.md)

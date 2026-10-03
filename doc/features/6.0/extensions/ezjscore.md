@@ -44,3 +44,8 @@ and clearing the template and content caches.
 * [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 * [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
 * [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+
+## Related pages
+
+- [jQuery 4 in the admin, and YUI gone](../jquery4-and-yui-removal.md)
+- [March 2024](../../../history/2024/2024-03.md)

@@ -52,3 +52,7 @@ policies in id order instead of by module and function.
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [January 2026](../../history/2026/2026-01.md)

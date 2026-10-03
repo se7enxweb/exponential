@@ -63,3 +63,7 @@ with the same files; [INI preserves comments](../../bc/6.0/eZINI_PRESERVES_COMME
 ## See also
 
 [Changelog 6.0.12](../../changelogs/6.0/6.0.12.md); [Chronicle: January 2026](../../history/2026/2026-01.md); feature page [Per-site settings inside extensions](../../features/6.0/multi-site-ini-overrides.md).
+
+## Related pages
+
+- [Extensions in more than one folder](../../features/6.0/additional-extension-directories.md)

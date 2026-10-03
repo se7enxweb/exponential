@@ -60,4 +60,15 @@ own design extension and change the two default values (`16rem` and
 
 ## See also
 
-[Chronicle: June 2026, second half](../../history/2026/2026-06b.md); [Custom items per page](custom-items-per-page.md); [Hide and unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md). The 6.0.15 line has no release tag yet, see [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) for what it covers.
+[Chronicle: June 2026, second half](../../history/2026/2026-06b.md); [Paging and page sizes](admin-list-paging.md); [Hide and unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md). The 6.0.15 line has no release tag yet, see [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) for what it covers.
+
+## Related pages
+
+- [Copy selected subitems](subitems-copy-selected.md)
+- [The sub-items list: 129 columns, presets and CSV export](subitems-table-options.md)
+- [The admin4 design](admin4-design.md)
+- [August 2024](../../history/2024/2024-08.md)
+- [October 2024](../../history/2024/2024-10.md)
+- [November 2024](../../history/2024/2024-11.md)
+- [June 2025](../../history/2025/2025-06.md)
+- [January 2025](../../history/2025/2025-01.md)

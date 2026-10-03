@@ -65,3 +65,14 @@ or library; the first column is the first release that carries it.
 
 See also [Security hardening](hardening.md), [PHPUnit 10](phpunitv10.md),
 [PHPUnit 13](phpunitv13.md).
+
+## Related pages
+
+- [PHPUnit 13 / PHP 8.4.23 test suite cleanup](phpunitv13forPHP841.md)
+- [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite](ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [April 2025](../../history/2025/2025-04.md)
+- [September 2025](../../history/2025/2025-09.md)
+- [December 2025](../../history/2025/2025-12.md)
+- [February 2026](../../history/2026/2026-02.md)
+- [March 2026](../../history/2026/2026-03.md)

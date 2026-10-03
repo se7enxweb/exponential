@@ -917,3 +917,18 @@ combines all results, and writes a dated report file.
 *Document prepared 2026-02-21 for Exponential 6.0.13-alpha2 / eZ Publish Legacy 6.0*  
 *PHPUnit version: 10.0.0 | PHP: 8.5.3*
 
+## Related pages
+
+- [PHP 8 support](php8.md)
+- [PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite](phpunitv13.md)
+- [PHPUnit 13 / PHP 8.4.23 test suite cleanup](phpunitv13forPHP841.md)
+- [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite](ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [April 2025](../../history/2025/2025-04.md)
+- [September 2025](../../history/2025/2025-09.md)
+- [December 2025](../../history/2025/2025-12.md)
+
+## Related pages
+
+- [February 2026](../../history/2026/2026-02.md)
+- [March 2026](../../history/2026/2026-03.md)

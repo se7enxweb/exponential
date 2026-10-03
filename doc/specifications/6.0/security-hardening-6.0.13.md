@@ -86,3 +86,10 @@ installation, never a production database.
 [Changelog 6.0.13](../../changelogs/6.0/6.0.13.md),
 [PHP 8 support](../../bc/6.0/php8.md),
 [PHPUnit 13](../../bc/6.0/phpunitv13.md).
+
+## Related pages
+
+- [Specification: the August 2026 security patches](security-hardening-2026-08.md)
+- [Security defaults of September 2026](security-defaults-2026-09.md)
+- [Datatype and input hardening (27 September 2026)](datatype-input-hardening.md)
+- [RAD tools — security](../../bc/6.0/rad-security.md)

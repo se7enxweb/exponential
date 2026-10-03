@@ -67,3 +67,11 @@ paths alone.
 - [Chronicle: August 2025](../../history/2025/2025-08.md)
 - [Changelog 6.0.10](../../changelogs/6.0/6.0.10.md)
 - [Default extension distribution](default-extension-distribution.md)
+
+## Related pages
+
+- [A clean installation that fits shared hosting and says Exponential](clean-install-defaults.md)
+- [About and Copyright pages](about-and-package-pages.md)
+- [Package licenses and Semantic Versioning](package-licenses-and-versions.md)
+- [January 2025](../../history/2025/2025-01.md)
+- [July 2025](../../history/2025/2025-07.md)

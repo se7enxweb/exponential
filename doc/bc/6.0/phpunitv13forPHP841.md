@@ -213,3 +213,19 @@ If you extend the 6.0 test suite, keep these patterns in mind:
 - Exclude abstract test classes from suites and use `require_once` in concrete subclasses.
 - Clean up exception handlers and other global state in `tearDown()`.
 - Avoid `error_log()` and other direct output in production code; route diagnostics through the framework's logging helpers.
+
+## Related pages
+
+- [PHP 8 support](php8.md)
+- [Steps to upgrade your Exponential 6.0.13 site to use PHPUnit 10 — what broke, how we fixed it, and how you run tests now](phpunitv10.md)
+- [PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite](phpunitv13.md)
+- [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite](ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [April 2025](../../history/2025/2025-04.md)
+- [September 2025](../../history/2025/2025-09.md)
+- [December 2025](../../history/2025/2025-12.md)
+
+## Related pages
+
+- [February 2026](../../history/2026/2026-02.md)
+- [March 2026](../../history/2026/2026-03.md)

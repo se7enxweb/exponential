@@ -92,3 +92,14 @@ and confirm that both files show the new number.
 
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md#10-metadata-translations-and-integrity-manifests)
 * [Extensions](../../features/6.0/extensions/README.md)
+
+## Related pages
+
+- [What a new installation comes with: the default extension distribution](../../features/6.0/default-extension-distribution.md)
+- [Extension list: sort, inspect and download any extension](../../features/6.0/extension-list-and-downloads.md)
+- [Setup > Extensions: loading order and safe saving](../../features/6.0/extension-loading-order.md)
+- [January 2024, first half (1 to 15 January)](../../history/2024/2024-01a.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [February 2024](../../history/2024/2024-02.md)
+- [March 2024](../../history/2024/2024-03.md)
+- [June 2024](../../history/2024/2024-06.md)

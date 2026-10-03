@@ -487,3 +487,9 @@ php vendor/bin/phpunit tests/tests/kernel/classes/ini/command/
 
 The engine's own tests (line preservation on every real INI file, ownership, atomic writes, the load order)
 are in `tests/tests/kernel/classes/ini/` (`expIniEditorTest`, `expIniRoundTripTest`, `expIniLocatorTest`).
+
+## Related pages
+
+- [eZINI Preserves Comments on Save](eZINI_PRESERVES_COMMENTS.md)
+- [Change settings from the command line: exp:ini](../../features/6.0/exp-ini-command.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

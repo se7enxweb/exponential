@@ -60,3 +60,7 @@ host if the rules must differ.
 
 [Chronicle: September 2025](../../history/2025/2025-09.md),
 [Changelog 6.0.11](../../changelogs/6.0/6.0.11.md).
+
+## Related pages
+
+- [A clean installation that fits shared hosting and says Exponential](clean-install-defaults.md)

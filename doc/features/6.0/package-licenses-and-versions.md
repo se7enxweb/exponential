@@ -120,3 +120,20 @@ offered only when `package.ini` lists them.
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [The product is called Exponential](rebranding-to-exponential.md)
+- [A clean installation that fits shared hosting and says Exponential](clean-install-defaults.md)
+- [About and Copyright pages](about-and-package-pages.md)
+- [January 2025](../../history/2025/2025-01.md)
+- [July 2025](../../history/2025/2025-07.md)
+- [August 2025](../../history/2025/2025-08.md)
+- [File consistency check and the release file list](file-consistency-check.md)
+- [April 2026](../../history/2026/2026-04.md)
+
+## Related pages
+
+- [May 2026](../../history/2026/2026-05.md)
+- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

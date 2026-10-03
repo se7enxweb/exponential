@@ -31,3 +31,20 @@ If this menu expansion is modified again, keep the following pieces aligned:
 * the JavaScript post payload for the bulk action buttons
 * the active `content/action` handler in `extension/nxc_powercontent`
 * the kernel-level action branch for future compatibility
+
+## Related pages
+
+- [The responsive admin design (admin3)](../../features/6.0/admin3-responsive-admin.md)
+- [Left sidebar width and font size](../../features/6.0/admin3-sidebar-width-and-font-size.md)
+- [Copy selected subitems](../../features/6.0/subitems-copy-selected.md)
+- [The sub-items list: 129 columns, presets and CSV export](../../features/6.0/subitems-table-options.md)
+- [The admin4 design](../../features/6.0/admin4-design.md)
+- [August 2024](../../history/2024/2024-08.md)
+- [October 2024](../../history/2024/2024-10.md)
+- [November 2024](../../history/2024/2024-11.md)
+
+## Related pages
+
+- [June 2025](../../history/2025/2025-06.md)
+- [January 2025](../../history/2025/2025-01.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

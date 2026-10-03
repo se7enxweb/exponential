@@ -85,3 +85,7 @@ of such a setting is `ext-siteaccess-override:<extension>`.
 ## See also
 
 [Changelog 6.0.12](../../changelogs/6.0/6.0.12.md); [Chronicle: January 2026](../../history/2026/2026-01.md).
+
+## Related pages
+
+- [Extensions in more than one folder](additional-extension-directories.md)

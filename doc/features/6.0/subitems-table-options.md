@@ -81,3 +81,19 @@ and the previous size stays. It helps for bulk work on exactly the rows on scree
 for export checks that need a precise slice, and for testing how a folder behaves at a given size. The page size is a user
 preference; see [pagination settings](../../bc/6.0/pagination-settings.md) and the
 [June 2026, second half chronicle](../../history/2026/2026-06b.md). The page "Custom items per page" is merged into this one.
+
+## Related pages
+
+- [The responsive admin design (admin3)](admin3-responsive-admin.md)
+- [Left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
+- [Copy selected subitems](subitems-copy-selected.md)
+- [The admin4 design](admin4-design.md)
+- [Subitems More actions expansion for Hide selected and Unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
+- [August 2024](../../history/2024/2024-08.md)
+- [October 2024](../../history/2024/2024-10.md)
+- [November 2024](../../history/2024/2024-11.md)
+
+## Related pages
+
+- [June 2025](../../history/2025/2025-06.md)
+- [January 2025](../../history/2025/2025-01.md)

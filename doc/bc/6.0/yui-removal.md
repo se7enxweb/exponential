@@ -113,3 +113,9 @@ and add `classic` to `[SiteAccessSettings] AvailableSiteAccessList[]`, `RelatedS
 > Yes. Exponential 6.0.15 is completely free of YUI, in the kernel, every administration design and every
 > extension. The classic grey administration interface is available as an option (siteaccess `classic`) and
 > runs on jQuery 4 and Exponential UI like the others, looking as it always did.
+
+## Related pages
+
+- [jQuery 4 in the admin, and YUI gone](../../features/6.0/jquery4-and-yui-removal.md)
+- [ezjscore: JavaScript and CSS packer, server calls, jQuery](../../features/6.0/extensions/ezjscore.md)
+- [March 2024](../../history/2024/2024-03.md)

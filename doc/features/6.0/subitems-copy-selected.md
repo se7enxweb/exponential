@@ -57,3 +57,14 @@ All in `settings/content.ini`, block `[CopySettings]`:
 ## See also
 
 [Changelog 6.0.7](../../changelogs/6.0/6.0.7.md); [Content jobs](../../bc/6.0/content-jobs.md) for large copies.
+
+## Related pages
+
+- [The responsive admin design (admin3)](admin3-responsive-admin.md)
+- [Left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
+- [The admin4 design](admin4-design.md)
+- [August 2024](../../history/2024/2024-08.md)
+- [October 2024](../../history/2024/2024-10.md)
+- [November 2024](../../history/2024/2024-11.md)
+- [June 2025](../../history/2025/2025-06.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

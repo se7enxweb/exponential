@@ -448,3 +448,9 @@ php vendor/bin/phpunit tests/tests/kernel/classes/runnable/
 | `ExtractedRunMethodsTest` | the split run() methods: protected, by reference, called once, early returns passed on, the global bindings of a command, how long run() may be |
 | `RunnableExtensionPointsTest` | the events of each kind, re-implementation of each kind through the settings, the listeners of `[RunnableSettings]`, the private settings read of a command |
 | `RadSurveyRunnablesTest` | the runnables in the extension point survey and its counts |
+
+## Related pages
+
+- [Exponential Console — `bin/php/console`](console.md)
+- [Cronjobs console](../../features/6.0/cronjobs-console.md)
+- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)

@@ -370,3 +370,9 @@ byte; on a failure the test writes the files back), the IP list controls, and "T
 string of the bar is translated.
 
 See also: [Exponential debug bar](../../features/6.0/exp-debug-bar.md).
+
+## Related pages
+
+- [August 2024](../../history/2024/2024-08.md)
+- [January 2025](../../history/2025/2025-01.md)
+- [August 2025](../../history/2025/2025-08.md)

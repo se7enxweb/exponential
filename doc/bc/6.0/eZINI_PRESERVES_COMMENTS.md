@@ -131,3 +131,9 @@ Recommended rollout:
 1. Deploy code update.
 2. Run the full `ezini_test.php` file.
 3. Verify admin write flows in staging for INI files with comments (extensions, toolbar/menu settings, etc.).
+
+## Related pages
+
+- [Change settings from the command line: exp:ini](../../features/6.0/exp-ini-command.md)
+- [Changing settings from the command line: `exp:ini`](console-exp-ini.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

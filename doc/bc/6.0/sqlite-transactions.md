@@ -35,3 +35,14 @@ Keep it below the web server's request timeout. Override in `settings/override/s
 ## No action needed
 
 MySQL, PostgreSQL, Oracle and MongoDB installations are not affected.
+
+## Related pages
+
+- [SQLite database support](../../features/6.0/sqlite-database.md)
+- [Specification: the SQLite3 database driver](../../specifications/6.0/sqlite3-database-driver.md)
+- [SQLite for Exponential Platform: no database server needed](../../features/6.0/platform-sqlite-install.md)
+- [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md)
+- [January 2024, first half (1 to 15 January)](../../history/2024/2024-01a.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [April 2026](../../history/2026/2026-04.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

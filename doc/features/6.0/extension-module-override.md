@@ -56,3 +56,9 @@ page is assembled.
 ## See also
 
 Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md) (module order), [6.0.5](../../changelogs/6.0/6.0.5.md) (robustness fix); [Chronicle: January 2024, second half](../../history/2024/2024-01b.md).
+
+## Related pages
+
+- [Behaviour changes of the legacy extensions (September and October 2026)](../../bc/6.0/extensions-behaviour-changes.md)
+- [Extensions in more than one folder](additional-extension-directories.md)
+- [September 2024](../../history/2024/2024-09.md)
