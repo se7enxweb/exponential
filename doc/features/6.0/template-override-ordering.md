@@ -30,7 +30,9 @@ a form is posted.
 
 | File | Block | Key | Default |
 |---|---|---|---|
-| `settings/admininterface.ini` | `[PaginationSettings]` | `ItemsPerPage[visual/templateview]` | 20 |
+| `settings/admininterface.ini` (set it in `settings/override/admininterface.ini.append.php`) | `[PaginationSettings]` | `ItemsPerPage[visual/templateview]` | 20 (built in; the key is not in the shipped file) |
+
+See [Where the page sizes live](../../bc/6.0/pagination-settings.md).
 
 ## What changed underneath, and why it matters
 
