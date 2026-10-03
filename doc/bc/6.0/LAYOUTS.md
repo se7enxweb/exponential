@@ -1,10 +1,20 @@
 # Exponential Layouts
 
-This document describes the **Exponential Layouts** subsystem in Exponential CMS 6.0, a port of the Netgen Layouts concept to the Exponential legacy stack.
+Read this page if you build or edit page layouts in Exponential 6.0, or develop block types, view types or query types
+for them. Exponential Layouts brings the Netgen Layouts concept to the Exponential legacy stack: a layout is a saved
+arrangement of blocks in zones, and a rule decides which pages get it, so editors rearrange pages without touching
+templates. The first half of this page teaches the ideas and the editor; the second half is reference material and
+extension work. If you already know the system, the [Reference tables](#reference-tables) at the end are the part you
+will keep coming back to.
 
-It is written to be read start to finish by someone who has never opened the layout editor before. The first half teaches the ideas and the editor; the second half is reference material and extension work. If you already know the system, the [Reference tables](#reference-tables) at the end are the part you will keep coming back to.
+## In short
 
----
+| | |
+|---|---|
+| What changed | The `explayouts` extensions add layouts, zones, blocks, collections and rules, the SPA editor at `/explayouts_ui_api/app` (with a JSON API below it) and the form editor at `/explayouts_ui/dashboard`, and the fetch `fetch( 'explayouts', 'resolve_layout', hash() )` for `pagelayout.tpl`. |
+| Who is affected | Sites that want editor-controlled page arrangement. A site that does not activate the extensions is unchanged. |
+| How to check | `curl -s -o /dev/null -w '%{http_code}\n' https://<your-admin-host>/explayouts_ui_api/app` answers `200` (see [Checking it is alive](#checking-it-is-alive)). |
+| How to fix | Follow the [Installation checklist](#installation-checklist): tables, extensions, autoloads, caches, then a layout and a rule. |
 
 ## Table of contents
 
@@ -31,11 +41,10 @@ It is written to be read start to finish by someone who has never opened the lay
 21. [Troubleshooting](#troubleshooting)
 22. [Reference tables](#reference-tables)
 
----
 
 ## Why the subsystem exists
 
-In a stock eZ Publish site, what a page looks like is decided by templates. Changing the order of things on the front page, adding a promotional strip above the article list, or giving one section of the site a different sidebar all mean editing a `.tpl` file, which means a developer, a deployment, and a release.
+In a classic Exponential site without layouts, what a page looks like is decided by templates. Changing the order of things on the front page, adding a promotional strip above the article list, or giving one section of the site a different sidebar all mean editing a `.tpl` file, which means a developer, a deployment, and a release.
 
 Exponential Layouts moves those decisions into the database and puts them behind an editor. A layout is a saved arrangement of content; a rule says which pages get it. Editors rearrange pages without touching templates, and developers keep control of how each individual piece is rendered.
 
@@ -46,7 +55,6 @@ The division of labour is the point, and it is worth stating plainly because it 
 
 If you find yourself wanting to edit a template to move something, you probably want a layout change. If you find yourself wanting a layout to render something in a shape that does not exist yet, you need a new view type or block type, which is developer work — see [Extending the system](#extending-the-system).
 
----
 
 ## The five ideas you need
 
@@ -66,7 +74,6 @@ A useful sentence to hold onto:
 
 > A **rule** decides that this request gets that **layout**; the layout's **zones** hold **blocks**; a block may own a **collection** that supplies its content.
 
----
 
 ## Getting into the editor
 
@@ -103,7 +110,6 @@ curl -s https://<your-admin-host>/explayouts_ui_api/app/api/config
 
 The config endpoint returns the CSRF token the SPA uses, the edition string, and whether automatic cache clearing is on. A `200` from both means the module, the extension and the database are all in order.
 
----
 
 ## Layouts
 
@@ -152,7 +158,6 @@ Choosing between `1_column` and `layout_1` — both have a single `main` zone �
 | **Copy** | Duplicates the whole layout, blocks and all | Base a new layout on an existing one |
 | **Delete** | Removes the layout entirely | Retire a layout — check no rule points at it |
 
----
 
 ## Zones
 
@@ -165,7 +170,6 @@ A zone does one of two things:
 
 Block order within a zone is a `position` integer. In the editor you drag; the editor renumbers and saves.
 
----
 
 ## Blocks
 
@@ -278,7 +282,6 @@ Each block in the editor offers:
 
 Duplicating is usually faster than building a second configured block from scratch, and it copies parameters and collection settings with it.
 
----
 
 ## Containers and nesting
 
@@ -299,7 +302,6 @@ Containers can nest. They are also the main way to make a layout responsive in p
 
 A caution: deep nesting is hard to edit and hard for the next person to understand. If you are three containers deep, a purpose-built layout type or block type is usually the better answer.
 
----
 
 ## Block parameters
 
@@ -331,7 +333,6 @@ Alongside the handler's own parameters, every block carries:
 
 The CSS class field is the seam between editor work and design work, and it is the single most useful field for customisation: a developer ships utility classes in the theme, an editor applies them per block, and nobody has to touch a template to change a background or a spacing.
 
----
 
 ## Collections: giving a block its content
 
@@ -352,7 +353,6 @@ Both kinds support two more settings, which apply after the query has run:
 
 Offset is what lets two blocks show different slices of the same query. A "featured" block with limit 1, and a "more stories" block below it with offset 1 and limit 6, together produce the familiar lead-plus-list pattern from a single ordering.
 
----
 
 ## Query types and their parameters
 
@@ -408,7 +408,6 @@ That distinction — bound to the current page, or pinned to a fixed one — is 
 
 Use it when the simpler queries do not fit. Use `children` or `subtree` when they do — they are easier to read six months later.
 
----
 
 ## Pinning: mixing hand-picked and dynamic content
 
@@ -424,7 +423,6 @@ The mechanics:
 
 Practical advice: pin as little as possible, and write a note in the block's **Name** field saying why, or the next editor will not understand why position 3 never changes.
 
----
 
 ## Rules: deciding which layout a page gets
 
@@ -486,7 +484,6 @@ To give every article under `/recipes` a special layout, but only on the public 
 
 Rules can also be **copied**, which is the quickest way to build a family of near-identical mappings.
 
----
 
 ## Drafts, publishing and versions
 
@@ -509,7 +506,6 @@ The *Versions* view lists the published and draft versions of a layout with thei
 
 Because drafts are per-layout rather than per-user, two people editing the same layout at once will overwrite each other. Coordinate, or copy the layout and merge by hand.
 
----
 
 ## Shared layouts and linked zones
 
@@ -525,7 +521,6 @@ Rules worth knowing:
 
 A shared layout with zero links is still perfectly valid; it is just one nobody has adopted yet.
 
----
 
 ## Import, export and share links
 
@@ -539,7 +534,6 @@ Identifiers travel with the export, so an import into an environment that alread
 
 > On MongoDB installations the share endpoint requires the `explayouts_share` table, which it creates on first use. This works on MySQL, SQLite and MongoDB as of `explayouts_ui_api` v1.2.3; earlier versions emitted MySQL-only DDL and reported success for tokens they had not stored.
 
----
 
 ## Walkthrough A: customising the default design
 
@@ -563,7 +557,6 @@ The goal: add a promotional strip to the top of every page in one section, witho
 
 If the strip should later appear across the whole site, move it into a shared layout and link the zone instead of repeating it.
 
----
 
 ## Walkthrough B: building a new layout from scratch
 
@@ -596,7 +589,6 @@ The goal: a landing page layout, mapped to one location, mixing curated and auto
 
 If nothing changes, work through [Troubleshooting](#troubleshooting) — the usual answer is a higher-priority rule matching first.
 
----
 
 ## How rendering actually works
 
@@ -652,7 +644,6 @@ CacheTTL=3600
 
 Call `expLayoutsResolver::clearCache()` when rules or layouts change. With `automatic_cache_clear` on — the SPA reports it in `/api/config` — publishing handles this for you. If you change rules directly in the database, clear it yourself.
 
----
 
 ## Extending the system
 
@@ -717,7 +708,6 @@ If you add a parameter that only makes sense when another is set, follow the com
 
 > **Engine note.** Query handlers run on whichever database the site uses. MongoDB has no `JOIN` and no `GROUP BY`, and the driver returns an **empty result** for SQL it cannot translate rather than raising an error. A handler written with a join will therefore return nothing on MongoDB, silently, and look exactly like a query with no matches. If your site may run on MongoDB, branch on `eZDB::instance()->databaseName() === 'mongo'` and read the collections separately. Several shipped handlers do exactly this.
 
----
 
 ## Architecture and data model
 
@@ -766,7 +756,6 @@ The SPA talks to `expLayoutsUIApplicationApi` under `/explayouts_ui_api/app/api/
 | `content_browser` | Content picker |
 | `forms`, `parameters`, `versions`, `share` | Supporting endpoints |
 
----
 
 ## Troubleshooting
 
@@ -791,7 +780,6 @@ Check `explayouts` policies on the user's role before suspecting the data.
 **A block renders unstyled or raw.**
 The template for that definition and view type combination is probably missing. Check `block/` in the active design, and remember designs are searched in `ActiveAccessExtensions` order.
 
----
 
 ## Reference tables
 
@@ -838,10 +826,18 @@ See [Query types and their parameters](#query-types-and-their-parameters) — 12
 1. Install the tables from the SQL file matching your database.
 2. Activate `explayouts` and the related extensions.
 3. Regenerate autoloads: `php bin/php/ezpgenerateautoloads.php -e`
-4. Clear caches and restart: `php bin/php/ezcache.php --clear-all --allow-root-user && systemctl restart php-fpm`
+4. Clear caches and reload the PHP-FPM that serves the site: `php bin/php/ezcache.php --clear-all --allow-root-user`, then `systemctl reload <your PHP-FPM service>` (restart Velocity too if it serves the site).
 5. Create a layout and a rule at `/explayouts_ui_api/app`.
 6. Wire `pagelayout.tpl` to `fetch( 'explayouts', 'resolve_layout', hash() )`.
 
 ### Migration and parity
 
 The port follows the Netgen Layouts data shape, so a Netgen XML/JSON export can be imported with minimal transformation. Differences are limited to Exponential-specific query handlers and the legacy template rendering layer.
+
+## Related pages
+
+- [Layouts editor JSON API (specification)](../../specifications/6.0/explayouts-ui-api.md)
+- [Layouts editor (extension page)](../../features/6.0/extensions/explayouts_ui_api.md) and [form editor](../../features/6.0/extensions/explayouts_ui.md)
+- [The layouts-core fork](../../features/6.0/platform-layouts-core-fork.md)
+- [Behaviour changes of July and August 2026](behaviour-changes-2026-07-08.md)
+- [Templates and design guide](../../guides/templates-and-design.md)
