@@ -1,30 +1,31 @@
 # The SQL query cache
 
-The rows a `SELECT` returned, answered again without asking the database until
-a write to one of the tables it read makes them stale. For the SQL engines:
-MySQL/MariaDB (`eZMySQLiDB`), PostgreSQL (`eZPostgreSQLDB`), SQLite
-(`eZSQLite3DB`) and Oracle (`eZOracleDB` of the ezoracle extension, from its
-query cache hooks on). The MongoDB driver does not use it and is not affected.
+Read this page if your pages are slow on a full render (the first render after a purge, signed-in pages, the
+administration interface, scripts) and you want to switch the SQL query cache on, or if you restore databases or write
+to them from outside Exponential. The query cache answers a `SELECT` again from memory until a write to one of the
+tables it read makes the result stale. It is **off by default** (`settings/querycache.ini`, `Mode=off`), so an upgrade
+changes nothing until you turn it on.
 
-On Oracle, besides what is never cached anywhere, a statement that reads a
-sequence (`<sequence>.NEXTVAL`, `.CURRVAL`: the driver reads every new row's id
-that way), the clock (`SYSDATE`, `SYSTIMESTAMP`), the SCN, `SYS_GUID`,
-`SYS_CONTEXT`/`USERENV` or `DBMS_RANDOM`, and anything that reads the catalogue
-(`USER_*`, `ALL_*`, `DBA_*`, `V$*`), is always run. An anonymous PL/SQL block
-(`DECLARE ...`, `BEGIN ... END;`) counts as a write whose tables cannot be read:
-it makes every result stale.
+## In short
 
-Off by default: `settings/querycache.ini`, `Mode=off`.
+| | |
+|---|---|
+| What changed | New class `eZDBQueryCache` (`lib/ezdb/classes/ezdbquerycache.php`), hooked into the MySQL/MariaDB (`eZMySQLiDB`), PostgreSQL (`eZPostgreSQLDB`), SQLite (`eZSQLite3DB`) and Oracle (`eZOracleDB` of the ezoracle extension, from its query cache hooks on) drivers. New settings file `querycache.ini`; new buttons in Setup > Caches and a box in Setup > System information. The MongoDB driver does not use it. |
+| Who is affected | Nobody until `Mode` is changed. Once it is on: anyone who writes to the database outside Exponential (a SQL client, a restore, another program) must clear the query cache afterwards. Velocity must be restarted after the update that adds the class. |
+| How to check | `grep -n "^Mode" settings/querycache.ini` and Setup > System information, box **Database queries** |
+| How to fix | Follow [Switch it on](#switching-it-on). After a restore: `php bin/php/ezcache.php --clear-id=querycache --allow-root-user`. |
 
-It is the counterpart of the HTTP cache (`doc/bc/6.0/httpcache.md`). The HTTP
-cache removes whole renders for the pages it can store; the query cache speeds
-up **everything it cannot**: the first render after a purge, pages with query
-strings, POST responses, the administration interface, signed-in pages with a
-private permission context, cronjobs and scripts.
+It is the counterpart of the [HTTP cache](httpcache.md). The HTTP cache removes whole renders for the pages it can
+store; the query cache speeds up **everything it cannot**: the first render after a purge, pages with query strings,
+POST responses, the administration interface, signed-in pages with a private permission context, cronjobs and scripts.
 
----
+On Oracle, besides what is never cached anywhere (see [What is never cached](#what-is-never-cached)), a statement that
+reads a sequence (`<sequence>.NEXTVAL`, `.CURRVAL`: the driver reads every new row's id that way), the clock
+(`SYSDATE`, `SYSTIMESTAMP`), the SCN, `SYS_GUID`, `SYS_CONTEXT`/`USERENV` or `DBMS_RANDOM`, and anything that reads the
+catalogue (`USER_*`, `ALL_*`, `DBA_*`, `V$*`), is always run. An anonymous PL/SQL block (`DECLARE ...`,
+`BEGIN ... END;`) counts as a write whose tables cannot be read: it makes every result stale.
 
-## What it gives (measured on alpha, 2026-09-27)
+## What it gives (measured on a test installation, 2026-09-27)
 
 Every page runs the same SQL, word for word, on every request: across two
 requests for the front page, 405 of its 405 distinct statements had the same
@@ -34,7 +35,7 @@ warm page sends **no statement at all** to the database.
 ### Plain Apache (php-fpm), rendered pages
 
 The same pages back to back with `Mode=off` and `Mode=shared`, on
-`https://alpha.se7enx.com/`. A query string keeps the HTTP cache out, so every
+a test installation. A query string keeps the HTTP cache out, so every
 request is a full render. `ab -c 8`, 80 requests anonymous and 40 signed in;
 "alone" is one request with nothing else running (median of 5). Signed in is an
 administrator session.
@@ -69,7 +70,7 @@ Notes on reading the table:
   page reads) runs every statement as with `Mode=off`, plus the lookups and
   stores; its overhead has not been measured separately.
 
-### Correctness, checked on alpha
+### Correctness, checked on a test installation
 
 - the rendered HTML is byte-identical with the cache off, cold and warm;
 - a write from a CLI script is seen by the web servers at once (the next
@@ -80,7 +81,6 @@ Notes on reading the table:
   in the next read;
 - temporary tables (the shop's related-purchase list, search) are never cached.
 
----
 
 ## Settings: `settings/querycache.ini`
 
@@ -120,7 +120,6 @@ After changing the file: clear the INI cache (`php bin/php/ezcache.php
 --clear-tag=ini --allow-root-user`), reload PHP-FPM and restart Velocity
 (`./console exp:velocity restart`).
 
----
 
 ## How it works
 
@@ -191,12 +190,11 @@ marked at the outermost `COMMIT`; on `ROLLBACK` they are dropped.
 
 ### Keys
 
-`md5` of the driver class, database name, server, the statement text and
+`xxh128` (where PHP has it; `md5` otherwise) of the driver class, database name, server, the statement text and
 `arrayQuery()`'s parameters (offset, limit, column). In APCu the entries are
 `ezqc:<key>`, with `MaxAge` as their TTL, so APCu can evict them under memory
 pressure. The counters are `ezqcstat:*`.
 
----
 
 ## In the administration interface
 
@@ -230,12 +228,11 @@ The **Database queries** box shows, for the server answering the page:
 - **Clear the query cache** and **Reset the counters**.
 
 Counters and APCu entries are **per server**: Apache/php-fpm and Velocity each
-have their own APCu, so the numbers differ between `https://alpha…/admin` and
-`https://alpha…:8080/admin`. The state (generation, tables) is shared.
+have their own APCu, so the numbers differ between the admin served by Apache and
+the admin served by Velocity (port 8080). The state (generation, tables) is shared.
 
 Below it the SQL profile (next section) and its switch.
 
----
 
 ## The SQL profiler
 
@@ -255,7 +252,6 @@ repeated statements (values masked) to the log, and `var/tmp/sql_profile.hashes`
 writes each request's statement hashes to their own file, to compare two
 requests. Remove them when done; they write on every request.
 
----
 
 ## Support and maintenance
 
@@ -323,7 +319,7 @@ php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
 # OK (13 tests, 95 assertions), about 2 s (QC-08 and QC-12 wait a second each)
 ```
 
-**On a running site** (MySQL, the real drivers), each checked on alpha
+**On a running site** (MySQL, the real drivers), each checked on a test installation
 2026-09-27:
 
 - the driver hooks, on the live database: temporary tables never cached and
@@ -356,12 +352,11 @@ line means none reached the database.
 | `settings/querycache.ini` | settings |
 | `var/<site>/cache/querycache/state.ser` | the shared state |
 
-See also (September 2026): [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#sql-query-cache-querycacheini) (lookup before parsing, `xxh128` keys, catalogue never cached), [Velocity](../../features/6.0/velocity-persistent-worker-server.md).
+## Related pages
 
-## See also (16 to 30 September 2026)
-
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Behaviour changes, 16 to 30 September 2026: SQL query cache](behaviour-changes-2026-09b.md#sql-query-cache-querycacheini) (lookup before parsing, `xxh128` keys, catalogue never cached)
+- [HTTP cache](httpcache.md)
+- [Velocity](../../features/6.0/velocity-persistent-worker-server.md) and the [Velocity response cache](../../features/6.0/velocity-response-cache.md)
 - [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
-- [Velocity response cache](../../features/6.0/velocity-response-cache.md)
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
