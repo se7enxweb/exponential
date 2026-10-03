@@ -30,9 +30,15 @@ class expIniRoundTripTest extends PHPUnit\Framework\TestCase
         $base = 'var/tmp/ini-tests/roundtrip';
         foreach ( expIniEngineTestFixtures::realIniFiles() as $n => $rel )
         {
-            $dir = "$base/$n";
+            // one directory per file, named by the file: eZINI reads a file's .append and .append.php
+            // neighbours too, so a copy left there by an earlier run (the numbering shifts whenever an INI file
+            // is added) would be merged into the values read back
+            $dir = "$base/" . md5( $rel );
             if ( !is_dir( $real . $dir ) )
                 mkdir( $real . $dir, 0700, true );
+            foreach ( (array)glob( $real . $dir . '/*' ) as $stale )
+                if ( is_file( $stale ) )
+                    unlink( $stale );
             $copy = $dir . '/' . basename( $rel );
             copy( $real . $rel, $real . $copy );
             // copies of settings/override can hold secrets
