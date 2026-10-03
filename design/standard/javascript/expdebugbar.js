@@ -17,6 +17,16 @@
   if (!root || root.getAttribute('data-exp-debug-bar') !== '2' || root.classList.contains('exp-debug-js')) return;
   root.classList.add('exp-debug-js');
 
+  // A page shown inside a frame (an editor dialog, a preview) has no room for the bar and would cover its own
+  // buttons; the page around it shows the debug bar.
+  let framed = false;
+  try { framed = window.self !== window.top; } catch (e) { framed = true; }
+  if (framed) {
+    root.hidden = true;
+    root.style.display = 'none';
+    return;
+  }
+
   let data = {};
   try { data = JSON.parse((document.getElementById('exp-debug-data') || {}).textContent || '{}'); } catch (e) { data = {}; }
   const words = data.strings || {};
