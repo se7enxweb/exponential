@@ -1,8 +1,18 @@
 # Editing several items at once
 
-`content/multiedit` edits the full attribute set of many objects in one form,
-using the ordinary editor's own machinery. It is reached from the sub items
-list and from search results, both admin only.
+Read this page if your editors change many items of the same kind, or if you maintain datatypes, edit handlers or
+admin overrides of the sub items list or the search results. The new view `content/multiedit` edits the full
+attribute set of up to 50 objects in one form, with the ordinary editor's own machinery. It is reached from the sub
+items list (**More actions → Edit selected**, and **Create multiple new**) and from admin search results.
+
+## In short
+
+| | |
+|---|---|
+| What changed | New view `content/multiedit` (policy `content/edit`, each object checked with `can_edit`). Search results in the admin get a checkbox column and **Edit selected**; the sub items list gets **Edit selected** and **Create multiple new**. Drafts autosave on the `ezautosave` settings. |
+| Who is affected | Overrides of `content/searchresult.tpl`, `children_detailed.tpl`, `ezajaxsubitems_expdatatable.js` and `admin_datatable.css` (admin and admin4) do not show the new controls. Extensions with edit handlers: their handlers now also run here, per object. Datatypes need no change. |
+| How to check | `grep -n -A8 "multiedit" kernel/content/module.php` |
+| How to fix | Merge your overrides with the shipped files listed under [Files](#files). Nothing else. |
 
 ## Why it works at all
 
@@ -187,6 +197,7 @@ every object's `fetchInput()`.
 The attribute id in that name is what makes it safe here: ids are unique, so
 each object takes only the entries that belong to it, and one parse serves the
 whole form.
+
 ## Important details
 
 ### Publishing several objects is not one act
@@ -329,8 +340,9 @@ Two things that account is worth keeping in mind for:
   have;
 - `eZUser::setInformation()` only writes the password hash when the password
   and its confirmation match. Passing it once leaves an account that exists,
-  is enabled, has its role, and cannot log in, with nothing to say why - which
-  is why the script verifies `loginUser()` before reporting success.
+  is enabled, has its role, and cannot log in, with nothing to say why - so
+  check that the test account can log in (`eZUser::loginUser()`) before trusting a refusal.
+
 ### Covered by
 
 Private regression scripts covered each case above (draft ownership, open redirect, type confusion); they are not shipped. To repeat the draft-ownership case by hand you need a draft owned by another user and its object and version numbers.
@@ -377,9 +389,10 @@ Private browser scripts covered: the view renders, groups, carries drafts and em
 - **No preview.** ezautosave's preview pane belongs to a single object and has
   no meaning for a form holding many.
 
-## See also
+## Related pages
 
 - [Sub items table options](../../features/6.0/subitems-table-options.md) and [Sub items: copy selected](../../features/6.0/subitems-copy-selected.md)
 - [Content jobs](../../features/6.0/content-jobs.md)
 - [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Content model and editing guide](../../guides/content-model-and-editing.md)
