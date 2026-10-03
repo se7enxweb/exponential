@@ -20,6 +20,25 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ngsymfonytools
 ```
 
+## Template operators
+
+Registered in `autoloads/eztemplateautoload.php` of the extension; each is described with an example in the extension's `doc/USAGE.md`. They work only inside a project that runs the Symfony platform with the legacy bridge, not in this stand-alone installation.
+
+| Operator | Use |
+|---|---|
+| `symfony_include` | Include a Twig template from a `.tpl` template; content objects and nodes in the parameters are converted to the platform value objects. |
+| `symfony_render` | Render a Symfony controller (or a route) inside a legacy template. |
+| `symfony_render_esi`, `symfony_render_hinclude` | Emit an ESI or Hinclude tag for a controller or URL (falls back to a plain render when no reverse proxy is detected). |
+| `symfony_controller` | Names the controller to render; used as the argument of `symfony_render`. |
+| `symfony_path`, `symfony_url` | Relative or absolute URL of a route, as the Twig `path` and `url` functions. |
+| `symfony_is_granted` | Ask the Symfony security layer whether the current user has an attribute. |
+
+```smarty
+{symfony_include( 'NetgenTestBundle:Test:test.html.twig', hash( 'theAnswer', 42 ) )}
+```
+
+To check: read `doc/USAGE.md` and `classes/ngsymfonytools*operator.php` in the extension.
+
 ## Where to read more
 
 - [Site bundles](../../features/6.0/platform-site-bundles.md)
@@ -69,3 +88,14 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 
 - Every change with date, kind, size and release tag: [ledger of ngsymfonytools](../ledger/ngsymfonytools.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/ngsymfonytools.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- [Site bundles](../../features/6.0/platform-site-bundles.md)
+- Platform ecosystem by month: [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

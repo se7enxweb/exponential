@@ -80,3 +80,12 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of ez-support-tools](../ledger/ez-support-tools.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/ez-support-tools.md)
+- Platform ecosystem by month: [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2025-07](months/2025-07.md), [2025-09](months/2025-09.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

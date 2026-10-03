@@ -59,3 +59,13 @@ composer require se7enxweb/ezplatform-standard-design
 
 - Every change with date, kind, size and release tag: [ledger of ezplatform-standard-design](../ledger/ezplatform-standard-design.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/ezplatform-standard-design.md)
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- Platform ecosystem by month: [2025-07](months/2025-07.md), [2025-09](months/2025-09.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

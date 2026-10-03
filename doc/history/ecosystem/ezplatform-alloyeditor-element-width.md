@@ -42,3 +42,13 @@ composer require se7enxweb/ezplatform-alloyeditor-element-width
 
 - Every change with date, kind, size and release tag: [ledger of ezplatform-alloyeditor-element-width](../ledger/ezplatform-alloyeditor-element-width.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/ezplatform-alloyeditor-element-width.md)
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- Platform ecosystem by month: [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

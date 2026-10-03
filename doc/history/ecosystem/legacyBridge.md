@@ -20,6 +20,21 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/legacy-bridge
 ```
 
+## Commands
+
+Verified in `bundle/Command/*.php` of the repository (the `setName` and `setDescription` of each class). Run them from the Symfony project that hosts the bridge, as `php bin/console <name>`; `php bin/console <name> --help` prints the help of each.
+
+| Command | What it does (from the command description) | Deprecated alias (still accepted) |
+|---|---|---|
+| `exponential:legacy:init` | Prepares a platform installation for legacy usage. | `ezpublish:legacy:init` |
+| `exponential:legacy:configure` | Creates the platform configuration from an existing legacy installation directory. | `ezpublish:configure` |
+| `exponential:legacy:install-extensions` | Installs legacy extensions that Symfony bundles carry (symlink by default) into the legacy extensions directory. | `ezpublish:legacybundles:install_extensions` |
+| `exponential:legacy:symlink` | Installs legacy project settings and design files from `src` into the legacy directory. | `ezpublish:legacy:symlink` |
+| `exponential:legacy:assets-install` | Installs assets of the legacy installation and the wrapper scripts for the front controllers. | `ezpublish:legacy:assets_install` |
+| `exponential:legacy:script` | Runs a legacy command line script inside the bridge. | `ezpublish:legacy:script` |
+
+Not run here: these commands need a Symfony project with the bridge installed, which this installation is not. To check, open the command classes named above.
+
 ## Where to read more
 
 - [Legacy bridge](../../features/6.0/legacy-bridge.md)
@@ -172,3 +187,14 @@ composer require se7enxweb/legacy-bridge
 
 - Every change with date, kind, size and release tag: [ledger of legacyBridge](../ledger/legacyBridge.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/legacyBridge.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- [Site bundles](../../features/6.0/platform-site-bundles.md)
+- Platform ecosystem by month: [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

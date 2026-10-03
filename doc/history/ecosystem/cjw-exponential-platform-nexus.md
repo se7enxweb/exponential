@@ -14,11 +14,7 @@ Same code base as Nexus; adds the exponential-cjw installer type with SQLite see
 
 Nexus with the CJW starter content.
 
-Install it with Composer (a project that already requires the platform pulls it in by itself):
-
-```bash
-composer require se7enxweb/cjw-exponential-platform-nexus
-```
+This repository is a Composer project (type `project`), the CJW flavour of Nexus. Install it as a project (clone or `composer create-project`), not with `composer require`; check its README for the exact steps.
 
 ## Where to read more
 
@@ -172,3 +168,14 @@ Also: 7 merge or funding-metadata commits by the team (no user benefit; see the 
 
 - Every change with date, kind, size and release tag: [ledger of cjw-exponential-platform-nexus](../ledger/cjw-exponential-platform-nexus.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/cjw-exponential-platform-nexus.md)
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- Platform ecosystem by month: [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md), [2026-07](months/2026-07.md)
+
+<!-- rev2-see-also:end -->

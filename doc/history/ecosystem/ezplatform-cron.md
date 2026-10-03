@@ -48,3 +48,12 @@ composer require se7enxweb/ezplatform-cron
 
 - Every change with date, kind, size and release tag: [ledger of ezplatform-cron](../ledger/ezplatform-cron.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/ezplatform-cron.md)
+- Platform ecosystem by month: [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

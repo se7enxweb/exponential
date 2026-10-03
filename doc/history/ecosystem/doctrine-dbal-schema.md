@@ -55,3 +55,13 @@ composer require se7enxweb/doctrine-dbal-schema
 
 - Every change with date, kind, size and release tag: [ledger of doctrine-dbal-schema](../ledger/doctrine-dbal-schema.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/doctrine-dbal-schema.md)
+- [Framework forks on PHP 8.5](../../features/6.0/platform-php85-framework-forks.md)
+- Platform ecosystem by month: [2025-07](months/2025-07.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

@@ -55,3 +55,12 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 
 - Every change with date, kind, size and release tag: [ledger of ezplatform-query-fieldtype](../ledger/ezplatform-query-fieldtype.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/ezplatform-query-fieldtype.md)
+- Platform ecosystem by month: [2025-09](months/2025-09.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

@@ -14,12 +14,53 @@ The code base of the sevenx_dse extension, which embeds it in the Exponential ad
 
 Browse tables, run SQL, export and import for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle and MongoDB.
 
+The upstream README (checked at HEAD of the clone) lists the supported databases as MySQL, MariaDB, PostgreSQL, MS SQL, SQLite, Oracle, MongoDB and SimpleDB, plus Elasticsearch (beta) and ClickHouse (alpha); the drivers are the `admin/drivers/*.inc.php` files. Inside Exponential the tool is shipped by the `sevenx_dse` extension (`extension/sevenx_dse/adminneo`).
+
 ## Where to read more
 
 - [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md)
 - [sevenx_dse extension](../../features/6.0/extensions/sevenx_dse.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
+<!-- rev2-listed-rows:start -->
+## Security, performance and upgrade changes in the history
+
+These changes are classified in the coverage record and are not named elsewhere on this page. Most are upstream history that the fork carries; the date and the commit subject are the ledger entry (see the [full ledger](../ledger/README.md)). Read the subject for what changed; for the exact effect, open the commit in the repository.
+
+### Security (5)
+
+- 2024-08-16 `13258de1` Fix several bugs and security issues in AdminerFileUpload plugin
+- 2024-10-07 `2d4b7365` Refactor generating of private key and random strings
+- 2025-02-18 `01a3b817` AdminerFileUpload: Simplify random name generating
+- 2025-04-10 `e71a753c` Security: Disallow writing temporary files to symlinks
+- 2025-09-09 `e9b050b1` More secure randomness on PHP5, 256 bits of entropy in random strings
+
+### Performance (5)
+
+- 2024-11-27 `434adacf` Change colors of default button, optimise its highlighting
+- 2025-02-28 `92f18518` Speed up with disabled output buffering
+- 2025-03-31 `838b61d3` Optimize retrieving columns for schema
+- 2025-10-06 `a424a5ef` GeminiSqlPlugin: Optimise the prompt if no database is selected
+- 2025-10-16 `4361cb45` Optimise JS for resetting record value function while editing
+
+### Behaviour and upgrade (13)
+
+- 2021-04-03 `857cbf03` Fix version condition for deprecated mapping types
+- 2024-09-06 `08637669` Replace deprecated <acronym> with <abbr>
+- 2024-10-15 `dd9a4a2b` Remove deprecated HTML table parameters
+- 2024-11-27 `6109a115` Fix some deprecation warnings
+- 2025-01-23 `d0576ab1` SQLite: Remove support for SQLite 2
+- 2025-03-07 `72f3fe74` Remove legacy code (magic quotes)
+- 2025-03-08 `e6c2f27c` MySQL: Drop support for MySQL 4
+- 2025-03-19 `867738a6` Remove migration of deprecated MySQL session data
+- 2025-04-03 `e94eed87` Editor: Remove support for sending mass e-mails
+- 2025-04-05 `8d98bb09` Rename methods for backward keys, strict types
+- 2025-04-10 `2a7235a8` Remove backward compatibility for MySQL users logged to AdminNeo 4.11 and older
+- 2025-10-24 `3595129a` Move backward keys retrieving to drivers
+- 2026-02-08 `4182456b` Avoid deprecated each()
+
+<!-- rev2-listed-rows:end -->
 
 ## Counts by kind
 
@@ -90,3 +131,12 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of adminneo](../ledger/adminneo.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/adminneo.md)
+- Platform ecosystem by month: [2018-11](months/2018-11.md), [2021-03](months/2021-03.md), [2021-04](months/2021-04.md), [2021-05](months/2021-05.md), [2021-06](months/2021-06.md), [2021-08](months/2021-08.md), [2021-09](months/2021-09.md), [2021-10](months/2021-10.md), [2021-11](months/2021-11.md), [2022-02](months/2022-02.md), [2022-03](months/2022-03.md), [2022-07](months/2022-07.md), [2022-10](months/2022-10.md), [2022-11](months/2022-11.md), [2023-05](months/2023-05.md), [2023-06](months/2023-06.md), [2023-07](months/2023-07.md), [2023-08](months/2023-08.md), [2023-11](months/2023-11.md), [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-07](months/2024-07.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md)
+
+<!-- rev2-see-also:end -->

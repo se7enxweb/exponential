@@ -129,3 +129,14 @@ The history covers 6556 ledger changes in 53 repositories since December 2023. 1
 - `exponential` shares every hash with the main installation repository; the narrative for it is in the main chronicle.
 - Merge commits, funding metadata and repository language settings are classified as having no user benefit; every such row names its reason in the coverage table.
 - Product names of upstream projects (Ibexa, Netgen, eZ Platform) appear only where a package or repository really has that name.
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Complete ledgers](ledger/README.md)
+- [Platform package map](../specifications/6.0/platform-package-map.md) and [console commands](../specifications/6.0/platform-console-commands.md)
+- [Package forks and command renames](../bc/6.0/platform-package-forks-and-command-renames.md)
+- [Admin interface](../features/6.0/platform-admin-ui-fork.md), [Nexus starter](../features/6.0/platform-nexus-starter.md), [layouts core](../features/6.0/platform-layouts-core-fork.md), [framework forks](../features/6.0/platform-php85-framework-forks.md), [site bundles](../features/6.0/platform-site-bundles.md)
+- [Release changelogs of the packages](../changelogs/extensions/)
+
+<!-- rev2-see-also:end -->

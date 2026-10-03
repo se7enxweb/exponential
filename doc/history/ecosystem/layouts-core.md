@@ -28,6 +28,36 @@ composer require se7enxweb/layouts-core
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
+<!-- rev2-listed-rows:start -->
+## Security, performance and upgrade changes in the history
+
+These changes are classified in the coverage record and are not named elsewhere on this page. Most are upstream history that the fork carries; the date and the commit subject are the ledger entry (see the [full ledger](../ledger/README.md)). Read the subject for what changed; for the exact effect, open the commit in the repository.
+
+### Security (4)
+
+- 2025-11-11 `1d5032714` Replace usage of ezyang html purifier with Symfony Html Sanitizer component
+- 2025-12-15 `e5cdcd61e` Remove custom wrapper around Symfonys HtmlSanitizer
+- 2025-12-16 `932903874` Rename ApiCsrfValidationListener to AppCsrfValidationListener
+- 2025-12-17 `1a35168f3` Do not run CSRF validation on app forms
+
+### Performance (1)
+
+- 2025-10-28 `08e55d125` Various little code optimizations
+
+### Behaviour and upgrade (9)
+
+- 2025-07-15 `bb12b1e1f` Move SYMFONY_DEPRECATIONS_HELPER variable to Composer config
+- 2025-07-15 `3c95d79a2` Remove support for Symfony 6.2 and 6.3
+- 2025-11-10 `3b06316da` Remove deprecations across the board: symfony, doctrine and so on
+- 2025-11-11 `f3c9d6625` Use DsnParser in Doctrine, fix more deprecations
+- 2025-11-11 `29fb2386b` Fix some more deprecations
+- 2025-11-12 `ea6574da1` Remove wrong deprecation
+- 2025-11-17 `e004a96d7` Use PHPUnit deprecations reporter
+- 2025-11-20 `49bcbc946` Remove deprecations
+- 2025-12-03 `1bfea6fdd` Remove usage of deprecated DI Extension class
+
+<!-- rev2-listed-rows:end -->
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -75,3 +105,13 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of layouts-core](../ledger/layouts-core.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/layouts-core.md)
+- [Layouts core fork](../../features/6.0/platform-layouts-core-fork.md)
+- Platform ecosystem by month: [2024-05](months/2024-05.md), [2024-09](months/2024-09.md), [2025-02](months/2025-02.md), [2025-07](months/2025-07.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

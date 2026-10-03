@@ -22,6 +22,53 @@ Install and run Exponential Platform v5 with no database server at all (SQLite),
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
+<!-- rev2-listed-rows:start -->
+## Security, performance and upgrade changes in the history
+
+These changes are classified in the coverage record and are not named elsewhere on this page. Most are upstream history that the fork carries; the date and the commit subject are the ledger entry (see the [full ledger](../ledger/README.md)). Read the subject for what changed; for the exact effect, open the commit in the repository.
+
+### Security (5)
+
+- 2024-05-23 `eeb08b493` IBX-8140: Enabled authenticator manager-based security (#368)
+- 2024-06-19 `d369ebe6e` IBX-8356: Deprecated `Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface` to be replaced with Symfony-based authorization in 5.0 (#
+- 2024-07-01 `62e04b2fc` IBX-8356: Removed `Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface` to be replaced with Symfony-based authentication
+- 2024-08-01 `b4a44ccc2` IBX-8558: Removed `GuardRepositoryAuthenticationProvider` due to Symfony security deprecations (#405)
+- 2025-06-03 `13b64dc4c` Removed deprecated getName method from RandomSortClauseHandlerFactory (#570)
+
+### Performance (2)
+
+- 2024-06-07 `c88c39759` IBX-8019: Added performance consideration notice to `LocationService::loadLocationChildren` (#407)
+- 2024-10-31 `623bbc332` Optimised content thumbnail resolving (#441)
+
+### Behaviour and upgrade (24)
+
+- 2024-04-25 `669c3002c` [BC break] Added `implements \Stringable` to `Translation` Value Object (#344)
+- 2024-06-27 `2c706aef2` IBX-8224: Dropped BackwardCompatibleCommand usage (#386)
+- 2024-07-05 `f44f605b2` Deprecated `CONSTANT_AUTH_TIME_SETTING` (#401)
+- 2024-07-23 `da23f87c5` IBX-8138: Refactored deprecated `loadUserByUsername` method (#400)
+- 2024-09-16 `b9f1582de` Aligned PHPStan baseline and updated Symfony deprecations helper setting (#426)
+- 2024-11-07 `78236ffc3` IBX-8805: Dropped deprecated Twig Functions&Filters (#450)
+- 2025-02-15 `3738528c5` [PHPUnit] Bumped number of expected direct deprecations (#482)
+- 2025-02-16 `dd928f579` [CLI] Replaced deprecated Command::{$defaultName, $defaultDescription} with the AsCommand attribute
+- 2025-02-16 `b4d33e044` [Serializer] Replaced usage of deprecated Symfony\Component\Serializer\Normalizer\ContextAwareDenormalizerInterface
+- 2025-02-16 `b16d98681` [HTTP] Replaced usage of deprecated Symfony\Component\HttpKernel\UriSigner
+- 2025-02-24 `7048240e6` Removed deprecated SearchResult::$count property (#489)
+- 2025-02-25 `cdfba458b` [Twig] Removed usage of deprecated spaceless filter (#490)
+- 2025-03-01 `e4d79cf58` Removed deprecated ContentType::isContainer property (#491)
+- 2025-03-05 `2ae80f9b3` Removed deprecated MaskGenerator::generateLanguageMask method  (#503)
+- 2025-03-07 `a874f9810` Removed deprecated PermissionSubtree::createFromQueryBuilder method (#506)
+- 2025-03-07 `4dfa29f4a` Replaced deprecated FieldNameResolver::getFieldNames method with FieldNameResolver::getFieldTypes (#507)
+- 2025-03-15 `ed27a78f9` Removed deprecated buildSPIFieldDefinitionUpdate and buildSPIFieldDefinitionCreate methodd from ContentTypeDomainMapper (#504)
+- 2025-03-15 `049e9c386` Removed deprecated timestamp property from DataAndTimeConverter and DateConverter (#509)
+- 2025-05-03 `50191dcbc` [doctrine/dbal] Replaced usage of deprecated fetchColumn method with fetchOne
+- 2025-05-16 `969de8188` [symfony/dependency-injection] Replaced deprecated !tagged YAML tag to !tagged_iterator
+- 2025-05-22 `1af6f9d98` IBX-8226: Removed deprecated PHP deprecations handler (#542)
+- 2025-05-26 `9edc9f795` Removed deprecated getName method from GatewayFactory (#544)
+- 2025-05-28 `aed11eab8` Removed deprecated mergeGlobals method (#545)
+- 2025-06-03 `752e91892` Replaced deprecated DBAL count expression and other minor deprecations (#571)
+
+<!-- rev2-listed-rows:end -->
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -87,3 +134,14 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of core](../ledger/core.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/core.md)
+- [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-06](months/2024-06.md), [2024-07](months/2024-07.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

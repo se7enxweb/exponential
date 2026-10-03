@@ -20,6 +20,10 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ibexa-legacy-bridge
 ```
 
+## Commands
+
+The Platform 4 bridge carries one command, verified in `bundle/Command/LegacyEmbedScriptCommand.php`: `exponential:legacy:script` runs a legacy command line script inside the bridge (`php bin/console exponential:legacy:script --help` in a project that has the bridge). The other `exponential:legacy:*` commands belong to the [legacy bridge](legacyBridge.md) for Platform 3.x / 5.x.
+
 ## Where to read more
 
 - [Legacy bridge](../../features/6.0/legacy-bridge.md)
@@ -81,3 +85,14 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of ibexa-legacy-bridge---7x](../ledger/ibexa-legacy-bridge---7x.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/ibexa-legacy-bridge---7x.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- [Site bundles](../../features/6.0/platform-site-bundles.md)
+- Platform ecosystem by month: [2024-02](months/2024-02.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-09](months/2024-09.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

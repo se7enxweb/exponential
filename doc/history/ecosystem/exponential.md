@@ -4,7 +4,7 @@
 
 ## What it is
 
-The Exponential 6 legacy kernel (Composer package se7enxweb/exponential, PHP 8.1 and newer).
+The Exponential 6 legacy kernel (Composer package se7enxweb/exponential). Its composer.json allows PHP 8.1 up to 8.8 (`"php": "^8.1 || ... || ^8.8"`); this installation runs PHP 8.5. Check with `grep '"php"' composer.json`.
 
 ## How it relates to Exponential
 
@@ -443,3 +443,14 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of exponential](../ledger/exponential.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/exponential.md)
+- [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-06](months/2024-06.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

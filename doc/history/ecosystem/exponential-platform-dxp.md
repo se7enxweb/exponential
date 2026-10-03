@@ -14,11 +14,13 @@ Pulls the forks as one require; replaced ibexa packages by se7enxweb ones in Mar
 
 One package name for a full v5 install.
 
-Install it with Composer (a project that already requires the platform pulls it in by itself):
+This is a metapackage. A new site is created from the skeleton, which requires it:
 
 ```bash
-composer require se7enxweb/exponential-platform-dxp
+composer create-project se7enxweb/exponential-platform-dxp-skeleton exponential_website
 ```
+
+An existing project can add it with `composer require se7enxweb/exponential-platform-dxp`.
 
 ## Where to read more
 
@@ -109,3 +111,14 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of exponential-platform-dxp](../ledger/exponential-platform-dxp.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/exponential-platform-dxp.md)
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-06](months/2024-06.md), [2024-07](months/2024-07.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

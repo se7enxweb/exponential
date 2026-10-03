@@ -14,12 +14,39 @@ Skeleton for new Platform v5 Nexus projects; uses the se7enxweb forks of layouts
 
 composer + one install command gives a v5 site with layouts, REST, GraphQL and admin.
 
+## Install
+
+The repository is a project, not a library: its composer.json has no package name, so `composer require` does not apply. The README Quick Start (checked against the README at HEAD of the clone) is: clone the project, install the PHP dependencies, copy `.env` to `.env.local`, install the demo database (SQLite needs no database server), build the assets with Node 22, generate the JWT keypair and the GraphQL schema, and start the dev server.
+
+```bash
+composer install
+cp .env .env.local
+php bin/console exponential:install exponential-media --no-interaction
+yarn install && yarn build:prod
+php bin/console assets:install --symlink --relative public && yarn ibexa:build
+php bin/console lexik:jwt:generate-keypair
+php bin/console ibexa:graphql:generate-schema
+```
+
+These commands belong to a Symfony project, not to this installation; run them in the cloned starter. To check them, read the Quick Start section of the starter README.
+
 ## Where to read more
 
 - [Nexus starter](../../features/6.0/platform-nexus-starter.md)
 - [Release changelog](../../changelogs/extensions/exponential-platform-nexus-starter.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
+<!-- rev2-listed-rows:start -->
+## Security, performance and upgrade changes in the history
+
+These changes are classified in the coverage record and are not named elsewhere on this page. Most are upstream history that the fork carries; the date and the commit subject are the ledger entry (see the [full ledger](../ledger/README.md)). Read the subject for what changed; for the exact effect, open the commit in the repository.
+
+### Behaviour and upgrade (1)
+
+- 2024-02-08 `7d6bc3dc6` NGSTACK-673: update for breaking change in Site API
+
+<!-- rev2-listed-rows:end -->
 
 ## Counts by kind
 
@@ -113,3 +140,14 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of exponential-platform-nexus-starter](../ledger/exponential-platform-nexus-starter.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/exponential-platform-nexus-starter.md)
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- Platform ecosystem by month: [2023-08](months/2023-08.md), [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-07](months/2024-07.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

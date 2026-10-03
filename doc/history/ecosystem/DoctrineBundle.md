@@ -47,3 +47,13 @@ composer require se7enxweb/doctrine-bundle
 
 - Every change with date, kind, size and release tag: [ledger of DoctrineBundle](../ledger/DoctrineBundle.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/DoctrineBundle.md)
+- [Framework forks on PHP 8.5](../../features/6.0/platform-php85-framework-forks.md)
+- Platform ecosystem by month: [2026-01](months/2026-01.md)
+
+<!-- rev2-see-also:end -->

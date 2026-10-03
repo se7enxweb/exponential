@@ -14,11 +14,14 @@ Long-term-support line that carries the legacy kernel next to the Symfony stack;
 
 Composer project for the 2.5 LTS line on PHP 8.1 and 8.2.
 
-Install it with Composer (a project that already requires the platform pulls it in by itself):
+This repository is a Composer project (type `project`), not a library, so you create a new site from it:
 
 ```bash
-composer require se7enxweb/exponential-platform-legacy
+composer create-project se7enxweb/exponential-platform-legacy:2.5.0.x-dev exponential_website
+cd exponential_website
 ```
+
+Check the repository README for the database step that follows (`.env.local`, then `php bin/console exponential:install` or the documented import).
 
 ## Where to read more
 
@@ -133,3 +136,14 @@ Also: 5 merge or funding-metadata commits by the team (no user benefit; see the 
 
 - Every change with date, kind, size and release tag: [ledger of exponential-platform-legacy](../ledger/exponential-platform-legacy.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/exponential-platform-legacy.md)
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- Platform ecosystem by month: [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md), [2026-07](months/2026-07.md)
+
+<!-- rev2-see-also:end -->

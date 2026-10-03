@@ -47,3 +47,14 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of oss-skeleton](../ledger/oss-skeleton.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/oss-skeleton.md)
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- Platform ecosystem by month: [2024-05](months/2024-05.md), [2025-01](months/2025-01.md), [2025-05](months/2025-05.md), [2025-12](months/2025-12.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md)
+
+<!-- rev2-see-also:end -->

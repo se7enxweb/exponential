@@ -82,3 +82,13 @@ Also: 2 merge or funding-metadata commits by the team (no user benefit; see the 
 
 - Every change with date, kind, size and release tag: [ledger of symfony](../ledger/symfony.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/symfony.md)
+- [Framework forks on PHP 8.5](../../features/6.0/platform-php85-framework-forks.md)
+- Platform ecosystem by month: [2025-08](months/2025-08.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->

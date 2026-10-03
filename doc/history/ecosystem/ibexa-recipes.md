@@ -19,6 +19,21 @@ Flex configures bundles on composer require.
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
+<!-- rev2-listed-rows:start -->
+## Security, performance and upgrade changes in the history
+
+These changes are classified in the coverage record and are not named elsewhere on this page. Most are upstream history that the fork carries; the date and the commit subject are the ledger entry (see the [full ledger](../ledger/README.md)). Read the subject for what changed; for the exact effect, open the commit in the repository.
+
+### Security (5)
+
+- 2024-05-23 `cf3ce7f` IBX-8140: Enabled authenticator manager-based security (#118)
+- 2024-08-14 `8a7c7ef` IBX-8656: Reworked OAuth2 client authentication to comply with new Symfony security (#133)
+- 2024-08-20 `1a4333f` IBX-8657: Reworked CDP security layer to not rely on deprecated guard authenticators (#136)
+- 2024-08-21 `8b9ed28` IBX-8691: Simplified security config for OAuth2 server usages (#135)
+- 2025-05-29 `3ec1063` IBX-9944: Add support for stateless CSRF protection in admin-ui (#183)
+
+<!-- rev2-listed-rows:end -->
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -68,3 +83,13 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of ibexa-recipes](../ledger/ibexa-recipes.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/ibexa-recipes.md)
+- [Layouts core fork](../../features/6.0/platform-layouts-core-fork.md)
+- Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-06](months/2024-06.md), [2024-07](months/2024-07.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2026-03](months/2026-03.md)
+
+<!-- rev2-see-also:end -->

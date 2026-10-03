@@ -79,3 +79,12 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 
 - Every change with date, kind, size and release tag: [ledger of mediata-ezpage-fieldtype-bundle-main](../ledger/mediata-ezpage-fieldtype-bundle-main.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/mediata-ezpage-fieldtype-bundle-main.md)
+- Platform ecosystem by month: [2026-03](months/2026-03.md)
+
+<!-- rev2-see-also:end -->

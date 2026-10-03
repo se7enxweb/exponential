@@ -60,3 +60,14 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 
 - Every change with date, kind, size and release tag: [ledger of exponential-legacy-installer](../ledger/exponential-legacy-installer.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/exponential-legacy-installer.md)
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
+- Platform ecosystem by month: [2025-08](months/2025-08.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md), [2026-06](months/2026-06.md)
+
+<!-- rev2-see-also:end -->

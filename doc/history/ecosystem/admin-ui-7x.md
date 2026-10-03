@@ -27,6 +27,43 @@ composer require se7enxweb/admin-ui
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
+<!-- rev2-listed-rows:start -->
+## Security, performance and upgrade changes in the history
+
+These changes are classified in the coverage record and are not named elsewhere on this page. Most are upstream history that the fork carries; the date and the commit subject are the ledger entry (see the [full ledger](../ledger/README.md)). Read the subject for what changed; for the exact effect, open the commit in the repository.
+
+### Security (7)
+
+- 2024-05-23 `a340f4099` IBX-8140: Enabled authenticator manager-based security (#1264)
+- 2025-05-30 `ffe911133` IBX-9944: Add support for stateless CSRF protection in admin-ui (#1556)
+- 2025-06-05 `3581728bd` Moved ibexa_get_rest_csrf_token_intention twig function to ibexa/rest package (#1576)
+- 2025-06-11 `acaa620d4` IBX-9793: Fixed XSS issues in several places
+- 2025-06-11 `72a64d90d` IBX-9793: Fixed XSS issues in several places (see commit description)
+- 2025-10-16 `da3bfbfbc` [Security] IBX-10200: Fix XSS in reschedule/cancel-schedule modal
+- 2025-10-16 `2016a6933` IBX-10286: Fix Multilevel Popup Menu  XSS
+
+### Performance (2)
+
+- 2024-12-13 `843ac719e` IBX-9314: UDW's suggestions query performance optimization (#1406)
+- 2025-07-16 `10871954f` IBX-10331: Fixed memory leak while compiling assets (#1624)
+
+### Behaviour and upgrade (12)
+
+- 2024-06-27 `6eaf79f5b` IBX-8224: Dropped BackwardCompatibleCommand (#1277)
+- 2024-11-07 `fa233476e` IBX-8534: Dropped deprecated Relation related methods usage (#1379)
+- 2024-12-12 `8bd3e61b2` Enhanced @deprecated phpdoc tag usage (#1398)
+- 2025-02-09 `5ac9bf647` [CLI] Replaced deprecated Command::{$defaultName, $defaultDescription} with the AsCommand attribute
+- 2025-02-24 `79f6dfc45` Removed usage of deprecated SearchResult::$count property (#1467)
+- 2025-02-25 `c0bcfc9f4` [Twig] Removed usage of deprecated spaceless filter (#1468)
+- 2025-02-25 `99b09a60f` Allowed symfony/deprecation-contracts ^3.0 installation (#1471)
+- 2025-05-17 `4078a4c6b` [twig/twig] Removed usage of deprecated spaceless filter
+- 2025-05-28 `84cd19fd0` Removed twig deprecation (#1564)
+- 2025-06-03 `c99327e74` Removed deprecated usage of Ibexa\Core\Repository\Values\User\User::$content property (#1575)
+- 2025-07-17 `04e5be630` Update deprecation removal version from 5.0 to 6.0 in admin-ui components (#1642)
+- 2025-07-28 `75cc63661` Adapted to deprecated `null` value for content structs in `BaseContentType` (#1646)
+
+<!-- rev2-listed-rows:end -->
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -109,3 +146,13 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - Every change with date, kind, size and release tag: [ledger of admin-ui-7x](../ledger/admin-ui-7x.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
+
+<!-- rev2-see-also:start -->
+## See also
+
+- [Ecosystem overview](../ecosystem.md)
+- [Complete ledger of this repository](../ledger/admin-ui-7x.md)
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-06](months/2024-06.md), [2024-07](months/2024-07.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
+
+<!-- rev2-see-also:end -->
