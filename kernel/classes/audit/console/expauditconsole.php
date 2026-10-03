@@ -352,7 +352,10 @@ class expAuditConsole
     public static function label( $name )
     {
         $label = class_exists( 'expAuditTaxonomy' ) ? expAuditTaxonomy::label( $name ) : $name;
-        return class_exists( 'ezpI18n' ) ? ezpI18n::tr( 'kernel/audit', $label ) : $label;
+        // Only the names of the taxonomy are translated: the label of a name found in a stored event that the taxonomy
+        // does not know (a retired or test event) is not in the catalogue and can never be, so it is shown as it is.
+        $known = class_exists( 'expAuditTaxonomy' ) && array_key_exists( $name, expAuditTaxonomy::registry() );
+        return $known && class_exists( 'ezpI18n' ) ? ezpI18n::tr( 'kernel/audit', $label ) : $label;
     }
 
     /**

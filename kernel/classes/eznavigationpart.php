@@ -90,6 +90,7 @@ class eZNavigationPart
         ezpI18n::tr( 'kernel/navigationpart', 'Setup', 'Navigation part' );
         ezpI18n::tr( 'kernel/navigationpart', 'My account', 'Navigation part' );
         ezpI18n::tr( 'kernel/navigationpart', 'Update', 'Navigation part' );
+        ezpI18n::tr( 'kernel/navigationpart', 'Audit', 'Navigation part' );
     }
 
 }
