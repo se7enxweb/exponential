@@ -1,23 +1,39 @@
 # OPML exports
 
-## Added: OPML 2.0 as a format an RSS export can be written in
+Read this page if you publish RSS feeds from Exponential, or if you override the RSS edit and list templates. An RSS
+export can now be written as an **OPML 2.0 document**: a list of other feeds, the format feed readers import when
+somebody publishes their subscriptions. Upgrading needs one database update; existing exports do not change.
 
-An RSS export has always been a feed of articles gathered from content. It can
-now also be an **OPML document**: a list of other feeds, which is what readers
-import when somebody publishes their subscriptions.
+## In short
 
-An export set to OPML has no content source and no class mapping. What it has
-instead is a set of **outlines**, each naming another export on this
-installation, a content node, or a plain address. The address of each one is
-worked out when the document is written, so renaming a feed cannot leave a dead
-entry behind.
+| | |
+|---|---|
+| What changed | New format value `OPML` for `ezrss_export.rss_version`, new table `ezrss_export_opml_item`, new column `ezrss_export.opml_head`, new setting `site.ini [RSSSettings] OPMLMaxOutlines` (default `5000`). The format drop-down is labelled *Feed format*; the stored values are unchanged. Imports fetch `http` and `https` only. |
+| Who is affected | Every installation that upgrades the database (new table and column). Override templates of the RSS edit page (new variables; `rss_version_array` is still set). Imports from addresses that are not `http` or `https`. |
+| How to check | `grep -n "ezrss_export_opml_item" update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql` and, after the update, that the table exists in your database. |
+| How to fix | Run the 6.0.0 to 6.0.15 database update for your engine (see [Upgrade](#upgrade)). |
 
-Nothing that already existed changes. `rss_version` still stores `1.0`, `2.0`
-and `ATOM`; `OPML` is a fourth value alongside them.
+## Upgrade
 
----
+The new table and column are in the update script of each database engine:
 
-## Turning an export into an OPML document
+```
+update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+```
+
+A clean install gets them from `kernel/sql/*` and `share/db_schema.dba`. Nothing else is needed: `rss_version` still
+stores `1.0`, `2.0` and `ATOM`, and `OPML` is a fourth value beside them.
+
+## What an OPML export is
+
+An RSS export has always been a feed of articles gathered from content. An export set to OPML has no content source
+and no class mapping. It has **outlines** instead, each naming another export on this installation, a content node,
+or a plain address. The address of each outline is worked out when the document is written, so renaming a feed
+cannot leave a dead entry behind.
+
+## Turn an export into an OPML document
 
 `/rss/edit_export/<id>` → **Feed format** → `OPML 2.0 (list of feeds)`.
 
@@ -30,7 +46,6 @@ behind each option is unchanged**, so anything that reads or writes
 
 The feed is served from `/rss/feed/<access url>` as `text/x-opml`.
 
----
 
 ## Database
 
@@ -77,12 +92,6 @@ installation with no OPML export never fills it in.
 Keys: `ownerName`, `ownerEmail`, `ownerId`, `docs`, `expansionState`,
 `vertScrollState`, `windowTop`, `windowLeft`, `windowBottom`, `windowRight`.
 
-### Upgrading
-
-Both are in `update/database/{mysql,postgresql,sqlite}/6.0/dbupdate-6.0.0-6.0.15.sql`,
-and in `kernel/sql/*` and `share/db_schema.dba` for a clean install.
-
----
 
 ## PHP API
 
@@ -185,11 +194,16 @@ Shared by `/rss/list` and by the browser inside the edit page.
 - `fetchableURL( $url )` — the address to fetch, or `false`.
 - `isFetchableURL( $url )` — the same, as a boolean.
 
----
 
-## INI
+## Settings
 
-`settings/site.ini`, `[RSSSettings]`:
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `site.ini` | `[RSSSettings]` | `AvailableVersionList[]` | adds `OPML` | global or siteaccess |
+| `site.ini` | `[RSSSettings]` | `OPMLMaxOutlines` | `5000` (never above `50000`) | global or siteaccess |
+| `site.ini` | `[RSSSettings]` | `NumberOfObjectsList[]` | adds `100`, `250`, `350`, `500`, `1000` | global or siteaccess |
+
+The shipped lines:
 
 ```ini
 AvailableVersionList[]=OPML
@@ -205,7 +219,6 @@ NumberOfObjectsList[]=500
 NumberOfObjectsList[]=1000
 ```
 
----
 
 ## Templates
 
@@ -231,7 +244,6 @@ headings, page numbers — is a submit button that writes the draft first and th
 acts. The page needs no JavaScript; the script that is there only widens the
 click target and makes Enter in the search box search rather than save.
 
----
 
 ## Security
 
@@ -257,7 +269,6 @@ Also:
   of a feed somebody deliberately took out of service.
 - An export cannot list itself.
 
----
 
 ## Not failing
 
@@ -273,7 +284,6 @@ Also:
 | Size | `opmlMaxOutlines()` bounds how much of a document is built at once. |
 | Rubbish in the database | A head column that is not JSON reads as nothing filled in. A row pointing at a feed that has been deleted is left out. |
 
----
 
 ## Testing
 
@@ -296,13 +306,11 @@ php vendor/bin/phpunit --testsuite kernel-classes --filter eZRSSExportOPMLItemTe
 
 Run `php vendor/bin/phpunit --list-tests --testsuite security` to see the tests without running them (not run for this page; run them in a copy of the installation).
 
-## See also
-
-- [RSS: Apple Podcasts feeds, a paged feed list and safer exports](../../features/6.0/rss-podcast-and-feed-list.md)
-- [RSS import cleanup](cleanuprss.md)
-- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
 ## Related pages
 
+- [RSS: Apple Podcasts feeds, a paged feed list and safer exports](../../features/6.0/rss-podcast-and-feed-list.md)
 - [Syndication specification](../../specifications/6.0/syndication.md)
+- [RSS import cleanup](cleanuprss.md)
+- [The locations tab: paging and sorting](locations-tab-paging-and-sorting.md) (shares the sortable heading)
+- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
