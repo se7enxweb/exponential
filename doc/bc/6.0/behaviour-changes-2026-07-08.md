@@ -123,6 +123,19 @@ RootDelay=0
 - **Package tools**: see [ezpm](../../features/6.0/ezpm-package-manager-cli.md) for the install
   lock, delayed indexing and batched commits.
 
+## Smaller changes, explained
+
+Each of these has a commit in the [ledger](../../history/ledger/exponential-root.md) and a small, visible effect.
+
+| Change | What you see | What to do |
+|---|---|---|
+| Script descriptions in the console (`4ce57a7224`) | `./console list` shows one line per script. The console reads it from the `'description'` key of the array given to `eZScript::instance()` (strategy 1 in the comment block of `bin/php/console`), or from an `@description` docblock tag. | Give your own scripts a `'description'` key (or `// @description ...`) and they appear in the list. Check: `./console list ezpm`. |
+| `RootDelay` (`11095f902f`) | A script run as the operating system root user with `--allow-root-user` prints "With great power comes great responsibility." and waits `RootDelay` seconds so you can press Ctrl-C (`kernel/classes/ezscript.php`). | `0` in `ezscript.ini [eZScriptSettings]` removes the wait in deployments; default `10`. |
+| Layouts tab in the admin node view (`8df2654e3f`) | The window controls of `design/admin3` take an extra tab beside Ordering; `design/admin/javascript/node_tabs.js` marks the window controls with the class `layouts-active` while the tab `node-tab-layouts` is open. The tab itself is supplied by the layouts extensions. | Nothing; see [Exponential Layouts](LAYOUTS.md). |
+| Nice URL update script revert (`9c4946075d`) | `bin/php/updateniceurls.php` is back to its earlier, stable version after a change made during testing proved unstable. | Nothing. |
+| Autoload generator (`f46c08c18e`, `62c14b36dd`) | Real paths are compared and the exclusion filter stops at a directory boundary; the "Scan complete" line is gone. | Described above under "The autoload generator". |
+| Media theme templates (`c013093b52`) | Templates of the media theme guard `false` and missing values; the Google Tag Manager template parses. | Nothing; the theme is an ordinary directory of the repository since 6 August. |
+
 ## Composer and extensions
 
 The root `composer.json` changed as follows (suggestions are only listed in the
@@ -140,6 +153,10 @@ The root `composer.json` changed as follows (suggestions are only listed in the
 | 22 August | `eztags ~2.3.3` and `cjw_newsletter ~4.0.0.0` required |
 | 31 August | `ngclasslist ~1.1` required (the datatype of the `ng_menu_item` class) |
 
+The table is the history of what changed in July and August. The constraints have moved on since (checked in the
+`composer.json` of 2 October 2026, for example `git_manager ~2.0.14`, `eztags ~2.4.11`, `cjw_newsletter ~4.1.16`); list
+the current ones with `grep -n '"se7enxweb/' composer.json`.
+
 After pulling these changes, run Composer yourself in the way you always do, and
 then `php bin/php/ezpgenerateautoloads.php -e`.
 
@@ -152,3 +169,5 @@ The README header explains that a downloaded copy of Exponential 6.0 needs
 
 - [Security specification](../../specifications/6.0/security-hardening-2026-08.md), [CI specification](../../specifications/6.0/continuous-integration.md)
 - [Console](console.md), [php8](php8.md)
+- Features of the period: [ezpm](../../features/6.0/ezpm-package-manager-cli.md), [Template editor](../../features/6.0/template-editor-overrides.md), [Template path comments](../../features/6.0/template-path-comments.md), [Kickstarter](../../features/6.0/kickstarter-cli.md), [Clean install defaults](../../features/6.0/clean-install-defaults.md), [Reset a user password](../../features/6.0/reset-user-password.md), [Redis and Valkey caches](../../features/6.0/valkey-cache-hooks.md), [Extension list](../../features/6.0/extension-list-and-downloads.md), [Additional extension directories](../../features/6.0/additional-extension-directories.md), [Icon themes](../../features/6.0/icon-themes-in-extensions.md), [Installation name](../../features/6.0/installation-name-in-pages.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

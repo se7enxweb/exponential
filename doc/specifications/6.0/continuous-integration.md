@@ -10,7 +10,7 @@ and want to know that a change keeps the platform working.
 
 | Date | Commit | What |
 |---|---|---|
-| 11 July | `8798108324` | PHPUnit 13 and PHP 8.4 clean-up: new `phpunit.xml`, `tests/bootstrap.php`, `tests/xdebug.ini`, about 40 new or repaired test files (cluster file handlers, content classes, roles, RSS export, site access ...). |
+| 11 July | `8798108324` | PHPUnit 13 and PHP 8.4 clean-up: new `phpunit.xml`, `tests/bootstrap.php`, `tests/xdebug.ini`, 132 files changed under `tests/` and beside it, 72 of them new (cluster file handlers, content classes, roles, RSS export, site access ...; count with `git show --name-status 8798108324`). |
 | 18 August | `ea4b1dbbb7`, `ea350a1cd1`, `fd67c78a2f` | The workflow `.github/workflows/phpunit.yml`: PHPUnit on PHP 8.1 to 8.5; path filters; a manual trigger. |
 | 18 August | `1ba705708d` and following | A second job runs the database tests on MySQL and PostgreSQL. |
 | 18 August | `d07edf3297`, `4de4ebbbe5`, `3cad135744` | MongoDB support in the workflow. |
@@ -76,11 +76,14 @@ php vendor/bin/phpunit --testsuite kernel-classes
 php vendor/bin/phpunit --list-tests
 php vendor/bin/phpunit --list-test-files
 
+# the suites and how many tests each holds (6.0.15 tree, PHPUnit 13.0.0)
+php vendor/bin/phpunit --list-suites
+
 # the database tests of the legacy toolkit (use a throw-away database)
 php tests/runtests.php --dsn=mysql://user:password@127.0.0.1/testdb --db-per-test tests
 ```
 
-The test suites in `phpunit.xml`:
+The test suites in `phpunit.xml` (test counts checked with `--list-suites` on 2 October 2026: `security` 51, `kernel-classes` 1364, `kernel-content` 4, `kernel-datatypes` 38, `lib` 610, `mongodb` 37, `mongodb-live` 18, `cjw_newsletter` 244; they grow with every release):
 
 | Suite | Directory | Needs |
 |---|---|---|
@@ -121,4 +124,4 @@ php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-text
 ## Related
 
 - Reference for the toolchain: [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [PHPUnit 13 for PHP 8.4.1](../../bc/6.0/phpunitv13forPHP841.md).
-- Month page: [August 2026](../../history/2026/2026-08.md)
+- Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md); [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md); [Security patches of August 2026](security-hardening-2026-08.md) (the `security` suite)

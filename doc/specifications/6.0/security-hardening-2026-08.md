@@ -20,18 +20,18 @@ jQuery was replaced (`f7c57376aa`). Earlier hardening is in
 
 | ID | Class | CWE | File | Fix |
 |---|---|---|---|---|
-| F-01 | Predictable REST/OAuth tokens | 330, 338 | `kernel/private/rest/classes/models/ezprest_token.php` | `generateToken()` returns `bin2hex( random_bytes( 20 ) )`: 40 hex characters from the system's secure random source. It was an 8 character token from a seeded `mt_rand()`. The parameter `$vary` stays for compatibility and is no longer used. |
+| F-01 | Predictable REST/OAuth tokens | 330, 338 | `kernel/private/rest/classes/models/ezprest_token.php` | `ezpRestToken::generateToken()` returns `bin2hex( random_bytes( 20 ) )`: 40 hex characters from the system's secure random source. It was an 8 character token from a seeded `mt_rand()`. The parameter `$vary` stays for compatibility and is no longer used. |
 | F-02 | Guessable account activation link | 330 | `kernel/user/ezuseroperationcollection.php` | The activation hash is `bin2hex( random_bytes( 16 ) )` instead of `md5( mt_rand() . time() . $userID )`. |
-| F-03 | HTTP header injection (CRLF) | 93 | `extension/ezoe/modules/ezoe/atd_rpc.php` | `\r` and `\n` are removed from the `url` parameter before it becomes part of the hand built request to the After the Deadline server; the post text is initialised so a GET no longer reads an undefined variable. |
+| F-03 | HTTP header injection (CRLF) | 93 | `extension/ezoe/classes/runnable/views/ezoe/atd_rpc.php` (the view `extension/ezoe/modules/ezoe/atd_rpc.php` is now an entry point that calls this class) | `\r` and `\n` are removed from the `url` parameter before it becomes part of the hand built request to the After the Deadline server; the post text is initialised so a GET no longer reads an undefined variable. |
 | F-05 | OS command injection | 78 | `kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php`, `ezwordparser.php` | The extraction tool goes through `escapeshellcmd()` and file names through `escapeshellarg()`, also the temporary output file. A file name with shell characters cannot add a command. |
-| F-06 | Fail open on login | 636, 697 | `kernel/classes/datatypes/ezuser/ezuser.php` | `isEnabled` is false when the user has no `ezuser_setting` row. It was true. Disabling a user keeps the row with `is_enabled = 0`, so only rowless accounts are affected. |
+| F-06 | Fail open on login | 636, 697 | `kernel/classes/datatypes/ezuser/ezuser.php`, `eZUser::_loginUser()` | During sign-in the account counts as disabled when the user has no `ezuser_setting` row. It counted as enabled. (`eZUser::isEnabled()` itself still returns true for a rowless account; it is the login that fails closed.) Disabling a user keeps the row with `is_enabled = 0`, so only rowless accounts are affected. |
 | H-06 | Scripts over plain http | 829, 319 | `extension/ezjscore/settings/ezjscore.ini` | `ExternalScripts[...]` URLs use `https://`. Prefer `LoadFromCDN=disabled` (local scripts) or subresource integrity. The Yahoo CDN of YUI is end of life and may not answer. |
 
 F-04 (the jQuery 1.10.2 library) was handled by the jQuery replacement below.
 
 ## F-06: find accounts that now cannot sign in
 
-Run in your database client (read only):
+Run in your database client (read only; table layout from `kernel/sql/mysql/kernel_schema.sql`: `is_enabled`, `max_login`, `user_id`):
 
 ```sql
 SELECT u.contentobject_id, u.login
@@ -87,5 +87,6 @@ The commit `d889a8abc6` refreshed `share/filelist.md5`, so the
 ## Related
 
 - [Hardening release notes](../../bc/6.0/hardening.md)
+- [jQuery 4 and the removal of YUI](../../features/6.0/jquery4-and-yui-removal.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
 - [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)
 - Month page: [August 2026](../../history/2026/2026-08.md)
