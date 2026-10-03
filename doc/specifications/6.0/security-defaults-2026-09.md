@@ -1,10 +1,28 @@
-# Security defaults of September 2026
+# Specification: security defaults of September 2026
 
-Between 22 and 30 September 2026 a set of defaults changed so that a **default
-installation** is safe without extra work. This page lists each default, the
-setting that controls it, what changed for an existing installation, and how to
-check it. Input handling of individual datatypes is in
+Between 22 and 30 September 2026 a set of defaults changed so that a **default installation** is safe without
+extra work. This page lists each default, the setting that controls it, what changed for an existing
+installation and how to check it. Read it before you upgrade an installation with its own `.htaccess`, a caching
+proxy, or scripts that read the session cookie; the [upgrade checklist](#upgrade-checklist) at the end is the
+short version. Input handling of individual datatypes is in
 [Datatype and input hardening](datatype-input-hardening.md).
+
+## Settings at a glance
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/site.ini` | `HTTPHeaderSettings` | `SecurityHeaders[<header>]` | see [section 1](#1-security-headers-on-every-page) | installation or siteaccess |
+| `settings/site.ini` | `Session` | `CookieSecure` | `auto` | installation or siteaccess |
+| `settings/site.ini` | `Session` | `CookieHttponly` | `true` | installation or siteaccess |
+| `settings/site.ini` | `Session` | `CookieSameSite` | `Lax` | installation or siteaccess |
+| `settings/httpcache.ini` | `HttpCacheSettings` | `TagHeader` | `disabled` (replaces `ProxyHeaders`) | installation |
+| `settings/velocity.ini` | `ServerSettings` | `ResponseHeaders[]`, `ResponseHeadersOnScripts` | `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` with the values of [section 1](#1-security-headers-on-every-page); `enabled` | Velocity |
+| `settings/velocity.ini` | `HTTPSSettings` | `HSTSMaxAge`, `HSTSIncludeSubDomains`, `HSTSPreload` | `300` (`0` writes nothing), `disabled`, `disabled` | Velocity |
+| `settings/velocity.ini` | `CacheSettings` | `SkipCookies[]` | empty (derive the list) | Velocity |
+| `settings/velocity.ini` | `ServerSettings` | `User`, `Group`, `AllowRootWorkers` | `AllowRootWorkers=disabled` | Velocity |
+
+The three `[Session]` keys are commented out in the shipped `settings/site.ini`; the defaults above apply while
+they are unset.
 
 ## 1. Security headers on every page
 
@@ -165,21 +183,7 @@ The shipped example is `doc/examples/` and the root files `.htaccess_root` and
 
 ## Related pages
 
-- [Hardening guide](../../bc/6.0/hardening.md)
-- [Security hardening 6.0.13](security-hardening-6.0.13.md)
-- [Velocity](../../features/6.0/velocity-persistent-worker-server.md)
-- [Form expired page](../../features/6.0/form-expired-page.md)
-- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [HTTP cache](../../bc/6.0/httpcache.md)
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
-## See also
-
-- [Security hardening of August 2026](security-hardening-2026-08.md) (the earlier patch set)
-- [Datatype input hardening](datatype-input-hardening.md)
-
-## Related pages
-
-- [RAD tools — security](../../bc/6.0/rad-security.md)
-- [February 2026](../../history/2026/2026-02.md)
+- Specifications: [Datatype and input hardening](datatype-input-hardening.md), [Security hardening of August 2026](security-hardening-2026-08.md) (the earlier patch set), [Security hardening 6.0.13](security-hardening-6.0.13.md), [Velocity HTTP/2 and security](velocity-http2-and-security.md)
+- Upgrade notes: [Hardening guide](../../bc/6.0/hardening.md), [HTTP cache](../../bc/6.0/httpcache.md), [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md), [RAD tools — security](../../bc/6.0/rad-security.md)
+- Features: [Velocity](../../features/6.0/velocity-persistent-worker-server.md), [Form expired page](../../features/6.0/form-expired-page.md), [Installing in one command](../../features/6.0/install-in-one-command.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), chronicles [16 to 30 September 2026](../../history/2026/2026-09b.md) and [February 2026](../../history/2026/2026-02.md)

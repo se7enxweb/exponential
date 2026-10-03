@@ -1,9 +1,26 @@
-# Installer logs and seed data
+# Specification: installer logs and seed data
 
-Reference for the data a new Exponential installation starts with and for the
-files the installers write. Use it when you build your own installer, check an
-installation, or script around the kickstarter. For the how-to see
-[Installing in one command](../../features/6.0/install-in-one-command.md).
+This page is the reference for the data a new Exponential installation starts with (seed files, the content
+tree, ids and URL aliases) and for the files the installers write (`setup.log`, `kickstart.log` and others).
+Read it when you build your own installer or site package, check a fresh installation, or script around the
+kickstarter. For the how-to, see [Installing in one command](../../features/6.0/install-in-one-command.md).
+
+## In short
+
+- Four seed sources carry the same rows; change all of them together.
+- A new installation has two new top-level folders: Configuration (node 3) and Archives (node 4).
+- Every installer run writes `var/log/setup.log`, ending in a `RESULT` and a `NEXT` line.
+
+## Check a fresh installation
+
+Read the end of the setup log in the installation root:
+
+```bash
+tail -n 20 var/log/setup.log
+```
+
+Expected: a framed `RESULT` line that reports success and a `NEXT` line that says what to do next. If
+`var/log/initial-admin-password` exists, sign in with it and then delete the file.
 
 ## Where the seed data lives
 
@@ -14,12 +31,12 @@ installation, or script around the kickstarter. For the how-to see
 | `kernel/sql/sqlite/cleandata.sql` | SQLite SQL install. |
 | `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` | Upgrade of an existing database. |
 
-All of them carry the same rows. When you change seed data change every file,
+All of them carry the same rows. When you change seed data, change every file,
 then load each into a throwaway database and check the tree. (Review a `.dba`
 change by comparing rows, not by its diff: rows are a numerically keyed array and
 removing one renumbers everything after it.)
 
-Changes of September 2026:
+### Changes of September 2026
 
 - SQLite loads the kernel's own schema and clean data again, and the SQL clean
   data matches the base data installations get. The unused SQLite demo data files
@@ -132,20 +149,11 @@ data's language (`eng-US`) in one place.
 - **MySQL** under PHP 8.1 and later reports a refused login as a failed
   connection.
 - **MongoDB**: see [MongoDB kernel support](../../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
-  and [database drivers](database-drivers-sqlite-oracle.md).
+  and [database drivers and installers](database-drivers-2026-09.md).
 
 ## Related pages
 
-- [Maintenance mode](../../features/6.0/maintenance-mode.md)
-- [Kickstarter on the command line](../../bc/6.0/kickstartercli.md)
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Database drivers and installers, September 2026](database-drivers-2026-09.md)
-- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-- [Kickstarter: install a whole site from one file](../../features/6.0/kickstarter-cli.md)
-- [A package installer that survives big packages](../../features/6.0/package-installer-batching.md)
-
-## Related pages
-
-- [Look inside a package, compare it with your site, import single items](../../features/6.0/package-compare-and-import.md)
-- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)
+- Specifications: [Database drivers and installers, September 2026](database-drivers-2026-09.md), [SQLite3 database driver](sqlite3-database-driver.md)
+- Features: [Installing in one command](../../features/6.0/install-in-one-command.md), [Kickstarter: install a whole site from one file](../../features/6.0/kickstarter-cli.md), [A package installer that survives big packages](../../features/6.0/package-installer-batching.md), [Look inside a package, compare it with your site, import single items](../../features/6.0/package-compare-and-import.md), [Maintenance mode](../../features/6.0/maintenance-mode.md), [Store dashboard and order statuses](../../features/6.0/store-dashboard.md)
+- Upgrade notes: [Kickstarter on the command line](../../bc/6.0/kickstartercli.md), [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), chronicles [16 to 30 September 2026](../../history/2026/2026-09b.md) and [June 2026, second half](../../history/2026/2026-06b.md)

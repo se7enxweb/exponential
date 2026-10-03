@@ -1,11 +1,14 @@
-# syndication specification
+# Specification: the syndication extension
 
-Reference for the `syndication` extension (1.3.2). How to use it is on the [feature page](../../features/6.0/extensions/syndication.md).
+This page is the reference for the `syndication` extension (1.3.2), which exports content as feeds and imports
+feeds from another site: its tables, cronjob parts, settings and how an import authenticates. Read it if you
+install, schedule or debug syndication. How to use it is on the
+[feature page](../../features/6.0/extensions/syndication.md).
 
 ## Tables
 
-Eleven tables, defined in `sql/mysql.sql` and, since 1.3.1, in the engine-neutral `share/db_schema.dba` (so an installer can create them on every database Exponential supports).
-The SOAP log has three indexes.
+Eleven tables, defined in `sql/mysql.sql` and, since 1.3.1, in the engine-neutral `share/db_schema.dba`, so an
+installer can create them on every database Exponential supports. The SOAP log has three indexes.
 
 | Table | Content |
 |---|---|
@@ -23,23 +26,33 @@ The SOAP log has three indexes.
 
 ## Cronjob parts
 
-`[CronjobPart-export_feed]` runs `syndication_export.php`; `[CronjobPart-import_feed]` runs `syndication_import.php`. Run them from cron every few minutes once a syndication is set up.
+| Block in `cronjob.ini` | Script | Job |
+|---|---|---|
+| `[CronjobPart-export_feed]` | `syndication_export.php` | Writes the export feeds |
+| `[CronjobPart-import_feed]` | `syndication_import.php` | Fetches and imports the remote feeds |
+
+Run both from cron every few minutes once a syndication is set up.
 
 ## Settings
 
-See the [feature page](../../features/6.0/extensions/syndication.md#settings): `syndication.ini` (`SyndicationFilters`, `Syndication` with `CacheDir` and `CronUser`), `soap.ini` (`EnableSOAP`, `SOAPExtensions[]`),
-`cronjob.ini`.
+The keys and their defaults are listed on the [feature page](../../features/6.0/extensions/syndication.md#settings).
 
-## Import authentication (1.2.0)
+| File | Block | Keys |
+|---|---|---|
+| `syndication.ini` | `SyndicationFilters` | the filter list |
+| `syndication.ini` | `Syndication` | `CacheDir`, `CronUser` |
+| `soap.ini` | `GeneralSettings` | `EnableSOAP` (`true` in the extension) |
+| `soap.ini` | `ExtensionSettings` | `SOAPExtensions[]` (`syndication`) |
+| `cronjob.ini` | `CronjobPart-export_feed`, `CronjobPart-import_feed` | the two parts above |
 
-`eZSyndicationImport` reads a login and password for the exporting site from the import's server address (`user:password@host`) or from the option array keys `login` and `password`, and
-connects on port 443 for `https` and 80 otherwise.
+## Import authentication (since 1.2.0)
 
-## Related
+`eZSyndicationImport` reads a login and password for the exporting site from the import's server address
+(`user:password@host`) or from the option array keys `login` and `password`. It connects on port 443 for `https`
+and on port 80 otherwise.
 
-* [Feature page](../../features/6.0/extensions/syndication.md), [chronicle](../../history/extensions/syndication.md), [release notes](../../changelogs/extensions/syndication.md)
+## Related pages
 
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-* months: [2025-09](../../history/extensions/months/2025-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/syndication.md), [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Chronicle](../../history/extensions/syndication.md), [release notes](../../changelogs/extensions/syndication.md)
+- Months: [2025-09](../../history/extensions/months/2025-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

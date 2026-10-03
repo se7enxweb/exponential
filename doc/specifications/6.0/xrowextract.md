@@ -1,9 +1,24 @@
-# xrowextract specification
+# Specification: the xrowextract extension
 
-Reference for the `xrowextract` extension, release line 2.5 (2.5.0 to 2.5.6,
-September to October 2026). How to use it is in the
-[feature page](../../features/6.0/extensions/xrowextract.md); this page lists every
-setting, policy, table, view, class and extension point.
+This page is the reference for the `xrowextract` extension (content export, import, packages, schedules and
+delivery), release line 2.5 (2.5.0 to 2.5.6, September to October 2026). It lists every view, policy, setting,
+preset field, table, class and command line option. Read it when you configure exports for a site, grant
+permissions, or script exports. How to use it is on the
+[feature page](../../features/6.0/extensions/xrowextract.md).
+
+## Example: export articles from the command line
+
+Run in the installation root (read-only for your content; it writes the output file):
+
+```bash
+php extension/xrowextract/bin/php/csv.php --list-classes --node=2                 # classes below node 2
+php extension/xrowextract/bin/php/csv.php --list-columns --class=ng_article       # columns of one class
+php extension/xrowextract/bin/php/csv.php --class=ng_article --node=2 --preview=10 # first 10 rows on screen
+php extension/xrowextract/bin/php/csv.php --class=ng_article --node=2 --output=articles.csv
+```
+
+`./console ext:xrowextract:csv` runs the same command. Replace `ng_article` with a class identifier of your site.
+Exit code `0` means the file was written.
 
 ## Module, views and policies
 
@@ -142,7 +157,7 @@ Behaviour did not change.
 
 ## Command line options
 
-`ext:xrowextract:csv` takes class, node, scope (`node` or `all`), depth and depth
+`ext:xrowextract:csv` (`extension/xrowextract/bin/php/csv.php`) takes the options class, node, scope (`node` or `all`), depth and depth
 operator (`eq`, `le`, `ge`), main-only, offset, limit, columns, add, sets
 (`identity`, `urls`, `publishing`, `location`, `migration`), names, separator,
 line endings (`win32`/`crlf`, `unix`/`lf`, `mac`/`cr`), unquoted, languages,
@@ -162,12 +177,8 @@ sources, PHPStan level 8, unit tests, requirements, CLI, view and POST tests);
 `.github/workflows/check.yml` runs it on PHP 8.1 to 8.5. It needs
 `EXPONENTIAL_ROOT` to point at an Exponential root.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/xrowextract.md)
-* [Chronicle](../../history/extensions/xrowextract.md) and [release notes](../../changelogs/extensions/xrowextract.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2024-02](../../history/extensions/months/2024-02.md), [2024-03](../../history/extensions/months/2024-03.md), [2024-04](../../history/extensions/months/2024-04.md), [2024-07](../../history/extensions/months/2024-07.md), [2024-08](../../history/extensions/months/2024-08.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/xrowextract.md), [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md), [CLI, cronjob and view abstractions](../../bc/6.0/cli_cronjob_view_abstractions.md)
+- [Chronicle](../../history/extensions/xrowextract.md), [release notes](../../changelogs/extensions/xrowextract.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2024-02](../../history/extensions/months/2024-02.md), [2024-03](../../history/extensions/months/2024-03.md), [2024-04](../../history/extensions/months/2024-04.md), [2024-07](../../history/extensions/months/2024-07.md), [2024-08](../../history/extensions/months/2024-08.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

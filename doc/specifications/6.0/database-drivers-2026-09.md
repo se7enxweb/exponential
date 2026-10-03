@@ -1,15 +1,26 @@
-# Database drivers and installers: SQLite, PostgreSQL, MySQL and Oracle, 16 to 30 September 2026
+# Specification: database drivers and installers (SQLite, PostgreSQL, MySQL, Oracle)
 
-What changed in the database drivers, the schema handlers and the setup wizard in
-the second half of September 2026, why it matters, and how to check it on your
-installation. MongoDB has its own addendum in
-[MongoDB kernel support](../../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
-(section "Addendum: driver and kernel fixes of 18 to 20 September 2026"). The
-transaction work of the following days is in
-[SQLite and Oracle driver behaviour (October 2026)](database-drivers-sqlite-oracle.md).
-The installers themselves are described in
-[Installer logs and seed data](installer-logs-and-seed-data.md) and
-[Installing in one command](../../features/6.0/install-in-one-command.md).
+This page describes what changed in the database drivers, the schema handlers and the setup wizard from 16 to 30
+September 2026 (plus the Oracle query cache work of 1-2 October), why it matters, and how to check it on your
+installation. Read it if you install or run Exponential on SQLite, PostgreSQL or Oracle, or if an upgrade from an
+older 6.0 release behaves differently on your database.
+
+Elsewhere:
+
+- MongoDB: [MongoDB kernel support](../../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md), section "Addendum:
+  driver and kernel fixes of 18 to 20 September 2026".
+- SQLite transactions (October 2026): [SQLite3 database driver, transactions and writers](sqlite3-database-driver.md#transactions-and-writers).
+- The installers: [Installer logs and seed data](installer-logs-and-seed-data.md) and
+  [Installing in one command](../../features/6.0/install-in-one-command.md).
+
+## Settings on this page
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/site.ini` | `DatabaseSettings` | `SQLitePragmas[]` | empty; the driver's defaults apply (`synchronous=NORMAL`, `cache_size=-65536`, `mmap_size=268435456`, `temp_store=MEMORY`, `busy_timeout=5000`) | installation, SQLite only |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `60` | installation, SQLite only |
+| `settings/setup.ini` | `DatabaseSettings` | `DefaultType` | `sqlite3` | setup wizard |
+| `settings/setup.ini` | `DatabaseSettings` | `DefaultPort_pgsql`, `DefaultUser_pgsql` | `5432`, `postgres` | setup wizard |
 
 ## SQLite
 
@@ -25,13 +36,13 @@ The installers themselves are described in
 | **Search indexing takes the batched path** (a multi-row `INSERT`, an `IN` list and an arithmetic `UPDATE`; SQLite has accepted a multi-row `INSERT` since 3.7.11, PostgreSQL since 8.2) as well as on MySQL and MongoDB. | Measured on 20 objects with 12,546 word links on SQLite: 1.62 s before, 0.88 s after (81 ms and 44 ms per object); the index is identical. | search plugin `ezsearchengine` |
 | **The kernel's own SQLite schema and clean data load.** `kernel/sql/sqlite/schema.sql` created `sqlite_sequence`, which SQLite keeps for itself; `kernel/sql/sqlite/cleandata.sql` used MySQL string escapes. The literals use SQLite's quoting now; all 2,022 rows load and every serialized value reads back. The unused demo data files (`workingdata.sql`, `workingdataandschema.sql`, `workingexample.db`) were removed. | A SQLite installation from the SQL files. | `kernel/sql/sqlite/` |
 
-Settings (file `settings/site.ini`, block `[DatabaseSettings]`, scope: the
+SQLite settings (file `settings/site.ini`, block `[DatabaseSettings]`, scope: the
 installation, SQLite only):
 
 | Key | Default | Meaning |
 |---|---|---|
 | `SQLitePragmas[]` | empty (the driver's defaults apply: `synchronous=NORMAL`, `cache_size=-65536`, `mmap_size=268435456`, `temp_store=MEMORY`, `busy_timeout=5000`) | One `name=value` per line over the driver's defaults. After an install run `ANALYZE` once so the query planner has statistics. |
-| `SQLiteTransactionWait` | `60` | See [SQLite and Oracle driver behaviour](database-drivers-sqlite-oracle.md). |
+| `SQLiteTransactionWait` | `60` | See [transactions and writers](sqlite3-database-driver.md#transactions-and-writers). |
 
 Check the values your site uses:
 
@@ -134,30 +145,22 @@ SQLite counterpart of this change: [transactions and writers](sqlite3-database-d
 
 ## How to check
 
-- SQLite install: `./console exp:install --print --allow-root-user` shows
-  `Type=sqlite3` in `[database_choice]` by default (it installs nothing).
-- Index names on an existing SQLite database: a table created by an extension
-  has indexes named `<table>__<name>`; list them with
-  `sqlite3 var/storage/sqlite3/<file> ".indexes"` if the `sqlite3` tool is
-  installed.
-- MySQL login errors: point `Database` at a wrong password on a test siteaccess;
-  expect the "database cannot be reached" page, not a PHP exception.
+1. SQLite is the default of the installer. This prints the configuration and installs nothing:
+
+   ```bash
+   ./console exp:install --print --allow-root-user
+   ```
+
+   Expected: `Type=sqlite3` in the `[database_choice]` section.
+2. Index names on an existing SQLite database: a table created by an extension has indexes named
+   `<table>__<name>`. If the `sqlite3` tool is installed, list them with
+   `sqlite3 var/storage/sqlite3/<file> ".indexes"`.
+3. MySQL login errors: on a test siteaccess, set a wrong database password. Expected: the "database cannot be
+   reached" page, not a PHP exception.
 
 ## Related pages
 
-- [SQLite database](../../features/6.0/sqlite-database.md)
-- [SQLite3 database driver specification](sqlite3-database-driver.md)
-- [Installer logs and seed data](installer-logs-and-seed-data.md)
-- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
-## See also
-
-- [SQLite3 database driver specification](sqlite3-database-driver.md)
-- [SQLite and Oracle driver behaviour, October 2026](database-drivers-sqlite-oracle.md)
-
-## Related pages
-
-- [MongoDB as the database](../../features/6.0/mongodb-database-support.md)
-- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)
+- Specifications: [SQLite3 database driver](sqlite3-database-driver.md), [Installer logs and seed data](installer-logs-and-seed-data.md)
+- Features: [SQLite database](../../features/6.0/sqlite-database.md), [MongoDB as the database](../../features/6.0/mongodb-database-support.md), [Installing in one command](../../features/6.0/install-in-one-command.md)
+- Upgrade notes: [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md), [SQL query cache](../../bc/6.0/sql-query-cache.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), chronicles [16 to 30 September 2026](../../history/2026/2026-09b.md) and [June 2026, first half](../../history/2026/2026-06a.md)
