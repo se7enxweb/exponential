@@ -565,3 +565,17 @@ Tokens are never put into links; the page itself is for administrators only.
 The Qbix rules are the server's own (`Q_WebServer::adminAllowed()`, v0.0.4.27);
 the page reads the running server's token, remote setting and panel password
 rather than assuming velocity.ini's.
+
+## The engine itself: releases, upgrade notes and feature pages
+
+This page is about driving the engine from Exponential. What the engine is, how it came to be and what each of its releases changed is documented separately:
+
+| You want | Read |
+|---|---|
+| What changed in a release | [Changelog of the Velocity engine](../../changelogs/extensions/exponential-velocity.md) |
+| What to change when you upgrade the engine (0.0.4.27 to 0.0.4.42) | [Velocity engine upgrade notes](velocity-engine-upgrade-notes.md) |
+| The story month by month | [Velocity chronicle](../../history/velocity/README.md) |
+| The web server, control panel, cache, HTTPS, shell, packages | [web server](../../features/6.0/velocity-web-server.md), [control panel](../../features/6.0/velocity-control-panel.md), [response cache](../../features/6.0/velocity-response-cache.md), [HTTPS](../../features/6.0/velocity-https-certificates.md), [Q shell](../../features/6.0/velocity-q-shell.md), [packages and binaries](../../features/6.0/velocity-packages-and-binaries.md) |
+| Every setting of the engine | [Engine settings](../../specifications/6.0/velocity-engine-settings.md), [worker pool](../../specifications/6.0/velocity-worker-pool.md), [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md) |
+
+The access rules in "Views and who may open them" above are the ones `exp:velocity` writes into the engine's configuration; they can be stricter than the engine's own defaults described in the control panel page.
