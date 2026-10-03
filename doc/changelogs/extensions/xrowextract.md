@@ -319,3 +319,7 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 * [Change ledger](../../history/ledger/xrowextract.md)
 * [Specification](../../specifications/6.0/xrowextract.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2024-01](../../history/extensions/months/2024-01.md), [2024-02](../../history/extensions/months/2024-02.md), [2024-03](../../history/extensions/months/2024-03.md), [2024-04](../../history/extensions/months/2024-04.md), [2024-07](../../history/extensions/months/2024-07.md), [2024-08](../../history/extensions/months/2024-08.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

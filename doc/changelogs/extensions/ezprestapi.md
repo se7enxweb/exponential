@@ -66,3 +66,7 @@ What each release of `ezprestapi` contains, assembled from its commits. Each lin
 * [Chronicle](../../history/extensions/ezprestapi.md)
 * [Change ledger](../../history/ledger/ezprestapi.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2024-10](../../history/extensions/months/2024-10.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

@@ -14,3 +14,8 @@ HTTP delivery.
 * [xrowextract](xrowextract.md)
 * [Chronicle](../../../history/extensions/ezxmlexport.md) and [release notes](../../../changelogs/extensions/ezxmlexport.md)
 * [Change ledger](../../../history/ledger/ezxmlexport.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2026-03](../../../history/extensions/months/2026-03.md)

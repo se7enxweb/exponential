@@ -49,3 +49,7 @@ siteaccesses to create and which roles and policies to add. To see the installed
 * [Month: 2024-01 (all extensions)](../../../history/extensions/months/2024-01.md)
 * [Month: 2024-03 (all extensions)](../../../history/extensions/months/2024-03.md)
 * [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)

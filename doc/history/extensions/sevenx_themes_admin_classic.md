@@ -39,3 +39,7 @@ The month across all extensions: [June 2026](months/2026-06.md). [Ledger of this
 * [Feature page](../../features/6.0/extensions/sevenx_themes_admin_classic.md)
 * [Release notes](../../changelogs/extensions/sevenx_themes_admin_classic.md)
 * [Change ledger](../ledger/sevenx_themes_admin_classic.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

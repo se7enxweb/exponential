@@ -33,3 +33,7 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 * [Feature page](../../features/6.0/extensions/sevenx_valkey_cache.md)
 * [Release notes](../../changelogs/extensions/sevenx_valkey_cache.md)
 * [Change ledger](../ledger/sevenx_valkey_cache.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

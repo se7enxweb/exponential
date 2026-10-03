@@ -38,3 +38,8 @@ connects on port 443 for `https` and 80 otherwise.
 ## Related
 
 * [Feature page](../../features/6.0/extensions/syndication.md), [chronicle](../../history/extensions/syndication.md), [release notes](../../changelogs/extensions/syndication.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2025-09](../../history/extensions/months/2025-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

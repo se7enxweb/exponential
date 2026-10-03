@@ -11,3 +11,8 @@ What each release of `AdminAid` contains, assembled from its commits. Each line 
 * [Feature page](../../features/6.0/extensions/AdminAid.md)
 * [Chronicle](../../history/extensions/AdminAid.md)
 * [Change ledger](../../history/ledger/AdminAid.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md)

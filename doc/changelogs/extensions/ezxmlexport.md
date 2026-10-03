@@ -39,3 +39,8 @@ No commit of this repository is tagged only with this release in the ledger wind
 * [Feature page](../../features/6.0/extensions/ezxmlexport.md)
 * [Chronicle](../../history/extensions/ezxmlexport.md)
 * [Change ledger](../../history/ledger/ezxmlexport.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md)

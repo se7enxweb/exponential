@@ -16,3 +16,7 @@ provider on these classes without the example client of ezprestapi.
 * [Chronicle](../../../history/extensions/ezprestapiprovider.md) and [release notes](../../../changelogs/extensions/ezprestapiprovider.md)
 * [Change ledger](../../../history/ledger/ezprestapiprovider.md)
 * [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2026-03](../../../history/extensions/months/2026-03.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md)

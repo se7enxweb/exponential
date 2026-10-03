@@ -45,3 +45,7 @@ the metadata is brought in line with the release (see the [extension metadata sp
 * [Chronicle](../../../history/extensions/sevenx_themes_admin_classic.md) and [release notes](../../../changelogs/extensions/sevenx_themes_admin_classic.md)
 * [Change ledger](../../../history/ledger/sevenx_themes_admin_classic.md)
 * [Month: 2026-06 (all extensions)](../../../history/extensions/months/2026-06.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)

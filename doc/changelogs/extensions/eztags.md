@@ -231,3 +231,7 @@ No commit of this repository is tagged only with this release in the ledger wind
 * [Chronicle](../../history/extensions/eztags.md)
 * [Change ledger](../../history/ledger/eztags.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

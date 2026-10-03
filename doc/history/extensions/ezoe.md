@@ -27,3 +27,7 @@ The month across all extensions: [March 2026](months/2026-03.md). [Ledger of thi
 * [Feature page](../../features/6.0/extensions/ezoe.md)
 * [Release notes](../../changelogs/extensions/ezoe.md)
 * [Change ledger](../ledger/ezoe.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

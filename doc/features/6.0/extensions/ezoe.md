@@ -11,3 +11,8 @@ How the editor is built, upgraded to TinyMCE 8 and configured in Exponential 6 i
 
 * [Chronicle](../../../history/extensions/ezoe.md) and [release notes](../../../changelogs/extensions/ezoe.md)
 * [Change ledger](../../../history/ledger/ezoe.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2024-01](../../../history/extensions/months/2024-01.md), [2026-03](../../../history/extensions/months/2026-03.md)

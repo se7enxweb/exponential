@@ -29,3 +29,7 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 * [Feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md)
 * [Release notes](../../changelogs/extensions/cjw-exponential-media-site-data.md)
 * [Change ledger](../ledger/cjw-exponential-media-site-data.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -42,3 +42,7 @@ What each release of `exp_enhanced_link` contains, assembled from its commits. E
 * [Chronicle](../../history/extensions/exp_enhanced_link.md)
 * [Change ledger](../../history/ledger/exp_enhanced_link.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)

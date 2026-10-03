@@ -20,3 +20,7 @@ The platform side of the project is described in the [ecosystem overview](../../
 
 * [Chronicle of the repository](../../../history/ecosystem/ez-support-tools.md) and [release notes](../../../changelogs/extensions/ez-support-tools.md) (covered with the platform repositories)
 * [Change ledger](../../../history/ledger/ez-support-tools.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)

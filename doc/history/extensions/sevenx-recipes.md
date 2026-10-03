@@ -133,3 +133,7 @@ The month across all extensions: [April 2026](months/2026-04.md). [Ledger of thi
 * [Feature page](../../features/6.0/extensions/sevenx-recipes.md)
 * [Release notes](../../changelogs/extensions/sevenx-recipes.md)
 * [Change ledger](../ledger/sevenx-recipes.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

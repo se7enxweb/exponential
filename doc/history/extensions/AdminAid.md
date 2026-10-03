@@ -27,3 +27,7 @@ The month across all extensions: [March 2026](months/2026-03.md). [Ledger of thi
 * [Feature page](../../features/6.0/extensions/AdminAid.md)
 * [Release notes](../../changelogs/extensions/AdminAid.md)
 * [Change ledger](../ledger/AdminAid.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

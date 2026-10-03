@@ -28,3 +28,7 @@ package of an extension suite.
 * [Chronicle](../../../history/extensions/cjw-exponential-media-site-data.md) and [release notes](../../../changelogs/extensions/cjw-exponential-media-site-data.md)
 * [Change ledger](../../../history/ledger/cjw-exponential-media-site-data.md)
 * [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)

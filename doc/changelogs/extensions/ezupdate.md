@@ -138,3 +138,7 @@ What each release of `ezupdate` contains, assembled from its commits. Each line 
 * [Chronicle](../../history/extensions/ezupdate.md)
 * [Change ledger](../../history/ledger/ezupdate.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2024-11](../../history/extensions/months/2024-11.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-06](../../history/extensions/months/2026-06.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

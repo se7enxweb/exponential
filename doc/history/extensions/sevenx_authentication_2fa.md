@@ -28,3 +28,7 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 * [Feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md)
 * [Release notes](../../changelogs/extensions/sevenx_authentication_2fa.md)
 * [Change ledger](../ledger/sevenx_authentication_2fa.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

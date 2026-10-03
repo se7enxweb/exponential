@@ -145,3 +145,7 @@ What each release of `git_manager` contains, assembled from its commits. Each li
 * [Chronicle](../../history/extensions/git_manager.md)
 * [Change ledger](../../history/ledger/git_manager.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2024-01](../../history/extensions/months/2024-01.md), [2024-10](../../history/extensions/months/2024-10.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-06](../../history/extensions/months/2026-06.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

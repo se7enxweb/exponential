@@ -218,3 +218,8 @@ What each release of `sevenx-recipes` contains, assembled from its commits. Each
 * [Feature page](../../features/6.0/extensions/sevenx-recipes.md)
 * [Chronicle](../../history/extensions/sevenx-recipes.md)
 * [Change ledger](../../history/ledger/sevenx-recipes.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md)

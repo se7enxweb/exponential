@@ -24,3 +24,8 @@ What each release of `sevenx_authentication_2fa` contains, assembled from its co
 * [Feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md)
 * [Chronicle](../../history/extensions/sevenx_authentication_2fa.md)
 * [Change ledger](../../history/ledger/sevenx_authentication_2fa.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2026-07](../../history/extensions/months/2026-07.md)

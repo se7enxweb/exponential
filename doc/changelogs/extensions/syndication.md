@@ -68,3 +68,7 @@ What each release of `syndication` contains, assembled from its commits. Each li
 * [Change ledger](../../history/ledger/syndication.md)
 * [Specification](../../specifications/6.0/syndication.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2025-09](../../history/extensions/months/2025-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

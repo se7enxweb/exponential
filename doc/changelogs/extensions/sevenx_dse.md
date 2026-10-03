@@ -53,3 +53,7 @@ What each release of `sevenx_dse` contains, assembled from its commits. Each lin
 * [Chronicle](../../history/extensions/sevenx_dse.md)
 * [Change ledger](../../history/ledger/sevenx_dse.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2026-04](../../history/extensions/months/2026-04.md), [2026-09](../../history/extensions/months/2026-09.md)

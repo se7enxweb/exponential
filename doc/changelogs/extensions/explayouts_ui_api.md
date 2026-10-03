@@ -178,3 +178,7 @@ What each release of `explayouts_ui_api` contains, assembled from its commits. E
 * [Change ledger](../../history/ledger/explayouts_ui_api.md)
 * [Specification](../../specifications/6.0/explayouts-ui-api.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2026-07](../../history/extensions/months/2026-07.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)

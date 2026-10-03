@@ -47,3 +47,8 @@ What each release of `sevenx_themes_admin_classic` contains, assembled from its 
 * [Feature page](../../features/6.0/extensions/sevenx_themes_admin_classic.md)
 * [Chronicle](../../history/extensions/sevenx_themes_admin_classic.md)
 * [Change ledger](../../history/ledger/sevenx_themes_admin_classic.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2026-06](../../history/extensions/months/2026-06.md)

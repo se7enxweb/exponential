@@ -81,9 +81,42 @@ caches** cannot clean up after an extension is removed or a cache backend is dis
 The compiled INI cache is **one Redis hash** keyed by the file's MD5 (`HGET`, `HSET`, `HDEL`) instead of one key per file. The previous design scanned the whole
 keyspace (`SCAN` and `MGET`) on every request, which is expensive on a busy server; the request-scoped in-memory cache stays and is filled on demand.
 
+## What the kernel does (hooks)
+
+The kernel calls the extension only when its classes exist (`class_exists()` is checked first), so a site without the extension pays nothing. Hooks added on
+20 July 2026 (commits `fa17892025`, `6ef123636c`, `908994bb03`):
+
+| Where | File | Behaviour with the extension enabled |
+|---|---|---|
+| Content view cache | `kernel/private/classes/views/content/view.php` (entry `kernel/content/view.php`) | The page's entry is read with `sevenxValkeyCacheBlock::get()`; on a miss the page is generated and stored with `put()` for 3600 seconds, keyed by the node id. The 3600 seconds are set in that file, not in an INI file. |
+| Pages that must not be cached | same class | A result that says `no_cache` is generated every time and never stored (26 July 2026 fix). |
+| Compiled INI cache | `lib/ezutils/classes/ezini.php` | `sevenxValkeyINICache::instance()->isEnabled()` is asked first; compiled INI data are loaded from or saved to the server instead of `var/cache/ini/`. Clearing the INI cache deletes the entries. |
+
+On a miss or when disabled, the kernel falls back to the cluster file handler and the files, exactly as before.
+
+## Check that it works
+
+```bash
+php bin/php/ezpgenerateautoloads.php -e
+php bin/php/ezcache.php --clear-all --allow-root-user
+```
+
+Call a page twice and list the keys with `redis-cli --scan --pattern 'sevenx_valkey_cache:*'`. With eZINI debug on, a notice says
+`Loading Redis cache '...' for file '...'` when INI data come from the server.
+
+## Limits
+
+* Entries live in memory: size the server for the number of pages and siteaccesses, and set an eviction policy.
+* A server outage turns into cache misses; the extension decides how errors are reported.
+
 ## Related
 
 * [Chronicle](../../../history/extensions/sevenx_valkey_cache.md) and [release notes](../../../changelogs/extensions/sevenx_valkey_cache.md)
+* [Cache clear: rename aside](../cache-clear-rename-aside.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), [July 2026](../../../history/2026/2026-07.md)
 * [HTTP caching](../../../bc/6.0/http-caching.md), [SQL query cache](../../../bc/6.0/sql-query-cache.md)
 * [Change ledger](../../../history/ledger/sevenx_valkey_cache.md)
 * [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)

@@ -74,3 +74,7 @@ No commit of this repository is tagged only with this release in the ledger wind
 * [Chronicle](../../history/extensions/recaptcha.md)
 * [Change ledger](../../history/ledger/recaptcha.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2024-08](../../history/extensions/months/2024-08.md), [2024-09](../../history/extensions/months/2024-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)

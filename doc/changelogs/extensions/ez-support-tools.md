@@ -23,3 +23,7 @@ Updated: guard against null version from InstalledVersions::getVersion() (`ea794
 ## See also
 
 * [Feature page](../../features/6.0/extensions/ez-support-tools.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

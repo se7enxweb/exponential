@@ -57,3 +57,7 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 * [Feature page](../../features/6.0/extensions/ezwebin-ezpackage.md)
 * [Release notes](../../changelogs/extensions/ezwebin-ezpackage.md)
 * [Change ledger](../ledger/ezwebin-ezpackage.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

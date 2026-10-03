@@ -62,3 +62,7 @@ What each release of `nxc_powercontent` contains, assembled from its commits. Ea
 * [Chronicle](../../history/extensions/nxc_powercontent.md)
 * [Change ledger](../../history/ledger/nxc_powercontent.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2024-10](../../history/extensions/months/2024-10.md), [2025-12](../../history/extensions/months/2025-12.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-06](../../history/extensions/months/2026-06.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

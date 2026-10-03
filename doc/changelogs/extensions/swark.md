@@ -36,3 +36,7 @@ What each release of `swark` contains, assembled from its commits. Each line lin
 * [Chronicle](../../history/extensions/swark.md)
 * [Change ledger](../../history/ledger/swark.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)

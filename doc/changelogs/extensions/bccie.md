@@ -83,3 +83,7 @@ What each release of `bccie` contains, assembled from its commits. Each line lin
 * [Chronicle](../../history/extensions/bccie.md)
 * [Change ledger](../../history/ledger/bccie.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

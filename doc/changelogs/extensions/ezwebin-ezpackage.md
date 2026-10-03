@@ -66,3 +66,8 @@ No commit of this repository is tagged only with this release in the ledger wind
 * [Feature page](../../features/6.0/extensions/ezwebin-ezpackage.md)
 * [Chronicle](../../history/extensions/ezwebin-ezpackage.md)
 * [Change ledger](../../history/ledger/ezwebin-ezpackage.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2024-03](../../history/extensions/months/2024-03.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md)

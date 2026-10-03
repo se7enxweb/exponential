@@ -19,3 +19,8 @@ What each release of `cjw-exponential-media-site-data` contains, assembled from 
 * [Feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md)
 * [Chronicle](../../history/extensions/cjw-exponential-media-site-data.md)
 * [Change ledger](../../history/ledger/cjw-exponential-media-site-data.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+* months: [2026-07](../../history/extensions/months/2026-07.md)

@@ -62,3 +62,7 @@ What each release of `bcgooglesitemaps` contains, assembled from its commits. Ea
 * [Chronicle](../../history/extensions/bcgooglesitemaps.md)
 * [Change ledger](../../history/ledger/bcgooglesitemaps.md)
 * [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+
+## See also
+
+* months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

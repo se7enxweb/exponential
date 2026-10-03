@@ -23,3 +23,7 @@ Updated: Revert: restore 'twig' string ID in include operator (`07b2d1c`)
 ## See also
 
 * [Feature page](../../features/6.0/extensions/ngsymfonytools.md)
+
+## See also
+
+* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
