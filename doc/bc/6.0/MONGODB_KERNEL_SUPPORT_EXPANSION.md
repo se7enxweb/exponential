@@ -1,15 +1,35 @@
-# MongoDB Kernel Support — Comprehensive Port Reference
+# MongoDB kernel support
 
-**Project:** mongodb.demo.se7enx.com — Exponential CMS running MongoDB instead of MySQL
-**PHP Runtime:** `/opt/plesk/php/8.5/bin/php`, FPM pool `plesk-php85-fpm`
-**Database:** MongoDB `exp` at `localhost:27017`, user `db`
-**MongoDB PHP Driver:** `MongoDB\Client` via Composer (`vendor/autoload.php`)
-**Admin panel:** `https://edit.mongodb.demo.se7enx.com/` — separate docroot at `/var/www/vhosts/mongodb.demo.se7enx.com/doc/edit.mongodb.demo.se7enx.com/`
-**Front site:** `https://mongodb.demo.se7enx.com/` — docroot symlink at `/web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com/`
-**Login:** the installation's administrator account
-**Error log:** `/var/www/vhosts/mongodb.demo.se7enx.com/logs/edit.mongodb.demo.se7enx.com/error_log`
+Read this page if you want to run Exponential on MongoDB instead of an SQL database, or maintain code that must work
+on both. It is the complete reference of the port: architecture, collections, every changed file, the status of each
+kernel module and class, test plans, the SQL to MongoDB conversion guide and a getting started procedure. If you only
+want to install a site on MongoDB, go straight to
+[section 24, Key getting started steps](#24-key-getting-started-steps-using-exponential-6014-with-mongodb), then
+read [section 26, Known limitations](#26-known-limitations).
 
----
+## In short
+
+| | |
+|---|---|
+| What changed | The MongoDB adapter `expMongoDB` and the `sevenx_mongodb` extension replace every SQL query of the kernel with MongoDB calls (`aggregate()`, `insert()`, `upsert()`, `deleteWhere()`). The adapter never runs SQL: `arrayQuery()` returns `[]` and logs a `MONGO TODO` warning, which is how a missing port shows. |
+| Who is affected | Only installations that choose MongoDB. SQL installations are unchanged. Extensions that run their own SQL through `arrayQuery()` return no rows on MongoDB until they are ported. |
+| How to check | Look for `MONGO TODO` in the debug output or the error log of a page; a fully ported page has none. |
+| How to fix | Port the query following [Patterns and conventions](#7-patterns-and-conventions); see the [datatype compatibility](#25-datatype-compatibility--core-and-community) list before you install community extensions. |
+
+### The reference environment
+
+The port was built and tested on the following setup. Host names and paths are placeholders; use your own.
+
+| | |
+|---|---|
+| Site | Exponential CMS running MongoDB instead of MySQL |
+| PHP runtime | `/opt/plesk/php/8.5/bin/php`, FPM pool `plesk-php85-fpm` |
+| Database | MongoDB `exp` at `localhost:27017` |
+| MongoDB PHP driver | `MongoDB\Client` via Composer (`vendor/autoload.php`) |
+| Admin panel | `https://admin.example.com/`, a separate document root at `/path/to/admin-docroot/` |
+| Front site | `https://www.example.com/`, document root (a symlink) at `/path/to/exponential/` |
+| Login | the installation's administrator account |
+| Error log | `/path/to/logs/admin/error_log` |
 
 ## Table of Contents
 
@@ -40,7 +60,6 @@
 25. [Datatype Compatibility — Core and Community](#25-datatype-compatibility--core-and-community)
 26. [Known Limitations](#26-known-limitations)
 
----
 
 ## 1. Background and Purpose
 
@@ -56,7 +75,6 @@ All fixes are forward-ported on PHP 8.5. SQL DELETE, INSERT, SELECT statements a
 with MongoDB `aggregate()`, `insert()`, `upsert()`, and `deleteWhere()` calls. The adapter
 never executes real SQL; `arrayQuery()` always returns `[]` and logs a `MONGO TODO` warning.
 
----
 
 ## 2. Architecture
 
@@ -97,18 +115,17 @@ Extends `eZDBInterface`. Key methods:
 any nested array through `find()` corrupts the filter. Use `aggregate()` with an explicit
 `$match` stage whenever the condition is non-trivial.
 
----
 
 ## 3. Two-Docroot Layout
 
 ```
-/web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com/   ← front site (symlink)
+/path/to/exponential/   ← front site (symlink)
   extension/sevenx_mongodb/                               ← SYMLINKED to edit docroot
   var/autoload/ezp_override.php                           ← same as edit docroot (identical)
   kernel/class/*.php                                      ← ORIGINAL (not symlinked)
   kernel/content/*.php                                    ← ORIGINAL (not symlinked)
 
-/var/www/vhosts/mongodb.demo.se7enx.com/doc/edit.mongodb.demo.se7enx.com/  ← edit/admin site
+/path/to/admin-docroot/  ← edit/admin site
   extension/sevenx_mongodb/                               ← SYMLINK TARGET
   var/autoload/ezp_override.php                           ← identical content to front site
   kernel/class/*.php                                      ← SEPARATE COPY — edit separately
@@ -123,7 +140,6 @@ Changes made to these files do NOT affect the front site and vice versa.
 
 After editing any PHP file: `touch <file>` to bust opcache (revalidate_freq=2s).
 
----
 
 ## 4. MongoDB Collections Schema
 
@@ -184,7 +200,6 @@ For `eZContentClass`: `id` field has `name='ID'` → stored as `$this->ID` → `
 - `VERSION_STATUS_TEMPORARY = 1` — editing draft (in `kernel/class/edit.php`)
 - `VERSION_STATUS_MODIFIED = 2` — locked by ezscriptmonitor (external edit lock)
 
----
 
 ## 5. All Modified Files (Cumulative)
 
@@ -199,7 +214,6 @@ The central MongoDB adapter.
 | `aggregate()` timing with `eZDebug::accumulatorStart/Stop` | Queries appear in debug toolbar time accumulators |
 | `reportQuery()` in `arrayQuery()` | MONGO TODO entries appear in SQL debug output panel |
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezpersistentobject.php`
 
@@ -263,7 +277,6 @@ return ($rows[0]['maxval'] ?? 0) + 1;
 in every list always received the second-to-last item's data.
 Fix: `unset($row)` immediately after the first loop.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezcontentobject.php`
 
@@ -308,7 +321,6 @@ Eliminates 27× MONGO TODOs on the classlist page (one per class in the Content 
 4. `$lookup` to `ezcontentobject_name` for object name
 5. Returns `eZContentObject` instances
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezcontentobjectversion.php`
 
@@ -323,7 +335,6 @@ Eliminates 27× MONGO TODOs on the classlist page (one per class in the Content 
 - If no versions remain: purges parent object; otherwise updates `current_version` to the
   most recently modified remaining version via `aggregate()`.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezcontentclass.php`
 
@@ -348,7 +359,6 @@ Eliminates 27× MONGO TODOs on the classlist page (one per class in the Content 
 name. Returns `[]` → `$count` undefined → PHP warning → name stays "Copy of Folder" regardless.
 Non-fatal. See backlog for planned fix using `aggregate('ezcontentclass_name', [$match, $count])`.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezcontentclassattribute.php`
 
@@ -360,13 +370,11 @@ Returns `class_identifier/attr_identifier → attr_id` hash used by `eZNamePatte
 Previously returned `[]` → `contentObjectName()` returned empty string → every newly published
 object stored an empty name in `ezcontentobject_name`.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezcontentclassgroup.php`
 
 **`fetch($id)`** — `(int)$id` cast.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezcontentclassclassgroup.php`
 
@@ -377,7 +385,6 @@ Returns `eZContentClass` objects via `handleRows()`.
 
 Previously returned `[]` → classlist page showed "Classes inside (0)".
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezcontentobjecttreenode.php`
 
@@ -398,7 +405,6 @@ Previously returned `[]` → classlist page showed "Classes inside (0)".
 **`subTreeByNodeID($params, $nodeID)`** — full MongoDB path with `$lookup` joins:
 tree → object → class (version=0) → object_name; sort mapping; `$skip`/`$limit` pagination.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezurlaliasml.php`
 
@@ -424,27 +430,23 @@ foreach ($pathElements as $element) {
 }
 ```
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezrole.php`
 
 **Bug:** commented-out `/* } else */` destroyed if/else structure → `arrayQuery` always ran.
 **Fix:** restructured as proper `if ($db->databaseName() == 'mongo') { ... } else { arrayQuery }`.
 
----
 
 ### `kernel/private/classes/ezcontentobjectstategroup.php`
 
 **Bug:** `arrayQuery` ran unconditionally before `if ($db->databaseName() === 'mongo')`.
 **Fix:** wrapped `arrayQuery` in `else` branch.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezsiteaccess.php`
 
 PHP 8.5 implicit nullable fixes in `change()` and `load()`: `?eZINI $siteINI = null`.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/datatypes/ezinisetting/ezinisettingtype.php`
 
@@ -453,32 +455,27 @@ PHP 8.5 implicit nullable fixes in `change()` and `load()`: `?eZINI $siteINI = n
 sends no field when nothing is selected → validation returned `STATE_INVALID` for every
 ini-setting attribute → class store failed with "The class definition could not be stored."
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/datatypes/ezxmltext/ezxmloutputhandler.php`
 
 Line 318: added `$tagName !== null &&` guard before `isset(...)` — PHP 8.5 deprecation for
 null argument to `isset()`.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/datatypes/ezxmltext/ezxmlschema.php`
 
 Line 369: same null guard in `attrDefaultValues()`.
 
----
 
 ### `extension/xrowmetadata/autoloads/xrowmetadataoperator.php`
 
 Line 66: `$cur_parent !== null ? $cur_parent->Name : ''` — guards against null parent node.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/clusterfilehandlers/ezfsfilehandler.php`
 
 PROCESSCACHE debug instrumentation was added during development and has been removed. No debug `error_log` calls remain in this file.
 
----
 
 ### `kernel/class/edit.php` (edit subdomain only)
 
@@ -489,7 +486,6 @@ PROCESSCACHE debug instrumentation was added during development and has been rem
    `fetchGroupList()` returns 0 groups, recreates v1 groups from v0 groups.
 3. Debug `error_log()` breadcrumb lines added during development have been removed.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezcontentlanguage.php`
 
@@ -501,7 +497,6 @@ PROCESSCACHE debug instrumentation was added during development and has been rem
 ```
 Previously returned `[]` → object/class counts showed 0 on language management pages.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezurlaliasquery.php`
 
@@ -513,7 +508,6 @@ Previously returned `[]` → object/class counts showed 0 on language management
 
 **`fetchAll()` method:** MongoDB branch calls `buildMongoMatch()` then `aggregate()` with `$sort`/`$skip`/`$limit` stages. The SQL `ORDER BY` fragment (e.g. `"text ASC"`) is parsed at runtime via `preg_split` into a MongoDB sort spec.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/datatypes/ezurl/ezurl.php`
 
@@ -527,13 +521,11 @@ Previously returned `[]` → object/class counts showed 0 on language management
 
 Previously returned `[]` → URL management list page showed no URLs.
 
----
 
 ### `kernel/setup/systemupgrade.php`
 
 Core file (no override). Added `if ( !is_object( $dbSchema ) )` guard before `$dbSchema->transformSchema(…)`. For MongoDB, `eZDbSchema::instance()` returns `false` (no schema handler is registered for `'mongo'`). The page now returns early and shows "Database check OK." instead of crashing with `Call to a member function transformSchema() on bool`.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezsection.php`
 
@@ -544,13 +536,11 @@ $rows = $db->aggregate( 'ezsection', [ [ '$count' => 'count' ] ] );
 return !empty( $rows ) ? (int) $rows[0]['count'] : 0;
 ```
 
----
 
 ### `lib/ezdbschema/classes/ezdbschema.php`
 
 Core lib file. `instance()` received `$params = false` from MongoDB callers (no schema handler for `'mongo'`). On PHP 8.5 the subsequent `!isset($params['instance'])` access triggered `E_DEPRECATED: Automatic conversion of false to array`. Fix: added `if ( !is_array( $params ) ) $params = array();` guard immediately after the `is_object( $params )` check, ensuring `$params` is always an array before any key access.
 
----
 
 ### `kernel/search/stats.php`
 
@@ -563,7 +553,6 @@ $searchListCount = [ [ 'count' => !empty( $rows ) ? (int) $rows[0]['count'] : 0 
 
 Previously `arrayQuery` returned `[]` → `$searchListCount[0]['count']` undefined → search stats page crashed with `Undefined array key 0`.
 
----
 
 ### `extension/sevenx_mongodb/classes/kernel/ezsearchlog.php`
 
@@ -574,7 +563,6 @@ Previously `arrayQuery` returned `[]` → `$searchListCount[0]['count']` undefin
 
 Previously `arrayQuery` returned `[]` → search stats page showed an empty phrase list.
 
----
 
 ### `kernel/infocollector/overview.php`
 
@@ -592,7 +580,6 @@ Core file (no override). Added MongoDB branch for both queries:
 
 Previously both queries returned `[]` → page showed no objects and count 0.
 
----
 
 ### Data Fixes Applied Directly in MongoDB
 
@@ -601,7 +588,6 @@ Previously both queries returned `[]` → page showed no objects and count 0.
 | `ezcontentobject_name` object 242 v12 | `name` was `[]` (empty array stored before classAttributeIdentifiersHash fix); updated to `'Home'` |
 | `ezcontentclass_classgroup` class 47, 48 | v0 group records inserted; orphaned v2 group records deleted |
 
----
 
 ## 6. Kernel Modules — Status and Known Issues
 
@@ -626,7 +612,6 @@ datatype casting. `$ClassID` from URL param was string `"49"`. MongoDB stores in
 JOIN for copy-name deduplication. Returns `[]` → PHP warning → name appended number is skipped.
 Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog §11.
 
----
 
 ### Module: `content` (Content Objects)
 
@@ -652,7 +637,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `addContentObjectRelation()` | `to_contentobject_id` not int-cast — relation insert may fail |
 | Multiple `arrayQuery` calls (~30+) | Many single-table queries not yet replaced |
 
----
 
 ### Module: `setup`
 
@@ -664,7 +648,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `rad` | Untested |
 | `systemupgrade` | ✅ Works — `is_object()` guard added before `transformSchema()`; shows "Database check OK." for MongoDB |
 
----
 
 ### Module: `user`
 
@@ -675,7 +658,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `preferences` | ✅ Works |
 | `password` | ✅ Works |
 
----
 
 ### Module: `state`
 
@@ -685,7 +667,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `view` | Untested |
 | `edit` | Untested |
 
----
 
 ### Module: `role`
 
@@ -695,7 +676,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `view` | Untested |
 | `edit` | Untested |
 
----
 
 ### Module: `section`
 
@@ -704,7 +684,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `list` | ✅ Works — `sectionCount()` MongoDB `$count` aggregate added |
 | `edit` | Untested |
 
----
 
 ### Module: `language`
 
@@ -713,7 +692,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `list` | ✅ Works — `objectCount()` + `classCount()` bitmask aggregate added (`$bitwiseAnd` inside `$expr`) |
 | `edit` | Untested |
 
----
 
 ### Module: `search`
 
@@ -721,7 +699,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 |---|---|
 | `stats` | ✅ Works — MongoDB `$count` aggregate branch added in `stats.php`; `mostFrequentPhraseArray()` pipeline added in `ezsearchlog.php` |
 
----
 
 ### Module: `shop`
 
@@ -730,7 +707,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `orderlist` | Untested — `ezorder.php`, `ezbasket.php` have multiple `arrayQuery` calls |
 | `basket` | Untested |
 
----
 
 ### Module: `infocollector`
 
@@ -738,7 +714,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 |---|---|
 | `overview` | ✅ Works — MongoDB `$lookup` pipeline added directly in `overview.php`; `ezinformationcollection.php` class JOIN queries remain (not called by overview page) |
 
----
 
 ### Module: `workflow`
 
@@ -747,7 +722,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `grouplist` | Untested |
 | `processlist` | Untested |
 
----
 
 ### Module: `url`
 
@@ -756,7 +730,6 @@ Non-fatal: copy gets name "Copy of Folder" without sequence number. See backlog 
 | `list` | ✅ Works — `ezurlaliasquery.php` `count()` + `fetchAll()` + `buildMongoMatch()` added; `ezurl.php` 4-table JOIN replaced with `$lookup` pipeline |
 | `translate` | Untested |
 
----
 
 ## 7. Patterns and Conventions
 
@@ -820,7 +793,6 @@ touch /path/to/modified/file.php
 ```
 opcache `revalidate_freq=2s` — touch is needed to invalidate cached bytecode.
 
----
 
 ## 8. Operational Notes
 
@@ -905,7 +877,6 @@ touch /path/to/file.php
 Enable via admin panel Quick Settings → Debug output. Queries appear with collection name and
 filter in the "SQL debug output" panel. MONGO TODO entries appear inline with caller info.
 
----
 
 ## 9. Test Plan — Admin
 
@@ -915,7 +886,7 @@ Test all items after each code change. Full regression test before any deploymen
 
 | Step | Expected |
 |---|---|
-| Visit `https://edit.mongodb.demo.se7enx.com/` unauthenticated | Redirect to login page |
+| Visit `https://admin.example.com/` unauthenticated | Redirect to login page |
 | Login with `admin` / correct password | Redirect to Dashboard |
 | Login with wrong password | Error message; stay on login page |
 | Logout via top nav → "Logout: admin" | Redirect to login page |
@@ -1032,7 +1003,6 @@ Test all items after each code change. Full regression test before any deploymen
 | Edit Admin User | Form loads with name, email fields |
 | Change password | Saves; can login with new password |
 
----
 
 ## 10. Test Plan — Front Site
 
@@ -1040,7 +1010,7 @@ Test all items after each code change. Full regression test before any deploymen
 
 | Step | Expected |
 |---|---|
-| Visit `https://mongodb.demo.se7enx.com/` | Homepage renders |
+| Visit `https://www.example.com/` | Homepage renders |
 | No 504 timeout | Page loads in under 2 seconds |
 | Check breadcrumb | Shows site root |
 | Debug: no infinite loop | URL wildcard cache rebuilds quickly (first visit) |
@@ -1105,7 +1075,6 @@ Test all items after each code change. Full regression test before any deploymen
 | Object with multiple languages | View in non-default language | Correct translation shown |
 | Deep URL (5+ levels) | Navigate to deeply nested node | URL resolves; breadcrumb correct |
 
----
 
 ## 11. Resolved Issues Log
 
@@ -1172,7 +1141,6 @@ if ( $db->databaseName() === 'mongo' ) {
 }
 ```
 
----
 
 ## 12. Test Plan — Cronjobs / Scripts
 
@@ -1182,7 +1150,6 @@ All scripts below live under `bin/php/` or `cronjobs/` and are invoked via
 - **MongoDB Status** — whether it works, is blocked, or needs a branch
 - **Key Fix** — the specific `arrayQuery`/`query` call that must be patched
 
----
 
 ### 13.1  `runcronjobs.php` — Cron Launcher
 
@@ -1197,7 +1164,6 @@ enabled cronjob script via `include`.
 /opt/plesk/php/8.5/bin/php runcronjobs.php --siteaccess=sevenx_site --allow-root-user
 ```
 
----
 
 ### 13.2  `bin/php/updateniceurls.php` — URL Alias Rebuild
 
@@ -1219,7 +1185,6 @@ content tree. Called after bulk imports or when aliases become stale.
   --siteaccess=sevenx_site --allow-root-user
 ```
 
----
 
 ### 13.3  `bin/php/updatesearchindex.php` — Full Search Index Rebuild
 
@@ -1233,7 +1198,6 @@ for all content objects.
 verify `fetchObjectList()` MongoDB branch in `ezpersistentobject.php` handles
 `SORT` and `LIMIT` correctly.
 
----
 
 ### 13.4  `cronjobs/indexcontent.php` — Incremental Search Indexing
 
@@ -1260,7 +1224,6 @@ if ( $db->databaseName() === 'mongo' ) {
 After indexing each object, `DELETE FROM ezpending_actions WHERE id=X` — replace
 with `$db->collection('ezpending_actions')->deleteOne(['id' => (int)$id])`.
 
----
 
 ### 13.5  `cronjobs/staticcache_cleanup.php` — Static Cache Cleanup
 
@@ -1271,7 +1234,6 @@ URL for each pending node, writes a static HTML file, then removes the row.
 
 **Fix pattern:** identical to §13.4 — `aggregate('ezpending_actions', [$match action='static_store'])`.
 
----
 
 ### 13.6  `cronjobs/unlock.php` — Unlock Locked Objects
 
@@ -1307,7 +1269,6 @@ if ( $db->databaseName() === 'mongo' ) {
 The subsequent `UPDATE ezcobj_state_link SET contentobject_state_id=1` must be
 replaced with `$db->collection('ezcobj_state_link')->updateMany(...)`.
 
----
 
 ### 13.7  `cronjobs/session_gc.php` — Session Garbage Collection
 
@@ -1318,7 +1279,6 @@ replaced with `$db->collection('ezcobj_state_link')->updateMany(...)`.
 `eZSession` stores to `ezsession` collection; `garbageCollector()` deletes rows
 older than `SessionTimeout`. Likely requires a MongoDB branch in `eZSession`.
 
----
 
 ### 13.8  `cronjobs/trashpurge.php` — Trash Purge
 
@@ -1329,7 +1289,6 @@ older than `SessionTimeout`. Likely requires a MongoDB branch in `eZSession`.
 `eZContentObject::fetchList` and `removeThis()`. `fetchObjectList` has a
 MongoDB branch. `removeThis()` (hard delete) likely needs a MongoDB branch — untested.
 
----
 
 ### 13.9  Direct MongoDB Data Repair — URL Alias Chain
 
@@ -1362,7 +1321,6 @@ $db->ezurlalias_ml->updateMany(['parent' => 25], ['$set' => ['parent' => 461]]);
 
 **Post-repair:** Run `bin/php/ezcache.php --clear-id=urlalias` to flush the alias cache.
 
----
 
 ### 13.10  `cronjobs/old_drafts_cleanup.php` / `internal_drafts_cleanup.php`
 
@@ -1374,7 +1332,6 @@ $db->ezurlalias_ml->updateMany(['parent' => 25], ['$set' => ['parent' => 461]]);
 calls `fetchObjectList`. The `fetchObjectList` MongoDB branch should handle simple
 filters. Needs integration test.
 
----
 
 ### 13.11  `cronjobs/notification.php` — Notification Events
 
@@ -1384,7 +1341,6 @@ filters. Needs integration test.
 **MongoDB Status:** 🔴 Untested. `eZNotificationEventFilter` contains JOIN queries
 against `eznotification_collection` / `eznotificationevent` — likely needs MongoDB branches.
 
----
 
 ### 13.12  `cronjobs/updateviewcount.php` — View Count Updater
 
@@ -1396,7 +1352,6 @@ node view events, and increments `view_count` in `ezcontentobject_tree`.
 `eZPersistentObject::store()` which should work via the MongoDB adapter.
 Needs smoke-test after §13.3 search index work.
 
----
 
 ### 13.13  `bin/php/cleanupversions.php` — Version Cleanup
 
@@ -1408,7 +1363,6 @@ internally uses `fetchObjectList` (has MongoDB branch) and `removeThis()` which
 calls `query('DELETE FROM …')` — a no-op. Needs a MongoDB `deleteMany` branch in
 `eZContentObjectVersion::removeThis()`.
 
----
 
 ### 13.14  `bin/php/adddefaultstates.php` — Add Default Object States
 
@@ -1418,7 +1372,6 @@ calls `query('DELETE FROM …')` — a no-op. Needs a MongoDB `deleteMany` branc
 **MongoDB Status:** ⚠️  Simple `INSERT … WHERE NOT EXISTS` pattern. Needs
 MongoDB `insertOne` with a pre-check via `aggregate`.
 
----
 
 ### Cronjob Test Matrix
 
@@ -1439,7 +1392,6 @@ MongoDB `insertOne` with a pre-check via `aggregate`.
 | `cleanupversions.php`          | ⚠️ Partial | `removeThis()` DELETE no-op            |
 | `adddefaultstates.php`         | ⚠️ Partial | INSERT WHERE NOT EXISTS              |
 
----
 
 ## 14. PHPUnit Testing — Theory and Next-Phase Plan
 
@@ -1450,7 +1402,6 @@ MongoDB `insertOne` with a pre-check via `aggregate`.
 
 This section documents the **theory and prerequisites** for adding automated PHPUnit test coverage to the MongoDB port.
 
----
 
 ### 14.1 Current State of Exponential Test Infrastructure
 
@@ -1464,7 +1415,6 @@ As of version 6.0.13, the project uses **PHPUnit 9.x or 10.x** (via Composer), w
 
 Before any test can run against MongoDB, the bootstrap and configuration layers need to be made database-agnostic.
 
----
 
 ### 14.2 What Needs to Change in the Bootstrap Layer
 
@@ -1494,7 +1444,6 @@ if ( getenv('TEST_DB_DRIVER') === 'mongo' ) {
 }
 ```
 
----
 
 ### 14.3 Test Database Isolation Strategies
 
@@ -1556,7 +1505,6 @@ abstract class eZMongoDBTestCase extends \PHPUnit\Framework\TestCase
 }
 ```
 
----
 
 ### 14.4 Fixture Format
 
@@ -1599,7 +1547,6 @@ Each JSON file contains an array of documents that match the MongoDB document sh
 ]
 ```
 
----
 
 ### 14.5 Existing Tests That Need Modification
 
@@ -1638,7 +1585,6 @@ public static function dbProvider(): array
 
 The `setUpDatabase()` helper in the base class would re-instantiate the `eZDB` singleton with the appropriate driver, seed the relevant fixtures, and register a teardown cleanup.
 
----
 
 ### 14.6 New Tests to Create for MongoDB-Specific Behaviour
 
@@ -1691,7 +1637,6 @@ Tests the adapter itself:
 - `testFetchAllReturnsPathElements()`
 - `testFetchAllRespectsSortOrder()`
 
----
 
 ### 14.7 PHPUnit Configuration for Dual-Database Runs
 
@@ -1743,7 +1688,6 @@ Running the MySQL suite:
 TEST_DB_DRIVER=mysql /opt/plesk/php/8.5/bin/php vendor/bin/phpunit --testsuite "MySQL (MariaDB)"
 ```
 
----
 
 ### 14.8 Mocking Strategy for Kernel Classes That Lack an Override
 
@@ -1755,7 +1699,6 @@ Some core kernel files (e.g. `kernel/search/stats.php`, `kernel/infocollector/ov
 
 For the immediate next phase, Option A is recommended: it catches real regressions, requires no refactoring, and validates the full request/response cycle including template rendering.
 
----
 
 ### 14.9 Composer Requirements for PHPUnit 9/10 Support (6.0.13)
 
@@ -1777,7 +1720,6 @@ The existing `rector.php` (in the workspace root) can be used to automatically u
   --config rector.php --dry-run
 ```
 
----
 
 ## 15. Kernel PHP Classes — Status and Known Issues
 
@@ -1790,7 +1732,6 @@ Status key:
 - 🔵 **Untested** — No verified test; may work or may be broken; not yet exercised
 - 📋 **Queued** — Fix is planned and design is known (see Remaining Issues Backlog §11)
 
----
 
 ### 15.1 Core ORM and Database Layer
 
@@ -1823,7 +1764,6 @@ This is the central adapter class. All primary read/write methods have been impl
 
 **Known limitation:** `translateConditions()` silently drops nested array values. Any caller that passes `['field' => ['$in' => [...]]]` through `find()` or `findOne()` will get a broken filter. All such callers must use `aggregate()` directly.
 
----
 
 #### `extension/sevenx_mongodb/classes/kernel/ezpersistentobject.php` — ORM Base Class
 
@@ -1844,7 +1784,6 @@ Every persistent object in the CMS ultimately calls `fetchObjectList()`, `storeO
 - `$custom_fields` expressions other than `count` (e.g. `SUM`, `AVG`) have no MongoDB branch.
 - `$field_filters` (column selection) may not correctly map all SQL aliases to MongoDB `$project` keys.
 
----
 
 ### 15.2 Content Classes
 
@@ -1866,7 +1805,6 @@ Every persistent object in the CMS ultimately calls `fetchObjectList()`, `storeO
 
 **Root cause note — missing `name` field:** The MongoDB `ezcontentclass` collection does not contain a `name` field at all. The original SQL schema stored class names in a `name` column; MongoDB migration stored only `serialized_name_list`. Any code that reads `$row['name']` directly from a raw `fetchObjectList` result will get `Undefined array key "name"`. The fix in `canInstantiateClassList()` post-processes raw rows to inject the `name` key. Other callers that access `$row['name']` directly on raw class arrays may need the same fix.
 
----
 
 #### `extension/sevenx_mongodb/classes/kernel/ezcontentclassattribute.php`
 
@@ -1878,7 +1816,6 @@ Every persistent object in the CMS ultimately calls `fetchObjectList()`, `storeO
 | `fetch($id, $version)` | ✅ | Routes through `fetchObjectList` |
 | `fetchListByClassID($classID, $version)` | 🔵 | Not explicitly tested; should work via `fetchObjectList` |
 
----
 
 #### `extension/sevenx_mongodb/classes/kernel/ezcontentclassgroup.php`
 
@@ -1889,7 +1826,6 @@ Every persistent object in the CMS ultimately calls `fetchObjectList()`, `storeO
 | `fetch($id)` | ✅ | Int cast added |
 | `fetchList()` | ✅ | Via `fetchObjectList` |
 
----
 
 #### `extension/sevenx_mongodb/classes/kernel/ezcontentclassclassgroup.php`
 
@@ -1900,7 +1836,6 @@ Every persistent object in the CMS ultimately calls `fetchObjectList()`, `storeO
 | `fetchClassList($version, $groupId)` | ✅ | Two-step aggregate: classgroup → class IDs → class fetch |
 | `removeClassMembers()` | 🔵 | Uses `removeObject()` — likely works; not tested standalone |
 
----
 
 ### 15.3 Content Objects
 
@@ -1938,7 +1873,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 
 **Summary:** Object view/edit/history pages work. Related objects display partially (list works, count shows 0). State display broken for custom states. URL alias list and breadcrumb work because `assignedNodes()` and `hasVisibleNode()` are fixed.
 
----
 
 #### `extension/sevenx_mongodb/classes/kernel/ezcontentobjectversion.php`
 
@@ -1950,7 +1884,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | `removeThis()` | ✅ | Full MongoDB branch; deletes 5 collections; updates parent object |
 | `fetchList()` | 🔵 | Via `fetchObjectList` — likely works |
 
----
 
 #### `extension/sevenx_mongodb/classes/kernel/ezcontentobjecttreenode.php`
 
@@ -1972,7 +1905,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | `childrenByNodeID()` | 🔵 | Via `fetchObjectList`; likely works |
 | `childCount()` | 🔵 | Likely uses `aggregate`; not confirmed |
 
----
 
 ### 15.4 URL and Navigation
 
@@ -1988,7 +1920,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 
 **`storePath()` is the main outstanding blocker for URL alias rebuilding.** The script `bin/php/updateniceurls.php` completes without crash but reports `Updated 0/219` because `storePath()` cannot write child alias entries. This is a significant known gap.
 
----
 
 #### `extension/sevenx_mongodb/classes/kernel/ezurlaliasquery.php`
 
@@ -2001,7 +1932,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | `fetchAll()` | ✅ | MongoDB `$sort`/`$skip`/`$limit` aggregate branch |
 | Line 256 — DISTINCT action_type | ✅ | `$group` aggregate replaces SQL DISTINCT; column extracted via `array_column($rows, '_id')` |
 
----
 
 #### `extension/sevenx_mongodb/classes/kernel/datatypes/ezurl/ezurl.php`
 
@@ -2012,7 +1942,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | `fetchByAttribute()` — count variant | ✅ | 4-stage `$lookup` chain + `$count` |
 | `fetchByAttribute()` — list variant | ✅ | 4-stage `$lookup` chain + `$project`/`$skip`/`$limit` |
 
----
 
 ### 15.5 Roles and Permissions
 
@@ -2033,7 +1962,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | `fetchUserByRole()` / `fetchRolesByLimitation()` | ✅ | `aggregate` + remap `contentobject_id` → `user_id` |
 | Lines 891, 921, 1005, 1048 | ✅ | All in SQL `else` branches — unreachable for MongoDB |
 
----
 
 ### 15.6 Sections
 
@@ -2048,7 +1976,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | `fetch($id)` | 🔵 | Via `fetchObjectList`; likely works |
 | `fetchFilteredList()` | 🔵 | Via `fetchObjectList`; likely works |
 
----
 
 ### 15.7 Search
 
@@ -2065,7 +1992,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 
 **Status: ✅ Working** — MongoDB `$count` aggregate branch added.
 
----
 
 ### 15.8 Information Collector
 
@@ -2086,7 +2012,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 
 **Status: ✅ Working** — Full `$lookup` pipeline for both queries.
 
----
 
 ### 15.9 Languages
 
@@ -2102,7 +2027,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | `fetchByLocale($locale)` | 🔵 | Via `fetchObjectList` — likely works |
 | `maxCount()` | 🔵 | Used by `ezurlaliasquery.php` makeList(); likely works |
 
----
 
 ### 15.10 Schema and Setup
 
@@ -2124,7 +2048,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | Null-object crash before `transformSchema()` | ✅ | `is_object()` guard added |
 | Instant "ok" without real check | ✅ | Real collection-vs-schema diff using `listCollectionNames()` |
 
----
 
 ### 15.11 Datatypes
 
@@ -2161,7 +2084,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 |---|---|---|
 | `deleteStoredObjectAttribute()` orphan URL cleanup | ✅ | `$nin` anti-join aggregate finds `ezurl` IDs not in `ezurl_object_link`; `deleteWhere` removes orphans |
 
----
 
 ### 15.12 Site Access and Misc
 
@@ -2181,7 +2103,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 
 **Status: ✅ Working** — `arrayQuery` moved into `else` branch; MongoDB path runs first.
 
----
 
 ### 15.13 Cronjob-Related Classes
 
@@ -2198,7 +2119,6 @@ This is the largest and most complex kernel class. ~30+ methods have been review
 | `ezcollaborationgroup.php` | ✅ | Line 318: `$count` aggregate on `ezcollab_item_group_link` |
 | `lib/ezimage/classes/ezimagemanager.php` | ✅ | Line 195: `array_key_exists( $aliasName ?? '', ... )` — already fixed |
 
----
 
 ### 15.14 Overall Progress Summary
 
@@ -2225,7 +2145,6 @@ As of June 2026:
 
 The admin panel core workflows (content browse, edit, publish, class management, section list, URL management, info collector, search stats) are all functional. The primary remaining gaps are role/permission display, keyword indexing, URL alias rebuild (`storePath()`), and shop/workflow/collaboration modules.
 
----
 
 ## 13. References
 
@@ -2240,13 +2159,11 @@ on AlmaLinux — some steps differ for MongoDB 8.3+ (e.g. repo URLs, package nam
 - [Aggregation Pipeline — MongoDB Manual](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/) — full reference for `$match`, `$lookup`, `$project`, `$group`, `$count`, `$skip`, `$limit`, `$sort`
 - [Exponential 4.x Kernel Documentation](https://doc.ez.no/eZ-Publish/Technical-manual/4.x/) — original SQL-based architecture; useful for understanding what each class is supposed to do
 
----
 
 ## 16. MongoDB Driver Design and Technical Completion vs ezmysqli
 
 This section compares `expMongoDB` (the MongoDB adapter used in this project) against `eZMySQLi` (the reference SQL adapter shipped with Exponential). The goal is to document how complete the MongoDB driver is, which interfaces are fully implemented, which are stubs, which have semantic differences, and what would be required to achieve full parity.
 
----
 
 ### 16.1 Class Hierarchy and Interface Contract
 
@@ -2265,7 +2182,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 - Error handling (`errorMessage()`, `errorNumber()`)
 - Server metadata (`databaseName()`, `databaseServerVersion()`)
 
----
 
 ### 16.2 Method-by-Method Comparison
 
@@ -2281,7 +2197,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 
 **Hardcoded database name** is the most significant lifecycle limitation. `eZMySQLi` reads `DatabaseName` from `site.ini`. `expMongoDB` hardcodes `'exp'` in every method that calls `selectCollection()`. To support multiple environments (dev/staging/prod), this must be made configurable via `site.ini[DatabaseSettings] DatabaseName`.
 
----
 
 #### Query Execution
 
@@ -2295,7 +2210,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 
 **Key design consequence:** Every kernel class that called `$db->arrayQuery()` now calls a stub that returns `[]`. The MongoDB port replaces each callsite with an explicit `if ($db->databaseName() === 'mongo') { $rows = $db->aggregate(...); } else { $rows = $db->arrayQuery(...); }` branch. This is the fundamental pattern of the entire port project.
 
----
 
 #### Data Manipulation
 
@@ -2307,7 +2221,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 | `mongoUpdateOne($table, $filter, $update)` | Does not exist | `updateOne($filter, $update)` — for `$set`, `$inc`, `$push` etc. | ✅ MongoDB-native |
 | `insertWithout($table, $doc, $keyExclusions)` | Exists in eZMySQLi | Not implemented | 🔴 Missing |
 
----
 
 #### Schema Inspection
 
@@ -2320,7 +2233,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 | `tableCount()` | Returns number of tables | Not implemented | 🔴 Missing |
 | `generateUniqueTempTableName($prefix)` | Finds a name not in `eZTableList()` | Works because `eZTableList()` returns `[]` — any name is unique | ⚠️ Accidentally works |
 
----
 
 #### Transaction Control
 
@@ -2333,7 +2245,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 
 **Rollback limitation:** In the SQL driver, if an error occurs mid-operation, `rollback()` undoes all changes in the transaction. In the MongoDB driver, each `insert()`/`upsert()`/`deleteWhere()` call is immediately committed. If a multi-step operation (like `storeVersioned()`) fails halfway, the database will be in a partially updated state. Multi-document transactions (replica set required) are not used.
 
----
 
 #### Sequence and Auto-Increment
 
@@ -2345,7 +2256,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 
 **`nextAtomicID` vs `nextSeqID`:** `nextSeqID` has a race condition — two concurrent requests can read the same MAX and generate the same ID. `nextAtomicID` uses MongoDB's `findOneAndUpdate` with `$inc` which is atomic and race-free. The port gradually migrates ID generation to `nextAtomicID` for collections that matter.
 
----
 
 #### Escaping and Type Coercion
 
@@ -2359,7 +2269,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 
 **`md5()` bug:** `eZDBInterface::md5($str)` returns `MD5('string')` as a SQL fragment for use inside SQL queries. `expMongoDB` inherits this without override. Any caller that does `$hash = $db->md5($str)` and uses `$hash` as an actual hash value will get the literal string `"MD5('...')"` instead of the hash. The `ezurlaliasml.php` `translate()` rewrite explicitly calls PHP `md5()` to avoid this. All other callers must be checked.
 
----
 
 #### Locking
 
@@ -2370,7 +2279,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 
 **Impact:** Table-level locks were used in Exponential to protect sequences and tree restructuring. Without locking, concurrent requests that restructure the content tree (move nodes, publish) could produce inconsistent `path_string` or `depth` values. At current single-user admin usage this is not a problem; at production traffic levels this could cause corruption.
 
----
 
 #### Error Handling
 
@@ -2383,7 +2291,6 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 
 Currently all MongoDB errors are caught in try/catch blocks inside each method and written to `error_log()`. They do not propagate to `eZDebug` or the admin toolbar. This makes it harder to diagnose MongoDB-specific errors during development.
 
----
 
 #### Debugging and Profiling
 
@@ -2395,7 +2302,6 @@ Currently all MongoDB errors are caught in try/catch blocks inside each method a
 | Query timing accumulators | `eZDebug::accumulatorStart/Stop('mysql_cluster_query')` | `eZDebug::accumulatorStart/Stop('mongodb_cluster_query')` | ✅ Equivalent |
 | Slow query log | MySQLi slow query log via `my.cnf` | Not implemented — no threshold-based slow query detection | 🔴 Missing |
 
----
 
 #### `translateConditions()` vs SQL WHERE Clause Generation
 
@@ -2416,7 +2322,6 @@ This is the most significant functional gap between the drivers.
 
 This means `find()` and `findOne()` are only safe for simple scalar equality filters. Any query with `$in`, `$or`, `$expr`, or computed conditions **must** use `aggregate()` with an explicit `$match` stage. This is the root cause of most MONGO TODO entries: kernel classes that called `$db->find($table, $complexCondition)` needed to be rewritten as `$db->aggregate($table, [['$match' => $complexCondition]])` instead.
 
----
 
 ### 16.3 Code Style: eZMySQLi vs expMongoDB
 
@@ -2452,7 +2357,6 @@ The following patterns from `eZMySQLi` are not followed in `expMongoDB` and shou
 
 8. **`$OutputSQL` flag not checked in `find()` and `findOne()`.** These queries do not call `reportQuery()` and are invisible in the debug toolbar, making profiling incomplete.
 
----
 
 ### 16.4 Feature Completion Matrix
 
@@ -2471,7 +2375,6 @@ The following patterns from `eZMySQLi` are not followed in `expMongoDB` and shou
 | Environment config | 100% (reads site.ini) | 10% | DB name hardcoded |
 | **Overall** | **100%** | **~55%** | Interface contract partially fulfilled |
 
----
 
 ### 16.5 Priority Order for Closing the Gap
 
@@ -2491,13 +2394,11 @@ Ordered by impact on stability and correctness at current usage level:
 
 7. **Multi-document transaction support (long-term)** — requires MongoDB replica set setup. Out of scope for the current single-node deployment but important for production.
 
----
 
 ## 17. Additional Fixes — System Upgrade, RAD Code Generators, BC CIE Export, Language Bitmask
 
 This section documents all fixes and refactors applied during the May 28 2026 session.
 
----
 
 ### 17.1 System Upgrade Page (`/setup/systemupgrade`) — full refactor
 
@@ -2524,7 +2425,6 @@ This section documents all fixes and refactors applied during the May 28 2026 se
 
 **Files:** `kernel/setup/systemupgrade.php`, `design/admin/templates/setup/systemupgrade.tpl`
 
----
 
 ### 17.2 RAD Code Generators (`/setup/rad`) — PHP 8.5 compatibility
 
@@ -2558,7 +2458,6 @@ The RAD tools generate downloadable PHP skeleton files. The generated code was w
 
 See also: `RAD-CODEGEN-UPDATES.md` in the project root for full details.
 
----
 
 ### 17.3 BC CIE Export (`/bccie/overview`) — MONGO TODO stubs
 
@@ -2583,7 +2482,6 @@ MongoDB fix: simple `$group` by `contentobject_id` + `$count` stage on `ezinfoco
 
 **File:** `extension/bccie/classes/bccieExportUtils.php`
 
----
 
 ### 17.4 `$bitwiseAnd` → `$bitAnd` (Languages page)
 
@@ -2593,7 +2491,6 @@ MongoDB fix: simple `$group` by `contentobject_id` + `$count` stage on `ezinfoco
 
 **File:** `extension/sevenx_mongodb/classes/kernel/ezcontentlanguage.php` (lines 802, 831)
 
----
 
 ### 17.5 E_DEPRECATED nullable parameter (`ezcontentcachemanager.php`)
 
@@ -2603,7 +2500,6 @@ MongoDB fix: simple `$group` by `contentobject_id` + `$count` stage on `ezinfoco
 
 **File:** `extension/sevenx_mongodb/classes/kernel/ezcontentcachemanager.php` (line 763)
 
----
 
 ### 17.6 URL wildcards — corrupt orphan documents
 
@@ -2611,9 +2507,7 @@ MongoDB fix: simple `$group` by `contentobject_id` + `$count` stage on `ezinfoco
 
 **Fix:** `db.ezurlwildcard.deleteMany({})` via `mongosh` — deleted the corrupt orphan records. The collection is now empty and the page shows `(0)` correctly.
 
----
 
----
 
 ## 18. SQL Database Conversion Guide — Export Any RDBMS to JSON and Import into MongoDB
 
@@ -2621,7 +2515,6 @@ This section is a practical reference for migrating an existing relational datab
 
 The goal is a clean, repeatable, one-way migration: export each SQL table to JSON (one document per row), then bulk-import each JSON file into the matching MongoDB collection.
 
----
 
 ### 18.1 Key Concepts Before You Start
 
@@ -2667,7 +2560,6 @@ Import tables in dependency order — referenced tables first. Minimum safe orde
 10. `ezuser`, `ezuser_setting`, `ezrole`, `ezpolicy`, `ezpolicy_limitation`, `ezpolicy_limitation_value`
 11. All remaining tables
 
----
 
 ### 18.2 MySQL / MariaDB → JSON
 
@@ -2805,7 +2697,6 @@ Run:
 python3 mysql_to_ndjson.py --user root --password secret --db exp --outdir ./json_export
 ```
 
----
 
 ### 18.3 PostgreSQL → JSON
 
@@ -2892,7 +2783,6 @@ Run:
 python3 pg_to_ndjson.py --dsn postgresql://root:secret@localhost/exp --outdir ./json_export
 ```
 
----
 
 ### 18.4 SQLite → JSON
 
@@ -2953,7 +2843,6 @@ Run:
 python3 sqlite_to_ndjson.py /var/www/ez.sqlite ./json_export
 ```
 
----
 
 ### 18.5 Oracle → JSON
 
@@ -3038,7 +2927,6 @@ if __name__ == '__main__':
     main()
 ```
 
----
 
 ### 18.6 Generic Python — Any Database via SQLAlchemy
 
@@ -3129,7 +3017,6 @@ if __name__ == '__main__':
     main(sys.argv[1], sys.argv[2], sys.argv[3:] or None)
 ```
 
----
 
 ### 18.7 Post-export validation and fixup
 
@@ -3215,7 +3102,6 @@ for fname in sorted(os.listdir(indir)):
         print(f"  {fname}: {n} docs")
 ```
 
----
 
 ### 18.8 MongoDB Import (`mongoimport`)
 
@@ -3324,7 +3210,6 @@ done
 echo "Done."
 ```
 
----
 
 ### 18.9 Post-import: create indexes
 
@@ -3407,7 +3292,6 @@ db.ezcontentlanguage.createIndex({ locale: 1 }, { unique: true });
 db.ezcontentlanguage.createIndex({ language_mask: 1 });
 ```
 
----
 
 ### 18.10 Verifying the import
 
@@ -3435,11 +3319,10 @@ const admin = db.ezuser.findOne({ login: 'admin' });
 print('Admin user:', admin ? admin.login + ' / object ' + admin.contentobject_id : 'MISSING');
 ```
 
----
 
 ### 18.11 Complete end-to-end example for this project (MySQL → MongoDB)
 
-The production migration for `edit.mongodb.demo.se7enx.com` was performed from the original `exp` MySQL database. The exact commands:
+The production migration for `admin.example.com` was performed from the original `exp` MySQL database. The exact commands:
 
 ```bash
 SCRIPTS=extension/sevenx_mongodb/bin/mongodb
@@ -3461,11 +3344,10 @@ bash $SCRIPTS/import_all.sh ./json_fixed
 mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp" --file $SCRIPTS/create_indexes.js
 
 # 6. Touch opcache and test the admin
-touch /web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com/index.php
-curl -s -o /dev/null -w "%{http_code}" https://edit.mongodb.demo.se7enx.com/user/login
+touch /path/to/exponential/index.php
+curl -s -o /dev/null -w "%{http_code}" https://admin.example.com/user/login
 ```
 
----
 
 ### 18.12 Troubleshooting common import problems
 
@@ -3480,9 +3362,7 @@ curl -s -o /dev/null -w "%{http_code}" https://edit.mongodb.demo.se7enx.com/user
 | Slow page loads after import | Indexes not created | Run `extension/sevenx_mongodb/bin/mongodb/create_indexes.js` in `mongosh` |
 | `mongoimport: command not found` | MongoDB Database Tools not installed separately from `mongod` | `apt install mongodb-database-tools` or download from mongodb.com/try/download/database-tools |
 
----
 
----
 
 ## 19. Project Complete — File by File Patched or Changed List
 
@@ -3490,7 +3370,6 @@ curl -s -o /dev/null -w "%{http_code}" https://edit.mongodb.demo.se7enx.com/user
 
 This section is a canonical record of every file that has been patched or changed as part of the MongoDB port.  It is intended to be used as a reference when comparing git history and verifying completeness of the port.  Every entry lists the file path (relative to the project root), what changed, and which MongoDB adapter method was introduced or replaced.
 
----
 
 ### 19.1 MongoDB Adapter (Core)
 
@@ -3499,7 +3378,6 @@ This section is a canonical record of every file that has been patched or change
 | `extension/sevenx_mongodb/classes/expMongoDB.php` | **Created from scratch.** Wraps `MongoDB\Client`. Implements `query()` (silent no-op for writes), `arrayQuery()` (logs MONGO TODO + returns `[]`), `aggregate()`, `insert()`, `upsert()`, `deleteWhere()`, `nextSeqID()`, `databaseName()`, `escapeString()`, `begin()`/`commit()`/`rollback()` (no-ops), `lock()`/`unlock()` (no-ops), bitOr/bitAnd helpers. |
 | `var/autoload/ezp_override.php` | **Modified.** Added class-override mappings for all patched kernel classes (see section 19.2 and 19.3 below). Also registers `eZContentOperationCollection` override for nxc_powercontent. |
 
----
 
 ### 19.2 Extension Override Classes — `extension/sevenx_mongodb/classes/kernel/`
 
@@ -3523,7 +3401,6 @@ These files shadow the kernel classes of the same name.  Every file follows the 
 | `ezkeyword.php` (datatypes) | `store()` — full MongoDB upsert/delete cycle for keyword+link tables replacing 4 SQL arrayQuery calls |
 | `ezurlaliasquery.php` | Path-translation lookup stubs |
 
----
 
 ### 19.3 nxc_powercontent Override
 
@@ -3531,7 +3408,6 @@ These files shadow the kernel classes of the same name.  Every file follows the 
 |------|---------------|
 | `extension/nxc_powercontent/modules/content/ezcontentoperationcollection.php` | `setVersionStatus()` — added MongoDB branch using `$db->upsert()` on `ezcontentobject_version`; `loopNodeAssignment()` — added MongoDB upsert for `ezcontentobject_tree` and `eznodeassignment`. This is the file that makes **copy operations** actually create tree nodes. |
 
----
 
 ### 19.4 Kernel Files Patched Directly (no override, edited in-place)
 
@@ -3542,7 +3418,6 @@ These files shadow the kernel classes of the same name.  Every file follows the 
 | `lib/ezdb/classes/ezpersistentobject.php` | `storeObject()` — added MongoDB branch: sets `id = null` before insert so `nextSeqID()` assigns the new PK; uses `$db->insert()` or `$db->upsert()` as appropriate. |
 | `kernel/content/ezcontentoperationcollection.php` | `setVersionStatus()` — semicolon bug (`if ( !$existingNode );`) noted but masked by nxc_powercontent override. No edit made (override takes precedence). |
 
----
 
 ### 19.5 Data Layer — Import Scripts (`extension/sevenx_mongodb/bin/mongodb/`)
 
@@ -3559,7 +3434,7 @@ All data-layer migration scripts live in `extension/sevenx_mongodb/bin/mongodb/`
 
 **Quick usage:**
 ```bash
-cd /web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com
+cd /path/to/exponential
 SCRIPTS=extension/sevenx_mongodb/bin/mongodb
 
 bash  $SCRIPTS/export_mysql.sh           ./json_export
@@ -3569,7 +3444,6 @@ bash  $SCRIPTS/import_all.sh             ./json_fixed
 mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp" --file $SCRIPTS/create_indexes.js
 ```
 
----
 
 ### 19.6 Documentation Files
 
@@ -3578,7 +3452,6 @@ mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp" --file $SCRIPTS/create_
 | `extension/sevenx_mongodb/MONGODB_KERNEL_SUPPORT_EXPANSION.md` | This file — running log of all MongoDB port work, architecture decisions, troubleshooting steps, and the canonical file-change list (this section). |
 | `MONGODB-BUGS.md` | Bug tracker for MongoDB port issues, 7+ entries covering edge cases found during testing. |
 
----
 
 ### 19.7 Key Architectural Decisions
 
@@ -3596,7 +3469,6 @@ mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp" --file $SCRIPTS/create_
 
 7. **Copy operations**: Object copy works by setting `id = null` on the cloned `eZContentObject` before storing — `storeObject()` detects null ID and calls `nextSeqID()` to assign a new PK. The `eZContentOperationCollection` override in nxc_powercontent creates the tree node and node assignment in MongoDB.
 
----
 
 ### 19.8 Testing Checklist
 
@@ -3620,7 +3492,6 @@ mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp" --file $SCRIPTS/create_
 | MONGO TODO arrayQuery log | ✅ **Clean** — no unpatched `arrayQuery` calls in normal admin/front-site usage |
 
 
----
 
 ## 20. Steps to Full Kernel Re-Implementation (NO more kernel override extension)
 
@@ -3646,7 +3517,6 @@ This approach worked well for incremental development but carries structural cos
 The clean-state target is: **all MongoDB branches live directly in the `kernel/` and `lib/` files**.
 The extension retains only the adapter (`expMongoDB.php`) and its INI config. No class overrides.
 
----
 
 ### 20.2 What Changes and What Stays
 
@@ -3687,7 +3557,6 @@ state:
 - `kernel/private/classes/ezcontentobjectstategroup.php` — `arrayQuery` → `else` branch
 - `extension/nxc_powercontent/modules/content/ezcontentoperationcollection.php` — stays as a third-party extension override, no change needed
 
----
 
 ### 20.3 The Merge Process (per file)
 
@@ -3713,8 +3582,8 @@ For each override file, follow these steps in order:
 
 4. **Touch** the kernel file on **both** docroots to bust opcache:
    ```bash
-   BASE=/web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com
-   ALT=/var/www/vhosts/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com
+   BASE=/path/to/exponential
+   ALT=/path/to/exponential-alt
    touch "$BASE/kernel/classes/somefile.php" "$ALT/kernel/classes/somefile.php"
    ```
    Note: files under `lib/` are the same physical file on both docroots if the `lib/` directory
@@ -3736,7 +3605,6 @@ For each override file, follow these steps in order:
 
 8. **Repeat** for the next file.
 
----
 
 ### 20.4 Two-Docroot Notes
 
@@ -3753,13 +3621,12 @@ The two docroots differ in how files are physically stored:
 
 **Verify `lib/` status:**
 ```bash
-ls -la /web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com/lib
-ls -la /var/www/vhosts/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com/lib
+ls -la /path/to/exponential/lib
+ls -la /path/to/exponential-alt/lib
 ```
 If `lib/` is a symlink on the front site pointing to the edit site: one edit propagates.
 If it is a separate physical copy: treat the same as `kernel/`.
 
----
 
 ### 20.5 File Inventory — Phased Merge Plan
 
@@ -3848,7 +3715,6 @@ done
 | `classes/kernel/clusterfilehandlers/ezfsfilehandler.php` | `kernel/classes/clusterfilehandlers/ezfsfilehandler.php` | PROCESSCACHE debug `error_log` calls removed ✅ |
 | All remaining `notification/`, `packagehandlers/`, `workflowtypes/` overrides | Corresponding `kernel/` paths | Verify each for MongoDB content; many may be PHP 8.5 fixes only or empty wrappers |
 
----
 
 ### 20.6 Special Cases
 
@@ -3872,7 +3738,6 @@ cause a fatal class-not-found error on the next page load.
 Safe removal order: match the phase order in §20.5. Each removal is immediately followed by a
 browser test of the affected feature.
 
----
 
 ### 20.7 Post-Merge Validation
 
@@ -3900,8 +3765,8 @@ After all overrides are merged:
 
 4. **Touch all kernel files on both docroots** to bust opcache:
    ```bash
-   BASE=/web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com
-   ALT=/var/www/vhosts/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com
+   BASE=/path/to/exponential
+   ALT=/path/to/exponential-alt
    find "$BASE/kernel/" "$BASE/lib/" -name "*.php" -exec touch {} \;
    find "$ALT/kernel/" "$ALT/lib/" -name "*.php" -exec touch {} \;
    ```
@@ -3910,12 +3775,11 @@ After all overrides are merged:
 
 6. **Check the error log** for any new MONGO TODO entries:
    ```bash
-   tail -f /var/www/vhosts/mongodb.demo.se7enx.com/logs/edit.mongodb.demo.se7enx.com/error_log \
+   tail -f /path/to/logs/admin/error_log \
      | grep "MONGO TODO"
    # Should produce no output during normal usage
    ```
 
----
 
 ### 20.8 Benefits After Completion
 
@@ -3929,7 +3793,6 @@ After all overrides are merged:
 | New contributors are confused by the override map | "MongoDB branches are `if ($db->databaseName() === 'mongo')` blocks — standard pattern" |
 | git diff of `kernel/` looks pristine (patches hidden in extension) | git diff of `kernel/` shows the complete real state of the codebase |
 
----
 
 ### 20.9 Estimated Scope
 
@@ -3943,7 +3806,6 @@ After all overrides are merged:
 | Phase 6 — Cronjobs, Misc | ~15 override files | Low effort each |
 | **Total** | **~124 override files** | Recommended: one phase per work session; test after each phase before proceeding |
 
----
 
 ## 21. PHPUnit Test Suite — Implemented (May 2026)
 
@@ -3953,9 +3815,8 @@ Section 14 with real, runnable code.
 
 **PHPUnit version:** 13.0.0 (at `vendor/bin/phpunit`)  
 **PHP runtime:** `/opt/plesk/php/8.5/bin/php`  
-**v2-0 docroot:** `/web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com--v2-0`
+**v2-0 docroot:** `/path/to/exponential-v2-0`
 
----
 
 ### 21.1 File Layout
 
@@ -3970,7 +3831,6 @@ All three files are under `tests/tests/lib/ezdb/mongodb/` so they sit naturally 
 existing `lib` test tree and are picked up automatically by the `mongodb` testsuite defined in
 `phpunit.xml`.
 
----
 
 ### 21.2 `stubs.php` — In-Process Stubs
 
@@ -4018,7 +3878,6 @@ $rows = $db->aggregate('ezcontentobject', [
 $this->assertCount(1, $rows);
 ```
 
----
 
 ### 21.3 `sevenxMongoDBAdapterTest.php` — Unit Tests
 
@@ -4044,7 +3903,7 @@ $this->assertCount(1, $rows);
 #### Running unit tests
 
 ```bash
-cd /web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com--v2-0
+cd /path/to/exponential-v2-0
 
 # Run only the MongoDB unit tests (no live DB)
 /opt/plesk/php/8.5/bin/php vendor/bin/phpunit --testsuite mongodb
@@ -4055,7 +3914,7 @@ Expected output:
 PHPUnit 13.0.0 by Sebastian Bergmann and contributors.
 
 Runtime:       PHP 8.5.6
-Configuration: /var/www/vhosts/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com--v2-0/phpunit.xml
+Configuration: /path/to/exponential-v2-0/phpunit.xml
 
 ....................................MONGO TODO arrayQuery: tables=[ezcontentobject] caller=...sevenxMongoDBAdapterTest.php:452 (expMongoDB::arrayQuery)
 ...................           55 / 55 (100%)
@@ -4069,13 +3928,12 @@ OK (55 tests, 109 assertions)
 > `testArrayQueryReturnsEmptyArray` test, which explicitly exercises the `arrayQuery()` stub
 > path and confirms it logs the TODO warning.  It is not a failure.
 
----
 
 ### 21.4 `sevenxMongoDBIntegrationTest.php` — Live Integration Tests
 
 **Group tag:** `@group mongodb-live`  
 **Live DB required:** Yes — MongoDB at `mongodb://db:YOUR_PASSWORD@localhost:27017/exp`
-and MariaDB at `localhost` / user `xa_alpha` / password `db-alpha-2025` / database `xa_alpha`  
+and MariaDB at `localhost` / user `YOUR_USER` / password `YOUR_PASSWORD` / database `YOUR_DATABASE`  
 **Test count:** 18 tests, 47 assertions (as of May 2026)
 
 #### What is tested
@@ -4130,7 +3988,7 @@ MySQL insert uses `user_id=0` which is never a real user, and the row is deleted
 #### Running live integration tests
 
 ```bash
-cd /web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com--v2-0
+cd /path/to/exponential-v2-0
 
 # Run MongoDB + MySQL live integration tests
 /opt/plesk/php/8.5/bin/php vendor/bin/phpunit --testsuite mongodb-live
@@ -4143,7 +4001,6 @@ If MongoDB is unavailable the entire class is skipped with `markTestSkipped`.
 If MySQL is unavailable, the individual MySQL test methods are skipped independently while
 MongoDB tests still run.
 
----
 
 ### 21.5 `phpunit.xml` Testsuite Registration
 
@@ -4179,12 +4036,11 @@ file is also included in the dedicated `mongodb-live` testsuite so it can be run
 The integration test's `@group mongodb-live` tag means it is excluded from the default run even
 when picked up by the `mongodb` suite.
 
----
 
 ### 21.6 Quick Reference — All Test Commands
 
 ```bash
-BASE=/web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com--v2-0
+BASE=/path/to/exponential-v2-0
 PHP=/opt/plesk/php/8.5/bin/php
 cd $BASE
 
@@ -4211,7 +4067,6 @@ $PHP vendor/bin/phpunit --testsuite mongodb --testdox
 $PHP vendor/bin/phpunit --testsuite mongodb --list-groups
 ```
 
----
 
 ### 21.7 Extending the Suite
 
@@ -4238,7 +4093,6 @@ To add a new test file:
    require_once __DIR__ . '/stubs.php';
    ```
 
----
 
 ## 22. Setup Wizard Performance Optimizations (June 2026)
 
@@ -4264,7 +4118,6 @@ On MongoDB, the same process was triggering **tens of thousands of individual ro
 
 **Observed symptom:** PHP-FPM `request_terminate_timeout` of 190 s fired before the wizard completed. Raising to 390 s masked the problem but did not solve it.
 
----
 
 ### 22.2 Root Causes (Ranked by Impact)
 
@@ -4275,7 +4128,6 @@ On MongoDB, the same process was triggering **tens of thousands of individual ro
 | 3 | Cache expiry hooks (`eZContentCacheManager`) called per-publish during install, clearing caches that don't exist yet | ~5% |
 | 4 | `set_time_limit(5*60)` in `initializePackage()` setting the PHP script timer without disabling it — offers false security since FPM `request_terminate_timeout` is the real limit | Masking issue, not a timing contributor |
 
----
 
 ### 22.3 Fixes Applied (June 1, 2026)
 
@@ -4354,7 +4206,6 @@ This removes the PHP-side script execution timer entirely.  The FPM `request_ter
 remains the only wall-clock cap (see Section 8 for how to configure it).  On SQL installs the
 call is harmless.
 
----
 
 ### 22.4 Expected Impact
 
@@ -4369,7 +4220,6 @@ After the setup wizard completes, run the `indexcontent` cron job to populate th
 /opt/plesk/php/8.5/bin/php runcronjobs.php --siteaccess=sevenx_site --allow-root-user
 ```
 
----
 
 ### 22.5 Files Modified
 
@@ -4378,7 +4228,6 @@ After the setup wizard completes, run the `indexcontent` cron job to populate th
 | `kernel/setup/steps/ezstep_create_sites.php` | `set_time_limit(0)`; search engine `$GLOBALS` disable/restore block around package install loop |
 | `kernel/search/plugins/ezsearchengine/ezsearchengine.php` | Early return in `addObject()` for MongoDB |
 
----
 
 ## 23. Site Installer Packages — Distribution and Package Server
 
@@ -4390,7 +4239,6 @@ Exponential CMS 6.0.14 ships with a set of site installer packages stored under
 worldwide Exponential package server for automatic download during setup wizard
 execution on new installations.
 
----
 
 ### 23.2 Package Inventory
 
@@ -4411,7 +4259,6 @@ site install set for the `sevenx_site` site type:
 | `sevenx_workflows` | Workflow definitions (Two-step publishing, Review workflow) |
 | `sevenx_languages` | Language pack bootstrap (eng-GB primary locale setup) |
 
----
 
 ### 23.3 Pending Upload to Package Server
 
@@ -4426,7 +4273,6 @@ The following items must be completed before worldwide distribution:
 4. **Package server index update** — after upload, the package server's `packages.xml` index file must be regenerated to include the new version entries.
 5. **Smoke-test on a clean install** — after upload, run the setup wizard on a clean MongoDB installation and confirm it downloads and installs all packages without error.
 
----
 
 ### 23.4 How the Setup Wizard Consumes These Packages
 
@@ -4439,7 +4285,6 @@ During the "Create Sites" step:
 
 For offline or air-gapped installations, place the package directories directly in `var/storage/packages/7x/` before running the setup wizard.  The wizard will use them without making any network request.
 
----
 
 ### 23.5 Local Package Directory Layout
 
@@ -4461,7 +4306,6 @@ var/storage/packages/7x/
   ...
 ```
 
----
 
 ### 23.6 Modifying or Re-exporting Packages
 
@@ -4472,7 +4316,6 @@ affected packages must be re-exported before the next upload:
 2. **Class packages:** Admin → Setup → Packages → Export → Content classes.
 3. **Manual edits:** For `sevenxezwebininstaller.php`, edit the file directly at `var/storage/packages/7x/sevenx_site/settings/sevenxezwebininstaller.php`.  It is a plain PHP file.  Changes are picked up immediately on the next wizard run (no re-packaging required for local installs; re-packaging required before upload to the server).
 
----
 
 ## 24. Key Getting Started Steps Using Exponential 6.0.14 With MongoDB
 
@@ -4480,7 +4323,6 @@ This section is the single-page quick-start reference for anyone installing or d
 Exponential CMS 6.0.14 on MongoDB.  It assumes a clean server with PHP 8.5, MongoDB 8.x, and
 Plesk already in place.
 
----
 
 ### 24.1 Server Prerequisites
 
@@ -4494,7 +4336,6 @@ Plesk already in place.
 | RAM | 512 MB | 2 GB |
 | Disk | 2 GB | 10 GB |
 
----
 
 ### 24.2 Step 1 — Install MongoDB and Create the Database User
 
@@ -4524,7 +4365,6 @@ mongosh admin --eval "
 "
 ```
 
----
 
 ### 24.3 Step 2 — Configure PHP-FPM for the Setup Wizard
 
@@ -4539,7 +4379,6 @@ request_terminate_timeout = 600
 This gives the setup wizard up to 10 minutes to complete.  After installation you may reduce
 this to 60–120 s.
 
----
 
 ### 24.4 Step 3 — Install Exponential CMS
 
@@ -4562,7 +4401,6 @@ If the `mongodb` extension is not listed:
 #   extension=mongodb.so
 ```
 
----
 
 ### 24.5 Step 4 — Pre-place the Installer Packages
 
@@ -4578,7 +4416,6 @@ ls var/storage/packages/7x/
 
 If any directory is missing, copy it from the reference installation or the release `.tar.gz`.
 
----
 
 ### 24.6 Step 5 — Run the Setup Wizard
 
@@ -4595,7 +4432,6 @@ If any directory is missing, copy it from the reference installation or the rele
    By design it does **not** automatically redirect to the front site — click the provided
    links to navigate to whichever interface you need.
 
----
 
 ### 24.7 Step 6 — Create MongoDB Indexes
 
@@ -4609,7 +4445,6 @@ mongosh "mongodb://db:your-secure-password@localhost:27017/exp" \
 Indexes are critical for performance.  Without them, subtree queries and URL alias lookups
 will scan the entire collection.
 
----
 
 ### 24.8 Step 7 — Verify the Installation
 
@@ -4630,7 +4465,6 @@ tail -20 /var/log/plesk-php85-fpm/error.log | grep "MONGO TODO"
 Log in to the admin panel at `https://yourdomain.com/edit/` (or the edit subdomain if
 configured separately) with the admin credentials you set in the wizard.
 
----
 
 ### 24.9 Step 8 — Post-Install Search Index
 
@@ -4650,7 +4484,6 @@ Or set up a system cron:
   --siteaccess=sevenx_site --quiet 2>&1
 ```
 
----
 
 ### 24.10 Step 9 — Opcache Reset Script
 
@@ -4666,7 +4499,6 @@ curl -sk https://yourdomain.com/opcache_reset_edit.php
 
 **Never restart PHP-FPM** to clear opcache — it drops all active connections and is disruptive.
 
----
 
 ### 24.11 Step 10 — Reduce FPM Timeout
 
@@ -4677,7 +4509,6 @@ back to a production-safe value in Plesk:
 request_terminate_timeout = 60
 ```
 
----
 
 ### 24.12 Quick Troubleshooting Reference
 
@@ -4692,7 +4523,6 @@ request_terminate_timeout = 60
 | `Class not found: eZSomeClass` after editing kernel files | `var/autoload/ezp_override.php` still maps to the extension file which was deleted | Either restore the extension file or remove the override map entry |
 | PHP fatal: `Call to a member function on bool` from `eZSearch` | `$GLOBALS` search engine key set to `false` outside of install context | Check that the search engine restore block in `ezstep_create_sites.php` ran correctly |
 
----
 
 ### 24.13 MongoDB Connection Quick Reference
 
@@ -4712,18 +4542,16 @@ mongosh --quiet "mongodb://db:your-password@localhost:27017/exp" --eval "
 tail -f /var/log/plesk-php85-fpm/error.log | grep -v 'XDEBUG\|Xdebug'
 ```
 
----
 
 ### 24.14 Development Environment Notes
 
-- **Always use the alpha subdomain** (`mongodb.demo.se7enx.com`) for development changes — never edit production.
-- **PHP-FPM error log** for the alpha environment: `/var/log/plesk-php85-fpm/error.log`
-- **Opcache reset** for the alpha environment: `curl -sk https://mongodb.demo.se7enx.com/opcache_reset_edit.php`
-- **MongoDB shell** for the alpha database: `mongosh --quiet "mongodb://db:YOUR_PASSWORD@localhost:27017/exp"`
-- **Do NOT commit anything** from the alpha environment directly — changes must be reviewed and ported to the v2-0 branch first.
-- **Do NOT restart PHP-FPM** — use `touch <file.php>` to bust opcache.
+- **Make changes on a development copy** (for example `www.example.com` on a test server), never on production.
+- **PHP-FPM error log** of the development copy, for example `/var/log/plesk-php85-fpm/error.log` on Plesk.
+- **OPcache reset** for the development copy, if you install such an endpoint: `curl -sk https://www.example.com/opcache_reset_edit.php`
+- **MongoDB shell** for its database: `mongosh --quiet "mongodb://YOUR_USER:YOUR_PASSWORD@localhost:27017/exp"`
+- **Review changes before they reach a release branch** (here the v2-0 branch).
+- **A restart of PHP-FPM is not needed** for a changed file: `touch <file.php>` makes OPcache read it again.
 
----
 
 ## 25. Datatype Compatibility — Core and Community
 
@@ -4741,7 +4569,6 @@ A smaller set of datatypes own one or more **secondary collections** (e.g. `ezke
 `ezuser`, `ezuservisit`). Each of those secondary collections requires its own MongoDB
 aggregate/insert/deleteWhere paths.
 
----
 
 ### 25.1 Core (Built-in) Datatypes
 
@@ -4782,7 +4609,6 @@ aggregate/insert/deleteWhere paths.
 | Product category | `ezproductcategory` | `data_int` in attribute; `ezproductcategory` collection + join queries | ✅ Works — `fetchProductCountByCategory()` and `removeByID()` patched with full `$lookup` aggregate pipelines in `ezproductcategory.php` (June 2026) |
 | User account | `ezuser` | `data_text` + `ezuser`, `ezuser_setting`, `ezuservisit`, `ezforgot_password` collections | ✅ Works — all paths fully patched: login, visit tracking, login counts, failed-login attempts, logout negate, `fetchLoggedInCount`, `isUserLoggedIn`, `fetchLoggedInList` (online-users admin panel), `fetchContentList`, `fetchUserClassList`; `ezforgot_password` cleanup uses `deleteWhere`; `createNew`/`fetchByKey`/`removeByUserID` use `eZPersistentObject` (already MongoDB-compatible) |
 
----
 
 ### 25.2 Community Extension Datatypes
 
@@ -4804,7 +4630,6 @@ have been patched with MongoDB-specific code paths (June 2026).
 | `ezflow` | `ezpage` | `data_text` (XML page layout) in attribute | ✅ Works — attribute only; block scheduling cron is separate |
 | `eztags` | `eztags` | `data_text` + `eztags`, `eztag_attribute_link` collections | ❌ Not ported — extension not present in this installation; tag storage and `fetchTagsByAttribute` / `fetchObjectsByTag` use raw `arrayQuery` joins; requires full `$lookup` aggregate pipeline implementation before use |
 
----
 
 ### 25.3 Summary: What Still Needs MongoDB Code Paths
 
@@ -4820,7 +4645,6 @@ The only remaining incompatibility is by design:
 > the full e-commerce and block-scheduling flows are untested and may have additional `arrayQuery`
 > calls deeper in the shop/flow kernel modules.
 
----
 
 ## 26. Known Limitations
 
@@ -4864,7 +4688,6 @@ place for quick reference.
 
 
 
----
 
 ## Addendum: driver and kernel fixes of 18 to 20 September 2026
 
@@ -4885,19 +4708,13 @@ MySQL. See also [the chronicle for 16 to 30 September 2026](../../history/2026/2
 | The image reference checks used a join MongoDB lacks. | The count read as zero and 59 image files still in use were deleted. | A join-free path reads the image rows first and filters the attributes they name. Moving an image also moves its sibling translations' references. |
 | The unattended installer declared `iso-8859-1`; the search plugin was reported failing when switched off on purpose; URL alias fetch ignored the language filter. | | Declared `utf-8`; reported correctly; filter applied. |
 
-The installer now also accepts `mongodb` as `--db` for `./console exp:install`.
-
-See also: [Database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md) (SQLite, PostgreSQL, MySQL and Oracle), [Installing in one command](../../features/6.0/install-in-one-command.md) and [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).
-
-## See also (16 to 30 September 2026)
-
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-- [Database drivers and installers, 16 to 30 September 2026](../../specifications/6.0/database-drivers-2026-09.md)
-- [Installing Exponential in one command](../../features/6.0/install-in-one-command.md)
+The installer now also accepts `mongodb` as `--db` for `php bin/php/console exp:install`.
 
 ## Related pages
 
-- [MongoDB as the database](../../features/6.0/mongodb-database-support.md)
-- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)
+- [MongoDB as the database (feature)](../../features/6.0/mongodb-database-support.md)
+- [Database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md) (SQLite, PostgreSQL, MySQL and Oracle)
+- [Installing Exponential in one command](../../features/6.0/install-in-one-command.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md) and [June 2026, first half](../../history/2026/2026-06a.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
