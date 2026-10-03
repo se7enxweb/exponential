@@ -1,9 +1,21 @@
 # HTTP/2, and keeping the response cache full
 
-Two things that together decide what a visitor waits for, and the measurements
-that justify each.
+Read this page if you serve Exponential with Velocity (the persistent-worker server): it explains the HTTP/2
+support, the `exp:warm` cache warmer, the limits that protect an HTTP/2 connection, how to choose a worker count, and
+what a persistent worker must reset between requests. Each part comes with the measurements behind it. The figures
+describe one test installation and its templates; measure your own before you tune.
 
----
+## In short
+
+| | |
+|---|---|
+| What changed | Velocity speaks HTTP/2 itself (`velocity.ini [ServerSettings] HTTP2`, shipped as `enabled`) with a readable fallback page on a failed stream. New command `exp:warm` (`bin/php/warm.php`) keeps the response cache full. The response cache skips on the site's own session cookie (`CacheSkipCookies`, derived from `site.ini`). HTTP/2 resource limits from qbix-webserver 0.0.4.9. Optional warm-up render in the parent (`PreloadWarmup`, default `disabled`). |
+| Who is affected | Velocity users. Sign-in over HTTP/2 needs qbix-webserver 0.0.4.7 or later; `exp:warm` refreshing needs 0.0.4.6 or later. Sites on `SessionNameHandler=default` with the response cache on need the corrected cookie list (see [The response cache skips on the wrong cookie](#the-response-cache-skips-on-the-wrong-cookie-by-default)). |
+| How to check | `grep -n "^HTTP2\|^Workers\|^PreloadWarmup" settings/velocity.ini` and `php vendor/se7enxweb/exponential-velocity/tests/run-unit.php` |
+| How to fix | Update the engine package; schedule `exp:warm` more often than the cache window; set `Workers` from a load sweep; leave `PreloadWarmup` off unless you have run a full page and asset regression. |
+
+The engine package lives in `vendor/se7enxweb/exponential-velocity`; the older path `vendor/se7enxweb/qbix-webserver`
+points to the same files.
 
 ## The short version
 
@@ -18,7 +30,6 @@ it is not, because the front page costs 529 database queries. So the work is
 in two halves: make the transport as good as it can be, and make sure a
 visitor is never the one who finds the cache empty.
 
----
 
 ## HTTP/2
 
@@ -44,7 +55,7 @@ HTTP2=enabled
 HTTP2ErrorImage=
 ```
 
-Off by default, and that default is deliberate. The protocol is agreed during
+The shipped `settings/velocity.ini` sets `HTTP2=enabled`; set `HTTP2=disabled` to turn it off. Be careful with it: the protocol is agreed during
 the TLS handshake and a client does not fall back afterwards, so a fault is a
 page that never arrives rather than one that arrives slowly.
 
@@ -81,7 +92,6 @@ cheaper: this site references 43, and over HTTP/1.1 a browser fetches them
 about six at a time in waves. Measured asset delivery was 393–418 ms over
 HTTP/1.1 against 85–104 ms over HTTP/2.
 
----
 
 ## Keeping the cache full
 
@@ -93,10 +103,10 @@ person to ask waits for a full render.
 `exp:warm` makes that person a script.
 
 ```bash
-bin/php/console exp:warm              # every published page
-bin/php/console exp:warm --verbose    # name the ones that had to render
-bin/php/console exp:warm --limit=40
-bin/php/console exp:warm --json
+php bin/php/console exp:warm              # every published page
+php bin/php/console exp:warm --verbose    # name the ones that had to render
+php bin/php/console exp:warm --limit=40
+php bin/php/console exp:warm --json
 ```
 
 On a timer, shorter than the cache window:
@@ -105,15 +115,15 @@ On a timer, shorter than the cache window:
 */4 * * * * cd <root> && php bin/php/warm.php --allow-root-user >> var/log/cache-warm.log 2>&1
 ```
 
-Measured here: 142 pages, 9.6 s from cold, **0.3 s when everything is already
+Measured on the test installation: 142 pages, 9.6 s from cold, **0.3 s when everything is already
 warm**, no failures.
 
 ### Three things it has to get right, each learned the hard way
 
 **The Host header must match what a browser sends, port and all.** The cache
 keys on host, path and encoding. A browser asking for
-`https://alpha.se7enx.com:8080/site` sends `alpha.se7enx.com:8080`; warming
-with `alpha.se7enx.com` fills a different entry that nothing ever reads. The
+`https://www.example.com:8080/site` sends `www.example.com:8080`; warming
+with `www.example.com` fills a different entry that nothing ever reads. The
 warmer then reports success while every visitor still pays the render — which
 measured 1036 ms for a page the cache could have answered in 3 ms. The host is
 now built from `SiteURL` plus the service's HTTPS port, with 443 omitted
@@ -128,7 +138,6 @@ content root holds one subtree per site and the others answer on other hosts.
 Warming from the content root asks this host for another site's pages and is
 correctly told 404. The root is taken from `SiteSettings/IndexPage`.
 
----
 
 ## What is not achievable from PHP
 
@@ -141,10 +150,9 @@ Both tested against this server, both unavailable through PHP's stream layer:
   nothing — the Let's Encrypt certificate in use carries no OCSP responder at
   all, so there is no revocation fetch for a browser to make.
 
-Neither is a defect in this installation; they are limits of writing a TLS
+Neither is a defect in the installation; they are limits of writing a TLS
 server in PHP.
 
----
 
 ## What remains, honestly
 
@@ -156,7 +164,6 @@ that count is the largest remaining item and it is theme work, not server work.
 `/showcase` renders in 4.5–21 s, far worse than any other page, and distorts
 the warm cycle. It deserves its own investigation.
 
----
 
 ## Corrections, and what the warmer had to learn since
 
@@ -166,7 +173,7 @@ one of them reported success while it was happening.
 **It warmed addresses nobody asks for.** Paths came from `urlAlias()`, which
 gives the bare form, so it filled `/fitness` while visitors asked for
 `/site/fitness` -- a separate cache entry, because the cache keys on host and
-path and this installation reaches the same content both by host match and by
+path and the test installation reaches the same content both by host match and by
 URI match. Measured: `/fitness` 116ms warm, `/site/fitness` 496ms cold. Both
 forms are warmed now, and both `/site` and `/site/`, which are also distinct.
 
@@ -217,9 +224,8 @@ session obtained over HTTP/1.1 is equally good over HTTP/2. Only a fresh
 sign-in on a connection that had negotiated h2 could see it -- every private
 window, and every automated test.
 
----
 
-# Hardening the HTTP/2 connection
+## Hardening the HTTP/2 connection
 
 An HTTP/2 connection lets one peer ask a server to hold state on its behalf:
 open streams, a header block being assembled, a body being received, bytes
@@ -264,7 +270,7 @@ Idle connections are swept by the event loop rather than by a timer each, since
 only the loop can see them together and a timer per connection is itself a
 resource a peer could multiply.
 
-## The HPACK decoder read past its buffer
+### The HPACK decoder read past its buffer
 
 Found by fuzzing rather than by reading: 600 random header blocks produced reads
 as far as **119,315,352 bytes past the end**.
@@ -286,7 +292,7 @@ connection, so once one has been misread the table is wrong and every block
 after it decodes to something nobody sent. There is no partial recovery worth
 attempting.
 
-## Checking any of this
+### Checking any of this
 
 The server's own suite carries a case per attack. Each **mounts** the attack
 against the connection and asserts it is refused — asserting that a limit
@@ -294,14 +300,14 @@ constant exists would have passed against the state this replaced, where the
 stream limit was advertised and never applied.
 
 ```bash
-php vendor/se7enxweb/qbix-webserver/tests/run-unit.php
+php vendor/se7enxweb/exponential-velocity/tests/run-unit.php
 ```
 
 No server, no socket, no certificate. `tests/run.sh` runs it before starting
 anything, because there is no sense binding a port to discover the frame codec
 is broken.
 
-## What this is not
+### What this is not
 
 It is not a security proof. The known HTTP/2 exhaustion classes are bounded and
 each has a test; that is a different claim from "no remaining defects", and the
@@ -312,16 +318,15 @@ which is the honest signal about what reading alone missed.
 pass. Memory behaviour over a long soak — a hundred thousand requests against a
 resident process — has not been measured at all.
 
----
 
-# Measuring it, and choosing a worker count
+## Measuring it, and choosing a worker count
 
-`vendor/se7enxweb/qbix-webserver/tests/bench-load.php` sweeps the concurrency
+`vendor/se7enxweb/exponential-velocity/tests/bench-load.php` sweeps the concurrency
 until throughput stops improving and reports where the knee is.
 
 ```bash
-php vendor/se7enxweb/qbix-webserver/tests/bench-load.php \
-    https://alpha.se7enx.com:8080/site --levels=1,4,16,32,64 --requests=200
+php vendor/se7enxweb/exponential-velocity/tests/bench-load.php \
+    https://www.example.com:8080/site --levels=1,4,16,32,64 --requests=200
 ```
 
 It needs nothing installed: PHP's curl speaks HTTP/2 and `curl_multi` supplies
@@ -329,7 +334,7 @@ the concurrency. Every run writes a CSV under `var/storage/generated/stats/`,
 named with the date, target, protocol, levels, request count and worker count,
 so two runs sort beside each other and say what they were without being opened.
 
-## What it found here
+### What it found on the test installation
 
 11 cores, 46 GB, and **167.6 MB PSS per worker** — the honest figure, since RSS
 reports 200 MB by double-counting pages shared after fork.
@@ -346,7 +351,7 @@ nothing and doubled the load average; sixty-four was worse than sixteen.
 
 `[ServerSettings]Workers` in `settings/velocity.ini`, or an override.
 
-## The cliff matters more than the peak
+### The cliff matters more than the peak
 
 Per request, at 16 workers:
 
@@ -363,7 +368,7 @@ enough to keep every worker busy. Past it, p90 goes 46 to 445 ms, a tenfold
 cliff, while throughput drops. **That is the operating limit, and it arrives
 long before memory does.**
 
-## The ceiling above that is arithmetic, not a measurement
+### The ceiling above that is arithmetic, not a measurement
 
 At 167.6 MB per worker on 46 GB: 128 workers wants 21 GB and swaps, 512 wants
 84 GB, 2500 wants 409 GB. Those configurations are impossible rather than slow,
@@ -374,7 +379,7 @@ parent before the fork cuts it roughly tenfold (see *Sharing memory across the
 pool*), which raises this ceiling accordingly — though never the throughput
 cliff or the event-loop ceiling, which memory does not touch.
 
-## What a visitor pays
+### What a visitor pays
 
     dns     7 ms
     tcp    +0.3 ms
@@ -386,7 +391,7 @@ cliff or the event-loop ceiling, which memory does not touch.
 A complete page — document plus 35 subresources over one connection — is about
 200 ms.
 
-## Two caveats on all of it
+### Two caveats on all of it
 
 The generator is **closed-loop**, like `ab` and `wrk`: a slow response delays
 the request that would have followed, so the requests never sent are exactly the
@@ -397,9 +402,8 @@ fixed arrival rate is the other half and is not provided.
 And these figures describe *this* site's templates on *this* machine. They are
 not a property of the server and should not be quoted as one.
 
----
 
-# The ceiling the single event loop imposes
+## The ceiling the single event loop imposes
 
 The memory arithmetic above says how many workers *fit*. There is a second,
 lower ceiling that says how many can *run*, and it is not about memory at all.
@@ -420,7 +424,7 @@ longer stay responsive), and the **memory ceiling** (arithmetic, highest of the
 three). Tune to the first. The others are failure modes to stay well below, not
 targets.
 
-## Monitoring must not become the load
+### Monitoring must not become the load
 
 A corollary learned by breaking it: the dashboard read `/proc/<pid>/smaps_rollup`
 for **every** worker to report real (PSS) memory, and it did so inside the event
@@ -432,9 +436,8 @@ read at most ~24 workers, scale the average to the count, add the parent read
 exactly. Any per-worker work on the request path has to be bounded the same way,
 because the pool size is not.
 
----
 
-# Sharing memory across the pool: warming a render in the parent
+## Sharing memory across the pool: warming a render in the parent
 
 A worker builds the framework's per-request working set — compiled templates,
 the resolved layout, the object graph — the first time it serves a page, and
@@ -455,9 +458,8 @@ render leaves state behind, the pool's statics snapshot freezes that state as
 every worker's baseline, and the wrong state frozen there is served to real
 visitors. Getting the warm-up right *is* getting the reset right.
 
----
 
-# The global scope a persistent worker must protect
+## The global scope a persistent worker must protect
 
 This is the load-bearing lesson of the whole model, and it is not specific to
 the warm-up: **any state a request leaves in a static property or in `$GLOBALS`
@@ -572,3 +574,12 @@ well timed pages out and doubled memory, and keeping the template or
 content-class caches let the breadcrumb leak straight back. The verification that
 catches that specific leak is a pair: the home page must have **no** breadcrumb
 and a deep page must have **its own** — a single URL will not show it.
+
+## Related pages
+
+- [Velocity engines — Qbix, FrankenPHP, PHP's built-in server](velocity-engines.md)
+- [Velocity engine upgrade notes](velocity-engine-upgrade-notes.md)
+- [Response cache and navigation](response-cache-and-navigation.md)
+- [Velocity persistent worker server](../../features/6.0/velocity-persistent-worker-server.md) and [Velocity response cache](../../features/6.0/velocity-response-cache.md)
+- [Site cache preloader](preload.md)
+- [Deploying guide](../../guides/deploying.md)
