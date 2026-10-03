@@ -1,8 +1,18 @@
 # Velocity engines — Qbix, FrankenPHP, PHP's built-in server
 
-Exponential Velocity (`exp:velocity`, `vc`) drives one of three web servers. The
-verbs are the same for all of them — `start`, `stop`, `graceful`, `restart`,
-`kill`, `status`, `deploy`, `command`, `config`, `install` — and so is `velocity.ini`.
+Read this page if you run Exponential under Velocity (`exp:velocity`, `vc`), choose between its engines, or deploy
+PHP changes to a site that Velocity serves. Velocity drives one of three web servers with the same verbs (`start`,
+`stop`, `graceful`, `restart`, `kill`, `status`, `deploy`, `command`, `config`, `install`) and the same
+`velocity.ini`.
+
+## In short
+
+| | |
+|---|---|
+| What changed | `velocity.ini [ServerSettings] Engine` chooses the default engine: `php` (shipped), `qbix` (recommended) or `frankenphp`. `exp:velocity deploy` runs every step a PHP change needs, in order, with PASS, FAIL or SKIP. Several Qbix servers can share one port (`Instances`). |
+| Who is affected | Every Velocity user. A changed PHP class reaches Velocity's workers only after a restart; `deploy` does it in the right order. The PHP-FPM that serves the site must be named in `[DeploySettings] PhpFpmService` when `auto` does not find it. |
+| How to check | `php bin/php/console exp:velocity status` and `php bin/php/console exp:velocity deploy --dry-run --allow-root-user` |
+| How to fix | Set `Engine=qbix` for any real site; deploy PHP changes with `exp:velocity deploy` (add `--kernel` when a kernel class was added or renamed). |
 
 ```ini
 [ServerSettings]
@@ -40,9 +50,9 @@ before it is live, in the one order that works, and says PASS, FAIL or SKIP
 for each step with its time:
 
 ```bash
-./bin/php/console exp:velocity deploy --allow-root-user            # the usual case
-./bin/php/console exp:velocity deploy --kernel --allow-root-user   # a kernel class was added or renamed
-./bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it would do, and nothing else
+php bin/php/console exp:velocity deploy --allow-root-user            # the usual case
+php bin/php/console exp:velocity deploy --kernel --allow-root-user   # a kernel class was added or renamed
+php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it would do, and nothing else
 ```
 
 | # | Step | By hand |
@@ -136,14 +146,12 @@ else, or with no pool found, it is skipped with a note naming what to do.
 
 ### Kernel autoloads
 
-`ezpgenerateautoloads.php -k` walks the whole installation. Where there are
-working copies of it inside (`.claude/worktrees`), every kernel class is found
-twice and the array can end up pointing into the copy: a plain `-k` run on
-one installation wrote 1029 entries, every one of them inside `.claude/worktrees`,
-and took 17.6 seconds.
-`deploy --kernel` excludes every top-level directory but `kernel/` and `lib/`,
-which is where the kernel's classes are, and takes under a second for the
-same array. `.autoloadignore` excludes `.claude` too, for a run by hand.
+`ezpgenerateautoloads.php -k` walks the whole installation. If you keep working copies of the installation inside it
+(for example git worktrees in a hidden directory), every kernel class is found twice and the array can end up
+pointing into the copy: a plain `-k` run on one installation wrote 1029 entries, every one of them inside such a copy,
+and took 17.6 seconds. `deploy --kernel` excludes every top-level directory but `kernel/` and `lib/`, which is where
+the kernel's classes are, and takes under a second for the same array. For a run by hand, list such directories in
+`.autoloadignore` (one pattern per line, anchored at the installation root) or pass `--exclude=<dir>`.
 
 ## Running them side by side
 
@@ -151,10 +159,10 @@ For tests the three can run at the same time: each has its own port, pid
 file, logs and configuration, so nothing collides.
 
 ```bash
-./bin/php/console exp:velocity start  --all --allow-root-user   # php :8087, frankenphp :8089, qbix :8088
-./bin/php/console exp:velocity status --all --allow-root-user   # role, default, running, port for each
-./bin/php/console exp:velocity stop   --engine=qbix --allow-root-user
-./bin/php/console exp:velocity stop   --all --allow-root-user
+php bin/php/console exp:velocity start  --all --allow-root-user   # php :8087, frankenphp :8089, qbix :8088
+php bin/php/console exp:velocity status --all --allow-root-user   # role, default, running, port for each
+php bin/php/console exp:velocity stop   --engine=qbix --allow-root-user
+php bin/php/console exp:velocity stop   --all --allow-root-user
 ```
 
 `--all` and engine lists work with start, stop, restart, graceful, kill and
@@ -254,7 +262,7 @@ SpareWorkers=12    # per instance: the old 48 divided by four
 - Only the Qbix engine: FrankenPHP and PHP's server run one process tree each.
 - Linux and the BSDs (`SO_REUSEPORT`).
 
-Measured on alpha (12 cores, 2026-09-27), cached front page over TLS with gzip:
+Measured on a test installation (12 cores, 2026-09-27), cached front page over TLS with gzip:
 
 | | one instance | four instances | FrankenPHP |
 |---|---:|---:|---:|
@@ -267,9 +275,9 @@ workers and by Exponential itself.
 ## FrankenPHP
 
 ```bash
-./bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
-./bin/php/console exp:velocity install --allow-root-user     # optional: start installs it
-./bin/php/console exp:velocity start --allow-root-user
+php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity install --allow-root-user     # optional: start installs it
+php bin/php/console exp:velocity start --allow-root-user
 ```
 
 ### The binary
@@ -355,9 +363,9 @@ FrankenPHP serves HTTPS on `HTTPSPort` (8444) beside plain HTTP on `Port`,
 has `https://` from the first start:
 
 ```bash
-./bin/php/console exp:velocity start --engine=frankenphp              # http :8089 + https :8444
-./bin/php/console exp:velocity start --engine=frankenphp --no-https   # plain HTTP, this start only
-./bin/php/console exp:velocity start --engine=frankenphp --https      # insist on HTTPS, this start only
+php bin/php/console exp:velocity start --engine=frankenphp              # http :8089 + https :8444
+php bin/php/console exp:velocity start --engine=frankenphp --no-https   # plain HTTP, this start only
+php bin/php/console exp:velocity start --engine=frankenphp --https      # insist on HTTPS, this start only
 ```
 
 `HTTPS=disabled` switches it off for good. It uses
@@ -437,7 +445,7 @@ script that reads `var/tmp/velocity.pid` reads
 ## PHP's built-in web server
 
 ```bash
-./bin/php/console exp:velocity start --engine=php --allow-root-user
+php bin/php/console exp:velocity start --engine=php --allow-root-user
 ```
 
 `php -S Host:Port -t DocumentRoot bin/php/velocity-router.php`, with the PHP
@@ -582,6 +590,12 @@ This page is about driving the engine from Exponential. What the engine is, how 
 
 The access rules in "Views and who may open them" above are the ones `exp:velocity` writes into the engine's configuration; they can be stricter than the engine's own defaults described in the control panel page.
 
-## See also
+## Related pages
 
 - [Velocity: running Exponential in a persistent-worker web server](../../features/6.0/velocity-persistent-worker-server.md)
+- [Velocity engine upgrade notes](velocity-engine-upgrade-notes.md)
+- [Velocity on-disk layout](velocity-ondisk-layout.md)
+- [HTTP/2 and cache warming](http2-and-cache-warming.md)
+- [FrankenPHP](frankenphp.md)
+- [Engine archive (phar)](phar.md)
+- [Deploying guide](../../guides/deploying.md)
