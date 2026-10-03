@@ -1,17 +1,22 @@
 # The extension surface
 
-Read off this installation, not written by hand. `doc/bc/6.0/rad-extension-points.md`
-beside this is the curated list: the points somebody thought worth explaining, each
-with a tool where there is one. This is everything that is actually here.
+Read this page if you want to see everything in an Exponential installation that can be extended or replaced: every
+setting that names a class, every place the kernel looks for files, the interfaces, modules, views, policy functions,
+template operators, events, overridden templates and replaced kernel classes. [Extension points](rad-extension-points.md)
+is the curated list, each point explained and paired with a tool; this page is the complete inventory.
 
-Regenerate it with:
+The inventory below was read off a reference installation with its own set of active extensions, not written by hand.
+Your installation has its own: read it live in the admin at **Setup → RAD tools → Extension point survey**
+(`/setup/radsurvey`), where it can be searched.
 
-```
-php ai/bin/one/write_rad_survey_doc.php
-```
+## In short
 
-or read it live in the admin at **Setup → RAD tools → Extension point survey**,
-where it can be searched.
+| | |
+|---|---|
+| What changed | The extension point survey (`setup/radsurvey`) reads the installation and lists every extension point it finds. |
+| Who is affected | Nobody is forced to change. Before an upgrade, the survey's last section, **Kernel classes replaced outright**, shows the kernel classes an extension replaces: those are the first place to look when a kernel change seems to have no effect. |
+| How to check | Open **Setup → RAD tools → Extension point survey** in the admin. |
+| How to fix | Replace a kernel class override with a registered extension point where one exists ([Extension points](rad-extension-points.md)). |
 
 ## What was found
 
@@ -2498,3 +2503,10 @@ the kernel source says.
 | `eZContentOperationCollection` | `extension/nxc_powercontent/modules/content/ezcontentoperationcollection.php` | `kernel/content/ezcontentoperationcollection.php` |
 | `ezpContentPublishingBehaviour` | `extension/nxc_powercontent/modules/content/ezcontentpublishingbehaviour.php` | `kernel/content/ezcontentpublishingbehaviour.php` |
 
+
+## Related pages
+
+- [Extension points](rad-extension-points.md)
+- [RAD tool security](rad-security.md)
+- [Commands, cronjob parts and module views as classes](cli_cronjob_view_abstractions.md)
+- [Extensions guide](../../guides/extensions.md)
