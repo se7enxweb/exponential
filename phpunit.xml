@@ -68,6 +68,15 @@
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php</file>
         </testsuite>
 
+        <!--
+          cjw_newsletter: live-database tests (admin siteaccess, throwaway nltest-*@example.invalid data, mail written
+          by the file transport into var/tmp, never a real send, never a test database).
+          Run: php vendor/bin/phpunit - -testsuite cjw_newsletter
+        -->
+        <testsuite name="cjw_newsletter">
+            <directory suffix="Test.php">tests/tests/extension/cjw_newsletter</directory>
+        </testsuite>
+
     </testsuites>
 
     <groups>
