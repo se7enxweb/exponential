@@ -1,17 +1,32 @@
 # git_manager: deploy and back up from the admin
 
-`git_manager` gives administrators two tools in the web admin, for servers where
-nobody has a shell or where a shell is not the way you want to work:
+This page is for administrators of servers where nobody has a shell, or where a shell is not the way you want to work.
+`git_manager` gives two tools in the web admin:
 
-* a **git dashboard** (**Setup**, `/git_manager/dashboard`): see where the
-  installation stands against its branch on the remote, switch branches, check out a
-  commit, pull, push, manage remotes and submodules;
-* a **backup manager** (`/git_manager/backup`): timestamped backups ("captions") of the
-  database and files, optional encryption, and sanitised SQL dumps that are safe to
-  share.
+- a **git dashboard** (**Setup**, `/git_manager/dashboard`): see where the installation stands against its branch on
+  the remote, switch branches, check out a commit, pull, push, manage remotes and submodules;
+- a **backup manager** (`/git_manager/backup`): timestamped backups ("captions") of the database and files, optional
+  encryption, and sanitised SQL dumps that are safe to share.
 
-The extension was released as 2.0.1 on 21 June 2026 (backup manager) and reached 2.0.14
-on 2 October 2026.
+The extension was released as 2.0.1 on 21 June 2026 (backup manager) and reached 2.0.14 on 2 October 2026.
+
+## Requirements
+
+Exponential 6, PHP 8.1 or later, a git binary the web server's user can run, GnuPG (`/usr/bin/gpg`) for encrypted
+backups, and `mysqldump` for database backups.
+
+## Quick start: make a backup before a change
+
+1. Open **Setup > Backup** (`/git_manager/backup`).
+2. Choose **DB + Files caption**, add a description such as "Before upgrade", and click create.
+3. The new caption appears under **Existing Captions**, with its archives to download.
+
+The same from the command line:
+
+```bash
+php extension/git_manager/bin/php/backup-create.php full -d "Before upgrade"
+php extension/git_manager/bin/php/backup-list.php -v -s
+```
 
 ## The dashboard
 
@@ -132,7 +147,7 @@ but puts it in the process list and shell history, so it prints a warning.
 Decrypt an encrypted file (`.tar.gz.gpg`):
 
 ```bash
-gpg --batch --yes --passphrase "yourPassphrase" -d backup_file.tar.gz.gpg | tar -xzf -
+gpg --batch --yes --passphrase "YOUR_PASSPHRASE" -d backup_file.tar.gz.gpg | tar -xzf -
 ```
 
 There is no recovery for a lost passphrase.
@@ -191,25 +206,22 @@ php extension/git_manager/bin/php/upgrade-policy-dump-to-backup.php --dry-run
 php extension/git_manager/bin/php/upgrade-policy-dump-to-backup.php
 ```
 
-## Requirements
-
-Exponential 6, PHP 8.1 or later, a git binary the web server's user can run, GnuPG
-(`/usr/bin/gpg`) for encrypted backups, and `mysqldump` for database backups.
-
 ## Languages
 
-The extension carries translation files in `translations/<locale>/translation.ts`: eng-US, ger-DE. The German file holds 199 messages (count `<message` in
-`translations/ger-DE/translation.ts`). The texts are looked up in the context(s) `extension/git_manager`, `kernel/navigationpart`, `design/admin/pagelayout` and `design/admin/parts/setup/menu`. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
-`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
-and clearing the template and content caches.
+The extension carries translation files in `translations/<locale>/translation.ts`: eng-US and ger-DE. The German file
+holds 199 messages (count `<message` in `translations/ger-DE/translation.ts`). The texts are looked up in the contexts
+`extension/git_manager`, `kernel/navigationpart`, `design/admin/pagelayout` and `design/admin/parts/setup/menu`.
 
-## Related
+After editing a translation file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clear the template and content caches. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts`, not of this extension's file.
 
-* [Chronicle](../../../history/extensions/git_manager.md) and [release notes](../../../changelogs/extensions/git_manager.md)
-* [Audit trail](../../../bc/6.0/audit.md): the `system.git_manager.fetch` event
-* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* [Change ledger](../../../history/ledger/git_manager.md)
-* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-* [Month: 2026-06 (all extensions)](../../../history/extensions/months/2026-06.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
-* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+## Related pages
+
+- [Audit trail](../../../bc/6.0/audit.md): the `system.git_manager.fetch` event
+- [ezupdate](ezupdate.md): updates after a backup
+- [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+- [Chronicle](../../../history/extensions/git_manager.md) and [release notes](../../../changelogs/extensions/git_manager.md)
+- [Change ledger](../../../history/ledger/git_manager.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-06](../../../history/extensions/months/2026-06.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

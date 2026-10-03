@@ -1,17 +1,17 @@
 # ezupdate: updates and packages in the admin
 
-`ezupdate` ("eZ Update") is the package manager of an Exponential installation, in the
-admin and on the command line. An installation is a few dozen Composer packages, a few
-dozen extension directories and a few settings that decide which of them run. ezupdate puts
-all of that on one screen, shows where the pieces disagree, and lets you update and install
-packages with the same guard rails you would use in a shell: a check that changes nothing, a
-dry run, a backup confirmation and Composer's own output as it runs.
+This page is for administrators who update an installation or add packages to it. `ezupdate` ("eZ Update") is the
+package manager of an Exponential installation, in the admin and on the command line.
 
-It first shipped on 2 November 2024 (1.0.1) as a Composer update screen. Releases 1.1.3 to
-1.1.10 (28 September to 2 October 2026) made it a full package manager. Open it at
-**Setup > Updates and packages** (`/update/dashboard`). The extension's own guides (user
-guide, installed packages, configuration, command line, security, architecture, FAQ) live in
-its `doc/` folder; this page is the overview.
+An installation is a few dozen Composer packages, a few dozen extension directories and a few settings that decide
+which of them run. ezupdate puts all of that on one screen, shows where the pieces disagree, and lets you update and
+install packages with the same guard rails you would use in a shell: a check that changes nothing, a dry run, a backup
+confirmation, and Composer's own output as it runs.
+
+It first shipped on 2 November 2024 (1.0.1) as a Composer update screen. Releases 1.1.3 to 1.1.10 (28 September to
+2 October 2026) made it a full package manager. Open it at **Setup > Updates and packages** (`/update/dashboard`). The
+extension's own guides (user guide, installed packages, configuration, command line, security, architecture, FAQ) are
+in its `doc/` folder; this page is the overview.
 
 ## What you can do
 
@@ -27,7 +27,7 @@ its `doc/` folder; this page is the overview.
 | **Funding** | Who the installed packages ask to be funded by, grouped as `composer fund` groups it, from package metadata and each package's `.github/FUNDING.yml`; as a page, JSON and text | 1.1.6 |
 | **Command line** | Everything above from `php extension/ezupdate/bin/php/ezupdate.php` | 1.1.3 |
 
-## Quick start
+## Set it up
 
 ```bash
 composer require se7enxweb/ezupdate
@@ -65,27 +65,29 @@ is wanted, with a backup (see [git_manager](git_manager.md) for backups from the
    continues on the server), refused with HTTP 403 (the policy is missing), or a server error
    (it retries, waiting longer each time, and stops after ten failures in a row).
 
-## Settings (`ezupdate.ini`)
+## Settings
+
+All keys are in `ezupdate.ini`; put your values in `settings/override/ezupdate.ini.append.php`.
 
 | Block | Key | Default | Meaning |
 |---|---|---|---|
-| ComposerSettings | `Path`, `Binary` | empty | Directory and file name of Composer; empty tries `SearchPath[]` times `BinaryNames[]` |
-| ComposerSettings | `SearchPath[]` | `/usr/local/bin/`, `/usr/bin/`, `/opt/cpanel/composer/bin/` | Where to look |
-| ComposerSettings | `BinaryNames[]` | `composer`, `composer.phar` | Names to try |
-| ComposerSettings | `PHPBinary` | empty | PHP CLI that runs a `composer.phar` and the background jobs; empty uses the php next to the running one |
-| ComposerSettings | `Timeout` | `900` | Seconds a Composer run may take |
-| ComposerSettings | `ComposerHome` | `var/ezupdate/composer` | `COMPOSER_HOME` when the web server passes none; one folder per system account below it |
-| UpdateSettings | `AllowUpdate` | `disabled` | Permit `composer update` from the admin |
-| UpdateSettings | `AllowInstall` | `disabled` | Permit `composer require` from the admin |
-| UpdateSettings | `PreferredInstall` | `auto` | `dist`, `source` or `auto` (source for dev versions, dist for releases) |
-| UpdateSettings | `UpdateArguments[]`, `RequireArguments[]` | `--ansi`, `--no-progress` | Arguments always passed |
-| JobSettings | `AfterRunCommands[]` | `bin/php/ezpgenerateautoloads.php --extension`, `bin/php/ezcache.php --clear-tag=ini,template,content` | Run after a successful update or install |
-| JobSettings | `KeepJobs` | `20` | Finished jobs kept (log and status) |
-| PackagistSettings | `URL` | `https://packagist.org` | |
-| PackagistSettings | `PerPage` | `25` | Search results per page |
-| PackagistSettings | `CacheTime` | `900` | Seconds an answer is reused |
-| PackagistSettings | `Types[]` | extension, kernel, library, any | Package types offered in the search form |
-| PackageServerSettings | `Servers[<name>]` | none | `.ezpkg` servers added in the admin are written here as `https://` URLs; the server of `package.ini [RepositorySettings]` is always first |
+| `ComposerSettings` | `Path`, `Binary` | empty | Directory and file name of Composer; empty tries `SearchPath[]` times `BinaryNames[]` |
+| `ComposerSettings` | `SearchPath[]` | `/usr/local/bin/`, `/usr/bin/`, `/opt/cpanel/composer/bin/` | Where to look |
+| `ComposerSettings` | `BinaryNames[]` | `composer`, `composer.phar` | Names to try |
+| `ComposerSettings` | `PHPBinary` | empty | PHP CLI that runs a `composer.phar` and the background jobs; empty uses the php next to the running one |
+| `ComposerSettings` | `Timeout` | `900` | Seconds a Composer run may take |
+| `ComposerSettings` | `ComposerHome` | `var/ezupdate/composer` | `COMPOSER_HOME` when the web server passes none; one folder per system account below it |
+| `UpdateSettings` | `AllowUpdate` | `disabled` | Permit `composer update` from the admin |
+| `UpdateSettings` | `AllowInstall` | `disabled` | Permit `composer require` from the admin |
+| `UpdateSettings` | `PreferredInstall` | `auto` | `dist`, `source` or `auto` (source for dev versions, dist for releases) |
+| `UpdateSettings` | `UpdateArguments[]`, `RequireArguments[]` | `--ansi`, `--no-progress` | Arguments always passed |
+| `JobSettings` | `AfterRunCommands[]` | `bin/php/ezpgenerateautoloads.php --extension`, `bin/php/ezcache.php --clear-tag=ini,template,content` | Run after a successful update or install |
+| `JobSettings` | `KeepJobs` | `20` | Finished jobs kept (log and status) |
+| `PackagistSettings` | `URL` | `https://packagist.org` | Package index searched |
+| `PackagistSettings` | `PerPage` | `25` | Search results per page |
+| `PackagistSettings` | `CacheTime` | `900` | Seconds an answer is reused |
+| `PackagistSettings` | `Types[]` | extension, kernel, library, any | Package types offered in the search form |
+| `PackageServerSettings` | `Servers[<name>]` | none | `.ezpkg` servers added in the admin are written here as `https://` URLs; the server of `package.ini [RepositorySettings]` is always first |
 
 ## Command line
 
@@ -123,20 +125,21 @@ does not know them yet.
 
 ## Languages
 
-The extension carries translation files in `translations/<locale>/translation.ts`: eng-US, ger-DE. The German file holds 280 messages (count `<message` in
-`translations/ger-DE/translation.ts`). The texts are looked up in the context(s) `extension/ezupdate`, `kernel/navigationpart` and `design/admin/parts/setup/menu`. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
-`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
-and clearing the template and content caches.
+The extension carries translation files in `translations/<locale>/translation.ts`: eng-US and ger-DE. The German file
+holds 280 messages (count `<message` in `translations/ger-DE/translation.ts`). The texts are looked up in the contexts
+`extension/ezupdate`, `kernel/navigationpart` and `design/admin/parts/setup/menu`.
 
-## Related
+After editing a translation file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clear the template and content caches. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts`, not of this extension's file.
 
-* [git_manager](git_manager.md): backups before updating
-* [Chronicle](../../../history/extensions/ezupdate.md) and [release notes](../../../changelogs/extensions/ezupdate.md)
-* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* [Change ledger](../../../history/ledger/ezupdate.md)
-* [Velocity engines](../../../bc/6.0/velocity-engines.md)
-* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
-* [Month: 2024-11 (all extensions)](../../../history/extensions/months/2024-11.md)
-* [Month: 2026-06 (all extensions)](../../../history/extensions/months/2026-06.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
-* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+## Related pages
+
+- [git_manager](git_manager.md): backups before updating
+- [Package licenses and versions](../package-licenses-and-versions.md)
+- [Velocity engines](../../../bc/6.0/velocity-engines.md)
+- [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+- [Chronicle](../../../history/extensions/ezupdate.md) and [release notes](../../../changelogs/extensions/ezupdate.md)
+- [Change ledger](../../../history/ledger/ezupdate.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-11](../../../history/extensions/months/2024-11.md), [2026-06](../../../history/extensions/months/2026-06.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

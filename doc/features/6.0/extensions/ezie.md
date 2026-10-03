@@ -97,7 +97,6 @@ Only a plain file name that exists in a `design/standard/images/watermarks` fold
 * The editor sends the form token as the `ezxform_token` field and as the `X-CSRF-Token` header, read for
   every request from the hidden span or from the `csrf-token` meta tag.
 
-
 ## Languages
 
 The extension carries translation files in `translations/<locale>/translation.ts`: cro-HR, ell-GR, eng-US, esl-ES,

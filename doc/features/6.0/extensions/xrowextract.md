@@ -1,18 +1,31 @@
 # xrowextract: export, import and move content as files
 
-`xrowextract` is the Export tab of the admin. It turns content into files you
-can open in a spreadsheet, hand to another system or keep as a backup, and it
-reads such files back into content. From 2.5.0 (September 2026) it grew from a
-single "one class to CSV" page into a complete data-exchange tool: previews,
-filters, saved presets, background jobs, imports of any size, content packages
-(`.ezpkg`), scheduled runs and delivery to SFTP, S3 and other destinations.
+This page is for editors and administrators who need content in a spreadsheet, in another system or in a backup, and
+for anyone who loads such files back into content. `xrowextract` is the **Export** tab of the admin. It turns content
+into files and reads files back into content.
 
-Open it at **Export** in the top admin menu (`/xrowextract/csv`). Everything on
-this page is also available on the command line, see
-[Command line](#command-line). The full reference (settings, policies, tables,
-classes) is in the [xrowextract specification](../../../specifications/6.0/xrowextract.md);
-the history of the work is in the [xrowextract chronicle](../../../history/extensions/xrowextract.md)
-and the [release notes](../../../changelogs/extensions/xrowextract.md).
+From 2.5.0 (September 2026) it grew from a single "one class to CSV" page into a complete data-exchange tool: previews,
+filters, saved presets, background jobs, imports of any size, content packages (`.ezpkg`), scheduled runs and delivery
+to SFTP, S3 and other destinations.
+
+Open it at **Export** in the top admin menu (`/xrowextract/csv`). Everything on this page is also available on the
+command line, see [Command line](#command-line). The full reference (settings, policies, tables, classes) is in the
+[xrowextract specification](../../../specifications/6.0/xrowextract.md); the history of the work is in the
+[xrowextract chronicle](../../../history/extensions/xrowextract.md) and the
+[release notes](../../../changelogs/extensions/xrowextract.md).
+
+## Quick start: articles to a spreadsheet
+
+1. Open **Export > One class of content export**.
+2. Pick the class (for example `ng_article`) and the start node (for example node 2).
+3. Click **Preview** to see the first rows as a spreadsheet will show them.
+4. Download the CSV and open it in your spreadsheet program.
+
+The same on the command line, from the installation root:
+
+```bash
+php extension/xrowextract/bin/php/csv.php --class=ng_article --node=2 --limit=20 --output=articles.csv
+```
 
 ## What you can do now that you could not before 2.5
 
@@ -365,19 +378,15 @@ the PHP configuration.
   a request since 2.5.3, and package upload and download work without touching the
   server's file layer.
 
-## Related
+## Related pages
 
-* [xrowextract specification](../../../specifications/6.0/xrowextract.md)
-* [Chronicle of the extension](../../../history/extensions/xrowextract.md)
-* [Release notes](../../../changelogs/extensions/xrowextract.md)
-* [Command line and cronjob abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
-* [xrowmetadata](xrowmetadata.md): the datatype the export has a column for
-* [eztags](eztags.md): tags export through the keyword and tags handlers
-* [Change ledger](../../../history/ledger/xrowextract.md)
-* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* [Velocity engines](../../../bc/6.0/velocity-engines.md)
-* [Month: 2024-04 (all extensions)](../../../history/extensions/months/2024-04.md)
-* [Month: 2024-07 (all extensions)](../../../history/extensions/months/2024-07.md)
-* [Month: 2024-08 (all extensions)](../../../history/extensions/months/2024-08.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
-* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+- [xrowextract specification](../../../specifications/6.0/xrowextract.md)
+- [xrowmetadata](xrowmetadata.md): the datatype the export has a column for
+- [eztags](eztags.md): tags export through the keyword and tags handlers
+- [Package compare and import](../package-compare-and-import.md)
+- [Command line and cronjob abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+- [Velocity engines](../../../bc/6.0/velocity-engines.md)
+- [Chronicle of the extension](../../../history/extensions/xrowextract.md) and [release notes](../../../changelogs/extensions/xrowextract.md)
+- [Change ledger](../../../history/ledger/xrowextract.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-04](../../../history/extensions/months/2024-04.md), [2024-07](../../../history/extensions/months/2024-07.md), [2024-08](../../../history/extensions/months/2024-08.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

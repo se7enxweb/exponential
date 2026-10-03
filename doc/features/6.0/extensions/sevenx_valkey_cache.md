@@ -1,27 +1,38 @@
 # sevenx_valkey_cache: Redis and Valkey cache backend
 
-`sevenx_valkey_cache` stores Exponential's caches in **Redis or Valkey** instead of files. It replaces disk storage for:
+This page is for administrators who want faster pages or run several web servers. `sevenx_valkey_cache` stores
+Exponential's caches in **Redis or Valkey** instead of files. It replaces disk storage for:
 
-* `{valkey-block ...}` template blocks (a cache-block that lives in Redis/Valkey);
-* the **content view cache** (`content/view` full view);
-* the **compiled INI cache** (`eZINI` arrays), which removes the per-request touches of `var/cache/ini/*.php` and makes INI caches safe for clusters.
+- `{valkey-block ...}` template blocks (a cache block that lives in Redis or Valkey);
+- the **content view cache** (`content/view` full view);
+- the **compiled INI cache** (`eZINI` arrays). This removes the per-request touches of `var/cache/ini/*.php` and makes
+  INI caches safe for clusters.
 
-Entries have TTL based expiry, generation locks (no cache stampede) and reverse node and subtree indexes, so publishing content purges exactly the entries it
-affects. It needs **Exponential 6.0.15 or later**, whose kernel calls its hooks (`kernel/private/classes/views/content/view.php` calls `sevenxValkeyCacheBlock`;
-`lib/ezutils/classes/ezini.php` calls `sevenxValkeyINICache` from `loadCache()`, `saveCache()` and `resetCache()`), the PHP `redis` extension (or igbinary) and a
-reachable Redis or Valkey server. It first shipped on 20 July 2026 (1.0.0), and 1.0.1 documented 6.0.15 as the required platform.
+Entries have TTL based expiry, generation locks (no cache stampede) and reverse node and subtree indexes, so publishing
+content purges exactly the entries it affects. It first shipped on 20 July 2026 (1.0.0); 1.0.1 documented 6.0.15 as the
+required platform.
+
+## Requirements
+
+- **Exponential 6.0.15 or later**, whose kernel calls the extension's hooks (see "What the kernel does").
+- The PHP `redis` extension (or igbinary).
+- A reachable Redis or Valkey server.
 
 ## Set it up
 
+1. Install and activate the extension:
+
 ```bash
 composer require se7enxweb/sevenx_valkey_cache
-# settings/override/site.ini.append.php
-#   [ExtensionSettings]
-#   ActiveExtensions[]=sevenx_valkey_cache
-php bin/php/ezpgenerateautoloads.php
 ```
 
-Then configure the connection in `settings/override/valkeycache.ini.append.php`:
+```ini
+# settings/override/site.ini.append.php
+[ExtensionSettings]
+ActiveExtensions[]=sevenx_valkey_cache
+```
+
+2. Configure the connection in `settings/override/valkeycache.ini.append.php`:
 
 ```ini
 [ValkeyCacheSettings]
@@ -36,6 +47,26 @@ Persistent=disabled
 LocalCache=enabled
 IniCache=enabled
 ```
+
+3. Regenerate autoloads and clear the caches:
+
+```bash
+php bin/php/ezpgenerateautoloads.php -e
+php bin/php/ezcache.php --clear-all --allow-root-user
+```
+
+4. Check that it works: call a page twice, then list the keys:
+
+```bash
+redis-cli --scan --pattern 'sevenx_valkey_cache:*'
+```
+
+   Keys are listed. With eZINI debug on, a notice says `Loading Redis cache '...' for file '...'` when INI data come
+   from the server.
+
+## Settings
+
+All keys are in `valkeycache.ini`, block `ValkeyCacheSettings`; set them in `settings/override`.
 
 | Key | Default | Meaning |
 |---|---|---|
@@ -94,29 +125,17 @@ The kernel calls the extension only when its classes exist (`class_exists()` is 
 
 On a miss or when disabled, the kernel falls back to the cluster file handler and the files, exactly as before.
 
-## Check that it works
-
-```bash
-php bin/php/ezpgenerateautoloads.php -e
-php bin/php/ezcache.php --clear-all --allow-root-user
-```
-
-Call a page twice and list the keys with `redis-cli --scan --pattern 'sevenx_valkey_cache:*'`. With eZINI debug on, a notice says
-`Loading Redis cache '...' for file '...'` when INI data come from the server.
-
 ## Limits
 
 * Entries live in memory: size the server for the number of pages and siteaccesses, and set an eviction policy.
 * A server outage turns into cache misses; the extension decides how errors are reported.
 
-## Related
+## Related pages
 
-* [Chronicle](../../../history/extensions/sevenx_valkey_cache.md) and [release notes](../../../changelogs/extensions/sevenx_valkey_cache.md)
-* [Cache clear: rename aside](../cache-clear-rename-aside.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), [July 2026](../../../history/2026/2026-07.md)
-* [HTTP caching](../../../bc/6.0/http-caching.md), [SQL query cache](../../../bc/6.0/sql-query-cache.md)
-* [Change ledger](../../../history/ledger/sevenx_valkey_cache.md)
-* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- [Cache clear: rename aside](../cache-clear-rename-aside.md)
+- [HTTP caching](../../../bc/6.0/http-caching.md), [SQL query cache](../../../bc/6.0/sql-query-cache.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), [July 2026](../../../history/2026/2026-07.md)
+- [Chronicle](../../../history/extensions/sevenx_valkey_cache.md) and [release notes](../../../changelogs/extensions/sevenx_valkey_cache.md)
+- [Change ledger](../../../history/ledger/sevenx_valkey_cache.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)

@@ -1,17 +1,22 @@
 # cjw_newsletter: newsletters in the admin
 
-`cjw_newsletter` ("CJW Newsletter") is a complete newsletter system for Exponential: you
-write newsletter editions as content, visitors subscribe to lists with a double opt-in,
-editions are sent by cron in the background, bounces and a blacklist keep the lists
-clean, and every send is archived. It comes from the CJW Network, coolscreen.de, JAC
-Systeme and Webmanufaktur (2007 to 2015) and was taken over for PHP 8.5 and Exponential 6
-by the se7enxweb project in August 2026 (4.0.0.0 on 13 August). Releases 4.1.0 to 4.1.16
-(22 September to 2 October 2026) made it run on PHP 8, on persistent workers (Velocity) and
-on every database, and closed a large number of defects found by a systematic review.
+This page is for site owners and editors who send newsletters, and for administrators who run them. `cjw_newsletter`
+("CJW Newsletter") is a complete newsletter system for Exponential:
 
-Open it at **Newsletter** in the top admin menu (`/newsletter/index`). The extension keeps
-its own documentation (`doc/cjw_newsletter_documentation.pdf`, `INSTALL`, `FAQ`); this page
-explains what changed in the Exponential 6 releases and how to test it safely.
+- you write newsletter editions as content;
+- visitors subscribe to lists with a double opt-in;
+- editions are sent by cron in the background;
+- bounces and a blacklist keep the lists clean;
+- every send is archived.
+
+It comes from the CJW Network, coolscreen.de, JAC Systeme and Webmanufaktur (2007 to 2015) and was taken over for
+PHP 8.5 and Exponential 6 by the se7enxweb project in August 2026 (4.0.0.0 on 13 August). Releases 4.1.0 to 4.1.16
+(22 September to 2 October 2026) made it run on PHP 8, on persistent workers (Velocity) and on every database, and
+closed many defects found by a systematic review.
+
+Open it at **Newsletter** in the top admin menu (`/newsletter/index`). The extension keeps its own documentation
+(`doc/cjw_newsletter_documentation.pdf`, `INSTALL`, `FAQ`). This page explains how to rehearse it safely and what
+changed in the Exponential 6 releases.
 
 ## The parts
 
@@ -26,7 +31,7 @@ explains what changed in the Exponential 6 releases and how to test it safely.
 | Blacklist | `newsletter/blacklist_item_list`, `blacklist_item_add`, `blacklist_item_remove` | Addresses that never get mail |
 | CSV | `newsletter/subscription_list_csvimport`, `subscription_list_csvexport`, `import_list`, `import_view` | Import and export subscribers |
 
-Run the cron parts with the console:
+Run the cron parts from the installation root (add them to cron when the rehearsal below works):
 
 ```bash
 php runcronjobs.php cjw_newsletter
@@ -34,7 +39,7 @@ php runcronjobs.php -s <siteaccess> cjw_newsletter_mailqueue_create
 php runcronjobs.php -s <siteaccess> cjw_newsletter_mailqueue_process
 ```
 
-## Test the whole thing without sending a single mail
+## Rehearse the whole thing without sending a single mail
 
 `cjw_newsletter.ini` can write mail to files instead of sending it. This makes a complete
 rehearsal (subscribe, double opt-in, send, cron, unsubscribe) possible without a mail server
@@ -55,6 +60,22 @@ written is an error result, not a silent loss). To send for real, set a method t
 (with `SmtpTransportServer`, `SmtpTransportPort`, `SmtpTransportUser`,
 `SmtpTransportPassword`, `SmtpTransportConnectionType`: empty, `ssl`, `sslv2`, `sslv3` or
 `tls`) or `sendmail`. Unknown transport methods, and the documented `mta` method, are handled.
+
+## Settings you will use
+
+| File | Block | Key | Default | Meaning |
+|---|---|---|---|---|
+| `cjw_newsletter.ini` | `NewsletterSettings` | `RootFolderNodeId` | `1` | Node whose children are the newsletter systems |
+| `cjw_newsletter.ini` | `NewsletterSettings` | `PhpCli` | `php` | PHP command to run CLI scripts |
+| `cjw_newsletter.ini` | `NewsletterSettings` | `AvailableSkinArray[]` | `default` | Skins in `design:newsletter/skin/<name>` |
+| `cjw_newsletter.ini` | `NewsletterMailSettings` | `TransportMethodCronjob`, `TransportMethodPreview`, `TransportMethodDirectly` | see the file | `smtp`, `sendmail` or `file` per kind of mail (newsletter, test send, subscribe and info mails) |
+| `cjw_newsletter.ini` | `NewsletterMailSettings` | `FileTransportMailDir` | `var/log/mail` | Where `file` writes `.eml` files |
+| `cjw_newsletter.ini` | `NewsletterMailSettings` | `EmailSubjectPrefix` | empty | Subject prefix of newsletter mails; empty (4.1.16) means `[Newsletter <host of SiteURL>]`, before it the shipped example `[Newsletter example.com]` |
+| `cjw_newsletter.ini` | `BounceSettings` | `BounceThresholdValue` | `3` | Bounces before a user is marked bounced |
+| `cjw_newsletter.ini` | `NewsletterCsvImportSettings` | `DefaultCsvDelimiter` | `;` | CSV delimiter |
+| `cjw_newsletter.ini` | `NewsletterUserSettings` | `UseTplForNameGeneration` | `disabled` | Generate user names from a template |
+
+Put your values in `settings/override/cjw_newsletter.ini.append.php`.
 
 ## What changed in the Exponential 6 releases
 
@@ -155,25 +176,12 @@ each with a one line description shown by the console list; behaviour, `--help` 
 codes are unchanged. See
 [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md).
 
-## Settings you will use
+## Related pages
 
-| File | Block and key | Default | Meaning |
-|---|---|---|---|
-| `cjw_newsletter.ini` | `[NewsletterSettings] RootFolderNodeId` | `1` | Node whose children are the newsletter systems |
-| | `[NewsletterSettings] PhpCli` | `php` | PHP command to run CLI scripts |
-| | `[NewsletterSettings] AvailableSkinArray[]` | `default` | Skins in `design:newsletter/skin/<name>` |
-| | `[NewsletterMailSettings] TransportMethodCronjob`, `TransportMethodPreview`, `TransportMethodDirectly` | see the file | `smtp`, `sendmail` or `file` per kind of mail (newsletter, test send, subscribe and info mails) |
-| | `[NewsletterMailSettings] FileTransportMailDir` | `var/log/mail` | Where `file` writes `.eml` files |
-| | `[NewsletterMailSettings] EmailSubjectPrefix` | empty | Subject prefix of newsletter mails; empty (4.1.16) means `[Newsletter <host of SiteURL>]`, before it the shipped example `[Newsletter example.com]` |
-| | `[BounceSettings] BounceThresholdValue` | `3` | Bounces before a user is marked bounced |
-| | `[NewsletterCsvImportSettings] DefaultCsvDelimiter` | `;` | CSV delimiter |
-| | `[NewsletterUserSettings] UseTplForNameGeneration` | `disabled` | |
-
-## Related
-
-* [Chronicle](../../../history/extensions/cjw_newsletter.md) and [release notes](../../../changelogs/extensions/cjw_newsletter.md)
-* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* [Change ledger](../../../history/ledger/cjw_newsletter.md)
-* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
-* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+- [File consistency check](../file-consistency-check.md)
+- [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+- [Velocity engines](../../../bc/6.0/velocity-engines.md)
+- [Chronicle](../../../history/extensions/cjw_newsletter.md) and [release notes](../../../changelogs/extensions/cjw_newsletter.md)
+- [Change ledger](../../../history/ledger/cjw_newsletter.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

@@ -1,20 +1,28 @@
 # explayouts_ui_api: the layout editor
 
-`explayouts_ui_api` is the visual layout editor of Exponential Layouts. It serves
-the editor application (a single-page app) and the JSON API behind it, as plain
-Exponential module views on top of the `explayouts_core` services. You open it from
-the **Layouts** admin tab (see [explayouts_ui](explayouts_ui.md)) or directly at
-`/explayouts_ui_api/app`.
+This page is for editors and site builders who compose pages with Exponential Layouts, and for developers who call the
+editor's API. `explayouts_ui_api` is the visual layout editor. It serves the editor application (a single-page app)
+and the JSON API behind it, as plain Exponential module views on top of the `explayouts_core` services. Open it from
+the **Layouts** admin tab (see [explayouts_ui](explayouts_ui.md)) or directly at `/explayouts_ui_api/app`.
 
-It was imported on 30 July 2026 (1.0.0) and by 1.3.7 (30 September 2026) could be
-used on a phone, under a siteaccess reached by path (`/admin`), with German texts,
-with shared header and footer layouts shown as locked, and with write protection
+It was imported on 30 July 2026 (1.0.0). By 1.3.7 (30 September 2026) it worked on a phone, under a siteaccess reached
+by path (`/admin`), with German texts, with shared header and footer layouts shown as locked, and with write protection
 that makes sure a published layout is only changed through its draft.
 
-**1.3.8 and 1.3.9 (30 September and 1 October 2026).** The editor runs on the admin's jQuery 4 and jQuery UI 1.14 from `ezjscore` instead of the old jQuery 2.2.4 it bundled, so the
-whole admin uses one jQuery; the Markdown and HTML blocks have their code editor again; the Roboto italic face ships; layout share links work on Oracle. Details in the
-[release notes](../../../changelogs/extensions/explayouts_ui_api.md). The installed copy in `extension/explayouts_ui_api` reads 1.3.10 in `ezinfo.php`, one release after the newest
-tag of the clone; check with `grep Version extension/explayouts_ui_api/ezinfo.php`.
+**1.3.8 and 1.3.9 (30 September and 1 October 2026):** the editor runs on the admin's jQuery 4 and jQuery UI 1.14 from
+`ezjscore` instead of the jQuery 2.2.4 it bundled, so the whole admin uses one jQuery. The Markdown and HTML blocks have
+their code editor again, the Roboto italic face ships, and layout share links work on Oracle. Details are in the
+[release notes](../../../changelogs/extensions/explayouts_ui_api.md). The installed copy in
+`extension/explayouts_ui_api` reads 1.3.10 in `ezinfo.php`, one release after the newest tag of the clone; check with
+`grep Version extension/explayouts_ui_api/ezinfo.php`.
+
+## Requirements
+
+- Exponential 6 (PHP 8.1 or later).
+- Sibling extensions `explayouts` (value objects, tables, `explayouts.ini` layout and block types), `explayouts_core`
+  (services) and `ezformtoken` (form token).
+- Activate it for the admin siteaccess, after its dependencies, then regenerate autoloads and clear caches.
+- Verify with `/explayouts_ui_api/app/api/config`: it returns JSON including the current form token.
 
 ## Open and use the editor
 
@@ -136,15 +144,6 @@ curl -s -b cookie.txt -H "X-CSRF-Token: $TOKEN" -H 'Content-Type: application/js
 The full endpoint list, request and response shapes and error contract are in the
 [explayouts_ui_api specification](../../../specifications/6.0/explayouts-ui-api.md).
 
-## Requirements
-
-* Exponential 6 (PHP 8.1 or later).
-* Sibling extensions `explayouts` (value objects, tables, `explayouts.ini` layout and
-  block types), `explayouts_core` (services) and `ezformtoken` (form token).
-* Activate it for the admin siteaccess, after its dependencies, then regenerate
-  autoloads and clear caches. Verify with `/explayouts_ui_api/app/api/config`, which
-  returns JSON including the current form token.
-
 ## Behaviour changes to know when upgrading
 
 * **1.3.4**: block writes on a published layout are refused with 403. If a script
@@ -159,14 +158,13 @@ The full endpoint list, request and response shapes and error contract are in th
 * **1.3.0**: module views can be served by a persistent PHP worker (Velocity); see
   [Velocity engines](../../../bc/6.0/velocity-engines.md).
 
-## Related
+## Related pages
 
-* [explayouts_ui](explayouts_ui.md): the Layouts admin screens that link into the editor
-* [Specification](../../../specifications/6.0/explayouts-ui-api.md)
-* [Chronicle](../../../history/extensions/explayouts_ui_api.md) and [release notes](../../../changelogs/extensions/explayouts_ui_api.md)
-* [Change ledger](../../../history/ledger/explayouts_ui_api.md)
-* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
-* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+- [explayouts_ui](explayouts_ui.md): the Layouts admin screens that link into the editor
+- [Specification](../../../specifications/6.0/explayouts-ui-api.md)
+- [Exponential Layouts (bc note)](../../../bc/6.0/LAYOUTS.md)
+- [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+- [Chronicle](../../../history/extensions/explayouts_ui_api.md) and [release notes](../../../changelogs/extensions/explayouts_ui_api.md)
+- [Change ledger](../../../history/ledger/explayouts_ui_api.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-07](../../../history/extensions/months/2026-07.md), [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)
