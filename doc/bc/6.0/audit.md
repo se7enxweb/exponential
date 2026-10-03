@@ -14,12 +14,21 @@ This guide covers the finished subsystem. It is written for three readers:
 - **developers** who record their own events or extend the audit with sinks, alert rules or archive formats
   (sections 3.4 and 5).
 
-Every command in this guide was run on alpha (Exponential 6.0.15, SQLite, Apache with PHP-FPM, and Velocity) on
+Every command in this guide was run on a reference installation (Exponential 6.0.15, SQLite, Apache with PHP-FPM, and Velocity) on
 2026-10-02/03, and the output shown is the real output. Personal and installation-specific values were replaced by
 documentation values: addresses by `203.0.113.0/24`, the host name by `web1`, the installation id, key id and
 fingerprint by example values, and e-mail addresses by `@example.com` addresses. Actions that change things
 (archiving, purging, key rotation, import) were run on a sandbox copy of the audit with test records, so the live
 log stayed as it was. This is said wherever it applies.
+
+## In short
+
+| | |
+|---|---|
+| What changed | New audit subsystem, **on by default** (4.x had it off): records go to `var/<site>/log/audit/<channel>-<YYYY-MM-DD>.jsonl`, with an index in the site's database, the console in the admin, the command `exp:audit`, alert rules, sinks and archives. New policies `audit/read` and `audit/manage` (only the Administrator role holds them). |
+| Who is affected | Every installation that upgrades. Existing installations need the index tables once. Old `eZAudit::writeAudit()` calls keep working. The audit's daily work runs from the `frequent` cronjob group. |
+| How to check | `php bin/php/console exp:audit verify` (each channel **intact** or **broken**) |
+| How to fix | Create the index tables: `php update/common/scripts/6.0/createaudittables.php`; make sure the `frequent` cronjob group runs; give `audit/read` to the roles that should read the audit. See [Quick start](#2-quick-start-two-minutes) and [upgrades](#4-maintenance-guide). |
 
 **Contents**
 
@@ -36,7 +45,7 @@ log stayed as it was. This is said wherever it applies.
 7. [Settings reference](#7-settings-reference)
 8. [Event reference](#8-event-reference) (generated from the taxonomy registry)
 9. [Proof](#9-proof): tests, tamper test, performance, permissions
-- [Appendix A: the owner's decisions](#appendix-a-the-owners-decisions-27-questions-2026-10-02)
+- [Appendix A: design decisions](#appendix-a-design-decisions-27-questions-2026-10-02)
 - [Appendix B: how it was built, stage by stage](#appendix-b-how-it-was-built-stage-by-stage)
 - [Appendix C: known issues](#appendix-c-known-issues-2026-10-03)
 
@@ -161,7 +170,7 @@ if ( $form !== null )
     return $form;   // the password form, or the redirect of Cancel
 ```
 
-Checked on alpha over HTTP (Apache), with `ReauthForManage=enabled` set for the test and the override file put back
+Checked on the reference installation over HTTP (Apache), with `ReauthForManage=enabled` set for the test and the override file put back
 byte for byte afterwards:
 
 ```
@@ -359,7 +368,7 @@ Event 01M3ZH49HXBMS8TY7HJCA7NWE0   access.session.login   success
 ```
 
 (The host and address above were replaced for this guide, so this printed record no longer matches its hash. On
-alpha it does.) `show <id> --json` prints the line exactly as it is in the file.
+the reference installation it does.) `show <id> --json` prints the line exactly as it is in the file.
 
 `search` reads the index, or the files with `--files`:
 
@@ -444,7 +453,7 @@ Checkpoint written: 01M3ZGYDH0BNG4E5NASHP69XSX (system channel)
 
 #### Rotating, archiving, restoring, purging
 
-Dry runs on alpha (the oldest live file is from the day before, so nothing is due yet):
+Dry runs on the reference installation (the oldest live file is from the day before, so nothing is due yet):
 
 ```
 $ ./console exp:audit rotate --dry-run --allow-root-user
@@ -543,7 +552,7 @@ Pseudonymised: {"ok":true,"rows":0,"error":"","cutoff":"2026-07-05T00:04:33Z"}
 ```
 
 `reindex` without `--incremental` empties the index tables (one channel with `--channel=`) and rebuilds them from
-the files. On alpha that took about 6 seconds for 13 000 records.
+the files. On the reference installation that took about 6 seconds for 13 000 records.
 
 #### Exporting
 
@@ -880,7 +889,7 @@ It ships in the `frequent` group of `settings/cronjob.ini`, so the usual crontab
 ```
 
 On its own: `php runcronjobs.php audit`. A run takes `<LogDir>/.cron.lock`, so two runs never overlap. The daily
-marker is `<LogDir>/.cron-daily`. On alpha the part runs every minute in the `publishing` group
+marker is `<LogDir>/.cron-daily`. On the reference installation the part runs every minute in the `publishing` group
 (`settings/override/cronjob.ini.append.php`). Each run is recorded as `system.cronjob.run` (part `audit`). The
 dashboard's Operations card warns when the part has not run for an hour.
 
@@ -899,7 +908,7 @@ dashboard's Operations card warns when the part has not run for an hour.
   `system.audit.chain.broken` is recorded.
 - **Formats**: gzip (zlib, always there), bzip2 (ext-bz2), xz (the `xz` binary), zstd (ext-zstd or the binary), zip
   (ext-zip). A handler that cannot work here reports why in `audit/settings`, and archiving falls back to gzip. The
-  manifest names the handler actually used. On alpha all five work.
+  manifest names the handler actually used. On the reference installation all five work.
 - **Where archives go.** `ArchiveDir` (default `log/audit/archive` under the var directory) is best on another file
   system, or on a mount the web server user can add files to but not change (see [5.11](#511-security)). Modes:
   `FileMode=0440`, `DirMode=0750`.
@@ -920,7 +929,7 @@ need. Remove a key yourself only when no archive signed with it remains.
 - **Verify** every day (the cronjob part does), after any incident, and before handing records to anyone:
   `exp:audit verify` (live), `exp:audit verify --archives` (everything), `--channel=`, `--date=`. Exit code 0 =
   intact, 1 = broken, 2 = error, so it fits monitoring: `./console exp:audit verify -q --allow-root-user || alert`.
-  Verifying the 14 MB system channel took 2.5 s on alpha.
+  Verifying the 14 MB system channel took 2.5 s on the reference installation.
 - **Verify now** in the console and on the dashboard (manage) verifies every channel the user may read and stores
   the result. Plain page views show the stored state and never walk the files.
 - **What to do with BROKEN**: do not edit or remove anything. Note the file, line and kind, copy the directory
@@ -996,7 +1005,7 @@ and records `system.audit.chain.broken` once. Full-text search is FTS5 with the 
 everywhere else (and for terms under three characters). Imported records (`<LogDir>/imported/`) are indexed
 without a chain check. Reads are indexed only with `IndexReads=enabled`.
 
-Size on alpha: about 0.8 to 1.1 KB per record in the files. Plan for about 1.2 KB per row in the index.
+Size on the reference installation: about 0.8 to 1.1 KB per record in the files. Plan for about 1.2 KB per row in the index.
 
 | Events per day | Index rows after 2 years | Index | Live files (90 days) | Archives (2 years, gzip about 1:8) |
 |---|---|---|---|---|
@@ -1010,10 +1019,10 @@ An installation made before 6.0.15:
 
 1. **Index tables**: `php update/common/scripts/6.0/createaudittables.php` (every engine: MySQL/MariaDB,
    PostgreSQL, SQLite, Oracle, MongoDB). Tables that exist are left alone, and the script then indexes the files
-   (`--no-index` skips that, `--dry-run` only reports). On alpha, where the tables exist:
+   (`--no-index` skips that, `--dry-run` only reports). On the reference installation, where the tables exist:
 
    ```
-   $ sudo -u alpha php update/common/scripts/6.0/createaudittables.php --no-index
+   $ sudo -u <site user> php update/common/scripts/6.0/createaudittables.php --no-index
    Database: sqlite, missing tables: none
    the tables exist already
    Full-text search: fts5
@@ -1098,7 +1107,7 @@ class (a sink, a branch) always needs a Velocity restart. Every write to audit.i
 
 ### 4.11 Performance tuning
 
-Measured cost on alpha (2 000 requests each, in the kernel; [9.3](#93-performance)): a page that records nothing
+Measured cost on the reference installation (2 000 requests each, in the kernel; [9.3](#93-performance)): a page that records nothing
 pays **0.08 ms** more with the audit on. A request that records one event pays about **0.6–0.8 ms** (one append).
 Content jobs show no measurable difference. To go further:
 
@@ -1261,7 +1270,7 @@ every depth, no whitespace, `/` and non-ASCII characters not escaped, integers o
 money is a string). An empty object is `{}`. The line on disk *is* that form with `"hash"` in its sorted place, so a
 line whose bytes are not canonical is itself a sign of editing (`noncanonical`).
 
-A complete record from alpha (wrapped here; one line on disk; address and host replaced):
+A complete record from the reference installation (wrapped here; one line on disk; address and host replaced):
 
 ```json
 {"actor":{"ip":"203.0.113.0/24","login":"admin","roles":[2],"session":"h:7617a963afc3ca9c","ua":"curl 7","user_id":14},
@@ -1308,7 +1317,7 @@ What `verify` reports:
 | `repaired` (not a break) | a torn last line was followed by `system.audit.chain.repair` |
 
 The verifier keeps going after a break (using the record's own `prev`), so a report lists every damaged stretch.
-[9.2](#92-tamper-test) shows each kind produced on a copy of alpha's real files.
+[9.2](#92-tamper-test) shows each kind produced on a copy of the reference installation's real files.
 
 ### 5.4 Taxonomy and registries
 
@@ -1323,7 +1332,7 @@ The verifier keeps going after a break (using the record's own `prev`), so a rep
   `DefaultChannel`. Only channels listed in `Channels[]` are used.
 - The four registries, which the RAD survey (Setup › RAD) counts and checks:
 
-| Registry | Setting | On alpha |
+| Registry | Setting | On the reference installation |
 |---|---|---|
 | `auditbranches` | `[AuditEventSettings] Branches[]` | 0 (none registered) |
 | `auditsinks` | `[AuditSinkSettings] SinkClasses[]` | syslog, webhook, mail; 0 broken |
@@ -1441,7 +1450,7 @@ checkpoints off the server (syslog or webhook) to make that hold. See the
 ## 6. Reference configurations
 
 Each block below is a complete `settings/override/audit.ini.append.php` body (the file starts with
-`<?php /* #?ini charset="utf-8"?` and ends with `*/ ?>`). Each was validated on alpha by
+`<?php /* #?ini charset="utf-8"?` and ends with `*/ ?>`). Each was validated on the reference installation by
 a script that reads them out of this guide. For each one
 it builds a temporary INI root with the shipped `settings/audit.ini` and the block as its append file, lets eZINI
 merge them, and gives the result to the audit in a throwaway directory. It then asks every part whether it can work:
@@ -1608,7 +1617,7 @@ from memory. So any number of servers write one chain per channel, and the cronj
 run at a time does the work, and the daily tasks run once a day for the cluster. **Generate the keys once before the
 other servers record** (`./console exp:audit checkpoint` on one server), then share or copy
 `settings/override/audit.ini.append.php` to every server. Two servers with different keys would write different
-genesis values and fail verification. What was checked on alpha: the configuration loads and every part accepts it,
+genesis values and fail verification. What was checked on the reference installation: the configuration loads and every part accepts it,
 and ten concurrent writers to one channel keep the chain intact (test B2). A multi-server cluster itself was not
 available to test.
 
@@ -1852,9 +1861,9 @@ Related settings elsewhere: `cronjob.ini [CronjobPart-audit]` and the `frequent`
 
 ## 8. Event reference
 
-Generated from `expAuditTaxonomy::registry()` and the settings in effect on alpha by
+Generated from `expAuditTaxonomy::registry()` and the settings in effect on the reference installation by
 a generator script. **Raised in** comes from the code: the call sites
-that raise the name. **On here** is what `decide()` answers with alpha's settings. **Written** says whether the event
+that raise the name. **On here** is what `decide()` answers with the reference installation's settings. **Written** says whether the event
 is appended at once or with the request's buffer. The two descriptive columns are kept with their names by the
 generator. Columns: Sev. = severity; Default = shipped (`always` cannot be switched off; `sampled` = a read, recorded
 only with `Reads=enabled`).
@@ -2037,7 +2046,7 @@ Also `tests/tests/kernel/classes/expViewAccessTest.php` (the dashboard permissio
 
 ### 9.2 Tamper test
 
-The tests prove T0–T12 on generated records. Stage 6 repeated the file cases on **copies of alpha's real access
+The tests prove T0–T12 on generated records. Stage 6 repeated the file cases on **copies of the reference installation's real access
 channel** (1 565 records over two day files), verified with the live keys. The live files were hashed before and
 checked afterwards to still begin with exactly the bytes copied:
 
@@ -2125,7 +2134,7 @@ event reference: `PASS 135 names, every one described`.
 
 ---
 
-## Appendix A: the owner's decisions (27 questions, 2026-10-02)
+## Appendix A: design decisions (27 questions, 2026-10-02)
 
 | # | Question | Decision |
 |---|---|---|
@@ -2223,7 +2232,7 @@ trigram tokenizer; filter forms post and redirect to the bookmarkable URL; chart
 protocol for `Transport=local`, because journald 252 does not parse RFC 5424 headers on /dev/log), the signed
 webhook, mail with configurable recipients (an owner decision on 2026-10-02), the alert evaluator with the three
 rule classes and seven shipped rules, five format handlers, archives with signed and chained manifests, retention
-with a purge ledger, the import of the 4.x logs (alpha's own `login.log` imported, originals archived), the
+with a purge ledger, the import of the 4.x logs (the reference installation's own `login.log` imported, originals archived), the
 cronjob part, and `exp:audit` complete. Tests E1–E4 plus the recipients test: 81 tests in all at that point.
 Deviations: `match` rules fire once per record, `schedule` rules once per group and window; retention never removes a
 key; restored and imported files have their own directories.
@@ -2238,11 +2247,16 @@ Fixed since this list was first written: `exp:audit search --query` ([3.3](#33-t
 patterns refused, one time rule for `--from`/`--to`, the password re-entry `ReauthForManage`
 ([3.1](#31-who-may-see-what-the-policies)) and `OnWriteFailure=refuse` ([4.13](#413-when-the-audit-cannot-write)).
 
-Found while writing this guide. Each was checked on alpha:
+Found while writing this guide. Each was checked on the reference installation:
 
 | Issue | Effect | Until it is fixed |
 |---|---|---|
 | The console's export cuts at `MaxExportRecords` instead of running larger exports in the background | large exports from the browser are incomplete (it says so) | `exp:audit export` has no limit |
 | The archives and settings views and the alerts view are read-only (no "Archive now", no acknowledge, no settings form) | these actions are done on the command line | `exp:audit archive/restore/key`, `exp:ini set audit.ini/…` |
 
-See also: [Audit trail](../../features/6.0/audit-trail.md).
+## Related pages
+
+- [Audit trail (feature)](../../features/6.0/audit-trail.md)
+- [Behaviour changes of 1 and 2 October 2026](behaviour-changes-2026-10.md)
+- [exp:ini](console-exp-ini.md), used to change audit settings
+- [Security and audit guide](../../guides/security-and-audit.md)
