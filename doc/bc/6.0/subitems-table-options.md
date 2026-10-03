@@ -1,14 +1,22 @@
 # The subitems list: Table options and its columns
 
-The list of sub items under every node in the admin (`content/view/full/<node id>`, the table with
-the checkboxes) shows the columns each user chooses in **Table options**. Exponential 6.0.15 turns that
-choice from 15 fixed columns into a catalogue of more than a hundred, groups them, lets users sort,
-reorder, save presets and export what they see as CSV, and lets site developers add their own column
-with a few lines of INI and a PHP function or a template.
+Read this page if your editors use the sub items list in the admin, if you override `children_detailed.tpl` or its
+JavaScript, or if you want to add a column of your own. In Exponential 6.0.15 the **Table options** of the list under
+every node (`content/view/full/<node id>`) offers a catalogue of more than a hundred columns instead of 15 fixed ones,
+grouped, sortable on the server, reorderable, with presets and CSV export. A site developer adds a column with a few
+lines of INI and a PHP function or a template.
 
-Everything a column shows is computed on the server, only for the columns the user made visible and
-only for the rows of the page on screen. A column the user may not see (its `Policy[]`) is not offered,
-not computed and not sent.
+Everything a column shows is computed on the server, only for the columns the user made visible and only for the rows
+of the page on screen. A column the user may not see (its `Policy[]`) is not offered, not computed and not sent.
+
+## In short
+
+| | |
+|---|---|
+| What changed | New column catalogue `settings/subitemscolumns.ini` (129 columns), new settings in `settings/subitems.ini` (`PageSizes[]`, `CSVLimit`, ...), server functions behind the list, the user's choice stored on the server per part of the admin. The old `eZSubitemColumns` cookie is taken over once. |
+| Who is affected | Overrides of `children_detailed.tpl` in admin or admin4, and of the list's JavaScript: they keep the classic 15 columns. Installations whose `ezjscore.ini` lacks the new server functions fall back to the classic list too. |
+| How to check | `php vendor/bin/phpunit tests/tests/kernel/classes/subitems/` |
+| How to fix | Merge your overrides with the shipped templates; keep `ezjscore.ini` current. To add a column, follow [Adding a column in 3 minutes](#adding-a-column-in-3-minutes). |
 
 ## What users see
 
@@ -278,11 +286,11 @@ is made: `built-in` (rendered by the list from the node, as before), a class and
 - **Page title in the browser** (`pagetitle`) is the `<title>` the public site prints for the item's
   page, worked out from the node and the public siteaccess's settings, without rendering the page. The
   public siteaccess is `SiteAccess=` in the block, else `site.ini [SiteSettings] DefaultAccess` (on
-  alpha: `site`). `TitleFormat=` picks the rule of the design that siteaccess uses:
+  the reference installation: `site`). `TitleFormat=` picks the rule of the design that siteaccess uses:
   - `name` (the default; the media design, `extension/sevenx_themes_media/design/media/templates/pagelayout/head/title.tpl`):
     `<page title> - <SiteName>`, where the page title is the meta title of the item's xrowmetadata
     attribute when it has one, else the item's name; the page title alone when it equals SiteName.
-    So on alpha the media root is "Media - Fit & Healthy", and the front page node "Fit & Healthy" is
+    So on the reference installation the media root is "Media - Fit & Healthy", and the front page node "Fit & Healthy" is
     just "Fit & Healthy".
   - `path` (`design/standard` and ezwebin `page_head.tpl`): the names of the item and its ancestors,
     the item first, joined by " / ", then " - <SiteName>": "Banners / Media - Bold Agency" (the
@@ -297,7 +305,7 @@ is made: `built-in` (rendered by the list from the node, as before), a class and
   empty cell: the node that owns the root element of `ezurlalias_ml` (the row with parent 0 and empty
   text) is the page at the site root and shows `/`; the content root (`[NodeSettings] RootNode`), whose
   `pathWithNames()` is always empty, shows its own alias when the root element belongs to another node.
-  On alpha the root element belongs to node 89 ("Fit & Healthy", the front page), which also has the
+  On the reference installation the root element belongs to node 89 ("Fit & Healthy", the front page), which also has the
   named alias `fit-healthy` its children hang below, and node 2 is reached at `websites`. **All URL
   aliases** (`allaliases`) lists every own alias of the item.
 - **Public path / Public URL** take the public siteaccess's `PathPrefix` off the alias (unless
@@ -478,7 +486,7 @@ Order=701
 Description=The <title> of the bold siteaccess.
 ```
 
-On alpha the media root's first child then shows "Banners / Media - Bold Agency". A `SiteAccess=` that is
+On the reference installation the media root's first child then shows "Banners / Media - Bold Agency". A `SiteAccess=` that is
 not in `AvailableSiteAccessList[]` gives an empty cell.
 
 ## Automatic attribute columns
@@ -525,7 +533,7 @@ Columns[]=publishedage
 Columns[]=pagetitle
 ```
 
-On alpha this gives `name, published, publishedage, pagetitle` under "Fitness" (node 92) and under every
+On the reference installation this gives `name, published, publishedage, pagetitle` under "Fitness" (node 92) and under every
 node below it. Blocks added by an override file come after the shipped ones, so to change the media
 library's or the users' defaults, override `Columns[]` of `[Defaults_media]` / `[Defaults_users]` instead of
 adding a block for the same place.
@@ -591,7 +599,7 @@ from the request is ever used as a class, function or template name. ezjscore wr
 - `ezjscore/call/expsubitems::columns::<parent>`: the columns the user may see (key, name, group, type,
   sortable, align, description, copy, builtin, order), `defaults`, `presets` (`source`: ini or user),
   the saved `preference` (`visible`, `preset`, `page_size`, `saved`), `page_sizes`, `csv_export`. On
-  alpha, as the admin, the media root offers 138 columns (129 from the INI, 9 attribute columns):
+  the reference installation, as the admin, the media root offers 138 columns (129 from the INI, 9 attribute columns):
 
   ```json
   {"key":"pagetitle","name":"Page title in the browser","group":"SEO","type":"text","sortable":false,"align":"",
@@ -602,7 +610,7 @@ from the request is ever used as a class, function or template name. ezjscore wr
   with `columns=a,b,c` (POST or GET): the `ezjscnode::subtree` answer, every item with
   `columns: { <key>: { v: <value>, h: "<html>" } }` for the requested non-built-in keys. The sort key is a
   column key whose column sorts, or one of the old names (`published_date`, `modified_date`, `node_id`
-  ...); anything else sorts as the parent does. Two children of the media root on alpha, with
+  ...); anything else sorts as the parent does. Two children of the media root on the reference installation, with
   `columns=parentnodeid,urlalias,pagetitle,childrencount,version,readingtime`:
 
   ```json
@@ -658,7 +666,7 @@ an XML text block); keep the heavy ones for small pages.
 A family class (`expSubitemsFieldColumn`) lists in `prefetchSets()` which `Field=` values read which set,
 and has a `prefetch<Set>( $nodes )` for each; a column class of your own overrides `prefetch()`.
 
-Measured on alpha (SQLite, as the admin, on the command line; median of 5 runs, each in a fresh process):
+Measured on the reference installation (SQLite, as the admin, on the command line; median of 5 runs, each in a fresh process):
 every one of the 114 non-built-in columns at once, for the first 10 children of the media root and for
 the first 50 and 100 nodes of the content tree.
 
@@ -722,3 +730,12 @@ the three worked examples above. `expSubitemsPrefetchTest` computes every column
 columns) for pages below the content, media and users roots once row by row and once with the page prefetch,
 as the admin and as anonymous, and requires the same cells; and that after the prefetch the rows of the
 prefetched columns need no query. A test that needs data the database does not have is skipped, not failed.
+
+## Related pages
+
+- [Sub items table options (feature)](../../features/6.0/subitems-table-options.md)
+- [Sub items: copy selected](../../features/6.0/subitems-copy-selected.md)
+- [Sub items: hide and unhide in More actions](SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
+- [Editing several items at once](multi-node-edit.md)
+- [Where the page sizes live](pagination-settings.md)
+- [Content model and editing guide](../../guides/content-model-and-editing.md)
