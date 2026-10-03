@@ -177,7 +177,7 @@ Take the files:
 tar czf backup-files.tar.gz var/storage var/log settings/override settings/siteaccess
 ```
 
-Take the database with the tool of your database system. Replace the placeholders with your values; use `YOUR_PASSWORD`-style prompts rather than putting the password on the command line.
+Take the database with the tool of your database system. Replace `USER` and `DATABASE` with your values. `-p` makes the client ask for the password; never write the password itself on the command line, where it lands in the shell history.
 
 | Database | Backup | Restore |
 |---|---|---|

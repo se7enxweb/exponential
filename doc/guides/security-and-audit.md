@@ -44,7 +44,7 @@ Expected: `404` three times. If you keep your own copy of `.htaccess`, merge the
 
 **The session cookie.** Sign in to the admin, open the browser developer tools, Application (or Storage), Cookies: the session cookie must show `HttpOnly`, `SameSite=Lax` and, on HTTPS, `Secure`. These are the code defaults (`site.ini [Session]` keys `CookieSecure=auto`, `CookieHttponly=true`, `CookieSameSite=Lax`; the file only lists them as comments).
 
-**The first administrator password.** A kickstart prints a random 20-character password once and writes it to `var/log/initial-admin-password`. Sign in, change it, and delete that file's content. Forgot it later:
+**The first administrator password.** When a kickstart file sets no password, or a well-known one such as `publish`, the installer makes a random 20-character password, prints it once and writes it to `var/log/initial-admin-password` (readable by the owner only). `exp:install --random-password` makes a 24-character one and shows it once. Sign in, change it, and delete that file. Forgot it later:
 
 ```bash
 php bin/php/resetuserpassword.php --allow-root-user -u admin -g
@@ -117,7 +117,7 @@ Depth: [the audit trail](../features/6.0/audit-trail.md), [audit event model](..
 
 ## 4. Debug output for your address only (5 minutes)
 
-Debug output shows file paths, SQL and settings, so it must never be on for every visitor. Exponential asks two lists: `DebugOutput` is the master switch, and with `DebugByIP=enabled` only the addresses in `DebugIPList[]` get the report.
+Debug output shows file paths, SQL and settings, so it must never be on for every visitor. Two settings decide who sees it: `DebugOutput` is the master switch, and with `DebugByIP=enabled` only the addresses in `DebugIPList[]` get the report.
 
 1. Find your address as the server sees it: sign in to the admin, open the Exp Debug bar (it appears once you are allowed to see debug), tab **Settings**, and run the IP test. The test needs the policy `setup/setup`; it names `REMOTE_ADDR`, the entry that matched and warnings such as `lockout`, `open` or `expired`.
 2. See where the setting comes from and what is in effect:

@@ -83,6 +83,10 @@ After the installation
 ------------------
 
 - [Getting started](guides/getting-started.md): install in one command, first login, first content, first template change.
+- [The content model and editing content](guides/content-model-and-editing.md): classes, objects, the online editor, the trash and content jobs.
+- [Templates and design](guides/templates-and-design.md): find the template that wrote a page, override it, switch the admin design.
+- [Extensions](guides/extensions.md): find, install, configure, build and release an extension.
+- [Remote services and apps](guides/remote-services-and-apps.md): call Exponential from the shell, from Python and with an API token.
 - [Deploying](guides/deploying.md): serve the site with Apache and PHP-FPM, Velocity or FrankenPHP, over HTTPS.
 - [Operating a site](guides/operating-a-site.md): caches, cronjobs, backups, logs and repairs.
 - [Security and audit](guides/security-and-audit.md): check the hardening, roles and policies, the audit trail.

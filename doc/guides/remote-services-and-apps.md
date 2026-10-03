@@ -18,7 +18,7 @@ Expected: an envelope that says you are anonymous:
 {"error_text":"","content":{"ok":true,"data":{"id":10,"login":null,"name":"Anonymous User",...,"anonymous":true,"groups":[]},"meta":[]}}
 ```
 
-Every answer has one shape: `{"ok":true,"data":...,"meta":{...}}`, or `{"ok":false,"error":{"code":403,"message":"..."}}`. Lists are paged and `meta` carries `total`, `offset`, `limit`, `count` and `has_more`.
+The outer `error_text` and `content` come from the `ezjscore` call interface; the shell and Python clients unwrap them. Inside `content` every answer has one shape: `{"ok":true,"data":...,"meta":{...}}`, or `{"ok":false,"error":{"code":403,"message":"..."}}`. Lists are paged and `meta` carries `total`, `offset`, `limit`, `count` and `has_more`.
 
 If you get 403 on every call, the master switch is off: `./console exp:ini get expservices.ini/Services/Enabled --allow-root-user` must say `enabled`. If the extension is missing, add `ActiveExtensions[]=expservices` in `settings/override/site.ini.append.php`, then run `php bin/php/ezpgenerateautoloads.php -e` and `php bin/php/ezcache.php --clear-all --allow-root-user`.
 
@@ -66,7 +66,7 @@ The catalogue lists every service with its summary, access rule, arguments and a
 ./expservices-client.sh catalog node | grep -E '"method"|"summary"'
 ```
 
-Each entry has `access`: `public`, `user` (signed in) or `[module, function]` (a policy, the same ones the admin checks), and `write`: true for services that change something. In the admin, **Setup > RAD** (`/setup/rad`) lists the same catalogue next to the other extension points. Per-domain tables are in the reference: [doc/bc/6.0/backend_ezjscore_services.md](../bc/6.0/backend_ezjscore_services.md).
+Each entry has `access`: `public`, `user` (signed in) or `[module, function]` (a policy, the same ones the admin checks), and `write`: true for services that change something. In the admin, **Setup > RAD** (`/setup/rad`) lists the same catalogue next to the other extension points. Per-domain tables are in the reference: [Backend services over ezjscore](../bc/6.0/backend_ezjscore_services.md).
 
 Rules that hold for every service: 401 without login, 403 without the policy; a write needs POST and a form token and records `service.<domain>.<method>` in the audit; large operations are routed to [content jobs](../features/6.0/content-jobs.md).
 
@@ -181,6 +181,6 @@ Change one with `./console exp:ini set expservices.ini/Paging/DefaultLimit 50 ov
 
 - Write a service of your own: one class extending `expServiceBase`, one `[ezjscServer_exp<domain>]` block, and it appears in the catalogue and in Setup > RAD. See [remote services (feature)](../features/6.0/remote-services-expservices.md) and [the services specification](../specifications/6.0/expservices.md).
 - Secure what you expose: roles, policies, audit and debug: [security and audit](security-and-audit.md).
-- Everything about the call interface, domain by domain: [doc/bc/6.0/backend_ezjscore_services.md](../bc/6.0/backend_ezjscore_services.md); the extension that carries it: [ezjscore](../features/6.0/extensions/ezjscore.md).
+- Everything about the call interface, domain by domain: [Backend services over ezjscore](../bc/6.0/backend_ezjscore_services.md); the extension that carries it: [ezjscore](../features/6.0/extensions/ezjscore.md).
 - How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
 - Other guides: [Extensions](extensions.md) (build the extension that carries your service), [Glossary](../glossary.md).
