@@ -3,7 +3,15 @@
 On 2026-10-01 and 2026-10-02 the administration interface moved to jQuery 4 and Exponential UI (`exp::*`), and
 YUI was removed from the admin designs and from the bundled ezjscore. The admin loads no YUI request any more.
 
-Upgrade steps for sites and extensions that still use YUI: [doc/bc/6.0/yui-removal.md](../../bc/6.0/yui-removal.md).
+The installed ezjscore is 1.5.4 (`extension/ezjscore/ezinfo.php`). Upgrade steps for sites and extensions that still use YUI: [doc/bc/6.0/yui-removal.md](../../bc/6.0/yui-removal.md).
+
+## How it began: jQuery 3.7.1 in August
+
+On 16 August 2026 (`f7c57376aa`) ezjscore replaced the vendored jQuery 1.10.2 with **jQuery 3.7.1** and
+**jQuery Migrate 3.4.1**, and `ezjsc::jquery` loaded Migrate for every caller so that older scripts kept working.
+This was the first step; the October change below went on to jQuery 4. The 3.7.1 and Migrate 3.4.1 files are
+still in `extension/ezjscore/design/standard/javascript/` (`ls` that folder to check). See
+[August 2026](../../history/2026/2026-08.md) and the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md).
 
 ## What you get
 
@@ -45,6 +53,9 @@ Leave `LocalScripts[jqueryMigrate]` empty to load jQuery 4 alone.
 
 ## Other fixes of the same change
 
+- The upload of object relation fields runs on `exp::dialog` and `exp::upload` when the expui extension is active, through
+  `expajaxuploader.js` (copies in `design/admin` and `design/admin4`); the YUI version stays as the fallback for installations without expui.
+
 - The rich text editor's custom tag and table cell dialogs called `.size()`, which jQuery 3 had already removed.
 - The asynchronous publishing daemon stopped with a type error on PHP 8 because a signal handler receives the
   signal information as an array.
@@ -52,3 +63,5 @@ Leave `LocalScripts[jqueryMigrate]` empty to load jQuery 4 alone.
   inside declaration blocks.
 
 Related: [October 2026 chronicle](../../history/2026/2026-10.md), [admin4 design](admin4-design.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [Exp Debug bar](exp-debug-bar.md).

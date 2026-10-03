@@ -8,13 +8,17 @@ can I take a copy of it?
 
 ## What you see
 
-- **A to Z by default**, natural and case insensitive (`Ext2` before `Ext10`).
-- Column headers **Name**, **Version** and **Modified** are links: click one to
-  sort by it, click again to reverse. The address carries the choice, so you can
-  bookmark it:
-  `/setup/extensions?SortBy=version&SortOrder=desc`. `SortBy` is `name`,
-  `version` or `mtime`; `SortOrder` is `asc` or `desc`. Any other value falls back to
-  `name` and `asc`.
+- **The loading order by default** (since 29 September 2026 at HEAD, commit `cb5d523bde`): active extensions
+  in the order of `ActiveExtensions`, then the ones active only for a siteaccess, then the rest by name.
+  When this page was first written (5 August, `74bc4ccbd8`) the default was A to Z, natural and case
+  insensitive (`Ext2` before `Ext10`); sort by **Name** to get that back. See
+  [Setup > Extensions: loading order](extension-loading-order.md).
+- Column headers (**Order**, **Name**, **Version**, **Modified** and others) are links: click one to
+  sort by it, click again to reverse. The choice travels as view parameters so the pager keeps it:
+  `/setup/extensions/(sort)/version/(dir)/desc`. `sort` is one of `order`, `name`, `info_name`,
+  `license`, `version`, `mtime`; `dir` is `asc` or `desc`. Any other value falls back to `order` and
+  `asc`. The August form `/setup/extensions?SortBy=version&SortOrder=desc` is still read, so bookmarks work
+  (`kernel/private/classes/views/setup/extensions.php`).
 - **Version** is the version the extension states, read from `extension.xml`,
   `ezinfo.php` or `composer.json` (see [extension metadata](../../specifications/6.0/extension-metadata.md)).
   A dash means none is stated.
@@ -71,4 +75,5 @@ The design proposal that led to it, with the open questions, is kept in
 
 - [Extension metadata](../../specifications/6.0/extension-metadata.md)
 - [Additional extension directories](additional-extension-directories.md)
-- Month page: [August 2026](../../history/2026/2026-08.md)
+- [Setup > Extensions: loading order](extension-loading-order.md)
+- Month page: [August 2026](../../history/2026/2026-08.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)

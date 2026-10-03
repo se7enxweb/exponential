@@ -30,7 +30,7 @@ ShowTemplatePathComments=enabled
 ```
 
 Or toggle it in the [Exp Debug bar](exp-debug-bar.md) under the templates group
-(setting "Template path comments"), which writes the same key.
+(setting "Template path comments", `settings/debugbar.ini [Setting_template_path_comments]`), which writes the same key.
 
 It works with the template compiler on or off, and for `{include}` as well as
 for the page's main template. Clear the template cache after changing it
@@ -69,5 +69,6 @@ the problem sits, not only that one exists.
 ## Related
 
 - [Debug output improvements](debug-output-improvements.md)
+- [Template override ordering](template-override-ordering.md)
 - [Template editor](template-editor-overrides.md): create and order the overrides these comments reveal.
 - Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md).

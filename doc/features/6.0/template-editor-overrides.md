@@ -13,7 +13,7 @@ longer be lost or silently ignored.
 - Admin menu: **Design** tab, left menu entry **Template Editor** (setting
   `settings/menu.ini [Leftmenu_design]` `Links[template_editor]=visual/templatelist`,
   with the matching `PolicyList_template_editor[]`).
-- Setup and Visual menus carry the same entry.
+- In `menu.ini` the Setup menu's older `Links[templates]=visual/templatelist` lines are commented out ("Removed from 4.3"), so only the Design entry exists unless you enable them. Check with `grep -n templatelist settings/menu.ini`.
 - A user needs the `visual/templatelist` policy (the *Design* module).
 
 ## What changed for you
@@ -110,6 +110,15 @@ Match[object]=1234
 (optionally by group; any `sorts` value sorts them by name, ascending; `limit` takes `offset` and `length`), for
 visual modules that browse classes (`a219ec4839`):
 
+Parameters of the function (`kernel/content/function_definition.php`, all optional):
+
+| Parameter | Default | Meaning |
+|---|---|---|
+| `as_object` | `true` | Return class objects (`false` returns rows). |
+| `group_list` | `false` | Array of class group ids to restrict the result. |
+| `sorts` | `null` | Sort array, for example `array( 'name' => 'asc' )`. |
+| `limit` | `null` | `hash( 'offset', 0, 'length', 20 )`. |
+
 ```
 {def $classes = fetch( 'content', 'class_list', hash( 'sorts', array( 'name' => 'asc' ), 'limit', hash( 'offset', 0, 'length', 20 ) ) )}
 ```
@@ -123,4 +132,4 @@ visual modules that browse classes (`a219ec4839`):
 ## Related
 
 - [Template path comments](template-path-comments.md)
-- Month page: [July 2026](../../history/2026/2026-07.md)
+- Month page: [July 2026](../../history/2026/2026-07.md); [Template override ordering](template-override-ordering.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md); [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)

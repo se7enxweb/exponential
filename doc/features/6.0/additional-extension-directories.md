@@ -90,4 +90,5 @@ pattern, is in [Additional Extension Directories](../../bc/6.0/AdditionalExtensi
 
 - [Extension list and downloads](extension-list-and-downloads.md) lists and downloads extensions from every root.
 - [Extension module override](extension-module-override.md)
-- Month page: [July 2026](../../history/2026/2026-07.md)
+- [Extension loading order](extension-loading-order.md)
+- Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)

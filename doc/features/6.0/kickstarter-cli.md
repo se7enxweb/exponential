@@ -18,7 +18,11 @@ php bin/php/console exp:kickstarter run --dry-run
 php bin/php/console exp:kickstarter run --force
 ```
 
-`bin/php/kickstarter.php` is the same program without the console.
+`bin/php/kickstarter.php` is the same program without the console. Checked with
+`./console help exp:kickstarter` on 6.0.15: commands `ini`, `run`, `help`; run options
+`--start-step`, `--stop-step`, `--dry-run`, `--list-steps` and `--force`; ini options `--defaults`
+(copy `kickstart.ini-dist`) and `--yes`. Every run is logged to `var/log/kickstart.log` with passwords masked
+(`EXP_KICKSTART_LOG=0` turns the log off). Try `php bin/php/kickstarter.php run --list-steps` to see the steps.
 
 ## What July added around it
 
@@ -28,7 +32,7 @@ php bin/php/console exp:kickstarter run --force
   template `kickstart.ini-dist` generates yours. Keep your own `kickstart.ini`
   out of version control; it holds the database password.
 - **Remote packages can be tested.** `--dry-run` downloads and checks the packages
-  named by the site type in a `dryrun/` directory and touches nothing else.
+  named by the site type into a package repository named `dryrun` (`kernel/setup/steps/ezstep_site_types.php`) and stops before `CreateSites`, so the database is not written.
 - **A shared progress line.** The scripts use `expScriptStatus` (renamed from
   `eZPMStatus`, so the web setup and the console report progress the same way).
 - **Local packages first.** When a package exists in the installation the site type
@@ -42,5 +46,6 @@ php bin/php/console exp:kickstarter run --force
 ## Related
 
 - [Clean install defaults](clean-install-defaults.md)
-- [ezpm](ezpm-package-manager-cli.md) installs single packages.
+- [ezpm](ezpm-package-manager-cli.md) installs single packages; [Install in one command](install-in-one-command.md) needs no `kickstart.ini`.
+- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md); [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)
 - Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md).

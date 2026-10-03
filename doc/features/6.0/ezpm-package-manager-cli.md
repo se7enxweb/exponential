@@ -24,9 +24,11 @@ php ezpm.php help
 php ezpm.php help add
 ```
 
-`php bin/php/console ezpm help add` prints the help of the `add` command. If you
-run as the operating system user `root`, `--allow-root-user` is required as for
-every other script (see [CLI scripts as root](../../bc/6.0/console.md)).
+`php bin/php/console ezpm help add` prints the help of the `add` command; `./console list ezpm`
+shows the one entry the console has for it (checked on 6.0.15: `ezpm  Create, import, install, list and delete
+Exponential packages`). `ezpm.php` ran as the operating system user `root` without
+`--allow-root-user` in the check that wrote this page; other scripts do ask for it, see
+[the console](../../bc/6.0/console.md).
 
 Global options (from `php ezpm.php help`):
 
@@ -38,7 +40,8 @@ Global options (from `php ezpm.php help`):
 | `-l`, `--login`, `-p`, `--password` | Log in as this user for all operations. |
 | `-r`, `--repos` | Repository to look for packages in. |
 | `--db-type`, `--db-name`, `--db-user`, `--db-password`, `--db-host`, `--db-socket` | Override the database connection. |
-| `--no-colors` | Plain output. |
+| `-c`, `--colors` / `--no-colors` | ANSI colours on (default) or plain output. |
+| `--logfiles` / `--no-logfiles` | Create log files, or not (default: not). |
 
 Commands: `create`, `add`, `set`, `delete`, `export`, `import`, `install`,
 `list`, `info`, `help`.
@@ -133,4 +136,5 @@ What the installer does differently since July:
   browser installer (June 2026).
 - [Kickstarter CLI](kickstarter-cli.md): installs a whole site from `kickstart.ini`.
 - [Clean install defaults](clean-install-defaults.md)
-- Month pages: [July 2026](../../history/2026/2026-07.md).
+- Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md) (export fixes).
+- Changelog: [6.0.15](../../changelogs/6.0/6.0.15.md); upgrade notes: [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md); [Console](../../bc/6.0/console.md).
