@@ -1,71 +1,83 @@
-# eZINI Preserves Comments on Save
+# eZINI keeps comments when it saves
 
-## TL;DR
+Read this page if you edit INI files by hand and also let the admin or a script change them (activating an
+extension, toolbar or menu settings, `exp:ini`). Before, every save through `eZINI` rewrote the whole file and
+dropped your comments and layout. Now a save changes only the lines it has to and keeps everything else. The API
+did not change, and there is nothing to migrate.
 
-`eZINI` now uses a round-trip save path for direct-access INI writes to preserve existing comments and structure instead of rewriting the whole file from normalized arrays.
+## In short
 
-Legacy full rewrite is still available as fallback when round-trip cannot be applied safely.
+| | |
+|---|---|
+| What changed | Direct-access saves in `eZINI` patch the file in place (round trip) instead of rewriting it. The old full rewrite stays as fallback. |
+| Who is affected | Everyone whose override files (for example `settings/override/site.ini.append.php`) carry comments. Positive change only. |
+| How to check | Add a comment to an override, activate an extension in Setup > Extensions, and look at the file: the comment is still there. |
+| How to fix | Nothing to fix. No settings or schema migration. |
 
-## Problem
+## What changed
 
-Historically, `eZINI` parse/save behavior dropped comments and formatting because:
+Before, `eZINI` lost comments and formatting on save because:
 
-- parser ignored full-line comments (`# ...`)
-- parser stripped inline comment tails (`## ...`)
-- writer always serialized from `BlockValues`
+- the parser ignored full-line comments (`# ...`);
+- the parser stripped inline comment tails (`## ...`);
+- the writer always serialised the file from `BlockValues`.
 
-In real admin flows (for example extension activation), this caused `settings/override/site.ini.append.php` to lose much of its original layout and comments.
+In real admin flows such as activating an extension, `settings/override/site.ini.append.php` lost much of its
+layout and comments.
 
-## What Was Implemented
+Now `lib/ezutils/classes/ezini.php` saves by round trip:
 
-Round-trip support was added in [lib/ezutils/classes/ezini.php](lib/ezutils/classes/ezini.php):
+- it keeps the original file lines and the line numbers of sections and settings while parsing;
+- on save it patches only the keys and sections that changed;
+- untouched lines, comments and spacing stay as they were.
 
-- capture original file lines and parse line indexes for sections/settings
-- patch only the targeted keys/sections during save
-- preserve untouched lines, comments, and spacing
+## When the round trip is used
 
-## Follow-up Fixes After Real-World Validation
+All three must hold:
 
-Two additional bugs were fixed:
+1. direct-access mode is used;
+2. the source lines of the target file can be found;
+3. patching is safe for the current operation.
 
-1. Cache-loaded direct-access instances:
-- if values were restored from INI cache, parse-time snapshot data could be missing
-- save now lazily loads source from disk before patching
+Then a save:
 
-2. Section and line-replacement correctness:
-- comment-only / empty sections are now tracked during parse and preserved
-- variable replacement now removes exact indexed lines (not contiguous spans), preventing unrelated line loss
+- keeps existing comments and blank lines;
+- updates changed values in place;
+- appends new keys in the correct section;
+- removes deleted keys and sections on a full save (`$onlyModified = false`).
 
-## Behavior
+If any condition fails, the old serialiser writes the file as before.
 
-Round-trip save is attempted when:
+## Fixes found in real use
 
-1. direct-access mode is used
-2. source lines can be resolved for the target file
-3. patching is safe for current operation
+Two more bugs were fixed after testing on real files:
 
-When active, save can:
+1. **Instances loaded from the INI cache.** When values came from the INI cache, the parse-time snapshot could be
+   missing. A save now loads the source from disk first.
+2. **Sections and line replacement.** Sections that hold only comments, or nothing, are tracked during parsing and
+   kept. Replacing a variable removes exactly its indexed lines, not a run of neighbouring lines, so unrelated lines
+   are no longer lost.
 
-- retain existing comments and blank lines
-- update changed values in place
-- append new keys in the correct section
-- remove deleted keys/sections on full save (`$onlyModified = false`)
+## Compatibility
 
-Fallback behavior:
+- Scope: direct-access saves.
+- API: unchanged; constructor, signatures and callers stay the same.
+- Output: the same values; comments and layout are now kept.
 
-- if round-trip prerequisites are not met, legacy serializer is used
+## How to check
 
-## Scope and BC
+1. On a staging copy, add a comment line to `settings/override/site.ini.append.php`.
+2. Activate or deactivate an extension in Setup > Extensions (or change a value with `exp:ini`).
+3. Open the file again. Your comment is still there, and only the changed value moved.
 
-- Scope: direct-access saves
-- API compatibility: unchanged (constructor/signatures/callers do not change)
-- BC: backward compatible at API level, improved output preservation behavior
+Check the INI admin flows you use in the same way (extensions, toolbar and menu settings).
 
 ## Tests
 
-Test file: [tests/tests/lib/ezutils/ezini_test.php](tests/tests/lib/ezutils/ezini_test.php)
+The tests are in `tests/tests/lib/ezutils/eZINITest.php`. `tests/tests/lib/ezutils/ezini_test.php` is a
+compatibility alias (`ezini_test extends eZINITest`) for runners that look for that file name.
 
-Added/expanded round-trip regressions:
+Round-trip regression tests:
 
 1. `testSavePreservesCommentsInDirectAccessMode`
 2. `testSaveAppendsNewSettingWithoutDroppingComments`
@@ -74,63 +86,29 @@ Added/expanded round-trip regressions:
 5. `testSaveRetainsRealSiteIniStructureWhenUpdatingExtensions`
 6. `testSaveRetainsCurrentSiteIniAppendOutsideExtensionSettings`
 
-Also included:
+They clean up their temporary fixture files.
 
-- temporary fixture cleanup helper
-- compatibility alias class (`ezini_test extends eZINITest`) for filename-based runners
-
-## Commands and Current Results
-
-Syntax checks:
+Run them:
 
 ```bash
 php -l lib/ezutils/classes/ezini.php
-php -l tests/tests/lib/ezutils/ezini_test.php
-```
-
-Result:
-
-- no syntax errors
-
-Focused regression subset:
-
-```bash
-./vendor/bin/phpunit --bootstrap tests/bootstrap.php tests/tests/lib/ezutils/ezini_test.php --filter 'testSave(RetainsCurrentSiteIniAppendOutsideExtensionSettings|RetainsRealSiteIniStructureWhenUpdatingExtensions|PreservesCommentsWhenLoadedFromCache)$'
-```
-
-Result:
-
-- OK (3 tests, 17 assertions)
-
-Expanded round-trip subset:
-
-```bash
-./vendor/bin/phpunit --bootstrap tests/bootstrap.php tests/tests/lib/ezutils/ezini_test.php --filter 'testSave(PreservesCommentsInDirectAccessMode|AppendsNewSettingWithoutDroppingComments|RemovesDeletedSettingAndKeepsSectionComments|PreservesCommentsWhenLoadedFromCache|RetainsRealSiteIniStructureWhenUpdatingExtensions)$'
-```
-
-Result:
-
-- OK (5 tests, 29 assertions)
-
-Full eZINI test file:
-
-```bash
 ./vendor/bin/phpunit --bootstrap tests/bootstrap.php tests/tests/lib/ezutils/ezini_test.php
 ```
 
-Result:
+Results recorded when the change was made:
 
-- OK (11 tests, 50 assertions)
+| Run | Result |
+|---|---|
+| `php -l` on both files | no syntax errors |
+| `--filter 'testSave(RetainsCurrentSiteIniAppendOutsideExtensionSettings\|RetainsRealSiteIniStructureWhenUpdatingExtensions\|PreservesCommentsWhenLoadedFromCache)$'` | OK (3 tests, 17 assertions) |
+| `--filter 'testSave(PreservesCommentsInDirectAccessMode\|AppendsNewSettingWithoutDroppingComments\|RemovesDeletedSettingAndKeepsSectionComments\|PreservesCommentsWhenLoadedFromCache\|RetainsRealSiteIniStructureWhenUpdatingExtensions)$'` | OK (5 tests, 29 assertions) |
+| the whole file | OK (11 tests, 50 assertions) |
 
-## Rollout Notes
+## Rollout
 
-No config/schema migration is required.
-
-Recommended rollout:
-
-1. Deploy code update.
-2. Run the full `ezini_test.php` file.
-3. Verify admin write flows in staging for INI files with comments (extensions, toolbar/menu settings, etc.).
+1. Deploy the code.
+2. Run the whole eZINI test file.
+3. On staging, check the admin write flows for INI files with comments (extensions, toolbar and menu settings).
 
 ## Related pages
 

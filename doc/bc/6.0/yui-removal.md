@@ -1,9 +1,21 @@
 # YUI removed from Exponential
 
-Exponential 6.0.15 no longer ships, loads or calls YUI (the Yahoo! User Interface library, YUI 2 and YUI 3) in
-the kernel, in any design, or in any of its extensions. Everything that used YUI runs on jQuery 4 and Exponential
-UI (extension `expui`). The classic grey administration interface is still available, YUI-free and looking as it
-always did, as the siteaccess `classic`.
+Read this page if your templates, designs or extensions use YUI (the Yahoo! User Interface library, YUI 2 and
+YUI 3), or if you override admin templates or styles. Exponential 6.0.15 no longer ships, loads or calls YUI in the
+kernel, in any design, or in any of its extensions. Everything that used YUI runs on jQuery 4 and Exponential UI
+(extension `expui`). Code that still asks for YUI gets nothing, so it must be moved.
+
+The classic grey administration interface is still available, YUI-free and looking as it always did, as the
+siteaccess `classic`.
+
+## In short
+
+| | |
+|---|---|
+| What changed | No YUI anywhere. ezjscore 1.5.0 removes the YUI libraries and the `ezjsc::yui*` packer keys. |
+| Who is affected | Templates and extensions that load `ezjsc::yui2`, `ezjsc::yui3` or `ezjsc::yui3io`, or use `YUI(...)` / `YAHOO.*`; overrides of the renamed templates, classes and stylesheets. |
+| How to check | `grep -rnE "ezjsc::yui\|YUI\(\|YAHOO\.\|YUI3_config\|YUILoader\|yui3-js-enabled" extension/ design/ settings/` |
+| How to fix | Follow "How to fix" steps 1 to 5. |
 
 ## What changed
 
@@ -16,6 +28,8 @@ always did, as the siteaccess `classic`.
 | Debug output | headed "eZ debug" | headed "Exp Debug" |
 
 ### Extension releases without YUI
+
+The root `composer.json` requires these versions.
 
 | Extension | Version | Notes |
 |---|---|---|
@@ -32,14 +46,24 @@ always did, as the siteaccess `classic`.
 | cjw_newsletter | 4.1.9 | dead YUI drag-and-drop of the admin2 list removed |
 | sevenx_themes_simple | 1.0.20 | YUI settings and calendar styles removed |
 
-The root `composer.json` requires these versions.
+## How to check
 
-## Compatibility: what a site or extension must change
+1. Search your own code:
 
-The removal is complete, so code that still asks for YUI no longer gets it.
+   ```bash
+   grep -rnE "ezjsc::yui|YUI\(|YAHOO\.|YUI3_config|YUILoader|yui3-js-enabled" extension/ design/ settings/
+   ```
 
-1. **`{ezscript_require( 'ezjsc::yui3' )}`, `'ezjsc::yui2'`, `'ezjsc::yui3io'`** load nothing any more, and
-   `YUI(...)`, `YAHOO.*`, `YUI3_config`, `YUILoader` are undefined. Move the code:
+   No output means nothing is left. (The shipped extensions are already clean; a hit is in your own code or an
+   override.)
+
+2. In a browser's developer tools, on any admin page: no request whose URL contains `yui`; in the console
+   `typeof YUI` and `typeof YAHOO` are `"undefined"`, and `typeof Exp` is `"object"`.
+
+## How to fix
+
+1. **Move YUI code to jQuery or Exponential UI.** `{ezscript_require( 'ezjsc::yui3' )}`, `'ezjsc::yui2'` and
+   `'ezjsc::yui3io'` load nothing any more, and `YUI(...)`, `YAHOO.*`, `YUI3_config` and `YUILoader` are undefined.
 
    | YUI | Use instead |
    |---|---|
@@ -58,8 +82,7 @@ The removal is complete, so code that still asks for YUI no longer gets it.
    The step-by-step guide with examples for every module is Exponential UI's
    `extension/expui/doc/CONVERTING_YUI_to_EXPUI.md`; the API is in `extension/expui/doc/API.md`.
 
-2. **Front-end designs** that use Exponential UI modules load them themselves (the admin's script list is not
-   loaded there):
+2. **Front-end designs load Exponential UI themselves.** The admin's script list is not loaded there:
 
    ```
    {exp_config()}
@@ -67,55 +90,49 @@ The removal is complete, so code that still asks for YUI no longer gets it.
    {ezcss_require( array( 'exp/core.css', 'exp/datepicker.css' ) )}
    ```
 
-3. **Renamed:** eZ Tags' `eztags_children_yui.tpl` is `eztags_children_table.tpl`; the admin trash table's
-   `yui-dt*` classes are `admin-dt*`; ezflow's tab classes are `.ezpage-tabs*` and the timeline body class is
-   `ezflow-skin`. Overrides and custom CSS for the old names must be renamed.
+3. **Rename overrides and CSS for renamed names.**
+   - eZ Tags' `eztags_children_yui.tpl` is `eztags_children_table.tpl`.
+   - The admin trash table's `yui-dt*` classes are `admin-dt*`.
+   - ezflow's tab classes are `.ezpage-tabs*`, and the timeline body class is `ezflow-skin`.
 
-4. **Stylesheets:** the admin designs' `theme/yui_datatable.css`, `yui_menu.css` and `yui_container.css` are gone;
-   the admin's own rules from them (sub-items toolbar, table options, masks) are in `theme/admin_datatable.css`.
+4. **Stylesheets.** The admin designs' `theme/yui_datatable.css`, `yui_menu.css` and `yui_container.css` are gone. The
+   admin's own rules from them (sub-items toolbar, table options, masks) are in `theme/admin_datatable.css`.
 
-5. **Settings:** `ezjscore.ini` overrides that set `ExternalScripts[yui*]`, `LocalScripts[yui*]`,
-   `LocalScriptBasePath[yui*]` or `[YUI3]` can be deleted; `PreferredLibrary=yui3` is no longer meaningful.
-
-Find what is left in your own code:
-
-```bash
-grep -rnE "ezjsc::yui|YUI\(|YAHOO\.|YUI3_config|YUILoader|yui3-js-enabled" extension/ design/ settings/
-```
+5. **Settings.** `ezjscore.ini` overrides that set `ExternalScripts[yui*]`, `LocalScripts[yui*]`,
+   `LocalScriptBasePath[yui*]` or `[YUI3]` can be deleted. `PreferredLibrary=yui3` no longer means anything.
 
 ## The classic grey administration interface (`classic`)
 
-A siteaccess `classic` (reached at `/classic`) uses the original grey `admin` design alone, with no
-additional designs. It is YUI-free and pixel-faithful to the original: the screenshots of every widget that used
-YUI were compared with the YUI originals (the calendar is drawn as the YUI one was, the trash and setup pages are
-identical). It also gained what the newer designs have: a left menu that collapses and is resized by dragging
-(remembered per user), and a content tree that scrolls inside the menu.
+The siteaccess `classic` (reached at `/classic`) uses the original grey `admin` design alone, with no additional
+designs. It is YUI-free and pixel-faithful to the original: the screenshots of every widget that used YUI were
+compared with the YUI originals (the calendar is drawn as the YUI one was; the trash and setup pages are identical).
+It also gained what the newer designs have: a left menu that collapses and is resized by dragging (remembered per
+user), and a content tree that scrolls inside the menu.
 
-To add it to an installation, copy the admin siteaccess settings to `settings/siteaccess/classic/`, set
+To add it to an installation:
 
-```ini
-[DesignSettings]
-SiteDesign=admin
-AdditionalSiteDesignList[]
-```
+1. Copy the admin siteaccess settings to `settings/siteaccess/classic/`.
+2. In `settings/siteaccess/classic/site.ini.append.php` set:
 
-and add `classic` to `[SiteAccessSettings] AvailableSiteAccessList[]`, `RelatedSiteAccessList[]` and
-`[SiteSettings] SiteList[]`.
+   ```ini
+   [DesignSettings]
+   SiteDesign=admin
+   AdditionalSiteDesignList[]
+   ```
 
-## Verifying an installation
+3. Add `classic` to `[SiteAccessSettings] AvailableSiteAccessList[]` and `RelatedSiteAccessList[]`, and to
+   `[SiteSettings] SiteList[]`.
+4. Clear the INI cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
 
-- In a browser's developer tools on any admin page: no request whose URL contains `yui`, and in the console
-  `typeof YUI` and `typeof YAHOO` are `"undefined"`, `typeof Exp` is `"object"`.
-- The grep above finds nothing in your code.
+## In one sentence
 
-## Answer for customers
-
-> Yes. Exponential 6.0.15 is completely free of YUI, in the kernel, every administration design and every
-> extension. The classic grey administration interface is available as an option (siteaccess `classic`) and
-> runs on jQuery 4 and Exponential UI like the others, looking as it always did.
+Exponential 6.0.15 is free of YUI in the kernel, every administration design and every extension; the classic grey
+administration interface is available as the siteaccess `classic` and runs on jQuery 4 and Exponential UI like the
+others, looking as it always did.
 
 ## Related pages
 
 - [jQuery 4 in the admin, and YUI gone](../../features/6.0/jquery4-and-yui-removal.md)
 - [ezjscore: JavaScript and CSS packer, server calls, jQuery](../../features/6.0/extensions/ezjscore.md)
+- [Behaviour changes of 1 and 2 October 2026](behaviour-changes-2026-10.md)
 - [March 2024](../../history/2024/2024-03.md)

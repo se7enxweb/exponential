@@ -1,127 +1,91 @@
-# Proposal: Backend extension sorting, metadata, and direct download
+# Setup > Extensions: sorting, metadata and download
 
-Ticket: `Aufgabe #16328` – Backend Sortingorder of extensins A-Z
-Scope: `setup/extensions` and `package/create` (extension export) on `edit.alpha.se7enx.com`
-Status: Draft for discussion – no code changes yet
+Read this page if you override the **Setup > Extensions** template or the extension list of the package wizard, or
+if you want to know how the extension list changed. Since 5 August 2026 the list is sorted, shows each extension's
+version and last change, and offers a direct download. The page also keeps the original design proposal and the
+answers its open questions received. How to use the page is described in
+[Extension list: sort, inspect and download any extension](../../features/6.0/extension-list-and-downloads.md).
 
-## Current state
+## In short
 
-- `setup/extensions` lists all available extensions in the order returned by `eZExtension::extensionRootDirectories()` / `eZDir::findSubItems()`. That order is filesystem order, not alphabetical.
-- The grid has two columns: a checkbox and the extension name. There is no version, no modification date, and no direct download action.
-- `package/create` (creator `ezextension`) uses the same unsorted list in `design/standard/templates/package/creators/ezextension/extension.tpl`.
+| | |
+|---|---|
+| What changed | `/setup/extensions` is sortable and shows Version, Modified and a Details card with downloads; `package/create` (Extension) shows the same sorted table without downloads. |
+| Who is affected | Installations that override `design/admin/templates/setup/extensions.tpl` or `design/standard/templates/package/creators/ezextension/extension.tpl`. |
+| How to check | Open `/setup/extensions`; the columns Order, Name, Version and Modified are links. |
+| How to fix | Merge your override with the shipped template; the activation check boxes and the `ActivateExtensions` action are unchanged. |
 
-## Goals
+## What changed
 
-1. Sort the available-extension list A-Z (natural, case-insensitive).
-2. Show the last modification date per extension.
-3. Show the version per extension when it can be discovered.
-4. (Optional per ticket note #2) Offer a direct `tar.gz` or `.zip` download of an extension so an admin does not need the full package wizard.
+Before, `setup/extensions` listed the available extensions in filesystem order (the order of
+`eZExtension::extensionRootDirectories()` and `eZDir::findSubItems()`), in a grid of two columns: a check box and the
+name. There was no version, no modification date and no download. `package/create` (creator `ezextension`) used the
+same unsorted list in `design/standard/templates/package/creators/ezextension/extension.tpl`.
 
-## Proposed implementation
+Now (commits `74bc4ccbd8`, `104a4b487a`, `3d125848e8`):
 
-### 1. Common extension metadata helper
+- **Sorting.** Column headers are links; the choice travels as view parameters,
+  `/setup/extensions/(sort)/version/(dir)/desc`. The default is the loading order since 29 September 2026
+  (`cb5d523bde`); on 5 August it was A to Z, natural and case insensitive. See
+  [Setup > Extensions: loading order](../../features/6.0/extension-loading-order.md).
+- **Version** comes from `extension.xml`, `ezinfo.php` or `composer.json`
+  ([extension metadata](../../specifications/6.0/extension-metadata.md)); a dash means none is stated.
+- **Modified** is the time of the newest file inside the extension, not of its folder.
+- **Download** as `tar.gz`, `zip`, `tar.bz2` or `ezpkg`: `/setup/extensions/<extension name>/<format>`. The server
+  builds the package with the `ezextension` package handler, streams it and removes the temporary file.
+- **Package wizard.** Setup > Packages > Create package > Extension shows the same sorted table with Version,
+  Modified and a Details card, without download links.
+- **Developer API.** `eZExtension::extensionInfo( $name )` in `lib/ezutils/classes/ezextension.php` returns `name`,
+  `version`, `mtime`, `mtime_formatted` and the `meta` array, or `null` for an unknown extension.
+  `eZPackage::exportToArchive( $archivePath, $format )` accepts the four formats.
 
-Add a small helper in `lib/ezutils/classes/ezextension.php` so the logic is shared between `setup/extensions` and the package creator:
+## How to check
 
-```php
-/**
- * Return metadata for a single extension: name, path, mtime, version.
- * Version is read from the first source that exists:
- *   1. package.xml       <version> or <ezpublish>/<version>
- *   2. composer.json     version
- *   3. ezinfo.php        $Params['Version'] (if present)
- * Falls back to '—' if none are available.
- */
-public static function extensionInfo( $name, eZINI|null $siteINI = null )
+1. Open `/setup/extensions` in the admin. The column headers Order, Name, Version and Modified are links, and
+   **Details** opens a card with four download links.
+2. Open `/setup/extensions/ezflow/zip`. The browser downloads `ezflow.zip`.
+3. Open Setup > Packages > Create package > Extension. The list is a sorted table with Version and Modified.
+
+## How to fix an override
+
+If you override one of the two templates, compare it with the shipped one:
+
+```bash
+diff design/admin/templates/setup/extensions.tpl <your override>
+diff design/standard/templates/package/creators/ezextension/extension.tpl <your override>
 ```
 
-- `mtime`: `filemtime()` of the extension root directory returned by `eZExtension::extensionPath( $name )`. This is cheap and stable. If we later want "newest file under the tree" we can make the source configurable via `site.ini`.
-- `version`: parsed once and cached in a static map to avoid re-reading the same files for both `setup/extensions` and `package/create`.
+The check box `value` and the `contains` logic did not change, so an old override keeps activating extensions; it
+only lacks the new columns and the download links.
 
-### 2. `setup/extensions` (`kernel/setup/extensions.php`)
+## Background: the original design proposal
 
-Replace the flat `$availableExtensionArray` with a sorted, info-enriched array and expose the details to the template:
+The change started as a proposal with four goals: sort the list A to Z (natural, case insensitive); show the last
+modification date; show the version where it can be found; and, optionally, offer a direct `tar.gz` or `.zip`
+download so an administrator does not need the full package wizard.
 
-```php
-$availableExtensionArray = array(); // keeps the sorted names for BC with selected_extensions
-$extensionInfo = array();           // keyed by name
+It proposed a shared metadata helper in `lib/ezutils/classes/ezextension.php` used by both `setup/extensions`
+(`kernel/setup/extensions.php`) and the package creator
+(`kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php`), a grid of
+Activate, Name, Version, Modified and Download in `design/admin/templates/setup/extensions.tpl`, and a download
+action that reuses `eZPackage` with the `ezextension` handler and streams the archive with
+`Content-Disposition: attachment`.
 
-foreach ( ... same roots ... ) {
-    foreach ( ... sub items ... ) {
-        $availableExtensionArray[$extensionName] = $extensionName;
-    }
-}
-natcasesort( $availableExtensionArray );
-$availableExtensionArray = array_values( $availableExtensionArray );
+How its open questions were answered by the implementation:
 
-foreach ( $availableExtensionArray as $name ) {
-    $extensionInfo[$name] = eZExtension::extensionInfo( $name );
-}
+| Question | Answer |
+|---|---|
+| Directory mtime or newest file? | Newest file inside the extension. |
+| Download in scope, or a separate change? | In scope (`104a4b487a`), in four formats. |
+| Where do download links live? | On `setup/extensions` only; the package wizard shows the table without them. |
+| Which version source is authoritative? | `extension.xml`, then `ezinfo.php`, then `composer.json` (see the metadata specification). |
+| Click-to-sort or A to Z only? | Click-to-sort on every column header. |
 
-$tpl->setVariable( 'available_extension_array', $availableExtensionArray );
-$tpl->setVariable( 'extension_info',            $extensionInfo );
-```
+## Related pages
 
-Update `design/admin/templates/setup/extensions.tpl` to a three-column (or four-column if download is included) grid:
-
-| Activate | Name | Version | Modified | Download |
-|----------|------|---------|----------|----------|
-
-The checkbox `value` and `contains` logic stay unchanged so the existing `ActivateExtensions` action continues to work.
-
-### 3. `package/create` extension export (`kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php`)
-
-In `loadExtensionName()`:
-
-```php
-$extensionList = array();
-$extensionInfo  = array();
-// collect names then sort natcasesort
-// build $extensionInfo via eZExtension::extensionInfo()
-$tpl->setVariable( 'extension_list', $extensionList );
-$tpl->setVariable( 'extension_info',  $extensionInfo );
-```
-
-Update `design/standard/templates/package/creators/ezextension/extension.tpl` to either a sortable table or at least an A-Z `<ul>` with version/mtime annotations. A table is preferable because it matches the `setup/extensions` UX.
-
-### 4. Direct download (optional)
-
-Add a new action to `kernel/setup/extensions.php` (or a dedicated `setup/extensiondownload` view if preferred):
-
-- `DownloadExtension` action: `POST` with `ExtensionName` and `ExtensionFormat` (`tar.gz` or `zip`).
-- Reuse `eZPackage` with the existing `ezextension` package handler to build an in-memory package for the single extension, then call `eZPackage::exportToArchive()` for `tar.gz` or a new zip wrapper.
-- Stream the generated archive with the right `Content-Type` and `Content-Disposition: attachment; filename="<name>.tar.gz"`.
-- Delete the temporary archive after the response is sent, or place it under `var/tmp/` and GC it.
-
-For the `setup/extensions` grid this means adding a small per-row "Download" dropdown/button (format + button) or a single download icon per row. If this is out of scope for the first pass, it can be deferred to a follow-up ticket.
-
-## Files likely to change
-
-- `lib/ezutils/classes/ezextension.php` – new `extensionInfo()` helper
-- `kernel/setup/extensions.php` – sort + set `extension_info`
-- `design/admin/templates/setup/extensions.tpl` – grid with Version/Modified/Download
-- `kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php` – sort + set `extension_info`
-- `design/standard/templates/package/creators/ezextension/extension.tpl` – sorted, annotated list
-- `kernel/setup/module.php` – if a new `DownloadExtension` action or view is added
-- `settings/package.ini` or `module.ini` – if new permissions are required for the download action
-
-## Open questions for discussion
-
-1. Is the extension `mtime` the directory mtime, or should it be the newest file under the extension tree? Directory mtime is cheap; newest-file is more useful but heavier.
-2. Is the direct-download feature in scope for this ticket, or should it be split into a second, smaller ticket?
-3. Where should download links live: `setup/extensions` only, `package/create` only, or both?
-4. Which version source is authoritative for Exponential-specific extensions? Most of them appear to have `composer.json`; the existing `package.xml` files are mainly for legacy packages.
-5. Should the grid support click-to-sort by Version/Modified, or is A-Z by name sufficient?
-
-## Testing plan
-
-1. Open `https://edit.alpha.se7enx.com/setup/extensions` and confirm:
-   - Extensions are A-Z.
-   - Version and Modified columns are populated (or show `—` where not available).
-   - Activating/deactivating extensions still works and preserves the sorted display.
-2. Open `https://edit.alpha.se7enx.com/package/create` → "Extension export" and confirm the list is A-Z and annotated.
-3. If download is implemented: download a `tar.gz`, verify it extracts and contains the full extension directory.
-
-## Next step
-
-Await approval/answers to the open questions, then implement and commit in the `sevenx_themes_media` / kernel directories as appropriate.
+- [Extension list: sort, inspect and download any extension](../../features/6.0/extension-list-and-downloads.md)
+- [Setup > Extensions: loading order](../../features/6.0/extension-loading-order.md)
+- [Extension metadata](../../specifications/6.0/extension-metadata.md)
+- [expInfo class and expinfo operator](expinfo-operator.md)
+- [Additional extension directories](AdditionalExtensionDirectories.md)
+- [August 2026](../../history/2026/2026-08.md)

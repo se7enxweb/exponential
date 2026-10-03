@@ -1,14 +1,35 @@
 # Velocity engine upgrade notes (0.0.4.27 to 0.0.4.42)
 
-*Behaviour changes of the Velocity web server engine that can affect an installation, in the order you meet them when you upgrade from an older release. Choosing and running an engine from Exponential is in [Velocity engines](velocity-engines.md); the on-disk tree in [Velocity on-disk layout](velocity-ondisk-layout.md); the engine archive in [phar](phar.md); what Exponential itself changed in [behaviour changes 2026-10](behaviour-changes-2026-10.md). Release notes: [changelog](../../changelogs/extensions/exponential-velocity.md). History: [Velocity chronicle](../../history/velocity/README.md).*
+Read this page before you upgrade the Velocity web server engine. It lists the behaviour changes that can affect an
+installation, in the order you meet them when you upgrade from an older release. Each section says who is affected,
+how to check and how to fix. Choosing and running an engine from Exponential is described in
+[Velocity engines](velocity-engines.md); the on-disk tree in [Velocity on-disk layout](velocity-ondisk-layout.md);
+the engine archive in [phar](phar.md); what Exponential itself changed in
+[behaviour changes of October 2026](behaviour-changes-2026-10.md). Release notes are in the
+[changelog](../../changelogs/extensions/exponential-velocity.md), the story in the
+[Velocity chronicle](../../history/velocity/README.md).
+
+## In short
+
+| | |
+|---|---|
+| What changed | Panel security (0.0.4.28), zygote workers (0.0.4.29), workers no longer root (0.0.4.34), response cache off unless enabled (0.0.4.39), new program paths (0.0.4.41), per-request `REQUEST_TIME` (0.0.4.42), and smaller changes. |
+| Who is affected | Everyone who runs Velocity; each section says who exactly. |
+| How to check | `php sbin/qbixserver.php --version`, then the commands under "Verify after upgrading". |
+| How to fix | Read every section from your release upwards. "If you need the old behaviour" lists the switches. |
 
 ## Before you upgrade
 
-1. Know where you are: `php sbin/qbixserver.php --version` (or `php qbixserver.php --version` before 0.0.4.41) prints the release and build. A checkout reports the release read from git.
-2. Read the sections below from your release upwards. Each says who is affected, how to check, and how to fix.
-3. After installing the new engine, test the configuration before restarting: `php sbin/qbixserver.php -t --config=<your site file>`; list what would be loaded with `--layout`.
-4. Restart (`qbixctl restart` brings a server back with the options it was started with from 0.0.4.40 on; from Exponential use `./bin/php/console exp:velocity restart --allow-root-user`). Then check `qbixctl panel:check` (the panel can be locked, see 0.0.4.28) and `qbixctl ext:check`.
-5. A tag is permanent: if a release is bad, the fix is the next release. Versions `v0.0.4.21`, `v0.0.4.22` and `v0.0.4.26` have no release page; move to the next version above them.
+1. **Find your release.** `php sbin/qbixserver.php --version` (or `php qbixserver.php --version` before 0.0.4.41)
+   prints the release and build. A checkout reports the release read from git.
+2. **Read the sections below from your release upwards.**
+3. **Test the configuration before restarting.** After installing the new engine run
+   `php sbin/qbixserver.php -t --config=<your site file>`; list what would be loaded with `--layout`.
+4. **Restart.** From 0.0.4.40 on, `qbixctl restart` brings a server back with the options it was started with; from
+   Exponential use `./bin/php/console exp:velocity restart --allow-root-user`. Then run `qbixctl panel:check` (the
+   panel can be locked, see 0.0.4.28) and `qbixctl ext:check`.
+5. **Skip missing versions.** A tag is permanent: if a release is bad, the fix is the next release. Versions
+   `v0.0.4.21`, `v0.0.4.22` and `v0.0.4.26` have no release page; move to the next version above them.
 
 ## To 0.0.4.28
 
@@ -120,8 +141,9 @@ qbixctl ext:check
 curl -s https://your-host/Q/health
 ```
 
-## See also
+## Related pages
 
+- [Velocity engines](velocity-engines.md) and [Velocity on-disk layout](velocity-ondisk-layout.md)
 - [Velocity: running Exponential in a persistent-worker web server](../../features/6.0/velocity-persistent-worker-server.md)
 - [Velocity engine settings and programs](../../specifications/6.0/velocity-engine-settings.md)
 - [Velocity chronicle: September 2026, 25 to 30 September](../../history/velocity/2026-09e.md)
