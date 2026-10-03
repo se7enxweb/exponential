@@ -972,3 +972,404 @@ With great power comes great responsibility.
 | `expaccount::cancelReset` | user | POST | id:int | Cancel the open reset requests of a user (POST id) |
 
 Total: 195 services.
+
+## Commerce, community and feeds (16 domains, 255 services)
+
+Classes in `extension/expservices/classes/commerce/` and `classes/community/`, tests in
+`tests/tests/extension/expservices/commerce/` and `community/` (151 tests, run against the live database like the other
+domains: test products, forums, polls, forms and exports are created in a test folder under the Media root (node 43) or as
+named test rows and removed in `tearDown`; baskets exist only for a test session key; the checkout tests create the
+temporary order of a test basket and cancel it, no order is completed and no payment is created; there is never a test
+database). Run: `php vendor/bin/phpunit tests/tests/extension/expservices/commerce/ tests/tests/extension/expservices/community/`.
+
+Rules that hold for every service of these domains:
+
+- **The shop works on the kernel.** Products are content objects whose class has a price attribute (`ezprice`,
+  `ezmultiprice`; `expproduct::classes`). Prices come with and without VAT, with the discount of the product and, when a
+  currency is asked for (`USD`, `EUR` ...), converted with the rates of the currency table (`in_currency`; `null` when a
+  rate is missing). Basket, wish list, orders, VAT, currency, discount and payment services call `eZBasket`,
+  `eZOrder`, `eZVatType`/`eZVatRule`, `eZCurrencyData`, `eZDiscountRule`, `eZWishList`, `eZPaymentObject` and the
+  `shop` operations (`addtobasket`, `confirmorder`, `checkout`), so workflows, triggers and the kernel's own audit
+  events (`commerce.order.status`, `.archive`, `.unarchive`, `.delete`, `commerce.vat.change`, `.currency.change`,
+  `.discount.change`, `.payment.approve`, `.basket.checkout`) behave exactly as in the shop views.
+- **The basket belongs to the session.** A remote app keeps its session cookie (`expsession::login`); without one,
+  reads answer an empty basket and writes answer 401. Checkout is in steps: `checkoutStatus` (what blocks), `startCheckout`
+  (the temporary order, nothing charged), `review` (shipping and VAT as the confirm step), `cancelCheckout`, and, only when
+  the client means it, `placeOrder`, which runs the `checkout` operation: it activates the order or hands over to the
+  payment gateway (`redirect_url`). Nothing else completes an order.
+- **Orders**: a customer reads their own (`exporder::mine`, `myOrder`, `myReceipt`); the shop administrators
+  (`shop/administrate`) list, view, search, archive, unarchive and delete any order, change the status within their
+  `shop/setstatus` policy (`FromStatus`/`ToStatus` limitations are applied by `statusOptions` and `setStatus`) and read
+  statistics, customers and the dashboard. Account data is returned by `exporder::account` for administrators only; card
+  or account numbers are never stored by the kernel and never returned.
+- **Money values** are numbers rounded to four decimals, VAT percentages numbers, currencies three-letter codes, times
+  ISO 8601 in UTC.
+- **Forums, topics, replies, comments, reviews and polls are content services** over the classes configured in
+  `settings/expservices.ini` `[Community]` (`ForumClass=forum`, `TopicClass=forum_topic`, `ReplyClass=forum_reply`,
+  `CommentClass=comment`, `PollClass=poll`, `ReviewClass=review`, `TopicStickyAttribute=sticky`), so a site with other
+  class identifiers changes the INI, not the code. Create, edit and remove follow the content policies of the caller
+  (the owner limitation lets members edit and remove their own posts); the text fields of a class are written as POST
+  fields of the attribute's name or as one `fields` JSON object (rich text attributes take plain text and store
+  paragraphs); unknown fields are refused (422), required ones checked. Moderation is `hide`/`unhide` (policy
+  `content/hide`), `hidden` lists the hidden comments, a sticky topic stays on top, a topic can be moved to another
+  forum. Removal goes to the trash.
+- **Collected forms and polls** use the information collection of the kernel. `expinfocollection::submit` does what
+  `content/collectinformation` does (validation by the datatype, anonymous collection and unique/overwrite/multiple
+  handling from `collect.ini`) for text, number, boolean and choice fields; reading, summary, CSV export and removal need the
+  `infocollector/read` policy (the CSV neutralises formulas). A poll vote is one collection: `exppoll::vote` answers the
+  results; the poll class is `unique` per user in the standard `collect.ini`.
+- **Feeds**: `expfeed::exports` and `output` serve the RSS exports of the site as the reader gets them (RSS 1.0, 2.0,
+  Atom, OPML, iTunes; `data.content_type` and `data.content`), `rss`, `atom` and `json` build RSS 2.0, Atom 1.0 and JSON
+  Feed 1.1 of the newest content below any node the caller may read (`classes` limits the classes, `limit` is capped at
+  100), `discover` lists the feed addresses for a node. Export management (`rss/edit`) creates active exports directly
+  (the draft/publish copy of the admin editor is not used); RSS imports are only read (`imports`, `importStatus`,
+  `importCheck`, `importSetActive`): the import itself is the `rssimport` cronjob, and `importCheck` only fetches a source
+  when asked and only for `http`/`https` addresses.
+- Writes are POST with the form token (`expsession::token`) and recorded as `service.<domain>.<method>`; where the kernel
+  records its own event for the change, it is recorded as well.
+- Known kernel fault, worked around: `eZVatRule::removeVatRule()` calls an instance method statically, which PHP 8
+  refuses; `expvat::removeRule` and `removeType` remove the rules themselves (with the same audit event).
+
+#### Shop
+
+##### Products (`expproduct`, 19 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `classes` | public |  | The product classes: content classes with a price attribute |
+| `list` | public | `parent_node_id:int`, `limit:int`, `offset:int`, `currency:string`, `sort:string name/published/price` | The products below a node, newest or by name, with prices (optionally in a currency) |
+| `count` | public | `parent_node_id:int` | How many products are below a node |
+| `search` | public | `text:string`, `limit:int`, `offset:int`, `currency:string` | Products by words in name, number or description |
+| `view` | public | `node_id:int`, `currency:string` | One product by node id with its fields, prices, options |
+| `viewByObject` | public | `object_id:int`, `currency:string` | One product by object id |
+| `isProduct` | public | `node_id:int` | Whether a node is a product |
+| `price` | public | `node_id:int`, `currency:string` | The price of a product, optionally converted into a currency |
+| `prices` | public | `node_id:int` | The price of a product in every active currency with a rate |
+| `options` | public | `node_id:int` | The options (ezoption/ezmultioption) a buyer can choose, with additional prices |
+| `variations` | public | `node_id:int`, `limit:int` | Every combination of the option groups with its resulting price |
+| `optionPrice` | public | `node_id:int`, `choices:json` | The price of a product with chosen options (option attribute id => choice id as JSON) |
+| `latest` | public | `limit:int`, `currency:string` | The most recently published products |
+| `categories` | public | `parent_node_id:int` | The product categories: nodes below a node that hold products, with their product count |
+| `priceRange` | public | `parent_node_id:int` | The lowest, highest and average price below a node |
+| `byNumber` | public | `number:string`, `currency:string` | A product by its product number |
+| `related` | public | `node_id:int`, `limit:int` | Other products of the same parent |
+| `vat` | public | `node_id:int` | The VAT of a product: the type selected and the percentage |
+| `setPrice` (POST) | `content/edit` | `node_id:int`, `price:string POST` | Sets the price of a product (publishes a new version) |
+
+##### Basket and checkout (`expbasket`, 25 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `view` | public |  | The basket of this session: lines, options, totals per VAT rate, currency |
+| `items` | public |  | The lines of the basket |
+| `item` | public | `item_id:int` | One line of the basket |
+| `count` | public |  | Number of lines and units in the basket |
+| `totals` | public |  | Totals with and without VAT, VAT per rate, shipping |
+| `isEmpty` | public |  | Whether the basket has no lines |
+| `currency` | public |  | The currency of the basket and the preferred one of the user |
+| `canAdd` | public | `object_id:int` | Whether a product can be put in this basket (type and currency compatible) |
+| `add` (POST) | `shop/buy` | `object_id:int POST`, `quantity:int POST`, `options:json POST` | Puts a product in the basket (POST fields object_id, quantity, options as JSON attribute id => choice id) |
+| `addNode` (POST) | `shop/buy` | `node_id:int POST`, `quantity:int POST`, `options:json POST` | Puts a product in the basket by its node id |
+| `update` (POST) | `shop/buy` | `item_id:int POST`, `quantity:int POST` | Sets the quantity of one line (0 removes it) |
+| `updateMany` (POST) | `shop/buy` | `quantities:json POST` | Sets the quantities of several lines: JSON object item id => quantity |
+| `remove` (POST) | `shop/buy` | `item_id:int POST` | Removes one line |
+| `empty` (POST) | `shop/buy` |  | Removes every line |
+| `refreshPrices` (POST) | `shop/buy` |  | Brings the prices of the lines up to date with the products |
+| `setCurrency` (POST) | user | `currency:string POST` | Sets the preferred currency of the user for new lines |
+| `checkoutStatus` | public |  | What is needed before the checkout: lines, login, country, account handler, VAT known |
+| `accountInfo` | `shop/buy` |  | The account information of the current checkout (the temporary order) |
+| `startCheckout` (POST) | `shop/buy` |  | Creates the temporary order of the basket (step 1); nothing is charged |
+| `review` | `shop/buy` |  | The temporary order with shipping and VAT as the confirm step shows it |
+| `cancelCheckout` (POST) | `shop/buy` |  | Cancels the temporary order and returns to the basket |
+| `placeOrder` (POST) | `shop/buy` |  | Runs the checkout operation of the temporary order: activates it or hands over to the payment gateway |
+| `adminList` | `shop/administrate` | `limit:int`, `offset:int` | Baskets of all sessions with their size and age |
+| `adminView` | `shop/administrate` | `basket_id:int` | One basket of any session |
+| `adminCleanup` (POST) | `shop/administrate` | `days:int POST` | Removes the baskets of sessions that are gone and older than the given days |
+
+##### Orders (`exporder`, 24 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `mine` | user | `limit:int`, `offset:int` | The orders of the logged-in customer, newest first |
+| `myOrder` | user | `order_id:int` | One order of the logged-in customer with lines, extra order items and status history |
+| `myCount` | user |  | How many orders the logged-in customer has |
+| `myReceipt` | user | `order_id:int` | The receipt link and totals of one of the customer's orders |
+| `statuses` | `shop/administrate` | `all:bool` | The order statuses |
+| `list` | `shop/administrate` | `limit:int`, `offset:int`, `show:string normal/archived/all`, `sort:string created/id/total/user_name`, `order:string asc/desc`, `status_id:int` | Orders of all customers, filterable by status, archived and sorted |
+| `count` | `shop/administrate` | `show:string normal/archived/all` | Number of orders |
+| `view` | `shop/administrate` | `order_id:int` | One order by id with lines, order items and status history |
+| `byNumber` | `shop/administrate` | `order_nr:int` | One order by its order number |
+| `items` | `shop/administrate` | `order_id:int` | The product lines of an order |
+| `orderItems` | `shop/administrate` | `order_id:int` | The extra items of an order: shipping, discounts |
+| `history` | `shop/administrate` | `order_id:int` | The status history of an order |
+| `account` | `shop/administrate` | `order_id:int` | The customer account information of an order |
+| `statusOptions` | `shop/setstatus` | `order_id:int` | The statuses the current user may set an order to (policy FromStatus/ToStatus) |
+| `setStatus` (POST) | `shop/setstatus` | `order_id:int POST`, `status_id:int POST` | Changes the status of an order |
+| `archive` (POST) | `shop/administrate` | `order_id:int POST` | Moves an order to the archive |
+| `unarchive` (POST) | `shop/administrate` | `order_id:int POST` | Brings an archived order back |
+| `remove` (POST) | `shop/administrate` | `order_id:int POST` | Deletes an order with its lines and history (audited) |
+| `search` | `shop/administrate` | `text:string`, `limit:int`, `offset:int` | Orders by customer email or account name |
+| `statistics` | `shop/administrate` | `year:int`, `month:int` | Products sold in a year or month with totals |
+| `customers` | `shop/administrate` | `limit:int`, `offset:int` | The customers (distinct emails) with their order count and sum |
+| `customerOrders` | `shop/administrate` | `user_id:int`, `email:string` | The orders of one customer by user id |
+| `customerProducts` | `shop/administrate` | `user_id:int`, `email:string` | The products one customer bought |
+| `dashboard` | `shop/administrate` |  | Order counts per status and the latest orders |
+
+##### VAT (`expvat`, 19 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `types` | public | `skip_dynamic:bool` | The VAT types with their percentage |
+| `type` | public | `id:int` | One VAT type |
+| `typeUsage` | `shop/administrate` | `id:int` | How many products, product classes and rules use a VAT type |
+| `createType` (POST) | `shop/administrate` | `name:string POST`, `percentage:string POST` | Creates a VAT type |
+| `updateType` (POST) | `shop/administrate` | `id:int POST`, `name:string POST`, `percentage:string POST` | Changes the name or percentage of a VAT type |
+| `removeType` (POST) | `shop/administrate` | `id:int POST` | Removes a VAT type, its rules; products fall back to the default of their class |
+| `rules` | `shop/administrate` | `limit:int`, `offset:int` | The VAT charging rules |
+| `rule` | `shop/administrate` | `id:int` | One VAT charging rule |
+| `createRule` (POST) | `shop/administrate` | `country_code:string POST`, `vat_type:int POST`, `categories:list POST` | Creates a rule: country code (or Any), VAT type id, product category ids |
+| `updateRule` (POST) | `shop/administrate` | `id:int POST`, `country_code:string POST`, `vat_type:int POST`, `categories:list POST` | Changes a rule |
+| `removeRule` (POST) | `shop/administrate` | `id:int POST` | Removes a rule |
+| `categories` | `shop/administrate` |  | The product categories the rules refer to, with their product count |
+| `createCategory` (POST) | `shop/administrate` | `name:string POST` | Creates a product category |
+| `removeCategory` (POST) | `shop/administrate` | `id:int POST` | Removes a product category and its references |
+| `forProduct` | public | `node_id:int`, `country:string` | The VAT percent of a product for a country (dynamic VAT handler), or the product's own |
+| `settings` | public |  | The VAT settings of the shop: dynamic charging, handler, country requirement |
+| `userCountry` | public |  | The country used for the VAT of the current user |
+| `setUserCountry` (POST) | public | `country:string POST` | Sets the preferred country of the current session for the VAT |
+| `countries` | public |  | The country codes with VAT rules and the countries of the installation |
+
+##### Currencies (`expcurrency`, 19 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `list` | public | `only_active:bool` | The currencies with symbol, status and rates |
+| `view` | public | `code:string` | One currency by its code |
+| `count` | public |  | How many currencies exist |
+| `codes` | public |  | The codes of the active currencies |
+| `exists` | public | `code:string` | Whether a currency code exists |
+| `baseCurrency` | public |  | The base currency of the exchange rates and the shop's default |
+| `rate` | public | `code:string` | The rate of a currency against the base |
+| `crossRate` | public | `from:string`, `to:string` | The rate between two currencies |
+| `convert` | public | `amount:string`, `from:string`, `to:string` | Converts an amount from one currency to another with the rates and rounding of the shop |
+| `rounding` | public |  | The rounding settings of conversions |
+| `preferred` | public |  | The preferred currency of the current user |
+| `setPreferred` (POST) | user | `code:string POST` | Sets the preferred currency of the current user |
+| `create` (POST) | `shop/setup` | `code:string POST`, `symbol:string POST`, `locale:string POST`, `custom_rate:string POST`, `rate_factor:string POST`, `status:string POST active/inactive` | Creates a currency |
+| `update` (POST) | `shop/setup` | `code:string POST`, `symbol:string POST`, `locale:string POST`, `custom_rate:string POST`, `rate_factor:string POST`, `status:string POST` | Changes symbol, locale, rates, factor or status of a currency |
+| `setStatus` (POST) | `shop/setup` | `code:string POST`, `status:string POST active/inactive` | Activates or deactivates a currency |
+| `remove` (POST) | `shop/setup` | `code:string POST` | Removes a currency |
+| `updateRates` (POST) | `shop/setup` |  | Fetches the automatic rates from the configured provider and stores them |
+| `updateAutoprices` (POST) | `shop/setup` |  | Recalculates the automatic prices of multi price products from the rates |
+| `providers` | `shop/setup` |  | The exchange rate settings: provider, server, base |
+
+##### Discounts (`expdiscount`, 16 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `groups` | `shop/administrate` | `limit:int`, `offset:int` | The discount groups with their rule and member counts |
+| `group` | `shop/administrate` | `id:int` | One discount group with its rules and members |
+| `createGroup` (POST) | `shop/administrate` | `name:string POST` | Creates a discount group |
+| `renameGroup` (POST) | `shop/administrate` | `id:int POST`, `name:string POST` | Renames a discount group |
+| `removeGroup` (POST) | `shop/administrate` | `id:int POST` | Removes a discount group with its rules and memberships |
+| `rules` | `shop/administrate` | `group_id:int` | The rules of a discount group |
+| `rule` | `shop/administrate` | `id:int` | One rule with its limitations |
+| `createRule` (POST) | `shop/administrate` | `group_id:int POST`, `name:string POST`, `percent:string POST`, `classes:list POST`, `sections:list POST`, `products:list POST` | Creates a rule in a group: percent and optional class/section/product limits |
+| `updateRule` (POST) | `shop/administrate` | `id:int POST`, `name:string POST`, `percent:string POST`, `classes:list POST`, `sections:list POST`, `products:list POST` | Changes name, percent or limits of a rule |
+| `removeRule` (POST) | `shop/administrate` | `id:int POST` | Removes a rule |
+| `members` | `shop/administrate` | `group_id:int` | The users and user groups of a discount group |
+| `addMember` (POST) | `shop/administrate` | `group_id:int POST`, `object_id:int POST` | Adds a user or user group (object id) to a discount group |
+| `removeMember` (POST) | `shop/administrate` | `group_id:int POST`, `object_id:int POST` | Removes a user or user group from a discount group |
+| `groupsOfUser` | `shop/administrate` | `object_id:int` | The discount groups a user or user group belongs to |
+| `forUser` | `shop/administrate` | `user_id:int`, `node_id:int` | The best discount percent of a user for a product (class, section, object) |
+| `mine` | user | `node_id:int` | The discount percent the logged-in user gets for a product |
+
+##### Wish lists (`expwishlist`, 11 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `view` | user |  | The wish list of the logged-in user with its lines |
+| `items` | user | `limit:int`, `offset:int` | The lines of the wish list |
+| `count` | user |  | How many lines the wish list has |
+| `contains` | user | `object_id:int` | Whether a product is on the wish list |
+| `add` (POST) | user | `object_id:int POST`, `options:json POST` | Puts a product on the wish list (options as JSON attribute id => choice id) |
+| `remove` (POST) | user | `item_id:int POST` | Removes one line |
+| `empty` (POST) | user |  | Removes every line |
+| `moveToBasket` (POST) | `shop/buy` | `item_id:int POST`, `quantity:int POST` | Puts a wish list line in the basket and removes it from the list |
+| `adminList` | `shop/administrate` | `limit:int`, `offset:int` | The wish lists of all users with their size |
+| `adminView` | `shop/administrate` | `user_id:int` | The wish list of one user by object id |
+| `popular` | `shop/administrate` | `limit:int` | The products on most wish lists |
+
+##### Shipping (`expshipping`, 8 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `status` | public |  | Whether shipping is configured: handler, simple shipping workflow |
+| `handler` | `shop/administrate` |  | The shipping handler of shop.ini and where it is searched |
+| `simpleShipping` | public |  | The cost and description of the simple shipping workflow |
+| `basket` | public |  | The shipping info of the current basket |
+| `order` | `shop/administrate` | `order_id:int` | The shipping line of an order (order items of shipping type) |
+| `basketInfoHandler` | public |  | The basket info handler that calculates totals and shipping |
+| `vatOfShipping` | public |  | The VAT split of a shipping cost (the VAT of the products it is spread over) |
+| `settings` | `shop/administrate` |  | The ShippingSettings and BasketInfoSettings of shop.ini |
+
+##### Payments (`exppayment`, 10 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `list` | `shop/administrate` | `limit:int`, `offset:int`, `status:string all/pending/approved` | The payment objects, newest first, optionally only pending or approved |
+| `view` | `shop/administrate` | `id:int` | One payment object by id |
+| `byOrder` | `shop/administrate` | `order_id:int` | The payment of an order |
+| `myStatus` | user | `order_id:int` | The payment status of one of the logged-in customer's orders |
+| `counts` | `shop/administrate` |  | How many payments are pending and approved |
+| `gateways` | `shop/administrate` |  | The payment gateways available and the directories searched |
+| `workflowEvents` | `shop/administrate` |  | The workflow events of the payment gateway type, with their gateway |
+| `handlers` | public |  | The account handler and confirm order handler of the checkout |
+| `methods` | public |  | What a client can offer as payment: enabled gateways, or the manual method |
+| `approve` (POST) | `shop/administrate` | `id:int POST` | Approves a payment and continues its workflow (audited as commerce.payment.approve) |
+
+#### Forms, polls and community
+
+##### Collected forms (`expinfocollection`, 12 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `forms` | `infocollector/read` | `limit:int`, `offset:int` | The content objects that have collected data, with the number of collections |
+| `collections` | `infocollector/read` | `object_id:int`, `limit:int`, `offset:int` | The collections of one form, newest first |
+| `view` | `infocollector/read` | `collection_id:int` | One collection with its values |
+| `count` | `infocollector/read` | `object_id:int` | How many collections a form (or all forms) has |
+| `fields` | public | `node_id:int` | The fields of a form: the attributes that collect information, with type and requirement |
+| `summary` | `infocollector/read` | `object_id:int` | Per field of a form: how many values and, for choice and number fields, the distribution |
+| `mine` | user | `limit:int`, `offset:int` | The collections the logged-in user submitted |
+| `export` | `infocollector/read` | `object_id:int` | All collections of a form as CSV text (audited as a data export by the kernel when enabled) |
+| `submit` (POST) | public | `object_id:int POST`, `fields:json POST` | Submits a form: POST object_id and fields as JSON identifier => value (text, number, boolean, choice id) |
+| `remove` (POST) | `infocollector/read` | `collection_id:int POST` | Removes one collection (audited as data.infocollection.remove) |
+| `removeAll` (POST) | `infocollector/read` | `object_id:int POST` | Removes every collection of a form |
+| `settings` | public | `node_id:int` | How collection is handled for a form: anonymous allowed, unique/overwrite/multiple, template type |
+
+##### Polls (`exppoll`, 11 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `list` | public | `parent_node_id:int`, `limit:int`, `offset:int` | The polls below a node with their question and number of votes |
+| `view` | public | `node_id:int` | One poll: question, choices, votes per choice |
+| `results` | public | `node_id:int` | The results of a poll: votes and percent per choice |
+| `choices` | public | `node_id:int` | The choices of a poll |
+| `canVote` | public | `node_id:int` | Whether the current visitor may vote now, and why not |
+| `myVote` | public | `node_id:int` | The choice the current visitor voted for |
+| `vote` (POST) | public | `node_id:int POST`, `choice:int POST` | Votes for a choice (POST node_id, choice) |
+| `latest` | public | `limit:int` | The newest polls |
+| `create` (POST) | `content/create` | `parent_node_id:int POST`, `name:string POST`, `question:string POST`, `choices:list POST` | Creates a poll under a node: name, question and choices |
+| `remove` (POST) | `content/remove` | `node_id:int POST` | Removes a poll (to the trash) with its votes |
+| `resetVotes` (POST) | `infocollector/read` | `node_id:int POST` | Removes every vote of a poll |
+
+##### Forums (`expforum`, 13 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `containers` | public | `limit:int`, `offset:int` | The forum containers (the "forums" class) of the site |
+| `list` | public | `parent_node_id:int`, `limit:int`, `offset:int` | The forums below a node (a container, or the content root: all forums) |
+| `view` | public | `node_id:int` | One forum with its topic and reply counts and the latest topic |
+| `stats` | public | `node_id:int` | Topics, replies and the latest activity of a forum |
+| `latest` | public | `limit:int` | The latest topics over all forums |
+| `search` | public | `text:string`, `limit:int`, `offset:int` | Words in forum names and descriptions |
+| `path` | public | `node_id:int` | The path (container, forum) of a node for a breadcrumb |
+| `fields` | public |  | The fields a forum has and the classes in use |
+| `create` (POST) | `content/create` | `parent_node_id:int POST`, `fields:json POST` | Creates a forum in a container (fields as JSON or POST fields: name, description) |
+| `edit` (POST) | `content/edit` | `node_id:int POST`, `fields:json POST` | Changes the fields of a forum |
+| `remove` (POST) | `content/remove` | `node_id:int POST` | Removes a forum with its topics to the trash |
+| `hide` (POST) | `content/hide` | `node_id:int POST` | Hides a forum from visitors |
+| `unhide` (POST) | `content/hide` | `node_id:int POST` | Shows a hidden forum again |
+
+##### Topics (`exptopic`, 17 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `list` | public | `forum_node_id:int`, `limit:int`, `offset:int` | The topics of a forum, sticky ones first, then newest first |
+| `view` | public | `node_id:int` | One topic with its text and reply count |
+| `count` | public | `forum_node_id:int` | How many topics a forum has |
+| `latest` | public | `limit:int`, `forum_node_id:int` | The latest topics, in one forum or everywhere |
+| `sticky` | public | `forum_node_id:int` | The sticky topics of a forum |
+| `byUser` | public | `user_id:int`, `limit:int`, `offset:int` | The topics a user started |
+| `mine` | user | `limit:int`, `offset:int` | The topics the logged-in user started |
+| `search` | public | `text:string`, `forum_node_id:int`, `limit:int`, `offset:int` | Words in topic subjects and texts |
+| `lastReply` | public | `node_id:int` | The newest reply of a topic |
+| `canCreate` | public | `forum_node_id:int` | Whether the current user may start a topic in a forum |
+| `create` (POST) | `content/create` | `forum_node_id:int POST`, `fields:json POST` | Starts a topic in a forum (fields subject, message, sticky as JSON or POST fields) |
+| `edit` (POST) | `content/edit` | `node_id:int POST`, `fields:json POST` | Changes subject or message of a topic |
+| `remove` (POST) | `content/remove` | `node_id:int POST` | Removes a topic with its replies to the trash |
+| `setSticky` (POST) | `content/edit` | `node_id:int POST`, `sticky:bool POST` | Makes a topic sticky or not (moderation) |
+| `move` (POST) | `content/edit` | `node_id:int POST`, `forum_node_id:int POST` | Moves a topic to another forum |
+| `hide` (POST) | `content/hide` | `node_id:int POST` | Hides a topic with its replies from visitors (moderation) |
+| `unhide` (POST) | `content/hide` | `node_id:int POST` | Shows a hidden topic again |
+
+##### Replies (`expreply`, 13 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `list` | public | `topic_node_id:int`, `limit:int`, `offset:int`, `newest_first:bool` | The replies of a topic, oldest first |
+| `view` | public | `node_id:int` | One reply |
+| `count` | public | `topic_node_id:int` | How many replies a topic has |
+| `latest` | public | `limit:int`, `parent_node_id:int` | The latest replies, everywhere or below a node |
+| `byUser` | public | `user_id:int`, `limit:int`, `offset:int` | The replies a user wrote |
+| `mine` | user | `limit:int`, `offset:int` | The replies the logged-in user wrote |
+| `search` | public | `text:string`, `topic_node_id:int`, `limit:int`, `offset:int` | Words in reply subjects and texts |
+| `quote` | public | `node_id:int` | A reply as a quote to start an answer from: "Re: subject" and the quoted text |
+| `create` (POST) | `content/create` | `topic_node_id:int POST`, `fields:json POST` | Writes a reply to a topic (fields subject, message as JSON or POST fields) |
+| `edit` (POST) | `content/edit` | `node_id:int POST`, `fields:json POST` | Changes a reply |
+| `remove` (POST) | `content/remove` | `node_id:int POST` | Removes a reply to the trash |
+| `hide` (POST) | `content/hide` | `node_id:int POST` | Hides a reply (moderation) |
+| `unhide` (POST) | `content/hide` | `node_id:int POST` | Shows a hidden reply again |
+
+##### Comments and reviews (`expcomment`, 17 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `list` | public | `node_id:int`, `limit:int`, `offset:int`, `newest_first:bool` | The comments below a node, oldest first or newest first |
+| `view` | public | `node_id:int` | One comment |
+| `count` | public | `node_id:int` | How many comments a node has |
+| `latest` | public | `limit:int`, `parent_node_id:int` | The latest comments, everywhere or below a node |
+| `byUser` | public | `user_id:int`, `limit:int`, `offset:int` | The comments a user wrote |
+| `mine` | user | `limit:int`, `offset:int` | The comments the logged-in user wrote |
+| `search` | public | `text:string`, `parent_node_id:int`, `limit:int`, `offset:int` | Words in comment subjects, authors and texts |
+| `hidden` | `content/hide` | `parent_node_id:int`, `limit:int`, `offset:int` | The hidden comments below a node (moderation queue) |
+| `canComment` | public | `node_id:int` | Whether the current user may comment on a node |
+| `create` (POST) | `content/create` | `node_id:int POST`, `fields:json POST` | Comments on a node (fields subject, author, message as JSON or POST fields) |
+| `edit` (POST) | `content/edit` | `node_id:int POST`, `fields:json POST` | Changes a comment |
+| `remove` (POST) | `content/remove` | `node_id:int POST` | Removes a comment to the trash |
+| `hide` (POST) | `content/hide` | `node_id:int POST` | Hides a comment (moderation) |
+| `unhide` (POST) | `content/hide` | `node_id:int POST` | Shows a hidden comment again |
+| `reviews` | public | `node_id:int`, `limit:int`, `offset:int` | The reviews of a product with the average rating |
+| `ratingSummary` | public | `node_id:int` | Average rating and the count per star of a product |
+| `addReview` (POST) | `content/create` | `node_id:int POST`, `fields:json POST` | Reviews a product (fields title, rating 1-5, author, body) |
+
+#### Feeds
+
+##### Feeds (`expfeed`, 21 services)
+
+| Service | Access | Arguments | What it does |
+|---|---|---|---|
+| `exports` | public | `limit:int`, `offset:int`, `only_active:bool` | The RSS exports with their address, format and number of items |
+| `export` | public | `id:int` | One RSS export with its sources |
+| `exportByUrl` | public | `access_url:string` | One RSS export by its access URL name |
+| `output` | public | `access_url:string` | The feed document of an RSS export as the reader gets it (RSS 1.0, 2.0, Atom, OPML, iTunes) |
+| `formats` | public |  | The export formats and their names |
+| `rss` | public | `node_id:int`, `limit:int`, `classes:list` | An RSS 2.0 feed of the latest content below a node |
+| `atom` | public | `node_id:int`, `limit:int`, `classes:list` | An Atom 1.0 feed of the latest content below a node |
+| `json` | public | `node_id:int`, `limit:int`, `classes:list` | A JSON Feed 1.1 of the latest content below a node |
+| `items` | public | `node_id:int`, `limit:int`, `offset:int`, `classes:list` | The feed items of a node as plain data (title, url, date, summary) |
+| `discover` | public | `node_id:int` | The feed addresses a site offers for a node: the generic ones and the exports that cover it |
+| `createExport` (POST) | `rss/edit` | `title:string POST`, `access_url:string POST`, `source_node_id:int POST`, `rss_version:string POST 1.0/2.0/ATOM`, `number_of_objects:int POST`, `description:string POST` | Creates an active RSS export of a subtree |
+| `updateExport` (POST) | `rss/edit` | `id:int POST`, `title:string POST`, `description:string POST`, `number_of_objects:int POST`, `rss_version:string POST`, `main_node_only:bool POST` | Changes title, description, size or format of an export |
+| `setActive` (POST) | `rss/edit` | `id:int POST`, `active:bool POST` | Switches an export on or off |
+| `addSource` (POST) | `rss/edit` | `id:int POST`, `source_node_id:int POST`, `subnodes:bool POST` | Adds a source subtree to an export |
+| `removeSource` (POST) | `rss/edit` | `id:int POST`, `source_id:int POST` | Removes a source from an export |
+| `removeExport` (POST) | `rss/edit` | `id:int POST` | Removes an export with its sources |
+| `imports` | `rss/edit` | `limit:int`, `offset:int` | The RSS imports with their source URL, destination and state |
+| `import` | `rss/edit` | `id:int` | One RSS import |
+| `importStatus` | `rss/edit` | `id:int` | What an import brought in: objects created by it, the newest one and when |
+| `importCheck` | `rss/edit` | `id:int`, `fetch:bool` | Whether the source of an import is an address the server may fetch, and optionally its feed version (fetches the source) |
+| `importSetActive` (POST) | `rss/edit` | `id:int POST`, `active:bool POST` | Switches an import on or off (the rssimport cronjob runs the active ones) |
+
+
+Total: 255 services in 16 domains (83 writes).
