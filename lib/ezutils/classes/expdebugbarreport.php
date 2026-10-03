@@ -821,7 +821,7 @@ class expDebugBarReport
         // The bar stays at the bottom of the window wherever the page is scrolled; the details open as a
         // panel above it (its height follows the bar, which may wrap at narrow widths).
         $html .= "<style>
-#debug { margin-bottom: 0; }
+#debug, #debug[data-exp-debug-bar] { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
 #debug > h2 { position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000; margin: 0;
   display: flex; flex-wrap: wrap; align-items: center; background: #f2f2f2; border-top: 1px solid #999;
   box-shadow: 0 -2px 6px rgba(0,0,0,.15); font-size: 14px; }
