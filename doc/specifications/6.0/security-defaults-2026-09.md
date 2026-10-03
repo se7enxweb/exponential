@@ -95,7 +95,7 @@ same files:
   were readable. SVG is left out on purpose because it can carry script.
 - A dot file or dot directory (`.git`, `.env`, `.htaccess`) answers 404 wherever it
   lies; `.well-known` stays reachable.
-- The site's own references are served: the service worker `/sw.js`, the `vendor`
+- The site's own references are served: the service worker `/index.js` (and `/sw.js`, its former name, kept for browsers registered before the rename of 30 September), the `vendor`
   and `media` folders of an extension's design (the layout editor's scripts and
   fonts) and the image files among the stored originals (so SVG images are
   shown). Other originals stay behind `content/download`.
@@ -119,7 +119,9 @@ The shipped example is `doc/examples/` and the root files `.htaccess_root` and
 - Velocity tells its response cache which cookies mean "personal": the session
   cookie as the handler names it (`session.name` for the `default` handler,
   `[Session] SessionNamePrefix` as a prefix for `custom`) plus `is_logged_in`. An
-  explicit `[ServerSettings] CacheSkipCookies` still replaces the derived list.
+  explicit list replaces the derived one: `SkipCookies[]` in `velocity.ini`
+  `[CacheSettings]` (the former `[ServerSettings] CacheSkipCookies` still works;
+  a value in `[CacheSettings]` wins; default empty = derive the list).
   Before, an installation on the default handler (`PHPSESSID`) got a skip list of
   `eZSESSID` and never matched its own cookie, so with the response cache on, a
   signed-in request could be answered from the cache.
@@ -166,4 +168,8 @@ The shipped example is `doc/examples/` and the root files `.htaccess_root` and
 - [Hardening guide](../../bc/6.0/hardening.md)
 - [Security hardening 6.0.13](security-hardening-6.0.13.md)
 - [Velocity](../../features/6.0/velocity-persistent-worker-server.md)
+- [Form expired page](../../features/6.0/form-expired-page.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [HTTP cache](../../bc/6.0/httpcache.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

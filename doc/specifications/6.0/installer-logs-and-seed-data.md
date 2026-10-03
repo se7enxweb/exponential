@@ -41,17 +41,22 @@ Node 1 is the virtual top node. Directly below it:
 
 | Folder | Object | Node | Section | URL alias | Sorted |
 |---|---|---|---|---|---|
-| Websites (the content root, formerly named after the old product; title "Welcome to Exponential") | 1 | 2 | | | |
-| Configuration (new) | 2 | 3 | Setup | `Configuration` | by name |
-| Archives (new) | 3 | 4 | Standard | `Archives` | newest first |
-| Users, Media, Setup, Design | existing | existing | | | |
+| Websites (the content root, formerly named after the old product; title "Welcome to Exponential") | 1 | 2 | | (none, it is the front page) | by priority |
+| Configuration (new) | 2 | 3 | Setup | `x-configuration` | by name, ascending |
+| Archives (new) | 3 | 4 | Standard | `x-archives` | by published date, newest first |
+| Users, Media, Setup, Design | existing | existing | | Setup is `x-setup` | |
+
+(Sort values read from the node rows of `kernel/sql/common/cleandata.sql`:
+Configuration `sort_field` 9, `sort_order` 1; Archives `sort_field` 2,
+`sort_order` 0.)
 
 Configuration and Archives are published, visible and always available in the
 base data's language, with a name, version, node assignment, object state (not
 locked), search index entry and URL alias of their own. Their ids are the lowest
 free in every seed and in the running installation, so an installation made from
-the seeds and an existing one carry the same ids. The tree paths of the
-top-level addresses are `x_setup`, `x_archives` and `x_configuration`:
+the seeds and an existing one carry the same ids. The node paths
+(`path_identification_string`) use underscores, `x_setup`, `x_archives` and
+`x_configuration`; the URL aliases use dashes:
 
 | Folder | Alias | Why |
 |---|---|---|
@@ -134,3 +139,6 @@ data's language (`eng-US`) in one place.
 - [Maintenance mode](../../features/6.0/maintenance-mode.md)
 - [Kickstarter on the command line](../../bc/6.0/kickstartercli.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Database drivers and installers, September 2026](database-drivers-2026-09.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

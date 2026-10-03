@@ -224,5 +224,6 @@ a cached 404                  758 ms        27 ms
 document, decompressed       94,128 B      69,101 B
 ```
 
-Reproducing the configuration: `qbix-settings.md` in the project root.
-The full account, including what was tried and abandoned: `ai/doc/waves/T016-*`.
+The settings that reproduce this configuration are in `settings/velocity.ini` (read them with `./console exp:velocity config list`).
+
+See also (September 2026): [Velocity](../../features/6.0/velocity-persistent-worker-server.md), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md) (service worker `/index.js`, cache version `exp-nav-v4`).

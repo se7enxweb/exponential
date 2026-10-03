@@ -355,3 +355,5 @@ line means none reached the database.
 | `kernel/setup/info.php`, `design/admin/templates/setup/info.tpl` | Setup > System information |
 | `settings/querycache.ini` | settings |
 | `var/<site>/cache/querycache/state.ser` | the shared state |
+
+See also (September 2026): [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#sql-query-cache-querycacheini) (lookup before parsing, `xxh128` keys, catalogue never cached), [Velocity](../../features/6.0/velocity-persistent-worker-server.md).

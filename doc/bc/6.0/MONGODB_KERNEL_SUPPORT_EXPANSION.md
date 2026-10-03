@@ -1,12 +1,12 @@
 # MongoDB Kernel Support — Comprehensive Port Reference
 
-**Project:** mongodb.demo.se7enx.com — eZ Publish / Exponential CMS running MongoDB instead of MySQL
+**Project:** mongodb.demo.se7enx.com — Exponential CMS running MongoDB instead of MySQL
 **PHP Runtime:** `/opt/plesk/php/8.5/bin/php`, FPM pool `plesk-php85-fpm`
 **Database:** MongoDB `exp` at `localhost:27017`, user `db`
 **MongoDB PHP Driver:** `MongoDB\Client` via Composer (`vendor/autoload.php`)
 **Admin panel:** `https://edit.mongodb.demo.se7enx.com/` — separate docroot at `/var/www/vhosts/mongodb.demo.se7enx.com/doc/edit.mongodb.demo.se7enx.com/`
 **Front site:** `https://mongodb.demo.se7enx.com/` — docroot symlink at `/web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com/`
-**Login:** admin / publishing$
+**Login:** the installation's administrator account
 **Error log:** `/var/www/vhosts/mongodb.demo.se7enx.com/logs/edit.mongodb.demo.se7enx.com/error_log`
 
 ---
@@ -23,7 +23,7 @@
 8. [Operational Notes](#8-operational-notes)
 9. [Test Plan — Admin](#9-test-plan--admin)
 10. [Test Plan — Front Site](#10-test-plan--front-site)
-11. [Remaining Issues Backlog](#11-remaining-issues-backlog)
+11. [Resolved Issues Log](#11-resolved-issues-log)
 12. [Test Plan — Cronjobs / Scripts](#12-test-plan--cronjobs--scripts)
 13. [References](#13-references)
 14. [PHPUnit Testing — Theory and Next-Phase Plan](#14-phpunit-testing--theory-and-next-phase-plan)
@@ -44,7 +44,7 @@
 
 ## 1. Background and Purpose
 
-eZ Publish is a traditional SQL-based CMS. This project replaces MySQL entirely with MongoDB.
+Exponential is a traditional SQL-based CMS. This project replaces MySQL entirely with MongoDB.
 The `sevenx_mongodb` extension provides the MongoDB database adapter (`expMongoDB`) and
 overrides virtually every kernel class that issues SQL queries. The override system maps class
 names through `var/autoload/ezp_override.php`.
@@ -875,7 +875,7 @@ the worker pool under load.  Keep it elevated only during installation.
 ### MongoDB shell
 
 ```bash
-mongosh "mongodb://db:publishing\$8088@localhost:27017/exp"
+mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp"
 ```
 
 Useful queries:
@@ -1452,9 +1452,9 @@ This section documents the **theory and prerequisites** for adding automated PHP
 
 ---
 
-### 14.1 Current State of eZ Publish Test Infrastructure
+### 14.1 Current State of Exponential Test Infrastructure
 
-The eZ Publish / Exponential 6.0.x codebase ships with a legacy PHPUnit test suite under `tests/`. The suite was written for PHPUnit 3.x/4.x and targets MySQL exclusively. It bootstraps via `tests/bootstrap.php`, which loads `autoload.php` and configures a siteaccess. All test database operations run against a live MySQL (or MariaDB) connection configured in `settings/override/`.
+The Exponential 6.0.x codebase ships with a legacy PHPUnit test suite under `tests/`. The suite was written for PHPUnit 3.x/4.x and targets MySQL exclusively. It bootstraps via `tests/bootstrap.php`, which loads `autoload.php` and configures a siteaccess. All test database operations run against a live MySQL (or MariaDB) connection configured in `settings/override/`.
 
 As of version 6.0.13, the project uses **PHPUnit 9.x or 10.x** (via Composer), which requires:
 - PHP 8.0+ (already satisfied — we run PHP 8.5)
@@ -1717,7 +1717,7 @@ A `phpunit.xml` split into two suites:
   <php>
     <!-- Override at runtime: TEST_DB_DRIVER=mongo ./vendor/bin/phpunit --testsuite MongoDB -->
     <env name="TEST_DB_DRIVER" value="mysql"/>
-    <env name="TEST_MONGO_URI" value="mongodb://db:publishing$8088@localhost:27017/exp_test"/>
+    <env name="TEST_MONGO_URI" value="mongodb://db:YOUR_PASSWORD@localhost:27017/exp_test"/>
     <env name="TEST_MYSQL_DSN" value="mysql:host=localhost;dbname=ezpublish_test"/>
   </php>
 
@@ -2238,13 +2238,13 @@ on AlmaLinux — some steps differ for MongoDB 8.3+ (e.g. repo URLs, package nam
 - [Create a Database — MongoDB Fundamentals](https://www.mongodb.com/resources/products/fundamentals/create-database) — official overview of database/collection creation concepts
 - [db.changeUserPassword() — MongoDB Manual](https://www.mongodb.com/docs/manual/reference/method/db.changeUserPassword/) — reference for changing MongoDB user passwords via `mongosh`
 - [Aggregation Pipeline — MongoDB Manual](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/) — full reference for `$match`, `$lookup`, `$project`, `$group`, `$count`, `$skip`, `$limit`, `$sort`
-- [eZ Publish 4.x Kernel Documentation](https://doc.ez.no/eZ-Publish/Technical-manual/4.x/) — original SQL-based architecture; useful for understanding what each class is supposed to do
+- [Exponential 4.x Kernel Documentation](https://doc.ez.no/eZ-Publish/Technical-manual/4.x/) — original SQL-based architecture; useful for understanding what each class is supposed to do
 
 ---
 
 ## 16. MongoDB Driver Design and Technical Completion vs ezmysqli
 
-This section compares `expMongoDB` (the MongoDB adapter used in this project) against `eZMySQLi` (the reference SQL adapter shipped with Exponential/eZ Publish). The goal is to document how complete the MongoDB driver is, which interfaces are fully implemented, which are stubs, which have semantic differences, and what would be required to achieve full parity.
+This section compares `expMongoDB` (the MongoDB adapter used in this project) against `eZMySQLi` (the reference SQL adapter shipped with Exponential). The goal is to document how complete the MongoDB driver is, which interfaces are fully implemented, which are stubs, which have semantic differences, and what would be required to achieve full parity.
 
 ---
 
@@ -2368,7 +2368,7 @@ This section compares `expMongoDB` (the MongoDB adapter used in this project) ag
 | `lock($table)` | `LOCK TABLES ... WRITE` | No-op | ⚠️ No locking — concurrent writes can interleave |
 | `unlock()` | `UNLOCK TABLES` | No-op | ⚠️ Same |
 
-**Impact:** Table-level locks were used in eZ Publish to protect sequences and tree restructuring. Without locking, concurrent requests that restructure the content tree (move nodes, publish) could produce inconsistent `path_string` or `depth` values. At current single-user admin usage this is not a problem; at production traffic levels this could cause corruption.
+**Impact:** Table-level locks were used in Exponential to protect sequences and tree restructuring. Without locking, concurrent requests that restructure the content tree (move nodes, publish) could produce inconsistent `path_string` or `depth` values. At current single-user admin usage this is not a problem; at production traffic levels this could cause corruption.
 
 ---
 
@@ -2427,7 +2427,7 @@ This means `find()` and `findOne()` are only safe for simple scalar equality fil
 | Method visibility | All public (legacy PHP 4 style) | Mix of public/protected/private |
 | Property visibility | `var $Property` (legacy) | `private $_lastInsertedID` etc. |
 | Error handling | Sets `$this->ErrorMessage`; calls `$this->checkError()` | try/catch with `error_log()` |
-| Docblocks | eZ Publish javadoc style (`/*!` ... `*/`) | Minimal or none |
+| Docblocks | Exponential javadoc style (`/*!` ... `*/`) | Minimal or none |
 | Result format | `mysqli_fetch_assoc()` loop; builds array | `$cursor->toArray()` cast via `getArrayCopy()` per document |
 | Null handling | Returns `false` on error from most methods | Returns `[]` or `false` depending on method |
 | Server multiplexing | Supports `SERVER_MASTER` / `SERVER_SLAVE` param | Single connection only (`$server` param ignored) |
@@ -2528,7 +2528,7 @@ This section documents all fixes and refactors applied during the May 28 2026 se
 
 ### 17.2 RAD Code Generators (`/setup/rad`) — PHP 8.5 compatibility
 
-The RAD tools generate downloadable PHP skeleton files. The generated code was written for eZ Publish 4 / PHP 5 and would not compile under PHP 8.5.
+The RAD tools generate downloadable PHP skeleton files. The generated code was written for Exponential 4 / PHP 5 and would not compile under PHP 8.5.
 
 #### Template Operator Wizard (`templateoperator_code.tpl`)
 
@@ -2639,7 +2639,7 @@ MongoDB stores BSON types. The main conversions to be aware of:
 | `FLOAT`, `DECIMAL` | `double` | |
 | `VARCHAR`, `TEXT`, `CHAR` | `string` | |
 | `TINYINT(1)` (boolean) | `int32` (0/1) | MongoDB has `bool` but the CMS uses 0/1 |
-| `DATETIME`, `TIMESTAMP` | `int64` (Unix epoch) | eZ Publish stores all timestamps as integers |
+| `DATETIME`, `TIMESTAMP` | `int64` (Unix epoch) | Exponential stores all timestamps as integers |
 | `BLOB`, `LONGBLOB` | `string` (base64) or `BinData` | Binary fields in eZ are rare; use base64 string |
 | `NULL` | Omit field or `null` | Prefer omitting sparse fields |
 
@@ -2721,7 +2721,7 @@ for row in lines[1:]:
 ```python
 #!/usr/bin/env python3
 """
-mysql_to_ndjson.py — export all eZ Publish tables to NDJSON files.
+mysql_to_ndjson.py — export all Exponential tables to NDJSON files.
 Usage: python3 mysql_to_ndjson.py --host localhost --user root --password X --db exp --outdir ./json
 """
 import argparse, json, os, mysql.connector
@@ -3225,7 +3225,7 @@ for fname in sorted(os.listdir(indir)):
 
 ```bash
 mongoimport \
-  --uri "mongodb://db:publishing\$8088@localhost:27017/exp" \
+  --uri "mongodb://db:YOUR_PASSWORD@localhost:27017/exp" \
   --db exp \
   --collection ezcontentobject \
   --file ./json_export/ezcontentobject.ndjson \
@@ -3246,7 +3246,7 @@ Key flags:
 #!/usr/bin/env bash
 # import_all.sh — import all NDJSON files into MongoDB in correct dependency order.
 
-URI="mongodb://db:publishing\$8088@localhost:27017/exp"
+URI="mongodb://db:YOUR_PASSWORD@localhost:27017/exp"
 DB="exp"
 INDIR="${1:-./json_fixed}"
 
@@ -3331,7 +3331,7 @@ echo "Done."
 After importing, create the indexes that the sevenx_mongodb adapter depends on. Missing indexes cause full collection scans; some queries will be extremely slow on any meaningful data volume.
 
 ```javascript
-// run in: mongosh "mongodb://db:publishing$8088@localhost:27017/exp"
+// run in: mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp"
 
 // Content object lookups
 db.ezcontentobject.createIndex({ id: 1 }, { unique: true });
@@ -3446,7 +3446,7 @@ SCRIPTS=extension/sevenx_mongodb/bin/mongodb
 
 # 1. Export from MySQL to NDJSON
 bash $SCRIPTS/export_mysql.sh ./json_export
-# (or directly: python3 $SCRIPTS/mysql2ndjson.py --user db --password 'publishing$2099' --db exp --outdir ./json_export)
+# (or directly: python3 $SCRIPTS/mysql2ndjson.py --user db --password 'YOUR_PASSWORD' --db exp --outdir ./json_export)
 
 # 2. Fix up types (int fields, NULL strings)
 python3 $SCRIPTS/fixup_ndjson.py ./json_export ./json_fixed
@@ -3458,7 +3458,7 @@ bash $SCRIPTS/validate_ndjson.sh ./json_fixed
 bash $SCRIPTS/import_all.sh ./json_fixed
 
 # 5. Create indexes
-mongosh "mongodb://db:publishing\$8088@localhost:27017/exp" --file $SCRIPTS/create_indexes.js
+mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp" --file $SCRIPTS/create_indexes.js
 
 # 6. Touch opcache and test the admin
 touch /web/vh/mongodb.demo.se7enx.com/doc/mongodb.demo.se7enx.com/index.php
@@ -3551,7 +3551,7 @@ All data-layer migration scripts live in `extension/sevenx_mongodb/bin/mongodb/`
 | File | Purpose |
 |------|---------|
 | `export_mysql.sh` | Shell wrapper — calls `mysql2ndjson.py` with credentials from the environment; writes NDJSON to `./json_export/` |
-| `mysql2ndjson.py` | Python script — exports all MySQL/MariaDB eZ Publish tables to NDJSON; handles int/float casting, omits NULL fields, sets `_id` from the PK column |
+| `mysql2ndjson.py` | Python script — exports all MySQL/MariaDB Exponential tables to NDJSON; handles int/float casting, omits NULL fields, sets `_id` from the PK column |
 | `fixup_ndjson.py` | Python script — post-processes NDJSON to fix data type issues (e.g. string `content_version` → int, `'NULL'` strings → omitted) |
 | `validate_ndjson.sh` | Shell script — validates every `.ndjson` file in a directory; exits 1 if any line is not valid JSON |
 | `import_all.sh` | Shell script — calls `mongoimport` for every collection in dependency order, then imports any remaining files not in the list |
@@ -3566,7 +3566,7 @@ bash  $SCRIPTS/export_mysql.sh           ./json_export
 python3 $SCRIPTS/fixup_ndjson.py         ./json_export ./json_fixed
 bash  $SCRIPTS/validate_ndjson.sh        ./json_fixed
 bash  $SCRIPTS/import_all.sh             ./json_fixed
-mongosh "mongodb://db:publishing\$8088@localhost:27017/exp" --file $SCRIPTS/create_indexes.js
+mongosh "mongodb://db:YOUR_PASSWORD@localhost:27017/exp" --file $SCRIPTS/create_indexes.js
 ```
 
 ---
@@ -3636,7 +3636,7 @@ This approach worked well for incremental development but carries structural cos
 - **Two-docroot complexity**: `kernel/` files are separate physical copies between the edit and
   front-site docroots. Extension files are symlinked (one change hits both sites). Kernel patches
   must be applied to both copies separately, manually. Extension changes are automatic.
-- **Long-term drift risk**: If the upstream eZ Publish codebase is ever updated, the override files
+- **Long-term drift risk**: If the upstream Exponential codebase is ever updated, the override files
   become stale silently — the original kernel file changes but the override hides it permanently.
 - **Cognitive overhead**: "Is this method patched?" requires checking `var/autoload/ezp_override.php`,
   then the extension directory, then the kernel file. There is no single source of truth.
@@ -4074,7 +4074,7 @@ OK (55 tests, 109 assertions)
 ### 21.4 `sevenxMongoDBIntegrationTest.php` — Live Integration Tests
 
 **Group tag:** `@group mongodb-live`  
-**Live DB required:** Yes — MongoDB at `mongodb://db:publishing$8088@localhost:27017/exp`
+**Live DB required:** Yes — MongoDB at `mongodb://db:YOUR_PASSWORD@localhost:27017/exp`
 and MariaDB at `localhost` / user `xa_alpha` / password `db-alpha-2025` / database `xa_alpha`  
 **Test count:** 18 tests, 47 assertions (as of May 2026)
 
@@ -4387,7 +4387,7 @@ After the setup wizard completes, run the `indexcontent` cron job to populate th
 Exponential CMS 6.0.14 ships with a set of site installer packages stored under
 `var/storage/packages/7x/`.  These packages are required by the setup wizard and by the
 `sevenxezwebininstaller.php` site installer.  They are intended to be made available on the
-worldwide Exponential/eZ Publish package server for automatic download during setup wizard
+worldwide Exponential package server for automatic download during setup wizard
 execution on new installations.
 
 ---
@@ -4719,7 +4719,7 @@ tail -f /var/log/plesk-php85-fpm/error.log | grep -v 'XDEBUG\|Xdebug'
 - **Always use the alpha subdomain** (`mongodb.demo.se7enx.com`) for development changes — never edit production.
 - **PHP-FPM error log** for the alpha environment: `/var/log/plesk-php85-fpm/error.log`
 - **Opcache reset** for the alpha environment: `curl -sk https://mongodb.demo.se7enx.com/opcache_reset_edit.php`
-- **MongoDB shell** for the alpha database: `mongosh --quiet "mongodb://db:publishing\$8088@localhost:27017/exp"`
+- **MongoDB shell** for the alpha database: `mongosh --quiet "mongodb://db:YOUR_PASSWORD@localhost:27017/exp"`
 - **Do NOT commit anything** from the alpha environment directly — changes must be reviewed and ported to the v2-0 branch first.
 - **Do NOT restart PHP-FPM** — use `touch <file.php>` to bust opcache.
 
@@ -4886,3 +4886,5 @@ MySQL. See also [the chronicle for 16 to 30 September 2026](../../history/2026/2
 | The unattended installer declared `iso-8859-1`; the search plugin was reported failing when switched off on purpose; URL alias fetch ignored the language filter. | | Declared `utf-8`; reported correctly; filter applied. |
 
 The installer now also accepts `mongodb` as `--db` for `./console exp:install`.
+
+See also: [Database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md) (SQLite, PostgreSQL, MySQL and Oracle), [Installing in one command](../../features/6.0/install-in-one-command.md) and [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).

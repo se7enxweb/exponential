@@ -45,7 +45,7 @@ systemctl reload plesk-php85-fpm        # or the PHP-FPM service that serves you
 | `DatabaseImplementation` is taken from the live `site.ini`, not from `Type`. | `settings/override/site.ini.append.php` | When you install onto another engine set it first (see [install page](../../features/6.0/install-in-one-command.md)). |
 | `./console exp:install` installs in one command. | `exp:install --help` | New; nothing to migrate. |
 | Maintenance mode wraps installations. | `var/maintenance.json` | If a run failed, end it with `php bin/php/maintenance.php off`. See [maintenance mode](../../features/6.0/maintenance-mode.md). |
-| A default installation converts images with GD first. | `image.ini [ImageConverters]` | Put ImageMagick first in `settings/override/image.ini.append.php` if you need its filters. |
+| A default installation converts images with GD first. | `image.ini [ImageConverterSettings] ImageConverters[]` (shipped order `GD`, `ImageMagick`) | Put ImageMagick first in `settings/override/image.ini.append.php` if you need its filters. |
 | New installations start with the folders Configuration and Archives and class group Configuration; Setup has the alias `x-setup`. | seed data | Existing installations are not touched. See [seed data](../../specifications/6.0/installer-logs-and-seed-data.md). |
 | Fourteen order statuses are added. | `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` | Run the 6.0.15 database update; custom statuses keep their rows. |
 | The version class is `ExponentialSDK`; the example crontab is `exponential.cron`. Old names still work. | | See [ExponentialSDK and exponential.cron](exponentialsdk-and-exponential-cron.md). |
@@ -82,8 +82,105 @@ systemctl reload plesk-php85-fpm        # or the PHP-FPM service that serves you
   ignores the port, so links no longer carry the siteaccess name when the site is
   served on a non-default port.
 
+## Details behind the cache, archive and engine changes
+
+The tables above say what to do. These are the facts behind them, for the
+people who tune a server. Measurements are from the alpha installation on the
+dates given and were not repeated for this page.
+
+### HTTP cache (`httpcache.ini`)
+
+- **Compressed once.** A hit used to put the visitor's values into the stored
+  page and compress the whole page for every request, the largest cost of a hit.
+  The parts of the stored body between placeholders are compressed once (each
+  ending in a full flush, so each stands alone) and kept in APCu beside the
+  entry; a hit compresses only its placeholder values (a form token) and joins
+  the pieces into one gzip member with the page's CRC-32. Without APCu it
+  compresses the page as before. The bytes served are identical (test HC-11).
+  Measured 27 September, 8 concurrent, cached front page on FrankenPHP: 4,048
+  pages a second anonymous (about 2,800 before) and 3,413 signed in (3,010).
+- **Security headers on cached pages.** The cache answers without the kernel, so
+  a cached page used to lack the headers a rendered page carries. The configured
+  `[HTTPHeaderSettings] SecurityHeaders[]` are stored with the page, and the cache
+  key carries the scheme so an HTTPS-only header never reaches an HTTP answer.
+- **Siteaccess matching.** URI and host-plus-URI matched siteaccesses are served,
+  and a siteaccess the cache does not serve is reported as `X-Exp-Cache: MISS
+  (siteaccess)` and kept out of the miss counters. `RemoveSiteAccessIfDefaultAccess`
+  and `PathPrefix` need nothing of their own (a page is kept under the full
+  request URI). Behind a TLS-ending load balancer the engine must hand over the
+  request headers (engine release 0.0.4.35 and later).
+- **Purge tags** are sent only when `[HttpCacheSettings] TagHeader` names a header
+  (see [security defaults](../../specifications/6.0/security-defaults-2026-09.md)).
+- Setup > Caches clears the query cache and the HTTP cache, and Setup > System
+  information shows both.
+
+### SQL query cache (`querycache.ini`)
+
+- **A hit is answered without parsing the statement.** The cache read the tables
+  from the statement text before it looked for a stored result, every time; that
+  was a third of a rendered page's CPU. A stored entry already carries its tables,
+  so the entry is looked up first and the text parsed only on a miss; an entry
+  whose tables have since been excluded, or are temporary, is not answered from
+  (test QC-13). A single Velocity render went from 211.6 to 141.2 ms of CPU with
+  the same bytes.
+- **Keys use `xxh128`** of the statement and its parameters (0.84 against 1.55
+  microseconds a key; `md5` where PHP lacks `xxh128`).
+- **The database's own catalogue is never cached** (`sqlite_master`,
+  `sqlite_stat*`, `pg_*`, `information_schema`, and for Oracle `USER_*`, `ALL_*`
+  and the like): `ANALYZE` and schema changes are no writes the cache sees, and a
+  cached `sqlite_master` read was answered stale within the same request
+  (test QC-14).
+- **The SQL profile counts each request on its own** under a persistent worker:
+  every line of `var/tmp/sql_profile.log` used to repeat the warm-up's figures; a
+  request that sends nothing to the database writes no line.
+- **APCu size**: the cache and the response cache share APCu; Velocity's PHP gets
+  `apc.shm_size=256M` (see [Velocity](../../features/6.0/velocity-persistent-worker-server.md)).
+  Several servers on one port (`[ServerSettings] Instances`) are described in
+  [Velocity engines](velocity-engines.md#several-qbix-servers-on-one-port-instances).
+
+### Engine archive (`exp:phar`)
+
+- The build writes the archive under a temporary name beside it and renames it
+  into place. Before, it deleted `dist/engine.phar` and wrote the new one in
+  place, so every build left a window with no archive, and two builds at once (a
+  restart rebuilding a stale archive while you built by hand) left none, after
+  which the server would not start.
+- The syntax check before the build uses the PHP that runs the build (it ran
+  `php -l` from the `PATH`, so where there is no `php` on the `PATH` every file
+  "failed" and nothing was built) and checks files 200 to a `php -n -l` call
+  (1,049 files: nine minutes before, about two seconds for the checks and about
+  26 for the whole build). A batch that fails is checked file by file so a broken
+  file is still named and nothing is written.
+- A stale archive says how to fix itself (`exp:phar check`, `exp:phar build`);
+  see [Engine archive](phar.md).
+
+### Engines and the server commands
+
+- The three engines (php, qbix, frankenphp) follow the same asset rules as
+  `.htaccess_root`; `[ServerSettings] FollowSymlinks=disabled` refuses a file a
+  link inside the document root leads to outside of it (Qbix answers 403, the
+  built-in server 404). Caddy always follows links.
+- FrankenPHP serves HTTPS by default (`[FrankenPHPSettings] HTTPS=enabled`), offers
+  compression (`zstd br gzip`; the front page went out at 95.7 KB uncompressed
+  where gzipped it is about 10 KB) and runs by default twice the CPU cores of PHP
+  threads (an empty `[FrankenPHPSettings] Workers`), not the bundled server's
+  `Workers`, which counts mostly idle processes (measured with 64 concurrent
+  pages: 16.0 requests a second with 12 to 48 threads, 14.6 with 96 or 590).
+- `exp:webserver`, `exp:frankenphp` and `exp:solr`:
+  [Server control commands](../../features/6.0/web-server-and-solr-commands.md).
+
+### Preload
+
+Start preloading on Setup > Preload runs the crawl as a background process, so it
+works behind Velocity and behind proxies that buffer streamed answers. Nothing to
+configure; see [Preload Sites](../../features/6.0/preload-sites-view.md#runs-in-the-background).
+
 ## Related pages
 
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Security defaults](../../specifications/6.0/security-defaults-2026-09.md)
 - [Datatype and input hardening](../../specifications/6.0/datatype-input-hardening.md)
+- [Database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md)
+- [Server control commands](../../features/6.0/web-server-and-solr-commands.md)
+- [Maintenance mode](../../features/6.0/maintenance-mode.md), [Order receipts](../../features/6.0/order-receipts.md), [Store dashboard](../../features/6.0/store-dashboard.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

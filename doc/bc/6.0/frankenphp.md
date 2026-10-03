@@ -1005,3 +1005,5 @@ tail -n 50 var/vc/frankenphp/log/error.log | jq .
 - Generated Caddyfile: `var/vc/frankenphp/run/Caddyfile` (do not edit)
 - Binary: `var/vc/frankenphp/bin/frankenphp-<version>-<asset>`
 - Cross-engine reference: [`doc/bc/6.0/velocity-engines.md`](velocity-engines.md)
+
+See also (September 2026): [Server control commands](../../features/6.0/web-server-and-solr-commands.md) (`exp:webserver`, `exp:frankenphp`, `exp:solr`), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#engines-and-the-server-commands).

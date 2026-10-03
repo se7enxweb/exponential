@@ -356,3 +356,5 @@ the scope of this script).
   collapsed into a single summary line instead of flooding the terminal.
 - All PHP output is flushed immediately (`flush()`) so you see progress in real
   time even in long-running Phase 2.
+
+See also (September 2026): [Preload Sites: runs in the background](../../features/6.0/preload-sites-view.md#runs-in-the-background) (28 September 2026), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).

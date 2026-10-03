@@ -186,3 +186,5 @@ feedback, `bin/php/cache.php` into PASS/FAIL lines or JSON. A new cache belongs
 in `site.ini [Cache] CacheItems[]` (it then shows up in `list`, `clear --id`
 and on the page); a new kind of action belongs in `expCacheManager`, called from
 both. Tests: `tests/tests/kernel/classes/expCacheManagerTest.php`.
+
+See also (September 2026): [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).

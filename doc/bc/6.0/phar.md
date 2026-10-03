@@ -394,3 +394,5 @@ Deliberately left undone:
 | `design/admin/templates/setup/info.tpl` | renders it |
 | `dist/engine.phar` | the artifact (gitignored) |
 | `dist/engine.phar.index.json` | what the artifact carries, for deciding whether to rebuild (gitignored) |
+
+See also (September 2026): [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#engine-archive-expphar) (atomic build, batched syntax check), [Velocity](../../features/6.0/velocity-persistent-worker-server.md).

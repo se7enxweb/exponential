@@ -189,3 +189,5 @@ that cannot be known before the kernel; anything not a content view.
 | `settings/httpcache.ini` | Settings |
 | `cronjobs/httpcache_cleanup.php` | Removes dead entries |
 | `tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php` | Unit tests (HC-01 … HC-16) |
+
+See also (September 2026): [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#http-cache-httpcacheini) (compression once, headers on cached pages, siteaccess matching), [Security defaults](../../specifications/6.0/security-defaults-2026-09.md), [Velocity](../../features/6.0/velocity-persistent-worker-server.md).

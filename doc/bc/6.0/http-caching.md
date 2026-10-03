@@ -132,3 +132,5 @@ visitors as well and serves them before the kernel starts: see
 It does not reduce the work of rendering a page. The front page costs about
 529 database queries, and no caching header changes that for the visitor who
 misses the cache.
+
+See also (September 2026): [HTTP cache](httpcache.md), [Velocity](../../features/6.0/velocity-persistent-worker-server.md), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).
