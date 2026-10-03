@@ -1,50 +1,34 @@
-# Steps to upgrade your Exponential 6.0.13 site to use PHPUnit 10 — what broke, how we fixed it, and how you run tests now
+# Upgrading the test suite to PHPUnit 10 (6.0.13)
 
-**Affected release:** Exponential 6.0.12 and all prior 6.0.x releases  
-**Fixed in:** Exponential 6.0.13-alpha2 and later  
-**PHPUnit version in use:** `phpunit/phpunit 10.0.0`  
-**PHP version:** 8.4 / 8.5  
-**Date documented:** 2026-02-21
+Read this page if you run the Exponential test suite, or keep tests of your own on the Exponential test toolkit, on a
+release before 6.0.13. On Exponential 6.0.12 and earlier, `php vendor/bin/phpunit` and `php tests/runtests.php`
+stopped with a fatal error and **ran no tests at all**. Exponential 6.0.13-alpha2 fixed the toolkit for
+`phpunit/phpunit 10.0.0` (PHP 8.4 and 8.5); this page shows each change, the files you need, and how to check your
+setup end to end. It was written on 2026-02-21.
 
----
+## In short
 
-## The short answer — why nothing ran and what to do right now
+| | |
+|---|---|
+| What changed | The toolkit (`tests/toolkit/`) was written for PHPUnit 3.7 and its PEAR-style class names (`PHPUnit_Framework_TestCase`). PHPUnit 6 introduced namespaces, PHPUnit 7 removed the old aliases, and PHPUnit 10 (pinned in `composer.json`) has no `PHPUnit_*` class at all. The toolkit, `tests/runtests.php`, a new `phpunit.xml` and a new `tests/bootstrap.php` with shims fix that. |
+| Who is affected | Every installation older than 6.0.13 that runs tests, and every custom test written against the old class names. |
+| How to check | `php vendor/bin/phpunit --list-tests` (see [Verification](#verification)) |
+| How to fix | Update to 6.0.13 or later; the shims in `tests/bootstrap.php` keep old class names working. Then follow [PHPUnit 13 support](phpunitv13.md) for the next step. |
 
-If you ran `php vendor/bin/phpunit` or `php tests/runtests.php` on any Exponential 6.0.x
-installation prior to 6.0.13 you received one of these fatal errors and **zero tests ran**:
+The errors you see before the fix:
 
 ```
 An error occurred inside PHPUnit.
 Message:  Class "ezpDatabaseTestCase" not found
 ```
 
-or:
-
 ```
 PHP Fatal error: Class 'PHPUnit_Framework_TestCase' not found in tests/toolkit/ezptestcase.php
 ```
 
-or (from `runtests.php`):
-
 ```
 PHP Fatal error: Class 'PHPUnit_Runner_Version' not found in tests/runtests.php
 ```
-
-**Root cause in one sentence:** The entire test toolkit (`tests/toolkit/`) was written for
-PHPUnit 3.7 which used PEAR-style underscore class names (`PHPUnit_Framework_TestCase`).
-PHPUnit 6 introduced PHP namespaces. PHPUnit 7 removed all backward-compatibility aliases.
-PHPUnit 10 — the version pinned in `composer.json` — does not contain a single
-`PHPUnit_*` class. Every toolkit file silently stopped working the day PHPUnit was upgraded
-past version 5.
-
-This document:
-
-1. Identifies every broken file line by line
-2. Shows you the exact before/after change for each file
-3. Provides the `phpunit.xml` bootstrap you need to create
-4. Gives you copy-pasteable commands to verify your setup end to end
-
----
 
 ## Table of contents
 
@@ -63,7 +47,6 @@ This document:
 13. [Frequently asked questions](#faq)
 14. [Patch change log — 2026-02-21](#patch-changelog)
 
----
 
 <a name="background"></a>
 ## 1. Background — PHPUnit class name history
@@ -86,7 +69,6 @@ install` brings in a PHPUnit version that is entirely incompatible with every cl
 
 **You cannot run a single test** until the toolkit base classes are updated.
 
----
 
 <a name="broken-file-inventory"></a>
 ## 2. Broken file inventory
@@ -119,7 +101,6 @@ Here is every broken reference:
 | (missing) | — | No `phpunit.xml` at project root | Create one — see Fix 6 |
 | (missing) | — | No `tests/bootstrap.php` | Create one — see Fix 7 |
 
----
 
 <a name="fix-1"></a>
 ## 3. Fix 1 — tests/toolkit/ezptestcase.php
@@ -181,7 +162,6 @@ class ezpTestCase extends PHPUnit\Framework\TestCase
 > Without the type declaration, PHPUnit 10 emits a deprecation and future versions will
 > fatal. Add `bool` to the property declaration at the same time.
 
----
 
 <a name="fix-2"></a>
 ## 4. Fix 2 — tests/toolkit/ezptestsuite.php
@@ -226,7 +206,6 @@ class ezpTestSuite extends PHPUnit\Framework\TestSuite
 No other changes are needed inside this file. The `eZScript` bootstrap logic and
 `__destruct()` remain unchanged.
 
----
 
 <a name="fix-3"></a>
 ## 5. Fix 3 — tests/toolkit/ezptestregressionsuite.php
@@ -296,7 +275,6 @@ found" warning).
 + fwrite( STDERR, 'Warning: No regression tests found in class "' . $theClass->getName() . '".' . PHP_EOL );
 ```
 
----
 
 <a name="fix-4"></a>
 ## 6. Fix 4 — tests/toolkit/ezptestrunner.php
@@ -416,7 +394,6 @@ of the original discovery logic, replace:
 + $reflectionClass->isSubclassOf( PHPUnit\Framework\TestSuite::class )
 ```
 
----
 
 <a name="fix-5"></a>
 ## 7. Fix 5 — tests/runtests.php
@@ -518,7 +495,6 @@ catch ( Exception $e )
 > created in Fix 7 below. Without it, PHPUnit cannot find `ezpTestCase` or any other
 > toolkit class.
 
----
 
 <a name="fix-6"></a>
 ## 8. Fix 6 — create phpunit.xml at project root
@@ -598,7 +574,6 @@ fatal.
 
 **Save this as `phpunit.xml` in the repository root** (same directory as `composer.json`).
 
----
 
 <a name="fix-7"></a>
 ## 9. Fix 7 — create tests/bootstrap.php
@@ -654,7 +629,6 @@ require_once $toolkit . 'ezpdsn.php';
 > concerns. Do not add kernel bootstrapping here or you will break unit tests that
 > intentionally run without the platform.
 
----
 
 <a name="verification"></a>
 ## 10. Verification — running the fixed toolkit
@@ -728,7 +702,6 @@ grep -rn 'PHPUnit_Framework_TestCase\|PHPUnit_Framework_TestSuite\|PHPUnit_TextU
 
 Expected: **no output**. If any lines appear, those are remaining unfixed references.
 
----
 
 <a name="security-tests"></a>
 ## 11. How the security hardening tests plug in
@@ -773,7 +746,6 @@ php tests/bin/ezptestrunner_all_tests.php --report
 
 This produces a dated report file at `tests/bin/test_report_YYYY-MM-DD.txt`.
 
----
 
 <a name="full-diff"></a>
 ## 12. Full before/after diff summary
@@ -864,7 +836,6 @@ of these to restore test execution on PHPUnit 10:
 +(new file — full content in Fix 7 above)
 ```
 
----
 
 <a name="faq"></a>
 ## 13. Frequently asked questions
@@ -912,23 +883,20 @@ php tests/bin/ezptestrunner_all_tests.php --report
 This calls both the PHPUnit suite and the custom `tests/bin/tests/functional_tests.php`,
 combines all results, and writes a dated report file.
 
----
 
-*Document prepared 2026-02-21 for Exponential 6.0.13-alpha2 / eZ Publish Legacy 6.0*  
+*Document prepared 2026-02-21 for Exponential 6.0.13-alpha2*  
 *PHPUnit version: 10.0.0 | PHP: 8.5.3*
 
 ## Related pages
 
 - [PHP 8 support](php8.md)
-- [PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite](phpunitv13.md)
+- [PHPUnit 13 support, and the string operator test suite](phpunitv13.md)
 - [PHPUnit 13 / PHP 8.4.23 test suite cleanup](phpunitv13forPHP841.md)
 - [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite](ezpsessionhandlerdb-php8-bugfix-and-tests.md)
 - [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](../../features/6.0/platform-php85-framework-forks.md)
 - [April 2025](../../history/2025/2025-04.md)
 - [September 2025](../../history/2025/2025-09.md)
 - [December 2025](../../history/2025/2025-12.md)
-
-## Related pages
 
 - [February 2026](../../history/2026/2026-02.md)
 - [March 2026](../../history/2026/2026-03.md)
