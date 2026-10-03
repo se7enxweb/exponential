@@ -4,7 +4,7 @@ Read this page if you run the Exponential test suite, or maintain tests of your 
 toolkit. After an upgrade to PHPUnit 13 (`phpunit/phpunit 13.0.0`, PHP 8.4 and 8.5), `php vendor/bin/phpunit` on an
 Exponential 6.0.x tree that still used PHPUnit 10 to 12 conventions stopped with a fatal error and **ran no tests at
 all**. This was fixed on 2026-03-31. The same change ships `eZTemplateStringsOperator`, which makes every PHP string
-function a template operator, with its own test suite ([section 6](#new-feature)).
+function a template operator, with its own test suite ([section 6](#6-new-feature-eztemplatestringsoperator-and-its-test-suite)).
 
 ## In short
 
@@ -13,7 +13,7 @@ function a template operator, with its own test suite ([section 6](#new-feature)
 | What changed | PHPUnit 13 made `TestCase::__construct()` final and requires `: void` on `setUp()`, `tearDown()`, `setUpBeforeClass()` and `tearDownAfterClass()`. The toolkit (`tests/toolkit/ezpregressiontest.php`, `ezpdatabaseregressiontest.php`), `tests/bootstrap.php` and the lib tests were changed to match. |
 | Who is affected | Your own tests that override `__construct()` or declare `setUp()`/`tearDown()` without `: void`. Tests that use the old `PHPUnit_Framework_*` class names keep working through the bootstrap shims. |
 | How to check | `php vendor/bin/phpunit --list-tests` must load every class without a fatal error. |
-| How to fix | Add `: void` to the four methods; move constructor work into `setUp(): void`. See [Fix 3](#fix-lib-tests) for worked examples. |
+| How to fix | Add `: void` to the four methods; move constructor work into `setUp(): void`. See [Fix 3](#4-fix-3--lib-test-files-add--void-and-remove-constructors) for worked examples. |
 
 The two fatal errors you see before the fix:
 
@@ -31,14 +31,14 @@ Both happen when the class is loaded, before any test runs.
 
 ## Table of contents
 
-1. [Background — what PHPUnit 13 changed](#background)
-2. [Fix 1 — bootstrap.php: expanded shim layer](#fix-bootstrap)
-3. [Fix 2 — toolkit: remove illegal constructors from ezpregressiontest and ezpdatabaseregressiontest](#fix-toolkit)
-4. [Fix 3 — lib test files: add `: void` and remove constructors](#fix-lib-tests)
-5. [Verification commands](#verification)
-6. [New feature: eZTemplateStringsOperator and its test suite](#new-feature)
-7. [Pre-existing warnings — filename / class-name mismatch](#warnings)
-8. [Files changed in this release](#files-changed)
+1. [Background — what PHPUnit 13 changed](#1-background--what-phpunit-13-changed)
+2. [Fix 1 — bootstrap.php: expanded shim layer](#2-fix-1--testsbootstrapphp-expanded-shim-layer)
+3. [Fix 2 — toolkit: remove illegal constructors from ezpregressiontest and ezpdatabaseregressiontest](#3-fix-2--toolkit-remove-illegal-constructors-from-ezpregressiontest-and-ezpdatabaseregressiontest)
+4. [Fix 3 — lib test files: add `: void` and remove constructors](#4-fix-3--lib-test-files-add--void-and-remove-constructors)
+5. [Verification commands](#5-verification-commands)
+6. [New feature: eZTemplateStringsOperator and its test suite](#6-new-feature-eztemplatestringsoperator-and-its-test-suite)
+7. [Pre-existing warnings — filename / class-name mismatch](#7-pre-existing-warnings--filename--class-name-mismatch)
+8. [Files changed in this release](#8-files-changed-in-this-release)
 
 
 <a name="background"></a>

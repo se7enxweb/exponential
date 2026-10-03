@@ -140,7 +140,7 @@ The names and marks shown on the server's own views (`/Q/dashboard`, `/Q/panel`,
 | `brandColor`, `brandAccent`, `brandBackground` | `#7c8aff`, `#22d3ee`, `#0f1117` | Colours of the generated icon |
 | `brandFont` | search of common system fonts | Font file for the generated raster icon |
 
-With the default brand and nothing set, the server's own logo is used. The pages also carry icons, a web app manifest and link previews (24 September 2026); every markup file is a design on disk ([designs](../../features/6.0/velocity-control-panel.md#restyling-the-servers-pages-designs)).
+With the default brand and nothing set, the server's own logo is used. The pages also carry icons, a web app manifest and link previews (24 September 2026); every markup file is a design on disk ([designs](../../features/6.0/velocity-control-panel.md#restyle-the-servers-pages-designs)).
 
 ## Event loop and TLS
 

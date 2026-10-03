@@ -12,7 +12,7 @@ setup end to end. It was written on 2026-02-21.
 |---|---|
 | What changed | The toolkit (`tests/toolkit/`) was written for PHPUnit 3.7 and its PEAR-style class names (`PHPUnit_Framework_TestCase`). PHPUnit 6 introduced namespaces, PHPUnit 7 removed the old aliases, and PHPUnit 10 (pinned in `composer.json`) has no `PHPUnit_*` class at all. The toolkit, `tests/runtests.php`, a new `phpunit.xml` and a new `tests/bootstrap.php` with shims fix that. |
 | Who is affected | Every installation older than 6.0.13 that runs tests, and every custom test written against the old class names. |
-| How to check | `php vendor/bin/phpunit --list-tests` (see [Verification](#verification)) |
+| How to check | `php vendor/bin/phpunit --list-tests` (see [Verification](#10-verification--running-the-fixed-toolkit)) |
 | How to fix | Update to 6.0.13 or later; the shims in `tests/bootstrap.php` keep old class names working. Then follow [PHPUnit 13 support](phpunitv13.md) for the next step. |
 
 The errors you see before the fix:
@@ -32,19 +32,19 @@ PHP Fatal error: Class 'PHPUnit_Runner_Version' not found in tests/runtests.php
 
 ## Table of contents
 
-1. [Background — PHPUnit class name history](#background)
-2. [Broken file inventory](#broken-file-inventory)
-3. [Fix 1 — tests/toolkit/ezptestcase.php](#fix-1)
-4. [Fix 2 — tests/toolkit/ezptestsuite.php](#fix-2)
-5. [Fix 3 — tests/toolkit/ezptestregressionsuite.php](#fix-3)
-6. [Fix 4 — tests/toolkit/ezptestrunner.php](#fix-4)
-7. [Fix 5 — tests/runtests.php](#fix-5)
-8. [Fix 6 — create phpunit.xml bootstrap at project root](#fix-6)
-9. [Fix 7 — create tests/bootstrap.php](#fix-7)
-10. [Verification — running the fixed toolkit](#verification)
-11. [How the security hardening tests plug in](#security-tests)
-12. [Full before/after diff summary](#full-diff)
-13. [Frequently asked questions](#faq)
+1. [Background — PHPUnit class name history](#1-background--phpunit-class-name-history)
+2. [Broken file inventory](#2-broken-file-inventory)
+3. [Fix 1 — tests/toolkit/ezptestcase.php](#3-fix-1--teststoolkitezptestcasephp)
+4. [Fix 2 — tests/toolkit/ezptestsuite.php](#4-fix-2--teststoolkitezptestsuitephp)
+5. [Fix 3 — tests/toolkit/ezptestregressionsuite.php](#5-fix-3--teststoolkitezptestregressionsuitephp)
+6. [Fix 4 — tests/toolkit/ezptestrunner.php](#6-fix-4--teststoolkitezptestrunnerphp)
+7. [Fix 5 — tests/runtests.php](#7-fix-5--testsruntestsphp)
+8. [Fix 6 — create phpunit.xml bootstrap at project root](#8-fix-6--create-phpunitxml-at-project-root)
+9. [Fix 7 — create tests/bootstrap.php](#9-fix-7--create-testsbootstrapphp)
+10. [Verification — running the fixed toolkit](#10-verification--running-the-fixed-toolkit)
+11. [How the security hardening tests plug in](#11-how-the-security-hardening-tests-plug-in)
+12. [Full before/after diff summary](#12-full-beforeafter-diff-summary)
+13. [Frequently asked questions](#13-frequently-asked-questions)
 
 
 <a name="background"></a>

@@ -119,7 +119,7 @@ php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
 Expected: the first prints how many classes it found; the second ends with a line saying the caches were cleared.
-Do not use `-k` without `--exclude='\.claude'` on an installation that keeps worktrees under `.claude`.
+Do not use `-k` on an installation that keeps extra working copies of the code inside its root (for example git worktree folders) without excluding them, e.g. `--exclude='<folder>'`; otherwise kernel classes are mapped into those copies.
 Then reload the PHP-FPM that serves the site (`systemctl reload <your-php-fpm-service>`), and, if you run Velocity,
 `./console exp:velocity deploy --dry-run --allow-root-user` shows every step the real command would run.
 
