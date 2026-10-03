@@ -17,6 +17,8 @@ Changes to the database drivers made on 2026-10-01 and 2026-10-02. Upgrade notes
 |---|---|---|---|---|
 | `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `60` (seconds; keep it below the web server's request timeout) | installation |
 
+Check the setting: `./console exp:ini get site.ini/DatabaseSettings/SQLiteTransactionWait --allow-root-user` (the shipped value is in `settings/site.ini`, read in `lib/ezdb/classes/ezsqlite3db.php`).
+
 Other SQLite driver fixes: `subString( s, n )` without a length returns the rest of the string, as on the other
 engines (it stopped one character short, so every move dropped the last character of `path_string` and
 `path_identification_string` of the moved subtree); a node's `path_identification_string` is rewritten from the value
@@ -25,10 +27,12 @@ connection before it forks for each publish (a connection must never cross a for
 closed in the child ended the parent's too); the setup wizard's database field offers only real SQLite files
 (`eZSQLite3DB::availableDatabasesIn()`).
 
+(The 64-publisher measurement is from the change's test run and was not repeated for this page.)
+
 ## Oracle and the SQL query cache
 
 The SQL query cache ([sql-query-cache.md](../../bc/6.0/sql-query-cache.md)) knows Oracle's statements, so the Oracle
-driver (ezoracle 2.3.2) can answer SELECTs from it:
+driver (ezoracle 2.3.2 when this was written; `extension/ezoracle/ezinfo.php` says 2.3.3 at HEAD) can answer SELECTs from it:
 
 - Oracle writes volatile values without parentheses, so `<sequence>.NEXTVAL` and `.CURRVAL` (the driver reads a
   new row's id with `SELECT <sequence>.currval FROM DUAL`), `SYSDATE`, `SYSTIMESTAMP`, the SCN, `SYS_GUID`,
@@ -43,3 +47,5 @@ Also on Oracle (PHP 8.5 notices fixed by reading every admin page's debug report
 neither stored nor read; `createGroupedDataMap()` reads an empty class attribute category as a string (Oracle returns
 `''` as NULL); `ezpExtension::getInfo`, `eZTemplateCompiler`, `eZHTTPTool::redirect()`, the INI setting datatype,
 the `ristring` operator and `{if}` without a file placement no longer pass null where PHP 8.5 deprecates it.
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [SQLite3 database driver](sqlite3-database-driver.md), [SQL query cache](../../bc/6.0/sql-query-cache.md).

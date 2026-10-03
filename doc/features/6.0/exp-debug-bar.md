@@ -48,3 +48,5 @@ tightened on the same day, any visitor shown the report could read every debug s
 
 Related: [the INI command](exp-ini-command.md) (same editor class), [the audit trail](audit-trail.md) (setting
 changes are audited), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [debug bar bc guide](../../bc/6.0/debug-bar.md), [runnable classes](../../specifications/6.0/runnable-commands-cronjobs-views.md).

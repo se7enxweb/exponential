@@ -24,9 +24,9 @@ Exponential\Runnable\Runnable
 An entry point keeps its path, shebang and header, and then makes one call: `<Name>::main( __FILE__ )` for a
 command, `return <Name>::main( __FILE__, get_defined_vars() )` for a cronjob part (so the part reads the variables
 the runner sets), the view file for a view. `module.php` `ViewList` is untouched. All 198 views of the 22 kernel
-modules moved (a view named after a reserved word gets a `View` suffix, `Section\ListView`; functions a view
+modules moved (counts on 2026-10-02; at HEAD `kernel/private/classes/views/` holds 210 files in 24 module directories, `commands/` 70 and `cronjobs/` 22 files, because later work added some: count with `find kernel/private/classes/views -name "*.php" | wc -l`) (a view named after a reserved word gets a `View` suffix, `Section\ListView`; functions a view
 declared behind `function_exists()` went to the global namespace so string callbacks keep working). On this
-installation the extension point survey counts 469 re-implementation points (66 kernel commands, 20 cronjob
+installation the extension point survey counted 469 re-implementation points when this was written (re-count in Setup > RAD at `/setup/rad`) (66 kernel commands, 20 cronjob
 parts, 199 views and the extensions' own). The built-in web server's router `bin/php/velocity-router.php` calls
 `Exponential\Command\Kernel\VelocityRouter::route()`; the class decides (answered, file sent by the server, or the
 front controller to run) and the file acts on the answer.
@@ -69,5 +69,7 @@ with the description kept; the original header moved into the class file.
 
 Behaviour is unchanged. Code that `include`s a view file, calls a command by path or names a view in `module.php`
 keeps working; code that grepped the old files for their logic must look in `kernel/private/classes/`. Regenerate
-the kernel autoloads after adding a class (`php bin/php/ezpgenerateautoloads.php -k --exclude='\.claude'` or
+the kernel autoloads after adding a class (`php bin/php/ezpgenerateautoloads.php -k` with an `--exclude` for any worktree directory, or
 `./console exp:velocity deploy --kernel`). Tests: unit tests for the base classes and every moved entry point.
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [content jobs](../../features/6.0/content-jobs.md), [Exp Debug bar](../../features/6.0/exp-debug-bar.md), [audit event model](audit-event-model.md).

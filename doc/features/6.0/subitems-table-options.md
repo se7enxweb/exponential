@@ -55,14 +55,19 @@ Regenerate autoloads (`php bin/php/ezpgenerateautoloads.php -e`) and clear the I
 | same | `SubitemsSettings` | `AttributeColumnsExcludedDataTypes[]` | `ezuser` | installation |
 | same | `SubitemsSettings` | `CSVExport` / `CSVLimit` | enabled / 5000 | installation |
 | same | `SubitemsSettings` | `PageSizes[]` | 10, 25, 50, 100 | installation |
-| same | `Preset_<id>`, `Defaults_<id>` | `Name`, `Columns[]`, `Subtree[]`, `ParentClassIdentifiers[]` | none | installation |
+| same | `Preset_<id>`, `Defaults_<id>` | `Name`, `Columns[]`, `Subtree[]`, `ParentClassIdentifiers[]` | three presets ship: `Preset_seo` (SEO), `Preset_editorial` (Editorial), `Preset_technical` (Technical); no `Defaults_<id>` block | installation |
 | `settings/subitemscolumns.ini` | `Column_<key>` | see the guide | 129 columns | installation |
+
+The sub-items table itself is `exp::datatable`; its loader is `ezajaxsubitems_expdatatable.js` (a copy in `design/admin` and
+one in `design/admin4`; change both together).
 
 ## Speed
 
 Columns load their data once per page, not once per row (`expSubitemsColumn::prefetch()`): the data map, version
 rows, readable children per parent, children per class, URL alias rows, locations and relation counts each come
-from one query for all rows of the page. The guide lists query counts and times for 10, 50 and 100 rows.
+from one query for all rows of the page. The shipped `settings/subitemscolumns.ini` has 129 `[Column_<key>]` blocks (check: `grep -c "^\[Column_" settings/subitemscolumns.ini`) and its header lists every key a block may carry. The guide lists query counts and times for 10, 50 and 100 rows.
 
-Related: [remote services of the same columns](remote-services-expservices.md) (`expsubitems_svc`),
+Related: [remote services of the same columns](remote-services-expservices.md) (`expsubitems_svc`; the server functions are `expSubitemsServerFunctions`),
 [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [audit trail](audit-trail.md).

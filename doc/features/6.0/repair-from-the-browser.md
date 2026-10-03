@@ -42,8 +42,14 @@ settings are recorded in the [audit trail](audit-trail.md) (whether a key is set
 | `settings/override/exprepair.ini.append.php` | `RepairSettings` | `Enabled` | `true` once a key exists | installation |
 | same | `RepairSettings` | `KeyHash` | written by `--create-key` | installation |
 | same | `RepairSettings` | `Composer` | `composer` on the PATH | installation |
-| `settings/error.ini` | `ErrorSettings` | `StaticErrorPage[dependencies]` | built-in page | installation |
+| `settings/error.ini` | `ErrorSettings` | `StaticErrorPage[dependencies]` | commented out; the page it would name is `design/standard/errors/dependencies.html` | installation |
 
-Disable the feature again with `php bin/php/exprepair.php --disable`.
+Disable the feature again with `php bin/php/exprepair.php --disable` (it writes `Enabled=false` and an empty `KeyHash`).
+`php bin/php/exprepair.php --status` prints the state of the last repair and the end of its log, and is safe to run at any time.
+The second autoload step is the kernel one: `ezpgenerateautoloads.php -k` with an `--exclude` for the installation's worktree directory. The `Composer` key is optional and
+names the Composer binary when it is not on the PATH. The repair runs `composer install`; this page documents it, it does
+not ask you to run Composer yourself.
 
-Related: [October 2026 chronicle](../../history/2026/2026-10.md).
+Related: [the maintenance mode](maintenance-mode.md) if present in your copy of the documentation, [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [Velocity and the opcode cache](velocity-opcode-cache-and-profile.md).

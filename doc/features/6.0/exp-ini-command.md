@@ -48,3 +48,5 @@ Actions and scope providers are classes registered in `settings/ini.ini` `[IniCo
 the [debug bar's](exp-debug-bar.md) settings tab.
 
 Related: [console](../../bc/6.0/console.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [audit event model](../../specifications/6.0/audit-event-model.md), [INI override placements](../../specifications/6.0/ini-override-placements.md).

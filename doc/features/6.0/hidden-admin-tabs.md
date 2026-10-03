@@ -10,7 +10,7 @@ now do exactly that, whatever adds the tab. Added 2026-10-01.
 | `settings/admininterface.ini` | `WindowControlsSettings` | `HiddenTabs[]` | empty | siteaccess or override |
 
 `[TopAdminMenu] HiddenTabs[]` is read by the `topmenu` template operator; `[WindowControlsSettings] HiddenTabs[]`
-by `window_controls.tpl` of `admin3` and `admin` (the node view's tabs).
+by `window_controls.tpl` of `admin`, `admin3` and `admin4` (the node view's tabs). Check: `grep -rn HiddenTabs kernel design settings`.
 
 ## Example: a siteaccess without the Layouts node tab and the Design menu
 
@@ -45,3 +45,5 @@ Same-day related changes: the dashboard, its menus and the top tabs show a link 
 (editors no longer saw Design, Newsletter and Export tabs they could not use), and the Store sidebar
 (`[Leftmenu_shop]` in `menu.ini`) lists Dashboard, Orders, Products overview, Product statistics and Product
 categories first.
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [admin links follow permissions](admin-links-follow-permissions.md), [admin4 design](admin4-design.md).

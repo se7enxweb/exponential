@@ -61,6 +61,20 @@ Defaults of `settings/audit.ini` (`[AuditSettings]`, `[AuditChannelSettings]`):
 
 Override in `settings/override/audit.ini.append.php` or an extension's `settings/audit.ini.append.php`.
 
+### When the audit cannot write (`OnWriteFailure`)
+
+| Value | What happens when the log cannot be written (disk full, permissions) |
+|---|---|
+| `continue` (default) | the request goes on; the failure is in `error.log` as `AUDIT-UNWRITTEN` and the dashboard warns, so a full disk does not take the site down |
+| `refuse` | actions of the "always written at once" kind (`ImmediateEvents[]`) are refused while their channel cannot be written, so nothing security-relevant happens unrecorded: a POST to a view of `AlwaysModules[]` by a signed-in user (503 with an error page), a settings write (`exp:ini`, the debug bar) and `exp:audit`'s manage actions (exit code 2). Pages, content editing, GET requests, anonymous visitors, reading and verifying are never refused. Each refusal is logged as `AUDIT-REFUSED` |
+
+Choose `refuse` where an unrecorded change is worse than a refused one. Check the shipped text with
+`grep -n "OnWriteFailure" -B12 settings/audit.ini`.
+
+The tab's `audit/recent` view lists the latest events and the state of each channel's chain; kernel code records events through one guarded hook, and an
+existing `ezpEvent` can be audited by settings alone: `audit.ini [AuditBridgeSettings] Bridge[<ezpEvent name>]=<audit name>`
+(an extension registers its own branch in `[AuditEventSettings] Branches[]`).
+
 ## Who may look
 
 Two policies in the `audit` module: `audit/read` (the tab, dashboard, console, event, charts, alerts, export;
@@ -94,9 +108,13 @@ accept `Z` or `+HH:MM` offsets; without one they are UTC on the command line and
 
 - The 4.x `eZAudit::writeAudit()` calls keep working; ten 4.x names map to the new event names.
 - Node views, searches and downloads are only recorded when reads are switched on.
-- `ReauthForManage` (off by default) makes "Verify now" ask for the password again.
+- `ReauthForManage` (`disabled` in `settings/audit.ini`, block `[AuditConsoleSettings]`) makes "Verify now" ask for the password again.
 - The dashboard keeps its 7-day figures for a minute, so it opens in about 25 ms instead of 170 ms.
+
+See also: [behaviour changes of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [the Exp Debug bar](exp-debug-bar.md), [the INI command](exp-ini-command.md).
 
 Related: [audit specification](../../specifications/6.0/audit-event-model.md),
 [remote audit services](remote-services-expservices.md), [content jobs](content-jobs.md),
 [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [content jobs](content-jobs.md).

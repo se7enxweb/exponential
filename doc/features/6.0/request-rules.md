@@ -60,7 +60,12 @@ Scope: override or siteaccess (a siteaccess override that starts with an empty `
   (header, ip, user) could decide stays out of the role-aware HTTP cache and the Velocity response cache; pages
   the rules cannot affect are cached as before.
 - The `login` action never acts on the sign-in views, so no rule can loop.
-- Rules read facts only, resolved on first use, so they are tested without a database (21 unit tests).
+- Rules read facts only, resolved on first use, so they are tested without a database (21 unit tests in `tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php`; the 25 conditions and 8 actions are the arrays `$builtInConditions` and `$builtInActions` of `ezpRequestRuleEngine`).
+
+Check the shipped defaults without changing anything: `grep -n "RuleList\|Enabled\|MaxRewrites" settings/requestrules.ini`
+(`Enabled=true`, an empty `RuleList[]`, `MaxRewrites=3`).
 
 Related: [hardening](../../bc/6.0/hardening.md), [the audit trail](audit-trail.md),
 [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [admin links follow permissions](admin-links-follow-permissions.md).

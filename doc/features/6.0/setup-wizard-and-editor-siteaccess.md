@@ -62,3 +62,5 @@ admin siteaccess in `site.ini` (`[SiteAccessSettings]`). The design list in the 
 
 Related: [hidden admin tabs](hidden-admin-tabs.md), [admin4 design](admin4-design.md),
 [kickstarter CLI](../../bc/6.0/kickstartercli.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [admin links follow permissions](admin-links-follow-permissions.md).

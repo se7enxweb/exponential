@@ -1,8 +1,8 @@
 # The admin4 design
 
 admin4 is a complete administration design in the look of the setup wizard, with a light and a dark mode. It
-holds every file the admin siteaccess served from `admin3`, `admin2` and `admin` (463 files, the winner of each
-path in the search order), so it works with none of them present. Added 2026-10-02 and refined during the day.
+holds every file the admin siteaccess served from `admin3`, `admin2` and `admin` (463 files when it was created, 469 at
+the time of writing; the winner of each path in the search order), so it works with none of them present. Added 2026-10-02 and refined during the day.
 
 ## Switch to it
 
@@ -69,3 +69,5 @@ Community" line; a template can also set `$show_community_links`.
 
 Related: [setup wizard and editor siteaccess](setup-wizard-and-editor-siteaccess.md),
 [jQuery 4 and YUI removal](jquery4-and-yui-removal.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [admin links follow permissions](admin-links-follow-permissions.md), [order list sorting](order-list-sorting.md).

@@ -55,9 +55,16 @@ executable extension anywhere in it (`shell.php.jpg`), because a request can ski
 ## Tests
 
 `extension/ezoe/tests/tinymce8` holds browser tests (puppeteer-core with Firefox or Chrome, real mouse clicks)
-that can be run against an installation at any time, plus 267 PHPUnit tests for the registry, upload rules, JSON
-answers and the XHTML round trip. The bundled TinyMCE 8.9.2 is used under the GPL (version 2 or later); its
+that can be run against an installation at any time, plus PHPUnit tests (`tests/tests/extension/ezoe/`: registry, engine configuration, upload rules, JSON
+answers, views and the XHTML round trip; the count was 267 when written, and the run is
+`php vendor/bin/phpunit tests/tests/extension/ezoe/`; not re-counted for this page). The bundled TinyMCE 8.9.2 is used under the GPL (version 2 or later); its
 README states the licences and where the corresponding source is.
 
-Related: [remote services `expeditor`](remote-services-expservices.md), [the audit trail](audit-trail.md)
+Check the engine without a browser: `grep -n 'EditorEngine\|EngineSwitch\|Engines\[' extension/ezoe/settings/ezoe.ini`; the
+registry classes are `extension/ezoe/classes/expoeeditorengine.php`, `expoetinymce3engine.php` and `expoetinymce8engine.php`;
+the engine page is the view `engine` of the `ezoe` module.
+
+Related: [specification of the services the editor engine answers through](../../specifications/6.0/expservices.md), [the ezoe bc guide](../../bc/6.0/ezoe-tinymce8.md), [remote services `expeditor`](remote-services-expservices.md), [the audit trail](audit-trail.md)
 (`content.ezoe.engine.change`), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [expservices specification](../../specifications/6.0/expservices.md).

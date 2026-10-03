@@ -25,4 +25,10 @@ columns are checked against `eZOrder::sortColumnsForList()`. The headings use th
 `parts/sortheader.tpl`, as the role list does; in `admin3` the sort arrow takes the heading's own colour, so it
 shows on the dark heading bar, and in `admin4` the sorted column is readable.
 
-Related: [admin list paging](admin-list-paging.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+The view is `Exponential\View\Kernel\Shop\Orderlist` (`kernel/private/classes/views/shop/orderlist.php`); the
+sort and direction arrive as the view's user parameters, which is why they are written `(sort)/...` and not as plain
+module parameters. Check without opening the browser: `grep -n "sort" kernel/private/classes/views/shop/orderlist.php`.
+
+Related: [admin list paging](admin-list-paging.md), [the admin4 design](admin4-design.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [trash: who and where](trash-who-and-where.md).

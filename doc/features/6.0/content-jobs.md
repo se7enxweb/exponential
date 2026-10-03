@@ -24,8 +24,9 @@ sub items list's "More actions" has "Add a location for selected").
 ## From the command line
 
 ```bash
-./console exp:expcontentjob list --allow-root-user
+./console exp:expcontentjob list --allow-root-user              # active and failed jobs; --all lists every job
 ./console exp:expcontentjob show <id> --allow-root-user
+./console exp:expcontentjob run <id> --allow-root-user         # run a job in the foreground
 ./console exp:expcontentjob resume <id> --allow-root-user
 ./console exp:expcontentjob cancel <id> --allow-root-user
 ```
@@ -62,3 +63,5 @@ Scope: installation (override in `settings/override/content.ini.append.php` or a
   never sent with the browse form, so the automatic decision always won; it now is.
 
 Related: [trash: who and where](trash-who-and-where.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [audit trail specification](../../specifications/6.0/audit-event-model.md), [runnable classes](../../specifications/6.0/runnable-commands-cronjobs-views.md).

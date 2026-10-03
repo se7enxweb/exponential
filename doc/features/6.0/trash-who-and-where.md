@@ -19,7 +19,8 @@ any location still in the tree. Added 2026-10-02. Technical guide:
 ## Where the record is kept
 
 No database schema change (it would have to reach six engines): `eZContentObjectTrashNode::storeToTrash()`, which
-every trash move passes through (the admin, content jobs, `removeSubtrees()` from scripts), writes the user, the
+every trash move passes through (the admin, content jobs, `removeSubtrees()` from scripts), calls
+`Exponential\Service\TrashRecord` (`kernel/private/classes/services/trashrecord.php`), which writes the user, the
 trash row's node id and time and the origin into `<VarDir>/trash/trashed.json` (for example
 `var/site/trash/trashed.json`), under a file lock. `purgeForObject()` forgets an entry on purge and on restore. The
 file is local to the server: on a cluster each node records its own trash moves. A failure to record is logged and
@@ -41,3 +42,5 @@ never stops the trash move.
   draft removes every image file of that draft, not only the ones its XML names.
 
 Related: [content jobs](content-jobs.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [audit event model](../../specifications/6.0/audit-event-model.md).
