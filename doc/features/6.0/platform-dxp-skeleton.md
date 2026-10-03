@@ -1,7 +1,10 @@
 # Exponential Platform DXP skeleton: create-project and a documented install
 
-**Repositories:** `se7enxweb/exponential-platform-dxp-skeleton` (Platform v5), `se7enxweb/exponential-platform-v4x-dxp-skeleton` (Platform 4.6.x), `se7enxweb/exponential-platform-dxp` (the metapackage both require), `se7enxweb/oss`, `se7enxweb/oss-skeleton`.
-**History:** [exponential-platform-dxp-skeleton](../../history/ecosystem/exponential-platform-dxp-skeleton.md), [exponential-platform-v4x-dxp-skeleton](../../history/ecosystem/exponential-platform-v4x-dxp-skeleton.md), [exponential-platform-dxp](../../history/ecosystem/exponential-platform-dxp.md), [oss](../../history/ecosystem/oss.md).
+This page is for developers who start a new project on Exponential Platform (the Symfony based platform) from a clean
+skeleton, without a demo design.
+
+**Repositories:** `se7enxweb/exponential-platform-dxp-skeleton` (Platform v5), `se7enxweb/exponential-platform-v4x-dxp-skeleton`
+(Platform 4.6.x), `se7enxweb/exponential-platform-dxp` (the metapackage both require), `se7enxweb/oss`, `se7enxweb/oss-skeleton`.
 
 ## What it is
 
@@ -113,14 +116,11 @@ The guide (section 21) describes moving between engines: any database to SQLite 
 - Node.js: the v5 skeleton guide says use Node 20 LTS only; the Nexus v5 starter requires Node 22. Follow the guide of the project you install.
 - A clone of the skeleton with `git clone` instead of `create-project` needs `composer install --keep-vcs` and the same steps in order.
 
-## Related
+## Related pages
 
-[Nexus starter](platform-nexus-starter.md) · [Legacy bridge](legacy-bridge.md) · [Platform console command names](../../specifications/6.0/platform-console-commands.md) · [Upgrade notes for the forks](../../bc/6.0/platform-package-forks-and-command-renames.md) · [Installing Exponential 6 itself](../../INSTALL.md)
-
-## Platform ecosystem pages
-
-- Features: [Platform administration interface](platform-admin-ui-fork.md); [Layouts on the platform](platform-layouts-core-fork.md); [Nexus starter](platform-nexus-starter.md); [PHP 8.5 framework forks](platform-php85-framework-forks.md); [Site bundles](platform-site-bundles.md); [SQLite for Exponential Platform](platform-sqlite-install.md); [Legacy bridge](legacy-bridge.md); [AdminNeo database manager](adminneo-database-manager.md).
-- Specifications: [Platform console command names](../../specifications/6.0/platform-console-commands.md); [Platform package map](../../specifications/6.0/platform-package-map.md); [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md); [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
-- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
-- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
-- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
+- [Installing Exponential 6 itself](../../INSTALL.md)
+- Platform features: [Nexus starter](platform-nexus-starter.md), [legacy bridge](legacy-bridge.md), [platform administration interface](platform-admin-ui-fork.md), [Layouts on the platform](platform-layouts-core-fork.md), [PHP 8.5 framework forks](platform-php85-framework-forks.md), [site bundles](platform-site-bundles.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [AdminNeo database manager](adminneo-database-manager.md)
+- Specifications: [platform console command names](../../specifications/6.0/platform-console-commands.md), [platform package map](../../specifications/6.0/platform-package-map.md), [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md), [legacy bridge bundle](../../specifications/6.0/legacy-bridge-bundle.md)
+- Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- Changelog: [platform changelog](../../changelogs/extensions/exponential-platform.md)
+- History: [exponential-platform-dxp-skeleton](../../history/ecosystem/exponential-platform-dxp-skeleton.md), [exponential-platform-v4x-dxp-skeleton](../../history/ecosystem/exponential-platform-v4x-dxp-skeleton.md), [exponential-platform-dxp](../../history/ecosystem/exponential-platform-dxp.md), [oss](../../history/ecosystem/oss.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md)

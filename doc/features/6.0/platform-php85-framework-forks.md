@@ -1,8 +1,12 @@
 # PHP 8.4 and 8.5 for the older Symfony stack: the framework forks
 
-**Repositories:** `se7enxweb/symfony`, `se7enxweb/twig`, `se7enxweb/doctrine-bundle` (repository `DoctrineBundle`), `se7enxweb/doctrine-dbal-schema`, `se7enxweb/php-parser` (repository `PHP-Parser`), plus the platform packages `ezpublish-kernel`, `ezplatform-kernel`, `ezplatform-http-cache`, `ezplatform-user`, `ezplatform-richtext` that received PHP constraints.
-**History:** [symfony](../../history/ecosystem/symfony.md) · [twig](../../history/ecosystem/twig.md) · [DoctrineBundle](../../history/ecosystem/DoctrineBundle.md) · [doctrine-dbal-schema](../../history/ecosystem/doctrine-dbal-schema.md) · [PHP-Parser](../../history/ecosystem/PHP-Parser.md) · [ezpublish-kernel](../../history/ecosystem/ezpublish-kernel.md).
-**Related legacy page:** [PHP 8 support of the Exponential 6 kernel](../../bc/6.0/php8.md).
+This page is for teams that keep an Exponential Platform 1.x / 2.5 or Nexus 1.x project alive on a current PHP. For
+the Exponential 6 kernel itself, see [PHP 8 support of the Exponential 6 kernel](../../bc/6.0/php8.md).
+
+**Repositories:** `se7enxweb/symfony`, `se7enxweb/twig`, `se7enxweb/doctrine-bundle` (repository `DoctrineBundle`),
+`se7enxweb/doctrine-dbal-schema`, `se7enxweb/php-parser` (repository `PHP-Parser`), plus the platform packages
+`ezpublish-kernel`, `ezplatform-kernel`, `ezplatform-http-cache`, `ezplatform-user`, `ezplatform-richtext` that
+received PHP constraints.
 
 ## What it is
 
@@ -61,29 +65,12 @@ php -v
 - These are patches to keep an old stack alive, not a Symfony upgrade. New projects should start on [Platform v5](platform-dxp-skeleton.md) (Symfony 7.4, PHP 8.3+).
 - `se7enxweb/twig` follows the Twig 2.16 line; the v5 stack uses Twig 3.x from upstream.
 
-## Related
-
-[Package map](../../specifications/6.0/platform-package-map.md) · [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md) · [Nexus starter](platform-nexus-starter.md)
-
-## Platform ecosystem pages
-
-- Features: [Platform administration interface](platform-admin-ui-fork.md); [DXP skeleton](platform-dxp-skeleton.md); [Layouts on the platform](platform-layouts-core-fork.md); [Nexus starter](platform-nexus-starter.md); [Site bundles](platform-site-bundles.md); [SQLite for Exponential Platform](platform-sqlite-install.md); [Legacy bridge](legacy-bridge.md); [AdminNeo database manager](adminneo-database-manager.md).
-- Specifications: [Platform console command names](../../specifications/6.0/platform-console-commands.md); [Platform package map](../../specifications/6.0/platform-package-map.md); [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md); [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
-- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
-- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
-- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
-
 ## Related pages
 
-- [Steps to upgrade your Exponential 6.0.13 site to use PHPUnit 10 — what broke, how we fixed it, and how you run tests now](../../bc/6.0/phpunitv10.md)
-- [PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite](../../bc/6.0/phpunitv13.md)
-- [PHPUnit 13 / PHP 8.4.23 test suite cleanup](../../bc/6.0/phpunitv13forPHP841.md)
-- [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite](../../bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md)
-- [April 2025](../../history/2025/2025-04.md)
-- [September 2025](../../history/2025/2025-09.md)
-- [December 2025](../../history/2025/2025-12.md)
-- [February 2026](../../history/2026/2026-02.md)
-
-## Related pages
-
-- [March 2026](../../history/2026/2026-03.md)
+- [PHP 8 support of the Exponential 6 kernel](../../bc/6.0/php8.md)
+- Tests on PHP 8: [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [PHPUnit 13 / PHP 8.4.23 test suite cleanup](../../bc/6.0/phpunitv13forPHP841.md), [`ezpSessionHandlerDB` PHP 8 fixes and tests](../../bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- Platform features: [Nexus starter](platform-nexus-starter.md), [DXP skeleton](platform-dxp-skeleton.md), [platform administration interface](platform-admin-ui-fork.md), [Layouts on the platform](platform-layouts-core-fork.md), [site bundles](platform-site-bundles.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [legacy bridge](legacy-bridge.md), [AdminNeo database manager](adminneo-database-manager.md)
+- Specifications: [platform package map](../../specifications/6.0/platform-package-map.md), [platform console command names](../../specifications/6.0/platform-console-commands.md), [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md), [legacy bridge bundle](../../specifications/6.0/legacy-bridge-bundle.md)
+- Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- Changelog: [platform changelog](../../changelogs/extensions/exponential-platform.md)
+- History: [symfony](../../history/ecosystem/symfony.md), [twig](../../history/ecosystem/twig.md), [DoctrineBundle](../../history/ecosystem/DoctrineBundle.md), [doctrine-dbal-schema](../../history/ecosystem/doctrine-dbal-schema.md), [PHP-Parser](../../history/ecosystem/PHP-Parser.md), [ezpublish-kernel](../../history/ecosystem/ezpublish-kernel.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md), [April 2025](../../history/2025/2025-04.md), [September 2025](../../history/2025/2025-09.md), [December 2025](../../history/2025/2025-12.md), [February 2026](../../history/2026/2026-02.md), [March 2026](../../history/2026/2026-03.md)

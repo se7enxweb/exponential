@@ -1,11 +1,24 @@
 # The Exp Debug bar
 
-The classic debug report at the bottom of a page became a pinned bar with tabs, a live summary, and controls for
-the debug settings and the caches, so you can switch debugging on, look, and switch it off again without opening
-an INI file.
+This page is for developers and administrators who debug a page: slow, wrong, or full of warnings. The classic debug
+report at the bottom of a page became a pinned bar with tabs, a live summary, and controls for the debug settings and
+the caches, so you can switch debugging on, look, and switch it off again without opening an INI file. Added
+2026-10-02. Reference with every server function and test: [debug bar guide](../../bc/6.0/debug-bar.md).
 
-Added 2026-10-02. Reference with every server function and test:
-[doc/bc/6.0/debug-bar.md](../../bc/6.0/debug-bar.md).
+## Switch it on for yourself only
+
+In `settings/override/site.ini.append.php`, show the debug output only to your own address (see the switches at the
+end of this page):
+
+```ini
+[DebugSettings]
+DebugOutput=enabled
+DebugByIP=enabled
+DebugIPList[]=203.0.113.10
+```
+
+Clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini --allow-root-user`) and reload a page: the bar is pinned
+at the bottom.
 
 ## What you see
 
@@ -45,13 +58,6 @@ tightened on the same day, any visitor shown the report could read every debug s
 | `settings/debugbar.ini` | `DebugBarSettings` | `Settings[]` | the 35 kernel settings | installation |
 | `settings/debugbar.ini` | `Setting_<id>` | `File`, `Block`, `Variable`, `Type`, `Label`, `Group`, `Help` | per setting | installation |
 | `settings/debugbar.ini` | `Preset_<id>` | `Name`, setting values | four presets | installation |
-
-Related: [the INI command](exp-ini-command.md) (same editor class), [the audit trail](audit-trail.md) (setting
-changes are audited), [October 2026 chronicle](../../history/2026/2026-10.md).
-
-See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [debug bar bc guide](../../bc/6.0/debug-bar.md), [runnable classes](../../specifications/6.0/runnable-commands-cronjobs-views.md).
-
-See also: [Debug output you can read at a glance and style](debug-output-improvements.md), the January 2025 improvements to the classic debug block that the debug bar builds on.
 
 ## The classic debug block: heading, section ids and phone-sized output (6.0.7)
 
@@ -119,8 +125,10 @@ All in `settings/site.ini`, block `[DebugSettings]`:
 Never enable `DebugOutput` for everybody on a production site: the block shows
 SQL, file names and settings. Use `DebugByIP` or `DebugByUser`.
 
-See also: [Chronicle: August 2024](../../history/2024/2024-08.md) (responsive block, 6.0.4), [Chronicle: January 2025](../../history/2025/2025-01.md) (heading and ids, 6.0.7), [Changelog 6.0.4](../../changelogs/6.0/6.0.4.md), [6.0.7](../../changelogs/6.0/6.0.7.md), [6.0.10](../../changelogs/6.0/6.0.10.md).
-
 ## Related pages
 
-- [August 2025](../../history/2025/2025-08.md)
+- [Debug bar guide](../../bc/6.0/debug-bar.md), [runnable classes](../../specifications/6.0/runnable-commands-cronjobs-views.md)
+- [The INI command](exp-ini-command.md) (same editor class), [the audit trail](audit-trail.md) (setting changes are audited), [template path comments](template-path-comments.md)
+- [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- Changelogs: [6.0.4](../../changelogs/6.0/6.0.4.md), [6.0.7](../../changelogs/6.0/6.0.7.md), [6.0.10](../../changelogs/6.0/6.0.10.md), [6.0.15](../../changelogs/6.0/6.0.15.md)
+- History: [October 2026](../../history/2026/2026-10.md), [August 2025](../../history/2025/2025-08.md), [January 2025](../../history/2025/2025-01.md) (heading and ids, 6.0.7), [August 2024](../../history/2024/2024-08.md) (responsive block, 6.0.4)

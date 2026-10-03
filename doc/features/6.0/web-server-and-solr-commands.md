@@ -1,8 +1,8 @@
 # Server control commands: exp:webserver, exp:frankenphp and exp:solr
 
-Three console commands added on 25 and 26 September 2026 control the servers an
-Exponential installation runs beside PHP: the web server (any of the three
-Velocity engines) and an optional Solr search server. They share one controller
+This page is for administrators who start, stop and configure the servers an Exponential installation runs beside
+PHP. Three console commands added on 25 and 26 September 2026 control them: the web server (any of the three Velocity
+engines) and an optional Solr search server. They share one controller
 with [Velocity](velocity-persistent-worker-server.md), so every verb behaves the
 same whichever name you type.
 

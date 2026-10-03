@@ -1,7 +1,8 @@
 # Static cache generator
 
-The static cache turns pages into plain files that the web server can send
-without starting Exponential at all. In 6.0 the generator crawls your site the
+This page is for administrators of sites with mostly public, rarely changing pages who want them served as fast as
+the web server can send a file. The static cache turns pages into plain files that the web server can send without
+starting Exponential at all. In 6.0 the generator crawls your site the
 way a visitor would, shows progress while it works, and the shipped defaults
 now produce a working cache instead of silently producing nothing.
 
@@ -117,16 +118,11 @@ of one site is no longer asked for under another site's prefix.
 
 The defaults changed; see [bc: static cache defaults](../../bc/6.0/static-cache-defaults.md).
 
-## Related
-
-- [September 2026, first half: caches you can see](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-- [Cache from the console](../../bc/6.0/cache-console.md) (`exp:cache` static cache group)
-- [Site cache preloader](preload-sites-view.md)
-- [HTTP caching](../../bc/6.0/http-caching.md)
-
-See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [Velocity and the opcode cache](velocity-opcode-cache-and-profile.md).
-
 ## Related pages
 
-- [Site cache preloader command](../../bc/6.0/preload.md)
+- [Preload Sites](preload-sites-view.md), [site cache preloader command](../../bc/6.0/preload.md)
+- [Cache from the console](../../bc/6.0/cache-console.md) (`exp:cache` static cache group), [HTTP caching](../../bc/6.0/http-caching.md)
+- [Velocity and the opcode cache](velocity-opcode-cache-and-profile.md), [cache clears that move directories aside](cache-clear-rename-aside.md)
+- [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- History: [September 2026, first half: caches you can see](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [October 2026](../../history/2026/2026-10.md)

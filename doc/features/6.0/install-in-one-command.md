@@ -1,7 +1,7 @@
 # Installing Exponential in one command
 
-You can have a working Exponential site in a few minutes, without writing a
-`kickstart.ini` and without a database server.
+This page is for anyone who wants a working Exponential site in a few minutes, without writing a `kickstart.ini` and
+without a database server.
 
 ```bash
 ./console exp:install
@@ -121,19 +121,10 @@ stopped on (`eZSiteInstaller::abortedStep()`).
 
 ## Related pages
 
+- [Kickstarter: install a whole site from one file](kickstarter-cli.md) (the file-driven variant of the same installer), [Kickstarter on the command line](../../bc/6.0/kickstartercli.md)
+- [The setup wizard's new look, and the editor siteaccess](setup-wizard-and-editor-siteaccess.md), [maintenance mode](maintenance-mode.md)
+- [SQLite database](sqlite-database.md), [database drivers](../../specifications/6.0/database-drivers-sqlite-oracle.md), [database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
-- [Kickstarter on the command line](../../bc/6.0/kickstartercli.md)
-- [SQLite database](sqlite-database.md) and [database drivers](../../specifications/6.0/database-drivers-sqlite-oracle.md)
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
-## See also
-
-- [Kickstarter: install a whole site from one file](kickstarter-cli.md) (the file-driven variant of the same installer)
-
-## Related pages
-
-- [The setup wizard's new look, and the editor siteaccess](setup-wizard-and-editor-siteaccess.md)
-- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- History: [16 to 30 September 2026](../../history/2026/2026-09b.md), [January 2024, second half](../../history/2024/2024-01b.md)
