@@ -1,8 +1,21 @@
 # Backend services over ezjscore (expservices)
 
-`extension/expservices` turns the ezjscore server functions into a library of remote services that offer the
-features of Exponential to remote admin apps (GTK, Qt, KDE/GNOME, iOS, Android, shell) and to JavaScript
-frontends. Version 0.1.0 (first draft, 2026-10-02).
+Read this page if you build a remote admin app (GTK, Qt, KDE/GNOME, iOS, Android, shell) or a JavaScript frontend on
+top of Exponential. `extension/expservices` turns the ezjscore server functions into a library of remote services that
+offer the features of Exponential, with discovery, one answer envelope, policies per service and personal API tokens.
+Version 0.1.0 (first draft, 2026-10-02).
+
+## In short
+
+| | |
+|---|---|
+| What changed | New extension `expservices`: one class per domain (`exp<Domain>Services`), registered as `[ezjscServer_exp<domain>]`, called as `<root>/ezjscore/call/exp<domain>::<function>`. Discovery through `expservices::catalog`. Personal API tokens (table `expservices_token`). Clients in shell, Python and snippets for other platforms. |
+| Who is affected | Nobody until the extension is activated. To use API tokens on an existing installation, the token table must be created once. Behind Apache with `mod_proxy_fcgi`, the `Authorization` header may not reach PHP; use `X-Exp-Token`. |
+| How to check | `curl -s 'https://www.example.com/ezjscore/call/expsystem::version?ContentType=json'` and `php vendor/bin/phpunit tests/tests/extension/expservices/` |
+| How to fix | Activate the extension, regenerate autoloads (`php bin/php/ezpgenerateautoloads.php -e`), create the token table from `extension/expservices/sql/<engine>/schema.sql`. |
+
+Host names in the examples are placeholders (`https://www.example.com`); use your own. The shipped shell client
+takes the address from `-u` or `EXPSERVICES_URL`; always set one of them.
 
 ## Overview
 
@@ -79,7 +92,7 @@ caller's own tokens: id, name, a hint (the first characters), created, last used
 
 - **Sending it.** `Authorization: Bearer <token>`, or the header `X-Exp-Token: <token>`. Use `X-Exp-Token` where a proxy or
   FastCGI setup does not hand the `Authorization` header to PHP (Apache with `mod_proxy_fcgi` needs `CGIPassAuth On` or
-  `SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1`; on alpha.se7enx.com `Authorization` does not arrive and
+  `SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1`; on the reference installation `Authorization` does not arrive and
   `X-Exp-Token` is the header that works). The shipped clients send both.
 - **What it does.** Before any guard looks at the user, the base signs the request in as the token's user, for this one request
   only: the session is not touched, so no cookie is created and nothing stays signed in afterwards. Every other guard is
@@ -95,8 +108,10 @@ caller's own tokens: id, name, a hint (the first characters), created, last used
   token, with the reason) in the `access` channel; the taxonomy branch `expServicesAuditBranch` is registered in
   `extension/expservices/settings/audit.ini.append.php`. Uses are not logged one by one; the token's `last_used` is updated at most once a minute.
 - **Install.** The table is in `extension/expservices/sql/{mysql,postgresql,sqlite}/schema.sql` (the extension has no
-  `share/db_schema.dba`); create it on an existing installation with the idempotent
-  `php bin/php/ezexec.php ai/bin/one/create_expservices_token_table.php --allow-root-user`.
+  `share/db_schema.dba`); create it on an existing installation by running
+  the schema of your database engine once, for example
+  `mysql -u YOUR_USER -p YOUR_DATABASE < extension/expservices/sql/mysql/schema.sql` (it is a plain `CREATE TABLE`: skip it
+  when the table exists).
 - Only a token's hint is ever shown again; keep the token in the platform's secret store (Keychain, Keystore, KWallet,
   libsecret), never in source code or a URL.
 
@@ -151,7 +166,7 @@ Register the class in `ezjscore.ini.append.php`, run `php bin/php/ezpgenerateaut
 
 ### Testing a call
 
-    php ai/bin/one/expservices_call.php expsystem::version        # as admin, from the command line
+    extension/expservices/bin/expservices-client.sh -u https://www.example.com call expsystem::version   # from a shell
     php vendor/bin/phpunit tests/tests/extension/expservices/
 
 ## Domains
@@ -338,7 +353,7 @@ Paths of the server stay on the server and are not part of the answers.
 
 ### Media and other services: 218 services in 14 domains
 
-Written by the media/other part of expservices: `extension/expservices/classes/media/` (images, files, media, tags) and `classes/misc/` (layouts, audit, subitems, newsletters, sitemaps, statistics, designs, languages, links, PDF). Domains of extensions answer 404 `... is not available` when the extension is inactive. Tests: `tests/tests/extension/expservices/media/` and `misc/` (live database, test content under the Media root node 43 removed in tearDown, never a test database); the HTTP check is `ai/bin/one/verify_expservices_a5_over_http.sh`.
+Written by the media/other part of expservices: `extension/expservices/classes/media/` (images, files, media, tags) and `classes/misc/` (layouts, audit, subitems, newsletters, sitemaps, statistics, designs, languages, links, PDF). Domains of extensions answer 404 `... is not available` when the extension is inactive. Tests: `tests/tests/extension/expservices/media/` and `misc/` (live database, test content under the Media root node 43 removed in tearDown, never a test database); the services were also checked over HTTP.
 
 ### Images and aliases (`expimage`, 18 services)
 
@@ -684,14 +699,14 @@ the examples below follow:
 6. **Discovery.** `expservices::catalog` gives every service with its `args`, `access`, `write`; generate a typed client
    from it, or call `expservices::service::<domain>::<method>` for one descriptor.
 
-**Toolchains and what was compiled** (checked 2026-10-02 on the build box, `ai/bin/one/probe_client_toolchains.sh`): only
+**Toolchains and what was compiled** (checked 2026-10-02 on the build machine): only
 `bash`+`curl`, `python3` (with `requests` and PyGObject `gi`) and `g++` without Qt exist. The shell and Python clients
 and the GTK/Python snippet (both variants) were extracted from this guide and run against the live site. The Kotlin, Swift,
 Objective-C and Qt/C++ snippets could **not** be compiled here (no `kotlinc`, `swiftc`, `clang`/`gobjc` or Qt headers); each of
 them says so, and they are written against the documented APIs of OkHttp 4, URLSession, NSURLSession and Qt 5/6 Network and
 reviewed by hand. Compile them in your project before relying on them.
 
-In the examples `$SITE` is the base URL, e.g. `https://alpha.se7enx.com` (or `https://alpha.se7enx.com/<siteaccess>`
+In the examples `$SITE` is the base URL, e.g. `https://www.example.com` (or `https://www.example.com/<siteaccess>`
 when the installation needs a siteaccess in the path), `expnode::children` is a paged read and `expforum::reply` stands for
 any write service (take a real one from the catalogue). The shell and Python clients are in `extension/expservices/bin/`
 and are tested against the live services; the other snippets follow the same contract and are meant as the
@@ -699,7 +714,7 @@ starting point of an app.
 
 ### Shell (bash + curl): `extension/expservices/bin/expservices-client.sh` (tested here)
 
-    export EXPSERVICES_URL=https://alpha.se7enx.com
+    export EXPSERVICES_URL=https://www.example.com
     expservices-client.sh whoami                          # anonymous or signed in, pretty printed
     expservices-client.sh catalog session                 # the services of one domain
     expservices-client.sh call expsystem::version         # any read call; arguments follow, joined with ::
@@ -718,7 +733,7 @@ Standard library only; a module and a command line (`expservices_client.py call 
 
     from expservices_client import Client, ServiceError, TransportError
 
-    c = Client("https://alpha.se7enx.com", jar="expservices.cookies")   # jar optional; keeps the session between runs
+    c = Client("https://www.example.com", jar="expservices.cookies")   # jar optional; keeps the session between runs
     c.login("editor", "secret")                                         # POST, stores the new token
     version = c.call("expsystem::version")                              # read: returns data
     for node in c.pages("expnode::children", 2, limit=50):              # paged read: yields every item
@@ -730,7 +745,7 @@ Standard library only; a module and a command line (`expservices_client.py call 
     except TransportError as e:                                         # HTTP/network/JSON fault
         print("retry later:", e)
 
-    t = Client("https://alpha.se7enx.com", api_token="expt_...")        # API token variant: no login, no jar, no form token
+    t = Client("https://www.example.com", api_token="expt_...")        # API token variant: no login, no jar, no form token
     t.post("expforum::reply", {"topic": 123, "message": "Hello"})       # a POST with the token headers; command line: --token or EXPSERVICES_TOKEN
 
 ### Kotlin / Android (OkHttp)
@@ -807,7 +822,7 @@ Standard library only; a module and a command line (`expservices_client.py call 
     struct ServiceError: Error { let code: Int; let message: String }
 
     final class Expservices {
-        let site: URL                                    // https://alpha.se7enx.com
+        let site: URL                                    // https://www.example.com
         let session = URLSession(configuration: .default)   // the default configuration keeps cookies (HTTPCookieStorage.shared)
         init(site: URL) { self.site = site }
 
@@ -885,7 +900,7 @@ Standard library only; a module and a command line (`expservices_client.py call 
     // The shared session keeps cookies. Wrap in a method taking a completion block; shown here for one write.
     - (void)post:(NSString *)service fields:(NSDictionary<NSString *, NSString *> *)fields
       completion:(void (^)(NSDictionary *data, NSError *error))done {
-        NSString *base = @"https://alpha.se7enx.com/ezjscore/call/";
+        NSString *base = @"https://www.example.com/ezjscore/call/";
         NSURL *tokenURL = [NSURL URLWithString:[base stringByAppendingString:@"expsession::token?ContentType=json"]];
         [[NSURLSession.sharedSession dataTaskWithURL:tokenURL completionHandler:^(NSData *d, NSURLResponse *r, NSError *e) {
             NSDictionary *env = [NSJSONSerialization JSONObjectWithData:d options:0 error:nil][@"content"];   // d nil = transport fault
@@ -917,7 +932,7 @@ Standard library only; a module and a command line (`expservices_client.py call 
 
     // API token variant: no cookies, no token fetch; the same POST without ezxform_token and with the token headers.
     - (NSMutableURLRequest *)requestFor:(NSString *)service token:(NSString *)token {
-        NSString *u = [NSString stringWithFormat:@"https://alpha.se7enx.com/ezjscore/call/%@?ContentType=json", service];
+        NSString *u = [NSString stringWithFormat:@"https://www.example.com/ezjscore/call/%@?ContentType=json", service];
         NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:u]];
         req.HTTPShouldHandleCookies = NO;                                       // the token is the only credential
         [req setValue:[@"Bearer " stringByAppendingString:token] forHTTPHeaderField:@"Authorization"];
@@ -934,7 +949,7 @@ Standard library only; a module and a command line (`expservices_client.py call 
     // QT += network. One QNetworkAccessManager per client; set a QNetworkCookieJar (the default one keeps session cookies).
     class Expservices : public QObject {
         Q_OBJECT
-        QNetworkAccessManager net; QString site = "https://alpha.se7enx.com"; QString token;
+        QNetworkAccessManager net; QString site = "https://www.example.com"; QString token;
         QUrl url(const QString &svc, const QStringList &args = {}) const {
             QString u = site + "/ezjscore/call/" + svc;
             for (const QString &a : args) u += "::" + QString::fromUtf8(QUrl::toPercentEncoding(a));
@@ -1045,12 +1060,9 @@ bytes of the same `{ error_text, content }` JSON.
 
 ### Tests
 
-`python3 ai/bin/one/test_expservices_shell_and_python_clients.py` runs the shell and Python clients against the live site
-(read-only calls; the write path is exercised up to the 401 an anonymous session gets).
-`ai/bin/one/verify_expservices_api_tokens_over_http.sh` runs the API token flow over HTTP (create, bearer read and write,
-revoke, 401), `ai/bin/one/verify_expservices_clients_with_api_token.py` drives the shell and Python clients with a token, and
-`python3 ai/bin/one/test_expservices_guide_gtk_snippet.py` extracts the GTK/Python snippets from this guide and runs them.
-`ai/bin/one/probe_client_toolchains.sh` reports which native toolchains exist on the box.
+The shell and Python clients were run against a live site (read-only calls; the write path up to the 401 an anonymous
+session gets). The API token flow was checked over HTTP (create, bearer read and write, revoke, 401), the shell and
+Python clients were driven with a token, and the GTK/Python snippets of this guide were extracted and run.
 
 ## Frontend designs: React and wireframe
 
@@ -1157,17 +1169,17 @@ the contract names and those pages show the "not available" state until the serv
 
 ### How to run
 
-The test siteaccesses are local settings (not committed): `bash ai/bin/one/expportal_create_test_siteaccesses.sh`
-writes `settings/siteaccess/portaljq` and `portalreactive` and adds them to `[SiteAccessSettings]
+The test siteaccesses are local settings (not committed): create
+`settings/siteaccess/portaljq` and `portalreactive` and add them to `[SiteAccessSettings]
 AvailableSiteAccessList` of the global override with `exp:ini` (reversible: delete the two directories, and
-`./console exp:ini rem 'site/SiteAccessSettings/AvailableSiteAccessList[]' <name> override`). They match by URI, so
-open `https://alpha.se7enx.com/portaljq/` and `https://alpha.se7enx.com/portalreactive/`; the live `site` siteaccess
+`php bin/php/console exp:ini rem 'site/SiteAccessSettings/AvailableSiteAccessList[]' <name> override`). They match by URI, so
+open `https://www.example.com/portaljq/` and `https://www.example.com/portalreactive/`; the live `site` siteaccess
 and its design are untouched. `DefaultPage` is `user/login` because that module answers 200 to anonymous users and the
 pagelayout replaces its output; Velocity workers need a restart to see a new siteaccess, Apache/FPM do not.
 
 ### Tests
 
-`python3 ai/bin/one/expportal_playwright_test_portals.py` runs both portals at 960 px with device scale 2 and at 390 px:
+A browser test runs both portals at 960 px with device scale 2 and at 390 px:
 every page renders its heading and no unfinished state, the menu (and the phone menu toggle) navigates, search and the
 theme toggle work, no horizontal scroll, no console error and no jQuery Migrate warning (the code is jQuery 4 clean:
 no `$.isArray`, `$.trim` and the like). In-page unit tests cover the core (node shapes, list folding, URL building,
@@ -2364,3 +2376,11 @@ The background jobs for large operations: list and follow them, estimate whether
 
 Total: 350 content services in 15 domains (112 writes).
 <!-- expservices-content:end -->
+
+## Related pages
+
+- [Remote services (expservices) feature page](../../features/6.0/remote-services-expservices.md)
+- [Remote services and apps guide](../../guides/remote-services-and-apps.md)
+- [Content jobs](content-jobs.md)
+- [Audit](audit.md)
+- [YUI removal](yui-removal.md)
