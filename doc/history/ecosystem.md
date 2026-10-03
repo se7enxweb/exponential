@@ -1,6 +1,6 @@
 # The Exponential platform ecosystem
 
-Exponential 6 is the legacy kernel that this installation runs. Around it the se7enxweb team maintains a family of repositories that put the same product on the Symfony based platform (Exponential Platform 3.x, 4.6 and v5), keep the old Symfony / Twig / Doctrine stack running on PHP 8.4 and 8.5, and ship ready-made sites. This page maps them, says what each gives a user and links the history of every one.
+Exponential 6 is the legacy kernel that this installation runs. Around it the se7enxweb team maintains a family of repositories. They put the same product on the Symfony based platform (Exponential Platform 3.x, 4.6 and v5), keep the old Symfony / Twig / Doctrine stack running on PHP 8.4 and 8.5, and ship ready-made sites. This page maps them, says what each gives you and links the history of every one. Read it when you choose a platform package, or want to know which fork replaces which upstream package; if you only run Exponential 6, the [month chronicle](README.md) is the better start.
 
 The history covers 6556 ledger changes in 53 repositories since December 2023. 1037 of them were made by the se7enxweb team; the rest is upstream history that a fork carries along (for example the 1,192 upstream changes inside the admin UI fork). The complete line-by-line record is in the [ledgers](ledger/README.md).
 
@@ -130,13 +130,10 @@ The history covers 6556 ledger changes in 53 repositories since December 2023. 1
 - Merge commits, funding metadata and repository language settings are classified as having no user benefit; every such row names its reason in the coverage table.
 - Product names of upstream projects (Ibexa, Netgen, eZ Platform) appear only where a package or repository really has that name.
 
-<!-- rev2-see-also:start -->
-## See also
+## Related pages
 
 - [Complete ledgers](ledger/README.md)
 - [Platform package map](../specifications/6.0/platform-package-map.md) and [console commands](../specifications/6.0/platform-console-commands.md)
 - [Package forks and command renames](../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Admin interface](../features/6.0/platform-admin-ui-fork.md), [Nexus starter](../features/6.0/platform-nexus-starter.md), [layouts core](../features/6.0/platform-layouts-core-fork.md), [framework forks](../features/6.0/platform-php85-framework-forks.md), [site bundles](../features/6.0/platform-site-bundles.md)
-- [Release changelogs of the packages](../changelogs/extensions/)
-
-<!-- rev2-see-also:end -->
+- [Release changelogs of the packages](../changelogs/extensions/README.md)

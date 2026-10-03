@@ -1,6 +1,6 @@
-# Ecosystem repository: ezplatform-solr-search-engine
+# ezplatform-solr-search-engine: platform repository history
 
-**Group:** Search, cache and API. **Period in the ledger:** 2024-03-26 to 2026-04-12. **Changes:** 6 (3 made by the se7enxweb team, 3 upstream history carried by the fork).
+The history of `ezplatform-solr-search-engine`, one of the platform repositories around Exponential (group: Search, cache and API). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 6 changes from 2024-03-26 to 2026-04-12: 3 made by the se7enxweb team and 3 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,12 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezplatform-solr-search-engine
 ```
-
-## Where to read more
-
-- [Release changelog](../../changelogs/extensions/ezplatform-solr-search-engine.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -64,16 +58,11 @@ The fork contains the full upstream history. The table counts it by month and ki
 | 2024-05 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `2fb300d` Fixed distribution link in generate-solr-config.sh forcing redirection |
 | 2024-07 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `19ff229` IBX-8378: Fixed handling non-indexable field types |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-solr-search-engine](../ledger/ezplatform-solr-search-engine.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Release changelog](../../changelogs/extensions/ezplatform-solr-search-engine.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezplatform-solr-search-engine.md)
 - Platform ecosystem by month: [2024-03](months/2024-03.md), [2024-05](months/2024-05.md), [2024-07](months/2024-07.md), [2025-09](months/2025-09.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

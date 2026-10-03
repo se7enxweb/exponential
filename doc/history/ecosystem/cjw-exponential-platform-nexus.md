@@ -1,6 +1,6 @@
-# Ecosystem repository: cjw-exponential-platform-nexus
+# cjw-exponential-platform-nexus: platform repository history
 
-**Group:** Distributions and starters. **Period in the ledger:** 2026-02-07 to 2026-07-03. **Changes:** 89 (89 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `cjw-exponential-platform-nexus`, one of the platform repositories around Exponential (group: Distributions and starters). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 89 changes from 2026-02-07 to 2026-07-03, all made by the se7enxweb team.
 
 ## What it is
 
@@ -15,13 +15,6 @@ Same code base as Nexus; adds the exponential-cjw installer type with SQLite see
 Nexus with the CJW starter content.
 
 This repository is a Composer project (type `project`), the CJW flavour of Nexus. Install it as a project (clone or `composer create-project`), not with `composer require`; check its README for the exact steps.
-
-## Where to read more
-
-- [Nexus](../../features/6.0/platform-nexus-starter.md)
-- [Release changelog](../../changelogs/extensions/cjw-exponential-platform-nexus.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -164,18 +157,14 @@ This repository is a Composer project (type `project`), the CJW flavour of Nexus
 
 Also: 7 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of cjw-exponential-platform-nexus](../ledger/cjw-exponential-platform-nexus.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Nexus](../../features/6.0/platform-nexus-starter.md)
+- [Release changelog](../../changelogs/extensions/cjw-exponential-platform-nexus.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/cjw-exponential-platform-nexus.md)
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md), [2026-07](months/2026-07.md)
-
-<!-- rev2-see-also:end -->

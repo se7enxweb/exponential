@@ -1,6 +1,6 @@
-# Ecosystem repository: ezplatform-matrix-fieldtype
+# ezplatform-matrix-fieldtype: platform repository history
 
-**Group:** Field types. **Period in the ledger:** 2025-09-27 to 2026-04-12. **Changes:** 4 (4 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `ezplatform-matrix-fieldtype`, one of the platform repositories around Exponential (group: Field types). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 4 changes from 2025-09-27 to 2026-04-12, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,12 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezplatform-matrix-fieldtype
 ```
-
-## Where to read more
-
-- [Release changelog](../../changelogs/extensions/ezplatform-matrix-fieldtype.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -59,16 +53,11 @@ composer require se7enxweb/ezplatform-matrix-fieldtype
 
 - 2026-04-12 `be2bdb4` bc: add replace shim for ezsystems/* original package
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-matrix-fieldtype](../ledger/ezplatform-matrix-fieldtype.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Release changelog](../../changelogs/extensions/ezplatform-matrix-fieldtype.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezplatform-matrix-fieldtype.md)
 - Platform ecosystem by month: [2025-09](months/2025-09.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

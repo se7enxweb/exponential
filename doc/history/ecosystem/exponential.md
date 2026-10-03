@@ -1,6 +1,6 @@
-# Ecosystem repository: exponential
+# exponential: platform repository history
 
-**Group:** Kernel. **Period in the ledger:** 2023-12-11 to 2026-04-29. **Changes:** 423 (420 made by the se7enxweb team, 3 upstream history carried by the fork).
+The history of `exponential`, one of the platform repositories around Exponential (group: Kernel). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 423 changes from 2023-12-11 to 2026-04-29: 420 made by the se7enxweb team and 3 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,15 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/exponential
 ```
-
-## Where to read more
-
-- [Exponential 6 kernel features: SQLite](../../features/6.0/sqlite-database.md)
-- [Responsive admin](../../features/6.0/admin3-responsive-admin.md)
-- [PHP 8 support](../../bc/6.0/php8.md)
-- [Rebranding](../../features/6.0/rebranding-to-exponential.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -436,21 +427,19 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 | Month | Changes | Features | Fixes | BC | Security | Perf | Docs | Tooling | Release | No benefit | Busiest changes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2023-12 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `b2af30cd2` Bugfix: Incorrect date/time attributes after export within the ezpkg ( |
+| 2023-12 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `b2af30cd2` Bugfix: Incorrect date/time attributes after export within the ezpkg (e.g. contentobject.xml) |
 | 2024-12 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `f433a08cf` PHP 8.0: Preventing Fatal error in PHP 8 for ezmatrix datatype |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of exponential](../ledger/exponential.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Exponential 6 kernel features: SQLite](../../features/6.0/sqlite-database.md)
+- [Responsive admin](../../features/6.0/admin3-responsive-admin.md)
+- [PHP 8 support](../../bc/6.0/php8.md)
+- [Rebranding](../../features/6.0/rebranding-to-exponential.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/exponential.md)
 - [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-06](months/2024-06.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

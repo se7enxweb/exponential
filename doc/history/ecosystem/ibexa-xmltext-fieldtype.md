@@ -1,6 +1,6 @@
-# Ecosystem repository: ibexa-xmltext-fieldtype
+# ibexa-xmltext-fieldtype: platform repository history
 
-**Group:** Field types. **Period in the ledger:** 2026-03-02 to 2026-03-02. **Changes:** 1 (1 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `ibexa-xmltext-fieldtype`, one of the platform repositories around Exponential (group: Field types). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 1 change from 2026-03-02 to 2026-03-02, all made by the se7enxweb team.
 
 ## What it is
 
@@ -20,11 +20,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ibexa-xmltext-fieldtype
 ```
 
-## Where to read more
-
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
-
 ## Counts by kind
 
 | Kind | Changes |
@@ -33,16 +28,10 @@ composer require se7enxweb/ibexa-xmltext-fieldtype
 
 Also: 1 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ibexa-xmltext-fieldtype](../ledger/ibexa-xmltext-fieldtype.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ibexa-xmltext-fieldtype.md)
 - Platform ecosystem by month: [2026-03](months/2026-03.md)
-
-<!-- rev2-see-also:end -->

@@ -1,6 +1,6 @@
-# Ecosystem repository: DoctrineBundle
+# DoctrineBundle: platform repository history
 
-**Group:** Framework forks. **Period in the ledger:** 2026-01-30 to 2026-01-30. **Changes:** 2 (2 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `DoctrineBundle`, one of the platform repositories around Exponential (group: Framework forks). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 2 changes from 2026-01-30 to 2026-01-30, all made by the se7enxweb team.
 
 ## What it is
 
@@ -20,12 +20,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/doctrine-bundle
 ```
 
-## Where to read more
-
-- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
-
 ## Counts by kind
 
 | Kind | Changes |
@@ -43,17 +37,11 @@ composer require se7enxweb/doctrine-bundle
 
 - 2026-01-30 `28024767` tooling: Replace vendor package via composer.json
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of DoctrineBundle](../ledger/DoctrineBundle.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/DoctrineBundle.md)
-- [Framework forks on PHP 8.5](../../features/6.0/platform-php85-framework-forks.md)
 - Platform ecosystem by month: [2026-01](months/2026-01.md)
-
-<!-- rev2-see-also:end -->

@@ -1,6 +1,6 @@
-# Ecosystem repository: doctrine-dbal-schema
+# doctrine-dbal-schema: platform repository history
 
-**Group:** Framework forks. **Period in the ledger:** 2025-07-01 to 2026-04-12. **Changes:** 2 (2 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `doctrine-dbal-schema`, one of the platform repositories around Exponential (group: Framework forks). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 2 changes from 2025-07-01 to 2026-04-12, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/doctrine-dbal-schema
 ```
-
-## Where to read more
-
-- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [Release changelog](../../changelogs/extensions/doctrine-dbal-schema.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -51,17 +44,12 @@ composer require se7enxweb/doctrine-dbal-schema
 
 - 2026-04-12 `8c2a9dc` bc: add replace shim for ezsystems/* original package
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of doctrine-dbal-schema](../ledger/doctrine-dbal-schema.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [Release changelog](../../changelogs/extensions/doctrine-dbal-schema.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/doctrine-dbal-schema.md)
-- [Framework forks on PHP 8.5](../../features/6.0/platform-php85-framework-forks.md)
 - Platform ecosystem by month: [2025-07](months/2025-07.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

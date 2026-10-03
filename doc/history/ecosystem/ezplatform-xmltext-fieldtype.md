@@ -1,6 +1,6 @@
-# Ecosystem repository: ezplatform-xmltext-fieldtype
+# ezplatform-xmltext-fieldtype: platform repository history
 
-**Group:** Field types. **Period in the ledger:** 2026-03-25 to 2026-04-17. **Changes:** 7 (7 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `ezplatform-xmltext-fieldtype`, one of the platform repositories around Exponential (group: Field types). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 7 changes from 2026-03-25 to 2026-04-17, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,12 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezplatform-xmltext-fieldtype
 ```
-
-## Where to read more
-
-- [Release changelog](../../changelogs/extensions/ezplatform-xmltext-fieldtype.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -57,16 +51,11 @@ composer require se7enxweb/ezplatform-xmltext-fieldtype
 
 - 2026-03-25 `26123b1` bc: ezsystems/ -> se7enxweb/; expand PHP to ^8.5; add replace
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-xmltext-fieldtype](../ledger/ezplatform-xmltext-fieldtype.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Release changelog](../../changelogs/extensions/ezplatform-xmltext-fieldtype.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezplatform-xmltext-fieldtype.md)
 - Platform ecosystem by month: [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

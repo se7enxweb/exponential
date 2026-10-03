@@ -1,6 +1,6 @@
-# Ecosystem repository: oss
+# oss: platform repository history
 
-**Group:** Distributions and starters. **Period in the ledger:** 2023-12-21 to 2026-04-12. **Changes:** 10 (5 made by the se7enxweb team, 5 upstream history carried by the fork).
+The history of `oss`, one of the platform repositories around Exponential (group: Distributions and starters). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 10 changes from 2023-12-21 to 2026-04-12: 5 made by the se7enxweb team and 5 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/oss
 ```
-
-## Where to read more
-
-- [DXP skeleton and metapackage](../../features/6.0/platform-dxp-skeleton.md)
-- [Release changelog](../../changelogs/extensions/oss.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -67,23 +60,19 @@ The fork contains the full upstream history. The table counts it by month and ki
 | Month | Changes | Features | Fixes | BC | Security | Perf | Docs | Tooling | Release | No benefit | Busiest changes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 2023-12 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `5171945` [CI] IBX-4515: Include tests running on PHP 8.2 (#129) |
-| 2024-02 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `b9a09cc` [Composer] Added conflict with friends-of-behat/mink-browserkit-driver |
+| 2024-02 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `b9a09cc` [Composer] Added conflict with friends-of-behat/mink-browserkit-driver:v1.6.2 (#136) |
 | 2024-05 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `c01eb77` IBX-8154: Run tests on PHP 8.3 (3.3) (#150) |
 | 2024-11 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `106ab6c` Unpacked symfony/serializer-pack dependency declaration |
 | 2025-10 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `c4d2556` [CI] Add token selection for 3.3 (#241) |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of oss](../ledger/oss.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [DXP skeleton and metapackage](../../features/6.0/platform-dxp-skeleton.md)
+- [Release changelog](../../changelogs/extensions/oss.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/oss.md)
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-02](months/2024-02.md), [2024-05](months/2024-05.md), [2024-11](months/2024-11.md), [2025-10](months/2025-10.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

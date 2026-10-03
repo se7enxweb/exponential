@@ -1,6 +1,6 @@
-# Ecosystem repository: ezplatform-kernel
+# ezplatform-kernel: platform repository history
 
-**Group:** Kernel. **Period in the ledger:** 2023-12-22 to 2026-04-12. **Changes:** 38 (23 made by the se7enxweb team, 15 upstream history carried by the fork).
+The history of `ezplatform-kernel`, one of the platform repositories around Exponential (group: Kernel). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 38 changes from 2023-12-22 to 2026-04-12: 23 made by the se7enxweb team and 15 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,14 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezplatform-kernel
 ```
-
-## Where to read more
-
-- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
-- [Console command names](../../specifications/6.0/platform-console-commands.md)
-- [Release changelog](../../changelogs/extensions/ezplatform-kernel.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -102,29 +94,25 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 | Month | Changes | Features | Fixes | BC | Security | Perf | Docs | Tooling | Release | No benefit | Busiest changes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2023-12 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `29489e4fc` IBX-7346: Reindexed reverse-related content after deleting source cont; `4abba9267` IBX-6880: Skipped normalizing directories in the `normalizePath` metho |
-| 2024-01 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `6e5fa6ff0` IBX-7485: Skipped files with corrupted filenames when loading and dele |
-| 2024-02 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `aa31bb228` IBX-7172: Fixed Repository Filtering by multiple ObjectStateId criteri |
+| 2023-12 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `29489e4fc` IBX-7346: Reindexed reverse-related content after deleting source content (#396); `4abba9267` IBX-6880: Skipped normalizing directories in the `normalizePath` metho |
+| 2024-01 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `6e5fa6ff0` IBX-7485: Skipped files with corrupted filenames when loading and deleting content |
+| 2024-02 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `aa31bb228` IBX-7172: Fixed Repository Filtering by multiple ObjectStateId criteria |
 | 2024-03 | 2 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `8ef0e70c4` IBX-7809: Fixed creating `UserMetadata` criterion from `UserGroupLimit |
 | 2024-04 | 2 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `81464c68c` Fixed missing return types for DebugTemplate class; `245d02e15` IBX-6592: Removed unusable location/subtree limitations from `state/as |
-| 2024-05 | 2 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | `98b7b50e6` IBX-5388: Fixed performance issues of content updates after field chan; `b5fe9ad82` IBX-6494: Fixed copying of non-translatable fields to later versions |
+| 2024-05 | 2 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | `98b7b50e6` IBX-5388: Fixed performance issues of content updates after field changes; `b5fe9ad82` IBX-6494: Fixed copying of non-translatable fields to later versions |
 | 2024-06 | 2 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | `17e78be8a` IBX-6833: Fixed copying empty fields from a published version; `c88c39759` IBX-8019: Added performance consideration notice to `LocationService:: |
 | 2024-08 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `9a6241085` IBX-8562: Fixed flooding content attributes table with duplicates |
-| 2024-10 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `b19be8dbe` IBX-8562: Command to remove duplicated entries after faulty IBX-5388 f |
+| 2024-10 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `b19be8dbe` IBX-8562: Command to remove duplicated entries after faulty IBX-5388 fix |
 | 2025-02 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `553e0dd0c` IBX-9455: Upgraded Twig to ^3.19.0 (#411) |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-kernel](../ledger/ezplatform-kernel.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Console command names](../../specifications/6.0/platform-console-commands.md)
+- [Release changelog](../../changelogs/extensions/ezplatform-kernel.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezplatform-kernel.md)
 - [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
-- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-06](months/2024-06.md), [2024-08](months/2024-08.md), [2024-10](months/2024-10.md), [2025-02](months/2025-02.md), [2025-09](months/2025-09.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

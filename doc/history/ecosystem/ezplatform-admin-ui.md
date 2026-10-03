@@ -1,6 +1,6 @@
-# Ecosystem repository: ezplatform-admin-ui
+# ezplatform-admin-ui: platform repository history
 
-**Group:** Admin user interface. **Period in the ledger:** 2023-12-13 to 2026-04-12. **Changes:** 36 (23 made by the se7enxweb team, 13 upstream history carried by the fork).
+The history of `ezplatform-admin-ui`, one of the platform repositories around Exponential (group: Admin user interface). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 36 changes from 2023-12-13 to 2026-04-12: 23 made by the se7enxweb team and 13 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezplatform-admin-ui
 ```
-
-## Where to read more
-
-- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
-- [Release changelog](../../changelogs/extensions/ezplatform-admin-ui.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -94,25 +87,20 @@ The fork contains the full upstream history. The table counts it by month and ki
 | Month | Changes | Features | Fixes | BC | Security | Perf | Docs | Tooling | Release | No benefit | Busiest changes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 2023-12 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `f8d30285` IBX-1464: Added `versionNo` param in the `ezimage` edit form template  |
-| 2024-01 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `b0db6f5e` IBX-7046: Fixed Dashboard "My Content" & "My Media" edit buttons (#211 |
+| 2024-01 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `b0db6f5e` IBX-7046: Fixed Dashboard "My Content" & "My Media" edit buttons (#2114) |
 | 2024-03 | 2 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `2ffae963` IBX-7954: Show error message on empty image asset (#2116); `80eeb142` IBX-6540: Added Depth sort to breadcrumbs (#2115) |
 | 2024-04 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `ef361314` IBX-7983: Handled previewing `ezimage` field with height of 0 (#2117) |
 | 2024-06 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `f1a75400` IBX-8019: Replaced `LocationService::loadLocationChildren` use with `S |
-| 2024-07 | 3 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `7d1971ca` IBX-8079: Inconsistent redirect point after role assignment action (#2; `81d22311` IBX-8350: Text line fields which is not marked as required, but has a  |
+| 2024-07 | 3 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `7d1971ca` IBX-8079: Inconsistent redirect point after role assignment action (#2118); `81d22311` IBX-8350: Text line fields which is not marked as required, but has a minimum length constraint set, is basically treated as required (#2122) |
 | 2025-06 | 2 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | `acaa620d` IBX-9793: Fixed XSS issues in several places; `71819dd2` [Tests] Fixed failing CI |
 | 2025-10 | 2 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | `da3bfbfb` [Security] IBX-10200: Fix XSS in reschedule/cancel-schedule modal; `ad89d174` [GHA][Browser tests] Added secrets for browser tests configuration |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-admin-ui](../ledger/ezplatform-admin-ui.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- [Release changelog](../../changelogs/extensions/ezplatform-admin-ui.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezplatform-admin-ui.md)
-- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
 - Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-06](months/2024-06.md), [2024-07](months/2024-07.md), [2025-06](months/2025-06.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

@@ -1,6 +1,6 @@
-# Ecosystem repository: symfony
+# symfony: platform repository history
 
-**Group:** Framework forks. **Period in the ledger:** 2025-08-24 to 2026-04-09. **Changes:** 18 (18 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `symfony`, one of the platform repositories around Exponential (group: Framework forks). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 18 changes from 2025-08-24 to 2026-04-09, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/symfony
 ```
-
-## Where to read more
-
-- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [Release changelog](../../changelogs/extensions/symfony.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -49,7 +42,7 @@ composer require se7enxweb/symfony
 
 - 2025-08-24 `9dcfb7a69` fix: Update ErrorHandler.php adding tested php 8.2 support with hopes it will test working for php 8.4+. New PHP 8 Support.
 - 2025-08-24 `df6faf1aa` fix: Update ExceptionCaster.php to include bugfix for php8.4 support as tested with ezplatform 2.5 gpl and confirmed working. New PHP 8.4 Support.
-- 2025-08-24 `118d7f4b0` fix: Update LazyLoadingValueHolderGenerator.php to include php 8.2+ tested as working changes to reflect Zend to Laminas Library Transition. New PHP 8 Supp
+- 2025-08-24 `118d7f4b0` fix: Update LazyLoadingValueHolderGenerator.php to include php 8.2+ tested as working changes to reflect Zend to Laminas Library Transition. New PHP 8 Support
 - 2026-01-28 `f2852d452` fix: PHP 8.x: Add return types to VarDumper Data class
 - 2026-01-28 `e39f6b0c1` fix: PHP 8.x closure to method reference in WebProfilerExtension
 - 2026-01-29 `fd017e42a` fix: Add explicit nullable types and fix ReflectionProperty deprecation in ErrorHandler.php for PHP 8.1+
@@ -78,17 +71,12 @@ composer require se7enxweb/symfony
 
 Also: 2 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of symfony](../ledger/symfony.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [Release changelog](../../changelogs/extensions/symfony.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/symfony.md)
-- [Framework forks on PHP 8.5](../../features/6.0/platform-php85-framework-forks.md)
 - Platform ecosystem by month: [2025-08](months/2025-08.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

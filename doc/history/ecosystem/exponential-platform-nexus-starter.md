@@ -1,6 +1,6 @@
-# Ecosystem repository: exponential-platform-nexus-starter
+# exponential-platform-nexus-starter: platform repository history
 
-**Group:** Distributions and starters. **Period in the ledger:** 2023-12-13 to 2026-04-26. **Changes:** 248 (16 made by the se7enxweb team, 232 upstream history carried by the fork).
+The history of `exponential-platform-nexus-starter`, one of the platform repositories around Exponential (group: Distributions and starters). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 248 changes from 2023-12-13 to 2026-04-26: 16 made by the se7enxweb team and 232 from the upstream history the fork carries.
 
 ## What it is
 
@@ -30,14 +30,6 @@ php bin/console ibexa:graphql:generate-schema
 
 These commands belong to a Symfony project, not to this installation; run them in the cloned starter. To check them, read the Quick Start section of the starter README.
 
-## Where to read more
-
-- [Nexus starter](../../features/6.0/platform-nexus-starter.md)
-- [Release changelog](../../changelogs/extensions/exponential-platform-nexus-starter.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
-
-<!-- rev2-listed-rows:start -->
 ## Security, performance and upgrade changes in the history
 
 These changes are classified in the coverage record and are not named elsewhere on this page. Most are upstream history that the fork carries; the date and the commit subject are the ledger entry (see the [full ledger](../ledger/README.md)). Read the subject for what changed; for the exact effect, open the commit in the repository.
@@ -118,36 +110,32 @@ The fork contains the full upstream history. The table counts it by month and ki
 | 2024-04 | 12 | 6 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 4 | `5ba65e2ff` Add toolbar macro to block item view type templates; `4d9f9bdf2` Add Netgen Toolbar |
 | 2023-08 | 9 | 8 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `aab255e60` NGSTACK-752 Initial icon additions and structure example; `319ef10e0` NGSTACK-752 - Update templates and styles |
 | 2024-05 | 11 | 4 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 3 | `e455a23b0` NGSTACK-835: replace Better Admin UI with Admin UI Extra; `b13e4c724` NGSTACK-885 add host to git tag during deployment |
-| 2024-07 | 6 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | `c0852dfb2` Add Ibexa Scheduled Visibility bundle; `f3922cc18` Add ibexa/core 4.6.7+ to conflicts due to issues with duplicate fields |
+| 2024-07 | 6 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | `c0852dfb2` Add Ibexa Scheduled Visibility bundle; `f3922cc18` Add ibexa/core 4.6.7+ to conflicts due to issues with duplicate fields in the database |
 | 2024-09 | 5 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 2 | `5e205684a` Add missing type config for Nova SEO; `41768aba6` Conflict with ibexa/core < 4.6.10 |
 | 2024-10 | 4 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 2 | `136abf402` Bump ibexa/oss to 4.6.12; `b310c512b` Fix namespace for smoke tests |
-| 2024-11 | 5 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 2 | `54fb89fa9` NGSTACK-924 raise php version to 8.2; `7ea1e2601` NGSTACK-925 Downgrade phpdoc-parser version beacuse of serializer depe |
+| 2024-11 | 5 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 2 | `54fb89fa9` NGSTACK-924 raise php version to 8.2; `7ea1e2601` NGSTACK-925 Downgrade phpdoc-parser version beacuse of serializer dependency |
 | 2024-12 | 59 | 42 | 3 | 0 | 0 | 0 | 9 | 3 | 0 | 2 | `fc24d0b6d` NGSTACK-953 replace headings in bivt tamplates and components; `e185db0d7` NGSTACK-941 removed fieldset and add form-wrapper |
 | 2025-02 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `f50511332` Update code to latest ibexa/oss |
 | 2025-03 | 6 | 2 | 2 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | `4173341ef` NGSTACK-963 required field mark; `1511afcec` NGSTACK-963 translation |
-| 2025-04 | 19 | 14 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | `4835c0d53` NGSTACK-929 remove redundant alt texts on images on components and biv; `52b8b9a2f` NGSTACK-929 remove skip to cookie banner, make cookie banner focusable |
+| 2025-04 | 19 | 14 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | `4835c0d53` NGSTACK-929 remove redundant alt texts on images on components and bivts, display only explicit alternative text if set; `52b8b9a2f` NGSTACK-929 remove skip to cookie banner, make cookie banner focusable on load, create focus trap on cookie banner |
 | 2025-01 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `b139cf911` NGSTACK-962 accessibile accordions |
 | 2025-05 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `c1308c2b3` Update CS fixer rules |
 | 2025-06 | 5 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | `bf4be771b` Sync Flex recipes; `d5085f163` Configure dynamic showcase generation command |
-| 2025-07 | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `7229207be` Add Deployer task for dumping a database; `2f6974a62` Make sure fh_group and bold_group siteaccess groups have priority over |
+| 2025-07 | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `7229207be` Add Deployer task for dumping a database; `2f6974a62` Make sure fh_group and bold_group siteaccess groups have priority over frontend_group |
 | 2025-08 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `1c3d30531` Use Symfony's own Dotenv component |
-| 2025-11 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | `94a83b9d0` NGSTACK-1014 Set up global stylesheet, refactor typography and header ; `0100ced58` NGSTACK-1013 Add collapse nav breakpoint variable |
+| 2025-11 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | `94a83b9d0` NGSTACK-1014 Set up global stylesheet, refactor typography and header styles; `0100ced58` NGSTACK-1013 Add collapse nav breakpoint variable |
 | 2025-12 | 6 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | `0cd40ea29` Upgrade project to Ibexa 5; `876f1866c` Upgrade Netgen Layouts and other packages to Symfony 7.3 and PHP 8.4 |
 | 2026-01 | 6 | 1 | 1 | 0 | 0 | 0 | 0 | 2 | 0 | 2 | `37164d8a7` Fix frontend build warnings; `113719ee4` NGSTACK-1009 Fix page jumping when sticky header is applied |
 | 2026-02 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 0 | `abcd5838e` [TEMP]: Remove usage of Novactive SEO Bundle until it supports Ibexa 5; `3f7f5afb4` Update PHPUnit to v13 |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-nexus-starter](../ledger/exponential-platform-nexus-starter.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Nexus starter](../../features/6.0/platform-nexus-starter.md)
+- [Release changelog](../../changelogs/extensions/exponential-platform-nexus-starter.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/exponential-platform-nexus-starter.md)
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2023-08](months/2023-08.md), [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-07](months/2024-07.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

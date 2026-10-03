@@ -1,6 +1,6 @@
-# Ecosystem repository: mediata-ezpage-fieldtype-bundle-main
+# mediata-ezpage-fieldtype-bundle-main: platform repository history
 
-**Group:** Field types. **Period in the ledger:** 2026-03-16 to 2026-03-26. **Changes:** 7 (7 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `mediata-ezpage-fieldtype-bundle-main`, one of the platform repositories around Exponential (group: Field types). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 7 changes from 2026-03-16 to 2026-03-26, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/mediata-ezpage-fieldtype-bundle
 ```
-
-## Where to read more
-
-- [Site bundles](../../features/6.0/platform-site-bundles.md)
-- [Release changelog](../../changelogs/extensions/mediata-ezpage-fieldtype-bundle-main.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -75,16 +68,12 @@ composer require se7enxweb/mediata-ezpage-fieldtype-bundle
 
 Also: 1 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of mediata-ezpage-fieldtype-bundle-main](../ledger/mediata-ezpage-fieldtype-bundle-main.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Site bundles](../../features/6.0/platform-site-bundles.md)
+- [Release changelog](../../changelogs/extensions/mediata-ezpage-fieldtype-bundle-main.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/mediata-ezpage-fieldtype-bundle-main.md)
 - Platform ecosystem by month: [2026-03](months/2026-03.md)
-
-<!-- rev2-see-also:end -->

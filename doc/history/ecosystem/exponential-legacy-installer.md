@@ -1,6 +1,6 @@
-# Ecosystem repository: exponential-legacy-installer
+# exponential-legacy-installer: platform repository history
 
-**Group:** Distributions and starters. **Period in the ledger:** 2025-08-25 to 2026-06-19. **Changes:** 4 (4 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `exponential-legacy-installer`, one of the platform repositories around Exponential (group: Distributions and starters). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 4 changes from 2025-08-25 to 2026-06-19, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/exponential-legacy-installer
 ```
-
-## Where to read more
-
-- [Legacy bridge](../../features/6.0/legacy-bridge.md)
-- [Release changelog](../../changelogs/extensions/exponential-legacy-installer.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -56,18 +49,14 @@ composer require se7enxweb/exponential-legacy-installer
 
 Also: 1 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of exponential-legacy-installer](../ledger/exponential-legacy-installer.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Legacy bridge](../../features/6.0/legacy-bridge.md)
+- [Release changelog](../../changelogs/extensions/exponential-legacy-installer.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/exponential-legacy-installer.md)
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2025-08](months/2025-08.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md), [2026-06](months/2026-06.md)
-
-<!-- rev2-see-also:end -->

@@ -1,6 +1,6 @@
-# Ecosystem repository: ezpublish-kernel
+# ezpublish-kernel: platform repository history
 
-**Group:** Kernel. **Period in the ledger:** 2023-12-22 to 2026-04-10. **Changes:** 31 (30 made by the se7enxweb team, 1 upstream history carried by the fork).
+The history of `ezpublish-kernel`, one of the platform repositories around Exponential (group: Kernel). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 31 changes from 2023-12-22 to 2026-04-10: 30 made by the se7enxweb team and 1 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,14 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezpublish-kernel
 ```
-
-## Where to read more
-
-- [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
-- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [Release changelog](../../changelogs/extensions/ezpublish-kernel.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -119,18 +111,14 @@ The fork contains the full upstream history. The table counts it by month and ki
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 2023-12 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `4e93c5beb` IBX-7021: Fixed fatal error in DownloadController |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezpublish-kernel](../ledger/ezpublish-kernel.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
+- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [Release changelog](../../changelogs/extensions/ezpublish-kernel.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezpublish-kernel.md)
-- [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2023-12](months/2023-12.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

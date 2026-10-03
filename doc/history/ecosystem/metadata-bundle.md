@@ -1,6 +1,6 @@
-# Ecosystem repository: metadata-bundle
+# metadata-bundle: platform repository history
 
-**Group:** Field types. **Period in the ledger:** 2026-03-02 to 2026-04-12. **Changes:** 4 (4 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `metadata-bundle`, one of the platform repositories around Exponential (group: Field types). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 4 changes from 2026-03-02 to 2026-04-12, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,14 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/metadata-bundle
 ```
-
-## Where to read more
-
-- [Site bundles](../../features/6.0/platform-site-bundles.md)
-- [xrowmetadata extension](../../features/6.0/extensions/xrowmetadata.md)
-- [Release changelog](../../changelogs/extensions/metadata-bundle.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -60,16 +52,13 @@ composer require se7enxweb/metadata-bundle
 
 Also: 1 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of metadata-bundle](../ledger/metadata-bundle.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Site bundles](../../features/6.0/platform-site-bundles.md)
+- [xrowmetadata extension](../../features/6.0/extensions/xrowmetadata.md)
+- [Release changelog](../../changelogs/extensions/metadata-bundle.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/metadata-bundle.md)
 - Platform ecosystem by month: [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

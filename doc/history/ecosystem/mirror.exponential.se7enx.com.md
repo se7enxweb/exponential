@@ -1,6 +1,6 @@
-# Ecosystem repository: mirror.exponential.se7enx.com
+# mirror.exponential.se7enx.com: platform repository history
 
-**Group:** Distributions and starters. **Period in the ledger:** 2025-07-28 to 2026-04-18. **Changes:** 5 (5 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `mirror.exponential.se7enx.com`, one of the platform repositories around Exponential (group: Distributions and starters). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 5 changes from 2025-07-28 to 2026-04-18, all made by the se7enxweb team.
 
 ## What it is
 
@@ -13,11 +13,6 @@ Points readers to the mirrored books and downloads.
 ## What a user gets
 
 Where to download the books.
-
-## Where to read more
-
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -41,18 +36,12 @@ Where to download the books.
 
 Also: 1 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of mirror.exponential.se7enx.com](../ledger/mirror.exponential.se7enx.com.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/mirror.exponential.se7enx.com.md)
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

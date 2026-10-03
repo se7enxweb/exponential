@@ -1,6 +1,6 @@
-# Ecosystem repository: exponential-platform-legacy
+# exponential-platform-legacy: platform repository history
 
-**Group:** Distributions and starters. **Period in the ledger:** 2025-07-01 to 2026-07-08. **Changes:** 46 (46 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `exponential-platform-legacy`, one of the platform repositories around Exponential (group: Distributions and starters). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 46 changes from 2025-07-01 to 2026-07-08, all made by the se7enxweb team.
 
 ## What it is
 
@@ -22,14 +22,6 @@ cd exponential_website
 ```
 
 Check the repository README for the database step that follows (`.env.local`, then `php bin/console exponential:install` or the documented import).
-
-## Where to read more
-
-- [Legacy bridge](../../features/6.0/legacy-bridge.md)
-- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
-- [Release changelog](../../changelogs/extensions/exponential-platform-legacy.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -132,18 +124,14 @@ Check the repository README for the database step that follows (`.env.local`, th
 
 Also: 5 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-legacy](../ledger/exponential-platform-legacy.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Legacy bridge](../../features/6.0/legacy-bridge.md)
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Release changelog](../../changelogs/extensions/exponential-platform-legacy.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/exponential-platform-legacy.md)
-- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md), [2026-07](months/2026-07.md)
-
-<!-- rev2-see-also:end -->

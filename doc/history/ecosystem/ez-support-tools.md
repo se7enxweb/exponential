@@ -1,6 +1,6 @@
-# Ecosystem repository: ez-support-tools
+# ez-support-tools: platform repository history
 
-**Group:** Search, cache and API. **Period in the ledger:** 2024-02-16 to 2026-04-11. **Changes:** 7 (5 made by the se7enxweb team, 2 upstream history carried by the fork).
+The history of `ez-support-tools`, one of the platform repositories around Exponential (group: Search, cache and API). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 7 changes from 2024-02-16 to 2026-04-11: 5 made by the se7enxweb team and 2 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,14 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ez-support-tools
 ```
-
-## Where to read more
-
-- [Site bundles](../../features/6.0/platform-site-bundles.md)
-- [Extension page](../../features/6.0/extensions/ez-support-tools.md)
-- [Release changelog](../../changelogs/extensions/ez-support-tools.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -76,16 +68,13 @@ The fork contains the full upstream history. The table counts it by month and ki
 | 2024-02 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `ef74a0d` Fixed Composer license info and bumped license & copyright year (#120) |
 | 2024-03 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `954fd28` Updated EOM and EOL hardcoded dates |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ez-support-tools](../ledger/ez-support-tools.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Site bundles](../../features/6.0/platform-site-bundles.md)
+- [Extension page](../../features/6.0/extensions/ez-support-tools.md)
+- [Release changelog](../../changelogs/extensions/ez-support-tools.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ez-support-tools.md)
 - Platform ecosystem by month: [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2025-07](months/2025-07.md), [2025-09](months/2025-09.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

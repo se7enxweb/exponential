@@ -1,6 +1,6 @@
-# Ecosystem repository: ezplatform-http-cache
+# ezplatform-http-cache: platform repository history
 
-**Group:** Search, cache and API. **Period in the ledger:** 2024-11-28 to 2026-04-12. **Changes:** 7 (6 made by the se7enxweb team, 1 upstream history carried by the fork).
+The history of `ezplatform-http-cache`, one of the platform repositories around Exponential (group: Search, cache and API). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 7 changes from 2024-11-28 to 2026-04-12: 6 made by the se7enxweb team and 1 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,12 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezplatform-http-cache
 ```
-
-## Where to read more
-
-- [Release changelog](../../changelogs/extensions/ezplatform-http-cache.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -68,16 +62,11 @@ The fork contains the full upstream history. The table counts it by month and ki
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 2024-11 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |  |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-http-cache](../ledger/ezplatform-http-cache.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Release changelog](../../changelogs/extensions/ezplatform-http-cache.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezplatform-http-cache.md)
 - Platform ecosystem by month: [2024-11](months/2024-11.md), [2025-09](months/2025-09.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

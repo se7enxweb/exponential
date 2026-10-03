@@ -1,6 +1,6 @@
-# Ecosystem repository: admin-ui-assets
+# admin-ui-assets: platform repository history
 
-**Group:** Admin user interface. **Period in the ledger:** 2024-01-23 to 2026-04-04. **Changes:** 44 (3 made by the se7enxweb team, 41 upstream history carried by the fork).
+The history of `admin-ui-assets`, one of the platform repositories around Exponential (group: Admin user interface). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 44 changes from 2024-01-23 to 2026-04-04: 3 made by the se7enxweb team and 41 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,12 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/admin-ui-assets
 ```
-
-## Where to read more
-
-- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -55,7 +49,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 | 2024-03 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `397e64ed` Set up branch to become 5.0 in the future |
 | 2024-04 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `ce8b3a13` IBX-8119: Upgraded minimum PHP version to 8.3 |
 | 2024-05 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `6e3dfb4e` Updated copyright year to 2024 |
-| 2024-06 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | `6fd31b17` IBX-8139: Dropped class_alias BC layer statements from all classes (#2 |
+| 2024-06 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | `6fd31b17` IBX-8139: Dropped class_alias BC layer statements from all classes (#23) |
 | 2025-01 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `f39e3f2b` Updated copyright year to 2025 |
 | 2025-02 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `f1141eb4` IBX-8470: Upgraded codebase to Symfony 6 (#24) |
 | 2025-05 | 6 | 2 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 1 | `585f4712` IBX-9939: Design System aliases (#30); `5faaa4e5` IBX-9916: Upgrade frontend dependencies (#29) |
@@ -64,21 +58,15 @@ The fork contains the full upstream history. The table counts it by month and ki
 | 2025-08 | 4 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 2 | `b90a4acc` IBX-10352: Escape output printed in GitHub Actions; `37028185` IBX-10552: [CKEditor] Packages version bump (#39) |
 | 2025-09 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `0b673819` Fixed conflicts after merge (#40) |
 | 2025-10 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `9c0c11cf` IBX-10792: Prepare scripts for dev version of admin-ui-assets (#43); `111e7ac6` IBX-10749: Add ids-core to assets (#41) |
-| 2025-11 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `ef9c1114` Update prepare next script to update branch instead of overwriting (#4 |
+| 2025-11 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `ef9c1114` Update prepare next script to update branch instead of overwriting (#44) |
 | 2025-12 | 4 | 1 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 1 | `d95d707b` Update ibexa Design System version to ^v1.0.0 (#45); `005ced50` [Composer] Fixed license information |
 | 2026-04 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `070c589c` Added empty workflow to trigger on DS update (#46) |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of admin-ui-assets](../ledger/admin-ui-assets.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/admin-ui-assets.md)
-- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
 - Platform ecosystem by month: [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-06](months/2024-06.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

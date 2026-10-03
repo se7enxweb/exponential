@@ -1,6 +1,6 @@
-# Ecosystem repository: exponential-platform-dxp
+# exponential-platform-dxp: platform repository history
 
-**Group:** Distributions and starters. **Period in the ledger:** 2023-12-21 to 2026-04-19. **Changes:** 112 (20 made by the se7enxweb team, 92 upstream history carried by the fork).
+The history of `exponential-platform-dxp`, one of the platform repositories around Exponential (group: Distributions and starters). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 112 changes from 2023-12-21 to 2026-04-19: 20 made by the se7enxweb team and 92 from the upstream history the fork carries.
 
 ## What it is
 
@@ -21,13 +21,6 @@ composer create-project se7enxweb/exponential-platform-dxp-skeleton exponential_
 ```
 
 An existing project can add it with `composer require se7enxweb/exponential-platform-dxp`.
-
-## Where to read more
-
-- [DXP skeleton and metapackage](../../features/6.0/platform-dxp-skeleton.md)
-- [Release changelog](../../changelogs/extensions/exponential-platform-dxp.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -83,20 +76,20 @@ The fork contains the full upstream history. The table counts it by month and ki
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 2023-12 | 4 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | `5171945` [CI] IBX-4515: Include tests running on PHP 8.2 (#129); `ec69a98` [CI] IBX-4515: Fix typo in PHP 8.2 job name |
 | 2024-01 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | `9413966` [CI] Fixed duplicated php-image declaration |
-| 2024-02 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 2 | `b9a09cc` [Composer] Added conflict with friends-of-behat/mink-browserkit-driver |
+| 2024-02 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 2 | `b9a09cc` [Composer] Added conflict with friends-of-behat/mink-browserkit-driver:v1.6.2 (#136) |
 | 2024-03 | 7 | 1 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 2 | `bd0a88a` [CI] IBX-6507: Add setup running on Solr (#117); `da4ec55` Set up branch to become 5.0 in the future |
 | 2024-04 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `c40b4dd` Updated PHP version to 8.3, upgraded actions/checkout version; `7c5087c` IBX-8154: Use default image for 5.0 |
 | 2024-05 | 6 | 2 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 3 | `8605b34` Updated copyright year to 2024; `9b6a9fa` Update README.md (#144) |
 | 2024-06 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `d6a2d57` IBX-8135: Removed hautelook/templated-uri-bundle fork (#151); `29ed284` [CI] Removed 4.5 from job triggering nightly (#158) |
-| 2024-07 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `61451f2` IBX-8136: Replace or drop php-http/message-factory & php-http/guzzle6- |
+| 2024-07 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `61451f2` IBX-8136: Replace or drop php-http/message-factory & php-http/guzzle6-adapter dependencies (#161) |
 | 2024-08 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `87f0327` IBX-8137: Dropped Swiftmailer bundle (#179) |
 | 2024-10 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `0d55272` Added ibexa/core-search (#181) |
 | 2024-11 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 2 | `fa2bfcb` Unpacked symfony/serializer-pack dependency declaration (#187); `9e91740` [composer] Removed dependency on symfony/orm-pack (#188) |
 | 2025-01 | 7 | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 3 | `1804822` Updated copyright year to 2025; `05c62ae` Updated copyright year to 2025 |
 | 2025-02 | 3 | 2 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `0c4d6e7` IBX-8470: Upgraded codebase to Symfony 6 (#193); `f20502b` Changed ibexa/admin-ui-assets version back to ~5.0.0 (#197) |
-| 2025-03 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `d0780fb` [Behat] Nightly browser tests job removal for example-in-memory-produc |
-| 2025-04 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 1 | `93a86bf` IBX-9697: [Composer] Added ibexa/twig-componenets (#211); `91b6488` Reverted "IBX-9697: [Composer] Added ibexa/twig-componenets (#211)" (# |
-| 2025-05 | 11 | 2 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 4 | `cbfe72d` IBX-8543: Included newer DBMS versions on CI & reorganized setup (#195; `6cf1e17` IBX-8471: Upgraded codebase to Symfony 7 (#205) |
+| 2025-03 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `d0780fb` [Behat] Nightly browser tests job removal for example-in-memory-product-catalog (4.6) (#206) |
+| 2025-04 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 1 | `93a86bf` IBX-9697: [Composer] Added ibexa/twig-componenets (#211); `91b6488` Reverted "IBX-9697: [Composer] Added ibexa/twig-componenets (#211)" (#213) |
+| 2025-05 | 11 | 2 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 4 | `cbfe72d` IBX-8543: Included newer DBMS versions on CI & reorganized setup (#195); `6cf1e17` IBX-8471: Upgraded codebase to Symfony 7 (#205) |
 | 2025-07 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `6ad93c4` IBX-10228: Bumped symfony/* to ^7.3 (#226); `e017f52` [GHA] Created Post Release workflow (#230) |
 | 2025-08 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 3 | `fabc501` [GHA][PostRelease] Fixed typos in reusable workflow path; `0d834d7` Solr 8 CI upgrade (#232) |
 | 2025-09 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 1 | `4fdbd53` IBX-10493: Included Redis 7.2 on CI (#234); `e27b61c` Fix Nightly workflow authentication (#240) |
@@ -107,18 +100,14 @@ The fork contains the full upstream history. The table counts it by month and ki
 | 2026-02 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | `2ccd825` IBX-10495: Remove unused `ibexa/ci-scripts` dependency (#256) |
 | 2026-03 | 4 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `c85d992` IBX-11328: Included PHP 8.4 in browser tests (#260); `16401f0` [Merge-up] IBX-11328: Included PHP 8.4 in browser tests (#265) |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-dxp](../ledger/exponential-platform-dxp.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [DXP skeleton and metapackage](../../features/6.0/platform-dxp-skeleton.md)
+- [Release changelog](../../changelogs/extensions/exponential-platform-dxp.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/exponential-platform-dxp.md)
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-02](months/2024-02.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-05](months/2024-05.md), [2024-06](months/2024-06.md), [2024-07](months/2024-07.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

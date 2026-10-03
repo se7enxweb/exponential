@@ -1,6 +1,6 @@
-# Ecosystem repository: ezplatform-graphql
+# ezplatform-graphql: platform repository history
 
-**Group:** Search, cache and API. **Period in the ledger:** 2025-09-28 to 2026-04-12. **Changes:** 4 (4 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `ezplatform-graphql`, one of the platform repositories around Exponential (group: Search, cache and API). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 4 changes from 2025-09-28 to 2026-04-12, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,12 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezplatform-graphql
 ```
-
-## Where to read more
-
-- [Release changelog](../../changelogs/extensions/ezplatform-graphql.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -51,16 +45,11 @@ composer require se7enxweb/ezplatform-graphql
 
 - 2026-04-12 `86aad7d` bc: add replace shim for ezsystems/ezplatform-graphql
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-graphql](../ledger/ezplatform-graphql.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Release changelog](../../changelogs/extensions/ezplatform-graphql.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezplatform-graphql.md)
 - Platform ecosystem by month: [2025-09](months/2025-09.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

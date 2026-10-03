@@ -1,6 +1,6 @@
-# Ecosystem repository: legacyBridge
+# legacyBridge: platform repository history
 
-**Group:** Legacy bridge and site bundles. **Period in the ledger:** 2025-07-01 to 2026-04-17. **Changes:** 49 (49 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `legacyBridge`, one of the platform repositories around Exponential (group: Legacy bridge and site bundles). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 49 changes from 2025-07-01 to 2026-04-17, all made by the se7enxweb team.
 
 ## What it is
 
@@ -34,15 +34,6 @@ Verified in `bundle/Command/*.php` of the repository (the `setName` and `setDesc
 | `exponential:legacy:script` | Runs a legacy command line script inside the bridge. | `ezpublish:legacy:script` |
 
 Not run here: these commands need a Symfony project with the bridge installed, which this installation is not. To check, open the command classes named above.
-
-## Where to read more
-
-- [Legacy bridge](../../features/6.0/legacy-bridge.md)
-- [Legacy bridge specification](../../specifications/6.0/legacy-bridge-bundle.md)
-- [Console command names](../../specifications/6.0/platform-console-commands.md)
-- [Release changelog](../../changelogs/extensions/legacyBridge.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -149,7 +140,7 @@ Not run here: these commands need a Symfony project with the bridge installed, w
 
 ### PHP 8.x compatibility (4)
 
-- 2025-08-24 `7d0dcae` fix: Update LegacyWrapperInstallCommand.php to include working change to run ezplatform-legacy with this bundle. This change fixed transparently but not co
+- 2025-08-24 `7d0dcae` fix: Update LegacyWrapperInstallCommand.php to include working change to run ezplatform-legacy with this bundle. This change fixed transparently but not correctly a path bug (...)
 - 2026-03-25 `54aca93` fix: create 3.x branch for eZ Platform 3.3 / Symfony 5.4 / PHP 8.x
 - 2026-03-26 `4b484e5` fix: Fix LegacyConfigResolver: add type declarations for PHP 8.x ConfigResolverInterface compat
 - 2026-04-05 `6ca1508` fix: PHP 8 compat - add int return type and return 0 to Command execute() methods
@@ -183,18 +174,15 @@ Not run here: these commands need a Symfony project with the bridge installed, w
 
 - 2026-04-07 `8cea9e8` bc: rename legacy commands to exponential:legacy:* prefix, keep ezpublish:* as deprecated aliases (v4/4.x)
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of legacyBridge](../ledger/legacyBridge.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Legacy bridge](../../features/6.0/legacy-bridge.md)
+- [Legacy bridge specification](../../specifications/6.0/legacy-bridge-bundle.md)
+- [Console command names](../../specifications/6.0/platform-console-commands.md)
+- [Release changelog](../../changelogs/extensions/legacyBridge.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/legacyBridge.md)
-- [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - [Site bundles](../../features/6.0/platform-site-bundles.md)
 - Platform ecosystem by month: [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

@@ -1,6 +1,6 @@
-# Ecosystem repository: site-legacy-bundle
+# site-legacy-bundle: platform repository history
 
-**Group:** Legacy bridge and site bundles. **Period in the ledger:** 2026-03-16 to 2026-04-17. **Changes:** 10 (10 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `site-legacy-bundle`, one of the platform repositories around Exponential (group: Legacy bridge and site bundles). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 10 changes from 2026-03-16 to 2026-04-17, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/site-legacy-bundle
 ```
-
-## Where to read more
-
-- [Site bundles](../../features/6.0/platform-site-bundles.md)
-- [Release changelog](../../changelogs/extensions/site-legacy-bundle.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -75,18 +68,13 @@ composer require se7enxweb/site-legacy-bundle
 
 - 2026-04-17 `f2deb2e` feature: rebrand: update admin copyright templates to Exponential / 7x branding
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of site-legacy-bundle](../ledger/site-legacy-bundle.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Site bundles](../../features/6.0/platform-site-bundles.md)
+- [Release changelog](../../changelogs/extensions/site-legacy-bundle.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/site-legacy-bundle.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
-- [Site bundles](../../features/6.0/platform-site-bundles.md)
 - Platform ecosystem by month: [2026-03](months/2026-03.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

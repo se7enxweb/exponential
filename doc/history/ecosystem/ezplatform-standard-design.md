@@ -1,6 +1,6 @@
-# Ecosystem repository: ezplatform-standard-design
+# ezplatform-standard-design: platform repository history
 
-**Group:** Admin user interface. **Period in the ledger:** 2025-07-01 to 2026-04-12. **Changes:** 4 (4 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `ezplatform-standard-design`, one of the platform repositories around Exponential (group: Admin user interface). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 4 changes from 2025-07-01 to 2026-04-12, all made by the se7enxweb team.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/ezplatform-standard-design
 ```
-
-## Where to read more
-
-- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
-- [Release changelog](../../changelogs/extensions/ezplatform-standard-design.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -55,17 +48,12 @@ composer require se7enxweb/ezplatform-standard-design
 
 - 2026-04-12 `d99afe0` bc: add replace shim for ezsystems/* original package
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-standard-design](../ledger/ezplatform-standard-design.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- [Release changelog](../../changelogs/extensions/ezplatform-standard-design.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/ezplatform-standard-design.md)
-- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
 - Platform ecosystem by month: [2025-07](months/2025-07.md), [2025-09](months/2025-09.md), [2026-04](months/2026-04.md)
-
-<!-- rev2-see-also:end -->

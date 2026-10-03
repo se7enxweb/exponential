@@ -1,6 +1,6 @@
-# Ecosystem repository: exponential-platform-nexus
+# exponential-platform-nexus: platform repository history
 
-**Group:** Distributions and starters. **Period in the ledger:** 2025-07-01 to 2026-09-01. **Changes:** 97 (97 made by the se7enxweb team, 0 upstream history carried by the fork).
+The history of `exponential-platform-nexus`, one of the platform repositories around Exponential (group: Distributions and starters). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 97 changes from 2025-07-01 to 2026-09-01, all made by the se7enxweb team.
 
 ## What it is
 
@@ -15,13 +15,6 @@ The ready site distribution that renders the media site design; 1.x and 2.5.x li
 A working site with demo content, layouts and an admin, installed in minutes.
 
 This repository is a Composer project (type `project`). Its README points to its own `doc/INSTALL.md` for the install steps; read that file first, then follow it. The quick start of the Nexus starter (`git clone`, `composer install`, `php bin/console exponential:install exponential-media --no-interaction`) is the closest documented sequence.
-
-## Where to read more
-
-- [Nexus](../../features/6.0/platform-nexus-starter.md)
-- [Release changelog](../../changelogs/extensions/exponential-platform-nexus.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -186,18 +179,14 @@ This repository is a Composer project (type `project`). Its README points to its
 
 Also: 5 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-nexus](../ledger/exponential-platform-nexus.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Nexus](../../features/6.0/platform-nexus-starter.md)
+- [Release changelog](../../changelogs/extensions/exponential-platform-nexus.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/exponential-platform-nexus.md)
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform console commands](../../specifications/6.0/platform-console-commands.md)
 - Platform ecosystem by month: [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md), [2026-07](months/2026-07.md), [2026-09](months/2026-09.md)
-
-<!-- rev2-see-also:end -->

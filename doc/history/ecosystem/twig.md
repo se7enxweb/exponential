@@ -1,6 +1,6 @@
-# Ecosystem repository: twig
+# twig: platform repository history
 
-**Group:** Framework forks. **Period in the ledger:** 2023-09-14 to 2026-05-11. **Changes:** 15 (9 made by the se7enxweb team, 6 upstream history carried by the fork).
+The history of `twig`, one of the platform repositories around Exponential (group: Framework forks). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 15 changes from 2023-09-14 to 2026-05-11: 9 made by the se7enxweb team and 6 from the upstream history the fork carries.
 
 ## What it is
 
@@ -19,13 +19,6 @@ Install it with Composer (a project that already requires the platform pulls it 
 ```bash
 composer require se7enxweb/twig
 ```
-
-## Where to read more
-
-- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [Release changelog](../../changelogs/extensions/twig.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 
 ## Counts by kind
 
@@ -76,22 +69,17 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 | Month | Changes | Features | Fixes | BC | Security | Perf | Docs | Tooling | Release | No benefit | Busiest changes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2023-09 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `a18da161` Add SourcePolicyInterface to selectively enable the Sandbox based on a |
-| 2023-12 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `0c9cc7ef` End of maintenance for the 2.x branch; `a4974b29` feature #3893 Add SourcePolicyInterface to selectively enable the Sand |
+| 2023-09 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `a18da161` Add SourcePolicyInterface to selectively enable the Sandbox based on a template's Source |
+| 2023-12 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | `0c9cc7ef` End of maintenance for the 2.x branch; `a4974b29` feature #3893 Add SourcePolicyInterface to selectively enable the Sandbox based on a template's Source |
 | 2024-03 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `a1d84cfb` Bump CI action/cache |
-| 2024-09 | 2 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | `2102dd13` Fix a security issue when an included sandboxed template has been load; `19185947` Prepare the 2.16.1 release |
+| 2024-09 | 2 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | `2102dd13` Fix a security issue when an included sandboxed template has been loaded before without the sandbox context; `19185947` Prepare the 2.16.1 release |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of twig](../ledger/twig.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [Release changelog](../../changelogs/extensions/twig.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/twig.md)
-- [Framework forks on PHP 8.5](../../features/6.0/platform-php85-framework-forks.md)
 - Platform ecosystem by month: [2023-09](months/2023-09.md), [2023-12](months/2023-12.md), [2024-03](months/2024-03.md), [2024-09](months/2024-09.md), [2025-08](months/2025-08.md), [2026-01](months/2026-01.md), [2026-03](months/2026-03.md), [2026-04](months/2026-04.md), [2026-05](months/2026-05.md)
-
-<!-- rev2-see-also:end -->

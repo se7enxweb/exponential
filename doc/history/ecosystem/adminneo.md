@@ -1,6 +1,6 @@
-# Ecosystem repository: adminneo
+# adminneo: platform repository history
 
-**Group:** Database administration. **Period in the ledger:** 2021-06-10 to 2026-03-28. **Changes:** 1121 (0 made by the se7enxweb team, 1121 upstream history carried by the fork).
+The history of `adminneo`, one of the platform repositories around Exponential (group: Database administration). Read it to learn what the repository gives you, how it relates to Exponential and when it changed. The ledger records 1121 changes from 2021-06-10 to 2026-03-28, all from the upstream history the fork carries; the se7enxweb team made none of them.
 
 ## What it is
 
@@ -16,14 +16,6 @@ Browse tables, run SQL, export and import for MySQL, MariaDB, PostgreSQL, SQLite
 
 The upstream README (checked at HEAD of the clone) lists the supported databases as MySQL, MariaDB, PostgreSQL, MS SQL, SQLite, Oracle, MongoDB and SimpleDB, plus Elasticsearch (beta) and ClickHouse (alpha); the drivers are the `admin/drivers/*.inc.php` files. Inside Exponential the tool is shipped by the `sevenx_dse` extension (`extension/sevenx_dse/adminneo`).
 
-## Where to read more
-
-- [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md)
-- [sevenx_dse extension](../../features/6.0/extensions/sevenx_dse.md)
-- [Package map](../../specifications/6.0/platform-package-map.md)
-- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
-
-<!-- rev2-listed-rows:start -->
 ## Security, performance and upgrade changes in the history
 
 These changes are classified in the coverage record and are not named elsewhere on this page. Most are upstream history that the fork carries; the date and the commit subject are the ledger entry (see the [full ledger](../ledger/README.md)). Read the subject for what changed; for the exact effect, open the commit in the repository.
@@ -105,7 +97,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 | 2023-11 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `9ed4c859` Add removal buttons to table data filter |
 | 2022-03 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | `fc2e0256` MS SQL: Prefix Unicode strings with 'N' so they are treated correctly |
 | 2024-11 | 35 | 14 | 5 | 1 | 0 | 1 | 5 | 7 | 2 | 0 | `f93db81c` Update translations; `07868da3` Add styles to input elements |
-| 2024-12 | 6 | 5 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | `5a4335b7` Add several modes of main navigation; `0d9ce281` Remove AdminerDatabaseHide plugin, add hiddenDatabases and hiddenSchem |
+| 2024-12 | 6 | 5 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | `5a4335b7` Add several modes of main navigation; `0d9ce281` Remove AdminerDatabaseHide plugin, add hiddenDatabases and hiddenSchemas config options |
 | 2025-01 | 35 | 10 | 7 | 1 | 0 | 0 | 3 | 7 | 3 | 4 | `2e6713ca` Short array syntax; `d9d4694e` Fix and refactor script for updating languages files |
 | 2022-07 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | `1abaa642` Update lucas-sandery theme; `4e703bf9` Add .gitattributes, exclude tests from archive |
 | 2025-02 | 159 | 77 | 36 | 0 | 1 | 1 | 13 | 16 | 4 | 11 | `4b06a49e` Rebrand: Change Editor to EditorNeo; `2f75e188` Hide index column options by default |
@@ -122,21 +114,17 @@ The fork contains the full upstream history. The table counts it by month and ki
 | 2025-09 | 19 | 3 | 8 | 0 | 1 | 0 | 2 | 2 | 2 | 1 | `5255ec3b` Avoid PHP and HTML mixing; `1521227e` Add helper function for <input type=hidden> |
 | 2025-10 | 34 | 13 | 10 | 1 | 0 | 2 | 2 | 4 | 0 | 2 | `aa8964b2` Print the last release number to compiled plugins (fix #164); `59dc1c25` Add setting for displaying links to referencing tables |
 | 2025-11 | 16 | 2 | 6 | 0 | 0 | 0 | 5 | 1 | 2 | 0 | `0452ffe0` Update German and Dutch translations; `be024126` Use input type 'text' instead of 'search' in selection filter |
-| 2025-12 | 10 | 0 | 5 | 0 | 1 | 0 | 1 | 1 | 2 | 0 | `befde6f6` Replace function get_random_string() with Random::strongKey(); `22a27f18` Refactor tar_file() function, fix sending TAR data to output (fix #176 |
+| 2025-12 | 10 | 0 | 5 | 0 | 1 | 0 | 1 | 1 | 2 | 0 | `befde6f6` Replace function get_random_string() with Random::strongKey(); `22a27f18` Refactor tar_file() function, fix sending TAR data to output (fix #176) |
 | 2026-01 | 20 | 6 | 3 | 0 | 0 | 0 | 2 | 8 | 0 | 1 | `8bd548d2` Use int for $limit; `1972472c` Refactor functions |
 | 2026-02 | 8 | 1 | 1 | 1 | 0 | 0 | 1 | 2 | 0 | 2 | `c0ab1386` Proper boolean return type for various functions; `9820f622` Tests: Generate tests for compiled version |
 | 2026-03 | 9 | 2 | 4 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | `16b66f2e` Tests: Check server and proper extension; `4112a3a2` Declare PHP 8.5 compatibility |
 
-## Full record
+## Related pages
 
-- Every change with date, kind, size and release tag: [ledger of adminneo](../ledger/adminneo.md).
-- Overview of all platform repositories: [Ecosystem](../ecosystem.md).
-
-<!-- rev2-see-also:start -->
-## See also
-
+- [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md)
+- [sevenx_dse extension](../../features/6.0/extensions/sevenx_dse.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)
 - [Complete ledger of this repository](../ledger/adminneo.md)
 - Platform ecosystem by month: [2018-11](months/2018-11.md), [2021-03](months/2021-03.md), [2021-04](months/2021-04.md), [2021-05](months/2021-05.md), [2021-06](months/2021-06.md), [2021-08](months/2021-08.md), [2021-09](months/2021-09.md), [2021-10](months/2021-10.md), [2021-11](months/2021-11.md), [2022-02](months/2022-02.md), [2022-03](months/2022-03.md), [2022-07](months/2022-07.md), [2022-10](months/2022-10.md), [2022-11](months/2022-11.md), [2023-05](months/2023-05.md), [2023-06](months/2023-06.md), [2023-07](months/2023-07.md), [2023-08](months/2023-08.md), [2023-11](months/2023-11.md), [2023-12](months/2023-12.md), [2024-01](months/2024-01.md), [2024-03](months/2024-03.md), [2024-04](months/2024-04.md), [2024-07](months/2024-07.md), [2024-08](months/2024-08.md), [2024-09](months/2024-09.md), [2024-10](months/2024-10.md), [2024-11](months/2024-11.md), [2024-12](months/2024-12.md), [2025-01](months/2025-01.md), [2025-02](months/2025-02.md), [2025-03](months/2025-03.md), [2025-04](months/2025-04.md), [2025-05](months/2025-05.md), [2025-06](months/2025-06.md), [2025-07](months/2025-07.md), [2025-08](months/2025-08.md), [2025-09](months/2025-09.md), [2025-10](months/2025-10.md), [2025-11](months/2025-11.md), [2025-12](months/2025-12.md), [2026-01](months/2026-01.md), [2026-02](months/2026-02.md), [2026-03](months/2026-03.md)
-
-<!-- rev2-see-also:end -->
