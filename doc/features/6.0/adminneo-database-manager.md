@@ -1,23 +1,51 @@
 # AdminNeo: the database manager behind the Database Source Editor
 
-**Repository:** `se7enxweb/adminneo` (a fork of the AdminNeo project, itself based on Adminer). Version 5.2.1 (2025-12-07) is the newest tag; the fork's main branch carries 5.3 development.
-**History:** [adminneo](../../history/ecosystem/adminneo.md): 1,121 changes, all upstream history carried by the fork (the se7enxweb fork contains no changes of its own in the ledger).
-**In Exponential:** the extension `sevenx_dse` embeds AdminNeo in the legacy administration interface, behind role-based permissions. See [sevenx_dse](extensions/sevenx_dse.md) for how to install and use it.
+This page is for administrators who want to know what the database tool inside the admin can do, or who run it on its
+own. AdminNeo is a complete database management tool written in PHP, a fork of Adminer. In Exponential you reach it
+through the extension `sevenx_dse`, behind role-based permissions, so a site administrator can look at tables and run
+SQL from the same administration interface as everything else. See [sevenx_dse](extensions/sevenx_dse.md) to install
+and use it.
 
-## What it is
-
-AdminNeo is a complete database management tool written in PHP. It consists of a single file you can upload to a server. **EditorNeo** is the companion that offers data editing to end users without structure or SQL access. In Exponential you reach AdminNeo through `sevenx_dse`, so a site administrator can look at tables and run SQL from the same administration interface as everything else, without installing a separate tool next to the site.
-
-Supported databases (README): MySQL, MariaDB, PostgreSQL, MS SQL, SQLite, Oracle, MongoDB, SimpleDB, Elasticsearch (beta) and ClickHouse (alpha). Requirements: PHP 5.4 or newer with sessions to run the compiled file, PHP 7.1 or newer to run it from source; the composer package states PHP 7.1 to 8.5. The OpenSSL extension is recommended so stored login information is encrypted.
+| | |
+|---|---|
+| Repository | `se7enxweb/adminneo` (a fork of the AdminNeo project, itself based on Adminer) |
+| Newest tag | 5.2.1 (2025-12-07); the fork's main branch carries 5.3 development |
+| History | [adminneo](../../history/ecosystem/adminneo.md): 1,121 changes, all upstream history carried by the fork (the fork has no changes of its own in the ledger) |
 
 ## What it gives an Exponential administrator
 
 - Browse tables, filter, sort, page through rows and edit values in place.
 - Run SQL commands with syntax highlighting and (from 5.1.0) autocompletion.
 - Create, alter and drop tables, columns and indexes.
-- Export and import: SQL dumps, CSV, TSV; exports can be zipped (Bz2/Zip output plugins) or written as JSON or XML (plugins).
+- Export and import: SQL dumps, CSV, TSV; exports can be zipped (Bz2/Zip output plugins) or written as JSON or XML
+  (plugins).
 - A clean responsive interface with dark mode and colour variants (from 5.0.0).
-- Plugins and customisations: the fork ships plugins for logins (one-time password, IP, table based, external), foreign key editing, JSON preview, slug generation, translation, a Tiny MCE editor, SQL logging and an assistant plugin that generates SQL from a prompt.
+- Plugins and customisations: the fork ships plugins for logins (one-time password, IP, table based, external), foreign
+  key editing, JSON preview, slug generation, translation, a Tiny MCE editor, SQL logging, and an assistant plugin that
+  generates SQL from a prompt.
+
+AdminNeo is a single file you can upload to a server. **EditorNeo** is its companion, which offers data editing to end
+users without structure or SQL access.
+
+**Supported databases** (README): MySQL, MariaDB, PostgreSQL, MS SQL, SQLite, Oracle, MongoDB, SimpleDB,
+Elasticsearch (beta) and ClickHouse (alpha).
+
+**Requirements:** PHP 5.4 or newer with sessions to run the compiled file, PHP 7.1 or newer to run it from source; the
+composer package states PHP 7.1 to 8.5. The OpenSSL extension is recommended so stored login information is encrypted.
+
+## Use it on its own (optional)
+
+Without the extension you can still use AdminNeo directly: build the single file and upload it.
+
+```bash
+git clone git@github.com:se7enxweb/adminneo.git
+cd adminneo
+php bin/compile.php            # writes the single-file version (see the Makefile for targets)
+```
+
+Upload the compiled file to a protected location (HTTP authentication or a network restriction in front of it) and
+open it in a browser. Never leave a database manager reachable by anonymous visitors. The `examples` directory of the
+repository contains customisation and plugin examples; the `plugins` directory lists the plugins named above.
 
 ## Release highlights since December 2023
 
@@ -32,34 +60,18 @@ Supported databases (README): MySQL, MariaDB, PostgreSQL, MS SQL, SQLite, Oracle
 
 The month by month list of all 1,121 changes, including the smaller UI and driver fixes, is in the [repository history](../../history/ecosystem/adminneo.md#upstream-history-carried-by-the-fork-by-month).
 
-## Use it standalone (optional)
-
-Without the extension you can still use AdminNeo directly: build the single file and upload it.
-
-```bash
-git clone git@github.com:se7enxweb/adminneo.git
-cd adminneo
-php bin/compile.php            # writes the single-file version (see the Makefile for targets)
-```
-
-Upload the compiled file to a protected location (HTTP authentication or a network restriction in front of it) and open it in a browser. Never leave a database manager reachable by anonymous visitors.
-
-The `examples` directory of the repository contains customisation and plugin examples; the `plugins` directory lists the plugins named above.
-
 ## Limits
 
-- A database manager gives full access to the data it can log in to. Restrict it by role, network and backup discipline; the extension adds a safety gate that asks for a backup acknowledgement.
+- A database manager gives full access to the data it can log in to. Restrict it by role, network and backup
+  discipline; the extension adds a safety gate that asks for a backup acknowledgement.
 - The AI SQL plugin sends your prompt to a third party service when you enable it. It is off unless you configure it.
 - Features of the unreleased 5.3 line may change before a tag.
 
-## Related
+## Related pages
 
-[Platform ecosystem overview](../../history/ecosystem.md) · [Package map](../../specifications/6.0/platform-package-map.md)
-
-## Platform ecosystem pages
-
-- Features: [Platform administration interface](platform-admin-ui-fork.md); [DXP skeleton](platform-dxp-skeleton.md); [Layouts on the platform](platform-layouts-core-fork.md); [Nexus starter](platform-nexus-starter.md); [PHP 8.5 framework forks](platform-php85-framework-forks.md); [Site bundles](platform-site-bundles.md); [SQLite for Exponential Platform](platform-sqlite-install.md); [Legacy bridge](legacy-bridge.md).
-- Specifications: [Platform console command names](../../specifications/6.0/platform-console-commands.md); [Platform package map](../../specifications/6.0/platform-package-map.md); [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md); [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
-- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
-- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
-- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
+- [sevenx_dse](extensions/sevenx_dse.md)
+- Platform features: [administration interface](platform-admin-ui-fork.md), [DXP skeleton](platform-dxp-skeleton.md), [Layouts on the platform](platform-layouts-core-fork.md), [Nexus starter](platform-nexus-starter.md), [PHP 8.5 framework forks](platform-php85-framework-forks.md), [site bundles](platform-site-bundles.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [legacy bridge](legacy-bridge.md)
+- Specifications: [platform console command names](../../specifications/6.0/platform-console-commands.md), [platform package map](../../specifications/6.0/platform-package-map.md), [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md), [legacy bridge bundle](../../specifications/6.0/legacy-bridge-bundle.md)
+- Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- Changelog: [platform changelog](../../changelogs/extensions/exponential-platform.md)
+- History: [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md)
