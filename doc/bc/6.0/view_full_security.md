@@ -20,7 +20,18 @@ They were made for one question that settings could not answer before:
 
 The answer is one rule, shipped ready to use and switched on with two lines.
 
----
+Read this page if you want to keep visitors off system URLs, protect a section, or run any check before a module view;
+and before you upgrade, if you rely on `[SiteAccessRules]` or on `PolicyOmitList[]`.
+
+## In short
+
+| | |
+|---|---|
+| What changed | New request rules engine (`settings/requestrules.ini`, `kernel/private/classes/requestrules/`), asked before every module view runs. New policy function `content/view_system_url`. New command `bin/php/ezrequestrules.php` (list, check, explain). Three rules ship defined and off. |
+| Who is affected | Nobody until a rule is listed in `RuleList[]`. Then: every module view is asked, including `PolicyOmitList[]` views. `[SiteAccessRules]` keeps working and is checked first. Roles with `content/*` include the new policy function. |
+| How to check | `php bin/php/ezrequestrules.php -s <siteaccess> --check` |
+| How to fix | Nothing to fix. To use it, follow the [Quick start](#1-quick-start); remove any template redirect you added in `full.tpl` for the same purpose. |
+
 
 ## Contents
 
@@ -45,7 +56,6 @@ The answer is one rule, shipped ready to use and switched on with two lines.
 19. [Troubleshooting](#19-troubleshooting)
 20. [Files](#20-files)
 
----
 
 ## 1. Quick start
 
@@ -88,7 +98,7 @@ Without Velocity, the INI and page caches still need clearing:
 `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`, then
 `--clear-id=content,exphttpcache`.
 
-What it looks like on alpha (2026-10-02), on Apache and Velocity alike:
+What it looks like on a reference installation (2026-10-02), on Apache and Velocity alike:
 
 | Request | Anonymous | Administrator |
 |---|---|---|
@@ -103,7 +113,6 @@ That is all most sites need. The rest of this guide explains the mechanism
 completely: what can be decided and how, how to extend it, and how to tell
 what it is doing.
 
----
 
 ## 2. Why settings and policies alone could not do it
 
@@ -123,7 +132,6 @@ checks access. The kernel knew what the visitor typed (it keeps the address
 before translating it), but nothing used that. The request rules use it: the
 fact `requested_via` is `system`, `alias`, `wildcard` or `index`.
 
----
 
 ## 3. How a request is decided
 
@@ -163,7 +171,6 @@ What follows from that order:
   or shared cache may keep it. A browser that kept a `301` would go on
   redirecting a visitor after they signed in.
 
----
 
 ## 4. Writing rules
 
@@ -240,7 +247,6 @@ Enabled=false
 No rule is asked, and the kernel behaves exactly as it did before this
 feature.
 
----
 
 ## 5. Reference: conditions
 
@@ -284,7 +290,6 @@ Conditions about the node (`node`, `subtree`, `class`, `section`, `state`)
 never match a request that is not about a node. Their facts are `null` then,
 and a negated one (`!article`) does not match either.
 
----
 
 ## 6. Reference: actions
 
@@ -323,7 +328,6 @@ FallbackAction=notfound
 This writes the line, then answers "not found": one rule both records and
 refuses.
 
----
 
 ## 7. Reference: facts
 
@@ -359,7 +363,6 @@ An extension adds facts with a fact provider ([10.3](#103-a-fact-provider)).
 A resolver that throws is written to the debug output and gives `null`, so one
 broken fact never breaks a page.
 
----
 
 ## 8. The policy function `content/view_system_url`
 
@@ -381,7 +384,6 @@ Conditions[policy]=!content/view_system_url     # the rule applies to users WITH
 The same pattern works with any policy, including your own module's
 functions: `Conditions[policy]=!mymodule/premium`.
 
----
 
 ## 9. Recipes
 
@@ -606,7 +608,6 @@ ActionArgs[status]=308
 (Add the host to `AllowedRedirectHosts[]` if it is not the current one; it
 is, here.)
 
----
 
 ## 10. Extending the rules in PHP
 
@@ -810,7 +811,6 @@ $this->assertSame( array(), $engine->validate() );
 `tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php` shows
 every built-in condition and action tested this way.
 
----
 
 ## 11. Using the engine from PHP
 
@@ -843,7 +843,6 @@ Rules added with `addRule()` live as long as the engine: one PHP-FPM request,
 or the life of a Velocity worker. Use them for tests and scripts. Rules that
 must always apply belong in settings or a rule provider.
 
----
 
 ## 12. Checking, explaining and testing
 
@@ -861,7 +860,7 @@ php bin/php/ezrequestrules.php -s site --uri=fit-healthy --ip=10.1.2.3 --header=
 front page), so the explanation is the one a real request gets. It also says
 when the policies would refuse the view before any rule is asked.
 
-Real output (alpha, 2026-10-02):
+Real output (reference installation, 2026-10-02):
 
 ```
 Address  /content/view/full/2  ->  content/view/full/2  (requested via system)
@@ -919,7 +918,7 @@ The same 21 tests run with the rest of the kernel tests
 (`--testsuite kernel-classes`).
 
 By use, over HTTP, against a running site: anonymous and administrator, every
-action, Apache and Velocity. Verified 2026-10-02 on alpha, all PASS on both
+action, Apache and Velocity. Verified 2026-10-02 on a reference installation, all PASS on both
 servers:
 
 | Check | Apache | Velocity |
@@ -937,7 +936,6 @@ servers:
 | `login` → 302 to user/login, and back to the page after signing in | PASS | PASS |
 | unaffected pages are still served from the page caches (`X-Exp-Cache: HIT`) | PASS | PASS |
 
----
 
 ## 13. Caches
 
@@ -955,7 +953,7 @@ response cache. The rules are safe with them because of three guarantees:
    Two requests that one stored page answers have the same address,
    siteaccess, host, scheme and permission context, so the rules decide the
    same for both. The shipped rules are all stable: they do not reduce caching
-   at all (on alpha, `/fit-healthy` stays a `HIT`).
+   at all (on the reference installation, `/fit-healthy` stays a `HIT`).
 3. **A page that a rule with a request-varying condition could decide is
    never stored.** If every stable condition of such a rule matches, another
    request for the same page with a different header, address or user could be
@@ -973,7 +971,6 @@ and `./console exp:velocity cache clear`.
 The content **view cache** (`ViewCaching`) stores a node's rendered view, not
 the response. It runs after the rules and is unaffected by them.
 
----
 
 ## 14. Exponential Velocity and persistent workers
 
@@ -993,11 +990,10 @@ the response. It runs after the rules and is unaffected by them.
   regenerated (`exp:velocity deploy` does it), and kernel classes need
   `--kernel`.
 
----
 
 ## 15. Performance
 
-Measured on alpha (PHP 8.5, 20 000 evaluations each, without the kernel;
+Measured on a reference installation (PHP 8.5, 20 000 evaluations each, without the kernel;
 the cost includes building the context):
 
 | Rules | µs per request |
@@ -1017,7 +1013,6 @@ Every condition must match, and evaluation stops at the first one that does
 not. Address, module, view and user conditions cost nothing; node conditions
 load the node once.
 
----
 
 ## 16. Security notes
 
@@ -1043,7 +1038,6 @@ load the node once.
   is itself confidential.
 - **No answer depending on who asked is cached** (section 13).
 
----
 
 ## 17. What the rules do not see
 
@@ -1062,7 +1056,6 @@ load the node once.
 - **Templates.** A node embedded in another page (`node_view_gui`, `fetch`)
   is not a request; `content/read` governs it.
 
----
 
 ## 18. Compatibility and upgrading
 
@@ -1085,7 +1078,6 @@ load the node once.
 - **The template-redirect workaround can go.** Remove a redirect you put in
   `full.tpl` for this purpose once the rule is on.
 
----
 
 ## 19. Troubleshooting
 
@@ -1101,7 +1093,6 @@ load the node once.
 | `--check`: "is not a class implementing" | the class is missing from the autoloads, or implements the wrong interface | `php bin/php/ezpgenerateautoloads.php -e` |
 | A decision is not in `var/log/requestrules.log` | only `Action=log` writes there | enable debug output, or add a log rule in front |
 
----
 
 ## 20. Files
 
@@ -1121,3 +1112,11 @@ load the node once.
 | `kernel/content/module.php` | the policy function `content/view_system_url` |
 | `bin/php/ezrequestrules.php` | list, check, explain |
 | `tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php` | 21 unit tests |
+
+## Related pages
+
+- [Request rules (feature)](../../features/6.0/request-rules.md)
+- [Behaviour changes of 1 and 2 October 2026](behaviour-changes-2026-10.md)
+- [HTTP cache](httpcache.md)
+- [Security hardening](hardening.md)
+- [Security and audit guide](../../guides/security-and-audit.md)
