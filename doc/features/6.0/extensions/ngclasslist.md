@@ -1,7 +1,13 @@
 # ngclasslist: a datatype that stores a list of content classes
 
-`ngclasslist` (Netgen Class List Datatype) lets an editor select a list of content classes and stores it on an attribute. Typical use: a
-Category class whose children are fetched with a configurable class filter:
+This page is for site builders who let editors choose which kinds of content a page lists. `ngclasslist` (Netgen
+Class List Datatype) lets an editor select a list of content classes and stores it on an attribute.
+
+## Example: a category that lists chosen classes
+
+1. Add an attribute of type `ngclasslist` to the Category class, here with the identifier `class_filter_array`.
+2. In the category, select the classes to list.
+3. Fetch the children in the category's template with the selected classes as filter:
 
 ```
 {def $children = fetch(
@@ -14,21 +20,18 @@ Category class whose children are fetched with a configurable class filter:
 )}
 ```
 
-Add an attribute of type `ngclasslist` (here `class_filter_array`) to the class and use its content like above.
-
 ## What changed
 
-* 1.0.1, 1.1.1 (31 August to 2 September 2026): package name and license in `composer.json` (se7enxweb), the installer is the se7enxweb
-  installer, description updated, `ezinfo.php` version.
-* 1.1.2 (27 September): the extension states its version, license and website.
-* 1.1.3 (2 October): English and German translations for every string the admin showed untranslated.
+| Version | Date | Change |
+|---|---|---|
+| 1.0.1, 1.1.1 | 31 August to 2 September 2026 | Package name and license in `composer.json` (se7enxweb); the installer is the se7enxweb installer; description updated; `ezinfo.php` version. |
+| 1.1.2 | 27 September 2026 | The extension states its version, license and website. |
+| 1.1.3 | 2 October 2026 | English and German translations for every string the admin showed untranslated. |
 
-## Related
+## Related pages
 
-* [Chronicle](../../../history/extensions/ngclasslist.md) and [release notes](../../../changelogs/extensions/ngclasslist.md)
-* [Change ledger](../../../history/ledger/ngclasslist.md)
-* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
-* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+- [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+- [Chronicle](../../../history/extensions/ngclasslist.md) and [release notes](../../../changelogs/extensions/ngclasslist.md)
+- [Change ledger](../../../history/ledger/ngclasslist.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

@@ -1,18 +1,25 @@
 # Hide admin tabs: HiddenTabs
 
-Extensions append their tabs to the admin's top menu and node view, and extension settings are read after a
-siteaccess's. A siteaccess could restate either list but never take an extension's tab out. Two new settings
-now do exactly that, whatever adds the tab. Added 2026-10-01.
+This page is for administrators who want a simpler admin on one siteaccess, for example an editor siteaccess. Two
+settings take a tab out of the admin's top menu or the node view, whatever added it. Added 2026-10-01.
+
+Before, a siteaccess could restate the list of tabs but never remove an extension's tab: extensions append their
+tabs, and extension settings are read after a siteaccess's.
+
+## Settings
 
 | File | Block | Key | Default | Scope |
 |---|---|---|---|---|
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess or override |
 | `settings/admininterface.ini` | `WindowControlsSettings` | `HiddenTabs[]` | empty | siteaccess or override |
 
-`[TopAdminMenu] HiddenTabs[]` is read by the `topmenu` template operator; `[WindowControlsSettings] HiddenTabs[]`
-by `window_controls.tpl` of `admin`, `admin3` and `admin4` (the node view's tabs). Check: `grep -rn HiddenTabs kernel design settings`.
+- `[TopAdminMenu] HiddenTabs[]` is read by the `topmenu` template operator (the top menu).
+- `[WindowControlsSettings] HiddenTabs[]` is read by `window_controls.tpl` of `admin`, `admin3` and `admin4` (the
+  node view's tabs).
 
-## Example: a siteaccess without the Layouts node tab and the Design menu
+The tab identifiers are the entries of `Tabs[]` and `AdditionalTabs[]`, for example `dashboard`, `design`, `roles`.
+
+## Example: no Design menu and no Layouts node tab
 
 `settings/siteaccess/<admin-like siteaccess>/menu.ini.append.php`:
 
@@ -34,16 +41,39 @@ HiddenTabs[]=layouts
 */ ?>
 ```
 
-The tab identifiers are the entries of `Tabs[]` and `AdditionalTabs[]` (for example `dashboard`, `design`, `roles`). The shipped editor siteaccess hides `explayouts_ui_dashboard`, `setup`, `design`, `gitmanager`, `xrowextract` and `bccie_overview` in the top menu and `layouts` in the node view.
-Clear the INI cache afterwards: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
+Then clear the INI cache:
 
-The node view also shows each additional tab once now: a tab that an extension appended twice used to appear
-twice. The editor siteaccess uses both settings; see
+```bash
+php bin/php/ezcache.php --clear-tag=ini --allow-root-user
+```
+
+Reload the admin: the Design tab and the node view's Layouts tab are gone on that siteaccess only.
+
+Find every place that reads the settings:
+
+```bash
+grep -rn HiddenTabs kernel design settings
+```
+
+## The shipped editor siteaccess
+
+The editor siteaccess uses both settings. It hides `explayouts_ui_dashboard`, `setup`, `design`, `gitmanager`,
+`xrowextract` and `bccie_overview` in the top menu, and `layouts` in the node view. See
 [the setup wizard and the editor siteaccess](setup-wizard-and-editor-siteaccess.md).
 
-Same-day related changes: the dashboard, its menus and the top tabs show a link only to a user who can open it
-(editors no longer saw Design, Newsletter and Export tabs they could not use), and the Store sidebar
-(`[Leftmenu_shop]` in `menu.ini`) lists Dashboard, Orders, Products overview, Product statistics and Product
-categories first.
+## Changed on the same day
 
-See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [admin links follow permissions](admin-links-follow-permissions.md), [admin4 design](admin4-design.md).
+- The node view shows each additional tab once. A tab that an extension appended twice used to appear twice.
+- The dashboard, its menus and the top tabs show a link only to a user who can open it; see
+  [admin links follow permissions](admin-links-follow-permissions.md).
+- The Store sidebar (`[Leftmenu_shop]` in `menu.ini`) lists Dashboard, Orders, Products overview, Product statistics
+  and Product categories first.
+
+## Related pages
+
+- [Admin links follow permissions](admin-links-follow-permissions.md)
+- [The admin4 design](admin4-design.md)
+- [Setup wizard and editor siteaccess](setup-wizard-and-editor-siteaccess.md)
+- [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [October 2026 chronicle](../../history/2026/2026-10.md)

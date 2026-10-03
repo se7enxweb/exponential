@@ -1,21 +1,34 @@
 # ezxmlexport: scheduled XML exports
 
-`ezxmlexport` ("eZ XML Export") exports content as XML on a schedule and can deliver the result by FTP. Its module `xmlexport` has views to define
-an export (`edit`, `view`, `delete`), see running exports (`runningexports`), generate the XML schema (`createxmlschema`), test the FTP delivery
-(`ftptest`) and relaunch a failed transfer (`relaunchftptransfert`), plus a cronjob and a command line. Version 1.3.0 made it compatible with the
-admin2 design.
+This page is for sites that still run `ezxmlexport` and for anyone choosing an export tool. `ezxmlexport` ("eZ XML
+Export") exports content as XML on a schedule and can deliver the result by FTP.
 
-In the Exponential 6 period the repository received package metadata and funding information only (December 2023 to March 2026); the code is the
-1.3 line. For new work, [xrowextract](xrowextract.md) exports to CSV, JSON, XML and content packages on a schedule, with SFTP, FTPS, S3, WebDAV and
-HTTP delivery.
+## What it offers
 
-## Related
+The module `xmlexport` has these views:
 
-* [xrowextract](xrowextract.md)
-* [Chronicle](../../../history/extensions/ezxmlexport.md) and [release notes](../../../changelogs/extensions/ezxmlexport.md)
-* [Change ledger](../../../history/ledger/ezxmlexport.md)
+| View | Purpose |
+|---|---|
+| `edit`, `view`, `delete` | define, show and remove an export |
+| `runningexports` | see running exports |
+| `createxmlschema` | generate the XML schema |
+| `ftptest` | test the FTP delivery |
+| `relaunchftptransfert` | relaunch a failed transfer |
 
-## See also
+It also has a cronjob and a command line. Version 1.3.0 made it compatible with the admin2 design.
 
-* [behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2026-03](../../../history/extensions/months/2026-03.md)
+## Status
+
+In the Exponential 6 period the repository received package metadata and funding information only (December 2023 to
+March 2026); the code is the 1.3 line.
+
+For new work, use [xrowextract](xrowextract.md). It exports to CSV, JSON, XML and content packages on a schedule,
+with SFTP, FTPS, S3, WebDAV and HTTP delivery.
+
+## Related pages
+
+- [xrowextract](xrowextract.md)
+- [Chronicle](../../../history/extensions/ezxmlexport.md) and [release notes](../../../changelogs/extensions/ezxmlexport.md)
+- [Change ledger](../../../history/ledger/ezxmlexport.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2026-03](../../../history/extensions/months/2026-03.md)
