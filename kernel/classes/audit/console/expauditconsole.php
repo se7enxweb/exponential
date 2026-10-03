@@ -173,7 +173,9 @@ class expAuditConsole
                 continue;
             if ( is_array( $v ) )
                 $v = implode( ':', $v );
-            $url .= '/(' . $k . ')/' . rawurlencode( (string)$v );
+            // a slash is sent as %252F: Apache refuses %2F in a path (404) before the request reaches the module,
+            // and rawFilters() decodes the value once more
+            $url .= '/(' . $k . ')/' . str_replace( '%2F', '%252F', rawurlencode( (string)$v ) );
         }
         return $url;
     }
@@ -475,8 +477,27 @@ class expAuditConsole
             case 'job':
                 return 'content/job/' . $id;
             case 'view':
-                return strpos( (string)$id, '/' ) !== false ? (string)$id : null;
+                return self::viewLink( (string)$id );
         }
         return null;
+    }
+
+    /**
+     * The address of a view a record names, only when that view exists. A view id is also what a read is
+     * recorded under (audit/service/summary, fetch:audit/events), and those are not pages: a link to one
+     * answers 404 and a crawler following it reports a dead link.
+     *
+     * @param string $id module/view as recorded
+     * @return string|null
+     */
+    protected static function viewLink( $id )
+    {
+        if ( !preg_match( '#^([A-Za-z0-9_]+)/([A-Za-z0-9_]+)$#', $id, $m ) || !class_exists( 'eZModule' ) )
+            return null;
+        $module = eZModule::findModule( $m[1] );
+        if ( !$module )
+            return null;
+        $views = $module->attribute( 'views' );
+        return isset( $views[$m[2]] ) ? $id : null;
     }
 }
