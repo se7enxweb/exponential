@@ -43,7 +43,7 @@
     {set $search_classes = $search_classes|append( hash( 'id', $search_class.id, 'name', $search_class.name ) )}
 {/foreach}
 {if ezini_hasvariable( 'link', 'ClassDescription', 'content.ini' )}
-    {set $link_class_names = ezini( 'link', 'ClassDescription', 'content.ini' )}
+    {set $link_class_names = ezini( 'link', 'ClassDescription', 'content.ini', '', true() )}
 {/if}
 {foreach ezini( 'link', 'AvailableClasses', 'content.ini' ) as $link_class}
     {set $link_classes = $link_classes|merge( hash( $link_class, first_set( $link_class_names[$link_class], $link_class ) ) )}
