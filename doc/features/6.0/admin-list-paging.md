@@ -1,13 +1,45 @@
 # Paging, sorting and page sizes in the administration interface
 
-Every long list in the administration interface is paged, and its page size is a
-setting. An installation with many sites, thousands of locations or thousands of
-roles used to fail to draw some of these pages at all, because the whole list
-was read and a query was run for every row before the first byte was sent.
+This page is for administrators of large installations, and for anyone who wants longer or shorter lists in the admin.
+Every long list in the administration interface is now paged, and its page size is a setting. Before, an installation
+with many sites, thousands of locations or thousands of roles could fail to draw some of these pages at all: the whole
+list was read, and a query ran for every row, before the first byte was sent.
+
+## Change a page size
+
+All sizes are in `admininterface.ini`, block `[PaginationSettings]`, keyed by `module/view`:
+
+```ini
+# settings/override/admininterface.ini.append.php
+[PaginationSettings]
+DefaultItemsPerPage=25
+ItemsPerPage[section/list]=50
+ItemsPerPage[class/classlist]=100
+```
+
+Clear the caches after the change:
+
+```bash
+php bin/php/ezcache.php --clear-all --allow-root-user
+```
+
+To see the keys your installation ships:
+
+```bash
+grep -n -A40 "^\[PaginationSettings\]" settings/admininterface.ini
+```
+
+The full table of keys, the four settings that predate the block, and the one list that is deliberately not paged are
+in [Where the page sizes live](../../bc/6.0/pagination-settings.md).
+
+## Pick your own size in the sub-items list
+
+The **Table options** panel of the sub-items list has a **Custom** field: any whole number from 1 to 10000, stored as a
+user preference. See [Sub-items list: custom page size](subitems-table-options.md#custom-page-size).
 
 ## What is paged now
 
-| List | Page |
+| List | Notes |
 |---|---|
 | Locations tab of an item | [Locations tab paging and sorting](../../bc/6.0/locations-tab-paging-and-sorting.md) |
 | Roles, and the policies of a role | [Role and policy paging](../../bc/6.0/role-policy-paging.md); the role list also shows the role id and sorts |
@@ -19,42 +51,14 @@ was read and a query was run for every row before the first byte was sent.
 | RSS list | [RSS list](rss-podcast-and-feed-list.md) |
 | Layout lists of the layouts editor | paged by `explayouts_ui` entries in the same block |
 
-The extension list also sorts by the extension's own name and its license, and
-keeps the sort in the address so paging does not lose it. Item view tabs no
-longer load everything they count, and the policy window that actually renders
-is the one bounded.
+Also:
 
-## Change a page size
+- The extension list sorts by the extension's own name and its license, and keeps the sort in the address, so paging
+  does not lose it.
+- Item view tabs no longer load everything they count.
+- In the role view, the policy window that actually renders is the one that is bounded.
 
-All sizes are in `admininterface.ini`, block `[PaginationSettings]`, keyed by
-`module/view`:
-
-```ini
-# settings/override/admininterface.ini.append.php
-[PaginationSettings]
-DefaultItemsPerPage=25
-ItemsPerPage[section/list]=50
-ItemsPerPage[class/classlist]=100
-```
-
-The full table of keys, the four settings that predate the block, and the one
-list that is deliberately not paged are in
-[Where the page sizes live](../../bc/6.0/pagination-settings.md).
-
-## A page size of your own in the sub items list
-
-The Table options panel of the sub items list has a **Custom** field (any whole number from 1 to 10000, stored as a
-user preference). It is described with the other table options in
-[Sub items list: custom page size](subitems-table-options.md#custom-page-size).
-
-## For developers
-
-The modules read their size through one helper rather than a number written in
-the module; the helper also gives the lists their paging parameters and the
-user's chosen page size. See *Where the reading happens* in
-[Where the page sizes live](../../bc/6.0/pagination-settings.md).
-
-## Settings at a glance
+## Settings
 
 | File | Block | Key | Default | Scope |
 |---|---|---|---|---|
@@ -63,16 +67,16 @@ user's chosen page size. See *Where the reading happens* in
 | `settings/content.ini` | `LocationsSettings` | `LocationsPerPage` | `25` | global |
 | `settings/site.ini` | `RoleSettings` | `PoliciesPerPage`, `PolicyPreviewPerRole`, `RolesPerPageList[]` | `25`, `10`, `10`/`25`/`50` | global |
 
-Check on your installation: `grep -n -A40 "^\[PaginationSettings\]" settings/admininterface.ini`. Clear the caches after a change: `php bin/php/ezcache.php --clear-all --allow-root-user`.
+## For developers
 
-## See also
-
-- [Where the page sizes live](../../bc/6.0/pagination-settings.md), [Role and policy paging](../../bc/6.0/role-policy-paging.md), [Locations tab paging and sorting](../../bc/6.0/locations-tab-paging-and-sorting.md)
-- [Sub items list: columns, presets and CSV export](subitems-table-options.md) and [Roles: policy IDs, sorting and order buttons](role-policy-order.md)
-- [June 2026, second half](../../history/2026/2026-06b.md) (where the custom page size arrived)
-- [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+The modules read their size through one helper instead of a number written in the module. The helper also gives the
+lists their paging parameters and the user's chosen page size. See "Where the reading happens" in
+[Where the page sizes live](../../bc/6.0/pagination-settings.md).
 
 ## Related pages
 
-- [Multi edit (items from the sub items list)](../../bc/6.0/multi-node-edit.md)
+- [Where the page sizes live](../../bc/6.0/pagination-settings.md), [role and policy paging](../../bc/6.0/role-policy-paging.md), [locations tab paging and sorting](../../bc/6.0/locations-tab-paging-and-sorting.md)
+- [Sub-items list: columns, presets and CSV export](subitems-table-options.md), [roles: policy IDs, sorting and order buttons](role-policy-order.md)
+- [Multi edit (items from the sub-items list)](../../bc/6.0/multi-node-edit.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- History: [June 2026, second half](../../history/2026/2026-06b.md) (custom page size), [September 2026, first half: paging everywhere](../../history/2026/2026-09a.md#15-september-paging-everywhere)

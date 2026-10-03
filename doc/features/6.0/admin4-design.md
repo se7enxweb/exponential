@@ -1,48 +1,58 @@
 # The admin4 design
 
-admin4 is a complete administration design in the look of the setup wizard, with a light and a dark mode. It
-holds every file the admin siteaccess served from `admin3`, `admin2` and `admin` (463 files when it was created, 469 at
-the time of writing; the winner of each path in the search order), so it works with none of them present. Added 2026-10-02 and refined during the day.
+This page is for administrators who choose the look of the admin, and for developers who style it. admin4 is a
+complete administration design in the look of the setup wizard, with a light and a dark mode. It holds every file the
+admin siteaccess served from `admin3`, `admin2` and `admin` (463 files when it was created, 469 at the time of writing;
+for each path, the file that won in the search order), so it works with none of them present. Added 2026-10-02 and
+refined during the day.
 
 ## Switch to it
 
-In the admin siteaccess's `site.ini.append.php`:
+1. In the admin siteaccess's `site.ini.append.php`, set:
 
-```ini
-[DesignSettings]
-SiteDesign=admin4
-```
+   ```ini
+   [DesignSettings]
+   SiteDesign=admin4
+   ```
 
-then `php bin/php/ezcache.php --clear-all --allow-root-user`. The siteaccess's design list still names `admin3`,
-`admin2` and `admin`, for the extensions' folders of those names (the three templates `bccie` and
-`enhancedezbinaryfile` override in their own admin2 folder stay with the extension). The editor siteaccess falls
-back to `admin4` first, then `admin3`, `admin2`, `admin`; there is also a test siteaccess `admintest_admin4`.
+2. Clear the caches:
 
-## What it looks like
+   ```bash
+   php bin/php/ezcache.php --clear-all --allow-root-user
+   ```
 
-- **Light mode** (default): pale page, frosted header, cards edged by light and shadow. **Dark mode**: slate page,
-  white cards. The header toggle after the search box switches them; the choice is kept in the browser
-  (`localStorage`) and applied before the page is drawn.
-- **Top menu**: every item at every width from 576 px, wrapping onto more lines; phones keep the hamburger menu.
+3. Reload the admin. The header shows a light/dark toggle after the search box.
+
+The siteaccess's design list still names `admin3`, `admin2` and `admin`, for the extensions' folders of those names
+(the three templates that `bccie` and `enhancedezbinaryfile` override in their own admin2 folder stay with the
+extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `admin2`, `admin`. A test siteaccess
+`admintest_admin4` also exists.
+
+## What you get
+
+- **Light and dark mode.** Light (default): pale page, frosted header, cards edged by light and shadow. Dark: slate
+  page, white cards. The header toggle switches them; the choice is kept in the browser (`localStorage`) and applied
+  before the page is drawn.
+- **Top menu.** Every item shows at every width from 576 px, wrapping onto more lines; phones keep the hamburger menu.
   The page always starts below the header, even after a resize adds a line.
-- **Sign-in page**: one calm form for fast use on phones (labels above 46-48 px fields, 16 px text so mobile
-  Safari does not zoom, autofill hints, Enter moves from the username to the password and signs in, a show/hide
-  button, one full-width button that cannot be sent twice, forgot-password and register links when the modules
-  exist). The kernel reads the same fields as before.
-- **Dashboard**: welcome with quick actions, key figures, the last 14 days of publishing and the system at a glance
-  around every block of `dashboard.ini`. It teaches the two updates that keep an installation secure: the CMS with
-  the Git manager and the Composer libraries on the Updates dashboard, linked only where the user may open them.
-- **Node view**: compact and richer: one header row with the class icon, title, badges (class, hidden, secondary
-  location) and the actions (language, Edit, Move, Remove, View on site, Preview, Manage versions); one meta line
-  with modified and by whom, published, version, section, node, object and remote ids (click to copy) and the
-  translations (click to switch); the tabs as a segmented row. The tabs and sub-items start about 300 px below the
-  card's top instead of 500. On phones the actions wrap onto two short lines inside the card.
-- **Edit form**: the button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in
-  view while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working), are slim
-  (42 px on a desktop) and fit a phone screen; edit pages show one left column, not two.
-- **Frame**: side column margins halved (a 16 px gap), the sidebar buttons sit on the window edges at 48% of the
-  window height, with labels and titles; long names in the side columns wrap instead of being cut off.
-- A list table's sorted column is readable (soft orange header).
+- **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not
+  zoom, autofill hints, Enter moves from the username to the password and signs in, a show/hide button, one full-width
+  button that cannot be sent twice, and forgot-password and register links when those modules exist. The kernel reads
+  the same fields as before.
+- **Dashboard.** A welcome with quick actions, key figures, the last 14 days of publishing and the system at a glance,
+  around every block of `dashboard.ini`. It points to the two updates that keep an installation secure: the CMS with
+  the Git manager, and the Composer libraries on the Updates dashboard, linked only where the user may open them.
+- **Node view.** One header row with the class icon, title, badges (class, hidden, secondary location) and the actions
+  (language, Edit, Move, Remove, View on site, Preview, Manage versions). One meta line with modified and by whom,
+  published, version, section, node, object and remote ids (click to copy) and the translations (click to switch).
+  The tabs form a segmented row. Tabs and sub-items start about 300 px below the card's top instead of 500. On phones
+  the actions wrap onto two short lines inside the card.
+- **Edit form.** The button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in view
+  while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim
+  (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two.
+- **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
+  window height, with labels and titles. Long names in the side columns wrap instead of being cut off.
+- **Tables.** A list table's sorted column is readable (soft orange header).
 
 ## Settings
 
@@ -50,41 +60,31 @@ back to `admin4` first, then `admin3`, `admin2`, `admin`; there is also a test s
 |---|---|---|---|---|
 | `settings/design.ini` | `AdminDesignSettings` | `ShowCommunityLinks` | `disabled` | siteaccess |
 
-`ShowCommunityLinks=enabled` shows the footer's "Evaluate Exponential / Become a member of the Exponential
-Community" line; a template can also set `$show_community_links`.
+`ShowCommunityLinks=enabled` shows the footer line "Evaluate Exponential / Become a member of the Exponential
+Community". A template can also set `$show_community_links`.
 
-## Files and notes for developers
+## For developers
 
-- `design/admin4/stylesheets/admin4.css` is loaded after the base stylesheets and before the extensions' own.
-  It uses the base rules' own selectors, so what beat a base rule before still beats it; shared defaults carry no
-  weight at all (`:where`), so extensions' rules win; there are no cascade layers.
-- admin4 keeps its own copy of `ezajaxsubitems_expdatatable.js`: it must work with no other admin design
-  present, and a single copy in `design/standard` would be shadowed by any design that has its own. Change both
-  copies together.
-- The CSS packer previously removed the space before a colon in selectors (`a :hover` became `a:hover`); fixed.
+- `design/admin4/stylesheets/admin4.css` is loaded after the base stylesheets and before the extensions' own. It uses
+  the base rules' own selectors, so what beat a base rule before still beats it. Shared defaults carry no weight at all
+  (`:where`), so extensions' rules win. There are no cascade layers.
+- admin4 keeps its own copy of `ezajaxsubitems_expdatatable.js`: it must work with no other admin design present, and
+  a single copy in `design/standard` would be shadowed by any design that has its own. Change both copies together.
+- The CSS packer used to remove the space before a colon in selectors (`a :hover` became `a:hover`). Fixed.
+
+## Changes to the other designs on the same day
+
 - The classic grey administration design (`classic`) got the Exponential logo, a left menu that collapses and
   resizes, and Layouts pages in its own look.
-- The old `design/admin` header search scope popup now works in both copies (each has its own element ids) and
+- The header search scope popup of the old `design/admin` now works in both copies (each has its own element ids) and
   closes on an outside click.
 
-Related: [setup wizard and editor siteaccess](setup-wizard-and-editor-siteaccess.md),
-[jQuery 4 and YUI removal](jquery4-and-yui-removal.md), [October 2026 chronicle](../../history/2026/2026-10.md).
-
-See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [admin links follow permissions](admin-links-follow-permissions.md), [order list sorting](order-list-sorting.md).
-
 ## Related pages
 
-- [The responsive admin design (admin3)](admin3-responsive-admin.md)
-- [Left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
-- [Copy selected subitems](subitems-copy-selected.md)
-- [The sub-items list: 129 columns, presets and CSV export](subitems-table-options.md)
-- [Subitems More actions expansion for Hide selected and Unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
-- [August 2024](../../history/2024/2024-08.md)
-- [October 2024](../../history/2024/2024-10.md)
-- [November 2024](../../history/2024/2024-11.md)
-
-## Related pages
-
-- [June 2025](../../history/2025/2025-06.md)
-- [January 2025](../../history/2025/2025-01.md)
-- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)
+- [The responsive admin design (admin3)](admin3-responsive-admin.md), [left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
+- [Setup wizard and editor siteaccess](setup-wizard-and-editor-siteaccess.md), [jQuery 4 and YUI removal](jquery4-and-yui-removal.md)
+- [Admin links follow permissions](admin-links-follow-permissions.md), [order list sorting](order-list-sorting.md)
+- [Sub-items list: columns, presets and CSV export](subitems-table-options.md), [copy selected sub-items](subitems-copy-selected.md), [hide and unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
+- [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- History: [October 2026](../../history/2026/2026-10.md), [June 2026, second half](../../history/2026/2026-06b.md), [June 2025](../../history/2025/2025-06.md), [January 2025](../../history/2025/2025-01.md), [November 2024](../../history/2024/2024-11.md), [October 2024](../../history/2024/2024-10.md), [August 2024](../../history/2024/2024-08.md)
