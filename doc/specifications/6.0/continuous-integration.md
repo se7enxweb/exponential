@@ -1,10 +1,15 @@
 # Specification: continuous integration and the test suite (July to August 2026)
 
-From 11 July to 18 August 2026 the root repository got a test suite that runs on
-PHP 8.1 to 8.5 and a GitHub Actions workflow that runs it on every change. This
-page says what runs, how to run the same thing on your machine, and what each
-piece protects. It is for people who change the kernel or who ship extensions
-and want to know that a change keeps the platform working.
+This page describes the test suite of the root repository and the GitHub Actions workflow that runs it on PHP 8.1
+to 8.5 on every change: what runs, how to run the same on your machine, and what each piece protects. Read it if
+you change the kernel or ship extensions and want proof that a change keeps the platform working. Both were
+added between 11 July and 18 August 2026.
+
+## In short
+
+- Run everything: `php vendor/bin/phpunit`. Run one suite: `php vendor/bin/phpunit --testsuite security`.
+- The workflow is `.github/workflows/phpunit.yml`, with a job per PHP version and a database job.
+- Database tests create and drop tables: point them only at a throw-away database.
 
 ## What was added
 
@@ -80,21 +85,22 @@ php vendor/bin/phpunit --list-test-files
 php vendor/bin/phpunit --list-suites
 
 # the database tests of the legacy toolkit (use a throw-away database)
-php tests/runtests.php --dsn=mysql://user:password@127.0.0.1/testdb --db-per-test tests
+php tests/runtests.php --dsn=mysql://YOUR_USER:YOUR_PASSWORD@127.0.0.1/testdb --db-per-test tests
 ```
 
-The test suites in `phpunit.xml` (test counts checked with `--list-suites` on 2 October 2026: `security` 51, `kernel-classes` 1364, `kernel-content` 4, `kernel-datatypes` 38, `lib` 610, `mongodb` 37, `mongodb-live` 18, `cjw_newsletter` 244; they grow with every release):
+The test suites in `phpunit.xml`. Test counts were checked with `--list-suites` on 2 October 2026; they grow with
+every release.
 
-| Suite | Directory | Needs |
-|---|---|---|
-| `security` | `tests/tests/kernel/classes/security` | nothing |
-| `kernel-classes` | `tests/tests/kernel/classes` (without `security`) | nothing |
-| `kernel-content` | `tests/tests/kernel/content` | nothing |
-| `kernel-datatypes` | `tests/tests/kernel/datatypes` | nothing |
-| `lib` | `tests/tests/lib` (without `ezdb/mongodb`) | nothing |
-| `mongodb` | `expMongoDBAdapterTest.php` | nothing (no live MongoDB) |
-| `mongodb-live` | `expMongoDBIntegrationTest.php` | running MongoDB and MySQL servers; its group is excluded from the default run |
-| `cjw_newsletter` | `tests/tests/extension/cjw_newsletter` (added after August) | a live database of the installation (throw-away data, mail written to files, never sent) |
+| Suite | Directory | Tests | Needs |
+|---|---|---|---|
+| `security` | `tests/tests/kernel/classes/security` | 51 | nothing |
+| `kernel-classes` | `tests/tests/kernel/classes` (without `security`) | 1364 | nothing |
+| `kernel-content` | `tests/tests/kernel/content` | 4 | nothing |
+| `kernel-datatypes` | `tests/tests/kernel/datatypes` | 38 | nothing |
+| `lib` | `tests/tests/lib` (without `ezdb/mongodb`) | 610 | nothing |
+| `mongodb` | `expMongoDBAdapterTest.php` | 37 | nothing (no live MongoDB) |
+| `mongodb-live` | `expMongoDBIntegrationTest.php` | 18 | running MongoDB and MySQL servers; its group is excluded from the default run |
+| `cjw_newsletter` | `tests/tests/extension/cjw_newsletter` (added after August) | 244 | a live database of the installation (throw-away data, mail written to files, never sent) |
 
 Groups `database`, `mail-live`, `mongodb-live` and `network-live` are excluded from the default run. Do not point a test run at a database that holds content you want to keep: the
 database tests create and drop tables.
@@ -121,9 +127,8 @@ php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-text
   `ezpTestSuite`; they boot the kernel through `eZScript`, so do not bootstrap
   the kernel yourself in `bootstrap.php`.
 
-## Related
+## Related pages
 
-- Reference for the toolchain: [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [PHPUnit 13 for PHP 8.4.1](../../bc/6.0/phpunitv13forPHP841.md).
-- Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md); [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md); [Security patches of August 2026](security-hardening-2026-08.md) (the `security` suite)
-- [PHP 8 support](../../bc/6.0/php8.md)
-- [Database drivers and installers, September 2026](database-drivers-2026-09.md)
+- Tool-chain: [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [PHPUnit 13 for PHP 8.4.1](../../bc/6.0/phpunitv13forPHP841.md), [PHP 8 support](../../bc/6.0/php8.md)
+- Specifications: [Security patches of August 2026](security-hardening-2026-08.md) (the `security` suite), [Database drivers and installers, September 2026](database-drivers-2026-09.md)
+- [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), month pages [July 2026](../../history/2026/2026-07.md) and [August 2026](../../history/2026/2026-08.md)

@@ -1,14 +1,23 @@
-# Datatype and input hardening (27 September 2026)
+# Specification: datatype and input hardening (27 September 2026)
 
-On 27 September 2026 every kernel datatype, the shared input validators, the
-mail class, the download helper and the INI writer were reviewed for the same
-class of fault: input that PHP 8 treats strictly (an array where text was
-expected, `null`, a number too large for its column) or that a hostile client
-could craft (script URLs, directory parts in file names, line breaks in headers).
-This page is the reference of what each component now refuses and what it does
-instead. For the wider list of security defaults see
-[Security defaults of September 2026](security-defaults-2026-09.md); for the
-earlier sweep see [Security hardening 6.0.13](security-hardening-6.0.13.md).
+This page is the reference of what each kernel datatype and shared input helper refuses since 27 September 2026,
+and what it does instead. Read it if a form now shows a validation message where it used to accept a value, if
+you import packages, or if you write a datatype or a login handler.
+
+On that day every kernel datatype, the shared input validators, the mail class, the download helper and the INI
+writer were reviewed for the same kind of fault: input that PHP 8 treats strictly (an array where text was
+expected, `null`, a number too large for its column), or input a hostile client could craft (script URLs,
+directory parts in file names, line breaks in headers). For the wider list of security defaults, see
+[Security defaults of September 2026](security-defaults-2026-09.md); for the earlier sweep, see
+[Security hardening 6.0.13](security-hardening-6.0.13.md).
+
+## Settings
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `image.ini` | `ImageSettings` | `MaxImagePixels` | `100000000` (100 million), read by the code; not listed in the shipped `settings/image.ini` | installation or siteaccess; add it to an override to change it |
+
+Everything else on this page is fixed behaviour with no setting.
 
 ## Rules every datatype now follows
 
@@ -88,28 +97,22 @@ earlier sweep see [Security hardening 6.0.13](security-hardening-6.0.13.md).
 - **Sorting a node** (`content/action`) requires permission to edit it and accepts
   only a known sort field and order.
 
-## Checking an installation
+## Check an installation
 
-- Create a test object of a class that uses each datatype and try the hostile
-  value from the table; expect a validation message, not a 500.
-- Search `var/log/error.log` after a crawl for `TypeError` and "Undefined array
-  key": none are expected from the datatypes above.
-- Run the project's PHPUnit suite: it carries tests for the authentication hash
-  comparison (including the "true is no password" case) and for the REST lazy
-  database set-up (`ezpRestLazyTest`).
+1. On a development installation, create a test object of a class that uses each datatype and enter the hostile
+   value from the table. Expected: a validation message, not an HTTP 500.
+2. After a crawl, search the error log. Expected: no matches from the datatypes above.
 
-## Related pages
+   ```bash
+   grep -cE "TypeError|Undefined array key" var/log/error.log
+   ```
 
-- [Security defaults of September 2026](security-defaults-2026-09.md)
-- [Security hardening 6.0.13](security-hardening-6.0.13.md)
-- [Hardening guide](../../bc/6.0/hardening.md)
-- [Form expired page](../../features/6.0/form-expired-page.md): a refused form is a 403 page
-- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+3. Run the PHPUnit suite. It carries tests for the authentication hash comparison (including the "true is no
+   password" case) and for the REST lazy database set-up (`tests/tests/kernel/classes/ezpRestLazyTest.php`).
 
 ## Related pages
 
-- [Specification: the August 2026 security patches](security-hardening-2026-08.md)
-- [RAD tools — security](../../bc/6.0/rad-security.md)
-- [February 2026](../../history/2026/2026-02.md)
+- Specifications: [Security defaults of September 2026](security-defaults-2026-09.md), [Security hardening 6.0.13](security-hardening-6.0.13.md), [The August 2026 security patches](security-hardening-2026-08.md)
+- Upgrade notes: [Hardening guide](../../bc/6.0/hardening.md), [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md), [RAD tools — security](../../bc/6.0/rad-security.md)
+- Features: [Form expired page](../../features/6.0/form-expired-page.md) (a refused form is a 403 page)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md), [February 2026](../../history/2026/2026-02.md)

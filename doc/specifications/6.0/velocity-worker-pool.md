@@ -1,18 +1,46 @@
-# Velocity worker pool and compatibility layer
+# Specification: the Velocity worker pool and compatibility layer
 
-*Reference. Applies to: Exponential Velocity 0.0.4.42. History: [August 2026](../../history/velocity/2026-08.md) (octane), [7 to 21 September](../../history/velocity/2026-09a.md) (compat layer), [23 September](../../history/velocity/2026-09c.md) (memory fixes), [25 to 30 September](../../history/velocity/2026-09e.md) (zygote, non-root workers).*
+This page is the reference for how Velocity runs PHP: the parent process and its **workers**, how the pool is
+sized, when a worker is replaced, the zygote, the user workers run as, what is reset between requests, and the
+compatibility layer that lets ordinary PHP code run in a long-lived process. Read it when you size a pool, chase
+memory or a stale value between requests, or run Velocity as root. It applies to Exponential Velocity 0.0.4.42.
+
+## In short
+
+- The parent loads the application once and forks workers; each worker serves many requests and is reset after
+  each one.
+- Size the pool with `--workers=N` or `[ServerSettings] Workers` in `settings/velocity.ini`; without it the
+  server sizes the pool from memory and cores.
+- Judge memory by PSS, never RSS: a full Exponential worker costs about 11 MB.
+- Workers never run as root unless you allow it.
 
 ## Model
 
-A parent process loads the application once, optionally warms it, then forks **workers**. Each worker answers one request after another. After each request the worker is returned to the state it had when it was forked, so one request never sees another's variables. The parent accepts every connection and reads every request; static files, response-cache hits and the server's own pages are answered there, and only a request that runs PHP goes to a worker: the first idle one, checked to be alive before use. When every worker is busy the request waits in the parent (it is never refused for lack of a worker; the limit is `maxConnections`, beyond which the server answers `503`). A request that cannot be handed to a worker goes back to the front of the queue up to three times, then the client gets `502`.
+- A parent process loads the application once, optionally warms it, then forks workers. Each worker answers one
+  request after another.
+- After each request the worker is returned to the state it had when it was forked, so one request never sees
+  another's variables.
+- The parent accepts every connection and reads every request. It answers static files, response-cache hits
+  and the server's own pages itself. Only a request that runs PHP goes to a worker: the first idle one, checked
+  to be alive before use.
+- When every worker is busy, the request waits in the parent. It is never refused for lack of a worker; the
+  limit is `maxConnections`, beyond which the server answers `503`.
+- A request that cannot be handed to a worker goes back to the front of the queue up to three times; then the
+  client gets `502`.
 
-Modes: **persistent** (default); **`forkPerRequest`** (one request per worker, then a fresh fork: the isolation of a fresh process at the cost of a fork per request); **php-cgi** carve-out for scripts that need a classic SAPI.
+| Mode | Behaviour |
+|---|---|
+| Persistent (default) | Each worker serves many requests |
+| `forkPerRequest` | One request per worker, then a fresh fork: the isolation of a fresh process at the cost of a fork per request |
+| php-cgi carve-out | For scripts that need a classic SAPI |
 
 ## Pool size
 
 `--workers=N` sets it. Without it the server sizes the pool from the machine and from what a worker costs: a worker is assumed to hold at least what the parent holds after loading the application (never less than 8 MB); the count is what fits in the memory left after 1 GB is set aside, at most 8 per core and 64 in all, never fewer than 4. The count is then checked against file descriptor and process limits; on a terminal the server asks before starting a larger pool, and **it never prompts when nobody can answer** (a service manager starting it). Anything beyond the automatic ceiling is a deliberate `--workers`.
 
-### What a worker costs (measured 2026-09-26, PSS from `/proc/<pid>/smaps_rollup`, 12-core Linux, PHP 8.5)
+### What a worker costs
+
+Measured on 2026-09-26: PSS from `/proc/<pid>/smaps_rollup`, 12-core Linux, PHP 8.5.
 
 | | Private per worker | PSS per worker | Workers per GB |
 |---|---|---|---|
@@ -137,9 +165,9 @@ Behaviour guaranteed by the layer (each fixed in a named release):
 - No fork on Windows.
 - Per-request kernel caches keyed on request time need engine 0.0.4.42 or later (`REQUEST_TIME_FLOAT` per request).
 
-## See also
+## Related pages
 
-- Features: [Velocity web server](../../features/6.0/velocity-web-server.md), [persistent worker server](../../features/6.0/velocity-persistent-worker-server.md), [Scheduler](../../features/6.0/velocity-scheduler.md), [Response cache](../../features/6.0/velocity-response-cache.md).
-- Specifications: [Engine settings](velocity-engine-settings.md) (event loop, start-up pre-warm cache), [HTTP/2 and security](velocity-http2-and-security.md).
-- Upgrade and operations: [Velocity engines](../../bc/6.0/velocity-engines.md) (`[ServerSettings]` in `settings/velocity.ini`), [engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md).
-- History: [August](../../history/velocity/2026-08.md), [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).
+- Features: [Velocity web server](../../features/6.0/velocity-web-server.md), [persistent worker server](../../features/6.0/velocity-persistent-worker-server.md), [Scheduler](../../features/6.0/velocity-scheduler.md), [Response cache](../../features/6.0/velocity-response-cache.md)
+- Specifications: [Engine settings](velocity-engine-settings.md) (event loop, start-up pre-warm cache), [HTTP/2 and security](velocity-http2-and-security.md)
+- Upgrade and operations: [Velocity engines](../../bc/6.0/velocity-engines.md) (`[ServerSettings]` in `settings/velocity.ini`), [engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md)
+- History: [August 2026](../../history/velocity/2026-08.md) (octane), [7 to 21 September](../../history/velocity/2026-09a.md) (compatibility layer), [23 September](../../history/velocity/2026-09c.md) (memory fixes), [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md) (zygote, non-root workers); [Velocity changelog](../../changelogs/extensions/exponential-velocity.md)

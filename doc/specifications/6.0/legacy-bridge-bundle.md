@@ -1,18 +1,27 @@
-# Legacy bridge bundle specification
+# Specification: the legacy bridge bundle
 
-**Package:** `se7enxweb/legacy-bridge` (repository `legacyBridge`), bundle class `eZ\Bundle\EzPublishLegacyBundle\EzPublishLegacyBundle`, configuration root `ez_publish_legacy`.
-**Task guide:** [Legacy bridge: run Exponential 6 inside the Symfony platform](../../features/6.0/legacy-bridge.md).
-**History:** [legacyBridge](../../history/ecosystem/legacyBridge.md), [ibexa-legacy-bridge---7x](../../history/ecosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../history/ecosystem/site-legacy-bundle.md), [ngsymfonytools](../../history/ecosystem/ngsymfonytools.md).
+This page is the reference for the legacy bridge, the Symfony bundle that runs the Exponential 6 kernel inside a
+platform request: its layout, the events you can listen to, the settings it maps from the platform into the
+legacy kernel, its configuration tree and its branches. Read it if you configure or extend a project that runs
+both kernels. For step-by-step setup, use
+[Legacy bridge: run Exponential 6 inside the Symfony platform](../../features/6.0/legacy-bridge.md).
 
-## Purpose
+| Item | Value |
+|---|---|
+| Package | `se7enxweb/legacy-bridge` (repository `legacyBridge`) |
+| Bundle class | `eZ\Bundle\EzPublishLegacyBundle\EzPublishLegacyBundle` |
+| Configuration root | `ez_publish_legacy` |
 
-Boot the Exponential 6 kernel inside a Symfony request, share the database, the siteaccess, the user and the caches with the platform kernel, and let each kernel handle the URLs it owns.
+## What the bridge does
+
+It boots the Exponential 6 kernel inside a Symfony request, shares the database, the siteaccess, the user and the
+caches with the platform kernel, and lets each kernel handle the URLs it owns.
 
 ## Layout of the bundle
 
 | Path | Responsibility |
 |---|---|
-| `bundle/DependencyInjection/` | configuration tree (`ez_publish_legacy`), scope handling, service loading from `bundle/Resources/config/*.yml` |
+| `bundle/DependencyInjection/` | Configuration tree (`ez_publish_legacy`), scope handling, service loading from `bundle/Resources/config/*.yml` |
 | `bundle/LegacyMapper/` | `Configuration`, `LegacyBundles`, `Security`, `Session`, `SiteAccess`: map platform state into the legacy kernel's settings before it is built |
 | `bundle/Controller/` | `LegacyKernelController` (runs a legacy request), `LegacyRestController`, `LegacySetupController` (setup wizard), `LegacyTreeMenuController`, `PreviewController`, `WebsiteToolbarController` |
 | `bundle/EventListener/` | `ConfigScopeListener`, `CsrfTokenResponseListener`, `IndexRequestListener`, `LegacyKernelListener`, `RequestListener`, `RestListener`, `SetupListener` |
@@ -24,7 +33,7 @@ Boot the Exponential 6 kernel inside a Symfony request, share the database, the 
 
 ## Events
 
-Constants of `LegacyEvents` (listeners may change the legacy settings at build time):
+Constants of `LegacyEvents`. A listener may change the legacy settings while the kernel is built:
 
 | Constant | Event name | When |
 |---|---|---|
@@ -63,7 +72,7 @@ Any other driver raises `RuntimeException`: "Could not map database driver to Le
 
 ## Configuration tree
 
-Root `ez_publish_legacy` (platform configuration file, for example `config/packages/ezplatform.yaml` or `app/config/ezplatform.yml`):
+Root `ez_publish_legacy`, in a platform configuration file such as `config/packages/ezplatform.yaml` or `app/config/ezplatform.yml`:
 
 | Key | Type | Default | Scope | Meaning |
 |---|---|---|---|---|
@@ -101,14 +110,10 @@ ez_publish_legacy:
 - `ngsymfonytools`: legacy extension with a `symfony_include` template operator to render a Twig template or a Symfony sub-request from a legacy `.tpl`. The operator fetches the `twig` service from the container; this works on Symfony 5 and later because the bridge's `TwigPass` makes the service public (`v5.0.9`, April 2026). It also carries a class alias from the old repository interface to the Ibexa one.
 - `ibexa-legacy-bridge` (Platform 4): port of the bridge to the Ibexa 4 APIs, with `exponential:legacy:script`.
 
-## Related
+## Related pages
 
-[Legacy bridge guide](../../features/6.0/legacy-bridge.md) · [Site bundles](../../features/6.0/platform-site-bundles.md) · [SQLite installer](platform-sqlite-installer.md) · [Package map](platform-package-map.md)
-
-## Platform ecosystem pages
-
-- Features: [Platform administration interface](../../features/6.0/platform-admin-ui-fork.md); [DXP skeleton](../../features/6.0/platform-dxp-skeleton.md); [Layouts on the platform](../../features/6.0/platform-layouts-core-fork.md); [Nexus starter](../../features/6.0/platform-nexus-starter.md); [PHP 8.5 framework forks](../../features/6.0/platform-php85-framework-forks.md); [Site bundles](../../features/6.0/platform-site-bundles.md); [SQLite for Exponential Platform](../../features/6.0/platform-sqlite-install.md); [Legacy bridge](../../features/6.0/legacy-bridge.md); [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md).
-- Specifications: [Platform console command names](platform-console-commands.md); [Platform package map](platform-package-map.md); [Platform SQLite installer](platform-sqlite-installer.md).
-- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
-- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
-- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
+- Features: [Legacy bridge](../../features/6.0/legacy-bridge.md), [Site bundles](../../features/6.0/platform-site-bundles.md), [Platform administration interface](../../features/6.0/platform-admin-ui-fork.md), [DXP skeleton](../../features/6.0/platform-dxp-skeleton.md), [Layouts on the platform](../../features/6.0/platform-layouts-core-fork.md), [Nexus starter](../../features/6.0/platform-nexus-starter.md), [PHP 8.5 framework forks](../../features/6.0/platform-php85-framework-forks.md), [SQLite for Exponential Platform](../../features/6.0/platform-sqlite-install.md), [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md)
+- Specifications: [Platform console command names](platform-console-commands.md), [Platform package map](platform-package-map.md), [Platform SQLite installer](platform-sqlite-installer.md)
+- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md)
+- History: [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md); repositories [legacyBridge](../../history/ecosystem/legacyBridge.md), [ibexa-legacy-bridge---7x](../../history/ecosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../history/ecosystem/site-legacy-bundle.md), [ngsymfonytools](../../history/ecosystem/ngsymfonytools.md)

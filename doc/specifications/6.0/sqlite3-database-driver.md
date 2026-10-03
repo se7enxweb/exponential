@@ -1,7 +1,29 @@
 # Specification: the SQLite3 database driver
 
-Reference for `eZSQLite3DB` and `eZSQLiteSchema`. The task-oriented
-introduction is [SQLite database support](../../features/6.0/sqlite-database.md).
+This page is the reference for the legacy kernel's SQLite driver, `eZSQLite3DB`, and its schema handler,
+`eZSQLiteSchema`: how they are registered, how a connection is opened and tuned, how transactions wait for the
+single writer, and which SQL the driver translates. Read it if you run an installation on SQLite, tune it, or
+write SQL that must run on every engine. The task-oriented introduction is
+[SQLite database support](../../features/6.0/sqlite-database.md).
+
+## Settings
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/site.ini` | `DatabaseSettings` | `ImplementationAlias[sqlite3]` | `eZSQLite3DB` | installation |
+| `settings/site.ini` | `DatabaseSettings` | `SQLitePragmas[]` | none; entries `name=value` override the [PRAGMA defaults](#pragma-defaults-and-overrides) | installation |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `60` (seconds) | installation |
+| `settings/dbschema.ini` | `SchemaSettings` | `SchemaPaths[sqlite]`, `SchemaPaths[sqlite3]` | `lib/ezdbschema/classes/ezsqliteschema.php` | installation |
+| `settings/dbschema.ini` | `SchemaSettings` | `SchemaHandlerClasses[sqlite]`, `SchemaHandlerClasses[sqlite3]` | `eZSQLiteSchema` | installation |
+| `settings/setup.ini` | `DatabaseSettings` | `DefaultType` | `sqlite3` | setup wizard |
+
+Read a value with:
+
+```bash
+./console exp:ini get site.ini/DatabaseSettings/SQLiteTransactionWait --allow-root-user
+```
+
+Expected output: `60`, unless an override changes it.
 
 ## Classes and files
 
@@ -16,14 +38,7 @@ added to `autoload/ezp_kernel.php` in April 2026 (`cefe8f13a2`). Without that
 entry the alias `sqlite3=eZSQLite3DB` ended in a fatal autoload failure and a
 null database connection when the kernel was loaded in a bridged setup.
 
-## Registration
-
-| File | Block | Key | Value |
-|---|---|---|---|
-| `settings/site.ini` | `[DatabaseSettings]` | `ImplementationAlias[sqlite3]` | `eZSQLite3DB` |
-| `settings/dbschema.ini` | `[SchemaSettings]` | `SchemaPaths[sqlite]`, `SchemaPaths[sqlite3]` | `lib/ezdbschema/classes/ezsqliteschema.php` |
-| `settings/dbschema.ini` | `[SchemaSettings]` | `SchemaHandlerClasses[sqlite]`, `SchemaHandlerClasses[sqlite3]` | `eZSQLiteSchema` |
-| `settings/setup.ini` | `[DatabaseSettings]` | `DefaultType` | `sqlite3` |
+## Setup wizard
 
 The setup wizard's database table (`kernel/setup/ezsetupcommon.php`) lists the
 type `sqlite3` with driver `sqlite3`, name "SQLite", required version `3.0.1`,
@@ -68,13 +83,18 @@ SQLite has one writer. Since 6.0.15 (1-2 October 2026) a transaction starts with
 | Rollback | `ROLLBACK` is sent only when SQLite has a transaction open (no more "cannot rollback - no transaction is active"). |
 | Measured | In the change's test run, 64 concurrent publishers: before 6 of 192 failed, after 192 of 192 completed whole (not repeated for this page). |
 
-| File | Block | Key | Default | Scope |
-|---|---|---|---|---|
-| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `60` (seconds) | installation |
+The wait is set by `[DatabaseSettings] SQLiteTransactionWait` (see [Settings](#settings)). Upgrade notes:
+[SQLite transactions](../../bc/6.0/sqlite-transactions.md).
 
-Check the setting: `./console exp:ini get site.ini/DatabaseSettings/SQLiteTransactionWait --allow-root-user`. Upgrade notes: [SQLite transactions](../../bc/6.0/sqlite-transactions.md).
+Other fixes of the same days:
 
-Other fixes of the same days: `subString( s, n )` without a length returns the rest of the string, as on the other engines (a node move used to drop the last character of `path_string` and `path_identification_string` of the moved subtree); a node's `path_identification_string` is rewritten from the value stored for it, not from a stale copy held by the node object; the asynchronous publisher closes its database connection before it forks for each publish (a connection must never cross a fork); the setup wizard's database field offers only real SQLite files (`eZSQLite3DB::availableDatabasesIn()`).
+- `subString( s, n )` without a length returns the rest of the string, as on the other engines. A node move used
+  to drop the last character of `path_string` and `path_identification_string` of the moved subtree.
+- A node's `path_identification_string` is rewritten from the value stored for it, not from a stale copy held by
+  the node object.
+- The asynchronous publisher closes its database connection before it forks for each publish. A connection must
+  never cross a fork.
+- The setup wizard's database field offers only real SQLite files (`eZSQLite3DB::availableDatabasesIn()`).
 
 ## SQL compatibility layer
 
@@ -101,18 +121,10 @@ the same statements run on both engines; the test runs also found missing
 - No replication or clustering of its own; a shared file system is only
   suitable for read-mostly sites.
 
-## Related
-
-[MongoDB kernel support](../../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md) for
-the other non-MySQL engine, and [SQL query cache](../../bc/6.0/sql-query-cache.md)
-for how query results are cached on every engine.
-
-## See also
-
-Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md), [6.0.13](../../changelogs/6.0/6.0.13.md), [6.0.14](../../changelogs/6.0/6.0.14.md); chronicles: [January 2024, first half](../../history/2024/2024-01a.md), [April 2026](../../history/2026/2026-04.md), [June 2026, second half](../../history/2026/2026-06b.md).
-
 ## Related pages
 
-- [SQLite for Exponential Platform: no database server needed](../../features/6.0/platform-sqlite-install.md)
-- [Platform SQLite installer](platform-sqlite-installer.md)
-- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [SQLite database support](../../features/6.0/sqlite-database.md), [SQLite for Exponential Platform](../../features/6.0/platform-sqlite-install.md)
+- [Platform SQLite installer](platform-sqlite-installer.md), [Database drivers and installers](database-drivers-2026-09.md)
+- [SQLite transactions](../../bc/6.0/sqlite-transactions.md), [MongoDB kernel support](../../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md) (the other non-MySQL engine), [SQL query cache](../../bc/6.0/sql-query-cache.md) (query results on every engine)
+- Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md), [6.0.13](../../changelogs/6.0/6.0.13.md), [6.0.14](../../changelogs/6.0/6.0.14.md), [6.0.15](../../changelogs/6.0/6.0.15.md)
+- Chronicles: [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [April 2026](../../history/2026/2026-04.md), [June 2026, second half](../../history/2026/2026-06b.md)

@@ -1,10 +1,24 @@
-# Velocity engine settings and programs
+# Specification: Velocity engine settings and programs
 
-*Reference. Applies to: Exponential Velocity 0.0.4.42. The settings of larger subsystems are in their own pages: [response cache](../../features/6.0/velocity-response-cache.md), [HTTPS](../../features/6.0/velocity-https-certificates.md), [control panel](../../features/6.0/velocity-control-panel.md), [Q shell](../../features/6.0/velocity-q-shell.md), [worker pool](velocity-worker-pool.md), [headers and limits](velocity-http2-and-security.md). From Exponential the engine is configured through `settings/velocity.ini`; see [Velocity engines](../../bc/6.0/velocity-engines.md).*
+This page is the reference for the Velocity engine's own settings (JSON under the `Q` key), where they are read
+from, the programs the engine ships, logging, branding, the event loop, TLS session reuse and the start-up
+pre-warm cache. Read it when you configure Velocity outside Exponential's `settings/velocity.ini`, read its logs,
+or need the default of an engine key. It applies to Exponential Velocity 0.0.4.42.
+
+From Exponential, the engine is normally configured through `settings/velocity.ini`; see
+[Velocity engines](../../bc/6.0/velocity-engines.md). The settings of larger subsystems have their own pages:
+[response cache](../../features/6.0/velocity-response-cache.md), [HTTPS](../../features/6.0/velocity-https-certificates.md),
+[control panel](../../features/6.0/velocity-control-panel.md), [Q shell](../../features/6.0/velocity-q-shell.md),
+[worker pool](velocity-worker-pool.md), [headers and limits](velocity-http2-and-security.md).
+
+In the tables below, a key without the `Q.` prefix is relative to `Q` (`webserver.keepAlive.max` is
+`Q.webserver.keepAlive.max`).
 
 ## Where settings come from
 
-Settings are JSON under the `Q` key. They are read, later wins, from: the engine's built-in defaults; the configuration tree (`qbix.conf`, `ports.conf`, `conf-enabled/`, `mods-enabled/`, `sites-enabled/`, in `/etc/qbix`, with overlays such as `/etc/vc` stacked on top); the file given by `--config`; and the control panel's store (only for the settings the panel offers). Print what would be loaded without starting:
+Settings are JSON under the `Q` key. They are read in this order, and a later source wins: the engine's built-in defaults; the configuration tree (`qbix.conf`, `ports.conf`, `conf-enabled/`, `mods-enabled/`, `sites-enabled/`, in `/etc/qbix`, with overlays such as `/etc/vc` stacked on top); the file given by `--config`; and the control panel's store (only for the settings the panel offers).
+
+To print what would be loaded, without starting the server:
 
 ```bash
 php sbin/qbixserver.php --root=web --layout
@@ -153,10 +167,9 @@ Without `--user` and a configuration, a server started as root keeps root worker
 
 The server runs handlers on a schedule, like cron, from `Q.scheduler` (introduced 21 July 2026): each task names a handler dispatched with `Q::event()` in a forked child, with `every` seconds, or `times` (`HH:MM`) narrowed by `weekdays` and `monthdays`. It is not a way to run a command-line PHP script. Scheduled tasks give up root like workers do. Fields, examples and limits: [Velocity scheduler](../../features/6.0/velocity-scheduler.md); the engine's own `docs/configuration.md`, section "Scheduler".
 
-## See also
+## Related pages
 
-- Features: [Velocity web server](../../features/6.0/velocity-web-server.md), [Scheduler](../../features/6.0/velocity-scheduler.md), [Static files and images](../../features/6.0/velocity-static-files-and-images.md), [WebSockets and events](../../features/6.0/velocity-websockets-and-events.md), [Discovery, federation and deploy](../../features/6.0/velocity-discovery-federation-and-deploy.md), [Packages and binaries](../../features/6.0/velocity-packages-and-binaries.md).
-- Specifications: [Worker pool](velocity-worker-pool.md), [HTTP/2 and security](velocity-http2-and-security.md).
-- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [Velocity engines](../../bc/6.0/velocity-engines.md), [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md).
-- History: [Velocity chronicle](../../history/velocity/README.md); [changelog](../../changelogs/extensions/exponential-velocity.md).
-- [Velocity: running Exponential in a persistent-worker web server](../../features/6.0/velocity-persistent-worker-server.md)
+- Features: [Velocity web server](../../features/6.0/velocity-web-server.md), [persistent worker server](../../features/6.0/velocity-persistent-worker-server.md), [Scheduler](../../features/6.0/velocity-scheduler.md), [Static files and images](../../features/6.0/velocity-static-files-and-images.md), [WebSockets and events](../../features/6.0/velocity-websockets-and-events.md), [Discovery, federation and deploy](../../features/6.0/velocity-discovery-federation-and-deploy.md), [Packages and binaries](../../features/6.0/velocity-packages-and-binaries.md)
+- Specifications: [Worker pool](velocity-worker-pool.md), [HTTP/2 and security](velocity-http2-and-security.md)
+- Upgrade notes: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [Velocity engines](../../bc/6.0/velocity-engines.md), [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md)
+- History: [Velocity chronicle](../../history/velocity/README.md), [Velocity changelog](../../changelogs/extensions/exponential-velocity.md)

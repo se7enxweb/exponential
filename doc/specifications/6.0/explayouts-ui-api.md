@@ -1,8 +1,31 @@
-# explayouts_ui_api specification
+# Specification: the explayouts_ui_api editor API
 
-Reference for the editor API of the `explayouts_ui_api` extension (releases 1.0.0 to
-1.3.7). The user-facing description is the
-[feature page](../../features/6.0/extensions/explayouts_ui_api.md).
+This page is the reference for the JSON API behind the layout editor of the `explayouts_ui_api` extension
+(releases 1.0.0 to 1.3.7): its module views, the dispatcher, the form token rule, every endpoint, the write
+rules, templates and translations. Read it if you script layouts, debug the editor, or build your own client.
+The user-facing description is the [feature page](../../features/6.0/extensions/explayouts_ui_api.md).
+
+## In short
+
+- Base path: `/explayouts_ui_api/app/api`. Responses are `application/json`; lists are `{"values": [...], "total": n}`.
+- Reads (`GET`, `HEAD`, `OPTIONS`) need only the admin session. Writes also need the form token as `X-CSRF-Token`.
+- Only a **draft** layout can be changed; published and shared layouts are read-only through the API.
+
+## Example: read the editor configuration
+
+Sign in to the admin in a browser, copy the session cookie, and run (replace the host and the cookie):
+
+```bash
+curl -s -H 'Cookie: YOUR_SESSION_COOKIE' https://<admin-host>/explayouts_ui_api/app/api/config
+```
+
+Expected answer (the token value differs):
+
+```json
+{"csrf_token":"...","automatic_cache_clear":true,"edition":"Open Source"}
+```
+
+Use that `csrf_token` as the `X-CSRF-Token` header of every write request.
 
 ## Module
 
@@ -63,13 +86,13 @@ content locale prefix.
 | `POST /<locale>/blocks` | Create a block. `parent_position` places it; siblings are renumbered |
 | `DELETE /<locale>/blocks/<id>` | Delete; siblings are compacted |
 | `POST /<locale>/blocks/<id>/copy`, `/move` | Copy and move, also into containers |
-| `GET|POST|PATCH /collections/...` | Collections: `result`, `change_type`, `query`, `items` (`GET`, `POST`, `PUT`, `DELETE`, `remove_all`) |
+| `GET\|POST\|PATCH /collections/...` | Collections: `result`, `change_type`, `query`, `items` (`GET`, `POST`, `PUT`, `DELETE`, `remove_all`) |
 | `GET /content_browser/...` | Content browser data for adding collection items |
 | `GET /rules`, `GET /rules/<id>`, `GET /mappings` | Mapping rules with targets and conditions; rule counts per `layout_id` |
 | `/transfer/...` | Import and export through `expLayoutsImporter` and `expLayoutsExporter` |
 | `/forms/...`, `/parameters/...` | Form and parameter metadata for the block edit sidebar |
 | `GET /versions/<layout_id>` | Draft and published versions |
-| `GET|POST|DELETE /share/<layout_id>` | Share tokens (table `explayouts_share`) |
+| `GET\|POST\|DELETE /share/<layout_id>` | Share tokens (table `explayouts_share`) |
 
 HTML fragments, relative to `/explayouts_ui_api/app`: `GET /<locale>/blocks/<id>/edit`
 (wrapper, `form_block_edit.tpl`) and `GET /<locale>/blocks/<id>/form` (the `<form>`,
@@ -118,13 +141,8 @@ Context `design/standard/explayouts_ui_api/spa` in `untranslated`, `eng-US` and 
 (123 messages, German complete). Sentences built from pieces are single messages with
 placeholders (`%kind`, `%language`, `%name`, `%count`) and have singular and plural forms.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/explayouts_ui_api.md)
-* [explayouts_ui](../../features/6.0/extensions/explayouts_ui.md)
-* [Chronicle](../../history/extensions/explayouts_ui_api.md) and [release notes](../../changelogs/extensions/explayouts_ui_api.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-* months: [2026-07](../../history/extensions/months/2026-07.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)
+- Features: [explayouts_ui_api](../../features/6.0/extensions/explayouts_ui_api.md), [explayouts_ui](../../features/6.0/extensions/explayouts_ui.md), [Exponential Layouts](../../bc/6.0/LAYOUTS.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Chronicle](../../history/extensions/explayouts_ui_api.md), [release notes](../../changelogs/extensions/explayouts_ui_api.md); months [2026-07](../../history/extensions/months/2026-07.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)
