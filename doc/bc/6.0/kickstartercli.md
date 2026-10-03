@@ -1,24 +1,17 @@
 # Kickstarter CLI
 
-**Introduced:** Exponential CMS 6.0.15
-**Location:** `bin/php/kickstarter.php`  
-**Console alias:** `./console exp:kickstarter` (or `php bin/php/console exp:kickstarter`)  
-**Type:** PHP CLI setup wizard driver
+Read this page if you install Exponential from the command line, script installations, or reinstall test sites.
+`bin/php/kickstarter.php` (console: `php bin/php/console exp:kickstarter`, new in Exponential 6.0.15) runs the setup
+wizard without a browser: it reads every wizard answer from `kickstart.ini`.
 
----
+## In short
 
-## What is it?
-
-The Kickstarter CLI is the non-interactive, command-line driver for the Exponential CMS setup wizard. It lets you install a new site by reading every wizard answer from `kickstart.ini` instead of a web form.
-
-Two subcommands are exposed:
-
-- `exp:kickstarter ini` — generates a `kickstart.ini` from `kickstart.ini-dist`.
-- `exp:kickstarter run` — executes the setup wizard steps using the values in `kickstart.ini`.
-
-`kickstarter` is also available as the standalone `bin/php/kickstarter.php` script, and it is auto-discovered by the Exponential Console (`bin/php/console`) as the `exp:kickstarter` command.
-
----
+| | |
+|---|---|
+| What changed | New command with two subcommands: `ini` writes `kickstart.ini` from `kickstart.ini-dist`, `run` executes the wizard steps. `run` refuses the destructive `CreateSites` step without `--force`; `run --dry-run` tests the remote package download without touching the database. In kickstart mode the site package is always downloaded from the remote repository. `eZPackage::import()` gains an optional fifth argument `$skipExisting`. |
+| Who is affected | Anyone who installs sites. Existing callers of `eZPackage::import()` are unchanged (the new argument defaults to `false`). A `kickstart.ini` left in the project root is also read by the web setup wizard. |
+| How to check | `php bin/php/kickstarter.php run --list-steps` (changes nothing) |
+| How to fix | Nothing to fix. Remove or move `kickstart.ini` after a CLI install if the web wizard must not use it. Before an install onto another database engine, set `DatabaseImplementation` in `settings/override/site.ini.append.php` (see [`database_choice`](#database_choice)). |
 
 ## Prerequisites
 
@@ -31,13 +24,12 @@ ls index.php autoload.php kickstart.ini-dist
 
 You need:
 
-- **PHP 8.2+ or 8.x** on your `$PATH`.
+- **PHP 8.1 or later** on your `$PATH`.
 - A database server already running and reachable (MySQL, PostgreSQL, SQLite 3, or MongoDB).
 - The `var/cache/ini/` directory must be writable because `kickstart.ini` is cached there.
 
----
 
-## Quick-start
+## Quick start
 
 ```bash
 # Generate an interactive kickstart.ini
@@ -58,7 +50,6 @@ php bin/php/console exp:kickstarter run --dry-run
 php bin/php/console exp:kickstarter run --force
 ```
 
----
 
 ## Command reference
 
@@ -81,7 +72,6 @@ php bin/php/kickstarter.php ini
 
 The `--yes` defaults are loaded from `kernel/classes/expkickstarterini.php` and are also influenced by any existing `siteaccess` `site.ini` `DatabaseSettings`, so they can reconnect to an already-installed database.
 
----
 
 ### `exp:kickstarter run` — run the setup wizard
 
@@ -160,7 +150,6 @@ php bin/php/console exp:kickstarter run --dry-run
 
 Because the `stop-step` is `Registration`, the `--force` guard is never triggered and `CreateSites` is never reached, so the database and site files are left untouched.
 
----
 
 ## Setup steps
 
@@ -185,7 +174,6 @@ The wizard steps are defined in `kernel/setup/steps/ezstep_data.php`.
 | 14 | `CreateSites` | Destructive step: installs schema, data, packages, and siteaccess files. Not counted in progress. |
 | 15 | `Final` | Final step. |
 
----
 
 ## `kickstart.ini` reference
 
@@ -401,7 +389,6 @@ Send=false
 | `Comments` | Comment sent with the registration email. |
 | `Send` | `true` or `false` — whether to send the registration email. |
 
----
 
 ## Installation workflow
 
@@ -434,7 +421,6 @@ Send=false
 
 5. **Verify the site is accessible** at the URL written in the summary.
 
----
 
 ## Examples
 
@@ -473,7 +459,6 @@ This validates the INI sections, lists the wizard steps, and then runs the wizar
 php bin/php/console exp:kickstarter run --list-steps
 ```
 
----
 
 ## FAQ: short answers for common needs
 
@@ -547,12 +532,6 @@ A temporary package repository created only during `--dry-run`. `eZPackage::impo
 
 Yes. The changes are additive. The `--dry-run` path is separate from the install path. The install path (`run --force`) still requires the `--force` guard. The `eZPackage` and `eZStepSiteTypes` APIs keep their old behavior unless the new optional flags are used.
 
-### Can I commit this?
-
-Yes. The changes are additive and the tests above (`run --dry-run` and `run --stop-step=Registration`) pass. The `eZPackage` and `eZStepSiteTypes` changes are backward-compatible. `expKickstarter` is a new CLI-only class.
-
----
-
 ## Troubleshooting
 
 ### `kickstart.ini not found`
@@ -608,7 +587,6 @@ php bin/php/console exp:kickstarter run --force
 - Remember that `hasKickstartData()` must be true for the remote-entry preference. The `[site_types]` section must have `Continue=true` and `Site_package` set.
 - Run `--dry-run` to see exactly where the download fails.
 
----
 
 ## Files
 
@@ -641,7 +619,6 @@ php bin/php/console exp:kickstarter run --force
 
 The `siteLanguageLocaleList` is now cast with `(array)` in both `processPostData()` and `init()`, so an empty `Languages[]` value in `kickstart.ini` no longer triggers a fatal `array_diff()` error in `eZStepPackageLanguageOptions::init()`.
 
----
 
 ## The summary ends with a finish time and duration
 
@@ -649,17 +626,13 @@ After the summary the kickstarter prints a rule, then `Finished:` with the date,
 
 Every run is also logged to `var/log/kickstart.log` with passwords masked; earlier runs are kept as `kickstart.log.1` (the last) to `kickstart.log.9`, and `EXP_KICKSTART_LOG=0` turns the log off (see `php bin/php/kickstarter.php --help`). List the steps without changing anything: `php bin/php/kickstarter.php run --list-steps`.
 
----
-
-## See also
-
-- [September 2026, first half: 13 September](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
-- [Kickstarter CLI (feature page)](../../features/6.0/kickstarter-cli.md) and [Install in one command](../../features/6.0/install-in-one-command.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-- `doc/bc/6.0/console.md` — the Exponential Console.
-- `kickstart.ini-dist` in the project root.
 
 ## Related pages
 
+- [Kickstarter CLI (feature page)](../../features/6.0/kickstarter-cli.md) and [Install in one command](../../features/6.0/install-in-one-command.md)
 - [Getting started guide](../../guides/getting-started.md)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
+- [Exponential Console](console.md)
+- [September 2026, first half: 13 September](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- `kickstart.ini-dist` in the project root: every section and field, commented.
