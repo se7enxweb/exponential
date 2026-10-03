@@ -61,7 +61,7 @@ Understanding *why* this broke requires understanding the PHPUnit naming migrati
 | 8.x | Namespace only — `PHPUnit_TextUI_Command` removed | Breaking change |
 | 9.x – 10.x | Namespace only — significant internal API restructuring | Current |
 
-The Exponential (eZ Publish Legacy) test toolkit was written circa 2012–2014 for PHPUnit
+The Exponential test toolkit was written circa 2012–2014 for PHPUnit
 3.7. The `composer.json` in 6.0.x was updated to require `phpunit/phpunit: 10.0.0` — but
 the toolkit files that wrap PHPUnit were never updated. The result is that `composer
 install` brings in a PHPUnit version that is entirely incompatible with every class in
@@ -510,7 +510,7 @@ fatal.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  phpunit.xml — Exponential 6.0.13 / eZ Publish Legacy PHPUnit 10 configuration.
+  phpunit.xml — Exponential 6.0.13 PHPUnit 10 configuration.
 
   Usage:
     php vendor/bin/phpunit                          # run all tests
@@ -580,7 +580,7 @@ fatal.
 
 **What broke:** PHPUnit cannot load any `ezpTestCase`-extending test class because there
 was never a bootstrap file that `require`-s the toolkit classes. The old code relied on
-eZ Publish's custom autoload system (`autoload.php`), which itself requires the platform to
+Exponential's custom autoload system (`autoload.php`), which itself requires the platform to
 be initialised. The toolkit classes however are simple PHP files that need no platform
 boot — they just need to be included.
 
@@ -589,7 +589,7 @@ boot — they just need to be included.
 ```php
 <?php
 /**
- * PHPUnit bootstrap file for Exponential / eZ Publish Legacy 6.0.x.
+ * PHPUnit bootstrap file for Exponential 6.0.x.
  *
  * Loaded by PHPUnit before any test file is parsed.  Loads the Composer
  * autoloader and all toolkit base classes so that ezpTestCase,
@@ -597,7 +597,7 @@ boot — they just need to be included.
  * available to every test file without each test having to require them
  * individually.
  *
- * Do NOT bootstrap the full eZ Publish kernel here — tests that need it
+ * Do NOT bootstrap the full Exponential kernel here — tests that need it
  * use ezpTestSuite / ezpDatabaseTestCase which do so themselves via eZScript.
  *
  * @package tests
@@ -606,7 +606,7 @@ boot — they just need to be included.
 // ── Composer autoloader ──────────────────────────────────────────────────────
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// ── eZ Publish Legacy test toolkit (order matters) ───────────────────────────
+// ── Exponential test toolkit (order matters) ───────────────────────────
 $toolkit = __DIR__ . '/toolkit/';
 
 require_once $toolkit . 'ezptestcase.php';           // ezpTestCase
@@ -624,7 +624,7 @@ require_once $toolkit . 'ezpdsn.php';
 ```
 
 > **Important:** This bootstrap does *not* call `eZScript::instance()`. Tests that need
-> the full eZ Publish stack inherit from `ezpDatabaseTestCase` which calls `ezpTestSuite`
+> the full Exponential stack inherit from `ezpDatabaseTestCase` which calls `ezpTestSuite`
 > which calls `eZScript::instance()` in its constructor. That is the correct separation of
 > concerns. Do not add kernel bootstrapping here or you will break unit tests that
 > intentionally run without the platform.
@@ -852,7 +852,7 @@ A: You applied Fix 1 but forgot to add `bool` to the property declaration. Chang
 `protected $backupGlobals = false;` to `protected bool $backupGlobals = false;`.
 
 **Q: Tests that use `ezpDatabaseTestCase` are skipped or error with `eZDB not found`.**  
-A: Database tests require the full eZ Publish kernel to be bootstrapped. They must be
+A: Database tests require the full Exponential kernel to be bootstrapped. They must be
 run via `tests/runtests.php --db-per-test --dsn=mysql://user:pass@host/dbname`. The
 standalone `phpunit vendor/bin/phpunit` run without `--db-per-test` legitimately skips
 or errors on these tests — this is expected.

@@ -360,7 +360,7 @@ It follows the exact same architectural pattern as the existing
 
 ### 6b. Operators implemented
 
-The following operators are implemented. Operators already present in eZ Publish 4.x
+The following operators are implemented. Operators already present in Exponential 4.x
 (see the eZP4 template operator reference) are intentionally excluded to avoid
 conflicts.
 
