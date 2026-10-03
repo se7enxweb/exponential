@@ -1,31 +1,36 @@
 # Engine archive (phar) support
 
-Exponential 6.0 can load its own engine — `kernel/`, `lib/` and `autoload/` —
-from a single phar archive instead of from a thousand separate files on disk.
+Read this page if you run Exponential Velocity, if you deploy by copying files, or if a stack trace names a
+`phar://` path. Exponential 6.0 can load its own engine (`kernel/`, `lib/` and `autoload/`) from one phar archive
+instead of from a thousand separate files on disk. It is off by default; with it off, the installation is exactly
+what it was.
 
-This document is the whole feature: what it is, what it is not, how to use it,
-what had to change in the kernel to make it possible, and what it measured.
+## In short
 
----
+| | |
+|---|---|
+| What changed | New command `exp:phar` (`build`, `check`, `info`, `clean`), new setting `velocity.ini [ServerSettings] EnginePhar` (default `disabled`), environment variable `EXP_ENGINE_PHAR`, an *Engine* block in **Setup → System information**. `eZINI` resolves the installation root through `eZINI::installationRoot()`. |
+| Who is affected | Velocity users with `EnginePhar=enabled`: a change to `kernel/`, `lib/` or `autoload/` is live only after the archive is rebuilt (a Velocity restart rebuilds it when needed). Code that computes the installation root from `__DIR__` breaks when it runs from the archive. Velocity (qbix-webserver) older than 0.0.4.8 sends no headers or cookies from the archive. |
+| How to check | `php bin/php/console exp:phar info` and `php bin/php/console exp:phar check` (exit 1 when the archive is stale) |
+| How to fix | Rebuild with `php bin/php/console exp:phar build` or restart Velocity; clear the caches when you switch engines; use `EXP_ROOT_DIR` or `eZINI::installationRoot()` instead of paths relative to a kernel file. |
 
-## What it is
-
-One command builds an archive:
+## Quick start
 
 ```bash
-bin/php/console exp:phar build      # write dist/engine.phar
-bin/php/console exp:phar info       # what exists, and whether it is in use
-bin/php/console exp:phar clean      # remove it
+php bin/php/console exp:phar build      # write dist/engine.phar
+php bin/php/console exp:phar info       # what exists, and whether it is in use
+php bin/php/console exp:phar clean      # remove it
 ```
 
-One environment variable switches the runtime onto it:
+Then switch the runtime onto it, either in `settings/velocity.ini` (`[ServerSettings] EnginePhar=enabled`, see
+[Switch the runtime onto it](#switch-the-runtime-onto-it)) or with one environment variable in whatever serves the
+site:
 
 ```bash
 EXP_ENGINE_PHAR=/path/to/install/dist/engine.phar
 ```
 
-Set it in the environment of whatever serves the site. Unset it and the
-installation is exactly what it was.
+Unset it and the installation is exactly what it was.
 
 ## What it is not
 
@@ -45,14 +50,13 @@ can extract it.
 binary — `spc micro:combine`, which would remove the need for PHP on the
 target — is not implemented. See *Not implemented*.
 
----
 
 ## Using it
 
 ### Build
 
 ```bash
-bin/php/console exp:phar build
+php bin/php/console exp:phar build
 ```
 
 Building requires `phar.readonly=0`. That is an ini setting, and the console
@@ -88,10 +92,10 @@ first and rebuilds only when
 - PHP's major or minor version is not the one the files were checked under.
 
 ```bash
-bin/php/console exp:phar build          # engine.phar is current, not rebuilt   (0.3s)
-bin/php/console exp:phar build --force  # built engine.phar                     (about 28s)
-bin/php/console exp:phar check          # current or not, and which files differ; exit 1 when not
-./bin/php/console exp:velocity restart --rebuild-phar --allow-root-user   # rebuild at this restart anyway
+php bin/php/console exp:phar build          # engine.phar is current, not rebuilt   (0.3s)
+php bin/php/console exp:phar build --force  # built engine.phar                     (about 28s)
+php bin/php/console exp:phar check          # current or not, and which files differ; exit 1 when not
+php bin/php/console exp:velocity restart --rebuild-phar --allow-root-user   # rebuild at this restart anyway
 ```
 
 A restart says which it was: `started (engine.phar is current, not rebuilt)`
@@ -124,7 +128,7 @@ its files are the files on disk, and names the two commits beside it.
 ### Inspect
 
 ```bash
-bin/php/console exp:phar info
+php bin/php/console exp:phar info
 ```
 
 Reports the archive's path, size, build time and version, whether the runtime
@@ -202,7 +206,6 @@ nothing failed.
 `qbix-webserver` 0.0.4.8 wraps `phar://` as well. If the archive is in use and
 headers or sign-in misbehave, check that version first.
 
----
 
 ## Versioning
 
@@ -218,7 +221,6 @@ so the marker is what stops the artifact claiming to be a commit it is not.
 The stamp is readable from inside the archive at `ENGINE_VERSION`, through
 `exp:phar info`, and in the admin.
 
----
 
 ## How it resolves classes
 
@@ -234,7 +236,6 @@ that has gone stale therefore degrades to the old behaviour for that class
 instead of failing. This is deliberate: a kernel file added after the archive
 was built must not break the installation.
 
----
 
 ## What had to change in the kernel
 
@@ -251,7 +252,7 @@ is one.
 
 It also keeps the phar stream wrapper registered when the runtime is itself
 read through it — unregistering it in that case unloads the running program.
-See `doc/bc/6.0/` notes on the wrapper, and the comment in the file.
+See [The phar stream wrapper](#the-phar-stream-wrapper) below, and the comment in the file.
 
 ### `lib/ezutils/classes/ezini.php`
 
@@ -280,7 +281,6 @@ Four other files use the same self-relative pattern —
 None is on the request path. If any of them is ever packaged and exercised
 from an archive, it will need the same treatment.
 
----
 
 ## The phar stream wrapper
 
@@ -301,70 +301,37 @@ Consequences for this feature:
   it back exactly as it found it. `Phar` extends `RecursiveDirectoryIterator`
   and cannot even be constructed without the wrapper.
 
----
 
-## Measurements
+## Measurements: the archive is not faster
 
-Measured on this installation, `/site/recipes` and the front page, four
-workers each side, against the persistent-worker server.
+The archive exists because a single stamped artifact is easier to deploy than a thousand files. It was also hoped to
+be faster. It is not.
 
-**The first method was wrong and the mistake is worth recording.** Timing one
-server and then the other gave `+3.9%`, `+7.8%`, `-19.8%`, `+7.8%` — a spread
-far wider than anything being measured. The page costs over half a second and
-the machine does other work, so whatever drifts during a run lands entirely on
-whichever side is being timed.
-
-Interleaved — one request to each server in turn, so drift hits both equally —
-five runs gave:
-
-```
-+2.4%   -2.3%   -3.8%   -0.1%   +1.8%      mean about -0.4%
-```
-
-**There is no measurable difference.**
-
-That is consistent with what was already known about this kernel: the cost is
-PHP generated at runtime — compiled templates and ini caches, included on
-every request — not the cost of finding class files. Packaging does not touch
-that.
-
----
-
-## Speed: what was measured, and what to stop trying
-
-The archive was built because a client asked for it and because a single
-stamped artifact is easier to deploy than a thousand files. It was also
-hoped to be faster. It is not.
-
-Everything below was measured on this installation, on a content page, four
-workers per server, with requests round-robined between the servers being
-compared so that anything drifting during a run hits them all equally.
+Measured on a test installation, on `/site/recipes`, the front page and a content page, four workers per server,
+against the persistent-worker server, with requests sent round-robin to the servers being compared:
 
 | Change | Result |
 |---|---|
 | **Opcode cache enabled for the server process** | **+18 to +26%** |
-| Engine loaded from the archive | no measurable difference (mean −0.4%) |
+| Engine loaded from the archive | no measurable difference (five runs: +2.4%, −2.3%, −3.8%, −0.1%, +1.8%; mean about −0.4%) |
 | Cheaper tests in the server's file stream wrapper | +9.7%, then +2.9%, then +0.5% — noise |
 | Opcode cache without timestamp checks | within noise of the cache alone |
 | Opcode cache with a 32M interned string buffer | within noise |
 | Tracing JIT | within noise; worst of five on one run, best on the next |
 
-**Only the opcode cache pays.** It was off because
-`/etc/php.d/99-no-opcache-cli.ini` disables it for every command-line PHP on
-the machine, and the persistent-worker server runs under that interpreter. It
-is now requested per process in `settings/velocity.ini` under `[PHPSettings]`;
-the system-wide file is deliberately untouched.
+**Only the opcode cache pays.** On the test machine it was off because a system-wide ini file disabled it for every
+command line PHP, and the persistent-worker server runs under that interpreter. It is now requested per process in
+`settings/velocity.ini` under `[PHPSettings]`; the system-wide file was left untouched.
 
-**Measure by round-robin, never one server after the other.** Timing one and
-then the other reported +3.9%, +7.8%, −19.8% and +7.8% for a change that is
-actually worth about −0.4%. The page costs half a second and the machine does
-other work.
+**Measure round-robin, never one server after the other.** Timing one server and then the other reported +3.9%,
++7.8%, −19.8% and +7.8% for a change that is worth about −0.4%. The page costs over half a second and the machine does
+other work, so whatever drifts during a run lands entirely on the side being timed. Sending one request to each server
+in turn makes drift hit both equally.
 
-**The remaining time is the application, not the server.** A trivial script
-through the same server answers in about 30ms against roughly 450ms for a
-content page. The next place to look is the database and template rendering.
-
----
+**The remaining time is the application, not the server.** A trivial script through the same server answers in about
+30 ms, against roughly 450 ms for a content page. The cost is PHP generated at run time (compiled templates and INI
+caches, included on every request), not finding class files, and packaging does not touch it. The next place to look
+is the database and template rendering.
 
 ## Not implemented
 
@@ -380,7 +347,6 @@ Deliberately left undone:
   on-disk copies, which are still present, so it keeps working. It does not
   verify the archive's contents.
 
----
 
 ## Files
 
@@ -395,15 +361,11 @@ Deliberately left undone:
 | `dist/engine.phar` | the artifact (gitignored) |
 | `dist/engine.phar.index.json` | what the artifact carries, for deciding whether to rebuild (gitignored) |
 
-See also (September 2026): [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#engine-archive-expphar) (atomic build, batched syntax check), [Velocity](../../features/6.0/velocity-persistent-worker-server.md).
+## Related pages
 
-## See also (16 to 30 September 2026)
-
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Behaviour changes, 16 to 30 September 2026: engine archive](behaviour-changes-2026-09b.md#engine-archive-expphar) (atomic build, batched syntax check)
 - [Velocity persistent worker server](../../features/6.0/velocity-persistent-worker-server.md)
-
-## See also
-
 - [Velocity engines — Qbix, FrankenPHP, PHP's built-in server](velocity-engines.md)
+- [Velocity engine upgrade notes](velocity-engine-upgrade-notes.md)
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
