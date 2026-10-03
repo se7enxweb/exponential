@@ -603,3 +603,103 @@ envelope unwrapping, `ServiceError`), `api.js` (one function per screen need, th
 override, added with `exp:ini add site/SiteAccessSettings/AvailableSiteAccessList[] <name> override`. Reverse it with
 `exp:ini rem` for the same entry and removing the directory; the live `site` siteaccess is not touched. The extension
 registers its designs with `settings/design.ini.append.php` (`DesignExtensions[]=expservices`); without that file an extension design is not found.
+
+## Frontends: jQuery 4 reference and reactive jQuery
+
+Two portal designs in `extension/expservices/design/` consume the services from the browser. Both are corporate
+portals (home, news list and article, shop catalogue, product and basket, forums with topics and replies, media
+gallery, feeds, search, login and profile), rendered client-side, with no build step, on the jQuery 4 that ezjscore
+ships (`ezjsc::jquery`). Both are accessible (skip link, landmarks, `aria-live` announcements, focus moved to the page
+on navigation, labelled forms, native `<dialog>` for the lightbox), responsive (mobile first, one breakpoint at 48em)
+and light or dark (`prefers-color-scheme`, plus a toggle remembered in `localStorage`).
+
+| Design | Siteaccess (test) | URL | Idea |
+|---|---|---|---|
+| `expportal_jquery` | `portaljq` | `/portaljq/` | the reference standard: small modules, one script per feature, pages build DOM directly |
+| `expportal_reactive` | `portalreactive` | `/portalreactive/` | the same features with a React-like model: components, store, one-way flow |
+
+### Architecture (expportal_jquery)
+
+`templates/pagelayout.tpl` is the only template. It ignores the module result, prints the page frame, passes the
+configuration as `data-` attributes of `<body>` (siteaccess URL, `ezjscore/call` URL, content root node ids from
+`extension/expservices/settings/expportal.ini`), loads jQuery 4 through `ezscript_load( 'ezjsc::jquery' )` and then
+the scripts in `javascript/portal/`, one per feature:
+
+| File | Role |
+|---|---|
+| `core.js` | config, **the service table** (`ExpPortal.services`), `api.call()`, DOM helpers (text is always set as text), UI states, hash router, theme |
+| `home.js`, `news.js`, `shop.js`, `forums.js`, `media.js`, `feeds.js`, `search.js`, `account.js` | one feature each: registers its routes with `router.add( '/news/:id', handler )` |
+| `app.js` | boot: chrome, service catalogue, who is logged in, basket count, router |
+
+The address is the hash route (`#/news/12`), so every portal URL is served by the one pagelayout and the portal can be
+dropped under any siteaccess. `api.call( feature, args, post )` builds
+`<siteaccess>/ezjscore/call/<service>::<arg>::<arg>?ContentType=json`, sends reads as GET and writes as POST with the
+form token (`expsession::token`, field `ezxform_token`, header `X-CSRF-Token`; the login is the one write sent without
+it), unwraps `{ error_text, content }` and the service envelope `{ ok, data, meta }`, and rejects with
+`{ code, message }`. At boot it reads `expservices::catalog`: a service that is **not in the catalogue is not called**
+and its page shows a clear "service not available" state instead of an error; if the catalogue itself cannot be read,
+calls are tried and a 404 or "no such function" answer gets the same state.
+
+### The reactive variant (expportal_reactive)
+
+It falls back to `expportal_jquery` (`AdditionalSiteDesignList`), so `core.js` (api, services, router, theme) and
+`portal.css` are shared. Its own scripts in `javascript/reactive/` implement the pattern, documented in each file:
+
+```
+state --(components)--> description --(vdom: keyed diff)--> DOM
+  ^                                                            |
+  |   dispatch( action ) <--------- event handlers ------------+
+  +--- reducer( state, action ) -> new state;  effects run after the reducer and call services
+```
+
+| File | Role |
+|---|---|
+| `vdom.js` | `h( tag, props, ...children )` returns a description; `mount( container, view )` renders and re-renders it. Keyed list reconciliation (nodes move, keep focus and typed text), one delegating listener per event type (handlers are replaced, never stacked), `ref` callback, no way to inject HTML |
+| `store.js` | `createStore( reducer )`: `getState`, `dispatch`, `subscribe` (only on a changed state), `effect`; `combine()` for slices |
+| `components.js` | every component is a pure function `( state, dispatch ) -> description`; the route table (pattern, page, the resources the page needs) |
+| `effects.js` | the only place that calls services: `load( key, feature, args )` dispatches `res/request`, `res/success` or `res/failure`; form posts, login, basket |
+| `app.js` | the reducers (`route`, `user`, `basket`, `res`, `form`, `lightbox`, `feedOpen`), the store and the mounts (`#main`, `#nav`, `#account-slot`, `#basket-count`) |
+
+A page never fetches: the route reducer stores the route, the effect reads the route table's `needs` and loads the
+missing resources into `state.res[ key ]` (`loading`, `ok`, `error`, `unavailable`), the component reads that and draws.
+
+### How each page maps to services
+
+The one table is `ExpPortal.services` in `core.js`; `ExpPortal.argMap` turns the portal's `( node, offset, limit )`
+into the positional order of a service. To follow a renamed service, change the table only.
+
+| Page (route) | Services |
+|---|---|
+| Home `/` | `expnode::children` (news), `expproduct::list` (shop), `expimage::list` (media) |
+| News `/news`, article `/news/:id` | `expnode::children`, `expnode::get` |
+| Shop `/shop`, product `/shop/:id`, basket `/basket` | `expproduct::list`, `expproduct::view`, `expbasket::view`, `expbasket::add`, `expbasket::remove` |
+| Forums `/forums`, topics `/forums/:id`, topic `/forums/topic/:id` | `expnode::children` (forums), `expforum::topics`, `expforum::replies`, `expforum::reply`, `expforum::create_topic` |
+| Media `/media` | `expimage::list` |
+| Feeds `/feeds` | `expfeed::list`, `expfeed::items` |
+| Search `/search?q=` | `expsearch::search` |
+| Login `/login`, profile `/profile`, header | `expsession::login`, `expsession::logout`, `expsession::whoami`, `expsession::token`, `expuser::profile` |
+| every page | `expservices::catalog` (which services exist) |
+
+Forum, feed, search and profile services were not yet in the catalogue when the designs were written; their names are
+the contract names and those pages show the "not available" state until the services exist. Content root node ids
+(news, shop, forums, media) are in `expportal.ini`; the defaults are the content root (2) and Media (43).
+
+### How to run
+
+The test siteaccesses are local settings (not committed): `bash ai/bin/one/expportal_create_test_siteaccesses.sh`
+writes `settings/siteaccess/portaljq` and `portalreactive` and adds them to `[SiteAccessSettings]
+AvailableSiteAccessList` of the global override with `exp:ini` (reversible: delete the two directories, and
+`./console exp:ini rem 'site/SiteAccessSettings/AvailableSiteAccessList[]' <name> override`). They match by URI, so
+open `https://alpha.se7enx.com/portaljq/` and `https://alpha.se7enx.com/portalreactive/`; the live `site` siteaccess
+and its design are untouched. `DefaultPage` is `user/login` because that module answers 200 to anonymous users and the
+pagelayout replaces its output; Velocity workers need a restart to see a new siteaccess, Apache/FPM do not.
+
+### Tests
+
+`python3 ai/bin/one/expportal_playwright_test_portals.py` runs both portals at 960 px with device scale 2 and at 390 px:
+every page renders its heading and no unfinished state, the menu (and the phone menu toggle) navigates, search and the
+theme toggle work, no horizontal scroll, no console error and no jQuery Migrate warning (the code is jQuery 4 clean:
+no `$.isArray`, `$.trim` and the like). In-page unit tests cover the core (node shapes, list folding, URL building,
+unavailable handling, text safety) and, for the reactive design, keyed reordering with node identity kept, handler
+replacement, text safety, the store (reducer, subscribe on change only, effects) and the route table. expui's browser
+harness (`/expui/test`) is an admin page tied to admin sessions, so the portal tests run in the Playwright page instead.

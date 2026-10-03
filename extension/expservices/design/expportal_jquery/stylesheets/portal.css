@@ -22,7 +22,7 @@ a { color:var(--accent); }
 .nav a[aria-current="page"] { background:var(--accent); color:var(--accent-text); }
 .nav-toggle { margin-left:auto; }
 .search { display:flex; gap:.3rem; width:100%; }
-.search input { flex:1; }
+.search { min-width:0; } .search input { flex:1; min-width:0; width:100%; }
 .tools { display:flex; align-items:center; gap:.6rem; width:100%; flex-wrap:wrap; }
 button, input, select, textarea { font:inherit; color:inherit; }
 button, .btn { background:var(--accent); color:var(--accent-text); border:0; border-radius:6px; padding:.45rem .9rem; cursor:pointer; text-decoration:none; display:inline-block; min-height:2.5rem; }
@@ -52,8 +52,8 @@ dialog::backdrop { background:rgba(0,0,0,.6); } dialog img { max-width:100%; max
 .site-footer { text-align:center; color:var(--muted); padding:2rem var(--gap); }
 @media (min-width:48em) {
   .nav { display:flex; flex-direction:row; width:auto; flex:1; } .nav-toggle { display:none; }
-  .search { width:16rem; } .tools { width:auto; }
+  .search { flex:1 1 10rem; max-width:18rem; width:auto; } .tools { width:auto; margin-left:auto; }
   .grid { grid-template-columns:repeat(auto-fill,minmax(15rem,1fr)); }
-  .site-header { flex-wrap:nowrap; }
+  .site-header { flex-wrap:wrap; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; scroll-behavior:auto !important; } }

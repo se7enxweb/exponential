@@ -8,13 +8,13 @@
         var $s = $('#account-slot').empty();
         if (Exp.user) { $s.append(el('a', { href: '#/profile', text: Exp.user.name || Exp.user.login || 'Profile' }), ' ',
             el('button', { type: 'button', 'class': 'secondary', on: { click: function () {
-                Exp.api.call('logout', [], {}).always(function () { Exp.api.token = null; Exp.user = null; Exp.drawAccount(); Exp.router.go('/'); });
+                Exp.api.call('logout', [], {}).always(function () { Exp.api.token = null; Exp.api.tokenLoaded = false; Exp.user = null; Exp.drawAccount(); Exp.router.go('/'); });
             } }, text: 'Log out' })); }
         else { $s.append(el('a', { href: '#/login', text: 'Log in' })); }
     };
     Exp.loadUser = function () {
         return Exp.api.call('whoami', []).then(function (env) {
-            var d = env.data || {}; Exp.user = (d.logged_in === false || d.is_anonymous || !(d.id || d.contentobject_id || d.login)) ? null : d; Exp.drawAccount();
+            var d = env.data || {}; Exp.user = (d.registered === false || d.anonymous || !d.login) ? null : d; Exp.drawAccount();
         }, function () { Exp.user = null; Exp.drawAccount(); });
     };
 
@@ -23,7 +23,7 @@
         ui.title('Log in');
         $v.empty().append(el('h1', { text: 'Log in' }), el('form', { 'class': 'stack', on: { submit: function (e) {
             e.preventDefault(); $msg.prop('hidden', true);
-            Exp.api.call('login', [], { login: u.val(), password: p.val() }).then(function () { Exp.api.token = null; return Exp.loadUser(); }).then(function () { Exp.router.go('/profile'); },
+            Exp.api.call('login', [], { username: u.val(), password: p.val() }, { noToken: true }).then(function (env) { var t = env.data && env.data.token; Exp.api.token = t || null; Exp.api.tokenLoaded = !!t; return Exp.loadUser(); }).then(function () { Exp.router.go('/profile'); },
                 function (err) { $msg.text(err.code === 'unavailable' ? 'The login service is not available yet.' : 'Login failed. ' + (err.message || '')).prop('hidden', false); });
         } } }, el('label', null, 'User name', u), el('label', null, 'Password', p), el('button', { type: 'submit', text: 'Log in' }), $msg));
     });

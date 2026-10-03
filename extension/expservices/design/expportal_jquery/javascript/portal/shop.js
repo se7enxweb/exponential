@@ -16,6 +16,7 @@
         return Exp.api.call('basketGet', []).then(function (env) {
             var d = env.data || {}, items = d.items || d.products || [];
             $('#basket-count').text(d.count !== undefined ? d.count : items.length);
+            d.total = d.total !== undefined ? d.total : (d.totals && (d.totals.total_inc_vat || d.totals.total));
             return d;
         }, function () { $('#basket-count').text('0'); });
     };
@@ -24,7 +25,7 @@
         var off = +ctx.query.offset || 0, lim = Exp.config.pageSize, $v = ctx.$view;
         ui.title('Shop'); $v.empty().append(el('h1', { text: 'Shop' }));
         var $b = el('div'); $v.append($b); ui.loading($b);
-        Exp.api.call('children', [Exp.config.nodes.shop, off, lim]).then(function (env) {
+        Exp.api.call('products', [Exp.config.nodes.shop, off, lim]).then(function (env) {
             var l = Exp.api.list(env); $b.attr('aria-busy', 'false').empty();
             if (!l.items.length) { return ui.empty($b, 'The catalogue is empty.'); }
             $b.append(el('ul', { 'class': 'grid' }, $.map(l.items, productCard)),

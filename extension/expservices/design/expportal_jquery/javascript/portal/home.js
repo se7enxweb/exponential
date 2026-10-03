@@ -16,7 +16,7 @@
         var $v = ctx.$view, c = Exp.config.nodes; ui.title('Home');
         $v.empty().append(el('h1', { text: Exp.config.title }));
         block('Latest news', '/news', 'children', c.news, Exp.newsCard, $v);
-        block('From the shop', '/shop', 'children', c.shop, Exp.productCard, $v);
+        block('From the shop', '/shop', 'products', c.shop, Exp.productCard, $v);
         block('Media', '/media', 'mediaImages', c.media, function (n) { n = Exp.util.node(n); return el('li', { 'class': 'card' }, n.image ? el('img', { src: n.image, alt: n.name, loading: 'lazy' }) : n.name); }, $v);
     });
 }(window, jQuery));

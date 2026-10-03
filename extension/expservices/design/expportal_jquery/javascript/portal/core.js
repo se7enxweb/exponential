@@ -25,24 +25,33 @@
     Exp.services = {
         catalog:      'expservices::catalog',
         whoami:       'expsession::whoami',
-        login:        'expsession::login',
+        login:        'expsession::login',       // POST username, password (no form token)
         logout:       'expsession::logout',
         token:        'expsession::token',
-        children:     'expnode::children',      // node, offset, limit
-        view:         'expnode::view',          // node
-        productGet:   'expproduct::get',        // node
-        basketGet:    'expbasket::get',
+        children:     'expnode::children',      // portal args: node, offset, limit
+        view:         'expnode::get',           // node
+        products:     'expproduct::list',       // parent node, offset, limit
+        productGet:   'expproduct::view',       // node
+        basketGet:    'expbasket::view',
         basketAdd:    'expbasket::add',         // POST object_id, quantity
         basketRemove: 'expbasket::remove',      // POST item_id
         forumTopics:  'expforum::topics',       // forum node, offset, limit
         forumReplies: 'expforum::replies',      // topic node, offset, limit
         forumReply:   'expforum::reply',        // POST parent_node, title, body
         forumNewTopic:'expforum::create_topic', // POST forum_node, title, body
-        mediaImages:  'expmedia::images',       // node, offset, limit
+        mediaImages:  'expimage::list',         // parent node, offset, limit
         feedList:     'expfeed::list',
         feedItems:    'expfeed::items',         // feed id, limit
         search:       'expsearch::search',      // text, offset, limit
         profile:      'expuser::profile'
+    };
+    /* The portal passes ( node, offset, limit ); a few services take their positional arguments in another order.
+       argMap turns the portal's order into the service's, so the pages never know. */
+    Exp.argMap = {
+        children:    function (a) { return [a[0], 'published', 'desc', a[2], a[1]]; },   // node_id, sort, order, limit, offset
+        products:    function (a) { return [a[0], a[2], a[1]]; },                         // parent_node_id, limit, offset
+        mediaImages: function (a) { return [a[0], a[2], a[1]]; },                         // parent, limit, offset
+        search:      function (a) { return [a[0], a[2], a[1]]; }                          // text, limit, offset
     };
 
     var util = Exp.util = {
@@ -53,7 +62,7 @@
                 if (v === null || v === undefined || v === false) { return; }
                 if (k === 'on') { $.each(v, function (ev, fn) { $e.on(ev, fn); }); }
                 else if (k === 'text') { $e.text(v); }
-                else { $e.attr(k, v === true ? '' : v); }
+                else { $e.attr(k, v === true ? k : v); }
             });
             util.append($e, Array.prototype.slice.call(arguments, 2));
             return $e;
@@ -61,7 +70,7 @@
         append: function ($e, kids) {
             $.each(kids, function (i, k) {
                 if (k === null || k === undefined || k === false) { return; }
-                if ($.isArray(k)) { util.append($e, k); }
+                if (Array.isArray(k)) { util.append($e, k); }
                 else if (typeof k === 'string' || typeof k === 'number') { $e.append(document.createTextNode(String(k))); }
                 else { $e.append(k); }
             });
@@ -76,7 +85,7 @@
         /** Folds the exported node shapes into one: id, name, summary, image, date, url, class, price. */
         node: function (n) {
             n = n || {};
-            var a = n.attributes || n.data_map || {};
+            var a = n.attributes || n.fields || n.data_map || {};
             function attr() { for (var i = 0; i < arguments.length; i++) { var x = a[arguments[i]]; if (x !== undefined && x !== null && x !== '') { return typeof x === 'object' ? (x.text || x.content || x.value || x.url || '') : x; } } return ''; }
             return {
                 id: n.node_id || n.id || n.main_node_id || 0, objectId: n.contentobject_id || n.object_id || n.id || 0,
@@ -85,26 +94,28 @@
                 image: n.image_url || n.image || attr('image', 'thumbnail'),
                 date: n.published || n.published_at || n.modified || n.created || '',
                 url: n.url_alias || n.url || '', cls: n.class_identifier || n.class || '',
-                price: n.price !== undefined ? n.price : attr('price'), body: n.body || attr('body', 'description', 'text'), raw: n
+                price: (function (p) { return p && typeof p === 'object' ? (p.inc_vat !== undefined ? p.inc_vat : (p.price !== undefined ? p.price : p.ex_vat)) : p; }(n.price !== undefined ? n.price : attr('price'))), body: n.body || attr('body', 'description', 'text'), raw: n
             };
         }
     };
 
     var api = Exp.api = {
         catalogNames: null,   // set of 'domain::method' once the catalogue loaded; null = unknown, try the call
-        token: null,
+        token: null, tokenLoaded: false,
         url: function (service, args) {
             return Exp.config.call.replace(/\/$/, '') + '/' + service + (args && args.length ? '::' + $.map(args, function (a) { return encodeURIComponent(a === undefined || a === null ? '' : a); }).join('::') : '');
         },
         available: function (service) { return api.catalogNames === null || !!api.catalogNames[service]; },
         /** call( 'children', [ 2, 0, 12 ] ) or call( 'basketAdd', [], { object_id: 5 } ) (POST). */
-        call: function (feature, args, post) {
+        call: function (feature, args, post, opts) {
+            opts = opts || {};
             var service = Exp.services[feature] || feature, dfd = $.Deferred();
+            if (Exp.argMap[feature]) { args = Exp.argMap[feature](args); }
             if (!api.available(service)) { return dfd.reject({ code: 'unavailable', message: 'Service ' + service + ' is not available.' }).promise(); }
             function send(token) {
-                var opts = { url: api.url(service, args), dataType: 'json', cache: false, headers: { 'X-Requested-With': 'XMLHttpRequest' } };
-                if (post) { opts.method = 'POST'; opts.data = $.extend({ ezxform_token: token || '' }, post); }
-                $.ajax(opts).then(function (res) {
+                var o = { url: api.url(service, args) + '?ContentType=json', dataType: 'json', cache: false, headers: { 'X-Requested-With': 'XMLHttpRequest' } };
+                if (post) { o.method = 'POST'; o.data = opts.noToken ? post : $.extend({ ezxform_token: token || '' }, post); if (token) { o.headers['X-CSRF-Token'] = token; } }
+                $.ajax(o).then(function (res) {
                     var env = res && res.content;
                     if (res && res.error_text) { return dfd.reject({ code: /not a valid|no such|not found|unknown/i.test(res.error_text) ? 'unavailable' : 'error', message: res.error_text }); }
                     if (env && env.ok === false) { var e = env.error || {}; return dfd.reject({ code: e.code || 'error', message: e.message || 'Request failed.' }); }
@@ -113,24 +124,28 @@
                     dfd.reject({ code: xhr.status === 404 ? 'unavailable' : (xhr.status || 'error'), message: xhr.status === 404 ? 'Service ' + service + ' is not available.' : 'Request failed (' + xhr.status + ').' });
                 });
             }
-            if (post && !api.token) { api.fetchToken().always(function () { send(api.token); }); } else { send(api.token); }
+            if (post && !opts.noToken && !api.tokenLoaded) { api.fetchToken().always(function () { send(api.token); }); } else { send(api.token); }
             return dfd.promise();
         },
         fetchToken: function () {
-            return api.call('token', []).then(function (env) { var d = env.data; api.token = typeof d === 'string' ? d : (d && (d.token || d.form_token)) || null; return api.token; });
+            return api.call('token', []).then(function (env) { var d = env.data; api.token = typeof d === 'string' ? d : (d && (d.token || d.form_token)) || null; api.tokenLoaded = true; return api.token; });
         },
         /** Folds a list reply: data is an array, or { items, total } (paged envelope). */
         list: function (env) {
-            var d = env && env.data, m = (env && env.meta) || {}, items = $.isArray(d) ? d : (d && (d.items || d.list || d.nodes)) || [];
+            var d = env && env.data, m = (env && env.meta) || {}, items = Array.isArray(d) ? d : (d && (d.items || d.list || d.nodes)) || [];
             var total = m.total !== undefined ? m.total : (d && d.total !== undefined ? d.total : items.length);
             return { items: items, total: +total, offset: +(m.offset || (d && d.offset) || 0), limit: +(m.limit || (d && d.limit) || items.length) };
         },
         loadCatalog: function () {
-            return $.ajax({ url: api.url(Exp.services.catalog), dataType: 'json', cache: false }).then(function (res) {
+            return $.ajax({ url: api.url(Exp.services.catalog) + '?ContentType=json', dataType: 'json', cache: false }).then(function (res) {
                 var d = res && res.content && res.content.data, names = {}, n = 0;
-                function add(domain, row) { var m = row && (row.method || row.name); if (m) { names[(row.domain || domain) + '::' + m] = true; n++; } }
-                if ($.isArray(d)) { $.each(d, function (i, r) { add(r.domain, r); }); }
-                else if (d && typeof d === 'object') { $.each(d.services || d, function (k, v) { if ($.isArray(v)) { $.each(v, function (i, r) { add(k, r); }); } else if (v && typeof v === 'object') { if (v.method) { add(v.domain, v); } else { $.each(v, function (mk, mv) { names[k + '::' + mk] = true; n++; }); } } }); }
+                function add(domain, row) {
+                    // row.call is 'ezjscore/call/exp<domain>::<method>::<arg>...': the service name is its first two parts
+                    var m = row && /call\/([^:]+)::([^:]+)/.exec(row.call || '');
+                    if (m) { names[m[1] + '::' + m[2]] = true; n++; } else if (row && row.method && row.domain) { names['exp' + row.domain + '::' + row.method] = true; n++; }
+                }
+                if (Array.isArray(d)) { $.each(d, function (i, r) { add(r.domain, r); }); }
+                else if (d && typeof d === 'object') { $.each(d.services || d, function (k, v) { if (Array.isArray(v)) { $.each(v, function (i, r) { add(k, r); }); } }); }
                 api.catalogNames = n ? names : null;
                 return n;
             }, function () { api.catalogNames = null; return 0; });
@@ -209,7 +224,7 @@
         Exp.theme.init();
         $('.nav-toggle').on('click', function () { var o = $('#nav').toggleClass('open').hasClass('open'); $(this).attr('aria-expanded', String(o)); });
         $('#nav').on('click', 'a', function () { $('#nav').removeClass('open'); $('.nav-toggle').attr('aria-expanded', 'false'); });
-        $('#search-form').on('submit', function (e) { e.preventDefault(); var q = $.trim($('#search-q').val()); if (q) { router.go('/search?q=' + encodeURIComponent(q)); } });
+        $('#search-form').on('submit', function (e) { e.preventDefault(); var q = String($('#search-q').val()).trim(); if (q) { router.go('/search?q=' + encodeURIComponent(q)); } });
     };
     Exp.afterRender = function () { var m = document.getElementById('main'); window.scrollTo(0, 0); if (m) { m.focus({ preventScroll: true }); } };
 }(window, jQuery));
