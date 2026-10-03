@@ -1,31 +1,40 @@
 # Reset a user password from the command line
 
-`bin/php/resetuserpassword.php` sets a new password for any user. Use it when
-the administrator password is lost, when you take over an installation, or after
-you import users. It was added on 11 July 2026 (`ea77927c23`).
+This page is for administrators who have lost the administrator password, have taken over an installation, or have
+imported users. `bin/php/resetuserpassword.php` sets a new password for any user. It was added on 11 July 2026
+(`ea77927c23`).
 
 The new password is hashed by the same code as the user edit form (`eZUser::setInformation`), and it must satisfy
 `site.ini [UserSettings] MinPasswordLength`.
+
+## Reset the admin password now
+
+As the operating system root user, generate a new 20-character password for `admin`:
+
+```bash
+php bin/php/resetuserpassword.php --allow-root-user -u admin -g -l 20
+```
+
+The generated password is printed once. Note it, sign in, and change it in the admin if you like.
 
 ## Two ways to authorise
 
 **As the operating system root user** (no Exponential login needed):
 
 ```bash
-php bin/php/resetuserpassword.php --allow-root-user -u admin -p 'a-new-long-password'
+php bin/php/resetuserpassword.php --allow-root-user -u admin -p 'NEW_PASSWORD'
 ```
 
-`--allow-root-user` (short `-r`) requires that you really are the OS user
-`root`; otherwise the script stops with an error.
+`--allow-root-user` (short `-r`) requires that you really are the OS user `root`; otherwise the script stops with an
+error.
 
 **As an administrator of the site**:
 
 ```bash
-php bin/php/resetuserpassword.php -a admin -ap 'current-admin-password' -u editor1 -p 'a-new-long-password'
+php bin/php/resetuserpassword.php -a admin -ap 'YOUR_ADMIN_PASSWORD' -u editor1 -p 'NEW_PASSWORD'
 ```
 
-The login given with `-a` and `-ap` must authenticate and must hold the
-`Administrator` role.
+The login given with `-a` and `-ap` must authenticate and must hold the `Administrator` role.
 
 ## Options
 
@@ -42,14 +51,6 @@ The login given with `-a` and `-ap` must authenticate and must hold the
 | `-q`, `--quiet` | Only errors are printed | off |
 | `-h`, `--help` | Help | |
 
-## Generate a password
-
-```bash
-php bin/php/resetuserpassword.php --allow-root-user -u admin -g -l 20
-```
-
-The generated password is printed once; note it then.
-
 ## Errors you may meet
 
 | Message | Cause |
@@ -62,14 +63,13 @@ The generated password is printed once; note it then.
 
 ## Good practice
 
-- A password given on the command line is visible in the process list and in
-  your shell history. Prefer `-g` and change the password in the admin after the
-  first sign-in, or clear the history afterwards.
+A password given on the command line is visible in the process list and in your shell history. Prefer `-g` and change
+the password in the admin after the first sign-in, or clear the history afterwards.
 
-## Related
+## Related pages
 
-- Month page: [July 2026](../../history/2026/2026-07.md)
 - [The August 2026 security patches (sign-in checks)](../../specifications/6.0/security-hardening-2026-08.md)
+- [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
 - [Exponential Console](../../bc/6.0/console.md)
 - [Audit trail](audit-trail.md)
-- [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
+- [Chronicle: July 2026](../../history/2026/2026-07.md)

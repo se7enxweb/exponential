@@ -1,7 +1,8 @@
 # The setup wizard's new look, and the editor siteaccess
 
-On 2026-10-01 and 2026-10-02 the setup wizard got a new look and now installs **three** siteaccesses instead of
-two: the site, the admin and the **editor**, an administration interface for people who edit content but do not
+This page is for anyone who installs Exponential, and for administrators who want a simpler admin for their editors.
+On 2026-10-01 and 2026-10-02 the setup wizard got a new look, and it now installs **three** siteaccesses instead of
+two: the site, the admin, and the **editor**, an administration interface for people who edit content but do not
 administer the site.
 
 ## The three siteaccesses
@@ -12,61 +13,68 @@ administer the site.
 | admin | `admin.yourdomain.com` | administrators | admin4 (or the admin design chosen) |
 | editor | `edit.yourdomain.com` | editors | `editor`, which falls back to `admin4`, then `admin3`, `admin2`, `admin` |
 
-The editor siteaccess is made from the installed admin one (`settings/siteaccess/editor`): its `SiteName` is
-"Editor", it has its own `SiteURL`, the admin's extension settings, the content tabs only (Dashboard, Content
-structure, Media, Users, Store, Tags, Newsletter), no developer toolbar, no Layouts node tab, and the modules
-behind the hidden tabs answer 404 (`setup`, `visual`, `explayouts_ui`, `explayouts_ui_api`, `git_manager`,
-`xrowextract`, `bccie`). `ExtensionSettingsSiteAccess=admin` makes extensions' admin settings apply there too.
-The site's service worker stays out of the editor siteaccess, as it does of the admin (`/editor` joins `/admin`),
-and the wizard gives the editor a right sidebar that starts with Bookmarks.
+The editor siteaccess (`settings/siteaccess/editor`) is made from the installed admin one. Compared with the admin:
 
-`design/editor` has no templates of its own: it is the design of the editor siteaccess and a README describes
-what makes it an editor's administration. Templates go there only where the editor must look different.
+- its `SiteName` is "Editor" and it has its own `SiteURL`;
+- it carries the admin's extension settings; `ExtensionSettingsSiteAccess=admin` makes extensions' admin settings
+  apply there too;
+- it shows the content tabs only: Dashboard, Content structure, Media, Users, Store, Tags, Newsletter;
+- it has no developer toolbar and no Layouts node tab;
+- the modules behind the hidden tabs answer 404: `setup`, `visual`, `explayouts_ui`, `explayouts_ui_api`,
+  `git_manager`, `xrowextract`, `bccie`;
+- the site's service worker stays out of it, as it does of the admin (`/editor` joins `/admin`);
+- the wizard gives it a right sidebar that starts with Bookmarks.
 
-## In the wizard
+`design/editor` has no templates of its own. It is the design of the editor siteaccess, and a README describes what
+makes it an editor's administration. Put templates there only where the editor must look different.
 
-- **Site access step** names the three and the hostname convention.
-- **Site details step** has a required Editor path, port or hostname field, prefilled with `editor`, `8082` or
-  `edit.<host>`, checked like the admin field. The Database field lists only SQLite database files found in
-  `var/storage/sqlite3` (a file with the "SQLite format 3" header, or an empty file), instead of a paragraph of
-  every file, SQL dumps included.
-- **Finished page** shows the user, admin and editor sites, each with its address, and the Exponential multisite
-  picture.
-- The look: one white card on a dark slate page with a soft orange glow (`setup3.css`, loaded after `setup.css` and
-  `setup2.css`, overrides only), the progress bar as a slim orange bar under the logo, Help and Summary in a
-  side panel. The footer reads "Exponential copyright 1998-2026 7x & Exponential Foundation" and the links point
-  to exponential.earth.
-- The wizard no longer logs "Language 'eng-GB' does not exist or is not used!" on every page (the setup
-  siteaccess only).
-- Velocity's warm-up never takes the wizard's lease: with `CheckValidity=true` each warm-up render used to count as
+## Install with the wizard
+
+1. **Site access step**: the wizard names the three siteaccesses and the hostname convention.
+2. **Site details step**: fill the required Editor path, port or hostname field. It is prefilled with `editor`,
+   `8082` or `edit.<host>` and checked like the admin field. The Database field lists only SQLite database files found
+   in `var/storage/sqlite3` (a file with the "SQLite format 3" header, or an empty file), instead of every file, SQL
+   dumps included.
+3. **Finished page**: you see the user, admin and editor sites, each with its address, and the Exponential multisite
+   picture.
+
+The look: one white card on a dark slate page with a soft orange glow (`setup3.css`, loaded after `setup.css` and
+`setup2.css`, overrides only), the progress bar as a slim orange bar under the logo, Help and Summary in a side panel.
+The footer reads "Exponential copyright 1998-2026 7x & Exponential Foundation", and the links point to
+exponential.earth.
+
+Fixes of the same change:
+
+- The wizard no longer logs "Language 'eng-GB' does not exist or is not used!" on every page (the setup siteaccess
+  only).
+- Velocity's warm-up never takes the wizard's lease. With `CheckValidity=true`, each warm-up render used to count as
   the wizard's first page and locked everyone out with "The site is being set up" for half an hour after a restart.
 
-## Kickstarter
+## Install with the Kickstarter
 
-`kickstart.ini` names the editor like the admin siteaccess:
+`kickstart.ini` names the editor like the admin siteaccess. `kickstart.ini-dist` carries the three settings, commented,
+after the admin ones.
 
-| Key | Default | Meaning |
-|---|---|---|
-| `EditorAccess` | `editor` | the siteaccess name |
-| `EditorAccessPort` | `8082` | port access method |
-| `EditorAccessHostname` | `edit.<host>` | host access method, by convention `edit.<your domain>` |
+| File | Key | Default | Meaning |
+|---|---|---|---|
+| `kickstart.ini` | `EditorAccess` | `editor` | the siteaccess name |
+| `kickstart.ini` | `EditorAccessPort` | `8082` | port access method |
+| `kickstart.ini` | `EditorAccessHostname` | `edit.<host>` | host access method, by convention `edit.<your domain>` |
 
-`kickstart.ini-dist` carries the three settings, commented, after the admin ones.
+## Add an editor siteaccess to an existing installation
 
-## Existing installations
+Nothing changes for an installation made earlier. To get an editor siteaccess:
 
-Nothing changes for an installation made earlier. To get an editor siteaccess, copy `settings/siteaccess/editor`
-and `design/editor` from a fresh installation, set its `SiteName`, `SiteURL` and `SiteDesign`, and map it like the
-admin siteaccess in `site.ini` (`[SiteAccessSettings]`). The design list in the editor's `site.ini.append.php`
-(`AdditionalSiteDesignList[]`) names `admin4`, `admin3`, `admin2`, `admin`.
-
-Related: [hidden admin tabs](hidden-admin-tabs.md), [admin4 design](admin4-design.md),
-[kickstarter CLI](../../bc/6.0/kickstartercli.md), [October 2026 chronicle](../../history/2026/2026-10.md).
-
-See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [admin links follow permissions](admin-links-follow-permissions.md).
-
-See also: [Install in one command](install-in-one-command.md), [Kickstarter CLI](kickstarter-cli.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+1. Copy `settings/siteaccess/editor` and `design/editor` from a fresh installation.
+2. Set its `SiteName`, `SiteURL` and `SiteDesign`. The design list in the editor's `site.ini.append.php`
+   (`AdditionalSiteDesignList[]`) names `admin4`, `admin3`, `admin2`, `admin`.
+3. Map it like the admin siteaccess in `site.ini`, block `[SiteAccessSettings]`.
+4. Clear the caches: `php bin/php/ezcache.php --clear-all --allow-root-user`.
 
 ## Related pages
 
-- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [Hidden admin tabs](hidden-admin-tabs.md), [admin links follow permissions](admin-links-follow-permissions.md), [the admin4 design](admin4-design.md)
+- [Install in one command](install-in-one-command.md), [Kickstarter CLI](kickstarter-cli.md), [Kickstarter CLI reference](../../bc/6.0/kickstartercli.md)
+- [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- History: [October 2026](../../history/2026/2026-10.md), [January 2024, second half](../../history/2024/2024-01b.md)
