@@ -148,4 +148,12 @@ $FunctionList['disable_editor'] = array();
 
 
 
-?>
+// The editor engine of the current user (a select over the registry, instead of /user/preferences/set/ezoe_engine/<id>)
+$ViewList['engine'] = array(
+    'functions' => array( 'editor' ),
+    'ui_context' => 'administration',
+    'script' => 'engine.php',
+    'params' => array(),
+    'single_post_actions' => array( 'SaveEngineButton' => 'Save' ),
+    'post_action_parameters' => array( 'Save' => array( 'Engine' => 'Engine' ) )
+    );
