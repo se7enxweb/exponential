@@ -100,3 +100,10 @@ A header already present, in any letter case, is never replaced or sent twice. N
 ## Notes for anyone maintaining a fork
 
 Two of the fixes above were found by running the server rather than reading it: the symlink execution path (three of four dispatch points can be closed while the fourth still runs the file) and the framing faults (`curl` refuses to send the requests that expose them). The containment check is one function and four call sites, and its absence is invisible until somebody creates a link. Carry it across.
+
+## See also
+
+- Features: [Velocity web server](../../features/6.0/velocity-web-server.md), [Control panel](../../features/6.0/velocity-control-panel.md), [HTTPS and certificates](../../features/6.0/velocity-https-certificates.md), [Static files and images](../../features/6.0/velocity-static-files-and-images.md), [uwebserver](../../features/6.0/velocity-uwebserver.md) (its own hardening).
+- Specifications: [Worker pool](velocity-worker-pool.md), [Engine settings](velocity-engine-settings.md).
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (response headers, upload limits), [Velocity engines](../../bc/6.0/velocity-engines.md).
+- History: [22 September](../../history/velocity/2026-09b.md), [23 September](../../history/velocity/2026-09c.md), [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).

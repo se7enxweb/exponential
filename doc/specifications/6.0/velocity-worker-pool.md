@@ -136,3 +136,10 @@ Behaviour guaranteed by the layer (each fixed in a named release):
 - A POST is never retried.
 - No fork on Windows.
 - Per-request kernel caches keyed on request time need engine 0.0.4.42 or later (`REQUEST_TIME_FLOAT` per request).
+
+## See also
+
+- Features: [Velocity web server](../../features/6.0/velocity-web-server.md), [persistent worker server](../../features/6.0/velocity-persistent-worker-server.md), [Scheduler](../../features/6.0/velocity-scheduler.md), [Response cache](../../features/6.0/velocity-response-cache.md).
+- Specifications: [Engine settings](velocity-engine-settings.md) (event loop, start-up pre-warm cache), [HTTP/2 and security](velocity-http2-and-security.md).
+- Upgrade and operations: [Velocity engines](../../bc/6.0/velocity-engines.md) (`[ServerSettings]` in `settings/velocity.ini`), [engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md).
+- History: [August](../../history/velocity/2026-08.md), [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).
