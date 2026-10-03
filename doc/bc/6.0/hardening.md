@@ -1,15 +1,20 @@
-# eZ Publish Legacy — Security Hardening Release Notes
-## Release: 6.0.13 (upcoming) | Branch: 6.0 | Date: 2026-02-21
+# Security hardening of 6.0.13
 
----
+Read this page if you run Exponential 6.0.12 or earlier, or maintain extensions or a custom kernel that build SQL
+queries, shell commands or HTML output from request data. Exponential 6.0.13 (2026-02-21, branch `6.0`) fixes seven
+security issues found in an audit of the kernel and library layers: four SQL injections, two OS command injections
+and one reflected cross-site scripting. No API changes; every patched function keeps its signature.
 
-> **Notification:** This document and all associated test results were prepared by the
-> automated patch session (GitHub Copilot / Claude Sonnet 4.6) and are intended for
-> distribution to the 7x / Exponential Foundation security team lead at
-> **security@exponential.earth** for review, sign-off, and tracking prior to the 6.0.13
-> release tag. All findings, fixes, test evidence, and open items are contained herein.
+## In short
 
----
+| | |
+|---|---|
+| What changed | SEC-01 to SEC-04: SQL injection in `eZRole` and `eZContentObjectTreeNode` (integer casts, `escapeString()`, a column whitelist for ORDER BY). SEC-05 and SEC-06: shell arguments in `eZSendMailTransport` and `eZGzipShellCompressionHandler` passed through `escapeshellarg()`. SEC-07: the page title of `kernel/content/search.php` escaped with `htmlspecialchars()`. |
+| Who is affected | Every installation on 6.0.12 or earlier. Most exposed: sites that send mail through sendmail (SEC-05) and sites with a public search page (SEC-07). Extension code with the same patterns is not fixed by the update; see [Recommendations for Extension Developers](#recommendations-for-extension-developers). |
+| How to check | `php tests/bin/ezptestrunner_all_tests.php security` |
+| How to fix | Update to 6.0.13 or later. Audit your own extensions for the patterns listed below. |
+
+Questions about these fixes go to **security@exponential.earth**.
 
 ## Table of Contents
 
@@ -35,17 +40,16 @@
 13. [Backward Compatibility Notes](#backward-compatibility-notes)
 14. [PHP Version Compatibility](#php-version-compatibility)
 15. [Open Items and Pending Work](#open-items-and-pending-work)
-16. [Reviewer Sign-Off and Distribution](#reviewer-sign-off-and-distribution)
+16. [Supporting files](#supporting-files)
 17. [Appendix A: Full Diff Listing](#appendix-a-full-diff-listing)
 18. [Appendix B: Test Script Inventory](#appendix-b-test-script-inventory)
 19. [Appendix C: CWE and OWASP Reference Mapping](#appendix-c-cwe-and-owasp-reference-mapping)
 
----
 
 ## Executive Summary
 
 This document records the complete set of security-related source code changes introduced
-into the eZ Publish Legacy / Exponential codebase for the upcoming **6.0.13** release,
+into the Exponential codebase for the upcoming **6.0.13** release,
 targeting the `6.0` stable branch. The changes address a set of vulnerabilities that were
 identified during a systematic security audit of the kernel and library layers as part of
 an ongoing PHP 8.4/8.5 compatibility and hardening project.
@@ -67,13 +71,12 @@ herein. All patched functions retain their original signatures. The fixes are st
 additive guards (integer casts, `escapeString()` wrappers, `escapeshellarg()` wrappers,
 and `htmlspecialchars()` output escaping) with no impact on calling code.
 
----
 
 ## Scope and Affected Versions
 
 | Property | Value |
 |---|---|
-| Product | eZ Publish Legacy / Exponential Platform |
+| Product | Exponential |
 | Affected release | 6.0.12 and all prior 6.0.x releases |
 | Fixed in release | **6.0.13** (upcoming) |
 | Branch | `6.0` |
@@ -81,11 +84,11 @@ and `htmlspecialchars()` output escaping) with no impact on calling code.
 | PHP minimum version requirement | **8.1** — unchanged by this patch set (see [PHP Version Compatibility](#php-version-compatibility)) |
 | Database backends affected | MySQL / MariaDB / PostgreSQL (all backends using string interpolation) |
 | Patch date | 2026-02-21 |
-| Reported by | Automated security audit — GitHub Copilot / Claude Sonnet 4.6 |
+| Reported by | Internal security audit |
 | Primary contact for questions | security@exponential.earth |
 
 The vulnerabilities described in this document affect any deployment running a 6.0.x
-release of the Exponential / eZ Publish Legacy platform where:
+release of the Exponential platform where:
 
 - User-supplied data can influence content tree sorting criteria (SEC-02),
 - User-supplied data can influence subtree permission checks (SEC-03),
@@ -100,7 +103,6 @@ driver level may have partial natural protection against the SQL injection varia
 the application-level escaping missing in these locations remains a defence-in-depth
 requirement regardless of driver configuration.
 
----
 
 ## Vulnerability Index
 
@@ -114,11 +116,9 @@ requirement regardless of driver configuration.
 | SEC-06 | OS Command Injection | CWE-78 | 8.1 (High) | `lib/ezfile/classes/ezgzipshellcompressionhandler.php` | `decompress()` | ✅ Fixed |
 | SEC-07 | Reflected XSS | CWE-79 | 6.1 (Medium) | `kernel/content/search.php` | Page title rendering | ✅ Fixed |
 
----
 
 ## Detailed Findings and Fixes
 
----
 
 <a name="sec-01"></a>
 ### SEC-01: SQL Injection in eZRole — Role ID Interpolation
@@ -222,7 +222,6 @@ strings is valid but can confuse static analysis tools.
 No API or behavioural change. The integer cast is a no-op for any value already stored as
 an integer in the database.
 
----
 
 <a name="sec-02"></a>
 ### SEC-02: SQL Injection in eZContentObjectTreeNode — ORDER BY Column Injection
@@ -299,7 +298,6 @@ have those names silently rejected if they contain characters outside `[a-zA-Z0-
 failing case produces a `eZDebug::writeWarning()` entry that can be inspected in the debug
 log. Valid column names (which can only consist of word characters and dots) are unaffected.
 
----
 
 <a name="sec-03"></a>
 ### SEC-03: SQL Injection in eZContentObjectTreeNode — Subtree Path String in LIKE Clause
@@ -314,12 +312,12 @@ log. Valid column names (which can only consist of word characters and dots) are
 #### Description
 
 The `createPermissionCheckingSQL()` method generates SQL fragments used to enforce subtree
-access control — a core security mechanism of eZ Publish's role-based permission system.
+access control — a core security mechanism of Exponential's role-based permission system.
 Two branches of the method that handle `Subtree` and `User_Subtree` limitation types both
 constructed SQL `LIKE` predicates by interpolating `$limitationPathString` directly into
 the query string without escaping.
 
-The `path_string` field in eZ Publish uses a slash-delimited integer path such as
+The `path_string` field in Exponential uses a slash-delimited integer path such as
 `/1/2/56/233/`. While values retrieved directly from the database would always be safe, the
 `$limitationArray` that supplies these strings is built from policy limitation data that
 could, in a compromised or misconfigured policy store, contain attacker-controlled strings.
@@ -365,7 +363,6 @@ well-understood fix that does not change query semantics for any valid path stri
 valid path strings (`/N/N/N/`) contain only digits and slashes, which `escapeString()` does
 not alter.
 
----
 
 <a name="sec-04"></a>
 ### SEC-04: SQL Injection in eZContentObjectTreeNode — Node ID and Path in Hide/Unhide
@@ -447,7 +444,6 @@ of the method to make the database handle available throughout — including for
 `escapeString()` calls on the path string. This is a minor structural improvement that does
 not change observable behaviour since `eZDB::instance()` is idempotent.
 
----
 
 <a name="sec-05"></a>
 ### SEC-05: OS Command Injection in eZSendMailTransport — Sendmail -f Flag
@@ -526,7 +522,7 @@ including special characters that should be treated as part of a single argument
 
 #### Impact Assessment
 
-Given that eZ Publish Legacy is frequently used with contact forms and user-facing email
+Given that Exponential is frequently used with contact forms and user-facing email
 flows, this vulnerability should be treated as remotely exploitable by unauthenticated
 attackers in many deployments. The CVSS score of **9.8 (Critical)** reflects that
 assessment and this fix should be treated as the highest priority in the 6.0.13 release.
@@ -537,7 +533,6 @@ assessment and this fix should be treated as the highest priority in the 6.0.13 
 sendmail binary. The envelope sender address is interpreted correctly by sendmail regardless
 of quoting. No change to email delivery behaviour is expected.
 
----
 
 <a name="sec-06"></a>
 ### SEC-06: OS Command Injection in eZGzipShellCompressionHandler — Decompress Command
@@ -598,7 +593,6 @@ the fix, `decompress()` would have always failed (the broken shell command would
 non-zero), meaning any code path that relied on this handler for cluster file extraction
 was silently broken.
 
----
 
 <a name="sec-07"></a>
 ### SEC-07: Reflected Cross-Site Scripting in kernel/content/search.php
@@ -659,7 +653,6 @@ against attribute-context injection in addition to HTML content injection. The e
 `UTF-8` charset argument ensures correct behaviour for multi-byte character strings and
 prevents charset-based XSS attacks.
 
----
 
 ## Test Methodology
 
@@ -685,7 +678,7 @@ changes, ensuring no patched file can be accidentally omitted from validation.
 A purpose-built functional test suite (`tests/bin/tests/functional_tests.php`) was developed
 alongside the patches. This suite:
 
-1. Defines a set of minimal inline stub classes for eZ Publish framework dependencies
+1. Defines a set of minimal inline stub classes for Exponential framework dependencies
    (database layer, persistence layer, logging) to allow individual class files to be
    loaded in isolation without bootstrapping the full application stack.
 
@@ -713,7 +706,6 @@ The security-specific test cases (`[security]` category) cover:
 | URL path[3] guard — <4 segments returns empty | `?? ''` guard prevents undefined index warning |
 | URL path[3] guard — 4+ segments returns node ID | Normal paths still work as expected |
 
----
 
 ## Test Suite Design
 
@@ -725,7 +717,7 @@ PHP testing frameworks (PHPUnit, Pest) to eliminate external dependencies and al
 suite to run on any PHP 8.x installation with the codebase present — no `vendor/`
 directory or Composer setup required.
 
-Stub classes isolate the real patched files from the full eZ Publish kernel:
+Stub classes isolate the real patched files from the full Exponential kernel:
 
 ```
 eZPersistentObject  — base ORM stub (constructor, store, attribute)
@@ -742,7 +734,6 @@ Each stub is designed to be the minimum necessary for the real class file to loa
 the specific method under test to execute. Stubs are not intended to be complete or
 production-accurate simulations of the full framework objects.
 
----
 
 ## Initial Test Run Results
 
@@ -753,7 +744,7 @@ php tests/bin/tests/functional_tests.php
 
 ────────────────────────────────────────────────────────────────────────────────
   Functional Flow Tests — 2026-02-21
-  Filter: all | Root: /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com
+  Filter: all | Root: <installation root>
 ────────────────────────────────────────────────────────────────────────────────
 
 ✓ PASS  [security] SQL column regex — clean names pass
@@ -783,7 +774,6 @@ TOTAL: 81 files   ✓ 80 PASS   ✗ 0 FAIL   ~ 1 SKIP
 The 1 SKIP is `lib/version.php`, which does not contain patches and is present in the
 manifest for baseline reference only.
 
----
 
 ## Regression and Retest Results
 
@@ -832,7 +822,6 @@ TOTAL: 7 tests   ✓ 7 PASS   ✗ 0 FAIL
 
 **Retest result: 87/87 PASS (security filter). 0 failures.**
 
----
 
 ## Combined Test Suite Output
 
@@ -866,7 +855,6 @@ tests/bin/test_report_2026-02-21.txt
 
 This file is suitable for archiving as release evidence.
 
----
 
 ## Risk Assessment and CVSS Scoring
 
@@ -925,7 +913,6 @@ be treated as a **mandatory security update** for all production deployments. Si
 should be notified to upgrade at the earliest opportunity. A security advisory should be
 published alongside the 6.0.13 release notes.
 
----
 
 ## Affected Component Summary
 
@@ -942,11 +929,10 @@ published alongside the 6.0.13 release notes.
 **Total shell command construction sites fixed:** 2  
 **Total HTML output encoding sites fixed:** 1
 
----
 
 ## Recommendations for Extension Developers
 
-Developers of eZ Publish extensions and custom kernels should audit their own code for the
+Developers of Exponential extensions and custom kernels should audit their own code for the
 same classes of vulnerability addressed in this release:
 
 ### SQL Injection Prevention
@@ -987,12 +973,11 @@ same classes of vulnerability addressed in this release:
    attribute values, and any other location where the string will be included in HTML.
 
 2. **Trust your template engine's auto-escaping, but do not rely on it exclusively.** The
-   eZ Publish template engine does provide escaping operators, but values passed through
+   Exponential template engine does provide escaping operators, but values passed through
    PHP controller code to templates via `setTitle()`, `setVariable()`, and similar methods
    should be escaped at the point of preparation, not assumed to be escaped at the point
    of rendering.
 
----
 
 ## Backward Compatibility Notes
 
@@ -1023,7 +1008,6 @@ All seven security fixes are designed to be fully backward compatible:
   plain text (rather than in an HTML context) will display entity-encoded strings. This is
   generally not observable to end users since rendered page titles are always HTML contexts.
 
----
 
 <a name="php-version-compatibility"></a>
 ## PHP Version Compatibility
@@ -1086,7 +1070,6 @@ warnings. This could cause confusion:
 | Are PHP 8.4-specific features used anywhere in the patch set? | **No** — only PHP 7.1 constructs |
 | Can existing PHP 8.1/8.2/8.3 installations apply this patch set without issues? | **Yes, fully** |
 
----
 
 ## Open Items and Pending Work
 
@@ -1104,58 +1087,16 @@ follow-up in a future release:
 | OPEN-07 | LOW | **Expanded SOAP test coverage** — `eZSOAPCall`, `eZSOAPMessage`, and `eZSOAPFault` are not covered by the current functional test suite. |
 | OPEN-08 | LOW | **XSS functional test for search.php** — SEC-07 is verified by syntax lint only. A test confirming that `htmlspecialchars()` is applied to a crafted input would provide stronger assurance. |
 
----
 
-## Reviewer Sign-Off and Distribution
+## Supporting files
 
-This document is prepared for internal review and distribution to the Exponential Open
-Source Project security team lead.
-
-**Prepared by:** Automated patch session — GitHub Copilot / Claude Sonnet 4.6  
-**Review date:** 2026-02-21  
-**Document status:** Ready for security team review  
-
-### Distribution
-
-This document, together with the following supporting artefacts, should be forwarded to
-**security@exponential.earth** for review and sign-off prior to the 6.0.13 release:
-
-| Artefact | Path | Description |
-|---|---|---|
-| This document | `doc/bc/6.0/hardening.md` | Full security hardening notes |
-| Issue report | `tests/bin/issue_report_2026-02-21.txt` | Detailed per-issue tracking log |
-| Change log | `doc/bc/6.0/phpunitvXXXX.md` § 14 | Per-issue before/after diffs and test links |
-| Lint suite | `tests/bin/ezp_lint_patched.php` | Automated PHP syntax validation runner |
-| Functional tests | `tests/bin/tests/functional_tests.php` | 48-test runtime flow test suite |
-| Combined runner | `tests/bin/ezptestrunner_all_tests.php` | Unified lint + functional runner with report output |
-| Test report | `tests/bin/test_report_2026-02-21.txt` | Machine-readable dated test output |
-
-### Questions for Security Team Review
-
-The following questions should be addressed by the security team reviewer before this
-patch set is signed off for release:
-
-1. Do any of the SQL injection issues (SEC-01 through SEC-04) meet the threshold for a
-   formal CVE assignment? Given the project's public visibility and established user base,
-   CVE disclosure may be appropriate for SEC-02 (ORDER BY injection) and SEC-05 (RCE via
-   sendmail).
-
-2. Should a security advisory be published on the GitHub Releases page alongside the
-   6.0.13 tag, listing the issue IDs and encouraging all site operators to upgrade?
-
-3. Is there a known-exploited status for any of these issues? Particularly SEC-05 (RCE via
-   sendmail -f) — this vulnerability class is well-known in PHP CMS environments and may
-   already be present in public exploit databases.
-
-4. Should the 6.0 branch receive a patch-only release (6.0.13 containing only these
-   security fixes) ahead of the normal release schedule, or can the security fixes wait for
-   the next scheduled feature release?
-
-5. Are there any prior security reports from the community or from existing penetration
-   tests against Exponential deployments that correspond to any of the issues documented
-   here? If so, those should be cross-referenced in the CVE or advisory.
-
----
+| File | Description |
+|---|---|
+| `tests/bin/issue_report_2026-02-21.txt` | per-issue tracking log |
+| `tests/bin/ezp_lint_patched.php` | PHP syntax validation of the patched files |
+| `tests/bin/tests/functional_tests.php` | the 48-test runtime flow suite |
+| `tests/bin/ezptestrunner_all_tests.php` | lint and functional tests in one runner, with an optional report |
+| `tests/bin/test_report_2026-02-21.txt` | the dated test output |
 
 ## Appendix A: Full Diff Listing
 
@@ -1177,7 +1118,6 @@ git diff HEAD -- kernel/classes/ kernel/setup/ kernel/content/ lib/
 Key diff excerpts for each security fix are quoted inline in the [Detailed Findings and
 Fixes](#detailed-findings-and-fixes) section above.
 
----
 
 ## Appendix B: Test Script Inventory
 
@@ -1186,7 +1126,6 @@ Fixes](#detailed-findings-and-fixes) section above.
 | `tests/bin/ezp_lint_patched.php` | `php tests/bin/ezp_lint_patched.php` | PHP syntax lint of 80 patched files |
 | `tests/bin/tests/functional_tests.php` | `php tests/bin/tests/functional_tests.php [category]` | 48-test runtime flow suite |
 | `tests/bin/ezptestrunner_all_tests.php` | `php tests/bin/ezptestrunner_all_tests.php [category] [--report]` | Combined runner; optional dated report |
-| `bin/php/run_issue_tests.php` | `php bin/php/run_issue_tests.php [filter]` | Manifest-based lint with category filter |
 
 Running the security-only test subset:
 
@@ -1208,7 +1147,6 @@ php tests/bin/ezptestrunner_all_tests.php --list-categories
 # security  soap  preg  dom  null  array  php84  setup  image
 ```
 
----
 
 ## Appendix C: CWE and OWASP Reference Mapping
 
@@ -1234,10 +1172,9 @@ php tests/bin/ezptestrunner_all_tests.php --list-categories
 - [CWE-78 Improper Neutralisation of Special Elements used in an OS Command](https://cwe.mitre.org/data/definitions/78.html)
 - [CWE-79 Improper Neutralisation of Input During Web Page Generation](https://cwe.mitre.org/data/definitions/79.html)
 
----
 
-*End of document — eZ Publish Legacy 6.0.13 Security Hardening Notes*  
-*Prepared 2026-02-21 | Distribution: security@exponential.earth*
+*End of document — Exponential 6.0.13 security hardening notes*  
+*Prepared 2026-02-21 | Contact: security@exponential.earth*
 
 ## Related pages
 
