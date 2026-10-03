@@ -1,13 +1,13 @@
 # ezwt: the website toolbar
 
-`ezwt` ("eZ Website Toolbar LS") is the editing toolbar a logged-in editor sees on the public site:
-edit, move, remove, create here, sort sub items, change the state, upload or export a document. It
-requires `ezjscore`. [ezwebin](ezwebin.md), [ezflow](ezflow.md), [ezdemo](ezdemo.md) and the
-[simple theme](sevenx_themes_simple.md) all build on it.
+This page is for designers who add editing to a public site design. `ezwt` ("eZ Website Toolbar LS") is the editing
+toolbar a logged-in editor sees on the public site: edit, move, remove, create here, sort sub items, change the state,
+upload or export a document. It requires `ezjscore`. [ezwebin](ezwebin.md), [ezflow](ezflow.md), [ezdemo](ezdemo.md)
+and the [simple theme](sevenx_themes_simple.md) all build on it.
 
 ## Put it in your design
 
-In `pagelayout.tpl`, wrap the toolbar in a cache block keyed by the user's roles so it adds no SQL:
+1. In `pagelayout.tpl`, wrap the toolbar in a cache block keyed by the user's roles, so it adds no SQL:
 
 ```
 {def $user_hash = concat( $current_user.role_id_list|implode( '_' ), '_', $current_user.limited_assignment_value_list|implode( '_' ) )}
@@ -16,39 +16,36 @@ In `pagelayout.tpl`, wrap the toolbar in a cache block keyed by the user's roles
 {/cache-block}
 ```
 
-Load `stylesheets/websitetoolbar.css` with `ezdesign`. In `content/edit.tpl` include
-`design:parts/website_toolbar_edit.tpl`, and in the version view template the matching part. The extension
-README has the full text.
+2. Load `stylesheets/websitetoolbar.css` with `ezdesign`.
+3. In `content/edit.tpl`, include `design:parts/website_toolbar_edit.tpl`; in the version view template, include the
+   matching part.
+4. Sign in as an editor and open a page: the toolbar shows above the content.
 
-## Settings (`websitetoolbar.ini`)
+The extension README has the full text.
 
-| Block | Key | Default | Meaning |
-|---|---|---|---|
-| WebsiteToolbarSettings | `ODFDisplayClasses[]` | documentation_page, blog, blog_post, folder, article, article_mainpage, article_subpage, event | Classes for which the OpenDocument import and export buttons are shown |
-| WebsiteToolbarSettings | `HideODFContainerClasses[]` | article | |
-| WebsiteToolbarSettings | `HiddenContentClasses[]` | banner, common_ini_settings | Classes the toolbar does not offer to create |
-| CustomTemplateSettings | `CustomTemplateList[]`, `IncludeInView[<name>]` | object_states, link (full view) | Extra toolbar templates |
+## Settings
+
+| File | Block | Key | Default | Meaning |
+|---|---|---|---|---|
+| `websitetoolbar.ini` | `WebsiteToolbarSettings` | `ODFDisplayClasses[]` | documentation_page, blog, blog_post, folder, article, article_mainpage, article_subpage, event | Classes for which the OpenDocument import and export buttons are shown |
+| `websitetoolbar.ini` | `WebsiteToolbarSettings` | `HideODFContainerClasses[]` | article | Container classes without the OpenDocument buttons |
+| `websitetoolbar.ini` | `WebsiteToolbarSettings` | `HiddenContentClasses[]` | banner, common_ini_settings | Classes the toolbar does not offer to create |
+| `websitetoolbar.ini` | `CustomTemplateSettings` | `CustomTemplateList[]`, `IncludeInView[<name>]` | object_states, link (full view) | Extra toolbar templates |
 
 ## What changed in the Exponential 6 releases
 
-* 6.0.3: HTML5 cleanup of the toolbar templates (void tags) and the stylesheet (vendor prefixes for
-  `box-shadow`, `border-radius` and `transition` removed).
-* 6.0.5: every visible text is a translation string, with German.
-* 6.0.7: the date and date/time fields of the demo design use Exponential UI's calendar,
-  `exp::datepicker`; the extension requires `se7enxweb/expui ^1.0.0.1`.
-* 6.0.8: **YUI removed.** The sort page (`websitetoolbar/sort`), drag and drop of sub items, runs on jQuery
-  with native drag events: the same priorities, the same automatic update through `ezwt::updatepriority`
-  (`ezjsc::jqueryio`). See [YUI removal](../../../bc/6.0/yui-removal.md).
-* 6.0.9: command line scripts, cronjob parts and module views are classes the files call; copyright
-  notices name 1998 - 2026 7x & Exponential Foundation first
-  ([CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)).
+| Version | Change |
+|---|---|
+| 6.0.3 | HTML5 cleanup of the toolbar templates (void tags) and the stylesheet (vendor prefixes for `box-shadow`, `border-radius` and `transition` removed). |
+| 6.0.5 | Every visible text is a translation string, with German. |
+| 6.0.7 | The date and date/time fields of the demo design use Exponential UI's calendar, `exp::datepicker`; the extension requires `se7enxweb/expui ^1.0.0.1`. |
+| 6.0.8 | **YUI removed.** The sort page (`websitetoolbar/sort`, drag and drop of sub items) runs on jQuery with native drag events: the same priorities, the same automatic update through `ezwt::updatepriority` (`ezjsc::jqueryio`). See [YUI removal](../../../bc/6.0/yui-removal.md). |
+| 6.0.9 | Command line scripts, cronjob parts and module views are classes the files call; copyright notices name 1998 - 2026 7x & Exponential Foundation first ([CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)). |
 
-## Related
+## Related pages
 
-* [ezwebin](ezwebin.md), [ezflow](ezflow.md)
-* [Chronicle](../../../history/extensions/ezwt.md) and [release notes](../../../changelogs/extensions/ezwt.md)
-* [Change ledger](../../../history/ledger/ezwt.md)
-* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
-* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+- [ezwebin](ezwebin.md), [ezflow](ezflow.md), [ezodf](ezodf.md), [ezmultiupload](ezmultiupload.md)
+- [Chronicle](../../../history/extensions/ezwt.md) and [release notes](../../../changelogs/extensions/ezwt.md)
+- [Change ledger](../../../history/ledger/ezwt.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

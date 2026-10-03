@@ -1,29 +1,46 @@
 # sevenx_themes_simple: the simple theme
 
-`sevenx_themes_simple` is the light, responsive design that ships with the default Exponential
-installation: a header with logo, a multi-level dropdown menu and a cart icon, a footer, article, blog,
-gallery, product and basket templates, a favicon set and the stylesheet `main.css` with its responsive
-companion `main.res.css`. It is built on the classes of [ezwebin](ezwebin.md) and the toolbar of
-[ezwt](ezwt.md), and installs the ezwebin based packages the default installation needs. The design is
-named `simple`; an `Exponential` logo and banner replace the earlier product logo.
+This page is for site builders who use or adapt the default public design of Exponential. `sevenx_themes_simple` is
+the light, responsive design that ships with the default installation. It has:
 
-It was first imported on 25 January 2024 (1.0.0) and reached 1.0.21 on 2 October 2026.
+- a header with logo, a multi-level dropdown menu and a cart icon, and a footer;
+- article, blog, gallery, product and basket templates;
+- a favicon set, and the stylesheet `main.css` with its responsive companion `main.res.css`.
+
+It is built on the classes of [ezwebin](ezwebin.md) and the toolbar of [ezwt](ezwt.md), and installs the ezwebin based
+packages the default installation needs. The design is named `simple`; an `Exponential` logo and banner replace the
+earlier product logo. It was first imported on 25 January 2024 (1.0.0) and reached 1.0.21 on 2 October 2026.
 
 ## Use it
 
-Activate it as a design extension (`design.ini [ExtensionSettings] DesignExtensions[]=sevenx_themes_simple`). The extension
-carries siteaccess defaults (`ezjscore.ini` and `override.ini`) for the `site` and `sevenx_site_user` siteaccesses (the `site`
-one since 1.0.5), which is what the default installation expects.
+1. Activate it as a design extension: `design.ini [ExtensionSettings] DesignExtensions[]=sevenx_themes_simple`.
+2. The extension carries siteaccess defaults (`ezjscore.ini` and `override.ini`) for the `site` and
+   `sevenx_site_user` siteaccesses (the `site` one since 1.0.5), which is what the default installation expects.
+3. To change a template, override it in your own design extension, listed before this one in
+   `ActiveAccessExtensions`. The theme is managed by Composer: do not edit its files in place.
 
-Template overrides, stylesheets and scripts come from `design.ini` of the extension:
+Check which release you have:
 
-| Block | Key | Value |
-|---|---|---|
-| StylesheetSettings | `CSSFileList[]` | `websitetoolbar.css`, `libs/fontawesome/css/all.min.css`, `magnific-popup.css`, `main.css`, `main.res.css` |
-| JavaScriptSettings | `JavaScriptList[]` | `ezjsc::jquery`, `jquery.magnific-popup.js`, `main.js` |
+```bash
+grep Version extension/sevenx_themes_simple/ezinfo.php
+```
 
-The theme is "composer managed": do not edit its files in place; override templates in your own design
-extension, listed before it in `ActiveAccessExtensions`.
+or open the about page (`/ezinfo/about`).
+
+### Hide the "Powered by Exponential" notice
+
+`page_footer.tpl` prints the notice unless the **Hide powered by** attribute (`hide_powered_by`) of the page design
+object (the `pagedesign` class used by ezwebin designs) is set. Edit that object in the admin; no template change is
+needed (since 1.0.4).
+
+## Settings
+
+Stylesheets and scripts come from `design.ini` of the extension:
+
+| File | Block | Key | Value |
+|---|---|---|---|
+| `design.ini` | `StylesheetSettings` | `CSSFileList[]` | `websitetoolbar.css`, `libs/fontawesome/css/all.min.css`, `magnific-popup.css`, `main.css`, `main.res.css` |
+| `design.ini` | `JavaScriptSettings` | `JavaScriptList[]` | `ezjsc::jquery`, `jquery.magnific-popup.js`, `main.js` |
 
 ## Where things are
 
@@ -36,11 +53,6 @@ extension, listed before it in `ActiveAccessExtensions`.
 | `packages/` | The `.ezpkg` class packages (article, blog, event, forums, frontpage, ...) the default installation imports |
 | `translations/ger-DE/translation.ts` | The German texts of the theme's own strings |
 | `extension.xml`, `ezinfo.php` | Version (1.0.21 at the time of writing) and licence, kept equal; the requirements are `ezjscore` and `expui` |
-
-To see which release you have: `grep Version extension/sevenx_themes_simple/ezinfo.php` or the about page (`/ezinfo/about`).
-
-Hide the "Powered by Exponential" notice (1.0.4): `page_footer.tpl` prints it unless the **Hide powered by** attribute (`hide_powered_by`) of the page design object
-(the `pagedesign` class used by ezwebin designs) is set. Edit that object in the admin; no template change is needed.
 
 ## What changed in the Exponential 6 era
 
@@ -60,16 +72,11 @@ Hide the "Powered by Exponential" notice (1.0.4): `page_footer.tpl` prints it un
 | 1.0.20 | **YUI removed**: the siteaccess `ezjscore.ini` files carry no YUI library paths, CDN URLs or loader options, the stylesheets no longer style the YUI calendar (date fields use Exponential UI's), and the star rating view loads the jQuery script only. A new `extension.xml` ships |
 | 1.0.21 | The about page names "1998 - 2026 7x & Exponential Foundation" first |
 
-## Related
+## Related pages
 
-* [ezwebin](ezwebin.md), [ezwt](ezwt.md), [ezstarrating](ezstarrating.md)
-* [Chronicle](../../../history/extensions/sevenx_themes_simple.md) and [release notes](../../../changelogs/extensions/sevenx_themes_simple.md)
-* [YUI removal](../../../bc/6.0/yui-removal.md)
-* [Change ledger](../../../history/ledger/sevenx_themes_simple.md)
-* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-* [Month: 2025-01 (all extensions)](../../../history/extensions/months/2025-01.md)
-* [Month: 2025-08 (all extensions)](../../../history/extensions/months/2025-08.md)
-* [Month: 2026-04 (all extensions)](../../../history/extensions/months/2026-04.md)
-* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
-* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+- [ezwebin](ezwebin.md), [ezwt](ezwt.md), [ezstarrating](ezstarrating.md)
+- [YUI removal](../../../bc/6.0/yui-removal.md)
+- [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+- [Chronicle](../../../history/extensions/sevenx_themes_simple.md) and [release notes](../../../changelogs/extensions/sevenx_themes_simple.md)
+- [Change ledger](../../../history/ledger/sevenx_themes_simple.md)
+- Months: [2025-01](../../../history/extensions/months/2025-01.md), [2025-08](../../../history/extensions/months/2025-08.md), [2026-04](../../../history/extensions/months/2026-04.md), [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

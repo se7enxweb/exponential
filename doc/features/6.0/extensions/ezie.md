@@ -1,41 +1,62 @@
 # ezie: the image editor
 
-`ezie` ("eZ Image Editor") is an image editor inside the edit form of any content object that has an
-image attribute. Crop, flip, rotate, add a watermark, change contrast and brightness, then **Save &
-Close**; the edited image is stored as a new version of the attribute. It uses jQuery, jQuery UI, the
-Jcrop and colorpicker plugins, GD2 or ImageMagick and the Zeta Components image conversion.
+This page is for editors who adjust images while editing content, and for administrators who add watermarks. `ezie`
+("eZ Image Editor") is an image editor inside the edit form of any content object that has an image attribute. Crop,
+flip, rotate, add a watermark, change contrast and brightness, then **Save & Close**: the edited image is stored as a
+new version of the attribute.
 
-The September to October 2026 releases (6.0.3 to 6.0.8) repaired it for current PHP and jQuery,
-fixed several defects that made tools fail, and closed two security holes. If you used the editor
-before and gave up on it, try it again.
+The September to October 2026 releases (6.0.3 to 6.0.8) repaired it for current PHP and jQuery, fixed several defects
+that made tools fail, and closed two security holes. If you tried the editor before and gave up on it, try it again.
+
+## Requirements
+
+Exponential 6, PHP 8.1 or later, GD2 or ImageMagick, and an Exponential edit form (admin, or a design that loads the
+edit form scripts). It uses jQuery, jQuery UI, the Jcrop and colorpicker plugins and the Zeta Components image
+conversion.
 
 ## Use it
 
-1. Edit an object that has an image attribute; open the editor from the image field.
-2. Choose a tool in the **Actions** window: select, crop, flip, rotate, watermark, contrast,
-   brightness. Keyboard shortcuts are shown in each tool's title.
-3. Work on the selection (keep ratio, free, or type a size), apply, undo as needed.
-4. **Save & Close** stores the image and the edit form shows the saved image wherever the attribute
-   is. **Quit** asks a translated question ("If you leave without saving, all your modifications
-   will be definitely lost"), and only when something was changed.
+1. Edit an object that has an image attribute, and open the editor from the image field.
+2. Choose a tool in the **Actions** window: select, crop, flip, rotate, watermark, contrast, brightness. Keyboard
+   shortcuts are shown in each tool's title.
+3. Work on the selection (keep ratio, free, or type a size), apply, and undo as needed.
+4. Click **Save & Close**. The edit form shows the saved image wherever the attribute is.
 
-The server side of each tool is a view of the `ezie` module (`module.php`): `prepare` (opens the editing session), `tool_crop`, `tool_flip_hor`, `tool_flip_ver`, `tool_rotation`,
-`tool_pixelate`, `tool_watermark`, the filters `filter_bw` (black and white), `filter_sepia`, `filter_contrast` and `filter_brightness`, and the two ways out,
-`save_and_quit` and `no_save_and_quit`. Select, zoom, undo and redo work in the browser (`design/standard/javascript/ezie.gui.config.bind.tool_*.js`). So the editor also has
-pixelate, black and white and sepia, which the list above does not name. The third-party scripts it bundles are named in `ezinfo.php` (jQuery UI 1.8.9, Jcrop 0.9.8, jQuery Hotkeys 0.7.9; the colour picker
-is in `design/standard/javascript/colorpicker`); jQuery itself comes from `ezjscore`.
+**Quit** asks a translated question ("If you leave without saving, all your modifications will be definitely lost"),
+and only when something was changed.
 
-Add your own watermarks (usually PNG files) in two steps, then clear the caches:
+### What runs where
+
+The server side of each tool is a view of the `ezie` module (`module.php`):
+
+| View | Purpose |
+|---|---|
+| `prepare` | opens the editing session |
+| `tool_crop`, `tool_flip_hor`, `tool_flip_ver`, `tool_rotation`, `tool_pixelate`, `tool_watermark` | tools |
+| `filter_bw` (black and white), `filter_sepia`, `filter_contrast`, `filter_brightness` | filters |
+| `save_and_quit`, `no_save_and_quit` | the two ways out |
+
+Select, zoom, undo and redo work in the browser (`design/standard/javascript/ezie.gui.config.bind.tool_*.js`). So the
+editor also has pixelate, black and white and sepia, which the tool list above does not name.
+
+The third-party scripts it bundles are named in `ezinfo.php` (jQuery UI 1.8.9, Jcrop 0.9.8, jQuery Hotkeys 0.7.9); the
+colour picker is in `design/standard/javascript/colorpicker`. jQuery itself comes from `ezjscore`.
+
+### Add your own watermark
+
+1. Put the image (usually a PNG file) in a `design/standard/images/watermarks` folder of your extension, for example
+   `extension/mydesign/design/standard/images/watermarks/logo_ubuntu.png`.
+2. Register it in `extension/mydesign/settings/image.ini.append.php`:
 
 ```ini
-# file: extension/mydesign/design/standard/images/watermarks/logo_ubuntu.png  (the image)
-# extension/mydesign/settings/image.ini.append.php
 [eZIE]
 watermarks[]=logo_ubuntu.png
 ```
 
-Only a plain file name that exists in a `design/standard/images/watermarks` folder is accepted (the
-shipped ones are `elephpant.png` and `ez-logo.png`).
+3. Clear the caches. The watermark is offered in the editor.
+
+Only a plain file name that exists in a `design/standard/images/watermarks` folder is accepted. The shipped ones are
+`elephpant.png` and `ez-logo.png`.
 
 ## What was fixed
 
@@ -76,25 +97,23 @@ shipped ones are `elephpant.png` and `ez-logo.png`).
 * The editor sends the form token as the `ezxform_token` field and as the `X-CSRF-Token` header, read for
   every request from the hidden span or from the `csrf-token` meta tag.
 
-## Requirements
-
-Exponential 6, PHP 8.1 or later, GD2 or ImageMagick, and an Exponential edit form (admin or a design that
-loads the edit form scripts).
 
 ## Languages
 
-The extension carries translation files in `translations/<locale>/translation.ts`: cro-HR, ell-GR, eng-US, esl-ES, fre-FR, ger-DE, ita-IT, jpn-JP, pol-PL, por-BR. The German file holds 47 messages (count `<message` in
-`translations/ger-DE/translation.ts`). The texts are looked up in the context(s) `design/standard/ezie` and `design/standard/content/datatype`. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
-`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
-and clearing the template and content caches.
+The extension carries translation files in `translations/<locale>/translation.ts`: cro-HR, ell-GR, eng-US, esl-ES,
+fre-FR, ger-DE, ita-IT, jpn-JP, pol-PL, por-BR. The German file holds 47 messages (count `<message` in
+`translations/ger-DE/translation.ts`). The texts are looked up in the contexts `design/standard/ezie` and
+`design/standard/content/datatype`.
 
-## Related
+After editing a translation file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clear the template and content caches. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts`, not of this extension's file.
 
-* [Chronicle](../../../history/extensions/ezie.md) and [release notes](../../../changelogs/extensions/ezie.md)
-* [YUI removal and jQuery 4](../../../bc/6.0/yui-removal.md)
-* [Change ledger](../../../history/ledger/ezie.md)
-* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
-* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-* [Month: 2024-03 (all extensions)](../../../history/extensions/months/2024-03.md)
-* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
-* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)
+## Related pages
+
+- [YUI removal and jQuery 4](../../../bc/6.0/yui-removal.md)
+- [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+- [Chronicle](../../../history/extensions/ezie.md) and [release notes](../../../changelogs/extensions/ezie.md)
+- [Change ledger](../../../history/ledger/ezie.md)
+- [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-03](../../../history/extensions/months/2024-03.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)
