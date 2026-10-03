@@ -1,13 +1,32 @@
 # Paging the role and policy screens
 
-The same treatment the locations tab got, applied to the permission screens.
+Read this page if your installation has roles with many policies (a large multi-site installation often does), if you
+override the role or policy templates, or if your code reads `policyList()` and expects module order. The role and
+policy screens now page and sort in the database, the way the [Locations tab](locations-tab-paging-and-sorting.md)
+does, and the role editor can reorder policies.
 
-An installation that serves many sites accumulates roles, and roles accumulate
-policies. There is no ceiling on either: a role is free to carry hundreds of
-thousands of policies, and on a large multi-site installation they do. The
-screens that show them were written as though they never would.
+A role may carry any number of policies, hundreds of thousands on a large installation. The screens that showed them
+loaded every policy at once, and on a big role the page ran out of memory before the first row was written.
 
----
+## In short
+
+| | |
+|---|---|
+| What changed | `role/edit` and `role/view` show one page of policies (`site.ini [RoleSettings] PoliciesPerPage`, default `25`) with `(policy_offset)`, sortable ID, Module, Function and Limitations headings and, in the editor, up and down buttons. `role/list` has an ID column and sortable headings. The user policies window shows a bounded preview per role (`PolicyPreviewPerRole`, default `10`). New `eZRole::policyCount()`, `policyPage()`, `movePolicy()`; fetches `role/policy_count` and `role/policies`. |
+| Who is affected | Code that relies on `policyList()` returning policies by module and function: it now returns them in id order. Overrides of `role/list.tpl`, `role/edit.tpl`, `role/view.tpl`, `policies.tpl` and `tabs/user/policies.tpl`. |
+| How to check | `grep -n "function policyCount\|function policyPage\|function movePolicy\|function sortColumnsForPolicyList\|function sortColumnsForList" kernel/classes/ezrole.php` |
+| How to fix | Sort in your own code if you need module order. Merge your template overrides with the shipped ones. No database update is needed: `ezpolicy` is unchanged. |
+
+Permissions do not change: `eZRole::accessArray()` does not read the order (see
+[The permission system does not read the order](#the-permission-system-does-not-read-the-order)).
+
+## Settings
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `site.ini` | `[RoleSettings]` | `PoliciesPerPage` | `25` | global or siteaccess |
+| `site.ini` | `[RoleSettings]` | `PolicyPreviewPerRole` | `10` | global or siteaccess |
+| `site.ini` | `[RoleSettings]` | `RolesPerPageList[]` | `10`, `25`, `50` (the role list selector; the stored preference is the position in this list) | global or siteaccess |
 
 ## What was wrong
 
@@ -61,7 +80,6 @@ looped over **every** policy of that role, and each row asked the database for
 its limitations and resolved their value names: unbounded × unbounded, with an
 N+1 inside.
 
----
 
 ## What it does now
 
@@ -161,7 +179,6 @@ building the access array.
 That makes the window bounded by *roles × preview size* rather than by
 *roles × policies*.
 
----
 
 ## Measured
 
@@ -174,7 +191,6 @@ Role 17, 401 policies:
 | heading | counted the list in hand | `Policies (401)` from the database |
 | pager | none | `/role/view/17/(policy_offset)/25` |
 
----
 
 ## Files
 
@@ -190,7 +206,6 @@ Role 17, 401 policies:
 | `design/admin/templates/policies.tpl` | bounded preview per role |
 | `settings/site.ini` | `PoliciesPerPage`, `PolicyPreviewPerRole` |
 
----
 
 ## Tests
 
@@ -208,7 +223,6 @@ role: that edits the permissions of the account everything runs as) and remove i
 
 Read-only check that the API is in place: `grep -n "function policyCount\|function policyPage\|function movePolicy\|function sortColumnsForPolicyList\|function sortColumnsForList" kernel/classes/ezrole.php`.
 
----
 
 ## The policy order, an ID column and sortable headings in `role/edit`
 
@@ -283,13 +297,12 @@ Pressing Enter in the name field used to press the form's first submit button.
 With the new buttons, that would have moved a policy. A hidden `ChangeRoleName`
 button now comes first in the form, so Enter only keeps the name.
 
----
 
 ## Two copies of the policy window, and only one of them renders
 
 `design/admin/templates/policies.tpl` and `roles.tpl` are included only by
-`design/admin/override/templates/windows_user.tpl`, and **no `override.ini` in
-this installation registers that file**. They are dead code here.
+`design/admin/override/templates/windows_user.tpl`, and **no shipped `override.ini`
+registers that file**. Unless your own override registers it, they are not used.
 
 The ones that actually render are `design/admin/templates/tabs/user/policies.tpl`
 and `roles.tpl` — additional tabs, declared in `admininterface.ini` and pulled
@@ -303,15 +316,12 @@ them for a user group node view, `locations.tpl` and `tabs/user/policies.tpl`
 among them. On a warm cache the same page reports three, because only what was
 rendered fresh is listed: a cached page is not evidence of what a page uses.
 
----
-
-## See also
-
-- [Paging, sorting and page sizes](../../features/6.0/admin-list-paging.md) and [Where the page sizes live](pagination-settings.md)
-- [Role and policy order](../../features/6.0/role-policy-order.md) and [Role and policy template operators](../../features/6.0/role-and-policy-template-operators.md)
-- [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 
 ## Related pages
 
+- [Paging, sorting and page sizes](../../features/6.0/admin-list-paging.md) and [Where the page sizes live](pagination-settings.md)
+- [Role and policy order](../../features/6.0/role-policy-order.md) and [Role and policy template operators](../../features/6.0/role-and-policy-template-operators.md)
+- [The locations tab: paging and sorting](locations-tab-paging-and-sorting.md)
+- [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
 - [January 2026](../../history/2026/2026-01.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
