@@ -113,3 +113,11 @@ Since `v4.0.0.1` (2026-04-07) a platform installation on SQLite can run the lega
 ## Related
 
 [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md) · [Site bundles and Twig tools](platform-site-bundles.md) · [Nexus](platform-nexus-starter.md) · [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
+## Platform ecosystem pages
+
+- Features: [Platform administration interface](platform-admin-ui-fork.md); [DXP skeleton](platform-dxp-skeleton.md); [Layouts on the platform](platform-layouts-core-fork.md); [Nexus starter](platform-nexus-starter.md); [PHP 8.5 framework forks](platform-php85-framework-forks.md); [Site bundles](platform-site-bundles.md); [SQLite for Exponential Platform](platform-sqlite-install.md); [AdminNeo database manager](adminneo-database-manager.md).
+- Specifications: [Platform console command names](../../specifications/6.0/platform-console-commands.md); [Platform package map](../../specifications/6.0/platform-package-map.md); [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md); [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
+- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
+- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
+- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).

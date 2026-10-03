@@ -59,12 +59,22 @@ Override or add entries with `[DatabaseSettings] SQLitePragmas[]=name=value` in
 
 ## Transactions and writers
 
-SQLite has one writer. `begin()` queues transactions behind a writer gate (a
-lock file named `<database>.writer-lock` beside the database file) for at most
-`[DatabaseSettings] SQLiteTransactionWait` seconds (default `60`). Waiting at
-that point is safe because the transaction has written nothing; after the gate
-is passed a transaction cannot fail because of a lock. Keep the value below the
-web server's request timeout.
+SQLite has one writer. Since 6.0.15 (1-2 October 2026) a transaction starts with `BEGIN IMMEDIATE`, so the write lock is taken at the start, where the busy timeout applies. A deferred `BEGIN` made a transaction fail at its first write, with "database is locked", once another connection had committed since it read.
+
+| Aspect | Behaviour |
+|---|---|
+| Waiting | `begin()` queues behind a writer gate (a lock file named `<database>.writer-lock` beside the database file, released by the operating system when a process ends) for at most `[DatabaseSettings] SQLiteTransactionWait` seconds (default `60`); tries thin out as the wait grows and the writers that waited longest go first. Waiting here is safe because nothing has been written yet. Keep the value below the web server's request timeout. |
+| Failure | A start that still gets nothing is reported at once as a failed transaction with the reason, and nothing is written. Before, the generic `begin()` counted it as started and later statements ran one by one, each committed on its own. |
+| Rollback | `ROLLBACK` is sent only when SQLite has a transaction open (no more "cannot rollback - no transaction is active"). |
+| Measured | In the change's test run, 64 concurrent publishers: before 6 of 192 failed, after 192 of 192 completed whole (not repeated for this page). |
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `60` (seconds) | installation |
+
+Check the setting: `./console exp:ini get site.ini/DatabaseSettings/SQLiteTransactionWait --allow-root-user`. Upgrade notes: [SQLite transactions](../../bc/6.0/sqlite-transactions.md).
+
+Other fixes of the same days: `subString( s, n )` without a length returns the rest of the string, as on the other engines (a node move used to drop the last character of `path_string` and `path_identification_string` of the moved subtree); a node's `path_identification_string` is rewritten from the value stored for it, not from a stale copy held by the node object; the asynchronous publisher closes its database connection before it forks for each publish (a connection must never cross a fork); the setup wizard's database field offers only real SQLite files (`eZSQLite3DB::availableDatabasesIn()`).
 
 ## SQL compatibility layer
 
@@ -100,3 +110,9 @@ for how query results are cached on every engine.
 ## See also
 
 Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md), [6.0.13](../../changelogs/6.0/6.0.13.md), [6.0.14](../../changelogs/6.0/6.0.14.md); chronicles: [January 2024, first half](../../history/2024/2024-01a.md), [April 2026](../../history/2026/2026-04.md), [June 2026, second half](../../history/2026/2026-06b.md).
+
+## Related pages
+
+- [SQLite for Exponential Platform: no database server needed](../../features/6.0/platform-sqlite-install.md)
+- [Platform SQLite installer](platform-sqlite-installer.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)

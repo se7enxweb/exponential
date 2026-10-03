@@ -67,3 +67,19 @@ sqlite3 var/data_dev.db "SELECT COUNT(*) FROM ezcontentobject;"
 ## Related
 
 [Package map](platform-package-map.md) · [Console commands](platform-console-commands.md) · [Legacy bridge specification](legacy-bridge-bundle.md)
+
+## Platform ecosystem pages
+
+- Features: [Platform administration interface](../../features/6.0/platform-admin-ui-fork.md); [DXP skeleton](../../features/6.0/platform-dxp-skeleton.md); [Layouts on the platform](../../features/6.0/platform-layouts-core-fork.md); [Nexus starter](../../features/6.0/platform-nexus-starter.md); [PHP 8.5 framework forks](../../features/6.0/platform-php85-framework-forks.md); [Site bundles](../../features/6.0/platform-site-bundles.md); [SQLite for Exponential Platform](../../features/6.0/platform-sqlite-install.md); [Legacy bridge](../../features/6.0/legacy-bridge.md); [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md).
+- Specifications: [Platform console command names](platform-console-commands.md); [Platform package map](platform-package-map.md); [Legacy bridge bundle specification](legacy-bridge-bundle.md).
+- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
+- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
+- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
+
+## Related pages
+
+- [SQLite database support](../../features/6.0/sqlite-database.md)
+- [SQLite: transactions queue for the write lock](../../bc/6.0/sqlite-transactions.md)
+- [January 2024, first half (1 to 15 January)](../../history/2024/2024-01a.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

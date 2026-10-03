@@ -119,6 +119,19 @@ is the same on every database. Install on Oracle with
 `./console exp:install --db=oracle` (see
 [Installing in one command](../../features/6.0/install-in-one-command.md)).
 
+### Oracle and the SQL query cache (1-2 October 2026)
+
+The [SQL query cache](../../bc/6.0/sql-query-cache.md) knows Oracle's statements, so the Oracle driver (`extension/ezoracle`, version in its `ezinfo.php`) can answer SELECTs from it:
+
+- Oracle writes volatile values without parentheses, so `<sequence>.NEXTVAL` and `.CURRVAL` (the driver reads a new row's id with `SELECT <sequence>.currval FROM DUAL`), `SYSDATE`, `SYSTIMESTAMP`, the SCN, `SYS_GUID`, `SYS_CONTEXT`/`USERENV` and `DBMS_RANDOM` are never cached (a cached answer would hand out an id twice).
+- Oracle's catalogue (`USER_*`, `ALL_*`, `DBA_*`, `CDB_*`, `V$*`) counts as a system table.
+- An anonymous PL/SQL block (`DECLARE ... BEGIN ... END;`) is a write whose tables cannot be read and makes every result stale; a bare `BEGIN` is still the start of a transaction.
+- The cache directory is left to the site user (a root process used to leave it owned by root so the site user's cron could not write `state.ser`), and statements with long string literals are read correctly.
+
+PHP 8.5 notices fixed on Oracle by reading every admin page's debug report: a preference without a name is neither stored nor read; `createGroupedDataMap()` reads an empty class attribute category as a string (Oracle returns `''` as NULL); `ezpExtension::getInfo`, `eZTemplateCompiler`, `eZHTTPTool::redirect()`, the INI setting datatype, the `ristring` operator and `{if}` without a file placement no longer pass null where PHP 8.5 deprecates it.
+
+SQLite counterpart of this change: [transactions and writers](sqlite3-database-driver.md#transactions-and-writers).
+
 ## How to check
 
 - SQLite install: `./console exp:install --print --allow-root-user` shows
@@ -133,8 +146,18 @@ is the same on every database. Install on Oracle with
 ## Related pages
 
 - [SQLite database](../../features/6.0/sqlite-database.md)
-- [SQLite and Oracle driver behaviour (October 2026)](database-drivers-sqlite-oracle.md)
+- [SQLite3 database driver specification](sqlite3-database-driver.md)
 - [Installer logs and seed data](installer-logs-and-seed-data.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## See also
+
+- [SQLite3 database driver specification](sqlite3-database-driver.md)
+- [SQLite and Oracle driver behaviour, October 2026](database-drivers-sqlite-oracle.md)
+
+## Related pages
+
+- [MongoDB as the database](../../features/6.0/mongodb-database-support.md)
+- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)

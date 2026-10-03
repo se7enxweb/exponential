@@ -99,3 +99,11 @@ How replacement works: a package that lists another package under `replace` tell
 | [adminneo](../../history/ecosystem/adminneo.md) | `adminneo-org/adminneo` | - | `7.1 - 8.5` | v5.2.1 (2025-12-07) |
 
 Not every package keeps its upstream name: `oss-skeleton` still declares the name `ibexa/oss-skeleton` (its fork is published as `se7enxweb/exponential-platform-dxp-skeleton`), and `admin-ui-ibexa` is the same repository as `admin-ui-7x`.
+
+## Platform ecosystem pages
+
+- Features: [Platform administration interface](../../features/6.0/platform-admin-ui-fork.md); [DXP skeleton](../../features/6.0/platform-dxp-skeleton.md); [Layouts on the platform](../../features/6.0/platform-layouts-core-fork.md); [Nexus starter](../../features/6.0/platform-nexus-starter.md); [PHP 8.5 framework forks](../../features/6.0/platform-php85-framework-forks.md); [Site bundles](../../features/6.0/platform-site-bundles.md); [SQLite for Exponential Platform](../../features/6.0/platform-sqlite-install.md); [Legacy bridge](../../features/6.0/legacy-bridge.md); [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md).
+- Specifications: [Platform console command names](platform-console-commands.md); [Platform SQLite installer](platform-sqlite-installer.md); [Legacy bridge bundle specification](legacy-bridge-bundle.md).
+- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
+- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
+- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).

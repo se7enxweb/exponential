@@ -64,3 +64,26 @@ php -v
 ## Related
 
 [Package map](../../specifications/6.0/platform-package-map.md) · [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md) · [Nexus starter](platform-nexus-starter.md)
+
+## Platform ecosystem pages
+
+- Features: [Platform administration interface](platform-admin-ui-fork.md); [DXP skeleton](platform-dxp-skeleton.md); [Layouts on the platform](platform-layouts-core-fork.md); [Nexus starter](platform-nexus-starter.md); [Site bundles](platform-site-bundles.md); [SQLite for Exponential Platform](platform-sqlite-install.md); [Legacy bridge](legacy-bridge.md); [AdminNeo database manager](adminneo-database-manager.md).
+- Specifications: [Platform console command names](../../specifications/6.0/platform-console-commands.md); [Platform package map](../../specifications/6.0/platform-package-map.md); [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md); [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
+- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
+- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
+- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
+
+## Related pages
+
+- [Steps to upgrade your Exponential 6.0.13 site to use PHPUnit 10 — what broke, how we fixed it, and how you run tests now](../../bc/6.0/phpunitv10.md)
+- [PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite](../../bc/6.0/phpunitv13.md)
+- [PHPUnit 13 / PHP 8.4.23 test suite cleanup](../../bc/6.0/phpunitv13forPHP841.md)
+- [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite](../../bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- [April 2025](../../history/2025/2025-04.md)
+- [September 2025](../../history/2025/2025-09.md)
+- [December 2025](../../history/2025/2025-12.md)
+- [February 2026](../../history/2026/2026-02.md)
+
+## Related pages
+
+- [March 2026](../../history/2026/2026-03.md)
