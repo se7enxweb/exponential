@@ -24,6 +24,9 @@
         'Link': 'Link',
         'Browse': 'Durchsuchen',
         'Search': 'Suchen',
+        'Bookmarks': 'Lesezeichen',
+        'You have no bookmarks': 'Sie haben keine Lesezeichen',
+        'Use "Add to bookmarks" on a content item in the administration interface to add one.': 'Mit "Zu Lesezeichen hinzufügen" bei einem Inhalt in der Administrationsoberfläche lässt sich eines anlegen.',
         'URL': 'URL',
         'Text to display': 'Linktext',
         'Title': 'Titel',
@@ -115,7 +118,7 @@
             var link = getLink( element && element.nodeType === 1 ? element : editor.selection.getNode() ),
                 dom = editor.dom,
                 selectionText = editor.selection.isCollapsed() ? '' : editor.selection.getContent( { format: 'text' } ),
-                state = { tab: 'link', browse: null, search: null, searchText: '', targetInfo: '' },
+                state = { tab: 'link', browse: null, search: null, bookmarks: null, searchText: '', targetInfo: '' },
                 unbind, api;
 
             var data = link ? {
@@ -126,10 +129,10 @@
                 cssClass: dom.getAttrib( link, 'class' ).replace( /\b(mceItem\w+|ezoe\w+)\b/g, '' ).trim(),
                 view: dom.getAttrib( link, 'view' ),
                 htmlId: dom.getAttrib( link, 'id' ),
-                anchor: '', query: '', browseAsObject: false, searchAsObject: false
+                anchor: '', query: '', browseAsObject: false, searchAsObject: false, bookmarksAsObject: false
             } : {
                 href: '', text: selectionText, title: '', target: '', cssClass: '', view: '', htmlId: '',
-                anchor: '', query: '', browseAsObject: false, searchAsObject: false
+                anchor: '', query: '', browseAsObject: false, searchAsObject: false, bookmarksAsObject: false
             };
 
             // list rows carry node and object id, the link type is chosen with the asObject checkbox
@@ -138,7 +141,7 @@
             };
 
             var selectedRow = function () {
-                var m = String( data.href || '' ).match( INTERNAL_HREF_REGEX ), list = [ state.browse, state.search ];
+                var m = String( data.href || '' ).match( INTERNAL_HREF_REGEX ), list = [ state.browse, state.search, state.bookmarks ];
                 if ( !m )
                     return '';
                 for ( var i = 0; i < list.length; i++ )
@@ -155,7 +158,8 @@
             var listHtml = function ( list, browse ) {
                 if ( !list )
                     return '<p class="ezoe-list-empty">' + D.escapeHtml( t( 'Loading…' ) ) + '</p>';
-                return D.renderList( list, { t: t, value: rowValue, previewAlias: settings().browse_image_alias, rootUrl: settings().root_url, roots: settings().browse_roots, selected: selectedRow(), browse: browse } );
+                return D.renderList( list, { t: t, value: rowValue, previewAlias: settings().browse_image_alias, rootUrl: settings().root_url, roots: settings().browse_roots, selected: selectedRow(), browse: browse,
+                    empty: 'You have no bookmarks', emptyHint: 'Use "Add to bookmarks" on a content item in the administration interface to add one.' } );
             };
 
             var spec = function () {
@@ -211,6 +215,14 @@
                                     { type: 'checkbox', name: 'searchAsObject', label: t( 'Link to the object instead of the node (ezobject://)' ) },
                                     { type: 'htmlpanel', html: state.search ? listHtml( state.search ) : '' }
                                 ]
+                            },
+                            {
+                                name: 'bookmarks',
+                                title: t( 'Bookmarks' ),
+                                items: [
+                                    { type: 'checkbox', name: 'bookmarksAsObject', label: t( 'Link to the object instead of the node (ezobject://)' ) },
+                                    { type: 'htmlpanel', html: listHtml( state.bookmarks ) }
+                                ]
                             }
                         ]
                     },
@@ -223,6 +235,8 @@
                         state.tab = details.newTabName;
                         if ( state.tab === 'browse' && !state.browse )
                             loadBrowse( dialogApi, startNode(), 0 );
+                        else if ( state.tab === 'bookmarks' && !state.bookmarks )
+                            loadBookmarks( dialogApi, 0 );
                     },
                     onChange: function ( dialogApi, details ) {
                         if ( details.name === 'anchor' && dialogApi.getData().anchor )
@@ -298,6 +312,16 @@
                 } );
             };
 
+            var loadBookmarks = function ( dialogApi, offset ) {
+                dialogApi.block( t( 'Loading…' ) );
+                D.bookmarks( settings(), offset ).then( function ( list ) {
+                    state.bookmarks = list;
+                    redial( dialogApi );
+                } ).catch( function ( e ) {
+                    fail( dialogApi, e );
+                } );
+            };
+
             var runSearch = function ( dialogApi, offset ) {
                 var text = String( dialogApi.getData().query || state.searchText ).trim();
                 if ( !text )
@@ -314,7 +338,7 @@
             };
 
             var findItem = function ( value ) {
-                return [ state.browse, state.search ].reduce( function ( found, list ) {
+                return [ state.browse, state.search, state.bookmarks ].reduce( function ( found, list ) {
                     return found || ( list && list.items.filter( function ( i ) {
                         return rowValue( i ) === value;
                     } )[0] );
@@ -324,7 +348,7 @@
             // Takes over a chosen entry into the link tab, keeping an anchor already set
             var choose = function ( dialogApi, value ) {
                 var d = dialogApi.getData(), ids = value.split( ':' ), item = findItem( value ),
-                    href = ( state.tab === 'search' ? d.searchAsObject : d.browseAsObject ) ? 'ezobject://' + ids[1] : 'eznode://' + ids[0],
+                    href = ( state.tab === 'search' ? d.searchAsObject : state.tab === 'bookmarks' ? d.bookmarksAsObject : d.browseAsObject ) ? 'ezobject://' + ids[1] : 'eznode://' + ids[0],
                     anchor = ( String( d.href ).match( /#.*$/ ) || [ '' ] )[0],
                     changes = { href: href + anchor };
                 if ( !link && !selectionText && !String( d.text || '' ).trim() && item )
@@ -393,6 +417,8 @@
                 {
                     if ( state.tab === 'search' )
                         runSearch( api, parseInt( value, 10 ) );
+                    else if ( state.tab === 'bookmarks' )
+                        loadBookmarks( api, parseInt( value, 10 ) );
                     else
                         loadBrowse( api, state.browse.node.node_id, parseInt( value, 10 ) );
                 }

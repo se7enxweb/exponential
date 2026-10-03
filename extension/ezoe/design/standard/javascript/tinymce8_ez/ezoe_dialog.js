@@ -366,7 +366,8 @@ window.eZOe8Dialog = (function () {
      * @param {Object} list   result of search() / browse() / bookmarks()
      * @param {Object} options selected: value of the checked row, value: function( item ) -> row value,
      *                          browse: true to open containers on a click on the name, t: translate function,
-     *                          previewAlias / rootUrl: image alias and root url for the preview column
+     *                          previewAlias / rootUrl: image alias and root url for the preview column,
+     *                          empty / emptyHint: texts of an empty list instead of 'No results'
      */
     var renderList = function ( list, options ) {
         var t = options.t, html = '';
@@ -401,7 +402,8 @@ window.eZOe8Dialog = (function () {
         }
 
         if ( !list.items.length )
-            return html + '<p class="ezoe-list-empty">' + escapeHtml( t( 'No results' ) ) + '</p>';
+            return html + '<p class="ezoe-list-empty">' + escapeHtml( t( options.empty || 'No results' ) ) + '</p>' +
+                   ( options.emptyHint ? '<p class="ezoe-list-empty-hint">' + escapeHtml( t( options.emptyHint ) ) + '</p>' : '' );
 
         // like the old dialog: a preview link that shows the image on hover
         var previewHtml = function ( item ) {

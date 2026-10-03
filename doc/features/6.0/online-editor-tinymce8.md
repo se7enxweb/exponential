@@ -32,7 +32,7 @@ EngineSwitch=enabled
 | Content | Dialogs and behaviour (like TinyMCE 3) |
 |---|---|
 | Embed and embed-inline | Search via `ezjsc::search` with the class filter and a preview column; Upload tab to upload and embed a new object; edit an existing embed (view, class, size for images, align, inline, custom attributes); double click and context toolbar |
-| Links | ezoe dialog to browse the content tree or search for a node or object; anchors saved as `<a name>` like TinyMCE 3 |
+| Links | ezoe dialog with Browse, Search and Bookmarks tabs (the user's own bookmarks, paged, with a preview column) to choose a node or object; anchors saved as `<a name>` like TinyMCE 3 |
 | Custom tags | Insert, edit, remove with the tag's custom attributes (text, textarea, int, number, email, select, checkbox, color, hidden); validation of required and numeric values |
 | Literal tags | Dialog like the TinyMCE 3 general tag dialog |
 | Tables, rows, cells | Classes and custom attributes (`content.ini [table] Defaults` for the size of new tables). Insert table / Table properties open the TinyMCE 3 dialog design by default (size grid, width and border with px / %, class, summary, caption); `TableDialog=modern` in `[Engine_tinymce8]` selects the plain TinyMCE 8 form |

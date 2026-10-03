@@ -153,6 +153,18 @@ nodes" (node 1) with a link for every level, an "Up" link to the parent, paging 
 object from any level. The roots come from `ez_settings.browse_roots`, built in the template from content.ini
 `[NodeSettings]` and the `ezoe/browse` policy.
 
+
+## Bookmarks tab (link dialog)
+
+The "Insert/edit link" dialog has a Bookmarks tab like the embed dialog and the TinyMCE 3 link dialog. It lists the
+bookmarks of the current user through `ezoe::bookmarks` (paged, with the same preview column as Search and Browse).
+Choosing a row fills the link target with `eznode://<node id>` (`ezobject://<object id>` when "Link to the object
+instead of the node" is checked), exactly like Search and Browse, so the stored ezxml is the same
+`<link node_id="...">` that TinyMCE 3 stores for a node link. Without bookmarks the tab says "You have no bookmarks"
+and how to add one ("Add to bookmarks" on a content item in the administration interface). The Browse tab keeps its
+full-tree navigation. The texts are in the plugin's German translation (`ezlink/plugin.js`); the server side
+message reuses the existing `design/standard/content/view` translations.
+
 ## Upstream code
 
 The TinyMCE 8 distribution is vendored unmodified in `extension/ezoe/design/standard/javascript/tinymce8/` (README,

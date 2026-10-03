@@ -46,6 +46,7 @@
     margin-top: 6px;
 }
 .tox .ezoe-list-empty,
+.tox .ezoe-list-empty-hint,
 .tox .ezoe-selected {
     margin: 0 0 6px;
 }
