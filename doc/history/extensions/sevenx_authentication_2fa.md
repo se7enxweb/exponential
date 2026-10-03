@@ -2,7 +2,7 @@
 
 Two-factor and social login was imported on 21 July 2026 and refined the same day with a reset interface, user edit and registration templates and an e-mail body template. See the [feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md).
 
-This page lists **every one of the 6 changes** of the repository `sevenx_authentication_2fa` between 2026-07-21 and 2026-07-21, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_authentication_2fa.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx_authentication_2fa.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md).
+This page lists **every one of the 6 changes** of the repository `sevenx_authentication_2fa` between 2026-07-21 and 2026-07-21, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_authentication_2fa.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx_authentication_2fa.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md).
 
 | Kind | Changes |
 |---|---|
@@ -23,12 +23,9 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 - 2026-07-21 [`ecc3dde`](https://github.com/se7enxweb/sevenx_authentication_2fa/commit/ecc3dde) (feature) Added template override for email code message body customization and manny other feature refinements based on user testing and feedback. Bugfixes
 - 2026-07-21 [`e9a5679`](https://github.com/se7enxweb/sevenx_authentication_2fa/commit/e9a5679) (fix) Updated main documentation and minor refactoring with bugfixes
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md)
-* [Release notes](../../changelogs/extensions/sevenx_authentication_2fa.md)
-* [Change ledger](../ledger/sevenx_authentication_2fa.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md)
+- [Release notes](../../changelogs/extensions/sevenx_authentication_2fa.md)
+- [Change ledger](../ledger/sevenx_authentication_2fa.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

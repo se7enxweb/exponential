@@ -2,7 +2,7 @@
 
 The tag taxonomy extension was repackaged for Exponential in January 2024 and then repaired database by database: SQLite in April 2026, MongoDB in September, Oracle and PostgreSQL on 29 and 30 September. October removed YUI and made the admin render in every admin design. See the [feature page](../../features/6.0/extensions/eztags.md).
 
-This page lists **every one of the 37 changes** of the repository `eztags` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/eztags.md); what each release contains is in the [release notes](../../changelogs/extensions/eztags.md); how to use the extension is on its [feature page](../../features/6.0/extensions/eztags.md).
+This page lists **every one of the 37 changes** of the repository `eztags` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/eztags.md); what each release contains is in the [release notes](../../changelogs/extensions/eztags.md); how to use the extension is on its [feature page](../../features/6.0/extensions/eztags.md).
 
 | Kind | Changes |
 |---|---|
@@ -110,9 +110,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`a3bb010`](https://github.com/se7enxweb/eztags/commit/a3bb010) (tooling) The commands start through the shared command helpers
 - 2026-10-02 [`0ac2999`](https://github.com/se7enxweb/eztags/commit/0ac2999) (release) Version 2.4.11 **Release v2.4.11.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/eztags.md)
-* [Release notes](../../changelogs/extensions/eztags.md)
-* [Change ledger](../ledger/eztags.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/eztags.md)
+- [Release notes](../../changelogs/extensions/eztags.md)
+- [Change ledger](../ledger/eztags.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

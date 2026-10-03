@@ -2,7 +2,7 @@
 
 The identifier-storing selection datatype changed vendor in 2024 and in late September and October 2026 got a PostgreSQL fix, translations and a repair of its multiple selection templates. See the [feature page](../../features/6.0/extensions/enhancedselection2.md).
 
-This page lists **every one of the 15 changes** of the repository `enhancedselection2` between 2024-03-06 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/enhancedselection2.md); what each release contains is in the [release notes](../../changelogs/extensions/enhancedselection2.md); how to use the extension is on its [feature page](../../features/6.0/extensions/enhancedselection2.md).
+This page lists **every one of the 15 changes** of the repository `enhancedselection2` between 2024-03-06 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/enhancedselection2.md); what each release contains is in the [release notes](../../changelogs/extensions/enhancedselection2.md); how to use the extension is on its [feature page](../../features/6.0/extensions/enhancedselection2.md).
 
 | Kind | Changes |
 |---|---|
@@ -62,9 +62,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`16a2231`](https://github.com/se7enxweb/enhancedselection2/commit/16a2231) (tooling) The commands start through the shared command helpers
 - 2026-10-02 [`ec64b8b`](https://github.com/se7enxweb/enhancedselection2/commit/ec64b8b) (release) Version 2.1.7 **Release 2.1.7.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/enhancedselection2.md)
-* [Release notes](../../changelogs/extensions/enhancedselection2.md)
-* [Change ledger](../ledger/enhancedselection2.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/enhancedselection2.md)
+- [Release notes](../../changelogs/extensions/enhancedselection2.md)
+- [Change ledger](../ledger/enhancedselection2.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

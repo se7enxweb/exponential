@@ -2,7 +2,7 @@
 
 The installer data package of the media site was created on 3 July 2026 (1.0.0). See the [feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md).
 
-This page lists **every one of the 2 changes** of the repository `cjw-exponential-media-site-data` between 2026-07-03 and 2026-07-03, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/cjw-exponential-media-site-data.md); what each release contains is in the [release notes](../../changelogs/extensions/cjw-exponential-media-site-data.md); how to use the extension is on its [feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md).
+This page lists **every one of the 2 changes** of the repository `cjw-exponential-media-site-data` between 2026-07-03 and 2026-07-03, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/cjw-exponential-media-site-data.md); what each release contains is in the [release notes](../../changelogs/extensions/cjw-exponential-media-site-data.md); how to use the extension is on its [feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md).
 
 | Kind | Changes |
 |---|---|
@@ -24,12 +24,9 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 - 2026-07-03 [`1589742`](https://github.com/se7enxweb/cjw-exponential-media-site-data/commit/1589742) (feature) Initial: CJW Exponential Media Site installer data **Release v1.0.0.**
 - 2026-07-03 [`a4fcc13`](https://github.com/se7enxweb/cjw-exponential-media-site-data/commit/a4fcc13) (fix) Fixed: composer.json - add type, require php>=8.1, fix branch-alias to dev-main for Packagist
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md)
-* [Release notes](../../changelogs/extensions/cjw-exponential-media-site-data.md)
-* [Change ledger](../ledger/cjw-exponential-media-site-data.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md)
+- [Release notes](../../changelogs/extensions/cjw-exponential-media-site-data.md)
+- [Change ledger](../ledger/cjw-exponential-media-site-data.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

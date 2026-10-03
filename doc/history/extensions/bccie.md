@@ -2,7 +2,7 @@
 
 The collected information export was repackaged in January 2024 and renamed **CIE** in the menu in September 2026, with translations, a PHP 8 constant fix and the Exponential name. See the [feature page](../../features/6.0/extensions/bccie.md).
 
-This page lists **every one of the 19 changes** of the repository `bccie` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/bccie.md); what each release contains is in the [release notes](../../changelogs/extensions/bccie.md); how to use the extension is on its [feature page](../../features/6.0/extensions/bccie.md).
+This page lists **every one of the 19 changes** of the repository `bccie` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/bccie.md); what each release contains is in the [release notes](../../changelogs/extensions/bccie.md); how to use the extension is on its [feature page](../../features/6.0/extensions/bccie.md).
 
 | Kind | Changes |
 |---|---|
@@ -68,9 +68,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`6015bdd`](https://github.com/se7enxweb/bccie/commit/6015bdd) (feature) English and German translations for every string the admin showed untranslated
 - 2026-10-02 [`e36a8ef`](https://github.com/se7enxweb/bccie/commit/e36a8ef) (release) Version 1.1.11 **Release v1.1.11.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/bccie.md)
-* [Release notes](../../changelogs/extensions/bccie.md)
-* [Change ledger](../ledger/bccie.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/bccie.md)
+- [Release notes](../../changelogs/extensions/bccie.md)
+- [Change ledger](../ledger/bccie.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

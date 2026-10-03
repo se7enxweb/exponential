@@ -2,7 +2,7 @@
 
 The enhanced file datatype changed vendor in January 2024 and received metadata and translations in late September and October 2026. See the [feature page](../../features/6.0/extensions/enhancedezbinaryfile.md).
 
-This page lists **every one of the 11 changes** of the repository `enhancedezbinaryfile` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/enhancedezbinaryfile.md); what each release contains is in the [release notes](../../changelogs/extensions/enhancedezbinaryfile.md); how to use the extension is on its [feature page](../../features/6.0/extensions/enhancedezbinaryfile.md).
+This page lists **every one of the 11 changes** of the repository `enhancedezbinaryfile` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/enhancedezbinaryfile.md); what each release contains is in the [release notes](../../changelogs/extensions/enhancedezbinaryfile.md); how to use the extension is on its [feature page](../../features/6.0/extensions/enhancedezbinaryfile.md).
 
 | Kind | Changes |
 |---|---|
@@ -55,9 +55,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`f0518c7`](https://github.com/se7enxweb/enhancedezbinaryfile/commit/f0518c7) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`e78d6dc`](https://github.com/se7enxweb/enhancedezbinaryfile/commit/e78d6dc) (release) Version 4.4.4 **Release v4.4.4.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/enhancedezbinaryfile.md)
-* [Release notes](../../changelogs/extensions/enhancedezbinaryfile.md)
-* [Change ledger](../ledger/enhancedezbinaryfile.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/enhancedezbinaryfile.md)
+- [Release notes](../../changelogs/extensions/enhancedezbinaryfile.md)
+- [Change ledger](../ledger/enhancedezbinaryfile.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

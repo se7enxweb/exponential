@@ -2,7 +2,7 @@
 
 The Website Interface design received package updates in early 2024 and an HTML5 cleanup in July 2026. The September and October sweep made it translatable, fixed the forgot password page and error page titles, worked on Oracle, and replaced YUI. Releases 6.0.0 to 6.0.16. See the [feature page](../../features/6.0/extensions/ezwebin.md).
 
-This page lists **every one of the 33 changes** of the repository `ezwebin` between 2023-12-24 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezwebin.md); what each release contains is in the [release notes](../../changelogs/extensions/ezwebin.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezwebin.md).
+This page lists **every one of the 33 changes** of the repository `ezwebin` between 2023-12-24 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezwebin.md); what each release contains is in the [release notes](../../changelogs/extensions/ezwebin.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezwebin.md).
 
 | Kind | Changes |
 |---|---|
@@ -107,9 +107,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`11964d8`](https://github.com/se7enxweb/ezwebin/commit/11964d8) (docs) The about page names 1998 - 2026 7x & Exponential Foundation first in its copyright notice, followed by eZ Systems AS
 - 2026-10-02 [`c052c26`](https://github.com/se7enxweb/ezwebin/commit/c052c26) (release) Version 6.0.16 **Release v6.0.16.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezwebin.md)
-* [Release notes](../../changelogs/extensions/ezwebin.md)
-* [Change ledger](../ledger/ezwebin.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezwebin.md)
+- [Release notes](../../changelogs/extensions/ezwebin.md)
+- [Change ledger](../ledger/ezwebin.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

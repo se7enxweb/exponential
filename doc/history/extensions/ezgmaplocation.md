@@ -2,7 +2,7 @@
 
 The map location datatype changed vendor in early 2024 and was fixed for PHP 8.5 coordinates in April 2026; September added a SQLite schema and translations. See the [feature page](../../features/6.0/extensions/ezgmaplocation.md).
 
-This page lists **every one of the 15 changes** of the repository `ezgmaplocation` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezgmaplocation.md); what each release contains is in the [release notes](../../changelogs/extensions/ezgmaplocation.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezgmaplocation.md).
+This page lists **every one of the 15 changes** of the repository `ezgmaplocation` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezgmaplocation.md); what each release contains is in the [release notes](../../changelogs/extensions/ezgmaplocation.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezgmaplocation.md).
 
 | Kind | Changes |
 |---|---|
@@ -71,9 +71,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`e558a87`](https://github.com/se7enxweb/ezgmaplocation/commit/e558a87) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`54b5315`](https://github.com/se7enxweb/ezgmaplocation/commit/54b5315) (release) Version 6.0.6 **Release v6.0.6.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezgmaplocation.md)
-* [Release notes](../../changelogs/extensions/ezgmaplocation.md)
-* [Change ledger](../ledger/ezgmaplocation.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezgmaplocation.md)
+- [Release notes](../../changelogs/extensions/ezgmaplocation.md)
+- [Change ledger](../ledger/ezgmaplocation.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

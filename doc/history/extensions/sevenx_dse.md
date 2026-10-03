@@ -2,7 +2,7 @@
 
 The Database Source Editor was imported on 21 April 2026 (1.0.0) and fixed for persistent workers (a fresh nonce per request, a fresh worker after each dashboard request) and for its menu identifier in September. See the [feature page](../../features/6.0/extensions/sevenx_dse.md).
 
-This page lists **every one of the 11 changes** of the repository `sevenx_dse` between 2026-04-21 and 2026-09-30, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_dse.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx_dse.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_dse.md).
+This page lists **every one of the 11 changes** of the repository `sevenx_dse` between 2026-04-21 and 2026-09-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_dse.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx_dse.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_dse.md).
 
 | Kind | Changes |
 |---|---|
@@ -47,9 +47,9 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 - 2026-09-30 [`c2c8e9a`](https://github.com/se7enxweb/sevenx_dse/commit/c2c8e9a) (docs) The description calls the product Exponential
 - 2026-09-30 [`8203c12`](https://github.com/se7enxweb/sevenx_dse/commit/8203c12) (release) Version 1.1.4 **Release v1.1.4.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/sevenx_dse.md)
-* [Release notes](../../changelogs/extensions/sevenx_dse.md)
-* [Change ledger](../ledger/sevenx_dse.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/sevenx_dse.md)
+- [Release notes](../../changelogs/extensions/sevenx_dse.md)
+- [Change ledger](../ledger/sevenx_dse.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

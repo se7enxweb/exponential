@@ -2,7 +2,7 @@
 
 The REST content provider was imported in October 2024 with an example client and received the Exponential metadata and class based commands in September and October 2026. See the [feature page](../../features/6.0/extensions/ezprestapi.md).
 
-This page lists **every one of the 16 changes** of the repository `ezprestapi` between 2024-10-10 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezprestapi.md); what each release contains is in the [release notes](../../changelogs/extensions/ezprestapi.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezprestapi.md).
+This page lists **every one of the 16 changes** of the repository `ezprestapi` between 2024-10-10 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezprestapi.md); what each release contains is in the [release notes](../../changelogs/extensions/ezprestapi.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezprestapi.md).
 
 | Kind | Changes |
 |---|---|
@@ -60,9 +60,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`41b06f0`](https://github.com/se7enxweb/ezprestapi/commit/41b06f0) (tooling) The commands start through the shared command helpers
 - 2026-10-02 [`037cb8f`](https://github.com/se7enxweb/ezprestapi/commit/037cb8f) (release) Version 1.2.4 **Release v1.2.4.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezprestapi.md)
-* [Release notes](../../changelogs/extensions/ezprestapi.md)
-* [Change ledger](../ledger/ezprestapi.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezprestapi.md)
+- [Release notes](../../changelogs/extensions/ezprestapi.md)
+- [Change ledger](../ledger/ezprestapi.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

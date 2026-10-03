@@ -2,7 +2,7 @@
 
 The image editor was untouched between a vendor switch in early 2024 and September 2026, when it was brought to PHP 8.5, WebP sites, jQuery 3 and 4 and a proper permission check. Releases 6.0.3 to 6.0.8. See the [feature page](../../features/6.0/extensions/ezie.md).
 
-This page lists **every one of the 41 changes** of the repository `ezie` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezie.md); what each release contains is in the [release notes](../../changelogs/extensions/ezie.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezie.md).
+This page lists **every one of the 41 changes** of the repository `ezie` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezie.md); what each release contains is in the [release notes](../../changelogs/extensions/ezie.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezie.md).
 
 | Kind | Changes |
 |---|---|
@@ -102,9 +102,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`ce35086`](https://github.com/se7enxweb/ezie/commit/ce35086) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`0f918f9`](https://github.com/se7enxweb/ezie/commit/0f918f9) (release) Version 6.0.8 **Release v6.0.8.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezie.md)
-* [Release notes](../../changelogs/extensions/ezie.md)
-* [Change ledger](../ledger/ezie.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezie.md)
+- [Release notes](../../changelogs/extensions/ezie.md)
+- [Change ledger](../ledger/ezie.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

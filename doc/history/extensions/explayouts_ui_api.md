@@ -2,7 +2,7 @@
 
 The layout editor API and single-page app was imported on 30 July 2026 and grew quickly in August (collections, containers, linked zones, content browser), then hardened in September: block ordering, shared and locked zones, a mobile editor, SQLite and index fixes for the share table, a siteaccess prefix, the form token on every write, writes only on drafts, and German texts. See the [feature page](../../features/6.0/extensions/explayouts_ui_api.md) and the [specification](../../specifications/6.0/explayouts-ui-api.md).
 
-This page lists **every one of the 58 changes** of the repository `explayouts_ui_api` between 2026-07-30 and 2026-09-30, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/explayouts_ui_api.md); what each release contains is in the [release notes](../../changelogs/extensions/explayouts_ui_api.md); how to use the extension is on its [feature page](../../features/6.0/extensions/explayouts_ui_api.md).
+This page lists **every one of the 58 changes** of the repository `explayouts_ui_api` between 2026-07-30 and 2026-09-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/explayouts_ui_api.md); what each release contains is in the [release notes](../../changelogs/extensions/explayouts_ui_api.md); how to use the extension is on its [feature page](../../features/6.0/extensions/explayouts_ui_api.md).
 
 | Kind | Changes |
 |---|---|
@@ -119,10 +119,10 @@ These commits were pushed after the machine-made ledger of this repository was e
 - 2026-10-01 `a9dfe30` (fix) The Roboto italic face ships (v1.3.9)
 - Releases v1.3.8 (30 September) and v1.3.9 (1 October)
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/explayouts_ui_api.md)
-* [Release notes](../../changelogs/extensions/explayouts_ui_api.md)
-* [Change ledger](../ledger/explayouts_ui_api.md)
-* [Specification](../../specifications/6.0/explayouts-ui-api.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/explayouts_ui_api.md)
+- [Release notes](../../changelogs/extensions/explayouts_ui_api.md)
+- [Change ledger](../ledger/explayouts_ui_api.md)
+- [Specification](../../specifications/6.0/explayouts-ui-api.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

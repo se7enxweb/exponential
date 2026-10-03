@@ -2,7 +2,7 @@
 
 Powercontent was extended for the REST extension in October 2024, fixed for PHP 8.5 in December 2025, gained copy and hide actions in June 2026 and a class list fetch in July 2026, and a PDF export fix in October 2026. See the [feature page](../../features/6.0/extensions/nxc_powercontent.md).
 
-This page lists **every one of the 12 changes** of the repository `nxc_powercontent` between 2024-10-29 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/nxc_powercontent.md); what each release contains is in the [release notes](../../changelogs/extensions/nxc_powercontent.md); how to use the extension is on its [feature page](../../features/6.0/extensions/nxc_powercontent.md).
+This page lists **every one of the 12 changes** of the repository `nxc_powercontent` between 2024-10-29 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/nxc_powercontent.md); what each release contains is in the [release notes](../../changelogs/extensions/nxc_powercontent.md); how to use the extension is on its [feature page](../../features/6.0/extensions/nxc_powercontent.md).
 
 | Kind | Changes |
 |---|---|
@@ -73,9 +73,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`23a8bc3`](https://github.com/se7enxweb/nxc_powercontent/commit/23a8bc3) (feature) content/edit declares its redirect helper only once, so a persistent PHP worker can run it more than once
 - 2026-10-02 [`038c6e9`](https://github.com/se7enxweb/nxc_powercontent/commit/038c6e9) (release) Version 1.4.3 **Release v1.4.3.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/nxc_powercontent.md)
-* [Release notes](../../changelogs/extensions/nxc_powercontent.md)
-* [Change ledger](../ledger/nxc_powercontent.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/nxc_powercontent.md)
+- [Release notes](../../changelogs/extensions/nxc_powercontent.md)
+- [Change ledger](../ledger/nxc_powercontent.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

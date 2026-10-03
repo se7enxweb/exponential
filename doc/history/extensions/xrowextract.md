@@ -2,7 +2,7 @@
 
 `xrowextract` began as a small CSV export page of 2008 and, until the summer of 2026, changed rarely: a vendor switch in February 2024, PHP 8 fixes in 2024 (releases 2.3.1 to 2.4.2). On 29 September 2026 it was rebuilt in one day of 130 merged changes into a data-exchange tool: previews, JSON and XML, whole-site archives, filters, presets, background jobs, a CSV/JSON/XML importer of any size, content packages, scheduled runs with SFTP, S3 and WebDAV delivery, and a column manifest. The next day it was hardened (PHPStan level 8, a release gate, integration tests, non-UTF-8 and bad-input fixes) and on 2 October its commands became classes. What you can do with it is in the [feature page](../../features/6.0/extensions/xrowextract.md); the reference is the [specification](../../specifications/6.0/xrowextract.md).
 
-This page lists **every one of the 245 changes** of the repository `xrowextract` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/xrowextract.md); what each release contains is in the [release notes](../../changelogs/extensions/xrowextract.md); how to use the extension is on its [feature page](../../features/6.0/extensions/xrowextract.md).
+This page lists **every one of the 245 changes** of the repository `xrowextract` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/xrowextract.md); what each release contains is in the [release notes](../../changelogs/extensions/xrowextract.md); how to use the extension is on its [feature page](../../features/6.0/extensions/xrowextract.md).
 
 | Kind | Changes |
 |---|---|
@@ -326,10 +326,10 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`8de6d30`](https://github.com/se7enxweb/xrowextract/commit/8de6d30) (tooling) The commands start through the shared command helpers
 - 2026-10-02 [`fbea964`](https://github.com/se7enxweb/xrowextract/commit/fbea964) (release) Version 2.5.6 **Release v2.5.6.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/xrowextract.md)
-* [Release notes](../../changelogs/extensions/xrowextract.md)
-* [Change ledger](../ledger/xrowextract.md)
-* [Specification](../../specifications/6.0/xrowextract.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/xrowextract.md)
+- [Release notes](../../changelogs/extensions/xrowextract.md)
+- [Change ledger](../ledger/xrowextract.md)
+- [Specification](../../specifications/6.0/xrowextract.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

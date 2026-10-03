@@ -2,7 +2,7 @@
 
 eZ Flow received a PHP 8.2 bugfix in December 2023, then in September and October 2026 Oracle fixes for block pools and page blocks, and the removal of YUI from the page editor in 6.1.4. See the [feature page](../../features/6.0/extensions/ezflow.md).
 
-This page lists **every one of the 22 changes** of the repository `ezflow` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezflow.md); what each release contains is in the [release notes](../../changelogs/extensions/ezflow.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezflow.md).
+This page lists **every one of the 22 changes** of the repository `ezflow` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezflow.md); what each release contains is in the [release notes](../../changelogs/extensions/ezflow.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezflow.md).
 
 | Kind | Changes |
 |---|---|
@@ -77,9 +77,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`8cce337`](https://github.com/se7enxweb/ezflow/commit/8cce337) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`4f35239`](https://github.com/se7enxweb/ezflow/commit/4f35239) (release) Version 6.1.5 **Release v6.1.5.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezflow.md)
-* [Release notes](../../changelogs/extensions/ezflow.md)
-* [Change ledger](../ledger/ezflow.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezflow.md)
+- [Release notes](../../changelogs/extensions/ezflow.md)
+- [Change ledger](../ledger/ezflow.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

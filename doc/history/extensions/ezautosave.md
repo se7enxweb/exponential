@@ -2,7 +2,7 @@
 
 Autosave changed vendor in early 2024 and in October 2026 moved from YUI to Exponential UI's `exp::autosave` (6.0.5 to 6.0.7). See the [feature page](../../features/6.0/extensions/ezautosave.md).
 
-This page lists **every one of the 18 changes** of the repository `ezautosave` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezautosave.md); what each release contains is in the [release notes](../../changelogs/extensions/ezautosave.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezautosave.md).
+This page lists **every one of the 18 changes** of the repository `ezautosave` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezautosave.md); what each release contains is in the [release notes](../../changelogs/extensions/ezautosave.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezautosave.md).
 
 | Kind | Changes |
 |---|---|
@@ -72,9 +72,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`1abe15d`](https://github.com/se7enxweb/ezautosave/commit/1abe15d) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`447d480`](https://github.com/se7enxweb/ezautosave/commit/447d480) (release) Version 6.0.8 **Release v6.0.8.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezautosave.md)
-* [Release notes](../../changelogs/extensions/ezautosave.md)
-* [Change ledger](../ledger/ezautosave.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezautosave.md)
+- [Release notes](../../changelogs/extensions/ezautosave.md)
+- [Change ledger](../ledger/ezautosave.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

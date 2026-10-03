@@ -2,7 +2,7 @@
 
 The admin design switch was published on 20 June 2026 (0.2.0 to 0.2.4) with release notes per version and a toolbar tweak the next day. See the [feature page](../../features/6.0/extensions/sevenx_themes_admin_classic.md).
 
-This page lists **every one of the 7 changes** of the repository `sevenx_themes_admin_classic` between 2026-06-20 and 2026-06-21, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_themes_admin_classic.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx_themes_admin_classic.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_themes_admin_classic.md).
+This page lists **every one of the 7 changes** of the repository `sevenx_themes_admin_classic` between 2026-06-20 and 2026-06-21, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_themes_admin_classic.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx_themes_admin_classic.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_themes_admin_classic.md).
 
 | Kind | Changes |
 |---|---|
@@ -34,12 +34,9 @@ The month across all extensions: [June 2026](months/2026-06.md). [Ledger of this
 - 2026-06-20 [`a66451d`](https://github.com/se7enxweb/sevenx_themes_admin_classic/commit/a66451d) (fix) fix(redirect): preserve current URI and harden switch redirect flow; docs: clarify toolbar/policy setup **Release v0.2.4.**
 - 2026-06-21 [`9541902`](https://github.com/se7enxweb/sevenx_themes_admin_classic/commit/9541902) (feature) Small toolbar position improvements
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/sevenx_themes_admin_classic.md)
-* [Release notes](../../changelogs/extensions/sevenx_themes_admin_classic.md)
-* [Change ledger](../ledger/sevenx_themes_admin_classic.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/sevenx_themes_admin_classic.md)
+- [Release notes](../../changelogs/extensions/sevenx_themes_admin_classic.md)
+- [Change ledger](../ledger/sevenx_themes_admin_classic.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -2,7 +2,7 @@
 
 Syndication was published by 7x in September 2025 after being ported from PHP 5 to PHP 8, documented, and extended in July 2026 with HTTP authentication of imports. The autumn added persistent worker safety and a portable schema. See the [feature page](../../features/6.0/extensions/syndication.md).
 
-This page lists **every one of the 19 changes** of the repository `syndication` between 2025-09-13 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/syndication.md); what each release contains is in the [release notes](../../changelogs/extensions/syndication.md); how to use the extension is on its [feature page](../../features/6.0/extensions/syndication.md).
+This page lists **every one of the 19 changes** of the repository `syndication` between 2025-09-13 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/syndication.md); what each release contains is in the [release notes](../../changelogs/extensions/syndication.md); how to use the extension is on its [feature page](../../features/6.0/extensions/syndication.md).
 
 | Kind | Changes |
 |---|---|
@@ -70,10 +70,10 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`2593c19`](https://github.com/se7enxweb/syndication/commit/2593c19) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`09c7779`](https://github.com/se7enxweb/syndication/commit/09c7779) (release) Version 1.3.2 **Release v1.3.2.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/syndication.md)
-* [Release notes](../../changelogs/extensions/syndication.md)
-* [Change ledger](../ledger/syndication.md)
-* [Specification](../../specifications/6.0/syndication.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/syndication.md)
+- [Release notes](../../changelogs/extensions/syndication.md)
+- [Change ledger](../ledger/syndication.md)
+- [Specification](../../specifications/6.0/syndication.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

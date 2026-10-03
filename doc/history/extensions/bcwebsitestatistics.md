@@ -2,7 +2,7 @@
 
 Google Analytics support was repackaged in January 2024 and, in July 2026, stopped writing obsolete script attributes. Metadata and translations followed in September. See the [feature page](../../features/6.0/extensions/bcwebsitestatistics.md).
 
-This page lists **every one of the 15 changes** of the repository `bcwebsitestatistics` between 2024-01-07 and 2026-09-30, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/bcwebsitestatistics.md); what each release contains is in the [release notes](../../changelogs/extensions/bcwebsitestatistics.md); how to use the extension is on its [feature page](../../features/6.0/extensions/bcwebsitestatistics.md).
+This page lists **every one of the 15 changes** of the repository `bcwebsitestatistics` between 2024-01-07 and 2026-09-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/bcwebsitestatistics.md); what each release contains is in the [release notes](../../changelogs/extensions/bcwebsitestatistics.md); how to use the extension is on its [feature page](../../features/6.0/extensions/bcwebsitestatistics.md).
 
 | Kind | Changes |
 |---|---|
@@ -62,9 +62,9 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 - 2026-09-30 [`afdd5f7`](https://github.com/se7enxweb/bcwebsitestatistics/commit/afdd5f7) (docs) The description calls the product Exponential
 - 2026-09-30 [`dd2ccad`](https://github.com/se7enxweb/bcwebsitestatistics/commit/dd2ccad) (release) Version 1.0.9 **Release v1.0.9.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/bcwebsitestatistics.md)
-* [Release notes](../../changelogs/extensions/bcwebsitestatistics.md)
-* [Change ledger](../ledger/bcwebsitestatistics.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/bcwebsitestatistics.md)
+- [Release notes](../../changelogs/extensions/bcwebsitestatistics.md)
+- [Change ledger](../ledger/bcwebsitestatistics.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

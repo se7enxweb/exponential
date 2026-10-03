@@ -2,7 +2,7 @@
 
 The installer package repository of ezwebin was updated in December 2023 to March 2024 for SQLite, MySQL 8 and the setup wizard, and in July 2026 cleaned for HTML5. See the [feature page](../../features/6.0/extensions/ezwebin-ezpackage.md).
 
-This page lists **every one of the 13 changes** of the repository `ezwebin-ezpackage` between 2023-12-24 and 2026-07-19, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezwebin-ezpackage.md); what each release contains is in the [release notes](../../changelogs/extensions/ezwebin-ezpackage.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezwebin-ezpackage.md).
+This page lists **every one of the 13 changes** of the repository `ezwebin-ezpackage` between 2023-12-24 and 2026-07-19, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezwebin-ezpackage.md); what each release contains is in the [release notes](../../changelogs/extensions/ezwebin-ezpackage.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezwebin-ezpackage.md).
 
 | Kind | Changes |
 |---|---|
@@ -52,12 +52,9 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 
 - 2026-07-19 [`98c5c51`](https://github.com/se7enxweb/ezwebin-ezpackage/commit/98c5c51) (upgrade note) Remove XHTML self-closing slashes and obsolete type attributes from ezwebin templates
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezwebin-ezpackage.md)
-* [Release notes](../../changelogs/extensions/ezwebin-ezpackage.md)
-* [Change ledger](../ledger/ezwebin-ezpackage.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezwebin-ezpackage.md)
+- [Release notes](../../changelogs/extensions/ezwebin-ezpackage.md)
+- [Change ledger](../ledger/ezwebin-ezpackage.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

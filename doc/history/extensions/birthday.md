@@ -2,7 +2,7 @@
 
 The birthday datatype changed vendor in January 2024; in September 2026 its export handler was fixed so that it no longer ends a request, and on 2 October it gained the missing `ezinfo.php`. See the [feature page](../../features/6.0/extensions/birthday.md).
 
-This page lists **every one of the 7 changes** of the repository `birthday` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/birthday.md); what each release contains is in the [release notes](../../changelogs/extensions/birthday.md); how to use the extension is on its [feature page](../../features/6.0/extensions/birthday.md).
+This page lists **every one of the 7 changes** of the repository `birthday` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/birthday.md); what each release contains is in the [release notes](../../changelogs/extensions/birthday.md); how to use the extension is on its [feature page](../../features/6.0/extensions/birthday.md).
 
 | Kind | Changes |
 |---|---|
@@ -48,9 +48,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`a467a63`](https://github.com/se7enxweb/birthday/commit/a467a63) (fix) Fixed: Added ezinfo.php, which the extension lacked, and corrected extension.xml, which named the product by its old name, gave the license as GPL 2.0 and pointed to a retired website, so that the about page and the upgrade checks show the extension's name, version, license and website.
 - 2026-10-02 [`3132895`](https://github.com/se7enxweb/birthday/commit/3132895) (release) Version 1.3.2 **Release 1.3.2.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/birthday.md)
-* [Release notes](../../changelogs/extensions/birthday.md)
-* [Change ledger](../ledger/birthday.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/birthday.md)
+- [Release notes](../../changelogs/extensions/birthday.md)
+- [Change ledger](../ledger/birthday.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

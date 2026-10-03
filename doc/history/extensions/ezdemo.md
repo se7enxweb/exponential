@@ -2,7 +2,7 @@
 
 The demo design followed the same path as ezwebin: package updates in early 2024, then in September and October 2026 translations, the forgot password and error page fixes, jQuery 4 and the removal of YUI from its galleries and flyouts. See the [feature page](../../features/6.0/extensions/ezdemo.md).
 
-This page lists **every one of the 23 changes** of the repository `ezdemo` between 2023-12-22 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezdemo.md); what each release contains is in the [release notes](../../changelogs/extensions/ezdemo.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezdemo.md).
+This page lists **every one of the 23 changes** of the repository `ezdemo` between 2023-12-22 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezdemo.md); what each release contains is in the [release notes](../../changelogs/extensions/ezdemo.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezdemo.md).
 
 | Kind | Changes |
 |---|---|
@@ -80,9 +80,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`84c3816`](https://github.com/se7enxweb/ezdemo/commit/84c3816) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`2a74806`](https://github.com/se7enxweb/ezdemo/commit/2a74806) (release) Version 6.0.9 **Release v6.0.9.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezdemo.md)
-* [Release notes](../../changelogs/extensions/ezdemo.md)
-* [Change ledger](../ledger/ezdemo.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezdemo.md)
+- [Release notes](../../changelogs/extensions/ezdemo.md)
+- [Change ledger](../ledger/ezdemo.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

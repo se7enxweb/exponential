@@ -2,7 +2,7 @@
 
 The website toolbar was repackaged in early 2024, cleaned for HTML5 in July 2026, and in October 2026 its sort page moved from YUI to jQuery (6.0.8). See the [feature page](../../features/6.0/extensions/ezwt.md).
 
-This page lists **every one of the 20 changes** of the repository `ezwt` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezwt.md); what each release contains is in the [release notes](../../changelogs/extensions/ezwt.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezwt.md).
+This page lists **every one of the 20 changes** of the repository `ezwt` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezwt.md); what each release contains is in the [release notes](../../changelogs/extensions/ezwt.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezwt.md).
 
 | Kind | Changes |
 |---|---|
@@ -80,9 +80,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`7f8296a`](https://github.com/se7enxweb/ezwt/commit/7f8296a) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`4eb1d82`](https://github.com/se7enxweb/ezwt/commit/4eb1d82) (release) Version 6.0.9 **Release v6.0.9.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezwt.md)
-* [Release notes](../../changelogs/extensions/ezwt.md)
-* [Change ledger](../ledger/ezwt.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezwt.md)
+- [Release notes](../../changelogs/extensions/ezwt.md)
+- [Change ledger](../ledger/ezwt.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

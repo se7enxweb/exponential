@@ -2,7 +2,7 @@
 
 The reCAPTCHA datatype was refactored for reCAPTCHA v2, PHP 8 and Exponential 6 in August 2024 and adopted the Exponential metadata in September 2026. See the [feature page](../../features/6.0/extensions/recaptcha.md).
 
-This page lists **every one of the 18 changes** of the repository `recaptcha` between 2024-08-06 and 2026-09-30, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/recaptcha.md); what each release contains is in the [release notes](../../changelogs/extensions/recaptcha.md); how to use the extension is on its [feature page](../../features/6.0/extensions/recaptcha.md).
+This page lists **every one of the 18 changes** of the repository `recaptcha` between 2024-08-06 and 2026-09-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/recaptcha.md); what each release contains is in the [release notes](../../changelogs/extensions/recaptcha.md); how to use the extension is on its [feature page](../../features/6.0/extensions/recaptcha.md).
 
 | Kind | Changes |
 |---|---|
@@ -63,9 +63,9 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 - 2026-09-30 [`f393ea8`](https://github.com/se7enxweb/recaptcha/commit/f393ea8) (docs) The description calls the product Exponential
 - 2026-09-30 [`fbf206e`](https://github.com/se7enxweb/recaptcha/commit/fbf206e) (release) Version 1.4.5 **Release v1.4.5.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/recaptcha.md)
-* [Release notes](../../changelogs/extensions/recaptcha.md)
-* [Change ledger](../ledger/recaptcha.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/recaptcha.md)
+- [Release notes](../../changelogs/extensions/recaptcha.md)
+- [Change ledger](../ledger/recaptcha.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

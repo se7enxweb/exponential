@@ -2,7 +2,7 @@
 
 Star rating changed vendor in early 2024 and was fixed for PHP 8 and persistent workers on 27 September 2026, then moved to jQuery 4 and lost its YUI script in October. See the [feature page](../../features/6.0/extensions/ezstarrating.md).
 
-This page lists **every one of the 18 changes** of the repository `ezstarrating` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezstarrating.md); what each release contains is in the [release notes](../../changelogs/extensions/ezstarrating.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezstarrating.md).
+This page lists **every one of the 18 changes** of the repository `ezstarrating` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezstarrating.md); what each release contains is in the [release notes](../../changelogs/extensions/ezstarrating.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezstarrating.md).
 
 | Kind | Changes |
 |---|---|
@@ -72,9 +72,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`edc1ec0`](https://github.com/se7enxweb/ezstarrating/commit/edc1ec0) (feature) English and German translations for every string the admin showed untranslated
 - 2026-10-02 [`662636e`](https://github.com/se7enxweb/ezstarrating/commit/662636e) (release) Version 6.0.8 **Release v6.0.8.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezstarrating.md)
-* [Release notes](../../changelogs/extensions/ezstarrating.md)
-* [Change ledger](../ledger/ezstarrating.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezstarrating.md)
+- [Release notes](../../changelogs/extensions/ezstarrating.md)
+- [Change ledger](../ledger/ezstarrating.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

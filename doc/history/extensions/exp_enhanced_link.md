@@ -2,7 +2,7 @@
 
 The enhanced link datatype was created on 7 August 2026 and gained serialization support, translations and the correct about page name in the following weeks. See the [feature page](../../features/6.0/extensions/exp_enhanced_link.md).
 
-This page lists **every one of the 8 changes** of the repository `exp_enhanced_link` between 2026-08-07 and 2026-09-30, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/exp_enhanced_link.md); what each release contains is in the [release notes](../../changelogs/extensions/exp_enhanced_link.md); how to use the extension is on its [feature page](../../features/6.0/extensions/exp_enhanced_link.md).
+This page lists **every one of the 8 changes** of the repository `exp_enhanced_link` between 2026-08-07 and 2026-09-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/exp_enhanced_link.md); what each release contains is in the [release notes](../../changelogs/extensions/exp_enhanced_link.md); how to use the extension is on its [feature page](../../features/6.0/extensions/exp_enhanced_link.md).
 
 | Kind | Changes |
 |---|---|
@@ -41,9 +41,9 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 - 2026-09-30 [`b83ab63`](https://github.com/se7enxweb/exp_enhanced_link/commit/b83ab63) (docs) The about page names the extension Exponential Enhanced Link
 - 2026-09-30 [`9039a05`](https://github.com/se7enxweb/exp_enhanced_link/commit/9039a05) (release) Version 1.0.4 **Release v1.0.4.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/exp_enhanced_link.md)
-* [Release notes](../../changelogs/extensions/exp_enhanced_link.md)
-* [Change ledger](../ledger/exp_enhanced_link.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/exp_enhanced_link.md)
+- [Release notes](../../changelogs/extensions/exp_enhanced_link.md)
+- [Change ledger](../ledger/exp_enhanced_link.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

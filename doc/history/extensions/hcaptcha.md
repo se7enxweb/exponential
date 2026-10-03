@@ -2,7 +2,7 @@
 
 hCaptcha was created from the reCAPTCHA extension in August 2024 (release 1.0) and received the Exponential name and missing metadata files in September and October 2026. See the [feature page](../../features/6.0/extensions/hcaptcha.md).
 
-This page lists **every one of the 16 changes** of the repository `hcaptcha` between 2024-08-06 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/hcaptcha.md); what each release contains is in the [release notes](../../changelogs/extensions/hcaptcha.md); how to use the extension is on its [feature page](../../features/6.0/extensions/hcaptcha.md).
+This page lists **every one of the 16 changes** of the repository `hcaptcha` between 2024-08-06 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/hcaptcha.md); what each release contains is in the [release notes](../../changelogs/extensions/hcaptcha.md); how to use the extension is on its [feature page](../../features/6.0/extensions/hcaptcha.md).
 
 | Kind | Changes |
 |---|---|
@@ -58,9 +58,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`e9030b3`](https://github.com/se7enxweb/hcaptcha/commit/e9030b3) (fix) Fixed: Added extension.xml, which the extension lacked, and the website in ezinfo.php, so that the about page and the upgrade checks show the extension's version, license and website.
 - 2026-10-02 [`7b78234`](https://github.com/se7enxweb/hcaptcha/commit/7b78234) (release) Version 1.2 **Release v1.2.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/hcaptcha.md)
-* [Release notes](../../changelogs/extensions/hcaptcha.md)
-* [Change ledger](../ledger/hcaptcha.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/hcaptcha.md)
+- [Release notes](../../changelogs/extensions/hcaptcha.md)
+- [Change ledger](../ledger/hcaptcha.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

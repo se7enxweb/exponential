@@ -2,7 +2,7 @@
 
 The meta data and sitemap extension gained an Open Graph image in August 2026 (1.3.6, 1.3.7), then persistent worker, translation and jQuery 4 fixes and a sitemap cronjob fix in the autumn. See the [feature page](../../features/6.0/extensions/xrowmetadata.md).
 
-This page lists **every one of the 24 changes** of the repository `xrowmetadata` between 2023-12-24 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/xrowmetadata.md); what each release contains is in the [release notes](../../changelogs/extensions/xrowmetadata.md); how to use the extension is on its [feature page](../../features/6.0/extensions/xrowmetadata.md).
+This page lists **every one of the 24 changes** of the repository `xrowmetadata` between 2023-12-24 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/xrowmetadata.md); what each release contains is in the [release notes](../../changelogs/extensions/xrowmetadata.md); how to use the extension is on its [feature page](../../features/6.0/extensions/xrowmetadata.md).
 
 | Kind | Changes |
 |---|---|
@@ -83,9 +83,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`d9bac19`](https://github.com/se7enxweb/xrowmetadata/commit/d9bac19) (feature) The sitemap cronjob prints the name of each file it wrote instead of failing on the file object, and the news sitemap stops quietly when the news subtree is empty
 - 2026-10-02 [`ec158f9`](https://github.com/se7enxweb/xrowmetadata/commit/ec158f9) (release) Version 1.4.4 **Release v1.4.4.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/xrowmetadata.md)
-* [Release notes](../../changelogs/extensions/xrowmetadata.md)
-* [Change ledger](../ledger/xrowmetadata.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/xrowmetadata.md)
+- [Release notes](../../changelogs/extensions/xrowmetadata.md)
+- [Change ledger](../ledger/xrowmetadata.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

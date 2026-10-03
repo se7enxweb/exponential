@@ -2,7 +2,7 @@
 
 OpenDocument import and export was repackaged in early 2024 and prepared for persistent workers, translations and the Exponential name in September and October 2026. See the [feature page](../../features/6.0/extensions/ezodf.md).
 
-This page lists **every one of the 23 changes** of the repository `ezodf` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezodf.md); what each release contains is in the [release notes](../../changelogs/extensions/ezodf.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezodf.md).
+This page lists **every one of the 23 changes** of the repository `ezodf` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezodf.md); what each release contains is in the [release notes](../../changelogs/extensions/ezodf.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezodf.md).
 
 | Kind | Changes |
 |---|---|
@@ -77,9 +77,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`fcd590d`](https://github.com/se7enxweb/ezodf/commit/fcd590d) (feature) English and German translations for every string the admin showed untranslated
 - 2026-10-02 [`7e61b8c`](https://github.com/se7enxweb/ezodf/commit/7e61b8c) (release) Version 6.1.6 **Release v6.1.6.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezodf.md)
-* [Release notes](../../changelogs/extensions/ezodf.md)
-* [Change ledger](../ledger/ezodf.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezodf.md)
+- [Release notes](../../changelogs/extensions/ezodf.md)
+- [Change ledger](../ledger/ezodf.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

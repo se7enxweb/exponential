@@ -2,7 +2,7 @@
 
 The newsletter system arrived in this repository with the PHP 8.5 fixes of August 2026 (release line 4.0.0.0). September and October made it run on PHP 8, on a persistent worker and on Oracle, fixed its integrity manifest, translated it, and on 2 October a review of the whole extension closed dozens of security and robustness defects (release 4.1.15). See the [feature page](../../features/6.0/extensions/cjw_newsletter.md).
 
-This page lists **every one of the 56 changes** of the repository `cjw_newsletter` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/cjw_newsletter.md); what each release contains is in the [release notes](../../changelogs/extensions/cjw_newsletter.md); how to use the extension is on its [feature page](../../features/6.0/extensions/cjw_newsletter.md).
+This page lists **every one of the 56 changes** of the repository `cjw_newsletter` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/cjw_newsletter.md); what each release contains is in the [release notes](../../changelogs/extensions/cjw_newsletter.md); how to use the extension is on its [feature page](../../features/6.0/extensions/cjw_newsletter.md).
 
 | Kind | Changes |
 |---|---|
@@ -130,9 +130,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 
 The 4.1.15 commits above also exist in the clone under other hashes (a second copy of the same subjects is reachable from another reference); the links on this page use the hashes of the ledger, which may need checking against the remote.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/cjw_newsletter.md)
-* [Release notes](../../changelogs/extensions/cjw_newsletter.md)
-* [Change ledger](../ledger/cjw_newsletter.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/cjw_newsletter.md)
+- [Release notes](../../changelogs/extensions/cjw_newsletter.md)
+- [Change ledger](../ledger/cjw_newsletter.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

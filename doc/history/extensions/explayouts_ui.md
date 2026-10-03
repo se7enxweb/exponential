@@ -2,7 +2,7 @@
 
 The Layouts admin screens were imported on 30 July 2026. In August the rule list became the layout mappings screen with details panel and quick actions; in September the lists were paged, the preview rendered real content and the screens were fixed for phones, MongoDB and persistent workers. See the [feature page](../../features/6.0/extensions/explayouts_ui.md).
 
-This page lists **every one of the 55 changes** of the repository `explayouts_ui` between 2026-07-30 and 2026-09-30, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/explayouts_ui.md); what each release contains is in the [release notes](../../changelogs/extensions/explayouts_ui.md); how to use the extension is on its [feature page](../../features/6.0/extensions/explayouts_ui.md).
+This page lists **every one of the 55 changes** of the repository `explayouts_ui` between 2026-07-30 and 2026-09-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/explayouts_ui.md); what each release contains is in the [release notes](../../changelogs/extensions/explayouts_ui.md); how to use the extension is on its [feature page](../../features/6.0/extensions/explayouts_ui.md).
 
 | Kind | Changes |
 |---|---|
@@ -115,10 +115,10 @@ These commits were pushed after the machine-made ledger of this repository was e
 - 2026-10-02 `d21be9c` (fix) The stylesheet's page-wide rules no longer reset node views (v1.3.8)
 - Releases v1.3.7 (1 October) and v1.3.8 (2 October)
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/explayouts_ui.md)
-* [Release notes](../../changelogs/extensions/explayouts_ui.md)
-* [Change ledger](../ledger/explayouts_ui.md)
-* [Specification](../../specifications/6.0/explayouts-ui-api.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/explayouts_ui.md)
+- [Release notes](../../changelogs/extensions/explayouts_ui.md)
+- [Change ledger](../ledger/explayouts_ui.md)
+- [Specification](../../specifications/6.0/explayouts-ui-api.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

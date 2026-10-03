@@ -2,7 +2,7 @@
 
 `sevenx-recipes` is the Symfony Flex recipe repository for the platform packages. Its 74 changes are all from March and April 2026, when the platform stack (Ibexa DXP 4.6 and 5.x with and without the Legacy Bridge) was made installable with `composer require`: the recipe slots `1.0` to `1.4`, the web build, security, legacy siteaccess and install scripts, and 23 tagged releases from 1.2.0 to 1.3.23. See the [feature page](../../features/6.0/extensions/sevenx-recipes.md).
 
-This page lists **every one of the 74 changes** of the repository `sevenx-recipes` between 2026-03-12 and 2026-04-17, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx-recipes.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx-recipes.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx-recipes.md).
+This page lists **every one of the 74 changes** of the repository `sevenx-recipes` between 2026-03-12 and 2026-04-17, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx-recipes.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx-recipes.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx-recipes.md).
 
 | Kind | Changes |
 |---|---|
@@ -128,12 +128,9 @@ The month across all extensions: [April 2026](months/2026-04.md). [Ledger of thi
 - 2026-04-17 [`690678c`](https://github.com/se7enxweb/sevenx-recipes/commit/690678c) (fix) fix(1.3): remove legacy bridge + netgen files from pure v5 recipe **Release v1.3.22.**
 - 2026-04-17 [`b4dd83a`](https://github.com/se7enxweb/sevenx-recipes/commit/b4dd83a) (fix) fix(1.3): strip legacy service definitions from services.yaml + ibexa.yaml **Release v1.3.23.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/sevenx-recipes.md)
-* [Release notes](../../changelogs/extensions/sevenx-recipes.md)
-* [Change ledger](../ledger/sevenx-recipes.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/sevenx-recipes.md)
+- [Release notes](../../changelogs/extensions/sevenx-recipes.md)
+- [Change ledger](../ledger/sevenx-recipes.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

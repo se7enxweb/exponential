@@ -1,6 +1,8 @@
 # Legacy extensions, themes and packages: history
 
-One chronicle per repository and one page per month. Every change of the 49 repositories is listed on its chronicle page; the [change ledger](../ledger/README.md) is the complete record.
+The history of the legacy extensions, themes and packages that run on Exponential 6, with one chronicle per repository and one page per month. Read a chronicle when your site uses that extension and you want to know when a behaviour arrived or which release you need; read a month page to see what changed across all of them. Every change of the 49 repositories is listed on its chronicle page; the [change ledger](../ledger/README.md) is the complete record.
+
+How to use an extension is on its feature page, what each release contains is in its release notes; both are linked from the table.
 
 ## Extensions
 
@@ -56,26 +58,34 @@ One chronicle per repository and one page per month. Every change of the 49 repo
 | xrowextract | 245 | 2024-01-28 | 2026-10-02 | [chronicle](xrowextract.md) | [feature](../../features/6.0/extensions/xrowextract.md) | [releases](../../changelogs/extensions/xrowextract.md) |
 | xrowmetadata | 24 | 2023-12-24 | 2026-10-02 | [chronicle](xrowmetadata.md) | [feature](../../features/6.0/extensions/xrowmetadata.md) | [releases](../../changelogs/extensions/xrowmetadata.md) |
 
-## Months
+## Month by month
 
-* [December 2023](months/2023-12.md)
-* [January 2024](months/2024-01.md)
-* [February 2024](months/2024-02.md)
-* [March 2024](months/2024-03.md)
-* [April 2024](months/2024-04.md)
-* [July 2024](months/2024-07.md)
-* [August 2024](months/2024-08.md)
-* [September 2024](months/2024-09.md)
-* [October 2024](months/2024-10.md)
-* [November 2024](months/2024-11.md)
-* [January 2025](months/2025-01.md)
-* [August 2025](months/2025-08.md)
-* [September 2025](months/2025-09.md)
-* [December 2025](months/2025-12.md)
-* [March 2026](months/2026-03.md)
-* [April 2026](months/2026-04.md)
-* [June 2026](months/2026-06.md)
-* [July 2026](months/2026-07.md)
-* [August 2026](months/2026-08.md)
-* [September 2026](months/2026-09.md)
-* [October 2026](months/2026-10.md)
+- [December 2023](months/2023-12.md)
+- [January 2024](months/2024-01.md)
+- [February 2024](months/2024-02.md)
+- [March 2024](months/2024-03.md)
+- [April 2024](months/2024-04.md)
+- [July 2024](months/2024-07.md)
+- [August 2024](months/2024-08.md)
+- [September 2024](months/2024-09.md)
+- [October 2024](months/2024-10.md)
+- [November 2024](months/2024-11.md)
+- [January 2025](months/2025-01.md)
+- [August 2025](months/2025-08.md)
+- [September 2025](months/2025-09.md)
+- [December 2025](months/2025-12.md)
+- [March 2026](months/2026-03.md)
+- [April 2026](months/2026-04.md)
+- [June 2026](months/2026-06.md)
+- [July 2026](months/2026-07.md)
+- [August 2026](months/2026-08.md)
+- [September 2026](months/2026-09.md)
+- [October 2026](months/2026-10.md)
+
+## Related pages
+
+- [History of Exponential](../README.md): the month chronicle of the main installation
+- [Feature index of the legacy extensions](../../features/6.0/extensions/README.md)
+- [Release notes of the extensions](../../changelogs/extensions/README.md)
+- [Behaviour changes of the legacy extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Extension metadata: `ezinfo.php` and `extension.xml`](../../specifications/6.0/extension-metadata.md)

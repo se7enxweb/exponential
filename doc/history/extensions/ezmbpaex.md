@@ -2,7 +2,7 @@
 
 Password expiry changed vendor in early 2024. On 27 and 29 September 2026 its forgot password page stopped revealing which addresses have accounts and its reset keys became unpredictable. See the [feature page](../../features/6.0/extensions/ezmbpaex.md).
 
-This page lists **every one of the 13 changes** of the repository `ezmbpaex` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezmbpaex.md); what each release contains is in the [release notes](../../changelogs/extensions/ezmbpaex.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezmbpaex.md).
+This page lists **every one of the 13 changes** of the repository `ezmbpaex` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezmbpaex.md); what each release contains is in the [release notes](../../changelogs/extensions/ezmbpaex.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezmbpaex.md).
 
 | Kind | Changes |
 |---|---|
@@ -63,9 +63,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`7533fcb`](https://github.com/se7enxweb/ezmbpaex/commit/7533fcb) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`acab0d7`](https://github.com/se7enxweb/ezmbpaex/commit/acab0d7) (release) Version 6.0.4 **Release v6.0.4.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezmbpaex.md)
-* [Release notes](../../changelogs/extensions/ezmbpaex.md)
-* [Change ledger](../ledger/ezmbpaex.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezmbpaex.md)
+- [Release notes](../../changelogs/extensions/ezmbpaex.md)
+- [Change ledger](../ledger/ezmbpaex.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

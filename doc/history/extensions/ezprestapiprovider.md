@@ -2,7 +2,7 @@
 
 The REST provider classes changed vendor in early 2024 and received the Exponential metadata in September and October 2026. See the [feature page](../../features/6.0/extensions/ezprestapiprovider.md).
 
-This page lists **every one of the 12 changes** of the repository `ezprestapiprovider` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezprestapiprovider.md); what each release contains is in the [release notes](../../changelogs/extensions/ezprestapiprovider.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezprestapiprovider.md).
+This page lists **every one of the 12 changes** of the repository `ezprestapiprovider` between 2023-12-23 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezprestapiprovider.md); what each release contains is in the [release notes](../../changelogs/extensions/ezprestapiprovider.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezprestapiprovider.md).
 
 | Kind | Changes |
 |---|---|
@@ -59,9 +59,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`36e08ff`](https://github.com/se7enxweb/ezprestapiprovider/commit/36e08ff) (docs) The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices
 - 2026-10-02 [`f91b978`](https://github.com/se7enxweb/ezprestapiprovider/commit/f91b978) (release) Version 6.0.3 **Release v6.0.3.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezprestapiprovider.md)
-* [Release notes](../../changelogs/extensions/ezprestapiprovider.md)
-* [Change ledger](../ledger/ezprestapiprovider.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezprestapiprovider.md)
+- [Release notes](../../changelogs/extensions/ezprestapiprovider.md)
+- [Change ledger](../ledger/ezprestapiprovider.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

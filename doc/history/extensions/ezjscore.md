@@ -2,7 +2,7 @@
 
 The standalone ezjscore repository had been empty since 2013. On 1 October 2026 it was brought back in step with the kernel copy (1.4.0 with jQuery 4), and on 2 October YUI was removed (1.5.0) and the sub items table options functions were added. See the [feature page](../../features/6.0/extensions/ezjscore.md).
 
-This page lists **every one of the 15 changes** of the repository `ezjscore` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezjscore.md); what each release contains is in the [release notes](../../changelogs/extensions/ezjscore.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezjscore.md).
+This page lists **every one of the 15 changes** of the repository `ezjscore` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezjscore.md); what each release contains is in the [release notes](../../changelogs/extensions/ezjscore.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezjscore.md).
 
 | Kind | Changes |
 |---|---|
@@ -59,9 +59,9 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`eb438e1`](https://github.com/se7enxweb/ezjscore/commit/eb438e1) (feature) The server router lets expservices classes answer in their own envelope, errors included
 - 2026-10-02 [`1d48bd8`](https://github.com/se7enxweb/ezjscore/commit/1d48bd8) (release) Version 1.5.5 **Release 1.5.5.**
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezjscore.md)
-* [Release notes](../../changelogs/extensions/ezjscore.md)
-* [Change ledger](../ledger/ezjscore.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- [Feature page](../../features/6.0/extensions/ezjscore.md)
+- [Release notes](../../changelogs/extensions/ezjscore.md)
+- [Change ledger](../ledger/ezjscore.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
