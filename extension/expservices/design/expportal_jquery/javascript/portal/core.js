@@ -35,13 +35,15 @@
         basketGet:    'expbasket::view',
         basketAdd:    'expbasket::add',         // POST object_id, quantity
         basketRemove: 'expbasket::remove',      // POST item_id
-        forumTopics:  'expforum::topics',       // forum node, offset, limit
-        forumReplies: 'expforum::replies',      // topic node, offset, limit
-        forumReply:   'expforum::reply',        // POST parent_node, title, body
-        forumNewTopic:'expforum::create_topic', // POST forum_node, title, body
-        mediaImages:  'expimage::list',         // parent node, offset, limit
-        feedList:     'expfeed::list',
-        feedItems:    'expfeed::items',         // feed id, limit
+        forumList:    'expforum::list',         // parent node, limit, offset
+        forumTopics:  'exptopic::list',         // forum node, limit, offset
+        forumReplies: 'expreply::list',         // topic node, limit, offset
+        forumReply:   'expreply::create',       // POST topic_node_id, fields json ( subject, message )
+        forumNewTopic:'exptopic::create',       // POST forum_node_id, fields json ( subject, message )
+        mediaImages:  'expmedia::list',         // parent node, limit, offset
+        feedList:     'expfeed::exports',       // limit, offset, only_active
+        feedExport:   'expfeed::export',        // id: the export with its sources
+        feedItems:    'expfeed::items',         // source node id, limit
         search:       'expsearch::search',      // text, offset, limit
         profile:      'expuser::profile'
     };
@@ -49,6 +51,10 @@
        argMap turns the portal's order into the service's, so the pages never know. */
     Exp.argMap = {
         children:    function (a) { return [a[0], 'published', 'desc', a[2], a[1]]; },   // node_id, sort, order, limit, offset
+        forumList:   function (a) { return [a[0], a[2], a[1]]; },                         // parent_node_id, limit, offset
+        forumTopics: function (a) { return [a[0], a[2], a[1]]; },                         // forum_node_id, limit, offset
+        forumReplies:function (a) { return [a[0], a[2], a[1]]; },                         // topic_node_id, limit, offset
+        feedList:    function () { return [50, 0, 1]; },                                  // limit, offset, only_active
         products:    function (a) { return [a[0], a[2], a[1]]; },                         // parent_node_id, limit, offset
         mediaImages: function (a) { return [a[0], a[2], a[1]]; },                         // parent, limit, offset
         search:      function (a) { return [a[0], a[2], a[1]]; }                          // text, limit, offset

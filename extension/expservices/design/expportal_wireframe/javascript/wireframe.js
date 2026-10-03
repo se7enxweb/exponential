@@ -18,25 +18,25 @@ const SCREENS = {
         { k: 'text', label: 'Title, image, body', svc: [ 'expnode::get' ], note: 'Node id from the route.' },
         { k: 'buttons', label: 'Back to news', svc: [] } ] },
     shop: { title: 'Shop', desc: 'Products and the add-to-basket action.', blocks: [
-        { k: 'cards', label: 'Product cards', svc: [ 'expnode::children' ], note: 'Class filter product.' },
+        { k: 'cards', label: 'Product cards', svc: [ 'expproduct::list' ], note: 'Parent node, limit, offset.' },
         { k: 'buttons', label: 'Add to basket (per card)', svc: [ 'expbasket::add' ], note: 'WRITE: POST + form token.' },
         { k: 'pager', label: 'Pager', svc: [] } ] },
     basket: { title: 'Basket', desc: 'Lines, totals, removal.', blocks: [
-        { k: 'table', label: 'Basket lines', svc: [ 'expbasket::get' ] },
+        { k: 'table', label: 'Basket lines', svc: [ 'expbasket::view' ] },
         { k: 'buttons', label: 'Remove line', svc: [ 'expbasket::remove' ], note: 'WRITE: POST + form token.' } ] },
     forums: { title: 'Forums', desc: 'Forum list, topics, replies.', blocks: [
-        { k: 'list', label: 'Forum list', svc: [ 'expforum::forums' ] } ] },
+        { k: 'list', label: 'Forum list', svc: [ 'expforum::list' ] } ] },
     topics: { title: 'Forum topics', desc: 'Topics of a forum.', blocks: [
-        { k: 'list', label: 'Topic list', svc: [ 'expforum::topics' ], note: 'Paged.' },
+        { k: 'list', label: 'Topic list', svc: [ 'exptopic::list' ], note: 'Paged.' },
         { k: 'pager', label: 'Pager', svc: [] } ] },
     topic: { title: 'Topic', desc: 'Replies and the reply form.', blocks: [
-        { k: 'list', label: 'Replies', svc: [ 'expforum::replies' ], note: 'Paged.' },
-        { k: 'form', label: 'Reply form', svc: [ 'expforum::reply' ], note: 'WRITE: POST + form token; needs login (401 otherwise).' } ] },
+        { k: 'list', label: 'Replies', svc: [ 'expreply::list' ], note: 'Paged.' },
+        { k: 'form', label: 'Reply form', svc: [ 'expreply::create' ], note: 'WRITE: POST + form token; needs login (401 otherwise).' } ] },
     media: { title: 'Media', desc: 'Gallery.', blocks: [
         { k: 'cards', label: 'Media tiles', svc: [ 'expmedia::list' ], note: 'Paged.' },
         { k: 'pager', label: 'Pager', svc: [] } ] },
     feeds: { title: 'Feeds', desc: 'Available feeds.', blocks: [
-        { k: 'list', label: 'Feed list', svc: [ 'expfeed::list' ] } ] },
+        { k: 'list', label: 'Feed list', svc: [ 'expfeed::exports', 'expfeed::export', 'expfeed::items' ] } ] },
     search: { title: 'Search', desc: 'Full text search.', blocks: [
         { k: 'search', label: 'Search box', svc: [] },
         { k: 'cards', label: 'Results', svc: [ 'expsearch::search' ], note: 'Paged; empty result is a message, not an error.' },

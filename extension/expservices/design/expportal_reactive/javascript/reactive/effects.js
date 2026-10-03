@@ -60,7 +60,13 @@
                     function (e) { store.dispatch({ type: 'form/set', id: 'login', form: { status: 'error', message: e.code === 'unavailable' ? 'The login service is not available yet.' : 'Login failed. ' + (e.message || '') } }); });
                 break;
             case 'logout/submit': Exp.api.call('logout', [], {}).always(function () { Exp.api.token = null; Exp.api.tokenLoaded = false; store.dispatch({ type: 'user/set', user: null }); Exp.router.go('/'); }); break;
-            case 'feed/open': load(store, 'feed:' + a.feed.id, 'feedItems', [a.feed.id, 20]); break;
+            case 'feed/open':
+                Exp.api.call('feedExport', [a.feed.id]).then(function (x) {
+                    var src = x.data && x.data.sources && x.data.sources[0];
+                    return src ? Exp.api.call('feedItems', [src.source_node_id, 20]) : { ok: true, data: [], meta: {} };
+                }).then(function (env) { store.dispatch({ type: 'res/success', key: 'feed:' + a.feed.id, data: env }); },
+                        function (e) { store.dispatch({ type: 'res/failure', key: 'feed:' + a.feed.id, error: e }); });
+                break;
             }
         });
     };

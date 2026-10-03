@@ -98,7 +98,7 @@
     C.PostForm = function (s, dispatch, id, label, feature, fixed, reload) {
         var f = s.form[id] || {};
         return h('form', { 'class': 'stack', on: { submit: function (e) { e.preventDefault(); var el = e.target.elements;
-            dispatch({ type: 'post/submit', id: id, feature: feature, fields: Object.assign({ title: el.title.value, body: el.body.value }, fixed), reload: reload, reset: e.target }); } } },
+            dispatch({ type: 'post/submit', id: id, feature: feature, fields: Object.assign({ fields: JSON.stringify({ subject: el.title.value, message: el.body.value }) }, fixed), reload: reload, reset: e.target }); } } },
             h('h2', null, label), h('label', null, 'Subject', h('input', { name: 'title', required: true })), h('label', null, 'Message', h('textarea', { name: 'body', required: true })),
             h('button', { type: 'submit', disabled: f.status === 'loading' }, 'Post'), h('p', { role: 'status', 'class': 'meta' }, f.message || ''));
     };
@@ -109,12 +109,12 @@
         var fid = s.route.params.id, off = +s.route.query.offset || 0, lim = Exp.config.pageSize;
         return [h('p', null, h('a', { href: '#/forums' }, 'All forums')), h('h1', null, 'Topics'),
             C.Resource(res(s, 'topics:' + fid + ':' + off), function (d, l) { return [h('ul', { 'class': 'thread' }, l.items.map(function (n) { n = U.node(n); return h('li', { 'class': 'card', key: n.id }, h('a', { href: href('/forums/topic/' + n.id) }, n.name), ' ', h('span', { 'class': 'meta' }, U.date(n.date))); })), C.Pager(l, off, lim, function (o) { Exp.router.go('/forums/' + fid + '?offset=' + o); })]; }, 'No topics yet.'),
-            C.PostForm(s, dispatch, 'new-topic', 'New topic', 'forumNewTopic', { forum_node: fid }, 'topics:' + fid + ':' + off)];
+            C.PostForm(s, dispatch, 'new-topic', 'New topic', 'forumNewTopic', { forum_node_id: fid }, 'topics:' + fid + ':' + off)];
     };
     C.Topic = function (s, dispatch) {
         var tid = s.route.params.id;
         return [h('h1', null, 'Topic'), C.Resource(res(s, 'replies:' + tid), function (d, l) { return h('ol', { 'class': 'thread' }, l.items.map(function (n, i) { n = U.node(n); return h('li', { 'class': 'card', key: n.id || i }, h('strong', null, n.name), ' ', h('span', { 'class': 'meta' }, U.date(n.date)), h('p', null, n.body || n.summary || '')); })); }, 'No replies yet.'),
-            C.PostForm(s, dispatch, 'reply', 'Reply', 'forumReply', { parent_node: tid }, 'replies:' + tid)];
+            C.PostForm(s, dispatch, 'reply', 'Reply', 'forumReply', { topic_node_id: tid }, 'replies:' + tid)];
     };
     C.Gallery = function (s, dispatch) {
         var off = +s.route.query.offset || 0, lim = Exp.config.pageSize * 2, lb = s.lightbox;
@@ -155,7 +155,7 @@
         { p: '/shop', page: C.Catalogue, title: 'Shop', needs: function (r) { var o = +r.query.offset || 0; return [['shop:' + o, 'products', [Exp.config.nodes.shop, o, Exp.config.pageSize]]]; } },
         { p: '/shop/:id', page: C.Product, title: 'Product', needs: function (r) { return [['product:' + r.params.id, 'productGet', [r.params.id]]]; } },
         { p: '/basket', page: C.Basket, title: 'Basket', needs: function () { return []; } },
-        { p: '/forums', page: C.Forums, title: 'Forums', needs: function () { return [['forums', 'children', [Exp.config.nodes.forums, 0, 50]]]; } },
+        { p: '/forums', page: C.Forums, title: 'Forums', needs: function () { return [['forums', 'forumList', [Exp.config.nodes.forums, 0, 50]]]; } },
         { p: '/forums/topic/:id', page: C.Topic, title: 'Topic', needs: function (r) { return [['replies:' + r.params.id, 'forumReplies', [r.params.id, 0, 100]]]; } },
         { p: '/forums/:id', page: C.Topics, title: 'Topics', needs: function (r) { var o = +r.query.offset || 0; return [['topics:' + r.params.id + ':' + o, 'forumTopics', [r.params.id, o, Exp.config.pageSize]]]; } },
         { p: '/media', page: C.Gallery, title: 'Media', needs: function (r) { var o = +r.query.offset || 0; return [['media:' + o, 'mediaImages', [Exp.config.nodes.media, o, Exp.config.pageSize * 2]]]; } },

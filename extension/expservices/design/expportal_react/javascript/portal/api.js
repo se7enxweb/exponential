@@ -3,6 +3,9 @@
 import { read, write, postPlain, resetToken, pageOf } from './services.js';
 
 const PAGE = 12;
+// Content roots as in expportal.ini ( MediaNode, ForumsNode ).
+const MEDIA_NODE = 43;
+const FORUMS_NODE = 2;
 export const pageSize = PAGE;
 
 // Normalises a content node as exported by the services to what the cards need.
@@ -22,42 +25,57 @@ export async function login( name, pass ) {
 }
 export async function logout() { const r = await write( 'expsession::logout' ); resetToken(); return r; }
 
+// expnode::children args: node_id, sort, order, limit, offset, filter (json)
 export async function children( nodeId, offset, limit, classes ) {
-    const env = await read( 'expnode::children', [ nodeId, offset || 0, limit || PAGE ].concat( classes ? [ classes ] : [] ) );
-    const p = pageOf( env );
+    const args = [ nodeId, 'published', 'desc', limit || PAGE, offset || 0 ];
+    if ( classes ) args.push( JSON.stringify( { class: [].concat( classes ) } ) );
+    const p = pageOf( await read( 'expnode::children', args ) );
+    p.items = p.items.map( card );
+    return p;
+}
+// expproduct::list args: parent_node_id, limit, offset
+export async function products( parentId, offset, limit ) {
+    const p = pageOf( await read( 'expproduct::list', [ parentId, limit || PAGE, offset || 0 ] ) );
     p.items = p.items.map( card );
     return p;
 }
 export async function node( nodeId ) { return card( ( await read( 'expnode::get', [ nodeId ] ) ).data ); }
 
 export async function search( q, offset, limit ) {
-    const p = pageOf( await read( 'expsearch::search', [ q, offset || 0, limit || PAGE ] ) );
+    const p = pageOf( await read( 'expsearch::search', [ q, limit || PAGE, offset || 0 ] ) );
     p.items = p.items.map( card );
     return p;
 }
 
-export async function basket() { return ( await read( 'expbasket::get' ) ).data; }
+export async function basket() { return ( await read( 'expbasket::view' ) ).data; }
 export async function addToBasket( objectId, qty ) { return write( 'expbasket::add', { object_id: objectId, quantity: qty || 1 } ); }
 export async function removeFromBasket( itemId ) { return write( 'expbasket::remove', { item_id: itemId } ); }
 
+// expforum::list args: parent_node_id, limit, offset
 export async function forums( offset, limit ) {
-    const p = pageOf( await read( 'expforum::forums', [ offset || 0, limit || PAGE ] ) );
+    const p = pageOf( await read( 'expforum::list', [ FORUMS_NODE, limit || PAGE, offset || 0 ] ) );
     p.items = p.items.map( card );
     return p;
 }
+// exptopic::list args: forum_node_id, limit, offset
 export async function topics( forumNodeId, offset, limit ) {
-    const p = pageOf( await read( 'expforum::topics', [ forumNodeId, offset || 0, limit || PAGE ] ) );
+    const p = pageOf( await read( 'exptopic::list', [ forumNodeId, limit || PAGE, offset || 0 ] ) );
     p.items = p.items.map( card );
     return p;
 }
+// expreply::list args: topic_node_id, limit, offset, newest_first
 export async function replies( topicNodeId, offset, limit ) {
-    return pageOf( await read( 'expforum::replies', [ topicNodeId, offset || 0, limit || PAGE ] ) );
+    return pageOf( await read( 'expreply::list', [ topicNodeId, limit || PAGE, offset || 0 ] ) );
 }
-export async function reply( topicNodeId, message ) { return write( 'expforum::reply', { topic: topicNodeId, message } ); }
+// expreply::create: POST topic_node_id, fields (json)
+export async function reply( topicNodeId, message ) {
+    return write( 'expreply::create', { topic_node_id: topicNodeId, fields: JSON.stringify( { subject: 'Re', message } ) } );
+}
 
 export async function media( offset, limit ) {
-    const p = pageOf( await read( 'expmedia::list', [ offset || 0, limit || PAGE ] ) );
+    const p = pageOf( await read( 'expmedia::list', [ MEDIA_NODE, limit || PAGE, offset || 0 ] ) );
     p.items = p.items.map( card );
     return p;
 }
-export async function feeds() { return pageOf( await read( 'expfeed::list', [ 0, 50 ] ) ); }
+// expfeed::exports args: limit, offset, only_active
+export async function feeds() { return pageOf( await read( 'expfeed::exports', [ 50, 0, 1 ] ) ); }

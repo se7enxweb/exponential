@@ -5,7 +5,7 @@ export default function Shop( { id } ) {
     if ( id === 'basket' ) return h( Basket );
     const [ offset, setOffset ] = React.useState( 0 );
     const [ msg, setMsg ] = React.useState( null );
-    const res = useAsync( () => api.children( 2, offset, api.pageSize, 'product' ), [ offset ] );
+    const res = useAsync( () => api.products( 2, offset, api.pageSize ), [ offset ] );
     const add = async i => {
         try { await api.addToBasket( i.objectId, 1 ); setMsg( { ok: true, text: i.name + ' added to the basket' } ); }
         catch ( e ) { setMsg( { ok: false, error: e } ); }

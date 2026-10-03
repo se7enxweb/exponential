@@ -1,4 +1,4 @@
-/** Feeds: the feeds the site publishes and the newest items of one. Services: feedList, feedItems. */
+/** Feeds: the feeds the site publishes and the newest items of one. Services: feedList (expfeed::exports), feedExport, feedItems. */
 (function (window, $) {
     'use strict';
     var Exp = window.ExpPortal, el = Exp.util.el, ui = Exp.ui;
@@ -17,7 +17,10 @@
         }, function (e) { ui.failure($b, e); });
         function show(f) {
             ui.loading($items);
-            Exp.api.call('feedItems', [f.id, 20]).then(function (env) {
+            Exp.api.call('feedExport', [f.id]).then(function (x) {
+                var src = x.data && x.data.sources && x.data.sources[0];
+                return src ? Exp.api.call('feedItems', [src.source_node_id, 20]) : { data: [] };
+            }).then(function (env) {
                 var l = Exp.api.list(env); $items.attr('aria-busy', 'false').empty().append(el('h2', { text: f.title || 'Items' }));
                 if (!l.items.length) { return $items.append(ui.state('empty', 'This feed has no items.')); }
                 $items.append(el('ul', { 'class': 'thread' }, $.map(l.items, function (i) {
