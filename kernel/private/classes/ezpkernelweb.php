@@ -931,10 +931,15 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         if ( class_exists( 'expAuditHook' ) )
                             self::auditSensitiveView( $this->module->attribute( 'name' ), $functionName );
 
+                        // [AuditSettings] OnWriteFailure=refuse: a POST to a sensitive module does not run while
+                        // the audit cannot record it (doc/bc/6.0/audit.md, "When the audit cannot write")
+                        $moduleResult = null;
+                        if ( class_exists( 'expAuditGuard' ) && !expAuditGuard::webAllows( $this->module->attribute( 'name' ), $functionName ) )
+                            $moduleResult = expAuditGuard::refusedResult( $this->module->attribute( 'name' ), $functionName );
+
                         // The request rules (requestrules.ini) decide after the
                         // policies allowed the view and before it runs
-                        $moduleResult = null;
-                        if ( class_exists( 'ezpRequestRuleKernel' ) )
+                        if ( $moduleResult === null && class_exists( 'ezpRequestRuleKernel' ) )
                         {
                             $moduleResult = ezpRequestRuleKernel::decide( $this->module, $functionName, $params, $requestRoute );
                             if ( isset( $moduleResult['request_rule_rewrite'] ) )

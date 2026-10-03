@@ -1,7 +1,7 @@
 {* audit/console: the audit timeline, newest first, with filters, search and paging, and the chain state per
    channel. Variables: events, total, offset, limit, page, pages, newer_url, older_url, source (index | files),
    fulltext, unindexed, index_run, filters, active_filters, filter_url, export_url, charts_url, channel_names,
-   chains, severities, names, audit_enabled, can_manage, limited_to. *}
+   chains, severities, names, audit_enabled, can_manage, limited_to, invalid_filters (filter => why it is refused). *}
 {include uri='design:audit/style.tpl'}
 <div class="context-block au-view" id="exp-audit-console">
 
@@ -27,6 +27,10 @@
     <p class="au-note">{'The chain status is the result of the last verification (daily maintenance, exp:audit verify or this button).'|i18n( 'design/admin/audit' )}{foreach $chains as $c}{if $c.verified_at} {$c.channel|wash}: {$c.verified_at|wash}{/if}{/foreach}
     {if $can_manage}<input type="submit" class="button" name="AuditVerifyNowButton" value="{'Verify now'|i18n( 'design/admin/audit' )|wash}" />{/if}</p>
 </form>
+{if $invalid_filters|count}
+<div class="message-error" role="alert"><h2>{'A filter is not valid, so nothing is shown:'|i18n( 'design/admin/audit' )}</h2>
+<ul>{foreach $invalid_filters as $key => $why}<li>({$key|wash}): {$why|wash}</li>{/foreach}</ul></div>
+{/if}
 {if $limited_to|count}<p class="au-note">{'Your access is limited to the channels: %channels.'|i18n( 'design/admin/audit',, hash( '%channels', $limited_to|implode( ', ' ) ) )|wash}</p>{/if}
 
 <form class="au-filter" method="post" action={'audit/console'|ezurl} role="search" aria-label="{'Filter the audit events'|i18n( 'design/admin/audit' )|wash}">

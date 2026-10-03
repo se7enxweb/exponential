@@ -43,6 +43,11 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         {
             if ( !$manage )
                 return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+            $form = \expAuditReauth::gate( $Module, 'AuditVerifyNowButton', 'audit/dashboard', \ezpI18n::tr( 'design/admin/audit', 'Verify now' ) );
+            if ( $form !== null )
+                return $form;
+            if ( class_exists( 'expAuditGuard' ) && !\expAuditGuard::allows( 'system.audit.verify' ) )
+                return \expAuditGuard::refusedResult( 'audit', 'dashboard' );
             \expAuditConsole::chainStates( $allowed, true );
             return $Module->redirectTo( '/audit/dashboard' );
         }

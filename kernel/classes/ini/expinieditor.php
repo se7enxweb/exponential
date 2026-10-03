@@ -918,6 +918,13 @@ class expIniEditor
         if ( $existsNow !== $this->existed || ( $existsNow && @file_get_contents( $this->path ) !== $this->original ) )
             throw expIniException::writeFailed( "{$this->relativePath()} changed on disk since it was read; nothing written" );
 
+        // [AuditSettings] OnWriteFailure=refuse: no settings write while the audit cannot record it
+        // (system.setting.write; doc/bc/6.0/audit.md, "When the audit cannot write"). Writes in a fixture root
+        // are not recorded, so they are not guarded either.
+        if ( class_exists( 'expAuditGuard' ) && ( self::isRealRoot() || ( class_exists( 'expAuditConfig' ) && expAuditConfig::isOverridden() ) )
+             && !expAuditGuard::allows( 'system.setting.write' ) )
+            throw expIniException::refused( expAuditGuard::message() . " Nothing written to {$this->relativePath()}." );
+
         $dir = dirname( $this->path );
         self::makeDirectory( $dir, $data['warnings'] );
 

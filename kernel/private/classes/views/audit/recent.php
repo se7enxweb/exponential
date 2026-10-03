@@ -44,6 +44,17 @@ class Recent extends \Exponential\Runnable\ModuleView
         $options = array();
         if ( $verifyNow )
         {
+            // as on the dashboard and the console: the password again (ReauthForManage) and, under
+            // OnWriteFailure=refuse, a writable audit
+            if ( class_exists( 'expAuditReauth' ) )
+            {
+                $form = \expAuditReauth::gate( $Params['Module'], 'AuditVerifyNowButton', 'audit/recent' . ( $channel !== null ? '/(channel)/' . $channel : '' ),
+                                               \ezpI18n::tr( 'design/admin/audit', 'Verify now' ) );
+                if ( $form !== null )
+                    return $form;
+            }
+            if ( class_exists( 'expAuditGuard' ) && !\expAuditGuard::allows( 'system.audit.verify' ) )
+                return \expAuditGuard::refusedResult( 'audit', 'recent' );
             $verifier = new \expAuditVerifier( $config['logDir'], new \expAuditKeys( $config ), $config['algorithm'] );
             foreach ( array_keys( $channels ) as $c )
                 $verifier->verifyChannel( $c, $options );

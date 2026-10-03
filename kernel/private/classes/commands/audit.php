@@ -51,16 +51,21 @@ class Audit extends \Exponential\Runnable\Command
                                                 "  exp:audit cron [--daily]           one run of the cronjob part (--daily: the daily tasks now)\n\n" .
                                                 "Filters (search, export): --name=<pattern> --user=<id> --login= --object=<type:id> --target=<type:id>\n" .
                                                 "  --result=success|refused|failed --severity=<min> --request= --job= --run= --ip=<network>\n" .
-                                                "  --from=YYYY-MM-DD[THH:MM] --to=... --q=<text> --legacy-file=<4.x file name> --channel=",
+                                                "  --from=YYYY-MM-DD[THH:MM[:SS]][Z|+HH:MM] --to=... (UTC unless an offset is given; --to includes that day,\n" .
+                                                "  minute or second) --query=<text> --legacy-file=<4.x file name> --channel=\n" .
+                                                "Name patterns: * | <domain>.* | a prefix ending in .* (access.session.*) | a whole name; anything else\n" .
+                                                "  is refused (exit 2).",
                               'use-session' => false,
                               'use-modules' => false,
                               'use-extensions' => true ) );
         $this->options = $this->startup( '[channel:][name:][lines:][follow][json][date:][archives][dry-run][before:][format:][to:][incremental]' .
-                                         '[user:][login:][object:][target:][result:][severity:][request:][job:][run:][ip:][from:][q:]' .
+                                         '[user:][login:][object:][target:][result:][severity:][request:][job:][run:][ip:][from:][query:]' .
                                          '[legacy-file:][limit:][files][out:][subject-user:][dir:][file:][keep-originals][pseudonym][replay:][daily][rule:]',
                                          '[action][id][extra]',
                                          array( 'channel' => 'Only this channel (content, access, system, commerce, read)',
-                                                'name' => 'tail, search, export: only names matching this pattern (access.*, content.node.move)',
+                                                'name' => 'tail, search, export: only names matching this pattern: *, access.*, access.session.*, content.node.move',
+                                                'query' => 'search, export: full-text search over names, object names and before/after values',
+                                                'from' => 'search, export: from this time (YYYY-MM-DD[THH:MM[:SS]], UTC unless it ends in Z or +HH:MM)',
                                                 'lines' => 'tail: how many records (default 20)',
                                                 'follow' => 'tail: keep printing new records as they are written (Ctrl-C ends)',
                                                 'json' => 'Print records and results as JSON',
@@ -69,7 +74,7 @@ class Audit extends \Exponential\Runnable\Command
                                                 'dry-run' => 'rotate, archive, purge, import, pseudonymise: only say what would be done',
                                                 'before' => 'archive: the days before this date (default: older than LiveDays)',
                                                 'format' => 'archive: the format handler; export: jsonl, csv or bundle',
-                                                'to' => 'restore: the directory (default <LogDir>/restored); search, export: up to this time',
+                                                'to' => 'restore: the directory (default <LogDir>/restored); search, export: up to and including this time (as --from)',
                                                 'incremental' => 'reindex: only what is new (default: rebuild)',
                                                 'limit' => 'search: how many records (default 50); export: at most MaxExportRecords',
                                                 'files' => 'search: read the files, not the index',
@@ -91,6 +96,12 @@ class Audit extends \Exponential\Runnable\Command
         }
         try
         {
+            $refused = $this->refusedByAudit( $action, isset( $args[1] ) ? $args[1] : null );
+            if ( $refused !== null )
+            {
+                $this->error( $refused );
+                $this->shutdown( 2 );
+            }
             switch ( $action )
             {
                 case 'status':
@@ -158,6 +169,12 @@ class Audit extends \Exponential\Runnable\Command
                     $code = 2;
             }
         }
+        catch ( \InvalidArgumentException $e )
+        {
+            // a malformed option: the message says what is wrong and what is allowed
+            $this->error( $e->getMessage() );
+            $code = 2;
+        }
         catch ( \Throwable $e )
         {
             $this->error( get_class( $e ) . ': ' . $e->getMessage() );
@@ -206,15 +223,76 @@ class Audit extends \Exponential\Runnable\Command
         return !empty( $this->options['dry-run'] );
     }
 
-    /** @return array The search filters from the options */
+    /**
+     * The search filters from the options. --from/--to without an offset are UTC, as the command prints (zone).
+     *
+     * @return array
+     * @throws \InvalidArgumentException for a malformed --name, --from or --to (exit 2, nothing searched)
+     */
     protected function filterOptions()
     {
         $in = array();
         foreach ( array( 'channel', 'name', 'user', 'login', 'object', 'target', 'result', 'severity', 'request', 'job', 'run', 'ip',
-                         'from', 'to', 'q', 'legacy-file', 'subject-user' ) as $k )
+                         'from', 'to', 'query', 'legacy-file', 'subject-user' ) as $k )
             if ( isset( $this->options[$k] ) && $this->options[$k] !== false && $this->options[$k] !== null && $this->options[$k] !== '' )
                 $in[$k] = $this->options[$k];
+        $problems = $this->filterProblems( $in );
+        if ( $problems )
+            throw new \InvalidArgumentException( implode( '; ', $problems ) );
+        $in['zone'] = 'UTC';
         return \expAuditExporter::filters( $in );
+    }
+
+    /**
+     * What is wrong with the --name, --from and --to options (empty when nothing).
+     *
+     * @param array $in option => value
+     * @return string[]
+     */
+    protected function filterProblems( array $in )
+    {
+        $problems = array();
+        foreach ( array( 'name', 'from', 'to' ) as $k )
+        {
+            if ( !isset( $in[$k] ) )
+                continue;
+            if ( !is_string( $in[$k] ) )
+                $problems[] = "--$k needs a value";
+            elseif ( $k === 'name' )
+            {
+                $why = \expAuditTaxonomy::patternProblem( $in[$k] );
+                if ( $why !== null )
+                    $problems[] = "--name: $why";
+            }
+            elseif ( \expAuditQuery::parseTime( $in[$k], $k === 'to', 'UTC' ) === null )
+                $problems[] = "--$k: '{$in[$k]}' is not a time (YYYY-MM-DD, YYYY-MM-DDTHH:MM[:SS], optionally with Z or +HH:MM)";
+        }
+        return $problems;
+    }
+
+    /**
+     * [AuditSettings] OnWriteFailure=refuse: the message refusing a manage action while the audit cannot record it,
+     * or null. Reading and diagnosing (status, channels, tail, show, search, verify, sinks/alerts list) are never
+     * refused, nor is a --dry-run.
+     *
+     * @param string $action
+     * @param string|null $sub
+     * @return string|null
+     */
+    protected function refusedByAudit( $action, $sub )
+    {
+        if ( !class_exists( 'expAuditGuard' ) || $this->dryRun() )
+            return null;
+        $names = array( 'rotate' => 'system.audit.rotate', 'archive' => 'system.audit.archive', 'restore' => 'system.audit.read',
+                        'purge' => 'system.audit.purge', 'reindex' => 'system.audit.reindex', 'pseudonymise' => 'system.audit.pseudonymise',
+                        'pseudonymize' => 'system.audit.pseudonymise', 'import' => 'system.audit.import', 'export' => 'system.audit.export',
+                        'checkpoint' => 'system.audit.checkpoint' );
+        $name = isset( $names[$action] ) ? $names[$action] : null;
+        if ( ( $action === 'key' || $action === 'keys' ) && $sub === 'rotate' )
+            $name = 'system.audit.key.rotate';
+        if ( $name === null || \expAuditGuard::allows( $name ) )
+            return null;
+        return \expAuditGuard::message() . ' Nothing was done.';
     }
 
     /** Prints a result as JSON with --json, else nothing; returns whether it printed. */
@@ -329,6 +407,9 @@ class Audit extends \Exponential\Runnable\Command
         $config = $this->config();
         $channel = $this->channelOption();
         $name = $this->options['name'] ? (string)$this->options['name'] : null;
+        $problems = $this->filterProblems( $name !== null ? array( 'name' => $name ) : array() );
+        if ( $problems )
+            throw new \InvalidArgumentException( implode( '; ', $problems ) );
         $lines = $this->options['lines'] ? max( 1, (int)$this->options['lines'] ) : 20;
         $reader = $this->reader();
         $records = array_reverse( $reader->latest( $lines, $channel, $name ) );
@@ -565,7 +646,7 @@ class Audit extends \Exponential\Runnable\Command
             {
                 $q = new \expAuditQuery();
                 $records = array();
-                foreach ( $q->fetch( \expAuditQuery::normalise( $f ), null, 0, $limit ) as $row )
+                foreach ( $q->fetch( \expAuditQuery::normalise( $f, null, 'UTC' ), null, 0, $limit ) as $row )
                 {
                     $r = isset( $row['record'] ) ? json_decode( $row['record'], true ) : null;
                     if ( is_array( $r ) )

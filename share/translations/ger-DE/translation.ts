@@ -49504,6 +49504,34 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>rules with a problem</source>
         <translation>Regeln mit Problem</translation>
     </message>
+    <message>
+        <source>Confirm your password</source>
+        <translation>Passwort bestätigen</translation>
+    </message>
+    <message>
+        <source>The password is not correct. The attempt was recorded.</source>
+        <translation>Das Passwort ist nicht richtig. Der Versuch wurde protokolliert.</translation>
+    </message>
+    <message>
+        <source>"%action" is an audit management action. Enter the password of %login again to continue; it stays confirmed for %minutes minutes in this session.</source>
+        <translation>„%action“ ist eine Verwaltungsaktion des Audits. Geben Sie das Passwort von %login erneut ein, um fortzufahren; es bleibt in dieser Sitzung %minutes Minuten bestätigt.</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Confirm and continue</source>
+        <translation>Bestätigen und fortfahren</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>A filter is not valid, so nothing is shown:</source>
+        <translation>Ein Filter ist nicht gültig, daher wird nichts angezeigt:</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/job</name>
@@ -49514,6 +49542,25 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Audit trail of this job</source>
         <translation>Audit-Protokoll dieses Auftrags</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/audit</name>
+    <message>
+        <source>Not recorded, so refused</source>
+        <translation>Nicht protokolliert, daher abgelehnt</translation>
+    </message>
+    <message>
+        <source>Not done: the audit cannot record it</source>
+        <translation>Nicht ausgeführt: Das Audit kann es nicht protokollieren</translation>
+    </message>
+    <message>
+        <source>The audit log cannot be written at the moment (channel %channel), and this site is set to refuse security-relevant actions that cannot be recorded. Nothing was changed.</source>
+        <translation>Das Audit-Protokoll kann derzeit nicht geschrieben werden (Kanal %channel), und diese Website lehnt sicherheitsrelevante Aktionen ab, die nicht protokolliert werden können. Es wurde nichts geändert.</translation>
+    </message>
+    <message>
+        <source>Please try again later, or tell the administrator: the details are in the error log under AUDIT-REFUSED.</source>
+        <translation>Bitte versuchen Sie es später erneut oder informieren Sie den Administrator: Die Einzelheiten stehen im Fehlerprotokoll unter AUDIT-REFUSED.</translation>
     </message>
 </context>
 </TS>

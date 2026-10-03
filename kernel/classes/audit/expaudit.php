@@ -73,6 +73,9 @@ class expAudit
     /** @var array channel => record[] that could not be written, for one more try at the end */
     protected static $failed = array();
 
+    /** @var array channel => true: the last write of this channel in this request failed (expAuditGuard) */
+    protected static $writeFailures = array();
+
     /** @var bool resetRequest() is flushing what the previous request left */
     protected static $resetting = false;
 
@@ -738,7 +741,19 @@ class expAudit
         self::$overflowRecorded = false;
         self::$shutdownRegistered = false;
         self::$failed = array();
+        self::$writeFailures = array();
         self::$lastFlush = self::nowFloat();
+    }
+
+    /**
+     * Whether the last write of a channel in this request failed (OnWriteFailure=refuse, expAuditGuard).
+     *
+     * @param string|null $channel null: any channel
+     * @return bool
+     */
+    public static function writeFailed( $channel = null )
+    {
+        return $channel === null ? (bool)self::$writeFailures : isset( self::$writeFailures[$channel] );
     }
 
     /** Resets the request state when REQUEST_TIME_FLOAT is not the one the state belongs to. */
@@ -833,6 +848,7 @@ class expAudit
         }
         catch ( Throwable $e )
         {
+            self::$writeFailures[$channel] = true;
             self::failure( $e, "writing the audit channel $channel" );
             if ( $final )
                 self::spillToErrorLog( $channel, $records );
@@ -840,6 +856,7 @@ class expAudit
                 self::$failed[$channel] = array_merge( isset( self::$failed[$channel] ) ? self::$failed[$channel] : array(), $records );
             return;
         }
+        unset( self::$writeFailures[$channel] );
         // the copies outside the file (sinks) and the alert rules, once the records are in the file; a worker that
         // has not loaded these classes yet (Velocity before its restart) skips them
         if ( $written && class_exists( 'expAuditSinkRegistry' ) )

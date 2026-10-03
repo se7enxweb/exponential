@@ -207,6 +207,8 @@ class expAuditIndexRow
      */
     public static function matches( array $row, array $f )
     {
+        if ( !empty( $f['invalid'] ) )
+            return false;
         if ( !empty( $f['channels'] ) && !in_array( $row['channel'], $f['channels'], true ) )
             return false;
         if ( !empty( $f['names'] ) && !in_array( $row['name'], $f['names'], true ) )

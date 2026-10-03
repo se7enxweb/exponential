@@ -8,7 +8,8 @@
  * Filters (normalise() accepts the URL parameters, console form fields and fetch parameters alike):
  * channel, name (a taxonomy pattern: access.session.*), user (user id), login, object and target (type:id),
  * result, severity (the least severe shown: notice shows notice and worse), request, job, run, parent, ip
- * (a network or its start), from and to (YYYY-MM-DD[THH:MM], local time; to is inclusive of that minute or day),
+ * (a network or its start), from and to (YYYY-MM-DD[THH:MM[:SS]] with an optional Z or +HH:MM offset; without one
+ * in the zone normalise() is given: the site's time zone for the console, UTC for exp:audit; to is inclusive),
  * q (search text), legacy_file (a 4.x audit file name: its event names), domain. The channels a user may read
  * (the Channel limitation of audit/read) are given separately and always apply.
  *
@@ -53,13 +54,19 @@ class expAuditQuery
     /**
      * Cleans the filters given by a URL, a form or a template.
      *
+     * A filter that is given but malformed is not dropped (that would widen the search to everything): it is listed
+     * in 'invalid' (key => why), and where() and expAuditIndexRow::matches() then match nothing. Callers that can
+     * refuse (the command) check 'invalid' first; the console shows it.
+     *
      * @param array $in
      * @param array|null $config expAuditConfig::get() (for legacy_file)
-     * @return array the filters that are set, normalised; from_ms/to_ms added for from/to
+     * @param DateTimeZone|string|null $zone the zone of from/to without an offset (null: the site's time zone)
+     * @return array the filters that are set, normalised; from_ms/to_ms added for from/to; invalid (key => why)
      */
-    public static function normalise( array $in, ?array $config = null )
+    public static function normalise( array $in, ?array $config = null, $zone = null )
     {
         $f = array();
+        $invalid = array();
         $str = function ( $k, $pattern, $max = 128 ) use ( $in, &$f ) {
             if ( !isset( $in[$k] ) || !is_scalar( $in[$k] ) )
                 return;
@@ -69,7 +76,14 @@ class expAuditQuery
             $f[$k] = $v;
         };
         $str( 'channel', '/^[a-z][a-z0-9_]{0,31}$/' );
-        $str( 'name', '/^(\*|[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)*(\.\*)?)$/' );
+        if ( isset( $in['name'] ) && ( !is_scalar( $in['name'] ) || trim( (string)$in['name'] ) !== '' ) )
+        {
+            $problem = is_scalar( $in['name'] ) ? expAuditTaxonomy::patternProblem( (string)$in['name'] ) : 'not a string';
+            if ( $problem === null )
+                $f['name'] = trim( (string)$in['name'] );
+            else
+                $invalid['name'] = $problem;
+        }
         $str( 'login', '/^[^\x00-\x1f]+$/u', 150 );
         $str( 'result', '/^(success|refused|failed)$/' );
         $str( 'request', '/^[A-Za-z0-9_.:-]+$/', 40 );
@@ -95,17 +109,17 @@ class expAuditQuery
         }
         foreach ( array( 'from', 'to' ) as $k )
         {
-            if ( !isset( $in[$k] ) || !is_scalar( $in[$k] ) )
+            if ( !isset( $in[$k] ) || ( is_scalar( $in[$k] ) && trim( (string)$in[$k] ) === '' ) )
                 continue;
-            $v = trim( (string)$in[$k] );
-            if ( !preg_match( '/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?$/', $v, $m ) || !checkdate( (int)$m[2], (int)$m[3], (int)$m[1] ) )
+            $v = is_scalar( $in[$k] ) ? trim( (string)$in[$k] ) : '';
+            $t = $v !== '' ? self::parseTime( $v, $k === 'to', $zone ) : null;
+            if ( $t === null )
+            {
+                $invalid[$k] = "'" . substr( $v, 0, 40 ) . "' is not a time: YYYY-MM-DD, YYYY-MM-DDTHH:MM[:SS], optionally with Z or +HH:MM";
                 continue;
-            $hasTime = isset( $m[4] ) && $m[4] !== '';
-            $t = mktime( $hasTime ? (int)$m[4] : 0, $hasTime ? (int)$m[5] : 0, 0, (int)$m[2], (int)$m[3], (int)$m[1] );
-            if ( $k === 'to' )
-                $t += $hasTime ? 60 : 86400;
+            }
             $f[$k] = $v;
-            $f[$k . '_ms'] = $t * 1000;
+            $f[$k . '_ms'] = $t['ms'];
         }
         if ( isset( $in['q'] ) && is_scalar( $in['q'] ) )
         {
@@ -115,7 +129,63 @@ class expAuditQuery
         }
         if ( isset( $f['legacy_file'] ) )
             $f['names'] = self::legacyNames( $f['legacy_file'], $config );
+        if ( $invalid )
+            $f['invalid'] = $invalid;
         return $f;
+    }
+
+    /**
+     * Reads a from/to time of a filter. Forms: YYYY-MM-DD, YYYY-MM-DDTHH:MM, YYYY-MM-DDTHH:MM:SS (a space instead of
+     * the T too), each optionally followed by Z, +HH:MM, +HHMM or +HH (or -). A time with an offset is that instant;
+     * one without is read in $zone. "to" is inclusive: of the whole day, minute or second given.
+     *
+     * @param string $value
+     * @param bool $isTo
+     * @param DateTimeZone|string|null $zone null: the site's time zone (date_default_timezone_get())
+     * @return array|null ms (the bound in milliseconds: from inclusive, to exclusive), utc (the bound as a UTC
+     *                    time string); null when it is not a time
+     */
+    public static function parseTime( $value, $isTo = false, $zone = null )
+    {
+        if ( !is_string( $value ) || !preg_match( '/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?)?(Z|[+-]\d{2}(?::?\d{2})?)?$/i', trim( $value ), $m ) )
+            return null;
+        if ( !checkdate( (int)$m[2], (int)$m[3], (int)$m[1] ) )
+            return null;
+        $hasTime = isset( $m[4] ) && $m[4] !== '';
+        $hasSeconds = isset( $m[6] ) && $m[6] !== '';
+        if ( $hasTime && ( (int)$m[4] > 23 || (int)$m[5] > 59 || ( $hasSeconds && (int)$m[6] > 59 ) ) )
+            return null;
+        $offset = isset( $m[7] ) && $m[7] !== '' ? strtoupper( $m[7] ) : null;
+        try
+        {
+            if ( $offset !== null )
+            {
+                if ( $offset !== 'Z' )
+                {
+                    $digits = str_replace( ':', '', substr( $offset, 1 ) );
+                    if ( strlen( $digits ) === 2 )
+                        $digits .= '00';
+                    if ( (int)substr( $digits, 0, 2 ) > 14 || (int)substr( $digits, 2, 2 ) > 59 )
+                        return null;
+                    $offset = $offset[0] . substr( $digits, 0, 2 ) . ':' . substr( $digits, 2, 2 );
+                }
+                $tz = new DateTimeZone( $offset === 'Z' ? 'UTC' : $offset );
+            }
+            elseif ( $zone instanceof DateTimeZone )
+                $tz = $zone;
+            else
+                $tz = new DateTimeZone( is_string( $zone ) && $zone !== '' ? $zone : date_default_timezone_get() );
+            $d = new DateTime( sprintf( '%s-%s-%s %02d:%02d:%02d', $m[1], $m[2], $m[3], $hasTime ? (int)$m[4] : 0,
+                                        $hasTime ? (int)$m[5] : 0, $hasSeconds ? (int)$m[6] : 0 ), $tz );
+        }
+        catch ( Throwable $e )
+        {
+            return null;
+        }
+        $t = $d->getTimestamp();
+        if ( $isTo )
+            $t += $hasSeconds ? 1 : ( $hasTime ? 60 : 86400 );
+        return array( 'ms' => $t * 1000, 'utc' => gmdate( 'Y-m-d\TH:i:s\Z', $t ) );
     }
 
     /**
@@ -184,6 +254,9 @@ class expAuditQuery
         $db = $this->db;
         $q = function ( $v ) use ( $db ) { return "'" . $db->escapeString( (string)$v ) . "'"; };
         $c = array();
+        // a malformed filter finds nothing rather than everything (normalise() lists it)
+        if ( !empty( $f['invalid'] ) )
+            $c[] = '1=0';
         if ( $channels !== null )
             $c[] = $channels ? 'channel IN (' . implode( ', ', array_map( $q, $channels ) ) . ')' : '1=0';
         if ( isset( $f['channel'] ) )

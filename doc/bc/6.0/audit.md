@@ -28,7 +28,7 @@ log stayed as it was. This is said wherever it applies.
 3. [Usage guide](#3-usage-guide): the admin interface · the command `exp:audit` · templates · the developer API
 4. [Maintenance guide](#4-maintenance-guide): cron · rotation and archives · retention · verify and restore · keys ·
    the index · importing 4.x logs · upgrades · changing settings · troubleshooting · performance tuning · privacy
-   and GDPR tasks
+   and GDPR tasks · when the audit cannot write
 5. [Internals](#5-internals): event flow · the record · the hash chain · taxonomy and registries · buffering · the
    index · sinks · alerts · Velocity · failure modes · security
 6. [Reference configurations](#6-reference-configurations): small site · busy site · cluster · strict privacy ·
@@ -144,6 +144,35 @@ A user without the policy sees **nothing** of the audit: no tab, no sidebar link
 links, and an empty fetch. A typed URL is refused and recorded as `access.permission.refused`. Every allowed view is
 itself recorded as `system.audit.read`.
 
+**Password re-entry before manage actions** (Q9; `[AuditConsoleSettings] ReauthForManage`, off by default). With
+`ReauthForManage=enabled`, "Verify now" (dashboard, console, `audit/recent`) first shows a small form asking for the
+signed-in user's password. The form posts to the same view with the same button and the form token, so a correct
+password runs the action at once. The password is checked against the stored hash the way the sign-in checks it
+(`eZUser::authenticateHash()`), without signing in again and without changing the session's user. A correct password
+holds for `ReauthMinutes` (10) in that session and for that user only. Each attempt is recorded:
+`access.session.reauth` (after: action, minutes) or `access.session.reauth.failed` (result failed, reason
+credentials; never the password). Cancel returns to the page and does nothing. The command line never asks: whoever
+runs `exp:audit` already holds the server. The archives and settings views have no manage buttons (Appendix C), so
+"Verify now" is the action this guards today; `expAuditReauth::gate()` is the one call a new manage action makes:
+
+```php
+$form = expAuditReauth::gate( $Module, 'AuditVerifyNowButton', 'audit/dashboard', ezpI18n::tr( 'design/admin/audit', 'Verify now' ) );
+if ( $form !== null )
+    return $form;   // the password form, or the redirect of Cancel
+```
+
+Checked on alpha over HTTP (Apache), with `ReauthForManage=enabled` set for the test and the override file put back
+byte for byte afterwards:
+
+```
+PASS Verify now asks for the password: 200
+PASS the password form carries the form token
+PASS wrong password: the form again (200)
+PASS right password: the action runs (302)
+PASS within ReauthMinutes: not asked again (302)
+PASS both attempts are in the console
+```
+
 ### 3.2 The admin interface
 
 The **Audit** tab (after Design in the top menu) opens the dashboard. The left menu has Dashboard, Console, Recent
@@ -151,7 +180,7 @@ events, Charts, Alerts and Export, plus Archives and Settings for `audit/manage`
 
 | View | URL | What you see |
 |---|---|---|
-| **Dashboard** | `audit/dashboard` | Cards that link into the detailed views. *Health*: audit on/off, each channel's chain as last verified, **Verify now** (manage), the signing key's age, with a hint after one year. *Today and 7 days*: per channel and family, events per day. *Security*: failed logins by address and by login (hashed for unknown accounts), the latest role grants, refused views. *Alerts* and their mail recipients. *Activity*: top actors and objects today, the latest warnings. *Operations*: the cronjob part (a warning when it has not run for an hour), the index (rows, lag, last reindex), archives, sinks. Quick links. It never reads the files, so it opens in about 25 ms (the 7-day figures are cached for a minute) |
+| **Dashboard** | `audit/dashboard` | Cards that link into the detailed views. *Health*: audit on/off, each channel's chain as last verified, **Verify now** (manage; with the password again when `ReauthForManage` is on), the signing key's age, with a hint after one year. *Today and 7 days*: per channel and family, events per day. *Security*: failed logins by address and by login (hashed for unknown accounts), the latest role grants, refused views. *Alerts* and their mail recipients. *Activity*: top actors and objects today, the latest warnings. *Operations*: the cronjob part (a warning when it has not run for an hour), the index (rows, lag, last reindex), archives, sinks. Quick links. It never reads the files, so it opens in about 25 ms (the 7-day figures are cached for a minute) |
 | **Console** | `audit/console` | The timeline, newest first, with a filter form, full-text search and paging, and the chain state of each channel at the top. Records not indexed yet are merged into the first page, so the newest event is always there |
 | **Event** | `audit/event/<id>` | One record in full: when (local and UTC), who, the request, object and target with links into the admin (node, object, user, role, job), before and after side by side, the parent, the children, the other events of the same request and job, and the chain position (prev, hash, whether the hash matches the record now). `/(format)/json` returns the line as it is in the file |
 | **Charts** | `audit/charts` | Events per day per channel, refusals and failures per day, logins against failed logins, top actors, top event names; the last 14 days (`/(days)/<n>`, up to 366), under the console's filters. Drawn in HTML/CSS, each chart with its numbers in a table. Needs the index |
@@ -166,14 +195,14 @@ events, Charts, Alerts and Export, plus Archives and Settings for `audit/manage`
 | Parameter | Example | Means |
 |---|---|---|
 | `(channel)` | `(channel)/access` | one channel |
-| `(name)` | `(name)/access.session.*` | a name or a pattern ending in `.*` |
+| `(name)` | `(name)/access.session.*` | `*`, a prefix ending in `.*` (it matches the prefix itself too) or a whole name; anything else, such as `access.session.login*`, is refused: the page says why and lists nothing |
 | `(user)`, `(login)` | `(user)/14`, `(login)/editor1` | by the actor |
 | `(object)`, `(target)` | `(object)/node:275` | `<type>:<id>`: node, object, user, role, job, setting… |
 | `(result)` | `(result)/refused` | success, refused, failed |
 | `(severity)` | `(severity)/warning` | this severity or worse |
 | `(request)`, `(job)`, `(run)`, `(parent)` | `(job)/20261003-000230-29a7dcc0` | correlation: one request, one content job, one cronjob run, one parent's children |
 | `(ip)` | `(ip)/203.0.113.0/24` | as recorded (after privacy) |
-| `(from)`, `(to)` | `(from)/2026-10-01/(to)/2026-10-02T12:00` | the site's time zone |
+| `(from)`, `(to)` | `(from)/2026-10-01/(to)/2026-10-02T12:00` | `YYYY-MM-DD`, `…THH:MM` or `…THH:MM:SS`; without an offset in the site's time zone (the console prints site times), with `Z` or `+02:00` that instant; `(to)` includes the day, minute or second given |
 | `(q)` | `(q)/workout` | full-text search over names, object names and before/after values |
 | `(legacy_file)` | `(legacy_file)/login.log` | the events a 4.x audit file name stood for |
 | `(offset)`, `(limit)` | `(limit)/200` | paging, at most 500 per page |
@@ -225,9 +254,44 @@ change as its own event. `--json` prints machine-readable results for every acti
 
 **Filters** of `search` and `export`: `--channel= --name=<pattern> --user=<id> --login= --object=<type:id>
 --target=<type:id> --result=success|refused|failed --severity=<min> --request= --job= --run= --ip=<network>
---from=YYYY-MM-DD[THH:MM] --to=… --legacy-file=<4.x file name>`. `--from` and `--to` are in the site's time zone;
-the command prints times in UTC. See [Appendix C](#appendix-c-known-issues-2026-10-03) for two filter defects that are
-still open (`--q`, and a malformed `--name` pattern).
+--from=<time> --to=<time> --query=<text> --legacy-file=<4.x file name>`.
+
+- `--query=<text>` is the full-text search, the console's `(q)`. It cannot be `--q`: `-q`/`--quiet` is every
+  script's standard quiet option, and the option parser keeps that name for it.
+- `--name` (also for `tail`) takes `*`, a prefix of one to five ranks ending in `.*` (`access.*`,
+  `access.session.*`; the prefix itself matches too), or a whole name of 3 to 6 ranks. The first rank is a domain
+  (content, access, system, commerce, data). Anything else, such as `access.session.login*`, `access.*.failed` or a
+  bare `access.session`, is refused with the reason and exit code 2, and nothing is searched.
+- **Times** (one rule for the command): `--from`/`--to` take `YYYY-MM-DD`, `YYYY-MM-DDTHH:MM` or
+  `YYYY-MM-DDTHH:MM:SS` (a space for the `T` works too). Without an offset they are **UTC**, the zone the command
+  prints. With `Z`, `+HH:MM`, `-HH:MM`, `+HHMM` or `+HH` they are that instant. `--to` includes the whole day, minute
+  or second given. A malformed time is refused (exit 2). The console reads `(from)`/`(to)` the same way, but there a
+  bare time is in the site's time zone, because the console prints site times.
+
+```
+$ ./console exp:audit search --query=logout --name='access.session.*' --limit=2 --allow-root-user
+2026-10-03 00:44:39.636  access   access.session.logout              admin(14)              user 14                            success  r-01M3ZKGQTA32V9XK0NQ4WN57R8  01M3ZKGQTM7DC5263YNBNDGTWF
+2026-10-03 00:44:29.179  access   access.session.logout              admin(14)              user 14                            success  r-01M3ZKGDKG2PB5W55ZDAEZRWXA  01M3ZKGDKV0B6SA799A0KDFEBT
+2 record(s) from the index (limit 2: --limit=)
+
+$ ./console exp:audit search --name='access.session.login*' --allow-root-user; echo "exit $?"
+--name: 'access.session.login*': a * may only be the whole pattern or the last rank after a dot (did you mean 'access.session.login.*'?); allowed: *, a prefix of ranks ending in .* (access.*, access.session.*) or a whole name (access.session.login)
+exit 2
+
+$ ./console exp:audit search --q=logout --allow-root-user
+bin/php/audit.php: invalid option `--q'
+
+# the same ten minutes, once in UTC (as printed) and once with the offset of Central European Summer Time
+$ ./console exp:audit search --name=access.session.login --from=2026-10-03T00:30 --to=2026-10-03T00:40 --limit=3 --allow-root-user
+$ ./console exp:audit search --name=access.session.login --from=2026-10-03T02:30+02:00 --to=2026-10-03T02:40+02:00 --limit=3 --allow-root-user
+2026-10-03 00:33:56.882  access   access.session.login               admin(14)              user 14 admin                      success  r-01M3ZJX3M2G4BG5EFY2CMR9Z3X  01M3ZJX44JDSQV7624W6SA9B0S
+2026-10-03 00:33:40.684  access   access.session.login               admin(14)              user 14 admin                      success  r-01M3ZJWKTDYFT34YRJSXWG6118  01M3ZJWMAC35VNXCDRSXF37ER2
+2026-10-03 00:33:24.440  access   access.session.login               admin(14)              user 14 admin                      success  r-01M3ZJW3XRXMD69TEGFYNYDKKX  01M3ZJW4ER0H05HBARG2SF7GPJ
+3 record(s) from the index (limit 3: --limit=)            (both commands print these three records)
+
+$ ./console exp:audit search --to=2026-10-02T24:00 --allow-root-user
+--to: '2026-10-02T24:00' is not a time (YYYY-MM-DD, YYYY-MM-DDTHH:MM[:SS], optionally with Z or +HH:MM)
+```
 
 #### Reading
 
@@ -1024,9 +1088,11 @@ class (a sink, a branch) always needs a Velocity restart. Every write to audit.i
 | `journalctl -t exponential` finds nothing | `Transport=devlog` on a journald that does not parse RFC 5424 headers on /dev/log | use `Transport=local` (journald's native socket) |
 | The webhook spool grows | the receiver is down or refuses (`system.audit.sink.failed`, once per sink and hour) | `exp:audit sinks list` shows the last error; fix the receiver; `exp:audit sinks flush` |
 | No alert mail | no recipient, mail transport in debug mode (`DebugSending`), throttled, or the cronjob part does not run | `exp:audit alerts recipients`; site.ini `[MailSettings]`; check cron |
-| `search --name=…login*` returns everything | a pattern must be a name or end in `.*`; a malformed one is ignored (Appendix C) | `--name='access.session.login.*'` |
-| `search --q=…` says "invalid option `--q'" | `-q` is the standard quiet option (Appendix C) | search text in the console (`(q)/…`) |
-| `--from` seems to miss records | `--from`/`--to` are in the site's time zone, printed times are UTC | give local times, or compare with the UTC column |
+| `search --name=…login*` exits 2: "a * may only be the whole pattern …" | a pattern is `*`, a prefix ending in `.*` or a whole name | `--name='access.session.login.*'` |
+| `search --q=…` says "invalid option `--q'" | `-q` is the standard quiet option | `--query=…` |
+| `--from` seems to miss records | a bare `--from`/`--to` is UTC, as printed (the console's bare times are site time) | give UTC, or add the offset: `--from=2026-10-03T01:30+02:00` |
+| An admin form answers 503 "Not done: the audit cannot record it"; `AUDIT-REFUSED` in error.log | `OnWriteFailure=refuse` and LogDir cannot be written | fix LogDir as above; see [4.13](#413-when-the-audit-cannot-write) |
+| "Verify now" asks for the password | `ReauthForManage=enabled` | enter it; it holds `ReauthMinutes` in that session |
 | A settings change has no effect | INI cache | `php bin/php/ezcache.php --clear-tag=ini` (exp:ini does this itself) |
 | The log directory grows fast | reads on, or a chatty extension name on | `exp:audit status` (today's counts per channel), `search --channel=… --limit=…`; switch the name off in `Disabled[]`; lower `SampleRate` |
 
@@ -1073,6 +1139,61 @@ Content jobs show no measurable difference. To go further:
   Review the file before you hand it out: it holds records of other people's actions on that user too.
 - **Erasure (Art. 17)**: audit records are kept under Art. 17(3)(b) and (e) for their retention period. Deleting one
   would break the chain. Answer with the retention period and the pseudonymisation already applied.
+
+### 4.13 When the audit cannot write
+
+`[AuditSettings] OnWriteFailure` decides what happens to an action whose record cannot be written (full disk,
+permissions, a missing mount):
+
+- **`continue`** (the shipped default): the action goes on. error.log gets the failure and, at the end of the
+  request, one `AUDIT-UNWRITTEN <channel> <record>` line per record, so nothing is lost silently.
+- **`refuse`**: the actions of the kind that is written at once (`[AuditBufferSettings] ImmediateEvents[]`:
+  `access.*`, `system.audit.*`, `system.setting.write`) are refused while their channel cannot be written, so nothing
+  security-relevant happens unrecorded. Each refusal is an `AUDIT-REFUSED` line in error.log, with the reason.
+
+What `refuse` guards, and only this (`expAuditGuard`):
+
+| Action | Event checked | Refused with |
+|---|---|---|
+| a POST by a signed-in user to a view of `[AuditReadSettings] AlwaysModules[]` (setup, role, user, audit, settings): role and policy changes, user administration, setup forms, the audit's "Verify now" | the access channel (`access.view.sensitive`), and for setup/settings the system channel (`system.setting.write`), for audit `system.audit.read` | HTTP 503 with the page `audit/refused.tpl` (it names the channel, never a path); the view does not run |
+| an INI write through `expIniEditor` (`exp:ini`, the debug bar, the settings forms) | `system.setting.write` | `expIniException` "Refused: …", nothing written |
+| `exp:audit rotate, archive, restore, purge, reindex, pseudonymise, import, export, checkpoint, key rotate` | its own `system.audit.*` name | the message and exit code 2; `--dry-run` is never refused |
+
+Never refused, so the site stays usable: GET requests, anything an anonymous visitor does, pages, content editing,
+the views in `[AuditSettings] RefuseExemptViews[]` (`user/login`, `user/logout`: people can still sign in and out;
+their records go to error.log), and reading and diagnosing the audit (`exp:audit status`, `channels`, `tail`,
+`search`, `verify`, the console's GET views).
+
+"Cannot be written" is decided before the action by a probe of the event's channel that writes nothing (the
+directory exists or can be created and is writable, the channel lock opens, the newest file can be appended to,
+more than 1 MB is free), and by the request's own last write of that channel. With the audit switched off nothing is
+refused (there is nothing to record). To leave `refuse` while the audit cannot write, fix LogDir, or edit
+`settings/override/audit.ini.append.php` by hand: an `exp:ini` write would itself be refused as unrecorded.
+
+Shown without touching the live settings, with the audit pointed at a log directory below a plain file
+(`expAuditConfig::setOverride()` in one process):
+
+```
+OnWriteFailure=continue
+  system.setting.write   allowed
+  access.role.assign     allowed
+  system.audit.archive   allowed
+  content.node.move      allowed
+OnWriteFailure=refuse
+  system.setting.write   REFUSED (system: the directory var/tmp/audit-refuse-demo/blocker/log does not exist and cannot be created)
+  access.role.assign     REFUSED (access: the directory var/tmp/audit-refuse-demo/blocker/log does not exist and cannot be created)
+  system.audit.archive   REFUSED (system: the directory var/tmp/audit-refuse-demo/blocker/log does not exist and cannot be created)
+  content.node.move      allowed
+```
+
+and in error.log:
+
+```
+AUDIT-REFUSED system.audit.archive (OnWriteFailure=refuse): the audit channel system cannot be written: the directory var/tmp/audit-refuse-demo/blocker/log does not exist and cannot be created
+```
+
+`content.node.move` is buffered, not written at once, so it is never refused. The tests (`expAuditFilterGuardReauthTest`
+AG-06 to AG-08) prove the guard, the refused settings write and the refused admin POST the same way.
 
 ---
 
@@ -1284,7 +1405,7 @@ Velocity's workers are persistent, so several things work differently from PHP-F
 
 | What fails | What happens |
 |---|---|
-| LogDir cannot be written | the request carries on; error.log gets the failure and, at the end, one `AUDIT-UNWRITTEN` line per record |
+| LogDir cannot be written | `OnWriteFailure=continue` (default): the request carries on; error.log gets the failure and, at the end, one `AUDIT-UNWRITTEN` line per record. `refuse`: the guarded actions are refused first ([4.13](#413-when-the-audit-cannot-write)) |
 | A process dies mid-write | the next append repairs the torn line (`system.audit.chain.repair`); verify says `repaired` |
 | The database is down | nothing changes at request time (the index is not written then); the cronjob part's index run fails and catches up later |
 | A sink is down | records wait in the spool; `system.audit.sink.failed` once per sink and hour; delivered when it is back |
@@ -1299,6 +1420,7 @@ Velocity's workers are persistent, so several things work differently from PHP-F
 | Who | Can | The answer |
 |---|---|---|
 | An editor without audit policies | see nothing | policies on every view, link, block and fetch; refusals recorded |
+| Someone using a signed-in session left open | run audit manage actions | `ReauthForManage=enabled` asks for the password first; the attempts are recorded |
 | A user with `audit/read` | read the channels the limitation allows, export them | reads and exports are recorded; personal fields truncated or hashed by default |
 | An administrator with `audit/manage` | change settings, switch the audit off, rotate keys | each is recorded before it takes effect; `audit_disabled` alert to syslog and mail; the record leaves the server through the sinks |
 | Code running as the web server user | stop recording, read the key, rewrite live files and recompute the chain | it cannot rewrite what already left the server (syslog, webhook, mail, checkpoints); archives on a path it cannot change; checkpoints signed before the compromise expose the rewrite (`rewritten`) |
@@ -1696,7 +1818,8 @@ section summarises it. Change values in an override, never in that file ([4.9](#
 | `[AuditSettings]` | `Audit` (enabled) | on or off; switching it off is recorded first |
 | | `LogDir` (log/audit) | live files, relative to the var directory, or absolute |
 | | `AuditFileNames[]` | the 4.x file names, as aliases for `(legacy_file)` filters and the import |
-| | `OnWriteFailure` (continue) | only `continue` is built: a failed write never stops the request (Appendix C) |
+| | `OnWriteFailure` (continue) | `continue`: a failed write never stops the request; `refuse`: the actions of ImmediateEvents[] are refused while their channel cannot be written ([4.13](#413-when-the-audit-cannot-write)) |
+| | `RefuseExemptViews[]` (user/login, user/logout) | POSTs `refuse` never refuses |
 | `[AuditEventSettings]` | `Enabled[]`, `Disabled[]` | patterns; the most specific wins, `Disabled[]` on a tie |
 | | `Branches[<ext>]` | extension taxonomy branches |
 | | `MinSeverity` (info) | lower severities are not recorded |
@@ -1718,7 +1841,7 @@ section summarises it. Change values in an override, never in that file ([4.9](#
 | `[AuditRotationSettings]` | defaults for the channel blocks; `VerifyBeforeArchive`, `VerifyAfterArchive`, `RotateAfter` (00:15) | |
 | `[AuditArchiveSettings]` | `ArchiveDir`, `FormatHandlers[]`, `Level[]`, `FileMode` (0440), `DirMode` (0750) | |
 | `[AuditIndexSettings]` | `Index`, `BatchSize` (2000), `IndexReads` (disabled), `FullText`, `KeepDays` (730) | |
-| `[AuditConsoleSettings]` | `PageSize` (50), `MaxExportRecords` (100000), `ReauthForManage`, `ReauthMinutes` | the re-authentication is not built (Appendix C) |
+| `[AuditConsoleSettings]` | `PageSize` (50), `MaxExportRecords` (100000), `ReauthForManage` (disabled), `ReauthMinutes` (10) | the password again before manage actions ([3.1](#31-who-may-see-what-the-policies)) |
 | `[AuditCompatSettings]` | `Map[]`, `UnmappedAsLegacy`, `LegacyFiles` (disabled: also write the 4.x text files) | |
 | `[AuditBridgeSettings]` | `Bridge[<ezpEvent>]=<name>` | [3.5](#35-the-developer-api) |
 
@@ -1788,8 +1911,8 @@ only with `Reads=enabled`).
 | `access.session.logout` | a user logs out | session → – | `datatypes/ezuser/ezuser.php:logoutCurrent` | logout | info | on | yes | access | at once |
 | `access.session.regenerate` | the session id is renewed | old hash → new hash | `ezpEvent session/regenerate (bridge)` | regenerate | info | off | no | access | at once |
 | `access.session.expire` | a session is destroyed or collected | – → count | `ezpEvent session/destroy, session/gc (bridge)` | expire | info | off | no | access | at once |
-| `access.session.reauth` | a user re-enters the password before an audit/manage action (Q9) | – | `–` | reauth | info | on | yes | access | at once |
-| `access.session.reauth.failed` | that re-entry fails | – (never the password) | `–` | reauth | notice | on | yes | access | at once |
+| `access.session.reauth` | a user re-enters the password before an audit/manage action (Q9) | – | `audit/console/expauditreauth.php:confirm` | reauth | info | on | yes | access | at once |
+| `access.session.reauth.failed` | that re-entry fails | – (never the password) | `audit/console/expauditreauth.php:confirm` | reauth | notice | on | yes | access | at once |
 | `access.user.lock` | failed logins reach `[UserSettings] MaxNumberOfFailedLogin` | attempts → attempts, enabled | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | lock | warning | on | yes | access | at once |
 | `access.user.unlock` | the failed-login counter is reset by an administrator | attempts → 0 | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | unlock | notice | on | yes | access | at once |
 | `access.permission.refused` | a module view is refused by policy | – → the policy asked (module/function), limitation that failed | `lib/ezutils/classes/ezmodule.php:handleError` | access | notice | on | yes | access | at once |
@@ -1878,8 +2001,9 @@ only with `Reads=enabled`).
 | `data.index.rebuild` | the search index is rebuilt | – → objects, ms | `commands/updatesearchindex.php:run` | rebuild | info | on | yes | commerce | buffered |
 <!-- event-reference:end -->
 
-`access.session.reauth` and `access.session.reauth.failed` are in the registry for the password re-entry before
-manage actions. That view is not built, so nothing raises them (Appendix C).
+`access.session.reauth` and `access.session.reauth.failed` are raised by the password re-entry before manage
+actions (`ReauthForManage`, [3.1](#31-who-may-see-what-the-policies)); with the shipped default (disabled) nothing
+raises them.
 
 ---
 
@@ -1889,7 +2013,7 @@ The acceptance tests of the design (Z9), run at the end of the work on 2026-10-0
 
 ### 9.1 Tests
 
-`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: **86 tests, 5 574 assertions, OK** (one marked risky:
+`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: **95 tests, 5 768 assertions, OK** (one marked risky:
 `testWriteFailureNeverThrows` deliberately replaces the error handler to provoke a write failure).
 
 | Test class | Tests | Covers |
@@ -1905,6 +2029,7 @@ The acceptance tests of the design (Z9), run at the end of the work on 2026-10-0
 | `expAuditAlertsTest` | 9 | every built-in rule reached, not reached, repeated; INI rules; replay (E2) |
 | `expAuditArchiveTest` | 6 | each format handler, restore, retention, T9–T12, key rotation, the daily run (E3) |
 | `expAuditImportTest` | 1 | both 4.x header forms, re-import skipped, the legacy manifest (E4) |
+| `expAuditFilterGuardReauthTest` | 9 | name patterns, malformed filters find nothing, the time rule, `--query`, `OnWriteFailure=refuse` (the guard, a settings write, an admin POST), `ReauthForManage` (AG-01–AG-09; live database, throwaway log directories) |
 | `expAuditMailRecipientsTest` | 8 | every recipient kind against the live database (temporary users and groups, removed afterwards) |
 
 Also `tests/tests/kernel/classes/expViewAccessTest.php` (the dashboard permission fix): 14 tests, 68 assertions, OK
@@ -2109,14 +2234,13 @@ configurations, and the generated event reference ([section 9](#9-proof)).
 
 ## Appendix C: known issues (2026-10-03)
 
+Fixed since this list was first written: `exp:audit search --query` ([3.3](#33-the-command-expaudit)), malformed name
+patterns refused, one time rule for `--from`/`--to`, the password re-entry `ReauthForManage`
+([3.1](#31-who-may-see-what-the-policies)) and `OnWriteFailure=refuse` ([4.13](#413-when-the-audit-cannot-write)).
+
 Found while writing this guide. Each was checked on alpha:
 
 | Issue | Effect | Until it is fixed |
 |---|---|---|
-| `exp:audit search --q=<text>` is refused ("invalid option `--q'") because `-q` is the scripts' standard quiet option | full-text search is not reachable from the command | search text in the console (`audit/console/(q)/<text>`); on the command line filter by name, object or user |
-| A malformed `--name` (or `(name)`) pattern, such as `access.session.login*`, is silently ignored, so the search returns every record | a wrong answer instead of an error | write a name or a prefix ending in `.*` (`access.session.login.*`) |
-| `--from`/`--to` are read in the site's time zone, while `tail`/`search` print UTC | records seem to be missing at the day boundary | give local times, or read the UTC column with that in mind |
-| `[AuditConsoleSettings] ReauthForManage`/`ReauthMinutes` are read but no re-authentication view exists; `access.session.reauth*` are never raised | manage actions do not ask for the password again | protect `audit/manage` by policy; keep it to few users |
-| `[AuditSettings] OnWriteFailure=refuse` is read but not acted on | a failed write never refuses an action | monitor error.log for `AUDIT-UNWRITTEN`; keep LogDir on a disk with space |
 | The console's export cuts at `MaxExportRecords` instead of running larger exports in the background | large exports from the browser are incomplete (it says so) | `exp:audit export` has no limit |
 | The archives and settings views and the alerts view are read-only (no "Archive now", no acknowledge, no settings form) | these actions are done on the command line | `exp:audit archive/restore/key`, `exp:ini set audit.ini/…` |

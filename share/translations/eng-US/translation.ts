@@ -42346,6 +42346,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>rules with a problem</source>
         <translation>rules with a problem</translation>
     </message>
+    <message>
+        <source>Confirm your password</source>
+        <translation>Confirm your password</translation>
+    </message>
+    <message>
+        <source>The password is not correct. The attempt was recorded.</source>
+        <translation>The password is not correct. The attempt was recorded.</translation>
+    </message>
+    <message>
+        <source>"%action" is an audit management action. Enter the password of %login again to continue; it stays confirmed for %minutes minutes in this session.</source>
+        <translation>"%action" is an audit management action. Enter the password of %login again to continue; it stays confirmed for %minutes minutes in this session.</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Confirm and continue</source>
+        <translation>Confirm and continue</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>A filter is not valid, so nothing is shown:</source>
+        <translation>A filter is not valid, so nothing is shown:</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/job</name>
@@ -42356,6 +42384,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Audit trail of this job</source>
         <translation>Audit trail of this job</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/audit</name>
+    <message>
+        <source>Not recorded, so refused</source>
+        <translation>Not recorded, so refused</translation>
+    </message>
+    <message>
+        <source>Not done: the audit cannot record it</source>
+        <translation>Not done: the audit cannot record it</translation>
+    </message>
+    <message>
+        <source>The audit log cannot be written at the moment (channel %channel), and this site is set to refuse security-relevant actions that cannot be recorded. Nothing was changed.</source>
+        <translation>The audit log cannot be written at the moment (channel %channel), and this site is set to refuse security-relevant actions that cannot be recorded. Nothing was changed.</translation>
+    </message>
+    <message>
+        <source>Please try again later, or tell the administrator: the details are in the error log under AUDIT-REFUSED.</source>
+        <translation>Please try again later, or tell the administrator: the details are in the error log under AUDIT-REFUSED.</translation>
     </message>
 </context>
 </TS>

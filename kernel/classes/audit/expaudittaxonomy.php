@@ -273,6 +273,58 @@ class expAuditTaxonomy
     }
 
     /**
+     * Why a name pattern of a filter (exp:audit --name, the console's (name), the fetch functions) is not valid, or
+     * null when it is. The forms: '*' (every name); a prefix of one to five ranks followed by '.*' (access.*,
+     * access.session.*, content.node.remove.*), which matches the prefix itself and every name below it; or a
+     * whole name (3 to 6 ranks). The first rank is a domain (content, access, system, commerce, data); a rank is
+     * lower case letters, digits and '_', starting with a letter. A '*' anywhere else (access.session.login*,
+     * access.*.failed) is refused rather than read as a literal, which would match nothing, or dropped, which
+     * would match everything.
+     *
+     * @param mixed $pattern
+     * @return string|null
+     */
+    public static function patternProblem( $pattern )
+    {
+        $forms = "allowed: *, a prefix of ranks ending in .* (access.*, access.session.*) or a whole name (access.session.login)";
+        if ( !is_string( $pattern ) || trim( $pattern ) === '' )
+            return "an empty name pattern; $forms";
+        $p = trim( $pattern );
+        $shown = "'" . ( strlen( $p ) > 80 ? substr( $p, 0, 80 ) . '...' : $p ) . "'";
+        if ( strlen( $p ) > 128 )
+            return "$shown is longer than 128 characters";
+        if ( $p === '*' )
+            return null;
+        $wild = substr( $p, -2 ) === '.*';
+        $body = $wild ? substr( $p, 0, -2 ) : $p;
+        if ( strpos( $body, '*' ) !== false )
+        {
+            $hint = preg_replace( '/\.?\*+$/', '', $body );
+            return "$shown: a * may only be the whole pattern or the last rank after a dot" .
+                   ( $hint !== '' && strpos( $hint, '*' ) === false ? " (did you mean '$hint.*'?)" : '' ) . "; $forms";
+        }
+        $ranks = explode( '.', $body );
+        foreach ( $ranks as $r )
+            if ( !preg_match( '/^[a-z][a-z0-9_]*$/', $r ) )
+                return "$shown: '$r' is not a rank (lower case letters, digits and _, starting with a letter); $forms";
+        if ( !in_array( $ranks[0], array( 'content', 'access', 'system', 'commerce', 'data' ), true ) )
+            return "$shown: '{$ranks[0]}' is not a domain (content, access, system, commerce, data)";
+        if ( $wild )
+            return count( $ranks ) <= 5 ? null : "$shown: a prefix has at most 5 ranks";
+        if ( count( $ranks ) < 3 )
+            return "$shown is not a whole name (3 to 6 ranks): for every name below it write '$body.*'";
+        if ( count( $ranks ) > 6 )
+            return "$shown: a name has at most 6 ranks";
+        return null;
+    }
+
+    /** @return bool A valid name pattern of a filter (see patternProblem()) */
+    public static function isValidPattern( $pattern )
+    {
+        return self::patternProblem( $pattern ) === null;
+    }
+
+    /**
      * A readable label from a name: content.node.remove.trash -> "Node remove trash".
      *
      * @param string $name

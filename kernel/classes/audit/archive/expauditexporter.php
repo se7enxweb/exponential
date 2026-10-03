@@ -48,11 +48,14 @@ class expAuditExporter
     public static function filters( array $in )
     {
         $keys = array( 'channel', 'name', 'user', 'login', 'object', 'target', 'result', 'severity', 'request', 'job', 'run', 'ip',
-                       'from', 'to', 'q', 'legacy_file', 'subject_user' );
+                       'from', 'to', 'q', 'legacy_file', 'subject_user', 'zone' );
         $out = array();
         foreach ( $in as $k => $v )
         {
             $k = str_replace( '-', '_', (string)$k );
+            // the command's --query (-q is the scripts' quiet option, so the text filter cannot be --q there)
+            if ( $k === 'query' )
+                $k = 'q';
             if ( in_array( $k, $keys, true ) && $v !== null && $v !== false && $v !== '' )
                 $out[$k] = is_string( $v ) ? trim( $v ) : $v;
         }
@@ -129,17 +132,24 @@ class expAuditExporter
      */
     protected function prepare( array $f )
     {
-        $tz = class_exists( 'expAuditScheduleRule' ) ? expAuditScheduleRule::timeZone() : new DateTimeZone( 'UTC' );
+        // from/to: an explicit offset (Z, +02:00) is that instant; without one, the 'zone' filter (exp:audit: UTC),
+        // else the site's time zone (expAuditQuery::parseTime())
+        $zone = isset( $f['zone'] ) && is_string( $f['zone'] ) && $f['zone'] !== '' ? $f['zone'] : null;
         foreach ( array( 'from', 'to' ) as $k )
         {
-            if ( !isset( $f[$k] ) || !preg_match( '/^(\d{4}-\d{2}-\d{2})(?:[T ](\d{2}):(\d{2}))?$/', $f[$k], $m ) )
+            if ( !isset( $f[$k] ) )
                 continue;
-            $d = new DateTime( $m[1] . ( isset( $m[2] ) ? ' ' . $m[2] . ':' . $m[3] : ' 00:00' ), $tz );
-            if ( $k === 'to' )
-                $d->modify( isset( $m[2] ) ? '+1 minute' : '+1 day' );
-            $f['_' . $k . '_ms'] = $d->getTimestamp() * 1000;
-            $f['_' . $k . '_date'] = gmdate( 'Y-m-d', $k === 'to' ? $d->getTimestamp() - 1 : $d->getTimestamp() );
+            $t = expAuditQuery::parseTime( (string)$f[$k], $k === 'to', $zone );
+            if ( $t === null )
+            {
+                $f['_invalid'][$k] = (string)$f[$k];
+                continue;
+            }
+            $f['_' . $k . '_ms'] = $t['ms'];
+            $f['_' . $k . '_date'] = gmdate( 'Y-m-d', intdiv( $t['ms'], 1000 ) - ( $k === 'to' ? 1 : 0 ) );
         }
+        if ( isset( $f['name'] ) && expAuditTaxonomy::patternProblem( $f['name'] ) !== null )
+            $f['_invalid']['name'] = $f['name'];
         if ( isset( $f['q'] ) )
             $f['_q'] = $f['q'];
         if ( isset( $f['legacy_file'] ) )
@@ -220,6 +230,9 @@ class expAuditExporter
      */
     public function matches( array $r, array $f )
     {
+        // a malformed filter finds nothing rather than everything
+        if ( !empty( $f['_invalid'] ) )
+            return false;
         if ( isset( $f['channel'] ) && ( !isset( $r['channel'] ) || $r['channel'] !== $f['channel'] ) )
             return false;
         if ( isset( $f['name'] ) && expAuditTaxonomy::match( $f['name'], $r['name'] ) < 0 )

@@ -31,6 +31,13 @@ class Console extends \Exponential\Runnable\ModuleView
         {
             if ( !\expAuditConsole::canManage() )
                 return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+            // ReauthForManage: the password again first (the form posts back here with this button)
+            $form = \expAuditReauth::gate( $Module, 'AuditVerifyNowButton', \expAuditConsole::url( 'audit/console', $raw ),
+                                           \ezpI18n::tr( 'design/admin/audit', 'Verify now' ) );
+            if ( $form !== null )
+                return $form;
+            if ( class_exists( 'expAuditGuard' ) && !\expAuditGuard::allows( 'system.audit.verify' ) )
+                return \expAuditGuard::refusedResult( 'audit', 'console' );
             \expAuditConsole::chainStates( \expAuditConsole::allowedChannels(), true );
             return $Module->redirectTo( '/' . \expAuditConsole::url( 'audit/console', $raw ) );
         }
@@ -65,6 +72,8 @@ class Console extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'unindexed', $page['unindexed'] );
         $tpl->setVariable( 'index_run', $indexRun ?: array() );
         $tpl->setVariable( 'filters', $raw );
+        // a malformed filter is not dropped (that would show everything): the page says what is wrong
+        $tpl->setVariable( 'invalid_filters', isset( $filters['invalid'] ) ? $filters['invalid'] : array() );
         $active = array();
         foreach ( $raw as $k => $v )
         {
