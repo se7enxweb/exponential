@@ -1,39 +1,42 @@
 # A clean installation that fits shared hosting and says Exponential
 
-July and August 2026 made the first run of a new installation smoother. This
-page lists what a person installing Exponential 6.0.15 now gets, in the order
-they meet it.
+This page is for anyone installing Exponential 6.0.15, especially on shared hosting. July and August 2026 made the
+first run of a new installation smoother. Below is what you now get, in the order you meet it.
 
 ## 1. The setup wizard works with your own database only (16 July)
 
-Commit `fdf0d52028`. The wizard used to run `SHOW DATABASES` and open the `mysql`
-system database, which needs privileges a shared host does not give.
+Commit `fdf0d52028`. The wizard used to run `SHOW DATABASES` and open the `mysql` system database, which needs
+privileges a shared host does not give. You now need privileges only on your own database.
 
-- For MySQL and MariaDB the database step has a **Database name** field. The name
-  you type is used directly; the wizard does not look at other databases.
-- A failed connection, a wrong password or a missing database is shown as an
-  ordinary message on the page. It no longer ends in a blank error page.
-- The details go to `var/log/setup.log` (for example *eZStepSiteDetails: database
-  requirement check failed (error code ...) for server ... user ... db ...*),
-  never the password.
-- The progress reporter no longer fails in a web request because the constant
-  `STDOUT` does not exist outside the command line.
+- For MySQL and MariaDB the database step has a **Database name** field. The name you type is used directly; the
+  wizard does not look at other databases.
+- A failed connection, a wrong password or a missing database is shown as an ordinary message on the page. It no
+  longer ends in a blank error page.
+- The details go to `var/log/setup.log` (for example *eZStepSiteDetails: database requirement check failed (error
+  code ...) for server ... user ... db ...*), never the password.
+- The progress reporter no longer fails in a web request because the constant `STDOUT` does not exist outside the
+  command line.
 
-You need privileges only on your own database.
+If the wizard refuses your database, read the reason:
+
+```bash
+tail -n 20 var/log/setup.log
+```
 
 ## 2. Packages bring what they need (29 July)
 
-Commit `cb57cdd026`. `eZPackage::install()` first installs every package named under
-*requires* in the package, then the package itself. A site package that is "import
-only" (it carries no files of its own) still pulls in its image or demo content
-package. A required package that cannot be found logs a warning; one that fails
-stops the install. A package that is already being installed is skipped, so circular requirements do not loop.
+Commit `cb57cdd026`. `eZPackage::install()` first installs every package named under *requires* in the package, then
+the package itself.
 
-## 3. The default content no longer says eZ and speaks American English (15 August)
+- A site package that is "import only" (it carries no files of its own) still pulls in its image or demo content
+  package.
+- A required package that cannot be found logs a warning; one that fails stops the install.
+- A package that is already being installed is skipped, so circular requirements do not loop.
 
-Commits `4d9f7681b2`, `3dc808f3ec`, `71045a6cd8`, `e0f6916a36`, `ded9116491`,
-`5f6edbd111`, `3ebaf8dcd9` change the seed data in `share/db_data.dba` that the
-installer loads before a site package:
+## 3. The default content says Exponential and speaks American English (15 August)
+
+Commits `4d9f7681b2`, `3dc808f3ec`, `71045a6cd8`, `e0f6916a36`, `ded9116491`, `5f6edbd111`, `3ebaf8dcd9` change the
+seed data in `share/db_data.dba` that the installer loads before a site package:
 
 | What | Before | After |
 |---|---|---|
@@ -44,54 +47,39 @@ installer loads before a site package:
 | Author, copyright | former vendor | Exponential Foundation |
 | URL alias keywords | former product name | `exponential`, `welcome to exponential` |
 
-The seed touches the tables `ezcontent_language`, `ezcontentclass`,
-`ezcontentclass_attribute`, `ezcontentobject_attribute` and `ezcontentobject_name`.
-All the links in the description were checked to answer before they went in.
+The seed touches the tables `ezcontent_language`, `ezcontentclass`, `ezcontentclass_attribute`,
+`ezcontentobject_attribute` and `ezcontentobject_name`. All the links in the description were checked to answer before
+they went in.
 
-If you install with a site package, the package's own content comes after the seed
-and wins where they overlap.
+If you install with a site package, the package's own content comes after the seed and wins where they overlap.
 
 ## 4. Kickstart names (15 August)
 
-All access types of a kickstart install register the siteaccesses `site` and
-`admin`; see [Kickstarter](kickstarter-cli.md).
+All access types of a kickstart install register the siteaccesses `site` and `admin`; see
+[Kickstarter](kickstarter-cli.md).
 
 ## 5. PHP 8 and other install blockers (15 August, 31 July)
 
-- Unserializing `ezinteger`, `ezobjectrelation`, `ezobjectrelationlist` and `ezxmltext`
-  values tolerates missing XML nodes and null values (`28d414f422`).
-- libxml errors during XML text parsing are suppressed; an embedded `object_remote_id`
-  is resolved to an object id in XHTML output.
+- Unserializing `ezinteger`, `ezobjectrelation`, `ezobjectrelationlist` and `ezxmltext` values tolerates missing XML
+  nodes and null values (`28d414f422`).
+- libxml errors during XML text parsing are suppressed; an embedded `object_remote_id` is resolved to an object id in
+  XHTML output.
 - The URL alias and class attribute caches ignore null and empty values.
 - A content operation returns false only when a node is really missing.
-- `settings/transform.ini [search]` has `Commands[]=lowercase`, which adds the lowercase transformation to the search group.
-- `eZPersistentObject` returns an integer when it computes the next order number
-  on PHP 8.4 (`9cad41280a`), which had broken installs.
+- `settings/transform.ini [search]` has `Commands[]=lowercase`, which adds the lowercase transformation to the search
+  group.
+- `eZPersistentObject` returns an integer when it computes the next order number on PHP 8.4 (`9cad41280a`), which had
+  broken installs.
 
 ## 6. Content package export is more forgiving (7 August)
 
-A node whose initial language is missing, or whose serialized attribute node is
-absent, is skipped by the content package export instead of ending the run
-(`752adad843`, `8af48c1e59`). See [ezpm](ezpm-package-manager-cli.md).
-
-## Related
-
-- [Kickstarter](kickstarter-cli.md), [Platform SQLite installer](platform-sqlite-install.md)
-- Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md).
-- [Install in one command: a site on SQLite without `kickstart.ini`](install-in-one-command.md)
-- [What a new installation comes with: the default extensions](default-extension-distribution.md)
-- [Setup wizard and the editor siteaccess](setup-wizard-and-editor-siteaccess.md)
-- [Kickstarter CLI reference](../../bc/6.0/kickstartercli.md)
-- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
-- [Installation name in page titles](installation-name-in-pages.md)
+A node whose initial language is missing, or whose serialized attribute node is absent, is skipped by the content
+package export instead of ending the run (`752adad843`, `8af48c1e59`). See [ezpm](ezpm-package-manager-cli.md).
 
 ## Related pages
 
-- [The product is called Exponential](rebranding-to-exponential.md)
-- [About and Copyright pages](about-and-package-pages.md)
-- [Package licenses and Semantic Versioning](package-licenses-and-versions.md)
-- [January 2025](../../history/2025/2025-01.md)
-- [July 2025](../../history/2025/2025-07.md)
-- [August 2025](../../history/2025/2025-08.md)
-- [A useful robots.txt out of the box](robots-txt.md)
-- [September 2025](../../history/2025/2025-09.md)
+- [Install in one command: a site on SQLite without `kickstart.ini`](install-in-one-command.md), [Kickstarter](kickstarter-cli.md), [Kickstarter CLI reference](../../bc/6.0/kickstartercli.md), [setup wizard and the editor siteaccess](setup-wizard-and-editor-siteaccess.md)
+- [What a new installation comes with: the default extensions](default-extension-distribution.md), [a useful robots.txt out of the box](robots-txt.md), [installation name in page titles](installation-name-in-pages.md)
+- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md), [platform SQLite installer](platform-sqlite-install.md)
+- [The product is called Exponential](rebranding-to-exponential.md), [About and Copyright pages](about-and-package-pages.md), [package licenses and Semantic Versioning](package-licenses-and-versions.md)
+- History: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md), [September 2025](../../history/2025/2025-09.md), [August 2025](../../history/2025/2025-08.md), [July 2025](../../history/2025/2025-07.md), [January 2025](../../history/2025/2025-01.md)

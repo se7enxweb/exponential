@@ -1,8 +1,8 @@
 # PHP string functions as template operators
 
-Sixty PHP string functions (62 on PHP 8.3 or newer, see below) are now available in templates as operators, so a
-template can measure, search, cut, compare and format text without a custom
-extension. Added in March 2026 (release 6.0.13) in the class
+This page is for template developers who need to work with text in a template. Sixty PHP string functions (62 on PHP
+8.3 or newer, see below) are available in templates as operators, so a template can measure, search, cut, compare
+and format text without a custom extension. Added in March 2026 (release 6.0.13) in the class
 `eZTemplateStringsOperator`
 (`lib/eztemplate/classes/eztemplatestringsoperator.php`), with a PHPUnit suite of
 about a thousand lines (`tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php`,
@@ -90,8 +90,9 @@ likely ones), test the pages that use it after the update: list the operators an
 installation provides with the [expinfo operator](../../bc/6.0/expinfo-operator.md)
 and compare.
 
-## Related
+## Related pages
 
-[Role and policy operators](role-and-policy-template-operators.md),
-[Chronicle: March 2026](../../history/2026/2026-03.md),
-[Changelog 6.0.13](../../changelogs/6.0/6.0.13.md).
+- [Role and policy operators](role-and-policy-template-operators.md)
+- [The expinfo operator](../../bc/6.0/expinfo-operator.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md)
+- [Changelog 6.0.13](../../changelogs/6.0/6.0.13.md)
+- [Chronicle: March 2026](../../history/2026/2026-03.md)

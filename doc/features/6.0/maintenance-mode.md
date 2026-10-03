@@ -1,9 +1,17 @@
 # Maintenance mode
 
-Take the whole public site offline for a maintenance window, show visitors a
-friendly page, and bring it back with one command or one button. The
-kickstarter and the web setup wizard use the same mechanism, so a site that is
+This page is for administrators who need to take a site offline for a while: an upgrade, a data import, a
+reinstall. Maintenance mode takes the whole public site offline, shows visitors a friendly page, and brings it back
+with one command or one button. The Kickstarter and the web setup wizard use the same mechanism, so a site that is
 being installed never serves a half-built page.
+
+Quick start:
+
+```bash
+php bin/php/maintenance.php on --message="Back at 06:00" --until=2h --allow-root-user
+curl -sI https://www.example.com/ | head -1      # HTTP/1.1 503 Service Unavailable
+php bin/php/maintenance.php off --allow-root-user
+```
 
 ## What a visitor sees
 
@@ -96,7 +104,8 @@ caches pause during maintenance too (engine release 0.0.4.34 and later).
 
 ## Related pages
 
-- [Installing with one command](install-in-one-command.md)
+- [Installing with one command](install-in-one-command.md), [Kickstarter](kickstarter-cli.md), [setup wizard](setup-wizard-and-editor-siteaccess.md)
+- [Velocity: running Exponential in a persistent-worker web server](velocity-persistent-worker-server.md)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)

@@ -1,10 +1,9 @@
 # Store dashboard and order statuses
 
-The **Store** tab of the administration now opens a dashboard
-(`shop/dashboard`) that shows on one page what used to need a guide to piece
-together: how the shop is doing, which orders need attention and how checkout
-is configured. The same release adds an order status for every stage of an
-order's life.
+This page is for shop owners and administrators who run the built-in shop. The **Store** tab of the administration
+now opens a dashboard (`shop/dashboard`) that shows on one page what used to need a guide to piece together: how the
+shop is doing, which orders need attention and how checkout is configured. The same release adds an order status for
+every stage of an order's life.
 
 ## Open it
 
@@ -93,10 +92,9 @@ custom status, check the shop's order status list after the update.
 
 ## Related pages
 
-- [Order receipts](order-receipts.md)
-- [Shop basket view name](../../bc/6.0/shop-basket-view-name.md)
-- [Order list sorting](order-list-sorting.md)
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Order receipts](order-receipts.md), [order list sorting](order-list-sorting.md), [shop basket view name](../../bc/6.0/shop-basket-view-name.md)
+- [Administration navigation: the top node and tabs](admin-content-tree-top-node.md) (the Store tab)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)

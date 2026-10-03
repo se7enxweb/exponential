@@ -1,8 +1,7 @@
 # Role and policy checks in templates
 
-Show or hide a piece of a template depending on the roles or the permissions of
-the visitor, in one line, without fetching users and looping over policies
-yourself. Added in January 2026 (release 6.0.12); a matching PHP method,
+This page is for template developers who show or hide parts of a page by role or permission. Seven operators do it
+in one line, without fetching users and looping over policies yourself. Added in January 2026 (release 6.0.12); a matching PHP method,
 `eZRole::hasPolicy()`, lets your own code ask the same question.
 
 ## The seven operators
@@ -99,13 +98,9 @@ copied an example from a development snapshot, replace `member_of_` by `has_`.
 
 The idea comes from the community extension `bcmemberofrole`.
 
-## Related
-
-[Chronicle: January 2026](../../history/2026/2026-01.md),
-[Changelog 6.0.12](../../changelogs/6.0/6.0.12.md),
-[String operators](string-template-operators.md).
-
 ## Related pages
 
-- [Roles: policy IDs, sorting and order buttons](role-policy-order.md)
-- [Paging the role and policy screens](../../bc/6.0/role-policy-paging.md)
+- [Roles: policy IDs, sorting and order buttons](role-policy-order.md), [paging the role and policy screens](../../bc/6.0/role-policy-paging.md)
+- [String operators](string-template-operators.md)
+- [Changelog 6.0.12](../../changelogs/6.0/6.0.12.md)
+- [Chronicle: January 2026](../../history/2026/2026-01.md)
