@@ -482,9 +482,14 @@ class eZOEXMLInput extends eZXMLInputHandler
      */
     public static function getTinyMCE8CacheKey()
     {
-        static $key = null;
-        if ( $key === null )
+        // Kept for one request only: a persistent worker (Velocity) would otherwise hand out the key of the files
+        // it saw first, and browsers would keep the old scripts and styles after an update.
+        static $key = null, $request = null;
+        $now = isset( $_SERVER["REQUEST_TIME_FLOAT"] ) ? $_SERVER["REQUEST_TIME_FLOAT"] : microtime( true );
+        if ( $key === null || $request !== $now )
         {
+            $request = $now;
+            clearstatcache();
             $dir   = __DIR__ . '/../../../design/standard/javascript';
             $times = array();
             foreach ( array( $dir . '/tinymce8_ez', $dir . '/tinymce8/tinymce.min.js' ) as $path )
