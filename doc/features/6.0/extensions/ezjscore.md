@@ -19,7 +19,7 @@ described in [YUI removal](../../../bc/6.0/yui-removal.md).
 | 1.5.0 | **YUI removed**: the YUI 2 and YUI 3 libraries (`design/standard/lib/yui`), the packer keys `ezjsc::yui2`, `ezjsc::yui3` and `ezjsc::yui3io` and their config functions in `ezjscServerFunctionsJs`, the `[YUI3]` settings and the yui entries in `ExternalScripts`, `LocalScripts` and `LocalScriptBasePath` of `ezjscore.ini`. `PreferredLibrary` is `jquery`. This is a breaking change for code that asks for YUI |
 | 1.5.1, 1.5.2 | Command line scripts, cronjob parts and module views are classes the files call; copyright notices and the about page name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices; the extension is identical to the copy in the kernel |
 | 1.5.3, 1.5.4 | **`expsubitems`** server functions serve the admin sub-items list's **Table options**: registered as `[ezjscServer_expsubitems]` with the class Exponential 6.0.15 ships, every function checking access itself; new server function blocks in the settings for the sub-items columns. See [Sub-items table options](../../../bc/6.0/subitems-table-options.md) |
-| 1.5.5 | The server router lets `expservices` classes answer in their **own envelope**, errors included |
+| 1.5.5 | (the clone's `extension.xml` says 1.5.5; the copy installed here reads 1.5.4 in `ezinfo.php`) The server router lets `expservices` classes answer in their **own envelope**, errors included |
 
 ## Upgrading to 1.5
 

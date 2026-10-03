@@ -35,6 +35,10 @@ for larger lists) instead of a hardcoded low limit.
   in the extension's defaults. 0.2.4: the switch redirect preserves the current URI and is hardened; documentation of toolbar and policy behaviour.
 * 21 June 2026: small toolbar position improvements.
 
+Version check: the release notes (`RELEASE_NOTES_v0.2.0.md` to `RELEASE_NOTES_v0.2.4.md`) and the tags go to 0.2.4, but `ezinfo.php` still states `'Version' => '0.1.0'` and the
+`extension.xml` is an older format (`version="0.1.0"` as an attribute, no `<metadata>`), so the about page (`/ezinfo/about`) shows 0.1.0 whatever release you installed. Read the release from the tag (`git describe --tags` in the clone) until
+the metadata is brought in line with the release (see the [extension metadata specification](../../../specifications/6.0/extension-metadata.md)).
+
 ## Related
 
 * [Sub items table options](../../../bc/6.0/subitems-table-options.md)
