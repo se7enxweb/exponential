@@ -40,6 +40,37 @@ php bin/php/preload.php --help --allow-root-user
 - **A caller can keep the pages it fetches**, which the static cache generator
   uses to store them (see [Static cache generator](static-cache-generator.md)).
 
+## Runs in the background
+
+Since 28 September 2026 **Start preloading** starts the run as a background
+process instead of holding one web request open for the whole crawl. The old way
+read the progress as a stream; a pooled application server such as Velocity
+hands an answer over only when it is complete and ends a request after its time
+limit, so the stream brought nothing and ended in a 504 after 30 seconds, and the
+button did nothing visible. A proxy that buffers streamed answers behaves the
+same. The new way works behind any web server and proxy.
+
+- `setup/preloadjob` starts `bin/php/preloadjob.php` detached (`setsid`) with the
+  pages, depth and siteaccess you chose, answers its events after a given line
+  as JSON, and stops a run on request (it ends after the page it is fetching).
+  Starting and stopping need the form token, like any change; a start without it
+  is refused.
+- Each run keeps its events in `var/<var dir>/preload/<id>.jsonl`; the newest 20
+  runs are kept. The run is handed only pipes, and the page says so when a run
+  stopped without finishing.
+- The console polls once a second and shows the events exactly as before.
+  **Stop** ends the run itself, not only the page's view of it.
+- The server needs `proc_open`, `setsid` (`/usr/bin/setsid` or `/bin/setsid`) and
+  the PHP command line; without them the console says so (see
+  `kernel/classes/exppreloadjob.php`).
+- The console now shows the broken-link report and the summary at the end of a
+  run (a JavaScript variable named `tr` hid the translation helper and stopped the
+  console just before them); an event the page cannot show is written as an error
+  and polling carries on.
+- `setup/preloadstream` stays for anything that uses it.
+
+Check a run from the shell while it is going: `ls -t var/*/preload/ | head`.
+
 ## Access
 
 The view is the `preload` function of the `setup` module; give a role the

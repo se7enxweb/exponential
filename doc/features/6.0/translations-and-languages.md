@@ -29,9 +29,13 @@ siteaccess a different locale in `site.ini [RegionalSettings]`. To check what is
 still untranslated for a language:
 
 ```bash
-php bin/php/ezchecktranslation.php --help
+php bin/php/ezchecktranslation.php ger-DE --allow-root-user    # statistics of one translation
 php bin/php/ezgeneratetranslationcache.php --help
 ```
+
+Run on 2 October 2026, the first command reported for `ger-DE`: 12,410
+elements, 10,614 translated, 47 untranslated, 1,749 obsolete, 99.56 percent
+finished (`--allow-root-user` is needed only when you run as `root`).
 
 ### Make a string translatable in your own code
 
@@ -97,3 +101,4 @@ See [Extension loading order](extension-loading-order.md).
 - [Translations of the package comparison](package-compare-and-import.md)
 - [Behaviour changes of September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

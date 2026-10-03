@@ -97,3 +97,6 @@ custom status, check the shop's order status list after the update.
 - [Shop basket view name](../../bc/6.0/shop-basket-view-name.md)
 - [Order list sorting](order-list-sorting.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

@@ -48,6 +48,8 @@ process list and shell history.
 | Administrator | `--email`, `--password`, `--random-password`, `--first-name`, `--last-name` |
 | Control | `--force`, `--dry-run`, `--print` |
 
+- Without options the administrator is `admin` with the password `publish` and
+  the e-mail `nospam@exponential.earth` (from `./console exp:install --help`).
 - `--random-password` generates a 24-character password and prints it once in
   the summary. Use it; the default password exists only so a first try works.
 - It refuses to run over an existing installation unless you add `--force`.
@@ -109,7 +111,7 @@ stopped on (`eZSiteInstaller::abortedStep()`).
   may register its own alias. When you install onto a different engine, set the
   implementation first or the new site speaks the old engine's protocol to the
   new server.
-- **GD first for images.** `settings/image.ini [ImageConverters]` lists GD before
+- **GD first for images.** `settings/image.ini [ImageConverterSettings] ImageConverters[]` lists GD before
   ImageMagick; ImageMagick stays the fallback for formats and filters GD lacks
   (PSD, TIFF, PDF, WebP, flatten, swirl, noise) and when GD is missing.
 - **No links to the former product's website** in a new installation's link
@@ -123,3 +125,6 @@ stopped on (`eZSiteInstaller::abortedStep()`).
 - [Kickstarter on the command line](../../bc/6.0/kickstartercli.md)
 - [SQLite database](sqlite-database.md) and [database drivers](../../specifications/6.0/database-drivers-sqlite-oracle.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

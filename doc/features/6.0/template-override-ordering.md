@@ -62,3 +62,5 @@ the file byte for byte.
 - [Extension loading order](extension-loading-order.md)
 - [Admin list paging](admin-list-paging.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

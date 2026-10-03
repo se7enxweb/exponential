@@ -31,7 +31,7 @@ always meant.
 |---|---|
 | Software licenses | `GPL-2.0-or-later`, `GPL-2.0-only`, `GPL-3.0-or-later`, `GPL-3.0-only`, `LGPL-2.1-or-later`, `LGPL-2.1-only`, `LGPL-3.0-or-later`, `LGPL-3.0-only`, `AGPL-3.0-or-later`, `AGPL-3.0-only`, `MIT` |
 | Documentation licenses | `GFDL-1.3-or-later`, `GFDL-1.3-only` |
-| Creative Commons 4.0 / 3.0 / 2.5 / 2.0 / 1.0 | `CC-BY`, `CC-BY-SA`, `CC-BY-ND`, `CC-BY-NC`, `CC-BY-NC-SA`, `CC-BY-NC-ND` in each version |
+| Creative Commons 4.0 / 3.0 / 2.5 / 2.0 / 1.0 | `CC-BY`, `CC-BY-SA`, `CC-BY-ND`, `CC-BY-NC`, `CC-BY-NC-SA`, `CC-BY-NC-ND`, each with the version appended (for example `CC-BY-4.0`, `CC-BY-NC-SA-3.0`; 30 identifiers, 46 licenses in all) |
 | Public domain | `CC0-1.0`, `LicenseRef-PDM-1.0` |
 | Proprietary licenses | `LicenseRef-Proprietary` (all rights reserved; it has no page to link to) |
 
@@ -118,3 +118,5 @@ offered only when `package.ini` lists them.
 - [RAD tools](rad-tools.md)
 - [Extension metadata specification](../../specifications/6.0/extension-metadata.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

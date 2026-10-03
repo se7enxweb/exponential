@@ -74,3 +74,6 @@ sweep so that every row of the about page has a version, license and website.
 - [Extension metadata specification](../../specifications/6.0/extension-metadata.md)
 - [Package compare and import](package-compare-and-import.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Translations and languages](translations-and-languages.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

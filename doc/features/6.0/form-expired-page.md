@@ -16,8 +16,8 @@ they may have to sign in again, and when the refused form was itself a sign-in
 form the page asks to sign in again. The wording is the same for a missing and a
 wrong token, and avoids talking about security tokens and sessions.
 
-The page exists in the standard, admin and admin3 designs
-(`design:error/kernel/6.tpl`). While a design has no such template, or it
+The page is `design:error/kernel/6.tpl`, shipped in `design/standard`; the admin
+designs fall back to it (check with `ls design/*/templates/error/kernel/6.tpl`). While a design has no such template, or it
 renders empty because the template cache was built before it existed, a built-in
 explanation is shown.
 
@@ -41,7 +41,7 @@ next line gives the count.
 |---|---|---|---|---|
 | `settings/site.ini` | `[HTMLForms]` | `RefusalLogCollapseSeconds` | `60` | Collapse window for repeated refusals. `0` writes every one. |
 | `settings/site.ini` | `[HTMLForms]` | `Secret` | placeholder text | CSRF secret. Set your own per project. |
-| `settings/error.ini` | kernel error 6 | | `403 Forbidden` | Status of the refusal. |
+| `settings/error.ini` | `[ErrorSettings-kernel]` | `HTTPError[6]` | `403` | Status of the refusal. |
 
 ## For developers
 
@@ -67,3 +67,6 @@ next line gives the count.
 - [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
 - [RAD security](../../bc/6.0/rad-security.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Datatype and input hardening](../../specifications/6.0/datatype-input-hardening.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

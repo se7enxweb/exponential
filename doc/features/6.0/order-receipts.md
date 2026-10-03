@@ -88,3 +88,5 @@ second tab): it goes to the order view, or to the basket when no order waits.
 - [Store dashboard and order statuses](store-dashboard.md)
 - [Shop basket view name](../../bc/6.0/shop-basket-view-name.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

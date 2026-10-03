@@ -80,7 +80,7 @@ node that must not be chosen (the current parent when moving or adding a
 location) was offered and even pre-selected; it always posted the node id even when
 the browse returns object ids (assigning a role to the Users group posted the wrong
 object); and with a class constraint it wrote a bare input into the table. It now
-lives in `content/browse_current_node.tpl` with the same checks as listed items
+lives in the template `content/browse_current_node.tpl` (shipped in the `admin3` and `admin4` designs) with the same checks as listed items
 (permission, ignored nodes and subtrees, class constraints, containers for move,
 copy and add location, swap compatibility), posts the id the browse asks for, is
 shown disabled when the node may not be selected, and is left out for search
@@ -107,3 +107,5 @@ current node as the first thumbnail, pre-selected, too.
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md) for the new top-level folders
 - [Hidden admin tabs](hidden-admin-tabs.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

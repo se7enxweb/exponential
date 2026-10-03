@@ -150,3 +150,5 @@ extensions, site styles).
 - [Package installer batching](package-installer-batching.md)
 - [About and copyright pages](about-and-package-pages.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

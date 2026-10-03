@@ -31,6 +31,9 @@ php bin/php/maintenance.php off
 ./console exp:maintenance on|off|status     # the same, through the console
 ```
 
+Run as `root`, add `--allow-root-user` to `php bin/php/maintenance.php` (the
+script refuses otherwise). `php bin/php/maintenance.php --help` lists the options.
+
 | Option | Meaning |
 |---|---|
 | `--message="..."` | What the page says, instead of the default text. |
@@ -96,3 +99,5 @@ caches pause during maintenance too (engine release 0.0.4.34 and later).
 - [Installing with one command](install-in-one-command.md)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

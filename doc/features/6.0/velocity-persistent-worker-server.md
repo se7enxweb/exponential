@@ -98,7 +98,20 @@ before it builds the server configuration, so a change is read at the next
 | `[ServerSettings]` | `ResponseHeadersOnScripts` | `enabled` | Same headers on answers of `index.php`, `index_rest.php` and `index_treemenu.php`, only where the script did not send them. |
 | `[HTTPSSettings]` | `HSTSMaxAge`, `HSTSIncludeSubDomains`, `HSTSPreload` | `300`, `disabled`, `disabled` | `Strict-Transport-Security` on every HTTPS answer, never on plain HTTP. `0` writes nothing. |
 | `[CacheSettings]` | `Enabled` | `enabled` | The server's own response cache. `disabled` really switches it off (since 28 September; before, a disabled value fell back to the server default). |
-| `[PHPSettings]` | `IniOptions[]` | opcache and APCu options | PHP options handed to the server process, one per line, as after `-d`. |
+| `[PHPSettings]` | `IniOptions[]` | opcache and APCu options | PHP options handed to the server process, one per line, as after `-d`. Shipped: `opcache.enable_cli=1`, `opcache.memory_consumption=256`, `opcache.max_accelerated_files=20000`, `opcache.interned_strings_buffer=32`, `opcache.revalidate_freq=0`, `opcache.file_update_protection=0`, `apc.shm_size=256M` (read the full list and the reasons in `settings/velocity.ini`). |
+
+Two of those options were found by measuring, and matter if you tune your own
+server. **`opcache.file_update_protection=0`**: a persistent worker's request
+starts when the worker starts, so every file written afterwards (INI caches,
+compiled templates, override caches after a deploy or a cache clear) counted as
+"too new" for the worker's whole life and was compiled again on every include;
+the opcode cache served 2.7 percent of includes where PHP-FPM serves 97 percent,
+and a rendered page cost about four times PHP-FPM's CPU. **`apc.shm_size=256M`**:
+the command-line default of 32 MB made the response cache and the SQL query cache
+evict each other (measured on 27 September: 51 percent query-cache hit rate and
+727 ms CPU for a rendered front page with 32 MB, 303 ms with 256 MB). The memory
+is reserved, not used, until it fills. Check what your server runs with:
+`grep -n 'IniOptions' settings/velocity.ini`.
 
 The only change measured to make the site meaningfully faster in the first
 round was an opcode cache for the server process (18 to 26 percent), which is why
@@ -195,7 +208,7 @@ restart and graceful rebuild only when something in the archive changed.
 | `./console exp:webserver` | Engine-agnostic front end: configures engine, port and document root on first start. |
 | `./console exp:frankenphp` | Wrapper pinned to the FrankenPHP engine. |
 | `./console exp:phar build\|info\|clean` | The engine archive. |
-| `./console exp:vc` | Short alias; scripts can declare `@alias` tags in their docblock. |
+| `./console exp:vc` | Intended short alias of `exp:velocity`. The console reads an `@alias <name>` tag from the docblock of `bin/php/<script>.php`; since the command code moved into `kernel/private/classes/commands/` the tags (`vc`, `fp` for `exp:frankenphp`, `search` for `exp:solr`) are there and `bin/php/velocity.php` has none, so on this tree `./console exp:vc` answers "Command exp:vc was not found" (checked 2 October 2026). Use `exp:velocity`. Check again with `./console exp:vc --help`. |
 
 The Qbix engine's programs moved to `sbin/` and `bin/` in engine release
 0.0.4.41; `exp:velocity` finds either layout. The engine package was renamed
@@ -231,3 +244,7 @@ every log line carries the request's siteaccess and full address.
 - [HTTP cache](../../bc/6.0/httpcache.md) and [SQL query cache](../../bc/6.0/sql-query-cache.md)
 - [Maintenance mode](maintenance-mode.md): Velocity pauses its caches while it is on
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Server control commands](web-server-and-solr-commands.md)
+- [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
+- [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
