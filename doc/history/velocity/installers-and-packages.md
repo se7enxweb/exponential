@@ -2,7 +2,7 @@
 
 *Part of the [Exponential Velocity history](README.md). This page covers the two small repositories that carry the legacy installers: `ezwebin-ezpackage` (the site packages the setup wizard installs) and `exponential-legacy-installer` (the Composer installer that puts the legacy kernel and its extensions in place). Release notes of both are also in [ezwebin-ezpackage](../../changelogs/extensions/ezwebin-ezpackage.md) and [exponential-legacy-installer](../../changelogs/extensions/exponential-legacy-installer.md); the package map is in [platform package map](../../specifications/6.0/platform-package-map.md).*
 
-## In one paragraph
+## In short
 
 Seventeen changes in two and a half years, and each one matters when it is hit. Between December 2023 and March 2024 the `ezwebin` site packages were made to install through the setup wizard on current PHP, MySQL 8 and SQLite. In July 2026 their templates were converted to HTML5 markup. The installer for the legacy kernel was forked under a new package name in August 2025 and repaired for Composer 2.10 in June 2026.
 
@@ -67,3 +67,9 @@ Generated from the ledger: 17 changes. "Class" is the classification used for th
 | 2026-03-02 | [`068ac1c`](https://github.com/se7enxweb/exponential-legacy-installer/commit/068ac1c) | no-user-benefit | chore: add GitHub Sponsors funding metadata |  |
 | 2026-04-11 | [`d80adb2`](https://github.com/se7enxweb/exponential-legacy-installer/commit/d80adb2) | fix | fix: add replace shim for ezsystems counterpart package | 2.2.2 |
 | 2026-06-19 | [`bddac7c`](https://github.com/se7enxweb/exponential-legacy-installer/commit/bddac7c) | fix | Fix Composer 2.10 path normalization failure in legacy kernel installer | 2.2.3 |
+
+## Where to go next
+
+- Velocity chronicle: [index](README.md).
+- Run it: [Velocity persistent-worker server](../../features/6.0/velocity-persistent-worker-server.md) and the guide [Operating a site](../../guides/operating-a-site.md).
+- Installers: [Installing in one command](../../features/6.0/install-in-one-command.md) and [Kickstarter](../../features/6.0/kickstarter-cli.md).

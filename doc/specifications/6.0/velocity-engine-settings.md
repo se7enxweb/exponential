@@ -159,3 +159,4 @@ The server runs handlers on a schedule, like cron, from `Q.scheduler` (introduce
 - Specifications: [Worker pool](velocity-worker-pool.md), [HTTP/2 and security](velocity-http2-and-security.md).
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [Velocity engines](../../bc/6.0/velocity-engines.md), [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md).
 - History: [Velocity chronicle](../../history/velocity/README.md); [changelog](../../changelogs/extensions/exponential-velocity.md).
+- [Velocity: running Exponential in a persistent-worker web server](../../features/6.0/velocity-persistent-worker-server.md)

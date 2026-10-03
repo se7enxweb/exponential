@@ -166,10 +166,7 @@ For the Setup > Caches buttons from the command line see
 
 ## Deploy a PHP change in one command
 
-A PHP change used to need six commands and a dozen cache clears, and the order
-matters: caches that hold rendered output must be cleared after PHP-FPM and
-Velocity run the new code, or every page requested in between is rendered by the
-old code and cached again.
+A PHP change needs the autoloads, the INI and template caches, the engine archive, a PHP-FPM reload, a Velocity restart and then the caches that hold rendered output, in that order. One command does all of it and prints PASS, FAIL or SKIP for each step:
 
 ```bash
 ./console exp:velocity deploy --dry-run     # what it would do, nothing else
@@ -177,25 +174,7 @@ old code and cached again.
 ./console exp:velocity deploy --kernel      # a kernel class was added or renamed
 ```
 
-Steps, in order: extension autoloads (`--kernel` adds the kernel array,
-generated from `kernel/` and `lib/` only), INI cache, template, template
-override, translation and design base caches, the engine archive (rebuilt only
-when a file in `kernel/`, `lib/` or `autoload/` changed, every file checked to
-parse first so a broken file stops the deploy before any service is touched),
-a graceful reload of the PHP-FPM service named in `[DeploySettings]
-PhpFpmService` (`auto` finds the right one), the Velocity restart, then content,
-HTTP cache and template block caches and Velocity's response cache. It prints
-PASS, FAIL or SKIP with the time of each step, stops at the first failure and
-exits non-zero. `--no-autoload`, `--no-fpm` and `--no-velocity` skip steps;
-`--rebuild-phar` forces the archive rebuild; `--packer` also clears the packed
-scripts and styles (use it when an `ezjscServer_*` function or its settings
-changed).
-
-The archive build checks files 200 to a `php -n -l` call instead of one process
-per file. With 1,049 files that took nine minutes per build before; it now takes
-about two seconds for the checks and about 26 for the whole build. A build also
-writes `dist/engine.phar.index.json`, so `exp:phar build` and every start,
-restart and graceful rebuild only when something in the archive changed.
+The step table, the reasons for the order, every option and an example run are in [Velocity engines: deploying a PHP change](../../bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
 
 ## Other commands
 
@@ -248,3 +227,11 @@ every log line carries the request's siteaccess and full address.
 - [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## See also
+
+- [Velocity worker pool specification](../../specifications/6.0/velocity-worker-pool.md)
+- [Velocity engine settings](../../specifications/6.0/velocity-engine-settings.md)
+- [Velocity web server](velocity-web-server.md)
+- [Velocity response cache](velocity-response-cache.md)
+- [Changelog: exponential-velocity (Exponential Velocity engine)](../../changelogs/extensions/exponential-velocity.md)

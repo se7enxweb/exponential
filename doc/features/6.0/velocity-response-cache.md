@@ -134,3 +134,6 @@ Full upgrade steps: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine
 - Related: [Control panel](velocity-control-panel.md) (Cache tab), [Static files and images](velocity-static-files-and-images.md) (file caching), [Scheduler](velocity-scheduler.md) (the cache sweep).
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [HTTP cache](../../bc/6.0/http-caching.md), [Velocity engines](../../bc/6.0/velocity-engines.md).
 - History: [22 September](../../history/velocity/2026-09b.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).
+- [The response cache, and getting out of the network's way](../../bc/6.0/response-cache-and-navigation.md)
+- [The role-aware HTTP cache](../../bc/6.0/httpcache.md)
+- [Velocity: running Exponential in a persistent-worker web server](velocity-persistent-worker-server.md)

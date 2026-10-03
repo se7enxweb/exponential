@@ -49,3 +49,12 @@ php bin/php/console exp:kickstarter run --force
 - [ezpm](ezpm-package-manager-cli.md) installs single packages; [Install in one command](install-in-one-command.md) needs no `kickstart.ini`.
 - [6.0.15 changelog](../../changelogs/6.0/6.0.15.md); [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)
 - Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md).
+- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
+- [Default extension distribution](default-extension-distribution.md)
+- [A package installer that survives big packages](package-installer-batching.md)
+- [Static cache generator](static-cache-generator.md)
+
+## Related pages
+
+- [Look inside a package, compare it with your site, import single items](package-compare-and-import.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

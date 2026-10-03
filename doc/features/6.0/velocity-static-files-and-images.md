@@ -101,3 +101,4 @@ Requirements: PHP's GD extension (without it the original is served), WebP suppo
 
 - [Velocity web server](velocity-web-server.md), [Response cache](velocity-response-cache.md) (pages, not files), [Packages and binaries](velocity-packages-and-binaries.md) (the binaries bundle GD).
 - [July 2026](../../history/velocity/2026-07.md) and [22 September](../../history/velocity/2026-09b.md) chronicles; [changelog](../../changelogs/extensions/exponential-velocity.md).
+- [Static cache generator](static-cache-generator.md)

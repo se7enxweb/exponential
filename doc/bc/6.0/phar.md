@@ -396,3 +396,14 @@ Deliberately left undone:
 | `dist/engine.phar.index.json` | what the artifact carries, for deciding whether to rebuild (gitignored) |
 
 See also (September 2026): [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#engine-archive-expphar) (atomic build, batched syntax check), [Velocity](../../features/6.0/velocity-persistent-worker-server.md).
+
+## See also (16 to 30 September 2026)
+
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Velocity persistent worker server](../../features/6.0/velocity-persistent-worker-server.md)
+
+## See also
+
+- [Velocity engines — Qbix, FrankenPHP, PHP's built-in server](velocity-engines.md)

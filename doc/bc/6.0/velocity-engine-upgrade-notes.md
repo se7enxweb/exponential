@@ -119,3 +119,9 @@ qbixctl panel:check --root=/path/to/web
 qbixctl ext:check
 curl -s https://your-host/Q/health
 ```
+
+## See also
+
+- [Velocity: running Exponential in a persistent-worker web server](../../features/6.0/velocity-persistent-worker-server.md)
+- [Velocity engine settings and programs](../../specifications/6.0/velocity-engine-settings.md)
+- [Velocity chronicle: September 2026, 25 to 30 September](../../history/velocity/2026-09e.md)

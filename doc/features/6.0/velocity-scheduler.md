@@ -77,3 +77,6 @@ To check the configuration without starting a server: `php sbin/qbixserver.php -
 - [Velocity web server](velocity-web-server.md) and [Engine settings](../../specifications/6.0/velocity-engine-settings.md).
 - [July 2026 chronicle](../../history/velocity/2026-07.md), where the scheduler arrived (commit `62d9b23`).
 - [Changelog](../../changelogs/extensions/exponential-velocity.md).
+- [Cronjobs console](cronjobs-console.md)
+- [commands, cronjob parts and module views as classes](../../specifications/6.0/runnable-commands-cronjobs-views.md)
+- [Velocity engine upgrade notes (0.0.4.27 to 0.0.4.42)](../../bc/6.0/velocity-engine-upgrade-notes.md)

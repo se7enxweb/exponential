@@ -108,3 +108,12 @@ nested path works on first use.
 ## See also
 
 Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md) (the driver), [6.0.13](../../changelogs/6.0/6.0.13.md) (absolute paths, autoload), [6.0.14](../../changelogs/6.0/6.0.14.md) (schema reading); [Chronicle: April 2026](../../history/2026/2026-04.md); [Chronicle: June 2026, second half](../../history/2026/2026-06b.md) (dropping indexes).
+- [Database drivers and installers: SQLite, PostgreSQL, MySQL and Oracle, 16 to 30 September 2026](../../specifications/6.0/database-drivers-2026-09.md)
+- [SQLite and Oracle driver behaviour (October 2026)](../../specifications/6.0/database-drivers-sqlite-oracle.md)
+- [SQLite: transactions queue for the write lock](../../bc/6.0/sqlite-transactions.md)
+- [SQLite for Exponential Platform: no database server needed](platform-sqlite-install.md)
+
+## Related pages
+
+- [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)

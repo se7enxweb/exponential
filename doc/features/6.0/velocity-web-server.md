@@ -99,3 +99,4 @@ The engine ships a migration page for each; the main differences:
 - [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md): the `/etc/vc` tree.
 - [Engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md).
 - [Changelog](../../changelogs/extensions/exponential-velocity.md).
+- [Velocity: running Exponential in a persistent-worker web server](velocity-persistent-worker-server.md)

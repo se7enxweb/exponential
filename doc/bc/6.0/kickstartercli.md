@@ -658,3 +658,8 @@ Every run is also logged to `var/log/kickstart.log` with passwords masked; earli
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 - `doc/bc/6.0/console.md` — the Exponential Console.
 - `kickstart.ini-dist` in the project root.
+
+## Related pages
+
+- [Getting started guide](../../guides/getting-started.md)
+- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)

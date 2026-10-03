@@ -68,3 +68,14 @@ The list of scripts is paged with
 - [September 2026, first half: cronjobs console](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run) and [the page redesign of 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
 - [Runnable commands, cronjobs and views (specification)](../../specifications/6.0/runnable-commands-cronjobs-views.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [RSS import cleanup cronjob part](../../bc/6.0/cleanuprss.md)
+- [Console commands](../../bc/6.0/console.md)
+- [Content jobs](content-jobs.md)
+- [Velocity scheduler](velocity-scheduler.md)
+
+## Related pages
+
+- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)

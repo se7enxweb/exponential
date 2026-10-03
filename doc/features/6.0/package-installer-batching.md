@@ -68,3 +68,10 @@ rather than looking for one.
 [MongoDB database support](mongodb-database-support.md) (the wizard changes of
 the same weeks),
 [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
+- [Kickstarter: install a whole site from one file](kickstarter-cli.md)
+- [Installing Exponential in one command](install-in-one-command.md)
+- [Look inside a package, compare it with your site, import single items](package-compare-and-import.md)
+
+## Related pages
+
+- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)

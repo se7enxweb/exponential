@@ -142,3 +142,10 @@ data's language (`eng-US`) in one place.
 - [Database drivers and installers, September 2026](database-drivers-2026-09.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Kickstarter: install a whole site from one file](../../features/6.0/kickstarter-cli.md)
+- [A package installer that survives big packages](../../features/6.0/package-installer-batching.md)
+
+## Related pages
+
+- [Look inside a package, compare it with your site, import single items](../../features/6.0/package-compare-and-import.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)

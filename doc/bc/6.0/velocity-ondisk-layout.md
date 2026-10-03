@@ -98,3 +98,8 @@ Caddy's state in `var/vc/frankenphp/caddy/`; with `Engine=php` there is no
 configuration file, only `bin/php/velocity-router.php`. On both, `layout` lists
 those files instead of the tree, and `layout migrate` and `site|conf|mod`
 refuse. See [velocity-engines.md](velocity-engines.md).
+
+## See also
+
+- [Velocity packages, Docker images and binaries](../../features/6.0/velocity-packages-and-binaries.md)
+- [Velocity chronicle: September 2026, 24 September](../../history/velocity/2026-09d.md)
