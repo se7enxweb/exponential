@@ -1,10 +1,9 @@
 # RAD tools: extension wizards, catalogue, survey and health check
 
-Exponential is extended in a few repeating ways: a class in a directory the
-kernel scans, a class named by an ini setting, a file in a place found by
-convention, or a template in a design. The RAD tools put that knowledge in one
-place and write the boilerplate for you. Open them at **Setup > RAD**
-(`/setup/rad`).
+This page is for developers who write their first (or fiftieth) extension. Exponential is extended in a few repeating
+ways: a class in a directory the kernel scans, a class named by an ini setting, a file in a place found by convention,
+or a template in a design. The RAD tools put that knowledge in one place and write the boilerplate for you. Open them
+at **Setup > RAD** (`/setup/rad`).
 
 ## Why it helps
 
@@ -100,15 +99,10 @@ Check with `grep -n -B1 -A3 "Links\[rad\]" settings/menu.ini`.
 - The survey and health check read the installation as it is on disk; after a change run the autoload and cache steps first.
 - Four catalogue points have no wizard: follow the curated text in [Extension points](../../bc/6.0/rad-extension-points.md).
 
-## Related
-
-- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-- [Runnable commands, cronjobs and views (specification)](../../specifications/6.0/runnable-commands-cronjobs-views.md)
-- [Extension points](../../bc/6.0/rad-extension-points.md)
-- [The extension surface](../../bc/6.0/rad-extension-surface.md)
-- [RAD tools security](../../bc/6.0/rad-security.md)
-
 ## Related pages
 
-- [Extension metadata (specification)](../../specifications/6.0/extension-metadata.md)
+- [Extension points](../../bc/6.0/rad-extension-points.md), [the extension surface](../../bc/6.0/rad-extension-surface.md), [RAD tools security](../../bc/6.0/rad-security.md)
+- [Runnable commands, cronjobs and views (specification)](../../specifications/6.0/runnable-commands-cronjobs-views.md), [extension metadata (specification)](../../specifications/6.0/extension-metadata.md)
+- [Extension module override](extension-module-override.md), [additional extension directories](additional-extension-directories.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Chronicle: September 2026, first half, 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)

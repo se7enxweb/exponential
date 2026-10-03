@@ -1,12 +1,12 @@
 # The audit trail: who did what, and proof that nobody changed the record
 
-Exponential 6.0.15 records security-relevant events in a tamper-evident log: sign-ins and refusals, content
-changes, settings writes, cache clears, deploys, orders and VAT changes. The log is on by default, needs no
-setup, and can be read from the admin interface or the command line.
+This page is for administrators and security officers who need to know who did what on a site, and to prove that the
+record was not changed. Exponential 6.0.15 records security-relevant events in a tamper-evident log: sign-ins and
+refusals, content changes, settings writes, cache clears, deploys, orders and VAT changes. The log is on by default,
+needs no setup, and can be read from the admin interface or the command line. Added 2026-10-02.
 
-Added 2026-10-02. The complete reference (event catalogue, record format, every setting) is
-[doc/bc/6.0/audit.md](../../bc/6.0/audit.md); this page is the short version for a person who wants results in
-minutes.
+This is the short version. The complete reference (event catalogue, record format, every setting) is
+[the audit guide](../../bc/6.0/audit.md).
 
 ## Why you want it
 
@@ -111,10 +111,10 @@ accept `Z` or `+HH:MM` offsets; without one they are UTC on the command line and
 - `ReauthForManage` (`disabled` in `settings/audit.ini`, block `[AuditConsoleSettings]`) makes "Verify now" ask for the password again.
 - The dashboard keeps its 7-day figures for a minute, so it opens in about 25 ms instead of 170 ms.
 
-See also: [behaviour changes of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [the Exp Debug bar](exp-debug-bar.md), [the INI command](exp-ini-command.md).
+## Related pages
 
-Related: [audit specification](../../specifications/6.0/audit-event-model.md),
-[remote audit services](remote-services-expservices.md), [content jobs](content-jobs.md),
-[October 2026 chronicle](../../history/2026/2026-10.md).
-
-See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [content jobs](content-jobs.md).
+- [The audit guide](../../bc/6.0/audit.md), [audit specification](../../specifications/6.0/audit-event-model.md)
+- [Remote audit services](remote-services-expservices.md), [content jobs](content-jobs.md), [the Exp Debug bar](exp-debug-bar.md), [the INI command](exp-ini-command.md)
+- [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [October 2026 chronicle](../../history/2026/2026-10.md)

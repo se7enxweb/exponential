@@ -1,9 +1,8 @@
 # SQLite database support
 
-Run a complete Exponential site from one file on disk, with no database server
-to install, configure or secure. SQLite is the quickest way to try Exponential,
-to develop on a laptop, to run automated tests, or to host a small site on a
-plan that offers no MySQL.
+This page is for anyone who wants to try Exponential, develop on a laptop, run automated tests, or host a small site
+on a plan that offers no MySQL. With SQLite, a complete Exponential site runs from one file on disk, with no database
+server to install, configure or secure.
 
 SQLite support arrived in January 2024 (releases 6.0.1 to 6.0.3, see the
 [January 2024 chronicle](../../history/2024/2024-01a.md)) and has been refined
@@ -99,21 +98,9 @@ nested path works on first use.
 
 ## Related pages
 
-- [Specification: SQLite3 database driver](../../specifications/6.0/sqlite3-database-driver.md)
-- [MongoDB database support](mongodb-database-support.md)
-- [PHP 8 support](../../bc/6.0/php8.md) for the countable and `is_countable` fixes
-  that came out of the SQLite test runs
-- [Chronicle: January 2024, first half](../../history/2024/2024-01a.md)
-
-## See also
-
-Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md) (the driver), [6.0.13](../../changelogs/6.0/6.0.13.md) (absolute paths, autoload), [6.0.14](../../changelogs/6.0/6.0.14.md) (schema reading); [Chronicle: April 2026](../../history/2026/2026-04.md); [Chronicle: June 2026, second half](../../history/2026/2026-06b.md) (dropping indexes).
-- [Database drivers and installers: SQLite, PostgreSQL, MySQL and Oracle, 16 to 30 September 2026](../../specifications/6.0/database-drivers-2026-09.md)
-- [SQLite and Oracle driver behaviour (October 2026)](../../specifications/6.0/database-drivers-sqlite-oracle.md)
+- Specifications: [SQLite3 database driver](../../specifications/6.0/sqlite3-database-driver.md), [database drivers and installers, 16 to 30 September 2026](../../specifications/6.0/database-drivers-2026-09.md), [SQLite and Oracle driver behaviour (October 2026)](../../specifications/6.0/database-drivers-sqlite-oracle.md), [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md)
 - [SQLite: transactions queue for the write lock](../../bc/6.0/sqlite-transactions.md)
-- [SQLite for Exponential Platform: no database server needed](platform-sqlite-install.md)
-
-## Related pages
-
-- [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md)
-- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [Install in one command](install-in-one-command.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [MongoDB database support](mongodb-database-support.md)
+- [PHP 8 support](../../bc/6.0/php8.md) (the countable and `is_countable` fixes that came out of the SQLite test runs)
+- Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md) (the driver), [6.0.13](../../changelogs/6.0/6.0.13.md) (absolute paths, autoload), [6.0.14](../../changelogs/6.0/6.0.14.md) (schema reading)
+- History: [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [April 2026](../../history/2026/2026-04.md), [June 2026, second half](../../history/2026/2026-06b.md) (dropping indexes)

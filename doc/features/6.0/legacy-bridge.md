@@ -1,8 +1,10 @@
 # Legacy bridge: run Exponential 6 inside the Symfony platform
 
-**Repositories:** `se7enxweb/legacy-bridge` (Composer package, repository `legacyBridge`), `se7enxweb/ibexa-legacy-bridge` (Platform 4 port), `se7enxweb/site-legacy-bundle`, `se7enxweb/ngsymfonytools`, `se7enxweb/exponential-legacy-installer`.
-**History:** [legacyBridge](../../history/ecosystem/legacyBridge.md) (49 changes, 34 releases), [ibexa-legacy-bridge---7x](../../history/ecosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../history/ecosystem/site-legacy-bundle.md), [exponential-legacy-installer](../../history/ecosystem/exponential-legacy-installer.md).
-**Reference:** [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
+This page is for teams that move an Exponential 6 site to the Symfony platform, or that want Twig on the public site
+while editors keep the legacy admin. Reference: [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
+
+**Repositories:** `se7enxweb/legacy-bridge` (Composer package, repository `legacyBridge`), `se7enxweb/ibexa-legacy-bridge`
+(Platform 4 port), `se7enxweb/site-legacy-bundle`, `se7enxweb/ngsymfonytools`, `se7enxweb/exponential-legacy-installer`.
 
 ## What it is
 
@@ -110,14 +112,10 @@ Since `v4.0.0.1` (2026-04-07) a platform installation on SQLite can run the lega
 - The upstream project stated that the bridge is not supported on eZ Platform 3.x because the schema would diverge from the legacy one. The se7enxweb branches keep the legacy schema in place for the platform kernels listed above; use the branch that matches your platform.
 - The ledger of the repository records the checked-out branch (`4.x`); branches `3.x` and `5.x` carry their own tags.
 
-## Related
+## Related pages
 
-[Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md) · [Site bundles and Twig tools](platform-site-bundles.md) · [Nexus](platform-nexus-starter.md) · [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
-
-## Platform ecosystem pages
-
-- Features: [Platform administration interface](platform-admin-ui-fork.md); [DXP skeleton](platform-dxp-skeleton.md); [Layouts on the platform](platform-layouts-core-fork.md); [Nexus starter](platform-nexus-starter.md); [PHP 8.5 framework forks](platform-php85-framework-forks.md); [Site bundles](platform-site-bundles.md); [SQLite for Exponential Platform](platform-sqlite-install.md); [AdminNeo database manager](adminneo-database-manager.md).
-- Specifications: [Platform console command names](../../specifications/6.0/platform-console-commands.md); [Platform package map](../../specifications/6.0/platform-package-map.md); [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md); [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
-- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
-- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
-- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
+- Platform features: [site bundles and Twig tools](platform-site-bundles.md), [Nexus starter](platform-nexus-starter.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [platform administration interface](platform-admin-ui-fork.md), [DXP skeleton](platform-dxp-skeleton.md), [Layouts on the platform](platform-layouts-core-fork.md), [PHP 8.5 framework forks](platform-php85-framework-forks.md), [AdminNeo database manager](adminneo-database-manager.md)
+- Specifications: [legacy bridge bundle](../../specifications/6.0/legacy-bridge-bundle.md), [platform console command names](../../specifications/6.0/platform-console-commands.md), [platform package map](../../specifications/6.0/platform-package-map.md), [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md)
+- Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- Changelog: [platform changelog](../../changelogs/extensions/exponential-platform.md)
+- History: [legacyBridge](../../history/ecosystem/legacyBridge.md) (49 changes, 34 releases), [ibexa-legacy-bridge---7x](../../history/ecosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../history/ecosystem/site-legacy-bundle.md), [exponential-legacy-installer](../../history/ecosystem/exponential-legacy-installer.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md)
