@@ -1,21 +1,21 @@
 # Extension points
 
-## Added: every point this system can be extended at, listed in the RAD tools
+Read this page if you extend Exponential with your own code and want to know where each kind of extension plugs in,
+which INI line registers it, and which tool in **Setup > RAD** helps you build it. Exponential is extended in a
+handful of ways that repeat: a class in a directory the kernel scans, a class named by an INI setting, a file in a
+place found by convention, or a template in a design. Which of those applies, and which INI line registers it, used
+to be discoverable only by reading the kernel.
 
-eZ is extended in a handful of ways that repeat: a class in a directory the
-kernel scans, a class named by an ini setting, a file in a place found by
-convention, or a template in a design. Which of those applies, and which ini
-line registers it, was previously discoverable only by reading the kernel - the
-knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
+## In short
 
-`kernel/setup/expradcatalogue.php` now holds it, and **Setup > RAD** is drawn
-from it. A point with a tool and a point without are listed the same way, so
-neither can be forgotten.
+| | |
+|---|---|
+| What changed | `kernel/setup/expradcatalogue.php` (`expRADCatalogue::points()`) lists every extension point, and **Setup > RAD** is drawn from it: 64 extension points, 64 with a tool. |
+| Who is affected | Nobody is forced to change. Extension developers get one place to look. |
+| How to check | Open **Setup > RAD** (`/setup/rad`) in the admin. |
+| How to fix | Nothing to fix. Prefer a registered mechanism over a kernel class override (see **override** below). |
 
-**64 extension points, 64 with a tool.**
-
-Every entry was checked against this installation's own source; the *Kernel*
-column names the file the mechanism actually lives in.
+Every entry was checked against the source; the *Kernel* column names the file the mechanism lives in.
 
 ## How things are registered
 
@@ -889,10 +889,13 @@ What an imported feed item becomes once it has been fetched.
 
 ## Keeping it true
 
-The catalogue is data, not prose: `expRADCatalogue::points()`. A point added
-there appears on the RAD page and in this document without either being
-edited. Regenerate this file with:
+The catalogue is data, not prose: `expRADCatalogue::points()`. A point added there appears on the RAD page without
+the page being edited. This document is generated from the same catalogue; when the two differ, **Setup > RAD** is
+current.
 
-```sh
-php ai/bin/one/write_rad_doc.php --allow-root-user
-```
+## Related pages
+
+- [RAD extension surface: the survey](rad-extension-surface.md)
+- [RAD tool security](rad-security.md)
+- [Commands, cronjob parts and module views as classes](cli_cronjob_view_abstractions.md)
+- [Extensions guide](../../guides/extensions.md)
