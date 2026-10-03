@@ -1,6 +1,8 @@
 # Exponential Velocity: history of the web server engine
 
-Exponential Velocity (`vc`, driven from Exponential by `exp:velocity`) is the PHP application server that Exponential recommends for every stage from development to production. This section tells how it came to be, month by month, and where to find each feature, setting and upgrade note it produced. It is the chronicle of the repository `se7enxweb/exponential-velocity` (earlier name `se7enxweb/qbix-webserver`; the two ledgers are the same history under two names and are documented once here) and of the small installer and package repositories next to it.
+Exponential Velocity (`vc`, driven from Exponential by `exp:velocity`) is the PHP application server that Exponential recommends for every stage from development to production. This section tells how it came to be, month by month, and where to find each feature, setting and upgrade note it produced. Read it if you run Exponential under Velocity, or want to know why a setting or a default exists.
+
+It is the chronicle of the repository `se7enxweb/exponential-velocity` (earlier name `se7enxweb/qbix-webserver`; the two ledgers are the same history under two names and are documented once here) and of the small installer and package repositories next to it.
 
 How to use this section:
 
@@ -53,3 +55,11 @@ How to use this section:
 ## A note on names
 
 The engine began as the Qbix web server. In the code you will still see `Q_WebServer`, `qbixserver.php`, `qbixctl`, the `Q.` settings prefix and the `/Q/` URL prefix: these are identifiers and stay as they are. The product is called Velocity; the Composer package is `se7enxweb/exponential-velocity`.
+
+## Related pages
+
+- [History of Exponential](../README.md): the month chronicle of the main installation
+- [Velocity engines](../../bc/6.0/velocity-engines.md): choose and run an engine from Exponential
+- [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) and the [changelog](../../changelogs/extensions/exponential-velocity.md)
+- [Operating a site](../../guides/operating-a-site.md)
+- [Glossary](../../glossary.md)

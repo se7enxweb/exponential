@@ -1,6 +1,6 @@
 # Installer and package repositories: history
 
-*Part of the [Exponential Velocity history](README.md). This page covers the two small repositories that carry the legacy installers: `ezwebin-ezpackage` (the site packages the setup wizard installs) and `exponential-legacy-installer` (the Composer installer that puts the legacy kernel and its extensions in place). Release notes of both are also in [ezwebin-ezpackage](../../changelogs/extensions/ezwebin-ezpackage.md) and [exponential-legacy-installer](../../changelogs/extensions/exponential-legacy-installer.md); the package map is in [platform package map](../../specifications/6.0/platform-package-map.md).*
+*Part of the [Exponential Velocity history](README.md).* This page covers the two small repositories that carry the legacy installers: `ezwebin-ezpackage` (the site packages the setup wizard installs) and `exponential-legacy-installer` (the Composer installer that puts the legacy kernel and its extensions in place). Release notes of both are also in [ezwebin-ezpackage](../../changelogs/extensions/ezwebin-ezpackage.md) and [exponential-legacy-installer](../../changelogs/extensions/exponential-legacy-installer.md); the package map is in [platform package map](../../specifications/6.0/platform-package-map.md).
 
 ## In short
 
@@ -68,7 +68,7 @@ Generated from the ledger: 17 changes. "Class" is the classification used for th
 | 2026-04-11 | [`d80adb2`](https://github.com/se7enxweb/exponential-legacy-installer/commit/d80adb2) | fix | fix: add replace shim for ezsystems counterpart package | 2.2.2 |
 | 2026-06-19 | [`bddac7c`](https://github.com/se7enxweb/exponential-legacy-installer/commit/bddac7c) | fix | Fix Composer 2.10 path normalization failure in legacy kernel installer | 2.2.3 |
 
-## Where to go next
+## Related pages
 
 - Velocity chronicle: [index](README.md).
 - Run it: [Velocity persistent-worker server](../../features/6.0/velocity-persistent-worker-server.md) and the guide [Operating a site](../../guides/operating-a-site.md).
