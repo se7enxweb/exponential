@@ -321,6 +321,14 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
   outline: 2px solid var(--a4-orange);
   outline-offset: 1px;
 }
+/* An open side menu below 1024px is a drawer over the page: a deeper shadow and a solid edge set it apart
+   from the content it covers. */
+@media screen and (max-width: 1023px) {
+  .sidebar.show #leftmenu-design,
+  .sidebar.show #rightmenu-design {
+    box-shadow: 0 0 0 1px var(--a4-card-edge), 0 18px 44px rgba(16, 24, 40, 0.28);
+  }
+}
 
 /* ---- Inside the columns: no added weight (:where), so extensions' own rules win ----------------------------- */
 
