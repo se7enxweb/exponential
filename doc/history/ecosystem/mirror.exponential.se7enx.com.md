@@ -14,6 +14,11 @@ Points readers to the mirrored books and downloads.
 
 Where to download the books.
 
+## Where to read more
+
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -38,5 +43,5 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of mirror.exponential.se7enx.com](ledger/mirror.exponential.se7enx.com.md).
+- Every change with date, kind, size and release tag: [ledger of mirror.exponential.se7enx.com](../ledger/mirror.exponential.se7enx.com.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

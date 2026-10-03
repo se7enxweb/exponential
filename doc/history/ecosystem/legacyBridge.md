@@ -20,6 +20,15 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/legacy-bridge
 ```
 
+## Where to read more
+
+- [Legacy bridge](../../features/6.0/legacy-bridge.md)
+- [Legacy bridge specification](../../specifications/6.0/legacy-bridge-bundle.md)
+- [Console command names](../../specifications/6.0/platform-console-commands.md)
+- [Release changelog](../../changelogs/extensions/legacyBridge.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -35,7 +44,7 @@ composer require se7enxweb/legacy-bridge
 | Date | Tag | Commit | Change |
 |---|---|---|---|
 | 2025-08-25 | v2.1.10 | `441d49f` | Update LegacyWrapperInstallCommand.php to include bugfix for quoted web dir upon install via composer. Very distressing. Bugfix. |
-| 2026-02-25 | v2.1.11 | `9195072` | Updated: Replaced SiteDesign=admin2 with admin3 design for long term support and features. Enhancement. |
+| 2026-02-25 | v2.1.11 | `9195072` | Replaced SiteDesign=admin2 with admin3 design for long term support and features. Enhancement. |
 | 2026-03-25 | 3.0.0.1 | `54aca93` | create 3.x branch for eZ Platform 3.3 / Symfony 5.4 / PHP 8.x |
 | 2026-03-25 | 3.0.0.2 | `3da2a70` | relax se7enxweb/ezplatform-xmltext-fieldtype constraint to ^2.0 for Packagist resolution |
 | 2026-03-25 | 3.0.0.3 | `7820f65` | replace ezsystems/ezpublish-legacy with se7enxweb/exponential ^6.0.12 for PHP 8.x compatibility |
@@ -64,7 +73,7 @@ composer require se7enxweb/legacy-bridge
 | 2026-03-27 | v3.0.0.26 | `a683980` | Twig 3 compatibility for eZ Platform 3.x |
 | 2026-03-27 | v3.0.0.27 | `fc8faa3` | register legacy console commands as DI services; refactor LegacyEmbedScriptCommand to use constructor injection instead of deprecated ContainerAwareCo |
 | 2026-03-27 | v3.0.0.28 | `bdae3a5` | refactor all legacy commands removing deprecated ContainerAwareCommand; use constructor injection for Symfony 5 compatibility |
-| 2026-04-06 | v4.0.0.0 | `cb08cb4` | Updated: Added extra GUI chrome to legacy_admin siteacessses via ngsite extension. Added for UI Compatibility Improvements. Enhancement. |
+| 2026-04-06 | v4.0.0.0 | `cb08cb4` | Added extra GUI chrome to legacy_admin siteacessses via ngsite extension. Added for UI Compatibility Improvements. Enhancement. |
 | 2026-04-07 | v4.0.0.1 | `b926fc9` | SQLite: map pdo_sqlite driver + inject absolute DB path into legacy INI |
 | 2026-04-16 | v4.0.0.2 | `df32ec7` | session.storage removed in Symfony 5.4 factory-based session config |
 | 2026-04-17 | v4.0.0.3 | `d61370c` | fall back to sessionStorage when session service is null on Symfony 5.3+ |
@@ -80,7 +89,7 @@ composer require se7enxweb/legacy-bridge
 - 2026-03-27 `bdae3a5` fix: refactor all legacy commands removing deprecated ContainerAwareCommand; use constructor injection for Symfony 5 compatibility
 - 2026-04-04 `8317c53` fix: Ibexa 4.6 compat - service/param aliases, session mapper, csrf token, cache purger, boot guard, lazy kernel init
 - 2026-04-04 `ed75494` fix: Symfony 5.4 compat - create session.storage alias when storage_factory_id is used
-- 2026-04-06 `cb08cb4` fix: Updated: Added extra GUI chrome to legacy_admin siteacessses via ngsite extension. Added for UI Compatibility Improvements. Enhancement.
+- 2026-04-06 `cb08cb4` fix: Added extra GUI chrome to legacy_admin siteacessses via ngsite extension. Added for UI Compatibility Improvements. Enhancement.
 - 2026-04-16 `df32ec7` fix: session.storage removed in Symfony 5.4 factory-based session config
 
 ### Other changes to the fork (9)
@@ -133,11 +142,11 @@ composer require se7enxweb/legacy-bridge
 ### Package renamed to the se7enxweb vendor (2)
 
 - 2026-03-25 `7820f65` bc: replace ezsystems/ezpublish-legacy with se7enxweb/exponential ^6.0.12 for PHP 8.x compatibility
-- 2026-04-04 `7b57b96` bc: Fixed: require se7enxweb/exponential dev-main instead of ^6.0.12
+- 2026-04-04 `7b57b96` bc: require se7enxweb/exponential dev-main instead of ^6.0.12
 
 ### Responsive admin design (admin3) (1)
 
-- 2026-02-25 `9195072` feature: Updated: Replaced SiteDesign=admin2 with admin3 design for long term support and features. Enhancement.
+- 2026-02-25 `9195072` feature: Replaced SiteDesign=admin2 with admin3 design for long term support and features. Enhancement.
 
 ### Cleanup (1)
 
@@ -145,11 +154,11 @@ composer require se7enxweb/legacy-bridge
 
 ### Version numbers (1)
 
-- 2026-04-06 `8fc9d52` release: Updated: Version API/Specific/Release Switch for se7enxweb/ezplatform-xmltext-fieldtype package requirements. Bugfix.
+- 2026-04-06 `8fc9d52` release: Version API/Specific/Release Switch for se7enxweb/ezplatform-xmltext-fieldtype package requirements. Bugfix.
 
 ### Extensions bundled with the distribution (1)
 
-- 2026-04-06 `0719670` feature: Updated: Altering legacyBridge init_ini settings override installation file site.ini.append.php to test additional configuration items and remove ezmb
+- 2026-04-06 `0719670` feature: Altering legacyBridge init_ini settings override installation file site.ini.append.php to test additional configuration items and remove ezmbpaex exte
 
 ### SQLite support (1)
 
@@ -161,5 +170,5 @@ composer require se7enxweb/legacy-bridge
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of legacyBridge](ledger/legacyBridge.md).
+- Every change with date, kind, size and release tag: [ledger of legacyBridge](../ledger/legacyBridge.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

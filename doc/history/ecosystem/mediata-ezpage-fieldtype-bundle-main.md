@@ -20,6 +20,13 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/mediata-ezpage-fieldtype-bundle
 ```
 
+## Where to read more
+
+- [Site bundles](../../features/6.0/platform-site-bundles.md)
+- [Release changelog](../../changelogs/extensions/mediata-ezpage-fieldtype-bundle-main.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -36,31 +43,31 @@ composer require se7enxweb/mediata-ezpage-fieldtype-bundle
 
 | Date | Tag | Commit | Change |
 |---|---|---|---|
-| 2026-03-16 | 1.0.0 | `c3c9150` | Updated: Updated version requirement ibexa/core from 4.5 to 4.6 in composer.json. Upgrade. |
-| 2026-03-16 | 1.0.1 | `9c2db8e` | Updated: Added twig operator to bundle to provide for pure symfony / platform access to ezflow / ezpage fieldtype block data for display within twig t |
+| 2026-03-16 | 1.0.0 | `c3c9150` | Updated version requirement ibexa/core from 4.5 to 4.6 in composer.json. Upgrade. |
+| 2026-03-16 | 1.0.1 | `9c2db8e` | Added twig operator to bundle to provide for pure symfony / platform access to ezflow / ezpage fieldtype block data for display within twig templates. |
 | 2026-03-26 | 1.0.2 | `4630a40` | replace ibexa/core ~4.6.0 with ezsystems/ezplatform-kernel ^1.3, expand PHP to ^8.5 |
 
 ## Changes made by the se7enxweb team, by theme
 
 ### Test tooling (1)
 
-- 2026-03-16 `6f03e05` tooling: Added: Initial Import of ibexa4 tested as working bundle. Enhancements.
+- 2026-03-16 `6f03e05` tooling: Initial Import of ibexa4 tested as working bundle. Enhancements.
 
 ### Documentation (1)
 
-- 2026-03-16 `0e42de9` docs: Added: Added LICENSE.md Documentation. Doc.
+- 2026-03-16 `0e42de9` docs: Added LICENSE.md Documentation. Doc.
 
 ### Bug fixes (1)
 
-- 2026-03-16 `94c8b14` fix: Updated: Bugfix for syntax error (trailing comma).
+- 2026-03-16 `94c8b14` fix: Bugfix for syntax error (trailing comma).
 
 ### Composer requirements (1)
 
-- 2026-03-16 `c3c9150` release: Updated: Updated version requirement ibexa/core from 4.5 to 4.6 in composer.json. Upgrade.
+- 2026-03-16 `c3c9150` release: Updated version requirement ibexa/core from 4.5 to 4.6 in composer.json. Upgrade.
 
 ### Design and templates (1)
 
-- 2026-03-16 `9c2db8e` feature: Updated: Added twig operator to bundle to provide for pure symfony / platform access to ezflow / ezpage fieldtype block data for display within twig t
+- 2026-03-16 `9c2db8e` feature: Added twig operator to bundle to provide for pure symfony / platform access to ezflow / ezpage fieldtype block data for display within twig templates.
 
 ### Package renamed to the se7enxweb vendor (1)
 
@@ -70,5 +77,5 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of mediata-ezpage-fieldtype-bundle-main](ledger/mediata-ezpage-fieldtype-bundle-main.md).
+- Every change with date, kind, size and release tag: [ledger of mediata-ezpage-fieldtype-bundle-main](../ledger/mediata-ezpage-fieldtype-bundle-main.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

@@ -14,6 +14,12 @@ Upstream skeleton carried with funding metadata only.
 
 Reference skeleton.
 
+## Where to read more
+
+- [DXP skeleton](../../features/6.0/platform-dxp-skeleton.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -39,5 +45,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of oss-skeleton](ledger/oss-skeleton.md).
+- Every change with date, kind, size and release tag: [ledger of oss-skeleton](../ledger/oss-skeleton.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

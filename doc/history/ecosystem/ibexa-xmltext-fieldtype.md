@@ -20,6 +20,11 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ibexa-xmltext-fieldtype
 ```
 
+## Where to read more
+
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -30,5 +35,5 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ibexa-xmltext-fieldtype](ledger/ibexa-xmltext-fieldtype.md).
+- Every change with date, kind, size and release tag: [ledger of ibexa-xmltext-fieldtype](../ledger/ibexa-xmltext-fieldtype.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

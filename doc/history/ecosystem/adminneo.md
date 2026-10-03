@@ -14,6 +14,13 @@ The code base of the sevenx_dse extension, which embeds it in the Exponential ad
 
 Browse tables, run SQL, export and import for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle and MongoDB.
 
+## Where to read more
+
+- [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md)
+- [sevenx_dse extension](../../features/6.0/extensions/sevenx_dse.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -81,5 +88,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of adminneo](ledger/adminneo.md).
+- Every change with date, kind, size and release tag: [ledger of adminneo](../ledger/adminneo.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

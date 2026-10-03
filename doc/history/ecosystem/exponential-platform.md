@@ -20,6 +20,12 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/exponential-platform
 ```
 
+## Where to read more
+
+- [Release changelog](../../changelogs/extensions/exponential-platform.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -33,21 +39,21 @@ composer require se7enxweb/exponential-platform
 
 | Date | Tag | Commit | Change |
 |---|---|---|---|
-| 2025-09-28 | v3.2.9 | `7300c617` | Updated: Required config yaml content changes to install, boot welcome, edit content. Part 4 the next to last pass. Kernel via sysinfo admin reports v |
+| 2025-09-28 | v3.2.9 | `7300c617` | Required config yaml content changes to install, boot welcome, edit content. Part 4 the next to last pass. Kernel via sysinfo admin reports version fo |
 
 ## Changes made by the se7enxweb team, by theme
 
 ### Bug fixes (4)
 
-- 2025-09-28 `20f563ab` fix: Updated: Required config yaml content changes to install, boot welcome, edit content. Bugfixes.
-- 2025-09-28 `889b2df5` fix: Updated: Required config yaml content changes to install, boot welcome, edit content. Part 2. Bugfixes.
-- 2025-09-28 `01f0f4d1` fix: Updated: Required config yaml content changes to install, boot welcome, edit content. Part 3. Bugfixes.
-- 2025-09-28 `7300c617` fix: Updated: Required config yaml content changes to install, boot welcome, edit content. Part 4 the next to last pass. Kernel via sysinfo admin reports v
+- 2025-09-28 `20f563ab` fix: Required config yaml content changes to install, boot welcome, edit content. Bugfixes.
+- 2025-09-28 `889b2df5` fix: Required config yaml content changes to install, boot welcome, edit content. Part 2. Bugfixes.
+- 2025-09-28 `01f0f4d1` fix: Required config yaml content changes to install, boot welcome, edit content. Part 3. Bugfixes.
+- 2025-09-28 `7300c617` fix: Required config yaml content changes to install, boot welcome, edit content. Part 4 the next to last pass. Kernel via sysinfo admin reports version fo
 
 ### Exponential branding (2)
 
-- 2025-09-28 `140bc09c` feature: Updated: Root changes required to install via composer, build dependencies, install db, edit default content and create folder content successfully. R
-- 2025-09-28 `a2bf19e3` feature: Updated: Rebranding changes to update welcome_page.html.twig template file URLs to documentation to valid active links matching by context. Rebranding
+- 2025-09-28 `140bc09c` feature: Root changes required to install via composer, build dependencies, install db, edit default content and create folder content successfully. Rebranding
+- 2025-09-28 `a2bf19e3` feature: Rebranding changes to update welcome_page.html.twig template file URLs to documentation to valid active links matching by context. Rebranding.
 
 ### Documentation (2)
 
@@ -58,5 +64,5 @@ Also: 3 merge or funding-metadata commits by the team (no user benefit; see the 
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform](ledger/exponential-platform.md).
+- Every change with date, kind, size and release tag: [ledger of exponential-platform](../ledger/exponential-platform.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

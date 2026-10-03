@@ -20,6 +20,12 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ezplatform-design-engine
 ```
 
+## Where to read more
+
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -31,7 +37,7 @@ composer require se7enxweb/ezplatform-design-engine
 
 ### Composer requirements (1)
 
-- 2026-03-31 `0d6416a` tooling: Updated: Bugfix for composer validation of composer.json for packagist.org package to update normally. Bugfix.
+- 2026-03-31 `0d6416a` tooling: Bugfix for composer validation of composer.json for packagist.org package to update normally. Bugfix.
 
 ### Replace declarations for the upstream package (1)
 
@@ -43,5 +49,5 @@ composer require se7enxweb/ezplatform-design-engine
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-design-engine](ledger/ezplatform-design-engine.md).
+- Every change with date, kind, size and release tag: [ledger of ezplatform-design-engine](../ledger/ezplatform-design-engine.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

@@ -20,6 +20,13 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ezplatform-admin-ui
 ```
 
+## Where to read more
+
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- [Release changelog](../../changelogs/extensions/ezplatform-admin-ui.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -42,17 +49,17 @@ composer require se7enxweb/ezplatform-admin-ui
 | 2025-09-28 | v2.3.39 | `b126ffcd` | Merge pull request #4 from se7enxweb/fix/update-html-title-to-exponential-platform |
 | 2026-03-25 | 2.3.34.1 | `acd8c584` | extend PHP constraint to ^8.5 for eZ Platform 3.3 / se7enxweb fork 2.3.x branch |
 | 2026-04-11 | v2.3.40 | `e8c62c9b` | Merge pull request #8 from se7enxweb/2.3 |
-| 2026-04-11 | v2.3.41 | `aa915575` | Updated: Rebranding text string replacements. Rebranding. |
+| 2026-04-11 | v2.3.41 | `aa915575` | Rebranding text string replacements. Rebranding. |
 
 ## Changes made by the se7enxweb team, by theme
 
 ### Exponential branding (5)
 
 - 2025-09-28 `cc81d13a` feature: Apply comprehensive branding changes from 2.2 branch
-- 2025-09-28 `056ea021` feature: Updated: Patch logo core color bug. Rebranding.
+- 2025-09-28 `056ea021` feature: Patch logo core color bug. Rebranding.
 - 2025-09-28 `7c84eb0c` feature: Fix HTML title tag branding: Replace 'Ibexa DXP' with 'Exponential Platform'
 - 2026-04-11 `e7bbbd38` feature: feat(branding): update to Exponential Platform DXP branding
-- 2026-04-11 `aa915575` feature: Updated: Rebranding text string replacements. Rebranding.
+- 2026-04-11 `aa915575` feature: Rebranding text string replacements. Rebranding.
 
 ### Other changes to the fork (3)
 
@@ -97,5 +104,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-admin-ui](ledger/ezplatform-admin-ui.md).
+- Every change with date, kind, size and release tag: [ledger of ezplatform-admin-ui](../ledger/ezplatform-admin-ui.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

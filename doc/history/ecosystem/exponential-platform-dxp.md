@@ -20,6 +20,13 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/exponential-platform-dxp
 ```
 
+## Where to read more
+
+- [DXP skeleton and metapackage](../../features/6.0/platform-dxp-skeleton.md)
+- [Release changelog](../../changelogs/extensions/exponential-platform-dxp.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -35,14 +42,14 @@ composer require se7enxweb/exponential-platform-dxp
 
 | Date | Tag | Commit | Change |
 |---|---|---|---|
-| 2026-03-12 | 0.0.0.1 | `f7fcc28` | Updated: Change package vendor/name details in composer.json and doc. Rebranding. |
-| 2026-03-21 | v0.0.0.2 | `11da176` | Updated: Replacing package vendor for admin-ui package. Rebrading. |
+| 2026-03-12 | 0.0.0.1 | `f7fcc28` | Change package vendor/name details in composer.json and doc. Rebranding. |
+| 2026-03-21 | v0.0.0.2 | `11da176` | Replacing package vendor for admin-ui package. Rebrading. |
 
 ## Changes made by the se7enxweb team, by theme
 
 ### Package renamed to the se7enxweb vendor (6)
 
-- 2026-03-21 `11da176` bc: Updated: Replacing package vendor for admin-ui package. Rebrading.
+- 2026-03-21 `11da176` bc: Replacing package vendor for admin-ui package. Rebrading.
 - 2026-04-11 `dcdbf64` bc: Replace ibexa/system-info with se7enxweb/system-info
 - 2026-04-17 `596c019` bc: replace ibexa/admin-ui-assets with se7enxweb/admin-ui-assets (v5 pure)
 - 2026-04-19 `f38e977` bc: Replace ibexa/fieldtype-richtext with se7enxweb/fieldtype-richtext fork
@@ -51,10 +58,10 @@ composer require se7enxweb/exponential-platform-dxp
 
 ### Exponential branding (4)
 
-- 2026-03-12 `05a2a3d` feature: Updated: Change package vendor/name details in composer.json and doc. Rebranding.
-- 2026-03-12 `f7fcc28` feature: Updated: Change package vendor/name details in composer.json and doc. Rebranding.
-- 2026-03-21 `6e81075` feature: Updated: Replaced Ibexa Core Package With Fork to Replace Product Name in user facing templates with logos / trademarks. Rebranding.
-- 2026-03-21 `2eba385` feature: Updated: Switching core package to tagged release, v5.0.1.0. Rebranding.
+- 2026-03-12 `05a2a3d` feature: Change package vendor/name details in composer.json and doc. Rebranding.
+- 2026-03-12 `f7fcc28` feature: Change package vendor/name details in composer.json and doc. Rebranding.
+- 2026-03-21 `6e81075` feature: Replaced Ibexa Core Package With Fork to Replace Product Name in user facing templates with logos / trademarks. Rebranding.
+- 2026-03-21 `2eba385` feature: Switching core package to tagged release, v5.0.1.0. Rebranding.
 
 ### Composer requirements (1)
 
@@ -100,5 +107,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-dxp](ledger/exponential-platform-dxp.md).
+- Every change with date, kind, size and release tag: [ledger of exponential-platform-dxp](../ledger/exponential-platform-dxp.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

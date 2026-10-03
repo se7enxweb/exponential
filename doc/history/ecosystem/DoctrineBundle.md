@@ -20,6 +20,12 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/doctrine-bundle
 ```
 
+## Where to read more
+
+- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -31,13 +37,13 @@ composer require se7enxweb/doctrine-bundle
 
 ### Package renamed to the se7enxweb vendor (1)
 
-- 2026-01-30 `8c6d938d` bc: Updated: Replace vendor name for package and twig require rule.
+- 2026-01-30 `8c6d938d` bc: Replace vendor name for package and twig require rule.
 
 ### Composer requirements (1)
 
-- 2026-01-30 `28024767` tooling: Updated: Added: Replace vendor package via composer.json
+- 2026-01-30 `28024767` tooling: Replace vendor package via composer.json
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of DoctrineBundle](ledger/DoctrineBundle.md).
+- Every change with date, kind, size and release tag: [ledger of DoctrineBundle](../ledger/DoctrineBundle.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

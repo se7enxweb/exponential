@@ -14,6 +14,11 @@ Mirror of the upstream recipes repository; the se7enxweb endpoint is sevenx-reci
 
 Flex configures bundles on composer require.
 
+## Where to read more
+
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -61,5 +66,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ibexa-recipes](ledger/ibexa-recipes.md).
+- Every change with date, kind, size and release tag: [ledger of ibexa-recipes](../ledger/ibexa-recipes.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

@@ -14,6 +14,13 @@ Skeleton for new Platform v5 Nexus projects; uses the se7enxweb forks of layouts
 
 composer + one install command gives a v5 site with layouts, REST, GraphQL and admin.
 
+## Where to read more
+
+- [Nexus starter](../../features/6.0/platform-nexus-starter.md)
+- [Release changelog](../../changelogs/extensions/exponential-platform-nexus-starter.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -42,18 +49,18 @@ composer + one install command gives a v5 site with layouts, REST, GraphQL and a
 
 ### Symfony and platform compatibility (2)
 
-- 2026-03-13 `ee6e72d14` fix: Updated: Upgraded from Symfony 7.3 (End of Life / Support) to Symfony 7.4. Upgrade.
+- 2026-03-13 `ee6e72d14` fix: Upgraded from Symfony 7.3 (End of Life / Support) to Symfony 7.4. Upgrade.
 - 2026-04-19 `b69680701` fix: Remove section on 7x Forks & Upstream Incompatibility Fixes
 
 ### Other changes to the fork (2)
 
-- 2026-03-13 `450c92332` fix: Updated: Upgraded repo node version from node 18 to node 22. Upgrade
+- 2026-03-13 `450c92332` fix: Upgraded repo node version from node 18 to node 22. Upgrade
 - 2026-04-19 `94c7a8fbf` fix: chore(deps): bump se7enxweb/exponential-platform-dxp-core v5.0.6 → v5.0.7
 
 ### SQLite support (2)
 
 - 2026-04-19 `41883758e` feature: v5 Ibexa OSS on Symfony 7.4, PHP 8.4, SQLite dev db
-- 2026-04-26 `829e63b43` feature: Added: Importing from exponential-platform-nexus .x Default installation configured for instant use using sqlite as database.
+- 2026-04-26 `829e63b43` feature: Importing from exponential-platform-nexus .x Default installation configured for instant use using sqlite as database.
 
 ### Documentation (2)
 
@@ -62,8 +69,8 @@ composer + one install command gives a v5 site with layouts, REST, GraphQL and a
 
 ### Repository housekeeping (2)
 
-- 2026-04-26 `4bb4dab3a` tooling: Updated: Removed vendor from .gitignore
-- 2026-04-26 `385b756c8` tooling: Updated: Removed var from being specifically referenced in .gitignore
+- 2026-04-26 `4bb4dab3a` tooling: Removed vendor from .gitignore
+- 2026-04-26 `385b756c8` tooling: Removed var from being specifically referenced in .gitignore
 
 ### Bug fixes (1)
 
@@ -104,5 +111,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-nexus-starter](ledger/exponential-platform-nexus-starter.md).
+- Every change with date, kind, size and release tag: [ledger of exponential-platform-nexus-starter](../ledger/exponential-platform-nexus-starter.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

@@ -20,6 +20,12 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/exponential-platform-dxp-skeleton
 ```
 
+## Where to read more
+
+- [DXP skeleton](../../features/6.0/platform-dxp-skeleton.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -44,11 +50,11 @@ composer require se7enxweb/exponential-platform-dxp-skeleton
 ### Bug fixes (2)
 
 - 2026-03-12 `cd0ef5c` fix: Fix nyholm/psr7 version constraint to ^1.0
-- 2026-03-21 `3d4387c` fix: Updated: Reordering recipes run order. Bugfix.
+- 2026-03-21 `3d4387c` fix: Reordering recipes run order. Bugfix.
 
 ### Exponential branding (1)
 
-- 2026-03-12 `06a2373` feature: Updated: Change package vendor/name details in composer.json and doc. Rebranding.
+- 2026-03-12 `06a2373` feature: Change package vendor/name details in composer.json and doc. Rebranding.
 
 ### Composer requirements (1)
 
@@ -82,5 +88,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-dxp-skeleton](ledger/exponential-platform-dxp-skeleton.md).
+- Every change with date, kind, size and release tag: [ledger of exponential-platform-dxp-skeleton](../ledger/exponential-platform-dxp-skeleton.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

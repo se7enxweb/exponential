@@ -20,6 +20,13 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ibexa-legacy-bridge
 ```
 
+## Where to read more
+
+- [Legacy bridge](../../features/6.0/legacy-bridge.md)
+- [Legacy bridge specification](../../specifications/6.0/legacy-bridge-bundle.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -35,15 +42,15 @@ composer require se7enxweb/ibexa-legacy-bridge
 
 ### Composer requirements (1)
 
-- 2026-03-16 `8ce72f9` tooling: Updated: Refactor bundle to replace ibexa3 apis with MediataCom ibexa4 compatible apis. Added se7enxweb/mediata-ezpage-fieldtype-bundle requirement to
+- 2026-03-16 `8ce72f9` tooling: Refactor bundle to replace ibexa3 apis with MediataCom ibexa4 compatible apis. Added se7enxweb/mediata-ezpage-fieldtype-bundle requirement to bundle's
 
 ### Exponential branding (1)
 
-- 2026-03-16 `5bd8c73` feature: Updated: Replacing vendor in composer.json. Rebranding.
+- 2026-03-16 `5bd8c73` feature: Replacing vendor in composer.json. Rebranding.
 
 ### Version numbers (1)
 
-- 2026-03-17 `340aedb` release: Updated: Replaced netgen/ezpublish-letgacy-installer package. Version bump to composer config. Rebranding.
+- 2026-03-17 `340aedb` release: Replaced netgen/ezpublish-letgacy-installer package. Version bump to composer config. Rebranding.
 
 ### SQLite support (1)
 
@@ -72,5 +79,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ibexa-legacy-bridge---7x](ledger/ibexa-legacy-bridge---7x.md).
+- Every change with date, kind, size and release tag: [ledger of ibexa-legacy-bridge---7x](../ledger/ibexa-legacy-bridge---7x.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

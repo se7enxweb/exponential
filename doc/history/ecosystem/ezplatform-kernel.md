@@ -20,6 +20,14 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ezplatform-kernel
 ```
 
+## Where to read more
+
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Console command names](../../specifications/6.0/platform-console-commands.md)
+- [Release changelog](../../changelogs/extensions/ezplatform-kernel.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -107,5 +115,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-kernel](ledger/ezplatform-kernel.md).
+- Every change with date, kind, size and release tag: [ledger of ezplatform-kernel](../ledger/ezplatform-kernel.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

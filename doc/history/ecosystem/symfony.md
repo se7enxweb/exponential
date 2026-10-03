@@ -20,6 +20,13 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/symfony
 ```
 
+## Where to read more
+
+- [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
+- [Release changelog](../../changelogs/extensions/symfony.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -34,7 +41,7 @@ composer require se7enxweb/symfony
 
 | Date | Tag | Commit | Change |
 |---|---|---|---|
-| 2026-01-13 | v3.4.50 | `5fc51171c` | Updated: Bugfix for composer.json validation test to pass. Bugfix. |
+| 2026-01-13 | v3.4.50 | `5fc51171c` | Bugfix for composer.json validation test to pass. Bugfix. |
 
 ## Changes made by the se7enxweb team, by theme
 
@@ -44,9 +51,9 @@ composer require se7enxweb/symfony
 - 2025-08-24 `df6faf1aa` fix: Update ExceptionCaster.php to include bugfix for php8.4 support as tested with ezplatform 2.5 gpl and confirmed working. New PHP 8.4 Support.
 - 2025-08-24 `118d7f4b0` fix: Update LazyLoadingValueHolderGenerator.php to include php 8.2+ tested as working changes to reflect Zend to Laminas Library Transition. New PHP 8 Supp
 - 2026-01-28 `f2852d452` fix: PHP 8.x: Add return types to VarDumper Data class
-- 2026-01-28 `e39f6b0c1` fix: Updated: PHP 8.x closure to method reference in WebProfilerExtension
-- 2026-01-29 `fd017e42a` fix: Updated: Add explicit nullable types and fix ReflectionProperty deprecation in ErrorHandler.php for PHP 8.1+
-- 2026-02-10 `4e267ed5b` fix: Update: PHP85 Compatiblity bugfixes for deprecation warnings. Tested. Bugfixes.
+- 2026-01-28 `e39f6b0c1` fix: PHP 8.x closure to method reference in WebProfilerExtension
+- 2026-01-29 `fd017e42a` fix: Add explicit nullable types and fix ReflectionProperty deprecation in ErrorHandler.php for PHP 8.1+
+- 2026-02-10 `4e267ed5b` fix: PHP85 Compatiblity bugfixes for deprecation warnings. Tested. Bugfixes.
 
 ### Composer requirements (6)
 
@@ -54,7 +61,7 @@ composer require se7enxweb/symfony
 - 2025-08-24 `f68a4f210` tooling: Update composer.json added tag to test deployment workflow. No change.
 - 2025-08-24 `1b35573f6` tooling: Update composer.json initial attemp at working around breakdowns in forking package due to dependencies conflicts from other packages. Bugfix attempt.
 - 2025-08-24 `cc1e3c14f` tooling: Update composer.json
-- 2026-01-13 `5fc51171c` release: Updated: Bugfix for composer.json validation test to pass. Bugfix.
+- 2026-01-13 `5fc51171c` release: Bugfix for composer.json validation test to pass. Bugfix.
 - 2026-01-30 `66f8c749c` tooling: Replace twig/twig with se7enxweb/twig in composer.json
 
 ### Test tooling (1)
@@ -63,7 +70,7 @@ composer require se7enxweb/symfony
 
 ### Documentation (1)
 
-- 2026-02-14 `14065e4da` docs: Updated: Added bugfixes required by 7x Nexus to support default installations with more graceful features implmentations. Added support for change of 
+- 2026-02-14 `14065e4da` docs: Added bugfixes required by 7x Nexus to support default installations with more graceful features implmentations. Added support for change of behavior 
 
 ### Bug fixes (1)
 
@@ -73,5 +80,5 @@ Also: 2 merge or funding-metadata commits by the team (no user benefit; see the 
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of symfony](ledger/symfony.md).
+- Every change with date, kind, size and release tag: [ledger of symfony](../ledger/symfony.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

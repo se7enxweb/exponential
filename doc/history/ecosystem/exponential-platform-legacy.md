@@ -20,6 +20,14 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/exponential-platform-legacy
 ```
 
+## Where to read more
+
+- [Legacy bridge](../../features/6.0/legacy-bridge.md)
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [Release changelog](../../changelogs/extensions/exponential-platform-legacy.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -36,8 +44,8 @@ composer require se7enxweb/exponential-platform-legacy
 | Date | Tag | Commit | Change |
 |---|---|---|---|
 | 2025-08-25 | v2.5.0.0 | `9b35c25` | Update composer.json testing with release version instead of dev-main. Testing. |
-| 2025-09-14 | v2.5.0.1 | `eb660eb` | Updated: Required changes to dump jsroutes. We fork so they don't have to maintain. Missed change in first release caused class conflict. Core Bugfix. |
-| 2026-04-10 | v2.5.0.2 | `2194e96` | Updated: README.md and doc/INSTALL.md to document full SQLite and Oracle database support |
+| 2025-09-14 | v2.5.0.1 | `eb660eb` | Required changes to dump jsroutes. We fork so they don't have to maintain. Missed change in first release caused class conflict. Core Bugfix. |
+| 2026-04-10 | v2.5.0.2 | `2194e96` | README.md and doc/INSTALL.md to document full SQLite and Oracle database support |
 | 2026-04-21 | v2.5.0.3 | `b417ef6` | add project app SCSS/webpack build, brand image, and asset pipeline |
 
 ## Changes made by the se7enxweb team, by theme
@@ -50,9 +58,9 @@ composer require se7enxweb/exponential-platform-legacy
 - 2025-07-01 `5d53cb6` tooling: Update composer.json change from gplv2 only to gplv2 or later
 - 2025-07-01 `c01377f` tooling: Update composer.json homepage url vendor name change
 - 2025-07-01 `0beb934` tooling: Update composer.json replaced package dependencies vendor name. Removed older behat bundle as not supported at this time.
-- 2025-08-24 `333d353` tooling: Updated: Updating composer.json configuration for basis of a php8.2+ possible installation. This change set allows composer to install all the package
-- 2025-08-24 `fef26da` tooling: Updated: Minor path bugfix for composer bagsed autoloads workaround patch. Bugfix.
-- 2025-08-24 `dbceda7` tooling: Updated: Updated composer.json to fork further required composer packages for ezplatform 2.5 gpl to run with php 8.2+. Bugfix.
+- 2025-08-24 `333d353` tooling: Updating composer.json configuration for basis of a php8.2+ possible installation. This change set allows composer to install all the packages success
+- 2025-08-24 `fef26da` tooling: Minor path bugfix for composer bagsed autoloads workaround patch. Bugfix.
+- 2025-08-24 `dbceda7` tooling: Updated composer.json to fork further required composer packages for ezplatform 2.5 gpl to run with php 8.2+. Bugfix.
 - 2025-08-24 `23adafb` tooling: Update config.yml updated configuration paths to support error free installation via composer package post install scripts. Bugfix.
 - 2025-08-25 `528da80` tooling: Update composer.json change package name. Forking for changes.
 - 2025-08-25 `2287268` tooling: Update composer.json testing pulling latest changes from child package.
@@ -63,45 +71,45 @@ composer require se7enxweb/exponential-platform-legacy
 
 ### Documentation (7)
 
-- 2025-08-25 `5e5af1c` docs: Updated: Updated documentation for package. Clarifictaions only. Added md documentation. Moved default readme to doc folder for safe keeping.
-- 2025-08-25 `0627f49` docs: Updated: Updated documentation for package. Clarifictaions only. Replaced text of new README.md. Documentation.
-- 2025-08-25 `370b0ed` docs: Updated: Updated README.md documentation for package. Removed Logo Images. Documentation.
-- 2025-08-25 `b3f0465` docs: Updated: Updated installation documentation for package. Clarifictaions only. Documentation.
-- 2025-08-25 `531199a` docs: Updated: Updated installation documentation for package. Clarifictaions only. Documentation.
-- 2025-08-29 `987808a` docs: Added: Added software example .htaccess mod_rewrite configuration to doc/apache2 dir. Feature improvement.
+- 2025-08-25 `5e5af1c` docs: Updated documentation for package. Clarifictaions only. Added md documentation. Moved default readme to doc folder for safe keeping.
+- 2025-08-25 `0627f49` docs: Updated documentation for package. Clarifictaions only. Replaced text of new README.md. Documentation.
+- 2025-08-25 `370b0ed` docs: Updated README.md documentation for package. Removed Logo Images. Documentation.
+- 2025-08-25 `b3f0465` docs: Updated installation documentation for package. Clarifictaions only. Documentation.
+- 2025-08-25 `531199a` docs: Updated installation documentation for package. Clarifictaions only. Documentation.
+- 2025-08-29 `987808a` docs: Added software example .htaccess mod_rewrite configuration to doc/apache2 dir. Feature improvement.
 - 2026-04-09 `8e94fb2` docs: rewrite README and INSTALL.md for Exponential Platform Legacy 2.5.0.x
 
 ### Bug fixes (4)
 
-- 2025-08-24 `c6bf309` fix: Updated: Path to default pagelayout example fix. Bugfix.
-- 2025-08-25 `40cf39f` fix: Updated: Updated these files to beable to install this now forked package and it's depencies. Stable progress point. Bugfixes.
-- 2025-08-25 `294783f` fix: Updated: Updated these files to beable to install this now forked package and it's depencies. Stable progress point. Bugfixes.
-- 2025-09-14 `eb660eb` fix: Updated: Required changes to dump jsroutes. We fork so they don't have to maintain. Missed change in first release caused class conflict. Core Bugfix.
+- 2025-08-24 `c6bf309` fix: Path to default pagelayout example fix. Bugfix.
+- 2025-08-25 `40cf39f` fix: Updated these files to beable to install this now forked package and it's depencies. Stable progress point. Bugfixes.
+- 2025-08-25 `294783f` fix: Updated these files to beable to install this now forked package and it's depencies. Stable progress point. Bugfixes.
+- 2025-09-14 `eb660eb` fix: Required changes to dump jsroutes. We fork so they don't have to maintain. Missed change in first release caused class conflict. Core Bugfix.
 
 ### Version numbers (3)
 
 - 2025-08-25 `ae60784` release: Update composer.json version bump for ezplatform-admin-ui-assets which just got a manual missing files merge bugfix. Testing.
-- 2025-09-14 `8344b2b` release: Updated: Version bump to 1.5.33 to include rebranded logo in ezplatform-admin-ui composer package. Rebranding
-- 2026-04-09 `31d165d` release: Updated: Version Bump for exponential package requirements to latest release in composer.json. Upgrade,
+- 2025-09-14 `8344b2b` release: Version bump to 1.5.33 to include rebranded logo in ezplatform-admin-ui composer package. Rebranding
+- 2026-04-09 `31d165d` release: Version Bump for exponential package requirements to latest release in composer.json. Upgrade,
 
 ### Symfony and platform compatibility (2)
 
-- 2025-08-24 `61e235b` fix: Update: Changes required to install and boot ezplatform 2.5 gpl based site
+- 2025-08-24 `61e235b` fix: Changes required to install and boot ezplatform 2.5 gpl based site
 - 2026-04-09 `c168757` fix: set PHPUnit to ^10.5 (max compatible with Symfony 3.4 stack)
 
 ### Ready-made web server configuration (2)
 
-- 2025-08-29 `a17b406` feature: Added: Added software example .htaccess mod_rewrite configuration to web dir. Feature improvement.
-- 2025-08-29 `d143c44` feature: Added: Added software example robots.txt configuration to web dir. Feature improvement.
+- 2025-08-29 `a17b406` feature: Added software example .htaccess mod_rewrite configuration to web dir. Feature improvement.
+- 2025-08-29 `d143c44` feature: Added software example robots.txt configuration to web dir. Feature improvement.
 
 ### SQLite support (2)
 
 - 2026-04-09 `7021d7e` feature: add SQLite installer support for local dev and testing
-- 2026-04-10 `2194e96` feature: Updated: README.md and doc/INSTALL.md to document full SQLite and Oracle database support
+- 2026-04-10 `2194e96` feature: README.md and doc/INSTALL.md to document full SQLite and Oracle database support
 
 ### Exponential branding (1)
 
-- 2025-09-14 `f71c97e` feature: Updated: Required changes to boot admin after rebranding and further test results. Bugfix.
+- 2025-09-14 `f71c97e` feature: Required changes to boot admin after rebranding and further test results. Bugfix.
 
 ### Test tooling (1)
 
@@ -109,7 +117,7 @@ composer require se7enxweb/exponential-platform-legacy
 
 ### Design and templates (1)
 
-- 2026-04-10 `9e922cc` feature: Added: Six new theme directories ported from 3.x to provide the full design chain required for the site siteaccess to render correctly with notices, d
+- 2026-04-10 `9e922cc` feature: Six new theme directories ported from 3.x to provide the full design chain required for the site siteaccess to render correctly with notices, develope
 
 ### Features (1)
 
@@ -117,11 +125,11 @@ composer require se7enxweb/exponential-platform-legacy
 
 ### Repository housekeeping (1)
 
-- 2026-07-08 `8479bb7` no-user-benefit: Added: Added .gitattributes file to update GitHub listed language usage to match other repositories in account. Repo Maintinence
+- 2026-07-08 `8479bb7` no-user-benefit: Added .gitattributes file to update GitHub listed language usage to match other repositories in account. Repo Maintinence
 
 Also: 5 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-legacy](ledger/exponential-platform-legacy.md).
+- Every change with date, kind, size and release tag: [ledger of exponential-platform-legacy](../ledger/exponential-platform-legacy.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

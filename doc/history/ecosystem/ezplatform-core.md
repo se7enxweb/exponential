@@ -20,6 +20,12 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ezplatform-core
 ```
 
+## Where to read more
+
+- [Release changelog](../../changelogs/extensions/ezplatform-core.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -40,7 +46,7 @@ composer require se7enxweb/ezplatform-core
 
 ### Version numbers (1)
 
-- 2026-04-11 `d454a83` release: Updated: Version Bump to match release. Bugfix.
+- 2026-04-11 `d454a83` release: Version Bump to match release. Bugfix.
 
 ## Upstream history carried by the fork, by month
 
@@ -57,5 +63,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-core](ledger/ezplatform-core.md).
+- Every change with date, kind, size and release tag: [ledger of ezplatform-core](../ledger/ezplatform-core.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

@@ -20,6 +20,12 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/exponential-platform-v4x-dxp-skeleton
 ```
 
+## Where to read more
+
+- [DXP skeleton](../../features/6.0/platform-dxp-skeleton.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -36,9 +42,9 @@ composer require se7enxweb/exponential-platform-v4x-dxp-skeleton
 ### Composer requirements (4)
 
 - 2026-03-12 `0112871` tooling: Add project skeleton composer.json with se7enxweb/exponential-platform-dxp metapackage dependency
-- 2026-04-03 `6fa7457` tooling: Updated: Changing composer.json requirements in an initial attempt at downgrading package to Platform v4.6.x and Symfony 5.3. Forking.
-- 2026-04-03 `d5a228f` tooling: Updated: Reajusting requirements. Finetuning base composer requirements. Bugfix.
-- 2026-04-03 `ef08011` tooling: Updated: Reajusting requirements. Finetuning base composer requirements. Bugfix.
+- 2026-04-03 `6fa7457` tooling: Changing composer.json requirements in an initial attempt at downgrading package to Platform v4.6.x and Symfony 5.3. Forking.
+- 2026-04-03 `d5a228f` tooling: Reajusting requirements. Finetuning base composer requirements. Bugfix.
+- 2026-04-03 `ef08011` tooling: Reajusting requirements. Finetuning base composer requirements. Bugfix.
 
 ### Documentation (4)
 
@@ -50,7 +56,7 @@ composer require se7enxweb/exponential-platform-v4x-dxp-skeleton
 ### Bug fixes (3)
 
 - 2026-03-12 `cd0ef5c` fix: Fix nyholm/psr7 version constraint to ^1.0
-- 2026-03-21 `3d4387c` fix: Updated: Reordering recipes run order. Bugfix.
+- 2026-03-21 `3d4387c` fix: Reordering recipes run order. Bugfix.
 - 2026-04-10 `fe5528f` fix: set extra.symfony.require to 5.4.* to prevent Flex version mismatch
 
 ### Console command names (2)
@@ -60,7 +66,7 @@ composer require se7enxweb/exponential-platform-v4x-dxp-skeleton
 
 ### Exponential branding (1)
 
-- 2026-03-12 `06a2373` feature: Updated: Change package vendor/name details in composer.json and doc. Rebranding.
+- 2026-03-12 `06a2373` feature: Change package vendor/name details in composer.json and doc. Rebranding.
 
 ### Features (1)
 
@@ -72,7 +78,7 @@ composer require se7enxweb/exponential-platform-v4x-dxp-skeleton
 
 ### Package renamed to the se7enxweb vendor (1)
 
-- 2026-04-03 `c8b8b63` bc: Updated: Updated README.md to address version name and composer package name changes. Forking.
+- 2026-04-03 `c8b8b63` bc: Updated README.md to address version name and composer package name changes. Forking.
 
 Also: 2 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
@@ -90,5 +96,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of exponential-platform-v4x-dxp-skeleton](ledger/exponential-platform-v4x-dxp-skeleton.md).
+- Every change with date, kind, size and release tag: [ledger of exponential-platform-v4x-dxp-skeleton](../ledger/exponential-platform-v4x-dxp-skeleton.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

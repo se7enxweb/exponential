@@ -20,6 +20,13 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/admin-ui
 ```
 
+## Where to read more
+
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- [Release changelog](../../changelogs/extensions/admin-ui.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -43,23 +50,23 @@ composer require se7enxweb/admin-ui
 
 ### Exponential branding (3)
 
-- 2026-03-21 `68c431f3e` feature: Added: Added Exponential Platform DXP Logo SVG Image File for admin-ui. Rebranding.
-- 2026-04-16 `69fc077c3` feature: change to account credential handling (wording omitted; see the ledger line)
+- 2026-03-21 `68c431f3e` feature: Added Exponential Platform DXP Logo SVG Image File for admin-ui. Rebranding.
+- 2026-04-16 `69fc077c3` feature: translations: rebrand Ibexa DXP -> Exponential Platform DXP in messages.en.xliff  Updated 3 translation strings in messages.en.xliff to use Exponentia
 - 2026-04-17 `fece63895` feature: rebrand: update favicons to se7enxweb branding
 
 ### Package renamed to the se7enxweb vendor (3)
 
-- 2026-03-21 `4deba2de5` bc: Updated: Replacing package vendor. Rebrading.
-- 2026-03-22 `582cbedbe` bc: Updated: Replacing key encore build process internal path resolution strings to point to forked vendor storage. Bugfix.
+- 2026-03-21 `4deba2de5` bc: Replacing package vendor. Rebrading.
+- 2026-03-22 `582cbedbe` bc: Replacing key encore build process internal path resolution strings to point to forked vendor storage. Bugfix.
 - 2026-04-16 `8ea7f259c` bc: replace vendor/ibexa/admin-ui-assets with vendor/se7enxweb/admin-ui-assets in encore configs
 
 ### Composer requirements (1)
 
-- 2026-03-21 `1412184b6` tooling: Updated: Added package replacement statement to package composer.json. Bugfix.
+- 2026-03-21 `1412184b6` tooling: Added package replacement statement to package composer.json. Bugfix.
 
 ### Bug fixes (1)
 
-- 2026-03-25 `7dc60cada` fix: Updated: Bugfix for missing text field label translation strings specificly within sub items view page controls. Bugfix.
+- 2026-03-25 `7dc60cada` fix: Bugfix for missing text field label translation strings specificly within sub items view page controls. Bugfix.
 
 Also: 3 merge or funding-metadata commits by the team (no user benefit; see the coverage file notes).
 
@@ -100,5 +107,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of admin-ui-7x](ledger/admin-ui-7x.md).
+- Every change with date, kind, size and release tag: [ledger of admin-ui-7x](../ledger/admin-ui-7x.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

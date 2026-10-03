@@ -20,6 +20,12 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ezplatform-cron
 ```
 
+## Where to read more
+
+- [Release changelog](../../changelogs/extensions/ezplatform-cron.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -40,5 +46,5 @@ composer require se7enxweb/ezplatform-cron
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-cron](ledger/ezplatform-cron.md).
+- Every change with date, kind, size and release tag: [ledger of ezplatform-cron](../ledger/ezplatform-cron.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

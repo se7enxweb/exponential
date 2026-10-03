@@ -20,6 +20,13 @@ Install it with Composer (a project that already requires the platform pulls it 
 composer require se7enxweb/ezplatform-standard-design
 ```
 
+## Where to read more
+
+- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
+- [Release changelog](../../changelogs/extensions/ezplatform-standard-design.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -50,5 +57,5 @@ composer require se7enxweb/ezplatform-standard-design
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of ezplatform-standard-design](ledger/ezplatform-standard-design.md).
+- Every change with date, kind, size and release tag: [ledger of ezplatform-standard-design](../ledger/ezplatform-standard-design.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).

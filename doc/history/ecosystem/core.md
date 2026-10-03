@@ -14,6 +14,14 @@ The Exponential Platform v5 kernel. The se7enxweb changes make the installer run
 
 Install and run Exponential Platform v5 with no database server at all (SQLite), alongside MySQL, MariaDB and PostgreSQL.
 
+## Where to read more
+
+- [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
+- [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
+- [Console command names](../../specifications/6.0/platform-console-commands.md)
+- [Package map](../../specifications/6.0/platform-package-map.md)
+- [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+
 ## Counts by kind
 
 | Kind | Changes |
@@ -32,13 +40,13 @@ Install and run Exponential Platform v5 with no database server at all (SQLite),
 
 ### SQLite support (3)
 
-- 2026-04-29 `d8c0db034` feature: Updated: skip doctrine:database:create for SQLite in checkCreateDatabase()
-- 2026-04-29 `5f861df99` feature: Updated: substitute SqliteDbPlatform in importSchema() to fix composite-PK AUTOINCREMENT on SQLite
-- 2026-04-29 `93f175106` feature: Added: data/sqlite/cleandata.sql — SQLite-compatible seed data for ibexa:install ibexa-oss
+- 2026-04-29 `d8c0db034` feature: skip doctrine:database:create for SQLite in checkCreateDatabase()
+- 2026-04-29 `5f861df99` feature: substitute SqliteDbPlatform in importSchema() to fix composite-PK AUTOINCREMENT on SQLite
+- 2026-04-29 `93f175106` feature: data/sqlite/cleandata.sql — SQLite-compatible seed data for ibexa:install ibexa-oss
 
 ### Other changes to the fork (1)
 
-- 2026-04-29 `0b979991e` fix: Updated: use instanceof to resolve DBMS platform name in getKernelSQLFileForDBMS()
+- 2026-04-29 `0b979991e` fix: use instanceof to resolve DBMS platform name in getKernelSQLFileForDBMS()
 
 ## Upstream history carried by the fork, by month
 
@@ -77,5 +85,5 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Full record
 
-- Every change with date, kind, size and release tag: [ledger of core](ledger/core.md).
+- Every change with date, kind, size and release tag: [ledger of core](../ledger/core.md).
 - Overview of all platform repositories: [Ecosystem](../ecosystem.md).
