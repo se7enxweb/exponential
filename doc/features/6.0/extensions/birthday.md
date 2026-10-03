@@ -14,6 +14,13 @@ usual class and object edit and view templates. It also registers an export hand
   `data_text`, because `objectAttributeContent()` returns an `eZBirthday` object.
 * 1.3.2 (2 October): `ezinfo.php`, which the extension lacked, was added and `extension.xml` corrected, so the about page lists it.
 
+## Languages
+
+The extension carries translation files in `translations/<locale>/translation.ts`: fre-FR, ger-DE, nor-NO. The German file holds 24 messages (count `<message` in
+`translations/ger-DE/translation.ts`). The texts are looked up in the context(s) `design/standard/class/datatype`, `design/standard/content/datatype` and `kernel/classes/datatypes`. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clearing the template and content caches.
+
 ## Related
 
 * [xrowextract](xrowextract.md), [bccie](bccie.md)

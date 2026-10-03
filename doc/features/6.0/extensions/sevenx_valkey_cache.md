@@ -7,7 +7,7 @@
 * the **compiled INI cache** (`eZINI` arrays), which removes the per-request touches of `var/cache/ini/*.php` and makes INI caches safe for clusters.
 
 Entries have TTL based expiry, generation locks (no cache stampede) and reverse node and subtree indexes, so publishing content purges exactly the entries it
-affects. It needs **Exponential 6.0.15 or later**, whose kernel calls its hooks (`kernel/content/view.php` calls `sevenxValkeyCacheBlock`;
+affects. It needs **Exponential 6.0.15 or later**, whose kernel calls its hooks (`kernel/private/classes/views/content/view.php` calls `sevenxValkeyCacheBlock`;
 `lib/ezutils/classes/ezini.php` calls `sevenxValkeyINICache` from `loadCache()`, `saveCache()` and `resetCache()`), the PHP `redis` extension (or igbinary) and a
 reachable Redis or Valkey server. It first shipped on 20 July 2026 (1.0.0), and 1.0.1 documented 6.0.15 as the required platform.
 

@@ -35,6 +35,13 @@ Version 6.1.5 (2 October 2026) is current.
 If you wrote custom block tools that call the YUI widgets, port them to the jQuery modules; the server API
 did not change. See [YUI removal](../../../bc/6.0/yui-removal.md).
 
+## Languages
+
+The extension carries translation files in `translations/<locale>/translation.ts`: cat-ES, cro-HR, esl-ES, fre-FR, ger-DE, ita-IT, jpn-JP, por-BR, swe-SE. The German file holds 128 messages, 16 of them still marked unfinished (count `<message` in
+`translations/ger-DE/translation.ts`). The texts are looked up in `design/admin/...` contexts (the page editor menus; list them with `grep -o '<name>[^<]*</name>' extension/ezflow/translations/ger-DE/translation.ts | sort -u`). `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clearing the template and content caches.
+
 ## Related
 
 * [ezwebin](ezwebin.md), [ezdemo](ezdemo.md), [ezwt](ezwt.md)

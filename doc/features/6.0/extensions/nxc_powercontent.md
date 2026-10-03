@@ -27,7 +27,7 @@ Parameters: `as_object`, `group_list`, `sorts`, `limit`. Use it for admin dashbo
 
 ## Admin: Copy selected, Hide and Unhide selected (1.2.0, 21 June 2026)
 
-The extension overrides `kernel/content/action.php`, and its copy lacked the handlers for `CopyButton` and `HideButton`/`UnhideButton`. From the admin3
+The extension overrides the kernel's `content/action` view with its own `modules/content/action.php` (the module `content` of the extension), and that copy lacked the handlers for `CopyButton` and `HideButton`/`UnhideButton`. From the admin3
 sub items **More actions** menu, **Copy selected** and **Hide/Unhide selected** fell through to "Unknown content object action" and failed silently.
 Both handlers were added: Copy checks `canCreate`, collects class, section and node metadata for the browse restrictions and shows the destination
 selector; Hide/Unhide checks `can_hide`, skips nodes already in the target state and goes back to the parent view. See

@@ -81,6 +81,13 @@ shipped ones are `elephpant.png` and `ez-logo.png`).
 Exponential 6, PHP 8.1 or later, GD2 or ImageMagick, and an Exponential edit form (admin or a design that
 loads the edit form scripts).
 
+## Languages
+
+The extension carries translation files in `translations/<locale>/translation.ts`: cro-HR, ell-GR, eng-US, esl-ES, fre-FR, ger-DE, ita-IT, jpn-JP, pol-PL, por-BR. The German file holds 47 messages (count `<message` in
+`translations/ger-DE/translation.ts`). The texts are looked up in the context(s) `design/standard/ezie` and `design/standard/content/datatype`. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clearing the template and content caches.
+
 ## Related
 
 * [Chronicle](../../../history/extensions/ezie.md) and [release notes](../../../changelogs/extensions/ezie.md)

@@ -196,6 +196,13 @@ php extension/git_manager/bin/php/upgrade-policy-dump-to-backup.php
 Exponential 6, PHP 8.1 or later, a git binary the web server's user can run, GnuPG
 (`/usr/bin/gpg`) for encrypted backups, and `mysqldump` for database backups.
 
+## Languages
+
+The extension carries translation files in `translations/<locale>/translation.ts`: eng-US, ger-DE. The German file holds 199 messages (count `<message` in
+`translations/ger-DE/translation.ts`). The texts are looked up in the context(s) `extension/git_manager`, `kernel/navigationpart`, `design/admin/pagelayout` and `design/admin/parts/setup/menu`. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clearing the template and content caches.
+
 ## Related
 
 * [Chronicle](../../../history/extensions/git_manager.md) and [release notes](../../../changelogs/extensions/git_manager.md)

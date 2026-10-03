@@ -29,6 +29,13 @@ described in [YUI removal](../../../bc/6.0/yui-removal.md).
 * After updating, clear the packer output (`php bin/php/ezcache.php --clear-tag=template,content --allow-root-user`, and the `ezjscore-packer` cache) so
   packed files are rebuilt.
 
+## Languages
+
+The extension carries translation files in `translations/<locale>/translation.ts`: eng-US, ger-DE. The German file holds 13 messages (count `<message` in
+`translations/ger-DE/translation.ts`). The texts are looked up in the context(s) `extension/ezjscore/ajaxuploader` and `design/standard/content/datatype`. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clearing the template and content caches.
+
 ## Related
 
 * [Backend ezjscore services](../../../bc/6.0/backend_ezjscore_services.md)

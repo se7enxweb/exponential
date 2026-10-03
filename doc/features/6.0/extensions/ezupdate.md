@@ -121,6 +121,13 @@ does not know them yet.
   `git_manager` carries its own.
 * The license texts are `LICENSE.md` and `doc/LICENSE.md` since 1.1.8.
 
+## Languages
+
+The extension carries translation files in `translations/<locale>/translation.ts`: eng-US, ger-DE. The German file holds 280 messages (count `<message` in
+`translations/ger-DE/translation.ts`). The texts are looked up in the context(s) `extension/ezupdate`, `kernel/navigationpart` and `design/admin/parts/setup/menu`. `./console exp:ezchecktranslation ger-DE` prints statistics of the kernel's
+`share/translations/ger-DE/translation.ts` (not of this extension's file). After editing a file, refresh the compiled translation cache with `./console exp:ezgeneratetranslationcache`
+and clearing the template and content caches.
+
 ## Related
 
 * [git_manager](git_manager.md): backups before updating
