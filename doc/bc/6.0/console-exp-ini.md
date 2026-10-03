@@ -1,16 +1,32 @@
 # Changing settings from the command line: `exp:ini`
 
-From Exponential 6.0.15 one command reads and changes the INI settings of every scope of an installation:
-the global override, each siteaccess, each extension and each extension siteaccess.
+Read this page if you change INI settings by hand, from deploy scripts, or want to move settings out of
+`settings/override` into an extension. From Exponential 6.0.15 one command reads and changes the settings of every
+scope of an installation: the global override, each siteaccess, each extension and each extension siteaccess. It
+changes only the lines of the setting, keeps comments, owner and mode, backs the file up first and clears the INI
+cache.
+
+## In short
+
+| | |
+|---|---|
+| What changed | New command `exp:ini` (`bin/php/ini.php`) with the actions `get`, `set`, `add`, `rem`, `clear`, `toggle`, `copy`, `move`, `move-all`, `where`, `list`, `scopes`, `actions`. New registry `settings/ini.ini [IniCommandSettings]` for actions and scope providers added by extensions. |
+| Who is affected | Nobody is forced to change. Scripts that edit INI files with `sed` or `eZINI::save()` can switch to it. Velocity users: a change takes effect there only after `exp:velocity restart`. |
+| How to check | `php bin/php/console exp:ini --help` |
+| How to fix | Nothing to fix. Write settings with `exp:ini set ... <scope>`; preview any change with `--dry-run`. |
+
+## Quick start
 
 ```bash
-./bin/php/console exp:ini set site.ini/SiteSettings/SiteName "My site" global
-./bin/php/console exp:ini rem site.ini/SiteSettings/SiteName siteaccess:admin
-./bin/php/console exp:ini toggle site.ini/ContentSettings/ViewCaching global        # enabled <-> disabled
-./bin/php/console exp:ini toggle site.ini/TemplateSettings/Debug siteaccess:admin   # true <-> false
+php bin/php/console exp:ini set site.ini/SiteSettings/SiteName "My site" global
+php bin/php/console exp:ini rem site.ini/SiteSettings/SiteName siteaccess:admin
+php bin/php/console exp:ini toggle site.ini/ContentSettings/ViewCaching global        # enabled <-> disabled
+php bin/php/console exp:ini toggle site.ini/TemplateSettings/Debug siteaccess:admin   # true <-> false
+php bin/php/console exp:ini where site.ini/SiteSettings/SiteName                      # which file wins
 ```
 
-`php bin/php/ini.php ...` is the same command. As root, add `--allow-root-user`, as for every script.
+`php bin/php/ini.php ...` is the same command. As root, add `--allow-root-user`, as for every script. The examples
+below write `exp:ini` for short.
 
 The command does not use `eZINI::save()`, which writes the whole file again. Each file is changed line by
 line: comments, blank lines and the order of the file stay as they are, and only the lines of the changed
@@ -27,7 +43,7 @@ extension can add its own and its own scopes. The RAD survey counts them.
 | Registry | `settings/ini.ini` `[IniCommandSettings]` |
 
 All the examples below were run, either on a temporary copy of a settings tree (`--root`, see
-[Tests](#tests)) or on this installation with `--dry-run`. Paths and timestamps are as they printed.
+[Tests](#tests)) or on a reference installation with `--dry-run`. Output is shown as printed, with installation-specific names replaced.
 
 ## Settings
 
@@ -127,7 +143,7 @@ shows it. A `rem` never creates a file. It leaves the block header in place, eve
 `rem <file>/<Block> <scope>` removes a block that has no settings left. One that still has settings is
 refused, unless `--force` is given.
 
-These examples ran on a temporary root, so the ini cache was not cleared. On this installation the
+These examples ran on a temporary root, so the ini cache was not cleared. On a reference installation the
 reversible smoke test (`set`, `toggle`, `rem` of `site.ini/ExpIniSmokeTestB/Probe` in `global`, then
 `rem site.ini/ExpIniSmokeTestB global`) printed the following after each write:
 
@@ -137,7 +153,7 @@ Hint: PHP-FPM reads the change on its next request (ini cache cleared); Velocity
 ```
 
 Afterwards `settings/override/site.ini.append.php` was byte for byte what it had been, with the same owner
-and mode (`alpha:psaserv 0666`).
+and mode.
 
 ### toggle
 
@@ -169,7 +185,7 @@ Copy site.ini/SiteSettings/SiteURL from global in siteaccess:admin: settings/sit
 ### where and list
 
 `where` lists every file that sets a variable, in the order eZINI loads them. A plain value takes the last
-one. Arrays add up unless a file resets them. On this installation:
+one. Arrays add up unless a file resets them. On a reference installation:
 
 ```
 $ exp:ini where site.ini/SiteSettings/SiteName
@@ -191,7 +207,7 @@ set the variable, `where` exits with 2, because nothing is in effect:
 $ exp:ini where cronjob.ini/CronjobPart-publishing/Scripts[]
 cronjob.ini/CronjobPart-publishing/Scripts (load order of siteaccess site)
 Not loaded for this siteaccess:
- 1. extension/sevenx_alpha_settings/settings/cronjob.ini.append.php scope extension:sevenx_alpha_settings (extension not active for this siteaccess)
+ 1. extension/mysite_settings/settings/cronjob.ini.append.php scope extension:mysite_settings (extension not active for this siteaccess)
       Scripts[]=staticcache_cleanup.php
       Scripts[]=indexcontent.php
       Scripts[]=contentjobs.php
@@ -355,7 +371,7 @@ Moved 2 blocks, 2 variables: settings/siteaccess/admin/site.ini.append.php -> ex
 Moved 3 blocks, 3 variables, 2 files
 ```
 
-On this installation the same command with `--dry-run` printed the diffs of 10 files and
+On a reference installation the same command with `--dry-run` printed the diffs of 10 files and
 `Dry run: would move 60 blocks, 187 variables, 10 files`. It wrote nothing.
 
 - `--create-extension` creates `extension/<ext>/` with `settings/` (and `settings/siteaccess/<sa>/` when
@@ -465,7 +481,7 @@ cannot take over a built-in scope.
 The extension point survey (Setup > RAD, `setup/radsurvey`) has a section **Actions and scopes of exp:ini**
 (`/setup/radsurvey/(show)/inicommand`). It lists every action and every scope provider with its class,
 whether it is the kernel's or an extension's, and every registration that cannot work. The summary shows
-the number of actions and providers, here 13 actions and 2 scope providers. Setup > RAD mentions them next
+the number of actions and providers (13 actions and 2 scope providers on the reference installation). Setup > RAD mentions them next
 to the survey, and the catalogue entry *exp:ini action or settings scope* explains the mechanism with an
 example. Each registration is a line of `ini.ini` naming a class, so the survey already counts it among the
 *settings that name a class*. To avoid counting it twice, the survey's total does not add it again. The
@@ -493,3 +509,6 @@ are in `tests/tests/kernel/classes/ini/` (`expIniEditorTest`, `expIniRoundTripTe
 - [eZINI Preserves Comments on Save](eZINI_PRESERVES_COMMENTS.md)
 - [Change settings from the command line: exp:ini](../../features/6.0/exp-ini-command.md)
 - [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)
+- [The Exp Debug bar](debug-bar.md) (writes through the same engine)
+- [Exponential Console](console.md)
+- [Specification: INI override directories and placements](../../specifications/6.0/ini-override-placements.md)
