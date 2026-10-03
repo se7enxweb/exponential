@@ -1,14 +1,13 @@
 # Velocity: running Exponential in a persistent-worker web server
 
-Exponential was built for the shape of mod_php and PHP-FPM: one PHP process
-per request, torn down afterwards. **Velocity** (`./console exp:velocity`) runs
-the same installation under a modern application server that boots once and
-keeps a pool of workers alive. The result is a site that answers cached pages in
-well under a millisecond of CPU and renders uncached pages with a warm database
-connection, warm file caches and a warm opcode cache.
+This page is for administrators of an Exponential installation who want to run it under Velocity, and it is the
+entry point to everything Velocity in Exponential. Exponential was built for the shape of mod_php and PHP-FPM: one
+PHP process per request, torn down afterwards. **Velocity** (`./console exp:velocity`) runs the same installation
+under a modern application server that boots once and keeps a pool of workers alive. The result is a site that
+answers cached pages in well under a millisecond of CPU and renders uncached pages with a warm database connection,
+warm file caches and a warm opcode cache.
 
-This page is the entry point. It explains what arrived between 22 and 30
-September 2026, how to start it, which settings matter first, and where the
+Below: what arrived between 22 and 30 September 2026, how to start it, which settings matter first, and where the
 detailed guides are.
 
 ## Why you would use it
@@ -217,21 +216,9 @@ every log line carries the request's siteaccess and full address.
 
 ## Related pages
 
-- [Velocity engines](../../bc/6.0/velocity-engines.md)
-- [HTTP/2 and cache warming](../../bc/6.0/http2-and-cache-warming.md)
-- [Response cache and navigation cache](../../bc/6.0/response-cache-and-navigation.md)
-- [HTTP cache](../../bc/6.0/httpcache.md) and [SQL query cache](../../bc/6.0/sql-query-cache.md)
-- [Maintenance mode](maintenance-mode.md): Velocity pauses its caches while it is on
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Server control commands](web-server-and-solr-commands.md)
-- [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
+- Guides: [Velocity engines](../../bc/6.0/velocity-engines.md), [HTTP/2 and cache warming](../../bc/6.0/http2-and-cache-warming.md), [response cache and navigation cache](../../bc/6.0/response-cache-and-navigation.md), [HTTP cache](../../bc/6.0/httpcache.md), [SQL query cache](../../bc/6.0/sql-query-cache.md)
+- Features: [Velocity web server](velocity-web-server.md), [Velocity response cache](velocity-response-cache.md), [opcode cache and profile](velocity-opcode-cache-and-profile.md), [server control commands](web-server-and-solr-commands.md), [maintenance mode](maintenance-mode.md) (Velocity pauses its caches while it is on)
+- Specifications: [Velocity worker pool](../../specifications/6.0/velocity-worker-pool.md), [Velocity engine settings](../../specifications/6.0/velocity-engine-settings.md), [security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
-## See also
-
-- [Velocity worker pool specification](../../specifications/6.0/velocity-worker-pool.md)
-- [Velocity engine settings](../../specifications/6.0/velocity-engine-settings.md)
-- [Velocity web server](velocity-web-server.md)
-- [Velocity response cache](velocity-response-cache.md)
-- [Changelog: exponential-velocity (Exponential Velocity engine)](../../changelogs/extensions/exponential-velocity.md)
+- Changelogs: [6.0.15](../../changelogs/6.0/6.0.15.md), [Exponential Velocity engine](../../changelogs/extensions/exponential-velocity.md)
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)

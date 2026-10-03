@@ -1,8 +1,10 @@
 # Velocity packages, Docker images and binaries
 
-*Applies to: Exponential Velocity 0.0.4.28 and later. History: [August 2026](../../history/velocity/2026-08.md) (first binaries), [23 September](../../history/velocity/2026-09c.md) (platform matrix), [24 September](../../history/velocity/2026-09d.md) (packages), [25 to 30 September](../../history/velocity/2026-09e.md) (rename, `sbin/`).*
+This page is for administrators who install Velocity outside an Exponential installation: as a system service, a
+container or a single binary. An Exponential installation already has the engine through Composer and needs none of
+this (see [From Exponential](#from-exponential)). Applies to Exponential Velocity 0.0.4.28 and later.
 
-## What it is
+## Pick a form
 
 Every Velocity release is published in the forms people actually install:
 
@@ -143,9 +145,10 @@ Exponential's `exp:velocity` uses the Composer copy of the engine; the package i
 - Some recommended extensions (`mongodb`, `redis`, `memcached`) come from EPEL or Remi on EL; `qbixctl ext:check` names them.
 - Release assets exist only for tags that have a section in the engine's changelog; three early tags (`v0.0.4.21`, `v0.0.4.22`, `v0.0.4.26`) have no release.
 
-## See also
+## Related pages
 
-- Specification: [Engine settings](../../specifications/6.0/velocity-engine-settings.md) (programs and the `sbin/` and `bin/` layout), [Velocity engines](../../bc/6.0/velocity-engines.md).
-- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (package and path renames), [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md).
-- Related: [uwebserver](velocity-uwebserver.md), [HTTPS and certificates](velocity-https-certificates.md), [Q shell](velocity-q-shell.md) (`vc-qshell`).
-- History: [August](../../history/velocity/2026-08.md), [23 September](../../history/velocity/2026-09c.md), [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).
+- [uwebserver](velocity-uwebserver.md), [HTTPS and certificates](velocity-https-certificates.md), [Q shell](velocity-q-shell.md) (`vc-qshell`), [Velocity web server](velocity-web-server.md)
+- Specification: [engine settings](../../specifications/6.0/velocity-engine-settings.md) (programs and the `sbin/` and `bin/` layout)
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (package and path renames), [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md), [Velocity engines](../../bc/6.0/velocity-engines.md)
+- [Changelog: Exponential Velocity engine](../../changelogs/extensions/exponential-velocity.md)
+- History: [August 2026](../../history/velocity/2026-08.md) (first binaries), [23 September](../../history/velocity/2026-09c.md) (platform matrix), [24 September](../../history/velocity/2026-09d.md) (packages), [25 to 30 September](../../history/velocity/2026-09e.md) (rename, `sbin/`)

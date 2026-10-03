@@ -1,12 +1,12 @@
 # Velocity HTTPS and certificates
 
-*Applies to: Exponential Velocity 0.0.4.27 and later. History: [24 September](../../history/velocity/2026-09d.md) (certificate subsystem), [25 September](../../history/velocity/2026-09e.md) (SSL tab, per-domain certificates).*
+This page is for administrators who serve a site over HTTPS with Velocity. Velocity's HTTPS looks after itself. With
+no certificate configured, the server makes its own and serves HTTPS anyway. With a source configured (your own files,
+an archive, a PKCS#12 bundle, Let's Encrypt or any other ACME CA), it checks the certificate, serves it, watches it,
+renews it and swaps the new one into the running server, without a restart and without dropping a connection. Applies
+to Exponential Velocity 0.0.4.27 and later.
 
-## What it is
-
-HTTPS that looks after itself. With no certificate configured the server makes its own and serves HTTPS anyway. With a source configured (your own files, an archive, a PKCS#12 bundle, Let's Encrypt or any other ACME CA) it checks the certificate, serves it, watches it, renews it and swaps the new one into the running server, without a restart and without dropping a connection.
-
-## Why use it
+## What you can rely on
 
 - No moment when the server answers plain HTTP but not HTTPS (HTTPS comes up first).
 - A broken or expired certificate never reaches a visitor: the pair is verified (parses, not expired, key belongs to it) before use, and a self-signed certificate stands in until the real one is usable again.
@@ -133,9 +133,10 @@ Back up `ssl/`. Everything in it can be made again except the ACME account keys.
 - Private keys are written `0600`, atomically, and never logged. External programs run with an argument list, never through a shell. The ACME client verifies the CA's certificate (turn `verify` off only for a test CA).
 - Wildcards need `dns-01` with a hook program.
 
-## See also
+## Related pages
 
-- Specification: [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md), [Engine settings](../../specifications/6.0/velocity-engine-settings.md) (TLS session resumption, `--https-port`).
-- Related: [Control panel](velocity-control-panel.md) (SSL and Domains tabs), [Scheduler](velocity-scheduler.md) (renewal jobs), [Velocity web server](velocity-web-server.md).
-- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [Velocity engines](../../bc/6.0/velocity-engines.md) (`[HTTPSSettings]`).
-- History: [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md); [changelog](../../changelogs/extensions/exponential-velocity.md).
+- [Control panel](velocity-control-panel.md) (SSL and Domains tabs), [scheduler](velocity-scheduler.md) (renewal jobs), [Velocity web server](velocity-web-server.md)
+- Specifications: [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md), [engine settings](../../specifications/6.0/velocity-engine-settings.md) (TLS session resumption, `--https-port`)
+- Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [Velocity engines](../../bc/6.0/velocity-engines.md) (`[HTTPSSettings]`)
+- [Changelog: Exponential Velocity engine](../../changelogs/extensions/exponential-velocity.md)
+- History: [24 September](../../history/velocity/2026-09d.md) (certificate subsystem), [25 to 30 September](../../history/velocity/2026-09e.md) (SSL tab, per-domain certificates)
