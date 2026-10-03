@@ -124,14 +124,18 @@ window.eZOe8Dialog = (function () {
      * hidden iframe, it calls eZOEPopupUtils.selectByEmbedId( objectId, nodeId, name ) on success and
      * shows the errors as red paragraphs otherwise.
      *
-     * @param {Object} fields name, location, description, alternativeText
+     * @param {File|null} file the chosen file, null to let the server fetch fields.url instead
+     * @param {Object} fields name, location, description, alternativeText, url
      * @return Promise resolving to { objectId, nodeId, name }
      */
     var upload = function ( settings, file, fields ) {
         var body = new FormData();
         body.append( 'uploadButton', '1' );
         body.append( 'ezxform_token', settings.form_token || '' );
-        body.append( 'fileName', file, file.name );
+        if ( file )
+            body.append( 'fileName', file, file.name );
+        else
+            body.append( 'uploadUrl', fields.url || '' );
         body.append( 'objectName', fields.name || '' );
         body.append( 'ContentObjectAttribute_name', fields.name || '' );
         body.append( 'location', fields.location || 'auto' );
@@ -463,6 +467,11 @@ window.eZOe8Dialog = (function () {
         loadEmbedView: loadEmbedView,
         uploadLocations: uploadLocations,
         upload: upload,
+        // http or https address without credentials, the same first test the server makes
+        isFetchableUrl: function ( value ) {
+            value = String( value || '' ).trim();
+            return /^https?:\/\/[^\s\/?#@]+(?::\d+)?(?:[\/?#]\S*)?$/i.test( value ) && value.length <= 2048;
+        },
         escapeHtml: escapeHtml,
         showFieldError: showFieldError,
         decodeHtml: decodeHtml,

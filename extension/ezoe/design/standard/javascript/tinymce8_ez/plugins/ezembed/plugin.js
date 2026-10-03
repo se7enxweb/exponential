@@ -34,6 +34,15 @@
         'Alternative text (images)': 'Alternativtext (Bilder)',
         'Description': 'Beschreibung',
         'Upload local file': 'Datei hochladen',
+        'Upload from URL': 'Von URL hochladen',
+        'Source': 'Quelle',
+        'From your computer': 'Von Ihrem Computer',
+        'From a URL': 'Von einer URL',
+        'Address of the file (URL)': 'Adresse der Datei (URL)',
+        'https://example.com/file.jpg': 'https://beispiel.de/datei.jpg',
+        'Please enter the address of a file.': 'Bitte die Adresse einer Datei eingeben.',
+        'Please enter a valid http or https address without user name and password.': 'Bitte eine gültige http- oder https-Adresse ohne Benutzername und Passwort eingeben.',
+        'The server fetches the file from this address.': 'Der Server lädt die Datei von dieser Adresse.',
         'Uploading…': 'Wird hochgeladen …',
         'Please choose a file.': 'Bitte eine Datei auswählen.',
         'Uploaded, press OK to embed it:': 'Hochgeladen, mit OK einbetten:',
@@ -240,7 +249,7 @@
         var openDialog = function ( target ) {
             var data = Object.assign( target ? readEmbed( target ) : {
                     query: '', embedId: '', inline: false, size: settings().default_size || 'medium', align: '', view: 'embed', cssClass: ''
-                }, { uploadName: '', uploadFile: [], uploadLocation: 'auto', uploadAlt: '', uploadDescription: '' } ),
+                }, { uploadName: '', uploadFile: [], uploadSource: 'file', uploadUrl: '', uploadLocation: 'auto', uploadAlt: '', uploadDescription: '' } ),
                 state = {
                     // like the old dialog an existing embed only shows its properties until "Switch embed object"
                     choosing: !target,
@@ -342,10 +351,23 @@
                 return items;
             };
 
+            var fromUrl = function ( d ) {
+                return settings().upload_from_url !== false && ( d || data ).uploadSource === 'url';
+            };
+
             var uploadItems = function () {
-                return [
-                    { type: 'input', name: 'uploadName', label: t( 'Name' ), placeholder: t( 'The file name is used if no name is given.' ) },
-                    {
+                var urlMode = fromUrl(), items = [];
+                if ( settings().upload_from_url !== false )
+                    items.push( { type: 'listbox', name: 'uploadSource', label: t( 'Source' ), items: [
+                        { text: t( 'From your computer' ), value: 'file' }, { text: t( 'From a URL' ), value: 'url' } ] } );
+                items.push( { type: 'input', name: 'uploadName', label: t( 'Name' ), placeholder: t( 'The file name is used if no name is given.' ) } );
+                if ( urlMode )
+                    items.push(
+                        { type: 'input', name: 'uploadUrl', label: t( 'Address of the file (URL)' ), inputMode: 'url', placeholder: t( 'https://example.com/file.jpg' ) },
+                        { type: 'htmlpanel', html: '<p class="ezoe-upload-hint">' + D.escapeHtml( t( 'The server fetches the file from this address.' ) ) + '</p><p class="ezoe-upload-error" role="alert"></p>' }
+                    );
+                else
+                    items.push( {
                         type: 'dropzone', name: 'uploadFile', label: t( 'File' ),
                         dropAreaLabel: t( 'Drop a file here' ), buttonLabel: t( 'Browse for a file' ),
                         // any file like the TinyMCE 3 upload dialog, the class is chosen by upload.ini
@@ -358,14 +380,17 @@
                             } );
                             return Promise.resolve();
                         }
-                    },
+                    } );
+                if ( !urlMode )
                     // the dropzone does not show the chosen file, see showChosenFile()
-                    { type: 'htmlpanel', html: '<p class="ezoe-upload-file"></p>' },
+                    items.push( { type: 'htmlpanel', html: '<p class="ezoe-upload-file"></p>' } );
+                items.push(
                     { type: 'listbox', name: 'uploadLocation', label: t( 'Location' ), items: locations || [ { text: t( 'Loading…' ), value: 'auto' } ] },
                     { type: 'input', name: 'uploadAlt', label: t( 'Alternative text (images)' ) },
                     { type: 'input', name: 'uploadDescription', label: t( 'Description' ) },
-                    { type: 'bar', items: [ { type: 'button', name: 'uploadRun', text: t( 'Upload local file' ), buttonType: 'secondary' } ] }
-                ];
+                    { type: 'bar', items: [ { type: 'button', name: 'uploadRun', text: urlMode ? t( 'Upload from URL' ) : t( 'Upload local file' ), buttonType: 'secondary' } ] }
+                );
+                return items;
             };
 
             var spec = function () {
@@ -421,6 +446,8 @@
                         var d = dialogApi.getData();
                         if ( details.name === 'uploadFile' )
                             showChosenFile( dialogApi );
+                        else if ( details.name === 'uploadSource' )
+                            redial( dialogApi, { uploadSource: d.uploadSource, uploadFile: [] } );
                         else if ( details.name === 'inline' )
                         {
                             // embed and embed-inline have their own views, classes and custom attributes
@@ -452,7 +479,7 @@
                         if ( state.tab === 'search' && String( d.query ).trim() )
                             return runSearch( dialogApi, 0 );
                         // OK on the upload tab with a chosen file uploads it and embeds it right away
-                        if ( state.tab === 'upload' && d.uploadFile && d.uploadFile.length )
+                        if ( state.tab === 'upload' && ( fromUrl( d ) ? String( d.uploadUrl ).trim() : d.uploadFile && d.uploadFile.length ) )
                             return runUpload( dialogApi, true );
 
                         if ( !embedId )
@@ -515,8 +542,20 @@
                     dialogApi.setData( { uploadName: file.name.replace( /\.[^.]+$/, '' ) } );
             };
 
+            // the inline error line of the "From a URL" form; false when the form is not shown
+            var showUploadError = function ( message ) {
+                var el = document.querySelector( '.tox-dialog .ezoe-upload-error' );
+                if ( el )
+                    el.textContent = message;
+                else if ( message )
+                    editor.notificationManager.open( { text: message, type: 'warning', timeout: 4000 } );
+                return !!el;
+            };
+
             var fail = function ( dialogApi, e ) {
                 dialogApi.unblock();
+                if ( fromUrl( dialogApi.getData() ) && showUploadError( e.message ) )
+                    return;
                 editor.notificationManager.open( { text: e.message, type: 'error' } );
             };
 
@@ -637,14 +676,25 @@
 
             // insertAfter: embed the new object directly (OK pressed), otherwise continue on Properties
             var runUpload = function ( dialogApi, insertAfter ) {
-                var d = dialogApi.getData(), file = d.uploadFile && d.uploadFile[0];
-                if ( !file )
+                var d = dialogApi.getData(), urlMode = fromUrl( d ), file = urlMode ? null : d.uploadFile && d.uploadFile[0],
+                    url = urlMode ? String( d.uploadUrl || '' ).trim() : '';
+                if ( urlMode )
+                {
+                    if ( url === '' || !D.isFetchableUrl( url ) )
+                    {
+                        showUploadError( url === '' ? t( 'Please enter the address of a file.' ) : t( 'Please enter a valid http or https address without user name and password.' ) );
+                        return;
+                    }
+                    showUploadError( '' );
+                }
+                else if ( !file )
                 {
                     editor.notificationManager.open( { text: t( 'Please choose a file.' ), type: 'warning', timeout: 4000 } );
                     return;
                 }
                 dialogApi.block( t( 'Uploading…' ) );
                 D.upload( settings(), file, {
+                    url: url,
                     name: d.uploadName,
                     location: d.uploadLocation,
                     alternativeText: d.uploadAlt,
@@ -657,7 +707,7 @@
                     state.tab = 'properties';
                     redial( dialogApi, Object.assign( attributeDefaults( data.inline ), {
                         embedId: embedId,
-                        uploadName: '', uploadFile: [], uploadAlt: '', uploadDescription: ''
+                        uploadName: '', uploadFile: [], uploadUrl: '', uploadAlt: '', uploadDescription: ''
                     } ) );
                     editor.notificationManager.open( {
                         text: t( 'Uploaded, press OK to embed it:' ) + ' ' + result.name, type: 'success', timeout: 5000
@@ -708,7 +758,7 @@
                     // chosen in the dropzone (files can not be put back into it); a rebuild on another tab
                     // would take the focus away, e.g. from the class filter of the search
                     var d = api.getData();
-                    if ( state.choosing && state.tab === 'upload' && ( !d.uploadFile || !d.uploadFile.length ) )
+                    if ( state.choosing && state.tab === 'upload' && ( fromUrl( d ) || !d.uploadFile || !d.uploadFile.length ) )
                         redial( api );
                     else
                         state.locationsPending = true;

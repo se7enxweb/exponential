@@ -118,6 +118,15 @@
     max-width: 100%;
     height: auto;
 }
+.tox .ezoe-upload-hint {
+    margin: 0 0 4px;
+    color: #666;
+}
+.tox .ezoe-upload-error {
+    margin: 0 0 4px;
+    color: #C00;
+    font-weight: bold;
+}
 .tox .ezoe-upload-file {
     margin: 0 0 4px;
     font-weight: bold;

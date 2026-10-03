@@ -226,7 +226,7 @@ class eZContentUpload
      *
      * @return boolean
      */
-    function handleLocalFile( &$result, $filePath, $location, $existingNode, $nameString = '', $localeCode = false )
+    function handleLocalFile( &$result, $filePath, $location, $existingNode, $nameString = '', $localeCode = false, $publish = true )
     {
         $result = array( 'errors' => array(),
                          'notices' => array(),
@@ -446,6 +446,23 @@ class eZContentUpload
                     $parentNode == $parentMainNode
                 );
             }
+        }
+
+        if ( !$publish )
+        {
+            // like handleUpload(): the caller sets more attributes and publishes
+            $object->setName( $class->contentObjectName( $object ) );
+            $object->store();
+            $notPublished = $result;
+            $notPublished['contentobject'] = $object;
+            $notPublished['contentobject_id'] = $object->attribute( 'id' );
+            $notPublished['contentobject_version'] = $publishVersion;
+            $notPublished['contentobject_main_node'] = false;
+            $notPublished['contentobject_main_node_id'] = false;
+            $this->setResult( array( 'node_id' => 0,
+                                     'object_id' => $object->attribute( 'id' ),
+                                     'object_version' => $publishVersion ) );
+            return $notPublished;
         }
 
         return $this->publishObject( $result, $result['errors'], $result['notices'],

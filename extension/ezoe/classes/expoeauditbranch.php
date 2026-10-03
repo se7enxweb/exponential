@@ -14,6 +14,7 @@ class expOEAuditBranch implements expAuditTaxonomyBranch
     {
         return array(
             'content.ezoe.engine.change' => array( 'label' => 'Editor engine chosen', 'severity' => 'info', 'channel' => 'content', 'default' => 'on' ),
+            'content.ezoe.upload.url' => array( 'label' => 'File fetched from a URL by the editor', 'severity' => 'info', 'channel' => 'content', 'default' => 'on' ),
         );
     }
 }

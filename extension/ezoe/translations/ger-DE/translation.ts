@@ -1240,6 +1240,90 @@ Benötigen Sie hierzu weitere Informationen?</translation>
         <source>Click to select table size</source>
         <translation>Klicken, um die Tabellengröße zu wählen</translation>
     </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>Die Adresse ist keine gültige http- oder https-URL.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>Es können nur http- und https-Adressen abgerufen werden.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>Adressen mit Benutzername oder Passwort werden nicht akzeptiert.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>Die Adresse verweist auf einen Rechner, der vom Server für diesen Zweck nicht abgerufen werden darf.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>Der Rechnername %host konnte nicht aufgelöst werden.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>Die Adresse leitet zu oft weiter.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>Der Server antwortete mit dem Status %status, es wurde keine Datei abgerufen.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>Der Server hat eine leere Datei geliefert.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>Der Inhalt der Datei entspricht nicht dem Typ, den ihr Name angibt: %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Die Datei konnte nicht abgerufen werden.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>Das Hochladen von einer URL ist ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>Die Datei ist größer als die erlaubten %size.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>Der Server hat nicht rechtzeitig geantwortet.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Quelle</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>Von Ihrem Computer</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>Von einer URL</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>Adresse der Datei (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>Der Server lädt die Datei von dieser Adresse.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>Von URL hochladen</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>Bitte die Adresse einer Datei eingeben.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>Bitte eine gültige http- oder https-Adresse ohne Benutzername und Passwort eingeben.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

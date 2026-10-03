@@ -52,6 +52,9 @@ global. Resolution order: user preference `ezoe_engine`, siteaccess, global, the
 | `Engines[<id>]` | `tinymce3=expOETinyMCE3Engine`, `tinymce8=expOETinyMCE8Engine` | Registry of classes implementing `expOEEditorEngine`; an extension adds a third engine with one class and one line |
 | `UploadExtensionCheck` | `engine` | Server-side file type check: `engine` (non-TinyMCE-3), `always`, `disabled` |
 | `UploadFileExtensions[]` | images, documents, media | File types of the Upload tab |
+| `UploadFromUrl` | `enabled` | `enabled` / `disabled`: the "From a URL" choice on the Upload tab (both editors) |
+| `UploadFromUrlMaxSize` | `145M` | Largest file fetched from a URL (K, M, G). Only this applies, not PHP's `upload_max_filesize` |
+| `UploadFromUrlTimeout` | `300` | Total seconds a fetch may take (connecting must succeed within 5 seconds) |
 
 Check the shipped values:
 
@@ -67,6 +70,24 @@ The registry classes are `extension/ezoe/classes/expoeeditorengine.php`, `expoet
 `ezoe/upload` refuses a file whose last extension is not in `UploadFileExtensions[]`, and any name with an executable
 extension anywhere in it (`shell.php.jpg`), because a request can skip the dialog. An engine change is recorded in the
 [audit trail](audit-trail.md) as `content.ezoe.engine.change`.
+
+### Upload from a URL
+
+The Upload tab of the embed dialog (TinyMCE 8 and TinyMCE 3) offers "From your computer" or "From a URL". The server
+fetches the address and creates the object like a browser upload: same class choice (`upload.ini`), location, name and
+description fields, same embed afterwards, same permission checks and form token. The fetch is a server-side request
+for a user, so:
+
+- only `http` and `https`; no credentials in the URL; the host is resolved once, every address must be public (no
+  loopback, private, link-local, multicast, reserved, carrier-grade NAT, IPv4-mapped or NAT64 IPv6 variants) and the
+  connection is made to the checked address, so DNS rebinding cannot swap it;
+- redirects are followed by hand, at most 3, every target checked again;
+- connect timeout 5 s, total timeout `UploadFromUrlTimeout`; the size limit is enforced while the body streams to a
+  temporary file under `var/tmp/ezoe_url/` (never held in memory) and the file is deleted after the request;
+- the name comes from Content-Disposition or the URL path and is sanitized; the extension must pass
+  `UploadFileExtensions[]` (whatever `UploadExtensionCheck` says), executable names are refused, and the content
+  (finfo) must agree with the extension, executables and web pages are refused whatever the name;
+- a successful fetch is recorded as `content.ezoe.upload.url` in the audit trail.
 
 ## Tests
 

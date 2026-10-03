@@ -8,10 +8,68 @@
     <td class="column1"><label id="titlelabel" for="objectName">{'Name'|i18n('design/standard/ezoe')}</label></td>
     <td colspan="2"><input id="objectName" name="{$objectname_input_name|wash()}" size="40" type="text" value="" title="{'Name for the uploaded object, filename is used if none is specified.'|i18n('design/standard/ezoe/wai')}" /></td>
 </tr>
-<tr>
+{def $upload_from_url = ezini( 'EditorSettings', 'UploadFromUrl', 'ezoe.ini' )|ne( 'disabled' )}
+{if $upload_from_url}
+<tr id="uploadsourcerow">
+    <td class="column1">{'Source'|i18n('design/standard/ezoe')}</td>
+    <td colspan="2">
+        <label for="uploadSourceFile"><input type="radio" name="uploadSource" id="uploadSourceFile" value="file" checked="checked" /> {'From your computer'|i18n('design/standard/ezoe')}</label>
+        &nbsp;
+        <label for="uploadSourceUrl"><input type="radio" name="uploadSource" id="uploadSourceUrl" value="url" /> {'From a URL'|i18n('design/standard/ezoe')}</label>
+    </td>
+</tr>
+{/if}
+<tr id="uploadfilerow">
     <td class="column1"><label id="srclabel" for="fileName">{'File'|i18n('design/standard/ezoe')}</label></td>
     <td colspan="2"><input name="fileName" type="file" id="fileName" size="40" {$file_name_attribute} value="" title="{'Choose file to upload from your local machine.'|i18n('design/standard/ezoe/wai')}" /></td>
 </tr>
+{if $upload_from_url}
+<tr id="uploadurlrow" style="display: none;">
+    <td class="column1"><label for="uploadUrl">{'Address of the file (URL)'|i18n('design/standard/ezoe')}</label></td>
+    <td colspan="2">
+        <input id="uploadUrl" name="uploadUrl" size="53" type="text" value="" disabled="disabled" placeholder="https://example.com/file.jpg" title="{'The server fetches the file from this address.'|i18n('design/standard/ezoe')}" />
+        <div id="uploadurlerror" role="alert" style="color: #c00; font-weight: bold; margin-top: 2px;"></div>
+    </td>
+</tr>
+<script type="text/javascript">
+{literal}
+(function(){
+    var form = document.getElementById('EmbedForm'), file = document.getElementById('fileName'), url = document.getElementById('uploadUrl'),
+        fileRow = document.getElementById('uploadfilerow'), urlRow = document.getElementById('uploadurlrow'),
+        err = document.getElementById('uploadurlerror'), button = document.getElementById('uploadButton'),
+        radios = document.getElementsByName('uploadSource');
+    if ( !form || !file || !url ) return;
+    var fileLabel = button ? button.value : '';
+    var urlLabel = {/literal}{json_encode( 'Upload from URL'|i18n('design/standard/ezoe') )}{literal};
+    var urlMode = function(){ for ( var i = 0; i < radios.length; i++ ) if ( radios[i].checked ) return radios[i].value === 'url'; return false; };
+    var valid = function( v ){ return /^https?:\/\/[^\s\/?#@]+(?::\d+)?(?:[\/?#]\S*)?$/i.test( v ) && v.length <= 2048; };
+    var sync = function(){
+        var u = urlMode();
+        fileRow.style.display = u ? 'none' : '';
+        urlRow.style.display = u ? '' : 'none';
+        // a disabled field is not posted: only the chosen source reaches the server
+        file.disabled = u;
+        url.disabled = !u;
+        err.textContent = '';
+        if ( button ) button.value = u ? urlLabel : fileLabel;
+    };
+    for ( var i = 0; i < radios.length; i++ ) radios[i].onclick = sync;
+    form.addEventListener('submit', function( e ){
+        if ( !urlMode() ) return;
+        var v = url.value.replace(/^\s+|\s+$/g, '');
+        url.value = v;
+        if ( v === '' || !valid( v ) )
+        {
+            e.preventDefault();
+            err.textContent = v === '' ? {/literal}{json_encode( 'Please enter the address of a file.'|i18n('design/standard/ezoe') )}{literal} : {/literal}{json_encode( 'Please enter a valid http or https address without user name and password.'|i18n('design/standard/ezoe') )}{literal};
+            var p = document.getElementById('upload_in_progress'); if ( p ) p.style.display = 'none';
+        }
+    }, true);
+    sync();
+})();
+{/literal}
+</script>
+{/if}
 <tr id="embedlistsrcrow">
     <td class="column1"><label for="location">{'Location'|i18n('design/standard/ezoe')}</label></td>
     <td colspan="2" id="embedlistsrccontainer">

@@ -1208,6 +1208,90 @@ Do you want more information about this issue?</translation>
         <source>Click to select table size</source>
         <translation>Click to select table size</translation>
     </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>The address is not a valid http or https URL.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>Only http and https addresses can be fetched.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>Addresses with a user name or password are not accepted.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>The address points to a host that is not reachable from the server for this purpose.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>The host name %host could not be resolved.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>The address redirects too often.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>The server answered with the status %status, no file was fetched.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>The server sent an empty file.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>The content of the file is not of the type its name says: %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>The file could not be fetched.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>Upload from a URL is switched off.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>The file is larger than the allowed %size.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>The server did not answer in time.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Source</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>From your computer</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>From a URL</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>Address of the file (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>The server fetches the file from this address.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>Upload from URL</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>Please enter the address of a file.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>Please enter a valid http or https address without user name and password.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

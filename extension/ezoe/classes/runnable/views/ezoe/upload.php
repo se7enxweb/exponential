@@ -83,7 +83,26 @@ class Upload extends \Exponential\Runnable\ModuleView
             // The file types the embed dialog's upload accepts (ezoe.ini [EditorSettings] UploadFileExtensions) are
             // enforced here, not only in the browser: a request can skip the dialog
             $sentName = isset( $_FILES['fileName']['name'] ) ? (string) $_FILES['fileName']['name'] : '';
-            if ( $sentName !== '' && !\expOEEditor::uploadExtensionAllowed( $sentName ) )
+            // "From a URL": the server fetches the file, a chosen file from the computer wins
+            $uploadUrl = $sentName === '' ? trim( (string) $http->postVariable( 'uploadUrl', '' ) ) : '';
+            $fetched = false;
+            if ( $uploadUrl !== '' )
+            {
+                try
+                {
+                    $fetched = \expOEUrlFetcher::fetch( $uploadUrl );
+                }
+                catch ( \expOEUrlException $e )
+                {
+                    echo '<html><head><title>HiddenUploadFrame</title><script type="text/javascript">';
+                    echo 'window.parent.document.getElementById("upload_in_progress").style.display = "none";';
+                    echo '</script></head><body><div style="position:absolute; top: 0px; left: 0px;background-color: white; width: 100%;">';
+                    echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( $e->getMessage() ) . '</p>';
+                    echo '</div></body></html>';
+                    \eZExecution::cleanExit();
+                }
+            }
+            if ( $fetched === false && $sentName !== '' && !\expOEEditor::uploadExtensionAllowed( $sentName ) )
             {
                 echo '<html><head><title>HiddenUploadFrame</title><script type="text/javascript">';
                 echo 'window.parent.document.getElementById("upload_in_progress").style.display = "none";';
@@ -109,15 +128,31 @@ class Upload extends \Exponential\Runnable\ModuleView
 
             try
             {
-                $uploadedOk = $upload->handleUpload(
-                    $result,
-                    'fileName',
-                    $location,
-                    false,
-                    $objectName,
-                    $version->attribute( 'initial_language' )->attribute( 'locale' ),
-                    false
-                );
+                if ( $fetched !== false )
+                {
+                    // the same creation path as a browser upload, from the checked temporary file
+                    $uploadedOk = $upload->handleLocalFile(
+                        $result,
+                        $fetched['path'],
+                        $location,
+                        false,
+                        $objectName,
+                        $version->attribute( 'initial_language' )->attribute( 'locale' ),
+                        false
+                    );
+                }
+                else
+                {
+                    $uploadedOk = $upload->handleUpload(
+                        $result,
+                        'fileName',
+                        $location,
+                        false,
+                        $objectName,
+                        $version->attribute( 'initial_language' )->attribute( 'locale' ),
+                        false
+                    );
+                }
                 if ( !$uploadedOk )
                 {
                     throw new \RuntimeException( "Upload failed" );
@@ -203,6 +238,13 @@ class Upload extends \Exponential\Runnable\ModuleView
                     0,
                     \eZContentObject::RELATION_EMBED
                 );
+                if ( $fetched !== false && class_exists( 'expAudit' ) )
+                {
+                    \expAudit::event( 'content.ezoe.upload.url', array(
+                        'object' => array( 'type' => 'content_object', 'id' => $newObjectID ),
+                        'after'  => array( 'url' => $uploadUrl, 'file' => $fetched['name'], 'size' => $fetched['size'], 'type' => $fetched['type'] ),
+                        'result' => 'success' ) );
+                }
                 echo '<html><head><title>HiddenUploadFrame</title><script type="text/javascript">';
                 echo 'window.parent.eZOEPopupUtils.selectByEmbedId( ' . $newObjectID . ', ' . $newObjectNodeID . ', ' . json_encode( $newObjectName ) . ' );';
                 echo '</script></head><body></body></html>';
@@ -224,6 +266,12 @@ class Upload extends \Exponential\Runnable\ModuleView
                 foreach( $result['errors'] as $err )
                     echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( $err['description'] ) . '</p>';
                 echo '</div></body></html>';
+            }
+            finally
+            {
+                // the temporary download never outlives the request
+                if ( $fetched !== false )
+                    \expOEUrlFetcher::cleanup( $fetched );
             }
             \eZDB::checkTransactionCounter();
             \eZExecution::cleanExit();

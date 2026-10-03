@@ -161,6 +161,7 @@ var eZOe8GlobalSettings = {ldelim}
         search_classes: {json_encode( $search_classes )},
         browse_roots: {json_encode( $browse_roots )},
         upload_file_extensions: {json_encode( $input_handler.engine.config.upload_extensions )},
+        upload_from_url: {json_encode( $input_handler.engine.config.upload_from_url )},
         extension_url: {'/ezoe/'|ezurl},
         ezjscore_url: {'/ezjscore/'|ezurl},
         form_token: "@$ezxFormToken@",

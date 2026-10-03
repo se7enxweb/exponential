@@ -37,6 +37,7 @@ class expOETinyMCE8Engine extends expOEEditorEngineBase
             'license_key'        => 'gpl',
             'cache_key'          => eZOEXMLInput::getTinyMCE8CacheKey(),
             'upload_extensions'  => expOEEditor::uploadExtensions(),
+            'upload_from_url'    => expOEUrlFetcher::enabled(),
         );
     }
 }

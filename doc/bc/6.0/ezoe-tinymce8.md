@@ -76,6 +76,17 @@ Each choice through the page, the button or the service writes the audit event `
   and any name that contains an executable extension (`shell.php.jpg`), because a request can skip the dialog.
 - If an editor's upload is refused, add the type to `UploadFileExtensions[]` in an override.
 
+### Upload from a URL
+
+The Upload tab also takes the address of a file ("From a URL"; `ezoe/upload` field `uploadUrl`, class
+`expOEUrlFetcher`). Settings in `ezoe.ini [EditorSettings]`: `UploadFromUrl=enabled|disabled`,
+`UploadFromUrlMaxSize=145M` (only this limit, PHP's `upload_max_filesize` does not apply), `UploadFromUrlTimeout=300`.
+Security: http/https only, no credentials, every resolved address must be public and is the one connected to,
+at most 3 redirects each re-checked, size enforced while streaming to a temporary file under `var/tmp/ezoe_url/`,
+extension checked against `UploadFileExtensions[]` and content checked with finfo. `eZContentUpload::handleLocalFile()`
+got an optional `$publish` argument (default true) so the view can set the attributes before publishing, like
+`handleUpload()`. The kernel change needs `exp:velocity deploy --kernel`. Tests: `tests/tests/extension/ezoe/expOEUrlFetcherTest.php`.
+
 ## Other server-side notes
 
 - The TinyMCE 8 plugins call only existing endpoints (ezoe views, ezjscore functions of ezoe). They add no ezjscore
