@@ -85,6 +85,24 @@ always get the live page.
 
 Override in `settings/override/staticcache.ini.append.php` or per siteaccess.
 
+## Refreshing on publish: once each, in parallel (2026-10-01)
+
+With the static cache on, a publish refreshes the pages it touches. A no-change publish of one product used to
+spend 4975 ms of a 6 s request refreshing 24 pages: each fetched twice over HTTP (a HEAD check, which the site
+renders in full just the same, then the GET), one after the other, and ten of them were 404s on every publish.
+`eZStaticCache::fetchPages()` now fetches each page once, several at a time, and only a 2xx answer counts. The same
+publish refreshes 14 pages in about 0.5 s and stores the same 32 files. Without curl the old check-and-get is used.
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/staticcache.ini` | `CacheSettings` | `FetchConcurrency` | `8` in code (not listed in the shipped file; the fastest of 1 to 24 measured) | global |
+
+`executeActions()` and the `staticcache_cleanup` cronjob part fetch through the same method. A siteaccess with a
+`PathPrefix` stores only its front page, the pages under the prefix and pages that `PathPrefixExclude` names: a page
+of one site is no longer asked for under another site's prefix.
+
+(Section added by the October 2026 history documentation.)
+
 ## Upgrading
 
 The defaults changed; see [bc: static cache defaults](../../bc/6.0/static-cache-defaults.md).
