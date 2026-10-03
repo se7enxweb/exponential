@@ -4863,3 +4863,26 @@ place for quick reference.
   not been exercised against MongoDB. See §16 and §25.1.
 
 
+
+---
+
+## Addendum: driver and kernel fixes of 18 to 20 September 2026
+
+Added by the documentation history project. These fixes made an installation on
+MongoDB reach the same pages and the same search results as the same content on
+MySQL. See also [the chronicle for 16 to 30 September 2026](../../history/2026/2026-09b.md).
+
+| Fault | Symptom | Fix |
+|---|---|---|
+| The driver silently dropped or could not translate SQL the kernel issues constantly: row-locking suffixes, bitwise masks in `WHERE`, aggregate `SELECT`, `ORDER BY` and `LIMIT`, `IN` subqueries, `TRUNCATE`, `DROP TABLE`, session `SET`, joined `UPDATE`, `INSERT` without a column list. | `SELECT COUNT(*)` read zero, so the installer created 533 duplicate nodes; a quoted comma in a `SET` value split the assignment, leaving layout collections with a truncated query; boolean sort directions read as ascending, so date-ordered lists came oldest first. | Each statement shape is translated; counting is answered by a count; sort directions are honoured; latin-1 bytes are converted before BSON; writes that would invent a row keyed on `null` are refused and name their caller. |
+| The schema writer skipped the unique index when a primary key was a single `auto_increment` column. | Nothing enforced the primary key; the seed loader stored a second copy of every row two extensions ship. | The unique index is created; `auto_increment` values are filled from the collection's own primary index and reported by `lastSerialID`. |
+| `CREATE TABLE` at runtime had no branch. | An extension that creates a table at runtime wrote into a collection that was never prepared; ids came back empty. | `CREATE TABLE` reads the key clauses (`PRIMARY KEY`, `UNIQUE KEY`, `KEY`, a column's own `UNIQUE`) and creates the matching indexes under the names `expMongoSchema` writes (so `PRIMARY` exists for id generation). Column definitions are skipped; re-issuing an identical index is a no-op. |
+| Quoted numbers were written as strings but searched as integers. | `object_count = object_count + 1` failed (`$inc` refuses a string) and the failure was reported as a successful `UPDATE`. | The `.dba` schema is the source of numeric columns (`numericColumns()`, `castSqlLiteralForColumn()`); a text column such as `remote_id` keeps strings. |
+| Every identifier cost a full collection scan (`nextSeqID()` with `$group`). | Writing the several hundred word links of one article meant several hundred scans. | `nextAtomicID()` (O(1)); a multi-row `INSERT` reserves the whole block with one `$inc` (`reserveAtomicIDs()`). |
+| 88 of 98 pipelines were a `find()` written the long way. | An aggregation costs several times a find for the same work. | Simple `$match`/`$sort`/`$project` pipelines run as `find()`; anything else stays a pipeline. |
+| Search indexing was skipped on MongoDB while reporting success. | 14 of 284 objects indexed. | The two guards were removed; indexing takes the batched path (four statements per 500 words); attribute translations are read once per object. A clean reindex of the reference content takes about 21 seconds and leaves 237 objects indexed (233 on MySQL). |
+| The URL alias path builder gave up on an ancestor without an alias row and on a node with two alias rows. | Every link rendered as `content/view/full/<id>`. | Ancestors with no alias are skipped (a gap in the middle of a path still fails); candidates are narrowed to the rows the next element hangs off. |
+| The image reference checks used a join MongoDB lacks. | The count read as zero and 59 image files still in use were deleted. | A join-free path reads the image rows first and filters the attributes they name. Moving an image also moves its sibling translations' references. |
+| The unattended installer declared `iso-8859-1`; the search plugin was reported failing when switched off on purpose; URL alias fetch ignored the language filter. | | Declared `utf-8`; reported correctly; filter applied. |
+
+The installer now also accepts `mongodb` as `--db` for `./console exp:install`.
