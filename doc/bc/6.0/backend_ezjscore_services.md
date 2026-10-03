@@ -119,6 +119,182 @@ Register the class in `ezjscore.ini.append.php`, run `php bin/php/ezpgenerateaut
 
 ## Domains
 
+### Catalogue (`expservices`, 5 services)
+
+Discovery of the API; every call is public.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expservices::catalog::<domain>` | public |  | Every service of every domain: domain, method, summary, access, write, args, returns |
+| `expservices::schema::<domain>` | public |  | The services of one domain |
+| `expservices::service::<domain>::<method>` | public |  | One service descriptor |
+| `expservices::domains` | public |  | The domains with their class and service count |
+| `expservices::version` | public |  | The version of expservices, the envelope version and the Exponential version |
+
+### Session and authentication (`expsession`, 8 services)
+
+Remote clients sign in once and keep the session cookie; see the Authentication section.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expsession::login::<username>::<password>` | public |  | Signs in with POST username and password; the session cookie of the response is the session |
+| `expsession::logout` | user | POST | Signs out (POST with the form token) |
+| `expsession::whoami` | public |  | The current user: id, login, name, email, registered, groups |
+| `expsession::token` | public |  | The form token of this session for writes (field ezxform_token or header X-CSRF-Token) |
+| `expsession::ping` | public |  | Keeps the session alive and tells whether it is signed in |
+| `expsession::access::<module>::<function>` | user |  | Whether the user has module/function (accessWord yes, no or limited) |
+| `expsession::roles` | user |  | The roles of the user with the policies of each (module, function) |
+| `expsession::groups` | user |  | The user groups of the user |
+
+### System information (`expsystem`, 16 services)
+
+What the installation is and runs on; the secrets of the installation are never part of an answer.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expsystem::version` | public |  | The Exponential version, release, state and the PHP version |
+| `expsystem::info` | setup/system_info |  | Site name, URLs, siteaccess, database type, locale |
+| `expsystem::settings` | public |  | The public site settings: site name, default access, locale, design |
+| `expsystem::time` | public |  | The server time, time zone and the time of the request |
+| `expsystem::php` | setup/system_info |  | PHP version, SAPI, limits and OPcache state |
+| `expsystem::phpextensions::<limit>::<offset>` | setup/system_info |  | The loaded PHP extensions with their versions |
+| `expsystem::database` | setup/system_info |  | The database type, name, server version and connection state (no credentials) |
+| `expsystem::siteaccesses` | setup/system_info |  | The available siteaccesses |
+| `expsystem::siteaccess` | public |  | The siteaccess of this request |
+| `expsystem::languages` | user |  | The content languages of the installation |
+| `expsystem::locales::<limit>::<offset>` | user |  | The locales the installation knows |
+| `expsystem::health` | setup/system_info |  | Quick checks: database connection, var and cache directories writable |
+| `expsystem::directories` | setup/system_info |  | The var, storage and cache directories (relative to the installation) and whether they are writable |
+| `expsystem::statistics` | setup/system_info |  | Counts: content objects, nodes, classes, users, sessions |
+| `expsystem::load` | setup/system_info |  | The server load average and the PHP memory use of this request |
+| `expsystem::urls` | public |  | Host, root URL, index file and server URL of this request |
+
+### Settings (read-only) (`expini`, 10 services)
+
+Reads the INI settings as the siteaccess of the request sees them. Values of secrets (password, token, key ...) are masked exactly as exp:ini masks them.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expini::files::<limit>::<offset>` | setup/setup |  | The INI files of the installation (kernel, override and extension settings) |
+| `expini::groups::<file>::<limit>::<offset>` | setup/setup |  | The groups (blocks) of an INI file as the current siteaccess reads it |
+| `expini::variables::<file>::<group>` | setup/setup |  | The variables of one group with their values (secrets masked) |
+| `expini::get::<file>::<group>::<variable>` | setup/setup |  | One setting value as the current siteaccess reads it (secrets masked) |
+| `expini::has::<file>::<group>::<variable>` | setup/setup |  | Whether a group or a variable exists |
+| `expini::search::<file>::<text>::<limit>::<offset>` | setup/setup |  | Finds variables whose name contains a text, in one INI file (secrets masked) |
+| `expini::siteaccesses` | setup/setup |  | The siteaccesses that can have their own settings |
+| `expini::scopes` | setup/setup |  | The settings scopes exp:ini knows (global, siteaccesses, extensions) |
+| `expini::secret::<variable>` | setup/setup |  | Whether a variable name is treated as a secret (masked) |
+| `expini::activeextensions` | setup/setup |  | The active extensions in the order the settings read them |
+
+### Caches (`expcache`, 14 services)
+
+The clear services are writes: POST, the form token, setup/managecache, an audit event. Pass dry_run=1 to see what would be cleared.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expcache::list::<limit>::<offset>` | setup/managecache |  | Every cache with its id, name, tags and how it is cleared |
+| `expcache::tags` | setup/managecache |  | The cache tags with the cache ids each clears |
+| `expcache::describe::<id>` | setup/managecache |  | One cache by id, with its path and the size of its files |
+| `expcache::php` | setup/managecache |  | The PHP level caches: OPcache and APCu state |
+| `expcache::velocity` | setup/managecache |  | Velocity response cache: where it is, how many files, when cleared |
+| `expcache::http` | setup/managecache |  | The HTTP cache: whether it is enabled and its status |
+| `expcache::staticcache` | setup/managecache |  | The static cache: whether it is enabled and its status |
+| `expcache::query` | setup/managecache |  | The database query cache state |
+| `expcache::clear::<by>::<names>::<dry_run>` | setup/managecache | POST | Clears caches: POST by=all/tag/id, names=comma list, dry_run=1 to only report |
+| `expcache::cleartag::<tag>::<dry_run>` | setup/managecache | POST | Clears the caches of one tag (POST tag, dry_run) |
+| `expcache::clearid::<id>::<dry_run>` | setup/managecache | POST | Clears one cache by id (POST id, dry_run) |
+| `expcache::clearnode::<node_id>` | setup/managecache | POST | Clears the view cache of a node (POST node_id) |
+| `expcache::clearvelocity::<dry_run>` | setup/managecache | POST | Clears the Velocity response cache (POST dry_run) |
+| `expcache::clearopcache::<dry_run>` | setup/managecache | POST | Resets OPcache of this PHP process pool (POST dry_run) |
+
+### Cronjobs (`expcronjob`, 7 services)
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expcronjob::parts` | setup/managecronjobs |  | The cronjob parts (groups run by runcronjobs.php <part>) with their script count |
+| `expcronjob::scripts::<part>` | setup/managecronjobs |  | The scripts of one cronjob part |
+| `expcronjob::all::<limit>::<offset>` | setup/managecronjobs |  | Every part with its scripts |
+| `expcronjob::settings` | setup/managecronjobs |  | The cronjob settings: script directories, execution time limit, admin console settings |
+| `expcronjob::status` | setup/managecronjobs |  | The cronjob log files: whether they exist, their size and last change |
+| `expcronjob::deferred` | setup/managecronjobs |  | The workflow processes deferred to cron: how many wait |
+| `expcronjob::runnables::<limit>::<offset>` | setup/managecronjobs |  | The cronjobs implemented as runnables (kernel and extension) |
+
+### Extensions (`expextension`, 9 services)
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expextension::list::<limit>::<offset>` | setup/system_info |  | The active extensions with version, license and website where known |
+| `expextension::available::<limit>::<offset>` | setup/system_info |  | The extensions found in the extension directories (active or not) |
+| `expextension::info::<name>` | setup/system_info |  | The ezinfo of one extension: name, version, author, license, website |
+| `expextension::isactive::<name>` | setup/system_info |  | Whether an extension is active |
+| `expextension::accessextensions` | setup/system_info |  | The extensions active for the current siteaccess (ActiveAccessExtensions) |
+| `expextension::designextensions` | setup/system_info |  | The extensions that supply designs (DesignExtensions) |
+| `expextension::settingsfiles::<name>` | setup/system_info |  | The settings files an extension ships |
+| `expextension::directories` | setup/system_info |  | The extension root directories |
+| `expextension::count` | setup/system_info |  | The number of active and available extensions |
+
+### Packages (`exppackage`, 7 services)
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `exppackage::list::<limit>::<offset>::<type>::<repository>` | package/list |  | The packages: name, version, vendor, type, summary, installed |
+| `exppackage::view::<name>::<repository>` | package/read |  | One package: description, vendor, maintainers, dependencies, state |
+| `exppackage::files::<name>::<limit>::<offset>` | package/read |  | The file count and the simple file list of a package |
+| `exppackage::types` | package/list |  | The package types |
+| `exppackage::states` | package/list |  | The package states |
+| `exppackage::repositories` | package/list |  | The package repositories |
+| `exppackage::count` | package/list |  | The number of packages and of installed packages |
+
+### Workflows and triggers (`expworkflow`, 10 services)
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expworkflow::list::<limit>::<offset>` | setup/administrate |  | The workflows (published versions) |
+| `expworkflow::view::<id>` | setup/administrate |  | One workflow with its events |
+| `expworkflow::events::<id>` | setup/administrate |  | The events of a workflow in order |
+| `expworkflow::eventtypes` | setup/administrate |  | The registered workflow event types |
+| `expworkflow::groups` | setup/administrate |  | The workflow groups |
+| `expworkflow::triggers::<limit>::<offset>::<module>` | setup/administrate |  | The triggers: module, function, connect type and the workflow |
+| `expworkflow::trigger::<id>` | setup/administrate |  | One trigger |
+| `expworkflow::processes::<limit>::<offset>` | setup/administrate |  | The running workflow processes |
+| `expworkflow::process::<id>` | setup/administrate |  | One workflow process |
+| `expworkflow::statuses` | setup/administrate |  | The workflow status codes and names |
+
+### Velocity (`expvelocity`, 5 services)
+
+Paths of the server stay on the server and are not part of the answers.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expvelocity::status::<engine>` | setup/system_info |  | Whether Velocity runs: processes, listening ports, engine |
+| `expvelocity::engines` | setup/system_info |  | The engines Velocity knows and the configured default |
+| `expvelocity::urls` | setup/system_info |  | The URLs the server answers on |
+| `expvelocity::cache` | setup/system_info |  | The Velocity response cache: files, bytes, last cleared |
+| `expvelocity::installed` | setup/system_info |  | Whether Velocity is part of this installation |
+
+### Extension point survey (rad) (`exprad`, 7 services)
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `exprad::summary` | setup/system_info |  | The survey counts: ini files, settings, modules, operators, runnables ... |
+| `exprad::counts::<name>` | setup/system_info |  | One count of the survey by name |
+| `exprad::groups` | setup/system_info |  | The extension point groups with their counts |
+| `exprad::runnables::<limit>::<offset>::<kind>` | setup/system_info |  | The runnables (commands, cronjobs, views) with kind and owner |
+| `exprad::files::<limit>::<offset>` | setup/system_info |  | The ini files the survey reads |
+| `exprad::inicommand` | setup/system_info |  | The exp:ini actions and scope providers |
+| `exprad::contentjobtypes` | setup/system_info |  | The content job types |
+
+### Debug summary (`expdebug`, 6 services)
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expdebug::summary` | setup/setup |  | Time, SQL, memory, templates and warnings of this request with their levels (the debug bar summary) |
+| `expdebug::enabled` | setup/setup |  | Whether debug output is enabled for this request |
+| `expdebug::level` | setup/setup |  | The debug level settings of the site |
+| `expdebug::thresholds` | setup/setup |  | The warn and high thresholds of the debug bar |
+| `expdebug::engine` | user |  | Which engine serves this request (Apache, Velocity, FrankenPHP, CLI) |
+| `expdebug::phpversion` | user |  | The PHP version and SAPI of this request |
+
 
 ## Clients
 

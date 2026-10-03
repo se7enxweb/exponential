@@ -330,6 +330,15 @@ abstract class expServiceBase extends ezjscServerFunctions
         return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
     }
 
+    /** The named attributes of a persistent object as an array (missing ones are null). */
+    protected static function attrs( $object, array $names )
+    {
+        $out = array();
+        foreach ( $names as $name )
+            $out[$name] = $object->hasAttribute( $name ) ? $object->attribute( $name ) : null;
+        return $out;
+    }
+
     /** A timestamp as ISO 8601, null for 0/empty. */
     protected static function iso( $timestamp )
     {
