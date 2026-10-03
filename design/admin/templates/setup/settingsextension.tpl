@@ -187,7 +187,7 @@
         <input type="checkbox" name="Events[]" value="{$se_event.event|wash}"{if $se_event.chosen} checked="checked"{/if} />
         <span>
             <span class="se-pick-label"><code>{$se_event.event|wash}</code> <span class="se-kind{if eq( $se_event.kind, 'filter' )} is-filter{/if}">{$se_event.kind|wash}</span></span>
-            <span class="se-meta">{$se_event.what|i18n( 'design/admin/setup/rad/settings' )|wash}</span>
+            <span class="se-meta">{if $se_event.described}{$se_event.what|i18n( 'design/admin/setup/rad/settings' )|wash}{else}{$se_event.what|wash}{/if}</span>
         </span>
     </label>
 {/foreach}
