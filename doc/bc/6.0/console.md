@@ -141,9 +141,9 @@ These flags belong to the console and are not passed on:
 | `--help`, `-h` (on its own) | show the command listing |
 | `--quiet`, `-q` | no dispatch notice on stderr |
 
-## Cronjob parts and the crontab
+## Cronjob parts and the crontab (added June 2026)
 
-Added in June 2026 (`a2ef4efa50`).
+Commit `a2ef4efa50`.
 
 A cronjob part is a `[CronjobPart-<name>]` block with one or more `Scripts[]=` entries, in `settings/cronjob.ini` or
 in an extension's `settings/cronjob.ini.append.php`. The console reads the parts from those INI files, not from file
