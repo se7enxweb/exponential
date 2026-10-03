@@ -15,7 +15,7 @@ The repository holds the packages the setup wizard installs: the site packages `
 | Change | Commit | What it fixes for you |
 |---|---|---|
 | Fatal error in the installer settings during the setup wizard | `52ee7a6` | The installer computed the next siteaccess port as `setting + 1`; the setting is now cast to an integer first (`(int)$this->setting( 'access_type_value' ) + 1`), which prevents the fatal error the commit names. Applies to `ezwebin_site` and `ezwebin_site_clean`. |
-| SQLite support in the package installer | `5ce4b25` | The installer chooses `sql/sqlite/sqlite.sql` when the database is SQLite, so the site package can be installed into a SQLite database (see [SQLite database](../../features/6.0/sqlite-database.md)). A misspelt error message ("shema") was corrected in the same change. |
+| SQLite support in the package installer | `5ce4b25` | When the database is SQLite, the installer reads an extension's schema from `ezextension/<extension>/sql/sqlite/sqlite.sql`, so the site package's extensions can be installed into a SQLite database (see [SQLite database](../../features/6.0/sqlite-database.md)). A misspelt error message ("shema") was corrected in the same change. |
 | `eZArchive` and MySQL 8 | `fc49287` | The archive class uses a PHP 5 style constructor and the extension's SQL runs on MySQL 8. |
 | Blog templates on MySQL 8 | `76897e9` | Blog content templates display correctly; Composer configuration updated. |
 | Composer package name | `afa7b90`, `0646383` | Vendor and package name switched to the se7enxweb package; the licence field set to a valid value. |
@@ -39,7 +39,7 @@ A Composer plugin that installs the legacy kernel and its extensions into the ri
 |---|---|---|---|
 | 2025-08-25 | `6e8cf01` | 2.2.1 | The package is renamed `se7enxweb/exponential-legacy-installer` (it was `netgen/ezpublish-legacy-installer`) and the PHP constraint extended to include 8.2. The fork exists so that changes can be made without waiting for the upstream package. |
 | 2026-03-02 | `068ac1c` | | Funding metadata; no user-visible effect. |
-| 2026-04-11 | `d80adb2` | 2.2.2 | A `replace` shim so that this package stands in for its former counterpart in projects that still require it. |
+| 2026-04-11 | `d80adb2` | 2.2.2 | `composer.json` now declares `replace` for both `ezsystems/ezpublish-legacy-installer` and `se7enxweb/ezpublish-legacy-installer`, so Composer's resolver never installs two legacy installers side by side (the cause of classmap ambiguity warnings in `composer dump-autoload`). |
 | 2026-06-19 | `bddac7c` | 2.2.3 | **Composer 2.10 no longer fails in soft updates of the legacy kernel.** With the legacy root set to `.`, Composer 2.10 normalises `.` to an empty string inside `Filesystem::normalizePath()`; the installer then tried to copy files back to a directory with no name. The installer now resolves dot or empty paths to the absolute working directory before calling `copyThenRemove()`. Explicit directories pass through untouched, and older Composer versions work because absolute paths are valid there too. |
 
 If `composer update` fails while it copies the legacy kernel back into a project whose legacy root is `.`, upgrade this package to 2.2.3 or later.

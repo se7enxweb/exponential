@@ -34,6 +34,10 @@ How to use this section:
 | [Q shell](../../features/6.0/velocity-q-shell.md) | The drop-down console on every server view |
 | [Packages and binaries](../../features/6.0/velocity-packages-and-binaries.md) | deb, rpm, Docker, static binaries and the phar |
 | [uwebserver](../../features/6.0/velocity-uwebserver.md) | The small C static file server |
+| [Scheduler](../../features/6.0/velocity-scheduler.md) | Cron-like tasks inside the server |
+| [Static files and images](../../features/6.0/velocity-static-files-and-images.md) | Caching lifetimes, compression, directory listings, resized and converted images |
+| [WebSockets, events and rooms](../../features/6.0/velocity-websockets-and-events.md) | socket.io, rooms, Server-Sent Events |
+| [Discovery, federation and deploy](../../features/6.0/velocity-discovery-federation-and-deploy.md) | `/.well-known/` documents, forwarding events, `--deploy`, the experimental mesh |
 
 ## Reference pages
 
@@ -41,7 +45,7 @@ How to use this section:
 |---|---|
 | [Worker pool](../../specifications/6.0/velocity-worker-pool.md) | Workers, the zygote, memory, reset between requests, the compatibility layer |
 | [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md) | What the server refuses and why, request limits, headers |
-| [Engine settings](../../specifications/6.0/velocity-engine-settings.md) | Every setting by area, with default and scope |
+| [Engine settings](../../specifications/6.0/velocity-engine-settings.md) | Every setting by area, with default and scope: logging, brand, event loop, start-up pre-warm cache |
 | [Velocity engines](../../bc/6.0/velocity-engines.md) | Choosing and running an engine from Exponential |
 | [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md) | The `/etc/vc` tree |
 | [The engine archive](../../bc/6.0/phar.md) | Running Exponential from a phar |
