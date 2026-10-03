@@ -44,6 +44,16 @@ Keep the secret key out of version control.
 
 [hcaptcha](hcaptcha.md) is the same extension for the hCaptcha service.
 
+## The v3 form overrides
+
+The extension ships two template overrides in `design/standard/override/templates/full/`: `feedback_form.tpl` and `request_form.tpl` (6 August 2024). They replace the default
+feedback and request forms of the classic design with a Tailwind-styled form whose submit button is a reCAPTCHA **v3** button: it carries `class="g-recaptcha"`,
+`data-action="submit"` and `data-sitekey="{ezini( 'Keys', 'PublicKey', 'recaptcha.ini' )}"`, so the **site key comes from `recaptcha.ini [Keys] PublicKey`** (since the same day's
+refactor, which replaced a key written into the template), and the script `https://www.google.com/recaptcha/api.js` is loaded by the template. The collected information is posted to
+`content/action` as usual. These are visual and behavioural overrides: they apply to every object shown with the `feedback_form` and `request_form` classes under the design that
+lists this extension, so remove or copy them if your site uses its own form markup. Note that the v3 button only produces a token in the browser; the datatype's own server-side
+check (the `google/recaptcha` package) belongs to the **datatype** attribute, not to these overrides.
+
 ## Related
 
 * [Chronicle](../../../history/extensions/recaptcha.md) and [release notes](../../../changelogs/extensions/recaptcha.md)

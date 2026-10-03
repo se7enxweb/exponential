@@ -37,6 +37,13 @@ The comments of the shipped ini file still speak of Google's service (it was cop
 `js.hcaptcha.com` and the answer is verified server side at `https://hcaptcha.com/siteverify` by `classes/hcaptchalib.php`. Check with
 `grep -n hcaptcha.com extension/hcaptcha/classes/hcaptchalib.php`.
 
+## Template overrides (a copy of the recaptcha ones)
+
+`design/standard/override/templates/full/feedback_form.tpl` and `request_form.tpl` are the same files as in [recaptcha](recaptcha.md#the-v3-form-overrides): they read
+`ezini( 'Keys', 'PublicKey', 'recaptcha.ini' )` and load Google's `recaptcha/api.js`, **not** hCaptcha's. If both extensions are active and you use these form classes, the forms use
+the reCAPTCHA settings; the hCaptcha datatype has its own template. Check with `grep -n 'ezini\|google' extension/hcaptcha/design/standard/override/templates/full/feedback_form.tpl`.
+Remove the overrides from your design (or override them in your own extension) if you want hCaptcha on those forms.
+
 ## What changed
 
 * 1.0 (11 August 2024): the internals were reworked for the hCaptcha API, tested with Exponential 6, funding metadata.

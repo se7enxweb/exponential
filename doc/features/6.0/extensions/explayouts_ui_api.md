@@ -86,6 +86,21 @@ carry the prefix. Leaving the editor (Discard, Cancel, close) returns to: the
 `return_to` parameter, else the page that opened the editor, else a kept value inside
 this siteaccess, else the siteaccess root.
 
+## Errors, order and sharing (checked in `classes/explayoutsuiapplicationapi.php`)
+
+* **Errors are JSON.** An unknown resource answers `404 {"error":"Unknown resource."}`; anything the API cannot handle is caught (28 August 2026), written with its trace to the
+  `error.log` of the log folder and answered as `500 {"error":"Internal error","details":"<message> in <file>:<line>"}` instead of a blank page. The `details` text names a file and
+  line of the installation, so keep the API behind the admin login (it is, but do not copy such responses into public tickets).
+* **Block order is kept** (7 September 2026): create, copy, move and delete write real `position` values; before, every block was stored at position 0 and the order fell back to the
+  insertion order, so a moved block could jump back.
+* **Block endpoints act on the draft** (28 August 2026): a request for a block of a published layout is resolved to the active draft of that layout.
+* **Share links** (`<api base>/share/<layout id>`): `POST` creates a token (64 hex characters from the system's secure random source) and answers `201` with `layout_id`, `share_token`
+  and `created`; `GET` lists the layout's tokens, newest first; `DELETE share/<layout id>/<token>` removes one. Since 19 September 2026 a token that could not be stored is
+  an error (`500 {"error":"Share token could not be stored."}`), not a `201` with a token that never validates; the table `explayouts_share` is created on first use for MySQL, SQLite
+  and (since 1.3.8) Oracle.
+* The editor shell is served with a title suffix, a cache-busting version on its script and the Material Icons fonts it needs, and its `create_new_draft` and `publish` calls
+  are sent as `POST` (a wrapper around `Backbone.sync` maps the method; before, the call went out as `PATCH` and was handled as a layout load, so no draft appeared).
+
 ## Security
 
 Requests run in the authenticated admin session. Since 1.3.3 every API request other
