@@ -23,11 +23,11 @@ the classes they loaded at warm-up); clear the content view cache and Velocity's
 | The debug bar's settings, change log, IP test and cache list need `setup/setup` or `setup/managecache` | a visitor who sees the debug report could read every debug setting before | give the policy to the roles that debug |
 | The admin dashboard, menus and top tabs show a link only to a user who can open it | editors no longer see Design, Newsletter, Export tabs, Users, Upload files, Tags, Layouts, Trash entries, "Change password" without the policy | none; check a custom role |
 | `ezoe/upload` refuses a file whose type is not in `UploadFileExtensions[]` and any name with an executable extension anywhere (`shell.php.jpg`) when the user's engine is not TinyMCE 3 (`UploadExtensionCheck=engine`) | upload a `.zip` or `.pdf` with the TinyMCE 8 engine | add the type to `ezoe.ini [EditorSettings] UploadFileExtensions[]` |
-| Request rules exist and `Enabled=true`, but `RuleList[]` is empty | nothing changes until you list a rule | see [request rules](../features/6.0/request-rules.md); `php bin/php/ezrequestrules.php -s <siteaccess> --check` |
+| Request rules exist and `Enabled=true`, but `RuleList[]` is empty | nothing changes until you list a rule | see [request rules](../../features/6.0/request-rules.md); `php bin/php/ezrequestrules.php -s <siteaccess> --check` |
 
 ## Audit
 
-The [audit trail](../features/6.0/audit-trail.md) is **on by default** in every installation (the 4.x releases had
+The [audit trail](../../features/6.0/audit-trail.md) is **on by default** in every installation (the 4.x releases had
 it off). Records go to `var/<site>/log/audit/`. On an existing installation create the index tables once:
 `php update/common/scripts/6.0/createaudittables.php`. Run the `frequent` cronjob group.
 The 4.x `eZAudit::writeAudit()` calls keep working. Only Administrator holds `audit/read` and `audit/manage`.
@@ -38,7 +38,7 @@ The 4.x `eZAudit::writeAudit()` calls keep working. Only Administrator holds `au
 |---|---|
 | YUI removed from the admin designs and ezjscore 1.5.0 (`ezjsc::yui2`, `ezjsc::yui3`, `ezjsc::yui3io` load nothing) | [yui-removal.md](yui-removal.md); move code to jQuery 4 / Exponential UI |
 | `ezjsc::jquery` is jQuery 4.0.0 with Migrate 4.0.2, `ezjsc::jqueryUI` jQuery UI 1.14.2 | old templates that named jQuery 1.x features work through Migrate; to see what they use set `LocalScripts[jqueryMigrate]=jquery-migrate-4.0.2.js` (the reporting build) in `ezjscore.ini` |
-| New admin design `admin4`, new `editor` design and siteaccess for new installations | opt in with `SiteDesign=admin4` ([admin4](../features/6.0/admin4-design.md)); an old installation gets no editor siteaccess |
+| New admin design `admin4`, new `editor` design and siteaccess for new installations | opt in with `SiteDesign=admin4` ([admin4](../../features/6.0/admin4-design.md)); an old installation gets no editor siteaccess |
 | Logos of the kernel designs show the Exponential logo; the debug output is headed "Exp Debug" | custom CSS or tests that match the old heading text must change |
 | A change to a `.css` of the admin needs the template-block cache cleared (the packed `_<mtime>_all.css` link is cached in the page head); the `exp:velocity deploy --packer` option does it | `php bin/php/ezcache.php --clear-tag=template --allow-root-user` plus the content and template-block caches |
 
@@ -59,11 +59,11 @@ class by `site.ini [RunnableSettings] Implementation[<class>]=<subclass>`.
 | A copied object with an image owns its own image files; removing a draft removes all of its image files | none |
 | Removing a media attribute deletes the file only when no other media row names it | none |
 | Removing a subtree that holds every location of an object removes the object | none |
-| Removing, copying or moving above 50 nodes offers a [content job](../features/6.0/content-jobs.md) first | set `content.ini [ContentJobSettings] SynchronousLimit` |
-| Static cache refresh on publish fetches each page once, in parallel | [static cache generator](../features/6.0/static-cache-generator.md); `staticcache.ini [CacheSettings] FetchConcurrency` |
+| Removing, copying or moving above 50 nodes offers a [content job](../../features/6.0/content-jobs.md) first | set `content.ini [ContentJobSettings] SynchronousLimit` |
+| Static cache refresh on publish fetches each page once, in parallel | [static cache generator](../../features/6.0/static-cache-generator.md); `staticcache.ini [CacheSettings] FetchConcurrency` |
 | SQLite transactions queue for the write lock | [sqlite-transactions.md](sqlite-transactions.md) |
 
 ## Missing libraries
 
 A missing `vendor/` now shows a page with a repair procedure instead of PHP's raw output:
-[repair from the browser](../features/6.0/repair-from-the-browser.md), [repair.md](repair.md).
+[repair from the browser](../../features/6.0/repair-from-the-browser.md), [repair.md](repair.md).

@@ -2,7 +2,7 @@
 
 Technical summary of the audit introduced on 2026-10-02. The authoritative, much longer text is
 [doc/bc/6.0/audit.md](../../bc/6.0/audit.md); the user-level introduction is
-[the audit trail](../features/6.0/audit-trail.md) (path `doc/features/6.0/audit-trail.md`).
+[the audit trail](../../features/6.0/audit-trail.md) .
 
 ## Data model
 
@@ -62,7 +62,7 @@ recipient groups `[AlertRecipients_<name>]`.
   and the operator `audit_label`.
 - Every web response carries the header `X-Exp-Request-Id`; the same id is stored in each record the request wrote.
 - Cronjob part `cronjobs/audit.php` (class `Exponential\Cronjob\Kernel\Audit`), in its own group and in `frequent`.
-- Remote services: the read-only `expaudit` domain of [expservices](../features/6.0/remote-services-expservices.md).
+- Remote services: the read-only `expaudit` domain of [expservices](../../features/6.0/remote-services-expservices.md).
 
 Created on an existing installation with `php update/common/scripts/6.0/createaudittables.php` (every engine,
 Oracle and MongoDB included; leaves existing tables alone and indexes the files written so far).
