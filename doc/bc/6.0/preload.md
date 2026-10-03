@@ -1,29 +1,24 @@
-# Site Cache Preloader — `bin/php/preload.php`
+# Site cache preloader: `bin/php/preload.php`
 
-**Introduced:** Exponential CMS 6.0.15  
-**Location:** `bin/php/preload.php`  
-**Also available as:** `php bin/php/console exp:preload`  
-**Type:** PHP CLI script — site cache warmer
+Read this page if you clear caches on deploy and want the first visitors to get fast pages. `bin/php/preload.php`
+(also `php bin/php/console exp:preload`, new in Exponential 6.0.15) fetches your pages before any visitor does, so
+the page caches are warm, and it reports every broken link with the pages that link to it.
 
----
+## In short
 
-## What is it?
+| | |
+|---|---|
+| What changed | New script `bin/php/preload.php`: phase 1 fetches the section pages with `curl`, phase 2 spiders the site with `wget` (depth 3), then a broken link report. The same report is shown in **Setup → Preload Sites**, which runs in the background. Fragment-only links (`#main`) are no longer requested as pages. |
+| Who is affected | Nobody is forced to change. Operators who want warm caches after a deploy or a cache clear. |
+| How to check | `php bin/php/console list exp \| grep preload` |
+| How to fix | Nothing to fix. Run it after `exp:ezcache --clear-all`, or from cron. |
 
-`preload.php` warms your Exponential CMS page caches from the command line.
+Run it:
 
-When Exponential generates a page for the first time it is slower than usual
-because the cache is empty. This script fetches pages on your behalf — before
-any real visitor arrives — so the cache is already warm and every page loads
-instantly.
-
-**When to run it:**
-
-- After clearing all caches (`exp:ezcache --clear-all`)
-- After a new deployment or code update
-- After a scheduled cache expiry
-- On a cron job to keep caches continuously warm on high-traffic sites
-
----
+- after clearing all caches (`exp:ezcache --clear-all`);
+- after a deployment or code update;
+- after a scheduled cache expiry;
+- from cron, to keep a busy site warm.
 
 ## Prerequisites
 
@@ -38,16 +33,15 @@ You need:
 
 | Tool | Check with | Why |
 |---|---|---|
-| PHP 7.4+ | `php -v` | Runs the script |
+| PHP 8.1+ | `php -v` | Runs the script |
 | curl | `curl --version` | Phase 1 — fetches section pages |
 | wget | `wget --version` | Phase 2 — spiders the full site |
 
 Your Exponential site must be **running and reachable** over HTTP/HTTPS. The
 script reads `SiteURL` from `settings/site.ini` to know where to connect.
 
----
 
-## Quick-start
+## Quick start
 
 ```bash
 # Warm caches for the default siteaccess configured in site.ini
@@ -59,7 +53,6 @@ php bin/php/console exp:preload
 
 That is all you need for most sites.
 
----
 
 ## Specifying a siteaccess
 
@@ -82,7 +75,6 @@ grep AccessPath settings/siteaccess.ini
 ls settings/siteaccess/
 ```
 
----
 
 ## What the script does — step by step
 
@@ -141,7 +133,6 @@ For every URL crawled:
   └─────────────────────────────────────────┘
 ```
 
----
 
 ## Reading the output
 
@@ -180,12 +171,12 @@ address of every page that links to it.
 
 Missing pages (404) (1)
 
-  https://alpha.example.com/bold_eng/careers?nekisufiks
+  https://www.example.com/bold_eng/careers?nekisufiks
       linked from 4 pages:
-        https://alpha.example.com/
-        https://alpha.example.com/authors/tom-horvat
-        https://alpha.example.com/authors/jane-smith
-        https://alpha.example.com/authors/john-doe
+        https://www.example.com/
+        https://www.example.com/authors/tom-horvat
+        https://www.example.com/authors/jane-smith
+        https://www.example.com/authors/john-doe
 
 Open each page listed under a broken link, correct the link, then run this again.
 ```
@@ -234,7 +225,6 @@ a fragment-only `href` is discarded like any other empty one. This also removes
 a whole class of pointless requests from a bounded run: on a 250 page budget the
 crawler was spending a request per page on an address that could never exist.
 
----
 
 ## Running on a cron job
 
@@ -254,7 +244,6 @@ Add a line like this (runs every 6 hours, logs output):
 Replace `/path/to/exponential-root` with the actual path to your site and
 `sevenx_site_user` with your front-end siteaccess name.
 
----
 
 ## Running after a cache clear
 
@@ -268,14 +257,13 @@ php bin/php/console exp:ezcache --clear-all --allow-root-user
 php bin/php/console exp:preload --siteaccess=sevenx_site_user --allow-root-user
 ```
 
----
 
 ## Tips
 
 **Redirect to a log file** (useful in CI/CD or when running unattended):
 
 ```bash
-php bin/php/preload.php --siteaccess=sevenx_site_user > /tmp/preload.log 2>&1
+php bin/php/preload.php --siteaccess=sevenx_site_user > var/log/preload.log 2>&1
 ```
 
 Colors are automatically suppressed when stdout is not a terminal — the log
@@ -284,7 +272,7 @@ file will contain clean plain text.
 **See only broken links** from a previous run:
 
 ```bash
-grep "BROKEN LINK" /tmp/preload.log
+grep "BROKEN LINK" var/log/preload.log
 ```
 
 **Run just Phase 1** (section pages only, no full spider):  
@@ -292,7 +280,6 @@ There is no separate flag for this yet. To skip Phase 2, interrupt the script
 with **Ctrl+C** after Phase 1 completes — Phase 1 output is flushed
 immediately so no work is lost.
 
----
 
 ## Troubleshooting
 
@@ -339,7 +326,6 @@ without credentials. The preloader skips them gracefully. To warm
 authenticated pages you would need to handle authentication separately (beyond
 the scope of this script).
 
----
 
 ## Technical details
 
@@ -357,8 +343,10 @@ the scope of this script).
 - All PHP output is flushed immediately (`flush()`) so you see progress in real
   time even in long-running Phase 2.
 
-See also (September 2026): [Preload Sites: runs in the background](../../features/6.0/preload-sites-view.md#runs-in-the-background) (28 September 2026), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).
+## Related pages
 
-## See also
-
+- [Preload Sites: runs in the background](../../features/6.0/preload-sites-view.md#runs-in-the-background) (28 September 2026)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
 - [Static cache generator](../../features/6.0/static-cache-generator.md)
+- [HTTP/2 and cache warming](http2-and-cache-warming.md)
+- [Exponential Console](console.md)
