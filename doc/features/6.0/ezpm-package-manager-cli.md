@@ -1,5 +1,6 @@
 # ezpm: the package manager on the command line
 
+This page is for administrators who move content or whole sites between installations from the shell.
 `ezpm.php` is the command line front end of the package manager. It creates,
 fills, exports, imports, lists and installs packages (`.ezpkg` archives holding
 content, classes, templates and files) without a browser. Since July 2026
@@ -130,14 +131,11 @@ What the installer does differently since July:
 - Delayed indexing means search results appear after you rebuild the index.
 - Install into a copy first: the installer writes content.
 
-## Related
+## Related pages
 
-- [A package installer that survives big packages](package-installer-batching.md): the
-  browser installer (June 2026).
-- [Kickstarter CLI](kickstarter-cli.md): installs a whole site from `kickstart.ini`.
-- [Clean install defaults](clean-install-defaults.md)
-- Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md) (export fixes).
-- Changelog: [6.0.15](../../changelogs/6.0/6.0.15.md); upgrade notes: [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md); [Console](../../bc/6.0/console.md).
-- [Look inside a package, compare it with your site, import single items](package-compare-and-import.md)
-- [Package licenses and versions](package-licenses-and-versions.md)
-- [Install in one command](install-in-one-command.md)
+- [A package installer that survives big packages](package-installer-batching.md) (the browser installer, June 2026)
+- [Look inside a package, compare it with your site, import single items](package-compare-and-import.md), [package licenses and versions](package-licenses-and-versions.md)
+- [Kickstarter CLI](kickstarter-cli.md) (installs a whole site from `kickstart.ini`), [install in one command](install-in-one-command.md), [clean install defaults](clean-install-defaults.md)
+- [Console](../../bc/6.0/console.md), [behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- History: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md) (export fixes)

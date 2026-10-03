@@ -1,7 +1,7 @@
 # Template editor: create, order and edit overrides without touching INI files
 
-A template override says "for this class, this node or this section, use this
-template instead of the default". Exponential keeps the rules in `override.ini`.
+This page is for designers and site builders who change how a class, a node or a section looks. A template override
+says "for this class, this node or this section, use this template instead of the default". Exponential keeps the rules in `override.ini`.
 The visual template editor, in the admin under **Design > Template Editor**
 (`/visual/templatelist`), lets a designer create, reorder, change and remove
 those rules and edit the template files. Between 12 July and 20 July 2026
@@ -181,7 +181,10 @@ Parameters of the function (`kernel/content/function_definition.php`, all option
   if a change does not appear (the editor clears the global INI and override caches itself).
 - Keep a backup before bulk edits: the editor edits files on disk.
 
-## Related
+## Related pages
 
-- [Template path comments](template-path-comments.md)
-- Month page: [July 2026](../../history/2026/2026-07.md); [Template override ordering](template-override-ordering.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md); [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)
+- [Template path comments](template-path-comments.md) (see which override answered), [extension loading order](extension-loading-order.md) (which extension's override wins)
+- [Paging, sorting and page sizes](admin-list-paging.md)
+- [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md), [behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
+- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- History: [July 2026](../../history/2026/2026-07.md), [16 to 30 September 2026](../../history/2026/2026-09b.md)

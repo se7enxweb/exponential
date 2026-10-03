@@ -1,7 +1,8 @@
 # RSS: Apple Podcasts feeds, a paged feed list and safer exports
 
-Setup of what the RSS module gained in 6.0 during September 2026. The OPML
-format has its own page, [OPML exports](../../bc/6.0/opml.md).
+This page is for site owners who publish feeds or podcasts, and for administrators of sites with many feeds. It
+covers what the RSS module gained in 6.0 during September 2026: Apple Podcasts feeds, a paged feed list, feed
+addresses on the public site, and safer output. The OPML format has its own page, [OPML exports](../../bc/6.0/opml.md).
 
 ## Apple Podcasts as a feed format
 
@@ -99,14 +100,9 @@ An RSS import adds one object per item and never removes any. See
 
 Check: `grep -n "AvailableVersionList\|OPMLMaxOutlines" settings/site.ini` and `grep -n -A6 RSSListSettings settings/content.ini`.
 
-## See also
-
-- [OPML exports](../../bc/6.0/opml.md) and [RSS import cleanup](../../bc/6.0/cleanuprss.md)
-- [Syndication specification](../../specifications/6.0/syndication.md)
-- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
 ## Related pages
 
-- [Cronjobs console (the import cleanup part)](cronjobs-console.md)
-- [Paging, sorting and page sizes (the RSS list is paged)](admin-list-paging.md)
+- [OPML exports](../../bc/6.0/opml.md), [RSS import cleanup](../../bc/6.0/cleanuprss.md), [syndication specification](../../specifications/6.0/syndication.md)
+- [Cronjobs console](cronjobs-console.md) (the import cleanup part), [paging, sorting and page sizes](admin-list-paging.md) (the RSS list is paged)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Chronicle: September 2026, first half, 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)

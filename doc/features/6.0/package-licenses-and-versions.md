@@ -1,7 +1,7 @@
 # Package licenses and Semantic Versioning
 
-Every package you create in the administration (and every extension the RAD
-wizards write) now names its license from a strict list, and package versions
+This page is for anyone who creates packages or extensions to hand on. Every package you create in the
+administration (and every extension the RAD wizards write) now names its license from a strict list, and package versions
 follow Semantic Versioning. You can no longer ship a package whose license is a
 typo, and you can add your own license to the list in one settings block.
 
@@ -114,26 +114,9 @@ offered only when `package.ini` lists them.
 
 ## Related pages
 
-- [Package compare and import](package-compare-and-import.md)
-- [RAD tools](rad-tools.md)
-- [Extension metadata specification](../../specifications/6.0/extension-metadata.md)
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Package compare and import](package-compare-and-import.md), [ezpm on the command line](ezpm-package-manager-cli.md), [RAD tools](rad-tools.md)
+- [Extension metadata specification](../../specifications/6.0/extension-metadata.md), [About and Copyright pages](about-and-package-pages.md), [file consistency check and the release file list](file-consistency-check.md)
+- [The product is called Exponential](rebranding-to-exponential.md), [a clean installation that fits shared hosting](clean-install-defaults.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
-## Related pages
-
-- [The product is called Exponential](rebranding-to-exponential.md)
-- [A clean installation that fits shared hosting and says Exponential](clean-install-defaults.md)
-- [About and Copyright pages](about-and-package-pages.md)
-- [January 2025](../../history/2025/2025-01.md)
-- [July 2025](../../history/2025/2025-07.md)
-- [August 2025](../../history/2025/2025-08.md)
-- [File consistency check and the release file list](file-consistency-check.md)
-- [April 2026](../../history/2026/2026-04.md)
-
-## Related pages
-
-- [May 2026](../../history/2026/2026-05.md)
-- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)
-- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)
+- History: [16 to 30 September 2026](../../history/2026/2026-09b.md), [June 2026, second half](../../history/2026/2026-06b.md), [June 2026, first half](../../history/2026/2026-06a.md), [May 2026](../../history/2026/2026-05.md), [April 2026](../../history/2026/2026-04.md), [August 2025](../../history/2025/2025-08.md), [July 2025](../../history/2025/2025-07.md), [January 2025](../../history/2025/2025-01.md)

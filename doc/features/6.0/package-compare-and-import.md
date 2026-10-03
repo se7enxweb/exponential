@@ -1,6 +1,7 @@
 # Look inside a package, compare it with your site, import single items
 
-A content package used to be a sealed box: install it and hope. Since 29 and 30
+This page is for administrators who install content packages on a site that already has content. A content package
+used to be a sealed box: install it and hope. Since 29 and 30
 September 2026 you can browse every file in it, see how each of its content
 classes and objects differs from your site, and import only the items you
 choose, after a confirmation that lists exactly what will change.
@@ -146,19 +147,9 @@ extensions, site styles).
 
 ## Related pages
 
-- [Package licenses and versions](package-licenses-and-versions.md)
-- [Package installer batching](package-installer-batching.md)
-- [About and copyright pages](about-and-package-pages.md)
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [ezpm: the package manager on the command line](ezpm-package-manager-cli.md), [package installer batching](package-installer-batching.md), [package licenses and versions](package-licenses-and-versions.md)
+- [Kickstarter: install a whole site from one file](kickstarter-cli.md), [installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
+- [About and copyright pages](about-and-package-pages.md), [translations and languages](translations-and-languages.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
-## See also
-
-- [ezpm: the package manager on the command line](ezpm-package-manager-cli.md)
-
-## Related pages
-
-- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
-- [Kickstarter: install a whole site from one file](kickstarter-cli.md)
-- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)
+- History: [16 to 30 September 2026](../../history/2026/2026-09b.md), [June 2026, second half](../../history/2026/2026-06b.md)

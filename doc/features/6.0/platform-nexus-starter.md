@@ -1,8 +1,10 @@
 # Exponential Platform Nexus: a finished site in minutes
 
-**Repositories:** `se7enxweb/exponential-platform-nexus-starter` (Platform v5), `se7enxweb/exponential-platform-nexus` (Platform 1.x and 2.5 lines), `se7enxweb/cjw-exponential-platform-nexus` (CJW flavour).
-**Applies to:** Exponential Platform, the Symfony based sibling of Exponential 6. It is not part of the legacy kernel you may be reading this page in.
-**History:** [exponential-platform-nexus-starter](../../history/ecosystem/exponential-platform-nexus-starter.md), [exponential-platform-nexus](../../history/ecosystem/exponential-platform-nexus.md), [cjw-exponential-platform-nexus](../../history/ecosystem/cjw-exponential-platform-nexus.md).
+This page is for developers and agencies who want a complete demo website on Exponential Platform, the Symfony based
+sibling of Exponential 6, and then shape it into their own site. It is not part of the legacy kernel.
+
+**Repositories:** `se7enxweb/exponential-platform-nexus-starter` (Platform v5), `se7enxweb/exponential-platform-nexus`
+(Platform 1.x and 2.5 lines), `se7enxweb/cjw-exponential-platform-nexus` (CJW flavour).
 
 ## What it is
 
@@ -130,17 +132,11 @@ Switch from SQLite to MySQL later: set `DATABASE_URL` in `.env.local` to a MySQL
 - The Nexus 1.x line is built on the Symfony 3.4 stack; it needs the framework forks listed in [PHP 8.4 / 8.5 forks](platform-php85-framework-forks.md) to run on PHP 8.2 to 8.5.
 - The public installation guides in the repositories contain a default administrator account for the demo data. Treat it as public knowledge and change it.
 
-## Related
+## Related pages
 
-- [DXP project skeleton](platform-dxp-skeleton.md): the plain skeleton without the Nexus demo design.
-- [Legacy bridge](legacy-bridge.md): how the legacy admin and the Symfony stack run in one installation.
-- [Package map](../../specifications/6.0/platform-package-map.md) and [upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md).
-- [The ecosystem overview](../../history/ecosystem.md).
-
-## Platform ecosystem pages
-
-- Features: [Platform administration interface](platform-admin-ui-fork.md); [DXP skeleton](platform-dxp-skeleton.md); [Layouts on the platform](platform-layouts-core-fork.md); [PHP 8.5 framework forks](platform-php85-framework-forks.md); [Site bundles](platform-site-bundles.md); [SQLite for Exponential Platform](platform-sqlite-install.md); [Legacy bridge](legacy-bridge.md); [AdminNeo database manager](adminneo-database-manager.md).
-- Specifications: [Platform console command names](../../specifications/6.0/platform-console-commands.md); [Platform package map](../../specifications/6.0/platform-package-map.md); [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md); [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
-- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
-- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
-- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
+- [DXP project skeleton](platform-dxp-skeleton.md) (the plain skeleton without the Nexus demo design), [legacy bridge](legacy-bridge.md) (the legacy admin and the Symfony stack in one installation)
+- Platform features: [platform administration interface](platform-admin-ui-fork.md), [Layouts on the platform](platform-layouts-core-fork.md), [PHP 8.5 framework forks](platform-php85-framework-forks.md), [site bundles](platform-site-bundles.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [AdminNeo database manager](adminneo-database-manager.md)
+- Specifications: [platform package map](../../specifications/6.0/platform-package-map.md), [platform console command names](../../specifications/6.0/platform-console-commands.md), [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md), [legacy bridge bundle](../../specifications/6.0/legacy-bridge-bundle.md)
+- Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- Changelog: [platform changelog](../../changelogs/extensions/exponential-platform.md)
+- History: [exponential-platform-nexus-starter](../../history/ecosystem/exponential-platform-nexus-starter.md), [exponential-platform-nexus](../../history/ecosystem/exponential-platform-nexus.md), [cjw-exponential-platform-nexus](../../history/ecosystem/cjw-exponential-platform-nexus.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md)

@@ -1,11 +1,12 @@
 # Remote services: the whole admin as an HTTP API (expservices)
 
+This page is for developers who build remote admin apps or JavaScript front ends on top of Exponential.
 `extension/expservices` turns ezjscore server functions into a library of remote services, 1,122 of them as
 counted by Setup > RAD when this was written (re-count there, or with the catalogue call `expservices::catalog` shown below), so remote admin apps (desktop, iOS, Android, shell scripts) and JavaScript front ends can
 do what the admin interface does: read settings, clear caches, manage content, users, shop, feeds, media, tags,
 layouts and the audit. Added 2026-10-02 (extension version 0.1.0, first draft).
 
-Full catalogue and per-domain tables: [doc/bc/6.0/backend_ezjscore_services.md](../../bc/6.0/backend_ezjscore_services.md).
+Full catalogue and per-domain tables: [backend services guide](../../bc/6.0/backend_ezjscore_services.md).
 
 ## Call one in 30 seconds
 
@@ -84,6 +85,11 @@ step: `expportal_jquery` (jQuery 4 reference) and `expportal_reactive` (React wi
 store and one-way data flow). They call the services by catalogue name. The guide chapter "Clients" has shell and
 Python examples.
 
-Related: [the audit trail](audit-trail.md), [the bc guide](../../bc/6.0/backend_ezjscore_services.md), [specification](../../specifications/6.0/expservices.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+## Related pages
 
-See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [audit event model](../../specifications/6.0/audit-event-model.md).
+- [Backend services guide](../../bc/6.0/backend_ezjscore_services.md), [expservices specification](../../specifications/6.0/expservices.md)
+- [The audit trail](audit-trail.md), [audit event model](../../specifications/6.0/audit-event-model.md)
+- [Sub-items list columns](subitems-table-options.md) (`expsubitems_svc`), [online editor on TinyMCE 8](online-editor-tinymce8.md) (`expeditor`), [ezjscore](extensions/ezjscore.md)
+- [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [October 2026 chronicle](../../history/2026/2026-10.md)

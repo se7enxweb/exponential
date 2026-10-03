@@ -1,7 +1,7 @@
 # A package installer that survives big packages
 
-Installing a site package (the content, classes and design of a demo site) is the
-longest thing the setup wizard and **Setup > Packages** do. Since June 2026
+This page is for anyone who installs a site package from the browser and has seen it time out. Installing a site
+package (the content, classes and design of a demo site) is the longest thing the setup wizard and **Setup > Packages** do. Since June 2026
 (release 6.0.15 development, commits `277ec0ae12` and `86911400dd`) the
 installer is hardened in three ways:
 
@@ -62,16 +62,11 @@ install step's persistent data between requests (`kernel/private/classes/views/p
 no button named "Retry" exists in the templates, so reload the install step
 rather than looking for one.
 
-## Related
-
-[Chronicle: June 2026, second half](../../history/2026/2026-06b.md),
-[MongoDB database support](mongodb-database-support.md) (the wizard changes of
-the same weeks),
-[Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
-- [Kickstarter: install a whole site from one file](kickstarter-cli.md)
-- [Installing Exponential in one command](install-in-one-command.md)
-- [Look inside a package, compare it with your site, import single items](package-compare-and-import.md)
-
 ## Related pages
 
+- [ezpm: the package manager on the command line](ezpm-package-manager-cli.md), [look inside a package, compare it with your site, import single items](package-compare-and-import.md)
+- [Kickstarter: install a whole site from one file](kickstarter-cli.md), [installing Exponential in one command](install-in-one-command.md)
+- [MongoDB database support](mongodb-database-support.md) (the wizard changes of the same weeks)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Chronicle: June 2026, second half](../../history/2026/2026-06b.md)
