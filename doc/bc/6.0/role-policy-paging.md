@@ -183,8 +183,8 @@ Role 17, 401 policies:
 | `kernel/classes/ezrole.php` | `policyCount()`, `policyPage()`, stable sort |
 | `kernel/role/ezrolefunctioncollection.php` | `fetchRolePolicies()`, `fetchRolePolicyCount()` |
 | `kernel/role/function_definition.php` | `policies`, `policy_count` |
-| `kernel/role/edit.php`, `kernel/role/view.php` | one page, a count, `policy_page_uri` |
-| `kernel/role/list.php` | sorting, and the unused unbounded temp-role fetch removed |
+| `kernel/role/edit.php`, `kernel/role/view.php` | entry points; the code is in `kernel/private/classes/views/role/edit.php` and `view.php` (one page, a count, `policy_page_uri`) |
+| `kernel/role/list.php` (code in `kernel/private/classes/views/role/list.php`) | sorting, and the unused unbounded temp-role fetch removed |
 | `design/admin/templates/role/list.tpl` | the ID column and sortable headings |
 | `design/admin/templates/role/edit.tpl`, `role/view.tpl` | pager, count from the database |
 | `design/admin/templates/policies.tpl` | bounded preview per role |
@@ -194,35 +194,19 @@ Role 17, 401 policies:
 
 ## Tests
 
-```
-php ai/bin/one/make_bulk_policies.php 17 400
-ROLE=17 TOTAL=401 EZ_ADMIN_PASSWORD=... python3 ai/bin/one/test_role_policy_paging.py
-php ai/bin/one/make_bulk_policies.php remove 17
-```
+Private functional scripts exercised these screens against a role with 401 policies and against 26 roles; they are
+not shipped. The behaviours they checked, which you can check by hand on a copy of the installation:
 
-18 assertions: both screens render one page quickly, the pager exists and uses
-`(policy_offset)`, **the address keeps the role id rather than the draft's**,
-the heading counts all of them, the last page loads, and `role/list` still
-works. All passing.
+- `role/edit/<id>` and `role/view/<id>` render one page, the pager exists and uses `(policy_offset)`, the address keeps
+  the role id rather than the draft's, the heading counts all policies and the last page loads.
+- `role/list` renders one page of ten with a pager on `(offset)`, the per-page selector is intact, both headings sort,
+  each column sorts both ways, the sorted one is marked, the pager carries the sort, and a sort value that is not a
+  column is ignored.
 
-The role list has its own:
+To make many policies for a hand test, create a throwaway role (never add thousands of policies to the Administrator
+role: that edits the permissions of the account everything runs as) and remove it afterwards.
 
-```
-php ai/bin/one/make_bulk_policies.php roles 20
-EZ_ADMIN_PASSWORD=... python3 ai/bin/one/test_role_list.py
-php ai/bin/one/make_bulk_policies.php remove-roles
-```
-
-17 assertions: it renders one page of ten with a pager on `(offset)`, the last
-page loads and holds different roles, the per-page selector is intact, both
-headings sort, each column sorts both ways, the sorted one is marked, the pager
-carries the sort, and a sort value that is not a column is ignored rather than
-run. All passing, against 26 roles.
-
-`make_bulk_policies.php` also takes `role`/`remove-role`, which builds a
-throwaway role instead of adding thousands of policies to a live one — adding
-them to Administrator works, but it edits the permissions of the account
-everything runs as while it is happening.
+Read-only check that the API is in place: `grep -n "function policyCount\|function policyPage\|function movePolicy\|function sortColumnsForPolicyList\|function sortColumnsForList" kernel/classes/ezrole.php`.
 
 ---
 
@@ -318,3 +302,12 @@ debug report, on a **cold** cache, lists every template that rendered — 64 of
 them for a user group node view, `locations.tpl` and `tabs/user/policies.tpl`
 among them. On a warm cache the same page reports three, because only what was
 rendered fresh is listed: a cached page is not evidence of what a page uses.
+
+---
+
+## See also
+
+- [Paging, sorting and page sizes](../../features/6.0/admin-list-paging.md) and [Where the page sizes live](pagination-settings.md)
+- [Role and policy order](../../features/6.0/role-policy-order.md) and [Role and policy template operators](../../features/6.0/role-and-policy-template-operators.md)
+- [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

@@ -45,14 +45,18 @@ requested twice.
 ## Generate from the command line
 
 ```bash
-php bin/php/makestaticcache.php --help
-php bin/php/makestaticcache.php --site=user
-php bin/php/makestaticcache.php --site=user --site=intranet --max-pages=500 --max-depth=6
+php bin/php/makestaticcache.php --help --allow-root-user
+php bin/php/makestaticcache.php --site=user --allow-root-user
+php bin/php/makestaticcache.php --site=user --site=intranet --max-pages=500 --max-depth=6 --allow-root-user
 ```
 
-`--site` names a siteaccess and may be repeated; leave it out to generate every
-public siteaccess. `--max-pages` and `--max-depth` take the same bounds as the
-administration form.
+`--allow-root-user` is needed only when you run as root. `--site` names a
+siteaccess and may be repeated; leave it out to generate every public
+siteaccess. `--max-pages` (default 2500) and `--max-depth` (default 12) take the
+same bounds as the administration form. `--keep` adds to what is stored instead
+of replacing it; `-f`/`--force` is accepted for compatibility (a run always
+replaces what it generates unless `--keep` is given). The `--help` output above
+was run on this installation and lists exactly these options.
 
 ## Serve the files without starting the CMS
 
@@ -83,6 +87,14 @@ always get the live page.
 | `CachedURLArray[]` | `/` and `/*` | global | URLs to cache; `*` takes a subtree, a bare `/*` the whole site. Was `/`, `/news*`, `/weblog*`. |
 | `CachedSiteAccesses[]` | empty | global | Siteaccesses to generate. Empty means every entry of `site.ini [SiteAccessSettings] RelatedSiteAccessList` (or `AvailableSiteAccessList`) except those with `RequireUserLogin=true` or a `SiteURL` that is still `example.com`. |
 
+Three more keys of the shipped file are older and unchanged:
+
+| Key | Default | Scope | Meaning |
+|---|---|---|---|
+| `AlwaysUpdateArray[]` | `/` | global | URLs refreshed on every publish, whatever was published. |
+| `CronjobCacheClear` | `disabled` | global | `enabled` lets the `staticcache_cleanup` cronjob part do the clearing instead of the publish. |
+| `AppendGeneratedTime` | `true` | global | Appends a `<!-- Generated: ... -->` comment to each stored page. |
+
 Override in `settings/override/staticcache.ini.append.php` or per siteaccess.
 
 ## Refreshing on publish: once each, in parallel (2026-10-01)
@@ -101,14 +113,16 @@ publish refreshes 14 pages in about 0.5 s and stores the same 32 files. Without 
 `PathPrefix` stores only its front page, the pages under the prefix and pages that `PathPrefixExclude` names: a page
 of one site is no longer asked for under another site's prefix.
 
-(Section added by the October 2026 history documentation.)
-
 ## Upgrading
 
 The defaults changed; see [bc: static cache defaults](../../bc/6.0/static-cache-defaults.md).
 
 ## Related
 
+- [September 2026, first half: caches you can see](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 - [Cache from the console](../../bc/6.0/cache-console.md) (`exp:cache` static cache group)
 - [Site cache preloader](preload-sites-view.md)
 - [HTTP caching](../../bc/6.0/http-caching.md)
+
+See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [Velocity and the opcode cache](velocity-opcode-cache-and-profile.md).

@@ -214,7 +214,7 @@ NumberOfObjectsList[]=1000
 | `design/admin/templates/rss/edit_export_opml.tpl` | the OPML half of the edit page |
 | `design/standard/templates/rss/sortbutton.tpl` | a sortable heading inside a form |
 | `design/standard/templates/rss/pagination.tpl` | the `/rss/list` navigator |
-| `design/standard/templates/rss/sortheader.tpl` | a sortable heading as a link |
+| `design/<design>/templates/parts/sortheader.tpl` (included as `design:parts/sortheader.tpl` by the admin `rss/list.tpl`) | a sortable heading as a link |
 
 Variables the edit view sets for OPML: `rss_is_opml`, `opml_head`,
 `opml_items`, `opml_groups`, `opml_outline_types`, `opml_browser_list`,
@@ -284,21 +284,7 @@ php vendor/bin/phpunit --testsuite security     --filter eZRSSSecurityTest
 php vendor/bin/phpunit --testsuite kernel-classes --filter eZRSSExportOPMLItemTest
 ```
 
-**Functional, against a live installation.** These need a database with RSS
-exports in it and are run from the installation root:
-
-| script | |
-|---|---|
-| `ai/bin/one/test_opml_export.php` | the outlines, the document, the spec checks, the edit page |
-| `ai/bin/one/test_opml_hardening.php` | hostile values, bulk, nesting, the search, the import guards |
-| `ai/bin/one/test_rss_list_pagination.php` | `/rss/list` paging and sorting |
-| `ai/bin/one/make_rss_examples.php --count=4000` | example feeds to page through; `--remove` takes them out |
-| `ai/bin/one/make_opml_feed.php --export=2 --feeds=12` | make one export an OPML document; `--revert` puts it back |
-| `ai/bin/one/clear_rss_draft.php --export=2` | clear an edit draft left behind by an interrupted edit |
-
-Each functional script builds what it needs and removes it again. They do not
-touch an export somebody may have open, because a draft left behind locks that
-export's edit page until the timeout runs out.
+**Functional, against a live installation.** Browser and command line checks for these views are kept as private working scripts and are not shipped; the by-hand steps below are the supported equivalent, and the unit tests above need no database. Make example feeds in a copy of the installation, not in one people are editing: a draft left behind locks an export's edit page until the timeout runs out.
 
 **By hand:**
 
@@ -307,3 +293,12 @@ export's edit page until the timeout runs out.
    feeds, **Add selected feeds**.
 3. **Add group**, put feeds inside it with the *Inside* menu, **OK**.
 4. Fetch `/rss/feed/<access url>` and put it through an OPML validator.
+
+Run `php vendor/bin/phpunit --list-tests --testsuite security` to see the tests without running them (not run for this page; run them in a copy of the installation).
+
+## See also
+
+- [RSS: Apple Podcasts feeds, a paged feed list and safer exports](../../features/6.0/rss-podcast-and-feed-list.md)
+- [RSS import cleanup](cleanuprss.md)
+- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

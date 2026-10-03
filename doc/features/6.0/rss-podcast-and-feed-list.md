@@ -88,3 +88,20 @@ test list are in the Security section of [OPML exports](../../bc/6.0/opml.md).
 
 An RSS import adds one object per item and never removes any. See
 [RSS import cleanup](../../bc/6.0/cleanuprss.md), a script and a cronjob part.
+
+## Settings at a glance
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/site.ini` | `RSSSettings` | `AvailableVersionList[]` | `1.0`, `2.0`, `ATOM`, `OPML`, `ITUNES` | global |
+| `settings/site.ini` | `RSSSettings` | `OPMLMaxOutlines` | `5000` (never above 50000) | global |
+| `settings/content.ini` | `RSSListSettings` | `ItemsPerPageList[]` | `25`, `50`, `250` | global |
+
+Check: `grep -n "AvailableVersionList\|OPMLMaxOutlines" settings/site.ini` and `grep -n -A6 RSSListSettings settings/content.ini`.
+
+## See also
+
+- [OPML exports](../../bc/6.0/opml.md) and [RSS import cleanup](../../bc/6.0/cleanuprss.md)
+- [Syndication specification](../../specifications/6.0/syndication.md)
+- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

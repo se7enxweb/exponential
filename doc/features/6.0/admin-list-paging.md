@@ -47,3 +47,21 @@ The modules read their size through one helper rather than a number written in
 the module; the helper also gives the lists their paging parameters and the
 user's chosen page size. See *Where the reading happens* in
 [Where the page sizes live](../../bc/6.0/pagination-settings.md).
+
+## Settings at a glance
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/admininterface.ini` | `PaginationSettings` | `DefaultItemsPerPage` | `25` | global |
+| `settings/admininterface.ini` | `PaginationSettings` | `ItemsPerPage[<module>/<view>]` | `25` (10 for `workflow/processlist` and `state/groups`, 15 for `shop/orderlist` and `shop/customerlist`, 50 for `shop/archivelist`) | global |
+| `settings/content.ini` | `LocationsSettings` | `LocationsPerPage` | `25` | global |
+| `settings/site.ini` | `RoleSettings` | `PoliciesPerPage`, `PolicyPreviewPerRole`, `RolesPerPageList[]` | `25`, `10`, `10`/`25`/`50` | global |
+
+Check on your installation: `grep -n -A40 "^\[PaginationSettings\]" settings/admininterface.ini`. Clear the caches after a change: `php bin/php/ezcache.php --clear-all --allow-root-user`.
+
+## See also
+
+- [Where the page sizes live](../../bc/6.0/pagination-settings.md), [Role and policy paging](../../bc/6.0/role-policy-paging.md), [Locations tab paging and sorting](../../bc/6.0/locations-tab-paging-and-sorting.md)
+- [Custom items per page](custom-items-per-page.md)
+- [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

@@ -21,7 +21,7 @@ happen. It is the browser counterpart of the command line preloader described in
 Command line equivalent:
 
 ```bash
-php bin/php/preload.php
+php bin/php/preload.php --help --allow-root-user
 ```
 
 ## Behaviour worth knowing
@@ -46,9 +46,11 @@ The view is the `preload` function of the `setup` module; give a role the
 policy *setup / preload*. The progress stream (`setup/preloadstream`) is a
 view of the same module, so it goes through the same siteaccess and policy
 checks as the page. The menu entry is `settings/menu.ini`
-`Links[preload]=setup/preload`.
+`Links[preload]=setup/preload` (label `Preload Sites`, `PolicyList_preload[]=setup/preload`). The views are `preload`, `preloadjob` (starts and stops the background run) and `preloadstream`.
 
 ## Related
 
+- [September 2026, first half: Preload Sites](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run) and [the 15 September fixes](../../history/2026/2026-09a.md#15-september-paging-everywhere)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 - [Site cache preloader](../../bc/6.0/preload.md) (reading the output, cron use, troubleshooting)
 - [HTTP/2 and cache warming](../../bc/6.0/http2-and-cache-warming.md)

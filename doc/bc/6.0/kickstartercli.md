@@ -2,7 +2,7 @@
 
 **Introduced:** Exponential CMS 6.0.15
 **Location:** `bin/php/kickstarter.php`  
-**Console alias:** `php bin/php/console exp:kickstarter`  
+**Console alias:** `./console exp:kickstarter` (or `php bin/php/console exp:kickstarter`)  
 **Type:** PHP CLI setup wizard driver
 
 ---
@@ -369,8 +369,8 @@ DatabaseAction=skip
 Continue=true
 FirstName=Admin
 LastName=User
-Email=admin@example.com
-Password=publish
+Email=<e-mail address of the first administrator>
+Password=<choose a password>
 ```
 
 | Field | Description |
@@ -643,7 +643,18 @@ The `siteLanguageLocaleList` is now cast with `(array)` in both `processPostData
 
 ---
 
+## The summary ends with a finish time and duration
+
+After the summary the kickstarter prints a rule, then `Finished:` with the date, time and zone and `Elapsed:` as `hh:mm:ss (n seconds)`. Two runs of the same `kickstart.ini` otherwise print identical text, so the finish time tells a fresh run from scrollback and the elapsed time lets you compare them (`showFinishTime()` in `kernel/classes/expkickstarter.php`).
+
+Every run is also logged to `var/log/kickstart.log` with passwords masked; earlier runs are kept as `kickstart.log.1` (the last) to `kickstart.log.9`, and `EXP_KICKSTART_LOG=0` turns the log off (see `php bin/php/kickstarter.php --help`). List the steps without changing anything: `php bin/php/kickstarter.php run --list-steps`.
+
+---
+
 ## See also
 
+- [September 2026, first half: 13 September](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
+- [Kickstarter CLI (feature page)](../../features/6.0/kickstarter-cli.md) and [Install in one command](../../features/6.0/install-in-one-command.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 - `doc/bc/6.0/console.md` — the Exponential Console.
 - `kickstart.ini-dist` in the project root.

@@ -85,7 +85,7 @@ behaviour can drift between them.
 
 ### What follows the setting
 
-Twelve redirect sites across six scripts, previously hardcoded:
+Twelve redirect sites across six scripts, previously hardcoded. Each script under `kernel/shop/` is now an entry point; the code, and so the calls to `eZBasket::viewName()`, lives under `kernel/private/classes/views/shop/<script>.php` (check with `grep -n viewName kernel/private/classes/views/shop/*.php`):
 
 | File                          | Sites |
 |-------------------------------|-------|
@@ -156,11 +156,16 @@ top of the method, covering all nine uses within it.
 `eZBasket::currentBasket()` matched on `session_id` alone. A basket whose
 session had been blanked but which was already attached to an order was
 therefore returned to any request arriving without a session id, so items were
-added to a dead basket. The lookup now also requires `order_id = 0`.
+added to a dead basket. The lookup was first tightened to `order_id = 0`; that
+in turn lost the basket during checkout, because `createOrder()` sets the order
+id at its start. At HEAD the lookup hands back a basket that has no order, or
+whose order is still temporary (or was purged, in which case the basket is
+detached from it again), never one whose order is complete, and a request with
+no session id matches no basket at all.
 
 ### Address line 2 was required, line 1 was not
 
-`kernel/shop/userregister.php` validated `Street2` and ignored `Street1` — the
+`kernel/shop/userregister.php` (code in `kernel/private/classes/views/shop/userregister.php`) validated `Street2` and ignored `Street1` — the
 stray indentation on that `if` suggests it was never intended. A form filled in
 the obvious way could not be submitted and gave no clue why. Line 1 is now the
 required one.
@@ -228,3 +233,19 @@ configuration.
 The one behaviour change at the default is the `Street1`/`Street2` correction
 above: a form that previously required address line 2 now requires line 1. Any
 custom `shop/userregister.tpl` marking line 2 with an asterisk should move it.
+
+## Where to check
+
+| Claim | Command |
+|---|---|
+| Setting and default | `grep -n -A8 BasketSettings settings/shop.ini` |
+| Accessors | `grep -n "function viewName\|function viewTemplate" kernel/classes/ezbasket.php` |
+| Runtime view registration | `sed -n 50,70p kernel/shop/module.php` |
+| US account handler | `kernel/classes/shopaccounthandlers/bcusausershopaccounthandler.php` (class `bcusauserShopAccountHandler`) |
+| Worked template example | `design/standard/templates/shop/cart.tpl` |
+
+## See also
+
+- [Shop basket in the September 2026 chronicle](../../history/2026/2026-09a.md#11-september-the-basket-gets-a-name-you-choose)
+- [Order receipts](../../features/6.0/order-receipts.md) and [Store dashboard](../../features/6.0/store-dashboard.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

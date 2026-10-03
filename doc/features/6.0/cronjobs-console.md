@@ -27,8 +27,9 @@ style as `setup/managecache`.
 The console launches `runcronjobs.php`, which gained `--script`:
 
 ```bash
-php runcronjobs.php --siteaccess=user --script=notification.php
-php runcronjobs.php --siteaccess user --script notification.php
+php runcronjobs.php --siteaccess=user --script=notification.php --allow-root-user
+php runcronjobs.php --siteaccess user --script notification.php --allow-root-user
+php runcronjobs.php --help --allow-root-user     # lists --script and --list
 ```
 
 Only the file name is used, so a path cannot reach a script outside the
@@ -61,3 +62,9 @@ redirect, so a reload only reads the output again.
 The list of scripts is paged with
 `admininterface.ini [PaginationSettings] ItemsPerPage[setup/cronjobs]`; see
 [Where the page sizes live](../../bc/6.0/pagination-settings.md).
+
+## See also
+
+- [September 2026, first half: cronjobs console](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run) and [the page redesign of 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Runnable commands, cronjobs and views (specification)](../../specifications/6.0/runnable-commands-cronjobs-views.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

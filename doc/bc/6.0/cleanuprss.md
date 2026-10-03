@@ -93,11 +93,14 @@ once you trust the class list.
 ### By hand
 
 ```
-php bin/php/cleanuprss.php --dry-run
-php bin/php/cleanuprss.php
-php bin/php/cleanuprss.php --keep=50
-php bin/php/cleanuprss.php -s my_siteaccess
+php bin/php/cleanuprss.php --dry-run --allow-root-user
+php bin/php/cleanuprss.php --allow-root-user
+php bin/php/cleanuprss.php --keep=50 --allow-root-user
+php bin/php/cleanuprss.php -s my_siteaccess --allow-root-user
+./console exp:cleanuprss --dry-run --allow-root-user     # the same script through the console
 ```
+
+(`--allow-root-user` only when you run as root. The dry run was run on this installation and, with the shipped `Enabled=false`, printed the "Nothing was removed" line shown above.)
 
 | Option | |
 |---|---|
@@ -113,6 +116,7 @@ every item it would remove, by name and node id.
 
 ```
 php runcronjobs.php cleanuprss
+./console cron:cleanuprss        # the same part through the console
 ```
 
 The part is declared in `settings/cronjob.ini`:
@@ -221,17 +225,10 @@ branding goes, the attribution does not.
 
 ## Tests
 
-```
-php ai/bin/one/test_cleanuprss.php
-```
+A private functional script builds its own fixture (a folder, an active `eZRSSImport` pointing at it, twelve articles published an hour apart and one folder that must survive because its class is not on the list) and checks that each of the three conditions refuses on its own, that a dry run finds the surplus and removes nothing, that a real run leaves exactly the newest five, that the unlisted class is untouched, that a second run finds nothing, and that what was removed is recoverable from the trash. It is not shipped. To check the behaviour yourself, follow "Running it" with `--dry-run` first on a copy of the installation.
 
-Builds its own feed rather than touching a real one: a folder, an active
-`eZRSSImport` pointing at it, twelve articles published an hour apart, and one
-folder among them that must survive because its class is not on the list. Then
-it checks that each of the three conditions refuses on its own, that a dry run
-finds the surplus and removes nothing, that a real run leaves exactly the
-newest five and that they are the right five, that the unnamed class is
-untouched, that a second run finds nothing, and that what was removed is
-recoverable from the trash. It tears the fixture down afterwards.
+## See also
 
-15 assertions, all passing.
+- [RSS: feed list, podcasts and safer exports](../../features/6.0/rss-podcast-and-feed-list.md) and [OPML exports](opml.md)
+- [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

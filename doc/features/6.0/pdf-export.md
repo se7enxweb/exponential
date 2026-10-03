@@ -1,6 +1,6 @@
 # PDF export
 
-The PDF export turns content into a PDF file from **Setup > PDF export**. In
+The PDF export turns content into a PDF file from **Setup > PDF export** (`/pdf/list`, edit page `/pdf/edit`, policy `pdf/edit`). In
 6.0 it produces files that open, text that reads correctly, images that fit the
 page, real UTF-8 with a TrueType font, and a footer line you word yourself.
 
@@ -41,6 +41,7 @@ Existing installation: run the database update, see
 | `MaxImageWidth` | empty | Largest image width in points (72 to the inch). Empty means what the page has room for, paper less margins. |
 | `MaxImageHeight` | empty | The same for height. |
 | `ImageScaling` | `enabled` | Scale images down, keeping proportions. `disabled` draws them at the size handed over. |
+| `Format`, `Orientation`, `TopMargin`, `BottomMargin`, `LeftMargin`, `RightMargin` | `A4`, `portrait`, `80`, `100`, `80`, `80` | Page size and margins, unchanged by this work. |
 | `Font` | `lib/ezpdf/classes/fonts/Helvetica` | A bundled face (Helvetica, Times-Roman, Courier) or the full path of a `.ttf` file. |
 | `FontEncoding` | `WinAnsiEncoding` | Which glyph each of a simple font's 256 slots holds: `WinAnsiEncoding` (windows-1252), `MacRomanEncoding` (mac-roman) or `StandardEncoding`. |
 
@@ -61,3 +62,11 @@ instance). All keys in the table sit in
 
 The list of exports is paged by `ItemsPerPage[pdf/list]`
 ([pagination settings](../../bc/6.0/pagination-settings.md)).
+
+All keys above were read from `settings/pdf.ini` at HEAD (`grep -v '^#' settings/pdf.ini`); the `[Header]` and `[Footer]` blocks (margins, line thickness) are older and unchanged.
+
+## See also
+
+- [PDF export upgrade](../../bc/6.0/pdf-export.md) (database columns, changed defaults)
+- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

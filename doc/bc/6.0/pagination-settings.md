@@ -22,7 +22,7 @@ ItemsPerPage[shop/archivelist]=50
 | `section/list` | `ItemsPerPage[section/list]` |
 | `state/groups` | `ItemsPerPage[state/groups]` |
 | `workflow/grouplist` | `ItemsPerPage[workflow/grouplist]` |
-| `workflow/processlist` | `ItemsPerPageList_workflow_processlist[]` |
+| `workflow/processlist` | `ItemsPerPageList_workflow_processlist[]` (10, 25; `ItemsPerPage[workflow/processlist]=10` is also shipped) |
 | `oauthadmin/list` | `ItemsPerPage[oauthadmin/list]` |
 | `package/list` | `ItemsPerPage[package/list]` |
 | `pdf/list` | `ItemsPerPage[pdf/list]` |
@@ -40,6 +40,7 @@ ItemsPerPage[shop/archivelist]=50
 | `shop/productcategories` | `ItemsPerPage[shop/productcategories]` |
 | `shop/currencylist` | `ItemsPerPageList_shop_currencylist[]` |
 | `shop/productsoverview` | `ItemsPerPageList_shop_productsoverview[]` |
+| `search/stats` (search statistics) | `ItemsPerPageList_search_stats[]` (10, 25, 50) |
 | `explayouts_ui/layout_list` | `ItemsPerPage[explayouts_ui/layout_list]` |
 | `explayouts_ui/shared_layouts_list` | `ItemsPerPage[explayouts_ui/shared_layouts_list]` |
 | `explayouts_ui/components` | `ItemsPerPage[explayouts_ui/components]` |
@@ -49,7 +50,7 @@ The four `explayouts_ui` entries are shipped by that extension's own
 `settings/admininterface.ini.append.php`, so using it does not mean adding
 entries to the kernel's settings by hand.
 
-These four predate the block and keep settings of their own:
+These five predate the block and keep settings of their own:
 
 | View | Setting | File | Default |
 |---|---|---|---|
@@ -171,5 +172,14 @@ Changing the settings and reloading is the test:
 Run after any change to a settings file:
 
 ```
-php bin/php/ezcache.php --clear-all
+php bin/php/ezcache.php --clear-all --allow-root-user
 ```
+
+Read the shipped values with `grep -n -A40 "^\[PaginationSettings\]" settings/admininterface.ini`.
+
+## See also
+
+- [Paging, sorting and page sizes in the administration interface](../../features/6.0/admin-list-paging.md)
+- [Role and policy paging](role-policy-paging.md) and [Locations tab paging and sorting](locations-tab-paging-and-sorting.md)
+- [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

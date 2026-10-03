@@ -123,8 +123,7 @@ the same per-object publish report.
   created here.
 - At most `eZMultiEdit::MAX_OBJECTS` (50) at a time.
 - Nothing is published until you say so. Abandoning the page leaves internal
-  drafts, the same as editing does, and `discard_multiedit_drafts.php` clears
-  them.
+  drafts, the same as editing does, and the draft list of the ordinary editor lets you discard them.
 
 ### The trap in this, for anyone changing it
 
@@ -136,14 +135,12 @@ no location at all**: status 1, no row in `ezcontentobject_tree`, invisible in
 every list and impossible to find.
 
 So `createDrafts()` returns `objectID => version`, and the view seeds
-`MultiEditDraft` with it before the selection is opened. `test_multiedit_create.py`
-asserts the created items really appear under their parent afterwards, which is
-the only check that catches this.
+`MultiEditDraft` with it before the selection is opened. After creating, check that the new items really appear under their parent: it is the only check that catches this.
 
 ## Autosave
 
 Drafts are saved automatically, on the settings the ordinary editor uses -
-`autosave.ini` `[AutosaveSettings] Interval` and `TrackUserInput`. Turn
+`autosave.ini` `[AutosaveSettings] Interval` (default 180 seconds) and `TrackUserInput` (default `enabled`), shipped by the `ezautosave` extension in `extension/ezautosave/settings/autosave.ini.append.php`. Turn
 autosave off there, or deactivate the `ezautosave` extension, and it is off
 here too. A small line beside the collapse controls says what is happening.
 
@@ -225,8 +222,7 @@ Opening the form creates an internal draft per object. Until you publish or
 discard, the ordinary editor will show "you have a draft" for those objects.
 Abandoning the page leaves them behind.
 
-`ai/bin/one/discard_multiedit_drafts.php 77,115,129` clears them (honours
-`DRY_RUN=1`).
+The ordinary editor's "you have a draft" notice lets you discard each one.
 
 ### Limits and permissions
 
@@ -324,9 +320,7 @@ are also run as an account that may edit **one subtree and nothing else**:
 | adopt another user's draft on an object it may not touch | refused |
 | discard that draft | refused; the version is still there afterwards |
 
-`ai/bin/one/multiedit_test_user.php make` builds the account, its subtree and
-one item inside it, and prints the login; `remove` takes all of it away again.
-`ai/bin/one/test_multiedit_permissions.py` is the run.
+To repeat this, make a test account with a role limited to one subtree on a copy of the installation (the scripts used for the original check are private), and try the four attempts above.
 
 Two things that account is worth keeping in mind for:
 
@@ -339,21 +333,21 @@ Two things that account is worth keeping in mind for:
   is why the script verifies `loginUser()` before reporting success.
 ### Covered by
 
-`ai/bin/one/test_multiedit_security.py` - each case above, as a regression.
-It needs a draft owned by another user; `OTHER_OBJECT` and `OTHER_VERSION` name
-one.
+Private regression scripts covered each case above (draft ownership, open redirect, type confusion); they are not shipped. To repeat the draft-ownership case by hand you need a draft owned by another user and its object and version numbers.
+
 ## Files
 
 | file | part |
 | --- | --- |
 | `kernel/content/module.php` | the `multiedit` view declaration |
-| `kernel/content/multiedit.php` | the view: selection, drafts, store, publish, draw |
+| `kernel/content/multiedit.php` | the view's entry point; the code is in `kernel/private/classes/views/content/multiedit.php` |
 | `kernel/content/multiedit_functions.php` | `eZMultiEdit`, all the working parts |
 | `design/admin/templates/content/multiedit.tpl` | the form |
 | `design/admin/templates/content/searchresult.tpl` | checkbox column and the button |
 | `design/admin/templates/children_detailed.tpl` | the `Edit selected` and `Create multiple new` labels, and the url |
-| `design/admin/javascript/ezajaxsubitems_datatable.js` | the More actions entry and the Create multiple new button |
-| `design/admin/stylesheets/theme/yui_menu.css` | the icon for that menu entry |
+| `design/admin/javascript/ezajaxsubitems_expdatatable.js` (and the `admin4` copy) | the More actions entry and the Create multiple new button |
+| `design/admin/stylesheets/theme/admin_datatable.css` (and the `admin4` copy) | the styling for that menu entry |
+| `design/admin4/templates/content/multiedit.tpl` | the admin4 copy of the form |
 
 The form includes `design:content/edit_attribute.tpl` - the same include the
 single object editor uses - and gives it the same variables
@@ -363,16 +357,7 @@ template actually draws from.
 
 ## Tests
 
-| script | covers |
-| --- | --- |
-| `ai/bin/one/test_multiedit.py` | the view renders, groups, carries drafts, emits unique attribute names |
-| `ai/bin/one/test_multiedit_entrypoints.py` | More actions and search, both round trips, Discard returns |
-| `ai/bin/one/test_multiedit_create.py` | Create multiple new: the button, the chooser, the drafts, publishing, and that the new items really get a location |
-| `ai/bin/one/test_multiedit_autosave.py` | autosave: the indicator, the settings, that a change stores every draft without publishing |
-| `ai/bin/one/test_multiedit_security.py` | draft ownership, open redirect, type confusion |
-| `ai/bin/one/test_multiedit_permissions.py` | the same checks as a user restricted to one subtree |
-
-Both need `EZ_ADMIN_PASSWORD`.
+Private browser scripts covered: the view renders, groups, carries drafts and emits unique attribute names; More actions and search both round trip and Discard returns; Create multiple new (the button, the chooser, the drafts, publishing and that new items get a location); autosave (the indicator, the settings, that a change stores every draft without publishing); security (draft ownership, open redirect, type confusion); and the same checks as a user restricted to one subtree. They are not shipped. Do the "By hand" checks in the sections above on a copy of the installation. Check the view is registered: `grep -n -A8 "multiedit" kernel/content/module.php`.
 
 ## Known gaps
 
@@ -391,3 +376,10 @@ Both need `EZ_ADMIN_PASSWORD`.
   chooser.
 - **No preview.** ezautosave's preview pane belongs to a single object and has
   no meaning for a form holding many.
+
+## See also
+
+- [Sub items table options](../../features/6.0/subitems-table-options.md) and [Sub items: copy selected](../../features/6.0/subitems-copy-selected.md)
+- [Content jobs](../../features/6.0/content-jobs.md)
+- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

@@ -122,7 +122,7 @@ The mongo branch does the same work: the same window, the same four sorts, with
 
 ### `eZContentObject::assignedNodeCount()`
 
-New. One `COUNT(*)`, because the pager needs the total and the page does not
+New: `assignedNodeCount( $checkVisibility = false )`. One `COUNT(*)`, because the pager needs the total and the page does not
 contain it.
 
 The template uses it for the "is there more than one location here" tests as
@@ -245,20 +245,20 @@ and no policy rows at all.
 
 ## Tests
 
-`ai/bin/one/test_locations_pagination.py` drives the tab in a browser:
+A private browser script exercised the tab against an item with 2001 locations; it is not shipped. To check it by
+hand, open `/content/view/full/<node id>/(tab)/locations` of an item with more locations than one page holds (with
+fewer the check proves nothing) and confirm that: one page is drawn and not the whole list; the pager appears and
+uses `(location_offset)`; the second page holds different rows; each column sorts both ways, marks itself and draws
+like the RSS list; a `(location_sort)` value that is not a column is ignored; the pager keeps the sort and the
+headings keep the tab; and an ordinary list elsewhere still pages on `(offset)`.
 
-```
-NODE=133 LIMIT=25 EZ_ADMIN_PASSWORD=... python3 ai/bin/one/test_locations_pagination.py
-```
+Measured against an item with 2001 locations: the tab renders in about a second. Before this it did not render.
 
-Point `NODE` at an item with more locations than one page holds; with fewer the
-run proves nothing and says so. It checks that one page is drawn and not the
-whole list, that the pager appears and uses its own offset, that the second
-page holds different rows, that each column sorts both ways, marks itself and draws the same as the RSS
-list,
-that a sort value that is not a column is ignored rather than run, that the
-pager keeps the sort and the headings keep the tab, and — because the shared
-pager was changed — that an ordinary list elsewhere still pages on `(offset)`.
+Read-only check that the API is in place: `grep -n "function assignedNodeCount\|function sortColumnsForAssignedNodes" kernel/classes/ezcontentobject.php`.
 
-Measured against an item with 2001 locations: the tab renders in about a
-second. Before this it did not render.
+## See also
+
+- [Paging, sorting and page sizes](../../features/6.0/admin-list-paging.md) and [Where the page sizes live](pagination-settings.md)
+- [RSS: the feed list sorts with the same headings](../../features/6.0/rss-podcast-and-feed-list.md)
+- [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

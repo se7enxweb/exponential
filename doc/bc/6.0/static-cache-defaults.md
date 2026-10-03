@@ -30,3 +30,18 @@ root where no cache tool looked.
    put those lines back in your override; the new default caches the whole site.
 
 Feature description: [Static cache generator](../../features/6.0/static-cache-generator.md).
+
+## Check it
+
+```bash
+grep -v '^#' settings/staticcache.ini | grep -v '^$'
+php bin/php/makestaticcache.php --help --allow-root-user
+```
+
+The first command shows the shipped defaults of the table above; the second lists the generator options.
+
+## See also
+
+- [Static cache in the September 2026 chronicle](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
+- [Cache from the console](cache-console.md) and [HTTP caching](http-caching.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
