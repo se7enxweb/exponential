@@ -1,0 +1,124 @@
+# Specification: continuous integration and the test suite (July to August 2026)
+
+From 11 July to 18 August 2026 the root repository got a test suite that runs on
+PHP 8.1 to 8.5 and a GitHub Actions workflow that runs it on every change. This
+page says what runs, how to run the same thing on your machine, and what each
+piece protects. It is for people who change the kernel or who ship extensions
+and want to know that a change keeps the platform working.
+
+## What was added
+
+| Date | Commit | What |
+|---|---|---|
+| 11 July | `8798108324` | PHPUnit 13 and PHP 8.4 clean-up: new `phpunit.xml`, `tests/bootstrap.php`, `tests/xdebug.ini`, about 40 new or repaired test files (cluster file handlers, content classes, roles, RSS export, site access ...). |
+| 18 August | `ea4b1dbbb7`, `ea350a1cd1`, `fd67c78a2f` | The workflow `.github/workflows/phpunit.yml`: PHPUnit on PHP 8.1 to 8.5; path filters; a manual trigger. |
+| 18 August | `1ba705708d` and following | A second job runs the database tests on MySQL and PostgreSQL. |
+| 18 August | `d07edf3297`, `4de4ebbbe5`, `3cad135744` | MongoDB support in the workflow. |
+| 18 August | `8ec58ea189`, `a1effad49a`, `fcd79af6b8` | A PHPUnit compatibility shim so the old test toolkit (written for PHPUnit 3.7) runs on current PHPUnit. |
+| 18 August | `d362e2523d`, `f964202536`, `03b6de43d8` | Deprecations of PHPUnit 10 and PHP 8.5 removed (`setAccessible()`, `$backupGlobals`, `imagedestroy()`). |
+
+Many of the 18 August commits are fixes of single workflow failures that were
+found by running it; they are merged pull requests with the title "Initial plan"
+(an empty first commit) followed by the fix.
+
+## The workflow
+
+File `.github/workflows/phpunit.yml`. Triggers: a push or pull request to
+`main` or `master` that changes a `.php` file, `composer.json`, `composer.lock`,
+`phpunit.xml` or the workflow itself, and a manual run (`workflow_dispatch`).
+The token has read access only (`permissions: contents: read`).
+
+### Job `phpunit`
+
+| Item | Value |
+|---|---|
+| Matrix | PHP `8.1`, `8.2`, `8.3`, `8.4`, `8.5` (not fail-fast: one failing version does not stop the others) |
+| PHPUnit | `^10.5` on PHP 8.1, `^11.5` on 8.2 and 8.3, the version required by `composer.json` on 8.4 and 8.5 |
+| PHP extensions | dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mongodb, mysqli, pdo_mysql, pdo_sqlite, sqlite3, zip |
+| Coverage | Xdebug |
+| System packages | ImageMagick (image tests), the MongoDB driver libraries |
+| Autoloads | `php bin/php/ezpgenerateautoloads.php -s -e` |
+| Command | `vendor/bin/phpunit --colors=always` |
+
+The workflow copies `composer.json` to a temporary overlay file
+(`composer.ci-phpunit.json`), adjusts `phpunit/phpunit` for the PHP version,
+requires `mongodb/mongodb`, resolves the dependencies fresh with
+`composer update`, and deletes the overlay when it ends. It cannot use one
+committed lock file: the dev requirements differ per PHP version, and a frozen lock
+broke on every later repin of `composer.json`.
+
+### Job `phpunit-db`
+
+Runs on PHP 8.3 with MySQL 8.0 and with PostgreSQL 15 (service containers),
+creates the database `testdb` (PostgreSQL also gets the `pgcrypto` extension),
+sets the time zone to `America/Los_Angeles` for stable results and runs:
+
+```bash
+php -d date.timezone=America/Los_Angeles tests/runtests.php --dsn "mysql://root@127.0.0.1/testdb" --db-per-test tests extension/ezoe
+```
+
+`--db-per-test` gives each test class a fresh schema, as the legacy toolkit does.
+
+## Run the same on your machine
+
+You need a checkout with its `vendor/` directory (a copy of the Exponential
+distribution, not a bare git clone; if `vendor/` is missing, run `composer install` once yourself).
+
+```bash
+# all suites
+php vendor/bin/phpunit
+
+# one suite
+php vendor/bin/phpunit --testsuite security
+php vendor/bin/phpunit --testsuite kernel-classes
+
+# list tests and files
+php vendor/bin/phpunit --list-tests
+php vendor/bin/phpunit --list-test-files
+
+# the database tests of the legacy toolkit (use a throw-away database)
+php tests/runtests.php --dsn=mysql://user:password@127.0.0.1/testdb --db-per-test tests
+```
+
+The test suites in `phpunit.xml`:
+
+| Suite | Directory | Needs |
+|---|---|---|
+| `security` | `tests/tests/kernel/classes/security` | nothing |
+| `kernel-classes` | `tests/tests/kernel/classes` (without `security`) | nothing |
+| `kernel-content` | `tests/tests/kernel/content` | nothing |
+| `kernel-datatypes` | `tests/tests/kernel/datatypes` | nothing |
+| `lib` | `tests/tests/lib` (without `ezdb/mongodb`) | nothing |
+| `mongodb` | `expMongoDBAdapterTest.php` | nothing (no live MongoDB) |
+| `mongodb-live` | `expMongoDBIntegrationTest.php` | running MongoDB and MySQL servers; its group is excluded from the default run |
+| `cjw_newsletter` | `tests/tests/extension/cjw_newsletter` (added after August) | a live database of the installation (throw-away data, mail written to files, never sent) |
+
+Groups `database`, `mail-live`, `mongodb-live` and `network-live` are excluded from the default run. Do not point a test run at a database that holds content you want to keep: the
+database tests create and drop tables.
+
+## Coverage with Xdebug
+
+`tests/xdebug.ini` loads Xdebug in coverage mode for isolated test processes.
+`tests/bootstrap.php` finds the system's PHP ini scan directory at run time and
+appends `tests/`, so the children load it too (11 July; on 18 August the double
+`zend_extension` load that broke PHP 8.4 with Xdebug 3.5 was removed, `302134b6e8`).
+
+```bash
+php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-text
+```
+
+## For extension authors
+
+- Put tests under `tests/` in your extension and add a `testsuite` to a copy of `phpunit.xml`.
+- Do not declare the same test class name twice (two fixes in August renamed
+  duplicates in the MongoDB tests and the `eZINITest` class).
+- Abstract base classes are excluded from the suites; concrete subclasses
+  `require_once` their base.
+- The test toolkit still offers `ezpTestCase`, `ezpDatabaseTestCase` and
+  `ezpTestSuite`; they boot the kernel through `eZScript`, so do not bootstrap
+  the kernel yourself in `bootstrap.php`.
+
+## Related
+
+- Reference for the toolchain: [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [PHPUnit 13 for PHP 8.4.1](../../bc/6.0/phpunitv13forPHP841.md).
+- Month page: [August 2026](../../history/2026/2026-08.md)
