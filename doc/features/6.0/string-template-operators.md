@@ -1,11 +1,11 @@
 # PHP string functions as template operators
 
-Sixty PHP string functions are now available in templates as operators, so a
+Sixty PHP string functions (62 on PHP 8.3 or newer, see below) are now available in templates as operators, so a
 template can measure, search, cut, compare and format text without a custom
 extension. Added in March 2026 (release 6.0.13) in the class
 `eZTemplateStringsOperator`
 (`lib/eztemplate/classes/eztemplatestringsoperator.php`), with a PHPUnit suite of
-about a thousand lines (`tests/.../eztemplate/eZTemplateStringsOperatorTest.php`,
+about a thousand lines (`tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php`,
 see [PHPUnit 13](../../bc/6.0/phpunitv13.md)).
 
 ## How an operator maps to PHP
@@ -61,7 +61,10 @@ With parameters: `addcslashes`, `chunk_split`, `hebrev`, `html_entity_decode`,
 `strrchr`, `strripos`, `strrpos`, `strspn`, `strstr`, `strtok`, `strtr`,
 `substr`, `substr_compare`, `substr_count`, `substr_replace`, `vsprintf`.
 
-Plus the creative additions `ristring` and `rstring`.
+Plus the creative additions `ristring` and `rstring`, and, registered only when
+PHP provides the functions (8.3 or newer), `str_increment` and `str_decrement`
+(no parameters). Check the list your installation really has with the
+[expinfo operator](../../bc/6.0/expinfo-operator.md).
 
 `number_format` follows PHP: with one parameter it gives the decimals; with
 three, decimals, decimal point and thousands separator (PHP needs the last two

@@ -42,7 +42,7 @@ setting came in a later release than the first driver.
    `settings/setup.ini`, see below). If the extension is missing the wizard
    says so and falls back to the first available database system.
 
-3. Give the database a name such as `exponential`. A name without a path is
+3. Give the database a name (the wizard proposes `sqlite.db`, constant `SQLITE_DEFAULT_FILE_NAME`). A name without a path is
    created as a file in `var/storage/sqlite3/`:
 
    ```bash
@@ -91,8 +91,8 @@ nested path works on first use.
   queue behind each other (see `SQLiteTransactionWait`); for a busy editorial
   team choose MySQL, PostgreSQL or MongoDB.
 - Do not put the database file inside a directory the web server serves
-  directly. The default `var/storage/sqlite3/` is rewritten to `index.php` by
-  the shipped `.htaccess`.
+  directly. In the shipped `.htaccess` only a short list of `var/` paths (public images, public caches, preview images of packages) is served as files; the rest goes to `index.php`. Verify on your own host that the database file is not downloadable: `curl -sI https://www.example.com/var/storage/sqlite3/sqlite.db`. A
+  status other than 200 is what you want.
 - Run `ANALYZE` once after a big import so the query planner has statistics.
 - Back up with `sqlite3 <file> ".backup <target>"`, not by copying the file
   while the site is busy.
@@ -104,3 +104,7 @@ nested path works on first use.
 - [PHP 8 support](../../bc/6.0/php8.md) for the countable and `is_countable` fixes
   that came out of the SQLite test runs
 - [Chronicle: January 2024, first half](../../history/2024/2024-01a.md)
+
+## See also
+
+Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md) (the driver), [6.0.13](../../changelogs/6.0/6.0.13.md) (absolute paths, autoload), [6.0.14](../../changelogs/6.0/6.0.14.md) (schema reading); [Chronicle: April 2026](../../history/2026/2026-04.md); [Chronicle: June 2026, second half](../../history/2026/2026-06b.md) (dropping indexes).

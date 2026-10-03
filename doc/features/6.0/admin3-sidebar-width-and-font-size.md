@@ -57,3 +57,7 @@ own design extension and change the two default values (`16rem` and
   the upper end, so the content area never disappears.
 - It needs the form token script of `ezformtoken` (active by default); without
   it the width is applied but not saved.
+
+## See also
+
+[Chronicle: June 2026, second half](../../history/2026/2026-06b.md); [Custom items per page](custom-items-per-page.md); [Hide and unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md). The 6.0.15 line has no release tag yet, see [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) for what it covers.

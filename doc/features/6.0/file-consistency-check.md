@@ -38,10 +38,15 @@ the same file.
 
 ```bash
 cd /path/to/docroot
+bash bin/shell/generatefilelist.sh --help      # every option and exclusion key (instant)
 bash bin/shell/generatefilelist.sh --dry-run   # count what would be listed
 bash bin/shell/generatefilelist.sh --list      # what is left out, and why
 bash bin/shell/generatefilelist.sh             # write share/filelist.md5
 ```
+
+On a large installation with many extension checkouts `--dry-run` and `--list`
+walk the whole tree and can take minutes (measured: more than two minutes on the
+alpha installation); run them from a shell without a short timeout.
 
 The defaults are what a release wants: everything that is part of the
 installation is hashed, and everything that is not is left out. Left out by
@@ -52,14 +57,14 @@ default:
 | `git` | `.git`, `.svn`, `.hg` of the root and of every extension that is its own checkout |
 | `var`, `tmp` | what the installation writes while it runs |
 | `vendor`, `extension_vendor` | `vendor/`, `node_modules/` |
-| `caches` | tool caches in the root |
-| `local` | per-machine editor settings |
-| `work` | working directories that are not part of a release |
+| `caches` | tool caches in the root (`.phpunit.cache/`, `.sass-cache/`, `.pytest_cache/`) |
+| `local` | per-machine editor and tool settings (`.idea/`, `.vscode/`, `.cursor/` and similar) |
+| `work` | a private working directory of the maintainers that is not part of a release (the exact name is printed by `--help`) |
 | `backups` | `*~`, `#*#`, `.#*`, `*.orig`, `*.rej`, `*.bak`, `*.swp`, `*.swo`, `*.save` |
 | `logs` | `*.log` |
 | `os` | `.DS_Store`, `Thumbs.db`, `desktop.ini` |
 
-Always excluded: `share/filelist.md5` itself (a list cannot contain its own
+Always excluded: `*.pyc` files, the temporary `filelist.md5.tmp.*` and `share/filelist.md5` itself (a list cannot contain its own
 checksum).
 
 | Option | Meaning |
@@ -67,9 +72,9 @@ checksum).
 | `--dry-run` | Count only, write nothing. |
 | `--list` | Show what is excluded (implies `--dry-run`). |
 | `--include=<key>` | Put an excluded group back in, for example `--include=vendor` to hash `vendor/`. An unknown key prints the list of known keys. |
-| `--exclude=<pattern>` | Add an exclusion; may be repeated. A bare `*.ext` matches file names at any depth; a pattern with a slash or a wildcard is a path anchored at the root. |
+| `--exclude=<value>` | Add an exclusion; may be repeated and combined with `--include`. Three forms: a bare name such as `scratch` is a directory wherever it sits; a `find -path` pattern such as `./scratch/*` is used as given; a file glob such as `*.log` matches file names at any depth. |
 | `--extensions` | Also rewrite `extension/*/share/filelist.md5` for extensions that already ship one (off by default). |
-| `--untracked` | Also hash files that are not tracked by git. |
+| `--untracked` | In a git checkout only tracked files are hashed by default; this also hashes files git does not track. |
 
 ### Run it from the right directory
 
@@ -87,7 +92,7 @@ files.
 3. An extension with its own `share/filelist.md5` needs its own refresh in its
    own release.
 
-In the 6.0.14 release (June 2026) the list was regenerated six times in two days
+In the 6.0.14 release (June 2026) the list was committed seven times between 5 and 7 June (`git log --format="%ad %h" --date=short v6.0.13..v6.0.14 -- share/filelist.md5`)
 while last fixes landed; that is the symptom of step 1 being done in the wrong
 order, and the reason for the rule.
 
@@ -96,3 +101,7 @@ order, and the reason for the rule.
 [Changelog 6.0.14](../../changelogs/6.0/6.0.14.md),
 [Rebranding](rebranding-to-exponential.md),
 [Chronicle: April 2026](../../history/2026/2026-04.md).
+
+## See also
+
+Specification-level detail of the options is the script's own help: `bash bin/shell/generatefilelist.sh --help`.

@@ -69,9 +69,10 @@ to brand it. Keep client secrets in `settings/override/`, never in the extension
 
 * Users open `/user2fa/setup` to enable TOTP or e-mail 2FA. The page shows the secret, an `otpauth://` URI and a QR code (the QR image is generated through the Google
   Chart API; if you do not want an external service, use the URI or the plain secret).
-* Social login: create an OAuth application with the provider, fill the provider block, set `SocialLogin=enabled`, and link to `/user2fa/oauth/<provider>`.
+* Social login: create an OAuth application with the provider, fill the provider block, set `[SocialLogin] Enabled=enabled` in `sevenxauthentication2fa.ini` (the master switch, default `disabled`), and link to `/user2fa/oauth/<provider>` (the provider returns to `/user2fa/callback/<provider>`). The other views of the module are `user2fa/setup` and `user2fa/verify`, each with its own policy function (`setup`, `verify`, `oauth`, `callback`).
 * Add a provider: `php extension/sevenx_authentication_2fa/bin/php/sevenx2fabuild.php --provider=MyProvider --client-id=... --client-secret=... --authorization-url=... --token-url=... --userinfo-url=... --scope="email profile"`
   creates the handler and appends its ini block; then edit `normalizeUserInfo()`.
+* Set a provider's credentials without editing the ini: `php extension/sevenx_authentication_2fa/bin/php/sevenx2faconfig.php --provider=Google --siteaccess=<siteaccess> --client-id=... --client-secret=...` writes the matching `sevenxauthentication2fa.ini.append.php` in `settings/override` (or in the siteaccess folder) and clears the INI cache. It changes settings: run it only when you mean to.
 * Cleanup: `php extension/sevenx_authentication_2fa/bin/php/sevenx2facleanup.php` (also a cronjob script) removes expired challenges.
 
 ## Related

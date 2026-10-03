@@ -71,3 +71,7 @@ SQL, file names and settings. Use `DebugByIP` or `DebugByUser`.
 [Debug bar](../../bc/6.0/debug-bar.md) (the newer tool that replaces reading this
 block), [Exponential debug bar](exp-debug-bar.md),
 [Chronicle: January 2025](../../history/2025/2025-01.md).
+
+## See also
+
+Changelogs: [6.0.4](../../changelogs/6.0/6.0.4.md) (responsive debug block), [6.0.7](../../changelogs/6.0/6.0.7.md) (heading and ids), [6.0.10](../../changelogs/6.0/6.0.10.md) (finished); [Chronicle: August 2024](../../history/2024/2024-08.md).

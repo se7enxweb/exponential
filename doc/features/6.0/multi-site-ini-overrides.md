@@ -81,3 +81,7 @@ of such a setting is `ext-siteaccess-override:<extension>`.
 [Specification: INI override placements](../../specifications/6.0/ini-override-placements.md),
 [Console: exp:ini](exp-ini-command.md),
 [Chronicle: January 2026](../../history/2026/2026-01.md).
+
+## See also
+
+[Changelog 6.0.12](../../changelogs/6.0/6.0.12.md); [Chronicle: January 2026](../../history/2026/2026-01.md).

@@ -56,8 +56,11 @@ single large item does not hit the limit either.
 ## If an installation stops
 
 The error page names the item type and name. Fix the cause (a missing extension,
-a database error shown in the debug output), then use **Retry**; the batch
-resumes at the failed item because the position is kept in the session.
+a database error shown in the debug output), then start the installation step
+again. The view keeps the position of the current item (`currentItem`) in the
+install step's persistent data between requests (`kernel/private/classes/views/package/install.php`);
+no button named "Retry" exists in the templates, so reload the install step
+rather than looking for one.
 
 ## Related
 

@@ -7,7 +7,7 @@ their time and your bandwidth.
 
 ## What is in it
 
-`robots.txt` (at the document root) starts with explanatory comments and then
+`robots.txt` (at the document root) starts with a long block of explanatory comments (ASCII art and links to the product's documentation sites; remove it if you do not want to publish it) and then
 holds these directives:
 
 ```
@@ -30,8 +30,8 @@ the "tip a friend" form and the printable layout add no value to a search index.
 `/media/` and `/test-area/` are examples of sections you may not want indexed;
 edit them to match your own tree.
 
-The sitemap lines are present as comments. Uncomment and fill in the address of
-your sitemap (for example the one created by the `bcgooglesitemaps` extension,
+The sitemap lines are present as comments and point at the product's own sites; replace them with the address of
+your own sitemap (for example the one created by the `bcgooglesitemaps` extension,
 which is part of the [distribution](default-extension-distribution.md)).
 
 ## Make it yours

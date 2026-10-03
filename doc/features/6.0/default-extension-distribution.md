@@ -36,6 +36,12 @@ it, when each piece joined, and how to add or drop one.
 | 13 May 2025 | 6.0.9 | `ezprestapi` 1.2 added: create, read, update and delete content through a REST API |
 | 13 Aug 2025 | 6.0.10 | `sevenx_themes_simple` added so the default theme is always distributed |
 
+Some entries moved between `suggest` and `require` later: at HEAD `ezoracle` and
+`git_manager` are in `require`, while `ezauthorize`, `ezownerchange`,
+`bcurlaliaswithdash` and `sevenx_valkey` are still only suggestions. List the
+current split yourself with `grep -n '"se7enxweb/' composer.json` (the first
+block is `suggest`, the second `require`).
+
 Since then the list grew with the layout system, the newsletter, the tags
 extension and others; the current `require` and `suggest` sections of
 `composer.json` are the authority.
@@ -70,3 +76,7 @@ checkouts.
 [Rebranding](rebranding-to-exponential.md),
 [Chronicle: December 2023](../../history/2023/2023-12.md),
 [Chronicle: January 2024, first half](../../history/2024/2024-01a.md).
+
+## See also
+
+Changelogs that changed the extension set: [6.0.0](../../changelogs/6.0/6.0.0.md), [6.0.1](../../changelogs/6.0/6.0.1.md), [6.0.2](../../changelogs/6.0/6.0.2.md), [6.0.3](../../changelogs/6.0/6.0.3.md), [6.0.4](../../changelogs/6.0/6.0.4.md), [6.0.5](../../changelogs/6.0/6.0.5.md), [6.0.6](../../changelogs/6.0/6.0.6.md), [6.0.9](../../changelogs/6.0/6.0.9.md), [6.0.10](../../changelogs/6.0/6.0.10.md); [PHP 8 support](../../bc/6.0/php8.md) for the PHP constraint.

@@ -32,3 +32,7 @@ handler to the sub items script of the admin design and a layout rule to the
 design's container stylesheet (the files of the YUI era; later work moved the
 list to jQuery, see [yui removal](../../bc/6.0/yui-removal.md), and renamed
 them).
+
+## See also
+
+[Chronicle: June 2026, second half](../../history/2026/2026-06b.md); [Left sidebar width and font size](admin3-sidebar-width-and-font-size.md); [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) (the 6.0.15 line has no release tag yet).

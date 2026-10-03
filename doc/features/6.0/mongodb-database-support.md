@@ -17,7 +17,7 @@ limits.
 |---|---|---|
 | Database adapter | `lib/ezdb/classes/expmongodb.php` (`expMongoDB`, extends `eZDBInterface`) | Connects with the PHP `mongodb` extension and `MongoDB\Client`; turns the kernel's SQL-shaped calls into `find`, `aggregate`, `insert`, `upsert` and `deleteWhere` operations. |
 | Schema handler | `lib/ezdbschema/classes/expmongoschema.php` (`expMongoSchema`) | Creates the collections of an installation. |
-| Kernel compatibility layer | 36 kernel classes and a few view scripts | Queries that used raw SQL (content tree, roles, URL aliases, user cache) were rewritten to portable calls. |
+| Kernel compatibility layer | kernel classes and a few view scripts (the reference lists them in its section 5; the count was not re-verified) | Queries that used raw SQL (content tree, roles, URL aliases, user cache) were rewritten to portable calls. |
 | Index script | `bin/mongodb/create_indexes.js` | Creates the indexes the kernel's queries rely on. |
 | Conversion helpers | `bin/mongodb/export_mysql.sh`, `mysql2ndjson.py`, `import_all.sh`, `validate_ndjson.sh` | Move an existing MySQL site into MongoDB (see section 18 of the reference). |
 | Wizard changes | `kernel/setup/` steps and `design/standard/templates/setup/init/database_init.tpl` | MongoDB as a choice; a **Database name** field, so you can authenticate against a specific database instead of only the `admin` database. |
@@ -31,8 +31,8 @@ limits.
 | `settings/dbschema.ini` | `[SchemaSettings]` | `SchemaHandlerClasses[mongo]` | `expMongoSchema` | global |
 | `settings/setup.ini` | `[DatabaseSettings]` | `DefaultType` | `sqlite3`; choose `mongodb` in the wizard | global |
 
-The wizard reports the database system `mongodb` with required version 4.0 and
-supports Unicode; the tested server is MongoDB 8.x with PHP 8.5.
+The wizard (`kernel/setup/ezsetupcommon.php`) lists the database system `mongodb` with required version 4.0 and
+supports Unicode; the reference document (section 24.1) states MongoDB 6.0 as the practical minimum and 8.3 with PHP 8.5 as the tested combination.
 
 ## Install in outline
 

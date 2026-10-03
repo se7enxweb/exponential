@@ -20,8 +20,13 @@ every module, permission and template name is the same as in `admin`.
   the right menu can be folded away with a toggle; the choice survives page
   loads. On narrow screens they open as a layer over the page, with a deeper
   shadow so they read as a layer.
-- **Tables scroll instead of breaking the page.** `wrapTable()` in
-  `ezadmin_menubar.js` wraps every table in a `table-responsive` container.
+- **Tables scroll instead of breaking the page.** `pagelayout.css` gives
+  `.table-responsive` and any element that directly contains a table
+  (`div:has(> table)`) `overflow-x: auto`, so a wide table scrolls inside its
+  box. `ezadmin_menubar.js` also defines a helper `wrapTable()` that wraps tables
+  in a `table-responsive` div, but at HEAD its call in the page-ready handler is
+  commented out; the CSS rule does the work. Check:
+  `grep -n wrapTable design/admin3/javascript/ezadmin_menubar.js`.
 - **Header and dashboard follow the screen.** The dashboard height is computed
   from the real header height and stored in a CSS variable (`--header-height`).
 - **Phone browsers behave.** A fix in November 2024 stopped iOS browsers from
@@ -32,7 +37,8 @@ every module, permission and template name is the same as in `admin`.
   `content/view/versionview.tpl` are overridden in `design/admin3/templates/`.
 - **Quick select of the current node when browsing.** In a browse dialog
   (choosing a parent location, a relation target, a swap target) the override
-  `content/browse_mode_list.tpl` (June 2025) shows the node you are standing in
+  `content/browse_current_node.tpl` (June 2025), included by
+  `content/browse_mode_list.tpl` and `content/browse_mode_thumbnail.tpl`, shows the node you are standing in
   as a selectable row, so you no longer have to go up a level and back down to
   pick it.
 - **The Design menu returns.** The `/design` menu item is available again under
@@ -98,3 +104,7 @@ November 2024 it is `ezadmin_menubar.js` and on by default.)
 - Chronicles: [August 2024](../../history/2024/2024-08.md),
   [October 2024](../../history/2024/2024-10.md),
   [November 2024](../../history/2024/2024-11.md)
+
+## See also
+
+Changelogs: [6.0.4](../../changelogs/6.0/6.0.4.md), [6.0.6](../../changelogs/6.0/6.0.6.md), [6.0.10](../../changelogs/6.0/6.0.10.md). The June 2026 additions are in [the June 2026 chronicle](../../history/2026/2026-06b.md).

@@ -35,8 +35,8 @@ module is replaced, so copy every view you still need.
 
 ## How it works
 
-`eZModule::globalPathList()` (`lib/ezutils/classes/ezmodule.php`) builds the list
-of module directories: the kernel first and the extension repositories after it.
+`eZModule::activeModuleRepositories()` (`lib/ezutils/classes/ezmodule.php`) builds the list
+of module directories from `[ModuleSettings] ModuleRepositories[]` (default `kernel`, `kernel/private/modules`) and then the extension repositories from `ExtensionRepositories[]` (empty by default; an active extension adds itself in its own `settings/module.ini.append.php`).
 Since 24 January 2024 (`c6b90d723d`) it reverses the combined list, so the
 extension repositories are searched first; the first directory that holds a
 module with the requested name wins.
@@ -45,11 +45,14 @@ module with the requested name wins.
 
 A view script of an incomplete extension (the ownerchange extension was one) can
 return something that is not the expected array. Since October 2024
-(`884f21e963`) `eZModule` only fills in the default navigation part of the result when the
-result is an array, so such a view no longer ends in a fatal error while the
+(`884f21e963`) `eZModule` only sets the navigation keys (`is_default_navigation_part`, `navigation_part`) on the result when it is an array (at HEAD the check reads `!is_string`), so a view returning a different type no longer ends in a fatal error while the
 page is assembled.
 
 ## Related
 
 [Chronicle: January 2024, second half](../../history/2024/2024-01b.md),
 [Chronicle: October 2024](../../history/2024/2024-10.md).
+
+## See also
+
+Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md) (module order), [6.0.5](../../changelogs/6.0/6.0.5.md) (robustness fix); [Chronicle: January 2024, second half](../../history/2024/2024-01b.md).

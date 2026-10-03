@@ -42,9 +42,9 @@ All in `settings/content.ini`, block `[CopySettings]`:
 
 | Piece | File |
 |---|---|
-| Menu entry (value 2, button `CopyButton`, label "Copy selected") | `design/admin/templates/children_detailed.tpl`, `design/admin4/templates/children_detailed.tpl` and the sub items script of the design (`design/admin4/javascript/ezajaxsubitems_expdatatable.js`; in 2025 `design/admin/javascript/ezajaxsubitems_datatable.js`) |
-| Action `CopyNode` | `kernel/content/action.php` |
-| Operation | `eZContentOperationCollection::copyNode()` and `eZContentObjectTreeNodeOperations::copySubtree()` in `kernel/classes/ezcontentobjecttreenodeoperations.php` |
+| Menu entry (value 2, form field `CopyButton`, label "Copy selected") | label in `design/admin/templates/children_detailed.tpl` and `design/admin4/templates/children_detailed.tpl`; the menu and its submit in `design/admin4/javascript/ezajaxsubitems_expdatatable.js` (the 2025 script `ezajaxsubitems_datatable.js` no longer exists at HEAD) |
+| Actions `CopyButton` and `CopyNode` (browse for the target) | `kernel/private/classes/views/content/action.php` |
+| Operation | `eZContentOperationCollection::copyNode()` in `kernel/content/ezcontentoperationcollection.php` and `eZContentObjectTreeNodeOperations::copySubtree()` in `kernel/classes/ezcontentobjecttreenodeoperations.php` |
 | Result page | `design/standard/templates/content/copy_subtrees_notification.tpl` |
 | View | `kernel/content/module.php`, view `copysubtree` (needs the `create` function) |
 
@@ -53,3 +53,7 @@ All in `settings/content.ini`, block `[CopySettings]`:
 [Hide and unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md),
 [Table options](subitems-table-options.md),
 [Chronicle: January 2025](../../history/2025/2025-01.md).
+
+## See also
+
+[Changelog 6.0.7](../../changelogs/6.0/6.0.7.md); [Content jobs](../../bc/6.0/content-jobs.md) for large copies.
