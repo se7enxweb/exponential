@@ -19,6 +19,7 @@
 #   --raw              print the answer as received, do not unwrap or pretty print
 #   --limit N          page size for "page" (default 25)
 #   --max N            stop "page" after N items (default 1000)
+#   --token TOKEN      personal API token (or EXPSERVICES_TOKEN): bearer sign-in, no login, no form token
 #   -k, --insecure     accept a self signed certificate
 #   -h, --help
 #
@@ -32,6 +33,7 @@ set -o pipefail
 
 URL="${EXPSERVICES_URL:-https://alpha.se7enx.com}"
 JAR="${EXPSERVICES_JAR:-${XDG_CACHE_HOME:-$HOME/.cache}/expservices/cookies.txt}"
+API_TOKEN="${EXPSERVICES_TOKEN:-}"   # personal API token: bearer sign-in, no cookie and no form token
 RAW=0; LIMIT=25; MAX=1000; META=0; CURL_EXTRA=()
 
 die() { echo "expservices-client: $*" >&2; exit 2; }
@@ -58,6 +60,7 @@ while [ $# -gt 0 ]; do
     case "$1" in
         -u|--url) URL="$2"; shift 2;;
         -c|--jar) JAR="$2"; shift 2;;
+        --token) API_TOKEN="$2"; shift 2;;
         --raw) RAW=1; shift;;
         --meta) META=1; shift;;
         --limit) LIMIT="$2"; shift 2;;
@@ -86,8 +89,9 @@ urlencode() { local s="$1" i c out=""; for ((i=0;i<${#s};i++)); do c="${s:i:1}";
 # request <GET|POST> <url> [curl args...]  ->  body on stdout, status check
 request() {
     local method="$1" url="$2"; shift 2
-    local body status
-    body=$(curl -sS "${CURL_EXTRA[@]}" -X "$method" -b "$JAR" -c "$JAR" -H 'Accept: application/json' -H 'X-Requested-With: XMLHttpRequest' \
+    local body status auth=()
+    [ -n "$API_TOKEN" ] && auth=(-H "Authorization: Bearer $API_TOKEN" -H "X-Exp-Token: $API_TOKEN")
+    body=$(curl -sS "${CURL_EXTRA[@]}" -X "$method" -b "$JAR" -c "$JAR" -H 'Accept: application/json' -H 'X-Requested-With: XMLHttpRequest' "${auth[@]}" \
         -w '\n%{http_code}' "$@" "$url") || die "request failed: $url"
     status="${body##*$'\n'}"; body="${body%$'\n'*}"
     case "$status" in 2*) ;; *) echo "expservices-client: HTTP $status from $url" >&2; [ -n "$body" ] && echo "$body" | head -c 300 >&2; exit 2;; esac
@@ -157,7 +161,11 @@ for i in json.load(sys.stdin)["content"]["data"]: print(json.dumps(i))'
             if [ "$1" = "--" ]; then shift; args=("$@"); break; fi
             fields+=(--data-urlencode "$1"); shift
         done
-        t=$(token) || exit 2
-        request POST "$(endpoint "$svc" "${args[@]}")" -H "X-CSRF-Token: $t" --data-urlencode "ezxform_token=$t" "${fields[@]}" | envelope;;
+        if [ -n "$API_TOKEN" ]; then   # bearer: no cookie, so no form token
+            request POST "$(endpoint "$svc" "${args[@]}")" "${fields[@]}" | envelope
+        else
+            t=$(token) || exit 2
+            request POST "$(endpoint "$svc" "${args[@]}")" -H "X-CSRF-Token: $t" --data-urlencode "ezxform_token=$t" "${fields[@]}" | envelope
+        fi;;
     *) usage; exit 2;;
 esac

@@ -59,10 +59,46 @@ Lists are paged: `data` is the items and `meta` is `total`, `offset`, `limit`, `
 Sign in once with `expsession::login` (POST `username`, `password`); the response sets the session cookie, which
 a non-browser client keeps in a cookie jar and sends with every call. `expsession::whoami` says who the session is,
 `expsession::token` returns the form token needed for writes, `expsession::ping` keeps the session alive,
-`expsession::logout` ends it. An API-token option (no cookie) is future work.
+`expsession::logout` ends it. Clients that cannot keep a cookie use a personal API token instead, see below.
 
     curl -c jar -d 'username=admin' --data-urlencode 'password=...' https://site/ezjscore/call/expsession::login
     curl -b jar https://site/ezjscore/call/expsession::whoami
+
+### Authentication with an API token
+
+For apps, scripts and servers a session cookie is the wrong tool: it expires, it needs the sign-in flow and a form token for
+every write. A personal API token is the alternative. A signed-in user (session login, not a token) creates one with
+`expsession::tokenCreate` (POST `name`, `expires_in_days` 1 to 365, default 90); the answer carries the token **once**
+(`data.token`, `expt_` and 48 hex characters). Only its SHA-256 hash is stored (table `expservices_token`), so a lost token
+cannot be read back, only revoked (`expsession::tokenRevoke`, POST `id`) and replaced. `expsession::tokenList` lists the
+caller's own tokens: id, name, a hint (the first characters), created, last used, expiry, revoked, valid, never the token.
+
+    curl -b jar -H 'X-CSRF-Token: <form token>' --data-urlencode 'name=backup script' https://site/ezjscore/call/expsession::tokenCreate?ContentType=json
+    curl -H 'Authorization: Bearer expt_...' https://site/ezjscore/call/expsession::whoami?ContentType=json
+    curl -H 'X-Exp-Token: expt_...' --data-urlencode 'id=7' https://site/ezjscore/call/expsession::tokenRevoke?ContentType=json
+
+- **Sending it.** `Authorization: Bearer <token>`, or the header `X-Exp-Token: <token>`. Use `X-Exp-Token` where a proxy or
+  FastCGI setup does not hand the `Authorization` header to PHP (Apache with `mod_proxy_fcgi` needs `CGIPassAuth On` or
+  `SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1`; on alpha.se7enx.com `Authorization` does not arrive and
+  `X-Exp-Token` is the header that works). The shipped clients send both.
+- **What it does.** Before any guard looks at the user, the base signs the request in as the token's user, for this one request
+  only: the session is not touched, so no cookie is created and nothing stays signed in afterwards. Every other guard is
+  unchanged: the same policies and limitations as for that user, POST for writes, the audit event of every write.
+- **Writes need no form token** with a bearer token (but still POST). The form token protects a browser, which attaches its cookie
+  to a request a hostile page makes on its own; a request that carries the token in a header it must set itself cannot be
+  forged that way, so there is nothing for the form token to prove. A request without the token header falls back to the cookie
+  and the form token as before.
+- **Refusals.** An unknown, revoked or expired token, or a token whose user is disabled, answers 401 on every service, public
+  ones too (a client must notice that its token died, not silently become anonymous). A token cannot create tokens (403): that
+  needs the session login. Tokens of other users are invisible (404).
+- **Audit.** `access.expservices.token.create`, `access.expservices.token.revoke` and `access.expservices.token.failed` (a refused
+  token, with the reason) in the `access` channel; the taxonomy branch `expServicesAuditBranch` is registered in
+  `extension/expservices/settings/audit.ini.append.php`. Uses are not logged one by one; the token's `last_used` is updated at most once a minute.
+- **Install.** The table is in `extension/expservices/sql/{mysql,postgresql,sqlite}/schema.sql` (the extension has no
+  `share/db_schema.dba`); create it on an existing installation with the idempotent
+  `php bin/php/ezexec.php ai/bin/one/create_expservices_token_table.php --allow-root-user`.
+- Only a token's hint is ever shown again; keep the token in the platform's secret store (Keychain, Keystore, KWallet,
+  libsecret), never in source code or a URL.
 
 ### Access
 
@@ -93,6 +129,7 @@ A service with `'write' => true` needs a POST, the form token (field `ezxform_to
 from `expsession::token`), and its policy; arguments come in the POST body (`expServiceBase::post()`), not in the URL.
 Every successful write records the audit event `service.<domain>.<method>` (`expAudit`), besides the events the
 kernel operation writes itself. `expservices.ini [Writes]` can switch the token check (tests only) and the audit off.
+A request signed in by an API token needs POST but no form token (see "Authentication with an API token").
 
 ### Writing a service
 
@@ -131,9 +168,9 @@ Discovery of the API; every call is public.
 | `expservices::domains` | public |  | The domains with their class and service count |
 | `expservices::version` | public |  | The version of expservices, the envelope version and the Exponential version |
 
-### Session and authentication (`expsession`, 8 services)
+### Session and authentication (`expsession`, 11 services)
 
-Remote clients sign in once and keep the session cookie; see the Authentication section.
+Remote clients sign in once and keep the session cookie, or use a personal API token; see the Authentication sections.
 
 | Call | Access | Write | Summary |
 |---|---|---|---|
@@ -145,6 +182,9 @@ Remote clients sign in once and keep the session cookie; see the Authentication 
 | `expsession::access::<module>::<function>` | user |  | Whether the user has module/function (accessWord yes, no or limited) |
 | `expsession::roles` | user |  | The roles of the user with the policies of each (module, function) |
 | `expsession::groups` | user |  | The user groups of the user |
+| `expsession::tokenCreate` | user | POST | Creates a personal API token for the signed-in user (session login, not by another token); `name`, `expires_in_days`. The token is in the answer once, only its hash is stored |
+| `expsession::tokenList` | user |  | The own API tokens: id, name, hint, created, last used, expiry, revoked, valid (never the token) |
+| `expsession::tokenRevoke` | user | POST | Revokes an own API token (`id`) |
 
 ### System information (`expsystem`, 16 services)
 
@@ -628,8 +668,10 @@ the examples below follow:
    percent-encoded and joined with `::`; a write sends its arguments as POST form fields.
 2. **Auth.** `POST expsession::login` with `username` and `password` (form encoded). The answer's `Set-Cookie` is the
    session; keep it in a cookie jar. The answer also carries the new session's form token (`data.token`), which replaces any
-   token fetched before the login. Anonymous calls work for the services whose access is `public`.
-3. **Writes.** Fetch `expsession::token` (`data.token`, `data.field` = `ezxform_token`, `data.header` = `X-CSRF-Token`),
+   token fetched before the login. Anonymous calls work for the services whose access is `public`. **Or use a personal API
+   token** (`expsession::tokenCreate`, see "Authentication with an API token"): send `Authorization: Bearer <token>` and
+   `X-Exp-Token: <token>` with every call, keep no cookie, fetch no form token; writes are still POST.
+3. **Writes.** With an API token a write is only a POST (no cookie, so no form token). With the session: fetch `expsession::token` (`data.token`, `data.field` = `ezxform_token`, `data.header` = `X-CSRF-Token`),
    then `POST` with the token as the field `ezxform_token` and as the header `X-CSRF-Token`. A missing or wrong token
    is a 403.
 4. **Errors.** HTTP 200 does not mean success: look at `content.ok`. `content.error.code` is 400/401/403/404/409/422/500
@@ -642,13 +684,20 @@ the examples below follow:
 6. **Discovery.** `expservices::catalog` gives every service with its `args`, `access`, `write`; generate a typed client
    from it, or call `expservices::service::<domain>::<method>` for one descriptor.
 
+**Toolchains and what was compiled** (checked 2026-10-02 on the build box, `ai/bin/one/probe_client_toolchains.sh`): only
+`bash`+`curl`, `python3` (with `requests` and PyGObject `gi`) and `g++` without Qt exist. The shell and Python clients
+and the GTK/Python snippet (both variants) were extracted from this guide and run against the live site. The Kotlin, Swift,
+Objective-C and Qt/C++ snippets could **not** be compiled here (no `kotlinc`, `swiftc`, `clang`/`gobjc` or Qt headers); each of
+them says so, and they are written against the documented APIs of OkHttp 4, URLSession, NSURLSession and Qt 5/6 Network and
+reviewed by hand. Compile them in your project before relying on them.
+
 In the examples `$SITE` is the base URL, e.g. `https://alpha.se7enx.com` (or `https://alpha.se7enx.com/<siteaccess>`
 when the installation needs a siteaccess in the path), `expnode::children` is a paged read and `expforum::reply` stands for
 any write service (take a real one from the catalogue). The shell and Python clients are in `extension/expservices/bin/`
 and are tested against the live services; the other snippets follow the same contract and are meant as the
 starting point of an app.
 
-### Shell (bash + curl): `extension/expservices/bin/expservices-client.sh`
+### Shell (bash + curl): `extension/expservices/bin/expservices-client.sh` (tested here)
 
     export EXPSERVICES_URL=https://alpha.se7enx.com
     expservices-client.sh whoami                          # anonymous or signed in, pretty printed
@@ -658,11 +707,12 @@ starting point of an app.
     expservices-client.sh page expnode::children 2 --limit 50 --max 500   # every item of a paged service, one JSON per line
     expservices-client.sh post expforum::reply topic=123 'message=Hello' # write: token fetched and sent as field and header
     expservices-client.sh --raw call expsession::ping     # the answer as received
+    EXPSERVICES_TOKEN=expt_... expservices-client.sh post expforum::reply topic=123 message=Hi   # API token: no login, no form token
 
 The cookie jar is `${XDG_CACHE_HOME:-~/.cache}/expservices/cookies.txt` (`--jar` or `EXPSERVICES_JAR` change it). Exit status:
 0 ok, 1 service error (`error 401: ...` on stderr), 2 transport fault. It needs bash and curl, plus jq (or python3) for the JSON.
 
-### Python: `extension/expservices/bin/expservices_client.py`
+### Python: `extension/expservices/bin/expservices_client.py` (tested here)
 
 Standard library only; a module and a command line (`expservices_client.py call expsystem::version`, `page`, `post`, `login`...).
 
@@ -680,7 +730,12 @@ Standard library only; a module and a command line (`expservices_client.py call 
     except TransportError as e:                                         # HTTP/network/JSON fault
         print("retry later:", e)
 
+    t = Client("https://alpha.se7enx.com", api_token="expt_...")        # API token variant: no login, no jar, no form token
+    t.post("expforum::reply", {"topic": 123, "message": "Hello"})       # a POST with the token headers; command line: --token or EXPSERVICES_TOKEN
+
 ### Kotlin / Android (OkHttp)
+
+*Not compiled here (no Kotlin toolchain on the build box).*
 
     // build.gradle: implementation("com.squareup.okhttp3:okhttp:4.12.0"); org.json comes with Android
     class Expservices(val site: String) {
@@ -726,7 +781,28 @@ Standard library only; a module and a command line (`expservices_client.py call 
     // error handling: catch ServiceException (401: show the sign-in screen; 403: refresh the token once; 422: show the message)
     // and IOException (offline: retry with backoff). Run it off the main thread (coroutines Dispatchers.IO).
 
+    // API token variant: no cookie jar, no login, no form token. Keep the token in the Android Keystore / EncryptedSharedPreferences.
+    class ExpservicesToken(val site: String, private val token: String) {
+        private val http = OkHttpClient()                                   // nothing to keep between calls
+        private fun url(service: String, args: List<Any> = emptyList()) =
+            "$site/ezjscore/call/$service" + args.joinToString("") { "::" + Uri.encode(it.toString()) } + "?ContentType=json"
+        private fun auth(b: Request.Builder) = b.header("Authorization", "Bearer $token").header("X-Exp-Token", token)
+        private fun send(req: Request): JSONObject = http.newCall(req).execute().use { r ->
+            if (!r.isSuccessful) throw IOException("HTTP ${r.code}")
+            val env = JSONObject(r.body!!.string()).getJSONObject("content")
+            if (!env.getBoolean("ok")) env.getJSONObject("error").let { throw Expservices.ServiceException(it.getInt("code"), it.getString("message")) }
+            env                                                            // 401 here: the token is revoked or expired, ask for a new one
+        }
+        fun read(service: String, vararg args: Any) = send(auth(Request.Builder().url(url(service, args.toList()))).build())
+        fun write(service: String, fields: Map<String, String>): JSONObject {   // POST only, no form token
+            val body = FormBody.Builder(); fields.forEach { (k, v) -> body.add(k, v) }
+            return send(auth(Request.Builder().url(url(service))).post(body.build()).build())
+        }
+    }
+
 ### Swift / iOS (URLSession)
+
+*Not compiled here (no Swift toolchain on the build box).*
 
     struct ServiceError: Error { let code: Int; let message: String }
 
@@ -771,7 +847,40 @@ Standard library only; a module and a command line (`expservices_client.py call 
     }
     // Errors: catch ServiceError (401 sign in, 403 refresh token once, 422 show message); other errors are transport faults.
 
+    // API token variant: no cookies, no login, no form token. Keep the token in the Keychain.
+    final class ExpservicesToken {
+        let site: URL, token: String
+        let session = URLSession(configuration: { let c = URLSessionConfiguration.ephemeral; c.httpCookieStorage = nil; return c }())
+        init(site: URL, token: String) { self.site = site; self.token = token }
+
+        private func request(_ service: String, _ args: [Any] = [], form: [String: String]? = nil) -> URLRequest {
+            let tail = args.map { "::" + "\($0)".addingPercentEncoding(withAllowedCharacters: .alphanumerics)! }.joined()
+            var r = URLRequest(url: URL(string: "\(site)/ezjscore/call/\(service)\(tail)?ContentType=json")!)
+            r.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            r.setValue(token, forHTTPHeaderField: "X-Exp-Token")
+            if let f = form {                                              // a write: POST, no form token
+                var c = URLComponents(); c.queryItems = f.map { URLQueryItem(name: $0.key, value: $0.value) }
+                r.httpMethod = "POST"; r.httpBody = c.percentEncodedQuery?.data(using: .utf8)
+                r.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            }
+            return r
+        }
+        func call(_ service: String, _ args: [Any] = [], form: [String: String]? = nil) async throws -> [String: Any] {
+            let (data, resp) = try await session.data(for: request(service, args, form: form))
+            guard (resp as? HTTPURLResponse)?.statusCode == 200,
+                  let env = (try JSONSerialization.jsonObject(with: data) as? [String: Any])?["content"] as? [String: Any]
+            else { throw ServiceError(code: 0, message: "transport fault") }
+            if env["ok"] as? Bool != true {                               // 401: the token is revoked or expired
+                let e = env["error"] as? [String: Any] ?? [:]
+                throw ServiceError(code: e["code"] as? Int ?? 500, message: e["message"] as? String ?? "error")
+            }
+            return env
+        }
+    }
+
 ### Objective-C (NSURLSession)
+
+*Not compiled here (no Objective-C compiler or Foundation on the build box; `gcc` has no Objective-C front end).*
 
     // The shared session keeps cookies. Wrap in a method taking a completion block; shown here for one write.
     - (void)post:(NSString *)service fields:(NSDictionary<NSString *, NSString *> *)fields
@@ -806,7 +915,21 @@ Standard library only; a module and a command line (`expservices_client.py call 
     // Login: the same POST without token to expsession::login with username and password (cookies are kept by the session).
     // Read with paging: GET .../expnode::children::2::<offset>::<limit>, continue while env[@"meta"][@"has_more"] is true.
 
+    // API token variant: no cookies, no token fetch; the same POST without ezxform_token and with the token headers.
+    - (NSMutableURLRequest *)requestFor:(NSString *)service token:(NSString *)token {
+        NSString *u = [NSString stringWithFormat:@"https://alpha.se7enx.com/ezjscore/call/%@?ContentType=json", service];
+        NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:u]];
+        req.HTTPShouldHandleCookies = NO;                                       // the token is the only credential
+        [req setValue:[@"Bearer " stringByAppendingString:token] forHTTPHeaderField:@"Authorization"];
+        [req setValue:token forHTTPHeaderField:@"X-Exp-Token"];
+        return req;       // for a write set HTTPMethod = @"POST", the form body and the Content-Type as above (no ezxform_token)
+    }
+    // Run it with [[NSURLSession sessionWithConfiguration:NSURLSessionConfiguration.ephemeralSessionConfiguration] dataTaskWithRequest:...];
+    // keep the token in the Keychain. A 401 envelope means the token is revoked or expired.
+
 ### Qt / C++ (QNetworkAccessManager)
+
+*Not compiled here (no Qt headers or `qmake` on the build box).*
 
     // QT += network. One QNetworkAccessManager per client; set a QNetworkCookieJar (the default one keeps session cookies).
     class Expservices : public QObject {
@@ -853,11 +976,27 @@ Standard library only; a module and a command line (`expservices_client.py call 
     };
     // The token comes from the login answer; after a 403 fetch expsession::token once and retry once.
 
-### GTK / Python (requests, or libsoup)
+    // API token variant: no login, no cookie jar needed, no form token. Keep the token in KWallet / libsecret.
+    class ExpservicesToken : public Expservices {
+        QString apiToken;
+    public:
+        explicit ExpservicesToken(const QString &t) : apiToken(t) {}
+        QNetworkRequest authorised(QNetworkRequest rq) const {
+            rq.setRawHeader("Authorization", "Bearer " + apiToken.toUtf8());
+            rq.setRawHeader("X-Exp-Token", apiToken.toUtf8());
+            return rq;
+        }
+        // read: net.get(authorised(QNetworkRequest(url("expsession::whoami"))));
+        // write: rq = authorised(QNetworkRequest(url(svc))); content type form-urlencoded; net.post(rq, body) with the fields only (no ezxform_token)
+        // a { ok:false, error:{ code:401 } } answer means the token is revoked or expired: ask the user for a new one
+    };
+
+### GTK / Python (requests, or libsoup) (tested here: both variants run against the live site)
 
 With PyGObject, run the calls off the main loop (`GLib.idle_add` or a thread) and hand the data to the widgets. `requests` is
 the simplest transport; the shell/Python client above has the same logic without it.
 
+    import http.cookiejar
     import requests
     from gi.repository import GLib
 
@@ -876,6 +1015,13 @@ the simplest transport; the shell/Python client above has the same logic without
             return self._env(self.s.post(self._url(svc), data={"ezxform_token": self.token, **fields}, headers={"X-CSRF-Token": self.token}))
 
     # in a handler: threading.Thread(target=lambda: GLib.idle_add(fill_list, api.read("expnode::children", 2, 0, 25)["data"])).start()
+
+    class TokenApi(Api):                                    # API token variant: no login, no cookies, no form token
+        def __init__(self, site, token):
+            super().__init__(site)
+            self.s.cookies.set_policy(http.cookiejar.DefaultCookiePolicy(allowed_domains=[]))   # keep no cookie
+            self.s.headers.update({"Authorization": "Bearer " + token, "X-Exp-Token": token})
+        def write(self, svc, **fields): return self._env(self.s.post(self._url(svc), data=fields))   # POST, no ezxform_token
 
 libsoup (Soup 3): `Soup.Session()` keeps cookies when a `Soup.CookieJar` feature is added
 (`session.add_feature(Soup.CookieJar())`); `Soup.Message.new_from_encoded_form("POST", url, Soup.form_encode(...))` builds the POST,
@@ -901,6 +1047,10 @@ bytes of the same `{ error_text, content }` JSON.
 
 `python3 ai/bin/one/test_expservices_shell_and_python_clients.py` runs the shell and Python clients against the live site
 (read-only calls; the write path is exercised up to the 401 an anonymous session gets).
+`ai/bin/one/verify_expservices_api_tokens_over_http.sh` runs the API token flow over HTTP (create, bearer read and write,
+revoke, 401), `ai/bin/one/verify_expservices_clients_with_api_token.py` drives the shell and Python clients with a token, and
+`python3 ai/bin/one/test_expservices_guide_gtk_snippet.py` extracts the GTK/Python snippets from this guide and runs them.
+`ai/bin/one/probe_client_toolchains.sh` reports which native toolchains exist on the box.
 
 ## Frontend designs: React and wireframe
 
@@ -1294,7 +1444,7 @@ With great power comes great responsibility.
 
 Total: 195 services.
 
-## Commerce, community and feeds (16 domains, 255 services)
+## Commerce, community and feeds (16 domains, 256 services)
 
 Classes in `extension/expservices/classes/commerce/` and `classes/community/`, tests in
 `tests/tests/extension/expservices/commerce/` and `community/` (151 tests, run against the live database like the other
@@ -1343,9 +1493,14 @@ Rules that hold for every service of these domains:
   Atom, OPML, iTunes; `data.content_type` and `data.content`), `rss`, `atom` and `json` build RSS 2.0, Atom 1.0 and JSON
   Feed 1.1 of the newest content below any node the caller may read (`classes` limits the classes, `limit` is capped at
   100), `discover` lists the feed addresses for a node. Export management (`rss/edit`) creates active exports directly
-  (the draft/publish copy of the admin editor is not used); RSS imports are only read (`imports`, `importStatus`,
-  `importCheck`, `importSetActive`): the import itself is the `rssimport` cronjob, and `importCheck` only fetches a source
-  when asked and only for `http`/`https` addresses.
+  (the draft/publish copy of the admin editor is not used); RSS imports are read (`imports`, `importStatus`,
+  `importCheck`) and switched (`importSetActive`); `runImport` (`rss/edit`, POST) runs one import with the code of the
+  `rssimport` cronjob (fetch, create and publish the new items below the destination, once per item, known by the item's
+  link or guid) and answers `found`, `new`, `created` and one line per item (`imported`, `would_import`, `exists`,
+  `no_identifier`, `skipped_max_items`) plus the log the cronjob would print. With `dry_run=1` nothing is created: it only
+  reports what would be imported. `max_items` limits the new items of one run (0 = all). The caller also needs the right to
+  create below the destination node, a draft import cannot run (409), and `importCheck` and `runImport` fetch only `http`/`https`
+  addresses. A real run records `data.import.rss` as the cronjob does, besides `service.feed.runimport`.
 - Writes are POST with the form token (`expsession::token`) and recorded as `service.<domain>.<method>`; where the kernel
   records its own event for the change, it is recorded as well.
 - Known kernel fault, worked around: `eZVatRule::removeVatRule()` calls an instance method statically, which PHP 8
@@ -1666,7 +1821,7 @@ Rules that hold for every service of these domains:
 
 #### Feeds
 
-##### Feeds (`expfeed`, 21 services)
+##### Feeds (`expfeed`, 22 services)
 
 | Service | Access | Arguments | What it does |
 |---|---|---|---|
@@ -1691,9 +1846,10 @@ Rules that hold for every service of these domains:
 | `importStatus` | `rss/edit` | `id:int` | What an import brought in: objects created by it, the newest one and when |
 | `importCheck` | `rss/edit` | `id:int`, `fetch:bool` | Whether the source of an import is an address the server may fetch, and optionally its feed version (fetches the source) |
 | `importSetActive` (POST) | `rss/edit` | `id:int POST`, `active:bool POST` | Switches an import on or off (the rssimport cronjob runs the active ones) |
+| `runImport` (POST) | `rss/edit` | `id:int POST`, `dry_run:bool POST`, `max_items:int POST` | Runs one RSS import the way the rssimport cronjob does; `dry_run` only reports what would be imported |
 
 
-Total: 255 services in 16 domains (83 writes).
+Total: 256 services in 16 domains (84 writes).
 
 <!-- expservices-content:begin -->
 ## Content services: 350 services in 15 domains (112 writes)

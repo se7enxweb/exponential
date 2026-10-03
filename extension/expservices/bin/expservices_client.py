@@ -17,7 +17,7 @@ As a module::
 
 As a command::
 
-    expservices_client.py [--url URL] [--jar FILE] whoami | token | catalog [domain]
+    expservices_client.py [--url URL] [--jar FILE] [--token TOKEN] whoami | token | catalog [domain]
     expservices_client.py call <service> [arg ...]
     expservices_client.py page <service> [arg ...] [--limit N] [--max N]
     expservices_client.py post <service> [k=v ...] [-- arg ...]
@@ -51,7 +51,7 @@ class TransportError(Exception):
 
 
 class Client:
-    def __init__(self, base_url="https://alpha.se7enx.com", jar=None, timeout=30, verify=True):
+    def __init__(self, base_url="https://alpha.se7enx.com", jar=None, timeout=30, verify=True, api_token=None):
         self.base = base_url.rstrip("/")
         self.timeout = timeout
         self.jar_path = jar
@@ -70,6 +70,7 @@ class Client:
             handlers.append(urllib.request.HTTPSHandler(context=ctx))
         self.opener = urllib.request.build_opener(*handlers)
         self._token = None
+        self.api_token = api_token  # personal API token: bearer sign-in, no cookie and no form token needed
 
     # ------------------------------------------------------------ transport
     def url(self, service, args=()):
@@ -81,6 +82,9 @@ class Client:
         req = urllib.request.Request(self.url(service, args), data=data, method="POST" if data is not None else "GET")
         req.add_header("Accept", "application/json")
         req.add_header("X-Requested-With", "XMLHttpRequest")
+        if self.api_token:
+            req.add_header("Authorization", "Bearer " + self.api_token)
+            req.add_header("X-Exp-Token", self.api_token)  # for hosts whose proxy drops Authorization
         for k, v in (headers or {}).items():
             req.add_header(k, v)
         try:
@@ -123,8 +127,10 @@ class Client:
 
     def post(self, service, fields=None, args=()):
         """Write call: POST with the form token as field ezxform_token and header X-CSRF-Token. Returns data."""
-        t = self.token()
         body = dict(fields or {})
+        if self.api_token:  # bearer: no cookie, so no form token (see "Auth with an API token")
+            return self._send(service, args, fields=body)["data"]
+        t = self.token()
         body["ezxform_token"] = t
         return self._send(service, args, fields=body, headers={"X-CSRF-Token": t})["data"]
 
@@ -165,13 +171,14 @@ def main(argv=None):
     p.add_argument("--url", default=os.environ.get("EXPSERVICES_URL", "https://alpha.se7enx.com"))
     p.add_argument("--jar", default=os.environ.get("EXPSERVICES_JAR",
                    os.path.join(os.environ.get("XDG_CACHE_HOME", os.path.expanduser("~/.cache")), "expservices", "cookies.txt")))
+    p.add_argument("--token", default=os.environ.get("EXPSERVICES_TOKEN"), help="personal API token (or EXPSERVICES_TOKEN)")
     p.add_argument("--limit", type=int, default=25)
     p.add_argument("--max", type=int, default=1000)
     p.add_argument("-k", "--insecure", action="store_true")
     p.add_argument("command", choices=["whoami", "token", "catalog", "call", "page", "post", "login", "logout"])
     p.add_argument("rest", nargs=argparse.REMAINDER)
     a = p.parse_args(argv)
-    c = Client(a.url, jar=a.jar, verify=not a.insecure)
+    c = Client(a.url, jar=a.jar, verify=not a.insecure, api_token=a.token)
     rest = [x for x in a.rest if x != "--"] if a.command != "post" else a.rest
     show = lambda d: print(json.dumps(d, indent=2, ensure_ascii=False))
     try:
