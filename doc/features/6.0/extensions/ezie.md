@@ -19,6 +19,12 @@ before and gave up on it, try it again.
    is. **Quit** asks a translated question ("If you leave without saving, all your modifications
    will be definitely lost"), and only when something was changed.
 
+The server side of each tool is a view of the `ezie` module (`module.php`): `prepare` (opens the editing session), `tool_crop`, `tool_flip_hor`, `tool_flip_ver`, `tool_rotation`,
+`tool_pixelate`, `tool_watermark`, the filters `filter_bw` (black and white), `filter_sepia`, `filter_contrast` and `filter_brightness`, and the two ways out,
+`save_and_quit` and `no_save_and_quit`. Select, zoom, undo and redo work in the browser (`design/standard/javascript/ezie.gui.config.bind.tool_*.js`). So the editor also has
+pixelate, black and white and sepia, which the list above does not name. The third-party scripts it bundles are named in `ezinfo.php` (jQuery UI 1.8.9, Jcrop 0.9.8, jQuery Hotkeys 0.7.9; the colour picker
+is in `design/standard/javascript/colorpicker`); jQuery itself comes from `ezjscore`.
+
 Add your own watermarks (usually PNG files) in two steps, then clear the caches:
 
 ```ini

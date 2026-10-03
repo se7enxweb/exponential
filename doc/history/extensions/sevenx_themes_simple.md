@@ -167,6 +167,10 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`360905a`](https://github.com/se7enxweb/sevenx_themes_simple/commit/360905a) (docs) The about page names 1998 - 2026 7x & Exponential Foundation first in its copyright notice, followed by eZ Systems AS
 - 2026-10-02 [`b7b68e8`](https://github.com/se7enxweb/sevenx_themes_simple/commit/b7b68e8) (release) Version 1.0.21 **Release v1.0.21.**
 
+### Added after the ledger was cut
+
+- 2026-08-31 `3e5f87e` (feature) A fallback `pagelayout.tpl` (`design/simple/templates/pagelayout.tpl`, 178 lines) whose viewport meta matches the public one (`width=device-width, initial-scale=1.0, maximum-scale=2`); the commit is only on the remote's `main` branch (check with `git branch -a --contains 3e5f87e` in a clone) and was not in the extracted ledger
+
 ## Related
 
 * [Feature page](../../features/6.0/extensions/sevenx_themes_simple.md)

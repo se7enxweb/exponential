@@ -109,6 +109,16 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 - 2026-09-30 [`4752b22`](https://github.com/se7enxweb/explayouts_ui_api/commit/4752b22) (docs) The about page names the extension Exponential Layouts UI API
 - 2026-09-30 [`3b76ac9`](https://github.com/se7enxweb/explayouts_ui_api/commit/3b76ac9) (release) Version 1.3.7 **Release v1.3.7.**
 
+### Added after the ledger was cut (30 September to 1 October 2026)
+
+These commits were pushed after the machine-made ledger of this repository was extracted; they are listed here so the page stays complete.
+
+- 2026-09-30 `54efe41` (fix) Layout share links work on Oracle (v1.3.8)
+- 2026-10-01 `8273a03` (feature) The editor runs on ezjscore's jQuery 4 and jQuery UI 1.14 (v1.3.9)
+- 2026-10-01 `eeafe10` (fix) The Markdown and HTML blocks have their code editor again (v1.3.9)
+- 2026-10-01 `a9dfe30` (fix) The Roboto italic face ships (v1.3.9)
+- Releases v1.3.8 (30 September) and v1.3.9 (1 October)
+
 ## Related
 
 * [Feature page](../../features/6.0/extensions/explayouts_ui_api.md)

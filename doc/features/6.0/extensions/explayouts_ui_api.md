@@ -6,13 +6,15 @@ Exponential module views on top of the `explayouts_core` services. You open it f
 the **Layouts** admin tab (see [explayouts_ui](explayouts_ui.md)) or directly at
 `/explayouts_ui_api/app`.
 
-It was imported on 30 July 2026 (1.0.0) and by 1.3.7 (30 September 2026) can be
+It was imported on 30 July 2026 (1.0.0) and by 1.3.7 (30 September 2026) could be
 used on a phone, under a siteaccess reached by path (`/admin`), with German texts,
 with shared header and footer layouts shown as locked, and with write protection
 that makes sure a published layout is only changed through its draft.
 
-Version note: the installed copy in `extension/explayouts_ui_api` reads 1.3.10 in `ezinfo.php`; the clone of the repository has the tags v1.3.8 and v1.3.9 on commits that
-are not reachable from its main branch, so this page itemises changes up to 1.3.7 only. Check what your copy has with `grep Version extension/explayouts_ui_api/ezinfo.php`.
+**1.3.8 and 1.3.9 (30 September and 1 October 2026).** The editor runs on the admin's jQuery 4 and jQuery UI 1.14 from `ezjscore` instead of the old jQuery 2.2.4 it bundled, so the
+whole admin uses one jQuery; the Markdown and HTML blocks have their code editor again; the Roboto italic face ships; layout share links work on Oracle. Details in the
+[release notes](../../../changelogs/extensions/explayouts_ui_api.md). The installed copy in `extension/explayouts_ui_api` reads 1.3.10 in `ezinfo.php`, one release after the newest
+tag of the clone; check with `grep Version extension/explayouts_ui_api/ezinfo.php`.
 
 ## Open and use the editor
 

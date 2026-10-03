@@ -8,7 +8,12 @@ layout preview. Each list links into the visual editor served by
 its own, only the thin view classes under `classes/runnable/views/explayouts_ui/`; its module views are controllers over the `explayouts_core` services, so the
 screens and the editor always show the same data.
 
-Imported 30 July 2026 (1.0.0); 1.3.6 followed on 30 September 2026.
+Imported 30 July 2026 (1.0.0); 1.3.8 followed on 2 October 2026.
+
+Since 1.3.7 (1 October) the pages run on the admin's own jQuery 4 from `ezjscore`, and their files carry Exponential names: `design/admin/javascript/netgen/layouts-exponential.js`,
+`design/admin/stylesheets/netgen/layouts-exponential.css` and `design/admin/stylesheets/explayouts-ui.css` (formerly `layouts-ibexa.*` and `nglayouts-ui.css`); `layouts-admin.js` is no longer
+loaded. 1.3.7 also ships the Roboto fonts (no more 404s) and fixes the rule list's action condition; 1.3.8 stops the stylesheet's page-wide rules from resetting node views.
+Check the files with `ls extension/explayouts_ui/design/admin/stylesheets extension/explayouts_ui/design/admin/stylesheets/netgen`.
 
 ## Where things are
 

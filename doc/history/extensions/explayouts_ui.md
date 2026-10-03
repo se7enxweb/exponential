@@ -104,6 +104,17 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 - 2026-09-30 [`107ccf2`](https://github.com/se7enxweb/explayouts_ui/commit/107ccf2) (fix) Fixed: The dark sidebar and hidden scrollbars of the Layouts pages no longer reach the admin's node views
 - 2026-09-30 [`3b98c33`](https://github.com/se7enxweb/explayouts_ui/commit/3b98c33) (release) Version 1.3.6 **Release v1.3.6.**
 
+### Added after the ledger was cut (1 to 2 October 2026)
+
+These commits were pushed after the machine-made ledger of this repository was extracted; they are listed here so the page stays complete.
+
+- 2026-10-01 `0c6083f` (fix) The rule list's layout actions condition no longer logs a parser error on every view (v1.3.7)
+- 2026-10-01 `3e56537` (fix) The Roboto fonts ship with the extension (v1.3.7)
+- 2026-10-01 `667e862` (feature) The Components page follows the renamed `exp_component_<type>` blocks (v1.3.7)
+- 2026-10-01 `e3d2723` (feature) The layouts admin pages run on jQuery 4 and carry Exponential file names (v1.3.7)
+- 2026-10-02 `d21be9c` (fix) The stylesheet's page-wide rules no longer reset node views (v1.3.8)
+- Releases v1.3.7 (1 October) and v1.3.8 (2 October)
+
 ## Related
 
 * [Feature page](../../features/6.0/extensions/explayouts_ui.md)

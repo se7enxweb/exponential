@@ -5,7 +5,7 @@ write newsletter editions as content, visitors subscribe to lists with a double 
 editions are sent by cron in the background, bounces and a blacklist keep the lists
 clean, and every send is archived. It comes from the CJW Network, coolscreen.de, JAC
 Systeme and Webmanufaktur (2007 to 2015) and was taken over for PHP 8.5 and Exponential 6
-by the se7enxweb project in August 2026 (4.0.0.0 on 13 August). Releases 4.1.0 to 4.1.15
+by the se7enxweb project in August 2026 (4.0.0.0 on 13 August). Releases 4.1.0 to 4.1.16
 (22 September to 2 October 2026) made it run on PHP 8, on persistent workers (Velocity) and
 on every database, and closed a large number of defects found by a systematic review.
 
@@ -129,6 +129,17 @@ A review of the whole extension on 2 October 2026 fixed, among other things:
   exists, is removed; priorities are still set in the list and saved with its button.
   See [YUI removal](../../../bc/6.0/yui-removal.md).
 
+### The newsletter tree of a new installation
+
+From 4.1.16 the class `CjwNewsletterClassInstaller` (`classes/cjwnewsletterclassinstaller.php`) can also create the content a new installation needs, not only the content
+classes (`install()`, from the two `.ezpkg` files in `packages/`): `installSection()` makes the section "CJW Newsletter" with the navigation part `eznewsletternavigationpart`;
+`installTree( $parentNodeID = null, &$report )` makes a "Newsletter" root (`cjw_newsletter_root`) below the content root (node 2) or below the node you give, a newsletter
+system and one list with the site's sender (`AdminEmail`, `SiteName`), HTML and text output and the skin `default`; `writeRootFolderSetting( $rootNodeID )` sets
+`RootFolderNodeId` in `settings/override/cjw_newsletter.ini.append.php` (creating the file, or changing only that value). Everything is idempotent: what exists is
+reported as `already present` and left alone, and no content object is touched. `installTree()` needs the classes first and answers `failed: class ... is missing` otherwise.
+The behaviour is covered by `tests/tests/extension/cjw_newsletter/cjwNewsletterTreeInstallerTest.php`. This page has not run it against a live tree (it changes content); to
+check it read the class above, or run that test on a throwaway installation.
+
 ### Integrity manifest
 
 `share/filelist.md5` is the manifest the upgrade check (**Setup > System Upgrade > File
@@ -153,7 +164,7 @@ codes are unchanged. See
 | | `[NewsletterSettings] AvailableSkinArray[]` | `default` | Skins in `design:newsletter/skin/<name>` |
 | | `[NewsletterMailSettings] TransportMethodCronjob`, `TransportMethodPreview`, `TransportMethodDirectly` | see the file | `smtp`, `sendmail` or `file` per kind of mail (newsletter, test send, subscribe and info mails) |
 | | `[NewsletterMailSettings] FileTransportMailDir` | `var/log/mail` | Where `file` writes `.eml` files |
-| | `[NewsletterMailSettings] EmailSubjectPrefix` | empty | Subject prefix of newsletter mails |
+| | `[NewsletterMailSettings] EmailSubjectPrefix` | empty | Subject prefix of newsletter mails; empty (4.1.16) means `[Newsletter <host of SiteURL>]`, before it the shipped example `[Newsletter example.com]` |
 | | `[BounceSettings] BounceThresholdValue` | `3` | Bounces before a user is marked bounced |
 | | `[NewsletterCsvImportSettings] DefaultCsvDelimiter` | `;` | CSV delimiter |
 | | `[NewsletterUserSettings] UseTplForNameGeneration` | `disabled` | |

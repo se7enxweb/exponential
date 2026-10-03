@@ -8,6 +8,14 @@ Version 6.0.9 (2 October 2026) is current.
 
 It requires `ezjscore` and extends `ezflow`, `ezwt` and `ezodf`.
 
+## Use it
+
+Activate the extension as a design extension: `design.ini [ExtensionSettings] DesignExtensions[]=ezdemo` (the extension ships that line) and use the design
+`ezdemo` (`design/ezdemo`; the extension also carries a `design/admin` folder). The scripts the design loads on the public pages are the `[JavaScriptSettings]
+FrontendJavaScriptList[]` of its `design.ini`: `ezjsc::jquery`, `init_ua.js`, `handle_transition.js`, `toggle_class.js` and `eztransition.js`, with the gallery, flyout and ajax
+search scripts (`ezgallery.js`, `ezgallerynavigator.js`, `ezflyout.js`, `ezajaxsearch.js`) in `design/ezdemo/javascript/`. Copy a template you like from
+`design/ezdemo/templates` into your own design extension; do not edit the demo in place.
+
 ## What changed in the Exponential 6 releases
 
 | Release | Change |

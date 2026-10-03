@@ -4,7 +4,14 @@ What each release of `cjw_newsletter` contains, assembled from its commits. Each
 
 ## 4.1.16 (2026-10-02)
 
-No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
+**Added**
+
+- The installer creates the newsletter tree of a new installation: `CjwNewsletterClassInstaller::installTree()` makes a "Newsletter" root, a newsletter system and one list with the settings of the site, in the section "CJW Newsletter", and `writeRootFolderSetting()` records the root in `settings/override/cjw_newsletter.ini.append.php`; both are idempotent. Commit `fffda2f` (see [the feature page](../../features/6.0/extensions/cjw_newsletter.md#the-newsletter-tree-of-a-new-installation))
+
+**Updated**
+
+- The subject prefix of newsletter mails defaults to the host of the site: with `EmailSubjectPrefix` empty (now the default) the subject starts with `[Newsletter <host>]`, taken from `SiteURL`; the confirmation, information and edition mail templates use it. Commit `bb3542b`
+- The file manifest carries the checksums of the 4.1.16 files (`b4acb1e`, `1579a51` is the version bump)
 
 ## 4.1.15 (2026-10-02)
 

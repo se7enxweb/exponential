@@ -4,11 +4,20 @@ What each release of `explayouts_ui_api` contains, assembled from its commits. E
 
 ## v1.3.9 (2026-10-01)
 
-No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
+**Updated**
+
+- The layout editor runs on ezjscore's jQuery 4 and jQuery UI 1.14 instead of the jQuery 2.2.4 and jQuery UI 1.10.4 built into its bundle, and its page tags, globals and texts carry `explayouts` names, so the whole admin runs on one jQuery 4 (`8273a03`)
+
+**Fixed**
+
+- The Markdown and HTML blocks in the editor have a code editor again: their preview now carries the `ace-editor` element the editor is built on, so opening such a block no longer fails and its text can be edited and saved (`eeafe10`)
+- The Roboto italic face the editor's stylesheet points to ships, so italic text shows in Roboto and three font requests no longer fail (`a9dfe30`)
 
 ## v1.3.8 (2026-09-30)
 
-No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
+**Fixed**
+
+- Layout share links work on Oracle: the `explayouts_share` table (with its sequence, trigger and the indexes `idx_share_layout` and `idx_share_token`) is created with Oracle's own statements when missing (`54efe41`)
 
 ## v1.3.7 (2026-09-30)
 

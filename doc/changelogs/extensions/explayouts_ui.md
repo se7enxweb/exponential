@@ -4,11 +4,21 @@ What each release of `explayouts_ui` contains, assembled from its commits. Each 
 
 ## v1.3.8 (2026-10-02)
 
-No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
+**Fixed**
+
+- The Layouts stylesheet's page-wide rules no longer reset the whole admin page on node views (`d21be9c`; one rule in `design/admin/stylesheets/netgen/layouts-admin.css`)
 
 ## v1.3.7 (2026-10-01)
 
-No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
+**Updated**
+
+- The layouts admin pages run on the admin's jQuery 4 from ezjscore and carry Exponential names: `layouts-ibexa.js` and `layouts-ibexa.css` are now `layouts-exponential.js` and `layouts-exponential.css`, `nglayouts-ui.css` is `explayouts-ui.css`, and the pages no longer load `layouts-admin.js` (`e3d2723`). If your own template overrides load the old file names, change them
+- The Components page lists the usages of the renamed `exp_component_<type>` blocks; an installation shows them once the `updatecomponentblockidentifiers.php` script of `explayouts` has renamed its stored blocks (`667e862`)
+
+**Fixed**
+
+- The Roboto fonts the layouts stylesheet points to ship in `design/admin/stylesheets/media`, so the layouts pages show their fonts instead of 404 errors (`3e56537`)
+- The rule list's layout actions use a condition the template language supports; before, a parser error was logged on every view and the actions did not show for an editor (`0c6083f`)
 
 ## v1.3.6 (2026-09-30)
 

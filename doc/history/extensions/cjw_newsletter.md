@@ -122,6 +122,14 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 - 2026-10-02 [`2d2575c`](https://github.com/se7enxweb/cjw_newsletter/commit/2d2575c) (release) Version 4.1.15
 - 2026-10-02 [`4487dfd`](https://github.com/se7enxweb/cjw_newsletter/commit/4487dfd) (tooling) The file manifest carries the checksums of the 4.1.15 files and lists the code of the commands, cron jobs and views **Release 4.1.15.**
 
+### Added after the ledger was cut (2 October 2026)
+
+- 2026-10-02 `fffda2f` (feature) The installer creates the newsletter tree of a new installation (4.1.16)
+- 2026-10-02 `bb3542b` (feature) The subject prefix of newsletter mails defaults to the host of the site (4.1.16)
+- 2026-10-02 `b4acb1e` (tooling) The file manifest carries the checksums of the 4.1.16 files, with the release 4.1.16
+
+The 4.1.15 commits above also exist in the clone under other hashes (a second copy of the same subjects is reachable from another reference); the links on this page use the hashes of the ledger, which may need checking against the remote.
+
 ## Related
 
 * [Feature page](../../features/6.0/extensions/cjw_newsletter.md)
