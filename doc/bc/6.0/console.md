@@ -312,3 +312,53 @@ script or redirecting output, colors are suppressed automatically.
   (`which php`).
 - Exit codes from sub-scripts are propagated to the caller unchanged, making the
   console safe to use in shell pipelines and CI/CD scripts.
+
+## Cronjob parts and the crontab (added June 2026)
+
+Two more command families were added to the console in 6.0.15 development
+(`a2ef4efa50`).
+
+### `cron:<part>` runs a cronjob part by its name
+
+A cronjob part is a `[CronjobPart-<name>]` block in `settings/cronjob.ini` or in
+an extension's `settings/cronjob.ini.append.php`, with one or more `Scripts[]=`
+entries. The console discovers the parts from those INI files, not from the
+script file names, and runs them through `runcronjobs.php`:
+
+```bash
+php bin/php/console cron:frequent --allow-root-user
+php bin/php/console list cron
+```
+
+The list shows each part with a description built from the `@description` tag at
+the top of each script it runs (all core scripts under `cronjobs/` carry one).
+Siteaccess flags before the part name are passed on:
+
+```bash
+php bin/php/console cron:infrequent -s site_admin
+```
+
+The parts of a stock installation are `infrequent`, `frequent`, `contentjobs`,
+`audit`, `unlock`, `cluster_maintenance`, `cleanuprss` and `cache_cleanup`.
+
+### Describe your own cronjob script
+
+Put a docblock line in the script so `list cron` can show it:
+
+```php
+<?php
+/**
+ * @description Remove expired baskets of anonymous visitors
+ */
+```
+
+### `crontab:list` and `crontab:edit`
+
+```bash
+php bin/php/console crontab:list      # print the system crontab of the current user
+php bin/php/console crontab:edit      # open it in $EDITOR
+```
+
+Use these to see that the parts you run through `cron:<part>` are scheduled. The
+browser view of the same information is the
+[cronjobs console](../../features/6.0/cronjobs-console.md).
