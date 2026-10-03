@@ -205,4 +205,7 @@ Class=expSearchServices
 [ezjscServer_expcontentjob]
 Class=expContentJobServices
 
+[ezjscServer_expeditor]
+Class=expEditorServices
+
 */ ?>
