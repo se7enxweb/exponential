@@ -1,9 +1,9 @@
 # MongoDB as the database
 
-Exponential 6.0.14 (June 2026) can store the whole content repository in
-MongoDB instead of MySQL, PostgreSQL or SQLite. If your organisation runs
-MongoDB already, or you want a document store behind a mature content model, the
-setup wizard now offers **MongoDB** next to the other database systems.
+This page is for administrators whose organisation runs MongoDB already, or who want a document store behind a
+mature content model. Exponential 6.0.14 (June 2026) can store the whole content repository in MongoDB instead of
+MySQL, PostgreSQL or SQLite, and the setup wizard offers **MongoDB** next to the other database systems. Read the
+limits below before you choose it for a production site.
 
 This page is the entry point. The complete porting reference, with every kernel
 class, the collection schema and a test plan, is
@@ -87,14 +87,11 @@ leaked into other engines. Fixed in the same weeks (`e0d617f28e`, `93cdd0cf47`,
 - **All engines**: `implode(null)` in the admin page layout and a missing
   `role_limitations` key in the user cache no longer crash or loop.
 
-## Related
-
-- [SQLite database support](sqlite-database.md),
-  [specification of the SQLite driver](../../specifications/6.0/sqlite3-database-driver.md)
-- [Package installer batching](package-installer-batching.md)
-- [Chronicle: June 2026, first half](../../history/2026/2026-06a.md)
-- [Changelog 6.0.14](../../changelogs/6.0/6.0.14.md)
-
 ## Related pages
 
+- [MongoDB kernel support (porting reference)](../../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
+- [SQLite database support](sqlite-database.md), [specification of the SQLite driver](../../specifications/6.0/sqlite3-database-driver.md)
 - [Database drivers and installers: SQLite, PostgreSQL, MySQL and Oracle, 16 to 30 September 2026](../../specifications/6.0/database-drivers-2026-09.md)
+- [Package installer batching](package-installer-batching.md)
+- [Changelog 6.0.14](../../changelogs/6.0/6.0.14.md)
+- [Chronicle: June 2026, first half](../../history/2026/2026-06a.md)

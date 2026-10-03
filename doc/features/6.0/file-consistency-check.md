@@ -1,7 +1,7 @@
 # File consistency check and the release file list
 
-The administration interface can tell you which files of an installation were
-changed after it was installed. Setup > System upgrade > **Check file
+This page is for administrators who want to know whether the files of an installation were changed after it was
+installed, and for maintainers who cut releases. Setup > System upgrade > **Check file
 consistency** compares every file with a list of checksums that ships with each
 release, `share/filelist.md5`. Since April 2026 two small scripts create and
 verify that list, so a release always carries a list that matches its files and
@@ -45,8 +45,8 @@ bash bin/shell/generatefilelist.sh             # write share/filelist.md5
 ```
 
 On a large installation with many extension checkouts `--dry-run` and `--list`
-walk the whole tree and can take minutes (measured: more than two minutes on the
-alpha installation); run them from a shell without a short timeout.
+walk the whole tree and can take minutes (measured: more than two minutes on a
+large development installation); run them from a shell without a short timeout.
 
 The defaults are what a release wants: everything that is part of the
 installation is hashed, and everything that is not is left out. Left out by
@@ -96,19 +96,10 @@ In the 6.0.14 release (June 2026) the list was committed seven times between 5 a
 while last fixes landed; that is the symptom of step 1 being done in the wrong
 order, and the reason for the rule.
 
-## Related
-
-[Changelog 6.0.14](../../changelogs/6.0/6.0.14.md),
-[Rebranding](rebranding-to-exponential.md),
-[Chronicle: April 2026](../../history/2026/2026-04.md).
-
-## See also
-
-Specification-level detail of the options is the script's own help: `bash bin/shell/generatefilelist.sh --help`.
+The full detail of the options is the script's own help: `bash bin/shell/generatefilelist.sh --help`.
 
 ## Related pages
 
-- [Package licenses and Semantic Versioning](package-licenses-and-versions.md)
-- [May 2026](../../history/2026/2026-05.md)
-- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)
-- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)
+- [Package licenses and Semantic Versioning](package-licenses-and-versions.md), [the product is called Exponential](rebranding-to-exponential.md)
+- [Changelog 6.0.14](../../changelogs/6.0/6.0.14.md)
+- History: [April 2026](../../history/2026/2026-04.md), [May 2026](../../history/2026/2026-05.md), [June 2026, first half](../../history/2026/2026-06a.md), [June 2026, second half](../../history/2026/2026-06b.md)

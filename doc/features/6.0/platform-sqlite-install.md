@@ -1,9 +1,12 @@
 # SQLite for Exponential Platform: no database server needed
 
-**Repositories:** `core` (Platform v5 kernel), `ezplatform-kernel` (3.x / 4.6 line), `ezpublish-kernel` (2.5 line), `exponential-platform-legacy`, `exponential-platform-nexus` / `cjw-exponential-platform-nexus`, `legacyBridge`.
-**History:** [core](../../history/ecosystem/core.md) · [ezplatform-kernel](../../history/ecosystem/ezplatform-kernel.md) · [ezpublish-kernel](../../history/ecosystem/ezpublish-kernel.md) · [exponential-platform-legacy](../../history/ecosystem/exponential-platform-legacy.md).
-**Not to be confused with:** [SQLite database for Exponential 6](sqlite-database.md), which is the legacy kernel's own SQLite driver. This page is about the Symfony based Exponential Platform.
-**Reference:** [Platform SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md).
+This page is for developers who want an Exponential Platform (the Symfony based platform) running in minutes, without
+a database server. It is **not** about the legacy kernel's own SQLite driver: for that, see
+[SQLite database for Exponential 6](sqlite-database.md). Reference:
+[Platform SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md).
+
+**Repositories:** `core` (Platform v5 kernel), `ezplatform-kernel` (3.x / 4.6 line), `ezpublish-kernel` (2.5 line),
+`exponential-platform-legacy`, `exponential-platform-nexus` / `cjw-exponential-platform-nexus`, `legacyBridge`.
 
 ## What it is
 
@@ -90,21 +93,11 @@ A platform installation on SQLite can also run the Exponential legacy kernel thr
 - File permissions are the usual installation problem: the web server user must own or write the `.db` file and its directory.
 - The seed files carry the content model of the install type you choose; a different install type needs its own seed data.
 
-## Related
-
-[Nexus starter](platform-nexus-starter.md) · [DXP skeleton](platform-dxp-skeleton.md) · [SQLite database for Exponential 6](sqlite-database.md) · [ecosystem overview](../../history/ecosystem.md)
-
-## Platform ecosystem pages
-
-- Features: [Platform administration interface](platform-admin-ui-fork.md); [DXP skeleton](platform-dxp-skeleton.md); [Layouts on the platform](platform-layouts-core-fork.md); [Nexus starter](platform-nexus-starter.md); [PHP 8.5 framework forks](platform-php85-framework-forks.md); [Site bundles](platform-site-bundles.md); [Legacy bridge](legacy-bridge.md); [AdminNeo database manager](adminneo-database-manager.md).
-- Specifications: [Platform console command names](../../specifications/6.0/platform-console-commands.md); [Platform package map](../../specifications/6.0/platform-package-map.md); [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md); [Legacy bridge bundle specification](../../specifications/6.0/legacy-bridge-bundle.md).
-- Upgrade notes: [Package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md).
-- Changelog: [Platform changelog](../../changelogs/extensions/exponential-platform.md).
-- History: [ecosystem overview](../../history/ecosystem.md), with a page for every month from 2018-11 in [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md).
-
 ## Related pages
 
-- [SQLite: transactions queue for the write lock](../../bc/6.0/sqlite-transactions.md)
-- [January 2024, first half (1 to 15 January)](../../history/2024/2024-01a.md)
-- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
-- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)
+- [SQLite database for Exponential 6](sqlite-database.md), [SQLite: transactions queue for the write lock](../../bc/6.0/sqlite-transactions.md)
+- Platform features: [Nexus starter](platform-nexus-starter.md), [DXP skeleton](platform-dxp-skeleton.md), [platform administration interface](platform-admin-ui-fork.md), [Layouts on the platform](platform-layouts-core-fork.md), [PHP 8.5 framework forks](platform-php85-framework-forks.md), [site bundles](platform-site-bundles.md), [legacy bridge](legacy-bridge.md), [AdminNeo database manager](adminneo-database-manager.md)
+- Specifications: [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md), [platform console command names](../../specifications/6.0/platform-console-commands.md), [platform package map](../../specifications/6.0/platform-package-map.md), [legacy bridge bundle](../../specifications/6.0/legacy-bridge-bundle.md)
+- Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- Changelog: [platform changelog](../../changelogs/extensions/exponential-platform.md)
+- History: [core](../../history/ecosystem/core.md), [ezplatform-kernel](../../history/ecosystem/ezplatform-kernel.md), [ezpublish-kernel](../../history/ecosystem/ezpublish-kernel.md), [exponential-platform-legacy](../../history/ecosystem/exponential-platform-legacy.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md), [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [June 2026, second half](../../history/2026/2026-06b.md)

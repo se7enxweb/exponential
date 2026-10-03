@@ -1,10 +1,9 @@
 # Translations and languages
 
-On 27 and 28 September 2026 the translation catalogues of Exponential were
-brought up to date and made complete for English (`eng-US`) and German
-(`ger-DE`), almost every visible text of the administration and the standard
-designs became a translation string, and every shipped locale got a correct
-HTML language tag.
+This page is for administrators who run Exponential in a language other than English, and for developers who make
+their own texts translatable. On 27 and 28 September 2026 the translation catalogues of Exponential were brought up to
+date and made complete for English (`eng-US`) and German (`ger-DE`), almost every visible text of the administration
+and the standard designs became a translation string, and every shipped locale got a correct HTML language tag.
 
 ## What is translated now
 
@@ -99,6 +98,8 @@ See [Extension loading order](extension-loading-order.md).
 ## Related pages
 
 - [Translations of the package comparison](package-compare-and-import.md)
+- [Installing in one command](install-in-one-command.md) (languages of a new installation), [extension loading order](extension-loading-order.md) (translation siteaccesses)
+- [About and Copyright pages](about-and-package-pages.md)
 - [Behaviour changes of September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
