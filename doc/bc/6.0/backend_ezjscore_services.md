@@ -1373,3 +1373,517 @@ Rules that hold for every service of these domains:
 
 
 Total: 255 services in 16 domains (83 writes).
+
+<!-- expservices-content:begin -->
+## Content services: 350 services in 15 domains (112 writes)
+
+Written by the content part of expservices: `extension/expservices/classes/content/` (one class per domain over the shared
+`expContentServiceBase`: fetch helpers with the access checks, the exporters that turn nodes, objects, versions, classes,
+sections and states into plain arrays, attribute values per datatype, sort and filter parsing, and the now-or-job routing).
+Tests: `tests/tests/extension/expservices/content/` (live database like the other domains: reads on the stable nodes, writes
+on test content under the Media root node 43 and on test classes, class groups, sections, state groups, aliases and wildcards
+that tearDown removes; never a test database). The sample calls were also verified over HTTP on Apache with a signed-in admin session (reads, a refused write without the token, then create, update and remove of a test folder).
+
+How the content services work, beyond the rules above:
+
+- **Policies with limitations.** The access column is the policy the call needs at all (`content/read`, `content/edit`, ...);
+  inside, every call checks the node or object the way the kernel does (`canRead`, `canEdit`, `canRemove`, `canMoveFrom`,
+  `canCreateClassList`, `canAssignSectionToObject`, the allowed state list ...), so a limitation by class, section, subtree,
+  owner or state applies to the services as it does in the admin. Lists use the kernel fetch functions with their permission
+  SQL, so a user only counts and pages what they may read.
+- **Identifiers.** Nodes, objects, versions, sections and states are addressed by number; classes by id or identifier;
+  state groups by id or identifier; languages by locale code (`eng-GB`).
+- **Attribute input.** Writes take attribute values as a JSON object `identifier => string`, in the string form the datatype
+  reads (`fromString()`: see `expattribute::string`). Datatypes whose string form is a file path or a credential
+  (`ezimage`, `ezbinaryfile`, `ezmedia`, `ezuser`, `ezpassword`) are refused with 422: a remote caller must never make the server
+  read a local path. Required attributes must be given on create. Values come back per datatype (text, number, boolean, date with
+  ISO form, XML text as xml and html, relations as ids, images with their original URL).
+- **Lists** answer the paged envelope (`data` items, `meta` total, offset, limit, count, has_more). Node lists take
+  `sort` (path, published, modified, section, depth, class_identifier, class_name, priority, name, modified_subnode, node_id,
+  contentobject_id), `order` (asc, desc), `limit`, `offset` and a JSON `filter`: `class[]`, `exclude_class[]`, `section`,
+  `state[]`, `owner`, `name` (prefix), `language`, `from` and `to` (published), `depth`, `hidden`.
+- **Now or job.** Large operations (move, copy of a subtree, hide, reveal, remove of subtrees, section and state of a subtree,
+  add and remove locations) take the POST field `mode`: `now` runs in the request (refused above content.ini `NowLimit`
+  nodes, answer 422), `job` creates a content job and starts its worker, `auto` (the default) picks by `SynchronousLimit`.
+  A job answer is `{ job_id, type, state, spawned }` with `meta.mode = job`; follow it with `expcontentjob::progress::<job_id>`.
+  A subtree locked by a running job answers 409 to a synchronous write.
+- **Drafts of classes** are the temporary version of the class, the one the admin class editor works on: `editDraft` or
+  `createDraft`, change, then `publishDraft` (the class edit handler updates existing objects) or `discardDraft`.
+- **Removal.** `remove` takes `move_to_trash` (default 1); the root nodes cannot be removed; `exptrash::purge`,
+  `purgeMany` and `emptyTrash` (POST `confirm=yes`) remove for good through the kernel trash service. Classes with objects, sections
+  in use, state groups with the `ez` prefix and the last location of an object are refused with 409 or 403.
+- **Audit.** Every successful write records `service.<domain>.<method>`; the kernel records its own `content.*` events for the
+  operations the services call (create, publish, move, remove, section, state, translation, class, URL alias).
+
+Errors: 400 bad argument, 401 not signed in, 403 denied (policy, method or form token), 404 not found, 409 conflict (exists,
+locked, in use), 422 not valid (input refused by a datatype or a rule).
+
+Example: create an article, change it, and follow a large move as a job (shell, after `expsession::login`):
+
+```bash
+curl -b jar -c jar --data-urlencode 'class=article' --data-urlencode 'attributes={"title":"Hello","intro":"First"}' \
+     --data-urlencode "ezxform_token=$TOKEN" "$BASE/ezjscore/call/expnode::create::43?ContentType=json"
+curl -b jar -c jar --data-urlencode 'attributes={"title":"Hello again"}' --data-urlencode "ezxform_token=$TOKEN" \
+     "$BASE/ezjscore/call/expnode::update::<node>?ContentType=json"
+curl -b jar -c jar --data-urlencode 'mode=job' --data-urlencode "ezxform_token=$TOKEN" \
+     "$BASE/ezjscore/call/expnode::move::<node>::<new-parent>?ContentType=json"      # { job_id: ... }
+curl -b jar "$BASE/ezjscore/call/expcontentjob::progress::<job_id>?ContentType=json"
+```
+
+#### Nodes (`expnode`, 49 services, 16 writes)
+
+The content tree: fetch by id, remote id, path and object; children and subtrees paged, sorted and filtered; counts, ancestors, siblings, data maps, rights; create, update, move, copy, hide, swap, remove, sort and priority.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expnode::get::<node_id>` | content/read |  | A node with its object |
+| `expnode::getMany::<node_ids>` | content/read |  | Several nodes by id (unreadable and missing ones are left out) |
+| `expnode::getByRemoteId::<remote_id>` | content/read |  | A node by its remote id |
+| `expnode::getByPath::<path>` | content/read |  | A node by its URL alias, e.g. Media/Images |
+| `expnode::getByObject::<object_id>` | content/read |  | The main node of an object |
+| `expnode::exists::<node_id>` | user |  | Whether a node exists and is readable |
+| `expnode::children::<node_id>::<sort>::<order>::<limit>::<offset>::<filter>` | content/read |  | Children of a node, paged, sorted and filtered |
+| `expnode::childrenCount::<node_id>::<filter>` | content/read |  | Number of children |
+| `expnode::childrenNames::<node_id>::<limit>::<offset>` | content/read |  | Light list of children: node id, object id, class, name |
+| `expnode::subtree::<node_id>::<sort>::<order>::<limit>::<offset>::<filter>` | content/read |  | Descendants of a node, paged, sorted and filtered (filter.depth limits the depth) |
+| `expnode::subtreeCount::<node_id>::<filter>` | content/read |  | Number of descendants |
+| `expnode::byClass::<node_id>::<classes>::<limit>::<offset>` | content/read |  | Descendants of one or more classes |
+| `expnode::countByClass::<node_id>::<depth>` | content/read |  | Facet: number of descendants per class (needs unrestricted read) |
+| `expnode::latest::<node_id>::<limit>::<classes>` | content/read |  | Most recently published descendants |
+| `expnode::modifiedSince::<node_id>::<since>::<limit>::<offset>` | content/read |  | Descendants published since a time (timestamp or date) |
+| `expnode::find::<node_id>::<name>::<limit>::<offset>` | content/read |  | Descendants whose name starts with a text |
+| `expnode::hidden::<node_id>::<limit>::<offset>` | content/read |  | Hidden nodes below a node |
+| `expnode::tree::<node_id>::<depth>::<per_level>` | content/read |  | Nested children down to a depth, limited per level |
+| `expnode::path::<node_id>` | content/read |  | The ancestors of a node from the root, with the node itself |
+| `expnode::breadcrumb::<node_id>` | content/read |  | Light ancestors list: node id, name, url alias |
+| `expnode::parent::<node_id>` | content/read |  | The parent node |
+| `expnode::siblings::<node_id>::<limit>::<offset>` | content/read |  | Other children of the parent, paged |
+| `expnode::neighbours::<node_id>` | content/read |  | Previous and next sibling in the parent sort order |
+| `expnode::dataMap::<node_id>::<language>` | content/read |  | The attributes of the node object with their values |
+| `expnode::attribute::<node_id>::<identifier>::<language>` | content/read |  | One attribute of the node object |
+| `expnode::names::<node_id>` | content/read |  | The node name in every language |
+| `expnode::url::<node_id>` | content/read |  | URL alias and system URL of a node |
+| `expnode::sortInfo::<node_id>` | content/read |  | Sort field and order of the children, and the names allowed |
+| `expnode::visibility::<node_id>` | content/read |  | Hidden and invisible flags with the nearest hidden ancestor |
+| `expnode::rights::<node_id>` | user |  | What the current user can do with the node |
+| `expnode::creatableClasses::<node_id>` | content/create |  | Classes the current user can create below the node |
+| `expnode::locations::<node_id>` | content/read |  | All nodes of the same object |
+| `expnode::pendingDrafts::<node_id>::<limit>::<offset>` | content/read |  | Drafts waiting to be published below a node |
+| `expnode::create::<parent_node_id>` | content/create | POST | Creates and publishes an object below a node. POST: class, attributes (json identifier => string), language, remote_id |
+| `expnode::update::<node_id>` | content/edit | POST | Changes attributes of the node object and publishes a new version. POST: attributes (json), language |
+| `expnode::rename::<node_id>` | content/edit | POST | Renames the object of a node. POST: name |
+| `expnode::move::<node_id>::<new_parent_node_id>` | content/move | POST | Moves a node and its subtree. POST: mode |
+| `expnode::copy::<node_id>::<new_parent_node_id>` | content/create | POST | Copies one node (object) below a node |
+| `expnode::copySubtree::<node_id>::<new_parent_node_id>` | content/create | POST | Copies a node with all its descendants. POST: mode, all_versions, keep_creator, keep_time |
+| `expnode::hide::<node_id>` | content/hide | POST | Hides a node and its subtree. POST: mode |
+| `expnode::reveal::<node_id>` | content/hide | POST | Reveals a hidden node and its subtree. POST: mode |
+| `expnode::toggleHide::<node_id>` | content/hide | POST | Hides a visible node, reveals a hidden one |
+| `expnode::swap::<node_id>::<other_node_id>` | content/edit | POST | Swaps two nodes (their objects change places) |
+| `expnode::remove::<node_id>` | content/remove | POST | Removes a node and its subtree. POST: move_to_trash (default 1), mode |
+| `expnode::removeMany` | content/remove | POST | Removes several nodes. POST: node_ids, move_to_trash, mode |
+| `expnode::setSort::<node_id>::<field>::<order>` | content/edit | POST | Sets how the children are sorted |
+| `expnode::setPriority::<node_id>::<priority>` | content/edit | POST | Sets the priority of a node |
+| `expnode::setPriorities::<parent_node_id>` | content/edit | POST | Sets the priorities of children. POST: priorities (json node id => priority) |
+| `expnode::setRemoteId::<node_id>::<remote_id>` | content/edit | POST | Sets the remote id of a node |
+
+#### Objects (`expobject`, 36 services, 11 writes)
+
+Content objects: lists by class and owner, data maps and attributes with their values, names, owner, class, section, states, locations, languages; create, update (a new published version), rename, owner, languages, copy, remove.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expobject::get::<object_id>` | content/read |  | An object with its languages and node ids |
+| `expobject::getByRemoteId::<remote_id>` | content/read |  | An object by its remote id |
+| `expobject::exists::<object_id>` | user |  | Whether an object exists and is readable |
+| `expobject::list::<sort>::<order>::<limit>::<offset>::<filter>` | content/read |  | Objects (main nodes) paged, sorted and filtered |
+| `expobject::count::<filter>` | content/read |  | Number of objects matching a filter |
+| `expobject::byClass::<class>::<limit>::<offset>` | content/read |  | Objects of a class |
+| `expobject::byOwner::<owner_id>::<limit>::<offset>` | content/read |  | Objects owned by an object (user) id |
+| `expobject::recent::<limit>::<classes>` | content/read |  | Most recently published objects |
+| `expobject::recentlyModified::<limit>::<classes>` | content/read |  | Most recently modified objects |
+| `expobject::dataMap::<object_id>::<version>::<language>` | content/read |  | The attributes of an object version with their values |
+| `expobject::attributes::<object_id>::<language>` | content/read |  | The attributes of an object without values |
+| `expobject::attribute::<object_id>::<identifier>::<language>` | content/read |  | One attribute of an object |
+| `expobject::name::<object_id>::<language>` | content/read |  | The name of an object in a language |
+| `expobject::names::<object_id>` | content/read |  | The name of an object in every language |
+| `expobject::owner::<object_id>` | content/read |  | The owner object of an object |
+| `expobject::class::<object_id>` | content/read |  | The class of an object with its attributes |
+| `expobject::section::<object_id>` | content/read |  | The section of an object |
+| `expobject::states::<object_id>` | content/read |  | The states of an object |
+| `expobject::nodes::<object_id>` | content/read |  | All nodes (locations) of an object |
+| `expobject::mainNode::<object_id>` | content/read |  | The main node of an object |
+| `expobject::languages::<object_id>` | content/read |  | Languages the object exists in, initial and always available |
+| `expobject::versionCount::<object_id>` | content/read |  | Number of versions |
+| `expobject::rights::<object_id>` | user |  | What the current user can do with the object |
+| `expobject::url::<object_id>` | content/read |  | URL aliases of the main node of an object |
+| `expobject::summary::<object_id>` | content/read |  | Light card of an object: id, name, class, main node, modified |
+| `expobject::create` | content/create | POST | Creates and publishes an object. POST: parent_node_id, class, attributes (json), language, remote_id |
+| `expobject::update::<object_id>` | content/edit | POST | Changes attributes and publishes a new version. POST: attributes (json), language |
+| `expobject::rename::<object_id>` | content/edit | POST | Renames an object. POST: name |
+| `expobject::setRemoteId::<object_id>::<remote_id>` | content/edit | POST | Sets the remote id of an object |
+| `expobject::setOwner::<object_id>::<owner_id>` | content/edit | POST | Changes the owner of an object (needs unrestricted edit access) |
+| `expobject::setInitialLanguage::<object_id>::<language>` | content/translate | POST | Changes the initial language of an object |
+| `expobject::setAlwaysAvailable::<object_id>::<value>` | content/translate | POST | Sets whether the object is shown in languages it has no translation for |
+| `expobject::copy::<object_id>::<new_parent_node_id>` | content/create | POST | Copies the object of a main node below a node |
+| `expobject::remove::<object_id>` | content/remove | POST | Removes an object with all its nodes. POST: move_to_trash (default 1), mode |
+| `expobject::expireCache::<object_id>` | content/edit | POST | Clears the view caches of an object |
+| `expobject::cleanupDrafts::<object_id>` | content/edit | POST | Removes the current user's internal drafts of an object |
+
+#### Classes (`expclass`, 37 services, 12 writes)
+
+Content class definitions and the class editor as services: reads of classes, attributes, groups, usage and datatypes; draft workflow (createDraft or editDraft, change the draft and its attributes, publishDraft or discardDraft), copy and remove.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expclass::list::<group_id>::<limit>::<offset>` | class/* |  | Content classes, optionally of one group |
+| `expclass::count` | class/* |  | Number of classes |
+| `expclass::identifiers` | user |  | Light map of class id => identifier and name |
+| `expclass::get::<class>` | class/* |  | A class with its attributes and groups (id or identifier) |
+| `expclass::getByRemoteId::<remote_id>` | class/* |  | A class by its remote id |
+| `expclass::search::<text>::<limit>::<offset>` | class/* |  | Classes whose name or identifier contains a text |
+| `expclass::attributes::<class>` | class/* |  | The attributes of a class in order |
+| `expclass::attribute::<attribute_id>` | class/* |  | One class attribute by id |
+| `expclass::attributeByIdentifier::<class>::<identifier>` | class/* |  | One class attribute by class and identifier |
+| `expclass::searchableAttributes::<class>` | class/* |  | The searchable attributes of a class |
+| `expclass::requiredAttributes::<class>` | class/* |  | The required attributes of a class |
+| `expclass::collectorAttributes::<class>` | class/* |  | The information collector attributes of a class |
+| `expclass::groups::<class>` | class/* |  | The groups a class is in |
+| `expclass::objectCount::<class>` | class/* |  | Number of objects of a class |
+| `expclass::usage::<limit>::<offset>` | class/* |  | Classes with their object counts, most used first |
+| `expclass::containers` | class/* |  | Classes that are containers |
+| `expclass::names::<class>` | class/* |  | The name of a class in every language |
+| `expclass::languages::<class>` | class/* |  | Languages a class has names in |
+| `expclass::patterns::<class>` | class/* |  | Object name and URL alias patterns of a class |
+| `expclass::removable::<class>` | class/* |  | Whether the class can be removed and what blocks it |
+| `expclass::canInstantiate` | user |  | Classes the current user may create objects of |
+| `expclass::drafts` | class/* |  | Class drafts (temporary versions) being edited |
+| `expclass::draft::<class_id>` | class/* |  | A class draft with its attributes |
+| `expclass::dataTypes` | class/* |  | The datatypes available for class attributes |
+| `expclass::sortFields` | user |  | The names accepted for the default sort of children |
+| `expclass::createDraft` | class/* | POST | Starts a new class draft. POST: name, identifier, group_id, language, description, is_container, always_available, object_name_pattern, url_alias_pattern, sort_field, sort_order |
+| `expclass::editDraft::<class_id>` | class/* | POST | Starts or continues a draft of an existing class |
+| `expclass::updateDraft::<class_id>` | class/* | POST | Changes the class draft fields (same POST fields as createDraft) |
+| `expclass::addAttributeDraft::<class_id>` | class/* | POST | Adds an attribute to the draft. POST: data_type, identifier, name, description, is_required, is_searchable, can_translate, is_information_collector, language |
+| `expclass::updateAttributeDraft::<class_id>::<attribute_id>` | class/* | POST | Changes an attribute of the draft (same POST fields except data_type) |
+| `expclass::removeAttributeDraft::<class_id>::<attribute_id>` | class/* | POST | Removes an attribute from the draft |
+| `expclass::moveAttributeDraft::<class_id>::<attribute_id>::<direction>` | class/* | POST | Moves an attribute of the draft: up, down, top or bottom |
+| `expclass::publishDraft::<class_id>` | class/* | POST | Publishes the draft as the class definition |
+| `expclass::discardDraft::<class_id>` | class/* | POST | Discards the class draft |
+| `expclass::copy::<class_id>` | class/* | POST | Starts a draft that is a copy of a class (publishDraft makes it a class) |
+| `expclass::remove::<class_id>` | class/* | POST | Removes a class that has no objects |
+| `expclass::setName::<class_id>::<language>::<name>` | class/* | POST | Sets the name of a class in a language (through a draft that is published) |
+
+#### Class groups (`expclassgroup`, 13 services, 5 writes)
+
+The groups classes are filed in: list, members, create, rename, remove (empty groups only), add a class to a group, take it out.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expclassgroup::list::<limit>::<offset>` | class/* |  | All class groups with their class counts |
+| `expclassgroup::count` | class/* |  | Number of class groups |
+| `expclassgroup::get::<group_id>` | class/* |  | A class group |
+| `expclassgroup::getByName::<name>` | class/* |  | A class group by name |
+| `expclassgroup::classes::<group_id>::<limit>::<offset>` | class/* |  | The classes in a group |
+| `expclassgroup::classCount::<group_id>` | class/* |  | Number of classes in a group |
+| `expclassgroup::ofClass::<class>` | class/* |  | The groups a class is in |
+| `expclassgroup::isEmpty::<group_id>` | class/* |  | Whether a group has no classes (and can be removed) |
+| `expclassgroup::create::<name>` | class/* | POST | Creates a class group |
+| `expclassgroup::rename::<group_id>::<name>` | class/* | POST | Renames a class group |
+| `expclassgroup::remove::<group_id>` | class/* | POST | Removes an empty class group |
+| `expclassgroup::addClass::<group_id>::<class>` | class/* | POST | Files a class in a group |
+| `expclassgroup::removeClass::<group_id>::<class>` | class/* | POST | Takes a class out of a group (a class keeps at least one group) |
+
+#### Attributes and datatypes (`expattribute`, 21 services, 5 writes)
+
+The attributes of content objects (values per datatype, strings, titles, history, languages) and the datatype catalogue; set one or several attributes of an object (a new published version) or of a draft.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expattribute::get::<object_id>::<identifier>::<language>` | content/read |  | One attribute of an object with its value |
+| `expattribute::getById::<attribute_id>::<version>` | content/read |  | An attribute by its id and version |
+| `expattribute::value::<object_id>::<identifier>::<language>` | content/read |  | Only the value of an attribute |
+| `expattribute::string::<object_id>::<identifier>::<language>` | content/read |  | The attribute as its string form (the format writes accept) |
+| `expattribute::title::<object_id>::<identifier>::<language>` | content/read |  | The title text of an attribute |
+| `expattribute::hasContent::<object_id>::<identifier>::<language>` | content/read |  | Whether the attribute has content |
+| `expattribute::dataType::<object_id>::<identifier>` | content/read |  | The datatype of an attribute |
+| `expattribute::classAttribute::<object_id>::<identifier>` | content/read |  | The class attribute definition of an attribute |
+| `expattribute::history::<object_id>::<identifier>::<limit>` | content/read |  | The value of an attribute in every version, newest first |
+| `expattribute::languages::<object_id>::<identifier>` | content/read |  | The value of an attribute in every language |
+| `expattribute::missingRequired::<object_id>::<version>` | content/read |  | Required attributes without content in a version |
+| `expattribute::byDataType::<datatype>::<limit>::<offset>` | content/read |  | Attributes of a datatype across current objects (readable ones) |
+| `expattribute::dataTypes` | user |  | The datatype catalogue |
+| `expattribute::dataTypeInfo::<datatype>` | user |  | One datatype: name, flags and the classes using it |
+| `expattribute::dataTypeClasses::<datatype>` | class/* |  | The classes that have an attribute of a datatype |
+| `expattribute::set::<object_id>::<identifier>` | content/edit | POST | Sets one attribute and publishes a new version. POST: value, language |
+| `expattribute::setMany::<object_id>` | content/edit | POST | Sets several attributes and publishes a new version. POST: values (json identifier => string), language |
+| `expattribute::clear::<object_id>::<identifier>` | content/edit | POST | Empties an attribute and publishes a new version |
+| `expattribute::setDraft::<object_id>::<version>::<identifier>` | content/edit | POST | Sets one attribute of a draft version (not published). POST: value, language |
+| `expattribute::setDraftMany::<object_id>::<version>` | content/edit | POST | Sets several attributes of a draft version. POST: values (json), language |
+| `expattribute::validateDraft::<object_id>::<version>` | content/edit |  | Checks a draft: required attributes filled, input valid |
+
+#### Versions and drafts (`expversion`, 25 services, 8 writes)
+
+The version history of an object, drafts of a user and of all users, compare two versions; create a draft (in a language), publish, discard, remove old versions, revert.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expversion::list::<object_id>::<limit>::<offset>::<status>` | content/versionread |  | The versions of an object, newest first, paged |
+| `expversion::count::<object_id>` | content/versionread |  | Number of versions of an object |
+| `expversion::get::<object_id>::<version>` | content/versionread |  | One version |
+| `expversion::current::<object_id>` | content/versionread |  | The current (published) version |
+| `expversion::published::<object_id>` | content/read |  | The published version number |
+| `expversion::status::<object_id>::<version>` | content/versionread |  | The status of a version |
+| `expversion::creator::<object_id>::<version>` | content/versionread |  | The creator object of a version |
+| `expversion::dataMap::<object_id>::<version>::<language>` | content/versionread |  | The attributes of a version with their values |
+| `expversion::translations::<object_id>::<version>` | content/versionread |  | The languages of a version |
+| `expversion::nodeAssignments::<object_id>::<version>` | content/versionread |  | The locations a version is assigned to |
+| `expversion::compare::<object_id>::<version_a>::<version_b>::<language>` | content/diff |  | Differences between two versions, attribute by attribute |
+| `expversion::drafts::<object_id>` | content/versionread |  | The drafts of an object |
+| `expversion::myDrafts::<limit>::<offset>` | content/edit |  | The current user's drafts of all objects, paged |
+| `expversion::allDrafts::<limit>::<offset>` | content/versionread |  | Drafts of all users (needs unrestricted version access), paged |
+| `expversion::pending::<limit>::<offset>` | content/pendinglist |  | Versions waiting in the publishing queue, paged |
+| `expversion::hasConflicts::<object_id>::<version>::<language>` | content/edit |  | Whether a draft is older than the published version of its language |
+| `expversion::viewUrl::<object_id>::<version>::<language>` | content/versionread |  | The relative URL that previews a version |
+| `expversion::createDraft::<object_id>` | content/edit | POST | Creates a draft from the current or a given version. POST: language, copy_from_version |
+| `expversion::createDraftIn::<object_id>::<language>` | content/edit | POST | Creates a draft for a new or existing language. POST: copy_from_language |
+| `expversion::publish::<object_id>::<version>` | content/publish | POST | Publishes a draft |
+| `expversion::discard::<object_id>::<version>` | content/edit | POST | Discards a draft |
+| `expversion::remove::<object_id>::<version>` | content/versionremove | POST | Removes an archived or draft version (never the published one) |
+| `expversion::removeArchived::<object_id>::<keep>` | content/versionremove | POST | Removes archived versions of an object, keeping the newest N |
+| `expversion::revert::<object_id>::<version>` | content/edit | POST | Creates a draft from an old version (publish it to bring the old content back). POST: language |
+| `expversion::cleanupDrafts::<hours>` | content/versionremove | POST | Removes internal (unsaved) drafts older than a number of hours from all objects. Needs unrestricted version removal |
+
+#### Translations (`exptranslation`, 19 services, 5 writes)
+
+The site languages and the translations of objects: what exists, what is missing, status of a subtree; translate, copy a language, remove a translation, add and remove a site language.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `exptranslation::languages` | user |  | The languages of the site |
+| `exptranslation::language::<locale>` | user |  | One site language by locale code |
+| `exptranslation::prioritized` | public |  | The language codes of the siteaccess in priority order |
+| `exptranslation::topPriority` | public |  | The first language of the siteaccess |
+| `exptranslation::stats` | content/translations |  | Objects and classes per site language |
+| `exptranslation::knownLocales::<text>::<limit>::<offset>` | content/translations |  | Locales that can be added as site languages |
+| `exptranslation::ofObject::<object_id>` | content/read |  | The translations of an object with names and initial flag |
+| `exptranslation::missing::<object_id>` | content/read |  | Site languages an object has no translation in |
+| `exptranslation::content::<object_id>::<language>` | content/read |  | The attributes of an object in one language |
+| `exptranslation::names::<object_id>` | content/read |  | The object name in every language |
+| `exptranslation::nodeNames::<node_id>` | content/read |  | The names of a node in every language |
+| `exptranslation::classNames::<class>` | user |  | The name of a class in every language |
+| `exptranslation::canTranslate::<object_id>` | user |  | Whether the current user can translate an object, and into which languages |
+| `exptranslation::status::<node_id>` | content/read |  | Translation completeness of a node subtree: objects per language |
+| `exptranslation::translate::<object_id>::<language>` | content/translate | POST | Creates or changes a translation and publishes it. POST: attributes (json), copy_from_language |
+| `exptranslation::copyLanguage::<object_id>::<from>::<to>` | content/translate | POST | Copies the content of one language into another and publishes |
+| `exptranslation::remove::<object_id>::<language>` | content/translate | POST | Removes one translation of an object |
+| `exptranslation::addLanguage::<locale>` | content/translations | POST | Adds a site language (locale code). POST: name |
+| `exptranslation::removeLanguage::<locale>` | content/translations | POST | Removes a site language that no object or class uses |
+
+#### Relations (`exprelation`, 15 services, 4 writes)
+
+Relations between objects in both directions by type (common, embed, link, attribute), counts, broken relations; add, remove and replace common relations.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `exprelation::related::<object_id>::<type>::<limit>::<offset>` | content/read |  | Objects an object relates to (of the current version), paged. type: common, embed, link, attribute or all |
+| `exprelation::reverse::<object_id>::<type>::<limit>::<offset>` | content/read |  | Objects that relate to an object, paged |
+| `exprelation::counts::<object_id>` | content/read |  | Relation counts per type and direction |
+| `exprelation::relatedCount::<object_id>::<type>` | content/read |  | Number of relations from an object |
+| `exprelation::reverseCount::<object_id>::<type>` | content/read |  | Number of objects relating to an object |
+| `exprelation::reverseCountForNodes::<node_ids>` | content/read |  | Reverse relation counts for a list of nodes |
+| `exprelation::byAttribute::<object_id>::<identifier>` | content/read |  | Objects related through one attribute |
+| `exprelation::exists::<from_object_id>::<to_object_id>` | content/read |  | Whether a relation between two objects exists, and its types |
+| `exprelation::neighbours::<object_id>::<limit>` | content/read |  | Both directions at once: related and reverse related, light |
+| `exprelation::broken::<object_id>` | content/read |  | Relations of an object that point at objects that are gone or not published |
+| `exprelation::types` | user |  | The relation type names and their codes |
+| `exprelation::add::<from_object_id>::<to_object_id>` | content/edit | POST | Adds a relation from an object to another. POST: type (common, embed, link; default common), version |
+| `exprelation::remove::<from_object_id>::<to_object_id>` | content/edit | POST | Removes a relation. POST: type, version |
+| `exprelation::removeAll::<object_id>` | content/edit | POST | Removes every common relation of an object (embed, link and attribute relations belong to the content) |
+| `exprelation::replace::<object_id>` | content/edit | POST | Makes the common relations of an object exactly the given list. POST: object_ids |
+
+#### Locations (`explocation`, 15 services, 5 writes)
+
+The places an object lives at: list, main location, assignments, candidates and checks; add, remove, set the main location (large changes as jobs).
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `explocation::list::<object_id>` | content/read |  | All locations (nodes) of an object |
+| `explocation::count::<object_id>` | content/read |  | Number of locations of an object |
+| `explocation::main::<object_id>` | content/read |  | The main location of an object |
+| `explocation::parents::<object_id>` | content/read |  | The parent nodes of the locations of an object |
+| `explocation::assignments::<object_id>` | content/read |  | The node assignments of an object (current version) |
+| `explocation::isMain::<node_id>` | content/read |  | Whether a node is the main location of its object |
+| `explocation::canAdd::<object_id>::<parent_node_id>` | user |  | Whether the current user can add the object to a node |
+| `explocation::canRemove::<node_id>` | user |  | Whether a location can be removed (it is not the last one and has no children) |
+| `explocation::candidates::<node_id>::<class>::<limit>::<offset>` | content/read |  | Container nodes below a node where an object of a class can be added |
+| `explocation::orphans::<limit>::<offset>` | content/read |  | Published objects that have no node (needs unrestricted read) |
+| `explocation::add::<object_id>::<parent_node_id>` | content/manage_locations | POST | Adds a location of an object below a node |
+| `explocation::addMany::<target_node_id>` | content/manage_locations | POST | Adds the objects of several nodes below one node. POST: node_ids, mode |
+| `explocation::remove::<node_id>` | content/manage_locations | POST | Removes one location of an object (not the last one) |
+| `explocation::removeMany` | content/manage_locations | POST | Removes several locations. POST: node_ids, mode |
+| `explocation::setMain::<node_id>` | content/manage_locations | POST | Makes a location the main one |
+
+#### Trash (`exptrash`, 12 services, 4 writes)
+
+Trashed objects: list, filter, original parent; restore, purge one or several, empty the trash (confirm field).
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `exptrash::list::<sort>::<order>::<limit>::<offset>::<filter>` | content/restore |  | Trashed objects, paged and sorted (sort: name, class_name, published, modified, section) |
+| `exptrash::count` | content/restore |  | Number of trashed objects |
+| `exptrash::get::<object_id>` | content/restore |  | One trashed object |
+| `exptrash::isTrashed::<object_id>` | content/restore |  | Whether an object is in the trash |
+| `exptrash::originalParent::<object_id>` | content/restore |  | The node a trashed object was removed from, when it still exists in the same place |
+| `exptrash::byClass::<class>::<limit>::<offset>` | content/restore |  | Trashed objects of a class |
+| `exptrash::since::<since>::<limit>::<offset>` | content/restore |  | Objects trashed since a time (timestamp or date) |
+| `exptrash::canEmpty` | user |  | Whether the current user may purge from the trash |
+| `exptrash::restore::<object_id>` | content/restore | POST | Restores an object to its original parent, or to POST parent_node_id |
+| `exptrash::purge::<object_id>` | content/cleantrash | POST | Removes one object from the trash for good |
+| `exptrash::purgeMany` | content/cleantrash | POST | Purges several objects. POST: object_ids |
+| `exptrash::emptyTrash` | content/cleantrash | POST | Empties the whole trash. POST: confirm=yes |
+
+#### Sections (`expsection`, 17 services, 5 writes)
+
+Sections and what is in them; create, change, remove; assign an object or a subtree (jobs for large subtrees).
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expsection::list::<limit>::<offset>` | section/view |  | All sections |
+| `expsection::count` | section/view |  | Number of sections |
+| `expsection::get::<section_id>` | section/view |  | A section by id |
+| `expsection::getByIdentifier::<identifier>` | section/view |  | A section by identifier |
+| `expsection::objects::<section_id>::<limit>::<offset>` | content/read |  | Objects (main nodes) in a section, paged |
+| `expsection::objectCount::<section_id>` | section/view |  | Number of objects in a section |
+| `expsection::usage` | section/view |  | Sections with their object counts |
+| `expsection::canRemove::<section_id>` | section/view |  | Whether a section can be removed and what blocks it |
+| `expsection::assignable` | user |  | Sections the current user may assign |
+| `expsection::navigationParts` | section/view |  | The navigation parts a section can use |
+| `expsection::ofObject::<object_id>` | content/read |  | The section of an object |
+| `expsection::ofNode::<node_id>` | content/read |  | The section of a node |
+| `expsection::create` | section/edit | POST | Creates a section. POST: name, identifier, navigation_part |
+| `expsection::update::<section_id>` | section/edit | POST | Changes a section (same POST fields) |
+| `expsection::remove::<section_id>` | section/edit | POST | Removes an unused section |
+| `expsection::assign::<object_id>::<section_id>` | section/assign | POST | Assigns an object to a section |
+| `expsection::assignSubtree::<node_id>::<section_id>` | section/assign | POST | Assigns a node and its subtree to a section. POST: mode |
+
+#### Object states (`expstate`, 23 services, 9 writes)
+
+State groups and states, the states of an object, objects in a state; create, change, remove, order; assign to an object or a subtree (jobs for large subtrees).
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expstate::groups::<limit>::<offset>` | state/administrate |  | The state groups with their states |
+| `expstate::groupCount` | state/administrate |  | Number of state groups |
+| `expstate::group::<group>` | state/administrate |  | A state group by id or identifier, with its states |
+| `expstate::states::<group>` | state/administrate |  | The states of a group in order |
+| `expstate::state::<state_id>` | state/administrate |  | One state by id |
+| `expstate::stateByIdentifier::<group>::<identifier>` | state/administrate |  | One state by group and identifier |
+| `expstate::translations::<state_id>` | state/administrate |  | The names and descriptions of a state in every language |
+| `expstate::groupTranslations::<group>` | state/administrate |  | The names and descriptions of a group in every language |
+| `expstate::defaultState::<group>` | state/administrate |  | The first (default) state of a group |
+| `expstate::ofObject::<object_id>` | content/read |  | The states of an object |
+| `expstate::allowedForObject::<object_id>` | content/read |  | The states the current user may assign to an object |
+| `expstate::objects::<state_id>::<limit>::<offset>` | content/read |  | Objects (main nodes) in a state, paged |
+| `expstate::objectCount::<state_id>` | state/administrate |  | Number of objects in a state |
+| `expstate::limitations` | state/administrate |  | The state limitations policies can use |
+| `expstate::createGroup` | state/administrate | POST | Creates a state group. POST: identifier, name, description, language |
+| `expstate::updateGroup::<group>` | state/administrate | POST | Changes a state group. POST: identifier, name, description, language |
+| `expstate::removeGroup::<group>` | state/administrate | POST | Removes a state group with its states |
+| `expstate::createState::<group>` | state/administrate | POST | Creates a state in a group. POST: identifier, name, description, language |
+| `expstate::updateState::<state_id>` | state/administrate | POST | Changes a state. POST: identifier, name, description, language |
+| `expstate::removeState::<state_id>` | state/administrate | POST | Removes a state (its objects get the group default) |
+| `expstate::reorderStates::<group>` | state/administrate | POST | Orders the states of a group. POST: state_ids (the group's state ids in the new order) |
+| `expstate::assign::<object_id>::<state_id>` | state/assign | POST | Assigns a state to an object |
+| `expstate::assignSubtree::<node_id>::<state_id>` | state/assign | POST | Assigns a state to a node and its subtree. POST: mode |
+
+#### URL aliases and wildcards (`expurlalias`, 24 services, 6 writes)
+
+The nice URLs: aliases of nodes, resolving a path, normalising text, global aliases, redirects, wildcards; create and remove custom aliases and wildcards.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expurlalias::forNode::<node_id>::<type>::<limit>::<offset>` | content/read |  | The URL aliases of a node. type: alias (custom), name (generated) or all |
+| `expurlalias::forObject::<object_id>` | content/read |  | The generated URL of every location of an object |
+| `expurlalias::path::<node_id>` | content/read |  | The URL path of a node (generated alias) |
+| `expurlalias::resolve::<path>` | user |  | Resolves a URL path to its action and node |
+| `expurlalias::exists::<path>` | content/read |  | Whether a path is taken by an alias |
+| `expurlalias::children::<path>::<limit>::<offset>` | content/urltranslator |  | The alias elements directly below a path (empty path: the top) |
+| `expurlalias::normalize::<text>` | user |  | Turns text into the form the URL transformation rules give it |
+| `expurlalias::normalizePath::<path>` | user |  | Normalises every element of a path |
+| `expurlalias::list::<type>::<limit>::<offset>::<text>` | content/urltranslator |  | All custom aliases (type alias), name or all, paged |
+| `expurlalias::count::<type>` | content/urltranslator |  | Number of aliases of a type |
+| `expurlalias::redirects::<limit>::<offset>` | content/urltranslator |  | Aliases that redirect to the real URL, paged |
+| `expurlalias::byAction::<action>` | content/urltranslator |  | The aliases of an action such as eznode:43 or module:search |
+| `expurlalias::pathPrefix` | public |  | The path prefix of the siteaccess |
+| `expurlalias::wildcards::<limit>::<offset>` | content/urltranslator |  | The URL wildcards, paged |
+| `expurlalias::wildcardCount` | content/urltranslator |  | Number of wildcards |
+| `expurlalias::wildcard::<wildcard_id>` | content/urltranslator |  | One wildcard by id |
+| `expurlalias::wildcardBySource::<source>` | content/urltranslator |  | A wildcard by its source URL |
+| `expurlalias::wildcardMatches::<path>` | content/urltranslator |  | Whether a path is caught by any wildcard |
+| `expurlalias::createAlias::<node_id>` | content/urltranslator | POST | Adds a custom URL alias to a node. POST: alias, language, parent_is_root, redirects |
+| `expurlalias::removeAlias::<node_id>` | content/urltranslator | POST | Removes custom aliases of a node. POST: elements (list of parent.md5.language from forNode) |
+| `expurlalias::removeAllAliases::<node_id>` | content/urltranslator | POST | Removes every custom alias of a node |
+| `expurlalias::createWildcard` | content/urltranslator | POST | Adds a wildcard. POST: source, destination, type (forward or direct) |
+| `expurlalias::removeWildcard::<wildcard_id>` | content/urltranslator | POST | Removes a wildcard |
+| `expurlalias::removeWildcards` | content/urltranslator | POST | Removes several wildcards. POST: ids |
+
+#### Search (`expsearch`, 18 services, 3 writes)
+
+Full text search with paging, class, section, subtree and date filters and facets; suggestions, index status and statistics; index and unindex an object.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expsearch::search::<text>::<limit>::<offset>::<filter>` | content/read |  | Searches the content. filter: class[], section, subtree[], date (day, week, month, 3months, year) |
+| `expsearch::count::<text>::<filter>` | content/read |  | Number of matches of a search |
+| `expsearch::facets::<text>::<filter>` | content/read |  | Counts of the matches per class and per section (over the first 500 matches) |
+| `expsearch::byClass::<text>::<classes>::<limit>::<offset>` | content/read |  | Searches within classes |
+| `expsearch::inSubtree::<text>::<node_id>::<limit>::<offset>` | content/read |  | Searches below a node |
+| `expsearch::bySection::<text>::<section_id>::<limit>::<offset>` | content/read |  | Searches within a section |
+| `expsearch::byAttribute::<text>::<class_attribute_id>::<limit>::<offset>` | content/read |  | Searches the values of one class attribute |
+| `expsearch::similar::<object_id>::<limit>` | content/read |  | Objects similar to an object (searches with its name) |
+| `expsearch::suggest::<prefix>::<limit>` | content/read |  | Words of the index that start with a prefix, most used first |
+| `expsearch::normalize::<text>` | user |  | The text as the search engine normalises it |
+| `expsearch::engine` | user |  | The search engine in use and its flags |
+| `expsearch::searchableClasses` | user |  | Classes with searchable attributes |
+| `expsearch::indexStatus::<object_id>` | content/read |  | Whether an object has words in the index |
+| `expsearch::stats` | setup/administrate |  | Index size: words, links, objects with words |
+| `expsearch::topPhrases::<limit>::<offset>` | setup/administrate |  | The most frequent search phrases of the site, with their average hits |
+| `expsearch::reindex::<object_id>` | content/edit | POST | Indexes an object again |
+| `expsearch::removeFromIndex::<object_id>` | content/edit | POST | Removes an object from the index |
+| `expsearch::clearPhrases` | setup/administrate | POST | Clears the stored search phrase statistics. POST: confirm=yes |
+
+#### Content jobs (`expcontentjob`, 26 services, 14 writes)
+
+The background jobs for large operations: list and follow them, estimate whether an operation runs now or as a job, create a job of every type, cancel, resume, start.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expcontentjob::list::<state>::<limit>::<offset>` | content/jobs |  | The current user's jobs, newest first. state: queued, running, done, failed, cancelled or all |
+| `expcontentjob::listAll::<state>::<limit>::<offset>` | setup/administrate |  | The jobs of all users (needs setup/administrate) |
+| `expcontentjob::active` | content/jobs |  | The current user's queued and running jobs |
+| `expcontentjob::summary` | content/jobs |  | Counts of the current user's jobs per state |
+| `expcontentjob::get::<job_id>::<log_lines>` | content/jobs |  | One job with its progress, result and the last log lines |
+| `expcontentjob::progress::<job_id>` | content/jobs |  | Only the progress of a job: done, total, percent, phase, message |
+| `expcontentjob::log::<job_id>::<lines>` | content/jobs |  | The last lines of the job log |
+| `expcontentjob::result::<job_id>` | content/jobs |  | The result of a finished job |
+| `expcontentjob::types` | content/jobs |  | The registered job types with their parameters |
+| `expcontentjob::settings` | content/jobs |  | The limits that decide now or job: SynchronousLimit, NowLimit, BatchSize |
+| `expcontentjob::estimate::<type>::<params>` | content/jobs |  | How many nodes an operation touches and whether it runs now or as a job. params as in create |
+| `expcontentjob::lockOf::<node_id>` | content/jobs |  | The job that locks a node, if any |
+| `expcontentjob::create::<type>` | content/jobs | POST | Creates a job and starts its worker. POST: params (json, see types), spawn (default 1) |
+| `expcontentjob::remove` | content/remove | POST | Job: removes nodes. POST: node_ids, move_to_trash, spawn |
+| `expcontentjob::copy` | content/create | POST | Job: copies a subtree. POST: source_node_id, destination_node_id, all_versions, keep_creator, keep_time, spawn |
+| `expcontentjob::move` | content/move | POST | Job: moves a subtree. POST: node_id, new_parent_node_id, spawn |
+| `expcontentjob::hide` | content/hide | POST | Job: hides a subtree. POST: node_id, spawn |
+| `expcontentjob::reveal` | content/hide | POST | Job: reveals a subtree. POST: node_id, spawn |
+| `expcontentjob::section` | section/assign | POST | Job: assigns a section to a subtree. POST: node_id, section_id, spawn |
+| `expcontentjob::state` | state/assign | POST | Job: assigns a state to a subtree. POST: node_id, state_id, spawn |
+| `expcontentjob::addLocation` | content/manage_locations | POST | Job: adds locations. POST: node_ids, target_node_id, spawn |
+| `expcontentjob::removeLocation` | content/manage_locations | POST | Job: removes locations. POST: node_ids, spawn |
+| `expcontentjob::cancel::<job_id>` | content/jobs | POST | Cancels a job (a running job stops after its current batch) |
+| `expcontentjob::resume::<job_id>` | content/jobs | POST | Resumes a failed job or one whose worker died |
+| `expcontentjob::spawn::<job_id>` | content/jobs | POST | Starts the worker of a queued job |
+| `expcontentjob::purgeFinished::<days>` | setup/administrate | POST | Removes finished jobs older than a number of days (needs setup/administrate) |
+
+Total: 350 content services in 15 domains (112 writes).
+<!-- expservices-content:end -->
