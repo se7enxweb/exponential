@@ -80,6 +80,18 @@ class Upload extends \Exponential\Runnable\ModuleView
                 echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'ObjectVersion', '%value' => $objectVersion ) );
                 \eZExecution::cleanExit();
             }
+            // The file types the embed dialog's upload accepts (ezoe.ini [EditorSettings] UploadFileExtensions) are
+            // enforced here, not only in the browser: a request can skip the dialog
+            $sentName = isset( $_FILES['fileName']['name'] ) ? (string) $_FILES['fileName']['name'] : '';
+            if ( $sentName !== '' && !\expOEEditor::uploadExtensionAllowed( $sentName ) )
+            {
+                echo '<html><head><title>HiddenUploadFrame</title><script type="text/javascript">';
+                echo 'window.parent.document.getElementById("upload_in_progress").style.display = "none";';
+                echo '</script></head><body><div style="position:absolute; top: 0px; left: 0px;background-color: white; width: 100%;">';
+                echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( \ezpI18n::tr( 'design/standard/ezoe', 'This file type is not accepted by the editor: %file', null, array( '%file' => basename( $sentName ) ) ) ) . '</p>';
+                echo '</div></body></html>';
+                \eZExecution::cleanExit();
+            }
             $upload = new \eZContentUpload();
 
             $location = false;
