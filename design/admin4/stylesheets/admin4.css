@@ -110,11 +110,21 @@ body,
 /* ---- Header ---------------------------------------------------------------------------------------------- */
 
 #header {
+  background: transparent;
+  border-bottom: 1px solid var(--a4-header-line);
+  box-shadow: var(--a4-header-shadow);
+}
+/* The header's colour and blur live on a layer behind its content: a backdrop-filter on #header itself made it the
+   containing block of the fixed sidebar buttons, which then sat inside the header instead of on the window's edges. */
+#header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background: var(--a4-header-bg);
   -webkit-backdrop-filter: saturate(160%) blur(12px);
   backdrop-filter: saturate(160%) blur(12px);
-  border-bottom: 1px solid var(--a4-header-line);
-  box-shadow: var(--a4-header-shadow);
 }
 /* On narrow windows (and at 200% zoom) admin3's menu panel lies inside the header and painted its old texture
    over it; the texture is decoration, not an icon, so it gives way to the header's colour. */
@@ -265,11 +275,51 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
   background-color: transparent;
 }
 #maincontent {
-  padding: 22px 26px 26px;
+  padding: 14px 16px 16px;
 }
 #leftmenu-design,
 #rightmenu-design {
-  padding: 12px 10px 14px;   /* the right column is 240px wide: more would push its buttons past the card */
+  padding: 8px 8px 10px;   /* the right column is 240px wide: more would push its buttons past the card */
+}
+
+/* Tight edges: the side columns' outer margin (admin3: 2rem), the main column's padding (2rem) and the space under the
+   header were each 32px; halved, so the gap between a side column and the main body is 16px + 16px, not 32 + 32. */
+.sidebar > div,
+.sidebar.left > div {
+  margin: 1rem;
+}
+.content-wrapper {
+  padding: 1rem;
+}
+@media screen and (max-width: 1024px) {
+  .content-wrapper {
+    padding: 0.5rem;
+  }
+}
+
+/* The sidebar buttons: the desktop tab shape (admin3's 20 x 40 tab, flat on the window's edge) at every width,
+   fixed at 48% of the window's height on its left and right edges, instead of the round buttons in the header. */
+.sidebar-controls {
+  position: fixed;
+  top: 48%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1030;
+}
+.sidebar-control {
+  width: 1rem;
+  height: 2.5rem;
+}
+.sidebar-control.left {
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+.sidebar-control.right {
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+.sidebar-control:focus-visible {
+  outline: 2px solid var(--a4-orange);
+  outline-offset: 1px;
 }
 
 /* ---- Inside the columns: no added weight (:where), so extensions' own rules win ----------------------------- */
@@ -802,7 +852,7 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
    Their templates bring their own columns (#leftmenu with the object information, #maincontent, #rightmenu)
    straight into .dashboard-flex, without the #maincolumn wrapper whose padding spaces the main card elsewhere. */
 .dashboard-flex > #maincontent {
-  margin: 32px;
+  margin: 16px;
 }
 
 /* The edit form's buttons (Send for publishing / Store draft / Store draft and exit / Discard draft) stay in view
