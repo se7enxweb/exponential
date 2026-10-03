@@ -21420,6 +21420,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>registry entries that cannot work</source>
         <translation>Registry-Einträge, die nicht funktionieren können</translation>
     </message>
+    <message>
+        <source>Settings blocks each entry of which registers an implementation: the columns of the subitems table (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; or Template=), the content job types (content.ini [ContentJobSettings] JobTypes[]), the actions and scope providers of exp:ini (ini.ini [IniCommandSettings]) and the server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), with every remote service a server function class extending expServiceBase declares (its static $services, called as ezjscore/call/&lt;name&gt;::&lt;service&gt;; each one added to the total, a declared service whose method is missing is broken). An entry that names a class is also one of the settings that name a class and is counted there; the others are added to the total here. An entry whose class, method or template is missing, or whose class does not extend what the registry asks for, is shown as broken. Built-in subitems columns, which the list renders itself, are no point and are not listed.</source>
+        <translation>Einstellungsblöcke, deren Einträge je eine Implementierung registrieren: die Spalten der Unterelementtabelle (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; oder Template=), die Inhaltsjob-Typen (content.ini [ContentJobSettings] JobTypes[]), die Aktionen und Geltungsbereich-Anbieter von exp:ini (ini.ini [IniCommandSettings]) und die Serverfunktionen von ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), dazu jeder Remote-Dienst, den eine von expServiceBase abgeleitete Serverfunktionsklasse deklariert (ihr statisches $services, aufgerufen als ezjscore/call/&lt;name&gt;::&lt;service&gt;; jeder wird zur Summe addiert, ein deklarierter Dienst ohne Methode gilt als defekt). Ein Eintrag, der eine Klasse nennt, ist auch eine der Einstellungen, die eine Klasse nennen, und wird dort gezählt; die übrigen werden hier zur Summe addiert. Ein Eintrag, dessen Klasse, Methode oder Template fehlt oder dessen Klasse nicht von dem ableitet, was die Registry verlangt, wird als defekt angezeigt. Eingebaute Spalten der Unterelementtabelle, die die Liste selbst darstellt, sind keine Punkte und werden nicht aufgeführt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/settings</name>
@@ -47945,6 +47949,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Server functions of ezjscore</source>
         <translation>Server-Funktionen von ezjscore</translation>
+    </message>
+    <message>
+        <source>Remote services (expservices)</source>
+        <translation>Remote-Dienste (expservices)</translation>
     </message>
     <message>
         <source>Subitems table columns</source>

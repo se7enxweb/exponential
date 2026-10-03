@@ -721,7 +721,51 @@ class expRADSurvey
                                        'entries' => $entries, 'broken' => $broken );
         }
 
+        if ( isset( $registries['ezjscserver'] ) )
+            $registries['expservices'] = self::remoteServices( $registries['ezjscserver']['entries'] );
+
         return $registries;
+    }
+
+    /**
+     * The remote services (doc/bc/6.0/backend_ezjscore_services.md): every service a server function class
+     * extending expServiceBase declares in its static $services, called as ezjscore/call/<name>::<service>. The
+     * ezjscore entry counts the class once; each service is a point of its own, so every one is added to the
+     * total. A declared service whose method the class does not have is broken.
+     *
+     * @param array $serverFunctions the entries of the ezjscserver registry
+     * @return array key, title, ini, entries, broken (as registries())
+     */
+    public static function remoteServices( array $serverFunctions )
+    {
+        $entries = array();
+        $broken  = array();
+        // a process whose autoloads predate expservices (a Velocity worker before its restart) has none
+        $base = class_exists( 'expServiceBase' ) ? 'expServiceBase' : null;
+        foreach ( $serverFunctions as $function )
+        {
+            $class = ltrim( $function['value'], '\\' );
+            if ( $base === null || !$function['ok'] || !class_exists( $class ) || !is_subclass_of( $class, $base ) )
+                continue;
+            $services = isset( $class::$services ) && is_array( $class::$services ) ? $class::$services : array();
+            foreach ( $services as $method => $declaration )
+            {
+                $entry = array( 'name'     => $function['name'] . '::' . $method,
+                                'section'  => $function['section'],
+                                'variable' => $class . '::$services',
+                                'value'    => $class . '::' . $method,
+                                'what'     => 'callable',
+                                'origin'   => $function['origin'] );
+                $entry['why']     = method_exists( $class, $method ) ? '' : 'the class has no such method';
+                $entry['ok']      = $entry['why'] === '';
+                $entry['counted'] = false;
+                $entries[] = $entry;
+                if ( !$entry['ok'] )
+                    $broken[] = $entry;
+            }
+        }
+        return array( 'key' => 'expservices', 'title' => 'Remote services (expservices)', 'ini' => 'ezjscore.ini',
+                      'entries' => $entries, 'broken' => $broken );
     }
 
     /**
