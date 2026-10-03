@@ -8732,7 +8732,7 @@
     </message>
     <message>
         <source>Node ID: %node_id Visibility: %node_visibility</source>
-        <translation>Knoten ID: %node_id Sichtbarkeit: %visibility</translation>
+        <translation>Knoten ID: %node_id Sichtbarkeit: %node_visibility</translation>
     </message>
     <message>
         <source>Click on the icon to display a context-sensitive menu.</source>
@@ -26771,7 +26771,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>(%process_count)</source>
-        <translation>(%trigger_count)</translation>
+        <translation>(%process_count)</translation>
     </message>
     <message>
         <source>status : (%last_event_status)</source>
@@ -31593,7 +31593,7 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
     </message>
     <message>
         <source>Poll results</source>
-        <translation>Umfrage %pollname</translation>
+        <translation>Umfrageergebnisse</translation>
     </message>
     <message>
         <source>Votes:</source>
@@ -33139,11 +33139,11 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>The requested view %view could not be found in module %module</source>
-        <translation>Die angeforderte Sicht %view konnte nicht gefunden werden in Modul %modul</translation>
+        <translation>Die angeforderte Sicht %view konnte nicht gefunden werden in Modul %module</translation>
     </message>
     <message>
         <source>The view does not exist for the module %module.</source>
-        <translation>Sie Sicht existiert nicht für das das Modul %modul.</translation>
+        <translation>Sie Sicht existiert nicht für das das Modul %module.</translation>
     </message>
     <message>
         <source>The view %module/%view is disabled and cannot be accessed.</source>
@@ -43139,7 +43139,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Workflow process was created at %creation and modified at %modification.</source>
-        <translation>Der ausgeführte Workflow wurde erstellt am %creation und modifiziert am %modifiction.</translation>
+        <translation>Der ausgeführte Workflow wurde erstellt am %creation und modifiziert am %modification.</translation>
     </message>
     <message>
         <source>Workflows in %1</source>
@@ -44814,7 +44814,7 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     </message>
     <message>
         <source>Can&apos;t convert tag&apos;s name: &amp;lt;%1&amp;gt;.</source>
-        <translation>Kann den Tag Namen nicht konvertieren: &amp;lt;%&amp;gt;.</translation>
+        <translation>Kann den Tag Namen nicht konvertieren: &amp;lt;%1&amp;gt;.</translation>
     </message>
     <message>
         <source>Required attribute &apos;%1&apos; is not presented in tag &amp;lt;%2&amp;gt;.</source>
@@ -45028,7 +45028,7 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     </message>
     <message>
         <source>&quot;$contentObjectName&quot;: Sub items that are used by other objects</source>
-        <translation>&quot;%contentObjectName&quot;: Untereinträge werden von anderen Objekten benutzt</translation>
+        <translation>&quot;$contentObjectName&quot;: Untereinträge werden von anderen Objekten benutzt</translation>
     </message>
     <message>
         <source>Differences</source>
@@ -45829,7 +45829,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>(Warning! $objectsCount content object(s) and their sub-items will be removed)</source>
-        <translation>(Warnung! %objectsCount Inhaltsobjekt(e) und deren Unterelemente werden gelöscht)</translation>
+        <translation>(Warnung! $objectsCount Inhaltsobjekt(e) und deren Unterelemente werden gelöscht)</translation>
     </message>
     <message>
         <source>Skip installing this class</source>
