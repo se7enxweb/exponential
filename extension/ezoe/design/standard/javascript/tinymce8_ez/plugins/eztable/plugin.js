@@ -48,6 +48,10 @@
 
         editor.options.register( 'ez_table_definitions', { processor: 'object', default: {} } );
         editor.options.register( 'ez_custom_attribute_style_map', { processor: 'object', default: {} } );
+        // ezoe.ini [Engine_tinymce8] TableDialog: classic (the TinyMCE 3 dialog design) or modern
+        editor.options.register( 'ez_table_dialog', { processor: 'string', default: 'classic' } );
+        // texts of the classic dialog, translated by the server like the TinyMCE 3 dialog
+        editor.options.register( 'ez_table_classic_texts', { processor: 'object', default: {} } );
 
         var t = function ( text ) {
             return editor.translate( text );
@@ -155,6 +159,231 @@
 
         // ---- table
 
+        // An empty required summary is taken from the caption, the stored markup is the same as typing it twice
+        var summaryFromCaption = function ( def, d ) {
+            def.attributes.forEach( function ( a ) {
+                if ( a.id === 'summary' && a.required && !String( d[ D.attributeFieldName( a ) ] || '' ).trim() )
+                {
+                    var captionAttr = def.attributes.filter( function ( c ) { return c.id === 'caption'; } )[0];
+                    if ( captionAttr && String( d[ D.attributeFieldName( captionAttr ) ] || '' ).trim() )
+                        d[ D.attributeFieldName( a ) ] = String( d[ D.attributeFieldName( captionAttr ) ] ).trim();
+                }
+            } );
+        };
+
+        // Inserts a new table (table is null) or updates the given one, like tagGenerator / tagAttributeEditor of tag_table.tpl
+        var commitTable = function ( table, d, custom, rows, cols ) {
+            editor.undoManager.transact( function () {
+                var el = table;
+                if ( !el )
+                {
+                    // like tagGenerator of tag_table.tpl, the new table is found by a temporary class
+                    var marker = 'ezoeItemNewTable' + Date.now(), html = '<table class="' + marker + '"><tbody>';
+                    for ( var y = 0; y < rows; y++ )
+                    {
+                        html += '<tr>';
+                        for ( var x = 0; x < cols; x++ )
+                            html += '<td><br></td>';
+                        html += '</tr>';
+                    }
+                    editor.insertContent( html + '</tbody></table>' );
+                    el = editor.getBody().querySelector( 'table.' + marker );
+                    if ( !el )
+                        return;
+                    editor.dom.removeClass( el, marker );
+                    editor.selection.setCursorLocation( el.querySelector( 'td' ), 0 );
+                }
+                applyAttributes( el, d.cssClass, custom.values, { width: d.width.trim(), border: d.border.trim() } );
+            } );
+            editor.nodeChanged();
+        };
+
+        // ---- table, classic dialog: the design of the TinyMCE 3 dialog (tag_table.tpl), same fields, order and texts
+
+        var openClassicTableDialog = function ( table, def, stored, data ) {
+            var x = editor.options.get( 'ez_table_classic_texts' ) || {}, E = D.escapeHtml,
+                tx = function ( key, fallback ) { return E( x[key] || t( fallback ) ); },
+                row = function ( label, title, field ) {
+                    return '<tr><td class="column1"><label>' + label + '</label></td><td' + ( title ? ' title="' + E( title ) + '"' : '' ) + '>' + field + '</td></tr>';
+                },
+                sizeParts = function ( value ) {
+                    value = String( value || '' );
+                    return { num: ( value.match( /^\d+/ ) || [ '' ] )[0], pct: value.indexOf( '%' ) !== -1 };
+                },
+                unitSelect = function ( name, pct ) {
+                    return '<select data-ezoe-unit="' + name + '"><option value="">px</option><option value="%"' + ( pct ? ' selected' : '' ) + '>%</option></select>';
+                },
+                w = sizeParts( data.width ), b = sizeParts( data.border ), html = '', gridCells = '', i, j;
+
+            html += '<div class="ezoe-classic tag-view tag-type-table">';
+            html += '<div class="ezoe-classic-tabs"><ul><li class="current"><span><a href="#" tabindex="-1">' + tx( 'properties', 'Properties' ) + '</a></span></li></ul></div>';
+            html += '<div class="ezoe-classic-panel"><h2>' + E( table ? t( 'Edit <table> tag' ) : t( 'New <table> tag' ) ) + '</h2>';
+            if ( !table )
+            {
+                for ( i = 0; i < 5; i++ )
+                {
+                    gridCells += '<tr>';
+                    for ( j = 0; j < 6; j++ )
+                        gridCells += '<td><div></div></td>';
+                    gridCells += '</tr>';
+                }
+                html += '<table class="properties" title="' + tx( 'size_title', 'Click to select table size' ) + '"><tr><td class="column1">' + tx( 'size', 'Size' ) + ':</td><td>' +
+                    '<table class="ezoe-classic-grid">' + gridCells + '</table>' +
+                    tx( 'columns', 'Columns' ) + ': <input type="text" size="3" maxlength="2" data-mce-name="cols" data-ezoe-field="cols" value="' + E( data.cols ) + '" /> ' +
+                    tx( 'rows', 'Rows' ) + ': <input type="text" size="3" maxlength="3" data-mce-name="rows" data-ezoe-field="rows" value="' + E( data.rows ) + '" />' +
+                    '</td></tr></table>';
+            }
+            html += '<table class="properties general_attributes">';
+            html += row( tx( 'width', 'Width' ), x.width_title || '', '<input type="text" size="3" data-mce-name="width" data-ezoe-field="width" value="' + E( w.num ) + '" /> ' + unitSelect( 'width', w.pct ) );
+            html += row( tx( 'border', 'Border' ), '', '<input type="text" size="3" data-mce-name="border" data-ezoe-field="border" value="' + E( b.num ) + '" /> ' + unitSelect( 'border', b.pct ) );
+            html += row( tx( 'class', 'Class' ), x.class_title || '', '<select data-mce-name="cssClass" data-ezoe-field="cssClass">' + classItems( def, data.cssClass ).map( function ( c ) {
+                return '<option value="' + E( c.value ) + '"' + ( c.value === data.cssClass ? ' selected' : '' ) + '>' + E( c.text ) + '</option>';
+            } ).join( '' ) + '</select>' );
+            html += '</table><table class="properties custom_attributes">';
+            def.attributes.forEach( function ( a ) {
+                var name = D.attributeFieldName( a ), value = data[name], field;
+                if ( a.type === 'hidden' )
+                    return;
+                if ( a.type === 'select' )
+                    field = '<select data-mce-name="' + name + '" data-ezoe-field="' + name + '"' + ( a.disabled ? ' disabled' : '' ) + '>' + Object.keys( a.selection || {} ).map( function ( key ) {
+                        var v = key === '-0-' ? '' : key;
+                        return '<option value="' + E( v ) + '"' + ( v === value ? ' selected' : '' ) + '>' + E( a.selection[key] ) + '</option>';
+                    } ).join( '' ) + '</select>';
+                else if ( a.type === 'checkbox' )
+                    field = '<input type="checkbox" data-mce-name="' + name + '" data-ezoe-field="' + name + '"' + ( value ? ' checked' : '' ) + ( a.disabled ? ' disabled' : '' ) + ' />';
+                else if ( a.type === 'textarea' )
+                    field = '<textarea rows="3" cols="30" data-mce-name="' + name + '" data-ezoe-field="' + name + '"' + ( a.disabled ? ' disabled' : '' ) + '>' + E( value ) + '</textarea>';
+                else
+                    field = '<input type="text" data-mce-name="' + name + '" data-ezoe-field="' + name + '" value="' + E( value ) + '"' + ( a.disabled ? ' disabled' : '' ) + ' />';
+                html += row( E( a.name ), a.title || '', field );
+            } );
+            html += '</table><div class="block"><button type="button" class="ezoe-classic-ok" data-ezoe-classic="ok">' + tx( 'ok', 'OK' ) + '</button> ' +
+                    '<button type="button" class="ezoe-classic-cancel" data-ezoe-classic="cancel">' + tx( 'cancel', 'Cancel' ) + '</button></div>';
+            html += '</div></div>';
+
+            var api = editor.windowManager.open( {
+                title: table ? t( 'Edit <table> tag' ) : t( 'New <table> tag' ),
+                size: 'normal',
+                body: { type: 'panel', items: [ { type: 'htmlpanel', html: html } ] },
+                buttons: []
+            } );
+
+            var read = function ( root, name ) {
+                var el = root.querySelector( '[data-ezoe-field="' + name + '"]' );
+                return !el ? '' : ( el.type === 'checkbox' ? el.checked : el.value );
+            };
+            var unit = function ( root, name ) {
+                var sel = root.querySelector( '[data-ezoe-unit="' + name + '"]' );
+                return sel ? sel.value : '';
+            };
+            var warn2 = function ( root, text, field ) {
+                editor.notificationManager.open( { text: text, type: 'warning', timeout: 4000 } );
+                if ( field )
+                {
+                    D.showFieldError( field, text );
+                    var el = root.querySelector( '[data-ezoe-field="' + field + '"]' );
+                    if ( el )
+                        el.focus();
+                }
+            };
+
+            var submit = function ( root ) {
+                var d = {}, custom, rows, cols, error, width, border;
+                def.attributes.forEach( function ( a ) {
+                    var name = D.attributeFieldName( a );
+                    d[name] = a.type === 'hidden' ? undefined : read( root, name );
+                } );
+                summaryFromCaption( def, d );
+                custom = collectAttributes( def, d, stored );
+                if ( !table )
+                {
+                    rows = parseInt( read( root, 'rows' ), 10 );
+                    cols = parseInt( read( root, 'cols' ), 10 );
+                    if ( !( rows >= 1 && rows <= 100 ) )
+                        return warn2( root, t( 'Please enter a number from 1 to 100: %s' ).replace( '%s', tx( 'rows', 'Rows' ) ), 'rows' );
+                    if ( !( cols >= 1 && cols <= 100 ) )
+                        return warn2( root, t( 'Please enter a number from 1 to 100: %s' ).replace( '%s', tx( 'columns', 'Columns' ) ), 'cols' );
+                }
+                width = String( read( root, 'width' ) ).trim();
+                border = String( read( root, 'border' ) ).trim();
+                if ( width && !/^\d+$/.test( width ) )
+                    return warn2( root, t( 'Please enter a whole number: %s' ).replace( '%s', tx( 'width', 'Width' ) ), 'width' );
+                if ( border && !/^\d+$/.test( border ) )
+                    return warn2( root, t( 'Please enter a whole number: %s' ).replace( '%s', tx( 'border', 'Border' ) ), 'border' );
+                if ( custom.error )
+                    return warn2( root, custom.error, custom.field );
+                // htmlsize.tpl: the unit is appended, a border of 0 stays 0 so the dotted visual border shows
+                width = width ? width + unit( root, 'width' ) : '';
+                border = border === '0' || !border ? border : border + unit( root, 'border' );
+                api.close();
+                commitTable( table, { width: width, border: border, cssClass: read( root, 'cssClass' ) }, custom, rows, cols );
+            };
+
+            // the htmlpanel has no event binding of its own: find its root and bind the grid, the buttons and Enter
+            var tries = 0, bind = function () {
+                var roots = document.querySelectorAll( '.tox-dialog .ezoe-classic' ), root = roots[ roots.length - 1 ];
+                if ( !root )
+                {
+                    if ( tries++ < 100 )
+                        setTimeout( bind, 20 );
+                    return;
+                }
+                var cells = Array.prototype.slice.call( root.querySelectorAll( '.ezoe-classic-grid td div' ) ),
+                    grid = root.querySelector( '.ezoe-classic-grid' ),
+                    colsInput = root.querySelector( '[data-ezoe-field="cols"]' ), rowsInput = root.querySelector( '[data-ezoe-field="rows"]' ),
+                    // like tableSizeGridShowChange() of tag_table.tpl: border on hover, background when saved
+                    show = function ( rows, cols, save ) {
+                        cells.forEach( function ( el, i ) {
+                            var r = Math.floor( i / 6 ) + 1, c = i + 1 - ( r - 1 ) * 6, on = r <= rows && c <= cols;
+                            if ( save )
+                                el.style.backgroundColor = on ? '#cccccc' : '#fff';
+                            else
+                                el.style.borderColor = on ? '#aaa' : '#fff';
+                        } );
+                    },
+                    fromInput = function () { show( colsInput && rowsInput ? rowsInput.value : 0, colsInput ? colsInput.value : 0, true ); };
+                if ( grid )
+                {
+                    cells.forEach( function ( el, i ) {
+                        var r = Math.floor( i / 6 ) + 1, c = i + 1 - ( r - 1 ) * 6;
+                        el.addEventListener( 'mouseover', function () { show( r, c, false ); } );
+                        el.addEventListener( 'click', function () {
+                            show( r, c, true );
+                            rowsInput.value = r;
+                            colsInput.value = c;
+                        } );
+                    } );
+                    grid.addEventListener( 'mouseout', function () { show( 0, -1, false ); } );
+                    colsInput.addEventListener( 'keyup', fromInput );
+                    rowsInput.addEventListener( 'keyup', fromInput );
+                    fromInput();
+                }
+                root.addEventListener( 'click', function ( e ) {
+                    var button = e.target.closest( '[data-ezoe-classic]' );
+                    if ( !button )
+                        return;
+                    e.preventDefault();
+                    if ( button.getAttribute( 'data-ezoe-classic' ) === 'ok' )
+                        submit( root );
+                    else
+                        api.close();
+                } );
+                root.addEventListener( 'keydown', function ( e ) {
+                    if ( e.key === 'Enter' && e.target.tagName === 'INPUT' )
+                    {
+                        e.preventDefault();
+                        submit( root );
+                    }
+                } );
+                var first = root.querySelector( 'input[type=text]' );
+                if ( first )
+                    first.focus();
+            };
+            bind();
+        };
+
+        // ---- table
+
         var openTableDialog = function ( element ) {
             var table = getParent( elementOrSelection( element ), 'table' ),
                 def = definition( 'table' ),
@@ -171,6 +400,15 @@
                     cssClass: def.defaults['class'] || ''
                 },
                 items = [ { type: 'htmlpanel', html: '<h2 class="ezoe-tag-title">' + D.escapeHtml( table ? t( 'Edit <table> tag' ) : t( 'New <table> tag' ) ) + '</h2>' } ];
+
+            if ( editor.options.get( 'ez_table_dialog' ) !== 'modern' )
+            {
+                // data of the custom attributes, as attributeFields() does for the modern dialog
+                def.attributes.forEach( function ( attribute ) {
+                    data[ D.attributeFieldName( attribute ) ] = D.toAttributeFieldValue( attribute, stored[attribute.id] );
+                } );
+                return openClassicTableDialog( table, def, stored, data );
+            }
 
             if ( !table )
                 items.push( { type: 'grid', columns: 2, items: [
@@ -196,15 +434,7 @@
                 onSubmit: function ( api ) {
                     var d = api.getData(), custom, rows, cols, error;
 
-                    // an empty required summary is taken from the caption, the stored markup is the same as typing it twice
-                    def.attributes.forEach( function ( a ) {
-                        if ( a.id === 'summary' && a.required && !String( d[ D.attributeFieldName( a ) ] || '' ).trim() )
-                        {
-                            var captionAttr = def.attributes.filter( function ( c ) { return c.id === 'caption'; } )[0];
-                            if ( captionAttr && String( d[ D.attributeFieldName( captionAttr ) ] || '' ).trim() )
-                                d[ D.attributeFieldName( a ) ] = String( d[ D.attributeFieldName( captionAttr ) ] ).trim();
-                        }
-                    } );
+                    summaryFromCaption( def, d );
                     custom = collectAttributes( def, d, stored );
 
                     if ( !table )
@@ -224,29 +454,7 @@
                         return warn( api, custom.error, custom.field );
 
                     api.close();
-                    editor.undoManager.transact( function () {
-                        var el = table;
-                        if ( !el )
-                        {
-                            // like tagGenerator of tag_table.tpl, the new table is found by a temporary class
-                            var marker = 'ezoeItemNewTable' + Date.now(), html = '<table class="' + marker + '"><tbody>';
-                            for ( var y = 0; y < rows; y++ )
-                            {
-                                html += '<tr>';
-                                for ( var x = 0; x < cols; x++ )
-                                    html += '<td><br></td>';
-                                html += '</tr>';
-                            }
-                            editor.insertContent( html + '</tbody></table>' );
-                            el = editor.getBody().querySelector( 'table.' + marker );
-                            if ( !el )
-                                return;
-                            editor.dom.removeClass( el, marker );
-                            editor.selection.setCursorLocation( el.querySelector( 'td' ), 0 );
-                        }
-                        applyAttributes( el, d.cssClass, custom.values, { width: d.width.trim(), border: d.border.trim() } );
-                    } );
-                    editor.nodeChanged();
+                    commitTable( table, d, custom, rows, cols );
                 }
             } );
         };

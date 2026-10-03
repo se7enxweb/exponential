@@ -41,6 +41,18 @@ any INI file.
 The block `[Engine_tinymce8]` holds `ToolbarMap[<[EditorLayout] button>]=<toolbar item>` and
 `ExternalPlugins[<name>]=<design path>`. The engine class reads them; they are not hard coded in the template.
 
+### Table dialog
+
+`[Engine_tinymce8]` `TableDialog=classic|modern` picks the dialog of "Insert table" and "Table properties":
+
+| Value | Dialog |
+|---|---|
+| `classic` (default) | The design of the TinyMCE 3 dialog of `tag_table.tpl`: window title "New <table> tag" / "Edit <table> tag", Properties tab, the clickable 6 x 5 size grid with Columns and Rows (new tables only), Width and Border with a px / % selector, Class, then the custom attributes of `content.ini [table]` (Summary (WAI), Caption), OK and Cancel. Texts and help titles are the translations of `design/standard/ezoe`, so German needs no new strings. The dialog is a TinyMCE 8 window with a small adapter in `plugins/eztable/plugin.js` (the TinyMCE 3 page itself depends on `tinyMCEPopup` and the TinyMCE 3 API and does not run in TinyMCE 8). |
+| `modern` | The TinyMCE 8 form dialog (Rows, Columns, Width, Border, Class and the custom attributes as plain fields). |
+
+Both write the same markup (class, `width`, `border`, `customattributes`), so the stored ezxml is identical. Cell and row
+dialogs are not affected by the setting. The value reaches the editor as the option `ez_table_dialog`.
+
 ## Which engine an editor gets
 
 `expOEEditor::resolve()` takes the first of: the user preference `ezoe_engine`, the siteaccess `EditorEngine`, the
