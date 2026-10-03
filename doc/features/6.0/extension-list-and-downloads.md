@@ -77,3 +77,15 @@ The design proposal that led to it, with the open questions, is kept in
 - [Additional extension directories](additional-extension-directories.md)
 - [Setup > Extensions: loading order](extension-loading-order.md)
 - Month page: [August 2026](../../history/2026/2026-08.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [About and Copyright pages](about-and-package-pages.md)
+- [Default extension distribution](default-extension-distribution.md)
+- [Package compare and import](package-compare-and-import.md)
+
+## Related pages
+
+- [Extensions, themes and packages](extensions/README.md)
+- [January 2024, first half (1 to 15 January)](../../history/2024/2024-01a.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [February 2024](../../history/2024/2024-02.md)
+- [March 2024](../../history/2024/2024-03.md)
+- [June 2024](../../history/2024/2024-06.md)

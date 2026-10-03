@@ -138,3 +138,6 @@ What the installer does differently since July:
 - [Clean install defaults](clean-install-defaults.md)
 - Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md) (export fixes).
 - Changelog: [6.0.15](../../changelogs/6.0/6.0.15.md); upgrade notes: [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md); [Console](../../bc/6.0/console.md).
+- [Look inside a package, compare it with your site, import single items](package-compare-and-import.md)
+- [Package licenses and versions](package-licenses-and-versions.md)
+- [Install in one command](install-in-one-command.md)

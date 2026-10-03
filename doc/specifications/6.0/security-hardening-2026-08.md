@@ -90,3 +90,13 @@ The commit `d889a8abc6` refreshed `share/filelist.md5`, so the
 - [jQuery 4 and the removal of YUI](../../features/6.0/jquery4-and-yui-removal.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
 - [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)
 - Month page: [August 2026](../../history/2026/2026-08.md)
+- [Security defaults of September 2026](security-defaults-2026-09.md)
+- [Datatype and input hardening](datatype-input-hardening.md)
+- [Reset a user password](../../features/6.0/reset-user-password.md)
+- [Request rules](../../features/6.0/request-rules.md)
+- [Securing content/view/full](../../bc/6.0/view_full_security.md)
+
+## Related pages
+
+- [RAD tools — security](../../bc/6.0/rad-security.md)
+- [February 2026](../../history/2026/2026-02.md)

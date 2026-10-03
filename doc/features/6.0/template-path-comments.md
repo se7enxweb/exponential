@@ -72,3 +72,4 @@ the problem sits, not only that one exists.
 - [Template override ordering](template-override-ordering.md)
 - [Template editor](template-editor-overrides.md): create and order the overrides these comments reveal.
 - Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md).
+- [Debug bar reference](../../bc/6.0/debug-bar.md)

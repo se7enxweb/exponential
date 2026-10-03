@@ -92,3 +92,15 @@ pattern, is in [Additional Extension Directories](../../bc/6.0/AdditionalExtensi
 - [Extension module override](extension-module-override.md)
 - [Extension loading order](extension-loading-order.md)
 - Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [Icon themes in extensions](icon-themes-in-extensions.md)
+- [Extension metadata](../../specifications/6.0/extension-metadata.md)
+
+## Related pages
+
+- [Behaviour changes of the legacy extensions (September and October 2026)](../../bc/6.0/extensions-behaviour-changes.md)
+- [January 2024, second half (16 to 31 January)](../../history/2024/2024-01b.md)
+- [September 2024](../../history/2024/2024-09.md)
+- [October 2024](../../history/2024/2024-10.md)
+- [Per-site settings inside extensions (multi-site hosting)](multi-site-ini-overrides.md)
+- [Specification: INI override directories and placements](../../specifications/6.0/ini-override-placements.md)
+- [January 2026](../../history/2026/2026-01.md)

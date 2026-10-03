@@ -78,3 +78,20 @@ absent, is skipped by the content package export instead of ending the run
 
 - [Kickstarter](kickstarter-cli.md), [Platform SQLite installer](platform-sqlite-install.md)
 - Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md).
+- [Install in one command: a site on SQLite without `kickstart.ini`](install-in-one-command.md)
+- [What a new installation comes with: the default extensions](default-extension-distribution.md)
+- [Setup wizard and the editor siteaccess](setup-wizard-and-editor-siteaccess.md)
+- [Kickstarter CLI reference](../../bc/6.0/kickstartercli.md)
+- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
+- [Installation name in page titles](installation-name-in-pages.md)
+
+## Related pages
+
+- [The product is called Exponential](rebranding-to-exponential.md)
+- [About and Copyright pages](about-and-package-pages.md)
+- [Package licenses and Semantic Versioning](package-licenses-and-versions.md)
+- [January 2025](../../history/2025/2025-01.md)
+- [July 2025](../../history/2025/2025-07.md)
+- [August 2025](../../history/2025/2025-08.md)
+- [A useful robots.txt out of the box](robots-txt.md)
+- [September 2025](../../history/2025/2025-09.md)

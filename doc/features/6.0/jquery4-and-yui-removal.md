@@ -65,3 +65,13 @@ Leave `LocalScripts[jqueryMigrate]` empty to load jQuery 4 alone.
 Related: [October 2026 chronicle](../../history/2026/2026-10.md), [admin4 design](admin4-design.md).
 
 See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [Exp Debug bar](exp-debug-bar.md).
+
+## See also
+
+- [ezjscore](extensions/ezjscore.md)
+- [Online editor: TinyMCE 8](online-editor-tinymce8.md)
+- [The August 2026 security patches](../../specifications/6.0/security-hardening-2026-08.md)
+
+## Related pages
+
+- [March 2024](../../history/2024/2024-03.md)

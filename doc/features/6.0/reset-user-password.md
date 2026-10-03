@@ -69,3 +69,7 @@ The generated password is printed once; note it then.
 ## Related
 
 - Month page: [July 2026](../../history/2026/2026-07.md)
+- [The August 2026 security patches (sign-in checks)](../../specifications/6.0/security-hardening-2026-08.md)
+- [Exponential Console](../../bc/6.0/console.md)
+- [Audit trail](audit-trail.md)
+- [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)

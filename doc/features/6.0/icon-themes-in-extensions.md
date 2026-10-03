@@ -97,3 +97,5 @@ The full guide, with the class and the upgrade notes, is [Icon support](../../bc
 ## Related
 
 - Month page: [July 2026](../../history/2026/2026-07.md)
+- [Additional extension directories](additional-extension-directories.md)
+- [The admin4 design](admin4-design.md)

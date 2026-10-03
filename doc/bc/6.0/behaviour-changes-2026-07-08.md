@@ -171,3 +171,7 @@ The README header explains that a downloaded copy of Exponential 6.0 needs
 - [Console](console.md), [php8](php8.md)
 - Features of the period: [ezpm](../../features/6.0/ezpm-package-manager-cli.md), [Template editor](../../features/6.0/template-editor-overrides.md), [Template path comments](../../features/6.0/template-path-comments.md), [Kickstarter](../../features/6.0/kickstarter-cli.md), [Clean install defaults](../../features/6.0/clean-install-defaults.md), [Reset a user password](../../features/6.0/reset-user-password.md), [Redis and Valkey caches](../../features/6.0/valkey-cache-hooks.md), [Extension list](../../features/6.0/extension-list-and-downloads.md), [Additional extension directories](../../features/6.0/additional-extension-directories.md), [Icon themes](../../features/6.0/icon-themes-in-extensions.md), [Installation name](../../features/6.0/installation-name-in-pages.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Behaviour changes of 16 to 30 September 2026 (next)](behaviour-changes-2026-09b.md)
+- [YUI removal](yui-removal.md)
+- [Kickstarter CLI](kickstartercli.md)
+- [jQuery 4 and YUI](../../features/6.0/jquery4-and-yui-removal.md)

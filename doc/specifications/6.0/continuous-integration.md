@@ -125,3 +125,5 @@ php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-text
 
 - Reference for the toolchain: [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [PHPUnit 13 for PHP 8.4.1](../../bc/6.0/phpunitv13forPHP841.md).
 - Month pages: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md); [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md); [Security patches of August 2026](security-hardening-2026-08.md) (the `security` suite)
+- [PHP 8 support](../../bc/6.0/php8.md)
+- [Database drivers and installers, September 2026](database-drivers-2026-09.md)
