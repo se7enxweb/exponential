@@ -333,3 +333,5 @@ created under Exponential Velocity (root).
   - `ai/bin/one/check_content_jobs_b_views_status_both_servers.sh`: no view answers 5xx on either server.
 - `ai/bin/one/contentjobs_leftover_report.php` proves a removal left nothing behind;
   `contentjobs_subtree_fingerprint.php` that a copied source is unchanged.
+
+See also: [Content jobs](../../features/6.0/content-jobs.md).

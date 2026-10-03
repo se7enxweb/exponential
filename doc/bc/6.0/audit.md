@@ -2244,3 +2244,5 @@ Found while writing this guide. Each was checked on alpha:
 |---|---|---|
 | The console's export cuts at `MaxExportRecords` instead of running larger exports in the background | large exports from the browser are incomplete (it says so) | `exp:audit export` has no limit |
 | The archives and settings views and the alerts view are read-only (no "Archive now", no acknowledge, no settings form) | these actions are done on the command line | `exp:audit archive/restore/key`, `exp:ini set audit.ini/…` |
+
+See also: [Audit trail](../../features/6.0/audit-trail.md).

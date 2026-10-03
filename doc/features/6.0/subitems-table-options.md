@@ -71,3 +71,13 @@ Related: [remote services of the same columns](remote-services-expservices.md) (
 [October 2026 chronicle](../../history/2026/2026-10.md).
 
 See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [audit trail](audit-trail.md).
+
+## Custom page size
+
+Besides the preset page sizes of `PageSizes[]`, the Table options panel has a **Custom** field (since June 2026; the label
+comes from `design/admin/templates/children_detailed.tpl`). Choose **Custom** under items per page, type a whole number from
+1 to 10000 and press Enter: the list reloads at once with exactly that many rows. Anything else is refused with a message
+and the previous size stays. It helps for bulk work on exactly the rows on screen (select all, then move, copy or hide),
+for export checks that need a precise slice, and for testing how a folder behaves at a given size. The page size is a user
+preference; see [pagination settings](../../bc/6.0/pagination-settings.md) and the
+[June 2026, second half chronicle](../../history/2026/2026-06b.md). The page "Custom items per page" is merged into this one.

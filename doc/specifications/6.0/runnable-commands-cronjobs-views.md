@@ -73,3 +73,5 @@ the kernel autoloads after adding a class (`php bin/php/ezpgenerateautoloads.php
 `./console exp:velocity deploy --kernel`). Tests: unit tests for the base classes and every moved entry point.
 
 See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [content jobs](../../features/6.0/content-jobs.md), [Exp Debug bar](../../features/6.0/exp-debug-bar.md), [audit event model](audit-event-model.md).
+
+See also: [RAD extension points](../../bc/6.0/rad-extension-points.md), [Cronjobs console](../../features/6.0/cronjobs-console.md), [October 2026 chronicle](../../history/2026/2026-10.md).

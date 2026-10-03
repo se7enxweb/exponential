@@ -368,3 +368,5 @@ written to the global override and undone, a preset applied and reverted (each s
 byte; on a failure the test writes the files back), the IP list controls, and "This page only". Screenshots go to
 `var/tmp/debug-bar-<engine>-<page>-<tab>.png`. A check of the words makes sure every
 string of the bar is translated.
+
+See also: [Exponential debug bar](../../features/6.0/exp-debug-bar.md).

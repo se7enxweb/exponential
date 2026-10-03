@@ -61,3 +61,11 @@ Related: [Velocity persistent worker server](velocity-persistent-worker-server.m
 [October 2026 chronicle](../../history/2026/2026-10.md).
 
 See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [Velocity persistent worker server](velocity-persistent-worker-server.md), [static cache generator](static-cache-generator.md).
+
+See also: [Velocity engines upgrade notes](../../bc/6.0/velocity-engines.md), [October 2026 chronicle](../../history/2026/2026-10.md).
+
+## See also
+
+- [Velocity engine settings and programs](../../specifications/6.0/velocity-engine-settings.md)
+- [Velocity worker pool and compatibility layer](../../specifications/6.0/velocity-worker-pool.md)
+- [Changelog: exponential-velocity (Exponential Velocity engine)](../../changelogs/extensions/exponential-velocity.md)
