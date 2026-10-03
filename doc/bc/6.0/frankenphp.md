@@ -1,30 +1,27 @@
 # FrankenPHP as the Exponential web engine
 
-FrankenPHP is Exponential Velocity's **production** engine: the Caddy web
-server with PHP and its extensions compiled into a single self-contained
-binary. This document is the complete operator + developer reference for
-installing, running, debugging, optimising and extending FrankenPHP with
-Exponential 6.x, driven by the `exp:velocity` multi-engine
-tooling. It is written to be self-sufficient — no paid support needed.
+Read this page if you want to serve Exponential with FrankenPHP: the Caddy web server with PHP and its extensions
+compiled into one self-contained binary, driven by `exp:velocity`. It covers installing, configuring, running,
+debugging and tuning it. For the picture across all three engines (`qbix`, `frankenphp`, `php`) and the settings they
+share, read [Velocity engines](velocity-engines.md) first; where the two pages overlap, that one is the source of
+truth.
 
-It is a companion to [`velocity-engines.md`](velocity-engines.md), which covers
-all three engines (`qbix`, `frankenphp`, `php`) and the settings they share.
-Read that for the cross-engine picture; this document goes deep on FrankenPHP
-alone. Where the two overlap, the shared doc is the source of truth and this
-one links to it rather than repeating it.
+## In short
 
-Everything here was verified against the **working install on alpha** on
-2026-09-26: FrankenPHP v1.12.7 (PHP 8.5.11, Caddy v2.11.4) serving
-`https://alpha.se7enx.com:8070/site/` (HTTP 200, Let's Encrypt certificate)
-side by side with the qbix engine on 8080.
+| | |
+|---|---|
+| What changed | `exp:velocity` drives FrankenPHP (`--engine=frankenphp`, or `[ServerSettings] Engine=frankenphp`). `exp:velocity install` downloads a pinned release and checks its SHA-256. The Caddyfile is generated from `velocity.ini` on every `start`, `graceful` and `restart`. PHP runs in classic mode (clean state per request); worker mode is not offered. |
+| Who is affected | Sites that want one verified binary with TLS and HTTP/2 instead of PHP-FPM. FrankenPHP has no response cache yet (`[CacheSettings]` is ignored). Its embedded PHP has no machine `php.ini`, so MySQL needs an explicit socket. |
+| How to check | `php bin/php/console exp:velocity install --engine=frankenphp --check --allow-root-user` and `php bin/php/console exp:velocity status --all --allow-root-user` |
+| How to fix | Set `[PHPSettings] IniOptions[]` for the MySQL socket ([§6.1](#61-the-mysql-socket-fix-the-key-gotcha)); correct a stale `Sha256[...]` pin ([§2.4](#24-if-the-pin-is-stale--the-re-cut-release-procedure-the-gotcha-we-hit)); open the HTTPS port in the firewall. |
 
-> Command examples use `./console`, the symlink to `bin/php/console` at the
-> installation root. `./bin/php/console`, `php bin/php/velocity.php` and the
-> `exp:vc` shorthand are equivalent. All examples add `--allow-root-user`
-> because this box runs the tooling as root; drop it if you run as the site
-> user.
+Everything here was verified on a test installation on 2026-09-26: FrankenPHP v1.12.7 (PHP 8.5.11, Caddy v2.11.4)
+serving `https://www.example.com:8070/site/` (HTTP 200, Let's Encrypt certificate) beside the qbix engine on 8080.
+Host names and addresses in the examples are placeholders; use your own.
 
----
+> Command examples use `php bin/php/console`. `php bin/php/velocity.php` and the `exp:vc` shorthand are equivalent.
+> All examples add `--allow-root-user` because the test installation runs the tooling as root; drop it if you run as
+> the site user.
 
 ## 1. What FrankenPHP is here, and when to choose it
 
@@ -66,28 +63,27 @@ The engine class is `expVelocityFrankenPHP`
 `expVelocityFrankenPHPInstaller`
 (`kernel/classes/expvelocityfrankenphpinstaller.php`).
 
----
 
-## 2. Installation — step by step, exactly as tested on alpha
+## 2. Installation, step by step, as tested
 
 This is the sequence that produced the working
-`https://alpha.se7enx.com:8070/site/` install. Copy-pasteable.
+`https://www.example.com:8070/site/` install. Copy-pasteable.
 
 ### 2.1 Select the engine (optional — you can also just pass `--engine=frankenphp`)
 
 `Engine` in `[ServerSettings]` is the *default* engine used when no `--engine`
-is given. On alpha the default stays `qbix` (it serves the live site); FrankenPHP
+is given. On the test installation the default stays `qbix` (it serves the live site); FrankenPHP
 runs beside it and is reached explicitly with `--engine=frankenphp`. To make
 FrankenPHP the default instead:
 
 ```bash
-./console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
 ```
 
 `config set` writes to `settings/override/velocity.ini.append.php`. You can also
 edit that file by hand (see §3).
 
-### 2.2 Configure the engine (the alpha worked example)
+### 2.2 Configure the engine (a worked example)
 
 All of the following goes in `settings/override/velocity.ini.append.php` under
 `[FrankenPHPSettings]` (plus `[HTTPSSettings]` and `[PHPSettings]`). This is the
@@ -99,7 +95,7 @@ exact tested block, annotated:
 Port=8089                 # plain HTTP (packaged default, kept)
 HTTPSPort=8070            # public HTTPS
 HTTPS=enabled
-Host=66.94.126.4          # bind the public interface (same one qbix binds)
+Host=203.0.113.10          # bind the public interface (same one qbix binds)
 DocumentRoot=             # empty = installation root; /site/ resolves the 'site' siteaccess
 # Corrected checksum for the v1.12.7 gnu asset because FrankenPHP re-cut the
 # release and the packaged pin went stale (see §2.4). This value is GitHub's
@@ -111,8 +107,8 @@ Sha256[frankenphp-linux-x86_64-gnu]=1897afb7b80d0f108af27815a449f6b6e57fa3d7847e
 # the qbix engine serves. Browser-trusted, read-only. Exported outside the
 # document root; re-export after each renewal (see §4).
 Enabled=true
-Certificate=/usr/local/psa/var/certificates/scfqvfhatugf33seS8EFBS
-Key=/usr/local/psa/var/certificates/scfqvfhatugf33seS8EFBS
+Certificate=/usr/local/psa/var/certificates/<certificate file of the domain>
+Key=/usr/local/psa/var/certificates/<certificate file of the domain>
 
 [PHPSettings]
 # FrankenPHP's embedded PHP has no machine php.ini, so no default MySQL socket.
@@ -122,14 +118,14 @@ IniOptions[]=pdo_mysql.default_socket=/var/lib/mysql/mysql.sock
 ```
 
 > Note: `Host`, `DocumentRoot`, and the two `IniOptions[]` are the specific
-> settings that made the install work on this box. `Sha256[…]` is only needed
+> settings that made the install work on the test installation. `Sha256[…]` is only needed
 > because of the re-cut release (§2.4); a fresh version with an intact pin needs
 > nothing here.
 
 ### 2.3 Install the binary
 
 ```bash
-./console exp:velocity install --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity install --engine=frankenphp --allow-root-user
 ```
 
 This downloads the release asset for this machine
@@ -189,7 +185,7 @@ Sha256[frankenphp-linux-x86_64-gnu]=1897afb7b80d0f108af27815a449f6b6e57fa3d7847e
 Then re-run install:
 
 ```bash
-./console exp:velocity install --engine=frankenphp --force --allow-root-user
+php bin/php/console exp:velocity install --engine=frankenphp --force --allow-root-user
 ```
 
 **Why this is the standard procedure when a pin goes stale:** never move a pin
@@ -208,7 +204,7 @@ edit in the override file.
 ### 2.5 Open the firewall for the HTTPS port
 
 FrankenPHP binds `Host` and listens on `Port` / `HTTPSPort`; the OS firewall
-must allow the HTTPS port. On alpha the firewall is **firewalld**:
+must allow the HTTPS port. On the test installation the firewall is **firewalld**:
 
 ```bash
 firewall-cmd --permanent --zone=public --add-port=8070/tcp
@@ -218,7 +214,7 @@ firewall-cmd --list-ports          # confirm 8070/tcp (and 8080/tcp for qbix) ar
 
 Which firewall is in force varies by box:
 
-- **firewalld** (this box): `firewall-cmd --state` says `running`; manage with
+- **firewalld** (the test installation): `firewall-cmd --state` says `running`; manage with
   `firewall-cmd`. Verified: `8070/tcp` and `8080/tcp` are open here.
 - **Plesk-managed**: some Plesk installs drive firewalld or nftables through the
   Plesk Firewall extension. If a rule you add with `firewall-cmd` disappears on
@@ -232,23 +228,23 @@ the change will not stick.
 ### 2.6 Start and verify (tested)
 
 ```bash
-./console exp:velocity start --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity start --engine=frankenphp --allow-root-user
 ```
 
-Verify — these are the exact checks run on alpha, all passing:
+Verify — these are the exact checks run on the test installation, all passing:
 
 ```bash
 # Site answers 200 (‑k because a self-signed cert would otherwise fail; here the
 # cert is real, but ‑k keeps the check independent of the client trust store):
-curl -k -o /dev/null -w '%{http_code}\n' https://66.94.126.4:8070/site/     # -> 200
+curl -k -o /dev/null -w '%{http_code}\n' https://203.0.113.10:8070/site/     # -> 200
 
 # Certificate issuer (should be Let's Encrypt for the shared Plesk cert):
-echo | openssl s_client -servername alpha.se7enx.com -connect 66.94.126.4:8070 \
+echo | openssl s_client -servername www.example.com -connect 203.0.113.10:8070 \
   2>/dev/null | openssl x509 -noout -issuer
 # -> issuer=C=US, O=Let's Encrypt, CN=YR1
 
 # qbix on 8080 is undisturbed:
-curl -k -o /dev/null -w '%{http_code}\n' https://66.94.126.4:8080/          # -> 200
+curl -k -o /dev/null -w '%{http_code}\n' https://203.0.113.10:8080/          # -> 200
 ```
 
 `/site/` is the path that resolves the Exponential `site` siteaccess through
@@ -259,7 +255,6 @@ FrankenPHP runs entirely **beside** qbix: separate `Port`/`HTTPSPort`, separate
 pid file, separate logs, separate admin socket. Nothing in the frankenphp start
 touches the running qbix process — do not confuse the two.
 
----
 
 ## 3. Full configuration reference
 
@@ -285,7 +280,7 @@ CPU cores and none extra -- see §8.
 | `Port` | plain-HTTP listen port | `8089` | `8089` |
 | `HTTPSPort` | HTTPS listen port (when TLS on) | `8444` | `8070` |
 | `HTTPS` | `enabled`/`true` = serve TLS on `HTTPSPort` beside HTTP; `disabled` = off for good | `enabled` | `enabled` |
-| `Host` | bind address; empty = `[ServerSettings] Host` | *(empty → 127.0.0.1)* | `66.94.126.4` |
+| `Host` | bind address; empty = `[ServerSettings] Host` | *(empty → 127.0.0.1)* | `203.0.113.10` |
 | `Workers` | number of PHP threads (classic mode) = `num_threads`; empty = twice the CPU cores (never `[ServerSettings] Workers`) | *(empty → 2 × cores)* | `24` |
 | `SpareWorkers` | extra threads started under load; `max_threads = Workers + SpareWorkers`; empty = 0 (never `[ServerSettings] SpareWorkers`) | *(empty → 0)* | `0` |
 | `DocumentRoot` | web root; empty = installation root (where `index.php` lives) | *(empty)* | *(empty)* |
@@ -349,7 +344,7 @@ refused. Leave both empty for a self-signed certificate (§4).
 
 ### 3.5 Settings this engine ignores (and says so)
 
-`status`/`start` list only those an installation actually set. On alpha the
+`status`/`start` list only those an installation actually set. On the test installation the
 current list is:
 
 - `CacheSettings` — no response cache on the frankenphp engine yet.
@@ -364,7 +359,6 @@ current list is:
 - `ControlSettings ExtraOptions` — Qbix options; use
   `[FrankenPHPSettings] ExtraOptions[]`.
 
----
 
 ## 4. HTTPS & certificates
 
@@ -375,7 +369,7 @@ first start. TLS uses one of three certificate sources, in this order:
 1. **Named certificate** — `[HTTPSSettings] Certificate` **and** `Key` both set.
    Both must name existing files or the start is refused (with `--https` or a
    named cert, a missing file is a hard failure; without, it falls back to a
-   self-signed one and says why). This is what alpha uses.
+   self-signed one and says why). This is what the test installation uses.
 2. **Self-signed** — both empty. The engine makes a certificate for this machine
    (`localhost`, `127.0.0.1`, `::1`, the host name, and a specific non-loopback
    bind address), SHA-256, RSA 2048, valid 365 days, in
@@ -387,7 +381,7 @@ first start. TLS uses one of three certificate sources, in this order:
 3. **Let's Encrypt / ACME** — FrankenPHP/Caddy can obtain certificates via ACME,
    but this engine sets `auto_https off` in the generated Caddyfile, so Velocity
    does **not** drive ACME for you. Two supported paths:
-   - **Share an existing cert** (the alpha approach): point `[HTTPSSettings]
+   - **Share an existing cert** (the approach of the test installation): point `[HTTPSSettings]
      Certificate`/`Key` at a certificate another system already manages — here
      the Let's Encrypt cert **Plesk** holds for the host, exported outside the
      document root. This is the same file the qbix engine serves. Browser-trusted,
@@ -407,7 +401,7 @@ reloading the engine so it picks up the new file:
 
 ```bash
 # after copying the renewed certificate and key into place:
-./console exp:velocity graceful --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity graceful --engine=frankenphp --allow-root-user
 ```
 
 > A `graceful` reloads the config (and thus re-reads the cert files) without
@@ -417,8 +411,8 @@ reloading the engine so it picks up the new file:
 ### Per-start TLS overrides
 
 ```bash
-./console exp:velocity start --engine=frankenphp --no-https   # plain HTTP, this start only
-./console exp:velocity start --engine=frankenphp --https      # insist on HTTPS, this start only
+php bin/php/console exp:velocity start --engine=frankenphp --no-https   # plain HTTP, this start only
+php bin/php/console exp:velocity start --engine=frankenphp --https      # insist on HTTPS, this start only
 ```
 
 `--https`/`--no-https` are the frankenphp engine's (the built-in `php` server
@@ -426,7 +420,6 @@ has no TLS; the qbix engine takes `[HTTPSSettings]`). A server started with
 `--https` serves TLS even though the settings don't say so — `status` reads the
 running Caddyfile, not just the settings, so it reports the truth.
 
----
 
 ## 5. The generated Caddyfile
 
@@ -487,9 +480,9 @@ filled in:
 | `ctl environ` | the environment the binary sees |
 
 ```bash
-./console exp:velocity ctl caddyfile --engine=frankenphp --allow-root-user
-./console exp:velocity ctl version   --engine=frankenphp --allow-root-user
-./console exp:velocity ctl list-modules --engine=frankenphp --allow-root-user | grep cache
+php bin/php/console exp:velocity ctl caddyfile --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity ctl version   --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity ctl list-modules --engine=frankenphp --allow-root-user | grep cache
 ```
 
 ### Custom Caddy config — `SiteInclude`
@@ -514,7 +507,6 @@ header {
 SiteInclude=settings/caddy/extra.caddy
 ```
 
----
 
 ## 6. PHP configuration for the embedded interpreter
 
@@ -561,14 +553,14 @@ Find the real socket path on your box:
 
 ```bash
 php -i | grep -i "mysqli.default_socket\|pdo_mysql.default_socket"
-# alpha: mysqli.default_socket => /var/lib/mysql/mysql.sock => /var/lib/mysql/mysql.sock
+# test installation: mysqli.default_socket => /var/lib/mysql/mysql.sock => /var/lib/mysql/mysql.sock
 ```
 
 **Alternative** — use TCP instead of a socket: set
 `[DatabaseSettings] Server=127.0.0.1` in `site.ini`. Then mysqli connects over
 TCP and no socket path is needed — **but MySQL must be listening on TCP** (not
 `skip-networking`, and bound so the loopback is reachable). The socket route is
-usually faster and needs no MySQL config change, which is why it is the alpha
+usually faster and needs no MySQL config change, which is why it is the test installation's
 choice.
 
 **Why this generalises:** any behaviour the machine's php.ini normally provides
@@ -589,7 +581,7 @@ variant is fully static and cannot. To see what the binary actually has:
 # The binary is PHP too; -m lists modules:
 var/vc/frankenphp/bin/frankenphp-1.12.7-linux-x86_64-gnu -r 'print_r(get_loaded_extensions());'
 # or via ctl:
-./console exp:velocity ctl list-modules --engine=frankenphp --allow-root-user   # Caddy modules
+php bin/php/console exp:velocity ctl list-modules --engine=frankenphp --allow-root-user   # Caddy modules
 ```
 
 If the app needs an extension the binary lacks and you're on `gnu`, load the
@@ -606,7 +598,6 @@ not available for the binary's exact PHP version/ABI, you need an **own build**
 `opcache.revalidate_freq=0` from `[PHPSettings]` is harmless here (each request
 has its own request time), so edited/regenerated PHP files are always picked up.
 
----
 
 ## 7. Operations
 
@@ -616,12 +607,12 @@ All standard Velocity verbs work; reach the engine with `--engine=frankenphp`
 (or make it the default). Add `--all` / `--engine=a,b` for multiple engines.
 
 ```bash
-./console exp:velocity start    --engine=frankenphp --allow-root-user
-./console exp:velocity stop     --engine=frankenphp --allow-root-user
-./console exp:velocity restart  --engine=frankenphp --allow-root-user
-./console exp:velocity graceful --engine=frankenphp --allow-root-user   # reload, no dropped connections
-./console exp:velocity kill     --engine=frankenphp --allow-root-user   # SIGKILL, no grace
-./console exp:velocity status   --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity start    --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity stop     --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity restart  --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity graceful --engine=frankenphp --allow-root-user   # reload, no dropped connections
+php bin/php/console exp:velocity kill     --engine=frankenphp --allow-root-user   # SIGKILL, no grace
+php bin/php/console exp:velocity status   --engine=frankenphp --allow-root-user
 ```
 
 - **`start`** checks everything that can refuse (binary present or auto-install,
@@ -668,7 +659,7 @@ ignored-settings notes.
 
 ### Running beside qbix
 
-Verified on alpha: frankenphp (8089/8070) runs concurrently with qbix
+Verified on the test installation: frankenphp (8089/8070) runs concurrently with qbix
 (8088/8080), each with its own port, pid, logs, admin socket and config.
 `exp:velocity status --all` shows both. Starting/stopping/reloading frankenphp
 never touches the qbix process — the cert is shared read-only, and qbix reads
@@ -684,8 +675,8 @@ stale-pin procedure.
 
 ```bash
 # after editing Version + Sha256[…] in the override:
-./console exp:velocity install --engine=frankenphp --allow-root-user
-./console exp:velocity restart --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity install --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity restart --engine=frankenphp --allow-root-user
 ```
 
 ### Pinning / own builds
@@ -695,7 +686,6 @@ modules such as the response-cache `cache-handler`); nothing is downloaded, and
 `BinarySha256` (if set) is checked. Own builds are made with FrankenPHP's
 `static-builder-gnu.Dockerfile` / `static-builder-musl.Dockerfile` — see §10.
 
----
 
 ## 8. Performance & optimisation
 
@@ -711,10 +701,10 @@ fork-per-request cost as with a process pool, but also no warm worker reuse.
 `2 × cores` (24 on a 12-core machine) and `SpareWorkers` is 0 -- FrankenPHP's
 own default. Neither falls back to `[ServerSettings]`: those size the Qbix
 server's process pool, where most processes sit idle, while FrankenPHP threads
-all compete for the CPU at once. Until 2026-09-26 they did fall back, and alpha
+all compete for the CPU at once. Until 2026-09-26 they did fall back, and the test installation
 ran `num_threads 590`/`max_threads 638`.
 
-**Why not more.** Measured on alpha (12 cores, rendered `/site/` pages, two
+**Why not more.** Measured on the test installation (12 cores, rendered `/site/` pages, two
 passes each, the box otherwise busy):
 
 | threads | 16 concurrent | 64 concurrent | CPU per page at 64 | p95 at 64 |
@@ -797,7 +787,7 @@ Compression=zstd br gzip
 - Caddy skips small bodies and types that do not shrink (images, archives), and
   adds `Vary: Accept-Encoding` so caches keep one copy per coding.
 
-Measured on alpha's front page (`/site/`, 95,724 bytes uncompressed):
+Measured on the test installation's front page (`/site/`, 95,724 bytes uncompressed):
 
 | `Accept-Encoding` | Bytes on the wire |
 |---|---:|
@@ -827,7 +817,6 @@ content page and the anonymous front page; watch p99, not just mean. `curl -w`
 for latency, `ab`/`wrk`/`hey` for throughput. Compare against qbix on the same
 box to see the cache's effect.
 
----
 
 ## 9. Debugging & troubleshooting
 
@@ -877,7 +866,6 @@ the last error lines when a start fails.
 | `graceful` says "reload rejected" | the new Caddyfile (usually `SiteInclude`) is invalid | fix the `SiteInclude`; the running config was kept; `ctl validate` to see the error |
 | Admin API "did not answer" | socket removed, or `AdminAddress` changed since start | `restart` (graceful falls back to it automatically) |
 
----
 
 ## 10. Extending & development
 
@@ -920,7 +908,7 @@ only needed for changes to the *engine configuration* (`velocity.ini` /
 `[FrankenPHPSettings]`), which regenerate the Caddyfile:
 
 ```bash
-./console exp:velocity graceful --engine=frankenphp --allow-root-user   # config change, no dropped conns
+php bin/php/console exp:velocity graceful --engine=frankenphp --allow-root-user   # config change, no dropped conns
 ```
 
 For a class/INI change that the app itself caches, follow the project's normal
@@ -937,19 +925,18 @@ leaves the previous file intact. `ctl caddyfile` prints the text without writing
 migrate and no `/etc/vc` tree — the Caddyfile is the whole configuration
 (`layout`/`migrate`/`site|conf|mod` verbs belong to qbix and refuse here).
 
----
 
 ## 11. Verification checklist & quick reference
 
 ### Post-install / post-change checklist
 
-1. `./console exp:velocity ctl caddyfile --engine=frankenphp --allow-root-user`
+1. `php bin/php/console exp:velocity ctl caddyfile --engine=frankenphp --allow-root-user`
    — the Caddyfile is what you expect (ports, host, cert, php_ini lines).
-2. `./console exp:velocity ctl validate --engine=frankenphp --allow-root-user`
+2. `php bin/php/console exp:velocity ctl validate --engine=frankenphp --allow-root-user`
    — it validates.
-3. `./console exp:velocity install --engine=frankenphp --check --allow-root-user`
+3. `php bin/php/console exp:velocity install --engine=frankenphp --check --allow-root-user`
    — the binary matches its SHA-256.
-4. `./console exp:velocity start --engine=frankenphp --allow-root-user`
+4. `php bin/php/console exp:velocity start --engine=frankenphp --allow-root-user`
    — it starts and answers health.
 5. `curl -k -o /dev/null -w '%{http_code}\n' https://<host>:<HTTPSPort>/site/`
    — 200.
@@ -957,7 +944,7 @@ migrate and no `/etc/vc` tree — the Caddyfile is the whole configuration
    — the expected issuer.
 7. Load a real content page and an admin page; confirm the DB works (no
    "unexpected error"), CSS/JS load, and a REST/AJAX path answers.
-8. `./console exp:velocity status --all --allow-root-user` — frankenphp running,
+8. `php bin/php/console exp:velocity status --all --allow-root-user` — frankenphp running,
    other engines (qbix) undisturbed.
 9. Firewall: `firewall-cmd --list-ports` includes `<HTTPSPort>/tcp`.
 
@@ -965,19 +952,19 @@ migrate and no `/etc/vc` tree — the Caddyfile is the whole configuration
 
 ```bash
 # lifecycle
-./console exp:velocity start|stop|restart|graceful|kill|status --engine=frankenphp --allow-root-user
-./console exp:velocity status --all --allow-root-user
+php bin/php/console exp:velocity start|stop|restart|graceful|kill|status --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity status --all --allow-root-user
 
 # install / upgrade
-./console exp:velocity install --engine=frankenphp [--force|--check|--from=<file>|--trust-github-digest] --allow-root-user
+php bin/php/console exp:velocity install --engine=frankenphp [--force|--check|--from=<file>|--trust-github-digest] --allow-root-user
 
 # config
-./console exp:velocity config get  FrankenPHPSettings Port --allow-root-user
-./console exp:velocity config set  ServerSettings Engine frankenphp --allow-root-user
-./console exp:velocity config paths --allow-root-user
+php bin/php/console exp:velocity config get  FrankenPHPSettings Port --allow-root-user
+php bin/php/console exp:velocity config set  ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config paths --allow-root-user
 
 # inspect the binary / caddyfile
-./console exp:velocity ctl caddyfile|validate|adapt|version|list-modules|build-info|environ --engine=frankenphp --allow-root-user
+php bin/php/console exp:velocity ctl caddyfile|validate|adapt|version|list-modules|build-info|environ --engine=frankenphp --allow-root-user
 
 # stale-pin fix
 gh api repos/php/frankenphp/releases/tags/v<VERSION> \
@@ -1001,16 +988,17 @@ tail -n 50 var/vc/frankenphp/log/error.log | jq .
 - Installer: `kernel/classes/expvelocityfrankenphpinstaller.php`
 - Settings (defaults): `settings/velocity.ini` — `[FrankenPHPSettings]`,
   `[PHPSettings]`, `[HTTPSSettings]`
-- Overrides (this install): `settings/override/velocity.ini.append.php`
+- Overrides: `settings/override/velocity.ini.append.php`
 - Generated Caddyfile: `var/vc/frankenphp/run/Caddyfile` (do not edit)
 - Binary: `var/vc/frankenphp/bin/frankenphp-<version>-<asset>`
 - Cross-engine reference: [`doc/bc/6.0/velocity-engines.md`](velocity-engines.md)
 
-See also (September 2026): [Server control commands](../../features/6.0/web-server-and-solr-commands.md) (`exp:webserver`, `exp:frankenphp`, `exp:solr`), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#engines-and-the-server-commands).
+## Related pages
 
-## See also (16 to 30 September 2026)
-
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Velocity engines — Qbix, FrankenPHP, PHP's built-in server](velocity-engines.md)
+- [Server control commands](../../features/6.0/web-server-and-solr-commands.md) (`exp:webserver`, `exp:frankenphp`, `exp:solr`)
+- [Behaviour changes, 16 to 30 September 2026: engines and the server commands](behaviour-changes-2026-09b.md#engines-and-the-server-commands)
 - [Velocity persistent worker server](../../features/6.0/velocity-persistent-worker-server.md)
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Deploying guide](../../guides/deploying.md)
