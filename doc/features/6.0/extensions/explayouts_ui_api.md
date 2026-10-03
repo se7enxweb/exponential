@@ -11,6 +11,9 @@ used on a phone, under a siteaccess reached by path (`/admin`), with German text
 with shared header and footer layouts shown as locked, and with write protection
 that makes sure a published layout is only changed through its draft.
 
+Version note: the installed copy in `extension/explayouts_ui_api` reads 1.3.10 in `ezinfo.php`; the clone of the repository has the tags v1.3.8 and v1.3.9 on commits that
+are not reachable from its main branch, so this page itemises changes up to 1.3.7 only. Check what your copy has with `grep Version extension/explayouts_ui_api/ezinfo.php`.
+
 ## Open and use the editor
 
 1. Log in to the admin and open **Layouts** (`/explayouts_ui/dashboard`).

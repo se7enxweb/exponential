@@ -25,9 +25,24 @@ NewObjectsOnly=false
 The settings have the same meaning as in [recaptcha](recaptcha.md#set-it-up): per host keys as arrays, `Theme`, `OverrideLang` and `NewObjectsOnly` (only
 new objects are checked). Clear caches, then add an **hCaptcha** attribute to the class.
 
+| File | Block | Key | Default | Meaning |
+|---|---|---|---|---|
+| `hcaptcha.ini` | `Keys` | `PublicKey`, `PublicKey[<host>]` | placeholder text `Enter your Public Key here` | The site key; one per host when you run several sites |
+| `hcaptcha.ini` | `Keys` | `PrivateKey`, `PrivateKey[<host>]` | placeholder text `Enter your Private Key here` | The secret key, used on the server only |
+| `hcaptcha.ini` | `Display` | `Theme` | `white` | Widget theme |
+| `hcaptcha.ini` | `Display` | `OverrideLang` | empty | Language code of the widget (`en`, `de`, `fr`, ...); empty works it out from the object language |
+| `hcaptcha.ini` | `PublishSettings` | `NewObjectsOnly` | `false` | Check only new objects, not re-edits |
+
+The comments of the shipped ini file still speak of Google's service (it was copied from [recaptcha](recaptcha.md)); the code talks to hCaptcha: the widget script is loaded from
+`js.hcaptcha.com` and the answer is verified server side at `https://hcaptcha.com/siteverify` by `classes/hcaptchalib.php`. Check with
+`grep -n hcaptcha.com extension/hcaptcha/classes/hcaptchalib.php`.
+
 ## What changed
 
 * 1.0 (11 August 2024): the internals were reworked for the hCaptcha API, tested with Exponential 6, funding metadata.
+* 6 August 2024: the repository began as a copy of [recaptcha](recaptcha.md), so its first commits are recaptcha's: one of them added `google/recaptcha` to `composer.json`; the
+  mass update of the internals that followed (see above) removed that dependency again. `composer.json` of the current extension requires only PHP 7.2 or later and
+  the legacy installer, so **no Composer package is needed for hCaptcha** (unlike recaptcha).
 * 1.1 (30 September 2026): the about page names the extension "hCaptcha extension for Exponential"; the description names Exponential.
 * 1.2 (2 October): `extension.xml`, which the extension lacked, was added, and the website in `ezinfo.php`, so the about page and the upgrade checks show
   the extension's version, license and website.

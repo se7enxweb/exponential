@@ -78,7 +78,7 @@ changing and removing stage the change for a commit.
 
 ```bash
 php extension/git_manager/bin/php/remote.php --help      # list, add, set-url, rename, remove, fetch, push
-php extension/git_manager/bin/php/submodule.php --help   # list, add, edit, update, remove
+php extension/git_manager/bin/php/submodule.php --help   # list, add, set-url, set-branch, update, remove
 ```
 
 ## The backup manager
@@ -118,7 +118,7 @@ audit and pending-action tables. The hash pattern is applied to `ezuser` rows on
 ### Backups from the command line
 
 ```bash
-php extension/git_manager/bin/php/backup-list.php -v -s
+php extension/git_manager/bin/php/backup-list.php -v -s   # -v lists the files of each backup, -s shows sizes
 php extension/git_manager/bin/php/backup-create.php fullsite -d "Before upgrade"   # fullsite | full | db | var
 php extension/git_manager/bin/php/backup-create.php full -e --passphrase-file=/root/backup.pass -d "Encrypted"
 php extension/git_manager/bin/php/backup-info.php 2026-06-21_20-20-49

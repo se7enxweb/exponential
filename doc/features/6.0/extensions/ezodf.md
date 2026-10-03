@@ -31,7 +31,7 @@ the media folder does not work properly.
 ## What changed in the Exponential 6 releases
 
 * 6.1.0: module views are safe on a persistent worker (Velocity); see
-  [Behaviour changes](../../../bc/6.0/extensions-behaviour-changes.md#persistent-workers).
+  [Behaviour changes](../../../bc/6.0/extensions-behaviour-changes.md#1-persistent-php-workers-module-views-no-longer-declare-at-file-level-without-a-guard).
 * 6.1.1 to 6.1.4: `ezinfo.php`, extension name, license in full, `<br>` as HTML5 does, description names Exponential.
 * 6.1.5: command line scripts and module views are classes the files call; copyright notices name 1998 - 2026
   7x & Exponential Foundation first.

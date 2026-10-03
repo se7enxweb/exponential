@@ -16,7 +16,7 @@ the template `design/standard/templates/pm/notification_email.tpl`, switched on 
 
 * 0.9.1 (28 January 2024): `composer.json`.
 * 0.10.0 (22 September 2026): module views no longer declare functions or classes at the top level without a guard, so a persistent worker (Velocity)
-  survives the second request ([details](../../../bc/6.0/extensions-behaviour-changes.md#persistent-workers)).
+  survives the second request ([details](../../../bc/6.0/extensions-behaviour-changes.md#1-persistent-php-workers-module-views-no-longer-declare-at-file-level-without-a-guard)).
 
 ## Related
 

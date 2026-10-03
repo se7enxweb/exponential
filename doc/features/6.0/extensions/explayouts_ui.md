@@ -4,8 +4,8 @@
 Exponential Layouts: lists of layouts, shared layouts and components, the **layout
 mappings** that decide which layout a page gets, imports, a template editor and a
 layout preview. Each list links into the visual editor served by
-[explayouts_ui_api](explayouts_ui_api.md). The extension has no PHP classes of its
-own; its module views are thin controllers over the `explayouts_core` services, so the
+[explayouts_ui_api](explayouts_ui_api.md). The extension has no domain classes of
+its own, only the thin view classes under `classes/runnable/views/explayouts_ui/`; its module views are controllers over the `explayouts_core` services, so the
 screens and the editor always show the same data.
 
 Imported 30 July 2026 (1.0.0); 1.3.6 followed on 30 September 2026.
@@ -92,8 +92,11 @@ The extension ships these defaults itself. See
 | `menu.ini` | `[TopAdminMenu] Tabs[]=explayouts_ui_dashboard`, `[Topmenu_explayouts_ui_dashboard]`, `[Leftmenu_explayouts_ui_dashboard]` | shipped | Tab (policy `explayouts/read`) and left menu links |
 | `module.ini` | module `explayouts_ui`, functions `read`, `edit` | shipped | Policies |
 
-Policies: list and preview views use `read`; create, edit, mapping, setup and import
-views use `edit`; `template_editor` uses both.
+Policies (from `module.php`): `layout_list`, `shared_layouts_list`, `rule_list`, `components`, `dashboard` and `layout_preview` use `read`;
+`layout_create`, `layout_edit`, `rule_edit`, `block_edit`, `setup` and `transfer_import` use `edit`; `template_editor` lists both.
+The sidebar is drawn by `design/admin/templates/parts/explayouts_ui/menu.tpl` and has five links: Layout mappings, Layouts, Shared layouts, Components and Import. **Template
+editor** and **Setup** are not in that sidebar; reach them by their URL (`/explayouts_ui/template_editor`, `/explayouts_ui/setup`) or through the `[Leftmenu_explayouts_ui_dashboard]`
+block of the shipped `menu.ini`, which lists Layout mappings, Layouts, Shared layouts (pointing at `layout_list`), Import, Template editor and Setup. Open `/explayouts_ui/dashboard` to check which one your admin design uses.
 
 ## Mobile and narrow screens
 

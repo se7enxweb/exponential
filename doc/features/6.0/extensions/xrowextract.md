@@ -340,7 +340,7 @@ line:
 
 ```bash
 php extension/xrowextract/bin/php/requirements.php
-php extension/xrowextract/bin/php/requirements.php --feature=packages,jobs --strict --json
+php extension/xrowextract/bin/php/requirements.php --feature=package,jobs --strict --json
 ```
 
 It prints PASS or FAIL per requirement, WARN for a missing optional one with the

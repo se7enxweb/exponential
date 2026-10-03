@@ -52,7 +52,7 @@ when none is selected. `xrowMetaDataFunctions` falls back to the class-level def
 
 * 1.3.5 to 1.3.7 (January 2024 to August 2026): README in Markdown; the Open Graph image above.
 * 1.4.0 (22 September 2026): module views are safe on a persistent worker (Velocity); see
-  [Behaviour changes](../../../bc/6.0/extensions-behaviour-changes.md#persistent-workers).
+  [Behaviour changes](../../../bc/6.0/extensions-behaviour-changes.md#1-persistent-php-workers-module-views-no-longer-declare-at-file-level-without-a-guard).
 * 1.4.1, 1.4.2: the extension states its version, license and website, the about page names it "Xrow Meta Data", the description
   names Exponential.
 * 1.4.3 (1 October): a complete English translation catalogue (`translations/eng-US/translation.ts`; before, on an English siteaccess

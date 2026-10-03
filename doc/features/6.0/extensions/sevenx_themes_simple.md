@@ -25,6 +25,23 @@ Template overrides, stylesheets and scripts come from `design.ini` of the extens
 The theme is "composer managed": do not edit its files in place; override templates in your own design
 extension, listed before it in `ActiveAccessExtensions`.
 
+## Where things are
+
+| Path in the extension | What it holds |
+|---|---|
+| `settings/design.ini.append.php` | The design extension registration and the stylesheet and script lists above (the old ezwebin colour files are present as comments) |
+| `settings/siteaccess/site/` and `settings/siteaccess/sevenx_site_user/` | `ezjscore.ini` and `override.ini.append.php` for those two siteaccesses |
+| `design/simple/templates/` | `pagelayout.tpl`, `page_header.tpl`, `page_footer.tpl`, `page_head*.tpl`, `link.tpl` and the folders `content`, `error`, `ezinfo`, `menu`, `node`, `parts`, `shop`, `user` |
+| `design/simple/stylesheets`, `javascript`, `images` | `main.css`, `main.res.css`, `main.js`, the logo, banner and favicon set |
+| `packages/` | The `.ezpkg` class packages (article, blog, event, forums, frontpage, ...) the default installation imports |
+| `translations/ger-DE/translation.ts` | The German texts of the theme's own strings |
+| `extension.xml`, `ezinfo.php` | Version (1.0.21 at the time of writing) and licence, kept equal; the requirements are `ezjscore` and `expui` |
+
+To see which release you have: `grep Version extension/sevenx_themes_simple/ezinfo.php` or the about page (`/ezinfo/about`).
+
+Hide the "Powered by Exponential" notice (1.0.4): `page_footer.tpl` prints it unless the **Hide powered by** attribute (`hide_powered_by`) of the page design object
+(the `pagedesign` class used by ezwebin designs) is set. Edit that object in the admin; no template change is needed.
+
 ## What changed in the Exponential 6 era
 
 | Release | Change |
@@ -36,7 +53,7 @@ extension, listed before it in `ActiveAccessExtensions`.
 | 1.0.11 | **Multi-level dropdown menu**: a third level opens as a fly-out under the second level; the active path (top, second and third level) is highlighted in orange and the exact current page is bold on a light-orange background; "active" and "open" are separate, so a deep page does not auto-expand the menu; a right-pointing toggle marks parents; image templates default to the uploaded original and constrain image width |
 | 1.0.12 | HTML5 markup cleanup: XHTML slashes, duplicate meta tags, conditional logo width and height and obsolete attributes removed |
 | 1.0.14 | Header menu cart icon positioning on small screens |
-| 1.0.15 | **Error pages show their own error in the title** ([details](../../../bc/6.0/extensions-behaviour-changes.md#error-page-titles)) |
+| 1.0.15 | **Error pages show their own error in the title** ([details](../../../bc/6.0/extensions-behaviour-changes.md#3-error-pages-show-their-own-error-in-the-page-title)) |
 | 1.0.16 | The footer background is a relative path that resolves wherever the extension directory is served from |
 | 1.0.17, 1.0.18 | Every visible text is a translation string with German: product labels, the error page, the basket, the footer ("Powered by" is one sentence with the link as a placeholder), blog post tags and the order confirmation summary and total |
 | 1.0.19 | Magnific Popup works on jQuery 4 (`Array.isArray`, `typeof`, `.on('click')`, `.trigger('focus')`); no shipped template loads it today |
