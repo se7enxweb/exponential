@@ -1,12 +1,14 @@
 # eztags (Tags): release notes
 
+Read this page before you install or update `eztags`, or to find out which release brought a change.
+
 What each release of `eztags` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/eztags.md); the story is in the [chronicle](../../history/extensions/eztags.md).
 
 See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) and [YUI removed](../../bc/6.0/yui-removal.md).
 
 ## v2.4.11 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The commands start through the shared command helpers ([`a3bb010`](https://github.com/se7enxweb/eztags/commit/a3bb010))
 
@@ -14,7 +16,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v2.4.10 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The command line scripts, cronjob parts and module views are classes the files call ([`f2e8f1a`](https://github.com/se7enxweb/eztags/commit/f2e8f1a))
 - The entry point files carry a header of 7x and the Exponential Foundation; the original headers move to the classes ([`9a2af2d`](https://github.com/se7enxweb/eztags/commit/9a2af2d))
@@ -33,11 +35,8 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 **Updated**
 
 - The children table of a tag runs on Exponential UI's exp::datatable when expui is active, with $.fn.eZTagsChildrenExp, and keeps its YUI 2 DataTable as the fallback, so that the tags admin needs no YUI for it. ([`6059fa5`](https://github.com/se7enxweb/eztags/commit/6059fa5))
-- Fixed: Fixed the tags field's edit page in designs that do not load eztags' FrontendJavaScriptList, where it stopped with TagsStructureMenu and $.EzTags not defined, by having the field's template require its own scripts and styles, so that tags can be edited on every site design. ([`56e2988`](https://github.com/se7enxweb/eztags/commit/56e2988))
-- Fixed: Fixed the tags administration in the admin design, where the dashboard, tag pages, forms, left menu and node tab were blank because eZ Tags ships its admin templates in design/admin2 only, so that it works in every admin design without a design setting. ([`f218ff7`](https://github.com/se7enxweb/eztags/commit/f218ff7))
-
-**Maintenance, documentation and packaging**
-
+- Fixed the tags field's edit page in designs that do not load eztags' FrontendJavaScriptList, where it stopped with TagsStructureMenu and $.EzTags not defined, by having the field's template require its own scripts and styles, so that tags can be edited on every site design. ([`56e2988`](https://github.com/se7enxweb/eztags/commit/56e2988))
+- Fixed the tags administration in the admin design, where the dashboard, tag pages, forms, left menu and node tab were blank because eZ Tags ships its admin templates in design/admin2 only, so that it works in every admin design without a design setting. ([`f218ff7`](https://github.com/se7enxweb/eztags/commit/f218ff7))
 - Requires se7enxweb/expui ^1.0.0.1, the Exponential UI modules its templates use when they are active, so that installing it brings the jQuery 4 versions of its features; the YUI versions stay as the fallback. ([`ad9e989`](https://github.com/se7enxweb/eztags/commit/ad9e989))
 
 1 version, merge or metadata commit not listed.
@@ -67,7 +66,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v2.4.4 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`9f61ddd`](https://github.com/se7enxweb/eztags/commit/9f61ddd))
 
@@ -94,16 +93,13 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 **Updated**
 
 - The admin tab, its title and the top menu tooltip call the extension Tags ([`1f1833b`](https://github.com/se7enxweb/eztags/commit/1f1833b))
-
-**Maintenance, documentation and packaging**
-
 - The extension states its version, license and website ([`b7a2860`](https://github.com/se7enxweb/eztags/commit/b7a2860))
 
 ## v2.4.0 (2026-09-22)
 
 **Updated**
 
-- Fixed: Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`75ab1a1`](https://github.com/se7enxweb/eztags/commit/75ab1a1))
+- Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`75ab1a1`](https://github.com/se7enxweb/eztags/commit/75ab1a1))
 
 ## v2.3.5 (2026-09-20)
 
@@ -115,7 +111,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 **Updated**
 
-- Fixed: Fixed tags rendering as nothing on MongoDB installations, caused by joins with eztags_keyword the MongoDB driver will not translate, so tagged content lists its tags again and each tag links to its own page. ([`80c42c1`](https://github.com/se7enxweb/eztags/commit/80c42c1))
+- Fixed tags rendering as nothing on MongoDB installations, caused by joins with eztags_keyword the MongoDB driver will not translate, so tagged content lists its tags again and each tag links to its own page. ([`80c42c1`](https://github.com/se7enxweb/eztags/commit/80c42c1))
 
 ## v2.3.3 (2026-08-07)
 
@@ -127,13 +123,13 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 **Updated**
 
-- fix: replace MOD() with % operator and use positional ORDER BY for SQLite compatibility ([`65dc524`](https://github.com/se7enxweb/eztags/commit/65dc524))
+- Fix: replace MOD() with % operator and use positional ORDER BY for SQLite compatibility ([`65dc524`](https://github.com/se7enxweb/eztags/commit/65dc524))
 
 1 version, merge or metadata commit not listed.
 
 ## v2.3.1 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json changed package vendor ([`01a07a0`](https://github.com/se7enxweb/eztags/commit/01a07a0))
 - Update composer.json switched package name ([`04315e7`](https://github.com/se7enxweb/eztags/commit/04315e7))
@@ -225,13 +221,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/eztags.md)
-* [Chronicle](../../history/extensions/eztags.md)
-* [Change ledger](../../history/ledger/eztags.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/eztags.md)
+- [Chronicle](../../history/extensions/eztags.md)
+- [Change ledger](../../history/ledger/eztags.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

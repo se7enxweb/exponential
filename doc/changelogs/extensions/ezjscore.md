@@ -1,5 +1,7 @@
 # ezjscore (JavaScript core and packer): release notes
 
+Read this page before you install or update `ezjscore`, or to find out which release brought a change.
+
 What each release of `ezjscore` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezjscore.md); the story is in the [chronicle](../../history/extensions/ezjscore.md).
 
 The jQuery 4 and YUI removal across the extensions is described in [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) and [YUI removed](../../bc/6.0/yui-removal.md).
@@ -28,7 +30,7 @@ The jQuery 4 and YUI removal across the extensions is described in [jQuery 4 and
 
 ## 1.5.2 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`f24bcfb`](https://github.com/se7enxweb/ezjscore/commit/f24bcfb))
 
@@ -36,7 +38,7 @@ The jQuery 4 and YUI removal across the extensions is described in [jQuery 4 and
 
 ## 1.5.1 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The command line scripts, cronjob parts and module views are classes the files call ([`8a19de6`](https://github.com/se7enxweb/ezjscore/commit/8a19de6))
 
@@ -84,13 +86,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezjscore.md)
-* [Chronicle](../../history/extensions/ezjscore.md)
-* [Change ledger](../../history/ledger/ezjscore.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezjscore.md)
+- [Chronicle](../../history/extensions/ezjscore.md)
+- [Change ledger](../../history/ledger/ezjscore.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-10](../../history/extensions/months/2026-10.md)

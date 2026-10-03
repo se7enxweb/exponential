@@ -1,10 +1,12 @@
 # recaptcha (reCAPTCHA datatype): release notes
 
+Read this page before you install or update `recaptcha`, or to find out which release brought a change.
+
 What each release of `recaptcha` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/recaptcha.md); the story is in the [chronicle](../../history/extensions/recaptcha.md).
 
 ## v1.4.5 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`f393ea8`](https://github.com/se7enxweb/recaptcha/commit/f393ea8))
 
@@ -20,7 +22,7 @@ What each release of `recaptcha` contains, assembled from its commits. Each line
 
 ## v1.4.3 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension states its version, license and website ([`a26e413`](https://github.com/se7enxweb/recaptcha/commit/a26e413))
 
@@ -44,9 +46,6 @@ What each release of `recaptcha` contains, assembled from its commits. Each line
 
 - Refactor to use ini for siteKey data storage ([`1033e65`](https://github.com/se7enxweb/recaptcha/commit/1033e65))
 - Update recaptchalib.php Bugfix for booting extension in class editor from composer installation ([`c38c963`](https://github.com/se7enxweb/recaptcha/commit/c38c963))
-
-**Maintenance, documentation and packaging**
-
 - Renamed CHANGELOG File to md file extension ([`e6250a5`](https://github.com/se7enxweb/recaptcha/commit/e6250a5))
 - Renamed CHANGELOG File to md file extension ([`48e1073`](https://github.com/se7enxweb/recaptcha/commit/48e1073))
 
@@ -58,9 +57,6 @@ What each release of `recaptcha` contains, assembled from its commits. Each line
 
 - Refactored extension for latest v2 captcha support and PHP8 and eZ 5 Datatype Changes and Google Recaptcha Autoloads Names Space Usage. Works with eZ 6.x ([`713b105`](https://github.com/se7enxweb/recaptcha/commit/713b105))
 - Refactor composer support to require google/recaptcha composer package ([`0167b15`](https://github.com/se7enxweb/recaptcha/commit/0167b15))
-
-**Maintenance, documentation and packaging**
-
 - Create README.md ([`ff2ec1d`](https://github.com/se7enxweb/recaptcha/commit/ff2ec1d))
 - Delete README replaced with README.md ([`8e8f6e9`](https://github.com/se7enxweb/recaptcha/commit/8e8f6e9))
 
@@ -68,13 +64,10 @@ What each release of `recaptcha` contains, assembled from its commits. Each line
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/recaptcha.md)
-* [Chronicle](../../history/extensions/recaptcha.md)
-* [Change ledger](../../history/ledger/recaptcha.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-08](../../history/extensions/months/2024-08.md), [2024-09](../../history/extensions/months/2024-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../features/6.0/extensions/recaptcha.md)
+- [Chronicle](../../history/extensions/recaptcha.md)
+- [Change ledger](../../history/ledger/recaptcha.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-08](../../history/extensions/months/2024-08.md), [2024-09](../../history/extensions/months/2024-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)

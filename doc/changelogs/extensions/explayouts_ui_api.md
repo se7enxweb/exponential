@@ -1,5 +1,7 @@
 # explayouts_ui_api (the layout editor): release notes
 
+Read this page before you install or update `explayouts_ui_api`, or to find out which release brought a change.
+
 What each release of `explayouts_ui_api` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/explayouts_ui_api.md); the story is in the [chronicle](../../history/extensions/explayouts_ui_api.md).
 
 ## v1.3.9 (2026-10-01)
@@ -7,21 +9,18 @@ What each release of `explayouts_ui_api` contains, assembled from its commits. E
 **Updated**
 
 - The layout editor runs on ezjscore's jQuery 4 and jQuery UI 1.14 instead of the jQuery 2.2.4 and jQuery UI 1.10.4 built into its bundle, and its page tags, globals and texts carry `explayouts` names, so the whole admin runs on one jQuery 4 (`8273a03`)
-
-**Fixed**
-
 - The Markdown and HTML blocks in the editor have a code editor again: their preview now carries the `ace-editor` element the editor is built on, so opening such a block no longer fails and its text can be edited and saved (`eeafe10`)
 - The Roboto italic face the editor's stylesheet points to ships, so italic text shows in Roboto and three font requests no longer fail (`a9dfe30`)
 
 ## v1.3.8 (2026-09-30)
 
-**Fixed**
+**Updated**
 
 - Layout share links work on Oracle: the `explayouts_share` table (with its sequence, trigger and the indexes `idx_share_layout` and `idx_share_token`) is created with Oracle's own statements when missing (`54efe41`)
 
 ## v1.3.7 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The about page names the extension Exponential Layouts UI API ([`4752b22`](https://github.com/se7enxweb/explayouts_ui_api/commit/4752b22))
 
@@ -77,31 +76,31 @@ What each release of `explayouts_ui_api` contains, assembled from its commits. E
 
 **Updated**
 
-- Fixed: Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`8f53d5d`](https://github.com/se7enxweb/explayouts_ui_api/commit/8f53d5d))
+- Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`8f53d5d`](https://github.com/se7enxweb/explayouts_ui_api/commit/8f53d5d))
 
 ## v1.2.4 (2026-09-20)
 
 **Updated**
 
-- Fixed: Fixed the share table being created with index names no schema declares, so the system upgrade page no longer reports the database as inconsistent after a layout has been shared. ([`2f998a9`](https://github.com/se7enxweb/explayouts_ui_api/commit/2f998a9))
+- Fixed the share table being created with index names no schema declares, so the system upgrade page no longer reports the database as inconsistent after a layout has been shared. ([`2f998a9`](https://github.com/se7enxweb/explayouts_ui_api/commit/2f998a9))
 
 ## v1.2.3 (2026-09-19)
 
 **Updated**
 
-- Fixed: Fixed the share endpoint reporting success for tokens it never stored, caused by MySQL-only DDL no other engine accepts and three unchecked query results, so a share token now either exists or the caller is told it does not. ([`569a2b7`](https://github.com/se7enxweb/explayouts_ui_api/commit/569a2b7))
+- Fixed the share endpoint reporting success for tokens it never stored, caused by MySQL-only DDL no other engine accepts and three unchecked query results, so a share token now either exists or the caller is told it does not. ([`569a2b7`](https://github.com/se7enxweb/explayouts_ui_api/commit/569a2b7))
 
 ## v1.2.2 (2026-09-17)
 
 **Updated**
 
-- Fixed: Fixed the block menu drawing the same default icon for most block types, by declaring an icon per type instead of leaving every one of them to a font that has a glyph for fewer than half. ([`e081f3d`](https://github.com/se7enxweb/explayouts_ui_api/commit/e081f3d))
+- Fixed the block menu drawing the same default icon for most block types, by declaring an icon per type instead of leaving every one of them to a font that has a glyph for fewer than half. ([`e081f3d`](https://github.com/se7enxweb/explayouts_ui_api/commit/e081f3d))
 
 ## v1.2.1 (2026-09-17)
 
 **Updated**
 
-- Fixed: Fixed the layout editor presenting a shared header and breadcrumb as editable blocks of the layout being edited, so a linked zone is drawn inherited and locked. ([`f79d59c`](https://github.com/se7enxweb/explayouts_ui_api/commit/f79d59c))
+- Fixed the layout editor presenting a shared header and breadcrumb as editable blocks of the layout being edited, so a linked zone is drawn inherited and locked. ([`f79d59c`](https://github.com/se7enxweb/explayouts_ui_api/commit/f79d59c))
 
 ## v1.2.0 (2026-09-14)
 
@@ -123,38 +122,35 @@ What each release of `explayouts_ui_api` contains, assembled from its commits. E
 
 **Updated**
 
-- populate missing block parameters, show manual collection items and improve list block preview in the SPA admin ([`18ce4c3`](https://github.com/se7enxweb/explayouts_ui_api/commit/18ce4c3))
-- expose default collections in the SPA sidebar with Block/Collection tabs and a working result endpoint. ([`007423b`](https://github.com/se7enxweb/explayouts_ui_api/commit/007423b))
-- add remove, remove-all and move endpoints for collection items and fix sidebar tab switching. ([`8119189`](https://github.com/se7enxweb/explayouts_ui_api/commit/8119189))
-- add content browser API endpoint and custom modal for adding collection items. ([`a0a51e8`](https://github.com/se7enxweb/explayouts_ui_api/commit/a0a51e8))
-- support collection type switching, expose rich parameter metadata, and remove manual save button from block form. ([`3ebd37a`](https://github.com/se7enxweb/explayouts_ui_api/commit/3ebd37a))
-- align SPA sidebar and block preview with Nexus/reference layouts-ui. ([`74ced49`](https://github.com/se7enxweb/explayouts_ui_api/commit/74ced49))
-- render container blocks with nested placeholders, expose parent_block_id/parent_placeholder, and support DND create/move/copy inside containers. ([`5f10555`](https://github.com/se7enxweb/explayouts_ui_api/commit/5f10555))
+- Populate missing block parameters, show manual collection items and improve list block preview in the SPA admin ([`18ce4c3`](https://github.com/se7enxweb/explayouts_ui_api/commit/18ce4c3))
+- Expose default collections in the SPA sidebar with Block/Collection tabs and a working result endpoint. ([`007423b`](https://github.com/se7enxweb/explayouts_ui_api/commit/007423b))
+- Add remove, remove-all and move endpoints for collection items and fix sidebar tab switching. ([`8119189`](https://github.com/se7enxweb/explayouts_ui_api/commit/8119189))
+- Add content browser API endpoint and custom modal for adding collection items. ([`a0a51e8`](https://github.com/se7enxweb/explayouts_ui_api/commit/a0a51e8))
+- Support collection type switching, expose rich parameter metadata, and remove manual save button from block form. ([`3ebd37a`](https://github.com/se7enxweb/explayouts_ui_api/commit/3ebd37a))
+- Align SPA sidebar and block preview with Nexus/reference layouts-ui. ([`74ced49`](https://github.com/se7enxweb/explayouts_ui_api/commit/74ced49))
+- Render container blocks with nested placeholders, expose parent_block_id/parent_placeholder, and support DND create/move/copy inside containers. ([`5f10555`](https://github.com/se7enxweb/explayouts_ui_api/commit/5f10555))
 - Render title and rich_text blocks with the inline/CKEditor hooks the SPA expects. ([`be8acd7`](https://github.com/se7enxweb/explayouts_ui_api/commit/be8acd7))
-- render title, text and rich_text blocks with the inline / CKEditor hooks the SPA expects, avoiding empty-content fallback that removes editable targets. ([`3232559`](https://github.com/se7enxweb/explayouts_ui_api/commit/3232559))
+- Render title, text and rich_text blocks with the inline / CKEditor hooks the SPA expects, avoiding empty-content fallback that removes editable targets. ([`3232559`](https://github.com/se7enxweb/explayouts_ui_api/commit/3232559))
 - SPA API resolves linked zones and skips placeholder blocks. ([`0c522f3`](https://github.com/se7enxweb/explayouts_ui_api/commit/0c522f3))
-- route layout publish/draft/discard through core service ([`5c494d0`](https://github.com/se7enxweb/explayouts_ui_api/commit/5c494d0))
+- Route layout publish/draft/discard through core service ([`5c494d0`](https://github.com/se7enxweb/explayouts_ui_api/commit/5c494d0))
 - SPA block edit forms and app template for query options ([`144f371`](https://github.com/se7enxweb/explayouts_ui_api/commit/144f371))
-- expose collection offset/limit in the query edit form ([`e89ca34`](https://github.com/se7enxweb/explayouts_ui_api/commit/e89ca34))
-- make offset/limit section collapsible and separate ([`7acf0c9`](https://github.com/se7enxweb/explayouts_ui_api/commit/7acf0c9))
-- style number inputs in content tab query form ([`f3c7169`](https://github.com/se7enxweb/explayouts_ui_api/commit/f3c7169))
+- Expose collection offset/limit in the query edit form ([`e89ca34`](https://github.com/se7enxweb/explayouts_ui_api/commit/e89ca34))
+- Make offset/limit section collapsible and separate ([`7acf0c9`](https://github.com/se7enxweb/explayouts_ui_api/commit/7acf0c9))
+- Style number inputs in content tab query form ([`f3c7169`](https://github.com/se7enxweb/explayouts_ui_api/commit/f3c7169))
 - Render View type for blocks without item view types and hide the Items panel for non-collection blocks in the layout editor. ([`2a5ed36`](https://github.com/se7enxweb/explayouts_ui_api/commit/2a5ed36))
-- adapt SPA block type API and icon assets for tpl_block plus-menu grouping. ([`570e6ab`](https://github.com/se7enxweb/explayouts_ui_api/commit/570e6ab))
-- force layout editor icon-* classes to use netgen_layouts font. ([`091a98d`](https://github.com/se7enxweb/explayouts_ui_api/commit/091a98d))
+- Adapt SPA block type API and icon assets for tpl_block plus-menu grouping. ([`570e6ab`](https://github.com/se7enxweb/explayouts_ui_api/commit/570e6ab))
+- Force layout editor icon-* classes to use netgen_layouts font. ([`091a98d`](https://github.com/se7enxweb/explayouts_ui_api/commit/091a98d))
 - API GET /layouts/:id respects published=false/true query. ([`9d62ea6`](https://github.com/se7enxweb/explayouts_ui_api/commit/9d62ea6))
 - API block endpoints resolve to the active draft. ([`e523272`](https://github.com/se7enxweb/explayouts_ui_api/commit/e523272))
 - missing-layout 404 modal now returns to admin instead of creating an empty layout. ([`11de65f`](https://github.com/se7enxweb/explayouts_ui_api/commit/11de65f))
 - SPA title suffix, create_new_draft HTTP method, cache-bust and add missing MaterialIcons fonts ([`d3d3488`](https://github.com/se7enxweb/explayouts_ui_api/commit/d3d3488))
 - API dispatcher now catches exceptions and returns a JSON 500 response with a logged backtrace. ([`52fbcea`](https://github.com/se7enxweb/explayouts_ui_api/commit/52fbcea))
-- block edit form and SPA shell styling. ([`074ab92`](https://github.com/se7enxweb/explayouts_ui_api/commit/074ab92))
-- Fixed: Fixed block ordering being lost on create, copy, move and delete, caused by every block being stored at position 0 so ordering fell back to insertion order and a block could not be placed before an existing one. Siblings are now renumbered around the requested position and compacted after a delete, and an imported rule... ([`4c8241f`](https://github.com/se7enxweb/explayouts_ui_api/commit/4c8241f))
-- Fixed: Fixed select parameters in the block design form being discarded, caused by every parameter select carrying the class that suppresses the form's debounced auto submit while the form has no submit button, so column counts and view types now save. The content picker also falls back through remote id when no node is stored. ([`3973dbf`](https://github.com/se7enxweb/explayouts_ui_api/commit/3973dbf))
-- Fixed: Fixed the block sidebar hanging for a block whose definition has no configuration, caused by method_exists() being called on a false handler which aborts the request under PHP 8, so the editor now shows an empty form instead of loading forever. Also renames the application edition shown in the logo tooltip to Exponenti... ([`2a95edc`](https://github.com/se7enxweb/explayouts_ui_api/commit/2a95edc))
+- Block edit form and SPA shell styling. ([`074ab92`](https://github.com/se7enxweb/explayouts_ui_api/commit/074ab92))
+- Fixed block ordering being lost on create, copy, move and delete, caused by every block being stored at position 0 so ordering fell back to insertion order and a block could not be placed before an existing one. Siblings are now renumbered around the requested position and compacted after a delete, and an imported rule... ([`4c8241f`](https://github.com/se7enxweb/explayouts_ui_api/commit/4c8241f))
+- Fixed select parameters in the block design form being discarded, caused by every parameter select carrying the class that suppresses the form's debounced auto submit while the form has no submit button, so column counts and view types now save. The content picker also falls back through remote id when no node is stored. ([`3973dbf`](https://github.com/se7enxweb/explayouts_ui_api/commit/3973dbf))
+- Fixed the block sidebar hanging for a block whose definition has no configuration, caused by method_exists() being called on a false handler which aborts the request under PHP 8, so the editor now shows an empty form instead of loading forever. Also renames the application edition shown in the logo tooltip to Exponenti... ([`2a95edc`](https://github.com/se7enxweb/explayouts_ui_api/commit/2a95edc))
 - Updated the layout editor styling to highlight the currently selected block distinctly and to lay out the new collection previews, so the editor shows a block's configuration at a glance. ([`390e87b`](https://github.com/se7enxweb/explayouts_ui_api/commit/390e87b))
-
-**Maintenance, documentation and packaging**
-
-- rebrand ibexa_content_search query type in the SPA UI ([`65991ab`](https://github.com/se7enxweb/explayouts_ui_api/commit/65991ab))
+- Rebrand ibexa_content_search query type in the SPA UI ([`65991ab`](https://github.com/se7enxweb/explayouts_ui_api/commit/65991ab))
 
 ## v1.0.0 (2026-07-30)
 
@@ -164,21 +160,15 @@ What each release of `explayouts_ui_api` contains, assembled from its commits. E
 
 **Updated**
 
-- Fixed: Fixed the composer.json license to the SPDX identifier GPL-2.0-or-later required by Packagist. ([`0f03c46`](https://github.com/se7enxweb/explayouts_ui_api/commit/0f03c46))
-
-**Maintenance, documentation and packaging**
-
+- Fixed the composer.json license to the SPDX identifier GPL-2.0-or-later required by Packagist. ([`0f03c46`](https://github.com/se7enxweb/explayouts_ui_api/commit/0f03c46))
 - Updated README.md to the classic 7x documentation standard with a doc/ index and expanded usage information. ([`b034090`](https://github.com/se7enxweb/explayouts_ui_api/commit/b034090))
 - Added .gitattributes with export-ignore rules to keep composer dist archives lean. ([`a31f493`](https://github.com/se7enxweb/explayouts_ui_api/commit/a31f493))
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/explayouts_ui_api.md)
-* [Chronicle](../../history/extensions/explayouts_ui_api.md)
-* [Change ledger](../../history/ledger/explayouts_ui_api.md)
-* [Specification](../../specifications/6.0/explayouts-ui-api.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2026-07](../../history/extensions/months/2026-07.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../features/6.0/extensions/explayouts_ui_api.md)
+- [Chronicle](../../history/extensions/explayouts_ui_api.md)
+- [Change ledger](../../history/ledger/explayouts_ui_api.md)
+- [Specification](../../specifications/6.0/explayouts-ui-api.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-07](../../history/extensions/months/2026-07.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)

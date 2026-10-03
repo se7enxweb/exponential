@@ -1,10 +1,12 @@
 # ezupdate (updates and packages): release notes
 
+Read this page before you install or update `ezupdate`, or to find out which release brought a change.
+
 What each release of `ezupdate` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezupdate.md); the story is in the [chronicle](../../history/extensions/ezupdate.md).
 
 ## v1.1.10 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The commands start through the shared command helpers ([`c1c5e24`](https://github.com/se7enxweb/ezupdate/commit/c1c5e24))
 
@@ -15,9 +17,6 @@ What each release of `ezupdate` contains, assembled from its commits. Each line 
 **Updated**
 
 - The commands and cronjob parts list a description of what they do ([`fcfed0d`](https://github.com/se7enxweb/ezupdate/commit/fcfed0d))
-
-**Maintenance, documentation and packaging**
-
 - Pull requests go against main, the branch's new name ([`b759785`](https://github.com/se7enxweb/ezupdate/commit/b759785))
 - The command line scripts, cronjob parts and module views are classes the files call ([`effbbb9`](https://github.com/se7enxweb/ezupdate/commit/effbbb9))
 
@@ -33,9 +32,6 @@ What each release of `ezupdate` contains, assembled from its commits. Each line 
 **Updated**
 
 - The new texts in English and German, and in the untranslated catalogue ([`192d020`](https://github.com/se7enxweb/ezupdate/commit/192d020))
-
-**Maintenance, documentation and packaging**
-
 - The license texts are Markdown files, LICENSE.md and doc/LICENSE.md ([`5e96bc7`](https://github.com/se7enxweb/ezupdate/commit/5e96bc7))
 
 1 version, merge or metadata commit not listed.
@@ -98,7 +94,7 @@ What each release of `ezupdate` contains, assembled from its commits. Each line 
 
 ## v1.1.1 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension names its license as GNU General Public License v2.0 (or any later version) and states version 1.1.1 ([`9345f63`](https://github.com/se7enxweb/ezupdate/commit/9345f63))
 
@@ -106,7 +102,7 @@ What each release of `ezupdate` contains, assembled from its commits. Each line 
 
 **Updated**
 
-- Fixed: Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`5584bf6`](https://github.com/se7enxweb/ezupdate/commit/5584bf6))
+- Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`5584bf6`](https://github.com/se7enxweb/ezupdate/commit/5584bf6))
 
 ## v1.0.2 (2026-09-13)
 
@@ -118,9 +114,6 @@ What each release of `ezupdate` contains, assembled from its commits. Each line 
 
 - Update ezupdate.ini.append make setting more generic for all users ([`ffbcbcf`](https://github.com/se7enxweb/ezupdate/commit/ffbcbcf))
 - Expanded warning to instruct users to backup first! ([`9e6bedd`](https://github.com/se7enxweb/ezupdate/commit/9e6bedd))
-
-**Maintenance, documentation and packaging**
-
 - Revised documentation ([`3cfa7b6`](https://github.com/se7enxweb/ezupdate/commit/3cfa7b6))
 - Updated documentation for v1.0.2 ([`cc1e7e9`](https://github.com/se7enxweb/ezupdate/commit/cc1e7e9))
 
@@ -132,13 +125,10 @@ What each release of `ezupdate` contains, assembled from its commits. Each line 
 
 - Initial Commit of Composer Update Exponential Module GUI Features ([`ed04f45`](https://github.com/se7enxweb/ezupdate/commit/ed04f45))
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezupdate.md)
-* [Chronicle](../../history/extensions/ezupdate.md)
-* [Change ledger](../../history/ledger/ezupdate.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-11](../../history/extensions/months/2024-11.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-06](../../history/extensions/months/2026-06.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezupdate.md)
+- [Chronicle](../../history/extensions/ezupdate.md)
+- [Change ledger](../../history/ledger/ezupdate.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-11](../../history/extensions/months/2024-11.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-06](../../history/extensions/months/2026-06.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

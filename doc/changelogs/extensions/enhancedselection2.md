@@ -1,10 +1,12 @@
 # enhancedselection2 (selection datatype): release notes
 
+Read this page before you install or update `enhancedselection2`, or to find out which release brought a change.
+
 What each release of `enhancedselection2` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/enhancedselection2.md); the story is in the [chronicle](../../history/extensions/enhancedselection2.md).
 
 ## 2.1.7 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The commands start through the shared command helpers ([`16a2231`](https://github.com/se7enxweb/enhancedselection2/commit/16a2231))
 
@@ -16,16 +18,13 @@ What each release of `enhancedselection2` contains, assembled from its commits. 
 
 - The commands and cronjob parts list a description of what they do ([`23745c4`](https://github.com/se7enxweb/enhancedselection2/commit/23745c4))
 - The edit and collect templates of a multiple selection parse again: a stray closing parenthesis made the template parser reject the checkbox list, so the edit form of a class using it showed no fields ([`c32095c`](https://github.com/se7enxweb/enhancedselection2/commit/c32095c))
-
-**Maintenance, documentation and packaging**
-
 - The command line scripts, cronjob parts and module views are classes the files call ([`998dc8f`](https://github.com/se7enxweb/enhancedselection2/commit/998dc8f))
 
 1 version, merge or metadata commit not listed.
 
 ## 2.1.5 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`fecc9b7`](https://github.com/se7enxweb/enhancedselection2/commit/fecc9b7))
 
@@ -50,13 +49,13 @@ What each release of `enhancedselection2` contains, assembled from its commits. 
 
 ## 2.1.2 (2024-03-06)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched installer package vendor ([`4a50d0e`](https://github.com/se7enxweb/enhancedselection2/commit/4a50d0e))
 
 ## 2.1.1 (2024-03-06)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`9bc66e1`](https://github.com/se7enxweb/enhancedselection2/commit/9bc66e1))
 
@@ -84,13 +83,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/enhancedselection2.md)
-* [Chronicle](../../history/extensions/enhancedselection2.md)
-* [Change ledger](../../history/ledger/enhancedselection2.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-03](../../history/extensions/months/2024-03.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/enhancedselection2.md)
+- [Chronicle](../../history/extensions/enhancedselection2.md)
+- [Change ledger](../../history/ledger/enhancedselection2.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-03](../../history/extensions/months/2024-03.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

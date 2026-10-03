@@ -1,10 +1,12 @@
 # ezie (image editor): release notes
 
+Read this page before you install or update `ezie`, or to find out which release brought a change.
+
 What each release of `ezie` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezie.md); the story is in the [chronicle](../../history/extensions/ezie.md).
 
 ## v6.0.8 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The command line scripts, cronjob parts and module views are classes the files call ([`5447227`](https://github.com/se7enxweb/ezie/commit/5447227))
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`ce35086`](https://github.com/se7enxweb/ezie/commit/ce35086))
@@ -42,20 +44,17 @@ What each release of `ezie` contains, assembled from its commits. Each line link
 - Fixed: Quitting the image editor asks a translated question, and only when there are changes ([`d9f20e8`](https://github.com/se7enxweb/ezie/commit/d9f20e8))
 - Fixed: After Save & Close the edit form shows the saved image wherever the attribute is ([`0b8eab0`](https://github.com/se7enxweb/ezie/commit/0b8eab0))
 - Fixed: The image editor's error dialog grows with the server's message ([`e828a1e`](https://github.com/se7enxweb/ezie/commit/e828a1e))
+- The known issues describe WebP images, the draft check and the JSON errors ([`1a141f5`](https://github.com/se7enxweb/ezie/commit/1a141f5))
 
 **Removed**
 
 - The blur, levels and saturation views of the image editor, which never worked ([`98dea8f`](https://github.com/se7enxweb/ezie/commit/98dea8f)) Upgrade note.
 
-**Maintenance, documentation and packaging**
-
-- The known issues describe WebP images, the draft check and the JSON errors ([`1a141f5`](https://github.com/se7enxweb/ezie/commit/1a141f5))
-
 1 version, merge or metadata commit not listed.
 
 ## v6.0.5 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`c5ce8e2`](https://github.com/se7enxweb/ezie/commit/c5ce8e2))
 
@@ -74,9 +73,6 @@ What each release of `ezie` contains, assembled from its commits. Each line link
 **Updated**
 
 - The image editor no longer requests jquery-migrate-1.1.1.min.js ([`38a6cfa`](https://github.com/se7enxweb/ezie/commit/38a6cfa))
-
-**Maintenance, documentation and packaging**
-
 - The extension states its version, license and website ([`e5fa60d`](https://github.com/se7enxweb/ezie/commit/e5fa60d))
 
 1 version, merge or metadata commit not listed.
@@ -89,14 +85,14 @@ What each release of `ezie` contains, assembled from its commits. Each line link
 
 ## v6.0.1 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json license value with valid text ([`cc2d7f5`](https://github.com/se7enxweb/ezie/commit/cc2d7f5))
 - Update composer.json update homepage url ([`7d035ee`](https://github.com/se7enxweb/ezie/commit/7d035ee))
 
 ## v6.0.0 (2024-01-28)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`3fcc409`](https://github.com/se7enxweb/ezie/commit/3fcc409))
 - Update composer.json replaced vendor name and package version ([`5014666`](https://github.com/se7enxweb/ezie/commit/5014666))
@@ -123,13 +119,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezie.md)
-* [Chronicle](../../history/extensions/ezie.md)
-* [Change ledger](../../history/ledger/ezie.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2024-03](../../history/extensions/months/2024-03.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezie.md)
+- [Chronicle](../../history/extensions/ezie.md)
+- [Change ledger](../../history/ledger/ezie.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2024-03](../../history/extensions/months/2024-03.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

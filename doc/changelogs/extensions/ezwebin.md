@@ -1,12 +1,14 @@
 # ezwebin (Website Interface design): release notes
 
+Read this page before you install or update `ezwebin`, or to find out which release brought a change.
+
 What each release of `ezwebin` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezwebin.md); the story is in the [chronicle](../../history/extensions/ezwebin.md).
 
 See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) and [YUI removed](../../bc/6.0/yui-removal.md).
 
 ## v6.0.16 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`b55459e`](https://github.com/se7enxweb/ezwebin/commit/b55459e))
 - The about page names 1998 - 2026 7x & Exponential Foundation first in its copyright notice, followed by eZ Systems AS ([`11964d8`](https://github.com/se7enxweb/ezwebin/commit/11964d8))
@@ -24,9 +26,6 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 **Updated**
 
 - The date and date/time fields of the ezwebin design use Exponential UI's calendar, exp::datepicker, when expui is active and load YUI's calendar only without it, so that editing on the site runs on jQuery 4. ([`af489c3`](https://github.com/se7enxweb/ezwebin/commit/af489c3)) Upgrade note.
-
-**Maintenance, documentation and packaging**
-
 - Requires se7enxweb/expui ^1.0.0.1, the Exponential UI modules its templates use when they are active, so that installing it brings the jQuery 4 versions of its features; the YUI versions stay as the fallback. ([`7962d1e`](https://github.com/se7enxweb/ezwebin/commit/7962d1e))
 
 1 version, merge or metadata commit not listed.
@@ -49,7 +48,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.0.11 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`a1ad269`](https://github.com/se7enxweb/ezwebin/commit/a1ad269))
 
@@ -89,13 +88,13 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.0.6 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension states its version, license and website ([`2771674`](https://github.com/se7enxweb/ezwebin/commit/2771674))
 
 ## v6.0.5 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - extension.xml and ezinfo.php name the license in full, GNU General Public License v2.0 (or any later version) ([`76a541c`](https://github.com/se7enxweb/ezwebin/commit/76a541c))
 
@@ -173,13 +172,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezwebin.md)
-* [Chronicle](../../history/extensions/ezwebin.md)
-* [Change ledger](../../history/ledger/ezwebin.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezwebin.md)
+- [Chronicle](../../history/extensions/ezwebin.md)
+- [Change ledger](../../history/ledger/ezwebin.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

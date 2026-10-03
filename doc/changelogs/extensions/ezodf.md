@@ -1,5 +1,7 @@
 # ezodf (OpenDocument import and export): release notes
 
+Read this page before you install or update `ezodf`, or to find out which release brought a change.
+
 What each release of `ezodf` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezodf.md); the story is in the [chronicle](../../history/extensions/ezodf.md).
 
 ## v6.1.6 (2026-10-02)
@@ -12,7 +14,7 @@ What each release of `ezodf` contains, assembled from its commits. Each line lin
 
 ## v6.1.5 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The command line scripts, cronjob parts and module views are classes the files call ([`c6d3f3f`](https://github.com/se7enxweb/ezodf/commit/c6d3f3f))
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`91ae3d2`](https://github.com/se7enxweb/ezodf/commit/91ae3d2))
@@ -21,7 +23,7 @@ What each release of `ezodf` contains, assembled from its commits. Each line lin
 
 ## v6.1.4 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`b96e87c`](https://github.com/se7enxweb/ezodf/commit/b96e87c))
 
@@ -29,13 +31,13 @@ What each release of `ezodf` contains, assembled from its commits. Each line lin
 
 ## v6.1.3 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension states its version, license and website ([`5028742`](https://github.com/se7enxweb/ezodf/commit/5028742))
 
 ## v6.1.2 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - extension.xml and ezinfo.php name the license in full, GNU General Public License v2.0 (or any later version) ([`a73cebf`](https://github.com/se7enxweb/ezodf/commit/a73cebf))
 
@@ -58,13 +60,13 @@ What each release of `ezodf` contains, assembled from its commits. Each line lin
 
 **Updated**
 
-- Fixed: Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`89a9aa6`](https://github.com/se7enxweb/ezodf/commit/89a9aa6))
+- Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`89a9aa6`](https://github.com/se7enxweb/ezodf/commit/89a9aa6))
 
 1 version, merge or metadata commit not listed.
 
 ## v6.0.1 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`342e62c`](https://github.com/se7enxweb/ezodf/commit/342e62c))
 
@@ -72,7 +74,7 @@ What each release of `ezodf` contains, assembled from its commits. Each line lin
 
 ## v6.0.0 (2024-01-28)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`9e436c1`](https://github.com/se7enxweb/ezodf/commit/9e436c1))
 - Update composer.json changed package name to reflect change in maintainer ([`c495be7`](https://github.com/se7enxweb/ezodf/commit/c495be7))
@@ -112,13 +114,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezodf.md)
-* [Chronicle](../../history/extensions/ezodf.md)
-* [Change ledger](../../history/ledger/ezodf.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezodf.md)
+- [Chronicle](../../history/extensions/ezodf.md)
+- [Change ledger](../../history/ledger/ezodf.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

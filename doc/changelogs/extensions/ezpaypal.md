@@ -1,10 +1,12 @@
 # ezpaypal (PayPal gateway): release notes
 
+Read this page before you install or update `ezpaypal`, or to find out which release brought a change.
+
 What each release of `ezpaypal` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezpaypal.md); the story is in the [chronicle](../../history/extensions/ezpaypal.md).
 
 ## v1.2.3 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The command line scripts, cronjob parts and module views are classes the files call ([`91a5850`](https://github.com/se7enxweb/ezpaypal/commit/91a5850))
 - The entry point files carry a header of 7x and the Exponential Foundation; the original headers move to the classes ([`e351cfd`](https://github.com/se7enxweb/ezpaypal/commit/e351cfd))
@@ -14,7 +16,7 @@ What each release of `ezpaypal` contains, assembled from its commits. Each line 
 
 ## v1.2.2 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`54c9d28`](https://github.com/se7enxweb/ezpaypal/commit/54c9d28))
 
@@ -30,19 +32,16 @@ What each release of `ezpaypal` contains, assembled from its commits. Each line 
 
 ## v1.2.0 (2024-01-24)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Added composer.json package configuration file ([`2a5e1bb`](https://github.com/se7enxweb/ezpaypal/commit/2a5e1bb))
 
 1 version, merge or metadata commit not listed.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezpaypal.md)
-* [Chronicle](../../history/extensions/ezpaypal.md)
-* [Change ledger](../../history/ledger/ezpaypal.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezpaypal.md)
+- [Chronicle](../../history/extensions/ezpaypal.md)
+- [Change ledger](../../history/ledger/ezpaypal.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

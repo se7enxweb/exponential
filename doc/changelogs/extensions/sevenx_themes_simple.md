@@ -1,10 +1,12 @@
 # sevenx_themes_simple (the simple theme): release notes
 
+Read this page before you install or update `sevenx_themes_simple`, or to find out which release brought a change.
+
 What each release of `sevenx_themes_simple` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/sevenx_themes_simple.md); the story is in the [chronicle](../../history/extensions/sevenx_themes_simple.md).
 
 ## v1.0.21 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The about page names 1998 - 2026 7x & Exponential Foundation first in its copyright notice, followed by eZ Systems AS ([`360905a`](https://github.com/se7enxweb/sevenx_themes_simple/commit/360905a))
 
@@ -74,25 +76,25 @@ What each release of `sevenx_themes_simple` contains, assembled from its commits
 
 **Added**
 
-- feat(menu): add multi-level dropdown, active path highlighting, and current-page state ([`22fe76b`](https://github.com/se7enxweb/sevenx_themes_simple/commit/22fe76b))
+- Feat(menu): add multi-level dropdown, active path highlighting, and current-page state ([`22fe76b`](https://github.com/se7enxweb/sevenx_themes_simple/commit/22fe76b))
 
 ## v1.0.10 (2026-07-13)
 
 **Updated**
 
-- fix(css): adjust main-sections top padding ([`9c935ab`](https://github.com/se7enxweb/sevenx_themes_simple/commit/9c935ab))
+- Fix(css): adjust main-sections top padding ([`9c935ab`](https://github.com/se7enxweb/sevenx_themes_simple/commit/9c935ab))
 
 ## v1.0.9 (2026-07-13)
 
 **Updated**
 
-- fix(css): cart alignment and embed inline image overflow ([`989aceb`](https://github.com/se7enxweb/sevenx_themes_simple/commit/989aceb))
+- Fix(css): cart alignment and embed inline image overflow ([`989aceb`](https://github.com/se7enxweb/sevenx_themes_simple/commit/989aceb))
 
 ## v1.0.8 (2026-07-12)
 
 **Updated**
 
-- fix(css): reduce excessive top spacing caused by floating ezwt toolbar ([`2332daa`](https://github.com/se7enxweb/sevenx_themes_simple/commit/2332daa))
+- Fix(css): reduce excessive top spacing caused by floating ezwt toolbar ([`2332daa`](https://github.com/se7enxweb/sevenx_themes_simple/commit/2332daa))
 
 ## v1.0.7 (2026-07-12)
 
@@ -102,7 +104,7 @@ What each release of `sevenx_themes_simple` contains, assembled from its commits
 
 ## v1.0.6 (2026-04-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Copyright Year Bump from 2025 - 2026. ([`df92e6d`](https://github.com/se7enxweb/sevenx_themes_simple/commit/df92e6d))
 
@@ -131,9 +133,6 @@ What each release of `sevenx_themes_simple` contains, assembled from its commits
 - Minor bugfix for sitautations where this fixes template warning upon certain usage where node_id is not avaialble like in module views. ([`1aebe48`](https://github.com/se7enxweb/sevenx_themes_simple/commit/1aebe48))
 - Commenting out some unneeded tpl code that tried to set an already set variable causing a warning. Code cleanup. ([`05e233e`](https://github.com/se7enxweb/sevenx_themes_simple/commit/05e233e))
 - Removed backup files. Unused. Cleanup. ([`35ebd92`](https://github.com/se7enxweb/sevenx_themes_simple/commit/35ebd92))
-
-**Maintenance, documentation and packaging**
-
 - Update about.tpl update copyright information to reflect 7x maintainership ([`c741168`](https://github.com/se7enxweb/sevenx_themes_simple/commit/c741168))
 - Rebranding project product name from Exponential to Exponential ([`0bdeb98`](https://github.com/se7enxweb/sevenx_themes_simple/commit/0bdeb98))
 - Updated Banner Image. Rebranding. ([`8355e45`](https://github.com/se7enxweb/sevenx_themes_simple/commit/8355e45))
@@ -147,7 +146,7 @@ What each release of `sevenx_themes_simple` contains, assembled from its commits
 
 **Added**
 
-- initial import plus bugfixes ([`aa4031c`](https://github.com/se7enxweb/sevenx_themes_simple/commit/aa4031c))
+- Initial import plus bugfixes ([`aa4031c`](https://github.com/se7enxweb/sevenx_themes_simple/commit/aa4031c))
 - Add logo image to page header template ([`c100622`](https://github.com/se7enxweb/sevenx_themes_simple/commit/c100622))
 - Added logo ([`856f08b`](https://github.com/se7enxweb/sevenx_themes_simple/commit/856f08b))
 - Added ezwebin (full) based installation packages as required by default installation process ([`1bf54f0`](https://github.com/se7enxweb/sevenx_themes_simple/commit/1bf54f0))
@@ -179,9 +178,6 @@ What each release of `sevenx_themes_simple` contains, assembled from its commits
 - Update: For ezoe compatabilty moved javascript includes into head ([`cf047cd`](https://github.com/se7enxweb/sevenx_themes_simple/commit/cf047cd))
 - Updated template logic simplified to fix variable warning ([`1d958b6`](https://github.com/se7enxweb/sevenx_themes_simple/commit/1d958b6))
 - Update design.ini.append.php rename extension dir for compatibility ([`2fed57b`](https://github.com/se7enxweb/sevenx_themes_simple/commit/2fed57b))
-
-**Maintenance, documentation and packaging**
-
 - Create composer.json ([`ae60dc6`](https://github.com/se7enxweb/sevenx_themes_simple/commit/ae60dc6))
 - Create ezinfo.php ([`5ee50b9`](https://github.com/se7enxweb/sevenx_themes_simple/commit/5ee50b9))
 - Added composer.json and ezinfo.php to extension from GH ([`b7ab191`](https://github.com/se7enxweb/sevenx_themes_simple/commit/b7ab191))
@@ -190,13 +186,10 @@ What each release of `sevenx_themes_simple` contains, assembled from its commits
 
 2 version, merge or metadata commits not listed.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/sevenx_themes_simple.md)
-* [Chronicle](../../history/extensions/sevenx_themes_simple.md)
-* [Change ledger](../../history/ledger/sevenx_themes_simple.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2024-02](../../history/extensions/months/2024-02.md), [2024-03](../../history/extensions/months/2024-03.md), [2024-09](../../history/extensions/months/2024-09.md), [2025-01](../../history/extensions/months/2025-01.md), [2025-08](../../history/extensions/months/2025-08.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/sevenx_themes_simple.md)
+- [Chronicle](../../history/extensions/sevenx_themes_simple.md)
+- [Change ledger](../../history/ledger/sevenx_themes_simple.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2024-02](../../history/extensions/months/2024-02.md), [2024-03](../../history/extensions/months/2024-03.md), [2024-09](../../history/extensions/months/2024-09.md), [2025-01](../../history/extensions/months/2025-01.md), [2025-08](../../history/extensions/months/2025-08.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

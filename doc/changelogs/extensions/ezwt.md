@@ -1,12 +1,14 @@
 # ezwt (website toolbar): release notes
 
+Read this page before you install or update `ezwt`, or to find out which release brought a change.
+
 What each release of `ezwt` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezwt.md); the story is in the [chronicle](../../history/extensions/ezwt.md).
 
 See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) and [YUI removed](../../bc/6.0/yui-removal.md).
 
 ## v6.0.9 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The command line scripts, cronjob parts and module views are classes the files call ([`d33a8e0`](https://github.com/se7enxweb/ezwt/commit/d33a8e0))
 - The entry point files carry a header of 7x and the Exponential Foundation; the original headers move to the classes ([`3508df1`](https://github.com/se7enxweb/ezwt/commit/3508df1))
@@ -25,16 +27,13 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 **Updated**
 
 - The date and date/time fields of the ezdemo design use Exponential UI's calendar, exp::datepicker, when expui is active and load YUI's calendar only without it, so that editing runs on jQuery 4. ([`f29c572`](https://github.com/se7enxweb/ezwt/commit/f29c572)) Upgrade note.
-
-**Maintenance, documentation and packaging**
-
 - Requires se7enxweb/expui ^1.0.0.1, the Exponential UI modules its templates use when they are active, so that installing it brings the jQuery 4 versions of its features; the YUI versions stay as the fallback. ([`deffdd1`](https://github.com/se7enxweb/ezwt/commit/deffdd1))
 
 1 version, merge or metadata commit not listed.
 
 ## v6.0.6 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`93afd60`](https://github.com/se7enxweb/ezwt/commit/93afd60))
 
@@ -50,7 +49,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.0.4 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension states its version, license and website ([`513a123`](https://github.com/se7enxweb/ezwt/commit/513a123))
 
@@ -64,13 +63,13 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.0.2 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json changed homepage url ([`fb70415`](https://github.com/se7enxweb/ezwt/commit/fb70415))
 
 ## v6.0.1 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor name ([`5ad931c`](https://github.com/se7enxweb/ezwt/commit/5ad931c))
 
@@ -78,7 +77,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## 6.0 (2023-12-23)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`f6e1b2e`](https://github.com/se7enxweb/ezwt/commit/f6e1b2e))
 
@@ -122,13 +121,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezwt.md)
-* [Chronicle](../../history/extensions/ezwt.md)
-* [Change ledger](../../history/ledger/ezwt.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezwt.md)
+- [Chronicle](../../history/extensions/ezwt.md)
+- [Change ledger](../../history/ledger/ezwt.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

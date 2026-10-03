@@ -1,10 +1,12 @@
 # swark (template operators): release notes
 
+Read this page before you install or update `swark`, or to find out which release brought a change.
+
 What each release of `swark` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/swark.md); the story is in the [chronicle](../../history/extensions/swark.md).
 
 ## v1.0.4 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`1d4f662`](https://github.com/se7enxweb/swark/commit/1d4f662))
 
@@ -15,28 +17,22 @@ What each release of `swark` contains, assembled from its commits. Each line lin
 **Updated**
 
 - Fixed: The ezinfo.php info() is static and states the extension's version, license and website ([`b55a93c`](https://github.com/se7enxweb/swark/commit/b55a93c))
-
-**Maintenance, documentation and packaging**
-
 - The documentation writes its line break as <br>, as the installed copy does ([`3a7fbaf`](https://github.com/se7enxweb/swark/commit/3a7fbaf))
 
 2 version, merge or metadata commits not listed.
 
 ## v1.0.2 (2024-01-07)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Create composer.json ([`c49656a`](https://github.com/se7enxweb/swark/commit/c49656a))
 
 2 version, merge or metadata commits not listed.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/swark.md)
-* [Chronicle](../../history/extensions/swark.md)
-* [Change ledger](../../history/ledger/swark.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../features/6.0/extensions/swark.md)
+- [Chronicle](../../history/extensions/swark.md)
+- [Change ledger](../../history/ledger/swark.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)

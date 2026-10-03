@@ -1,30 +1,29 @@
 # ezpm (private messages): release notes
 
+Read this page before you install or update `ezpm`, or to find out which release brought a change.
+
 What each release of `ezpm` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezpm.md); the story is in the [chronicle](../../history/extensions/ezpm.md).
 
 ## v0.10.0 (2026-09-22)
 
 **Updated**
 
-- Fixed: Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`aa5424b`](https://github.com/se7enxweb/ezpm/commit/aa5424b))
+- Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`aa5424b`](https://github.com/se7enxweb/ezpm/commit/aa5424b))
 
 1 version, merge or metadata commit not listed.
 
 ## v0.9.1 (2024-01-28)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Create composer.json ([`ef861ce`](https://github.com/se7enxweb/ezpm/commit/ef861ce))
 
 1 version, merge or metadata commit not listed.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezpm.md)
-* [Chronicle](../../history/extensions/ezpm.md)
-* [Change ledger](../../history/ledger/ezpm.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../features/6.0/extensions/ezpm.md)
+- [Chronicle](../../history/extensions/ezpm.md)
+- [Change ledger](../../history/ledger/ezpm.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)

@@ -1,5 +1,7 @@
 # xrowmetadata (meta data and sitemaps): release notes
 
+Read this page before you install or update `xrowmetadata`, or to find out which release brought a change.
+
 What each release of `xrowmetadata` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/xrowmetadata.md); the story is in the [chronicle](../../history/extensions/xrowmetadata.md).
 
 ## v1.4.4 (2026-10-02)
@@ -8,9 +10,6 @@ What each release of `xrowmetadata` contains, assembled from its commits. Each l
 
 - The commands and cronjob parts list a description of what they do ([`1e51a37`](https://github.com/se7enxweb/xrowmetadata/commit/1e51a37))
 - The sitemap cronjob prints the name of each file it wrote instead of failing on the file object, and the news sitemap stops quietly when the news subtree is empty ([`d9bac19`](https://github.com/se7enxweb/xrowmetadata/commit/d9bac19))
-
-**Maintenance, documentation and packaging**
-
 - The command line scripts, cronjob parts and module views are classes the files call ([`86ff6bb`](https://github.com/se7enxweb/xrowmetadata/commit/86ff6bb))
 
 1 version, merge or metadata commit not listed.
@@ -29,7 +28,7 @@ What each release of `xrowmetadata` contains, assembled from its commits. Each l
 
 ## v1.4.2 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The about page names the extension Xrow Meta Data ([`9154723`](https://github.com/se7enxweb/xrowmetadata/commit/9154723))
 - The description calls the product Exponential ([`5c3bf97`](https://github.com/se7enxweb/xrowmetadata/commit/5c3bf97))
@@ -38,7 +37,7 @@ What each release of `xrowmetadata` contains, assembled from its commits. Each l
 
 ## v1.4.1 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension states its version, license and website ([`3c0e57e`](https://github.com/se7enxweb/xrowmetadata/commit/3c0e57e))
 
@@ -46,13 +45,13 @@ What each release of `xrowmetadata` contains, assembled from its commits. Each l
 
 **Updated**
 
-- Fixed: Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`9e91560`](https://github.com/se7enxweb/xrowmetadata/commit/9e91560))
+- Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`9e91560`](https://github.com/se7enxweb/xrowmetadata/commit/9e91560))
 
 ## v1.3.7 (2026-08-07)
 
 **Updated**
 
-- bump xrowmetadata version to 1.3.7 ([`603e137`](https://github.com/se7enxweb/xrowmetadata/commit/603e137))
+- Bump xrowmetadata version to 1.3.7 ([`603e137`](https://github.com/se7enxweb/xrowmetadata/commit/603e137))
 
 ## v1.3.6 (2026-08-06)
 
@@ -72,20 +71,17 @@ What each release of `xrowmetadata` contains, assembled from its commits. Each l
 
 ## v1.3.5 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json ([`dc7ee86`](https://github.com/se7enxweb/xrowmetadata/commit/dc7ee86))
 - Update and rename README.txt to README.md ([`828fcd5`](https://github.com/se7enxweb/xrowmetadata/commit/828fcd5))
 
 2 version, merge or metadata commits not listed.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/xrowmetadata.md)
-* [Chronicle](../../history/extensions/xrowmetadata.md)
-* [Change ledger](../../history/ledger/xrowmetadata.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/xrowmetadata.md)
+- [Chronicle](../../history/extensions/xrowmetadata.md)
+- [Change ledger](../../history/ledger/xrowmetadata.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

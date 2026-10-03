@@ -1,5 +1,7 @@
 # ezflow (pages, zones and blocks): release notes
 
+Read this page before you install or update `ezflow`, or to find out which release brought a change.
+
 What each release of `ezflow` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezflow.md); the story is in the [chronicle](../../history/extensions/ezflow.md).
 
 See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) and [YUI removed](../../bc/6.0/yui-removal.md).
@@ -9,9 +11,6 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 **Updated**
 
 - The commands and cronjob parts list a description of what they do ([`adf61c1`](https://github.com/se7enxweb/ezflow/commit/adf61c1))
-
-**Maintenance, documentation and packaging**
-
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`8cce337`](https://github.com/se7enxweb/ezflow/commit/8cce337))
 
 1 version, merge or metadata commit not listed.
@@ -33,7 +32,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.1.2 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - extension.xml and ezinfo.php name the license in full, GNU General Public License v2.0 (or any later version) ([`06d8fd8`](https://github.com/se7enxweb/ezflow/commit/06d8fd8))
 
@@ -56,13 +55,13 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 **Updated**
 
-- Fixed: Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`b7ac2eb`](https://github.com/se7enxweb/ezflow/commit/b7ac2eb))
+- Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`b7ac2eb`](https://github.com/se7enxweb/ezflow/commit/b7ac2eb))
 
 1 version, merge or metadata commit not listed.
 
 ## v6.0.2 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched homepage url ([`56db68c`](https://github.com/se7enxweb/ezflow/commit/56db68c))
 
@@ -78,9 +77,6 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 **Updated**
 
 - Bugfix release of ezezflow composer to fix PHP 8.2 bugs ([`7470247`](https://github.com/se7enxweb/ezflow/commit/7470247))
-
-**Maintenance, documentation and packaging**
-
 - Update composer.json switched package vendor ([`e593c90`](https://github.com/se7enxweb/ezflow/commit/e593c90))
 
 2 version, merge or metadata commits not listed.
@@ -197,13 +193,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezflow.md)
-* [Chronicle](../../history/extensions/ezflow.md)
-* [Change ledger](../../history/ledger/ezflow.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezflow.md)
+- [Chronicle](../../history/extensions/ezflow.md)
+- [Change ledger](../../history/ledger/ezflow.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

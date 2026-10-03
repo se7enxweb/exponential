@@ -1,10 +1,12 @@
 # owsimpleoperator (simple template operators): release notes
 
+Read this page before you install or update `owsimpleoperator`, or to find out which release brought a change.
+
 What each release of `owsimpleoperator` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/owsimpleoperator.md); the story is in the [chronicle](../../history/extensions/owsimpleoperator.md).
 
 ## v1.2.5 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`53dbd1a`](https://github.com/se7enxweb/owsimpleoperator/commit/53dbd1a))
 
@@ -18,13 +20,13 @@ What each release of `owsimpleoperator` contains, assembled from its commits. Ea
 
 ## v1.2.3 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension names its license as GNU General Public License v2.0 (or any later version), in version 1.2.3 ([`9a33bdb`](https://github.com/se7enxweb/owsimpleoperator/commit/9a33bdb))
 
 ## v1.2.2 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension states its version, license and website ([`4605ea4`](https://github.com/se7enxweb/owsimpleoperator/commit/4605ea4))
 
@@ -40,7 +42,7 @@ What each release of `owsimpleoperator` contains, assembled from its commits. Ea
 
 ## v1.2.0 (2024-01-07)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Create composer.json ([`c12a142`](https://github.com/se7enxweb/owsimpleoperator/commit/c12a142))
 - Create ezinfo.php ([`5c4dadd`](https://github.com/se7enxweb/owsimpleoperator/commit/5c4dadd))
@@ -52,13 +54,10 @@ What each release of `owsimpleoperator` contains, assembled from its commits. Ea
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/owsimpleoperator.md)
-* [Chronicle](../../history/extensions/owsimpleoperator.md)
-* [Change ledger](../../history/ledger/owsimpleoperator.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../features/6.0/extensions/owsimpleoperator.md)
+- [Chronicle](../../history/extensions/owsimpleoperator.md)
+- [Change ledger](../../history/ledger/owsimpleoperator.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)

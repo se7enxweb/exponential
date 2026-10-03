@@ -1,10 +1,12 @@
 # ezgmaplocation (map location datatype): release notes
 
+Read this page before you install or update `ezgmaplocation`, or to find out which release brought a change.
+
 What each release of `ezgmaplocation` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezgmaplocation.md); the story is in the [chronicle](../../history/extensions/ezgmaplocation.md).
 
 ## v6.0.6 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`e558a87`](https://github.com/se7enxweb/ezgmaplocation/commit/e558a87))
 
@@ -12,7 +14,7 @@ What each release of `ezgmaplocation` contains, assembled from its commits. Each
 
 ## v6.0.5 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`07c2793`](https://github.com/se7enxweb/ezgmaplocation/commit/07c2793))
 
@@ -32,7 +34,7 @@ What each release of `ezgmaplocation` contains, assembled from its commits. Each
 
 - SQLite schema for the location table ([`9f7d371`](https://github.com/se7enxweb/ezgmaplocation/commit/9f7d371))
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension states its version, license and website ([`db3771b`](https://github.com/se7enxweb/ezgmaplocation/commit/db3771b))
 
@@ -41,16 +43,13 @@ What each release of `ezgmaplocation` contains, assembled from its commits. Each
 **Updated**
 
 - Improve latitude and longitude normalization for PHP 8.5 implode handleing ([`e28aa58`](https://github.com/se7enxweb/ezgmaplocation/commit/e28aa58))
-
-**Maintenance, documentation and packaging**
-
 - Update composer.json updated description ([`2282a3e`](https://github.com/se7enxweb/ezgmaplocation/commit/2282a3e))
 
 1 version, merge or metadata commit not listed.
 
 ## v6.0.1 (2024-01-28)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor names ([`b65947c`](https://github.com/se7enxweb/ezgmaplocation/commit/b65947c))
 
@@ -58,7 +57,7 @@ What each release of `ezgmaplocation` contains, assembled from its commits. Each
 
 ## 6.0 (2023-12-23)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`f907927`](https://github.com/se7enxweb/ezgmaplocation/commit/f907927))
 
@@ -90,13 +89,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezgmaplocation.md)
-* [Chronicle](../../history/extensions/ezgmaplocation.md)
-* [Change ledger](../../history/ledger/ezgmaplocation.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezgmaplocation.md)
+- [Chronicle](../../history/extensions/ezgmaplocation.md)
+- [Change ledger](../../history/ledger/ezgmaplocation.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

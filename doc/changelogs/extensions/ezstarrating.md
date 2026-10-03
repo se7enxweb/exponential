@@ -1,5 +1,7 @@
 # ezstarrating (star ratings): release notes
 
+Read this page before you install or update `ezstarrating`, or to find out which release brought a change.
+
 What each release of `ezstarrating` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezstarrating.md); the story is in the [chronicle](../../history/extensions/ezstarrating.md).
 
 ## v6.0.8 (2026-10-02)
@@ -12,7 +14,7 @@ What each release of `ezstarrating` contains, assembled from its commits. Each l
 
 ## v6.0.7 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`57ecf29`](https://github.com/se7enxweb/ezstarrating/commit/57ecf29))
 
@@ -34,7 +36,7 @@ What each release of `ezstarrating` contains, assembled from its commits. Each l
 
 ## v6.0.4 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`4874340`](https://github.com/se7enxweb/ezstarrating/commit/4874340))
 
@@ -49,22 +51,19 @@ What each release of `ezstarrating` contains, assembled from its commits. Each l
 **Updated**
 
 - Constructors are public as the parent class requires, and the rating stats cache resets between requests ([`f9b991a`](https://github.com/se7enxweb/ezstarrating/commit/f9b991a))
-
-**Maintenance, documentation and packaging**
-
 - The extension states its version, license and website ([`7d12e86`](https://github.com/se7enxweb/ezstarrating/commit/7d12e86))
 
 1 version, merge or metadata commit not listed.
 
 ## v6.0.2 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor name ([`24aecf1`](https://github.com/se7enxweb/ezstarrating/commit/24aecf1))
 
 ## v6.0.1 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package name ([`9d48709`](https://github.com/se7enxweb/ezstarrating/commit/9d48709))
 
@@ -72,7 +71,7 @@ What each release of `ezstarrating` contains, assembled from its commits. Each l
 
 ## 6.0 (2023-12-23)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`ee6f3d5`](https://github.com/se7enxweb/ezstarrating/commit/ee6f3d5))
 
@@ -104,13 +103,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezstarrating.md)
-* [Chronicle](../../history/extensions/ezstarrating.md)
-* [Change ledger](../../history/ledger/ezstarrating.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezstarrating.md)
+- [Chronicle](../../history/extensions/ezstarrating.md)
+- [Change ledger](../../history/ledger/ezstarrating.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

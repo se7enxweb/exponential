@@ -1,5 +1,7 @@
 # git_manager (git dashboard and backups): release notes
 
+Read this page before you install or update `git_manager`, or to find out which release brought a change.
+
 What each release of `git_manager` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/git_manager.md); the story is in the [chronicle](../../history/extensions/git_manager.md).
 
 ## v2.0.14 (2026-10-02)
@@ -12,7 +14,7 @@ What each release of `git_manager` contains, assembled from its commits. Each li
 
 ## v2.0.13 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The commands start through the shared command helpers ([`dee7143`](https://github.com/se7enxweb/git_manager/commit/dee7143))
 
@@ -20,7 +22,7 @@ What each release of `git_manager` contains, assembled from its commits. Each li
 
 ## v2.0.12 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The command line scripts, cronjob parts and module views are classes the files call ([`3a3b464`](https://github.com/se7enxweb/git_manager/commit/3a3b464))
 
@@ -120,9 +122,6 @@ What each release of `git_manager` contains, assembled from its commits. Each li
 **Updated**
 
 - Update project name from Exponential to Exponential / Exponential ([`3b8a634`](https://github.com/se7enxweb/git_manager/commit/3b8a634))
-
-**Maintenance, documentation and packaging**
-
 - Updated ezinfo.php and extension.xml version file. Doc. ([`5022a7c`](https://github.com/se7enxweb/git_manager/commit/5022a7c))
 - The extension names its license as GNU General Public License v2.0 (or any later version), in version 2.0.2 ([`2cac461`](https://github.com/se7enxweb/git_manager/commit/2cac461))
 
@@ -132,20 +131,17 @@ What each release of `git_manager` contains, assembled from its commits. Each li
 
 - Add Complete Backup Manager System with AGPL-Compatible Releases and License Bundling ([`c30a9ca`](https://github.com/se7enxweb/git_manager/commit/c30a9ca))
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Added extension documentation, license, composer support and extension.xml and sponsorship info ([`f8b6a50`](https://github.com/se7enxweb/git_manager/commit/f8b6a50))
 - Refined composer.json syntax ([`bc1ad40`](https://github.com/se7enxweb/git_manager/commit/bc1ad40))
 
 2 version, merge or metadata commits not listed.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/git_manager.md)
-* [Chronicle](../../history/extensions/git_manager.md)
-* [Change ledger](../../history/ledger/git_manager.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2024-10](../../history/extensions/months/2024-10.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-06](../../history/extensions/months/2026-06.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/git_manager.md)
+- [Chronicle](../../history/extensions/git_manager.md)
+- [Change ledger](../../history/ledger/git_manager.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2024-10](../../history/extensions/months/2024-10.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-06](../../history/extensions/months/2026-06.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

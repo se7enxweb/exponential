@@ -1,5 +1,7 @@
 # bccie (collected information export): release notes
 
+Read this page before you install or update `bccie`, or to find out which release brought a change.
+
 What each release of `bccie` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/bccie.md); the story is in the [chronicle](../../history/extensions/bccie.md).
 
 ## v1.1.11 (2026-10-02)
@@ -15,9 +17,6 @@ What each release of `bccie` contains, assembled from its commits. Each line lin
 **Updated**
 
 - The commands and cronjob parts list a description of what they do ([`d5cbc94`](https://github.com/se7enxweb/bccie/commit/d5cbc94))
-
-**Maintenance, documentation and packaging**
-
 - The command line scripts, cronjob parts and module views are classes the files call ([`5e14cdd`](https://github.com/se7enxweb/bccie/commit/5e14cdd))
 - The entry point files carry a header of 7x and the Exponential Foundation; the original headers move to the classes ([`37ff7c1`](https://github.com/se7enxweb/bccie/commit/37ff7c1))
 
@@ -25,7 +24,7 @@ What each release of `bccie` contains, assembled from its commits. Each line lin
 
 ## v1.1.9 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`4eec09e`](https://github.com/se7enxweb/bccie/commit/4eec09e))
 
@@ -57,7 +56,7 @@ What each release of `bccie` contains, assembled from its commits. Each line lin
 
 ## v1.1.5 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension names its license as GNU General Public License v2.0 (or any later version), in version 1.1.5 ([`28c4fee`](https://github.com/se7enxweb/bccie/commit/28c4fee))
 
@@ -71,19 +70,16 @@ What each release of `bccie` contains, assembled from its commits. Each line lin
 
 ## v1.1.3 (2024-01-28)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`91a1e10`](https://github.com/se7enxweb/bccie/commit/91a1e10))
 
 1 version, merge or metadata commit not listed.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/bccie.md)
-* [Chronicle](../../history/extensions/bccie.md)
-* [Change ledger](../../history/ledger/bccie.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/bccie.md)
+- [Chronicle](../../history/extensions/bccie.md)
+- [Change ledger](../../history/ledger/bccie.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

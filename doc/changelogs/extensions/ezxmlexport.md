@@ -1,10 +1,12 @@
 # ezxmlexport (XML export): release notes
 
+Read this page before you install or update `ezxmlexport`, or to find out which release brought a change.
+
 What each release of `ezxmlexport` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezxmlexport.md); the story is in the [chronicle](../../history/extensions/ezxmlexport.md).
 
 ## Unreleased
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json changed package vendor ([`3b70527`](https://github.com/se7enxweb/ezxmlexport/commit/3b70527))
 
@@ -34,13 +36,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezxmlexport.md)
-* [Chronicle](../../history/extensions/ezxmlexport.md)
-* [Change ledger](../../history/ledger/ezxmlexport.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md)
+- [Feature page](../../features/6.0/extensions/ezxmlexport.md)
+- [Chronicle](../../history/extensions/ezxmlexport.md)
+- [Change ledger](../../history/ledger/ezxmlexport.md)
+- [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md)

@@ -1,10 +1,12 @@
 # exp_enhanced_link (enhanced link datatype): release notes
 
+Read this page before you install or update `exp_enhanced_link`, or to find out which release brought a change.
+
 What each release of `exp_enhanced_link` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/exp_enhanced_link.md); the story is in the [chronicle](../../history/extensions/exp_enhanced_link.md).
 
 ## v1.0.4 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The about page names the extension Exponential Enhanced Link ([`b83ab63`](https://github.com/se7enxweb/exp_enhanced_link/commit/b83ab63))
 
@@ -28,7 +30,7 @@ What each release of `exp_enhanced_link` contains, assembled from its commits. E
 
 **Updated**
 
-- add object_serialize_map to Enhanced Link datatype ([`4cba9fb`](https://github.com/se7enxweb/exp_enhanced_link/commit/4cba9fb))
+- Add object_serialize_map to Enhanced Link datatype ([`4cba9fb`](https://github.com/se7enxweb/exp_enhanced_link/commit/4cba9fb))
 
 ## v1.0.0 (2026-08-07)
 
@@ -36,13 +38,10 @@ What each release of `exp_enhanced_link` contains, assembled from its commits. E
 
 - Initial commit: exp_enhanced_link ngenhancedlink eZ4 datatype ([`2315411`](https://github.com/se7enxweb/exp_enhanced_link/commit/2315411))
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/exp_enhanced_link.md)
-* [Chronicle](../../history/extensions/exp_enhanced_link.md)
-* [Change ledger](../../history/ledger/exp_enhanced_link.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../features/6.0/extensions/exp_enhanced_link.md)
+- [Chronicle](../../history/extensions/exp_enhanced_link.md)
+- [Change ledger](../../history/ledger/exp_enhanced_link.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)

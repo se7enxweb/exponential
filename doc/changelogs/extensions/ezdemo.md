@@ -1,12 +1,14 @@
 # ezdemo (demo design): release notes
 
+Read this page before you install or update `ezdemo`, or to find out which release brought a change.
+
 What each release of `ezdemo` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezdemo.md); the story is in the [chronicle](../../history/extensions/ezdemo.md).
 
 See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) and [YUI removed](../../bc/6.0/yui-removal.md).
 
 ## v6.0.9 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`84c3816`](https://github.com/se7enxweb/ezdemo/commit/84c3816))
 
@@ -52,7 +54,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.0.3 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - extension.xml and ezinfo.php name the license in full, GNU General Public License v2.0 (or any later version) ([`339b0fd`](https://github.com/se7enxweb/ezdemo/commit/339b0fd))
 
@@ -80,7 +82,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.0.0 (2024-01-28)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`e1f3faa`](https://github.com/se7enxweb/ezdemo/commit/e1f3faa))
 
@@ -154,13 +156,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezdemo.md)
-* [Chronicle](../../history/extensions/ezdemo.md)
-* [Change ledger](../../history/ledger/ezdemo.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezdemo.md)
+- [Chronicle](../../history/extensions/ezdemo.md)
+- [Change ledger](../../history/ledger/ezdemo.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

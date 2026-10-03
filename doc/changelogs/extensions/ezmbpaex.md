@@ -1,5 +1,7 @@
 # ezmbpaex (password expiry): release notes
 
+Read this page before you install or update `ezmbpaex`, or to find out which release brought a change.
+
 What each release of `ezmbpaex` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezmbpaex.md); the story is in the [chronicle](../../history/extensions/ezmbpaex.md).
 
 ## v6.0.4 (2026-10-02)
@@ -7,9 +9,6 @@ What each release of `ezmbpaex` contains, assembled from its commits. Each line 
 **Updated**
 
 - The commands and cronjob parts list a description of what they do ([`702ced1`](https://github.com/se7enxweb/ezmbpaex/commit/702ced1))
-
-**Maintenance, documentation and packaging**
-
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`7533fcb`](https://github.com/se7enxweb/ezmbpaex/commit/7533fcb))
 
 1 version, merge or metadata commit not listed.
@@ -32,13 +31,13 @@ What each release of `ezmbpaex` contains, assembled from its commits. Each line 
 
 ## v6.0.1 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json updated homepage url ([`5988be0`](https://github.com/se7enxweb/ezmbpaex/commit/5988be0))
 
 ## v6.0.0 (2024-01-29)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`acbc24c`](https://github.com/se7enxweb/ezmbpaex/commit/acbc24c))
 - Update composer.json switched package vendor ([`4b04fa4`](https://github.com/se7enxweb/ezmbpaex/commit/4b04fa4))
@@ -77,13 +76,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezmbpaex.md)
-* [Chronicle](../../history/extensions/ezmbpaex.md)
-* [Change ledger](../../history/ledger/ezmbpaex.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezmbpaex.md)
+- [Chronicle](../../history/extensions/ezmbpaex.md)
+- [Change ledger](../../history/ledger/ezmbpaex.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

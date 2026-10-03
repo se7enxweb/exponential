@@ -1,10 +1,12 @@
 # xrowextract (Export and import): release notes
 
+Read this page before you install or update `xrowextract`, or to find out which release brought a change.
+
 What each release of `xrowextract` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/xrowextract.md); the story is in the [chronicle](../../history/extensions/xrowextract.md).
 
 ## v2.5.6 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The commands start through the shared command helpers ([`8de6d30`](https://github.com/se7enxweb/xrowextract/commit/8de6d30))
 
@@ -16,9 +18,6 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 
 - The commands and cronjob parts list a description of what they do ([`964e0c6`](https://github.com/se7enxweb/xrowextract/commit/964e0c6))
 - The commands and cronjob parts list a description of what they do ([`72ba301`](https://github.com/se7enxweb/xrowextract/commit/72ba301))
-
-**Maintenance, documentation and packaging**
-
 - The command line scripts, cronjob parts and module views are classes the files call ([`0c31776`](https://github.com/se7enxweb/xrowextract/commit/0c31776))
 
 1 version, merge or metadata commit not listed.
@@ -44,9 +43,6 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 - Fixed: A CSV download with its manifest sends the file alone when the zip cannot be written ([`e04d6fb`](https://github.com/se7enxweb/xrowextract/commit/e04d6fb))
 - Translations of the refused non-UTF-8 schedule and destination values, with German ([`7fc3c48`](https://github.com/se7enxweb/xrowextract/commit/7fc3c48))
 - Fixed: A csv.ini handler class that is not there is logged and left out instead of ending the export ([`e569ab6`](https://github.com/se7enxweb/xrowextract/commit/e569ab6))
-
-**Maintenance, documentation and packaging**
-
 - Type declarations in the import and upload classes and views ([`2dc619d`](https://github.com/se7enxweb/xrowextract/commit/2dc619d))
 - Type declarations in the package classes and views ([`e495652`](https://github.com/se7enxweb/xrowextract/commit/e495652))
 - Type declarations in the job, archive, manifest, history and preset classes and views ([`04c5e0f`](https://github.com/se7enxweb/xrowextract/commit/04c5e0f))
@@ -90,23 +86,23 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 - XML as a first-class import format, a one-click sample, and a complete file format reference ([`f2c8a9d`](https://github.com/se7enxweb/xrowextract/commit/f2c8a9d))
 - German and English strings for XML, the sample and the reference ([`e82acf2`](https://github.com/se7enxweb/xrowextract/commit/e82acf2))
 - xrowextract/package supports content packages (.ezpkg) ([`0eabe54`](https://github.com/se7enxweb/xrowextract/commit/0eabe54))
-- a command line for content packages, ext:xrowextract:package ([`36b078b`](https://github.com/se7enxweb/xrowextract/commit/36b078b))
+- A command line for content packages, ext:xrowextract:package ([`36b078b`](https://github.com/se7enxweb/xrowextract/commit/36b078b))
 - German, English and untranslated strings for content packages ([`c8e3912`](https://github.com/se7enxweb/xrowextract/commit/c8e3912))
-- two more registered extended attribute filters, and a chain point in the language filter ([`600661c`](https://github.com/se7enxweb/xrowextract/commit/600661c))
+- Two more registered extended attribute filters, and a chain point in the language filter ([`600661c`](https://github.com/se7enxweb/xrowextract/commit/600661c))
 - fetchalias.ini named fetches usable from the CSV export ([`2b5601e`](https://github.com/se7enxweb/xrowextract/commit/2b5601e))
-- several conditions joined with and/or, kernel-level object/tree fields, an exact depth below the node, a second sort, and applying an extended filter or a named fetch ([`f7ee687`](https://github.com/se7enxweb/xrowextract/commit/f7ee687))
+- Several conditions joined with and/or, kernel-level object/tree fields, an exact depth below the node, a second sort, and applying an extended filter or a named fetch ([`f7ee687`](https://github.com/se7enxweb/xrowextract/commit/f7ee687))
 - Chunked upload of any size, with resume and per-user isolation ([`4363309`](https://github.com/se7enxweb/xrowextract/commit/4363309))
-- saved export presets, more powerful than a fetchalias.ini named fetch alone ([`2aab54a`](https://github.com/se7enxweb/xrowextract/commit/2aab54a))
+- Saved export presets, more powerful than a fetchalias.ini named fetch alone ([`2aab54a`](https://github.com/se7enxweb/xrowextract/commit/2aab54a))
 - Every extract view keeps its place when a button reloads the page ([`083930a`](https://github.com/se7enxweb/xrowextract/commit/083930a))
 - The import CLI streams any file size and can run as a background job ([`f3fe4e4`](https://github.com/se7enxweb/xrowextract/commit/f3fe4e4))
 - A large import queues as a background job and reports its size and resume point ([`e31e3fc`](https://github.com/se7enxweb/xrowextract/commit/e31e3fc))
 - Chunked upload progress, a queued-job notice and a resume control on the import page ([`d3330be`](https://github.com/se7enxweb/xrowextract/commit/d3330be))
 - German and English strings for chunked upload, queuing and job resume ([`7fee4ff`](https://github.com/se7enxweb/xrowextract/commit/7fee4ff))
-- direct .ezpkg/class-XML/object-XML upload, inspection and install on xrowextract/import ([`476313b`](https://github.com/se7enxweb/xrowextract/commit/476313b))
-- background job support for large content-package imports ([`e989da5`](https://github.com/se7enxweb/xrowextract/commit/e989da5))
-- translations for the content-package upload and reference strings ([`374f381`](https://github.com/se7enxweb/xrowextract/commit/374f381))
-- sample and template content packages built read-only from existing content, and a richer package dry run ([`c4ee1ce`](https://github.com/se7enxweb/xrowextract/commit/c4ee1ce))
-- streaming a built package or a single class/object XML as a download ([`2e8a4ec`](https://github.com/se7enxweb/xrowextract/commit/2e8a4ec))
+- Direct .ezpkg/class-XML/object-XML upload, inspection and install on xrowextract/import ([`476313b`](https://github.com/se7enxweb/xrowextract/commit/476313b))
+- Background job support for large content-package imports ([`e989da5`](https://github.com/se7enxweb/xrowextract/commit/e989da5))
+- Translations for the content-package upload and reference strings ([`374f381`](https://github.com/se7enxweb/xrowextract/commit/374f381))
+- Sample and template content packages built read-only from existing content, and a richer package dry run ([`c4ee1ce`](https://github.com/se7enxweb/xrowextract/commit/c4ee1ce))
+- Streaming a built package or a single class/object XML as a download ([`2e8a4ec`](https://github.com/se7enxweb/xrowextract/commit/2e8a4ec))
 - German/English/untranslated strings for the content-package Import format ([`7ff7081`](https://github.com/se7enxweb/xrowextract/commit/7ff7081))
 - German/English/untranslated strings for the File card tiles, complete ([`67ae0ab`](https://github.com/se7enxweb/xrowextract/commit/67ae0ab))
 - German/English/untranslated strings for the File card's per-tile aria-labels ([`623a468`](https://github.com/se7enxweb/xrowextract/commit/623a468))
@@ -147,7 +143,7 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 - The Jobs page shows its totals as tiles: total, completed, running, queued and failed ([`fd9a536`](https://github.com/se7enxweb/xrowextract/commit/fd9a536))
 - Fixed: The import page fits the window again on desktop and mobile ([`7922536`](https://github.com/se7enxweb/xrowextract/commit/7922536))
 - Fixed: A long language name no longer runs into the parent field on the import page ([`e2691e0`](https://github.com/se7enxweb/xrowextract/commit/e2691e0))
-- import links to the package template, tabs show Package ([`3de6839`](https://github.com/se7enxweb/xrowextract/commit/3de6839))
+- Import links to the package template, tabs show Package ([`3de6839`](https://github.com/se7enxweb/xrowextract/commit/3de6839))
 - The import preview says which class the rows go into, where, in which language, and names every object ([`3fb29d0`](https://github.com/se7enxweb/xrowextract/commit/3fb29d0))
 - Try a sample works with any class, and the reference's XML section starts closed and remembers its state ([`1728690`](https://github.com/se7enxweb/xrowextract/commit/1728690))
 - Fixed: The package template builder no longer publishes on the public site ([`35cb61f`](https://github.com/se7enxweb/xrowextract/commit/35cb61f))
@@ -222,14 +218,6 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 - Fixed: An id from a form, an address or a command line is checked before a query ([`14c00a3`](https://github.com/se7enxweb/xrowextract/commit/14c00a3))
 - Fixed: The site archive view refuses an array posted for a single choice ([`f3b018b`](https://github.com/se7enxweb/xrowextract/commit/f3b018b))
 - Fixed: The tab row no longer redefines the Jobs view's schedule_alerts variable ([`8c5b423`](https://github.com/se7enxweb/xrowextract/commit/8c5b423))
-
-**Renamed**
-
-- The Import and Package tabs are now Import content file and Import content package ([`3858c84`](https://github.com/se7enxweb/xrowextract/commit/3858c84)) Upgrade note.
-- The extract tabs are One class of content export, Multi class of content export, Import content file, Import content package and Jobs, with Jobs last ([`2adeb78`](https://github.com/se7enxweb/xrowextract/commit/2adeb78)) Upgrade note.
-
-**Maintenance, documentation and packaging**
-
 - README and changelog describe the manifest, schedules, destinations and history ([`dc6f5d8`](https://github.com/se7enxweb/xrowextract/commit/dc6f5d8))
 - PHPStan configuration with the Exponential kernel and library classes known ([`7801ee8`](https://github.com/se7enxweb/xrowextract/commit/7801ee8))
 - The command-line failure helper is declared as never returning ([`be91b1c`](https://github.com/se7enxweb/xrowextract/commit/be91b1c))
@@ -247,6 +235,11 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 - A POST robustness test of every view, and log watching in the integration tests ([`eb11b3c`](https://github.com/se7enxweb/xrowextract/commit/eb11b3c))
 - bin/check.sh --help shows the whole header ([`48c0356`](https://github.com/se7enxweb/xrowextract/commit/48c0356))
 - CHANGELOG for 2.5.3 ([`7abb26e`](https://github.com/se7enxweb/xrowextract/commit/7abb26e))
+
+**Renamed**
+
+- The Import and Package tabs are now Import content file and Import content package ([`3858c84`](https://github.com/se7enxweb/xrowextract/commit/3858c84)) Upgrade note.
+- The extract tabs are One class of content export, Multi class of content export, Import content file, Import content package and Jobs, with Jobs last ([`2adeb78`](https://github.com/se7enxweb/xrowextract/commit/2adeb78)) Upgrade note.
 
 26 version, merge or metadata commits not listed.
 
@@ -269,7 +262,7 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 
 **Updated**
 
-- Fixed: Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`92f6e8c`](https://github.com/se7enxweb/xrowextract/commit/92f6e8c))
+- Fixed the module views declaring functions and classes at the top level, so this extension can be served by a web server that keeps a PHP process alive across requests. ([`92f6e8c`](https://github.com/se7enxweb/xrowextract/commit/92f6e8c))
 
 1 version, merge or metadata commit not listed.
 
@@ -300,26 +293,23 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 
 ## v2.3.1 (2024-03-01)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched vendor on requirements ([`ba8ddfa`](https://github.com/se7enxweb/xrowextract/commit/ba8ddfa))
 
 ## v2.3.0 (2024-02-28)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switch package vendor ([`c0d37fb`](https://github.com/se7enxweb/xrowextract/commit/c0d37fb))
 
 1 version, merge or metadata commit not listed.
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/xrowextract.md)
-* [Chronicle](../../history/extensions/xrowextract.md)
-* [Change ledger](../../history/ledger/xrowextract.md)
-* [Specification](../../specifications/6.0/xrowextract.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2024-02](../../history/extensions/months/2024-02.md), [2024-03](../../history/extensions/months/2024-03.md), [2024-04](../../history/extensions/months/2024-04.md), [2024-07](../../history/extensions/months/2024-07.md), [2024-08](../../history/extensions/months/2024-08.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/xrowextract.md)
+- [Chronicle](../../history/extensions/xrowextract.md)
+- [Change ledger](../../history/ledger/xrowextract.md)
+- [Specification](../../specifications/6.0/xrowextract.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2024-02](../../history/extensions/months/2024-02.md), [2024-03](../../history/extensions/months/2024-03.md), [2024-04](../../history/extensions/months/2024-04.md), [2024-07](../../history/extensions/months/2024-07.md), [2024-08](../../history/extensions/months/2024-08.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

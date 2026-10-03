@@ -1,5 +1,7 @@
 # ezoe (online editor repository): release notes
 
+Read this page before you install or update `ezoe`, or to find out which release brought a change.
+
 What each release of `ezoe` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezoe.md); the story is in the [chronicle](../../history/extensions/ezoe.md).
 
 The editor itself, its TinyMCE 8 engine, dialogs and skin are described in [Online editor: TinyMCE 8](../../features/6.0/online-editor-tinymce8.md) and [ezoe-tinymce8](../../bc/6.0/ezoe-tinymce8.md).
@@ -52,13 +54,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezoe.md)
-* [Chronicle](../../history/extensions/ezoe.md)
-* [Change ledger](../../history/ledger/ezoe.md)
-
-## See also
-
-* [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-* months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md)
+- [Feature page](../../features/6.0/extensions/ezoe.md)
+- [Chronicle](../../history/extensions/ezoe.md)
+- [Change ledger](../../history/ledger/ezoe.md)
+- [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md)

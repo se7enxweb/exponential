@@ -1,12 +1,14 @@
 # ezautosave (draft autosave): release notes
 
+Read this page before you install or update `ezautosave`, or to find out which release brought a change.
+
 What each release of `ezautosave` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezautosave.md); the story is in the [chronicle](../../history/extensions/ezautosave.md).
 
 See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) and [YUI removed](../../bc/6.0/yui-removal.md).
 
 ## v6.0.8 (2026-10-02)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The copyright notices name 1998 - 2026 7x & Exponential Foundation first, above the eZ Systems notices ([`1abe15d`](https://github.com/se7enxweb/ezautosave/commit/1abe15d))
 
@@ -29,16 +31,13 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 **Updated**
 
 - Autosave and the draft preview run on Exponential UI's exp::autosave when expui is active, in the admin and the ezwebin templates, and keep the YUI version as the fallback, so that drafts are saved on jQuery 4. ([`f4e9bee`](https://github.com/se7enxweb/ezautosave/commit/f4e9bee)) Upgrade note.
-
-**Maintenance, documentation and packaging**
-
 - Requires se7enxweb/expui ^1.0.0.1, the Exponential UI modules its templates use when they are active, so that installing it brings the jQuery 4 versions of its features; the YUI versions stay as the fallback. ([`abc3c4c`](https://github.com/se7enxweb/ezautosave/commit/abc3c4c))
 
 1 version, merge or metadata commit not listed.
 
 ## v6.0.4 (2026-09-30)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The description calls the product Exponential ([`0fbf2b7`](https://github.com/se7enxweb/ezautosave/commit/0fbf2b7))
 
@@ -54,13 +53,13 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.0.2 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The Composer package declares GPL-2.0-or-later, as the extension's own metadata does, in version 6.0.2 ([`aff1aed`](https://github.com/se7enxweb/ezautosave/commit/aff1aed))
 
 ## v6.0.1 (2026-09-27)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - The extension states its version, license and website ([`fc1d28d`](https://github.com/se7enxweb/ezautosave/commit/fc1d28d))
 
@@ -68,7 +67,7 @@ See [jQuery 4 and YUI removal](../../features/6.0/jquery4-and-yui-removal.md) an
 
 ## v6.0.0 (2024-01-28)
 
-**Maintenance, documentation and packaging**
+**Updated**
 
 - Update composer.json switched package vendor ([`50b4386`](https://github.com/se7enxweb/ezautosave/commit/50b4386))
 - Update composer.json switched package vendor and update package name to remove deprecated -ls switch ([`a30f09d`](https://github.com/se7enxweb/ezautosave/commit/a30f09d))
@@ -111,13 +110,10 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 No commit of this repository is tagged only with this release in the ledger window (see the chronicle).
 
-## Related
+## Related pages
 
-* [Feature page](../../features/6.0/extensions/ezautosave.md)
-* [Chronicle](../../history/extensions/ezautosave.md)
-* [Change ledger](../../history/ledger/ezautosave.md)
-* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-
-## See also
-
-* months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../features/6.0/extensions/ezautosave.md)
+- [Chronicle](../../history/extensions/ezautosave.md)
+- [Change ledger](../../history/ledger/ezautosave.md)
+- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
+- Months: [2023-12](../../history/extensions/months/2023-12.md), [2024-01](../../history/extensions/months/2024-01.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
