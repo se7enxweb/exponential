@@ -91,6 +91,58 @@
 <context>
     <name>design/standard/ezoe</name>
     <message>
+        <source>TinyMCE 3</source>
+        <translation>TinyMCE 3</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>TinyMCE 8</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>Switch to the editor %engine</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>The text is kept, the choice is saved for your user.</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>This file type is not accepted by the editor: %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>Online editor</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>The editor of your user was saved.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>This editor is not available.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>Editor for text fields</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>Default of this site (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>Switch to the new editor (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>Switch to the previous editor (TinyMCE 3)</translation>
+    </message>
+    <message>
         <source>this</source>
         <translation>this</translation>
     </message>

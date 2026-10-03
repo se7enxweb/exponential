@@ -91,6 +91,46 @@
 <context>
     <name>design/standard/ezoe</name>
     <message>
+        <source>TinyMCE 3</source>
+        <translation>TinyMCE 3</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>TinyMCE 8</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>Zum Editor %engine wechseln</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>Dieser Dateityp wird vom Editor nicht akzeptiert: %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>Online-Editor</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>Der Editor Ihres Benutzers wurde gespeichert.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>Dieser Editor ist nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>Editor für Textfelder</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>Voreinstellung dieser Website (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>Aktuell verwendet: %engine. Die Auswahl gilt nur für Ihren Benutzer, der Text Ihrer Inhalte ist mit jedem Editor derselbe.</translation>
+    </message>
+    <message>
         <source>Switch to the new editor (TinyMCE 8)</source>
         <translation>Zum neuen Editor wechseln (TinyMCE 8)</translation>
     </message>
