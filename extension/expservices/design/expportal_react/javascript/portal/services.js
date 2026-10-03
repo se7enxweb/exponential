@@ -50,6 +50,16 @@ export async function write( name, fields, args ) {
     return unwrap( r );
 }
 
+// POST without the form token (the login service: the session does not exist as a login yet).
+// The answer carries the token of the new session, which replaces the cached one.
+export async function postPlain( name, fields ) {
+    const r = await fetch( url( name ), { method: 'POST', body: new URLSearchParams( fields || {} ), credentials: 'same-origin',
+        headers: { Accept: 'application/json', 'X-Requested-With': 'XMLHttpRequest' } } );
+    const env = await unwrap( r );
+    token = env.data && env.data.token ? env.data.token : null;
+    return env;
+}
+
 export function resetToken() { token = null; }
 
 // Paging helper: { items, total, offset, limit } from a paged envelope.

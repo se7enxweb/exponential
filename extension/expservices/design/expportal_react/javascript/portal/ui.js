@@ -23,10 +23,10 @@ export function Loading() {
     return h( 'div', { className: 'py-4 text-center', 'data-state': 'loading' }, h( Spinner, { animation: 'border', size: 'sm' } ), ' Loading' );
 }
 
-export function ErrorBox( { error } ) {
+export function ErrorBox( { error, plain } ) {
     const code = error && error.code ? ' (' + error.code + ')' : '';
-    return h( Alert, { variant: error && error.code === 401 ? 'warning' : 'danger', 'data-state': 'error' },
-        error && error.code === 401
+    return h( Alert, { variant: error && error.code === 401 && !plain ? 'warning' : 'danger', 'data-state': 'error' },
+        error && error.code === 401 && !plain
             ? [ 'Please ', h( 'a', { key: 'l', href: '#/login' }, 'sign in' ), ' to see this.' ]
             : ( error && error.message ? error.message : 'Error' ) + code );
 }

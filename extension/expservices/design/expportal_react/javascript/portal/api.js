@@ -1,6 +1,6 @@
 // The portal's view of the catalogue: one function per screen need, mapped to expservices calls.
 // If a service is renamed in the catalogue, this is the only file to change.
-import { read, write, pageOf } from './services.js';
+import { read, write, postPlain, resetToken, pageOf } from './services.js';
 
 const PAGE = 12;
 export const pageSize = PAGE;
@@ -17,10 +17,10 @@ export function card( n ) {
 
 export async function whoami() { return ( await read( 'expsession::whoami' ) ).data; }
 export async function login( name, pass ) {
-    await write( 'expsession::login', { login: name, password: pass } );
+    await postPlain( 'expsession::login', { username: name, password: pass } );
     return whoami();
 }
-export async function logout() { return write( 'expsession::logout' ); }
+export async function logout() { const r = await write( 'expsession::logout' ); resetToken(); return r; }
 
 export async function children( nodeId, offset, limit, classes ) {
     const env = await read( 'expnode::children', [ nodeId, offset || 0, limit || PAGE ].concat( classes ? [ classes ] : [] ) );
