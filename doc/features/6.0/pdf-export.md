@@ -70,3 +70,7 @@ All keys above were read from `settings/pdf.ini` at HEAD (`grep -v '^#' settings
 - [PDF export upgrade](../../bc/6.0/pdf-export.md) (database columns, changed defaults)
 - [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [Paging, sorting and page sizes (the PDF export list is paged)](admin-list-paging.md)

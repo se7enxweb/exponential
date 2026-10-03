@@ -105,3 +105,8 @@ Check: `grep -n "AvailableVersionList\|OPMLMaxOutlines" settings/site.ini` and `
 - [Syndication specification](../../specifications/6.0/syndication.md)
 - [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [Cronjobs console (the import cleanup part)](cronjobs-console.md)
+- [Paging, sorting and page sizes (the RSS list is paged)](admin-list-paging.md)

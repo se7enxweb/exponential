@@ -41,6 +41,12 @@ The full table of keys, the four settings that predate the block, and the one
 list that is deliberately not paged are in
 [Where the page sizes live](../../bc/6.0/pagination-settings.md).
 
+## A page size of your own in the sub items list
+
+The Table options panel of the sub items list has a **Custom** field (any whole number from 1 to 10000, stored as a
+user preference). It is described with the other table options in
+[Sub items list: custom page size](subitems-table-options.md#custom-page-size).
+
 ## For developers
 
 The modules read their size through one helper rather than a number written in
@@ -62,6 +68,11 @@ Check on your installation: `grep -n -A40 "^\[PaginationSettings\]" settings/adm
 ## See also
 
 - [Where the page sizes live](../../bc/6.0/pagination-settings.md), [Role and policy paging](../../bc/6.0/role-policy-paging.md), [Locations tab paging and sorting](../../bc/6.0/locations-tab-paging-and-sorting.md)
-- [Custom items per page](custom-items-per-page.md)
+- [Sub items list: columns, presets and CSV export](subitems-table-options.md) and [Roles: policy IDs, sorting and order buttons](role-policy-order.md)
+- [June 2026, second half](../../history/2026/2026-06b.md) (where the custom page size arrived)
 - [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [Multi edit (items from the sub items list)](../../bc/6.0/multi-node-edit.md)

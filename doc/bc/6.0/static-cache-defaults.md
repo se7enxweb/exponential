@@ -45,3 +45,7 @@ The first command shows the shipped defaults of the table above; the second list
 - [Static cache in the September 2026 chronicle](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
 - [Cache from the console](cache-console.md) and [HTTP caching](http-caching.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [Preload Sites](../../features/6.0/preload-sites-view.md)

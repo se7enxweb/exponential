@@ -108,3 +108,7 @@ Check with `grep -n -B1 -A3 "Links\[rad\]" settings/menu.ini`.
 - [Extension points](../../bc/6.0/rad-extension-points.md)
 - [The extension surface](../../bc/6.0/rad-extension-surface.md)
 - [RAD tools security](../../bc/6.0/rad-security.md)
+
+## Related pages
+
+- [Extension metadata (specification)](../../specifications/6.0/extension-metadata.md)

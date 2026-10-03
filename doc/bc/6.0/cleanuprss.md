@@ -232,3 +232,8 @@ A private functional script builds its own fixture (a folder, an active `eZRSSIm
 - [RSS: feed list, podcasts and safer exports](../../features/6.0/rss-podcast-and-feed-list.md) and [OPML exports](opml.md)
 - [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [Cronjobs console](../../features/6.0/cronjobs-console.md)
+- [Syndication specification](../../specifications/6.0/syndication.md)

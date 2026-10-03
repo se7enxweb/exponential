@@ -81,3 +81,7 @@ Put `{expinfo( 'no_such_ext' )|attribute( show )}` in a scratch template, or cal
 - [Extension list and downloads](../../features/6.0/extension-list-and-downloads.md)
 - [September 2026, first half](../../history/2026/2026-09a.md#1-to-2-september-knowing-what-is-installed)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## Related pages
+
+- [RAD tools](../../features/6.0/rad-tools.md)

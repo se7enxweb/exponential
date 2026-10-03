@@ -126,3 +126,7 @@ The defaults changed; see [bc: static cache defaults](../../bc/6.0/static-cache-
 - [HTTP caching](../../bc/6.0/http-caching.md)
 
 See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [Velocity and the opcode cache](velocity-opcode-cache-and-profile.md).
+
+## Related pages
+
+- [Site cache preloader command](../../bc/6.0/preload.md)
