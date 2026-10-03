@@ -19,7 +19,7 @@ class expPollServices extends expCommunityBase
         'choices' => array( 'summary' => 'The choices of a poll', 'access' => 'public', 'write' => false, 'args' => array( 'node_id' => 'int' ), 'returns' => 'list of choices' ),
         'canVote' => array( 'summary' => 'Whether the current visitor may vote now, and why not', 'access' => 'public', 'write' => false, 'args' => array( 'node_id' => 'int' ), 'returns' => 'can, reason' ),
         'myVote' => array( 'summary' => 'The choice the current visitor voted for', 'access' => 'public', 'write' => false, 'args' => array( 'node_id' => 'int' ), 'returns' => 'choice id or null' ),
-        'vote' => array( 'summary' => 'Votes for a choice (POST node_id, choice)', 'access' => 'public', 'write' => true, 'args' => array( 'node_id' => 'int POST', 'choice' => 'int POST' ), 'returns' => 'the results' ),
+        'vote' => array( 'summary' => 'Votes for a choice (POST node_id, choice)', 'access' => array( 'content', 'read' ), 'write' => true, 'args' => array( 'node_id' => 'int POST', 'choice' => 'int POST' ), 'returns' => 'the results' ),
         'latest' => array( 'summary' => 'The newest polls', 'access' => 'public', 'write' => false, 'args' => array( 'limit' => 'int' ), 'returns' => 'list of polls' ),
         'create' => array( 'summary' => 'Creates a poll under a node: name, question and choices', 'access' => array( 'content', 'create' ), 'write' => true,
             'args' => array( 'parent_node_id' => 'int POST', 'name' => 'string POST', 'question' => 'string POST', 'choices' => 'list POST' ), 'returns' => 'the poll' ),

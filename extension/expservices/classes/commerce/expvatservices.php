@@ -43,7 +43,7 @@ class expVatServices extends expServiceBase
         'settings' => array( 'summary' => 'The VAT settings of the shop: dynamic charging, handler, country requirement', 'access' => 'public', 'write' => false,
             'args' => array(), 'returns' => 'settings' ),
         'userCountry' => array( 'summary' => 'The country used for the VAT of the current user', 'access' => 'public', 'write' => false, 'args' => array(), 'returns' => 'country, required' ),
-        'setUserCountry' => array( 'summary' => 'Sets the preferred country of the current session for the VAT', 'access' => 'public', 'write' => true,
+        'setUserCountry' => array( 'summary' => 'Sets the preferred country of the current session for the VAT', 'access' => array( 'content', 'read' ), 'write' => true,
             'args' => array( 'country' => 'string POST' ), 'returns' => 'country' ),
         'countries' => array( 'summary' => 'The country codes with VAT rules and the countries of the installation', 'access' => 'public', 'write' => false, 'args' => array(), 'returns' => 'list of codes' ),
     );

@@ -26,7 +26,7 @@ class expInfoCollectionServices extends expServiceBase
         'mine' => array( 'summary' => 'The collections the logged-in user submitted', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged list of collections' ),
         'export' => array( 'summary' => 'All collections of a form as CSV text (audited as a data export by the kernel when enabled)', 'access' => array( 'infocollector', 'read' ), 'write' => false,
             'args' => array( 'object_id' => 'int' ), 'returns' => 'filename, csv' ),
-        'submit' => array( 'summary' => 'Submits a form: POST object_id and fields as JSON identifier => value (text, number, boolean, choice id)', 'access' => 'public', 'write' => true,
+        'submit' => array( 'summary' => 'Submits a form: POST object_id and fields as JSON identifier => value (text, number, boolean, choice id)', 'access' => array( 'content', 'read' ), 'write' => true,
             'args' => array( 'object_id' => 'int POST', 'fields' => 'json POST' ), 'returns' => 'collection id' ),
         'remove' => array( 'summary' => 'Removes one collection (audited as data.infocollection.remove)', 'access' => array( 'infocollector', 'read' ), 'write' => true,
             'args' => array( 'collection_id' => 'int POST' ), 'returns' => 'removed id' ),
