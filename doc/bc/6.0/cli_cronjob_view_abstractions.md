@@ -1,11 +1,19 @@
 # Commands, cronjob parts and module views as classes
 
-From Exponential 6.0.15 the code of every command line script, cronjob part and module view lives in a
-**class**. The file you know (`bin/php/ezcache.php`, `cronjobs/workflow.php`, `kernel/content/view.php`)
-keeps its path and does one thing: it calls that class.
+Read this page if you maintain code that reads, includes or copies kernel scripts, cronjob parts or module views, or
+if you write your own. From Exponential 6.0.15 the code of every command line script, cronjob part and module view
+lives in a **class**. The file you know (`bin/php/ezcache.php`, `cronjobs/workflow.php`, `kernel/content/view.php`)
+keeps its path and does one thing: it calls that class. A view, a command and a cronjob part can now share one
+implementation, be tested, and be re-implemented by a site or an extension without copying files.
 
-That makes the work callable from inside the system (a view, a command and a cronjob can share one
-implementation), testable, and re-implementable by sites and extensions without copying files.
+## In short
+
+| | |
+|---|---|
+| What changed | The code moved to `kernel/private/classes/{commands,cronjobs,views}/` (namespaces `Exponential\Command\Kernel`, `Exponential\Cronjob\Kernel`, `Exponential\View\Kernel`). Shared work moved to services. New settings block `site.ini [RunnableSettings]` (`Implementation[]`, `Listeners[]`) and the events `runnable/<kind>/before` and `runnable/<kind>/after`. |
+| Who is affected | Code that included or parsed a kernel script, cronjob part or view file for its logic: the logic is now in the class. Sites that keep a copied and edited kernel view or cronjob file. Command line usage, `--help` output and exit codes are unchanged. |
+| How to check | `php vendor/bin/phpunit tests/tests/kernel/classes/runnable/` |
+| How to fix | Look for the code in `kernel/private/classes/`. Replace a copied kernel file with a subclass registered in `[RunnableSettings] Implementation[]` (see [Re-implementing one](#re-implementing-one-from-a-site-or-an-extension)). Regenerate the autoloads after the update. |
 
 > **The old way still works.** A script, cronjob part or view written as a plain PHP file runs exactly as
 > before; nothing in the kernel requires the new form. It is no longer what the product uses or documents,
@@ -454,3 +462,6 @@ php vendor/bin/phpunit tests/tests/kernel/classes/runnable/
 - [Exponential Console — `bin/php/console`](console.md)
 - [Cronjobs console](../../features/6.0/cronjobs-console.md)
 - [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)
+- [Specification: commands, cronjob parts and views](../../specifications/6.0/runnable-commands-cronjobs-views.md)
+- [RAD extension points](rad-extension-points.md)
+- [Behaviour changes of 1 and 2 October 2026](behaviour-changes-2026-10.md)
