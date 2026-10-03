@@ -1,0 +1,6 @@
+body { background: #f6f7f9; }
+.portal-hero { background: #1d2b3a; color: #fff; padding: 2rem 0; }
+.portal-card-img { height: 140px; object-fit: cover; background: #dde2e8; }
+.portal-muted { color: #6b7684; }
+.portal-token { font-family: monospace; font-size: .8rem; }
+@media (max-width: 575px) { .portal-hero { padding: 1rem 0; } }

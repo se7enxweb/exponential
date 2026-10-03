@@ -219,6 +219,9 @@ class ezjscServerRouter
         }
         else
         {
+            // expservices domain classes answer in the { ok, data, meta | error } envelope, errors included
+            if ( class_exists( 'expServiceBase' ) && is_subclass_of( $this->className, 'expServiceBase' ) )
+                return expServiceBase::invoke( $this->className, $this->functionName, $this->functionArguments );
             return call_user_func_array( array( $this->className, $this->functionName ), array( $this->functionArguments, &$environmentArguments, $isPackeStage ) );
         }
     }
