@@ -296,6 +296,327 @@ Paths of the server stay on the server and are not part of the answers.
 | `expdebug::phpversion` | user |  | The PHP version and SAPI of this request |
 
 
+### Media and other services: 218 services in 14 domains
+
+Written by the media/other part of expservices: `extension/expservices/classes/media/` (images, files, media, tags) and `classes/misc/` (layouts, audit, subitems, newsletters, sitemaps, statistics, designs, languages, links, PDF). Domains of extensions answer 404 `... is not available` when the extension is inactive. Tests: `tests/tests/extension/expservices/media/` and `misc/` (live database, test content under the Media root node 43 removed in tearDown, never a test database); the HTTP check is `ai/bin/one/verify_expservices_a5_over_http.sh`.
+
+### Images and aliases (`expimage`, 18 services)
+
+Image aliases (image.ini), original image information and the URL of any alias of a node image. Reads follow content/read on the node; `purge` needs content/edit.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expimage::aliases` | public |  | The configured image aliases (image.ini AliasList) with size and filters |
+| `expimage::alias::<name>` | public |  | One configured image alias |
+| `expimage::aliasnames` | public |  | Only the names of the aliases |
+| `expimage::formats` | public |  | The image MIME types the converters support |
+| `expimage::filters` | public |  | The image filters (image.ini [ImageMagick]/[GD]) known to the manager |
+| `expimage::quality` | public |  | The configured output quality per MIME type |
+| `expimage::attributes::<node>` | content/read |  | The image attributes of a node with their original file |
+| `expimage::info::<node>::<attribute>` | content/read |  | The original image of a node attribute: file name, size, dimensions, MIME type, alt text |
+| `expimage::url::<node>::<attribute>::<alias>` | content/read |  | The URL of one alias of a node image (generated when missing) |
+| `expimage::urls::<node>::<attribute>` | content/read |  | The URLs of every configured alias of a node image |
+| `expimage::generate::<node>::<attribute>::<alias>` | content/read |  | Makes sure an alias file exists for a node image (derived data, no content change) |
+| `expimage::alt::<node>::<attribute>` | content/read |  | The alternative text of a node image |
+| `expimage::files::<node>::<limit>::<offset>` | content/read |  | The image files registered for the object of a node (ezimagefile) |
+| `expimage::list::<parent>::<limit>::<offset>::<alias>` | content/read |  | The image objects below a parent node with their original and one alias |
+| `expimage::search::<text>::<parent>::<limit>::<offset>` | content/read |  | Image objects by name below a parent |
+| `expimage::stats` | content/read |  | How many image files and images the installation holds |
+| `expimage::bymime` | content/read |  | Image file counts per MIME type of the original files |
+| `expimage::purge::<node>::<attribute>` | content/edit | POST | Removes the alias files of a node image (they are generated again on demand) |
+
+### Files and downloads (`expfile`, 16 services)
+
+Binary files: information, the `content/download` URL (the download itself checks content/read), time limited signed links (HMAC over node, attribute and expiry with the site secret; `verify` is public) and download statistics.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expfile::attributes::<node>` | content/read |  | The file attributes of a node |
+| `expfile::info::<node>::<attribute>` | content/read |  | One file of a node: names, MIME type, size, download count |
+| `expfile::downloadurl::<node>::<attribute>` | content/read |  | The content/download URL of a node file (the download itself checks content/read) |
+| `expfile::signedurl::<node>::<attribute>::<seconds>` | content/read |  | A time limited signed link to a node file, for clients without a session |
+| `expfile::verify::<node>::<attribute_id>::<expires>::<signature>` | public |  | Whether a signed link is genuine and not expired |
+| `expfile::exists::<node>::<attribute>` | content/read |  | Whether the stored file of a node attribute exists on disk |
+| `expfile::downloads::<node>::<attribute>` | content/read |  | The download count of a node file |
+| `expfile::list::<parent>::<limit>::<offset>` | content/read |  | The file objects below a parent node with their file information |
+| `expfile::search::<text>::<parent>::<limit>::<offset>` | content/read |  | File objects by name below a parent |
+| `expfile::byname::<filename>::<limit>::<offset>` | content/read |  | The stored files with an original or stored file name (exact) |
+| `expfile::top::<limit>` | content/read |  | The most downloaded files |
+| `expfile::stats` | content/read |  | Number of files, total downloads, and counts per MIME group |
+| `expfile::bymime` | content/read |  | File counts per MIME type |
+| `expfile::mimegroup::<mime>` | public |  | The MIME group (application, image, ...) of a MIME type |
+| `expfile::safename::<filename>` | user |  | Whether a file name is acceptable for upload and its safe form |
+| `expfile::resetdownloads::<node>::<attribute>` | content/edit | POST | Sets the download count of a node file back to zero |
+
+### Audio and video (`expmedia`, 10 services)
+
+The ezmedia datatype: player settings, file information, URL, listings and statistics.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expmedia::attributes::<node>` | content/read |  | The media attributes of a node |
+| `expmedia::info::<node>::<attribute>` | content/read |  | One media file of a node: file, MIME type, player dimensions and flags |
+| `expmedia::player::<node>::<attribute>` | content/read |  | Only the player settings (width, height, controls, autoplay, loop, quality) |
+| `expmedia::url::<node>::<attribute>` | content/read |  | The download/stream URL of a node media file |
+| `expmedia::mimegroup::<mime>` | public |  | The MIME group (audio, video, ...) of a MIME type |
+| `expmedia::safename::<filename>` | user |  | Whether a media file name is acceptable and its safe form |
+| `expmedia::list::<parent>::<limit>::<offset>` | content/read |  | The media objects below a parent node |
+| `expmedia::byobject::<object>` | content/read |  | The media rows stored for an object (all versions) |
+| `expmedia::stats` | content/read |  | Number of media files and per MIME group |
+| `expmedia::bymime` | content/read |  | Media file counts per MIME type |
+
+### Tags (`exptags`, 27 services)
+
+The eztags tree with the eztags policies (tags/read, add, edit, delete, addsynonym). Answers 404 "not available" when eztags is inactive. `attach` and `detach` change the tags attribute of a node (content/edit on the node).
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `exptags::available` | public |  | Whether the eztags extension is active, and how many tags there are |
+| `exptags::roots::<limit>::<offset>` | tags/read |  | The top level tags |
+| `exptags::get::<id>` | tags/read |  | One tag with counts |
+| `exptags::children::<id>::<limit>::<offset>` | tags/read |  | The children of a tag |
+| `exptags::childrencount::<id>` | tags/read |  | How many children a tag has |
+| `exptags::tree::<id>::<depth>` | tags/read |  | A tag subtree as nested nodes down to a depth (at most 5) |
+| `exptags::path::<id>` | tags/read |  | The path of a tag from the root |
+| `exptags::parent::<id>` | tags/read |  | The parent of a tag |
+| `exptags::search::<text>::<limit>::<offset>` | tags/read |  | Tags whose keyword contains the text |
+| `exptags::suggest::<text>::<limit>` | tags/read |  | Autocomplete: tags whose keyword starts with the text |
+| `exptags::bykeyword::<keyword>` | tags/read |  | Tags with exactly this keyword |
+| `exptags::byremote::<remote>` | tags/read |  | The tag with a remote id |
+| `exptags::bypath::<path>` | tags/read |  | The tag at a path string (/1/5/7/) |
+| `exptags::synonyms::<id>` | tags/read |  | The synonyms of a tag |
+| `exptags::translations::<id>` | tags/read |  | The translations (keyword per locale) of a tag |
+| `exptags::related::<id>::<limit>::<offset>` | tags/read |  | The objects tagged with a tag that the user may read |
+| `exptags::relatedcount::<id>` | tags/read |  | How many published objects carry a tag |
+| `exptags::ofnode::<node>` | content/read |  | The tags attached to a node |
+| `exptags::popular::<limit>` | tags/read |  | The most used tags |
+| `exptags::recent::<limit>` | tags/read |  | The most recently modified tags |
+| `exptags::stats` | tags/read |  | Counts of tags, synonyms, translations and attachments |
+| `exptags::add::<parent>` | tags/add | POST | Creates a tag below a parent (0: top level) |
+| `exptags::rename::<id>` | tags/edit | POST | Changes the keyword of a tag in a locale |
+| `exptags::addsynonym::<id>` | tags/addsynonym | POST | Adds a synonym to a tag |
+| `exptags::delete::<id>` | tags/delete | POST | Deletes a tag with its children and synonyms |
+| `exptags::attach::<node>::<attribute>` | content/edit | POST | Attaches an existing tag to a node tags attribute |
+| `exptags::detach::<node>::<attribute>` | content/edit | POST | Removes a tag from a node tags attribute |
+
+### Layouts (`explayout`, 27 services)
+
+explayouts: layouts, zones (a linked zone answers the blocks of its shared layout), blocks, rules, and the layout a node or path resolves to (computed without touching the resolver cache). Policies explayouts/read and explayouts/edit; the writes use the layout service of explayouts_core.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `explayout::available` | public |  | Whether the explayouts extension is active, and the number of published layouts |
+| `explayout::layouts::<limit>::<offset>::<status>` | explayouts/read |  | The published layouts |
+| `explayout::shared` | explayouts/read |  | The shared layouts (header, footer, ...) |
+| `explayout::drafts` | explayouts/read |  | The draft layouts |
+| `explayout::view::<id>` | explayouts/read |  | One layout with its zones and block counts |
+| `explayout::byidentifier::<identifier>::<status>` | explayouts/read |  | A layout by identifier (published unless status is 1) |
+| `explayout::types` | explayouts/read |  | The layout types (explayouts.ini LayoutType_*) with their zones |
+| `explayout::blocktypes::<category>` | explayouts/read |  | The block definitions (explayouts.ini BlockDefinition_*) |
+| `explayout::zones::<id>` | explayouts/read |  | The zones of a layout, with their link to a shared layout |
+| `explayout::zone::<id>::<zone>` | explayouts/read |  | One zone of a layout |
+| `explayout::blocks::<id>::<zone>` | explayouts/read |  | The blocks of a zone (a linked zone answers the blocks of the shared layout) |
+| `explayout::block::<id>` | explayouts/read |  | One block with its parameters |
+| `explayout::blockchildren::<id>` | explayouts/read |  | The child blocks of a container block |
+| `explayout::blockparameters::<id>` | explayouts/read |  | The parameters of a block as name => value |
+| `explayout::linkedzones` | explayouts/read |  | Every zone that inherits its blocks from a shared layout |
+| `explayout::rules::<limit>::<offset>` | explayouts/read |  | The layout rules in priority order |
+| `explayout::rule::<id>` | explayouts/read |  | One rule with its targets and conditions |
+| `explayout::rulesfor::<id>` | explayouts/read |  | The rules that show a layout |
+| `explayout::resolve::<node>` | explayouts/read |  | The layout a content node gets (first matching enabled rule, else the default); changes nothing |
+| `explayout::resolvepath::<path>` | explayouts/read |  | The layout a URL path gets |
+| `explayout::stats` | explayouts/read |  | Counts of layouts, zones, blocks, rules and block types in use |
+| `explayout::createdraft::<id>` | explayouts/edit | POST | Creates (or returns) the draft of a published layout |
+| `explayout::publish::<id>` | explayouts/edit | POST | Publishes the draft of a layout |
+| `explayout::discard::<id>` | explayouts/edit | POST | Discards the draft of a layout |
+| `explayout::enablerule::<id>` | explayouts/edit | POST | Enables a rule |
+| `explayout::disablerule::<id>` | explayouts/edit | POST | Disables a rule |
+| `explayout::clearcache` | explayouts/edit | POST | Clears the layout resolver cache |
+
+### Audit (read only) (`expaudit`, 19 services)
+
+Policy audit/read, narrowed to the channels of its Channel limitation; every use is recorded as `system.audit.read`. Figures need the audit index (409 when it is not usable). Nothing here verifies, exports or changes the audit.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expaudit::available` | public |  | Whether the audit classes are loaded, whether audit is on and the index usable |
+| `expaudit::channels` | audit/read |  | The channels the user may read, with record counts of today |
+| `expaudit::recent::<channel>::<limit>::<offset>` | audit/read |  | The latest events, newest first, optionally of one channel |
+| `expaudit::search::<q>::<name>::<login>::<result>::<from>::<to>::<limit>::<offset>` | audit/read |  | Events by text, name pattern (access.*), login, result and time range |
+| `expaudit::event::<id>` | audit/read |  | One event in full by id |
+| `expaudit::related::<id>::<limit>` | audit/read |  | The events of the same request as an event |
+| `expaudit::byrequest::<request>::<limit>::<offset>` | audit/read |  | The events of one request id |
+| `expaudit::bylogin::<login>::<limit>::<offset>` | audit/read |  | The events of one login |
+| `expaudit::byobject::<object>::<limit>::<offset>` | audit/read |  | The events about one object (type or type:id, node:275) |
+| `expaudit::refused::<limit>::<offset>` | audit/read |  | The latest refused events |
+| `expaudit::failed::<limit>::<offset>` | audit/read |  | The latest failed events |
+| `expaudit::names` | audit/read |  | The event names in the index (the name filter suggestions) |
+| `expaudit::volume` | audit/read |  | Events of today and of the last 7 days per channel |
+| `expaudit::perday::<days>` | audit/read |  | Events per local day for the last N days (at most 30) |
+| `expaudit::results` | audit/read |  | Counts of success, refused and failed for today and the week |
+| `expaudit::topactors::<limit>` | audit/read |  | The most active logins of today |
+| `expaudit::failedlogins` | audit/read |  | Failed logins of the last 24 hours: total and by address |
+| `expaudit::chains` | audit/read |  | The hash chain state of each channel as last verified (nothing is verified here) |
+| `expaudit::summary` | audit/read |  | The dashboard figures in one answer: volume, results, security, chains |
+
+### Subitems columns (`expsubitems_svc`, 12 services)
+
+The column catalogue and rows of the admin subitems list in the expservices envelope. The block is named `expsubitems_svc` because `expsubitems` is the original ezjscore server function of the admin list, which stays as it is. `rows` takes the columns as an argument (comma list of non built-in column keys).
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expsubitems_svc::catalogue` | content/read |  | Every column known to the registry (built-in and INI defined), without the per-parent attribute columns |
+| `expsubitems_svc::builtin` | content/read |  | The built-in columns |
+| `expsubitems_svc::describe::<key>::<parent>` | content/read |  | One column by key |
+| `expsubitems_svc::columns::<parent>` | content/read |  | The columns the user may see under a parent, defaults, presets and the saved choice |
+| `expsubitems_svc::defaults::<parent>` | content/read |  | The default column keys under a parent |
+| `expsubitems_svc::presets` | content/read |  | The column presets of the INI |
+| `expsubitems_svc::pagesizes` | content/read |  | The page sizes the list offers |
+| `expsubitems_svc::sortfields::<parent>` | content/read |  | The sort keys a list accepts |
+| `expsubitems_svc::groups::<parent>` | content/read |  | The columns grouped by their Group under a parent |
+| `expsubitems_svc::preference::<parent>` | content/read |  | The user's own saved column choice for the parent's navigation part |
+| `expsubitems_svc::rows::<parent>::<columns>::<limit>::<offset>::<sort>::<ascending>::<filter>` | content/read |  | The children of a parent with the columns asked for (comma list) |
+| `expsubitems_svc::settings` | content/read |  | The registry settings: attribute columns, CSV export, CSV limit |
+
+### Newsletters (`expnewsletter`, 13 services)
+
+cjw_newsletter: lists, editions, subscriber counts and a user's own subscriptions. `subscribe` and `unsubscribe` act on the signed-in user's own account e-mail only; a new subscription starts pending and follows the extension's confirmation rules. 404 "not available" when the extension is inactive.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expnewsletter::available` | public |  | Whether cjw_newsletter is active, and how many lists and newsletter users exist |
+| `expnewsletter::statuses` | public |  | The subscription status codes and names |
+| `expnewsletter::lists::<limit>::<offset>` | content/read |  | The newsletter lists the user may read |
+| `expnewsletter::list::<node>` | content/read |  | One newsletter list by node id |
+| `expnewsletter::subscriberscount::<node>` | content/read |  | The number of approved subscribers of a list |
+| `expnewsletter::statistics::<node>` | newsletter/subscription_list |  | Subscriptions of a list by status |
+| `expnewsletter::editions::<node>::<limit>::<offset>` | content/read |  | The editions (issues) below a list node |
+| `expnewsletter::edition::<node>` | content/read |  | One edition by node id |
+| `expnewsletter::mysubscriptions` | user |  | The logged-in user's own subscriptions (by their account e-mail) |
+| `expnewsletter::subscribe::<node>` | user | POST | Subscribes the logged-in user's own e-mail to a list |
+| `expnewsletter::unsubscribe::<node>` | user | POST | Removes the logged-in user's own subscription to a list |
+| `expnewsletter::users::<limit>::<offset>::<search>` | newsletter/user_list |  | The newsletter users (administration) |
+| `expnewsletter::usercount` | newsletter/user_list |  | The number of newsletter users |
+
+### Sitemaps (`expsitemap`, 11 services)
+
+Entries of the content tree as a sitemap lists them (loc, lastmod, changefreq, priority; settings of bcgooglesitemaps.ini), the sitemap index and the generated files.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expsitemap::config` | content/read |  | The sitemap settings (root node, protocol, file name, class filter) |
+| `expsitemap::available` | public |  | Whether the sitemap extensions are active |
+| `expsitemap::rootnode` | content/read |  | The node the sitemap starts from |
+| `expsitemap::entries::<node>::<limit>::<offset>` | content/read |  | Sitemap entries of a subtree: loc, lastmod, changefreq, priority (class filter of the settings applied) |
+| `expsitemap::count::<node>` | content/read |  | How many entries a subtree has |
+| `expsitemap::entry::<node>` | content/read |  | The sitemap entry of one node |
+| `expsitemap::recent::<node>::<limit>` | content/read |  | The most recently changed entries (a news sitemap) |
+| `expsitemap::index::<node>` | content/read |  | The sitemap index: the pages of 50000 entries with their entry window |
+| `expsitemap::files` | setup/administrate |  | The generated sitemap files (name, size, modified) |
+| `expsitemap::classes` | content/read |  | The classes the sitemap includes or excludes |
+| `expsitemap::robots` | public |  | The robots.txt Sitemap line for the generated sitemap |
+
+### Statistics (`expstats`, 16 services)
+
+Search phrases, content counts, growth, languages, users and sessions. Content figures follow content/read, the rest needs setup/administrate.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expstats::searchtop::<limit>::<offset>` | setup/administrate |  | The most frequent search phrases with their average result count |
+| `expstats::searchtotal` | setup/administrate |  | Number of distinct search phrases and of searches |
+| `expstats::searchnoresults::<limit>` | setup/administrate |  | Search phrases that found nothing |
+| `expstats::searchphrase::<phrase>` | setup/administrate |  | The statistics of one search phrase |
+| `expstats::contenttotals` | content/read |  | Counts of objects, nodes, versions and classes |
+| `expstats::classcounts::<limit>` | content/read |  | Published objects per class |
+| `expstats::sectioncounts` | content/read |  | Published objects per section |
+| `expstats::statecounts` | content/read |  | Objects per object state |
+| `expstats::recentpublished::<limit>` | content/read |  | The most recently published objects |
+| `expstats::recentmodified::<limit>` | content/read |  | The most recently modified objects |
+| `expstats::growth::<days>` | content/read |  | Objects published per day for the last N days (at most 90) |
+| `expstats::topowners::<limit>` | setup/administrate |  | The users who own most published objects |
+| `expstats::languagecounts` | content/read |  | Published object translations per language |
+| `expstats::users` | setup/administrate |  | Number of user accounts, enabled and disabled |
+| `expstats::sessions` | setup/administrate |  | Active sessions (not expired) and how many are logged-in users |
+| `expstats::overview` | content/read |  | The headline figures in one answer |
+
+### Designs and templates (`expdesign`, 13 services)
+
+Read only, setup/administrate: designs, bases, the overrides of override.ini, the templates a design resolves, and the source of a template inside a design directory (path checked, 512 KB at most).
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expdesign::designs` | setup/administrate |  | The design directories of the site and of the extensions |
+| `expdesign::current` | setup/administrate |  | The standard design, the site design and the additional designs of this siteaccess |
+| `expdesign::bases` | setup/administrate |  | The design bases in priority order (first wins) |
+| `expdesign::extensions` | setup/administrate |  | The extensions that provide designs for this siteaccess |
+| `expdesign::overrides::<limit>::<offset>::<source>` | setup/administrate |  | The template overrides of override.ini |
+| `expdesign::override::<name>` | setup/administrate |  | One override by name |
+| `expdesign::overridecount` | setup/administrate |  | How many overrides there are |
+| `expdesign::overridesfor::<source>` | setup/administrate |  | The overrides of one template source (node/view/full.tpl) |
+| `expdesign::templates::<limit>::<offset>::<prefix>` | setup/administrate |  | The templates of the resolved design, with the design base each comes from |
+| `expdesign::templatecount` | setup/administrate |  | How many templates the design resolves |
+| `expdesign::resolve::<template>` | setup/administrate |  | Which file a template path resolves to and its overrides |
+| `expdesign::source::<path>` | setup/administrate |  | The source of a template of a design directory (design/<name>/templates/..., read only) |
+| `expdesign::cachestate` | setup/administrate |  | Template cache settings: compile, cache, override cache and design location cache |
+
+### Languages and translations (`explanguage`, 14 services)
+
+Content languages, language masks, locales, and the progress of the interface translations in share/translations.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `explanguage::languages` | public |  | The content languages of the installation with their object counts |
+| `explanguage::language::<locale>` | public |  | One content language by locale |
+| `explanguage::prioritized` | public |  | The languages in the priority order of this siteaccess |
+| `explanguage::top` | public |  | The top priority language of this siteaccess |
+| `explanguage::decode::<mask>` | public |  | The languages in a language mask |
+| `explanguage::maskfor::<locales>::<always_available>` | public |  | The language mask of some locales |
+| `explanguage::locales::<limit>::<offset>` | public |  | The locales the system knows (share/locale) |
+| `explanguage::localeinfo::<locale>` | public |  | Names, formats and currency of a locale |
+| `explanguage::countries` | public |  | The country codes known to the locales |
+| `explanguage::translations` | user |  | The interface translations present in share/translations and their size |
+| `explanguage::translationstats::<locale>` | user |  | Messages, finished, unfinished and obsolete of one interface translation |
+| `explanguage::translationcontexts::<locale>::<limit>::<offset>` | user |  | The translation contexts (files) of one interface translation with message counts |
+| `explanguage::siteaccess` | public |  | The language settings of the current siteaccess |
+| `explanguage::objectcounts` | content/read |  | Published object names per language |
+
+### External links (`expurl`, 12 services)
+
+The links stored by URL attributes: lists, search, validity, the objects using a link. `check` requests a stored link with HEAD, without redirects, only for http and https addresses that resolve to public hosts (loopback, private, link-local and credentials are refused with 422).
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `expurl::list::<limit>::<offset>::<validity>` | url/list |  | The stored links, newest first |
+| `expurl::get::<id>` | url/view |  | One link with its check state |
+| `expurl::count::<validity>` | url/list |  | Number of stored links |
+| `expurl::stats` | url/list |  | Links by validity: valid, invalid, never checked |
+| `expurl::invalid::<limit>::<offset>` | url/list |  | The links found invalid |
+| `expurl::unchecked::<limit>::<offset>` | url/list |  | The links never checked |
+| `expurl::search::<text>::<limit>::<offset>` | url/list |  | Links whose address contains the text |
+| `expurl::byurl::<url>` | url/view |  | The stored link with exactly this address |
+| `expurl::objects::<id>::<limit>::<offset>` | url/view |  | The objects (readable by the user) that use a link |
+| `expurl::bydomain::<limit>` | url/list |  | Link counts per host name |
+| `expurl::check::<id>` | url/edit | POST | Requests a stored link (HEAD) and records whether it is valid; only public http/https hosts |
+| `expurl::setvalid::<id>` | url/edit | POST | Sets the validity of a stored link by hand |
+
+### PDF (`exppdf`, 10 services)
+
+PDF links of nodes (`content/pdf/<node>`, which checks the policy again when the link is followed) and the PDF export definitions of the pdf module.
+
+| Call | Access | Write | Summary |
+|---|---|---|---|
+| `exppdf::available` | public |  | Whether PDF export is available (classes present) and how many export definitions exist |
+| `exppdf::canpdf::<node>` | content/read |  | Whether the user may export a node as PDF |
+| `exppdf::link::<node>::<language>` | content/read |  | The URL that downloads the PDF of a node (optional language) |
+| `exppdf::links::<nodes>` | content/read |  | PDF links for several nodes at once (those the user may export) |
+| `exppdf::exports::<limit>::<offset>` | pdf/edit |  | The PDF export definitions |
+| `exppdf::export::<id>` | pdf/edit |  | One PDF export definition |
+| `exppdf::exportcount` | pdf/edit |  | How many PDF export definitions exist |
+| `exppdf::exportsfor::<node>` | pdf/edit |  | The export definitions whose source node is a node or one of its ancestors |
+| `exppdf::exportfile::<id>` | pdf/edit |  | Whether the generated file of a stored export exists and how large it is |
+| `exppdf::statuses` | public |  | The export modes: created once or on the fly |
+
+
 ## Clients
 
 Every service is a plain HTTP call, so any language with an HTTP client and a cookie jar is a client. The contract all
