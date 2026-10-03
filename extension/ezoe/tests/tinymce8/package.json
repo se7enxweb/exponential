@@ -1,0 +1,15 @@
+{
+  "name": "ezoe-tinymce8-browser-tests",
+  "private": true,
+  "description": "Browser tests of the eZ Online Editor on TinyMCE 8 (Firefox or Chrome, real mouse clicks)",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "test": "node run.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}

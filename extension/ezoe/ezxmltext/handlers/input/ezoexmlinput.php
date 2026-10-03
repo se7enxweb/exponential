@@ -94,7 +94,14 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'version',
                       'ezpublish_version',
                       'xml_tag_alias',
-                      'json_xml_tag_alias' ),
+                      'json_xml_tag_alias',
+                      'custom_tag_definitions',
+                      'engine_switch_enabled',
+                      'tinymce8_cache_key',
+                      'literal_definition',
+                      'embed_definitions',
+                      'table_definitions',
+                      'general_definitions' ),
                       parent::attributes() );
     }
 
@@ -124,6 +131,45 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr =  self::getXmlTagAliasList();
         else if ( $name === 'json_xml_tag_alias' )
             $attr =  json_encode( self::getXmlTagAliasList() );
+        else if ( $name === 'custom_tag_definitions' )
+            $attr = self::getCustomTagDefinitions();
+        else if ( $name === 'engine_switch_enabled' )
+            $attr = self::engineSwitchEnabled();
+        else if ( $name === 'tinymce8_cache_key' )
+            $attr = self::getTinyMCE8CacheKey();
+        else if ( $name === 'literal_definition' )
+            $attr = self::getTagDefinition( 'literal' );
+        else if ( $name === 'general_definitions' )
+        {
+            // classes and custom attributes of the tags of the general tag dialog (tag_general.tpl, tag_header.tpl)
+            $attr = array();
+            foreach ( array( 'paragraph', 'header', 'ul', 'ol', 'li', 'strong', 'emphasize' ) as $tagName )
+            {
+                $attr[$tagName] = self::getTagDefinition( $tagName );
+            }
+        }
+        else if ( $name === 'table_definitions' )
+        {
+            // classes and custom attributes of table, tr, td and th plus content.ini [table] Defaults
+            $attr = array();
+            foreach ( array( 'table', 'tr', 'td', 'th' ) as $tagName )
+            {
+                $attr[$tagName] = self::getTagDefinition( $tagName );
+            }
+            $contentIni = eZINI::instance( 'content.ini' );
+            $attr['table']['defaults'] = (object) ( $contentIni->hasVariable( 'table', 'Defaults' ) ? $contentIni->variable( 'table', 'Defaults' ) : array() );
+        }
+        else if ( $name === 'embed_definitions' )
+        {
+            $attr = array();
+            $contentIni = eZINI::instance( 'content.ini' );
+            foreach ( array( 'embed', 'embed-inline' ) as $tagName )
+            {
+                $attr[$tagName] = self::getTagDefinition( $tagName );
+                $attr[$tagName]['views'] = $contentIni->hasVariable( $tagName, 'AvailableViewModes' )
+                                         ? array_values( array_filter( $contentIni->variable( $tagName, 'AvailableViewModes' ) ) ) : array();
+            }
+        }
         else
             $attr = parent::attribute( $name );
         return $attr;
@@ -214,6 +260,36 @@ class eZOEXMLInput extends eZXMLInputHandler
     }
 
      /**
+     * getCustomTagDefinitions
+     * Custom tags with their custom attribute settings, resolved like design:ezoe/customattributes.tpl
+     * does for the TinyMCE 3 dialogs, for use by the TinyMCE 8 ezcustomtag plugin.
+     *
+     * @static
+     * @return array List of hashes with name, title, inline (true|false|'image'), icon and attributes
+     */
+    public static function getCustomTagDefinitions()
+    {
+        $contentIni    = eZINI::instance( 'content.ini' );
+        $descriptions  = $contentIni->hasVariable( 'CustomTagSettings', 'CustomTagsDescription' )
+                       ? $contentIni->variable( 'CustomTagSettings', 'CustomTagsDescription' ) : array();
+        $definitions = array();
+
+        foreach ( array_unique( $contentIni->variable( 'CustomTagSettings', 'AvailableCustomTags' ) ) as $tagName )
+        {
+            $inline = self::customTagIsInline( $tagName );
+            $definition = array(
+                'name'       => $tagName,
+                'title'      => isset( $descriptions[$tagName] ) ? $descriptions[$tagName] : $tagName,
+                'inline'     => is_string( $inline ) ? 'image' : $inline,
+                'icon'       => is_string( $inline ) ? self::getDesignFile( $inline ) : '',
+                'attributes' => self::getCustomAttributeDefinitions( $tagName ),
+            );
+            $definitions[] = $definition;
+        }
+        return $definitions;
+    }
+
+     /**
      * isCompatibleVersion
      *
      * @return bool Return true if current eZ Publish verion is supported.
@@ -285,11 +361,156 @@ class eZOEXMLInput extends eZXMLInputHandler
                 else
                     eZDebug::writeError( 'Current user does not have access to disable editor, but trying anyway!', __METHOD__ );
             } break;
+            case 'switch_engine_tinymce3':
+            case 'switch_engine_tinymce8':
+            {
+                // ezoe.ini [EditorSettings] EngineSwitch lets editors choose the editor engine themselves
+                if ( self::engineSwitchEnabled() )
+                    eZPreferences::setValue( 'ezoe_engine', substr( $action, strlen( 'switch_engine_' ) ) );
+                else
+                    eZDebug::writeError( 'Switching the editor engine is disabled in ezoe.ini [EditorSettings] EngineSwitch', __METHOD__ );
+            } break;
             default :
             {
                 eZDebug::writeError( 'Unknown custom HTTP action: ' . $action, __METHOD__ );
             } break;
         }
+    }
+
+     /**
+     * getCustomAttributeDefinitions
+     * Custom attributes of a tag (content.ini [<tag>] CustomAttributes) with their settings from
+     * ezoe_attributes.ini, resolved like design:ezoe/customattributes.tpl.
+     *
+     * @static
+     * @param string $tagName
+     * @return array
+     */
+    public static function getCustomAttributeDefinitions( $tagName )
+    {
+        $contentIni    = eZINI::instance( 'content.ini' );
+        $attributesIni = eZINI::instance( 'ezoe_attributes.ini' );
+        $labels        = array(
+            'align'  => ezpI18n::tr( 'design/standard/ezoe', 'Align' ),
+            'author' => ezpI18n::tr( 'design/standard/ezoe', 'Author' ),
+            'title'  => ezpI18n::tr( 'design/standard/ezoe', 'Title' ),
+            'name'   => ezpI18n::tr( 'design/standard/ezoe', 'Name' ),
+            'size'   => ezpI18n::tr( 'design/standard/ezoe', 'Size' ),
+            'class'  => ezpI18n::tr( 'design/standard/ezoe', 'Class' ),
+            'id'     => ezpI18n::tr( 'design/standard/ezoe', 'ID' ),
+        );
+        $attributeNames = $contentIni->hasVariable( $tagName, 'CustomAttributes' )
+                        ? array_unique( $contentIni->variable( $tagName, 'CustomAttributes' ) ) : array();
+        $defaults       = $contentIni->hasVariable( $tagName, 'CustomAttributesDefaults' )
+                        ? $contentIni->variable( $tagName, 'CustomAttributesDefaults' ) : array();
+        $attributes     = array();
+
+        foreach ( $attributeNames as $attributeName )
+        {
+            if ( $attributeName === '' )
+                continue;
+
+            $section = $attributesIni->hasSection( 'CustomAttribute_' . $tagName . '_' . $attributeName )
+                     ? 'CustomAttribute_' . $tagName . '_' . $attributeName
+                     : 'CustomAttribute_' . $attributeName;
+            $setting = function ( $name, $default = '' ) use ( $attributesIni, $section )
+            {
+                return $attributesIni->hasVariable( $section, $name ) ? $attributesIni->variable( $section, $name ) : $default;
+            };
+
+            $attributes[] = array(
+                'id'         => $attributeName,
+                'name'       => $setting( 'Name', isset( $labels[$attributeName] ) ? $labels[$attributeName] : ucfirst( $attributeName ) ),
+                'title'      => $setting( 'Title' ),
+                'type'       => $setting( 'Type', 'text' ),
+                'default'    => $setting( 'Default', isset( $defaults[$attributeName] ) ? $defaults[$attributeName] : '' ),
+                'required'   => $setting( 'Required' ) === 'true',
+                'allowEmpty' => $setting( 'AllowEmpty' ) === 'true',
+                'disabled'   => $setting( 'Disabled' ) === 'true',
+                'selection'  => (object) $setting( 'Selection', array() ),
+                'minimum'    => $setting( 'Minimum', null ),
+                'maximum'    => $setting( 'Maximum', null ),
+                'rows'       => (int) $setting( 'Rows', 0 ),
+            );
+        }
+        return $attributes;
+    }
+
+     /**
+     * getTagDefinition
+     * Classes (content.ini [<tag>] AvailableClasses with ClassDescription) and custom attributes of
+     * a tag, for the general tag dialogs of the TinyMCE 8 editor (literal).
+     *
+     * @static
+     * @param string $tagName
+     * @return array hash with name, classes (class => description) and attributes
+     */
+    public static function getTagDefinition( $tagName )
+    {
+        $contentIni   = eZINI::instance( 'content.ini' );
+        $descriptions = $contentIni->hasVariable( $tagName, 'ClassDescription' ) ? $contentIni->variable( $tagName, 'ClassDescription' ) : array();
+        $classes      = array();
+        if ( $contentIni->hasVariable( $tagName, 'AvailableClasses' ) )
+        {
+            foreach ( $contentIni->variable( $tagName, 'AvailableClasses' ) as $class )
+            {
+                if ( $class !== '' )
+                    $classes[$class] = isset( $descriptions[$class] ) ? $descriptions[$class] : $class;
+            }
+        }
+        return array(
+            'name'       => $tagName,
+            'classes'    => (object) $classes,
+            'attributes' => self::getCustomAttributeDefinitions( $tagName ),
+        );
+    }
+
+     /**
+     * getTinyMCE8CacheKey
+     * Cache key for the files of the TinyMCE 8 editor, TinyMCE loads plugins, skins and language
+     * packs itself so browsers would keep old versions without it. Changes with every file change.
+     *
+     * @static
+     * @return string
+     */
+    public static function getTinyMCE8CacheKey()
+    {
+        static $key = null;
+        if ( $key === null )
+        {
+            $dir   = __DIR__ . '/../../../design/standard/javascript';
+            $times = array();
+            foreach ( array( $dir . '/tinymce8_ez', $dir . '/tinymce8/tinymce.min.js' ) as $path )
+            {
+                if ( is_file( $path ) )
+                {
+                    $times[] = filemtime( $path );
+                    continue;
+                }
+                if ( !is_dir( $path ) )
+                    continue;
+                foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $path, FilesystemIterator::SKIP_DOTS ) ) as $file )
+                {
+                    $times[] = $file->getMTime();
+                }
+            }
+            $key = substr( md5( implode( ',', $times ) ), 0, 10 );
+        }
+        return $key;
+    }
+
+     /**
+     * engineSwitchEnabled
+     * If editors may switch between the TinyMCE 3 and TinyMCE 8 editor themselves.
+     *
+     * @static
+     * @return bool
+     */
+    public static function engineSwitchEnabled()
+    {
+        $ezoeIni = eZINI::instance( 'ezoe.ini' );
+        return $ezoeIni->hasVariable( 'EditorSettings', 'EngineSwitch' )
+            && $ezoeIni->variable( 'EditorSettings', 'EngineSwitch' ) === 'enabled';
     }
 
      /**

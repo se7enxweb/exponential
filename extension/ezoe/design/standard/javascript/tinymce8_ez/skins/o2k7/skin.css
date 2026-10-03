@@ -1,0 +1,503 @@
+/*
+ * eZ Online Editor - TinyMCE 8 prototype: o2k7 look for the editor frame and toolbar
+ *
+ * Loaded on top of the TinyMCE oxide skin when ezoe.ini [EditorSettings] Skin=o2k7.
+ * Reuses the images of the TinyMCE 3 o2k7 skin: the icon sprite of the ez theme and the
+ * button backgrounds, toolbar buttons are matched by their data-mce-name.
+ */
+
+/* Frame */
+.tox.ezoe-skin-o2k7.tox-tinymce {
+    border: 1px solid #ABC6DD;
+    border-radius: 0;
+}
+.tox.ezoe-skin-o2k7 .tox-editor-header,
+.tox.ezoe-skin-o2k7:not(.tox-tinymce-inline) .tox-editor-header {
+    background: #E5EFFD;
+    border-bottom: 1px solid #ABC6DD;
+    box-shadow: none;
+    padding: 0;
+}
+.tox.ezoe-skin-o2k7 .tox-toolbar,
+.tox.ezoe-skin-o2k7 .tox-toolbar__primary,
+.tox.ezoe-skin-o2k7 .tox-toolbar__overflow {
+    background: #E5EFFD;
+    padding: 1px 0 0 1px;
+}
+.tox.ezoe-skin-o2k7 .tox-toolbar__group {
+    margin: 0;
+    padding: 0 3px 0 4px;
+}
+.tox.ezoe-skin-o2k7 .tox-toolbar__group:not(:last-of-type)::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 22px;
+    margin-left: 3px;
+    background: #A3BBDD;
+    box-shadow: 1px 0 0 #FFF;
+}
+
+/* Buttons: 22x22 with the o2k7 button background (normal / hover / active) */
+.tox.ezoe-skin-o2k7 .tox-tbtn,
+.tox.ezoe-skin-o2k7 .tox-split-button {
+    width: 22px !important;
+    height: 22px;
+    margin: 2px 0;
+    border: 0;
+    border-radius: 0;
+    background: url(../../../../stylesheets/skins/o2k7/img/button_bg.png) no-repeat 0 0;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn:hover,
+.tox.ezoe-skin-o2k7 .tox-tbtn:focus,
+.tox.ezoe-skin-o2k7 .tox-split-button:hover {
+    background: url(../../../../stylesheets/skins/o2k7/img/button_bg.png) no-repeat 0 -22px;
+    background-color: #B2BBD0;
+    box-shadow: none;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn--enabled,
+.tox.ezoe-skin-o2k7 .tox-tbtn--enabled:hover,
+.tox.ezoe-skin-o2k7 .tox-tbtn:active {
+    background: url(../../../../stylesheets/skins/o2k7/img/button_bg.png) no-repeat 0 -44px;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn--disabled,
+.tox.ezoe-skin-o2k7 .tox-tbtn--disabled:hover,
+.tox.ezoe-skin-o2k7 .tox-tbtn:disabled {
+    background: url(../../../../stylesheets/skins/o2k7/img/button_bg.png) no-repeat 0 0;
+    opacity: 0.3;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn svg {
+    fill: #222;
+    transform: scale(0.75);
+}
+
+/* Menu buttons (table) keep a small chevron next to the icon */
+.tox.ezoe-skin-o2k7 .tox-tbtn--select:not(.tox-tbtn--bespoke) {
+    width: 34px !important;
+    background-repeat: no-repeat;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn--select:not(.tox-tbtn--bespoke) .tox-tbtn__select-chevron {
+    width: 10px;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn__select-chevron svg {
+    transform: scale(0.7);
+}
+
+/* Block format select like the TinyMCE 3 list box */
+.tox.ezoe-skin-o2k7 .tox-tbtn--bespoke {
+    width: 92px !important;
+    height: 22px;
+    margin: 2px 2px 2px 0;
+    padding: 0;
+    background: #EAF2FB;
+    border: 1px solid #B3C7E1;
+    border-radius: 0;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn--bespoke:hover,
+.tox.ezoe-skin-o2k7 .tox-tbtn--bespoke:focus {
+    background: #FFF;
+    border: 1px solid #B3C7E1;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn--bespoke .tox-tbtn__select-label {
+    margin: 0 0 0 4px;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn--bespoke .tox-tbtn__select-chevron {
+    width: 14px;
+    height: 20px;
+    background: url(../../../../stylesheets/skins/o2k7/img/button_bg.png) no-repeat -67px -1px;
+}
+.tox.ezoe-skin-o2k7 .tox-tbtn--bespoke .tox-tbtn__select-chevron svg {
+    display: none;
+}
+
+/* Icons from the TinyMCE 3 ez theme sprite (javascript/themes/ez/img/icons.png), positions as in skins/o2k7/ui.css */
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="bold"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="italic"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="underline"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="strikethrough"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="subscript"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="superscript"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignleft"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="aligncenter"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignright"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignjustify"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="bullist"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="numlist"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="outdent"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="indent"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="undo"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="redo"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="link"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezlink"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="unlink"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="anchor"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezembed"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezcustomtag"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezliteral"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="charmap"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="table"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablerow"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablecell"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztable"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledelete"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeletecol"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeleterow"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tableinsertcolafter"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tableinsertrowafter"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tablemergecells"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tablesplitcells"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="fullscreen"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="help"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="code"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezdisable"] .tox-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 1px;
+    background: url(../../../themes/ez/img/icons.png) no-repeat 20px 20px;
+}
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="bold"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="italic"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="underline"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="strikethrough"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="subscript"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="superscript"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignleft"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="aligncenter"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignright"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignjustify"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="bullist"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="numlist"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="outdent"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="indent"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="undo"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="redo"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="link"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezlink"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="unlink"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="anchor"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezembed"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezcustomtag"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezliteral"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="charmap"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="table"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablerow"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablecell"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztable"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledelete"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeletecol"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeleterow"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tableinsertcolafter"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tableinsertrowafter"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tablemergecells"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tablesplitcells"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="fullscreen"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="help"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="code"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezdisable"] .tox-icon svg {
+    display: none;
+}
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="bold"] .tox-icon { background-position: 0 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="italic"] .tox-icon { background-position: -60px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="underline"] .tox-icon { background-position: -140px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="strikethrough"] .tox-icon { background-position: -120px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="subscript"] .tox-icon { background-position: -600px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="superscript"] .tox-icon { background-position: -620px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignleft"] .tox-icon { background-position: -460px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="aligncenter"] .tox-icon { background-position: -420px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignright"] .tox-icon { background-position: -480px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="alignjustify"] .tox-icon { background-position: -440px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="bullist"] .tox-icon { background-position: -20px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="numlist"] .tox-icon { background-position: -80px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="outdent"] .tox-icon { background-position: -540px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="indent"] .tox-icon { background-position: -400px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="undo"] .tox-icon { background-position: -160px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="redo"] .tox-icon { background-position: -100px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="link"] .tox-icon { background-position: -500px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezlink"] .tox-icon { background-position: -500px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="unlink"] .tox-icon { background-position: -640px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="anchor"] .tox-icon { background-position: -200px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezembed"] .tox-icon { background-position: -380px -40px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezcustomtag"] .tox-icon { background-position: -400px -40px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezliteral"] .tox-icon { background-position: -420px -40px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="charmap"] .tox-icon { background-position: -240px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="table"] .tox-icon { background-position: -580px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablerow"] .tox-icon { background-position: -780px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablecell"] .tox-icon { background-position: -600px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztable"] .tox-icon { background-position: -580px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledelete"] .tox-icon { background-position: -620px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeletecol"] .tox-icon { background-position: -640px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeleterow"] .tox-icon { background-position: -660px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tableinsertcolafter"] .tox-icon { background-position: -680px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tableinsertrowafter"] .tox-icon { background-position: -720px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tablemergecells"] .tox-icon { background-position: -760px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tablesplitcells"] .tox-icon { background-position: -800px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="fullscreen"] .tox-icon { background-position: -100px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="help"] .tox-icon { background-position: -340px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="code"] .tox-icon { background-position: -260px 0; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezdisable"] .tox-icon { background-position: -460px -40px; }
+
+/* Status bar */
+.tox.ezoe-skin-o2k7 .tox-statusbar {
+    height: 20px;
+    background: #E5EFFD;
+    border-top: 1px solid #ABC6DD;
+    font: 9pt 'MS Sans Serif', sans-serif, Verdana, Arial;
+    color: #000;
+}
+.tox.ezoe-skin-o2k7 .tox-statusbar a,
+.tox.ezoe-skin-o2k7 .tox-statusbar__path-item,
+.tox.ezoe-skin-o2k7 .tox-statusbar__wordcount {
+    color: #000;
+    text-decoration: underline;
+}
+.tox.ezoe-skin-o2k7 .tox-statusbar__help-text {
+    display: none;
+}
+.tox.ezoe-skin-o2k7 .tox-statusbar__resize-handle svg {
+    fill: #7A93B5;
+}
+
+/*
+ * Dialogs like the TinyMCE 3 inlinepopups (clearlooks2) windows of the ezoe dialogs:
+ * title bar, tabs on top, label left of the field, small Tahoma, OK / Cancel bottom left.
+ * Dialogs are rendered outside the editor container, so they are scoped by the body class.
+ */
+body.ezoe-skin-o2k7 .tox .tox-dialog {
+    border: 1px solid #5A6B7F;
+    border-radius: 0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.45);
+    background: #F0F0EE;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    max-width: 560px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog--width-md {
+    max-width: 620px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog-wrap__backdrop {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Title bar */
+body.ezoe-skin-o2k7 .tox .tox-dialog__header {
+    height: 22px;
+    padding: 0 3px 0 8px;
+    background: linear-gradient(#B9C8DA, #8597AE 50%, #7A8DA5 51%, #8FA2B9);
+    border-bottom: 1px solid #5A6B7F;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__title {
+    flex: 1;
+    text-align: center;
+    font: bold 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #FFF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__header .tox-button--icon {
+    width: 28px;
+    height: 16px;
+    min-height: 0;
+    padding: 0;
+    border: 1px solid #FFF;
+    border-radius: 2px;
+    background: linear-gradient(#A7B6C9, #6C7F98);
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__header .tox-button--icon svg {
+    fill: #FFF;
+    transform: scale(0.65);
+}
+
+/* Body with tabs on top, panel with a border like the ezoe dialog tabs */
+body.ezoe-skin-o2k7 .tox .tox-dialog__content-js {
+    padding: 8px 10px 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body {
+    flex-direction: column;
+    padding: 0;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-nav {
+    flex-direction: row;
+    flex: none;
+    padding: 0;
+    margin: 0 0 -1px 2px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-nav-item {
+    margin: 0 2px 0 0;
+    padding: 2px 9px;
+    border: 1px solid #919B9C;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    background: linear-gradient(#FFF, #ECEBE6);
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+    text-decoration: none;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-nav-item--active {
+    position: relative;
+    padding-top: 3px;
+    margin-top: -1px;
+    background: #FFF;
+    border-top: 2px solid #FFC83C;
+    z-index: 1;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-content {
+    padding: 10px;
+    background: #FFF;
+    border: 1px solid #919B9C;
+    max-height: none;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-content > * {
+    margin-bottom: 4px;
+}
+
+/* Rows: label left, field right */
+body.ezoe-skin-o2k7 .tox .tox-form__group {
+    margin-bottom: 4px;
+}
+body.ezoe-skin-o2k7 .tox .tox-form__group:has(> .tox-label) {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+body.ezoe-skin-o2k7 .tox .tox-form__group:has(> .tox-label) > :not(.tox-label) {
+    flex: 1;
+    min-width: 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-label {
+    flex: none;
+    width: 125px;
+    padding: 0 8px 0 0;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+    white-space: normal;
+}
+body.ezoe-skin-o2k7 .tox .tox-form__grid--2col {
+    display: block;
+}
+body.ezoe-skin-o2k7 .tox .tox-form__grid--2col > .tox-form__group {
+    width: auto;
+}
+body.ezoe-skin-o2k7 .tox .tox-bar {
+    align-items: center;
+    gap: 4px;
+}
+body.ezoe-skin-o2k7 .tox .tox-bar > .tox-form__group {
+    margin: 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-content p {
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* Fields: small like the TinyMCE 3 dialog inputs */
+body.ezoe-skin-o2k7 .tox .tox-textfield,
+body.ezoe-skin-o2k7 .tox .tox-textarea,
+body.ezoe-skin-o2k7 .tox .tox-listbox--select,
+body.ezoe-skin-o2k7 .tox .tox-selectfield select {
+    min-height: 0;
+    height: 19px;
+    padding: 1px 3px;
+    border: 1px solid #7F9DB9;
+    border-radius: 0;
+    background: #FFF;
+    box-shadow: none;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+}
+body.ezoe-skin-o2k7 .tox .tox-textarea {
+    height: auto;
+    min-height: 50px;
+}
+body.ezoe-skin-o2k7 .tox .tox-textfield:focus,
+body.ezoe-skin-o2k7 .tox .tox-listbox--select:focus,
+body.ezoe-skin-o2k7 .tox .tox-textarea:focus {
+    border-color: #316AC5;
+    box-shadow: none;
+}
+body.ezoe-skin-o2k7 .tox .tox-listbox--select {
+    display: flex;
+    align-items: center;
+}
+body.ezoe-skin-o2k7 .tox .tox-listbox__select-label {
+    margin: 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-listbox__select-chevron svg {
+    transform: scale(0.7);
+}
+body.ezoe-skin-o2k7 .tox .tox-checkbox {
+    height: auto;
+    min-width: 0;
+    padding: 0;
+    margin: 2px 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-checkbox__label {
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    margin-left: 4px;
+}
+body.ezoe-skin-o2k7 .tox .tox-checkbox__icons {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Buttons: classic small buttons, OK / Cancel bottom left */
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer {
+    justify-content: flex-start;
+    padding: 8px 10px;
+    border-top: 0;
+    background: #F0F0EE;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer-end {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer .tox-button,
+body.ezoe-skin-o2k7 .tox .tox-dialog__body .tox-button:not(.tox-button--icon):not(.tox-browse-url) {
+    min-height: 0;
+    margin: 0;
+    padding: 1px 10px;
+    border: 1px solid #003C74;
+    border-radius: 3px;
+    background: linear-gradient(#FFF, #ECEBE6 85%, #D6D0C5);
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+    line-height: 16px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer .tox-button:hover,
+body.ezoe-skin-o2k7 .tox .tox-dialog__body .tox-button:not(.tox-button--icon):hover {
+    border-color: #E5A01A;
+    background: linear-gradient(#FFF, #F5F4EF);
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer .tox-button:focus,
+body.ezoe-skin-o2k7 .tox .tox-dialog__body .tox-button:not(.tox-button--icon):focus {
+    box-shadow: inset 0 0 0 1px #7DA2CE;
+}
+
+/* Menus of list boxes in dialogs and toolbars */
+body.ezoe-skin-o2k7 .tox .tox-menu {
+    border: 1px solid #7F9DB9;
+    border-radius: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+body.ezoe-skin-o2k7 .tox .tox-collection--list .tox-collection__item {
+    padding: 2px 6px;
+    border-radius: 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-collection__item-label,
+body.ezoe-skin-o2k7 .tox .tox-collection__item-label p {
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+body.ezoe-skin-o2k7 .tox .tox-collection--list .tox-collection__item--active {
+    background: #316AC5;
+    color: #FFF;
+}
+body.ezoe-skin-o2k7 .tox .tox-collection--list .tox-collection__item--active .tox-collection__item-label {
+    color: #FFF;
+}
+/* checkboxes have no label column, align them with the fields */
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-content .tox-checkbox {
+    margin-left: 125px;
+}

@@ -1,0 +1,124 @@
+/*
+ * eZ Online Editor - TinyMCE 8 prototype: content list of the ezoe dialogs (ezoe_dialog.js),
+ * laid out like the result tables of the TinyMCE 3 ezoe dialogs
+ */
+.tox .ezoe-list-path {
+    margin: 0 0 6px;
+}
+.tox .ezoe-list-path a,
+.tox .ezoe-list-paging a,
+.tox .ezoe-list-name a {
+    color: #0645AD;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.tox table.ezoe-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tox table.ezoe-list tr {
+    cursor: pointer;
+}
+.tox table.ezoe-list tr:hover {
+    background: #EEF3FB;
+}
+.tox table.ezoe-list tr.ezoe-list-selected {
+    background: #D7E4F7;
+}
+.tox table.ezoe-list td {
+    padding: 2px 4px;
+    vertical-align: middle;
+}
+.tox table.ezoe-list td.ezoe-list-radio {
+    width: 20px;
+}
+.tox table.ezoe-list td.ezoe-list-radio input {
+    margin: 0;
+    pointer-events: none;
+}
+.tox table.ezoe-list td.ezoe-list-class {
+    width: 30%;
+    white-space: nowrap;
+}
+.tox .ezoe-list-paging {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+}
+.tox .ezoe-list-empty,
+.tox .ezoe-selected {
+    margin: 0 0 6px;
+}
+
+.tox table.ezoe-list td.ezoe-list-preview {
+    width: 60px;
+    text-align: right;
+    white-space: nowrap;
+}
+/* preview link, the image shows on hover like table.node_datalist span.image_preview of the old dialog */
+.tox .ezoe-list-preview-link {
+    position: relative;
+    color: #0645AD;
+    text-decoration: underline;
+}
+.tox .ezoe-list-preview-link img {
+    display: none;
+    position: absolute;
+    z-index: 200;
+    top: -2px;
+    right: 60px;
+    max-width: 240px;
+    border: 2px solid #DDD;
+    background: #FFF;
+}
+.tox .ezoe-list-preview-link:hover img {
+    display: block;
+}
+.tox select.ezoe-class-filter {
+    width: 100%;
+    margin: 0 0 6px;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    border: 1px solid #7F9DB9;
+}
+
+/* "Path:" in front of the element path, set by the ezpath plugin */
+.tox .tox-statusbar__path::before {
+    content: var(--ezoe-path-label, '');
+    white-space: pre;
+}
+/* » between the path items like the TinyMCE 3 status bar */
+.tox .tox-statusbar__path-divider {
+    font-size: 0;
+}
+.tox .tox-statusbar__path-divider::before {
+    content: '\00a0\00bb\00a0';
+    font-size: 9pt;
+}
+
+/* Heading of the tag dialogs like "Edit <embed> tag" in the TinyMCE 3 ezoe dialogs */
+.tox h2.ezoe-tag-title {
+    margin: 0 0 8px;
+    padding: 0;
+    font: bold 18px Arial, Helvetica, sans-serif;
+    color: #2B6FB6;
+}
+.tox .ezoe-embed-preview-label {
+    margin: 8px 0 2px;
+    font-weight: bold;
+}
+.tox .ezoe-embed-preview {
+    min-height: 24px;
+    max-height: 220px;
+    overflow: auto;
+    padding: 4px 6px;
+    border: 1px solid #CCC;
+    background: #FFF;
+}
+.tox .ezoe-embed-preview img {
+    max-width: 100%;
+    height: auto;
+}
+.tox .ezoe-upload-file {
+    margin: 0 0 4px;
+    font-weight: bold;
+}
