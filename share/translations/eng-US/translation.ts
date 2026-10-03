@@ -14740,6 +14740,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Content job types</translation>
     </message>
     <message>
+        <source>Online editor engines</source>
+        <translation>Online editor engines</translation>
+    </message>
+    <message>
         <source>Debug bar presets</source>
         <translation>Debug bar presets</translation>
     </message>
@@ -40902,6 +40906,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Content job types</source>
         <translation>Content job types</translation>
+    </message>
+    <message>
+        <source>Online editor engines</source>
+        <translation>Online editor engines</translation>
     </message>
     <message>
         <source>Debug bar presets</source>

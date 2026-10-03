@@ -17573,6 +17573,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Inhaltsjob-Typen</translation>
     </message>
     <message>
+        <source>Online editor engines</source>
+        <translation>Editor-Engines des Online-Editors</translation>
+    </message>
+    <message>
         <source>Debug bar presets</source>
         <translation>Voreinstellungen der Debug-Leiste</translation>
     </message>
@@ -47937,6 +47941,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Content job types</source>
         <translation>Inhaltsjob-Typen</translation>
+    </message>
+    <message>
+        <source>Online editor engines</source>
+        <translation>Editor-Engines des Online-Editors</translation>
     </message>
     <message>
         <source>Debug bar presets</source>
