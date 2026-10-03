@@ -1,40 +1,33 @@
-# PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite
+# PHPUnit 13 support, and the string operator test suite
 
-**Affected release:** Exponential 6.0.x using PHPUnit 10–12  
-**Fixed in:** Exponential 6.0.x HEAD (2026-03-31)  
-**PHPUnit version:** `phpunit/phpunit 13.0.0`  
-**PHP version:** 8.4 / 8.5  
-**Date documented:** 2026-03-31
+Read this page if you run the Exponential test suite, or maintain tests of your own that extend the Exponential test
+toolkit. After an upgrade to PHPUnit 13 (`phpunit/phpunit 13.0.0`, PHP 8.4 and 8.5), `php vendor/bin/phpunit` on an
+Exponential 6.0.x tree that still used PHPUnit 10 to 12 conventions stopped with a fatal error and **ran no tests at
+all**. This was fixed on 2026-03-31. The same change ships `eZTemplateStringsOperator`, which makes every PHP string
+function a template operator, with its own test suite ([section 6](#new-feature)).
 
----
+## In short
 
-## The short answer
+| | |
+|---|---|
+| What changed | PHPUnit 13 made `TestCase::__construct()` final and requires `: void` on `setUp()`, `tearDown()`, `setUpBeforeClass()` and `tearDownAfterClass()`. The toolkit (`tests/toolkit/ezpregressiontest.php`, `ezpdatabaseregressiontest.php`), `tests/bootstrap.php` and the lib tests were changed to match. |
+| Who is affected | Your own tests that override `__construct()` or declare `setUp()`/`tearDown()` without `: void`. Tests that use the old `PHPUnit_Framework_*` class names keep working through the bootstrap shims. |
+| How to check | `php vendor/bin/phpunit --list-tests` must load every class without a fatal error. |
+| How to fix | Add `: void` to the four methods; move constructor work into `setUp(): void`. See [Fix 3](#fix-lib-tests) for worked examples. |
 
-If you ran `php vendor/bin/phpunit` on Exponential 6.0.x after upgrading to PHPUnit 13
-you received one of these fatals and **zero tests ran**:
+The two fatal errors you see before the fix:
 
 ```
 PHP Fatal error: Cannot override final method PHPUnit\Framework\TestCase::__construct()
   in tests/toolkit/ezpdatabaseregressiontest.php on line N
 ```
 
-or:
-
 ```
 PHP Fatal error: Declaration of SomeTest::setUp() must be compatible with
 PHPUnit\Framework\TestCase::setUp(): void
 ```
 
-**Root cause:** PHPUnit 13 made `TestCase::__construct()` final (sealed against override),
-and `TestCase::setUp()` / `tearDown()` now require the `: void` return-type declaration.
-The Exponential test toolkit and every legacy test class that overrode the constructor or
-omitted `: void` immediately fataled on class load — before a single test could run.
-
-Additionally, this release ships a new `eZTemplateStringsOperator` PHP class that
-implements every PHP string function as a template operator (see section 6 below), and a
-comprehensive PHPUnit 13 test suite for it.
-
----
+Both happen when the class is loaded, before any test runs.
 
 ## Table of contents
 
@@ -47,7 +40,6 @@ comprehensive PHPUnit 13 test suite for it.
 7. [Pre-existing warnings — filename / class-name mismatch](#warnings)
 8. [Files changed in this release](#files-changed)
 
----
 
 <a name="background"></a>
 ## 1. Background — what PHPUnit 13 changed
@@ -62,7 +54,6 @@ comprehensive PHPUnit 13 test suite for it.
 | `PHPUnit_Framework_Warning` class removed | 10 | Shimmed in bootstrap |
 | `PHPUnit_Framework_ExpectationFailedException` removed | 7 | Shimmed in bootstrap |
 
----
 
 <a name="fix-bootstrap"></a>
 ## 2. Fix 1 — tests/bootstrap.php: expanded shim layer
@@ -130,7 +121,6 @@ if ( !class_exists( 'PHPUnit_TextUI_TestRunner', false ) )
 }
 ```
 
----
 
 <a name="fix-toolkit"></a>
 ## 3. Fix 2 — toolkit: remove illegal constructors from ezpregressiontest and ezpdatabaseregressiontest
@@ -199,7 +189,6 @@ The same removal was applied identically to `ezpdatabaseregressiontest.php`.
 +   }
 ```
 
----
 
 <a name="fix-lib-tests"></a>
 ## 4. Fix 3 — lib test files: add `: void` and remove constructors
@@ -309,7 +298,6 @@ public function getFiles(): array
 }
 ```
 
----
 
 <a name="verification"></a>
 ## 5. Verification commands
@@ -351,7 +339,6 @@ for i in 1 2 3; do
 done
 ```
 
----
 
 <a name="new-feature"></a>
 ## 6. New feature: eZTemplateStringsOperator and its test suite
@@ -521,7 +508,6 @@ $tpl = eZTemplate::instance();
 $tpl->registerOperator( new eZTemplateStringsOperator() );
 ```
 
----
 
 <a name="warnings"></a>
 ## 7. Pre-existing warnings — filename / class-name mismatch
@@ -553,7 +539,6 @@ test correctness.
 `ezhttptool_test.php`, `ezini_test.php`, `ezmail_ezc_test.php`, `ezmail_test.php`,
 `ezsys_test.php`, `ezuri_test.php`
 
----
 
 <a name="files-changed"></a>
 ## 8. Files changed in this release
@@ -599,9 +584,7 @@ test correctness.
 `tests/tests/lib/ezutils/ezuri_regression.php`,
 `tests/tests/lib/ezutils/ezuri_test.php`
 
----
 
-*Documented by GitHub Copilot (Claude Sonnet 4.6) — 2026-03-31*
 
 ## Related pages
 
@@ -613,7 +596,5 @@ test correctness.
 - [September 2025](../../history/2025/2025-09.md)
 - [December 2025](../../history/2025/2025-12.md)
 - [February 2026](../../history/2026/2026-02.md)
-
-## Related pages
-
 - [March 2026](../../history/2026/2026-03.md)
+- [PHPUnit 10 migration](phpunitv10.md)
