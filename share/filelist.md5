@@ -145,7 +145,7 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-6e6a5228713b84def0893b11ea68371e  composer.json
+22ee7164b9bfcaa4d9b8da2080fee07c  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 fc1728636781a401032ccd6494974299  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
@@ -5832,6 +5832,7 @@ c1cc04937866ce0fe0aaf3e3b16ea77e  tests/tests/extension/cjw_newsletter/cjwNewsle
 3ec9dbf221f16905304f102293060608  tests/tests/extension/cjw_newsletter/cjwNewsletterSmokeTest.php
 546105787178f1e385a7b9d0f5f0979e  tests/tests/extension/cjw_newsletter/cjwNewsletterSubscriptionTest.php
 a00df4591ee79122a4805fce32f52917  tests/tests/extension/cjw_newsletter/cjwNewsletterTestCase.php
+621dee3f86d8cb41f88e93edff58f006  tests/tests/extension/cjw_newsletter/cjwNewsletterTreeInstallerTest.php
 8def35a200dba4b04ccec1b7095183c8  tests/tests/extension/cjw_newsletter/cjwNewsletterUserTest.php
 289a4374c73ea24e48ca5178a1b9c361  tests/tests/extension/cjw_newsletter/cjwNewsletterViewsTest.php
 d75f59898581c1ea18a1021b8f6d5252  tests/tests/extension/cjw_newsletter/cjwNewsletterVirtualListTest.php
