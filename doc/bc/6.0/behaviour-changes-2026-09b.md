@@ -181,7 +181,7 @@ dates given and were not repeated for this page.
 
 Start preloading on Setup > Preload runs the crawl as a background process, so it
 works behind Velocity and behind proxies that buffer streamed answers. Nothing to
-configure; see [Preload Sites](../../features/6.0/preload-sites-view.md#runs-in-the-background).
+configure; see [Preload Sites](../../features/6.0/preload-sites-view.md#it-runs-in-the-background).
 
 ## Related pages
 

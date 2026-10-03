@@ -345,7 +345,7 @@ the scope of this script).
 
 ## Related pages
 
-- [Preload Sites: runs in the background](../../features/6.0/preload-sites-view.md#runs-in-the-background) (28 September 2026)
+- [Preload Sites: runs in the background](../../features/6.0/preload-sites-view.md#it-runs-in-the-background) (28 September 2026)
 - [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
 - [Static cache generator](../../features/6.0/static-cache-generator.md)
 - [HTTP/2 and cache warming](http2-and-cache-warming.md)

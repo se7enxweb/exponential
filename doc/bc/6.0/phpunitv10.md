@@ -45,7 +45,6 @@ PHP Fatal error: Class 'PHPUnit_Runner_Version' not found in tests/runtests.php
 11. [How the security hardening tests plug in](#security-tests)
 12. [Full before/after diff summary](#full-diff)
 13. [Frequently asked questions](#faq)
-14. [Patch change log — 2026-02-21](#patch-changelog)
 
 
 <a name="background"></a>
