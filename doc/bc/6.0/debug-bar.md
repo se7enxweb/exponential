@@ -1,14 +1,26 @@
 # The Exp Debug bar
 
-From Exponential 6.0.15 the debug report at the bottom of a page is the **Exp Debug bar**: a pinned bar with a
-live summary of the request and a panel with tabs over the report's sections. Its settings tab shows every debug
-setting there is, with the value in effect and the file it comes from, and changes it in the scope chosen for
-each setting: the global override, a siteaccess or an extension. Every change is written through the exp:ini
-engine ([console-exp-ini.md](console-exp-ini.md)), logged, and can be undone from the bar.
+Read this page if you use the debug report, if you restrict debug output by IP address, or if your scripts or
+stylesheets work with the classic report. From Exponential 6.0.15 the debug report at the bottom of a page is the
+**Exp Debug bar**: a pinned bar with a live summary of the request and a panel with tabs over the report's sections.
+Its Settings tab shows every debug setting, the value in effect and the file it comes from, and changes it in the
+scope you choose (global override, a siteaccess or an extension). Every change is written through the exp:ini engine
+([console-exp-ini.md](console-exp-ini.md)), logged, and can be undone from the bar.
 
-This guide describes the server side: the registry, the values and scopes, writes, the log and undo, the IP list,
-the summary, the server functions, access, and the RAD survey. The bar itself (markup, tabs, scope pickers) is
-described in [The bar](#the-bar).
+## In short
+
+| | |
+|---|---|
+| What changed | The HTML debug report is the Exp Debug bar (`lib/ezutils/classes/expdebugbarreport.php`). New registry `settings/debugbar.ini`, server functions `expdebugbar::*`, write log `var/<site>/log/debugbar.log`. `DebugIPList[]` entries may carry a label and an expiry, and CIDR ranges of both address families match. |
+| Who is affected | Sites that list a **plain IPv6 address** in `DebugIPList[]`: before, any IPv6 client got debug output as soon as the list had one; now that entry means that one address. Users who change debug settings from the bar: they need `setup/setup` (cache controls: `setup/managecache`). Custom CSS or tests that match the old heading text (it now reads "Exp Debug"). |
+| How to check | `grep -n "Settings\[\]" settings/debugbar.ini \| head` and `php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/` |
+| How to fix | Add every IPv6 address or network that needs debug output to `DebugIPList[]` explicitly. Give `setup/setup` to roles that debug. Section ids are unchanged, so scripts written for the classic report keep working. |
+
+Text reports (`Debug=inline` on the command line) and the popup window are unchanged. An engine archive without
+`expdebugbarreport.php` prints the classic report.
+
+This page describes the server side first (the registry, values and scopes, writes, the log and undo, the IP list,
+the summary, the server functions, access and the RAD survey), then [the bar](#the-bar) itself.
 
 | Part | Where |
 |---|---|
@@ -64,7 +76,7 @@ Two kinds of settings are found rather than registered:
   `DiscoveryExclude[]=<ext>` or `<ext>;<file>` leaves some out. A setting the registry has already is not found
   twice.
 
-On this installation the bar has 82 settings: 35 registered, 43 debug conditions, 4 extension switches
+On a reference installation the bar has 82 settings: 35 registered, 43 debug conditions, 4 extension switches
 (cjw_newsletter, owsimpleoperator, bccie).
 
 ### An extension's settings
@@ -232,14 +244,14 @@ resets the OPcache of the process that answers. The list gives every cache with 
 (`expCacheManager`), the tags, when each was last cleared from the bar, Velocity's cache status and the OPcache
 state.
 
-Example, on this installation:
+Example (replace the host names and YOUR_USER:YOUR_PASSWORD with your own; the second call is made without signing in):
 
 ```
-$ curl -s -u staff:... 'https://edit.alpha.se7enx.com/ezjscore/call/expdebugbar::iptest?ContentType=json'
+$ curl -s -u YOUR_USER:YOUR_PASSWORD 'https://admin.example.com/ezjscore/call/expdebugbar::iptest?ContentType=json'
 {"error_text":"","content":{"address":"...","valid":true,"family":4,"remote_addr":"...","client_ip":"...",
  "trusts_proxy":false,"proxy_header":null,"suggest":{"self":".../32","network":".../24","family":4},
  "debug_by_ip":false,"allowed":false,"matched":null,...}}
-$ curl -s 'https://alpha.se7enx.com/ezjscore/call/expdebugbar::log?ContentType=json'
+$ curl -s 'https://www.example.com/ezjscore/call/expdebugbar::log?ContentType=json'
 {"error_text":"This needs the policy setup\/setup or setup\/managecache","content":""}
 ```
 
@@ -361,7 +373,7 @@ it was last cleared, and all caches. Each clear says what it did.
 
 ### Tests
 
-The bar is tested in a browser at 960 px wide and device scale factor 2, on admin (admin4), admintest_admin, admintest_admin2, admintest_admin4
+The bar is tested in a browser at 960 px wide and device scale factor 2, on the admin, admin2 and admin4 designs
 and the public site, light and dark: the pinned bar and panel, keep open on reload, the tabs by mouse and keyboard,
 the summary against the report, the filter, the IP validation, no page errors. On the admin page also a setting
 written to the global override and undone, a preset applied and reverted (each settings file compared byte for
@@ -369,10 +381,10 @@ byte; on a failure the test writes the files back), the IP list controls, and "T
 `var/tmp/debug-bar-<engine>-<page>-<tab>.png`. A check of the words makes sure every
 string of the bar is translated.
 
-See also: [Exponential debug bar](../../features/6.0/exp-debug-bar.md).
-
 ## Related pages
 
-- [August 2024](../../history/2024/2024-08.md)
-- [January 2025](../../history/2025/2025-01.md)
-- [August 2025](../../history/2025/2025-08.md)
+- [Exponential debug bar (feature)](../../features/6.0/exp-debug-bar.md)
+- [exp:ini, the INI engine the bar writes through](console-exp-ini.md)
+- [Cache console (`exp:cache`)](cache-console.md)
+- [Behaviour changes of 1 and 2 October 2026](behaviour-changes-2026-10.md)
+- [August 2024](../../history/2024/2024-08.md), [January 2025](../../history/2025/2025-01.md), [August 2025](../../history/2025/2025-08.md)
