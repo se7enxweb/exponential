@@ -1,22 +1,23 @@
 # `ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite
 
-**Affected class:** `lib/ezsession/classes/ezpsessionhandlerdb.php`  
-**Fixed in:** Exponential 6.0.x HEAD (2026-04-08)  
-**PHP version:** 8.0+  
-**PHPUnit version:** 13.0.0  
+Read this page if your installation stores sessions in the database (the default `ezpSessionHandlerDB`) and runs on
+PHP 8, if your `ezsession` table keeps growing, or if you saw blank pages with "Cannot call session save handler in a
+recursive manner". Three bugs in `ezpSessionHandlerDB` caused silent session failures under PHP 8 and stopped garbage
+collection from ever removing expired sessions. All three are fixed (6.0.x, 2026-04-08; released in 6.0.13) and
+covered by a PHPUnit 13 test suite that runs without a live database or the Exponential kernel.
 
----
+## In short
 
-## The short answer
+| | |
+|---|---|
+| What changed | `read()` returns `''` instead of `false`; `gc()` compares with `time()`; the `gc()` timeout guard measures the real elapsed time. |
+| Who is affected | Every installation with database sessions on PHP 8.0 or newer. |
+| How to check | Count expired rows: `SELECT COUNT(*) FROM ezsession WHERE expiration_time < UNIX_TIMESTAMP();` (MySQL). Before the fix this number only grew. |
+| How to fix | Update. Expired rows left from before are removed by the next garbage collection run. |
 
-Three bugs in `ezpSessionHandlerDB` caused silent session failures under PHP 8 and
-prevented garbage collection from ever removing expired sessions. All three are now
-fixed and covered by a PHPUnit 13 test suite that runs without a live database or eZ
-kernel.
+Affected class: `lib/ezsession/classes/ezpsessionhandlerdb.php`. Requires PHP 8.0 or newer; tests use PHPUnit 13.0.0.
 
----
-
-## Bug 1 — `read()` returned `false` instead of `''`
+## Bug 1: `read()` returned `false` instead of `''`
 
 ### What broke
 
@@ -51,9 +52,8 @@ if ( !$db->isConnected() )
     return '';          // PHP 8: '' = no data, false = fatal error
 ```
 
----
 
-## Bug 2 — `gc()` `WHERE` clause used `$maxLifeTime` (duration) not `time()` (timestamp)
+## Bug 2: `gc()` `WHERE` clause used `$maxLifeTime` (duration) not `time()` (timestamp)
 
 ### What broke
 
@@ -81,9 +81,8 @@ WHERE expiration_time < $maxLifeTime      -- always false: 1744xxxxxx < 1440
 WHERE expiration_time < ' . time() . '   -- correct: absolute timestamp comparison
 ```
 
----
 
-## Bug 3 — `gc()` timeout guard used `$maxLifeTime` as a start timestamp
+## Bug 3: `gc()` timeout guard used `$maxLifeTime` as a start timestamp
 
 ### What broke
 
@@ -114,11 +113,10 @@ $gcStartTime = time();   // captured before the do-while loop
 $remaningTime = $maxExecutionTime - GC_TIMEOUT_MARGIN - ( $stopTime - $gcStartTime );
 ```
 
----
 
 ## PHPUnit 13 test suite
 
-A new test file covers all three bugs without requiring a live database or eZ kernel:
+A new test file covers all three bugs without a live database or the Exponential kernel:
 
 ```
 tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
@@ -168,15 +166,9 @@ OK (12 tests, 28 assertions)
 ## Related pages
 
 - [PHP 8 support](php8.md)
-- [Steps to upgrade your Exponential 6.0.13 site to use PHPUnit 10 — what broke, how we fixed it, and how you run tests now](phpunitv10.md)
-- [PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite](phpunitv13.md)
-- [PHPUnit 13 / PHP 8.4.23 test suite cleanup](phpunitv13forPHP841.md)
+- [PHPUnit 10 upgrade](phpunitv10.md), [PHPUnit 13 upgrade](phpunitv13.md) and
+  [PHPUnit 13 on PHP 8.4](phpunitv13forPHP841.md)
 - [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [April 2025](../../history/2025/2025-04.md)
-- [September 2025](../../history/2025/2025-09.md)
-- [December 2025](../../history/2025/2025-12.md)
-
-## Related pages
-
-- [February 2026](../../history/2026/2026-02.md)
-- [March 2026](../../history/2026/2026-03.md)
+- History: [April 2025](../../history/2025/2025-04.md), [September 2025](../../history/2025/2025-09.md),
+  [December 2025](../../history/2025/2025-12.md), [February 2026](../../history/2026/2026-02.md),
+  [March 2026](../../history/2026/2026-03.md)

@@ -1,12 +1,39 @@
 # Where the page sizes live
 
-Every paged list in the administration interface takes its page size from a
-setting, so a site can choose its own without editing a template or a module.
-This is the index of them.
+Read this page if you want to change how many rows a list in the administration interface shows, or if you
+overrode a list template or module that used to have its page sizes written into it. Every paged list in the admin
+now takes its page size from a setting, so a site can choose its own without editing a template or a module. This
+page is the index of those settings.
 
-Most of them live in one block, `admininterface.ini [PaginationSettings]`,
-keyed by the module and view that draws the list — so a setting can be found
-from the address of the page it governs.
+## In short
+
+| | |
+|---|---|
+| What changed | Page sizes come from settings: mostly `admininterface.ini [PaginationSettings]`, plus five older settings. `role/list` and `rss/list` no longer have sizes written into the module and template. |
+| Who is affected | Sites that want other page sizes; overrides of `role/list` or `rss/list` templates. Stored user choices keep working. |
+| How to check | `grep -n -A40 "^\[PaginationSettings\]" settings/admininterface.ini` |
+| How to fix | Nothing required. To change a size, override the key and clear the caches (example below). |
+
+## Change a page size in one minute
+
+Show 50 sections per page instead of 25:
+
+```ini
+# settings/override/admininterface.ini.append.php
+[PaginationSettings]
+ItemsPerPage[section/list]=50
+```
+
+```bash
+php bin/php/ezcache.php --clear-all --allow-root-user
+```
+
+Reload `section/list`: it shows 50 rows.
+
+## The settings
+
+Most of them live in one block, `admininterface.ini [PaginationSettings]`, keyed by the module and view that draws
+the list, so you can find a setting from the address of the page it governs.
 
 ```ini
 [PaginationSettings]
@@ -89,7 +116,6 @@ where the model has no fetch that takes an offset and a limit. Where one exists
 it is used instead — `role/list`, `section/list`, `state/groups`,
 `oauthadmin/list` and the locations tab all page in the query.
 
----
 
 ## One size, or a list of them
 
@@ -121,7 +147,6 @@ Both shapes fall back to their default when the setting is emptied or filled
 with something that is not a positive number — a list with no usable size in it
 would otherwise divide by zero further down.
 
----
 
 ## What the preference stores
 
@@ -137,7 +162,6 @@ than resetting it, and no stored preference has to be migrated.
 `rss/list` stores the size itself, and ignores a stored size that is no longer
 on the list.
 
----
 
 ## What this replaced
 
@@ -157,7 +181,6 @@ selector. Two lists that had to agree by hand, and no way to change either.
 
 `rss/list` had `eZRSSListPager::limits()` returning `array( 25, 50, 250 )`.
 
----
 
 ## Checking it
 
@@ -177,7 +200,7 @@ php bin/php/ezcache.php --clear-all --allow-root-user
 
 Read the shipped values with `grep -n -A40 "^\[PaginationSettings\]" settings/admininterface.ini`.
 
-## See also
+## Related pages
 
 - [Paging, sorting and page sizes in the administration interface](../../features/6.0/admin-list-paging.md)
 - [Role and policy paging](role-policy-paging.md) and [Locations tab paging and sorting](locations-tab-paging-and-sorting.md)

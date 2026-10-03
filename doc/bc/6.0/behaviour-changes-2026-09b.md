@@ -1,21 +1,29 @@
 # Behaviour changes of 16 to 30 September 2026
 
-What an existing Exponential 6.0 installation notices after taking the changes of
-the second half of September 2026, and what to do about it. Each row names the
-change, who is affected, the setting that controls it and the action. Longer
-explanations are linked. This is the upgrade companion of the
-[chronicle for the period](../../history/2026/2026-09b.md); the previous period is
-in the [September first half chronicle](../../history/2026/2026-09a.md) and the
-next in [behaviour changes of October 2026](behaviour-changes-2026-10.md).
+Read this page before you take the changes of 16 to 30 September 2026 to an existing Exponential 6.0 installation.
+It lists what visitors, editors, installers and operators will notice, and what to do about it. Each row names the
+change, who is affected, the setting that controls it and the action; longer explanations are linked. This is the
+upgrade companion of the [chronicle for the period](../../history/2026/2026-09b.md). The previous period is in the
+[chronicle of 1 to 15 September](../../history/2026/2026-09a.md), the next in
+[behaviour changes of October 2026](behaviour-changes-2026-10.md).
+
+## Deploy order
 
 Do these first, in this order, on every site you take the changes to:
 
 ```bash
 php bin/php/ezpgenerateautoloads.php -e
 php bin/php/ezcache.php --clear-all --allow-root-user
-systemctl reload plesk-php85-fpm        # or the PHP-FPM service that serves your site
+systemctl reload <php-fpm service>      # the PHP-FPM service that serves your site
 ./console exp:velocity deploy --dry-run # if you run Velocity: shows every step
 ```
+
+The three changes most sites must act on:
+
+1. **Security headers and the session cookie** (first two rows below): check any host that frames the admin, and any
+   script that reads the session cookie.
+2. **The admin content tree starts at the top node:** set `RootNodeID=2` if editors want the old tree.
+3. **Add the `cache_cleanup` cronjob part** to your crontab (see "Caches and web servers").
 
 ## Visible to visitors and editors
 
@@ -85,7 +93,7 @@ systemctl reload plesk-php85-fpm        # or the PHP-FPM service that serves you
 ## Details behind the cache, archive and engine changes
 
 The tables above say what to do. These are the facts behind them, for the
-people who tune a server. Measurements are from the alpha installation on the
+people who tune a server. Measurements are from a reference installation on the
 dates given and were not repeated for this page.
 
 ### HTTP cache (`httpcache.ini`)

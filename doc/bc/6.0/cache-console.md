@@ -1,15 +1,33 @@
-# Cache control from the console — `exp:cache`
+# Cache control from the console: `exp:cache`
 
-**Introduced:** Exponential CMS 6.0.15  
-**Location:** `bin/php/cache.php` (run as `./console exp:cache` or `php bin/php/cache.php`)  
-**Shared code:** `kernel/classes/expcachemanager.php` (`expCacheManager`)
+Read this page if you clear caches from scripts, cron or deployments, or if you want to know which command does what
+a **Setup > Cache** button does. Since Exponential 6.0.15 every action of that page, and the newer caches (static
+cache, HTTP cache, SQL query cache, Velocity), is available as one command. Existing commands such as
+`bin/php/ezcache.php` keep working.
 
----
+## In short
+
+| | |
+|---|---|
+| What changed | New command `./console exp:cache` (`bin/php/cache.php`), sharing its code with Setup > Cache through `expCacheManager` (`kernel/classes/expcachemanager.php`). |
+| Who is affected | Operators and deploy scripts. Nothing changes until you use it. |
+| How to check | `./console exp:cache all --dry-run` lists what "clear everything" would touch and changes nothing. |
+| What to watch | After a settings change clear by tag (`--tag=ini`), not by id (`--id=ini`); see "INI caches: use the tag". |
+
+## Try it
+
+```bash
+./console exp:cache status --allow-root-user            # every group in one screen
+./console exp:cache clear --tag=ini --dry-run           # what a settings change needs, without doing it
+./console exp:cache ini                                 # do it
+```
+
+The last line of every run is `PASS <message>` or `FAIL <message>`.
 
 ## What it is
 
-Everything the administration page **Setup > Cache** (`/setup/cache`) can do,
-and the newer caches of this installation, as one command:
+Everything the administration page **Setup > Cache** (`/setup/cache`) can do, and the newer caches of the
+installation, as one command:
 
 ```
 ./console exp:cache <group> [action] [options]
@@ -187,12 +205,11 @@ in `site.ini [Cache] CacheItems[]` (it then shows up in `list`, `clear --id`
 and on the page); a new kind of action belongs in `expCacheManager`, called from
 both. Tests: `tests/tests/kernel/classes/expCacheManagerTest.php`.
 
-See also (September 2026): [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).
+## Related pages
 
-## See also (16 to 30 September 2026)
-
-- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 - [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
+- [HTTP cache](httpcache.md), [SQL query cache](sql-query-cache.md), [Static cache defaults](static-cache-defaults.md)
 - [Velocity response cache](../../features/6.0/velocity-response-cache.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
