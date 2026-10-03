@@ -54,6 +54,7 @@ abstract class expServiceBase extends ezjscServerFunctions
      */
     public static function invoke( $class, $method, array $args = array() )
     {
+        $saved = null;
         try
         {
             $ini = eZINI::instance( 'expservices.ini' );
@@ -61,6 +62,8 @@ abstract class expServiceBase extends ezjscServerFunctions
                 throw new expServiceException( 'The services are disabled (expservices.ini [Services] Enabled)', 403 );
             if ( !is_subclass_of( $class, 'expServiceBase' ) || !isset( $class::$services[$method] ) )
                 throw new expServiceException( "No such service $class::$method", 404 );
+            // A personal API token signs the request in before any guard looks at the user
+            $saved = self::tokenLogin();
             $result = call_user_func( array( $class, $method ), $args );
             $decl = $class::$services[$method];
             if ( !empty( $decl['write'] ) )
@@ -75,6 +78,97 @@ abstract class expServiceBase extends ezjscServerFunctions
         {
             eZDebug::writeError( get_class( $e ) . ': ' . $e->getMessage(), $class . '::' . $method );
             return self::error( 500, 'The service failed: ' . $e->getMessage() );
+        }
+        finally
+        {
+            self::tokenLogout( $saved );
+        }
+    }
+
+    // ------------------------------------------------------------------ API tokens
+
+    /** @var bool True while the request is signed in by a personal API token (no cookie, so no form token) */
+    public static $viaToken = false;
+
+    /** The token of the request: Authorization: Bearer <token> or X-Exp-Token, null when none was sent. */
+    public static function presentedToken()
+    {
+        $auth = '';
+        foreach ( array( 'HTTP_AUTHORIZATION', 'REDIRECT_HTTP_AUTHORIZATION' ) as $key )
+            if ( !empty( $_SERVER[$key] ) )
+            {
+                $auth = (string)$_SERVER[$key];
+                break;
+            }
+        if ( $auth === '' && function_exists( 'getallheaders' ) )
+            foreach ( (array)getallheaders() as $name => $value )
+                if ( strcasecmp( $name, 'Authorization' ) === 0 )
+                    $auth = (string)$value;
+        if ( $auth !== '' && preg_match( '/^Bearer\s+(\S+)\s*$/i', $auth, $m ) )
+            return $m[1];
+        if ( !empty( $_SERVER['HTTP_X_EXP_TOKEN'] ) )
+            return trim( (string)$_SERVER['HTTP_X_EXP_TOKEN'] );
+        return null;
+    }
+
+    /**
+     * Signs the request in as the owner of the presented token, for this request only: the user is set as the
+     * current one without touching the session, so no cookie is created or changed.
+     *
+     * @return array|null what tokenLogout() puts back, null when no token was presented
+     * @throws expServiceException 401 when the token is unknown, revoked or expired, or its user cannot sign in
+     */
+    protected static function tokenLogin()
+    {
+        self::$viaToken = false;
+        $token = self::presentedToken();
+        if ( $token === null || $token === '' )
+            return null;
+        if ( !class_exists( 'expServiceToken' ) )
+            throw new expServiceException( 'API tokens are not available', 401 );
+        $row = expServiceToken::byToken( $token );
+        $why = $row === null ? 'The token is not valid' : $row->problem();
+        $user = null;
+        if ( $why === null )
+        {
+            $user = eZUser::fetch( (int)$row->attribute( 'user_id' ) );
+            if ( !$user instanceof eZUser || !$user->isRegistered() || !$user->isEnabled() )
+                $why = 'The user of the token cannot sign in';
+        }
+        if ( $why !== null )
+        {
+            self::audit( 'access.expservices.token.failed', array( 'verb' => 'refuse',
+                'object' => array( 'type' => 'token', 'id' => $row ? (int)$row->attribute( 'id' ) : 0 ),
+                'after' => array( 'reason' => $why ) ) );
+            throw new expServiceException( $why, 401 );
+        }
+        $id = (int)$user->attribute( 'contentobject_id' );
+        $saved = array();
+        foreach ( array( 'eZUserGlobalInstance_', "eZUserGlobalInstance_$id" ) as $key )
+            $saved[$key] = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
+        $GLOBALS['eZUserGlobalInstance_'] = $user;
+        $GLOBALS["eZUserGlobalInstance_$id"] = $user;
+        self::$viaToken = true;
+        if ( time() - (int)$row->attribute( 'last_used' ) > 60 )
+        {
+            $row->setAttribute( 'last_used', time() );
+            $row->store();
+        }
+        return $saved;
+    }
+
+    /** Puts back the user globals that tokenLogin() replaced. */
+    protected static function tokenLogout( $saved )
+    {
+        self::$viaToken = false;
+        if ( !is_array( $saved ) )
+            return;
+        foreach ( $saved as $key => $was )
+        {
+            if ( $was === null )
+                unset( $GLOBALS[$key] );
+            else
+                $GLOBALS[$key] = $was[0];
         }
     }
 
@@ -249,6 +343,10 @@ abstract class expServiceBase extends ezjscServerFunctions
             return;
         if ( !isset( $_SERVER['REQUEST_METHOD'] ) || $_SERVER['REQUEST_METHOD'] !== 'POST' )
             throw new expServiceException( 'Changes are sent with POST', 403 );
+        // A request signed in by an API token has no cookie the browser could send on its own, so there is no
+        // cross-site request to forge: the token in the header is the proof, and no form token is needed.
+        if ( self::$viaToken === true )
+            return;
         $ini = eZINI::instance( 'expservices.ini' );
         if ( $ini->hasVariable( 'Writes', 'RequireToken' ) && $ini->variable( 'Writes', 'RequireToken' ) !== 'enabled' )
             return;

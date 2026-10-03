@@ -134,7 +134,7 @@ class expSessionSystemServicesTest extends expServicesCoreTestCase
 
     public function testSessionServicesAreDeclared()
     {
-        $this->assertCount( 8, expSessionServices::$services );
+        $this->assertCount( 11, expSessionServices::$services );
         $this->assertTrue( expSessionServices::$services['logout']['write'] );
         $this->assertFalse( expSessionServices::$services['login']['write'] );
     }

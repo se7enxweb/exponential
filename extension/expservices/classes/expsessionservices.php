@@ -29,6 +29,13 @@ class expSessionServices extends expServiceBase
             'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'list of role id, name, policies' ),
         'groups' => array( 'summary' => 'The user groups of the user',
             'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'list of object id, name' ),
+        'tokenCreate' => array( 'summary' => 'Creates a personal API token for the signed-in user (POST, session login, not by another token). The token is in the answer once; only its hash is stored',
+            'access' => 'user', 'write' => true, 'args' => array( 'name' => 'string POST', 'expires_in_days' => 'int POST (1-365, default 90)' ),
+            'returns' => 'id, name, token (shown once), hint, created, expires' ),
+        'tokenList' => array( 'summary' => 'The own API tokens: id, name, hint, created, last used, expiry, revoked (never the token)',
+            'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'list of tokens' ),
+        'tokenRevoke' => array( 'summary' => 'Revokes an own API token (POST)',
+            'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int POST' ), 'returns' => 'the token (revoked)' ),
     );
 
     /** The public description of a user (never the password hash). */
@@ -129,5 +136,71 @@ class expSessionServices extends expServiceBase
                 $list[] = array( 'id' => (int)$id, 'name' => $object->attribute( 'name' ) );
         }
         return self::ok( $list, array( 'total' => count( $list ) ) );
+    }
+
+    // ------------------------------------------------------------------ personal API tokens
+
+    /** A token without its secret. */
+    protected static function exportToken( expServiceToken $t )
+    {
+        return array( 'id' => (int)$t->attribute( 'id' ), 'name' => $t->attribute( 'name' ), 'hint' => $t->attribute( 'token_hint' ),
+                      'created' => self::iso( $t->attribute( 'created' ) ), 'last_used' => self::iso( $t->attribute( 'last_used' ) ),
+                      'expires' => self::iso( $t->attribute( 'expires' ) ), 'revoked' => (int)$t->attribute( 'revoked' ) > 0,
+                      'valid' => $t->problem() === null );
+    }
+
+    protected static function tokensAvailable()
+    {
+        if ( !class_exists( 'expServiceToken' ) )
+            throw new expServiceException( 'API tokens are not available', 500 );
+    }
+
+    public static function tokenCreate( $args )
+    {
+        self::guard( __FUNCTION__ );
+        self::tokensAvailable();
+        if ( self::$viaToken )
+            throw new expServiceException( 'A token cannot create tokens: sign in with the session first', 403 );
+        $name = trim( self::post( 'name', 'string' ) );
+        if ( $name === '' || strlen( $name ) > 100 )
+            throw new expServiceException( 'The name is 1 to 100 characters', 422 );
+        $days = self::post( 'expires_in_days', 'int', 90 );
+        if ( $days < 1 || $days > 365 )
+            throw new expServiceException( 'expires_in_days is 1 to 365', 422 );
+        $userId = (int)eZUser::currentUserID();
+        list( $row, $token ) = expServiceToken::issue( $userId, $name, time() + $days * 86400 );
+        self::audit( 'access.expservices.token.create', array( 'verb' => 'create',
+            'object' => array( 'type' => 'token', 'id' => (int)$row->attribute( 'id' ), 'name' => $name ),
+            'after' => array( 'expires_in_days' => $days ) ) );
+        $data = self::exportToken( $row );
+        $data['token'] = $token;
+        return self::ok( $data, array( 'note' => 'The token is shown once; keep it safe. Send it as Authorization: Bearer <token>' ) );
+    }
+
+    public static function tokenList( $args )
+    {
+        self::guard( __FUNCTION__ );
+        self::tokensAvailable();
+        $list = array();
+        foreach ( expServiceToken::fetchOfUser( eZUser::currentUserID() ) as $t )
+            $list[] = self::exportToken( $t );
+        return self::ok( $list, array( 'total' => count( $list ) ) );
+    }
+
+    public static function tokenRevoke( $args )
+    {
+        self::guard( __FUNCTION__ );
+        self::tokensAvailable();
+        $t = expServiceToken::fetchById( self::post( 'id', 'int' ) );
+        if ( $t === null || (int)$t->attribute( 'user_id' ) !== (int)eZUser::currentUserID() )
+            throw new expServiceException( 'No such token', 404 );
+        if ( (int)$t->attribute( 'revoked' ) === 0 )
+        {
+            $t->setAttribute( 'revoked', time() );
+            $t->store();
+            self::audit( 'access.expservices.token.revoke', array( 'verb' => 'revoke',
+                'object' => array( 'type' => 'token', 'id' => (int)$t->attribute( 'id' ), 'name' => $t->attribute( 'name' ) ) ) );
+        }
+        return self::ok( self::exportToken( $t ) );
     }
 }
