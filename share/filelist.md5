@@ -5549,7 +5549,7 @@ e4ff6934b21338c7a03ea332852402d5  kernel/setup/radsurvey.php
 dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-ac40784defde9de310502cb86e465289  kernel/setup/steps/ezstep_create_sites.php
+ef49bbe7b11e5bffb4f3fabad9fe4e7d  kernel/setup/steps/ezstep_create_sites.php
 3174823463cf9d0f9a18162ee233dc04  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
