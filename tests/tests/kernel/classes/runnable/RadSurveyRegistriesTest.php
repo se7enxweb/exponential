@@ -44,6 +44,7 @@ class RadSurveyRegistriesTest extends PHPUnit\Framework\TestCase
     public static function setUpBeforeClass(): void
     {
         chdir( dirname( __DIR__, 5 ) );
+        ezpLiveInstallation::requireOrSkip(); // the registries are read through the installed site's settings and classes
         if ( class_exists( 'eZINI' ) && class_exists( 'ezpI18n' ) )
             self::$survey = expRADSurvey::survey();
     }

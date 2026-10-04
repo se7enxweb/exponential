@@ -191,6 +191,7 @@ class expSubitemsTestFixtures
      */
     public static function warmUp()
     {
+        ezpLiveInstallation::requireOrSkip(); // the class and language lookups read the database
         new expSubitemsTestClassAttribute( array( 'identifier' => 'x', 'data_type_string' => 'ezstring' ) );
         new expSubitemsTestClass( array() );
         self::children( 1 );

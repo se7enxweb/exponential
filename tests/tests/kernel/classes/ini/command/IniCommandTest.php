@@ -248,6 +248,7 @@ class IniCommandTest extends PHPUnit\Framework\TestCase
     /** IC-07 */
     public function testToggle()
     {
+        ezpLiveInstallation::requireSiteAccessOrSkip( 'site' ); // read from this installation, not from the fixture root
         $r = $this->ini( array( 'toggle', 'site.ini/DebugSettings/DebugOutput', 'global' ) );
         $this->assertExit( 0, $r );
         $this->assertStringContainsString( 'Enabled -> Disabled', $r[1] );
@@ -302,6 +303,7 @@ class IniCommandTest extends PHPUnit\Framework\TestCase
     /** IC-09: on this installation, read only (the settings in effect are merged by eZINI, which knows no --root) */
     public function testWhere()
     {
+        ezpLiveInstallation::requireSiteAccessOrSkip( 'site' ); // read from this installation, not from the fixture root
         $data = $this->json( array( 'where', 'site.ini/SiteSettings/SiteName', 'site' ), false );
         $this->assertSame( 0, $data['code'] );
         $this->assertTrue( $data['data']['found'] );
@@ -437,6 +439,7 @@ class IniCommandTest extends PHPUnit\Framework\TestCase
     /** IC-15 */
     public function testSecretsAreMasked()
     {
+        ezpLiveInstallation::requireSiteAccessOrSkip( 'site' ); // read from this installation, not from the fixture root
         $r = $this->ini( array( 'get', 'site.ini/DatabaseSettings/Password', 'global' ) );
         $this->assertSame( "********\n", $r[1] );
         $r = $this->ini( array( 'get', 'site.ini/DatabaseSettings/Password', 'global', '--show-secrets' ) );

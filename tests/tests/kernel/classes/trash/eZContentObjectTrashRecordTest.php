@@ -39,6 +39,7 @@ class eZContentObjectTrashRecordTest extends PHPUnit\Framework\TestCase
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
+        ezpLiveInstallation::requireOrSkip();
         if ( self::$script !== null || self::$bootError !== null )
             return;
         try

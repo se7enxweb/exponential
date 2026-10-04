@@ -66,6 +66,7 @@ class ServicesTest extends PHPUnit\Framework\TestCase
     /** SV-02 */
     public function testPurgeNothing()
     {
+        ezpLiveInstallation::requireOrSkip(); // purging reads the trash table, even for nothing
         $this->assertSame( 0, \Exponential\Service\Trash::purgeObjects( array() ) );
     }
 

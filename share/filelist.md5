@@ -6568,7 +6568,7 @@ e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchi
 52b81f30adda648cbe262f79efc6b68b  tests/tests/kernel/classes/audit/expAuditBufferTest.php
 95af044af3f1f9dc50a6897ecc483498  tests/tests/kernel/classes/audit/expAuditChainTest.php
 1f5e5b69cc51013e2858331f0fecd1e1  tests/tests/kernel/classes/audit/expAuditCompatTest.php
-eea142fa66ab286ad203fb1fe8bc2dac  tests/tests/kernel/classes/audit/expAuditFilterGuardReauthTest.php
+5d7b64fcd39bf8a43cfba87b13c65f49  tests/tests/kernel/classes/audit/expAuditFilterGuardReauthTest.php
 215a05b91016dd544cf530d481f59f86  tests/tests/kernel/classes/audit/expAuditHookTest.php
 22ea5feac02f877e3119195ddb83e99e  tests/tests/kernel/classes/audit/expAuditImportTest.php
 110a6beb30f68575e96eac4059b9afe4  tests/tests/kernel/classes/audit/expAuditIndexTest.php
@@ -6707,7 +6707,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 43a4eefe5f44077ad2e85271207b9890  tests/tests/kernel/classes/ezworkflowevent_regression.php
 83fef56548bc81897515d47d4cc08688  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 f6ecb43c903ad708479858b8bbb01746  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
-82fbd5c21319ab0ae9dcb12dbef147d7  tests/tests/kernel/classes/ini/command/IniCommandTest.php
+28f13941e6a56ca4b6dba5757c6fadd0  tests/tests/kernel/classes/ini/command/IniCommandTest.php
 78c48749a30c2769a626984bf19d3074  tests/tests/kernel/classes/ini/command/IniMoveTest.php
 eb1ae762df6703f8f49d16c1c748ab64  tests/tests/kernel/classes/ini/command/RadSurveyIniCommandTest.php
 959060a9c19ac27983250250ac2ef1af  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/classes/iniactionfixture.php
@@ -6727,11 +6727,11 @@ a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPur
 4c82570012ee0e433401b418e5c79076  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
 4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
-14e12435e2b81f6a7ef832cb6c1f0d0b  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
+352cfc4000709b128a2a80cbea6cf8b7  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
 2beaf208438078d39f0f448ab74d46c8  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
 de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableExtensionPointsTest.php
 6b5a504ace7f81f831359ad296472b95  tests/tests/kernel/classes/runnable/RunnableTest.php
-d19d4d9cdddf7951931d8e5966dd4f5c  tests/tests/kernel/classes/runnable/ServicesTest.php
+57cea5c99d78dc76f0bba6f2c9845766  tests/tests/kernel/classes/runnable/ServicesTest.php
 79c911a18db2fd725a84abec3b804393  tests/tests/kernel/classes/runnable/fixtures/settings/site.ini
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 3b012276860b70c1bf74047f97abfcfb  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
@@ -6748,10 +6748,10 @@ f1830de0e00e4f17b610cd3314a4e8ba  tests/tests/kernel/classes/subitems/columns/fi
 2a38ac9c38a9bd94c952911660288568  tests/tests/kernel/classes/subitems/expSubitemsCSVExportTest.php
 9c5848ffa7a5ad540bde601e94cd00db  tests/tests/kernel/classes/subitems/expSubitemsColumnRegistryTest.php
 d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitemsServerFunctionsTest.php
-fe15ae4f1d385dc746cd16943b30c397  tests/tests/kernel/classes/subitems/fixtures/expsubitemstesthelpers.php
+64c81d5eb6d1b6ebb7089f305649aedb  tests/tests/kernel/classes/subitems/fixtures/expsubitemstesthelpers.php
 5509f70be8ab5c167cec44c57e4b4f07  tests/tests/kernel/classes/subitems/fixtures/subitems.ini
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
-11dcdb3d1d1198b1d44de2a92b7888c0  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
+add07cb25b789ade09730d3c616fa69a  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regression.php
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 f685b80d3c26e9a851940b63e056c6c5  tests/tests/kernel/classes/workflowtypes/ezapprovetype_regression.php
