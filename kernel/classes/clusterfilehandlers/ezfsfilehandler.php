@@ -412,7 +412,18 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
                     $args[] = $extraData;
                 }
 
-                $fileData = call_user_func_array( $generateCallback, $args );
+                try
+                {
+                    $fileData = call_user_func_array( $generateCallback, $args );
+                }
+                catch ( \Throwable $e )
+                {
+                    // a callback that throws (no database, a broken cache source) must not leave the lock taken above
+                    // behind: the lock belongs to this process, is inherited by every process it starts, and the next
+                    // process wanting the file waits for the lock lifetime and then kills the holder
+                    $this->_freeExclusiveLock( 'storeCache' );
+                    throw $e;
+                }
                 return $this->storeCache( $fileData, $storeCache );
             }
 
@@ -515,6 +526,9 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
              $fileContent === null )
         {
             eZDebug::writeError( "Write callback need to set the 'content' or 'binarydata' entry" );
+            // the lock taken before the callback ran must not outlive it: a leaked lock makes every later
+            // process that wants this file wait for the lifetime of the lock and then kill the process holding it
+            $this->_freeExclusiveLock( 'storeCache' );
             return null;
         }
 

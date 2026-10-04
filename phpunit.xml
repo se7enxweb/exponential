@@ -116,6 +116,10 @@
 
     <php>
         <env name="EZP_TEST_ENVIRONMENT" value="1"/>
+        <!-- A runaway test stops with PHP's "Allowed memory size exhausted" naming the test run,
+             instead of the runner killing the whole job (exit code 137, no message). The suite peaks
+             at about 70 MB. -->
+        <ini name="memory_limit" value="1G"/>
         <!-- PHP_INI_SCAN_DIR is set at runtime by tests/bootstrap.php so PHPUnit's
              isolated-process children can find tests/xdebug.ini without hardcoding
              the repository path. -->
