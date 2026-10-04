@@ -1,0 +1,107 @@
+<?php
+// The database schema of the expservices extension: the personal API tokens of the remote services
+// (only the SHA-256 hash of a token is stored). sql/<engine>/schema.sql holds the same table for a manual install.
+$schema = array (
+  'expservices_token' =>
+  array (
+    'name' => 'expservices_token',
+    'fields' =>
+    array (
+      'created' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'expires' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'id' =>
+      array (
+        'length' => 11,
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'last_used' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'name' =>
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'revoked' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'token_hash' =>
+      array (
+        'length' => 64,
+        'type' => 'char',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'token_hint' =>
+      array (
+        'length' => 16,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'user_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'id',
+        ),
+      ),
+      'expservices_token_hash' =>
+      array (
+        'type' => 'unique',
+        'fields' =>
+        array (
+          0 => 'token_hash',
+        ),
+      ),
+      'expservices_token_user' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'user_id',
+        ),
+      ),
+    ),
+  ),
+  '_info' =>
+  array (
+    'format' => 'generic',
+  ),
+);
+
+?>
