@@ -20,6 +20,7 @@ class eZSQLiteSchema extends eZDBSchemaInterface
         if ( $this->Schema === false )
         {
             $tableArray = $this->DBInstance->arrayQuery( "SELECT name FROM sqlite_master WHERE type='table'" );
+            $virtualTables = $this->virtualTableNames();
 
             foreach( $tableArray as $tableNameArray )
             {
@@ -28,6 +29,13 @@ class eZSQLiteSchema extends eZDBSchemaInterface
                 // Skip SQLite system tables (sqlite_sequence, sqlite_stat1, etc.)
                 // These are automatically managed by SQLite and should not be included in schema comparisons
                 if ( strpos( $table_name, 'sqlite_' ) === 0 )
+                {
+                    continue;
+                }
+
+                // A virtual table (the FTS5 full text index of the audit log) and the shadow
+                // tables SQLite keeps for it are no part of the schema a .dba file declares.
+                if ( isset( $virtualTables[$table_name] ) || $this->isVirtualShadowTable( $table_name, $virtualTables ) )
                 {
                     continue;
                 }
@@ -53,6 +61,32 @@ class eZSQLiteSchema extends eZDBSchemaInterface
             $schema = $this->Schema;
         }
         return $schema;
+    }
+
+    /**
+     * The virtual tables of the database (CREATE VIRTUAL TABLE), by name.
+     *
+     * @return array<string,true>
+     */
+    private function virtualTableNames()
+    {
+        $names = array();
+        $rows = $this->DBInstance->arrayQuery( "SELECT name FROM sqlite_master WHERE type='table' AND sql LIKE 'CREATE VIRTUAL TABLE%'" );
+        foreach ( (array)$rows as $row )
+            $names[current( $row )] = true;
+        return $names;
+    }
+
+    /** Whether the table is one of the shadow tables SQLite keeps for a virtual table (FTS5: _config, _data, _docsize, _idx, _content). */
+    private function isVirtualShadowTable( $table, array $virtualTables )
+    {
+        foreach ( $virtualTables as $virtual => $unused )
+        {
+            if ( strpos( $table, $virtual . '_' ) === 0 &&
+                 in_array( substr( $table, strlen( $virtual ) + 1 ), array( 'config', 'data', 'docsize', 'idx', 'content' ), true ) )
+                return true;
+        }
+        return false;
     }
 
     /*!

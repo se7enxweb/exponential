@@ -636,6 +636,14 @@ class eZStepCreateSites extends eZStepInstaller
                 }
             }
 
+            if ( $result && class_exists( 'expAuditIndexSchema' ) && expAuditIndexSchema::fullTextKind( $db ) === 'like' )
+            {
+                // The schema holds the audit index's tables; the full-text part of it (SQLite FTS5
+                // table, MySQL FULLTEXT index, ...) is not a table a .dba can declare. A database
+                // without it answers searches with LIKE, so a refused statement is no failure.
+                expAuditIndexSchema::installFullText( $db );
+            }
+
             if ( $result && $db->databaseName() != 'sqlite' )
             {
                 // Inserting data from the dba-data files of the datatypes
