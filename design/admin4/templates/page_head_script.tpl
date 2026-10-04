@@ -11,5 +11,7 @@
 {else}
  {ezscript_load( array( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
 {/if}
-{* admin4: keeps the page clear of the fixed header, whose menu wraps onto more lines on narrower windows *}
-<script src={'javascript/admin4.js'|ezdesign} defer="defer"></script>
+{* admin4: keeps the page clear of the fixed header, whose menu wraps onto more lines on narrower windows. Loaded
+   through ezscript_load so its URL carries the file's time: the plain file was served with a one-year cache
+   lifetime and browsers kept an old copy after an update. *}
+{ezscript_load( array( 'admin4.js' ) )}
