@@ -145,10 +145,11 @@ body,
 #header-logo .brand {
   background-image: var(--a4-logo);
 }
+/* the light logo (400x100) drawn 28px tall is 112px wide: it fits the 114px box the dark logo has, so the
+   header items after it (site preview, sidebar control) stand in the same place in both modes */
 html:not([data-a4-theme="dark"]) #header-logo .brand {
-  width: 128px;
   background-position: 0 50%;
-  background-size: auto 30px;
+  background-size: auto 28px;
 }
 #header .site-preview svg,
 #header .sidebar-control svg {
