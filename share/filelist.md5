@@ -1207,11 +1207,11 @@ e7081b42039be849f2a5fb783a687fe7  design/admin4/templates/workflow/groupedit.tpl
 dc39637a84a699b8a9c4022966f35109  design/admin4/templates/workflow/processlist.tpl
 70d1bb08e78f1694d97c4b84277970ce  design/admin4/templates/workflow/view.tpl
 2f2a21d30560591b6274fb6361464e42  design/admin4/templates/workflow/workflowlist.tpl
-cdbf0f03d6ba065df691260f9cef81b1  design/admin4l/templates/explayouts/admin_zone.tpl
+14afe23eaa9aa8bb6b9302eeb32a2311  design/admin4l/templates/explayouts/admin_zone.tpl
 3d0d0e55b78d7ec1a771bee80b897008  design/admin4l/templates/explayouts/block/admin_bookmarks.tpl
 bd8bbeb157adb74c7b3f3d9e0a4a563e  design/admin4l/templates/explayouts/block/admin_breadcrumb.tpl
 f78a198bf9da2ffad2f5ac7a884abf38  design/admin4l/templates/explayouts/block/admin_clear_cache.tpl
-f22425b71f630ed6b547bce0cc4dc679  design/admin4l/templates/explayouts/block/admin_content_tree.tpl
+bca57a446436cead3102f7699c240b96  design/admin4l/templates/explayouts/block/admin_content_tree.tpl
 efbb48a4def955752faa19f849cd8845  design/admin4l/templates/explayouts/block/admin_current_user.tpl
 d32ea5c9ac61787a910308fd75511a3c  design/admin4l/templates/explayouts/block/admin_debug_area.tpl
 3d33a22a1727180cf850b86c2f191213  design/admin4l/templates/explayouts/block/admin_footer.tpl
@@ -1226,7 +1226,7 @@ dcd815a83b6edb8cfbc374734189fbf8  design/admin4l/templates/explayouts/block/admi
 571a155f4925c4905433c2efab2ecf18  design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl
 0c111d883220c9b7d32e8ea115cb3e00  design/admin4l/templates/explayouts/block/admin_tab_menu.tpl
 4070f8d9fd9369d7a5f6803e06aeefc0  design/admin4l/templates/explayouts/block/admin_theme_switch.tpl
-827d3573168f81a1e39afe75fbe436b1  design/admin4l/templates/pagelayout.tpl
+324d971bfe19fd3eac15a5325ea55c2f  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -2592,6 +2592,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 5a03536d715d479419eddbe98f4d9071  doc/bc/6.0/LAYOUTS.md
 5151388d1df4c10c691e3f4a7ad1409f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
+d215eaca3e19242c3854c77ee4780c26  doc/bc/6.0/admin4l.md
 cbcc935e925a1485c68fe46111d2b063  doc/bc/6.0/audit.md
 7c829017c001901d87afec4e42579df4  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
@@ -3119,7 +3120,8 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 9363a657b726a9b3ab572ce37cca4690  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-b601b6b424f9c1bc929e727ff65b7a72  doc/features/6.0/admin4-design.md
+01a64c554f02aeeff6b759e45d9ddea3  doc/features/6.0/admin4-design.md
+7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 57dda42e8705fa202f77d03e937cb7b6  doc/features/6.0/audit-trail.md
 cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
@@ -3252,7 +3254,7 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 1ea060f19f032887d96d54ea2994fd9e  doc/features/6.0/velocity-web-server.md
 747dd5c4a400e33d13f0fd8bad249a9c  doc/features/6.0/velocity-websockets-and-events.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
-72079959384e42cccf96697f058f23b3  doc/glossary.md
+5f0de08ea3be84e87a03e86c17ff9d3a  doc/glossary.md
 9e57d7c58f0c5e0edd7da4c0a4a137d1  doc/guides/README.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
 a7d35b3d4eb62f3995401d62b9ab21d7  doc/guides/deploying.md
@@ -5913,7 +5915,7 @@ acfe374d099f06d43a18f896956ed607  lib/ezutils/classes/ezuri.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 84e594f01e8f4f64e610fdb8eae51b19  lib/version.php
-45c12293c9cf36446783d15a120fee4e  phpunit.xml
+557e5e0e985a2ba477207c5f03fb765a  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -6489,6 +6491,7 @@ a00df4591ee79122a4805fce32f52917  tests/tests/extension/cjw_newsletter/cjwNewsle
 8def35a200dba4b04ccec1b7095183c8  tests/tests/extension/cjw_newsletter/cjwNewsletterUserTest.php
 289a4374c73ea24e48ca5178a1b9c361  tests/tests/extension/cjw_newsletter/cjwNewsletterViewsTest.php
 d75f59898581c1ea18a1021b8f6d5252  tests/tests/extension/cjw_newsletter/cjwNewsletterVirtualListTest.php
+b848c54eb776fe9b37c8c78b7466acca  tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php
 e970b2ccd968d235654af846d8803d58  tests/tests/extension/expservices/commerce/expBasketServicesTest.php
 90b72ae38d5e12083322a12c5e569c85  tests/tests/extension/expservices/commerce/expCommerceDeclarationsTest.php
 1a51bc2e7680cef04419fe8fc832b3cd  tests/tests/extension/expservices/commerce/expCommerceTestCase.php
