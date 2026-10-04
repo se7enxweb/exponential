@@ -72,7 +72,7 @@ All keys are in `ezupdate.ini`; put your values in `settings/override/ezupdate.i
 | Block | Key | Default | Meaning |
 |---|---|---|---|
 | `ComposerSettings` | `Path`, `Binary` | empty | Directory and file name of Composer; empty tries `SearchPath[]` times `BinaryNames[]` |
-| `ComposerSettings` | `SearchPath[]` | `/usr/local/bin/`, `/usr/bin/`, `/opt/cpanel/composer/bin/` | Where to look |
+| `ComposerSettings` | `SearchPath[]` | `var/ezupdate/`, `bin/`, `./`, `vendor/bin/`, then `/usr/local/bin/`, `/usr/bin/`, `/opt/cpanel/composer/bin/` | Where to look; relative entries are below the installation root and are searched first, because `open_basedir` (default Plesk) hides the system folders. A path set in `Path`/`Binary`/`PHPBinary` is used unchecked under `open_basedir`. The Overview's *Get Composer* downloads a SHA-256 verified `composer.phar` into `var/ezupdate/` |
 | `ComposerSettings` | `BinaryNames[]` | `composer`, `composer.phar` | Names to try |
 | `ComposerSettings` | `PHPBinary` | empty | PHP CLI that runs a `composer.phar` and the background jobs; empty uses the php next to the running one |
 | `ComposerSettings` | `Timeout` | `900` | Seconds a Composer run may take |
