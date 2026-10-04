@@ -6,7 +6,11 @@
 {foreach $layout.zones as $zone}
     {if $zone.identifier|eq( $zone_identifier )}
         {foreach $zone.blocks as $block}
-            {if and( is_set( $block.parent_id ), $block.parent_id|eq( 0 ), is_set( $block.definition_identifier ), $block.definition_identifier|ne( '' ) )}
+            {* optional parameters: only (draw just these definitions) and skip (draw all but these), for the page parts
+               admin4 draws outside the zone's wrapper: context menu, debug marker, overlay *}
+            {if and( is_set( $block.parent_id ), $block.parent_id|eq( 0 ), is_set( $block.definition_identifier ), $block.definition_identifier|ne( '' ),
+                     or( is_set( $only )|not, $only|contains( $block.definition_identifier ) ),
+                     or( is_set( $skip )|not, $skip|contains( $block.definition_identifier )|not ) )}
                 {if $block.definition_identifier|eq( 'admin_module_result' )}{set $has_result = true()}{/if}
                 {include uri=concat( 'design:explayouts/block/', $block.definition_identifier, '.tpl' ) block=$block zone=$zone}
             {/if}

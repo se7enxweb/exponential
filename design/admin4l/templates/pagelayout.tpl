@@ -33,7 +33,7 @@
     {if and( ezini_hasvariable( 'AdminLayoutSettings', 'Enabled', 'explayouts.ini' ), eq( ezini( 'AdminLayoutSettings', 'Enabled', 'explayouts.ini' ), 'enabled' ) )}
         {set $admin_layout = fetch( 'explayouts', 'resolve_admin_layout', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )}
         {if and( is_array( $admin_layout ), is_set( $admin_layout.block_count ), $admin_layout.block_count|gt( 0 ) )}
-            {set $admin_layout_id   = $admin_layout.id
+            {set $admin_layout_id   = concat( $admin_layout.id, '-', fetch( 'explayouts', 'admin_layout_cache_key', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) ).result.0 )
                  $admin_layout_type = $admin_layout.layout_type}
             {* the layout type decides which side columns the page has *}
             {if $admin_layout_type|eq( 'admin_full' )}
@@ -201,7 +201,7 @@
         {cache-block keys=array( $access_type, $user_hash, $admin_layout_id ) ignore_content_expiry}
         <div id="footer" class="float-break">
             <div id="footer-design">
-                {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='footer'}{/set-block}{else}{set $zone_html = ''}{/if}
+                {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='footer' skip=array( 'admin_popup_menu', 'admin_debug_area', 'admin_overlay' )}{/set-block}{else}{set $zone_html = ''}{/if}
                 {if $zone_html|trim|ne( '' )}{$zone_html}{else}{include uri='design:page_copyright.tpl'}{/if}
             </div>
         </div>
@@ -209,16 +209,19 @@
         <div class="break"></div>
 
         {* The popup menu include must be outside all divs. It is hidden by default. *}
-        {include uri='design:popupmenu/popup_menu.tpl'}
+        {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='footer' only=array( 'admin_popup_menu' )}{/set-block}{else}{set $zone_html = ''}{/if}
+        {if $zone_html|trim|ne( '' )}{$zone_html}{else}{include uri='design:popupmenu/popup_menu.tpl'}{/if}
         {/cache-block}
     </div>
     {* This comment will be replaced with actual debug report (if debug is on). *}
-    <!--DEBUG_REPORT-->
+    {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='footer' only=array( 'admin_debug_area' )}{/set-block}{else}{set $zone_html = ''}{/if}
+        {if $zone_html|trim|ne( '' )}{$zone_html}{else}<!--DEBUG_REPORT-->{/if}
 
     {* modal window and AJAX stuff *}
-    <div id="overlay-mask" style="display:none;"></div>
+    {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='footer' only=array( 'admin_overlay' )}{/set-block}{else}{set $zone_html = ''}{/if}
+    {if $zone_html|trim|ne( '' )}{$zone_html}{else}    <div id="overlay-mask" style="display:none;"></div>
     <img src={'2/loader.gif'|ezimage()} id="ajaxuploader-loader" style="display:none;"
-        alt="{'Loading...'|i18n( 'design/admin/pagelayout' )}" />
+        alt="{'Loading...'|i18n( 'design/admin/pagelayout' )}" />{/if}
 
 </body>
 
