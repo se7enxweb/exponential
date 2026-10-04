@@ -1,0 +1,5 @@
+$ composer update
+Lock file operations: 0 installs, 1 update, 0 removals
+  - Upgrading a/b (v1 => v2)
+Package operations: 0 installs, 1 update, 0 removals
+  - Upgrading a/b (v1 => v2)

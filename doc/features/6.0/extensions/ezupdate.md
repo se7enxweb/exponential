@@ -61,7 +61,12 @@ is wanted, with a backup (see [git_manager](git_manager.md) for backups from the
 3. Confirm that a **backup exists**, then **Update**. It runs in the background; the page
    follows the output. Afterwards the commands in `[JobSettings] AfterRunCommands[]` regenerate
    the autoloads and clear the ini, template and content caches.
-4. If a run cannot be followed the page says why: signed out (sign in again and reload; the run
+4. When a run ends the page shows a notice at the top: *The installation is up to date!
+   Update again soon to remain secure.* if there was nothing to install, update or remove
+   (Composer's "Nothing to modify in lock file" / "Nothing to install, update or remove", or
+   zero outdated packages after *Check for updates*), a short summary of what changed
+   otherwise, and the exit code if the run failed. It also appears while you watch the run.
+5. If a run cannot be followed the page says why: signed out (sign in again and reload; the run
    continues on the server), refused with HTTP 403 (the policy is missing), or a server error
    (it retries, waiting longer each time, and stops after ten failures in a row).
 
@@ -121,6 +126,7 @@ does not know them yet.
   a `GitManager` class this extension does not have, and the template posted to
   `git_manager/dashboard`). The Setup menu link to `git_manager/dump` went with them;
   `git_manager` carries its own.
+* 1.1.12 shows a result notice after every finished run (up to date, what changed, failed).
 * The license texts are `LICENSE.md` and `doc/LICENSE.md` since 1.1.8.
 
 ## Languages
