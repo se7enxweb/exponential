@@ -6,7 +6,7 @@
  *          with escaped values, the record as MSG); udp carries no body; the journald datagram has the identifier
  *  SK-02 — syslog to journald for real: two test records under a test identifier are found by journalctl -t
  *  SK-03 — webhook: records are spooled at flush (a request never waits), delivered in batches of BatchSize to a
- *          receiver on 127.0.0.1 (ai/bin/one/audit_stage5_webhook_test_receiver.php, started and stopped here) that
+ *          receiver on 127.0.0.1 (fixtures/expaudittestwebhookreceiver.php, started and stopped here) that
  *          checks every signature; ids arrive once, in order
  *  SK-04 — webhook outage: a forced failure keeps the batch spooled, waits RetryBackoff (doubled), records
  *          system.audit.sink.failed after Retries, and delivers everything once the receiver is back
@@ -93,7 +93,7 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
                 fclose( $s );
                 continue;
             }
-            $this->receiver = proc_open( array( PHP_BINARY, '-S', "127.0.0.1:$port", $root . 'ai/bin/one/audit_stage5_webhook_test_receiver.php' ),
+            $this->receiver = proc_open( array( PHP_BINARY, '-S', "127.0.0.1:$port", __DIR__ . '/fixtures/expaudittestwebhookreceiver.php' ),
                                          array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'file', $this->dir . 'receiver.log', 'a' ),
                                                 2 => array( 'file', $this->dir . 'receiver.log', 'a' ) ), $pipes, $root,
                                          array( 'AUDIT_RECEIVER_DIR' => $this->dir . 'receiver', 'AUDIT_RECEIVER_SECRET' => $secret, 'PATH' => getenv( 'PATH' ) ) );
