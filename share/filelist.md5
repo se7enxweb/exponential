@@ -7063,13 +7063,14 @@ c366152fb4373e3f901a708d42824028  tests/tests/lib/ezsession/EzpSessionHandlerDBP
 62590e69192025ffa6ffcce972f687d0  tests/tests/lib/ezsoap/ezsoapclient_test.php
 a42110e8e1698ffa85aa925d98b254b9  tests/tests/lib/ezsoap/suite.php
 3a2456958c8fdb63c88299a929e3a686  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
-1653c559baf5fb7a187848a50bf07e1b  tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php
+054ba093ee53d9607044dc8dd344c73c  tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php
 2a645a4d7081ec3e7be5ba692d72199f  tests/tests/lib/eztemplate/eztemplate_regression.php
 74b8ae3b9fcf266c30ba535db666649c  tests/tests/lib/eztemplate/eztemplateattributeoperator_test.php
 83893b6ba9f2b03cb297a789bb47bbfd  tests/tests/lib/eztemplate/eztemplatestringoperator_regression.php
 2abda93c80c7ab95ac4003173e9c83bd  tests/tests/lib/eztemplate/eztemplatetextoperator_regression.php
 079b6f13c6461a9312bb0d50d9c44a05  tests/tests/lib/eztemplate/eztemplatetextoperator_regression_testIssue15852_dynamic.tpl
 a61040cb1a3f66819c65d6e1c243b127  tests/tests/lib/eztemplate/eztemplatetextoperator_regression_testIssue15852_static.tpl
+4cb6fefc57778222fa9843c8e9bbe050  tests/tests/lib/eztemplate/fixtures/eztemplatenodetoolstub.php
 62fed5bc2084766ebfd99d1b7c4cb8b1  tests/tests/lib/eztemplate/suite.php
 d55f27da992880ec276e9fc8d117a356  tests/tests/lib/ezutils/ErrorCasePageTest.php
 1cb86abbb39e758fa2ec557a149ad317  tests/tests/lib/ezutils/PHPUnitTextUICommandShimTest.php

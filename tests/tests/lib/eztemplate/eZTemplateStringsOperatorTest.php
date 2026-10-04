@@ -46,40 +46,6 @@ class eZTemplateStringsOperatorTplStub
 }
 
 // ---------------------------------------------------------------------------
-// Minimal eZTemplateNodeTool stub so noParamTransformation() tests work
-// without bootstrapping the full eZ kernel.
-// The real class lives at lib/eztemplate/classes/eztemplatenodtool.php.
-// ---------------------------------------------------------------------------
-if ( !class_exists( 'eZTemplateNodeTool', false ) )
-{
-    class eZTemplateNodeTool
-    {
-        /** An element is "constant" when it carries a 'value' key. */
-        public static function isConstantElement( $element ): bool
-        {
-            return is_array( $element ) && array_key_exists( 'value', $element );
-        }
-
-        public static function elementConstantValue( $element )
-        {
-            return $element['value'];
-        }
-
-        /** Returns a node-array with a 'const' key — matches what the real class emits. */
-        public static function createConstantElement( $value ): array
-        {
-            return [ 'const' => $value ];
-        }
-
-        /** Returns a node-array with a 'code' key — matches what the real class emits. */
-        public static function createCodePieceElement( string $code, array $values ): array
-        {
-            return [ 'code' => $code, 'values' => $values ];
-        }
-    }
-}
-
-// ---------------------------------------------------------------------------
 
 class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
 {
@@ -1031,8 +997,10 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compiler
      */
+    #[PHPUnit\Framework\Attributes\RunInSeparateProcess]
     public function testNoParamTransformationConstantInput()
     {
+        require_once __DIR__ . '/fixtures/eztemplatenodetoolstub.php';
         $constParam = [ 'value' => 'He said "hi"' ];
         $parameters = [ $constParam ];   // must be a variable to pass as reference
         $result = $this->op->noParamTransformation(
@@ -1046,8 +1014,10 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compiler
      */
+    #[PHPUnit\Framework\Attributes\RunInSeparateProcess]
     public function testNoParamTransformationVariableInputEmitsCodePiece()
     {
+        require_once __DIR__ . '/fixtures/eztemplatenodetoolstub.php';
         $varParam   = [ 'variable' => 'x' ];  // not a constant element
         $parameters = [ $varParam ];            // must be a variable to pass as reference
         $result = $this->op->noParamTransformation(
@@ -1062,8 +1032,10 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compiler
      */
+    #[PHPUnit\Framework\Attributes\RunInSeparateProcess]
     public function testNoParamTransformationWrongParamCountReturnsFalse()
     {
+        require_once __DIR__ . '/fixtures/eztemplatenodetoolstub.php';
         // Two parameters are invalid for a no-param operator (only 1 expected: the input).
         $parameters = [ [ 'value' => 'a' ], [ 'value' => 'b' ] ]; // variable for ref
         $result = $this->op->noParamTransformation(
