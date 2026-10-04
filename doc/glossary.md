@@ -16,7 +16,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## A
 
-- **admin, admin2, admin3, admin4, classic**: the administration designs. `admin3` works on phones and wide screens; `admin4` is a complete design with a light and a dark mode; `classic` is the grey interface without YUI. See [admin3](features/6.0/admin3-responsive-admin.md), [admin4](features/6.0/admin4-design.md), [admin classic theme](features/6.0/extensions/sevenx_themes_admin_classic.md).
+- **admin, admin2, admin3, admin4, classic**: the administration designs. `admin3` works on phones and wide screens; `admin4` is a complete design with a light and a dark mode; `classic` is the grey interface without YUI. See [admin3](features/6.0/admin3-responsive-admin.md), [admin4](features/6.0/admin4-design.md), [admin4l](features/6.0/admin4l.md) (admin4 built from layouts), [admin classic theme](features/6.0/extensions/sevenx_themes_admin_classic.md).
 - **AdminAid**: an extension with a debugging helper for administrators. [AdminAid](features/6.0/extensions/AdminAid.md).
 - **adminneo**: a database manager (a fork of Adminer), embedded in the admin by the DSE extension. [AdminNeo](features/6.0/adminneo-database-manager.md).
 - **Apache**: the web server that can run the installation together with **PHP-FPM**. [Deploying](guides/deploying.md).
