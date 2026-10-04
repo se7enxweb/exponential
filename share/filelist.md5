@@ -1207,6 +1207,7 @@ e7081b42039be849f2a5fb783a687fe7  design/admin4/templates/workflow/groupedit.tpl
 dc39637a84a699b8a9c4022966f35109  design/admin4/templates/workflow/processlist.tpl
 70d1bb08e78f1694d97c4b84277970ce  design/admin4/templates/workflow/view.tpl
 2f2a21d30560591b6274fb6361464e42  design/admin4/templates/workflow/workflowlist.tpl
+cdbf0f03d6ba065df691260f9cef81b1  design/admin4l/templates/explayouts/admin_zone.tpl
 3d0d0e55b78d7ec1a771bee80b897008  design/admin4l/templates/explayouts/block/admin_bookmarks.tpl
 bd8bbeb157adb74c7b3f3d9e0a4a563e  design/admin4l/templates/explayouts/block/admin_breadcrumb.tpl
 f78a198bf9da2ffad2f5ac7a884abf38  design/admin4l/templates/explayouts/block/admin_clear_cache.tpl
@@ -1225,6 +1226,7 @@ dcd815a83b6edb8cfbc374734189fbf8  design/admin4l/templates/explayouts/block/admi
 571a155f4925c4905433c2efab2ecf18  design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl
 0c111d883220c9b7d32e8ea115cb3e00  design/admin4l/templates/explayouts/block/admin_tab_menu.tpl
 4070f8d9fd9369d7a5f6803e06aeefc0  design/admin4l/templates/explayouts/block/admin_theme_switch.tpl
+827d3573168f81a1e39afe75fbe436b1  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
