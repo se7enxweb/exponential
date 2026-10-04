@@ -132,6 +132,15 @@ body,
   background-color: var(--a4-header-bg);
   background-image: none;
 }
+/* Closed, the phone menu takes no room: max-height 0 does not remove admin3's padding-top (6rem), so the closed
+   panel was still 96px tall, 32px more than the header, and laid the header's veil over the top of the page. */
+@media screen and (max-width: 575.98px) {
+  .navbar-menu:not(.show) {
+    padding-top: 0;
+    background-color: transparent;
+    pointer-events: none;
+  }
+}
 /* the logo: dark letters on the light header, admin3's white ones on the dark */
 #header-logo .brand {
   background-image: var(--a4-logo);
