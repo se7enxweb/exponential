@@ -650,7 +650,7 @@ class expContentJob
         if ( !function_exists( 'proc_open' ) || in_array( 'proc_open', $disabled, true ) )
             return 'proc_open() is disabled in this PHP (disable_functions)';
         $argv = self::$spawnArgv ? call_user_func( self::$spawnArgv, $this ) : self::workerArgv( $this->id(), $this->siteaccess() );
-        if ( !self::$spawnArgv && !is_executable( $argv[0] ) )
+        if ( !self::$spawnArgv && !is_executable( $argv[0] ) && !( class_exists( 'expProcessTools' ) && expProcessTools::phpCli() === $argv[0] ) )
             return 'the PHP command line binary ' . $argv[0] . ' is not executable (set content.ini [ContentJobSettings] PhpBinary)';
         $out = expContentJobStore::path( $this->id(), '.out' );
         if ( !is_file( $out ) )
@@ -659,7 +659,8 @@ class expContentJob
             @chmod( $out, 0660 );
             expContentJobStore::fixOwner( $out );
         }
-        $setsid = is_executable( '/usr/bin/setsid' ) ? '/usr/bin/setsid' : ( is_executable( '/bin/setsid' ) ? '/bin/setsid' : '' );
+        $setsid = class_exists( 'expProcessTools' ) ? (string)expProcessTools::setsid()
+            : ( is_executable( '/usr/bin/setsid' ) ? '/usr/bin/setsid' : ( is_executable( '/bin/setsid' ) ? '/bin/setsid' : '' ) );
         $shell = is_executable( '/bin/bash' ) ? '/bin/bash' : '/bin/sh';
         // $1 the output file, the rest the command: close what the parent left open above 2, then start the
         // command detached with its own stdin/stdout/stderr; the shell's own errors go to the pipe we read
@@ -799,7 +800,10 @@ class expContentJob
     {
         $php = (string) self::setting( 'PhpBinary' );
         if ( $php === '' || !is_executable( $php ) )
-            $php = is_file( PHP_BINDIR . '/php' ) ? PHP_BINDIR . '/php' : 'php';
+        {
+            $found = class_exists( 'expProcessTools' ) ? expProcessTools::phpCli() : false;
+            $php = $found ? $found : ( is_file( PHP_BINDIR . '/php' ) ? PHP_BINDIR . '/php' : 'php' );
+        }
         $argv = array( $php, 'bin/php/expcontentjob.php', 'run', (string) $id, '-q' );
         if ( $siteaccess !== '' )
             array_push( $argv, '-s', $siteaccess );

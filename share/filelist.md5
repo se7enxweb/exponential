@@ -13,7 +13,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 393352abc2af172858800e4029b1185b  autoload.php
-4906b04d8f378e381f9f716cec9b6d7e  autoload/ezp_kernel.php
+ed26f583c916571834397178e3506b50  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -145,7 +145,7 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-3e6962ae8301dd31913a342db0292f8d  composer.json
+cda2953eac97ae972a48e02bec43ddfc  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 fc1728636781a401032ccd6494974299  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
@@ -4451,7 +4451,7 @@ db5aa167ba576c21ecdfa485db307355  kernel/classes/clusterfilehandlers/dbbackends/
 35f35b4871e958ca6fc0a001b967a54d  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 3422954e3e3ed4a458261795b071272a  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
 1097e940a53c091558141e0499037670  kernel/classes/confirmorderhandlers/ezdefaultconfirmorderhandler.php
-709c34d40096e8b0b6107ae9a80bd967  kernel/classes/contentjob/expcontentjob.php
+5443fa4963e1dc2fd196b17436df4c95  kernel/classes/contentjob/expcontentjob.php
 77a2ac26bda54acaa35d173f34de2ef3  kernel/classes/contentjob/expcontentjobaddlocation.php
 e9f120e3d9554fb67d0e0335940e1a98  kernel/classes/contentjob/expcontentjobbatchtype.php
 493a5d6b7aaa989dcab9776561fc786a  kernel/classes/contentjob/expcontentjobcopysubtree.php
@@ -4566,7 +4566,8 @@ e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
 342e118abe04b2b9e9ebc46328e5dfd8  kernel/classes/expkickstarterini.php
 7a07e3a463f4b41105e7fcc17ab5c98d  kernel/classes/expmaintenance.php
 b8ca72676a5a9dfafef6ddb0b6e9ee7a  kernel/classes/expphar.php
-21b59e62f5cad811c8cdc0ace277e6fe  kernel/classes/exppreloadjob.php
+1a1f23777f111cdae910ac7ef5032192  kernel/classes/exppreloadjob.php
+1eda4d2740e2f5e9ff0ccaef297fb1aa  kernel/classes/expprocesstools.php
 5c085c15fe530c93eb0b61571c3f36cb  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
 3c745426744516a730b1a2ed2e2da9e3  kernel/classes/expvelocity.php
@@ -6715,6 +6716,7 @@ c0dd8393942df9359fd823e6903cd3e4  tests/tests/kernel/classes/ini/expIniEditorTes
 e661f4e1af49a324f6b521358bf30822  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
 678cb2f17207b03cd3d4132583aef9e9  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 e612f43fc85b8406b0acb712148bae69  tests/tests/kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule_regression.php
+57076f462adaed80c14c9883a0779e27  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
 2f3f75663733de9be01ae8f72d3bcbd0  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
 a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php
 5cabf4962c374801c48d9d37133de735  tests/tests/kernel/classes/runnable/CommandHelpersTest.php

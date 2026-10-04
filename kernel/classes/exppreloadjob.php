@@ -49,10 +49,13 @@ class expPreloadJob
         touch( $dir . '/' . $id . '.jsonl' );
 
         $php = self::phpBinary();
-        $setsid = is_executable( '/usr/bin/setsid' ) ? '/usr/bin/setsid' : ( is_executable( '/bin/setsid' ) ? '/bin/setsid' : false );
+        $setsid = class_exists( 'expProcessTools' ) ? expProcessTools::setsid()
+            : ( is_executable( '/usr/bin/setsid' ) ? '/usr/bin/setsid' : ( is_executable( '/bin/setsid' ) ? '/bin/setsid' : false ) );
         if ( !$php || !$setsid || !function_exists( 'proc_open' ) )
         {
-            $error = 'The preloader needs proc_open, setsid and the PHP command line.';
+            $error = class_exists( 'expProcessTools' ) && expProcessTools::error() !== ''
+                ? 'The preloader cannot start: ' . expProcessTools::error()
+                : 'The preloader needs proc_open, setsid and the PHP command line.';
             return false;
         }
         $command = array( $setsid, '-f', $php, 'bin/php/preloadjob.php', '--id=' . $id,
@@ -140,6 +143,8 @@ class expPreloadJob
      */
     private static function phpBinary()
     {
+        if ( class_exists( 'expProcessTools' ) )
+            return expProcessTools::phpCli();
         if ( PHP_SAPI === 'cli' && PHP_BINARY !== '' )
             return PHP_BINARY;
         foreach ( array( PHP_BINDIR . '/php', '/usr/local/bin/php', '/usr/bin/php' ) as $file )

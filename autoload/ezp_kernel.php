@@ -1013,6 +1013,7 @@ return array(
       'expPhar'                                                      => 'kernel/classes/expphar.php',
       'expPreloadJob'                                                => 'kernel/classes/exppreloadjob.php',
       'expPreloadRunner'                                             => 'kernel/setup/exppreloadrunner.php',
+      'expProcessTools'                                              => 'kernel/classes/expprocesstools.php',
       'expRADCatalogue'                                              => 'kernel/setup/expradcatalogue.php',
       'expRADHealth'                                                 => 'kernel/setup/expradhealth.php',
       'expRADSurvey'                                                 => 'kernel/setup/expradsurvey.php',
