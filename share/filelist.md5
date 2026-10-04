@@ -6599,7 +6599,7 @@ e6b808f293e1210884853e65c6b5dd7f  tests/tests/kernel/classes/clusterfilehandlers
 93c9c53ad735f76a5bd4bbb2961fb469  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
 3dc0333408fb6ae63ad09e93427f72d5  tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php
 e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php
-a49d17a769e19037402a6577dfcde017  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
+f96b3631ec7b3ddedc4e9e5cfc419e60  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItemTest.php
 95a20d0e1c4f0d4edb32e80ea290d23a  tests/tests/kernel/classes/eZContentClassAttributeTest.php
 4ca02673913513270eaef99170d6106d  tests/tests/kernel/classes/eZContentClassTest.php

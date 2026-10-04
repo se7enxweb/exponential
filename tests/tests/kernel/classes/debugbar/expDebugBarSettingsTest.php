@@ -54,10 +54,30 @@ class expDebugBarTestRegistry extends expDebugBarRegistry
     }
 }
 
+/** A site.ini that sets nothing: the lock-out check compares with the settings before the change. */
+class expDebugBarTestEmptyIni
+{
+    public function hasVariable( $block, $variable )
+    {
+        return false;
+    }
+
+    public function variable( $block, $variable )
+    {
+        return null;
+    }
+}
+
 class expDebugBarTestSettings extends expDebugBarSettings
 {
+    /**
+     * The check is made against a site.ini without debug settings, not against the installation's own: where
+     * DebugByIP is enabled for other addresses (as on a live site) the test address was never allowed, and no
+     * change could lock it out.
+     */
     public function check( array $def, array $after )
     {
+        $this->chains['site.ini'] = array( 'ini' => new expDebugBarTestEmptyIni(), 'files' => array() );
         return $this->accessCheck( $def, $after );
     }
 }
