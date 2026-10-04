@@ -6467,7 +6467,7 @@ f8e49cec6be93c26e7623ddc0a87ef79  tests/bin/ezptestrunner.php
 d01b9528e554acb15438d8db3918cd3a  tests/bin/lint_manifest.txt
 b92bb6d52f566d4ea1a0d01a8940e360  tests/bin/test_report_2026-02-21.txt
 5f0e6422e18bece875206a606cfe8003  tests/bin/tests/functional_tests.php
-950e22536bb03494ef3d0465b5916cd2  tests/bootstrap.php
+86eee1245d701c306d83a66f2c2fca79  tests/bootstrap.php
 29513a3dd65d617fb046ffdd009e895f  tests/compat/PHPUnit/TextUI/Configuration/Registry.php
 d56115c8242b3081672f63607aa69361  tests/runtests.php
 59b4689fb7226fd9c820b76ab68d979b  tests/settings/site.ini
@@ -7155,6 +7155,7 @@ d941ed32cf25f2db7cf01557af36dcc8  tests/toolkit/ezpdatabasetestcase.php
 876b2dfd8c5dc9210252b63036ee9e7f  tests/toolkit/ezpdsn.php
 b59058bb35a0d81caf9cdf01a57087b7  tests/toolkit/ezpextensionhelper.php
 07f91ca501a167d157f60f0bb69a6ae2  tests/toolkit/ezpinihelper.php
+26e0dcb3df5224bf23e5f5400312c034  tests/toolkit/ezpliveinstallation.php
 6113cf61216a4796b3f8ed5602c7710f  tests/toolkit/ezpregressiontest.php
 066b8cefd09dcae040ac3532f7113666  tests/toolkit/ezptestcase.php
 a82688fd6259880c2e627b50393df5eb  tests/toolkit/ezptestdatabasehelper.php

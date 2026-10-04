@@ -287,6 +287,7 @@ $optional = [
     'ezpregressiontest.php',
     'ezpdatabaseregressiontest.php',
     'ezpdatabasesuite.php',
+    'ezpliveinstallation.php',
 ];
 foreach ( $optional as $file )
 {
