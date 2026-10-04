@@ -48,7 +48,7 @@ $options = array(
     'port'           => '8080',
     'admin-port'     => '8081',
     'email'          => 'nospam@exponential.earth',
-    'password'       => 'publish',
+    'password'       => null,
     'first-name'     => 'Administrator',
     'last-name'      => 'User',
 );
@@ -146,21 +146,30 @@ if ( !filter_var( $options['email'], FILTER_VALIDATE_EMAIL ) )
     fwrite( STDERR, "--email is not an e-mail address: {$options['email']}\n" );
     exit( 1 );
 }
-// A generated password: 24 characters of the bcrypt alphabet, from the
-// operating system's secure random source (about 143 bits).
-if ( $flags['random-password'] )
+// The administrator password. Without --password, or with --random-password,
+// the installer generates one (24 characters of the bcrypt alphabet, from the
+// operating system's secure random source, about 143 bits). A given one is kept
+// as it is when the installation accepts it: not empty, at least
+// MinPasswordLength characters and not a well-known one; otherwise a generated
+// one replaces it and the summary says so.
+require_once 'autoload.php';
+$passwordNote = '';
+if ( $options['password'] !== null && trim( $options['password'] ) === '' )
 {
-    $alphabet = './ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    $generated = '';
-    for ( $i = 0; $i < 24; $i++ )
-        $generated .= $alphabet[random_int( 0, strlen( $alphabet ) - 1 )];
-    $options['password'] = $generated;
-}
-if ( $options['password'] === '' )
-{
-    fwrite( STDERR, "--password cannot be empty (the default is publish)\n" );
+    fwrite( STDERR, "--password cannot be empty (leave it out to have one generated)\n" );
     exit( 1 );
 }
+if ( $flags['random-password'] || $options['password'] === null )
+{
+    $options['password'] = \Exponential\Command\Kernel\Install::generatePassword();
+    $passwordNote = $flags['random-password'] ? 'requested with --random-password' : 'no --password given';
+}
+else if ( ( $problem = \Exponential\Command\Kernel\Install::passwordProblem( $options['password'] ) ) !== null )
+{
+    $options['password'] = \Exponential\Command\Kernel\Install::generatePassword();
+    $passwordNote = 'the password given is ' . $problem . ' and cannot be installed';
+}
+$passwordGiven = $passwordNote === '';
 
 // Where the site is. The installer builds every siteaccess's address from it;
 // without it that would be the host of this command line: localhost.
@@ -259,6 +268,10 @@ if ( $written === false )
     exit( 1 );
 }
 $startedAt = time();
+// A password generated here is recorded where the setup records its own, so the
+// two cases look alike and the file is the one place to read it back
+if ( !$passwordGiven && !$flags['dry-run'] )
+    \Exponential\Command\Kernel\Install::writeRecordedPassword( $rootDir . '/var/log/initial-admin-password', $options['password'], $passwordNote );
 // The installer ends the process itself, so the clean-up and the summary run
 // at shutdown. The run succeeded when it wrote the override settings afresh,
 // with a database in them.
@@ -275,7 +288,7 @@ $summary = array(
     'Siteaccesses'   => $options['site-access'] . ', ' . $options['admin-access'] . ' (by ' . ( $accessType === 'hostname' ? 'host' : $accessType ) . ')',
     'Configuration'  => 'var/log/exp-install-' . $stamp . '.ini (passwords masked)',
 );
-register_shutdown_function( function () use ( $kickstart, $aside, $sections, $logDir, $stamp, $startedAt, $overrideFile, $flags, &$summary ) {
+register_shutdown_function( function () use ( $kickstart, $aside, $sections, $logDir, $stamp, $startedAt, $overrideFile, $flags, &$summary, &$passwordNote, $passwordGiven, $rootDir ) {
     if ( is_dir( $logDir ) || @mkdir( $logDir, 0775, true ) )
         @file_put_contents( $logDir . '/exp-install-' . $stamp . '.ini', installIniText( $sections, true ) );
     @unlink( $kickstart );
@@ -287,6 +300,20 @@ register_shutdown_function( function () use ( $kickstart, $aside, $sections, $lo
         && preg_match( '/^\s*\[DatabaseSettings\]/m', (string)file_get_contents( $overrideFile ) );
     if ( !$ok )
         return;
+    // What the installation really set: the kickstarter replaces a password it
+    // refuses and records the one it made, so that file is the truth when this run wrote it
+    $recorded = \Exponential\Command\Kernel\Install::readRecordedPassword( $rootDir . '/var/log/initial-admin-password', $startedAt );
+    if ( $recorded !== null && $recorded !== $summary['Password'] )
+    {
+        $summary['Password'] = $recorded;
+        $passwordNote = 'the password given is well-known and was refused by the installation';
+        $passwordGiven = false;
+    }
+    else if ( $recorded !== null && $passwordNote === '' )
+        $passwordNote = 'made by the installation itself';
+    if ( $passwordNote !== '' )
+        $summary = \Exponential\Command\Kernel\Install::insertAfter( $summary, 'Password',
+            'Password note', 'generated: ' . $passwordNote . '; also in var/log/initial-admin-password (owner only), change it and delete that file' );
     $summary['Installed'] = date( 'Y-m-d H:i:s T' ) . ' (' . ( time() - $startedAt ) . 's)';
     $width = max( array_map( 'strlen', array_keys( $summary ) ) );
     $rule = str_repeat( '=', 64 );
@@ -300,18 +327,17 @@ register_shutdown_function( function () use ( $kickstart, $aside, $sections, $lo
     echo "    Password: {$summary['Password']}\n";
     echo "    Site:     {$summary['Site']}\n";
     echo "$rule\n";
-    if ( $summary['Password'] !== 'publish' )
+    if ( $passwordGiven )
         echo "  The password is shown here once and stored nowhere else in clear text.\n";
     else
-        echo "  The password is the default one: change it before the site goes public.\n";
+        echo "  The password was generated: it is also in var/log/initial-admin-password (owner only).\n"
+           . "  Change it after the first login and delete that file.\n";
 } );
 
 echo "exp:install: {$options['package']} on $db"
     . ( $db === 'sqlite' ? " ($dbName)" : " ({$dbName} at {$options['db-host']}" . ( $dbPort !== '' ? ":$dbPort" : '' ) . ')' )
     . ", $url, access by " . ( $accessType === 'hostname' ? 'host' : $accessType )
-    . ", administrator admin / " . ( $options['password'] === 'publish' ? 'publish' : ( $flags['random-password'] ? '(generated, shown at the end)' : '(as given)' ) ) . "\n";
-
-require_once 'autoload.php';
+    . ", administrator admin / " . ( $passwordGiven ? '(as given)' : '(generated, shown at the end)' ) . "\n";
 
 function installUsage()
 {
@@ -320,7 +346,8 @@ Usage: ./console exp:install [options]
 
 Installs Exponential in one command: no kickstart.ini to write first.
 Everything has a default, so "./console exp:install" alone installs the
-multisite package on SQLite with the administrator admin / publish.
+multisite package on SQLite with the administrator admin and a generated
+password, shown once at the end.
 
 Database (default: SQLite, no server needed)
   --db=<type>            sqlite (default), mysql, pgsql, mongodb or oracle
@@ -356,9 +383,14 @@ Site
 
 Administrator (login: admin)
   --email=<address>      default nospam@exponential.earth
-  --password=<pass>      default publish
-  --random-password      generate a strong one instead (24 characters of the
-                         bcrypt alphabet ./A-Za-z0-9), shown once at the end
+  --password=<pass>      default: a generated one (see --random-password). A
+                         given one is kept when it has at least 10 characters
+                         (site.ini MinPasswordLength) and is not a well-known
+                         one such as publish or admin; otherwise a generated
+                         one replaces it and the summary says so
+  --random-password      generate a strong one (24 characters of the bcrypt
+                         alphabet ./A-Za-z0-9), shown once at the end and
+                         written to var/log/initial-admin-password
   --first-name=<name>    default Administrator
   --last-name=<name>     default User
 

@@ -48,10 +48,17 @@ process list and shell history.
 | Administrator | `--email`, `--password`, `--random-password`, `--first-name`, `--last-name` |
 | Control | `--force`, `--dry-run`, `--print` |
 
-- Without options the administrator is `admin` with the password `publish` and
+- Without options the administrator is `admin` with a generated password and
   the e-mail `nospam@exponential.earth` (from `./console exp:install --help`).
-- `--random-password` generates a 24-character password and prints it once in
-  the summary. Use it; the default password exists only so a first try works.
+- A generated password (the default, or `--random-password`) has 24 characters.
+  It is printed in the summary, with a note that it was generated and why, and
+  written to `var/log/initial-admin-password` (readable by the owner only).
+- `--password=<pass>` is kept as given when it has at least 10 characters
+  (`MinPasswordLength`) and is not a well-known one such as `publish` or
+  `admin`. Otherwise a generated one replaces it. The summary always shows the
+  password the installation really set: when the setup replaces a password it
+  refuses, the summary reads the one it recorded in
+  `var/log/initial-admin-password`.
 - It refuses to run over an existing installation unless you add `--force`.
 - `--dry-run` checks the configuration and the packages and installs nothing.
 - `--print` shows the configuration it would use, passwords masked.

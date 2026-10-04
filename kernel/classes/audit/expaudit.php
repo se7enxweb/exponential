@@ -1308,10 +1308,16 @@ class expAudit
         return expAuditPrivacy::cut( implode( ' ', $out ), 512 );
     }
 
-    /** @return bool Users may be looked up (eZUser is there and no fixed test context is set) */
+    /**
+     * @return bool Users may be looked up (eZUser is there, no fixed test context is set, and no setup run is
+     *         in progress: an installation has no user yet, and the database the settings name at that moment
+     *         may be another one than the one being installed, which a lookup would try to connect to)
+     */
     protected static function canLookUp()
     {
         if ( !class_exists( 'eZUser' ) )
+            return false;
+        if ( class_exists( 'expSetupLog', false ) && expSetupLog::runId() !== null )
             return false;
         $config = expAuditConfig::get();
         return !isset( $config['context'] );

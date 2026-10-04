@@ -70,8 +70,10 @@ If you run as `root`, add `--allow-root-user` to the scripts that ask for it. Th
 ```
 
 This installs the multisite site package on SQLite, in `eng-US`, with the siteaccesses `site` (the public site) and
-`admin` told apart by the first part of the address. `--random-password` makes a 24 character administrator password
-and shows it once; without it the password is `publish`, which is fine for a first try on your own machine only.
+`admin` told apart by the first part of the address. The administrator password is generated (24 characters) and shown
+once at the end, and also written to `var/log/initial-admin-password`; `--random-password` asks for that explicitly.
+A password of your own with `--password=...` is kept as given when it has at least 10 characters and is not a
+well-known one such as `publish` or `admin`; otherwise a generated one replaces it and the summary says so.
 The install refuses to run over an existing installation unless you add `--force`, and `--help` lists every option.
 
 Expected, at the end (values differ):
@@ -211,7 +213,7 @@ and [Extension loading order](../features/6.0/extension-loading-order.md).
 | `exp:install` says an installation exists | Add `--force` only if you mean to replace it. |
 | A white page or a 500 error | Read `var/log/error.log`. Check that `php -v` shows 8.1 or newer and that `vendor/` exists (run `composer install`). |
 | The site address does not answer | Is the server running (`./console exp:velocity status --engine=php`)? Does the port match `--url`? |
-| You forgot the password | `exp:install` showed it once and kept no copy. The setup wizard and the kickstarter write theirs once to `var/log/initial-admin-password`. Set a new one with `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, see [Reset a user password](../features/6.0/reset-user-password.md). |
+| You forgot the password | `exp:install` showed it once; a generated one is also in `var/log/initial-admin-password`. The setup wizard and the kickstarter write theirs once to `var/log/initial-admin-password`. Set a new one with `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, see [Reset a user password](../features/6.0/reset-user-password.md). |
 | A change does not show | Clear the content cache (step 6) and reload the page. |
 
 ## Related pages
