@@ -553,7 +553,7 @@ b040f6983ae847ee50d402ddc0156fc1  design/admin/templates/setup/info.tpl
 1b0766e4eecfd531b9f0c4506ff26747  design/admin/templates/setup/maintenance.tpl
 d1a3e27332a030771a8fce082ba8e306  design/admin/templates/setup/moduleextension.tpl
 a77820185ce58c7a7adadcc0a0b33c3f  design/admin/templates/setup/modulewizard.tpl
-6ff757a248e65ebaebc3ed7935f2fc5c  design/admin/templates/setup/preload.tpl
+23390efb7571c1f67c6917143520ec08  design/admin/templates/setup/preload.tpl
 77d5784c529f92b24eef559b269adaf1  design/admin/templates/setup/quick_settings.tpl
 385046ac4d7141fb487a0aa843bff0f9  design/admin/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin/templates/setup/rad_licence_select.tpl
@@ -1115,7 +1115,7 @@ b040f6983ae847ee50d402ddc0156fc1  design/admin4/templates/setup/info.tpl
 1b0766e4eecfd531b9f0c4506ff26747  design/admin4/templates/setup/maintenance.tpl
 d1a3e27332a030771a8fce082ba8e306  design/admin4/templates/setup/moduleextension.tpl
 a77820185ce58c7a7adadcc0a0b33c3f  design/admin4/templates/setup/modulewizard.tpl
-6ff757a248e65ebaebc3ed7935f2fc5c  design/admin4/templates/setup/preload.tpl
+23390efb7571c1f67c6917143520ec08  design/admin4/templates/setup/preload.tpl
 77d5784c529f92b24eef559b269adaf1  design/admin4/templates/setup/quick_settings.tpl
 385046ac4d7141fb487a0aa843bff0f9  design/admin4/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin4/templates/setup/rad_licence_select.tpl
@@ -5516,7 +5516,7 @@ f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 11cd35571a5011c7ea5ec0f99593199b  kernel/setup/expkerneloverridewizard.php
 7bf4950cdfa139973cda91e39826e2e3  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
-9808445e4255432558d040cd8ee0548f  kernel/setup/exppreloadrunner.php
+8862da74e392ee622d00f0c18a1f382d  kernel/setup/exppreloadrunner.php
 8db9625a309e767b44e434929add4ed9  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
 9d29ad5fc017910fd28b55a2431641c3  kernel/setup/expradsurvey.php
@@ -6719,6 +6719,7 @@ c0dd8393942df9359fd823e6903cd3e4  tests/tests/kernel/classes/ini/expIniEditorTes
 e661f4e1af49a324f6b521358bf30822  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
 678cb2f17207b03cd3d4132583aef9e9  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 e612f43fc85b8406b0acb712148bae69  tests/tests/kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule_regression.php
+e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
 57076f462adaed80c14c9883a0779e27  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
 2f3f75663733de9be01ae8f72d3bcbd0  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
 a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php

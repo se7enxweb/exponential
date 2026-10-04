@@ -208,7 +208,7 @@
             td.appendChild( link( entry.url ) );
             row.appendChild( td );
 
-            textCell( tr, entry.status ? String( entry.status ) : tr( 'noResponse' ), true );
+            textCell( row, entry.status ? String( entry.status ) : tr( 'noResponse' ), true );
 
             var from = document.createElement( 'td' );
             from.style.wordBreak = 'break-all';

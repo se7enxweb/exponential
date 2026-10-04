@@ -237,7 +237,13 @@ class expPreloadRunner
      */
     public function startUrls( $base )
     {
-        $base = $base . $this->basePath();
+        // SiteURL may already end in the siteaccess prefix (latest.demo.exponential.earth/site):
+        // the prefix is added once, never repeated (/site/site).
+        $prefix = $this->basePath();
+        $basePart = rtrim( (string)parse_url( $base, PHP_URL_PATH ), '/' );
+        if ( $prefix !== '' && substr( $basePart, -strlen( $prefix ) ) === $prefix )
+            $prefix = '';
+        $base = $base . $prefix;
 
         if ( $this->options['start_paths'] )
         {
@@ -391,6 +397,10 @@ class expPreloadRunner
 
         $skip = array_flip( explode( ',', self::SKIP_EXTENSIONS ) );
         $host = parse_url( $base, PHP_URL_HOST );
+        // A root-relative link ('/site/about') starts at the host, not at the base url, which
+        // may itself end in the siteaccess prefix.
+        $origin = parse_url( $base, PHP_URL_SCHEME ) . '://' . $host
+                . ( parse_url( $base, PHP_URL_PORT ) ? ':' . parse_url( $base, PHP_URL_PORT ) : '' );
 
         foreach ( $m[1] as $href )
         {
@@ -420,7 +430,7 @@ class expPreloadRunner
             elseif ( strpos( $href, '://' ) !== false )
                 $url = $href;
             elseif ( $href[0] === '/' )
-                $url = $base . $href;
+                $url = $origin . $href;
             else
                 $url = rtrim( dirname( $pageUrl . 'x' ), '/' ) . '/' . $href;
 
