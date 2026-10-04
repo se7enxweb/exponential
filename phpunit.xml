@@ -77,6 +77,15 @@
             <directory suffix="Test.php">tests/tests/extension/cjw_newsletter</directory>
         </testsuite>
 
+        <!--
+          Admin layouts (admin4l): resolver, rules, separation, cache keys, block definitions. Live database and
+          settings of the admin siteaccess, nothing written but the resolver's own cache generation.
+          Run: php vendor/bin/phpunit - -testsuite explayouts_admin
+        -->
+        <testsuite name="explayouts_admin">
+            <directory suffix="Test.php">tests/tests/extension/explayouts_admin</directory>
+        </testsuite>
+
     </testsuites>
 
     <groups>
