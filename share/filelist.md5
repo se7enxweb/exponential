@@ -145,7 +145,7 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-22ee7164b9bfcaa4d9b8da2080fee07c  composer.json
+e7b1501d5ca2b6101fa03cb41112073f  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 fc1728636781a401032ccd6494974299  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
@@ -3145,7 +3145,7 @@ d401faa952476917589d0af7b2106553  doc/features/6.0/extensions/ezpm.md
 9ea2ac47578eb3e773202b4d1a561994  doc/features/6.0/extensions/ezprestapiprovider.md
 b10ae52b6a2699ce71e0f94e29c5b0fa  doc/features/6.0/extensions/ezstarrating.md
 4490230de3492ec840d6b6f4df37bed4  doc/features/6.0/extensions/eztags.md
-9a082976fb80bc6f44f811ca17ef6d91  doc/features/6.0/extensions/ezupdate.md
+bd3fc09c1a4f7abb484f3b1830dc5538  doc/features/6.0/extensions/ezupdate.md
 7bbeb5edf559efc1b948275387435237  doc/features/6.0/extensions/ezwebin-ezpackage.md
 10fde869a2d11cb168e6bb0070c7fac7  doc/features/6.0/extensions/ezwebin.md
 3194262a46f7c76bbcec0ca92c548f88  doc/features/6.0/extensions/ezwt.md
@@ -6529,6 +6529,7 @@ ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServices
 bb3c7095f360ee7ad654a1ff86ad7e31  tests/tests/extension/ezoe/expOEUrlFetcherTest.php
 982cbfcccf0ec493627b9b8f20f3d3dd  tests/tests/extension/ezoe/expOEViewsJsonTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
+56064fa7819e171003682e2abc276752  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
 80580bf8003967c59876d6359066f6b6  tests/tests/kernel/classes/audit/expAuditAlertsTest.php
 e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchiveTest.php
 52b81f30adda648cbe262f79efc6b68b  tests/tests/kernel/classes/audit/expAuditBufferTest.php
