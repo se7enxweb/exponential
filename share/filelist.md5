@@ -6529,7 +6529,8 @@ ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServices
 bb3c7095f360ee7ad654a1ff86ad7e31  tests/tests/extension/ezoe/expOEUrlFetcherTest.php
 982cbfcccf0ec493627b9b8f20f3d3dd  tests/tests/extension/ezoe/expOEViewsJsonTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
-56064fa7819e171003682e2abc276752  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
+8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
+7a425cdb99ce71ff04e1a65bc1ccd33f  tests/tests/extension/ezupdate/fixtures/probe_composer_location.php
 80580bf8003967c59876d6359066f6b6  tests/tests/kernel/classes/audit/expAuditAlertsTest.php
 e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchiveTest.php
 52b81f30adda648cbe262f79efc6b68b  tests/tests/kernel/classes/audit/expAuditBufferTest.php
