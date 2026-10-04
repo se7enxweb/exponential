@@ -15,9 +15,11 @@
         var header = document.getElementById('header');
         var flex = document.querySelector('.dashboard-flex');
         if (!header || !flex) return;
-        var rem = header.offsetHeight / 16;
-        if (flex.style.getPropertyValue('--header-height') !== rem + 'rem') {
-            flex.style.setProperty('--header-height', rem + 'rem');
+        // Pixels, not rem: a rem is the browser's root font size (user text size, mobile minimum size), which is not
+        // always 16px, and a value divided by 16 then left less room than the header really takes.
+        var px = header.getBoundingClientRect().height;
+        if (flex.style.getPropertyValue('--header-height') !== px + 'px') {
+            flex.style.setProperty('--header-height', px + 'px');
         }
     }
 

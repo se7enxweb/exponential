@@ -240,7 +240,7 @@ function adjustHeaderHeight() {
     }
 
     // Set the --header-height CSS variable dynamically
-    dashboard.style.setProperty('--header-height', `${header.offsetHeight / 16}rem`);
+    dashboard.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
 }
 
 (($) => {
