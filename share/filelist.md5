@@ -145,7 +145,7 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-292c370611f3c516ee9eacd201cd8701  composer.json
+8cbc4c22023fb835ffde685f3d8a6996  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 fc1728636781a401032ccd6494974299  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
@@ -2606,7 +2606,7 @@ de93c492b3a2fa49ea08a89471fc968a  doc/bc/6.0/opml.md
 82ffa24ea596774436d71e1ec2a4188b  doc/bc/6.0/php8.md
 17a4aa7ba8351f6dde162cf39f2d7840  doc/bc/6.0/phpunitv10.md
 ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
-b59bdea9c39659db6b9e5ad5b309e781  doc/bc/6.0/phpunitv13forPHP841.md
+85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
 3e02efacd651e9df66228b55fd052f01  doc/bc/6.0/platform-package-forks-and-command-renames.md
 dfaffb77d22c8d096602674e8a110dcb  doc/bc/6.0/preload.md
 916d2793ab2800ff382724e5c1da54ee  doc/bc/6.0/rad-extension-points.md
