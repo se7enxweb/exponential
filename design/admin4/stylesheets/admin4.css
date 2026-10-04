@@ -266,9 +266,13 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 .a4-theme-toggle .a4-icon-moon { display: none; }
 html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-sun { display: none; }
 html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
+/* The same round icon button at every width (the label is read by screen readers, not shown) */
+.a4-theme-toggle { padding: 7px 9px; }
+.a4-theme-toggle .a4-theme-label {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
 @media (max-width: 1023px) {
-  .a4-theme-toggle .a4-theme-label { display: none; }
-  .a4-theme-toggle { padding: 7px 9px; }
   .header-theme { padding: 0 8px; }
 }
 
