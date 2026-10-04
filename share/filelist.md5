@@ -1034,7 +1034,7 @@ a552e51ddb4d343aaa6ac37eba7a5c14  design/admin4/templates/package/uninstall_erro
 af46a950a91555aad32cb5f618995f19  design/admin4/templates/package/view/files.tpl
 37fd8c7b29da725e34aba827803056b6  design/admin4/templates/package/view/full.tpl
 13fb5dd9c5fb7cc9d11d9cd98968d23c  design/admin4/templates/page_copyright.tpl
-dafcec368f76648a34cf09d241cb15b8  design/admin4/templates/page_head_script.tpl
+9385d7d3cbfac44f1bd302e6945d610d  design/admin4/templates/page_head_script.tpl
 7aaaffcf82c9b045d8a8249c79fede29  design/admin4/templates/page_head_style.tpl
 eb3ca06f34a16cc723002aea58265b43  design/admin4/templates/page_head_style_inline.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
