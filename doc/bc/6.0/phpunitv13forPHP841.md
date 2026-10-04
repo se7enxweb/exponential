@@ -208,6 +208,10 @@ If you extend the 6.0 test suite, keep these patterns in mind:
 - Clean up exception handlers and other global state in `tearDown()`.
 - Avoid `error_log()` and other direct output in production code; route diagnostics through the framework's logging helpers.
 
+## The PHPUnit pin
+
+`composer.json` required `phpunit/phpunit` at the exact version `13.0.0`. It now requires `^13.4`, so 13.x releases from 13.4 on are allowed (13.4.0 is the newest). Verified with PHPUnit 13.4.0: the `lib` and `security` suites give the same results as on 13.0 (51 security tests pass; `lib` passes with the same 595 tests, 9 more tests flagged risky). `composer.lock` is not tracked in this repository, so the installed `vendor/` follows on the next deliberate Composer run.
+
 ## Related pages
 
 - [PHP 8 support](php8.md)
