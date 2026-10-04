@@ -560,6 +560,12 @@ class eZStepCreateSites extends eZStepInstaller
         if ( $siteType['existing_database'] == eZStepInstaller::DB_DATA_REMOVE )
         {
             eZDBTool::cleanup( $db );
+            // cleanup() drops only the kernel's own tables (ez*); the tables of extensions
+            // (expaudit_*, explayouts_* ...) stayed and the schema load failed with "table
+            // already exists" on a second install. A SQLite database is a file that is
+            // emptied completely, as a removed MySQL or PostgreSQL database would be.
+            if ( strtolower( $db->databaseName() ) === 'sqlite' && method_exists( $db, 'removeDatabase' ) )
+                $db->removeDatabase( $dbName );
         }
 
         if ( $siteType['existing_database'] != eZStepInstaller::DB_DATA_KEEP )
