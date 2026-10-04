@@ -3145,7 +3145,7 @@ d401faa952476917589d0af7b2106553  doc/features/6.0/extensions/ezpm.md
 9ea2ac47578eb3e773202b4d1a561994  doc/features/6.0/extensions/ezprestapiprovider.md
 b10ae52b6a2699ce71e0f94e29c5b0fa  doc/features/6.0/extensions/ezstarrating.md
 4490230de3492ec840d6b6f4df37bed4  doc/features/6.0/extensions/eztags.md
-5bbcf1f3ade54f83accb3cafa6146b9f  doc/features/6.0/extensions/ezupdate.md
+584d754ded1ae5bf19f539e335e2462c  doc/features/6.0/extensions/ezupdate.md
 7bbeb5edf559efc1b948275387435237  doc/features/6.0/extensions/ezwebin-ezpackage.md
 10fde869a2d11cb168e6bb0070c7fac7  doc/features/6.0/extensions/ezwebin.md
 3194262a46f7c76bbcec0ca92c548f88  doc/features/6.0/extensions/ezwt.md
@@ -6529,11 +6529,15 @@ ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServices
 bb3c7095f360ee7ad654a1ff86ad7e31  tests/tests/extension/ezoe/expOEUrlFetcherTest.php
 982cbfcccf0ec493627b9b8f20f3d3dd  tests/tests/extension/ezoe/expOEViewsJsonTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
+8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
+228e5c524d3f47d50fb5303b7b76e37c  tests/tests/extension/ezupdate/ezUpdateInstallabilityTest.php
 33bd8c266652b5fde6c294bb124e06fd  tests/tests/extension/ezupdate/ezUpdateJobOutcomeTest.php
+d8a39fc3bd087161b6f65e8726bf93d6  tests/tests/extension/ezupdate/fixtures/composer_outdated_semver_safe.json
 4cec563a9fc3cc469df20bd2fd858000  tests/tests/extension/ezupdate/fixtures/composer_require_installs.log
+877a53f2e5c8a1ad2fc0f74648593518  tests/tests/extension/ezupdate/fixtures/composer_update_dry_run_lock_mismatch.log
+cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/composer_update_dry_run_one_blocked.log
 37204f9331d53a964bb66a09f776120e  tests/tests/extension/ezupdate/fixtures/composer_update_nothing_to_do.log
 93560b62a75eb48a157a8f339b6cebfa  tests/tests/extension/ezupdate/fixtures/composer_update_one_update.log
-8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
 7a425cdb99ce71ff04e1a65bc1ccd33f  tests/tests/extension/ezupdate/fixtures/probe_composer_location.php
 80580bf8003967c59876d6359066f6b6  tests/tests/kernel/classes/audit/expAuditAlertsTest.php
 e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchiveTest.php

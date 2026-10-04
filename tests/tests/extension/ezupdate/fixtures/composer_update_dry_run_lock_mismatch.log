@@ -1,0 +1,10 @@
+Loading composer repositories with package information
+Updating dependencies
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - Root composer.json requires vendor/library ~1.3.0, found vendor/library[v1.3.0] but the package is fixed to v1.2.0 (lock file version) by a partial update and that version does not match. Make sure you list it as an argument for the update command.
+  Problem 2
+    - Root composer.json requires vendor/other ^2.0, found vendor/other[2.0.1] but the package is fixed to 1.9.0 (lock file version) by a partial update and that version does not match. Make sure you list it as an argument for the update command.
+
+Use the option --with-all-dependencies (-W) to allow upgrades, downgrades and removals for packages currently locked to specific versions.

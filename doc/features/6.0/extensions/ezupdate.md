@@ -57,8 +57,13 @@ is wanted, with a backup (see [git_manager](git_manager.md) for backups from the
 ## How an update goes
 
 1. **Check for updates** (`composer outdated`): changes nothing.
-2. **Dry run** of the update: shows what Composer would change.
-3. Confirm that a **backup exists**, then **Update**. It runs in the background; the page
+2. **Preview (dry run)** of the update: shows what Composer would change. The Kind column is
+   decided by Composer itself (one `composer update --dry-run` over the outdated packages):
+   *Can be installed*, or *Blocked by composer.json (constraint)* (composer outdated's
+   "semver-safe-update" does not look at composer.json). Only installable packages have a tick box.
+3. Confirm that a **backup exists**, then **Install updates** (the ticked packages; disabled, with
+   an explanation, while `AllowUpdate` is `disabled`; **Switch on updates** / **Switch off** write
+   `settings/override/ezupdate.ini.append.php` through the kernel INI editor). It runs in the background; the page
    follows the output. Afterwards the commands in `[JobSettings] AfterRunCommands[]` regenerate
    the autoloads and clear the ini, template and content caches.
 4. When a run ends the page shows a notice at the top: *The installation is up to date!
@@ -127,6 +132,7 @@ does not know them yet.
   `git_manager/dashboard`). The Setup menu link to `git_manager/dump` went with them;
   `git_manager` carries its own.
 * 1.1.12 shows a result notice after every finished run (up to date, what changed, failed).
+* 1.1.13 adds Install updates (tick boxes per package, disabled with an explanation while updating is off, Switch on / Switch off) and labels packages by what Composer would install.
 * The license texts are `LICENSE.md` and `doc/LICENSE.md` since 1.1.8.
 
 ## Languages
