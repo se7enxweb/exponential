@@ -37,12 +37,12 @@ class ezUpdateComposerLocationTest extends expServicesCoreTestCase
     protected function probe( array $settings, $restricted )
     {
         $root = $this->root();
-        if ( !is_file( $root . '/ai/bin/one/ezupdate_probe_composer_location.php' ) )
+        if ( !is_file( $root . '/tests/tests/extension/ezupdate/fixtures/probe_composer_location.php' ) )
         {
             $this->markTestSkipped( 'The probe script is not part of this installation.' );
         }
         $command = escapeshellarg( PHP_BINARY ) . ( $restricted ? ' -d open_basedir=' . escapeshellarg( $root . ':/tmp' ) : '' )
-            . ' ' . escapeshellarg( $root . '/ai/bin/one/ezupdate_probe_composer_location.php' ) . ' ' . escapeshellarg( json_encode( $settings ) ) . ' 2>&1';
+            . ' ' . escapeshellarg( $root . '/tests/tests/extension/ezupdate/fixtures/probe_composer_location.php' ) . ' ' . escapeshellarg( json_encode( $settings ) ) . ' 2>&1';
         $output = (string)shell_exec( $command );
         $this->assertSame( 1, preg_match( '/@@(\{[^\n]*\})/', $output, $m ), 'no probe answer: ' . $output );
         return json_decode( $m[1], true );
