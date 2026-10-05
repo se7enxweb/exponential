@@ -2869,7 +2869,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-2962bda300105e713265fb71619e9ff0  doc/changelogs/6.0/6.0.15.md
+07886a4c821d72c0ae402a69f83e22c3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4871,7 +4871,7 @@ e3cac2a508e0d1010ce6d4e387674f22  kernel/classes/notification/eznotificationeven
 ebac5447e1ef26aa47092bcdfdd0aed7  kernel/classes/notification/eznotificationeventfilter.php
 93789b94225b3c66a4e862463ecc0b53  kernel/classes/notification/eznotificationeventhandler.php
 3938db5ab0d6ba83a4aab60a950284a3  kernel/classes/notification/eznotificationeventtype.php
-e3f8927cb24238f53ed779477fed9bf5  kernel/classes/notification/eznotificationschedule.php
+6567a1947a304091f252b019ed53e486  kernel/classes/notification/eznotificationschedule.php
 b41e91f320a69dfe86f5d68ab482d7cf  kernel/classes/notification/eznotificationtransport.php
 6bd28a4207955a31ae782ed2ef8af6f3  kernel/classes/notification/handler/ezcollaborationnotification/ezcollaborationnotificationhandler.php
 b8c2fd803be545423c0029be897f12ca  kernel/classes/notification/handler/ezcollaborationnotification/ezcollaborationnotificationrule.php
@@ -6937,7 +6937,7 @@ d2b791059f44637db1e31999f7272737  tests/tests/kernel/classes/mailpreferences/fix
 6d92b09c5030f6b28f986d8f94dcb3fb  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/dsn-hard-listener.eml
 fa2880c02db43fdfac79048ad61cba89  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/plain-subscribe.eml
 67be7c5d61ef0fdc4a33085e2b27a4ec  tests/tests/kernel/classes/notification/NotificationSystemTest.php
-abaa39a44390e10c24f71275cbcff14d  tests/tests/kernel/classes/notification/eZNotificationScheduleTest.php
+b41a87264ccbb60216964b4f35d55848  tests/tests/kernel/classes/notification/eZNotificationScheduleTest.php
 e612f43fc85b8406b0acb712148bae69  tests/tests/kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule_regression.php
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
 57076f462adaed80c14c9883a0779e27  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
