@@ -114,12 +114,14 @@ further: [14. from the 4.x line](14-migrating-from-4x.md), [15. from the 5.x leg
   also apply the `dbupdate-cluster-...` file of the same step (MySQL: 4.3, 4.7, 5.2, 5.4).
 - **`unstable/` directories** hold the files of pre-releases (alpha, beta, rc). Do not apply them to a site that ran a
   final release.
-- **`6.12/`, `7.2/` and `7.3/`** belong to other product lines and are not on this path. The 6.0 files take a 5.4
-  database to today.
+- **`6.12/`, `7.2/` and `7.3/`** are not steps of this chain; never apply them as files. Two of them hold schema
+  changes a database from 5.4 still needs: see [below](#the-612-72-and-73-directories).
 - **A file that fails half way.** Restore the backup and apply the file again from the start; do not repair by hand
   and re-run.
-- **Check the chain itself.** `php bin/php/console exp:checkdbfiles` verifies the update files against the upgrade
-  path and reports missing or stray files.
+- **Check the chain itself.** `php bin/php/console exp:checkdbfiles --no-verify-branches` verifies the update files
+  against the upgrade path, every directory from 4.0 to 7.3 on every engine, and reports missing (`!`) or stray (`?`)
+  files. Without `--no-verify-branches` it also tries to compare 4.3 to 5.4 with the retired SVN repository of the
+  old vendor, which fails with one `C` line.
 
 Apply a file with the client of the database:
 
@@ -128,6 +130,39 @@ mysql -u USER -p DATABASE < update/database/mysql/4.1/dbupdate-4.0.0-to-4.1.0.sq
 psql -U USER -d DATABASE -f update/database/postgresql/4.1/dbupdate-4.0.0-to-4.1.0.sql
 sqlite3 var/storage/sqlite3/exponential.db < update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 ```
+
+### The 6.12, 7.2 and 7.3 directories
+
+These three directories come from the upstream legacy kernel of 2016 to 2018, the code Exponential 6.0 is built on.
+In those years its update files were numbered after the version of the Symfony kernel the legacy kernel ran beside,
+not after a legacy release, and each file records that number in `ezsite_data`. Exponential kept them unchanged
+apart from the `SET default_storage_engine` line. They are not steps between 5.4 and 6.0.
+
+| File | Engines | From | What it does |
+|---|---|---|---|
+| `6.12/dbupdate-5.4.0-to-6.12.0.sql` | MySQL, PostgreSQL | February 2016, password security (EZP-24744) | records `6.12.0`; widens `ezuser.password_hash` to 255 |
+| `7.2/dbupdate-6.13.0-to-7.2.0.sql` | PostgreSQL | June 2018, sequence names (EZP-28706) | records `7.2.0`; renames every sequence from `<table>_s` to `<table>_<column>_seq` and points each column default at the new name |
+| `7.3/dbupdate-7.2.0-to-7.3.0.sql` | MySQL, PostgreSQL | October 2018, trash date (EZP-28881) | records `7.3.0`; adds `ezcontentobject_trash.trashed` |
+
+**Do not apply them as files** to a database on the Exponential path. Each would replace the version row with a
+number that is not an Exponential version, and `7.2/` starts from 6.13.0, a version no Exponential database has.
+
+**Do run some of their statements** on a database that came from 5.4 (or 5.90). The 6.0 kernel was built after all
+three changes and expects their schema, but the 6.0 files carry only the first:
+
+- `ezuser.password_hash`: in the 6.0 files since October 2026 ([11.5](#115-from-54-or-590-to-600), step 2); nothing
+  to do.
+- `ezcontentobject_trash.trashed`: the 6.0 schema has the column and the trash writes and sorts by it, so moving
+  content to the trash fails without it. Run the `ALTER TABLE ezcontentobject_trash` line of the `7.3/` file of your
+  engine, once.
+- PostgreSQL only, the sequence names: the 6.0 kernel reads the last inserted id from `<table>_<column>_seq`, so on a
+  database that still has the `<table>_s` sequences of 5.4 every insert that needs its new id fails. Run the
+  `ALTER SEQUENCE` and `ALTER TABLE` lines of the `7.2/` file, not its `UPDATE` line.
+
+A database that already ran those upstream releases (its version row reads `6.12.0`, `6.13.0`, `7.2.0` or `7.3.0`)
+has the changes of every file up to its number: run the statements above of the later files only, then continue with
+[11.6](#116-from-any-60x-to-today). A database installed by Exponential 6.0 has all three changes from its schema and
+never needs these directories.
 
 ### Per-database notes
 
