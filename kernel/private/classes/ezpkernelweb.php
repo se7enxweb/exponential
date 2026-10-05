@@ -1157,9 +1157,6 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
     }
 
     /**
-     * Performs a redirection
-     */
-    /**
      * Carries the query string of the current request over a module redirect.
      *
      * Redirects to another host keep their URL untouched: a payment window
@@ -1167,7 +1164,6 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      * request (_gl, gclid, ...) appended to it invalidate the seal. On the
      * own host the query joins with "&" when the target already has one and
      * goes before a fragment.
-     *
      *
      * @param string $redirectURI completed redirect target, relative or absolute
      * @param string $queryString query of the current request, with or without the leading "?"
@@ -1252,6 +1248,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         return $host;
     }
 
+    /**
+     * Performs a redirection
+     */
     protected function redirect()
     {
         $GLOBALS['eZRedirection'] = true;
