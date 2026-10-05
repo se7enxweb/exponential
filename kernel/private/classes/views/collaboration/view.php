@@ -42,12 +42,28 @@ class View extends \Exponential\Runnable\ModuleView
 
         $template = $view->template();
 
-        // $collaborationHandlers =& eZCollaborationItemHandler::fetchList();
+        $http = \eZHTTPTool::instance();
+        $userID = (int)\eZUser::currentUser()->attribute( 'contentobject_id' );
 
-        $viewParameters = array( 'offset' => $Offset );
+        // group management on the summary: a new group (the form token of the form is checked by the form token filter)
+        if ( $http->hasPostVariable( 'CollaborationGroupCreate' ) )
+        {
+            $result = \expCollaborationGroupManager::create( $userID, $http->postVariable( 'CollaborationGroupTitle', '' ),
+                                                              (int)$http->postVariable( 'CollaborationGroupParent', 0 ) );
+            \expCollaborationGroupManager::setNotice( $result['ok'] ? 'success' : 'error', $result['text'] );
+            return $this->viewResult( null, $Module->redirectToView( 'view', array( $ViewMode ) ) );
+        }
+
+        // the filters of the inbox: /collaboration/view/summary/(status)/waiting/(role)/approver/(type)/ezapprove/(group)/3/(offset)/10
+        $viewParameters = array( 'offset' => $Offset,
+                                 'status' => isset( $Params['Status'] ) && $Params['Status'] ? $Params['Status'] : 'all',
+                                 'role' => isset( $Params['Role'] ) && $Params['Role'] ? $Params['Role'] : 'all',
+                                 'type' => isset( $Params['Type'] ) && $Params['Type'] ? $Params['Type'] : 'all',
+                                 'group' => isset( $Params['Group'] ) ? (int)$Params['Group'] : 0 );
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'view_parameters', $viewParameters );
+        $tpl->setVariable( 'notice', \expCollaborationGroupManager::takeNotice() );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( $template );

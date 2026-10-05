@@ -37,17 +37,34 @@ class Item extends \Exponential\Runnable\ModuleView
             $Offset = 0;
 
         /** @var eZCollaborationItem $collabItem */
-        $collabItem = \eZCollaborationItem::fetch( $ItemID );
+        $collabItem = is_numeric( $ItemID ) ? \eZCollaborationItem::fetch( (int)$ItemID ) : null;
+
+        // an item that does not exist is "not available", not a fatal error
+        if ( !$collabItem )
+        {
+            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        }
 
         if ( !$collabItem->userIsParticipant( \eZUser::currentUser() ) )
         {
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel', array() ) );
         }
 
+        $http = \eZHTTPTool::instance();
+        if ( $http->hasPostVariable( 'CollaborationMoveItem' ) )
+        {
+            $result = \expCollaborationGroupManager::moveItem( \eZUser::currentUser()->attribute( 'contentobject_id' ), $collabItem->attribute( 'id' ),
+                                                                (int)$http->postVariable( 'CollaborationGroupID', 0 ) );
+            \expCollaborationGroupManager::setNotice( $result['ok'] ? 'success' : 'error', $result['text'] );
+            return $this->viewResult( null, $Module->redirectToView( 'item', array( $ViewMode, $collabItem->attribute( 'id' ) ) ) );
+        }
+
         $collabHandler = $collabItem->handler();
-        $collabItem->handleView( $ViewMode );
+        if ( !$collabHandler )
+            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         $template = $collabHandler->template( $ViewMode );
-        $collabTitle = $collabItem->title();
+        $row = \expCollaborationInbox::fetchRow( $collabItem->attribute( 'id' ) );
+        $collabTitle = $row && $row['title'] !== '' ? $row['title'] : $collabItem->title();
 
         $viewParameters = array( 'offset' => $Offset );
 
@@ -55,6 +72,7 @@ class Item extends \Exponential\Runnable\ModuleView
 
         $tpl->setVariable( 'view_parameters', $viewParameters );
         $tpl->setVariable( 'collab_item', $collabItem );
+        $tpl->setVariable( 'notice', \expCollaborationGroupManager::takeNotice() );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( $template );

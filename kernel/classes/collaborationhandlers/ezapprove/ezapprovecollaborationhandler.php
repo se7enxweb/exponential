@@ -203,9 +203,23 @@ class eZApproveCollaborationHandler extends eZCollaborationItemHandler
         $redirectParameters = array( 'full', $collaborationItem->attribute( 'id' ) );
         $addComment = false;
 
+        $title = expCollaborationInbox::approvalTitle( (int)$collaborationItem->attribute( 'data_int1' ), (int)$collaborationItem->attribute( 'data_int2' ) );
+        $notice = false;
+
         if ( $this->isCustomAction( 'Comment' ) )
         {
             $addComment = true;
+            if ( (int)$collaborationItem->attribute( 'data_int3' ) !== self::STATUS_WAITING )
+            {
+                expCollaborationGroupManager::setNotice( 'warning', ezpI18n::tr( 'kernel/collaboration', 'This approval is closed: comments can no longer be added.' ) );
+                return $module->redirectToView( $redirectView, $redirectParameters );
+            }
+            if ( trim( $this->customInput( 'ApproveComment' ) ) == '' )
+            {
+                expCollaborationGroupManager::setNotice( 'warning', ezpI18n::tr( 'kernel/collaboration', 'Write a comment first.' ) );
+                return $module->redirectToView( $redirectView, $redirectParameters );
+            }
+            $notice = array( 'success', ezpI18n::tr( 'kernel/collaboration', 'Your comment was added.' ) );
         }
         else if ( $this->isCustomAction( 'Accept' ) or
                   $this->isCustomAction( 'Deny' ) or
@@ -228,6 +242,7 @@ class eZApproveCollaborationHandler extends eZCollaborationItemHandler
             }
             if ( !$approveAllowed )
             {
+                expCollaborationGroupManager::setNotice( 'error', ezpI18n::tr( 'kernel/collaboration', 'Only an approver of this item can approve or deny it.' ) );
                 return $module->redirectToView( $redirectView, $redirectParameters );
             }
 
@@ -242,6 +257,14 @@ class eZApproveCollaborationHandler extends eZCollaborationItemHandler
             else if ( $this->isCustomAction( 'Defer' ) or
                       $this->isCustomAction( 'Deny' ) )
                 $status = self::STATUS_DENIED;
+            if ( (int)$collaborationItem->attribute( 'data_int3' ) !== self::STATUS_WAITING )
+            {
+                expCollaborationGroupManager::setNotice( 'warning', ezpI18n::tr( 'kernel/collaboration', 'This approval was decided already.' ) );
+                return $module->redirectToView( $redirectView, $redirectParameters );
+            }
+            $notice = $status == self::STATUS_ACCEPTED
+                ? array( 'success', ezpI18n::tr( 'kernel/collaboration', '"%1" was approved. It is published when the publishing workflow continues.', null, array( $title ) ) )
+                : array( 'success', ezpI18n::tr( 'kernel/collaboration', '"%1" was denied. It is a draft for the author again.', null, array( $title ) ) );
             $collaborationItem->setAttribute( 'data_int3', $status );
             $collaborationItem->setAttribute( 'status', eZCollaborationItem::STATUS_INACTIVE );
             $timestamp = time();
@@ -262,6 +285,8 @@ class eZApproveCollaborationHandler extends eZCollaborationItemHandler
             }
         }
         $collaborationItem->sync();
+        if ( $notice )
+            expCollaborationGroupManager::setNotice( $notice[0], $notice[1] );
         return $module->redirectToView( $redirectView, $redirectParameters );
     }
 
