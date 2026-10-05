@@ -414,7 +414,7 @@ class expNotificationService
     /**
      * What looks wrong, as array( level (error, warning, info), text ) rows.
      */
-    public static function problems( array $s = null )
+    public static function problems( $s = null )
     {
         if ( $s === null )
             $s = self::status();
