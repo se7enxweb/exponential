@@ -3895,6 +3895,9 @@ class eZContentObject extends eZPersistentObject
             {
                 $query .= "ezcontentobject_link.contentclassattribute_id, ";
             }
+            // ezcontentclass is the last table before the sorting joins: MySQL and PostgreSQL bind
+            // a JOIN tighter than a comma, so its ON clause (class_name sorting joins the class names
+            // on ezcontentclass.id) sees only the table right before it.
             $query .= "
                         ezcontentclass.serialized_name_list AS class_serialized_name_list,
                         ezcontentclass.identifier as contentclass_identifier,
@@ -3902,10 +3905,10 @@ class eZContentObject extends eZPersistentObject
                         ezcontentobject.*, ezcontentobject_name.name as name, ezcontentobject_name.real_translation
                         $sortingInfo[attributeTargetSQL]
                      FROM
-                        ezcontentclass,
                         ezcontentobject,
                         ezcontentobject_link,
-                        ezcontentobject_name
+                        ezcontentobject_name,
+                        ezcontentclass
                         $sortingInfo[attributeFromSQL]
                      WHERE
                         ezcontentclass.id=ezcontentobject.contentclass_id AND
