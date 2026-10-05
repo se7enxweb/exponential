@@ -410,7 +410,9 @@ class eZContentObjectTest extends ezpDatabaseTestCase
 
         eZUser::setCurrentlyLoggedInUser( $previousUser, $previousUser->attribute( 'contentobject_id' ), eZUser::NO_SESSION_REGENERATE );
         $this->assertEquals( 0, $access );
+    }
 
+    /**
      * A new version of an object that was never published keeps the location of the version it is copied from.
      *
      * A new object gets a node assignment without remote_id and with op_code CREATE. createNewVersion() rebuilds the
