@@ -2869,7 +2869,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4e718109240b9b44e295a56ab24059f9  doc/changelogs/6.0/6.0.15.md
+47eae84675dea283b02de2a8deb04e5f  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5497,7 +5497,7 @@ bbb76adbc06cb9c5a4feb2a68950bf07  kernel/private/classes/views/visual/toolbarlis
 04fa77af251994dccc065aad11c233ec  kernel/private/classes/views/workflow/groupedit.php
 3b6edb3eee8abb53ba599d4f4deaa7b5  kernel/private/classes/views/workflow/grouplist.php
 941b429079a833d76cd898af7bd1e4bb  kernel/private/classes/views/workflow/process.php
-07c9d00c9762c8f9daddde2059358c5c  kernel/private/classes/views/workflow/processlist.php
+6f6906855744aea7d326f82e61c868c5  kernel/private/classes/views/workflow/processlist.php
 d480113aa516c1417056ac8e7fe30404  kernel/private/classes/views/workflow/run.php
 d42424af816959e29248446de81f6689  kernel/private/classes/views/workflow/view.php
 c5af142ee2097a0993eba303b63a28bf  kernel/private/classes/views/workflow/workflowlist.php
@@ -6815,6 +6815,7 @@ cff81497a83267ad5f42597bb6c66c5c  tests/tests/kernel/classes/eZURLTest.php
 b80a0b72065201d4e81e9dbd79ed9ec0  tests/tests/kernel/classes/eZURLWildcardTest.php
 958c3b8e79be5a4fd876011251c836e4  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 1cdc6174223b1ee7b8ffd262ed6eee8c  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
+84f351231c9f1560c61cc1d443ff9ea0  tests/tests/kernel/classes/eZWorkflowProcessListTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 5571584f622d8c32b884f5d306511331  tests/tests/kernel/classes/expVelocityEnginesTest.php
@@ -7221,7 +7222,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 7ebd889c25aaa5abe2da1eb7814049cd  tests/tests/kernel/private/webdav/siteaccess/site.ini.append.php.replace
 5b1c01f8627cfce013a8da79b43212e1  tests/tests/kernel/private/webdav/wrappers.php
 7672ec3f2714756db70059a8fdabf898  tests/tests/kernel/search/ezsearchengine_regression.php
-dbe5855d006b12902cf9ca7795bd1af7  tests/tests/kernel/suite.php
+a9ac4f63b0d44625488e08fe4b9dd733  tests/tests/kernel/suite.php
 d0fbfd88dc279221eee85b97921f6add  tests/tests/lib/ezdb/eZDBInterfaceTest.php
 26547ca2016f597eb9d4165358c37787  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 afa76fb7b9aaa0a1aaaea775252c6dcc  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
