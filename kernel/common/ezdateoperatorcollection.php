@@ -256,7 +256,8 @@ class eZDateOperatorCollection
 
                 $month['current'] = array( 'month' => $locale->longMonthName( $info['mon'] ),
                                            'year' => $info['year'] );
-                $currentLink = $next['link'];
+                // The link of the current month is built on the one of the next month, when there is one
+                $currentLink = ( is_array( $next ) && isset( $next['link'] ) ) ? $next['link'] : '';
                 $currentLink .= '/(year)/' . $info['year'];
                 $currentLink .= '/(month)/' . $info['mon'];
                 $month['current']['link'] = $currentLink;
