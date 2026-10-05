@@ -19,7 +19,7 @@ MongoDB installations are not affected.
 - **Transactions start with `BEGIN IMMEDIATE`.** Publishing and editing next to other writers (asynchronous
   publishing, content jobs, cronjobs) no longer fail with "database is locked".
 - **A transaction start waits its turn.** It waits for the writers ahead of it for up to
-  `[DatabaseSettings] SQLiteTransactionWait` seconds (default 60), instead of failing after SQLite's 5 second busy
+  `[DatabaseSettings] SQLiteTransactionWait` seconds (default 25), instead of failing after SQLite's 5 second busy
   timeout. A start that never gets the lock fails at once with the reason and writes nothing: either the whole
   transaction commits or nothing does.
 - **`subString()` without a length returns the rest of the string.** Before, a node move on SQLite dropped the last
@@ -36,7 +36,7 @@ MongoDB installations are not affected.
    Expected output:
 
    ```
-   77:SQLiteTransactionWait=60
+   81:SQLiteTransactionWait=25
    ```
 
 2. If you moved subtrees on SQLite with an earlier version, open a few of the moved nodes by their URL alias. Every
@@ -47,13 +47,13 @@ MongoDB installations are not affected.
 
 - **Damaged subtree:** move the subtree again. The move rebuilds the paths with the corrected `subString()`.
 - **Long-running writers:** if a transaction start still gives up, raise the wait. Keep it below the web server's
-  request timeout.
+  request timeout (Velocity: `Q.webserver.requestTimeout`, 30 s unless changed; PHP-FPM: `request_terminate_timeout`) and raise both together.
 
 ## Settings
 
 | File | Block | Key | Default | Scope |
 |---|---|---|---|---|
-| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `60` (seconds) | installation |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `25` (seconds) | installation |
 
 Override it in `settings/override/site.ini.append.php`, then clear the INI cache:
 

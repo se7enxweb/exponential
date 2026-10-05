@@ -213,7 +213,7 @@ Expected output: a line such as `DatabaseImplementation=ezmysqli`. The values ar
 
 What to remember:
 
-- **SQLite** is the quickest way to start, and its transactions queue for the single write lock (`SQLiteTransactionWait`, default 60 seconds). For many editors publishing at once use MySQL or PostgreSQL.
+- **SQLite** is the quickest way to start, and its transactions queue for the single write lock (`SQLiteTransactionWait`, default 25 seconds, kept below Velocity's 30-second request timeout `Q.webserver.requestTimeout` so the driver can report "database is busy" before the request is cut off; raise both together). For many editors publishing at once use MySQL or PostgreSQL.
 - **MySQL** and **PostgreSQL** are the usual production choices.
 - **Oracle** and **MongoDB** are supported; check the pages below before choosing them.
 

@@ -18,7 +18,7 @@ Elsewhere:
 | File | Block | Key | Default | Scope |
 |---|---|---|---|---|
 | `settings/site.ini` | `DatabaseSettings` | `SQLitePragmas[]` | empty; the driver's defaults apply (`synchronous=NORMAL`, `cache_size=-65536`, `mmap_size=268435456`, `temp_store=MEMORY`, `busy_timeout=5000`) | installation, SQLite only |
-| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `60` | installation, SQLite only |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `25` | installation, SQLite only |
 | `settings/setup.ini` | `DatabaseSettings` | `DefaultType` | `sqlite3` | setup wizard |
 | `settings/setup.ini` | `DatabaseSettings` | `DefaultPort_pgsql`, `DefaultUser_pgsql` | `5432`, `postgres` | setup wizard |
 
@@ -42,7 +42,7 @@ installation, SQLite only):
 | Key | Default | Meaning |
 |---|---|---|
 | `SQLitePragmas[]` | empty (the driver's defaults apply: `synchronous=NORMAL`, `cache_size=-65536`, `mmap_size=268435456`, `temp_store=MEMORY`, `busy_timeout=5000`) | One `name=value` per line over the driver's defaults. After an install run `ANALYZE` once so the query planner has statistics. |
-| `SQLiteTransactionWait` | `60` | See [transactions and writers](sqlite3-database-driver.md#transactions-and-writers). |
+| `SQLiteTransactionWait` | `25` | See [transactions and writers](sqlite3-database-driver.md#transactions-and-writers). |
 
 Check the values your site uses:
 

@@ -60,7 +60,7 @@ setting came in a later release than the first driver.
 | `settings/dbschema.ini` | `[SchemaSettings]` | `SchemaHandlerClasses[sqlite3]` | `eZSQLiteSchema` | global | Schema handler used by installers and schema tools. |
 | `settings/setup.ini` | `[DatabaseSettings]` | `DefaultType` | `sqlite3` | global | Database system the wizard lists first. One of `sqlite3`, `mysqli`, `pgsql`, `mongodb`. |
 | `settings/site.ini` | `[DatabaseSettings]` | `SQLitePragmas[]` | empty list | siteaccess | Extra `name=value` PRAGMAs applied on every connection (later releases). |
-| `settings/site.ini` | `[DatabaseSettings]` | `SQLiteTransactionWait` | `60` | siteaccess | Seconds a transaction waits for other writers before giving up (later releases). |
+| `settings/site.ini` | `[DatabaseSettings]` | `SQLiteTransactionWait` | `25` | siteaccess | Seconds a transaction waits at its start for the other writers before giving up with "database is busy" (later releases). Keep it below the request timeout: Velocity ends a request after `Q.webserver.requestTimeout`, 30 s unless changed, hence 25; under PHP-FPM the limit is the pool's `request_terminate_timeout`. Raise both together. |
 
 The driver's built-in PRAGMA defaults (also later releases) are
 `synchronous=NORMAL`, `cache_size=-65536` (64 MB), `mmap_size=268435456`,

@@ -12,7 +12,7 @@ write SQL that must run on every engine. The task-oriented introduction is
 |---|---|---|---|---|
 | `settings/site.ini` | `DatabaseSettings` | `ImplementationAlias[sqlite3]` | `eZSQLite3DB` | installation |
 | `settings/site.ini` | `DatabaseSettings` | `SQLitePragmas[]` | none; entries `name=value` override the [PRAGMA defaults](#pragma-defaults-and-overrides) | installation |
-| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `60` (seconds) | installation |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `25` (seconds) | installation |
 | `settings/dbschema.ini` | `SchemaSettings` | `SchemaPaths[sqlite]`, `SchemaPaths[sqlite3]` | `lib/ezdbschema/classes/ezsqliteschema.php` | installation |
 | `settings/dbschema.ini` | `SchemaSettings` | `SchemaHandlerClasses[sqlite]`, `SchemaHandlerClasses[sqlite3]` | `eZSQLiteSchema` | installation |
 | `settings/setup.ini` | `DatabaseSettings` | `DefaultType` | `sqlite3` | setup wizard |
@@ -78,7 +78,7 @@ SQLite has one writer. Since 6.0.15 (1-2 October 2026) a transaction starts with
 
 | Aspect | Behaviour |
 |---|---|
-| Waiting | `begin()` queues behind a writer gate (a lock file named `<database>.writer-lock` beside the database file, released by the operating system when a process ends) for at most `[DatabaseSettings] SQLiteTransactionWait` seconds (default `60`); tries thin out as the wait grows and the writers that waited longest go first. Waiting here is safe because nothing has been written yet. Keep the value below the web server's request timeout. |
+| Waiting | `begin()` queues behind a writer gate (a lock file named `<database>.writer-lock` beside the database file, released by the operating system when a process ends) for at most `[DatabaseSettings] SQLiteTransactionWait` seconds (default `25`); tries thin out as the wait grows and the writers that waited longest go first. Waiting here is safe because nothing has been written yet. Keep the value below the request timeout: Velocity ends a request after `Q.webserver.requestTimeout`, 30 s unless changed, hence the default of 25. |
 | Failure | A start that still gets nothing is reported at once as a failed transaction with the reason, and nothing is written. Before, the generic `begin()` counted it as started and later statements ran one by one, each committed on its own. |
 | Rollback | `ROLLBACK` is sent only when SQLite has a transaction open (no more "cannot rollback - no transaction is active"). |
 | Measured | In the change's test run, 64 concurrent publishers: before 6 of 192 failed, after 192 of 192 completed whole (not repeated for this page). |
