@@ -1,0 +1,19 @@
+From: fbl@isp.mptest.invalid
+To: complaints@mptest.invalid
+Subject: Not spam report
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=feedback-report; boundary="NS"
+
+--NS
+Content-Type: text/plain
+
+The user marked the message as not spam.
+
+--NS
+Content-Type: message/feedback-report
+
+Feedback-Type: not-spam
+Version: 1
+Original-Rcpt-To: mpcomplaint-notspam@mptest.invalid
+
+--NS--

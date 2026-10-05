@@ -1,0 +1,32 @@
+From: MAILER-DAEMON@mx.mptest.invalid
+To: bounces@mptest.invalid
+Subject: Returned mail: see transcript for details
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+ boundary="MIXED-boundary"
+
+--MIXED-boundary
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: base64
+
+VGhlIG9yaWdpbmFsIG1lc3NhZ2Ugd2FzIG5vdCBkZWxpdmVyZWQgdG8gYWxsIHJlY2lwaWVudHMu
+
+--MIXED-boundary
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mx.mptest.invalid
+Arrival-Date: Sun, 4 Oct 2026 10:00:00 +0000
+
+Final-Recipient: RFC822; mpbounce-ok@mptest.invalid
+Action: delivered
+Status: 2.0.0
+
+Final-Recipient: RFC822; MPBounce-Gone@mptest.invalid
+Action: failed
+Status: 5.2.1 (mailbox disabled)
+
+Final-Recipient: RFC822; mpbounce-nodomain@mptest.invalid
+Action: failed
+Status: 5.1.2
+
+--MIXED-boundary--

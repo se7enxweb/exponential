@@ -1,0 +1,41 @@
+From: feedbackloop@isp.mptest.invalid
+To: complaints@mptest.invalid
+Subject: FW: Our newsletter
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=feedback-report;
+     boundary="part1_13d.2e68ed54_boundary"
+
+--part1_13d.2e68ed54_boundary
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+
+This is an email abuse report for an email message received from IP
+192.0.2.1 on Sun, 4 Oct 2026 10:00:00 +0000.
+
+--part1_13d.2e68ed54_boundary
+Content-Type: message/feedback-report
+
+Feedback-Type: abuse
+User-Agent: SomeGenerator/1.0
+Version: 1
+Original-Mail-From: <news@mptest.invalid>
+Original-Rcpt-To: <mpcomplaint@mptest.invalid>
+Arrival-Date: Sun, 4 Oct 2026 09:58:00 +0000
+Source-IP: 192.0.2.1
+
+--part1_13d.2e68ed54_boundary
+Content-Type: message/rfc822
+Content-Disposition: inline
+
+From: <news@mptest.invalid>
+Received: from mailserver.mptest.invalid by mx.isp.mptest.invalid
+To: <mpcomplaint@mptest.invalid>
+Subject: Our newsletter
+MIME-Version: 1.0
+Message-ID: <8787KJKJ3K4J3K4J3K4J3.mail@mptest.invalid>
+Date: Sun, 4 Oct 2026 09:55:00 +0000
+Content-Type: text/plain
+
+Spam Spam Spam
+
+--part1_13d.2e68ed54_boundary--

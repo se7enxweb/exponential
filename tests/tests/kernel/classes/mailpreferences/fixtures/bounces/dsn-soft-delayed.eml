@@ -1,0 +1,22 @@
+From: MAILER-DAEMON@mx.mptest.invalid
+To: bounces@mptest.invalid
+Subject: Delayed Mail (still being retried)
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status; boundary="SOFT"
+
+--SOFT
+Content-Type: text/plain
+
+Your message has not been delivered yet. The mailbox is full.
+
+--SOFT
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mx.mptest.invalid
+
+Final-Recipient: rfc822; mpbounce-soft@mptest.invalid
+Action: delayed
+Status: 4.2.2
+Diagnostic-Code: smtp; 452 4.2.2 Mailbox full
+
+--SOFT--

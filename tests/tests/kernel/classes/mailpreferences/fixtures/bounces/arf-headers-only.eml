@@ -1,0 +1,26 @@
+From: fbl@isp.mptest.invalid
+To: complaints@mptest.invalid
+Subject: Complaint about message from 192.0.2.1
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=feedback-report; boundary="FBL"
+
+--FBL
+Content-Type: text/plain
+
+A user of this provider marked a message from your server as junk.
+
+--FBL
+Content-Type: message/feedback-report
+
+Feedback-Type: fraud
+Version: 1
+User-Agent: FBL/2.0
+
+--FBL
+Content-Type: text/rfc822-headers
+
+From: news@mptest.invalid
+To: "A Reader" <mpcomplaint-headers@mptest.invalid>
+Subject: Offers of the week
+
+--FBL--

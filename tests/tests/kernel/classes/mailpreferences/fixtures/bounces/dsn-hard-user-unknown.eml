@@ -1,0 +1,51 @@
+Return-Path: <>
+Received: by mx.mptest.invalid (Postfix) id 4F2A1; Sun,  4 Oct 2026 10:00:00 +0200 (CEST)
+Date: Sun,  4 Oct 2026 10:00:00 +0200 (CEST)
+From: MAILER-DAEMON@mx.mptest.invalid (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: bounces@mptest.invalid
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="4F2A1.1696406400/mx.mptest.invalid"
+Message-Id: <20261004080000.4F2A1@mx.mptest.invalid>
+
+This is a MIME-encapsulated message.
+
+--4F2A1.1696406400/mx.mptest.invalid
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host mx.mptest.invalid.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients.
+
+<mpbounce-hard@mptest.invalid>: host mail.mptest.invalid said: 550 5.1.1
+    <mpbounce-hard@mptest.invalid>: Recipient address rejected: User unknown
+
+--4F2A1.1696406400/mx.mptest.invalid
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mx.mptest.invalid
+X-Postfix-Queue-ID: 4F2A1
+Arrival-Date: Sun,  4 Oct 2026 09:59:58 +0200 (CEST)
+
+Final-Recipient: rfc822; mpbounce-hard@mptest.invalid
+Original-Recipient: rfc822;mpbounce-hard@mptest.invalid
+Action: failed
+Status: 5.1.1
+Remote-MTA: dns; mail.mptest.invalid
+Diagnostic-Code: smtp; 550 5.1.1 <mpbounce-hard@mptest.invalid>: Recipient
+    address rejected: User unknown
+
+--4F2A1.1696406400/mx.mptest.invalid
+Content-Description: Undelivered Message Headers
+Content-Type: text/rfc822-headers
+
+From: news@mptest.invalid
+To: mpbounce-hard@mptest.invalid
+Subject: Our newsletter
+
+--4F2A1.1696406400/mx.mptest.invalid--
