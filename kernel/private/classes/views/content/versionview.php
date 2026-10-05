@@ -314,21 +314,20 @@ class Versionview extends \Exponential\Runnable\ModuleView
      *
      * The preview node of an object that was never published has no node ID; its path string is the parent's path with
      * an empty last element (/1/2/58//). fetchPath() drops the last element as the node's own, which was the parent, so
-     * the preview path lost the parent folder. For such a node the path is read including the last element.
+     * the preview path lost the parent folder. fetchPath() now reads such a path including the last element
+     * (eZContentObjectTreeNode::pathStringEndsWithParent()), so a template reading $node.path of the preview node gets
+     * the same path; a preview without location gets an empty path.
      *
      * @param \eZContentObjectTreeNode $node the preview node built by the version view
      * @return \eZContentObjectTreeNode[]
      */
     public static function previewParentNodes( \eZContentObjectTreeNode $node )
     {
-        if ( !$node->attribute( 'node_id' ) && trim( (string)$node->attribute( 'path_string' ), '/' ) !== '' )
+        if ( trim( (string)$node->attribute( 'path_string' ), '/' ) === '' )
         {
-            $parents = \eZContentObjectTreeNode::fetchNodesByPathString( $node->attribute( 'path_string' ), true, true );
+            return array();
         }
-        else
-        {
-            $parents = $node->attribute( 'path' );
-        }
+        $parents = $node->attribute( 'path' );
         return is_array( $parents ) ? $parents : array();
     }
 }

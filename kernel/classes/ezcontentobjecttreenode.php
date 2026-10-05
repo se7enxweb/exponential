@@ -3666,11 +3666,31 @@ class eZContentObjectTreeNode extends eZPersistentObject
     }
 
 
+    /**
+     * Returns the nodes above this node, from the root down (the "path" attribute).
+     *
+     * The last element of the path string is the node's own and is left out. A node without node ID (the preview node
+     * of an object that was never published, built by content/versionview) has the parent's path string with an empty
+     * last element (/1/2/58//): its last element is the parent, which is part of the path.
+     *
+     * @return eZContentObjectTreeNode[]
+     */
     function fetchPath()
     {
         $nodePath = $this->attribute( 'path_string' );
 
-        return eZContentObjectTreeNode::fetchNodesByPathString( $nodePath, false, true );
+        return static::fetchNodesByPathString( $nodePath, $this->pathStringEndsWithParent(), true );
+    }
+
+    /**
+     * Returns true when the last element of the path string is the parent node rather than the node itself: the node
+     * has no node ID yet (a preview node of an object that was never published) and the path string is not empty.
+     *
+     * @return bool
+     */
+    function pathStringEndsWithParent()
+    {
+        return !$this->attribute( 'node_id' ) && trim( (string)$this->attribute( 'path_string' ), '/' ) !== '';
     }
 
     /*!
