@@ -139,8 +139,39 @@ installation with `[Session] Handler=ezpSessionHandlerDB`, and of every handler 
 The call is gone. `session_set_save_handler()` selects the user module by itself, so the handler is registered as
 before.
 
-PHP 8.4 still reports a deprecation for `session_set_save_handler()` with single callbacks instead of an object that
-implements `SessionHandlerInterface`. It is a notice, not an error, and is left for a change of its own.
+PHP 8.4 still reported a deprecation for `session_set_save_handler()` with single callbacks instead of an object that
+implements `SessionHandlerInterface`; bug 5 below removes it.
+
+## Bug 5: `setSaveHandler()` gave PHP six separate callbacks
+
+### What broke
+
+Since PHP 8.4 every request of an installation with `[Session] Handler=ezpSessionHandlerDB` (or an extension handler
+that inherits `setSaveHandler()`) logged:
+
+```
+session_set_save_handler(): Providing individual callbacks instead of an object implementing SessionHandlerInterface is deprecated
+```
+
+### What changed
+
+`setSaveHandler()` now gives PHP an object: `ezpSessionHandlerAdapter` (`lib/ezsession/classes/ezpsessionhandleradapter.php`)
+implements `SessionHandlerInterface` and passes `open`, `close`, `read`, `write`, `destroy` and `gc` on to the handler
+unchanged. So:
+
+- **Handlers stay as they are.** An extension handler that extends `ezpSessionHandler` keeps its methods; nothing in
+  it has to change. The adapter is available to any code that registers a handler itself:
+  `session_set_save_handler( new ezpSessionHandlerAdapter( $handler ), false )`.
+- **No shutdown function is registered** (`false`), exactly as with the callbacks before: eZSession and the persistent
+  workers of Exponential Velocity write and close the session themselves.
+- **PHP 8.0 to 8.5:** the object form works on every supported version. The adapter's methods carry
+  `#[\ReturnTypeWillChange]` instead of return types (the interface has tentative return types since PHP 8.1, and
+  the code style of Exponential has no return types).
+
+`ezpSessionHandlerPHP` and `ezpSessionHandlerSymfony` have their own `setSaveHandler()` and are unchanged.
+
+Tests: `tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php` (every call passed on unchanged, the adapter is a
+`SessionHandlerInterface`, `setSaveHandler()` raises no deprecation and selects the user module).
 
 ## PHPUnit 13 test suite
 
