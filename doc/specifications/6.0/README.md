@@ -17,6 +17,9 @@ default, scope) and ends with "Related pages".
 | [Audit event model](audit-event-model.md) | Event names, records, channels, hash chains, `audit.ini`, extension points |
 | [Extension metadata](extension-metadata.md) | `ezinfo.php`, `extension.xml`, `expInfo`, the release rule |
 | [Installer logs and seed data](installer-logs-and-seed-data.md) | Seed files, the content tree of a new installation, installer logs |
+| [Notifications](notifications.md) | Events, handlers, rules, digest, the service, lock and run record, views, templates |
+| [Notification settings](notifications-ini.md) | `notification.ini` and the related `site.ini`, `cronjob.ini`, `menu.ini` settings with defaults |
+| [Notification commands](notifications-cli.md) | `exp:notification:status`, `run`, `events`, `subscriptions`: options, exit codes, sample output |
 
 ## Databases
 

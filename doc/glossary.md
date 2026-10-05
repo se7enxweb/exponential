@@ -62,6 +62,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **design**: a set of templates, styles and images; the **siteaccess** chooses which designs are used. [Getting started](guides/getting-started.md).
 - **design.ini**: the settings file that lists designs, stylesheets and scripts. [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
 - **DFS**: the database file system flavour of the **cluster** handler. [Operating a site](guides/operating-a-site.md).
+- **digest (notification)**: one e-mail that collects the notification messages of a day, a week or a month instead of one mail per change. [Notifications](features/6.0/notifications.md), [specification](specifications/6.0/notifications.md).
 - **DSE** (`sevenx_dse`): the Database Source Editor, which embeds **adminneo** in the admin. [sevenx_dse](features/6.0/extensions/sevenx_dse.md).
 - **DXP skeleton**: a starter project for the Symfony based platform. [Platform DXP skeleton](features/6.0/platform-dxp-skeleton.md).
 
@@ -159,6 +160,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **ngclasslist**: a datatype that stores a list of content classes. [ngclasslist](features/6.0/extensions/ngclasslist.md).
 - **ngsymfonytools**: lets legacy templates include Twig templates and run Symfony code. [ngsymfonytools](features/6.0/extensions/ngsymfonytools.md).
 - **node**: one place of a **content object** in the **content tree**; has an id, a parent, a sort order and a visibility. [Content model](guides/content-model-and-editing.md).
+- **notification**: an e-mail that tells a user that followed content changed or that a collaboration item needs attention; made from an event by a handler when the notification cronjob runs. [Notifications](features/6.0/notifications.md), [administrator's guide](guides/notifications-administrator.md), [specification](specifications/6.0/notifications.md).
 - **nxc_powercontent**: an extension that extends how code creates, updates and removes content. [nxc_powercontent](features/6.0/extensions/nxc_powercontent.md).
 
 ## O

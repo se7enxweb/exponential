@@ -58,7 +58,7 @@ Name it in `[CronjobSettings] Scripts[]` or in a `[CronjobPart-<name>]` block of
 ## Related pages
 
 - [Runnable commands, cronjobs and views (specification)](../../specifications/6.0/runnable-commands-cronjobs-views.md), [commands, cronjob parts and module views as classes](../../bc/6.0/cli_cronjob_view_abstractions.md)
-- [Content jobs](content-jobs.md), [Velocity scheduler](velocity-scheduler.md)
+- [Content jobs](content-jobs.md), [Velocity scheduler](velocity-scheduler.md), [Notifications (the cronjob part `notification`)](notifications.md)
 - [RSS import cleanup cronjob part](../../bc/6.0/cleanuprss.md), [console commands](../../bc/6.0/console.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 - History: [September 2026, first half: cronjobs console](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [the page redesign of 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools), [June 2026, first half](../../history/2026/2026-06a.md)

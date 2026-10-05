@@ -64,6 +64,8 @@ Read them in this order the first time. Each one also stands on its own.
 | [Deploying](deploying.md) | The site served by Apache with PHP-FPM, by Velocity or by FrankenPHP, with HTTPS | 30 minutes |
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
 | [Security and audit](security-and-audit.md) | The hardening checked, roles that give only what is needed, the audit trail read, debug output for your address only | 30 minutes |
+| [Notifications: running them and fixing problems](notifications-administrator.md) | The notification cronjob set up, the status page read, a run tried without sending mail, the usual problems solved | 30 minutes |
+| [Notifications: architecture, extending and testing](notifications-developer.md) | A custom event type and handler that mail an address, a test that keeps mail in files | 45 minutes |
 | [Remote services and apps](remote-services-and-apps.md) | Services called from the shell and from Python, a personal API token, a portal front end | 20 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
 
@@ -110,8 +112,9 @@ You write extensions, templates with logic, commands and integrations.
    Extension points (RAD): [RAD tools](../features/6.0/rad-tools.md), [the extension points](../bc/6.0/rad-extension-points.md), [the extension surface](../bc/6.0/rad-extension-surface.md), [RAD security](../bc/6.0/rad-security.md).
 3. Commands, cronjobs and module views as classes: [Commands, cronjob parts and module views](../bc/6.0/cli_cronjob_view_abstractions.md) and the [specification](../specifications/6.0/runnable-commands-cronjobs-views.md); [Console](../bc/6.0/console.md).
 4. Metadata and services: [Remote services and apps](remote-services-and-apps.md) (the guide), [Extension metadata](../specifications/6.0/extension-metadata.md), [Backend services over ezjscore](../bc/6.0/backend_ezjscore_services.md).
-5. Tests and compatibility: [Continuous integration](../specifications/6.0/continuous-integration.md), [PHP 8 support](../bc/6.0/php8.md).
-6. Bridges to the Symfony platform: [Legacy bridge](../features/6.0/legacy-bridge.md), [the platform repositories](../history/ecosystem.md).
+5. Notifications: [architecture, extending and testing](notifications-developer.md), [the specification](../specifications/6.0/notifications.md), [the INI reference](../specifications/6.0/notifications-ini.md), [the commands](../specifications/6.0/notifications-cli.md).
+6. Tests and compatibility: [Continuous integration](../specifications/6.0/continuous-integration.md), [PHP 8 support](../bc/6.0/php8.md).
+7. Bridges to the Symfony platform: [Legacy bridge](../features/6.0/legacy-bridge.md), [the platform repositories](../history/ecosystem.md).
 
 ## Road 4: operators
 
@@ -121,7 +124,7 @@ You run the installation: servers, caches, backups, upgrades, security.
 2. Install on purpose: [Install in one command](../features/6.0/install-in-one-command.md), [Kickstarter](../features/6.0/kickstarter-cli.md) for repeatable installs, [SQLite](../features/6.0/sqlite-database.md), [MongoDB](../features/6.0/mongodb-database-support.md).
 3. The web server: [Velocity web server](../features/6.0/velocity-web-server.md), [its control panel](../features/6.0/velocity-control-panel.md), [HTTPS certificates](../features/6.0/velocity-https-certificates.md), [engines compared](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md).
 4. Caches and speed: [cache control](../bc/6.0/cache-console.md), [HTTP caching](../bc/6.0/http-caching.md), [SQL query cache](../bc/6.0/sql-query-cache.md), [static cache](../features/6.0/static-cache-generator.md), [preload](../features/6.0/preload-sites-view.md).
-5. Keep it healthy: [maintenance mode](../features/6.0/maintenance-mode.md), [repair from the browser](../features/6.0/repair-from-the-browser.md), [file consistency check](../features/6.0/file-consistency-check.md), [cronjobs](../features/6.0/cronjobs-console.md), [audit trail](../features/6.0/audit-trail.md).
+5. Keep it healthy: [notifications](notifications-administrator.md) (the cronjob, the status page, troubleshooting), [maintenance mode](../features/6.0/maintenance-mode.md), [repair from the browser](../features/6.0/repair-from-the-browser.md), [file consistency check](../features/6.0/file-consistency-check.md), [cronjobs](../features/6.0/cronjobs-console.md), [audit trail](../features/6.0/audit-trail.md).
 6. Security: [Security and audit](security-and-audit.md) (the guide), [Security defaults of September 2026](../specifications/6.0/security-defaults-2026-09.md), [the August 2026 patches](../specifications/6.0/security-hardening-2026-08.md), [the 6.0.13 hardening](../specifications/6.0/security-hardening-6.0.13.md).
 7. Upgrading: follow [Upgrading](upgrading.md); read the [6.0.15 changelog](../changelogs/6.0/6.0.15.md), then the behaviour changes of [July and August](../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September](../bc/6.0/behaviour-changes-2026-09b.md) and [October](../bc/6.0/behaviour-changes-2026-10.md), in that order.
 
