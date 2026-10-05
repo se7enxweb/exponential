@@ -5,7 +5,7 @@ e4e94613754abb37886f57b4c7fd7914  .githooks/commit-msg
 e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 3a51b99b6d1c552cdd382ed7ab577fe6  .github/workflows/phpunit.yml
-6d96033e599a7bd8873387f107343744  .github/workflows/quality.yml
+8de783dd20840988e28236c8f2370a45  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 ccc8e89e611f0b022b2399eb9b74c1a8  .htaccess_root
 0f412f7d6d70465f93b7c8a6058a39db  .htaccess_root_static
@@ -167,7 +167,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-3ffee450f1e04f079510e86290ea0aec  composer.json
+3b42cc951528e1563c400c11bbf08a67  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 ab9aa05ef4f1d7bed89ee4ce14129703  config.php-RECOMMENDED
@@ -2697,7 +2697,7 @@ de93c492b3a2fa49ea08a89471fc968a  doc/bc/6.0/opml.md
 75a67bb0f4324d3575fb035e71b42a79  doc/bc/6.0/pagination-settings.md
 6322f7b35a71418c2d496b5dfc25b319  doc/bc/6.0/pdf-export.md
 4eb26aa83f26bb69480df0792bff5fba  doc/bc/6.0/phar.md
-f35929a1be5818e291046de02d270a78  doc/bc/6.0/php-8.0-support.md
+b7ec719d6720f46c5448e1c68ee1adff  doc/bc/6.0/php-8.0-support.md
 ca5f17a9a9ef326c2f0ec94e686df727  doc/bc/6.0/php8.md
 17a4aa7ba8351f6dde162cf39f2d7840  doc/bc/6.0/phpunitv10.md
 ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
