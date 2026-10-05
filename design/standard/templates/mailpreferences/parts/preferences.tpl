@@ -79,6 +79,17 @@
 {elseif $category.double_opt_in}
                     <p class="mp-hint">{'When you turn this on, we first send you a link to confirm it.'|i18n( 'design/standard/mailpreferences' )}</p>
 {/if}
+{if $category.subscriptions|count|gt( 0 )}
+                    <div class="mp-subscriptions">
+                        <p class="mp-hint">{'Your subscriptions:'|i18n( 'design/standard/mailpreferences' )}</p>
+                        <ul>
+    {foreach $category.subscriptions as $subscription}
+                            <li>{$subscription.name|wash}{if $subscription.status} <span class="mp-badge{if $subscription.active} on{/if}">{$subscription.status|wash}</span>{/if}
+                            {if and( $subscription.url, $mode|ne( 'admin' ) )}<a href="{$subscription.url|wash}">{'Change'|i18n( 'design/standard/mailpreferences' )}</a>{/if}</li>
+    {/foreach}
+                        </ul>
+                    </div>
+{/if}
 {if $category.frequencies|count|gt( 1 )}
                     <fieldset class="mp-freq">
                         <legend>{'How often:'|i18n( 'design/standard/mailpreferences' )}</legend>

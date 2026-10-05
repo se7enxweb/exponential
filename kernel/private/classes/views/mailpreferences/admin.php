@@ -61,6 +61,23 @@ class Admin extends Page
 
     protected function status()
     {
+        $notice = false;
+        $http = $this->http;
+        if ( self::isPost() && $http->hasPostVariable( 'StoreSenderDetailsButton' ) )
+        {
+            // the form token of ezformtoken guards this POST like every other; the view needs mailpreferences/administrate
+            try
+            {
+                $ok = \expMailSenderDetails::save( (string)$http->postVariable( 'OrganisationName', '' ), (string)$http->postVariable( 'OrganisationAddress', '' ) );
+                $notice = $ok ? array( 'type' => 'success', 'text' => MailPreferencesPage::trAdmin( 'The sender details were saved.' ) )
+                              : array( 'type' => 'error', 'text' => MailPreferencesPage::trAdmin( 'The sender details could not be saved: the settings override is not writable.' ) );
+            }
+            catch ( \Throwable $e )
+            {
+                \eZDebug::writeError( $e->getMessage(), __METHOD__ );
+                $notice = array( 'type' => 'error', 'text' => MailPreferencesPage::trAdmin( 'The sender details could not be saved: %error', array( '%error' => $e->getMessage() ) ) );
+            }
+        }
         $status = \expMailPreferencesService::status();
         $problems = array();
         foreach ( $status['problems'] as $problem )
@@ -80,7 +97,9 @@ class Admin extends Page
         $none = $t( '(not set)' );
         $facts = array(
             array( 'label' => $t( 'Mail gate' ), 'value' => $status['gate'] === 'enabled' ? $t( 'On' ) : $t( 'Off' ) ),
-            array( 'label' => $t( 'Organisation in the footer' ), 'value' => $status['footer']['organisation_name'] !== '' ? $status['footer']['organisation_name'] : $none ),
+            array( 'label' => $t( 'Organisation in the footer' ), 'value' => $status['footer']['organisation_name'] !== ''
+                   ? $status['footer']['organisation_name'] . ( isset( $status['footer']['organisation_name_source'] ) && $status['footer']['organisation_name_source'] === 'site' ? ' (' . $t( 'the site name' ) . ')' : '' )
+                   : $none ),
             array( 'label' => $t( 'Postal address in the footer' ), 'value' => $status['footer']['organisation_address'] !== '' ? $status['footer']['organisation_address'] : $none ),
             array( 'label' => $t( 'Links in e-mails point to' ), 'value' => $status['base_url'] ),
             array( 'label' => $t( 'Site secret of the links' ), 'value' => $status['secret'] ? $t( 'Generated' ) : $t( 'Not generated yet' ) ),
@@ -92,7 +111,8 @@ class Admin extends Page
         $links = array( array( 'url' => 'mailpreferences/settings', 'text' => $t( 'My e-mail preferences' ) ),
                         array( 'url' => 'notification/status', 'text' => $t( 'Notification status' ) ),
                         array( 'url' => 'mailpreferences/request', 'text' => $t( 'The "send me a link" page' ) ) );
-        return $this->render( 'admin/status.tpl', array( 'problems' => $problems, 'stats' => $stats, 'facts' => $facts, 'links' => $links, 'notice' => false ),
+        return $this->render( 'admin/status.tpl', array( 'problems' => $problems, 'stats' => $stats, 'facts' => $facts, 'links' => $links, 'notice' => $notice,
+                                                         'sender' => \expMailSenderDetails::get() + array( 'site_name' => \expMailSenderDetails::siteName() ) ),
                               $t( 'Status' ) );
     }
 
@@ -197,6 +217,22 @@ class Admin extends Page
         $check = false;
         $reasons = MailPreferencesPage::reasonNames();
         unset( $reasons['bridge'] );
+        $access = \eZUser::currentUser()->hasAccessTo( 'mailpreferences', 'export' );
+        $canExport = $access['accessWord'] !== 'no';
+        if ( isset( $_GET['export'] ) && $_GET['export'] === 'csv' )
+        {
+            if ( !$canExport )
+                return $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+            $csv = "\xEF\xBB\xBF" . \expMailSuppression::exportCsv();
+            while ( ob_get_level() > 0 )
+                ob_end_clean();
+            header( 'Content-Type: text/csv; charset=utf-8' );
+            header( 'Content-Disposition: attachment; filename="suppression-list-' . gmdate( 'Y-m-d' ) . '.csv"' );
+            header( 'Content-Length: ' . strlen( $csv ) );
+            MailPreferencesPage::privateHeaders();
+            echo $csv;
+            \eZExecution::cleanExit();
+        }
         if ( self::isPost() && $http->hasPostVariable( 'AddButton' ) )
         {
             $email = trim( (string)$http->postVariable( 'AddEmail', '' ) );
@@ -250,7 +286,8 @@ class Admin extends Page
                              'note' => (string)$row->attribute( 'note' ), 'created' => (int)$row->attribute( 'created' ) );
         return $this->render( 'admin/suppression.tpl', array( 'rows' => $rows, 'total' => $total, 'offset' => $offset, 'limit' => self::LIMIT,
                                                               'reason_names' => MailPreferencesPage::reasonNames(), 'add_reasons' => $reasons,
-                                                              'check' => $check, 'notice' => $notice, 'page_uri' => 'mailpreferences/admin/suppression' ),
+                                                              'check' => $check, 'notice' => $notice, 'page_uri' => 'mailpreferences/admin/suppression',
+                                                              'export_uri' => $canExport && $total > 0 ? 'mailpreferences/admin/suppression?export=csv' : false ),
                               $t( 'Suppression list' ) );
     }
 

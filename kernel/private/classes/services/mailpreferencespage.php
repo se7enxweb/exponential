@@ -260,7 +260,8 @@ class MailPreferencesPage
             $categories[] = array( 'identifier' => $id, 'name' => self::categoryName( $category ), 'description' => self::categoryDescription( $category ),
                                    'on' => $state === \expMailPreferences::ON, 'pending' => $state === \expMailPreferences::PENDING,
                                    'frequency' => $prefs->frequency( $id ), 'frequencies' => $category->frequencies,
-                                   'double_opt_in' => (bool)$category->doubleOptIn );
+                                   'double_opt_in' => (bool)$category->doubleOptIn,
+                                   'subscriptions' => self::subscriptions( $recipient, $category ) );
         }
         $notice = $notices ? array_shift( $notices ) : false;
         return array( 'mode' => $mode, 'form_action' => $formAction, 'email' => $recipient->email(), 'master' => $prefs->masterOn(),
@@ -268,6 +269,39 @@ class MailPreferencesPage
                       'history' => self::history( $recipient, self::HISTORY_LIMIT ),
                       'history_total' => \expConsentLog::countList( array( 'recipient_key' => $recipient->key() ) ),
                       'export' => $export, 'notice' => $notice, 'notices' => $notices );
+    }
+
+    /**
+     * The subscriptions an older system keeps for a category (the lists of a newsletter), when the category's
+     * handler offers them with the optional method subscriptions( expMailRecipient, expMailCategory ), which returns
+     * a list of hash( name, status, active, url ).
+     *
+     * @param \expMailRecipient $recipient
+     * @param \expMailCategory $category
+     * @return array[]
+     */
+    protected static function subscriptions( \expMailRecipient $recipient, \expMailCategory $category )
+    {
+        try
+        {
+            $handler = $category->handler();
+            if ( !$handler || !method_exists( $handler, 'subscriptions' ) )
+                return array();
+            $out = array();
+            foreach ( (array)$handler->subscriptions( $recipient, $category ) as $s )
+            {
+                if ( !is_array( $s ) || !isset( $s['name'] ) )
+                    continue;
+                $out[] = array( 'name' => (string)$s['name'], 'status' => isset( $s['status'] ) ? (string)$s['status'] : '',
+                                'active' => !empty( $s['active'] ), 'url' => isset( $s['url'] ) ? (string)$s['url'] : '' );
+            }
+            return $out;
+        }
+        catch ( \Throwable $e )
+        {
+            \eZDebug::writeError( $e->getMessage(), __METHOD__ );
+            return array();
+        }
     }
 
     /**

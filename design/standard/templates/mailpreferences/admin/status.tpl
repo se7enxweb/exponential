@@ -1,6 +1,7 @@
 {* mailpreferences/admin/status: the state of the e-mail preferences for administrators.
    Variables: problems (hash( level: error|warning|info, text )), stats (hash( label, value, level: ''|bad )),
-   facts (hash( label, value )), notice (or false), links (hash( url, text ): the related pages). *}
+   facts (hash( label, value )), notice (or false), links (hash( url, text ): the related pages),
+   sender (hash( name, address, name_source, name_setting, site_name ): the form "Sender details"). *}
 {include uri='design:mailpreferences/parts/page_start.tpl'
          title='E-mail preferences: status'|i18n( 'design/admin/mailpreferences' )
          intro='Every e-mail the system sends passes the mail gate: it checks the main switch, the category and the suppression list of the recipient, and adds the footer and the unsubscribe links to optional e-mail. This page shows whether that works and what it did.'|i18n( 'design/admin/mailpreferences' )
@@ -24,6 +25,24 @@
         <li><div class="mp-stat{if $stat.level} {$stat.level|wash}{/if}"><strong>{$stat.value|wash}</strong><span>{$stat.label|wash}</span></div></li>
 {/foreach}
     </ul>
+{/if}
+
+{if is_set( $sender )}
+    <section class="mp-card" id="mp-sender">
+        <h2>{'Sender details'|i18n( 'design/admin/mailpreferences' )}</h2>
+        <p class="mp-hint">{'Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.'|i18n( 'design/admin/mailpreferences' )}</p>
+        <form method="post" action={'mailpreferences/admin/status'|ezurl}>
+            <div class="mp-field">
+                <label for="mp-sender-name">{'Organisation name'|i18n( 'design/admin/mailpreferences' )}</label>
+                <input type="text" id="mp-sender-name" name="OrganisationName" value="{$sender.name_setting|wash}" placeholder="{$sender.site_name|wash}" maxlength="255" />
+            </div>
+            <div class="mp-field">
+                <label for="mp-sender-address">{'Postal address'|i18n( 'design/admin/mailpreferences' )}</label>
+                <textarea id="mp-sender-address" name="OrganisationAddress" rows="4" cols="40">{$sender.address|wash}</textarea>
+            </div>
+            <div class="mp-actions"><input class="mp-btn primary" type="submit" name="StoreSenderDetailsButton" value="{'Save the sender details'|i18n( 'design/admin/mailpreferences' )}" /></div>
+        </form>
+    </section>
 {/if}
 
 {if $facts|count|gt( 0 )}

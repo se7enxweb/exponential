@@ -2,7 +2,8 @@
    stored, so the list cannot show addresses; an address typed in the check form is hashed and looked up.
    Variables: rows (hash( hash, reason, note, created )), total, offset, limit, reason_names (hash( reason => label )),
    add_reasons (the reasons an administrator can choose),
-   check (hash( email, suppressed, row ) after a check, or false), notice, page_uri. *}
+   check (hash( email, suppressed, row ) after a check, or false), notice, page_uri,
+   export_uri (the CSV download of the list, or false without the export policy or entries). *}
 {include uri='design:mailpreferences/parts/page_start.tpl'
          title='E-mail preferences: suppression list'|i18n( 'design/admin/mailpreferences' )
          intro='No optional e-mail is sent to an address on this list: hard bounces, complaints, requests to stop all e-mail and legal requests. Essential e-mail still goes. Only a hash of the address is kept, never the address itself.'|i18n( 'design/admin/mailpreferences' )
@@ -59,6 +60,12 @@
 
 <section class="mp-card">
     <h2>{'On the list'|i18n( 'design/admin/mailpreferences' )} <span class="mp-badge">{$total}</span></h2>
+{if first_set( $export_uri, false() )}
+    <div class="mp-actions">
+        <a class="mp-btn small" href={$export_uri|ezurl} download="download">{'Export as CSV'|i18n( 'design/admin/mailpreferences' )}</a>
+        <span class="mp-hint">{'The file holds the hashes, reasons, dates and notes; no address.'|i18n( 'design/admin/mailpreferences' )}</span>
+    </div>
+{/if}
 {if $rows|count|eq( 0 )}
     <p class="mp-hint">{'The list is empty.'|i18n( 'design/admin/mailpreferences' )}</p>
 {else}
