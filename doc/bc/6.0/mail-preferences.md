@@ -101,6 +101,50 @@ services `changeEmail`), the account keeps its address until the new one is conf
 address gets a notice. The preference page shows the waiting change. Imports and scripts that set the account with
 `fromString()` (`login|email|...`) change it at once, as before.
 
+### Opt-out categories are refused
+
+An optional category with `DefaultOn=true` (in the settings, an extension's settings, an administrator's row or code)
+is treated as off for everybody who never chose, and the status page and `exp:mail:status` warn with its identifier.
+A site whose recipients are under a law that allows opt-out for that mail sets
+`mailpreferences.ini [CategorySettings] AllowDefaultOn=enabled`; the status page then notes that opt-out is allowed.
+
+### Removing an account erases its e-mail preferences
+
+`eZUser::removeUser()` (called when a user object is purged) calls `expMailPreferences::eraseForRemovedAccount()`: the
+preferences and pending confirmations of the account are removed, its consent log is anonymised (address, IP and user id
+gone; the rows stay as the proof of each consent and withdrawal) and one `erase` row is added. The suppression list is
+not touched: it holds only salted hashes and keeps blocking the address. An account that never had an e-mail preference
+leaves nothing behind. Code that counted consent log rows by user id after a removal finds none.
+
+### Optional mail always has a sender
+
+Optional mail with an empty From gets `site.ini [MailSettings] EmailSender`, else `AdminEmail`; the gate log records
+`from_fallback` with the file that sent it, and the status page counts it. With neither setting the mail is not sent
+(`expMailGate::lastResult()`: blocked, `no_sender`). Essential and uncategorised mail is unchanged (the transports fill
+an empty sender as before).
+
+### The public site name, the privacy notice and the link lifetimes
+
+- The footer and the mail templates get `$site_name` (and `$privacy_url`) from `expMailPreferencesService::renderTemplate()`:
+  `OrganisationName` when set, else the SiteName of the public siteaccess. A command or a cronjob that runs with the
+  administration siteaccess no longer puts "Admin" into the footer. An overridden mail template that reads
+  `ezini( 'SiteSettings', 'SiteName' )` should use `$site_name` instead.
+- `[FooterSettings] PrivacyURL` (new, empty) links the privacy notice from the footer of optional mail and from the
+  preference page. Empty: the node of `menu.ini [SiteInfo] PrivacyPolicyID` of the public siteaccess when it exists, else
+  no link, and the status page says so.
+- `[TokenSettings] TTL[unsubscribe]` and `TTL[manage]` between 0 and 60 days are raised to 60 days (5184000 s), with a
+  warning on the status page. 0 still means "never expires".
+
+### What is left to the site on purpose
+
+- **Mail without a category** is sent without footer or unsubscribe link, as before the gate, so existing code keeps
+  working. Commercial mail sent that way does not comply; the status page counts it and names its sender. Give such mail
+  a category.
+- **`SplitRecipients=disabled`** sends one mail to all recipients: it cannot carry a personal `List-Unsubscribe` header,
+  and its footer links to "Send me a link" instead of a one-click link. Large mail providers expect one-click unsubscribe
+  from bulk senders. Keep `enabled`.
+- **DKIM** is signed by the mail server, not by Exponential. Sign `List-Unsubscribe` and `List-Unsubscribe-Post`.
+
 ## How to keep the old behaviour
 
 | You want | Do |
@@ -109,6 +153,7 @@ address gets a notice. The preference page shows the waiting change. Imports and
 | One mail for all recipients | `[GateSettings] SplitRecipients=disabled` |
 | A new e-mail address at once, without confirmation | `[EmailChangeSettings] Confirm=disabled` (and `NotifyOldAddress=disabled` for no notice) |
 | A mail of your code untouched | Do not give it a category. It is sent exactly as before and only counted; list its file or class in `EssentialSenders[]` if it is essential |
+| An optional category on by default (opt-out) | `[CategorySettings] AllowDefaultOn=enabled`, only where the law allows it |
 | Your own footer | Override `mailpreferences/mail/footer.tpl` (and `footer_html.tpl`) in your design, keeping the unsubscribe link, the manage link and the address |
 
 Disabling the gate does not make a site compliant with the e-mail laws; read [the law checklist](../../specifications/6.0/mail-preferences-compliance.md)
@@ -118,6 +163,11 @@ first.
 
 - `eZMail::setCategory( $identifier )` and `eZMail::category()` are new; `setCategory()` also writes the header
   `X-Exp-Mail-Category`.
+- A view that answers with its own body (a download, a plain answer, an event stream) empties the output buffers with
+  `eZExecution::discardOutputBuffers()`, never with `while ( ob_get_level() > 0 ) ob_end_clean();`: under Velocity
+  the worker keeps a buffer that cannot be removed, and that loop never ends (the request answers 504).
+  `MailPreferencesPage::sendResponse()` does the whole answer for the views of the module. Velocity sends a response
+  when the script ends, so an event stream arrives complete but at once there; under PHP-FPM it streams.
 - A category of an extension is declared in its `settings/mailpreferences.ini.append.php`
   ([the developer's guide](../../guides/mail-preferences-developer.md)).
 - Tests that send mail must force the file transport in their own process and use `.invalid` addresses; the gate's log
