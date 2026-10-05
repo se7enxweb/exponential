@@ -148,6 +148,16 @@ class eZINI
     static protected $injectedMergeSettings = array();
 
     /**
+     * Name of the environment the settings are read for, from the EXP_ENV
+     * constant (config.env.php). Null until first asked, false when no valid
+     * environment is set.
+     *
+     * @see eZINI::environment()
+     * @var string|false|null
+     */
+    static protected $environment = null;
+
+    /**
      * Initialization of eZINI object
      *
      * Enter description here ...
@@ -222,6 +232,110 @@ class eZINI
     function filename()
     {
         return $this->FileName;
+    }
+
+    /**
+     * Returns the name of the environment the settings are read for.
+     *
+     * The name comes from the EXP_ENV constant, which config.env.php defines
+     * per machine (dev, test, prod, ...). It must match ^[a-z][a-z0-9_-]{0,31}$;
+     * an undefined, empty or invalid value means no environment, so only the
+     * standard INI files are read. An invalid value is reported once to the
+     * PHP error log (eZDebug itself reads INI files and can not be used here).
+     *
+     * @see resetEnvironment()
+     * @return string|false
+     */
+    static function environment()
+    {
+        if ( self::$environment === null )
+            self::$environment = self::environmentName( defined( 'EXP_ENV' ) ? EXP_ENV : false );
+
+        return self::$environment;
+    }
+
+    /**
+     * Returns $value as an environment name, or false when it is not one:
+     * false, null, an empty string and a name that does not match
+     * ^[a-z][a-z0-9_-]{0,31}$ (after trimming). An invalid name is written to
+     * the PHP error log.
+     *
+     * @param mixed $value
+     * @return string|false
+     */
+    static function environmentName( $value )
+    {
+        if ( $value === false || $value === null || !is_scalar( $value ) )
+            return false;
+
+        $environment = trim( (string)$value );
+        if ( $environment === '' )
+            return false;
+
+        if ( !preg_match( '/^[a-z][a-z0-9_-]{0,31}$/', $environment ) )
+        {
+            error_log( "eZINI: EXP_ENV '" . addcslashes( $environment, "\0..\37" ) . "' is not a valid environment name, only the standard settings are read" );
+            return false;
+        }
+
+        return $environment;
+    }
+
+    /**
+     * Forgets the environment name read by environment(), so the next call reads
+     * EXP_ENV again. Meant for tests.
+     */
+    static function resetEnvironment()
+    {
+        self::$environment = null;
+    }
+
+    /**
+     * Returns the environment variant of an INI file path, or false when the
+     * file name has no ".ini" part.
+     *
+     * The environment name goes right after ".ini" in the file name:
+     * site.ini -> site.ini.test, site.ini.append.php -> site.ini.test.append.php,
+     * site.ini.append -> site.ini.test.append, site.ini.php -> site.ini.test.php
+     *
+     * @param string $filePath
+     * @param string $environment
+     * @return string|false
+     */
+    static function environmentFilePath( $filePath, $environment )
+    {
+        $baseName = basename( $filePath );
+        $position = strpos( $baseName, '.ini' );
+        if ( $position === false )
+            return false;
+
+        $position += 4;
+        $rest = substr( $baseName, $position );
+        if ( $rest !== '' && $rest[0] !== '.' )
+            return false;
+
+        $directory = substr( $filePath, 0, strlen( $filePath ) - strlen( $baseName ) );
+        return $directory . substr( $baseName, 0, $position ) . '.' . $environment . $rest;
+    }
+
+    /**
+     * Adds the environment variant of $filePath to $inputFiles when an environment
+     * is set and the variant exists. Called right after each standard file is
+     * looked at, so a variant only overrides the settings of its own layer; it is
+     * also read when the standard file does not exist.
+     *
+     * @param array $inputFiles
+     * @param string $filePath
+     */
+    protected static function addEnvironmentFile( &$inputFiles, $filePath )
+    {
+        $environment = self::environment();
+        if ( $environment === false )
+            return;
+
+        $environmentFile = self::environmentFilePath( $filePath, $environment );
+        if ( $environmentFile !== false && file_exists( $environmentFile ) && !in_array( $environmentFile, $inputFiles, true ) )
+            $inputFiles[] = $environmentFile;
     }
 
     /**
@@ -494,13 +608,22 @@ class eZINI
 
         if ( file_exists( $iniFile ) )
             $inputFiles[] = $iniFile;
+        self::addEnvironmentFile( $inputFiles, $iniFile );
 
         // try the same file name with '.append.php' replace with '.append'
-        if ( strpos($iniFile, '.append.php') !== false && preg_match('#^(.+.append).php$#i', $iniFile, $matches ) && file_exists( $matches[1] ) )
-            $inputFiles[] = $matches[1];
+        if ( strpos($iniFile, '.append.php') !== false && preg_match('#^(.+.append).php$#i', $iniFile, $matches ) )
+        {
+            if ( file_exists( $matches[1] ) )
+                $inputFiles[] = $matches[1];
+            self::addEnvironmentFile( $inputFiles, $matches[1] );
+        }
 
-        if ( strpos($iniFile, '.php') === false && file_exists ( $iniFile . '.php' ) )
-            $inputFiles[] = $iniFile . '.php';
+        if ( strpos($iniFile, '.php') === false )
+        {
+            if ( file_exists ( $iniFile . '.php' ) )
+                $inputFiles[] = $iniFile . '.php';
+            self::addEnvironmentFile( $inputFiles, $iniFile . '.php' );
+        }
 
         if ( $this->DirectAccess )
         {
@@ -509,9 +632,11 @@ class eZINI
                 // recursion eZDebug::writeStrict( "INI files with *.ini.append suffix is DEPRECATED, use *.ini or *.ini.append.php instead: $iniFile.append", __METHOD__ );
                 $inputFiles[] = $iniFile . '.append';
             }
+            self::addEnvironmentFile( $inputFiles, $iniFile . '.append' );
 
             if ( file_exists ( $iniFile . '.append.php' ) )
                 $inputFiles[] = $iniFile . '.append.php';
+            self::addEnvironmentFile( $inputFiles, $iniFile . '.append.php' );
         }
         else
         {
@@ -532,22 +657,26 @@ class eZINI
                     // recursion eZDebug::writeStrict( "INI files with *.ini.php suffix is DEPRECATED, use *.ini or *.ini.append.php instead: $overrideFile.php", __METHOD__ );
                     $inputFiles[] = $overrideFile . '.php';
                 }
+                self::addEnvironmentFile( $inputFiles, $overrideFile . '.php' );
 
                 if ( file_exists( $overrideFile ) )
                 {
                     $inputFiles[] = $overrideFile;
                 }
+                self::addEnvironmentFile( $inputFiles, $overrideFile );
 
                 if ( file_exists( $overrideFile . '.append.php' ) )
                 {
                     $inputFiles[] = $overrideFile . '.append.php';
                 }
+                self::addEnvironmentFile( $inputFiles, $overrideFile . '.append.php' );
 
                 if ( file_exists( $overrideFile . '.append' ) )
                 {
                     // recursion eZDebug::writeStrict( "INI files with *.ini.append suffix is DEPRECATED, use *.ini or *.ini.append.php instead: $overrideFile.append", __METHOD__ );
                     $inputFiles[] = $overrideFile . '.append';
                 }
+                self::addEnvironmentFile( $inputFiles, $overrideFile . '.append' );
             }
         }
     }
@@ -571,6 +700,13 @@ class eZINI
         if ( $placement )
         {
             $cacheFileName .= '-placement:' . $placement;
+        }
+        // Each environment reads other files, so it gets its own cache file. Without
+        // an environment the name stays the same as before environments existed.
+        $environment = self::environment();
+        if ( $environment !== false )
+        {
+            $cacheFileName .= '-environment:' . $environment;
         }
         $filePreFix = explode( '.', $this->FileName);
         return $filePreFix[0] . '-' . md5( $cacheFileName ) . '.php';
