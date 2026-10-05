@@ -469,7 +469,7 @@ class eZTSTranslator extends eZTranslatorHandler
                             }
                             else if ( $textEl instanceof DOMElement && $textEl->tagName == 'byte' )
                             {
-                                $source .= chr( intval( '0' . $textEl->getAttribute( 'value' ) ) );
+                                $source .= self::byteValue( $textEl->getAttribute( 'value' ) );
                             }
                         }
                     }
@@ -487,15 +487,16 @@ class eZTSTranslator extends eZTranslatorHandler
                             }
                             else if ( $textEl instanceof DOMElement && $textEl->tagName == 'byte' )
                             {
-                                $translation .= chr( intval( '0' . $textEl->getAttribute( 'value' ) ) );
+                                $translation .= self::byteValue( $textEl->getAttribute( 'value' ) );
                             }
                         }
                     }
                 }
                 else if ( $childName == "comment" )
                 {
+                    // <comment/> is allowed by the schema and has no text node
                     $comment_el = $message_child->firstChild;
-                    $comment = $comment_el->nodeValue;
+                    $comment = $comment_el ? $comment_el->nodeValue : null;
                 }
                 else if ( $childName == "translatorcomment" )
                 {
@@ -530,6 +531,21 @@ class eZTSTranslator extends eZTranslatorHandler
 
         $this->insert( $contextName, $source, $translation, $comment );
         return true;
+    }
+
+    /**
+     * The character of a <byte value="..."/> element: Qt writes the value in hexadecimal with an x in front
+     * ("x9"), a plain number is decimal.
+     *
+     * @param string $value
+     * @return string
+     */
+    static function byteValue( $value )
+    {
+        $value = trim( (string)$value );
+        if ( $value !== '' && ( $value[0] === 'x' || $value[0] === 'X' ) )
+            return chr( hexdec( substr( $value, 1 ) ) & 0xff );
+        return chr( (int)$value & 0xff );
     }
 
     /**
@@ -653,8 +669,7 @@ class eZTSTranslator extends eZTranslatorHandler
             $context = "default";
         $man = eZTranslatorManager::instance();
         $key = $man->createKey( $context, $source, $message );
-        if ( isset( $this->Messages[$key] ) )
-            unset( $this->Messages[$key] );
+        return $this->removeKey( $key );
     }
 
     /**
@@ -666,8 +681,10 @@ class eZTSTranslator extends eZTranslatorHandler
      */
     function removeKey( $key )
     {
-        if ( isset( $this->Messages[$key] ) )
-            unset( $this->Messages[$key] );
+        if ( !isset( $this->Messages[$key] ) )
+            return false;
+        unset( $this->Messages[$key] );
+        return true;
     }
 
     /**
