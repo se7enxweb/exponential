@@ -1,6 +1,6 @@
 # `ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite
 
-Read this page if your installation stores sessions in the database (the default `ezpSessionHandlerDB`) and runs on
+Read this page if your installation stores sessions in the database (`ezpSessionHandlerDB`) and runs on
 PHP 8, if your `ezsession` table keeps growing, or if you saw blank pages with "Cannot call session save handler in a
 recursive manner". Three bugs in `ezpSessionHandlerDB` caused silent session failures under PHP 8 and stopped garbage
 collection from ever removing expired sessions. All three are fixed (6.0.x, 2026-04-08; released in 6.0.13) and
@@ -10,7 +10,7 @@ covered by a PHPUnit 13 test suite that runs without a live database or the Expo
 
 | | |
 |---|---|
-| What changed | `read()` returns `''` instead of `false`; `gc()` compares with `time()`; the `gc()` timeout guard measures the real elapsed time. |
+| What changed | `read()` returns `''` instead of `false`; `gc()` compares with `time()`; the `gc()` timeout guard measures the real elapsed time; `setSaveHandler()` no longer calls `session_module_name( 'user' )` (6.0.15). |
 | Who is affected | Every installation with database sessions on PHP 8.0 or newer. |
 | How to check | Count expired rows: `SELECT COUNT(*) FROM ezsession WHERE expiration_time < UNIX_TIMESTAMP();` (MySQL). Before the fix this number only grew. |
 | How to fix | Update. Expired rows left from before are removed by the next garbage collection run. |
@@ -114,9 +114,37 @@ $remaningTime = $maxExecutionTime - GC_TIMEOUT_MARGIN - ( $stopTime - $gcStartTi
 ```
 
 
+## Bug 4: `setSaveHandler()` called `session_module_name( 'user' )`
+
+Fixed on 5 October 2026, in the 6.0.15 line.
+
+### What broke
+
+`ezpSessionHandler::setSaveHandler()` (`lib/ezsession/classes/ezpsessionhandler.php`) selected the user module
+before it registered the callbacks:
+
+```php
+session_module_name( 'user' );
+session_set_save_handler( ... );
+```
+
+Since PHP 8.0, `session_module_name()` refuses the name `user` with
+`ValueError: session_module_name(): Argument #1 ($module) cannot be "user"`. The error stopped every request of an
+installation with `[Session] Handler=ezpSessionHandlerDB`, and of every handler of an extension that inherits
+`setSaveHandler()`. The default `ezpSessionHandlerPHP` and `ezpSessionHandlerSymfony` have their own
+`setSaveHandler()` and were not affected.
+
+### What changed
+
+The call is gone. `session_set_save_handler()` selects the user module by itself, so the handler is registered as
+before.
+
+PHP 8.4 still reports a deprecation for `session_set_save_handler()` with single callbacks instead of an object that
+implements `SessionHandlerInterface`. It is a notice, not an error, and is left for a change of its own.
+
 ## PHPUnit 13 test suite
 
-A new test file covers all three bugs without a live database or the Exponential kernel:
+A new test file covers all four bugs without a live database or the Exponential kernel:
 
 ```
 tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
@@ -142,6 +170,7 @@ preferred API — no `getMockBuilder()` notices).
 | `testGcNonIteratingPathReturnsTrue` | Regression guard |
 | `testGcIteratingPathReturnsTrueWhenNoExpiredSessions` | Regression guard |
 | `testHandlerImplementsRequiredMethods` | API contract guard |
+| `testSetSaveHandlerRegistersTheUserModule` | Bug 4 |
 
 ### Run
 
@@ -158,9 +187,9 @@ PHPUnit 13.0.0 by Sebastian Bergmann and contributors.
 
 Runtime:       PHP 8.5.5
 
-............                                    12 / 12 (100%)
+.............                                   13 / 13 (100%)
 
-OK (12 tests, 28 assertions)
+OK (13 tests, 30 assertions)
 ```
 
 ## Related pages
