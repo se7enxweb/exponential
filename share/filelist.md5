@@ -2870,7 +2870,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-5bdbafa87c54681aa64c17d5f5c7ad48  doc/changelogs/6.0/6.0.15.md
+ad3b5caddc99bdbeadaed7258efd9923  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4724,7 +4724,7 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 f7a45290c6e4e9c95b8920ad01823d65  kernel/classes/ezcontentfunctions.php
 dba862f2c686e4e505aa22c66b3b2c9a  kernel/classes/ezcontentlanguage.php
-8f71b3b96f02e9e5c930dca412bf6a61  kernel/classes/ezcontentobject.php
+8e7e681e325bb620736966b38e2fde56  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
@@ -5902,9 +5902,9 @@ bec03c44a375a6eafbb3a7cf109240e6  lib/ezfile/classes/ezforwardcompressionhandler
 0c9a30ddeed23b7e36c3122610a020fd  lib/ezfile/classes/ezmd5.php
 a7b345b24d67dc00fd9072ef5113e76f  lib/ezfile/classes/eznocompressionhandler.php
 76db3225c1a2121b68709ce9e8e690c3  lib/ezi18n/classes/ez1337translator.php
-4fbfb04433dc2ebc6c2df7d4e7546527  lib/ezi18n/classes/ezborktranslator.php
+c4aeb110c07ea17b1f3067a30f96bb23  lib/ezi18n/classes/ezborktranslator.php
 8622872908ea029bd1f88c060a61092e  lib/ezi18n/classes/ezcharsetinfo.php
-52decf11bf6eb2c4bc3aad6df60eb2be  lib/ezi18n/classes/ezchartransform.php
+a7615d8a999f5ce48cf1043eac41d2d3  lib/ezi18n/classes/ezchartransform.php
 94a6a8eb57c4e0a3294a288b1fc519ee  lib/ezi18n/classes/ezcodemapper.php
 36012d3b9849a1a7b82226413c618435  lib/ezi18n/classes/ezcodepage.php
 67bdaad907c6b8e518cf6322a95d32cb  lib/ezi18n/classes/ezcodepagecodec.php
@@ -5938,7 +5938,7 @@ d8cbe96b843487366d826951699ca840  lib/ezimage/classes/ezimageshellhandler.php
 e36519dd6b1beea8a7d4cc3cd131cff1  lib/ezlocale/classes/ezdate.php
 8a0a9d5fb1096d73bb035a984d5f51e8  lib/ezlocale/classes/ezdatetime.php
 e3e5484131d08bae7d2ea2222edefd5b  lib/ezlocale/classes/ezdateutils.php
-728be19d3bd7e15c864731ec0847b88c  lib/ezlocale/classes/ezlocale.php
+bb85573841d9d2ed443fb50a846eb0aa  lib/ezlocale/classes/ezlocale.php
 6181708ceb57d39407917be004c6ddc7  lib/ezlocale/classes/eztime.php
 788718802339d9fda989662a5dc797a4  lib/ezmath/classes/mathhandlers/ezbcmath.php
 5f331ce256564ac43863b8c416b5ec66  lib/ezmath/classes/mathhandlers/ezphpmath.php
@@ -5999,7 +5999,7 @@ b625c64166e6ed68aecfc4397247479d  lib/eztemplate/classes/eztemplatedigestoperato
 6dd76dc30dcf0bd0cb3af8c792eadcbc  lib/eztemplate/classes/eztemplateelementparser.php
 fd48fa761f32667ef0e39b7f0c16800e  lib/eztemplate/classes/eztemplateexecuteoperator.php
 0d855e6358e69227146c51c682d17a74  lib/eztemplate/classes/eztemplateexpinfooperator.php
-69916297ca3759cc99184dda243cf0ae  lib/eztemplate/classes/eztemplatefileresource.php
+5b0b229fdf199090398b7c878a14c747  lib/eztemplate/classes/eztemplatefileresource.php
 5568f59aab6103cd71b1ca2eceb4304d  lib/eztemplate/classes/eztemplateforeachfunction.php
 7f12f9fa17934e8f6f1664e3a9581664  lib/eztemplate/classes/eztemplateforfunction.php
 04c1c935fa1ca651bf5ef72ec4597edc  lib/eztemplate/classes/eztemplatefunctionelement.php
@@ -6011,7 +6011,7 @@ c7dfcb5e49cf05381653d2e6c4c6a888  lib/eztemplate/classes/eztemplateiffunction.ph
 023f900063f22ab78b9026933f1d3357  lib/eztemplate/classes/eztemplateloop.php
 c24a242645aeac124235310612a9981b  lib/eztemplate/classes/eztemplatemenufunction.php
 ac5d296c16229934386f1152e90b0fc0  lib/eztemplate/classes/eztemplatemultipassparser.php
-5e2626e7fdabe6696e7f5ed82c1cf63d  lib/eztemplate/classes/eztemplatenl2broperator.php
+463aec6aa8e29a21e3b288394eb8fc2a  lib/eztemplate/classes/eztemplatenl2broperator.php
 010086e2a147e294d7e500bab9a1e81f  lib/eztemplate/classes/eztemplatenodetool.php
 5aafa35018284cc32078c0271b089fff  lib/eztemplate/classes/eztemplateoperator.php
 d801af1e8d07bdd5808d320f3e21d1dc  lib/eztemplate/classes/eztemplateoperatorelement.php
@@ -6030,7 +6030,7 @@ ce64e8ddc670f525fc4f7a061e369df1  lib/eztemplate/classes/eztemplateswitchfunctio
 3203d0b04dc182ec2491644db60bc42e  lib/eztemplate/classes/eztemplatetextelement.php
 feb6381fbc782f2d25849a502d6b02e7  lib/eztemplate/classes/eztemplatetextoperator.php
 1f75b44294d455665ef4383eee95fad2  lib/eztemplate/classes/eztemplatetoolbarfunction.php
-4671def4acd2241369d6bebf924b1d94  lib/eztemplate/classes/eztemplatetreecache.php
+d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 17feca3856af459a6a503dd1c3e1302c  lib/eztemplate/classes/eztemplatetypeoperator.php
 d93815e1e0b342e1a8d5fc02d6ea9755  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
@@ -6039,8 +6039,8 @@ c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableeleme
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 df91c1d95383230e9c2c113c7b9f0699  lib/ezutils/classes/ezcachehelper.php
 df42d26c8d8f8485212c39aefa5ad5e6  lib/ezutils/classes/ezcli.php
-35b706d877c08a200445a9110525dd19  lib/ezutils/classes/ezdatetimevalidator.php
-ab85695631f8f3ec591980b883ae1117  lib/ezutils/classes/ezdebug.php
+0ee9cef26c3240f827773cafd53d87b6  lib/ezutils/classes/ezdatetimevalidator.php
+744ff440a03280cd9f573dcf57707dc9  lib/ezutils/classes/ezdebug.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 2047e66b03daaf6a4e04cda96d10617b  lib/ezutils/classes/ezexecution.php
 29e3a26ddc1646c9e19f898ca1dc0472  lib/ezutils/classes/ezexpiryhandler.php
@@ -6068,7 +6068,7 @@ ad8065df2ea00f70b5e30b072ab72827  lib/ezutils/classes/ezoperationmemento.php
 32678c060d937420616d680e7580a56d  lib/ezutils/classes/ezphpcreator.php
 d79f8356ae3d3d8fc55214ea32a0384d  lib/ezutils/classes/ezprepairqueue.php
 1451d0c978604b5009244c5b63612641  lib/ezutils/classes/ezprocess.php
-e8d64001d9d943df6be96759d0f6c8f5  lib/ezutils/classes/ezregexpvalidator.php
+062090dfa05bec0757d7ba2901de8788  lib/ezutils/classes/ezregexpvalidator.php
 f607c04ba265e18c3ddbd633162270bd  lib/ezutils/classes/ezremoteidutility.php
 9656a1bf4d20f9598a5f5b6600f59aff  lib/ezutils/classes/ezsendmailtransport.php
 8332652b485a80bf465c56d2d240dd63  lib/ezutils/classes/ezsmtptransport.php
@@ -6545,7 +6545,7 @@ bb49992c78eb95dc407fefc12e64863f  share/locale/rus-RU.ini
 61d750e73772b8e8f04a0ff8ca521cd6  share/locale/ser-SR.ini
 b490a9bd829bdd44f0da3c2f99bfa033  share/locale/slk-SK.ini
 50d5c38c3c29e7e666a67b4f91d28927  share/locale/srp-RS.ini
-bf820c4c825d416bfa3c5fe7817bcba7  share/locale/swe-SE.ini
+eee6c9ac5d8eaeb551666d119c83755e  share/locale/swe-SE.ini
 ad569c614548b28d5b5a9f78d6db57c5  share/locale/tur-TR.ini
 9186700a61f1e10cbc721d10944db98f  share/locale/ukr-UA.ini
 fb46297c8027e5df9dc921ffabe17758  share/maintenance.html
@@ -6814,7 +6814,7 @@ d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItem
 edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsTest.php
 3391b6094e41c01c2e3ef953b1fbef3a  tests/tests/kernel/classes/eZContentObjectStateGroupTest.php
 a8745a8d6011fe2c7fcfe4c0413a61ce  tests/tests/kernel/classes/eZContentObjectStateTest.php
-660a77e9da6c44da769aeacb132b044d  tests/tests/kernel/classes/eZContentObjectTest.php
+098c7943a8f995b52453eaa6d82d83bb  tests/tests/kernel/classes/eZContentObjectTest.php
 c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTreeNodeTest.php
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
 ae5b1048f8e08ec7094ae01547fdcee1  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
@@ -7278,12 +7278,14 @@ d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
 1f00131d3bdacd4faf05d16e4566f332  tests/tests/lib/ezfile/ezfiledownload_test.php
 86d821216ae08cbb701206dbec1dbcf1  tests/tests/lib/ezfile/ezfilerename_test.php
 75406ddb9c62d7810d563fa90ed3cb56  tests/tests/lib/ezfile/suite.php
+29832724eee763626bfe2263dd86eaa7  tests/tests/lib/ezi18n/eZCharsetAndTransformTest.php
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 205e3b3a02dea6dd795d9a345ad9a33b  tests/tests/lib/ezimage/eZImageManagerTest.php
 14d3aad9b0411ab181c00a3f01dc52fb  tests/tests/lib/ezimage/eZImageShellHandlerTest.php
 9848960050fb352a09399a1a93913d16  tests/tests/lib/ezimage/ezimagemanager_test.php
 94fc51afad752bcbfdbe3874254dda15  tests/tests/lib/ezimage/ezimageshellhandler_test.php
 8c85befbff3ccee276d033abc3ac38ef  tests/tests/lib/ezimage/suite.php
+724c0669258a900e775671367c10b128  tests/tests/lib/ezlocale/eZLocaleFormattingTest.php
 ee1781006858e40da837447e9667f887  tests/tests/lib/ezlocale/ezlocale_regression.php
 b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
 7606e8e6d3f5412f09c63073d59f7e21  tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php
@@ -7293,6 +7295,7 @@ b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBP
 62590e69192025ffa6ffcce972f687d0  tests/tests/lib/ezsoap/ezsoapclient_test.php
 a42110e8e1698ffa85aa925d98b254b9  tests/tests/lib/ezsoap/suite.php
 3a2456958c8fdb63c88299a929e3a686  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
+689824a1e09db20647f20e8885210c69  tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php
 054ba093ee53d9607044dc8dd344c73c  tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php
 2a645a4d7081ec3e7be5ba692d72199f  tests/tests/lib/eztemplate/eztemplate_regression.php
 74b8ae3b9fcf266c30ba535db666649c  tests/tests/lib/eztemplate/eztemplateattributeoperator_test.php
@@ -7305,6 +7308,7 @@ a61040cb1a3f66819c65d6e1c243b127  tests/tests/lib/eztemplate/eztemplatetextopera
 d55f27da992880ec276e9fc8d117a356  tests/tests/lib/ezutils/ErrorCasePageTest.php
 1cb86abbb39e758fa2ec557a149ad317  tests/tests/lib/ezutils/PHPUnitTextUICommandShimTest.php
 b04416a94a85e92fcfaf8d20cd7481f2  tests/tests/lib/ezutils/RepairQueueTest.php
+19b4b7676978ad54bccd376b846ad625  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 941837b4dbd18a37bcb019e8fb86fb9b  tests/tests/lib/ezutils/eZHTTPToolTest.php
 2c63f7f0a0f75b87643f8adc22d3d3f7  tests/tests/lib/ezutils/eZINIEnvironmentTest.php
@@ -7313,6 +7317,7 @@ f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
 6108d2e9ccef5a860674d71bc38cc38e  tests/tests/lib/ezutils/eZMailTest.php
 da0bc84fe0b08ebbe5f9963ddee396aa  tests/tests/lib/ezutils/eZSysTest.php
 6178821ce5542ce0e1358dbd29b28957  tests/tests/lib/ezutils/eZURITest.php
+ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 73b71352cf122c5331f60f4ca3185288  tests/tests/lib/ezutils/ezdebug_regression.php
 a564b9b624024d560f28c90b84b8532d  tests/tests/lib/ezutils/ezhttptool_regression.php
 41fb7ef1daa21e63dd3a19220df5e261  tests/tests/lib/ezutils/ezhttptool_test.php
