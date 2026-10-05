@@ -99,9 +99,9 @@ Then read the notes of the 5.90 line, which prepared the move to PHP 7 and a lon
    ```
 
    PostgreSQL: `update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql`. The MySQL file begins with
-   `SET storage_engine=InnoDB;`; the variable was removed in MySQL 5.7.6, so on MySQL 5.7.6 and newer, and on MariaDB,
-   that statement is rejected: run the two
-   `UPDATE` lines only. Details: [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
+   `SET default_storage_engine=InnoDB;`, which MySQL (from 5.5.3) and MariaDB accept, so run the whole file. Copies of
+   the file from before October 2026 began with `SET storage_engine=InnoDB;`, which MySQL 5.7.5 and newer and
+   MariaDB 12.0 and newer reject; take the current file. Details: [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
 3. PHP: Exponential 6.0 needs PHP 8.0 or newer on the current line (8.1 or newer for Exponential Velocity; see
    [PHP 8.0 support](../bc/6.0/php-8.0-support.md)). A site that must stay on PHP 7.4 stays on 6.0.7; read [PHP 8 support](../bc/6.0/php8.md) for the order of the upgrade steps, and check your own extensions
    for PHP 8 warnings (classes extending `eZPersistentObject` or `eZDataType` are the usual cases).

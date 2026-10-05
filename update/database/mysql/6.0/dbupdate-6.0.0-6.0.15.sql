@@ -1,8 +1,10 @@
 --
 -- Exponential 6.0.0 to 6.0.15, MySQL.
 --
--- Note: no SET storage_engine here. That variable was removed in MySQL 5.7.6
--- and errors on anything newer, and nothing below creates a table anyway.
+-- Note: no SET default_storage_engine here, because every CREATE TABLE below
+-- names its engine (ENGINE=InnoDB). The older files of the chain open with
+-- SET default_storage_engine=InnoDB; the spelling SET storage_engine they
+-- once used was removed in MySQL 5.7.5 and in MariaDB 12.0.
 --
 
 UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version';

@@ -128,7 +128,7 @@ sqlite3 var/storage/sqlite3/exponential.db < update/database/sqlite/6.0/dbupdate
 
 | Engine | Note |
 |---|---|
-| MySQL or MariaDB | `6.0/dbupdate-5.4.0-6.0.0.sql` (like `6.12/` and the old chain's files) starts with `SET storage_engine=InnoDB;`. That variable was removed in MySQL 5.7.6 and is rejected by newer MySQL and by MariaDB: run the two `UPDATE` lines of the file only. `6.0/dbupdate-6.0.0-6.0.15.sql` has no such line. |
+| MySQL or MariaDB | `6.0/dbupdate-5.4.0-6.0.0.sql`, like `6.12/`, `7.3/` and the old chain's files, starts with `SET default_storage_engine=InnoDB;`, which MySQL (from 5.5.3) and MariaDB accept: apply the files whole. Copies from before October 2026 started with `SET storage_engine=InnoDB;`, a spelling MySQL removed in 5.7.5 and MariaDB in 12.0; take the current files. `6.0/dbupdate-6.0.0-6.0.15.sql` has no such line, because each of its tables names its engine. |
 | MySQL or MariaDB | Tables must be UTF-8; `php bin/php/ezconvertdbcharset.php` converts an old database. `php bin/php/ezconvertmysqltabletype.php --list` lists the table types and `--newtype=InnoDB` converts them. |
 | PostgreSQL | The 5.4 step is `6.0/dbupdate-5.4-to-6.0.sql` (only the two `UPDATE` lines). The `digest` function of `pgcrypto` must exist in the database. |
 | SQLite | Each `ALTER TABLE` adds one column, because SQLite takes only one per statement and cannot drop a column again: run the file once. Use SQLite's online backup before it. |
@@ -199,8 +199,8 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    psql -U USER -d DATABASE -f update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
    ```
 
-   On MySQL 5.7.6 and newer and on MariaDB, run only the two `UPDATE` lines of the MySQL file (see the per-database
-   notes above). Details: [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
+   The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes above). Details:
+   [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
 3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`); Velocity needs 8.1. Releases 6.0.8 to
    6.0.14 required 8.1. A site that must stay on PHP 7.4 stays on 6.0.7. Check your own extensions for PHP 8
    problems: classes that extend `eZPersistentObject` or `eZDataType` are the usual cases. See
@@ -377,7 +377,7 @@ php bin/php/console exp:velocity cache clear
 | "The site is missing the software libraries it needs" (HTTP 503) | `vendor/` is missing: `composer install`; see [Repairing an installation](../bc/6.0/repair.md). |
 | `Class ... not found` | `php bin/php/ezpgenerateautoloads.php -e`, then clear the caches. |
 | An SQL file failed half way | Restore the backup and apply the file again from the start. |
-| `SET storage_engine=InnoDB;` fails | MySQL 5.7.6+ or MariaDB: skip that line, run the `UPDATE` lines. |
+| `SET storage_engine=InnoDB;` fails | An update file from before October 2026: the current files say `SET default_storage_engine=InnoDB;`. Take the current file, or skip that one line. |
 | Someone cannot sign in | The `ezuser_setting` change of August 2026 (11.6, step 3). |
 | A change does not show under Velocity | `exp:velocity restart` (or `deploy`), then `exp:velocity cache clear`. |
 
