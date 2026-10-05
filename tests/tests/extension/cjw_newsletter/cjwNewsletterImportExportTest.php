@@ -41,7 +41,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         foreach ( $this->runIds as $runId )
             $db->query( "DELETE FROM cjwnl_migration_log WHERE run_id = '" . $db->escapeString( $runId ) . "'" );
         $this->runIds = array();
-        $db->query( "DELETE FROM cjwnl_import_mapping WHERE name LIKE 'NLTEST%'" );
+        $db->query( "DELETE FROM cjwnl_import_mapping WHERE name LIKE 'NLTEST%'" . $this->ownRows( 'cjwnl_import_mapping' ) );
         // the kernel's preference rows and consent log of the test addresses
         if ( class_exists( 'expMailSuppression' ) && class_exists( 'CjwNewsletterMailPreferences' ) && CjwNewsletterMailPreferences::available() )
         {

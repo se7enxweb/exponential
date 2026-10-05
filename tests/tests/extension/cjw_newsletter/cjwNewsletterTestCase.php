@@ -42,7 +42,9 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
     protected $savedRuns = array();
     /** @var array table => the highest id before the test (rows above it that carry a test address are the test's own) */
     protected $startIds = array( 'cjwnl_user' => null, 'cjwnl_blacklist_item' => null, 'expmail_consent_log' => null,
-                                 'cjwnl_mailbox_item' => null, 'cjwnl_mailbox' => null );
+                                 'cjwnl_mailbox_item' => null, 'cjwnl_mailbox' => null, 'cjwnl_interest' => null,
+                                 'cjwnl_mailin_address' => null, 'cjwnl_mailin_message' => null, 'cjwnl_test_group' => null,
+                                 'cjwnl_import_mapping' => null, 'cjwnl_sms_inbound' => null );
 
     public static function setUpBeforeClass(): void
     {
@@ -392,6 +394,12 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             $db->query( 'DELETE FROM cjwnl_mailbox WHERE id > ' . (int)$this->startIds['cjwnl_mailbox'] . " AND email LIKE 'nltest-%'" );
         $this->extraEmails = array();
         eZContentObject::clearCache();
+    }
+
+    /** SQL: " AND id > <the highest id of $table before the test>", so that a sweep by name only takes this test's rows. */
+    protected function ownRows( $table )
+    {
+        return isset( $this->startIds[$table] ) && $this->startIds[$table] !== null ? ' AND id > ' . (int)$this->startIds[$table] : ' AND 1 = 0';
     }
 
     /** Lets removeTestData() remove a subscriber whose address the test typed itself instead of taking newEmail(). */

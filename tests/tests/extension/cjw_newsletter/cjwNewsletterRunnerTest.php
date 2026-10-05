@@ -168,6 +168,33 @@ class cjwNewsletterRunnerTest extends cjwNewsletterTestCase
         $this->assertContains( 'transport_file', $codes );
     }
 
+    /** 4.2.0: a cjwnl_list row whose content object is gone (a removed list) is never read: no list entry, no debug error */
+    public function testDashboardSkipsAListRowWhoseObjectIsGoneWithoutADebugError()
+    {
+        $db = eZDB::instance();
+        $max = $db->arrayQuery( 'SELECT MAX( id ) AS m FROM ezcontentobject' );
+        $objectId = (int)$max[0]['m'] + 1000000;
+        $maxAttr = $db->arrayQuery( 'SELECT MAX( id ) AS m FROM ezcontentobject_attribute' );
+        $attributeId = (int)$maxAttr[0]['m'] + 1000000;
+        $this->assertFalse( eZContentObject::exists( $objectId ) );
+        $db->query( "INSERT INTO cjwnl_list ( contentobject_attribute_id, contentobject_attribute_version, contentobject_id, contentclass_id ) VALUES ( $attributeId, 1, $objectId, 0 )" );
+        try
+        {
+            $errorsBefore = isset( $GLOBALS['eZDebugErrorCount'] ) ? (int)$GLOBALS['eZDebugErrorCount'] : 0;
+            $s = CjwNewsletterDashboard::summary();
+            $errorsAfter = isset( $GLOBALS['eZDebugErrorCount'] ) ? (int)$GLOBALS['eZDebugErrorCount'] : 0;
+            $ids = array_map( function ( $l ) { return (int)$l['object_id']; }, $s['lists'] );
+            $this->assertNotContains( $objectId, $ids, 'the orphan row is no list' );
+            $this->assertContains( self::LIST_OBJECT_ID, $ids, 'the real lists are still there' );
+            $this->assertSame( $errorsBefore, $errorsAfter, 'no debug error for the missing object' );
+            $this->assertNull( CjwNewsletterUtils::contentObject( $objectId ) );
+        }
+        finally
+        {
+            $db->query( "DELETE FROM cjwnl_list WHERE contentobject_attribute_id = $attributeId AND contentobject_id = $objectId" );
+        }
+    }
+
     public function testMissingTablesIsEmptyWhenTheTablesExistAndNamesTheMissingOnes()
     {
         $this->assertSame( array(), CjwNewsletterDashboard::missingTables() );

@@ -62,7 +62,7 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
                 $db->query( 'DELETE FROM cjwnl_user_interest WHERE interest_id = ' . (int)$id );
                 $db->query( 'DELETE FROM cjwnl_interest WHERE id = ' . (int)$id );
             }
-            $db->query( "DELETE FROM cjwnl_interest WHERE identifier LIKE 'nltest_%'" );
+            $db->query( "DELETE FROM cjwnl_interest WHERE identifier LIKE 'nltest_%'" . $this->ownRows( 'cjwnl_interest' ) );
             $this->createdInterestIds = array();
             foreach ( $this->savedListRows as $row )
                 $db->query( "UPDATE cjwnl_list SET skin_name = '" . $db->escapeString( $row['skin_name'] ) . "', skin_name_array_string = '" . $db->escapeString( $row['skin_name_array_string'] )

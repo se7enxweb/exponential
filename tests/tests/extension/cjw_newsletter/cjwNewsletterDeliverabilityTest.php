@@ -59,10 +59,10 @@ class cjwNewsletterDeliverabilityTest extends cjwNewsletterTestCase
             $db->query( "DELETE FROM cjwnl_throttle_state WHERE transport LIKE 'nltest%'" );
             foreach ( $this->createdObjectIds as $id )
                 $db->query( 'DELETE FROM cjwnl_send_batch WHERE edition_send_id IN ( SELECT id FROM cjwnl_edition_send WHERE edition_contentobject_id = ' . (int)$id . ' )' );
-            $db->query( "DELETE FROM cjwnl_test_group WHERE name LIKE 'NLTEST%'" );
-            $db->query( "DELETE FROM cjwnl_mailin_message WHERE mailin_address_id IN ( SELECT id FROM cjwnl_mailin_address WHERE email LIKE 'nltest-%' )" );
-            $db->query( "DELETE FROM cjwnl_mailin_message WHERE message_identifier LIKE '<nltest-%'" );
-            $db->query( "DELETE FROM cjwnl_mailin_address WHERE email LIKE 'nltest-%'" );
+            $db->query( "DELETE FROM cjwnl_test_group WHERE name LIKE 'NLTEST%'" . $this->ownRows( 'cjwnl_test_group' ) );
+            $db->query( "DELETE FROM cjwnl_mailin_message WHERE mailin_address_id IN ( SELECT id FROM cjwnl_mailin_address WHERE email LIKE 'nltest-%'" . $this->ownRows( 'cjwnl_mailin_address' ) . ' )' );
+            $db->query( "DELETE FROM cjwnl_mailin_message WHERE message_identifier LIKE '<nltest-%'" . $this->ownRows( 'cjwnl_mailin_message' ) );
+            $db->query( "DELETE FROM cjwnl_mailin_address WHERE email LIKE 'nltest-%'" . $this->ownRows( 'cjwnl_mailin_address' ) );
             $this->removeOwnUsers();
         }
         parent::tearDown();

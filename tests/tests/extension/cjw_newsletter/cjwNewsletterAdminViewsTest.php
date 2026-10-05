@@ -32,15 +32,17 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
     {
         $one = $this->newSubscriber( 'lsta' );
         $two = $this->newSubscriber( 'lstb', CjwNewsletterUser::STATUS_BLACKLISTED, CjwNewsletterSubscription::STATUS_BLACKLISTED );
-        $r = $this->runView( 'user_list', array(), array(), array( 'status' => 'blacklisted', 'q' => 'nltest-' ) );
+        // the prefix of this process only: other subscribers of the installation never push these off the page
+        $own = 'nltest-' . getmypid() . '-';
+        $r = $this->runView( 'user_list', array(), array(), array( 'status' => 'blacklisted', 'q' => $own ) );
         $this->assertStringContainsString( $two->attribute( 'email' ), $r['content'] );
         $this->assertStringNotContainsString( $one->attribute( 'email' ), $r['content'] );
-        $r = $this->runView( 'user_list', array(), array(), array( 'q' => 'nltest-', 'sort' => 'email', 'order' => 'desc', 'limit' => '10' ) );
+        $r = $this->runView( 'user_list', array(), array(), array( 'q' => $own, 'sort' => 'email', 'order' => 'desc', 'limit' => '10' ) );
         $this->assertLessThan( strpos( $r['content'], $one->attribute( 'email' ) ), strpos( $r['content'], $two->attribute( 'email' ) ), 'lstb sorts before lsta when descending' );
         // one per page: the second page holds the other user, the total says how many there are
         $total = 0;
-        $page1 = CjwNewsletterUser::fetchUserPage( 'nltest-', array(), 0, 'email', 'asc', 1, 0, $total );
-        $page2 = CjwNewsletterUser::fetchUserPage( 'nltest-', array(), 0, 'email', 'asc', 1, 1, $total );
+        $page1 = CjwNewsletterUser::fetchUserPage( $own, array(), 0, 'email', 'asc', 1, 0, $total );
+        $page2 = CjwNewsletterUser::fetchUserPage( $own, array(), 0, 'email', 'asc', 1, 1, $total );
         $this->assertGreaterThanOrEqual( 2, $total );
         $this->assertCount( 1, $page1 );
         $this->assertCount( 1, $page2 );

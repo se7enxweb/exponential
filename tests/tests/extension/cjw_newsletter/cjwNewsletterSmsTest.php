@@ -122,7 +122,7 @@ class cjwNewsletterSmsTest extends cjwNewsletterTestCase
             $db->query( "DELETE FROM expmail_consent_log WHERE recipient_key = '$key'" );
         }
         $db->query( "DELETE FROM expmail_consent_log WHERE email LIKE 'nltest-%@" . self::MAIL_DOMAIN . "'" );
-        $db->query( "DELETE FROM cjwnl_sms_inbound WHERE phone_number LIKE '+155501%' OR provider_message_id LIKE 'nltest-%'" );
+        $db->query( "DELETE FROM cjwnl_sms_inbound WHERE ( phone_number LIKE '+155501%' OR provider_message_id LIKE 'nltest-%' )" . $this->ownRows( 'cjwnl_sms_inbound' ) );
         foreach ( $this->createdObjectIds as $id )
             foreach ( (array)$db->arrayQuery( 'SELECT id FROM cjwnl_edition_send WHERE edition_contentobject_id = ' . (int)$id ) as $send )
                 $db->query( 'DELETE FROM cjwnl_sms_message WHERE edition_send_id = ' . (int)$send['id'] );
