@@ -63,6 +63,11 @@ class eZStepSiteDetails extends eZStepInstaller
 
         $siteType['title'] = $this->Http->postVariable( 'eZSetup_site_templates_title' );
         $siteType['url'] = $this->Http->postVariable( 'eZSetup_site_templates_url' );
+        // the sender of the optional e-mail (mailpreferences.ini [FooterSettings]); both may stay empty
+        $siteType['organisation_name'] = $this->Http->hasPostVariable( 'eZSetup_site_templates_organisation_name' )
+                                       ? trim( (string)$this->Http->postVariable( 'eZSetup_site_templates_organisation_name' ) ) : '';
+        $siteType['organisation_address'] = $this->Http->hasPostVariable( 'eZSetup_site_templates_organisation_address' )
+                                          ? trim( (string)$this->Http->postVariable( 'eZSetup_site_templates_organisation_address' ) ) : '';
 
         $error = false;
         $userPath = $this->Http->postVariable( 'eZSetup_site_templates_value' );
@@ -221,6 +226,10 @@ class eZStepSiteDetails extends eZStepInstaller
 
             if ( !$siteType['title'] )
                 $siteType['title'] = $siteType['name'];
+
+            // kickstart.ini [site_details] OrganisationName, OrganisationAddress (the address may use \n)
+            $siteType['organisation_name'] = isset( $data['OrganisationName'] ) ? trim( (string)$data['OrganisationName'] ) : '';
+            $siteType['organisation_address'] = isset( $data['OrganisationAddress'] ) ? str_replace( '\n', "\n", trim( (string)$data['OrganisationAddress'] ) ) : '';
 
             $siteType['url'] = isset( $data['URL'] ) ? $data['URL'] : false;
             if ( strlen( $siteType['url'] ) == 0 )

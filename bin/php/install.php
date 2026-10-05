@@ -39,6 +39,8 @@ $options = array(
     'language'       => 'eng-US',
     'languages'      => '',
     'title'          => 'Exponential',
+    'organisation-name'    => '',
+    'organisation-address' => '',
     'url'            => '',
     'access'         => null,
     'site-access'    => 'site',
@@ -216,7 +218,8 @@ $sections = array(
                                  'Access' => $options['site-access'], 'AdminAccess' => $options['admin-access'],
                                  'AccessPort' => $options['port'], 'AdminAccessPort' => $options['admin-port'],
                                  'AccessHostname' => $options['host'], 'AdminAccessHostname' => $options['admin-host'],
-                                 'Database' => $dbName, 'DatabaseAction' => $options['db-action'] ),
+                                 'Database' => $dbName, 'DatabaseAction' => $options['db-action'],
+                                 'OrganisationName' => $options['organisation-name'], 'OrganisationAddress' => $options['organisation-address'] ),
     'site_admin'       => array( 'FirstName' => $options['first-name'], 'LastName' => $options['last-name'],
                                  'Email' => $options['email'], 'Password' => $options['password'] ),
     'security'         => array(),
@@ -370,6 +373,11 @@ Site
   --language=<locale>    primary language, default eng-US
   --languages=<a,b>      more languages, e.g. ger-DE,fre-FR
   --title=<text>         site name, default Exponential
+  --organisation-name=<text>     who sends the optional e-mail (footer of every
+                         newsletter and notification); default: the site name
+  --organisation-address=<text>  the sender's postal address, lines separated
+                         by \\n; empty is allowed (the e-mail preferences
+                         status page warns until it is entered there)
   --url=<url>            where the site is, e.g. https://www.example.com
                          (default: http://localhost)
   --access=<type>        how siteaccesses are told apart: url (default,

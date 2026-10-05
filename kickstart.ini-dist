@@ -173,6 +173,15 @@
 ## if not supplied it uses the site package name
 #Title=My cool new site
 
+## OrganisationName=<string>
+## Who sends the optional e-mail (the footer of newsletters and notifications,
+## mailpreferences.ini [FooterSettings]); if not supplied the site name is used
+#OrganisationName=
+## OrganisationAddress=<string>
+## The sender's postal address, lines separated by \n; may stay empty (the
+## e-mail preferences status page warns until it is entered there)
+#OrganisationAddress=
+
 ## URL=<url>
 ## The URL to use
 ## if not supplied it will generate it from the current url

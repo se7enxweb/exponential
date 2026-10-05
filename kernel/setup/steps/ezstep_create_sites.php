@@ -340,6 +340,7 @@ class eZStepCreateSites extends eZStepInstaller
         if ( $saveData )
         {
             $saveResult = $ini->save( false, '.php', 'append', true, true, true );
+            $this->setUpMailPreferences( $siteType );
         }
 
         // Audit (doc/bc/6.0/audit.md, system.install.run): an installation made (the wizard, the kickstarter,
@@ -393,6 +394,35 @@ class eZStepCreateSites extends eZStepInstaller
      *
      * @return bool
      */
+    /**
+     * The e-mail preferences of the new installation (settings/override/mailpreferences.ini.append.php, never
+     * committed): the site secret of the links in mail is generated now, and the sender details the site details
+     * step asked for are written. An empty postal address is allowed; the status page warns until it is entered.
+     *
+     * @param array $siteType
+     */
+    function setUpMailPreferences( array $siteType )
+    {
+        if ( !class_exists( 'expMailSecret' ) || !class_exists( 'expMailSenderDetails' ) )
+            return;
+        try
+        {
+            expMailSecret::reset();
+            expMailSecret::get();
+            $name = isset( $siteType['organisation_name'] ) ? trim( (string)$siteType['organisation_name'] ) : '';
+            $address = isset( $siteType['organisation_address'] ) ? trim( (string)$siteType['organisation_address'] ) : '';
+            // the name the step prefilled with the title is the site name already: it is left to follow the site name
+            if ( $name !== '' && isset( $siteType['title'] ) && $name === trim( (string)$siteType['title'] ) )
+                $name = '';
+            if ( $name !== '' || $address !== '' )
+                expMailSenderDetails::save( $name, $address );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeError( 'E-mail preferences: ' . $e->getMessage(), __METHOD__ );
+        }
+    }
+
     function createEditorSiteAccess( $adminSiteaccessName, $editorSiteaccessName )
     {
         $adminDir = "settings/siteaccess/$adminSiteaccessName";

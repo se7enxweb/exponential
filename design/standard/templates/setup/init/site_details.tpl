@@ -127,6 +127,15 @@ The setup can continue with the initialization but may damage the present data."
         <td><input type="text" size="30" name="eZSetup_site_templates_editor_value" value="{$site_type.editor_access_type_value|wash}" />
             <p class="setup_field_note">{"The editor siteaccess: the administration interface for content editing only, without setup, design and developer tools. Editors sign in here to write, edit and publish content and to manage media, users, orders, tags and newsletters. Layouts, Setup, Design, the Git, Export and CIE tools and the developer toolbar stay in the admin siteaccess, so editors cannot change how the site is built."|i18n("design/standard/setup/init")}</p></td>
     </tr>
+    <tr>
+        <td><label class="textfield">{"Organisation name"|i18n("design/standard/setup/init")}:</label>&nbsp;</td>
+        <td><input type="text" size="30" name="eZSetup_site_templates_organisation_name" value="{first_set( $site_type.organisation_name, $site_type.title )|wash}" /></td>
+    </tr>
+    <tr>
+        <td><label class="textfield">{"Postal address"|i18n("design/standard/setup/init")}:</label>&nbsp;</td>
+        <td><textarea rows="3" cols="30" name="eZSetup_site_templates_organisation_address">{first_set( $site_type.organisation_address, '' )|wash}</textarea>
+            <p class="setup_field_note">{"Who sends the optional e-mail of the site (newsletters, notifications) and their postal address, as the law requires in every such e-mail. Both can be changed later on the e-mail preferences status page; an empty address is allowed and shows a warning there."|i18n("design/standard/setup/init")}</p></td>
+    </tr>
 
     <tr>
         {if or( eq( $db_not_empty, 1 ), eq( $db_charset_differs, 1 ) )}<td class="invalid">* {else}<td>{/if}<label class="textfield">{"Database"|i18n("design/standard/setup/init")}</label>{if eq( $site_type.db_already_chosen, 1 )}<div style="color: #ff7f00;">*</div>{/if}: </td>
