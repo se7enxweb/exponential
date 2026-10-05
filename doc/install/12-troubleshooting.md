@@ -226,7 +226,7 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 | SQLite: the site is slow after an install or a large import | The query planner has no statistics | `sqlite3 var/storage/sqlite3/exponential.db ANALYZE` once. |
 | SQLite: the database file can be downloaded | The web server serves `var/` | Check with `curl -sI https://www.example.com/var/storage/sqlite3/exponential.db` (anything but 200 is right); use the shipped `.htaccess` rules or Velocity. |
 | After switching the database engine no page loads | `DatabaseImplementation` still names the old engine | Set it in `settings/override/site.ini.append.php`, then `php bin/php/ezcache.php --clear-tag=ini`. |
-| MySQL: `SET storage_engine=InnoDB;` fails in an update file | The variable was removed in MySQL 5.7.6 and is unknown to MariaDB | Run the file's other statements; see [chapter 11](11-upgrading.md#113-the-update-files). |
+| MySQL: `SET storage_engine=InnoDB;` fails in an update file | An update file from before October 2026: that spelling was removed in MySQL 5.7.5 and MariaDB 12.0 | Take the current file, which says `SET default_storage_engine=InnoDB;`; see [chapter 11](11-upgrading.md#113-the-update-files). |
 | PostgreSQL: errors about `digest` | `pgcrypto` is missing | `CREATE EXTENSION pgcrypto;` as owner or superuser. |
 | MongoDB: subtree and URL alias queries are slow | The indexes were not created | `mongosh "mongodb://<user>:<password>@localhost:27017/<database>" --file bin/mongodb/create_indexes.js`; see [MongoDB](../features/6.0/mongodb-database-support.md). |
 | MongoDB: `Class "MongoDB\Client" not found` | The PHP library `mongodb/mongodb` is not installed | `composer require mongodb/mongodb`; the `mongodb` PHP extension must be loaded too. |
