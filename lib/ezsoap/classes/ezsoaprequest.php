@@ -82,7 +82,6 @@ class eZSOAPRequest extends eZSOAPEnvelope
     function payload()
     {
         $doc = new DOMDocument( "1.0" );
-        $doc->name = 'eZSOAP message';
 
         $root = $doc->createElementNS( eZSOAPEnvelope::ENV, eZSOAPEnvelope::ENV_PREFIX . ':Envelope' );
 

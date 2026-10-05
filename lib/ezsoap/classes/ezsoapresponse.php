@@ -119,19 +119,38 @@ class eZSOAPResponse extends eZSOAPEnvelope
     {
         $returnValue = false;
 
+        $nil = $node->getAttributeNS( eZSOAPEnvelope::SCHEMA_INSTANCE, 'nil' );
+        if ( $nil === 'true' || $nil === '1' )
+            return null;
+
         $attributeValue = '';
         $attribute = $node->getAttributeNodeNS( eZSOAPEnvelope::SCHEMA_INSTANCE, 'type' );
         if ( !$attribute )
         {
             $attribute = $node->getAttributeNodeNS( 'http://www.w3.org/1999/XMLSchema-instance', 'type' );
         }
-        $attributeValue = $attribute->value;
+        // an element without a type (document style services) is its text, or a struct of its child elements
+        $attributeValue = $attribute ? $attribute->value : '';
 
         $dataType = $type;
         $attrParts = explode( ":", $attributeValue );
-        if ( $attrParts[1] )
+        if ( isset( $attrParts[1] ) && $attrParts[1] )
         {
             $dataType = $attrParts[1];
+        }
+        if ( $dataType === '' )
+        {
+            $hasElements = false;
+            foreach ( $node->childNodes as $childNode )
+            {
+                if ( $childNode instanceof DOMElement )
+                {
+                    $hasElements = true;
+                    break;
+                }
+            }
+            if ( !$hasElements )
+                return $node->textContent;
         }
 
 /*
@@ -207,13 +226,8 @@ TODO: add encoding checks with schema validation.
                 {
                     if ( $childNode instanceof DOMElement )
                     {
-                        // check data type for child
-                        $attr = $childNode->getAttributeNodeNS( eZSOAPEnvelope::SCHEMA_INSTANCE, 'type' )->value;
-
-                        $dataType = false;
-                        $attrParts = explode( ":", $attr );
-                        $dataType = $attrParts[1];
-
+                        if ( !is_array( $returnValue ) )
+                            $returnValue = array();
                         $returnValue[$childNode->tagName] = eZSOAPResponse::decodeDataTypes( $childNode );
                     }
                 }
@@ -259,14 +273,21 @@ TODO: add encoding checks with schema validation.
         {
             // add the request
             $responseName = $this->Name . "Response";
+            // without a namespace there is nothing to bind the resp: prefix to; the element was not well formed
             if ( $this->Namespace == '' )
-                $response = $doc->createElement( "resp:".$responseName );
+                $response = $doc->createElement( $responseName );
             else
                 $response = $doc->createElementNS( $this->Namespace, "resp:".$responseName );
 
             $return = $doc->createElement( "return" );
 
             $value = eZSOAPCodec::encodeValue( $doc, "return", $this->Value );
+            if ( $value === false )
+            {
+                // null, or a type the codec has no encoding for: an empty value
+                $value = $doc->createElement( "return" );
+                $value->setAttribute( eZSOAPEnvelope::XSI_PREFIX . ':nil', 'true' );
+            }
 
             $body->appendChild( $response );
 
