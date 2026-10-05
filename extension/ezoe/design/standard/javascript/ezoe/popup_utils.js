@@ -799,8 +799,28 @@ var eZOEPopupUtils = {
 
             if ( data.content['list'] )
             {
+               var lastFolder = null, hasFolders = data.content['folders'] && data.content['folders'].length;
                jQuery.each( data.content['list'], function( i, n )
                {
+                   if ( mode === 'bookmarks' && hasFolders && n.folder_path !== undefined )
+                   {
+                       // bookmark folders: a heading row where the folder changes
+                       var folderKey = n.folder_path.join( '/' );
+                       if ( folderKey !== lastFolder )
+                       {
+                           lastFolder = folderKey;
+                           var fr = document.createElement('tr'), fd = document.createElement('td'), fs = document.createElement('strong');
+                           fr.className = 'bookmark-folder-row';
+                           fr.appendChild( document.createElement('td') );
+                           fd.setAttribute('colspan', '3');
+                           fd.style.paddingLeft = ( Math.max( n.folder_path.length - 1, 0 ) * 14 + 4 ) + 'px';
+                           fs.appendChild( document.createTextNode( ( n.folder_path.length ? n.folder_path[n.folder_path.length - 1] : ed.getLang('ez.bookmarks_top_level') ) ) );
+                           fd.appendChild( fs );
+                           if ( n.folder_path.length > 1 ) fd.title = n.folder_path.join(' / ');
+                           fr.appendChild( fd );
+                           tbody.appendChild( fr );
+                       }
+                   }
                    tr = document.createElement("tr"), td = document.createElement("td"), tag = document.createElement("input"), isImage = false;
                    tag.setAttribute('type', 'radio');
                    tag.setAttribute('name', 'selectembedobject');

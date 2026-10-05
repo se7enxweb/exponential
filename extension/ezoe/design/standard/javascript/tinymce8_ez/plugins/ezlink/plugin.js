@@ -25,6 +25,7 @@
         'Browse': 'Durchsuchen',
         'Search': 'Suchen',
         'Bookmarks': 'Lesezeichen',
+        'Top level': 'Oberste Ebene',
         'You have no bookmarks': 'Sie haben keine Lesezeichen',
         'Use "Add to bookmarks" on a content item in the administration interface to add one.': 'Mit "Zu Lesezeichen hinzufügen" bei einem Inhalt in der Administrationsoberfläche lässt sich eines anlegen.',
         'URL': 'URL',

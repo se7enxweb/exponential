@@ -371,6 +371,7 @@ class ezoeServerFunctions extends ezjscServerFunctions
             'ez' => array(
                 'root_node_name' => ezpI18n::tr( 'kernel/content', 'Top Level Nodes'),
                 'empty_search_result' => ezpI18n::tr( 'design/standard/content/search', 'No results were found when searching for &quot;%1&quot;', null, array( '%1' => '<search_string>' )),
+                'bookmarks_top_level' => ezpI18n::tr( 'design/admin/content/bookmark', 'Top level' ),
                 'empty_bookmarks_result' => ezpI18n::tr( 'design/standard/content/view', 'You have no bookmarks')
             ),
             'searchreplace_dlg' => array(
@@ -398,7 +399,8 @@ class ezoeServerFunctions extends ezjscServerFunctions
     /**
      * Gets current users bookmarks by offset and limit
      *
-     * @param array $args  0 => offset:0, 1 => limit:10
+     * @param array $args  0 => offset:0, 1 => limit:10, 2 => 'tree' (optional): the bookmarks in the order of the
+     *                     folder tree, every item with folder_id and folder_path (names from the top), and the folders
      * @return hash
     */
     public static function bookmarks( $args )
@@ -420,9 +422,32 @@ class ezoeServerFunctions extends ezjscServerFunctions
             $sort = 'asc';
         }
 
+        $asTree = isset( $args[2] ) && $args[2] === 'tree' && class_exists( 'eZContentBrowseBookmarkFolder' );
+        $paths = array();
+        $folders = array();
+
         // fetch bookmarks
         $count = eZPersistentObject::count( eZContentBrowseBookmark::definition(), array( 'user_id' => $userID ) );
-        if ( $count )
+        if ( $count && $asTree )
+        {
+            // all bookmarks in tree order, paged over that order
+            $ordered = array();
+            foreach ( eZContentBrowseBookmarkFolder::fetchRowsForUser( $userID ) as $row )
+            {
+                if ( $row['type'] === 'folder' )
+                {
+                    $folders[] = array( 'id' => $row['id'], 'name' => $row['name'], 'parent_id' => $row['parent_id'],
+                                        'depth' => $row['depth'], 'count' => $row['count'] );
+                }
+                else
+                {
+                    $ordered[] = $row['bookmark'];
+                    $paths[(int) $row['bookmark']->attribute( 'node_id' )] = array( 'folder_id' => $row['folder_id'], 'folder_path' => $row['path'] );
+                }
+            }
+            $objectList = array_slice( $ordered, $offset, $limit );
+        }
+        else if ( $count )
         {
             $objectList = eZPersistentObject::fetchObjectList( eZContentBrowseBookmark::definition(),
                                                             null,
@@ -435,11 +460,19 @@ class ezoeServerFunctions extends ezjscServerFunctions
         {
             $objectList = false;
         }
-
         // Simplify node list so it can be encoded
         if ( $objectList )
         {
             $list = ezjscAjaxContent::nodeEncode( $objectList, array( 'loadImages' => true, 'fetchNodeFunction' => 'fetchNode', 'fetchChildrenCount' => true ), 'raw' );
+            if ( $asTree && is_array( $list ) )
+            {
+                foreach ( $list as $i => $item )
+                {
+                    $nid = isset( $item['node_id'] ) ? (int) $item['node_id'] : 0;
+                    $list[$i]['folder_id'] = isset( $paths[$nid] ) ? $paths[$nid]['folder_id'] : 0;
+                    $list[$i]['folder_path'] = isset( $paths[$nid] ) ? $paths[$nid]['folder_path'] : array();
+                }
+            }
         }
         else
         {
@@ -447,6 +480,7 @@ class ezoeServerFunctions extends ezjscServerFunctions
         }
 
         return array(
+            'folders' => $folders,
             'list' => $list,
             'count' => $count ? count( $objectList ) : 0,
             'total_count' => (int) $count,

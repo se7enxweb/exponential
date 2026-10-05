@@ -28,6 +28,7 @@
         'Search': 'Suchen',
         'Browse': 'Durchsuchen',
         'Bookmarks': 'Lesezeichen',
+        'Top level': 'Oberste Ebene',
         'Upload': 'Hochladen',
         'File': 'Datei',
         'Location': 'Speicherort',
