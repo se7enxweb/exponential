@@ -586,7 +586,9 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         $r = $this->runView( 'subscriber_export', array( self::LIST_OBJECT_ID ) );
         $this->assertViewOk( $r, 'export form' );
         $this->assertStringContainsString( 'name="Columns[]"', $r['content'] );
-        $this->assertStringContainsString( 'nltest-', $r['content'], 'the preview' );
+        // the preview holds the first ten rows of the list, which other test data may fill: check the table and the count
+        $this->assertStringContainsString( 'nl-ie-preview', $r['content'], 'the preview' );
+        $this->assertMatchesRegularExpression( '#<span class="nl-pill is-info">[1-9][0-9]* rows</span>#', $r['content'], 'the row count' );
         $this->assertViewClean( $this->runView( 'subscriber_export', array( 1 ) ), 'not a list' );
 
         $file = $this->oldDatabase();
