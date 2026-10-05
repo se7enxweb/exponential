@@ -241,7 +241,7 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 
 | Symptom or message | Cause | Fix |
 |---|---|---|
-| `velocity: no server script at ...` | The `qbix` engine needs the Velocity package, which is not installed | `composer require se7enxweb/exponential-velocity:~0.0.4.42` (PHP 8.1+), or use `--engine=php` for development. |
+| `velocity: no server script at ...` | The `qbix` engine needs the Velocity package, which is not installed | `composer require se7enxweb/exponential-velocity:~0.0.4.44` (PHP 8.1+), or use `--engine=php` for development. |
 | `velocity: already running` | A server of that engine runs already | `php bin/php/console exp:velocity status`; `restart` to apply changes. |
 | `velocity: port ... is already in use by another process (another engine? exp:velocity stop --engine=qbix\|frankenphp)` | Another program or engine holds the port (php and frankenphp engines) | Stop the other engine, or change `Port`/`HTTPSPort` with `exp:velocity config set`. |
 | `velocity: did not start; see <log>` (the `php` and `frankenphp` engines) | The server failed at start-up | Read the named log. |

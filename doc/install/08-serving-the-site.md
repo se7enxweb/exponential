@@ -165,11 +165,11 @@ The engine is suggested by Exponential's `composer.json` but not installed by de
 later. Add it to the installation with Composer:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.42
+composer require se7enxweb/exponential-velocity:~0.0.4.44
 ```
 
 It lands in `vendor/se7enxweb/exponential-velocity` (the former package name `se7enxweb/qbix-webserver` is still
-found). The tilde constraint follows the engine's last version position, so `~0.0.4.42` accepts later `0.0.4.x`
+found). The tilde constraint follows the engine's last version position, so `~0.0.4.44` accepts later `0.0.4.x`
 releases.
 
 The package's `composer.json` requires PHP 8.1 (`"php": ">=8.1"`) and the `sockets` extension (TCP options on client
@@ -363,7 +363,7 @@ engine settings under `Q.webserver`, described in the [worker pool specification
 Persistent workers keep database connections, stat caches and everything the kernel keeps per process. Measured on a
 signed-in administration page: 256 to 284 ms with a fresh worker per request, 73 to 80 ms with persistent workers.
 They need an engine that sets `REQUEST_TIME_FLOAT` per request and carries headers and shutdown functions in this mode
-(headers and shutdown functions from qbix-webserver 0.0.4.25, the per-request `REQUEST_TIME_FLOAT` from Exponential Velocity 0.0.4.42, the release Exponential suggests).
+(headers and shutdown functions from qbix-webserver 0.0.4.25, the per-request `REQUEST_TIME_FLOAT` from Exponential Velocity 0.0.4.42; Exponential suggests 0.0.4.44).
 
 Between requests the worker restores static class properties, superglobals, custom globals, output buffers, handlers
 and response headers to the state it was forked with. A few registries in the kernel are filled with `include_once`
@@ -421,6 +421,12 @@ the SQL query cache in `settings/querycache.ini`) work under every server; they 
 
 Velocity terminates TLS in its own process, with HTTP/2. Nothing else is needed: no `mod_ssl`, no stunnel, no reverse
 proxy, and for a public certificate not even certbot.
+
+The engine sets `$_SERVER['HTTPS']` and `REQUEST_SCHEME` for the application. A request on the TLS listener is
+HTTPS whoever sent it. Since Velocity 0.0.4.44 a request on the plain listener is HTTPS too when it comes from a
+trusted proxy (`Q.webserver.proxy.trusted`, loopback only by default) that sends `X-Forwarded-Proto: https`,
+`CloudFront-Forwarded-Proto: https` or `CF-Visitor: {"scheme":"https"}`; from any other client those headers are
+ignored. See section 8.8.
 
 #### With a certificate you have
 
@@ -1187,12 +1193,14 @@ decides before any PHP of the application runs:
   **trusted** proxy sends `X-Forwarded-Proto: https` (or the header named in `Q.webserver.proxy.headers.proto`),
   `CloudFront-Forwarded-Proto: https` or Cloudflare's `CF-Visitor: {"scheme":"https"}`; of a list such as
   `https, http` the first entry counts.
-- **Engine versions.** Reading the forwarded protocol only from trusted proxies is engine commit `380a64d`
-  (5 October 2026), which is on the engine's `main` branch and not in a release yet: up to and including 0.0.4.43
-  (and 0.0.4.42, which Exponential suggests), a worker took those headers from any client, so a visitor on a plain
-  listener could make a request look like HTTPS to the application. Until you run an engine release that carries the
-  change, keep Velocity's plain port unreachable from outside (the shipped `Host=127.0.0.1`, or a firewall) whenever
-  a proxy is in front.
+- **Engine versions.** Reading the forwarded protocol only from trusted proxies arrived in Exponential Velocity
+  **0.0.4.44** (engine commit `380a64d`, 5 October 2026), the release Exponential's `composer.json` suggests. Up to
+  and including 0.0.4.43 a worker took those headers from any client, so a visitor on a plain listener could make a
+  request look like HTTPS to the application. Check the installed version with `composer show
+  se7enxweb/exponential-velocity` and update with `composer require se7enxweb/exponential-velocity:~0.0.4.44`. On an
+  older engine, keep Velocity's plain port unreachable from outside (the shipped `Host=127.0.0.1`, or a firewall)
+  whenever a proxy is in front. From 0.0.4.44 on, a proxy that terminates TLS must be listed in
+  `Q.webserver.proxy.trusted`, or the site sees plain HTTP behind it.
 - **The host.** `X-Forwarded-Host` reaches the kernel from the visitor's address and is not used. Let the proxy pass
   the original `Host` header.
 
@@ -1324,7 +1332,8 @@ External:
 - Exponential Velocity engine: <https://github.com/se7enxweb/exponential-velocity> (its `docs/https.md`,
   `docs/layout.md`, `docs/workers.md`, `docs/requirements.md`, `docs/dashboard.md`, `docs/panel.md`, `service/` and
   `packaging/systemd/`); the forwarded-protocol change is commit
-  [380a64d](https://github.com/se7enxweb/exponential-velocity/commit/380a64d6dc9a55c047b7d850556fcb17352a5abc)
+  [380a64d](https://github.com/se7enxweb/exponential-velocity/commit/380a64d6dc9a55c047b7d850556fcb17352a5abc),
+  released in [v0.0.4.44](https://github.com/se7enxweb/exponential-velocity/blob/v0.0.4.44/CHANGELOG.md)
 - Apache HTTP Server: [mod_rewrite](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html),
   [mod_proxy_fcgi](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html),
   [mod_ssl](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html),

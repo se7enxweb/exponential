@@ -30,7 +30,8 @@ the right with the number of trusted hops seen in `X-Forwarded-For`. A proxy tha
 read as before. This is what keeps a value the visitor sent in front of a proxy's own from being used.
 
 `$_SERVER['HTTPS']` is the web server's own answer and is not affected: Apache, nginx, PHP-FPM, FrankenPHP and
-Velocity's TLS listener set it, and the kernel believes it without any proxy setting.
+Velocity set it, and the kernel believes it without any proxy setting. Velocity sets it on its TLS listener and,
+from 0.0.4.44, for a trusted proxy of its own list that forwards HTTPS (see "Exponential Velocity" below).
 
 ## The setting
 
@@ -135,8 +136,14 @@ application as `REMOTE_ADDR`. Configure proxies in front of Velocity **there**. 
 the peer, so:
 
 - `ClientIpByCustomHTTPHeader` is not needed and `TrustedProxies[]` does not affect the visitor's address.
-- `$_SERVER['HTTPS']` is set by the engine and the kernel takes it as the server's answer: `on` on Velocity's TLS
-  listener (`https://example.com:8080/`).
+- `$_SERVER['HTTPS']` (and `REQUEST_SCHEME`) is set by the engine and the kernel takes it as the server's answer:
+  `on` on Velocity's TLS listener (`https://example.com:8080/`), from any client. Since Velocity **0.0.4.44** it is
+  also `on` for a request on the plain listener when the peer is in `Q.webserver.proxy.trusted` and sends
+  `X-Forwarded-Proto: https` (or the header named in `Q.webserver.proxy.headers.proto`; of a list the first entry),
+  `CloudFront-Forwarded-Proto: https` or `CF-Visitor: {"scheme":"https"}`. From any other peer those headers are
+  ignored. Up to and including 0.0.4.43 the engine read them from any client; on such an engine keep the plain port
+  reachable only through the proxy (the shipped `Host=127.0.0.1`), and update with
+  `composer require se7enxweb/exponential-velocity:~0.0.4.44`.
 - `X-Forwarded-Host` reaches the kernel from the visitor's address and is not used. Let the proxy pass the original
   `Host` (`ProxyPreserveHost On`, `proxy_set_header Host $host`).
 - The HTTP cache lookup inside the engine is not told the peer's address and so ignores the forwarded headers too,
