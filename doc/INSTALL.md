@@ -165,7 +165,7 @@ The first line names the version, for example `console (Exponential) 6.0.15stabl
 or later add it with:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.42
+composer require se7enxweb/exponential-velocity:~0.0.4.44
 ```
 
 ## 4. Choose an install method

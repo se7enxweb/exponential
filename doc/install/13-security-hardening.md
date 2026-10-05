@@ -558,7 +558,7 @@ and switch it on with `exp:velocity conf enable reverse-proxy` (a link in `conf-
 restart Velocity. From a
 peer in that list it works out the visitor's address from `X-Forwarded-For` (from the right as well) and passes it to
 the application as `REMOTE_ADDR`, so `ClientIpByCustomHTTPHeader` is not needed. Since the engine change of
-5 October 2026 (after the 0.0.4.43 release), Velocity also sets `$_SERVER['HTTPS']` and `REQUEST_SCHEME` from
+5 October 2026 (commit `380a64d`, released in 0.0.4.44), Velocity also sets `$_SERVER['HTTPS']` and `REQUEST_SCHEME` from
 `X-Forwarded-Proto` (or the header named in `Q.webserver.proxy.headers.proto`), `CloudFront-Forwarded-Proto` or
 Cloudflare's `CF-Visitor` **only** when the connection comes from that list; a TLS connection to Velocity is HTTPS from
 any client. Earlier engines read the protocol header from any client wherever HTTPS was configured. Configure the

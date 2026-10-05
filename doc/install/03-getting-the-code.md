@@ -209,10 +209,10 @@ suggests it rather than requires it, because it needs PHP 8.1 (`"php": ">=8.1"`)
 names:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.42
+composer require se7enxweb/exponential-velocity:~0.0.4.44
 ```
 
-`~0.0.4.42` accepts every later `0.0.4.x` release (`>=0.0.4.42 <0.0.5.0`), so Composer installs the newest of them.
+`~0.0.4.44` accepts every later `0.0.4.x` release (`>=0.0.4.44 <0.0.5.0`), so Composer installs the newest of them.
 The last position of a Velocity version counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...), so a version sort, not a name
 sort, finds the newest.
 
