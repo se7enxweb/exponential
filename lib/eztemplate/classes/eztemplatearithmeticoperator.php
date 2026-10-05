@@ -199,141 +199,123 @@ class eZTemplateArithmeticOperator
                                                 'element-transformation-func' => 'randTransformation') );
     }
 
+    /*!
+     Compiles sum, sub, mul and div. With only constant operands the result is calculated now, otherwise the
+     compiled template calls calculate() at run time, the same function the interpreter uses, so a template gives
+     the same result however it is run.
+    */
     function basicTransformation( $operatorName, &$node, $tpl, &$resourceData,
                                   $element, $lastElement, $elementList, $elementTree, &$parameters )
     {
-        $values = array();
-        $function = $operatorName;
-        $divOperation = false;
-        if ( $function == $this->SumName )
-        {
-            $operator = '+';
-        }
-        else if ( $function == $this->SubName )
-        {
-            $operator = '-';
-        }
-        else if ( $function == $this->MulName )
-        {
-            $operator = '*';
-        }
-        else
-        {
-            $divOperation = true;
-            $operator = '/';
-        }
-
         if ( count( $parameters ) == 0 )
             return false;
-        $newElements = array();
 
-        // Reorder parameters, dynamic elements first then static ones
-        // Also combine multiple static ones into a single element
-        $notInitialised = true;
-        $staticResult = 0;
-        $isStaticFirst = false;
-        $allNumeric = true;
-        $newParameters = array();
-        $endParameters = array();
-        $parameterIndex = 0;
+        $allConstant = true;
         foreach ( $parameters as $parameter )
         {
             if ( !eZTemplateNodeTool::isConstantElement( $parameter ) )
             {
-                $allNumeric = false;
-                $endParameters[] = $parameter;
+                $allConstant = false;
+                break;
+            }
+        }
+
+        if ( $allConstant )
+        {
+            $operands = array();
+            foreach ( $parameters as $parameter )
+                $operands[] = eZTemplateNodeTool::elementConstantValue( $parameter );
+            return array( eZTemplateNodeTool::createNumericElement( self::calculate( $operatorName, $operands ) ) );
+        }
+
+        $values = array();
+        $operandCode = array();
+        $counter = 1;
+        foreach ( $parameters as $parameter )
+        {
+            if ( eZTemplateNodeTool::isConstantElement( $parameter ) )
+            {
+                $operandCode[] = var_export( eZTemplateNodeTool::elementConstantValue( $parameter ), true );
             }
             else
             {
-                $staticValue = (int) eZTemplateNodeTool::elementConstantValue( $parameter );
-                if ( $notInitialised )
-                {
-                    $staticResult = $staticValue;
-                    if ( $parameterIndex == 0 )
-                        $isStaticFirst = true;
-                    $notInitialised = false;
-                }
-                else
-                {
-                    if ( $function == 'sum' )
-                    {
-                        $staticResult += $staticValue;
-                    }
-                    else if ( $function == 'sub' )
-                    {
-                        if ( $isStaticFirst )
-                            $staticResult -= $staticValue;
-                        else
-                            $staticResult += $staticValue;
-                    }
-                    else if ( $function == 'mul' )
-                    {
-                        $staticResult *= $staticValue;
-                    }
-                    else
-                    {
-                        if ( $isStaticFirst )
-                            $staticResult /= $staticValue;
-                        else
-                            $staticResult *= $staticValue;
-                    }
-                }
-                $isPreviousStatic = true;
+                $operandCode[] = "%$counter%";
+                $values[] = $parameter;
+                ++$counter;
             }
-            ++$parameterIndex;
         }
+        $code = '%output% = eZTemplateArithmeticOperator::calculate( ' . var_export( $operatorName, true ) .
+                ', array( ' . implode( ', ', $operandCode ) . " ) );\n";
+        return array( eZTemplateNodeTool::createCodePieceElement( $code, $values, false, false, 'integer' ) );
+    }
 
-        if ( $allNumeric )
+    /**
+     * The number a value stands for in sum, sub, mul and div.
+     *
+     * Integers and floats are used as they are, a numeric string as the number it holds, a string with a number in
+     * front as that number, a boolean as 0 or 1, null and any other string as 0, an array as 0 when empty and 1
+     * otherwise, and an object as 0.
+     *
+     * @param mixed $value
+     * @return int|float
+     */
+    public static function numericOperand( $value )
+    {
+        if ( is_int( $value ) || is_float( $value ) )
+            return $value;
+        if ( is_string( $value ) )
         {
-            $newElements[] = eZTemplateNodeTool::createNumericElement( $staticResult );
-            return $newElements;
+            if ( is_numeric( $value ) )
+                return $value + 0;
+            $number = (float)$value;
+            return ( $number == (int)$number ) ? (int)$number : $number;
         }
-        else
+        if ( is_object( $value ) )
+            return 0;
+        return (int)$value;
+    }
+
+    /**
+     * Calculates sum, sub, mul or div over $operands, in order.
+     *
+     * sum adds them all, sub takes every following one from the first, mul multiplies them and div divides the
+     * first by each following one; dividing by zero gives 0. No operands give 0. The interpreter and compiled
+     * templates both calculate through here.
+     *
+     * @param string $operatorName sum, sub, mul or div
+     * @param array $operands
+     * @return int|float
+     */
+    public static function calculate( $operatorName, $operands )
+    {
+        $result = 0;
+        $first = true;
+        foreach ( $operands as $operand )
         {
-            if ( !$notInitialised )
+            $operand = self::numericOperand( $operand );
+            if ( $first )
             {
-                if ( $isStaticFirst )
-                    $newParameters[] = array( eZTemplateNodeTool::createNumericElement( $staticResult ) );
-                else
-                    $endParameters[] = array( eZTemplateNodeTool::createNumericElement( $staticResult ) );
+                $result = $operand;
+                $first = false;
+                continue;
             }
-            $newParameters = array_merge( $newParameters, $endParameters );
-
-            $code = '';
-            if ( $divOperation )
+            switch ( $operatorName )
             {
-                $code .= '@';
+                case 'sum':
+                    $result += $operand;
+                    break;
+                case 'sub':
+                    $result -= $operand;
+                    break;
+                case 'mul':
+                    $result *= $operand;
+                    break;
+                case 'div':
+                    $result = ( $operand == 0 ) ? 0 : $result / $operand;
+                    break;
             }
-            $code .= '%output% =';
-            $counter = 1;
-            $index = 0;
-
-            foreach ( $newParameters as $parameter )
-            {
-                if ( $index > 0 )
-                {
-                    $code .= " $operator";
-                }
-                if ( eZTemplateNodeTool::isConstantElement( $parameter ) )
-                {
-                    $staticValue = eZTemplateNodeTool::elementConstantValue( $parameter );
-                    if ( !is_numeric( $staticValue ) )
-                        $staticValue = (int)$staticValue;
-                    $code .= sprintf(" %F", $staticValue);
-                }
-                else
-                {
-                    $code .= " %$counter%";
-                    $values[] = $parameter;
-                    ++$counter;
-                }
-                ++$index;
-            }
-            $code .= ";\n";
         }
-        $knownType = 'integer';
-        $newElements[] = eZTemplateNodeTool::createCodePieceElement( $code, $values, false, false, $knownType );
-        return $newElements;
+        return $result;
     }
 
     function minMaxTransformation( $operatorName, &$node, $tpl, &$resourceData,
@@ -608,36 +590,16 @@ class eZTemplateArithmeticOperator
                     $operatorValue = 0;
             } break;
             case $this->SumName:
-            {
-                $value = 0;
-                if ( $operatorValue !== null )
-                    $value = (int) $operatorValue;
-                for ( $i = 0; $i < count( $operatorParameters ); ++$i )
-                {
-                    $tmpValue = $tpl->elementValue( $operatorParameters[$i], $rootNamespace, $currentNamespace, $placement );
-                    $value += (int) $tmpValue;
-                }
-                $operatorValue = $value;
-            } break;
             case $this->SubName:
             {
                 $values = array();
                 if ( $operatorValue !== null )
-                    $values[] = (int) $operatorValue;
+                    $values[] = $operatorValue;
                 for ( $i = 0; $i < count( $operatorParameters ); ++$i )
                 {
                     $values[] = $tpl->elementValue( $operatorParameters[$i], $rootNamespace, $currentNamespace, $placement );
                 }
-                $value = 0;
-                if ( count( $values ) > 0 )
-                {
-                    $value = $values[0];
-                    for ( $i = 1; $i < count( $values ); ++$i )
-                    {
-                        $value -= (int) $values[$i];
-                    }
-                }
-                $operatorValue = $value;
+                $operatorValue = self::calculate( $operatorName, $values );
             } break;
             case $this->IncName:
             case $this->DecName:
@@ -659,22 +621,14 @@ class eZTemplateArithmeticOperator
                     $tpl->warning( $operatorName, 'Requires at least 1 parameter value', $placement );
                     return;
                 }
-                $i = 0;
+                $values = array();
                 if ( $operatorValue !== null )
-                    $value = (int) $operatorValue;
-                else
-                    $value = (int) $tpl->elementValue( $operatorParameters[$i++], $rootNamespace, $currentNamespace, $placement );
-                for ( ; $i < count( $operatorParameters ); ++$i )
+                    $values[] = $operatorValue;
+                for ( $i = 0; $i < count( $operatorParameters ); ++$i )
                 {
-                    $tmpValue = $tpl->elementValue( $operatorParameters[$i], $rootNamespace, $currentNamespace, $placement );
-                    if ( (int) $tmpValue == 0 )
-                        $value = 0;
-                    else
-                        @$value /= (int) $tmpValue;
-
-
+                    $values[] = $tpl->elementValue( $operatorParameters[$i], $rootNamespace, $currentNamespace, $placement );
                 }
-                $operatorValue = $value;
+                $operatorValue = self::calculate( $operatorName, $values );
             } break;
             case $this->ModName:
             {
@@ -702,17 +656,14 @@ class eZTemplateArithmeticOperator
                     $tpl->warning( $operatorName, 'Requires at least 1 parameter value', $placement );
                     return;
                 }
-                $i = 0;
+                $values = array();
                 if ( $operatorValue !== null )
-                    $value = $operatorValue;
-                else
-                    $value = $tpl->elementValue( $operatorParameters[$i++], $rootNamespace, $currentNamespace, $placement );
-                for ( ; $i < count( $operatorParameters ); ++$i )
+                    $values[] = $operatorValue;
+                for ( $i = 0; $i < count( $operatorParameters ); ++$i )
                 {
-                    $tmpValue = $tpl->elementValue( $operatorParameters[$i], $rootNamespace, $currentNamespace, $placement );
-                    $value *= (float) $tmpValue;
+                    $values[] = $tpl->elementValue( $operatorParameters[$i], $rootNamespace, $currentNamespace, $placement );
                 }
-                $operatorValue = $value;
+                $operatorValue = self::calculate( $operatorName, $values );
             } break;
             case $this->MaxName:
             {
