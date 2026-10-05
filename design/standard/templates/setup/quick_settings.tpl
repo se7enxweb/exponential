@@ -2,7 +2,7 @@
 
 {let settings_list=ezini( 'DebugSettings', 'QuickSettingsList', 'site.ini' )}
 
-<form id="quicksettings" action={'setup/settingstoolbar'|ezurl} method="post">
+<form id="{first_set( $form_id, 'quicksettings' )|wash}" action={'setup/settingstoolbar'|ezurl} method="post">
 
 {default ui_context=''}
 

@@ -9,7 +9,7 @@
                         array( 'Ini', 'Ini settings'|i18n( 'design/standard/pagelayout' )|wash, false ),
                         array( 'Static', 'Static'|i18n( 'design/standard/pagelayout' )|wash, false ) )}
 
-<form id="clearcache" action={'setup/cachetoolbar'|ezurl} method="post">
+<form id="{first_set( $form_id, 'clearcache' )|wash}" action={'setup/cachetoolbar'|ezurl} method="post">
 {default ui_context=''}
 <div class="block">
 {if is_set( $module_result.content_info.node_id )}
