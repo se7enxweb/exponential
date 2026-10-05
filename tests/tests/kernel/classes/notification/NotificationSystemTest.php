@@ -27,6 +27,7 @@
  *  NT-13  The subscription list: paging, name and class filter, a node that is gone
  *  NT-14  An event of content that is gone, or of an unknown type, does not stop the run
  *  NT-15  The commands: --help, status, run --dry-run, run, events, subscriptions
+ *  NT-16  Every string of the notification templates has a German text; no template area is left empty
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -210,7 +211,7 @@ class NotificationSystemTest extends PHPUnit\Framework\TestCase
     {
         $db = eZDB::instance();
         // earlier runs: everything named nottest-
-        $rows = $db->arrayQuery( "SELECT id FROM ezcontentobject WHERE remote_id LIKE 'nottest-%'" );
+        $rows = $db->arrayQuery( "SELECT id FROM ezcontentobject WHERE remote_id LIKE 'nottest-%' AND remote_id NOT LIKE 'nottest-ui-%'" );
         $ids = array();
         foreach ( $rows as $r )
             $ids[(int)$r['id']] = (int)$r['id'];
@@ -776,6 +777,30 @@ class NotificationSystemTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 2, $result['events'] );
         $this->assertSame( 0, $this->rows( 'eznotificationevent', 'id IN (' . implode( ',', $ids ) . ')' ), 'events nothing waits for are removed' );
         $this->clean();
+    }
+
+    /** NT-16 */
+    public function testEveryTemplateStringHasAGermanText()
+    {
+        $catalogue = file_get_contents( self::$installation . '/share/translations/ger-DE/translation.ts' );
+        $missing = array();
+        $files = array_merge( glob( self::$installation . '/design/admin4/templates/notification/*.tpl' ) ?: array(),
+                              glob( self::$installation . '/design/admin4/templates/notification/*/*/*/*.tpl' ) ?: array(),
+                              glob( self::$installation . '/design/admin4/templates/notification/parts/*.tpl' ) ?: array() );
+        $this->assertNotEmpty( $files );
+        foreach ( $files as $file )
+        {
+            $code = file_get_contents( $file );
+            $this->assertNotSame( '', trim( $code ), $file . ' is empty' );
+            preg_match_all( "/'((?:[^'\\\\]|\\\\.)*)'\\s*\\|\\s*i18n\\(\\s*'(design\\/admin\\/notification[^']*)'/", $code, $m, PREG_SET_ORDER );
+            foreach ( $m as $hit )
+            {
+                $source = htmlspecialchars( str_replace( "\\'", "'", $hit[1] ), ENT_QUOTES | ENT_XML1 );
+                if ( strpos( $catalogue, '<source>' . $source . '</source>' ) === false )
+                    $missing[] = $hit[1];
+            }
+        }
+        $this->assertSame( array(), $missing, 'strings without a German text' );
     }
 
     // ------------------------------------------------------------------ commands

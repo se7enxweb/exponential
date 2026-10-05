@@ -60,13 +60,16 @@ class expNotificationJob
         $id = bin2hex( random_bytes( 8 ) );
         touch( $dir . '/' . $id . '.jsonl' );
 
-        $command = array( $setsid, '-f', $php, 'bin/php/notificationrun.php', '--job=' . $id, '--source=web', '--no-colors' );
+        $args = array( $php, 'bin/php/notificationrun.php', '--job=' . $id, '--source=web', '--no-colors' );
         if ( $dry )
-            $command[] = '--dry-run';
+            $args[] = '--dry-run';
         if ( $siteaccess !== '' )
-            $command[] = '--siteaccess=' . $siteaccess;
+            $args[] = '--siteaccess=' . $siteaccess;
         if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
-            $command[] = '--allow-root-user';
+            $args[] = '--allow-root-user';
+        // what the command prints that does not reach the progress file (a fatal error, a missing extension) is kept
+        // in <id>.log next to it: the run is detached, so nothing else would show it
+        $command = array_merge( array( $setsid, '-f', '/bin/sh', '-c', 'exec "$@" >> ' . escapeshellarg( $dir . '/' . $id . '.log' ) . ' 2>&1', 'sh' ), $args );
 
         // only pipes go to the child: a server that serves files through its own stream wrapper cannot hand a
         // descriptor on, and its sockets must not be inherited by a run that outlives the request
@@ -148,6 +151,9 @@ class expNotificationJob
             return;
         usort( $files, function ( $a, $b ) { return filemtime( $b ) - filemtime( $a ); } );
         foreach ( array_slice( $files, 19 ) as $file )
+        {
             @unlink( $file );
+            @unlink( substr( $file, 0, -6 ) . '.log' );
+        }
     }
 }

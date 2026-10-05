@@ -64,7 +64,7 @@ a.nf-stat:hover, a.nf-stat:focus-visible { border-color: var(--nf-accent); box-s
 .nf-selectall input { accent-color: var(--nf-accent); }
 
 .nf-actions { display: flex; flex-wrap: wrap; gap: .5em; margin: .7em 0 0; }
-.nf-btn { display: inline-block; padding: .45em 1em; border: 1px solid var(--nf-line); border-radius: 8px; background: #fff; color: var(--nf-ink); font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+.nf-btn { white-space: normal; max-width: 100%; display: inline-block; padding: .45em 1em; border: 1px solid var(--nf-line); border-radius: 8px; background: #fff; color: var(--nf-ink); font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
 .nf-btn:hover { border-color: var(--nf-accent); }
 .nf-btn:focus-visible, .nf-chip:focus-visible { outline: 2px solid var(--nf-accent); outline-offset: 2px; }
 .nf-btn.primary { background: var(--nf-accent); border-color: var(--nf-accent); color: #fff; }

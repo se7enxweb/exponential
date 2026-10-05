@@ -111,7 +111,10 @@ class expNotificationService
     {
         $dir = self::ensureDirectory();
         $file = $dir . '/runs.jsonl';
+        $existed = is_file( $file );
         @file_put_contents( $file, json_encode( $run ) . "\n", FILE_APPEND | LOCK_EX );
+        if ( !$existed )
+            @chmod( $file, 0666 );
         $lines = @file( $file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
         if ( is_array( $lines ) && count( $lines ) > self::KEEP_RUNS * 2 )
             @file_put_contents( $file, implode( "\n", array_slice( $lines, -self::KEEP_RUNS ) ) . "\n", LOCK_EX );
@@ -143,15 +146,26 @@ class expNotificationService
         return $info;
     }
 
+    /** @var string why the last lock() failed: busy or the lock file cannot be opened */
+    private static $lockError = '';
+
     private static function lock( $source )
     {
         $dir = self::ensureDirectory();
-        $handle = @fopen( $dir . '/run.lock', 'c+' );
+        $file = $dir . '/run.lock';
+        $existed = is_file( $file );
+        $handle = @fopen( $file, 'c+' );
         if ( !$handle )
+        {
+            self::$lockError = 'The lock file ' . $file . ' cannot be opened (permissions: the web server and the command line run as different users).';
             return false;
+        }
+        if ( !$existed )
+            @chmod( $file, 0666 ); // the command line (root) and the web server (a site user) both take it
         if ( !flock( $handle, LOCK_EX | LOCK_NB ) )
         {
             fclose( $handle );
+            self::$lockError = 'busy';
             return false;
         }
         ftruncate( $handle, 0 );
@@ -190,9 +204,17 @@ class expNotificationService
                          'error' => '', 'user' => isset( $options['user'] ) ? (string)$options['user'] : '' );
         if ( !self::lock( $source ) )
         {
-            $result['result'] = 'busy';
-            $held = self::runningNow();
-            $result['error'] = 'Another run holds the lock' . ( $held ? ' (process ' . (int)$held['pid'] . ')' : '' ) . '.';
+            if ( self::$lockError === 'busy' )
+            {
+                $result['result'] = 'busy';
+                $held = self::runningNow();
+                $result['error'] = 'Another run holds the lock' . ( $held ? ' (process ' . (int)$held['pid'] . ')' : '' ) . '.';
+            }
+            else
+            {
+                $result['result'] = 'failed';
+                $result['error'] = self::$lockError;
+            }
             return $result;
         }
         $start = microtime( true );
@@ -250,7 +272,7 @@ class expNotificationService
         if ( !self::lock( 'dry-run' ) )
         {
             $plan['result'] = 'failed';
-            $plan['error'] = 'A run is in progress.';
+            $plan['error'] = self::$lockError === 'busy' ? 'A run is in progress.' : self::$lockError;
             return $plan;
         }
         $mails = array();
@@ -474,7 +496,7 @@ class expNotificationService
      * The subtree subscriptions of one user, or of everyone, with what the lists show.
      *
      * @param int|null $userID the user's content object id, null for everyone
-     * @param array $filter q (part of the name), class (class identifier), missing (true: only nodes that are gone)
+     * @param array $filter q (part of the name), class (class identifier), missing (true: only nodes that are gone), ids (rule ids)
      * @return array total, rows (id, user_id, login, node_id, name, path (array of names), class_identifier, class_name,
      *         section_id, last_change (timestamp or false), missing (bool), use_digest)
      */
@@ -490,6 +512,8 @@ class expNotificationService
             $where[] = "c.identifier = '" . $db->escapeString( (string)$filter['class'] ) . "'";
         if ( !empty( $filter['missing'] ) )
             $where[] = 't.node_id IS NULL';
+        if ( !empty( $filter['ids'] ) )
+            $where[] = 'r.id IN ( ' . implode( ',', array_map( 'intval', (array)$filter['ids'] ) ) . ' )';
         $whereSQL = $where ? 'WHERE ' . implode( ' AND ', $where ) : '';
         $from = 'FROM ezsubtree_notification_rule r
                  LEFT JOIN ezcontentobject_tree t ON t.node_id = r.node_id

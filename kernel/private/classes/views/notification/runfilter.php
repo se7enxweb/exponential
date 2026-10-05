@@ -35,12 +35,15 @@ class Runfilter extends \Exponential\Runnable\ModuleView
 
         $tpl->setVariable( 'filter_proccessed', false );
         $tpl->setVariable( 'time_event_created', false );
+        $tpl->setVariable( 'run_result', false );
 
         if ( $http->hasPostVariable( 'RunFilterButton' ) )
         {
-            \eZNotificationEventFilter::process();
-            $tpl->setVariable( 'filter_proccessed', true );
-
+            // through the service: locked against the cronjob, recorded for the status page, audited
+            $user = \eZUser::currentUser();
+            $result = \expNotificationService::run( array( 'source' => 'web', 'time_event' => false, 'user' => $user->attribute( 'login' ) ) );
+            $tpl->setVariable( 'run_result', $result );
+            $tpl->setVariable( 'filter_proccessed', $result['result'] === 'ok' );
         }
         else if ( $http->hasPostVariable( 'SpawnTimeEventButton' ) )
         {
