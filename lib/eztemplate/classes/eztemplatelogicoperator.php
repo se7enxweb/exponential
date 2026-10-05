@@ -531,7 +531,8 @@ class eZTemplateLogicOperator
         {
             $selected = eZTemplateNodeTool::elementConstantValue( $parameters[0] );
 
-            if ( $selected < 0 or $selected > ( count( $parameters ) - 1 ) )
+            // the first parameter is the index, the choices follow it
+            if ( $selected < 0 or $selected > ( count( $parameters ) - 2 ) )
             {
                 return false;
             }
@@ -547,16 +548,10 @@ class eZTemplateLogicOperator
             $count = count( $parameters ) - 1;
             $operatorNameText = eZPHPCreator::variableText( $operatorName );
 
-            if ( count( $parameters ) == ( 2 + 1 ) )
+            // an index out of range is an error, as in modify(); a boolean or null index is 1 or 0
             {
-                $code = "%output% = %1% ? %3% : %2%;\n";
-                $values[] = $parameters[1];
-                $values[] = $parameters[2];
-            }
-            else
-            {
-                $code = ( "if ( %1% < 0 and\n" .
-                          "     %1% >= $count )\n" .
+                $code = ( "if ( is_numeric( %1% ) and\n" .
+                          "     ( %1% < 0 or %1% >= $count ) )\n" .
                           "{\n" .
                           "    \$tpl->error( $operatorNameText, \"Index \" . %1% . \" out of range\" );\n" .
                           "     %output% = false;\n" .
@@ -673,7 +668,7 @@ class eZTemplateLogicOperator
                                 break;
                             }
                             unset( $lastOperand );
-                            $lastOperand =& $operand;
+                            $lastOperand = $operand;
                         }
                     }
                 }
@@ -706,7 +701,7 @@ class eZTemplateLogicOperator
                                 break;
                             }
                             unset( $lastOperand );
-                            $lastOperand =& $operand;
+                            $lastOperand = $operand;
                         }
                     }
                 }

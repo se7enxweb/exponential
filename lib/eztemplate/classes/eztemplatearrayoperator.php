@@ -734,7 +734,10 @@ class eZTemplateArrayOperator
                 {
                     if ( $isString )
                     {
-                        return array( eZTemplateNodeTool::createStringElement( mb_substr( $inputArray, $offset, $length ) ) );
+                        if ( $length === false )
+                            $length = 1;
+
+                        return array( eZTemplateNodeTool::createStringElement( mb_substr( $inputArray, 0, $offset ) . mb_substr( $inputArray, $offset + $length ) ) );
                     }
                     else if ( $isArray )
                     {
@@ -748,19 +751,14 @@ class eZTemplateArrayOperator
                     }
                 }
 
+                // what is left without the removed part; the length defaults to 1, as in modify()
                 if ( $isString )
                 {
-                    $code = '%output% = mb_substr( ' . $inputArrayCode . ', ' . $offsetCode;
-                    if ( $lengthCode )
-                        $code .= ', ' . $lengthCode;
-                    $code .= ' );';
+                    $code = '%output% = mb_substr( ' . $inputArrayCode . ', 0, ' . $offsetCode . ' ) . mb_substr( ' . $inputArrayCode . ', ' . $offsetCode . ' + ' . ( $lengthCode ? $lengthCode : 1 ) . ' );';
                 }
                 else if ( $isArray )
                 {
-                    $code = '%output% = array_merge( array_slice( ' .  $inputArrayCode . ', 0, ' . $offsetCode . ' ), array_slice( ' . $inputArrayCode . ', ' . $offsetCode;
-                    if ( $lengthCode )
-                        $code .= ' + ' . $lengthCode;
-                    $code .= ' ) );';
+                    $code = '%output% = array_merge( array_slice( ' .  $inputArrayCode . ', 0, ' . $offsetCode . ' ), array_slice( ' . $inputArrayCode . ', ' . $offsetCode . ' + ' . ( $lengthCode ? $lengthCode : 1 ) . ' ) );';
                 }
                 else
                 {
