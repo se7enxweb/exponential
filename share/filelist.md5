@@ -6597,7 +6597,6 @@ a26c7abb7aa53e9ce49166a23824422d  tests/tests/extension/expservices/users/expNot
 54f7b97b9fcec361db7af4f79f978a59  tests/tests/extension/expservices/users/expUserServicesTest.php
 02bf8c6b6d73f53dcd28b4b50eda7195  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 1cca23f5c5f799cc1b94189d85089c66  tests/tests/extension/expservices/users/expUsersTestCase.php
-6969c0cf9409b899036dde0258cc3c07  tests/tests/extension/ezjscore/ezjscCallThrowableTest.php
 f6cf185c8c7b6205b83513395a280767  tests/tests/extension/ezoe/expOEEditorRegistryTest.php
 ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServicesTest.php
 1f431d2787ac5ae352d9bc4e7c3e5ef0  tests/tests/extension/ezoe/expOEEngineConfigTest.php
@@ -6734,7 +6733,6 @@ a8a61b473a5e21173818112297a16b47  tests/tests/kernel/classes/ezextension_with_or
 382c28dee100fbfce39ea367680ac1a2  tests/tests/kernel/classes/eznodeassignment_test.php
 596c8b9fb90f1ddc1c7bf639afe1c4db  tests/tests/kernel/classes/ezorder_regression.php
 dbcfd409cc6cd6c3d9a9a461369158d7  tests/tests/kernel/classes/ezpActiveExtensionsTest.php
-e6b62aacd998e656e2c71f502a6501cb  tests/tests/kernel/classes/ezpKernelWebAppendQueryTest.php
 c758e9c8740a66339dc5d27d746ed630  tests/tests/kernel/classes/ezpRestLazyTest.php
 cde6894a0438daa7404bdddb6b21aabc  tests/tests/kernel/classes/ezpTemplateOverridesTest.php
 a5532fb28c026fe034f0e1358fdd488b  tests/tests/kernel/classes/ezpackage_regression.php
@@ -6834,7 +6832,6 @@ a132bf519eb92542b6436fa0aefdd0d4  tests/tests/kernel/datatypes/ezcountry/ezcount
 c09742730cb66074fe28920c75d1f77a  tests/tests/kernel/datatypes/ezdatatype_test_dataset.php
 d3bf1a7962d00356aceb039aafacc42f  tests/tests/kernel/datatypes/ezemail/eZEmailTypeTest.php
 3fbf238950f0638c151995ccab74e964  tests/tests/kernel/datatypes/ezemail/ezemailtype_test.php
-c02c420f171fc8aab0a5e96a53c897ab  tests/tests/kernel/datatypes/ezimage/eZImageAliasGuardsTest.php
 47c17675c1f700f4ae785e2e9c62f4e3  tests/tests/kernel/datatypes/ezimage/eZImageCopyOwnFilesTest.php
 13db375dbc006e78ef16437642166ede  tests/tests/kernel/datatypes/ezimage/eZImageEZP21324Test.php
 88cdef8a476714efdc29288eceffc6d7  tests/tests/kernel/datatypes/ezimage/ezimagealiashandler_regression.php
@@ -7385,6 +7382,6 @@ ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 9207c077d5606d4e0c5388bc9f8dd926  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9e2db96d75614e14c654a873ac90fdd6  webdav.php
-2fc163650bb2b38e3b2b39fbf4e930c5  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
-7e35f30fd58042582c798e4909bf4cb1  tests/tests/kernel/classes/ezpKernelWebAppendRequestQueryTest.php
-31a2ec28d66399f95dd7ee83b306275e  tests/tests/kernel/datatypes/ezimage/eZImageAliasHandlerGuardsTest.php
+d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
+25784c0e26d295e7953aa9879ab7390b  tests/tests/kernel/classes/ezpKernelWebAppendRequestQueryTest.php
+239cb2c30da730ba1b0a9e7552ad3f0e  tests/tests/kernel/datatypes/ezimage/eZImageAliasHandlerGuardsTest.php
