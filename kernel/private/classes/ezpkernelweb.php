@@ -1172,9 +1172,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      * @param string $redirectURI completed redirect target, relative or absolute
      * @param string $queryString query of the current request, with or without the leading "?"
      * @param string $currentHost host of the current request, a port is ignored
+     * @param array $trustedHosts further hosts that count as the own host (the configured SiteURL host)
      * @return string
      */
-    public static function appendRequestQuery( $redirectURI, $queryString, $currentHost )
+    public static function appendRequestQuery( $redirectURI, $queryString, $currentHost, array $trustedHosts = array() )
     {
         $redirectURI = (string)$redirectURI;
         $query = ltrim( (string)$queryString, '?' );
@@ -1183,11 +1184,26 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             return $redirectURI;
         }
 
-        if ( preg_match( '#^https?://#i', $redirectURI ) )
+        // Absolute (any scheme) and protocol-relative targets leave the query behind
+        // unless they point at the own host.
+        if ( preg_match( '#^(?:[a-z][a-z0-9+.-]*:|//)#i', $redirectURI ) )
         {
-            $targetHost = strtolower( (string)parse_url( $redirectURI, PHP_URL_HOST ) );
-            $ownHost = strtolower( (string)preg_replace( '/:\d+$/', '', trim( (string)$currentHost ) ) );
-            if ( $targetHost === '' || $targetHost !== $ownHost )
+            $targetHost = self::normaliseRedirectHost( (string)parse_url( $redirectURI, PHP_URL_HOST ) );
+            if ( $targetHost === '' )
+            {
+                return $redirectURI;
+            }
+            $own = false;
+            foreach ( array_merge( array( $currentHost ), $trustedHosts ) as $host )
+            {
+                $host = self::normaliseRedirectHost( (string)$host );
+                if ( $host !== '' && $host === $targetHost )
+                {
+                    $own = true;
+                    break;
+                }
+            }
+            if ( !$own )
             {
                 return $redirectURI;
             }
@@ -1204,6 +1220,36 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         $separator = strpos( $redirectURI, '?' ) !== false ? '&' : '?';
 
         return $redirectURI . $separator . $query . $fragment;
+    }
+
+    /**
+     * Lower-cased ASCII host without port, for comparing redirect targets with the own host.
+     *
+     * @param string $host
+     * @return string
+     */
+    protected static function normaliseRedirectHost( $host )
+    {
+        $host = strtolower( trim( $host ) );
+        if ( $host === '' )
+        {
+            return '';
+        }
+        if ( $host[0] === '[' )
+        {
+            $end = strpos( $host, ']' );
+            return $end === false ? $host : substr( $host, 0, $end + 1 );
+        }
+        $host = rtrim( (string)preg_replace( '/:\d*$/', '', $host ), '.' );
+        if ( function_exists( 'idn_to_ascii' ) && preg_match( '/[^\x00-\x7f]/', $host ) )
+        {
+            $ascii = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
+            if ( $ascii !== false )
+            {
+                $host = $ascii;
+            }
+        }
+        return $host;
     }
 
     protected function redirect()
@@ -1275,7 +1321,8 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         }
 
         // After the module redirect url is completed, add the queryString params so they carry over the redirect operation
-        $redirectURI = self::appendRequestQuery( $redirectURI, (string)eZSys::queryString(), (string)eZSys::hostname() );
+        $redirectURI = self::appendRequestQuery( $redirectURI, (string)eZSys::queryString(), (string)eZSys::hostname(),
+            array( (string)parse_url( 'http://' . $ini->variable( 'SiteSettings', 'SiteURL' ), PHP_URL_HOST ) ) );
 
         if ( $ini->variable( 'ContentSettings', 'StaticCache' ) == 'enabled' )
         {
