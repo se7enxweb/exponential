@@ -1,0 +1,117 @@
+name: Quality
+
+# The checks of the git hooks (.githooks/), run for every push and pull request.
+# Blocking: PHP syntax, the file manifest, commit messages and PHPStan.
+# Warning only for now: the code style of changed files (phpcs.xml.dist).
+# See doc/features/6.0/quality-checks.md.
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Syntax, manifest, commit messages, code style
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+          tools: composer:v2
+
+      - name: Changed range
+        id: range
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "base=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+            echo "head=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
+          elif [ -n "${{ github.event.before }}" ] && ! echo "${{ github.event.before }}" | grep -q '^0*$'; then
+            echo "base=${{ github.event.before }}" >> $GITHUB_OUTPUT
+            echo "head=${{ github.sha }}" >> $GITHUB_OUTPUT
+          else
+            echo "base=$(git rev-parse HEAD~1)" >> $GITHUB_OUTPUT
+            echo "head=${{ github.sha }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: PHP syntax of changed files
+        run: |
+          status=0
+          for file in $(git diff --name-only --diff-filter=ACMR ${{ steps.range.outputs.base }} ${{ steps.range.outputs.head }} -- '*.php'); do
+            php -l "$file" >/dev/null || status=1
+          done
+          exit $status
+
+      - name: File manifest (share/filelist.md5)
+        run: php bin/php/checkmanifest.php --all
+
+      - name: Commit messages
+        run: |
+          status=0
+          for commit in $(git rev-list --no-merges ${{ steps.range.outputs.base }}..${{ steps.range.outputs.head }}); do
+            git log -1 --format=%B "$commit" > "$RUNNER_TEMP/message"
+            if ! sh .githooks/commit-msg "$RUNNER_TEMP/message" >/dev/null; then
+              echo "::error::Commit $(git log -1 --format='%h %s' "$commit") does not start with Added:, Updated:, Fixed: or Removed:"
+              status=1
+            fi
+          done
+          exit $status
+
+      - name: Cache development tools
+        uses: actions/cache@v4
+        with:
+          path: .devtools/vendor
+          key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
+
+      - name: Install development tools
+        run: COMPOSER=composer.dev.json composer install --no-interaction --no-progress
+
+      - name: Code style of changed files (warning only)
+        continue-on-error: true
+        run: php bin/php/checkcodestyle.php --base=${{ steps.range.outputs.base }}
+
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mysqli, pdo_sqlite, sqlite3, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Cache development tools
+        uses: actions/cache@v4
+        with:
+          path: .devtools/vendor
+          key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
+
+      - name: Install dependencies and development tools
+        run: |
+          composer update --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          COMPOSER=composer.dev.json composer install --no-interaction --no-progress
+
+      - name: Generate autoloads
+        run: php bin/php/ezpgenerateautoloads.php -s -e || true
+
+      - name: PHPStan (only findings missing from phpstan-baseline.neon fail)
+        run: .devtools/vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=4G --no-progress
