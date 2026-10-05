@@ -2643,7 +2643,7 @@ fc69e6c36c5c24e806f6b99e5ee6f627  design/standard/templates/workflow/run.tpl
 a77770f8eb83d01e998509fa154d877f  design/standard/templates/workflow/view.tpl
 fdad1c71f524d82a51eb60607a767397  design/standard/templates/workflow/workflowlist.tpl
 bd3d93f01abdf7f10a98c56195094ac4  design/standard/templates/workflow/workflowtypes.tpl
-b5342a37a0ebeab2a08128be9647aa7f  doc/INSTALL.md
+6c452713232d449a034c1a2c04272ee0  doc/INSTALL.md
 18eb180621655795c488a99d85dd26f0  doc/bc/4.1/changes-4.1.0.txt
 23d0e20abd1918e03ad0770ee403ff66  doc/bc/4.2/changes-4.2.0.txt
 21caf491f15ecab82c5915c46c526f3c  doc/bc/4.3/changes-4.3.0.txt
@@ -3695,7 +3695,7 @@ a99a7536578c2b2903a37b1d851bcdd0  doc/history/velocity/README.md
 af18b6c87c55fc88588ffacded884a0d  doc/history/velocity/installers-and-packages.md
 09d51bb55b69c9ca4d98e2ff9f810a1c  doc/install/01-introduction.md
 b7feb8f70b1777646af0289a40467d60  doc/install/02-requirements.md
-4e1fa99d38002cddb5fe3333a43f8304  doc/install/03-getting-the-code.md
+9cac47f954ce19b9a4e7d447b938d8f5  doc/install/03-getting-the-code.md
 ba4c36fa78c1406112aa7f470425177b  doc/install/04-choosing-an-install-method.md
 0fda51b5862b1c41da43da4537c686d9  doc/install/05-setup-wizard.md
 4d0203cccd9e74511a824e6edccd15fe  doc/install/06-kickstarter.md
@@ -3705,10 +3705,10 @@ fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
 c835bb4d70769cef516cd689f9a1220b  doc/install/10-after-installing.md
 194f0353ff6ee7e056cb6177d66fd27e  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
-0d05e8750f9770b3648856195a74883b  doc/install/13-security-hardening.md
+2b46739d05cc5f6d693bbb60eb440406  doc/install/13-security-hardening.md
 697395aba059076da8463bce457b9957  doc/install/14-migrating-from-4x.md
 e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
-9959263d1b4788243d6c28ac8c0e10ff  doc/install/16-migrating-from-ez-platform-and-ibexa.md
+9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
 863b485075fe2f5e3cc8e11ec8dd283e  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
