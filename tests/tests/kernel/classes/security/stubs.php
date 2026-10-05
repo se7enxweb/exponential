@@ -20,61 +20,12 @@ if ( !class_exists( 'eZDBInterface', false ) )
     class_exists( 'eZDBInterface', true );
 }
 
+// The real eZDebug, not a stub: a class declared here stays for the whole PHPUnit process, and the security
+// suite runs first, so a stub shadowed eZDebug for every later suite. Without debug enabled the real class only
+// writes errors to the log, which is what the tested code does on a site.
 if ( !class_exists( 'eZDebug', false ) )
 {
-    class eZDebug
-    {
-        const LEVEL_NOTICE = 1;
-        const LEVEL_WARNING = 2;
-        const LEVEL_ERROR = 3;
-        const LEVEL_TIMING_POINT = 4;
-        const LEVEL_DEBUG = 5;
-        const LEVEL_STRICT = 6;
-
-        const SHOW_NOTICE = 1;
-        const SHOW_WARNING = 2;
-        const SHOW_ERROR = 4;
-        const SHOW_TIMING_POINT = 8;
-        const SHOW_DEBUG = 16;
-        const SHOW_STRICT = 32;
-        const SHOW_ALL = 63;
-
-        const HANDLE_NONE = 0;
-        const HANDLE_FROM_PHP = 1;
-        const HANDLE_TO_PHP = 2;
-        const HANDLE_EXCEPTION = 3;
-
-        const OUTPUT_MESSAGE_SCREEN = 1;
-        const OUTPUT_MESSAGE_FILE = 2;
-        const OUTPUT_MESSAGE_LOG = 4;
-
-        public static $lastWarning  = null;
-        public static $lastError    = null;
-        private static $instance     = null;
-
-        public static function instance()
-        {
-            if ( self::$instance === null )
-                self::$instance = new self();
-            return self::$instance;
-        }
-
-        public function messageName( $messageType ) { return $messageType; }
-
-        public static function isDebugEnabled() { return false; }
-
-        public static function writeWarning( $msg, $ctx = '' ) { self::$lastWarning = $msg; }
-        public static function writeError( $msg, $ctx = '' )   { self::$lastError   = $msg; }
-        public static function writeNotice( $msg, $ctx = '' )  {}
-        public static function writeStrict( $msg, $ctx = '' )  {}
-        public static function setHandleType( $type )           {}
-        public static function accumulatorStart( $key, $inGroup = false, $name = false, $recursive = false ) {}
-        public static function accumulatorStop( $key, $recursive = false ) {}
-        public static function reset() { self::$lastWarning = self::$lastError = null; }
-
-        public function __call( $name, $arguments ) { return null; }
-        public static function __callStatic( $name, $arguments ) { return null; }
-    }
+    require_once __DIR__ . '/../../../../../lib/ezutils/classes/ezdebug.php';
 }
 
 if ( !class_exists( 'StubEZDB', false ) )
