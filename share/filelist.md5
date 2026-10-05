@@ -2825,7 +2825,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-2dfe5b76b5ce50de236b40e8cb5dd0c6  doc/changelogs/6.0/6.0.15.md
+4cd42b5ba1c079dcd17377ae61c09056  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3288,15 +3288,15 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 1ea060f19f032887d96d54ea2994fd9e  doc/features/6.0/velocity-web-server.md
 747dd5c4a400e33d13f0fd8bad249a9c  doc/features/6.0/velocity-websockets-and-events.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
-b082b7fc8c2cbd33d7aef9df726d6c8d  doc/glossary.md
-2b4ff3e59ac0e0ee35017a46070a4a15  doc/guides/README.md
+da717639d7e8826a34d23a546ce3f619  doc/glossary.md
+8b7a0fd28edd0d59c68793815ac9e151  doc/guides/README.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
 a7d35b3d4eb62f3995401d62b9ab21d7  doc/guides/deploying.md
 5f6657b0ea73fe7a20da12e4a3d5547c  doc/guides/extensions.md
 a49a7f5284ec81f8dbb13b7c88e821b4  doc/guides/getting-started.md
 a45d63418940e025cb5a03004675a98c  doc/guides/notifications-administrator.md
 934e5fac274514582acb8481191f0713  doc/guides/notifications-developer.md
-b3088ad6bce8c9c5c0ca74fb3fc54f82  doc/guides/operating-a-site.md
+db5e980a8f3711d233062169e69a4963  doc/guides/operating-a-site.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 0c6a4d567b4802cf8af7f38be42ed484  doc/guides/security-and-audit.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
@@ -3670,7 +3670,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/specifications/4.3/admin_refresh/functiona
 e14335da02fc54b98c731ab8152fbda6  doc/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/specifications/4.5/asynchronous_publishing.txt
-4be1e573dd796e61445610548fa1d3fd  doc/specifications/6.0/README.md
+573eb04938818e9ac9ed26bf59156763  doc/specifications/6.0/README.md
 c7d48dabae7613771d017ddaf603bc61  doc/specifications/6.0/audit-event-model.md
 ab66e2db16090f3e2b4beeeb0a27f87e  doc/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/specifications/6.0/cjw_newsletter.md
@@ -7432,7 +7432,7 @@ d005d69e32fff23d01d7e082875bb829  design/standard/templates/mailpreferences/admi
 2c00025e7d889c87308bd28f0562cfe6  design/standard/templates/mailpreferences/confirm.tpl
 6348c92bd32461a786bd6c3369780d02  design/standard/templates/mailpreferences/mail/confirm.tpl
 81902709553651a8de824168bead9f35  design/standard/templates/mailpreferences/mail/email_change.tpl
-9355dcb8336a8501bc49f862764b8fba  design/standard/templates/mailpreferences/mail/footer.tpl
+070f2e34bf2dd335532e49125be95ba1  design/standard/templates/mailpreferences/mail/footer.tpl
 a3b7b90caa405e96e1054476258dfdca  design/standard/templates/mailpreferences/mail/footer_html.tpl
 25934faddb85fbafa0df424220af15d5  design/standard/templates/mailpreferences/mail/link.tpl
 b1453252ad6df22c177e803880c135d0  design/standard/templates/mailpreferences/parts/account_link.tpl
@@ -7463,3 +7463,11 @@ e62bd2ad44955a0c68ec9398178f1b49  kernel/private/classes/views/mailpreferences/p
 0afeb143f571b25d04a8523ce041625d  kernel/private/classes/views/mailpreferences/request.php
 fdd4ba22795c6bb45b499d7e3dcc8c1f  kernel/private/classes/views/mailpreferences/settings.php
 f53de82e3f6c377407d4ef0a7e313935  kernel/private/classes/views/mailpreferences/unsubscribe.php
+e34771ae67715005c7659f4999893b86  doc/bc/6.0/mail-preferences.md
+990e1c65645859f009d8edce234b6b21  doc/features/6.0/mail-preferences.md
+e1d9475cb0f8b7b42c5b68663fe70b5e  doc/guides/mail-preferences-administrator.md
+ba72c6d6d6943f3ebb2e3f7fff2e1baa  doc/guides/mail-preferences-developer.md
+093d8a76631cc41d2e8da83f6bebae80  doc/specifications/6.0/mail-preferences-cli.md
+e2b56ec0218b4cdd2d122cfda8f34fd8  doc/specifications/6.0/mail-preferences-compliance.md
+11de1b28c471ab28f2250bcd0c330f0c  doc/specifications/6.0/mail-preferences.md
+7beeebe96d30bbc53b76a14363271951  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
