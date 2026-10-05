@@ -268,7 +268,7 @@ if ( is_object( $parentNode ) )
     }
 }
 
-$parents = $node->attribute( 'path' );
+$parents = \Exponential\View\Kernel\Content\Versionview::previewParentNodes( $node );
 $path = array();
 $titlePath = array();
 foreach ( $parents as $parent )
