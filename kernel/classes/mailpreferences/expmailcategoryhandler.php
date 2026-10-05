@@ -14,6 +14,9 @@
  * - partVariables( expMailRecipient $r, expMailCategory $c, $mode ): hash, the template's variable $part.
  * - storePart( expMailRecipient $r, expMailCategory $c, eZHTTPTool $http, expConsentContext $context ): stores the posted
  *   fields of the part when the form is saved; returns a list of error strings, optionally with 'changed' => <int>.
+ * - erased( expMailRecipient $r, expConsentContext $context ): the person was erased (expMailPreferences::erase(), also on
+ *   account removal), after the preference system's own erasure; remove what the handler keeps of the person. Called
+ *   once per handler class; an error is logged and never stops the erasure.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

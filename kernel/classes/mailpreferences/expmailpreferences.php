@@ -355,7 +355,9 @@ class expMailPreferences
 
     /**
      * Erasure (account removal or a request): the preferences and pending confirmations are removed, the consent
-     * log is anonymised (a last row "erase" is written first, so the withdrawal stays provable).
+     * log is anonymised (a last row "erase" is written first, so the withdrawal stays provable). Afterwards every
+     * category handler with the optional method erased() is told, so it can remove what it keeps of the person
+     * (see notifyErased()).
      *
      * @param expConsentContext $context
      * @return array preferences, pending, anonymised (row counts)
@@ -376,6 +378,7 @@ class expMailPreferences
         $result['anonymised'] = expConsentLog::anonymise( $this->recipient );
         $db->commit();
         $this->rows = null;
+        self::notifyErased( $this->recipient, $context );
         return $result;
     }
 
@@ -403,10 +406,47 @@ class expMailPreferences
              && expConsentLog::countList( array( 'recipient_key' => $recipient->key() ) ) === 0
              && expConsentLog::countList( array( 'user_id' => $recipient->userId() ) ) === 0
              && ( $recipient->email() === '' || expConsentLog::countList( array( 'email' => $recipient->email() ) ) === 0 ) )
+        {
+            // nothing of the preference system to erase, but a handler may still keep data of the person
+            self::notifyErased( $recipient, expConsentContext::system( 'The account was removed.' ) );
             return null;
+        }
         $prefs = self::forRecipient( $recipient );
         $context = expConsentContext::system( 'The account was removed: its e-mail preferences were erased and its consent records anonymised.' );
         return $prefs->erase( $context );
+    }
+
+    /**
+     * Tells every category handler with the optional method erased( expMailRecipient, expConsentContext ) that the
+     * person was erased, after the preference system's own erasure. Each handler class is called once, even when it
+     * serves several categories. An erasure never fails because of a handler: an error is caught and logged.
+     *
+     * @param expMailRecipient $recipient
+     * @param expConsentContext $context
+     * @return string[] the handler classes that were called
+     */
+    public static function notifyErased( expMailRecipient $recipient, expConsentContext $context )
+    {
+        $called = array();
+        foreach ( expMailCategoryRegistry::instance()->all() as $cat )
+        {
+            $class = (string)$cat->handlerClass;
+            if ( $class === '' || isset( $called[$class] ) )
+                continue;
+            try
+            {
+                $handler = $cat->handler();
+                if ( !$handler || !method_exists( $handler, 'erased' ) )
+                    continue;
+                $called[$class] = true;
+                $handler->erased( $recipient, $context );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeError( "Mail category handler $class, erased(): " . $e->getMessage(), __METHOD__ );
+            }
+        }
+        return array_keys( $called );
     }
 
     // ------------------------------------------------------------------ internals

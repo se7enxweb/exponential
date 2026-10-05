@@ -158,6 +158,12 @@ public function storePart( expMailRecipient $recipient, expMailCategory $categor
 }
 ```
 
+- Optionally, `erased( expMailRecipient, expConsentContext )` is called when the person is erased (on request, by
+  `exp:mail:preferences erase`, or when the account is removed), after the preference system removed the preferences
+  and anonymised the consent log. Remove what your extension keeps of the person there (counts per person, a phone
+  number). It is called once per handler class, also for categories the person never touched; an exception is logged
+  and never stops the erasure.
+
 The kernel's own handler, `expNotificationMailCategoryHandler`, reads subtree notification rules and digest settings as
 the categories `content` and `collaboration`.
 
@@ -231,6 +237,7 @@ site secret. Nothing is stored per link, a link cannot be read or changed, and c
 | `mailpreferences.ini [CategorySettings] Categories[]` + `[Category_<id>]` | Categories of an extension |
 | `expMailCategoryHandler` (`HandlerClass`) | Read older data as the state; hear about changes; optional `subscriptions()` |
 | `partTemplate()`, `partVariables()`, `storePart()` of the handler | A part of the category's row with choices of its own, stored with the form (section 4) |
+| `erased()` of the handler | Remove the extension's own data of a person who was erased (section 4) |
 | `[GateSettings] EssentialSenders[]` | Mark uncategorised mail of a file, class or From address as essential |
 | `[SuppressionSettings] Listeners[]` | Classes told when an address is suppressed or lifted: static `suppressionAdded( $email, $hash, $reason )`, `suppressionLifted( $hash, $email, $reason )` (keeps another block list in step) |
 | `[FooterSettings] Template` and `design:mailpreferences/mail/*.tpl` | The footer and the confirm, link and address change mails, per design |
