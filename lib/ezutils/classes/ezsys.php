@@ -669,8 +669,12 @@ class eZSys
     /**
      * Returns the current hostname.
      *
-     * First tries to use X-Forward-Host before it goes on to use host in header, if none of them
+     * First tries to use X-Forwarded-Host before it goes on to use host in header, if none of them
      * exists fallback to use host part of site.ini\[SiteSettings]|SiteURL setting.
+     *
+     * X-Forwarded-Host is used only when the request comes from a trusted proxy
+     * (site.ini [HTTPHeaderSettings] TrustedProxies[]); from anyone else it is a
+     * header the visitor chose, see doc/bc/6.0/trusted-proxies.md.
      *
      * @return string
     */
@@ -680,8 +684,7 @@ class eZSys
         $forwardedHostsString = self::serverVariable( 'HTTP_X_FORWARDED_HOST', true );
         if ( $forwardedHostsString )
         {
-            $forwardedHosts = explode( ',', $forwardedHostsString );
-            $hostName = trim( $forwardedHosts[0] );
+            $hostName = eZTrustedProxy::forwardedValue( $forwardedHostsString, self::trustedProxyHops() );
         }
 
         if ( !$hostName && self::serverVariable( 'HTTP_HOST', true ) )
@@ -704,6 +707,13 @@ class eZSys
      * Use [HTTPHeaderSettings].ClientIpByCustomHTTPHeader in site.ini if you want
      * to use a custom http header such as X-Forwarded-For
      *
+     * The header is read only when REMOTE_ADDR is a trusted proxy
+     * ([HTTPHeaderSettings] TrustedProxies[]), and then from the right: trusted
+     * proxies are skipped and the first address that is not one is the client.
+     * The left-most entries are whatever the client sent and are never used.
+     * In every other case the answer is REMOTE_ADDR.
+     * See doc/bc/6.0/trusted-proxies.md.
+     *
      * Note: X-Forwarded-For is transformed by PHP
      *       into $_SERVER['HTTP_X_FORWARDED_FOR]
      *
@@ -714,6 +724,7 @@ class eZSys
      */
     public static function clientIP()
     {
+        $remoteAddr = self::serverVariable( 'REMOTE_ADDR', true );
         $customHTTPHeader = eZINI::instance()->variable( 'HTTPHeaderSettings', 'ClientIpByCustomHTTPHeader' );
         if( $customHTTPHeader && $customHTTPHeader != 'false' )
         {
@@ -723,18 +734,56 @@ class eZSys
 
             if ( $forwardedClientsString )
             {
-                // $forwardedClientsString (usually) contains a comma+space separated list of IPs
-                // where the left-most being the farthest downstream client. All the others are proxy servers.
-                // As X-Forwarded-For is not a standard header yet, we prefer to use a simple comma as the explode delimiter
-                $forwardedClients = explode( ',', $forwardedClientsString );
-                if( !empty( $forwardedClients ) )
-                {
-                    return trim( $forwardedClients[0] );
-                }
+                return eZTrustedProxy::clientAddress( $remoteAddr, $forwardedClientsString, self::trustedProxies() );
             }
         }
 
-        return self::serverVariable( 'REMOTE_ADDR', true );
+        return $remoteAddr;
+    }
+
+    /**
+     * The trusted proxies: site.ini [HTTPHeaderSettings] TrustedProxies[],
+     * addresses and address/prefix ranges, IPv4 and IPv6. Invalid entries are
+     * left out. When the setting does not exist at all, the loopback addresses
+     * (eZTrustedProxy::defaultList()).
+     *
+     * @return array
+     */
+    public static function trustedProxies()
+    {
+        $ini = eZINI::instance();
+        if ( !$ini->hasVariable( 'HTTPHeaderSettings', 'TrustedProxies' ) )
+            return eZTrustedProxy::defaultList();
+        return eZTrustedProxy::normaliseList( $ini->variable( 'HTTPHeaderSettings', 'TrustedProxies' ) );
+    }
+
+    /**
+     * Whether the peer of this request (REMOTE_ADDR) is a trusted proxy, so
+     * that its forwarded headers can be believed.
+     *
+     * @return bool
+     */
+    public static function isFromTrustedProxy()
+    {
+        return self::trustedProxyHops() > 0;
+    }
+
+    /**
+     * 0 when REMOTE_ADDR is not a trusted proxy, otherwise how many trusted
+     * proxies the request passed (see eZTrustedProxy::trustedHops()).
+     *
+     * @return int
+     */
+    private static function trustedProxyHops()
+    {
+        $remoteAddr = self::serverVariable( 'REMOTE_ADDR', true );
+        if ( $remoteAddr === null || $remoteAddr === '' )
+            return 0;
+        return eZTrustedProxy::trustedHops(
+            $remoteAddr,
+            self::serverVariable( 'HTTP_X_FORWARDED_FOR', true ),
+            self::trustedProxies()
+        );
     }
 
     /**
@@ -772,22 +821,37 @@ class eZSys
         // $nowSSl is true if current access mode is HTTPS.
         $nowSSL = ( self::serverPort() == $sslPort );
 
-        if ( !$nowSSL )
+        // Check if this request might be driven through a ssl proxy.
+        //
+        // Only a trusted proxy ([HTTPHeaderSettings] TrustedProxies[]) is
+        // asked. These are request headers, and from anyone else they say
+        // whatever the visitor wants: a plain HTTP request carrying
+        // X-Forwarded-Proto: https made the kernel believe it was secure.
+        if ( !$nowSSL
+             && ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] )
+                  || isset( $_SERVER['HTTP_X_FORWARDED_PORT'] )
+                  || isset( $_SERVER['HTTP_X_FORWARDED_SERVER'] ) ) )
         {
-            // Check if this request might be driven through a ssl proxy
-            if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) )
+            $hops = self::trustedProxyHops();
+            if ( $hops > 0 )
             {
-                $nowSSL = ( $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' );
-            }
-            else if ( isset( $_SERVER['HTTP_X_FORWARDED_PORT'] ) )
-            {
-                $sslPort = $ini->variable( 'SiteSettings', 'SSLPort' );
-                $nowSSL = ( $_SERVER['HTTP_X_FORWARDED_PORT'] == $sslPort );
-            }
-            else if ( isset( $_SERVER['HTTP_X_FORWARDED_SERVER'] ) )
-            {
-                $sslProxyServerName = $ini->variable( 'SiteSettings', 'SSLProxyServerName' );
-                $nowSSL = ( $sslProxyServerName == $_SERVER['HTTP_X_FORWARDED_SERVER'] );
+                if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) )
+                {
+                    $proto = eZTrustedProxy::forwardedValue( (string)$_SERVER['HTTP_X_FORWARDED_PROTO'], $hops );
+                    $nowSSL = ( $proto !== null && strtolower( $proto ) === 'https' );
+                }
+                else if ( isset( $_SERVER['HTTP_X_FORWARDED_PORT'] ) )
+                {
+                    $sslPort = $ini->variable( 'SiteSettings', 'SSLPort' );
+                    $forwardedPort = eZTrustedProxy::forwardedValue( (string)$_SERVER['HTTP_X_FORWARDED_PORT'], $hops );
+                    $nowSSL = ( $forwardedPort !== null && $forwardedPort == $sslPort );
+                }
+                else if ( isset( $_SERVER['HTTP_X_FORWARDED_SERVER'] ) )
+                {
+                    $sslProxyServerName = $ini->variable( 'SiteSettings', 'SSLProxyServerName' );
+                    $forwardedServer = eZTrustedProxy::forwardedValue( (string)$_SERVER['HTTP_X_FORWARDED_SERVER'], $hops );
+                    $nowSSL = ( $forwardedServer !== null && $sslProxyServerName == $forwardedServer );
+                }
             }
         }
         return $nowSSL;

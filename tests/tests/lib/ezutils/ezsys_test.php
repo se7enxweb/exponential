@@ -174,10 +174,17 @@ class eZSysTest extends ezpTestCase
     public function testIsSSLNow()
     {
         $ini = eZINI::instance();
+        $remoteAddr = $_SERVER['REMOTE_ADDR'] ?? null;
 
         self::assertFalse( eZSys::isSSLNow() );
 
+        // From a visitor the forwarded headers are ignored.
+        $_SERVER['REMOTE_ADDR'] = '203.0.113.9';
         $_SERVER['HTTP_X_FORWARDED_PROTO'] = 'https';
+        self::assertFalse( eZSys::isSSLNow() );
+
+        // From a trusted proxy (the loopback addresses by default) they count.
+        $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
         self::assertTrue( eZSys::isSSLNow() );
         unset( $_SERVER['HTTP_X_FORWARDED_PROTO'] );
 
@@ -188,15 +195,28 @@ class eZSysTest extends ezpTestCase
         $_SERVER['HTTP_X_FORWARDED_SERVER'] = $ini->variable( 'SiteSettings', 'SSLProxyServerName' );
         self::assertTrue( eZSys::isSSLNow() );
         unset( $_SERVER['HTTP_X_FORWARDED_SERVER'] );
+
+        if ( $remoteAddr === null )
+            unset( $_SERVER['REMOTE_ADDR'] );
+        else
+            $_SERVER['REMOTE_ADDR'] = $remoteAddr;
     }
 
     public function testServerProtocol()
     {
+        $remoteAddr = $_SERVER['REMOTE_ADDR'] ?? null;
         self::assertEquals( 'http', eZSys::serverProtocol() );
 
         $_SERVER['HTTP_X_FORWARDED_PROTO'] = 'https';
+        $_SERVER['REMOTE_ADDR'] = '203.0.113.9';
+        self::assertEquals( 'http', eZSys::serverProtocol() );
+        $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
         self::assertEquals( 'https', eZSys::serverProtocol() );
         unset( $_SERVER['HTTP_X_FORWARDED_PROTO'] );
+        if ( $remoteAddr === null )
+            unset( $_SERVER['REMOTE_ADDR'] );
+        else
+            $_SERVER['REMOTE_ADDR'] = $remoteAddr;
     }
     
     /**

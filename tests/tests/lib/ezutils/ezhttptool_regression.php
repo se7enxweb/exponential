@@ -41,9 +41,16 @@ class eZHTTPToolRegression extends ezpTestCase
         $path = '/a/root/rel/ative';
         self::assertEquals( 'http://example.com' . $path, eZHTTPTool::createRedirectUrl( $path, array() ) );
 
+        // From a trusted proxy (the loopback addresses by default) only.
+        $remoteAddr = $_SERVER['REMOTE_ADDR'] ?? null;
+        $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
         $_SERVER['HTTP_X_FORWARDED_PROTO'] = 'https';
         self::assertEquals( 'https://example.com' . $path, eZHTTPTool::createRedirectUrl( $path, array() ) );
         unset( $_SERVER['HTTP_X_FORWARDED_PROTO'] );
+        if ( $remoteAddr === null )
+            unset( $_SERVER['REMOTE_ADDR'] );
+        else
+            $_SERVER['REMOTE_ADDR'] = $remoteAddr;
     }
 }
 

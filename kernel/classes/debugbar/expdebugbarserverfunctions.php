@@ -366,7 +366,9 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     {
         $ini = eZINI::instance();
         $header = $ini->variable( 'HTTPHeaderSettings', 'ClientIpByCustomHTTPHeader' );
-        $trusts = $header && $header !== 'false';
+        // The header counts only for a request from a trusted proxy
+        // ([HTTPHeaderSettings] TrustedProxies[]), as in eZSys::clientIP().
+        $trusts = $header && $header !== 'false' && eZSys::isFromTrustedProxy();
         $remote = eZSys::serverVariable( 'REMOTE_ADDR', true );
         $client = eZSys::clientIP();
         $test = $address !== null ? $address : ( $client ? (string)$client : null );
