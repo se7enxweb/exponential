@@ -7,7 +7,8 @@ require_once __DIR__ . '/cjwNewsletterTestCase.php';
  * migration (ext:cjw_newsletter:import-eznewsletter) against a throwaway SQLite file under var/tmp holding the old
  * tables with synthetic rows, and the views of the area.
  *
- * Live style: the installation's database, nltest-*@example.invalid addresses only, everything removed in tearDown.
+ * Live style: the installation's database, nltest-n6-*@n6.example.invalid addresses only (a domain of their own, so that
+ * no other suite's cleanup removes them mid-test), everything removed in tearDown.
  * The old eznewsletter tables are never created in the installation's database.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -67,10 +68,53 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
                 unlink( $file );
         $this->files = array();
         $this->sqlite = null;
+        if ( class_exists( 'CjwNewsletterMappedImport' ) )
+            $this->removeN6Data();
         parent::tearDown();
     }
 
     // ------------------------------------------------------------------ helpers
+
+    /** The addresses of this area: their own domain, so that no other suite's cleanup removes them mid-test. */
+    const N6_DOMAIN = 'n6.example.invalid';
+
+    protected function newEmail( $label = '' )
+    {
+        $email = 'nltest-n6-' . getmypid() . '-' . ( ++self::$counter ) . ( $label !== '' ? '-' . $label : '' ) . '@' . self::N6_DOMAIN;
+        $this->extraEmails[] = $email;
+        return $email;
+    }
+
+    /** Removes everything that hangs on the addresses of this area (the base class removes only @example.invalid). */
+    private function removeN6Data()
+    {
+        $db = eZDB::instance();
+        $rows = (array)$db->arrayQuery( "SELECT id, email FROM cjwnl_user WHERE email LIKE '%@" . self::N6_DOMAIN . "'" );
+        $emails = $this->extraEmails;
+        foreach ( $rows as $row )
+        {
+            $db->query( 'DELETE FROM cjwnl_edition_send_item WHERE newsletter_user_id = ' . (int)$row['id'] );
+            $db->query( 'DELETE FROM cjwnl_subscription WHERE newsletter_user_id = ' . (int)$row['id'] );
+            $db->query( 'DELETE FROM cjwnl_user WHERE id = ' . (int)$row['id'] );
+            $emails[] = $row['email'];
+        }
+        $db->query( "DELETE FROM cjwnl_blacklist_item WHERE email LIKE '%@" . self::N6_DOMAIN . "'" );
+        if ( class_exists( 'expMailSuppression' ) && class_exists( 'CjwNewsletterMailPreferences' ) && CjwNewsletterMailPreferences::available() )
+        {
+            foreach ( array_unique( $emails ) as $email )
+            {
+                if ( substr( $email, -strlen( self::N6_DOMAIN ) ) !== self::N6_DOMAIN )
+                    continue;
+                if ( expMailSuppression::isSuppressed( $email ) )
+                    expMailSuppression::lift( $email );
+                $key = $db->escapeString( 'a:' . expMailSuppression::hash( strtolower( $email ) ) );
+                $db->query( "DELETE FROM expmail_preference WHERE recipient_key = '$key'" );
+                $db->query( "DELETE FROM expmail_pending WHERE recipient_key = '$key'" );
+                $db->query( "DELETE FROM expmail_consent_log WHERE recipient_key = '$key'" );
+            }
+            $db->query( "DELETE FROM expmail_consent_log WHERE email LIKE '%@" . self::N6_DOMAIN . "'" );
+        }
+    }
 
     /** @return string a CSV file in the upload folder of the imports */
     private function uploadFile( $text )
