@@ -1,6 +1,6 @@
 # Upgrade notes: notifications
 
-What changed in the behaviour of the notification system, what you must do when you upgrade, and one known issue.
+What changed in the behaviour of the notification system, what you must do when you upgrade, and how mail that the transport refuses is kept.
 Read it if you run Exponential 6.0.15 or later, have overridden notification templates, or call the notification classes
 from your own code. The pages that describe the system as it is now: [the user's guide](../../features/6.0/notifications.md),
 [the administrator's guide](../../guides/notifications-administrator.md), [the specification](../../specifications/6.0/notifications.md).
@@ -111,19 +111,48 @@ Remove events that are older than you care about with `exp:notification:events c
 [the commands](../../specifications/6.0/notifications-cli.md)). Mail that these old events would have caused is sent by the
 run that handles them: if the backlog is old, remove it first, or run once with `--mail-file-dir` to discard the mail.
 
-## Known issue
+## Mail the transport refuses is kept and tried again
 
-**Digest items are removed even when the mail transport fails.** The general digest handler
-(`eZGeneralDigestHandler::handle()`) sends each digest with `eZNotificationTransport::send()` and afterwards removes every
-collection item that went into any digest of that run, without looking at the result of `send()`. When the transport fails
-(the mail server is down, the address is refused), the digest is lost: the items are gone and nothing is retried. Mail
-that is sent at once by the subtree and collaboration handlers has the same property: its items are removed before
-`send()`.
+Before: the general digest handler removed the digest items after `send()` without looking at the result, and the subtree
+and collaboration handlers removed their items before `send()`. When the mail transport failed (the mail server was down,
+the file transport could not write), the messages were lost and nothing showed it. Now:
 
-What to do until it is fixed: watch the mail log of the server, keep the mail transport healthy, and use a transport
-that queues (a local MTA in `sendmail` mode accepts the mail and retries by itself). The notification run records the number
-of messages handed to the transport, not the number delivered. A fix would remove the items of an address only when its
-`send()` returned true.
+- A digest whose `send()` fails keeps the items of that address. They stay due, so the next run (its time event is later)
+  sends them again. The handled event they belong to stays until its items are gone.
+- A message sent at once (subtree, collaboration) is sent first and its items are removed only when the transport took it. If it
+  did not, the items stay with no send date and the event stays handled; at the start of the next run
+  `eZNotificationEventFilter::retryUnsent()` sends them again, with the subject and text of the collection (without the
+  threading headers).
+- A message that still cannot be sent after `[RuleSettings] RetryHours` of `notification.ini` (default 72 hours; counted
+  from when the digest was due, or from the time of the content for a message sent at once) is **given up**: its items are
+  removed and it is counted as dropped. An item whose address cannot be mailed at all (not a valid address) is dropped at
+  once instead of being tried for 72 hours. This keeps a permanently refused message from being tried for ever.
+- `eZNotificationEventFilter::process()` returns `send_failed` (messages the transport refused in this run), `dropped` and
+  `retried` (sent now after an earlier failure) besides its earlier numbers; they are in the run record
+  (`runs.jsonl`), so the status page shows **not sent** and **given up** badges on the run.
+- The status page and `exp:notification:status` report a problem of level error "n messages could not be handed to the mail
+  transport and wait for the next run; each is given up after n hours" while any wait, "The mail transport refused n messages in
+  the last run", and a warning when messages were given up. The status command then ends with FAIL (exit code 1).
+- `exp:notification:run` ends with `FAIL: the mail transport refused n message(s); ...` and exit code 1 when a send was
+  refused, so a cron mail or a monitoring check shows it; the work done is still kept. The cronjob part prints the same as an error line.
+- The run counts (`mails`, `recipients`) count only what the transport took. `eZMailNotificationTransport::observe()` callbacks
+  get the answer of the transport as a fifth argument `$sent`; a callback written with four parameters keeps working.
+
+Sample (a test installation; the "transport" was the file transport pointed at a directory it cannot write, so no mail could leave):
+
+```text
+$ ./console exp:notification:run --event=21935 --mail-file-dir=/proc/nottest-no-such-directory
+PASS: 1 event(s) handled, 0 removed, 1 kept for a digest, 0 message(s) to 0 recipient(s), 150 ms.
+FAIL: the mail transport refused 1 message(s); they are kept and tried again at the next run (for 72 hours).        (exit code 1)
+
+$ ./console exp:notification:run --no-time-event --event=1 --mail-file-dir=var/tmp/notification-mail/doc3
+PASS: 0 event(s) handled, 0 removed, 0 kept for a digest, 1 message(s) to 1 recipient(s), 37 ms.
+1 message(s) that failed earlier were sent now.
+```
+
+What it does not cover: a mail the transport accepts and the mail server later bounces (`sendmail` and SMTP report only the
+hand-over). Keep an eye on the mail log of the server for those. `RetryHours` is the only setting; there is no retry counter, so
+how many times a message is tried depends on how often the cronjob runs.
 
 ## Related pages
 

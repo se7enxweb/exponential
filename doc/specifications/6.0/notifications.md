@@ -40,7 +40,7 @@ unless told to remove them.
 3. After the handlers: an event without collection items is removed; otherwise it is kept with status handled until its items
    are gone.
 4. After all events: `eZNotificationCollection::removeEmpty()` and `eZNotificationEvent::cleanupHandled()` (handled events
-   nothing waits for) run. `process()` returns `events`, `removed`, `kept` and `failed`.
+   nothing waits for) run. `process()` returns `events`, `removed`, `kept`, `failed`, `send_failed`, `dropped`, `retried` and `notes`.
 
 ### The subtree handler (`ezsubtree`)
 
@@ -68,11 +68,21 @@ For an `ezcollaboration` event it asks the item's handler (`eZCollaborationItemH
 which participants have a rule for the item's identifier, makes one collection per participant role (or one for all),
 and sends at once. The approval mails are `notification/handler/ezcollaboration/view/ezapprove/*.tpl`.
 
-### Known issue
+### Mail the transport refuses
 
-The general digest handler removes the items it put into a digest after `send()`, without looking at the result. If the
-mail transport fails (for example the mail server is down), the digest is lost. See
-[the upgrade notes](../../bc/6.0/notification-ui-and-commands.md#known-issue).
+`eZMailNotificationTransport::send()` returns the answer of the mail transport. A handler that gets false keeps the items
+(and so the handled event) and calls `eZNotificationEventFilter::noteDeliveryFailure()`:
+
+- the general digest handler keeps the items of the failed address (`keepItemsOfFailedAddresses()`) and removes the others;
+  an item that has been due for longer than `[RuleSettings] RetryHours` is removed and counted by `noteDropped()`;
+- the subtree and collaboration handlers send first and remove their items only on success; a failure leaves the items with
+  `send_date = 0` on a handled event.
+
+`eZNotificationEventFilter::retryUnsent()` runs at the start of every `process()`: it finds the items with `send_date = 0`
+whose event is handled (they can only be there after a failure), sends each collection again, removes the items on success
+(`retried`), and gives up (`dropped`) those of an event older than `RetryHours` or with an address that cannot be mailed. The
+digest items are retried by the next time event, because they are still due. `process()` returns `send_failed`, `dropped`, `retried`
+and `notes` besides its other numbers. See [the upgrade notes](../../bc/6.0/notification-ui-and-commands.md#mail-the-transport-refuses-is-kept-and-tried-again).
 
 ## Time windows of the digest
 
@@ -88,7 +98,7 @@ page) go through it.
 
 | Method | What it does |
 |---|---|
-| `run( $options )` | One pass under the lock. Options: `source` (`cron`, `console`, `web`), `at` (time of the time event), `time_event` (false: none), `events` (only these ids; no time event), `user`. Returns `result` (`ok`, `busy`, `failed`), `events`, `removed`, `kept`, `failed`, `mails`, `recipients`, `ms`, `error`. Records the run; emits the audit event for every source but `cron` |
+| `run( $options )` | One pass under the lock. Options: `source` (`cron`, `console`, `web`), `at` (time of the time event), `time_event` (false: none), `events` (only these ids; no time event), `user`. Returns `result` (`ok`, `busy`, `failed`), `events`, `removed`, `kept`, `failed`, `send_failed`, `dropped`, `retried`, `mails`, `recipients` (what the transport took), `ms`, `error`. Records the run; emits the audit event for every source but `cron` |
 | `plan( $options )` | The same pass in a transaction that is rolled back, with the mail observed and suppressed. Returns the planned `mails` (`subject`, `to`, masked `addresses`, `raw`). Refused where the tables cannot roll back |
 | `status()` | The numbers of the status page; `problems()` and `problemText()` give the problem list |
 | `subscriptions( $userID, $filter, $offset, $limit )` | Subtree subscriptions with `path`, `class`, `last_change`, `missing`; filters `q`, `class`, `missing`, `ids` |
@@ -109,7 +119,7 @@ file belongs to the other) it returns `failed` with the reason. The file is crea
 ### Run record
 
 `runs.jsonl`: one JSON object per line, newest last, 200 kept (trimmed when it passes 400). Fields: `time`, `source`,
-`dry`, `result`, `ms`, `events`, `removed`, `kept`, `failed`, `mails`, `recipients`, `error`, `user`. Dry runs are not
+`dry`, `result`, `ms`, `events`, `removed`, `kept`, `failed`, `send_failed`, `dropped`, `retried`, `mails`, `recipients`, `error`, `user`. Dry runs are not
 recorded. The status page and `exp:notification:status` read it.
 
 ### Audit event
@@ -121,7 +131,7 @@ as `system.cronjob.run` or `system.cronjob.fail` for the script `notification`. 
 ### Observing the mail
 
 `eZMailNotificationTransport::observe( $callback, $suppress )` registers a callback that receives `( $addresses, $subject,
-$body, $parameters )` for every message; with `$suppress` true nothing is handed to the mail transport. The service uses it
+$body, $parameters, $sent )` for every message (`$sent`, whether the transport took it, is absent when `$suppress` is true and nothing is handed to the transport). The service uses it
 to count mail and to plan. `observe( null )` removes it.
 
 ### Background job

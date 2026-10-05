@@ -35,7 +35,7 @@ name and the aliases (`./console list exp` shows them):
 | Code | Meaning |
 |---|---|
 | 0 | The command did what it was asked; the last line is `PASS` (or `PASS: ...`) |
-| 1 | The work failed: a run could not start (another run holds the lock, the lock file cannot be written, a dry run is refused because the database cannot roll back), an unknown user, or `exp:notification:status` found a problem of level error |
+| 1 | The work failed: the mail transport refused a message (it is kept for the next run), a run could not start (another run holds the lock, the lock file cannot be written, a dry run is refused because the database cannot roll back), an unknown user, or `exp:notification:status` found a problem of level error |
 | 2 | Usage error: an unknown action, a bad `--older-than`, `--status` or `--at`, `--event` without ids |
 
 ## exp:notification:status
@@ -193,6 +193,28 @@ FAIL: A run is in progress.
 (The process number is 0 here because the lock was held by the `flock` tool, which does not write one; a run of
 Exponential writes its process id.) Other failures: `FAIL: --at needs a date or a timestamp`, `FAIL: --event needs event
 ids` (both exit code 2), `FAIL: The lock file ... cannot be opened (permissions ...)`.
+
+Transport failures. When the mail transport refuses a message the run still does its work, keeps the message and ends with exit
+code 1. Here the file transport is pointed at a directory it cannot write (the only way the transport "fails" without a mail
+server; no mail can leave), and then at a good one:
+
+```text
+$ ./console exp:notification:run --event=21935 --mail-file-dir=/proc/nottest-no-such-directory
+PASS: 1 event(s) handled, 0 removed, 1 kept for a digest, 0 message(s) to 0 recipient(s), 150 ms.
+FAIL: the mail transport refused 1 message(s); they are kept and tried again at the next run (for 72 hours).
+
+$ ./console exp:notification:status
+Problems
+  [error] 1 messages could not be handed to the mail transport and wait for the next run; each is given up after 72 hours.
+  [error] The mail transport refused 1 messages in the last run. Check the mail server and site.ini MailSettings.
+FAIL: 2 problem(s) of level error
+
+$ ./console exp:notification:run --no-time-event --event=1 --mail-file-dir=var/tmp/notification-mail/doc3
+PASS: 0 event(s) handled, 0 removed, 0 kept for a digest, 1 message(s) to 1 recipient(s), 37 ms.
+1 message(s) that failed earlier were sent now.
+```
+
+A message that is given up after `RetryHours` is reported as `WARNING: n message(s) were given up (older than 72 hours, or an address that cannot be mailed).`
 
 Never run without `--mail-file-dir` on a trial: without it the mail goes through the transport of `site.ini`.
 

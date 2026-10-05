@@ -130,7 +130,7 @@ class examplealerthandler extends eZNotificationEventHandler
 add an item with no send date and send the items that have none (the example does). To keep a message for a digest, give
 the item a send date (`eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'day', 'hour' => 8 ) )`
 then `$item->store()`) and do not send: the general digest handler sends it when a time event passes that date.
-Do not remove an item that waits. The filter removes the event when no item is left for it, and keeps it (handled) otherwise.
+Send first and remove the items only when `send()` returned true; on false call `eZNotificationEventFilter::noteDeliveryFailure()` and leave the items, so the next run retries them (see [the upgrade notes](../bc/6.0/notification-ui-and-commands.md#mail-the-transport-refuses-is-kept-and-tried-again)). Do not remove an item that waits. The filter removes the event when no item is left for it, and keeps it (handled) otherwise.
 
 ### The settings
 
@@ -264,7 +264,7 @@ option `--mail-file-dir` and every test work. The files are named `<time>-<numbe
 | Switch a handler off | remove it from `[NotificationEventHandlerSettings] AvailableNotificationEventTypes[]` |
 | A new transport | a class `<name>notificationtransport` in `<path><name>notificationtransport.php`, `[TransportSettings] TransportPluginPath[]=<path>` (the path ends with a `/`), and call `eZNotificationTransport::instance( '<name>' )` |
 | Another way to send mail | `[MailSettings] TransportAlias[<name>]=<class>` extending `eZMailTransport`, and `Transport=<name>` |
-| Watch or suppress the mail | `eZMailNotificationTransport::observe( $callback, $suppress )`; the callback gets `( $addresses, $subject, $body, $parameters )` |
+| Watch or suppress the mail | `eZMailNotificationTransport::observe( $callback, $suppress )`; the callback gets `( $addresses, $subject, $body, $parameters, $sent )`; `$sent` is whether the transport took the message (absent when suppressed) |
 | Hook into the commands, the cronjob part and the views | `site.ini [RunnableSettings] Listeners[]` and `Implementation[<class>]`, see [the runnable classes](../specifications/6.0/runnable-commands-cronjobs-views.md) |
 | Replace the service's behaviour | extend `expNotificationService` and the commands by `Implementation[]` for the command classes; the service itself is static |
 | The audit trail | runs from the console and the web emit `system.command.run`; the cronjob run `system.cronjob.run` ([audit event model](../specifications/6.0/audit-event-model.md)) |

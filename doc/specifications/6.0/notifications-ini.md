@@ -14,6 +14,7 @@ After a change clear the INI cache: `php bin/php/ezcache.php --clear-tag=ini --a
 | Key | Default | Effect |
 |---|---|---|
 | `LimitDeleteElements` | `50` | How many digest items the general digest handler removes in one query after it has sent a digest. It keeps the query below the limits of the database (statement length, number of values in `IN ()`). A value of 0 or empty is treated as 50 |
+| `RetryHours` | `72` | How many hours a notification that the mail transport refused is tried again, at every run. Counted from when the digest was due, or from the time of the content for a message sent at once. After that it is given up, removed and counted as dropped (status page: **given up**). A value of 0 or less means 72 |
 | `RepositoryDirectories[]`, `ExtensionDirectories[]`, `Alias[]` | `kernel/notification/rules`, none, `advanced=ezadvanced`, `general=ezgeneral`, `keyword=ezkeyword` | Left over from rule types of earlier versions. Nothing in the kernel reads them any more |
 
 ### [NotificationEventTypeSettings]

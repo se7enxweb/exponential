@@ -124,6 +124,8 @@ wrong". The exact texts, produced by the same code as the page (a made-up status
   warning: The subtree handler is not available, so no one is notified about published content.
 ```
 
+Three more come from mail the transport refused (section 7): "n messages could not be handed to the mail transport and wait for the next run; each is given up after 72 hours.", "The mail transport refused n messages in the last run. Check the mail server and site.ini MailSettings." (both level error) and "n messages were given up in the last run: older than 72 hours, or for an address that cannot be mailed." (warning). In **Recent runs** such a run carries a red **not sent** or an orange **given up** badge.
+
 Two more warnings come from the data: "n subscriptions point to content that no longer exists." and "n subscriptions belong
 to users that no longer exist." The meaning and the cure of each are in section 7.
 
@@ -242,7 +244,7 @@ the same command and progress file.
 | "n handled events have nothing left to send" | Left over from before the system removed them itself; press the cleanup button, or `exp:notification:events cleanup` |
 | "n subscriptions point to content that no longer exists" | The content was deleted after it was followed. Remove them: button, or `exp:notification:subscriptions remove-missing` |
 | "A handler failed on n events" | A handler threw an error; the debug log (see [Operating a site](operating-a-site.md)) names the event and the message. The other handlers still ran; the event is not retried |
-| A mail failed to send | The digest of that moment is lost (known issue, see the [upgrade notes](../bc/6.0/notification-ui-and-commands.md#known-issue)); look at the mail log of the server |
+| A mail failed to send ("The mail transport refused n messages") | The mail server or the transport settings are at fault (`MailSettings` in `site.ini`: `sendmail` path, SMTP server and login). The messages are not lost: a digest or a mail sent at once that the transport refused is kept and tried again at every run for `[RuleSettings] RetryHours` (72 hours); look at `exp:notification:status` ("messages could not be handed ... wait for the next run"). When the cause is fixed the next run sends them ("n message(s) that failed earlier were sent now"). After 72 hours a message is given up and counted ("given up"). `exp:notification:run` ends with exit code 1 in a run that was refused, so a cron mail shows it. A mail the transport accepted and the server later bounced is not seen by this: read the server's mail log |
 
 To look at the raw state: `./console exp:notification:status --json` has everything the page shows.
 
