@@ -80,7 +80,7 @@
             <td data-label="{'Change'|i18n( 'design/admin/mailpreferences' )}">{$row.change|wash}</td>
             <td data-label="{'Where'|i18n( 'design/admin/mailpreferences' )}">{$row.source_name|wash}</td>
             <td class="mp-wording" data-label="{'Text shown'|i18n( 'design/admin/mailpreferences' )}">{$row.wording|wash}</td>
-            <td data-label="{'IP address'|i18n( 'design/admin/mailpreferences' )}"><code>{$row.ip|wash}</code></td>
+            <td data-label="{'IP address'|i18n( 'design/admin/mailpreferences' )}">{if $row.ip}<code>{$row.ip|wash}</code>{/if}</td>
         </tr>
 {/foreach}
         </tbody>

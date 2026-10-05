@@ -112,8 +112,8 @@
 .mp-filters .mp-field { margin: 0 0 .6em; }
 
 .mp-table { width: 100%; border-collapse: collapse; font-size: .93em; }
-.mp-table th, .mp-table td { padding: .45em .55em; text-align: left; border-top: 1px solid var(--mp-line); vertical-align: top; overflow-wrap: anywhere; }
-.mp-table thead th { font-size: .8em; color: var(--mp-muted); text-transform: uppercase; letter-spacing: .03em; border-top: 0; }
+.mp-table th, .mp-table td { padding: .45em .55em; text-align: left; border-top: 1px solid var(--mp-line); vertical-align: top; overflow-wrap: break-word; }
+.mp-table thead th { font-size: .8em; color: var(--mp-muted); text-transform: uppercase; letter-spacing: .03em; border-top: 0; white-space: nowrap; }
 .mp-table td.mp-num { white-space: nowrap; }
 .mp-table form { margin: 0; }
 .mp-scroll { overflow-x: auto; }
