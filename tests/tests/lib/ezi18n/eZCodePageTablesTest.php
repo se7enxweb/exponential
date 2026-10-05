@@ -11,8 +11,8 @@
  *   - eZCodePageMapper: iso-8859-1 to iso-8859-15 and back, characters without a counterpart replaced by '?',
  *     mapInputCode / mapOutputCode, the string helpers, a missing table
  *
- * Plain PHP and share/codepages; no cache is read or written (no codepage permission setting is made, and the
- * mapper is created with its cache off). Codepage objects shared through $GLOBALS are restored in tearDown().
+ * Plain PHP and share/codepages; no cache is read or written (the codepage permission setting is taken away for
+ * the test, and the mapper is created with its cache off). Codepage objects shared through $GLOBALS are restored in tearDown().
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -24,6 +24,7 @@
 class eZCodePageTablesTest extends PHPUnit\Framework\TestCase
 {
     private $savedGlobals;
+    private $savedPermissions;
 
     protected function setUp(): void
     {
@@ -34,8 +35,15 @@ class eZCodePageTablesTest extends PHPUnit\Framework\TestCase
             if ( strpos( $key, 'eZCodePage' ) === 0 )
                 $this->savedGlobals[$key] = $value;
         }
-        if ( eZCodePage::permissionSetting() !== false )
-            $this->markTestSkipped( 'a codepage cache permission setting is active in this process' );
+        // a kernel boot earlier in the process sets the cache permissions, which turns the codepage cache on:
+        // taken away for the test, so nothing is read from or written to var/cache
+        $this->savedPermissions = array_key_exists( 'EZCODEPAGEPERMISSIONS', $GLOBALS ) ? array( $GLOBALS['EZCODEPAGEPERMISSIONS'] ) : null;
+        unset( $GLOBALS['EZCODEPAGEPERMISSIONS'] );
+        foreach ( array_keys( $GLOBALS ) as $key )
+        {
+            if ( strpos( $key, 'eZCodePage' ) === 0 )
+                unset( $GLOBALS[$key] );
+        }
     }
 
     protected function tearDown(): void
@@ -47,6 +55,8 @@ class eZCodePageTablesTest extends PHPUnit\Framework\TestCase
         }
         foreach ( $this->savedGlobals as $key => $value )
             $GLOBALS[$key] = $value;
+        if ( $this->savedPermissions !== null )
+            $GLOBALS['EZCODEPAGEPERMISSIONS'] = $this->savedPermissions[0];
     }
 
     public static function tableProvider()
