@@ -685,4 +685,19 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
         $r = $this->runView( 'user_view', array( $user->attribute( 'id' ) ) );
         $this->assertViewOk( $r, 'user_view' );
     }
+
+    public function testThePreferencePageNamesEachLanguageInItsOwnName()
+    {
+        $content = CjwNewsletterRendering::contentLanguages();
+        $native = CjwNewsletterRendering::nativeContentLanguages();
+        $this->assertSame( array_keys( $content ), array_keys( $native ), 'the same languages, in the same order' );
+        if ( isset( $native['ger-DE'] ) )
+        {
+            $this->assertSame( 'Deutsch (Deutschland)', $native['ger-DE'] );
+        }
+        foreach ( $native as $locale => $name )
+        {
+            $this->assertNotSame( '', $name, $locale . ' has a name' );
+        }
+    }
 }
