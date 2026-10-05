@@ -127,11 +127,13 @@ class eZTemplateSetFunction
 
                     $parameterData =& $parameters[$parameterName];
 
+                    // set changes existing variables only; let and default define a variable that does not
+                    // exist yet and remember it, so that only what they defined is removed at their end tag
                     $setVarNodes[] = eZTemplateNodeTool::createVariableNode(
                             false, $parameterData, eZTemplateNodeTool::extractFunctionNodePlacement( $node ),
                             array(), array( $namespaceValue, $scope, $parameterName ),
-                            ( $functionName == $this->SetName ), ( $functionName != $this->DefaultName ),
-                            false, ( $functionName == $this->DefaultName ) );
+                            ( $functionName == $this->SetName ), ( $functionName == $this->SetName ),
+                            false, ( $functionName != $this->SetName ) );
 
                     if ( $functionName == $this->LetName or $functionName == $this->DefaultName )
                     {
@@ -173,7 +175,7 @@ class eZTemplateSetFunction
                         $unsetVarNodes[] = eZTemplateNodeTool::createVariableUnsetNode( array( $namespaceValue,
                                                                                                eZTemplate::NAMESPACE_SCOPE_RELATIVE,
                                                                                                $parameterName ),
-                                                                                        array( 'remember_set' => $functionName == $this->DefaultName ) );
+                                                                                        array( 'remember_set' => true ) );
                     }
                 }
 
