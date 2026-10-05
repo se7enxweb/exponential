@@ -2643,7 +2643,7 @@ fc69e6c36c5c24e806f6b99e5ee6f627  design/standard/templates/workflow/run.tpl
 a77770f8eb83d01e998509fa154d877f  design/standard/templates/workflow/view.tpl
 fdad1c71f524d82a51eb60607a767397  design/standard/templates/workflow/workflowlist.tpl
 bd3d93f01abdf7f10a98c56195094ac4  design/standard/templates/workflow/workflowtypes.tpl
-1dc6735f1e9442515e0e046f15ba01ec  doc/INSTALL.md
+ebcb856f5c69e1e8f7b9a9818efc5f9e  doc/INSTALL.md
 18eb180621655795c488a99d85dd26f0  doc/bc/4.1/changes-4.1.0.txt
 23d0e20abd1918e03ad0770ee403ff66  doc/bc/4.2/changes-4.2.0.txt
 21caf491f15ecab82c5915c46c526f3c  doc/bc/4.3/changes-4.3.0.txt
