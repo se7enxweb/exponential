@@ -30,12 +30,29 @@ class expCollaborationInbox
     /**
      * The state of an item: waiting, approved or denied for an approval; open or closed for any other type.
      *
+     * An extension's collaboration handler can say the state of its own items: when the handler has a method
+     * inboxState( $item ) that returns one of waiting, approved, denied, open or closed, that is the state (an
+     * approval type of an extension then shows in the inbox as ezapprove does). Any other answer, or no such
+     * method, keeps the state from the item's status.
+     *
      * @param eZCollaborationItem $item
      * @return string
      */
     public static function stateOf( $item )
     {
-        if ( $item->attribute( 'type_identifier' ) === 'ezapprove' )
+        $type = $item->attribute( 'type_identifier' );
+        if ( $type !== 'ezapprove' && is_string( $type ) && $type !== ''
+             && in_array( $type, (array)eZCollaborationItemHandler::activeHandlers(), true ) )
+        {
+            $handler = eZCollaborationItemHandler::instantiate( $type );
+            if ( is_object( $handler ) && method_exists( $handler, 'inboxState' ) )
+            {
+                $state = $handler->inboxState( $item );
+                if ( is_string( $state ) && in_array( $state, self::$states, true ) && $state !== 'all' )
+                    return $state;
+            }
+        }
+        if ( $type === 'ezapprove' )
         {
             switch ( (int)$item->attribute( 'data_int3' ) )
             {

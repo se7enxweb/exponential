@@ -156,6 +156,43 @@ class CollaborationSampleDataTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'closed', expCollaborationInbox::stateOf( $other ) );
     }
 
+    /** CS-06b - An active handler of another type that has inboxState() says the state; an unknown answer keeps the status */
+    public function testStateOfAnItemWhoseHandlerSaysItsState()
+    {
+        $type = 'csteststate';
+        $ini = eZINI::instance( 'collaboration.ini' );
+        $active = (array)$ini->variable( 'HandlerSettings', 'Active' );
+        $cache =& $GLOBALS['eZCollaborationHandlerObjectCache'];
+        if ( !is_array( $cache ) )
+            $cache = array();
+        $cache[$type] = new CollaborationInboxStateTestHandler( $type );
+        $ini->setVariable( 'HandlerSettings', 'Active', array_merge( $active, array( $type ) ) );
+        try
+        {
+            $item = eZCollaborationItem::create( $type, 14 );
+            foreach ( array( 0 => 'waiting', 1 => 'approved', 2 => 'denied' ) as $value => $state )
+            {
+                $item->setAttribute( 'data_int3', $value );
+                $this->assertSame( $state, expCollaborationInbox::stateOf( $item ) );
+            }
+            // an answer that is not a state: the status decides, as for any other type
+            $item->setAttribute( 'data_int3', 9 );
+            $this->assertSame( 'open', expCollaborationInbox::stateOf( $item ) );
+            $item->setAttribute( 'status', eZCollaborationItem::STATUS_INACTIVE );
+            $this->assertSame( 'closed', expCollaborationInbox::stateOf( $item ) );
+            // a handler that is not active is never asked
+            $ini->setVariable( 'HandlerSettings', 'Active', $active );
+            $item->setAttribute( 'status', eZCollaborationItem::STATUS_ACTIVE );
+            $item->setAttribute( 'data_int3', 1 );
+            $this->assertSame( 'open', expCollaborationInbox::stateOf( $item ) );
+        }
+        finally
+        {
+            $ini->setVariable( 'HandlerSettings', 'Active', $active );
+            unset( $cache[$type] );
+        }
+    }
+
     /** CS-07 */
     public function testGroupManagerRefusesBadInput()
     {
@@ -200,5 +237,21 @@ class CollaborationSampleDataTest extends PHPUnit\Framework\TestCase
 
         list( $code, $out ) = $this->command( array( '--dry-run' ) );
         $this->assertStringContainsString( 'would create', $out );
+    }
+}
+
+/** A collaboration handler that says the inbox state of its items from data_int3 (CS-06b). */
+class CollaborationInboxStateTestHandler extends eZCollaborationItemHandler
+{
+    public function __construct( $type = 'csteststate' )
+    {
+        parent::__construct( $type, 'Inbox state test', array( 'use-messages' => false ) );
+    }
+
+    public function inboxState( $item )
+    {
+        $map = array( 0 => 'waiting', 1 => 'approved', 2 => 'denied' );
+        $value = (int)$item->attribute( 'data_int3' );
+        return isset( $map[$value] ) ? $map[$value] : 'something';
     }
 }
