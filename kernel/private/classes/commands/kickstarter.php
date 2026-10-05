@@ -123,7 +123,7 @@ function showKickstarterHelp( $cli )
     $cli->output( '       ./bin/php/kickstarter.php <command> [options]' );
     $cli->output( '' );
     $cli->output( 'Commands:' );
-    $cli->output( '  ini                  Interactive kickstart.ini generator (default)' );
+    $cli->output( '  ini                  Interactive kickstart.ini generator' );
     $cli->output( '  run                  Run the setup wizard. Use --dry-run to test the database and remote packages (stops after SiteDetails) or --force to install.' );
     $cli->output( '  help, --help, -h     Show this help' );
     $cli->output( '' );
@@ -141,6 +141,8 @@ function showKickstarterHelp( $cli )
     $cli->output( 'Ini options:' );
     $cli->output( '  --defaults, -d       Copy kickstart.ini-dist values to kickstart.ini' );
     $cli->output( '  --yes, -y            Accept sensible defaults and write kickstart.ini' );
+    $cli->output( '  --from-installed     Take the database server, name and user (not the password) of an' );
+    $cli->output( '                       installed siteaccess as defaults; off by default' );
     $cli->output( '  --help, -h           Show ini help' );
 }
 }

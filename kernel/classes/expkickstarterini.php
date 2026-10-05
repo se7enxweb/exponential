@@ -25,6 +25,7 @@ class expKickstarterIni
     private $sections = array();
     private $defaults = false;
     private $yes = false;
+    private $fromInstalled = false;
     private $tty = false;
     private $width = 68;
     private $argv = array();
@@ -76,7 +77,8 @@ class expKickstarterIni
             'Languages'  => array(),
         ),
         'site_types' => array(
-            'Site_package' => 'sevenx_site',
+            // a package that is in var/storage/packages (7x/sevenx_multisite), as exp:install installs
+            'Site_package' => 'sevenx_multisite',
         ),
         'site_access' => array(
             'Access' => 'url',
@@ -118,8 +120,6 @@ class expKickstarterIni
         $this->iniFile  = $iniFile;
         $this->tty      = function_exists( 'posix_isatty' ) && posix_isatty( STDIN );
 
-        $this->loadSiteDefaults();
-
         if ( $argv === null )
         {
             $argv = isset( $GLOBALS['argv'] ) ? $GLOBALS['argv'] : array();
@@ -133,6 +133,10 @@ class expKickstarterIni
         $this->argv = $argv;
 
         $this->parseArgs();
+        // Only on request: the settings of an installed siteaccess point at a
+        // live database, and a kickstart.ini written from them would install over it
+        if ( $this->fromInstalled )
+            $this->loadSiteDefaults();
         if ( !$this->defaults && !$this->yes && !$this->tty )
         {
             $this->error( 'No TTY detected. Run with --defaults or --yes for non-interactive mode.' );
@@ -140,24 +144,41 @@ class expKickstarterIni
         }
     }
 
+    /**
+     * The default of a field, as --yes would write it.
+     *
+     * @param string $section
+     * @param string $key
+     * @return mixed null when there is none
+     */
+    public function fieldDefault( $section, $key )
+    {
+        return isset( $this->fieldDefaults[$section][$key] ) ? $this->fieldDefaults[$section][$key] : null;
+    }
+
     private function loadSiteDefaults()
     {
-        // Try to load the existing database settings from an installed siteaccess
-        // so that --yes produces a kickstart.ini that can connect to the actual DB.
+        // With --from-installed: the server, database and user of the first
+        // installed siteaccess that names a database. Never its password: it is
+        // asked for, or entered in kickstart.ini by hand.
         $siteAccessDirs = glob( $this->rootDir . '/settings/siteaccess/*', GLOB_ONLYDIR );
         if ( !is_array( $siteAccessDirs ) )
             return;
 
         foreach ( $siteAccessDirs as $siteAccessDir )
         {
-            $siteAccess = basename( $siteAccessDir );
-            $ini = @eZINI::instance( 'site.ini', 'settings/siteaccess/' . $siteAccess, null, null, null, true );
+            // eZINI reads relative to the installation root, which is
+            // $this->rootDir for every real run
+            $installationRoot = rtrim( (string)realpath( dirname( __DIR__, 2 ) ), '/' ) . '/';
+            $real = (string)realpath( $siteAccessDir );
+            if ( strpos( $real, $installationRoot ) !== 0 )
+                continue;
+            $ini = @eZINI::instance( 'site.ini', substr( $real, strlen( $installationRoot ) ), null, null, null, true );
             if ( !$ini || !is_object( $ini ) )
                 continue;
 
             $database = $ini->variable( 'DatabaseSettings', 'Database' );
             $user     = $ini->variable( 'DatabaseSettings', 'User' );
-            $password = $ini->variable( 'DatabaseSettings', 'Password' );
             $server   = $ini->variable( 'DatabaseSettings', 'Server' );
 
             if ( !$database || !$user )
@@ -166,7 +187,6 @@ class expKickstarterIni
             if ( $server )  $this->fieldDefaults['database_init']['Server']   = $server;
             if ( $database ) $this->fieldDefaults['database_init']['Database'] = $database;
             if ( $user )    $this->fieldDefaults['database_init']['User']     = $user;
-            if ( $password ) $this->fieldDefaults['database_init']['Password'] = $password;
 
             if ( $database ) $this->fieldDefaults['site_details']['Database'] = $database;
             break;
@@ -211,6 +231,8 @@ class expKickstarterIni
                 $this->defaults = true;
             elseif ( $arg === '--yes' || $arg === '-y' )
                 $this->yes = true;
+            elseif ( $arg === '--from-installed' )
+                $this->fromInstalled = true;
             elseif ( $arg === '--help' || $arg === '-h' )
             {
                 $this->showHelp();
@@ -230,6 +252,9 @@ class expKickstarterIni
         $this->cli->output( 'Options:' );
         $this->cli->output( '  --defaults, -d  Copy kickstart.ini-dist values to kickstart.ini and exit' );
         $this->cli->output( '  --yes, -y       Accept sensible defaults and write kickstart.ini without prompting' );
+        $this->cli->output( '  --from-installed  Take the database server, name and user (never the password) from the' );
+        $this->cli->output( '                  first installed siteaccess as defaults. Off by default: those settings' );
+        $this->cli->output( '                  name a live database, and a run with DatabaseAction=remove empties it' );
         $this->cli->output( '  --help, -h      Show this help' );
     }
 
