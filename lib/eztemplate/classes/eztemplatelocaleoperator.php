@@ -324,7 +324,6 @@ class eZTemplateLocaleOperator
             $code .
             "%tmp2% = getdate( %tmp1% );\n".
             "%tmp3% = date( 'W', %tmp1% );\n".
-            "if ( %tmp2%['wday'] == 0 )\n{\n\t++%tmp3%;\n}\n".
             "%output% = array( 'seconds' => %tmp2%['seconds'],
               'minutes' => %tmp2%['minutes'],
               'hours' => %tmp2%['hours'],
@@ -382,9 +381,8 @@ class eZTemplateLocaleOperator
                 $timestamp = time();
 
             $info = getdate( $timestamp );
+            // the ISO-8601 week number, weeks starting on Monday; weekday stays 0 for Sunday as getdate() gives it
             $week = date( 'W', $timestamp );
-            if ( $info['wday'] == 0 )
-                ++$week;
             $operatorValue = array( 'seconds' => $info['seconds'],
                                     'minutes' => $info['minutes'],
                                     'hours' => $info['hours'],

@@ -9,6 +9,10 @@
  *   - eZTemplateArithmeticOperator sum, sub, mul and div: the interpreter and the compile time folding cut every
  *     operand to an integer, the run time code of a compiled template did not, so sum(1.5,2.25) was 3 or 3.75
  *     depending on how the template ran. All of them now calculate with the numbers as given.
+ *   - eZTemplateLogicOperator lt, le, gt and ge: compiled templates compared the raw values with PHP's operators,
+ *     the interpreter compares counts (array count, string length, the number). Both compare counts now.
+ *   - eZTemplateLocaleOperator gettime: the weeknumber of a Sunday was one higher in both ways of running a
+ *     template; it is the ISO-8601 week number, date( 'W' ), on every day now.
  *
  * No kernel bootstrap, no database and no siteaccess: a bare eZTemplate with the lib/eztemplate autoloads. Template
  * files and compiled templates go to a private directory under var/tmp that tearDownAfterClass() removes.
@@ -160,5 +164,35 @@ class eZTemplateCompiledInterpretedParityTest extends PHPUnit\Framework\TestCase
         list( $output, $errors ) = $this->render( $source, $variables, $compiled );
         $this->assertSame( array(), $errors, 'template errors' );
         $this->assertSame( $expected, $output );
+    }
+
+    public static function sundayProvider()
+    {
+        $rows = array();
+        $days = array(
+            'Sunday in July'               => array( 7, 13, 2025 ),  // ISO week 28
+            'Sunday ending ISO week 53'    => array( 1, 3, 2021 ),   // the last day of 2020-W53
+            'Sunday ending a year'         => array( 12, 31, 2017 ), // 2017-W52, 2017 has no week 53
+            'Monday after a Sunday'        => array( 7, 14, 2025 ),  // ISO week 29
+        );
+        foreach ( $days as $name => $day )
+        {
+            foreach ( array( 'interpreted' => false, 'compiled' => true ) as $mode => $compiled )
+                $rows["$name, $mode"] = array( mktime( 12, 0, 0, $day[0], $day[1], $day[2] ), $compiled );
+        }
+        return $rows;
+    }
+
+    /**
+     * gettime's weeknumber is the ISO-8601 week number, date( 'W' ), on Sundays too. It was one higher on every
+     * Sunday, which made Sunday the first day of the next week without the rest of a Sunday based week numbering,
+     * and gave week numbers that do not exist, such as 54 for 3 January 2021.
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('sundayProvider')]
+    public function testGettimeWeekNumberIsTheIsoWeek( $timestamp, $compiled )
+    {
+        list( $output, $errors ) = $this->render( '{def $g=gettime($t)}{$g.weeknumber}|{$g.weekday}{undef $g}', array( 't' => $timestamp ), $compiled );
+        $this->assertSame( array(), $errors, 'template errors' );
+        $this->assertSame( date( 'W', $timestamp ) . '|' . date( 'w', $timestamp ), $output );
     }
 }
