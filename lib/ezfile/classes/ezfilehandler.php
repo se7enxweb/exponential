@@ -194,26 +194,9 @@ class eZFileHandler
                 $destinationFilename .= '/' . substr( $sourceFilename, $filePosition );
         }
         $destinationFilename = preg_replace( "#/+#", '/', $destinationFilename );
-        $sourceDir = $sourceFilename;
-        $sourceName = false;
-        $sourceDirPos = strrpos( $sourceDir, '/' );
-        if ( $sourceDirPos !== false )
-        {
-            $sourceName = substr( $sourceDir, $sourceDirPos + 1 );
-            $sourceDir = substr( $sourceDir, 0, $sourceDirPos );
-        }
-        $commonOffset = 0;
-        for ( $i = 0; $i < strlen( $sourceFilename ) and $i < strlen( $sourceDir ); ++$i )
-        {
-            if ( $sourceFilename[$i] != $sourceDir[$i] )
-                break;
-            $commonOffset = $i;
-        }
-        if ( $commonOffset > 0 )
-            $sourceDir = substr( $sourceDir, $commonOffset + 1 );
-        $directoryCount = substr_count( $sourceDir, '/' );
-        $cdupText = str_repeat( '../', $directoryCount );
-        if ( file_exists( $destinationFilename ) and
+        // A relative link target is resolved from the directory the link is in, not from the current directory.
+        $linkTarget = eZFileHandler::symlinkTarget( $sourceFilename, $destinationFilename );
+        if ( ( file_exists( $destinationFilename ) or is_link( $destinationFilename ) ) and
              !is_dir( $destinationFilename ) )
         {
             if ( !@unlink( $destinationFilename ) )
@@ -222,16 +205,42 @@ class eZFileHandler
                 return false;
             }
         }
-        if ( $sourceDir )
-            $sourceDir = $sourceDir . '/' . $sourceName;
-        else
-            $sourceDir = $sourceName;
-        if ( symlink( $cdupText . $sourceDir, $destinationFilename ) )
+        if ( symlink( $linkTarget, $destinationFilename ) )
         {
             return true;
         }
         eZDebug::writeError( "Failed to symbolicly link to $sourceFilename on destination $destinationFilename", __METHOD__ );
         return false;
+    }
+
+    /**
+     * The target to write into a symbolic link at $linkFilename that points at $sourceFilename: the source's
+     * path relative to the link's directory when both are relative to the current directory, else an absolute path.
+     *
+     * @param string $sourceFilename
+     * @param string $linkFilename
+     * @return string
+     */
+    static function symlinkTarget( $sourceFilename, $linkFilename )
+    {
+        $source = eZDir::cleanPath( $sourceFilename, eZDir::SEPARATOR_UNIX );
+        if ( $source !== '' and $source[0] === '/' )
+            return $source;
+        $linkDir = eZDir::cleanPath( dirname( $linkFilename ), eZDir::SEPARATOR_UNIX );
+        if ( $linkDir !== '' and $linkDir[0] === '/' )
+            return eZDir::cleanPath( getcwd() . '/' . $source, eZDir::SEPARATOR_UNIX );
+
+        $sourceParts = $source === '.' ? array() : explode( '/', $source );
+        $linkParts = $linkDir === '.' ? array() : explode( '/', $linkDir );
+        // a link directory that climbs above the current one cannot be walked back by name
+        if ( in_array( '..', $linkParts, true ) )
+            return eZDir::cleanPath( getcwd() . '/' . $source, eZDir::SEPARATOR_UNIX );
+        while ( count( $sourceParts ) > 1 and count( $linkParts ) > 0 and $sourceParts[0] === $linkParts[0] )
+        {
+            array_shift( $sourceParts );
+            array_shift( $linkParts );
+        }
+        return str_repeat( '../', count( $linkParts ) ) . implode( '/', $sourceParts );
     }
 
     /*!
@@ -877,7 +886,8 @@ class eZFileHandler
     */
     function doRewind()
     {
-        $this->doSeek( 0, SEEK_SET );
+        // true on success, as gzrewind() of the zlib handler; fseek() gives 0 on success
+        return $this->doSeek( 0, SEEK_SET ) === 0;
     }
 
     /*!
@@ -1023,6 +1033,9 @@ class eZFileHandler
         if ( !$identifier )
         {
             $instance = new eZFileHandler();
+            // as for the other handlers: a file given is opened straight away
+            if ( $filename )
+                $instance->open( $filename, $mode, $binaryFile );
         }
         else if ( isset( $handlers[$identifier] ) )
         {
