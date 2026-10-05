@@ -64,6 +64,9 @@ Class=expNotificationServices
 [ezjscServer_expcollaboration]
 Class=expCollaborationServices
 
+[ezjscServer_expbookmark]
+Class=expBookmarkServices
+
 [ezjscServer_expaccount]
 Class=expAccountServices
 
