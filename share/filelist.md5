@@ -2643,7 +2643,7 @@ fc69e6c36c5c24e806f6b99e5ee6f627  design/standard/templates/workflow/run.tpl
 a77770f8eb83d01e998509fa154d877f  design/standard/templates/workflow/view.tpl
 fdad1c71f524d82a51eb60607a767397  design/standard/templates/workflow/workflowlist.tpl
 bd3d93f01abdf7f10a98c56195094ac4  design/standard/templates/workflow/workflowtypes.tpl
-7223a2e9cb44609ef90731c5ed0a9aa7  doc/INSTALL.md
+b78b0dd1d788b41559ba53e8f0d97e7d  doc/INSTALL.md
 18eb180621655795c488a99d85dd26f0  doc/bc/4.1/changes-4.1.0.txt
 23d0e20abd1918e03ad0770ee403ff66  doc/bc/4.2/changes-4.2.0.txt
 21caf491f15ecab82c5915c46c526f3c  doc/bc/4.3/changes-4.3.0.txt
@@ -3694,11 +3694,11 @@ f2a40b8c6a3a5a02e918d0e41d831ee1  doc/history/velocity/2026-09e.md
 a99a7536578c2b2903a37b1d851bcdd0  doc/history/velocity/README.md
 af18b6c87c55fc88588ffacded884a0d  doc/history/velocity/installers-and-packages.md
 09d51bb55b69c9ca4d98e2ff9f810a1c  doc/install/01-introduction.md
-5c6e9aaa3624073011d2707a59407a71  doc/install/02-requirements.md
-72e5c3c80bf1b1f392e07e69ec601ed9  doc/install/03-getting-the-code.md
-6b4dbeb8a21746a0bd7055dd504e8365  doc/install/04-choosing-an-install-method.md
-667663e24fb9116c7371b66e191f2355  doc/install/05-setup-wizard.md
-4dfb82039b5ef94643dc122c5d0322fa  doc/install/06-kickstarter.md
+b7feb8f70b1777646af0289a40467d60  doc/install/02-requirements.md
+4e1fa99d38002cddb5fe3333a43f8304  doc/install/03-getting-the-code.md
+ba4c36fa78c1406112aa7f470425177b  doc/install/04-choosing-an-install-method.md
+0fda51b5862b1c41da43da4537c686d9  doc/install/05-setup-wizard.md
+fe57f80154883b46e6113ab021b48dd0  doc/install/06-kickstarter.md
 49af74156f3ad06bc0eb4f488a18f93f  doc/install/07-console-install.md
 4819238809ac359d9e29dfb1243e0d6d  doc/install/08-serving-the-site.md
 326c9887dd382874c761ccfbd8ca59ca  doc/install/09-databases.md
