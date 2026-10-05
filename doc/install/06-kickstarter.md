@@ -295,7 +295,8 @@ or fix the ownership of `settings/`, `var/` and `design/` afterwards; the health
 - one `[section]` per step, named after the step's identifier;
 - `Key=value`, one per line; `Key[]=value` lines build an array;
 - **no whitespace before a section or a key**: an indented line is not read;
-- `#` and `;` start comments;
+- a line that starts with `#` or `;` is a comment; a comment after a value is not: `Key=value ; note` gives the
+  value `value ; note`, so put every comment on its own line;
 - values are text; booleans are the words `true` and `false`.
 
 Keep the file at mode `0600`: it holds passwords in clear text. Never commit it.
@@ -485,7 +486,7 @@ failed for lack of privileges leaves a file of a few bytes.
 ## 6.6 Annotated example files
 
 Each example is a complete `kickstart.ini` for `run --force`. Lines starting with `;` are comments and can stay in
-the file.
+the file; each stands on its own line, because a comment after a value would become part of the value.
 
 ### 6.6.1 SQLite
 
@@ -494,7 +495,8 @@ the file.
 
 [email_settings]
 Continue=true
-Type=mta                         ; local sendmail/MTA
+; local sendmail/MTA
+Type=mta
 
 [database_choice]
 Continue=true
@@ -502,17 +504,21 @@ Type=sqlite3
 
 [database_init]
 Continue=true
-Server=                          ; a file needs no server, port, user or password
+; a file needs no server, port, user or password
+Server=
 Port=
-Database=exponential.db          ; var/storage/sqlite3/exponential.db
+; var/storage/sqlite3/exponential.db
+Database=exponential.db
 User=
 Password=
 Socket=
 
 [language_options]
 Continue=true
-Primary=eng-US                   ; the language of the bundled content
-Languages[]=ger-DE               ; optional additional language
+; the language of the bundled content
+Primary=eng-US
+; optional additional language
+Languages[]=ger-DE
 
 [site_types]
 Continue=true
@@ -526,25 +532,32 @@ Access=url
 Continue=true
 Title=My Exponential site
 URL=https://www.example.com
-Access=site                      ; https://www.example.com/site   -> siteaccess site
-AdminAccess=admin                ; https://www.example.com/admin  -> siteaccess admin
-EditorAccess=editor              ; https://www.example.com/editor -> siteaccess editor
-Database=exponential.db          ; same as [database_init] Database
-DatabaseAction=remove            ; empties the file if it exists
+; https://www.example.com/site   -> siteaccess site
+Access=site
+; https://www.example.com/admin  -> siteaccess admin
+AdminAccess=admin
+; https://www.example.com/editor -> siteaccess editor
+EditorAccess=editor
+; same as [database_init] Database
+Database=exponential.db
+; empties the file if it exists
+DatabaseAction=remove
 
 [site_admin]
 Continue=true
 FirstName=Site
 LastName=Administrator
 Email=webmaster@example.com
-Password=                        ; empty: generated, printed once, var/log/initial-admin-password
+; empty: generated, printed once, var/log/initial-admin-password
+Password=
 
 [security]
 Continue=true
 
 [registration]
 Continue=true
-Send=false                       ; always
+; always
+Send=false
 ```
 
 The directory `var/storage/sqlite3/` must be writable by the user that runs the kickstarter and by the web server; the
@@ -568,20 +581,24 @@ Continue=true
 Type=smtp
 Server=smtp.example.com
 User=mailer@example.com
-Password=CHANGE_ME_SMTP          ; masked in kickstart.log
+; masked in kickstart.log
+Password=CHANGE_ME_SMTP
 
 [database_choice]
 Continue=true
-Type=mysqli                      ; "mysql" is accepted as well
+; "mysql" is accepted as well
+Type=mysqli
 
 [database_init]
 Continue=true
 Server=127.0.0.1
 Port=3306
-Database=exponential             ; must exist; no SHOW DATABASES privilege needed
+; must exist; no SHOW DATABASES privilege needed
+Database=exponential
 User=exponential
 Password=CHANGE_ME_DB
-Socket=                          ; or /var/lib/mysql/mysql.sock instead of host and port
+; or /var/lib/mysql/mysql.sock instead of host and port
+Socket=
 
 [language_options]
 Continue=true
@@ -603,9 +620,11 @@ OrganisationName=Example Ltd
 OrganisationAddress=1 Example Street\n12345 Example City
 AccessHostname=www.example.com
 AdminAccessHostname=admin.example.com
-EditorAccessHostname=edit.example.com   ; also the default: edit.<AccessHostname without www.>
+; also the default: edit.<AccessHostname without www.>
+EditorAccessHostname=edit.example.com
 Database=exponential
-DatabaseAction=remove            ; DROPS every kernel table in `exponential`
+; DROPS every kernel table in `exponential`
+DatabaseAction=remove
 
 [site_admin]
 Continue=true
@@ -645,13 +664,15 @@ Type=mta
 
 [database_choice]
 Continue=true
-Type=pgsql                       ; "postgresql" is accepted as well
+; "postgresql" is accepted as well
+Type=pgsql
 
 [database_init]
 Continue=true
 Server=db.internal
 Port=5432
-Database=exponential             ; the login is tested against this database
+; the login is tested against this database
+Database=exponential
 User=exponential
 Password=CHANGE_ME_DB
 Socket=
@@ -659,7 +680,8 @@ Socket=
 [language_options]
 Continue=true
 Primary=eng-GB
-Languages[]=eng-US               ; dropped if it is the primary; eng-US content is kept anyway
+; dropped if it is the primary; eng-US content is kept anyway
+Languages[]=eng-US
 
 [site_types]
 Continue=true
@@ -675,7 +697,8 @@ Title=Intranet
 URL=http://intranet.example.com
 AccessPort=8080
 AdminAccessPort=8081
-EditorAccessPort=8082            ; also the default: AccessPort + 2
+; also the default: AccessPort + 2
+EditorAccessPort=8082
 Database=exponential
 DatabaseAction=remove
 
