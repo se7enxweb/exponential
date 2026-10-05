@@ -315,7 +315,6 @@ class expKickstarter
 
         $earliest = $startIndex;
         $missing = array();
-        $needing = null;
         for ( $i = $startIndex; $i <= $stopIndex; ++$i )
         {
             // every step this one needs, directly or through another
@@ -336,8 +335,6 @@ class expKickstarter
                     if ( $index[$neededKey] < $startIndex )
                     {
                         $missing[$index[$neededKey]] = $stepClasses[$index[$neededKey]];
-                        if ( $needing === null )
-                            $needing = $stepClasses[$i];
                         $earliest = min( $earliest, $index[$neededKey] );
                     }
                 }
@@ -346,7 +343,8 @@ class expKickstarter
         if ( !$missing )
             return null;
         ksort( $missing );
-        return '--start-step=' . $stepClasses[$startIndex] . ' cannot work: ' . $needing . ' needs what '
+        return '--start-step=' . $stepClasses[$startIndex] . ' cannot work: the steps ' . $stepClasses[$startIndex]
+            . '..' . $stepClasses[$stopIndex] . ' need what '
             . implode( ', ', $missing ) . ' found out earlier in the same run (such as the database type, the chosen'
             . ' package or the system check results), and a run does not keep them for the next one.'
             . ' Start at ' . $stepClasses[$earliest] . ' or earlier: --start-step=' . $stepClasses[$earliest] . '.';
