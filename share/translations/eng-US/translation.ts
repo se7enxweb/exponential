@@ -47483,4 +47483,200 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Short newsletters to my mobile phone</translation>
     </message>
 </context>
+<context>
+    <name>kernel/user/password</name>
+    <message>
+        <source>At least %1 characters</source>
+        <translation>At least %1 characters</translation>
+    </message>
+    <message>
+        <source>A lowercase letter</source>
+        <translation>A lowercase letter</translation>
+    </message>
+    <message>
+        <source>An uppercase letter</source>
+        <translation>An uppercase letter</translation>
+    </message>
+    <message>
+        <source>A digit</source>
+        <translation>A digit</translation>
+    </message>
+    <message>
+        <source>A symbol or space (not a letter or digit)</source>
+        <translation>A symbol or space (not a letter or digit)</translation>
+    </message>
+    <message>
+        <source>At least %1 of: lowercase letters, uppercase letters, digits, symbols</source>
+        <translation>At least %1 of: lowercase letters, uppercase letters, digits, symbols</translation>
+    </message>
+    <message>
+        <source>Does not contain your user name</source>
+        <translation>Does not contain your user name</translation>
+    </message>
+    <message>
+        <source>Is not your current password</source>
+        <translation>Is not your current password</translation>
+    </message>
+    <message>
+        <source>The new password must be at least %1 characters long.</source>
+        <translation>The new password must be at least %1 characters long.</translation>
+    </message>
+    <message>
+        <source>The new password must contain a lowercase letter.</source>
+        <translation>The new password must contain a lowercase letter.</translation>
+    </message>
+    <message>
+        <source>The new password must contain an uppercase letter.</source>
+        <translation>The new password must contain an uppercase letter.</translation>
+    </message>
+    <message>
+        <source>The new password must contain a digit.</source>
+        <translation>The new password must contain a digit.</translation>
+    </message>
+    <message>
+        <source>The new password must contain a symbol or a space.</source>
+        <translation>The new password must contain a symbol or a space.</translation>
+    </message>
+    <message>
+        <source>The new password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.</source>
+        <translation>The new password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.</translation>
+    </message>
+    <message>
+        <source>The new password must not contain your user name.</source>
+        <translation>The new password must not contain your user name.</translation>
+    </message>
+    <message>
+        <source>The new password must be different from your current password.</source>
+        <translation>The new password must be different from your current password.</translation>
+    </message>
+    <message>
+        <source>The new password does not meet the requirements.</source>
+        <translation>The new password does not meet the requirements.</translation>
+    </message>
+    <message>
+        <source>The two new passwords do not match.</source>
+        <translation>The two new passwords do not match.</translation>
+    </message>
+    <message>
+        <source>The password could not be changed. Please try again later.</source>
+        <translation>The password could not be changed. Please try again later.</translation>
+    </message>
+    <message>
+        <source>Your current password is not correct.</source>
+        <translation>Your current password is not correct.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/password/js</name>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Hide</translation>
+    </message>
+    <message>
+        <source>Show password</source>
+        <translation>Show password</translation>
+    </message>
+    <message>
+        <source>Hide password</source>
+        <translation>Hide password</translation>
+    </message>
+    <message>
+        <source>The passwords match.</source>
+        <translation>The passwords match.</translation>
+    </message>
+    <message>
+        <source>The passwords do not match yet.</source>
+        <translation>The passwords do not match yet.</translation>
+    </message>
+    <message>
+        <source>Strength</source>
+        <translation>Strength</translation>
+    </message>
+    <message>
+        <source>Very weak</source>
+        <translation>Very weak</translation>
+    </message>
+    <message>
+        <source>Weak</source>
+        <translation>Weak</translation>
+    </message>
+    <message>
+        <source>Fair</source>
+        <translation>Fair</translation>
+    </message>
+    <message>
+        <source>Good</source>
+        <translation>Good</translation>
+    </message>
+    <message>
+        <source>Strong</source>
+        <translation>Strong</translation>
+    </message>
+    <message>
+        <source>met</source>
+        <translation>met</translation>
+    </message>
+    <message>
+        <source>not met yet</source>
+        <translation>not met yet</translation>
+    </message>
+    <message>
+        <source>A strong password was generated and filled into both fields. Store it before you save.</source>
+        <translation>A strong password was generated and filled into both fields. Store it before you save.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/password/mail</name>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Your password was changed</translation>
+    </message>
+    <message>
+        <source>The password of your account %login was changed on %date.</source>
+        <translation>The password of your account %login was changed on %date.</translation>
+    </message>
+    <message>
+        <source>If you did this, you do not need to do anything.</source>
+        <translation>If you did this, you do not need to do anything.</translation>
+    </message>
+    <message>
+        <source>If you did not, reset your password at once with "Forgot your password?" on the login page, and contact us.</source>
+        <translation>If you did not, reset your password at once with "Forgot your password?" on the login page, and contact us.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/password_changed_mail</name>
+    <message>
+        <source>Your password on %site was changed</source>
+        <translation>Your password on %site was changed</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hello,</translation>
+    </message>
+    <message>
+        <source>The password of your account %login on %site was changed on %date.</source>
+        <translation>The password of your account %login on %site was changed on %date.</translation>
+    </message>
+    <message>
+        <source>The change came from the address %ip.</source>
+        <translation>The change came from the address %ip.</translation>
+    </message>
+    <message>
+        <source>If you made this change, you do not need to do anything.</source>
+        <translation>If you made this change, you do not need to do anything.</translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices; sign in there again with the new password.</source>
+        <translation>You were signed out on your other devices; sign in there again with the new password.</translation>
+    </message>
+    <message>
+        <source>If you did not make this change, someone else may know your password: reset it at once with "Forgot your password?" on the login page, and contact us.</source>
+        <translation>If you did not make this change, someone else may know your password: reset it at once with "Forgot your password?" on the login page, and contact us.</translation>
+    </message>
+</context>
 </TS>

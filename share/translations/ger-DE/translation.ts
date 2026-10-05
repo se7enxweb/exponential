@@ -54518,4 +54518,200 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Kurze Newsletter auf mein Mobiltelefon</translation>
     </message>
 </context>
+<context>
+    <name>kernel/user/password</name>
+    <message>
+        <source>At least %1 characters</source>
+        <translation>Mindestens %1 Zeichen</translation>
+    </message>
+    <message>
+        <source>A lowercase letter</source>
+        <translation>Ein Kleinbuchstabe</translation>
+    </message>
+    <message>
+        <source>An uppercase letter</source>
+        <translation>Ein Großbuchstabe</translation>
+    </message>
+    <message>
+        <source>A digit</source>
+        <translation>Eine Ziffer</translation>
+    </message>
+    <message>
+        <source>A symbol or space (not a letter or digit)</source>
+        <translation>Ein Sonderzeichen oder Leerzeichen (kein Buchstabe und keine Ziffer)</translation>
+    </message>
+    <message>
+        <source>At least %1 of: lowercase letters, uppercase letters, digits, symbols</source>
+        <translation>Mindestens %1 von: Kleinbuchstaben, Großbuchstaben, Ziffern, Sonderzeichen</translation>
+    </message>
+    <message>
+        <source>Does not contain your user name</source>
+        <translation>Enthält nicht Ihren Benutzernamen</translation>
+    </message>
+    <message>
+        <source>Is not your current password</source>
+        <translation>Ist nicht Ihr aktuelles Passwort</translation>
+    </message>
+    <message>
+        <source>The new password must be at least %1 characters long.</source>
+        <translation>Das neue Passwort muss mindestens %1 Zeichen lang sein.</translation>
+    </message>
+    <message>
+        <source>The new password must contain a lowercase letter.</source>
+        <translation>Das neue Passwort muss einen Kleinbuchstaben enthalten.</translation>
+    </message>
+    <message>
+        <source>The new password must contain an uppercase letter.</source>
+        <translation>Das neue Passwort muss einen Großbuchstaben enthalten.</translation>
+    </message>
+    <message>
+        <source>The new password must contain a digit.</source>
+        <translation>Das neue Passwort muss eine Ziffer enthalten.</translation>
+    </message>
+    <message>
+        <source>The new password must contain a symbol or a space.</source>
+        <translation>Das neue Passwort muss ein Sonderzeichen oder ein Leerzeichen enthalten.</translation>
+    </message>
+    <message>
+        <source>The new password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.</source>
+        <translation>Das neue Passwort muss mindestens %1 Arten von Zeichen mischen: Kleinbuchstaben, Großbuchstaben, Ziffern, Sonderzeichen.</translation>
+    </message>
+    <message>
+        <source>The new password must not contain your user name.</source>
+        <translation>Das neue Passwort darf Ihren Benutzernamen nicht enthalten.</translation>
+    </message>
+    <message>
+        <source>The new password must be different from your current password.</source>
+        <translation>Das neue Passwort muss sich von Ihrem aktuellen Passwort unterscheiden.</translation>
+    </message>
+    <message>
+        <source>The new password does not meet the requirements.</source>
+        <translation>Das neue Passwort erfüllt die Anforderungen nicht.</translation>
+    </message>
+    <message>
+        <source>The two new passwords do not match.</source>
+        <translation>Die beiden neuen Passwörter stimmen nicht überein.</translation>
+    </message>
+    <message>
+        <source>The password could not be changed. Please try again later.</source>
+        <translation>Das Passwort konnte nicht geändert werden. Bitte versuchen Sie es später erneut.</translation>
+    </message>
+    <message>
+        <source>Your current password is not correct.</source>
+        <translation>Ihr aktuelles Passwort ist nicht richtig.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/password/js</name>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Verbergen</translation>
+    </message>
+    <message>
+        <source>Show password</source>
+        <translation>Passwort anzeigen</translation>
+    </message>
+    <message>
+        <source>Hide password</source>
+        <translation>Passwort verbergen</translation>
+    </message>
+    <message>
+        <source>The passwords match.</source>
+        <translation>Die Passwörter stimmen überein.</translation>
+    </message>
+    <message>
+        <source>The passwords do not match yet.</source>
+        <translation>Die Passwörter stimmen noch nicht überein.</translation>
+    </message>
+    <message>
+        <source>Strength</source>
+        <translation>Stärke</translation>
+    </message>
+    <message>
+        <source>Very weak</source>
+        <translation>Sehr schwach</translation>
+    </message>
+    <message>
+        <source>Weak</source>
+        <translation>Schwach</translation>
+    </message>
+    <message>
+        <source>Fair</source>
+        <translation>Mittel</translation>
+    </message>
+    <message>
+        <source>Good</source>
+        <translation>Gut</translation>
+    </message>
+    <message>
+        <source>Strong</source>
+        <translation>Stark</translation>
+    </message>
+    <message>
+        <source>met</source>
+        <translation>erfüllt</translation>
+    </message>
+    <message>
+        <source>not met yet</source>
+        <translation>noch nicht erfüllt</translation>
+    </message>
+    <message>
+        <source>A strong password was generated and filled into both fields. Store it before you save.</source>
+        <translation>Ein starkes Passwort wurde erzeugt und in beide Felder eingetragen. Bewahren Sie es sicher auf, bevor Sie speichern.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/password/mail</name>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Ihr Passwort wurde geändert</translation>
+    </message>
+    <message>
+        <source>The password of your account %login was changed on %date.</source>
+        <translation>Das Passwort Ihres Kontos %login wurde am %date geändert.</translation>
+    </message>
+    <message>
+        <source>If you did this, you do not need to do anything.</source>
+        <translation>Wenn Sie das waren, müssen Sie nichts tun.</translation>
+    </message>
+    <message>
+        <source>If you did not, reset your password at once with "Forgot your password?" on the login page, and contact us.</source>
+        <translation>Wenn nicht, setzen Sie Ihr Passwort sofort mit „Passwort vergessen?“ auf der Anmeldeseite zurück und kontaktieren Sie uns.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/password_changed_mail</name>
+    <message>
+        <source>Your password on %site was changed</source>
+        <translation>Ihr Passwort auf %site wurde geändert</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hallo,</translation>
+    </message>
+    <message>
+        <source>The password of your account %login on %site was changed on %date.</source>
+        <translation>Das Passwort Ihres Kontos %login auf %site wurde am %date geändert.</translation>
+    </message>
+    <message>
+        <source>The change came from the address %ip.</source>
+        <translation>Die Änderung kam von der Adresse %ip.</translation>
+    </message>
+    <message>
+        <source>If you made this change, you do not need to do anything.</source>
+        <translation>Wenn Sie diese Änderung vorgenommen haben, müssen Sie nichts tun.</translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices; sign in there again with the new password.</source>
+        <translation>Auf Ihren anderen Geräten wurden Sie abgemeldet; melden Sie sich dort mit dem neuen Passwort erneut an.</translation>
+    </message>
+    <message>
+        <source>If you did not make this change, someone else may know your password: reset it at once with "Forgot your password?" on the login page, and contact us.</source>
+        <translation>Wenn Sie diese Änderung nicht vorgenommen haben, kennt möglicherweise jemand anderes Ihr Passwort: Setzen Sie es sofort mit „Passwort vergessen?“ auf der Anmeldeseite zurück und kontaktieren Sie uns.</translation>
+    </message>
+</context>
 </TS>
