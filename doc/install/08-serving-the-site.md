@@ -1075,13 +1075,24 @@ from the machine, and only through the proxy.
 
 **What Exponential reads from a proxy** (`lib/ezutils/classes/ezsys.php`):
 
+- **Which proxies are believed.** The forwarded headers below count only when the peer of the connection
+  (`REMOTE_ADDR`) is listed in `site.ini [HTTPHeaderSettings] TrustedProxies[]`: addresses and ranges, IPv4 and IPv6,
+  by default `127.0.0.1` and `::1`, a proxy on the same machine. A proxy on another address must be added, for
+  example `TrustedProxies[]=192.0.2.10` or `TrustedProxies[]=10.0.0.0/8`. See
+  [Forwarded headers are trusted only from configured proxies](../bc/6.0/trusted-proxies.md).
 - **HTTPS.** `eZSys::isSSLNow()` checks `$_SERVER['HTTPS']` first, then the port against `site.ini [SiteSettings]
-  SSLPort` (443), then `X-Forwarded-Proto: https`, then `X-Forwarded-Port`, then `X-Forwarded-Server` against
-  `SSLProxyServerName`. A proxy that terminates TLS must send `X-Forwarded-Proto`; then generated URLs and the
-  `Secure` flag of the session cookie (`[Session] CookieSecure=auto`) are right.
+  SSLPort` (443), then, from a trusted proxy, `X-Forwarded-Proto: https`, then `X-Forwarded-Port`, then
+  `X-Forwarded-Server` against `SSLProxyServerName`. A proxy that terminates TLS must set `X-Forwarded-Proto`; then
+  generated URLs and the `Secure` flag of the session cookie (`[Session] CookieSecure=auto`) are right.
+- **The host.** `X-Forwarded-Host` from a trusted proxy replaces `Host`; otherwise let the proxy pass the original
+  `Host` (`proxy_set_header Host $host`, `ProxyPreserveHost On`).
 - **The visitor's address.** `[HTTPHeaderSettings] ClientIpByCustomHTTPHeader=X-Forwarded-For` makes
-  `eZSys::clientIP()` take the **first** address of that header. Set it only when the proxy overwrites the header for
-  every request, because a client can send its own (see chapter 13).
+  `eZSys::clientIP()` read that header from a trusted proxy, from the right: trusted proxies are skipped and the first
+  other address is the visitor. Entries a client put in front are ignored, so a proxy may append
+  (`$proxy_add_x_forwarded_for`) or overwrite.
+- **Velocity** works out the visitor's address itself from its own trusted list (`Q.webserver.proxy.trusted`, in
+  `/etc/vc/conf-available/reverse-proxy.conf`) and hands it to the kernel as `REMOTE_ADDR`; list the proxies in front
+  of Velocity there. `ClientIpByCustomHTTPHeader` is then not needed.
 
 **nginx in front of Velocity (derived example):**
 
@@ -1090,8 +1101,8 @@ location / {
     proxy_pass http://127.0.0.1:8088;
     proxy_set_header Host              $host;
     proxy_set_header X-Forwarded-Proto $scheme;
-    # overwrite, never append, what the client sent
-    proxy_set_header X-Forwarded-For   $remote_addr;
+    # appending is safe: Exponential reads the list from the right
+    proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
     proxy_http_version 1.1;
 }
 ```
@@ -1106,7 +1117,7 @@ RequestHeader set X-Forwarded-Proto "https"
 ```
 
 (`mod_proxy`, `mod_proxy_http` and `mod_headers`; Apache's `mod_proxy` adds `X-Forwarded-For` itself, appending to a
-value the client sent.)
+value the client sent, which is safe because the list is read from the right.)
 
 Notes:
 

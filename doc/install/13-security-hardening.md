@@ -437,20 +437,25 @@ curl -sI https://example.com/user/login | grep -i set-cookie     # Secure; HttpO
 
 ## 13.10 Behind a proxy: trusted headers
 
-Exponential reads two pieces of information from request headers that a client can also send itself
-(`lib/ezutils/classes/ezsys.php`):
+Exponential reads the scheme, the host and the visitor's address from forwarded request headers, which a client can
+also send itself (`lib/ezutils/classes/ezsys.php`). It believes them **only from a trusted proxy**: when the peer of
+the connection (`REMOTE_ADDR`) is in `site.ini [HTTPHeaderSettings] TrustedProxies[]`. The default trusts the
+loopback addresses (`127.0.0.1`, `::1`), that is a proxy on the same machine; list any other proxy, load balancer or
+CDN by address or range (`10.0.0.0/8`, `2001:db8::/32`), or leave the list empty to trust none. Details and
+examples: [Forwarded headers are trusted only from configured proxies](../bc/6.0/trusted-proxies.md).
 
-- **`X-Forwarded-Proto: https`** (then `X-Forwarded-Port`, then `X-Forwarded-Server`) makes `eZSys::isSSLNow()` treat
-  the request as HTTPS when the connection itself was not. This affects generated URLs and `CookieSecure=auto`. A proxy
-  that terminates TLS must set the header; when no proxy is in front, the web server should remove any such header a
-  client sends (Apache: `RequestHeader unset X-Forwarded-Proto`; nginx in front of PHP-FPM:
-  `fastcgi_param HTTP_X_FORWARDED_PROTO "";`), or set `CookieSecure=true` so the cookie does not depend on it.
-- **`[HTTPHeaderSettings] ClientIpByCustomHTTPHeader`** (default `false`). Set to `X-Forwarded-For`, Exponential takes
-  the **first** (left-most) address of the header as the visitor's address, and that is the part a client controls.
-  The address is used by `DebugByIP`, `[UserSettings] TrustedIPList` (exemption from the sign-in lockout), request
-  rules by network, the audit log and the consent log. Set it only when the proxy **replaces** the header for every
-  request (nginx `proxy_set_header X-Forwarded-For $remote_addr;`), and make sure the application server is reachable
-  only through the proxy (Velocity `Host=127.0.0.1`, or a firewall).
+- **`X-Forwarded-Proto: https`** (then `X-Forwarded-Port`, then `X-Forwarded-Server`) from a trusted proxy makes
+  `eZSys::isSSLNow()` treat the request as HTTPS when the connection itself was not. This affects generated URLs and
+  `CookieSecure=auto`. From anyone else it is ignored. The trusted proxy must **set** the header, not pass on the
+  visitor's (Apache: `RequestHeader set X-Forwarded-Proto "https"`; nginx: `proxy_set_header X-Forwarded-Proto
+  $scheme;`).
+- **`X-Forwarded-Host`** replaces `Host` in generated URLs, again only from a trusted proxy.
+- **`[HTTPHeaderSettings] ClientIpByCustomHTTPHeader`** (default `false`). Set to `X-Forwarded-For`, Exponential reads
+  the header only from a trusted proxy and **from the right**: trusted proxies are skipped and the first address that
+  is not one is the visitor's; the left-most entries, which the client writes, are ignored. The address is used by
+  `DebugByIP`, `[UserSettings] TrustedIPList` (exemption from the sign-in lockout), request rules by network, the audit
+  log and the consent log. Make sure the application server is reachable only through the proxy (Velocity
+  `Host=127.0.0.1`, or a firewall).
 
 Caching proxies: never let a proxy cache responses that set a cookie or carry `Cache-Control: private`. Purge tags are
 not public by default (`httpcache.ini [HttpCacheSettings] TagHeader=disabled`); name the one header your purging proxy
