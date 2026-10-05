@@ -43,6 +43,7 @@ f916c8a57dd6118120e22bd349dddb1c  bin/mongodb/import_all.sh
 1374ed9d080d58b9372d49d958ba0ed1  bin/mongodb/validate_ndjson.sh
 11893714c574088dd6f49b8aba0e9018  bin/php/adddefaultstates.php
 4460e42dd61f6e055992cf55cb0f1b4c  bin/php/audit.php
+0082814259500b8ab6bb24884a4728ca  bin/php/benchmark.php
 1a9635e4b6f5bb48a85dcf4160f33d9f  bin/php/cache.php
 07f79adddbab498717b40f6f5784cc16  bin/php/changelog2xmltext.php
 c30ca2405c294016ec43ed10fd9754d9  bin/php/checkclasses.php
@@ -2673,7 +2674,7 @@ d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
 abdb0ba00df44fe6e3ebdcd853a03ae9  doc/bc/6.0/cli_cronjob_view_abstractions.md
 a97f241d85290c2fbece2d8f20d6c401  doc/bc/6.0/console-exp-ini.md
-dc3cde443944b4b791185a26e53a7c8d  doc/bc/6.0/console.md
+a1bd95d59712a62f472fdf84f5a8148e  doc/bc/6.0/console.md
 99d9b2a97dcde56f99c1d40242b5be6c  doc/bc/6.0/content-jobs.md
 09d05cd812d3ccabd32043b79e5023c5  doc/bc/6.0/debug-bar.md
 3363c1727dc13ba26af5e714957046fa  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
@@ -2869,7 +2870,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-07886a4c821d72c0ae402a69f83e22c3  doc/changelogs/6.0/6.0.15.md
+5bdbafa87c54681aa64c17d5f5c7ad48  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3199,6 +3200,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 57dda42e8705fa202f77d03e937cb7b6  doc/features/6.0/audit-trail.md
+99b90f55d793bbfdd038e4ada5196d66  doc/features/6.0/benchmark.md
 dd291d6f73d6ecbf9d6ec4e3f315196c  doc/features/6.0/bookmark-folders.md
 cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 0efc0a33fb1492529cd85b8d230d76d5  doc/features/6.0/class-attribute-move-to-edge.md
@@ -3334,8 +3336,8 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 1ea060f19f032887d96d54ea2994fd9e  doc/features/6.0/velocity-web-server.md
 747dd5c4a400e33d13f0fd8bad249a9c  doc/features/6.0/velocity-websockets-and-events.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
-da717639d7e8826a34d23a546ce3f619  doc/glossary.md
-8b7a0fd28edd0d59c68793815ac9e151  doc/guides/README.md
+67794ef974c314087dd7c94efca9ae40  doc/glossary.md
+4255497982009bfbb0ea2b79693b0fb1  doc/guides/README.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
 a7d35b3d4eb62f3995401d62b9ab21d7  doc/guides/deploying.md
 5f6657b0ea73fe7a20da12e4a3d5547c  doc/guides/extensions.md
@@ -4658,6 +4660,9 @@ ffafce4dc5d80e90557d6b531e2ced56  kernel/classes/debugbar/expdebugbarserverfunct
 a5a49ed6cf0490a3dd6bb00d8c1a1d45  kernel/classes/debugbar/expdebugbarsettings.php
 7c22ebac3471225ada7a8b5504054916  kernel/classes/debugbar/expdebugbarsummary.php
 d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
+cf44bb82fa32407c7ef822fc6396f6b4  kernel/classes/expbenchmark.php
+d3af8068b926351b11311d06c0f57607  kernel/classes/expbenchmarkhttp.php
+a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
 56280e5f41b96dd6e2ab62d5b67e6a47  kernel/classes/expcachemanager.php
 84a3447a01864a5da11162284520abca  kernel/classes/expcachewarm.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
@@ -5104,6 +5109,7 @@ b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/int
 3d3a0ae30251fcd03d11507ca6aca2bb  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventnotifier.php
 637c34664ef032d92963815921a3581e  kernel/private/classes/commands/adddefaultstates.php
 d5716ef67993d9309dc0f3c0f0d316d6  kernel/private/classes/commands/audit.php
+e7620177b3600cffb3033e907ca99b6c  kernel/private/classes/commands/benchmark.php
 43642656977307db78e5f248b9f465ff  kernel/private/classes/commands/cache.php
 392d445c33107bea4824fd5775c8a4d9  kernel/private/classes/commands/changelog2xmltext.php
 2e11e2860b0c8481d96e36bd7b002a52  kernel/private/classes/commands/checkclasses.php
@@ -6773,6 +6779,9 @@ ebf9a7ec9809b0f855cecf8f42b88a44  tests/tests/kernel/classes/audit/expAuditRecor
 12fa489a88ec679f0a8014b7018734c4  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 48b46955f2d2754be10ad2ea72e3687d  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php
 79ddb3ce226847a0407e965b1d7e99f3  tests/tests/kernel/classes/audit/fixtures/expaudittestwebhookreceiver.php
+d4cad238dad8d7b326ffbdb4af42308e  tests/tests/kernel/classes/benchmark/ExpBenchmarkHttpTest.php
+394a087f40f53144839310eb15d89e4e  tests/tests/kernel/classes/benchmark/ExpBenchmarkTest.php
+18aaa771e4a43688b0c491beef27096e  tests/tests/kernel/classes/benchmark/stub_server.php
 8a01acd9d7c4f0241e600a97c1238dc9  tests/tests/kernel/classes/bookmarks/BookmarkFolderUpgradeSqlTest.php
 741af5e7a611a65c63433e940442f572  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
 590fa866a4775d0d26dbf47125ea0951  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
