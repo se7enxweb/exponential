@@ -40122,6 +40122,18 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <source>None.</source>
         <translation>Keine.</translation>
     </message>
+    <message>
+        <source>Organisation name</source>
+        <translation>Name der Organisation</translation>
+    </message>
+    <message>
+        <source>Postal address</source>
+        <translation>Postanschrift</translation>
+    </message>
+    <message>
+        <source>Who sends the optional e-mail of the site (newsletters, notifications) and their postal address, as the law requires in every such e-mail. Both can be changed later on the e-mail preferences status page; an empty address is allowed and shows a warning there.</source>
+        <translation>Wer die optionalen E-Mails der Website (Newsletter, Benachrichtigungen) sendet, und dessen Postanschrift, wie es das Gesetz in jeder solchen E-Mail verlangt. Beides lässt sich später auf der Statusseite der E-Mail-Einstellungen ändern; eine leere Anschrift ist erlaubt und zeigt dort eine Warnung.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53630,6 +53642,46 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Newsletter blacklist</source>
         <translation>Newsletter-Sperrliste</translation>
     </message>
+    <message>
+        <source>The file holds the hashes, reasons, dates and notes; no address.</source>
+        <translation>Die Datei enthält die Prüfsummen, Gründe, Daten und Notizen, keine Adresse.</translation>
+    </message>
+    <message>
+        <source>Sender details</source>
+        <translation>Absenderangaben</translation>
+    </message>
+    <message>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <translation>Jede optionale E-Mail nennt, wer sie sendet, und dessen Postanschrift, wie es das Gesetz verlangt. Ohne Namen der Organisation wird der Name der Website verwendet.</translation>
+    </message>
+    <message>
+        <source>Organisation name</source>
+        <translation>Name der Organisation</translation>
+    </message>
+    <message>
+        <source>Postal address</source>
+        <translation>Postanschrift</translation>
+    </message>
+    <message>
+        <source>Save the sender details</source>
+        <translation>Absenderangaben speichern</translation>
+    </message>
+    <message>
+        <source>The sender details were saved.</source>
+        <translation>Die Absenderangaben wurden gespeichert.</translation>
+    </message>
+    <message>
+        <source>The sender details could not be saved: the settings override is not writable.</source>
+        <translation>Die Absenderangaben konnten nicht gespeichert werden: Die Einstellungsdatei in settings/override ist nicht beschreibbar.</translation>
+    </message>
+    <message>
+        <source>The sender details could not be saved: %error</source>
+        <translation>Die Absenderangaben konnten nicht gespeichert werden: %error</translation>
+    </message>
+    <message>
+        <source>the site name</source>
+        <translation>der Name der Website</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/mailpreferences</name>
@@ -54193,6 +54245,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Download my e-mail data</source>
         <translation>Meine E-Mail-Daten herunterladen</translation>
     </message>
+    <message>
+        <source>Your subscriptions:</source>
+        <translation>Ihre Abonnements:</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -54275,8 +54331,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Tabelle %table fehlt: Führen Sie das Datenbank-Update aus.</translation>
     </message>
     <message>
-        <source>The organisation name or postal address of the mail footer is empty (mailpreferences.ini [FooterSettings]); the law requires both in every optional mail.</source>
-        <translation>Name der Organisation oder Postanschrift der E-Mail-Fußzeile ist leer (mailpreferences.ini [FooterSettings]); das Gesetz verlangt beides in jeder optionalen E-Mail.</translation>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <translation>Die Postanschrift der E-Mail-Fußzeile ist leer: Tragen Sie sie unter „Absenderangaben“ auf dieser Seite ein (mailpreferences/admin/status). Das Gesetz verlangt die Organisation und ihre Postanschrift in jeder optionalen E-Mail; bis dahin wird ohne sie gesendet.</translation>
     </message>
     <message>
         <source>The site secret of the links has not been generated yet; it is made on first use.</source>
@@ -54293,6 +54349,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>%count mails could not be sent or checked in the last 24 hours.</source>
         <translation>%count E-Mails konnten in den letzten 24 Stunden nicht gesendet oder geprüft werden.</translation>
+    </message>
+    <message>
+        <source>The bounce mailbox could not be read: %error</source>
+        <translation>Das Postfach für Rückläufer konnte nicht gelesen werden: %error</translation>
+    </message>
+    <message>
+        <source>The bounce mailbox has not been read since %time: is the cronjob part mailbounces running?</source>
+        <translation>Das Postfach für Rückläufer wurde seit %time nicht gelesen: Läuft der Cronjob-Teil mailbounces?</translation>
+    </message>
+    <message>
+        <source>The bounce mailbox has never been read: is the cronjob part mailbounces running?</source>
+        <translation>Das Postfach für Rückläufer wurde noch nie gelesen: Läuft der Cronjob-Teil mailbounces?</translation>
     </message>
 </context>
 <context>

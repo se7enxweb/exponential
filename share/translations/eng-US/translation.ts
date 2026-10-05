@@ -34150,6 +34150,18 @@ See the requirements page for more information.</translation>
         <source>None.</source>
         <translation>None.</translation>
     </message>
+    <message>
+        <source>Organisation name</source>
+        <translation>Organisation name</translation>
+    </message>
+    <message>
+        <source>Postal address</source>
+        <translation>Postal address</translation>
+    </message>
+    <message>
+        <source>Who sends the optional e-mail of the site (newsletters, notifications) and their postal address, as the law requires in every such e-mail. Both can be changed later on the e-mail preferences status page; an empty address is allowed and shows a warning there.</source>
+        <translation>Who sends the optional e-mail of the site (newsletters, notifications) and their postal address, as the law requires in every such e-mail. Both can be changed later on the e-mail preferences status page; an empty address is allowed and shows a warning there.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -46595,6 +46607,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Newsletter blacklist</source>
         <translation>Newsletter blacklist</translation>
     </message>
+    <message>
+        <source>The file holds the hashes, reasons, dates and notes; no address.</source>
+        <translation>The file holds the hashes, reasons, dates and notes; no address.</translation>
+    </message>
+    <message>
+        <source>Sender details</source>
+        <translation>Sender details</translation>
+    </message>
+    <message>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <translation>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</translation>
+    </message>
+    <message>
+        <source>Organisation name</source>
+        <translation>Organisation name</translation>
+    </message>
+    <message>
+        <source>Postal address</source>
+        <translation>Postal address</translation>
+    </message>
+    <message>
+        <source>Save the sender details</source>
+        <translation>Save the sender details</translation>
+    </message>
+    <message>
+        <source>The sender details were saved.</source>
+        <translation>The sender details were saved.</translation>
+    </message>
+    <message>
+        <source>The sender details could not be saved: the settings override is not writable.</source>
+        <translation>The sender details could not be saved: the settings override is not writable.</translation>
+    </message>
+    <message>
+        <source>The sender details could not be saved: %error</source>
+        <translation>The sender details could not be saved: %error</translation>
+    </message>
+    <message>
+        <source>the site name</source>
+        <translation>the site name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/mailpreferences</name>
@@ -47158,6 +47210,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Download my e-mail data</source>
         <translation>Download my e-mail data</translation>
     </message>
+    <message>
+        <source>Your subscriptions:</source>
+        <translation>Your subscriptions:</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -47240,8 +47296,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The table %table is missing: run the database update.</translation>
     </message>
     <message>
-        <source>The organisation name or postal address of the mail footer is empty (mailpreferences.ini [FooterSettings]); the law requires both in every optional mail.</source>
-        <translation>The organisation name or postal address of the mail footer is empty (mailpreferences.ini [FooterSettings]); the law requires both in every optional mail.</translation>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <translation>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</translation>
     </message>
     <message>
         <source>The site secret of the links has not been generated yet; it is made on first use.</source>
@@ -47258,6 +47314,18 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>%count mails could not be sent or checked in the last 24 hours.</source>
         <translation>%count mails could not be sent or checked in the last 24 hours.</translation>
+    </message>
+    <message>
+        <source>The bounce mailbox could not be read: %error</source>
+        <translation>The bounce mailbox could not be read: %error</translation>
+    </message>
+    <message>
+        <source>The bounce mailbox has not been read since %time: is the cronjob part mailbounces running?</source>
+        <translation>The bounce mailbox has not been read since %time: is the cronjob part mailbounces running?</translation>
+    </message>
+    <message>
+        <source>The bounce mailbox has never been read: is the cronjob part mailbounces running?</source>
+        <translation>The bounce mailbox has never been read: is the cronjob part mailbounces running?</translation>
     </message>
 </context>
 <context>
