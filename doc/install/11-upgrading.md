@@ -15,8 +15,13 @@ extends the [Upgrading guide](../guides/upgrading.md), which remains the step-by
 database; with `DatabaseAction=remove` (the default of `exp:install`) they empty the one they are pointed at. An
 upgrade replaces the code and updates the existing database in place. `exp:install` refuses to run where
 `settings/override/site.ini.append.php` already names a database ("This directory already holds an installation"),
-and the kickstarter refuses the step that writes the database without `--force`; do not add `--force` to get past
-either on a live site.
+and the kickstarter refuses to run its `CreateSites` step without `--force` ("The CreateSites step will modify the
+database and site settings."), whatever the directory holds. Do not add `--force` to get past either on a live site.
+
+**Who runs the commands.** The commands in this chapter are written as the site's own user runs them. Run as `root`,
+the scripts refuse to start unless `--allow-root-user` is added, and files they create in `var/` belong to `root`
+afterwards, which the web server cannot overwrite ([chapter 12](12-troubleshooting.md#123-permissions-and-ownership)).
+Prefer `sudo -u <site user> php ...`.
 
 **Back up first, every time.** The database step is the one that cannot be undone by putting files back.
 
@@ -61,6 +66,23 @@ sqlite3 var/storage/sqlite3/exponential.db "SELECT name, value FROM ezsite_data 
 ```
 
 The row names keep their historic spelling on purpose; they are identifiers, and every update file writes to them.
+
+On a site that is current, the query prints (MySQL's layout):
+
+```text
++--------------------+--------------+
+| name               | value        |
++--------------------+--------------+
+| ezpublish-release  | 1            |
+| ezpublish-version  | 6.0.15stable |
++--------------------+--------------+
+```
+
+The 6.0.0 to 6.0.15 file writes `6.0.15stable`; the earlier files write a number such as `6.0.0` (the 5.3 to 5.4
+file writes `5.4.0alpha1`, as it did upstream).
+A version row that does not match the code means an update file is still missing, and the code may already use a
+column the database does not have yet: find the step from the table below and apply what is missing before the site
+is used.
 
 | You run | Path | Section |
 |---|---|---|
@@ -172,7 +194,7 @@ its schema has always had the column and it has no sequences.
 | MySQL or MariaDB | `6.0/dbupdate-5.4.0-6.0.0.sql`, like `6.12/`, `7.3/` and the old chain's files, starts with `SET default_storage_engine=InnoDB;`, which MySQL (from 5.5.3) and MariaDB accept: apply the files whole. Copies from before October 2026 started with `SET storage_engine=InnoDB;`, a spelling MySQL removed in 5.7.5 and MariaDB in 12.0; take the current files. `6.0/dbupdate-6.0.0-6.0.15.sql` has no such line, because each of its tables names its engine. |
 | MySQL or MariaDB | Tables must be UTF-8; `php bin/php/ezconvertdbcharset.php` converts an old database. `php bin/php/ezconvertmysqltabletype.php --list` lists the table types and `--newtype=InnoDB` converts them. |
 | PostgreSQL | The 5.4 step is `6.0/dbupdate-5.4-to-6.0.sql`: the version rows, the wider `password_hash`, the `trashed` column and the sequence renames ([above](#the-612-72-and-73-directories)). Its guarded steps are `DO` blocks, which need PostgreSQL 9.0 or newer. The `digest` function of `pgcrypto` must exist in the database. |
-| SQLite | Each `ALTER TABLE` adds one column, because SQLite takes only one per statement and cannot drop a column again: run the file once. Use SQLite's online backup before it. |
+| SQLite | Each `ALTER TABLE` adds one column, because SQLite takes only one per statement, and SQLite has no `ADD COLUMN IF NOT EXISTS`: on a second run, every `ALTER TABLE` for a column that is already there fails ("duplicate column name"). Run the file once, after SQLite's online backup. |
 | Oracle | The `ezoracle` extension carries its own update files up to 5.3; apply them with your Oracle client. The 6.0.15 audit tables come from `createaudittables.php`. |
 | MongoDB | No SQL files. `createaudittables.php` creates the audit index collections through the driver's schema handler. |
 
@@ -259,9 +281,11 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    [PHP 8 support](../bc/6.0/php8.md) and [PHP 8.0 support](../bc/6.0/php-8.0-support.md).
 4. Continue with [11.6](#116-from-any-60x-to-today).
 
-> **The guides disagree on the PHP minimum.** Step 3 of the [Upgrading guide](../guides/upgrading.md) and the "How to
-> check" part of [PHP 8 support](../bc/6.0/php8.md) say 8.1. That was true for 6.0.8 to 6.0.14. From 6.0.15
-> `composer.json` accepts 8.0, which Composer enforces.
+6.0.8 to 6.0.14 asked for 8.1 in `composer.json`; from 6.0.15 it accepts 8.0 again, so a server whose operating
+system ships PHP 8.0 can take the current line under Apache or nginx
+([PHP 8.0 support](../bc/6.0/php-8.0-support.md)). Composer enforces the range: on an older PHP, `composer install`
+stops with "Your requirements could not be resolved to an installable set of packages" and names the PHP version,
+before anything is changed.
 
 ## 11.6 From any 6.0.x to today
 
@@ -276,9 +300,15 @@ php bin/php/ezpgenerateautoloads.php -e
 php bin/php/ezcache.php --clear-all
 ```
 
-Do not run `ezpgenerateautoloads.php -k` on an installation that keeps extra working copies of the code inside its
-root (for example Git worktree folders) without excluding them (`--exclude='<folder>'`); otherwise kernel classes are
-mapped into those copies.
+Why the autoloads first: a new release can add or rename classes, and a class missing from the arrays is "not
+found" even though its file is there. Why the caches next: INI, template and override caches hold what the old code
+compiled.
+
+The generator stops with exit status 1 on an option it does not know, so a mistyped option in an upgrade script is
+noticed. When you regenerate the kernel array (`-k`), the directories in `.autoloadignore` are left out; the shipped
+file excludes `vendor`, `var` and the `.claude` worktree folder. An installation that keeps other working copies of
+the code inside its root (for example Git worktree folders) must add them there or pass `--exclude='<folder>'`;
+otherwise kernel classes are mapped into those copies.
 
 Then reload the PHP that serves the site: the PHP-FPM service of the site (`systemctl reload <service>`; on Plesk
 `plesk-php<XY>-fpm`, not `php-fpm`) and, under Velocity, the server:
@@ -290,8 +320,11 @@ php bin/php/console exp:velocity deploy
 
 `exp:velocity deploy` runs every step in the right order: the extension autoloads, the INI cache, the template,
 override, translation and design caches, the engine archive when needed, the PHP-FPM reload
-(`[DeploySettings] PhpFpmService`), the Velocity restart, the content and HTTP caches and Velocity's response cache. It
-prints PASS, FAIL or SKIP with the time of each and stops at the first failure. See
+(`[DeploySettings] PhpFpmService`), the Velocity restart, then the content, HTTP and template-block caches and
+Velocity's response cache. It prints PASS, FAIL or SKIP with the time of each and stops at the first failure. Add
+`--kernel` when the upgrade added or renamed kernel classes (the release notes say so). The order matters: a cache
+of rendered pages cleared before PHP runs the new code fills up again with pages of the old code. See
+[chapter 8](08-serving-the-site.md#8314-deploying-a-change-expvelocity-deploy) and
 [Velocity engines](../bc/6.0/velocity-engines.md).
 
 ### Step 2: apply the database update
@@ -403,10 +436,16 @@ Run them with `--help` first.
 ## 11.7 Verify the upgrade
 
 ```bash
-php bin/php/ezcache.php --clear-all                 # ends without an error
-php bin/php/console exp:checkdbfiles                # no file of your line marked as missing
-php bin/php/console exp:checkclasses                # no class PHP refuses to load
+php bin/php/ezcache.php --clear-all                                # ends without an error
+php bin/php/console exp:checkdbfiles --no-verify-branches          # prints nothing: every update file is in place
+php bin/php/console exp:checkclasses                               # no class PHP refuses to load
+php bin/php/console exp:checkmanifest --all                        # the installed files against share/filelist.md5; exit status 0 when all match
 ```
+
+`exp:checkdbfiles` reports only problems, one line each: `!` for a file the upgrade path names but the disk lacks,
+`?` for a file on disk the path does not know. No output (apart from the console's own `running ...` line) means the
+update files are complete. Without `--no-verify-branches` it also tries to reach the retired SVN repository of the
+old vendor and prints a `C` line for that; ignore it or add the option.
 
 Then in the browser: the front page loads; you can log in to the admin; **Setup > System information** shows the new
 version; a test item can be published and appears on the site. **Setup > Upgrade check** with **Check file
@@ -488,6 +527,8 @@ External:
   [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html),
   [SQLite backup command](https://sqlite.org/cli.html),
   [PostgreSQL pgcrypto](https://www.postgresql.org/docs/current/pgcrypto.html).
+- The storage engine variable: [MariaDB server system variables](https://mariadb.com/docs/server/server-management/variables-and-modes/server-system-variables)
+  (`storage_engine`: deprecated in 5.5, removed in 12.0; `default_storage_engine`).
 - Composer: [update](https://getcomposer.org/doc/03-cli.md#update-u-upgrade).
 - GitHub: [se7enxweb/exponential releases](https://github.com/se7enxweb/exponential/releases).
 
