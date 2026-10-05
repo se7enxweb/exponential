@@ -73,8 +73,8 @@ class ezpMobileDeviceRegexpFilter implements ezpMobileDeviceDetectFilterInterfac
 
         if ( isset( $_SERVER['HTTP_X_WAP_PROFILE'] )
                 || isset( $_SERVER['HTTP_PROFILE'] )
-                    || strpos( $this->httpAccept, 'text/vnd.wap.wml' ) > 0
-                        || strpos( $this->httpAccept, 'application/vnd.wap.xhtml+xml' ) > 0)
+                    || strpos( $this->httpAccept, 'text/vnd.wap.wml' ) !== false
+                        || strpos( $this->httpAccept, 'application/vnd.wap.xhtml+xml' ) !== false )
         {
             $this->isMobileDevice = true;
         }
