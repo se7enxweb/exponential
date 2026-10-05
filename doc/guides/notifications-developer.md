@@ -290,7 +290,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/notification/NotificationSyste
 ```
 
 ```text
-OK (20 tests, 215 assertions)
+OK (23 tests, 246 assertions)
 ```
 
 A digest test needs no waiting: create the event with a time in the future,
