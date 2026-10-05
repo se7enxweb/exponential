@@ -1,0 +1,14 @@
+#!/bin/sh
+# The subject of a commit message starts with what the change does:
+#   Added: ...   Updated: ...   Fixed: ...   Removed: ...
+# Merge, Revert, fixup! and squash! subjects made by git are allowed.
+# Skip in an emergency with: git commit --no-verify
+
+subject=$(grep -v '^#' "$1" | sed -n '/./{p;q;}')
+if printf '%s\n' "$subject" | grep -Eq '^(Added|Updated|Fixed|Removed): .+|^(Merge|Revert) |^(fixup|squash|amend)! '; then
+    exit 0
+fi
+echo "commit-msg: the subject must start with 'Added: ', 'Updated: ', 'Fixed: ' or 'Removed: ', e.g."
+echo "    Fixed: The redirect keeps the query string on the own host"
+echo "commit-msg: got: $subject"
+exit 1
