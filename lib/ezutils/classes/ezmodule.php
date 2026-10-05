@@ -286,7 +286,8 @@ class eZModule
             unset( $Module );
             unset( $ViewList );
             include( $file );
-            $this->Functions = $ViewList;
+            // a single view module defines no $ViewList
+            $this->Functions = isset( $ViewList ) && is_array( $ViewList ) ? $ViewList : array();
             if ( isset( $FunctionList ) and
                  is_array( $FunctionList ) and
                  count( $FunctionList ) > 0 )
@@ -974,7 +975,7 @@ class eZModule
         if ( $this->singleFunction() )
             $viewData = $this->Module["function"];
         else
-            $viewData = $this->Functions[$viewName];
+            $viewData = $this->Functions[$viewName] ?? null;
         return $viewData;
     }
 
@@ -990,7 +991,7 @@ class eZModule
     function redirectTo( $uri )
     {
         $originalURI = $uri;
-        $uri = preg_replace( "#(^.*)(/+)$#", "\$1", $uri );
+        $uri = preg_replace( "#/+$#", "", $uri );
         if ( strlen( $originalURI ) != 0 and
              strlen( $uri ) == 0 )
             $uri = '/';
@@ -1486,6 +1487,8 @@ class eZModule
             ksort( $hookEntries );
             foreach ( $hookEntries as $hookEntry )
             {
+                // a hook that could not be called has no status, not the status of the hook before it
+                $retVal = null;
                 $function = $hookEntry['function'];
                 $expandParameters = $hookEntry['expand_parameters'];
                 if ( is_string( $function ) )
@@ -1523,7 +1526,7 @@ class eZModule
                         {
                             if ( $parameters === null )
                             {
-                                $retVal = $object->$function( $this );
+                                $retVal = $object->$functionName( $this );
                             }
                             else if ( $expandParameters )
                             {
@@ -1763,10 +1766,12 @@ class eZModule
                 if ( in_array( $urlParamName, $parameters ) )
                 {
                     $pos = array_search( $urlParamName, $parameters );
+                    // the name may end the URL without a value: that is no value, as if it were not given
+                    $value = array_key_exists( $pos + 1, $parameters ) ? $parameters[$pos + 1] : false;
 
-                    $params[$variableParamName] = $parameters[$pos + 1];
-                    $unorderedParameters[$variableParamName] = $parameters[$pos + 1];
-                    $unorderedParametersList[$variableParamName] = $parameters[$pos + 1];
+                    $params[$variableParamName] = $value;
+                    $unorderedParameters[$variableParamName] = $value;
+                    $unorderedParametersList[$variableParamName] = $value;
                 }
                 else
                 {
