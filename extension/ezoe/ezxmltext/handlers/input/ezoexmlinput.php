@@ -1302,7 +1302,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                     break;
                 }
 
-                $tagContent = htmlspecialchars( $tagContent );
+                $tagContent = htmlspecialchars( $tagContent, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 $tagContent = str_replace ( '&amp;nbsp;', '&nbsp;', $tagContent );
 
                 if ( $this->allowMultipleSpaces )
@@ -1471,7 +1471,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                         $objectAttr .= ' class="' . $className . '"';
 
                     $output .= '<img id="' . $idString . '" title="' . $objectName . '" src="' .
-                               htmlspecialchars( $srcString ) . '" width="' . $imageWidth . '" height="' . $imageHeight .
+                               htmlspecialchars( $srcString, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '" width="' . $imageWidth . '" height="' . $imageHeight .
                                '" ' . $objectAttr . $customAttributePart . $styleString . ' />';
                 }
                 else if ( self::embedTagIsCompatibilityMode() )
@@ -1607,7 +1607,7 @@ class eZOEXMLInput extends eZXMLInputHandler
 
                 $customAttributePart = self::getCustomAttrPart( $tag, $styleString );
 
-                $literalText = htmlspecialchars( $literalText );
+                $literalText = htmlspecialchars( $literalText, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 $literalText = str_replace( "\n", '<br>', $literalText );
 
                 if ( $className != '' )
@@ -1968,12 +1968,12 @@ class eZOEXMLInput extends eZXMLInputHandler
                 if ( $customAttributePart === '' )
                 {
                     $customAttributePart = ' customattributes="';
-                    $customAttributePart .= $attribute->name . '|' . htmlspecialchars( $attribute->value );
+                    $customAttributePart .= $attribute->name . '|' . htmlspecialchars( $attribute->value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 }
                 else
                 {
                    $customAttributePart .= 'attribute_separation' . $attribute->name . '|' .
-                       htmlspecialchars( $attribute->value );
+                       htmlspecialchars( $attribute->value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 }
                 if ( isset( self::$customAttributeStyleMap[$attribute->name] ) )
                 {
@@ -2053,7 +2053,7 @@ class eZOEXMLInput extends eZXMLInputHandler
             eZDebug::writeWarning( "Could not find: $file", __METHOD__ );
             return $file;
         }
-        return htmlspecialchars( self::getServerURL() . '/' . $match['path'] );
+        return htmlspecialchars( self::getServerURL() . '/' . $match['path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
     }
 
     /**

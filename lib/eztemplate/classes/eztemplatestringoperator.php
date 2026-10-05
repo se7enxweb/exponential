@@ -384,7 +384,7 @@ class eZTemplateStringOperator
         {
             case "xhtml":
             {
-                $operatorValue = htmlspecialchars( (string) $operatorValue );
+                $operatorValue = htmlspecialchars( (string) $operatorValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
             } break;
 
             case "email":
@@ -395,7 +395,7 @@ class eZTemplateStringOperator
                 $operatorValue = str_replace(
                     array( '.', '@' ),
                     array( $dotText, $atText ),
-                    htmlspecialchars( $operatorValue )
+                    htmlspecialchars( $operatorValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
                 );
             } break;
 
@@ -472,7 +472,7 @@ class eZTemplateStringOperator
         else if ( ( $paramCount == 1 ) || ( ( $paramCount == 2 ) && isset( $staticValues[1] ) && ( $staticValues[1] == 'xhtml' ) ) )
         {
             $values[] = $parameters[0];
-            $code = "%output% = htmlspecialchars( (string) %1% );\n";
+            $code = "%output% = htmlspecialchars( (string) %1%, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );\n";
         }
         /* PDF: Type is static, input is not static */
         else if ( ( $paramCount == 2 ) && isset( $staticValues[1] ) && ( $staticValues[1] == 'pdf' ) )
@@ -490,7 +490,7 @@ class eZTemplateStringOperator
             $atText = addcslashes( $ini->variable( 'WashSettings', 'EmailAtText' ), "'" );
 
             $values[] = $parameters[0];
-            $code = "%output% = str_replace( array( '.', '@' ), array( '$dotText', '$atText' ), htmlspecialchars( %1% ) );\n";
+            $code = "%output% = str_replace( array( '.', '@' ), array( '$dotText', '$atText' ), htmlspecialchars( %1%, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) );\n";
         }
         /* JAVASCRIPT: Type is static, input is not static */
         else if ( ( $paramCount == 2 ) && isset( $staticValues[1] ) && ( $staticValues[1] == 'javascript' ) )

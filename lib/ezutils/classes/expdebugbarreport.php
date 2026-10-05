@@ -236,7 +236,7 @@ class expDebugBarReport
 
         // --- the bar
         echo '<div id="debug" class="exp-debug" data-exp-debug-bar="2">';
-        echo '<h2><a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . htmlspecialchars( $byUser . $byIP ) . '</a>';
+        echo '<h2><a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . htmlspecialchars( $byUser . $byIP, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</a>';
         echo self::summaryHtml( $summary );
         echo '</h2>';
         echo '<div id="debug-details" role="region" aria-label="' . self::h( 'Debug report' ) . '">';
@@ -253,7 +253,7 @@ class expDebugBarReport
         {
             $badge = isset( $badges[$id] ) && $badges[$id] !== '' ? ' <span class="exp-debug-badge">' . (int)$badges[$id] . '</span>' : '';
             echo '<button type="button" role="tab" class="exp-debug-tab" id="exp-debug-tab-' . $id . '" aria-controls="exp-debug-panel-' . $id
-               . '" aria-selected="false" tabindex="-1" data-tab="' . $id . '">' . htmlspecialchars( $label ) . $badge . '</button>';
+               . '" aria-selected="false" tabindex="-1" data-tab="' . $id . '">' . htmlspecialchars( $label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . $badge . '</button>';
         }
         echo '</div>';
         echo '<label class="exp-debug-search"><span class="exp-debug-sr">' . self::h( 'Filter' ) . '</span>'
@@ -262,7 +262,7 @@ class expDebugBarReport
 
         // --- Messages
         self::panelStart( 'messages', $tabs );
-        echo '<div class="exp-debug-levels" data-counts="' . htmlspecialchars( json_encode( $messages['counts'] ) ) . '"></div>';
+        echo '<div class="exp-debug-levels" data-counts="' . htmlspecialchars( json_encode( $messages['counts'] ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"></div>';
         echo "<table id='main-debug-table' title='Table for actual debug output, shows notices, warnings and errors'>";
         echo $otherTop;
         echo implode( '', $messages['rows'] );
@@ -372,7 +372,7 @@ class expDebugBarReport
     protected static function panelStart( $id, array $tabs )
     {
         echo '<section class="exp-debug-panel" role="tabpanel" id="exp-debug-panel-' . $id . '" aria-labelledby="exp-debug-tab-' . $id . '" tabindex="0">';
-        echo '<h3 class="exp-debug-panel-title">' . htmlspecialchars( $tabs[$id] ) . '</h3>';
+        echo '<h3 class="exp-debug-panel-title">' . htmlspecialchars( $tabs[$id], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</h3>';
     }
 
     protected static function panelEnd()
@@ -415,9 +415,9 @@ class expDebugBarReport
             if ( $xdebug && strncmp( eZDebug::XDEBUG_SIGNATURE, $entry['String'], strlen( eZDebug::XDEBUG_SIGNATURE ) ) === 0 )
                 $contents = substr( $entry['String'], strlen( eZDebug::XDEBUG_SIGNATURE ) );
             else
-                $contents = htmlspecialchars( (string)$entry['String'] );
+                $contents = htmlspecialchars( (string)$entry['String'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
-            $html = "<tr class='$style' data-level='$style'><td class='debugheader'$identifierText><b><span>{$outputData['name']}:</span> " . htmlspecialchars( $label ) . "</b></td>"
+            $html = "<tr class='$style' data-level='$style'><td class='debugheader'$identifierText><b><span>{$outputData['name']}:</span> " . htmlspecialchars( $label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</b></td>"
                   . "<td class='debugheader' style=\"text-align:right;\">$time</td></tr>"
                   . "<tr class='debugbody' data-level='$style'><td colspan='2'><pre$pre>" . $contents . "</pre></td></tr>";
             if ( $isSql )
@@ -475,9 +475,9 @@ class expDebugBarReport
             list( $tab, $key, $lvl, $text, $title ) = $chip;
             $levelWord = $lvl === 'high' ? self::t( 'high' ) : ( $lvl === 'warn' ? self::t( 'raised' ) : self::t( 'normal' ) );
             $html .= '<button type="button" class="exp-debug-chip" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
-                   . ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')' ) . '"'
-                   . ' aria-label="' . htmlspecialchars( $title . ': ' . $text . ' (' . $levelWord . ')' ) . '">'
-                   . htmlspecialchars( $text ) . '</button>';
+                   . ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"'
+                   . ' aria-label="' . htmlspecialchars( $title . ': ' . $text . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">'
+                   . htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</button>';
         }
         return $html . '</span>';
     }
@@ -596,7 +596,7 @@ class expDebugBarReport
         $html = '<table class="exp-debug-facts"><tr><th>' . self::h( 'Queries' ) . '</th><td>' . (int)$sqlCount . '</td></tr>'
               . '<tr><th>' . self::h( 'Time in queries' ) . '</th><td>' . number_format( $sqlMs, 2 ) . ' ms (' . number_format( $sqlMs / 10 / $totalElapsed, 1 ) . ' %)</td></tr>'
               . '<tr><th>' . self::h( 'Average' ) . '</th><td>' . ( $sqlCount ? number_format( $sqlMs / $sqlCount, 3 ) : '0' ) . ' ms</td></tr>'
-              . '<tr><th>' . self::h( 'Database' ) . '</th><td>' . htmlspecialchars( $dbType ) . '</td></tr></table>';
+              . '<tr><th>' . self::h( 'Database' ) . '</th><td>' . htmlspecialchars( $dbType, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</td></tr></table>';
 
         // The database's own accumulators (connection, queries, loops, conversion).
         $groups = array();
@@ -641,7 +641,7 @@ class expDebugBarReport
         {
             if ( preg_match( "#^$currentPathReg/(.+)$#", $phpFile, $matches ) )
                 $phpFile = $matches[1];
-            $html .= "<tr class='data'><td>" . htmlspecialchars( $phpFile ) . "</td></tr>";
+            $html .= "<tr class='data'><td>" . htmlspecialchars( $phpFile, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</td></tr>";
         }
         $html .= "<tr><td><b>&nbsp;" . self::h( 'Number of files included: %count', array( '%count' => count( $phpFiles ) ) ) . "</b></td></tr>";
         return $html . "</table></div>";
@@ -711,7 +711,7 @@ class expDebugBarReport
             $html .= '<p class="exp-debug-hint">' . self::h( 'Not running on Velocity.' ) . '</p>';
         $html .= '<table class="exp-debug-facts">';
         foreach ( $rows as $k => $v )
-            $html .= '<tr><th>' . htmlspecialchars( $k ) . '</th><td>' . htmlspecialchars( $v ) . '</td></tr>';
+            $html .= '<tr><th>' . htmlspecialchars( $k, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</th><td>' . htmlspecialchars( $v, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</td></tr>';
         $html .= '</table>';
 
         if ( $privileged )
@@ -757,8 +757,8 @@ class expDebugBarReport
             $html .= '<tr><th>' . self::h( 'Hit rate' ) . '</th><td>' . $s['hit_rate'] . ' %</td></tr>';
             $html .= '<tr><th>' . self::h( 'Cached scripts' ) . '</th><td>' . $s['scripts'] . '</td></tr>';
             $html .= '<tr><th>' . self::h( 'Restarts' ) . '</th><td>' . $s['restarts'] . '</td></tr>';
-            $html .= '<tr><th>opcache.validate_timestamps</th><td>' . htmlspecialchars( $s['validate_timestamps'] ) . '</td></tr>';
-            $html .= '<tr><th>opcache.file_update_protection</th><td>' . htmlspecialchars( $s['file_update_protection'] ) . '</td></tr>';
+            $html .= '<tr><th>opcache.validate_timestamps</th><td>' . htmlspecialchars( $s['validate_timestamps'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</td></tr>';
+            $html .= '<tr><th>opcache.file_update_protection</th><td>' . htmlspecialchars( $s['file_update_protection'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</td></tr>';
         }
         return $html . '</table>';
     }
@@ -783,18 +783,18 @@ class expDebugBarReport
         if ( $page['node_id'] )
             $types['ContentSubtree'] = self::t( 'This page and below' );
 
-        $html .= '<form class="exp-debug-cache-classic" method="post" action="' . htmlspecialchars( self::url( 'setup/cachetoolbar' ) ) . '">';
+        $html .= '<form class="exp-debug-cache-classic" method="post" action="' . htmlspecialchars( self::url( 'setup/cachetoolbar' ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">';
         $html .= '<fieldset><legend>' . self::h( 'Quick clear' ) . '</legend>';
         if ( $page['node_id'] )
         {
             $html .= '<input type="hidden" name="NodeID" value="' . (int)$page['node_id'] . '">';
             $html .= '<input type="hidden" name="ObjectID" value="' . (int)$page['object_id'] . '">';
         }
-        $html .= '<input type="hidden" name="RedirectURI" value="' . htmlspecialchars( $page['uri'] ) . '">';
+        $html .= '<input type="hidden" name="RedirectURI" value="' . htmlspecialchars( $page['uri'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">';
         $html .= '<input type="hidden" name="ClearCacheButton" value="1">';
         foreach ( $types as $value => $label )
         {
-            $html .= '<button type="submit" class="exp-debug-button" name="CacheTypeValue" value="' . $value . '">' . htmlspecialchars( $label ) . '</button> ';
+            $html .= '<button type="submit" class="exp-debug-button" name="CacheTypeValue" value="' . $value . '">' . htmlspecialchars( $label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</button> ';
         }
         $html .= '</fieldset></form>';
         return $html;
@@ -806,8 +806,8 @@ class expDebugBarReport
         $version = @filemtime( $file );
         $url = eZSys::wwwDir() . '/' . $path . ( $version ? '?v=' . $version : '' );
         if ( $kind === 'css' )
-            return '<link rel="stylesheet" type="text/css" href="' . htmlspecialchars( $url ) . '">';
-        return '<script src="' . htmlspecialchars( $url ) . '" defer></script>';
+            return '<link rel="stylesheet" type="text/css" href="' . htmlspecialchars( $url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">';
+        return '<script src="' . htmlspecialchars( $url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '" defer></script>';
     }
 
     /**

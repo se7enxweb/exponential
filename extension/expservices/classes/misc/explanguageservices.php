@@ -191,7 +191,7 @@ class expLanguageServices extends expServiceBase
         $list = array();
         if ( preg_match_all( '#<context>\s*<name>([^<]*)</name>(.*?)</context>#s', $xml, $m, PREG_SET_ORDER ) )
             foreach ( $m as $c )
-                $list[] = array( 'context' => html_entity_decode( $c[1] ), 'messages' => preg_match_all( '#<message[ >]#', $c[2] ) );
+                $list[] = array( 'context' => html_entity_decode( $c[1], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ), 'messages' => preg_match_all( '#<message[ >]#', $c[2] ) );
         return self::pageOf( $list, $args, 1, 2 );
     }
 

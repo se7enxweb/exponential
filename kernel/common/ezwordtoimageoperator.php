@@ -580,7 +580,7 @@ class eZWordToImageOperator
                 if ( $returnURIOnly )
                     $operatorValue = $wwwDirPrefix . $iconPath;
                 else
-                    $operatorValue = '<img ' . $class . 'src="' . htmlspecialchars( $wwwDirPrefix . $iconPath, ENT_COMPAT, 'UTF-8' ) . '"' . $sizeText . ' alt="' .  htmlspecialchars( $altText, ENT_COMPAT, 'UTF-8' ) . '" title="' . htmlspecialchars( $altText ) . '" />';
+                    $operatorValue = '<img ' . $class . 'src="' . htmlspecialchars( $wwwDirPrefix . $iconPath, ENT_COMPAT, 'UTF-8' ) . '"' . $sizeText . ' alt="' .  htmlspecialchars( $altText, ENT_COMPAT, 'UTF-8' ) . '" title="' . htmlspecialchars( $altText, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '" />';
             } break;
 
             default:

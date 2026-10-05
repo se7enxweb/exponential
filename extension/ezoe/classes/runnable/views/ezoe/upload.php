@@ -97,7 +97,7 @@ class Upload extends \Exponential\Runnable\ModuleView
                     echo '<html><head><title>HiddenUploadFrame</title><script type="text/javascript">';
                     echo 'window.parent.document.getElementById("upload_in_progress").style.display = "none";';
                     echo '</script></head><body><div style="position:absolute; top: 0px; left: 0px;background-color: white; width: 100%;">';
-                    echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( $e->getMessage() ) . '</p>';
+                    echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( $e->getMessage(), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</p>';
                     echo '</div></body></html>';
                     \eZExecution::cleanExit();
                 }
@@ -107,7 +107,7 @@ class Upload extends \Exponential\Runnable\ModuleView
                 echo '<html><head><title>HiddenUploadFrame</title><script type="text/javascript">';
                 echo 'window.parent.document.getElementById("upload_in_progress").style.display = "none";';
                 echo '</script></head><body><div style="position:absolute; top: 0px; left: 0px;background-color: white; width: 100%;">';
-                echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( \ezpI18n::tr( 'design/standard/ezoe', 'This file type is not accepted by the editor: %file', null, array( '%file' => basename( $sentName ) ) ) ) . '</p>';
+                echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( \ezpI18n::tr( 'design/standard/ezoe', 'This file type is not accepted by the editor: %file', null, array( '%file' => basename( $sentName ) ) ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</p>';
                 echo '</div></body></html>';
                 \eZExecution::cleanExit();
             }
@@ -255,7 +255,7 @@ class Upload extends \Exponential\Runnable\ModuleView
                 echo '<html><head><title>HiddenUploadFrame</title><script type="text/javascript">';
                 echo 'window.parent.document.getElementById("upload_in_progress").style.display = "none";';
                 echo '</script></head><body><div style="position:absolute; top: 0px; left: 0px;background-color: white; width: 100%;">';
-                echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( $e->getMessage() ) . '</p>';
+                echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( $e->getMessage(), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</p>';
                 echo '</div></body></html>';
             }
             catch ( \RuntimeException $e )
@@ -264,7 +264,7 @@ class Upload extends \Exponential\Runnable\ModuleView
                 echo 'window.parent.document.getElementById("upload_in_progress").style.display = "none";';
                 echo '</script></head><body><div style="position:absolute; top: 0px; left: 0px;background-color: white; width: 100%;">';
                 foreach( $result['errors'] as $err )
-                    echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( $err['description'] ) . '</p>';
+                    echo '<p style="margin: 0; padding: 3px; color: red">' . htmlspecialchars( $err['description'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</p>';
                 echo '</div></body></html>';
             }
             finally

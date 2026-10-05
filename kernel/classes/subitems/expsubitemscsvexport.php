@@ -61,7 +61,18 @@ class expSubitemsCSVExport
     public static function writeLine( $handle, array $cells )
     {
         $cells = array_map( array( __CLASS__, 'cell' ), $cells );
-        fputcsv( $handle, $cells, ',', '"', '', "\r\n" );
+        if ( PHP_VERSION_ID >= 80100 )
+        {
+            fputcsv( $handle, $cells, ',', '"', '', "\r\n" );
+            return;
+        }
+        // PHP 8.0: fputcsv() has no $eol and always ends the line with "\n"
+        $buffer = fopen( 'php://memory', 'w+' );
+        fputcsv( $buffer, $cells, ',', '"', '' );
+        rewind( $buffer );
+        $line = stream_get_contents( $buffer );
+        fclose( $buffer );
+        fwrite( $handle, substr( $line, 0, -1 ) . "\r\n" );
     }
 
     /**

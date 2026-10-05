@@ -327,7 +327,7 @@ class eZSimplifiedXMLEditOutput
 
         if ( $element->parentNode->nodeName != 'literal' )
         {
-            $text = htmlspecialchars( $text );
+            $text = htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
             $text = str_replace ( '&amp;nbsp;', '&nbsp;', $text);
             $text = str_replace( "\n", '', $text );
         }

@@ -1860,9 +1860,9 @@ class eZRSSExport extends eZPersistentObject
                         $origImage   = $descContent->attribute( 'original' );
                         eZURI::transformURI( $itemImage['full_path'], true, 'full' );
                         eZURI::transformURI( $origImage['full_path'], true, 'full' );
-                        $itemDescriptionText = '&lt;a href="' . htmlspecialchars( $origImage['full_path'] )
-                                             . '"&gt;&lt;img alt="' . htmlspecialchars( $descContent->attribute( 'alternative_text' ) )
-                                             . '" src="' . htmlspecialchars( $itemImage['full_path'] )
+                        $itemDescriptionText = '&lt;a href="' . htmlspecialchars( $origImage['full_path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
+                                             . '"&gt;&lt;img alt="' . htmlspecialchars( $descContent->attribute( 'alternative_text' ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
+                                             . '" src="' . htmlspecialchars( $itemImage['full_path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
                                              . '" width="' . $itemImage['width']
                                              . '" height="' . $itemImage['height']
                                              . '" /&gt;&lt;/a&gt;';

@@ -399,24 +399,24 @@ class eZTemplate
         {
             echo "<h1>Template data:</h1>";
             echo "<p class=\"filename\">" . $template . "</p>";
-            echo "<pre class=\"example\">" . htmlspecialchars( $this->Text ) . "</pre>";
+            echo "<pre class=\"example\">" . htmlspecialchars( $this->Text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</pre>";
             reset( $this->IncludeText );
             while ( ( $key = key( $this->IncludeText ) ) !== null )
             {
                 $item = $this->IncludeText[$key];
                 echo "<p class=\"filename\">" . $key . "</p>";
-                echo "<pre class=\"example\">" . htmlspecialchars( $item ) . "</pre>";
+                echo "<pre class=\"example\">" . htmlspecialchars( $item, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</pre>";
                 next( $this->IncludeText );
             }
             echo "<h1>Result text:</h1>";
             echo "<p class=\"filename\">" . $template . "</p>";
-            echo "<pre class=\"example\">" . htmlspecialchars( $output ) . "</pre>";
+            echo "<pre class=\"example\">" . htmlspecialchars( $output, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</pre>";
             reset( $this->IncludeOutput );
             while ( ( $key = key( $this->IncludeOutput ) ) !== null )
             {
                 $item = $this->IncludeOutput[$key];
                 echo "<p class=\"filename\">" . $key . "</p>";
-                echo "<pre class=\"example\">" . htmlspecialchars( $item ) . "</pre>";
+                echo "<pre class=\"example\">" . htmlspecialchars( $item, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</pre>";
                 next( $this->IncludeOutput );
             }
         }

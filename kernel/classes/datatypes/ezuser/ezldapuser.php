@@ -297,7 +297,8 @@ class eZLDAPUser extends eZUser
 
                 if( !$password )
                 {
-                    $password = crypt( microtime() );
+                    // a random password, so that an empty one never makes an anonymous bind
+                    $password = bin2hex( random_bytes( 16 ) );
                 }
 
                 // is it real authenticated LDAP user?

@@ -281,7 +281,7 @@ abstract class ezpClusterGateway
         switch ( $errorCode )
         {
             case 404:
-                $filename = htmlspecialchars( $filename );
+                $filename = htmlspecialchars( $filename, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 header( $_SERVER['SERVER_PROTOCOL'] . " 404 Not Found" );
                 echo <<<EOF
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">

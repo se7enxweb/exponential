@@ -783,9 +783,9 @@ class eZStepInstaller
         $dbError = false;
 
         $sqliteFile = isset( $errorInfo['database_info']['sqlite_file'] ) ? (string)$errorInfo['database_info']['sqlite_file'] : '';
-        $sqliteArguments = array( '%file' => htmlspecialchars( $sqliteFile ),
-                                  '%directory' => htmlspecialchars( $sqliteFile !== '' ? dirname( $sqliteFile ) : eZSQLite3DB::STORAGE_DIRECTORY ),
-                                  '%user' => htmlspecialchars( self::processUserName() ) );
+        $sqliteArguments = array( '%file' => htmlspecialchars( $sqliteFile, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ),
+                                  '%directory' => htmlspecialchars( $sqliteFile !== '' ? dirname( $sqliteFile ) : eZSQLite3DB::STORAGE_DIRECTORY, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ),
+                                  '%user' => htmlspecialchars( self::processUserName(), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) );
         switch ( $code )
         {
             case self::DB_ERROR_SQLITE_FILE_NAME:

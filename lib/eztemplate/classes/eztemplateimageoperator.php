@@ -209,7 +209,7 @@ class eZTemplateImageOperator
                  count( $textcol ) < 3 )
                 $textcol = array( 0, 0, 0 );
 
-            $alternativeText = htmlspecialchars( $inputValue );
+            $alternativeText = htmlspecialchars( $inputValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
             if ( is_string( $usecache ) )
                 $md5Text = $usecache;
             else

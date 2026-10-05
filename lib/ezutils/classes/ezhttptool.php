@@ -608,7 +608,7 @@ class eZHTTPTool
 
         eZHTTPTool::headerVariable( 'Location', $url );
         /* Fix for redirecting using workflows and apache 2 */
-        $escapedUrl = htmlspecialchars( $url );
+        $escapedUrl = htmlspecialchars( $url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
         $content = <<<EOT
 <HTML><HEAD>
 <META HTTP-EQUIV="Refresh" Content="0;URL=$escapedUrl">

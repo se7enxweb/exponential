@@ -352,7 +352,7 @@ class eZXMLOutputHandler
             {
                 return array( true, $element->textContent );
             }
-            return array( true, htmlspecialchars( $element->textContent ) );
+            return array( true, htmlspecialchars( $element->textContent, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) );
         }
         if ( !( $element instanceof DOMElement ) && !( $element instanceof DOMText ) )
         {

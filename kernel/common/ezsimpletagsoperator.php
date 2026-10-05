@@ -144,7 +144,7 @@ class eZSimpleTagsOperator
                 $text = $element;
                 foreach ( $textPHPFunctions as $textPHPFunction )
                 {
-                    $text = $textPHPFunction( $text );
+                    $text = self::callTextFunction( $textPHPFunction, $text );
                 }
                 $textElements[] = $textPre . $text . $textPost;
             }
@@ -183,7 +183,7 @@ class eZSimpleTagsOperator
                         $text = implode( '', $tagElements );
                         foreach ( $phpFunctions as $phpFunction )
                         {
-                            $text = $phpFunction( $text );
+                            $text = self::callTextFunction( $phpFunction, $text );
                         }
                         $textElements[] = $text;
                         $textElements[] = $tagOptions['post'];
@@ -194,7 +194,7 @@ class eZSimpleTagsOperator
                     $text = $originalText;
                     foreach ( $textPHPFunctions as $textPHPFunction )
                     {
-                        $text = $textPHPFunction( $text );
+                        $text = self::callTextFunction( $textPHPFunction, $text );
                     }
                     $textElements[] = $textPre . $text . $textPost;
                 }
@@ -202,6 +202,18 @@ class eZSimpleTagsOperator
         }
 
         $operatorValue = implode( '', $textElements );
+    }
+
+    /**
+     * Calls one of the PHP functions a TagList entry names on a piece of text.
+     * htmlspecialchars gets the flags that are its default from PHP 8.1 on, so that
+     * PHP 8.0, whose default leaves single quotes alone, escapes the same way.
+     */
+    protected static function callTextFunction( $function, $text )
+    {
+        if ( $function === 'htmlspecialchars' )
+            return htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+        return $function( $text );
     }
 
     /// \privatesection

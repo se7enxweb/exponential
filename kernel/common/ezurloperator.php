@@ -977,7 +977,7 @@ CODEPIECE;
         }
 
         $operatorValue = $sys->wwwDir() . '/' . $filePath;
-        $operatorValue = htmlspecialchars( $operatorValue );
+        $operatorValue = htmlspecialchars( $operatorValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
         return $operatorValue;
     }
@@ -1010,7 +1010,7 @@ CODEPIECE;
         }
 
         $operatorValue = $skipSlash ? $imgPath : $sys->wwwDir() . '/' . $imgPath;
-        $operatorValue = htmlspecialchars( $operatorValue );
+        $operatorValue = htmlspecialchars( $operatorValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
         return $operatorValue;
     }

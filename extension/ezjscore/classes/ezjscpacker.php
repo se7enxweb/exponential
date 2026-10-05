@@ -366,7 +366,7 @@ class ezjscPacker
                     eZDebug::writeWarning( "Could not find: $file", __METHOD__ );
                     continue;
                 }
-                $file = htmlspecialchars( $match['path'] );
+                $file = htmlspecialchars( $match['path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 $fileTime = file_exists( $file ) ? filemtime( $file ): false;
                 $wwwFile  = $data['www_dir'] . $file;
             }

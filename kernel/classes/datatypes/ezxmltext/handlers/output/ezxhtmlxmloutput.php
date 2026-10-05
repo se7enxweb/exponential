@@ -735,7 +735,7 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
                 // spaces before or after a line element are irrelevant
                 return array( true, '' );
             }
-            $text = htmlspecialchars( $element->textContent );
+            $text = htmlspecialchars( $element->textContent, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
             $text = str_replace( array( '&amp;nbsp;', "\xC2\xA0" ), '&nbsp;', $text);
             // Get rid of linebreak and spaces stored in xml file; inside
             // imported docbook literallayout they are significant line breaks.

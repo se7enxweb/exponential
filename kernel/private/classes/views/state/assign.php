@@ -246,7 +246,7 @@ class Assign extends \Exponential\Runnable\ModuleView
                 \eZDebug::writeError( 'Content jobs: ' . $e->getMessage(), __METHOD__ );
             }
         }
-        return array( 'content' => '<div class="message-warning"><h2>' . htmlspecialchars( $message ) . '</h2></div>',
+        return array( 'content' => '<div class="message-warning"><h2>' . htmlspecialchars( $message, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</h2></div>',
                       'path' => array( array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/state', 'State' ) ) ) );
     }
 }

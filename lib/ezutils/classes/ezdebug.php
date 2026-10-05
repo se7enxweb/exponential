@@ -1633,13 +1633,13 @@ class eZDebug
                 $pre = ($bgclass != '' ? " class='$bgclass'" : '');
                 if ( $as_html )
                 {
-                    $label = htmlspecialchars( $label );
+                    $label = htmlspecialchars( $label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
                     $contents = '';
                     if ( extension_loaded( 'xdebug' ) && ( strncmp( self::XDEBUG_SIGNATURE, $debug['String'], strlen( self::XDEBUG_SIGNATURE ) ) === 0 ) )
                         $contents = substr( $debug['String'], strlen( self::XDEBUG_SIGNATURE ) );
                     else
-                        $contents = htmlspecialchars( $debug['String'] );
+                        $contents = htmlspecialchars( $debug['String'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
                     echo "<tr class='$style'><td class='debugheader'$identifierText><b><span>$name:</span> $label</b></td>
                                     <td class='debugheader' style=\"text-align:right;\">$time</td></tr>

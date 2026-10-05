@@ -53,7 +53,7 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
     public static function time( $args )
     {
         if ( $args && isset( $args[0] ) )
-            return htmlspecialchars( $args[0] ) . '_' . time();
+            return htmlspecialchars( $args[0], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '_' . time();
         return time();
     }
 
@@ -443,7 +443,7 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
             eZDebug::writeWarning( "Could not find: $file", __METHOD__ );
             return false;
         }
-        return $wwwDir . htmlspecialchars( $match['path'] );
+        return $wwwDir . htmlspecialchars( $match['path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
     }
 }
 

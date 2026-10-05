@@ -21,6 +21,13 @@ if ( !defined( 'EXP_ROOT_DIR' ) && strncmp( __FILE__, 'phar://', 7 ) !== 0 )
     define( 'EXP_ROOT_DIR', __DIR__ );
 }
 
+// PHP functions younger than the oldest supported PHP (8.0), defined only where
+// PHP lacks them. On 8.1 and later the file is not even read.
+if ( PHP_VERSION_ID < 80100 )
+{
+    require_once __DIR__ . '/lib/phpcompat.php';
+}
+
 // An engine archive, if this installation is running from one.
 //
 // Resolved before anything else because the phar wrapper check below needs the

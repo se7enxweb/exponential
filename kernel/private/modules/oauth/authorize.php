@@ -228,7 +228,7 @@ if ( $pResponseType == 'token')
     $parameters[] = 'access_token=' . urlencode( $rAccessToken );
     $parameters[] = 'refresh_token=' . urlencode( $rRefreshToken );
     $parameters[] = "expires_in=$rExpiresIn";
-    $location = "{$pRedirectUri}?" . implode( $parameters, '&' );
+    $location = "{$pRedirectUri}?" . implode( '&', $parameters );
 
     response( '302 Found', $location );
 }
@@ -260,7 +260,7 @@ elseif ( $pResponseType ==  'code')
 
     $parameters[] = 'code=' . urlencode( $rCode );
     $parameters[] = "expires_in=$rExpiresIn";
-    $location = "{$pRedirectUri}?" . implode( $parameters, '&' );
+    $location = "{$pRedirectUri}?" . implode( '&', $parameters );
 
     response( '302 Found', $location );
 }
