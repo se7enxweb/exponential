@@ -240,15 +240,22 @@ class eZNamePatternResolver
             {
                 $groupTokenArray = $this->extractTokens( $this->groupLookupTable[$tokenPart] );
                 $replaceString = $this->groupLookupTable[$tokenPart];
+                $groupHasValue = count( $groupTokenArray ) == 0;
 
                 foreach ( $groupTokenArray as $groupToken )
                 {
-                    $replaceString = str_replace( $groupToken, $this->resolveToken( $groupToken ), $replaceString );
+                    $value = $this->resolveToken( $groupToken );
+                    if ( $value !== '' )
+                        $groupHasValue = true;
+                    $replaceString = str_replace( $groupToken, $value, $replaceString );
                 }
                 // We want to stop after the first matching token part / identifier is found
                 // <id1|id2> if id1 has a value, id2 will not be used.
-                // In this case id1 or id1 is a token group.
-                break;
+                // In this case id1 or id1 is a token group; a group none of whose tokens has a value
+                // (only its separators would be left) does not count, so <(<first> <last>)|login> gives the login.
+                if ( $groupHasValue )
+                    break;
+                $replaceString = '';
             }
             else
             {
@@ -318,13 +325,16 @@ class eZNamePatternResolver
         if ( $foundGroups )
         {
             $i = 0;
+            // Each group is replaced in the pattern the previous groups were already replaced in: starting from the
+            // original pattern every time kept only the last group's replacement
+            $retNamePattern = $namePattern;
             foreach ( $groupArray[1] as $group )
             {
                 // Create meta-token for group
                 $metaToken = $this->metaString . $i;
 
                 // Insert the group with its placeholder token
-                $retNamePattern = str_replace( $group, $metaToken, $namePattern );
+                $retNamePattern = str_replace( $group, $metaToken, $retNamePattern );
 
                 // Remove the pattern "(" ")" from the tokens
                 $group = str_replace( array( '(', ')' ), '', $group );
@@ -346,34 +356,32 @@ class eZNamePatternResolver
      */
     private function getIdentifiers( $patternString )
     {
-        $allTokens = '#<(.*)>#U';
-        $identifiers = '#\W#';
-
-        $tmpArray = array();
-        if ( preg_match_all( $allTokens, $patternString, $matches ) === false )
-            return [];
-
-        foreach ( $matches[1] as $match )
+        // Everything between the outermost < and > at any depth: a group such as <(<first> <last>)|login> nests
+        // tokens, and matching the shortest <...> stopped at the first inner > and never saw "login"
+        $insideTokens = '';
+        $depth = 0;
+        $length = strlen( (string)$patternString );
+        for ( $i = 0; $i < $length; $i++ )
         {
-            $tmpArray[] = preg_split( $identifiers, $match, -1, PREG_SPLIT_NO_EMPTY );
-        }
-
-        $retArray = array();
-        foreach ( $tmpArray as $matchGroup )
-        {
-            if ( is_array( $matchGroup ) )
+            $char = $patternString[$i];
+            if ( $char === '<' )
             {
-                foreach ( $matchGroup as $item )
-                {
-                    $retArray[] = $item;
-                }
+                $depth++;
+                $insideTokens .= ' ';
             }
-            else
+            else if ( $char === '>' )
             {
-                $retArray[] = $matchGroup;
+                $depth = max( 0, $depth - 1 );
+                $insideTokens .= ' ';
+            }
+            else if ( $depth > 0 )
+            {
+                $insideTokens .= $char;
             }
         }
-        return $retArray;
+
+        $retArray = preg_split( '#\W#', $insideTokens, -1, PREG_SPLIT_NO_EMPTY );
+        return is_array( $retArray ) ? array_values( array_unique( $retArray ) ) : array();
     }
 }
 ?>
