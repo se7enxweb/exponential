@@ -2637,7 +2637,7 @@ ae75d362d2c3cd9588323032cc2df09c  doc/bc/6.0/kickstartercli.md
 a6d977d642aa2384831b54248e80ecc6  doc/bc/6.0/locations-tab-paging-and-sorting.md
 abb94091360a905fee43c0792bbf9d39  doc/bc/6.0/middle-out-compression.md
 02a48a62c48e03aa3f29dfaee9709546  doc/bc/6.0/multi-node-edit.md
-0781a31d624d082e71625e8fa90b6497  doc/bc/6.0/notification-ui-and-commands.md
+42dc3d96509b001e5b06aff6502b46d7  doc/bc/6.0/notification-ui-and-commands.md
 de93c492b3a2fa49ea08a89471fc968a  doc/bc/6.0/opml.md
 75a67bb0f4324d3575fb035e71b42a79  doc/bc/6.0/pagination-settings.md
 6322f7b35a71418c2d496b5dfc25b319  doc/bc/6.0/pdf-export.md
@@ -3146,7 +3146,7 @@ cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 0efc0a33fb1492529cd85b8d230d76d5  doc/features/6.0/class-attribute-move-to-edge.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 ae8f7f000cdb16bfabf8c2871976b012  doc/features/6.0/content-jobs.md
-b5a73f032ee9fc8fbf2fb88e0863913a  doc/features/6.0/cronjobs-console.md
+a73f87ddf197ae5fb70dc858e64b41f1  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
 de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distribution.md
@@ -3220,7 +3220,7 @@ ee9fbd196fef3a6c34b154e3bedaf179  doc/features/6.0/installation-name-in-pages.md
 14800f3c677c11c0413e0e030c9b7a98  doc/features/6.0/maintenance-mode.md
 a1b52e9dbf0476197edba4affd16aa38  doc/features/6.0/mongodb-database-support.md
 bb99b84e8b8be2362e0fa4162f41016b  doc/features/6.0/multi-site-ini-overrides.md
-af1f62c2130f766543f4a46311612f11  doc/features/6.0/notifications.md
+cfe53a9b5d897b7ffb5da2b09a770a87  doc/features/6.0/notifications.md
 6c2d12092b839df0fc9da488ef1f6b82  doc/features/6.0/online-editor-tinymce8.md
 90e05c00de5038b784dc9b8e430529de  doc/features/6.0/order-list-sorting.md
 37581b65afcd8a10fbe447ac1013ef89  doc/features/6.0/order-receipts.md
@@ -3273,13 +3273,15 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 1ea060f19f032887d96d54ea2994fd9e  doc/features/6.0/velocity-web-server.md
 747dd5c4a400e33d13f0fd8bad249a9c  doc/features/6.0/velocity-websockets-and-events.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
-5f0de08ea3be84e87a03e86c17ff9d3a  doc/glossary.md
-9e57d7c58f0c5e0edd7da4c0a4a137d1  doc/guides/README.md
+b082b7fc8c2cbd33d7aef9df726d6c8d  doc/glossary.md
+2b4ff3e59ac0e0ee35017a46070a4a15  doc/guides/README.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
 a7d35b3d4eb62f3995401d62b9ab21d7  doc/guides/deploying.md
 5f6657b0ea73fe7a20da12e4a3d5547c  doc/guides/extensions.md
 a49a7f5284ec81f8dbb13b7c88e821b4  doc/guides/getting-started.md
-1352a12fedf722537e045c15e81e0c66  doc/guides/operating-a-site.md
+e0567e2d45ff6f2b2fca300fc17c3f79  doc/guides/notifications-administrator.md
+9de054413bfd91b636d93ab41891490a  doc/guides/notifications-developer.md
+b3088ad6bce8c9c5c0ca74fb3fc54f82  doc/guides/operating-a-site.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 0c6a4d567b4802cf8af7f38be42ed484  doc/guides/security-and-audit.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
@@ -3653,7 +3655,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/specifications/4.3/admin_refresh/functiona
 e14335da02fc54b98c731ab8152fbda6  doc/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/specifications/4.5/asynchronous_publishing.txt
-65483cd10a4937cc80786b2efdb057b1  doc/specifications/6.0/README.md
+4be1e573dd796e61445610548fa1d3fd  doc/specifications/6.0/README.md
 c7d48dabae7613771d017ddaf603bc61  doc/specifications/6.0/audit-event-model.md
 ab66e2db16090f3e2b4beeeb0a27f87e  doc/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/specifications/6.0/cjw_newsletter.md
@@ -3667,7 +3669,9 @@ a274fa30292611fe64574bef2b9630f5  doc/specifications/6.0/expservices.md
 fe1fc6a8426eefb3fc55d53530292a99  doc/specifications/6.0/ini-override-placements.md
 88d7df3fd4249b7257554244e41edb62  doc/specifications/6.0/installer-logs-and-seed-data.md
 f95c9c889acfa7d8b75e98252eb6cb4d  doc/specifications/6.0/legacy-bridge-bundle.md
-f53b3573f39038a0e6d6b2f14e52e650  doc/specifications/6.0/notifications.md
+3122026454cd93f57750b6ae2a0cdd8f  doc/specifications/6.0/notifications-cli.md
+56a578d2d49c6d9f5bfd6ebf808a4a15  doc/specifications/6.0/notifications-ini.md
+ed395373ac26dece45fec24fc38f7490  doc/specifications/6.0/notifications.md
 8dc5a0d0e7db7837a5ea9aaef77d8a6a  doc/specifications/6.0/platform-console-commands.md
 f1d74be89700229e2ef39c8efa184d28  doc/specifications/6.0/platform-package-map.md
 06855fc3c01aaf43d2538bfd85142908  doc/specifications/6.0/platform-sqlite-installer.md
@@ -6761,7 +6765,7 @@ c0dd8393942df9359fd823e6903cd3e4  tests/tests/kernel/classes/ini/expIniEditorTes
 3a175c5b36d5e85d22a09afebdcf24e3  tests/tests/kernel/classes/ini/expIniRoundTripTest.php
 e661f4e1af49a324f6b521358bf30822  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
 678cb2f17207b03cd3d4132583aef9e9  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
-dcbcb1fbd97ee0746fabde61014b6739  tests/tests/kernel/classes/notification/NotificationSystemTest.php
+5a94eb8d087295770f7972f3014df2a1  tests/tests/kernel/classes/notification/NotificationSystemTest.php
 e612f43fc85b8406b0acb712148bae69  tests/tests/kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule_regression.php
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
 57076f462adaed80c14c9883a0779e27  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
