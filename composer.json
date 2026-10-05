@@ -10,6 +10,7 @@
         "ext-curl": "Curl provides better support for interacting with other servers, like downloading packages over SSL",
         "ext-gd": "Unless you have ImageMagic installed GD is required for Exponential to be able to manipulate images",
         "ext-mysqli": "Mysqli is the default database handler used by Exponential",
+        "mongodb/mongodb": "The MongoDB database handler (DatabaseImplementation=mongodb) connects through MongoDB\\Client from this library, on top of the PHP mongodb extension",
         "ext-openssl": "OpenSSL provides cryptographically secure random bytes, which is used in certain parts of the product to greatly improve security",
         "ext-pcntl": "If you plan to take advantage of Exponential Async publishing feature, then pcntl extension is required",
         "se7enxweb/ezsi": "ezsi would allow you to use Edge/Server Side Includes of blocks in templates",
