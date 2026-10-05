@@ -1,11 +1,11 @@
 d2b5e30a47622d50895c8df1e65cadd7  .autoloadignore
 d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 e4e94613754abb37886f57b4c7fd7914  .githooks/commit-msg
-ac5ab8e55af3e5a116d1b30f5f38e646  .githooks/pre-commit
+e30e36c2ae126310b353a45d7f6dd49c  .githooks/pre-commit
 e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 26637bf1b89fe3b8acd7153af8c24798  .github/workflows/phpunit.yml
-beaf65bc239a1154ccf13eb0d4ea7458  .github/workflows/quality.yml
+2524f078e24ca6fe33081581faaf5443  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 ccc8e89e611f0b022b2399eb9b74c1a8  .htaccess_root
 0f412f7d6d70465f93b7c8a6058a39db  .htaccess_root_static
@@ -14,7 +14,7 @@ a184ff1f4cd1fd4ec3a82e7744fd7e62  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
-daf6f35e80e4bc6bf6b188b463e8232c  Makefile
+75e66a5a923fde2db784a383d55bc1ed  Makefile
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 560e1aa278482b641bc07c21bf942c95  autoload.php
@@ -124,6 +124,8 @@ ed31211fcb692fbec099e81dd7ad0516  bin/php/velocity.php
 14bfa0b5cee12f431b6d92a595b73c63  bin/php/verify_aliases.php
 2775a68fd9ca40acad7552538898a6ed  bin/php/warm.php
 e585deb05549140b45afae417d19ab69  bin/php/webserver.php
+cdbbd361326a081d4909b7ec40357353  bin/phpcs/Exponential/Sniffs/TypeDeclarations/NoTypeDeclarationsSniff.php
+d456a5a31aa32e6f5a6ee6d720bdb4a2  bin/phpcs/Exponential/ruleset.xml
 9aa36abb0b13f1fe04f9d28a43c0cd31  bin/shell/checkcalltimeref.sh
 4444db00ccaccff0e3dfaf6cfdaac3d5  bin/shell/checkcode.sh
 3ef9e68f618348e6c30df1438f7e9eac  bin/shell/checkdbschema.sh
@@ -163,8 +165,8 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-528f3356d9c25587d712abb9857271a2  composer.dev.json
-2cb63e0dd60ce9447944bffdf50e0982  composer.dev.lock
+ba1957e08c0fb9c39a5f285ff6bbd295  composer.dev.json
+b232402202a4cbe14437ba7419db887c  composer.dev.lock
 984ec464fafc27a88a62cfc02d99d41e  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
@@ -3293,7 +3295,7 @@ cf2e7d813fabc03f01844c24a2a5448d  doc/features/6.0/platform-admin-ui-fork.md
 9e77ed427c85349ff66f9ab6e00b9206  doc/features/6.0/platform-site-bundles.md
 77b6dcb702be5b7cb2f3197dd5c1aef1  doc/features/6.0/platform-sqlite-install.md
 b87c7fd9d7a10afee71e3283bf7f4761  doc/features/6.0/preload-sites-view.md
-26f4794ee8e717e0960b931d3afdb74e  doc/features/6.0/quality-checks.md
+3556e5e8a9337616a0f38d3b29492d9b  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
@@ -6071,10 +6073,10 @@ acfe374d099f06d43a18f896956ed607  lib/ezutils/classes/ezuri.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 84e594f01e8f4f64e610fdb8eae51b19  lib/version.php
-17b83082c16bc882fdd2f8e3cab925f1  phpcs.xml.dist
+c4da43e9ca0066ed8f3d39b5d4c6193d  phpcs.xml.dist
 c88f3f90d20b8debb746a3716b82a87c  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-523b71e0b5d19d9590a27f09d1ac44d1  phpunit.xml
+d21abfe1b17647648b25567365352be7  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -6634,6 +6636,8 @@ d56115c8242b3081672f63607aa69361  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
+8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
+4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 9cde6828f4f77d4019f3949125840e6c  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
 52ce45237dc18d73206a7fb95a62e4bb  tests/tests/extension/cjw_newsletter/cjwNewsletterBounceTest.php

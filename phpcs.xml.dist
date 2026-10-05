@@ -95,4 +95,16 @@
         </properties>
     </rule>
     <rule ref="Generic.Functions.CallTimePassByReference"/>
+
+    <!-- No type declarations, as in the 6.0.15 code: no declare( strict_types=1 ),
+         no parameter, return, property or constant types. Tests may declare the
+         ": void" PHPUnit requires. The sniff is in bin/phpcs/Exponential/. -->
+    <rule ref="./bin/phpcs/Exponential/Sniffs/TypeDeclarations/NoTypeDeclarationsSniff.php"/>
+
+    <!-- PHP 8.1 is the oldest supported version: no syntax or functions of later
+         versions (readonly classes, typed constants, json_validate(), ...), and no
+         functions later versions removed or deprecate. PHPCompatibility comes with
+         the development tools (composer.dev.json). -->
+    <config name="testVersion" value="8.1-"/>
+    <rule ref="PHPCompatibility"/>
 </ruleset>
