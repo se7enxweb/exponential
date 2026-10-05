@@ -47810,8 +47810,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>If you did this, you do not need to do anything.</translation>
     </message>
     <message>
-        <source>If you did not, reset your password at once with "Forgot your password?" on the login page, and contact us.</source>
-        <translation>If you did not, reset your password at once with "Forgot your password?" on the login page, and contact us.</translation>
+        <source>If you did not, reset your password at once with "%forgot" on the login page, and contact us.</source>
+        <translation>If you did not, reset your password at once with "%forgot" on the login page, and contact us.</translation>
     </message>
 </context>
 <context>
@@ -47841,8 +47841,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>You were signed out on your other devices; sign in there again with the new password.</translation>
     </message>
     <message>
-        <source>If you did not make this change, someone else may know your password: reset it at once with "Forgot your password?" on the login page, and contact us.</source>
-        <translation>If you did not make this change, someone else may know your password: reset it at once with "Forgot your password?" on the login page, and contact us.</translation>
+        <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
+        <translation>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</translation>
     </message>
 </context>
 <context>

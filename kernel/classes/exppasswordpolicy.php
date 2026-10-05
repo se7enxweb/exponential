@@ -601,7 +601,9 @@ class expPasswordPolicy
                              array( '%login' => $user->attribute( 'login' ), '%date' => date( 'Y-m-d H:i', $time ) ) )
               . "\n\n"
               . ezpI18n::tr( 'kernel/user/password/mail', 'If you did this, you do not need to do anything.' ) . "\n"
-              . ezpI18n::tr( 'kernel/user/password/mail', 'If you did not, reset your password at once with "Forgot your password?" on the login page, and contact us.' ) . "\n";
+              . ezpI18n::tr( 'kernel/user/password/mail', 'If you did not, reset your password at once with "%forgot" on the login page, and contact us.', null,
+                             // the login page's own label (design:user/login.tpl), so the mail quotes exactly what the page says
+                             array( '%forgot' => ezpI18n::tr( 'design/standard/user', 'Forgot your password?' ) ) ) . "\n";
         $mail = new eZMail();
         $rendered = class_exists( 'expMailPreferencesService' )
             ? expMailPreferencesService::renderTemplate( 'design:user/password_changed_mail.tpl',

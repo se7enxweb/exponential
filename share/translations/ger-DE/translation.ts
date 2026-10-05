@@ -54869,8 +54869,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Wenn Sie das waren, müssen Sie nichts tun.</translation>
     </message>
     <message>
-        <source>If you did not, reset your password at once with "Forgot your password?" on the login page, and contact us.</source>
-        <translation>Wenn nicht, setzen Sie Ihr Passwort sofort mit „Passwort vergessen?“ auf der Anmeldeseite zurück und kontaktieren Sie uns.</translation>
+        <source>If you did not, reset your password at once with "%forgot" on the login page, and contact us.</source>
+        <translation>Wenn nicht, setzen Sie Ihr Passwort sofort mit „%forgot“ auf der Anmeldeseite zurück und kontaktieren Sie uns.</translation>
     </message>
 </context>
 <context>
@@ -54900,8 +54900,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Auf Ihren anderen Geräten wurden Sie abgemeldet; melden Sie sich dort mit dem neuen Passwort erneut an.</translation>
     </message>
     <message>
-        <source>If you did not make this change, someone else may know your password: reset it at once with "Forgot your password?" on the login page, and contact us.</source>
-        <translation>Wenn Sie diese Änderung nicht vorgenommen haben, kennt möglicherweise jemand anderes Ihr Passwort: Setzen Sie es sofort mit „Passwort vergessen?“ auf der Anmeldeseite zurück und kontaktieren Sie uns.</translation>
+        <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
+        <translation>Wenn Sie diese Änderung nicht vorgenommen haben, kennt möglicherweise jemand anderes Ihr Passwort: Setzen Sie es sofort mit „%forgot“ auf der Anmeldeseite zurück und kontaktieren Sie uns.</translation>
     </message>
 </context>
 <context>
