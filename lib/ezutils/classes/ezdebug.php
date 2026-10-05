@@ -268,6 +268,9 @@ class eZDebug
         if ( $type == $instance->HandleType )
             return $instance->HandleType;
 
+        // The handler eZDebug installed itself is removed here, and only that one: HANDLE_TO_PHP and HANDLE_NONE
+        // install nothing. Restoring once more for them took off the handler below eZDebug's (the application's,
+        // a persistent worker's or the test runner's), on every debug message written.
         if ( $instance->HandleType == self::HANDLE_FROM_PHP or $instance->HandleType == self::HANDLE_EXCEPTION )
             restore_error_handler();
         switch ( $type )
@@ -277,22 +280,10 @@ class eZDebug
                 set_error_handler( array( $instance, 'recursionProtectErrorHandler' ) );
             } break;
 
-            case self::HANDLE_TO_PHP:
-            {
-                restore_error_handler();
-            } break;
-
             case self::HANDLE_EXCEPTION:
             {
                 set_error_handler( array( $instance, 'exceptionErrorHandler' ) );
             } break;
-
-            case self::HANDLE_NONE:
-            {
-                // HANDLE_NONE means no PHP errors should be intercepted by eZDebug,
-                // so make sure any custom handler we installed is removed.
-                restore_error_handler();
-            }
         }
         $oldHandleType = $instance->HandleType;
         $instance->HandleType = $type;
