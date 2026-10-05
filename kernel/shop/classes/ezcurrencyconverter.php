@@ -63,22 +63,22 @@ class eZCurrencyConverter
         {
             switch ( $this->roundingType() )
             {
-                case 'EZ_CURRENCY_CONVERTER_ROUNDING_TYPE_ROUND':
+                case self::ROUNDING_TYPE_ROUND:
                 {
                     $convertedValue = $math->round( $convertedValue, $this->roundingPrecision(), $this->roundingTarget() );
                 } break;
 
-                case 'EZ_CURRENCY_CONVERTER_ROUNDING_TYPE_CEIL':
+                case self::ROUNDING_TYPE_CEIL:
                 {
                     $convertedValue = $math->ceil( $convertedValue, $this->roundingPrecision(), $this->roundingTarget() );
                 } break;
 
-                case 'EZ_CURRENCY_CONVERTER_ROUNDING_TYPE_FLOOR':
+                case self::ROUNDING_TYPE_FLOOR:
                 {
                     $convertedValue = $math->floor( $convertedValue, $this->roundingPrecision(), $this->roundingTarget() );
                 } break;
 
-                case 'EZ_CURRENCY_CONVERTER_ROUNDING_TYPE_NONE':
+                case self::ROUNDING_TYPE_NONE:
                 default:
                     break;
             }
@@ -157,15 +157,21 @@ class eZCurrencyConverter
         return $this->CurrencyList;
     }
 
+    /**
+     * The rounding type convert() applies: one of the ROUNDING_TYPE_* constants, from shop.ini
+     * [MathSettings] RoundingType (none, round, ceil or floor) unless setRoundingType() set one.
+     * An unknown setting means no rounding.
+     *
+     * @return int
+     */
     function roundingType()
     {
         if ( $this->RoundingType === null )
         {
             $ini = eZINI::instance( 'shop.ini' );
 
-            $roundingType = 'EZ_CURRENCY_CONVERTER_ROUNDING_TYPE_' . strtoupper( $ini->variable( 'MathSettings', 'RoundingType' ) );
-            if ( !defined( "self::{$roundingType}" ) )
-                $roundingType = self::ROUNDING_TYPE_NONE;
+            $constantName = 'self::ROUNDING_TYPE_' . strtoupper( (string)$ini->variable( 'MathSettings', 'RoundingType' ) );
+            $roundingType = defined( $constantName ) ? constant( $constantName ) : self::ROUNDING_TYPE_NONE;
 
             $this->setRoundingType( $roundingType );
         }
