@@ -69,35 +69,8 @@
 {* DESIGN: Header END *}</div></div>
 
 {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
-<ul class="oe-bookmarks">
-{section var=Nodes loop=$bookmark_list show=$bookmark_list}
-  <li>
-  {if $browse.ignore_nodes_select|contains($Nodes.item.node_id)|not()}
-     {if is_array($browse.class_array)}
-         {if $browse.class_array|contains($Nodes.item.node.class_identifier)}
-             <input type="{$select_type}" name="{$select_name}[]" value="{$Nodes.item.node[$select_attribute]}" />
-         {else}
-             &nbsp;
-         {/if}
-     {else}
-         <input type="{$select_type}" name="{$select_name}[]" value="{$Nodes.item.node[$select_attribute]}" />
-     {/if}
-  {else}
-      &nbsp;
-  {/if}
+{include uri='design:content/bookmark_tree.tpl' mode='browse' browse=$browse select_name=$select_name select_type=$select_type select_attribute=$select_attribute}
 
-   {if $browse.ignore_nodes_click|contains( $Nodes.item.node_id )|not}
-        {if $Nodes.item.node.is_container}
-            {$Nodes.item.node.class_identifier|class_icon( small, $Nodes.item.node.class_name )}&nbsp;<a href={concat( '/content/browse/', $Nodes.item.node_id )|ezurl}>{$Nodes.item.name|wash}</a>
-        {else}
-            {$Nodes.item.node.class_identifier|class_icon( small, $Nodes.item.node.class_name )}&nbsp;{$Nodes.item.name|wash}
-        {/if}
-    {else}
-        {$Nodes.item.node.class_identifier|class_icon( small, $Nodes.item.node.class_name )}&nbsp;{$Nodes.item.name|wash}
-    {/if}
-    </li>
-{/section}
-</ul>
 {* DESIGN: Content END *}</div></div></div>
 </div>
 {/section}

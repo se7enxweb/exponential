@@ -1838,6 +1838,130 @@
         <source>My bookmarks (%bookmark_count)</source>
         <translation>Meine Lesezeichen (%bookmark_count)</translation>
     </message>
+    <message>
+        <source>%count bookmarks</source>
+        <translation>%count Lesezeichen</translation>
+    </message>
+    <message>
+        <source>Also delete the bookmarks and folders inside</source>
+        <translation>Auch die Lesezeichen und Ordner darin löschen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Alle zuklappen</translation>
+    </message>
+    <message>
+        <source>Create folder</source>
+        <translation>Ordner anlegen</translation>
+    </message>
+    <message>
+        <source>Delete folder</source>
+        <translation>Ordner löschen</translation>
+    </message>
+    <message>
+        <source>Delete the folder "%name"? Its bookmarks and folders move up one level. No bookmark is deleted.</source>
+        <translation>Den Ordner "%name" löschen? Seine Lesezeichen und Ordner rücken eine Ebene nach oben. Es wird kein Lesezeichen gelöscht.</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <source>Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.</source>
+        <translation>Ein Lesezeichen oder einen Ordner auf einen Ordner ziehen, um ihn zu verschieben; die Schaltflächen tun dasselbe mit der Tastatur.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Alle aufklappen</translation>
+    </message>
+    <message>
+        <source>Folder name</source>
+        <translation>Ordnername</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Ordner</translation>
+    </message>
+    <message>
+        <source>Folders</source>
+        <translation>Ordner</translation>
+    </message>
+    <message>
+        <source>In folder</source>
+        <translation>In Ordner</translation>
+    </message>
+    <message>
+        <source>Move bookmark</source>
+        <translation>Lesezeichen verschieben</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Nach unten</translation>
+    </message>
+    <message>
+        <source>Move folder</source>
+        <translation>Ordner verschieben</translation>
+    </message>
+    <message>
+        <source>Move selected to</source>
+        <translation>Auswahl verschieben nach</translation>
+    </message>
+    <message>
+        <source>Move selected</source>
+        <translation>Auswahl verschieben</translation>
+    </message>
+    <message>
+        <source>Move to</source>
+        <translation>Verschieben nach</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Nach oben</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Verschieben</translation>
+    </message>
+    <message>
+        <source>New folder</source>
+        <translation>Neuer Ordner</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Neuer Name</translation>
+    </message>
+    <message>
+        <source>No bookmarks match.</source>
+        <translation>Keine Lesezeichen gefunden.</translation>
+    </message>
+    <message>
+        <source>Open or close the folder</source>
+        <translation>Ordner öffnen oder schließen</translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation>Ordner umbenennen</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Umbenennen</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Search bookmarks</source>
+        <translation>Lesezeichen suchen</translation>
+    </message>
+    <message>
+        <source>Top level</source>
+        <translation>Oberste Ebene</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -45745,6 +45869,66 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <source>Edit several items</source>
         <translation>Mehrere Elemente bearbeiten</translation>
     </message>
+    <message>
+        <source>The folder "%name" was created.</source>
+        <translation>Der Ordner "%name" wurde angelegt.</translation>
+    </message>
+    <message>
+        <source>The folder could not be created: it needs a name and an existing parent folder.</source>
+        <translation>Der Ordner konnte nicht angelegt werden: Er braucht einen Namen und einen vorhandenen übergeordneten Ordner.</translation>
+    </message>
+    <message>
+        <source>The folder was renamed to "%name".</source>
+        <translation>Der Ordner heißt jetzt "%name".</translation>
+    </message>
+    <message>
+        <source>The folder could not be renamed: it needs a name.</source>
+        <translation>Der Ordner konnte nicht umbenannt werden: Er braucht einen Namen.</translation>
+    </message>
+    <message>
+        <source>The folder does not exist.</source>
+        <translation>Der Ordner existiert nicht.</translation>
+    </message>
+    <message>
+        <source>The folder "%name" and everything in it were deleted.</source>
+        <translation>Der Ordner "%name" und alles darin wurde gelöscht.</translation>
+    </message>
+    <message>
+        <source>The folder "%name" was deleted, its bookmarks and folders moved up one level.</source>
+        <translation>Der Ordner "%name" wurde gelöscht, seine Lesezeichen und Ordner sind eine Ebene nach oben gerückt.</translation>
+    </message>
+    <message>
+        <source>Moved %count bookmark(s).</source>
+        <translation>%count Lesezeichen verschoben.</translation>
+    </message>
+    <message>
+        <source>Nothing was moved: choose a bookmark and one of your folders.</source>
+        <translation>Es wurde nichts verschoben: Wählen Sie ein Lesezeichen und einen Ihrer Ordner.</translation>
+    </message>
+    <message>
+        <source>The folder was moved.</source>
+        <translation>Der Ordner wurde verschoben.</translation>
+    </message>
+    <message>
+        <source>The folder cannot be moved there: not into itself or into a folder below it.</source>
+        <translation>Der Ordner kann dorthin nicht verschoben werden: nicht in sich selbst und nicht in einen Ordner darunter.</translation>
+    </message>
+    <message>
+        <source>The order was saved.</source>
+        <translation>Die Reihenfolge wurde gespeichert.</translation>
+    </message>
+    <message>
+        <source>The entry was moved.</source>
+        <translation>Der Eintrag wurde verschoben.</translation>
+    </message>
+    <message>
+        <source>It cannot be moved there: not into itself or into a folder below it.</source>
+        <translation>Er kann dorthin nicht verschoben werden: nicht in sich selbst und nicht in einen Ordner darunter.</translation>
+    </message>
+    <message>
+        <source>Unknown bookmark action.</source>
+        <translation>Unbekannte Lesezeichen-Aktion.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content/copysubtree</name>
@@ -46136,6 +46320,16 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Audit</source>
         <comment>Navigation part</comment>
         <translation>Audit</translation>
+    </message>
+    <message>
+        <source>Syndication</source>
+        <comment>Navigation part</comment>
+        <translation>Syndication</translation>
+    </message>
+    <message>
+        <source>CIE</source>
+        <comment>Navigation part</comment>
+        <translation>CIE</translation>
     </message>
 </context>
 <context>

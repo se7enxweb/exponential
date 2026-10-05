@@ -1631,6 +1631,130 @@
         <source>My bookmarks (%bookmark_count)</source>
         <translation>My bookmarks (%bookmark_count)</translation>
     </message>
+    <message>
+        <source>%count bookmarks</source>
+        <translation>%count bookmarks</translation>
+    </message>
+    <message>
+        <source>Also delete the bookmarks and folders inside</source>
+        <translation>Also delete the bookmarks and folders inside</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Collapse all</translation>
+    </message>
+    <message>
+        <source>Create folder</source>
+        <translation>Create folder</translation>
+    </message>
+    <message>
+        <source>Delete folder</source>
+        <translation>Delete folder</translation>
+    </message>
+    <message>
+        <source>Delete the folder "%name"? Its bookmarks and folders move up one level. No bookmark is deleted.</source>
+        <translation>Delete the folder "%name"? Its bookmarks and folders move up one level. No bookmark is deleted.</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Delete</translation>
+    </message>
+    <message>
+        <source>Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.</source>
+        <translation>Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Expand all</translation>
+    </message>
+    <message>
+        <source>Folder name</source>
+        <translation>Folder name</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Folder</translation>
+    </message>
+    <message>
+        <source>Folders</source>
+        <translation>Folders</translation>
+    </message>
+    <message>
+        <source>In folder</source>
+        <translation>In folder</translation>
+    </message>
+    <message>
+        <source>Move bookmark</source>
+        <translation>Move bookmark</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Move down</translation>
+    </message>
+    <message>
+        <source>Move folder</source>
+        <translation>Move folder</translation>
+    </message>
+    <message>
+        <source>Move selected to</source>
+        <translation>Move selected to</translation>
+    </message>
+    <message>
+        <source>Move selected</source>
+        <translation>Move selected</translation>
+    </message>
+    <message>
+        <source>Move to</source>
+        <translation>Move to</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Move up</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Move</translation>
+    </message>
+    <message>
+        <source>New folder</source>
+        <translation>New folder</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>New name</translation>
+    </message>
+    <message>
+        <source>No bookmarks match.</source>
+        <translation>No bookmarks match.</translation>
+    </message>
+    <message>
+        <source>Open or close the folder</source>
+        <translation>Open or close the folder</translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation>Rename folder</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Rename</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Search bookmarks</source>
+        <translation>Search bookmarks</translation>
+    </message>
+    <message>
+        <source>Top level</source>
+        <translation>Top level</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -38900,6 +39024,66 @@ your account.</translation>
         <source>Edit several items</source>
         <translation>Edit several items</translation>
     </message>
+    <message>
+        <source>The folder "%name" was created.</source>
+        <translation>The folder "%name" was created.</translation>
+    </message>
+    <message>
+        <source>The folder could not be created: it needs a name and an existing parent folder.</source>
+        <translation>The folder could not be created: it needs a name and an existing parent folder.</translation>
+    </message>
+    <message>
+        <source>The folder was renamed to "%name".</source>
+        <translation>The folder was renamed to "%name".</translation>
+    </message>
+    <message>
+        <source>The folder could not be renamed: it needs a name.</source>
+        <translation>The folder could not be renamed: it needs a name.</translation>
+    </message>
+    <message>
+        <source>The folder does not exist.</source>
+        <translation>The folder does not exist.</translation>
+    </message>
+    <message>
+        <source>The folder "%name" and everything in it were deleted.</source>
+        <translation>The folder "%name" and everything in it were deleted.</translation>
+    </message>
+    <message>
+        <source>The folder "%name" was deleted, its bookmarks and folders moved up one level.</source>
+        <translation>The folder "%name" was deleted, its bookmarks and folders moved up one level.</translation>
+    </message>
+    <message>
+        <source>Moved %count bookmark(s).</source>
+        <translation>Moved %count bookmark(s).</translation>
+    </message>
+    <message>
+        <source>Nothing was moved: choose a bookmark and one of your folders.</source>
+        <translation>Nothing was moved: choose a bookmark and one of your folders.</translation>
+    </message>
+    <message>
+        <source>The folder was moved.</source>
+        <translation>The folder was moved.</translation>
+    </message>
+    <message>
+        <source>The folder cannot be moved there: not into itself or into a folder below it.</source>
+        <translation>The folder cannot be moved there: not into itself or into a folder below it.</translation>
+    </message>
+    <message>
+        <source>The order was saved.</source>
+        <translation>The order was saved.</translation>
+    </message>
+    <message>
+        <source>The entry was moved.</source>
+        <translation>The entry was moved.</translation>
+    </message>
+    <message>
+        <source>It cannot be moved there: not into itself or into a folder below it.</source>
+        <translation>It cannot be moved there: not into itself or into a folder below it.</translation>
+    </message>
+    <message>
+        <source>Unknown bookmark action.</source>
+        <translation>Unknown bookmark action.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content/copysubtree</name>
@@ -39256,6 +39440,16 @@ You will need to change the class of the node by using the swap functionality.</
         <source>CJW Newsletter</source>
         <comment>Navigation part</comment>
         <translation>CJW Newsletter</translation>
+    </message>
+    <message>
+        <source>Syndication</source>
+        <comment>Navigation part</comment>
+        <translation>Syndication</translation>
+    </message>
+    <message>
+        <source>CIE</source>
+        <comment>Navigation part</comment>
+        <translation>CIE</translation>
     </message>
 </context>
 <context>

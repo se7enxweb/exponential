@@ -1,0 +1,72 @@
+/* The bookmark tree (design:content/bookmark_tree.tpl): the bookmark page, the Bookmarks box and the browse dialog.
+   Colours come from the admin4 tokens when they exist and fall back to neutral values elsewhere. */
+
+.exp-bm-tree { list-style: none; margin: 0; padding: 0; }
+.exp-bm-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25em 0.5em; padding: 0.2em 0.3em;
+  padding-inline-start: calc(0.3em + var(--d, 0) * 1.15em); border-radius: var(--a4-radius-s, 6px); line-height: 1.35; position: relative; }
+.exp-bm-row[hidden] { display: none; }
+.exp-bm-row:hover { background: var(--a4-soft, rgba(127, 127, 127, 0.10)); }
+.exp-bm-folder-name { font-weight: 600; }
+.exp-bm-count { font-size: 0.8em; padding: 0 0.5em; border-radius: 99px; background: var(--a4-orange-soft, rgba(127, 127, 127, 0.18)); color: var(--a4-ink, inherit); }
+.exp-bm-toggle { width: 1.5em; height: 1.5em; padding: 0; border: 0; background: none; cursor: pointer; color: inherit; flex: none; }
+.exp-bm-toggle span { display: inline-block; width: 0; height: 0; border-style: solid; border-width: 0.32em 0.28em 0 0.28em;
+  border-color: currentColor transparent transparent transparent; transition: transform .12s; }
+.exp-bm-folder[aria-expanded="false"] .exp-bm-toggle span { transform: rotate(-90deg); }
+.exp-bm-toggle:focus-visible, .exp-bm-act:focus-visible { outline: 2px solid var(--a4-orange, #f26a21); outline-offset: 1px; }
+.exp-bm-indent { display: inline-block; width: 1.5em; flex: none; }
+.exp-bm-meta { color: var(--a4-muted, #777); font-size: 0.85em; }
+.exp-bm-link { word-break: break-word; }
+.exp-bm-actions { margin-inline-start: auto; display: inline-flex; flex-wrap: wrap; gap: 0.25em; opacity: 0.0; transition: opacity .1s; }
+.exp-bm-row:hover .exp-bm-actions, .exp-bm-row:focus-within .exp-bm-actions { opacity: 1; }
+@media (hover: none) { .exp-bm-actions { opacity: 1; } }
+.exp-bm-act { font: inherit; font-size: 0.8em; padding: 0.1em 0.6em; border: 1px solid var(--a4-line, #ccc); border-radius: var(--a4-radius-s, 6px);
+  background: var(--a4-card-bg, #fff); color: var(--a4-ink, inherit); cursor: pointer; text-decoration: none; }
+.exp-bm-act:hover { border-color: var(--a4-orange, #f26a21); }
+.exp-bm-danger:hover { color: #b3261e; border-color: #b3261e; }
+
+/* sidebar */
+.exp-bm-scroll { max-height: 60vh; overflow: auto; }
+.exp-bm-sidebar .exp-bm-row { flex-wrap: nowrap; padding-block: 0.1em; font-size: 0.95em; }
+.exp-bm-sidebar .exp-bm-link { overflow: hidden; text-overflow: ellipsis; }
+.exp-bm-add-folder { max-width: 100%; margin-bottom: 0.4em; }
+
+/* page */
+.exp-bm-toolbar { display: flex; flex-wrap: wrap; gap: 0.5em; align-items: center; margin-bottom: 0.6em; }
+.exp-bm-search input { min-width: 14em; }
+.exp-bm-hint { color: var(--a4-muted, #777); font-size: 0.9em; margin: 0 0 0.5em; }
+.exp-bm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.exp-bm-root-drop { display: none; border: 2px dashed var(--a4-line, #ccc); border-radius: var(--a4-radius-s, 6px); padding: 0.35em 0.7em; margin-bottom: 0.5em; font-size: 0.9em; color: var(--a4-muted, #777); }
+.exp-bm-dragging .exp-bm-root-drop { display: block; }
+.exp-bm-over, .exp-bm-root-drop.exp-bm-over { outline: 2px solid var(--a4-orange, #f26a21); background: var(--a4-orange-soft, rgba(242, 106, 33, .12)); }
+.exp-bm-before { box-shadow: 0 -2px 0 var(--a4-orange, #f26a21); }
+.exp-bm-dragged { opacity: .45; }
+.exp-bm-page .exp-bm-row[draggable="true"] { cursor: grab; }
+.exp-bm-nomatch { color: var(--a4-muted, #777); }
+.exp-bm-match > .exp-bm-link, .exp-bm-match > a.exp-bm-link { background: var(--a4-orange-soft, rgba(242, 106, 33, .2)); }
+.exp-bm-move-selected { margin-top: .5em; }
+
+/* JavaScript only / no JavaScript only */
+.exp-bm-js { display: none; }
+html.exp-bm-has-js .exp-bm-js { display: revert; }
+html.exp-bm-has-js .exp-bm-actions.exp-bm-js, html.exp-bm-has-js .exp-bm-toolbar.exp-bm-js { display: inline-flex; }
+html.exp-bm-has-js .exp-bm-toolbar.exp-bm-js { display: flex; }
+html.exp-bm-has-js .exp-bm-nojs { display: none; }
+html.exp-bm-has-js .exp-bm-actions > .exp-bm-js { display: inline-flex; gap: .25em; }
+
+/* the dialog */
+.exp-bm-dialog { border: 1px solid var(--a4-line, #ccc); border-radius: var(--a4-radius, 12px); padding: 1.2em 1.4em; max-width: min(32em, 92vw);
+  background: var(--a4-card-bg, #fff); color: var(--a4-ink, #222); box-shadow: 0 20px 60px rgba(0, 0, 0, .35); }
+.exp-bm-dialog::backdrop { background: rgba(16, 24, 40, .45); }
+.exp-bm-dialog h2 { margin-top: 0; font-size: 1.15em; }
+.exp-bm-dialog label { display: block; margin: .6em 0; }
+.exp-bm-dialog input[type="text"], .exp-bm-dialog select { width: 100%; box-sizing: border-box; }
+.exp-bm-dialog [hidden] { display: none !important; }
+.exp-bm-d-buttons { display: flex; justify-content: flex-end; gap: .5em; margin-top: 1em; }
+.exp-bm-d-buttons .exp-bm-danger-ok { background: #b3261e; color: #fff; border-color: #b3261e; }
+
+@media (max-width: 640px) {
+  .exp-bm-row { padding-block: 0.45em; }
+  .exp-bm-actions { opacity: 1; width: 100%; margin-inline-start: 0; padding-inline-start: 1.6em; }
+  .exp-bm-act { padding: 0.35em 0.8em; font-size: 0.9em; }
+  .exp-bm-search input { min-width: 0; width: 100%; }
+}

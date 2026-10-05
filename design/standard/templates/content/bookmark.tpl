@@ -29,62 +29,13 @@
   {/if}
 {/section}
 
-<table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">
-<tr>
-    <th width="1">
-    </th>
-    <th width="69%">
-        {"Name"|i18n("design/standard/content/view")}
-    </th>
-    <th width="30%">
-        {"Class"|i18n("design/standard/content/view")}
-    </th>
-    <th width="30%">
-        {"Section"|i18n("design/standard/content/view")}
-    </th>
-    {if $can_edit}
-        <th width="1">
-             {'Edit'|i18n('design/standard/content/view')}
-        </th>
-    {/if}
-</tr>
-
-{section name=Bookmark loop=$bookmark_list sequence=array(bgdark,bglight)}
-<tr class="{$:sequence}">
-    <td align="left">
-        <input type="checkbox" name="DeleteIDArray[]" value="{$:item.id}" />
-    </td>
-
-    <td>
-        <a href={concat("/content/view/full/",$:item.node_id,"/")|ezurl}>{$:item.node.object.content_class.identifier|class_icon( small, $:item.node.object.content_class.name )}&nbsp;{$:item.node.name|wash}</a>
-    </td>
-
-    <td>
-        {$:item.node.object.content_class.name|wash}
-    </td>
-
-    <td>
-        {$:item.node.object.section_id}
-    </td>
-
-    {if $can_edit}
-        <td width="1">
-            {if $:item.node.object.can_edit}
-                <a href={concat("content/edit/",$:item.node.contentobject_id)|ezurl}><img src={"edit.gif"|ezimage} alt="{'Edit'|i18n('design/standard/content/view')}" /></a>
-            {/if}
-        </td>
-    {/if}
-</tr>
-{/section}
-
-<tr>
-    <td align="left">
-        <input type="image" name="RemoveButton" value="{'Remove'|i18n('design/standard/content/view')}" src={"trash.png"|ezimage} alt="{'Remove'|i18n('design/standard/content/view')}" />
-    </td>
-    <td colspan="3">
-    </td>
-</tr>
-</table>
+{if is_set( $bookmark_notice )}
+<div class="{if eq( $bookmark_notice.level, 'error' )}warning{else}feedback{/if}"><h2>{$bookmark_notice.text|wash}</h2></div>
+{/if}
+<div class="exp-bm-page" data-exp-bm-page="1">
+{include uri='design:content/bookmark_tree.tpl' mode='page'}
+</div>
+<div class="buttonblock"><input type="image" name="RemoveButton" value="{'Remove'|i18n('design/standard/content/view')}" src={"trash.png"|ezimage} alt="{'Remove'|i18n('design/standard/content/view')}" /></div>
 {*{include name=navigator
          uri='design:navigator/google.tpl'
          page_uri='/content/draft'
@@ -106,6 +57,8 @@
 
 
 </form>
+
+{include uri='design:content/bookmark_folder_forms.tpl' folders=fetch( 'content', 'bookmark_folders', hash() )}
 
 {/let}
 

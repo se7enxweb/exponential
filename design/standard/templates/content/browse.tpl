@@ -3,6 +3,7 @@
      page_limit=15
      browse_list_count=fetch(content,list_count,hash(parent_node_id,$node_id,depth,1))
      bookmark_list=fetch('content','bookmarks',array())
+     bookmark_rows=fetch('content','bookmark_rows',hash())
      recent_list=fetch('content','recent',array())
 
      select_name='SelectedObjectIDArray'
@@ -202,27 +203,30 @@
             </th>
         </tr>
 
-        {section name=Bookmark loop=$bookmark_list show=$bookmark_list sequence=array(bgdark,bglight)}
+        {section name=Bookmark loop=$bookmark_rows show=$bookmark_rows sequence=array(bgdark,bglight)}
+        {if eq( $:item.type, 'folder' )}
+        <tr class="{$:sequence}"><td colspan="2" style="padding-left: {$:item.depth|mul( 12 )|sum( 4 )}px"><strong>{$:item.name|wash}</strong> ({$:item.count})</td></tr>
+        {else}
         <tr class="{$:sequence}">
             <td width="1">
             {if and( or( $browse.permission|not,
                                    cond( is_set( $browse.permission.contentclass_id ),
                                          fetch( content, access,
                                                 hash( access, $browse.permission.access,
-                                                      contentobject, $:item.node,
+                                                      contentobject, $:item.bookmark.node,
                                                       contentclass_id, $browse.permission.contentclass_id ) ),
                                          fetch( content, access,
                                                 hash( access, $browse.permission.access,
-                                                      contentobject, $:item.node ) ) ) ),
-                               $browse.ignore_nodes_select|contains( $:item.node_id )|not() )}
+                                                      contentobject, $:item.bookmark.node ) ) ) ),
+                               $browse.ignore_nodes_select|contains( $:item.bookmark.node_id )|not() )}
               {if is_array($browse.class_array)}
-                {if $browse.class_array|contains($:item.object.content_class.identifier)}
-                  <input type="{$select_type}" name="{$select_name}[]" value="{$:item.node[$select_attribute]}" />
+                {if $browse.class_array|contains($:item.bookmark.object.content_class.identifier)}
+                  <input type="{$select_type}" name="{$select_name}[]" value="{$:item.bookmark.node[$select_attribute]}" />
                 {else}
                   &nbsp;
                 {/if}
               {else}
-                <input type="{$select_type}" name="{$select_name}[]" value="{$:item.node[$select_attribute]}" />
+                <input type="{$select_type}" name="{$select_name}[]" value="{$:item.bookmark.node[$select_attribute]}" />
               {/if}
             {else}
               &nbsp;
@@ -230,11 +234,12 @@
             </td>
 
             <td>
-                {node_view_gui view=line content_node=$:item.node
-                               node_url=cond( eq( $:item.node_id, $main_node.node_id ), false(),
-                                              $browse.ignore_nodes_click|contains( $:item.node_id )|not(), concat( 'content/browse/', $:item.node_id, '/' ), false() )}
+                {node_view_gui view=line content_node=$:item.bookmark.node
+                               node_url=cond( eq( $:item.bookmark.node_id, $main_node.node_id ), false(),
+                                              $browse.ignore_nodes_click|contains( $:item.bookmark.node_id )|not(), concat( 'content/browse/', $:item.bookmark.node_id, '/' ), false() )}
             </td>
         </tr>
+        {/if}
         {section-else}
         <tr>
             <td colspan="2">
