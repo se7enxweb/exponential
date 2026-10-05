@@ -2639,7 +2639,7 @@ fc69e6c36c5c24e806f6b99e5ee6f627  design/standard/templates/workflow/run.tpl
 a77770f8eb83d01e998509fa154d877f  design/standard/templates/workflow/view.tpl
 fdad1c71f524d82a51eb60607a767397  design/standard/templates/workflow/workflowlist.tpl
 bd3d93f01abdf7f10a98c56195094ac4  design/standard/templates/workflow/workflowtypes.tpl
-ec5c345e350f65f69817483256d07939  doc/INSTALL.md
+1dc6735f1e9442515e0e046f15ba01ec  doc/INSTALL.md
 18eb180621655795c488a99d85dd26f0  doc/bc/4.1/changes-4.1.0.txt
 23d0e20abd1918e03ad0770ee403ff66  doc/bc/4.2/changes-4.2.0.txt
 21caf491f15ecab82c5915c46c526f3c  doc/bc/4.3/changes-4.3.0.txt
@@ -2697,7 +2697,7 @@ de93c492b3a2fa49ea08a89471fc968a  doc/bc/6.0/opml.md
 75a67bb0f4324d3575fb035e71b42a79  doc/bc/6.0/pagination-settings.md
 6322f7b35a71418c2d496b5dfc25b319  doc/bc/6.0/pdf-export.md
 4eb26aa83f26bb69480df0792bff5fba  doc/bc/6.0/phar.md
-891a8d68617281d8955c922a59c94216  doc/bc/6.0/php-8.0-support.md
+f35929a1be5818e291046de02d270a78  doc/bc/6.0/php-8.0-support.md
 ca5f17a9a9ef326c2f0ec94e686df727  doc/bc/6.0/php8.md
 17a4aa7ba8351f6dde162cf39f2d7840  doc/bc/6.0/phpunitv10.md
 ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
