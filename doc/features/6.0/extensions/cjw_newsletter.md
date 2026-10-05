@@ -195,6 +195,31 @@ each with a one line description shown by the console list; behaviour, `--help` 
 codes are unchanged. See
 [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md).
 
+### The features of 4.2.0
+
+4.2.0 (5 October 2026) takes over what the old eznewsletter extension could do and works through the
+[e-mail preferences](../mail-preferences.md) of 6.0.15 instead of keeping a system of its own. The extension's own
+guides describe each area; they are in its `doc/` folder (`extension/cjw_newsletter/doc/`), indexed by `doc/README.md`:
+
+| Area | What it adds | Guide |
+|---|---|---|
+| Deliverability | Hard bounces and complaints on the suppression list, retries of soft bounces, rate limits and batches, test groups, subscribe and unsubscribe by e-mail, the suppression import | [deliverability.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/deliverability.md) |
+| Editorial | Recurring sends, article pools and the picker, the approval of editions in the collaboration inbox | [editorial.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/editorial.md) |
+| Rendering | Placeholders, the newsletter condition, interests, one edition in several languages, three new skins, plain text views, the preview as a subscriber | [rendering.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/rendering.md) |
+| Statistics | Opens and clicks per person only with the consent "Newsletter statistics", anonymous totals otherwise, reports, A/B subject tests | [statistics.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/statistics.md) |
+| SMS | Newsletters by SMS through a provider-neutral transport, the code double opt-in, STOP | [sms.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/sms.md) |
+| Import, export, migration | The CSV import with a column mapping, the subscriber export, `ext:cjw_newsletter:import-eznewsletter` | [importexport.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/importexport.md) |
+
+An installation of 4.1 runs the database update of its engine, `./console ext:cjw_newsletter:translatable-fields`
+once, and clears the caches: [upgrade-4.2.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/upgrade-4.2.md).
+Tracking and SMS are off until they are switched on in `settings/override/cjw_newsletter.ini.append.php`.
+
+The kernel parts it uses: the categories "Newsletter statistics" and "Newsletters by SMS" on the central preference
+page (with their own rows through the category part hook), `erased()` of the category handlers (an erased person's
+newsletter user, interests, SMS data and per-person statistics go), `[BounceSettings] MessageListeners[]` of the bounce
+reader (bounces and mail-in), and the collaboration inbox, which shows the newsletter's approval requests as waiting,
+approved or denied.
+
 ## Related pages
 
 - [Specification: the cjw_newsletter extension](../../../specifications/6.0/cjw_newsletter.md)
