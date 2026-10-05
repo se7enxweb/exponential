@@ -2681,7 +2681,7 @@ cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
 14c4b5bce1de1987b27c6063156cb566  doc/bc/6.0/exponentialsdk-and-exponential-cron.md
 e10cce7277e955eeea8f44d4e980b757  doc/bc/6.0/extensions-behaviour-changes.md
 bb123c57c4c5ce0c7837aa827714a87c  doc/bc/6.0/ezoe-tinymce8.md
-9f738b885223976c128d6c6090106823  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
+45b12976c39d834fe55c541e4f64a33f  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 2830240c5b94103d5fc28cb3e736daba  doc/bc/6.0/frankenphp.md
 d88ed154806689c479cf5a1a70587fa5  doc/bc/6.0/hardening.md
 fca17d35cfc097ff4b57c3c5c871b55a  doc/bc/6.0/http-caching.md
@@ -2869,7 +2869,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-53c525a899467ce1c0da250729022133  doc/changelogs/6.0/6.0.15.md
+8ae7a29866898967cac403881f268064  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4719,7 +4719,7 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 f7a45290c6e4e9c95b8920ad01823d65  kernel/classes/ezcontentfunctions.php
 dba862f2c686e4e505aa22c66b3b2c9a  kernel/classes/ezcontentlanguage.php
-969dd35b80b297d8f84792f9757a51b5  kernel/classes/ezcontentobject.php
+e9c01ec761e64db2469b25fd76f2f3d0  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
@@ -5957,7 +5957,7 @@ ae4e89f48ef041b15bbcaf34c28e5a06  lib/ezpdf/classes/fonts/php_Times-BoldItalic.f
 763fd15db83587d718e62a5425cf6d6c  lib/ezpdf/classes/fonts/php_Times-Roman.font
 c491f066b55329cfac1484004644acf4  lib/ezpdf/classes/fonts/php_ZapfDingbats.font
 67e4f7c5d1c56ffabf7e14e4d17b5865  lib/ezpublishsdk.php
-f80543753e16d1ef6db6a069b5b2e045  lib/ezsession/classes/ezpsessionhandler.php
+8e993491245351149d793a01f85f0178  lib/ezsession/classes/ezpsessionhandler.php
 77942f9de2529def609095e038d94a05  lib/ezsession/classes/ezpsessionhandlerdb.php
 61ce52dbf3abdda928d0491e36033258  lib/ezsession/classes/ezpsessionhandlerphp.php
 64646af1921464f785521bc911d8eb97  lib/ezsession/classes/ezpsessionhandlersymfony.php
@@ -6804,7 +6804,7 @@ d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItem
 edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsTest.php
 3391b6094e41c01c2e3ef953b1fbef3a  tests/tests/kernel/classes/eZContentObjectStateGroupTest.php
 a8745a8d6011fe2c7fcfe4c0413a61ce  tests/tests/kernel/classes/eZContentObjectStateTest.php
-0868182316348910a858a9a952ca58d3  tests/tests/kernel/classes/eZContentObjectTest.php
+32155f787d689defbf5a856249e6b47f  tests/tests/kernel/classes/eZContentObjectTest.php
 c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTreeNodeTest.php
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
 ae5b1048f8e08ec7094ae01547fdcee1  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
@@ -7274,7 +7274,7 @@ d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
 8c85befbff3ccee276d033abc3ac38ef  tests/tests/lib/ezimage/suite.php
 ee1781006858e40da837447e9667f887  tests/tests/lib/ezlocale/ezlocale_regression.php
 b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
-c366152fb4373e3f901a708d42824028  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
+b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
 09f4e7badeb7acb1d70c587a912b48f2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
 62590e69192025ffa6ffcce972f687d0  tests/tests/lib/ezsoap/ezsoapclient_test.php

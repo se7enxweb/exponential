@@ -243,6 +243,47 @@ class eZContentObjectTest extends ezpDatabaseTestCase
     }
 
     /**
+     * eZContentObject::relatedObjects() sorted by class name.
+     *
+     * The sorting joins the class names on ezcontentclass.id; with ezcontentclass anywhere
+     * but last in the FROM list, MySQL and PostgreSQL refused the query with "Unknown column
+     * 'ezcontentclass.id' in 'on clause'" (PostgreSQL: "invalid reference to FROM-clause entry").
+     */
+    public function testRelatedObjectsSortedByClassName()
+    {
+        // Outside a web request nobody sets the module paths, and without them the publish
+        // operation finds no definition and leaves the objects as drafts.
+        eZModule::setGlobalPathList( eZModule::activeModuleRepositories() );
+
+        $folder = new ezpObject( 'folder', 2 );
+        $folder->name = "Related folder for " . __FUNCTION__;
+        $folder->publish();
+
+        $article = new ezpObject( 'article', 2 );
+        $article->title = "Related article for " . __FUNCTION__;
+        $article->publish();
+
+        $object = new ezpObject( 'article', 2 );
+        $object->title = __FUNCTION__;
+        $object->publish();
+        $object->addContentObjectRelation( $folder->attribute( 'id' ) );
+        $object->addContentObjectRelation( $article->attribute( 'id' ) );
+
+        $contentObject = eZContentObject::fetch( $object->attribute( 'id' ) );
+        $relatedObjects = $contentObject->relatedObjects(
+            false, false, 0, false,
+            array( 'SortBy' => array( 'class_name', true ) )
+        );
+
+        $this->assertCount( 2, $relatedObjects );
+        $this->assertEquals(
+            array( $article->attribute( 'id' ), $folder->attribute( 'id' ) ),
+            array( $relatedObjects[0]->attribute( 'id' ), $relatedObjects[1]->attribute( 'id' ) ),
+            "Related objects are not sorted by class name (Article before Folder)"
+        );
+    }
+
+    /**
      * Unit test for {@link eZContentObject::fetchByNodeID()}
      */
     public function testFetchByNodeIDAsObject()
