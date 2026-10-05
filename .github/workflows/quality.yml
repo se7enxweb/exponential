@@ -117,6 +117,34 @@ jobs:
       - name: PHPStan (only findings missing from phpstan-baseline.neon fail)
         run: .devtools/vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=4G --no-progress
 
+  sniffs:
+    name: Code style sniff tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # The project's PHPUnit needs PHP 8.4.1 or later
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, tokenizer
+          coverage: none
+          tools: composer:v2
+
+      - name: Cache development tools
+        uses: actions/cache@v4
+        with:
+          path: .devtools/vendor
+          key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
+
+      - name: Install dependencies and development tools
+        run: |
+          composer update --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=ext-mongodb
+          COMPOSER=composer.dev.json composer install --no-interaction --no-progress
+
       - name: Tests of the code style sniffs (bin/phpcs/)
         run: vendor/bin/phpunit --testsuite quality --no-coverage
 
