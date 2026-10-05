@@ -25,6 +25,14 @@ Ibexa DXP) appear only where they identify the system a site comes from or goes 
 - [17.10 Glossary of renamed concepts](#1710-glossary-of-renamed-concepts)
 - [References](#references)
 
+How to use it: start from the chapter of your path ([14](14-migrating-from-4x.md) for 4.x,
+[15](15-migrating-from-5x-legacy.md) for the 5.x stack, [16](16-migrating-from-ez-platform-and-ibexa.md) for eZ
+Platform and Ibexa) and come here when a step needs a name. Before any move, run the checks of
+[17.8](#178-data-checks-before-migrating) on a copy of the database: they find the data the other side will refuse,
+while it is still cheap to fix. For a move to the platform the datatype table of [17.3](#173-datatypes-and-field-types)
+decides what has to be converted; for a move to Exponential the "Ibexa 4.6" and "Ibexa 5" columns of
+[17.2](#172-database-schema-reference) tell you which of your tables Exponential reads and which it ignores.
+
 ## 17.1 How the tables were verified
 
 Every name in this chapter was checked against code or data, in one of these places:
@@ -36,9 +44,8 @@ Every name in this chapter was checked against code or data, in one of these pla
 | The Ibexa 5 media-site reference installation used to port the media site (read-only) | The `ibexa_*` table names and columns, the field type identifiers stored in its content, the password hash type in use, the image path layout, and real `ibexa.yaml` siteaccess, image variation, DFS and HTTP cache configuration |
 | The vendor's migration pages and field type reference ([References](#references)) | The documented field type mapping, the unsupported field types, custom tag attribute types and the common post-migration issues |
 
-The reference database was read only through
-`python3 ai/bin/one/nexus-sqlite-query-select-generic.py`, which opens it in read-only mode and accepts only `SELECT`,
-`WITH` and `PRAGMA`. Anything that could not be checked in one of those places is marked **(not verified here)**.
+The reference database (SQLite) was opened read-only and queried with `SELECT` statements only. Anything that could
+not be checked in one of those places is marked **(not verified here)**.
 
 Ibexa DXP 4.6 still uses the legacy table names (`ezcontentobject`, `ezuser` ...) and the legacy field type
 identifiers (`ezstring`, `ezimage` ...). The Ibexa 5 database renames both: tables become `ibexa_*` with some columns
@@ -251,8 +258,11 @@ Extension datatypes found in this installation:
   the platform; content is converted with `ezxmltext:convert-to-richtext` from `ezsystems/ezplatform-xmltext-fieldtype`
   (options `--dry-run`, `--export-dir`, `--export-dir-filter`, `--image-content-types`, `--concurrency`). RichText
   validates more strictly than XmlText, so run the dry run first. No such converter exists in this repository, in
-  either direction; Exponential renders imported DocBook in `kernel/classes/datatypes/ezxmltext/ezxmloutputhandler.php`
-  and in `extension/explayouts` but does not store it.
+  either direction; Exponential renders the DocBook elements `ezembed`, `para` and `literallayout` when they occur in
+  imported `ezxmltext` (`kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php`), which keeps such
+  text readable but does not convert it. The element mapping for a conversion of your own is in
+  [15.8](15-migrating-from-5x-legacy.md#158-field-types-against-datatypes) and
+  [16.6.3](16-migrating-from-ez-platform-and-ibexa.md#1663-field-types).
 - **Custom tags.** Custom tag attribute types of the online editor (`extension/ezoe/design/standard/templates/ezoe/customattributes/`)
   map to RichText custom tag attribute types as the vendor documents:
 
@@ -540,7 +550,8 @@ platform, so bcrypt and Argon2 hashes fit.
 
 The platform tables have the same columns under the same names (Ibexa 4.6) or `ibexa_url_alias_ml`,
 `ibexa_url_alias_ml_incr` and `ibexa_url_wildcard` (Ibexa 5), so aliases move with the data. They are regenerated
-afterwards with `ibexa:urls:regenerate-aliases`. The slug transformation must match: Exponential's default is
+afterwards with `ibexa:urls:regenerate-aliases` (`exponential:urls:regenerate-aliases` on Exponential Platform v5,
+which registers no `ibexa:` alias). The slug transformation must match: Exponential's default is
 `urlalias` (`[URLTranslator] TransformationGroup`), the Ibexa 5 reference installation uses `urlalias_lowercase`.
 
 ### Image and file storage paths
@@ -568,8 +579,8 @@ The SQL runs on MySQL, PostgreSQL and SQLite; run it on a copy.
 | Nodes sorted by class identifier or class name, which the platform does not support | `SELECT node_id, parent_node_id, sort_field FROM ezcontentobject_tree WHERE sort_field IN (6, 7);` (6 = `SORT_FIELD_CLASS_IDENTIFIER`, 7 = `SORT_FIELD_CLASS_NAME` in `eZContentObjectTreeNode`) | Change the sort order of those nodes in the admin to name (9), published (2) or priority (8) |
 | URL aliases out of date | `php bin/php/verify_aliases.php` | `php bin/php/verify_aliases.php --fix` and `php bin/php/updateniceurls.php --update-nodes`; on the platform, `ibexa:urls:regenerate-aliases` |
 | Image paths outside the storage directory or with unusual characters | `php update/common/scripts/5.1/fiximagesoutsidevardir.php --dry-run`; `SELECT filepath FROM ezimagefile WHERE filepath NOT LIKE 'var/site/storage/%';` (use your `VarDir`) | `fiximagesoutsidevardir.php` without `--dry-run`, `update/common/scripts/5.3/recreateimagesreferences.php`; on the platform, `ezplatform:images:normalize-path` |
-| Relations with type 0 ("Unknown relation type 0") | `SELECT COUNT(*) FROM ezcontentobject_link WHERE relation_type = 0;` (valid values are 1, 2, 4, 8 and their sums) | On the platform, `ezpublish:update:legacy_storage_clean_up_relation_type_eq_zero`; in Exponential, `update/common/scripts/5.4/cleanupfieldvaluerelations.php` and `cleanuntranslatablerelations.php` remove stale relations |
-| "Always available" set on fields of every language, not only the main one | `SELECT COUNT(*) FROM ezcontentobject_attribute a JOIN ezcontentobject o ON o.id = a.contentobject_id WHERE (a.language_id & 1) = 1 AND (a.language_id - 1) <> o.initial_language_id;` (bit 1 of a language id is the always-available flag) | On the platform, `ezpublish:update:legacy_storage_fix_fields_always_available_flag` |
+| Relations with type 0 ("Unknown relation type 0") | `SELECT COUNT(*) FROM ezcontentobject_link WHERE relation_type = 0;` (valid values are 1, 2, 4, 8 and their sums) | On the platform, `ezpublish:update:legacy_storage_clean_up_relation_type_eq_zero`. In Exponential the 5.1 update file already deleted such rows; rows that appeared later are ignored by every relation query and can be removed on a backed-up database with `DELETE FROM ezcontentobject_link WHERE relation_type = 0;` ([15.20](15-migrating-from-5x-legacy.md#1520-common-issues)) |
+| "Always available" set on fields of every language, not only the main one | `SELECT COUNT(*) FROM ezcontentobject_attribute a JOIN ezcontentobject o ON o.id = a.contentobject_id WHERE (a.language_id & 1) = 1 AND (a.language_id & ~1) <> (o.initial_language_id & ~1);` (bit 1 of a language id is the always-available flag; Oracle: `bitand()`) | On the platform, `ezpublish:update:legacy_storage_fix_fields_always_available_flag` |
 | Empty `sort_key_string` | `SELECT data_type_string, COUNT(*) FROM ezcontentobject_attribute WHERE sort_key_string = '' AND data_text <> '' AND data_type_string IN ('ezstring', 'ezemail', 'ezcountry', 'ezidentifier', 'ezselection', 'ezpackage') GROUP BY data_type_string;` | On the platform, `ezpublish:update:legacy_storage_update_sort_keys` |
 | Datatypes the platform cannot store | `SELECT data_type_string, COUNT(*) FROM ezcontentclass_attribute WHERE version = 0 GROUP BY data_type_string;` and compare with [17.3](#173-datatypes-and-field-types) | Convert (`ezenum`, `ezxmltext`), remove, or register a Null field type |
 | Orphaned URL links | `php update/common/scripts/5.4/fixremovedezurlobjectlinks.php` (without `--fix` it only reports) | the same script with `--fix` |
@@ -590,8 +601,17 @@ apply to all eZScript-based scripts. Chapter [11](11-upgrading.md) explains the 
 PostgreSQL carry the chain from `4.0/dbupdate-3.10.0-to-4.0.0.sql` through the 5.x steps (with `unstable/` alpha,
 beta and rc steps for 4.0 to 5.0, and `dbupdate-cluster-*` files for the MySQL cluster at 4.3, 4.7, 5.2 and 5.4), then
 the 6.0 directory with the step from 5.4 (`dbupdate-5.4.0-6.0.0.sql` on MySQL, `dbupdate-5.4-to-6.0.sql` on
-PostgreSQL) and `dbupdate-6.0.0-6.0.15.sql`. SQLite has only `6.0/dbupdate-6.0.0-6.0.15.sql`. The `6.12` and `7.x`
-directories (password hash column, trash timestamp, PostgreSQL sequence names) come from the upstream legacy line.
+PostgreSQL) and `dbupdate-6.0.0-6.0.15.sql`. SQLite has only `6.0/dbupdate-6.0.0-6.0.15.sql`. Every MySQL file opens
+with `SET default_storage_engine=InnoDB;` (accepted by MySQL from 5.5.3 and by MariaDB); copies from before October
+2026 said `SET storage_engine`, which current servers reject.
+
+The `6.12/`, `7.2/` (PostgreSQL only) and `7.3/` directories come from the upstream legacy line of 2016 to 2018 and
+are numbered after the Symfony kernel version they ran beside; never apply them as files. Their three schema changes
+(`ezuser.password_hash` widened to 255, the PostgreSQL sequences renamed to `<table>_<column>_seq`,
+`ezcontentobject_trash.trashed`) are made by the 5.4 to 6.0.0 file and again by the 6.0.0 to 6.0.15 file, each only
+where the database lacks it ([11.3](11-upgrading.md#the-612-72-and-73-directories)). Oracle has no 6.0 file: run the
+`password_hash` and `trashed` statements of [11.5](11-upgrading.md#115-from-54-or-590-to-600) by hand.
+`php bin/php/console exp:checkdbfiles --no-verify-branches` checks that the tree is complete (table below).
 
 ### update/common/scripts
 
@@ -685,7 +705,9 @@ extensions' schemas (`kernel/private/classes/views/setup/systemupgrade.php`).
 This repository has no data converter to or from eZ Platform or Ibexa. The [legacy bridge](../features/6.0/legacy-bridge.md)
 runs the Exponential kernel inside a platform installation on a shared database (branches for eZ Platform 2.5,
 Platform 3.3, Ibexa 4.6 and Platform 5), with the console commands `exponential:legacy:init`, `configure`,
-`install-extensions`, `symlink`, `assets-install` and `script` (the old `ezpublish:legacy:*` names remain as aliases).
+`install-extensions`, `symlink`, `assets-install` and `script` on the `3.x` line from `v3.0.0.30`, the `4.x` line from
+`v4.0.0.2` and every `5.x` tag, where the old `ezpublish:*` names remain as deprecated aliases. The 2.5 line (`master`,
+`v2.1.10` to `v2.1.12`) and the earlier 3.x and 4.x tags know only the old names (`ezpublish:legacy:init` ...).
 On the platform side, the vendor documents `ezxmltext:convert-to-richtext`, `ibexa:urls:regenerate-aliases`,
 `ezplatform:images:normalize-path` and the `ezpublish:update:legacy_storage_*` commands listed in
 [17.8](#178-data-checks-before-migrating).
@@ -750,7 +772,7 @@ External:
 - Vendor migration pages: [Migrate from eZ Publish](https://doc.ibexa.co/en/5.0/update_and_migration/migrate_to_ibexa_dxp/migrating_from_ez_publish/),
   [Migrate from eZ Publish Platform](https://doc.ibexa.co/en/5.0/update_and_migration/migrate_to_ibexa_dxp/migrating_from_ez_publish_platform/),
   [Common migration issues](https://doc.ibexa.co/en/5.0/update_and_migration/migrate_to_ibexa_dxp/common_issues/),
-  [Migrating from eZ Publish (eZ Platform 1.13)](https://doc.ezplatform.com/en/1.13/migrating/migrating_from_ez_publish/).
+  [Migrating from eZ Publish (eZ Platform 2.5 version)](https://doc.ibexa.co/en/2.5/migrating/migrating_from_ez_publish/) (the 1.13 version of the page is no longer published; its old address redirects to the current page).
 - Field types: [field type reference](https://doc.ibexa.co/en/5.0/content_management/field_types/field_type_reference/field_type_reference/),
   [Image](https://doc.ibexa.co/en/5.0/content_management/field_types/field_type_reference/imagefield/),
   [User](https://doc.ibexa.co/en/5.0/content_management/field_types/field_type_reference/userfield/),
