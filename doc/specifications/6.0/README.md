@@ -48,6 +48,7 @@ default, scope) and ends with "Related pages".
 
 | Page | What it covers |
 |---|---|
+| [bccie](bccie.md) | Collected information export: views, files, commands, settings |
 | [expservices](expservices.md) | Remote services over ezjscore |
 | [explayouts_ui_api](explayouts-ui-api.md) | The layout editor's JSON API |
 | [syndication](syndication.md) | Feed export and import |

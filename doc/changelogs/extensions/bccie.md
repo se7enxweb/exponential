@@ -4,6 +4,22 @@ Read this page before you install or update `bccie`, or to find out which releas
 
 What each release of `bccie` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/bccie.md); the story is in the [chronicle](../../history/extensions/bccie.md).
 
+## v1.1.12 (2026-10-04)
+
+**Added**
+
+- Exporter that writes CSV and SYLK row by row, quotes every cell and neutralises spreadsheet formulas ([`f354db1`](https://github.com/se7enxweb/bccie/commit/f354db1))
+- Console commands ext:bccie:export, status and purge, and the runner and background job classes behind them ([`d4925d5`](https://github.com/se7enxweb/bccie/commit/d4925d5))
+- Dashboard start page, export page with validation, background export with progress and download, left menu and stylesheet ([`9098b4d`](https://github.com/se7enxweb/bccie/commit/9098b4d))
+
+**Updated**
+
+- The export keeps every character, loads the datatype handlers and writes a header that matches the columns ([`e14d6e2`](https://github.com/se7enxweb/bccie/commit/e14d6e2))
+- Cronjob parts, module views, policies, settings and translations use the runner, the dashboard and the export page ([`10d7e89`](https://github.com/se7enxweb/bccie/commit/10d7e89))
+- README and documentation describe the dashboard, the commands and the background export, and name the product Exponential ([`a495495`](https://github.com/se7enxweb/bccie/commit/a495495))
+
+1 version, merge or metadata commit not listed.
+
 ## v1.1.11 (2026-10-02)
 
 **Updated**

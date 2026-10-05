@@ -161,6 +161,8 @@ extensions' fixes show each one:
 | `explayouts_ui` | The tab is **Layouts**; "rules" are **Layout mappings**; target type `content_node` shows as `node`; the class condition is called `class`; `ibexa_*` condition names are no longer offered (existing ones keep working). | Nothing. |
 | `eztags` 2.3.5, 2.4.1 | Menu entry and tooltip say **Tags**. | Nothing. |
 | `bccie` 1.1.4 | Menu name **CIE**. | Nothing. |
+| `bccie` 1.1.12 | Removing collected information needs the new policy function `remove` (it needed only `read`). | Grant `bccie / remove` to the roles that may remove collected information; a role with every function of the module has it. |
+| `bccie` 1.1.12 | Export files changed: text stays UTF-8 (it was converted to ISO-8859-1 and lost characters), CSV cells escape quotes and the line has no separator after the last cell, text that starts with `=`, `+`, `-` or `@` gets a leading single quote, the SYLK file has a header row with the field names, scheduled files start with the collection id column their header already announced. | If a script reads the files, read UTF-8 and strip the leading quote where it matters. |
 | `sevenx_dse` 1.1.2 | Navigation part `dsenavigationpart` (it used `ezupdatenavigationpart`). | If you overrode the old identifier, change it. |
 | `ezupdate` 1.1.3 | The `dump` and `show` views and the *Dump assets* link, which belonged to `git_manager`, are removed. | Use `git_manager`. |
 | `ezie` 6.0.6 | The blur, levels and saturation tools (they never worked) are removed. | Nothing. |

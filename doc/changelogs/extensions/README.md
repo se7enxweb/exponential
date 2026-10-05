@@ -25,7 +25,7 @@ Replace `eztags` with the extension you look at.
 | Extension | Latest release | Release notes |
 |---|---|---|
 | AdminAid | none tagged | [release notes](AdminAid.md) |
-| bccie | v1.1.11 | [release notes](bccie.md) |
+| bccie | v1.1.12 | [release notes](bccie.md) |
 | bcgooglesitemaps | v1.1.6.4 | [release notes](bcgooglesitemaps.md) |
 | bcwebsitestatistics | v1.0.9 | [release notes](bcwebsitestatistics.md) |
 | birthday | 1.3.2 | [release notes](birthday.md) |
