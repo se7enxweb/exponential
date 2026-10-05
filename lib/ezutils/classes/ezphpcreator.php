@@ -505,6 +505,8 @@ $php->addInclude( 'lib/ezutils/classes/ezphpcreator.php' );
                                       $value );
             $text = "\"$valueText\"";
         }
+        else if ( is_float( $value ) )
+            $text = var_export( $value, true ); // 1.0 stays a float when read back, 1 would be an int
         else if ( is_numeric( $value ) )
             $text = $value;
         else if ( is_object( $value ) )
@@ -590,10 +592,12 @@ $php->addInclude( 'lib/ezutils/classes/ezphpcreator.php' );
                         else
                             $keyText = "\"" . str_replace( array( "\\",
                                                                   "\"",
-                                                                  "\n" ),
+                                                                  "\n",
+                                                                  "$" ),
                                                            array( "\\\\",
                                                                   "\\\"",
-                                                                  "\\n" ),
+                                                                  "\\n",
+                                                                  "\\$" ),
                                                            $key ) . "\"";
                         $keyText = " $keyText => ";
                     }
@@ -636,6 +640,8 @@ $php->addInclude( 'lib/ezutils/classes/ezphpcreator.php' );
                                       $value );
             $text = "\"$valueText\"";
         }
+        else if ( is_float( $value ) )
+            $text = var_export( $value, true ); // 1.0 stays a float when read back, 1 would be an int
         else if ( is_numeric( $value ) )
             $text = $value;
         else if ( is_object( $value ) )
@@ -701,10 +707,12 @@ $php->addInclude( 'lib/ezutils/classes/ezphpcreator.php' );
                     else
                         $keyText = "\"" . str_replace( array( "\\",
                                                               "\"",
-                                                              "\n" ),
+                                                              "\n",
+                                                              "$" ),
                                                        array( "\\\\",
                                                               "\\\"",
-                                                              "\\n" ),
+                                                              "\\n",
+                                                              "\\$" ),
                                                        $key ) . "\"";
                     $keyText = " $keyText => ";
                 }
@@ -740,7 +748,7 @@ $php->addInclude( 'lib/ezutils/classes/ezphpcreator.php' );
         $newTextArray = array();
         foreach ( $textArray as $text )
         {
-            if ( trim( $text ) != '' )
+            if ( !$skipEmptyLines || trim( $text ) != '' )
                 $textLine = str_repeat( $spacingString, $spacing ) . $text;
             else
                 $textLine = $text;
@@ -922,7 +930,8 @@ print( $values['MyValue'] );
                 if ( isset( $variableDefinition['default'] ) )
                     $variableDefault = $variableDefinition['default'];
             }
-            if ( isset( $$variableName ) )
+            // a variable stored as null is there too: isset() would skip it
+            if ( isset( $$variableName ) || array_key_exists( $variableName, get_defined_vars() ) )
             {
                 $returnVariables[$variableReturnName] = $$variableName;
             }
