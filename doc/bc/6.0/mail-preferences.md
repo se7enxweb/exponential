@@ -89,12 +89,25 @@ settings (`expNotificationMailCategoryHandler`): a user who follows items is "on
 migrated, and the old notification pages keep working. A user who turns the category or all optional mail off gets no
 notification mail; their rules stay and come back when they turn it on again.
 
+Content and collaboration mail follow the frequency the person chose on the preference page: daily or weekly, the items
+wait for the general digest, which has a part for each (`notification/handler/ezcollaboration/view/digest_plain.tpl` is
+new). The digest template `ezgeneraldigest/view/plain.tpl` was rewritten because it rendered no items at all; a design
+that overrides it should take the same change (a `foreach` and literal includes).
+
+### A new e-mail address waits for its confirmation
+
+When a user changes the e-mail address of their account (user/edit, the administration's edit of a user, the account
+services `changeEmail`), the account keeps its address until the new one is confirmed with the link sent to it; the old
+address gets a notice. The preference page shows the waiting change. Imports and scripts that set the account with
+`fromString()` (`login|email|...`) change it at once, as before.
+
 ## How to keep the old behaviour
 
 | You want | Do |
 |---|---|
 | No blocking by preferences | `[GateSettings] Gate=disabled`. Optional mail goes to everybody except addresses on the suppression list, still with footer and headers; the status page says the gate is disabled |
 | One mail for all recipients | `[GateSettings] SplitRecipients=disabled` |
+| A new e-mail address at once, without confirmation | `[EmailChangeSettings] Confirm=disabled` (and `NotifyOldAddress=disabled` for no notice) |
 | A mail of your code untouched | Do not give it a category. It is sent exactly as before and only counted; list its file or class in `EssentialSenders[]` if it is essential |
 | Your own footer | Override `mailpreferences/mail/footer.tpl` (and `footer_html.tpl`) in your design, keeping the unsubscribe link, the manage link and the address |
 
