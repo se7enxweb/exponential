@@ -20,6 +20,7 @@
  *  STAMP-07  A session from before the upgrade (no stamp) keeps going
  *  STAMP-08  EndOtherSessions=disabled switches the check off
  *  STAMP-09  An account without a password of its own (LDAP, SSO) is never ended by the check
+ *  STAMP-10  An outdated user cache (OPcache) does not end the session signed in with the stored password
  */
 
 require_once dirname( __DIR__ ) . '/audit/fixtures/expaudittestfixtures.php';
@@ -280,6 +281,23 @@ class expPasswordSessionStampTest extends PHPUnit\Framework\TestCase
         // and a sign-in with the check off stamps nothing
         eZUser::setCurrentlyLoggedInUser( $this->user(), self::$userID );
         $this->assertArrayNotHasKey( expPasswordPolicy::SESSION_KEY, $_SESSION );
+    }
+
+    public function testStaleUserCacheDoesNotEndTheSessionThatSignedInWithTheNewPassword()
+    {
+        // the user as an outdated user cache gives it (a server's OPcache keeps the included cache file a while):
+        // the old hash, while the session was signed in with the password stored now
+        $stored = $this->user();
+        $stale = new eZUser( array( 'contentobject_id' => self::$userID, 'login' => self::LOGIN, 'email' => self::EMAIL,
+                                    'password_hash' => $stored->attribute( 'password_hash' ) . 'old',
+                                    'password_hash_type' => $stored->attribute( 'password_hash_type' ) ) );
+        $this->startSession( array( 'eZUserLoggedInID' => self::$userID, expPasswordPolicy::SESSION_KEY => expPasswordPolicy::stampOf( $stored ) ) );
+        $this->assertTrue( expPasswordPolicy::sessionIsCurrent( $stale ), 'the stored row decides on a mismatch' );
+        $this->assertSame( $stored->attribute( 'password_hash' ), $stale->attribute( 'password_hash' ), 'and the object takes the stored hash' );
+        // a session of an old password stays ended although the cache is outdated in the same way
+        $stale->setAttribute( 'password_hash', $stored->attribute( 'password_hash' ) . 'old' );
+        $_SESSION[expPasswordPolicy::SESSION_KEY] = expPasswordPolicy::stampFor( self::$userID, $stored->attribute( 'password_hash' ) . 'older', $stored->attribute( 'password_hash_type' ) );
+        $this->assertFalse( expPasswordPolicy::sessionIsCurrent( $stale ) );
     }
 
     public function testAccountWithoutPasswordIsNeverEnded()

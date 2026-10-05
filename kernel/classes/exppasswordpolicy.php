@@ -537,7 +537,19 @@ class expPasswordPolicy
         $id = (int)$user->attribute( 'contentobject_id' );
         if ( (int)eZSession::get( 'eZUserLoggedInID', 0 ) !== $id )
             return true;
-        return self::compareStamp( $user, eZSession::get( self::SESSION_KEY, false ) ) !== 'mismatch';
+        $stored = eZSession::get( self::SESSION_KEY, false );
+        if ( self::compareStamp( $user, $stored ) !== 'mismatch' )
+            return true;
+        // The user came from the user cache, which can be older than the stored password (a server's OPcache keeps
+        // the included cache file until it revalidates). Only on a mismatch, the stored row decides: one query.
+        $fresh = eZUser::fetch( $id );
+        if ( $fresh instanceof eZUser && self::compareStamp( $fresh, $stored ) === 'match' )
+        {
+            $user->setAttribute( 'password_hash', $fresh->attribute( 'password_hash' ) );
+            $user->setAttribute( 'password_hash_type', $fresh->attribute( 'password_hash_type' ) );
+            return true;
+        }
+        return false;
     }
 
     /**

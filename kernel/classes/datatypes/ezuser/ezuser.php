@@ -1695,6 +1695,11 @@ WHERE user_id = '" . $userID . "' AND
         if ( eZINI::instance()->variable( 'RoleSettings', 'EnableCaching' ) === 'true' )
         {
             $cacheFilePath = eZUser::getCacheDir( $userId ). "/user-data-{$userId}.cache.php" ;
+            // The file is read with include: OPcache would keep the compiled old copy for every worker of this
+            // server until it revalidates (opcache.revalidate_freq), with the old roles and password hash.
+            // Invalidated before the delete, while the path still resolves.
+            if ( function_exists( 'opcache_invalidate' ) && is_file( $cacheFilePath ) )
+                @opcache_invalidate( $cacheFilePath, true );
             eZClusterFileHandler::instance()->fileDelete( $cacheFilePath );
         }
         // The role-aware HTTP cache keeps the user's permission context too.
