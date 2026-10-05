@@ -119,7 +119,11 @@ class eZDiff
     function &diff( $fromData, $toData)
     {
         if ( !$this->DiffEngineInstance )
-            return null;
+        {
+            // a variable: a function returning by reference cannot return the null literal without a notice
+            $diffObject = null;
+            return $diffObject;
+        }
 
         $differ =& $this->DiffEngineInstance;
         $diffObject = $differ->createDifferenceObject( $fromData, $toData );
