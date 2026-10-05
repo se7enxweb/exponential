@@ -437,9 +437,11 @@ class eZImageAliasHandler
         {
             return $aliasList[$aliasName];
         }
-        else if ( isset( $aliasList['original'] ) )
+        // Without an original (XML without an <ezimage> element), or with an
+        // original that never stored a file (url=""), there is nothing to scale.
+        //
+        else if ( isset( $aliasList['original'] ) && (string)( $aliasList['original']['url'] ?? '' ) !== '' )
         {
-            // Without an original (XML without an <ezimage> element) there is nothing to scale
             $original = $aliasList['original'];
             $basename = $original['basename'];
             if ( $imageManager->createImageAlias( $aliasName, $aliasList,
