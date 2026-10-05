@@ -9277,7 +9277,7 @@
     </message>
     <message>
         <source>Spawn time event</source>
-        <translation>Anlegen eines Ereignisses</translation>
+        <translation>Zeitereignis erzeugen</translation>
     </message>
     <message>
         <source>The notification filter processed all available notification events.</source>
@@ -9285,7 +9285,7 @@
     </message>
     <message>
         <source>Run notification filter</source>
-        <translation>Starte Benachrichtigungsfilter</translation>
+        <translation>Benachrichtigungsfilter ausführen</translation>
     </message>
     <message>
         <source>%events events handled, %mails messages sent.</source>
@@ -9308,7 +9308,7 @@
     <name>design/admin/notification/settings</name>
     <message>
         <source>My notification settings</source>
-        <translation>Meine Benachrichtigungs- Einstellungen</translation>
+        <translation>Meine Benachrichtigungseinstellungen</translation>
     </message>
     <message>
         <source>Apply changes</source>
@@ -34569,7 +34569,7 @@ change your settings at:</source>
     </message>
     <message>
         <source>%sitename notification system</source>
-        <translation>%sitename Benachrichtungssystem</translation>
+        <translation>%sitename Benachrichtigungssystem</translation>
     </message>
     <message>
         <source>[%sitename] New collaboration item</source>
@@ -34613,7 +34613,7 @@ The item can viewed by using the URL below.</source>
     </message>
     <message>
         <source>&quot;%name&quot; was published</source>
-        <translation>&quot;%name&quot; aktualisiert</translation>
+        <translation>&quot;%name&quot; wurde veröffentlicht</translation>
     </message>
     <message>
         <source>Daily</source>
