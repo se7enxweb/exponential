@@ -6814,7 +6814,7 @@ e6b808f293e1210884853e65c6b5dd7f  tests/tests/kernel/classes/clusterfilehandlers
 93c9c53ad735f76a5bd4bbb2961fb469  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
 3dc0333408fb6ae63ad09e93427f72d5  tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php
 e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php
-f96b3631ec7b3ddedc4e9e5cfc419e60  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
+062018e3e4d87a916782e66db435dacb  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItemTest.php
 95a20d0e1c4f0d4edb32e80ea290d23a  tests/tests/kernel/classes/eZContentClassAttributeTest.php
 4ca02673913513270eaef99170d6106d  tests/tests/kernel/classes/eZContentClassTest.php
@@ -7325,7 +7325,7 @@ d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
 ee1781006858e40da837447e9667f887  tests/tests/lib/ezlocale/ezlocale_regression.php
 b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
 60e3422dd7a813f76038a3ecb5b842f4  tests/tests/lib/ezmath/eZMathHandlersTest.php
-7606e8e6d3f5412f09c63073d59f7e21  tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php
+d72315fa9b3256a89308f3109ca900e0  tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php
 b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
 09f4e7badeb7acb1d70c587a912b48f2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
