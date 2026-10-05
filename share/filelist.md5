@@ -5917,7 +5917,7 @@ acfe374d099f06d43a18f896956ed607  lib/ezutils/classes/ezuri.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 84e594f01e8f4f64e610fdb8eae51b19  lib/version.php
-e0acceee9a78f9400d4a14b708da711d  phpunit.xml
+523b71e0b5d19d9590a27f09d1ac44d1  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -6549,6 +6549,7 @@ a26c7abb7aa53e9ce49166a23824422d  tests/tests/extension/expservices/users/expNot
 54f7b97b9fcec361db7af4f79f978a59  tests/tests/extension/expservices/users/expUserServicesTest.php
 6d1c1f4698756c17b8e2794b21531208  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 1cca23f5c5f799cc1b94189d85089c66  tests/tests/extension/expservices/users/expUsersTestCase.php
+2fc163650bb2b38e3b2b39fbf4e930c5  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
 f6cf185c8c7b6205b83513395a280767  tests/tests/extension/ezoe/expOEEditorRegistryTest.php
 ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServicesTest.php
 1f431d2787ac5ae352d9bc4e7c3e5ef0  tests/tests/extension/ezoe/expOEEngineConfigTest.php
@@ -6683,6 +6684,7 @@ a8a61b473a5e21173818112297a16b47  tests/tests/kernel/classes/ezextension_with_or
 382c28dee100fbfce39ea367680ac1a2  tests/tests/kernel/classes/eznodeassignment_test.php
 596c8b9fb90f1ddc1c7bf639afe1c4db  tests/tests/kernel/classes/ezorder_regression.php
 dbcfd409cc6cd6c3d9a9a461369158d7  tests/tests/kernel/classes/ezpActiveExtensionsTest.php
+7e35f30fd58042582c798e4909bf4cb1  tests/tests/kernel/classes/ezpKernelWebAppendRequestQueryTest.php
 c758e9c8740a66339dc5d27d746ed630  tests/tests/kernel/classes/ezpRestLazyTest.php
 cde6894a0438daa7404bdddb6b21aabc  tests/tests/kernel/classes/ezpTemplateOverridesTest.php
 a5532fb28c026fe034f0e1358fdd488b  tests/tests/kernel/classes/ezpackage_regression.php
@@ -6781,6 +6783,7 @@ a132bf519eb92542b6436fa0aefdd0d4  tests/tests/kernel/datatypes/ezcountry/ezcount
 c09742730cb66074fe28920c75d1f77a  tests/tests/kernel/datatypes/ezdatatype_test_dataset.php
 d3bf1a7962d00356aceb039aafacc42f  tests/tests/kernel/datatypes/ezemail/eZEmailTypeTest.php
 3fbf238950f0638c151995ccab74e964  tests/tests/kernel/datatypes/ezemail/ezemailtype_test.php
+31a2ec28d66399f95dd7ee83b306275e  tests/tests/kernel/datatypes/ezimage/eZImageAliasHandlerGuardsTest.php
 47c17675c1f700f4ae785e2e9c62f4e3  tests/tests/kernel/datatypes/ezimage/eZImageCopyOwnFilesTest.php
 13db375dbc006e78ef16437642166ede  tests/tests/kernel/datatypes/ezimage/eZImageEZP21324Test.php
 88cdef8a476714efdc29288eceffc6d7  tests/tests/kernel/datatypes/ezimage/ezimagealiashandler_regression.php
