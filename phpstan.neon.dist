@@ -1,0 +1,33 @@
+# Static analysis of Exponential with PHPStan.
+#
+# phpstan-baseline.neon holds every finding the code had when the check was
+# introduced; only new findings fail. Raise the level or shrink the baseline in
+# small separate steps.
+#
+# Run: make phpstan    Regenerate the baseline: make phpstan-baseline
+
+includes:
+    - phpstan-baseline.neon
+
+parameters:
+    level: 1
+    phpVersion: 80100
+    paths:
+        - kernel
+        - lib
+    excludePaths:
+        - vendor/*
+        - var/*
+        - */tests/*
+        # CLI scripts written as classes that also declare global helper functions;
+        # loading two of them in one analysis process redeclares those functions
+        - kernel/private/classes/commands/*
+        # Its iterator methods lack the PHP 8.1 tentative return types (or a
+        # #[\ReturnTypeWillChange] attribute), which PHPStan can not baseline;
+        # analyse it again once that is fixed
+        - kernel/private/classes/clusterfilehandlers/dfsbackends/dfs_filter_iterator.php
+    bootstrapFiles:
+        - autoload.php
+    tmpDir: .devtools/phpstan
+    reportUnmatchedIgnoredErrors: false
+    treatPhpDocTypesAsCertain: false
