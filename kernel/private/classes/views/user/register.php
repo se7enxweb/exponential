@@ -114,6 +114,12 @@ if ( !function_exists( 'checkContentActions' ) )
             }
 
             $http = eZHTTPTool::instance();
+
+            // the optional e-mail the person ticked on the form (nothing is ticked for them); a category with a double
+            // opt-in sends its confirmation link now
+            if ( $user instanceof eZUser && class_exists( 'Exponential\Service\MailPreferencesPage' ) )
+                \Exponential\Service\MailPreferencesPage::storeSignup( $user, $http );
+
             $http->removeSessionVariable( "GeneratedPassword" );
             $http->removeSessionVariable( "RegisterUserID" );
             $http->removeSessionVariable( 'StartedRegistration' );
@@ -190,6 +196,8 @@ class Register extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'view_parameters', $viewParameters );
+        // the unticked boxes of the optional e-mail (design:mailpreferences/parts/signup.tpl)
+        $tpl->setVariable( 'mail_categories', class_exists( 'Exponential\Service\MailPreferencesPage' ) ? \Exponential\Service\MailPreferencesPage::signupCategories( $http ) : array() );
 
         $Params['TemplateObject'] = $tpl;
 

@@ -16,6 +16,7 @@
     'global_setting',     'Global settings'|i18n( 'design/admin/parts/setup/menu' ),
     'ini',                'Ini settings'|i18n( 'design/admin/parts/setup/menu' ),
     'languages',          'Languages'|i18n( 'design/admin/parts/setup/menu' ),
+    'mailpreferences',    'E-mail preferences'|i18n( 'design/admin/parts/setup/menu' ),
     'notification',       'Notification'|i18n( 'design/admin/parts/setup/menu' ),
     'pdf_export',         'PDF export'|i18n( 'design/admin/parts/setup/menu', 'PDF export'),
     'packages',           'Packages'|i18n( 'design/admin/parts/setup/menu' ),

@@ -12,6 +12,7 @@
 {* DESIGN: Content START *}<div class="box-content">
 
 <div class="context-attributes">
+{include uri='design:mailpreferences/parts/account_link.tpl' context='notification'}
 {section var=Handlers loop=$handlers}
     {section-exclude match=eq( $Handlers.item, $handlers.ezsubtree )}
     {include name=newspace uri=concat( 'design:notification/handler/', $Handlers.item.id_string, '/settings/edit.tpl' ) handler=$Handlers.item}

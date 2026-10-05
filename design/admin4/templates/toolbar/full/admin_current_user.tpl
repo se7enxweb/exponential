@@ -27,6 +27,7 @@
     {if fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )}
     <li><div><a href={'/user/password/'|ezurl} title="{'Change password for <%username>.'|i18n( 'design/admin/pagelayout',, hash( '%username', $current_user.contentobject.name ) )|wash}">{'Change password'|i18n( 'design/admin/pagelayout' )}</a></div></li>
     {/if}
+    <li><div><a href={'/mailpreferences/settings'|ezurl} title="{'Choose which e-mail you get.'|i18n( 'design/admin/pagelayout' )}">{'My e-mail preferences'|i18n( 'design/admin/pagelayout' )}</a></div></li>
     </ul>
 {else}
     <p><img src={'current-user-disabled.gif'|ezimage} height="22" width="22" alt="" style="text-align: left; vertical-align: middle;" /> {$current_user.contentobject.name|wash}</p>

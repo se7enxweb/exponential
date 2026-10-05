@@ -6,6 +6,8 @@
 <h1>{"Notification settings"|i18n('design/standard/notification')}</h1>
 </div>
 
+{include uri='design:mailpreferences/parts/account_link.tpl' context='notification'}
+
 {let handlers=fetch('notification','handler_list')}
 
     <p>

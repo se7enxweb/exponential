@@ -4,6 +4,7 @@
     'my_drafts',          'My drafts'|i18n( 'design/admin/parts/my/menu' ),
     'my_pending',         'My pending items'|i18n( 'design/admin/parts/my/menu' ),
     'my_notifications',   'My notification settings'|i18n( 'design/admin/parts/my/menu' ),
+    'my_mail',            'My e-mail preferences'|i18n( 'design/admin/parts/my/menu' ),
     'my_bookmarks',       'My bookmarks'|i18n( 'design/admin/parts/my/menu' ),
     'collaboration',      'Collaboration'|i18n( 'design/admin/parts/my/menu' ),
     'change_password',    'Change password'|i18n( 'design/admin/parts/my/menu' ),

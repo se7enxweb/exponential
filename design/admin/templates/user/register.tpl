@@ -26,6 +26,7 @@
 
 <div class="context-attributes">
     {include uri='design:content/edit_attribute.tpl'}
+    {include uri='design:mailpreferences/parts/signup.tpl' categories=first_set( $mail_categories, array() )}
 </div>
 
 {* DESIGN: Content END *}</div></div></div>

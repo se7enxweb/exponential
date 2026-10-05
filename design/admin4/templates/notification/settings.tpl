@@ -22,6 +22,8 @@
 
     {include uri='design:notification/parts/notice.tpl' notice=first_set( $notice, false() )}
 
+    {include uri='design:mailpreferences/parts/account_link.tpl' context='notification'}
+
     <ul class="nf-stats">
         <li><a class="nf-stat" href="#nf-follow"><strong>{$subscription_all_total}</strong><span>{'Items I follow'|i18n( 'design/admin/notification/settings' )}</span></a></li>
         <li><a class="nf-stat" href="#nf-digest"><strong>

@@ -37,6 +37,8 @@
     </div>
     {/section}
 
+    {include uri='design:mailpreferences/parts/signup.tpl' categories=first_set( $mail_categories, array() )}
+
     <div class="block">
         <p>{"Please note that your browser must use and support cookies to register a new user."|i18n("design/standard/user")}</p>
     </div>
