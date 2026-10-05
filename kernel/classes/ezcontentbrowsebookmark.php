@@ -57,7 +57,18 @@ class eZContentBrowseBookmark extends eZPersistentObject
                                          "name" => array( 'name' => "Name",
                                                           'datatype' => 'string',
                                                           'default' => '',
-                                                          'required' => true ) ),
+                                                          'required' => true ),
+                                         // the virtual folder of the bookmark, 0 is the top level
+                                         // (see eZContentBrowseBookmarkFolder)
+                                         "folder_id" => array( 'name' => "FolderID",
+                                                               'datatype' => 'integer',
+                                                               'default' => 0,
+                                                               'required' => true ),
+                                         // the order within the folder, ascending
+                                         "priority" => array( 'name' => "Priority",
+                                                              'datatype' => 'integer',
+                                                              'default' => 0,
+                                                              'required' => true ) ),
                       "keys" => array( "id" ),
                       "function_attributes" => array( 'node' => 'fetchNode',
                                                       'contentobject_id' => 'contentObjectID' ),
@@ -95,22 +106,73 @@ class eZContentBrowseBookmark extends eZPersistentObject
 
     /*!
      \static
+     \return the bookmarks of user \a $userID in the order of the folder tree: by priority, newest first
+     within the same priority. Used to build the tree, see eZContentBrowseBookmarkFolder::fetchTreeForUser().
+    */
+    static function fetchTreeListForUser( $userID )
+    {
+        $objectList = eZPersistentObject::fetchObjectList( eZContentBrowseBookmark::definition(),
+                                                            null,
+                                                            array( 'user_id' => $userID ),
+                                                            array( 'priority' => 'asc', 'id' => 'desc' ),
+                                                            null,
+                                                            true );
+        return $objectList ? $objectList : array();
+    }
+
+    /*!
+     \static
+     \return the bookmarks of user \a $userID that sit directly in folder \a $folderID (0 is the top level).
+    */
+    static function fetchListForUserInFolder( $userID, $folderID = 0 )
+    {
+        $objectList = eZPersistentObject::fetchObjectList( eZContentBrowseBookmark::definition(),
+                                                            null,
+                                                            array( 'user_id' => $userID, 'folder_id' => (int) $folderID ),
+                                                            array( 'priority' => 'asc', 'id' => 'desc' ),
+                                                            null,
+                                                            true );
+        return $objectList ? $objectList : array();
+    }
+
+    /*!
+     \return the folder this bookmark sits in, or null at the top level.
+    */
+    function folder()
+    {
+        $folderID = (int) $this->attribute( 'folder_id' );
+        return $folderID ? eZContentBrowseBookmarkFolder::fetch( $folderID ) : null;
+    }
+
+    /*!
+     \static
      Creates a new bookmark item for user \a $userID with node id \a $nodeID and name \a $nodeName.
-     The new item is returned.
+     The new item is returned. The optional \a $folderID puts it into that folder of the user (0 is the top level);
+     a bookmark that exists for the node is replaced and keeps its folder when no folder is given.
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
     */
-    static function createNew( $userID, $nodeID, $nodeName )
+    static function createNew( $userID, $nodeID, $nodeName, $folderID = false )
     {
         $db = eZDB::instance();
         $db->begin();
         $userID =(int) $userID;
         $nodeID =(int) $nodeID;
         $nodeName = $db->escapeString( $nodeName );
+        $previous = $db->arrayQuery( "SELECT folder_id, priority FROM ezcontentbrowsebookmark WHERE node_id=$nodeID and user_id=$userID" );
+        if ( $folderID === false || $folderID === null )
+            $folderID = $previous ? (int) $previous[0]['folder_id'] : 0;
+        $folderID = (int) $folderID;
+        if ( $folderID && !eZContentBrowseBookmarkFolder::fetchForUser( $userID, $folderID ) )
+            $folderID = 0;
         $db->query( "DELETE FROM ezcontentbrowsebookmark WHERE node_id=$nodeID and user_id=$userID" );
         $bookmark = new eZContentBrowseBookmark( array( 'user_id' => $userID,
                                                         'node_id' => $nodeID,
-                                                        'name' => $nodeName ) );
+                                                        'name' => $nodeName,
+                                                        'folder_id' => $folderID,
+                                                        'priority' => ( $previous && (int) $previous[0]['folder_id'] === $folderID )
+                                                                      ? (int) $previous[0]['priority']
+                                                                      : eZContentBrowseBookmarkFolder::nextBookmarkPriority( $userID, $folderID ) ) );
         $bookmark->store();
         $db->commit();
         return $bookmark;
@@ -148,6 +210,7 @@ class eZContentBrowseBookmark extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->query( "DELETE FROM ezcontentbrowsebookmark" );
+        eZContentBrowseBookmarkFolder::cleanup();
     }
 
     /*!

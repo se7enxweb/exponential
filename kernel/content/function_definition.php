@@ -739,6 +739,23 @@ $FunctionList['bookmarks'] = array( 'name' => 'bookmarks',
                                                                   'required' => false,
                                                                   'default' => false ) ) );
 
+$FunctionList['bookmark_rows'] = array( 'name' => 'bookmark_rows',
+                                         'operation_types' => array( 'read' ),
+                                         'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                                                 'method' => 'fetchBookmarkRows' ),
+                                         'parameter_type' => 'standard',
+                                         'parameters' => array( array( 'name' => 'folder_id',
+                                                                       'type' => 'integer',
+                                                                       'required' => false,
+                                                                       'default' => 0 ) ) );
+
+$FunctionList['bookmark_folders'] = array( 'name' => 'bookmark_folders',
+                                           'operation_types' => array( 'read' ),
+                                           'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                                                   'method' => 'fetchBookmarkFolders' ),
+                                           'parameter_type' => 'standard',
+                                           'parameters' => array() );
+
 $FunctionList['recent'] = array( 'name' => 'recent',
                                  'operation_types' => array( 'read' ),
                                  'call_method' => array( 'class' => 'eZContentFunctionCollection',

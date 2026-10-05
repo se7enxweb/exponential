@@ -271,8 +271,24 @@ CREATE TABLE ezcontentbrowsebookmark (
   name varchar(255) NOT NULL default '',
   node_id int(11) NOT NULL default '0',
   user_id int(11) NOT NULL default '0',
+  folder_id int(11) NOT NULL default '0',
+  priority int(11) NOT NULL default '0',
   PRIMARY KEY  (id),
+  KEY ezcontentbrowsebookmark_folder (user_id, folder_id),
   KEY ezcontentbrowsebookmark_user (user_id)
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE expbookmark_folder (
+  created int(11) NOT NULL default '0',
+  id int(11) NOT NULL auto_increment,
+  name varchar(255) NOT NULL default '',
+  parent_id int(11) NOT NULL default '0',
+  priority int(11) NOT NULL default '0',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  KEY expbookmark_folder_user (user_id, parent_id)
 ) ENGINE=InnoDB;
 
 

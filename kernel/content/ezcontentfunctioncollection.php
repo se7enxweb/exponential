@@ -664,6 +664,29 @@ class eZContentFunctionCollection
         return array( 'result' => eZContentBrowseBookmark::fetchListForUser( $user->id(), $offset, $limit ) );
     }
 
+    /**
+     * The whole bookmark tree of the current user as one flat list in display order, see
+     * eZContentBrowseBookmarkFolder::fetchRowsForUser(). fetchBookmarks() is unchanged: all bookmarks, flat.
+     */
+    static public function fetchBookmarkRows( $folderID = 0 )
+    {
+        $user = eZUser::currentUser();
+        return array( 'result' => eZContentBrowseBookmarkFolder::fetchRowsForUser( $user->id(), $folderID ) );
+    }
+
+    /**
+     * The bookmark folders of the current user as a flat list in display order (depth first, with 'depth' and 'path').
+     */
+    static public function fetchBookmarkFolders()
+    {
+        $user = eZUser::currentUser();
+        $folders = array();
+        foreach ( eZContentBrowseBookmarkFolder::fetchRowsForUser( $user->id() ) as $row )
+            if ( $row['type'] === 'folder' )
+                $folders[] = $row;
+        return array( 'result' => $folders );
+    }
+
     static public function fetchRecent()
     {
         $user = eZUser::currentUser();

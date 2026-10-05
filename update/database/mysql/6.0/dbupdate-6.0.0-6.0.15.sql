@@ -202,3 +202,23 @@ CREATE TABLE expaudit_file (
 
 -- Full-text search: FULLTEXT on InnoDB (MySQL 5.6+, MariaDB 10.0.5+); without it the console searches with LIKE.
 ALTER TABLE expaudit_event ADD FULLTEXT INDEX expaudit_event_fts (search_text);
+
+-- Bookmark folders.
+--
+-- A user can organise bookmarks in a tree of virtual folders. folder_id is the folder
+-- of a bookmark (0 is the top level, so every existing bookmark stays where it was
+-- and nothing needs to be migrated), priority is the order within the folder.
+-- expbookmark_folder holds the folders: parent_id 0 is the top level.
+ALTER TABLE ezcontentbrowsebookmark ADD COLUMN folder_id int(11) NOT NULL DEFAULT '0';
+ALTER TABLE ezcontentbrowsebookmark ADD COLUMN priority int(11) NOT NULL DEFAULT '0';
+ALTER TABLE ezcontentbrowsebookmark ADD INDEX ezcontentbrowsebookmark_folder (user_id, folder_id);
+CREATE TABLE expbookmark_folder (
+  created int(11) NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(255) NOT NULL DEFAULT '',
+  parent_id int(11) NOT NULL DEFAULT '0',
+  priority int(11) NOT NULL DEFAULT '0',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY expbookmark_folder_user ( user_id, parent_id )
+) ENGINE=InnoDB;

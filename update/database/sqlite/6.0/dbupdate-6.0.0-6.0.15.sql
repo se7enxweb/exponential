@@ -204,3 +204,22 @@ CREATE TABLE expaudit_file (
 -- so a search finds a part of a word as LIKE does). Without FTS5 or trigram in the SQLite build,
 -- leave the statement out: search uses LIKE.
 CREATE VIRTUAL TABLE expaudit_event_fts USING fts5(search_text, content='expaudit_event', content_rowid='rowid', tokenize='trigram');
+
+-- Bookmark folders.
+--
+-- A user can organise bookmarks in a tree of virtual folders. folder_id is the folder
+-- of a bookmark (0 is the top level, so every existing bookmark stays where it was
+-- and nothing needs to be migrated), priority is the order within the folder.
+-- expbookmark_folder holds the folders: parent_id 0 is the top level.
+ALTER TABLE ezcontentbrowsebookmark ADD COLUMN folder_id integer NOT NULL DEFAULT 0;
+ALTER TABLE ezcontentbrowsebookmark ADD COLUMN priority integer NOT NULL DEFAULT 0;
+CREATE INDEX ezcontentbrowsebookmark_folder ON ezcontentbrowsebookmark ( user_id, folder_id );
+CREATE TABLE expbookmark_folder (
+  created integer NOT NULL DEFAULT 0,
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  name varchar(255) NOT NULL DEFAULT '',
+  parent_id integer NOT NULL DEFAULT 0,
+  priority integer NOT NULL DEFAULT 0,
+  user_id integer NOT NULL DEFAULT 0
+);
+CREATE INDEX expbookmark_folder_user ON expbookmark_folder ( user_id, parent_id );

@@ -396,6 +396,7 @@ return array(
       'eZConfirmOrderHandler'                                        => 'kernel/classes/ezconfirmorderhandler.php',
       'eZContentBrowse'                                              => 'kernel/classes/ezcontentbrowse.php',
       'eZContentBrowseBookmark'                                      => 'kernel/classes/ezcontentbrowsebookmark.php',
+      'eZContentBrowseBookmarkFolder'                                => 'kernel/classes/ezcontentbrowsebookmarkfolder.php',
       'eZContentBrowseRecent'                                        => 'kernel/classes/ezcontentbrowserecent.php',
       'eZContentCache'                                               => 'kernel/classes/ezcontentcache.php',
       'eZContentCacheManager'                                        => 'kernel/classes/ezcontentcachemanager.php',
