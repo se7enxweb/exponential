@@ -78,6 +78,7 @@
 .mp-freq legend { float: left; margin: 0 .6em 0 0; padding: 0; font-size: .9em; font-weight: 400; color: var(--mp-muted); width: auto; border: 0; background: none; }
 .mp-freq label { display: inline-flex; align-items: center; gap: .3em; margin: 0 .9em .2em 0; font-size: .95em; white-space: nowrap; }
 .mp-freq input { width: 1.05em; height: 1.05em; margin: 0; accent-color: var(--mp-accent); }
+.mp-part { margin: .8em 0 0; }
 .mp-hint { margin: .35em 0 0; font-size: .9em; color: var(--mp-muted); }
 
 /* Essential mail: listed, not switchable, with the reason */
