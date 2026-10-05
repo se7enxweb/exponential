@@ -52,9 +52,22 @@ function multipleezjscServerCalls( $calls, $contentType = 'json' )
             {
                 $response['content'] =  $call->call();
             }
-            catch ( Exception $e )
+            // Catch Throwable, not Exception: a PHP Error escaping here turns
+            // the JSON body into an HTML fatal page, which the client only sees
+            // as an "Unexpected token" SyntaxError.
+            catch ( Throwable $e )
             {
-                $response['error_text'] = $e->getMessage();
+                if ( $e instanceof Exception )
+                {
+                    $response['error_text'] = $e->getMessage();
+                }
+                else
+                {
+                    // A PHP Error is a bug, not a message for the client: its
+                    // text can carry server file paths. Log it, send a generic text.
+                    eZDebug::writeError( get_class( $e ) . ': ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(), 'ezjscore/call' );
+                    $response['error_text'] = 'Internal error in the server function';
+                }
             }
         }
         else

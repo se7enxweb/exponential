@@ -1159,6 +1159,53 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
     /**
      * Performs a redirection
      */
+    /**
+     * Carries the query string of the current request over a module redirect.
+     *
+     * Redirects to another host keep their URL untouched: a payment window
+     * URL is sealed over its exact query, so tracking parameters of the shop
+     * request (_gl, gclid, ...) appended to it invalidate the seal. On the
+     * own host the query joins with "&" when the target already has one and
+     * goes before a fragment.
+     *
+     *
+     * @param string $redirectURI completed redirect target, relative or absolute
+     * @param string $queryString query of the current request, with or without the leading "?"
+     * @param string $currentHost host of the current request, a port is ignored
+     * @return string
+     */
+    public static function appendRequestQuery( $redirectURI, $queryString, $currentHost )
+    {
+        $redirectURI = (string)$redirectURI;
+        $query = ltrim( (string)$queryString, '?' );
+        if ( $query === '' )
+        {
+            return $redirectURI;
+        }
+
+        if ( preg_match( '#^https?://#i', $redirectURI ) )
+        {
+            $targetHost = strtolower( (string)parse_url( $redirectURI, PHP_URL_HOST ) );
+            $ownHost = strtolower( (string)preg_replace( '/:\d+$/', '', trim( (string)$currentHost ) ) );
+            if ( $targetHost === '' || $targetHost !== $ownHost )
+            {
+                return $redirectURI;
+            }
+        }
+
+        $fragment = '';
+        $hashPos = strpos( $redirectURI, '#' );
+        if ( $hashPos !== false )
+        {
+            $fragment = substr( $redirectURI, $hashPos );
+            $redirectURI = substr( $redirectURI, 0, $hashPos );
+        }
+
+        $separator = strpos( $redirectURI, '?' ) !== false ? '&' : '?';
+
+        return $redirectURI . $separator . $query . $fragment;
+    }
+
     protected function redirect()
     {
         $GLOBALS['eZRedirection'] = true;
@@ -1228,7 +1275,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         }
 
         // After the module redirect url is completed, add the queryString params so they carry over the redirect operation
-        $redirectURI .= eZSys::queryString();
+        $redirectURI = self::appendRequestQuery( $redirectURI, (string)eZSys::queryString(), (string)eZSys::hostname() );
 
         if ( $ini->variable( 'ContentSettings', 'StaticCache' ) == 'enabled' )
         {
