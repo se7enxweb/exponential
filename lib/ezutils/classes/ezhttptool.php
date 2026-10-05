@@ -413,6 +413,21 @@ class eZHTTPTool
         return false;
     }
 
+    /**
+     * The user name and password of HTTP Basic credentials (the base64 text after "Basic "): user-id ":" password,
+     * where the password may contain colons itself (RFC 7617). Credentials without a colon have no password (false).
+     *
+     * @param string $encoded
+     * @return array array( user name, password )
+     */
+    static function basicCredentials( $encoded )
+    {
+        $decoded = base64_decode( (string)$encoded, true );
+        if ( $decoded === false )
+            return array( false, false );
+        return array_pad( explode( ':', $decoded, 2 ), 2, false );
+    }
+
     /*!
      \static
 
@@ -432,7 +447,7 @@ class eZHTTPTool
                  array_key_exists( $AUTHKey, $_SERVER ) and
                  preg_match('/Basic\s+(.*)$/i', $_SERVER[$AUTHKey], $matches ) )
         {
-            list( $name, $password ) = explode( ':', base64_decode( $matches[1] ) );
+            list( $name, $password ) = eZHTTPTool::basicCredentials( $matches[1] );
             return $name;
         }
         return false;
@@ -457,7 +472,7 @@ class eZHTTPTool
                  array_key_exists( $AUTHKey, $_SERVER ) and
                  preg_match('/Basic\s+(.*)$/i', $_SERVER[$AUTHKey], $matches ) )
         {
-            list( $name, $password ) = explode( ':', base64_decode( $matches[1] ) );
+            list( $name, $password ) = eZHTTPTool::basicCredentials( $matches[1] );
             return $password;
         }
         return false;
