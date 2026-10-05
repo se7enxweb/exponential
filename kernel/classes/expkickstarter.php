@@ -120,10 +120,15 @@ class expKickstarter
         // The site answers with the maintenance page while it is rebuilt: a
         // request meeting a half-built database logged errors that were not
         // the installation's, and could leave a broken page in the caches
-        $maintenance = empty( $this->options['dry-run'] )
-            && expMaintenance::enable( getcwd(), array( 'reason' => 'setup', 'run' => $runId ) );
+        // A maintenance window that was already open is kept as it is: not
+        // replaced by this run's, and not switched off at its end
+        $maintenanceState = empty( $this->options['dry-run'] )
+            ? expMaintenance::beginRun( getcwd(), $runId, array( 'reason' => 'setup' ) ) : false;
+        $maintenance = $maintenanceState === 'enabled';
         if ( $maintenance )
             $this->cli->output( 'Maintenance mode on: the site shows the maintenance page until the installation is done.' );
+        elseif ( $maintenanceState === 'existing' )
+            $this->cli->output( 'Maintenance mode was already on: kept as it is, and left on after the installation (php bin/php/maintenance.php off ends it).' );
 
         foreach ( $this->stepData->StepTable as $index => $step )
         {

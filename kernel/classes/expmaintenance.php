@@ -161,6 +161,28 @@ class expMaintenance
     }
 
     /**
+     * Maintenance for one setup run (the kickstarter): switched on for the
+     * run, unless maintenance is already on. A marker that is there already
+     * (a window someone opened, another run's) is left exactly as it is, and
+     * because it does not carry this run's id, disable( $root, $runId ) at the
+     * end of the run leaves it in place too.
+     *
+     * @param string $root
+     * @param string $runId the setup log's run
+     * @param array $options as enable()
+     * @return string|false 'enabled' when this run switched it on, 'existing'
+     *         when it was on already and is kept, false when it could not be
+     *         switched on
+     */
+    static function beginRun( $root, $runId, array $options = array() )
+    {
+        if ( self::state( $root ) !== false )
+            return 'existing';
+        $options['run'] = (string)$runId;
+        return self::enable( $root, $options ) ? 'enabled' : false;
+    }
+
+    /**
      * Records maintenance switched on, changed or off (doc/bc/6.0/audit.md, system.maintenance.change): the mode
      * and the reason, never the allowed addresses.
      *
