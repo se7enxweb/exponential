@@ -97,7 +97,8 @@ class ezpRestStatusResponse implements ezcMvcResultStatusObject
     {
         if ( $writer instanceof ezcMvcHttpResponseWriter )
         {
-            $writer->headers["HTTP/1.1 " . $this->code] = self::$statusCodes[$this->code];
+            // A code without a phrase in the table (422, 429 ...) is sent without one instead of a warning
+            $writer->headers["HTTP/1.1 " . $this->code] = isset( self::$statusCodes[$this->code] ) ? self::$statusCodes[$this->code] : '';
             $writer->headers = $this->headers + $writer->headers;
         }
 
