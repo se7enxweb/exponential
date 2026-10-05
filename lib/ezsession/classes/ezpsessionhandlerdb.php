@@ -287,6 +287,31 @@ class ezpSessionHandlerDB extends ezpSessionHandler
     }
 
     /**
+     * Ends every session of a user except $keepSessionKey, through destroy() so the callbacks run.
+     *
+     * @param int $userID
+     * @param string $keepSessionKey
+     * @return int the number of sessions ended
+     */
+    public function deleteOtherSessionsOfUser( $userID, $keepSessionKey )
+    {
+        $userID = (int)$userID;
+        if ( $userID <= 0 )
+            return 0;
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( "SELECT session_key FROM ezsession WHERE user_id=$userID" );
+        $ended = 0;
+        foreach ( is_array( $rows ) ? $rows : array() as $row )
+        {
+            if ( (string)$row['session_key'] === (string)$keepSessionKey )
+                continue;
+            $this->destroy( $row['session_key'] );
+            $ended++;
+        }
+        return $ended;
+    }
+
+    /**
      * Counts the number of session and returns it.
      *
      * @return int|null Returns null if handler does not support this.

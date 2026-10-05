@@ -152,6 +152,22 @@ abstract class ezpSessionHandler
     abstract public function deleteByUserIDs( array $userIDArray );
 
     /**
+     * Ends every session of a user except one (after a password change: the user stays signed in where the change
+     * was made and is signed out everywhere else).
+     *
+     * A handler that cannot find the sessions of a user returns null, which is what this default does; handlers
+     * with a backend override it (ezpSessionHandlerDB).
+     *
+     * @param int $userID
+     * @param string $keepSessionKey the session key to keep ('' keeps none)
+     * @return int|null the number of sessions ended, null when the handler cannot
+     */
+    public function deleteOtherSessionsOfUser( $userID, $keepSessionKey )
+    {
+        return null;
+    }
+
+    /**
      * Counts the number of session and returns it.
      *
      * @return int Returns -1 if handler does not support this.
