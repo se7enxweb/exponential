@@ -170,6 +170,33 @@ class eZExpiryHandler
     }
 
     /**
+     * Stores and drops the shared instance when it reads another expiry file than the one of the current cache
+     * directory, so that the next instance() reads the right one.
+     *
+     * The instance can be created before the siteaccess is known, with the expiry.php of the default VarDir. A
+     * siteaccess with a VarDir of its own (multi-site hosting) has its own expiry.php; without the reset, clearing a
+     * cache of one site wrote the shared file and expired the caches of every site. Timestamps set before the reset
+     * are stored into the file they were set for.
+     *
+     * @return bool true if the instance was dropped
+     */
+    static function resetForCurrentCacheDirectory()
+    {
+        if ( !self::hasInstance() )
+        {
+            return false;
+        }
+        $instance = $GLOBALS['eZExpiryHandlerInstance'];
+        if ( $instance->CacheFile->name() === eZSys::cacheDirectory() . '/' . 'expiry.php' )
+        {
+            return false;
+        }
+        $instance->store();
+        unset( $GLOBALS['eZExpiryHandlerInstance'] );
+        return true;
+    }
+
+    /**
      * Called at the end of execution and will store the data if it is modified.
      */
     static function shutdown()

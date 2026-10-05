@@ -2869,7 +2869,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-fa22715bc7cb98544ec9d0ef991a663d  doc/changelogs/6.0/6.0.15.md
+56b74d827f6d7c0728d54b0b7d462e7c  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4786,7 +4786,7 @@ a1fdd12cc8b007017c4bf7964e3ff6d0  kernel/classes/ezrssimport.php
 3aa9743d6e04eca55143c079a39eeaf7  kernel/classes/ezserializedobjectnamelist.php
 c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
-039e050e773a2fd2a2b2e29850791354  kernel/classes/ezsiteaccess.php
+0535babb099f26d20d433d931f466128  kernel/classes/ezsiteaccess.php
 d3a6b63ebff3db7a82bc883fd34182ed  kernel/classes/ezsitedata.php
 7efc4dbb1172be868577981924abbc6b  kernel/classes/ezsiteinstaller.php
 fdd616b8c3b71ca0c9d8752209056cf4  kernel/classes/ezsslzone.php
@@ -6036,7 +6036,7 @@ df42d26c8d8f8485212c39aefa5ad5e6  lib/ezutils/classes/ezcli.php
 ab85695631f8f3ec591980b883ae1117  lib/ezutils/classes/ezdebug.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 2047e66b03daaf6a4e04cda96d10617b  lib/ezutils/classes/ezexecution.php
-e1e2c17109662cab89a37def4db94c01  lib/ezutils/classes/ezexpiryhandler.php
+29e3a26ddc1646c9e19f898ca1dc0472  lib/ezutils/classes/ezexpiryhandler.php
 b4fd3b1bf4ed2cc65e987e4438a865c2  lib/ezutils/classes/ezextension.php
 9e4092daa80dcaa119d74d48870c65d1  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
 b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
@@ -7271,6 +7271,7 @@ a61040cb1a3f66819c65d6e1c243b127  tests/tests/lib/eztemplate/eztemplatetextopera
 d55f27da992880ec276e9fc8d117a356  tests/tests/lib/ezutils/ErrorCasePageTest.php
 1cb86abbb39e758fa2ec557a149ad317  tests/tests/lib/ezutils/PHPUnitTextUICommandShimTest.php
 b04416a94a85e92fcfaf8d20cd7481f2  tests/tests/lib/ezutils/RepairQueueTest.php
+60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 941837b4dbd18a37bcb019e8fb86fb9b  tests/tests/lib/ezutils/eZHTTPToolTest.php
 2c63f7f0a0f75b87643f8adc22d3d3f7  tests/tests/lib/ezutils/eZINIEnvironmentTest.php
 c6644c73d74f9f7d5926761a81c29253  tests/tests/lib/ezutils/eZINITest.php
