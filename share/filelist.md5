@@ -4626,7 +4626,7 @@ c4b8e53cb43ed9b1d0000d9085f84aa5  kernel/classes/datatypes/ezoption/ezoption.php
 722e80151dd54252c2f77810a28393bb  kernel/classes/datatypes/ezprice/ezprice.php
 9b97d1a353be5cb35857e20433c5d00c  kernel/classes/datatypes/ezprice/ezpricetype.php
 bb35232f915ab1f6a98245e68f7830e9  kernel/classes/datatypes/ezproductcategory/ezproductcategorytype.php
-8fb119dab0087e8f4eb8c4a4eadcbfb7  kernel/classes/datatypes/ezrangeoption/ezrangeoption.php
+e83b8db5cdd3dcd430a9bd25ded7d750  kernel/classes/datatypes/ezrangeoption/ezrangeoption.php
 871c62ccda2ef9df0e3d2448e68715c9  kernel/classes/datatypes/ezrangeoption/ezrangeoptiontype.php
 b34d022d94ab54c66da80756ae1f0122  kernel/classes/datatypes/ezselection/ezselectiontype.php
 228ddbcb3dd91c93e0a987fe3e9efeba  kernel/classes/datatypes/ezstring/ezstringtype.php
@@ -4750,7 +4750,7 @@ fb132e7c863174626926237fdc954d34  kernel/classes/ezdiscountsubrule.php
 1ab77f2d056c3648a7cd8e5095feb662  kernel/classes/ezhttpheader.php
 a44920d95ac2d04c9a60749688f571bb  kernel/classes/ezinformationcollection.php
 6dcf00e526909397b7ed9fc0740b1a80  kernel/classes/ezinformationcollectionattribute.php
-99adc179a8ee28da7832b3d0d7adbefb  kernel/classes/eznamepatternresolver.php
+701d32ac9b97918e47d5dec4f18061df  kernel/classes/eznamepatternresolver.php
 77e7aa794459e17c5adc407a3366f752  kernel/classes/eznavigationpart.php
 a14bddf5ee8c6d1e97d2620e2878d87a  kernel/classes/eznodeassignment.php
 6f137268ce3602d89a9aa333beceebb1  kernel/classes/eznodeviewfunctions.php
@@ -5256,7 +5256,7 @@ ad15f553d45809e62bcaf55e340af554  kernel/private/classes/ezpkernelweb.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
 2624f73f09c71233ff19dfbd28ff79b5  kernel/private/classes/ezpmobiledevicedetectfilter.php
 b6faff304d7afedf043b946e2b2104fb  kernel/private/classes/ezpmobiledevicedetectfilterinterface.php
-2c2aff239cfcbbab887547d12f5d043a  kernel/private/classes/ezpmobiledeviceregexpfilter.php
+70851137ad989ed5bf181f5d253a77d6  kernel/private/classes/ezpmobiledeviceregexpfilter.php
 d512fea2b159bda6e83158d5992933ab  kernel/private/classes/ezpmultivariatetest.php
 be72236ef28a665ddb30d6e278d102c3  kernel/private/classes/ezpmultivariatetesthandler.php
 b0ceceef412a27ea5302703bdb8fb87a  kernel/private/classes/ezpmultivariatetesthandlerinterface.php
@@ -5986,7 +5986,7 @@ c35ab5cf61ddbc4e510f380016f16bcb  lib/ezsoap/classes/ezsoapparameter.php
 fe326a7a2677d729c1080497a8310a94  lib/eztemplate/classes/exceptions/failedexecutingcompiledtemplate.php
 d970d5a1051656d3d5561e5e0442a74d  lib/eztemplate/classes/eztemplate.php
 dd2c1e502be7ae4f346d6ac949411c3f  lib/eztemplate/classes/eztemplatearithmeticoperator.php
-691f4f0668dce80ca38d370107fee7c0  lib/eztemplate/classes/eztemplatearrayoperator.php
+82f90b9c4eb10edc8282a2a51432c61d  lib/eztemplate/classes/eztemplatearrayoperator.php
 a18e5f0d05eb1120d30dac9db87de72d  lib/eztemplate/classes/eztemplateattributeoperator.php
 14343b6210648d880e2d1dc763ce86e3  lib/eztemplate/classes/eztemplateautoload.php
 caf4abdaccd57ca1a17e570a203c35fa  lib/eztemplate/classes/eztemplateblockfunction.php
@@ -6011,7 +6011,7 @@ c7dfcb5e49cf05381653d2e6c4c6a888  lib/eztemplate/classes/eztemplateiffunction.ph
 7bcbd741fbfa3705792bddeeb2eba748  lib/eztemplate/classes/eztemplateimageoperator.php
 3523b08650303010f3ff1e39c3c905a1  lib/eztemplate/classes/eztemplateincludefunction.php
 10da355497556aa61bd23c0398efe042  lib/eztemplate/classes/eztemplatelocaleoperator.php
-955b172e57a06bfc610d222c316a4215  lib/eztemplate/classes/eztemplatelogicoperator.php
+a8945960a4d950afec37904d12dfdd11  lib/eztemplate/classes/eztemplatelogicoperator.php
 023f900063f22ab78b9026933f1d3357  lib/eztemplate/classes/eztemplateloop.php
 c24a242645aeac124235310612a9981b  lib/eztemplate/classes/eztemplatemenufunction.php
 ac5d296c16229934386f1152e90b0fc0  lib/eztemplate/classes/eztemplatemultipassparser.php
@@ -6824,6 +6824,7 @@ c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTree
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
 ae5b1048f8e08ec7094ae01547fdcee1  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
 b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutOrderingTest.php
+5177bfc3e5766c1569122d4c4c6a299d  tests/tests/kernel/classes/eZNamePatternResolverPatternTest.php
 9169fade253bff5d12cacfca741df2be  tests/tests/kernel/classes/eZNodeAssignmentTest.php
 34a30d04bc83a3f957f992301d260afc  tests/tests/kernel/classes/eZNodeviewfunctionsViewCacheTest.php
 1a61ba02eb30739edcb683230c3cfc97  tests/tests/kernel/classes/eZPackageLicenseTest.php
@@ -6848,6 +6849,7 @@ b80a0b72065201d4e81e9dbd79ed9ec0  tests/tests/kernel/classes/eZURLWildcardTest.p
 958c3b8e79be5a4fd876011251c836e4  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 1cdc6174223b1ee7b8ffd262ed6eee8c  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
 84f351231c9f1560c61cc1d443ff9ea0  tests/tests/kernel/classes/eZWorkflowProcessListTest.php
+4d598dae7c7b0975d1f25362cbd5f73a  tests/tests/kernel/classes/expAdminPaginationTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 5571584f622d8c32b884f5d306511331  tests/tests/kernel/classes/expVelocityEnginesTest.php
@@ -6891,6 +6893,7 @@ a8a61b473a5e21173818112297a16b47  tests/tests/kernel/classes/ezextension_with_or
 596c8b9fb90f1ddc1c7bf639afe1c4db  tests/tests/kernel/classes/ezorder_regression.php
 dbcfd409cc6cd6c3d9a9a461369158d7  tests/tests/kernel/classes/ezpActiveExtensionsTest.php
 11dbbe27b5f8c4148cd0d34b45cc186f  tests/tests/kernel/classes/ezpKernelWebAppendRequestQueryTest.php
+73c3e536cafc14791bf3fb65cd7c9b6e  tests/tests/kernel/classes/ezpMobileDeviceDetectTest.php
 c758e9c8740a66339dc5d27d746ed630  tests/tests/kernel/classes/ezpRestLazyTest.php
 cde6894a0438daa7404bdddb6b21aabc  tests/tests/kernel/classes/ezpTemplateOverridesTest.php
 a5532fb28c026fe034f0e1358fdd488b  tests/tests/kernel/classes/ezpackage_regression.php
@@ -7002,6 +7005,8 @@ bf131682211b1591e71f19c7a02314d9  tests/tests/kernel/content/ezcontentoperationd
 85bccb2e92c8d65e69480b468341abf7  tests/tests/kernel/content/ezpcontentpublishingbehaviour_test.php
 d6267bbd8f06997379c11c2c824ae8e0  tests/tests/kernel/content/suite.php
 a00a89408f5529c4e81370a6326ea69e  tests/tests/kernel/datatypes/eZDatatypeAbstract.php
+e0e0ffe408f59a1efe50e4dea3336f06  tests/tests/kernel/datatypes/eZDatatypeStringRoundTripTest.php
+3f3c01d63659373d1dc3e4e631373b20  tests/tests/kernel/datatypes/eZDatatypeValueObjectsTest.php
 f9e63ccfdfcb050ee73f4b030f5a2718  tests/tests/kernel/datatypes/ezbinaryfile/ezbinaryfiletype_regression.php
 b05403212c66bdc8ccc597fedf6cd5fe  tests/tests/kernel/datatypes/ezbinaryfile/ezbinaryfiletype_regression_issue14983.txt
 a22196a6aa972de5006cea101d193f99  tests/tests/kernel/datatypes/ezcountry/eZCountryTypeTest.php
