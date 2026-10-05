@@ -1338,17 +1338,17 @@ class eZDBInterface
      */
     function implodeWithTypeCast( $glue, &$pieces, $type )
     {
-        $str = '';
         if ( !is_array( $pieces ) )
-            return $str;
+            return '';
 
+        // joined, not trimmed: rtrim() takes a character list and also cut the last value's own trailing characters
+        $castPieces = array();
         foreach( $pieces as $piece )
         {
             settype( $piece, $type );
-            $str .= $piece.$glue;
+            $castPieces[] = $piece;
         }
-        $str = rtrim( $str, $glue );
-        return $str;
+        return implode( $glue, $castPieces );
     }
 
     /**
