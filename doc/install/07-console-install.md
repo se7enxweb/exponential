@@ -456,13 +456,19 @@ EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install \
 
 ### MongoDB
 
-Needs the PHP `mongodb` extension and the `mongodb/mongodb` library ([chapter 9](09-databases.md)).
+Needs the PHP `mongodb` extension, the `mongodb/mongodb` library and a database user created in the site's database
+([chapter 9](09-databases.md#95-mongodb)).
 
 ```bash
-php bin/php/console exp:install \
-    --db=mongodb --db-host=127.0.0.1 --db-port=27017 --db-name=exponential \
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install \
+    --db=mongodb --db-host=127.0.0.1 --db-port=27017 --db-name=exponential --db-user=exponential \
     --url=https://www.example.com
 ```
+
+`--db-user` has no default for MongoDB, and it is not optional: the adapter always puts a user and a password into
+its connection string, and without a user the MongoDB driver refuses the string ("Failed to parse MongoDB URI: ...
+'default' authentication mechanism requires a username"), so the run stops at the database step. Create the user first, also on a test server
+that does not enforce access control.
 
 ### Oracle
 
