@@ -70,7 +70,7 @@ class cjwNewsletterRunnerTest extends cjwNewsletterTestCase
         $this->assertSame( count( $before['subscriptions'] ), $dry['subscriptions'] );
         $this->assertSame( $before, CjwNewsletterRunner::orphans(), 'a dry run removes nothing' );
         $foreign = array_diff( $before['subscriptions'], array( $id ) );
-        if ( $foreign || $before['send_items'] )
+        if ( $foreign || $before['send_items'] || $before['interests'] )
         {
             // rows of the installation itself: never removed by a test
             eZDB::instance()->query( 'DELETE FROM cjwnl_subscription WHERE id = ' . $id );
@@ -78,7 +78,7 @@ class cjwNewsletterRunnerTest extends cjwNewsletterTestCase
         }
         $real = CjwNewsletterRunner::repair( false, 'nltest' );
         $this->assertSame( 1, $real['subscriptions'] );
-        $this->assertSame( array( 'subscriptions' => array(), 'send_items' => array() ), CjwNewsletterRunner::orphans() );
+        $this->assertSame( array( 'subscriptions' => array(), 'send_items' => array(), 'interests' => array() ), CjwNewsletterRunner::orphans() );
         $this->assertSame( 'nltest', CjwNewsletterRunner::lastRun( CjwNewsletterRunner::LAST_REPAIR )['by'] );
     }
 

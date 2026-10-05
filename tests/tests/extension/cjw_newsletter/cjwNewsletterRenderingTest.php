@@ -585,12 +585,13 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
         $this->assertSame( array( (int)$music->attribute( 'id' ) ), CjwNewsletterInterests::idsForUser( $user->attribute( 'id' ) ), 'the interests were still stored' );
         $_POST = array();
 
-        // erasure takes the interests and the language with it
+        // erasure takes the subscriber with his interests, his language and his subscriptions
         $user->setAttribute( 'language', 'eng-GB' );
         $user->store();
         $handler->erased( $recipient, expConsentContext::system( 'test' ) );
         $this->assertSame( array(), CjwNewsletterInterests::idsForUser( $user->attribute( 'id' ) ) );
-        $this->assertSame( '', CjwNewsletterUser::fetch( $user->attribute( 'id' ) )->attribute( 'language' ) );
+        $this->assertFalse( (bool)CjwNewsletterUser::fetch( $user->attribute( 'id' ) ), 'the newsletter user is gone' );
+        $this->assertFalse( (bool)$this->subscriptionOf( $user ), 'and his subscription' );
     }
 
     public function testInterestsBlockIsEmptyWithoutInterestsAndRendersArticles()

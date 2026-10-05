@@ -3,9 +3,10 @@
  * The base of the cjw_newsletter tests.
  *
  * Live-database style: the kernel is started once on the admin siteaccess against the installation's own database.
- * Every test works on throwaway data: subscribers use the address pattern nltest-<n>@example.invalid, which tearDown
- * removes together with everything that hangs on them (subscriptions, send items, imports, blacklist entries,
- * mailbox items), as well as the editions and edition sends a test created. Mail is never sent: the transports of
+ * Every test works on throwaway data: subscribers use the address pattern nltest-<n>@example.invalid. tearDown
+ * removes the ones this test made (the addresses it asked for, and the rows a view made while it ran), together
+ * with everything that hangs on them (subscriptions, send items, interests, SMS codes, imports, blacklist entries,
+ * consent log rows, mailbox items), but never the addresses of another test, as well as the editions and edition sends a test created. Mail is never sent: the transports of
  * cjw_newsletter.ini are switched to the file transport for the test and write into a directory of their own under
  * var/tmp, which tearDown empties. There is never a test database.
  *
@@ -39,6 +40,9 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
     protected $collector = null;
     /** @var array the recorded last runs of the cronjob parts and commands before the test: a test must not leave its runs on the start page */
     protected $savedRuns = array();
+    /** @var array table => the highest id before the test (rows above it that carry a test address are the test's own) */
+    protected $startIds = array( 'cjwnl_user' => null, 'cjwnl_blacklist_item' => null, 'expmail_consent_log' => null,
+                                 'cjwnl_mailbox_item' => null, 'cjwnl_mailbox' => null );
 
     public static function setUpBeforeClass(): void
     {
@@ -77,6 +81,7 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             $this->markTestSkipped( 'Kernel not available: ' . self::$bootError );
         $this->loginAdmin();
         $this->savedRuns = eZDB::instance()->arrayQuery( "SELECT name, value FROM ezsite_data WHERE name LIKE 'cjw_newsletter_last_%'" );
+        $this->rememberStartIds();
         $this->savedPost = $_POST;
         $_POST = array();
         $this->useFileTransport();
@@ -103,7 +108,8 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             $this->restoreIni();
             $this->removeMailDir();
             $_POST = $this->savedPost;
-            for ( $i = 0; $i < 20; $i++ )
+            // the kernel installs a handler of its own in some runs (a test with many queue runs leaves many)
+            for ( $i = 0; $i < 500; $i++ )
             {
                 $current = set_error_handler( function () { return false; } );
                 restore_error_handler();
@@ -315,27 +321,63 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
                 $db->query( 'DELETE FROM cjwnl_list WHERE contentobject_id = ' . (int)$id );
         }
         $this->createdObjectIds = array();
-        // users by address pattern (also those a view created)
-        $rows = $db->arrayQuery( "SELECT id, email FROM cjwnl_user WHERE email LIKE 'nltest-%@" . self::MAIL_DOMAIN . "'" );
+        // only the users this test made: the addresses it asked for (newEmail(), trackEmail()), and the nltest-
+        // addresses a view made while the test ran (rows newer than the high-water mark of setUp()). Never a sweep
+        // over every nltest- address: that would take the rows of a test that runs at the same time.
+        $rows = array();
+        $seen = array();
+        $tracked = array();
+        foreach ( array_unique( $this->extraEmails ) as $email )
+            $tracked[] = "'" . $db->escapeString( (string)$email ) . "'";
+        $where = array();
+        if ( $tracked )
+            $where[] = 'email IN ( ' . implode( ', ', $tracked ) . ' )';
+        if ( $this->startIds['cjwnl_user'] !== null )
+            $where[] = "( id > " . (int)$this->startIds['cjwnl_user'] . " AND email LIKE 'nltest-%@" . self::MAIL_DOMAIN . "' )";
+        if ( $where )
+            foreach ( (array)$db->arrayQuery( 'SELECT id, email FROM cjwnl_user WHERE ' . implode( ' OR ', $where ) ) as $row )
+                if ( !isset( $seen[(int)$row['id']] ) )
+                {
+                    $seen[(int)$row['id']] = true;
+                    $rows[] = $row;
+                }
         foreach ( $rows as $row )
         {
             $uid = (int)$row['id'];
             $db->query( 'DELETE FROM cjwnl_edition_send_item WHERE newsletter_user_id = ' . $uid );
             $db->query( 'DELETE FROM cjwnl_subscription WHERE newsletter_user_id = ' . $uid );
+            $db->query( 'DELETE FROM cjwnl_user_interest WHERE newsletter_user_id = ' . $uid );
+            $db->query( 'DELETE FROM cjwnl_sms_code WHERE newsletter_user_id = ' . $uid );
+            $db->query( 'DELETE FROM cjwnl_sms_message WHERE newsletter_user_id = ' . $uid );
             $db->query( 'DELETE FROM cjwnl_user WHERE id = ' . $uid );
         }
+        $ownEmails = $this->extraEmails;
+        foreach ( $rows as $row )
+            $ownEmails[] = (string)$row['email'];
+        $ownEmails = array_values( array_unique( $ownEmails ) );
         // 4.2.0 N1: a hard bounce or a complaint in a test suppresses the address in the kernel list: lift it again
         if ( class_exists( 'expMailSuppression' ) && class_exists( 'CjwNewsletterMailPreferences' ) && CjwNewsletterMailPreferences::available() )
         {
-            $emails = $this->extraEmails;
-            foreach ( $rows as $row )
-                $emails[] = (string)$row['email'];
+            $emails = $ownEmails;
             foreach ( array_unique( $emails ) as $email )
                 if ( strpos( $email, 'nltest-' ) === 0 && expMailSuppression::isSuppressed( $email ) )
                     expMailSuppression::lift( $email );
         }
         // end 4.2.0 N1
-        $db->query( "DELETE FROM cjwnl_blacklist_item WHERE email LIKE 'nltest-%@" . self::MAIL_DOMAIN . "'" );
+        $own = array();
+        foreach ( $ownEmails as $email )
+            $own[] = "'" . $db->escapeString( $email ) . "'";
+        if ( $own )
+        {
+            $in = implode( ', ', $own );
+            $db->query( 'DELETE FROM cjwnl_blacklist_item WHERE email IN ( ' . $in . ' )' );
+            // the consent log rows of the test's addresses (the blacklist bridge, the confirmations, the imports)
+            $db->query( 'DELETE FROM expmail_consent_log WHERE email IN ( ' . $in . ' )' );
+        }
+        if ( $this->startIds['cjwnl_blacklist_item'] !== null )
+            $db->query( 'DELETE FROM cjwnl_blacklist_item WHERE id > ' . (int)$this->startIds['cjwnl_blacklist_item'] . " AND email LIKE 'nltest-%@" . self::MAIL_DOMAIN . "'" );
+        if ( $this->startIds['expmail_consent_log'] !== null )
+            $db->query( 'DELETE FROM expmail_consent_log WHERE id > ' . (int)$this->startIds['expmail_consent_log'] . " AND email LIKE 'nltest-%@" . self::MAIL_DOMAIN . "'" );
         foreach ( $this->createdImportIds as $importId )
         {
             $db->query( 'DELETE FROM cjwnl_subscription WHERE import_id = ' . (int)$importId );
@@ -343,9 +385,31 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             $db->query( 'DELETE FROM cjwnl_import WHERE id = ' . (int)$importId );
         }
         $this->createdImportIds = array();
-        $db->query( "DELETE FROM cjwnl_mailbox_item WHERE message_identifier LIKE 'nltest-%'" );
-        $db->query( "DELETE FROM cjwnl_mailbox WHERE email LIKE 'nltest-%'" );
+        // mailbox rows the test made
+        if ( $this->startIds['cjwnl_mailbox_item'] !== null )
+            $db->query( 'DELETE FROM cjwnl_mailbox_item WHERE id > ' . (int)$this->startIds['cjwnl_mailbox_item'] . " AND message_identifier LIKE 'nltest-%'" );
+        if ( $this->startIds['cjwnl_mailbox'] !== null )
+            $db->query( 'DELETE FROM cjwnl_mailbox WHERE id > ' . (int)$this->startIds['cjwnl_mailbox'] . " AND email LIKE 'nltest-%'" );
+        $this->extraEmails = array();
         eZContentObject::clearCache();
+    }
+
+    /** Lets removeTestData() remove a subscriber whose address the test typed itself instead of taking newEmail(). */
+    protected function trackEmail( $email )
+    {
+        $this->extraEmails[] = (string)$email;
+        return $email;
+    }
+
+    /** The high-water marks of the tables a test may add rows to without knowing their addresses beforehand. */
+    protected function rememberStartIds()
+    {
+        $db = eZDB::instance();
+        foreach ( array_keys( $this->startIds ) as $table )
+        {
+            $rows = $db->arrayQuery( 'SELECT MAX( id ) AS max_id FROM ' . $table );
+            $this->startIds[$table] = is_array( $rows ) && isset( $rows[0] ) ? (int)$rows[0]['max_id'] : null;
+        }
     }
 
     // ------------------------------------------------------------------ views
