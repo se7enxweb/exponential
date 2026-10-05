@@ -69,6 +69,10 @@ class eZImageAliasHandlerGuardsTest extends PHPUnit\Framework\TestCase
                 array( '<ezimage serial_number="1" dirpath="var/site/storage/images/media/photo/57-2-eng-GB" basename="photo"/>', $memory, true ),
             'serial_number reset by publishing' =>
                 array( '<ezimage serial_number="2" dirpath="var/site/storage/images-versioned/57/2-eng-GB" basename="photo"/>', $memory, true ),
+            'published row with an empty serial_number and a moved dirpath' =>
+                array( '<?xml version="1.0" encoding="utf-8"?><ezimage serial_number="" is_valid="1" dirpath="var/site/storage/images/57/2-eng-GB"><original attribute_id="1"/></ezimage>', $memory, true ),
+            'stored document with another root element' =>
+                array( '<?xml version="1.0"?><a/>', $memory, false ),
             'unparseable stored value never supersedes' =>
                 array( '<ezimage serial_number="1"', $memory, false ),
             'foreign stored root never supersedes' =>
@@ -127,6 +131,21 @@ class eZImageAliasHandlerGuardsTest extends PHPUnit\Framework\TestCase
         }
 
         $handler = new eZImageAliasHandlerGuardsTestHandler( array( 'original' => array( 'basename' => '' ) ) );
+        $this->assertNull( $handler->imageAlias( 'small' ) );
+    }
+
+    /**
+     * An attribute without any alias list (XML without an <ezimage> element) gives no alias.
+     */
+    public function testImageAliasWithoutOriginalIsNull()
+    {
+        $imageManager = eZImageManager::factory();
+        if ( !$imageManager->hasAlias( 'small' ) )
+        {
+            $this->markTestSkipped( 'No "small" image alias in image.ini' );
+        }
+
+        $handler = new eZImageAliasHandlerGuardsTestHandler( array() );
         $this->assertNull( $handler->imageAlias( 'small' ) );
     }
 

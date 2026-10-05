@@ -143,6 +143,44 @@ class ezjscoreCallThrowableTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', $second['error_text'] );
     }
 
+    /**
+     * A TypeError raised by PHP itself carries the file path in its trace; nothing of it reaches the client.
+     */
+    public function testRealPHPErrorGivesAGenericTextWithoutPaths()
+    {
+        try
+        {
+            strlen( array() );
+            $this->fail( 'strlen( array() ) did not throw' );
+        }
+        catch ( TypeError $error )
+        {
+        }
+        $responses = self::runCalls( array( new ezjscoreCallThrowableTestRouter( $error ) ) );
+        $response = json_decode( $responses[0], true );
+        $this->assertSame( 'Internal error in the server function', $response['error_text'] );
+        $this->assertStringNotContainsString( '.php', $responses[0] );
+    }
+
+    /**
+     * An expservices service answers through expServiceBase::invoke(), which catches every Throwable itself:
+     * its { ok, error: { code, message } } envelope arrives as the content, not as an error text.
+     */
+    public function testExpservicesEnvelopeSurvivesTheCall()
+    {
+        ezpLiveInstallation::requireOrSkip();
+        require_once dirname( __DIR__ ) . '/expservices/core/expServicesCoreTestCase.php';
+
+        $response = self::callResponse( new ezjscoreCallThrowableTestRouter( null, expServiceBase::invoke( 'expServicesFixtureServices', 'typeError', array() ) ) );
+        $this->assertSame( '', $response['error_text'] );
+        $this->assertFalse( $response['content']['ok'] );
+        $this->assertSame( 500, $response['content']['error']['code'] );
+        $this->assertArrayHasKey( 'message', $response['content']['error'] );
+
+        $response = self::callResponse( new ezjscoreCallThrowableTestRouter( null, expServiceBase::invoke( 'expServicesFixtureServices', 'fails', array() ) ) );
+        $this->assertSame( array( 'ok' => false, 'error' => array( 'code' => 422, 'message' => 'bad input' ) ), $response['content'] );
+    }
+
     public function testNotARouterIsReportedEscaped()
     {
         $response = self::callResponse( 'nofunction<script>' );
