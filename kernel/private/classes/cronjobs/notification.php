@@ -24,21 +24,25 @@ namespace Exponential\Cronjob\Kernel
 
 class Notification extends \Exponential\Runnable\CronjobPart
 {
+    /**
+     * One pass of the notification filter through the service (expNotificationService::run): a lock, a time
+     * event, every pending event through every handler, a record of the run for the status page and
+     * exp:notification:status. runcronjobs.php locks the part and writes the audit event system.cronjob.run
+     * around this; the service's own lock also keeps it from running at the same time as the console command
+     * or the status page's Run now.
+     */
     public function run( array $scope )
     {
-        // the including function's variables ($Params, $Module, $cli, ...)
-        foreach ( array_keys( $scope ) as $__name )
-            if ( $__name !== 'this' && $__name !== 'scope' )
-                ${$__name} = &$scope[$__name];
-        unset( $__name );
-
-        $event = \eZNotificationEvent::create( 'ezcurrenttime', array() );
-
-        $event->store();
+        $cli = isset( $scope['cli'] ) ? $scope['cli'] : \eZCLI::instance();
         $cli->output( "Starting notification event processing" );
-        \eZNotificationEventFilter::process();
-
-        $cli->output( "Done" );
+        $result = \expNotificationService::run( array( 'source' => 'cron' ) );
+        if ( $result['result'] === 'busy' )
+            $cli->output( "Skipped: " . $result['error'] );
+        else if ( $result['result'] !== 'ok' )
+            $cli->error( "Failed: " . $result['error'] );
+        else
+            $cli->output( sprintf( "Done: %d events, %d messages to %d recipients", $result['events'], $result['mails'], $result['recipients'] ) );
+        return $result['result'] === 'ok';
     }
 }
 
