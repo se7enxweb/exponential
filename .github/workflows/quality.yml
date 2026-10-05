@@ -1,7 +1,8 @@
 name: Quality
 
 # The checks of the git hooks (.githooks/), run for every push and pull request.
-# Blocking: PHP syntax, the file manifest, commit messages and PHPStan.
+# Blocking: PHP syntax (also with PHP 8.1, the oldest supported version), the
+# file manifest, commit messages, PHPStan and the tests of the own sniffs.
 # Warning only for now: the code style of changed files (phpcs.xml.dist).
 # See doc/features/6.0/quality-checks.md.
 
@@ -115,3 +116,37 @@ jobs:
 
       - name: PHPStan (only findings missing from phpstan-baseline.neon fail)
         run: .devtools/vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=4G --no-progress
+
+      - name: Tests of the code style sniffs (bin/phpcs/)
+        run: vendor/bin/phpunit --testsuite quality --no-coverage
+
+  php81:
+    name: PHP 8.1 syntax
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP 8.1, the oldest supported version
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+
+      - name: PHP 8.1 syntax of changed files (readonly classes, typed constants, ... are refused)
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base=${{ github.event.pull_request.base.sha }}
+          elif [ -n "${{ github.event.before }}" ] && ! echo "${{ github.event.before }}" | grep -q '^0*$'; then
+            base=${{ github.event.before }}
+          else
+            base=$(git rev-parse HEAD~1)
+          fi
+          status=0
+          for file in $(git diff --name-only --diff-filter=ACMR "$base" ${{ github.sha }} -- '*.php'); do
+            php -l "$file" >/dev/null || status=1
+          done
+          exit $status

@@ -7,7 +7,7 @@
 BASE ?= origin/main
 DEVTOOLS = .devtools/vendor/bin
 
-.PHONY: devtools hooks check lint manifest-check manifest-fix phpcs phpstan phpstan-baseline
+.PHONY: devtools hooks check lint lint81 manifest-check manifest-fix phpcs phpstan phpstan-baseline
 
 # PHP_CodeSniffer and PHPStan from composer.dev.json, never into vendor/
 devtools:
@@ -25,6 +25,13 @@ lint:
 	@for file in $$(git diff --name-only --diff-filter=ACMR $$(git merge-base $(BASE) HEAD) -- '*.php'); do \
 		php -l "$$file" >/dev/null || exit 1; \
 	done; echo "lint: no syntax errors"
+
+# PHP 8.1 syntax of the PHP files changed since $(BASE); PHP81 names the binary
+PHP81 ?= $(or $(EXP_PHP81),php8.1)
+lint81:
+	@for file in $$(git diff --name-only --diff-filter=ACMR $$(git merge-base $(BASE) HEAD) -- '*.php'); do \
+		$(PHP81) -l "$$file" >/dev/null || exit 1; \
+	done; echo "lint81: no PHP 8.1 syntax errors"
 
 # share/filelist.md5 against the files
 manifest-check:
