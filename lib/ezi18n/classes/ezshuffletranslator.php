@@ -45,7 +45,8 @@ class eZShuffleTranslator extends eZTranslatorHandler
     */
     function &shuffleText( $text )
     {
-        $num = mt_rand( 0, $this->MaxChars );
+        // a text of fewer than two characters has nothing to move
+        $num = strlen( $text ) < 2 ? 0 : mt_rand( 0, $this->MaxChars );
         for ( $i = 0; $i < $num; ++$i )
         {
             $len = strlen( $text );
@@ -54,7 +55,7 @@ class eZShuffleTranslator extends eZTranslatorHandler
             {
                 $tmp = $text[$offs];
                 $text[$offs] = $text[$len - 1];
-                $text[$len] = $tmp;
+                $text[$len - 1] = $tmp;
             }
             else
             {

@@ -33,7 +33,7 @@ class eZTranslatorGroup extends eZTranslatorHandler
     function findKey( $key )
     {
         $num = $this->keyPick( $key );
-        if ( $num >=0 and $num <= count( $this->Handlers ) )
+        if ( $num >=0 and $num < count( $this->Handlers ) )
         {
             $handler = $this->Handlers[$num];
             return $handler->findKey( $key );
@@ -53,7 +53,7 @@ class eZTranslatorGroup extends eZTranslatorHandler
     function findMessage( $context, $source, $comment = null )
     {
         $num = $this->pick( $context, $source, $comment );
-        if ( $num >=0 and $num <= count( $this->Handlers ) )
+        if ( $num >=0 and $num < count( $this->Handlers ) )
         {
             $handler = $this->Handlers[$num];
             return $handler->findMessage( $context, $source, $comment );
@@ -71,7 +71,7 @@ class eZTranslatorGroup extends eZTranslatorHandler
     function translate( $context, $source, $comment = null )
     {
         $num = $this->pick( $context, $source, $comment );
-        if ( $num >=0 and $num <= count( $this->Handlers ) )
+        if ( $num >=0 and $num < count( $this->Handlers ) )
         {
             $handler = $this->Handlers[$num];
             return $handler->translate( $context, $source, $comment );
@@ -89,7 +89,7 @@ class eZTranslatorGroup extends eZTranslatorHandler
     function keyTranslate( $key )
     {
         $num = $this->keyPick( $key );
-        if ( $num >=0 and $num <= count( $this->Handlers ) )
+        if ( $num >=0 and $num < count( $this->Handlers ) )
         {
             $handler = $this->Handlers[$num];
             return $handler->keyTranslate( $key );

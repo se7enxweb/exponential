@@ -23,7 +23,7 @@ class eZTextTool
      Returns an HTML highlighted and displayable formatted HTML from the
      input text. < and > are converted to &lt; and &gt;
     */
-    function highlightHTML( $input )
+    static function highlightHTML( $input )
     {
         $input = str_replace( "<", "&lt;", $input );
         $input = str_replace( ">", "&gt;", $input );
@@ -33,12 +33,12 @@ class eZTextTool
         return $input;
     }
 
-    function highlightPHP()
+    static function highlightPHP()
     {
 
     }
 
-    function concatDelimited()
+    static function concatDelimited()
     {
         $numargs = func_num_args();
         $argList = func_get_args();
@@ -51,7 +51,7 @@ class eZTextTool
         return $text;
     }
 
-    function concat()
+    static function concat()
     {
         $numargs = func_num_args();
         $argList = func_get_args();
@@ -63,7 +63,7 @@ class eZTextTool
         return $text;
     }
 
-    function arrayFlatten( $array )
+    static function arrayFlatten( $array )
     {
         $flatArray = array();
         $expandItems = $array;
