@@ -2667,7 +2667,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 5151388d1df4c10c691e3f4a7ad1409f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 d215eaca3e19242c3854c77ee4780c26  doc/bc/6.0/admin4l.md
-bcde15a755ff5679d09d8fa80cbc3a79  doc/bc/6.0/audit.md
+bfe09754ac99236f777616755fb069ff  doc/bc/6.0/audit.md
 7c829017c001901d87afec4e42579df4  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 250a9d7e6948ddd176f5c6c54bb0febb  doc/bc/6.0/behaviour-changes-2026-09b.md
@@ -6783,7 +6783,7 @@ e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchi
 110a6beb30f68575e96eac4059b9afe4  tests/tests/kernel/classes/audit/expAuditIndexTest.php
 45b4d96cb4d1350c350ed2c120389bff  tests/tests/kernel/classes/audit/expAuditMailRecipientsTest.php
 5c6b061e6feeadb8b38380fb231a4ae9  tests/tests/kernel/classes/audit/expAuditPrivacyTest.php
-ebf9a7ec9809b0f855cecf8f42b88a44  tests/tests/kernel/classes/audit/expAuditRecordTest.php
+9d4565faa8fb61af53d9a9ddaf105a2f  tests/tests/kernel/classes/audit/expAuditRecordTest.php
 12fa489a88ec679f0a8014b7018734c4  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 48b46955f2d2754be10ad2ea72e3687d  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php
 79ddb3ce226847a0407e965b1d7e99f3  tests/tests/kernel/classes/audit/fixtures/expaudittestwebhookreceiver.php

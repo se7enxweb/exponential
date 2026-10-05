@@ -12,7 +12,7 @@
  *  AR-06 — names: 3 to 6 ranks in the five domains; anything else is refused (event() returns null)
  *  AR-07 — patterns: "content.*" matches the domain, "content.node.remove.*" matches itself and its details, the
  *          most specific wins, Disabled[] wins a tie
- *  AR-08 — the catalogue has the 135 names of the design; defaults: on, off, always, sampled
+ *  AR-08 — the catalogue has the 136 names of the design; defaults: on, off, always, sampled
  *  AR-09 — routing: Route[] patterns, the exact entry wins, DefaultChannel for the rest
  *  AR-10 — Audit=disabled records nothing; an "always" name ignores Disabled[]; MinSeverity drops lower ones
  *  AR-11 — an extension branch (Branches[]) adds names; a missing class, a class not implementing the interface
@@ -190,9 +190,9 @@ class expAuditRecordTest extends PHPUnit\Framework\TestCase
     public function testCatalogue()
     {
         $catalogue = expAuditTaxonomy::catalogue();
-        $this->assertCount( 135, $catalogue );
+        $this->assertCount( 136, $catalogue );
         $defaults = array_count_values( array_column( $catalogue, 'default' ) );
-        $this->assertSame( array( 'always' => 23, 'off' => 23, 'on' => 86, 'sampled' => 3 ), array( 'always' => $defaults['always'], 'off' => $defaults['off'],
+        $this->assertSame( array( 'always' => 23, 'off' => 23, 'on' => 87, 'sampled' => 3 ), array( 'always' => $defaults['always'], 'off' => $defaults['off'],
                                                                                                   'on' => $defaults['on'], 'sampled' => $defaults['sampled'] ) );
         foreach ( $catalogue as $name => $def )
         {
