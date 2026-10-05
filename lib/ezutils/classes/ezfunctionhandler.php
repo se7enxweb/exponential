@@ -73,48 +73,17 @@ class eZFunctionHandler
                     $constantParameterArray = array();
                 foreach ( array_keys( $constantParameterArray ) as $constKey )
                 {
+                    // a parameter given to the alias overrides the constant of the same name
+                    if ( array_key_exists( $constKey, $functionParameters ) )
+                    {
+                        $functionArray[$constKey] = $functionParameters[$constKey];
+                        continue;
+                    }
                     if ( $moduleFunctionInfo->isParameterArray( $functionName, $constKey ) )
                     {
-                        /*
-                         Check if have Constant overriden by function parameter
-                         */
-                        if ( array_key_exists( $constKey, $functionParameters ) )
-                        {
-                            $functionArray[$constKey] =& $functionParameters[$constKey] ;
-                            continue;
-                        }
-                        /*
-                         Split given string using semicolon as delimiter.
-                         Semicolon may be escaped by prepending it with backslash:
-                         in this case it is not treated as delimiter.
-                         I use \x5c instead of \\ here.
-                         */
-                        $constantParameter = preg_split( '/((?<=\x5c\x5c)|(?<!\x5c{1}));/',
-                                                         $constantParameterArray[$constKey] );
-
-                        /*
-                         Unfortunately, my PHP 4.3.6 doesn't work correctly
-                         if flag PREG_SPLIT_NO_EMPTY is set.
-                         That's why we need to manually remove
-                         empty strings from $constantParameter.
-                         */
-                        $constantParameter = array_diff( $constantParameter, array('') );
-
-                        /*
-                         Hack: force array keys to be consecutive, starting from zero (0, 1, 2, ...).
-                         Otherwise SQL syntax error occurs.
-                         */
-                        $constantParameter = array_values( $constantParameter );
-
+                        $constantParameter = eZFunctionHandler::constantList( $constantParameterArray[$constKey] );
                         if ( $constantParameter ) // if the array is not empty
-                        {
-                            // Remove backslashes used for delimiter escaping.
-                            $constantParameter = preg_replace( '/\x5c{1};/', ';', $constantParameter );
-                            $constantParameter = str_replace( '\\\\', '\\', $constantParameter );
-
-                            // Return the result.
                             $functionArray[$constKey] = $constantParameter;
-                        }
                     }
                     else
                         $functionArray[$constKey] = $constantParameterArray[$constKey];
@@ -133,6 +102,22 @@ class eZFunctionHandler
             return $moduleFunctionInfo->execute( $functionName, $functionArray );
         }
         eZDebug::writeWarning( 'Could not execute. Function ' . $aliasFunctionName. ' not found.' , __METHOD__ );
+    }
+
+    /**
+     * The items of a list constant of fetchalias.ini: split at semicolons, where \; is a semicolon in an item,
+     * empty items left out. Used by the interpreted and the compiled fetch_alias alike.
+     *
+     * @param string $text
+     * @return array
+     */
+    static function constantList( $text )
+    {
+        $items = preg_split( '/((?<=\x5c\x5c)|(?<!\x5c{1}));/', (string)$text );
+        $items = array_values( array_diff( $items, array( '' ) ) );
+        // remove the backslashes that escaped a delimiter, and unescape escaped backslashes
+        $items = preg_replace( '/\x5c{1};/', ';', $items );
+        return str_replace( '\\\\', '\\', $items );
     }
 
     static function execute( $moduleName, $functionName, $functionParameters )

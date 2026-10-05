@@ -124,8 +124,9 @@ class eZTemplateExecuteOperator
                     {
                         foreach ( array_keys( $constantParameterArray ) as $constKey )
                         {
+                            // split as the interpreted fetch_alias does (escaped semicolons, no empty items)
                             if ( $moduleFunctionInfo->isParameterArray( $functionName, $constKey ) )
-                                $constParameters[$constKey] = explode( ';', $constantParameterArray[$constKey] );
+                                $constParameters[$constKey] = eZFunctionHandler::constantList( $constantParameterArray[$constKey] );
                             else
                                 $constParameters[$constKey] = $constantParameterArray[$constKey];
                         }
