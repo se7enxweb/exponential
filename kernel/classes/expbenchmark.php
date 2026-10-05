@@ -164,7 +164,14 @@ class expBenchmark
         ) + self::summarize( $times );
 
         $ttfbSummary = self::summarize( $ttfb );
-        ksort( $status );
+        // the status codes in numeric order, "failed" after them: ksort() orders a mix of
+        // number and text keys differently before PHP 8.2 ("failed" first there)
+        uksort( $status, function ( $a, $b )
+        {
+            if ( is_int( $a ) != is_int( $b ) )
+                return is_int( $a ) ? -1 : 1;
+            return $a < $b ? -1 : ( $a > $b ? 1 : 0 );
+        } );
         arsort( $cache );
         $row['requests'] = count( (array)$requests );
         $row['errors'] = $errors;
