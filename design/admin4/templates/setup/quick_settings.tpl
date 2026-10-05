@@ -17,9 +17,9 @@
       <label>
       <input type="checkbox" {or( eq( $debug_output, 'enabled' ), eq( $debug_output, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" />
          {if eq( $debug_output, '' )}
-            <span class="disabled">{$setting.3|wash}</span>
+            <span class="disabled">{$setting.3|i18n( 'design/admin/pagelayout' )|wash}</span>
          {else}
-            {$setting.3|wash}
+            {$setting.3|i18n( 'design/admin/pagelayout' )|wash}
          {/if}
      </label>
      {/let}
@@ -34,14 +34,14 @@
          <label>
       {if ne( $debug_output_override, '' )}
          <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( $debug_output_override, 'enabled' ), eq( $debug_output_override, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" />
-         <span class="overriden">{$setting.3|wash}</span>
+         <span class="overriden">{$setting.3|i18n( 'design/admin/pagelayout' )|wash}</span>
       {else}
          {if eq( $debug_output, '' )}
             <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( ezini( $setting.0, $setting.1, $setting.2 ), 'enabled' ), eq( ezini( $setting.0, $setting.1, $setting.2 ), 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" />
          {else}
             <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( $debug_output, 'enabled' ), eq( $debug_output, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" />
          {/if}
-            {$setting.3|wash}
+            {$setting.3|i18n( 'design/admin/pagelayout' )|wash}
       {/if}
          </label>
       {/let}

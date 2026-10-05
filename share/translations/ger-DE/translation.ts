@@ -11257,7 +11257,31 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Global (override)</source>
-        <translation type="unfinished">Global (override)</translation>
+        <translation>Global (Überschreibung)</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Debug-Ausgabe</translation>
+    </message>
+    <message>
+        <source>Debug redirection</source>
+        <translation>Debug-Weiterleitung</translation>
+    </message>
+    <message>
+        <source>Template debug</source>
+        <translation>Template-Debug</translation>
+    </message>
+    <message>
+        <source>Inline template debug</source>
+        <translation>Inline-Template-Debug</translation>
+    </message>
+    <message>
+        <source>List of used templates</source>
+        <translation>Liste der verwendeten Templates</translation>
+    </message>
+    <message>
+        <source>SQL debug output</source>
+        <translation>SQL-Debug-Ausgabe</translation>
     </message>
     <message>
         <source>Set</source>
