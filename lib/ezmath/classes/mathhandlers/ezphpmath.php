@@ -64,12 +64,16 @@ class eZPHPMath
 
     function ceil( $value, $precision, $target )
     {
+        // the digits below work on the magnitude: the ceiling of -x is minus the floor of x
+        if ( $value < 0 )
+            return $this->sub( 0, $this->floor( $this->magnitude( $value ), $precision, $target ) );
+
         $fractStr = $this->fractval( $value );
         $fractPart = (int)substr( $fractStr, 0, $precision );
 
         $fractLen = strlen( $fractStr );
-        // actual ceiling
-        if ( $fractLen > $precision )
+        // actual ceiling, when a digit past the precision is not zero (a whole number has the fraction 0)
+        if ( $fractLen > $precision && trim( substr( $fractStr, $precision ), '0' ) !== '' )
             $fractPart += 1;
 
         // adjust precision
@@ -87,6 +91,10 @@ class eZPHPMath
 
     function floor( $value, $precision, $target )
     {
+        // the floor of -x is minus the ceiling of x
+        if ( $value < 0 )
+            return $this->sub( 0, $this->ceil( $this->magnitude( $value ), $precision, $target ) );
+
         $fractPart = $this->fractval( $value, $precision );
 
         // adjust precision
@@ -120,6 +128,14 @@ class eZPHPMath
         }
 
         return $number;
+    }
+
+    /**
+     * The number without its minus sign, as a string.
+     */
+    function magnitude( $number )
+    {
+        return ltrim( (string)$number, '-' );
     }
 
     function intval( $number )

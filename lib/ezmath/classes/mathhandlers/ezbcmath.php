@@ -63,22 +63,30 @@ class eZBCMath extends eZPHPMath
 
     function ceil( $value, $precision, $target )
     {
+        if ( $value < 0 )
+            return $this->trimZeros( $this->sub( 0, $this->floor( $this->magnitude( $value ), $precision, $target ) ) );
+
         $result = eZPHPMath::ceil( $value, $precision, $target );
-        $result = rtrim( $result, '0' );
-        $result = rtrim( $result, '.' );
+        $result = $this->trimZeros( $result );
         return $result;
     }
 
     function floor( $value, $precision, $target )
     {
+        if ( $value < 0 )
+            return $this->trimZeros( $this->sub( 0, $this->ceil( $this->magnitude( $value ), $precision, $target ) ) );
+
         $result = eZPHPMath::floor( $value, $precision, $target );
-        $result = rtrim( $result, '0' );
-        $result = rtrim( $result, '.' );
+        $result = $this->trimZeros( $result );
         return $result;
     }
 
     function round( $value, $precision, $target )
     {
+        // half away from zero, as PHP's round(): the digits below work on the magnitude
+        if ( $value < 0 )
+            return $this->trimZeros( $this->sub( 0, $this->round( $this->magnitude( $value ), $precision, $target ) ) );
+
         $result = $value;
         $fractPart = $this->fractval( $value, $precision + 1 );
         if ( strlen( $fractPart ) > $precision )
@@ -93,13 +101,22 @@ class eZBCMath extends eZPHPMath
             $result = $this->add( $this->intval( $value ), $fractPart );
             $result = $this->adjustFractPart( $result, $precision, $target );
 
-            $result = rtrim( $result, '0' );
-            $result = rtrim( $result, '.' );
+            $result = $this->trimZeros( $result );
         }
 
         return $result;
     }
 
+
+    /**
+     * $number without the zeros after its last significant decimal, and without a decimal point that ends it.
+     */
+    function trimZeros( $number )
+    {
+        if ( strpos( $number, '.' ) === false )
+            return $number;
+        return rtrim( rtrim( $number, '0' ), '.' );
+    }
 
     /// \privatesection
     public $Scale;
