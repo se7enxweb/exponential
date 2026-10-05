@@ -2,10 +2,11 @@
 
 This chapter puts the Exponential code on your machine. There are three ways: `composer create-project` (the
 quickest for a new site), a `git clone` followed by `composer install` (when you want the history and to follow
-development) and `composer require` into an empty directory. All three end with the same files. The chapter explains
-which version each way gives you and how to choose one, how the extensions arrive as Composer packages, how to add
-the optional Exponential Velocity package, what to do on PHP 8.0 to 8.3, and closes with a tour of every top-level
-directory of the installation root.
+development) and `composer require` into an empty directory (when the installation should be a project of your own).
+All three end with the same files. The chapter explains which version each way gives you and how to choose one, how
+the extensions arrive as Composer packages, how to add the optional Exponential Velocity package, what is different
+on PHP 8.0 to 8.3, and closes with a tour of every top-level entry of the installation root and the permissions to
+set before you install.
 
 [Contents](README.md) · Previous: [2. Requirements](02-requirements.md) · Next: [4. Choosing an install method](04-choosing-an-install-method.md)
 
@@ -19,7 +20,7 @@ Exponential is published as the Composer package
 |---|---|---|
 | Release tags | `v6.0.0` to `v6.0.14` (the 6.0 line); older lines use tags without `v`, such as `4.4.0` | an exact, permanent release |
 | Default branch | `main` | the current development of the 6.0 line, today 6.0.15 |
-| Release branches | `6.0.7`, `6.0.8`, ... `6.0.14` | the state of each release line |
+| Release branches | `6.0.7` to `6.0.14` | the state of each release line |
 
 The newest release tag at the time of writing is `v6.0.14`; the `main` branch identifies itself as `6.0.15stable`
 (`lib/version.php`) and carries the changes described in [Changelog 6.0.15](../changelogs/6.0/6.0.15.md). To see what
@@ -35,16 +36,34 @@ or, inside a clone, after `git fetch --tags`:
 git tag -l 'v*' --sort=version:refname | tail -5
 ```
 
+which prints the five newest tags, the newest last:
+
+```text
+v6.0.10
+v6.0.11
+v6.0.12
+v6.0.13
+v6.0.14
+```
+
 Always sort by version (`--sort=version:refname` or `sort -V`), never by name: by name `v6.0.10` sorts before
-`v6.0.8`. The project's releases are listed with their notes on
-[GitHub Releases](https://github.com/se7enxweb/exponential/releases).
+`v6.0.8`, and a script that takes the last line of a name sort picks the wrong release. The project's releases are
+listed with their notes on [GitHub Releases](https://github.com/se7enxweb/exponential/releases).
 
 **A release tag never changes.** Once published, a tag and the package version Packagist built from it are
-permanent; a fix always arrives as the next version. You can pin a tag and rely on getting the same files every time.
+permanent; a fix always arrives as the next version. You can pin a tag and rely on getting the same files every time,
+which is what makes a pinned version the right choice for production.
 
-**Which version needs which PHP.** `v6.0.8` to `v6.0.14` require PHP 8.1 or later in their `composer.json`; PHP 8.0
-support arrives with 6.0.15 (`"php": "^8.0 || ..."`), which until its tag is published is the `main` branch. On
-PHP 8.0, take `main` (`dev-main` for Composer) until a tag of the 6.0.15 line exists.
+**Which version needs which PHP.** Read this before you choose, because Composer refuses a version whose PHP
+requirement your PHP does not meet:
+
+| Version | `"php"` in its `composer.json` | On PHP 8.0 |
+|---|---|---|
+| `v6.0.0` to `v6.0.7` | `^7.4 \|\| ^8.1` | not installable |
+| `v6.0.8` to `v6.0.14` | `^8.1` and later 8.x | not installable |
+| 6.0.15 (`main`, `dev-main` for Composer) | `^8.0` and later 8.x | installable |
+
+No published tag accepts PHP 8.0: on PHP 8.0, take `main` until a tag of the 6.0.15 line exists.
 
 ## 3.2 Three ways to get the code
 
@@ -68,7 +87,8 @@ composer create-project se7enxweb/exponential:dev-main exponential
 
 `create-project` treats the downloaded `composer.json` as the root package, so its `config.allow-plugins` (which
 allows `se7enxweb/exponential-legacy-installer`) and its `post-install-cmd` script apply: the class maps are generated
-at the end (`php bin/php/ezpgenerateautoloads.php`).
+at the end (`php bin/php/ezpgenerateautoloads.php`). On a production server add `--no-dev`, which leaves out the test
+tools.
 
 ### B. git clone and composer install
 
@@ -90,7 +110,8 @@ git pull
 composer install
 ```
 
-or, to move to a release, `git checkout v6.0.<n>` followed by `composer install`.
+or, to move to a release, `git checkout v6.0.<n>` followed by `composer install`. Moving the code is only half of an
+upgrade: the database update files of [chapter 11](11-upgrading.md) are the other half.
 
 ### C. composer require into an empty directory
 
@@ -116,6 +137,9 @@ Two things differ from ways A and B:
   composer config allow-plugins.se7enxweb/exponential-legacy-installer true
   ```
 
+  If you answer no, the kernel lands in `vendor/se7enxweb/exponential/` and the extensions in `vendor/` as well,
+  where nothing finds them.
+
 - Composer runs only the scripts of the root package, which is now yours. Generate the class maps yourself after each
   install or update:
 
@@ -132,36 +156,47 @@ php bin/php/console --version
 ls vendor/autoload.php
 ```
 
-The first line of the console's output names the version, for example `console (Exponential) 6.0.15stable`. If
-`vendor/autoload.php` is missing, Composer did not finish; run `composer install` again and read its output.
+The first line of the console's output names the version:
+
+```text
+console (Exponential) 6.0.15stable
+```
+
+If `vendor/autoload.php` is missing, Composer did not finish; run `composer install` again and read its output from
+the first error, not the last line. The usual causes are a missing PHP extension (Composer names the `ext-*` it
+wants), a PHP that is too old for the version you asked for ([3.1](#31-versions-tags-and-branches)), or a plugin
+that was not allowed.
 
 ## 3.3 Installing on PHP 8.0 to 8.3
 
-`composer.json` has a development requirement, `"phpunit/phpunit": "^13.4"`, and PHPUnit 13 needs PHP 8.4
-(`vendor/phpunit/phpunit/composer.json`: `"php": ">=8.4.1"`). The repository ships no `composer.lock`, and without a
-lock file Composer resolves `require-dev` as well, even when it is told `--no-dev` not to install it. On PHP 8.0 to
-8.3 the resolution therefore fails on PHPUnit.
-
-The project's own PHP 8.0 check (the job `php80` of `.github/workflows/quality.yml`) installs like this, and so can
-you:
+On the current line (`main`, 6.0.15) nothing special is needed: a plain `composer install` works on every PHP from
+8.0 to 8.5. The development requirement `"phpunit/phpunit": "^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4"` lets
+Composer pick the PHPUnit that fits the PHP in use (9.6 on 8.0, 10.5 on 8.1, 11.5 on 8.2, 12 on 8.3, 13.4 on 8.4
+and 8.5). That range matters even with `--no-dev`: the repository ships no `composer.lock`, and without a lock file
+Composer resolves `require-dev` too, although it does not install it. The project's own PHP 8.0 check (the job
+`php80` of `.github/workflows/quality.yml`) installs exactly as a site does:
 
 ```bash
-composer remove --dev --no-update --no-interaction phpunit/phpunit zetacomponents/php-generator
 composer install --no-dev --prefer-dist
 ```
 
-The first command removes the two development requirements from `composer.json` without installing anything; the
-second installs what a site needs. With `create-project`, stop before the install and do the same:
+The test suite itself uses PHPUnit 10 features, so it runs on PHP 8.1 and later; on PHP 8.0 the range only lets the
+install resolve.
+
+**The release tags `v6.0.13` and `v6.0.14` are different.** They ask for `"phpunit/phpunit": "13.0.0"`, which needs
+PHP 8.4.1, so on PHP 8.1 to 8.3 a plain install of those tags stops with a PHP version conflict on PHPUnit. Remove
+the two development requirements first, then install what a site needs:
 
 ```bash
-composer create-project --no-install se7enxweb/exponential:dev-main exponential
+composer create-project --no-install se7enxweb/exponential:v6.0.14 exponential
 cd exponential
 composer remove --dev --no-update --no-interaction phpunit/phpunit zetacomponents/php-generator
 composer install --no-dev --prefer-dist
 ```
 
-The CI job also passes `--ignore-platform-req=ext-mongodb`, so that a machine without the `mongodb` PHP extension
-installs. If Composer stops on a missing `ext-mongodb` and you do not use MongoDB, add that option.
+`composer remove --no-update` changes only `composer.json` and installs nothing; the second command installs. In a
+Git clone of those tags the last two commands are enough, and `git checkout composer.json` puts the file back
+afterwards.
 
 On a production server, `--no-dev` is right on every PHP version: the test tools are not needed to run a site.
 
@@ -169,20 +204,22 @@ On a production server, `--no-dev` is right on every PHP version: the test tools
 
 Exponential Velocity, the recommended application server, is a separate package,
 [`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity). `composer.json`
-suggests it rather than requires it, because it needs PHP 8.1 (`"php": ">=8.1"`) and the kernel runs on 8.0. On
-PHP 8.1 or later, add it with the version the suggestion names:
+suggests it rather than requires it, because it needs PHP 8.1 (`"php": ">=8.1"`) and the `sockets` extension
+(`"ext-sockets": "*"`), while the kernel runs on 8.0. On PHP 8.1 or later, add it with the version the suggestion
+names:
 
 ```bash
 composer require se7enxweb/exponential-velocity:~0.0.4.42
 ```
 
-`~0.0.4.42` accepts every later `0.0.4.x` release (`>=0.0.4.42 <0.0.5.0`). The last position of a Velocity version
-counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...), so a version sort, not a name sort, finds the newest.
+`~0.0.4.42` accepts every later `0.0.4.x` release (`>=0.0.4.42 <0.0.5.0`), so Composer installs the newest of them.
+The last position of a Velocity version counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...), so a version sort, not a name
+sort, finds the newest.
 
 The package lands in `vendor/se7enxweb/exponential-velocity/` (its type is `project`, so it is not moved into
 `extension/`). The console finds it there: `php bin/php/console exp:velocity status` reports the engine, and
-`exp:velocity start` starts it. Before the package is installed, the `qbix` engine cannot start
-(`velocity: no server script at ...`); the `php` engine (PHP's built-in server) works without it:
+`exp:velocity start` starts it. Before the package is installed, the `qbix` engine cannot start and says
+`velocity: no server script at ...`; the `php` engine (PHP's built-in server) works without it:
 
 ```bash
 php bin/php/console exp:velocity start --engine=php
@@ -222,7 +259,14 @@ php bin/php/ezpgenerateautoloads.php -e
 
 Being on disk does not make an extension active: it must be listed in `[ExtensionSettings] ActiveExtensions[]`. The
 installers activate the extensions of the site package; others you activate in the admin (**Setup > Extensions**) or
-in `settings/override/site.ini.append.php`. Then clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`).
+in `settings/override/site.ini.append.php`:
+
+```ini
+[ExtensionSettings]
+ActiveExtensions[]=ezfind
+```
+
+Then clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`), and restart Velocity if it serves the site.
 
 `composer.json`'s `suggest` block lists further extensions with a sentence each: `ezsi`, `ezscriptmonitor`, `ezfind`,
 `ezauthorize`, `bcurlaliaswithdash`, `sevenx_valkey`, `sevenx_valkey_cache`, `ezownerchange`, `adminaid`, `ezpm` and
@@ -285,14 +329,15 @@ Git repository; the others are created by Composer or at run time.
 | `kickstart.ini-dist` | The commented template of `kickstart.ini`; `kickstart.ini--example` is an example. |
 | `config.php-RECOMMENDED` | A documented list of the settings `config.php` can make; rename to `config.php` and uncomment what you need. |
 | `config.env.php.example` | Copy to `config.env.php` to name the machine's environment (`EXP_ENV`); see [Settings per environment](../features/6.0/environment-settings.md). |
-| `exponential.cron`, `ezpublish.cron` | Example crontabs for the cronjobs (`crontab exponential.cron` after setting its two variables). |
+| `exponential.cron`, `ezpublish.cron` | Example crontabs for the cronjobs (`crontab exponential.cron` after setting its two variables, `EXPONENTIALROOT` and `PHP`). |
 | `sw.js`, `index.js` | The site's service worker. |
 | `robots.txt`, `favicon.ico` | As usual for a web site. |
 | `phpunit.xml`, `phpcs.xml.dist`, `phpstan.neon.dist`, `phpstan-baseline.neon`, `Makefile` | Development and quality tools. |
 | `LICENSE`, `COPYRIGHT.md`, `README.md`, `CONTRIBUTING.md`, `SECURITY.md` | Licence, copyright, the project README, how to contribute, how to report a vulnerability. |
 
-Files that appear after an install and are yours, never to be committed or shared: `settings/override/*` (database
-credentials), `kickstart.ini` (the database password), `config.env.php`, and `var/log/initial-admin-password`.
+Files that appear after an install and are yours, never to be committed or shared: `settings/override/*` and
+`settings/siteaccess/*` (database credentials), `kickstart.ini` (the database password), `config.env.php`, and
+`var/log/initial-admin-password`.
 
 ## 3.7 Permissions after getting the code
 
@@ -306,7 +351,9 @@ sudo chmod -R ug+rwx design extension settings var
 sudo chown -R <web user>:<web group> design extension settings var
 ```
 
-Serving and permissions are covered in depth in [chapter 8](08-serving-the-site.md).
+When the command line (cronjobs, the console, Composer) and the web server run as different users, give both a
+common group that can write the same files, rather than opening the directories to everyone. Serving and permissions
+are covered in depth in [chapter 8](08-serving-the-site.md).
 
 ## References
 
@@ -323,12 +370,15 @@ In this repository:
 - [Repairing an installation](../bc/6.0/repair.md): when `vendor/` is missing.
 - [Console](../bc/6.0/console.md).
 - [Changelog 6.0.15](../changelogs/6.0/6.0.15.md) and the [extensions' release notes](../changelogs/extensions/README.md).
+- Code: `composer.json`, `lib/version.php`, `.github/workflows/quality.yml` (job `php80`),
+  `vendor/se7enxweb/exponential-legacy-installer/src/eZ/Publish/Composer/` (`LegacyKernelInstaller`,
+  `LegacyExtensionInstaller`).
 
 External:
 
 - Composer: [create-project](https://getcomposer.org/doc/03-cli.md#create-project),
   [install](https://getcomposer.org/doc/03-cli.md#install-i), [require](https://getcomposer.org/doc/03-cli.md#require-r),
-  [remove](https://getcomposer.org/doc/03-cli.md#remove-rm),
+  [remove](https://getcomposer.org/doc/03-cli.md#remove-rm-uninstall),
   [version constraints](https://getcomposer.org/doc/articles/versions.md),
   [allow-plugins](https://getcomposer.org/doc/06-config.md#allow-plugins),
   [scripts](https://getcomposer.org/doc/articles/scripts.md).
@@ -339,6 +389,7 @@ External:
   [releases](https://github.com/se7enxweb/exponential/releases),
   [se7enxweb/exponential-velocity](https://github.com/se7enxweb/exponential-velocity),
   [all se7enxweb repositories](https://github.com/se7enxweb).
+- PHPUnit: [supported versions](https://phpunit.de/supported-versions.html).
 - Git: [git clone](https://git-scm.com/docs/git-clone), [git tag](https://git-scm.com/docs/git-tag).
 
 [Contents](README.md) · Previous: [2. Requirements](02-requirements.md) · Next: [4. Choosing an install method](04-choosing-an-install-method.md)
