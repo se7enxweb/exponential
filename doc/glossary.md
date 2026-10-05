@@ -30,6 +30,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **bc note** (behaviour change note): a page that says what changed in behaviour and what to check when you upgrade. [Behaviour changes, July and August 2026](bc/6.0/behaviour-changes-2026-07-08.md).
 - **bcgooglesitemaps**: an extension that generates search engine **sitemaps** as a **cronjob**. [bcgooglesitemaps](features/6.0/extensions/bcgooglesitemaps.md).
 - **bcwebsitestatistics**: an extension that sends page views and shop purchases to an analytics service. [bcwebsitestatistics](features/6.0/extensions/bcwebsitestatistics.md).
+- **benchmark**: measuring an installation: page timings over HTTP, two servers back to back, the kernel in-process, and a comparison with a saved run (`exp:benchmark`). [Benchmark](features/6.0/benchmark.md).
 - **block (layout)**: a unit of content placed in a **zone** of a **layout**. [Exponential Layouts](bc/6.0/LAYOUTS.md).
 - **bridge**: see **legacy bridge**.
 

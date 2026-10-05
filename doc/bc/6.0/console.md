@@ -66,7 +66,14 @@ php bin/php/console bin:modfix
 
 # Run the session garbage collector
 php bin/php/console exp:ezsessiongc
+
+# Measure the site: page timings, two servers back to back, the kernel in-process (see benchmark.md)
+php bin/php/console exp:benchmark
+php bin/php/console exp:benchmark --compare=https://www.example.com,https://www.example.com:8080
+php bin/php/console exp:benchmark kernel --save=var/benchmark/base.json
 ```
+
+The benchmark command is described in [Benchmark](../../features/6.0/benchmark.md).
 
 Before a script runs, the console prints a short notice to **stderr**, so piped output stays clean:
 
