@@ -57,8 +57,9 @@ class eZRegExpValidator extends eZInputValidator
     {
         if ( !is_array( $this->RegExpRule ) or !is_scalar( $text ) )
             return $text;
-        $intermediate =& $this->RegExpRule["intermediate"];
-        $fixup =& $this->RegExpRule["fixup"];
+        // Copies, not references: the rule must stay as it is for the next validate() and fixup()
+        $intermediate = $this->RegExpRule["intermediate"];
+        $fixup = $this->RegExpRule["fixup"];
         if ( is_array( $fixup ) )
         {
             $intermediate = $fixup["match"];

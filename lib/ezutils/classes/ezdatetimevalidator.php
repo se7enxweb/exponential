@@ -46,9 +46,10 @@ class eZDateTimeValidator extends eZInputValidator
         $hour = (string)$hour;
         $minute = (string)$minute;
         $second = (string)$second;
-        if ( preg_match( '/\d+/', trim( $hour )   ) &&
-             preg_match( '/\d+/', trim( $minute ) ) &&
-             preg_match( '/\d+/', trim( $second ) ) &&
+        // Digits only: an unanchored match accepted "1a" or "5 pm", which PHP then compared as text
+        if ( preg_match( '/^\d+$/', trim( $hour )   ) &&
+             preg_match( '/^\d+$/', trim( $minute ) ) &&
+             preg_match( '/^\d+$/', trim( $second ) ) &&
              $hour >= 0 && $minute >= 0 && $second >= 0 &&
              $hour < 24 && $minute < 60 && $second < 60 )
         {
@@ -72,7 +73,7 @@ class eZDateTimeValidator extends eZInputValidator
         $datetime = mktime( $hourNumber, $minuteNumber, $secondNumber, $month, $day, $year );
         if ( !$check or
              $datetime === false or
-             eZDateTimeValidator::validateTime( $hour, $minute ) == eZInputValidator::STATE_INVALID )
+             eZDateTimeValidator::validateTime( $hour, $minute, $second ) == eZInputValidator::STATE_INVALID )
         {
             return eZInputValidator::STATE_INVALID;
         }
