@@ -7,12 +7,17 @@
  |i18n('design/standard/notification',,
        hash('%sitename',ezini("SiteSettings","SiteURL")))}
 
-{section name=Handlers loop=fetch(notification,digest_handlers,hash(date,$date.timestamp,address,$address))}
-
-{include handler=$Handlers:item date=$date address=$address uri=concat( "design:notification/handler/",$Handlers:item.id_string,"/view/digest_plain.tpl")}
-
-{/section}
-
+{* foreach and literal includes: inside a named section $date and $address were looked up in the section's namespace,
+   and an include whose uri is computed does not get the variables passed to it, so every digest came out empty *}
+{foreach fetch( 'notification', 'digest_handlers', hash( 'date', $date.timestamp, 'address', $address ) ) as $digest_handler}
+{if $digest_handler.id_string|eq( 'ezsubtree' )}
+{include handler=$digest_handler date=$date address=$address uri='design:notification/handler/ezsubtree/view/digest_plain.tpl'}
+{elseif $digest_handler.id_string|eq( 'ezcollaboration' )}
+{include handler=$digest_handler date=$date address=$address uri='design:notification/handler/ezcollaboration/view/digest_plain.tpl'}
+{else}
+{include handler=$digest_handler date=$date address=$address uri=concat( 'design:notification/handler/', $digest_handler.id_string, '/view/digest_plain.tpl' )}
+{/if}
+{/foreach}
 
 {"If you do not want to continue receiving these notifications,
 change your settings at:"|i18n('design/standard/notification')}
