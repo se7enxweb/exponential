@@ -26,7 +26,7 @@ class cjwNewsletterSchemaTest extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$ext = dirname( __DIR__, 4 ) . '/extension/cjw_newsletter';
+        self::$ext = getenv( 'CJWNL_EXTENSION_DIR' ) ? getenv( 'CJWNL_EXTENSION_DIR' ) : dirname( __DIR__, 4 ) . '/extension/cjw_newsletter';
         if ( !is_file( self::$ext . '/share/db_schema.dba' ) )
             self::markTestSkipped( 'cjw_newsletter is not installed in extension/' );
         if ( !class_exists( 'SQLite3' ) )
@@ -69,7 +69,7 @@ class cjwNewsletterSchemaTest extends TestCase
     {
         $sql = preg_replace( '/--[^\n]*/', '', preg_replace( '/^\xEF\xBB\xBF/', '', $sql ) );
         $tables = array();
-        preg_match_all( '/CREATE\s+TABLE\s+[`"]?(\w+)[`"]?\s*\((.*?)\)\s*(?:COMMENT=\'[^\']*\'\s*)?(?:ENGINE=\w+\s*)?(?:DEFAULT CHARSET=\w+\s*)?;/is', $sql, $m, PREG_SET_ORDER );
+        preg_match_all( '/CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?[`"]?(\w+)[`"]?\s*\((.*?)\)\s*(?:COMMENT=\'[^\']*\'\s*)?(?:ENGINE=\w+\s*)?(?:DEFAULT CHARSET=\w+\s*)?;/is', $sql, $m, PREG_SET_ORDER );
         foreach ( $m as $t )
         {
             $cols = array();
@@ -209,7 +209,7 @@ class cjwNewsletterSchemaTest extends TestCase
      */
     public function testUpgradeTo42OnSqliteGivesTheDbaAndASecondRunFails()
     {
-        $base = self::$ext . '/update/database/sqlite/4.2/schema-4.1.20.sql';
+        $base = __DIR__ . '/fixtures/cjwnl-schema-4.1.20-sqlite.sql';
         $upgrade = self::$ext . '/update/database/sqlite/4.2/dbupdate-4.1.20-to-4.2.0.sql';
         if ( !is_file( $upgrade ) )
             $this->markTestSkipped( 'no 4.2 upgrade in this version of cjw_newsletter' );
@@ -232,6 +232,71 @@ class cjwNewsletterSchemaTest extends TestCase
         }
         $this->assertTrue( $failed, 'a second run of the upgrade fails' );
         $db->close();
+    }
+
+    /**
+     * A small copy: the 4.1.20 tables with one row each. The upgrade keeps the rows and gives every new column its
+     * default (an ADD COLUMN NOT NULL without a default would fail here).
+     */
+    public function testUpgradeTo42KeepsTheRowsOfA41DatabaseAndFillsTheDefaults()
+    {
+        $upgrade = self::$ext . '/update/database/sqlite/4.2/dbupdate-4.1.20-to-4.2.0.sql';
+        if ( !is_file( $upgrade ) )
+            $this->markTestSkipped( 'no 4.2 upgrade in this version of cjw_newsletter' );
+        $db = $this->throwaway();
+        $db->exec( file_get_contents( __DIR__ . '/fixtures/cjwnl-schema-4.1.20-sqlite.sql' ) );
+        $old = self::sqliteTables( $db );
+        foreach ( $old as $t => $info )
+        {
+            $cols = array_keys( $info['columns'] );
+            $values = array();
+            foreach ( $cols as $c )
+                $values[] = $c === 'id' ? '1' : "'1'";
+            $db->exec( "INSERT INTO $t (" . implode( ', ', $cols ) . ') VALUES (' . implode( ', ', $values ) . ')' );
+        }
+        $db->exec( file_get_contents( $upgrade ) );
+        $dba = self::dba();
+        foreach ( $old as $t => $info )
+        {
+            $row = $db->querySingle( "SELECT * FROM $t", true );
+            $this->assertNotEmpty( $row, "the row of $t is kept" );
+            foreach ( array_diff( array_keys( $dba[$t]['fields'] ), array_keys( $info['columns'] ) ) as $new )
+                $this->assertEquals( $dba[$t]['fields'][$new]['default'], $row[$new], "$t.$new has its default" );
+        }
+        $db->close();
+    }
+
+    /** The MySQL and PostgreSQL upgrades add exactly what the .dba has more than 4.1.20. */
+    public function testMysqlAndPostgresqlUpgradesTo42AddEveryNewTableAndColumn()
+    {
+        if ( !is_file( self::$ext . '/update/database/sqlite/4.2/dbupdate-4.1.20-to-4.2.0.sql' ) )
+            $this->markTestSkipped( 'no 4.2 upgrade in this version of cjw_newsletter' );
+        $db = $this->throwaway();
+        $db->exec( file_get_contents( __DIR__ . '/fixtures/cjwnl-schema-4.1.20-sqlite.sql' ) );
+        $old = self::sqliteTables( $db );
+        $db->close();
+        $dba = self::dba();
+        foreach ( array( 'mysql', 'postgresql' ) as $engine )
+        {
+            $sql = file_get_contents( self::$ext . "/update/database/$engine/4.2/dbupdate-4.1.20-to-4.2.0.sql" );
+            $created = self::sqlColumns( $sql );
+            preg_match_all( '/ALTER\s+TABLE\s+(\w+)\s+ADD\s+COLUMN\s+"?(\w+)"?/i', $sql, $m, PREG_SET_ORDER );
+            $added = array();
+            foreach ( $m as $a )
+                $added[$a[1]][] = $a[2];
+            foreach ( $dba as $t => $def )
+            {
+                $want = array_keys( $def['fields'] );
+                $have = isset( $old[$t] ) ? array_merge( array_keys( $old[$t]['columns'] ), isset( $added[$t] ) ? $added[$t] : array() )
+                                          : ( isset( $created[$t] ) ? $created[$t] : array() );
+                $this->assertEqualsCanonicalizing( $want, $have, "$engine upgrade: the columns of $t" );
+            }
+        }
+        $pg = file_get_contents( self::$ext . '/update/database/postgresql/4.2/dbupdate-4.1.20-to-4.2.0.sql' );
+        foreach ( array_keys( $old ) as $t )
+            if ( $t !== 'cjwnl_edition' && $t !== 'cjwnl_list' )
+                $this->assertStringContainsString( "ALTER SEQUENCE {$t}_s RENAME TO {$t}_id_seq;", $pg, "the sequence of $t gets the name the driver reads" );
+        $this->assertStringNotContainsString( "_s'::text", file_get_contents( self::$ext . '/sql/postgresql/schema.sql' ) );
     }
 
     public function testTheInstallationsSqliteDatabaseHasEveryTableAndColumnOfTheDba()
