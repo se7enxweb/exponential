@@ -542,6 +542,10 @@ class eZSiteAccess
 
             eZContentLanguage::expireCache( false );
 
+            // A siteaccess with a VarDir of its own reads its own expiry.php: clearing a cache of one site
+            // must not expire the caches of every site (multi-site hosting)
+            eZExpiryHandler::resetForCurrentCacheDirectory();
+
             eZUpdateDebugSettings();
             eZDebugSetting::writeDebug( 'kernel-siteaccess', "Updated settings to use siteaccess '$name'", __METHOD__ );
         }
