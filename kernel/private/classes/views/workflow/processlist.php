@@ -97,41 +97,72 @@ class Processlist extends \Exponential\Runnable\ModuleView
      * workflows were waiting.
      *
      * @param \eZWorkflowProcess[] $processList
+     * @param callable|null $triggerOf function( process ) returning the eZTrigger the process waits in, or null; the
+     *                                 default reads it from the child memento (triggerOfProcess())
      * @return array array( array( '<module>/<function>/<name>' => array( 'trigger' => eZTrigger, 'process_list' => eZWorkflowProcess[] ) ), number of processes listed )
      */
-    public static function processesByTrigger( array $processList )
+    public static function processesByTrigger( array $processList, $triggerOf = null )
     {
+        if ( !is_callable( $triggerOf ) )
+        {
+            $triggers = array();
+            $triggerOf = function ( $process ) use ( &$triggers )
+            {
+                return Processlist::triggerOfProcess( $process, $triggers );
+            };
+        }
         $totalProcessCount = 0;
         $outList = array();
         foreach ( $processList as $p )
         {
-            $mementoChild = \eZOperationMemento::fetchChild( $p->attribute( 'memento_key' ) );
-            if ( !$mementoChild )
+            if ( !is_object( $p ) )
+                continue;
+            $trigger = call_user_func( $triggerOf, $p );
+            if ( !is_object( $trigger ) )
                 continue;
 
-            $mementoChildData = $mementoChild->data();
-
-            $triggers = \eZTrigger::fetchList( array( 'module_name' => $mementoChildData['module_name'],
-                                                     'function_name' => $mementoChildData['operation_name'],
-                                                     'name' => $mementoChildData['name'] ) );
-            if ( count( $triggers ) > 0 )
+            $nkey = $trigger->attribute( 'module_name' ) . '/' . $trigger->attribute( 'function_name' ) . '/' . $trigger->attribute( 'name' );
+            if ( !isset( $outList[ $nkey ] ) )
             {
-                $trigger = $triggers[0];
-                if ( is_object( $trigger ) )
-                {
-                    $nkey = $trigger->attribute( 'module_name' ) . '/' . $trigger->attribute( 'function_name' ) . '/' . $trigger->attribute( 'name' );
-
-                    if ( !isset( $outList[ $nkey ] ) )
-                    {
-                        $outList[ $nkey ] = array( 'trigger' => $trigger,
-                                                   'process_list' => array() );
-                    }
-                    $outList[ $nkey ][ 'process_list' ][] = $p;
-                    $totalProcessCount++;
-                }
+                $outList[ $nkey ] = array( 'trigger' => $trigger,
+                                           'process_list' => array() );
             }
+            $outList[ $nkey ][ 'process_list' ][] = $p;
+            $totalProcessCount++;
         }
         return array( $outList, $totalProcessCount );
+    }
+
+    /**
+     * Returns the trigger a workflow process waits in, read from its child memento: the first trigger of the module,
+     * operation and name the memento names. Null when the process has no child memento, the memento does not name
+     * them, or no such trigger exists.
+     *
+     * @param \eZWorkflowProcess $process
+     * @param array $cache triggers already looked up in this listing, by module/operation/name
+     * @return \eZTrigger|null
+     */
+    public static function triggerOfProcess( $process, &$cache = null )
+    {
+        $mementoChild = \eZOperationMemento::fetchChild( $process->attribute( 'memento_key' ) );
+        if ( !$mementoChild )
+            return null;
+
+        $data = $mementoChild->data();
+        if ( !isset( $data['module_name'], $data['operation_name'], $data['name'] ) )
+            return null;
+
+        $key = $data['module_name'] . '/' . $data['operation_name'] . '/' . $data['name'];
+        if ( !is_array( $cache ) )
+            $cache = array();
+        if ( !array_key_exists( $key, $cache ) )
+        {
+            $triggers = \eZTrigger::fetchList( array( 'module_name' => $data['module_name'],
+                                                     'function_name' => $data['operation_name'],
+                                                     'name' => $data['name'] ) );
+            $cache[$key] = ( is_array( $triggers ) && isset( $triggers[0] ) && is_object( $triggers[0] ) ) ? $triggers[0] : null;
+        }
+        return $cache[$key];
     }
 }
 
