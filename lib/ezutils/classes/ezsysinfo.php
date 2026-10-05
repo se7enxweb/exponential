@@ -120,6 +120,29 @@ class eZSysInfo
     }
 
     /*!
+     \return The unit of cpuSpeed() (e.g. MHz), or \c false if no speed was found.
+    */
+    function cpuUnit()
+    {
+        return $this->CPUUnit;
+    }
+
+    /**
+     * The value of a /proc line "name<tabs>: value", wherever the colon is: the values used to be read at fixed
+     * columns, which cut the first digits when the padding was shorter.
+     *
+     * @param string $line
+     * @return string
+     */
+    static function procValue( $line )
+    {
+        $colon = strpos( $line, ':' );
+        if ( $colon === false )
+            return trim( $line );
+        return trim( substr( $line, $colon + 1 ) );
+    }
+
+    /*!
      Scans the system depending on the OS and fills in the information internally.
      \return \c true if it was able to scan the system or \c false if it failed.
     */
@@ -205,13 +228,13 @@ class eZSysInfo
         {
             if ( substr( $line, 0, 7 ) == 'cpu MHz' )
             {
-                $cpu = trim( substr( $line, 11, strlen( $line ) - 11 ) );
+                $cpu = self::procValue( $line );
                 $this->CPUSpeed = $cpu;
                 $this->CPUUnit = 'MHz';
             }
             if ( substr( $line, 0, 10 ) == 'model name' )
             {
-                $system = trim( substr( $line, 13, strlen( $line ) - 13 ) );
+                $system = self::procValue( $line );
                 $this->CPUType = $system;
             }
             if ( $this->CPUSpeed !== false and
@@ -225,7 +248,7 @@ class eZSysInfo
         {
             if ( substr( $line, 0, 8 ) == 'MemTotal' )
             {
-                $mem = trim( substr( $line, 11, strlen( $line ) - 11 ) );
+                $mem = self::procValue( $line );
                 $memBytes = $mem;
                 if ( preg_match( "#^([0-9]+) *([a-zA-Z]+)#", $mem, $matches ) )
                 {
