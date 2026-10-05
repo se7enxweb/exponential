@@ -7195,12 +7195,6 @@ parameters:
 			path: lib/eztemplate/classes/eztemplatearrayoperator.php
 
 		-
-			message: '#^Variable \$offset might not be defined\.$#'
-			identifier: variable.undefined
-			count: 7
-			path: lib/eztemplate/classes/eztemplatearrayoperator.php
-
-		-
 			message: '#^Variable \$result might not be defined\.$#'
 			identifier: variable.undefined
 			count: 5

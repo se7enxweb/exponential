@@ -703,6 +703,8 @@ class eZTemplateArrayOperator
                     $inputArrayCode = '%' . count( $values ) . '%';
                 }
 
+                // only read when every parameter is a constant, which sets it below
+                $offset = 0;
                 if ( eZTemplateNodeTool::isConstantElement( $parameters[1] ) )
                 {
                     $offset = eZTemplateNodeTool::elementConstantValue( $parameters[1] );
@@ -808,6 +810,8 @@ class eZTemplateArrayOperator
                     $inputArrayCode = '%' . count( $values ) . '%';
                 }
 
+                // only read when every parameter is a constant, which sets it below
+                $offset = 0;
                 if ( eZTemplateNodeTool::isConstantElement( $parameters[1] ) )
                 {
                     $offset = eZTemplateNodeTool::elementConstantValue( $parameters[1] );
