@@ -353,9 +353,17 @@ class MailPreferencesPage
         $new = (string)$row->attribute( 'new_value' );
         if ( $action === 'frequency' && isset( $frequencies[$new] ) )
             $change .= ': ' . $frequencies[$new];
+        // a new e-mail address of the account (expMailPreferencesService::requestEmailChange()): not a category
+        $addressChange = $identifier === '' && ( $action === 'email_change' || ( $action === 'pending' && $new === 'email_change' ) );
+        if ( $addressChange && $action === 'pending' )
+            $change = self::tr( 'New address asked for, waiting for confirmation' );
         $source = (string)$row->attribute( 'source' );
+        if ( $addressChange )
+            $categoryName = self::tr( 'E-mail address' );
+        else
+            $categoryName = $category ? self::categoryName( $category ) : ( $identifier !== '' ? $identifier : self::tr( 'All optional e-mail' ) );
         return array( 'time' => (int)$row->attribute( 'created' ),
-                      'category' => $category ? self::categoryName( $category ) : ( $identifier !== '' ? $identifier : self::tr( 'All optional e-mail' ) ),
+                      'category' => $categoryName,
                       'category_identifier' => $identifier, 'action' => $action, 'change' => $change, 'source' => $source,
                       'source_name' => isset( $sources[$source] ) ? $sources[$source] : $source,
                       'wording' => (string)$row->attribute( 'wording' ), 'ip' => (string)$row->attribute( 'ip' ),
