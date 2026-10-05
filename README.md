@@ -175,16 +175,20 @@ deploy does not drop requests. `status --json` is there for monitoring.
 The same commands drive three servers, chosen with `[ServerSettings] Engine` in
 `velocity.ini`:
 
+- **Qbix**: Velocity's own server, installed with the
+  `se7enxweb/exponential-velocity` package. The recommended engine for every
+  stage, from development to production, and the fastest. It serves HTTP and
+  HTTPS itself, with its own certificates.
 - **FrankenPHP**: Caddy with PHP built in, downloaded as one checksum-verified
-  binary. The engine for production.
+  binary. The production-ready alternative.
 - **PHP's built-in server**: nothing to install. For development, and the
   shipped default because it always works.
-- **Qbix**: the bundled Qbix server. Experimental, for tests.
 
 ```bash
-./bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user   # production
-./bin/php/console exp:velocity install --allow-root-user   # fetch and verify the binary
+./bin/php/console exp:velocity config set ServerSettings Engine qbix --allow-root-user   # every real site
 ./bin/php/console exp:velocity start   --allow-root-user
+./bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user   # the alternative
+./bin/php/console exp:velocity install --allow-root-user   # fetch and verify the FrankenPHP binary
 ./bin/php/console exp:velocity start --all --allow-root-user   # all three side by side, for tests
 ```
 
@@ -212,8 +216,10 @@ being loaded from its archive: rebuild it first.
 - **Your hosting will not let you run a long-lived process.** Shared hosting
   usually will not. Apache or LiteSpeed with `.htaccess` is the answer there.
 - **You already have a tuned Nginx or Apache in front.** Keep it. Velocity is
-  happy behind a reverse proxy, and that is the recommended shape for TLS and
-  certificates anyway.
+  happy behind a reverse proxy. It does not need one for TLS: Velocity serves
+  HTTPS itself, with a certificate you give it, a self-signed one it makes, or
+  one it obtains and renews from Let's Encrypt, and swaps a renewed certificate
+  in without a restart.
 
 ## In short
 
