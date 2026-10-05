@@ -649,7 +649,7 @@ f722a03163843d88528991fb5e68dcb3  design/admin/templates/url/list.tpl
 5025af06eb7337f589fb38d661444f5d  design/admin/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
 ec051aff9aef0a071fe85027dcc4ce88  design/admin/templates/user/login.tpl
-f689abec7eaeaabefaff96b51350e39d  design/admin/templates/user/password.tpl
+c536625485b538a24feda45a74c9214d  design/admin/templates/user/password.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin/templates/user/register.tpl
 1c59ee32aa9fdb5e965d7bd6d8a66329  design/admin/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin/templates/user/success.tpl
@@ -877,7 +877,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-86772557ed178c2db037dad79b25750e  design/admin4/stylesheets/admin4.css
+8559d528986581ab2602b3126cd0bd1b  design/admin4/stylesheets/admin4.css
 e7edb5e01af46f5995d1f9429f305724  design/admin4/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
@@ -1220,7 +1220,7 @@ f722a03163843d88528991fb5e68dcb3  design/admin4/templates/url/list.tpl
 5025af06eb7337f589fb38d661444f5d  design/admin4/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 87e284d8c1e6bec27dc79ce41343e800  design/admin4/templates/user/login.tpl
-f689abec7eaeaabefaff96b51350e39d  design/admin4/templates/user/password.tpl
+99f90ae4b8e56c2b71399fdf1018d570  design/admin4/templates/user/password.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin4/templates/user/register.tpl
 1c59ee32aa9fdb5e965d7bd6d8a66329  design/admin4/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin4/templates/user/success.tpl
@@ -6573,14 +6573,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-78fb55aabe2a3690970effa22ee114a5  share/translations/eng-US/translation.ts
+cbba32ac055f75e5cb2a4fd947721854  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-d8cd7d49ebd4f31ed5fb8fef62b4c751  share/translations/ger-DE/translation.ts
+75cf2df94a0833213ded11a96b37181c  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts

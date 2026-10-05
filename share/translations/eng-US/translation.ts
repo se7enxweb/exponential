@@ -23333,6 +23333,97 @@ your account.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/user/password_page</name>
+    <message>
+        <source>Change password</source>
+        <translation>Change password</translation>
+    </message>
+    <message>
+        <source>Signed in as %login.</source>
+        <translation>Signed in as %login.</translation>
+    </message>
+    <message>
+        <source>Your password was changed.</source>
+        <translation>Your password was changed.</translation>
+    </message>
+    <message>
+        <source>You stay signed in here.</source>
+        <translation>You stay signed in here.</translation>
+    </message>
+    <message>
+        <source>Your other sessions (%count) were signed out.</source>
+        <translation>Your other sessions (%count) were signed out.</translation>
+    </message>
+    <message>
+        <source>A confirmation was sent to your e-mail address.</source>
+        <translation>A confirmation was sent to your e-mail address.</translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation>Continue</translation>
+    </message>
+    <message>
+        <source>The password could not be changed.</source>
+        <translation>The password could not be changed.</translation>
+    </message>
+    <message>
+        <source>Current password</source>
+        <translation>Current password</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>New password</source>
+        <translation>New password</translation>
+    </message>
+    <message>
+        <source>Generate a strong password</source>
+        <translation>Generate a strong password</translation>
+    </message>
+    <message>
+        <source>Strength</source>
+        <translation>Strength</translation>
+    </message>
+    <message>
+        <source>Your new password needs</source>
+        <translation>Your new password needs</translation>
+    </message>
+    <message>
+        <source>not met</source>
+        <translation>not met</translation>
+    </message>
+    <message>
+        <source>At least %1 characters</source>
+        <translation>At least %1 characters</translation>
+    </message>
+    <message>
+        <source>Confirm new password</source>
+        <translation>Confirm new password</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Your current password is not correct.</source>
+        <translation>Your current password is not correct.</translation>
+    </message>
+    <message>
+        <source>The new password must be at least %1 characters long.</source>
+        <translation>The new password must be at least %1 characters long.</translation>
+    </message>
+    <message>
+        <source>The two new passwords do not match.</source>
+        <translation>The two new passwords do not match.</translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices.</source>
+        <translation>You were signed out on your other devices.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/user/register</name>
     <message>
         <source>The information could not be stored...</source>

@@ -26433,6 +26433,97 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
 </context>
 <context>
+    <name>design/admin/user/password_page</name>
+    <message>
+        <source>Change password</source>
+        <translation>Passwort ändern</translation>
+    </message>
+    <message>
+        <source>Signed in as %login.</source>
+        <translation>Angemeldet als %login.</translation>
+    </message>
+    <message>
+        <source>Your password was changed.</source>
+        <translation>Ihr Passwort wurde geändert.</translation>
+    </message>
+    <message>
+        <source>You stay signed in here.</source>
+        <translation>Sie bleiben hier angemeldet.</translation>
+    </message>
+    <message>
+        <source>Your other sessions (%count) were signed out.</source>
+        <translation>Ihre anderen Sitzungen (%count) wurden abgemeldet.</translation>
+    </message>
+    <message>
+        <source>A confirmation was sent to your e-mail address.</source>
+        <translation>Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.</translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation>Weiter</translation>
+    </message>
+    <message>
+        <source>The password could not be changed.</source>
+        <translation>Das Passwort konnte nicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>Current password</source>
+        <translation>Aktuelles Passwort</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>New password</source>
+        <translation>Neues Passwort</translation>
+    </message>
+    <message>
+        <source>Generate a strong password</source>
+        <translation>Sicheres Passwort erzeugen</translation>
+    </message>
+    <message>
+        <source>Strength</source>
+        <translation>Stärke</translation>
+    </message>
+    <message>
+        <source>Your new password needs</source>
+        <translation>Ihr neues Passwort braucht</translation>
+    </message>
+    <message>
+        <source>not met</source>
+        <translation>nicht erfüllt</translation>
+    </message>
+    <message>
+        <source>At least %1 characters</source>
+        <translation>Mindestens %1 Zeichen</translation>
+    </message>
+    <message>
+        <source>Confirm new password</source>
+        <translation>Neues Passwort bestätigen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Your current password is not correct.</source>
+        <translation>Ihr aktuelles Passwort ist nicht korrekt.</translation>
+    </message>
+    <message>
+        <source>The new password must be at least %1 characters long.</source>
+        <translation>Das neue Passwort muss mindestens %1 Zeichen lang sein.</translation>
+    </message>
+    <message>
+        <source>The two new passwords do not match.</source>
+        <translation>Die beiden neuen Passwörter stimmen nicht überein.</translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices.</source>
+        <translation>Sie wurden auf Ihren anderen Geräten abgemeldet.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/user/register</name>
     <message>
         <source>The information could not be stored...</source>
