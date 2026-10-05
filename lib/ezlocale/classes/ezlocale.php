@@ -471,7 +471,7 @@ class eZLocale
     */
     static function localeRegexp( $withVariations = true, $withCharset = true )
     {
-        return "([a-zA-Z]+)([_-]([a-zA-Z]+))?" . ( $withCharset ? "(\.([a-zA-Z-]+))?" : '' ) . ( $withVariations ? "(@([a-zA-Z0-9]+))?" : '' );
+        return "([a-zA-Z]+)([_-]([a-zA-Z]+))?" . ( $withCharset ? "(\.([a-zA-Z0-9-]+))?" : '' ) . ( $withVariations ? "(@([a-zA-Z0-9]+))?" : '' );
     }
 
     /*!
@@ -483,7 +483,7 @@ class eZLocale
     function localeInformation( $localeString )
     {
         $info = null;
-        if ( preg_match( '/^([a-zA-Z]+)([_-]([a-zA-Z]+))?(\.([a-zA-Z-]+))?(@([a-zA-Z0-9]+))?/', $localeString, $regs ) )
+        if ( preg_match( '/^([a-zA-Z]+)([_-]([a-zA-Z]+))?(\.([a-zA-Z0-9-]+))?(@([a-zA-Z0-9]+))?/', $localeString, $regs ) )
         {
             $info = array();
             $language = strtolower( $regs[1] );
@@ -1233,7 +1233,7 @@ class eZLocale
             $number = '';
         if ( !is_scalar( $number ) )
             return $number;
-        if ( preg_match( '/^(['.$this->CurrencyPositiveSymbol.']|['.$this->CurrencyNegativeSymbol.'])?([0-9]*|[0-9]{1,3}(['.$this->ThousandsSeparator.'][0-9]{3,3})*)(['.$this->CurrencyDecimalSymbol.'][0-9]+)?$/', trim( $number ) ) )
+        if ( preg_match( '/^(['.$this->CurrencyPositiveSymbol.']|['.$this->CurrencyNegativeSymbol.'])?([0-9]*|[0-9]{1,3}(['.$this->CurrencyThousandsSeparator.'][0-9]{3,3})*)(['.$this->CurrencyDecimalSymbol.'][0-9]+)?$/', trim( $number ) ) )
         {
             $number = str_replace( ' ', '', $number );
             if ( $this->CurrencyPositiveSymbol )
