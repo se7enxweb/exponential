@@ -68,6 +68,12 @@ class ezpRestDefaultRegexpPrefixFilter extends ezpRestPrefixFilterInterface
      */
     public function filter( )
     {
+        // The version and provider are static: a request without them must not keep the ones of the request
+        // before it, as it did in a process that serves several requests
+        self::$version = null;
+        self::$apiProvider = null;
+        $this->versionToken = '';
+        $this->apiProviderToken = '';
         if ( preg_match( $this->getPrefixPattern(), $this->request->uri, $tokenMatches ) )
         {
             $this->versionToken = isset( $tokenMatches['version'] ) ? $tokenMatches['version'] : '';
