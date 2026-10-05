@@ -244,7 +244,7 @@ class expMailGate
     }
 
     /**
-     * @param string $decision sent, blocked, essential, uncategorised, error
+     * @param string $decision sent, blocked, essential, uncategorised, error, from_fallback
      * @param string|null $category
      * @param expMailRecipient|null $recipient
      * @param string $reason
@@ -276,13 +276,13 @@ class expMailGate
      * Counts of the log since a time.
      *
      * @param int $since
-     * @return array sent, blocked, essential, uncategorised, error, by_category (category => sent/blocked),
-     *               uncategorised_senders (sender => count), last (time of the newest entry)
+     * @return array sent, blocked, essential, uncategorised, error, from_fallback, by_category (category => sent/blocked),
+     *               uncategorised_senders (sender => count), from_fallback_senders (sender => count), last (time of the newest entry)
      */
     public static function stats( $since )
     {
-        $out = array( 'sent' => 0, 'blocked' => 0, 'essential' => 0, 'uncategorised' => 0, 'error' => 0, 'by_category' => array(),
-                      'uncategorised_senders' => array(), 'blocked_reasons' => array(), 'last' => 0 );
+        $out = array( 'sent' => 0, 'blocked' => 0, 'essential' => 0, 'uncategorised' => 0, 'error' => 0, 'from_fallback' => 0, 'by_category' => array(),
+                      'uncategorised_senders' => array(), 'blocked_reasons' => array(), 'from_fallback_senders' => array(), 'last' => 0 );
         foreach ( array( self::logFile() . '.1', self::logFile() ) as $file )
         {
             if ( !is_file( $file ) )
@@ -308,6 +308,8 @@ class expMailGate
                 }
                 if ( $d === 'blocked' && isset( $e['why'] ) )
                     $out['blocked_reasons'][$e['why']] = ( isset( $out['blocked_reasons'][$e['why']] ) ? $out['blocked_reasons'][$e['why']] : 0 ) + 1;
+                if ( $d === 'from_fallback' && isset( $e['s'] ) )
+                    $out['from_fallback_senders'][$e['s']] = ( isset( $out['from_fallback_senders'][$e['s']] ) ? $out['from_fallback_senders'][$e['s']] : 0 ) + 1;
                 if ( $d === 'uncategorised' && isset( $e['s'] ) )
                     $out['uncategorised_senders'][$e['s']] = ( isset( $out['uncategorised_senders'][$e['s']] ) ? $out['uncategorised_senders'][$e['s']] : 0 ) + 1;
             }
@@ -321,6 +323,13 @@ class expMailGate
 
     protected static function dispatchOptional( eZMail $mail, eZMailTransport $transport, expMailCategory $category, &$sent )
     {
+        if ( !self::ensureSender( $mail, $category ) )
+        {
+            self::$lastResult['decision'] = 'blocked';
+            self::$lastResult['blocked'][] = 'no_sender';
+            self::$lastResult['result'] = false;
+            return false;
+        }
         $check = self::check( $mail );
         $allowed = array();
         foreach ( $check['recipients'] as $r )
@@ -385,6 +394,42 @@ class expMailGate
         return $result;
     }
 
+    /**
+     * Optional mail never leaves with an empty From (CAN-SPAM: accurate header information). An empty sender gets
+     * the site's [MailSettings] EmailSender, else its AdminEmail, and the gate log notes it (from_fallback, with the
+     * file that sent). Without either the mail is not sent (blocked, no_sender) and an error is written.
+     *
+     * @return bool the mail has a sender now
+     */
+    protected static function ensureSender( eZMail $mail, expMailCategory $category )
+    {
+        $from = $mail->sender( false );
+        if ( is_array( $from ) && isset( $from['email'] ) && trim( (string)$from['email'] ) !== '' )
+            return true;
+        $ini = eZINI::instance();
+        $fallback = '';
+        foreach ( array( 'EmailSender', 'AdminEmail' ) as $setting )
+        {
+            $value = $ini->hasVariable( 'MailSettings', $setting ) ? trim( (string)$ini->variable( 'MailSettings', $setting ) ) : '';
+            if ( $value !== '' && eZMail::validate( $value ) )
+            {
+                $fallback = $value;
+                break;
+            }
+        }
+        $sender = self::callingSender();
+        if ( $fallback === '' )
+        {
+            eZDebug::writeError( 'Optional mail without a sender and no [MailSettings] EmailSender or AdminEmail: not sent', __METHOD__ );
+            self::log( 'blocked', $category->identifier, null, 'no_sender', $sender );
+            return false;
+        }
+        $mail->setSender( $fallback );
+        eZDebug::writeWarning( 'Optional mail without a sender: the site\'s sender address was used', __METHOD__ );
+        self::log( 'from_fallback', $category->identifier, null, 'empty_from', $sender );
+        return true;
+    }
+
     /** @return array[] email, name, field of every recipient (to, cc, bcc), each address once */
     protected static function recipientsOf( eZMail $mail )
     {
@@ -446,7 +491,8 @@ class expMailGate
         {
             $rendered = expMailPreferencesService::renderTemplate( $template, array(
                 'category' => $category, 'manage_url' => $links['manage'], 'unsubscribe_url' => $links['unsubscribe'],
-                'organisation_name' => $org['name'], 'organisation_address' => $org['address'], 'is_html' => $isHTML ) );
+                'organisation_name' => $org['name'], 'organisation_address' => $org['address'], 'site_name' => $org['name'],
+                'privacy_url' => expMailSenderDetails::privacyURL(), 'is_html' => $isHTML ) );
             if ( $rendered !== null && trim( $rendered['body'] ) !== '' )
                 return $rendered['body'];
         }
@@ -455,6 +501,8 @@ class expMailGate
         $manage = ezpI18n::tr( 'kernel/mailpreferences/mail', 'Manage your e-mail preferences' );
         $unsubscribe = ezpI18n::tr( 'kernel/mailpreferences/mail', 'Unsubscribe from "%category"', null, array( '%category' => $name ) );
         $orgLine = trim( $org['name'] . ( $org['name'] !== '' && $org['address'] !== '' ? ', ' : '' ) . $org['address'] );
+        $privacy = expMailSenderDetails::privacyURL();
+        $privacyText = ezpI18n::tr( 'kernel/mailpreferences/mail', 'Privacy notice' );
         if ( $isHTML )
         {
             $h = function ( $s ) { return htmlspecialchars( (string)$s, ENT_QUOTES, 'UTF-8' ); };
@@ -462,6 +510,8 @@ class expMailGate
                   . '<p>' . $h( $why ) . '</p><p><a href="' . $h( $links['manage'] ) . '">' . $h( $manage ) . '</a>';
             if ( $links['unsubscribe'] !== '' )
                 $html .= ' | <a href="' . $h( $links['unsubscribe'] ) . '">' . $h( $unsubscribe ) . '</a>';
+            if ( $privacy !== '' )
+                $html .= ' | <a href="' . $h( $privacy ) . '">' . $h( $privacyText ) . '</a>';
             $html .= '</p>';
             if ( $orgLine !== '' )
                 $html .= '<p>' . nl2br( $h( $orgLine ) ) . '</p>';
@@ -470,6 +520,8 @@ class expMailGate
         $text = "\n\n-- \n" . $why . "\n" . $manage . ': ' . $links['manage'] . "\n";
         if ( $links['unsubscribe'] !== '' )
             $text .= $unsubscribe . ': ' . $links['unsubscribe'] . "\n";
+        if ( $privacy !== '' )
+            $text .= $privacyText . ': ' . $privacy . "\n";
         if ( $orgLine !== '' )
             $text .= $orgLine . "\n";
         return $text;

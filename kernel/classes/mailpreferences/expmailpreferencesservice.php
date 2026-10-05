@@ -313,7 +313,11 @@ class expMailPreferencesService
             'gate' => expMailGate::enabled() ? 'enabled' : 'disabled',
             'secret' => expMailSecret::exists(),
             'base_url' => expMailToken::baseURL(),
-            'footer' => array( 'organisation_name' => $org['name'], 'organisation_address' => $org['address'], 'organisation_name_source' => $org['name_source'] ),
+            'footer' => array( 'organisation_name' => $org['name'], 'organisation_address' => $org['address'], 'organisation_name_source' => $org['name_source'],
+                               'privacy_url' => expMailSenderDetails::privacyURL() ),
+            'default_on_refused' => expMailCategoryRegistry::instance()->refusedDefaultOn(),
+            'allow_default_on' => expMailCategoryRegistry::allowDefaultOn(),
+            'ttl_below_minimum' => expMailToken::belowMinimumTTL(),
             'categories' => $categories,
             'recipients' => $tables['expmail_preference'] ? $count( 'SELECT COUNT(DISTINCT recipient_key) AS c FROM expmail_preference' ) : 0,
             'master_off' => $tables['expmail_preference'] ? $count( "SELECT COUNT(*) AS c FROM expmail_preference WHERE category = '" . expMailPreferenceRow::MASTER . "' AND state = 'off'" ) : 0,
@@ -333,6 +337,16 @@ class expMailPreferencesService
                 $s['problems'][] = array( 'error', 'table_missing', $t );
         if ( $org['name'] === '' || $org['address'] === '' )
             $s['problems'][] = array( 'warning', 'footer_missing', '' );
+        foreach ( $s['default_on_refused'] as $id => $source )
+            $s['problems'][] = array( 'warning', 'default_on_refused', $id );
+        if ( $s['allow_default_on'] )
+            $s['problems'][] = array( 'notice', 'default_on_allowed', '' );
+        foreach ( $s['ttl_below_minimum'] as $purpose => $seconds )
+            $s['problems'][] = array( 'warning', 'ttl_below_minimum', $purpose . ':' . $seconds );
+        if ( $s['gate_7d']['from_fallback'] > 0 )
+            $s['problems'][] = array( 'warning', 'from_fallback', (string)$s['gate_7d']['from_fallback'] );
+        if ( $s['footer']['privacy_url'] === '' )
+            $s['problems'][] = array( 'notice', 'privacy_missing', '' );
         if ( !$s['secret'] )
             $s['problems'][] = array( 'notice', 'secret_missing', '' );
         if ( $s['gate'] === 'disabled' )
@@ -362,6 +376,17 @@ class expMailPreferencesService
                 return ezpI18n::tr( 'kernel/mailpreferences/status', 'The table %table is missing: run the database update.', null, array( '%table' => $problem[2] ) );
             case 'footer_missing':
                 return ezpI18n::tr( 'kernel/mailpreferences/status', 'The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.' );
+            case 'default_on_refused':
+                return ezpI18n::tr( 'kernel/mailpreferences/status', 'The optional category "%category" is set to be on for everybody (DefaultOn=true). That is opt-out, which the law does not allow for most optional mail: it is treated as off until a person turns it on. Set DefaultOn=false, or [CategorySettings] AllowDefaultOn=enabled in mailpreferences.ini where opt-out is lawful.', null, array( '%category' => $problem[2] ) );
+            case 'default_on_allowed':
+                return ezpI18n::tr( 'kernel/mailpreferences/status', 'Optional categories may be on for everybody ([CategorySettings] AllowDefaultOn=enabled). Make sure the law of your recipients allows opt-out for them.' );
+            case 'ttl_below_minimum':
+                list( $purpose, $seconds ) = array_pad( explode( ':', (string)$problem[2], 2 ), 2, '0' );
+                return ezpI18n::tr( 'kernel/mailpreferences/status', 'The %purpose links of mail are set to work for %days days ([TokenSettings] TTL[%purpose]). The law asks for at least 60 days, so 60 days are used. Set 0 (never expire) or at least 5184000.', null, array( '%purpose' => $purpose, '%days' => (string)round( (int)$seconds / 86400, 1 ) ) );
+            case 'from_fallback':
+                return ezpI18n::tr( 'kernel/mailpreferences/status', '%count optional mails in the last 7 days had no sender address; the site\'s sender ([MailSettings] EmailSender or AdminEmail) was used. The gate log names the code that sent them.', null, array( '%count' => $problem[2] ) );
+            case 'privacy_missing':
+                return ezpI18n::tr( 'kernel/mailpreferences/status', 'No privacy notice is linked from the mail footer and the preference page: set [FooterSettings] PrivacyURL in mailpreferences.ini, or menu.ini [SiteInfo] PrivacyPolicyID of the public siteaccess.' );
             case 'secret_missing':
                 return ezpI18n::tr( 'kernel/mailpreferences/status', 'The site secret of the links has not been generated yet; it is made on first use.' );
             case 'gate_disabled':

@@ -141,14 +141,58 @@ class expMailToken
         return self::$lastError;
     }
 
-    /** @return int seconds, 0 never */
+    /**
+     * The shortest lifetime of the unsubscribe and manage links of a mail: 60 days. CASL wants the unsubscribe
+     * mechanism of a message to work for 60 days after it was sent, CAN-SPAM for 30.
+     */
+    const MIN_LINK_TTL = 5184000;
+
+    /**
+     * The lifetime of a link of this purpose ([TokenSettings] TTL[<purpose>]). For unsubscribe and manage a value
+     * between 0 (never expires) and MIN_LINK_TTL is raised to MIN_LINK_TTL (belowMinimumTTL() lists it for the status).
+     *
+     * @param string $purpose
+     * @return int seconds, 0 never
+     */
     public static function defaultTTL( $purpose )
+    {
+        $configured = self::configuredTTL( $purpose );
+        if ( $configured > 0 && $configured < self::MIN_LINK_TTL && in_array( $purpose, array( 'unsubscribe', 'manage' ), true ) )
+        {
+            if ( empty( self::$ttlNoted[$purpose] ) )
+            {
+                self::$ttlNoted[$purpose] = true;
+                eZDebug::writeWarning( "[TokenSettings] TTL[$purpose]=$configured is below 60 days, the legal minimum of a link in a mail: 60 days are used", __METHOD__ );
+            }
+            return self::MIN_LINK_TTL;
+        }
+        return $configured;
+    }
+
+    /** @var bool[] purpose => the raised lifetime was noted in this process */
+    protected static $ttlNoted = array();
+
+    /** @return int the lifetime the settings give, 0 never */
+    protected static function configuredTTL( $purpose )
     {
         $ini = eZINI::instance( 'mailpreferences.ini' );
         $ttl = $ini->hasVariable( 'TokenSettings', 'TTL' ) ? (array)$ini->variable( 'TokenSettings', 'TTL' ) : array();
         if ( isset( $ttl[$purpose] ) && is_numeric( $ttl[$purpose] ) )
             return max( 0, (int)$ttl[$purpose] );
         return $purpose === 'confirm' ? 604800 : 0;
+    }
+
+    /** @return int[] purpose => configured seconds, for the unsubscribe and manage links set below MIN_LINK_TTL */
+    public static function belowMinimumTTL()
+    {
+        $out = array();
+        foreach ( array( 'unsubscribe', 'manage' ) as $purpose )
+        {
+            $configured = self::configuredTTL( $purpose );
+            if ( $configured > 0 && $configured < self::MIN_LINK_TTL )
+                $out[$purpose] = $configured;
+        }
+        return $out;
     }
 
     /**

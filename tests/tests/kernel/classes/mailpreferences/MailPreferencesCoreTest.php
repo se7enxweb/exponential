@@ -295,7 +295,17 @@ class MailPreferencesCoreTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $r->saveAdmin( new expMailCategory( 'mptestevents', array( 'name' => 'MPTEST events', 'description' => 'd', 'defaultOn' => true ) ) ) );
         $c = $r->get( 'mptestevents' );
         $this->assertSame( 'admin', $c->source );
-        $this->assertTrue( $c->defaultOn );
+        // stored as asked, but opt-out is refused unless [CategorySettings] AllowDefaultOn=enabled (MPH-04)
+        $this->setIni( 'CategorySettings', 'AllowDefaultOn', 'disabled' );
+        expMailCategoryRegistry::reset();
+        $this->assertFalse( $r->get( 'mptestevents' )->defaultOn, 'DefaultOn=true is refused' );
+        $this->assertArrayHasKey( 'mptestevents', $r->refusedDefaultOn() );
+        $this->setIni( 'CategorySettings', 'AllowDefaultOn', 'enabled' );
+        expMailCategoryRegistry::reset();
+        $this->assertTrue( $r->get( 'mptestevents' )->defaultOn, 'kept where the site allows opt-out' );
+        $this->assertArrayNotHasKey( 'mptestevents', $r->refusedDefaultOn() );
+        $this->setIni( 'CategorySettings', 'AllowDefaultOn', 'disabled' );
+        expMailCategoryRegistry::reset();
         // an INI category's essential flag cannot be changed in the admin
         $this->assertTrue( $r->saveAdmin( new expMailCategory( 'mptestevents', array( 'name' => 'MPTEST events renamed', 'essential' => true ) ) ) );
         $this->assertSame( 'MPTEST events renamed', $r->get( 'mptestevents' )->name );

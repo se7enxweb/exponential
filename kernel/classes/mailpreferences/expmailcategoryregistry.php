@@ -37,6 +37,9 @@ class expMailCategoryRegistry
     /** @var mixed the request the list was loaded for (a persistent worker serves many) */
     protected $loadedFor = null;
 
+    /** @var string[] identifier => source of the optional categories whose DefaultOn=true was refused (last load) */
+    protected $refusedDefaultOn = array();
+
     /** @return expMailCategoryRegistry */
     public static function instance()
     {
@@ -210,7 +213,49 @@ class expMailCategoryRegistry
         }
         foreach ( $this->registered as $id => $category )
             $out[$id] = $category;
-        return $out;
+        return $this->refuseDefaultOn( $out );
+    }
+
+    /**
+     * Opt-in only: an optional category that is on for everybody who never chose (DefaultOn=true) is turned into an
+     * opt-in one, and a warning names it; the status page lists it (refusedDefaultOn()). [CategorySettings]
+     * AllowDefaultOn=enabled keeps DefaultOn, for a site whose mail and jurisdiction allow it (not marketing to
+     * people in the EU or Canada).
+     *
+     * @param expMailCategory[] $categories
+     * @return expMailCategory[]
+     */
+    protected function refuseDefaultOn( array $categories )
+    {
+        $this->refusedDefaultOn = array();
+        if ( self::allowDefaultOn() )
+            return $categories;
+        foreach ( $categories as $id => $category )
+        {
+            if ( $category->essential || !$category->defaultOn )
+                continue;
+            $copy = clone $category;
+            $copy->defaultOn = false;
+            $categories[$id] = $copy;
+            $this->refusedDefaultOn[$id] = $category->source;
+            eZDebug::writeWarning( "The optional mail category '$id' ({$category->source}) says DefaultOn=true: it is treated as off "
+                                   . 'until the person turns it on. Set [CategorySettings] AllowDefaultOn=enabled in mailpreferences.ini only where the law allows opt-out.', __METHOD__ );
+        }
+        return $categories;
+    }
+
+    /** @return bool mailpreferences.ini [CategorySettings] AllowDefaultOn=enabled */
+    public static function allowDefaultOn()
+    {
+        $ini = eZINI::instance( 'mailpreferences.ini' );
+        return $ini->hasVariable( 'CategorySettings', 'AllowDefaultOn' ) && trim( (string)$ini->variable( 'CategorySettings', 'AllowDefaultOn' ) ) === 'enabled';
+    }
+
+    /** @return string[] identifier => source of the optional categories whose DefaultOn=true is refused */
+    public function refusedDefaultOn()
+    {
+        $this->all();
+        return $this->refusedDefaultOn;
     }
 
     /** @return string[] the identifiers the shipped settings/mailpreferences.ini lists */
