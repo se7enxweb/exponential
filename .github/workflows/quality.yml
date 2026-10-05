@@ -174,9 +174,5 @@ jobs:
       - name: Install the production dependencies with PHP 8.0
         run: composer install --no-dev --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
 
-      # A warning until syndication and ezstarrating are released with their fixed
-      # declarations (eZSyndicateType::onPublish(), ezsrRatingObjectTreeNode::makeObjectsArray()),
-      # which no PHP 8 can load today; then remove continue-on-error.
       - name: Boot smoke test without a database (every kernel and extension class, compat functions, a template)
-        continue-on-error: true
         run: php bin/php/ezexec.php tests/bin/bootsmoke.php
