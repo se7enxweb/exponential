@@ -1,0 +1,35 @@
+Return-Path: <>
+Date: Mon,  5 Oct 2026 10:00:00 +0200 (CEST)
+From: MAILER-DAEMON@mx.example.invalid (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: newsletter-bounces@example.invalid
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status; boundary="NLSOFT"
+Message-Id: <nltest-dsn-soft-{{UNIQ}}@mx.example.invalid>
+
+--NLSOFT
+Content-Type: text/plain; charset=us-ascii
+
+Your message could not be delivered to one or more recipients.
+
+--NLSOFT
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mx.example.invalid
+
+Final-Recipient: rfc822; {{EMAIL}}
+Action: delayed
+Status: 4.2.2
+Diagnostic-Code: smtp; 452 4.2.2 <{{EMAIL}}>: Mailbox full
+
+--NLSOFT
+Content-Type: text/rfc822-headers
+
+From: newsletter@example.invalid
+To: {{EMAIL}}
+Subject: NLTEST edition
+X-Cjwnl-Senditem: {{SENDITEM}}
+X-Cjwnl-User: {{USER}}
+
+--NLSOFT--

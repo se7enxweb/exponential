@@ -1,0 +1,30 @@
+From: feedback@isp.example.invalid
+To: abuse@example.invalid
+Subject: Abuse report
+Date: Mon,  5 Oct 2026 10:00:00 +0200
+Message-Id: <nltest-arf-{{UNIQ}}@isp.example.invalid>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=feedback-report; boundary="NLARF"
+
+--NLARF
+Content-Type: text/plain
+
+This is a spam complaint.
+
+--NLARF
+Content-Type: message/feedback-report
+
+Feedback-Type: abuse
+User-Agent: test/1.0
+Version: 1
+Original-Rcpt-To: {{EMAIL}}
+
+--NLARF
+Content-Type: text/rfc822-headers
+
+From: newsletter@example.invalid
+To: {{EMAIL}}
+Subject: NLTEST edition
+X-Cjwnl-Senditem: {{SENDITEM}}
+
+--NLARF--

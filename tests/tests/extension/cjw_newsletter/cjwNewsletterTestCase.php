@@ -324,6 +324,17 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             $db->query( 'DELETE FROM cjwnl_subscription WHERE newsletter_user_id = ' . $uid );
             $db->query( 'DELETE FROM cjwnl_user WHERE id = ' . $uid );
         }
+        // 4.2.0 N1: a hard bounce or a complaint in a test suppresses the address in the kernel list: lift it again
+        if ( class_exists( 'expMailSuppression' ) && class_exists( 'CjwNewsletterMailPreferences' ) && CjwNewsletterMailPreferences::available() )
+        {
+            $emails = $this->extraEmails;
+            foreach ( $rows as $row )
+                $emails[] = (string)$row['email'];
+            foreach ( array_unique( $emails ) as $email )
+                if ( strpos( $email, 'nltest-' ) === 0 && expMailSuppression::isSuppressed( $email ) )
+                    expMailSuppression::lift( $email );
+        }
+        // end 4.2.0 N1
         $db->query( "DELETE FROM cjwnl_blacklist_item WHERE email LIKE 'nltest-%@" . self::MAIL_DOMAIN . "'" );
         foreach ( $this->createdImportIds as $importId )
         {
