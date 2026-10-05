@@ -103,6 +103,13 @@ if ( !EXP_RUNTIME_IS_PHAR && in_array( 'phar', stream_get_wrappers() ) )
 // function stack. Remember to check for class prefixes in such a method, if it
 // will not serve classes from eZ Publish and eZ Components
 
+// config.env.php holds what differs per machine, like the EXP_ENV environment
+// name (see config.env.php.example). It is read first, so config.php can use it.
+if ( file_exists( __DIR__ . '/config.env.php' ) )
+{
+    require_once __DIR__ . '/config.env.php';
+}
+
 if ( file_exists( __DIR__ . '/config.php' ) )
 {
     require_once __DIR__ . '/config.php';

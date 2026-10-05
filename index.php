@@ -42,5 +42,13 @@ if ( isset( $_REQUEST['exp_repair'] ) )
 
 require 'autoload.php';
 
+// On a development or test machine (EXP_ENV dev or test in config.env.php) PHP
+// errors are shown in the browser. Any other environment, or none, keeps the
+// display_errors setting of php.ini.
+if ( in_array( eZINI::environment(), array( 'dev', 'test' ), true ) )
+{
+    ini_set( 'display_errors', '1' );
+}
+
 $kernel = new ezpKernel( new ezpKernelWeb() );
 echo $kernel->run()->getContent();

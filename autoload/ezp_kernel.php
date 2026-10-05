@@ -991,6 +991,7 @@ return array(
       'expDebugBarSettings'                                          => 'kernel/classes/debugbar/expdebugbarsettings.php',
       'expDebugBarSummary'                                           => 'kernel/classes/debugbar/expdebugbarsummary.php',
       'expDesignExtensionWizard'                                     => 'kernel/setup/expdesignextensionwizard.php',
+      'expEnvironmentOperator'                                       => 'kernel/common/expenvironmentoperator.php',
       'expExtensionWizard'                                           => 'kernel/setup/expextensionwizard.php',
       'expHandlerWizard'                                             => 'kernel/setup/exphandlerwizard.php',
       'expInfo'                                                      => 'lib/ezutils/classes/expinfo.php',
