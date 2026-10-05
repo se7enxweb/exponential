@@ -127,9 +127,7 @@ class eZCollaborationNotificationHandler extends eZNotificationEventHandler
         {
             $user = eZUser::currentUser();
         }
-        $email = $user->attribute( 'email' );
-
-        return eZCollaborationNotificationRule::fetchList( $email );
+        return eZCollaborationNotificationRule::fetchList( $user->attribute( 'contentobject_id' ) );
     }
 
     function fetchHttpInput( $http, $module )
@@ -139,7 +137,7 @@ class eZCollaborationNotificationHandler extends eZNotificationEventHandler
             $oldSelection = $this->collaborationSelections();
             $selection = array();
             if ( $http->hasPostVariable( 'CollaborationHandlerSelection_' . self::NOTIFICATION_HANDLER_ID  ) )
-                $selection = $http->postVariable( 'CollaborationHandlerSelection_' . self::NOTIFICATION_HANDLER_ID );
+                $selection = (array)$http->postVariable( 'CollaborationHandlerSelection_' . self::NOTIFICATION_HANDLER_ID );
             $createRules = array_diff( $selection, $oldSelection );
             $removeRules = array_diff( $oldSelection, $selection );
             if ( count( $removeRules ) > 0 )

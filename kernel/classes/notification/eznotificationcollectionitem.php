@@ -63,8 +63,7 @@ class eZNotificationCollectionItem extends eZPersistentObject
     static function fetchByDate( $date )
     {
         return eZPersistentObject::fetchObjectList( eZNotificationCollectionItem::definition(),
-                                                    null, array( 'send_date' => array( '<', $date ),
-                                                                 'send_date' => array( '!=', 0 ) ) , null, null,
+                                                    null, array( 'send_date' => array( '', array( 1, (int)$date - 1 ) ) ), null, null,
                                                     true );
     }
 

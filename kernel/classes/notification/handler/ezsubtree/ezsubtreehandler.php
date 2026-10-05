@@ -198,7 +198,15 @@ class eZSubTreeHandler extends eZNotificationEventHandler
                     }
                     else if ( $settings->attribute( 'digest_type' ) == eZGeneralDigestUserSettings::TYPE_WEEKLY )
                     {
-                        $weekday = $weekDaysByName[ $settings->attribute( 'day' ) ];
+                        // the day is stored by its name in the locale of the user who chose it; the cronjob may
+                        // run in another one, so the English name and a number are accepted too
+                        $dayName = $settings->attribute( 'day' );
+                        if ( isset( $weekDaysByName[$dayName] ) )
+                            $weekday = $weekDaysByName[$dayName];
+                        else if ( ( $english = array_search( strtolower( (string)$dayName ), array( 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ), true ) ) !== false )
+                            $weekday = $english;
+                        else
+                            $weekday = is_numeric( $dayName ) ? ( (int)$dayName % 7 ) : 1;
                         eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'week',
                                                                               'day' => $weekday,
                                                                               'hour' => $hour ) );
@@ -296,11 +304,12 @@ class eZSubTreeHandler extends eZNotificationEventHandler
         {
             $user = eZUser::currentUser();
             $userList = eZSubtreeNotificationRule::fetchList( $user->attribute( 'contentobject_id' ), false );
+            $listID = array();
             foreach ( $userList as $userRow )
             {
                 $listID[] = $userRow['id'];
             }
-            $ruleIDList = $http->postVariable( 'SelectedRuleIDArray_' . self::NOTIFICATION_HANDLER_ID );
+            $ruleIDList = (array)$http->postVariable( 'SelectedRuleIDArray_' . self::NOTIFICATION_HANDLER_ID );
             foreach ( $ruleIDList as $ruleID )
             {
                 if ( in_array( $ruleID, $listID ) )
@@ -312,16 +321,22 @@ class eZSubTreeHandler extends eZNotificationEventHandler
                   !$http->hasPostVariable( 'BrowseCancelButton' ) )
         {
             $selectedNodeIDArray = $http->postVariable( "SelectedNodeIDArray" );
+            if ( !is_array( $selectedNodeIDArray ) )
+                $selectedNodeIDArray = array();
             $user = eZUser::currentUser();
 
             $existingNodes = eZSubtreeNotificationRule::fetchNodesForUserID( $user->attribute( 'contentobject_id' ), false );
 
             foreach ( $selectedNodeIDArray as $nodeID )
             {
-                if ( ! in_array( $nodeID, $existingNodes ) )
+                // only a node the user can read, and only once
+                $node = eZContentObjectTreeNode::fetch( (int)$nodeID );
+                if ( $node instanceof eZContentObjectTreeNode && $node->attribute( 'can_read' ) &&
+                     !in_array( (int)$nodeID, array_map( 'intval', $existingNodes ), true ) )
                 {
-                    $rule = eZSubtreeNotificationRule::create( $nodeID, $user->attribute( 'contentobject_id' ) );
+                    $rule = eZSubtreeNotificationRule::create( (int)$nodeID, $user->attribute( 'contentobject_id' ) );
                     $rule->store();
+                    $existingNodes[] = (int)$nodeID; // the same node twice in one form is one subscription
                 }
             }
 //            $Module->redirectTo( "//list/" );

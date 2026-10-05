@@ -183,6 +183,126 @@ class eZNotificationEvent extends eZPersistentObject
                                                     true );
     }
 
+    /**
+     * When the event was made. The table has no date of its own, so it is read from what the event is
+     * about: the time of a time event, the creation of the published version, the creation of the
+     * collaboration item.
+     *
+     * @return int|false a timestamp, false when it cannot be told (the content is gone, an unknown type)
+     */
+    function createdAt()
+    {
+        $db = eZDB::instance();
+        switch ( $this->attribute( 'event_type_string' ) )
+        {
+            case 'ezcurrenttime':
+            {
+                $time = (int)$this->attribute( 'data_int1' );
+                return $time > 0 ? $time : false;
+            } break;
+
+            case 'ezpublish':
+            {
+                $rows = $db->arrayQuery( 'SELECT created, modified FROM ezcontentobject_version WHERE contentobject_id=' . (int)$this->attribute( 'data_int1' ) .
+                                         ' AND version=' . (int)$this->attribute( 'data_int2' ) );
+                if ( !$rows )
+                    return false;
+                $time = max( (int)$rows[0]['created'], (int)$rows[0]['modified'] );
+                return $time > 0 ? $time : false;
+            } break;
+
+            case 'ezcollaboration':
+            {
+                $rows = $db->arrayQuery( 'SELECT created, modified FROM ezcollab_item WHERE id=' . (int)$this->attribute( 'data_int1' ) );
+                if ( !$rows )
+                    return false;
+                $time = max( (int)$rows[0]['created'], (int)$rows[0]['modified'] );
+                return $time > 0 ? $time : false;
+            } break;
+        }
+        return false;
+    }
+
+    /**
+     * Removes the events that are older than $timestamp (see createdAt()). Events whose age cannot be told
+     * are left alone unless $unknown is true. Collection items of a removed event are removed with it.
+     *
+     * @param int $timestamp
+     * @param int|null $status only events in this status (STATUS_CREATED or STATUS_HANDLED); null: both
+     * @param bool $unknown also remove events whose age is unknown
+     * @param bool $dryRun count, do not remove
+     * @return array removed (count), kept (count), unknown (count), ids (the removed ones)
+     */
+    static function removeOlderThan( $timestamp, $status = null, $unknown = false, $dryRun = false )
+    {
+        $result = array( 'removed' => 0, 'kept' => 0, 'unknown' => 0, 'ids' => array() );
+        $conditions = $status === null ? null : array( 'status' => (int)$status );
+        $lastID = 0;
+        $db = eZDB::instance();
+        do
+        {
+            $cond = is_array( $conditions ) ? $conditions : array();
+            $cond['id'] = array( '>', $lastID );
+            $events = eZPersistentObject::fetchObjectList( self::definition(), null, $cond, array( 'id' => 'asc' ),
+                                                           array( 'offset' => 0, 'length' => 200 ), true );
+            foreach ( $events as $event )
+            {
+                $lastID = (int)$event->attribute( 'id' );
+                $created = $event->createdAt();
+                if ( $created === false )
+                {
+                    ++$result['unknown'];
+                    if ( !$unknown )
+                        continue;
+                }
+                else if ( $created >= $timestamp )
+                {
+                    ++$result['kept'];
+                    continue;
+                }
+                $result['ids'][] = $lastID;
+                ++$result['removed'];
+            }
+        } while ( count( $events ) == 200 );
+
+        if ( !$dryRun && $result['ids'] )
+        {
+            $db->begin();
+            foreach ( array_chunk( $result['ids'], 100 ) as $chunk )
+            {
+                $list = implode( ',', array_map( 'intval', $chunk ) );
+                $db->query( "DELETE FROM eznotificationcollection_item WHERE event_id IN ( $list )" );
+                $db->query( "DELETE FROM eznotificationcollection WHERE event_id IN ( $list )" );
+                $db->query( "DELETE FROM eznotificationevent WHERE id IN ( $list )" );
+            }
+            $db->commit();
+        }
+        return $result;
+    }
+
+    /**
+     * Removes the handled events that nothing is waiting for any more. An event whose messages were kept for a
+     * digest stays handled until the digest is sent; after that nothing removed it, so they piled up.
+     *
+     * @param bool $dryRun only count
+     * @return int the number of events
+     */
+    static function cleanupHandled( $dryRun = false )
+    {
+        $db = eZDB::instance();
+        $where = 'status = ' . self::STATUS_HANDLED . ' AND id NOT IN ( SELECT event_id FROM eznotificationcollection_item )';
+        if ( $dryRun )
+        {
+            $rows = $db->arrayQuery( "SELECT COUNT(*) AS n FROM eznotificationevent WHERE $where" );
+            return (int)$rows[0]['n'];
+        }
+        $rows = $db->arrayQuery( "SELECT COUNT(*) AS n FROM eznotificationevent WHERE $where" );
+        $count = (int)$rows[0]['n'];
+        if ( $count > 0 )
+            $db->query( "DELETE FROM eznotificationevent WHERE $where" );
+        return $count;
+    }
+
     /*!
      \static
      Removes all notification events.

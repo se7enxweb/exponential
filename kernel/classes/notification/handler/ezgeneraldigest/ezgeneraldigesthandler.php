@@ -122,11 +122,11 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
                 if ( $tpl->hasVariable( 'content_type' ) )
                     $parameters['content_type'] = $tpl->variable( 'content_type' );
 
-                $transport->send( $address, $subject, $result, null, $parameters );
+                $transport->send( $address['address'], $subject, $result, null, $parameters );
                 eZDebugSetting::writeDebug( 'kernel-notification', $result, "digest result" );
             }
 
-            $collectionItemIDList = $tpl->variable( 'collection_item_id_list' );
+            $collectionItemIDList = $tpl->hasVariable( 'collection_item_id_list' ) ? $tpl->variable( 'collection_item_id_list' ) : array();
             eZDebugSetting::writeDebug( 'kernel-notification', $collectionItemIDList, "handled items" );
 
             $tpl->setIsTemplatesUsageStatisticsEnabled( $prevTplUsageStats );
@@ -179,7 +179,14 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
         $availableHandlers = eZNotificationEventFilter::availableHandlers();
         foreach ( $handlerResult as $handlerName )
         {
-            $handlers[$handlerName['handler']] = $availableHandlers[$handlerName['handler']];
+            // the collection's handler names the handler (ezcollaboration), the settings list it by its class
+            // (ezcollaborationnotification); a handler that is no longer available has nothing to show
+            if ( isset( $availableHandlers[$handlerName['handler']] ) )
+                $handlers[$handlerName['handler']] = $availableHandlers[$handlerName['handler']];
+            else
+                foreach ( $availableHandlers as $available )
+                    if ( $available->attribute( 'id_string' ) == $handlerName['handler'] )
+                        $handlers[$handlerName['handler']] = $available;
         }
         return $handlers;
     }
@@ -214,22 +221,42 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
     {
         $user = eZUser::currentUser();
         $settings = eZGeneralDigestUserSettings::fetchByUserId( $user->attribute( 'contentobject_id' ) );
-
-        if ( $http->hasPostVariable( 'ReceiveDigest_' . self::NOTIFICATION_HANDLER_ID ) &&
-             $http->hasPostVariable( 'ReceiveDigest_' . self::NOTIFICATION_HANDLER_ID ) == '1' )
+        if ( !$settings instanceof eZGeneralDigestUserSettings )
         {
+            // a user who never opened the settings page has no row yet
+            $settings = eZGeneralDigestUserSettings::create( $user->attribute( 'contentobject_id' ) );
+        }
+
+        if ( $http->hasPostVariable( 'ReceiveDigest_' . self::NOTIFICATION_HANDLER_ID ) )
+        {
+            $id = self::NOTIFICATION_HANDLER_ID;
+            // what the form sends is checked: a digest type that is not one of the three, a time that is not
+            // one of the offered hours, a day outside the week or the month would later schedule nothing or
+            // fail in eZNotificationSchedule
+            $digestType = (int)$http->postVariable( 'DigestType_' . $id, eZGeneralDigestUserSettings::TYPE_DAILY );
+            if ( !in_array( $digestType, array( eZGeneralDigestUserSettings::TYPE_WEEKLY, eZGeneralDigestUserSettings::TYPE_MONTHLY,
+                                                eZGeneralDigestUserSettings::TYPE_DAILY ), true ) )
+                $digestType = eZGeneralDigestUserSettings::TYPE_DAILY;
+            $time = (string)$http->postVariable( 'Time_' . $id, '0:00' );
+            if ( !in_array( $time, $this->attribute( 'available_hours' ), true ) )
+                $time = '0:00';
+            $day = $settings->attribute( 'day' );
+            if ( $digestType == eZGeneralDigestUserSettings::TYPE_WEEKLY )
+            {
+                $day = (string)$http->postVariable( 'Weekday_' . $id, '' );
+                $weekDays = $this->attribute( 'all_week_days' );
+                if ( !in_array( $day, $weekDays, true ) )
+                    $day = (string)reset( $weekDays );
+            }
+            else if ( $digestType == eZGeneralDigestUserSettings::TYPE_MONTHLY )
+            {
+                $day = (int)$http->postVariable( 'Monthday_' . $id, 1 );
+                $day = (string)min( 31, max( 1, $day ) );
+            }
             $settings->setAttribute( 'receive_digest', 1 );
-            $digestType = $http->postVariable( 'DigestType_' . self::NOTIFICATION_HANDLER_ID );
             $settings->setAttribute( 'digest_type', $digestType );
-            if ( $digestType == 1 )
-            {
-                $settings->setAttribute( 'day', $http->postVariable( 'Weekday_' . self::NOTIFICATION_HANDLER_ID ) );
-            }
-            else if ( $digestType == 2 )
-            {
-                $settings->setAttribute( 'day', $http->postVariable( 'Monthday_' . self::NOTIFICATION_HANDLER_ID ) );
-            }
-            $settings->setAttribute( 'time', $http->postVariable( 'Time_' . self::NOTIFICATION_HANDLER_ID ) );
+            $settings->setAttribute( 'day', $day );
+            $settings->setAttribute( 'time', $time );
             $settings->store();
         }
         else

@@ -16,51 +16,94 @@
 */
 class eZNotificationEventFilter
 {
-    /*!
-     \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
-     the calls within a db transaction; thus within db->begin and db->commit.
+    /**
+     * Handles the pending notification events: every available handler sees each event, the messages it
+     * schedules are sent now or kept for a digest, and an event nothing is waiting for is removed.
+     *
+     * @note Transaction unsafe. If you call several transaction unsafe methods you must enclose the calls
+     *       within a db transaction; thus within db->begin and db->commit.
+     *
+     * @param array|null $eventIDList only these events (null: all pending ones); a handled event that is
+     *        asked for again is not handled twice, since only pending events are fetched
+     * @return array events (handled), removed (no one left to notify), kept (waiting for a digest), failed
      */
-    static function process()
+    static function process( $eventIDList = null )
     {
         $limit = 100;
-        $offset = 0;
+        $result = array( 'events' => 0, 'removed' => 0, 'kept' => 0, 'failed' => 0 );
         $availableHandlers = eZNotificationEventFilter::availableHandlers();
+        if ( is_array( $eventIDList ) )
+        {
+            $eventIDList = array_map( 'intval', $eventIDList );
+            if ( count( $eventIDList ) == 0 )
+                return $result;
+            foreach ( array_chunk( $eventIDList, 100 ) as $chunk )
+            {
+                $eventList = eZPersistentObject::fetchObjectList( eZNotificationEvent::definition(), null,
+                                                                  array( 'status' => eZNotificationEvent::STATUS_CREATED,
+                                                                         'id' => array( $chunk ) ),
+                                                                  array( 'id' => 'asc' ), null, true );
+                foreach ( $eventList as $event )
+                    self::processEvent( $event, $availableHandlers, $result );
+                eZContentObject::clearCache();
+            }
+            eZNotificationCollection::removeEmpty();
+            eZNotificationEvent::cleanupHandled();
+            return $result;
+        }
         do
         {
-            $eventList = eZNotificationEvent::fetchUnhandledList( array( 'offset' => $offset, 'length' => $limit ) );
+            // a handled event leaves the pending list, so the first window is always the next one
+            $eventList = eZNotificationEvent::fetchUnhandledList( array( 'offset' => 0, 'length' => $limit ) );
             foreach( $eventList as $event )
-            {
-                $db = eZDB::instance();
-                $db->begin();
-
-                foreach( $availableHandlers as $handler )
-                {
-                    if ( $handler === false )
-                    {
-                        eZDebug::writeError( "Notification handler does not exist: $handlerKey", __METHOD__ );
-                    }
-                    else
-                    {
-                        $handler->handle( $event );
-                    }
-                }
-                $itemCountLeft = eZNotificationCollectionItem::fetchCountForEvent( $event->attribute( 'id' ) );
-                if ( $itemCountLeft == 0 )
-                {
-                    $event->remove();
-                }
-                else
-                {
-                    $event->setAttribute( 'status', eZNotificationEvent::STATUS_HANDLED );
-                    $event->store();
-                }
-
-                $db->commit();
-            }
+                self::processEvent( $event, $availableHandlers, $result );
             eZContentObject::clearCache();
         } while ( count( $eventList ) == $limit ); // If less than limit, we're on the last iteration
 
         eZNotificationCollection::removeEmpty();
+        eZNotificationEvent::cleanupHandled();
+        return $result;
+    }
+
+    private static function processEvent( $event, $availableHandlers, array &$result )
+    {
+        $db = eZDB::instance();
+        $db->begin();
+        $failed = false;
+        foreach( $availableHandlers as $handlerKey => $handler )
+        {
+            if ( $handler === false )
+            {
+                eZDebug::writeError( "Notification handler does not exist: $handlerKey", __METHOD__ );
+                continue;
+            }
+            try
+            {
+                $handler->handle( $event );
+            }
+            catch ( Throwable $e )
+            {
+                // one handler's failure must not stop the others; the event is not retried, as a
+                // handler that has sent already would send again
+                $failed = true;
+                eZDebug::writeError( "Notification handler $handlerKey failed on event " . $event->attribute( 'id' ) . ': ' . $e->getMessage(), __METHOD__ );
+            }
+        }
+        if ( $failed )
+            ++$result['failed'];
+        ++$result['events'];
+        if ( eZNotificationCollectionItem::fetchCountForEvent( $event->attribute( 'id' ) ) == 0 )
+        {
+            $event->remove();
+            ++$result['removed'];
+        }
+        else
+        {
+            $event->setAttribute( 'status', eZNotificationEvent::STATUS_HANDLED );
+            $event->store();
+            ++$result['kept'];
+        }
+        $db->commit();
     }
 
     static function availableHandlers()

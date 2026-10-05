@@ -17,13 +17,34 @@
 
 class eZMailNotificationTransport extends eZNotificationTransport
 {
+    /** @var callable|null called with ( addressList, subject, body, parameters ) for every message */
+    private static $observer = null;
+
+    /** @var bool when true the observer is the whole transport: nothing is handed to the mail transport */
+    private static $suppress = false;
+
+    /**
+     * Watches the messages the notification system sends (the status page counts them, a dry run lists them).
+     *
+     * @param callable|null $observer null stops watching
+     * @param bool $suppress true: the messages are only reported, none is sent
+     */
+    static function observe( $observer, $suppress = false )
+    {
+        self::$observer = $observer;
+        self::$suppress = $observer !== null && $suppress;
+    }
+
     function send( $addressList, $subject, $body, $transportData = null, $parameters = array() )
     {
         $ini = eZINI::instance();
         $mail = new eZMail();
         $addressList = $this->prepareAddressString( $addressList, $mail );
 
-        if ( $addressList == false )
+        if ( is_string( $addressList ) && $addressList !== '' )
+            $addressList = array( $addressList ); // a single address was a string, which foreach cannot walk
+
+        if ( !$addressList )
         {
             eZDebug::writeError( 'Error with receiver', __METHOD__ );
             return false;
@@ -35,6 +56,13 @@ class eZMailNotificationTransport extends eZNotificationTransport
             $emailSender = $ini->variable( 'MailSettings', 'EmailSender' );
         if ( !$emailSender )
             $emailSender = $ini->variable( "MailSettings", "AdminEmail" );
+
+        if ( self::$observer !== null )
+        {
+            call_user_func( self::$observer, is_array( $addressList ) ? $addressList : array( $addressList ), $subject, $body, $parameters );
+            if ( self::$suppress )
+                return true;
+        }
 
         foreach ( $addressList as $addressItem )
         {
