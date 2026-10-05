@@ -5,7 +5,7 @@ e4e94613754abb37886f57b4c7fd7914  .githooks/commit-msg
 e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 3a51b99b6d1c552cdd382ed7ab577fe6  .github/workflows/phpunit.yml
-20207c9daf723a3cbd936b7d6507bc37  .github/workflows/quality.yml
+6d96033e599a7bd8873387f107343744  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 ccc8e89e611f0b022b2399eb9b74c1a8  .htaccess_root
 0f412f7d6d70465f93b7c8a6058a39db  .htaccess_root_static
