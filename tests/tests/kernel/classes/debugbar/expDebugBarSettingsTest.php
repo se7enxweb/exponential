@@ -96,6 +96,8 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
     protected static $existed = false;
     /** @var string */
     protected static $logPath;
+    /** @var array path => bytes before the tests, of every settings file a test may write */
+    protected static $kept = array();
 
     public static function setUpBeforeClass(): void
     {
@@ -121,6 +123,21 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
             return;
         }
         self::$target = expIniEditor::root() . 'settings/override/site.ini.append.php';
+        // a probe block is only ever written by these tests: one an interrupted run left behind is taken out
+        // before anything is kept, or it would be in effect for every test (the "undone" probe stayed enabled)
+        foreach ( array( self::$target, expIniEditor::root() . 'settings/siteaccess/admin/site.ini.append.php' ) as $path )
+        {
+            if ( !is_file( $path ) )
+                continue;
+            $bytes = file_get_contents( $path );
+            $clean = preg_replace( '/^\[ExpDebugBarTestProbe\]\n(?:[^\[\n*][^\n]*\n)*\n?/m', '', $bytes );
+            if ( $clean !== $bytes )
+            {
+                file_put_contents( $path, $clean, LOCK_EX );
+                fwrite( STDERR, "\nexpDebugBarSettingsTest: a probe block left by an earlier run was taken out of $path\n" );
+            }
+            self::$kept[$path] = $clean;
+        }
         self::$existed = is_file( self::$target );
         self::$original = self::$existed ? file_get_contents( self::$target ) : null;
         $dir = expIniEditor::root() . 'var/tmp/debugbar-test';
@@ -129,8 +146,29 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
         self::$logPath = $dir . '/debugbar-' . getmypid() . '-' . date( 'Ymd-His' ) . '.log';
     }
 
+    /**
+     * Puts back every kept settings file that differs from its bytes before the tests (written in place, so owner
+     * and mode stay). Returns the paths it put back.
+     */
+    protected static function restoreKeptFiles()
+    {
+        $restored = array();
+        clearstatcache();
+        foreach ( self::$kept as $path => $bytes )
+        {
+            if ( (string)@file_get_contents( $path ) !== $bytes )
+            {
+                file_put_contents( $path, $bytes, LOCK_EX );
+                $restored[] = $path;
+            }
+        }
+        return $restored;
+    }
+
     public static function tearDownAfterClass(): void
     {
+        foreach ( self::restoreKeptFiles() as $path )
+            fwrite( STDERR, "\nexpDebugBarSettingsTest: " . $path . " was restored from its bytes before the test\n" );
         if ( self::$original !== null && is_file( self::$target ) && file_get_contents( self::$target ) !== self::$original )
         {
             // never leave the probe behind: the bytes of before, owner and mode kept by writing in place
@@ -154,10 +192,10 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
 
     public function tearDown(): void
     {
-        if ( self::$original !== null )
-            $this->assertSame( sha1( self::$original ), sha1( (string)@file_get_contents( self::$target ) ),
-                               'settings/override/site.ini.append.php is byte for byte what it was' );
+        // a test that stopped half way (an exception before its undo) leaves no write behind for the next test
+        $restored = self::restoreKeptFiles();
         parent::tearDown();
+        $this->assertSame( array(), $restored, 'every settings file is byte for byte what it was' );
     }
 
     protected function service( $siteAccess = 'admin' )
