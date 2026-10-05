@@ -3733,7 +3733,7 @@ fe1fc6a8426eefb3fc55d53530292a99  doc/specifications/6.0/ini-override-placements
 88d7df3fd4249b7257554244e41edb62  doc/specifications/6.0/installer-logs-and-seed-data.md
 f95c9c889acfa7d8b75e98252eb6cb4d  doc/specifications/6.0/legacy-bridge-bundle.md
 093d8a76631cc41d2e8da83f6bebae80  doc/specifications/6.0/mail-preferences-cli.md
-ac85bb3db4bb99c668e9d64646c5b074  doc/specifications/6.0/mail-preferences-compliance.md
+a582d57d7fff3df68e0d52f7779324bc  doc/specifications/6.0/mail-preferences-compliance.md
 11de1b28c471ab28f2250bcd0c330f0c  doc/specifications/6.0/mail-preferences.md
 1e27384d2455cb6827623a2acd9ac615  doc/specifications/6.0/notifications-cli.md
 b11e3b394c4c8c72d6f86e420f3e8a89  doc/specifications/6.0/notifications-ini.md
@@ -6663,6 +6663,7 @@ c1cc04937866ce0fe0aaf3e3b16ea77e  tests/tests/extension/cjw_newsletter/cjwNewsle
 9a152b2e7eeeddcdc05478d991ec70b1  tests/tests/extension/cjw_newsletter/cjwNewsletterSchemaTest.php
 3ec9dbf221f16905304f102293060608  tests/tests/extension/cjw_newsletter/cjwNewsletterSmokeTest.php
 ba3e399e49d55534c73713e08f27a52e  tests/tests/extension/cjw_newsletter/cjwNewsletterSmsTest.php
+6545238f1099b3ff99474c9549f0e4eb  tests/tests/extension/cjw_newsletter/cjwNewsletterStatisticsTest.php
 546105787178f1e385a7b9d0f5f0979e  tests/tests/extension/cjw_newsletter/cjwNewsletterSubscriptionTest.php
 bf8043c868ef6a974be726086e21576a  tests/tests/extension/cjw_newsletter/cjwNewsletterTestCase.php
 621dee3f86d8cb41f88e93edff58f006  tests/tests/extension/cjw_newsletter/cjwNewsletterTreeInstallerTest.php
