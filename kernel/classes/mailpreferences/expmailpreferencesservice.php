@@ -426,6 +426,15 @@ class expMailPreferencesService
         $tried = array();
         if ( !eZTemplateDesignResource::fileMatch( eZTemplateDesignResource::allDesignBases(), 'templates', $path, $tried ) )
             return null;
+        // every mail template knows the public site and the privacy notice: a mail sent from the console or the
+        // administration names the public site, never the siteaccess that sends (expMailSenderDetails)
+        if ( !array_key_exists( 'site_name', $vars ) )
+        {
+            $details = expMailSenderDetails::get();
+            $vars['site_name'] = $details['name'];
+        }
+        if ( !array_key_exists( 'privacy_url', $vars ) )
+            $vars['privacy_url'] = expMailSenderDetails::privacyURL();
         $tpl = eZTemplate::factory();
         foreach ( $vars as $k => $v )
             $tpl->setVariable( $k, $v );

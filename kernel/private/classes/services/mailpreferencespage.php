@@ -280,7 +280,8 @@ class MailPreferencesPage
                       'suppressed' => $prefs->isSuppressed(), 'categories' => $categories, 'essential' => $essential,
                       'history' => self::history( $recipient, self::HISTORY_LIMIT ),
                       'history_total' => \expConsentLog::countList( array( 'recipient_key' => $recipient->key() ) ),
-                      'export' => $export, 'notice' => $notice, 'notices' => $notices );
+                      'export' => $export, 'notice' => $notice, 'notices' => $notices,
+                      'privacy_url' => class_exists( 'expMailSenderDetails' ) ? \expMailSenderDetails::privacyURL() : '' );
     }
 
     /**

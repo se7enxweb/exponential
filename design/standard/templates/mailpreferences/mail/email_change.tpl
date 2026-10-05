@@ -2,7 +2,7 @@
    the account keeps its old address until the link is used. Essential mail.
    Variables: email (the new address), confirm_url (full address), expires (timestamp), kind ('email_change').
    Sets $subject. *}
-{def $mp_site = ezini( 'SiteSettings', 'SiteName' )}
+{def $mp_site = cond( is_set( $site_name ), $site_name, ezini( 'SiteSettings', 'SiteName' ) )}
 {set-block scope=root variable=subject}{'Confirm your new e-mail address for %site'|i18n( 'design/standard/mailpreferences',, hash( '%site', $mp_site ) )}{/set-block}
 {'Hello,'|i18n( 'design/standard/mailpreferences' )}
 

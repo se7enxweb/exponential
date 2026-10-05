@@ -14,6 +14,7 @@
      history_total  how many records there are
      export         hash( json, csv ): download addresses, or false when downloading is not offered here
      notice         hash( type, text ) or false; notices: more of them
+     privacy_url    the address of the privacy notice, '' without (expMailSenderDetails::privacyURL())
    Works without JavaScript: every switch is a checkbox or a button in a form. *}
 {def $paused = and( $master|not, $categories|count|gt( 0 ) )
      $frequency_names = hash( 'immediate', 'At once'|i18n( 'design/standard/mailpreferences' ),
@@ -127,6 +128,9 @@
 <section class="mp-card" id="mp-data" aria-labelledby="mp-data-title">
     <h2 id="mp-data-title">{if $mode|eq( 'admin' )}{'Consent history'|i18n( 'design/standard/mailpreferences' )}{else}{'Your e-mail data'|i18n( 'design/standard/mailpreferences' )}{/if}</h2>
     <p class="mp-lead">{'Every change is recorded with its time, where it was made and the exact text that was shown.'|i18n( 'design/standard/mailpreferences' )}</p>
+{if and( is_set( $privacy_url ), $privacy_url|ne( '' ) )}
+    <p class="mp-hint"><a href="{$privacy_url|wash}">{'How we handle your data: our privacy notice'|i18n( 'design/standard/mailpreferences' )}</a></p>
+{/if}
 {if $export}
     <div class="mp-actions">
         <a class="mp-btn" href={$export.json|ezurl} download="download">{if $mode|eq( 'admin' )}{'Download as JSON'|i18n( 'design/standard/mailpreferences' )}{else}{'Download my e-mail data (JSON)'|i18n( 'design/standard/mailpreferences' )}{/if}</a>

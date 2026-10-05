@@ -1,7 +1,7 @@
 {* The "send me a link" e-mail (expMailPreferencesService::requestLink()): a personal link to the preference page, for
    someone without an account or not signed in. Essential mail. Variables: email, manage_url (full address with a
    signed token), expires (timestamp). Sets $subject. *}
-{def $mp_site = ezini( 'SiteSettings', 'SiteName' )}
+{def $mp_site = cond( is_set( $site_name ), $site_name, ezini( 'SiteSettings', 'SiteName' ) )}
 {set-block scope=root variable=subject}{'Your link to manage e-mail from %site'|i18n( 'design/standard/mailpreferences',, hash( '%site', $mp_site ) )}{/set-block}
 {'Hello,'|i18n( 'design/standard/mailpreferences' )}
 

@@ -3,7 +3,7 @@
    Variables: category (expMailCategory), email, confirm_url (full address), expires (timestamp), kind ('category').
    Sets $subject. *}
 {def $mp_name = $category.name|i18n( 'kernel/mailpreferences/categories' )
-     $mp_site = ezini( 'SiteSettings', 'SiteName' )
+     $mp_site = cond( is_set( $site_name ), $site_name, ezini( 'SiteSettings', 'SiteName' ) )
      $mp_description = cond( $category.description|ne( '' ), $category.description|i18n( 'kernel/mailpreferences/categories' ), '' )}
 {set-block scope=root variable=subject}{'Please confirm: %category from %site'|i18n( 'design/standard/mailpreferences',, hash( '%category', $mp_name, '%site', $mp_site ) )}{/set-block}
 {'Hello,'|i18n( 'design/standard/mailpreferences' )}
