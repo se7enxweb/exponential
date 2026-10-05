@@ -36,6 +36,8 @@
 
         <testsuite name="kernel-classes">
             <directory suffix="Test.php">tests/tests/kernel/classes</directory>
+            <!-- the template operators of kernel/common, called directly; no database -->
+            <directory suffix="Test.php">tests/tests/kernel/common</directory>
             <exclude>tests/tests/kernel/classes/security</exclude>
         </testsuite>
 
