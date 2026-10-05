@@ -110,6 +110,10 @@ jobs:
       - name: Install dependencies and development tools
         run: |
           composer update --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          # Velocity is only suggested (it needs PHP 8.1), but the kernel's Velocity
+          # integration (kernel/classes/expvelocity.php) is analysed too, so install it
+          # here as a site on PHP 8.1 or later would
+          composer require --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=ext-mongodb se7enxweb/exponential-velocity:~0.0.4.42
           COMPOSER=composer.dev.json composer install --no-interaction --no-progress
 
       - name: Generate autoloads
@@ -168,11 +172,11 @@ jobs:
       - name: PHP 8.0 syntax of every PHP file (enums, readonly, never, new in initializers, ... are refused)
         run: make lint80-all PHP80=php
 
-      # composer.json and some se7enxweb packages still declare PHP 8.1 (Velocity
-      # needs 8.1 for its own server), so the PHP requirement is ignored here on
-      # purpose: what is tested is that the code itself runs on 8.0.
+      # A plain install, as on Red Hat Enterprise Linux 9: composer.json and every
+      # package it requires allow PHP 8.0 (Velocity, which needs 8.1, is only suggested),
+      # so a package that raises its PHP minimum again fails here
       - name: Install the production dependencies with PHP 8.0
-        run: composer install --no-dev --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+        run: composer install --no-dev --prefer-dist --no-progress --no-interaction --ignore-platform-req=ext-mongodb
 
       - name: Boot smoke test without a database (every kernel and extension class, compat functions, a template)
         run: php bin/php/ezexec.php tests/bin/bootsmoke.php
