@@ -2671,7 +2671,7 @@ e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 634c9b738dac08042ef4b52dee1d3212  doc/bc/6.0/bookmark-folders.md
 d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
-698c720befb45c232aa66e09b0031ecd  doc/bc/6.0/cli_cronjob_view_abstractions.md
+abdb0ba00df44fe6e3ebdcd853a03ae9  doc/bc/6.0/cli_cronjob_view_abstractions.md
 a97f241d85290c2fbece2d8f20d6c401  doc/bc/6.0/console-exp-ini.md
 cf6bc03ed6557c6e7c1c39d09e55e5d0  doc/bc/6.0/console.md
 99d9b2a97dcde56f99c1d40242b5be6c  doc/bc/6.0/content-jobs.md
