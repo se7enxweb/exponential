@@ -8962,6 +8962,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Where</source>
         <translation>Where</translation>
     </message>
+    <message>
+        <source>My e-mail preferences</source>
+        <translation>My e-mail preferences</translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you get.</source>
+        <translation>Choose which e-mail you get.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -9164,6 +9172,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>Audit trail</source>
         <translation>Audit trail</translation>
     </message>
+    <message>
+        <source>My e-mail preferences</source>
+        <translation>My e-mail preferences</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -9292,6 +9304,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Audit</source>
         <translation>Audit</translation>
+    </message>
+    <message>
+        <source>E-mail preferences</source>
+        <translation>E-mail preferences</translation>
     </message>
 </context>
 <context>
@@ -46019,6 +46035,1304 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
         <translation>You no longer get notifications for node &lt;%node_name&gt;.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/mailpreferences</name>
+    <message>
+        <source>E-mail preferences: categories</source>
+        <translation>E-mail preferences: categories</translation>
+    </message>
+    <message>
+        <source>Each e-mail the system sends belongs to a category. People turn optional categories on and off on their preference page; essential ones are always sent and are listed there with their description.</source>
+        <translation>Each e-mail the system sends belongs to a category. People turn optional categories on and off on their preference page; essential ones are always sent and are listed there with their description.</translation>
+    </message>
+    <message>
+        <source>Settings file</source>
+        <translation>Settings file</translation>
+    </message>
+    <message>
+        <source>Made here</source>
+        <translation>Made here</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation>Categories</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Kind</translation>
+    </message>
+    <message>
+        <source>How often</source>
+        <translation>How often</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation>Confirmation</translation>
+    </message>
+    <message>
+        <source>Defined in</source>
+        <translation>Defined in</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Essential, always sent</source>
+        <translation>Essential, always sent</translation>
+    </message>
+    <message>
+        <source>Optional, off until turned on</source>
+        <translation>Optional, off until turned on</translation>
+    </message>
+    <message>
+        <source>Double opt-in</source>
+        <translation>Double opt-in</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Edit "%name"</source>
+        <translation>Edit "%name"</translation>
+    </message>
+    <message>
+        <source>New category</source>
+        <translation>New category</translation>
+    </message>
+    <message>
+        <source>This category is defined in %source. What you change here is stored in the database and shown instead; the identifier and the kind stay as they are defined.</source>
+        <translation>This category is defined in %source. What you change here is stored in the database and shown instead; the identifier and the kind stay as they are defined.</translation>
+    </message>
+    <message>
+        <source>A new category is optional: nobody receives it until they turn it on. Code sends e-mail in it with eZMail::setCategory( identifier ).</source>
+        <translation>A new category is optional: nobody receives it until they turn it on. Code sends e-mail in it with eZMail::setCategory( identifier ).</translation>
+    </message>
+    <message>
+        <source>Identifier:</source>
+        <translation>Identifier:</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits and underscores; it cannot be changed later.</source>
+        <translation>Lower case letters, digits and underscores; it cannot be changed later.</translation>
+    </message>
+    <message>
+        <source>Description, as people see it on their preference page</source>
+        <translation>Description, as people see it on their preference page</translation>
+    </message>
+    <message>
+        <source>How often people may choose to get it</source>
+        <translation>How often people may choose to get it</translation>
+    </message>
+    <message>
+        <source>None ticked: it is sent when it happens, with no choice of frequency.</source>
+        <translation>None ticked: it is sent when it happens, with no choice of frequency.</translation>
+    </message>
+    <message>
+        <source>Ask for a confirmation by e-mail before the first message (double opt-in; use it for newsletters and marketing)</source>
+        <translation>Ask for a confirmation by e-mail before the first message (double opt-in; use it for newsletters and marketing)</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Create category</source>
+        <translation>Create category</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Use the defined name and description again</source>
+        <translation>Use the defined name and description again</translation>
+    </message>
+    <message>
+        <source>Remove this category</source>
+        <translation>Remove this category</translation>
+    </message>
+    <message>
+        <source>E-mail preferences: consent log</source>
+        <translation>E-mail preferences: consent log</translation>
+    </message>
+    <message>
+        <source>Every change of an e-mail preference: when, by whom, where, the exact text the person saw and the address the request came from. The log is kept for the life of the account and the retention time after it; a removed account leaves an anonymised record that proves the withdrawal.</source>
+        <translation>Every change of an e-mail preference: when, by whom, where, the exact text the person saw and the address the request came from. The log is kept for the life of the account and the retention time after it; a removed account leaves an anonymised record that proves the withdrawal.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>E-mail address or user ID</source>
+        <translation>E-mail address or user ID</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Category</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Where</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>From</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>To</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear</translation>
+    </message>
+    <message>
+        <source>Export as CSV</source>
+        <translation>Export as CSV</translation>
+    </message>
+    <message>
+        <source>Records</source>
+        <translation>Records</translation>
+    </message>
+    <message>
+        <source>No records match.</source>
+        <translation>No records match.</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>When</translation>
+    </message>
+    <message>
+        <source>Person</source>
+        <translation>Person</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Change</translation>
+    </message>
+    <message>
+        <source>Text shown</source>
+        <translation>Text shown</translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation>IP address</translation>
+    </message>
+    <message>
+        <source>by %actor</source>
+        <translation>by %actor</translation>
+    </message>
+    <message>
+        <source>E-mail preferences: status</source>
+        <translation>E-mail preferences: status</translation>
+    </message>
+    <message>
+        <source>Every e-mail the system sends passes the mail gate: it checks the main switch, the category and the suppression list of the recipient, and adds the footer and the unsubscribe links to optional e-mail. This page shows whether that works and what it did.</source>
+        <translation>Every e-mail the system sends passes the mail gate: it checks the main switch, the category and the suppression list of the recipient, and adds the footer and the unsubscribe links to optional e-mail. This page shows whether that works and what it did.</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>Attention</source>
+        <translation>Attention</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Note</translation>
+    </message>
+    <message>
+        <source>Nothing looks wrong.</source>
+        <translation>Nothing looks wrong.</translation>
+    </message>
+    <message>
+        <source>Settings in use</source>
+        <translation>Settings in use</translation>
+    </message>
+    <message>
+        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <translation>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</translation>
+    </message>
+    <message>
+        <source>Related pages</source>
+        <translation>Related pages</translation>
+    </message>
+    <message>
+        <source>E-mail preferences: suppression list</source>
+        <translation>E-mail preferences: suppression list</translation>
+    </message>
+    <message>
+        <source>No optional e-mail is sent to an address on this list: hard bounces, complaints, requests to stop all e-mail and legal requests. Essential e-mail still goes. Only a hash of the address is kept, never the address itself.</source>
+        <translation>No optional e-mail is sent to an address on this list: hard bounces, complaints, requests to stop all e-mail and legal requests. Essential e-mail still goes. Only a hash of the address is kept, never the address itself.</translation>
+    </message>
+    <message>
+        <source>Check an address</source>
+        <translation>Check an address</translation>
+    </message>
+    <message>
+        <source>E-mail address</source>
+        <translation>E-mail address</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Check</translation>
+    </message>
+    <message>
+        <source>This address is on the list (%reason, since %date).</source>
+        <translation>This address is on the list (%reason, since %date).</translation>
+    </message>
+    <message>
+        <source>This address is not on the list.</source>
+        <translation>This address is not on the list.</translation>
+    </message>
+    <message>
+        <source>Lift the block for this address</source>
+        <translation>Lift the block for this address</translation>
+    </message>
+    <message>
+        <source>Add an address</source>
+        <translation>Add an address</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Reason</translation>
+    </message>
+    <message>
+        <source>Note (optional; no personal data)</source>
+        <translation>Note (optional; no personal data)</translation>
+    </message>
+    <message>
+        <source>Add to the list</source>
+        <translation>Add to the list</translation>
+    </message>
+    <message>
+        <source>On the list</source>
+        <translation>On the list</translation>
+    </message>
+    <message>
+        <source>The list is empty.</source>
+        <translation>The list is empty.</translation>
+    </message>
+    <message>
+        <source>Since</source>
+        <translation>Since</translation>
+    </message>
+    <message>
+        <source>Address hash</source>
+        <translation>Address hash</translation>
+    </message>
+    <message>
+        <source>Lift</source>
+        <translation>Lift</translation>
+    </message>
+    <message>
+        <source>E-mail preferences: a user</source>
+        <translation>E-mail preferences: a user</translation>
+    </message>
+    <message>
+        <source>Find a user by name, login, e-mail address or ID to see their preferences and consent history, or to change them on their request. Your changes are recorded as made by you.</source>
+        <translation>Find a user by name, login, e-mail address or ID to see their preferences and consent history, or to change them on their request. Your changes are recorded as made by you.</translation>
+    </message>
+    <message>
+        <source>Name, login, e-mail address or user ID</source>
+        <translation>Name, login, e-mail address or user ID</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Find</translation>
+    </message>
+    <message>
+        <source>No user found.</source>
+        <translation>No user found.</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>E-mail preferences administration</source>
+        <translation>E-mail preferences administration</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Suppression list</source>
+        <translation>Suppression list</translation>
+    </message>
+    <message>
+        <source>Consent log</source>
+        <translation>Consent log</translation>
+    </message>
+    <message>
+        <source>A user</source>
+        <translation>A user</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Pages</translation>
+    </message>
+    <message>
+        <source>%from to %to of %total</source>
+        <translation>%from to %to of %total</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Previous</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Next</translation>
+    </message>
+    <message>
+        <source>Find another user</source>
+        <translation>Find another user</translation>
+    </message>
+    <message>
+        <source>People with stored preferences</source>
+        <translation>People with stored preferences</translation>
+    </message>
+    <message>
+        <source>Turned all optional e-mail off</source>
+        <translation>Turned all optional e-mail off</translation>
+    </message>
+    <message>
+        <source>Waiting for a confirmation</source>
+        <translation>Waiting for a confirmation</translation>
+    </message>
+    <message>
+        <source>Addresses on the suppression list</source>
+        <translation>Addresses on the suppression list</translation>
+    </message>
+    <message>
+        <source>Optional e-mails sent, last 24 hours</source>
+        <translation>Optional e-mails sent, last 24 hours</translation>
+    </message>
+    <message>
+        <source>Blocked by a preference, last 24 hours</source>
+        <translation>Blocked by a preference, last 24 hours</translation>
+    </message>
+    <message>
+        <source>Without a category, last 7 days</source>
+        <translation>Without a category, last 7 days</translation>
+    </message>
+    <message>
+        <source>Errors, last 24 hours</source>
+        <translation>Errors, last 24 hours</translation>
+    </message>
+    <message>
+        <source>Consent records</source>
+        <translation>Consent records</translation>
+    </message>
+    <message>
+        <source>(not set)</source>
+        <translation>(not set)</translation>
+    </message>
+    <message>
+        <source>Mail gate</source>
+        <translation>Mail gate</translation>
+    </message>
+    <message>
+        <source>On</source>
+        <translation>On</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Off</translation>
+    </message>
+    <message>
+        <source>Organisation in the footer</source>
+        <translation>Organisation in the footer</translation>
+    </message>
+    <message>
+        <source>Postal address in the footer</source>
+        <translation>Postal address in the footer</translation>
+    </message>
+    <message>
+        <source>Links in e-mails point to</source>
+        <translation>Links in e-mails point to</translation>
+    </message>
+    <message>
+        <source>Site secret of the links</source>
+        <translation>Site secret of the links</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Generated</translation>
+    </message>
+    <message>
+        <source>Not generated yet</source>
+        <translation>Not generated yet</translation>
+    </message>
+    <message>
+        <source>Last e-mail through the gate</source>
+        <translation>Last e-mail through the gate</translation>
+    </message>
+    <message>
+        <source>Bounce mailbox, last read</source>
+        <translation>Bounce mailbox, last read</translation>
+    </message>
+    <message>
+        <source>My e-mail preferences</source>
+        <translation>My e-mail preferences</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Notification status</translation>
+    </message>
+    <message>
+        <source>The "send me a link" page</source>
+        <translation>The "send me a link" page</translation>
+    </message>
+    <message>
+        <source>The identifier may only hold lower case letters, digits and underscores, and must start with a letter.</source>
+        <translation>The identifier may only hold lower case letters, digits and underscores, and must start with a letter.</translation>
+    </message>
+    <message>
+        <source>A category with this identifier exists already.</source>
+        <translation>A category with this identifier exists already.</translation>
+    </message>
+    <message>
+        <source>This category does not exist any more.</source>
+        <translation>This category does not exist any more.</translation>
+    </message>
+    <message>
+        <source>Please give the category a name.</source>
+        <translation>Please give the category a name.</translation>
+    </message>
+    <message>
+        <source>The category "%name" was created.</source>
+        <translation>The category "%name" was created.</translation>
+    </message>
+    <message>
+        <source>The category "%name" was saved.</source>
+        <translation>The category "%name" was saved.</translation>
+    </message>
+    <message>
+        <source>The category could not be saved.</source>
+        <translation>The category could not be saved.</translation>
+    </message>
+    <message>
+        <source>The category "%name" was removed. The choices people made for it are kept in their records.</source>
+        <translation>The category "%name" was removed. The choices people made for it are kept in their records.</translation>
+    </message>
+    <message>
+        <source>The category "%name" uses the name and description of its definition again.</source>
+        <translation>The category "%name" uses the name and description of its definition again.</translation>
+    </message>
+    <message>
+        <source>Please enter a complete e-mail address.</source>
+        <translation>Please enter a complete e-mail address.</translation>
+    </message>
+    <message>
+        <source>Please choose a reason.</source>
+        <translation>Please choose a reason.</translation>
+    </message>
+    <message>
+        <source>The address was added to the suppression list.</source>
+        <translation>The address was added to the suppression list.</translation>
+    </message>
+    <message>
+        <source>The block was lifted. Optional e-mail goes to the address again where the person turned it on.</source>
+        <translation>The block was lifted. Optional e-mail goes to the address again where the person turned it on.</translation>
+    </message>
+    <message>
+        <source>Anonymised</source>
+        <translation>Anonymised</translation>
+    </message>
+    <message>
+        <source>An address (only its hash is kept)</source>
+        <translation>An address (only its hash is kept)</translation>
+    </message>
+    <message>
+        <source>Hard bounce</source>
+        <translation>Hard bounce</translation>
+    </message>
+    <message>
+        <source>Complaint (marked as spam)</source>
+        <translation>Complaint (marked as spam)</translation>
+    </message>
+    <message>
+        <source>The person stopped all e-mail</source>
+        <translation>The person stopped all e-mail</translation>
+    </message>
+    <message>
+        <source>Legal request</source>
+        <translation>Legal request</translation>
+    </message>
+    <message>
+        <source>Added by an administrator</source>
+        <translation>Added by an administrator</translation>
+    </message>
+    <message>
+        <source>Newsletter blacklist</source>
+        <translation>Newsletter blacklist</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mailpreferences</name>
+    <message>
+        <source>Confirm your e-mail address</source>
+        <translation>Confirm your e-mail address</translation>
+    </message>
+    <message>
+        <source>Confirm your subscription</source>
+        <translation>Confirm your subscription</translation>
+    </message>
+    <message>
+        <source>This link does not work any more</source>
+        <translation>This link does not work any more</translation>
+    </message>
+    <message>
+        <source>The link may be incomplete, already used or too old. Nothing was changed. To try again, turn the e-mail on again on your preference page; you will get a new link.</source>
+        <translation>The link may be incomplete, already used or too old. Nothing was changed. To try again, turn the e-mail on again on your preference page; you will get a new link.</translation>
+    </message>
+    <message>
+        <source>Send me a link to my preferences</source>
+        <translation>Send me a link to my preferences</translation>
+    </message>
+    <message>
+        <source>Thank you, your e-mail address is confirmed.</source>
+        <translation>Thank you, your e-mail address is confirmed.</translation>
+    </message>
+    <message>
+        <source>From now on we write to %email.</source>
+        <translation>From now on we write to %email.</translation>
+    </message>
+    <message>
+        <source>Thank you, your subscription is confirmed.</source>
+        <translation>Thank you, your subscription is confirmed.</translation>
+    </message>
+    <message>
+        <source>%email now gets e-mail of the kind "%category". You can turn it off at any time, with the link at the end of every one of these e-mails or on your preference page.</source>
+        <translation>%email now gets e-mail of the kind "%category". You can turn it off at any time, with the link at the end of every one of these e-mails or on your preference page.</translation>
+    </message>
+    <message>
+        <source>Manage my e-mail preferences</source>
+        <translation>Manage my e-mail preferences</translation>
+    </message>
+    <message>
+        <source>Use %email for this account?</source>
+        <translation>Use %email for this account?</translation>
+    </message>
+    <message>
+        <source>Someone asked to change the e-mail address of an account to this address. Confirm only if that was you.</source>
+        <translation>Someone asked to change the e-mail address of an account to this address. Confirm only if that was you.</translation>
+    </message>
+    <message>
+        <source>Send e-mail of the kind "%category" to %email?</source>
+        <translation>Send e-mail of the kind "%category" to %email?</translation>
+    </message>
+    <message>
+        <source>Confirm only if you asked for it. If you did not, do nothing: without your confirmation nothing is sent.</source>
+        <translation>Confirm only if you asked for it. If you did not, do nothing: without your confirmation nothing is sent.</translation>
+    </message>
+    <message>
+        <source>Yes, confirm</source>
+        <translation>Yes, confirm</translation>
+    </message>
+    <message>
+        <source>Please confirm: %category from %site</source>
+        <translation>Please confirm: %category from %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hello,</translation>
+    </message>
+    <message>
+        <source>You asked to receive "%category" from %site at %email.</source>
+        <translation>You asked to receive "%category" from %site at %email.</translation>
+    </message>
+    <message>
+        <source>To confirm, open this link and press the button:</source>
+        <translation>To confirm, open this link and press the button:</translation>
+    </message>
+    <message>
+        <source>The link works until %date.</source>
+        <translation>The link works until %date.</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail: nothing changes without your confirmation, and we will not write again about it.</source>
+        <translation>If you did not ask for this, ignore this e-mail: nothing changes without your confirmation, and we will not write again about it.</translation>
+    </message>
+    <message>
+        <source>Confirm your new e-mail address for %site</source>
+        <translation>Confirm your new e-mail address for %site</translation>
+    </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. To confirm that this is your address, open this link and press the button:</source>
+        <translation>Someone asked to use %email for an account on %site. To confirm that this is your address, open this link and press the button:</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail: the account keeps its address.</source>
+        <translation>If you did not ask for this, ignore this e-mail: the account keeps its address.</translation>
+    </message>
+    <message>
+        <source>You get this e-mail because you turned on "%category" on %site.</source>
+        <translation>You get this e-mail because you turned on "%category" on %site.</translation>
+    </message>
+    <message>
+        <source>Unsubscribe with one click:</source>
+        <translation>Unsubscribe with one click:</translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you get:</source>
+        <translation>Choose which e-mail you get:</translation>
+    </message>
+    <message>
+        <source>Unsubscribe</source>
+        <translation>Unsubscribe</translation>
+    </message>
+    <message>
+        <source>Your link to manage e-mail from %site</source>
+        <translation>Your link to manage e-mail from %site</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. Open it to see every kind of e-mail, turn each on or off, or stop all optional e-mail:</source>
+        <translation>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. Open it to see every kind of e-mail, turn each on or off, or stop all optional e-mail:</translation>
+    </message>
+    <message>
+        <source>The link works until %date. Please do not forward this e-mail: the link lets anyone change your preferences.</source>
+        <translation>The link works until %date. Please do not forward this e-mail: the link lets anyone change your preferences.</translation>
+    </message>
+    <message>
+        <source>If you did not ask for it, you can ignore this e-mail; nothing has changed.</source>
+        <translation>If you did not ask for it, you can ignore this e-mail; nothing has changed.</translation>
+    </message>
+    <message>
+        <source>E-mail preferences</source>
+        <translation>E-mail preferences</translation>
+    </message>
+    <message>
+        <source>Whether notifications are sent at all, how often, and every other kind of e-mail, is chosen on one page.</source>
+        <translation>Whether notifications are sent at all, how often, and every other kind of e-mail, is chosen on one page.</translation>
+    </message>
+    <message>
+        <source>See and change every kind of e-mail we send you, including newsletters, or stop all optional e-mail, on one page.</source>
+        <translation>See and change every kind of e-mail we send you, including newsletters, or stop all optional e-mail, on one page.</translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you get from us, download your e-mail data, or stop all optional e-mail.</source>
+        <translation>Choose which e-mail you get from us, download your e-mail data, or stop all optional e-mail.</translation>
+    </message>
+    <message>
+        <source>Open my e-mail preferences</source>
+        <translation>Open my e-mail preferences</translation>
+    </message>
+    <message>
+        <source>Manage my e-mail without an account</source>
+        <translation>Manage my e-mail without an account</translation>
+    </message>
+    <message>
+        <source>At once</source>
+        <translation>At once</translation>
+    </message>
+    <message>
+        <source>Daily summary</source>
+        <translation>Daily summary</translation>
+    </message>
+    <message>
+        <source>Weekly summary</source>
+        <translation>Weekly summary</translation>
+    </message>
+    <message>
+        <source>No optional e-mail is sent to this address.</source>
+        <translation>No optional e-mail is sent to this address.</translation>
+    </message>
+    <message>
+        <source>It is on our list of addresses that receive no optional e-mail, for example after a request to stop all e-mail or after messages to it could not be delivered. Essential messages about your account are still sent.</source>
+        <translation>It is on our list of addresses that receive no optional e-mail, for example after a request to stop all e-mail or after messages to it could not be delivered. Essential messages about your account are still sent.</translation>
+    </message>
+    <message>
+        <source>If you stopped all e-mail yourself, turning optional e-mail on again lifts the block. A block because messages could not be delivered stays until you contact us.</source>
+        <translation>If you stopped all e-mail yourself, turning optional e-mail on again lifts the block. A block because messages could not be delivered stays until you contact us.</translation>
+    </message>
+    <message>
+        <source>Send me optional e-mail</source>
+        <translation>Send me optional e-mail</translation>
+    </message>
+    <message>
+        <source>On</source>
+        <translation>On</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Off</translation>
+    </message>
+    <message>
+        <source>You receive the kinds of e-mail you turned on below.</source>
+        <translation>You receive the kinds of e-mail you turned on below.</translation>
+    </message>
+    <message>
+        <source>You receive no optional e-mail. Your choices below are kept and come back when you turn it on again.</source>
+        <translation>You receive no optional e-mail. Your choices below are kept and come back when you turn it on again.</translation>
+    </message>
+    <message>
+        <source>Turn off all optional e-mail</source>
+        <translation>Turn off all optional e-mail</translation>
+    </message>
+    <message>
+        <source>Turn on optional e-mail</source>
+        <translation>Turn on optional e-mail</translation>
+    </message>
+    <message>
+        <source>What you want to receive</source>
+        <translation>What you want to receive</translation>
+    </message>
+    <message>
+        <source>This site sends no optional e-mail at the moment.</source>
+        <translation>This site sends no optional e-mail at the moment.</translation>
+    </message>
+    <message>
+        <source>Turn on only what you want. Nothing is on until you turn it on, and you can turn anything off here at any time.</source>
+        <translation>Turn on only what you want. Nothing is on until you turn it on, and you can turn anything off here at any time.</translation>
+    </message>
+    <message>
+        <source>Optional e-mail is off at the moment, so none of these is sent.</source>
+        <translation>Optional e-mail is off at the moment, so none of these is sent.</translation>
+    </message>
+    <message>
+        <source>Waiting for your confirmation</source>
+        <translation>Waiting for your confirmation</translation>
+    </message>
+    <message>
+        <source>We sent a confirmation link to %email. This starts once you open it.</source>
+        <translation>We sent a confirmation link to %email. This starts once you open it.</translation>
+    </message>
+    <message>
+        <source>When you turn this on, we first send you a link to confirm it.</source>
+        <translation>When you turn this on, we first send you a link to confirm it.</translation>
+    </message>
+    <message>
+        <source>How often:</source>
+        <translation>How often:</translation>
+    </message>
+    <message>
+        <source>Save my choices</source>
+        <translation>Save my choices</translation>
+    </message>
+    <message>
+        <source>Always sent</source>
+        <translation>Always sent</translation>
+    </message>
+    <message>
+        <source>These messages are needed to run your account or are required by law. They cannot be turned off, but they never contain advertising.</source>
+        <translation>These messages are needed to run your account or are required by law. They cannot be turned off, but they never contain advertising.</translation>
+    </message>
+    <message>
+        <source>Consent history</source>
+        <translation>Consent history</translation>
+    </message>
+    <message>
+        <source>Your e-mail data</source>
+        <translation>Your e-mail data</translation>
+    </message>
+    <message>
+        <source>Every change is recorded with its time, where it was made and the exact text that was shown.</source>
+        <translation>Every change is recorded with its time, where it was made and the exact text that was shown.</translation>
+    </message>
+    <message>
+        <source>Download as JSON</source>
+        <translation>Download as JSON</translation>
+    </message>
+    <message>
+        <source>Download my e-mail data (JSON)</source>
+        <translation>Download my e-mail data (JSON)</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Download as CSV</translation>
+    </message>
+    <message>
+        <source>Download my e-mail data (CSV)</source>
+        <translation>Download my e-mail data (CSV)</translation>
+    </message>
+    <message>
+        <source>No changes recorded yet.</source>
+        <translation>No changes recorded yet.</translation>
+    </message>
+    <message>
+        <source>The newest %shown of %total records. The download has all of them.</source>
+        <translation>The newest %shown of %total records. The download has all of them.</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>When</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>What</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Change</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Where</translation>
+    </message>
+    <message>
+        <source>Text shown</source>
+        <translation>Text shown</translation>
+    </message>
+    <message>
+        <source>E-mail from us (optional)</source>
+        <translation>E-mail from us (optional)</translation>
+    </message>
+    <message>
+        <source>Tick what you want to receive. You can change it at any time on your e-mail preference page, and every one of these e-mails has an unsubscribe link.</source>
+        <translation>Tick what you want to receive. You can change it at any time on your e-mail preference page, and every one of these e-mails has an unsubscribe link.</translation>
+    </message>
+    <message>
+        <source>we send you a link to confirm it first</source>
+        <translation>we send you a link to confirm it first</translation>
+    </message>
+    <message>
+        <source>Manage your e-mail without an account</source>
+        <translation>Manage your e-mail without an account</translation>
+    </message>
+    <message>
+        <source>Enter your e-mail address. We send you a personal link to a page where you can see and change every kind of e-mail we may send you, or stop all of it.</source>
+        <translation>Enter your e-mail address. We send you a personal link to a page where you can see and change every kind of e-mail we may send you, or stop all of it.</translation>
+    </message>
+    <message>
+        <source>Please check your inbox.</source>
+        <translation>Please check your inbox.</translation>
+    </message>
+    <message>
+        <source>If we send e-mail to %email, a message with your personal link is on its way. The link works for %hours hours.</source>
+        <translation>If we send e-mail to %email, a message with your personal link is on its way. The link works for %hours hours.</translation>
+    </message>
+    <message>
+        <source>Nothing arrived? Look in the spam folder, or try again in a few minutes.</source>
+        <translation>Nothing arrived? Look in the spam folder, or try again in a few minutes.</translation>
+    </message>
+    <message>
+        <source>E-mail address</source>
+        <translation>E-mail address</translation>
+    </message>
+    <message>
+        <source>Send me the link</source>
+        <translation>Send me the link</translation>
+    </message>
+    <message>
+        <source>Have an account? Sign in and open your e-mail preferences directly.</source>
+        <translation>Have an account? Sign in and open your e-mail preferences directly.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Sign in</translation>
+    </message>
+    <message>
+        <source>E-mail preferences of %name</source>
+        <translation>E-mail preferences of %name</translation>
+    </message>
+    <message>
+        <source>You are changing these preferences for the user. Each change is recorded as made by an administrator, with your name.</source>
+        <translation>You are changing these preferences for the user. Each change is recorded as made by an administrator, with your name.</translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you want from us. Essential messages about your account are always sent; everything else only if you want it.</source>
+        <translation>Choose which e-mail you want from us. Essential messages about your account are always sent; everything else only if you want it.</translation>
+    </message>
+    <message>
+        <source>For: %email</source>
+        <translation>For: %email</translation>
+    </message>
+    <message>
+        <source>You opened this page with the personal link from one of our e-mails. Please do not forward that e-mail: the link lets anyone change these preferences.</source>
+        <translation>You opened this page with the personal link from one of our e-mails. Please do not forward that e-mail: the link lets anyone change these preferences.</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>Which pages and items you follow is chosen in the notification settings; whether those notifications are sent at all is chosen here.</source>
+        <translation>Which pages and items you follow is chosen in the notification settings; whether those notifications are sent at all is chosen here.</translation>
+    </message>
+    <message>
+        <source>Notification settings</source>
+        <translation>Notification settings</translation>
+    </message>
+    <message>
+        <source>The link may be incomplete or too old. We can send you a new one: you will get a link to a page where you can turn off any e-mail.</source>
+        <translation>The link may be incomplete or too old. We can send you a new one: you will get a link to a page where you can turn off any e-mail.</translation>
+    </message>
+    <message>
+        <source>Send me a new link</source>
+        <translation>Send me a new link</translation>
+    </message>
+    <message>
+        <source>You are unsubscribed.</source>
+        <translation>You are unsubscribed.</translation>
+    </message>
+    <message>
+        <source>%email gets no more e-mail of the kind "%category".</source>
+        <translation>%email gets no more e-mail of the kind "%category".</translation>
+    </message>
+    <message>
+        <source>%email gets no more optional e-mail from us. Essential messages about an account, such as a password reset, are still sent.</source>
+        <translation>%email gets no more optional e-mail from us. Essential messages about an account, such as a password reset, are still sent.</translation>
+    </message>
+    <message>
+        <source>Your other e-mail</source>
+        <translation>Your other e-mail</translation>
+    </message>
+    <message>
+        <source>See and change everything we may send you, or turn this back on, on your preference page.</source>
+        <translation>See and change everything we may send you, or turn this back on, on your preference page.</translation>
+    </message>
+    <message>
+        <source>Stop e-mail of the kind "%category"?</source>
+        <translation>Stop e-mail of the kind "%category"?</translation>
+    </message>
+    <message>
+        <source>Stop all optional e-mail?</source>
+        <translation>Stop all optional e-mail?</translation>
+    </message>
+    <message>
+        <source>Or choose exactly what you want to receive:</source>
+        <translation>Or choose exactly what you want to receive:</translation>
+    </message>
+    <message>
+        <source>Please enter a complete e-mail address, for example name@example.com.</source>
+        <translation>Please enter a complete e-mail address, for example name@example.com.</translation>
+    </message>
+    <message>
+        <source>This link does not work any more: it may be incomplete or too old. Enter your e-mail address and we send you a new one.</source>
+        <translation>This link does not work any more: it may be incomplete or too old. Enter your e-mail address and we send you a new one.</translation>
+    </message>
+    <message>
+        <source>All optional e-mail</source>
+        <translation>All optional e-mail</translation>
+    </message>
+    <message>
+        <source>One-click unsubscribe from the mail program (RFC 8058): %what</source>
+        <translation>One-click unsubscribe from the mail program (RFC 8058): %what</translation>
+    </message>
+    <message>
+        <source>Preference page</source>
+        <translation>Preference page</translation>
+    </message>
+    <message>
+        <source>Link in an e-mail</source>
+        <translation>Link in an e-mail</translation>
+    </message>
+    <message>
+        <source>Changed by an administrator</source>
+        <translation>Changed by an administrator</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Import</translation>
+    </message>
+    <message>
+        <source>Registration form</source>
+        <translation>Registration form</translation>
+    </message>
+    <message>
+        <source>Newsletter</source>
+        <translation>Newsletter</translation>
+    </message>
+    <message>
+        <source>Confirmation link</source>
+        <translation>Confirmation link</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Turned on</source>
+        <translation>Turned on</translation>
+    </message>
+    <message>
+        <source>Turned off</source>
+        <translation>Turned off</translation>
+    </message>
+    <message>
+        <source>Asked for, waiting for confirmation</source>
+        <translation>Asked for, waiting for confirmation</translation>
+    </message>
+    <message>
+        <source>Confirmed</source>
+        <translation>Confirmed</translation>
+    </message>
+    <message>
+        <source>Optional e-mail turned on</source>
+        <translation>Optional e-mail turned on</translation>
+    </message>
+    <message>
+        <source>All optional e-mail turned off</source>
+        <translation>All optional e-mail turned off</translation>
+    </message>
+    <message>
+        <source>Frequency changed</source>
+        <translation>Frequency changed</translation>
+    </message>
+    <message>
+        <source>Preferences erased</source>
+        <translation>Preferences erased</translation>
+    </message>
+    <message>
+        <source>Data downloaded</source>
+        <translation>Data downloaded</translation>
+    </message>
+    <message>
+        <source>Address blocked</source>
+        <translation>Address blocked</translation>
+    </message>
+    <message>
+        <source>Address block lifted</source>
+        <translation>Address block lifted</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mail address changed</translation>
+    </message>
+    <message>
+        <source>Your choices could not be saved. Please try again.</source>
+        <translation>Your choices could not be saved. Please try again.</translation>
+    </message>
+    <message>
+        <source>All optional e-mail is off. Essential messages about your account are still sent.</source>
+        <translation>All optional e-mail is off. Essential messages about your account are still sent.</translation>
+    </message>
+    <message>
+        <source>Optional e-mail is on: you get the kinds of e-mail you turned on below.</source>
+        <translation>Optional e-mail is on: you get the kinds of e-mail you turned on below.</translation>
+    </message>
+    <message>
+        <source>Nothing below is turned on yet. Turn on what you want and save.</source>
+        <translation>Nothing below is turned on yet. Turn on what you want and save.</translation>
+    </message>
+    <message>
+        <source>This address is still blocked because messages to it could not be delivered, or because of a request we must follow. Please contact us to lift the block.</source>
+        <translation>This address is still blocked because messages to it could not be delivered, or because of a request we must follow. Please contact us to lift the block.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation>Nothing was changed.</translation>
+    </message>
+    <message>
+        <source>Your choices were saved.</source>
+        <translation>Your choices were saved.</translation>
+    </message>
+    <message>
+        <source>We sent a confirmation link to %email for: %list. Each starts once you open its link.</source>
+        <translation>We sent a confirmation link to %email for: %list. Each starts once you open its link.</translation>
+    </message>
+    <message>
+        <source>Optional e-mail is off at the moment, so none of these is sent until you turn it on.</source>
+        <translation>Optional e-mail is off at the moment, so none of these is sent until you turn it on.</translation>
+    </message>
+    <message>
+        <source>Download my e-mail data</source>
+        <translation>Download my e-mail data</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/mailpreferences</name>
+    <message>
+        <source>Manage e-mail</source>
+        <translation>Manage e-mail</translation>
+    </message>
+    <message>
+        <source>E-mail preferences</source>
+        <translation>E-mail preferences</translation>
+    </message>
+    <message>
+        <source>Send me a link</source>
+        <translation>Send me a link</translation>
+    </message>
+    <message>
+        <source>My e-mail preferences</source>
+        <translation>My e-mail preferences</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/mailpreferences/mail</name>
+    <message>
+        <source>You receive this e-mail because you switched on "%category".</source>
+        <translation>You receive this e-mail because you switched on "%category".</translation>
+    </message>
+    <message>
+        <source>Manage your e-mail preferences</source>
+        <translation>Manage your e-mail preferences</translation>
+    </message>
+    <message>
+        <source>Unsubscribe from "%category"</source>
+        <translation>Unsubscribe from "%category"</translation>
+    </message>
+    <message>
+        <source>Please confirm: %category</source>
+        <translation>Please confirm: %category</translation>
+    </message>
+    <message>
+        <source>Please confirm that you want to receive "%category" at this address.</source>
+        <translation>Please confirm that you want to receive "%category" at this address.</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail: nothing will be sent to you.</source>
+        <translation>If you did not ask for this, ignore this e-mail: nothing will be sent to you.</translation>
+    </message>
+    <message>
+        <source>Please confirm your new e-mail address</source>
+        <translation>Please confirm your new e-mail address</translation>
+    </message>
+    <message>
+        <source>Please confirm that this is the new e-mail address of your account.</source>
+        <translation>Please confirm that this is the new e-mail address of your account.</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail: your account keeps its address.</source>
+        <translation>If you did not ask for this, ignore this e-mail: your account keeps its address.</translation>
+    </message>
+    <message>
+        <source>Unsubscribe link</source>
+        <translation>Unsubscribe link</translation>
+    </message>
+    <message>
+        <source>Your link to your e-mail preferences</source>
+        <translation>Your link to your e-mail preferences</translation>
+    </message>
+    <message>
+        <source>With this link you can choose which e-mail you receive from us:</source>
+        <translation>With this link you can choose which e-mail you receive from us:</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail.</source>
+        <translation>If you did not ask for this, ignore this e-mail.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/mailpreferences/status</name>
+    <message>
+        <source>The table %table is missing: run the database update.</source>
+        <translation>The table %table is missing: run the database update.</translation>
+    </message>
+    <message>
+        <source>The organisation name or postal address of the mail footer is empty (mailpreferences.ini [FooterSettings]); the law requires both in every optional mail.</source>
+        <translation>The organisation name or postal address of the mail footer is empty (mailpreferences.ini [FooterSettings]); the law requires both in every optional mail.</translation>
+    </message>
+    <message>
+        <source>The site secret of the links has not been generated yet; it is made on first use.</source>
+        <translation>The site secret of the links has not been generated yet; it is made on first use.</translation>
+    </message>
+    <message>
+        <source>The mail gate is disabled: optional mail is sent without checking the preferences.</source>
+        <translation>The mail gate is disabled: optional mail is sent without checking the preferences.</translation>
+    </message>
+    <message>
+        <source>%count mails without a category in the last 7 days.</source>
+        <translation>%count mails without a category in the last 7 days.</translation>
+    </message>
+    <message>
+        <source>%count mails could not be sent or checked in the last 24 hours.</source>
+        <translation>%count mails could not be sent or checked in the last 24 hours.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/mailpreferences/categories</name>
+    <message>
+        <source>Content notifications</source>
+        <translation>Content notifications</translation>
+    </message>
+    <message>
+        <source>Mail about new and changed content in the parts of the site you follow.</source>
+        <translation>Mail about new and changed content in the parts of the site you follow.</translation>
+    </message>
+    <message>
+        <source>Collaboration and approvals</source>
+        <translation>Collaboration and approvals</translation>
+    </message>
+    <message>
+        <source>Mail about content waiting for your approval and the messages of your collaboration items.</source>
+        <translation>Mail about content waiting for your approval and the messages of your collaboration items.</translation>
+    </message>
+    <message>
+        <source>Newsletters</source>
+        <translation>Newsletters</translation>
+    </message>
+    <message>
+        <source>The newsletters you subscribe to.</source>
+        <translation>The newsletters you subscribe to.</translation>
+    </message>
+    <message>
+        <source>Offers and news</source>
+        <translation>Offers and news</translation>
+    </message>
+    <message>
+        <source>Offers, events and news about our products and services.</source>
+        <translation>Offers, events and news about our products and services.</translation>
+    </message>
+    <message>
+        <source>Application and system notices</source>
+        <translation>Application and system notices</translation>
+    </message>
+    <message>
+        <source>Notices about the site and its features that are not about your account.</source>
+        <translation>Notices about the site and its features that are not about your account.</translation>
+    </message>
+    <message>
+        <source>Account security</source>
+        <translation>Account security</translation>
+    </message>
+    <message>
+        <source>Password reset, account activation, confirmation of a new e-mail address and security alerts.</source>
+        <translation>Password reset, account activation, confirmation of a new e-mail address and security alerts.</translation>
+    </message>
+    <message>
+        <source>Orders and receipts</source>
+        <translation>Orders and receipts</translation>
+    </message>
+    <message>
+        <source>Confirmations and receipts of your orders.</source>
+        <translation>Confirmations and receipts of your orders.</translation>
+    </message>
+    <message>
+        <source>Legal and service notices</source>
+        <translation>Legal and service notices</translation>
+    </message>
+    <message>
+        <source>Changes to the terms and the privacy notice, and notices we are required to send.</source>
+        <translation>Changes to the terms and the privacy notice, and notices we are required to send.</translation>
+    </message>
+    <message>
+        <source>Administration alerts</source>
+        <translation>Administration alerts</translation>
+    </message>
+    <message>
+        <source>System alerts for the administrators of the site.</source>
+        <translation>System alerts for the administrators of the site.</translation>
     </message>
 </context>
 </TS>
