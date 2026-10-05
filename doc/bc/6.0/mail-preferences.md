@@ -172,6 +172,11 @@ first.
   ([the developer's guide](../../guides/mail-preferences-developer.md)).
 - Tests that send mail must force the file transport in their own process and use `.invalid` addresses; the gate's log
   can be sent to a file of the test with `expMailGate::setLogFileForTest()`.
+- The bounce reader gives every message it reads to the classes of `mailpreferences.ini [BounceSettings]
+  MessageListeners[]` (static `mailMessage( $raw, $classification, $dryRun )`, `true` when the message was for the
+  listener), after its own classification and suppression. A listener that fails is logged and the reading goes on;
+  in a dry run it must change nothing. `AfterRead=delete` also deletes the messages a listener took. The list is empty
+  by default; cjw_newsletter 4.2.0 adds `CjwNewsletterMailin` (soft-bounce retries, subscribe and unsubscribe by e-mail).
 
 ## Related pages
 

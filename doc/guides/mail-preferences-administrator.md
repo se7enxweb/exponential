@@ -275,6 +275,12 @@ and confirmation mails. Entries are kept forever by default (`[SuppressionSettin
 bounces; it is disabled until its mailbox is filled in, and the status page then shows its last read. Without it, add
 hard bounces by hand with reason `bounce`.
 
+Other parts of the site can read the same mailbox through the reader: the classes in `[BounceSettings]
+MessageListeners[]` get every message after the reader has done its own work. The newsletter (cjw_newsletter 4.2.0)
+uses it to send soft-bounced editions again and to answer subscribe and unsubscribe mails sent to the addresses of its
+lists. `./console exp:mail:bounces --dry-run` shows what would happen, and a message a listener took counts as
+understood for `AfterRead=delete`.
+
 ## 8. The consent log
 
 Setup > E-mail preferences > **Consent log**: every change, newest first, with the person, the category, the change, the

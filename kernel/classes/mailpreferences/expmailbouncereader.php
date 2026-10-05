@@ -12,8 +12,13 @@
  *  - complaints: feedback loop reports (RFC 5965, ARF, report-type=feedback-report) of any type but "not-spam"
  *    => reason "complaint".
  *
+ * Every message read is also given to the classes of [BounceSettings] MessageListeners[] (static
+ * mailMessage( $raw, $classification, $dryRun ), returning true when the message was for them), so that another
+ * system can act on its own bounces or on the mails sent to its own addresses that arrive in the same mailbox, such
+ * as a newsletter's subscribe and unsubscribe addresses. A listener that fails is logged; the reading goes on.
+ *
  * IMAP reads only unread messages (fetching marks them read); POP3 reads every message. [BounceSettings]
- * AfterRead=delete removes the messages that were understood. Nothing is read while Reader is disabled or the
+ * AfterRead=delete removes the messages that were understood, or taken by a listener. Nothing is read while Reader is disabled or the
  * server is empty (the default). The last run is kept in [BounceSettings] StatusFile for exp:mail:status and the
  * status page.
  *
@@ -171,7 +176,7 @@ class expMailBounceReader
                 $out['items'][] = $item;
                 if ( $report )
                     call_user_func( $report, self::describe( $item, '#' . $number ) );
-                if ( $delete && $item['kind'] !== self::NONE )
+                if ( $delete && ( $item['kind'] !== self::NONE || !empty( $item['handled'] ) ) )
                     $transport->delete( $number );
             }
             if ( $delete && $transport instanceof ezcMailImapTransport )
@@ -251,7 +256,7 @@ class expMailBounceReader
     {
         $counts['messages']++;
         $c = self::classify( $raw );
-        $item = array( 'kind' => $c['kind'], 'detail' => $c['detail'], 'addresses' => array(), 'suppressed' => 0 );
+        $item = array( 'kind' => $c['kind'], 'detail' => $c['detail'], 'addresses' => array(), 'suppressed' => 0, 'handled' => false );
         switch ( $c['kind'] )
         {
             case self::HARD: $counts['hard']++; break;
@@ -260,7 +265,10 @@ class expMailBounceReader
             default: $counts['other']++;
         }
         if ( $c['kind'] !== self::HARD && $c['kind'] !== self::COMPLAINT )
+        {
+            $item['handled'] = self::tellListeners( $raw, $c, $dryRun );
             return $item;
+        }
         $reason = $c['kind'] === self::HARD ? 'bounce' : 'complaint';
         foreach ( $c['addresses'] as $email )
         {
@@ -275,15 +283,47 @@ class expMailBounceReader
             $item['suppressed']++;
             $counts['suppressed']++;
         }
+        // after the suppression, so that a listener sees the address as suppressed
+        $item['handled'] = self::tellListeners( $raw, $c, $dryRun );
         return $item;
+    }
+
+    /**
+     * Gives a message to the classes of [BounceSettings] MessageListeners[]: static mailMessage( $raw,
+     * $classification, $dryRun ), true when the message was for the listener.
+     *
+     * @param string $raw
+     * @param array $classification classify()
+     * @param bool $dryRun
+     * @return bool a listener took the message
+     */
+    protected static function tellListeners( $raw, array $classification, $dryRun )
+    {
+        $handled = false;
+        foreach ( array_unique( array_filter( array_map( 'trim', (array)self::setting( 'MessageListeners', array() ) ), 'strlen' ) ) as $class )
+        {
+            if ( !class_exists( $class ) || !method_exists( $class, 'mailMessage' ) )
+                continue;
+            try
+            {
+                if ( call_user_func( array( $class, 'mailMessage' ), $raw, $classification, (bool)$dryRun ) === true )
+                    $handled = true;
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeError( "Bounce reader listener $class: " . $e->getMessage(), __METHOD__ );
+            }
+        }
+        return $handled;
     }
 
     /** @return string one line about a processed message (no address in clear) */
     public static function describe( array $item, $label )
     {
-        return sprintf( '%s: %s%s%s%s', $label, $item['kind'], $item['detail'] !== '' ? ' (' . $item['detail'] . ')' : '',
+        return sprintf( '%s: %s%s%s%s%s', $label, $item['kind'], $item['detail'] !== '' ? ' (' . $item['detail'] . ')' : '',
                         $item['addresses'] ? ' ' . implode( ', ', $item['addresses'] ) : '',
-                        $item['suppressed'] ? ', ' . $item['suppressed'] . ' suppressed' : '' );
+                        $item['suppressed'] ? ', ' . $item['suppressed'] . ' suppressed' : '',
+                        !empty( $item['handled'] ) ? ', taken by a listener' : '' );
     }
 
     // ------------------------------------------------------------------ the mailbox

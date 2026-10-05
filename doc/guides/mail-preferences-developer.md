@@ -240,6 +240,7 @@ site secret. Nothing is stored per link, a link cannot be read or changed, and c
 | `erased()` of the handler | Remove the extension's own data of a person who was erased (section 4) |
 | `[GateSettings] EssentialSenders[]` | Mark uncategorised mail of a file, class or From address as essential |
 | `[SuppressionSettings] Listeners[]` | Classes told when an address is suppressed or lifted: static `suppressionAdded( $email, $hash, $reason )`, `suppressionLifted( $hash, $email, $reason )` (keeps another block list in step) |
+| `[BounceSettings] MessageListeners[]` | Classes that get every message the bounce reader reads, after its own classification and suppression: static `mailMessage( $raw, $classification, $dryRun )` returns `true` when the message was for the class (`AfterRead=delete` then removes it). For a system's own bounces (a retry of a soft bounce) or mail to its own addresses in the same mailbox (subscribe by e-mail). Change nothing when `$dryRun` is true; an exception is logged and the reading goes on (test: `MailPreferencesBounceListenersTest`) |
 | `[FooterSettings] Template` and `design:mailpreferences/mail/*.tpl` | The footer and the confirm, link and address change mails, per design |
 | `design:mailpreferences/parts/page_start.tpl`, `page_end.tpl` | Frame the preference pages in your design |
 | `design:mailpreferences/parts/account_link.tpl` | The "E-mail preferences" box for your own pages (`context` = `profile`, `notification`, `newsletter`) |
