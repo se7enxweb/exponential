@@ -1922,6 +1922,7 @@ only with `Reads=enabled`).
 | `access.session.expire` | a session is destroyed or collected | – → count | `ezpEvent session/destroy, session/gc (bridge)` | expire | info | off | no | access | at once |
 | `access.session.reauth` | a user re-enters the password before an audit/manage action (Q9) | – | `audit/console/expauditreauth.php:confirm` | reauth | info | on | yes | access | at once |
 | `access.session.reauth.failed` | that re-entry fails | – (never the password) | `audit/console/expauditreauth.php:confirm` | reauth | notice | on | yes | access | at once |
+| `access.session.revoke` | a user's other sessions are ended after a password change (`[PasswordSettings] EndOtherSessions`) | – → count; reason password_change | `classes/exppasswordpolicy.php:endOtherSessions` | revoke | notice | on | yes | access | at once |
 | `access.user.lock` | failed logins reach `[UserSettings] MaxNumberOfFailedLogin` | attempts → attempts, enabled | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | lock | warning | on | yes | access | at once |
 | `access.user.unlock` | the failed-login counter is reset by an administrator | attempts → 0 | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | unlock | notice | on | yes | access | at once |
 | `access.permission.refused` | a module view is refused by policy | – → the policy asked (module/function), limitation that failed | `lib/ezutils/classes/ezmodule.php:handleError` | access | notice | on | yes | access | at once |

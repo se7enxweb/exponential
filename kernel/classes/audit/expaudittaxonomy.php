@@ -96,6 +96,7 @@ class expAuditTaxonomy
         'access.session.expire' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'access' ),
         'access.session.reauth' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access' ),
         'access.session.reauth.failed' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
+        'access.session.revoke' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
         'access.user.lock' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'access' ),
         'access.user.unlock' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
         'access.permission.refused' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),

@@ -2,6 +2,9 @@
 /**
  * The code of kernel/user/password.php, moved into a class (#207 stage 1). The file kernel/user/password.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ *
+ * The rules, the inline errors per field, the success state, ending the other sessions and the "your password
+ * was changed" mail: doc/features/6.0/modern-password-change.md (rules in expPasswordPolicy).
  */
 /*
  * The original header of kernel/user/password.php:
@@ -47,14 +50,9 @@ class Password extends \Exponential\Runnable\ModuleView
         if ( $redirectionURI == '' )
              $redirectionURI = $ini->variable( 'SiteSettings', 'DefaultPage' );
 
-        if( !isset( $oldPassword ) )
-            $oldPassword = '';
-
-        if( !isset( $newPassword ) )
-            $newPassword = '';
-
-        if( !isset( $confirmPassword ) )
-            $confirmPassword = '';
+        $oldPassword = '';
+        $newPassword = '';
+        $confirmPassword = '';
 
         if ( is_numeric( $Params["UserID"] ) )
             $UserID = $Params["UserID"];
@@ -68,6 +66,15 @@ class Password extends \Exponential\Runnable\ModuleView
         if ( $currentUser->attribute( 'contentobject_id' ) != $user->attribute( 'contentobject_id' ) or
              !$currentUser->isRegistered() )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
+
+        $policy = new \expPasswordPolicy( $ini );
+        $fieldIDs = \expPasswordPolicy::fieldIDs();
+        $fieldErrors = array( 'oldPassword' => array(), 'newPassword' => array(), 'confirmPassword' => array() );
+        $formErrors = array();
+        $failedRules = array();
+        $passwordChanged = false;
+        $sessionsEnded = null;
+        $notificationSent = false;
 
         if ( $http->hasPostVariable( "OKButton" ) )
         {
@@ -84,9 +91,9 @@ class Password extends \Exponential\Runnable\ModuleView
                 $confirmPassword = $http->postVariable( "confirmPassword" );
             }
             // A form can post any of these as an array; treat that as not given
-            if ( isset( $oldPassword ) && !is_string( $oldPassword ) ) $oldPassword = "";
-            if ( isset( $newPassword ) && !is_string( $newPassword ) ) $newPassword = "";
-            if ( isset( $confirmPassword ) && !is_string( $confirmPassword ) ) $confirmPassword = "";
+            if ( !is_string( $oldPassword ) ) $oldPassword = "";
+            if ( !is_string( $newPassword ) ) $newPassword = "";
+            if ( !is_string( $confirmPassword ) ) $confirmPassword = "";
 
             $login = $user->attribute( "login" );
             $type = $user->attribute( "password_hash_type" );
@@ -94,56 +101,64 @@ class Password extends \Exponential\Runnable\ModuleView
             $site = $user->site();
             if ( $user->authenticateHash( $login, $oldPassword, $site, $type, $hash ) )
             {
-                if (  $newPassword == $confirmPassword )
+                // every problem of the new password at once: the rules and the confirmation
+                $failedRules = $policy->validate( $newPassword, $user );
+                foreach ( $failedRules as $ruleID )
+                    $fieldErrors['newPassword'][] = $policy->errorText( $ruleID );
+                if ( $newPassword !== $confirmPassword )
                 {
-                    $minPasswordLength = $ini->hasVariable( 'UserSettings', 'MinPasswordLength' ) ? $ini->variable( 'UserSettings', 'MinPasswordLength' ) : 3;
+                    $newPasswordNotMatch = 1;
+                    $fieldErrors['confirmPassword'][] = \ezpI18n::tr( 'kernel/user/password', 'The two new passwords do not match.' );
+                }
+                if ( in_array( \expPasswordPolicy::RULE_LENGTH, $failedRules, true ) )
+                    $newPasswordTooShort = 1;
 
-                    if ( strlen( $newPassword ) < $minPasswordLength )
+                if ( !$failedRules && !$newPasswordNotMatch )
+                {
+                    // Change user password
+                    if ( \eZOperationHandler::operationIsAvailable( 'user_password' ) )
                     {
-                        $newPasswordTooShort = 1;
+                        $operationResult = \eZOperationHandler::execute( 'user',
+                                                                        'password', array( 'user_id'    => $UserID,
+                                                                                           'new_password'  => $newPassword ) );
                     }
                     else
                     {
-                        // Change user password
-                        if ( \eZOperationHandler::operationIsAvailable( 'user_password' ) )
-                        {
-                            $operationResult = \eZOperationHandler::execute( 'user',
-                                                                            'password', array( 'user_id'    => $UserID,
-                                                                                               'new_password'  => $newPassword ) );
-                        }
-                        else
-                        {
-                            \eZUserOperationCollection::password( $UserID, $newPassword );
-                        }
+                        \eZUserOperationCollection::password( $UserID, $newPassword );
                     }
-                    $message = true;
-                    $newPassword = '';
-                    $oldPassword = '';
-                    $confirmPassword = '';
-
+                    // the stored hash says whether it went through (a workflow can stop the operation)
+                    $stored = \eZUser::fetch( $UserID );
+                    $passwordChanged = $stored instanceof \eZUser && \expPasswordPolicy::isCurrentPassword( $stored, $newPassword );
+                    if ( $passwordChanged )
+                    {
+                        $sessionsEnded = $policy->endOtherSessions( (int)$UserID );
+                        $notificationSent = $policy->sendChangedMail( $stored, $sessionsEnded );
+                    }
+                    else
+                        $formErrors[] = \ezpI18n::tr( 'kernel/user/password', 'The password could not be changed. Please try again later.' );
                 }
-                else
-                {
-                    $newPassword = "";
-                    $confirmPassword = "";
-                    $newPasswordNotMatch = 1;
-                    $message = true;
-                }
+                // the old flags for templates that know only those: a failure they cannot name shows no message
+                // at all rather than their "successfully changed"
+                $message = ( $passwordChanged || $newPasswordNotMatch || $newPasswordTooShort || $formErrors ) ? true : 0;
             }
             else
             {
-                $oldPassword = "";
                 $oldPasswordNotValid = 1;
                 $message = true;
+                $fieldErrors['oldPassword'][] = \ezpI18n::tr( 'kernel/user/password', 'Your current password is not correct.' );
             }
         }
+        // a typed password is never written back into the page
+        $oldPassword = '';
+        $newPassword = '';
+        $confirmPassword = '';
 
         // Audit (doc/bc/6.0/audit.md, access.user.password.change.failed): a refused change, never a password; a
         // change that succeeds is recorded by eZUser::store() (access.user.password.change)
-        if ( ( $oldPasswordNotValid || $newPasswordNotMatch || $newPasswordTooShort ) && class_exists( 'expAuditHook' ) )
+        if ( ( $oldPasswordNotValid || $newPasswordNotMatch || $failedRules ) && class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'access.user.password.change.failed', array( 'object' => \expAuditHook::user( (int)$UserID ),
                 'result' => 'refused', 'reason' => $oldPasswordNotValid ? 'credentials' : 'validation',
-                'after' => array( 'rule' => $oldPasswordNotValid ? 'old_password' : ( $newPasswordNotMatch ? 'confirmation' : 'length' ) ) ) );
+                'after' => array( 'rule' => $oldPasswordNotValid ? 'old_password' : ( $newPasswordNotMatch ? 'confirmation' : $failedRules[0] ) ) ) );
 
         if ( $http->hasPostVariable( "CancelButton" ) )
         {
@@ -154,6 +169,15 @@ class Password extends \Exponential\Runnable\ModuleView
             \eZRedirectManager::redirectTo( $Module, $redirectionURI );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
+
+        $errorSummary = array();
+        foreach ( $formErrors as $text )
+            $errorSummary[] = array( 'field' => '', 'field_id' => '', 'text' => $text );
+        foreach ( $fieldErrors as $field => $texts )
+            foreach ( $texts as $text )
+                $errorSummary[] = array( 'field' => $field, 'field_id' => $fieldIDs[$field], 'text' => $text );
+
+        $jsConfig = $policy->clientConfig( $user );
 
         $Module->setTitle( "Edit user information" );
         // Template handling
@@ -170,6 +194,20 @@ class Password extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "newPasswordNotMatch", $newPasswordNotMatch );
         $tpl->setVariable( "newPasswordTooShort", $newPasswordTooShort );
         $tpl->setVariable( "message", $message );
+        // the modern page (doc/features/6.0/modern-password-change.md); old templates ignore these
+        $tpl->setVariable( "password_changed", $passwordChanged );
+        $tpl->setVariable( "min_length", $policy->minLength() );
+        $tpl->setVariable( "password_rules", $policy->rulesForTemplate( $failedRules ) );
+        $tpl->setVariable( "failed_rules", $failedRules );
+        $tpl->setVariable( "field_errors", $fieldErrors );
+        $tpl->setVariable( "field_ids", $fieldIDs );
+        $tpl->setVariable( "error_summary", $errorSummary );
+        $tpl->setVariable( "has_errors", count( $errorSummary ) > 0 );
+        $tpl->setVariable( "sessions_ended", $sessionsEnded );
+        $tpl->setVariable( "notification_sent", $notificationSent );
+        $tpl->setVariable( "redirect_uri", (string)$redirectionURI );
+        $tpl->setVariable( "password_js_config", $jsConfig );
+        $tpl->setVariable( "password_js_config_json", json_encode( $jsConfig, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR ) );
 
         $Result = array();
         $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/user', 'User' ),

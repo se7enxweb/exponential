@@ -1065,6 +1065,7 @@ return array(
       'expNotificationJob'                                           => 'kernel/classes/expnotificationjob.php',
       'expNotificationMailCategoryHandler'                           => 'kernel/classes/notification/expnotificationmailcategoryhandler.php',
       'expNotificationService'                                       => 'kernel/classes/expnotificationservice.php',
+      'expPasswordPolicy'                                            => 'kernel/classes/exppasswordpolicy.php',
       'expPhar'                                                      => 'kernel/classes/expphar.php',
       'expPreloadJob'                                                => 'kernel/classes/exppreloadjob.php',
       'expPreloadRunner'                                             => 'kernel/setup/exppreloadrunner.php',
