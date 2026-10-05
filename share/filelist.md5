@@ -6653,6 +6653,7 @@ d3f3cd0ab1d1def530668d2ad541210a  tests/tests/extension/cjw_newsletter/cjwNewsle
 b0c9009b1ce353ea8872d5cf447f36b4  tests/tests/extension/cjw_newsletter/cjwNewsletterFilterTest.php
 dcf64fdf015e1204e627b0b35b0575ea  tests/tests/extension/cjw_newsletter/cjwNewsletterFlowTest.php
 1878798e3e5bd0bf1b5bc40db0cc9361  tests/tests/extension/cjw_newsletter/cjwNewsletterGroundworkTest.php
+ea526fbd130182ddd3ed7a692778f7ed  tests/tests/extension/cjw_newsletter/cjwNewsletterImportExportTest.php
 8dc4e6d7688ee9ae83e5e542551a8f00  tests/tests/extension/cjw_newsletter/cjwNewsletterMailTest.php
 c1cc04937866ce0fe0aaf3e3b16ea77e  tests/tests/extension/cjw_newsletter/cjwNewsletterMiscTest.php
 4df0fda6711c01a92ae5d1ce51e93911  tests/tests/extension/cjw_newsletter/cjwNewsletterPersistentClassesTest.php
@@ -6668,6 +6669,7 @@ ba3e399e49d55534c73713e08f27a52e  tests/tests/extension/cjw_newsletter/cjwNewsle
 8def35a200dba4b04ccec1b7095183c8  tests/tests/extension/cjw_newsletter/cjwNewsletterUserTest.php
 289a4374c73ea24e48ca5178a1b9c361  tests/tests/extension/cjw_newsletter/cjwNewsletterViewsTest.php
 d75f59898581c1ea18a1021b8f6d5252  tests/tests/extension/cjw_newsletter/cjwNewsletterVirtualListTest.php
+7d0d396b24a9fd52c2765dfeb7fe431b  tests/tests/extension/cjw_newsletter/fixtures/cjwNewsletterImportExport-eznewsletter-1.6-sqlite.sql
 bdc04193e94f953d9a8d885fb3551982  tests/tests/extension/cjw_newsletter/fixtures/cjwnl-schema-4.1.20-sqlite.sql
 f151c40dbbb0b4554c4748a3c969fe18  tests/tests/extension/cjw_newsletter/fixtures/cjwnl_sms_stub_server.php
 b1d019505db130518e852bfd97fed427  tests/tests/extension/cjw_newsletter/fixtures/editorial/condition_never.php
