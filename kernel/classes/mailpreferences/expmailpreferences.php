@@ -379,6 +379,36 @@ class expMailPreferences
         return $result;
     }
 
+    /**
+     * Account removal (eZUser::removeUser()): the person's preferences and pending confirmations are removed and the
+     * consent log is anonymised, as erase() does on request; the erase row and the anonymised withdrawals stay as the
+     * proof (GDPR art. 7(1), 17). The suppression list is not touched: it holds only a salted hash and must keep
+     * blocking the address. Does nothing before the database update (no tables).
+     *
+     * @param eZUser $user the account, while it still exists
+     * @return array|null what erase() answers, null when there was nothing to do
+     */
+    public static function eraseForRemovedAccount( eZUser $user )
+    {
+        if ( (int)$user->attribute( 'contentobject_id' ) <= 0 || !expMailPreferencesService::tableExists( 'expmail_preference' )
+             || !expMailPreferencesService::tableExists( 'expmail_consent_log' ) )
+            return null;
+        $recipient = expMailRecipient::fromUser( $user );
+        // an account that never had a preference, a confirmation or a consent record: nothing to erase or to prove
+        $db = eZDB::instance();
+        $key = $db->escapeString( $recipient->key() );
+        $stored = $db->arrayQuery( "SELECT COUNT(*) AS c FROM expmail_preference WHERE recipient_key = '$key'" );
+        $pending = expMailPreferencesService::tableExists( 'expmail_pending' ) ? $db->arrayQuery( "SELECT COUNT(*) AS c FROM expmail_pending WHERE recipient_key = '$key'" ) : array();
+        if ( empty( $stored[0]['c'] ) && empty( $pending[0]['c'] )
+             && expConsentLog::countList( array( 'recipient_key' => $recipient->key() ) ) === 0
+             && expConsentLog::countList( array( 'user_id' => $recipient->userId() ) ) === 0
+             && ( $recipient->email() === '' || expConsentLog::countList( array( 'email' => $recipient->email() ) ) === 0 ) )
+            return null;
+        $prefs = self::forRecipient( $recipient );
+        $context = expConsentContext::system( 'The account was removed: its e-mail preferences were erased and its consent records anonymised.' );
+        return $prefs->erase( $context );
+    }
+
     // ------------------------------------------------------------------ internals
 
     /** @return expMailCategory */

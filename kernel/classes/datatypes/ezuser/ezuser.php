@@ -820,6 +820,20 @@ WHERE user_id = '" . $userID . "' AND
 
         eZUser::removeSessionData( $userID );
 
+        // E-mail preferences (doc/bc/6.0/mail-preferences.md): the preferences and pending confirmations are erased and
+        // the consent log anonymised, keeping the proof of each withdrawal; the suppression list (hashes) stays
+        if ( class_exists( 'expMailPreferences' ) )
+        {
+            try
+            {
+                expMailPreferences::eraseForRemovedAccount( $user );
+            }
+            catch ( Exception $e )
+            {
+                eZDebug::writeError( 'The e-mail preferences of the removed user could not be erased: ' . $e->getMessage(), __METHOD__ );
+            }
+        }
+
         eZSubtreeNotificationRule::removeByUserID( $userID );
         eZCollaborationNotificationRule::removeByUserID( $userID );
         eZUserSetting::removeByUserID( $userID );
