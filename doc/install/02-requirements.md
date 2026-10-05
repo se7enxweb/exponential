@@ -5,7 +5,9 @@ PHP version (8.0 to 8.5; Velocity needs 8.1 or later), every PHP extension with 
 it, the `php.ini` settings the setup wizard checks, the database servers and their minimum versions, Composer, a web
 server, and notes for Red Hat Enterprise Linux 9 and its rebuilds, Debian and Ubuntu, and Plesk. It ends with what
 the documentation says about memory and disk. Everything here is taken from `composer.json`, `settings/setup.ini`,
-`settings/site.ini` and `kernel/setup/`; where two documents disagree, the code wins and the chapter says so.
+`settings/site.ini` and `kernel/setup/`; where a document and the code disagree, the code wins and the chapter says
+so. Check a machine against this chapter before you download anything: a missing extension found now costs a
+package install, found half-way through an install it costs a restart of the install.
 
 [Contents](README.md) · Previous: [1. Introduction](01-introduction.md) · Next: [3. Getting the code](03-getting-the-code.md)
 
@@ -13,8 +15,8 @@ the documentation says about memory and disk. Everything here is taken from `com
 
 | Need | Minimum | Recommended | Checked by |
 |---|---|---|---|
-| PHP | 8.0 | the newest 8.x your system offers (8.5 is supported) | Composer (`composer.json`, `require.php`) |
-| PHP for Exponential Velocity | 8.1 | as above | Composer (`se7enxweb/exponential-velocity`, `"php": ">=8.1"`) |
+| PHP | 8.0 | the newest 8.x your system offers (8.5 is supported) | Composer (`composer.json`, `require.php`); the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0`) |
+| PHP for Exponential Velocity | 8.1, with `sockets` | as above, with `pcntl` and `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.1"`, `"ext-sockets": "*"`) |
 | PHP extensions | see [2.3](#23-php-extensions) | plus the recommended ones | Composer (`ext-*`), the setup wizard's system check |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | | the setup wizard's system check |
 | Database | SQLite 3 (no server) | SQLite, MySQL/MariaDB or PostgreSQL; MongoDB and Oracle are supported | the setup wizard's database step |
@@ -24,7 +26,9 @@ the documentation says about memory and disk. Everything here is taken from `com
 
 The fastest way to check a machine is to let the setup wizard do it: its **System check** page runs every critical
 test and prints, for each failure, the cause and the fix (for permissions the exact `chmod` and `chown` commands).
-The tests are described in [2.4](#24-the-setup-wizards-system-check).
+The tests are described in [2.4](#24-the-setup-wizards-system-check). The kickstarter and `exp:install` run the same
+tests in their `SystemCheck` step and stop there with the same messages, so a command-line install is an equally
+good check (for the command line PHP).
 
 ## 2.2 PHP
 
@@ -44,26 +48,34 @@ The tests are described in [2.4](#24-the-setup-wizards-system-check).
 ```
 
 so Composer refuses to install on anything older than 8.0. The versions after 8.5 are accepted by the constraint
-but have not been released or tested. Use the newest PHP your system offers.
+but have not been released or tested. Use the newest PHP your system offers: each version brings speed, and the
+older ones lose security support first (see PHP's [supported versions](https://www.php.net/supported-versions.php)).
+
+PHP 8.0 support is new in 6.0.15. The published releases `v6.0.8` to `v6.0.14` require PHP 8.1 in their
+`composer.json`, and `v6.0.7` requires 7.4 or 8.1, so on PHP 8.0 install the 6.0.15 line (`dev-main` until its tag
+is published; [chapter 3](03-getting-the-code.md#31-versions-tags-and-branches)).
 
 On PHP 8.0, `autoload.php` loads `lib/phpcompat.php`, which defines the few functions PHP 8.0 lacks
 (`array_is_list()` among them); on 8.1 and later that file is not even opened. The details, and the places that
 needed PHP 8.1 and were made to work on 8.0 in 6.0.15, are in [PHP 8.0 support](../bc/6.0/php-8.0-support.md). The
 history of the PHP 8 work since 6.0.0 is in [PHP 8 support](../bc/6.0/php8.md).
 
-> **Documents that say 8.1.** Some pages written before 6.0.15 give PHP 8.1 as the minimum:
-> [Getting started](../guides/getting-started.md), the "How to check" part of [PHP 8 support](../bc/6.0/php8.md),
-> step 3 of [Upgrading](../guides/upgrading.md), and the `description` line of `composer.json` ("PHP 8.1 through
-> 8.4.x+"). They describe the requirement of 6.0.8 to 6.0.14. From 6.0.15 the requirement in `composer.json` is
-> `^8.0`, and that is what Composer enforces.
+**How to check.** The first line of `php -v` names the version:
+
+```text
+PHP 8.5.11 (cli) (built: Sep 22 2026 13:32:06) (NTS gcc x86_64)
+```
 
 **The setup wizard's PHP check.** The critical test `phpversion` compares the running PHP with
-`settings/setup.ini`, `[phpversion] MinimumVersion=5.3.3` and refuses the versions in `UnstableVersions`. That
-minimum is historical and lower than what Composer enforces; it never fails on a PHP that Composer accepted.
+`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0` (the same lower bound as `composer.json`) and refuses the
+versions listed in `UnstableVersions` (`6`, the PHP version that was never released). Since Composer already
+enforces 8.0, this test fails in practice only when the web server's PHP is older than the command line PHP that ran
+Composer, which is exactly the case it is there to catch.
 
 **64-bit PHP.** `composer.json` suggests `php-64bit`: "For support of more than 30 languages, a 64bit php
 installation on all involved prod/dev machines is required". The reason is that the languages of an object are kept
-as bits of one integer. The PHP packages of the current Linux distributions are 64-bit builds.
+as bits of one integer. The PHP packages of the current Linux distributions are 64-bit builds; on PHP 8.5,
+`php -i | grep "Integer Size"` prints `PHP Integer Size => 64 bits` on such a build.
 
 ### Command line and web PHP
 
@@ -72,6 +84,10 @@ command line PHP (`php`) runs Composer, the installers, the console, the cronjob
 of a supported version and have the same extensions. On machines with several PHP versions (Plesk, Remi) the `php`
 on the `PATH` is often not the one the web server uses; call the right binary by its path, for example
 `/opt/plesk/php/8.5/bin/php bin/php/console ...`.
+
+What goes wrong when they differ: Composer, run with a newer command line PHP, picks package versions the web PHP
+cannot run, or the command line install succeeds and the browser then shows a white page because the web PHP lacks
+an extension. Compare `php -v` and `php -m` with the PHP information page of the web server before you install.
 
 ## 2.3 PHP extensions
 
@@ -103,6 +119,10 @@ The wizard's messages for a missing extension read, for example, "Missing DOM ex
 requires a database to store it's data, without one the system will fail."). They come from
 `design/standard/templates/setup/tests/`.
 
+**For Velocity** the engine package adds its own: it requires `sockets` (TCP options on client connections) and
+suggests `pcntl` (graceful shutdown and the worker pool) and `openssl` (HTTPS). In practice all three are needed for
+a production Velocity.
+
 ### Database extensions
 
 | Database | PHP extension | Notes |
@@ -110,11 +130,11 @@ requires a database to store it's data, without one the system will fail."). The
 | SQLite 3 | `sqlite3` | The default; nothing else needed. |
 | MySQL or MariaDB | `mysqli` | `composer.json` suggests `ext-mysqli`. |
 | PostgreSQL | `pgsql` | |
-| MongoDB | `mongodb` (PECL) | The driver (`lib/ezdb/classes/expmongodb.php`) also needs the PHP library `mongodb/mongodb` (`MongoDB\Client`), which `composer.json` does not require: add it with `composer require mongodb/mongodb`. The [MongoDB page](../features/6.0/mongodb-database-support.md) names PHP 8.2 or newer as the prerequisite. |
+| MongoDB | `mongodb` (PECL) | The driver (`lib/ezdb/classes/expmongodb.php`) also needs the PHP library `mongodb/mongodb` (`MongoDB\Client`), which `composer.json` suggests but does not require: add it with `composer require mongodb/mongodb`. The [MongoDB page](../features/6.0/mongodb-database-support.md) names PHP 8.2 or newer as the prerequisite. |
 | Oracle | `oci8` | Through the `ezoracle` extension, which `composer.json` requires; `oci8` itself comes from your vendor, EPEL or Remi. |
 
 The optional test `database_all_extensions` reports which of `sqlite3`, `mysqli`, `pgsql` and `mongodb` are
-missing; it is only information.
+missing; it is only information. Install only the extension of the database you use.
 
 ### Recommended
 
@@ -122,9 +142,9 @@ missing; it is only information.
 |---|---|---|
 | `curl` | `composer.json` suggest; optional test `curl_extension` | "better support for interacting with other servers, like downloading packages over SSL" |
 | `gd` | `composer.json` suggest; optional test `imagegd_extension` | image manipulation unless ImageMagick is installed |
-| `openssl` | `composer.json` suggest | "cryptographically secure random bytes" |
-| `pcntl` | `composer.json` suggest | asynchronous publishing (`bin/php/ezasynchronouspublisher.php` forks with `pcntl_fork()`); Velocity's extension manifest lists it among the server extensions |
-| `opcache` | (performance) | PHP's compiled code cache; see [Velocity opcode cache](../features/6.0/velocity-opcode-cache-and-profile.md) |
+| `openssl` | `composer.json` suggest | "cryptographically secure random bytes"; HTTPS in Velocity |
+| `pcntl` | `composer.json` suggest | asynchronous publishing (`bin/php/ezasynchronouspublisher.php` forks with `pcntl_fork()`); Velocity's worker pool |
+| `opcache` | (performance) | PHP's compiled code cache; always compiled in from PHP 8.5. See [Velocity opcode cache](../features/6.0/velocity-opcode-cache-and-profile.md) |
 | `redis` | `composer.json` suggest (`se7enxweb/sevenx_valkey`, `sevenx_valkey_cache`) | only for the Valkey/Redis cache extensions |
 
 The optional test `texttoimage_functions` checks `imagettftext()` and `imagettfbbox()` (GD with FreeType), which the
@@ -138,28 +158,38 @@ php -m
 ```
 
 lists the extensions the command line PHP has. With Velocity installed, the console also compares the machine with
-the extension set of the Velocity package and prints the install command for your system:
+the extension set of the Velocity package:
 
 ```bash
 php bin/php/console exp:velocity ext check
-php bin/php/console exp:velocity ext install-hint
 ```
 
-(`exp:velocity ext list|check|plan|install-hint|build` hands over to the engine's `qbixctl ext:<action>`; it needs
-the Velocity package, see [chapter 3](03-getting-the-code.md#34-the-optional-velocity-package)).
+prints one line per extension, marked `ok` or missing, with what each is for, for example:
+
+```text
+PHP 8.5 on linux-x86_64: provides the 'lite' set; checked against 'standard'
+  ok  sockets          server       TCP options (no-delay, keep-alive) on client connections
+  ok  dom              required     XML documents: rich text, packages, feeds, WebDAV
+  ok  intl             required     Locale-aware formatting, collation and transliteration
+```
+
+and `exp:velocity ext install-hint <extension> ...` prints the package install command for your system, for example
+`php bin/php/console exp:velocity ext install-hint intl xsl`. (`exp:velocity ext list|check|plan|install-hint|build`
+hands over to the engine's `qbixctl ext:<action>`, so it needs the Velocity package, see
+[chapter 3](03-getting-the-code.md#34-the-optional-velocity-package); as `root` add `--allow-root-user`.)
 
 ## 2.4 The setup wizard's system check
 
 The wizard runs the tests in `[SetupSettings] CriticalTests` on its **System check** page and those in
 `OptionalTests` on **System finetuning**. A critical failure stops the wizard until it is fixed (or the test is
-ignored with its checkbox, which is not recommended).
+ignored with its checkbox, which is not recommended: an ignored test usually fails again later as a broken page).
 
 ### Critical tests
 
 | Test | Checks | Setting in `settings/setup.ini` | Fix |
 |---|---|---|---|
 | `directory_permissions` | The web server can write the directories in `CheckList` | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` and its subdirectories, `var/log`, `var/storage` and its subdirectories, `var/autoload` | the `chmod`/`chown` commands the page prints |
-| `phpversion` | PHP at least `MinimumVersion`, not one of `UnstableVersions` | `[phpversion]` | a newer PHP |
+| `phpversion` | PHP at least `MinimumVersion`, not one of `UnstableVersions` | `[phpversion] MinimumVersion=8.0.0` | a newer PHP |
 | `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8`, `Require=one` | install one |
 | `image_conversion` | GD's `imagegd2()` or ImageMagick's `convert` | `[image_conversion] TestList`, `Require=one` | install `gd` or ImageMagick |
 | `safe_mode` | `safe_mode` off | | (removed from PHP; always passes) |
@@ -168,10 +198,15 @@ ignored with its checkbox, which is not recommended).
 | `magic_quotes_runtime` | magic quotes off | | (removed from PHP; always passes) |
 | `allow_url_fopen` | `allow_url_fopen` on | | turn it on in `php.ini` |
 | `php_session` | the `session` extension | `[php_session]` | install it |
-| `file_upload` | `file_uploads` on, and the upload directory exists and is writable | `[file_upload]` | see below |
+| `file_upload` | `file_uploads` on, and the upload directory exists and is writable | `[file_upload]` | see [2.5](#25-phpini-settings) |
 | `zlib_extension`, `dom_extension`, `iconv_extension`, `mbstring_extension`, `intl_extension`, `xsl_extension` | the extension is loaded | one block each | install it |
 | `timezone` | a time zone was chosen | | set `date.timezone` |
 | `ezcversion` | the Zeta Components are there: class `ezcBaseFile` with method `walkrecursive` | `[ezcversion]` | `composer install` |
+
+The directory test runs as the user that runs the check: in the browser the web server's user, on the command line
+whoever starts the kickstarter. A command-line install by another user can pass the test and still leave files the
+web server cannot write; [chapter 3](03-getting-the-code.md#37-permissions-after-getting-the-code) shows how to hand
+them over.
 
 ### Optional tests
 
@@ -197,6 +232,22 @@ All test functions are in `kernel/setup/ezsetuptests.php`; the messages are in
 | `open_basedir` | empty | optional test `open_basedir` |
 | `upload_max_filesize`, `post_max_size` | as large as the files editors upload | not tested; PHP refuses larger uploads |
 
+A minimal set for a production `php.ini` (or a PHP-FPM pool's `php_admin_value` lines):
+
+```ini
+memory_limit = 256M
+max_execution_time = 60
+date.timezone = Europe/Berlin
+file_uploads = On
+upload_max_filesize = 64M
+post_max_size = 64M
+allow_url_fopen = On
+variables_order = "EGPCS"
+```
+
+The values above the minimums are suggestions, not requirements: size them for the largest file your editors upload
+and the longest import you run through the browser.
+
 **The time zone in detail.** `index.php` sets UTC when `php.ini` has no `date.timezone`. The test fails only in that
 case: a `php.ini` that sets `date.timezone`, even to UTC, is a decision and passes (`eZSetupTestTimeZone()`). The site
 can also set its own time zone in `settings/site.ini`, `[TimeZoneSettings] TimeZone` (applied by the kernel on every
@@ -206,7 +257,8 @@ request), and `config.php` can call `date_default_timezone_set()`; the commented
 
 After editing `php.ini`, restart or reload what runs PHP: PHP-FPM, Apache with mod_php, or Velocity
 (`php bin/php/console exp:velocity restart`). `php --ini` shows which files the command line PHP reads; the web PHP may
-read others (PHP-FPM pools have their own `php_admin_value` lines).
+read others (PHP-FPM pools have their own `php_admin_value` lines). A change that "does not work" is most often a
+change to the file the other PHP reads.
 
 ## 2.6 Databases
 
@@ -227,13 +279,16 @@ gives MongoDB 6.0 as the practical minimum.
   [SQLite feature page](../features/6.0/sqlite-database.md).
 - **MySQL or MariaDB**: the database must use UTF-8. When the database's character set differs from the one the
   wizard wants, the wizard stops with "The database [...] cannot be used, the setup wizard wants to create the site in
-  [...] but the database has been created using character set [...]".
+  [...] but the database has been created using character set [...]". Create the database with
+  `CHARACTER SET utf8mb4` and this cannot happen.
 - **PostgreSQL** needs the `pgcrypto` extension in the database (its `digest` function). The wizard tries to create
   it; when it cannot, it says so and asks for `CREATE EXTENSION pgcrypto;` by the database owner or a superuser.
 - **MongoDB** and **Oracle**: see their pages, [MongoDB](../features/6.0/mongodb-database-support.md) and
   [SQLite and Oracle drivers](../specifications/6.0/database-drivers-sqlite-oracle.md).
 
-Choosing and tuning a database is the subject of [chapter 9](09-databases.md).
+For a database server, create the database and a user that may create tables in it before you install; the
+installers do not create databases or users. Choosing and tuning a database is the subject of
+[chapter 9](09-databases.md).
 
 ## 2.7 Composer
 
@@ -242,16 +297,19 @@ extensions `composer.json` requires and, when you ask for it, Velocity. Without 
 `vendor/` is missing and the site cannot start.
 
 - Install it as described on [getcomposer.org/download](https://getcomposer.org/download/) and check with
-  `composer --version`.
+  `composer --version`, which prints the Composer version and the PHP it runs with, for example
+  `Composer version 2.8.12 2025-09-19 13:41:59` and `PHP version 8.5.11 (/usr/bin/php)`.
 - `composer.json` lists the installer plugin `se7enxweb/exponential-legacy-installer` under `config.allow-plugins`.
   That setting exists since Composer 2.2; an older Composer 2 ignores it. Use a current Composer 2.
 - Composer runs with the command line PHP. Its version and extensions are the ones Composer checks the `ext-*` and
   `php` requirements against.
-
-- The development requirements matter on older PHP. `composer.json` has `require-dev`
-  `"phpunit/phpunit": "^13.4"`, and PHPUnit 13 declares `"php": ">=8.4.1"`. The repository ships no `composer.lock`,
-  so Composer resolves `require-dev` even with `--no-dev`. On PHP 8.0 to 8.3, drop the development requirements first;
-  [chapter 3](03-getting-the-code.md#33-installing-on-php-80-to-83) shows how.
+- The development requirements are chosen to fit every supported PHP. `composer.json` has `require-dev`
+  `"phpunit/phpunit": "^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4"`, and Composer picks the PHPUnit that fits the PHP
+  in use (9.6 on 8.0, 10.5 on 8.1, 11.5 on 8.2, 12 on 8.3, 13.4 on 8.4 and 8.5). This matters because the
+  repository ships no `composer.lock`, and without a lock file Composer resolves `require-dev` even with `--no-dev`.
+  The test suite itself needs PHPUnit 10 or later, so it runs on PHP 8.1 and later. The release tags `v6.0.13` and
+  `v6.0.14` still ask for PHPUnit 13.0.0, which needs PHP 8.4.1; installing those tags on an older PHP is shown in
+  [chapter 3](03-getting-the-code.md#33-installing-on-php-80-to-83).
 
 `composer install` runs the script `legacy-scripts` afterwards (`post-install-cmd` and `post-update-cmd` in
 `composer.json`), which is `php bin/php/ezpgenerateautoloads.php`: the class maps are generated for you.
@@ -266,8 +324,9 @@ extensions `composer.json` requires and, when you ask for it, Velocity. Without 
 | FrankenPHP (through `exp:velocity`) | the binary's own | Production-ready alternative engine. |
 | PHP's built-in server (`exp:velocity start --engine=php`) | 8.0+ | Development only. |
 
-None is needed during a kickstarter or console install. Setting each one up is the subject of
-[chapter 8](08-serving-the-site.md) and the [Deploying guide](../guides/deploying.md).
+None is needed during a kickstarter or console install; the setup wizard needs one, because it runs in the browser.
+Setting each one up is the subject of [chapter 8](08-serving-the-site.md) and the
+[Deploying guide](../guides/deploying.md).
 
 ## 2.9 Operating system notes
 
@@ -299,7 +358,7 @@ prints.
 
 - The packages are named after the PHP version: `php<version>-<extension>`, for example `php8.3-intl`. The extensions
   Exponential needs are in `php8.3-xml` (`dom`, `simplexml`, `xsl`, `libxml`), `php8.3-mbstring`, `php8.3-intl`,
-  `php8.3-common` (`iconv`, `zlib`, `session`, `openssl`), `php8.3-sqlite3`, `php8.3-mysql` (`mysqli`),
+  `php8.3-common` (`iconv` and the other common extensions), `php8.3-sqlite3`, `php8.3-mysql` (`mysqli`),
   `php8.3-pgsql`, `php8.3-gd`, `php8.3-curl` and `php8.3-opcache`; `pcntl` is in `php8.3-cli`.
 - Replace `8.3` with the version your release ships.
 - The PHP-FPM service is `php<version>-fpm`, with its pools in `/etc/php/<version>/fpm/pool.d/`.
@@ -338,7 +397,8 @@ Disk use grows with `var/storage` (uploaded files and image variations), `var/ca
 grows with the content. Measure a running site rather than guessing: the [benchmark](../features/6.0/benchmark.md)
 command times pages, and Velocity's [control panel](../features/6.0/velocity-control-panel.md) shows memory use.
 Read Velocity's memory as the control panel shows it, the proportional set size (PSS) of the parent and its workers:
-the resident set size of each forked worker counts the memory they share again and again.
+the resident set size of each forked worker counts the memory they share again and again, and adds up to far more
+than the machine really uses.
 
 ## References
 
@@ -357,7 +417,8 @@ In this repository:
 - [Quality checks](../features/6.0/quality-checks.md) and [Continuous integration](../specifications/6.0/continuous-integration.md):
   how PHP 8.0 is tested.
 - Code: `composer.json`, `settings/setup.ini`, `settings/site.ini` (`[SetupSettings]`), `kernel/setup/ezsetuptests.php`,
-  `kernel/setup/ezsetupcommon.php`, `design/standard/templates/setup/tests/`.
+  `kernel/setup/ezsetupcommon.php`, `design/standard/templates/setup/tests/`,
+  `vendor/se7enxweb/exponential-velocity/composer.json`.
 
 External:
 
@@ -371,9 +432,11 @@ External:
   [intl](https://www.php.net/manual/en/book.intl.php), [mbstring](https://www.php.net/manual/en/book.mbstring.php),
   [SQLite3](https://www.php.net/manual/en/book.sqlite3.php), [mysqli](https://www.php.net/manual/en/book.mysqli.php),
   [PostgreSQL](https://www.php.net/manual/en/book.pgsql.php), [GD](https://www.php.net/manual/en/book.image.php),
-  [MongoDB](https://www.php.net/manual/en/set.mongodb.php), [OCI8](https://www.php.net/manual/en/book.oci8.php).
+  [MongoDB](https://www.php.net/manual/en/book.mongodb.php), [OCI8](https://www.php.net/manual/en/book.oci8.php),
+  [Sockets](https://www.php.net/manual/en/book.sockets.php), [PCNTL](https://www.php.net/manual/en/book.pcntl.php).
 - Composer: [download](https://getcomposer.org/download/),
   [allow-plugins](https://getcomposer.org/doc/06-config.md#allow-plugins).
+- PHPUnit: [supported versions](https://phpunit.de/supported-versions.html).
 - Velocity on Packagist: [se7enxweb/exponential-velocity](https://packagist.org/packages/se7enxweb/exponential-velocity).
 - Remi repository: [rpms.remirepo.net](https://rpms.remirepo.net/).
 
