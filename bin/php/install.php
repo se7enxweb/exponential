@@ -45,10 +45,13 @@ $options = array(
     'access'         => null,
     'site-access'    => 'site',
     'admin-access'   => 'admin',
+    'editor-access'  => '',
     'host'           => '',
     'admin-host'     => '',
+    'editor-host'    => '',
     'port'           => '8080',
     'admin-port'     => '8081',
+    'editor-port'    => '',
     'email'          => 'nospam@exponential.earth',
     'password'       => null,
     'first-name'     => 'Administrator',
@@ -143,6 +146,43 @@ if ( $options['site-access'] === $options['admin-access'] )
     fwrite( STDERR, "--site-access and --admin-access must differ\n" );
     exit( 1 );
 }
+// The editor siteaccess (the admin for content editing only) is always
+// installed. Its value never equals the public or admin one: on the same port
+// or host one of the two would be unreachable. Without an --editor-* option it
+// is port + 2, edit.<host without www.> or /editor.
+require_once 'autoload.php';
+if ( $options['editor-access'] !== '' && !preg_match( '/^[a-z0-9_]+$/', $options['editor-access'] ) )
+{
+    fwrite( STDERR, "--editor-access must be lower-case letters, digits and underscores\n" );
+    exit( 1 );
+}
+if ( $options['editor-port'] !== '' && !ctype_digit( $options['editor-port'] ) )
+{
+    fwrite( STDERR, "--editor-port must be a port number\n" );
+    exit( 1 );
+}
+$editorKey = $accessType === 'port' ? 'editor-port' : ( $accessType === 'hostname' ? 'editor-host' : 'editor-access' );
+$siteKey = $accessType === 'port' ? 'port' : ( $accessType === 'hostname' ? 'host' : 'site-access' );
+$adminKey = $accessType === 'port' ? 'admin-port' : ( $accessType === 'hostname' ? 'admin-host' : 'admin-access' );
+$editorValue = $options[$editorKey] !== ''
+    ? $options[$editorKey]
+    : (string)\eZStepSiteAccess::distinctEditorAccessValue( $accessType, $options[$siteKey], $options[$adminKey] );
+if ( in_array( (string)$editorValue, array( (string)$options[$siteKey], (string)$options[$adminKey] ), true ) )
+{
+    fwrite( STDERR, "--$editorKey must differ from --$siteKey and --$adminKey\n" );
+    exit( 1 );
+}
+if ( $accessType === 'port' && (string)$options['port'] === (string)$options['admin-port'] )
+{
+    fwrite( STDERR, "--port and --admin-port must differ\n" );
+    exit( 1 );
+}
+if ( $accessType === 'hostname' && $options['host'] === $options['admin-host'] )
+{
+    fwrite( STDERR, "--host and --admin-host must differ\n" );
+    exit( 1 );
+}
+
 if ( !filter_var( $options['email'], FILTER_VALIDATE_EMAIL ) )
 {
     fwrite( STDERR, "--email is not an e-mail address: {$options['email']}\n" );
@@ -191,16 +231,19 @@ if ( $accessType === 'hostname' )
 {
     $siteURL = "$scheme://{$options['host']}$urlPort$urlPath/";
     $adminURL = "$scheme://{$options['admin-host']}$urlPort$urlPath/";
+    $editorURL = "$scheme://$editorValue$urlPort$urlPath/";
 }
 else if ( $accessType === 'port' )
 {
     $siteURL = "$scheme://$urlHost:{$options['port']}$urlPath/";
     $adminURL = "$scheme://$urlHost:{$options['admin-port']}$urlPath/";
+    $editorURL = "$scheme://$urlHost:$editorValue$urlPath/";
 }
 else
 {
     $siteURL = "$scheme://$urlHost$urlPort$urlPath/{$options['site-access']}/";
     $adminURL = "$scheme://$urlHost$urlPort$urlPath/{$options['admin-access']}/";
+    $editorURL = "$scheme://$urlHost$urlPort$urlPath/$editorValue/";
 }
 
 $languages = array_values( array_filter( array_map( 'trim', explode( ',', $options['languages'] ) ), 'strlen' ) );
@@ -225,6 +268,8 @@ $sections = array(
     'security'         => array(),
     'registration'     => array( 'Send' => 'false' ),
 );
+// the editor's value, under the key of the access type ([site_details] EditorAccess, EditorAccessPort or EditorAccessHostname)
+$sections['site_details'][$accessType === 'port' ? 'EditorAccessPort' : ( $accessType === 'hostname' ? 'EditorAccessHostname' : 'EditorAccess' )] = (string)$editorValue;
 
 if ( $flags['print'] )
 {
@@ -282,13 +327,14 @@ $summary = array(
     'Installed'      => '',
     'Site'           => $siteURL,
     'Admin login'    => $adminURL . 'user/login',
+    'Editor'         => $editorURL,
     'Username'       => 'admin',
     'Password'       => $options['password'],
     'E-mail'         => $options['email'],
     'Database'       => $db . ' ' . $dbName . ( $db === 'sqlite' ? '' : ' at ' . ( $options['db-socket'] !== '' ? $options['db-socket'] : $options['db-host'] . ( $dbPort !== '' ? ':' . $dbPort : '' ) ) )
                         . ( $dbUser !== '' ? ', user ' . $dbUser : '' ),
     'Package'        => $options['package'] . ', ' . $options['language'] . ( $languages ? ' + ' . implode( ',', $languages ) : '' ),
-    'Siteaccesses'   => $options['site-access'] . ', ' . $options['admin-access'] . ' (by ' . ( $accessType === 'hostname' ? 'host' : $accessType ) . ')',
+    'Siteaccesses'   => $options['site-access'] . ', ' . $options['admin-access'] . ', editor (by ' . ( $accessType === 'hostname' ? 'host' : $accessType ) . ')',
     'Configuration'  => 'var/log/exp-install-' . $stamp . '.ini (passwords masked)',
 );
 register_shutdown_function( function () use ( $kickstart, $aside, $sections, $logDir, $stamp, $startedAt, $overrideFile, $flags, &$summary, &$passwordNote, $passwordGiven, $rootDir ) {
@@ -388,6 +434,12 @@ Site
   --admin-host=<host>    admin host (implies --access=host)
   --port=<port>          public port, default 8080 (with --access=port)
   --admin-port=<port>    admin port, default 8081 (with --access=port)
+  --editor-access=<name> URL path of the editor siteaccess (the admin for
+                         content editing only), default editor
+  --editor-host=<host>   editor host, default edit.<--host without www.>
+                         (with --access=host)
+  --editor-port=<port>   editor port, default --port + 2 (with --access=port)
+                         The editor never shares the public or admin value.
 
 Administrator (login: admin)
   --email=<address>      default nospam@exponential.earth

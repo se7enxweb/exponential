@@ -987,8 +987,7 @@ See the requirements page for more information.",
         $currentURL = $url;
         $adminURL = $url;
         $editorURL = $url;
-        $editorValue = isset( $siteType['editor_access_type_value'] ) && trim( (string)$siteType['editor_access_type_value'] ) !== ''
-                     ? $siteType['editor_access_type_value'] : eZStepSiteAccess::defaultEditorAccessValue( $siteType['access_type'] );
+        $editorValue = eZStepSiteAccess::editorAccessValueFor( $siteType );
 
         if ( $siteType['access_type'] == 'url' )
         {

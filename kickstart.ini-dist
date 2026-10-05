@@ -201,6 +201,7 @@
 ## The access name to use for the editor site: the administration interface
 ## for content editing only, without setup, design and developer tools.
 ## Every installation has one. If not supplied it will use editor
+## (<Access>_editor when Access or AdminAccess is editor)
 #EditorAccess=editor
 
 ## AccessPort=<number>
@@ -212,7 +213,9 @@
 #AdminAccessPort=8081
 
 ## EditorAccessPort=<number>
-## The access port to use for the editor site
+## The access port to use for the editor site. If not supplied it will
+## use AccessPort + 2 (the next free port when that is AdminAccessPort);
+## never the user or admin port
 #EditorAccessPort=8082
 
 ## AccessHostname=<url>
@@ -225,7 +228,8 @@
 
 ## EditorAccessHostname=<url>
 ## The access hostname to use for the editor site; by convention
-## edit.<the site's domain>. If not supplied it will use edit.<this host>
+## edit.<the site's domain>. If not supplied it will use edit.<AccessHostname
+## without www.>, e.g. edit.example.com for www.example.com
 #EditorAccessHostname=edit.news.test.com
 
 ## Database=<databasename>

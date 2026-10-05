@@ -251,7 +251,9 @@ class eZStepSiteDetails extends eZStepInstaller
                     else
                         $siteType['admin_access_type_value'] = $portCounter++;
 
-                    $siteType['editor_access_type_value'] = isset( $data['EditorAccessPort'] ) ? $data['EditorAccessPort'] : $portCounter++;
+                    // never the public or admin port: with AccessPort given, $portCounter is still 8080 here
+                    $siteType['editor_access_type_value'] = isset( $data['EditorAccessPort'] ) ? $data['EditorAccessPort']
+                        : eZStepSiteAccess::distinctEditorAccessValue( 'port', $siteType['access_type_value'], $siteType['admin_access_type_value'] );
                 }
                 break;
 
@@ -267,7 +269,9 @@ class eZStepSiteDetails extends eZStepInstaller
                     else
                         $siteType['admin_access_type_value'] = $siteType['identifier'] . '-admin.' . eZSys::hostName();
 
-                    $siteType['editor_access_type_value'] = isset( $data['EditorAccessHostname'] ) ? $data['EditorAccessHostname'] : eZStepSiteAccess::defaultEditorAccessValue( 'hostname' );
+                    // edit.<public host>, not edit.<the host the setup runs on> (localhost on the command line)
+                    $siteType['editor_access_type_value'] = isset( $data['EditorAccessHostname'] ) ? $data['EditorAccessHostname']
+                        : eZStepSiteAccess::distinctEditorAccessValue( 'hostname', $siteType['access_type_value'], $siteType['admin_access_type_value'] );
                 }
                 break;
 
@@ -285,7 +289,8 @@ class eZStepSiteDetails extends eZStepInstaller
                     else
                         $siteType['admin_access_type_value'] = $siteType['identifier'] . '_admin';
 
-                    $siteType['editor_access_type_value'] = isset( $data['EditorAccess'] ) ? $data['EditorAccess'] : eZStepSiteAccess::defaultEditorAccessValue( 'url' );
+                    $siteType['editor_access_type_value'] = isset( $data['EditorAccess'] ) ? $data['EditorAccess']
+                        : eZStepSiteAccess::distinctEditorAccessValue( 'url', $siteType['access_type_value'], $siteType['admin_access_type_value'] );
                 }
                 break;
             }
@@ -475,7 +480,7 @@ class eZStepSiteDetails extends eZStepInstaller
             $siteType['title'] = $siteType['name'];
         // a wizard started before the editor siteaccess existed has no value yet
         if ( !isset( $siteType['editor_access_type_value'] ) || trim( (string)$siteType['editor_access_type_value'] ) === '' )
-            $siteType['editor_access_type_value'] = eZStepSiteAccess::defaultEditorAccessValue( isset( $siteType['access_type'] ) ? $siteType['access_type'] : 'url' );
+            $siteType['editor_access_type_value'] = eZStepSiteAccess::editorAccessValueFor( $siteType );
         $siteType['errors'] = array();
 
         // The wizard's forms post to index.php by name, so indexDir() named it

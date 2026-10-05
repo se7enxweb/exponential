@@ -512,7 +512,7 @@ class eZStepCreateSites extends eZStepInstaller
         $editorSiteaccessName = 'editor';
         $editorAccessValue = trim( (string)( isset( $siteType['editor_access_type_value'] ) ? $siteType['editor_access_type_value'] : '' ) );
         if ( $editorAccessValue === '' ) // kickstart data or a wizard session from before the editor siteaccess
-            $editorAccessValue = (string)eZStepSiteAccess::defaultEditorAccessValue( $siteType['access_type'] );
+            $editorAccessValue = (string)eZStepSiteAccess::editorAccessValueFor( $siteType );
         $editorMap = in_array( $siteType['access_type'], array( 'port', 'hostname' ) ) ? $siteType['access_type'] : 'url';
         $accessMap[$editorMap][$editorAccessValue] = $editorSiteaccessName;
         $accessMap['accesses'][] = $editorSiteaccessName;
