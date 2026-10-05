@@ -814,7 +814,11 @@ class NotificationSystemTest extends PHPUnit\Framework\TestCase
         $out = stream_get_contents( $pipes[1] ) . stream_get_contents( $pipes[2] );
         fclose( $pipes[1] );
         fclose( $pipes[2] );
-        return array( proc_close( $process ), $out );
+        $code = proc_close( $process );
+        // what the command wrote is not in this process's SQL query cache
+        if ( class_exists( 'eZDBQueryCache' ) )
+            eZDBQueryCache::clearAll();
+        return array( $code, $out );
     }
 
     /** NT-15 */
