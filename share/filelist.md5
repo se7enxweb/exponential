@@ -2270,7 +2270,7 @@ b48dcffd72513797058dead1dfccb55b  design/standard/templates/mailpreferences/part
 a3d12a0387db7a98a365af8ea1a205f7  design/standard/templates/mailpreferences/parts/pager.tpl
 bf1a782d62ef9744067607485b53bc08  design/standard/templates/mailpreferences/parts/preferences.tpl
 0c0997339ebbbaa623161d51ecfc30c4  design/standard/templates/mailpreferences/parts/signup.tpl
-16b592f90ec831c206c4cff62bbc5fa1  design/standard/templates/mailpreferences/parts/style.tpl
+76a3d92e0c39c83122340b5688596937  design/standard/templates/mailpreferences/parts/style.tpl
 979f42f8763ea178f0405386bde3937d  design/standard/templates/mailpreferences/request.tpl
 8072006b49cba0cac63dbd1dd591b639  design/standard/templates/mailpreferences/settings.tpl
 e197ee9159b453a59cb41ac0decdbf83  design/standard/templates/mailpreferences/unsubscribe.tpl
@@ -6674,7 +6674,7 @@ c2f6ae3bb21a22f6c7da1d318eb475d9  tests/tests/extension/cjw_newsletter/cjwNewsle
 c1cc04937866ce0fe0aaf3e3b16ea77e  tests/tests/extension/cjw_newsletter/cjwNewsletterMiscTest.php
 4df0fda6711c01a92ae5d1ce51e93911  tests/tests/extension/cjw_newsletter/cjwNewsletterPersistentClassesTest.php
 9d7735086364782c25e5af6907c12c45  tests/tests/extension/cjw_newsletter/cjwNewsletterPlaceholdersTest.php
-ceec844209377e966df9c04c3a068e21  tests/tests/extension/cjw_newsletter/cjwNewsletterRenderingTest.php
+a022b3238847cb86906c2a51458a9706  tests/tests/extension/cjw_newsletter/cjwNewsletterRenderingTest.php
 704983ca14101db68d8aa259c1053909  tests/tests/extension/cjw_newsletter/cjwNewsletterRunnerTest.php
 9a152b2e7eeeddcdc05478d991ec70b1  tests/tests/extension/cjw_newsletter/cjwNewsletterSchemaTest.php
 3ec9dbf221f16905304f102293060608  tests/tests/extension/cjw_newsletter/cjwNewsletterSmokeTest.php
