@@ -54714,4 +54714,39 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Wenn Sie diese Änderung nicht vorgenommen haben, kennt möglicherweise jemand anderes Ihr Passwort: Setzen Sie es sofort mit „Passwort vergessen?“ auf der Anmeldeseite zurück und kontaktieren Sie uns.</translation>
     </message>
 </context>
+<context>
+    <name>kernel/user/password/account</name>
+    <message>
+        <source>The password must contain a lowercase letter.</source>
+        <translation>Das Passwort muss einen Kleinbuchstaben enthalten.</translation>
+    </message>
+    <message>
+        <source>The password must contain an uppercase letter.</source>
+        <translation>Das Passwort muss einen Großbuchstaben enthalten.</translation>
+    </message>
+    <message>
+        <source>The password must contain a digit.</source>
+        <translation>Das Passwort muss eine Ziffer enthalten.</translation>
+    </message>
+    <message>
+        <source>The password must contain a symbol or a space.</source>
+        <translation>Das Passwort muss ein Sonderzeichen oder ein Leerzeichen enthalten.</translation>
+    </message>
+    <message>
+        <source>The password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.</source>
+        <translation>Das Passwort muss mindestens %1 Arten von Zeichen mischen: Kleinbuchstaben, Großbuchstaben, Ziffern, Sonderzeichen.</translation>
+    </message>
+    <message>
+        <source>The password must not contain the user name.</source>
+        <translation>Das Passwort darf den Benutzernamen nicht enthalten.</translation>
+    </message>
+    <message>
+        <source>The password must be different from the current password.</source>
+        <translation>Das Passwort muss sich vom aktuellen Passwort unterscheiden.</translation>
+    </message>
+    <message>
+        <source>The password does not meet the requirements.</source>
+        <translation>Das Passwort erfüllt die Anforderungen nicht.</translation>
+    </message>
+</context>
 </TS>

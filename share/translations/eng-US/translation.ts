@@ -47679,4 +47679,39 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>If you did not make this change, someone else may know your password: reset it at once with "Forgot your password?" on the login page, and contact us.</translation>
     </message>
 </context>
+<context>
+    <name>kernel/user/password/account</name>
+    <message>
+        <source>The password must contain a lowercase letter.</source>
+        <translation>The password must contain a lowercase letter.</translation>
+    </message>
+    <message>
+        <source>The password must contain an uppercase letter.</source>
+        <translation>The password must contain an uppercase letter.</translation>
+    </message>
+    <message>
+        <source>The password must contain a digit.</source>
+        <translation>The password must contain a digit.</translation>
+    </message>
+    <message>
+        <source>The password must contain a symbol or a space.</source>
+        <translation>The password must contain a symbol or a space.</translation>
+    </message>
+    <message>
+        <source>The password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.</source>
+        <translation>The password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.</translation>
+    </message>
+    <message>
+        <source>The password must not contain the user name.</source>
+        <translation>The password must not contain the user name.</translation>
+    </message>
+    <message>
+        <source>The password must be different from the current password.</source>
+        <translation>The password must be different from the current password.</translation>
+    </message>
+    <message>
+        <source>The password does not meet the requirements.</source>
+        <translation>The password does not meet the requirements.</translation>
+    </message>
+</context>
 </TS>
