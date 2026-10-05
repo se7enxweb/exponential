@@ -3707,6 +3707,7 @@ a48d621b04f4b2ad0d2072be9fec74a6  doc/install/11-upgrading.md
 6e36d094d483f110a065e03d500db450  doc/install/12-troubleshooting.md
 c0145751bf15c3e45538cc3ce61f7e40  doc/install/13-security-hardening.md
 75f2b997cd1402315e643fd3f072b914  doc/install/14-migrating-from-4x.md
+6d10ddaf48efe2cbf466020acc279fd5  doc/install/15-migrating-from-5x-legacy.md
 a9f7c071b38469ca3a2dafb3ebf9eab3  doc/install/17-migration-reference.md
 bae1c59135255653b3472dd0586d9c80  doc/install/README.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
