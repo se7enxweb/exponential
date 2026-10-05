@@ -23,14 +23,14 @@ Both read the same database. Content that editors create in the legacy admin sho
 
 ## Which version for which platform
 
-The package has one branch per platform generation. Tags are listed in the [release history](../../history/ecosystem/legacyBridge.md).
+The package has one line per platform generation: the Platform 2.5 line is tagged on `master`, the later lines each have their own branch. Tags are listed in the [release history](../../history/ecosystem/legacyBridge.md).
 
 | Branch / tags | Platform | Symfony | PHP | Requires |
 |---|---|---|---|---|
-| `2.1.x` (`v2.1.10`, `v2.1.11`, 2025-08 to 2026-02) | eZ Platform 2.5 LTS | 3.4 | 8.x with fixes | the Exponential legacy kernel |
-| `3.x` (`3.0.0.1` to `v3.0.0.28`, 2026-03-25 to 03-27) | eZ Platform 3.3 | 5.4 | `^8.0` | `se7enxweb/exponential ^6.0.12`, `ezsystems/ezplatform-kernel ~1.3` |
+| `master` (`v2.1.10` to `v2.1.12`, 2025-08 to 2026-04) | eZ Platform 2.5 LTS | 3.4 | 8.x with fixes | the Exponential legacy kernel |
+| `3.x` (`3.0.0.1` to `v3.0.0.37`, 2026-03-25 to 04-11) | eZ Platform 3.3 | 5.4 | `^8.0` | `se7enxweb/exponential ^6.0.12`, `ezsystems/ezplatform-kernel ~1.3` |
 | `4.x` (`v4.0.0.0` to `v4.0.0.3`, 2026-04-06 to 04-17) | Ibexa 4.6 compatible installs | 5.4 | `^8.0` | `se7enxweb/exponential dev-main` |
-| `5.x` (`v5.0.0.0`, `v5.0.1` to `v5.0.9`) | Platform v5 | 7.4 | `^8.4` | adds `se7enxweb/site-bundle`, `se7enxweb/site-legacy-bundle`, `se7enxweb/ngsymfonytools` |
+| `5.x` (`v5.0.0.0`, `v5.0.1` to `v5.0.10`) | Platform v5 | 7.4 | `^8.4` | adds `se7enxweb/site-bundle`, `se7enxweb/site-legacy-bundle`, `se7enxweb/ngsymfonytools` |
 
 ## Install (Platform 2.5 style projects)
 
@@ -42,8 +42,10 @@ composer require --update-with-all-dependencies "se7enxweb/legacy-bridge"
 2. Prepare the project:
 
 ```bash
-php bin/console exponential:legacy:init
+php bin/console ezpublish:legacy:init
 ```
+
+The Platform 2.5 line (`v2.1.x`, on `master`) has only the `ezpublish:*` command names; the `exponential:legacy:*` names described under [Console commands](#console-commands) do not exist there.
 
 The command prints what to do next: move your legacy files (extensions, settings, optionally designs) into the project, then add the `legacy_admin` siteaccess to the siteaccess `list` and `site_group` it points out. The legacy backoffice needs `legacy_mode: true` for that siteaccess, which the init step writes at the end of your platform configuration.
 
@@ -78,7 +80,16 @@ By default the bridge also clears the platform's persistence (SPI) cache when th
 
 ## Console commands
 
-The bridge's six commands were renamed in April 2026. The old names stay as deprecated aliases, so scripts keep working.
+The bridge's six commands were renamed in April 2026, on the `3.x`, `4.x` and `5.x` lines only. The old names stay as deprecated aliases there, so scripts keep working.
+
+| Bridge line | Command names available |
+|---|---|
+| `master` (`v2.1.10` to `v2.1.12`, Platform 2.5) | only the old `ezpublish:*` names |
+| `3.x` up to `v3.0.0.29` | only the old `ezpublish:*` names |
+| `3.x` from `v3.0.0.30` | `exponential:legacy:*`, with the old names as aliases |
+| `4.x` `v4.0.0.0` and `v4.0.0.1` | only the old `ezpublish:*` names |
+| `4.x` from `v4.0.0.2` | `exponential:legacy:*`, with the old names as aliases |
+| `5.x` (all tags) | `exponential:legacy:*`, with the old names as aliases |
 
 | Command | Old name (alias) | Does |
 |---|---|---|
