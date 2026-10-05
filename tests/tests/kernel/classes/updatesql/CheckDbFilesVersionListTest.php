@@ -62,9 +62,8 @@ class CheckDbFilesVersionListTest extends PHPUnit\Framework\TestCase
 
     public function testAnUnknownDirectoryIsReported()
     {
-        $tmp = self::$root . '/var/tmp/checkdbfiles-test-' . getmypid();
-        if ( !is_dir( $tmp . '/update/database/mysql/9.9' ) )
-            mkdir( $tmp . '/update/database/mysql/9.9', 0777, true );
+        $tmp = $this->scratchDirectory();
+        mkdir( $tmp . '/update/database/mysql/9.9', 0777, true );
         file_put_contents( $tmp . '/update/database/mysql/9.9/dbupdate-9.8.0-to-9.9.0.sql', "-- test\n" );
 
         $result = \Exponential\Command\Kernel\Checkdbfiles::check( $tmp . '/' );
@@ -74,6 +73,34 @@ class CheckDbFilesVersionListTest extends PHPUnit\Framework\TestCase
         $this->assertContains( $tmp . '/update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql', $result['missing'] );
         $this->assertContains( $tmp . '/update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql', $result['missing'] );
         $this->assertNotContains( $tmp . '/update/database/mysql/7.2/dbupdate-6.13.0-to-7.2.0.sql', $result['missing'], '7.2 is PostgreSQL only' );
-        // the copy is left in var/tmp for the owner to remove
+    }
+
+    /** @var string[] the directories this test made, removed in tearDown */
+    private $scratch = array();
+
+    /**
+     * A new directory var/tmp/checkdbfiles-test-<pid>-<n>, removed again after the test.
+     */
+    private function scratchDirectory()
+    {
+        $dir = self::$root . '/var/tmp/checkdbfiles-test-' . getmypid() . '-' . count( $this->scratch ) . '-' . bin2hex( random_bytes( 3 ) );
+        mkdir( $dir, 0777, true );
+        $this->scratch[] = $dir;
+        return $dir;
+    }
+
+    protected function tearDown(): void
+    {
+        foreach ( $this->scratch as $dir )
+        {
+            if ( !is_dir( $dir ) || strpos( basename( $dir ), 'checkdbfiles-test-' ) !== 0 )
+                continue;
+            $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ),
+                                                       RecursiveIteratorIterator::CHILD_FIRST );
+            foreach ( $iterator as $entry )
+                $entry->isDir() && !$entry->isLink() ? rmdir( $entry->getPathname() ) : unlink( $entry->getPathname() );
+            rmdir( $dir );
+        }
+        $this->scratch = array();
     }
 }
