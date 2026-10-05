@@ -20,6 +20,7 @@ the code style and PHPStan with a hint.
 | When | Check | Refuses |
 |---|---|---|
 | `git commit` (pre-commit) | `php -l` on every staged PHP file | a syntax error |
+| `git commit` (pre-commit) | `php -l` with PHP 8.1, when `php8.1` is on the PATH or `EXP_PHP81` names it | syntax of PHP 8.2 and later: readonly classes, typed constants, ... |
 | `git commit` (pre-commit) | `php bin/php/checkmanifest.php --staged` | a staged file whose checksum is missing or stale in `share/filelist.md5` |
 | `git commit` (pre-commit) | `php bin/php/checkcodestyle.php --staged` | a change that adds code style violations to a PHP file |
 | `git commit` (commit-msg) | subject format | a subject that does not start with `Added: `, `Updated: `, `Fixed: ` or `Removed: ` |
@@ -33,6 +34,7 @@ Skip the hooks in an emergency with `git commit --no-verify` or `git push --no-v
 |---|---|
 | `make check` | lint, manifest-check, phpcs and phpstan, as CI does |
 | `make lint` | `php -l` on the PHP files changed since `origin/main` (`BASE=...` to compare with another ref) |
+| `make lint81` | the same with PHP 8.1 (`PHP81=/path/to/php8.1` or `EXP_PHP81`) |
 | `make manifest-check` | every entry of `share/filelist.md5` exists and matches; git files missing from it are warnings |
 | `make manifest-fix` | rewrites stale checksums, adds missing files at their sorted place, drops entries of removed files |
 | `make phpcs` | code style of the PHP files changed since `origin/main`; only new violations fail |
@@ -54,6 +56,18 @@ brace of a function on its own line, `!$a` without a space, lower case keywords 
 spaces instead of tabs and no trailing spaces, and no functions removed from PHP. Each rule was measured against the
 existing code before it was added.
 
+Two more parts of the style:
+
+- **No type declarations of PHP 7 and later.** The sniff `bin/phpcs/Exponential/Sniffs/TypeDeclarations/` reports
+  `declare( strict_types=1 )`, scalar, pseudo and union parameter types (`int $a`, `string|array $a`), return types,
+  property types and constant types. The parameter hints PHP 5 already had stay allowed: `array`, `callable`, `self`
+  and class names, also nullable (`?array`, `?eZINI`), as the kernel uses them throughout. Files under `tests/` may
+  declare the `: void` PHPUnit requires. Its test is `tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php`
+  (`php vendor/bin/phpunit --testsuite quality`).
+- **PHP 8.1 compatibility.** PHPCompatibility (installed with the development tools) checks for `testVersion`
+  `8.1-`: no syntax or functions newer than PHP 8.1 (`json_validate()`, `mb_str_pad()`, readonly classes, ...), and
+  no functions that later versions removed or deprecate.
+
 Old files do not follow every rule, so the check compares the number of violations of each changed file with its
 previous version and fails only when a change adds violations. In CI the code style is a warning for now.
 
@@ -67,6 +81,7 @@ baseline in small separate changes, and regenerate it with `make phpstan-baselin
 
 ## CI
 
-`.github/workflows/quality.yml` runs on every push and pull request to `main`: PHP syntax of the changed files, the
-manifest, the commit messages of the pushed or proposed commits and PHPStan block; the code style of the changed files
-is reported as a warning.
+`.github/workflows/quality.yml` runs on every push and pull request to `main`: PHP syntax of the changed files with
+PHP 8.3 and with PHP 8.1, the manifest, the commit messages of the pushed or proposed commits, PHPStan and the tests of
+the own sniffs block; the code style of the changed files, including type declarations and PHP 8.1 compatibility, is
+reported as a warning.
