@@ -4514,6 +4514,31 @@ class eZContentObject extends eZPersistentObject
     }
 
     /**
+     * Returns the parent node of the main location of the current version, for an object that was never published.
+     *
+     * Such an object has no nodes yet, so parentNodeIDArray() is empty; the node assignment of the current version
+     * names where it will be published.
+     *
+     * @return int[] One parent node ID, or none for a published object or a version without node assignment
+     */
+    function draftParentNodeIDArray()
+    {
+        if ( $this->attribute( 'status' ) != self::STATUS_DRAFT )
+        {
+            return array();
+        }
+        $mainAssignment = null;
+        foreach ( eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) ) as $assignment )
+        {
+            if ( $mainAssignment === null || $assignment->attribute( 'is_main' ) )
+            {
+                $mainAssignment = $assignment;
+            }
+        }
+        return $mainAssignment ? array( (int)$mainAssignment->attribute( 'parent_node' ) ) : array();
+    }
+
+    /**
      * Creates and returns a new node assignment that will place the object as child of node $nodeID.
      *
      * The returned assignment will already be stored in the database
@@ -5126,10 +5151,11 @@ class eZContentObject extends eZPersistentObject
         {
             if ( $functionName == 'edit' )
             {
-                // Check if we have 'create' access under the main parent
-                if ( $this->attribute( 'current_version' ) == 1 && !$this->attribute( 'status' ) )
+                // Check if we have 'create' access under the main parent of an object that was never published,
+                // whatever version it is at (a rejected first version is edited as version 2 and later)
+                $mainNode = !$this->attribute( 'status' ) ? eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) ) : array();
+                if ( isset( $mainNode[0] ) )
                 {
-                    $mainNode = eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) );
                     $parentObj = $mainNode[0]->attribute( 'parent_contentobject' );
                     if ( $parentObj instanceof eZContentObject )
                     {
@@ -5440,8 +5466,16 @@ class eZContentObject extends eZPersistentObject
                                         $access = 'allowed';
                                         $accessSubtree = true;
                                     }
+                                    else if ( $functionName == 'edit' )
+                                    {
+                                        // An object that was never published has no parent nodes yet; for edit, the
+                                        // location it will be published under counts, so that someone with a subtree
+                                        // policy there (an approver) can edit it. Only for edit: read and the other
+                                        // functions keep someone else's draft closed.
+                                        $parentNodes = $this->draftParentNodeIDArray();
+                                    }
                                 }
-                                else
+                                if ( $access != 'allowed' )
                                 {
                                     foreach ( $parentNodes as $parentNode )
                                     {
@@ -5562,10 +5596,11 @@ class eZContentObject extends eZPersistentObject
             {
                 if ( $functionName == 'edit' )
                 {
-                    // Check if we have 'create' access under the main parent
-                    if ( $this->attribute( 'current_version' ) == 1 && !$this->attribute( 'status' ) )
+                    // Check if we have 'create' access under the main parent of an object that was never published,
+                    // whatever version it is at (a rejected first version is edited as version 2 and later)
+                    $mainNode = !$this->attribute( 'status' ) ? eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) ) : array();
+                    if ( isset( $mainNode[0] ) )
                     {
-                        $mainNode = eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) );
                         $parentObj = $mainNode[0]->attribute( 'parent_contentobject' );
 
                         if ( $parentObj instanceof eZContentObject )
