@@ -73,6 +73,101 @@ class cjwNewsletterGroundworkTest extends cjwNewsletterTestCase
         $this->assertSame( 'disabled', $ini->variable( 'SmsSettings', 'Sms' ), 'SMS is off by default' );
     }
 
+    private function useHandler()
+    {
+        cjwNewsletterGroundworkTestHandler::$calls = array();
+        cjwNewsletterGroundworkTestHandler::$mode = '';
+        $this->setIni( 'cjw_newsletter.ini', 'ExtensionPointSettings', 'Handlers', array( 'NoSuchClassPhpunit', 'cjwNewsletterGroundworkTestHandler' ) );
+    }
+
+    public function testExtensionPointsCallOnlyExistingHandlersAndTheirMethods()
+    {
+        $this->setIni( 'cjw_newsletter.ini', 'ExtensionPointSettings', 'Handlers', array() );
+        $this->assertSame( array(), CjwNewsletterExtensionPoints::handlers(), 'no handler in the shipped settings' );
+        $this->useHandler();
+        $this->assertSame( array( 'cjwNewsletterGroundworkTestHandler' ), CjwNewsletterExtensionPoints::handlers() );
+        $this->assertSame( array(), CjwNewsletterExtensionPoints::call( 'noSuchPoint' ) );
+        cjwNewsletterGroundworkTestHandler::$mode = 'hold';
+        $this->assertFalse( CjwNewsletterExtensionPoints::allows( 'sendProcessAllowed', array( null ) ) );
+        $this->assertSame( array( 'bad input' ), CjwNewsletterExtensionPoints::errors( 'sendFormValidate', array( null, null ) ) );
+        $this->assertSame( 'a@example.invalid;group@example.invalid', CjwNewsletterExtensionPoints::filter( 'testSendRecipients', 'a@example.invalid', array( null, null ) ) );
+        $this->setIni( 'cjw_newsletter.ini', 'ExtensionPointSettings', 'DashboardBlocks', array( 'design:newsletter/dashboard/x.tpl', 'javascript:x', '../../etc.tpl' ) );
+        $this->assertSame( array( 'design:newsletter/dashboard/x.tpl' ), CjwNewsletterExtensionPoints::templates( 'DashboardBlocks' ), 'only design: template names' );
+    }
+
+    public function testTheDashboardCarriesWhatTheHandlersReturn()
+    {
+        $this->useHandler();
+        $summary = CjwNewsletterDashboard::summary();
+        $this->assertSame( 42, $summary['areas']['cjwNewsletterGroundworkTestHandler']['answer'] );
+        $codes = array_map( function ( $p ) { return $p['code']; }, $summary['problems'] );
+        $this->assertContains( 'phpunit_problem', $codes );
+    }
+
+    public function testTheRunnerCallsThePointsAndAHandlerChangesTheMailOfAnItem()
+    {
+        $this->useHandler();
+        $user = $this->newSubscriber( 'ephook' );
+        $send = $this->editionContent( $this->newEdition() )->createNewsletterSendObject( time() - 5 );
+        CjwNewsletterRunner::queueCreate( new CjwNewsletterJobOutput( false ), 'nltest' );
+        $this->assertContains( 'queueCreateBefore', cjwNewsletterGroundworkTestHandler::$calls );
+        $this->assertContains( 'sendQueueCreated', cjwNewsletterGroundworkTestHandler::$calls );
+        cjwNewsletterGroundworkTestHandler::$mode = 'subject';
+        CjwNewsletterRunner::queueProcess( new CjwNewsletterJobOutput( false ), 'nltest' );
+        foreach ( array( 'queueProcessBefore', 'sendProcessAllowed', 'itemBeforeSend', 'itemSent' ) as $point )
+            $this->assertContains( $point, cjwNewsletterGroundworkTestHandler::$calls );
+        $found = false;
+        foreach ( $this->outbox() as $file )
+            if ( strpos( $this->mailText( $file ), $user->attribute( 'email' ) ) !== false )
+            {
+                $found = true;
+                $this->assertStringContainsString( 'PHPUNIT-SUBJECT', $this->mailText( $file ) );
+            }
+        $this->assertTrue( $found );
+    }
+
+    public function testADeferredItemStaysInTheQueueAndAnAbortedOneIsClosed()
+    {
+        $this->useHandler();
+        $user = $this->newSubscriber( 'epdefer' );
+        $send = $this->editionContent( $this->newEdition() )->createNewsletterSendObject( time() - 5 );
+        CjwNewsletterRunner::queueCreate( new CjwNewsletterJobOutput( false ), 'nltest' );
+        cjwNewsletterGroundworkTestHandler::$mode = 'defer';
+        $totals = CjwNewsletterRunner::queueProcess( new CjwNewsletterJobOutput( false ), 'nltest' );
+        $this->assertGreaterThanOrEqual( 1, $totals['deferred'] );
+        $this->assertGreaterThanOrEqual( 1, CjwNewsletterEditionSendItem::fetchListBySendIdAndStatusCount( $send->attribute( 'id' ), CjwNewsletterEditionSendItem::STATUS_NEW ) );
+        cjwNewsletterGroundworkTestHandler::$mode = 'abort';
+        CjwNewsletterRunner::queueProcess( new CjwNewsletterJobOutput( false ), 'nltest' );
+        $this->assertSame( 0, CjwNewsletterEditionSendItem::fetchListBySendIdAndStatusCount( $send->attribute( 'id' ), CjwNewsletterEditionSendItem::STATUS_NEW ) );
+        $this->assertCount( 0, array_filter( $this->outbox(), function ( $f ) use ( $user ) { return strpos( file_get_contents( $f ), $user->attribute( 'email' ) ) !== false; } ), 'no mail to the aborted item' );
+    }
+
+    public function testTheListAttributeKeepsThe42ColumnsOnEdit()
+    {
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, eZContentObject::fetch( self::LIST_OBJECT_ID )->attribute( 'current_version' ) );
+        if ( !is_object( $list ) )
+            $this->markTestSkipped( 'no list attribute row for the test list' );
+        $attribute = eZContentObjectAttribute::fetch( $list->attribute( 'contentobject_attribute_id' ), $list->attribute( 'contentobject_attribute_version' ) );
+        $saved = $list->attribute( 'main_language' );
+        $list->setAttribute( 'main_language', 'ger-DE' );
+        $list->store();
+        try
+        {
+            $this->useHandler();
+            $fresh = new CjwNewsletterList( array( 'contentobject_attribute_id' => $list->attribute( 'contentobject_attribute_id' ),
+                'contentobject_attribute_version' => $list->attribute( 'contentobject_attribute_version' ) ) );
+            $errors = CjwNewsletterExtensionPoints::listAttributeInput( $fresh, eZHTTPTool::instance(), 'ContentObjectAttribute_CjwNewsletterList_', '_' . $attribute->attribute( 'id' ), $attribute );
+            $this->assertSame( 'ger-DE', $fresh->attribute( 'main_language' ), 'taken over from the stored version' );
+            $this->assertSame( 2, (int)$fresh->attribute( 'tracking_mode' ), 'set by the handler' );
+            $this->assertSame( array(), $errors );
+        }
+        finally
+        {
+            $list->setAttribute( 'main_language', $saved );
+            $list->store();
+        }
+    }
+
     public function testEveryTranslationFileHasAContextPerArea()
     {
         foreach ( glob( 'extension/cjw_newsletter/translations/*/translation.ts' ) as $file )
@@ -85,5 +180,45 @@ class cjwNewsletterGroundworkTest extends cjwNewsletterTestCase
             foreach ( array( 'deliverability', 'editorial', 'rendering', 'statistics', 'sms', 'importexport' ) as $context )
                 $this->assertContains( "cjw_newsletter/$context", $names, "$file: context $context" );
         }
+    }
+}
+
+/**
+ * An extension point handler for the tests: records the points it was called at; $mode chooses what it does.
+ */
+class cjwNewsletterGroundworkTestHandler
+{
+    public static $calls = array();
+    public static $mode = '';
+
+    static function queueCreateBefore( $cli ) { self::$calls[] = 'queueCreateBefore'; }
+    static function sendQueueCreated( $send, $cli ) { self::$calls[] = 'sendQueueCreated'; }
+    static function queueProcessBefore( $cli ) { self::$calls[] = 'queueProcessBefore'; }
+    static function sendProcessAllowed( $send )
+    {
+        self::$calls[] = 'sendProcessAllowed';
+        return self::$mode !== 'hold';
+    }
+    static function itemBeforeSend( $message, $item, $send, $user )
+    {
+        self::$calls[] = 'itemBeforeSend';
+        if ( self::$mode === 'subject' )
+            $message['subject'] = 'PHPUNIT-SUBJECT ' . $message['subject'];
+        else if ( self::$mode === 'defer' )
+            $message['defer'] = true;
+        else if ( self::$mode === 'abort' )
+            $message['abort'] = 'closed by the test';
+    }
+    static function itemSent( $item, $send, $result ) { self::$calls[] = 'itemSent'; }
+    static function sendFormValidate( $http, $version ) { return array( 'bad input', '' ); }
+    static function testSendRecipients( $emails, $http, $version ) { return $emails . ';group@example.invalid'; }
+    static function dashboardSummary( $summary )
+    {
+        return array( 'answer' => 42, 'problems' => array( array( 'level' => 'info', 'code' => 'phpunit_problem', 'text' => 'test', 'url' => '' ) ) );
+    }
+    static function listAttributeInput( $list, $http, $prefix, $postfix, $attribute )
+    {
+        $list->setAttribute( 'tracking_mode', 2 );
+        return array();
     }
 }
