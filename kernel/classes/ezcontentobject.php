@@ -4534,19 +4534,88 @@ class eZContentObject extends eZPersistentObject
      */
     function draftParentNodeIDArray()
     {
+        $mainAssignment = $this->draftMainNodeAssignment();
+        return $mainAssignment ? array( (int)$mainAssignment->attribute( 'parent_node' ) ) : array();
+    }
+
+    /**
+     * Returns the main node assignment of the current version, for an object that was never published.
+     *
+     * It names the location the object will be published under. The access checks use it for the rules that apply to
+     * such an object only: someone who may create the object under that parent may edit it (at every version, a
+     * rejected first version is edited as version 2 and later), and for edit a Subtree or User_Subtree limitation
+     * counts that location.
+     *
+     * @return eZNodeAssignment|null null for a published object or a version without node assignment
+     */
+    function draftMainNodeAssignment()
+    {
         if ( $this->attribute( 'status' ) != self::STATUS_DRAFT )
         {
-            return array();
+            return null;
         }
+        return self::mainNodeAssignmentOf( $this->currentVersionNodeAssignments() );
+    }
+
+    /**
+     * Returns the node assignments of the current version.
+     *
+     * @return eZNodeAssignment[]
+     */
+    function currentVersionNodeAssignments()
+    {
+        $assignments = eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) );
+        return is_array( $assignments ) ? $assignments : array();
+    }
+
+    /**
+     * Returns the main assignment of a list of node assignments: the one marked main, else the first.
+     *
+     * @param eZNodeAssignment[] $assignments
+     * @return eZNodeAssignment|null null for an empty list
+     */
+    static function mainNodeAssignmentOf( $assignments )
+    {
         $mainAssignment = null;
-        foreach ( eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) ) as $assignment )
+        foreach ( (array)$assignments as $assignment )
         {
-            if ( $mainAssignment === null || $assignment->attribute( 'is_main' ) )
+            if ( !is_object( $assignment ) )
+            {
+                continue;
+            }
+            if ( $mainAssignment === null || ( $assignment->attribute( 'is_main' ) && !$mainAssignment->attribute( 'is_main' ) ) )
             {
                 $mainAssignment = $assignment;
             }
         }
-        return $mainAssignment ? array( (int)$mainAssignment->attribute( 'parent_node' ) ) : array();
+        return $mainAssignment;
+    }
+
+    /**
+     * Returns whether the current user may create an object like this one under the parent of its main node
+     * assignment, for an object that was never published: 1 or 0, or null when the rule does not apply (a published
+     * object, or one without node assignment).
+     *
+     * The edit checks fall back to this rule, at every version of such an object.
+     *
+     * @param string|bool $language a language code, or false
+     * @return int|null
+     */
+    function draftCreateAccess( $language = false )
+    {
+        $mainAssignment = $this->draftMainNodeAssignment();
+        if ( !$mainAssignment )
+        {
+            return null;
+        }
+        $parentObj = $mainAssignment->attribute( 'parent_contentobject' );
+        if ( !$parentObj instanceof eZContentObject )
+        {
+            eZDebug::writeError( "Error retrieving parent object of main node for object id: " . $this->attribute( 'id' ), __METHOD__ );
+            return 0;
+        }
+        return $parentObj->checkAccess( 'create', $this->attribute( 'contentclass_id' ),
+                                        $parentObj->attribute( 'contentclass_id' ), false, $language ) ? 1 : 0;
     }
 
     /**
@@ -5164,23 +5233,7 @@ class eZContentObject extends eZPersistentObject
             {
                 // Check if we have 'create' access under the main parent of an object that was never published,
                 // whatever version it is at (a rejected first version is edited as version 2 and later)
-                $mainNode = !$this->attribute( 'status' ) ? eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) ) : array();
-                if ( isset( $mainNode[0] ) )
-                {
-                    $parentObj = $mainNode[0]->attribute( 'parent_contentobject' );
-                    if ( $parentObj instanceof eZContentObject )
-                    {
-                        $result = $parentObj->checkAccess( 'create', $this->attribute( 'contentclass_id' ),
-                                                           $parentObj->attribute( 'contentclass_id' ), false, $originalLanguage );
-                        return $result;
-                    }
-                    else
-                    {
-                        eZDebug::writeError( "Error retrieving parent object of main node for object id: " . $this->attribute( 'id' ), __METHOD__ );
-                    }
-                }
-
-                return 0;
+                return (int)$this->draftCreateAccess( $originalLanguage );
             }
 
             if ( $returnAccessList === false )
@@ -5491,6 +5544,10 @@ class eZContentObject extends eZPersistentObject
                                     foreach ( $parentNodes as $parentNode )
                                     {
                                         $parentNode = eZContentObjectTreeNode::fetch( $parentNode, false, false );
+                                        if ( !is_array( $parentNode ) )
+                                        {
+                                            continue;
+                                        }
                                         $path = $parentNode['path_string'];
 
                                         $subtreeArray = $limitationArray[$key];
@@ -5547,12 +5604,23 @@ class eZContentObject extends eZPersistentObject
                                     {
                                         $access = 'allowed';
                                     }
+                                    else if ( $functionName == 'edit' )
+                                    {
+                                        // As for Subtree: for edit, the location an object that was never published
+                                        // will be published under counts, so that someone whose role is assigned for
+                                        // that subtree (an approver) can edit it. Only for edit.
+                                        $parentNodes = $this->draftParentNodeIDArray();
+                                    }
                                 }
-                                else
+                                if ( $access != 'allowed' )
                                 {
                                     foreach ( $parentNodes as $parentNode )
                                     {
                                         $parentNode = eZContentObjectTreeNode::fetch( $parentNode, false, false );
+                                        if ( !is_array( $parentNode ) )
+                                        {
+                                            continue;
+                                        }
                                         $path = $parentNode['path_string'];
 
                                         $subtreeArray = $limitationArray[$key];
@@ -5609,26 +5677,9 @@ class eZContentObject extends eZPersistentObject
                 {
                     // Check if we have 'create' access under the main parent of an object that was never published,
                     // whatever version it is at (a rejected first version is edited as version 2 and later)
-                    $mainNode = !$this->attribute( 'status' ) ? eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) ) : array();
-                    if ( isset( $mainNode[0] ) )
+                    $result = $this->draftCreateAccess( $originalLanguage );
+                    if ( $result !== null )
                     {
-                        $parentObj = $mainNode[0]->attribute( 'parent_contentobject' );
-
-                        if ( $parentObj instanceof eZContentObject )
-                        {
-                            $result = $parentObj->checkAccess( 'create', $this->attribute( 'contentclass_id' ),
-                                                               $parentObj->attribute( 'contentclass_id' ), false, $originalLanguage );
-                        }
-                        else
-                        {
-                            eZDebug::writeError( "Error retrieving parent object of main node for object id: " . $this->attribute( 'id' ), __METHOD__ );
-                            $result = 0;
-                        }
-
-                        if ( $result )
-                        {
-                            $access = 'allowed';
-                        }
                         return $result;
                     }
                 }

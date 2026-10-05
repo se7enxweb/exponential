@@ -80,16 +80,9 @@ class Removeeditversion extends \Exponential\Runnable\ModuleView
             {
                 if ( !$object->attribute( 'can_edit' ) )
                 {
-                    // Check if it is a first created version of an object.
-                    // If so, then edit is allowed if we have an access to the 'create' function.
-                    if ( $object->attribute( 'current_version' ) == 1 && !$object->attribute( 'status' ) )
-                    {
-                        $mainNode = \eZNodeAssignment::fetchForObject( $object->attribute( 'id' ), 1 );
-                        $parentObj = $mainNode[0]->attribute( 'parent_contentobject' );
-                        $allowEdit = $parentObj->checkAccess( 'create', $object->attribute( 'contentclass_id' ), $parentObj->attribute( 'contentclass_id' ) );
-                    }
-                    else
-                        $allowEdit = false;
+                    // An object that was never published may be edited, at every version, by someone who may create
+                    // it under the parent of its main node assignment (no assignment or no parent: denied).
+                    $allowEdit = (bool)$object->draftCreateAccess();
 
                     if ( !$allowEdit )
                     {

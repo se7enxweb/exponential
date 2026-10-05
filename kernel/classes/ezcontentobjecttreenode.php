@@ -5077,22 +5077,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
         {
             if ( $functionName == 'edit' )
             {
-                // Check if we have 'create' access under the main parent
+                // Check if we have 'create' access under the main parent of an object that was never published,
+                // whatever version it is at (the same rule as eZContentObject::checkAccess())
                 $object = $currentNode->object();
-                if ( $object && $object->attribute( 'current_version' ) == 1 && !$object->attribute( 'status' ) )
+                if ( $object instanceof eZContentObject )
                 {
-                    $mainNode = eZNodeAssignment::fetchForObject( $object->attribute( 'id' ), $object->attribute( 'current_version' ) );
-                    $parentObj = $mainNode[0]->attribute( 'parent_contentobject' );
-                    if ( $parentObj instanceof eZContentObject )
-                    {
-                        $result = $parentObj->checkAccess( 'create', $object->attribute( 'contentclass_id' ),
-                                                           $parentObj->attribute( 'contentclass_id' ), false, $originalLanguage );
-                        return $result;
-                    }
-                    else
-                    {
-                        eZDebug::writeError( "Error retrieving parent object of main node for object id: " . $object->attribute( 'id' ), __METHOD__ );
-                    }
+                    return (int)$object->draftCreateAccess( $originalLanguage );
                 }
             }
 
