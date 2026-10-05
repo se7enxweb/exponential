@@ -7425,7 +7425,7 @@ fcb9e94c335879d6b23e442e16a5cd0a  design/admin/templates/mailpreferences/parts/p
 dcacf39d311d3f7d8fb055170b918d8c  design/admin4/templates/mailpreferences/parts/page_end.tpl
 437ebcb63bb4047517c8eccc45dd3d75  design/admin4/templates/mailpreferences/parts/page_start.tpl
 361790d3f650b4c0738465f29ae386ed  design/standard/templates/mailpreferences/admin/categories.tpl
-7c7274dd2c124e2de094702d4e30b11d  design/standard/templates/mailpreferences/admin/consent.tpl
+b0efa92c284f320fde8c30ffc98748f5  design/standard/templates/mailpreferences/admin/consent.tpl
 52fd59f9cc3159aa658345c81c328fe8  design/standard/templates/mailpreferences/admin/status.tpl
 d005d69e32fff23d01d7e082875bb829  design/standard/templates/mailpreferences/admin/suppression.tpl
 504c2d00745bc2cc651d56c35c72d9a0  design/standard/templates/mailpreferences/admin/user.tpl
@@ -7443,7 +7443,7 @@ b48dcffd72513797058dead1dfccb55b  design/standard/templates/mailpreferences/part
 a3d12a0387db7a98a365af8ea1a205f7  design/standard/templates/mailpreferences/parts/pager.tpl
 d028236b678cb15588c33e66b653dc9d  design/standard/templates/mailpreferences/parts/preferences.tpl
 0c0997339ebbbaa623161d51ecfc30c4  design/standard/templates/mailpreferences/parts/signup.tpl
-2f040a7bcf08016093c5ddcaad8cf6c4  design/standard/templates/mailpreferences/parts/style.tpl
+782890ab08bf1ffcf26f9c229e93aa25  design/standard/templates/mailpreferences/parts/style.tpl
 979f42f8763ea178f0405386bde3937d  design/standard/templates/mailpreferences/request.tpl
 8072006b49cba0cac63dbd1dd591b639  design/standard/templates/mailpreferences/settings.tpl
 e197ee9159b453a59cb41ac0decdbf83  design/standard/templates/mailpreferences/unsubscribe.tpl
