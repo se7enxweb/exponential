@@ -223,3 +223,88 @@ CREATE TABLE expbookmark_folder (
 );
 ALTER TABLE ONLY expbookmark_folder ADD CONSTRAINT expbookmark_folder_pkey PRIMARY KEY ( id );
 CREATE INDEX expbookmark_folder_user ON expbookmark_folder USING btree ( user_id, parent_id );
+
+-- E-mail preferences and consent.
+--
+-- New tables only; nothing existing changes. Mail without a category is sent as before, so the update can run
+-- before or after the code. The site secret of the links is generated on first use into
+-- settings/override/mailpreferences.ini.append.php.
+CREATE SEQUENCE expmail_category_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+CREATE TABLE expmail_category (
+  created integer DEFAULT 0 NOT NULL,
+  default_on integer DEFAULT 0 NOT NULL,
+  description text,
+  double_opt_in integer DEFAULT 0 NOT NULL,
+  essential integer DEFAULT 0 NOT NULL,
+  frequencies character varying(100) DEFAULT ''::character varying NOT NULL,
+  handler_class character varying(255) DEFAULT ''::character varying NOT NULL,
+  id integer DEFAULT nextval('expmail_category_id_seq'::text) NOT NULL,
+  identifier character varying(100) DEFAULT ''::character varying NOT NULL,
+  modified integer DEFAULT 0 NOT NULL,
+  name character varying(255) DEFAULT ''::character varying NOT NULL,
+  priority integer DEFAULT 0 NOT NULL
+);
+ALTER TABLE ONLY expmail_category ADD CONSTRAINT expmail_category_pkey PRIMARY KEY ( id );
+CREATE UNIQUE INDEX expmail_category_identifier ON expmail_category USING btree ( identifier );
+CREATE SEQUENCE expmail_consent_log_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+CREATE TABLE expmail_consent_log (
+  action character varying(30) DEFAULT ''::character varying NOT NULL,
+  actor_user_id integer DEFAULT 0 NOT NULL,
+  anonymised integer DEFAULT 0 NOT NULL,
+  category character varying(100) DEFAULT ''::character varying NOT NULL,
+  created integer DEFAULT 0 NOT NULL,
+  email character varying(255) DEFAULT ''::character varying NOT NULL,
+  id integer DEFAULT nextval('expmail_consent_log_id_seq'::text) NOT NULL,
+  ip character varying(64) DEFAULT ''::character varying NOT NULL,
+  new_value character varying(100) DEFAULT ''::character varying NOT NULL,
+  old_value character varying(100) DEFAULT ''::character varying NOT NULL,
+  recipient_key character varying(80) DEFAULT ''::character varying NOT NULL,
+  siteaccess character varying(100) DEFAULT ''::character varying NOT NULL,
+  source character varying(20) DEFAULT ''::character varying NOT NULL,
+  user_id integer DEFAULT 0 NOT NULL,
+  wording text
+);
+ALTER TABLE ONLY expmail_consent_log ADD CONSTRAINT expmail_consent_log_pkey PRIMARY KEY ( id );
+CREATE INDEX expmail_consent_log_created ON expmail_consent_log USING btree ( created );
+CREATE INDEX expmail_consent_log_recipient ON expmail_consent_log USING btree ( recipient_key, created );
+CREATE INDEX expmail_consent_log_user ON expmail_consent_log USING btree ( user_id );
+CREATE SEQUENCE expmail_pending_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+CREATE TABLE expmail_pending (
+  category character varying(100) DEFAULT ''::character varying NOT NULL,
+  created integer DEFAULT 0 NOT NULL,
+  data text,
+  expires integer DEFAULT 0 NOT NULL,
+  id integer DEFAULT nextval('expmail_pending_id_seq'::text) NOT NULL,
+  kind character varying(20) DEFAULT ''::character varying NOT NULL,
+  recipient_key character varying(80) DEFAULT ''::character varying NOT NULL,
+  user_id integer DEFAULT 0 NOT NULL
+);
+ALTER TABLE ONLY expmail_pending ADD CONSTRAINT expmail_pending_pkey PRIMARY KEY ( id );
+CREATE INDEX expmail_pending_expires ON expmail_pending USING btree ( expires );
+CREATE INDEX expmail_pending_recipient ON expmail_pending USING btree ( recipient_key, kind );
+CREATE SEQUENCE expmail_preference_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+CREATE TABLE expmail_preference (
+  category character varying(100) DEFAULT ''::character varying NOT NULL,
+  created integer DEFAULT 0 NOT NULL,
+  frequency character varying(20) DEFAULT ''::character varying NOT NULL,
+  id integer DEFAULT nextval('expmail_preference_id_seq'::text) NOT NULL,
+  modified integer DEFAULT 0 NOT NULL,
+  recipient_key character varying(80) DEFAULT ''::character varying NOT NULL,
+  state character varying(20) DEFAULT ''::character varying NOT NULL,
+  user_id integer DEFAULT 0 NOT NULL
+);
+ALTER TABLE ONLY expmail_preference ADD CONSTRAINT expmail_preference_pkey PRIMARY KEY ( id );
+CREATE INDEX expmail_preference_category ON expmail_preference USING btree ( category, state );
+CREATE UNIQUE INDEX expmail_preference_recipient ON expmail_preference USING btree ( recipient_key, category );
+CREATE INDEX expmail_preference_user ON expmail_preference USING btree ( user_id );
+CREATE SEQUENCE expmail_suppression_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+CREATE TABLE expmail_suppression (
+  created integer DEFAULT 0 NOT NULL,
+  created_by integer DEFAULT 0 NOT NULL,
+  email_hash character varying(64) DEFAULT ''::character varying NOT NULL,
+  id integer DEFAULT nextval('expmail_suppression_id_seq'::text) NOT NULL,
+  note text,
+  reason character varying(30) DEFAULT ''::character varying NOT NULL
+);
+ALTER TABLE ONLY expmail_suppression ADD CONSTRAINT expmail_suppression_pkey PRIMARY KEY ( id );
+CREATE UNIQUE INDEX expmail_suppression_hash ON expmail_suppression USING btree ( email_hash );

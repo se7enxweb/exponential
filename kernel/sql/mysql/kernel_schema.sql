@@ -1975,3 +1975,82 @@ CREATE TABLE expaudit_file (
 
 -- Full-text search: FULLTEXT on InnoDB (MySQL 5.6+, MariaDB 10.0.5+); without it the console searches with LIKE.
 ALTER TABLE expaudit_event ADD FULLTEXT INDEX expaudit_event_fts (search_text);
+
+-- E-mail preferences and consent (kernel/classes/mailpreferences): the categories made in the admin
+-- (expmail_category), each person's choices (expmail_preference; recipient_key is 'u:<user id>' or
+-- 'a:<address hash>'), the consent log (expmail_consent_log), the suppression list, stored as salted
+-- sha256 hashes only (expmail_suppression), and double opt-ins waiting for their confirmation (expmail_pending).
+CREATE TABLE expmail_category (
+  created int(11) NOT NULL default '0',
+  default_on int(11) NOT NULL default '0',
+  description longtext,
+  double_opt_in int(11) NOT NULL default '0',
+  essential int(11) NOT NULL default '0',
+  frequencies varchar(100) NOT NULL default '',
+  handler_class varchar(255) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  identifier varchar(100) NOT NULL default '',
+  modified int(11) NOT NULL default '0',
+  name varchar(255) NOT NULL default '',
+  priority int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  UNIQUE KEY expmail_category_identifier (identifier)
+) ENGINE=InnoDB;
+CREATE TABLE expmail_consent_log (
+  action varchar(30) NOT NULL default '',
+  actor_user_id int(11) NOT NULL default '0',
+  anonymised int(11) NOT NULL default '0',
+  category varchar(100) NOT NULL default '',
+  created int(11) NOT NULL default '0',
+  email varchar(255) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  ip varchar(64) NOT NULL default '',
+  new_value varchar(100) NOT NULL default '',
+  old_value varchar(100) NOT NULL default '',
+  recipient_key varchar(80) NOT NULL default '',
+  siteaccess varchar(100) NOT NULL default '',
+  source varchar(20) NOT NULL default '',
+  user_id int(11) NOT NULL default '0',
+  wording longtext,
+  PRIMARY KEY  (id),
+  KEY expmail_consent_log_created (created),
+  KEY expmail_consent_log_recipient (recipient_key, created),
+  KEY expmail_consent_log_user (user_id)
+) ENGINE=InnoDB;
+CREATE TABLE expmail_pending (
+  category varchar(100) NOT NULL default '',
+  created int(11) NOT NULL default '0',
+  data longtext,
+  expires int(11) NOT NULL default '0',
+  id int(11) NOT NULL auto_increment,
+  kind varchar(20) NOT NULL default '',
+  recipient_key varchar(80) NOT NULL default '',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  KEY expmail_pending_expires (expires),
+  KEY expmail_pending_recipient (recipient_key, kind)
+) ENGINE=InnoDB;
+CREATE TABLE expmail_preference (
+  category varchar(100) NOT NULL default '',
+  created int(11) NOT NULL default '0',
+  frequency varchar(20) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  modified int(11) NOT NULL default '0',
+  recipient_key varchar(80) NOT NULL default '',
+  state varchar(20) NOT NULL default '',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  KEY expmail_preference_category (category, state),
+  UNIQUE KEY expmail_preference_recipient (recipient_key, category),
+  KEY expmail_preference_user (user_id)
+) ENGINE=InnoDB;
+CREATE TABLE expmail_suppression (
+  created int(11) NOT NULL default '0',
+  created_by int(11) NOT NULL default '0',
+  email_hash varchar(64) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  note longtext,
+  reason varchar(30) NOT NULL default '',
+  PRIMARY KEY  (id),
+  UNIQUE KEY expmail_suppression_hash (email_hash)
+) ENGINE=InnoDB;

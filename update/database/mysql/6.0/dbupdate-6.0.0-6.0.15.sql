@@ -222,3 +222,83 @@ CREATE TABLE expbookmark_folder (
   PRIMARY KEY ( id ),
   KEY expbookmark_folder_user ( user_id, parent_id )
 ) ENGINE=InnoDB;
+
+-- E-mail preferences and consent.
+--
+-- New tables only; nothing existing changes. Mail without a category is sent as before, so the update can run
+-- before or after the code. The site secret of the links is generated on first use into
+-- settings/override/mailpreferences.ini.append.php.
+CREATE TABLE expmail_category (
+  created int(11) NOT NULL DEFAULT '0',
+  default_on int(11) NOT NULL DEFAULT '0',
+  description longtext,
+  double_opt_in int(11) NOT NULL DEFAULT '0',
+  essential int(11) NOT NULL DEFAULT '0',
+  frequencies varchar(100) NOT NULL DEFAULT '',
+  handler_class varchar(255) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  identifier varchar(100) NOT NULL DEFAULT '',
+  modified int(11) NOT NULL DEFAULT '0',
+  name varchar(255) NOT NULL DEFAULT '',
+  priority int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY expmail_category_identifier ( identifier )
+) ENGINE=InnoDB;
+CREATE TABLE expmail_consent_log (
+  action varchar(30) NOT NULL DEFAULT '',
+  actor_user_id int(11) NOT NULL DEFAULT '0',
+  anonymised int(11) NOT NULL DEFAULT '0',
+  category varchar(100) NOT NULL DEFAULT '',
+  created int(11) NOT NULL DEFAULT '0',
+  email varchar(255) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  ip varchar(64) NOT NULL DEFAULT '',
+  new_value varchar(100) NOT NULL DEFAULT '',
+  old_value varchar(100) NOT NULL DEFAULT '',
+  recipient_key varchar(80) NOT NULL DEFAULT '',
+  siteaccess varchar(100) NOT NULL DEFAULT '',
+  source varchar(20) NOT NULL DEFAULT '',
+  user_id int(11) NOT NULL DEFAULT '0',
+  wording longtext,
+  PRIMARY KEY ( id ),
+  KEY expmail_consent_log_created ( created ),
+  KEY expmail_consent_log_recipient ( recipient_key, created ),
+  KEY expmail_consent_log_user ( user_id )
+) ENGINE=InnoDB;
+CREATE TABLE expmail_pending (
+  category varchar(100) NOT NULL DEFAULT '',
+  created int(11) NOT NULL DEFAULT '0',
+  data longtext,
+  expires int(11) NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  kind varchar(20) NOT NULL DEFAULT '',
+  recipient_key varchar(80) NOT NULL DEFAULT '',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY expmail_pending_expires ( expires ),
+  KEY expmail_pending_recipient ( recipient_key, kind )
+) ENGINE=InnoDB;
+CREATE TABLE expmail_preference (
+  category varchar(100) NOT NULL DEFAULT '',
+  created int(11) NOT NULL DEFAULT '0',
+  frequency varchar(20) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  modified int(11) NOT NULL DEFAULT '0',
+  recipient_key varchar(80) NOT NULL DEFAULT '',
+  state varchar(20) NOT NULL DEFAULT '',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY expmail_preference_category ( category, state ),
+  UNIQUE KEY expmail_preference_recipient ( recipient_key, category ),
+  KEY expmail_preference_user ( user_id )
+) ENGINE=InnoDB;
+CREATE TABLE expmail_suppression (
+  created int(11) NOT NULL DEFAULT '0',
+  created_by int(11) NOT NULL DEFAULT '0',
+  email_hash varchar(64) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  note longtext,
+  reason varchar(30) NOT NULL DEFAULT '',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY expmail_suppression_hash ( email_hash )
+) ENGINE=InnoDB;

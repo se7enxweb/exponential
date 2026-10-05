@@ -80,3 +80,8 @@ SELECT setval('ezurlwildcard_id_seq', max(id)) , 'ezurlwildcard' as tablename FR
 -- Sequence preparation end
 -- command to generate sequence queries
 --  echo "select 'select setval(\'' || relname || '_s\',max(id)) from ' || relname || ';' as query from pg_class where relname in (  select trim(  trailing '_id_seq' from relname) from pg_class where relname like 'ez%\_id_seq' and  relname != 'ezcontentobject_tree_node_id_seq'  and relkind='S' );" | psql -q -t  sp
+SELECT setval('expmail_category_id_seq', max(id)) , 'expmail_category' as tablename FROM expmail_category;
+SELECT setval('expmail_consent_log_id_seq', max(id)) , 'expmail_consent_log' as tablename FROM expmail_consent_log;
+SELECT setval('expmail_pending_id_seq', max(id)) , 'expmail_pending' as tablename FROM expmail_pending;
+SELECT setval('expmail_preference_id_seq', max(id)) , 'expmail_preference' as tablename FROM expmail_preference;
+SELECT setval('expmail_suppression_id_seq', max(id)) , 'expmail_suppression' as tablename FROM expmail_suppression;

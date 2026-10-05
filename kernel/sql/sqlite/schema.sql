@@ -1326,3 +1326,77 @@ CREATE TABLE expaudit_file (
 -- so a search finds a part of a word as LIKE does). Without FTS5 or trigram in the SQLite build,
 -- leave the statement out: search uses LIKE.
 CREATE VIRTUAL TABLE expaudit_event_fts USING fts5(search_text, content='expaudit_event', content_rowid='rowid', tokenize='trigram');
+
+-- E-mail preferences and consent (kernel/classes/mailpreferences): the categories made in the admin
+-- (expmail_category), each person's choices (expmail_preference; recipient_key is 'u:<user id>' or
+-- 'a:<address hash>'), the consent log (expmail_consent_log), the suppression list, stored as salted
+-- sha256 hashes only (expmail_suppression), and double opt-ins waiting for their confirmation (expmail_pending).
+CREATE TABLE expmail_category (
+  created integer NOT NULL DEFAULT 0,
+  default_on integer NOT NULL DEFAULT 0,
+  description text,
+  double_opt_in integer NOT NULL DEFAULT 0,
+  essential integer NOT NULL DEFAULT 0,
+  frequencies varchar(100) NOT NULL DEFAULT '',
+  handler_class varchar(255) NOT NULL DEFAULT '',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  identifier varchar(100) NOT NULL DEFAULT '',
+  modified integer NOT NULL DEFAULT 0,
+  name varchar(255) NOT NULL DEFAULT '',
+  priority integer NOT NULL DEFAULT 0
+);
+CREATE UNIQUE INDEX expmail_category_identifier ON expmail_category ( identifier );
+CREATE TABLE expmail_consent_log (
+  action varchar(30) NOT NULL DEFAULT '',
+  actor_user_id integer NOT NULL DEFAULT 0,
+  anonymised integer NOT NULL DEFAULT 0,
+  category varchar(100) NOT NULL DEFAULT '',
+  created integer NOT NULL DEFAULT 0,
+  email varchar(255) NOT NULL DEFAULT '',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  ip varchar(64) NOT NULL DEFAULT '',
+  new_value varchar(100) NOT NULL DEFAULT '',
+  old_value varchar(100) NOT NULL DEFAULT '',
+  recipient_key varchar(80) NOT NULL DEFAULT '',
+  siteaccess varchar(100) NOT NULL DEFAULT '',
+  source varchar(20) NOT NULL DEFAULT '',
+  user_id integer NOT NULL DEFAULT 0,
+  wording text
+);
+CREATE INDEX expmail_consent_log_created ON expmail_consent_log ( created );
+CREATE INDEX expmail_consent_log_recipient ON expmail_consent_log ( recipient_key, created );
+CREATE INDEX expmail_consent_log_user ON expmail_consent_log ( user_id );
+CREATE TABLE expmail_pending (
+  category varchar(100) NOT NULL DEFAULT '',
+  created integer NOT NULL DEFAULT 0,
+  data text,
+  expires integer NOT NULL DEFAULT 0,
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  kind varchar(20) NOT NULL DEFAULT '',
+  recipient_key varchar(80) NOT NULL DEFAULT '',
+  user_id integer NOT NULL DEFAULT 0
+);
+CREATE INDEX expmail_pending_expires ON expmail_pending ( expires );
+CREATE INDEX expmail_pending_recipient ON expmail_pending ( recipient_key, kind );
+CREATE TABLE expmail_preference (
+  category varchar(100) NOT NULL DEFAULT '',
+  created integer NOT NULL DEFAULT 0,
+  frequency varchar(20) NOT NULL DEFAULT '',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  modified integer NOT NULL DEFAULT 0,
+  recipient_key varchar(80) NOT NULL DEFAULT '',
+  state varchar(20) NOT NULL DEFAULT '',
+  user_id integer NOT NULL DEFAULT 0
+);
+CREATE INDEX expmail_preference_category ON expmail_preference ( category, state );
+CREATE UNIQUE INDEX expmail_preference_recipient ON expmail_preference ( recipient_key, category );
+CREATE INDEX expmail_preference_user ON expmail_preference ( user_id );
+CREATE TABLE expmail_suppression (
+  created integer NOT NULL DEFAULT 0,
+  created_by integer NOT NULL DEFAULT 0,
+  email_hash varchar(64) NOT NULL DEFAULT '',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  note text,
+  reason varchar(30) NOT NULL DEFAULT ''
+);
+CREATE UNIQUE INDEX expmail_suppression_hash ON expmail_suppression ( email_hash );

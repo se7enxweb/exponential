@@ -77,3 +77,8 @@ SELECT setval('ezworkflow_process_id_seq',max(id)+1) FROM ezworkflow_process;
 SELECT setval('ezworkflow_id_seq',max(id)+1) FROM ezworkflow;
 SELECT setval('ezurlwildcard_id_seq',max(id)+1) FROM ezurlwildcard;
 SELECT setval('ezurlalias_ml_incr_id_seq',max(id)+1) FROM ezurlalias_ml_incr;
+SELECT setval('expmail_category_id_seq',max(id)+1) FROM expmail_category;
+SELECT setval('expmail_consent_log_id_seq',max(id)+1) FROM expmail_consent_log;
+SELECT setval('expmail_pending_id_seq',max(id)+1) FROM expmail_pending;
+SELECT setval('expmail_preference_id_seq',max(id)+1) FROM expmail_preference;
+SELECT setval('expmail_suppression_id_seq',max(id)+1) FROM expmail_suppression;
