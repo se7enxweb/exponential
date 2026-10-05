@@ -281,8 +281,8 @@ class expKickstarter
             'SiteAccess'             => array( 'SiteTypes' ),
             'SiteDetails'            => array( 'SiteAccess', 'DatabaseInit', 'LanguageOptions' ),
             'SiteAdmin'              => array( 'SiteTypes' ),
-            'Registration'           => array( 'Welcome', 'EmailSettings', 'SiteDetails' ),
-            'CreateSites'            => array( 'Welcome', 'EmailSettings', 'PackageLanguageOptions', 'SiteDetails', 'SiteAdmin' ),
+            'Registration'           => array( 'Welcome', 'SystemCheck', 'EmailSettings', 'SiteDetails' ),
+            'CreateSites'            => array( 'Welcome', 'SystemCheck', 'EmailSettings', 'PackageLanguageOptions', 'SiteDetails', 'SiteAdmin' ),
             'Final'                  => array( 'CreateSites' ),
         );
     }
