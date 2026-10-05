@@ -49,6 +49,7 @@ class eZTOCOperator
     function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace, $currentNamespace, &$operatorValue, $namedParameters, $placement )
     {
         $dom = $namedParameters['dom'];
+        $tocText = '';
         if ( $dom instanceof eZContentObjectAttribute )
         {
             $this->ObjectAttributeId = $dom->attribute( 'id' );
@@ -132,7 +133,9 @@ class eZTOCOperator
                     $headerAutoName .= $this->HeaderCounter[$i];
                     $i++;
                 }
-                $tocText .= '<a href="#eztoc' . $this->ObjectAttributeId . '_' . $headerAutoName . '">' . $child->textContent . '</a>';
+                // textContent is the decoded text of the header: "a &lt;b&gt;" is "a <b>" here and is escaped again
+                $tocText .= '<a href="#eztoc' . $this->ObjectAttributeId . '_' . $headerAutoName . '">' .
+                            htmlspecialchars( $child->textContent, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8' ) . '</a>';
             }
         }
 
