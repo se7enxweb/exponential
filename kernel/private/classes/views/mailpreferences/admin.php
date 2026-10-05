@@ -224,14 +224,7 @@ class Admin extends Page
             if ( !$canExport )
                 return $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
             $csv = "\xEF\xBB\xBF" . \expMailSuppression::exportCsv();
-            while ( ob_get_level() > 0 )
-                ob_end_clean();
-            header( 'Content-Type: text/csv; charset=utf-8' );
-            header( 'Content-Disposition: attachment; filename="suppression-list-' . gmdate( 'Y-m-d' ) . '.csv"' );
-            header( 'Content-Length: ' . strlen( $csv ) );
-            MailPreferencesPage::privateHeaders();
-            echo $csv;
-            \eZExecution::cleanExit();
+            MailPreferencesPage::sendResponse( $csv, 'text/csv; charset=utf-8', 200, 'suppression-list-' . gmdate( 'Y-m-d' ) . '.csv' );
         }
         if ( self::isPost() && $http->hasPostVariable( 'AddButton' ) )
         {
@@ -327,14 +320,7 @@ class Admin extends Page
             if ( !$canExport )
                 return $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
             $csv = "\xEF\xBB\xBF" . \expConsentLog::exportCsv( $sql );
-            while ( ob_get_level() > 0 )
-                ob_end_clean();
-            header( 'Content-Type: text/csv; charset=utf-8' );
-            header( 'Content-Disposition: attachment; filename="consent-log-' . gmdate( 'Y-m-d' ) . '.csv"' );
-            header( 'Content-Length: ' . strlen( $csv ) );
-            MailPreferencesPage::privateHeaders();
-            echo $csv;
-            \eZExecution::cleanExit();
+            MailPreferencesPage::sendResponse( $csv, 'text/csv; charset=utf-8', 200, 'consent-log-' . gmdate( 'Y-m-d' ) . '.csv' );
         }
 
         $offset = $this->offset();

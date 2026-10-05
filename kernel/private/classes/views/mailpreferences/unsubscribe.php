@@ -72,15 +72,8 @@ class Unsubscribe extends Page
             $result = \expMailPreferencesService::unsubscribe( $token, $context );
             $ok = $result['result'] === 'unsubscribed';
         }
-        while ( ob_get_level() > 0 )
-            ob_end_clean();
-        if ( !$ok )
-            header( $_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request' );
-        header( 'Content-Type: text/plain; charset=utf-8' );
-        MailPreferencesPage::privateHeaders();
-        echo $ok ? MailPreferencesPage::tr( 'You are unsubscribed.' ) : MailPreferencesPage::tr( 'This link does not work any more' );
-        echo "\n";
-        \eZExecution::cleanExit();
+        $text = $ok ? MailPreferencesPage::tr( 'You are unsubscribed.' ) : MailPreferencesPage::tr( 'This link does not work any more' );
+        MailPreferencesPage::sendResponse( $text . "\n", 'text/plain; charset=utf-8', $ok ? 200 : 400 );
     }
 }
 

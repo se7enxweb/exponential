@@ -43,7 +43,7 @@ class MailPreferencesPage
      * @param array|null $args
      * @return string
      */
-    public static function tr( $text, array $args = null )
+    public static function tr( $text, ?array $args = null )
     {
         return \ezpI18n::tr( self::CONTEXT, $text, null, $args );
     }
@@ -53,7 +53,7 @@ class MailPreferencesPage
      * @param array|null $args
      * @return string
      */
-    public static function trAdmin( $text, array $args = null )
+    public static function trAdmin( $text, ?array $args = null )
     {
         return \ezpI18n::tr( self::ADMIN_CONTEXT, $text, null, $args );
     }
@@ -447,14 +447,71 @@ class MailPreferencesPage
             $body = json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
             $type = 'application/json; charset=utf-8';
         }
-        while ( ob_get_level() > 0 )
-            ob_end_clean();
-        header( 'Content-Type: ' . $type );
-        header( 'Content-Disposition: attachment; filename="email-data-' . gmdate( 'Y-m-d' ) . '.' . $format . '"' );
-        header( 'Content-Length: ' . strlen( $body ) );
+        self::sendResponse( $body, $type, 200, 'email-data-' . gmdate( 'Y-m-d' ) . '.' . $format );
+    }
+
+    /**
+     * Answers the request with this body alone and ends it: the downloads (a person's data, the consent log, the
+     * suppression list) and the plain answer of the RFC 8058 one-click unsubscribe. Every such answer of the module
+     * goes through here, so it ends the same way on every web server.
+     *
+     * What was printed before is thrown away (discardOutput()). The headers are private (privateHeaders()).
+     * eZExecution::cleanExit() ends the request: under PHP-FPM it exits, under a persistent worker (Velocity) it
+     * throws, so a caller must never call this inside try { } catch ( Exception or Throwable ).
+     *
+     * @param string $body
+     * @param string $contentType e.g. 'text/plain; charset=utf-8'
+     * @param int $status the HTTP status, 200 or e.g. 400
+     * @param string|null $filename a download of this name (Content-Disposition: attachment), null: shown inline
+     */
+    public static function sendResponse( $body, $contentType, $status = 200, $filename = null )
+    {
+        $body = (string)$body;
+        $clean = self::discardOutput();
+        $status = (int)$status;
+        if ( $status !== 200 )
+        {
+            $reasons = array( 400 => 'Bad Request', 403 => 'Forbidden', 404 => 'Not Found', 405 => 'Method Not Allowed', 500 => 'Internal Server Error' );
+            $protocol = isset( $_SERVER['SERVER_PROTOCOL'] ) && preg_match( '#^HTTP/\d(\.\d)?$#', (string)$_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.1';
+            header( $protocol . ' ' . $status . ' ' . ( isset( $reasons[$status] ) ? $reasons[$status] : 'Error' ) );
+            http_response_code( $status );
+        }
+        header( 'Content-Type: ' . $contentType );
+        if ( $filename !== null )
+            header( 'Content-Disposition: attachment; filename="' . str_replace( array( '"', "\r", "\n" ), '', (string)$filename ) . '"' );
+        // the length is right only when nothing printed before is left in front of the body
+        if ( $clean )
+            header( 'Content-Length: ' . strlen( $body ) );
         self::privateHeaders();
         echo $body;
         \eZExecution::cleanExit();
+    }
+
+    /**
+     * Throws away the output printed so far, buffer by buffer, down to $floor.
+     *
+     * A buffer that cannot be removed (a persistent worker keeps one under the script for the whole process: Velocity's
+     * capture buffer) is emptied instead of removed. The loop stops when PHP refuses to end a buffer: a loop on
+     * ob_get_level() alone never ends there, and the request hangs until the server gives up (504).
+     *
+     * @param int $floor the buffer level to stop at (0: all of them; tests pass their own level)
+     * @return bool nothing printed before is left (the buffers above $floor are empty or gone)
+     */
+    public static function discardOutput( $floor = 0 )
+    {
+        $floor = max( 0, (int)$floor );
+        $guard = 0;
+        while ( ob_get_level() > $floor && $guard++ < 64 )
+        {
+            if ( !@ob_end_clean() )
+                break;
+        }
+        if ( ob_get_level() > $floor )
+        {
+            @ob_clean();
+            return (int)ob_get_length() === 0;
+        }
+        return true;
     }
 
     /**
