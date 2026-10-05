@@ -6649,7 +6649,7 @@ b0db8af6eacbffb2eb9a40225875bf19  tests/tests/extension/cjw_newsletter/cjwNewsle
 be09468ed70f896c4f843733d36bf92e  tests/tests/extension/cjw_newsletter/cjwNewsletterCsvTest.php
 18a0ff05c19cac2664f619f73a25f6ec  tests/tests/extension/cjw_newsletter/cjwNewsletterDebugTest.php
 4211bed9f3d2aca52be424b5ffa399d1  tests/tests/extension/cjw_newsletter/cjwNewsletterEditionTest.php
-d3f3cd0ab1d1def530668d2ad541210a  tests/tests/extension/cjw_newsletter/cjwNewsletterEditorialTest.php
+7ec1538711a5e5b493452eabd353c66e  tests/tests/extension/cjw_newsletter/cjwNewsletterEditorialTest.php
 b0c9009b1ce353ea8872d5cf447f36b4  tests/tests/extension/cjw_newsletter/cjwNewsletterFilterTest.php
 dcf64fdf015e1204e627b0b35b0575ea  tests/tests/extension/cjw_newsletter/cjwNewsletterFlowTest.php
 1878798e3e5bd0bf1b5bc40db0cc9361  tests/tests/extension/cjw_newsletter/cjwNewsletterGroundworkTest.php
