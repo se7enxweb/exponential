@@ -102,6 +102,13 @@ class Ezpgenerateautoloads extends \Exponential\Runnable\Command
         $displayProgressOption->shorthelp = "If progress output should be shown on the command-line.";
         $params->registerOption( $displayProgressOption );
 
+        // The standard option of the other scripts, accepted so the same command line works for all of them; this
+        // script has no root check of its own
+        $allowRootOption = new \ezcConsoleOption( '', 'allow-root-user', \ezcConsoleInput::TYPE_NONE );
+        $allowRootOption->mandatory = false;
+        $allowRootOption->shorthelp = "Accepted for compatibility with the other scripts; has no effect.";
+        $params->registerOption( $allowRootOption );
+
         // Add an argument for which extension to search
         $params->argumentDefinition = new \ezcConsoleArguments();
 
@@ -123,7 +130,8 @@ class Ezpgenerateautoloads extends \Exponential\Runnable\Command
             echo $params->getHelpText( 'Autoload file generator.' ) . "\n";
 
             echo "\n";
-            exit();
+            // an option it does not know means nothing was generated: say so with the exit status
+            exit( 1 );
         }
 
         if ( $helpOption->value === true )
