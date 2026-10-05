@@ -862,6 +862,7 @@ return array(
       'eZTranslatorManager'                                          => 'lib/ezi18n/classes/eztranslatormanager.php',
       'eZTreeMenuOperator'                                           => 'kernel/common/eztreemenuoperator.php',
       'eZTrigger'                                                    => 'kernel/classes/eztrigger.php',
+      'eZTrustedProxy'                                               => 'lib/ezutils/classes/eztrustedproxy.php',
       'eZURI'                                                        => 'lib/ezutils/classes/ezuri.php',
       'eZURL'                                                        => 'kernel/classes/datatypes/ezurl/ezurl.php',
       'eZURLAliasFilter'                                             => 'kernel/classes/ezurlaliasfilter.php',
