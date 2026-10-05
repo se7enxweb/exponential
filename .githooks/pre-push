@@ -1,0 +1,14 @@
+#!/bin/sh
+# Runs PHPStan before a push; only findings that are not in phpstan-baseline.neon
+# fail. Needs the development tools (make devtools); without them it only prints a hint.
+# Skip in an emergency with: git push --no-verify
+
+cd "$(git rev-parse --show-toplevel)" || exit 1
+if [ ! -x .devtools/vendor/bin/phpstan ]; then
+    echo "pre-push: PHPStan skipped, the development tools are not installed (run: make devtools)"
+    exit 0
+fi
+if ! .devtools/vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=4G --no-progress; then
+    echo "pre-push: push refused, PHPStan found new problems. Fix them, or skip with: git push --no-verify"
+    exit 1
+fi
