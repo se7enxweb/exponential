@@ -47466,5 +47466,21 @@ You will need to change the class of the node by using the swap functionality.</
         <source>System alerts for the administrators of the site.</source>
         <translation>System alerts for the administrators of the site.</translation>
     </message>
+    <message>
+        <source>Newsletter statistics</source>
+        <translation>Newsletter statistics</translation>
+    </message>
+    <message>
+        <source>Count which newsletters I open and which links I click, so the newsletters get better</source>
+        <translation>Count which newsletters I open and which links I click, so the newsletters get better</translation>
+    </message>
+    <message>
+        <source>Newsletters by SMS</source>
+        <translation>Newsletters by SMS</translation>
+    </message>
+    <message>
+        <source>Short newsletters to my mobile phone</source>
+        <translation>Short newsletters to my mobile phone</translation>
+    </message>
 </context>
 </TS>

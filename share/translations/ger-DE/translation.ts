@@ -54501,5 +54501,21 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>System alerts for the administrators of the site.</source>
         <translation>Systemwarnungen für die Administratoren der Website.</translation>
     </message>
+    <message>
+        <source>Newsletter statistics</source>
+        <translation>Newsletter-Statistik</translation>
+    </message>
+    <message>
+        <source>Count which newsletters I open and which links I click, so the newsletters get better</source>
+        <translation>Zählen, welche Newsletter ich öffne und welche Links ich anklicke, damit die Newsletter besser werden</translation>
+    </message>
+    <message>
+        <source>Newsletters by SMS</source>
+        <translation>Newsletter per SMS</translation>
+    </message>
+    <message>
+        <source>Short newsletters to my mobile phone</source>
+        <translation>Kurze Newsletter auf mein Mobiltelefon</translation>
+    </message>
 </context>
 </TS>
