@@ -116,6 +116,35 @@ class ezpRestRoutesTest extends PHPUnit\Framework\TestCase
         $this->assertNotNull( $route->matches( self::request( '/api/items' ) ) );
     }
 
+    /**
+     * A versioned route answers only for its API version, which the prefix filter reads off the URI.
+     */
+    public function testVersionedRouteMatchesOnlyItsVersion()
+    {
+        $route = new ezpRestVersionedRoute( new ezpMvcRailsRoute( '/content/node/:nodeId', 'T1Controller', 'view' ), 2 );
+        $request = self::request( '/api/ezp/v2/content/node/5' );
+        $filter = new ezpRestDefaultRegexpPrefixFilter( $request, '/api' );
+        $filter->filter();
+        $filter->filterRequestUri();
+        $route->prefix( '/api' );
+        try
+        {
+            $this->assertNotNull( $route->matches( $request ) );
+            $this->assertSame( '/api/ezp/v2/content/node/9', $route->generateUrl( array( 'nodeId' => 9 ) ) );
+
+            $other = self::request( '/api/ezp/v1/content/node/5' );
+            $filter = new ezpRestDefaultRegexpPrefixFilter( $other, '/api' );
+            $filter->filter();
+            $filter->filterRequestUri();
+            $this->assertNull( $route->matches( $other ) );
+        }
+        finally
+        {
+            $reset = new ezpRestDefaultRegexpPrefixFilter( self::request( '/' ), '/api' );
+            $reset->filter();
+        }
+    }
+
     public function testRegexpRouteRefusesAMethodItDoesNotMap()
     {
         $route = new ezpMvcRegexpRoute( '@^/items$@', 'T1Controller', 'list' );
