@@ -15,19 +15,23 @@ for file in $(git diff --cached --name-only --diff-filter=ACMR -- '*.php'); do
     fi
 done
 
-# PHP 8.1 is the oldest supported version: lint with it too when it is installed
-# (php8.1 on the PATH, or EXP_PHP81=/path/to/php8.1); CI always does
-php81=${EXP_PHP81:-$(command -v php8.1 2>/dev/null)}
-if [ -n "$php81" ]; then
+# PHP 8.0 is the oldest supported version: lint with it too when it is installed
+# (EXP_PHP80=/path/to/php, php8.0 or php80 on the PATH, or Plesk's
+# /opt/plesk/php/8.0/bin/php); CI always does
+php80=${EXP_PHP80:-$(command -v php8.0 2>/dev/null || command -v php80 2>/dev/null)}
+if [ -z "$php80" ] && [ -x /opt/plesk/php/8.0/bin/php ]; then
+    php80=/opt/plesk/php/8.0/bin/php
+fi
+if [ -n "$php80" ]; then
     for file in $(git diff --cached --name-only --diff-filter=ACMR -- '*.php'); do
-        if ! git show ":$file" | "$php81" -l >/dev/null 2>&1; then
-            echo "pre-commit: $file is not valid PHP 8.1"
-            git show ":$file" | "$php81" -l 2>&1 | grep -v '^No syntax errors' | sed 's/^/    /'
+        if ! git show ":$file" | "$php80" -l >/dev/null 2>&1; then
+            echo "pre-commit: $file is not valid PHP 8.0"
+            git show ":$file" | "$php80" -l 2>&1 | grep -v '^No syntax errors' | sed 's/^/    /'
             status=1
         fi
     done
 elif [ -n "$(git diff --cached --name-only --diff-filter=ACMR -- '*.php')" ]; then
-    echo "pre-commit: no PHP 8.1 found for the 8.1 syntax check (set EXP_PHP81); CI checks it"
+    echo "pre-commit: no PHP 8.0 found for the 8.0 syntax check (set EXP_PHP80); CI checks it"
 fi
 
 php bin/php/checkmanifest.php --staged || status=1

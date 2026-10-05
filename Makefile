@@ -7,7 +7,7 @@
 BASE ?= origin/main
 DEVTOOLS = .devtools/vendor/bin
 
-.PHONY: devtools hooks check lint lint81 manifest-check manifest-fix phpcs phpstan phpstan-baseline
+.PHONY: devtools hooks check lint lint80 lint80-all manifest-check manifest-fix phpcs phpstan phpstan-baseline
 
 # PHP_CodeSniffer and PHPStan from composer.dev.json, never into vendor/
 devtools:
@@ -26,12 +26,19 @@ lint:
 		php -l "$$file" >/dev/null || exit 1; \
 	done; echo "lint: no syntax errors"
 
-# PHP 8.1 syntax of the PHP files changed since $(BASE); PHP81 names the binary
-PHP81 ?= $(or $(EXP_PHP81),php8.1)
-lint81:
+# PHP 8.0 syntax of the PHP files changed since $(BASE); PHP80 names the binary
+# (PHP 8.0 is the oldest supported version, doc/bc/6.0/php-8.0-support.md)
+PHP80 ?= $(or $(EXP_PHP80),$(shell command -v php8.0 2>/dev/null || command -v php80 2>/dev/null || ls /opt/plesk/php/8.0/bin/php 2>/dev/null),php8.0)
+lint80:
 	@for file in $$(git diff --name-only --diff-filter=ACMR $$(git merge-base $(BASE) HEAD) -- '*.php'); do \
-		$(PHP81) -l "$$file" >/dev/null || exit 1; \
-	done; echo "lint81: no PHP 8.1 syntax errors"
+		$(PHP80) -l "$$file" >/dev/null || exit 1; \
+	done; echo "lint80: no PHP 8.0 syntax errors"
+
+# PHP 8.0 syntax of every PHP file in git, one php -l per file (several files per
+# call only work from PHP 8.3 on), 8 at a time; what CI runs
+lint80-all:
+	@git ls-files -z '*.php' | xargs -0 -n 1 -P 8 $(PHP80) -l 2>&1 | grep -v '^No syntax errors' | \
+		{ if grep .; then exit 1; else echo "lint80-all: every PHP file is valid PHP 8.0"; fi; }
 
 # share/filelist.md5 against the files
 manifest-check:

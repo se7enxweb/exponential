@@ -1,11 +1,11 @@
 d2b5e30a47622d50895c8df1e65cadd7  .autoloadignore
 d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 e4e94613754abb37886f57b4c7fd7914  .githooks/commit-msg
-e30e36c2ae126310b353a45d7f6dd49c  .githooks/pre-commit
+6ee6db0e7581617cb48d77de062f8151  .githooks/pre-commit
 e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
-26637bf1b89fe3b8acd7153af8c24798  .github/workflows/phpunit.yml
-21413b41c2e57d2df1c368769d268dcd  .github/workflows/quality.yml
+3a51b99b6d1c552cdd382ed7ab577fe6  .github/workflows/phpunit.yml
+20207c9daf723a3cbd936b7d6507bc37  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 ccc8e89e611f0b022b2399eb9b74c1a8  .htaccess_root
 0f412f7d6d70465f93b7c8a6058a39db  .htaccess_root_static
@@ -14,7 +14,7 @@ a184ff1f4cd1fd4ec3a82e7744fd7e62  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
-75e66a5a923fde2db784a383d55bc1ed  Makefile
+1bc8d08bda60c234dded6cb03b90dfba  Makefile
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
@@ -165,8 +165,8 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-ba1957e08c0fb9c39a5f285ff6bbd295  composer.dev.json
-b232402202a4cbe14437ba7419db887c  composer.dev.lock
+b974dde24700fd18ba9d30714509893a  composer.dev.json
+7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
 984ec464fafc27a88a62cfc02d99d41e  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
@@ -6074,7 +6074,7 @@ eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 7dabbf7f2463e9e1009df77ab6598adc  lib/phpcompat.php
 84e594f01e8f4f64e610fdb8eae51b19  lib/version.php
-c4da43e9ca0066ed8f3d39b5d4c6193d  phpcs.xml.dist
+72ac1e093ee82d6fbf003d4432240000  phpcs.xml.dist
 c88f3f90d20b8debb746a3716b82a87c  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
 d21abfe1b17647648b25567365352be7  phpunit.xml
@@ -6623,6 +6623,7 @@ bbf7725461035c86849d38862a196496  support/ezlupdate-qt4.5/shared/translatortools
 19153bd5a6ddfda719b168850835c20c  sw.js
 036c73d2f6f1eba67ead2d00390aa531  templates/classcreatelist.ctpl
 100b0d65f9bfd7230c8bcf94db8cb4fa  templates/classlistfrompolicy.ctpl
+76e8c2aac7fc67c5b82a93007420ada0  tests/bin/bootsmoke.php
 a08f3fc912ea0e876de1c21aabc43b5f  tests/bin/ezp_lint_patched.php
 f8e49cec6be93c26e7623ddc0a87ef79  tests/bin/ezptestrunner.php
 88c4286f77c95330396db2199b7e9253  tests/bin/ezptestrunner_all_tests.php
