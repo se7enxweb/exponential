@@ -4539,7 +4539,7 @@ c0df4a0b1ea79fb60de5b74703365258  kernel/classes/audit/index/expauditindexschema
 b7f83b8d25371a031da77594ab2b046c  kernel/classes/audit/index/expauditindexsettings.php
 2e453472241a820274a981d8e2e02e3d  kernel/classes/audit/index/expauditquery.php
 c8d50fea8a7a4a50364c9ef8272a20b2  kernel/classes/audit/sinks/expauditmailrecipients.php
-28f7f255b818b8ca058ef02cd91a9452  kernel/classes/audit/sinks/expauditmailsink.php
+f093a43c45cbcd3d23562371733910f1  kernel/classes/audit/sinks/expauditmailsink.php
 e2c15d2e737dee9378e3ce28fd5aed05  kernel/classes/audit/sinks/expauditsinkbase.php
 b6faf2d3e94d112d264407f513b30bf5  kernel/classes/audit/sinks/expauditsinkregistry.php
 17827f6281b3340036406aa46ed3b4c9  kernel/classes/audit/sinks/expauditspool.php
