@@ -55,8 +55,9 @@ is the same command. Run the console from the installation root. More: [The cons
 6. **Put the configuration in place**: an existing `kickstart.ini` is moved to
    `var/log/kickstart.ini.before-exp-install-<YYYYmmdd-HHMMSS>`, and the generated one is written as `kickstart.ini`
    with mode `0600`.
-7. **Run the kickstarter** (`expKickstarter`) with `--force`, or with `--dry-run`. It switches maintenance mode on,
-   runs every step from `Welcome` to `Final`, and switches maintenance off again ([chapter 6](06-kickstarter.md)).
+7. **Run the kickstarter** (`expKickstarter`) with `--force`, or with `--dry-run`. It switches maintenance mode on
+   (a window that is already open is kept as it is and left open), runs every step from `Welcome` to `Final`, and
+   switches its own maintenance off again ([chapter 6](06-kickstarter.md)).
 8. **Clean up, whatever happened**: the configuration is saved as `var/log/exp-install-<YYYYmmdd-HHMMSS>.ini` with the
    passwords masked, the generated `kickstart.ini` is deleted and the earlier one is put back.
 9. **Print the summary**, when the run rewrote `settings/override/site.ini.append.php` with a `[DatabaseSettings]`
@@ -94,11 +95,17 @@ is the same command. Run the console from the installation root. More: [The cons
 | `--host=<host>` | none | with `host`: the public host name |
 | `--admin-host=<host>` | none | with `host`: the admin host name. `--access=host` needs both ("--access=host needs both --host and --admin-host") |
 | `--port=<port>` | `8080` | with `port`: the public port |
-| `--admin-port=<port>` | `8081` | with `port`: the admin port |
+| `--admin-port=<port>` | `8081` | with `port`: the admin port; must differ from `--port` |
+| `--editor-access=<name>` | `editor` (`<--site-access>_editor` when that is taken) | with `url`: the path of the editor siteaccess; same characters as `--site-access` |
+| `--editor-host=<host>` | `edit.<--host without www.>` | with `host`: the editor host name |
+| `--editor-port=<port>` | `--port` + 2 (`8082`) | with `port`: the editor port, digits only |
+
+The editor's value must differ from the public and admin values of the access type ("--editor-port must differ from
+--port and --admin-port", and so on); the defaults always do.
 
 As with every install method, the siteaccess directories are `settings/siteaccess/site`, `admin` and `editor`;
-`--site-access` and `--admin-access` choose the URL paths that lead to them. The **editor** siteaccess has no option
-of its own; see [7.8](#78-the-editor-siteaccess-with-expinstall).
+`--site-access`, `--admin-access` and `--editor-access` choose the URL paths that lead to them; see
+[7.8](#78-the-editor-siteaccess-with-expinstall).
 
 ### Administrator (login `admin`)
 
@@ -117,7 +124,7 @@ of its own; see [7.8](#78-the-editor-siteaccess-with-expinstall).
 | `--force` | install over an existing installation: its database (with `--db-action=remove`) and its settings are replaced |
 | `--dry-run` | check the configuration and the packages, install nothing ([7.6](#76-dry-run-and-print)) |
 | `--print` | show the configuration that would be used, passwords masked, and stop |
-| `--allow-root-user` | accepted and handed to the installation run. In this version the run's own option parser does not declare it and stops with "invalid option"; run the command as the web server's user instead |
+| `--allow-root-user` | accepted and handed to the installation run, which accepts it too. Running as root still leaves root-owned files behind; prefer the web server's user |
 | `--help` | all options |
 
 Values may not contain line breaks ("A value for *section*/*key* contains a line break"); use `\n` inside
@@ -180,6 +187,7 @@ Database=exponential.db
 DatabaseAction=remove
 OrganisationName=
 OrganisationAddress=
+EditorAccess=editor
 
 [site_admin]
 Continue=true
@@ -233,7 +241,8 @@ the password, the summary reads the replacement from that file.
 | `--dry-run` | yes | yes | yes, into a temporary repository | `var/log/setup.log`, `var/log/exp-install-<date>.ini`; no database, no settings, no maintenance mode |
 
 `--dry-run` runs the kickstarter's dry run ([chapter 6](06-kickstarter.md#67-dry-runs)): `DatabaseChoice` to
-`Registration` with the generated configuration, stopping before `CreateSites`. It also runs on a directory that
+`SiteDetails` with the generated configuration, stopping before `SiteAdmin`, so no password file is written and no
+mail is sent. It also runs on a directory that
 already holds an installation, without `--force`, which makes it the way to test a configuration before a reinstall.
 The exit status is 0 when the check passed.
 
@@ -248,20 +257,24 @@ On "This directory already holds an installation (settings/override/site.ini.app
 its database and settings. Re-run with --force to do that, or with --dry-run to check the configuration only." nothing
 has been touched.
 
-When the installation run fails, maintenance mode stays on: see [chapter 6](06-kickstarter.md#68-maintenance-mode-during-a-run)
+When the installation run fails, maintenance mode stays on (and a window that was open before the run stays open in
+any case): see [chapter 6](06-kickstarter.md#68-maintenance-mode-during-a-run)
 and `php bin/php/maintenance.php off`. The summary is printed only after a successful installation.
 
 ## 7.8 The editor siteaccess with exp:install
 
-`exp:install` has no options for the editor siteaccess; the installation step uses its defaults:
+Every installation gets the editor siteaccess. Without an `--editor-*` option its value is derived from the public
+one, and never equals the public or the admin value:
 
-| `--access` | Editor siteaccess reached at |
-|---|---|
-| `url` | the path `/editor` |
-| `host` | the host `edit.localhost` (the command line has no host of its own). Change `[SiteAccessSettings] HostMatchMapItems[]` in `settings/override/site.ini.append.php` to your editor host after the install, or install with the kickstarter and `EditorAccessHostname` |
-| `port` | the first default port, `8080`, which is also the public port: the editor then takes over the public port. Use the kickstarter with `AccessPort`, `AdminAccessPort` and `EditorAccessPort` for port matching, or correct `[PortAccessSettings]` in `settings/override/site.ini.append.php` afterwards |
+| `--access` | Editor siteaccess reached at | Option |
+|---|---|---|
+| `url` | the path `/editor` | `--editor-access` |
+| `host` | `edit.<--host without www.>`, e.g. `edit.example.com` for `--host=www.example.com` | `--editor-host` |
+| `port` | `--port` + 2, e.g. `8082` for `8080` (the next free port when that is the admin's) | `--editor-port` |
 
-For URL matching, the most common case, nothing needs to be done.
+`exp:install` writes the value into the generated `kickstart.ini` (`EditorAccess`, `EditorAccessHostname` or
+`EditorAccessPort`), and the summary shows the editor's address under `Editor`. For URL matching, the most common
+case, nothing needs to be done.
 
 ## 7.9 Examples by database
 
@@ -340,7 +353,7 @@ EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --db=oracle --db-n
 php bin/php/console exp:install --access=host --host=www.example.com --admin-host=admin.example.com \
     --url=https://www.example.com
 
-# see 7.8 before using port matching
+# site on 8080, admin on 8081, editor on 8082 (7.8)
 php bin/php/console exp:install --access=port --port=8080 --admin-port=8081
 ```
 
@@ -378,13 +391,14 @@ and ends, after the kickstarter's own output, with:
   Installed:      2026-10-05 10:17:31 CEST (151s)
   Site:           http://localhost/site/
   Admin login:    http://localhost/admin/user/login
+  Editor:         http://localhost/editor/
   Username:       admin
   Password:       <the password>
   Password note:  generated: no --password given; also in var/log/initial-admin-password (owner only), change it and delete that file
   E-mail:         nospam@exponential.earth
   Database:       sqlite exponential.db
   Package:        sevenx_multisite, eng-US
-  Siteaccesses:   site, admin (by url)
+  Siteaccesses:   site, admin, editor (by url)
   Configuration:  var/log/exp-install-20261005-101500.ini (passwords masked)
 ================================================================
   Copy and paste:
