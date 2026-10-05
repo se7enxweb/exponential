@@ -284,6 +284,135 @@ class eZContentObjectTest extends ezpDatabaseTestCase
     }
 
     /**
+     * Creates a user with a role of the given policies and logs it in; returns the user that was logged in before.
+     *
+     * @param array $policies array( array( module, function, limitations ), ... )
+     * @return eZUser
+     */
+    private function logInUserWithPolicies( $name, array $policies )
+    {
+        // Outside a web request nobody sets the module paths, and the publish operation needs them
+        eZModule::setGlobalPathList( eZModule::activeModuleRepositories() );
+        $login = strtolower( $name ) . '-' . bin2hex( random_bytes( 3 ) );
+        $userObject = eZContentFunctions::createAndPublishObject( array(
+            'class_identifier' => 'user',
+            'parent_node_id'   => 12,
+            'attributes'       => array(
+                'first_name'   => 'Draft access',
+                'last_name'    => $name,
+                'user_account' => $login . '|' . $login . '@example.invalid|' .
+                                  eZUser::createHash( $login, bin2hex( random_bytes( 12 ) ), eZUser::site(), eZUser::hashType() ) . '|' .
+                                  eZUser::passwordHashTypeName( eZUser::hashType() ),
+            ),
+        ) );
+        $userID = (int)$userObject->attribute( 'id' );
+
+        $role = eZRole::create( "Draft access $login" );
+        $role->store();
+        foreach ( $policies as $policy )
+        {
+            $role->appendPolicy( $policy[0], $policy[1], isset( $policy[2] ) ? $policy[2] : array() );
+        }
+        $role->assignToUser( $userID );
+        eZRole::expireCache();
+
+        $previousUser = eZUser::currentUser();
+        eZUser::setCurrentlyLoggedInUser( eZUser::fetch( $userID ), $userID, eZUser::NO_SESSION_REGENERATE );
+        return $previousUser;
+    }
+
+    /**
+     * Returns a new article that was never published, owned by the admin, with its location under node 2.
+     */
+    private function createDraftArticle()
+    {
+        $object = eZContentClass::fetchByIdentifier( 'article' )->instantiate( 14 );
+        $object->createNodeAssignment( 2, true );
+        return $object;
+    }
+
+    /**
+     * Someone with an edit policy limited to a subtree may edit an object that was never published when it will be
+     * published inside that subtree (an approver who rejects and edits). Such an object has no parent nodes yet, and the
+     * Subtree limitation used to allow only its owner.
+     */
+    public function testSubtreeEditOfAnUnpublishedObjectFollowsItsLocation()
+    {
+        $object = $this->createDraftArticle();
+        $previousUser = $this->logInUserWithPolicies( 'Approver', array( array( 'content', 'edit', array( 'Subtree' => array( '/1/2/' ) ) ) ) );
+
+        $access = $object->checkAccess( 'edit' );
+
+        eZUser::setCurrentlyLoggedInUser( $previousUser, $previousUser->attribute( 'contentobject_id' ), eZUser::NO_SESSION_REGENERATE );
+        $this->assertEquals( 1, $access );
+    }
+
+    /**
+     * The location an object that was never published will be published under counts for edit only: a read policy for
+     * that subtree does not open someone else's draft.
+     */
+    public function testSubtreeReadOfAnUnpublishedObjectStaysDenied()
+    {
+        $object = $this->createDraftArticle();
+        $previousUser = $this->logInUserWithPolicies( 'Reader', array( array( 'content', 'read', array( 'Subtree' => array( '/1/2/' ) ) ) ) );
+
+        $access = $object->checkAccess( 'read' );
+
+        eZUser::setCurrentlyLoggedInUser( $previousUser, $previousUser->attribute( 'contentobject_id' ), eZUser::NO_SESSION_REGENERATE );
+        $this->assertEquals( 0, $access );
+    }
+
+    /**
+     * An edit policy for another subtree still gives no access to an object that will be published elsewhere.
+     */
+    public function testSubtreeEditOfAnUnpublishedObjectElsewhereIsDenied()
+    {
+        $object = $this->createDraftArticle();
+        $previousUser = $this->logInUserWithPolicies( 'Approver', array( array( 'content', 'edit', array( 'Subtree' => array( '/1/5/' ) ) ) ) );
+
+        $access = $object->checkAccess( 'edit' );
+
+        eZUser::setCurrentlyLoggedInUser( $previousUser, $previousUser->attribute( 'contentobject_id' ), eZUser::NO_SESSION_REGENERATE );
+        $this->assertEquals( 0, $access );
+    }
+
+    /**
+     * Someone who may create the object under its parent may edit it while it was never published, also at version 2
+     * and later (a rejected first version is edited as a new version); the rule used to apply to version 1 only.
+     */
+    public function testCreateAccessAllowsEditOfAnUnpublishedObjectAtALaterVersion()
+    {
+        $object = $this->createDraftArticle();
+        $version = $object->createNewVersion( 1 );
+        $version->assignToNode( 2, 1 );
+        $object->setAttribute( 'current_version', $version->attribute( 'version' ) );
+        $object->store();
+        $articleClassID = eZContentClass::classIDByIdentifier( 'article' );
+        $previousUser = $this->logInUserWithPolicies( 'Author', array( array( 'content', 'create', array( 'Class' => array( $articleClassID ) ) ) ) );
+
+        $access = $object->checkAccess( 'edit' );
+
+        eZUser::setCurrentlyLoggedInUser( $previousUser, $previousUser->attribute( 'contentobject_id' ), eZUser::NO_SESSION_REGENERATE );
+        $this->assertEquals( 1, $access );
+    }
+
+    /**
+     * Without a node assignment the create rule has no parent to check and denies, instead of failing on the missing
+     * assignment.
+     */
+    public function testEditOfAnUnpublishedObjectWithoutLocationIsDenied()
+    {
+        $object = eZContentClass::fetchByIdentifier( 'article' )->instantiate( 14 );
+        $articleClassID = eZContentClass::classIDByIdentifier( 'article' );
+        $previousUser = $this->logInUserWithPolicies( 'Author', array( array( 'content', 'create', array( 'Class' => array( $articleClassID ) ) ) ) );
+
+        $access = $object->checkAccess( 'edit' );
+
+        eZUser::setCurrentlyLoggedInUser( $previousUser, $previousUser->attribute( 'contentobject_id' ), eZUser::NO_SESSION_REGENERATE );
+        $this->assertEquals( 0, $access );
+    }
+
+    /**
      * A new version of an object that was never published keeps the location of the version it is copied from.
      *
      * A new object gets a node assignment without remote_id and with op_code CREATE. createNewVersion() rebuilds the
