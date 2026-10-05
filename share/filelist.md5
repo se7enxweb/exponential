@@ -6004,7 +6004,7 @@ a7d6268d56fba4a2d063f4115ba51492  lib/eztemplate/classes/eztemplatedeffunction.p
 b625c64166e6ed68aecfc4397247479d  lib/eztemplate/classes/eztemplatedigestoperator.php
 8a6de9473e27afe0c866ff60fdf7fa6c  lib/eztemplate/classes/eztemplatedofunction.php
 6dd76dc30dcf0bd0cb3af8c792eadcbc  lib/eztemplate/classes/eztemplateelementparser.php
-fd48fa761f32667ef0e39b7f0c16800e  lib/eztemplate/classes/eztemplateexecuteoperator.php
+ab731265198796a2ba464a26be7b8449  lib/eztemplate/classes/eztemplateexecuteoperator.php
 0d855e6358e69227146c51c682d17a74  lib/eztemplate/classes/eztemplateexpinfooperator.php
 5b0b229fdf199090398b7c878a14c747  lib/eztemplate/classes/eztemplatefileresource.php
 5568f59aab6103cd71b1ca2eceb4304d  lib/eztemplate/classes/eztemplateforeachfunction.php
@@ -6055,7 +6055,7 @@ b4fd3b1bf4ed2cc65e987e4438a865c2  lib/ezutils/classes/ezextension.php
 9e4092daa80dcaa119d74d48870c65d1  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
 b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
 383340ef3906c62cd63505da8519ff00  lib/ezutils/classes/ezfloatvalidator.php
-70f6404e8bab7c72e0c247ddff7dbc74  lib/ezutils/classes/ezfunctionhandler.php
+9cba35ad141d582489c58342a5110976  lib/ezutils/classes/ezfunctionhandler.php
 4edd44a9789dc177db1e7a33309beca9  lib/ezutils/classes/ezhttpfile.php
 e0d8ca296bb2d3d0968aa11679a8d064  lib/ezutils/classes/ezhttppersistence.php
 89782d0c27576afcd2cecb40fb66da7d  lib/ezutils/classes/ezhttptool.php
@@ -6072,7 +6072,7 @@ c7dcf07b97275d08a1cc8d1217773980  lib/ezutils/classes/ezmodule.php
 c6a982a5274b0db1e73f40d6ef9c1d75  lib/ezutils/classes/ezmutex.php
 ebaf9d4efad7e12e2247405e17a1d3b5  lib/ezutils/classes/ezoperationhandler.php
 ad8065df2ea00f70b5e30b072ab72827  lib/ezutils/classes/ezoperationmemento.php
-32678c060d937420616d680e7580a56d  lib/ezutils/classes/ezphpcreator.php
+52d3a2e9e323f154a51bc99a0ca0ed99  lib/ezutils/classes/ezphpcreator.php
 d79f8356ae3d3d8fc55214ea32a0384d  lib/ezutils/classes/ezprepairqueue.php
 1451d0c978604b5009244c5b63612641  lib/ezutils/classes/ezprocess.php
 062090dfa05bec0757d7ba2901de8788  lib/ezutils/classes/ezregexpvalidator.php
@@ -6084,7 +6084,7 @@ f340d0eff30ee5141fd587d8d067daf1  lib/ezutils/classes/ezsys.php
 ead255df95cadecdc810d3576eeddf2f  lib/ezutils/classes/ezsysinfo.php
 b8345b4eff8fc3873c7e157c12e39cf6  lib/ezutils/classes/eztexttool.php
 fde5977c704d8f50c0edf07dc1021ac7  lib/ezutils/classes/eztimestamp.php
-e12083c7889990c4cb24396873de71d9  lib/ezutils/classes/ezuri.php
+b8597fc4be889c983526d195954516e5  lib/ezutils/classes/ezuri.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 7dabbf7f2463e9e1009df77ab6598adc  lib/phpcompat.php
@@ -6986,7 +6986,7 @@ de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableEx
 79c911a18db2fd725a84abec3b804393  tests/tests/kernel/classes/runnable/fixtures/settings/site.ini
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 3b012276860b70c1bf74047f97abfcfb  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
-6d0e3d67c9814153021ee091579c7c24  tests/tests/kernel/classes/security/stubs.php
+01cfa4440a2c6387c1d3ba0efb08b7f8  tests/tests/kernel/classes/security/stubs.php
 34edd200b1cb4ad7763e5e9ee9bfeabb  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnCatalogueTest.php
 23e5c3bc8cf4916bbcbb1d9b8b54079c  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnsTestCase.php
 2243b908f95bac3c7b4f46997609df3d  tests/tests/kernel/classes/subitems/columns/expSubitemsGuideExamplesTest.php
@@ -7311,7 +7311,7 @@ d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
 86d821216ae08cbb701206dbec1dbcf1  tests/tests/lib/ezfile/ezfilerename_test.php
 75406ddb9c62d7810d563fa90ed3cb56  tests/tests/lib/ezfile/suite.php
 29832724eee763626bfe2263dd86eaa7  tests/tests/lib/ezi18n/eZCharsetAndTransformTest.php
-78a312373610b684109d08b1cc1ab4d8  tests/tests/lib/ezi18n/eZCodePageTablesTest.php
+9b2f42f8460d203df243995ce82a1dc6  tests/tests/lib/ezi18n/eZCodePageTablesTest.php
 2dccc2b5f15931696dd1b206bf93660b  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
@@ -7334,6 +7334,7 @@ cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 a42110e8e1698ffa85aa925d98b254b9  tests/tests/lib/ezsoap/suite.php
 3a2456958c8fdb63c88299a929e3a686  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
 689824a1e09db20647f20e8885210c69  tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php
+e0e62e90ce7fd503b6e7a22b78f2975f  tests/tests/lib/eztemplate/eZTemplateFetchOperatorTest.php
 34793015486d957f67086345ea371dd3  tests/tests/lib/eztemplate/eZTemplateFunctionsAndParserTest.php
 f334cc2c33f09af8afc75d019e7ba6e5  tests/tests/lib/eztemplate/eZTemplateOperatorMatrixTest.php
 054ba093ee53d9607044dc8dd344c73c  tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php
@@ -7362,9 +7363,11 @@ f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
 6108d2e9ccef5a860674d71bc38cc38e  tests/tests/lib/ezutils/eZMailTest.php
 ad9b40230e54fa366826f27052a68264  tests/tests/lib/ezutils/eZModuleFunctionInfoTest.php
 6eaf0728f7e778d211d85fc908de674b  tests/tests/lib/ezutils/eZModuleTest.php
+b63b08251a27ea86e14255f2d343ba65  tests/tests/lib/ezutils/eZPHPCreatorRoundTripTest.php
 295ccf384fbb67b358a39cf87d5b809d  tests/tests/lib/ezutils/eZSysInfoTest.php
 da0bc84fe0b08ebbe5f9963ddee396aa  tests/tests/lib/ezutils/eZSysTest.php
 07818c02b506bac945abbfd6158b3af1  tests/tests/lib/ezutils/eZTextToolTest.php
+186e663c92c550ded58b636d4ed22d79  tests/tests/lib/ezutils/eZURIElementsTest.php
 6178821ce5542ce0e1358dbd29b28957  tests/tests/lib/ezutils/eZURITest.php
 ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 73b71352cf122c5331f60f4ca3185288  tests/tests/lib/ezutils/ezdebug_regression.php
