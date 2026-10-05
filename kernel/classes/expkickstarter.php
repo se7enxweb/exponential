@@ -186,18 +186,13 @@ class expKickstarter
 
         $this->script->startup();
 
-        $cli = eZCLI::instance();
-        $this->options = $cli->getOptions(
-            '[start-step:][stop-step:][dry-run][list-steps][help][force]',
-            '',
-            $this->argv
-        );
-        $this->force = !empty( $this->options['force'] );
+        $this->options = self::parseRunOptions( $this->argv );
 
         if ( $this->options === false )
         {
             $this->script->shutdown( 1 );
         }
+        $this->force = !empty( $this->options['force'] );
 
         if ( !empty( $this->options['help'] ) )
         {
@@ -218,6 +213,29 @@ class expKickstarter
         $this->cleanupDryRun();
 
         return 0;
+    }
+
+    /**
+     * The options of every eZScript, accepted and ignored: exp:install and the
+     * console pass --allow-root-user on, and a habit such as --no-colors or -s
+     * must not stop the run with "invalid option". The kickstarter always runs
+     * on the plain siteaccess, so --siteaccess has no effect either.
+     */
+    const STANDARD_OPTIONS = '[q|quiet][d;*|debug;*][c|colors][no-colors][logfiles][no-logfiles][s:|siteaccess:][v*|verbose*][r?|allow-root-user?]';
+
+    /** The option string of "run": its own options and the eZScript standard ones. */
+    public static function runOptionConfig()
+    {
+        return '[start-step:][stop-step:][dry-run][list-steps][h|help][force]' . self::STANDARD_OPTIONS;
+    }
+
+    /**
+     * @param array $argv the arguments after "run" (no script name)
+     * @return array|false the options, false when one is not known (eZCLI has said which)
+     */
+    public static function parseRunOptions( array $argv )
+    {
+        return eZCLI::instance()->getOptions( self::runOptionConfig(), '', $argv );
     }
 
     private function stepIndex( $className )
@@ -245,6 +263,9 @@ class expKickstarter
         $this->cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..Registration to test remote packages (stops before CreateSites)' );
         $this->cli->output( '  --list-steps         List all setup steps and exit' );
         $this->cli->output( '  --help, -h           Show this help' );
+        $this->cli->output( '' );
+        $this->cli->output( 'The standard script options (--allow-root-user, --no-colors, --quiet, --debug, --verbose,' );
+        $this->cli->output( '--siteaccess, --logfiles) are accepted and ignored: the kickstarter always runs on the plain siteaccess.' );
     }
 
     private function listSteps()
