@@ -145,7 +145,7 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-3ab48e1bd02acd060bd5880ba8d5a627  composer.json
+1de4a08ee77c5a45778863e8590ba33a  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 fc1728636781a401032ccd6494974299  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
@@ -2608,7 +2608,7 @@ cf6bc03ed6557c6e7c1c39d09e55e5d0  doc/bc/6.0/console.md
 3363c1727dc13ba26af5e714957046fa  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
 14c4b5bce1de1987b27c6063156cb566  doc/bc/6.0/exponentialsdk-and-exponential-cron.md
-2c50fe804daf666e43531d6ed33164d8  doc/bc/6.0/extensions-behaviour-changes.md
+e10cce7277e955eeea8f44d4e980b757  doc/bc/6.0/extensions-behaviour-changes.md
 bb123c57c4c5ce0c7837aa827714a87c  doc/bc/6.0/ezoe-tinymce8.md
 9f738b885223976c128d6c6090106823  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 2830240c5b94103d5fc28cb3e736daba  doc/bc/6.0/frankenphp.md
@@ -2805,9 +2805,9 @@ afe0bf7167995ce8062ac1a92c4b357f  doc/changelogs/6.0/6.0.5.md
 737eb2d1eb316502a426d21368a4572b  doc/changelogs/6.0/6.0.9.md
 16e70da72703957885d94fd2f97a0a25  doc/changelogs/README.md
 4919e3a6e89bbcd21cc2a9fc4b983f66  doc/changelogs/extensions/AdminAid.md
-9f3633c86adca214c873d33fabb7af19  doc/changelogs/extensions/README.md
+0e9de127998501a37752932c52a05d20  doc/changelogs/extensions/README.md
 1a7d3c2bab994a056f5f5e1484c501ad  doc/changelogs/extensions/admin-ui.md
-37f9cd37d28e64d25fc8c08d7366f643  doc/changelogs/extensions/bccie.md
+b6f37b8111af98056c8c9b033fd25fd4  doc/changelogs/extensions/bccie.md
 88a7ba3f7392dace7db9d0bed0c2c62f  doc/changelogs/extensions/bcgooglesitemaps.md
 b7ccd6c03d59d51d608bbdcff1bef85d  doc/changelogs/extensions/bcwebsitestatistics.md
 6b41d35e8193759f0534eb039ebde880  doc/changelogs/extensions/birthday.md
@@ -3139,7 +3139,7 @@ de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distributio
 8f1fcebd72db9526f18bbcbb0cdef769  doc/features/6.0/extension-module-override.md
 2d0a604152c0b63239f761b1fae94615  doc/features/6.0/extensions/AdminAid.md
 ce13e92e19daf0753273662b6b47c0d8  doc/features/6.0/extensions/README.md
-74ae2f0dea94f163cab751de47ec53a5  doc/features/6.0/extensions/bccie.md
+5cb57cb79ef6a0d44699eaa2eba4bc6e  doc/features/6.0/extensions/bccie.md
 7e3650518d9eba1d24fe8982d5f5d32c  doc/features/6.0/extensions/bcgooglesitemaps.md
 f2e139157b0bffcb30c2b73818dbe0d3  doc/features/6.0/extensions/bcwebsitestatistics.md
 35e598e563eb270ac6b1722585ec2c24  doc/features/6.0/extensions/birthday.md
@@ -3634,8 +3634,9 @@ f9f738c497f745bb5e02d68375b9f630  doc/specifications/4.3/admin_refresh/functiona
 e14335da02fc54b98c731ab8152fbda6  doc/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/specifications/4.5/asynchronous_publishing.txt
-ae631289f0597f5d156825bae68d33d2  doc/specifications/6.0/README.md
+9ddc74804e450ba7a4ed07f8a51f6ff0  doc/specifications/6.0/README.md
 c7d48dabae7613771d017ddaf603bc61  doc/specifications/6.0/audit-event-model.md
+ab66e2db16090f3e2b4beeeb0a27f87e  doc/specifications/6.0/bccie.md
 7bc6acbc0e063f169ab936c6d951d16a  doc/specifications/6.0/continuous-integration.md
 3a1a5f4661e51e45173fbaf8c04500d9  doc/specifications/6.0/database-drivers-2026-09.md
 b88aeca39b0d6fa40e6915f555e710d5  doc/specifications/6.0/database-drivers-sqlite-oracle.md
@@ -6474,6 +6475,7 @@ d56115c8242b3081672f63607aa69361  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
+dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 f32036e3260c40340c9afa59f9160c2e  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
 52ce45237dc18d73206a7fb95a62e4bb  tests/tests/extension/cjw_newsletter/cjwNewsletterBounceTest.php
 b0db8af6eacbffb2eb9a40225875bf19  tests/tests/extension/cjw_newsletter/cjwNewsletterCronjobTest.php
