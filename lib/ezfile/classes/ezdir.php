@@ -216,12 +216,22 @@ class eZDir
                 continue;
             if ( $pathElement === '..' and
                  count( $newPathElements ) > 0 )
-                array_pop( $newPathElements );
+            {
+                $last = end( $newPathElements );
+                // ".." after ".." climbs further; ".." at the root of an absolute path stays at the root
+                if ( $last === '..' )
+                    $newPathElements[] = $pathElement;
+                else if ( !( $last === '' and count( $newPathElements ) == 1 ) )
+                    array_pop( $newPathElements );
+            }
             else
                 $newPathElements[] = $pathElement;
         }
         if ( !isset( $newPathElements[0] )  )
             $newPathElements[] = '.';
+        // the root alone: implode() of the one empty element would give an empty path
+        if ( $newPathElements === array( '' ) and $path !== '' )
+            return $separator;
         $path = implode( $separator, $newPathElements );
         return $path;
     }
