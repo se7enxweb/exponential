@@ -132,7 +132,7 @@ machines, put the debug settings in the development machine's settings only; see
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| Composer: PHP version does not satisfy `phpunit/phpunit` | A copy of `composer.json` from before 5 October 2026, whose `require-dev` asked for PHPUnit 13 (`^13.4`, PHP 8.4.1 or later) only. Without a lock file Composer resolves `require-dev` even with `--no-dev` | Take the current `composer.json`: its range `^9.6 \|\| ^10.5 \|\| ^11.5 \|\| ^12.0 \|\| ^13.4` lets Composer pick the PHPUnit that fits the PHP in use (9.6 on PHP 8.0, 13.4 on 8.4 and 8.5), and a plain `composer install --no-dev` works on PHP 8.0 to 8.5. With an old copy, `composer remove --dev --no-update --no-interaction phpunit/phpunit zetacomponents/php-generator` first. The test suite itself needs PHPUnit 10, so PHP 8.1. |
+| Composer: PHP version does not satisfy `phpunit/phpunit` | The tags `v6.0.13` and `v6.0.14` pin PHPUnit `13.0.0` in `require-dev`, which needs PHP 8.4.1 or later. Without a lock file Composer resolves `require-dev` even with `--no-dev` | Current `composer.json` (6.0.15 line, `dev-main`) asks for `^9.6 \|\| ^10.5 \|\| ^11.5 \|\| ^12.0 \|\| ^13.4`, so Composer picks the PHPUnit that fits the PHP in use (9.6 on PHP 8.0, 13.4 on 8.4 and 8.5) and a plain `composer install --no-dev` works on PHP 8.0 to 8.5; nothing has to be removed. Only for `v6.0.13` or `v6.0.14` on PHP 8.1 to 8.3: `composer remove --dev --no-update --no-interaction phpunit/phpunit zetacomponents/php-generator` first. The test suite itself needs PHPUnit 10, so PHP 8.1. |
 | Composer: the root package requires PHP 8.1 on PHP 8.0 | Releases `v6.0.8` to `v6.0.14` require PHP 8.1 | Use PHP 8.1 or later, or the 6.0.15 line (`dev-main`), which accepts 8.0. |
 | Composer: `se7enxweb/exponential-velocity` requires PHP 8.1 | Velocity needs PHP 8.1 | Leave it out on PHP 8.0 (it is only suggested), or use a newer PHP. |
 | Composer stops on a missing `ext-mongodb` | A package that needs the PHP `mongodb` extension was added, usually `mongodb/mongodb` for the MongoDB database handler (Exponential only suggests it; no required package needs the extension) | Install the extension for the PHP Composer runs with and for the web server's PHP. If you do not use MongoDB, remove that package again (`composer remove mongodb/mongodb`). |
@@ -226,7 +226,7 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 
 | Symptom or message | Cause | Fix |
 |---|---|---|
-| SQLite: "database is busy: the transaction could not start within N s, another write held the lock all that time; nothing was written" | Another write held the writer lock for the whole `[DatabaseSettings] SQLiteTransactionWait` (60 s shipped) | Nothing was written; retry. Raise the setting (below the web server's request timeout), or move a busy editorial site to MySQL, MariaDB or PostgreSQL. |
+| SQLite: "database is busy: the transaction could not start within N s, another write held the lock all that time; nothing was written" | Another write held the writer lock for the whole `[DatabaseSettings] SQLiteTransactionWait` (25 s shipped, below Velocity's 30 s request timeout) | Nothing was written; retry. Raise the setting together with the request timeout (Velocity's `Q.webserver.requestTimeout`, PHP-FPM's `request_terminate_timeout`) and keep it below it, or move a busy editorial site to MySQL, MariaDB or PostgreSQL. |
 | SQLite: the site is slow after an install or a large import | The query planner has no statistics | `sqlite3 var/storage/sqlite3/exponential.db ANALYZE` once. |
 | SQLite: the database file can be downloaded | The web server serves `var/` | Check with `curl -sI https://www.example.com/var/storage/sqlite3/exponential.db` (anything but 200 is right); use the shipped `.htaccess` rules or Velocity. |
 | After switching the database engine no page loads | `DatabaseImplementation` still names the old engine | Set it in `settings/override/site.ini.append.php`, then `php bin/php/ezcache.php --clear-tag=ini`. |
@@ -293,7 +293,7 @@ not worked. More in [Cache console](../bc/6.0/cache-console.md) and [Operating a
 
 - Search this documentation: the [guides](../guides/README.md), the [feature pages](../features/6.0/),
   the [behaviour change notes](../bc/6.0/) and the [glossary](../glossary.md).
-- The online manual: [exponential.doc.exponential.earth](https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html).
+- The online manual: [https://exponential.doc.exponential.earth/](https://exponential.doc.exponential.earth/).
 - Report a bug: the [Exponential issue tracker](https://github.com/se7enxweb/exponential/issues), or the
   [community issue tracker](https://github.com/se7enxweb/exponential-community/issues).
 - Report a security issue privately, as [SECURITY.md](../../SECURITY.md) describes, never in a public issue.
