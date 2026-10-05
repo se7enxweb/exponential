@@ -10,8 +10,8 @@ This page is for site owners and editors who send newsletters, and for administr
 - every send is archived.
 
 It comes from the CJW Network, coolscreen.de, JAC Systeme and Webmanufaktur (2007 to 2015) and was taken over for
-PHP 8.5 and Exponential 6 by the se7enxweb project in August 2026 (4.0.0.0 on 13 August). Releases 4.1.0 to 4.1.16
-(22 September to 2 October 2026) made it run on PHP 8, on persistent workers (Velocity) and on every database, and
+PHP 8.5 and Exponential 6 by the se7enxweb project in August 2026 (4.0.0.0 on 13 August). Releases 4.1.0 to 4.1.17
+(22 September to 4 October 2026) made it run on PHP 8, on persistent workers (Velocity) and on every database, and
 closed many defects found by a systematic review.
 
 Open it at **Newsletter** in the top admin menu (`/newsletter/index`). The extension keeps its own documentation
@@ -139,6 +139,25 @@ A review of the whole extension on 2 October 2026 fixed, among other things:
 * The list and filter views post each button to its own form (nested forms are dropped by
   browsers: "Create newsletter" used to submit the class of the last form).
 
+### Dashboard, commands and background runs (4.1.17)
+
+The start page `/newsletter/index` is a dashboard now: the lists with their subscribers, the editions, the last sends, the transport (and for the file transport the
+outbox and its last mail), when each cronjob part ran last, and a list of problems with what to do about each (for example "3 subscriptions belong to newsletter users that no
+longer exist", with a **Remove them** button). **Send now**, **Count only**, **Process the mail accounts**, **Parse mails**, **Collect all mails** and the CSV **Import all** start the
+work in the background and show its progress on the page, so a slow mail server no longer holds the request. The same work runs from the shell:
+
+```bash
+./console ext:cjw_newsletter:status
+./console ext:cjw_newsletter:queue --dry-run
+./console ext:cjw_newsletter:mailbox
+./console ext:cjw_newsletter:repair --dry-run
+```
+
+The user list pages, sorts and filters (it showed the first ten users only before); the blacklist, the imports and the bounces have the same filter, sort and paging;
+removing a blacklist entry or a mail account asks first; the mail account form checks its fields and never shows the stored password. The public subscribe form only
+returns to a path of this site (the posted back link was used unchecked in a link). The reference, with every parameter and option, is the
+[specification](../../../specifications/6.0/cjw_newsletter.md).
+
 ### Interface
 
 * 4.1.2 onwards: visible texts and translations name Exponential. 4.1.4: every visible text
@@ -178,6 +197,7 @@ codes are unchanged. See
 
 ## Related pages
 
+- [Specification: the cjw_newsletter extension](../../../specifications/6.0/cjw_newsletter.md)
 - [File consistency check](../file-consistency-check.md)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
