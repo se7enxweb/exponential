@@ -273,8 +273,9 @@ class eZURI
         {
             $this->UserArray = array();
         }
-        // Convert filter string to current locale
-        $this->convertFilterString();
+        // No convertFilterString() here: decodeIRI() above already decoded the whole URI, the namefilter with
+        // it, into the internal charset. Decoding the namefilter again would turn an encoded "+" or "%" in it
+        // into something else.
     }
 
     /**
@@ -360,22 +361,24 @@ class eZURI
      * url like: "/content/view/full/2/(namefilter)/a" 'a' letter should be
      * urldecoded and converted from utf-8 to current locale.
      *
-     * @return string converted string
+     * The converted value replaces the namefilter user parameter. For user parameters
+     * set with setURIString() this has been done already, together with the rest of
+     * the URI; call it only for a namefilter value that is still encoded.
+     *
+     * @return string|null converted string, or null when there is no namefilter
      */
     public function convertFilterString()
     {
-        foreach ( array_keys( $this->UserArray ) as $paramKey )
-        {
-            if ( $paramKey == 'namefilter' )
-            {
-                $char = $this->UserArray[$paramKey];
-                $char = urldecode( $char );
+        if ( !is_array( $this->UserArray ) || !isset( $this->UserArray['namefilter'] ) )
+            return null;
 
-                $codec = eZTextCodec::instance( 'utf-8', false );
-                if ( $codec )
-                    $char = $codec->convertString( $char );
-            }
-        }
+        $char = urldecode( $this->UserArray['namefilter'] );
+        $codec = eZTextCodec::instance( 'utf-8', false );
+        if ( $codec )
+            $char = $codec->convertString( $char );
+
+        $this->UserArray['namefilter'] = $char;
+        return $char;
     }
 
     /**
