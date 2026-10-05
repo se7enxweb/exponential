@@ -184,7 +184,7 @@ class eZCodePageMapper
                 $out_in_map =& $this->OutputInputMap;
                 eZDebug::writeDebug( 'loading cache from: ' . $cache, __METHOD__ );
                 include( $cache );
-                if ( isset( $eZCodePageMapperCacheCodeDate ) or
+                if ( isset( $eZCodePageMapperCacheCodeDate ) and
                      $eZCodePageMapperCacheCodeDate == self::CACHE_CODE_DATE )
                 {
                     $this->Valid = true;
@@ -229,6 +229,8 @@ class eZCodePageMapper
                 }
             }
         }
+        // the map is built: the mapper can be used
+        $this->Valid = true;
     }
 
     /**
