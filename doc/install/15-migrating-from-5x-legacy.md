@@ -32,20 +32,20 @@ listed here with where this chapter covers it.
 | Requirements: PHP 7.1, MySQL 5.5 or MariaDB, a 2017 browser | PHP 8.0 to 8.5 (Velocity needs 8.1); MySQL, MariaDB, PostgreSQL, SQLite, Oracle, MongoDB | [15.4](#154-plan-and-timeline) |
 | Back up; take the site offline | Same, with `maintenance.php` | [15.7](#157-the-database-step-by-step) |
 | Content of the 4th and 5th generation stays compatible | Yes, and without conversion: it is the same schema | [15.3](#153-what-carries-over-the-shared-database) |
-| XmlText is replaced by RichText; convert with `ezxmltext:convert-to-richtext` | **Contradicted.** XmlText (`ezxmltext`) is the kernel's rich text datatype. Nothing is converted. | [15.8](#158-field-types-against-datatypes) |
+| XmlText is replaced by RichText; convert with `ezxmltext:convert-to-richtext` (dry run, export of the failing fields, fix by hand, `ezxmltext:import-xml`), after registering the XmlText field type bundle | **Contradicted.** XmlText (`ezxmltext`) is the kernel's rich text datatype. Nothing is converted. | [15.8](#158-field-types-against-datatypes) |
 | The Page field (ezflow) is replaced by the Enterprise LandingPage; migrate with `ezflow-migration-toolkit` | **Contradicted.** `ezpage` stays, through the `ezflow` package, which Exponential installs by default | [15.8](#158-field-types-against-datatypes) |
 | Star Rating is not supported | **Contradicted.** `ezsrrating` stays, through the `ezstarrating` package, installed by default | [15.8](#158-field-types-against-datatypes) |
 | Sorting by class identifier (6) or class name (7) is not supported; find it with SQL | **Contradicted.** Both sort fields exist (`eZContentObjectTreeNode::SORT_FIELD_CLASS_IDENTIFIER = 6`, `SORT_FIELD_CLASS_NAME = 7`). The query is still useful to know | [15.20](#1520-common-issues) |
 | Remove internal drafts before migrating (`InternalDraftsCleanUpLimit`, `InternalDraftsDuration` to 0) | The same settings and cronjob exist; recommended | [15.7](#157-the-database-step-by-step) |
 | Rewrite custom field types, front end and admin modules for the Symfony stack | **Reversed.** Legacy datatypes, `.tpl` templates and modules keep working; Symfony bundles, Twig templates and Public API code are what you rewrite | [15.12](#1512-templates-twig-to-tpl), [15.11](#1511-routes-and-url-aliases) |
 | Move `src/`, Composer packages and bundle registrations to the new project | Bundles have no place in Exponential; their logic becomes extensions | [15.5](#155-extract-the-legacy-part) |
-| Move `parameters.yml`, `config.yml`, `ezpublish.yml` into the new `app/config/` | **Reversed.** Their values go into INI files | [15.6](#156-translate-the-symfony-configuration-into-ini) |
+| Move `parameters.yaml`, `config.yaml` into the new `app/config/`, and `ezpublish.yaml` as `ezplatform.yaml` (the 2.5 version of the page spells them `.yml`) | **Reversed.** Their values go into INI files | [15.6](#156-translate-the-symfony-configuration-into-ini) |
 | Keep the SiteAccess names, or `user/login` policies break | Same rule, same reason (the limitation stores a CRC32 of the name) | [15.6](#156-translate-the-symfony-configuration-into-ini), [15.20](#1520-common-issues) |
 | Define the legacy image aliases again in YAML | **Reversed.** The YAML `image_variations` must become `image.ini` aliases, because the bridge replaced the legacy alias list with them | [15.10](#1510-image-variations-and-image-aliases) |
 | Optional: install Legacy Bridge and symlink `src/legacy_files` into `ezpublish_legacy/` | Not needed; Exponential runs on its own. A bridge to a Symfony platform still exists if you want one | [15.5](#155-extract-the-legacy-part) |
 | Copy designs, siteaccess settings, override settings, extensions (not the built-in ones), `config.php`, `config.cluster.php`, `var/storage/packages` | Same list, with the Exponential package for each built-in extension | [15.5](#155-extract-the-legacy-part) |
 | Copy binary files from `web/var/<site>/storage` (a symlink to `ezpublish_legacy/var`) | Same | [15.5](#155-extract-the-legacy-part) |
-| Re-apply permissions; `composer update` | Permissions as in chapter 8; never `composer update` over your own checkouts | [15.5](#155-extract-the-legacy-part) |
+| Re-apply permissions; `composer update --prefer-dist` | Permissions as in chapter 8; never `composer update` over your own checkouts | [15.5](#155-extract-the-legacy-part) |
 | Apply `dbupdate-5.4.0-to-6.13.0.sql` from the new kernel | **Do not.** Apply the Exponential files; the one statement of that file Exponential needs, the wider `password_hash` column, is in the Exponential 5.4 to 6.0 file | [15.7](#157-the-database-step-by-step), [15.9](#159-users-password-hashes-and-sessions) |
 | Enterprise schemas (date-based publisher, form builder, notifications) | Not applicable | none |
 | Custom tags and their attribute types in RichText | Not applicable: custom tags stay `ezxmltext` custom tags, with every `ezoe_attributes.ini` type | [15.8](#158-field-types-against-datatypes) |
@@ -80,7 +80,7 @@ What the answers mean, checked against the upstream repositories:
 | Release | `lib/version.php` of the legacy kernel | `ezsite_data` `ezpublish-version` | `ezuser.password_hash` | Hash types known |
 |---|---|---|---|---|
 | community 2014.11 | `VERSION_MAJOR = 2014`, `VERSION_MINOR = 11`, `VERSION_ALIAS = '5.4'`, edition "eZ Publish Community Project" | `5.4.0alpha1` | `varchar(50)` | 1 to 5 |
-| 5.4 (enterprise) | read it in your copy | `5.4.0alpha1` after the 5.3 to 5.4 update file (it writes that value) | `varchar(50)` unless installed fresh with a wider column: no file of the update chain widens it | look for `PASSWORD_HASH_PHP_DEFAULT` ([15.21](#1521-rollback)) |
+| 5.4 (enterprise) | read it in your copy | `5.4.0alpha1` after the 5.3 to 5.4 update file (it writes that value) | `varchar(50)` unless installed fresh with a wider column: no file of the 4.x and 5.x chain widens it (the Exponential 5.4 to 6.0.0 file does, [15.7](#157-the-database-step-by-step)) | look for `PASSWORD_HASH_PHP_DEFAULT` ([15.21](#1521-rollback)) |
 | 2015.01, 2017.08 | `5`, `90`, alias `5.90` or `2017.08` | | `varchar(50)` | 1 to 5 |
 | 2017.12 and later | `5`, `90`, alias `2017.12` and up | | `varchar(255)` | 1 to 7 |
 
@@ -118,8 +118,10 @@ mysql -u USER -p DATABASE -e "SELECT table_name FROM information_schema.tables W
 psql -U USER DATABASE -c "SELECT tablename FROM pg_tables WHERE schemaname = 'public' ORDER BY tablename;"
 ```
 
-Or let the schema tool compare the database with the schema of this release (`share/db_schema.dba`); every
-`CREATE TABLE` or `DROP TABLE` in its output names a table that only one side has. Read the output; do not run it.
+Or let the schema tool compare the database with the schema of this release (`share/db_schema.dba`). It prints the
+SQL that would turn its second argument into its first, so with the reference first, every `CREATE TABLE` names a
+table Exponential has and your database lacks, and every `DROP TABLE` a table only your database has. Read the
+output; do not run it here: the update files of 15.7 make the changes in the right order.
 
 ```bash
 php bin/php/ezsqldiff.php --type=mysql --user=USER --password=PASS share/db_schema.dba DATABASE
@@ -449,7 +451,13 @@ admin could not edit them), and you choose per attribute:
 | `<ezembed xlink:href="ezcontent://42" view="embed">` | `<embed object_id="42" view="embed">` |
 | `<informaltable>`, `<tr>`, `<td>` | `<table>`, `<tr>`, `<td>` |
 | `<eztemplate name="x">` | `<custom name="x">` |
-| `<literallayout>` | `<literal>` |
+| `<literallayout>` | `<paragraph>` with one `<line>` per line of text |
+| `<programlisting>` | `<literal>` (with its `class`) |
+| `<eztemplate name="rawhtml">` | `<literal class="html">` |
+
+The mapping is the reverse of the forward stylesheet of the vendor's converter
+(`eZXml2Docbook_core.xsl` in `ezsystems/ezplatform-xmltext-fieldtype`); the fuller table, with links, anchors and
+custom tags, is in [16.6.3](16-migrating-from-ez-platform-and-ibexa.md#richtext-to-xmltext).
 
 Validate every converted value in a copy: open the object in the online editor and publish it once. The kernel's
 XHTML output also renders three DocBook elements when they occur in imported `ezxmltext`: `ezembed` (with
@@ -467,6 +475,7 @@ Users are content objects plus a row in `ezuser` (`login`, `email`, `password_ha
 
 | `password_hash_type` | Name | 5.x (to 2017.08) | Exponential |
 |---|---|---|---|
+| 0 | `empty` (no password of its own: LDAP, text file, single sign-on) | no (added to the legacy kernel in 2019, EZP-29703) | yes |
 | 1 | `md5_password` | yes | yes |
 | 2 | `md5_user` | yes (the old default) | yes |
 | 3 | `md5_site` (depends on `[UserSettings] SiteName`) | yes | yes |
@@ -717,7 +726,7 @@ reuse the 5.x virtual host: its rewrite rules point at `web/` and at Symfony's f
 
 ```bash
 php bin/php/ezcache.php --clear-all
-php bin/php/console exp:checkdbfiles
+php bin/php/console exp:checkdbfiles --no-verify-branches
 php bin/php/console exp:checkclasses
 php bin/php/console --version
 ```
@@ -749,7 +758,7 @@ The vendor's list first, each with its cause in Exponential; the `ezpublish:upda
 | Images do not display (vendor: normalise image paths with unprintable characters) | `VarDir` or the storage directory differs from the old site, or file names with characters the file system mangled | keep `VarDir` as before; `php update/common/scripts/5.1/fiximagesoutsidevardir.php`; `php update/common/scripts/5.3/recreateimagesreferences.php` |
 | "Unknown relation type 0" (vendor: REST, after an edit) | rows in `ezcontentobject_link` whose `relation_type` bits were all cleared; the kernel itself does that when it removes the last relation type of a row (`removeContentObjectRelation()`), and every relation query filters on the bits, so Exponential never shows them | none needed; to tidy: `DELETE FROM ezcontentobject_link WHERE relation_type = 0;` on a backed-up database |
 | The always-available flag is set on the fields of every language, not only the main one | content made by the new stack with several translations; the kernel keeps bit 1 of `ezcontentobject_attribute.language_id` and `ezcontentobject_name.language_id` on the main language only | find: `SELECT a.contentobject_id, a.version, a.language_code FROM ezcontentobject_attribute a JOIN ezcontentobject o ON o.id = a.contentobject_id WHERE (a.language_id & 1) = 1 AND (a.language_id & ~1) <> (o.initial_language_id & ~1);` then switch **Always available** off and on again for those objects in the admin, which rewrites both tables (Oracle: `bitand()` in place of `&`) |
-| Sub-item lists sort wrongly or searches miss objects (vendor: empty `sort_key_string`) | attributes stored by the new stack without a sort key | find: `SELECT contentobject_id, data_type_string FROM ezcontentobject_attribute WHERE sort_key_string = '' AND data_text <> '' AND data_type_string IN ('ezstring', 'eztext');` then publish the objects again: the kernel computes sort keys whenever it stores an attribute (`eZContentObjectAttribute::updateSortKey()`); there is no bulk command |
+| Sub-item lists sort wrongly or searches miss objects (vendor: empty `sort_key_string`) | attributes stored by the new stack without a sort key | find: `SELECT contentobject_id, data_type_string FROM ezcontentobject_attribute WHERE sort_key_string = '' AND data_text <> '' AND data_type_string IN ('ezstring', 'ezemail', 'ezcountry', 'ezidentifier', 'ezselection', 'ezpackage');` (the datatypes whose sort key is a string; `eztext` has none) then publish the objects again: the kernel computes sort keys whenever it stores an attribute (`eZContentObjectAttribute::updateSortKey()`); there is no bulk command |
 | Sub-items tab errors on sort by class identifier or class name (vendor) | does not happen: sort fields 6 and 7 exist | none; `SELECT node_id, parent_node_id, sort_field FROM ezcontentobject_tree WHERE sort_field IN (6, 7);` lists them if you want to know |
 | Unstyled login page, or "no access" on one siteaccess (vendor) | the `user/login` policy of the Anonymous role (or of the user) is limited to siteaccesses by CRC32 of their names; a renamed or new siteaccess is not in it | **Roles**: edit the `user/login` policy and add the siteaccesses; better, keep the old names |
 
@@ -904,7 +913,7 @@ External:
   [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html),
   [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html),
   [Oracle ALTER TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ALTER-TABLE.html).
-- [Varnish: purging and banning](https://varnish-cache.org/docs/trunk/users-guide/purging.html);
+- [Varnish: purging and banning](https://www.varnish.org/docs/users-guide/purging.html);
   [Composer create-project](https://getcomposer.org/doc/03-cli.md#create-project).
 
 [Contents](README.md) · Previous: [14. Migrating from the 4.x line](14-migrating-from-4x.md) · Next: [16. Migrating from eZ Platform and Ibexa](16-migrating-from-ez-platform-and-ibexa.md)
