@@ -136,6 +136,11 @@ class eZTemplateUnitOperator
         {
             $base = $unit_ini->variable( "Base", $unit );
         }
+        else
+        {
+            // an unknown unit is reported by modify() at run time
+            return false;
+        }
 
         $hasInput = false;
         $output = false;
@@ -161,7 +166,7 @@ class eZTemplateUnitOperator
 
             if ( $hasInput )
             {
-                if ( $output >= 0 and $output < 10 )
+                if ( abs( (float)$output ) < 10 )
                 {
                     $prefix_var = '';
                 }
@@ -170,7 +175,7 @@ class eZTemplateUnitOperator
                     foreach ( $prefixes as $prefix )
                     {
                         $val = pow( 10, (int)$prefix[0] );
-                        if ( $val <= $output )
+                        if ( $val <= abs( (float)$output ) )
                         {
                             $prefix_var = $prefix[1];
                             $output = number_format( $output / $val, $decimalCount, $decimalSymbol, $decimalThousandsSeparator );
@@ -186,7 +191,7 @@ class eZTemplateUnitOperator
                 $values[] = array( eZTemplateNodeTool::createArrayElement( $prefixes ) );
                 $values[] = array( eZTemplateNodeTool::createStringElement( $base ) );
 
-                $code = 'if ( %1% >= 0 and %1% < 10 )' . "\n" .
+                $code = 'if ( abs( (float)%1% ) < 10 )' . "\n" .
                      '{' . "\n" .
                      '    %tmp3% = \'\';' . "\n" .
                      '}' . "\n" .
@@ -196,7 +201,7 @@ class eZTemplateUnitOperator
                      '    foreach ( %2% as %tmp1% )' . "\n" .
                      '    {' . "\n" .
                      '        %tmp2% = pow( 10, (int)%tmp1%[0] );' . "\n" .
-                     '        if ( %tmp2% <= %1% )' . "\n" .
+                     '        if ( %tmp2% <= abs( (float)%1% ) )' . "\n" .
                      '        {' . "\n" .
                      '            %tmp3% = %tmp1%[1];' . "\n" .
                      '            %1% = number_format( %1% / %tmp2%, ' . $decimalCount . ', ' . $decimalSymbolText . ', ' . $decimalThousandsSeparatorText . ' );' . "\n" .
@@ -222,7 +227,7 @@ class eZTemplateUnitOperator
 
             if ( $hasInput )
             {
-                if ( $output >= 0 and $output < 10 )
+                if ( abs( (float)$output ) < 10 )
                 {
                     $prefix_var = '';
                 }
@@ -230,7 +235,7 @@ class eZTemplateUnitOperator
                     foreach ( $prefixes as $prefix )
                     {
                         $val = pow( 2, (int)$prefix[0] );
-                        if ( $val <= $output )
+                        if ( $val <= abs( (float)$output ) )
                         {
                             $prefix_var = $prefix[1];
                             $output = number_format( $output / $val, $decimalCount, $decimalSymbol, $decimalThousandsSeparator );
@@ -246,7 +251,7 @@ class eZTemplateUnitOperator
                 $values[] = array( eZTemplateNodeTool::createArrayElement( $prefixes ) );
                 $values[] = array( eZTemplateNodeTool::createStringElement( $base ) );
 
-                $code = 'if ( %1% >= 0 and %1% < 10 )' . "\n" .
+                $code = 'if ( abs( (float)%1% ) < 10 )' . "\n" .
                      '{' . "\n" .
                      '    %tmp3% = \'\';' . "\n" .
                      '}' . "\n" .
@@ -256,7 +261,7 @@ class eZTemplateUnitOperator
                      '    foreach ( %2% as %tmp1% )' . "\n" .
                      '    {' . "\n" .
                      '      %tmp2% = pow( 2, (int)%tmp1%[0] );' . "\n" .
-                     '      if ( %tmp2% <= %1% )' . "\n" .
+                     '      if ( %tmp2% <= abs( (float)%1% ) )' . "\n" .
                      '      {' . "\n" .
                      '        %tmp3% = %tmp1%[1];' . "\n" .
                      '        %1% = number_format( %1% / %tmp2%, ' . $decimalCount . ', ' . $decimalSymbolText . ', ' . $decimalThousandsSeparatorText . ' );' . "\n" .
@@ -409,7 +414,9 @@ class eZTemplateUnitOperator
         $prefix_var = "";
         if ( $prefix == "decimal" )
         {
-            if ( $operatorValue >= 0 and $operatorValue < 10 )
+            // the prefix is chosen by the magnitude: -2000 is -2 k as 2000 is 2 k
+            $magnitude = abs( (float)$operatorValue );
+            if ( $magnitude < 10 )
             {
                 $prefix_var = '';
             }
@@ -427,7 +434,7 @@ class eZTemplateUnitOperator
                 foreach ( $prefixes as $prefix )
                 {
                     $val = pow( 10, (int)$prefix[0] );
-                    if ( $val <= $operatorValue )
+                    if ( $val <= $magnitude )
                     {
                         $prefix_var = $prefix[1];
                         $operatorValue = number_format( $operatorValue / $val, $decimalCount, $decimalSymbol, $decimalThousandsSeparator );
@@ -438,7 +445,9 @@ class eZTemplateUnitOperator
         }
         else if ( $prefix == "binary" )
         {
-            if ( $operatorValue >= 0 and $operatorValue < 10 )
+            // the prefix is chosen by the magnitude: -2000 is -2 k as 2000 is 2 k
+            $magnitude = abs( (float)$operatorValue );
+            if ( $magnitude < 10 )
             {
                 $prefix_var = '';
             }
@@ -455,7 +464,7 @@ class eZTemplateUnitOperator
                 foreach ( $prefixes as $prefix )
                 {
                     $val = pow( 2, (int)$prefix[0] );
-                    if ( $val <= $operatorValue )
+                    if ( $val <= $magnitude )
                     {
                         $prefix_var = $prefix[1];
                         $operatorValue = number_format( $operatorValue / $val, $decimalCount, $decimalSymbol, $decimalThousandsSeparator );
