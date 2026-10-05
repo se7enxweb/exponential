@@ -2265,7 +2265,7 @@ b48dcffd72513797058dead1dfccb55b  design/standard/templates/mailpreferences/part
 545b990b895e8d62da96ac81f6390084  design/standard/templates/mailpreferences/parts/page_end.tpl
 2570775ceea89fea0cad16ef9daef59c  design/standard/templates/mailpreferences/parts/page_start.tpl
 a3d12a0387db7a98a365af8ea1a205f7  design/standard/templates/mailpreferences/parts/pager.tpl
-b741b13bca1080b5679ca958e2531a08  design/standard/templates/mailpreferences/parts/preferences.tpl
+bf1a782d62ef9744067607485b53bc08  design/standard/templates/mailpreferences/parts/preferences.tpl
 0c0997339ebbbaa623161d51ecfc30c4  design/standard/templates/mailpreferences/parts/signup.tpl
 16b592f90ec831c206c4cff62bbc5fa1  design/standard/templates/mailpreferences/parts/style.tpl
 979f42f8763ea178f0405386bde3937d  design/standard/templates/mailpreferences/request.tpl
@@ -3341,7 +3341,7 @@ a7d35b3d4eb62f3995401d62b9ab21d7  doc/guides/deploying.md
 5f6657b0ea73fe7a20da12e4a3d5547c  doc/guides/extensions.md
 a49a7f5284ec81f8dbb13b7c88e821b4  doc/guides/getting-started.md
 e1d9475cb0f8b7b42c5b68663fe70b5e  doc/guides/mail-preferences-administrator.md
-ba72c6d6d6943f3ebb2e3f7fff2e1baa  doc/guides/mail-preferences-developer.md
+14868f854f4717f9f1ff6ea8141281a9  doc/guides/mail-preferences-developer.md
 a45d63418940e025cb5a03004675a98c  doc/guides/notifications-administrator.md
 934e5fac274514582acb8481191f0713  doc/guides/notifications-developer.md
 db5e980a8f3711d233062169e69a4963  doc/guides/operating-a-site.md
@@ -4847,7 +4847,7 @@ edd4fe2a12021de5f1e04134421a0cca  kernel/classes/mailpreferences/expconsentlog.p
 ef42ff76c9c0799535968bb0f46defbc  kernel/classes/mailpreferences/expmailaddresschange.php
 9a995918cbc8c49e7594296050d1e5c5  kernel/classes/mailpreferences/expmailbouncereader.php
 4088b1c59fc84d30e3191801eeaed3b2  kernel/classes/mailpreferences/expmailcategory.php
-7d3b2215a741fa7fbbad3171bc0446d2  kernel/classes/mailpreferences/expmailcategoryhandler.php
+a05f906bf53285efa7ef37edde2c3682  kernel/classes/mailpreferences/expmailcategoryhandler.php
 fded4f90f0d8b6d4533526b9502e626e  kernel/classes/mailpreferences/expmailcategoryregistry.php
 15fe5518a4ae0ba8b96f03744f047da3  kernel/classes/mailpreferences/expmailcategoryrow.php
 afcd186334423b9436c137a0af0ddd73  kernel/classes/mailpreferences/expmailgate.php
@@ -5274,7 +5274,7 @@ a565ef695304c6f4cad4562f91d4f042  kernel/private/classes/runnable/cronjobpart.ph
 9cd83931b1abab4c19f5df5b50e18f5d  kernel/private/classes/runnable/runnable.php
 d831b71988f68ca14c9ccacb11ed32ba  kernel/private/classes/services/contentjobdetails.php
 48f2077a5d9daafd0a27335bdbcd01cc  kernel/private/classes/services/draftscleanup.php
-83445e3584647ca4704ab407029a9ec5  kernel/private/classes/services/mailpreferencespage.php
+d0693dcf25d6d8639c3579bd618844d9  kernel/private/classes/services/mailpreferencespage.php
 691b2b62e924bdef2a7010ea9b8e0960  kernel/private/classes/services/sessiongarbagecollector.php
 d3411a771db07379843c263813850cf0  kernel/private/classes/services/trash.php
 aa572c5435160a8cd78f8c0044a92ecf  kernel/private/classes/services/trashlist.php
