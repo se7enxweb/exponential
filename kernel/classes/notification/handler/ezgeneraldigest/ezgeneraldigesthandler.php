@@ -114,12 +114,20 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
             $failedAddresses = array();
             foreach ( $addressArray as $address )
             {
+                // the e-mail preferences refuse content notifications for this person: no digest is rendered, and
+                // the waiting items are dropped (switched on again, only new content is mailed)
+                if ( class_exists( 'expNotificationMailCategoryHandler' ) &&
+                     !expNotificationMailCategoryHandler::allowsAddress( $address['address'], expNotificationMailCategoryHandler::CONTENT ) )
+                {
+                    $this->removeItemsOfAddress( $address['address'], $timestamp );
+                    continue;
+                }
                 $tpl->setVariable( 'date', $date );
                 $tpl->setVariable( 'address', $address['address'] );
                 $result = $tpl->fetch( 'design:notification/handler/ezgeneraldigest/view/plain.tpl' );
                 $subject = $tpl->variable( 'subject' );
 
-                $parameters = array();
+                $parameters = array( 'mail_category' => 'content' );
                 if ( $tpl->hasVariable( 'content_type' ) )
                     $parameters['content_type'] = $tpl->variable( 'content_type' );
 
@@ -187,6 +195,22 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
                 $keep[(int)$row['id']] = true;
         }
         return array_values( array_filter( $itemIDList, function ( $id ) use ( $keep ) { return !isset( $keep[(int)$id] ); } ) );
+    }
+
+    /**
+     * Removes the digest items of an address that are due by $timestamp (the person's e-mail preferences refuse
+     * them).
+     *
+     * @param string $address
+     * @param int $timestamp
+     */
+    function removeItemsOfAddress( $address, $timestamp )
+    {
+        $items = eZPersistentObject::fetchObjectList( eZNotificationCollectionItem::definition(), array( 'id' ),
+                                                      array( 'address' => (string)$address, 'send_date' => array( '', array( 1, (int)$timestamp ) ) ),
+                                                      null, null, false );
+        foreach ( (array)$items as $item )
+            eZPersistentObject::removeObject( eZNotificationCollectionItem::definition(), array( 'id' => (int)$item['id'] ) );
     }
 
     function fetchUsersForDigest( $timestamp )

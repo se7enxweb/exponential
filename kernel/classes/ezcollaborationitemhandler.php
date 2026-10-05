@@ -138,6 +138,11 @@ class eZCollaborationItemHandler
         $userIDList = array();
         foreach ( $ruleList as $rule )
         {
+            // the e-mail preferences refuse collaboration mail (the category, the master switch, a suppressed
+            // address): the person is left out before any mail is rendered; the rule stays
+            if ( class_exists( 'expNotificationMailCategoryHandler' ) &&
+                 !expNotificationMailCategoryHandler::allowsUser( $rule['user_id'], expNotificationMailCategoryHandler::COLLABORATION ) )
+                continue;
             $userIDList[] = $rule['user_id'];
         }
         $userList = array();

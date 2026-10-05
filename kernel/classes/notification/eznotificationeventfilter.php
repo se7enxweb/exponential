@@ -102,7 +102,14 @@ class eZNotificationEventFilter
                 self::noteDropped( count( $ids ) . ' message(s) of event ' . (int)$items[0]['event_id'] . ' not sent for more than ' . self::retryHours() . ' hours' );
                 continue;
             }
-            if ( $transport->send( $addresses, $collection->attribute( 'data_subject' ), $collection->attribute( 'data_text' ) ) )
+            $retryParameters = array();
+            if ( class_exists( 'expNotificationMailCategoryHandler' ) )
+            {
+                $category = expNotificationMailCategoryHandler::categoryForHandler( $collection->attribute( 'handler' ) );
+                if ( $category !== null )
+                    $retryParameters['mail_category'] = $category;
+            }
+            if ( $transport->send( $addresses, $collection->attribute( 'data_subject' ), $collection->attribute( 'data_text' ), null, $retryParameters ) )
             {
                 foreach ( $ids as $id )
                     eZPersistentObject::removeObject( eZNotificationCollectionItem::definition(), array( 'id' => $id ) );

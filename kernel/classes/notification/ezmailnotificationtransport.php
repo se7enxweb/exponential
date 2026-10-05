@@ -81,6 +81,10 @@ class eZMailNotificationTransport extends eZNotificationTransport
             $mail->setSenderText( $parameters['from'] );
         if ( isset( $parameters['content_type'] ) )
             $mail->setContentType( $parameters['content_type'] );
+        // the category of the e-mail preferences (content, collaboration): the mail gate sends it only to the
+        // people who switched it on
+        if ( isset( $parameters['mail_category'] ) && method_exists( $mail, 'setCategory' ) )
+            $mail->setCategory( $parameters['mail_category'] );
         $mailResult = eZMailTransport::send( $mail );
         if ( self::$observer !== null )
         {

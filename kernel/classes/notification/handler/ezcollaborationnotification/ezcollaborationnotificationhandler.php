@@ -108,6 +108,7 @@ class eZCollaborationNotificationHandler extends eZNotificationEventHandler
                 $addressList[] = $item->attribute( 'address' );
             }
             $transport = eZNotificationTransport::instance( 'ezmail' );
+            $parameters['mail_category'] = 'collaboration';
             if ( !$transport->send( $addressList,
                                     $collection->attribute( 'data_subject' ),
                                     $collection->attribute( 'data_text' ),

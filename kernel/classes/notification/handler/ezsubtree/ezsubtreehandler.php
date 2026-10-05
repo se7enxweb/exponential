@@ -114,6 +114,33 @@ class eZSubTreeHandler extends eZNotificationEventHandler
             return eZNotificationEventHandler::EVENT_SKIPPED;
         }
 
+        // the subscribers first: the people whose e-mail preferences refuse content notifications (the category,
+        // the master switch, a suppressed address) are left out before any mail is rendered; their rules stay
+        $assignedNodes = $contentObject->parentNodes( true );
+        $nodeIDList = array();
+        foreach( $assignedNodes as $node )
+        {
+            if ( $node )
+            {
+                $pathString = $node->attribute( 'path_string' );
+                $pathString = ltrim( rtrim( $pathString, '/' ), '/' );
+                $nodeIDListPart = explode( '/', $pathString );
+                $nodeIDList = array_merge( $nodeIDList, $nodeIDListPart );
+            }
+        }
+        $nodeIDList[] = $contentNode->attribute( 'node_id' );
+        $nodeIDList = array_unique( $nodeIDList );
+
+        $userList = eZSubtreeNotificationRule::fetchUserList( $nodeIDList, $contentObject );
+        if ( class_exists( 'expNotificationMailCategoryHandler' ) )
+        {
+            $userList = array_values( array_filter( $userList, function ( $subscriber ) {
+                return expNotificationMailCategoryHandler::allowsUser( $subscriber['user_id'], expNotificationMailCategoryHandler::CONTENT );
+            } ) );
+            if ( !$userList )
+                return eZNotificationEventHandler::EVENT_SKIPPED;
+        }
+
         $res = eZTemplateDesignResource::instance();
         $res->setKeys( array( array( 'object', $contentObject->attribute( 'id' ) ),
                               array( 'node', $contentNode->attribute( 'node_id' ) ),
@@ -158,23 +185,6 @@ class eZSubTreeHandler extends eZNotificationEventHandler
         $collection->setAttribute( 'data_text', $result );
         $collection->store();
 
-        $assignedNodes = $contentObject->parentNodes( true );
-        $nodeIDList = array();
-        foreach( $assignedNodes as $node )
-        {
-            if ( $node )
-            {
-                $pathString = $node->attribute( 'path_string' );
-                $pathString = ltrim( rtrim( $pathString, '/' ), '/' );
-                $nodeIDListPart = explode( '/', $pathString );
-                $nodeIDList = array_merge( $nodeIDList, $nodeIDListPart );
-            }
-        }
-        $nodeIDList[] = $contentNode->attribute( 'node_id' );
-        $nodeIDList = array_unique( $nodeIDList );
-
-        $userList = eZSubtreeNotificationRule::fetchUserList( $nodeIDList, $contentObject );
-
         $locale = eZLocale::instance();
         $weekDayNames = $locale->attribute( 'weekday_name_list' );
         $weekDaysByName = array_flip( $weekDayNames );
@@ -182,6 +192,24 @@ class eZSubTreeHandler extends eZNotificationEventHandler
         foreach( $userList as $subscriber )
         {
             $item = $collection->addItem( $subscriber['address'] );
+            // a frequency chosen on the e-mail preference page wins over the old digest settings
+            $chosen = class_exists( 'expNotificationMailCategoryHandler' )
+                    ? expNotificationMailCategoryHandler::storedFrequency( $subscriber['user_id'], expNotificationMailCategoryHandler::CONTENT )
+                    : '';
+            if ( $chosen === 'immediate' )
+                continue;
+            if ( $chosen === 'daily' || $chosen === 'weekly' )
+            {
+                $settings = eZGeneralDigestUserSettings::fetchByUserId( $subscriber['user_id'] );
+                $time = $settings !== null ? (string)$settings->attribute( 'time' ) : '';
+                $hour = $time !== '' ? (int)explode( ':', $time )[0] : 8;
+                if ( $chosen === 'daily' )
+                    eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'day', 'hour' => $hour ) );
+                else
+                    eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'week', 'day' => 1, 'hour' => $hour ) );
+                $item->store();
+                continue;
+            }
             if ( $subscriber['use_digest'] == 0 )
             {
                 $settings = eZGeneralDigestUserSettings::fetchByUserId( $subscriber['user_id'] );
@@ -248,6 +276,7 @@ class eZSubTreeHandler extends eZNotificationEventHandler
         }
 
         $transport = eZNotificationTransport::instance( 'ezmail' );
+        $parameters['mail_category'] = 'content';
         if ( !$transport->send( $addressList, $collection->attribute( 'data_subject' ), $collection->attribute( 'data_text' ), null,
                                 $parameters ) )
         {
