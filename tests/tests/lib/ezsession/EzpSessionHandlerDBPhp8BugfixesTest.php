@@ -396,4 +396,16 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue( method_exists( $this->handler, 'destroy' ) );
         $this->assertTrue( method_exists( $this->handler, 'gc' ) );
     }
+
+    /**
+     * @test
+     * setSaveHandler() registers the handler without session_module_name( 'user' ),
+     * which throws a ValueError on PHP 8; session_set_save_handler() selects the
+     * user module by itself.
+     */
+    public function testSetSaveHandlerRegistersTheUserModule(): void
+    {
+        $this->assertTrue( $this->handler->setSaveHandler() );
+        $this->assertSame( 'user', session_module_name() );
+    }
 }
