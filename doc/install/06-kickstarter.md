@@ -29,7 +29,7 @@ php bin/php/console exp:kickstarter run --force
 expKickstarter (kernel/classes/expkickstarter.php), in the child
         |  - boots a CLI script with the siteaccess "plain", HTTP_HOST "localhost" when unset
         |  - deletes the cached copies var/cache/ini/kickstart-*.php
-        |  - switches maintenance mode on (not in a dry run)
+        |  - switches maintenance mode on (not in a dry run; an open window is kept)
         |  - runs the steps Welcome .. Final from kernel/setup/steps/ezstep_data.php,
         |    each one reading its section of kickstart.ini
         |  - switches maintenance mode off and prints a summary
@@ -68,6 +68,7 @@ php bin/php/console exp:kickstarter ini --defaults   # the values of kickstart.i
 |---|---|---|
 | `--defaults` | `-d` | write `kickstart.ini` from the values in `kickstart.ini-dist` and exit |
 | `--yes` | `-y` | apply the built-in defaults (table below) and write `kickstart.ini` without asking |
+| `--from-installed` | | take the `Server`, `Database` and `User` (never the `Password`) of an installed siteaccess as defaults; off by default |
 | `--help` | `-h` | show the help of `ini` |
 
 How the file is built (`kernel/classes/expkickstarterini.php`):
@@ -91,7 +92,7 @@ Without `--yes` or `--defaults` the command needs a terminal; otherwise it stops
 | `database_choice` | `Type` | `sqlite3` |
 | `database_init` | `Server`, `Port`, `Database`, `User`, `Password`, `Socket` | `localhost`, empty, `ezp`, `root`, empty, empty |
 | `language_options` | `Primary`, `Languages[]` | `eng-US`, none |
-| `site_types` | `Site_package` | `sevenx_site` |
+| `site_types` | `Site_package` | `sevenx_multisite` (the package `exp:install` installs) |
 | `site_access` | `Access` | `url` |
 | `site_details` | `Title` | `My Exponential Site` |
 | `site_details` | `URL` | empty |
@@ -100,13 +101,14 @@ Without `--yes` or `--defaults` the command needs a terminal; otherwise it stops
 | `site_details` | `AccessHostname`, `AdminAccessHostname`, `EditorAccessHostname` | `sevenx-site.test.com`, `sevenx-site-admin.test.com`, `edit.sevenx-site.test.com` |
 | `site_details` | `Database`, `DatabaseAction` | `ezp`, `skip` |
 | `site_admin` | `FirstName`, `LastName`, `Email`, `Password` | `Admin`, `User`, `admin@example.com`, empty (a password is generated at install time) |
-| `registration` | `Comments`, `Send` | empty, `false` |
+| `registration` | `Comments`, `Send` | empty (not read by `run`), `false` |
 
-> **Careful with `--yes` on a machine that already has an installation.** Before the defaults are applied, the
-> generator looks through `settings/siteaccess/*/site.ini` and takes the `Server`, `Database`, `User` and `Password`
-> of the first siteaccess that names a database and a user, for `[database_init]` and `[site_details] Database`. The
-> resulting file points at that installation's database. Read the file before you run it, and check
-> `DatabaseAction`.
+The defaults take nothing from an installation that is already there: its siteaccess settings name a live database,
+and a file written from them would install over it. With `--from-installed` the generator looks through
+`settings/siteaccess/*/site.ini` and takes the `Server`, `Database` and `User` of the first siteaccess that names a
+database and a user, for `[database_init]` and `[site_details] Database`; the `Password` is never copied, enter it
+yourself. **A file made with `--from-installed` points at that installation's database**: read it before you run it,
+and check `DatabaseAction`.
 
 **The interactive editor.** `ini` without options shows a menu of the sections with a summary of each:
 
@@ -129,18 +131,22 @@ appends). There is no "quit without saving": interrupt with Ctrl-C to leave the 
 
 ```bash
 php bin/php/console exp:kickstarter run --list-steps    # show the steps, change nothing
-php bin/php/console exp:kickstarter run --dry-run       # check, stop before CreateSites
+php bin/php/console exp:kickstarter run --dry-run       # check, stop after SiteDetails
 php bin/php/console exp:kickstarter run --force         # install
 ```
 
 | Option | Default | Effect |
 |---|---|---|
 | `--force` | off | required whenever the range of steps includes `CreateSites`. Without it `run` stops with "The CreateSites step will modify the database and site settings." and "Re-run with --force to confirm you want to install the site package.", exit status 1 |
-| `--dry-run` | off | lists the sections found and the steps, then runs `DatabaseChoice` to `Registration` (it sets the start and stop step itself), imports the site package into a temporary repository, and stops before `CreateSites`. No `--force` needed. See [6.7](#67-dry-runs) |
+| `--dry-run` | off | lists the sections found and the steps, then runs `DatabaseChoice` to `SiteDetails` (it sets the start and stop step itself), imports the site package into a temporary repository, and stops before `SiteAdmin`. No `--force` needed. See [6.7](#67-dry-runs) |
 | `--list-steps` | off | prints the step table and exits with status 0 |
-| `--start-step=<Step>` | `welcome` | first step to run |
+| `--start-step=<Step>` | `welcome` | first step to run. Refused when a step in the range needs results of steps before it, see [6.10](#610-re-running-and-resuming) |
 | `--stop-step=<Step>` | `final` | last step to run |
 | `--help`, `-h` | | the help of `run` |
+
+The standard script options (`--allow-root-user`, `--no-colors`, `--quiet`, `--debug`, `--verbose`, `--siteaccess`,
+`--logfiles`) are accepted and ignored; the kickstarter always runs on the plain siteaccess. `exp:install` passes
+`--allow-root-user` on this way.
 
 Step names are the class names of the step table and are matched without regard to case (`SiteDetails`,
 `sitedetails`). An unknown name stops the run with "Unknown start step: ..." or "Unknown stop step: ...".
@@ -179,7 +185,7 @@ The environment variables of `run`:
 | Status | When |
 |---|---|
 | `0` | the installation finished; or `--list-steps`; or a dry run that completed; or `ini` wrote the file; or help |
-| `1` | `kickstart.ini` not found ("kickstart.ini not found. Generate it first with: ./bin/php/console exp:kickstarter ini"); an unknown command, option or step name; `--force` missing; `kickstart.ini` has no sections (dry run); any step failed; `ini` could not run or write |
+| `1` | `kickstart.ini` not found ("kickstart.ini not found. Generate it first with: ./bin/php/console exp:kickstarter ini"); an unknown command, option or step name; a `--start-step` that cannot work; `--force` missing; `kickstart.ini` has no sections (dry run); any step failed; `ini` could not run or write |
 
 When the run log is on, the parent process exits with the child's status, so scripts see the same values.
 
@@ -231,8 +237,10 @@ On the command line there is nobody to show a page to, so a step that would show
 | `CreateSites` | none | installs |
 | `Final` | none | ends the run |
 
-A step that fails because its section is missing or says `Continue=false` reports "Unknown failure": the message
-does not name the section, so check the file first when you see it.
+A step that fails because its section is missing or does not say `Continue=true` names the reason, for example
+"kickstart.ini has no [site_admin] section: the step needs one to run without the web wizard" or "kickstart.ini
+[site_access] has Continue=false: the step stops there for the web wizard. Set Continue=true to run it from the command
+line." "Unknown failure" is left only for a step that stopped for a reason the kickstarter cannot tell.
 
 So for the command line: **give every section from `[email_settings]` to `[site_admin]`, each with
 `Continue=true`.** The same file also drives the browser wizard ([chapter 5](05-setup-wizard.md#56-how-kickstartini-pre-fills-and-skips-pages)).
@@ -306,10 +314,9 @@ This step connects to the database to check it. The checks and messages are thos
 | `Primary` | text (locale) | **required** | the primary language, e.g. `eng-US` |
 | `Languages[]` | text list | none | additional languages. The primary may be listed here too; it is dropped from the list |
 
-Every language must have a locale in `share/locale`. Otherwise the step stops the run. The terminal shows only
-"Step LanguageOptions failed:" and "Unknown failure"; the reason is in `var/log/error.log` and `var/log/setup.log`
-("kickstart.ini [language_options]: The primary language ... is not a language this installation has a locale for
-(share/locale)."). The site is always installed as UTF-8.
+Every language must have a locale in `share/locale`. Otherwise the step stops the run with "Step LanguageOptions
+failed:" and the reason, also in `var/log/setup.log` ("kickstart.ini [language_options]: The primary language ... is
+not a language this installation has a locale for (share/locale)."). The site is always installed as UTF-8.
 
 **`[site_types]`**
 
@@ -343,18 +350,18 @@ package, remove its imported directory first.
 | `OrganisationAddress` | text | empty | the sender's postal address; `\n` separates lines |
 | `Access` | text | the package identifier | with `Access=url`: the URL path of the siteaccess `site` |
 | `AdminAccess` | text | *identifier*`_admin` | with `url`: the path of `admin` |
-| `EditorAccess` | text | `editor` | with `url`: the path of `editor` |
+| `EditorAccess` | text | `editor` (`<Access>_editor` when `editor` is taken) | with `url`: the path of `editor` |
 | `AccessPort` | int | `8080` | with `port`: the port of `site` |
 | `AdminAccessPort` | int | the next free of `8080`, `8081`, ... | with `port`: the port of `admin` |
-| `EditorAccessPort` | int | the next free of `8080`, `8081`, `8082` | with `port`: the port of `editor` |
+| `EditorAccessPort` | int | the site's port + 2 (`8082` for `8080`), the next free port when that is the admin's | with `port`: the port of `editor`; never the site's or the admin's |
 | `AccessHostname` | text | *identifier*`.`*host* | with `hostname`: the host of `site` |
 | `AdminAccessHostname` | text | *identifier*`-admin.`*host* | with `hostname`: the host of `admin` |
-| `EditorAccessHostname` | text | `edit.`*host*; on the command line `edit.localhost` | with `hostname`: the host of `editor`. Always set it for host matching |
+| `EditorAccessHostname` | text | `edit.`*the site's host without* `www.` (`edit.example.com` for `www.example.com`) | with `hostname`: the host of `editor` |
 | `Database` | text | **required** | the database the site uses (SQLite: the file). Give the same value as `[database_init] Database` |
 | `DatabaseAction` | choice: `remove`, `ignore`, `skip` | `ignore` behaviour | what to do with existing data, [6.5](#65-databaseaction-read-this-before-you-run) |
 
-Only the keys of the chosen access type are used. The port defaults count up from 8080 only for the ports you leave
-out: with `AccessPort=9000` and nothing else, the admin gets 8080 and the editor 8081. Give all three.
+Only the keys of the chosen access type are used. The admin's port default counts up from 8080 only when you leave
+it out: with `AccessPort=9000` and nothing else, the admin gets 8080 and the editor 9002. Give all three to be sure.
 
 The siteaccess **directories** are always `site`, `admin` and `editor`. `Access`, `AdminAccess` and `EditorAccess`
 are the values that select them, not their names. Unlike the browser wizard, the command line does not refuse `admin`
@@ -394,8 +401,8 @@ you give is not checked against `MinPasswordLength` here (`exp:install` does che
 | Key | Type | Default | Effect |
 |---|---|---|---|
 | `Continue` | bool | `false` | |
-| `Send` | bool | **`true` when the section exists** | `true` sends a registration e-mail about the installation (system, PHP and database details) to an external address through the configured mail transport. **Write `Send=false`** |
-| `UserData[...]` | text | empty | the details sent with that e-mail |
+| `Send` | bool | `false` | `true` sends a registration report about the installation (system, PHP and database details) through the configured mail transport, but only to `settings/setup.ini [RegistrationSettings] Receiver`, which is empty by default: without a receiver nothing is sent. The old upstream registration address is never used |
+| `UserData[...]` | text | empty | the details sent with that report |
 | `Comments` | text | | listed in `kickstart.ini-dist`, not read by this version |
 
 ### 6.4.3 The template: kickstart.ini-dist
@@ -410,7 +417,7 @@ complete, generated file for a host-matched installation, useful to compare with
 > and installs into it. On MySQL, PostgreSQL and the other servers every kernel table is dropped first; on SQLite the
 > whole file is emptied. **Everything in that database is lost, and nothing asks you again**: `--force` is the only
 > confirmation. Point `Database` at a database that holds nothing you need, check it twice, and take a backup first.
-> `exp:kickstarter ini --yes` may fill `Database` from an existing installation's settings
+> `exp:kickstarter ini --from-installed` fills `Database` from an existing installation's settings
 > ([6.2.1](#621-ini-write-kickstartini)).
 
 | Value | Effect on the database | Effect on the settings | Use it for |
@@ -554,7 +561,7 @@ OrganisationName=Example Ltd
 OrganisationAddress=1 Example Street\n12345 Example City
 AccessHostname=www.example.com
 AdminAccessHostname=admin.example.com
-EditorAccessHostname=edit.example.com   ; set it: the default would be edit.localhost
+EditorAccessHostname=edit.example.com   ; also the default: edit.<AccessHostname without www.>
 Database=exponential
 DatabaseAction=remove            ; DROPS every kernel table in `exponential`
 
@@ -626,7 +633,7 @@ Title=Intranet
 URL=http://intranet.example.com
 AccessPort=8080
 AdminAccessPort=8081
-EditorAccessPort=8082            ; give all three ports
+EditorAccessPort=8082            ; also the default: AccessPort + 2
 Database=exponential
 DatabaseAction=remove
 
@@ -659,15 +666,15 @@ A dry run:
 
 1. prints "Dry-run: validating kickstart.ini", the sections found and the step table; a file without sections stops
    here with "No groups found in kickstart.ini" and status 1;
-2. runs `DatabaseChoice` to `Registration` with the values of the file, so the database must be reachable;
+2. runs `DatabaseChoice` to `SiteDetails` with the values of the file, so the database must be reachable;
 3. in `SiteTypes` downloads the site package and its requirements into a temporary repository
    `var/storage/packages/dryrun/`, which is removed as soon as the step is done (and at the start of every run);
-4. stops before `CreateSites` and prints "Dry-run completed: remote packages verified. Stopped before CreateSites."
+4. stops after `SiteDetails` and prints "Dry-run completed: database and remote packages verified. Stopped after
+   SiteDetails, nothing written."
 
-It does not switch maintenance mode on, and it writes neither the database nor the settings. It is not entirely
-without effects, though: `SiteAdmin` runs, so an empty or well-known `Password` produces a generated password and
-`var/log/initial-admin-password`; `Registration` runs, so `Send=true` would send the registration e-mail; and the run
-is logged to `var/log/setup.log` and `var/log/kickstart.log`.
+It does not switch maintenance mode on, and it writes neither the database nor the settings. `SiteAdmin` and
+`Registration` do not run, so no `var/log/initial-admin-password` is written and no mail is sent. The run is logged to
+`var/log/setup.log` and `var/log/kickstart.log`.
 
 ## 6.8 Maintenance mode during a run
 
@@ -677,9 +684,12 @@ The run prints "Maintenance mode on: the site shows the maintenance page until t
 and "Maintenance mode off: the site answers again." at the end.
 
 After a failed step the site **stays** in maintenance mode, and the run says: "The site stays in maintenance mode.
-After fixing the cause: run the kickstarter again, or php bin/php/maintenance.php off". A run replaces any marker that
-was there with its own and removes it at the end, so do not start an installation inside a maintenance window you
-opened with `exp:maintenance on` and expect the window to survive it.
+After fixing the cause: run the kickstarter again, or php bin/php/maintenance.php off".
+
+A maintenance window that is already open (`exp:maintenance on`, or a marker of another run) is kept exactly as it
+is: the run does not replace `var/maintenance.json`, says "Maintenance mode was already on: kept as it is, and left on
+after the installation (php bin/php/maintenance.php off ends it).", and leaves the window open at the end. End it
+yourself when you are done.
 
 ```bash
 php bin/php/maintenance.php status       # or: php bin/php/console exp:maintenance status
@@ -709,16 +719,18 @@ replaces the database and the settings again. Use it to reset a test or training
 and in `var/log/setup.log`), then:
 
 ```bash
-php bin/php/console exp:kickstarter run --dry-run     # optional: check up to Registration
+php bin/php/console exp:kickstarter run --dry-run     # optional: check up to SiteDetails
 php bin/php/console exp:kickstarter run --force
 ```
 
 The steps hand their results to the following ones inside one process: `DatabaseChoice` sets the database type that
 `DatabaseInit` and `SiteDetails` use, `SiteTypes` the package that `SiteAccess` and `SiteDetails` work on, and
-`SystemCheck` what `CreateSites` learns about ImageMagick. A run started with `--start-step` at a later step does not
-have those results, and steps such as `SiteAccess` or `SiteDetails` then fail or work with empty values. Use
-`--start-step` for diagnosis of the early steps (for example `--start-step=DatabaseChoice --stop-step=DatabaseInit`
-to test only the database connection); for an installation, start at `Welcome`, the default. With
+`SystemCheck` what `CreateSites` learns about ImageMagick. A run started with `--start-step` at a later step would not
+have those results, so the kickstarter refuses such a start before anything runs and names the earliest step that
+works, for example "--start-step=SiteDetails cannot work: the steps SiteDetails..Final need what Welcome, ... found out
+earlier in the same run (...). Start at Welcome or earlier: --start-step=Welcome." Every range that installs starts at
+`Welcome`, the default. `--start-step` is left for diagnosis of the early steps (for example
+`--start-step=DatabaseChoice --stop-step=DatabaseInit` to test only the database connection). With
 `DatabaseAction=remove` a complete second run replaces whatever the failed one left behind.
 
 **Stop early.** `--stop-step=<Step>` ends after that step. With a stop step before `CreateSites` (for example
@@ -777,17 +789,16 @@ The earlier documents [Kickstarter CLI](../bc/6.0/kickstartercli.md) and
 [Kickstarter: install a whole site from one file](../features/6.0/kickstarter-cli.md) remain useful background. Where
 they differ from this chapter, this chapter follows the code of this version:
 
-- **Package download.** [Kickstarter CLI](../bc/6.0/kickstartercli.md) says the site package is always downloaded
-  from the remote repository, replacing a local copy. In this version the kickstarter prefers the remote index entry
-  but uses a package that is already imported, and downloads only what is missing ([6.4.2](#642-sections-and-keys),
-  `[site_types]`). A dry run always downloads, into the temporary `dryrun` repository.
+- **Package download.** The kickstarter prefers the remote index entry but uses a package that is already imported,
+  and downloads only what is missing ([6.4.2](#642-sections-and-keys), `[site_types]`). A dry run always downloads,
+  into the temporary `dryrun` repository. [Kickstarter CLI](../bc/6.0/kickstartercli.md) now says the same.
 - **`--stop-step=CreateSites`.** It does not stop before the database is written: `CreateSites` is the step that writes
   it. Stop at `Registration` or earlier to leave the database untouched.
-- **`[registration] Comments`.** Documented as the comment of the registration e-mail; this version does not read it.
-  `Send` defaults to `true` when the section exists.
-- **Resuming with `--start-step=SiteDetails`.** Both earlier documents (and [Installing Exponential 6.0](../INSTALL.md))
-  suggest resuming a failed run there. The steps before it set values that `SiteDetails` and `CreateSites` read in the
-  same process, so this chapter recommends running the whole sequence again ([6.10](#610-re-running-and-resuming)).
+- **`[registration] Comments`.** Not read; `Send` defaults to `false`.
+- **Resuming with `--start-step=SiteDetails`.** Older documents (and [Installing Exponential 6.0](../INSTALL.md))
+  suggest resuming a failed run there. Such a start is refused, because the steps before it set values that
+  `SiteDetails` and `CreateSites` read in the same process; run the whole sequence again
+  ([6.10](#610-re-running-and-resuming)).
 
 ---
 

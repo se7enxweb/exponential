@@ -118,7 +118,7 @@ php bin/php/console exp:kickstarter run --stop-step=Registration
 A run cannot pick up where an earlier one stopped. The steps keep what they found out (the database type and connection, the chosen package and its languages, the site access values, the system check's ImageMagick result, the administrator) in the running process only; `kickstart.ini` holds the answers, not those results. So a later `--start-step` is refused before anything runs when a step in the range needs an earlier one, and the message names the earliest step that works:
 
 ```
---start-step=SiteDetails cannot work: the steps SiteDetails..Final need what Welcome, EmailSettings, DatabaseChoice, DatabaseInit, LanguageOptions, SiteTypes, PackageLanguageOptions, SiteAccess found out earlier in the same run (...). Start at Welcome or earlier: --start-step=Welcome.
+--start-step=SiteDetails cannot work: the steps SiteDetails..Final need what Welcome, SystemCheck, EmailSettings, DatabaseChoice, DatabaseInit, LanguageOptions, SiteTypes, PackageLanguageOptions, SiteAccess found out earlier in the same run (...). Start at Welcome or earlier: --start-step=Welcome.
 ```
 
 Any range that includes `CreateSites` must start at `Welcome`. After a failure, fix the cause in `kickstart.ini` and run the whole installation again:

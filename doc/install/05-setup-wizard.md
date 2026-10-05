@@ -171,9 +171,8 @@ Exponential will fail.", lists "The affected directories are: ..." and gives rea
 
 Fix the causes on the server and press **Next**; the tests run again.
 
-> **Note.** The PHP version test compares with `setup.ini [phpversion] MinimumVersion`, which still reads `5.3.3`.
-> The real minimum is PHP 8.0, enforced by Composer (`composer.json` requires `^8.0`); see
-> [chapter 2](02-requirements.md).
+> **Note.** The PHP version test compares with `setup.ini [phpversion] MinimumVersion`, which reads `8.0.0`: the
+> same minimum Composer enforces (`composer.json` requires `^8.0`); see [chapter 2](02-requirements.md).
 
 ### 5.3.3 System finetuning
 
@@ -598,8 +597,9 @@ shows what you entered instead, so you can correct a value that came from the fi
 
 Two cautions:
 
-- With `[registration] Continue=true` in `kickstart.ini`, the registration e-mail is **sent** unless the section says
-  `Send=false`. Always write `Send=false`.
+- `[registration]` sends nothing unless it says `Send=true`, and even then the report goes only to
+  `settings/setup.ini [RegistrationSettings] Receiver`, which is empty by default. The old upstream registration
+  address is never used.
 - The settings cache keeps a compiled copy of `kickstart.ini` in `var/cache/ini/kickstart-*.php`, and this
   installation's `config.php` switches off the INI modification-time check. After editing `kickstart.ini` by hand
   for the browser wizard, delete those files. (The kickstarter deletes them itself.)
