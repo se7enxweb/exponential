@@ -17,7 +17,7 @@
 
 class eZMailNotificationTransport extends eZNotificationTransport
 {
-    /** @var callable|null called with ( addressList, subject, body, parameters ) for every message */
+    /** @var callable|null called with ( addressList, subject, body, parameters, sent ) for every message; sent is absent when the message is only reported (suppressed) */
     private static $observer = null;
 
     /** @var bool when true the observer is the whole transport: nothing is handed to the mail transport */
@@ -57,11 +57,10 @@ class eZMailNotificationTransport extends eZNotificationTransport
         if ( !$emailSender )
             $emailSender = $ini->variable( "MailSettings", "AdminEmail" );
 
-        if ( self::$observer !== null )
+        if ( self::$observer !== null && self::$suppress )
         {
-            call_user_func( self::$observer, is_array( $addressList ) ? $addressList : array( $addressList ), $subject, $body, $parameters );
-            if ( self::$suppress )
-                return true;
+            call_user_func( self::$observer, $addressList, $subject, $body, $parameters );
+            return true;
         }
 
         foreach ( $addressList as $addressItem )
@@ -83,6 +82,11 @@ class eZMailNotificationTransport extends eZNotificationTransport
         if ( isset( $parameters['content_type'] ) )
             $mail->setContentType( $parameters['content_type'] );
         $mailResult = eZMailTransport::send( $mail );
+        if ( self::$observer !== null )
+        {
+            // told after the transport has answered: the fifth argument is whether it took the message
+            call_user_func( self::$observer, $addressList, $subject, $body, $parameters, (bool)$mailResult );
+        }
         return $mailResult;
     }
 

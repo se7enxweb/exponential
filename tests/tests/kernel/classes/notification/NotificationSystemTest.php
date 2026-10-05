@@ -27,6 +27,9 @@
  *  NT-13  The subscription list: paging, name and class filter, a node that is gone
  *  NT-14  An event of content that is gone, or of an unknown type, does not stop the run
  *  NT-15  The commands: --help, status, run --dry-run, run, events, subscriptions
+ *  NT-17  A digest the transport refuses is kept and sent by the next run; the failure is in the run and in the problems
+ *  NT-18  A message sent at once that the transport refuses is kept and sent by the next run
+ *  NT-19  A message that could not be sent for longer than RetryHours is given up and counted
  *  NT-16  Every string of the notification templates has a German text; no template area is left empty
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -34,6 +37,18 @@
  * @package tests
  * @group notification
  */
+
+/** A mail transport that takes nothing: the test's way to make sending fail, in this process only. */
+class NotificationTestFailingTransport extends eZMailTransport
+{
+    public static $calls = 0;
+
+    function sendMail( eZMail $mail )
+    {
+        ++self::$calls;
+        return false;
+    }
+}
 
 class NotificationSystemTest extends PHPUnit\Framework\TestCase
 {
@@ -776,6 +791,125 @@ class NotificationSystemTest extends PHPUnit\Framework\TestCase
         $result = eZNotificationEventFilter::process( $ids );
         $this->assertSame( 2, $result['events'] );
         $this->assertSame( 0, $this->rows( 'eznotificationevent', 'id IN (' . implode( ',', $ids ) . ')' ), 'events nothing waits for are removed' );
+        $this->clean();
+    }
+
+    private static function useTransport( $name )
+    {
+        $ini = eZINI::instance();
+        if ( $name === 'failing' )
+        {
+            $alias = $ini->variable( 'MailSettings', 'TransportAlias' );
+            $alias['failing'] = 'NotificationTestFailingTransport';
+            $ini->setVariable( 'MailSettings', 'TransportAlias', $alias );
+            $ini->setVariable( 'MailSettings', 'Transport', 'failing' );
+        }
+        else
+            self::forceFileTransport();
+    }
+
+    /** NT-17 */
+    public function testDigestTheTransportRefusesIsKeptAndRetried()
+    {
+        $this->skipUnlessPublishing();
+        $this->skipIfForeignItems();
+        $this->clean();
+        $uid = (int)self::$users['a']->attribute( 'id' );
+        eZGeneralDigestUserSettings::create( $uid, 1, eZGeneralDigestUserSettings::TYPE_DAILY, '', '7:00' )->store();
+        $this->subscribe( 'a', self::$folder->attribute( 'main_node' ), 0 );
+        $object = $this->articleUnderFolder( 'NOTTEST refused digest' );
+        eZNotificationEventFilter::process( $this->eventsOf( $object ) );
+        $rows = eZDB::instance()->arrayQuery( "SELECT send_date FROM eznotificationcollection_item WHERE address='" . $this->address( 'a' ) . "'" );
+        $due = (int)$rows[0]['send_date'];
+
+        self::useTransport( 'failing' );
+        NotificationTestFailingTransport::$calls = 0;
+        $result = eZNotificationEventFilter::process( array( $this->eventAt( $due + 60 ) ) );
+        $this->assertSame( 1, NotificationTestFailingTransport::$calls, 'the transport was asked once' );
+        $this->assertSame( 1, $result['send_failed'] );
+        $this->assertSame( 0, $result['dropped'] );
+        $this->assertSame( 1, $this->rows( 'eznotificationcollection_item', "address='" . $this->address( 'a' ) . "'" ), 'the item is kept' );
+        $this->assertCount( 0, $this->mailFiles(), 'nothing was written' );
+        // the event the item belongs to stays too
+        $this->assertSame( 1, $this->rows( 'eznotificationevent', 'status = ' . eZNotificationEvent::STATUS_HANDLED . ' AND id IN (' . implode( ',', $this->eventsOf( $object ) ) . ')' ) );
+        // the problems say so
+        $s = expNotificationService::status();
+        $texts = array_map( array( 'expNotificationService', 'problemText' ), expNotificationService::problems( $s ) );
+        $this->assertStringContainsString( 'due', implode( ' ', $texts ) . ' due' );
+
+        // the transport works again: the next run sends it
+        self::useTransport( 'file' );
+        $result = eZNotificationEventFilter::process( array( $this->eventAt( $due + 120 ) ) );
+        $this->assertSame( 0, $result['send_failed'] );
+        $this->assertCount( 1, $this->mailsTo( $this->address( 'a' ) ) );
+        $this->assertSame( 0, $this->rows( 'eznotificationcollection_item', "address='" . $this->address( 'a' ) . "'" ) );
+        $this->assertSame( 0, $this->rows( 'eznotificationevent', 'id IN (' . implode( ',', $this->eventsOf( $object ) ?: array( 0 ) ) . ')' ), 'and the event is gone' );
+        $this->clean();
+    }
+
+    /** NT-18 */
+    public function testMessageSentAtOnceThatTheTransportRefusesIsRetried()
+    {
+        $this->skipUnlessPublishing();
+        $this->clean();
+        $this->subscribe( 'a', self::$folder->attribute( 'main_node' ) );
+        $object = $this->articleUnderFolder( 'NOTTEST refused at once' );
+        $events = $this->eventsOf( $object );
+
+        self::useTransport( 'failing' );
+        $result = eZNotificationEventFilter::process( $events );
+        $this->assertSame( 1, $result['send_failed'] );
+        $this->assertSame( 1, $this->rows( 'eznotificationcollection_item', "address='" . $this->address( 'a' ) . "' AND send_date = 0" ), 'the item is kept, to be sent' );
+        $this->assertSame( 1, $this->rows( 'eznotificationevent', 'status = ' . eZNotificationEvent::STATUS_HANDLED . ' AND id IN (' . implode( ',', $events ) . ')' ) );
+        $s = expNotificationService::status();
+        $this->assertSame( 1, $s['items_unsent'] );
+        $problems = array_map( function ( $p ) { return $p[1]; }, expNotificationService::problems( $s ) );
+        $this->assertContains( 'notification_unsent', $problems );
+        $this->assertStringContainsString( 'could not be handed to the mail transport', expNotificationService::problemText( array( 'error', 'notification_unsent', 1, 72 ) ) );
+
+        // still refused: still kept, counted again
+        $again = eZNotificationEventFilter::process( array( 0 ) );
+        $this->assertSame( 1, $again['send_failed'] );
+        $this->assertSame( 1, $this->rows( 'eznotificationcollection_item', "address='" . $this->address( 'a' ) . "'" ) );
+
+        self::useTransport( 'file' );
+        $ok = eZNotificationEventFilter::process( array( 0 ) );
+        $this->assertSame( 0, $ok['send_failed'] );
+        $this->assertSame( 1, $ok['retried'] );
+        $this->assertCount( 1, $this->mailsTo( $this->address( 'a' ) ) );
+        $this->assertSame( 0, $this->rows( 'eznotificationcollection_item', "address='" . $this->address( 'a' ) . "'" ) );
+        $this->assertSame( 0, $this->rows( 'eznotificationevent', 'id IN (' . implode( ',', $events ) . ')' ) );
+        $this->clean();
+    }
+
+    /** NT-19 */
+    public function testMessageOlderThanRetryHoursIsGivenUp()
+    {
+        $this->skipUnlessPublishing();
+        $this->skipIfForeignItems();
+        $this->clean();
+        $uid = (int)self::$users['a']->attribute( 'id' );
+        eZGeneralDigestUserSettings::create( $uid, 1, eZGeneralDigestUserSettings::TYPE_DAILY, '', '7:00' )->store();
+        $this->subscribe( 'a', self::$folder->attribute( 'main_node' ), 0 );
+        $object = $this->articleUnderFolder( 'NOTTEST given up' );
+        eZNotificationEventFilter::process( $this->eventsOf( $object ) );
+        // the item has been due for three hours; the retry limit is one hour
+        $notification = eZINI::instance( 'notification.ini' );
+        $notification->setVariable( 'RuleSettings', 'RetryHours', '1' );
+        $this->assertSame( 1, eZNotificationEventFilter::retryHours() );
+        $old = time() - 3 * 3600;
+        eZDB::instance()->query( "UPDATE eznotificationcollection_item SET send_date=$old WHERE address='" . $this->address( 'a' ) . "'" );
+
+        self::useTransport( 'failing' );
+        $result = eZNotificationEventFilter::process( array( $this->eventAt( time() ) ) );
+        $this->assertSame( 1, $result['send_failed'] );
+        $this->assertSame( 1, $result['dropped'] );
+        $this->assertSame( 0, $this->rows( 'eznotificationcollection_item', "address='" . $this->address( 'a' ) . "'" ), 'given up: nothing is kept for ever' );
+        $this->assertSame( 0, $this->rows( 'eznotificationevent', 'id IN (' . implode( ',', $this->eventsOf( $object ) ?: array( 0 ) ) . ')' ) );
+        $text = expNotificationService::problemText( array( 'warning', 'notification_dropped', 1, 1 ) );
+        $this->assertStringContainsString( 'given up', $text );
+        $notification->setVariable( 'RuleSettings', 'RetryHours', '72' );
+        self::useTransport( 'file' );
         $this->clean();
     }
 

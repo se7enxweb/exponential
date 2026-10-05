@@ -245,12 +245,21 @@ class eZSubTreeHandler extends eZNotificationEventHandler
         foreach ( $items as $item )
         {
             $addressList[] = $item->attribute( 'address' );
-            $item->remove();
         }
 
         $transport = eZNotificationTransport::instance( 'ezmail' );
-        $transport->send( $addressList, $collection->attribute( 'data_subject' ), $collection->attribute( 'data_text' ), null,
-                          $parameters );
+        if ( !$transport->send( $addressList, $collection->attribute( 'data_subject' ), $collection->attribute( 'data_text' ), null,
+                                $parameters ) )
+        {
+            // the transport did not take the mail: the items stay, and the next run sends them again
+            // (eZNotificationEventFilter::retryUnsent())
+            eZNotificationEventFilter::noteDeliveryFailure( 'subtree message to ' . count( $addressList ) . ' address(es)' );
+            return;
+        }
+        foreach ( $items as $item )
+        {
+            $item->remove();
+        }
         if ( $collection->attribute( 'item_count' ) == 0 )
         {
             $collection->remove();

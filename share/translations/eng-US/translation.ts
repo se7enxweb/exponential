@@ -39518,6 +39518,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>There is no valid sender address: set EmailSender in notification.ini or site.ini.</source>
         <translation>There is no valid sender address: set EmailSender in notification.ini or site.ini.</translation>
     </message>
+    <message>
+        <source>%count messages could not be handed to the mail transport and wait for the next run; each is given up after %hours hours.</source>
+        <translation>%count messages could not be handed to the mail transport and wait for the next run; each is given up after %hours hours.</translation>
+    </message>
+    <message>
+        <source>%count messages were given up in the last run: older than %hours hours, or for an address that cannot be mailed.</source>
+        <translation>%count messages were given up in the last run: older than %hours hours, or for an address that cannot be mailed.</translation>
+    </message>
+    <message>
+        <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
+        <translation>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/oauthadmin</name>
@@ -45949,6 +45961,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>weekly</source>
         <translation>weekly</translation>
+    </message>
+    <message>
+        <source>given up</source>
+        <translation>given up</translation>
+    </message>
+    <message>
+        <source>not sent</source>
+        <translation>not sent</translation>
     </message>
 </context>
 <context>

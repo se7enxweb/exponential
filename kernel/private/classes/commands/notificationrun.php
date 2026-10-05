@@ -152,6 +152,16 @@ class Notificationrun extends \Exponential\Runnable\Command
         $say( sprintf( 'PASS: %d event(s) handled, %d removed, %d kept for a digest, %d message(s) to %d recipient(s)%s, %d ms.',
                        $result['events'], $result['removed'], $result['kept'], $result['mails'], $result['recipients'],
                        $result['failed'] ? ', ' . $result['failed'] . ' handler failure(s)' : '', $result['ms'] ) );
+        if ( !empty( $result['retried'] ) )
+            $say( sprintf( '%d message(s) that failed earlier were sent now.', $result['retried'] ) );
+        if ( !empty( $result['dropped'] ) )
+            $say( sprintf( 'WARNING: %d message(s) were given up (older than %d hours, or an address that cannot be mailed).', $result['dropped'], \eZNotificationEventFilter::retryHours() ) );
+        if ( !empty( $result['send_failed'] ) )
+        {
+            $cli->error( sprintf( 'FAIL: the mail transport refused %d message(s); they are kept and tried again at the next run (for %d hours).', $result['send_failed'], \eZNotificationEventFilter::retryHours() ) );
+            $finish( 1, 'failed' );
+            return;
+        }
         $finish( 0, 'ok' );
     }
 }

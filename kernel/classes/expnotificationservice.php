@@ -201,7 +201,7 @@ class expNotificationService
         $source = isset( $options['source'] ) ? (string)$options['source'] : 'console';
         $result = array( 'time' => time(), 'source' => $source, 'dry' => false, 'result' => 'ok', 'ms' => 0,
                          'events' => 0, 'removed' => 0, 'kept' => 0, 'failed' => 0, 'mails' => 0, 'recipients' => 0,
-                         'error' => '', 'user' => isset( $options['user'] ) ? (string)$options['user'] : '' );
+                         'send_failed' => 0, 'dropped' => 0, 'retried' => 0, 'error' => '', 'user' => isset( $options['user'] ) ? (string)$options['user'] : '' );
         if ( !self::lock( $source ) )
         {
             if ( self::$lockError === 'busy' )
@@ -220,7 +220,9 @@ class expNotificationService
         $start = microtime( true );
         $mails = 0;
         $recipients = 0;
-        eZMailNotificationTransport::observe( function ( $addresses ) use ( &$mails, &$recipients ) {
+        eZMailNotificationTransport::observe( function ( $addresses, $subject, $body, $parameters, $sent = true ) use ( &$mails, &$recipients ) {
+            if ( !$sent )
+                return; // refused by the transport: not counted as sent
             ++$mails;
             $recipients += count( $addresses );
         }, false );
@@ -234,6 +236,7 @@ class expNotificationService
                 $event->store();
             }
             $stats = eZNotificationEventFilter::process( $only );
+            unset( $stats['notes'] ); // short texts for the debug log; the record keeps the numbers
             $result = array_merge( $result, $stats );
         }
         catch ( Throwable $e )
@@ -360,6 +363,9 @@ class expNotificationService
         }
         $s['handled_kept'] = self::one( 'SELECT COUNT(*) FROM eznotificationevent WHERE status = ' . eZNotificationEvent::STATUS_HANDLED );
         $s['handled_orphans'] = eZNotificationEvent::cleanupHandled( true );
+        // messages the transport did not take: their items have no send date, their event is handled
+        $s['items_unsent'] = self::one( 'SELECT COUNT(*) FROM eznotificationcollection_item i, eznotificationevent e WHERE i.send_date = 0 AND e.id = i.event_id AND e.status = ' . eZNotificationEvent::STATUS_HANDLED );
+        $s['retry_hours'] = eZNotificationEventFilter::retryHours();
         $s['collections'] = self::one( 'SELECT COUNT(*) FROM eznotificationcollection' );
         $s['items_total'] = self::one( 'SELECT COUNT(*) FROM eznotificationcollection_item' );
         $s['items_now'] = self::one( 'SELECT COUNT(*) FROM eznotificationcollection_item WHERE send_date = 0' );
@@ -435,6 +441,12 @@ class expNotificationService
             $problems[] = array( 'error', 'notification_last_run_failed', $real['error'] );
         if ( $real && !empty( $real['failed'] ) )
             $problems[] = array( 'warning', 'notification_handler_failures', (int)$real['failed'] );
+        if ( !empty( $s['items_unsent'] ) )
+            $problems[] = array( 'error', 'notification_unsent', $s['items_unsent'], isset( $s['retry_hours'] ) ? $s['retry_hours'] : 72 );
+        if ( $real && !empty( $real['send_failed'] ) )
+            $problems[] = array( 'error', 'notification_send_failed', (int)$real['send_failed'] );
+        if ( $real && !empty( $real['dropped'] ) )
+            $problems[] = array( 'warning', 'notification_dropped', (int)$real['dropped'], isset( $s['retry_hours'] ) ? $s['retry_hours'] : 72 );
         if ( $s['items_due'] > 0 )
             $problems[] = array( 'warning', 'notification_digest_overdue', $s['items_due'] );
         if ( $s['handled_orphans'] > 0 )
@@ -472,6 +484,12 @@ class expNotificationService
                 return ezpI18n::tr( $d, 'The last run failed: %error', null, array( '%error' => $p[2] ) );
             case 'notification_handler_failures':
                 return ezpI18n::tr( $d, 'A handler failed on %count events in the last run; see the debug log.', null, array( '%count' => $p[2] ) );
+            case 'notification_unsent':
+                return ezpI18n::tr( $d, '%count messages could not be handed to the mail transport and wait for the next run; each is given up after %hours hours.', null, array( '%count' => $p[2], '%hours' => $p[3] ) );
+            case 'notification_send_failed':
+                return ezpI18n::tr( $d, 'The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.', null, array( '%count' => $p[2] ) );
+            case 'notification_dropped':
+                return ezpI18n::tr( $d, '%count messages were given up in the last run: older than %hours hours, or for an address that cannot be mailed.', null, array( '%count' => $p[2], '%hours' => $p[3] ) );
             case 'notification_digest_overdue':
                 return ezpI18n::tr( $d, '%count digest messages are overdue; a run sends them.', null, array( '%count' => $p[2] ) );
             case 'notification_handled_orphans':

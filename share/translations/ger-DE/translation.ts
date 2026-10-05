@@ -46398,6 +46398,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>There is no valid sender address: set EmailSender in notification.ini or site.ini.</source>
         <translation>Es gibt keine gültige Absenderadresse: EmailSender in notification.ini oder site.ini setzen.</translation>
     </message>
+    <message>
+        <source>%count messages could not be handed to the mail transport and wait for the next run; each is given up after %hours hours.</source>
+        <translation>%count Nachrichten konnten nicht an den Mail-Transport übergeben werden und warten auf den nächsten Lauf; jede wird nach %hours Stunden aufgegeben.</translation>
+    </message>
+    <message>
+        <source>%count messages were given up in the last run: older than %hours hours, or for an address that cannot be mailed.</source>
+        <translation>%count Nachrichten wurden im letzten Lauf aufgegeben: älter als %hours Stunden oder für eine Adresse, an die nicht gemailt werden kann.</translation>
+    </message>
+    <message>
+        <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
+        <translation>Der Mail-Transport hat im letzten Lauf %count Nachrichten abgelehnt. Prüfen Sie den Mailserver und site.ini MailSettings.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/oauthadmin</name>
@@ -52984,6 +52996,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>weekly</source>
         <translation>wöchentlich</translation>
+    </message>
+    <message>
+        <source>given up</source>
+        <translation>aufgegeben</translation>
+    </message>
+    <message>
+        <source>not sent</source>
+        <translation>nicht gesendet</translation>
     </message>
 </context>
 <context>

@@ -111,6 +111,7 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
             $prevTplUsageStats = $tpl->setIsTemplatesUsageStatisticsEnabled( false );
 
             $transport = eZNotificationTransport::instance( 'ezmail' );
+            $failedAddresses = array();
             foreach ( $addressArray as $address )
             {
                 $tpl->setVariable( 'date', $date );
@@ -122,7 +123,12 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
                 if ( $tpl->hasVariable( 'content_type' ) )
                     $parameters['content_type'] = $tpl->variable( 'content_type' );
 
-                $transport->send( $address['address'], $subject, $result, null, $parameters );
+                if ( !$transport->send( $address['address'], $subject, $result, null, $parameters ) )
+                {
+                    // the transport did not take the mail: the items of this address stay for the next run
+                    $failedAddresses[] = $address['address'];
+                    eZNotificationEventFilter::noteDeliveryFailure( 'digest mail' );
+                }
                 eZDebugSetting::writeDebug( 'kernel-notification', $result, "digest result" );
             }
 
@@ -130,6 +136,11 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
             eZDebugSetting::writeDebug( 'kernel-notification', $collectionItemIDList, "handled items" );
 
             $tpl->setIsTemplatesUsageStatisticsEnabled( $prevTplUsageStats );
+
+            if ( is_array( $collectionItemIDList ) && $failedAddresses )
+            {
+                $collectionItemIDList = $this->keepItemsOfFailedAddresses( $collectionItemIDList, $failedAddresses, $timestamp );
+            }
 
             if ( is_array( $collectionItemIDList ) && count( $collectionItemIDList ) > 0 )
             {
@@ -150,6 +161,33 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
         return true;
     }
 
+
+    /**
+     * Takes the items of the addresses whose mail failed out of the list of items to remove, so the next run
+     * sends them again. An item that has been due for longer than [RuleSettings] RetryHours is given up: it is
+     * removed and counted (eZNotificationEventFilter::noteDropped()).
+     *
+     * @param array $itemIDList ids of the items that went into a digest
+     * @param array $failedAddresses
+     * @param int $timestamp the time of the time event
+     * @return array the ids to remove
+     */
+    function keepItemsOfFailedAddresses( array $itemIDList, array $failedAddresses, $timestamp )
+    {
+        $db = eZDB::instance();
+        $hours = eZNotificationEventFilter::retryHours();
+        $in = 'address IN ( ' . implode( ', ', array_map( function ( $a ) use ( $db ) { return "'" . $db->escapeString( $a ) . "'"; }, $failedAddresses ) ) . ' )';
+        $rows = $db->arrayQuery( "SELECT id, send_date FROM eznotificationcollection_item WHERE $in AND send_date != 0 AND send_date <= " . (int)$timestamp );
+        $keep = array();
+        foreach ( $rows as $row )
+        {
+            if ( (int)$row['send_date'] < (int)$timestamp - $hours * 3600 )
+                eZNotificationEventFilter::noteDropped( 'digest item ' . $row['id'] . ' due since ' . date( 'Y-m-d H:i', (int)$row['send_date'] ) );
+            else
+                $keep[(int)$row['id']] = true;
+        }
+        return array_values( array_filter( $itemIDList, function ( $id ) use ( $keep ) { return !isset( $keep[(int)$id] ); } ) );
+    }
 
     function fetchUsersForDigest( $timestamp )
     {

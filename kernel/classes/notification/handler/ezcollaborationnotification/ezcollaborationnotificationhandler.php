@@ -106,14 +106,22 @@ class eZCollaborationNotificationHandler extends eZNotificationEventHandler
             foreach ( $items as $item )
             {
                 $addressList[] = $item->attribute( 'address' );
-                $item->remove();
             }
             $transport = eZNotificationTransport::instance( 'ezmail' );
-            $transport->send( $addressList,
-                              $collection->attribute( 'data_subject' ),
-                              $collection->attribute( 'data_text' ),
-                              null,
-                              $parameters );
+            if ( !$transport->send( $addressList,
+                                    $collection->attribute( 'data_subject' ),
+                                    $collection->attribute( 'data_text' ),
+                                    null,
+                                    $parameters ) )
+            {
+                // the items stay; the next run sends them again (eZNotificationEventFilter::retryUnsent())
+                eZNotificationEventFilter::noteDeliveryFailure( 'collaboration message to ' . count( $addressList ) . ' address(es)' );
+                continue;
+            }
+            foreach ( $items as $item )
+            {
+                $item->remove();
+            }
             if ( $collection->attribute( 'item_count' ) == 0 )
             {
                 $collection->remove();

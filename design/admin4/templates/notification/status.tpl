@@ -63,7 +63,7 @@
                 <tbody>
     {foreach $status.runs as $run}
                     <tr><td>{$run.time|l10n( 'shortdatetime' )}</td><td>{$run.source|wash}</td><td>{$run.events}</td><td>{$run.mails} / {$run.recipients}</td>
-                        <td>{if $run.result|eq( 'ok' )}<span class="nf-badge ok">{if $run.failed|gt( 0 )}{$run.failed} {'failed'|i18n( 'design/admin/notification/status' )}{else}OK{/if}</span>{else}<span class="nf-badge bad">{$run.result|wash}</span>{/if} <small>{$run.ms} ms</small></td></tr>
+                        <td>{if $run.result|eq( 'ok' )}<span class="nf-badge ok">{if $run.failed|gt( 0 )}{$run.failed} {'failed'|i18n( 'design/admin/notification/status' )}{else}OK{/if}</span>{if first_set( $run.send_failed, 0 )|gt( 0 )} <span class="nf-badge bad">{first_set( $run.send_failed, 0 )} {'not sent'|i18n( 'design/admin/notification/status' )}</span>{/if}{if first_set( $run.dropped, 0 )|gt( 0 )} <span class="nf-badge warn">{first_set( $run.dropped, 0 )} {'given up'|i18n( 'design/admin/notification/status' )}</span>{/if}{else}<span class="nf-badge bad">{$run.result|wash}</span>{/if} <small>{$run.ms} ms</small></td></tr>
     {/foreach}
                 </tbody>
             </table></div>

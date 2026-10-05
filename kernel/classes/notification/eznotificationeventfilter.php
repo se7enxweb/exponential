@@ -25,12 +25,100 @@ class eZNotificationEventFilter
      *
      * @param array|null $eventIDList only these events (null: all pending ones); a handled event that is
      *        asked for again is not handled twice, since only pending events are fetched
-     * @return array events (handled), removed (no one left to notify), kept (waiting for a digest), failed
+     * @return array events (handled), removed (no one left to notify), kept (waiting for a digest), failed (handlers that threw),
+     *         send_failed (mails the transport refused: kept and tried again next run), dropped (given up), retried (sent after an earlier
+     *         failure), notes (short texts of the failures)
      */
+    /** @var array what this pass could not deliver: send_failed (mails the transport refused), dropped (given up), retried (sent after an earlier failure), notes (short texts) */
+    private static $delivery = array( 'send_failed' => 0, 'dropped' => 0, 'retried' => 0, 'notes' => array() );
+
+    /** A handler reports a mail the transport did not take; its items are kept. */
+    static function noteDeliveryFailure( $what = '' )
+    {
+        ++self::$delivery['send_failed'];
+        if ( $what !== '' && count( self::$delivery['notes'] ) < 20 )
+            self::$delivery['notes'][] = 'failed: ' . $what;
+        eZDebug::writeWarning( 'The mail transport did not take a notification: ' . $what . '; it is kept for the next run', __METHOD__ );
+    }
+
+    /** A message was given up (too old, or an address that cannot be mailed); its items are removed. */
+    static function noteDropped( $what = '' )
+    {
+        ++self::$delivery['dropped'];
+        if ( $what !== '' && count( self::$delivery['notes'] ) < 20 )
+            self::$delivery['notes'][] = 'dropped: ' . $what;
+        eZDebug::writeWarning( 'A notification was given up: ' . $what, __METHOD__ );
+    }
+
+    /** [RuleSettings] RetryHours of notification.ini: how long a message that could not be sent is tried again (default 72). */
+    static function retryHours()
+    {
+        $ini = eZINI::instance( 'notification.ini' );
+        $hours = $ini->hasVariable( 'RuleSettings', 'RetryHours' ) ? (int)$ini->variable( 'RuleSettings', 'RetryHours' ) : 72;
+        return $hours > 0 ? $hours : 72;
+    }
+
+    /**
+     * Sends again the messages that were made for an event already handled and could not be sent then (their items
+     * have no send date and the event is handled). A message older than RetryHours, or for an address that cannot be
+     * mailed, is given up.
+     *
+     * @note Transaction unsafe.
+     */
+    static function retryUnsent()
+    {
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( 'SELECT i.id, i.address, i.collection_id, i.event_id FROM eznotificationcollection_item i, eznotificationevent e
+                                  WHERE i.send_date = 0 AND e.id = i.event_id AND e.status = ' . eZNotificationEvent::STATUS_HANDLED . ' ORDER BY i.collection_id, i.id' );
+        $byCollection = array();
+        foreach ( $rows as $row )
+            $byCollection[(int)$row['collection_id']][] = $row;
+        $limit = time() - self::retryHours() * 3600;
+        $transport = eZNotificationTransport::instance( 'ezmail' );
+        foreach ( $byCollection as $collectionID => $items )
+        {
+            $collection = eZPersistentObject::fetchObject( eZNotificationCollection::definition(), null, array( 'id' => $collectionID ) );
+            $event = eZNotificationEvent::fetch( (int)$items[0]['event_id'] );
+            $created = $event ? $event->createdAt() : false;
+            $ids = array();
+            $addresses = array();
+            foreach ( $items as $item )
+            {
+                if ( !eZMail::validate( $item['address'] ) )
+                {
+                    self::noteDropped( 'item ' . $item['id'] . ' has an address that cannot be mailed' );
+                    eZPersistentObject::removeObject( eZNotificationCollectionItem::definition(), array( 'id' => (int)$item['id'] ) );
+                    continue;
+                }
+                $ids[] = (int)$item['id'];
+                $addresses[] = $item['address'];
+            }
+            if ( !$ids )
+                continue;
+            if ( !$collection || $created === false || $created < $limit )
+            {
+                foreach ( $ids as $id )
+                    eZPersistentObject::removeObject( eZNotificationCollectionItem::definition(), array( 'id' => $id ) );
+                self::noteDropped( count( $ids ) . ' message(s) of event ' . (int)$items[0]['event_id'] . ' not sent for more than ' . self::retryHours() . ' hours' );
+                continue;
+            }
+            if ( $transport->send( $addresses, $collection->attribute( 'data_subject' ), $collection->attribute( 'data_text' ) ) )
+            {
+                foreach ( $ids as $id )
+                    eZPersistentObject::removeObject( eZNotificationCollectionItem::definition(), array( 'id' => $id ) );
+                self::$delivery['retried'] += count( $ids );
+            }
+            else
+                self::noteDeliveryFailure( 'retry of ' . count( $ids ) . ' message(s) of event ' . (int)$items[0]['event_id'] );
+        }
+    }
+
     static function process( $eventIDList = null )
     {
         $limit = 100;
+        self::$delivery = array( 'send_failed' => 0, 'dropped' => 0, 'retried' => 0, 'notes' => array() );
         $result = array( 'events' => 0, 'removed' => 0, 'kept' => 0, 'failed' => 0 );
+        self::retryUnsent();
         $availableHandlers = eZNotificationEventFilter::availableHandlers();
         if ( is_array( $eventIDList ) )
         {
@@ -49,7 +137,7 @@ class eZNotificationEventFilter
             }
             eZNotificationCollection::removeEmpty();
             eZNotificationEvent::cleanupHandled();
-            return $result;
+            return array_merge( $result, self::$delivery );
         }
         do
         {
@@ -62,7 +150,7 @@ class eZNotificationEventFilter
 
         eZNotificationCollection::removeEmpty();
         eZNotificationEvent::cleanupHandled();
-        return $result;
+        return array_merge( $result, self::$delivery );
     }
 
     private static function processEvent( $event, $availableHandlers, array &$result )

@@ -42,6 +42,10 @@ class Notification extends \Exponential\Runnable\CronjobPart
             $cli->error( "Failed: " . $result['error'] );
         else
             $cli->output( sprintf( "Done: %d events, %d messages to %d recipients", $result['events'], $result['mails'], $result['recipients'] ) );
+        if ( $result['result'] === 'ok' && !empty( $result['send_failed'] ) )
+            $cli->error( sprintf( "The mail transport refused %d message(s); they are kept for the next run", $result['send_failed'] ) );
+        if ( $result['result'] === 'ok' && !empty( $result['dropped'] ) )
+            $cli->output( sprintf( "%d message(s) were given up", $result['dropped'] ) );
         return $result['result'] === 'ok';
     }
 }
