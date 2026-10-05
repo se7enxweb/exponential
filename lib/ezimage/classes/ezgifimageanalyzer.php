@@ -89,6 +89,8 @@ class eZGIFImageAnalyzer
                 {
                     $data = fread( $fd, 1 );
                     $offset += 1;
+                    if ( $data === false || $data === '' )
+                        break;
                     $blockType = ord( $data[0] );
                     if ( $printInfo )
                     {
@@ -135,7 +137,7 @@ class eZGIFImageAnalyzer
                             {
                                 $data = fread( $fd, 1 );
                                 $offset += 1;
-                                $blockBytes = ord( $data[0] );
+                                $blockBytes = ( $data === false || $data === '' ) ? 0 : ord( $data[0] );
                                 if ( $printInfo )
                                     print( ">> Application Block size=$blockBytes\n" );
                                 if ( $blockBytes )
@@ -159,7 +161,7 @@ class eZGIFImageAnalyzer
                             {
                                 $data = fread( $fd, 1 );
                                 $offset += 1;
-                                $blockBytes = ord( $data[0] );
+                                $blockBytes = ( $data === false || $data === '' ) ? 0 : ord( $data[0] );
                                 if ( $printInfo )
                                     print( ">> Comment Block size=$blockBytes\n" );
                                 if ( $blockBytes )
@@ -182,15 +184,30 @@ class eZGIFImageAnalyzer
                         }
                         else
                         {
+                            // Any other extension (0x01 is the plain text extension) is a chain of data sub-blocks
+                            // ended by an empty one: skip it, the frames that follow still count.
                             if ( $printInfo )
-                                print( "> Unknown extension label, aborting\n" );
-                            $done = true;
+                                print( "> Unknown extension label, skipped\n" );
+                            do
+                            {
+                                $sizeByte = fread( $fd, 1 );
+                                $offset += 1;
+                                $blockBytes = ( $sizeByte === false || $sizeByte === '' ) ? 0 : ord( $sizeByte );
+                                if ( $blockBytes )
+                                {
+                                    fseek( $fd, $blockBytes, SEEK_CUR );
+                                    $offset += $blockBytes;
+                                }
+                            } while ( $blockBytes and !feof( $fd ) );
                         }
                     }
                     else if ( $blockType == 0x2c ) // Image Descriptor
                     {
                         $info['frame_count'] += 1;
                         $data .= fread( $fd, 9 );
+                        // a file cut short inside the descriptor has nothing more to tell
+                        if ( strlen( $data ) < 10 )
+                            break;
                         $localColorTableSize = 0;
                         $localColorCount = 0;
                         $idFields = ord( $data[9] );
@@ -199,7 +216,8 @@ class eZGIFImageAnalyzer
                             $localColorCount = ( 1 << ( ( $idFields & 0x07 ) + 1) );
                             $localColorTableSize = $localColorCount * 3;
                         }
-                        if ( $localColorCount > $globalColorCount )
+                        // the largest colour table of the global one and every frame's local one
+                        if ( $localColorCount > $info['color_count'] )
                             $info['color_count'] = $localColorCount;
 
                         if ( $localColorTableSize )
@@ -218,7 +236,7 @@ class eZGIFImageAnalyzer
                         {
                             $data = fread( $fd, 1 );
                             $offset += 1;
-                            $blockBytes = ord( $data[0] );
+                            $blockBytes = ( $data === false || $data === '' ) ? 0 : ord( $data[0] );
                             if ( $printInfo )
                                 print( ">> Block size=$blockBytes\n" );
                             if ( $blockBytes )
