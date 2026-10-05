@@ -23,76 +23,74 @@ class eZNotificationSchedule
      * @param eZNotificationCollectionItem|null $item Item to set the date on; null only computes the date, for a
      *                                               digest handler that needs the date without an item
      * @param array $settings 'frequency' (day, week or month), 'hour' and, for week and month, 'day'
+     * @param int|null $now The time to compute from (Unix timestamp); null for now. For tests.
      * @return int|false The send date as Unix timestamp, false for settings that are not an array
      */
-    static function setDateForItem( $item, $settings )
+    static function setDateForItem( $item, $settings, $now = null )
     {
         if ( !is_array( $settings ) )
             return false;
 
-        $dayNum = isset( $settings['day'] ) ? $settings['day'] : false;
-        $hour = $settings['hour'];
-        $currentDate = getdate();
-        $hoursDiff = $hour - $currentDate['hours'];
-
-        switch ( $settings['frequency'] )
-        {
-            case 'day':
-            {
-                if ( $hoursDiff <= 0 )
-                {
-                    $hoursDiff += 24;
-                }
-
-                $secondsDiff = 3600 * $hoursDiff
-                     - $currentDate['seconds']
-                     - 60 * $currentDate['minutes'];
-            } break;
-
-            case 'week':
-            {
-                $daysDiff = $dayNum - $currentDate['wday'];
-                if ( $daysDiff < 0 or
-                     ( $daysDiff == 0 and $hoursDiff <= 0 ) )
-                {
-                    $daysDiff += 7;
-                }
-
-                $secondsDiff = 3600 * ( $daysDiff * 24 + $hoursDiff )
-                     - $currentDate['seconds']
-                     - 60 * $currentDate['minutes'];
-            } break;
-
-            case 'month':
-            {
-                // If the daynum the user has chosen is larger than the number of days in this month,
-                // then reduce it to the number of days in this month.
-                $daysInMonth = intval( date( 't', mktime( 0, 0, 0, $currentDate['mon'], 1, $currentDate['year'] ) ) );
-                if ( $dayNum > $daysInMonth )
-                {
-                    $dayNum = $daysInMonth;
-                }
-
-                $daysDiff = $dayNum - $currentDate['mday'];
-                if ( $daysDiff < 0 or
-                     ( $daysDiff == 0 and $hoursDiff <= 0 ) )
-                {
-                    $daysDiff += $daysInMonth;
-                }
-
-                $secondsDiff = 3600 * ( $daysDiff * 24 + $hoursDiff )
-                     - $currentDate['seconds']
-                     - 60 * $currentDate['minutes'];
-            } break;
-        }
-
-        $sendDate = time() + $secondsDiff;
+        $now = $now === null ? time() : (int)$now;
+        $sendDate = self::nextSendDate( $settings, $now );
         eZDebugSetting::writeDebug( 'kernel-notification', getdate( $sendDate ), "item date"  );
         if ( $item !== null )
         {
             $item->setAttribute( 'send_date', $sendDate );
         }
         return $sendDate;
+    }
+
+    /**
+     * The next send date of a digest after $now, at the full hour 'hour' in the server's local time.
+     *
+     * The date is built from calendar fields (mktime), not by adding seconds, so a digest across a change between
+     * summer and winter time still goes out at the chosen hour; a monthly day the next month does not have (31 in
+     * February) falls on that month's last day.
+     *
+     * @param array $settings 'frequency' (day, week or month), 'hour' and, for week and month, 'day'
+     * @param int $now Unix timestamp
+     * @return int Unix timestamp; $now for an unknown frequency
+     */
+    static function nextSendDate( $settings, $now )
+    {
+        $hour = (int)$settings['hour'];
+        $dayNum = isset( $settings['day'] ) ? (int)$settings['day'] : 0;
+        $current = getdate( $now );
+        // the chosen hour of today is still ahead
+        $laterToday = $hour > $current['hours'];
+
+        switch ( $settings['frequency'] )
+        {
+            case 'day':
+            {
+                return mktime( $hour, 0, 0, $current['mon'], $current['mday'] + ( $laterToday ? 0 : 1 ), $current['year'] );
+            }
+
+            case 'week':
+            {
+                $daysDiff = $dayNum - $current['wday'];
+                if ( $daysDiff < 0 or ( $daysDiff == 0 and !$laterToday ) )
+                {
+                    $daysDiff += 7;
+                }
+                return mktime( $hour, 0, 0, $current['mon'], $current['mday'] + $daysDiff, $current['year'] );
+            }
+
+            case 'month':
+            {
+                // a chosen day larger than the month has falls on its last day
+                $day = min( $dayNum, (int)date( 't', mktime( 0, 0, 0, $current['mon'], 1, $current['year'] ) ) );
+                if ( $day > $current['mday'] or ( $day == $current['mday'] and $laterToday ) )
+                {
+                    return mktime( $hour, 0, 0, $current['mon'], $day, $current['year'] );
+                }
+                $nextMonth = mktime( 0, 0, 0, $current['mon'] + 1, 1, $current['year'] );
+                $day = min( $dayNum, (int)date( 't', $nextMonth ) );
+                return mktime( $hour, 0, 0, (int)date( 'n', $nextMonth ), $day, (int)date( 'Y', $nextMonth ) );
+            }
+        }
+        return $now;
     }
 }
 
