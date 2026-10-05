@@ -70,3 +70,28 @@ html.exp-bm-has-js .exp-bm-actions > .exp-bm-js { display: inline-flex; gap: .25
   .exp-bm-act { padding: 0.35em 0.8em; font-size: 0.9em; }
   .exp-bm-search input { min-width: 0; width: 100%; }
 }
+
+/* narrow right column (the old admin design): less indent, no mid-word breaks, scroll instead of clipping */
+.exp-bm-scroll { overflow-x: auto; }
+.exp-bm-sidebar .exp-bm-row { padding-inline-start: calc(0.15em + var(--d, 0) * 0.7em); gap: 0.2em 0.3em; }
+.exp-bm-sidebar .exp-bm-indent { width: 0.3em; }
+.exp-bm-sidebar .exp-bm-toggle { width: 1.1em; }
+.exp-bm-sidebar .exp-bm-link { word-break: normal; overflow-wrap: anywhere; min-width: 0; }
+.exp-bm-sidebar .exp-bm-count { flex: none; padding: 0 0.35em; }
+.exp-bm-sidebar .exp-bm-folder-name { min-width: 0; overflow-wrap: anywhere; }
+
+/* the row buttons float over the row on hover instead of adding a line to it (rows stay one line high) */
+@media (min-width: 641px) and (hover: hover) {
+  .exp-bm-page .exp-bm-row { flex-wrap: nowrap; min-height: 1.9em; }
+  .exp-bm-page .exp-bm-actions { position: absolute; inset-inline-end: 0.3em; top: 50%; transform: translateY(-50%);
+    margin: 0; padding: 0.1em 0.2em; flex-wrap: nowrap; background: var(--a4-soft, #f1f1f1); border-radius: var(--a4-radius-s, 6px); }
+  .exp-bm-page .exp-bm-actions > .exp-bm-js { flex-wrap: nowrap; }
+}
+.exp-bm-sidebar .exp-bm-row { padding-inline-end: 1.4em; }
+.exp-bm-sidebar .exp-bm-count { position: absolute; inset-inline-end: 0.2em; }
+/* the old admin column is wider than what shows of it: keep the count next to the name, inside the visible part */
+.exp-bm-sidebar .exp-bm-row { padding-inline-end: 0.3em; max-width: 13.5em; }
+.exp-bm-sidebar .exp-bm-count { position: static; }
+/* the Bookmarks box is for getting to a bookmark: no count badge there (the bookmark page has them) */
+.exp-bm-sidebar .exp-bm-count { display: none; }
+.exp-bm-sidebar .exp-bm-row { max-width: none; }

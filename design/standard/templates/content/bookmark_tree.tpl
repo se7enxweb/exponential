@@ -17,8 +17,8 @@
 {if $tree_rows|not}
     {set $tree_rows = fetch( 'content', 'bookmark_rows', hash() )}
 {/if}
-<link rel="stylesheet" href={'stylesheets/exp_bookmarks.css'|ezdesign} />
-<script type="text/javascript" src={'javascript/exp_bookmarks.js'|ezdesign} defer="defer"></script>
+<link rel="stylesheet" href="{'stylesheets/exp_bookmarks.css'|ezdesign(no)}?v=20261005" />
+<script type="text/javascript" src="{'javascript/exp_bookmarks.js'|ezdesign(no)}?v=20261005" defer="defer"></script>
 {def $node = false()}
 <ul class="exp-bm-tree exp-bm-{$mode}" role="tree" data-exp-bm="{$mode}">
 {foreach $tree_rows as $row}
