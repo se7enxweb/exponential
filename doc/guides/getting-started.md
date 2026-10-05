@@ -213,7 +213,7 @@ and [Extension loading order](../features/6.0/extension-loading-order.md).
 | `exp:install` says an installation exists | Add `--force` only if you mean to replace it. |
 | A white page or a 500 error | Read `var/log/error.log`. Check that `php -v` shows 8.0 or newer (8.1 for Velocity) and that `vendor/` exists (run `composer install`). |
 | The site address does not answer | Is the server running (`./console exp:velocity status --engine=php`)? Does the port match `--url`? |
-| You forgot the password | `exp:install` showed it once; a generated one is also in `var/log/initial-admin-password`. The setup wizard and the kickstarter write theirs once to `var/log/initial-admin-password`. Set a new one with `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, see [Reset a user password](../features/6.0/reset-user-password.md). |
+| You forgot the password | `exp:install` showed it once. A password that `exp:install` or the kickstarter generated (none given, or a well-known one) is also in `var/log/initial-admin-password`; the setup wizard in the browser writes no such file, because you type the password there yourself. Set a new one with `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, see [Reset a user password](../features/6.0/reset-user-password.md). |
 | A change does not show | Clear the content cache (step 6) and reload the page. |
 
 ## Related pages
