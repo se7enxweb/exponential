@@ -175,12 +175,10 @@ jobs:
       # A plain production install, as on Red Hat Enterprise Linux 9: composer.json and
       # every package it requires allow PHP 8.0 (Velocity, which needs 8.1, is only
       # suggested), so a package that raises its PHP minimum again fails here. Without a
-      # lock file Composer resolves require-dev too, and PHPUnit 13 needs PHP 8.4, so the
-      # development requirements are dropped first: what is tested is what a site installs.
+      # lock file Composer resolves require-dev too, so its PHPUnit range has to include a
+      # version for PHP 8.0 (9.6): the command is exactly the one a site runs.
       - name: Install the production dependencies with PHP 8.0
-        run: |
-          composer remove --dev --no-update --no-interaction phpunit/phpunit zetacomponents/php-generator
-          composer install --no-dev --prefer-dist --no-progress --no-interaction --ignore-platform-req=ext-mongodb
+        run: composer install --no-dev --prefer-dist --no-progress --no-interaction
 
       - name: Boot smoke test without a database (every kernel and extension class, compat functions, a template)
         run: php bin/php/ezexec.php tests/bin/bootsmoke.php
