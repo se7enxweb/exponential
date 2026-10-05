@@ -821,7 +821,7 @@ class eZDebug
         {
             return $GLOBALS['eZDebugMaxLogrotateFiles'];
         }
-        else if ( defined( 'EZPUBLISH_LOG_MAX_FILE_SIZE' ) )
+        else if ( defined( 'EZPUBLISH_LOG_ROTATE_FILES' ) )
         {
             self::setLogrotateFiles( (int)EZPUBLISH_LOG_ROTATE_FILES );
             return (int)EZPUBLISH_LOG_ROTATE_FILES;
