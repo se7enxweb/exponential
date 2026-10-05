@@ -650,7 +650,7 @@ class eZTemplate
     {
         // Note: This code piece is replicated in the eZTemplateCompiler,
         //       if this code is changed the replicated code must be updated as well.
-        $func = $this->Functions[$functionName];
+        $func = $this->Functions[$functionName] ?? null;
         if ( is_array( $func ) )
         {
             $this->loadAndRegisterFunctions( $this->Functions[$functionName] );
@@ -675,7 +675,7 @@ class eZTemplate
 
     function fetchFunctionObject( $functionName )
     {
-        $func = $this->Functions[$functionName];
+        $func = $this->Functions[$functionName] ?? null;
         if ( is_array( $func ) )
         {
             $this->loadAndRegisterFunctions( $this->Functions[$functionName] );

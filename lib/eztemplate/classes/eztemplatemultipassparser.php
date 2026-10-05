@@ -763,6 +763,16 @@ class eZTemplateMultiPassParser extends eZTemplateParser
                                          "End tag \"$tag\" for function which does not accept children, ignoring tag",
                                          $element['placement'] );
                         }
+                        else if ( count( $tagStack ) == 0 )
+                        {
+                            // nothing is open: popping the empty stack lost the root and the rest of the template
+                            $placement = $element['placement'];
+                            $startLine = $placement['start']['line'];
+                            $startColumn = $placement['start']['column'];
+                            $tpl->error( "", "parser error @ $relatedTemplateName:$startLine" . "[$startColumn]" . "\n" .
+                                         "End tag \"$tag\" without a start tag, ignoring tag",
+                                         $element['placement'] );
+                        }
                         else
                         {
                             unset( $oldTag );
