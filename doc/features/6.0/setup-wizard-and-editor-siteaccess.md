@@ -11,7 +11,7 @@ administer the site.
 |---|---|---|---|
 | site | `yourdomain.com` | visitors | your site design |
 | admin | `admin.yourdomain.com` | administrators | admin4 (or the admin design chosen) |
-| editor | `edit.yourdomain.com` | editors | `editor`, which falls back to `admin4`, then `admin3`, `admin2`, `admin` |
+| editor | `edit.yourdomain.com` | editors | `editor`, which falls back to `admin4l`, then `admin4`, `admin3`, `admin2`, `admin` |
 
 The editor siteaccess (`settings/siteaccess/editor`) is made from the installed admin one. Compared with the admin:
 
@@ -57,9 +57,13 @@ after the admin ones.
 
 | File | Key | Default | Meaning |
 |---|---|---|---|
-| `kickstart.ini` | `EditorAccess` | `editor` | the siteaccess name |
-| `kickstart.ini` | `EditorAccessPort` | `8082` | port access method |
-| `kickstart.ini` | `EditorAccessHostname` | `edit.<host>` | host access method, by convention `edit.<your domain>` |
+| `kickstart.ini` | `EditorAccess` | `editor` (`<Access>_editor` when `editor` is taken) | the siteaccess name |
+| `kickstart.ini` | `EditorAccessPort` | `AccessPort` + 2 (`8082` for `8080`), the next free port when that is taken | port access method |
+| `kickstart.ini` | `EditorAccessHostname` | `edit.<AccessHostname without www.>` (`edit.example.com` for `www.example.com`) | host access method |
+
+The default never equals the site's or the admin's value: two siteaccesses on one port or host would make one of
+them unreachable. `exp:install` takes `--editor-access`, `--editor-port` and `--editor-host`, and refuses a value
+that collides.
 
 ## Add an editor siteaccess to an existing installation
 
@@ -67,7 +71,7 @@ Nothing changes for an installation made earlier. To get an editor siteaccess:
 
 1. Copy `settings/siteaccess/editor` and `design/editor` from a fresh installation.
 2. Set its `SiteName`, `SiteURL` and `SiteDesign`. The design list in the editor's `site.ini.append.php`
-   (`AdditionalSiteDesignList[]`) names `admin4`, `admin3`, `admin2`, `admin`.
+   (`AdditionalSiteDesignList[]`) names `admin4l`, `admin4`, `admin3`, `admin2`, `admin`.
 3. Map it like the admin siteaccess in `site.ini`, block `[SiteAccessSettings]`.
 4. Clear the caches: `php bin/php/ezcache.php --clear-all --allow-root-user`.
 
