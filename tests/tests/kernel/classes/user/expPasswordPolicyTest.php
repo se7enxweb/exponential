@@ -23,6 +23,9 @@
  *  PWD-09  The mail: category security, to the user, never the password; off with ChangeNotificationMail
  *  PWD-10  The audit: access.user.password.change.failed names the rule, access.session.revoke the count
  *  PWD-11  A session handler without a backend says it cannot (null); the database handler ends one user's other sessions
+ *  PWD-12  The user account datatype (registration, content/edit, admin user edit) checks the same rules, at the
+ *          password field; "_ezpassword" (unchanged) is not checked; the default rules are those of before
+ *  PWD-13  The console reset command refuses a password the rules refuse
  */
 
 require_once dirname( __DIR__ ) . '/audit/fixtures/expaudittestfixtures.php';
@@ -478,5 +481,69 @@ class expPasswordPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $policy->sendChangedMail( $this->user() ) );
         $this->assertSame( array(), $this->mails() );
         $this->assertFalse( $policy->sendChangedMail( null ) );
+    }
+
+    // ------------------------------------------------------------------ PWD-12, PWD-13: the account forms, the console
+
+    /** Validates the test user's user_account attribute with the posted values, as content/edit and user/register do */
+    private function validateAccount( $password, $confirm = null, $login = self::LOGIN )
+    {
+        $object = eZContentObject::fetch( self::$userID );
+        $dataMap = $object->dataMap();
+        $attribute = $dataMap['user_account'];
+        $id = $attribute->attribute( 'id' );
+        $base = 'ContentObjectAttribute';
+        $_POST = array( $base . '_data_user_login_' . $id => $login, $base . '_data_user_email_' . $id => self::EMAIL,
+                        $base . '_data_user_password_' . $id => $password,
+                        $base . '_data_user_password_confirm_' . $id => $confirm === null ? $password : $confirm );
+        $state = $attribute->dataType()->validateObjectAttributeHTTPInput( eZHTTPTool::instance(), $base, $attribute );
+        $error = $attribute->validationError();
+        $_POST = array();
+        return array( $state, (string)$error );
+    }
+
+    public function testAccountFormDefaultsAreTheRulesOfBefore()
+    {
+        list( $state, $error ) = $this->validateAccount( 'short' );
+        $this->assertSame( eZInputValidator::STATE_INVALID, $state );
+        $this->assertSame( 'The password must be at least 10 characters long.', $error, 'the sentence of before' );
+        list( $state ) = $this->validateAccount( 'abcdefghij' );
+        $this->assertSame( eZInputValidator::STATE_ACCEPTED, $state );
+        list( $state, $error ) = $this->validateAccount( 'abcdefghij', 'abcdefghik' );
+        $this->assertSame( eZInputValidator::STATE_INVALID, $state );
+        $this->assertSame( 'The passwords do not match.', $error );
+    }
+
+    public function testAccountFormChecksTheOptionalRules()
+    {
+        $this->setIni( 'PasswordSettings', 'RequireDigit', 'enabled' );
+        $this->setIni( 'PasswordSettings', 'ForbidLogin', 'enabled' );
+        list( $state, $error ) = $this->validateAccount( 'no-digits-here' );
+        $this->assertSame( eZInputValidator::STATE_INVALID, $state );
+        $this->assertSame( 'The password must contain a digit.', $error );
+        list( $state, $error ) = $this->validateAccount( 'x-' . self::LOGIN . '-9' );
+        $this->assertSame( eZInputValidator::STATE_INVALID, $state );
+        $this->assertSame( 'The password must not contain the user name.', $error );
+        list( $state, $error ) = $this->validateAccount( 'short' );
+        $this->assertStringContainsString( 'at least 10 characters', $error );
+        $this->assertStringContainsString( 'a digit', $error, 'every rule that fails is named' );
+        list( $state ) = $this->validateAccount( 'has-a-digit-7' );
+        $this->assertSame( eZInputValidator::STATE_ACCEPTED, $state );
+        list( $state ) = $this->validateAccount( '_ezpassword' );
+        $this->assertSame( eZInputValidator::STATE_ACCEPTED, $state, 'an unchanged password is not checked' );
+    }
+
+    public function testConsoleResetRefusesWhatTheRulesRefuse()
+    {
+        $before = $this->user()->attribute( 'password_hash' );
+        $cmd = escapeshellarg( PHP_BINARY ) . ' bin/php/resetuserpassword.php --allow-root-user -u ' . escapeshellarg( self::LOGIN ) . ' -p short 2>&1';
+        $out = array();
+        $rc = 0;
+        exec( 'cd ' . escapeshellarg( self::$installation ) . ' && ' . $cmd, $out, $rc );
+        $text = implode( "\n", $out );
+        $this->assertNotSame( 0, $rc, $text );
+        $this->assertStringContainsString( 'Target password does not validate.', $text );
+        $this->assertStringContainsString( 'characters long', $text );
+        $this->assertSame( $before, $this->user()->attribute( 'password_hash' ), 'nothing changed' );
     }
 }

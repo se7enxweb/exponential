@@ -142,12 +142,26 @@ class eZUserType extends eZDataType
                                                                              'eZUserType' ) );
                         return eZInputValidator::STATE_INVALID;
                     }
-                    if ( !eZUser::validatePassword( $password ) )
+                    // the rules of user/password (expPasswordPolicy, [UserSettings] MinPasswordLength and
+                    // [PasswordSettings]); "_ezpassword" is the edit form's "unchanged", which is not checked
+                    if ( $password !== '_ezpassword' )
                     {
-                        $minPasswordLength = $ini->variable( 'UserSettings', 'MinPasswordLength' );
-                        $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
-                                                                             'The password must be at least %1 characters long.', null, array( $minPasswordLength ) ) );
-                        return eZInputValidator::STATE_INVALID;
+                        if ( class_exists( 'expPasswordPolicy' ) )
+                        {
+                            $account = eZUser::fetch( $contentObjectAttribute->attribute( 'contentobject_id' ) );
+                            $passwordErrors = expPasswordPolicy::instance()->accountErrors( $password, $account, $loginName );
+                        }
+                        else
+                        {
+                            $passwordErrors = eZUser::validatePassword( $password ) ? array() : array(
+                                ezpI18n::tr( 'kernel/classes/datatypes', 'The password must be at least %1 characters long.', null,
+                                             array( $ini->variable( 'UserSettings', 'MinPasswordLength' ) ) ) );
+                        }
+                        if ( $passwordErrors )
+                        {
+                            $contentObjectAttribute->setValidationError( implode( ' ', $passwordErrors ) );
+                            return eZInputValidator::STATE_INVALID;
+                        }
                     }
                     if ( strtolower( $password ) == 'password' )
                     {

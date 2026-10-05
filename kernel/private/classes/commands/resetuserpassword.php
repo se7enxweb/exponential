@@ -273,9 +273,21 @@ class Resetuserpassword extends \Exponential\Runnable\Command
             $generate = true;
         }
 
+        // the rules of user/password (expPasswordPolicy: [UserSettings] MinPasswordLength, [PasswordSettings])
+        $policy = class_exists( 'expPasswordPolicy' ) ? new \expPasswordPolicy() : null;
+        $ruleAccount = \eZUser::fetchByName( $targetLogin );
+        $ruleAccount = is_object( $ruleAccount ) ? $ruleAccount : null;
+        $generated = false;
         if ( $targetPassword === null && $generate )
         {
-            $targetPassword = \eZUser::createPassword( $length );
+            // a generated password that misses an optional rule is generated again
+            for ( $try = 0; $try < 50; $try++ )
+            {
+                $targetPassword = \eZUser::createPassword( $length );
+                if ( !$policy || !$policy->validate( $targetPassword, $ruleAccount, $targetLogin ) )
+                    break;
+            }
+            $generated = true;
         }
 
         if ( $targetPassword === null || $targetPassword === '' )
@@ -284,11 +296,13 @@ class Resetuserpassword extends \Exponential\Runnable\Command
             $script->shutdown( 1 );
         }
 
-        if ( !\eZUser::validatePassword( $targetPassword ) )
+        $passwordErrors = $policy ? $policy->accountErrors( $targetPassword, $ruleAccount, $targetLogin )
+                                  : ( \eZUser::validatePassword( $targetPassword ) ? array() : array( 'It must be at least '
+                                        . (int)\eZINI::instance()->variable( 'UserSettings', 'MinPasswordLength' ) . ' characters long.' ) );
+        if ( $passwordErrors )
         {
-            $ini = \eZINI::instance();
-            $minLength = (int) $ini->variable( 'UserSettings', 'MinPasswordLength' );
-            $cli->error( "Target password does not validate. It must be at least $minLength characters long." );
+            $cli->error( 'Target password does not validate. ' . implode( ' ', $passwordErrors )
+                         . ( $generated ? ' (Pass one with -p, or a longer one with -l.)' : '' ) );
             $script->shutdown( 1 );
         }
 
