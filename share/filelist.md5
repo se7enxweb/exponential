@@ -2689,7 +2689,7 @@ ac6e038afa43bb7abe89a1cfd1a6533e  doc/bc/6.0/http2-and-cache-warming.md
 46f5abffd259cd880e032cd8d1953acb  doc/bc/6.0/httpcache.md
 ae75d362d2c3cd9588323032cc2df09c  doc/bc/6.0/kickstartercli.md
 a6d977d642aa2384831b54248e80ecc6  doc/bc/6.0/locations-tab-paging-and-sorting.md
-43475905fcfb05e1d13c2fb97544d296  doc/bc/6.0/mail-preferences.md
+434fad8656162eb52cab4fe625909cf7  doc/bc/6.0/mail-preferences.md
 abb94091360a905fee43c0792bbf9d39  doc/bc/6.0/middle-out-compression.md
 02a48a62c48e03aa3f29dfaee9709546  doc/bc/6.0/multi-node-edit.md
 e5667e060274ef92f4b29dd702774e4c  doc/bc/6.0/notification-ui-and-commands.md
@@ -2868,7 +2868,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f8c35a5d9be7c9e5dbc1dfb52f56d710  doc/changelogs/6.0/6.0.15.md
+4c196a273e75a3a616d1b604e7057281  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3732,7 +3732,7 @@ fe1fc6a8426eefb3fc55d53530292a99  doc/specifications/6.0/ini-override-placements
 88d7df3fd4249b7257554244e41edb62  doc/specifications/6.0/installer-logs-and-seed-data.md
 f95c9c889acfa7d8b75e98252eb6cb4d  doc/specifications/6.0/legacy-bridge-bundle.md
 093d8a76631cc41d2e8da83f6bebae80  doc/specifications/6.0/mail-preferences-cli.md
-e2b56ec0218b4cdd2d122cfda8f34fd8  doc/specifications/6.0/mail-preferences-compliance.md
+ac85bb3db4bb99c668e9d64646c5b074  doc/specifications/6.0/mail-preferences-compliance.md
 11de1b28c471ab28f2250bcd0c330f0c  doc/specifications/6.0/mail-preferences.md
 1e27384d2455cb6827623a2acd9ac615  doc/specifications/6.0/notifications-cli.md
 b11e3b394c4c8c72d6f86e420f3e8a89  doc/specifications/6.0/notifications-ini.md
@@ -5273,7 +5273,7 @@ a565ef695304c6f4cad4562f91d4f042  kernel/private/classes/runnable/cronjobpart.ph
 9cd83931b1abab4c19f5df5b50e18f5d  kernel/private/classes/runnable/runnable.php
 d831b71988f68ca14c9ccacb11ed32ba  kernel/private/classes/services/contentjobdetails.php
 48f2077a5d9daafd0a27335bdbcd01cc  kernel/private/classes/services/draftscleanup.php
-63e71359df3ee6cc53f69da8f91a6282  kernel/private/classes/services/mailpreferencespage.php
+83445e3584647ca4704ab407029a9ec5  kernel/private/classes/services/mailpreferencespage.php
 691b2b62e924bdef2a7010ea9b8e0960  kernel/private/classes/services/sessiongarbagecollector.php
 d3411a771db07379843c263813850cf0  kernel/private/classes/services/trash.php
 aa572c5435160a8cd78f8c0044a92ecf  kernel/private/classes/services/trashlist.php
@@ -5396,8 +5396,8 @@ af84382cc54984b208166dc9f516b1ce  kernel/private/classes/views/settings/view.php
 32fde1ce467f2060b28e5ce8a85fb579  kernel/private/classes/views/setup/cache.php
 8950f5ab79eb2110460527a6ab876fc8  kernel/private/classes/views/setup/cachetoolbar.php
 546ddb3d9d522a274d7a11c78c3a2762  kernel/private/classes/views/setup/contentextension.php
-7088fa7187f0b4deb9fd48d9a4d0e130  kernel/private/classes/views/setup/cronjobs.php
-123a9dbfbdfae90a9286a8deb8001e9d  kernel/private/classes/views/setup/cronjobsstream.php
+e68a8d9d12d60101259440b8760c902d  kernel/private/classes/views/setup/cronjobs.php
+7d08d5aac41889ecbc986434986c09e6  kernel/private/classes/views/setup/cronjobsstream.php
 c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.php
 5f37b9085a959384971d12d73b481856  kernel/private/classes/views/setup/designextension.php
 84d5e4047a58b8ca8a3131ba6a8d8b8c  kernel/private/classes/views/setup/extensions.php
@@ -5411,14 +5411,14 @@ f3d410d2a77820dc00af01f2bb3ffc68  kernel/private/classes/views/setup/menuconfig.
 d6ef79b10f229d2d4bb6c7789d43b935  kernel/private/classes/views/setup/modulewizard.php
 94a7ae9614198f7df91923ba157e5754  kernel/private/classes/views/setup/preload.php
 ee1b11674c99c2b135d274abaa577c84  kernel/private/classes/views/setup/preloadjob.php
-86cb8d85d57108e0f455e59a9cbfbbf3  kernel/private/classes/views/setup/preloadstream.php
+fd3cdef09a0f37d469f48a1e3084c580  kernel/private/classes/views/setup/preloadstream.php
 4536ce57bd4c30d9052871a86bbac3c1  kernel/private/classes/views/setup/rad.php
 0f795642dcc1f9b120f36cfea7adfb6b  kernel/private/classes/views/setup/radsurvey.php
 124b33f57cac3ed47a7b024240a3f45f  kernel/private/classes/views/setup/session.php
 332eecb4339e09c7bc833ce99cd812b4  kernel/private/classes/views/setup/settingsextension.php
 6ce1911d374543062b193afa10819dba  kernel/private/classes/views/setup/settingstoolbar.php
 a8af0f61af76f5ba69b3a3ecd42e16e0  kernel/private/classes/views/setup/setupmenu.php
-03f3ee710655b962b81f04406be050f9  kernel/private/classes/views/setup/staticcachestream.php
+f132e2868a6ff6af147495f277435025  kernel/private/classes/views/setup/staticcachestream.php
 6be97f72d2b35416333334d7a6f3fb2c  kernel/private/classes/views/setup/systemupgrade.php
 94299ec5d1e49c39d95a14994ba8cfb0  kernel/private/classes/views/setup/templatecreate.php
 9a12d1696d062a79457ef2951a2ba2bd  kernel/private/classes/views/setup/templateedit.php
@@ -6034,7 +6034,7 @@ df42d26c8d8f8485212c39aefa5ad5e6  lib/ezutils/classes/ezcli.php
 35b706d877c08a200445a9110525dd19  lib/ezutils/classes/ezdatetimevalidator.php
 70e80e9b15de66001eec1751f1ba043e  lib/ezutils/classes/ezdebug.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
-cfc35060c769e9ab894d2dd3195e97ae  lib/ezutils/classes/ezexecution.php
+2047e66b03daaf6a4e04cda96d10617b  lib/ezutils/classes/ezexecution.php
 e1e2c17109662cab89a37def4db94c01  lib/ezutils/classes/ezexpiryhandler.php
 b4fd3b1bf4ed2cc65e987e4438a865c2  lib/ezutils/classes/ezextension.php
 9e4092daa80dcaa119d74d48870c65d1  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
@@ -6898,6 +6898,7 @@ e661f4e1af49a324f6b521358bf30822  tests/tests/kernel/classes/ini/fixtures/expini
 678cb2f17207b03cd3d4132583aef9e9  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 7beeebe96d30bbc53b76a14363271951  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
 245280f0221afce15401c2327945e5f1  tests/tests/kernel/classes/mailpreferences/MailPreferencesCoreTest.php
+97f70d18ecebe860b42392efce73701e  tests/tests/kernel/classes/mailpreferences/MailPreferencesHardeningTest.php
 0a343dc9223e5acba7e9e3426380342b  tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php
 a2b6b96ff712d7635f41e8bb767ad9fb  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/arf-abuse.eml
 b215629ca5ab35b162179fd00ad103f9  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/arf-headers-only.eml
@@ -6907,6 +6908,7 @@ a96c23795d48c0a6a6a9d3c1820aed02  tests/tests/kernel/classes/mailpreferences/fix
 51a10caf012d78a42fc26ebfb687a2e4  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/dsn-mixed-recipients.eml
 827f073e6f016c09ff0546159b20a787  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/dsn-soft-delayed.eml
 d2b791059f44637db1e31999f7272737  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/plain-auto-reply.eml
+8f0a14de32fc88c2baa68e12d9abc551  tests/tests/kernel/classes/mailpreferences/fixtures/discard_output_worker_buffer.php
 67be7c5d61ef0fdc4a33085e2b27a4ec  tests/tests/kernel/classes/notification/NotificationSystemTest.php
 e612f43fc85b8406b0acb712148bae69  tests/tests/kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule_regression.php
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
