@@ -1,0 +1,87 @@
+<?php
+/**
+ * ezpKernelWeb::appendRequestQuery() carries the query of the current request over a
+ * module redirect, but only to targets on the own host.
+ *
+ * A redirect used to append the query to every target: a sealed payment window URL on
+ * another host broke on tracking parameters such as gclid or _gl, request data leaked to
+ * external hosts, and a target that already had a query got a second "?".
+ *
+ * The method is static and pure, so these tests need no kernel, database or siteaccess.
+ * Each case is one row of appendRequestQueryProvider(); a new rule is a new row.
+ *
+ * Run: php vendor/bin/phpunit tests/tests/kernel/classes/ezpKernelWebAppendRequestQueryTest.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package tests
+ */
+
+class ezpKernelWebAppendRequestQueryTest extends PHPUnit\Framework\TestCase
+{
+    /**
+     * @return array redirect target, query of the current request, current host, expected target
+     */
+    public static function appendRequestQueryProvider()
+    {
+        return array(
+            'empty query leaves the target alone' =>
+                array( '/content/view/full/2', '', 'www.example.com', '/content/view/full/2' ),
+            'a bare "?" counts as empty' =>
+                array( '/content/view/full/2', '?', 'www.example.com', '/content/view/full/2' ),
+            'relative target gets the query' =>
+                array( '/user/login', '?from=shop', 'www.example.com', '/user/login?from=shop' ),
+            'query without the leading "?"' =>
+                array( '/user/login', 'from=shop', 'www.example.com', '/user/login?from=shop' ),
+            'target with a query joins with "&"' =>
+                array( '/shop/basket?step=2', '?from=shop', 'www.example.com', '/shop/basket?step=2&from=shop' ),
+            'fragment stays at the end' =>
+                array( '/content/view/full/2#comments', '?from=shop', 'www.example.com', '/content/view/full/2?from=shop#comments' ),
+            'fragment after an existing query' =>
+                array( '/shop/basket?step=2#total', '?from=shop', 'www.example.com', '/shop/basket?step=2&from=shop#total' ),
+            'absolute target on the own host' =>
+                array( 'https://www.example.com/user/login', '?from=shop', 'www.example.com', 'https://www.example.com/user/login?from=shop' ),
+            'own host given with a port' =>
+                array( 'https://www.example.com/user/login', '?from=shop', 'www.example.com:443', 'https://www.example.com/user/login?from=shop' ),
+            'own host in a different case' =>
+                array( 'https://WWW.Example.com/user/login', '?from=shop', 'www.example.com', 'https://WWW.Example.com/user/login?from=shop' ),
+            'plain http target on the own host' =>
+                array( 'http://www.example.com/user/login', '?from=shop', 'www.example.com', 'http://www.example.com/user/login?from=shop' ),
+            'foreign host is left untouched' =>
+                array( 'https://pay.example.net/checkout?seal=abc', '?gclid=123&_gl=xyz', 'www.example.com', 'https://pay.example.net/checkout?seal=abc' ),
+            'foreign host without a query stays without one' =>
+                array( 'https://pay.example.net/checkout', '?gclid=123', 'www.example.com', 'https://pay.example.net/checkout' ),
+            'a www variant of the own host counts as foreign' =>
+                array( 'https://www.example.com/user/login', '?from=shop', 'example.com', 'https://www.example.com/user/login' ),
+            'a sub domain of the own host counts as foreign' =>
+                array( 'https://shop.example.com/basket', '?from=shop', 'example.com', 'https://shop.example.com/basket' ),
+        );
+    }
+
+    /**
+     * @dataProvider appendRequestQueryProvider
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'appendRequestQueryProvider' )]
+    public function testAppendRequestQuery( $redirectURI, $queryString, $currentHost, $expected )
+    {
+        $this->assertSame( $expected, ezpKernelWeb::appendRequestQuery( $redirectURI, $queryString, $currentHost ) );
+    }
+
+    /**
+     * The query is appended once: no second "?" on a target that already has a query.
+     */
+    public function testNoSecondQuestionMark()
+    {
+        $result = ezpKernelWeb::appendRequestQuery( '/shop/basket?step=2', '?from=shop', 'www.example.com' );
+        $this->assertSame( 1, substr_count( $result, '?' ) );
+    }
+
+    /**
+     * Non-string arguments are taken as strings, as the redirect passes whatever
+     * eZSys::queryString() and eZSys::hostname() return.
+     */
+    public function testNullArgumentsAreTakenAsStrings()
+    {
+        $this->assertSame( '/user/login', ezpKernelWeb::appendRequestQuery( '/user/login', null, null ) );
+    }
+}

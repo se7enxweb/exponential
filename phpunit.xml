@@ -86,6 +86,14 @@
             <directory suffix="Test.php">tests/tests/extension/explayouts_admin</directory>
         </testsuite>
 
+        <!--
+          ezjscore: the ezjscore/call server, with stand-in server functions. No kernel, database or siteaccess.
+          Run: php vendor/bin/phpunit - -testsuite ezjscore
+        -->
+        <testsuite name="ezjscore">
+            <directory suffix="Test.php">tests/tests/extension/ezjscore</directory>
+        </testsuite>
+
     </testsuites>
 
     <groups>

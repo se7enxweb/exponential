@@ -439,7 +439,6 @@ class eZImageAliasHandler
         }
         // Without an original (XML without an <ezimage> element), or with an
         // original that never stored a file (url=""), there is nothing to scale.
-        //
         else if ( isset( $aliasList['original'] ) && (string)( $aliasList['original']['url'] ?? '' ) !== '' )
         {
             $original = $aliasList['original'];
