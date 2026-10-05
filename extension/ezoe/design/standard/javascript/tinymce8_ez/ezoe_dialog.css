@@ -81,6 +81,18 @@
     font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
     border: 1px solid #7F9DB9;
 }
+/* A search rebuilds the dialog, and the new select has no focus: browsers then draw the
+   selected classes without a visible highlight, so the filter looked lost although it was
+   applied. Selected classes are highlighted with and without focus (Chromium paints the
+   background of a selected option only as an image, hence the gradient). */
+.tox select.ezoe-class-filter option:checked {
+    background: #C8D9EE linear-gradient( #C8D9EE, #C8D9EE );
+    color: #000;
+}
+.tox select.ezoe-class-filter:focus option:checked {
+    background: #316AC5 linear-gradient( #316AC5, #316AC5 );
+    color: #fff;
+}
 
 /* "Path:" in front of the element path, set by the ezpath plugin */
 .tox .tox-statusbar__path::before {
