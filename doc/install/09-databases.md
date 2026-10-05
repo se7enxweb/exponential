@@ -81,7 +81,7 @@ The other keys of the block apply to the server engines; SQLite ignores the serv
 | `SQLOutput`, `SlowQueriesOutput` | `disabled`, `0` | all | Show statements in the debug output; with a value above 0 only the slower ones (milliseconds). |
 | `QueryAnalysisOutput` | `disabled` | MySQL | With `SQLOutput=enabled`, MySQL's `EXPLAIN` of each statement in the debug output. |
 | `DebugTransactions` | `disabled` | all | Record a stack trace for every begin and commit, to find an unbalanced transaction. |
-| `SQLitePragmas[]`, `SQLiteTransactionWait` | empty, `60` | SQLite | The connection's PRAGMAs and the wait for the write lock; see [the SQLite settings block](#the-sqlite-settings-block). |
+| `SQLitePragmas[]`, `SQLiteTransactionWait` | empty, `25` | SQLite | The connection's PRAGMAs and the wait for the write lock; see [the SQLite settings block](#the-sqlite-settings-block). |
 
 Read the effective value of any key, with every override applied:
 
@@ -214,24 +214,25 @@ current. A publish failed with "database is locked" however long the busy timeou
 Once it has succeeded, nothing inside it can lose a lock race, and WAL makes the commit all or nothing. The start is
 therefore the only place a transaction can fail for a lock, and the one place where waiting costs nothing but time.
 
-**How long it waits.** Up to `[DatabaseSettings] SQLiteTransactionWait` seconds (default `60`; values below 1 are
+**How long it waits.** Up to `[DatabaseSettings] SQLiteTransactionWait` seconds (default `25`; values below 1 are
 raised to 1). Keep it below your web server's request timeout, so a waiting request fails with a clear message
-rather than being killed. Check this on a Velocity site: Velocity replaces a worker whose request runs longer than
-its engine setting `requestTimeout`, which is **30 seconds** unless you change it (the client gets a 504; see the
-[worker pool specification](../specifications/6.0/velocity-worker-pool.md)). With the shipped 60 seconds a queued
-publish can therefore be cut off by the server before the driver gives up. On Velocity, set
-`SQLiteTransactionWait=25` (or raise `requestTimeout` above the wait). Under PHP-FPM the limit is the pool's
-`request_terminate_timeout` (off unless set); PHP's `max_execution_time` does not count time spent waiting on
-Linux, because it measures CPU time.
+rather than being killed. The default is chosen for Velocity: Velocity replaces a worker whose request runs longer
+than its engine setting `requestTimeout` (`Q.webserver.requestTimeout`), which is **30 seconds** unless you change
+it (the client gets a 504; see the [worker pool specification](../specifications/6.0/velocity-worker-pool.md)).
+25 seconds leaves the driver time to give up and report before that. Releases before this one shipped `60`, which
+let the server cut off a queued publish first; if your override still sets `60`, lower it to `25`. To wait longer,
+raise `requestTimeout` and `SQLiteTransactionWait` together, the wait always a few seconds below the timeout. Under
+PHP-FPM the limit is the pool's `request_terminate_timeout` (off unless set); PHP's `max_execution_time` does not
+count time spent waiting on Linux, because it measures CPU time.
 
 **What a timeout looks like.** When a transaction could not start within the wait, the driver reports, in
 `var/log/error.log` and on the error page:
 
 ```
-database is busy: the transaction could not start within 60 s, another write held the lock all that time; nothing was written
+database is busy: the transaction could not start within 25 s, another write held the lock all that time; nothing was written
 ```
 
-(`60` is your `SQLiteTransactionWait`.) Any other failure at the start reads
+(`25` is your `SQLiteTransactionWait`.) Any other failure at the start reads
 `the transaction could not start: <SQLite's message>; nothing was written`. In both cases nothing was written; retry
 the action. A rollback is sent only when SQLite really has a transaction open, so you no longer see
 "cannot rollback - no transaction is active" hiding the real error.
@@ -264,9 +265,9 @@ DatabaseImplementation=sqlite3
 Database=exponential.db
 
 # Seconds a transaction waits at its start for the writers ahead of it
-# (default 60). Keep it below the web server's request timeout: 25 under
-# Velocity, whose requestTimeout is 30 s unless changed.
-SQLiteTransactionWait=60
+# (default 25). Keep it below the web server's request timeout: Velocity's
+# requestTimeout is 30 s unless changed; raise both together.
+SQLiteTransactionWait=25
 
 # PRAGMAs over the driver's defaults, one per line as name=value.
 # An empty list keeps the defaults (synchronous=NORMAL, cache_size=-65536,

@@ -585,7 +585,7 @@ class eZSQLite3DB extends eZDBInterface
      nothing, so the start is the only place a transaction can fail for a
      lock, and the safe place to wait: nothing has been written yet. The start
      therefore waits [DatabaseSettings] SQLiteTransactionWait seconds (default
-     60, within the web server's request timeout) instead of the statements'
+     25, below Velocity's 30 s request timeout) instead of the statements'
      busy_timeout; a publish behind others waits its turn and completes.
 
      The queue is a lock file next to the database (<database>.writer-lock):
@@ -682,11 +682,14 @@ class eZSQLite3DB extends eZDBInterface
 
     /**
      * How long a transaction's start waits for the write lock, in ms:
-     * [DatabaseSettings] SQLiteTransactionWait, in seconds (default 60).
+     * [DatabaseSettings] SQLiteTransactionWait, in seconds (default 25: below
+     * Velocity's request timeout, Q.webserver.requestTimeout, 30 s unless
+     * changed, so a request that waits too long fails with this driver's own
+     * message rather than being killed with a 504).
      */
     protected function transactionWaitMs()
     {
-        $seconds = 60;
+        $seconds = 25;
         $ini = eZINI::instance();
         if ( $ini->hasVariable( 'DatabaseSettings', 'SQLiteTransactionWait' ) && is_numeric( $ini->variable( 'DatabaseSettings', 'SQLiteTransactionWait' ) ) )
             $seconds = max( 1, (int)$ini->variable( 'DatabaseSettings', 'SQLiteTransactionWait' ) );
