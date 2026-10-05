@@ -649,7 +649,7 @@ f722a03163843d88528991fb5e68dcb3  design/admin/templates/url/list.tpl
 5025af06eb7337f589fb38d661444f5d  design/admin/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
 ec051aff9aef0a071fe85027dcc4ce88  design/admin/templates/user/login.tpl
-c536625485b538a24feda45a74c9214d  design/admin/templates/user/password.tpl
+76a769b1c19e1e213e982ae3a0c57aa9  design/admin/templates/user/password.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin/templates/user/register.tpl
 1c59ee32aa9fdb5e965d7bd6d8a66329  design/admin/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin/templates/user/success.tpl
@@ -877,7 +877,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-8559d528986581ab2602b3126cd0bd1b  design/admin4/stylesheets/admin4.css
+bbe3798e5d8a57f28c00521df3671c2e  design/admin4/stylesheets/admin4.css
 e7edb5e01af46f5995d1f9429f305724  design/admin4/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
@@ -1220,7 +1220,7 @@ f722a03163843d88528991fb5e68dcb3  design/admin4/templates/url/list.tpl
 5025af06eb7337f589fb38d661444f5d  design/admin4/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 87e284d8c1e6bec27dc79ce41343e800  design/admin4/templates/user/login.tpl
-99f90ae4b8e56c2b71399fdf1018d570  design/admin4/templates/user/password.tpl
+2d46223f87f6a8a029dabe6b31716500  design/admin4/templates/user/password.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin4/templates/user/register.tpl
 1c59ee32aa9fdb5e965d7bd6d8a66329  design/admin4/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin4/templates/user/success.tpl

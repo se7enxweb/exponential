@@ -1135,6 +1135,8 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
 .a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4pw-field-line); }
 .a4pw-field.invalid .a4pw-rules li[data-state="unmet"] { color: var(--a4pw-bad); }
 .a4pw-field.invalid .a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4pw-bad); }
+.a4pw-rules li[data-failed="true"]:not([data-state="met"]) { color: var(--a4pw-bad); font-weight: 600; }
+.a4pw-rules li[data-failed="true"]:not([data-state="met"]) .a4pw-rule-icon { border-color: var(--a4pw-bad); }
 
 .a4pw-match { margin: 6px 0 0; font-size: 14px; font-weight: 600; }
 .a4pw-match[data-state="match"] { color: var(--a4pw-ok); }

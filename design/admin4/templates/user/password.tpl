@@ -94,7 +94,7 @@
         <ul class="a4pw-rules" id="password-new-rules" aria-labelledby="password-new-rules-title" data-exp-password-rules>
 {if $rules|count}
 {foreach $rules as $r}
-            <li data-exp-password-rule="{$r.id|wash}"{if $r.failed} data-state="unmet"{/if}><span class="a4pw-rule-icon" aria-hidden="true"></span><span>{$r.text|wash}</span><span class="a4pw-sr" data-exp-password-rule-state>{if $r.failed}{'not met'|i18n( $ctx )}{/if}</span></li>
+            <li data-exp-password-rule="{$r.id|wash}"{if $r.failed} data-state="unmet" data-failed="true"{/if}><span class="a4pw-rule-icon" aria-hidden="true"></span><span>{$r.text|wash}</span><span class="a4pw-sr" data-exp-password-rule-state>{if $r.failed}{'not met'|i18n( $ctx )}{/if}</span></li>
 {/foreach}
 {else}
             <li data-exp-password-rule="length"><span class="a4pw-rule-icon" aria-hidden="true"></span><span>{'At least %1 characters'|i18n( $ctx, '', array( ezini( 'UserSettings', 'MinPasswordLength' ) ) )}</span><span class="a4pw-sr" data-exp-password-rule-state></span></li>

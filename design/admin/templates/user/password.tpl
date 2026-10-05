@@ -39,6 +39,10 @@
 .expw-rules li[data-state="met"]::before { content: "\2713"; color: #1b5e20; font-weight: bold; }
 .expw-invalid .expw-rules li[data-state="unmet"] { color: #b00020; }
 .expw-invalid .expw-rules li[data-state="unmet"]::before { content: "\2717"; color: #b00020; }
+.expw-rules li[data-failed="true"]:not([data-state="met"]) { color: #b00020; font-weight: bold; }
+.expw-rules li[data-failed="true"]:not([data-state="met"])::before { content: "\2717"; color: #b00020; }
+.expw input.defaultbutton { background-color: #4f716d; color: #fff; }
+.expw input.defaultbutton:hover, .expw input.defaultbutton:focus { background-color: #425c59; color: #fff; }
 .expw-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .expw-meter { margin: .4em 0 0; color: #444; }
 .expw-meter[data-score=""] b { visibility: hidden; }
@@ -126,7 +130,7 @@
 <ul class="expw-rules" id="password-new-rules" aria-labelledby="password-new-rules-title" data-exp-password-rules>
 {if $rules|count}
 {foreach $rules as $r}
-<li data-exp-password-rule="{$r.id|wash}"{if $r.failed} data-state="unmet"{/if}>{$r.text|wash}<span class="expw-sr" data-exp-password-rule-state>{if $r.failed}{'not met'|i18n( $ctx )}{/if}</span></li>
+<li data-exp-password-rule="{$r.id|wash}"{if $r.failed} data-state="unmet" data-failed="true"{/if}>{$r.text|wash}<span class="expw-sr" data-exp-password-rule-state>{if $r.failed}{'not met'|i18n( $ctx )}{/if}</span></li>
 {/foreach}
 {else}
 <li data-exp-password-rule="length">{'At least %1 characters'|i18n( $ctx, '', array( ezini( 'UserSettings', 'MinPasswordLength' ) ) )}<span class="expw-sr" data-exp-password-rule-state></span></li>
