@@ -538,6 +538,18 @@ class eZSQLiteSchema extends eZDBSchemaInterface
         return $sql_def;
     }
 
+    /**
+     * The statement that adds the field $field_name to $table_name. Without it an upgrade file for SQLite left out
+     * every added field: the base class generates nothing.
+     *
+     * @return string
+     */
+    function generateAddFieldSql( $table_name, $field_name, $def, $params )
+    {
+        $skipPrimary = false;
+        return "ALTER TABLE $table_name ADD COLUMN " . $this->generateFieldDef( $field_name, $def, $skipPrimary, $params ) . ";\n";
+    }
+
     /*!
      \reimp
      \note Calls generateTableSQL() with \a $asArray set to \c false

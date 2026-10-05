@@ -586,7 +586,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
     /*!
      * \private
      */
-    function generateFieldDef( $table_name, $field_name, $def, $add_default_not_null = true, $params )
+    function generateFieldDef( $table_name, $field_name, $def, $add_default_not_null = true, $params = array() )
     {
         $diffFriendly = isset( $params['diff_friendly'] ) ? $params['diff_friendly'] : false;
 

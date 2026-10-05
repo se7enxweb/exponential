@@ -48,7 +48,8 @@ class eZLintSchema extends eZDBSchemaInterface
      */
     public function __construct( $db, $otherSchema )
     {
-        parent::__construct( $db );
+        // the parent takes an array of parameters; $db is the database instance (usually false)
+        parent::__construct( is_array( $db ) ? $db : array( 'instance' => $db ) );
         $this->OtherSchema = $otherSchema;
         $this->CorrectSchema = false;
         $this->IsLintChecked = false;
@@ -170,7 +171,7 @@ class eZLintSchema extends eZDBSchemaInterface
         foreach ( $list as $entry )
         {
             list( $tableName, $fieldName ) = explode( '.', $entry, 2 );
-            if ( !isset( $ignoredFieldList[$tableName] ) )
+            if ( !isset( $ignoredFieldSyntaxList[$tableName] ) )
                 $ignoredFieldSyntaxList[$tableName] = array();
             $ignoredFieldSyntaxList[$tableName][] = $fieldName;
         }
@@ -308,6 +309,7 @@ class eZLintSchema extends eZDBSchemaInterface
                             {
                                 $indexFieldText .= $fieldDef;
                             }
+                            ++$i;
                         }
                         $indexName = $indexName . '_' . $indexFieldText . '_i';
                         $comment .= "\nNew name is '$indexName'";
