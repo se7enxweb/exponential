@@ -72,7 +72,7 @@ class cjwNewsletterGroundworkTest extends cjwNewsletterTestCase
         // the shipped file only: an installation may switch tracking on in its override
         $shipped = new eZINI( 'cjw_newsletter.ini', 'extension/cjw_newsletter/settings', null, false, false, true );
         $this->assertSame( 'disabled', $shipped->variable( 'TrackingSettings', 'Tracking' ), 'tracking is off by default' );
-        $this->assertSame( 'disabled', $ini->variable( 'SmsSettings', 'Sms' ), 'SMS is off by default' );
+        $this->assertSame( 'disabled', $shipped->variable( 'SmsSettings', 'Sms' ), 'SMS is off by default' );
     }
 
     private function useHandler()
