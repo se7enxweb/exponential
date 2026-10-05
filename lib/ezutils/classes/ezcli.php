@@ -242,7 +242,11 @@ class eZCLI
     */
     function webStyle( $name )
     {
-        return $this->WebStyles[$name];
+        if ( isset( $this->WebStyles[$name] ) )
+        {
+            return $this->WebStyles[$name];
+        }
+        return false;
     }
 
     /*!
