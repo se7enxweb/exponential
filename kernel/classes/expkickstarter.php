@@ -90,6 +90,18 @@ class expKickstarter
             $this->script->shutdown( 1 );
         }
 
+        // A later start cannot resume an earlier run: the values the earlier
+        // steps chose live in this process only
+        $classes = array();
+        foreach ( $this->stepData->StepTable as $step )
+            $classes[] = $step['class'];
+        $problem = self::resumeProblem( $classes, $this->startStep, $this->stopStep );
+        if ( $problem !== null )
+        {
+            $this->cli->error( $problem );
+            $this->script->shutdown( 1 );
+        }
+
         $createSitesIndex = $this->stepIndex( 'CreateSites' );
         if ( $createSitesIndex !== false && $startIndex <= $createSitesIndex && $stopIndex >= $createSitesIndex && !$this->force )
         {
@@ -244,6 +256,97 @@ class expKickstarter
         return eZCLI::instance()->getOptions( self::runOptionConfig(), '', $argv );
     }
 
+    /**
+     * The steps whose results each step reads. The steps keep what they chose
+     * (the database type and connection, the chosen package and its
+     * languages, the site access values, the system check's ImageMagick
+     * result, the administrator) in this process only; kickstart.ini holds the
+     * answers, not those results, so a run cannot pick them up from an earlier
+     * one.
+     *
+     * @return array step class => list of step classes
+     */
+    public static function stepPrerequisites()
+    {
+        return array(
+            'SystemFinetune'         => array( 'SystemCheck' ),
+            'DatabaseInit'           => array( 'DatabaseChoice' ),
+            'LanguageOptions'        => array( 'DatabaseInit' ),
+            'PackageLanguageOptions' => array( 'SiteTypes', 'LanguageOptions' ),
+            'SiteAccess'             => array( 'SiteTypes' ),
+            'SiteDetails'            => array( 'SiteAccess', 'DatabaseInit', 'LanguageOptions' ),
+            'SiteAdmin'              => array( 'SiteTypes' ),
+            'Registration'           => array( 'Welcome', 'EmailSettings', 'SiteDetails' ),
+            'CreateSites'            => array( 'Welcome', 'EmailSettings', 'PackageLanguageOptions', 'SiteDetails', 'SiteAdmin' ),
+            'Final'                  => array( 'CreateSites' ),
+        );
+    }
+
+    /**
+     * Why a run from $start to $stop cannot work, null when it can: a step in
+     * the run reads results of a step before $start, which this process never
+     * ran. The message names the earliest step the run can start at.
+     *
+     * @param array $stepClasses the step classes in order
+     * @param string $start
+     * @param string $stop
+     * @return string|null
+     */
+    public static function resumeProblem( array $stepClasses, $start, $stop )
+    {
+        $index = array();
+        foreach ( array_values( $stepClasses ) as $i => $class )
+            $index[strtolower( $class )] = $i;
+        $startKey = strtolower( (string)$start );
+        $stopKey = strtolower( (string)$stop );
+        if ( !isset( $index[$startKey] ) || !isset( $index[$stopKey] ) )
+            return null;
+        $startIndex = $index[$startKey];
+        $stopIndex = $index[$stopKey];
+
+        $prerequisites = array();
+        foreach ( self::stepPrerequisites() as $class => $list )
+            $prerequisites[strtolower( $class )] = $list;
+
+        $earliest = $startIndex;
+        $missing = array();
+        $needing = null;
+        for ( $i = $startIndex; $i <= $stopIndex; ++$i )
+        {
+            // every step this one needs, directly or through another
+            $queue = array( strtolower( $stepClasses[$i] ) );
+            $seen = array();
+            while ( $queue )
+            {
+                $key = array_shift( $queue );
+                if ( !isset( $prerequisites[$key] ) )
+                    continue;
+                foreach ( $prerequisites[$key] as $needed )
+                {
+                    $neededKey = strtolower( $needed );
+                    if ( isset( $seen[$neededKey] ) || !isset( $index[$neededKey] ) )
+                        continue;
+                    $seen[$neededKey] = true;
+                    $queue[] = $neededKey;
+                    if ( $index[$neededKey] < $startIndex )
+                    {
+                        $missing[$index[$neededKey]] = $stepClasses[$index[$neededKey]];
+                        if ( $needing === null )
+                            $needing = $stepClasses[$i];
+                        $earliest = min( $earliest, $index[$neededKey] );
+                    }
+                }
+            }
+        }
+        if ( !$missing )
+            return null;
+        ksort( $missing );
+        return '--start-step=' . $stepClasses[$startIndex] . ' cannot work: ' . $needing . ' needs what '
+            . implode( ', ', $missing ) . ' found out earlier in the same run (such as the database type, the chosen'
+            . ' package or the system check results), and a run does not keep them for the next one.'
+            . ' Start at ' . $stepClasses[$earliest] . ' or earlier: --start-step=' . $stepClasses[$earliest] . '.';
+    }
+
     private function stepIndex( $className )
     {
         foreach ( $this->stepData->StepTable as $index => $step )
@@ -265,6 +368,8 @@ class expKickstarter
         $this->cli->output( '' );
         $this->cli->output( 'Options:' );
         $this->cli->output( '  --start-step=<step>  First step to run (default: welcome)' );
+        $this->cli->output( '                       A run cannot resume an earlier one: a later start is refused when a step' );
+        $this->cli->output( '                       needs results of steps before it, and the message names where to start' );
         $this->cli->output( '  --stop-step=<step>   Last step to run (default: final)' );
         $this->cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..SiteDetails to test the database and remote packages (writes no password, sends no mail, installs nothing)' );
         $this->cli->output( '  --list-steps         List all setup steps and exit' );

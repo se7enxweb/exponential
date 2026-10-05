@@ -129,6 +129,8 @@ function showKickstarterHelp( $cli )
     $cli->output( '' );
     $cli->output( 'Run options:' );
     $cli->output( '  --start-step=<step>  First step to run (default: welcome)' );
+    $cli->output( '                       A run cannot resume an earlier one: a later start is refused when a step' );
+    $cli->output( '                       needs results of steps before it, and the message names where to start' );
     $cli->output( '  --stop-step=<step>   Last step to run (default: final)' );
     $cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..SiteDetails to test the database and remote packages (writes no password, sends no mail, installs nothing)' );
     $cli->output( '  --list-steps         List all setup steps and exit' );
