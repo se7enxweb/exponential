@@ -28,6 +28,7 @@ through it once in order after the install; afterwards it serves as a reference.
 - [10.13 Extension management](#1013-extension-management)
 - [10.14 Multi-language sites](#1014-multi-language-sites)
 - [10.15 A checklist for the first week](#1015-a-checklist-for-the-first-week)
+- [10.16 When something does not work](#1016-when-something-does-not-work)
 - [References](#references)
 
 ## Conventions in this chapter
@@ -37,8 +38,12 @@ through it once in order after the install; afterwards it serves as a reference.
   shows every command, `php bin/php/console list cron` one namespace.
 - Scripts refuse to run as `root` unless given `--allow-root-user`. Run routine work, and above all cron, as the
   site's own user; then the flag is not needed and files are created with the right owner. The examples carry the
-  flag so they can be copied as they are. One exception: `bin/php/ezpgenerateautoloads.php` does not know the flag
-  (see [10.7](#107-class-autoloads)).
+  flag so they can be copied as they are. `bin/php/ezpgenerateautoloads.php` has no root check of its own; it accepts
+  the flag so the same habit works there too ([10.7](#107-class-autoloads)).
+- Files created by `root` belong to `root`. A cache or log file that `root` created and the web server's user cannot
+  overwrite is the most common cause of errors after maintenance work
+  ([chapter 12](12-troubleshooting.md#123-permissions-and-ownership)). When you must work as `root`, run the command as
+  the site user instead: `sudo -u <site user> php ...`.
 - Settings are never edited in `settings/*.ini`. Overrides go to `settings/override/<file>.ini.append.php` (the whole
   installation) or `settings/siteaccess/<name>/<file>.ini.append.php` (one siteaccess). `php bin/php/console exp:ini`
   reads and writes them in every scope ([exp:ini](../features/6.0/exp-ini-command.md)); after a hand edit run
@@ -70,8 +75,10 @@ A lost password is reset on the command line. As the operating system's `root` u
 php bin/php/resetuserpassword.php -u admin -g --allow-root-user
 ```
 
-`-g` generates a password (`-l <length>`, default 16) and prints it; `-p <password>` sets one; `-a <login>` with
-`-ap <password>` authorises the reset with another administrator's login instead. See
+`-u` names the user (default `admin`); `-g` generates a password (`-l <length>`, default 16) and prints it;
+`-p <password>` sets one; `-a <login>` with `-ap <password>` authorises the reset with another administrator's login
+instead, for when you are not the operating system's `root`. A password given with `-p` is visible in the process
+list and the shell history; prefer `-g` and change the password after logging in. See
 [Reset a user password](../features/6.0/reset-user-password.md) and
 [Changing your password](../features/6.0/modern-password-change.md).
 
@@ -120,12 +127,39 @@ HostMatchMapItems[]=admin.example.com;admin
 
 and in `settings/siteaccess/site/site.ini.append.php` and `settings/siteaccess/admin/site.ini.append.php` set
 `[SiteSettings] SiteURL=www.example.com` and `admin.example.com`. Clear the INI cache, add the host names to the web
-server ([chapter 8](08-serving-the-site.md)) and to DNS, and check which siteaccess an address reaches:
+server ([chapter 8](08-serving-the-site.md)) and to DNS, and check which siteaccess an address reaches. The
+administration asks for a login and the public site does not, which makes the difference easy to see:
 
 ```bash
-php bin/php/console exp:ezrequestrules --help
-curl -sI https://admin.example.com/ | head -3
+php bin/php/ezcache.php --clear-tag=ini --allow-root-user
+curl -s -o /dev/null -w '%{http_code} %{redirect_url}\n' https://admin.example.com/
+curl -s -o /dev/null -w '%{http_code}\n' https://www.example.com/
 ```
+
+Expect a redirect to `.../user/login` (or the login page itself) from the admin host and `200` from the public host.
+If both answer the same, the host map does not match: the host name the browser sends must be exactly the one in
+`HostMatchMapItems[]`, without a port and in lower case.
+
+**Behind a proxy or load balancer.** The scheme (`http` or `https`) and the host name the visitor asked for are taken
+from forwarded headers (`X-Forwarded-Proto`, `X-Forwarded-Host`, ...) only when the request comes from an address in
+`site.ini [HTTPHeaderSettings] TrustedProxies[]` (shipped: `127.0.0.1` and `::1`, a proxy on the same machine); the
+visitor's address is read from `X-Forwarded-For` only when, in addition, `ClientIpByCustomHTTPHeader=X-Forwarded-For`
+is set. Anyone can send these headers, which is why they are believed only from the proxies you list. A proxy on
+another machine must be added, or the site treats HTTPS requests as plain HTTP and records the proxy's address as
+every visitor's:
+
+```ini
+# settings/override/site.ini.append.php
+[HTTPHeaderSettings]
+TrustedProxies[]
+TrustedProxies[]=127.0.0.1
+TrustedProxies[]=::1
+TrustedProxies[]=10.0.0.5
+ClientIpByCustomHTTPHeader=X-Forwarded-For
+```
+
+The empty `TrustedProxies[]` line replaces the shipped list, so repeat the loopback entries when you still need them.
+See [chapter 8](08-serving-the-site.md#88-behind-a-reverse-proxy) and [Trusted proxies](../bc/6.0/trusted-proxies.md).
 
 Settings per site inside an extension, for hosting several sites from one installation, are explained in
 [Per-site settings inside extensions](../features/6.0/multi-site-ini-overrides.md).
@@ -447,8 +481,18 @@ php bin/php/ezpgenerateautoloads.php -e -n     # dry run: report, write nothing
 php bin/php/ezpgenerateautoloads.php -e -p     # with progress output
 ```
 
-This script does **not** accept `--allow-root-user`: given the flag it prints its usage and does nothing (with exit
-status 0, so a script does not notice). Run it as the site user, or as root without the flag.
+The script has no root check; it accepts `--allow-root-user` (without effect) so that the flag can be given as with
+every other script. An option it does not know stops it with exit status 1 and nothing written:
+
+```text
+$ php bin/php/ezpgenerateautoloads.php -e --bogus
+The referenced parameter '--bogus' is not registered.
+```
+
+Older releases printed their usage and exited with 0 on an unknown option, `--allow-root-user` included, so a
+deployment script never noticed that nothing had been generated. If a deployment script of yours ran the generator
+and checked nothing, check it once by hand now. Run it as the site user: the arrays it writes in `var/autoload/` must
+stay writable for the next run.
 
 Which directories it walks is limited by **`.autoloadignore`** in the installation root, one directory per line,
 anchored at the root, `#` for comments. The shipped file excludes `vendor` (Composer resolves those classes itself),
@@ -488,8 +532,9 @@ use. The rules are in `settings/image.ini`:
   no external program per image), **ImageMagick** as the fallback for formats GD cannot read (PSD, TIFF, PDF, WebP)
   and filters only it has. `[ImageMagick] ExecutablePath` and `Executable` (`convert`) find the program; check
   with `convert -version`.
-- `[OutputSettings] AllowedOutputFormat[]` (JPEG, PNG, WebP, GIF) and `LockTimeout` (seconds a process waits for
-  another generating the same alias).
+- `[OutputSettings] AllowedOutputFormat[]` (JPEG, PNG, WebP, GIF) lists the formats pages may show.
+- `[ImageConverterSettings] LockTimeout` (shipped `60`): seconds a process waits while another generates the same
+  alias; after that the waiting process ends the other one and generates the alias itself.
 
 After changing an alias definition, remove the generated variations so they are made again:
 
@@ -573,7 +618,7 @@ restored is a hope, not a backup. See [Maintenance mode](../features/6.0/mainten
 |---|---|---|
 | `error.log` | the kernel, always (`site.ini [DebugSettings] AlwaysLog[]=error`) | failures: the first place to look |
 | `warning.log`, `notice.log`, `debug.log`, `strict.log` | the kernel, when enabled | investigations |
-| `kickstart.log`, `exp-install-<date>.ini` | the installers (passwords masked) | install problems |
+| `setup.log`, `exp-install-<date>.ini` | the installers: one record per installation run, and the configuration `exp:install` used (passwords masked) | install problems |
 | `mail/` | the file transports | the mails that would have gone out |
 | `oracle-slow.log` | `ezoracle`, with `SlowQueryThreshold` | slow Oracle statements |
 | `cron-*.log` | your crontab redirections | cron output |
@@ -629,7 +674,7 @@ ends with a recognisable status, and most have `--json` for a monitoring system.
 | The caches | `php bin/php/cache.php status --json --allow-root-user` | ends in `PASS` |
 | Velocity | `php bin/php/console exp:velocity status --json --allow-root-user` | running, workers as configured |
 | Notifications | `php bin/php/console exp:notificationstatus` | no events waiting without a recent run |
-| The audit trail | `php bin/php/audit.php status --allow-root-user` | every channel `intact` |
+| The audit trail | `php bin/php/audit.php verify --allow-root-user` | exit status 0 (every channel's chain intact; 1 means broken) |
 | New errors | `tail -n 100 var/log/error.log` | nothing you cannot explain |
 | Cron | `php bin/php/console crontab:list` and the `cron-*.log` dates | entries present, logs recent |
 | Disk | `df -h /path/to/installation` | room for caches, logs and a backup |
@@ -803,6 +848,24 @@ and after a change to a `.ts` file clear `--clear-tag=i18n`. See
 6. `var/log/error.log` holds nothing you cannot explain.
 7. A benchmark baseline is saved in `var/benchmark/`.
 8. Logs rotate (built-in limits in `config.php`, logrotate for cron logs).
+9. Behind a proxy on another machine: its address is in `TrustedProxies[]`, and HTTPS pages link to `https://`.
+
+## 10.16 When something does not work
+
+The faults that show up most often in the first weeks, with the part of this chapter that explains them. The full
+list is in [chapter 12](12-troubleshooting.md).
+
+| Symptom | Likely cause | See |
+|---|---|---|
+| Scheduled content never appears, notifications never arrive | the crontab is missing or runs as another user or PHP | [10.3](#103-cronjobs) |
+| No mail arrives, and nothing is in the mail server's log | `Transport=file`: the mail is in `var/log/mail/` | [10.4](#104-mail-the-file-transport-and-real-sending) |
+| Mail is rejected by large providers | the sender's domain has no SPF record for this server, or the server sends over IPv6 and SPF lists only IPv4 | [10.4](#104-mail-the-file-transport-and-real-sending) |
+| A setting change has no effect | the INI cache, or Velocity workers that still hold the old settings | [10.6](#106-caches) |
+| "Class ... not found" after adding an extension | the extension autoload array was not regenerated | [10.7](#107-class-autoloads) |
+| A new template file gives a page with an empty content area | the template override cache | [10.6](#106-caches) |
+| Links on an HTTPS site point to `http://` | the proxy in front is not in `TrustedProxies[]` | [10.2](#102-siteaccesses-and-site-addresses) |
+| A change works for a few reloads, then the old page returns | a cache in front of PHP was cleared before PHP ran the new code | [10.6](#106-caches), "The order after a code change" |
+| Errors about files that cannot be written after maintenance work | a script ran as `root` and left root-owned files in `var/` | [chapter 12](12-troubleshooting.md#123-permissions-and-ownership) |
 
 ## References
 
@@ -830,7 +893,7 @@ In this repository:
 - [Benchmark](../features/6.0/benchmark.md), [Maintenance mode](../features/6.0/maintenance-mode.md),
   [Reset a user password](../features/6.0/reset-user-password.md), [Changing your password](../features/6.0/modern-password-change.md),
   [Audit trail](../features/6.0/audit-trail.md).
-- [exp:ini](../features/6.0/exp-ini-command.md), [Extension loading order](../features/6.0/extension-loading-order.md),
+- [Trusted proxies](../bc/6.0/trusted-proxies.md), [exp:ini](../features/6.0/exp-ini-command.md), [Extension loading order](../features/6.0/extension-loading-order.md),
   [Additional extension directories](../bc/6.0/AdditionalExtensionDirectories.md),
   [Per-site settings inside extensions](../features/6.0/multi-site-ini-overrides.md),
   [Translations and languages](../features/6.0/translations-and-languages.md).
@@ -846,7 +909,8 @@ External:
   `opcache.file_update_protection` and `opcache.revalidate_freq`), [APCu](https://www.php.net/manual/en/book.apcu.php),
   [session garbage collection](https://www.php.net/manual/en/session.configuration.php).
 - [crontab(5)](https://man7.org/linux/man-pages/man5/crontab.5.html), [logrotate(8)](https://man7.org/linux/man-pages/man8/logrotate.8.html).
-- Mail: [SPF (RFC 7208)](https://www.rfc-editor.org/rfc/rfc7208), [DMARC (RFC 7489)](https://www.rfc-editor.org/rfc/rfc7489).
+- Mail: [SPF (RFC 7208)](https://www.rfc-editor.org/rfc/rfc7208.html), [DKIM (RFC 6376)](https://www.rfc-editor.org/rfc/rfc6376.html),
+  [DMARC (RFC 9989, which replaced RFC 7489)](https://www.rfc-editor.org/rfc/rfc9989.html).
 - Databases: the references of [chapter 9](09-databases.md#references).
 
 [Previous: 9. Databases](09-databases.md) | [Next: 11. Upgrading](11-upgrading.md) | [Contents](README.md)
