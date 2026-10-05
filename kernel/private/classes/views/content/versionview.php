@@ -308,6 +308,29 @@ class Versionview extends \Exponential\Runnable\ModuleView
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
     }
+
+    /**
+     * Returns the nodes above the previewed node, for the path of the version preview.
+     *
+     * The preview node of an object that was never published has no node ID; its path string is the parent's path with
+     * an empty last element (/1/2/58//). fetchPath() drops the last element as the node's own, which was the parent, so
+     * the preview path lost the parent folder. For such a node the path is read including the last element.
+     *
+     * @param \eZContentObjectTreeNode $node the preview node built by the version view
+     * @return \eZContentObjectTreeNode[]
+     */
+    public static function previewParentNodes( \eZContentObjectTreeNode $node )
+    {
+        if ( !$node->attribute( 'node_id' ) && trim( (string)$node->attribute( 'path_string' ), '/' ) !== '' )
+        {
+            $parents = \eZContentObjectTreeNode::fetchNodesByPathString( $node->attribute( 'path_string' ), true, true );
+        }
+        else
+        {
+            $parents = $node->attribute( 'path' );
+        }
+        return is_array( $parents ) ? $parents : array();
+    }
 }
 
 }
