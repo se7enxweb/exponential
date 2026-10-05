@@ -56,7 +56,9 @@ function handleVersionList( $basePath, $subdir,
         $from = $versionEntry[0];
         $to = $versionEntry[1];
         $dir = $updatePath;
-        $file = $dir . '/dbupdate-' . $from . '-to-' . $to . '.sql';
+        // a third element names a file that does not follow dbupdate-<from>-to-<to>.sql (cluster files, the 6.0 files)
+        $name = isset( $versionEntry[2] ) ? $versionEntry[2] : 'dbupdate-' . $from . '-to-' . $to . '.sql';
+        $file = $dir . '/' . $name;
         $fileList = array_diff( $fileList, array( $file ) );
         if ( !file_exists( $file ) )
         {
@@ -64,7 +66,7 @@ function handleVersionList( $basePath, $subdir,
         }
         if ( $useInfoFiles )
         {
-            $infoFile = $dir . '/dbupdate-' . $from . '-to-' . $to . '.info';
+            $infoFile = $dir . '/' . preg_replace( '/\.sql$/', '', $name ) . '.info';
             $fileList = array_diff( $fileList, array( $infoFile ) );
             if ( !file_exists( $infoFile ) )
             {
@@ -84,8 +86,9 @@ function handleExportVersionList( $basePath, $exportBasePath, $subdir,
     {
         $from = $versionEntry[0];
         $to = $versionEntry[1];
-        $file = $updatePath . '/dbupdate-' . $from . '-to-' . $to . '.sql';
-        $exportFile = $exportUpdatePath . '/dbupdate-' . $from . '-to-' . $to . '.sql';
+        $name = isset( $versionEntry[2] ) ? $versionEntry[2] : 'dbupdate-' . $from . '-to-' . $to . '.sql';
+        $file = $updatePath . '/' . $name;
+        $exportFile = $exportUpdatePath . '/' . $name;
         if ( file_exists( $file ) and file_exists( $exportFile ) )
         {
             $srcMD5 = md5_file( $file );
@@ -145,10 +148,275 @@ namespace Exponential\Command\Kernel
 
 class Checkdbfiles extends \Exponential\Runnable\Command
 {
+    /**
+     * The engines that have an update/database/<engine>/ directory.
+     *
+     * @return string[]
+     */
+    public static function databaseTypes()
+    {
+        return array( 'mysql', 'postgresql', 'sqlite' );
+    }
+
+    /**
+     * The upgrade path: one entry per directory update/database/<engine>/<branch>/, in version order.
+     *
+     * An entry holds:
+     *  - 'databases': the engines that have this directory (default: mysql and postgresql)
+     *  - 'stable', 'unstable': the files of every engine, as array( from, to ) for dbupdate-<from>-to-<to>.sql or
+     *    array( from, to, file name ) for a file named otherwise; 'unstable' files live in 'unstable_subdir'
+     *  - 'stable_<engine>', 'unstable_<engine>': files that only that engine has (cluster files, differing names)
+     *
+     * @return array
+     */
+    public static function versionLists()
+    {
+        /********************************************************
+        *** NOTE: The following arrays do not follow the
+        ***       coding standard, the reason for this is
+        ***       to make it easy to merge any changes between
+        ***       the various Exponential branches.
+        *********************************************************/
+
+        $versions = array();
+        $versions['4.0'] = array( 'unstable' => array( array( '3.10.0',      '4.0.0alpha1' ),
+                                                       array( '4.0.0alpha1', '4.0.0alpha2' ),
+                                                       array( '4.0.0alpha2', '4.0.0beta1' ),
+                                                       array( '4.0.0beta1',  '4.0.0rc1' ),
+                                                       array( '4.0.0rc1',    '4.0.0' ),
+                                                     ),
+                                  'unstable_subdir' => 'unstable',
+                                  'stable' => array( array( '3.10.0', '4.0.0' ) ),
+                                );
+        $versions['4.1'] = array( 'unstable' => array(  array( '4.0.0',       '4.1.0alpha1' ),
+                                                   array( '4.1.0alpha1', '4.1.0alpha2' ),
+                                                   array( '4.1.0alpha2', '4.1.0beta1' ),
+                                                   array( '4.1.0beta1', '4.1.0rc1' ),
+                                                   array( '4.1.0rc1', '4.1.0' )
+                                                ),
+                             'unstable_subdir' => 'unstable',
+                             'stable' => array( array( '4.0.0', '4.1.0' ) ) );
+        $versions['4.2'] = array( 'unstable' => array( array( '4.1.0',   '4.2.0alpha1' ),
+                                                  array( '4.2.0alpha1', '4.2.0beta1' ),
+                                                  array( '4.2.0beta1', '4.2.0rc1' ),
+                                                  array( '4.2.0rc1', '4.2.0rc2' ),
+                                                  array( '4.2.0rc2', '4.2.0' ),
+                                                ),
+                             'unstable_subdir' => 'unstable',
+                             'stable' => array( array( '4.1.0', '4.2.0' ) )
+                            );
+
+        $versions['4.3'] = array( 'unstable' => array( array( '4.2.0', '4.3.0alpha1' ),
+                                                  array( '4.3.0alpha1', '4.3.0beta1' ),
+                                                  array( '4.3.0beta1', '4.3.0beta2' ),
+                                                  array( '4.3.0beta2', '4.3.0rc1' ),
+                                                  array( '4.3.0rc1', '4.3.0' ),
+                            ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '4.2.0', '4.3.0' ) ),
+                     // the database cluster (DFS) tables, MySQL only
+                     'unstable_mysql' => array( array( '4.2.0', '4.3.0alpha1', 'dbupdate-cluster-4.2.0-to-4.3.0alpha1.sql' ) ),
+                     'stable_mysql' => array( array( '4.2.0', '4.3.0', 'dbupdate-cluster-4.2.0-to-4.3.0.sql' ) ),
+                   );
+
+        // 4.4.0alpha2 changed nothing in the database: no file from 4.4.0alpha1 to 4.4.0alpha2 was ever released
+        $versions['4.4'] = array( 'unstable' => array( array( '4.3.0', '4.4.0alpha1' ),
+                                                 array( '4.4.0alpha2', '4.4.0alpha3' ),
+                                                 array( '4.4.0alpha3', '4.4.0alpha4' ),
+                                                 array( '4.4.0alpha4', '4.4.0alpha5' ),
+                                                 array( '4.4.0alpha5', '4.4.0beta1' ),
+                                                 array( '4.4.0beta1', '4.4.0beta2' ),
+                                                 array( '4.4.0beta2', '4.4.0beta3' ),
+                                                 array( '4.4.0beta3', '4.4.0' ),
+
+                            ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '4.3.0', '4.4.0' ) ),
+                   );
+
+        $versions['4.5'] = array( 'unstable' => array( array( '4.4.0', '4.5.0alpha1' ),
+                                                  array( '4.5.0alpha1', '4.5.0beta1' ),
+                                                  array( '4.5.0beta1', '4.5.0beta2' ),
+                                                  array( '4.5.0beta2', '4.5.0' ),
+                            ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '4.4.0', '4.5.0' ) ),
+                   );
+
+        $versions['4.6'] = array( 'unstable' => array( array( '4.5.0', '4.6.0alpha1' ),
+                                                  array( '4.6.0alpha1', '4.6.0beta1' ),
+                                                  array( '4.6.0beta1', '4.6.0rc1' ),
+                                                  array( '4.6.0rc1', '4.6.0' ),
+                            ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '4.5.0', '4.6.0' ) ),
+                   );
+
+        $versions['4.7'] = array( 'unstable' => array( array( '4.6.0', '4.7.0alpha1' ),
+                                                  array( '4.7.0alpha1', '4.7.0beta1' ),
+                                                  array( '4.7.0beta1', '4.7.0rc1' ),
+                                                  array( '4.7.0rc1', '4.7.0' ),
+                            ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '4.6.0', '4.7.0' ) ),
+                     'unstable_mysql' => array( array( '4.7.0beta1', '4.7.0rc1', 'dbupdate-cluster-4.7.0beta1-to-4.7.0rc1.sql' ) ),
+                     'stable_mysql' => array( array( '4.6.0', '4.7.0', 'dbupdate-cluster-4.6.0-to-4.7.0.sql' ) ),
+                   );
+
+        $versions['5.0'] = array( 'unstable' => array( array( '4.7.0', '5.0.0alpha1' ),
+                                                  array( '5.0.0alpha1', '5.0.0' ),
+                            ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '4.7.0', '5.0.0' ) ),
+                   );
+
+        // Note: DB updates are kept in base sql file regardless of state as of 5.1
+        $versions['5.1'] = array( 'unstable' => array( ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '5.0.0', '5.1.0' ) ),
+                   );
+
+        $versions['5.2'] = array( 'unstable' => array( ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '5.1.0', '5.2.0' ) ),
+                     'stable_mysql' => array( array( '5.1.0', '5.2.0', 'dbupdate-cluster-5.1.0-to-5.2.0.sql' ) ),
+                   );
+
+        $versions['5.3'] = array( 'unstable' => array( ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '5.2.0', '5.3.0' ) ),
+                   );
+
+        $versions['5.4'] = array( 'unstable' => array( ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '5.3.0', '5.4.0' ) ),
+                     'stable_mysql' => array( array( '5.3.0', '5.4.0', 'dbupdate-cluster-5.3.0-to-5.4.0.sql' ) ),
+                   );
+
+        // The Exponential 6.0 line. Its files are named differently on each engine; SQLite starts at 6.0.
+        $versions['6.0'] = array( 'databases' => array( 'mysql', 'postgresql', 'sqlite' ),
+                     'unstable' => array( ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( ),
+                     'stable_mysql' => array( array( '5.4.0', '6.0.0', 'dbupdate-5.4.0-6.0.0.sql' ),
+                                              array( '6.0.0', '6.0.15', 'dbupdate-6.0.0-6.0.15.sql' ) ),
+                     'stable_postgresql' => array( array( '5.4', '6.0' ),
+                                                   array( '6.0.0', '6.0.15', 'dbupdate-6.0.0-6.0.15.sql' ) ),
+                     'stable_sqlite' => array( array( '6.0.0', '6.0.15', 'dbupdate-6.0.0-6.0.15.sql' ) ),
+                   );
+
+        // The 6.12, 7.2 and 7.3 files of the upstream legacy line (2016 to 2018); not on the 6.0 path, see
+        // doc/install/11-upgrading.md, section 11.3
+        $versions['6.12'] = array( 'unstable' => array( ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '5.4.0', '6.12.0' ) ),
+                   );
+
+        $versions['7.2'] = array( 'databases' => array( 'postgresql' ),
+                     'unstable' => array( ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '6.13.0', '7.2.0' ) ),
+                   );
+
+        $versions['7.3'] = array( 'unstable' => array( ),
+                     'unstable_subdir' => 'unstable',
+                     'stable' => array( array( '7.2.0', '7.3.0' ) ),
+                   );
+
+        return $versions;
+    }
+
+    /**
+     * The engines that have the directory of a branch.
+     */
+    private static function branchDatabases( array $versionList )
+    {
+        return isset( $versionList['databases'] ) ? $versionList['databases'] : array( 'mysql', 'postgresql' );
+    }
+
+    /**
+     * The 'stable' or 'unstable' files of a branch for one engine: those of every engine, then the engine's own.
+     */
+    private static function entriesFor( array $versionList, $state, $dbType )
+    {
+        if ( !isset( $versionList[$state] ) && !isset( $versionList[$state . '_' . $dbType] ) )
+            return false;
+        $entries = isset( $versionList[$state] ) ? $versionList[$state] : array();
+        if ( isset( $versionList[$state . '_' . $dbType] ) )
+            $entries = array_merge( $entries, $versionList[$state . '_' . $dbType] );
+        return $entries;
+    }
+
+    /**
+     * Compares the files under <root>update/database/ with the upgrade path. Reads the file system only.
+     *
+     * @param string $root the installation root with a trailing slash, or '' for the current directory
+     * @return array 'unknown' => files not in the upgrade path, 'missing' => files of the path that do not exist
+     */
+    public static function check( $root = '' )
+    {
+        $versions = self::versionLists();
+        $dbTypes = self::databaseTypes();
+        $fileList = array();
+        $missingFileList = array();
+        $conflictFileList = array();
+        $scannedDirs = array();
+
+        foreach ( $dbTypes as $dbType )
+        {
+            foreach ( $versions as $branch => $versionList )
+            {
+                if ( !in_array( $dbType, self::branchDatabases( $versionList ), true ) )
+                    continue;
+                $basePath = $root . 'update/database/' . $dbType . '/' . $branch;
+                $useInfoFiles = isset( $versionList['info_files'] ) ? $versionList['info_files'] : false;
+                foreach ( array( 'unstable', 'stable' ) as $state )
+                {
+                    $entries = self::entriesFor( $versionList, $state, $dbType );
+                    if ( $entries === false )
+                        continue;
+                    $subdir = isset( $versionList[$state . '_subdir'] ) ? '/' . $versionList[$state . '_subdir'] : false;
+                    handleVersionList( $basePath, $subdir,
+                                       $fileList, $missingFileList, $conflictFileList, $scannedDirs,
+                                       $useInfoFiles, $entries );
+                }
+            }
+        }
+
+        // Directories the upgrade path does not know at all: an engine, or a branch of an engine, that is not listed
+        $databaseDir = $root . 'update/database';
+        foreach ( is_dir( $databaseDir ) ? scandir( $databaseDir ) : array() as $dbType )
+        {
+            if ( $dbType === '.' || $dbType === '..' || !is_dir( $databaseDir . '/' . $dbType ) )
+                continue;
+            foreach ( scandir( $databaseDir . '/' . $dbType ) as $branch )
+            {
+                $branchDir = $databaseDir . '/' . $dbType . '/' . $branch;
+                if ( $branch === '.' || $branch === '..' || !is_dir( $branchDir ) )
+                    continue;
+                if ( in_array( $dbType, $dbTypes, true ) &&
+                     isset( $versions[$branch] ) &&
+                     in_array( $dbType, self::branchDatabases( $versions[$branch] ), true ) )
+                    continue;
+                $iterator = new \RecursiveIteratorIterator( new \RecursiveDirectoryIterator( $branchDir, \FilesystemIterator::SKIP_DOTS ) );
+                $unknown = array();
+                foreach ( $iterator as $file )
+                {
+                    if ( $file->isFile() )
+                        $unknown[] = $file->getPathname();
+                }
+                sort( $unknown );
+                $fileList = array_merge( $fileList, $unknown );
+            }
+        }
+
+        return array( 'unknown' => array_values( $fileList ), 'missing' => $missingFileList );
+    }
+
     public function run()
     {
         // the script's variables were globals; functions of the script read them with "global"
-        foreach ( array( 'basePath', 'branch', 'branches', 'cli', 'conflictFileList', 'currentBranch', 'dbType', 'dbTypes', 'dir', 'exportBasePath', 'exportMissingFileList', 'exportPath', 'file', 'fileList', 'lowestExportVersion', 'missingFileList', 'options', 'scannedDirs', 'script', 'subdir', 'useInfoFiles', 'versionList', 'versions', 'versions41', 'versions42', 'versions43', 'versions44', 'versions45', 'versions46', 'versions47', 'versions50', 'versions51' ) as $__name )
+        foreach ( array( 'basePath', 'branch', 'branches', 'cli', 'conflictFileList', 'currentBranch', 'dbType', 'dbTypes', 'exportBasePath', 'exportMissingFileList', 'exportPath', 'file', 'fileList', 'lowestExportVersion', 'missingFileList', 'options', 'script', 'subdir', 'useInfoFiles', 'versionList', 'versions' ) as $__name )
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
@@ -177,126 +445,15 @@ class Checkdbfiles extends \Exponential\Runnable\Command
                                                'export-path' => "Directory to use for doing SVN exports."
                                                ) );
 
-        $dbTypes = array();
-        $dbTypes[] = 'mysql';
-        $dbTypes[] = 'postgresql';
-
-        $branches = array();
-        $branches[] = '4.1';
-        $branches[] = '4.2';
-        $branches[] = '4.3';
-        $branches[] = '4.4';
+        $dbTypes = self::databaseTypes();
+        $versions = self::versionLists();
+        $branches = array_keys( $versions );
 
         // Controls the lowest version which will be exported and verified against current data
         $lowestExportVersion = '4.3';
 
-        /********************************************************
-        *** NOTE: The following arrays do not follow the
-        ***       coding standard, the reason for this is
-        ***       to make it easy to merge any changes between
-        ***       the various Exponential branches.
-        *********************************************************/
-
-        $versions = array();
-        $versions41 = array( 'unstable' => array(  array( '4.0.0',       '4.1.0alpha1' ),
-                                                   array( '4.1.0alpha1', '4.1.0alpha2' ),
-                                                   array( '4.1.0alpha2', '4.1.0beta1' ),
-                                                   array( '4.1.0beta1', '4.1.0rc1' ),
-                                                   array( '4.1.0rc1', '4.1.0' )
-                                                ),
-                             'unstable_subdir' => 'unstable',
-                             'stable' => array( array( '4.0.0', '4.1.0' ) ) );
-        $versions42 = array( 'unstable' => array( array( '4.1.0',   '4.2.0alpha1' ),
-                                                  array( '4.2.0alpha1', '4.2.0beta1' ),
-                                                  array( '4.2.0beta1', '4.2.0rc1' ),
-                                                  array( '4.2.0rc1', '4.2.0rc2' ),
-                                                  array( '4.2.0rc2', '4.2.0' ),
-                                                ),
-                             'unstable_subdir' => 'unstable',
-                             'stable' => array( array( '4.1.0', '4.2.0' ) )
-                            );
-
-        $versions43 = array( 'unstable' => array( array( '4.2.0', '4.3.0alpha1' ),
-                                                  array( '4.3.0alpha1', '4.3.0beta1' ),
-                                                  array( '4.3.0beta1', '4.3.0beta2' ),
-                                                  array( '4.3.0beta2', '4.3.0rc1' ),
-                                                  array( '4.3.0rc1', '4.3.0' ),
-                            ),
-                     'unstable_subdir' => 'unstable',
-                     'stable' => array( array( '4.2.0', '4.3.0' ) ),
-                   );
-
-        $versions44 = array( 'unstable' => array( array( '4.3.0', '4.4.0alpha1' ),
-                                                 array( '4.4.0alpha1', '4.4.0alpha2' ),
-                                                 array( '4.4.0alpha2', '4.4.0alpha3' ),
-                                                 array( '4.4.0alpha3', '4.4.0alpha4' ),
-                                                 array( '4.4.0alpha4', '4.4.0alpha5' ),
-                                                 array( '4.4.0alpha5', '4.4.0beta1' ),
-                                                 array( '4.4.0beta1', '4.4.0beta2' ),
-                                                 array( '4.4.0beta2', '4.4.0beta3' ),
-                                                 array( '4.4.0beta3', '4.4.0' ),
-
-                            ),
-                     'unstable_subdir' => 'unstable',
-                     'stable' => array( array( '4.3.0', '4.4.0' ) ),
-                   );
-
-        $versions45 = array( 'unstable' => array( array( '4.4.0', '4.5.0alpha1' ),
-                                                  array( '4.5.0alpha1', '4.5.0beta1' ),
-                                                  array( '4.5.0beta1', '4.5.0beta2' ),
-                                                  array( '4.5.0beta2', '4.5.0' ),
-                            ),
-                     'unstable_subdir' => 'unstable',
-                     'stable' => array( array( '4.4.0', '4.5.0' ) ),
-                   );
-
-        $versions46 = array( 'unstable' => array( array( '4.5.0', '4.6.0alpha1' ),
-                                                  array( '4.6.0alpha1', '4.6.0beta1' ),
-                                                  array( '4.6.0beta1', '4.6.0rc1' ),
-                                                  array( '4.6.0rc1', '4.6.0' ),
-                            ),
-                     'unstable_subdir' => 'unstable',
-                     'stable' => array( array( '4.5.0', '4.6.0' ) ),
-                   );
-
-        $versions47 = array( 'unstable' => array( array( '4.6.0', '4.7.0alpha1' ),
-                                                  array( '4.7.0alpha1', '4.7.0beta1' ),
-                                                  array( '4.7.0beta1', '4.7.0rc1' ),
-                                                  array( '4.7.0rc1', '4.7.0' ),
-                            ),
-                     'unstable_subdir' => 'unstable',
-                     'stable' => array( array( '4.6.0', '4.7.0' ) ),
-                   );
-
-        $versions50 = array( 'unstable' => array( array( '4.7.0', '5.0.0alpha1' ),
-                                                  array( '5.0.0alpha1', '5.0.0' ),
-                            ),
-                     'unstable_subdir' => 'unstable',
-                     'stable' => array( array( '4.7.0', '5.0.0' ) ),
-                   );
-
-        // Note: DB updates are kept in base sql file regardless of state as of 5.1
-        $versions51 = array( 'unstable' => array( ),
-                     'unstable_subdir' => 'unstable',
-                     'stable' => array( array( '5.0.0', '5.1.0' ) ),
-                   );
-
-
-        $versions['4.1'] = $versions41;
-        $versions['4.2'] = $versions42;
-        $versions['4.3'] = $versions43;
-        $versions['4.4'] = $versions44;
-        $versions['4.5'] = $versions45;
-        $versions['4.6'] = $versions46;
-        $versions['4.7'] = $versions47;
-        $versions['5.0'] = $versions50;
-        $versions['5.1'] = $versions51;
-
-        $fileList = array();
-        $missingFileList = array();
-        $conflictFileList = array();
         $exportMissingFileList = array();
-        $scannedDirs = array();
+        $conflictFileList = array();
 
         // Check for required md5_file function
         if ( !function_exists( 'md5_file' ) )
@@ -305,6 +462,11 @@ class Checkdbfiles extends \Exponential\Runnable\Command
             $cli->error( "You must upgrade PHP to a version (4.2.0) that has this function" );
             $script->shutdown( 1 );
         }
+
+        // The upgrade path against the files on disk: '?' and '!'
+        $result = self::check( '' );
+        $fileList = $result['unknown'];
+        $missingFileList = $result['missing'];
 
         if ( !$options['no-verify-branches'] )
         {
@@ -328,77 +490,40 @@ class Checkdbfiles extends \Exponential\Runnable\Command
                 \eZDir::recursiveDelete( $exportPath, false );
             }
             \eZDir::mkdir( $exportPath, false, true );
-        }
 
-        // Figure out the current branch, we do not want to export it
-        $currentBranch = \ExponentialSDK::VERSION_MAJOR . '.' . \ExponentialSDK::VERSION_MINOR;
+            // Figure out the current branch, we do not want to export it
+            $currentBranch = \ExponentialSDK::VERSION_MAJOR . '.' . \ExponentialSDK::VERSION_MINOR;
+            // once an export fails the repository is out of reach: one 'C' line, not one per branch and engine
+            $exportFailed = false;
 
-        foreach ( $dbTypes as $dbType )
-        {
-            foreach ( $branches as $branch )
+            foreach ( $dbTypes as $dbType )
             {
-                $basePath = 'update/database/' . $dbType . '/' . $branch;
-                $versionList = $versions[$branch];
-                $useInfoFiles = false;
-                if ( isset( $versionList['info_files'] ) )
+                foreach ( $versions as $branch => $versionList )
                 {
-                    $useInfoFiles = $versionList['info_files'];
-                }
-                if ( isset( $versionList['unstable'] ) )
-                {
-                    $subdir = false;
-                    if ( isset( $versionList['unstable_subdir'] ) )
-                    {
-                        $subdir = '/' . $versionList['unstable_subdir'];
-                    }
-                    handleVersionList( $basePath, $subdir,
-                                       $fileList, $missingFileList, $conflictFileList, $scannedDirs,
-                                       $useInfoFiles, $versionList['unstable'] );
-                }
-                if ( isset( $versionList['stable'] ) )
-                {
-                    $subdir = false;
-                    if ( isset( $versionList['stable_subdir'] ) )
-                    {
-                        $subdir = '/' . $versionList['stable_subdir'];
-                    }
-                    handleVersionList( $basePath, $subdir,
-                                       $fileList, $missingFileList, $conflictFileList, $scannedDirs,
-                                       $useInfoFiles, $versionList['stable'] );
-                }
-
-                if ( !$options['no-verify-branches'] and
-                     version_compare( $branch, $lowestExportVersion ) >= 0 and
-                     version_compare( $branch, $currentBranch ) < 0 )
-                {
+                    if ( $exportFailed ||
+                         !in_array( $dbType, self::branchDatabases( $versionList ), true ) ||
+                         version_compare( $branch, $lowestExportVersion ) < 0 ||
+                         version_compare( $branch, $currentBranch ) >= 0 )
+                        continue;
+                    $basePath = 'update/database/' . $dbType . '/' . $branch;
+                    $useInfoFiles = isset( $versionList['info_files'] ) ? $versionList['info_files'] : false;
                     if ( !exportSVNVersion( $branch, $exportPath ) )
                     {
-                        $conflictFileList[] = $dir . '/' . $branch;
+                        $conflictFileList[] = $basePath;
+                        $exportFailed = true;
                         continue;
                     }
-                    if ( isset( $versionList['unstable'] ) )
+                    $exportBasePath = $exportPath . '/' . $branch . '/' . $dbType . '/' . $branch;
+                    foreach ( array( 'unstable', 'stable' ) as $state )
                     {
-                        $exportBasePath = $exportPath . '/' . $branch . '/' . $dbType . '/' . $branch;
-                        $subdir = false;
-                        if ( isset( $versionList['unstable_subdir'] ) )
-                        {
-                            $subdir = '/' . $versionList['unstable_subdir'];
-                        }
+                        $entries = self::entriesFor( $versionList, $state, $dbType );
+                        if ( $entries === false )
+                            continue;
+                        $subdir = isset( $versionList[$state . '_subdir'] ) ? '/' . $versionList[$state . '_subdir'] : false;
+                        $scannedDirs = array();
                         handleExportVersionList( $basePath, $exportBasePath, $subdir,
                                                  $fileList, $missingFileList, $exportMissingFileList, $conflictFileList, $scannedDirs,
-                                                 $useInfoFiles, $versionList['unstable'] );
-                    }
-                    if ( isset( $versionList['stable'] ) )
-                    {
-                        $exportBasePath = $exportPath . '/' . $branch . '/' . $dbType . '/' . $branch;
-                        $subdir = false;
-                        if ( isset( $versionList['stable_subdir'] ) )
-                        {
-                            $subdir = '/' . $versionList['stable_subdir'];
-                        }
-                        handleExportVersionList( $basePath, $exportBasePath, $subdir,
-                                                 $fileList, $missingFileList, $exportMissingFileList, $conflictFileList, $scannedDirs,
-                                                 $useInfoFiles, $versionList['stable'] );
+                                                 $useInfoFiles, $entries );
                     }
                 }
             }
