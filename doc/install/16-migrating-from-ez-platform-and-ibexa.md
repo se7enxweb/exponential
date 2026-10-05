@@ -63,9 +63,16 @@ series; read from the `composer.json` of each release tag:
 |---|---|---|---|---|
 | `1.0.0.x` (`v1.0.0.0.1` to `1.0.0.10`) | eZ Platform 2.5 (`se7enxweb/ezpublish-kernel ~7.5.40`) | 3.4 (`se7enxweb/symfony v3.4.55`) | `^7.1.3 \|\| ... \|\| ^8.6` | yes: `se7enxweb/exponential ^6.0.12`, `se7enxweb/legacy-bridge ^2.1` |
 | `1.1.0.x` (`v1.1.0.0` to `v1.1.0.7`) | eZ Platform 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | yes: `se7enxweb/legacy-bridge ^3.0`, `se7enxweb/site-legacy-bundle ^2.0` |
-| `1.2.0.x` (`v1.2.0.0`, "Ibexa 4.6 / v4 first release") | Ibexa OSS 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | the glue bundle only (`se7enxweb/site-legacy-bundle v2.0.0`) |
-| `1.3.0.x` (`1.3.0.0` to `1.3.0.5`, the newest release) | Ibexa OSS 5.0 (`se7enxweb/exponential-platform-dxp`) | 7.4 | `>=8.4` | no |
+| `1.2.0.x` (`v1.2.0.0`, "Ibexa 4.6 / v4 first release") | Ibexa OSS 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | yes: `se7enxweb/site-legacy-bundle v2.0.0` pulls in `se7enxweb/ibexa-legacy-bridge` 4.x and `se7enxweb/exponential` (`dev-main` in the lock) |
+| `1.3.0.x` (`1.3.0.0.0`, `1.3.0.1` to `1.3.0.5`, the newest release) | Platform v5 (`se7enxweb/exponential-platform-dxp`, core `v5.0.7` in the lock) | 7.4 | `>=8.4` | no |
 | `v2.5.0.x` (`v2.5.0.0` to `v2.5.0.6`) | the 2.5 line of Exponential Platform Legacy, packaged as Nexus | 3.4 | as 1.0.0.x | yes |
+
+Two traps when you install a Nexus line with Composer. **Five-part tags are not on Packagist**: `v1.0.0.0.1` to
+`v1.0.0.0.3` and `1.3.0.0.0` exist only in git, so ask for `1.0.0.10`, `v1.1.0.7`, `v1.2.0.0` or `1.3.0.5`. And
+**always name a version**: the repository is a fork of the Netgen media site and keeps its tags, which Packagist lists
+under the Nexus name, so `composer create-project se7enxweb/exponential-platform-nexus` without one installs `3.1.6`,
+the upstream `netgen/media-site`. The default branch `master` is the 2.5 line; clone with `--branch 1.3.0.x` (or
+the line you want).
 
 The Nexus 5 line also exists as a separate starter, `se7enxweb/exponential-platform-nexus-starter`, which is what the
 reference installation behind this book runs (SQLite, Symfony 7.4, `se7enxweb/exponential-platform-dxp-core v5.0.7`).
@@ -111,9 +118,14 @@ database through `se7enxweb/legacy-bridge`. It has one line per platform generat
 | Release line | Platform | PHP (`composer.json`) | Bridge |
 |---|---|---|---|
 | `v2.5.0.x` (`v2.5.0.0` to `v2.5.0.3`) | eZ Platform 2.5, `se7enxweb/ezpublish-kernel ~7.5.33`, Symfony 3.4 | `^7.1.3 \|\| ^8.1 \|\| ^8.2` | `se7enxweb/legacy-bridge ^2.1` |
-| `v3.3.44.x` (`v3.3.44.0` to `v3.3.44.7`) | eZ Platform 3.3, `se7enxweb/ezplatform-kernel ~1.3.43`, Symfony 5.4 | `^8.0` | `^3.0.0.35` |
-| `v4.6.23.x` (`v4.6.23.0` to `v4.6.23.2`) | Ibexa 4.6 compatible, `se7enxweb/exponential-platform-dxp 4.6.x-LB-dev` | `^7.4` to `^8.5` | `^4.0.0.0` |
-| `v5.0.x` (`v5.0.1` to `v5.0.3`, the newest release) | Platform v5, `exponential-platform-dxp dev-5.x-LB` | `>=8.3` | `^5.0.0.0` |
+| `v3.0.0.x` (`v3.0.0.0` to `v3.0.0.14`), then `v3.3.44.x` (`v3.3.44.0` to `v3.3.44.7`), branch `3.x` | eZ Platform 3.3, `se7enxweb/ezplatform-kernel ~1.3` (`~1.3.43` in `v3.3.44.7`), Symfony 5.4 | `^8.0` | `^3.0`, from `v3.3.44.3` `^3.0.0.34`, from `v3.3.44.4` `^3.0.0.35` |
+| `v4.6.23.x` (`v4.6.23.0` to `v4.6.23.2`), branch `4.6.x` | Ibexa 4.6 compatible, `se7enxweb/exponential-platform-dxp 4.6.x-LB-dev` | `^7.4` to `^8.5` | `^4.0.0.0` |
+| `v5.0.x` (`v5.0.0` to `v5.0.2`), branch `5.x` | Platform v5, `exponential-platform-dxp dev-5.x-LB` | `>=8.3` | `^4.0.0.0` (`v5.0.0`), `^5.0.0.0` (`v5.0.1`, `v5.0.2`) |
+
+**`v5.0.3` is not a v5 release.** The tag that GitHub marks "Latest" (8 July 2026) was cut from `master`, the 2.5
+line: its `composer.json` requires `se7enxweb/ezpublish-kernel ~7.5.33` and `se7enxweb/legacy-bridge ^2.1`, PHP
+`^7.1.3 || ^8.1 || ^8.2`, and Packagist serves it with that content. Tags are permanent, so it stays. For the v5
+line require `v5.0.2` or the `5.x` branch; never a bare `^5.0` constraint, which resolves to `v5.0.3`.
 
 Exponential 6.0 is therefore both a destination of its own and the legacy half of every Exponential Platform Legacy
 release. Moving content "down to the legacy kernel" means moving it to a database the 6.0 kernel can read; whether a
@@ -132,7 +144,7 @@ Symfony stack keeps running next to it is a second decision ([16.6.8](#1668-keep
 | PHP 8.4 or 8.5 | Nexus 1.3.0.x (needs 8.4), or older lines with the [framework forks](../features/6.0/platform-php85-framework-forks.md) | All of 6.0 |
 | One server without a separate web server, SQLite under load | Nexus 5 can run on SQLite (development default) | Velocity and the SQLite driver are production features ([chapter 8](08-serving-the-site.md), [chapter 9](09-databases.md)) |
 | Lowest risk for a live site | Highest: same generation, a package swap | Highest effort: a data and template migration |
-| Both worlds for a transition | Nexus 1.0.0.x / 1.1.0.x or Platform Legacy run both kernels on one database | Same products, seen from the other side |
+| Both worlds for a transition | Nexus 1.0.0.x, 1.1.0.x and 1.2.0.x or Platform Legacy run both kernels on one database | Same products, seen from the other side |
 
 Rules of thumb:
 
@@ -366,8 +378,10 @@ The Exponential forks gave the commands an `exponential:` primary name on 2026-0
 | 3.x and 4.6 forks (`ezplatform-kernel`, core `4.6` branch) | `exponential:*` | `ibexa:*` and `ezplatform:*` stay as deprecated aliases |
 | Platform v5 (`se7enxweb/exponential-platform-dxp-core` v5.0.7, the version the Nexus starter installs) | `exponential:*` | no aliases are registered in this version: `ibexa:reindex` and the other renamed commands do not exist |
 | Packages that were not forked (cron, GraphQL, ...) | upstream name | `ibexa:cron:run`, `ibexa:graphql:generate-schema` |
-| Legacy bridge 3.x to 5.x | `exponential:legacy:*` | `ezpublish:legacy:*`, `ezpublish:configure`, `ezpublish:legacybundles:install_extensions` |
-| Legacy bridge 2.1.x (2.5 generation) | `ezpublish:*` | only these names exist |
+| Nexus 1.1.0.x and 1.2.0.x projects | their own `exponential:reindex` (`src/.../ExponentialReindexCommand.php`), which delegates to `ibexa:reindex` | `ibexa:reindex` |
+| Legacy bridge `3.x` from `v3.0.0.30`, `4.x` from `v4.0.0.2`, every `5.x` tag | `exponential:legacy:*` | `ezpublish:legacy:*`, `ezpublish:configure`, `ezpublish:legacybundles:install_extensions` stay as deprecated aliases |
+| Legacy bridge `3.x` up to `v3.0.0.29`, `4.x` `v4.0.0.0` and `v4.0.0.1` | `ezpublish:*` | only these names exist |
+| Legacy bridge on `master`, `v2.1.10` to `v2.1.12` (2.5 generation) | `ezpublish:*` (`ezpublish:legacy:init` and the rest) | only these names exist |
 
 The v5 kernel registers `exponential:install`, `exponential:reindex`, `exponential:urls:regenerate-aliases`,
 `exponential:images:normalize-paths`, `exponential:images:resize-original`, `exponential:io:migrate-files`,
@@ -906,20 +920,28 @@ from your own `ibexa-4.6.latest-to-5.0.0.sql` (or the vendor page) rather than r
 `ezpreferences` row ([16.5.6](#1656-the-database-generation-by-generation)).
 
 **Step 3: make the schema the 6.0.15 schema.** The legacy kernel ships its schema as `share/db_schema.dba` (128
-tables, the 6.0.15 additions included) and a comparison tool, `bin/php/ezsqldiff.php`. Its first argument is the
-source, the second the match; either may be a live database or a schema file, and it prints the SQL that turns the
-source into the match:
+tables, the 6.0.15 additions included) and a comparison tool, `bin/php/ezsqldiff.php`. It takes two schemas, a
+`SOURCE` and a `MATCH`, each a live database or a schema file, and prints the SQL that **turns the second (`MATCH`)
+into the first (`SOURCE`)**; `--reverse` swaps that. The direction is easy to get wrong and the result of a wrong
+direction is a file full of `DROP TABLE` lines for the legacy tables, so put the reference schema first and your
+database second:
 
 ```bash
-php bin/php/ezsqldiff.php --type=mysql --host=HOST --user=USER --password=PASSWORD DATABASE share/db_schema.dba > to-6.0.15.sql
-php bin/php/ezsqldiff.php --type=postgresql --host=HOST --user=USER --password=PASSWORD DATABASE share/db_schema.dba > to-6.0.15.sql
+php bin/php/ezsqldiff.php --type=mysql --host=HOST --user=USER --password=PASSWORD share/db_schema.dba DATABASE > to-6.0.15.sql
+php bin/php/ezsqldiff.php --type=postgresql --host=HOST --user=USER --password=PASSWORD share/db_schema.dba DATABASE > to-6.0.15.sql
 ```
 
-(`--type` accepts `mysql` and `postgresql`; `--check-only` only sets the exit status.) Read `to-6.0.15.sql` before
-running it. It contains three kinds of statements:
+(`--type` accepts `mysql` and `postgresql`; `--check-only` only sets the exit status.) A quick sanity check of the
+direction: `grep -c '^CREATE TABLE' to-6.0.15.sql` should be large on a 3.x or later database (the dropped legacy
+tables) and `grep '^DROP TABLE' to-6.0.15.sql` should list only Symfony-side tables (`ibexa_*`, `ezcontentclass_attribute_ml`).
+If it lists `ezbasket`, `ezworkflow` and the like, the arguments are the wrong way round. Read `to-6.0.15.sql` before
+running it. It contains four kinds of statements:
 
-- `CREATE TABLE` for the legacy tables the source lacks (all of the dropped ones on a 3.x or 4.x database, the
+- `CREATE TABLE` for the legacy tables your database lacks (all of the dropped ones on a 3.x or 4.x database, the
   `exp*` tables of 6.0.15 on every source): keep them;
+- changed column definitions and index changes (`ALTER TABLE ... CHANGE`/`ALTER COLUMN`, `DROP INDEX`, `CREATE INDEX`):
+  keep them after reading each one; a statement that makes a column narrower than the data in it fails in strict
+  mode or cuts values, so compare it with the data first;
 - `ALTER TABLE ... ADD` for legacy columns (`folder_id`, `show_footer`, `opml_head` ...): keep them;
 - `DROP TABLE` and `DROP COLUMN` for what only the Symfony stack has (`ibexa_*`, `ezcontentclass_attribute_ml`,
   `is_thumbnail`, `password_updated_at` ...). Remove those lines while the Symfony stack may still be needed (rollback,
@@ -948,9 +970,16 @@ INSERT INTO ezsite_data (name, value) VALUES ('ezpublish-version', '6.0.15stable
 INSERT INTO ezsite_data (name, value) VALUES ('ezpublish-release', '1');
 ```
 
-The values are the ones `update/database/*/6.0/dbupdate-6.0.0-6.0.15.sql` writes. A 2.5 database still has the row
-from its legacy past: there, run the 6.0 update files of [chapter 11](11-upgrading.md#116-from-any-60x-to-today)
-from the version the row names, instead of steps 3 and 5.
+The values are the ones `update/database/*/6.0/dbupdate-6.0.0-6.0.15.sql` writes.
+
+A 1.x or 2.x database still has an `ezpublish-version` row, but it does not name a legacy release: the Symfony
+kernel's update files write their own kernel version into it (`6.4.0` from a fresh install, which the 2.5 clean data still writes, `6.13.0` after the
+vendor's 5.4 to 6.13 file, `7.5.0` to `7.5.7` on 2.5). Do not read it as a legacy version and do not start the legacy
+chain of [chapter 11](11-upgrading.md) from it: no legacy update file belongs to those numbers. A 2.5 database
+already carries the schema changes of the upstream `6.12/`, `7.2/` and `7.3/` files that chapter 11 describes
+([11.3](11-upgrading.md#the-612-72-and-73-directories)), so take steps 3 and 5 like every other source: the
+`ezsqldiff.php` output of step 3 is short there (the `exp*` tables and columns of 6.0.15, a few indexes), and step 5
+replaces the row.
 
 **Step 6: settings, storage and caches.** Point `settings/override/site.ini.append.php` at the database
 (`[DatabaseSettings] DatabaseImplementation`, `Server`, `Port`, `User`, `Password`, `Database`), copy the binary
@@ -1103,17 +1132,17 @@ Read [Exponential Layouts](../bc/6.0/LAYOUTS.md) for the data model and the edit
 
 ### 16.6.8 Keeping a Symfony stack next to the legacy kernel
 
-You do not have to switch the Symfony stack off. Exponential Platform Legacy and Nexus 1.0.0.x / 1.1.0.x run both
+You do not have to switch the Symfony stack off. Exponential Platform Legacy and Nexus 1.0.0.x, 1.1.0.x and 1.2.0.x run both
 kernels on one database through the legacy bridge: the `legacy_admin` siteaccess (`legacy_mode: true`) serves the
 legacy admin, the other siteaccesses serve Twig, and editors' changes appear on both sides. Pick the bridge branch
 that matches the platform generation:
 
 | Platform | Bridge (`se7enxweb/legacy-bridge`) | Requires |
 |---|---|---|
-| eZ Platform 2.5 | `v2.1.x` tags | `se7enxweb/exponential ^6.0.10`, `se7enxweb/ezpublish-kernel ^7.5.24` |
+| eZ Platform 2.5 | `master` (`v2.1.10` to `v2.1.12`; no `2.1.x` branch) | `se7enxweb/exponential ^6.0.10`, `se7enxweb/ezpublish-kernel ^7.5.24` |
 | eZ Platform 3.3 | `3.x` (`3.0.0.1` to `v3.0.0.37`) | PHP `^8.0`, `se7enxweb/exponential ^6.0.12`, kernel `~1.3`, Symfony 5.4 |
 | Ibexa 4.6 compatible | `4.x` (`v4.0.0.0` to `v4.0.0.3`) | PHP `^8.0`, `se7enxweb/exponential dev-main` |
-| Platform v5 | `5.x` (`v5.0.0.0`, `v5.0.1` to `v5.0.10`) | PHP `^8.4`, `ibexa/core ^5.0`, Symfony 7.4 |
+| Platform v5 | `5.x` (`v5.0.0.0`, `v5.0.1` to `v5.0.10`) | PHP `^8.4`, `ibexa/core ^5.0` (the v5 core fork replaces it), Symfony 7.4, `se7enxweb/exponential dev-main`, `se7enxweb/sevenx_exponential_platform_v5_database_translator` (`v5.0.10`) |
 
 The configuration root is `ez_publish_legacy:` (`enabled`, `root_dir`, `legacy_aware_routes`,
 `clear_all_spi_cache_from_legacy`, `clear_all_spi_cache_on_symfony_clear_cache`, and per siteaccess `legacy_mode`
@@ -1130,7 +1159,7 @@ alone) when the last template is done.
 
 | Source | Schema step | Field types | Other |
 |---|---|---|---|
-| 1.x, 2.x up to 2.5 | the legacy schema is complete; run the 6.0 update files from the version in `ezsite_data` | `ezrichtext` from 2.x on (XmlText content of older sites may still be XmlText) | password hashes all accepted |
+| 1.x, 2.x up to 2.5 | the legacy schema is complete; `ezsqldiff.php` adds the 6.0.15 tables and columns; version rows (the old row names a Symfony kernel version, not a legacy one) | `ezrichtext` from 2.x on (XmlText content of older sites may still be XmlText) | password hashes all accepted |
 | 3.0 to 3.3 | `ezsqldiff.php` recreates the dropped tables; version rows; keyword link default | `ezrichtext`, `ezimageasset`, `ezmatrix` (new format) | sort fields 6 and 7 work again |
 | 4.0 to 4.6 | as 3.3; `ibexa_*` side tables can stay | as 3.3 | REST clients on `/api/ibexa/v2` need the legacy REST layer |
 | 5.0 | reverse the renames or use the translator extension, then as 4.6 | identifiers back to `ez*` if they were changed | the Exponential v5 installer already creates the legacy tables on fresh installs |
@@ -1177,7 +1206,7 @@ curl -s -o /dev/null -w '%{http_code}\n' https://www.example.com/adminui/
 On the legacy kernel (path B):
 
 ```bash
-php bin/php/ezsqldiff.php --type=mysql --host=HOST --user=USER --password=PASSWORD --check-only DATABASE share/db_schema.dba; echo $?
+php bin/php/ezsqldiff.php --type=mysql --host=HOST --user=USER --password=PASSWORD --check-only share/db_schema.dba DATABASE; echo $?
 curl -s -o /dev/null -w '%{http_code}\n' https://www.example.com/
 ```
 
