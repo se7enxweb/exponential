@@ -1551,8 +1551,84 @@ class eZImageAliasHandler
                 $this->setAliasAttribute( $imageAliasName, 'is_new', false );
             }
         }
+
+        // Lazy alias generation runs during arbitrary page renders and writes
+        // the WHOLE in-memory XML back, so it must not clobber a row another
+        // process rewrote meanwhile (publishing resets the serial number and
+        // moves every dirpath out of images-versioned/). Skip the write when
+        // the stored row no longer matches; the alias files stay on disk and
+        // regenerate from the fresh XML on the next render.
         $attr = false;
+        $attributeID = isset( $this->ContentObjectAttributeData['id'] ) ? $this->ContentObjectAttributeData['id'] : null;
+        $attributeVersion = isset( $this->ContentObjectAttributeData['version'] ) ? $this->ContentObjectAttributeData['version'] : null;
+        if ( $attributeID && $attributeVersion )
+        {
+            $attr = eZContentObjectAttribute::fetch( $attributeID, $attributeVersion );
+            if ( !is_object( $attr ) )
+            {
+                $attr = false;
+            }
+            else if ( self::storedXMLSupersedesDOMTree( (string)$attr->attribute( 'data_text' ), $domTree ) )
+            {
+                eZDebug::writeError( "Skipped stale image alias write-back for attribute id=$attributeID version=$attributeVersion: " .
+                                     "the stored XML changed concurrently (e.g. published meanwhile); " .
+                                     "aliases regenerate from the fresh XML on the next render",
+                                     __METHOD__ );
+                return;
+            }
+        }
         $this->storeDOMTree( $domTree, true, $attr );
+    }
+
+    /**
+     * Tells whether the stored attribute XML supersedes the in-memory DOM.
+     *
+     * The lazy alias write-back serializes the complete in-memory document.
+     * When another process rewrote the row after this handler loaded it,
+     * publishing resets the <ezimage> serial_number and moves the dirpath
+     * out of images-versioned/, so writing the in-memory state back would
+     * revert the row to stale draft paths. The two publish-sensitive root
+     * attributes identify that situation.
+     *
+     * An empty, unparseable or foreign-rooted stored value never supersedes
+     * the DOM: initial population and pre-3.3 legacy migration must keep
+     * writing.
+     *
+     *
+     * @param string $storedXML current data_text as stored in the database
+     * @param DOMDocument $domTree in-memory document about to be written back
+     * @return bool true when the stored XML wins and the write-back must be skipped
+     */
+    public static function storedXMLSupersedesDOMTree( $storedXML, $domTree )
+    {
+        $storedXML = (string)$storedXML;
+        if ( $storedXML === '' || !$domTree instanceof DOMDocument )
+        {
+            return false;
+        }
+        $memoryRoot = $domTree->documentElement;
+        if ( !$memoryRoot instanceof DOMElement || $memoryRoot->tagName !== 'ezimage' )
+        {
+            return false;
+        }
+
+        $storedDocument = new DOMDocument( '1.0', 'utf-8' );
+        $previousErrorMode = libxml_use_internal_errors( true );
+        $loaded = $storedDocument->loadXML( $storedXML );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $previousErrorMode );
+        if ( !$loaded )
+        {
+            return false;
+        }
+        $storedRoot = $storedDocument->documentElement;
+        if ( !$storedRoot instanceof DOMElement || $storedRoot->tagName !== 'ezimage' )
+        {
+            return false;
+        }
+
+        return $storedRoot->getAttribute( 'serial_number' ) !== $memoryRoot->getAttribute( 'serial_number' )
+            || $storedRoot->getAttribute( 'dirpath' ) !== $memoryRoot->getAttribute( 'dirpath' );
     }
 
     /*!
