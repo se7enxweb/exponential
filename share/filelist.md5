@@ -2678,6 +2678,7 @@ a97f241d85290c2fbece2d8f20d6c401  doc/bc/6.0/console-exp-ini.md
 a1bd95d59712a62f472fdf84f5a8148e  doc/bc/6.0/console.md
 99d9b2a97dcde56f99c1d40242b5be6c  doc/bc/6.0/content-jobs.md
 09d05cd812d3ccabd32043b79e5023c5  doc/bc/6.0/debug-bar.md
+b9fd083f7d3fb436923279b948fbc842  doc/bc/6.0/draft-edit-access.md
 3363c1727dc13ba26af5e714957046fa  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
 14c4b5bce1de1987b27c6063156cb566  doc/bc/6.0/exponentialsdk-and-exponential-cron.md
@@ -4728,16 +4729,16 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 f7a45290c6e4e9c95b8920ad01823d65  kernel/classes/ezcontentfunctions.php
 dba862f2c686e4e505aa22c66b3b2c9a  kernel/classes/ezcontentlanguage.php
-8e7e681e325bb620736966b38e2fde56  kernel/classes/ezcontentobject.php
+b9870b49fa51346bb6a2e4da345d8d1f  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
 b6cb39e28b248e080dc6f37c5c9ca9b9  kernel/classes/ezcontentobjectoperations.php
 06d8358599723d258d5c8246b2333ff1  kernel/classes/ezcontentobjecttranslation.php
 a165301c646c2971d91fc8c0404bc1b4  kernel/classes/ezcontentobjecttrashnode.php
-475fa1c77cd7068c04224a6e315a8c76  kernel/classes/ezcontentobjecttreenode.php
+b64d8a053d841a6c9bbaf7e6599af7db  kernel/classes/ezcontentobjecttreenode.php
 a0caf77e1760cfe190c842b4dfc9f014  kernel/classes/ezcontentobjecttreenodeoperations.php
-6497f63d44ae10ab3021c04d8aa3cbab  kernel/classes/ezcontentobjectversion.php
+3b05f8f29e45131fc9fde8ee1ad90af7  kernel/classes/ezcontentobjectversion.php
 9ba8dcdd4e7e64f8ee2755fbd4ca7fee  kernel/classes/ezcontentupload.php
 908a9d23c197d5b893c609bdaa444433  kernel/classes/ezcontentuploadhandler.php
 8af09de22cd7a47f7269eb7d569d1efc  kernel/classes/ezdatatype.php
@@ -5337,7 +5338,7 @@ f8efeea030465a63431cd19bdbdd6a4d  kernel/private/classes/views/content/pdf.php
 98217eff2fd9cf5073c6c7580298894c  kernel/private/classes/views/content/pendinglist.php
 326f6b9d5856ae82fcdc2ec91f62a963  kernel/private/classes/views/content/queued.php
 78fc91bc380bc5a92f72f0c7b64d3eb4  kernel/private/classes/views/content/removeassignment.php
-00b51c50f1b46eb916fc1120ddd183d5  kernel/private/classes/views/content/removeeditversion.php
+9b6e670490947ab920a2ce74d3813fa4  kernel/private/classes/views/content/removeeditversion.php
 f9c430c252eb94b8b5efdea21168d97e  kernel/private/classes/views/content/removenode.php
 84f0fd52974fc2981cd69ccbb70fbe60  kernel/private/classes/views/content/removeobject.php
 0532c6bf42a37a33462247c62b31155d  kernel/private/classes/views/content/restore.php
@@ -5353,7 +5354,7 @@ ade3050a695a1188b44283460111d3c9  kernel/private/classes/views/content/treemenu.
 4f11008ad9b5c1f0dd76badc81989f91  kernel/private/classes/views/content/urlalias.php
 d33a9f8dab94be1c087f353d6772ff61  kernel/private/classes/views/content/urlalias_global.php
 7a48c8b8ff60735b2b69d5f99fd5fb7b  kernel/private/classes/views/content/urlalias_wildcard.php
-9d64e7e286f2c0e55dd6d847a9ffa049  kernel/private/classes/views/content/versionview.php
+0a3e762fc999a8310b3681d6606ad41d  kernel/private/classes/views/content/versionview.php
 e88eae5e2e444bc3a85ebc168aa3cd39  kernel/private/classes/views/content/view.php
 7f666f92857068a3dfc239970934ae84  kernel/private/classes/views/error/view.php
 5b93b97bc4e87108308011f4ae05eb0f  kernel/private/classes/views/ezinfo/about.php
@@ -5507,7 +5508,7 @@ bbb76adbc06cb9c5a4feb2a68950bf07  kernel/private/classes/views/visual/toolbarlis
 04fa77af251994dccc065aad11c233ec  kernel/private/classes/views/workflow/groupedit.php
 3b6edb3eee8abb53ba599d4f4deaa7b5  kernel/private/classes/views/workflow/grouplist.php
 941b429079a833d76cd898af7bd1e4bb  kernel/private/classes/views/workflow/process.php
-6f6906855744aea7d326f82e61c868c5  kernel/private/classes/views/workflow/processlist.php
+404be1d1e6d663a367e021081c49dc06  kernel/private/classes/views/workflow/processlist.php
 d480113aa516c1417056ac8e7fe30404  kernel/private/classes/views/workflow/run.php
 d42424af816959e29248446de81f6689  kernel/private/classes/views/workflow/view.php
 c5af142ee2097a0993eba303b63a28bf  kernel/private/classes/views/workflow/workflowlist.php
@@ -6817,9 +6818,12 @@ d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItem
 4ca02673913513270eaef99170d6106d  tests/tests/kernel/classes/eZContentClassTest.php
 918e9828b094735f61bf48a1ab5cc1de  tests/tests/kernel/classes/eZContentFunctionCollectionTest.php
 edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsTest.php
+749895a2982f127d2581d6ed8ab94895  tests/tests/kernel/classes/eZContentObjectDraftAccessLiveTest.php
+0a83ed24b4bad4e9f7fcdf2d481522a7  tests/tests/kernel/classes/eZContentObjectDraftLocationTest.php
 3391b6094e41c01c2e3ef953b1fbef3a  tests/tests/kernel/classes/eZContentObjectStateGroupTest.php
 a8745a8d6011fe2c7fcfe4c0413a61ce  tests/tests/kernel/classes/eZContentObjectStateTest.php
 098c7943a8f995b52453eaa6d82d83bb  tests/tests/kernel/classes/eZContentObjectTest.php
+989d80f0c5942c4f6e66379f67b2a0c2  tests/tests/kernel/classes/eZContentObjectTreeNodePreviewPathTest.php
 c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTreeNodeTest.php
 7a3fa441028fd31dced1d8dee4ab6525  tests/tests/kernel/classes/eZContentVersionviewPathTest.php
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
@@ -6849,6 +6853,7 @@ cff81497a83267ad5f42597bb6c66c5c  tests/tests/kernel/classes/eZURLTest.php
 b80a0b72065201d4e81e9dbd79ed9ec0  tests/tests/kernel/classes/eZURLWildcardTest.php
 958c3b8e79be5a4fd876011251c836e4  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 1cdc6174223b1ee7b8ffd262ed6eee8c  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
+687ee97f9728fbbacfab101647a2acca  tests/tests/kernel/classes/eZWorkflowProcessGroupingTest.php
 84f351231c9f1560c61cc1d443ff9ea0  tests/tests/kernel/classes/eZWorkflowProcessListTest.php
 4d598dae7c7b0975d1f25362cbd5f73a  tests/tests/kernel/classes/expAdminPaginationTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
