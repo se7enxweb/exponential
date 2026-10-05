@@ -44,7 +44,49 @@ class KickstarterIniDefaultsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', $generator->fieldDefault( 'database_init', 'Password' ) );
         $this->assertSame( 'root', $generator->fieldDefault( 'database_init', 'User' ) );
         $this->assertSame( 'localhost', $generator->fieldDefault( 'database_init', 'Server' ) );
-        $this->assertSame( 'ezp', $generator->fieldDefault( 'database_init', 'Database' ) );
+        $this->assertSame( 'exponential.db', $generator->fieldDefault( 'database_init', 'Database' ) );
+    }
+
+    public function testDefaultDatabaseNameIsValidForTheDefaultType()
+    {
+        $generator = self::generator( array( '--yes' ) );
+        $type = $generator->fieldDefault( 'database_choice', 'Type' );
+        $this->assertSame( 'sqlite3', $type );
+        foreach ( array( 'database_init', 'site_details' ) as $section )
+            $this->assertMatchesRegularExpression( eZStepInstaller::SQLITE_FILE_NAME_REGEXP, $generator->fieldDefault( $section, 'Database' ),
+                                                   "[$section] Database must be a file name SQLite accepts" );
+        $this->assertSame( 'exponential.db', expKickstarterIni::defaultDatabaseName( 'sqlite' ) );
+        $this->assertSame( 'exponential', expKickstarterIni::defaultDatabaseName( 'mysqli' ) );
+        $this->assertSame( 'exponential', expKickstarterIni::defaultDatabaseName( 'pgsql' ) );
+        $this->assertSame( 'localhost:1521/FREEPDB1', expKickstarterIni::defaultDatabaseName( 'oci8' ) );
+    }
+
+    public function testYesWritesAnInstallingActionMarksTheReviewLinesAndModeOwnerOnly()
+    {
+        $root = self::root() . '/var/tmp/kickstart-ini-defaults-test-write';
+        if ( !is_dir( $root ) )
+            mkdir( $root, 0775, true );
+        $file = $root . '/kickstart.ini';
+        // a file left with a wider mode by an earlier version is narrowed too
+        file_put_contents( $file, "[site_details]\nTitle=Kept title\n" );
+        chmod( $file, 0644 );
+
+        $generator = new expKickstarterIni( $root, self::root() . '/kickstart.ini-dist', $file, array( 'ini', '--yes' ) );
+        $this->assertSame( $file, $generator->writeNonInteractive() );
+
+        clearstatcache();
+        $this->assertSame( '600', sprintf( '%o', fileperms( $file ) & 0777 ), 'the file holds passwords' );
+        $content = (string)file_get_contents( $file );
+        $this->assertStringContainsString( "\nDatabaseAction=ignore\n", $content, 'an action that installs and drops nothing' );
+        $this->assertStringNotContainsString( 'DatabaseAction=skip', $content );
+        $this->assertStringNotContainsString( 'DatabaseAction=remove', $content );
+        $this->assertSame( 2, substr_count( $content, "\nDatabase=exponential.db\n" ) );
+        $this->assertStringNotContainsString( 'Database=ezp', $content );
+        $this->assertMatchesRegularExpression( '/# REVIEW: [^\n]+\nDatabaseAction=ignore\n/', $content );
+        $this->assertMatchesRegularExpression( '/# REVIEW: [^\n]+\nURL=/', $content );
+        $this->assertStringContainsString( 'Title=My Exponential Site', $content, '--yes applies its defaults over an existing file' );
+        foreach ( explode( "\n", $content ) as $line )
+            $this->assertDoesNotMatchRegularExpression( '/^;/', $line, 'comments start with #, which eZINI skips' );
     }
 
     public function testFromInstalledTakesTheDatabaseButNeverThePassword()

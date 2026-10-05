@@ -55,11 +55,25 @@ class expKickstarterIni
         ),
         'site_details' => array(
             'DatabaseAction' => array(
-                'ignore' => 'ignore  (add entries without cleaning up)',
-                'remove' => 'remove  (clean up entries and add new ones)',
-                'skip'   => 'skip    (do not insert schema + data)',
+                'ignore' => 'ignore  (install into the database as it is; drops nothing: for a new, empty database)',
+                'remove' => 'remove  (EMPTY the database first, then install: destroys what is in it)',
+                'skip'   => 'skip    (install nothing; only write the settings)',
             ),
         ),
+    );
+
+    /**
+     * The values to check in every written file before a run: section, key,
+     * what to check. Written as a list in the header and as a "# REVIEW"
+     * line above each key (eZINI skips lines starting with #).
+     */
+    private static $reviewNotes = array(
+        array( 'database_init', 'Database', 'the database to install into; SQLite: a file name in var/storage/sqlite3/ ending in .db, a server: a database you created' ),
+        array( 'site_details', 'Database', 'the same value as [database_init] Database' ),
+        array( 'site_details', 'DatabaseAction', 'ignore installs into an empty database and drops nothing; remove EMPTIES the database first; skip installs nothing' ),
+        array( 'site_details', 'URL', 'the address of the site; empty means http://localhost' ),
+        array( 'site_admin', 'Email', 'the administrator\'s real address' ),
+        array( 'site_admin', 'Password', 'empty: a random password is generated, printed once and written to var/log/initial-admin-password' ),
     );
 
     private $fieldDefaults = array(
@@ -67,7 +81,7 @@ class expKickstarterIni
         'database_init'   => array(
             'Server'   => 'localhost',
             'Port'     => '',
-            'Database' => 'ezp',
+            'Database' => 'exponential.db', // set for the default Type in the constructor
             'User'     => 'root',
             'Password' => '',
             'Socket'   => '',
@@ -96,8 +110,10 @@ class expKickstarterIni
             'EditorAccess'         => 'editor',
             'EditorAccessPort'     => '8082',
             'EditorAccessHostname' => 'edit.sevenx-site.test.com',
-            'Database'            => 'ezp',
-            'DatabaseAction'      => 'skip',
+            'Database'            => 'exponential.db', // set for the default Type in the constructor
+            // installs schema, data and package into an empty database and drops nothing;
+            // remove (empty the database first) is only ever written when chosen
+            'DatabaseAction'      => 'ignore',
         ),
         'site_admin' => array(
             'FirstName' => 'Admin',
@@ -133,6 +149,9 @@ class expKickstarterIni
         $this->argv = $argv;
 
         $this->parseArgs();
+        $databaseName = self::defaultDatabaseName( $this->fieldDefaults['database_choice']['Type'] );
+        $this->fieldDefaults['database_init']['Database'] = $databaseName;
+        $this->fieldDefaults['site_details']['Database']  = $databaseName;
         // Only on request: the settings of an installed siteaccess point at a
         // live database, and a kickstart.ini written from them would install over it
         if ( $this->fromInstalled )
@@ -154,6 +173,54 @@ class expKickstarterIni
     public function fieldDefault( $section, $key )
     {
         return isset( $this->fieldDefaults[$section][$key] ) ? $this->fieldDefaults[$section][$key] : null;
+    }
+
+    /**
+     * A database name the given database type accepts, as exp:install uses:
+     * SQLite needs a file name ending in .db, .db3, .sqlite or .sqlite3 (kept
+     * in var/storage/sqlite3/), Oracle a connect string, the others a name.
+     *
+     * @param string $type the [database_choice] Type, aliases allowed
+     * @return string
+     */
+    public static function defaultDatabaseName( $type )
+    {
+        switch ( strtolower( trim( (string)$type ) ) )
+        {
+            case 'sqlite3':
+            case 'sqlite':
+                return 'exponential.db';
+            case 'oci8':
+            case 'oracle':
+            case 'ezoracle':
+                return 'localhost:1521/FREEPDB1';
+            default:
+                return 'exponential';
+        }
+    }
+
+    /**
+     * After the database type was changed interactively: a Database that is
+     * empty or still the default of a type follows the new type. A name the
+     * user typed is kept.
+     *
+     * @param string $type
+     */
+    private function followDatabaseType( $type )
+    {
+        $defaults = array( '', 'ezp' );
+        foreach ( array( 'sqlite3', 'mysqli', 'oci8' ) as $knownType )
+            $defaults[] = self::defaultDatabaseName( $knownType );
+        foreach ( array( 'database_init', 'site_details' ) as $sectionName )
+        {
+            if ( !isset( $this->sections[$sectionName] ) )
+                continue;
+            foreach ( $this->sections[$sectionName]['fields'] as $idx => $field )
+            {
+                if ( $field['key'] === 'Database' && in_array( $field['value'], $defaults, true ) )
+                    $this->sections[$sectionName]['fields'][$idx]['value'] = self::defaultDatabaseName( $type );
+            }
+        }
     }
 
     private function loadSiteDefaults()
@@ -201,26 +268,34 @@ class expKickstarterIni
             exit( 1 );
         }
 
+        if ( $this->defaults || $this->yes )
+        {
+            $this->writeNonInteractive();
+            $this->cli->output( 'Wrote ' . $this->rel( $this->iniFile ) . ( $this->yes ? ' with sensible defaults.' : ' with defaults from kickstart.ini-dist.' ) );
+            $this->cli->output( 'Review the lines marked "# REVIEW" before "exp:kickstarter run --dry-run".' );
+            exit( 0 );
+        }
+
         $this->loadSections();
-
-        if ( $this->defaults )
-        {
-            $this->writeIni();
-            $this->cli->output( 'Wrote ' . $this->rel( $this->iniFile ) . ' with defaults from kickstart.ini-dist.' );
-            exit( 0 );
-        }
-
-        if ( $this->yes )
-        {
-            $this->applyHardDefaults();
-            $this->writeIni();
-            $this->cli->output( 'Wrote ' . $this->rel( $this->iniFile ) . ' with sensible defaults.' );
-            exit( 0 );
-        }
-
         $this->banner();
         $this->mainLoop();
         exit( 0 );
+    }
+
+    /**
+     * What --yes and --defaults do, without the exit: read kickstart.ini-dist
+     * (and an existing kickstart.ini), apply the built-in defaults with --yes,
+     * and write the file.
+     *
+     * @return string the file written
+     */
+    public function writeNonInteractive()
+    {
+        $this->loadSections();
+        if ( $this->yes )
+            $this->applyHardDefaults();
+        $this->writeIni();
+        return $this->iniFile;
     }
 
     private function parseArgs()
@@ -484,15 +559,24 @@ class expKickstarterIni
 
     private function writeIni()
     {
-        $content = "; Kickstart configuration generated by kickstarter\n";
-        $content .= "; Edit with ./bin/php/console exp:kickstarter\n";
-        $content .= "; For details see kickstart.ini-dist\n";
+        $content = "# Kickstart configuration generated by exp:kickstarter ini\n";
+        $content .= "# Edit with ./bin/php/console exp:kickstarter ini; every key is described in kickstart.ini-dist.\n";
+        $content .= "# This file holds passwords: it is written with mode 0600; keep it so and never commit it.\n";
+        $content .= "#\n";
+        $content .= "# REVIEW before \"exp:kickstarter run --dry-run\" (each line is marked \"# REVIEW\" below):\n";
+        foreach ( self::$reviewNotes as $note )
+            $content .= "#  - [" . $note[0] . "] " . $note[1] . ": " . $note[2] . "\n";
 
         foreach ( $this->sections as $sectionName => $section )
         {
             $content .= "\n[$sectionName]\n";
             foreach ( $section['fields'] as $field )
             {
+                foreach ( self::$reviewNotes as $note )
+                {
+                    if ( $note[0] === $sectionName && $note[1] === $field['key'] )
+                        $content .= "# REVIEW: " . $note[2] . "\n";
+                }
                 if ( $field['type'] === 'array' )
                 {
                     foreach ( $field['values'] as $v )
@@ -511,9 +595,14 @@ class expKickstarterIni
             }
         }
 
-        if ( file_put_contents( $this->iniFile, $content ) === false )
+        // The file holds the database and administrator passwords: owner only,
+        // also when it existed before with a wider mode
+        $oldUmask = umask( 0077 );
+        $written = file_put_contents( $this->iniFile, $content );
+        umask( $oldUmask );
+        if ( $written === false || !chmod( $this->iniFile, 0600 ) )
         {
-            $this->error( 'Failed to write ' . $this->rel( $this->iniFile ) );
+            $this->error( 'Failed to write ' . $this->rel( $this->iniFile ) . ' with mode 0600' );
             exit( 1 );
         }
 
@@ -705,6 +794,8 @@ class expKickstarterIni
         elseif ( $field['type'] === 'choice' )
         {
             $field['value'] = $this->choose( $sectionName, $base, $field['value'] );
+            if ( $sectionName === 'database_choice' && $base === 'Type' )
+                $this->followDatabaseType( $field['value'] );
         }
         elseif ( $field['type'] === 'int' )
         {

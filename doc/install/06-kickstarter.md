@@ -79,8 +79,11 @@ How the file is built (`kernel/classes/expkickstarterini.php`):
 2. When a `kickstart.ini` exists already, its values are merged over those, so `ini` edits the file you have.
 3. With `--yes`, the built-in defaults are applied over both (only for the keys that have one), and every empty
    `Continue` becomes `true`.
-4. The file is written with a three-line header, one section per wizard step, and the cached copies
-   `var/cache/ini/kickstart-*.php` are deleted.
+4. The file is written with mode `0600` (owner only, also when an older `kickstart.ini` had a wider mode), because
+   it holds passwords. It starts with a `#` comment header that lists the values to review, and each of those keys
+   has a `# REVIEW: ...` line above it: both `Database` keys, `DatabaseAction`, `URL`, and the administrator's
+   `Email` and `Password`. One section per wizard step follows, and the cached copies `var/cache/ini/kickstart-*.php`
+   are deleted.
 
 Without `--yes` or `--defaults` the command needs a terminal; otherwise it stops with "No TTY detected. Run with
 --defaults or --yes for non-interactive mode." and exit status 1. It also stops when `kickstart.ini-dist` is missing
@@ -91,7 +94,7 @@ Without `--yes` or `--defaults` the command needs a terminal; otherwise it stops
 | Section | Key | Default |
 |---|---|---|
 | `database_choice` | `Type` | `sqlite3` |
-| `database_init` | `Server`, `Port`, `Database`, `User`, `Password`, `Socket` | `localhost`, empty, `ezp`, `root`, empty, empty |
+| `database_init` | `Server`, `Port`, `Database`, `User`, `Password`, `Socket` | `localhost`, empty, `exponential.db` (the default for the default `Type`), `root`, empty, empty |
 | `language_options` | `Primary`, `Languages[]` | `eng-US`, none |
 | `site_types` | `Site_package` | `sevenx_multisite` (the package `exp:install` installs) |
 | `site_access` | `Access` | `url` |
@@ -100,35 +103,38 @@ Without `--yes` or `--defaults` the command needs a terminal; otherwise it stops
 | `site_details` | `Access`, `AdminAccess`, `EditorAccess` | `sevenx_site_user`, `sevenx_site_admin`, `editor` |
 | `site_details` | `AccessPort`, `AdminAccessPort`, `EditorAccessPort` | `8080`, `8081`, `8082` |
 | `site_details` | `AccessHostname`, `AdminAccessHostname`, `EditorAccessHostname` | `sevenx-site.test.com`, `sevenx-site-admin.test.com`, `edit.sevenx-site.test.com` |
-| `site_details` | `Database`, `DatabaseAction` | `ezp`, `skip` |
+| `site_details` | `Database`, `DatabaseAction` | `exponential.db`, `ignore` |
 | `site_admin` | `FirstName`, `LastName`, `Email`, `Password` | `Admin`, `User`, `admin@example.com`, empty (a password is generated at install time) |
 | `registration` | `Comments`, `Send` | empty (not read by `run`), `false` |
 
-**Neither `--yes` nor `--defaults` writes a file that installs as it is.** Read and edit the result before `run`:
+**Read the file before `run`.** `--yes` writes a file that installs a SQLite site into an empty database as it
+is, but the values marked `# REVIEW` are guesses:
 
-- With `--yes`, `[database_init] Database` and `[site_details] Database` are `ezp`, which is not a valid SQLite file
-  name: with `Type=sqlite3` the run stops in `DatabaseInit` with "The database file name is not valid. ...". Set both
-  to a name such as `exponential.db`. For a database server, set them to the database you created.
-- With `--yes`, `DatabaseAction` is `skip`, which writes the settings and installs no schema, data or package. For a
-  new site set it to `remove` (and read [6.5](#65-databaseaction-read-this-before-you-run) first).
+- With `--yes`, `[database_init] Database` and `[site_details] Database` are `exponential.db`, a file in
+  `var/storage/sqlite3/` (the name `exp:install` uses for SQLite). When you choose another `Type` in the interactive
+  editor, a `Database` that still holds a default follows it: `exponential` for MySQL, PostgreSQL and MongoDB,
+  `localhost:1521/FREEPDB1` for Oracle. For a database server, set both to the database you created.
+- With `--yes`, `DatabaseAction` is `ignore`: schema, base data and the package are installed into the database as
+  it is, and nothing is dropped. That is right for a new, empty database (a SQLite file that does not exist yet is
+  created). On a database that already holds a site, `ignore` skips the tables that exist and adds the package on
+  top, so point `Database` at a new one; `remove`, which empties the database first, is written only when you
+  choose it (read [6.5](#65-databaseaction-read-this-before-you-run) first).
 - With `--yes`, `[site_details] URL` is empty, so the site's address becomes `http://localhost`. Set the real
   address.
 - With `--defaults`, every value is the example of `kickstart.ini-dist`: the package `news_site`, the databases
-  `ezp35test` and `ezp39test`, the administrator "God Like". It is a starting point for editing, nothing more.
+  `ezp35test` and `ezp39test`, `DatabaseAction=remove`, the administrator "God Like". It is a starting point for
+  editing, nothing more.
 
 A worked example for a SQLite test site:
 
 ```bash
 php bin/php/console exp:kickstarter ini --yes
-chmod 600 kickstart.ini
-# edit kickstart.ini: Database=exponential.db (twice), DatabaseAction=remove, URL=http://localhost:8087,
-# Email= your address
+# edit kickstart.ini: URL=http://localhost:8087, Email= your address
 php bin/php/console exp:kickstarter run --dry-run
 php bin/php/console exp:kickstarter run --force
 ```
 
-The `chmod` matters: `ini` writes the file with the process's normal file mode, not `0600`, and the file holds
-passwords.
+`ini` writes the file with mode `0600`, because it holds passwords; keep it so.
 
 The defaults take nothing from an installation that is already there: its siteaccess settings name a live database,
 and a file written from them would install over it. With `--from-installed` the generator looks through
@@ -454,7 +460,7 @@ complete, generated file for a host-matched installation, useful to compare with
 | Value | Effect on the database | Effect on the settings | Use it for |
 |---|---|---|---|
 | `remove` | existing tables dropped (SQLite: file emptied), then schema, base data and packages installed | written | a clean install, a reinstall |
-| `ignore` | schema, data and packages added to whatever is there | written | rarely: an empty database you cannot drop tables in |
+| `ignore` | schema, data and packages added to whatever is there; tables that exist are skipped, nothing is dropped | written | a new, empty database (the `ini --yes` default) |
 | `skip` | nothing inserted; the administrator is not touched | written | regenerating `settings/siteaccess/` and `settings/override/` against a database that is already complete |
 
 A value that is missing or misspelled behaves like `ignore`: the data is added to what is there, which on a database
@@ -835,8 +841,9 @@ they differ from this chapter, this chapter follows the code of this version:
   is refused, because the steps before it set values that `SiteDetails` and `CreateSites` read in the same process;
   run the whole sequence again ([6.10](#610-re-running-and-resuming)). [Kickstarter CLI](../bc/6.0/kickstartercli.md)
   and [Installing Exponential 6.0](../INSTALL.md) now say the same.
-- **`ini --yes`.** Older descriptions present its file as ready to run. It is not: see the list under
-  [6.2.1](#621-ini-write-kickstartini) for the values to change first.
+- **`ini --yes`.** Up to 5 October 2026 it wrote `Database=ezp`, which SQLite refuses as a file name, and
+  `DatabaseAction=skip`, which installs nothing, with the process's normal file mode. It now writes `exponential.db`,
+  `ignore` and mode `0600`, and marks the values to check with `# REVIEW` ([6.2.1](#621-ini-write-kickstartini)).
 
 ## References
 

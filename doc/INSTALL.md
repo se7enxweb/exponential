@@ -263,7 +263,7 @@ php bin/php/console exp:kickstarter run --force    # install
 | Subcommand and option | Meaning |
 |---|---|
 | `ini` | Write or edit `kickstart.ini` from `kickstart.ini-dist` in an interactive editor (needs a terminal). |
-| `ini --yes`, `-y` | Accept the built-in defaults and write without asking. Edit the result before you run it: its `Database=ezp` is not a valid SQLite file name, `DatabaseAction=skip` installs nothing and `URL` is empty. |
+| `ini --yes`, `-y` | Accept the built-in defaults and write without asking, with mode `0600`: SQLite in `exponential.db`, `DatabaseAction=ignore` (installs into an empty database, drops nothing). Check the lines marked `# REVIEW` before you run it, above all `URL`, which is empty. |
 | `ini --defaults`, `-d` | Copy the example values of `kickstart.ini-dist`. |
 | `ini --from-installed` | Take the database server, name and user (never the password) of an installed siteaccess as defaults. The file then points at a live database. |
 | `run` | Run the steps from `Welcome` to `Final`. |
@@ -721,7 +721,7 @@ https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Insta
 | `exp:install`: "This directory already holds an installation" | Add `--force` only if you mean to replace it; `--dry-run` checks without changing anything. |
 | `kickstart.ini` values are ignored | Leading whitespace before sections or keys, a missing `Continue=true`, or a stale `var/cache/ini/kickstart-*.php`. |
 | After switching database engine no page loads | `DatabaseImplementation` in `settings/override/site.ini.append.php` still names the old engine. Set it to the new one. |
-| Kickstarter: "The database file name is not valid" after `ini --yes` | `--yes` writes `Database=ezp`; SQLite needs a name ending in `.db`, `.db3`, `.sqlite` or `.sqlite3`. Set `[database_init] Database` and `[site_details] Database` to, for example, `exponential.db`, and `DatabaseAction=remove`. |
+| Kickstarter: "The database file name is not valid" | A `kickstart.ini` written by `ini --yes` before 5 October 2026 has `Database=ezp`, and SQLite needs a name ending in `.db`, `.db3`, `.sqlite` or `.sqlite3`. Set `[database_init] Database` and `[site_details] Database` to, for example, `exponential.db`, and `DatabaseAction` to `ignore` for a new database. |
 | Kickstarter: "--start-step=... cannot work" | A run cannot resume an earlier one. Fix the cause and run from `Welcome` (the default). |
 | SQLite: "database is busy: the transaction could not start within N s" | Another write held the lock for the whole `SQLiteTransactionWait`. Nothing was written; retry, or raise the setting (below the request timeout). |
 | 404 for every page under Apache | `.htaccess` is not read (`AllowOverride All`) or `mod_rewrite` is off; did you `cp .htaccess_root .htaccess`? |
