@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!--
+    The sniffs of Exponential itself, referenced from phpcs.xml.dist.
+-->
+<ruleset name="Exponential">
+    <description>Sniffs of Exponential</description>
+</ruleset>

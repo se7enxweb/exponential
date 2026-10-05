@@ -94,6 +94,14 @@
             <directory suffix="Test.php">tests/tests/extension/ezjscore</directory>
         </testsuite>
 
+        <!--
+          quality: the sniffs of the code style check (bin/phpcs/). Needs the development tools (make devtools).
+          Run: php vendor/bin/phpunit - -testsuite quality
+        -->
+        <testsuite name="quality">
+            <directory suffix="Test.php">tests/tests/bin</directory>
+        </testsuite>
+
     </testsuites>
 
     <groups>
