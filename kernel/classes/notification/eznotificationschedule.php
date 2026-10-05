@@ -17,6 +17,14 @@
 
 class eZNotificationSchedule
 {
+    /**
+     * Computes the next send date of a digest and sets it as send_date of $item.
+     *
+     * @param eZNotificationCollectionItem|null $item Item to set the date on; null only computes the date, for a
+     *                                               digest handler that needs the date without an item
+     * @param array $settings 'frequency' (day, week or month), 'hour' and, for week and month, 'day'
+     * @return int|false The send date as Unix timestamp, false for settings that are not an array
+     */
     static function setDateForItem( $item, $settings )
     {
         if ( !is_array( $settings ) )
@@ -80,7 +88,10 @@ class eZNotificationSchedule
 
         $sendDate = time() + $secondsDiff;
         eZDebugSetting::writeDebug( 'kernel-notification', getdate( $sendDate ), "item date"  );
-        $item->setAttribute( 'send_date', $sendDate );
+        if ( $item !== null )
+        {
+            $item->setAttribute( 'send_date', $sendDate );
+        }
         return $sendDate;
     }
 }
