@@ -489,9 +489,16 @@ class eZURI
         {
             return false;
         }
-        for ( $i = 0; $i < count( $this->URIArray ); ++$i )
+        // every element of this URI must start the other one; the arrays may have gaps where user parameters were
+        $own = array_values( $this->URIArray );
+        $other = array_values( $uri->URIArray );
+        if ( count( $other ) < count( $own ) )
         {
-            if ( $this->URIArray[$i] != $uri->URIArray[$i] )
+            return false;
+        }
+        for ( $i = 0; $i < count( $own ); ++$i )
+        {
+            if ( $own[$i] != $other[$i] )
             {
                 return false;
             }
