@@ -3341,7 +3341,7 @@ a7d35b3d4eb62f3995401d62b9ab21d7  doc/guides/deploying.md
 5f6657b0ea73fe7a20da12e4a3d5547c  doc/guides/extensions.md
 a49a7f5284ec81f8dbb13b7c88e821b4  doc/guides/getting-started.md
 e1d9475cb0f8b7b42c5b68663fe70b5e  doc/guides/mail-preferences-administrator.md
-14868f854f4717f9f1ff6ea8141281a9  doc/guides/mail-preferences-developer.md
+85a1f23403ea58ed21542841924762f8  doc/guides/mail-preferences-developer.md
 a45d63418940e025cb5a03004675a98c  doc/guides/notifications-administrator.md
 934e5fac274514582acb8481191f0713  doc/guides/notifications-developer.md
 db5e980a8f3711d233062169e69a4963  doc/guides/operating-a-site.md
@@ -4847,13 +4847,13 @@ edd4fe2a12021de5f1e04134421a0cca  kernel/classes/mailpreferences/expconsentlog.p
 ef42ff76c9c0799535968bb0f46defbc  kernel/classes/mailpreferences/expmailaddresschange.php
 9a995918cbc8c49e7594296050d1e5c5  kernel/classes/mailpreferences/expmailbouncereader.php
 4088b1c59fc84d30e3191801eeaed3b2  kernel/classes/mailpreferences/expmailcategory.php
-a05f906bf53285efa7ef37edde2c3682  kernel/classes/mailpreferences/expmailcategoryhandler.php
+afc324f7170f283a07daf2fa40e65a14  kernel/classes/mailpreferences/expmailcategoryhandler.php
 fded4f90f0d8b6d4533526b9502e626e  kernel/classes/mailpreferences/expmailcategoryregistry.php
 15fe5518a4ae0ba8b96f03744f047da3  kernel/classes/mailpreferences/expmailcategoryrow.php
 afcd186334423b9436c137a0af0ddd73  kernel/classes/mailpreferences/expmailgate.php
 2687a61b00bb72ba614daa9931a05fad  kernel/classes/mailpreferences/expmailpendingrow.php
 9e9924047fee005bc03fc14d09c22359  kernel/classes/mailpreferences/expmailpreferencerow.php
-071f359432b90eae55e0084fb70115b7  kernel/classes/mailpreferences/expmailpreferences.php
+5b8d5642e797437c3d5dc654639e6605  kernel/classes/mailpreferences/expmailpreferences.php
 a85201653675103131b0a7a412337b36  kernel/classes/mailpreferences/expmailpreferencesservice.php
 188baa7837b09907a7fbc2d6410190fa  kernel/classes/mailpreferences/expmailrecipient.php
 65d6347b931d79c860243dddedfa9cf6  kernel/classes/mailpreferences/expmailsecret.php
@@ -6906,6 +6906,7 @@ e661f4e1af49a324f6b521358bf30822  tests/tests/kernel/classes/ini/fixtures/expini
 678cb2f17207b03cd3d4132583aef9e9  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 7beeebe96d30bbc53b76a14363271951  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
 245280f0221afce15401c2327945e5f1  tests/tests/kernel/classes/mailpreferences/MailPreferencesCoreTest.php
+40689805068e3926a4ad53f1dcaaed65  tests/tests/kernel/classes/mailpreferences/MailPreferencesErasedHookTest.php
 97f70d18ecebe860b42392efce73701e  tests/tests/kernel/classes/mailpreferences/MailPreferencesHardeningTest.php
 0a343dc9223e5acba7e9e3426380342b  tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php
 a2b6b96ff712d7635f41e8bb767ad9fb  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/arf-abuse.eml
