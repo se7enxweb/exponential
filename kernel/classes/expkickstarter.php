@@ -678,8 +678,42 @@ class expKickstarter
             return false;
         }
 
-        $this->failLine( 'Unknown failure' );
+        foreach ( self::failureReasons( $stepObject ) as $reason )
+            $this->failLine( $reason );
         return false;
+    }
+
+    /**
+     * Why a step stopped when it set no error of its own: the reasons a step
+     * shows on its wizard page, which the command line never sees. A
+     * kickstart.ini without the step's section, a section with Continue other
+     * than true, and a language the installation has no locale for.
+     *
+     * @param object $stepObject an eZStepInstaller after init()
+     * @return array of messages, never empty
+     */
+    public static function failureReasons( $stepObject )
+    {
+        $section = isset( $stepObject->Identifier ) ? (string)$stepObject->Identifier : '';
+        if ( !empty( $stepObject->LanguageErrors ) && is_array( $stepObject->LanguageErrors ) )
+        {
+            $reasons = array();
+            foreach ( $stepObject->LanguageErrors as $error )
+                $reasons[] = 'kickstart.ini [' . $section . ']: ' . $error;
+            return $reasons;
+        }
+        if ( $section !== '' && property_exists( $stepObject, 'KickstartData' ) )
+        {
+            $data = $stepObject->KickstartData;
+            if ( $data === false || $data === null )
+                return array( 'kickstart.ini has no [' . $section . '] section: the step needs one to run without the web wizard'
+                            . ' (kickstart.ini-dist documents it).' );
+            if ( is_array( $data ) && ( !isset( $data['Continue'] ) || $data['Continue'] !== 'true' ) )
+                return array( 'kickstart.ini [' . $section . '] has '
+                            . ( isset( $data['Continue'] ) ? 'Continue=' . $data['Continue'] : 'no Continue=' )
+                            . ': the step stops there for the web wizard. Set Continue=true to run it from the command line.' );
+        }
+        return array( 'Unknown failure' );
     }
 
     private function reportStepRedirect( $stepName, $redirect )
