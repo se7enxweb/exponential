@@ -55,6 +55,7 @@ command as `root`, add `--allow-root-user`; a script that needs it says so.
 | | Exponential Velocity (`qbix`) | FrankenPHP (through Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
 | Role | **recommended** for every stage | production-ready alternative | traditional | traditional |
+| PHP version | 8.1 or later (the engine package requires it) | the PHP built into the binary (8.5 in the 1.12 releases) | 8.0 or later | 8.0 or later |
 | Separate web server needed | **no** | no (Caddy is built into the binary) | yes | yes |
 | Separate HTTPS / certificate tool needed | **no**: own certificates, self-signed fallback, ACME | no: your certificate or a self-signed one | yes (`mod_ssl` plus certbot or a hosting panel) | yes |
 | Where the code comes from | Composer package `se7enxweb/exponential-velocity` | binary downloaded and SHA-256 checked by `exp:velocity install` | the operating system | the operating system |
@@ -69,8 +70,14 @@ PHP's built-in server (`php -S`) is a third Velocity engine. It is the shipped d
 installed; it is for development, has no TLS and is not for visitors.
 
 Use a traditional server when your hosting does not allow long-running processes, when you already run a tuned Apache
-or nginx you want to keep, or when several customers on one machine need operating-system isolation from each other
-(run one Velocity per site, each as its own user, or a traditional server with one PHP-FPM pool per site).
+or nginx you want to keep, when the machine only has PHP 8.0 (the stock PHP of Red Hat Enterprise Linux 9 and its
+rebuilds; Velocity needs 8.1, see [chapter 2](02-requirements.md)), or when several customers on one machine need
+operating-system isolation from each other (run one Velocity per site, each as its own user, or a traditional server
+with one PHP-FPM pool per site).
+
+The choices are not exclusive. A common shape is Velocity serving the site and Apache or nginx left in place on the
+same files during a migration; section 8.7.2 explains what that means for file ownership, and section 8.3.14 how one
+deploy brings both up to date.
 
 ## 8.2 How a request is served
 
@@ -84,7 +91,7 @@ rule for rule (`expVelocity::STATIC_PATHS`, `FRONT_CONTROLLERS` and `ENTRY_SCRIP
                           |
           +---------------+-----------------------------------------------+
           |                                                               |
-   a dot file or dot directory (.git, .env, .htaccess)  -----------------> 404
+   a dot file or dot directory (.git, .env, .htaccess)  -----------------> 404 (qbix: 403)
    (.well-known stays reachable)                                          |
           |                                                               |
    an existing .php/.phtml/.phar below the root  ------------------------> 404
@@ -106,6 +113,23 @@ Two consequences matter for security and are covered again in [chapter 13](13-se
 - A file outside the list is never handed out. `settings/site.ini`, the SQLite database or a kernel source requested
   by path reach `index.php` (which answers with a page or a 404), never the file. Uploaded originals other than images
   are only delivered through `content/download`, which checks permissions.
+- Even inside a listed asset directory, a script (`.php`, `.phtml`, `.phar`) or a dot path is never sent as a file
+  (`expVelocity::NEVER_STATIC`; the second rule of `.htaccess_root`), so a stray script in an extension's design
+  directory can neither run nor leak its source.
+
+**Check it on any server.** Once the site answers, these four requests show that the routing is in place. Replace the
+address with your own:
+
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8088/.git/config            # 404 (403 from the qbix engine)
+curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8088/kernel/classes/ezcontentobject.php   # 404
+curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8088/robots.txt              # 200 when the file exists
+curl -s http://127.0.0.1:8088/settings/site.ini | grep -c '^\[DatabaseSettings\]'      # 0: a page, not the file
+```
+
+What can go wrong: a `200` for the `.git` or kernel request means the rules are not active (Apache without
+`.htaccess` or `AllowOverride`, an nginx block that is not this chapter's); stop and fix that before the site is
+reachable from outside. A `404` for every asset under `design/` means the document root is not the installation root.
 
 ---
 
@@ -150,14 +174,21 @@ It lands in `vendor/se7enxweb/exponential-velocity` (the former package name `se
 found). The tilde constraint follows the engine's last version position, so `~0.0.4.42` accepts later `0.0.4.x`
 releases.
 
-The engine needs PHP's `pcntl` and `posix` extensions to fork and manage workers, `sockets` for the zygote
-(section 8.3.6) and `openssl` for HTTPS. To see what this PHP lacks, with the command that installs it on this
-operating system:
+The package's `composer.json` requires PHP 8.1 (`"php": ">=8.1"`) and the `sockets` extension (TCP options on client
+connections, and the zygote of section 8.3.6), so Composer refuses the package on PHP 8.0 or without `sockets`. That
+refusal is harmless: the engine is only suggested, and Exponential itself keeps running under Apache or nginx. The
+engine also wants `pcntl` and `posix` to fork workers and change their user, and `openssl` for HTTPS. At start-up it
+refuses to run without process isolation (`pcntl`, or a php-cgi binary) and without `openssl` when HTTPS is
+configured, printing the install command; for the rest of its standard set it warns once and starts. To see what this
+PHP lacks, with the command that installs it on this operating system:
 
 ```bash
 php bin/php/console exp:velocity ext check
 php bin/php/console exp:velocity ext install-hint <extension>
 ```
+
+Both are the engine's own `qbixctl ext:check` and `ext:install-hint`, run with this installation's configuration;
+`ext check` without arguments is the default action.
 
 The engine package also exists as an operating-system package (`exponential-velocity`, deb and rpm, with a systemd
 unit) and as a Docker image; see [Velocity packages, Docker images and binaries](../features/6.0/velocity-packages-and-binaries.md).
@@ -224,6 +255,19 @@ curl -sI http://127.0.0.1:8088/ | head -1
 
 Expect `HTTP/1.1 200 OK` or a redirect. `status --json` gives the same information for monitoring.
 
+What can go wrong on the first start:
+
+| You see | Why | What to do |
+|---|---|---|
+| `velocity: no server script at ...` | the engine package is not installed | section 8.3.1, or `--engine=php` for a quick look |
+| `velocity: port ... is already in use by another process` (the `php` and `frankenphp` engines), or a `qbix` start that does not come up, with the bind error in `console.log` | another engine or program holds the port | `exp:velocity status --all`; stop the other one or change `Port` |
+| the start succeeds, but `curl` from another machine gets no answer | `Host` is still `127.0.0.1` | section 8.3.5 |
+| a warning that the workers run as root | nothing names a worker user and the document root belongs to root | section 8.3.5, then 8.7 |
+| a page that says the site is in maintenance | an installation run left maintenance mode on | `php bin/php/maintenance.php status`, then `off` |
+
+The start-up lines, including the worker user (`Workers as: ...`) and the TLS state, are in
+`var/vc/qbix/run/console.log` (section 8.3.12).
+
 ### 8.3.5 Address, ports, user and group
 
 To serve visitors directly, bind to all addresses on the standard ports:
@@ -245,7 +289,9 @@ php bin/php/console exp:velocity restart --allow-root-user
 | `AllowRootWorkers` | `disabled` | `root` as worker user is refused unless `enabled` |
 | `FollowSymlinks` | `disabled` | a file reached through a symbolic link leading out of the document root is refused (403 on `qbix`) |
 | `HTTP2` | `enabled` | HTTP/2 for clients that negotiate it during the TLS handshake |
-| `StaticMaxAge` | `31536000` | browser cache lifetime of stylesheets, scripts and images, in seconds |
+| `StaticMaxAge` | `31536000` | browser cache lifetime of stylesheets, scripts and images, in seconds. A file replaced under the same name is not fetched again until it expires; lower it while you work on a stylesheet |
+| `ResponseHeaders[]` | `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` | headers added to every answer the server builds itself (static files, resized images, its own error pages, redirects); a header already present is never replaced. `Strict-Transport-Security` has its own setting (section 8.3.9) |
+| `ResponseHeadersOnScripts` | `enabled` | add the same headers to what `index.php`, `index_rest.php` and `index_treemenu.php` answer, where the script did not send that header itself |
 
 **Ports below 1024 need root.** Started as root, the parent process keeps root (it binds the ports, reads the
 certificate and performs reloads), and every worker gives root up right after it is forked and before any application
@@ -393,8 +439,9 @@ curl -sI https://example.com/ | head -1      # expect HTTP/2 200 or a redirect
 
 What `velocity.ini` does with these settings (`expVelocity::httpsEnabled()` and `writeServerConfig()`):
 
-- HTTPS is switched on only when `Enabled` is `true` **and** both files exist. A path that does not exist leaves the
-  server on plain HTTP; `status` says HTTPS is off and what switches it on.
+- HTTPS is switched on only when `Enabled` is `true` (or `enabled`) **and** both files exist. A path that does not
+  exist leaves the server on plain HTTP rather than starting a TLS port that cannot work; `status` says HTTPS is off
+  and what switches it on. Relative paths are read from the installation root.
 - The site file then carries `Q.web.https` with `mode: manual` and the two paths, and the server is started with
   `--https-port=<HTTPSPort>`.
 - Before use the pair is verified: the certificate parses, has not expired and the key belongs to it. A pair that fails
@@ -407,6 +454,10 @@ What `velocity.ini` does with these settings (`expVelocity::httpsEnabled()` and 
 - HTTPS comes up before plain HTTP, so there is never a moment when the server answers HTTP but not HTTPS.
 
 The server process reads the key as root when it was started as root, so the key can stay `0600 root`.
+
+On the shipped ports the HTTPS address is `https://<host>:8080/` and plain HTTP stays on 8088; both listen at once,
+and `velocity.ini` has no setting that redirects one to the other. Make sure the addresses the site generates are the
+HTTPS ones (`site.ini [SiteSettings] SiteURL` and the siteaccesses' URLs) before you raise `HSTSMaxAge`.
 
 #### Strict-Transport-Security
 
@@ -425,8 +476,10 @@ needs `HSTSIncludeSubDomains` and at least a year.
 #### Let's Encrypt and other ACME CAs, archives, PKCS#12
 
 The engine's certificate subsystem can do more than `velocity.ini` exposes: obtain and renew certificates from
-Let's Encrypt or any ACME CA (ZeroSSL, Google), read a certificate from a `.zip`, `.tar.gz`, `.p12` or `.pfx`, or make
-a self-signed certificate without any file. These sources are configured under `Q.web.https` in the engine's
+Let's Encrypt or any ACME CA (ZeroSSL, Google), read a certificate from an archive (`.zip`, `.tar.gz`, `.7z` and
+others) or a `.p12`/`.pfx` bundle, take what certbot already manages, download one from a URL, or make a self-signed
+certificate without any file (the modes `letsencrypt`, `archive`, `pkcs12`, `certbot`, `remote` and `self-signed`
+beside `manual`). These sources are configured under `Q.web.https` in the engine's
 configuration. In the `/etc/vc` tree (section 8.3.10) everything in `conf-available/` belongs to the administrator and
 is merged before the generated site file, so a snippet there is the place for it. Leave `[HTTPSSettings] Enabled`
 at `false` in this case, so the generated files do not set `Q.web.https` themselves.
@@ -482,7 +535,8 @@ php bin/php/console exp:velocity ssl show --json --allow-root-user   # for monit
 php bin/php/console exp:velocity ssl renew example.com --allow-root-user
 ```
 
-A CA certificate with fewer than 14 days left means renewal has failed for two weeks; `acme.lastError` says why. Keep
+A 90-day CA certificate is renewed when about 30 days are left, so one with fewer than 14 days left means renewal has
+been failing for more than two weeks; the last error, which `ssl show` prints with the ACME state, says why. Keep
 NTP running: certificates are checked against the system clock. The control panel's **SSL** tab shows the same and
 can renew and reload from a browser (section 8.3.13).
 
@@ -514,7 +568,9 @@ everything in the expected place:
 
 **Which directory.** `[LayoutSettings] ConfDir=auto` uses `/etc/vc` if it exists or can be created (that is, when
 `exp:velocity` runs as root), else an existing `/etc/qbix`, else `var/vc/qbix/etc` inside the installation.
-`disabled` uses a single generated file only; a path names a directory. The site's name in `sites-available` is
+`disabled` uses a single generated file only (`var/tmp/velocity-server.json`, which is written in every case, so an
+older engine can still start from it); a path names a directory. `[LayoutSettings] StateDir=auto` puts the site
+metadata in `/var/lib/vc` when the configuration is in `/etc/vc`, else in `var/vc/qbix/lib`. The site's name in `sites-available` is
 `[LayoutSettings] SiteName`, by default the host of `site.ini [SiteSettings] SiteURL`.
 
 **The overlay.** `/etc/qbix` is the engine's own base tree (as the operating-system package installs it); `/etc/vc` is
@@ -639,11 +695,13 @@ The server answers a few pages of its own, below `/Q/`, independent of the appli
 |---|---|---|
 | `/Q/dashboard` | live requests, workers, memory, status codes | this machine; elsewhere with `[DashboardSettings] Token` |
 | `/Q/stats`, `/Q/metrics`, full `/Q/health` | figures, Prometheus metrics, health report | this machine; elsewhere with the Token or the panel login |
-| `/Q/phpinfo` | `phpinfo()` including the process environment | this machine only, and only with the Token or panel password once one exists |
+| `/Q/phpinfo` | `phpinfo()` including the process environment | this machine; from elsewhere only with the Token or a panel session, never through `Remote=enabled` |
 | `/Q/panel` | control panel: domains, certificates, cache, logs, workers, settings | this machine, then the panel password |
 | `/Q/health` (status only), `/Q/docs` | "ok", documentation | everyone |
 
-`[DashboardSettings] Remote=enabled` opens the figures remotely without a token; use it only on a port a firewall
+A token is any long random string, for example from `openssl rand -hex 24`; set it with
+`exp:velocity config set DashboardSettings Token <value>` and pass it as `?token=...` or as
+`Authorization: Bearer ...`. `[DashboardSettings] Remote=enabled` opens the figures remotely without a token; use it only on a port a firewall
 already restricts. To reach the panel of a remote server, use an SSH tunnel to the server's own port.
 
 The first visit of `/Q/panel` sets the panel password (at least 16 characters with the engine's strength rules; bcrypt;
@@ -676,7 +734,22 @@ php bin/php/console exp:velocity deploy --kernel --allow-root-user    # a kernel
 | 9 | Velocity's response cache | `exp:velocity cache clear` |
 
 Each step prints `PASS`, `FAIL` or `SKIP` with its time; the first failure stops the run (exit status 1) and the steps
-not run are listed as `NOT RUN`. A kernel file that does not parse fails step 5 before any service is touched.
+not run are listed as `NOT RUN`. `--dry-run` prints each step with what it would do (`DRY`) and changes nothing.
+
+Why this order: the caches that hold rendered output (content view cache, HTTP cache, template blocks, the response
+cache) are cleared only after PHP-FPM has been reloaded and Velocity restarted. Cleared earlier, every page requested
+in between is rendered by the old code and cached again, and the change looks as if it had not worked.
+
+Some steps decide for themselves that they have nothing to do, and say so:
+
+- **Engine archive** (step 5) runs only when Velocity runs from an archive (`EnginePhar`, section 8.3.15) and is
+  running. Then every file going into the archive is parsed first, so a kernel file that does not parse stops the
+  deploy while PHP-FPM and Velocity still run the old code. Without an archive there is no such check: run `php -l`
+  on what you changed.
+- **Restart Velocity** (step 7) restarts a running server only. A stopped one stays stopped: a deploy brings the
+  running services up to date, it does not decide which ones should run.
+- **Reload PHP-FPM** (step 6) is skipped with a note when no pool was found, when it is not run as root, or when the
+  machine has no `systemctl`.
 
 Options: `--kernel`, `--no-autoload`, `--no-fpm`, `--no-velocity`, `--rebuild-phar`, `--packer` (clear the packed
 scripts and styles together with the template blocks; needed only when a packer server function or its settings
@@ -699,12 +772,17 @@ is worth having for distribution and for knowing that the engine runs exactly wh
 faster once OPcache is warm.
 
 ```bash
-php -d phar.readonly=0 bin/php/console exp:phar build   # build (only when something changed; --force always)
+php bin/php/console exp:phar build                      # build (only when something changed; --force always)
 php bin/php/console exp:phar check                      # is the archive current?
 php bin/php/console exp:phar info
 php bin/php/console exp:velocity config set ServerSettings EnginePhar enabled
 php bin/php/console exp:velocity restart
 ```
+
+Writing an archive needs PHP's `phar.readonly` off. The console starts every command in a fresh PHP, so a
+`php -d phar.readonly=0` in front of `bin/php/console` never reaches the command; `exp:phar build` therefore checks
+first whether the archive is current and, when it has to write, runs itself again with `-d phar.readonly=0`. Nothing
+needs to be set by hand.
 
 `[ServerSettings] EnginePhar` takes `disabled` (the files on disk, the default), `enabled` (`dist/engine.phar`) or a
 path. A path that does not exist stops the start instead of silently falling back. With an archive in use, `start`,
@@ -726,13 +804,15 @@ changed (`engine.phar is current, not rebuilt` otherwise); `--rebuild-phar` forc
 | `exp:velocity cache clear\|stats` | the response cache |
 | `exp:velocity layout [migrate]` | the configuration tree and every file the server uses |
 | `exp:velocity site\|conf\|mod enable\|disable <name>` | the a2ensite family |
-| `exp:velocity ssl show\|renew [host...]` | certificates (`qbix` only) |
+| `exp:velocity ssl show\|renew [host...]` | certificates (`qbix` only; the other engines take their certificate from `[HTTPSSettings]`). `show` is the default action. Not listed by `--help`, but accepted |
 | `exp:velocity ctl <args>` | the engine's `qbixctl` with this installation's tree, site and pid file (`ctl status`, `ctl configtest`, ...) |
 | `exp:velocity ext check\|list\|plan\|install-hint\|build` | PHP extensions the engine expects |
 | `exp:velocity install` | FrankenPHP: download and verify the binary (`--force`, `--from=<file>`, `--check`, `--trust-github-digest`); `qbix`: nothing to do |
 
 Options are accepted in GNU and BSD spellings (`--keep-global V`, `-keep-global=V`, `-json`); everything after `--` is
-passed to the engine untouched. `exp:velocity --help` prints the full list.
+passed to the engine untouched. `exp:velocity --help` prints the full list. An option that belongs to another verb is
+refused with a message naming the verbs it goes with, for example `velocity: --dry-run goes with deploy` or
+`velocity: --rebuild-phar goes with start, restart, graceful and deploy`; an unknown verb lists the valid ones.
 
 ---
 
@@ -760,8 +840,12 @@ php bin/php/console exp:velocity start --allow-root-user
   than that measured slower under heavy load. `SpareWorkers` adds threads under load.
 - **HTTPS.** On by default (`HTTPS=enabled`) on `HTTPSPort` (8444) beside HTTP on `Port` (8089). It uses
   `[HTTPSSettings] Certificate` and `Key` when both are set; with both empty it makes a self-signed certificate for
-  the machine in `var/vc/frankenphp/tls/` and renews it a month before it runs out. A public site names its
-  certificate. `start --no-https` and `start --https` decide for one start; `HTTPS=disabled` switches it off.
+  the machine in `var/vc/frankenphp/tls/` (valid a year) and renews it a month before it runs out. A public site
+  names its certificate; after replacing the files, run `exp:velocity graceful`. `start --no-https` and
+  `start --https` decide for one start (with `start`, `restart` and `graceful` only); `HTTPS=disabled` switches it
+  off. `exp:velocity ssl` is the `qbix` engine's and refuses here.
+- **Compression.** `[FrankenPHPSettings] Compression` (`zstd br gzip`) is what Caddy offers clients; Caddy
+  compresses nothing unless told to. `disabled` switches it off.
 - **Configuration.** `var/vc/frankenphp/run/Caddyfile` is generated on every `start`, `graceful` and `restart` and
   validated with `frankenphp validate` before it replaces the old one. Its routing is `.htaccess_root`'s; it does not
   use `php_server`, which would serve every existing file. Directives of your own go in a file named by
@@ -1090,9 +1174,43 @@ from the machine, and only through the proxy.
   `eZSys::clientIP()` read that header from a trusted proxy, from the right: trusted proxies are skipped and the first
   other address is the visitor. Entries a client put in front are ignored, so a proxy may append
   (`$proxy_add_x_forwarded_for`) or overwrite.
-- **Velocity** works out the visitor's address itself from its own trusted list (`Q.webserver.proxy.trusted`, in
-  `/etc/vc/conf-available/reverse-proxy.conf`) and hands it to the kernel as `REMOTE_ADDR`; list the proxies in front
-  of Velocity there. `ClientIpByCustomHTTPHeader` is then not needed.
+- **Velocity** answers these questions before the kernel sees the request; see "Velocity behind a proxy" below.
+
+**Velocity behind a proxy.** The engine has its own list of trusted proxies, `Q.webserver.proxy.trusted` in the
+engine configuration, by default `127.0.0.1` and `::1`. It is separate from `TrustedProxies[]` because the engine
+decides before any PHP of the application runs:
+
+- **The visitor's address.** From a trusted proxy the engine takes the visitor's address from `X-Forwarded-For` (or
+  the header named in `Q.webserver.proxy.headers.ip`), read from the right: the first address that is not a trusted
+  proxy is the visitor. It hands that address to the kernel as `REMOTE_ADDR`. The kernel then sees the visitor as the peer: `ClientIpByCustomHTTPHeader`
+  is not needed, and `TrustedProxies[]` does not affect the visitor's address.
+- **HTTPS.** The engine sets `$_SERVER['HTTPS']` and `REQUEST_SCHEME`, which the kernel believes without any proxy
+  setting. A TLS connection to Velocity itself is HTTPS whoever sent it. A plain connection counts as HTTPS when a
+  **trusted** proxy sends `X-Forwarded-Proto: https` (or the header named in `Q.webserver.proxy.headers.proto`),
+  `CloudFront-Forwarded-Proto: https` or Cloudflare's `CF-Visitor: {"scheme":"https"}`; of a list such as
+  `https, http` the first entry counts.
+- **Engine versions.** Reading the forwarded protocol only from trusted proxies is engine commit `380a64d`
+  (5 October 2026), which is on the engine's `main` branch and not in a release yet: up to and including 0.0.4.43
+  (and 0.0.4.42, which Exponential suggests), a worker took those headers from any client, so a visitor on a plain
+  listener could make a request look like HTTPS to the application. Until you run an engine release that carries the
+  change, keep Velocity's plain port unreachable from outside (the shipped `Host=127.0.0.1`, or a firewall) whenever
+  a proxy is in front.
+- **The host.** `X-Forwarded-Host` reaches the kernel from the visitor's address and is not used. Let the proxy pass
+  the original `Host` header.
+
+To trust a proxy on another address, put the list in a snippet of the configuration tree (section 8.3.10) and enable
+it. Name the loopback addresses too, so a local proxy keeps working:
+
+```bash
+cat > /etc/vc/conf-available/reverse-proxy.conf <<'EOF'
+{ "Q": { "webserver": { "proxy": { "trusted": ["127.0.0.1", "::1", "192.0.2.10", "10.0.0.0/8"] } } } }
+EOF
+php bin/php/console exp:velocity conf enable reverse-proxy --allow-root-user
+php bin/php/console exp:velocity restart --allow-root-user
+```
+
+`reverse-proxy` is only a name you choose; any file in `conf-available/` works the same way. Entries are addresses or
+CIDR ranges.
 
 **nginx in front of Velocity (derived example):**
 
@@ -1127,6 +1245,29 @@ Notes:
   a proxy that purges by tags reads the header named in `httpcache.ini [HttpCacheSettings] TagHeader` (`disabled` by
   default).
 - **The Velocity response cache** still works behind a proxy; clear it with `exp:velocity cache clear` as usual.
+- **Apache or nginx in front of Apache with PHP-FPM** (Plesk's nginx in front of Apache is this shape): when the inner
+  server rewrites `REMOTE_ADDR` to the visitor with `mod_remoteip` or nginx's `realip` module and is reached over
+  HTTPS, the kernel sees the visitor and `HTTPS=on` directly, and needs neither `TrustedProxies[]` changes nor
+  `ClientIpByCustomHTTPHeader`.
+
+**Check it.** A forwarded header sent by a visitor must change nothing. Against the site directly (no proxy):
+
+```bash
+curl -s -o /dev/null -w '%{redirect_url}\n' -H 'X-Forwarded-Proto: https' http://example.com/user/logout
+# expected: http://example.com/   -- an https:// address here means the header was believed
+```
+
+Through the proxy, a page's absolute links and redirects must carry `https://`, and the debug bar's "Is my address
+listed?" (iptest) shows the address the kernel uses for the visitor.
+
+What can go wrong behind a proxy:
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| redirects and absolute links go to `http://` | the proxy is not trusted (not loopback, not in `TrustedProxies[]` or, for Velocity, in `Q.webserver.proxy.trusted`), or it sends no `X-Forwarded-Proto` | list it; set the header in the proxy |
+| every visitor has the proxy's address (sign-in lockout, logs) | the proxy is not trusted, or `ClientIpByCustomHTTPHeader` is not set under Apache or nginx with PHP-FPM | list the proxy; set `ClientIpByCustomHTTPHeader=X-Forwarded-For` |
+| a redirect loop after switching the site to HTTPS | the proxy speaks HTTPS to the visitor, plain HTTP to the server, and the server does not know | as the first row |
+| signed-in pages served to other visitors | a caching proxy stores pages with a session cookie | do not cache responses that set or depend on the session cookie |
 
 ---
 
@@ -1143,7 +1284,9 @@ Notes:
 - [ ] Apache or nginx: `.htaccess` copied from `.htaccess_root` (or the derived nginx block), front controllers and
       asset paths tested, a `.php` below the root answers 404.
 - [ ] `var/` and `settings/` writable by the one user (or group) that runs PHP; no root-owned files in `var/`.
-- [ ] Behind a proxy: `X-Forwarded-Proto` sent, `X-Forwarded-For` overwritten, `ClientIpByCustomHTTPHeader` set only then.
+- [ ] Behind a proxy: the proxy is trusted (`TrustedProxies[]`, or for Velocity `Q.webserver.proxy.trusted`), it sets
+      `X-Forwarded-Proto` and appends to or sets `X-Forwarded-For`; `ClientIpByCustomHTTPHeader` set only under Apache
+      or nginx with PHP-FPM; the curl check of section 8.8 passes.
 
 ---
 
@@ -1166,6 +1309,13 @@ In this repository:
 - [Velocity engine upgrade notes](../bc/6.0/velocity-engine-upgrade-notes.md), [FrankenPHP](../bc/6.0/frankenphp.md),
   [Engine archive (phar)](../bc/6.0/phar.md)
 - [Deploying guide](../guides/deploying.md)
+- [Forwarded headers are trusted only from configured proxies](../bc/6.0/trusted-proxies.md) (`TrustedProxies[]`,
+  examples for Apache, nginx, Velocity, load balancers and CDNs)
+- [Requirements](02-requirements.md) (PHP versions per server) and [security hardening](13-security-hardening.md)
+- Code: `kernel/classes/expvelocity.php`, `expvelocitydeploy.php`, `expvelocityconfiglayout.php`,
+  `expvelocityfrankenphp.php`, `kernel/private/classes/commands/velocity.php`, `lib/ezutils/classes/ezsys.php`,
+  `lib/ezutils/classes/eztrustedproxy.php`; in the engine package `src/Q/WebServer/Proxy.php` (trusted proxies,
+  forwarded protocol) and `src/Q/WebServer/RunAs.php` (worker user)
 - The settings: [`settings/velocity.ini`](../../settings/velocity.ini); the rewrite rules:
   [`.htaccess_root`](../../.htaccess_root), [`.htaccess_root_static`](../../.htaccess_root_static); the PHP router of the
   development engine: [`bin/php/velocity-router.php`](../../bin/php/velocity-router.php)
@@ -1174,17 +1324,23 @@ In this repository:
 External:
 
 - Exponential Velocity engine: <https://github.com/se7enxweb/exponential-velocity> (its `docs/https.md`,
-  `docs/layout.md`, `docs/workers.md`, `service/` and `packaging/systemd/`)
+  `docs/layout.md`, `docs/workers.md`, `docs/requirements.md`, `docs/dashboard.md`, `docs/panel.md`, `service/` and
+  `packaging/systemd/`); the forwarded-protocol change is commit
+  [380a64d](https://github.com/se7enxweb/exponential-velocity/commit/380a64d6dc9a55c047b7d850556fcb17352a5abc)
 - Apache HTTP Server: [mod_rewrite](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html),
   [mod_proxy_fcgi](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html),
   [mod_ssl](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html),
   [mod_proxy](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html),
+  [mod_headers](https://httpd.apache.org/docs/2.4/mod/mod_headers.html),
+  [mod_http2](https://httpd.apache.org/docs/2.4/mod/mod_http2.html),
+  [mod_remoteip](https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html),
   [AllowOverride](https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride)
 - nginx: [location](https://nginx.org/en/docs/http/ngx_http_core_module.html#location),
   [try_files](https://nginx.org/en/docs/http/ngx_http_core_module.html#try_files),
   [fastcgi module](https://nginx.org/en/docs/http/ngx_http_fastcgi_module.html),
   [proxy module](https://nginx.org/en/docs/http/ngx_http_proxy_module.html),
   [ssl module](https://nginx.org/en/docs/http/ngx_http_ssl_module.html),
+  [realip module](https://nginx.org/en/docs/http/ngx_http_realip_module.html),
   [client_max_body_size](https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
 - PHP: [FastCGI Process Manager (FPM)](https://www.php.net/manual/en/install.fpm.php),
   [FPM configuration](https://www.php.net/manual/en/install.fpm.configuration.php),
@@ -1195,10 +1351,10 @@ External:
 - Let's Encrypt: [How it works](https://letsencrypt.org/how-it-works/),
   [challenge types](https://letsencrypt.org/docs/challenge-types/),
   [staging environment](https://letsencrypt.org/docs/staging-environment/),
-  [rate limits](https://letsencrypt.org/docs/rate-limits/); ACME: [RFC 8555](https://www.rfc-editor.org/rfc/rfc8555)
+  [rate limits](https://letsencrypt.org/docs/rate-limits/); ACME: [RFC 8555](https://www.rfc-editor.org/rfc/rfc8555.html)
 - systemd: [systemd.service](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html)
 - Debian's Apache layout: [README.Debian of apache2](https://salsa.debian.org/apache-team/apache2/-/blob/master/debian/apache2.README.Debian)
-- HSTS: [RFC 6797](https://www.rfc-editor.org/rfc/rfc6797), [hstspreload.org](https://hstspreload.org/)
+- HSTS: [RFC 6797](https://www.rfc-editor.org/rfc/rfc6797.html), [hstspreload.org](https://hstspreload.org/)
 
 [Previous: 7. Install with one console command](07-console-install.md) ·
 [Next: 9. Databases](09-databases.md) ·
