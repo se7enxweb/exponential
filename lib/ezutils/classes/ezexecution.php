@@ -105,6 +105,35 @@ class eZExecution
         exit;
     }
 
+    /**
+     * Throws away the output printed so far, buffer by buffer, down to $floor: for a view that answers with its
+     * own body (a download, a plain answer, an event stream) instead of the page.
+     *
+     * A buffer that cannot be removed is emptied instead and left in place. A persistent worker (Velocity) keeps
+     * one under the script for the whole process and collects the response in it. A loop on ob_get_level() alone
+     * never ends at such a buffer: the request hangs until the server gives up. Call this instead of
+     * `while ( ob_get_level() > 0 ) ob_end_clean();`.
+     *
+     * @param int $floor the buffer level to stop at (0: all of them)
+     * @return bool nothing printed before is left (the buffers above $floor are gone or empty)
+     */
+    static function discardOutputBuffers( $floor = 0 )
+    {
+        $floor = max( 0, (int)$floor );
+        $guard = 0;
+        while ( ob_get_level() > $floor && $guard++ < 64 )
+        {
+            if ( !@ob_end_clean() )
+                break;
+        }
+        if ( ob_get_level() > $floor )
+        {
+            @ob_clean();
+            return (int)ob_get_length() === 0;
+        }
+        return true;
+    }
+
     /*!
      Exit handler which called after the script is done, if it detects
      that eZ Publish did not exit cleanly it will issue an error message

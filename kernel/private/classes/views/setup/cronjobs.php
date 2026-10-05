@@ -113,8 +113,12 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
             // and reporting that the server answered unexpectedly.
             \eZDebug::updateSettings( array( 'debug-enabled' => false ) );
 
-            while ( ob_get_level() > 0 )
-                ob_end_clean();
+            // not a loop on ob_get_level(): a persistent worker's own buffer cannot be removed, and the
+            // loop would never end there (eZExecution::discardOutputBuffers())
+            if ( method_exists( '\eZExecution', 'discardOutputBuffers' ) )
+                \eZExecution::discardOutputBuffers();
+            else
+                while ( ob_get_level() > 0 && @ob_end_clean() );
 
             // Built before anything is sent, so a failure here still leaves a clean
             // response rather than half a document.

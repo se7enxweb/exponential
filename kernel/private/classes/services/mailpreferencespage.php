@@ -497,7 +497,7 @@ class MailPreferencesPage
     }
 
     /**
-     * Throws away the output printed so far, buffer by buffer, down to $floor.
+     * Throws away the output printed so far, buffer by buffer, down to $floor (eZExecution::discardOutputBuffers()).
      *
      * A buffer that cannot be removed (a persistent worker keeps one under the script for the whole process: Velocity's
      * capture buffer) is emptied instead of removed. The loop stops when PHP refuses to end a buffer: a loop on
@@ -508,6 +508,9 @@ class MailPreferencesPage
      */
     public static function discardOutput( $floor = 0 )
     {
+        if ( method_exists( '\eZExecution', 'discardOutputBuffers' ) )
+            return \eZExecution::discardOutputBuffers( $floor );
+        // a persistent worker that still runs eZExecution from before the update
         $floor = max( 0, (int)$floor );
         $guard = 0;
         while ( ob_get_level() > $floor && $guard++ < 64 )

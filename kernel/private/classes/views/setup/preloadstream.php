@@ -58,8 +58,12 @@ class Preloadstream extends \Exponential\Runnable\ModuleView
         if ( $siteaccess !== '' && !in_array( $siteaccess, $allowed, true ) )
             $siteaccess = '';
 
-        while ( ob_get_level() > 0 )
-            ob_end_clean();
+        // not a loop on ob_get_level(): a persistent worker's own buffer cannot be removed, and the
+        // loop would never end there (eZExecution::discardOutputBuffers())
+        if ( method_exists( '\eZExecution', 'discardOutputBuffers' ) )
+            \eZExecution::discardOutputBuffers();
+        else
+            while ( ob_get_level() > 0 && @ob_end_clean() );
 
         header( 'Content-Type: text/event-stream; charset=utf-8' );
         header( 'Cache-Control: no-cache, no-store, must-revalidate' );
