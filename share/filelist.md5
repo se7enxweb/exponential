@@ -5371,7 +5371,7 @@ a52fd367f71f4aa2995283b31390702f  kernel/private/classes/views/user/activate.php
 a9211c6d42a1168ed92ff7ccb7f6ecc3  kernel/private/classes/views/user/login.php
 f78f5a9b4365087a08e196ebde0ba8b1  kernel/private/classes/views/user/logout.php
 41e94a6a033be886ee168df138366860  kernel/private/classes/views/user/password.php
-2488f5ca81e1781195accfc9afbb81a4  kernel/private/classes/views/user/preferences.php
+7c8075a41620c63e241b5c1e3578afe9  kernel/private/classes/views/user/preferences.php
 b1b98046b8c8403dbc56d29750884753  kernel/private/classes/views/user/register.php
 266362c4f386f263c326714e962c4a48  kernel/private/classes/views/user/setting.php
 2b3122f91f4329be67df94bbef523d31  kernel/private/classes/views/user/success.php
@@ -6013,7 +6013,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 80e160621a67179c48c9251c75541cdb  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-b7e4e6d79799aa33a7696a63298b7a95  settings/site.ini
+e38aa306f9bc7c5680575a32068f6cfd  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append

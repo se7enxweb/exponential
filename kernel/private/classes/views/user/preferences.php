@@ -47,16 +47,33 @@ class Preferences extends \Exponential\Runnable\ModuleView
         else
             $value = $Params['Value'];
 
+        // Store the preference only for a request the browser marks as coming
+        // from the own site. The Sec-Fetch-Site header is an allowlist here:
+        // a missing header (older browsers, CLI clients, monitoring) and
+        // 'same-origin' or 'same-site' (admin and frontend siteaccesses share a
+        // domain) may write; 'cross-site' and 'none' (a link opened from a mail
+        // client, chat or PDF) skip the write. The redirect below is unchanged,
+        // so the visitor still lands on the target page.
+        $secFetchSite = isset( $_SERVER['HTTP_SEC_FETCH_SITE'] ) ? $_SERVER['HTTP_SEC_FETCH_SITE'] : null;
+        $allowPreferenceWrite = $secFetchSite === null || $secFetchSite === 'same-origin' || $secFetchSite === 'same-site';
+
         // Set user preferences
-        if ( \eZOperationHandler::operationIsAvailable( 'user_preferences' ) )
+        if ( $allowPreferenceWrite )
         {
-            $operationResult = \eZOperationHandler::execute( 'user',
-                                                            'preferences', array( 'key'    => $key,
-                                                                                  'value'  => $value ) );
+            if ( \eZOperationHandler::operationIsAvailable( 'user_preferences' ) )
+            {
+                $operationResult = \eZOperationHandler::execute( 'user',
+                                                                'preferences', array( 'key'    => $key,
+                                                                                      'value'  => $value ) );
+            }
+            else
+            {
+                \eZPreferences::setValue( $key, $value );
+            }
         }
         else
         {
-            \eZPreferences::setValue( $key, $value );
+            \eZDebug::writeWarning( "Skipped the preference write for '$key': the request came with Sec-Fetch-Site '$secFetchSite'", 'user/preferences' );
         }
 
         // For use by ajax calls
