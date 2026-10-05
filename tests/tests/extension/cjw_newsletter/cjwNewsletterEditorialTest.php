@@ -937,6 +937,33 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $this->loginAdmin();
     }
 
+    public function testED34PickCopiesAndTheEditionsOwnArticlesAreNeverOffered()
+    {
+        $edition = $this->newEdition( 'NLTEST own' );
+        $source = $this->newEdition( 'NLTEST own source', false );
+        $article = $this->newArticle( $source, 'NLTEST own article' );
+        // a pool over the whole list: it holds the editions' own articles and the copies the picks make
+        $pool = $this->newPool( array( 'parent_node_id_array_string' => ';' . self::LIST_NODE_ID . ';', 'class_identifier_array_string' => ';cjw_newsletter_article;', 'max_items' => 200 ) );
+        CjwNewsletterEditionBuilder::addArticle( $edition, $article->attribute( 'main_node' ) );
+        $copy = eZContentObject::fetchByRemoteID( CjwNewsletterEditionArticle::copyRemoteId( $edition->attribute( 'id' ), $article->attribute( 'id' ) ) );
+        $this->assertInstanceOf( 'eZContentObject', $copy );
+        $found = array_map( function ( $n ) { return (int)$n->attribute( 'contentobject_id' ); }, CjwNewsletterArticlePoolFinder::find( $pool ) );
+        $this->assertContains( (int)$article->attribute( 'id' ), $found );
+        $this->assertNotContains( (int)$copy->attribute( 'id' ), $found, 'a pick copy is never a source' );
+        $own = CjwNewsletterEditionBuilder::childObjectIds( $edition );
+        $this->assertCount( 2, $own, 'the template article and the pick copy' );
+        $this->assertContains( (int)$copy->attribute( 'id' ), $own );
+        $this->assertSame( array(), CjwNewsletterEditionBuilder::childObjectIds( null ) );
+        // the picker does not offer the edition's own article, and refuses it when it is posted
+        $this->setList( 'article_pool_id', (int)$pool->attribute( 'id' ) );
+        $nodeId = (int)$edition->attribute( 'main_node_id' );
+        $ownArticle = array_values( array_diff( $own, array( (int)$copy->attribute( 'id' ) ) ) )[0];
+        $r = $this->runView( 'article_pool', array( $nodeId ) );
+        $this->assertStringNotContainsString( 'value="' . eZContentObject::fetch( $ownArticle )->attribute( 'main_node_id' ) . '"', $r['content'] );
+        $this->runView( 'article_pool', array( $nodeId ), array( 'AddButton' => 1, 'AddNodeIds' => array( eZContentObject::fetch( $ownArticle )->attribute( 'main_node_id' ) ) ) );
+        $this->assertSame( array( (int)$article->attribute( 'id' ) ), CjwNewsletterEditionBuilder::pickedObjectIds( $edition->attribute( 'id' ) ) );
+    }
+
     public function testED33TheCommand()
     {
         $stub = 'extension/cjw_newsletter/bin/php/schedule.php';
