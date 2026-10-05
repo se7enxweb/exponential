@@ -1311,6 +1311,265 @@
     </message>
 </context>
 <context>
+    <name>design/admin/collaboration/inbox</name>
+    <message>
+        <source>%n items in this group.</source>
+        <translation>%n items in this group.</translation>
+    </message>
+    <message>
+        <source>%n messages</source>
+        <translation>%n messages</translation>
+    </message>
+    <message>
+        <source>1 message</source>
+        <translation>1 message</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Add</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>All items</source>
+        <translation>All items</translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation>Any</translation>
+    </message>
+    <message>
+        <source>Approve &quot;%title&quot;? It is published when the publishing workflow continues.</source>
+        <translation>Approve &quot;%title&quot;? It is published when the publishing workflow continues.</translation>
+    </message>
+    <message>
+        <source>Approved</source>
+        <translation>Approved</translation>
+    </message>
+    <message>
+        <source>Attach the workflow to the trigger content / publish / before.</source>
+        <translation>Attach the workflow to the trigger content / publish / before.</translation>
+    </message>
+    <message>
+        <source>Closed</source>
+        <translation>Closed</translation>
+    </message>
+    <message>
+        <source>Collaboration</source>
+        <translation>Collaboration</translation>
+    </message>
+    <message>
+        <source>Collaboration items are created by the system, not by hand: content that is sent for approval appears here, with the conversation about it.</source>
+        <translation>Collaboration items are created by the system, not by hand: content that is sent for approval appears here, with the conversation about it.</translation>
+    </message>
+    <message>
+        <source>Content that waits for a decision, your own submissions and the conversations about them.</source>
+        <translation>Content that waits for a decision, your own submissions and the conversations about them.</translation>
+    </message>
+    <message>
+        <source>Create a workflow with an Approve event: choose the approvers and, if needed, the sections and user groups it applies to.</source>
+        <translation>Create a workflow with an Approve event: choose the approvers and, if needed, the sections and user groups it applies to.</translation>
+    </message>
+    <message>
+        <source>Decision</source>
+        <translation>Decision</translation>
+    </message>
+    <message>
+        <source>Delete the group</source>
+        <translation>Delete the group</translation>
+    </message>
+    <message>
+        <source>Delete this group and its subgroups? Their items move to the main group.</source>
+        <translation>Delete this group and its subgroups? Their items move to the main group.</translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation>Denied</translation>
+    </message>
+    <message>
+        <source>Deny &quot;%title&quot;? It becomes a draft for the author again.</source>
+        <translation>Deny &quot;%title&quot;? It becomes a draft for the author again.</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Dismiss</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Group</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Groups</translation>
+    </message>
+    <message>
+        <source>I decide</source>
+        <translation>I decide</translation>
+    </message>
+    <message>
+        <source>I sent it</source>
+        <translation>I sent it</translation>
+    </message>
+    <message>
+        <source>Inbox</source>
+        <translation>Inbox</translation>
+    </message>
+    <message>
+        <source>Last activity</source>
+        <translation>Last activity</translation>
+    </message>
+    <message>
+        <source>Manage this group</source>
+        <translation>Manage this group</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Move</translation>
+    </message>
+    <message>
+        <source>Move an item here from its page, or choose this group there.</source>
+        <translation>Move an item here from its page, or choose this group there.</translation>
+    </message>
+    <message>
+        <source>Move to group</source>
+        <translation>Move to group</translation>
+    </message>
+    <message>
+        <source>Needs your decision</source>
+        <translation>Needs your decision</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>New</translation>
+    </message>
+    <message>
+        <source>New group</source>
+        <translation>New group</translation>
+    </message>
+    <message>
+        <source>New subgroup</source>
+        <translation>New subgroup</translation>
+    </message>
+    <message>
+        <source>No items in this group</source>
+        <translation>No items in this group</translation>
+    </message>
+    <message>
+        <source>No items match these filters</source>
+        <translation>No items match these filters</translation>
+    </message>
+    <message>
+        <source>Nothing to handle yet</source>
+        <translation>Nothing to handle yet</translation>
+    </message>
+    <message>
+        <source>Only an approver can approve or deny this item.</source>
+        <translation>Only an approver can approve or deny this item.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>Open the content</source>
+        <translation>Open the content</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Rename</translation>
+    </message>
+    <message>
+        <source>Rename the group</source>
+        <translation>Rename the group</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Sent</translation>
+    </message>
+    <message>
+        <source>Sent by</source>
+        <translation>Sent by</translation>
+    </message>
+    <message>
+        <source>Show all items</source>
+        <translation>Show all items</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>There are no messages yet.</source>
+        <translation>There are no messages yet.</translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation>This approval is closed: comments can no longer be added.</translation>
+    </message>
+    <message>
+        <source>This is your main group: it cannot be renamed or deleted.</source>
+        <translation>This is your main group: it cannot be renamed or deleted.</translation>
+    </message>
+    <message>
+        <source>To see the tool with example content, run:</source>
+        <translation>To see the tool with example content, run:</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Triggers</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Unread messages</source>
+        <translation>Unread messages</translation>
+    </message>
+    <message>
+        <source>Version %v of the content, saved %time by %name</source>
+        <translation>Version %v of the content, saved %time by %name</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Waiting</translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation>Waiting for approval</translation>
+    </message>
+    <message>
+        <source>Waiting for your decision</source>
+        <translation>Waiting for your decision</translation>
+    </message>
+    <message>
+        <source>When an editor publishes content the workflow applies to, an item is created for the approvers and appears in their inbox.</source>
+        <translation>When an editor publishes content the workflow applies to, an item is created for the approvers and appears in their inbox.</translation>
+    </message>
+    <message>
+        <source>Workflows</source>
+        <translation>Workflows</translation>
+    </message>
+    <message>
+        <source>Your items waiting for others</source>
+        <translation>Your items waiting for others</translation>
+    </message>
+    <message>
+        <source>Your role</source>
+        <translation>Your role</translation>
+    </message>
+    <message>
+        <source>from %name</source>
+        <translation>from %name</translation>
+    </message>
+    <message>
+        <source>sent by you</source>
+        <translation>sent by you</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/content/bookmark</name>
     <message>
         <source>Name</source>
@@ -38077,6 +38336,90 @@ your account.</translation>
     <message>
         <source>Collaboration</source>
         <translation>Collaboration</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; was approved. It is published when the publishing workflow continues.</source>
+        <translation>&quot;%1&quot; was approved. It is published when the publishing workflow continues.</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; was denied. It is a draft for the author again.</source>
+        <translation>&quot;%1&quot; was denied. It is a draft for the author again.</translation>
+    </message>
+    <message>
+        <source>A group with this name exists already.</source>
+        <translation>A group with this name exists already.</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group.</source>
+        <translation>Enter a name for the group.</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Group</translation>
+    </message>
+    <message>
+        <source>Groups cannot be nested that deep.</source>
+        <translation>Groups cannot be nested that deep.</translation>
+    </message>
+    <message>
+        <source>Only an approver of this item can approve or deny it.</source>
+        <translation>Only an approver of this item can approve or deny it.</translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was created.</source>
+        <translation>The group &quot;%1&quot; was created.</translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was deleted. Its items are in the main group now.</source>
+        <translation>The group &quot;%1&quot; was deleted. Its items are in the main group now.</translation>
+    </message>
+    <message>
+        <source>The group was not found.</source>
+        <translation>The group was not found.</translation>
+    </message>
+    <message>
+        <source>The group was renamed to &quot;%1&quot;.</source>
+        <translation>The group was renamed to &quot;%1&quot;.</translation>
+    </message>
+    <message>
+        <source>The item was moved to &quot;%1&quot;.</source>
+        <translation>The item was moved to &quot;%1&quot;.</translation>
+    </message>
+    <message>
+        <source>The item was not found.</source>
+        <translation>The item was not found.</translation>
+    </message>
+    <message>
+        <source>The main group cannot be deleted.</source>
+        <translation>The main group cannot be deleted.</translation>
+    </message>
+    <message>
+        <source>The main group cannot be renamed.</source>
+        <translation>The main group cannot be renamed.</translation>
+    </message>
+    <message>
+        <source>The parent group was not found.</source>
+        <translation>The parent group was not found.</translation>
+    </message>
+    <message>
+        <source>There are too many groups already.</source>
+        <translation>There are too many groups already.</translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation>This approval is closed: comments can no longer be added.</translation>
+    </message>
+    <message>
+        <source>This approval was decided already.</source>
+        <translation>This approval was decided already.</translation>
+    </message>
+    <message>
+        <source>Write a comment first.</source>
+        <translation>Write a comment first.</translation>
+    </message>
+    <message>
+        <source>Your comment was added.</source>
+        <translation>Your comment was added.</translation>
     </message>
 </context>
 <context>

@@ -1510,6 +1510,265 @@
     </message>
 </context>
 <context>
+    <name>design/admin/collaboration/inbox</name>
+    <message>
+        <source>%n items in this group.</source>
+        <translation>%n Einträge in dieser Gruppe.</translation>
+    </message>
+    <message>
+        <source>%n messages</source>
+        <translation>%n Nachrichten</translation>
+    </message>
+    <message>
+        <source>1 message</source>
+        <translation>1 Nachricht</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Hinzufügen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>All items</source>
+        <translation>Alle Einträge</translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation>Beliebig</translation>
+    </message>
+    <message>
+        <source>Approve &quot;%title&quot;? It is published when the publishing workflow continues.</source>
+        <translation>&quot;%title&quot; freigeben? Der Inhalt wird veröffentlicht, sobald der Veröffentlichungs-Workflow fortgesetzt wird.</translation>
+    </message>
+    <message>
+        <source>Approved</source>
+        <translation>Freigegeben</translation>
+    </message>
+    <message>
+        <source>Attach the workflow to the trigger content / publish / before.</source>
+        <translation>Den Workflow an den Trigger content / publish / before hängen.</translation>
+    </message>
+    <message>
+        <source>Closed</source>
+        <translation>Abgeschlossen</translation>
+    </message>
+    <message>
+        <source>Collaboration</source>
+        <translation>Zusammenarbeit</translation>
+    </message>
+    <message>
+        <source>Collaboration items are created by the system, not by hand: content that is sent for approval appears here, with the conversation about it.</source>
+        <translation>Einträge der Zusammenarbeit entstehen automatisch, nicht von Hand: Inhalte, die zur Freigabe gesendet werden, erscheinen hier, zusammen mit der Unterhaltung dazu.</translation>
+    </message>
+    <message>
+        <source>Content that waits for a decision, your own submissions and the conversations about them.</source>
+        <translation>Inhalte, die auf eine Entscheidung warten, Ihre eigenen Einreichungen und die Unterhaltungen dazu.</translation>
+    </message>
+    <message>
+        <source>Create a workflow with an Approve event: choose the approvers and, if needed, the sections and user groups it applies to.</source>
+        <translation>Einen Workflow mit einem Freigabe-Ereignis anlegen: die Freigeber wählen und, falls nötig, die Bereiche und Benutzergruppen, für die er gilt.</translation>
+    </message>
+    <message>
+        <source>Decision</source>
+        <translation>Entscheidung</translation>
+    </message>
+    <message>
+        <source>Delete the group</source>
+        <translation>Gruppe löschen</translation>
+    </message>
+    <message>
+        <source>Delete this group and its subgroups? Their items move to the main group.</source>
+        <translation>Diese Gruppe und ihre Untergruppen löschen? Ihre Einträge wandern in die Hauptgruppe.</translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation>Abgelehnt</translation>
+    </message>
+    <message>
+        <source>Deny &quot;%title&quot;? It becomes a draft for the author again.</source>
+        <translation>&quot;%title&quot; ablehnen? Der Inhalt wird für den Autor wieder zum Entwurf.</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>I decide</source>
+        <translation>Ich entscheide</translation>
+    </message>
+    <message>
+        <source>I sent it</source>
+        <translation>Von mir gesendet</translation>
+    </message>
+    <message>
+        <source>Inbox</source>
+        <translation>Eingang</translation>
+    </message>
+    <message>
+        <source>Last activity</source>
+        <translation>Letzte Aktivität</translation>
+    </message>
+    <message>
+        <source>Manage this group</source>
+        <translation>Diese Gruppe verwalten</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Verschieben</translation>
+    </message>
+    <message>
+        <source>Move an item here from its page, or choose this group there.</source>
+        <translation>Verschieben Sie einen Eintrag auf seiner Seite in diese Gruppe.</translation>
+    </message>
+    <message>
+        <source>Move to group</source>
+        <translation>In Gruppe verschieben</translation>
+    </message>
+    <message>
+        <source>Needs your decision</source>
+        <translation>Wartet auf Ihre Entscheidung</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Neu</translation>
+    </message>
+    <message>
+        <source>New group</source>
+        <translation>Neue Gruppe</translation>
+    </message>
+    <message>
+        <source>New subgroup</source>
+        <translation>Neue Untergruppe</translation>
+    </message>
+    <message>
+        <source>No items in this group</source>
+        <translation>Keine Einträge in dieser Gruppe</translation>
+    </message>
+    <message>
+        <source>No items match these filters</source>
+        <translation>Keine Einträge entsprechen diesen Filtern</translation>
+    </message>
+    <message>
+        <source>Nothing to handle yet</source>
+        <translation>Noch nichts zu bearbeiten</translation>
+    </message>
+    <message>
+        <source>Only an approver can approve or deny this item.</source>
+        <translation>Nur ein Freigeber kann diesen Eintrag freigeben oder ablehnen.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Offen</translation>
+    </message>
+    <message>
+        <source>Open the content</source>
+        <translation>Inhalt öffnen</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Umbenennen</translation>
+    </message>
+    <message>
+        <source>Rename the group</source>
+        <translation>Gruppe umbenennen</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Gesendet</translation>
+    </message>
+    <message>
+        <source>Sent by</source>
+        <translation>Gesendet von</translation>
+    </message>
+    <message>
+        <source>Show all items</source>
+        <translation>Alle Einträge anzeigen</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>There are no messages yet.</source>
+        <translation>Es gibt noch keine Nachrichten.</translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation>Diese Freigabe ist abgeschlossen: Kommentare können nicht mehr hinzugefügt werden.</translation>
+    </message>
+    <message>
+        <source>This is your main group: it cannot be renamed or deleted.</source>
+        <translation>Dies ist Ihre Hauptgruppe: Sie kann nicht umbenannt oder gelöscht werden.</translation>
+    </message>
+    <message>
+        <source>To see the tool with example content, run:</source>
+        <translation>Um das Werkzeug mit Beispielinhalten zu sehen, führen Sie aus:</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Trigger</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Unread messages</source>
+        <translation>Ungelesene Nachrichten</translation>
+    </message>
+    <message>
+        <source>Version %v of the content, saved %time by %name</source>
+        <translation>Version %v des Inhalts, gespeichert %time von %name</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Wartend</translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation>Wartet auf Freigabe</translation>
+    </message>
+    <message>
+        <source>Waiting for your decision</source>
+        <translation>Wartet auf Ihre Entscheidung</translation>
+    </message>
+    <message>
+        <source>When an editor publishes content the workflow applies to, an item is created for the approvers and appears in their inbox.</source>
+        <translation>Wenn ein Redakteur Inhalt veröffentlicht, für den der Workflow gilt, wird ein Eintrag für die Freigeber angelegt und erscheint in deren Eingang.</translation>
+    </message>
+    <message>
+        <source>Workflows</source>
+        <translation>Workflows</translation>
+    </message>
+    <message>
+        <source>Your items waiting for others</source>
+        <translation>Ihre Einträge, die auf andere warten</translation>
+    </message>
+    <message>
+        <source>Your role</source>
+        <translation>Ihre Rolle</translation>
+    </message>
+    <message>
+        <source>from %name</source>
+        <translation>von %name</translation>
+    </message>
+    <message>
+        <source>sent by you</source>
+        <translation>von Ihnen gesendet</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/content/bookmark</name>
     <message>
         <source>My bookmarks [%bookmark_count]</source>
@@ -44890,6 +45149,90 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <message>
         <source>Collaboration</source>
         <translation>Zusammenarbeit</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; was approved. It is published when the publishing workflow continues.</source>
+        <translation>&quot;%1&quot; wurde freigegeben. Der Inhalt wird veröffentlicht, sobald der Veröffentlichungs-Workflow fortgesetzt wird.</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; was denied. It is a draft for the author again.</source>
+        <translation>&quot;%1&quot; wurde abgelehnt. Der Inhalt ist für den Autor wieder ein Entwurf.</translation>
+    </message>
+    <message>
+        <source>A group with this name exists already.</source>
+        <translation>Eine Gruppe mit diesem Namen gibt es bereits.</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group.</source>
+        <translation>Geben Sie einen Namen für die Gruppe ein.</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Groups cannot be nested that deep.</source>
+        <translation>Gruppen können nicht so tief verschachtelt werden.</translation>
+    </message>
+    <message>
+        <source>Only an approver of this item can approve or deny it.</source>
+        <translation>Nur ein Freigeber dieses Eintrags kann ihn freigeben oder ablehnen.</translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was created.</source>
+        <translation>Die Gruppe &quot;%1&quot; wurde angelegt.</translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was deleted. Its items are in the main group now.</source>
+        <translation>Die Gruppe &quot;%1&quot; wurde gelöscht. Ihre Einträge sind jetzt in der Hauptgruppe.</translation>
+    </message>
+    <message>
+        <source>The group was not found.</source>
+        <translation>Die Gruppe wurde nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>The group was renamed to &quot;%1&quot;.</source>
+        <translation>Die Gruppe wurde in &quot;%1&quot; umbenannt.</translation>
+    </message>
+    <message>
+        <source>The item was moved to &quot;%1&quot;.</source>
+        <translation>Der Eintrag wurde nach &quot;%1&quot; verschoben.</translation>
+    </message>
+    <message>
+        <source>The item was not found.</source>
+        <translation>Der Eintrag wurde nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>The main group cannot be deleted.</source>
+        <translation>Die Hauptgruppe kann nicht gelöscht werden.</translation>
+    </message>
+    <message>
+        <source>The main group cannot be renamed.</source>
+        <translation>Die Hauptgruppe kann nicht umbenannt werden.</translation>
+    </message>
+    <message>
+        <source>The parent group was not found.</source>
+        <translation>Die übergeordnete Gruppe wurde nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>There are too many groups already.</source>
+        <translation>Es gibt bereits zu viele Gruppen.</translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation>Diese Freigabe ist abgeschlossen: Kommentare können nicht mehr hinzugefügt werden.</translation>
+    </message>
+    <message>
+        <source>This approval was decided already.</source>
+        <translation>Über diese Freigabe wurde bereits entschieden.</translation>
+    </message>
+    <message>
+        <source>Write a comment first.</source>
+        <translation>Schreiben Sie zuerst einen Kommentar.</translation>
+    </message>
+    <message>
+        <source>Your comment was added.</source>
+        <translation>Ihr Kommentar wurde hinzugefügt.</translation>
     </message>
 </context>
 <context>
