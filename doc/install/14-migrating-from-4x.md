@@ -10,7 +10,7 @@ problems people actually meet, a rollback plan and a checklist. Every command, p
 against the code of this repository; where the vendor's own upgrade pages for 4.0 to 4.7 say something else, the
 difference is pointed out.
 
-[Contents](README.md) · Previous: [13. Security hardening for production](13-security-hardening.md)
+[Contents](README.md) · Previous: [13. Security hardening for production](13-security-hardening.md) · Next: [15. Migrating from the 5.x legacy stack](15-migrating-from-5x-legacy.md)
 
 ## 14.1 What changes, and what does not
 
@@ -939,4 +939,4 @@ Code and packages:
 - MySQL: [character sets](https://dev.mysql.com/doc/refman/8.4/en/charset.html); PostgreSQL:
   [psql](https://www.postgresql.org/docs/current/app-psql.html), [pgcrypto](https://www.postgresql.org/docs/current/pgcrypto.html).
 
-[Contents](README.md) · Previous: [13. Security hardening for production](13-security-hardening.md)
+[Contents](README.md) · Previous: [13. Security hardening for production](13-security-hardening.md) · Next: [15. Migrating from the 5.x legacy stack](15-migrating-from-5x-legacy.md)

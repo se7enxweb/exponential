@@ -42,6 +42,18 @@ In a hurry? [The short installation guide](../INSTALL.md) has the quick start an
 | [12. Troubleshooting](12-troubleshooting.md) | Symptom, cause and fix for every stage: Composer, the wizard, the kickstarter, run time, databases, Velocity, caches, signing in |
 | [13. Security hardening for production](13-security-hardening.md) | What the server must never hand out, secrets, debug output, the admin siteaccess, passwords and sessions, form tokens, headers and HTTPS, the audit log |
 
+### Part V: Migrating to Exponential
+
+These chapters name the old products (eZ Publish, eZ Platform, Ibexa) only to identify the system you migrate from.
+Each one goes through the vendor's own migration pages point by point and says where Exponential differs.
+
+| Chapter | What it covers |
+|---|---|
+| [14. Migrating from the 4.x line](14-migrating-from-4x.md) | eZ Publish 3.10 and 4.0 to 4.7 on PHP 5: taking stock, the database step by step, files and cluster, settings, designs, porting extensions to PHP 8, passwords, search, verification, common issues, rollback |
+| [15. Migrating from the 5.x legacy stack](15-migrating-from-5x-legacy.md) | eZ Publish 5.x with the Symfony stack: which variant you run, extracting the legacy part, YAML to INI, field types against datatypes, image variations, Twig to TPL, REST, caches, common issues |
+| [16. Migrating from eZ Platform and Ibexa](16-migrating-from-ez-platform-and-ibexa.md) | eZ Platform 1.x to 3.x and Ibexa DXP/OSS to Exponential Platform Nexus (the like-for-like Symfony path) or to the Exponential legacy kernel, with a decision table |
+| [17. Migration reference](17-migration-reference.md) | Lookup tables: every kernel table, datatypes and field types, INI and YAML settings, TPL and Twig, the PHP API, password hashes, URL aliases and image paths, data checks, tooling, glossary |
+
 ## Which chapters do I need?
 
 | Your situation | Read |
@@ -51,6 +63,9 @@ In a hurry? [The short installation guide](../INSTALL.md) has the quick start an
 | A production site behind Apache or nginx with MySQL or PostgreSQL | Chapters [2](02-requirements.md), [3](03-getting-the-code.md), [5](05-setup-wizard.md) or [6](06-kickstarter.md), [8](08-serving-the-site.md), [9](09-databases.md), [10](10-after-installing.md), [13](13-security-hardening.md) |
 | Unattended installs in CI or containers | Chapters [4](04-choosing-an-install-method.md), [6](06-kickstarter.md), [7](07-console-install.md) |
 | Upgrading an existing site | Chapters [11](11-upgrading.md), [12](12-troubleshooting.md) |
+| Moving a site from eZ Publish 3.x or 4.x | Chapters [14](14-migrating-from-4x.md), [17](17-migration-reference.md), then [11](11-upgrading.md) for the update chain |
+| Moving a site from eZ Publish 5.x | Chapters [15](15-migrating-from-5x-legacy.md), [17](17-migration-reference.md) |
+| Moving a site from eZ Platform or Ibexa | Chapters [16](16-migrating-from-ez-platform-and-ibexa.md), [17](17-migration-reference.md) |
 | Something does not work | Chapter [12](12-troubleshooting.md) |
 
 ## Other documentation

@@ -9,7 +9,8 @@ rules, HTTPS-only cookies, file permissions, mail consent and keeping the instal
 checklist you can work through from top to bottom; a one-page summary is at the end.
 
 [Previous: 12. Troubleshooting](12-troubleshooting.md) ·
-[Contents](README.md)
+[Contents](README.md) ·
+[Next: 14. Migrating from the 4.x line](14-migrating-from-4x.md)
 
 ---
 
@@ -680,4 +681,5 @@ External:
   `docs/https.md`, `docs/panel.md`)
 
 [Previous: 12. Troubleshooting](12-troubleshooting.md) ·
-[Contents](README.md)
+[Contents](README.md) ·
+[Next: 14. Migrating from the 4.x line](14-migrating-from-4x.md)

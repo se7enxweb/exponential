@@ -68,6 +68,11 @@ The row names keep their historic spelling on purpose; they are identifiers, and
 | 5.4.0, or 5.90 (2017.08 and later) | to 6.0.0, then to today | [11.5](#115-from-54-or-590-to-600), [11.6](#116-from-any-60x-to-today) |
 | 6.0.0 to 6.0.14, or an earlier checkout of the 6.0.15 line | to today | [11.6](#116-from-any-60x-to-today) |
 
+This chapter is the update chain itself. For the practical side of moving a whole site, the migration chapters go
+further: [14. from the 4.x line](14-migrating-from-4x.md), [15. from the 5.x legacy stack](15-migrating-from-5x-legacy.md),
+[16. from eZ Platform and Ibexa](16-migrating-from-ez-platform-and-ibexa.md), and the lookup tables in
+[17. Migration reference](17-migration-reference.md).
+
 ## 11.3 The update files
 
 `update/database/<engine>/<version>/` holds one SQL file per step. Each file takes a database **from** one version
