@@ -14,7 +14,9 @@
  * Deliberately free of every other Exponential class, INI and database: the
  * same file is used by the early exit (config.php, before the autoloader), by
  * the kernel's store path and by Exponential Velocity's parent process, so the
- * three produce the same keys and the same bytes by construction.
+ * three produce the same keys and the same bytes by construction. The one
+ * exception is eZTrustedProxy, itself free of everything else, which it loads
+ * by path so that the kernel and the lookup trust the same forwarded headers.
  *
  * Storage, under $config['dir']:
  *   contract.php          the configuration (written by the kernel)
@@ -25,6 +27,9 @@
  *
  * See doc/bc/6.0/httpcache.md.
  */
+if ( !class_exists( 'eZTrustedProxy', false ) )
+    require_once dirname( __DIR__, 4 ) . '/lib/ezutils/classes/eztrustedproxy.php';
+
 class ezpHttpCacheContract
 {
     const FORMAT = 2;
@@ -49,6 +54,9 @@ class ezpHttpCacheContract
             'formTokenIntention' => 'legacy', 'maxAge' => 3600, 'swr' => 60,
             'tagHeader' => '', 'apcu' => true, 'maxBodySize' => 2097152,
             'queryParameters' => array(), 'sslPort' => '', 'sslProxyServerName' => '',
+            // A contract written before the setting existed trusts what the
+            // kernel trusts without site.ini saying otherwise.
+            'trustedProxies' => eZTrustedProxy::defaultList(),
         );
     }
 
@@ -147,6 +155,10 @@ class ezpHttpCacheContract
      * X-Forwarded-Proto, X-Forwarded-Port, X-Forwarded-Server), with the
      * site.ini values the kernel wrote into the contract.
      *
+     * As in the kernel, the forwarded headers count only when REMOTE_ADDR is
+     * one of the trusted proxies ([HTTPHeaderSettings] TrustedProxies[]);
+     * without REMOTE_ADDR they never do. See doc/bc/6.0/trusted-proxies.md.
+     *
      * The key of a stored page is made of these, so the lookup has to arrive
      * at the same ones. Behind a load balancer that ends TLS and forwards to
      * host:port, only the forwarded headers say that the visitor asked for
@@ -160,9 +172,13 @@ class ezpHttpCacheContract
     public function requestOrigin( array $server )
     {
         $host = '';
+        $hops = eZTrustedProxy::trustedHops(
+            isset( $server['REMOTE_ADDR'] ) ? (string)$server['REMOTE_ADDR'] : null,
+            isset( $server['HTTP_X_FORWARDED_FOR'] ) ? (string)$server['HTTP_X_FORWARDED_FOR'] : null,
+            eZTrustedProxy::normaliseList( $this->config['trustedProxies'] ?? array() ) );
         $forwarded = (string)( $server['HTTP_X_FORWARDED_HOST'] ?? '' );
         if ( $forwarded !== '' )
-            $host = trim( explode( ',', $forwarded )[0] );
+            $host = (string)eZTrustedProxy::forwardedValue( $forwarded, $hops );
         if ( $host === '' )
             $host = (string)( $server['HTTP_HOST'] ?? '' );
 
@@ -175,14 +191,23 @@ class ezpHttpCacheContract
         if ( !$port )
             $port = 80;
         $ssl = ( $port == ( $sslPort !== '' && $sslPort !== '0' ? $sslPort : 443 ) );
-        if ( !$ssl )
+        if ( !$ssl && $hops > 0 )
         {
             if ( isset( $server['HTTP_X_FORWARDED_PROTO'] ) )
-                $ssl = ( $server['HTTP_X_FORWARDED_PROTO'] == 'https' );
+            {
+                $proto = eZTrustedProxy::forwardedValue( (string)$server['HTTP_X_FORWARDED_PROTO'], $hops );
+                $ssl = ( $proto !== null && strtolower( $proto ) === 'https' );
+            }
             else if ( isset( $server['HTTP_X_FORWARDED_PORT'] ) )
-                $ssl = ( $server['HTTP_X_FORWARDED_PORT'] == $sslPort );
+            {
+                $forwardedPort = eZTrustedProxy::forwardedValue( (string)$server['HTTP_X_FORWARDED_PORT'], $hops );
+                $ssl = ( $forwardedPort !== null && $forwardedPort == $sslPort );
+            }
             else if ( isset( $server['HTTP_X_FORWARDED_SERVER'] ) )
-                $ssl = ( (string)( $this->config['sslProxyServerName'] ?? '' ) == $server['HTTP_X_FORWARDED_SERVER'] );
+            {
+                $forwardedServer = eZTrustedProxy::forwardedValue( (string)$server['HTTP_X_FORWARDED_SERVER'], $hops );
+                $ssl = ( $forwardedServer !== null && (string)( $this->config['sslProxyServerName'] ?? '' ) == $forwardedServer );
+            }
         }
         return array( $ssl ? 'https' : 'http', $host );
     }
@@ -209,6 +234,10 @@ class ezpHttpCacheContract
             $server['HTTPS'] = 'on';
         if ( isset( $request['port'] ) )
             $server['SERVER_PORT'] = (string)$request['port'];
+        // The peer of the connection, when the web server says: without it no
+        // forwarded header is believed (see requestOrigin()).
+        if ( isset( $request['remoteAddr'] ) && is_string( $request['remoteAddr'] ) )
+            $server['REMOTE_ADDR'] = $request['remoteAddr'];
         return $server;
     }
 

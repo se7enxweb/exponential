@@ -172,6 +172,9 @@ class ezpHttpCacheListener
             'sslPort' => (string)$global->variable( 'SiteSettings', 'SSLPort' ),
             'sslProxyServerName' => $global->hasVariable( 'SiteSettings', 'SSLProxyServerName' )
                 ? (string)$global->variable( 'SiteSettings', 'SSLProxyServerName' ) : '',
+            // The proxies whose forwarded headers count, as eZSys::trustedProxies()
+            // has them, so the lookup works out scheme and host as the kernel does.
+            'trustedProxies' => eZSys::trustedProxies(),
             'sessionCookie' => $cookies,
             // Only a files handler can be read before the kernel boots.
             'sessionSavePath' => ( $handler === 'files' && $path !== '' ) ? rtrim( $path, '/' ) : '',

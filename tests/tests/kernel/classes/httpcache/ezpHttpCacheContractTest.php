@@ -390,15 +390,35 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'http', 'example.org' ), $c->requestOrigin( array( 'HTTP_HOST' => 'example.org', 'HTTPS' => 'off' ) ) );
         $this->assertSame( array( 'https', 'example.org' ), $c->requestOrigin( array( 'HTTP_HOST' => 'example.org', 'SERVER_PORT' => '443' ) ) );
         $this->assertSame( array( 'https', 'example.org:443' ), $c->requestOrigin( array( 'HTTP_HOST' => 'example.org:443', 'SERVER_PORT' => '8080' ) ) );
-        // A load balancer that ends TLS and forwards to exp:8080.
-        $lb = array( 'HTTP_HOST' => 'exp:8080', 'SERVER_PORT' => '8080', 'HTTP_X_FORWARDED_PROTO' => 'https' );
+        // A load balancer (10.0.0.5, trusted) that ends TLS and forwards to exp:8080.
+        $c = $this->contract( array( 'sslPort' => '443', 'trustedProxies' => array( '10.0.0.0/8' ) ) );
+        $lb = array( 'HTTP_HOST' => 'exp:8080', 'SERVER_PORT' => '8080', 'HTTP_X_FORWARDED_PROTO' => 'https', 'REMOTE_ADDR' => '10.0.0.5' );
         $this->assertSame( array( 'https', 'exp:8080' ), $c->requestOrigin( $lb ) );
-        $this->assertSame( array( 'https', 'www.example.org' ), $c->requestOrigin( $lb + array( 'HTTP_X_FORWARDED_HOST' => 'www.example.org, proxy.lan' ) ) );
+        // Two trusted proxies: the host the outer one wrote, not the inner one's.
+        $this->assertSame( array( 'https', 'www.example.org' ), $c->requestOrigin( $lb + array(
+            'HTTP_X_FORWARDED_HOST' => 'www.example.org, proxy.lan', 'HTTP_X_FORWARDED_FOR' => '203.0.113.9, 10.0.0.4' ) ) );
+        // One trusted proxy that appends: what the client sent on the left is not used.
+        $this->assertSame( array( 'https', 'www.example.org' ), $c->requestOrigin( $lb + array(
+            'HTTP_X_FORWARDED_HOST' => 'evil.example, www.example.org', 'HTTP_X_FORWARDED_FOR' => '203.0.113.9' ) ) );
         $this->assertSame( array( 'http', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_X_FORWARDED_PROTO' => 'http' ) + $lb ) );
-        $this->assertSame( array( 'https', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_PORT' => '443' ) ) );
-        $this->assertSame( array( 'http', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_PORT' => '80' ) ) );
-        $this->assertSame( array( 'https', 'exp:8080' ), $this->contract( array( 'sslProxyServerName' => 'lb1' ) )
-            ->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_SERVER' => 'lb1' ) ) );
+        $this->assertSame( array( 'https', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_PORT' => '443', 'REMOTE_ADDR' => '10.0.0.5' ) ) );
+        $this->assertSame( array( 'http', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_PORT' => '80', 'REMOTE_ADDR' => '10.0.0.5' ) ) );
+        $this->assertSame( array( 'https', 'exp:8080' ), $this->contract( array( 'sslProxyServerName' => 'lb1', 'trustedProxies' => array( '10.0.0.5' ) ) )
+            ->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_SERVER' => 'lb1', 'REMOTE_ADDR' => '10.0.0.5' ) ) );
+        // The same headers from anyone else are what a visitor chose, and change nothing.
+        $visitor = array( 'REMOTE_ADDR' => '203.0.113.9' ) + $lb + array( 'HTTP_X_FORWARDED_HOST' => 'evil.example' );
+        $this->assertSame( array( 'http', 'exp:8080' ), $c->requestOrigin( $visitor ) );
+        $this->assertSame( array( 'http', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_PORT' => '443', 'REMOTE_ADDR' => '203.0.113.9' ) ) );
+        $this->assertSame( array( 'http', 'exp:8080' ), $this->contract( array( 'sslProxyServerName' => 'lb1', 'trustedProxies' => array( '10.0.0.5' ) ) )
+            ->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_SERVER' => 'lb1', 'REMOTE_ADDR' => '203.0.113.9' ) ) );
+        // Without REMOTE_ADDR, or with no proxy trusted, nothing forwarded counts.
+        $noPeer = $lb;
+        unset( $noPeer['REMOTE_ADDR'] );
+        $this->assertSame( array( 'http', 'exp:8080' ), $c->requestOrigin( $noPeer ) );
+        $this->assertSame( array( 'http', 'exp:8080' ), $this->contract( array( 'trustedProxies' => array() ) )->requestOrigin( $lb ) );
+        // A contract written before the setting trusts the loopback addresses, as the kernel does by default.
+        $this->assertSame( array( 'https', 'exp:8080' ), $this->contract()->requestOrigin( array( 'REMOTE_ADDR' => '127.0.0.1' ) + $lb ) );
+        $this->assertSame( array( 'http', 'exp:8080' ), $this->contract()->requestOrigin( $lb ) );
         // SSLPort elsewhere.
         $this->assertSame( array( 'https', 'example.org:8443' ), $this->contract( array( 'sslPort' => '8443' ) )
             ->requestOrigin( array( 'HTTP_HOST' => 'example.org:8443' ) ) );
@@ -408,10 +428,11 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
     public function testAUriSiteAccessBehindALoadBalancerIsFound()
     {
         $c = $this->contract( array( 'match' => $this->matchRules(), 'siteaccesses' => array( 'site', 'bold_ger' ),
-                                     'sessionCookie' => array( 'site' => 'eZSESSID', 'bold_ger' => 'eZSESSID' ), 'sslPort' => '443' ) );
+                                     'sessionCookie' => array( 'site' => 'eZSESSID', 'bold_ger' => 'eZSESSID' ), 'sslPort' => '443',
+                                     'trustedProxies' => array( '10.0.0.5' ) ) );
         // Stored as the kernel does: scheme, host and siteaccess from its own view of the request.
         $lb = array( 'HTTP_HOST' => 'exp:8080', 'SERVER_PORT' => '8080', 'HTTP_X_FORWARDED_PROTO' => 'https',
-                     'HTTP_X_FORWARDED_HOST' => 'www.example.org', 'REQUEST_METHOD' => 'GET' );
+                     'HTTP_X_FORWARDED_HOST' => 'www.example.org', 'REQUEST_METHOD' => 'GET', 'REMOTE_ADDR' => '10.0.0.5' );
         list( $scheme, $host ) = $c->requestOrigin( $lb );
         $sa = $c->resolveSiteAccess( $host, '/bold_ger/kontakt' );
         $this->assertSame( 'bold_ger', $sa );
@@ -422,10 +443,16 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         // The early exit hands over $_SERVER.
         $hit = $c->serve( $base + array( 'server' => $lb, 'host' => 'exp:8080' ) );
         $this->assertSame( '<p>kontakt</p>', $hit[2] ?? null );
-        // The web server's process hands over the headers.
+        // The web server's process hands over the headers, and the peer's address.
+        $headers = array( 'host' => 'exp:8080', 'x-forwarded-proto' => 'https', 'x-forwarded-host' => 'www.example.org' );
         $hit = $c->serve( $base + array( 'scheme' => 'http', 'host' => 'exp:8080', 'port' => 8080,
-            'headers' => array( 'host' => 'exp:8080', 'x-forwarded-proto' => 'https', 'x-forwarded-host' => 'www.example.org' ) ) );
+            'headers' => $headers, 'remoteAddr' => '10.0.0.5' ) );
         $this->assertSame( '<p>kontakt</p>', $hit[2] ?? null );
+        // Without the peer's address, or from a visitor, the forwarded headers are not believed: a miss.
+        $this->assertNull( $c->serve( $base + array( 'scheme' => 'http', 'host' => 'exp:8080', 'port' => 8080, 'headers' => $headers ) ) );
+        $this->assertNull( $c->serve( $base + array( 'scheme' => 'http', 'host' => 'exp:8080', 'port' => 8080,
+            'headers' => $headers, 'remoteAddr' => '203.0.113.9' ) ) );
+        $this->assertNull( $c->serve( $base + array( 'server' => array( 'REMOTE_ADDR' => '203.0.113.9' ) + $lb, 'host' => 'exp:8080' ) ) );
         // One that passes only host and scheme misses; it never gets another page.
         $this->assertNull( $c->serve( $base + array( 'scheme' => 'http', 'host' => 'exp:8080' ) ) );
         // Another siteaccess's URL, a siteaccess that is not cached.
