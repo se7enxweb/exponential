@@ -270,6 +270,10 @@ class eZUser extends eZPersistentObject
             parent::store( $fieldFilters );
             if ( $auditBefore !== null )
                 $this->auditStore( $auditBefore );
+            // The session that stores its own user (a new password) stays signed in; its other sessions end on
+            // their next request (expPasswordPolicy::sessionIsCurrent())
+            if ( class_exists( 'expPasswordPolicy' ) )
+                expPasswordPolicy::restampOwnSession( $this );
         }
     }
 
@@ -1210,6 +1214,11 @@ WHERE user_id = '" . $userID . "' AND
                         $hash = eZUser::createHash( $userRow['login'], $password, eZUser::site(),
                                                     $hashType );
                         $db->query( "UPDATE ezuser SET password_hash='$hash', password_hash_type='$hashType' WHERE contentobject_id='$userID'" );
+                        // the user signs in with the hash now stored (the session's password stamp is made from
+                        // it), and the cached user info must not keep the old one
+                        $userRow['password_hash'] = $hash;
+                        $userRow['password_hash_type'] = $hashType;
+                        self::purgeUserCacheByUserId( $userID );
                     }
                     break;
                 }
@@ -1366,6 +1375,10 @@ WHERE user_id = '" . $userID . "' AND
             eZSession::regenerate();
 
         eZSession::set( 'eZUserLoggedInID', $userID );
+        // A sign-in remembers which password it was made with (expPasswordPolicy::stampSession()); a temporary
+        // switch does not touch it
+        if ( !( $flags & self::NO_SESSION_REGENERATE ) && class_exists( 'expPasswordPolicy' ) )
+            expPasswordPolicy::stampSession( $user );
         self::cleanup();
         // A sign-in regenerates the session; a temporary switch (preview caches) does not.
         if ( !( $flags & self::NO_SESSION_REGENERATE ) && class_exists( 'ezpHttpCacheListener' ) )
@@ -1425,6 +1438,9 @@ WHERE user_id = '" . $userID . "' AND
         $newUserID = self::anonymousId();
         eZSession::setUserID( $newUserID );
         $http->setSessionVariable( 'eZUserLoggedInID', $newUserID );
+        // the password stamp of the sign-in that ends (expPasswordPolicy::stampSession())
+        if ( eZSession::hasStarted() )
+            eZSession::unsetkey( 'eZUserPasswordStamp', false );
 
         // Clear current basket if necessary
         $db = eZDB::instance();
@@ -2162,9 +2178,20 @@ WHERE user_id = '" . $userID . "' AND
     static function currentUser()
     {
         $user = self::instance();
-        if ( $user->isAnonymous() || $user->isEnabled() )
+        if ( $user->isAnonymous() )
         {
             return $user;
+        }
+        if ( $user->isEnabled() )
+        {
+            // A session signed in with a password that was changed since ends here
+            // ([PasswordSettings] EndOtherSessions; reads only the session and the user cache)
+            if ( !class_exists( 'expPasswordPolicy' ) || expPasswordPolicy::sessionIsCurrent( $user ) )
+            {
+                return $user;
+            }
+            expPasswordPolicy::endStaleSession( $user );
+            return self::instance();
         }
         self::logoutCurrent();
         return self::instance();

@@ -74,6 +74,7 @@ class Password extends \Exponential\Runnable\ModuleView
         $failedRules = array();
         $passwordChanged = false;
         $sessionsEnded = null;
+        $otherSessionsSignedOut = false;
         $notificationSent = false;
 
         if ( $http->hasPostVariable( "OKButton" ) )
@@ -132,7 +133,11 @@ class Password extends \Exponential\Runnable\ModuleView
                     if ( $passwordChanged )
                     {
                         $sessionsEnded = $policy->endOtherSessions( (int)$UserID );
-                        $notificationSent = $policy->sendChangedMail( $stored, $sessionsEnded );
+                        // this session takes the new password's stamp (its id was just renewed); the others end on
+                        // their next request, whatever the session handler
+                        \expPasswordPolicy::restampOwnSession( $stored );
+                        $otherSessionsSignedOut = \expPasswordPolicy::stampCheckEnabled();
+                        $notificationSent = $policy->sendChangedMail( $stored, $sessionsEnded, $otherSessionsSignedOut );
                     }
                     else
                         $formErrors[] = \ezpI18n::tr( 'kernel/user/password', 'The password could not be changed. Please try again later.' );
@@ -204,6 +209,7 @@ class Password extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "error_summary", $errorSummary );
         $tpl->setVariable( "has_errors", count( $errorSummary ) > 0 );
         $tpl->setVariable( "sessions_ended", $sessionsEnded );
+        $tpl->setVariable( "other_sessions_signed_out", $otherSessionsSignedOut );
         $tpl->setVariable( "notification_sent", $notificationSent );
         $tpl->setVariable( "redirect_uri", (string)$redirectionURI );
         $tpl->setVariable( "password_js_config", $jsConfig );

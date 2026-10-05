@@ -137,8 +137,10 @@ class expPasswordPolicy
      * @param string $id
      * @return string
      */
-    public function errorText( $id )
+    public function errorText( $id, $newPassword = true )
     {
+        if ( !$newPassword )
+            return $this->accountErrorText( $id );
         switch ( $id )
         {
             case self::RULE_LENGTH:
@@ -159,6 +161,54 @@ class expPasswordPolicy
                 return ezpI18n::tr( 'kernel/user/password', 'The new password must be different from your current password.' );
         }
         return ezpI18n::tr( 'kernel/user/password', 'The new password does not meet the requirements.' );
+    }
+
+    /**
+     * The sentence for a failed rule on a user account's form (registration, content/edit of a user, the console):
+     * the length keeps the datatype's sentence of before.
+     *
+     * @param string $id
+     * @return string
+     */
+    public function accountErrorText( $id )
+    {
+        switch ( $id )
+        {
+            case self::RULE_LENGTH:
+                return ezpI18n::tr( 'kernel/classes/datatypes', 'The password must be at least %1 characters long.', null, array( $this->minLength() ) );
+            case self::RULE_LOWERCASE:
+                return ezpI18n::tr( 'kernel/user/password/account', 'The password must contain a lowercase letter.' );
+            case self::RULE_UPPERCASE:
+                return ezpI18n::tr( 'kernel/user/password/account', 'The password must contain an uppercase letter.' );
+            case self::RULE_DIGIT:
+                return ezpI18n::tr( 'kernel/user/password/account', 'The password must contain a digit.' );
+            case self::RULE_SYMBOL:
+                return ezpI18n::tr( 'kernel/user/password/account', 'The password must contain a symbol or a space.' );
+            case self::RULE_CLASSES:
+                return ezpI18n::tr( 'kernel/user/password/account', 'The password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.', null, array( $this->minCharacterClasses() ) );
+            case self::RULE_NOT_LOGIN:
+                return ezpI18n::tr( 'kernel/user/password/account', 'The password must not contain the user name.' );
+            case self::RULE_NOT_CURRENT:
+                return ezpI18n::tr( 'kernel/user/password/account', 'The password must be different from the current password.' );
+        }
+        return ezpI18n::tr( 'kernel/user/password/account', 'The password does not meet the requirements.' );
+    }
+
+    /**
+     * Checks a password of a user account form and says why it is refused (registration, content/edit of a user,
+     * the console). The rules are those of user/password.
+     *
+     * @param string $password
+     * @param eZUser|null $user the account when it exists (for not_current)
+     * @param string|null $login the login typed in the form (for not_login; else the account's)
+     * @return array list of translated sentences, empty when the password is accepted
+     */
+    public function accountErrors( $password, $user = null, $login = null )
+    {
+        $out = array();
+        foreach ( $this->validate( $password, $user, $login ) as $id )
+            $out[] = $this->accountErrorText( $id );
+        return $out;
     }
 
     /**
@@ -201,7 +251,7 @@ class expPasswordPolicy
      * @param eZUser|null $user for not_login and not_current
      * @return array list of rule ids, empty when the password meets every rule
      */
-    public function validate( $password, $user = null )
+    public function validate( $password, $user = null, $login = null )
     {
         $password = (string)$password;
         $failed = array();
@@ -225,8 +275,8 @@ class expPasswordPolicy
                     $ok = self::characterClasses( $password ) >= $rule['min'];
                     break;
                 case self::RULE_NOT_LOGIN:
-                    $login = $user instanceof eZUser ? (string)$user->attribute( 'login' ) : '';
-                    $ok = strlen( $login ) < 3 || stripos( $password, $login ) === false;
+                    $loginName = $login !== null ? (string)$login : ( $user instanceof eZUser ? (string)$user->attribute( 'login' ) : '' );
+                    $ok = strlen( $loginName ) < 3 || stripos( $password, $loginName ) === false;
                     break;
                 case self::RULE_NOT_CURRENT:
                     $ok = !( $user instanceof eZUser ) || !self::isCurrentPassword( $user, $password );
@@ -343,6 +393,181 @@ class expPasswordPolicy
         return $ended;
     }
 
+    /** The session variable that holds the password stamp, next to eZUserLoggedInID */
+    const SESSION_KEY = 'eZUserPasswordStamp';
+
+    /** @var bool a stale session is being ended (the logout and its audit ask for the current user again) */
+    protected static $endingStaleSession = false;
+
+    /**
+     * The stamp of a sign-in: which user signed in with which password, without the password or its hash. A keyed
+     * hash (HMAC-SHA256 with a key derived from the site secret) of the user id and the stored password hash; it
+     * changes when the password changes. Null when there is nothing to stamp: no user, or an account without a
+     * password of its own (an empty hash: LDAP, text file and single sign-on users), or no site secret.
+     *
+     * @param int $userID
+     * @param string $hash the stored password_hash
+     * @param int|string $hashType the stored password_hash_type
+     * @return string|null "<userID>:<32 characters>"
+     */
+    public static function stampFor( $userID, $hash, $hashType )
+    {
+        $userID = (int)$userID;
+        $hash = (string)$hash;
+        if ( $userID <= 0 || $hash === '' || (int)$hashType === eZUser::PASSWORD_HASH_EMPTY )
+            return null;
+        try
+        {
+            $key = expMailSecret::derive( 'password-session-stamp' );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeWarning( 'No site secret for the password stamp: ' . $e->getMessage(), __METHOD__ );
+            return null;
+        }
+        $mac = rtrim( strtr( base64_encode( hash_hmac( 'sha256', $userID . '|' . $hash, $key, true ) ), '+/', '-_' ), '=' );
+        return $userID . ':' . substr( $mac, 0, 32 );
+    }
+
+    /**
+     * @param eZUser $user
+     * @return string|null the stamp of the user's current password (stampFor())
+     */
+    public static function stampOf( $user )
+    {
+        if ( !$user instanceof eZUser || !$user->isRegistered() )
+            return null;
+        return self::stampFor( $user->attribute( 'contentobject_id' ), $user->attribute( 'password_hash' ), $user->attribute( 'password_hash_type' ) );
+    }
+
+    /**
+     * @return bool [PasswordSettings] EndOtherSessions (also switches the stamp check off)
+     */
+    public static function stampCheckEnabled()
+    {
+        $ini = eZINI::instance();
+        if ( !$ini->hasVariable( 'PasswordSettings', 'EndOtherSessions' ) )
+            return true;
+        return in_array( strtolower( trim( (string)$ini->variable( 'PasswordSettings', 'EndOtherSessions' ) ) ), array( 'enabled', 'true', '1' ), true );
+    }
+
+    /**
+     * Compares a session's stamp with the user's current password.
+     *
+     * @param eZUser $user the session's user
+     * @param mixed $stored what the session holds (null: nothing)
+     * @return string skip (anonymous, no password of its own, check off), legacy (the session has no stamp of this
+     *                user: signed in before the stamp existed, it stays valid until its next sign-in), match, mismatch
+     */
+    public static function compareStamp( $user, $stored )
+    {
+        if ( !self::stampCheckEnabled() )
+            return 'skip';
+        $want = self::stampOf( $user );
+        if ( $want === null )
+            return 'skip';
+        $prefix = (int)$user->attribute( 'contentobject_id' ) . ':';
+        if ( !is_string( $stored ) || strpos( $stored, $prefix ) !== 0 )
+            return 'legacy';
+        return hash_equals( $want, $stored ) ? 'match' : 'mismatch';
+    }
+
+    /**
+     * After a sign-in (eZUser::setCurrentlyLoggedInUser()): this session was made with the user's current password.
+     *
+     * @param eZUser $user
+     * @return bool a stamp was written
+     */
+    public static function stampSession( $user )
+    {
+        if ( !class_exists( 'eZSession' ) || !eZSession::hasStarted() )
+            return false;
+        $stamp = self::stampCheckEnabled() ? self::stampOf( $user ) : null;
+        if ( $stamp === null )
+        {
+            eZSession::unsetkey( self::SESSION_KEY, false );
+            return false;
+        }
+        eZSession::set( self::SESSION_KEY, $stamp );
+        return true;
+    }
+
+    /**
+     * After a store of a user (eZUser::store()): when it is the session's own user, the session takes the stamp of
+     * the stored password, so the session that changes its own password stays signed in.
+     *
+     * @param eZUser $user
+     * @return bool the session was stamped again
+     */
+    public static function restampOwnSession( $user )
+    {
+        if ( !$user instanceof eZUser )
+            return false;
+        // the user objects this request keeps (eZUser::instance()) take the stored password, or the next
+        // currentUser() of this very request would find the session's new stamp against the old hash
+        $id = (int)$user->attribute( 'contentobject_id' );
+        foreach ( array( 'eZUserGlobalInstance_', 'eZUserGlobalInstance_' . $id ) as $key )
+        {
+            if ( isset( $GLOBALS[$key] ) && $GLOBALS[$key] instanceof eZUser && $GLOBALS[$key] !== $user
+                 && (int)$GLOBALS[$key]->attribute( 'contentobject_id' ) === $id )
+            {
+                $GLOBALS[$key]->setAttribute( 'password_hash', $user->attribute( 'password_hash' ) );
+                $GLOBALS[$key]->setAttribute( 'password_hash_type', $user->attribute( 'password_hash_type' ) );
+            }
+        }
+        if ( !class_exists( 'eZSession' ) || !eZSession::hasStarted() )
+            return false;
+        if ( (int)eZSession::get( 'eZUserLoggedInID', 0 ) !== (int)$user->attribute( 'contentobject_id' ) )
+            return false;
+        return self::stampSession( $user );
+    }
+
+    /**
+     * Whether this session may go on as the user (eZUser::currentUser()): false when the session was signed in with
+     * a password that has been changed since. A session without a stamp (signed in before the upgrade), a temporary
+     * switch to another user, the anonymous user and accounts without a password of their own pass.
+     *
+     * @param eZUser $user
+     * @return bool
+     */
+    public static function sessionIsCurrent( $user )
+    {
+        if ( self::$endingStaleSession || !$user instanceof eZUser || !class_exists( 'eZSession' ) || !eZSession::hasStarted() )
+            return true;
+        $id = (int)$user->attribute( 'contentobject_id' );
+        if ( (int)eZSession::get( 'eZUserLoggedInID', 0 ) !== $id )
+            return true;
+        return self::compareStamp( $user, eZSession::get( self::SESSION_KEY, false ) ) !== 'mismatch';
+    }
+
+    /**
+     * Ends this session because its password was changed elsewhere: signed out (eZUser::logoutCurrent()) and
+     * recorded as access.session.revoke (reason password_changed).
+     *
+     * @param eZUser $user
+     */
+    public static function endStaleSession( $user )
+    {
+        if ( self::$endingStaleSession )
+            return;
+        self::$endingStaleSession = true;
+        try
+        {
+            $id = $user instanceof eZUser ? (int)$user->attribute( 'contentobject_id' ) : 0;
+            eZUser::logoutCurrent();
+            if ( class_exists( 'eZSession' ) && eZSession::hasStarted() )
+                eZSession::unsetkey( self::SESSION_KEY, false );
+            if ( $id > 0 && class_exists( 'expAuditHook' ) )
+                expAuditHook::emit( 'access.session.revoke', array( 'object' => expAuditHook::user( $id ),
+                    'reason' => 'password_changed', 'after' => array( 'count' => 1 ) ) );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeError( 'Ending a stale session: ' . $e->getMessage(), __METHOD__ );
+        }
+        self::$endingStaleSession = false;
+    }
+
     /**
      * Sends "your password was changed" to the user ([PasswordSettings] ChangeNotificationMail), mail category
      * security. The mail never contains the password.
@@ -350,7 +575,7 @@ class expPasswordPolicy
      * @param eZUser $user
      * @return bool the mail was handed to the transport
      */
-    public function sendChangedMail( $user, $sessionsEnded = null )
+    public function sendChangedMail( $user, $sessionsEnded = null, $otherSessionsSignedOut = false )
     {
         if ( !$user instanceof eZUser || !$this->enabled( 'ChangeNotificationMail', true ) )
             return false;
@@ -368,7 +593,8 @@ class expPasswordPolicy
         $mail = new eZMail();
         $rendered = class_exists( 'expMailPreferencesService' )
             ? expMailPreferencesService::renderTemplate( 'design:user/password_changed_mail.tpl',
-                                                         array( 'user' => $user, 'changed_at' => $time, 'ip' => $ip, 'sessions_ended' => $sessionsEnded ) )
+                                                         array( 'user' => $user, 'changed_at' => $time, 'ip' => $ip, 'sessions_ended' => $sessionsEnded,
+                                                                 'other_sessions_signed_out' => (bool)$otherSessionsSignedOut ) )
             : null;
         if ( $rendered !== null && trim( $rendered['body'] ) !== '' )
         {
