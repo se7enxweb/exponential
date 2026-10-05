@@ -7,12 +7,10 @@ in order; and its last step writes the database, the site package and the settin
 This chapter describes every page as the templates in `design/standard/templates/setup/init/` draw it: what it is
 for, every field, the checks applied to the answers and the exact messages shown when an answer is refused. It also
 covers how a `kickstart.ini` pre-fills or skips pages, what the wizard writes, and how to restart a wizard that
-stopped half-way.
+stopped half-way. Keep it open beside the browser during your first install: every page below lists what it asks,
+what it checks and what it means when it refuses an answer.
 
-[Previous: 4. Choosing an install method](04-choosing-an-install-method.md) | [Next: 6. The kickstarter](06-kickstarter.md) |
-[Contents](README.md)
-
----
+[Contents](README.md) · Previous: [4. Choosing an install method](04-choosing-an-install-method.md) · Next: [6. The kickstarter](06-kickstarter.md)
 
 ## 5.1 How the wizard starts
 
@@ -73,7 +71,7 @@ fields named `P_<group>-<key>` (`design/standard/templates/setup/persistence.tpl
 ## 5.2 The browser hold and maintenance mode
 
 While the wizard runs, the site is in **maintenance mode** for everybody except the browser that started it
-(`kernel/classes/expMaintenance.php`):
+(class `expMaintenance` in `kernel/classes/expmaintenance.php`):
 
 1. The first request of a run (a request without a posted step) calls `expMaintenance::beginWizard()`. It writes the
    marker `var/maintenance.json` with the reason `setup`, the run id of the setup log, the SHA-256 hash of a random
@@ -399,7 +397,23 @@ the three siteaccesses, and the convention for host names (`yourdomain.com`, `ad
 | Port | `8080` | `8081` | `8082` |
 | Hostname | *identifier*`.`*this host* | *identifier*`-admin.`*this host* | `edit.`*this host* |
 
-Port and host name matching need matching web server configuration ([chapter 8](08-serving-the-site.md)).
+These are proposals; the next page shows them in editable fields. Two things to know before you accept them:
+
+- **The wizard refuses `admin` and `user` as match values** ([5.3.11](#5311-site-details)). That is why the URL
+  proposal for the administration is *identifier*`_admin` (with the default package
+  `https://example.com/sevenx_multisite_admin/`) and not `/admin`. If you want `/site` and `/admin`, use the
+  kickstarter or `exp:install`, which accept them.
+- **"This host" is the name the browser used.** If you open the wizard as `http://192.0.2.10/` or `localhost`, the
+  host name proposals are built from that; type the real names before you continue.
+
+Port and host name matching need matching web server configuration ([chapter 8](08-serving-the-site.md)): the
+server must listen on all three ports, or receive all three host names. With Velocity mind that its own HTTPS port
+defaults to 8080 (`settings/velocity.ini`, `[ServerSettings] HTTPSPort`), the same number the wizard proposes for the
+public site.
+
+A worked example: for `www.example.com` (public), `admin.example.com` and `edit.example.com`, choose **Hostname**
+here, and on Site details enter `www.example.com`, `admin.example.com` and `edit.example.com` as User, Admin and
+Editor hostname, and `https://www.example.com` as the Site url.
 
 ### 5.3.11 Site details
 
@@ -600,8 +614,9 @@ Two cautions:
 - `[registration]` sends nothing unless it says `Send=true`, and even then the report goes only to
   `settings/setup.ini [RegistrationSettings] Receiver`, which is empty by default. The old upstream registration
   address is never used.
-- The settings cache keeps a compiled copy of `kickstart.ini` in `var/cache/ini/kickstart-*.php`, and this
-  installation's `config.php` switches off the INI modification-time check. After editing `kickstart.ini` by hand
+- The settings cache keeps a compiled copy of `kickstart.ini` in `var/cache/ini/kickstart-*.php`. When `config.php`
+  switches off the INI modification-time check (`define( 'EZP_INI_FILEMTIME_CHECK', false );`, offered in
+  `config.php-RECOMMENDED` for speed), an edited `kickstart.ini` is not noticed. After editing `kickstart.ini` by hand
   for the browser wizard, delete those files. (The kickstarter deletes them itself.)
 
 To answer every page yourself, move `kickstart.ini` away before starting the wizard.
@@ -672,5 +687,10 @@ External:
 - PHP SQLite3: <https://www.php.net/manual/en/book.sqlite3.php>
 - PostgreSQL client authentication: <https://www.postgresql.org/docs/current/client-authentication.html>
 - PostgreSQL pgcrypto: <https://www.postgresql.org/docs/current/pgcrypto.html>
-- HTTP 503 and `Retry-After` (RFC 9110): <https://www.rfc-editor.org/rfc/rfc9110#name-503-service-unavailable>
+- HTTP 503 and `Retry-After` (RFC 9110): <https://www.rfc-editor.org/rfc/rfc9110.html#name-503-service-unavailable>
+  and <https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after>
+- HTTP cookies, `HttpOnly`, `Secure` and `SameSite` (the wizard's `exp_setup_wizard` cookie):
+  <https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies>
 - Exponential on GitHub: <https://github.com/se7enxweb/exponential>
+
+[Contents](README.md) · Previous: [4. Choosing an install method](04-choosing-an-install-method.md) · Next: [6. The kickstarter](06-kickstarter.md)
