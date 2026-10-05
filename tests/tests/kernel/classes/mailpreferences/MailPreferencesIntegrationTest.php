@@ -26,6 +26,10 @@
  *  INT-12  cjw_newsletter: subscription changes feed the consent log and the category; the lists show on the page
  *  INT-13  cjw_newsletter: an edition mail goes through the gate (blocked when the category is off or the master
  *          switch, sent with footer and List-Unsubscribe when on)
+ *  INT-14  Collaboration digest: a chosen daily frequency schedules the item, the digest is collaboration mail
+ *          with the item; switched off, the waiting items are dropped and no digest is sent
+ *  INT-15  Address change: the account keeps its address until the new one is confirmed, the old one gets a
+ *          notice; Confirm=disabled changes at once; publishing the user object takes the same way
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -142,7 +146,7 @@ class MailPreferencesIntegrationTest extends PHPUnit\Framework\TestCase
     private static function addresses()
     {
         $out = array();
-        foreach ( array( 'a', 'b', 'c', 'nl', 'nl2', 'bl', 'sup', 'user' ) as $k )
+        foreach ( array( 'a', 'b', 'c', 'nl', 'nl2', 'bl', 'sup', 'user', 'user-new', 'user-pub' ) as $k )
             $out[] = self::address( $k );
         foreach ( array( 'mpbounce-hard', 'mpbounce-soft', 'mpbounce-policy', 'mpbounce-ok', 'mpbounce-gone', 'mpbounce-nodomain',
                          'mpcomplaint', 'mpcomplaint-headers', 'mpcomplaint-notspam', 'mpbounce-holiday', 'mpbounce-notreal' ) as $k )
@@ -721,5 +725,198 @@ class MailPreferencesIntegrationTest extends PHPUnit\Framework\TestCase
         $preview = $cjwMail->sendEmail( 'mpint-news@' . self::DOMAIN, 'MPINT News', self::address( 'nl' ), 'Reader', 'MPINT preview',
                                         array( 'text' => "MPINT preview\n" ), true );
         $this->assertTrue( $preview['send_result'] === true );
+    }
+
+    // ------------------------------------------------------------------ INT-14
+
+    /** A collaboration notification for the test user: an event (without a real collaboration item) and one item. */
+    private function collaborationItem( array &$made )
+    {
+        $event = new eZNotificationEvent( array( 'id' => null, 'event_type_string' => 'ezcollaboration', 'status' => eZNotificationEvent::STATUS_HANDLED,
+                                                 'data_int1' => 0, 'data_int2' => 0, 'data_int3' => 0, 'data_int4' => 0,
+                                                 'data_text1' => 'ezapprove', 'data_text2' => '', 'data_text3' => '', 'data_text4' => '' ) );
+        $event->store();
+        $collection = eZNotificationCollection::create( $event->attribute( 'id' ), 'ezcollaboration', 'ezmail' );
+        $collection->setAttribute( 'data_subject', 'MPINT collaboration' );
+        $collection->setAttribute( 'data_text', "MPINT collaboration\n" );
+        $collection->store();
+        $item = $collection->addItem( self::address( 'user' ) );
+        $made[] = array( (int)$event->attribute( 'id' ), (int)$collection->attribute( 'id' ) );
+        return array( $event, $collection, $item );
+    }
+
+    private function removeNotifications( array $made )
+    {
+        $db = eZDB::instance();
+        foreach ( $made as $pair )
+        {
+            $db->query( 'DELETE FROM eznotificationcollection_item WHERE collection_id = ' . (int)$pair[1] );
+            $db->query( 'DELETE FROM eznotificationcollection WHERE id = ' . (int)$pair[1] );
+            $db->query( 'DELETE FROM eznotificationevent WHERE id = ' . (int)$pair[0] );
+        }
+    }
+
+    /** The digest run, for the test user's address only (the live installation's own digests are not touched). */
+    private function runDigestForTestUser()
+    {
+        $address = self::address( 'user' );
+        $digest = new class( $address ) extends eZGeneralDigestHandler {
+            private $only;
+            public function __construct( $only ) { parent::__construct(); $this->only = $only; }
+            function fetchUsersForDigest( $timestamp ) { return array( array( 'address' => $this->only ) ); }
+        };
+        $tick = eZNotificationEvent::create( 'ezcurrenttime', array( 'time' => time() + 8 * 86400 ) );
+        return $digest->handle( $tick );
+    }
+
+    public function testCollaborationDigest()
+    {
+        $made = array();
+        try
+        {
+            $prefs = expMailPreferences::forRecipient( $this->userRecipient() );
+            $prefs->set( 'collaboration', true, $this->context() );
+            $prefs->setFrequency( 'collaboration', 'daily', $this->context() );
+
+            list( $event, $collection, $item ) = $this->collaborationItem( $made );
+            eZCollaborationItemHandler::scheduleForPreference( $item, self::$userObjectID );
+            $stored = eZPersistentObject::fetchObject( eZNotificationCollectionItem::definition(), null, array( 'id' => $item->attribute( 'id' ) ) );
+            $this->assertGreaterThan( time(), (int)$stored->attribute( 'send_date' ), 'daily: the item waits for the digest' );
+
+            // the immediate send has nothing to do and does not count a failure
+            $handler = new eZCollaborationNotificationHandler();
+            $handler->sendMessage( $event, array() );
+            $this->assertCount( 0, $this->mails() );
+
+            $this->runDigestForTestUser();
+            $mails = $this->mails();
+            $this->assertCount( 1, $mails, 'one digest' );
+            $this->assertStringContainsString( self::address( 'user' ), $mails[0] );
+            $this->assertMatchesRegularExpression( '/^X-Exp-Mail-Category:\s*collaboration/mi', $mails[0], 'a digest of collaboration items alone is collaboration mail' );
+            $this->assertStringContainsString( "Collaboration and approvals:\n", str_replace( "\r\n", "\n", quoted_printable_decode( $mails[0] ) ), 'the digest lists the collaboration part' );
+            $this->assertNull( eZPersistentObject::fetchObject( eZNotificationCollectionItem::definition(), null, array( 'id' => $item->attribute( 'id' ) ) ),
+                               'the item is sent and removed' );
+
+            // immediately: no schedule
+            $prefs->setFrequency( 'collaboration', 'immediate', $this->context() );
+            list( , , $item2 ) = $this->collaborationItem( $made );
+            eZCollaborationItemHandler::scheduleForPreference( $item2, self::$userObjectID );
+            $stored = eZPersistentObject::fetchObject( eZNotificationCollectionItem::definition(), null, array( 'id' => $item2->attribute( 'id' ) ) );
+            $this->assertSame( 0, (int)$stored->attribute( 'send_date' ) );
+
+            // switched off: the waiting item is dropped, no digest
+            $prefs->setFrequency( 'collaboration', 'weekly', $this->context() );
+            list( , , $item3 ) = $this->collaborationItem( $made );
+            eZCollaborationItemHandler::scheduleForPreference( $item3, self::$userObjectID );
+            $prefs->set( 'collaboration', false, $this->context() );
+            foreach ( glob( self::$mailDir . '/*' ) ?: array() as $f )
+                @unlink( $f );
+            $this->runDigestForTestUser();
+            $this->assertCount( 0, $this->mails() );
+            $this->assertNull( eZPersistentObject::fetchObject( eZNotificationCollectionItem::definition(), null, array( 'id' => $item3->attribute( 'id' ) ) ) );
+            $this->assertStringContainsString( 'digest_items', (string)file_get_contents( self::$installation . '/design/standard/templates/notification/handler/ezcollaboration/view/digest_plain.tpl' ) );
+        }
+        finally
+        {
+            $this->removeNotifications( $made );
+        }
+    }
+
+    // ------------------------------------------------------------------ INT-15
+
+    private function resetUserAddress()
+    {
+        eZDB::instance()->query( "UPDATE ezuser SET email = '" . self::address( 'user' ) . "' WHERE contentobject_id = " . (int)self::$userObjectID );
+        eZUser::purgeUserCacheByUserId( self::$userObjectID );
+        self::$user = eZUser::fetch( self::$userObjectID );
+    }
+
+    private function storedAddress()
+    {
+        $rows = eZDB::instance()->arrayQuery( 'SELECT email FROM ezuser WHERE contentobject_id = ' . (int)self::$userObjectID );
+        return isset( $rows[0]['email'] ) ? (string)$rows[0]['email'] : '';
+    }
+
+    public function testAddressChangeNeedsConfirmation()
+    {
+        try
+        {
+            $this->resetUserAddress();
+            $this->setIni( 'mailpreferences.ini', 'EmailChangeSettings', 'Confirm', 'enabled' );
+            $this->assertTrue( expMailAddressChange::confirmationRequired() );
+            $this->assertSame( 'unchanged', expMailAddressChange::request( self::$user, strtoupper( self::address( 'user' ) ) ) );
+
+            $result = expMailAddressChange::request( self::$user, self::address( 'user-new' ), $this->context() );
+            $this->assertSame( 'pending_confirmation', $result );
+            $this->assertSame( self::address( 'user' ), $this->storedAddress(), 'the account keeps its address' );
+            $mails = $this->mails();
+            $this->assertCount( 2, $mails, 'the confirmation to the new address, the notice to the old one' );
+            $toNew = array_values( array_filter( $mails, function ( $m ) { return preg_match( '/^To:.*' . preg_quote( self::address( 'user-new' ), '/' ) . '/mi', $m ); } ) );
+            $toOld = array_values( array_filter( $mails, function ( $m ) { return preg_match( '/^To:.*' . preg_quote( self::address( 'user' ), '/' ) . '/mi', $m ); } ) );
+            $this->assertCount( 1, $toNew );
+            $this->assertCount( 1, $toOld );
+            foreach ( $mails as $m )
+                $this->assertMatchesRegularExpression( '/^X-Exp-Mail-Category:\s*security/mi', $m );
+            $this->assertStringNotContainsString( self::address( 'user-new' ), $toOld[0], 'the notice shows the new address masked' );
+
+            // the page shows the waiting change
+            $vars = Exponential\Service\MailPreferencesPage::templateVariables( expMailPreferences::forRecipient( $this->userRecipient() ), 'account', 'mailpreferences/settings', false );
+            $texts = array_map( function ( $n ) { return $n['text']; }, array_merge( $vars['notice'] ? array( $vars['notice'] ) : array(), $vars['notices'] ) );
+            $this->assertNotEmpty( array_filter( $texts, function ( $t ) { return strpos( $t, 'waits for its confirmation' ) !== false; } ) );
+
+            // the link of the mail confirms it
+            $this->assertMatchesRegularExpression( '#mailpreferences/confirm/(m1[A-Za-z0-9_-]+)#', quoted_printable_decode( str_replace( "=\n", '', $toNew[0] ) ) );
+            preg_match( '#mailpreferences/confirm/(m1[A-Za-z0-9_-]+)#', quoted_printable_decode( str_replace( "=\n", '', $toNew[0] ) ), $m );
+            $confirmed = expMailPreferencesService::confirm( $m[1], new expConsentContext( 'confirm', 'MPINT', '192.0.2.20', 0, 'mpint' ) );
+            $this->assertSame( 'confirmed', $confirmed['result'] );
+            $this->assertSame( 'email_change', $confirmed['kind'] );
+            $this->assertSame( self::address( 'user-new' ), $this->storedAddress(), 'confirmed: the new address' );
+
+            // the old behaviour, by setting
+            $this->resetUserAddress();
+            $this->setIni( 'mailpreferences.ini', 'EmailChangeSettings', 'Confirm', 'disabled' );
+            $this->assertSame( 'changed', expMailAddressChange::request( self::$user, self::address( 'user-new' ) ) );
+        }
+        finally
+        {
+            $this->resetUserAddress();
+        }
+    }
+
+    public function testPublishingAUserObjectAsksForConfirmation()
+    {
+        try
+        {
+            $this->resetUserAddress();
+            $this->setIni( 'mailpreferences.ini', 'EmailChangeSettings', 'Confirm', 'enabled' );
+            // as user/edit and the admin's edit do it: a new version, the account's new address stored as the draft,
+            // then the publish
+            $object = eZContentObject::fetch( self::$userObjectID );
+            $version = $object->createNewVersion();
+            $dataMap = $version->dataMap();
+            $attribute = $dataMap['user_account'];
+            $draftUser = $attribute->content();
+            $this->assertInstanceOf( eZUser::class, $draftUser );
+            $draftUser->setAttribute( 'email', self::address( 'user-pub' ) );
+            $attribute->setContent( $draftUser );
+            $attribute->store();
+            $result = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => self::$userObjectID, 'version' => $version->attribute( 'version' ) ) );
+            $this->assertSame( eZModuleOperationInfo::STATUS_CONTINUE, $result['status'] );
+            $this->assertSame( self::address( 'user' ), $this->storedAddress(), 'published: the account keeps its address' );
+            $last = expMailAddressChange::lastResult();
+            $this->assertSame( 'pending_confirmation', $last['result'] );
+            $pending = expMailPendingRow::fetchForKey( 'u:' . self::$userObjectID, 'email_change' );
+            $this->assertCount( 1, $pending );
+            $this->assertSame( self::address( 'user-pub' ), $pending[0]->dataArray()['email'] );
+
+            // the account services take the same way
+            $code = (string)file_get_contents( self::$installation . '/extension/expservices/classes/users/expaccountservices.php' )
+                  . (string)file_get_contents( self::$installation . '/extension/expservices/classes/users/expuserservices.php' );
+            $this->assertSame( 2, substr_count( $code, 'expMailAddressChange::request(' ) );
+        }
+        finally
+        {
+            $this->resetUserAddress();
+        }
     }
 }
