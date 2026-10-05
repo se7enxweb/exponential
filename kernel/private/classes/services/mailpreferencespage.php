@@ -223,6 +223,19 @@ class MailPreferencesPage
                 $changed++;
             }
         }
+        $errors = array();
+        foreach ( $shown as $id )
+        {
+            $category = is_string( $id ) ? $registry->get( $id ) : null;
+            if ( !$category || $category->essential )
+                continue;
+            $result = self::storePart( $prefs->recipient(), $category, $http, $source );
+            $changed += $result['changed'];
+            foreach ( $result['errors'] as $error )
+                $errors[] = array( 'type' => 'error', 'text' => $error );
+        }
+        if ( $errors )
+            return array_merge( $errors, $changed > 0 ? array( array( 'type' => 'info', 'text' => self::tr( 'Your choices were saved.' ) ) ) : array() );
         if ( $changed === 0 )
             return array( array( 'type' => 'info', 'text' => self::tr( 'Nothing was changed.' ) ) );
         $notices = array( array( 'type' => 'success', 'text' => self::tr( 'Your choices were saved.' ) ) );
@@ -261,7 +274,8 @@ class MailPreferencesPage
                                    'on' => $state === \expMailPreferences::ON, 'pending' => $state === \expMailPreferences::PENDING,
                                    'frequency' => $prefs->frequency( $id ), 'frequencies' => $category->frequencies,
                                    'double_opt_in' => (bool)$category->doubleOptIn,
-                                   'subscriptions' => self::subscriptions( $recipient, $category ) );
+                                   'subscriptions' => self::subscriptions( $recipient, $category ) )
+                            + self::part( $recipient, $category, $mode );
         }
         // a new address of the account waits for its confirmation (expMailAddressChange)
         if ( $recipient->hasAccount() )
@@ -315,6 +329,74 @@ class MailPreferencesPage
             \eZDebug::writeError( $e->getMessage(), __METHOD__ );
             return array();
         }
+    }
+
+    /**
+     * The part a category's handler adds to its row on the page (more choices of its own: the interests and the
+     * language of a newsletter, a phone number), when the handler offers the optional methods
+     * partTemplate( expMailRecipient, expMailCategory, $mode ), which returns a design: template name or null, and
+     * partVariables( expMailRecipient, expMailCategory, $mode ), which returns the template's variables (a hash, given
+     * to the template as $part). The template is included inside the category form, so its fields are posted with
+     * "Save my choices" and reach storePart().
+     *
+     * @param \expMailRecipient $recipient
+     * @param \expMailCategory $category
+     * @param string $mode account, token or admin
+     * @return array hash( part: the template name or false, part_variables: hash )
+     */
+    protected static function part( \expMailRecipient $recipient, \expMailCategory $category, $mode )
+    {
+        $none = array( 'part' => false, 'part_variables' => array() );
+        try
+        {
+            $handler = $category->handler();
+            if ( !$handler || !method_exists( $handler, 'partTemplate' ) )
+                return $none;
+            $template = $handler->partTemplate( $recipient, $category, $mode );
+            if ( !is_string( $template ) || $template === '' )
+                return $none;
+            $variables = method_exists( $handler, 'partVariables' ) ? $handler->partVariables( $recipient, $category, $mode ) : array();
+            return array( 'part' => $template, 'part_variables' => is_array( $variables ) ? $variables : array() );
+        }
+        catch ( \Throwable $e )
+        {
+            \eZDebug::writeError( $e->getMessage(), __METHOD__ );
+            return $none;
+        }
+    }
+
+    /**
+     * Hands the posted category form to the handler's optional storePart( expMailRecipient, expMailCategory,
+     * eZHTTPTool, expConsentContext ), which stores the fields of its part. It returns a list of error strings
+     * (shown to the person; the handler stores nothing that is wrong), and may add 'changed' => <int> for the
+     * number of choices it changed, so that "Nothing was changed." is not shown after a change of the part alone.
+     *
+     * @param \expMailRecipient $recipient
+     * @param \expMailCategory $category
+     * @param \eZHTTPTool $http
+     * @param string $source page, link or admin
+     * @return array hash( changed: int, errors: string[] )
+     */
+    protected static function storePart( \expMailRecipient $recipient, \expMailCategory $category, \eZHTTPTool $http, $source )
+    {
+        $out = array( 'changed' => 0, 'errors' => array() );
+        $handler = $category->handler();
+        if ( !$handler || !method_exists( $handler, 'storePart' ) )
+            return $out;
+        $result = $handler->storePart( $recipient, $category, $http, \expConsentContext::fromRequest( $source, self::categoryWording( $category ) ) );
+        if ( !is_array( $result ) )
+            return $out;
+        if ( isset( $result['changed'] ) )
+        {
+            $out['changed'] = max( 0, (int)$result['changed'] );
+            unset( $result['changed'] );
+        }
+        foreach ( $result as $error )
+        {
+            if ( is_string( $error ) && $error !== '' )
+                $out['errors'][] = $error;
+        }
+        return $out;
     }
 
     /**

@@ -124,6 +124,39 @@ class myEventsMailCategoryHandler implements expMailCategoryHandler
 - `changed()` is called after every change of the person's state; an exception in it is logged and does not stop the change.
 - Optionally, `subscriptions( expMailRecipient, expMailCategory )` returns a list of `hash( name, status, active, url )`; the
   preference page lists them under the category ("Your subscriptions:"), for example the lists of a newsletter.
+- Optionally, a handler adds choices of its own to the category's row (the interests and language of a newsletter, a
+  phone number), the **category part**:
+  - `partTemplate( expMailRecipient, expMailCategory, $mode )` returns a `design:` template name, or `null` for no part.
+    `$mode` is `account`, `token` (the personal link) or `admin`.
+  - `partVariables( expMailRecipient, expMailCategory, $mode )` returns a hash; the template gets it as `$part`, with
+    `$category`, `$email` and `$mode`.
+  - The part is included inside the category form, so its fields are posted with "Save my choices". Then
+    `storePart( expMailRecipient, expMailCategory, eZHTTPTool, expConsentContext )` stores them. It returns a list of
+    error strings (shown on the page; store nothing that is wrong) and may add `'changed' => <int>`, the number of
+    choices it changed, so the page does not answer "Nothing was changed.". An exception rolls the whole form back.
+  - Use the page's own classes in the part (`mp-field`, `mp-hint`, `mp-freq`, `mp-badge`), so every design styles it
+    alike. Prefix the POST names with your category, for example `MailPreferencePart[newsletter][Language]`.
+
+```php
+public function partTemplate( expMailRecipient $recipient, expMailCategory $category, $mode )
+{
+    return 'design:mailpreferences/category/events.tpl';
+}
+
+public function partVariables( expMailRecipient $recipient, expMailCategory $category, $mode )
+{
+    return array( 'city' => myEventsCity::forRecipient( $recipient ) );
+}
+
+public function storePart( expMailRecipient $recipient, expMailCategory $category, eZHTTPTool $http, expConsentContext $context )
+{
+    $posted = $http->postVariable( 'MailPreferencePart', array() );
+    $city = isset( $posted['events']['City'] ) ? trim( (string)$posted['events']['City'] ) : '';
+    if ( strlen( $city ) > 100 )
+        return array( 'The city name is too long.' );
+    return array( 'changed' => myEventsCity::store( $recipient, $city ) ? 1 : 0 );
+}
+```
 
 The kernel's own handler, `expNotificationMailCategoryHandler`, reads subtree notification rules and digest settings as
 the categories `content` and `collaboration`.
@@ -197,6 +230,7 @@ site secret. Nothing is stored per link, a link cannot be read or changed, and c
 |---|---|
 | `mailpreferences.ini [CategorySettings] Categories[]` + `[Category_<id>]` | Categories of an extension |
 | `expMailCategoryHandler` (`HandlerClass`) | Read older data as the state; hear about changes; optional `subscriptions()` |
+| `partTemplate()`, `partVariables()`, `storePart()` of the handler | A part of the category's row with choices of its own, stored with the form (section 4) |
 | `[GateSettings] EssentialSenders[]` | Mark uncategorised mail of a file, class or From address as essential |
 | `[SuppressionSettings] Listeners[]` | Classes told when an address is suppressed or lifted: static `suppressionAdded( $email, $hash, $reason )`, `suppressionLifted( $hash, $email, $reason )` (keeps another block list in step) |
 | `[FooterSettings] Template` and `design:mailpreferences/mail/*.tpl` | The footer and the confirm, link and address change mails, per design |

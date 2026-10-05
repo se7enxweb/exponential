@@ -8,7 +8,9 @@
      email          the address the preferences are for
      master         true when optional e-mail is on
      suppressed     true when the address is on the suppression list (optional e-mail is not sent at all)
-     categories     optional categories: hash( identifier, name, description, on, pending, frequency, frequencies )
+     categories     optional categories: hash( identifier, name, description, on, pending, frequency, frequencies,
+                    subscriptions, part, part_variables ); part is the design: template a category's handler adds
+                    to its row (inside the form, variables part, category, email, mode), or false
      essential      essential categories: hash( identifier, name, description )
      history        the newest consent records: hash( time, category, action, source, wording )
      history_total  how many records there are
@@ -98,6 +100,11 @@
                         <label><input type="radio" name="Frequency[{$category.identifier|wash}]" value="{$frequency|wash}"{if $frequency|eq( $category.frequency )} checked="checked"{/if} /> {if is_set( $frequency_names[$frequency] )}{$frequency_names[$frequency]}{else}{$frequency|wash}{/if}</label>
     {/foreach}
                     </fieldset>
+{/if}
+{if and( is_set( $category.part ), $category.part )}
+                    <div class="mp-part" id="mp-cat-{$category.identifier|wash}-part">
+                    {include uri=$category.part part=$category.part_variables category=$category email=$email mode=$mode}
+                    </div>
 {/if}
                 </div>
             </li>
