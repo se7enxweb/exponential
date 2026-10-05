@@ -68,6 +68,9 @@ The script reads these hooks: `data-exp-password-form` (the form), `data-exp-pas
   hash (LDAP, text-file and SSO users) are not checked.
 - The `UpdateHash` re-hash at sign-in now returns the user with the new hash, and purges that user's cache, which
   before kept the old hash until it expired. The user's other sessions are signed out once after such a re-hash.
+- On a mismatch, `currentUser()` reads the stored row once before signing out, because the user cache can be
+  older than the password. `eZUser::purgeUserCacheByUserId()` invalidates the cache file in OPcache
+  (`opcache_invalidate()`) before deleting it, which also gives the other workers the new roles at once.
 - Login handlers in extensions keep working: they sign in through `setCurrentlyLoggedInUser()`. One that keeps
   users without a password should store an empty `password_hash` (type 0), as the LDAP and text-file handlers do.
 

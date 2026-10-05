@@ -83,6 +83,13 @@ comparison runs in constant time (`hash_equals`). When the stamps differ, the se
 - **Not checked:** the anonymous user; accounts without a password of their own (an empty hash, as for LDAP,
   text-file and single sign-on users); a temporary switch to another user (`eZUser::NO_SESSION_REGENERATE`, used by
   the preview caches); and every session when `EndOtherSessions=disabled`.
+- The user cache is a PHP file that is read with `include`, so a server's OPcache can keep an outdated copy until
+  it revalidates. When a stamp does not match, the check reads the stored row once, which costs one query and only
+  in that case, so an outdated cache never signs out the session that signed in with the new password.
+  `eZUser::purgeUserCacheByUserId()` also invalidates the file in OPcache. A change made through the site therefore
+  reaches every worker of that server at once. A change made on the console (`resetuserpassword.php`, a script)
+  reaches a web server's other sessions when that server's OPcache revalidates (`opcache.revalidate_freq`; 10
+  seconds on alpha's Apache, at once on Velocity).
 - When `[UserSettings] UpdateHash` re-hashes a password at sign-in (after a change of `HashType`), the user's other
   sessions are signed out once, because the stored hash has changed.
 
