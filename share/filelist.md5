@@ -2872,7 +2872,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-84980bd116713ec9b5642c99e793ee5e  doc/changelogs/6.0/6.0.15.md
+a1040b6e5755fbaede309777a7173f68  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4951,7 +4951,7 @@ e5173154b8dda8d8a484430bcd35dd78  kernel/collaboration/function_definition.php
 6b1ab582228ad8b1a974afd05782f76e  kernel/common/ezalphabetoperator.php
 1d5dbf2bba242879e3056e3933e4d10a  kernel/common/ezautolinkoperator.php
 135db550d7a379ead2fdce5d63512620  kernel/common/ezcontentstructuretreeoperator.php
-4591abce133c8fe5b5829fe50b056aed  kernel/common/ezdateoperatorcollection.php
+8248bbf0df776f26b8c68d5a3b927c13  kernel/common/ezdateoperatorcollection.php
 010bc79bc3ce54b6fa603994e5523d3f  kernel/common/ezi18noperator.php
 596ae8afb0d2e728407ee10e715b516c  kernel/common/ezkerneloperator.php
 8709e2e7a79028c1785cdbc1824abcf6  kernel/common/ezmoduleoperator.php
@@ -4964,7 +4964,7 @@ fd2bdfe0f08fe261c1041b8377ad3db6  kernel/common/ezobjectforwarder.php
 da918f13b83149e6feee8a05e8c5b4be  kernel/common/eztemplateautoload.php
 5ed34b86a0ea755d1ff87bfab3ede0fa  kernel/common/eztemplatedesignresource.php
 6316d1979ad32700bcc5c6873e3cdaaa  kernel/common/eztemplatesstatisticsreporter.php
-e65f66056c60b21eb8f5f63401eddf1b  kernel/common/eztocoperator.php
+b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
 19e4522dfc4bc1774656c0bd823b7981  kernel/common/eztopmenuoperator.php
 84fe1fae52b9b8b9f029ff975ce1e09b  kernel/common/eztreemenuoperator.php
 49ab617d624dfd54208e2265896d955e  kernel/common/ezurloperator.php
@@ -5507,7 +5507,7 @@ bbb76adbc06cb9c5a4feb2a68950bf07  kernel/private/classes/views/visual/toolbarlis
 04fa77af251994dccc065aad11c233ec  kernel/private/classes/views/workflow/groupedit.php
 3b6edb3eee8abb53ba599d4f4deaa7b5  kernel/private/classes/views/workflow/grouplist.php
 941b429079a833d76cd898af7bd1e4bb  kernel/private/classes/views/workflow/process.php
-07c9d00c9762c8f9daddde2059358c5c  kernel/private/classes/views/workflow/processlist.php
+6f6906855744aea7d326f82e61c868c5  kernel/private/classes/views/workflow/processlist.php
 d480113aa516c1417056ac8e7fe30404  kernel/private/classes/views/workflow/run.php
 d42424af816959e29248446de81f6689  kernel/private/classes/views/workflow/view.php
 c5af142ee2097a0993eba303b63a28bf  kernel/private/classes/views/workflow/workflowlist.php
@@ -6089,7 +6089,7 @@ b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.ph
 72ac1e093ee82d6fbf003d4432240000  phpcs.xml.dist
 c88f3f90d20b8debb746a3716b82a87c  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-d21abfe1b17647648b25567365352be7  phpunit.xml
+0fc54bdefc39043b17e62610389079cd  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -6847,6 +6847,7 @@ cff81497a83267ad5f42597bb6c66c5c  tests/tests/kernel/classes/eZURLTest.php
 b80a0b72065201d4e81e9dbd79ed9ec0  tests/tests/kernel/classes/eZURLWildcardTest.php
 958c3b8e79be5a4fd876011251c836e4  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 1cdc6174223b1ee7b8ffd262ed6eee8c  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
+84f351231c9f1560c61cc1d443ff9ea0  tests/tests/kernel/classes/eZWorkflowProcessListTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 5571584f622d8c32b884f5d306511331  tests/tests/kernel/classes/expVelocityEnginesTest.php
@@ -6990,6 +6991,7 @@ bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regressi
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 c01a0be8748de9b658d46d21579d34c1  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 f685b80d3c26e9a851940b63e056c6c5  tests/tests/kernel/classes/workflowtypes/ezapprovetype_regression.php
+b2e46951bdb7165f0a97de3990a4e4e4  tests/tests/kernel/common/eZKernelCommonOperatorsTest.php
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
 7584758a4f40031bd44aedd755614046  tests/tests/kernel/content/eZContentOperationCollectionTest.php
@@ -7258,7 +7260,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 7ebd889c25aaa5abe2da1eb7814049cd  tests/tests/kernel/private/webdav/siteaccess/site.ini.append.php.replace
 5b1c01f8627cfce013a8da79b43212e1  tests/tests/kernel/private/webdav/wrappers.php
 7672ec3f2714756db70059a8fdabf898  tests/tests/kernel/search/ezsearchengine_regression.php
-dbe5855d006b12902cf9ca7795bd1af7  tests/tests/kernel/suite.php
+a9ac4f63b0d44625488e08fe4b9dd733  tests/tests/kernel/suite.php
 d0fbfd88dc279221eee85b97921f6add  tests/tests/lib/ezdb/eZDBInterfaceTest.php
 26547ca2016f597eb9d4165358c37787  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 afa76fb7b9aaa0a1aaaea775252c6dcc  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php

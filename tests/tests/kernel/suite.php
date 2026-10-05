@@ -23,6 +23,7 @@ class eZKernelTestSuite extends ezpDatabaseTestSuite
         $this->addTestSuite( 'eZContentObjectTest' );
         $this->addTestSuite( 'eZContentObjectTest2' );
         $this->addTestSuite( 'eZContentVersionviewPathTest' );
+        $this->addTestSuite( 'eZWorkflowProcessListTest' );
         $this->addTestSuite( 'eZContentObjectTreeNodeRegression' );
         $this->addTestSuite( 'eZContentObjectTreeNodeTest' );
         $this->addTestSuite( 'eZContentObjectTreeNodeTest2' );

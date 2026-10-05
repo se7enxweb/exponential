@@ -63,39 +63,7 @@ class Processlist extends \Exponential\Runnable\ModuleView
         $plist = \eZWorkflowProcess::fetchList( $conds, true, $offset, $limit );
         $plistCount = \eZWorkflowProcess::count( \eZWorkflowProcess::definition(), $conds );
 
-        $totalProcessCount = 0;
-        $outList2 = array();
-        foreach ( $plist as $p )
-        {
-            $mementoMain = \eZOperationMemento::fetchMain( $p->attribute( 'memento_key' ) );
-            $mementoChild = \eZOperationMemento::fetchChild( $p->attribute( 'memento_key' ) );
-
-            if ( !$mementoMain or !$mementoChild )
-                continue;
-
-            $mementoMainData = $mementoMain->data();
-            $mementoChildData = $mementoChild->data();
-
-            $triggers = \eZTrigger::fetchList( array( 'module_name' => $mementoChildData['module_name'],
-                                                     'function_name' => $mementoChildData['operation_name'],
-                                                     'name' => $mementoChildData['name'] ) );
-            if ( count( $triggers ) > 0 )
-            {
-                $trigger = $triggers[0];
-                if ( is_object( $trigger ) )
-                {
-                    $nkey = $trigger->attribute( 'module_name' ) . '/' . $trigger->attribute( 'function_name' ) . '/' . $trigger->attribute( 'name' );
-
-                    if ( !isset( $outList2[ $nkey ] ) )
-                    {
-                        $outList2[ $nkey ] = array( 'trigger' => $trigger,
-                                                    'process_list' => array() );
-                    }
-                    $outList2[ $nkey ][ 'process_list' ][] = $p;
-                    $totalProcessCount++;
-                }
-            }
-        }
+        list( $outList2, $totalProcessCount ) = self::processesByTrigger( is_array( $plist ) ? $plist : array() );
 
         // Template handling
 
@@ -119,6 +87,51 @@ class Processlist extends \Exponential\Runnable\ModuleView
                                         'url' => false ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Groups the workflow processes by the trigger they wait in.
+     *
+     * The trigger is read from the child memento of the process. The main memento is not needed for that, and a
+     * process without one (for example one deferred to cron) used to be left out, so the list was empty although
+     * workflows were waiting.
+     *
+     * @param \eZWorkflowProcess[] $processList
+     * @return array array( array( '<module>/<function>/<name>' => array( 'trigger' => eZTrigger, 'process_list' => eZWorkflowProcess[] ) ), number of processes listed )
+     */
+    public static function processesByTrigger( array $processList )
+    {
+        $totalProcessCount = 0;
+        $outList = array();
+        foreach ( $processList as $p )
+        {
+            $mementoChild = \eZOperationMemento::fetchChild( $p->attribute( 'memento_key' ) );
+            if ( !$mementoChild )
+                continue;
+
+            $mementoChildData = $mementoChild->data();
+
+            $triggers = \eZTrigger::fetchList( array( 'module_name' => $mementoChildData['module_name'],
+                                                     'function_name' => $mementoChildData['operation_name'],
+                                                     'name' => $mementoChildData['name'] ) );
+            if ( count( $triggers ) > 0 )
+            {
+                $trigger = $triggers[0];
+                if ( is_object( $trigger ) )
+                {
+                    $nkey = $trigger->attribute( 'module_name' ) . '/' . $trigger->attribute( 'function_name' ) . '/' . $trigger->attribute( 'name' );
+
+                    if ( !isset( $outList[ $nkey ] ) )
+                    {
+                        $outList[ $nkey ] = array( 'trigger' => $trigger,
+                                                   'process_list' => array() );
+                    }
+                    $outList[ $nkey ][ 'process_list' ][] = $p;
+                    $totalProcessCount++;
+                }
+            }
+        }
+        return array( $outList, $totalProcessCount );
     }
 }
 
