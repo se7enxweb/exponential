@@ -69,7 +69,12 @@ class EzpSessionHandlerAdapterTest extends \PHPUnit\Framework\TestCase
     /**
      * setSaveHandler() registers the handler without a deprecation (six callbacks are deprecated since
      * PHP 8.4) and without session_module_name( 'user' ) (a ValueError since PHP 8.0).
+     *
+     * In a process of its own: output of any earlier test in the run (an included file with a newline after its
+     * closing tag) makes "headers already sent" true, and then no save handler can be set.
      */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState(false)]
     public function testSetSaveHandlerRaisesNoDeprecation()
     {
         if ( session_status() === PHP_SESSION_ACTIVE )
