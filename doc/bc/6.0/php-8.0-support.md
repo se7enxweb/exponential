@@ -13,7 +13,7 @@ wrapped in `function_exists()`.
 | Exception | Exponential Velocity, the optional application server, needs PHP 8.1 or later (see below). |
 | What changed in 6.0.15 | The few places that needed PHP 8.1 or later were made to work on 8.0; CI checks 8.0 on every push. |
 | Behaviour on 8.1 and later | Unchanged. Every fallback is used only where PHP lacks the function. |
-| Composer | `composer.json` declares `^8.0`. Velocity is suggested, not required; one package still declares `^8.1` (see "Installing with Composer"). |
+| Composer | `composer.json` declares `^8.0`. Velocity is suggested, not required; a plain `composer install` works on 8.0. |
 
 ## What was found and how it was fixed
 
@@ -109,8 +109,8 @@ code was checked too (PHPCompatibility, `php -l` with 8.0): it uses 8.1 and late
 
 `composer.json` declares `"php": "^8.0 || ^8.1 || ..."` since 6.0.15. The extensions that only declared `^8.1` in
 their metadata were released with `^8.0` (explayouts and its packages, the expsite packages, exp_enhanced_link,
-expchangeclass, expquery-translator, `exponential-legacy-installer` 2.2.4), and syndication 1.3.5, ezstarrating
-6.0.9, swark 1.0.5, birthday 1.3.3 and enhancedezbinaryfile 4.4.5 were released with fixes for code no PHP 8
+expchangeclass, expquery-translator, sevenx-themes-media 1.5.32, `exponential-legacy-installer` 2.2.4), and
+syndication 1.3.5, ezstarrating 6.0.9, swark 1.0.5, birthday 1.3.3 and enhancedezbinaryfile 4.4.5 were released with fixes for code no PHP 8
 could load.
 
 Velocity is no longer required: it moved to `"suggest"`, because it needs PHP 8.1. On PHP 8.1 or later, add it
@@ -122,12 +122,7 @@ composer require se7enxweb/exponential-velocity:~0.0.4.42
 
 | Package | Declares | Blocks 8.0 |
 |---|---|---|
-| `se7enxweb/sevenx-themes-media` | `^8.1 \|\| ^8.2 \|\| ^8.3 \|\| ^8.4` | yes, metadata only, until its next release |
 | `google/recaptcha` (via recaptcha) | 2.1.0 needs `>=8.4` | no: the requirement is `*`, so Composer picks 1.3.x on 8.0 |
 
-Until `sevenx-themes-media` is released with `^8.0`, install on PHP 8.0 with the PHP requirement ignored, as the
-CI job `php80` does (its code runs on 8.0; only its metadata says otherwise):
-
-```sh
-composer install --no-dev --ignore-platform-req=php
-```
+Every package `composer.json` requires allows PHP 8.0, so a plain `composer install --no-dev` works on RHEL 9's
+stock PHP. The CI job `php80` installs exactly that way, so a package that raises its minimum again fails there.
