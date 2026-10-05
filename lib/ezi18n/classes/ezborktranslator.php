@@ -75,7 +75,8 @@ class eZBorkTranslator extends eZTranslatorHandler
         $newTextBlocks = array();
         foreach ( $textBlocks as $text )
         {
-            if ( $text[0] == '%' )
+            // preg_split() gives an empty first block when the text starts with a placeholder
+            if ( $text === '' || $text[0] == '%' )
             {
                 $newTextBlocks[] = $text;
                 continue;
