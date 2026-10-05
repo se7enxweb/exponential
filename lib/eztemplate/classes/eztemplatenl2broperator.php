@@ -77,13 +77,15 @@ class eZTemplateNl2BrOperator
     }
 
     /*!
-     Display the variable.
+     Display the variable. The same as the compiled code of nl2brTransformation(): PHP's nl2br(), which keeps the
+     line breaks and puts <br /> before each of them (also before \r\n and \r).
     */
     function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace, $currentNamespace, &$operatorValue, $namedParameters, $placement )
     {
-        $operatorValue = str_replace( "\n",
-                                      "<br>",
-                                      $operatorValue );
+        if ( is_array( $operatorValue ) )
+            $operatorValue = array_map( function ( $value ) { return is_scalar( $value ) ? nl2br( (string)$value ) : $value; }, $operatorValue );
+        else
+            $operatorValue = nl2br( (string)$operatorValue );
     }
 
     /// The array of operators, used for registering operators
