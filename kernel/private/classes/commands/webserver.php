@@ -203,8 +203,8 @@ class Webserver extends \Exponential\Runnable\Command
             "Engines ([ServerSettings] Engine is the configured default; --engine=<name>\n" .
             "or --all reach the others for start, stop, restart, graceful, kill, status):\n" .
             "  php         PHP's built-in web server: development, always works\n" .
-            "  frankenphp  FrankenPHP (Caddy with PHP built in): production\n" .
-            "  qbix        the bundled Qbix server: experimental, for tests\n" .
+            "  qbix        Velocity's own server: recommended for every stage, development to production\n" .
+            "  frankenphp  FrankenPHP (Caddy with PHP built in): production-ready alternative\n" .
             "  Each has its own port, pid file and logs, so they can run side by side.\n\n" .
             "Configure once, then run directly:\n" .
             "  The first start with no saved engine resolves the effective engine, port,\n" .

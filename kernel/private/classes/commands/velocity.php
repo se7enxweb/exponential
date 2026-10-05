@@ -279,6 +279,10 @@ class Velocity extends \Exponential\Runnable\Command
             "  ctl        the engine's qbixctl with this installation's tree, site and pid file:\n" .
             "             ctl status | ctl configtest | ctl layout | ctl ensite NAME ...\n" .
             "             (frankenphp: ctl caddyfile | validate | adapt | version | list-modules)\n" .
+            "  ssl        the certificates it serves (qbix only): ssl show [host...] (--json)\n" .
+            "             ssl renew [host...]; the running server picks a renewal up within\n" .
+            "             a minute, no restart\n" .
+            "  ext        the PHP extensions the server provides (see below)\n" .
             "  install    put the engine's binary in place (frankenphp: download the pinned\n" .
             "             release and verify its SHA-256; --force, --from=<file>, --check,\n" .
             "             --trust-github-digest; qbix: nothing to do)\n\n" .
