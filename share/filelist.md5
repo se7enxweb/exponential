@@ -2869,7 +2869,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-53be2fc173e336b266537711fdcc40c9  doc/changelogs/6.0/6.0.15.md
+2962bda300105e713265fb71619e9ff0  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4662,7 +4662,7 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 84a3447a01864a5da11162284520abca  kernel/classes/expcachewarm.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
 f83e2e3dea26d0502fff22c89939e0ea  kernel/classes/expcollaborationgroupmanager.php
-8911dfbd461e3246d1fb698c1b8fae7c  kernel/classes/expcollaborationinbox.php
+027f1a4c2d2834c623131b188c540872  kernel/classes/expcollaborationinbox.php
 e7456184eb299387e3eed677ae8ea469  kernel/classes/expcollaborationsampledata.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
@@ -4719,7 +4719,7 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 f7a45290c6e4e9c95b8920ad01823d65  kernel/classes/ezcontentfunctions.php
 dba862f2c686e4e505aa22c66b3b2c9a  kernel/classes/ezcontentlanguage.php
-e9c01ec761e64db2469b25fd76f2f3d0  kernel/classes/ezcontentobject.php
+8f71b3b96f02e9e5c930dca412bf6a61  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
@@ -6561,14 +6561,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-f5546a31d6745fc0b7778031cf31c62b  share/translations/eng-US/translation.ts
+632bc573a209b72a3563aaa32e7f2f20  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-691f3054de8db46cc5eed4fc44e6bac6  share/translations/ger-DE/translation.ts
+728d218bb7e3acde59de8b997763e09c  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6793,7 +6793,7 @@ e6b808f293e1210884853e65c6b5dd7f  tests/tests/kernel/classes/clusterfilehandlers
 23b1f1b4c181d707aa1ba7efdd4d54f0  tests/tests/kernel/classes/clusterfilehandlers/ezfsfilehandler_test.php
 2aadf55ec4270a1f5b84852f2b47d933  tests/tests/kernel/classes/clusterfilehandlers/sql/cluster_dfs_schema.sql
 3f7335c9a045d4e42a926f5101a73a3e  tests/tests/kernel/classes/clusterfilehandlers/suite.php
-2b8a1f299e6048007a633e5b5569e00a  tests/tests/kernel/classes/collaboration/CollaborationSampleDataTest.php
+32678a5e41a48c6e006f21154cf8b8df  tests/tests/kernel/classes/collaboration/CollaborationSampleDataTest.php
 93c9c53ad735f76a5bd4bbb2961fb469  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
 3dc0333408fb6ae63ad09e93427f72d5  tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php
 e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php
@@ -6805,7 +6805,7 @@ d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItem
 edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsTest.php
 3391b6094e41c01c2e3ef953b1fbef3a  tests/tests/kernel/classes/eZContentObjectStateGroupTest.php
 a8745a8d6011fe2c7fcfe4c0413a61ce  tests/tests/kernel/classes/eZContentObjectStateTest.php
-32155f787d689defbf5a856249e6b47f  tests/tests/kernel/classes/eZContentObjectTest.php
+660a77e9da6c44da769aeacb132b044d  tests/tests/kernel/classes/eZContentObjectTest.php
 c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTreeNodeTest.php
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
 ae5b1048f8e08ec7094ae01547fdcee1  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
