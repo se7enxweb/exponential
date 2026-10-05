@@ -1313,6 +1313,7 @@ return array(
       'ezpRouteMethodNotAllowedException'                            => 'kernel/private/rest/classes/exceptions/route_method_not_allowed.php',
       'ezpSearchEngine'                                              => 'kernel/private/interfaces/ezpsearchengine.php',
       'ezpSessionHandler'                                            => 'lib/ezsession/classes/ezpsessionhandler.php',
+      'ezpSessionHandlerAdapter'                                     => 'lib/ezsession/classes/ezpsessionhandleradapter.php',
       'ezpSessionHandlerDB'                                          => 'lib/ezsession/classes/ezpsessionhandlerdb.php',
       'ezpSessionHandlerPHP'                                         => 'lib/ezsession/classes/ezpsessionhandlerphp.php',
       'ezpSessionHandlerSymfony'                                     => 'lib/ezsession/classes/ezpsessionhandlersymfony.php',
