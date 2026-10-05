@@ -912,6 +912,10 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $this->assertSame( 'approved', CjwNewsletterApprovalFlow::state( $edition->attribute( 'id' ), $version ) );
         $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $this->runView( 'approval', array( $edition->attribute( 'id' ), 999 ) )['module']->errorCode() );
         $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $this->runView( 'approval', array( self::LIST_OBJECT_ID ) )['module']->errorCode() );
+        // the view checks newsletter/editorial or newsletter/approve itself
+        $this->loginAnonymous();
+        $this->assertSame( eZError::KERNEL_ACCESS_DENIED, $this->runView( 'approval', array( $edition->attribute( 'id' ), $version ) )['module']->errorCode() );
+        $this->loginAdmin();
     }
 
     public function testED32FetchFunctionsCheckAccess()
