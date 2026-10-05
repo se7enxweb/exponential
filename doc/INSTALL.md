@@ -36,13 +36,14 @@ a script as `root`, add `--allow-root-user`; the script says so when it is neede
 *Full chapter: [01-introduction](install/01-introduction.md)*
 
 An installation is the Exponential kernel, the extensions listed in `composer.json`, a site package with its
-content and design, and three siteaccesses:
+content and design, and three siteaccesses. Their names are always `site`, `admin` and `editor`; what you choose
+during the install is the URL path, port or host name that leads to each (the match value):
 
-| Siteaccess | Default name | For |
+| Siteaccess | For | Default match value with `exp:install` |
 |---|---|---|
-| public site | `site` (wizard: from the package) | visitors |
-| administration | `admin` | administrators |
-| editor | `editor` | editors: the administration for content only, without setup, design and developer tools |
+| `site` | visitors | the path `/site` (or port 8080, or the host you give) |
+| `admin` | administrators | the path `/admin` (or port 8081, or the admin host you give) |
+| `editor` | editors: the administration for content only, without setup, design and developer tools | the path `/editor` (or the public port + 2, or `edit.<public host without www.>`) |
 
 The shortest path that works needs only PHP and Composer. It installs on SQLite (no database server) and serves the
 site with the PHP server that Exponential can start for you:
@@ -71,7 +72,8 @@ Apache/nginx with PHP-FPM ([section 8](#8-serve-the-site-web-server-https-and-pe
 | | |
 |---|---|
 | Version | **PHP 8.0 to 8.5**. `composer.json` declares `^8.0` (and accepts later 8.x). PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux 9, Rocky Linux 9) runs Exponential under Apache or PHP-FPM. Use the newest PHP your system offers. See [PHP 8.0 support](bc/6.0/php-8.0-support.md). |
-| Exponential Velocity | needs **PHP 8.1** or later. |
+| Exponential Velocity | needs **PHP 8.1** or later and the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). |
+| Release tags | `v6.0.8` to `v6.0.14` require PHP 8.1; on PHP 8.0 install the 6.0.15 line (`dev-main`) until its tag is published. |
 | 64-bit PHP | needed for more than 30 languages (`composer.json`, `suggest`). |
 | `memory_limit` | at least `64M` (setup check `memory_limit`). Restart the web server or PHP-FPM after editing `php.ini`. |
 | `max_execution_time` | at least `30` seconds (setup check `execution_time`). |
@@ -223,15 +225,15 @@ The order is the step table in `kernel/setup/steps/ezstep_data.php`.
 | 3 | System finetuning | Optional checks (`curl`, GD, ImageMagick, the other database extensions, TrueType text functions, `open_basedir`). Fix and press **Finetune**, or press **Next** to go on. |
 | 4 | Outgoing Email | Sendmail/MTA, or SMTP with server, user and password. |
 | 5 | Choose database system | SQLite is listed first and preselected (`settings/setup.ini [DatabaseSettings] DefaultType=sqlite3`). If the `sqlite3` extension is missing, the first available system is chosen and the page says so. |
-| 6 | Database initialization | Server, port, database name, user, password, socket. For SQLite only the file name; the Database field lists the SQLite files already in `var/storage/sqlite3/`. |
+| 6 | Database initialization | Server, port, database name, user, password, socket. For SQLite only the file name (default `sqlite.db`, kept in `var/storage/sqlite3/`); the Database field of Site details later offers the SQLite files already there. |
 | 7 | Language support | The primary language and any additional languages. |
 | 8 | Site package | The site package to install; the bundled one is preselected. |
-| 9 | Package language options | Shown when the package has languages you did not choose: map them to one of yours. |
-| 10 | Site access configuration | How the siteaccesses are told apart: by URL path (`/site`, `/admin`), by port, or by host name. |
-| 11 | Site details | Title, URL, the names of the public, admin and editor siteaccesses (or their ports, or host names; the editor is prefilled `editor`, `8082` or `edit.<host>`), and what to do with a database that already holds data. |
-| 12 | Site administrator | First name, last name, e-mail and password of the `admin` user. An empty or well-known password (such as `publish`) is replaced with a generated one, written once to `var/log/initial-admin-password`. |
+| 9 | Package language options | Shown when the package has languages you did not choose: create each as a language of its own (preselected), map it to one of yours, or skip its content. |
+| 10 | Site access configuration | How the siteaccesses are told apart: by URL path, by port, or by host name. |
+| 11 | Site details | Title, URL, the match values of `site`, `admin` and `editor` (URL paths are prefilled with the package identifier, *identifier*`_admin` and `editor`; ports `8080`, `8081`, `8082`; host names *identifier*`.`*host*, *identifier*`-admin.`*host*, `edit.`*host*). The wizard refuses `admin` and `user` as values. Also the sender of the site's optional e-mail, and what to do with a database that already holds data. |
+| 12 | Site administrator | First name, last name, e-mail and password of the `admin` user. The password must be at least 10 characters (`site.ini [UserSettings] MinPasswordLength`); an empty one is refused. |
 | 13 | Site security | Advice when the site does not run in virtual host mode: copy the rules with `cp .htaccess_root .htaccess`. |
-| 14 | Registration | Whether to send the optional registration e-mail. |
+| 14 | Registration | Nothing to enter: a page about the community. The wizard sends no registration e-mail. |
 | — | Create sites | Not a page: the database schema and data, the packages and the `settings/siteaccess/` files are written here. |
 | 15 | Finished | The addresses of the public, admin and editor sites. |
 
@@ -250,9 +252,9 @@ browser and reads every answer from `kickstart.ini` in the installation root. Th
 ### The commands
 
 ```bash
-php bin/php/console exp:kickstarter ini            # write kickstart.ini, asking a few questions
+php bin/php/console exp:kickstarter ini            # write kickstart.ini in an interactive editor
 php bin/php/console exp:kickstarter ini --yes      # write it with the built-in defaults, no questions
-php bin/php/console exp:kickstarter run --dry-run  # check kickstart.ini and the packages, write nothing
+php bin/php/console exp:kickstarter run --dry-run  # check kickstart.ini, the database and the packages
 php bin/php/console exp:kickstarter run --force    # install
 ```
 
@@ -260,19 +262,22 @@ php bin/php/console exp:kickstarter run --force    # install
 
 | Subcommand and option | Meaning |
 |---|---|
-| `ini` | Write `kickstart.ini` from `kickstart.ini-dist`, asking for the values. |
-| `ini --yes`, `-y` | Accept the defaults and write without asking. |
-| `ini --defaults`, `-d` | Copy the values of `kickstart.ini-dist` verbatim. |
-| `run` | Run the steps from `welcome` to `final`. |
-| `run --force` | Required whenever the steps include `CreateSites`, the step that writes the database and settings. Without it `run` stops with "Re-run with --force". |
-| `run --dry-run` | Validate `kickstart.ini`, run `DatabaseChoice` to `Registration`, download the site package and its dependencies into a temporary `var/storage/packages/dryrun/` (removed again), and stop before `CreateSites`. The database must be reachable; nothing is written to it. |
+| `ini` | Write or edit `kickstart.ini` from `kickstart.ini-dist` in an interactive editor (needs a terminal). |
+| `ini --yes`, `-y` | Accept the built-in defaults and write without asking. Edit the result before you run it: its `Database=ezp` is not a valid SQLite file name, `DatabaseAction=skip` installs nothing and `URL` is empty. |
+| `ini --defaults`, `-d` | Copy the example values of `kickstart.ini-dist`. |
+| `ini --from-installed` | Take the database server, name and user (never the password) of an installed siteaccess as defaults. The file then points at a live database. |
+| `run` | Run the steps from `Welcome` to `Final`. |
+| `run --force` | Required whenever the steps include `CreateSites`, the step that writes the database and settings. Without it `run` stops with "Re-run with --force to confirm you want to install the site package." |
+| `run --dry-run` | Validate `kickstart.ini`, run `DatabaseChoice` to `SiteDetails`, download the site package and its dependencies into a temporary `var/storage/packages/dryrun/` (removed again), and stop. The database must be reachable; nothing is written to it, no password is generated and no mail sent. |
 | `run --list-steps` | List the steps and exit. Changes nothing. |
-| `run --start-step=<step>`, `--stop-step=<step>` | Run part of the steps, for example to resume after a failure: `run --force --start-step=SiteDetails`. |
+| `run --start-step=<step>`, `--stop-step=<step>` | Run part of the steps, for diagnosis. A run cannot resume an earlier one: a start step whose later steps need the results of earlier ones is refused, with the step to start at. After a failure, fix the cause and run the whole sequence again. |
 
-While `run --force` rebuilds the database, the site answers every visitor with the maintenance page. Every run is
-logged to `var/log/kickstart.log` with passwords masked (earlier runs are kept as `kickstart.log.1` to `.9`;
-`EXP_KICKSTART_LOG=0` turns the log off). In kickstart mode the site package is always downloaded from the remote
-package repository configured in `package.ini`.
+While `run --force` rebuilds the database, the site answers every visitor with the maintenance page; a maintenance
+window that was already open is kept, and after a failed step the page stays until you run again or
+`php bin/php/maintenance.php off`. Every run is logged to `var/log/kickstart.log` with passwords masked (earlier runs
+are kept as `kickstart.log.1` to `.9`; `EXP_KICKSTART_LOG=0` turns the log off). The site package is taken from
+`var/storage/packages/` when it is already imported there; otherwise it is downloaded, with the packages it requires,
+from the package index configured in `settings/package.ini`.
 
 ### kickstart.ini
 
@@ -346,10 +351,11 @@ Send=false
 | `site_details` | `Title`, `URL`, `OrganisationName`, `OrganisationAddress`, `Access`, `AdminAccess`, `EditorAccess`, `AccessPort`, `AdminAccessPort`, `EditorAccessPort`, `AccessHostname`, `AdminAccessHostname`, `EditorAccessHostname`, `Database`, `DatabaseAction` |
 | `site_admin` | `FirstName`, `LastName`, `Email`, `Password` (empty: one is generated and written to `var/log/initial-admin-password`) |
 | `security` | `Continue` only |
-| `registration` | `Comments`, `Send` |
+| `registration` | `Send` (default `false`; `true` mails a report only to `settings/setup.ini [RegistrationSettings] Receiver`, which is empty by default, so nothing is sent), `UserData[...]` |
 
-Every locale the site package uses must be in `Languages[]` (or be mapped to the primary language); otherwise
-objects in that language are imported but cannot be found in the tree.
+Every language must have a locale in `share/locale`, or the run stops in `LanguageOptions` and names the language.
+Languages of the site package that you did not list are created as languages of their own, so their content stays
+reachable.
 
 ### DatabaseAction: read this before you run
 
@@ -366,7 +372,8 @@ objects in that language are imported but cannot be found in the tree.
 
 - Run again with the same `kickstart.ini` for an identical install. With `DatabaseAction=remove` this replaces the
   database again.
-- Resume after a failure with `--start-step=<step>`; see the steps with `run --list-steps`.
+- After a failure, fix the cause (the failing step and its message are in the output and in `var/log/setup.log`)
+  and run the whole sequence again; with `DatabaseAction=remove` the second run replaces what the first left.
 - `ini` and `run` delete the cached `var/cache/ini/kickstart-*.php` themselves. If you edit `kickstart.ini` by hand
   and see old values, delete those files.
 - When you install onto a different database engine than the one the installation used before, first set
@@ -406,11 +413,12 @@ EXP_INSTALL_DB_PASSWORD='secret' php bin/php/console exp:install --db=mysql --db
 | `--package=` | `sevenx_multisite` | site package |
 | `--language=`, `--languages=` | `eng-US` | primary language; more as a comma list |
 | `--title=` | `Exponential` | site name |
-| `--url=` | `http://localhost` | where the site is |
+| `--url=` | `http://localhost` (`http://<--host>` with `--access=host`) | where the site is; give the real address, it ends up in every link the site writes into mails |
 | `--access=` | `url` | `url`, `host` or `port` |
-| `--site-access=`, `--admin-access=` | `site`, `admin` | siteaccess names |
-| `--host=`, `--admin-host=` | — | host names (imply `--access=host`) |
-| `--port=`, `--admin-port=` | `8080`, `8081` | ports for `--access=port` |
+| `--site-access=`, `--admin-access=`, `--editor-access=` | `site`, `admin`, `editor` | the URL paths of the three siteaccesses (their names stay `site`, `admin`, `editor`) |
+| `--host=`, `--admin-host=`, `--editor-host=` | —, —, `edit.<--host without www.>` | host names (imply `--access=host`; `--host` and `--admin-host` are both required) |
+| `--port=`, `--admin-port=`, `--editor-port=` | `8080`, `8081`, `--port` + 2 | ports for `--access=port` |
+| `--organisation-name=`, `--organisation-address=` | the site name, empty | the sender of the site's optional e-mail and its postal address |
 | `--email=`, `--first-name=`, `--last-name=` | | the administrator |
 | `--password=` | generated | kept only when it has at least 10 characters (`site.ini [UserSettings] MinPasswordLength`) and is not a well-known one; otherwise replaced by a generated one |
 | `--random-password` | | generate a 24-character password, shown once and written to `var/log/initial-admin-password` |
@@ -419,7 +427,7 @@ EXP_INSTALL_DB_PASSWORD='secret' php bin/php/console exp:install --db=mysql --db
 | `--print` | | show the configuration that would be used, and stop |
 | `--help` | | all options |
 
-The summary at the end lists the site address, the admin login address, the user and the password. The
+The summary at the end lists the site, admin login and editor addresses, the user and the password. The
 configuration used is kept in `var/log/exp-install-<date>.ini` with passwords masked. More:
 [Install in one command](features/6.0/install-in-one-command.md).
 
@@ -561,6 +569,16 @@ sudo chown -R <web user>:<web group> design extension settings var
 When command-line scripts and cronjobs run as a different user from the web server, give them a common group
 that can write the same files.
 
+### Behind a reverse proxy or load balancer
+
+Forwarded headers (`X-Forwarded-For`, `X-Forwarded-Proto`, `X-Forwarded-Host`) are believed only from the addresses
+in `site.ini [HTTPHeaderSettings] TrustedProxies[]`, by default `127.0.0.1` and `::1`. A proxy on another machine must
+be added there (for example `TrustedProxies[]=10.0.0.0/8` in `settings/override/site.ini.append.php`), or the site
+builds `http://` links behind an HTTPS proxy and, with `ClientIpByCustomHTTPHeader=X-Forwarded-For`, sees the proxy's
+address instead of the visitor's. Details:
+[chapter 8](install/08-serving-the-site.md) and
+[Forwarded headers are trusted only from configured proxies](bc/6.0/trusted-proxies.md).
+
 ## 9. SQLite in production
 
 *Full chapter: [09-databases](install/09-databases.md)*
@@ -631,7 +649,8 @@ More: [SQLite database support](features/6.0/sqlite-database.md),
 
 1. **Log in** at the admin address the installer printed (for example `/admin/user/login`) as `admin`. Change the
    password (**Change password** in the user menu) and delete `var/log/initial-admin-password`. A lost password is
-   reset with `php bin/php/resetuserpassword.php -u admin -g`.
+   reset as root with `php bin/php/resetuserpassword.php --allow-root-user -u admin -g` (without root, authorize with
+   another administrator: `-a <login> -ap <password>`).
 2. **Check the front page and the logs.** Open the site address. On an error read `var/log/error.log` and
    [Repairing an installation](bc/6.0/repair.md).
 3. **Set up the cronjobs.** They publish scheduled content, send notifications and newsletters and clean up.
@@ -685,7 +704,7 @@ Do not run the installer over an existing site. Follow [Upgrading](guides/upgrad
 earlier 6.0.x to the current line, with the database update and the checklists per release.
 
 The online manual has further installation notes:
-https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
+https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
 
 ## 12. Troubleshooting
 
@@ -701,11 +720,12 @@ https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
 | `exp:install`: "This directory already holds an installation" | Add `--force` only if you mean to replace it; `--dry-run` checks without changing anything. |
 | `kickstart.ini` values are ignored | Leading whitespace before sections or keys, a missing `Continue=true`, or a stale `var/cache/ini/kickstart-*.php`. |
 | After switching database engine no page loads | `DatabaseImplementation` in `settings/override/site.ini.append.php` still names the old engine. Set it to the new one. |
-| Pages render but images or sub-items are missing | The site package uses a locale that is not in `Languages[]`. Add it and install again with `DatabaseAction=remove`. |
+| Kickstarter: "The database file name is not valid" after `ini --yes` | `--yes` writes `Database=ezp`; SQLite needs a name ending in `.db`, `.db3`, `.sqlite` or `.sqlite3`. Set `[database_init] Database` and `[site_details] Database` to, for example, `exponential.db`, and `DatabaseAction=remove`. |
+| Kickstarter: "--start-step=... cannot work" | A run cannot resume an earlier one. Fix the cause and run from `Welcome` (the default). |
 | SQLite: "database is busy: the transaction could not start within N s" | Another write held the lock for the whole `SQLiteTransactionWait`. Nothing was written; retry, or raise the setting (below the request timeout). |
 | 404 for every page under Apache | `.htaccess` is not read (`AllowOverride All`) or `mod_rewrite` is off; did you `cp .htaccess_root .htaccess`? |
 | A white page or 500 | Read `var/log/error.log`; check `php -v` and that `vendor/` exists (`composer install`). |
 | A change does not show under Velocity | Workers keep the old code: `exp:velocity restart` (or `deploy`), then `exp:velocity cache clear`. |
-| The administrator password is lost | `php bin/php/resetuserpassword.php -u admin -g`, see [Reset a user password](features/6.0/reset-user-password.md). |
+| The administrator password is lost | As root: `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`; otherwise authorize with another administrator (`-a <login> -ap <password>`). See [Reset a user password](features/6.0/reset-user-password.md). |
 
 More: [Repairing an installation](bc/6.0/repair.md), [Maintenance mode](features/6.0/maintenance-mode.md).
