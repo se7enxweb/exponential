@@ -29750,6 +29750,10 @@ The item be can viewed by using the URL below.</translation>
         <source>(Owner: %owner)</source>
         <translation>(Owner: %owner)</translation>
     </message>
+    <message>
+        <source>Collaboration and approvals</source>
+        <translation>Collaboration and approvals</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/notification/addingresult</name>
@@ -47214,6 +47218,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your subscriptions:</source>
         <translation>Your subscriptions:</translation>
     </message>
+    <message>
+        <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
+        <translation>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -47287,6 +47295,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not ask for this, ignore this e-mail.</source>
         <translation>If you did not ask for this, ignore this e-mail.</translation>
+    </message>
+    <message>
+        <source>Change of the e-mail address of the account</source>
+        <translation>Change of the e-mail address of the account</translation>
+    </message>
+    <message>
+        <source>The e-mail address of your account is being changed</source>
+        <translation>The e-mail address of your account is being changed</translation>
+    </message>
+    <message>
+        <source>Someone asked to change the e-mail address of your account to %email. The change takes effect only when it is confirmed with the link sent to the new address; until then your account keeps this address.</source>
+        <translation>Someone asked to change the e-mail address of your account to %email. The change takes effect only when it is confirmed with the link sent to the new address; until then your account keeps this address.</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, change your password and contact us.</source>
+        <translation>If you did not ask for this, change your password and contact us.</translation>
     </message>
 </context>
 <context>

@@ -34704,6 +34704,10 @@ Das Objekt können Sie bei untenstehendem Link aufrufen.</translation>
         <source>(Owner: %owner)</source>
         <translation>(Besitzer: %owner)</translation>
     </message>
+    <message>
+        <source>Collaboration and approvals</source>
+        <translation>Zusammenarbeit und Freigaben</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/notification/addingresult</name>
@@ -54249,6 +54253,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Your subscriptions:</source>
         <translation>Ihre Abonnements:</translation>
     </message>
+    <message>
+        <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
+        <translation>Die neue E-Mail-Adresse %email wartet auf ihre Bestätigung: Öffnen Sie den Link, den wir dorthin gesendet haben. Bis dahin behält dieses Konto %current.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -54322,6 +54330,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>If you did not ask for this, ignore this e-mail.</source>
         <translation>Wenn Sie das nicht angefordert haben, ignorieren Sie diese E-Mail.</translation>
+    </message>
+    <message>
+        <source>Change of the e-mail address of the account</source>
+        <translation>Änderung der E-Mail-Adresse des Kontos</translation>
+    </message>
+    <message>
+        <source>The e-mail address of your account is being changed</source>
+        <translation>Die E-Mail-Adresse Ihres Kontos wird geändert</translation>
+    </message>
+    <message>
+        <source>Someone asked to change the e-mail address of your account to %email. The change takes effect only when it is confirmed with the link sent to the new address; until then your account keeps this address.</source>
+        <translation>Jemand hat beantragt, die E-Mail-Adresse Ihres Kontos in %email zu ändern. Die Änderung gilt erst, wenn sie mit dem Link bestätigt wird, der an die neue Adresse gesendet wurde; bis dahin behält Ihr Konto diese Adresse.</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, change your password and contact us.</source>
+        <translation>Wenn Sie das nicht beantragt haben, ändern Sie Ihr Passwort und wenden Sie sich an uns.</translation>
     </message>
 </context>
 <context>
