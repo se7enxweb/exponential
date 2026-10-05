@@ -197,14 +197,21 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    `settings/override/`, `settings/siteaccess/`, your own `extension/` directories and your own `design/` directories;
    or, when the site is a Composer project, change the constraint of `se7enxweb/exponential` in your `composer.json`
    and run `composer update se7enxweb/exponential`. Never let a tool replace your own settings or extensions.
-2. **Record the version.** No schema change is needed from 5.4 to 6.0.0:
+2. **Record the version and widen `ezuser.password_hash`.** The file records 6.0.0 and widens
+   `ezuser.password_hash` from the `varchar(50)` of every 5.x schema to 255, the width of the kernel schema:
 
    ```bash
    mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
    psql -U USER -d DATABASE -f update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
    ```
 
-   The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes above). Details:
+   Apply the whole file: the widening is not optional. With the default `[UserSettings] HashType=php_default` and
+   `UpdateHash=true` every user's hash is rewritten at the first sign-in to a 60-character bcrypt hash, which a
+   50-character column refuses or cuts, and the user cannot sign in again. The statement gives the column the
+   definition it already has on a newer database, so it is harmless there. Copies of the file from before October 2026
+   only recorded the version; the 6.0.0 to 6.0.15 file of 11.6 widens the column too, for a site that used one. Oracle
+   (`ezoracle`) has no such file: run `ALTER TABLE ezuser MODIFY ( password_hash VARCHAR2(255) );` with your Oracle
+   client. The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes above). Details:
    [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
 3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`); Velocity needs 8.1. Releases 6.0.8 to
    6.0.14 required 8.1. A site that must stay on PHP 7.4 stays on 6.0.7. Check your own extensions for PHP 8
@@ -250,7 +257,10 @@ prints PASS, FAIL or SKIP with the time of each and stops at the first failure. 
 ### Step 2: apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, for MySQL, PostgreSQL and SQLite.
-It records the version (`6.0.15stable`) and adds the tables and columns of the line: the PDF export footer
+It records the version (`6.0.15stable`), widens `ezuser.password_hash` to 255 on MySQL and PostgreSQL (for a site that
+came from 5.x with a copy of the 5.4 to 6.0.0 file from before October 2026; on a wide column it changes nothing; SQLite
+does not enforce the length of a `VARCHAR`, and an SQLite database was never a 5.x one) and adds the tables and
+columns of the line: the PDF export footer
 (`ezpdf_export.show_footer`, `footer_text`), OPML and podcast exports (`ezrss_export.opml_head`, `podcast_head`,
 table `ezrss_export_opml_item`), the audit index (`expaudit_cursor`, `expaudit_event`, `expaudit_file`), bookmark
 folders (`expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority`) and the e-mail preferences
@@ -258,6 +268,11 @@ folders (`expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority`) 
 
 Apply it **once, whole, in order**. If the database already has a column, the statement fails and names it; skip only
 that statement.
+
+A site that came from 5.x and already applied an older copy of this file may still have the 50-character column
+(`SHOW COLUMNS FROM ezuser LIKE 'password_hash'`, or `\d ezuser` in `psql`). Do not apply the file again; run its one
+statement: `ALTER TABLE ezuser CHANGE password_hash password_hash VARCHAR(255) default NULL;` on MySQL or MariaDB,
+`ALTER TABLE ezuser ALTER COLUMN password_hash TYPE VARCHAR(255);` on PostgreSQL.
 
 ```bash
 mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql

@@ -11,6 +11,20 @@ UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version';
 UPDATE ezsite_data SET value='1' WHERE name='ezpublish-release';
 
 --
+-- ezuser.password_hash takes the hashes Exponential writes.
+--
+-- A database that came from 5.x has password_hash varchar(50), too narrow for
+-- the php_default (bcrypt, 60 characters) hash every user is given at the
+-- first sign-in. dbupdate-5.4.0-6.0.0.sql widens it since October 2026; this
+-- statement is here for a site that reached 6.0 with an older copy of that
+-- file. It gives the column the definition of the kernel schema, so on a
+-- database that already has it nothing changes. It comes first because the
+-- statements after it add columns and stop on a second run.
+--
+
+ALTER TABLE ezuser CHANGE password_hash password_hash VARCHAR(255) default NULL;
+
+--
 -- The pdf export carries its own footer wording.
 --
 -- Every page of every export used to read "Exponential PDF export", because

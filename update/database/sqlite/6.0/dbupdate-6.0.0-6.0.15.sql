@@ -4,6 +4,11 @@
 -- Each ALTER adds one column: SQLite takes only one per statement, and cannot
 -- drop one again, so run these once.
 --
+-- No statement widens ezuser.password_hash here, unlike the MySQL and
+-- PostgreSQL files: SQLite does not enforce the length of a VARCHAR, so a
+-- 60 character bcrypt hash fits whatever the column says, and an SQLite
+-- database was never a 5.x one; it was installed by 6.0 with varchar(255).
+--
 
 UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version';
 UPDATE ezsite_data SET value='1' WHERE name='ezpublish-release';

@@ -46,7 +46,7 @@ listed here with where this chapter covers it.
 | Copy designs, siteaccess settings, override settings, extensions (not the built-in ones), `config.php`, `config.cluster.php`, `var/storage/packages` | Same list, with the Exponential package for each built-in extension | [15.5](#155-extract-the-legacy-part) |
 | Copy binary files from `web/var/<site>/storage` (a symlink to `ezpublish_legacy/var`) | Same | [15.5](#155-extract-the-legacy-part) |
 | Re-apply permissions; `composer update` | Permissions as in chapter 8; never `composer update` over your own checkouts | [15.5](#155-extract-the-legacy-part) |
-| Apply `dbupdate-5.4.0-to-6.13.0.sql` from the new kernel | **Do not.** Apply the Exponential files; but one statement of that file, the wider `password_hash` column, is needed and is not in the Exponential 5.4 to 6.0 file | [15.7](#157-the-database-step-by-step), [15.9](#159-users-password-hashes-and-sessions) |
+| Apply `dbupdate-5.4.0-to-6.13.0.sql` from the new kernel | **Do not.** Apply the Exponential files; the one statement of that file Exponential needs, the wider `password_hash` column, is in the Exponential 5.4 to 6.0 file | [15.7](#157-the-database-step-by-step), [15.9](#159-users-password-hashes-and-sessions) |
 | Enterprise schemas (date-based publisher, form builder, notifications) | Not applicable | none |
 | Custom tags and their attribute types in RichText | Not applicable: custom tags stay `ezxmltext` custom tags, with every `ezoe_attributes.ini` type | [15.8](#158-field-types-against-datatypes) |
 | Varnish VCL; virtual host files in `doc/apache2`, `doc/nginx` | Exponential sends no purges to a proxy; its own caches replace it. Server configuration in chapter 8 | [15.14](#1514-caches), [15.18](#1518-serving-the-site) |
@@ -326,29 +326,34 @@ lines 45 to 51 in 6.0.15), and remove the override again afterwards: the default
 files if the site used the database cluster), with the data scripts of each step from
 [11.4](11-upgrading.md#114-from-310-to-53-the-old-chain). A 5.4 or 2014.11 database is already there.
 
-**4. Record 6.0.0.** No schema change from 5.4 to 6.0.0, only the version rows:
+**4. Record 6.0.0.** The 5.4 to 6.0.0 file records the version rows and widens `ezuser.password_hash` (step 5):
 
 ```bash
-mysql -u USER -p DATABASE -e "UPDATE ezsite_data SET value='6.0.0' WHERE name='ezpublish-version'; UPDATE ezsite_data SET value='1' WHERE name='ezpublish-release';"
+mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
 psql -U USER -d DATABASE -f update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
 ```
 
-The MySQL file `update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql` holds the same two `UPDATE` lines after a
-`SET storage_engine=InnoDB;` that MySQL 5.7.6 and later and MariaDB reject; the command above runs only the two lines.
+Apply the whole file. The MySQL file opens with `SET default_storage_engine=InnoDB;`, which every MySQL from 5.5.3 and
+MariaDB accept. Copies from before October 2026 opened with `SET storage_engine=InnoDB;`, which MySQL 5.7.5 and later
+and MariaDB 12.0 and later reject, and did not widen the column; take the current files.
 
-**5. Widen `ezuser.password_hash`.** Every 5.x schema up to 2017.08 has `password_hash varchar(50)`. Exponential stores
-`php_default` hashes (bcrypt, 60 characters) and, with `UpdateHash=true`, rewrites each user's hash at the first
-sign-in ([15.9](#159-users-password-hashes-and-sessions)). The 5.4 to 6.0.0 file does not widen the column, and the
-6.0.0 to 6.0.15 file does not either; the statement exists only in `update/database/<engine>/6.12/dbupdate-5.4.0-to-6.12.0.sql`.
-Run that one statement, not the file (its other lines would record version 6.12.0):
+**5. `ezuser.password_hash` is widened by the update file.** Every 5.x schema up to 2017.08 has
+`password_hash varchar(50)`. Exponential stores `php_default` hashes (bcrypt, 60 characters) and, with
+`UpdateHash=true`, rewrites each user's hash at the first sign-in ([15.9](#159-users-password-hashes-and-sessions)).
+The file of step 4 widens the column to 255, the width of the kernel schema, on MySQL and PostgreSQL, and so does the
+6.0.0 to 6.0.15 file of step 6, for a site that used an older copy of the step 4 file. On a column that is already
+255 wide the statement changes nothing. Nothing to run by hand, except:
+
+- **Oracle**: `ezoracle` ships no file for it; run `ALTER TABLE ezuser MODIFY ( password_hash VARCHAR2(255) );`
+  (standard syntax) with your Oracle client.
+- **A site that already applied an older copy of the 6.0.0 to 6.0.15 file** with the narrow column: run only the
+  widening statement of that file, not the file again:
 
 ```sql
 -- MySQL, MariaDB
 ALTER TABLE ezuser CHANGE password_hash password_hash VARCHAR(255) default NULL;
 -- PostgreSQL
 ALTER TABLE ezuser ALTER COLUMN password_hash TYPE VARCHAR(255);
--- Oracle (standard syntax; ezoracle ships no file for it)
-ALTER TABLE ezuser MODIFY ( password_hash VARCHAR2(255) );
 ```
 
 **6. Apply the 6.0 line.**
@@ -384,7 +389,7 @@ through the Public API or an import may lack it; find them with the query in the
 
 | Engine | Note |
 |---|---|
-| MySQL, MariaDB | Run the `UPDATE` lines without `SET storage_engine`. Convert old `utf8` (three-byte) tables if needed: `php bin/php/ezconvertdbcharset.php`; MyISAM tables: `php bin/php/ezconvertmysqltabletype.php --newtype=InnoDB`. Strict SQL mode (the default since MySQL 5.7) turns a too-long `password_hash` into an error instead of a silent cut; widen the column first either way. |
+| MySQL, MariaDB | Apply the update files whole (they say `SET default_storage_engine`). Convert old `utf8` (three-byte) tables if needed: `php bin/php/ezconvertdbcharset.php`; MyISAM tables: `php bin/php/ezconvertmysqltabletype.php --newtype=InnoDB`. Strict SQL mode (the default since MySQL 5.7) turns a too-long `password_hash` into an error instead of a silent cut; the 5.4 to 6.0.0 file widens the column before any user signs in. |
 | PostgreSQL | The `pgcrypto` extension must exist ([9.4](09-databases.md#94-postgresql)). |
 | Oracle | The `ezoracle` chain ends at 5.3; then steps 4 to 6 with your Oracle client, the audit tables through `createaudittables.php`. |
 | SQLite, MongoDB | 5.x never ran on them. Migrate on MySQL or PostgreSQL first, then switch engines: [9.9](09-databases.md#99-switching-an-existing-site-to-another-engine). |
@@ -752,7 +757,7 @@ And the issues of the 5.x path the vendor does not list:
 | An image alias is unknown, or has other dimensions | the alias list came from YAML | [15.10](#1510-image-variations-and-image-aliases) |
 | An attribute renders as nothing in a class | `ezrichtext`, or a field type without a legacy datatype | [15.8](#158-field-types-against-datatypes) |
 | `Class ... not found` or a fatal error in an extension | PHP 5 code, or no class map | `php bin/php/ezpgenerateautoloads.php -e`, `exp:checkclasses`, [PHP 8 support](../bc/6.0/php8.md) |
-| `SET storage_engine=InnoDB;` fails | MySQL 5.7.6 and later, MariaDB | run only the `UPDATE` lines ([15.7](#157-the-database-step-by-step)) |
+| `SET storage_engine=InnoDB;` fails | An update file from before October 2026 on MySQL 5.7.5 and later or MariaDB 12.0 and later | take the current file, which says `SET default_storage_engine` ([15.7](#157-the-database-step-by-step)) |
 | Pages stay stale behind Varnish | Exponential sends no purges | [15.14](#1514-caches) |
 | Cron does nothing | crontab still calls `ezpublish/console` | [15.16](#1516-cron-workflows-and-events) |
 | Clients of the old REST API get 404 | REST API v2 of the new stack is gone | [15.13](#1513-rest) |

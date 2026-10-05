@@ -270,20 +270,19 @@ Apply each file once, whole, in this order, starting after your version. The fil
 | 11 | 5.1 | `5.2/dbupdate-5.1.0-to-5.2.0.sql` | language masks to `BIGINT`; duplicate `ezurl_object_link` rows removed (MySQL); `ezcontentobject.language_mask` corrected; `eznode_assignment.priority`, `is_hidden` |
 | 12 | 5.2 | `5.3/dbupdate-5.2.0-to-5.3.0.sql` | index on `contentclassattribute_id` |
 | 13 | 5.3 | `5.4/dbupdate-5.3.0-to-5.4.0.sql` | drops `ezsearch_return_count`; empty dates stored as `NULL`; orphaned `ezuser_setting` rows removed |
-| 14 | 5.4 | `6.0/dbupdate-5.4.0-6.0.0.sql` (MySQL), `6.0/dbupdate-5.4-to-6.0.sql` (PostgreSQL) | records 6.0.0; no schema change |
+| 14 | 5.4 | `6.0/dbupdate-5.4.0-6.0.0.sql` (MySQL), `6.0/dbupdate-5.4-to-6.0.sql` (PostgreSQL) | records 6.0.0; widens `ezuser.password_hash` from 50 to 255 for the bcrypt hashes of 6.0 |
 | 15 | 6.0.0 | `6.0/dbupdate-6.0.0-6.0.15.sql` | the tables and columns of the 6.0 line ([11.6](11-upgrading.md#116-from-any-60x-to-today), step 2) |
 
 The 5.4 file says of its date update: "Skip this if updating from 5.3.3 or higher as this should ideally not be
 applied twice." Coming from 4.x you are below 5.3.3, so apply it.
 
-**MySQL.** Every old file from 4.0 to 5.4, and `6.0/dbupdate-5.4.0-6.0.0.sql`, starts with `SET storage_engine=...;`.
-That variable was removed in MySQL 5.7.6, and newer MySQL and MariaDB reject it. Strip the line as you apply the file;
-the tables are created with the server default engine, which is InnoDB on every MySQL and MariaDB that Exponential
-supports:
+**MySQL.** Every old file from 4.0 to 5.4, and `6.0/dbupdate-5.4.0-6.0.0.sql`, starts with
+`SET default_storage_engine=InnoDB;`, which every MySQL from 5.5.3 and MariaDB accept, so apply the files whole. Copies
+from before October 2026 started with `SET storage_engine=...;`, which MySQL 5.7.5 and later and MariaDB 12.0 and later
+reject; take the current files:
 
 ```bash
-grep -v '^SET storage_engine' update/database/mysql/4.1/dbupdate-4.0.0-to-4.1.0.sql \
-  | mysql -u USER -p DATABASE
+mysql -u USER -p DATABASE < update/database/mysql/4.1/dbupdate-4.0.0-to-4.1.0.sql
 ```
 
 The `mysql` client stops at the first failing statement in this mode. If that happens, note the statement, restore
@@ -741,7 +740,7 @@ Their Exponential counterparts first, then the ones specific to the legacy path:
 | "Unknown relation type 0" | Rows with `relation_type = 0` in `ezcontentobject_link` | The 5.1 file deletes them; `5.4/cleanuntranslatablerelations.php` and `cleanupfieldvaluerelations.php` remove other stale relations. |
 | Always-available flag on all fields | A behaviour of the vendor's newer public API | Not applicable: Exponential writes and reads `language_id` the way 4.x did. |
 | Sub-items not listed (empty `sort_key_string`) | Written by the vendor's newer public API | Not applicable for data written by 4.x. Sort keys are set when an attribute is stored; republishing an object rewrites them. |
-| `SET storage_engine` fails | Removed in MySQL 5.7.6 | Strip the line (14.5.5). |
+| `SET storage_engine` fails | An update file from before October 2026; the spelling was removed in MySQL 5.7.5 and MariaDB 12.0 | Take the current file, which says `SET default_storage_engine` (14.5.5). |
 | "Duplicate entry" adding `ezcontentobject_remote_id` or the digest address index | Duplicates older releases allowed | The preflight of 14.5.3. |
 | "Duplicate column" or "Duplicate key name" in the 4.0 to 4.2 files | The statements of a patch release already applied | Remove that `START: from` block from a copy (14.5.5). |
 | `Unknown column 'priority'` or similar from a repair script | Script run by today's kernel against an intermediate schema | Phase A first, then phase B (14.5.4). |
@@ -837,7 +836,7 @@ Database (on staging, then for real):
 - [ ] Tables InnoDB, database UTF-8, database default charset set (14.5.2)
 - [ ] Preflight queries return no rows, or their fix is planned (14.5.3)
 - [ ] `ezimage` checked; `updateimagesystem.php` run before the 4.1 file if needed (14.5.4)
-- [ ] Phase A: every SQL file from your version to 6.0.15, in order, `SET storage_engine` stripped, patch-release blocks handled, cluster files on the DFS database (14.5.5)
+- [ ] Phase A: every SQL file from your version to 6.0.15, in order, patch-release blocks handled, cluster files on the DFS database (14.5.5)
 - [ ] Phase B: repair scripts of every version passed, dry runs first (14.5.6)
 - [ ] `createaudittables.php` run; version row reads `6.0.15stable`
 

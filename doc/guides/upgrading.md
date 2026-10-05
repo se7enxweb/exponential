@@ -92,7 +92,10 @@ Then read the notes of the 5.90 line, which prepared the move to PHP 7 and a lon
    `extension/` and `design/` into it, or, when you manage the site with Composer, change the constraint of
    `se7enxweb/exponential` in your project's `composer.json` and run `composer update se7enxweb/exponential`.
    Do not let a tool replace your own settings or extensions.
-2. Record the new version in the database. No schema change is needed from 5.4:
+2. Record the new version in the database. The same file widens `ezuser.password_hash` from the `varchar(50)` of
+   every 5.x schema to 255: with the default `HashType=php_default` and `UpdateHash=true` each user's hash becomes a
+   60-character bcrypt hash at the first sign-in, which the old column cannot hold. On a column that is already wide
+   the statement changes nothing:
 
    ```bash
    mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
@@ -127,9 +130,12 @@ Then reload the PHP-FPM that serves the site (`systemctl reload <your-php-fpm-se
 ### C2. Apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` (MySQL, PostgreSQL and SQLite
-files exist). It records the version and adds the columns that later changes need (PDF export footer, OPML and
-podcast fields and more). Apply it **once, whole, in order**; if your database already has a column, the statement
-fails and tells you which one, skip only that statement:
+files exist). It records the version, widens `ezuser.password_hash` to 255 on MySQL and PostgreSQL (for a site that
+came from 5.x with an older copy of the Part B file; on a wide column nothing changes) and adds the columns that later
+changes need (PDF export footer, OPML and podcast fields and more). Apply it **once, whole, in order**; if your
+database already has a column, the statement fails and tells you which one, skip only that statement. A site from 5.x
+that applied an older copy of this file and still has a 50-character `password_hash` runs only the widening statement
+of the file, not the file again:
 
 ```bash
 mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
