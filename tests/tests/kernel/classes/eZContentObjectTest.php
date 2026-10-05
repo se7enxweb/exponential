@@ -284,6 +284,31 @@ class eZContentObjectTest extends ezpDatabaseTestCase
     }
 
     /**
+     * A new version of an object that was never published keeps the location of the version it is copied from.
+     *
+     * A new object gets a node assignment without remote_id and with op_code CREATE. createNewVersion() rebuilds the
+     * assignments from the existing nodes, and such an object has none; copyVersion() skipped every assignment without
+     * remote_id, so the copy of a rejected first version (approval workflow) had no location and asked for one again
+     * when it was published.
+     */
+    public function testNewVersionOfAnUnpublishedObjectKeepsItsLocation()
+    {
+        $class = eZContentClass::fetchByIdentifier( 'article' );
+        $object = $class->instantiate( eZUser::currentUserID() );
+        $object->createNodeAssignment( 2, true );
+
+        $newVersion = $object->createNewVersion( 1 );
+        $assignments = $newVersion->attribute( 'node_assignments' );
+
+        $this->assertCount( 1, $assignments );
+        $this->assertEquals( 2, $assignments[0]->attribute( 'parent_node' ) );
+        $this->assertEquals( eZNodeAssignment::OP_CODE_CREATE, $assignments[0]->attribute( 'op_code' ) );
+        $this->assertEquals( 1, $assignments[0]->attribute( 'is_main' ) );
+
+        $object->purge();
+    }
+
+    /**
      * Creates a user with a role of the given policies and logs it in; returns the user that was logged in before.
      *
      * @param array $policies array( array( module, function, limitations ), ... )
