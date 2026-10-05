@@ -96,7 +96,12 @@ class ezpRestHttpRequestParser extends ezcMvcHttpRequestParser
                 switch( $internalVariable )
                 {
                     case 'ResponseGroups':
-                        $variables[$internalVariable] = explode( ',', $_GET[$internalVariable] );
+                        // "a,b" or, from ResponseGroups[]=a&ResponseGroups[]=b, a list; explode() of a list was a
+                        // TypeError and the request ended with an error page
+                        $groups = $_GET[$internalVariable];
+                        $variables[$internalVariable] = is_array( $groups )
+                            ? array_values( array_filter( $groups, 'is_scalar' ) )
+                            : explode( ',', (string)$groups );
                         break;
 
                     default:
@@ -169,7 +174,8 @@ class ezpRestHttpRequestParser extends ezcMvcHttpRequestParser
         // Post is used as this is only meant for forms in legacy browsers.
         if ( $req->protocol === 'http-post' && isset( $_POST['_method'] ) )
         {
-            $method = strtolower( $_POST['_method'] );
+            // Only text names a method; a posted list (_method[]=...) is ignored instead of a TypeError
+            $method = is_string( $_POST['_method'] ) ? strtolower( $_POST['_method'] ) : '';
             if ( $method  === 'put' || $method === 'delete' )
                 $req->protocol = "http-{$method}";
 
