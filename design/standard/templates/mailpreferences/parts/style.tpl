@@ -116,7 +116,8 @@
 .mp-table thead th { font-size: .8em; color: var(--mp-muted); text-transform: uppercase; letter-spacing: .03em; border-top: 0; white-space: nowrap; }
 .mp-table td.mp-num { white-space: nowrap; }
 .mp-table form { margin: 0; }
-.mp-scroll { overflow-x: auto; }
+.mp-scroll { overflow-x: auto; position: relative; }
+.mp-table .mp-badge { white-space: normal; border-radius: .7em; }
 .mp-wording { color: var(--mp-muted); font-size: .92em; }
 /* Narrow screens: a table row becomes a small card, each cell with its column name */
 @container mp (max-width: 40em) {
