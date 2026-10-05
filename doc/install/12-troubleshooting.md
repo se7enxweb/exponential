@@ -23,10 +23,14 @@ so you can search for the exact text you see. Each row gives the cause and the f
 
 ## 12.2 Where the logs are
 
-All paths are relative to the installation root. A log file is rotated when it passes 200 KB
-(`eZLog::MAX_LOGFILE_SIZE = 204800`), and three old copies are kept (`.1` to `.3`, `eZLog::MAX_LOGROTATE_FILES`);
-`config.php` can change both with `CUSTOM_LOG_MAX_FILE_SIZE` and `CUSTOM_LOG_ROTATE_FILES` (commented examples in
-`config.php-RECOMMENDED`).
+All paths are relative to the installation root. A log file is rotated when it passes 200 KB, and three old copies
+are kept (`.1` to `.3`). Two pairs of constants in `config.php` change that (commented examples in
+`config.php-RECOMMENDED`): `EZPUBLISH_LOG_MAX_FILE_SIZE` and `EZPUBLISH_LOG_ROTATE_FILES` for the files `eZDebug`
+writes (`error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`; `eZDebug::MAX_LOGFILE_SIZE = 204800`,
+`MAX_LOGROTATE_FILES = 3`), and `CUSTOM_LOG_MAX_FILE_SIZE` and `CUSTOM_LOG_ROTATE_FILES` for the files written through
+`eZLog` (`storage.log`, `async.log`, `requestrules.log` and the "Unexpected error" lines). `0` rotate files switches
+the built-in rotation off. Why it matters when you search: an error from yesterday may already be in `error.log.1`
+or `.2`, so search all of them (`grep -h ERR-1A2B3C4D5E var/log/error.log*`).
 
 | File | Written by | What is in it |
 |---|---|---|
@@ -128,10 +132,10 @@ machines, put the debug settings in the development machine's settings only; see
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| Composer: PHP version does not satisfy `phpunit/phpunit` | `require-dev` asks for PHPUnit 13 (`^13.4`), which needs PHP 8.4.1; without a lock file Composer resolves it even with `--no-dev` | On PHP 8.0 to 8.3: `composer remove --dev --no-update --no-interaction phpunit/phpunit zetacomponents/php-generator`, then `composer install --no-dev` ([chapter 3](03-getting-the-code.md#33-installing-on-php-80-to-83)). |
+| Composer: PHP version does not satisfy `phpunit/phpunit` | A copy of `composer.json` from before 5 October 2026, whose `require-dev` asked for PHPUnit 13 (`^13.4`, PHP 8.4.1 or later) only. Without a lock file Composer resolves `require-dev` even with `--no-dev` | Take the current `composer.json`: its range `^9.6 \|\| ^10.5 \|\| ^11.5 \|\| ^12.0 \|\| ^13.4` lets Composer pick the PHPUnit that fits the PHP in use (9.6 on PHP 8.0, 13.4 on 8.4 and 8.5), and a plain `composer install --no-dev` works on PHP 8.0 to 8.5. With an old copy, `composer remove --dev --no-update --no-interaction phpunit/phpunit zetacomponents/php-generator` first. The test suite itself needs PHPUnit 10, so PHP 8.1. |
 | Composer: the root package requires PHP 8.1 on PHP 8.0 | Releases `v6.0.8` to `v6.0.14` require PHP 8.1 | Use PHP 8.1 or later, or the 6.0.15 line (`dev-main`), which accepts 8.0. |
 | Composer: `se7enxweb/exponential-velocity` requires PHP 8.1 | Velocity needs PHP 8.1 | Leave it out on PHP 8.0 (it is only suggested), or use a newer PHP. |
-| Composer stops on a missing `ext-mongodb` | A package asks for the MongoDB extension | Install it, or, when you do not use MongoDB, add `--ignore-platform-req=ext-mongodb` (as the project's PHP 8.0 check does). |
+| Composer stops on a missing `ext-mongodb` | A package that needs the PHP `mongodb` extension was added, usually `mongodb/mongodb` for the MongoDB database handler (Exponential only suggests it; no required package needs the extension) | Install the extension for the PHP Composer runs with and for the web server's PHP. If you do not use MongoDB, remove that package again (`composer remove mongodb/mongodb`). |
 | Composer asks whether to trust `se7enxweb/exponential-legacy-installer`, or refuses to run it | Composer 2.2+ runs only allowed plugins; your own `composer.json` (way C of chapter 3) does not list it | Answer yes, or `composer config allow-plugins.se7enxweb/exponential-legacy-installer true`. |
 | After `composer require se7enxweb/exponential` the kernel files are in the current directory | That is how the installer plugin installs a package of type `ezpublish-legacy`: into the project root | Expected; see [chapter 3](03-getting-the-code.md#32-three-ways-to-get-the-code). |
 | `Class ... not found` after Composer added an extension | The class maps were not regenerated (Composer runs only the root package's scripts) | `php bin/php/ezpgenerateautoloads.php -e`, then clear the caches. |
@@ -200,7 +204,7 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 | "Unknown start step: ..." or "Unknown stop step: ..." | A step name that does not exist | `php bin/php/console exp:kickstarter run --list-steps` lists them. |
 | "This directory already holds an installation (settings/override/site.ini.append.php)." | `exp:install` found a configured database (`bin/php/install.php`) | Add `--force` only to replace that installation; `--dry-run` checks without changing anything. |
 | `kickstart.ini` values are ignored | Leading whitespace before a section or key (`kickstart.ini-dist`: "Remove all leading whitespaces"), a missing `Continue=true`, or stale cached values | Remove the whitespace; set `Continue=true`; delete `var/cache/ini/kickstart-*.php` (the `ini` and `run` subcommands do it themselves). |
-| The install went into the wrong database engine | `DatabaseImplementation` in `settings/override/site.ini.append.php` still names the old engine; the installer keeps the value it finds there | Set it to the new engine before installing again. |
+| The install went into the wrong database engine | A `DatabaseImplementation` left in `settings/override/site.ini.append.php` by an earlier install: the override directory wins over every siteaccess's settings | Set it to the new engine (or remove it) before installing again; check with `php bin/php/console exp:ini get site.ini/DatabaseSettings/DatabaseImplementation`. |
 | Everything in the database is gone after an install | `DatabaseAction=remove` (the default of `exp:install`, `--db-action=remove`) empties the named database first | Restore from backup. Point installs only at databases that hold nothing you need. |
 | The password you gave was replaced | Passwords shorter than `[UserSettings] MinPasswordLength` or well-known ones are replaced with a generated one | Read it from the summary or `var/log/initial-admin-password`. |
 
@@ -229,6 +233,7 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 | MySQL: `SET storage_engine=InnoDB;` fails in an update file | An update file from before October 2026: that spelling was removed in MySQL 5.7.5 and MariaDB 12.0 | Take the current file, which says `SET default_storage_engine=InnoDB;`; see [chapter 11](11-upgrading.md#113-the-update-files). |
 | PostgreSQL: errors about `digest` | `pgcrypto` is missing | `CREATE EXTENSION pgcrypto;` as owner or superuser. |
 | MongoDB: subtree and URL alias queries are slow | The indexes were not created | `mongosh "mongodb://<user>:<password>@localhost:27017/<database>" --file bin/mongodb/create_indexes.js`; see [MongoDB](../features/6.0/mongodb-database-support.md). |
+| MongoDB: "Failed to parse MongoDB URI: 'mongodb://:@...'. 'default' authentication mechanism requires a username." | No database user was given: the adapter (`lib/ezdb/classes/expmongodb.php`) always writes `<user>:<password>@` into its connection string | Create a user in the site's database and give it as `User` and `Password` (`--db-user` with `exp:install`); see [chapter 9](09-databases.md#95-mongodb). |
 | MongoDB: `Class "MongoDB\Client" not found` | The PHP library `mongodb/mongodb` is not installed | `composer require mongodb/mongodb`; the `mongodb` PHP extension must be loaded too. |
 | Oracle: the driver is not found | The `ezoracle` extension is not in `extension/` or not active | It is required by `composer.json`; check `extension/ezoracle` and that `oci8` is loaded. |
 
@@ -239,7 +244,9 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 | `velocity: no server script at ...` | The `qbix` engine needs the Velocity package, which is not installed | `composer require se7enxweb/exponential-velocity:~0.0.4.42` (PHP 8.1+), or use `--engine=php` for development. |
 | `velocity: already running` | A server of that engine runs already | `php bin/php/console exp:velocity status`; `restart` to apply changes. |
 | `velocity: port ... is already in use by another process (another engine? exp:velocity stop --engine=qbix\|frankenphp)` | Another program or engine holds the port (php and frankenphp engines) | Stop the other engine, or change `Port`/`HTTPSPort` with `exp:velocity config set`. |
-| `velocity: did not start; see <log>` | The server failed at start-up | Read the named log (`var/vc/qbix/run/console.log` for qbix). |
+| `velocity: did not start; see <log>` (the `php` and `frankenphp` engines) | The server failed at start-up | Read the named log. |
+| A `qbix` start that does not come up | The engine failed after it was launched: a port in use, a certificate it cannot read, a missing PHP extension | Read `var/vc/qbix/run/console.log` (`[ServerSettings] LogFile`); it holds the start-up lines and the reason. |
+| `velocity: EnginePhar names an archive that does not exist: ... -- build it first, or set EnginePhar=disabled` | `[ServerSettings] EnginePhar` points at an engine archive that was never built or was removed | `php bin/php/console exp:phar build`, or `exp:velocity config set ServerSettings EnginePhar disabled`; see [chapter 8](08-serving-the-site.md#8315-the-engine-archive-enginephar). |
 | `velocity deploy: FAIL after Ns; the steps after the failed one were not run` | One step of `exp:velocity deploy` failed | The output names the step; fix it and run `deploy` again (`--dry-run` lists the steps). |
 | A PHP, template or settings change does not show under Velocity | Workers keep the application in memory | `exp:velocity restart` (or `deploy`), then `exp:velocity cache clear`. |
 | Ports 80 and 443 cannot be bound | Ports below 1024 need root | Start Velocity as root (the workers drop to `[ServerSettings] User`), or use ports above 1024 behind a proxy. |
@@ -269,6 +276,7 @@ not worked. More in [Cache console](../bc/6.0/cache-console.md) and [Operating a
 |---|---|---|
 | A new template file renders an empty area (HTTP 200) | The template override cache predates the file | `--clear-id=template-override`. |
 | `Class ... not found` after adding or renaming a class | The class maps are stale | `php bin/php/ezpgenerateautoloads.php -e` (`-k` for the kernel), then clear the caches; under Velocity restart it. |
+| "The referenced parameter '...' is not registered." from `ezpgenerateautoloads.php`, exit status 1 | An option the generator does not know; nothing was generated | Correct the option (`--help` lists them). Older releases printed their usage and exited with 0 on an unknown option, `--allow-root-user` included, so a deployment script that ran them may never have regenerated anything. |
 | "The audit index classes are not in the autoload array: run bin/php/ezpgenerateautoloads.php -k first." | `createaudittables.php` ran before the kernel class map was regenerated | Run `php bin/php/ezpgenerateautoloads.php -k`, then the script again. |
 
 ## 12.13 Signing in
@@ -278,14 +286,15 @@ not worked. More in [Cache console](../bc/6.0/cache-console.md) and [Operating a
 | The administrator password is lost | | `php bin/php/resetuserpassword.php -u admin -g --allow-root-user` as root (the root bypass), or with an administrator's login (`-a <login> -ap <password>`); `-p <password>` sets a given one. See [Reset a user password](../features/6.0/reset-user-password.md). |
 | The generated password is unknown | It was printed once at the end of the install | `var/log/initial-admin-password` (readable by the owner only); delete the file after the first login. |
 | An account made by SQL or a migration cannot sign in | Since 16 August 2026 a user without an `ezuser_setting` row counts as disabled | Add the row; the queries are in the [August 2026 security specification](../specifications/6.0/security-hardening-2026-08.md#f-06-find-accounts-that-cannot-sign-in). |
+| Behind a proxy or load balancer: HTTPS pages link or redirect to `http://`, a redirect loop, or every visitor has the proxy's address | Forwarded headers (`X-Forwarded-Proto`, `X-Forwarded-Host`, `X-Forwarded-For`) count only from addresses in `site.ini [HTTPHeaderSettings] TrustedProxies[]`, shipped with `127.0.0.1` and `::1` only | List the proxy's address in `TrustedProxies[]`; for the visitor's address also set `ClientIpByCustomHTTPHeader=X-Forwarded-For`. See [chapter 8](08-serving-the-site.md#88-behind-a-reverse-proxy) and [Trusted proxies](../bc/6.0/trusted-proxies.md). |
 | Signed in, but the next page is signed out (behind a proxy or on mixed HTTP and HTTPS) | Session cookie attributes: `[Session] CookieSecure=auto` marks the cookie `Secure` when the request came over HTTPS; `CookieSameSite=Lax` | Serve the whole site over one scheme; when the admin is framed or posted to from another site, set `CookieSameSite=None` together with `CookieSecure=true`. See [Security defaults](../specifications/6.0/security-defaults-2026-09.md). |
 
 ## 12.14 Getting help
 
 - Search this documentation: the [guides](../guides/README.md), the [feature pages](../features/6.0/),
   the [behaviour change notes](../bc/6.0/) and the [glossary](../glossary.md).
-- The online manual: [doc.exponential.earth](https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html).
-- Report a bug: the [Exponential issue tracker](https://issues.exponential.earth), or the
+- The online manual: [exponential.doc.exponential.earth](https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html).
+- Report a bug: the [Exponential issue tracker](https://github.com/se7enxweb/exponential/issues), or the
   [community issue tracker](https://github.com/se7enxweb/exponential-community/issues).
 - Report a security issue privately, as [SECURITY.md](../../SECURITY.md) describes, never in a public issue.
 - Forums: [share.exponential.earth/forums](https://share.exponential.earth/forums).
@@ -331,7 +340,7 @@ External:
 - Databases: [PostgreSQL client authentication](https://www.postgresql.org/docs/current/client-authentication.html),
   [pgcrypto](https://www.postgresql.org/docs/current/pgcrypto.html),
   [SQLite command line shell](https://sqlite.org/cli.html), [SQLite WAL](https://sqlite.org/wal.html).
-- [Exponential issue tracker](https://issues.exponential.earth),
+- [Exponential issue tracker](https://github.com/se7enxweb/exponential/issues),
   [community issues](https://github.com/se7enxweb/exponential-community/issues).
 
 [Contents](README.md) · Previous: [11. Upgrading](11-upgrading.md) · Next: [13. Security hardening](13-security-hardening.md)
