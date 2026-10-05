@@ -96,22 +96,42 @@ php vendor/bin/phpunit --list-suites
 php tests/runtests.php --dsn=mysql://YOUR_USER:YOUR_PASSWORD@127.0.0.1/testdb --db-per-test tests
 ```
 
-The test suites in `phpunit.xml`. Test counts were checked with `--list-suites` on 2 October 2026; they grow with
-every release.
+The test suites in `phpunit.xml`. Test counts were checked with `--list-suites` on 5 October 2026 (2 October:
+kernel-classes 1364, kernel-datatypes 38, lib 610); they grow with every release.
 
 | Suite | Directory | Tests | Needs |
 |---|---|---|---|
 | `security` | `tests/tests/kernel/classes/security` | 51 | nothing |
-| `kernel-classes` | `tests/tests/kernel/classes` (without `security`) | 1364 | nothing |
+| `kernel-classes` | `tests/tests/kernel/classes` (without `security`) and `tests/tests/kernel/common` | 2110 | nothing; the tests of a live installation skip without one |
 | `kernel-content` | `tests/tests/kernel/content` | 4 | nothing |
-| `kernel-datatypes` | `tests/tests/kernel/datatypes` | 38 | nothing |
-| `lib` | `tests/tests/lib` (without `ezdb/mongodb`) | 610 | nothing |
+| `kernel-datatypes` | `tests/tests/kernel/datatypes` | 141 | nothing |
+| `lib` | `tests/tests/lib` (without `ezdb/mongodb`) | 2043 | nothing |
 | `mongodb` | `expMongoDBAdapterTest.php` | 37 | nothing (no live MongoDB) |
 | `mongodb-live` | `expMongoDBIntegrationTest.php` | 18 | running MongoDB and MySQL servers; its group is excluded from the default run |
 | `cjw_newsletter` | `tests/tests/extension/cjw_newsletter` (added after August) | 244 | a live database of the installation (throw-away data, mail written to files, never sent) |
 
 Groups `database`, `mail-live`, `mongodb-live` and `network-live` are excluded from the default run. Do not point a test run at a database that holds content you want to keep: the
 database tests create and drop tables.
+
+### Running the tests: the two kinds of test
+
+- **Unit tests** need no database and no siteaccess. They call a class directly, with stand-ins where it needs an
+  object (a template, a content object attribute, a request) and with the settings they depend on set in the test
+  and put back in `tearDown()`. They run in every CI job. Examples: `eZTemplateEngineRenderTest` renders about 150
+  template sources once processed and once compiled (compiled files go to a private directory under `var/tmp` and
+  are removed afterwards) and both outputs must match; `eZLocaleFormattingTest` checks every locale in
+  `share/locale`; the datatype tests write and read back the stored XML and the text form used by import and
+  export; the REST tests build `ezpRestRequest` objects.
+- **Tests of a live installation** start with `ezpLiveInstallation::requireOrSkip()` and skip with the reason when
+  there is no database with an installed site, as in CI. They create their own data and remove it again.
+
+Rules for new tests: tables of cases as data providers; no network, no sleeps, no real mail (the file
+transport); temporary files under `var/tmp`, removed in `tearDown()`; PHP 8.0 syntax (type declarations only on
+`setUp()`/`tearDown()`, which PHPUnit requires). A test written for a bug fails before the fix and is committed
+with it or right after it; a failing test is never weakened to pass.
+
+On a shared server where several people run suites against one SQLite database, run the suites that write to it
+one at a time: SQLite allows one writer.
 
 ## Coverage with Xdebug
 
@@ -123,6 +143,23 @@ appends `tests/`, so the children load it too (11 July; on 18 August the double
 ```bash
 php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-text
 ```
+
+When Xdebug is installed but not enabled for the CLI (as with Plesk's PHP builds), load it for one run only:
+`-d zend_extension=...` does not reach the isolated test processes, which read the ini scan directories, so put a
+directory with an ini file that loads it in front of `tests/`:
+
+```bash
+mkdir -p var/tmp/xdebug-scan
+printf 'zend_extension=/opt/plesk/php/8.5/lib64/php/modules/xdebug.so\nxdebug.mode=coverage\n' > var/tmp/xdebug-scan/90-xdebug.ini
+PHP_INI_SCAN_DIR="/opt/plesk/php/8.5/etc/php.d:$PWD/var/tmp/xdebug-scan:$PWD/tests" XDEBUG_MODE=coverage \
+    /opt/plesk/php/8.5/bin/php -d memory_limit=4G vendor/bin/phpunit --coverage-text --only-summary-for-coverage-text
+```
+
+The `<source>` of `phpunit.xml` is `lib/` and `kernel/`, about 205 000 lines. Measured on 5 October 2026 with a
+live database present: all suites together covered 23.4 % of the lines (47 580) and 18.7 % of the methods before
+that day's unit tests were added; the `lib` suite alone went from 2.4 % of the lines (629 tests) to 7.6 %
+(2 028 tests) the same day. The suites that write to a live database are slow with coverage on, so on a
+shared server measure the suites that need no database directly and the live ones one directory at a time.
 
 ## For extension authors
 
