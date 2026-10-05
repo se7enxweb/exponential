@@ -124,13 +124,13 @@ function showKickstarterHelp( $cli )
     $cli->output( '' );
     $cli->output( 'Commands:' );
     $cli->output( '  ini                  Interactive kickstart.ini generator (default)' );
-    $cli->output( '  run                  Run the setup wizard. Use --dry-run to test remote packages (stops before CreateSites) or --force to install.' );
+    $cli->output( '  run                  Run the setup wizard. Use --dry-run to test the database and remote packages (stops after SiteDetails) or --force to install.' );
     $cli->output( '  help, --help, -h     Show this help' );
     $cli->output( '' );
     $cli->output( 'Run options:' );
     $cli->output( '  --start-step=<step>  First step to run (default: welcome)' );
     $cli->output( '  --stop-step=<step>   Last step to run (default: final)' );
-    $cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..Registration to test remote packages (stops before CreateSites)' );
+    $cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..SiteDetails to test the database and remote packages (writes no password, sends no mail, installs nothing)' );
     $cli->output( '  --list-steps         List all setup steps and exit' );
     $cli->output( '' );
     $cli->output( 'Every run is also logged to var/log/kickstart.log (passwords masked); earlier runs are kept as' );

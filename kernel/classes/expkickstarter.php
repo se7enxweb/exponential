@@ -62,12 +62,14 @@ class expKickstarter
             }
 
             // In dry-run mode we run the wizard steps from DatabaseChoice through
-            // Registration to verify that the remote packages can be downloaded,
-            // then stop before CreateSites. DatabaseChoice is included so the
-            // database type is available for DatabaseInit.
+            // SiteDetails to verify the database and that the remote packages
+            // can be downloaded. DatabaseChoice is included so the database type
+            // is available for DatabaseInit. It stops before SiteAdmin, which can
+            // write a generated password to var/log/initial-admin-password, and
+            // before Registration, which can send mail: a dry run changes nothing.
             $this->http->setPostVariable( 'eZSetupKickstartDryRun', true );
-            $this->options['start-step'] = 'DatabaseChoice';
-            $this->options['stop-step']  = 'Registration';
+            $this->options['start-step'] = self::DRY_RUN_START;
+            $this->options['stop-step']  = self::DRY_RUN_STOP;
             $this->cleanupDryRun();
         }
 
@@ -146,7 +148,7 @@ class expKickstarter
 
         expScriptStatus::instance()->end();
         if ( !empty( $this->options['dry-run'] ) )
-            expSetupLog::finish( 'dry run complete (stopped before CreateSites)' );
+            expSetupLog::finish( 'dry run complete (stopped after ' . self::DRY_RUN_STOP . ')' );
         elseif ( $createSitesIndex !== false && $startIndex <= $createSitesIndex && $stopIndex >= $createSitesIndex )
             expSetupLog::finish( 'installed', true );
         else
@@ -158,7 +160,7 @@ class expKickstarter
         if ( !empty( $this->options['dry-run'] ) )
         {
             $this->cli->output( '' );
-            $this->cli->output( 'Dry-run completed: remote packages verified. Stopped before CreateSites.' );
+            $this->cli->output( 'Dry-run completed: database and remote packages verified. Stopped after ' . self::DRY_RUN_STOP . ', nothing written.' );
             $this->script->shutdown( 0 );
         }
 
@@ -221,6 +223,10 @@ class expKickstarter
      * must not stop the run with "invalid option". The kickstarter always runs
      * on the plain siteaccess, so --siteaccess has no effect either.
      */
+    /** The steps a dry run runs: the database, the packages and the site details; nothing that writes or mails. */
+    const DRY_RUN_START = 'DatabaseChoice';
+    const DRY_RUN_STOP = 'SiteDetails';
+
     const STANDARD_OPTIONS = '[q|quiet][d;*|debug;*][c|colors][no-colors][logfiles][no-logfiles][s:|siteaccess:][v*|verbose*][r?|allow-root-user?]';
 
     /** The option string of "run": its own options and the eZScript standard ones. */
@@ -260,7 +266,7 @@ class expKickstarter
         $this->cli->output( 'Options:' );
         $this->cli->output( '  --start-step=<step>  First step to run (default: welcome)' );
         $this->cli->output( '  --stop-step=<step>   Last step to run (default: final)' );
-        $this->cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..Registration to test remote packages (stops before CreateSites)' );
+        $this->cli->output( '  --dry-run            Validate kickstart.ini, then run DatabaseChoice..SiteDetails to test the database and remote packages (writes no password, sends no mail, installs nothing)' );
         $this->cli->output( '  --list-steps         List all setup steps and exit' );
         $this->cli->output( '  --help, -h           Show this help' );
         $this->cli->output( '' );

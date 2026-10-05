@@ -203,23 +203,67 @@ class eZStepRegistration extends eZStepInstaller
             return false;
         }
 
+        $this->PersistenceList['email_info']['send'] = true;
+        $this->PersistenceList['email_info']['result'] = $this->sendRegistration( $userData );
+
+        return true; // Always continue
+    }
+
+    /**
+     * Whether kickstart.ini [registration] asks for the registration mail:
+     * only Send=true does. A section without Send= sends nothing (it used to
+     * default to true and mail the old upstream address).
+     *
+     * @param array|false $data the [registration] section
+     * @return bool
+     */
+    static function kickstartSend( $data )
+    {
+        return is_array( $data ) && isset( $data['Send'] ) && strtolower( trim( (string)$data['Send'] ) ) === 'true';
+    }
+
+    /**
+     * Where a registration mail goes: setup.ini [RegistrationSettings]
+     * Receiver, empty by default. The old upstream address (registerezsite at
+     * ez.no) no longer exists and is never used; without a receiver nothing
+     * is sent.
+     *
+     * @return string an e-mail address, '' for none
+     */
+    static function receiver()
+    {
+        $ini = eZINI::instance( 'setup.ini' );
+        if ( !$ini->hasVariable( 'RegistrationSettings', 'Receiver' ) )
+            return '';
+        $receiver = trim( (string)$ini->variable( 'RegistrationSettings', 'Receiver' ) );
+        if ( $receiver === '' || preg_match( '/@ez\.no$/i', $receiver ) || !eZMail::validate( $receiver ) )
+            return '';
+        return $receiver;
+    }
+
+    /**
+     * Sends the registration mail to receiver(), when there is one.
+     *
+     * @param array $userData
+     * @return bool whether a mail was sent
+     */
+    function sendRegistration( array $userData )
+    {
+        $receiver = self::receiver();
+        if ( $receiver === '' )
+            return false;
+
         $mailTpl = eZTemplate::factory();
         $bodyText = $this->generateRegistration( $mailTpl, $userData );
         $subject = $mailTpl->variable( 'subject' );
 
-        // Fill in E-Mail data and send it
         $mail = new eZMail();
-        $mail->setReceiver( 'registerezsite@ez.no', 'eZ Site Registration' );
-        $mail->setSender( 'registerezsite@ez.no' );
+        $mail->setReceiver( $receiver );
+        $mail->setSender( $receiver );
         $mail->setSubject( $subject );
         $mail->setBody( $bodyText );
         $mail->setCategory( 'admin' );
-        $mailResult = eZMailTransport::send( $mail );
-
-        $this->PersistenceList['email_info']['send'] = true;
-        $this->PersistenceList['email_info']['result'] = $mailResult;
-
-        return true; // Always continue
+        return (bool)eZMailTransport::send( $mail );
     }
 
     /**
@@ -231,32 +275,14 @@ class eZStepRegistration extends eZStepInstaller
         {
             $data = $this->kickstartData();
 
-            $this->PersistenceList['email_info']['send'] = isset( $data['Send'] ) ? ( $data['Send'] == 'true' ) : true;
+            $this->PersistenceList['email_info']['send'] = self::kickstartSend( $data );
             $this->PersistenceList['email_info']['user_data'] = isset( $data['UserData'] ) ? $data['UserData'] : $this->defaultUserData;
 
             if ( $this->kickstartContinueNextStep() )
             {
-                if ( $this->PersistenceList['email_info']['send'] )
-                {
-                    $mailTpl = eZTemplate::factory();
-                    $bodyText = $this->generateRegistration( $mailTpl, $this->PersistenceList['email_info']['user_data'] );
-                    $subject = $mailTpl->variable( 'subject' );
-
-                    // Fill in E-Mail data and send it
-                    $mail = new eZMail();
-                    $mail->setReceiver( 'registerezsite@ez.no', 'eZ Site Registration' );
-                    $mail->setSender( 'registerezsite@ez.no' );
-                    $mail->setSubject( $subject );
-                    $mail->setBody( $bodyText );
-                    $mail->setCategory( 'admin' );
-                    $mailResult = eZMailTransport::send( $mail );
-
-                    $this->PersistenceList['email_info']['result'] = $mailResult;
-                }
-                else
-                {
-                    $this->PersistenceList['email_info']['result'] = false;
-                }
+                $this->PersistenceList['email_info']['result'] = $this->PersistenceList['email_info']['send']
+                    ? $this->sendRegistration( (array)$this->PersistenceList['email_info']['user_data'] )
+                    : false;
                 return true;
             }
             else
@@ -278,7 +304,7 @@ class eZStepRegistration extends eZStepInstaller
         $userData = isset( $this->PersistenceList['email_info']['user_data'] ) ? $this->PersistenceList['email_info']['user_data'] : $this->defaultUserData;
 
         $bodyText = $this->generateRegistration( $mailTpl, $userData );// using default data
-        $send     = ( isset( $this->PersistenceList['email_info']['send'] ) )     ? $this->PersistenceList['email_info']['send'] : true;
+        $send     = ( isset( $this->PersistenceList['email_info']['send'] ) )     ? $this->PersistenceList['email_info']['send'] : false;
 
 
         $this->Tpl->setVariable( 'email_body', $bodyText );
