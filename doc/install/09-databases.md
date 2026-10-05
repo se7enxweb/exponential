@@ -42,9 +42,16 @@ Every database setting lives in `settings/site.ini`, block `[DatabaseSettings]`.
 override it in `settings/override/site.ini.append.php` (for the whole installation) or in
 `settings/siteaccess/<name>/site.ini.append.php` (for one siteaccess). The installers write the override for you.
 
+Why the override and not `settings/site.ini` itself: an upgrade replaces the shipped file with its new version, and
+every change made in it is lost without a warning. The override files are yours; nothing that ships with Exponential
+writes to them except the installers.
+
 The key `DatabaseImplementation` names the driver by an alias. `eZDB::instance()` (`lib/ezdb/classes/ezdb.php`)
 reads the alias, looks it up in `ImplementationAlias[]` and instantiates the class it names. An alias that maps to
-nothing gives a null database and the error "No database handler was found for '...'" in `var/log/error.log`.
+nothing does not stop the request at once: `eZDB::instance()` returns a null database (`eZNullDB`) that carries the
+message "No database handler was found for '...'", and writes "Database implementation not supported: ..." to
+`var/log/error.log`. Every page that needs content then fails. A typing error in `DatabaseImplementation` therefore
+looks like a database that is down; read `error.log` first.
 
 | Alias in `DatabaseImplementation` | Class | File |
 |---|---|---|
@@ -67,18 +74,25 @@ The other keys of the block apply to the server engines; SQLite ignores the serv
 | `User`, `Password` | `root`, empty | all but SQLite | The login. Never leave the shipped `root` in production. |
 | `Database` | `nextgen` | all | The database name; for SQLite the file; for Oracle the connect string. |
 | `Charset` | `utf-8` | MySQL, Oracle | The connection character set (see the engine sections). |
-| `ConnectRetries` | `0` | MySQL, SQLite | How often to try again when the first connection fails. |
+| `ConnectRetries` | `0` | MySQL, PostgreSQL, SQLite | How often to try again when the first connection fails. MySQL and PostgreSQL wait between the attempts; SQLite tries again at once. Oracle has its own `RetryCount` (section 9.6) and falls back to this value. |
 | `UsePersistentConnection` | `disabled` | MySQL, PostgreSQL, Oracle | Reuse a connection across requests of the same PHP process. |
 | `UseSlaveServer`, `SlaveServerArray[]` ... | `disabled` | MySQL | Send reads to replicas. |
 | `Transactions` | `enabled` | all | Run grouped writes in transactions. Leave it on. |
 | `SQLOutput`, `SlowQueriesOutput` | `disabled`, `0` | all | Show statements in the debug output; with a value above 0 only the slower ones (milliseconds). |
+| `QueryAnalysisOutput` | `disabled` | MySQL | With `SQLOutput=enabled`, MySQL's `EXPLAIN` of each statement in the debug output. |
 | `DebugTransactions` | `disabled` | all | Record a stack trace for every begin and commit, to find an unbalanced transaction. |
+| `SQLitePragmas[]`, `SQLiteTransactionWait` | empty, `60` | SQLite | The connection's PRAGMAs and the wait for the write lock; see [the SQLite settings block](#the-sqlite-settings-block). |
 
 Read the effective value of any key, with every override applied:
 
 ```bash
 php bin/php/console exp:ini get site.ini/DatabaseSettings/DatabaseImplementation --allow-root-user
 ```
+
+The console first prints a line naming the script it runs (`running exp:ini → bin/php/ini.php`, on the error
+stream), then the value alone, for example `sqlite3`. A value you expected to have changed but that still shows the
+old one means the override went into a file or a block that is not read; `exp:ini where` (see
+[exp:ini](../bc/6.0/console-exp-ini.md)) shows which file each value comes from.
 
 After you change a database setting, clear the INI cache so every process reads it:
 
@@ -113,13 +127,20 @@ The installer's default (`php bin/php/console exp:install`, the setup wizard's p
 
 ### What the driver does at every connection
 
-The driver class is `eZSQLite3DB` in `lib/ezdb/classes/ezsqlite3db.php`. Opening a connection does this, in order:
+The driver class is `eZSQLite3DB` in `lib/ezdb/classes/ezsqlite3db.php`. When PHP lacks the `sqlite3` extension it
+stops before anything else and logs "SQLite3 extension was not found, the DB handler will not be initialized."; under
+PHP-FPM, remember that the web server's PHP and the command line's PHP are configured separately, so check both
+(`php -m` and a `phpinfo()` page, or Setup > System information). Otherwise, opening a connection does this, in
+order:
 
 1. **Resolve the file.** The `Database` value is a file name. A name without a slash is placed in
    `var/storage/sqlite3/` (the constant `eZSQLite3DB::STORAGE_DIRECTORY`); a name that starts with `/` is an
    absolute path and is used as it is; `:memory:` is a throw-away in-memory database. A missing directory is
-   created with mode `0775`. A file that cannot be opened raises `eZDBNoConnectionException`, which the setup wizard
-   and `index.php` report as a database that cannot be reached.
+   created with mode `0775`; a missing file is created by SQLite itself, empty. A file that cannot be opened (after
+   `ConnectRetries` further attempts) raises `eZDBNoConnectionException` with the full path in its message, which
+   the setup wizard and `index.php` report as a database that cannot be reached. Because a missing file is simply
+   created, a wrong `Database` value does not fail: it opens a new, empty database, and the site then reports
+   missing tables. Compare the path in the error with `ls var/storage/sqlite3/` when that happens.
 2. **Register functions** SQLite lacks: `md5()`, and the aggregates `BIT_OR` and `BIT_AND`, which the content engine
    uses to fold language masks.
 3. **Apply the PRAGMAs** (`applyPragmas()`), the busy timeout first, so that every following statement already
@@ -178,7 +199,7 @@ current. A publish failed with "database is locked" however long the busy timeou
 
 **What the driver does instead.** `eZSQLite3DB::beginQuery()` starts every transaction like this:
 
-1. It opens (once per process) a lock file next to the database: **`<database file>.writer-lock`**, for example
+1. It opens (once per connection, and again in every forked process) a lock file next to the database: **`<database file>.writer-lock`**, for example
    `var/storage/sqlite3/exponential.db.writer-lock`.
 2. It takes an exclusive `flock()` on that file. If another writer holds it, it tries again every 1 to 15 ms,
    thinning out as the wait grows; a writer that has waited more than a second tries more often than those that
@@ -195,7 +216,13 @@ therefore the only place a transaction can fail for a lock, and the one place wh
 
 **How long it waits.** Up to `[DatabaseSettings] SQLiteTransactionWait` seconds (default `60`; values below 1 are
 raised to 1). Keep it below your web server's request timeout, so a waiting request fails with a clear message
-rather than being killed.
+rather than being killed. Check this on a Velocity site: Velocity replaces a worker whose request runs longer than
+its engine setting `requestTimeout`, which is **30 seconds** unless you change it (the client gets a 504; see the
+[worker pool specification](../specifications/6.0/velocity-worker-pool.md)). With the shipped 60 seconds a queued
+publish can therefore be cut off by the server before the driver gives up. On Velocity, set
+`SQLiteTransactionWait=25` (or raise `requestTimeout` above the wait). Under PHP-FPM the limit is the pool's
+`request_terminate_timeout` (off unless set); PHP's `max_execution_time` does not count time spent waiting on
+Linux, because it measures CPU time.
 
 **What a timeout looks like.** When a transaction could not start within the wait, the driver reports, in
 `var/log/error.log` and on the error page:
@@ -208,6 +235,12 @@ database is busy: the transaction could not start within 60 s, another write hel
 `the transaction could not start: <SQLite's message>; nothing was written`. In both cases nothing was written; retry
 the action. A rollback is sent only when SQLite really has a transaction open, so you no longer see
 "cannot rollback - no transaction is active" hiding the real error.
+
+**When timeouts repeat.** One write held the lock for the whole wait. Look for what was running at the time in
+`var/log/error.log` and in the cron log: a `VACUUM`, a large import, a script that opened a transaction and then
+waited for something else, or a `sqlite3` shell left open inside `BEGIN`. Raising `SQLiteTransactionWait` only helps
+when the holder was legitimately long; it must stay below the web server's request timeout (PHP-FPM's
+`request_terminate_timeout`, Velocity's `requestTimeout`), or the request is killed before the driver can report.
 
 **Forked processes.** `flock()` belongs to an open file, so a forked process must not reuse its parent's handle.
 The driver remembers the process id that opened the lock file and opens a new one in each forked process
@@ -231,7 +264,8 @@ DatabaseImplementation=sqlite3
 Database=exponential.db
 
 # Seconds a transaction waits at its start for the writers ahead of it
-# (default 60). Keep it below the web server's request timeout.
+# (default 60). Keep it below the web server's request timeout: 25 under
+# Velocity, whose requestTimeout is 30 s unless changed.
 SQLiteTransactionWait=60
 
 # PRAGMAs over the driver's defaults, one per line as name=value.
@@ -242,12 +276,14 @@ SQLitePragmas[]
 #SQLitePragmas[]=busy_timeout=10000
 #SQLitePragmas[]=journal_size_limit=67108864
 
-# How often to try again when the file cannot be opened at first.
+# How often to try again (at once, without a pause) when the file cannot
+# be opened at first.
 ConnectRetries=0
 ```
 
 The setup wizard accepts a plain file name ending in `.db`, `.db3`, `.sqlite` or `.sqlite3` in
-`var/storage/sqlite3/`; an absolute path is possible from `kickstart.ini` and from `exp:install`. The wizard proposes
+`var/storage/sqlite3/`, made of letters, digits, dots, dashes and underscores and starting with a letter or digit
+(anything else gets "The database file name is not valid. ..."); an absolute path is possible from `kickstart.ini` and from `exp:install`. The wizard proposes
 `sqlite.db`; `exp:install` uses `exponential.db`. Check what your site uses:
 
 ```bash
@@ -287,7 +323,7 @@ That is the load the next two parts measure.
 ### Scaling with Velocity's persistent workers
 
 Under PHP-FPM every worker process opens its own SQLite connection when a request needs one. Under Velocity with
-persistent workers (`settings/velocity.ini` `[ApplicationSettings] ForkPerRequest=disabled`, the shipped value), each
+persistent workers (`settings/velocity.ini` `[ServerSettings] ForkPerRequest=disabled`, the shipped value), each
 worker keeps the application loaded between requests; the database connection, its page cache and the compiled
 templates stay warm in the worker. What this means for SQLite:
 
@@ -315,7 +351,8 @@ database. In general terms:
 - **Long transactions** (each holding the write lock for 50 to 300 ms, as a large publish does) failed with the
   earlier driver once the 5-second busy timeout ran out; with the writer queue all of them completed, only waiting
   longer. In the change's own test, 192 publishes from 64 processes at once all completed whole, where the earlier
-  start lost 6 of them.
+  start lost 6 of them; 48 transactions of 300 ms each, started at once, were done in 14.7 seconds, about the
+  14.4 seconds they take one after another. The queue costs almost nothing beyond the waiting itself.
 - **The WAL file grew** to well over a hundred megabytes during sustained heavy writing with readers running, and
   was checkpointed back afterwards (see the next parts for `journal_size_limit`).
 
@@ -357,8 +394,19 @@ and give every process a umask of `0002`, so new files are group-writable (`UMas
 ls -l var/storage/sqlite3/
 ```
 
-Every file should be group-writable and carry the common group. `php bin/php/console bin:modfix` fixes the
-permissions of a whole installation; [chapter 8](08-serving-the-site.md) covers the users the servers run as.
+Every file should be group-writable and carry the common group. Expected output looks like this (owner, group and
+sizes are yours):
+
+```text
+-rw-rw-r-- 1 example www-data 187678720 Oct  5 10:14 exponential.db
+-rw-rw-r-- 1 example www-data     32768 Oct  5 10:20 exponential.db-shm
+-rw-rw-r-- 1 example www-data   4124152 Oct  5 10:20 exponential.db-wal
+-rw-rw-r-- 1 example www-data         0 Oct  5 09:58 exponential.db.writer-lock
+```
+
+Do **not** reach for `bin/modfix.sh` (`bin:modfix`) here: it makes `var/storage` and other directories world-writable
+(mode `777`, files `666`), and the script itself warns that this is not secure. Fix the group and mode as above
+instead; [chapter 8](08-serving-the-site.md#87-file-permissions-and-ownership) covers the users the servers run as.
 
 **Never serve the database over HTTP.** It lives below `var/storage`, which the shipped `.htaccess` sends to
 `index.php` and Velocity's list of static files leaves out. Check on your own host; anything but `200` is right:
@@ -404,7 +452,11 @@ php bin/php/ezcache.php --clear-all --allow-root-user
 php bin/php/console exp:velocity cache clear --allow-root-user
 ```
 
-`.restore` copies the backup into the live database page by page under a write lock. If you must replace the file
+`.restore` copies the backup into the live database page by page under a write lock. It prints nothing when it
+succeeds. If it reports an error instead (for example because a writer held the lock, or because the backup was made
+with another page size, which a database in WAL mode cannot take over), the live database is unchanged; use the
+file replacement below. Clear the caches afterwards in any case: they still hold pages rendered from the content
+before the restore. If you must replace the file
 itself instead, stop every process that may have it open first (Velocity with `exp:velocity stop`, PHP-FPM, cron),
 move the old database and its `-wal` and `-shm` files aside together, put the backup in place, fix its owner and
 mode, and start the processes again.
@@ -448,7 +500,7 @@ heavy writing can leave a large `-wal` file behind. Two remedies:
 | Lock timeouts | `grep -c "database is busy" var/log/error.log` | `0`, or rare and explained by a known long job |
 | Other database errors | `grep -i "eZSQLite3DB" var/log/error.log \| tail` | nothing new |
 | Integrity | `sqlite3 var/storage/sqlite3/exponential.db "PRAGMA quick_check"` (fast) or `"PRAGMA integrity_check"` (thorough) | `ok` |
-| WAL size | `ls -l var/storage/sqlite3/` | the `-wal` file shrinks back after busy periods |
+| WAL size | `ls -l var/storage/sqlite3/` | the `-wal` file stops growing after busy periods; it shrinks only with `journal_size_limit` or a `TRUNCATE` checkpoint (above) |
 | Journal mode | `sqlite3 var/storage/sqlite3/exponential.db "PRAGMA journal_mode"` | `wal` |
 | Disk space | `df -h var/storage/sqlite3` | room for the database twice over (for `VACUUM` and backups) |
 | Ownership | `ls -l var/storage/sqlite3/` | all files group-writable, one common group |
@@ -487,12 +539,19 @@ the classic production choice and the engine most extensions are written against
 - **The connection charset.** `Charset=utf-8` (the default) is mapped to MySQL's `utf8` for the connection
   (`lib/ezdb/classes/ezmysqlcharset.php`); MySQL treats that name as `utf8mb3`, three bytes per character, so
   characters outside the Basic Multilingual Plane (emoji, some CJK extensions) cannot pass through the connection.
-  Keep the database in `utf8mb4` anyway: it costs nothing and is ready for a connection change. If the connection
-  cannot be set to the requested charset, the driver writes "Connection warning: could not set the connection
-  charset to ..." to the log rather than silently transliterating text.
+  Keep the database in `utf8mb4` anyway: it costs nothing and is ready for a connection change.
+- **When the connection charset cannot be set.** The driver asks the connection which charset it really has, tries
+  once more, and if it still differs it records the warning "Connection warning: could not set the connection
+  charset to 'utf8'; it is '...'. Text will be transliterated to that character set on its way out of the
+  database." The site keeps running, and text comes back with `?` in place of the characters the other charset
+  lacks. The warning is a warning, not an error: it appears in the debug output and in `var/log/warning.log`, but
+  only when warnings are logged (`site.ini [DebugSettings] AlwaysLog[]=warning`; the shipped value logs errors only).
+  Enable that while you set up a MySQL site.
 - **InnoDB.** The installer creates the tables as InnoDB when the server offers it
-  (`kernel/setup/steps/ezstep_create_sites.php`). Transactions need it. `exp:ezconvertmysqltabletype` converts the
-  tables of an older installation (`--list`, `--newtype=TYPE`).
+  (`kernel/setup/steps/ezstep_create_sites.php`). Transactions need it. `php bin/php/ezconvertmysqltabletype.php`
+  (`exp:ezconvertmysqltabletype`) lists the table types of an older installation with `--list` and converts them with
+  `--newtype=InnoDB`. The MySQL update files of an upgrade start with `SET default_storage_engine=InnoDB;`, which every
+  current MySQL and MariaDB accepts ([chapter 11](11-upgrading.md#113-the-update-files)).
 
 ### Create the database and the user
 
@@ -548,7 +607,7 @@ seconds old.
 | Symptom | Cause |
 |---|---|
 | The "database cannot be reached" page | Wrong host, user, password or database. Since PHP 8.1 `mysqli` throws; the driver turns that into `eZDBNoConnectionException`. |
-| Text with `?` where accented letters were | The connection fell back to the server's default charset. Look for "could not set the connection charset" in `var/log/error.log`. |
+| Text with `?` where accented letters were | The connection fell back to the server's default charset. Set `AlwaysLog[]=warning`, load a page, and look for "could not set the connection charset" in `var/log/warning.log`. |
 | The wizard refuses the database's charset | The database was created in `latin1` or another single-byte charset. Recreate it in `utf8mb4`. |
 | Slow queries | `[DatabaseSettings] QueryAnalysisOutput=enabled` with `SQLOutput=enabled` shows MySQL's analysis in the debug output (MySQL only). |
 
@@ -622,7 +681,7 @@ and installs into the database you name; it opens `template1` only to offer a li
 
 | Symptom | Cause |
 |---|---|
-| "The 'digest' function is not available" | `pgcrypto` could not be created. Install the contrib package and create the extension as shown above. |
+| "The 'digest' function is not available in your database, and Exponential cannot run without it. ..." (the setup wizard) | `pgcrypto` could not be created. Install the contrib package and create the extension as shown above, then click Next again. |
 | Connection refused | `listen_addresses` in `postgresql.conf` or a missing line in `pg_hba.conf` ([client authentication](https://www.postgresql.org/docs/current/client-authentication.html)). |
 | Duplicate key on insert after an import | Sequences behind their tables; correct them as above. |
 | An extension's SQL fails on PostgreSQL only | MySQL syntax such as backtick quoting; see [9.8](#98-cross-engine-notes). |
@@ -662,6 +721,10 @@ mongosh --eval '
 ```
 
 The database itself is created by the first write; there is no `CREATE DATABASE`.
+
+The user is required, also on a test server that does not enforce access control: the adapter always writes
+`<user>:<password>@` into the URI, and with an empty `User` the MongoDB driver refuses the result
+(`mongodb://:@...`) with "Failed to parse MongoDB URI: ... 'default' authentication mechanism requires a username".
 
 ### Settings
 
@@ -719,7 +782,7 @@ Backups: `mongodump --uri="mongodb://exponential@localhost:27017/exponential" --
 
 ## 9.6 Oracle 19c and later (ezoracle)
 
-Oracle support comes from the **`ezoracle`** extension (version 2.3.1 at the time of writing): the driver
+Oracle support comes from the **`ezoracle`** extension (version 2.3.3, the version `composer.json` requires with `~2.3.3`): the driver
 `eZOracleDB`, the schema handler `eZOracleSchema`, console commands and cronjobs. It is a dependency in
 `composer.json`, so it is in `extension/ezoracle` after `composer install`. Its own `README.md` and `INSTALL` are the
 complete reference; this section is the operator's path through them.
@@ -757,7 +820,7 @@ EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=or
 
 `--db-name` is the **service name**; `host:port/service` is built from it. A full connect string or `@<tns alias>` is
 used as given. The installers activate the extension for the new site. For the kickstarter set
-`[database_choice] Type=oracle` and the connect string as `Database` in `[database_init]` and `[site_details]`.
+`[database_choice] Type=oci8` (`oracle` is accepted as well) and the connect string as `Database` in `[database_init]` and `[site_details]`.
 
 ### Settings
 
@@ -794,9 +857,10 @@ A new dedicated Oracle session costs tens of milliseconds per request. Two setti
 ```ini
 # settings/override/ezoracle.ini.append.php
 [ConnectionSettings]
-# oci_pconnect: inherit (site.ini UsePersistentConnection), enabled or disabled
+# oci_pconnect: inherit (site.ini UsePersistentConnection, the shipped value),
+# enabled or disabled
 Persistent=enabled
-# Database Resident Connection Pooling: appends :POOLED to an Easy Connect string,
+# Database Resident Connection Pooling (shipped: disabled): appends :POOLED to an Easy Connect string,
 # SERVER=POOLED to a descriptor built from Hosts[]; for a TNS alias put
 # (SERVER=POOLED) into tnsnames.ora yourself
 DRCP=enabled
@@ -804,6 +868,7 @@ DRCP=enabled
 ConnectionClass=EXPONENTIAL
 # for long-running processes (Velocity workers, cronjobs): after this many idle
 # seconds a round trip checks the connection first and replaces a dead one
+# (shipped: 0, never)
 KeepAliveInterval=60
 ```
 
@@ -836,11 +901,12 @@ changed in the admin under **Setup > Extensions** ([Extension loading order](../
 
 | Block | Key | What it does |
 |---|---|---|
+| `[ConnectionSettings]` | `ConnectString`, `TnsAdmin` | A connect string that replaces `site.ini` `Database` (empty: use `Database`); the directory of `tnsnames.ora` for TNS aliases (the PHP-FPM pool's `env[TNS_ADMIN]` or Velocity's environment is the surer place, because the client reads it once per process). |
 | `[ConnectionSettings]` | `Hosts[]`, `ServiceName`, `Failover`, `LoadBalance`, `ConnectTimeout` | Build a descriptor over several listeners (when `ConnectString` is empty). |
 | `[ConnectionSettings]` | `RetryCount`, `RetryDelay`, `RetryBackoff` | Connection retries with back-off (default: `site.ini ConnectRetries`). |
 | `[ConnectionSettings]` | `ReconnectErrors[]`, `RetryReads` | On a lost connection outside a transaction, reconnect and run a read again; a write is reported. |
 | `[ConnectionSettings]` | `CallTimeout` | Milliseconds a round trip may take (client 18c or later); 0 = no limit. |
-| `[PerformanceSettings]` | `Prefetch`, `LobPrefetch`, `CursorSharing` | Rows per round trip; LOB bytes with the row (keep at 2000 or less); `CURSOR_SHARING` (shipped `FORCE`). |
+| `[PerformanceSettings]` | `Prefetch`, `LobPrefetch`, `CursorSharing` | Rows per round trip; LOB bytes with the row (shipped 2000, and capped there by the driver); `CURSOR_SHARING` (shipped `FORCE`). |
 | `[TraceSettings]` | `ClientIdentifier`, `ModuleName`, `Action`, `ClientInfo` | What a DBA sees in `V$SESSION`, with patterns such as `%siteaccess%`, `%module%/%view%`. |
 | `[LogSettings]` | `SlowQueryThreshold`, `SlowQueryLog`, `MaskLiterals` | Slow statements to `var/log/oracle-slow.log`, string literals masked. |
 
@@ -863,7 +929,7 @@ job does nothing until it is enabled in `ezoracle.ini [CronjobSettings]`:
 | `ORA-00933` in an extension's SQL | A table alias written with `AS`; Oracle allows `AS` only for column aliases. |
 | An empty string comes back as NULL | Oracle stores `''` as NULL. `OracleEmptyStringForNull=enabled` returns `''` for text columns. |
 | A login works only in one case | Oracle compares strings binary. `OracleCaseInsensitive=enabled`, then create linguistic indexes with `ext:ezoracle:ci-indexes --create`. |
-| CLOB values cut short | `LobPrefetch` above 2000 with some client versions; keep it at 2000. |
+| CLOB values cut short | An older `ezoracle`, or a client version that cuts long CLOBs when `LobPrefetch` is above 2000. The current driver caps the prefetch at 2000 itself and writes a notice when more is set (oci8 3.4.1 with the Oracle 23.26 client cut every longer CLOB without an error). Update the extension. |
 | Settings in your site extension are ignored | It is listed after `ezoracle` in `ActiveExtensions[]`; move it before. |
 
 ## 9.7 Comparison
@@ -898,10 +964,14 @@ from the drivers):
 - **Use the driver's helpers** for what differs: `subString()`, `concatString()`, `md5()`, `bitAnd()`, `bitOr()`,
   `escapeString()`, `lastSerialID()`. SQLite's driver also registers `BIT_OR`/`BIT_AND` aggregates and rewrites
   `UPDATE ... JOIN`; PostgreSQL computes MD5 through `pgcrypto`; Oracle uses `STANDARD_HASH` and `BITAND`.
-- **MySQL session statements** (`SET NAMES`, `SET FOREIGN_KEY_CHECKS` and similar) are accepted as no-ops by the
-  SQLite driver; on PostgreSQL and Oracle they fail.
+- **MySQL session statements**: the SQLite driver accepts `SET FOREIGN_KEY_CHECKS`, `SET NAMES`,
+  `SET CHARACTER SET`, `SET AUTOCOMMIT`, `SET SQL_MODE` and `SET UNIQUE_CHECKS` (also with `SESSION` or `GLOBAL`) and
+  does nothing, because SQLite has no such switches. PostgreSQL understands `SET NAMES` (as `client_encoding`) but
+  rejects the others; Oracle has no `SET` statement of this kind. Leave them out of code meant for every engine.
 - **Empty strings**: Oracle returns NULL for `''` unless `OracleEmptyStringForNull=enabled`.
-- **Case**: MySQL's default collations compare without case; PostgreSQL, SQLite and Oracle compare with case.
+- **Case**: MySQL's default collations compare without case. PostgreSQL and Oracle compare with case. SQLite compares
+  with case for `=` but ignores case for ASCII letters in `LIKE`. A login or identifier lookup written for MySQL may
+  therefore find nothing elsewhere; compare `lower(...)` on both sides when case must not matter.
 - **Do not infer from a result what the result cannot tell you.** A failed statement and an empty result are not
   reported the same way on every engine; the MongoDB adapter returns an empty result for SQL it cannot translate.
   To ask whether a table exists, ask the catalogue (`eZTableList()` of the driver), not a `SELECT` that may fail.
@@ -910,7 +980,14 @@ from the drivers):
 
 ## 9.9 Switching an existing site to another engine
 
-The schema tools move a database between the SQL engines through Exponential's engine-neutral `.dba` format:
+Why switch at all: the reasons are those of [Limits, and when to choose another engine](#limits-and-when-to-choose-another-engine).
+The content stays the same; only where it is stored changes. Plan the switch as a maintenance window: no editor may
+publish between the dump and the moment the site runs on the new database, or that work is lost.
+
+The schema tools move a database between the SQL engines through Exponential's engine-neutral `.dba` format.
+`--type` takes a schema handler from `settings/dbschema.ini`: `mysql`, `postgresql`, `sqlite3` and, with the
+`ezoracle` extension, `oracle` (the scripts' own `--help` lists only some of them). For SQLite the database argument
+is the file name, as in `Database`:
 
 ```bash
 # dump schema and data of the current database (MySQL in this example):
@@ -931,6 +1008,17 @@ table charset) are listed there. Then set
 all caches and restart the workers. A forgotten `DatabaseImplementation` is the usual reason no page loads after a
 switch. For Oracle the extension has its own transfer commands (`ext:ezoracle:mysql2oracle-schema`,
 `ext:ezoracle:mysql2oracle-data`); for MongoDB see [9.5](#95-mongodb).
+
+**Check the result before you open the site again.** Count the rows of a few large tables on both sides
+(`ezcontentobject`, `ezcontentobject_tree`, `ezcontentobject_attribute`); the numbers must match. On PostgreSQL,
+correct the sequences if `ezsqlinsertschema.php` reported a problem with them (see [9.4](#94-postgresql)). Then sign
+in to the administration, open a few pages and publish a test object; a publish exercises the writes that a page
+view does not.
+
+**Schema updates are per engine.** When you later upgrade Exponential, the database update files are chosen by the
+engine the site runs on now, not by the one it was installed on: `update/database/mysql/`,
+`update/database/postgresql/` and `update/database/sqlite/`, and for Oracle the files in the `ezoracle` extension.
+MongoDB has no SQL update files. [Chapter 11](11-upgrading.md#113-the-update-files) lists them.
 
 ## References
 
@@ -953,9 +1041,11 @@ In this repository:
   [Velocity worker pool](../specifications/6.0/velocity-worker-pool.md).
 - [Extension loading order](../features/6.0/extension-loading-order.md).
 - [Operating a site](../guides/operating-a-site.md), section 7 (database driver) and section 6 (backups).
+- [Chapter 11, the update files](11-upgrading.md#113-the-update-files), for schema updates per engine.
 - The code: [`ezsqlite3db.php`](../../lib/ezdb/classes/ezsqlite3db.php), [`ezmysqlidb.php`](../../lib/ezdb/classes/ezmysqlidb.php),
   [`ezpostgresqldb.php`](../../lib/ezdb/classes/ezpostgresqldb.php), [`expmongodb.php`](../../lib/ezdb/classes/expmongodb.php),
   [`settings/site.ini`](../../settings/site.ini) (`[DatabaseSettings]`), [`settings/setup.ini`](../../settings/setup.ini),
+  [`settings/dbschema.ini`](../../settings/dbschema.ini), [`bin/modfix.sh`](../../bin/modfix.sh),
   [`bin/mongodb/create_indexes.js`](../../bin/mongodb/create_indexes.js).
 - The Oracle extension: `extension/ezoracle/README.md` and `extension/ezoracle/INSTALL` in an installation, and
   [se7enxweb/ezoracle](https://github.com/se7enxweb/ezoracle).
@@ -966,16 +1056,18 @@ External:
   [BEGIN TRANSACTION (DEFERRED, IMMEDIATE)](https://www.sqlite.org/lang_transaction.html),
   [PRAGMA statements](https://www.sqlite.org/pragma.html), [Online backup API](https://www.sqlite.org/backup.html),
   [VACUUM](https://www.sqlite.org/lang_vacuum.html), [ANALYZE](https://www.sqlite.org/lang_analyze.html),
-  [Appropriate uses for SQLite](https://www.sqlite.org/whentouse.html), [Implementation limits](https://www.sqlite.org/limits.html).
+  [Appropriate uses for SQLite](https://www.sqlite.org/whentouse.html), [Implementation limits](https://www.sqlite.org/limits.html),
+  [the LIKE operator](https://www.sqlite.org/lang_expr.html#like).
 - MySQL: [Unicode support (utf8mb4)](https://dev.mysql.com/doc/refman/8.4/en/charset-unicode-utf8mb4.html),
   [GRANT](https://dev.mysql.com/doc/refman/8.4/en/grant.html), [InnoDB](https://dev.mysql.com/doc/refman/8.4/en/innodb-storage-engine.html),
-  [mysqldump](https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html); MariaDB: [character sets](https://mariadb.com/kb/en/character-sets/).
+  [mysqldump](https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html); MariaDB: [character sets](https://mariadb.com/docs/server/reference/data-types/string-data-types/character-sets).
 - PostgreSQL: [CREATE DATABASE](https://www.postgresql.org/docs/current/sql-createdatabase.html),
   [pgcrypto](https://www.postgresql.org/docs/current/pgcrypto.html), [sequences](https://www.postgresql.org/docs/current/sql-createsequence.html),
   [client authentication](https://www.postgresql.org/docs/current/client-authentication.html),
+  [SET (including SET NAMES)](https://www.postgresql.org/docs/current/sql-set.html),
   [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html).
 - MongoDB: [PHP library](https://www.mongodb.com/docs/php-library/current/), [connection strings](https://www.mongodb.com/docs/manual/reference/connection-string/),
-  [db.createUser()](https://www.mongodb.com/docs/manual/reference/method/db.createUser/), [mongodump](https://www.mongodb.com/docs/database-tools/mongodump/).
+  [db.createUser()](https://www.mongodb.com/docs/manual/reference/method/db.createuser/), [mongodump](https://www.mongodb.com/docs/database-tools/mongodump/).
 - Oracle: [Database Resident Connection Pooling](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/managing-processes.html),
   [DBMS_CONNECTION_POOL](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_CONNECTION_POOL.html),
   PHP [oci8 connection handling](https://www.php.net/manual/en/oci8.connection.php) and
