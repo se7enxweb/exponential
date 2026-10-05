@@ -602,9 +602,10 @@ SQLite is not only for trying Exponential. The kernel driver (`lib/ezdb/classes/
 DatabaseImplementation=sqlite3
 # a name under var/storage/sqlite3/, or an absolute path
 Database=exponential.db
-# seconds a transaction waits for the writers ahead of it (default 60);
-# keep it below the web server's request timeout
-SQLiteTransactionWait=60
+# seconds a transaction waits for the writers ahead of it (default 25);
+# keep it below the request timeout: Velocity's Q.webserver.requestTimeout
+# (30 s unless changed), or PHP-FPM's request_terminate_timeout
+SQLiteTransactionWait=25
 # PRAGMAs over the driver's defaults, one per line as name=value
 SQLitePragmas[]
 #SQLitePragmas[]=cache_size=-131072
