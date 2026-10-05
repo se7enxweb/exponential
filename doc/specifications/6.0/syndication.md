@@ -1,6 +1,6 @@
 # Specification: the syndication extension
 
-This page is the reference for the `syndication` extension (1.3.2). One site **exports** part of its content tree
+This page is the reference for the `syndication` extension (1.3.3). One site **exports** part of its content tree
 as a feed; another site **imports** that feed over SOAP and keeps it in step by cron. The page lists the module
 views and policies, the SOAP functions, the tables, the cronjob parts, every setting and how an import
 authenticates. Read it if you install, schedule or debug syndication. The step-by-step setup is on the
@@ -8,7 +8,7 @@ authenticates. Read it if you install, schedule or debug syndication. The step-b
 
 ## In short
 
-- Admin entry point: `/syndication/menu` (the **Syndication** tab of the admin).
+- Admin entry point: `/syndication/menu` (the **Syndication** tab of the admin): a dashboard with what is exported, what is imported, the last runs and the problems found.
 - Two cronjob parts do the work: `export_feed` on the exporting site, `import_feed` on the importing site.
 - The importing site calls the exporting site's SOAP server; since 1.2.0 it can send a login and password.
 - Eleven tables, created from `sql/mysql.sql` or, on every database, from `share/db_schema.dba` (since 1.3.1).
@@ -31,29 +31,52 @@ Then review the imported objects in **Syndication > Imports**. Run both parts fr
 
 ## Module `syndication`
 
-Every view uses the navigation part `ezsyndicationpart`.
+Every view uses the navigation part `ezsyndicationnavigationpart` (since 1.3.3; it was `ezsyndicationpart`), so the
+left menu comes from `design/standard/templates/parts/syndication/menu.tpl` in every admin design. The old
+`parts/s/menu.tpl` stays and includes it.
 
 | View | Policy function | Parameters | Script |
 |---|---|---|---|
-| `menu` | `menu` | | `menu.php` |
-| `list` | `view_export` | `(offset)` | `list.php` |
-| `import_list` | `view_export` | `(offset)` | `import_list.php` |
-| `import_edit` | `edit_import` | `ImportID`, `(step)` | `import_edit.php` |
-| `pending_edit` | `import_object_status` | `ImportID`, `(offset)`, `(status)` | `pending_edit.php` |
-| `edit` | `edit_export` | `FeedID` | `edit.php` |
-| `add_feed_source` | `edit_export` | `FeedID`, `Step`, `(source_type)` | `add_feed_source.php` |
+| `menu` | `menu` | `(job)` | `menu.php`: the dashboard; creates the tables; starts "export all" and "fetch all" in the background |
+| `list` | `view_export` | `(offset)`, `(q)`, `(sort)`, `(order)` | `list.php`: filter, sort, page; remove asks for confirmation first |
+| `import_list` | `view_export` | `(offset)`, `(q)`, `(sort)`, `(order)` | `import_list.php` |
+| `import_edit` | `edit_import` | `ImportID`, `(step)` | `import_edit.php`: the five-step wizard |
+| `import_info` | `view_import` | `ImportID`, `(offset)`, `(job)` | `import_info.php`: settings, item states, "fetch now", "import now" |
+| `pending_edit` | `import_object_status` | `ImportID`, `(offset)`, `(statusFilter)` | `pending_edit.php` |
+| `edit` | `edit_export` | `FeedID` | `edit.php`: validates the name, the identifier (unique) and the numbers |
+| `feed_info` | `view_export_info` | `FeedID`, `(offset)`, `(job)` | `feed_info.php`: settings, sources, exported items, "export now" |
+| `add_feed_source` | `edit_export` | `FeedID`, `Step`, `(source_type)` | `add_feed_source.php`; without a feed it sends you to the feed list |
 | `list_source_filter` | `edit_export` | `SourceFeedID` | `list_source_filter.php` |
 | `edit_source_filter` | `edit_export` | `SourceFilterID` | `edit_source_filter.php` |
 | `edit_import_filter` | `edit_import` | `ImportFilterID` | `edit_import_filter.php` |
-| `import_info` | `import_view` | `ImportID` | `import_info` |
-| `feed_info` | `view_export_info` | `FeedID` | none declared |
+| `job` | `menu` | `JobID` | `job.php`: the state and log of a background run as JSON |
 
 Policy functions: `import_object_status`, `view_export`, `edit_export`, `remove_feed`, `create_feed`, `menu`,
 `view_import`, `edit_import`, `view_export_info`, `create_import`, and `fetch_feed` with the limitation `Feed`.
+Before 1.3.3 `import_info` named the script `import_info` (no `.php`) and the function `import_view`, which the function
+list did not define, and `feed_info` declared no script; both views are complete now.
 
-Two entries in `modules/syndication/module.php` do not match the rest: `import_info` names the script `import_info`
-(no `.php`) and the policy function `import_view`, which the function list does not define, and `feed_info`
-declares no script. Check these two views before you rely on them.
+## Console commands, cronjob parts and background runs (since 1.3.3)
+
+The work is in runnable classes (the kernel's #207 pattern); the files in `bin/php/` and `cronjobs/` are one call each.
+A run takes a lock (one export and one import at a time, whoever starts it), writes its time and result for the
+dashboard and raises the kernel's runnable events, so the audit sees it like any kernel cronjob.
+
+| Command | Class | Options | Does |
+|---|---|---|---|
+| `./console ext:syndication:export` (`@alias syn-export`) | `Exponential\Command\Extension\Syndication\Export` | `--dry-run`, `--feed=ID`, `--max-objects=N` | Writes the export cache of the active feeds |
+| `./console ext:syndication:import` (`@alias syn-import`) | `...\Import` | `--dry-run`, `--import=ID`, `--fetch-only`, `--import-only`, `--limit=N` | Fetches the item lists and imports the waiting items |
+| `./console ext:syndication:install` | `...\Install` | `--dry-run` | Creates the tables from `share/db_schema.dba` |
+| `./console ext:syndication:status` | `...\Status` | | Prints the dashboard as text |
+
+| Cronjob part | Class | Stub |
+|---|---|---|
+| `export_feed` | `Exponential\Cronjob\Extension\Syndication\ExportFeed` | `cronjobs/syndication_export.php` |
+| `import_feed` | `Exponential\Cronjob\Extension\Syndication\ImportFeed` | `cronjobs/syndication_import.php` |
+
+The cronjob and the commands skip feeds and imports that are not active, and run as the user of `[Syndication] CronUser`.
+The admin's "run now" buttons start the same command in the background with `expProcessTools` (`setsid`, the PHP
+command line) and show its state and output on the page; state files are in `var/<site>/syndication/jobs/`, the newest 20 are kept.
 
 ## SOAP functions
 
@@ -103,7 +126,7 @@ installer can create them on every database Exponential supports. The SOAP log h
 | `[CronjobPart-export_feed]` | `syndication_export.php` | Writes the export feeds |
 | `[CronjobPart-import_feed]` | `syndication_import.php` | Fetches and imports the remote feeds |
 
-The extension adds itself to `[CronjobSettings] ExtensionDirectories[]`, so `runcronjobs.php` finds both scripts.
+The extension adds itself to `[CronjobSettings] ExtensionDirectories[]`, so `runcronjobs.php` finds both scripts. Both are stubs that call the runnable classes above.
 
 ## Settings
 
@@ -123,7 +146,7 @@ All values are the extension's own defaults (scope: extension, `extension/syndic
 | `browse.ini` | `SyndicationFeedSourceBrowse` | `StartNode`, `TopLevelNodes[]` | `content`; `content`, `media` | Where a feed source can be picked |
 | `browse.ini` | `SyndicationSetImportPlacement` | `StartNode`, `TopLevelNodes[]` | `content`; `content`, `users`, `media` | Where an import can place content |
 | `content.ini` | `CustomTagSettings` | `AvailableCustomTags[]` | `syndication` | The `syndication` custom tag |
-| `menu.ini` | `TopAdminMenu` | `Tabs[]` | `syndication` | The admin tab; left menu links to `menu`, `list`, `import_list`, `add_feed_source` |
+| `menu.ini` | `TopAdminMenu` | `Tabs[]` | `syndication` | The admin tab; left menu links to `menu`, `list`, `import_list`, `add_feed_source` (each shown only to a user the policy lets in) |
 
 ## Import authentication (since 1.2.0)
 

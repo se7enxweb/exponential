@@ -39,6 +39,24 @@ php runcronjobs.php import_feed
 
 5. Then run it regularly from cron. After the first run, imports are faster and need no regular watching.
 
+## Operate it from the admin and the shell
+
+Open **Syndication** in the admin. The start page shows what is exported, what is imported, when each cronjob part last
+ran and what needs attention (a feed without a source, an import without a location, failed items, SOAP off). If the
+tables are missing it offers to create them. **Export all active feeds** and **Fetch all active imports** start the
+same code as the cronjob in the background and show its progress on the page; a feed's and an import's own page has
+the same buttons for that one feed or import.
+
+From the shell, the commands show up in `./console list ext:syndication`:
+
+```bash
+./console ext:syndication:status
+./console ext:syndication:export --dry-run
+./console ext:syndication:import --import=3 --fetch-only
+```
+
+See the [specification](../../../specifications/6.0/syndication.md) for every option.
+
 ## Protect a source with HTTP authentication
 
 Since 1.2.0 (19 July 2026) the import sends a **login and password** to the exporting site, so the SOAP endpoint can be
@@ -70,7 +88,8 @@ not as a manual kernel edit.
 | 1.2.0 | 19 July 2026 | HTTP authentication of imports, and a left menu (Syndication, Feeds, Imports, Feed Sources) in the admin. |
 | 1.3.0 | 22 September 2026 | Module views are safe on a persistent worker (Velocity). |
 | 1.3.1 | 2 October 2026 | `share/db_schema.dba` describes the eleven syndication tables (columns, defaults, primary keys and the SOAP log's three indexes) in the engine-neutral schema format, so an installer can create them on every database Exponential supports, not only MySQL. Verified by loading it into a fresh SQLite database and by generating the MySQL and PostgreSQL schema from it. `ezinfo.php` and `extension.xml` state version, license and website. |
-| 1.3.2 | | Commands and cronjob parts list a description; copyright notices name 1998 - 2026 7x & Exponential Foundation first. |
+| 1.3.2 | 2 October 2026 | Commands and cronjob parts list a description; copyright notices name 1998 - 2026 7x & Exponential Foundation first. |
+| 1.3.3 | | A dashboard, lists with filter, sort and paging, detail views for feeds and imports, removal with confirmation, inline notices, German strings; the tables can be created from the dashboard; "run now" in the background; console commands and runnable cronjob parts. Fixes: removing a feed, source, filter or import was a fatal error on PHP 8; the import wizard started over on every click; filter types were evaluated as code; remote data was unserialized with objects; a first fetch failed because the `modified` parameter was left out. |
 
 ## Related pages
 
