@@ -190,13 +190,21 @@ class eZDebugMessagesTest extends PHPUnit\Framework\TestCase
         eZDebug::addTimingPoint( 'report point' );
         eZDebug::appendTopReport( 'Top part', 'top content' );
         eZDebug::appendBottomReport( 'Bottom part', 'bottom content' );
-        // without a new window the report is printed, whatever $returnReport says
+        // $returnReport returns the report and prints nothing: the command line scripts write it to STDERR
         ob_start();
-        $returned = eZDebug::printReport( false, false, true );
-        $report = ob_get_clean();
-        $this->assertNull( $returned );
+        $report = eZDebug::printReport( false, false, true );
+        $this->assertSame( '', ob_get_clean(), 'nothing printed when the report is returned' );
+        $this->assertIsString( $report );
         $this->assertStringContainsString( 'warning for the report', $report );
         $this->assertStringContainsString( 'report-label', $report );
+        $this->assertStringContainsString( 'top content', $report );
+
+        // without $returnReport the report is printed and nothing returned
+        ob_start();
+        $returned = eZDebug::printReport( false, false, false );
+        $printed = ob_get_clean();
+        $this->assertNull( $returned );
+        $this->assertStringContainsString( 'warning for the report', $printed );
 
         $GLOBALS['eZDebugEnabled'] = false;
         ob_start();

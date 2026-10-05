@@ -1296,7 +1296,9 @@ class eZDebug
 
     /*!
       \static
-      Prints the debug report
+      Prints the debug report, or returns it as a string when \a $returnReport is true.
+      With \a $newWindow the report is written to var/cache/debug.html and a script that
+      opens it in a window of its own is printed.
     */
     static function printReport( $newWindow = false, $as_html = true, $returnReport = false,
                            $allowedDebugLevels = false, $useAccumulators = true, $useTiming = true, $useIncludedFiles = false )
@@ -1305,7 +1307,9 @@ class eZDebug
             return null;
 
         $debug = self::instance();
-        $report = $debug->printReportInternal( $as_html, $returnReport & $newWindow, $allowedDebugLevels, $useAccumulators, $useTiming, $useIncludedFiles );
+        // The report is needed as a string both to return it and to write it to the file the new window opens;
+        // printReportInternal() prints it only when it is not asked to return it.
+        $report = $debug->printReportInternal( $as_html, $returnReport || $newWindow, $allowedDebugLevels, $useAccumulators, $useTiming, $useIncludedFiles );
 
         if ( $newWindow == true )
         {

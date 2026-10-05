@@ -12,7 +12,7 @@
 
 /**
  * @deprecated Since 5.0
- * @return null
+ * @return string|null the debug report, which the caller prints; null when debug output is off
  */
 function eZDisplayDebug()
 {
@@ -65,7 +65,7 @@ function eZDisplayResult( $templateResult )
         {
             $debugMarkerLength = strlen( $debugMarker );
             echo substr( $templateResult, 0, $pos );
-            eZDisplayDebug();
+            echo eZDisplayDebug();
             echo substr( $templateResult, $pos + $debugMarkerLength );
         }
         else
@@ -75,7 +75,7 @@ function eZDisplayResult( $templateResult )
     }
     else
     {
-        eZDisplayDebug();
+        echo eZDisplayDebug();
     }
     echo ezpEvent::getInstance()->filter( 'response/output', ob_get_clean() );
 }
