@@ -145,7 +145,8 @@ class eZRangeOption
             return false;
         if ( $stop < $start )
             return 0;
-        $count = floor( ( $stop - $start ) / $step ) + 1;
+        // A small allowance for binary fractions: ( 0.3 - 0 ) / 0.1 is 2.9999999999999996
+        $count = floor( ( $stop - $start ) / $step + 1e-9 ) + 1;
         if ( $count > self::MAX_OPTION_COUNT )
             return false;
         return (int)$count;
@@ -192,11 +193,23 @@ class eZRangeOption
             // a number throws a TypeError in the loop and a huge range builds
             // millions of options on every read: all of them leave the option
             // list empty instead of hanging or killing the request
-            if ( self::rangeCount( $startValue, $stopValue, $stepValue ) !== false )
+            $count = self::rangeCount( $startValue, $stopValue, $stepValue );
+            if ( $count !== false )
             {
-                for ( $i = $startValue; $i <= $stopValue; $i += $stepValue )
+                // Each value from its position, not by adding the step again and again: with a decimal step the
+                // sum drifted past the stop value (0.1 + 0.1 + 0.1 > 0.3) and the last option was lost.
+                // Whole numbers stay integers, as the old loop gave them.
+                $integral = true;
+                foreach ( array( $startValue, $stepValue ) as $value )
                 {
-                    $this->addOption( array( 'value' => $i,
+                    if ( (float)$value != floor( (float)$value ) )
+                        $integral = false;
+                }
+                for ( $n = 0; $n < $count; $n++ )
+                {
+                    $value = $integral ? (int)$startValue + $n * (int)$stepValue
+                                       : round( (float)$startValue + $n * (float)$stepValue, 10 );
+                    $this->addOption( array( 'value' => $value,
                                              'additional_price' => 0 ) );
                 }
             }
