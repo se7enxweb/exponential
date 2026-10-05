@@ -2218,14 +2218,15 @@ class eZINI
             {
                 $ret[$key] = self::$injectedSettings[$this->FileName][$blockName][$varName];
             }
-            if ( isset( self::$injectedMergeSettings[$this->FileName][$blockName][$varName] ) )
+            if ( isset( $ret[$key] ) && isset( self::$injectedMergeSettings[$this->FileName][$blockName][$varName] ) )
             {
                 if ( !is_array( $ret[$key] ) || !is_array( self::$injectedMergeSettings[$this->FileName][$blockName][$varName] ) )
                 {
                     throw new RuntimeException( "injected-merge-settings can only reference and contain array values" );
                 }
+                // merged into the value found above, injected or from the files, as variable() does
                 $ret[$key] = array_merge(
-                    $this->BlockValues[$blockName][$varName],
+                    $ret[$key],
                     self::$injectedMergeSettings[$this->FileName][$blockName][$varName]
                 );
             }
@@ -2235,7 +2236,7 @@ class eZINI
                 switch ( $signatures[$key] )
                 {
                     case 'enabled':
-                        $ret[$key] = $this->BlockValues[$blockName][$varName] == 'enabled';
+                        $ret[$key] = $ret[$key] == 'enabled';
                         break;
                 }
             }
@@ -2347,6 +2348,11 @@ class eZINI
      */
     function group( $blockName )
     {
+        if ( !isset( $this->BlockValues[$blockName] ) && isset( self::$injectedSettings[$this->FileName][$blockName] ) )
+        {
+            // a group that only exists as injected settings
+            return self::$injectedSettings[$this->FileName][$blockName];
+        }
         if ( !isset( $this->BlockValues[$blockName] ) )
         {
             eZDebug::writeError( "Unknown group: '$blockName'", __METHOD__ );
