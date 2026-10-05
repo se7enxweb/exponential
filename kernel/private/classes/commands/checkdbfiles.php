@@ -413,6 +413,66 @@ class Checkdbfiles extends \Exponential\Runnable\Command
         return array( 'unknown' => array_values( $fileList ), 'missing' => $missingFileList );
     }
 
+    /**
+     * The export directories this process created; removeExportDirectory() removes only these.
+     *
+     * @var string[]
+     */
+    private static $createdExportDirectories = array();
+
+    /**
+     * Creates a new, empty directory for the SVN exports inside $base, named checkdbfiles-export-<pid>-<random>.
+     * $base is created when it does not exist, but nothing in it is touched.
+     *
+     * @param string $base
+     * @return string|false the new directory, or false if it could not be created
+     */
+    public static function createExportDirectory( $base )
+    {
+        $base = rtrim( $base, '/' );
+        if ( $base === '' )
+            $base = '.';
+        if ( !is_dir( $base ) && !@mkdir( $base, 0777, true ) && !is_dir( $base ) )
+            return false;
+        for ( $attempt = 0; $attempt < 10; $attempt++ )
+        {
+            $dir = $base . '/checkdbfiles-export-' . getmypid() . '-' . bin2hex( random_bytes( 4 ) );
+            // mkdir fails if the name exists, so the directory is always one this call made
+            if ( @mkdir( $dir, 0700 ) )
+            {
+                self::$createdExportDirectories[] = $dir;
+                return $dir;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Removes a directory createExportDirectory() made in this process, with its contents. Any other path is left
+     * alone.
+     *
+     * @param string $dir
+     * @return bool whether it was removed
+     */
+    public static function removeExportDirectory( $dir )
+    {
+        $index = array_search( $dir, self::$createdExportDirectories, true );
+        if ( $index === false || !is_dir( $dir ) || is_link( $dir ) )
+            return false;
+        $iterator = new \RecursiveIteratorIterator( new \RecursiveDirectoryIterator( $dir, \FilesystemIterator::SKIP_DOTS ),
+                                                    \RecursiveIteratorIterator::CHILD_FIRST );
+        foreach ( $iterator as $entry )
+        {
+            if ( $entry->isDir() && !$entry->isLink() )
+                rmdir( $entry->getPathname() );
+            else
+                unlink( $entry->getPathname() );
+        }
+        rmdir( $dir );
+        unset( self::$createdExportDirectories[$index] );
+        return !file_exists( $dir );
+    }
+
     public function run()
     {
         // the script's variables were globals; functions of the script read them with "global"
@@ -442,7 +502,7 @@ class Checkdbfiles extends \Exponential\Runnable\Command
         $options = $this->startup( "[no-verify-branches][export-path:]",
                                         "",
                                         array( 'no-verify-branches' => "Do not verify the content of the files with previous branches (To avoid SVN usage)",
-                                               'export-path' => "Directory to use for doing SVN exports."
+                                               'export-path' => "Directory in which a new directory for the SVN exports is made and removed again (default var/tmp)"
                                                ) );
 
         $dbTypes = self::databaseTypes();
@@ -470,26 +530,15 @@ class Checkdbfiles extends \Exponential\Runnable\Command
 
         if ( !$options['no-verify-branches'] )
         {
-            // Clean up the export path and/or recreate the directory path
-            if ( $options['export-path'] )
+            // A directory of our own, new and empty, inside the export path (default var/tmp): nothing that was there
+            // before is ever removed
+            $exportBase = $options['export-path'] ? $options['export-path'] : 'var/tmp';
+            $exportPath = self::createExportDirectory( $exportBase );
+            if ( $exportPath === false )
             {
-                $exportPath = $options['export-path'];
+                $cli->error( "Could not create a directory for the SVN exports in $exportBase" );
+                $script->shutdown( 1 );
             }
-            else
-            {
-                $exportPath = '/tmp/';
-                if ( isset( $_SERVER['TMPDIR'] ) )
-                    $exportPath = $_SERVER['TMPDIR'] . '/';
-                if ( isset( $_SERVER['USER'] ) )
-                    $exportPath .= "ez-" . $_SERVER['USER'];
-                $exportPath .= "/dbupdate-check/";
-            }
-
-            if ( file_exists( $exportPath ) )
-            {
-                \eZDir::recursiveDelete( $exportPath, false );
-            }
-            \eZDir::mkdir( $exportPath, false, true );
 
             // Figure out the current branch, we do not want to export it
             $currentBranch = \ExponentialSDK::VERSION_MAJOR . '.' . \ExponentialSDK::VERSION_MINOR;
@@ -570,11 +619,8 @@ class Checkdbfiles extends \Exponential\Runnable\Command
 
         if ( !$options['no-verify-branches'] )
         {
-            // Cleanup any exports
-            if ( file_exists( $exportPath ) )
-            {
-                \eZDir::recursiveDelete( $exportPath, false );
-            }
+            // Remove the directory this run made, and nothing else
+            self::removeExportDirectory( $exportPath );
         }
 
         $script->shutdown();

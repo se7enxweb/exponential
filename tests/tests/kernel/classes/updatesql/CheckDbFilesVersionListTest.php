@@ -75,6 +75,52 @@ class CheckDbFilesVersionListTest extends PHPUnit\Framework\TestCase
         $this->assertNotContains( $tmp . '/update/database/mysql/7.2/dbupdate-6.13.0-to-7.2.0.sql', $result['missing'], '7.2 is PostgreSQL only' );
     }
 
+    /**
+     * The SVN export directory is a new one inside the export path; removing it leaves everything that was there.
+     */
+    public function testTheExportDirectoryIsNewAndOnlyItIsRemoved()
+    {
+        $base = $this->scratchDirectory() . '/exports';
+        mkdir( $base . '/dbupdate-check', 0777, true );
+        file_put_contents( $base . '/keep.txt', 'mine' );
+        file_put_contents( $base . '/dbupdate-check/keep.txt', 'also mine' );
+
+        $dir = \Exponential\Command\Kernel\Checkdbfiles::createExportDirectory( $base );
+        $this->assertIsString( $dir );
+        $this->assertSame( $base, dirname( $dir ) );
+        $this->assertMatchesRegularExpression( '/^checkdbfiles-export-\d+-[0-9a-f]{8}$/', basename( $dir ) );
+        $this->assertSame( array(), array_diff( scandir( $dir ), array( '.', '..' ) ), 'it starts empty' );
+        $second = \Exponential\Command\Kernel\Checkdbfiles::createExportDirectory( $base );
+        $this->assertNotSame( $dir, $second, 'each call makes its own' );
+
+        // what an export leaves in it
+        mkdir( $dir . '/4.3/mysql/4.3', 0777, true );
+        file_put_contents( $dir . '/4.3/mysql/4.3/dbupdate-4.2.0-to-4.3.0.sql', "-- export\n" );
+
+        $this->assertTrue( \Exponential\Command\Kernel\Checkdbfiles::removeExportDirectory( $dir ) );
+        $this->assertDirectoryDoesNotExist( $dir );
+        $this->assertTrue( \Exponential\Command\Kernel\Checkdbfiles::removeExportDirectory( $second ) );
+        $this->assertSame( 'mine', file_get_contents( $base . '/keep.txt' ) );
+        $this->assertSame( 'also mine', file_get_contents( $base . '/dbupdate-check/keep.txt' ) );
+
+        // a directory it did not make is never removed, not even one with the same kind of name
+        $foreign = $base . '/checkdbfiles-export-1-00000000';
+        mkdir( $foreign );
+        $this->assertFalse( \Exponential\Command\Kernel\Checkdbfiles::removeExportDirectory( $foreign ) );
+        $this->assertFalse( \Exponential\Command\Kernel\Checkdbfiles::removeExportDirectory( $base ) );
+        $this->assertFalse( \Exponential\Command\Kernel\Checkdbfiles::removeExportDirectory( $dir ), 'and not twice' );
+        $this->assertDirectoryExists( $foreign );
+        $this->assertFileExists( $base . '/keep.txt' );
+    }
+
+    public function testTheDefaultExportPathIsVarTmpNotTmp()
+    {
+        $source = file_get_contents( self::$root . '/kernel/private/classes/commands/checkdbfiles.php' );
+        $this->assertStringContainsString( "\$options['export-path'] : 'var/tmp'", $source );
+        $this->assertStringNotContainsString( 'recursiveDelete', $source );
+        $this->assertStringNotContainsString( "'/tmp/'", $source );
+    }
+
     /** @var string[] the directories this test made, removed in tearDown */
     private $scratch = array();
 
