@@ -46655,6 +46655,22 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>design/standard/mailpreferences</name>
     <message>
+        <source>New address asked for, waiting for confirmation</source>
+        <translation>New address asked for, waiting for confirmation</translation>
+    </message>
+    <message>
+        <source>How we handle your data:</source>
+        <translation>How we handle your data:</translation>
+    </message>
+    <message>
+        <source>Privacy notice</source>
+        <translation>Privacy notice</translation>
+    </message>
+    <message>
+        <source>How we handle your data: our privacy notice</source>
+        <translation>How we handle your data: our privacy notice</translation>
+    </message>
+    <message>
         <source>Confirm your e-mail address</source>
         <translation>Confirm your e-mail address</translation>
     </message>
@@ -47245,6 +47261,10 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>kernel/mailpreferences/mail</name>
     <message>
+        <source>Privacy notice</source>
+        <translation>Privacy notice</translation>
+    </message>
+    <message>
         <source>You receive this e-mail because you switched on "%category".</source>
         <translation>You receive this e-mail because you switched on "%category".</translation>
     </message>
@@ -47315,6 +47335,26 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>kernel/mailpreferences/status</name>
+    <message>
+        <source>The optional category "%category" is set to be on for everybody (DefaultOn=true). That is opt-out, which the law does not allow for most optional mail: it is treated as off until a person turns it on. Set DefaultOn=false, or [CategorySettings] AllowDefaultOn=enabled in mailpreferences.ini where opt-out is lawful.</source>
+        <translation>The optional category "%category" is set to be on for everybody (DefaultOn=true). That is opt-out, which the law does not allow for most optional mail: it is treated as off until a person turns it on. Set DefaultOn=false, or [CategorySettings] AllowDefaultOn=enabled in mailpreferences.ini where opt-out is lawful.</translation>
+    </message>
+    <message>
+        <source>Optional categories may be on for everybody ([CategorySettings] AllowDefaultOn=enabled). Make sure the law of your recipients allows opt-out for them.</source>
+        <translation>Optional categories may be on for everybody ([CategorySettings] AllowDefaultOn=enabled). Make sure the law of your recipients allows opt-out for them.</translation>
+    </message>
+    <message>
+        <source>The %purpose links of mail are set to work for %days days ([TokenSettings] TTL[%purpose]). The law asks for at least 60 days, so 60 days are used. Set 0 (never expire) or at least 5184000.</source>
+        <translation>The %purpose links of mail are set to work for %days days ([TokenSettings] TTL[%purpose]). The law asks for at least 60 days, so 60 days are used. Set 0 (never expire) or at least 5184000.</translation>
+    </message>
+    <message>
+        <source>%count optional mails in the last 7 days had no sender address; the site&apos;s sender ([MailSettings] EmailSender or AdminEmail) was used. The gate log names the code that sent them.</source>
+        <translation>%count optional mails in the last 7 days had no sender address; the site&apos;s sender ([MailSettings] EmailSender or AdminEmail) was used. The gate log names the code that sent them.</translation>
+    </message>
+    <message>
+        <source>No privacy notice is linked from the mail footer and the preference page: set [FooterSettings] PrivacyURL in mailpreferences.ini, or menu.ini [SiteInfo] PrivacyPolicyID of the public siteaccess.</source>
+        <translation>No privacy notice is linked from the mail footer and the preference page: set [FooterSettings] PrivacyURL in mailpreferences.ini, or menu.ini [SiteInfo] PrivacyPolicyID of the public siteaccess.</translation>
+    </message>
     <message>
         <source>The table %table is missing: run the database update.</source>
         <translation>The table %table is missing: run the database update.</translation>

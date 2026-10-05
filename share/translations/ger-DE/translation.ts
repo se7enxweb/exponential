@@ -53690,6 +53690,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 <context>
     <name>design/standard/mailpreferences</name>
     <message>
+        <source>New address asked for, waiting for confirmation</source>
+        <translation>Neue Adresse angefordert, wartet auf Bestätigung</translation>
+    </message>
+    <message>
+        <source>How we handle your data:</source>
+        <translation>So gehen wir mit Ihren Daten um:</translation>
+    </message>
+    <message>
+        <source>Privacy notice</source>
+        <translation>Datenschutzerklärung</translation>
+    </message>
+    <message>
+        <source>How we handle your data: our privacy notice</source>
+        <translation>So gehen wir mit Ihren Daten um: unsere Datenschutzerklärung</translation>
+    </message>
+    <message>
         <source>Confirm your e-mail address</source>
         <translation>Bestätigen Sie Ihre E-Mail-Adresse</translation>
     </message>
@@ -54280,6 +54296,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 <context>
     <name>kernel/mailpreferences/mail</name>
     <message>
+        <source>Privacy notice</source>
+        <translation>Datenschutzerklärung</translation>
+    </message>
+    <message>
         <source>You receive this e-mail because you switched on "%category".</source>
         <translation>Sie erhalten diese E-Mail, weil Sie „%category“ eingeschaltet haben.</translation>
     </message>
@@ -54350,6 +54370,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 </context>
 <context>
     <name>kernel/mailpreferences/status</name>
+    <message>
+        <source>The optional category "%category" is set to be on for everybody (DefaultOn=true). That is opt-out, which the law does not allow for most optional mail: it is treated as off until a person turns it on. Set DefaultOn=false, or [CategorySettings] AllowDefaultOn=enabled in mailpreferences.ini where opt-out is lawful.</source>
+        <translation>Die optionale Kategorie „%category“ ist für alle eingeschaltet (DefaultOn=true). Das ist ein Opt-out, das das Recht für die meisten optionalen E-Mails nicht erlaubt: Sie gilt als ausgeschaltet, bis eine Person sie einschaltet. Setzen Sie DefaultOn=false oder, wo ein Opt-out zulässig ist, [CategorySettings] AllowDefaultOn=enabled in mailpreferences.ini.</translation>
+    </message>
+    <message>
+        <source>Optional categories may be on for everybody ([CategorySettings] AllowDefaultOn=enabled). Make sure the law of your recipients allows opt-out for them.</source>
+        <translation>Optionale Kategorien dürfen für alle eingeschaltet sein ([CategorySettings] AllowDefaultOn=enabled). Stellen Sie sicher, dass das Recht Ihrer Empfänger dafür ein Opt-out erlaubt.</translation>
+    </message>
+    <message>
+        <source>The %purpose links of mail are set to work for %days days ([TokenSettings] TTL[%purpose]). The law asks for at least 60 days, so 60 days are used. Set 0 (never expire) or at least 5184000.</source>
+        <translation>Die %purpose-Links in E-Mails sind auf %days Tage eingestellt ([TokenSettings] TTL[%purpose]). Das Recht verlangt mindestens 60 Tage, daher gelten 60 Tage. Setzen Sie 0 (läuft nie ab) oder mindestens 5184000.</translation>
+    </message>
+    <message>
+        <source>%count optional mails in the last 7 days had no sender address; the site&apos;s sender ([MailSettings] EmailSender or AdminEmail) was used. The gate log names the code that sent them.</source>
+        <translation>%count optionale E-Mails der letzten 7 Tage hatten keine Absenderadresse; der Absender der Website ([MailSettings] EmailSender oder AdminEmail) wurde verwendet. Das Protokoll der Prüfstelle nennt den Code, der sie gesendet hat.</translation>
+    </message>
+    <message>
+        <source>No privacy notice is linked from the mail footer and the preference page: set [FooterSettings] PrivacyURL in mailpreferences.ini, or menu.ini [SiteInfo] PrivacyPolicyID of the public siteaccess.</source>
+        <translation>Fußzeile der E-Mails und Einstellungsseite verlinken keine Datenschutzerklärung: Setzen Sie [FooterSettings] PrivacyURL in mailpreferences.ini oder menu.ini [SiteInfo] PrivacyPolicyID des öffentlichen Siteaccess.</translation>
+    </message>
     <message>
         <source>The table %table is missing: run the database update.</source>
         <translation>Die Tabelle %table fehlt: Führen Sie das Datenbank-Update aus.</translation>
