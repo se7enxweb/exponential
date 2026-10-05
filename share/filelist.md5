@@ -145,7 +145,7 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-8f8484f84acd3b1c8c16223c462f227c  composer.json
+cc6fe346ea705bdfab57e90ac084b497  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 fc1728636781a401032ccd6494974299  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
@@ -3186,7 +3186,7 @@ cf30f633b189b339fc29668bfd353557  doc/features/6.0/extensions/sevenx_themes_admi
 c16bb54647c2d8804b3d5904169c73fd  doc/features/6.0/extensions/sevenx_themes_simple.md
 bd3ac58d8f983d6c9a297f046923a0ab  doc/features/6.0/extensions/sevenx_valkey_cache.md
 d6574eee14c3d4c5c7ff50626ef18150  doc/features/6.0/extensions/swark.md
-52bc3b81d8c0066e14ec50068ce5e9f7  doc/features/6.0/extensions/syndication.md
+bbd37db45f14fd0fb374b89fa5bbe61b  doc/features/6.0/extensions/syndication.md
 4a4f8506b311c44f8ccb42cdd96cf94e  doc/features/6.0/extensions/xrowextract.md
 efbf2cf79f254018df640a05a54f55d9  doc/features/6.0/extensions/xrowmetadata.md
 0bf857c67c7a27132fc3524a6bcad556  doc/features/6.0/ezpm-package-manager-cli.md
@@ -3654,7 +3654,7 @@ f1d74be89700229e2ef39c8efa184d28  doc/specifications/6.0/platform-package-map.md
 1c746671f27485e6c552f4ef5ce82d59  doc/specifications/6.0/security-hardening-2026-08.md
 a8dd331d21327e2a7b64f278e0cf116c  doc/specifications/6.0/security-hardening-6.0.13.md
 a0b6a23a6b7e04b70b355eeafbd160ea  doc/specifications/6.0/sqlite3-database-driver.md
-c86a28ba22bf1fc4ff66b3343911648d  doc/specifications/6.0/syndication.md
+eb694919b825971014bfa963199ce255  doc/specifications/6.0/syndication.md
 df1654222d575929ea33d31d25976e0e  doc/specifications/6.0/velocity-engine-settings.md
 65980cc1767119e531f72930cbbe623f  doc/specifications/6.0/velocity-http2-and-security.md
 389c715cea271e75b4bc7bb2531dd023  doc/specifications/6.0/velocity-worker-pool.md
@@ -6563,6 +6563,7 @@ cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/compos
 37204f9331d53a964bb66a09f776120e  tests/tests/extension/ezupdate/fixtures/composer_update_nothing_to_do.log
 93560b62a75eb48a157a8f339b6cebfa  tests/tests/extension/ezupdate/fixtures/composer_update_one_update.log
 7a425cdb99ce71ff04e1a65bc1ccd33f  tests/tests/extension/ezupdate/fixtures/probe_composer_location.php
+f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
 80580bf8003967c59876d6359066f6b6  tests/tests/kernel/classes/audit/expAuditAlertsTest.php
 e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchiveTest.php
 52b81f30adda648cbe262f79efc6b68b  tests/tests/kernel/classes/audit/expAuditBufferTest.php
