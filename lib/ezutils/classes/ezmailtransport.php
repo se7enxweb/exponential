@@ -46,7 +46,12 @@ class eZMailTransport
         if ( !is_object( $transportClass ) )
         {
             eZDebug::writeError( "No class available for mail transport type '$transportType', cannot send mail", __METHOD__ );
+            return false;
         }
+        // The mail gate (kernel/classes/mailpreferences): mail of an optional category goes only to people who
+        // switched it on, with footer and List-Unsubscribe headers; mail without a category is sent as before.
+        if ( class_exists( 'expMailGate' ) )
+            return expMailGate::dispatch( $mail, $transportClass );
         return $transportClass->sendMail( $mail );
     }
 }

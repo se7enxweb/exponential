@@ -1310,6 +1310,33 @@ class eZMail
         return $separator;
     }
 
+    /**
+     * The category of e-mail this message belongs to (mailpreferences.ini [CategorySettings] Categories[]: content,
+     * newsletter, security, ...), or null when the sender did not say. The mail gate (expMailGate, called by
+     * eZMailTransport::send()) sends optional mail only to people who switched its category on and adds the footer,
+     * the unsubscribe link and the List-Unsubscribe headers; mail without a category is sent as before.
+     *
+     * @return string|null
+     */
+    function category()
+    {
+        return $this->Category;
+    }
+
+    /**
+     * Declares the category of e-mail of this message (see category()); also written as the X-Exp-Mail-Category
+     * header. Optional: a message without a category is sent as before.
+     *
+     * @param string|null $identifier
+     */
+    function setCategory( $identifier )
+    {
+        $identifier = $identifier === null ? null : preg_replace( '/[^a-z0-9_]/', '', strtolower( trim( (string)$identifier ) ) );
+        $this->Category = $identifier === '' ? null : $identifier;
+        if ( $this->Category !== null )
+            $this->setExtraHeader( 'X-Exp-Mail-Category', $this->Category );
+    }
+
 /*
 //        $subj = "=?$iso?B?" . trim( chunk_split( base64_encode( $subj ))) . "?=";
 */
@@ -1328,6 +1355,8 @@ class eZMail
     public $TextCodec;
     public $MessageID;
     public $MIMEVersion;
+    /// The category of e-mail (setCategory()), null when not declared
+    public $Category = null;
 
     /**
      * Contains an object of type ezcMail, which is used to store the
