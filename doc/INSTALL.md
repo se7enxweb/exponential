@@ -52,6 +52,10 @@ GitHub Installation Guide
 
 `cd exponential; composer install;`
 
+- Optional, on PHP 8.1 or later: add Exponential Velocity, the recommended application server. Exponential itself runs on PHP 8.0 or later under Apache or nginx with PHP-FPM; Velocity needs 8.1 and is therefore suggested, not installed by default.
+
+`composer require se7enxweb/exponential-velocity:~0.0.4.42;`
+
 For the rest of the installation steps you will find the installation guide at https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
 
 
@@ -61,6 +65,10 @@ Composer Installation Guide
 - Install Exponential and Required PHP libraries like Zeta Components and Exponential extensions as specified in this project's composer.json.
 
 `cd www_root_directory; composer create-project se7enxweb/exponential:v6.0.0 exponential;`
+
+- Optional, on PHP 8.1 or later: add Exponential Velocity, the recommended application server. Exponential itself runs on PHP 8.0 or later under Apache or nginx with PHP-FPM; Velocity needs 8.1 and is therefore suggested, not installed by default.
+
+`composer require se7enxweb/exponential-velocity:~0.0.4.42;`
 
 For the rest of the installation steps you will find the installation guide at https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
 

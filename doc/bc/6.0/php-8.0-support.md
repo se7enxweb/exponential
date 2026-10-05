@@ -13,7 +13,7 @@ wrapped in `function_exists()`.
 | Exception | Exponential Velocity, the optional application server, needs PHP 8.1 or later (see below). |
 | What changed in 6.0.15 | The few places that needed PHP 8.1 or later were made to work on 8.0; CI checks 8.0 on every push. |
 | Behaviour on 8.1 and later | Unchanged. Every fallback is used only where PHP lacks the function. |
-| Composer | `composer.json` still declares `^8.1` until the packages listed under "Installing with Composer" allow 8.0. |
+| Composer | `composer.json` declares `^8.0`. Velocity is suggested, not required; one package still declares `^8.1` (see "Installing with Composer"). |
 
 ## What was found and how it was fixed
 
@@ -107,22 +107,27 @@ code was checked too (PHPCompatibility, `php -l` with 8.0): it uses 8.1 and late
 
 ## Installing with Composer on PHP 8.0
 
-The code runs on 8.0, but the Composer metadata of some packages does not allow it yet, so a plain
-`composer install` on PHP 8.0 refuses today. Until the packages below are released with `^8.0` in their `"php"`
-requirement, install with `--ignore-platform-req=php` (the CI job `php80` does the same):
+`composer.json` declares `"php": "^8.0 || ^8.1 || ..."` since 6.0.15. The extensions that only declared `^8.1` in
+their metadata were released with `^8.0` (explayouts and its packages, the expsite packages, exp_enhanced_link,
+expchangeclass, expquery-translator, `exponential-legacy-installer` 2.2.4), and syndication 1.3.5, ezstarrating
+6.0.9, swark 1.0.5, birthday 1.3.3 and enhancedezbinaryfile 4.4.5 were released with fixes for code no PHP 8
+could load.
+
+Velocity is no longer required: it moved to `"suggest"`, because it needs PHP 8.1. On PHP 8.1 or later, add it
+after the installation:
 
 ```sh
-composer install --no-dev --ignore-platform-req=php
+composer require se7enxweb/exponential-velocity:~0.0.4.42
 ```
 
 | Package | Declares | Blocks 8.0 |
 |---|---|---|
-| `se7enxweb/exponential-velocity` | `>=8.1` | yes, and stays so: Velocity needs 8.1 (see above) |
-| `se7enxweb/exponential-legacy-installer` 2.2.3 | `^7.4 \|\| ^8.1 \|\| ^8.2` | yes, metadata only |
-| explayouts, explayouts-api, explayouts-content-browser(-core, -ui), explayouts-core, explayouts-relation-list-query, explayouts-site-api, explayouts-standard, explayouts-tags-query, explayouts-ui, explayouts-ui-api, expquery-translator, expsite-api, expsite-app, expsite-core, expsite-data-media, expsite-installer, sevenx-themes-media, exp_enhanced_link, expchangeclass | `^8.1 \|\| ^8.2 \|\| ^8.3 \|\| ^8.4` | yes, metadata only |
+| `se7enxweb/sevenx-themes-media` | `^8.1 \|\| ^8.2 \|\| ^8.3 \|\| ^8.4` | yes, metadata only, until its next release |
 | `google/recaptcha` (via recaptcha) | 2.1.0 needs `>=8.4` | no: the requirement is `*`, so Composer picks 1.3.x on 8.0 |
 
-Every other production package (the Zeta Components, `symfony/polyfill-php73` and the other se7enxweb
-extensions) already installs on 8.0. `composer.json` keeps `"php": "^8.1 || ..."` until the list above is
-empty apart from Velocity, and Velocity is either made optional (`suggest`) or keeps the minimum at 8.1 for
-Composer installs.
+Until `sevenx-themes-media` is released with `^8.0`, install on PHP 8.0 with the PHP requirement ignored, as the
+CI job `php80` does (its code runs on 8.0; only its metadata says otherwise):
+
+```sh
+composer install --no-dev --ignore-platform-req=php
+```
