@@ -1723,6 +1723,7 @@ a840bee182d030b3120409884035010b  design/standard/javascript/tools/eziepngfix.js
 bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 39d7b2ecc372dbc65fa0dd3418b12621  design/standard/stylesheets/debug.css
 54bbc9b009260c844ef7e2254bf5ea02  design/standard/stylesheets/exp_bookmarks.css
+e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
 d49cfb3a18a4509f99fe755854c6cbb9  design/standard/stylesheets/expdebugbar.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
 d5de150d8a583b510f49f7c3021088cf  design/standard/stylesheets/manual.css
@@ -2604,7 +2605,7 @@ e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 05c54fc072951df5123bdf0acc95c4d3  design/standard/templates/user/forgotpassword.tpl
 0593c48408782b956ece5a87bb080492  design/standard/templates/user/forgotpasswordmail.tpl
 effa7088aa8aaca0475eecbfe46e32a8  design/standard/templates/user/login.tpl
-91dc25ada51b81237c5afcdcf7a8edee  design/standard/templates/user/password.tpl
+3011508308fb68df79299cc69348ec8f  design/standard/templates/user/password.tpl
 78be8da21d4a46e8c000ee0b8d64427a  design/standard/templates/user/password_changed_mail.tpl
 263f95b3e124f005b4e5c5a6800ad5da  design/standard/templates/user/register.tpl
 ed5856b59fd9402bdad145c9c129582b  design/standard/templates/user/register_user_not_valid.tpl
@@ -6573,14 +6574,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-cbba32ac055f75e5cb2a4fd947721854  share/translations/eng-US/translation.ts
+5117699465a356f1ff55753608899c6a  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-75cf2df94a0833213ded11a96b37181c  share/translations/ger-DE/translation.ts
+b867293cb0da2b252b061ca9f71d0124  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
