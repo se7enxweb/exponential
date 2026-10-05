@@ -458,14 +458,78 @@ class expMongoDBAdapterTest extends PHPUnit\Framework\TestCase
      */
     public function testArrayQueryReturnsEmptyArray(): void
     {
-        eZDebug::reset();
-        $result = $this->db->arrayQuery( "SELECT * FROM ezcontentobject GROUP BY id" );
+        $result = null;
+        $warnings = $this->captureDebugWarnings( function ()
+        {
+            return $this->db->arrayQuery( "SELECT * FROM ezcontentobject GROUP BY id" );
+        }, $result );
         $this->assertIsArray( $result );
         $this->assertCount( 0, $result );
         // Warning must be routed through eZDebug, not emitted to error_log / stderr
-        $this->assertNotNull( eZDebug::$lastWarning,
+        $this->assertNotEmpty( $warnings,
             'arrayQuery must call eZDebug::writeWarning — not error_log' );
-        $this->assertStringContainsString( 'MONGO TODO', eZDebug::$lastWarning );
-        $this->assertStringContainsString( 'ezcontentobject', eZDebug::$lastWarning );
+        $lastWarning = end( $warnings );
+        $this->assertStringContainsString( 'MONGO TODO', $lastWarning );
+        $this->assertStringContainsString( 'ezcontentobject', $lastWarning );
+    }
+
+    /**
+     * Runs $callback and returns the texts of the eZDebug warnings it wrote.
+     *
+     * On its own this file runs against the eZDebug stub of stubs.php. In the
+     * full run another suite has already loaded the real eZDebug, so the stub
+     * is never declared: the warnings are then read from a debug instance of
+     * this test's own, with its log files in a private directory under
+     * var/tmp, and the debug globals are put back afterwards.
+     */
+    private function captureDebugWarnings( $callback, &$result )
+    {
+        if ( property_exists( 'eZDebug', 'lastWarning' ) )
+        {
+            eZDebug::reset();
+            $result = $callback();
+            return eZDebug::$lastWarning === null ? array() : array( eZDebug::$lastWarning );
+        }
+
+        $keys = array( 'eZDebugGlobalInstance', 'eZDebugEnabled', 'eZDebugLogOnly', 'eZDebugAlwaysLog', 'eZDebugLogFileEnabled' );
+        $saved = array();
+        foreach ( $keys as $key )
+            $saved[$key] = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
+        $dir = dirname( __DIR__, 5 ) . '/var/tmp/phpunit-mongodb-ezdebug-' . getmypid() . '-' . substr( md5( uniqid( '', true ) ), 0, 8 ) . '/';
+        mkdir( $dir, 0777, true );
+
+        try
+        {
+            unset( $GLOBALS['eZDebugAlwaysLog'], $GLOBALS['eZDebugLogFileEnabled'] );
+            $debug = new eZDebug();
+            foreach ( $debug->LogFiles as $level => $file )
+                $debug->LogFiles[$level] = array( $dir, $file[1] );
+            $GLOBALS['eZDebugGlobalInstance'] = $debug;
+            $GLOBALS['eZDebugEnabled'] = true;
+            $GLOBALS['eZDebugLogOnly'] = false;
+
+            $result = $callback();
+
+            $warnings = array();
+            foreach ( $debug->DebugStrings as $message )
+            {
+                if ( $message['Level'] == eZDebug::LEVEL_WARNING )
+                    $warnings[] = $message['String'];
+            }
+            return $warnings;
+        }
+        finally
+        {
+            foreach ( $saved as $key => $value )
+            {
+                if ( $value === null )
+                    unset( $GLOBALS[$key] );
+                else
+                    $GLOBALS[$key] = $value[0];
+            }
+            foreach ( glob( $dir . '*' ) as $file )
+                unlink( $file );
+            rmdir( $dir );
+        }
     }
 }
