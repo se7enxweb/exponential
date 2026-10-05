@@ -51,7 +51,8 @@ abstract class ezpSessionHandler
      */
     public function setSaveHandler()
     {
-        session_module_name( 'user' );
+        // No session_module_name( 'user' ): PHP 8 throws a ValueError for it, and
+        // session_set_save_handler() selects the user module by itself.
         session_set_save_handler(
             array( $this, 'open' ),
             array( $this, 'close' ),
