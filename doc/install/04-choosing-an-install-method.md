@@ -6,12 +6,11 @@ in a browser, the **kickstarter** on the command line driven by a `kickstart.ini
 classes in `kernel/setup/steps/`, in the order of the step table in `kernel/setup/steps/ezstep_data.php`, and a
 **site package** whose install scripts shape the new site. This chapter explains that common engine, compares the
 three methods, lists exactly what an installation writes to disk and to the database, and recommends a method for
-each situation, including unattended installs in CI pipelines and containers.
+each situation, including unattended installs in CI pipelines and containers. If you already know which method you
+want, skip to its chapter; if you will install more than once, or automate the install, read 4.4 and 4.6 first,
+because they describe what a reinstall destroys.
 
-[Previous: 3. Getting the code](03-getting-the-code.md) | [Next: 5. The setup wizard](05-setup-wizard.md) |
-[Contents](README.md)
-
----
+[Contents](README.md) · Previous: [3. Getting the code](03-getting-the-code.md) · Next: [5. The setup wizard](05-setup-wizard.md)
 
 ## 4.1 One installer, three front ends
 
@@ -38,8 +37,12 @@ Every install method runs the same sequence of steps. Each step is a class `eZSt
 | 15 | `Final` | `ezstep_final.php` | nothing: shows the addresses of the new site |
 
 `CreateSites` is marked `count_step => false`: it is never shown as a page and does not count in the wizard's
-progress bar. It is the only step that changes the database and the settings; every step before it only collects and
-checks answers.
+progress bar. It is the only step that installs the database, the site package and the siteaccess settings; the steps
+before it collect and check answers (`DatabaseInit` opens the database to test it, which creates an empty SQLite file
+if none exists, and in the browser `LanguageOptions` writes the character set to `settings/override/i18n.ini.append.php`), and keep
+what they found in memory for the steps after them. That is why an install cannot be resumed half-way in a new
+process: the kickstarter refuses a `--start-step` that would need those results
+([chapter 6](06-kickstarter.md#610-re-running-and-resuming)).
 
 The three front ends differ only in **where the answers come from** and **how the steps are driven**:
 
@@ -79,7 +82,7 @@ Two consequences follow:
 | Needs a file written first | no (`kickstart.ini` optional) | yes: `kickstart.ini` (`exp:kickstarter ini` writes it) | no |
 | Interactive | yes | only `exp:kickstarter ini` asks questions; `run` does not | no |
 | Dry run | no | `run --dry-run` | `--dry-run`, and `--print` to see the configuration |
-| Partial runs | Back and Next in the browser | `run --start-step=<Step>` and `--stop-step=<Step>`, for diagnosis; an install runs from `Welcome` | no; run again with the same options |
+| Partial runs | Back and Next in the browser | `run --start-step=<Step>` and `--stop-step=<Step>`, for diagnosis; an install runs from `Welcome`, and a later start that needs the results of earlier steps is refused | no; run again with the same options |
 | Guard against overwriting | starts only while `CheckValidity=true` | `--force` required whenever the steps include `CreateSites` | refuses when `settings/override/site.ini.append.php` holds `[DatabaseSettings]`, unless `--force` |
 | Maintenance page during the run | yes, every visitor but the wizard's browser | yes | yes (it runs the kickstarter) |
 | Run log | `var/log/setup.log` | `var/log/setup.log` and `var/log/kickstart.log` | `var/log/setup.log` and `var/log/exp-install-<date>.ini` (it prints to the terminal only; there is no `kickstart.log`) |
@@ -129,14 +132,22 @@ administrator `admin` and a generated password, shown once at the end. It is des
 
 The steps install a **site package**: an Exponential package of type `site` (`package.xml` with
 `<type>site</type>`), plus the packages it requires. Packages live in the package repository below
-`var/storage/packages/`; the vendor directory is set by `settings/package.ini [RepositorySettings] Vendor` (`7x`).
-This installation carries three packages under `var/storage/packages/7x/`:
+`var/storage/packages/`; the vendor directory is set by `settings/package.ini [RepositorySettings] Vendor` (`7x`), so
+an imported package lands in `var/storage/packages/7x/<name>/`.
 
-| Package | Summary in `package.xml` | Role |
+The package index of this version, `[RepositorySettings] RemotePackagesIndexURL`
+(`https://exponential.packages.exponential.earth/exponential/6.0/6.0.15`, whose `index.xml` lists the packages),
+offers eleven site packages. The ones you are most likely to choose:
+
+| Site package | Summary in the index | Notes |
 |---|---|---|
-| `sevenx_multisite` | MultiSite Default Installation | the site package (the default of `exp:install --package`) |
-| `sevenx_classes` | sevenx content classes | required by `sevenx_multisite` (`min-version 5.1`) |
-| `sevenx_multisite_democontent` | MultiSite demo content | required by `sevenx_multisite` (`min-version 5.1`) |
+| `sevenx_multisite` | 7x MultiSite Default Installation | the default of `exp:install --package` and of `exp:kickstarter ini --yes`; requires `sevenx_classes` (the content classes) and `sevenx_multisite_democontent` (the demo content), each `min-version 5.1` |
+| `sevenx_multisite_clean` | 7x MultiSite Default Installation (without demo content) | the same site, empty |
+| `sevenx_site`, `sevenx_site_clean` | 7x Simple Website Interface | a simpler site, with or without demo content |
+| `ezwebin_site`, `ezflow_site`, `ezdemo_site` (each also as `..._clean`), `plain_site` | Website Interface, eZ Flow, Exponential Demo Site, Plain site | the older site packages, kept for sites built on them |
+
+A `_clean` package installs the same structure without the demo articles and images: choose it for a real site you
+will fill yourself, and the full one to evaluate Exponential.
 
 Where packages come from:
 
@@ -232,7 +243,7 @@ of [chapter 9](09-databases.md).
 | `var/storage/sqlite3/<file>` | `DatabaseInit` / `CreateSites` | the SQLite database, with `-wal` and `-shm` files beside it |
 | `var/storage/packages/` | `SiteTypes` | downloaded and imported packages |
 | `design/<package>/override/templates/` | `CreateSites` | empty override directories for the site design named after the package |
-| `var/<package>/` | the site | `[FileSettings] VarDir=var/<package identifier>` is written to the siteaccess settings; a site package can set its own |
+| `var/<package>/` or `var/site/` | the site | `CreateSites` writes `[FileSettings] VarDir=var/<package identifier>` to the siteaccess settings, and a site package can set its own: `sevenx_multisite` sets `var/site` for the public siteaccess. Uploaded files and the content caches live below it |
 | `var/maintenance.json` | all methods | exists only while the installation runs (see below) |
 | `var/log/setup.log` | all methods | one readable record per run; earlier runs rotate to `setup.log.1`, `.2` ... |
 | `var/log/setup-run.state` | the wizard | lets each wizard request resume the same run |
@@ -297,8 +308,9 @@ one), or read the generated one from that file and rotate it.
 
 **Run as the web server's user.** The installer creates files in `settings/`, `var/` and `design/`. Run it as the
 user the web server or Velocity runs as, or fix the ownership afterwards; the system check tests the directory
-permissions as the user it runs as. Neither the kickstarter nor `exp:install` refuses to run as `root`, but files
-created by `root` may later be unwritable for the web server.
+permissions as the user it runs as. Neither the kickstarter nor `exp:install` refuses to run as `root` (both accept
+`--allow-root-user` and ignore it), but files created by `root` may later be unwritable for the web server. Most
+other commands, `exp:velocity` among them, do refuse `root` unless `--allow-root-user` is given.
 
 **Make the database action explicit.** Both `exp:install` (default) and the kickstarter files most people write
 use `remove`. That is what a fresh container wants, and exactly what must never point at a database that holds data
@@ -308,7 +320,8 @@ you need.
 `DatabaseAction=remove` produces the same installation again. With `ignore` a second run adds a second copy of the
 data.
 
-**A minimal container entry point** (installs once, then starts the server):
+**A minimal container entry point** (installs once, then starts the server and stays in the foreground while it
+runs):
 
 ```bash
 #!/usr/bin/env bash
@@ -319,12 +332,21 @@ if ! grep -q '^\[DatabaseSettings\]' settings/override/site.ini.append.php 2>/de
         --db=mysql --db-host="${DB_HOST}" --db-name="${DB_NAME}" --db-user="${DB_USER}" \
         --url="${SITE_URL}" --email="${ADMIN_EMAIL}" --password="${ADMIN_PASSWORD}"
 fi
-exec php bin/php/console exp:velocity start
+php bin/php/console exp:velocity start
+# exp:velocity start runs the server in the background and returns; status exits 0 while it runs
+while php bin/php/console exp:velocity status >/dev/null 2>&1; do sleep 30; done
+echo "Velocity stopped" >&2
+exit 1
 ```
 
 The test `grep -q '^\[DatabaseSettings\]' settings/override/site.ini.append.php` is the same test `exp:install`
 itself uses to decide that a directory already holds an installation. Pass `EXP_INSTALL_DB_PASSWORD` in the
-container's environment. Starting and configuring Velocity is the subject of [chapter 8](08-serving-the-site.md).
+container's environment. The loop at the end matters: `exp:velocity start` detaches the server and returns as soon as
+it answers, so an entry point that ended with it would end the container's main process, and with it the container.
+The loop keeps the entry point alive while `exp:velocity status` reports the server as running (exit status 0) and
+ends the container when it stops, so the container runtime can restart it. If the entry point runs as `root`, add
+`--allow-root-user` to the two `exp:velocity` commands. Starting and configuring Velocity is the subject of
+[chapter 8](08-serving-the-site.md).
 
 **A CI smoke test** that installs on SQLite and fails the job on any error:
 
@@ -376,3 +398,6 @@ External:
 - Composer: <https://getcomposer.org/doc/>
 - PHP command line usage: <https://www.php.net/manual/en/features.commandline.php>
 - PHP `proc_open()` (used by the kickstarter's run log): <https://www.php.net/manual/en/function.proc-open.php>
+- Package index of this version: <https://exponential.packages.exponential.earth/exponential/6.0/6.0.15/index.xml>
+
+[Contents](README.md) · Previous: [3. Getting the code](03-getting-the-code.md) · Next: [5. The setup wizard](05-setup-wizard.md)
