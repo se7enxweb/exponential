@@ -92,10 +92,12 @@ Then read the notes of the 5.90 line, which prepared the move to PHP 7 and a lon
    `extension/` and `design/` into it, or, when you manage the site with Composer, change the constraint of
    `se7enxweb/exponential` in your project's `composer.json` and run `composer update se7enxweb/exponential`.
    Do not let a tool replace your own settings or extensions.
-2. Record the new version in the database. The same file widens `ezuser.password_hash` from the `varchar(50)` of
-   every 5.x schema to 255: with the default `HashType=php_default` and `UpdateHash=true` each user's hash becomes a
-   60-character bcrypt hash at the first sign-in, which the old column cannot hold. On a column that is already wide
-   the statement changes nothing:
+2. Record the new version in the database. The same file brings the schema to what the 6.0 kernel uses: it widens
+   `ezuser.password_hash` from the `varchar(50)` of every 5.x schema to 255 (with the default `HashType=php_default`
+   and `UpdateHash=true` each user's hash becomes a 60-character bcrypt hash at the first sign-in, which the old
+   column cannot hold), adds `ezcontentobject_trash.trashed` (without it moving content to the trash fails) and, on
+   PostgreSQL, renames the sequences to `<table>_<column>_seq` (the names the kernel reads new ids from). Each change
+   leaves a database that already has it as it is:
 
    ```bash
    mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
@@ -130,12 +132,14 @@ Then reload the PHP-FPM that serves the site (`systemctl reload <your-php-fpm-se
 ### C2. Apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` (MySQL, PostgreSQL and SQLite
-files exist). It records the version, widens `ezuser.password_hash` to 255 on MySQL and PostgreSQL (for a site that
-came from 5.x with an older copy of the Part B file; on a wide column nothing changes) and adds the columns that later
-changes need (PDF export footer, OPML and podcast fields and more). Apply it **once, whole, in order**; if your
-database already has a column, the statement fails and tells you which one, skip only that statement. A site from 5.x
-that applied an older copy of this file and still has a 50-character `password_hash` runs only the widening statement
-of the file, not the file again:
+files exist). It records the version, makes the schema changes of the Part B file on MySQL and PostgreSQL (for a site
+that came from 5.x with an older copy of that file; a database that already has them is left as it is) and adds the
+columns that later changes need (PDF export footer, OPML and podcast fields and more). Apply it **once, whole, in
+order**; if your database already has a column, the statement fails and tells you which one, skip only that
+statement. A site from 5.x that applied an older copy of this file and still has a 50-character `password_hash`, no
+`ezcontentobject_trash.trashed` or (PostgreSQL) `<table>_s` sequences does not apply it again: it applies the current
+Part B file and sets the version row back with
+`UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version';`. Otherwise:
 
 ```bash
 mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql

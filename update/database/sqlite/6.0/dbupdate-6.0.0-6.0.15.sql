@@ -8,6 +8,9 @@
 -- PostgreSQL files: SQLite does not enforce the length of a VARCHAR, so a
 -- 60 character bcrypt hash fits whatever the column says, and an SQLite
 -- database was never a 5.x one; it was installed by 6.0 with varchar(255).
+-- For the same reason it needs neither ezcontentobject_trash.trashed nor the
+-- sequence renames of the MySQL and PostgreSQL files: the SQLite schema has
+-- had the column since its first version, and SQLite has no sequences.
 --
 
 UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version';

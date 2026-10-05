@@ -114,8 +114,8 @@ further: [14. from the 4.x line](14-migrating-from-4x.md), [15. from the 5.x leg
   also apply the `dbupdate-cluster-...` file of the same step (MySQL: 4.3, 4.7, 5.2, 5.4).
 - **`unstable/` directories** hold the files of pre-releases (alpha, beta, rc). Do not apply them to a site that ran a
   final release.
-- **`6.12/`, `7.2/` and `7.3/`** are not steps of this chain; never apply them as files. Two of them hold schema
-  changes a database from 5.4 still needs: see [below](#the-612-72-and-73-directories).
+- **`6.12/`, `7.2/` and `7.3/`** are not steps of this chain; never apply them as files. Their schema changes
+  are in the 6.0 files: see [below](#the-612-72-and-73-directories).
 - **A file that fails half way.** Restore the backup and apply the file again from the start; do not repair by hand
   and re-run.
 - **Check the chain itself.** `php bin/php/console exp:checkdbfiles --no-verify-branches` verifies the update files
@@ -147,22 +147,23 @@ apart from the `SET default_storage_engine` line. They are not steps between 5.4
 **Do not apply them as files** to a database on the Exponential path. Each would replace the version row with a
 number that is not an Exponential version, and `7.2/` starts from 6.13.0, a version no Exponential database has.
 
-**Do run some of their statements** on a database that came from 5.4 (or 5.90). The 6.0 kernel was built after all
-three changes and expects their schema, but the 6.0 files carry only the first:
+**Their schema changes are in the 6.0 files.** The 6.0 kernel was built after all three changes and uses their
+schema; since October 2026 the 6.0 files give a database that comes from 5.4 (or 5.90) all of them, so nothing needs
+to be run by hand:
 
-- `ezuser.password_hash`: in the 6.0 files since October 2026 ([11.5](#115-from-54-or-590-to-600), step 2); nothing
-  to do.
-- `ezcontentobject_trash.trashed`: the 6.0 schema has the column and the trash writes and sorts by it, so moving
-  content to the trash fails without it. Run the `ALTER TABLE ezcontentobject_trash` line of the `7.3/` file of your
-  engine, once.
+- `ezuser.password_hash` widened to 255 ([11.5](#115-from-54-or-590-to-600), step 2).
+- `ezcontentobject_trash.trashed`, without which moving content to the trash fails: MySQL and PostgreSQL, same
+  definition as the `7.3/` file, added only when the column is missing.
 - PostgreSQL only, the sequence names: the 6.0 kernel reads the last inserted id from `<table>_<column>_seq`, so on a
-  database that still has the `<table>_s` sequences of 5.4 every insert that needs its new id fails. Run the
-  `ALTER SEQUENCE` and `ALTER TABLE` lines of the `7.2/` file, not its `UPDATE` line.
+  database that still has the `<table>_s` sequences of 5.4 every insert that needs its new id fails. The same 88
+  sequences as the `7.2/` file are renamed, each only when the old name exists and the new one is free, and each
+  column default is pointed at the new name when it does not name it yet.
 
-A database that already ran those upstream releases (its version row reads `6.12.0`, `6.13.0`, `7.2.0` or `7.3.0`)
-has the changes of every file up to its number: run the statements above of the later files only, then continue with
-[11.6](#116-from-any-60x-to-today). A database installed by Exponential 6.0 has all three changes from its schema and
-never needs these directories.
+All three are in the 5.4 to 6.0.0 file and, for a site that reached 6.0 with an older copy of it, again in the 6.0.0
+to 6.0.15 file. On a database that already has a change they leave it as it is, so they are harmless on a database
+installed by Exponential 6.0 or one that ran those upstream releases (its version row reads `6.12.0`, `6.13.0`,
+`7.2.0` or `7.3.0`); such a database continues with [11.6](#116-from-any-60x-to-today). SQLite needs none of them:
+its schema has always had the column and it has no sequences.
 
 ### Per-database notes
 
@@ -170,7 +171,7 @@ never needs these directories.
 |---|---|
 | MySQL or MariaDB | `6.0/dbupdate-5.4.0-6.0.0.sql`, like `6.12/`, `7.3/` and the old chain's files, starts with `SET default_storage_engine=InnoDB;`, which MySQL (from 5.5.3) and MariaDB accept: apply the files whole. Copies from before October 2026 started with `SET storage_engine=InnoDB;`, a spelling MySQL removed in 5.7.5 and MariaDB in 12.0; take the current files. `6.0/dbupdate-6.0.0-6.0.15.sql` has no such line, because each of its tables names its engine. |
 | MySQL or MariaDB | Tables must be UTF-8; `php bin/php/ezconvertdbcharset.php` converts an old database. `php bin/php/ezconvertmysqltabletype.php --list` lists the table types and `--newtype=InnoDB` converts them. |
-| PostgreSQL | The 5.4 step is `6.0/dbupdate-5.4-to-6.0.sql` (only the two `UPDATE` lines). The `digest` function of `pgcrypto` must exist in the database. |
+| PostgreSQL | The 5.4 step is `6.0/dbupdate-5.4-to-6.0.sql`: the version rows, the wider `password_hash`, the `trashed` column and the sequence renames ([above](#the-612-72-and-73-directories)). Its guarded steps are `DO` blocks, which need PostgreSQL 9.0 or newer. The `digest` function of `pgcrypto` must exist in the database. |
 | SQLite | Each `ALTER TABLE` adds one column, because SQLite takes only one per statement and cannot drop a column again: run the file once. Use SQLite's online backup before it. |
 | Oracle | The `ezoracle` extension carries its own update files up to 5.3; apply them with your Oracle client. The 6.0.15 audit tables come from `createaudittables.php`. |
 | MongoDB | No SQL files. `createaudittables.php` creates the audit index collections through the driver's schema handler. |
@@ -232,22 +233,26 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    `settings/override/`, `settings/siteaccess/`, your own `extension/` directories and your own `design/` directories;
    or, when the site is a Composer project, change the constraint of `se7enxweb/exponential` in your `composer.json`
    and run `composer update se7enxweb/exponential`. Never let a tool replace your own settings or extensions.
-2. **Record the version and widen `ezuser.password_hash`.** The file records 6.0.0 and widens
-   `ezuser.password_hash` from the `varchar(50)` of every 5.x schema to 255, the width of the kernel schema:
+2. **Record the version and bring the schema to what the 6.0 kernel uses.** The file records 6.0.0 and makes three
+   schema changes a 5.4 database needs ([11.3](#the-612-72-and-73-directories)): it widens `ezuser.password_hash`
+   from the `varchar(50)` of every 5.x schema to 255, the width of the kernel schema; it adds
+   `ezcontentobject_trash.trashed`; and on PostgreSQL it renames the sequences to `<table>_<column>_seq`:
 
    ```bash
    mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
    psql -U USER -d DATABASE -f update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
    ```
 
-   Apply the whole file: the widening is not optional. With the default `[UserSettings] HashType=php_default` and
+   Apply the whole file: none of it is optional. With the default `[UserSettings] HashType=php_default` and
    `UpdateHash=true` every user's hash is rewritten at the first sign-in to a 60-character bcrypt hash, which a
-   50-character column refuses or cuts, and the user cannot sign in again. The statement gives the column the
-   definition it already has on a newer database, so it is harmless there. Copies of the file from before October 2026
-   only recorded the version; the 6.0.0 to 6.0.15 file of 11.6 widens the column too, for a site that used one. Oracle
-   (`ezoracle`) has no such file: run `ALTER TABLE ezuser MODIFY ( password_hash VARCHAR2(255) );` with your Oracle
-   client. The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes above). Details:
-   [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
+   50-character column refuses or cuts, and the user cannot sign in again; without `trashed` moving content to the
+   trash fails; with the old sequence names every insert that needs its new id fails on PostgreSQL. Each change leaves
+   a database that already has it as it is, so the file can run again. Copies of the file from before October 2026
+   only recorded the version; the 6.0.0 to 6.0.15 file of 11.6 makes the same changes, for a site that used one.
+   Oracle (`ezoracle`) has no such file: run `ALTER TABLE ezuser MODIFY ( password_hash VARCHAR2(255) );` with your
+   Oracle client, and add `trashed` (`ALTER TABLE ezcontentobject_trash ADD ( trashed INTEGER DEFAULT 0 NOT NULL );`)
+   if the table lacks it. The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes
+   above). Details: [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
 3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`); Velocity needs 8.1. Releases 6.0.8 to
    6.0.14 required 8.1. A site that must stay on PHP 7.4 stays on 6.0.7. Check your own extensions for PHP 8
    problems: classes that extend `eZPersistentObject` or `eZDataType` are the usual cases. See
@@ -292,10 +297,11 @@ prints PASS, FAIL or SKIP with the time of each and stops at the first failure. 
 ### Step 2: apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, for MySQL, PostgreSQL and SQLite.
-It records the version (`6.0.15stable`), widens `ezuser.password_hash` to 255 on MySQL and PostgreSQL (for a site that
-came from 5.x with a copy of the 5.4 to 6.0.0 file from before October 2026; on a wide column it changes nothing; SQLite
-does not enforce the length of a `VARCHAR`, and an SQLite database was never a 5.x one) and adds the tables and
-columns of the line: the PDF export footer
+It records the version (`6.0.15stable`); on MySQL and PostgreSQL it makes the three changes of the 5.4 to 6.0.0 file
+(the wider `ezuser.password_hash`, `ezcontentobject_trash.trashed` and, on PostgreSQL, the `<table>_<column>_seq`
+sequence names) for a site that came from 5.x with a copy of that file from before October 2026, and leaves a
+database that already has them as it is (SQLite needs none of them: [11.3](#the-612-72-and-73-directories)); and it
+adds the tables and columns of the line: the PDF export footer
 (`ezpdf_export.show_footer`, `footer_text`), OPML and podcast exports (`ezrss_export.opml_head`, `podcast_head`,
 table `ezrss_export_opml_item`), the audit index (`expaudit_cursor`, `expaudit_event`, `expaudit_file`), bookmark
 folders (`expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority`) and the e-mail preferences
@@ -304,10 +310,11 @@ folders (`expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority`) 
 Apply it **once, whole, in order**. If the database already has a column, the statement fails and names it; skip only
 that statement.
 
-A site that came from 5.x and already applied an older copy of this file may still have the 50-character column
-(`SHOW COLUMNS FROM ezuser LIKE 'password_hash'`, or `\d ezuser` in `psql`). Do not apply the file again; run its one
-statement: `ALTER TABLE ezuser CHANGE password_hash password_hash VARCHAR(255) default NULL;` on MySQL or MariaDB,
-`ALTER TABLE ezuser ALTER COLUMN password_hash TYPE VARCHAR(255);` on PostgreSQL.
+A site that came from 5.x and already applied an older copy of this file may still lack those three changes
+(`SHOW COLUMNS FROM ezuser LIKE 'password_hash'` and `SHOW COLUMNS FROM ezcontentobject_trash LIKE 'trashed'`; on
+PostgreSQL `\d ezuser`, `\d ezcontentobject_trash` and `\ds` in `psql`). Do not apply the file again: apply the current
+5.4 to 6.0.0 file of your engine, which makes them and can run again, and then set the version row, which that file
+sets to 6.0.0, back: `UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version';`.
 
 ```bash
 mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql

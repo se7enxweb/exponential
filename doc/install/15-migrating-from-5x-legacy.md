@@ -326,7 +326,8 @@ lines 45 to 51 in 6.0.15), and remove the override again afterwards: the default
 files if the site used the database cluster), with the data scripts of each step from
 [11.4](11-upgrading.md#114-from-310-to-53-the-old-chain). A 5.4 or 2014.11 database is already there.
 
-**4. Record 6.0.0.** The 5.4 to 6.0.0 file records the version rows and widens `ezuser.password_hash` (step 5):
+**4. Record 6.0.0.** The 5.4 to 6.0.0 file records the version rows and brings the schema to what the 6.0 kernel
+uses (step 5):
 
 ```bash
 mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
@@ -335,25 +336,32 @@ psql -U USER -d DATABASE -f update/database/postgresql/6.0/dbupdate-5.4-to-6.0.s
 
 Apply the whole file. The MySQL file opens with `SET default_storage_engine=InnoDB;`, which every MySQL from 5.5.3 and
 MariaDB accept. Copies from before October 2026 opened with `SET storage_engine=InnoDB;`, which MySQL 5.7.5 and later
-and MariaDB 12.0 and later reject, and did not widen the column; take the current files.
+and MariaDB 12.0 and later reject, and made none of the schema changes of step 5; take the current files.
 
-**5. `ezuser.password_hash` is widened by the update file.** Every 5.x schema up to 2017.08 has
-`password_hash varchar(50)`. Exponential stores `php_default` hashes (bcrypt, 60 characters) and, with
-`UpdateHash=true`, rewrites each user's hash at the first sign-in ([15.9](#159-users-password-hashes-and-sessions)).
-The file of step 4 widens the column to 255, the width of the kernel schema, on MySQL and PostgreSQL, and so does the
-6.0.0 to 6.0.15 file of step 6, for a site that used an older copy of the step 4 file. On a column that is already
-255 wide the statement changes nothing. Nothing to run by hand, except:
+**5. The schema changes are made by the update file.** The 6.0 kernel uses three changes a 5.x schema does not have,
+which upstream shipped only in its `6.12/`, `7.2/` and `7.3/` files
+([11.3](11-upgrading.md#the-612-72-and-73-directories)):
+
+- **`ezuser.password_hash`**: every 5.x schema up to 2017.08 has `password_hash varchar(50)`. Exponential stores
+  `php_default` hashes (bcrypt, 60 characters) and, with `UpdateHash=true`, rewrites each user's hash at the first
+  sign-in ([15.9](#159-users-password-hashes-and-sessions)). The file widens the column to 255, the width of the
+  kernel schema.
+- **`ezcontentobject_trash.trashed`**: the time content went to the trash; without it moving content to the trash
+  fails. The file adds it when it is missing.
+- **PostgreSQL sequence names**: the kernel reads new ids from `<table>_<column>_seq`; a 5.x database has
+  `<table>_s`. The file renames them when the old name exists and the new one is free.
+
+The 6.0.0 to 6.0.15 file of step 6 makes the same changes, for a site that used an older copy of the step 4 file. On a
+database that already has a change, it is left as it is. Nothing to run by hand, except:
 
 - **Oracle**: `ezoracle` ships no file for it; run `ALTER TABLE ezuser MODIFY ( password_hash VARCHAR2(255) );`
-  (standard syntax) with your Oracle client.
-- **A site that already applied an older copy of the 6.0.0 to 6.0.15 file** with the narrow column: run only the
-  widening statement of that file, not the file again:
+  (standard syntax) with your Oracle client, and `ALTER TABLE ezcontentobject_trash ADD ( trashed INTEGER DEFAULT 0
+  NOT NULL );` if the table lacks the column.
+- **A site that already applied an older copy of the 6.0.0 to 6.0.15 file** without these changes: do not apply that
+  file again. Apply the current step 4 file, which can run again, and set the version row back:
 
 ```sql
--- MySQL, MariaDB
-ALTER TABLE ezuser CHANGE password_hash password_hash VARCHAR(255) default NULL;
--- PostgreSQL
-ALTER TABLE ezuser ALTER COLUMN password_hash TYPE VARCHAR(255);
+UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version';
 ```
 
 **6. Apply the 6.0 line.**
@@ -802,7 +810,7 @@ of `var/<site>/storage/` if editors uploaded files.
       dereferenced; built-in extensions replaced by their packages.
 - [ ] Database, file, image, siteaccess, user and form token settings written into INI ([15.6](#156-translate-the-symfony-configuration-into-ini)).
 - [ ] `image_variations` written as `image.ini` aliases.
-- [ ] Database: backup, internal drafts, chain to 5.4, 6.0.0 version rows, `password_hash` widened, 6.0.15 file, audit
+- [ ] Database: backup, internal drafts, chain to 5.4, 6.0.0 file (`password_hash` widened, `trashed`, PostgreSQL sequences), 6.0.15 file, audit
       tables, 5.3/5.4 data scripts, `ezuser_setting` check.
 - [ ] `ezrichtext` and custom field types converted or removed.
 - [ ] Twig front end rewritten as TPL overrides; routes as modules, aliases or request rules.

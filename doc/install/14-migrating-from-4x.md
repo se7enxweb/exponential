@@ -270,7 +270,7 @@ Apply each file once, whole, in this order, starting after your version. The fil
 | 11 | 5.1 | `5.2/dbupdate-5.1.0-to-5.2.0.sql` | language masks to `BIGINT`; duplicate `ezurl_object_link` rows removed (MySQL); `ezcontentobject.language_mask` corrected; `eznode_assignment.priority`, `is_hidden` |
 | 12 | 5.2 | `5.3/dbupdate-5.2.0-to-5.3.0.sql` | index on `contentclassattribute_id` |
 | 13 | 5.3 | `5.4/dbupdate-5.3.0-to-5.4.0.sql` | drops `ezsearch_return_count`; empty dates stored as `NULL`; orphaned `ezuser_setting` rows removed |
-| 14 | 5.4 | `6.0/dbupdate-5.4.0-6.0.0.sql` (MySQL), `6.0/dbupdate-5.4-to-6.0.sql` (PostgreSQL) | records 6.0.0; widens `ezuser.password_hash` from 50 to 255 for the bcrypt hashes of 6.0 |
+| 14 | 5.4 | `6.0/dbupdate-5.4.0-6.0.0.sql` (MySQL), `6.0/dbupdate-5.4-to-6.0.sql` (PostgreSQL) | records 6.0.0; widens `ezuser.password_hash` from 50 to 255 for the bcrypt hashes of 6.0, adds `ezcontentobject_trash.trashed` and, on PostgreSQL, renames the sequences to `<table>_<column>_seq` ([11.3](11-upgrading.md#the-612-72-and-73-directories)) |
 | 15 | 6.0.0 | `6.0/dbupdate-6.0.0-6.0.15.sql` | the tables and columns of the 6.0 line ([11.6](11-upgrading.md#116-from-any-60x-to-today), step 2) |
 
 The 5.4 file says of its date update: "Skip this if updating from 5.3.3 or higher as this should ideally not be
