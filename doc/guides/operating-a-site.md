@@ -118,6 +118,8 @@ Replace `/path/to/installation` with the root directory. Every part also has a c
 
 The notification cronjob part has its own guide: [Notifications: running them and fixing problems](notifications-administrator.md).
 
+The part `mailpreferences` (also in `infrequent`) keeps the e-mail consent log and confirmations within their retention time: [E-mail preferences: setting them up and running them](mail-preferences-administrator.md).
+
 Depth: [Cronjobs console](../features/6.0/cronjobs-console.md), [commands, cronjob parts and views as classes](../specifications/6.0/runnable-commands-cronjobs-views.md), [Content jobs](../features/6.0/content-jobs.md) (large removals and copies run in batches and are resumed by `cron:contentjobs`).
 
 ## 4. Turn on the static cache

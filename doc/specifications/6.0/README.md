@@ -20,6 +20,9 @@ default, scope) and ends with "Related pages".
 | [Notifications](notifications.md) | Events, handlers, rules, digest, the service, lock and run record, views, templates |
 | [Notification settings](notifications-ini.md) | `notification.ini` and the related `site.ini`, `cronjob.ini`, `menu.ini` settings with defaults |
 | [Notification commands](notifications-cli.md) | `exp:notification:status`, `run`, `events`, `subscriptions`: options, exit codes, sample output |
+| [E-mail preferences and consent](mail-preferences.md) | Categories, preferences, the consent log, suppression, the mail gate, links, tables, flows, settings |
+| [E-mail preference commands](mail-preferences-cli.md) | `exp:mail:status`, `preferences`, `suppression`, `consent`, `gate`: actions, options, exit codes, sample output |
+| [E-mail preferences: the law checklist](mail-preferences-compliance.md) | CAN-SPAM, GDPR and ePrivacy, CCPA/CPRA, CASL, RFC 8058 mapped to code and tests; the gaps |
 
 ## Databases
 

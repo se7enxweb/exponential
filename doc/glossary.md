@@ -47,6 +47,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **collected information**: answers visitors submit through forms (contact, polls), stored per object and exportable. [bccie](features/6.0/extensions/bccie.md).
 - **Composer**: the PHP package manager; the installation's `composer.json` decides which extensions arrive. [Default extension distribution](features/6.0/default-extension-distribution.md).
 - **console**: the command `./console`, which finds and runs every command of an installation (`exp:`, `bin:`, `cron:`, `ext:`). [Console](bc/6.0/console.md).
+- **consent log**: the record of every change of a person's e-mail preferences, with the time, the source, the exact text the person saw and the IP address; anonymised on erasure. [E-mail preferences](features/6.0/mail-preferences.md), [specification](specifications/6.0/mail-preferences.md).
 - **content class**: the definition of a kind of content (for example Article) as a list of **attributes**. [Content model](guides/content-model-and-editing.md).
 - **content job**: a large remove, copy or move run in the background instead of one web request. [Content jobs](features/6.0/content-jobs.md).
 - **content object**: one piece of content, an instance of a **content class**, with versions and translations; it appears in the tree through one or more **nodes**. [Content model](guides/content-model-and-editing.md).
@@ -63,11 +64,13 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **design.ini**: the settings file that lists designs, stylesheets and scripts. [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
 - **DFS**: the database file system flavour of the **cluster** handler. [Operating a site](guides/operating-a-site.md).
 - **digest (notification)**: one e-mail that collects the notification messages of a day, a week or a month instead of one mail per change. [Notifications](features/6.0/notifications.md), [specification](specifications/6.0/notifications.md).
+- **double opt-in**: switching a kind of e-mail on (newsletters, offers) or using a new address only after the link sent to the address is confirmed. [E-mail preferences](features/6.0/mail-preferences.md).
 - **DSE** (`sevenx_dse`): the Database Source Editor, which embeds **adminneo** in the admin. [sevenx_dse](features/6.0/extensions/sevenx_dse.md).
 - **DXP skeleton**: a starter project for the Symfony based platform. [Platform DXP skeleton](features/6.0/platform-dxp-skeleton.md).
 
 ## E
 
+- **e-mail preferences**: the page where each person turns each optional kind of e-mail on or off, sees the history and downloads the data (`/mailpreferences/settings`). [User's guide](features/6.0/mail-preferences.md), [administrator's guide](guides/mail-preferences-administrator.md), [law checklist](specifications/6.0/mail-preferences-compliance.md).
 - **engine (web server engine)**: the program that serves the site: `php` (built-in server), `qbix` (**Velocity**) or `frankenphp`. [Velocity engines](bc/6.0/velocity-engines.md).
 - **engine.phar**: the archive of `kernel/`, `lib/` and `autoload/` that Velocity can load. [Engine archive](bc/6.0/phar.md).
 - **Exp Debug bar**: a bar on pages that shows queries, time and template information to administrators. [Exp Debug bar](features/6.0/exp-debug-bar.md).
@@ -148,6 +151,8 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## M
 
+- **mail category**: the kind a mail belongs to (`content`, `newsletter`, `security`, ...), declared with `eZMail::setCategory()`; essential categories are always sent, optional ones only to people who turned them on. [Developer's guide](guides/mail-preferences-developer.md).
+- **mail gate**: the check in `eZMailTransport::send()` that every mail passes: it blocks optional mail people did not ask for and adds the footer and the unsubscribe headers. [Specification](specifications/6.0/mail-preferences.md).
 - **maintenance mode**: takes the site offline with a notice (`exp:maintenance on|off|status`). [Maintenance mode](features/6.0/maintenance-mode.md).
 - **module**: a set of **views** behind a URL such as `content/view`; extensions can add or override modules. [Extension module override](features/6.0/extension-module-override.md).
 - **MongoDB**: a supported database. [MongoDB](features/6.0/mongodb-database-support.md).
@@ -165,6 +170,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## O
 
+- **one-click unsubscribe**: the link at the end of optional mail and the `List-Unsubscribe` and `List-Unsubscribe-Post` headers of RFC 8058, which let a mail program unsubscribe without a page. [E-mail preferences](features/6.0/mail-preferences.md).
 - **OPcache**: PHP's compiled code cache; Velocity keeps rewritten cache files in it. [Opcode cache and profile](features/6.0/velocity-opcode-cache-and-profile.md).
 - **operator (template)**: a function applied with a pipe (`$text|wash`). [String template operators](features/6.0/string-template-operators.md), [role and policy operators](features/6.0/role-and-policy-template-operators.md), [owsimpleoperator](features/6.0/extensions/owsimpleoperator.md), [swark](features/6.0/extensions/swark.md).
 - **OPML**: a list of feeds, exportable from the RSS module. [OPML exports](bc/6.0/opml.md).
@@ -216,6 +222,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **SQLite**: the database in one file; the default of `exp:install`. [SQLite](features/6.0/sqlite-database.md), [driver specification](specifications/6.0/sqlite3-database-driver.md).
 - **state (object state)**: a label from an object state group, for example the lock state "Not locked", that policies can test; not the same as the status of a **version** (draft, published). [Installer seed data](specifications/6.0/installer-logs-and-seed-data.md).
 - **static cache**: pages written to files and served without PHP. [Static cache generator](features/6.0/static-cache-generator.md), [defaults](bc/6.0/static-cache-defaults.md).
+- **suppression list**: the addresses that get no optional e-mail (bounces, complaints, requests), stored only as salted hashes (`exp:mail:suppression`). [Administrator's guide](guides/mail-preferences-administrator.md).
 - **swark**: an extension with many template operators and workflow events. [swark](features/6.0/extensions/swark.md).
 - **syndication**: the extension for export and import feeds. [syndication](features/6.0/extensions/syndication.md), [specification](specifications/6.0/syndication.md).
 
