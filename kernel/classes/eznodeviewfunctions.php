@@ -621,8 +621,28 @@ class eZNodeviewfunctions
                          'scope'   => 'viewcache',
                          'store'   => !( isset( $noCache ) and $noCache ) );
         if ( $file !== false && $retval['store'] )
-            $retval['binarydata'] = serialize( $result );
+            $retval['binarydata'] = serialize( self::viewCacheFileData( $result ) );
         return $retval;
+    }
+
+    /**
+     * Returns what the view cache file of a node view result holds.
+     *
+     * A result with cache_ttl=0 (no_cache) is never read back from the cache, so its file
+     * keeps only the no-cache advice: the next requests learn from it that they generate
+     * without the cache lock and store nothing, and the file stays a few bytes instead of
+     * the whole page.
+     *
+     * @param array $result Result of generateNodeViewData()
+     * @return array
+     */
+    static public function viewCacheFileData( array $result )
+    {
+        if ( isset( $result['no_cache'] ) && $result['no_cache'] )
+        {
+            return array( 'no_cache' => true, 'cache_ttl' => 0 );
+        }
+        return $result;
     }
 
     /**
