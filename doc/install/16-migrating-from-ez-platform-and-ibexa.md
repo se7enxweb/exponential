@@ -375,10 +375,13 @@ The Exponential forks gave the commands an `exponential:` primary name on 2026-0
 
 | Generation | Primary name | Old names |
 |---|---|---|
-| 3.x and 4.6 forks (`ezplatform-kernel`, core `4.6` branch) | `exponential:*` | `ibexa:*` and `ezplatform:*` stay as deprecated aliases |
+| 3.x kernel fork `se7enxweb/ezplatform-kernel` from `v1.3.45` | `exponential:*` (`exponential:reindex` ...) | `ibexa:*` and `ezplatform:*` stay as deprecated aliases |
+| 3.x kernel fork up to `v1.3.44` (`v1.3.43`, `v1.3.44` included) | `ibexa:*` (`ibexa:reindex` ...), as upstream | `ezplatform:*` |
+| 4.6 core fork (`se7enxweb/core`, branch `4.6`) | `exponential:*` | `ibexa:*` and `ezplatform:*` stay as deprecated aliases |
+| Nexus 1.2.0.x | `ibexa:*` (`ibexa:reindex` ...): its `composer.lock` installs upstream `ibexa/core` `4.6.x-dev`, not the fork | none |
 | Platform v5 (`se7enxweb/exponential-platform-dxp-core` v5.0.7, the version the Nexus starter installs) | `exponential:*` | no aliases are registered in this version: `ibexa:reindex` and the other renamed commands do not exist |
 | Packages that were not forked (cron, GraphQL, ...) | upstream name | `ibexa:cron:run`, `ibexa:graphql:generate-schema` |
-| Nexus 1.1.0.x and 1.2.0.x projects | their own `exponential:reindex` (`src/.../ExponentialReindexCommand.php`), which delegates to `ibexa:reindex` | `ibexa:reindex` |
+| Nexus 1.1.0.x and 1.2.0.x projects | their own `exponential:reindex` (`src/.../ExponentialReindexCommand.php`), a proxy that accepts only `--siteaccess` and runs `ibexa:reindex` (or says it is not registered and stops) | `ibexa:reindex` with all its options |
 | Legacy bridge `3.x` from `v3.0.0.30`, `4.x` from `v4.0.0.2`, every `5.x` tag | `exponential:legacy:*` | `ezpublish:legacy:*`, `ezpublish:configure`, `ezpublish:legacybundles:install_extensions` stay as deprecated aliases |
 | Legacy bridge `3.x` up to `v3.0.0.29`, `4.x` `v4.0.0.0` and `v4.0.0.1` | `ezpublish:*` | only these names exist |
 | Legacy bridge on `master`, `v2.1.10` to `v2.1.12` (2.5 generation) | `ezpublish:*` (`ezpublish:legacy:init` and the rest) | only these names exist |
