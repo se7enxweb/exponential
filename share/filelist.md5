@@ -2656,6 +2656,7 @@ dfaffb77d22c8d096602674e8a110dcb  doc/bc/6.0/preload.md
 916d2793ab2800ff382724e5c1da54ee  doc/bc/6.0/rad-extension-points.md
 611442352303aaa28764fab216c5ef09  doc/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
+c9437c052795bf1c29b8db5b1a73a8c0  doc/bc/6.0/redirect-query-and-image-alias-guards.md
 ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
 9a20a73e9663b4839cc8a2c370a4a571  doc/bc/6.0/response-cache-and-navigation.md
 42da9bad10b511619fee08bc9233c4b6  doc/bc/6.0/role-policy-paging.md
@@ -2817,7 +2818,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-2af9572e521a274afd77916ab758c785  doc/changelogs/6.0/6.0.15.md
+1c5ff611190a7c3de88991e6f005e877  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
