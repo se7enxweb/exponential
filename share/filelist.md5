@@ -2689,7 +2689,7 @@ ac6e038afa43bb7abe89a1cfd1a6533e  doc/bc/6.0/http2-and-cache-warming.md
 46f5abffd259cd880e032cd8d1953acb  doc/bc/6.0/httpcache.md
 ae75d362d2c3cd9588323032cc2df09c  doc/bc/6.0/kickstartercli.md
 a6d977d642aa2384831b54248e80ecc6  doc/bc/6.0/locations-tab-paging-and-sorting.md
-434fad8656162eb52cab4fe625909cf7  doc/bc/6.0/mail-preferences.md
+e1a1f8a4940d420e0ab02a90567834b3  doc/bc/6.0/mail-preferences.md
 abb94091360a905fee43c0792bbf9d39  doc/bc/6.0/middle-out-compression.md
 02a48a62c48e03aa3f29dfaee9709546  doc/bc/6.0/multi-node-edit.md
 e5667e060274ef92f4b29dd702774e4c  doc/bc/6.0/notification-ui-and-commands.md
@@ -3340,8 +3340,8 @@ da717639d7e8826a34d23a546ce3f619  doc/glossary.md
 a7d35b3d4eb62f3995401d62b9ab21d7  doc/guides/deploying.md
 5f6657b0ea73fe7a20da12e4a3d5547c  doc/guides/extensions.md
 a49a7f5284ec81f8dbb13b7c88e821b4  doc/guides/getting-started.md
-e1d9475cb0f8b7b42c5b68663fe70b5e  doc/guides/mail-preferences-administrator.md
-85a1f23403ea58ed21542841924762f8  doc/guides/mail-preferences-developer.md
+fe6be1787f910abc80987d58c54b2d16  doc/guides/mail-preferences-administrator.md
+f46af9cdee469946176953da2d241afc  doc/guides/mail-preferences-developer.md
 a45d63418940e025cb5a03004675a98c  doc/guides/notifications-administrator.md
 934e5fac274514582acb8481191f0713  doc/guides/notifications-developer.md
 db5e980a8f3711d233062169e69a4963  doc/guides/operating-a-site.md
@@ -4845,7 +4845,7 @@ ef30d890e9a3882c184908deb65a0c85  kernel/classes/ini/expiniscope.php
 433fa0d8a63f3ab1be70354c7a4c145d  kernel/classes/mailpreferences/expconsentcontext.php
 edd4fe2a12021de5f1e04134421a0cca  kernel/classes/mailpreferences/expconsentlog.php
 ef42ff76c9c0799535968bb0f46defbc  kernel/classes/mailpreferences/expmailaddresschange.php
-9a995918cbc8c49e7594296050d1e5c5  kernel/classes/mailpreferences/expmailbouncereader.php
+ca823adc0dc9f96872d26bc3baa2f26e  kernel/classes/mailpreferences/expmailbouncereader.php
 4088b1c59fc84d30e3191801eeaed3b2  kernel/classes/mailpreferences/expmailcategory.php
 afc324f7170f283a07daf2fa40e65a14  kernel/classes/mailpreferences/expmailcategoryhandler.php
 fded4f90f0d8b6d4533526b9502e626e  kernel/classes/mailpreferences/expmailcategoryregistry.php
@@ -6113,7 +6113,7 @@ ff628948e2b39a3ebfb9a8f9f81ae678  settings/ini.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
-62a86e8954a4df07c39d7e6aca858f2a  settings/mailpreferences.ini
+f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 8a8e49a00953f44c55efc37738fa9532  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 7122aae94d4dd490f948fdf446a2b41d  settings/module.ini
@@ -6904,6 +6904,7 @@ c0dd8393942df9359fd823e6903cd3e4  tests/tests/kernel/classes/ini/expIniEditorTes
 3a175c5b36d5e85d22a09afebdcf24e3  tests/tests/kernel/classes/ini/expIniRoundTripTest.php
 e661f4e1af49a324f6b521358bf30822  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
 678cb2f17207b03cd3d4132583aef9e9  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
+c9c417f167681af1e55e9915f763fb47  tests/tests/kernel/classes/mailpreferences/MailPreferencesBounceListenersTest.php
 7beeebe96d30bbc53b76a14363271951  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
 245280f0221afce15401c2327945e5f1  tests/tests/kernel/classes/mailpreferences/MailPreferencesCoreTest.php
 40689805068e3926a4ad53f1dcaaed65  tests/tests/kernel/classes/mailpreferences/MailPreferencesErasedHookTest.php
@@ -6918,6 +6919,8 @@ a96c23795d48c0a6a6a9d3c1820aed02  tests/tests/kernel/classes/mailpreferences/fix
 827f073e6f016c09ff0546159b20a787  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/dsn-soft-delayed.eml
 d2b791059f44637db1e31999f7272737  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/plain-auto-reply.eml
 8f0a14de32fc88c2baa68e12d9abc551  tests/tests/kernel/classes/mailpreferences/fixtures/discard_output_worker_buffer.php
+6d92b09c5030f6b28f986d8f94dcb3fb  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/dsn-hard-listener.eml
+fa2880c02db43fdfac79048ad61cba89  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/plain-subscribe.eml
 67be7c5d61ef0fdc4a33085e2b27a4ec  tests/tests/kernel/classes/notification/NotificationSystemTest.php
 e612f43fc85b8406b0acb712148bae69  tests/tests/kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule_regression.php
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
