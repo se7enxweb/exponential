@@ -143,6 +143,31 @@ through `MailPreferencesPage::sendResponse()` (MPH-01, MPH-09).
 5. **The registration form** shows the categories but no link to the privacy notice; a design that wants one adds it to
    its `user/register.tpl`.
 
+## Newsletter statistics (cjw_newsletter 4.2.0)
+
+The newsletter extension counts opens (a pixel) and clicks (a redirect) of its editions. Counting a person's reading is
+processing of personal data that needs consent (GDPR art. 6(1)(a), ePrivacy art. 5(3) for the pixel); anonymous totals
+do not identify anybody. The extension's guide is `extension/cjw_newsletter/doc/statistics.md`.
+`ST-nn`: `tests/tests/extension/cjw_newsletter/cjwNewsletterStatisticsTest.php`; `MPE-nn`:
+`tests/tests/kernel/classes/mailpreferences/MailPreferencesErasedHookTest.php`.
+
+| Requirement | Code | Test |
+|---|---|---|
+| No tracking unless the site and the list (or the send) choose it; off by default | `cjw_newsletter.ini [TrackingSettings] Tracking=disabled`; `cjwnl_list.tracking_mode` 0; `CjwNewsletterTracking::sendMode()` | ST-13, ST-05 |
+| Per-person counting only with the person's own, prior, specific consent; not pre-ticked | category `newsletter_statistics` (`DefaultOn=false`, optional) on the preference page, handler `CjwNewsletterStatisticsCategoryHandler`; without consent the mail carries an anonymous key only | ST-02, ST-12 |
+| The consent is recorded with what the person saw | the kernel consent log (`expConsentLog`), as for every category | ST-12 |
+| Withdrawing is as easy as giving, and it takes effect at once | the same switch; `changed()` removes the person's rows; the consent is checked again on every open and click | ST-05, ST-06 |
+| Erasure removes the person's statistics | the kernel calls the optional handler method `erased()` from `expMailPreferences::erase()` and the account removal | ST-06, MPE-01 to MPE-03 |
+| Storage limitation | per-person rows removed after `[TrackingSettings] PersonRetentionMonths` (12), daily by the mail queue and by `ext:cjw_newsletter:statistics --cleanup`; totals kept | ST-07 |
+| Data minimisation: no address or name in a URL, reports and exports show totals | keys `p<send item hash>` / `a<send>x<variant>`, HMAC signature; `CjwNewsletterStatisticsReport` | ST-02, ST-11 |
+| No open redirect, no forged counts | the redirect goes only to the URL stored for the sent edition, with a valid signature of the same send; else 404 | ST-04 |
+| Security of the endpoints | no session, no cookie, `Cache-Control: no-store`, `Referrer-Policy: no-referrer`; CSV cells defused | ST-03, ST-04, ST-11 |
+
+**Site**: name the newsletter statistics, what is counted and the retention in the privacy notice, and keep the site
+switch off where no lawful basis exists. Anonymous totals still load a pixel from the site for everybody (in mode 2 for the
+people without consent too); where the local reading of ePrivacy art. 5(3) requires consent for that as well, switch
+the pixel off with `[TrackingSettings] OpenPixel=disabled` or keep the tracking off.
+
 ## Related pages
 
 - [E-mail preferences: the specification](mail-preferences.md)
