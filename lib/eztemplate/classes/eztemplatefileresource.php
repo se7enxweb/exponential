@@ -142,7 +142,7 @@ class eZTemplateFileResource
         $key = $this->cacheKey( $keyData, $res, $templatePath, $extraParameters );
         if ( eZTemplateTreeCache::canRestoreCache( $key, $timestamp, $templatePath ) )
             eZTemplateTreeCache::restoreCache( $key, $templatePath );
-        return eZTemplateTreeCache::cachedTree( $key, $uri, $res, $templatePath, $extraParameters );
+        return eZTemplateTreeCache::cachedTree( $key, $uri, $res, $templatePath, $extraParameters, $timestamp );
     }
 
     /*!

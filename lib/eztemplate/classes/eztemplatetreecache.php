@@ -51,12 +51,20 @@ class eZTemplateTreeCache
      \static
      \return the cache node tree which is stored with the cache key \a $key.
              Returns \c null if no cache data was found.
+     \param $timestamp the modification time of the template file, or false. A tree cached before that time was
+            parsed from an older version of the file: it is dropped and \c null returned, so a long-running process
+            (a persistent worker, a CLI script) parses an edited template again instead of compiling the old tree.
     */
-    static function cachedTree( $key, $uri, $res, $templatePath, &$extraParameters )
+    static function cachedTree( $key, $uri, $res, $templatePath, &$extraParameters, $timestamp = false )
     {
         $templateCache =& eZTemplateTreeCache::cacheTable();
         $key = eZTemplateTreeCache::internalKey( $key );
         $root = null;
+        if ( $timestamp !== false && isset( $templateCache[$key]['info']['cached_at'] ) &&
+             $timestamp > $templateCache[$key]['info']['cached_at'] )
+        {
+            unset( $templateCache[$key] );
+        }
         if ( isset( $templateCache[$key] ) )
         {
             $root =& $templateCache[$key]['root'];
@@ -95,7 +103,8 @@ class eZTemplateTreeCache
                                               'debug' => $debug,
                                               'resource' => $res,
                                               'template_path' => $templatePath,
-                                              'resource_parameters' => $extraParameters );
+                                              'resource_parameters' => $extraParameters,
+                                              'cached_at' => time() );
     }
 
     /*!
