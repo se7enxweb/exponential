@@ -53,14 +53,10 @@ abstract class ezpSessionHandler
     {
         // No session_module_name( 'user' ): PHP 8 throws a ValueError for it, and
         // session_set_save_handler() selects the user module by itself.
-        session_set_save_handler(
-            array( $this, 'open' ),
-            array( $this, 'close' ),
-            array( $this, 'read' ),
-            array( $this, 'write' ),
-            array( $this, 'destroy' ),
-            array( $this, 'gc' )
-            );
+        // The handler is given as an object (ezpSessionHandlerAdapter): six separate callbacks are deprecated
+        // since PHP 8.4. No shutdown function is registered (false), as with the callbacks before: eZSession
+        // and the persistent workers of Exponential Velocity write and close the session themselves.
+        session_set_save_handler( new ezpSessionHandlerAdapter( $this ), false );
         return true;
     }
 
