@@ -475,14 +475,25 @@ class expMailGate
         return $text;
     }
 
-    /** @return array name, address of [FooterSettings] */
+    /** @var bool the empty postal address was noted in this process */
+    protected static $addressNoted = false;
+
+    /**
+     * Who sends: [FooterSettings] OrganisationName, else the SiteName of the siteaccess (expMailSenderDetails), and
+     * the postal address. An empty address does not stop the mail; it is noted once per process.
+     *
+     * @return array name, address
+     */
     public static function organisation()
     {
-        $ini = eZINI::instance( 'mailpreferences.ini' );
-        $get = function ( $v ) use ( $ini ) {
-            return $ini->hasVariable( 'FooterSettings', $v ) ? trim( str_replace( '\n', "\n", (string)$ini->variable( 'FooterSettings', $v ) ) ) : '';
-        };
-        return array( 'name' => $get( 'OrganisationName' ), 'address' => $get( 'OrganisationAddress' ) );
+        $details = expMailSenderDetails::get();
+        if ( $details['address'] === '' && !self::$addressNoted )
+        {
+            self::$addressNoted = true;
+            eZDebug::writeNotice( 'The postal address of the mail footer is empty (mailpreferences.ini [FooterSettings] OrganisationAddress; '
+                                  . 'enter it on mailpreferences/admin/status). Optional mail is sent without it.', __METHOD__ );
+        }
+        return array( 'name' => $details['name'], 'address' => $details['address'] );
     }
 
     /** Puts the footer before </body> of an HTML body, else at its end. */

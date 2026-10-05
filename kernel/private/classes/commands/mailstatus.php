@@ -76,6 +76,17 @@ class Mailstatus extends \Exponential\Runnable\Command
         $cli->output( sprintf( '  %-24s %d%s', 'suppressed addresses', $s['suppression']['total'],
                                $s['suppression']['by_reason'] ? '   (' . implode( ', ', array_map( function ( $k, $v ) { return "$k $v"; }, array_keys( $s['suppression']['by_reason'] ), $s['suppression']['by_reason'] ) ) . ')' : '' ) );
         $cli->output( sprintf( '  %-24s %d   (%d anonymised)', 'consent log rows', $s['consent_log'], $s['consent_log_anonymised'] ) );
+        if ( isset( $s['bounce'] ) && is_array( $s['bounce'] ) )
+        {
+            $b = $s['bounce'];
+            $cli->output( 'Bounce mailbox' );
+            $cli->output( sprintf( '  %-24s %s', 'reader', $b['enabled'] ? 'enabled, ' . strtoupper( $b['protocol'] ) . ' ' . $b['server'] : ( $b['configured'] ? 'disabled' : 'not configured' ) ) );
+            $cli->output( sprintf( '  %-24s %s', 'last read', $b['last_read'] ? date( 'Y-m-d H:i', $b['last_read'] ) : 'never' ) );
+            if ( $b['last_error'] !== '' )
+                $cli->output( sprintf( '  %-24s %s', 'last error', $b['last_error'] ) );
+            $cli->output( sprintf( '  %-24s %d messages, %d hard bounces, %d complaints, %d suppressed', 'last run',
+                                   $b['last']['messages'], $b['last']['hard'], $b['last']['complaints'], $b['last']['suppressed'] ) );
+        }
         foreach ( array( '24 hours' => $s['gate_24h'], '7 days' => $s['gate_7d'] ) as $label => $g )
         {
             $cli->output( 'Gate, last ' . $label );

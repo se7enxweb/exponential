@@ -307,13 +307,13 @@ class expMailPreferencesService
             $suppression['total'] = array_sum( $suppression['by_reason'] );
         }
         $now = time();
-        $org = expMailGate::organisation();
+        $org = expMailSenderDetails::get();
         $s = array(
             'tables' => $tables,
             'gate' => expMailGate::enabled() ? 'enabled' : 'disabled',
             'secret' => expMailSecret::exists(),
             'base_url' => expMailToken::baseURL(),
-            'footer' => array( 'organisation_name' => $org['name'], 'organisation_address' => $org['address'] ),
+            'footer' => array( 'organisation_name' => $org['name'], 'organisation_address' => $org['address'], 'organisation_name_source' => $org['name_source'] ),
             'categories' => $categories,
             'recipients' => $tables['expmail_preference'] ? $count( 'SELECT COUNT(DISTINCT recipient_key) AS c FROM expmail_preference' ) : 0,
             'master_off' => $tables['expmail_preference'] ? $count( "SELECT COUNT(*) AS c FROM expmail_preference WHERE category = '" . expMailPreferenceRow::MASTER . "' AND state = 'off'" ) : 0,
@@ -325,6 +325,7 @@ class expMailPreferencesService
             'gate_24h' => expMailGate::stats( $now - 86400 ),
             'gate_7d' => expMailGate::stats( $now - 7 * 86400 ),
             'log_file' => expMailGate::logFile(),
+            'bounce' => class_exists( 'expMailBounceReader' ) ? expMailBounceReader::status() : null,
             'problems' => array(),
         );
         foreach ( $tables as $t => $ok )
@@ -340,6 +341,10 @@ class expMailPreferencesService
             $s['problems'][] = array( 'notice', 'uncategorised', (string)$s['gate_7d']['uncategorised'] );
         if ( $s['gate_24h']['error'] > 0 )
             $s['problems'][] = array( 'warning', 'gate_errors', (string)$s['gate_24h']['error'] );
+        if ( is_array( $s['bounce'] ) && $s['bounce']['enabled'] && $s['bounce']['last_error'] !== '' )
+            $s['problems'][] = array( 'warning', 'bounce_error', $s['bounce']['last_error'] );
+        else if ( is_array( $s['bounce'] ) && $s['bounce']['enabled'] && $s['bounce']['last_read'] < $now - 86400 )
+            $s['problems'][] = array( 'warning', 'bounce_stale', $s['bounce']['last_read'] ? date( 'Y-m-d H:i', $s['bounce']['last_read'] ) : '' );
         return $s;
     }
 
@@ -356,7 +361,7 @@ class expMailPreferencesService
             case 'table_missing':
                 return ezpI18n::tr( 'kernel/mailpreferences/status', 'The table %table is missing: run the database update.', null, array( '%table' => $problem[2] ) );
             case 'footer_missing':
-                return ezpI18n::tr( 'kernel/mailpreferences/status', 'The organisation name or postal address of the mail footer is empty (mailpreferences.ini [FooterSettings]); the law requires both in every optional mail.' );
+                return ezpI18n::tr( 'kernel/mailpreferences/status', 'The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.' );
             case 'secret_missing':
                 return ezpI18n::tr( 'kernel/mailpreferences/status', 'The site secret of the links has not been generated yet; it is made on first use.' );
             case 'gate_disabled':
@@ -365,6 +370,12 @@ class expMailPreferencesService
                 return ezpI18n::tr( 'kernel/mailpreferences/status', '%count mails without a category in the last 7 days.', null, array( '%count' => $problem[2] ) );
             case 'gate_errors':
                 return ezpI18n::tr( 'kernel/mailpreferences/status', '%count mails could not be sent or checked in the last 24 hours.', null, array( '%count' => $problem[2] ) );
+            case 'bounce_error':
+                return ezpI18n::tr( 'kernel/mailpreferences/status', 'The bounce mailbox could not be read: %error', null, array( '%error' => $problem[2] ) );
+            case 'bounce_stale':
+                return $problem[2] !== ''
+                    ? ezpI18n::tr( 'kernel/mailpreferences/status', 'The bounce mailbox has not been read since %time: is the cronjob part mailbounces running?', null, array( '%time' => $problem[2] ) )
+                    : ezpI18n::tr( 'kernel/mailpreferences/status', 'The bounce mailbox has never been read: is the cronjob part mailbounces running?' );
         }
         return $problem[1];
     }

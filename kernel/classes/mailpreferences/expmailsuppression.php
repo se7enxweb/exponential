@@ -111,6 +111,7 @@ class expMailSuppression extends eZPersistentObject
         $row->setAttribute( 'note', mb_substr( $note, 0, 1000 ) );
         $row->store();
         self::audit( 'access.user.mail.suppress', $hash, $reason );
+        self::tellListeners( 'suppressionAdded', array( $email, $hash, $reason ) );
         return true;
     }
 
@@ -127,7 +128,37 @@ class expMailSuppression extends eZPersistentObject
         $reason = (string)$row->attribute( 'reason' );
         $row->remove();
         self::audit( 'access.user.mail.unsuppress', $hash, $reason );
+        self::tellListeners( 'suppressionLifted', array( $hash, self::isHash( $hashOrEmail ) ? null : strtolower( trim( (string)$hashOrEmail ) ), $reason ) );
         return true;
+    }
+
+    /**
+     * Tells the classes of [SuppressionSettings] Listeners[] (another system's own block list, such as a newsletter
+     * blacklist) that an address was suppressed or lifted:
+     *   suppressionAdded( $email, $hash, $reason ) and suppressionLifted( $hash, $email or null, $reason ),
+     * both static. A listener that fails is logged; the suppression itself stands.
+     *
+     * @param string $method
+     * @param array $args
+     */
+    protected static function tellListeners( $method, array $args )
+    {
+        $ini = eZINI::instance( 'mailpreferences.ini' );
+        if ( !$ini->hasVariable( 'SuppressionSettings', 'Listeners' ) )
+            return;
+        foreach ( array_unique( array_filter( (array)$ini->variable( 'SuppressionSettings', 'Listeners' ), 'strlen' ) ) as $class )
+        {
+            if ( !class_exists( $class ) || !method_exists( $class, $method ) )
+                continue;
+            try
+            {
+                call_user_func_array( array( $class, $method ), $args );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeError( "Suppression listener $class::$method: " . $e->getMessage(), __METHOD__ );
+            }
+        }
     }
 
     /**
@@ -141,6 +172,34 @@ class expMailSuppression extends eZPersistentObject
         return (array)eZPersistentObject::fetchObjectList( self::definition(), null, $reason !== null ? array( 'reason' => (string)$reason ) : null,
                                                            array( 'created' => 'desc', 'id' => 'desc' ),
                                                            array( 'offset' => (int)$offset, 'length' => (int)$limit ), true );
+    }
+
+    /**
+     * The list as CSV (the admin's export): hash, reason, created (UTC), created_by, note. Only hashes: the export
+     * holds no address. Cells that a spreadsheet would read as a formula are defused.
+     *
+     * @param string|null $reason only entries of this reason
+     * @return string
+     */
+    public static function exportCsv( $reason = null )
+    {
+        $out = fopen( 'php://temp', 'w+' );
+        fputcsv( $out, array( 'email_hash', 'reason', 'created', 'created_by', 'note' ), ',', '"', '' );
+        $offset = 0;
+        do
+        {
+            $rows = self::fetchList( $offset, 500, $reason );
+            foreach ( $rows as $row )
+                fputcsv( $out, expConsentLog::csvRow( array( (string)$row->attribute( 'email_hash' ), (string)$row->attribute( 'reason' ),
+                                                             gmdate( 'Y-m-d\TH:i:s\Z', (int)$row->attribute( 'created' ) ),
+                                                             (string)(int)$row->attribute( 'created_by' ), (string)$row->attribute( 'note' ) ) ), ',', '"', '' );
+            $offset += 500;
+        }
+        while ( count( $rows ) === 500 );
+        rewind( $out );
+        $csv = stream_get_contents( $out );
+        fclose( $out );
+        return $csv;
     }
 
     /** @return int */
