@@ -124,6 +124,18 @@ class eZTemplateCompiledInterpretedParityTest extends PHPUnit\Framework\TestCase
             'div by a fraction'         => array( '{div(1,0.5)}', '{div($a,$b)}', array( 'a' => 1, 'b' => 0.5 ), '2' ),
             'div, variable first'       => array( '{div(9,3,2)}', '{div($a,3,2)}', array( 'a' => 9 ), '1.5' ),
             'div by zero'               => array( '{div(4,0)}', '{div($a,$b)}', array( 'a' => 4, 'b' => 0 ), '0' ),
+
+            // comparisons use the count the interpreter uses: the number, the array count, the string length
+            'lt arrays of one element'  => array( '{if lt(array(1),array(2))}y{else}n{/if}', '{if lt($a,$b)}y{else}n{/if}', array( 'a' => array( 1 ), 'b' => array( 2 ) ), 'n' ),
+            'le arrays of one element'  => array( '{if le(array(5),array(2))}y{else}n{/if}', '{if le($a,$b)}y{else}n{/if}', array( 'a' => array( 5 ), 'b' => array( 2 ) ), 'y' ),
+            'gt string lengths'         => array( '{if gt("b","abc")}y{else}n{/if}', '{if gt($a,$b)}y{else}n{/if}', array( 'a' => 'b', 'b' => 'abc' ), 'n' ),
+            'ge string lengths'         => array( '{if ge("ab","z")}y{else}n{/if}', '{if ge($a,$b)}y{else}n{/if}', array( 'a' => 'ab', 'b' => 'z' ), 'y' ),
+            'lt string and number'      => array( '{if lt("abcd",3)}y{else}n{/if}', '{if lt($a,$b)}y{else}n{/if}', array( 'a' => 'abcd', 'b' => 3 ), 'n' ),
+            'gt array and number'       => array( '{if gt(array(7,8),1)}y{else}n{/if}', '{if gt($a,$b)}y{else}n{/if}', array( 'a' => array( 7, 8 ), 'b' => 1 ), 'y' ),
+            'lt numeric strings'        => array( '{if lt("10","9")}y{else}n{/if}', '{if lt($a,$b)}y{else}n{/if}', array( 'a' => '10', 'b' => '9' ), 'n' ),
+            'gt piped string length'    => array( '{if "abc"|gt("z")}y{else}n{/if}', '{if $a|gt($b)}y{else}n{/if}', array( 'a' => 'abc', 'b' => 'z' ), 'y' ),
+            'lt true and two'           => array( '{if lt(true(),2)}y{else}n{/if}', '{if lt($a,$b)}y{else}n{/if}', array( 'a' => true, 'b' => 2 ), 'y' ),
+            'ge false and zero'         => array( '{if ge(false(),0)}y{else}n{/if}', '{if ge($a,$b)}y{else}n{/if}', array( 'a' => false, 'b' => 0 ), 'y' ),
         );
     }
 

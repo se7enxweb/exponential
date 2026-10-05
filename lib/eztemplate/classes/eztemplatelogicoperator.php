@@ -22,6 +22,7 @@
   -# If the data is an object the object attribute count is used
   -# If the data is a numeric the value is used
   -# If the data is a boolean false is 0 and true is 1
+  -# If the data is any other string its length is used
   -# For all other data 0 is used
 
   Data is considered null (or false) if the data count is 0 (see above) or
@@ -396,6 +397,26 @@ class eZTemplateLogicOperator
             $code .= ( "else\n" .
                        "    %output% = %$counter%;\n" );
         }
+        else if ( $operatorName == 'lt' or $operatorName == 'le' or
+                  $operatorName == 'gt' or $operatorName == 'ge' )
+        {
+            // Compares the counts the interpreter compares (see the class description), not the raw values: PHP
+            // compares two arrays of one element by the element and two strings by their text, the interpreter by
+            // the array count and the string length.
+            if ( eZTemplateNodeTool::isConstantElement( $parameters[0] ) &&
+                 eZTemplateNodeTool::isConstantElement( $parameters[1] ) )
+            {
+                $status = self::compareCounts( $operatorName,
+                                               eZTemplateNodeTool::elementConstantValue( $parameters[0] ),
+                                               eZTemplateNodeTool::elementConstantValue( $parameters[1] ) );
+                if ( $status !== null )
+                    return array( eZTemplateNodeTool::createBooleanElement( $status ) );
+            }
+            $code = "%output% = eZTemplateLogicOperator::compareCounts( " . var_export( $operatorName, true ) . ", %1%, %2% );\n";
+            $values[] = $parameters[0];
+            $values[] = $parameters[1];
+            return array( eZTemplateNodeTool::createCodePieceElement( $code, $values ) );
+        }
         else
         {
             $code = '%output% = (';
@@ -591,6 +612,19 @@ class eZTemplateLogicOperator
      */
     function getValueCount( $val )
     {
+        return self::comparisonCount( $val );
+    }
+
+    /**
+     * The count lt, le, gt and ge compare, as described in the introduction: null is 0, a boolean 0 or 1, an array
+     * its element count, an object with attributes() its attribute count, a number or numeric string its value and
+     * any other string its length.
+     *
+     * @param mixed $val
+     * @return int|float|string|false the count, or false for a type that has none
+     */
+    public static function comparisonCount( $val )
+    {
         $val_cnt = false;
 
         if ( $val === null )
@@ -619,6 +653,35 @@ class eZTemplateLogicOperator
             $val_cnt = strlen( $val );
         }
         return $val_cnt;
+    }
+
+    /**
+     * Compares the counts of two values with lt, le, gt or ge, the way the interpreter does. Compiled templates
+     * call this at run time.
+     *
+     * @param string $operatorName lt, le, gt or ge
+     * @param mixed $operandA
+     * @param mixed $operandB
+     * @return bool|null the result, or null when either value has no count
+     */
+    public static function compareCounts( $operatorName, $operandA, $operandB )
+    {
+        $countA = self::comparisonCount( $operandA );
+        $countB = self::comparisonCount( $operandB );
+        if ( $countA === false or $countB === false )
+            return null;
+        switch ( $operatorName )
+        {
+            case 'lt':
+                return $countA < $countB;
+            case 'le':
+                return $countA <= $countB;
+            case 'gt':
+                return $countA > $countB;
+            case 'ge':
+                return $countA >= $countB;
+        }
+        return null;
     }
 
     /*!
