@@ -18,7 +18,7 @@ daf6f35e80e4bc6bf6b188b463e8232c  Makefile
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 560e1aa278482b641bc07c21bf942c95  autoload.php
-21cc7518854434a9fb275059fd02aff9  autoload/ezp_kernel.php
+2b55a99021313fcb6aa973316a33e6dc  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -1488,7 +1488,7 @@ a7c6b95c591b36247214725df8ec8ca4  design/base/templates/menu/sub_left.tpl
 196f7772f8670cea7a105576dd52054f  design/base/templates/notification/handler/ezcollaboration/view/ezapprove/author.tpl
 0f331053ea9693cade50508b4571f25d  design/base/templates/notification/handler/ezcollaboration/view/plain.tpl
 1d1b531e708384cee06da10a28368940  design/base/templates/notification/handler/ezgeneraldigest/settings/edit.tpl
-a9f7bb7e057491a9aabf9de2d2ce6758  design/base/templates/notification/handler/ezgeneraldigest/view/plain.tpl
+c92aa37a8dc4637186136009b49246ac  design/base/templates/notification/handler/ezgeneraldigest/view/plain.tpl
 f80333b1a3d5293499ab54bad145841e  design/base/templates/notification/handler/ezsimpledigest/settings/edit.tpl
 19b9f7287e2b0f9a76b9b9209e2af79d  design/base/templates/notification/handler/ezsimpledigest/view/plain.tpl
 efed5c512006c04c5332d9ba6a24b8f2  design/base/templates/notification/handler/ezsubtree/settings/edit.tpl
@@ -2268,12 +2268,12 @@ f22ddf2d4e3da343b60822706b41ef56  design/standard/templates/notification/handler
 196f7772f8670cea7a105576dd52054f  design/standard/templates/notification/handler/ezcollaboration/view/ezapprove/author.tpl
 48834ec18b89a19bcf1f058ed67991ea  design/standard/templates/notification/handler/ezcollaboration/view/plain.tpl
 1d1b531e708384cee06da10a28368940  design/standard/templates/notification/handler/ezgeneraldigest/settings/edit.tpl
-a9f7bb7e057491a9aabf9de2d2ce6758  design/standard/templates/notification/handler/ezgeneraldigest/view/plain.tpl
+c92aa37a8dc4637186136009b49246ac  design/standard/templates/notification/handler/ezgeneraldigest/view/plain.tpl
 f80333b1a3d5293499ab54bad145841e  design/standard/templates/notification/handler/ezsimpledigest/settings/edit.tpl
 19b9f7287e2b0f9a76b9b9209e2af79d  design/standard/templates/notification/handler/ezsimpledigest/view/plain.tpl
 520a0c2215f037b6844a4db04f1e50e9  design/standard/templates/notification/handler/ezsubtree/settings/edit.tpl
 f061dda57413217ff460b3a0f8c380e8  design/standard/templates/notification/handler/ezsubtree/view/digest_element_plain.tpl
-a128330043e94c860fd598b40f6d45ba  design/standard/templates/notification/handler/ezsubtree/view/digest_plain.tpl
+d46653d0ae5726f586e16bbd15ee50e4  design/standard/templates/notification/handler/ezsubtree/view/digest_plain.tpl
 d32f7a3e13d8ed71543ac1b13d08326a  design/standard/templates/notification/handler/ezsubtree/view/plain.tpl
 5f5ec0948c0017045d7ba42c47edcc25  design/standard/templates/notification/removeresult.tpl
 7b44bb2b923d3180e6785276e5458071  design/standard/templates/notification/runfilter.tpl
@@ -2834,7 +2834,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4cd42b5ba1c079dcd17377ae61c09056  doc/changelogs/6.0/6.0.15.md
+f8c35a5d9be7c9e5dbc1dfb52f56d710  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3783,7 +3783,7 @@ ffa044bd16f89c723b09c38255b13b7d  extension/expservices/classes/media/expimagese
 0a2e3847b2c6267f0c90c3950268e6a8  extension/expservices/classes/misc/expstatsservices.php
 5686a0f6d702734804462d5da7fdcb4d  extension/expservices/classes/misc/expsubitemsservices.php
 f567ec75d3d5fd0e648836bfe370a528  extension/expservices/classes/misc/expurlservices.php
-890a049df0c1415f5f6feed6e9048597  extension/expservices/classes/users/expaccountservices.php
+34af0c7f3a2c84555c43499a24c3d1a2  extension/expservices/classes/users/expaccountservices.php
 2b38d1fffd04b1918d1237af08b55a6d  extension/expservices/classes/users/expbookmarkservices.php
 8c5097e72424f40c350ec90cc0bed947  extension/expservices/classes/users/expcollaborationservices.php
 3b4467e5e6446f7f9fd8c1a3c6f98f74  extension/expservices/classes/users/expnotificationservices.php
@@ -3793,7 +3793,7 @@ f322e750e46234cc78bfc9ce87c15267  extension/expservices/classes/users/exproleser
 ccd6c51f8dc74fcc65b61d58daa5294d  extension/expservices/classes/users/expsessionadminservices.php
 ca8e662e24d23f10e976dcb6f1c59bcd  extension/expservices/classes/users/expusergroupservices.php
 896dab4230e8cb21ee881a858cec4355  extension/expservices/classes/users/expusersbase.php
-8b67ca9e5a0a04a4d688f25ef20aa26e  extension/expservices/classes/users/expuserservices.php
+40f439a4b41a1b055b8ff93244bda359  extension/expservices/classes/users/expuserservices.php
 6906f121655ec940a08bd72cf7dd3e71  extension/expservices/design/expportal_jquery/javascript/portal/account.js
 0ddb959545ecfcecc379d3f2f91044ee  extension/expservices/design/expportal_jquery/javascript/portal/app.js
 22da20120af471ebffaad6689c32468c  extension/expservices/design/expportal_jquery/javascript/portal/core.js
@@ -4597,7 +4597,7 @@ e29cbabc84ccfc9fdda1b5be6da68169  kernel/classes/datatypes/ezuser/ezuser.php
 190e03d3acc89794d927758dfc31c7cf  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
-edc6fb80ffb0854d8bcc991228646141  kernel/classes/datatypes/ezuser/ezusertype.php
+1d8010c5f9b44cca7782e37060b585c3  kernel/classes/datatypes/ezuser/ezusertype.php
 dc082dd96e41677e348d1721ead53183  kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php
 b39d8aaaec9fd95ced57b2b46200e7c7  kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php
 97012f468944791c0815ad8c99f95614  kernel/classes/datatypes/ezxmltext/ezxmloutputhandler.php
@@ -4654,7 +4654,7 @@ ccaaa94850a3994a6ec5ad6e4fb11c88  kernel/classes/ezclusterfilehandler.php
 d466e26a73141e07f2f9eaf7ab14be0e  kernel/classes/ezcollaborationgroup.php
 9db87cffca5b84ab90b33484fdcd5d45  kernel/classes/ezcollaborationitem.php
 b72844a5ba57c3d4c4f6c0f66bd6c36a  kernel/classes/ezcollaborationitemgrouplink.php
-df4f3d3836a53d50ecdf3490a5b7ef72  kernel/classes/ezcollaborationitemhandler.php
+957a8d2a60476d53f97c864c31a14a2b  kernel/classes/ezcollaborationitemhandler.php
 d4e5641768c6d52afc4b76fd571f9f8c  kernel/classes/ezcollaborationitemmessagelink.php
 354ece6e31f35221b99a77f19631f33e  kernel/classes/ezcollaborationitemparticipantlink.php
 44284c35f629dadcb92208c873e1a12e  kernel/classes/ezcollaborationitemstatus.php
@@ -4828,11 +4828,11 @@ ebac5447e1ef26aa47092bcdfdd0aed7  kernel/classes/notification/eznotificationeven
 3938db5ab0d6ba83a4aab60a950284a3  kernel/classes/notification/eznotificationeventtype.php
 a8c10ef941ed06076703a8e21ed2b0a0  kernel/classes/notification/eznotificationschedule.php
 b41e91f320a69dfe86f5d68ab482d7cf  kernel/classes/notification/eznotificationtransport.php
-51527b45d5e9a84ded6d5a0c99a216b3  kernel/classes/notification/handler/ezcollaborationnotification/ezcollaborationnotificationhandler.php
+6bd28a4207955a31ae782ed2ef8af6f3  kernel/classes/notification/handler/ezcollaborationnotification/ezcollaborationnotificationhandler.php
 b8c2fd803be545423c0029be897f12ca  kernel/classes/notification/handler/ezcollaborationnotification/ezcollaborationnotificationrule.php
-8a8e19eddf27456e036a106c04f26287  kernel/classes/notification/handler/ezgeneraldigest/ezgeneraldigesthandler.php
+41dd4df7bb7f956edfaa37046c62a0db  kernel/classes/notification/handler/ezgeneraldigest/ezgeneraldigesthandler.php
 972d84b7f7f168ba3e4ca0a1672e1c8c  kernel/classes/notification/handler/ezgeneraldigest/ezgeneraldigestusersettings.php
-e047126774632dc71991c397c27e3769  kernel/classes/notification/handler/ezsubtree/ezsubtreehandler.php
+7a62dedb17524285d3ff003630834f61  kernel/classes/notification/handler/ezsubtree/ezsubtreehandler.php
 847a9b62dbb63d2ec3829aa779c5ea7f  kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule.php
 b6e0eb67e9d64bc90af7f845e8208208  kernel/classes/packagecreators/ezcontentclass/ezcontentclasspackagecreator.php
 26721b53e623366b4253430908db5bee  kernel/classes/packagecreators/ezcontentobject/ezcontentobjectpackagecreator.php
@@ -6049,7 +6049,7 @@ ff628948e2b39a3ebfb9a8f9f81ae678  settings/ini.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
-288062516cfc6598f09ce41459a6e091  settings/mailpreferences.ini
+71956cb320de131e2d1f2794195455ab  settings/mailpreferences.ini
 8a8e49a00953f44c55efc37738fa9532  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 7122aae94d4dd490f948fdf446a2b41d  settings/module.ini
@@ -6496,14 +6496,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-71c8bb5f241647dc8150f8c8ff4e47f3  share/translations/eng-US/translation.ts
+2f418f89e3a14c8aab63216ff313c398  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-f937f299181d19150e056edbcf0ead5f  share/translations/ger-DE/translation.ts
+777d82258fc1374959bb213e873657c3  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7475,7 +7475,7 @@ e3e10d1736c19dc15b3dbfe8a8dd2cf7  kernel/mailpreferences/admin.php
 3e24980601ea14c6f59df3dc83f43f1d  kernel/mailpreferences/request.php
 b1a6bdbb2b0aa1b7a8f75b03fcb8a297  kernel/mailpreferences/settings.php
 d71043998f49d34c62703159de39acf1  kernel/mailpreferences/unsubscribe.php
-2f13612d24621f7820951d608c584aa2  kernel/private/classes/services/mailpreferencespage.php
+91d48d7ddec1abf74fe01e95c57a5cfa  kernel/private/classes/services/mailpreferencespage.php
 fcb7ef7c795d69737def760793ccf4ec  kernel/private/classes/views/mailpreferences/admin.php
 efdb7bf20570055e9feb76bcaf4bec00  kernel/private/classes/views/mailpreferences/confirm.php
 253002c96752ef084ed298cd4125a38a  kernel/private/classes/views/mailpreferences/export.php
@@ -7484,7 +7484,7 @@ e62bd2ad44955a0c68ec9398178f1b49  kernel/private/classes/views/mailpreferences/p
 0afeb143f571b25d04a8523ce041625d  kernel/private/classes/views/mailpreferences/request.php
 fdd4ba22795c6bb45b499d7e3dcc8c1f  kernel/private/classes/views/mailpreferences/settings.php
 f53de82e3f6c377407d4ef0a7e313935  kernel/private/classes/views/mailpreferences/unsubscribe.php
-e34771ae67715005c7659f4999893b86  doc/bc/6.0/mail-preferences.md
+43475905fcfb05e1d13c2fb97544d296  doc/bc/6.0/mail-preferences.md
 990e1c65645859f009d8edce234b6b21  doc/features/6.0/mail-preferences.md
 e1d9475cb0f8b7b42c5b68663fe70b5e  doc/guides/mail-preferences-administrator.md
 ba72c6d6d6943f3ebb2e3f7fff2e1baa  doc/guides/mail-preferences-developer.md
@@ -7496,10 +7496,10 @@ e2b56ec0218b4cdd2d122cfda8f34fd8  doc/specifications/6.0/mail-preferences-compli
 c80bd34388b0d7931f7083df01387b50  cronjobs/mailbounces.php
 9a995918cbc8c49e7594296050d1e5c5  kernel/classes/mailpreferences/expmailbouncereader.php
 1c8a4de145b786851d88eee3527e1d16  kernel/classes/mailpreferences/expmailsenderdetails.php
-2622f7d2854582d747cf102f92ff17da  kernel/classes/notification/expnotificationmailcategoryhandler.php
+cf0489a3db420a07064ac725768ffb20  kernel/classes/notification/expnotificationmailcategoryhandler.php
 f44aa579a98c3c4f14f8a7e8e5eb114d  kernel/private/classes/commands/mailbounces.php
 35b0a616c1ac904dd94cfae14e68ef80  kernel/private/classes/cronjobs/mailbounces.php
-540ca8e2a713d02b27c43d176f77422c  tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php
+0a343dc9223e5acba7e9e3426380342b  tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php
 a2b6b96ff712d7635f41e8bb767ad9fb  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/arf-abuse.eml
 b215629ca5ab35b162179fd00ad103f9  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/arf-headers-only.eml
 a96c23795d48c0a6a6a9d3c1820aed02  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/arf-not-spam.eml
@@ -7508,3 +7508,6 @@ a96c23795d48c0a6a6a9d3c1820aed02  tests/tests/kernel/classes/mailpreferences/fix
 51a10caf012d78a42fc26ebfb687a2e4  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/dsn-mixed-recipients.eml
 827f073e6f016c09ff0546159b20a787  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/dsn-soft-delayed.eml
 d2b791059f44637db1e31999f7272737  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/plain-auto-reply.eml
+edb2fb7d3d7020b324bc93da709677e9  design/standard/templates/notification/handler/ezcollaboration/view/digest_element_plain.tpl
+0f0b68373388d881a8aa523320cca335  design/standard/templates/notification/handler/ezcollaboration/view/digest_plain.tpl
+ef42ff76c9c0799535968bb0f46defbc  kernel/classes/mailpreferences/expmailaddresschange.php
