@@ -6,12 +6,11 @@ holds the site in maintenance mode while it works, and records the run in `var/l
 `var/log/setup.log`. This chapter is the complete reference: the two subcommands `ini` and `run` with every option and
 exit status, every section and key of `kickstart.ini` with its type, its default and its effect as the code applies
 them, annotated example files for SQLite, MySQL and PostgreSQL, the database action and its dangers, dry runs,
-resuming and re-running, and the use of the kickstarter in CI and containers.
+resuming and re-running, and the use of the kickstarter in CI and containers. The short version: write the file
+with `exp:kickstarter ini`, check every value against [6.4](#64-kickstartini-reference) (above all
+`DatabaseAction`), run `run --dry-run`, then `run --force`.
 
-[Previous: 5. The setup wizard](05-setup-wizard.md) | [Next: 7. The console install](07-console-install.md) |
-[Contents](README.md)
-
----
+[Contents](README.md) · Previous: [5. The setup wizard](05-setup-wizard.md) · Next: [7. The console install](07-console-install.md)
 
 ## 6.1 How it works
 
@@ -27,7 +26,8 @@ php bin/php/console exp:kickstarter run --force
         |     terminal and to var/log/kickstart.log, masking the passwords of kickstart.ini
         v
 expKickstarter (kernel/classes/expkickstarter.php), in the child
-        |  - boots a CLI script with the siteaccess "plain", HTTP_HOST "localhost" when unset
+        |  - boots a CLI script with the siteaccess "plain", HTTP_HOST "localhost" when unset,
+        |    and the time zone Europe/London when PHP's is UTC
         |  - deletes the cached copies var/cache/ini/kickstart-*.php
         |  - switches maintenance mode on (not in a dry run; an open window is kept)
         |  - runs the steps Welcome .. Final from kernel/setup/steps/ezstep_data.php,
@@ -53,8 +53,9 @@ Usage: ./bin/php/console exp:kickstarter <command> [options]
 | `run` | install from `kickstart.ini` |
 | `help`, `--help`, `-h`, or no command | show the help |
 
-Any other word prints "Unknown command: *word*" and the help, with exit status 1. (The help text calls `ini` the
-default; in this version a call without a command shows the help.)
+Any other word prints "Unknown command: *word*" and the help, with exit status 1. A call without a command shows the
+help and exits with status 0, so a script that forgot the subcommand does not fail; check that your scripts name
+`run`.
 
 ### 6.2.1 `ini`: write kickstart.ini
 
@@ -103,6 +104,32 @@ Without `--yes` or `--defaults` the command needs a terminal; otherwise it stops
 | `site_admin` | `FirstName`, `LastName`, `Email`, `Password` | `Admin`, `User`, `admin@example.com`, empty (a password is generated at install time) |
 | `registration` | `Comments`, `Send` | empty (not read by `run`), `false` |
 
+**Neither `--yes` nor `--defaults` writes a file that installs as it is.** Read and edit the result before `run`:
+
+- With `--yes`, `[database_init] Database` and `[site_details] Database` are `ezp`, which is not a valid SQLite file
+  name: with `Type=sqlite3` the run stops in `DatabaseInit` with "The database file name is not valid. ...". Set both
+  to a name such as `exponential.db`. For a database server, set them to the database you created.
+- With `--yes`, `DatabaseAction` is `skip`, which writes the settings and installs no schema, data or package. For a
+  new site set it to `remove` (and read [6.5](#65-databaseaction-read-this-before-you-run) first).
+- With `--yes`, `[site_details] URL` is empty, so the site's address becomes `http://localhost`. Set the real
+  address.
+- With `--defaults`, every value is the example of `kickstart.ini-dist`: the package `news_site`, the databases
+  `ezp35test` and `ezp39test`, the administrator "God Like". It is a starting point for editing, nothing more.
+
+A worked example for a SQLite test site:
+
+```bash
+php bin/php/console exp:kickstarter ini --yes
+chmod 600 kickstart.ini
+# edit kickstart.ini: Database=exponential.db (twice), DatabaseAction=remove, URL=http://localhost:8087,
+# Email= your address
+php bin/php/console exp:kickstarter run --dry-run
+php bin/php/console exp:kickstarter run --force
+```
+
+The `chmod` matters: `ini` writes the file with the process's normal file mode, not `0600`, and the file holds
+passwords.
+
 The defaults take nothing from an installation that is already there: its siteaccess settings name a live database,
 and a file written from them would install over it. With `--from-installed` the generator looks through
 `settings/siteaccess/*/site.ini` and takes the `Server`, `Database` and `User` of the first siteaccess that names a
@@ -139,7 +166,7 @@ php bin/php/console exp:kickstarter run --force         # install
 |---|---|---|
 | `--force` | off | required whenever the range of steps includes `CreateSites`. Without it `run` stops with "The CreateSites step will modify the database and site settings." and "Re-run with --force to confirm you want to install the site package.", exit status 1 |
 | `--dry-run` | off | lists the sections found and the steps, then runs `DatabaseChoice` to `SiteDetails` (it sets the start and stop step itself), imports the site package into a temporary repository, and stops before `SiteAdmin`. No `--force` needed. See [6.7](#67-dry-runs) |
-| `--list-steps` | off | prints the step table and exits with status 0 |
+| `--list-steps` | off | prints the step table and exits with status 0. Like every `run`, it needs a `kickstart.ini` in the root; without one it stops with the "not found" message of [6.2.3](#623-exit-status) |
 | `--start-step=<Step>` | `welcome` | first step to run. Refused when a step in the range needs results of steps before it, see [6.10](#610-re-running-and-resuming) |
 | `--stop-step=<Step>` | `final` | last step to run |
 | `--help`, `-h` | | the help of `run` |
@@ -213,6 +240,10 @@ A failed step prints `Step <Step> failed:` followed by one line per problem, for
 message, the database message of [chapter 5](05-setup-wizard.md#536-database-initialization), or the coded errors of
 `CreateSites` ([section 5.3.15](05-setup-wizard.md#5315-creating-sites)), and then `Setup failed on step: <Step>`.
 When a password had to be generated, the run prints it once (see `[site_admin]` below).
+
+The `Finished` time is in PHP's time zone, with one exception: when that zone is UTC (no `date.timezone` in the
+command line `php.ini`), the kickstarter switches to `Europe/London` before it starts, so the time shown may be an
+hour off UTC in summer. Set `date.timezone` for the command line PHP and the times are your own.
 
 ## 6.3 How each step behaves on the command line
 
@@ -429,16 +460,21 @@ complete, generated file for a host-matched installation, useful to compare with
 A value that is missing or misspelled behaves like `ignore`: the data is added to what is there, which on a database
 that is not empty fails with duplicate tables or rows. Write the value explicitly.
 
-Before a `remove`, back up:
+Before a `remove`, back up, into a directory outside the installation root (a dump inside the document root can be
+downloaded by anyone who guesses its name):
 
 ```bash
-# MySQL / MariaDB
-mysqldump --single-transaction --routines exponential > var/backup-exponential-$(date +%Y%m%d-%H%M).sql
+mkdir -p /var/backups/exponential
+# MySQL / MariaDB (MariaDB also calls the program mariadb-dump)
+mysqldump --single-transaction --routines exponential > /var/backups/exponential/db-$(date +%Y%m%d-%H%M).sql
 # PostgreSQL
-pg_dump --format=custom --file=var/backup-exponential-$(date +%Y%m%d-%H%M).dump exponential
-# SQLite (consistent copy while nothing writes)
-sqlite3 var/storage/sqlite3/exponential.db ".backup 'var/backup-exponential.db'"
+pg_dump --format=custom --file=/var/backups/exponential/db-$(date +%Y%m%d-%H%M).dump exponential
+# SQLite (the online backup gives a consistent copy even while the site writes)
+sqlite3 var/storage/sqlite3/exponential.db ".backup '/var/backups/exponential/db.sqlite'"
 ```
+
+Check that the backup is not empty (`ls -l /var/backups/exponential/`) before you run the install; a dump that
+failed for lack of privileges leaves a file of a few bytes.
 
 ## 6.6 Annotated example files
 
@@ -795,12 +831,12 @@ they differ from this chapter, this chapter follows the code of this version:
 - **`--stop-step=CreateSites`.** It does not stop before the database is written: `CreateSites` is the step that writes
   it. Stop at `Registration` or earlier to leave the database untouched.
 - **`[registration] Comments`.** Not read; `Send` defaults to `false`.
-- **Resuming with `--start-step=SiteDetails`.** Older documents (and [Installing Exponential 6.0](../INSTALL.md))
-  suggest resuming a failed run there. Such a start is refused, because the steps before it set values that
-  `SiteDetails` and `CreateSites` read in the same process; run the whole sequence again
-  ([6.10](#610-re-running-and-resuming)).
-
----
+- **Resuming with `--start-step=SiteDetails`.** Older documents suggested resuming a failed run there. Such a start
+  is refused, because the steps before it set values that `SiteDetails` and `CreateSites` read in the same process;
+  run the whole sequence again ([6.10](#610-re-running-and-resuming)). [Kickstarter CLI](../bc/6.0/kickstartercli.md)
+  and [Installing Exponential 6.0](../INSTALL.md) now say the same.
+- **`ini --yes`.** Older descriptions present its file as ready to run. It is not: see the list under
+  [6.2.1](#621-ini-write-kickstartini) for the values to change first.
 
 ## References
 
@@ -825,8 +861,12 @@ External:
 - PHP `proc_open()`: <https://www.php.net/manual/en/function.proc-open.php>
 - PHP `posix_isatty()`: <https://www.php.net/manual/en/function.posix-isatty.php>
 - MySQL `mysqldump`: <https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html>
+- MariaDB `mariadb-dump`: <https://mariadb.com/docs/server/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump>
 - PostgreSQL `pg_dump`: <https://www.postgresql.org/docs/current/app-pgdump.html>
 - PostgreSQL pgcrypto: <https://www.postgresql.org/docs/current/pgcrypto.html>
-- SQLite online backup: <https://www.sqlite.org/backup.html>
+- SQLite online backup: <https://www.sqlite.org/backup.html> and the `.backup` command of the shell:
+  <https://www.sqlite.org/cli.html>
 - GNU `envsubst`: <https://www.gnu.org/software/gettext/manual/html_node/envsubst-Invocation.html>
 - Exponential on GitHub: <https://github.com/se7enxweb/exponential>
+
+[Contents](README.md) · Previous: [5. The setup wizard](05-setup-wizard.md) · Next: [7. The console install](07-console-install.md)
