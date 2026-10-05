@@ -41,8 +41,8 @@ php -v
 grep -n '"php"' composer.json
 ```
 
-The first line of `php -v` must show 8.1 or newer. The `composer.json` line shows the PHP versions the current
-release accepts.
+The first line of `php -v` must show 8.0 or newer (8.1 or newer if the site runs on Exponential Velocity, see
+[PHP 8.0 support](php-8.0-support.md)). The `composer.json` line shows the PHP versions the current release accepts.
 
 ## What this means for your own code
 
@@ -51,8 +51,9 @@ release accepts.
 - **Do not pass `null` to string functions.** Use `$value ?? ''`.
 - **Mark SPL methods.** Give methods that implement `Iterator`, `ArrayAccess` or `Countable` the
   `#[ReturnTypeWillChange]` attribute, or real return types.
-- **Raise your PHP constraint.** Set your own `composer.json` PHP constraint to `^8.1` or newer, as the product did in
-  6.0.8. Sites still on PHP 7.4 must stay on 6.0.7.
+- **Raise your PHP constraint.** Set your own `composer.json` PHP constraint to `^8.0` or newer, the oldest version
+  the product supports again since 6.0.15 (6.0.8 to 6.0.14 required `^8.1`). Use `^8.1` if the site runs on
+  Exponential Velocity. Sites still on PHP 7.4 must stay on 6.0.7.
 
 The PHP manual lists every incompatible change per version:
 

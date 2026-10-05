@@ -29,7 +29,7 @@ historic spelling on purpose.) Expected: a value such as `5.4.0` or `6.0.14`.
 ```bash
 mysqldump -u USER -p DATABASE > backup-before-upgrade.sql      # MySQL or MariaDB
 pg_dump -U USER DATABASE > backup-before-upgrade.sql           # PostgreSQL
-cp var/storage/sqlite3/exponential.db backup-before-upgrade.db  # SQLite: use the path of your database file
+sqlite3 var/storage/sqlite3/exponential.db ".backup 'backup-before-upgrade.db'"  # SQLite: use the path of your database file
 tar czf backup-var-and-settings.tgz var settings/override settings/siteaccess extension design
 ```
 
@@ -99,10 +99,11 @@ Then read the notes of the 5.90 line, which prepared the move to PHP 7 and a lon
    ```
 
    PostgreSQL: `update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql`. The MySQL file begins with
-   `SET storage_engine=InnoDB;`; on MySQL 5.7.5 and newer, and on MariaDB, that statement is rejected: run the two
+   `SET storage_engine=InnoDB;`; the variable was removed in MySQL 5.7.6, so on MySQL 5.7.6 and newer, and on MariaDB,
+   that statement is rejected: run the two
    `UPDATE` lines only. Details: [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
-3. PHP: Exponential 6.0 needs PHP 8.1 or newer on the current line. A site that must stay on PHP 7.4 stays on
-   6.0.7; read [PHP 8 support](../bc/6.0/php8.md) for the order of the upgrade steps, and check your own extensions
+3. PHP: Exponential 6.0 needs PHP 8.0 or newer on the current line (8.1 or newer for Exponential Velocity; see
+   [PHP 8.0 support](../bc/6.0/php-8.0-support.md)). A site that must stay on PHP 7.4 stays on 6.0.7; read [PHP 8 support](../bc/6.0/php8.md) for the order of the upgrade steps, and check your own extensions
    for PHP 8 warnings (classes extending `eZPersistentObject` or `eZDataType` are the usual cases).
 4. Continue with Part C, which is the same procedure for every 6.0.x step.
 

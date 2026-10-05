@@ -12,7 +12,7 @@ Every command is run from the root of the installation (the directory that holds
 
 | Need | Detail |
 |---|---|
-| PHP | 8.1 or newer; `composer.json` allows 8.1 up to 8.8. The command line PHP needs the PDO driver of your database (SQLite is enough to start). |
+| PHP | 8.0 or newer; `composer.json` allows 8.0 up to 8.8. Exponential Velocity, the built-in server of step 4, needs 8.1 or newer. The command line PHP needs the PDO driver of your database (SQLite is enough to start). |
 | Composer | version 2.x, only for the Composer install paths below |
 | A database | none to start: the default is SQLite in a file. MySQL or MariaDB, PostgreSQL, MongoDB and Oracle are choices of `--db=`. |
 | A web server | any for production (Apache with the shipped `.htaccess`, or PHP-FPM behind a server). To try the site at once, Exponential brings its own, see step 4. |
@@ -211,7 +211,7 @@ and [Extension loading order](../features/6.0/extension-loading-order.md).
 | Symptom | Check |
 |---|---|
 | `exp:install` says an installation exists | Add `--force` only if you mean to replace it. |
-| A white page or a 500 error | Read `var/log/error.log`. Check that `php -v` shows 8.1 or newer and that `vendor/` exists (run `composer install`). |
+| A white page or a 500 error | Read `var/log/error.log`. Check that `php -v` shows 8.0 or newer (8.1 for Velocity) and that `vendor/` exists (run `composer install`). |
 | The site address does not answer | Is the server running (`./console exp:velocity status --engine=php`)? Does the port match `--url`? |
 | You forgot the password | `exp:install` showed it once; a generated one is also in `var/log/initial-admin-password`. The setup wizard and the kickstarter write theirs once to `var/log/initial-admin-password`. Set a new one with `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, see [Reset a user password](../features/6.0/reset-user-password.md). |
 | A change does not show | Clear the content cache (step 6) and reload the page. |
