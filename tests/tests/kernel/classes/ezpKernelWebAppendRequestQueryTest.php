@@ -1,7 +1,8 @@
 <?php
 /**
  * ezpKernelWeb::appendRequestQuery() carries the query of the current request over a
- * module redirect, but only to targets on the own host.
+ * module redirect, but only to targets on the own host: the host of the request or a trusted
+ * host (the configured SiteURL host).
  *
  * A redirect used to append the query to every target: a sealed payment window URL on
  * another host broke on tracking parameters such as gclid or _gl, request data leaked to
@@ -84,22 +85,49 @@ class ezpKernelWebAppendRequestQueryTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array redirect target, current host, trusted hosts (the configured SiteURL host), expected target
+     * @dataProvider appendRequestQueryProvider
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'appendRequestQueryProvider' )]
+    public function testAppendRequestQuery( $redirectURI, $queryString, $currentHost, $expected )
+    {
+        $this->assertSame( $expected, ezpKernelWeb::appendRequestQuery( $redirectURI, $queryString, $currentHost ) );
+    }
+
+    /**
+     * @return array redirect target, query of the current request, current host, trusted hosts, expected target
      */
     public static function trustedHostsProvider()
     {
         return array(
+            'protocol-relative target on another host is left untouched' =>
+                array( '//pay.example.net/checkout', '?gclid=123', 'www.example.com', array(), '//pay.example.net/checkout' ),
+            'protocol-relative target on the own host gets the query' =>
+                array( '//www.example.com/user/login', '?from=shop', 'www.example.com', array(), '//www.example.com/user/login?from=shop' ),
+            'another scheme on the own host gets the query' =>
+                array( 'ftp://www.example.com/file', '?from=shop', 'www.example.com', array(), 'ftp://www.example.com/file?from=shop' ),
+            'a target without a host is left untouched' =>
+                array( 'mailto:shop@example.com', '?from=shop', 'www.example.com', array(), 'mailto:shop@example.com' ),
+            'a trusted host counts as the own host' =>
+                array( 'https://www.example.com/user/login', '?from=shop', 'example.com', array( 'www.example.com' ), 'https://www.example.com/user/login?from=shop' ),
+            'a trusted host is compared without port and case' =>
+                array( 'https://WWW.example.com/user/login', '?from=shop', 'example.com', array( 'www.example.com:8080' ), 'https://WWW.example.com/user/login?from=shop' ),
+            'an empty trusted host matches nothing' =>
+                array( 'https://pay.example.net/checkout', '?gclid=123', 'www.example.com', array( '' ), 'https://pay.example.net/checkout' ),
+            'a trusted host does not make other hosts own' =>
+                array( 'https://pay.example.net/checkout', '?gclid=123', 'example.com', array( 'www.example.com' ), 'https://pay.example.net/checkout' ),
+            'a trailing dot of the target host is ignored' =>
+                array( 'https://www.example.com./user/login', '?from=shop', 'www.example.com', array(), 'https://www.example.com./user/login?from=shop' ),
+            'an IPv6 host with a port is the own host' =>
+                array( 'http://[::1]:8080/user/login', '?from=shop', '[::1]:8080', array(), 'http://[::1]:8080/user/login?from=shop' ),
             'the SiteURL host counts even when the current host differs' =>
-                array( 'https://www.example.com/a', 'evil.example', array( 'www.example.com' ), 'https://www.example.com/a?gclid=x' ),
+                array( 'https://www.example.com/a', 'gclid=x', 'evil.example', array( 'www.example.com' ), 'https://www.example.com/a?gclid=x' ),
             // a spoofed X-Forwarded-Host only changes what counts as own host for that very request, so the
             // client only ever gets its own query back
             'a spoofed current host counts for its own request' =>
-                array( 'https://evil.example/a', 'evil.example', array(), 'https://evil.example/a?gclid=x' ),
-            'a host that is neither current nor trusted stays foreign' =>
-                array( 'https://other.example/a', 'evil.example', array( 'www.example.com' ), 'https://other.example/a' ),
+                array( 'https://evil.example/a', 'gclid=x', 'evil.example', array(), 'https://evil.example/a?gclid=x' ),
             // a host-matched siteaccess on another host (edit.<host>) loses the query, on purpose
             'a siteaccess on another host is foreign' =>
-                array( 'https://edit.example.com/content/view/full/2', 'www.example.com', array( 'www.example.com' ), 'https://edit.example.com/content/view/full/2' ),
+                array( 'https://edit.example.com/content/view/full/2', 'gclid=x', 'www.example.com', array( 'www.example.com' ), 'https://edit.example.com/content/view/full/2' ),
         );
     }
 
@@ -107,33 +135,25 @@ class ezpKernelWebAppendRequestQueryTest extends PHPUnit\Framework\TestCase
      * @dataProvider trustedHostsProvider
      */
     #[PHPUnit\Framework\Attributes\DataProvider( 'trustedHostsProvider' )]
-    public function testTrustedHosts( $redirectURI, $currentHost, $trustedHosts, $expected )
+    public function testTrustedHosts( $redirectURI, $queryString, $currentHost, $trustedHosts, $expected )
     {
-        $this->assertSame( $expected, ezpKernelWeb::appendRequestQuery( $redirectURI, 'gclid=x', $currentHost, $trustedHosts ) );
+        $this->assertSame( $expected, ezpKernelWeb::appendRequestQuery( $redirectURI, $queryString, $currentHost, $trustedHosts ) );
     }
 
     /**
-     * An IDN host matches its punycode form.
+     * An internationalised own host matches its punycode form in the target.
      */
-    public function testIdnHostMatchesItsPunycodeForm()
+    public function testInternationalisedHost()
     {
         if ( !function_exists( 'idn_to_ascii' ) )
         {
-            $this->markTestSkipped( 'intl is not loaded' );
+            $this->markTestSkipped( 'needs the intl extension (idn_to_ascii)' );
         }
-        $this->assertSame( 'https://xn--mnchen-3ya.example/a?gclid=x',
-                           ezpKernelWeb::appendRequestQuery( 'https://xn--mnchen-3ya.example/a', 'gclid=x', 'münchen.example' ) );
-        $this->assertSame( 'https://xn--mnchen-3ya.example/a',
-                           ezpKernelWeb::appendRequestQuery( 'https://xn--mnchen-3ya.example/a', 'gclid=x', 'www.example.com' ) );
-    }
-
-    /**
-     * @dataProvider appendRequestQueryProvider
-     */
-    #[PHPUnit\Framework\Attributes\DataProvider( 'appendRequestQueryProvider' )]
-    public function testAppendRequestQuery( $redirectURI, $queryString, $currentHost, $expected )
-    {
-        $this->assertSame( $expected, ezpKernelWeb::appendRequestQuery( $redirectURI, $queryString, $currentHost ) );
+        $this->assertSame( 'https://xn--mnchen-3ya.example/user/login?from=shop',
+                           ezpKernelWeb::appendRequestQuery( 'https://xn--mnchen-3ya.example/user/login', '?from=shop', "m\xC3\xBCnchen.example" ) );
+        // and only that host: a punycode target is foreign to any other host
+        $this->assertSame( 'https://xn--mnchen-3ya.example/user/login',
+                           ezpKernelWeb::appendRequestQuery( 'https://xn--mnchen-3ya.example/user/login', '?from=shop', 'www.example.com' ) );
     }
 
     /**

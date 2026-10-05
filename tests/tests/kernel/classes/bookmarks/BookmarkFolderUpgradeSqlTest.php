@@ -25,6 +25,9 @@ class BookmarkFolderUpgradeSqlTest extends PHPUnit\Framework\TestCase
         if ( !in_array( 'sqlite', PDO::getAvailableDrivers(), true ) )
             $this->markTestSkipped( 'no pdo_sqlite' );
         $dir = self::$installation . '/var/tmp';
+        // var/tmp is not in git: a fresh checkout has it only when an earlier test made it
+        if ( !is_dir( $dir ) )
+            mkdir( $dir, 0777, true );
         $file = $dir . '/bookmark-folders-upgrade-test-' . getmypid() . '.db';
         $pdo = new PDO( 'sqlite:' . $file );
         $pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
