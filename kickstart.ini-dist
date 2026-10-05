@@ -14,7 +14,7 @@
 # Initialization:
 #
 # Copy this file as kickstart.ini to the root of your
-# eZ Publish installation to enable this functionality.
+# Exponential installation to enable this functionality.
 #
 # Installation Steps:
 #
@@ -65,7 +65,7 @@
 #
 # Remove all leading whitespaces from uncommented
 # configuration blocks or parameters - otherwise the
-# settings will not be read properly by eZ Publish.
+# settings will not be read properly by Exponential.
 #
 # Do not mix up optional parameter values and configuration
 # blocks, just because both use squared brackets! Optional
@@ -255,11 +255,11 @@
 ## The first name of the administrator user
 #FirstName=God
 ## LastName=[string]
-## The first name of the administrator user
+## The last name of the administrator user
 #LastName=Like
 ## Email=[string]
 ## The email address of the administrator user
-#Email=nospam@ez.no
+#Email=admin@example.invalid
 ## Password=[string]
 ## The password of the administrator user. Leave it empty (or unset) and
 ## setup generates a random one, printed once and written to
