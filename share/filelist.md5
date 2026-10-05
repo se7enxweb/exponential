@@ -2722,7 +2722,7 @@ a466ef74bde1432f443d1b0f37c843bc  doc/bc/6.0/sql-query-cache.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
 302e6439761dcfac04b55003e3fd23dd  doc/bc/6.0/trash.md
-bf5f8a6d5a574c5509717c6d27afa127  doc/bc/6.0/user-password-change.md
+7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
 df0ed4d7ff562dfcd2b61892efb535aa  doc/bc/6.0/velocity-engines.md
 886acb7ce25be5416e143b161f5c0672  doc/bc/6.0/velocity-ondisk-layout.md
@@ -2875,7 +2875,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-435d85cdbd449df2b127b4063c77190f  doc/changelogs/6.0/6.0.15.md
+f10efafc293b712fed73d44de6aba018  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3285,7 +3285,7 @@ ee9fbd196fef3a6c34b154e3bedaf179  doc/features/6.0/installation-name-in-pages.md
 7d62ef789bcf57198f52d4fc322e3182  doc/features/6.0/legacy-bridge.md
 990e1c65645859f009d8edce234b6b21  doc/features/6.0/mail-preferences.md
 14800f3c677c11c0413e0e030c9b7a98  doc/features/6.0/maintenance-mode.md
-8e66086985f776ca609017d278d0aeb4  doc/features/6.0/modern-password-change.md
+641dc7a61873704516939c32e1775b2c  doc/features/6.0/modern-password-change.md
 a1b52e9dbf0476197edba4affd16aa38  doc/features/6.0/mongodb-database-support.md
 bb99b84e8b8be2362e0fa4162f41016b  doc/features/6.0/multi-site-ini-overrides.md
 cfe53a9b5d897b7ffb5da2b09a770a87  doc/features/6.0/notifications.md
@@ -4642,7 +4642,7 @@ ab95b25629ede0ba7aaf6fa166250fcb  kernel/classes/datatypes/ezurl/ezurltype.php
 bc1f7d94c3e9cdcc6b029676b42ac238  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 4e5dbb722c2319d48ccf65126c404329  kernel/classes/datatypes/ezuser/ezldapuser.php
 ddb7ea2df70d86d759cbb9f485513a82  kernel/classes/datatypes/ezuser/eztextfileuser.php
-674e02d8aa530d13a3f1bb9104251ad4  kernel/classes/datatypes/ezuser/ezuser.php
+a8b7a938d12995c9fba61b5ef1fde1c0  kernel/classes/datatypes/ezuser/ezuser.php
 190e03d3acc89794d927758dfc31c7cf  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -4682,7 +4682,7 @@ e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
 7a07e3a463f4b41105e7fcc17ab5c98d  kernel/classes/expmaintenance.php
 846590ae94cadbe8b9122bfb25b89d0c  kernel/classes/expnotificationjob.php
 ec9a503f37ff84870bcbeeb4969e8d76  kernel/classes/expnotificationservice.php
-d58720e5899e51ff7e49be066ad9895a  kernel/classes/exppasswordpolicy.php
+7e9b9e87ecb71237a9ed4fa317fa4844  kernel/classes/exppasswordpolicy.php
 b8ca72676a5a9dfafef6ddb0b6e9ee7a  kernel/classes/expphar.php
 1a1f23777f111cdae910ac7ef5032192  kernel/classes/exppreloadjob.php
 1eda4d2740e2f5e9ff0ccaef297fb1aa  kernel/classes/expprocesstools.php
@@ -7006,7 +7006,7 @@ add07cb25b789ade09730d3c616fa69a  tests/tests/kernel/classes/trash/eZContentObje
 bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regression.php
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 b6f45ce384a24cccf17ed74d9da7c988  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
-a4a235e0c9e0b4555a5c245ec827b091  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
+972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
 f685b80d3c26e9a851940b63e056c6c5  tests/tests/kernel/classes/workflowtypes/ezapprovetype_regression.php
 b2e46951bdb7165f0a97de3990a4e4e4  tests/tests/kernel/common/eZKernelCommonOperatorsTest.php
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
