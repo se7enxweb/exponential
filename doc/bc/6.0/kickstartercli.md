@@ -8,7 +8,7 @@ wizard without a browser: it reads every wizard answer from `kickstart.ini`.
 
 | | |
 |---|---|
-| What changed | New command with two subcommands: `ini` writes `kickstart.ini` from `kickstart.ini-dist`, `run` executes the wizard steps. `run` refuses the destructive `CreateSites` step without `--force`; `run --dry-run` tests the remote package download without touching the database. In kickstart mode the site package is always downloaded from the remote repository. `eZPackage::import()` gains an optional fifth argument `$skipExisting`. |
+| What changed | New command with two subcommands: `ini` writes `kickstart.ini` from `kickstart.ini-dist`, `run` executes the wizard steps. `run` refuses the destructive `CreateSites` step without `--force`; `run --dry-run` tests the database connection and the package download without writing anything. In kickstart mode a site package that is already in `var/storage/packages/` is used as it is; only a missing one is downloaded from the remote repository. `eZPackage::import()` gains an optional fifth argument `$skipExisting`. |
 | Who is affected | Anyone who installs sites. Existing callers of `eZPackage::import()` are unchanged (the new argument defaults to `false`). A `kickstart.ini` left in the project root is also read by the web setup wizard. |
 | How to check | `php bin/php/kickstarter.php run --list-steps` (changes nothing) |
 | How to fix | Nothing to fix. Remove or move `kickstart.ini` after a CLI install if the web wizard must not use it. Before an install onto another database engine, set `DatabaseImplementation` in `settings/override/site.ini.append.php` (see [`database_choice`](#database_choice)). |
@@ -68,14 +68,15 @@ php bin/php/kickstarter.php ini
 |--------|-------|-------------|
 | `--defaults` | `-d` | Copy `kickstart.ini-dist` values verbatim into `kickstart.ini` and exit. |
 | `--yes` | `-y` | Accept the built-in sensible defaults and write `kickstart.ini` without prompting. |
+| `--from-installed` | | Take the database server, name and user (never the password) of an installed siteaccess as defaults. Off by default. |
 | `--help` | `-h` | Show help. |
 
-The `--yes` defaults are loaded from `kernel/classes/expkickstarterini.php` and are also influenced by any existing `siteaccess` `site.ini` `DatabaseSettings`, so they can reconnect to an already-installed database.
+The `--yes` defaults are loaded from `kernel/classes/expkickstarterini.php`. They take nothing from the settings of an installed site: those name a live database, and a `kickstart.ini` written from them would install over it. With `--from-installed` the database server, name and user of the first installed siteaccess that names a database become the defaults; its password is never copied. The default `Site_package` is `sevenx_multisite`, the package `exp:install` installs.
 
 
 ### `exp:kickstarter run` — run the setup wizard
 
-Executes the setup wizard steps from `welcome` through `final` using the values in `kickstart.ini`. The configured site package is downloaded from the remote repository by default when kickstart mode is active, even if a local copy already exists.
+Executes the setup wizard steps from `welcome` through `final` using the values in `kickstart.ini`. A configured site package that is already in `var/storage/packages/` is used as it is; only a missing package (or a missing dependency) is downloaded from the remote repository. Delete the local copy first if you want a fresh download.
 
 ```bash
 php bin/php/console exp:kickstarter run
@@ -86,12 +87,14 @@ php bin/php/kickstarter.php run
 
 | Option | Description |
 |--------|-------------|
-| `--start-step=<step>` | First step to run (default: `welcome`). |
+| `--start-step=<step>` | First step to run (default: `welcome`). A later start is refused when a step in the run needs results of steps before it (see [Resuming](#resuming-after-a-failure)). |
 | `--stop-step=<step>` | Last step to run (default: `final`). |
-| `--dry-run` | Validate `kickstart.ini`, try downloading the remote packages, then stop before `CreateSites`. |
+| `--dry-run` | Validate `kickstart.ini`, run `DatabaseChoice` through `SiteDetails` (database connection, package download), then stop. Writes no password, sends no mail, installs nothing. |
 | `--list-steps` | List setup steps and exit. |
 | `--force` | Required when the step range includes `CreateSites`, because `CreateSites` modifies the database and site settings. |
 | `--help` | Show help. |
+
+The standard script options (`--allow-root-user`, `--no-colors`, `--quiet`, `--debug`, `--verbose`, `--siteaccess`, `--logfiles`) are accepted and ignored; the kickstarter always runs on the plain siteaccess.
 
 #### `CreateSites` and `--force`
 
@@ -102,16 +105,26 @@ The CreateSites step will modify the database and site settings.
 Re-run with --force to confirm you want to install the site package.
 ```
 
-To run only the configuration and package steps without touching the rest:
+To run the configuration and package steps and stop before anything is installed, stop at the step before `CreateSites` (no `--force` needed):
 
 ```bash
-php bin/php/console exp:kickstarter run --force --stop-step=CreateSites
+php bin/php/console exp:kickstarter run --stop-step=Registration
 ```
 
-To resume from a later step after a failure:
+`--stop-step=CreateSites` does the opposite: it includes `CreateSites`, so it installs (and needs `--force`), and only leaves out `Final`.
+
+#### Resuming after a failure
+
+A run cannot pick up where an earlier one stopped. The steps keep what they found out (the database type and connection, the chosen package and its languages, the site access values, the system check's ImageMagick result, the administrator) in the running process only; `kickstart.ini` holds the answers, not those results. So a later `--start-step` is refused before anything runs when a step in the range needs an earlier one, and the message names the earliest step that works:
+
+```
+--start-step=SiteDetails cannot work: the steps SiteDetails..Final need what Welcome, EmailSettings, DatabaseChoice, DatabaseInit, LanguageOptions, SiteTypes, PackageLanguageOptions, SiteAccess found out earlier in the same run (...). Start at Welcome or earlier: --start-step=Welcome.
+```
+
+Any range that includes `CreateSites` must start at `Welcome`. After a failure, fix the cause in `kickstart.ini` and run the whole installation again:
 
 ```bash
-php bin/php/console exp:kickstarter run --force --start-step=SiteDetails
+php bin/php/console exp:kickstarter run --force
 ```
 
 ### Remote package handling
@@ -130,17 +143,17 @@ For example, `sevenx_site` in the remote index has `version="1.0.0-0"`, while th
 
 So `eZPackage::getVersion()` returns `6.0-10-stable`. A naive `version_compare('1.0.0-0', '6.0-10-stable')` would decide the local copy is newer and skip the download. This is an unfortunate API data convention that the kickstart workflow has to accept.
 
-When `kickstart.ini` has a `[site_types]` section, `eZStepSiteTypes::createSitePackagesList()` sees `hasKickstartData()` is true and keeps the remote entry even if a local copy exists. `eZStepSiteTypes::init()` then downloads the site package from the remote URL and, if a local copy already exists, removes it first. `downloadDependantPackages()` checks each required dependency against its `min-version` and downloads only missing or older packages, using the remote `index.xml` to obtain the URLs.
+When `kickstart.ini` has a `[site_types]` section, `eZStepSiteTypes::createSitePackagesList()` sees `hasKickstartData()` is true and keeps the remote entry (with its URL) even if a local copy exists, so the version comparison above cannot hide the package. `eZStepSiteTypes::init()` then calls `downloadAndImportPackage()` with `forceDownload=false`: a site package that is already in `var/storage/packages/` is used as it is, and only a missing one is downloaded. `downloadDependantPackages()` checks each required dependency against its `min-version` and downloads only missing or older packages, using the remote `index.xml` to obtain the URLs. To install a newer copy of a package that is already there, remove the local copy first.
 
 ### Dry-run mode
 
 `--dry-run` is not just a static validator any more. It:
 
 1. Validates `kickstart.ini` and lists the wizard steps.
-2. Runs the wizard steps from `DatabaseChoice` through `Registration`.
+2. Runs the wizard steps from `DatabaseChoice` through `SiteDetails`.
 3. During `SiteTypes`, imports the site package and its dependencies into a temporary `var/storage/packages/dryrun/` repository.
 4. Cleans up the `dryrun/` repository as soon as the `SiteTypes` step finishes.
-5. Stops before `CreateSites` because the stop step is `Registration` (index 13) and `CreateSites` is index 14.
+5. Stops after `SiteDetails` (index 10): before `SiteAdmin`, which can write a generated password to `var/log/initial-admin-password`, before `Registration`, which can send mail, and before `CreateSites` (index 14).
 
 The dry-run path uses the same `downloadAndImportPackage()` and `downloadDependantPackages()` helpers as a real install, but with `repositoryID='dryrun'` and `skipExisting=true`. `eZPackage::import()` supports the `skipExisting` flag so it can import into the temp directory without returning `STATUS_ALREADY_EXISTS` even when `7x/sevenx_site` already exists locally. This makes the dry-run a true test of the remote download and dependency resolution without overwriting the local package cache or the `settings/siteaccess/` files.
 
@@ -148,7 +161,7 @@ The dry-run path uses the same `downloadAndImportPackage()` and `downloadDependa
 php bin/php/console exp:kickstarter run --dry-run
 ```
 
-Because the `stop-step` is `Registration`, the `--force` guard is never triggered and `CreateSites` is never reached, so the database and site files are left untouched.
+Because the stop step is `SiteDetails`, the `--force` guard is never triggered and `CreateSites` is never reached, so the database and site files are left untouched, and no password file is written and no mail sent.
 
 
 ## Setup steps
@@ -170,7 +183,7 @@ The wizard steps are defined in `kernel/setup/steps/ezstep_data.php`.
 | 10 | `SiteDetails` | Sets site title, URL, access names, and `DatabaseAction`. |
 | 11 | `SiteAdmin` | Creates the admin user. |
 | 12 | `Security` | Security options. |
-| 13 | `Registration` | Registration / feedback settings. |
+| 13 | `Registration` | Registration report. Sends nothing unless `Send=true` and setup.ini `[RegistrationSettings] Receiver` is set. |
 | 14 | `CreateSites` | Destructive step: installs schema, data, packages, and siteaccess files. Not counted in progress. |
 | 15 | `Final` | Final step. |
 
@@ -380,14 +393,15 @@ Continue=true
 ```ini
 [registration]
 Continue=true
-Comments=
 Send=false
 ```
 
 | Field | Description |
 |-------|-------------|
-| `Comments` | Comment sent with the registration email. |
-| `Send` | `true` or `false` — whether to send the registration email. |
+| `Send` | `true` to send the registration report; anything else, or no `Send=` at all, sends nothing (the default). The report goes only to `settings/setup.ini` `[RegistrationSettings] Receiver`, which is empty by default, so even `Send=true` sends nothing until a receiver is set. The old upstream registration address is never used. |
+| `UserData[...]` | The registration form's fields (`UserData[first_name]`, `UserData[last_name]`, `UserData[email]`, `UserData[country]`, `UserData[company]`), used in the report when it is sent. |
+
+A `Comments=` key, written by older versions of `exp:kickstarter ini`, is not read.
 
 
 ## Installation workflow
@@ -411,7 +425,7 @@ Send=false
    php bin/php/console exp:kickstarter run --dry-run
    ```
 
-   This runs `DatabaseChoice` through `Registration`, imports the site package and dependencies into `var/storage/packages/dryrun/` (which is removed after the `SiteTypes` step), and stops before `CreateSites`.
+   This runs `DatabaseChoice` through `SiteDetails`, imports the site package and dependencies into `var/storage/packages/dryrun/` (which is removed after the `SiteTypes` step), and stops before `SiteAdmin`: nothing is installed, no password file is written and no mail is sent.
 
 4. **Run the installer**:
 
@@ -439,10 +453,12 @@ php bin/php/console exp:kickstarter run --force
 php bin/php/console exp:kickstarter run --force --stop-step=CreateSites
 ```
 
-### Resume from `SiteDetails`
+### After a failed run
+
+A run cannot resume from a later step (see [Resuming after a failure](#resuming-after-a-failure)); `--start-step=SiteDetails` is refused with the step to start at. Fix `kickstart.ini` and run the installation again:
 
 ```bash
-php bin/php/console exp:kickstarter run --force --start-step=SiteDetails
+php bin/php/console exp:kickstarter run --force
 ```
 
 ### Dry-run to validate `kickstart.ini` and remote packages
@@ -451,7 +467,7 @@ php bin/php/console exp:kickstarter run --force --start-step=SiteDetails
 php bin/php/console exp:kickstarter run --dry-run
 ```
 
-This validates the INI sections, lists the wizard steps, and then runs the wizard steps from `DatabaseChoice` through `Registration` to verify that the configured site package and all of its remote dependencies can be downloaded. It stops before `CreateSites` so no database or siteaccess files are modified. The downloaded packages are imported into a temporary `var/storage/packages/dryrun/` repository that is removed when the `SiteTypes` step finishes.
+This validates the INI sections, lists the wizard steps, and then runs the wizard steps from `DatabaseChoice` through `SiteDetails` to verify the database connection and that the configured site package and all of its remote dependencies can be downloaded. It stops before `SiteAdmin`, so no database or siteaccess files are modified, no password file is written and no mail is sent. The downloaded packages are imported into a temporary `var/storage/packages/dryrun/` repository that is removed when the `SiteTypes` step finishes.
 
 ### List the wizard steps
 
@@ -474,7 +490,7 @@ The first line creates the config. The second line tests remote packages without
 
 ### Do I need `--start-step` or `--stop-step` for normal use?
 
-No. Those are only for resuming or partial runs. The normal commands are `run --dry-run` and `run --force`.
+No. They are for partial runs, and a later `--start-step` cannot resume an earlier run: it is refused when the steps before it are needed, which is always the case for a range that installs. The normal commands are `run --dry-run` and `run --force`.
 
 ### Why does `run` need `--force`?
 
@@ -482,11 +498,11 @@ No. Those are only for resuming or partial runs. The normal commands are `run --
 
 ### What does `--dry-run` actually do?
 
-It validates `kickstart.ini`, lists the steps, then runs `DatabaseChoice` through `Registration` to test the remote package download. It stops before `CreateSites` and cleans up the temporary `dryrun/` repository.
+It validates `kickstart.ini`, lists the steps, then runs `DatabaseChoice` through `SiteDetails` to test the database connection and the package download. It stops before `SiteAdmin` and cleans up the temporary `dryrun/` repository.
 
 ### What does `--dry-run` change on disk?
 
-Nothing permanent. It downloads packages into `var/storage/packages/dryrun/` and removes that directory when `SiteTypes` finishes. It does not touch the database or `settings/siteaccess/`.
+Nothing permanent. It downloads packages into `var/storage/packages/dryrun/` and removes that directory when `SiteTypes` finishes. It does not touch the database or `settings/siteaccess/`, writes no `var/log/initial-admin-password` and sends no mail.
 
 ### What does `run --force` change?
 
@@ -584,6 +600,7 @@ php bin/php/console exp:kickstarter run --force
 
 - Confirm `package.ini` points to a reachable `index.xml` URL.
 - Confirm `site_types` `Site_package` matches the `name` attribute in the remote `index.xml`.
+- A package that is already in `var/storage/packages/` is not downloaded again; remove the local copy to force a download.
 - Remember that `hasKickstartData()` must be true for the remote-entry preference. The `[site_types]` section must have `Continue=true` and `Site_package` set.
 - Run `--dry-run` to see exactly where the download fails.
 
@@ -612,8 +629,8 @@ php bin/php/console exp:kickstarter run --force
 
 - `downloadAndImportPackage( $packageName, $packageUrl, $forceDownload = false, $repositoryID = false, $skipExisting = false )` now forwards the optional repository and skip-existing flags to `eZPackage::import()`.
 - `downloadDependantPackages( $sitePackage, $repositoryID = false, $skipExisting = false )` now forwards the same flags to `downloadAndImportPackage()`.
-- In `init()`, when the `eZSetupKickstartDryRun` post variable is set, the site package is imported into the `dryrun` repository with `skipExisting=true`. In normal mode it is imported into the package's own vendor directory (`7x`) with `forceDownload=true`.
-- `createSitePackagesList()` now calls `$this->hasKickstartData()` before the version comparison. If a kickstart configuration is active, the local package entry is skipped and the remote entry is kept, so the remote URL is preserved and the package is downloaded.
+- In `init()`, when the `eZSetupKickstartDryRun` post variable is set, the site package is imported into the `dryrun` repository with `skipExisting=true`. In normal mode it is imported into the package's own vendor directory (`7x`) with `forceDownload=false`: a package already there is used as it is.
+- `createSitePackagesList()` now calls `$this->hasKickstartData()` before the version comparison. If a kickstart configuration is active, the local package entry is skipped and the remote entry is kept, so the remote URL is preserved; the package is downloaded only when it is not in the local repository.
 
 ### `eZStepPackageLanguageOptions` changes
 
