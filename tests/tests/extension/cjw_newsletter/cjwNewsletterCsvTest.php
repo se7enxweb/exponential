@@ -120,6 +120,19 @@ class cjwNewsletterCsvTest extends cjwNewsletterTestCase
         $this->assertSame( "a,b\r\n1,2", $export->CsvResult );
     }
 
+    public function testParserReadsOldMacLineEndingsWithoutTheDeprecatedIniSetting()
+    {
+        $one = $this->newEmail( 'cr1' );
+        $two = $this->newEmail( 'cr2' );
+        $file = $this->csvFile( "email;first_name\r$one;A\r$two;B\r" );
+        $parser = new CjwNewsletterCsvParser( $file, ';', true, array( 'email' => 'email', 'first_name' => 'first_name' ) );
+        $rows = array_values( $parser->getCsvDataArray() );
+        $this->assertCount( 2, $rows );
+        $this->assertSame( $two, $rows[1]['email'] );
+        $this->assertSame( 'A', $rows[0]['first_name'] );
+        $this->assertStringNotContainsString( "ini_set( 'auto_detect_line_endings'", file_get_contents( 'extension/cjw_newsletter/classes/cjwnewslettercsvparser.php' ), 'the setting is deprecated since PHP 8.1' );
+    }
+
     public function testExportViewPreviewListsTheSubscribers()
     {
         $user = $this->newSubscriber( 'exp' );
@@ -144,6 +157,8 @@ class cjwNewsletterCsvTest extends cjwNewsletterTestCase
 
     public function testImportCreatesUsersAndSubscriptionsAndSkipsBadRows()
     {
+        // the view imports inside the request here: the background run is tested through the command
+        $this->setIni( 'cjw_newsletter.ini', 'NewsletterCsvImportSettings', 'ImportInBackground', 'disabled' );
         $good1 = $this->newEmail( 'imp1' );
         $good2 = $this->newEmail( 'imp2' );
         $blocked = $this->newSubscriber( 'impbl' );

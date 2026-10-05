@@ -37,6 +37,8 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
     protected $phpIssues = array();
     protected $previousHandler = null;
     protected $collector = null;
+    /** @var array the recorded last runs of the cronjob parts and commands before the test: a test must not leave its runs on the start page */
+    protected $savedRuns = array();
 
     public static function setUpBeforeClass(): void
     {
@@ -74,6 +76,7 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
         if ( self::$bootError !== null )
             $this->markTestSkipped( 'Kernel not available: ' . self::$bootError );
         $this->loginAdmin();
+        $this->savedRuns = eZDB::instance()->arrayQuery( "SELECT name, value FROM ezsite_data WHERE name LIKE 'cjw_newsletter_last_%'" );
         $this->savedPost = $_POST;
         $_POST = array();
         $this->useFileTransport();
@@ -96,6 +99,7 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
         {
             $this->loginAdmin();
             $this->removeTestData();
+            $this->restoreRuns();
             $this->restoreIni();
             $this->removeMailDir();
             $_POST = $this->savedPost;
@@ -112,6 +116,19 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             $this->assertSame( array(), array_values( array_unique( $issues ) ), 'PHP warnings or deprecations inside cjw_newsletter' );
         }
         parent::tearDown();
+    }
+
+    /** Puts the last runs back as they were before the test. */
+    protected function restoreRuns()
+    {
+        $db = eZDB::instance();
+        $db->query( "DELETE FROM ezsite_data WHERE name LIKE 'cjw_newsletter_last_%'" );
+        foreach ( $this->savedRuns as $row )
+        {
+            $data = eZSiteData::create( $row['name'], $row['value'] );
+            $data->store();
+        }
+        $this->savedRuns = array();
     }
 
     // ------------------------------------------------------------------ environment

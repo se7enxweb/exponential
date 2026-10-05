@@ -17,17 +17,50 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
         $user = $this->newSubscriber( 'listme' );
         $r = $this->runView( 'user_list' );
         $this->assertViewOk( $r );
+        // the search form becomes a URL (so that the page can be paged and bookmarked); the URL holds the text
         $r = $this->runView( 'user_list', array(), array( 'SearchUserEmail' => 'listme' ) );
-        $this->assertStringContainsString( $user->attribute( 'email' ), $r['content'] );
-        $r = $this->runView( 'user_list', array(), array( 'SearchUserEmail' => 'no-such-user-text' ) );
+        $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
+        $this->assertStringContainsString( '/(q)/listme', (string)$r['redirect'] );
+        $r = $this->runView( 'user_list', array(), array(), array( 'q' => 'LISTME' ) );
+        $this->assertStringContainsString( $user->attribute( 'email' ), $r['content'], 'the search is not case sensitive' );
+        $r = $this->runView( 'user_list', array(), array(), array( 'q' => 'no-such-user-text' ) );
         $this->assertStringNotContainsString( $user->attribute( 'email' ), $r['content'] );
+        $this->assertStringContainsString( 'No user matches', $r['content'] );
     }
 
-    public function testUserListSearchSurvivesQuotesAndEscapesTheEchoedValue()
+    public function testUserListFiltersByStatusSortsAndPages()
     {
-        $r = $this->runView( 'user_list', array(), array( 'SearchUserEmail' => "o'\"><script>alert(1)</script>" ) );
+        $one = $this->newSubscriber( 'lsta' );
+        $two = $this->newSubscriber( 'lstb', CjwNewsletterUser::STATUS_BLACKLISTED, CjwNewsletterSubscription::STATUS_BLACKLISTED );
+        $r = $this->runView( 'user_list', array(), array(), array( 'status' => 'blacklisted', 'q' => 'nltest-' ) );
+        $this->assertStringContainsString( $two->attribute( 'email' ), $r['content'] );
+        $this->assertStringNotContainsString( $one->attribute( 'email' ), $r['content'] );
+        $r = $this->runView( 'user_list', array(), array(), array( 'q' => 'nltest-', 'sort' => 'email', 'order' => 'desc', 'limit' => '10' ) );
+        $this->assertLessThan( strpos( $r['content'], $one->attribute( 'email' ) ), strpos( $r['content'], $two->attribute( 'email' ) ), 'lstb sorts before lsta when descending' );
+        // one per page: the second page holds the other user, the total says how many there are
+        $total = 0;
+        $page1 = CjwNewsletterUser::fetchUserPage( 'nltest-', array(), 0, 'email', 'asc', 1, 0, $total );
+        $page2 = CjwNewsletterUser::fetchUserPage( 'nltest-', array(), 0, 'email', 'asc', 1, 1, $total );
+        $this->assertGreaterThanOrEqual( 2, $total );
+        $this->assertCount( 1, $page1 );
+        $this->assertCount( 1, $page2 );
+        $this->assertNotSame( $page1[0]->attribute( 'id' ), $page2[0]->attribute( 'id' ) );
+        // nonsense parameters fall back to the defaults
+        $this->assertViewOk( $this->runView( 'user_list', array(), array(), array( 'offset' => '-5', 'sort' => 'x;DROP', 'order' => 'sideways', 'status' => 'bogus', 'list' => 'abc', 'limit' => '99999' ) ) );
+    }
+
+    public function testUserListSearchSurvivesQuotesAndLikeCharactersAndEscapesTheEchoedValue()
+    {
+        $text = "o'\"><script>alert(1)</script>%_!";
+        $r = $this->runView( 'user_list', array(), array( 'SearchUserEmail' => $text ) );
+        $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
+        $this->assertStringNotContainsString( '<script>', (string)$r['redirect'] );
+        $r = $this->runView( 'user_list', array(), array(), array( 'q' => rawurlencode( $text ) ) );
         $this->assertViewOk( $r );
         $this->assertStringNotContainsString( '<script>alert(1)</script>', $r['content'] );
+        $total = 0;
+        $this->assertSame( array(), CjwNewsletterUser::fetchUserPage( "%", array(), 0, 'email', 'asc', 10, 0, $total ), 'a percent sign is not a wildcard' );
+        $this->assertSame( 0, $total );
     }
 
     public function testUserViewShowsTheUser()
@@ -150,14 +183,36 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
     {
         $email = $this->newEmail( 'bla' );
         $r = $this->runView( 'blacklist_item_add', array(), array( 'AddButton' => 'Add', 'Email' => $email, 'Note' => 'nltest note' ) );
-        $this->assertViewOk( $r );
+        $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'], 'a valid address is stored and the list is shown' );
         $this->assertTrue( CjwNewsletterBlacklistItem::isEmailOnBlacklist( $email ) );
         $list = $this->runView( 'blacklist_item_list' );
         $this->assertStringContainsString( strtolower( $email ), $list['content'] );
+        $list = $this->runView( 'blacklist_item_list', array(), array(), array( 'q' => 'NLTEST NOTE' ) );
+        $this->assertStringContainsString( strtolower( $email ), $list['content'], 'the filter looks in the note, whatever the case' );
         $item = CjwNewsletterBlacklistItem::fetchByEmail( $email );
+        // removal asks first
         $r = $this->runView( 'blacklist_item_remove', array(), array( 'BlacklistIDArray' => array( $item->attribute( 'id' ) ) ) );
+        $this->assertViewOk( $r );
+        $this->assertStringContainsString( 'Remove these addresses', $r['content'] );
+        $this->assertTrue( CjwNewsletterBlacklistItem::isEmailOnBlacklist( $email ), 'nothing is removed before the confirmation' );
+        $r = $this->runView( 'blacklist_item_remove', array(), array( 'BlacklistIDArray' => array( $item->attribute( 'id' ) ), 'CancelButton' => '1' ) );
+        $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
+        $this->assertTrue( CjwNewsletterBlacklistItem::isEmailOnBlacklist( $email ) );
+        $r = $this->runView( 'blacklist_item_remove', array(), array( 'BlacklistIDArray' => array( $item->attribute( 'id' ) ), 'ConfirmRemoveButton' => '1' ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
         $this->assertFalse( CjwNewsletterBlacklistItem::isEmailOnBlacklist( $email ) );
+    }
+
+    public function testBlacklistAddValidatesTheAddress()
+    {
+        foreach ( array( '', 'bad address', 'a@b', str_repeat( 'x', 160 ) . '@example.invalid' ) as $bad )
+        {
+            $r = $this->runView( 'blacklist_item_add', array(), array( 'AddButton' => 'Add', 'Email' => $bad ) );
+            $this->assertViewOk( $r );
+            $this->assertSame( eZModule::STATUS_OK, $r['exit'], 'the form is shown again for "' . substr( $bad, 0, 20 ) . '"' );
+            $this->assertStringContainsString( 'nl-field-error', $r['content'] );
+        }
+        $this->assertSame( 0, (int)eZDB::instance()->arrayQuery( "SELECT COUNT(*) AS c FROM cjwnl_blacklist_item WHERE email = 'bad address'" )[0]['c'] );
     }
 
     public function testBlacklistAddOfAnExistingAddressDoesNotDuplicate()
@@ -175,12 +230,12 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
         $this->assertSame( CjwNewsletterUser::STATUS_BLACKLISTED, (int)CjwNewsletterUser::fetch( $user->attribute( 'id' ) )->attribute( 'status' ) );
     }
 
-    public function testBlacklistRemoveOfUnknownEntriesIsAnErrorAndMalformedInputIsHarmless()
+    public function testBlacklistRemoveOfUnknownEntriesAndMalformedInputIsHarmless()
     {
         $r = $this->runView( 'blacklist_item_remove', array(), array( 'Email' => $this->newEmail( 'none' ) ) );
-        $this->assertSame( eZModule::STATUS_FAILED, $r['exit'] );
-        $r = $this->runView( 'blacklist_item_remove', array(), array( 'BlacklistIDArray' => '999999999' ) );
-        $this->assertSame( eZModule::STATUS_FAILED, $r['exit'] );
+        $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'], 'nothing to remove: back to the list with a notice' );
+        $r = $this->runView( 'blacklist_item_remove', array(), array( 'BlacklistIDArray' => '999999999', 'ConfirmRemoveButton' => '1' ) );
+        $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
         $r = $this->runView( 'blacklist_item_remove', array(), array( 'RedirectURI' => 'http://evil.example/' ) );
         $this->assertStringNotContainsString( 'evil', (string)$r['redirect'] );
     }
