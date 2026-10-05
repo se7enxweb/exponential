@@ -43,6 +43,9 @@ class eZCharTransform
             return $text;
         }
 
+        // Needed by the cache file name and by the mapper, also when no cache is used
+        $charsetName = ( $charset === false ? eZTextCodec::internalCharset() : eZCharsetInfo::realCharsetCode( $charset ) );
+
         if ( $useCache )
         {
             // CRC32 is used for speed, MD5 would be more unique but is slower
@@ -50,8 +53,6 @@ class eZCharTransform
             $filepath = $this->cacheFilePath( 'rule-',
                                               '-' . $charsetName,
                                               $key );
-
-            $charsetName = ( $charset === false ? eZTextCodec::internalCharset() : eZCharsetInfo::realCharsetCode( $charset ) );
 
             // Try to execute code in the cache file, if it succeeds
             // \a $text will/ transformated
