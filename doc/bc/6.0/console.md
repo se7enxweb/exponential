@@ -16,7 +16,7 @@ paths under `bin/php/`, `bin/shell/` or inside extensions.
 ## Start in one minute
 
 Run every command from the Exponential root directory, the one that holds `index.php`, `autoload.php` and `bin/`.
-You need PHP 8.1 or later on your `$PATH` (`php -v`). Some sub-scripts also need `curl` and `wget`; the console itself
+You need PHP 8.0 or later on your `$PATH` (`php -v`); the `exp:velocity` commands need 8.1, as Velocity does. Some sub-scripts also need `curl` and `wget`; the console itself
 does not.
 
 ```bash

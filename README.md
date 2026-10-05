@@ -238,7 +238,9 @@ being loaded from its archive: rebuild it first.
 
 ## What version of PHP is required
 
-Exponential Legacy supports PHP 8.1 -> 8.5+ please use the latest version of PHP available on your OS.
+Exponential Legacy supports PHP 8.0 -> 8.5+ please use the latest version of PHP available on your OS.
+
+PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux / Rocky Linux 9) runs Exponential under Apache or PHP-FPM. Exponential Velocity, the optional built-in application server, needs PHP 8.1 or later. See [PHP 8.0 support](doc/bc/6.0/php-8.0-support.md).
 
 PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7.
 

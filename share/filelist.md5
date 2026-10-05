@@ -15,7 +15,7 @@ eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 1bc8d08bda60c234dded6cb03b90dfba  Makefile
-9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
+c2bebda29f3567d6ff6b945da07f6f4f  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
 2b55a99021313fcb6aa973316a33e6dc  autoload/ezp_kernel.php
@@ -2673,7 +2673,7 @@ d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
 abdb0ba00df44fe6e3ebdcd853a03ae9  doc/bc/6.0/cli_cronjob_view_abstractions.md
 a97f241d85290c2fbece2d8f20d6c401  doc/bc/6.0/console-exp-ini.md
-cf6bc03ed6557c6e7c1c39d09e55e5d0  doc/bc/6.0/console.md
+dc3cde443944b4b791185a26e53a7c8d  doc/bc/6.0/console.md
 99d9b2a97dcde56f99c1d40242b5be6c  doc/bc/6.0/content-jobs.md
 09d05cd812d3ccabd32043b79e5023c5  doc/bc/6.0/debug-bar.md
 3363c1727dc13ba26af5e714957046fa  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
@@ -2697,7 +2697,8 @@ de93c492b3a2fa49ea08a89471fc968a  doc/bc/6.0/opml.md
 75a67bb0f4324d3575fb035e71b42a79  doc/bc/6.0/pagination-settings.md
 6322f7b35a71418c2d496b5dfc25b319  doc/bc/6.0/pdf-export.md
 4eb26aa83f26bb69480df0792bff5fba  doc/bc/6.0/phar.md
-82ffa24ea596774436d71e1ec2a4188b  doc/bc/6.0/php8.md
+891a8d68617281d8955c922a59c94216  doc/bc/6.0/php-8.0-support.md
+ca5f17a9a9ef326c2f0ec94e686df727  doc/bc/6.0/php8.md
 17a4aa7ba8351f6dde162cf39f2d7840  doc/bc/6.0/phpunitv10.md
 ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
@@ -2868,7 +2869,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4c196a273e75a3a616d1b604e7057281  doc/changelogs/6.0/6.0.15.md
+53c525a899467ce1c0da250729022133  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3295,7 +3296,7 @@ cf2e7d813fabc03f01844c24a2a5448d  doc/features/6.0/platform-admin-ui-fork.md
 9e77ed427c85349ff66f9ab6e00b9206  doc/features/6.0/platform-site-bundles.md
 77b6dcb702be5b7cb2f3197dd5c1aef1  doc/features/6.0/platform-sqlite-install.md
 b87c7fd9d7a10afee71e3283bf7f4761  doc/features/6.0/preload-sites-view.md
-3556e5e8a9337616a0f38d3b29492d9b  doc/features/6.0/quality-checks.md
+c9dcf54bb73bc03364866daf8021fbbc  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
@@ -3721,7 +3722,7 @@ e14335da02fc54b98c731ab8152fbda6  doc/specifications/4.3/comment_system/function
 c7d48dabae7613771d017ddaf603bc61  doc/specifications/6.0/audit-event-model.md
 ab66e2db16090f3e2b4beeeb0a27f87e  doc/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/specifications/6.0/cjw_newsletter.md
-7bc6acbc0e063f169ab936c6d951d16a  doc/specifications/6.0/continuous-integration.md
+56927bad34198c9eba0e1f137708738a  doc/specifications/6.0/continuous-integration.md
 3a1a5f4661e51e45173fbaf8c04500d9  doc/specifications/6.0/database-drivers-2026-09.md
 b88aeca39b0d6fa40e6915f555e710d5  doc/specifications/6.0/database-drivers-sqlite-oracle.md
 8d08c38768c88f8229bb99f55fdf1aa0  doc/specifications/6.0/datatype-input-hardening.md

@@ -10,7 +10,7 @@ rid of deprecation warnings, you may still have to adapt your own code, most oft
 
 | | |
 |---|---|
-| What changed | PHP 8 syntax and checks throughout the kernel; since 6.0.8, Composer requires PHP 8.1 or newer. |
+| What changed | PHP 8 syntax and checks throughout the kernel; since 6.0.8, Composer requires PHP 8.1 or newer. Since 6.0.15 the code runs on PHP 8.0 again, the oldest supported version ([PHP 8.0 support](php-8.0-support.md)). |
 | Who is affected | Sites still on PHP 7.4 (must stay on 6.0.7); authors of extensions with dynamic properties, unchecked `count()` or `null` passed to string functions. |
 | How to check | Enable the debug output on a development copy and look for "Deprecated" notices from your extension files. |
 | How to fix | Follow "What this means for your own code" below. |
@@ -31,6 +31,7 @@ same treatment.
 | 6.0.11 (Sep 2025) | 8.1 and 8.2 | `#[ReturnTypeWillChange]` on methods that implement SPL interfaces (no behaviour change); `utf8_decode()` in `ezldapuser` replaced (deprecated in 8.2); public properties declared on `eZURL` and other classes instead of dynamic ones; `null` is no longer passed to `mysqli_real_escape_string()` and `preg_match()`. |
 | 6.0.11 (Dec 2025) | 8.5 | Nullable types where PHP 8.5 requires them; Zeta Components raised to releases that support PHP 8.5; the README states PHP 8.5 support. |
 | 6.0.13 (Feb 2026) | 8.4 | Time datatype and `eZOrder::fetchList()` deprecations fixed, see [the hardening specification](../../specifications/6.0/security-hardening-6.0.13.md). |
+| 6.0.15 (Oct 2026) | 8.0 | PHP 8.0 is the oldest supported version (RHEL 9): `array_is_list()` defined when missing (`lib/phpcompat.php`), `fputcsv()` without `$eol` on 8.0, the HTML escaping functions get the PHP 8.1 default flags explicitly so `wash` escapes single quotes on 8.0 too, a PHP 8.0 syntax check and boot test in CI. See [PHP 8.0 support](php-8.0-support.md). |
 | 6.0.13 (Apr 2026) | 8.x | The session handler: `read()` returns an empty string for an unknown session, `gc()` uses `time()` and a start time, and the current siteaccess global is checked before use. |
 
 ## How to check your installation
