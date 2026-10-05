@@ -58,7 +58,9 @@ class eZBCMath extends eZPHPMath
 
     function pow( $base, $exp )
     {
-        return ( bcpow( $base, $exp, $this->Scale ) );
+        // bcpow() takes a whole exponent only, and before PHP 8.3 it also refuses one
+        // written with a scale, such as "2.000" from sub(): drop the zero decimals first
+        return ( bcpow( $base, $this->trimZeros( (string)$exp ), $this->Scale ) );
     }
 
     function ceil( $value, $precision, $target )
