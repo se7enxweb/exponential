@@ -72,6 +72,7 @@ change (`php bin/php/ezcache.php --clear-tag=ini`), and under Velocity restart t
 | Passwords | 10 characters, bcrypt | character rules, lockout after failed sign-ins |
 | Session cookie | `HttpOnly`, `SameSite=Lax`, `Secure` over HTTPS | `CookieSecure=true` on an HTTPS-only site |
 | Form tokens | active (setup wizard) | keep `ezformtoken` active; adapt custom AJAX |
+| Forwarded headers | believed only from `127.0.0.1` and `::1` | list your proxies in `TrustedProxies[]`, and nothing more |
 | Security headers | five headers on every page | HSTS once HTTPS-only; frame-ancestors for editors |
 | Audit | on | cron, alert recipients, key backup |
 
@@ -130,7 +131,7 @@ Several files in `settings/override/` hold secrets. They are written by the inst
 |---|---|---|
 | `site.ini.append.php` | database user and password (`[DatabaseSettings]`) | database access |
 | `audit.ini.append.php` | audit signing key and pseudonym key | archives signed with the key can no longer be verified; pseudonyms can be reversed |
-| `mailpreferences.ini.append.php` | the mail preferences site secret | every unsubscribe and preference link stops working, every suppression entry stops matching |
+| `mailpreferences.ini.append.php` | the site secret (`[SecretSettings] TokenSecret`, generated on first use) | every unsubscribe and preference link stops working, every suppression entry stops matching, and every signed-in user is signed out once, because the password stamp of the sessions (section 13.6) is keyed with it |
 | `velocity.ini.append.php` | `[DashboardSettings] Token` when set | remote access to the server's figures and `/Q/phpinfo` |
 | `config.env.php` in the root | machine settings such as the environment name | (git-ignored) |
 | `var/log/initial-admin-password` | the generated first administrator password of a kickstart or console install | the administrator account |
@@ -144,7 +145,10 @@ What you do:
    the site's group).
 3. **Back them up**, as secrets, together with the database: without the audit and mail preference files, old
    archives and links stop working.
-4. **Copy them with every move** of the installation to another machine.
+4. **Copy them with every move** of the installation to another machine. A copy started without
+   `mailpreferences.ini.append.php` generates a new site secret on its first mail or sign-in, and from then on the old
+   links and suppression entries no longer match; copying the file in afterwards does not help for what was sent in
+   between.
 5. The administration and `exp:ini` mask secret values when they show settings; still, give `setup/setup` (settings
    views) only to administrators.
 
@@ -188,9 +192,12 @@ Entries may be single addresses or CIDR ranges of both families; a plain IPv6 ad
 (see [the debug bar](../bc/6.0/debug-bar.md), which also documents labels and expiry dates on entries). The debug bar's
 Settings tab can change these values; it needs the `setup/setup` policy.
 
-`DebugByIP` trusts the address Exponential determines for the visitor. If `ClientIpByCustomHTTPHeader` is set
-(section 13.10) and the proxy does not overwrite that header, a visitor can claim any address, including one in your
-list.
+`DebugByIP` trusts the address Exponential determines for the visitor. Since 6.0.15 that address comes from a
+forwarded header only when the connection comes from a proxy in `TrustedProxies[]`, and the header is read from the
+right, so a visitor can no longer put an address of your list in front of the proxy's entry (section 13.10). Two
+things still defeat it: a `TrustedProxies[]` range wider than your proxies (a whole provider network, `0.0.0.0/0`),
+and an application server that can be reached around the proxy. Keep both tight, and remember that behind a proxy
+whose `REMOTE_ADDR` is the proxy itself, a list entry for the proxy's address would give debug output to everyone.
 
 **PHP itself:** in the `php.ini` of PHP-FPM set `display_errors=Off`, `log_errors=On` and `expose_php=Off`.
 FrankenPHP reads no machine `php.ini`; Velocity ships `display_errors=Off` and `log_errors=On` for it in
@@ -275,21 +282,43 @@ A reasonable production policy, in line with current guidance that favours lengt
 ```ini
 # settings/override/site.ini.append.php
 [UserSettings]
-MinPasswordLength=12
+MinPasswordLength=15
 
 [PasswordSettings]
 ForbidLogin=enabled
 ForbidCurrentPassword=enabled
-MinCharacterClasses=2
 ```
+
+Why these values: NIST SP 800-63B-4 (2025) asks for at least 15 characters where a password is the only factor and
+says verifiers should not impose composition rules, because rules such as "one digit, one symbol" lead to predictable
+passwords (`Summer2026!`) rather than strong ones; the strength meter and the "Generate" button
+(`GeneratePasswordLength=16`) help users reach the length instead. The `Require*` and `MinCharacterClasses` rules
+exist for organisations whose own policy prescribes them. `MinPasswordLength` counts bytes, so a password in a script
+with multi-byte characters reaches it with fewer characters. Raising the minimum does not lock anyone out: existing
+passwords keep working and the rule applies when a password is next set.
 
 The rules apply to every form that sets a password (`user/password`, registration, the user account in `content/edit`
 and the administration, `bin/php/resetuserpassword.php`), checked by `expPasswordPolicy`
 (`kernel/classes/exppasswordpolicy.php`).
 
-**`EndOtherSessions=enabled`** keeps the stamp of the password in each session: after a change, every other session of
-the user (other browsers, other devices, a stolen session) is signed out on its next request, whatever the session
-handler. Keep it enabled. Accounts without a password of their own (LDAP, SSO) are not checked.
+**`EndOtherSessions=enabled`** is what makes a password change useful after an account was taken over. How it works:
+
+- At every sign-in the session receives a **password stamp** (`eZUserPasswordStamp`): a keyed hash (HMAC-SHA256) of
+  the user id and the stored password hash, keyed with a key derived from the site secret of section 13.3. It holds
+  neither the password nor its hash.
+- On every request `eZUser::currentUser()` compares the session's stamp with the stamp of the user's current hash. A
+  password change changes the hash, so every other session of that user (other browsers, other devices, a session
+  an attacker copied) no longer matches and is signed out on its next request. This works with every session handler,
+  PHP's own file sessions included, because it is checked when the session is used.
+- The session in which the password was changed stays signed in but gets a **new session id**, so whoever knew the
+  old id does not keep it. With the database session handler the other sessions are also deleted at once.
+- **Not checked:** sessions that started before the upgrade to 6.0.15 (they carry no stamp yet; they are checked
+  from their next sign-in), and accounts without a password of their own (LDAP, text-file and single-sign-on users).
+- **What can surprise you:** a new site secret (a copy of the installation without
+  `settings/override/mailpreferences.ini.append.php`) changes every stamp, so everyone is signed out once.
+  `EndOtherSessions=disabled` switches off the stamp and the check together.
+
+Keep it enabled. Details: [Changing your password](../features/6.0/modern-password-change.md).
 
 **`ChangeNotificationMail=enabled`** mails "your password was changed" to the account (category Account security,
 which nobody can switch off; the mail never contains the password). It is how a user learns of a change they did not
@@ -356,6 +385,17 @@ With `custom`, Velocity's response cache derives its "personal, do not cache" co
 automatically.
 
 In PHP's own configuration, `session.use_strict_mode=1` makes PHP refuse session ids it did not create.
+
+What can go wrong:
+
+- **Signed-in users are signed out on every page, or cannot sign in at all, behind an HTTPS proxy** with
+  `CookieSecure=true` when the kernel thinks the request is plain HTTP and builds `http://` redirects: the proxy is not
+  trusted or does not send `X-Forwarded-Proto` (section 13.10). With `CookieSecure=auto` the same mistake gives a
+  cookie without `Secure` instead, which is quieter and worse.
+- **`CookieSameSite=None` without `Secure`** is refused by browsers; the kernel only honours `None` together with
+  `Secure`. You need `None` only if the site is used inside a frame or a cross-site form on another domain.
+- **`Strict`** drops the session on the first click from an e-mail or another site into a signed-in page, which
+  users see as being signed out.
 
 ---
 
@@ -438,33 +478,129 @@ curl -sI https://example.com/user/login | grep -i set-cookie     # Secure; HttpO
 
 ## 13.10 Behind a proxy: trusted headers
 
-Exponential reads the scheme, the host and the visitor's address from forwarded request headers, which a client can
-also send itself (`lib/ezutils/classes/ezsys.php`). It believes them **only from a trusted proxy**: when the peer of
-the connection (`REMOTE_ADDR`) is in `site.ini [HTTPHeaderSettings] TrustedProxies[]`. The default trusts the
-loopback addresses (`127.0.0.1`, `::1`), that is a proxy on the same machine; list any other proxy, load balancer or
-CDN by address or range (`10.0.0.0/8`, `2001:db8::/32`), or leave the list empty to trust none. Details and
-examples: [Forwarded headers are trusted only from configured proxies](../bc/6.0/trusted-proxies.md).
+A proxy, load balancer or CDN in front of the site tells the application what the visitor asked for in request
+headers: `X-Forwarded-Proto` (was it HTTPS?), `X-Forwarded-Host` (which name?) and `X-Forwarded-For` (from which
+address?). The trouble is that these are ordinary request headers: any visitor can send them too. Believed blindly,
+they let a visitor make a plain HTTP request look like HTTPS, put another host name into every absolute URL the site
+builds, and choose the address that the sign-in lockout, `DebugByIP`, request rules, the audit log and the consent log
+record. The one thing the server knows for certain is the address of the peer that opened the connection,
+`REMOTE_ADDR`, so that is what decides.
 
-- **`X-Forwarded-Proto: https`** (then `X-Forwarded-Port`, then `X-Forwarded-Server`) from a trusted proxy makes
-  `eZSys::isSSLNow()` treat the request as HTTPS when the connection itself was not. This affects generated URLs and
-  `CookieSecure=auto`. From anyone else it is ignored. The trusted proxy must **set** the header, not pass on the
-  visitor's (Apache: `RequestHeader set X-Forwarded-Proto "https"`; nginx: `proxy_set_header X-Forwarded-Proto
-  $scheme;`).
-- **`X-Forwarded-Host`** replaces `Host` in generated URLs, again only from a trusted proxy.
-- **`[HTTPHeaderSettings] ClientIpByCustomHTTPHeader`** (default `false`). Set to `X-Forwarded-For`, Exponential reads
-  the header only from a trusted proxy and **from the right**: trusted proxies are skipped and the first address that
-  is not one is the visitor's; the left-most entries, which the client writes, are ignored. The address is used by
-  `DebugByIP`, `[UserSettings] TrustedIPList` (exemption from the sign-in lockout), request rules by network, the audit
-  log and the consent log. Make sure the application server is reachable only through the proxy (Velocity
-  `Host=127.0.0.1`, or a firewall).
+### The rule
 
-Caching proxies: never let a proxy cache responses that set a cookie or carry `Cache-Control: private`. Purge tags are
-not public by default (`httpcache.ini [HttpCacheSettings] TagHeader=disabled`); name the one header your purging proxy
-reads only when you have one.
+Since 6.0.15 the kernel believes forwarded headers **only when `REMOTE_ADDR` is in `site.ini [HTTPHeaderSettings]
+TrustedProxies[]`** (`lib/ezutils/classes/eztrustedproxy.php`, used by `eZSys` and by the HTTP cache). The default
+trusts the loopback addresses, which nothing outside the machine can use:
+
+```ini
+[HTTPHeaderSettings]
+TrustedProxies[]
+TrustedProxies[]=127.0.0.1
+TrustedProxies[]=::1
+```
+
+- Entries are addresses or ranges, IPv4 and IPv6 (`192.0.2.10`, `10.0.0.0/8`, `2001:db8::/32`); an IPv4 peer that a
+  dual-stack socket reports as `::ffff:10.0.0.5` matches its IPv4 entry. Host names are not resolved, and an entry that
+  is not an address is ignored, so a typo trusts nothing rather than something unintended.
+- An override that begins with `TrustedProxies[]` on a line of its own replaces the list; that line alone trusts no
+  proxy at all.
+- Put comments on lines of their own: `TrustedProxies[]=10.0.0.0/8 # LB` is not an address and is ignored.
+
+What each header then does, and only from a trusted proxy:
+
+| Header | Effect | Without a trusted proxy |
+|---|---|---|
+| `X-Forwarded-Proto: https` (else `X-Forwarded-Port` equal to `[SiteSettings] SSLPort`, else `X-Forwarded-Server` equal to `SSLProxyServerName`) | `eZSys::isSSLNow()` answers true: absolute URLs, redirects and `CookieSecure=auto` use HTTPS | ignored; `$_SERVER['HTTPS']` and the port still count, they are the web server's own answer |
+| `X-Forwarded-Host` | replaces `Host` in generated URLs | ignored; `Host`, then `SiteURL` |
+| the header named in `ClientIpByCustomHTTPHeader` (default `false`, usually `X-Forwarded-For`) | the visitor's address, read **from the right** | `REMOTE_ADDR` |
+
+**Reading from the right**, with an example. A visitor at `198.51.100.7` sends a forged header
+`X-Forwarded-For: 203.0.113.10` through a CDN (`173.245.48.20`) to your load balancer (`10.0.0.5`), which connects to
+PHP. PHP receives `REMOTE_ADDR=10.0.0.5` and `X-Forwarded-For: 203.0.113.10, 198.51.100.7, 173.245.48.20`. With
+`10.0.0.0/16` and `173.245.48.0/20` trusted, the kernel starts at the right: `10.0.0.5` (the peer) is trusted,
+`173.245.48.20` is trusted, `198.51.100.7` is not, so that is the visitor. The forged `203.0.113.10` further left is
+never looked at. Before 6.0.15 the left-most entry won, which was exactly the forged one. An entry that is not an
+address ends the walk at the last trusted proxy. Headers that proxies append to (a `X-Forwarded-Proto` of
+`http, https`) are read the same way: the value the outermost trusted proxy wrote is used.
+
+### Which setup needs what
+
+| Your setup | What to do |
+|---|---|
+| No proxy: Apache or nginx with PHP-FPM, or Velocity facing visitors | Nothing. Forwarded headers a visitor sends are ignored now, which is the point. |
+| A proxy on the same machine that **sets** the headers (nginx or Apache in front of Velocity or PHP-FPM, Varnish, a TLS terminator) | Nothing; the default covers `127.0.0.1` and `::1`. Make the proxy set `X-Forwarded-Proto` itself (Apache `RequestHeader set X-Forwarded-Proto "https"`, nginx `proxy_set_header X-Forwarded-Proto $scheme;`). A local proxy that passes on the visitor's own header would carry it through: if you cannot change it, set `TrustedProxies[]` empty. |
+| A proxy, load balancer or CDN on another address | List its addresses or ranges, and only those, in `settings/override/site.ini.append.php`. Behind a CDN and a load balancer, list both. Make sure the application server cannot be reached around them (firewall, security group, Velocity `Host=127.0.0.1`). |
+| A front end that rewrites `REMOTE_ADDR` itself (Apache `mod_remoteip`, nginx `realip`, as in Plesk's nginx in front of Apache) | Nothing in Exponential: the visitor already is the peer, so `ClientIpByCustomHTTPHeader` stays `false`. |
+| You want the visitor's real address behind a proxy | `ClientIpByCustomHTTPHeader=X-Forwarded-For` (or a one-address header such as `X-Real-IP` or `CF-Connecting-IP`), together with the proxy in `TrustedProxies[]`. Behind several proxies, list all of them. |
+
+A load balancer example:
+
+```ini
+# settings/override/site.ini.append.php
+[HTTPHeaderSettings]
+TrustedProxies[]
+# the load balancer's private subnet
+TrustedProxies[]=10.0.0.0/16
+ClientIpByCustomHTTPHeader=X-Forwarded-For
+```
+
+### Under Velocity
+
+Velocity keeps its own list of trusted proxies, `Q.webserver.proxy.trusted` (`127.0.0.1` and `::1` by default). Set
+it in a snippet of your own under `/etc/vc/conf-available/`, for example `reverse-proxy.conf`:
+
+```json
+{ "Q": { "webserver": { "proxy": {
+    "trusted": ["127.0.0.1", "::1", "192.0.2.10"],
+    "headers": { "ip": "X-Forwarded-For", "proto": "X-Forwarded-Proto", "host": "X-Forwarded-Host" }
+} } } }
+```
+
+and switch it on with `exp:velocity conf enable reverse-proxy` (a link in `conf-enabled/`, as `a2enconf` does), then
+restart Velocity. From a
+peer in that list it works out the visitor's address from `X-Forwarded-For` (from the right as well) and passes it to
+the application as `REMOTE_ADDR`, so `ClientIpByCustomHTTPHeader` is not needed. Since the engine change of
+5 October 2026 (after the 0.0.4.43 release), Velocity also sets `$_SERVER['HTTPS']` and `REQUEST_SCHEME` from
+`X-Forwarded-Proto` (or the header named in `Q.webserver.proxy.headers.proto`), `CloudFront-Forwarded-Proto` or
+Cloudflare's `CF-Visitor` **only** when the connection comes from that list; a TLS connection to Velocity is HTTPS from
+any client. Earlier engines read the protocol header from any client wherever HTTPS was configured. Configure the
+proxies in front of Velocity in its list, not in `TrustedProxies[]`; the kernel sees the visitor as the peer and the
+engine's `HTTPS` as the server's own answer. Let the proxy pass the original `Host` (`ProxyPreserveHost On`,
+`proxy_set_header Host $host`): `X-Forwarded-Host` reaches the kernel from the visitor's address and is not used.
+
+### What goes wrong, and how it shows
+
+| Symptom | Cause |
+|---|---|
+| Absolute URLs and redirects say `http://` behind an HTTPS proxy; a redirect loop on the sign-in page | the proxy is not in `TrustedProxies[]` (or not in Velocity's list), or it does not send `X-Forwarded-Proto` |
+| Every visitor has the same address: the proxy's (audit, lockout, request rules) | `ClientIpByCustomHTTPHeader` not set, or the proxy not trusted |
+| One visitor's failed sign-ins lock out everyone | the same; with `MaxNumberOfFailedLogin` set, fix the address first |
+| A visitor can still choose his address or the scheme | a trusted range far wider than your proxies, or the application server reachable directly |
+
+### Check it
+
+```bash
+# directly, no proxy: the header must change nothing (the redirect stays http)
+curl -s -o /dev/null -w '%{redirect_url}\n' -H 'X-Forwarded-Proto: https' http://example.com/user/logout
+```
+
+Behind a proxy, the debug bar's "Is my address listed?" shows `REMOTE_ADDR`, the address the kernel uses and whether
+the proxy header was read. Details and more examples (Apache `mod_proxy`, nginx, cloud load balancers, Cloudflare):
+[Forwarded headers are trusted only from configured proxies](../bc/6.0/trusted-proxies.md).
+
+### Caching proxies
+
+Never let a proxy cache responses that set a cookie or carry `Cache-Control: private` (signed-in pages, pages with a
+form token). Purge tags are not public by default (`httpcache.ini [HttpCacheSettings] TagHeader=disabled`); name the
+one header your purging proxy reads only when you have one.
 
 ---
 
 ## 13.11 File permissions and ownership
+
+Why it matters: the most common way from a bug in a PHP file to a lasting compromise is a file the attacker can write
+and the web server will later run or serve. If the PHP process can change only `var/` and `settings/`, and the web
+server refuses to run anything below the root (section 13.2), a flaw in an extension cannot plant code.
 
 Principles (the procedure is in [chapter 8, section 8.7](08-serving-the-site.md#87-file-permissions-and-ownership)):
 
@@ -502,6 +638,7 @@ Principles (the procedure is in [chapter 8, section 8.7](08-serving-the-site.md#
 | Topic | Setting or action |
 |---|---|
 | Bind address | `[ServerSettings] Host=127.0.0.1` unless Velocity faces visitors directly; the server has no HTTP authentication of its own |
+| Proxies in front | only the addresses in `Q.webserver.proxy.trusted` may set the visitor's address and protocol (section 13.10); keep the list to your own proxies |
 | Worker user | `User`, `Group` set to the site's user; never root |
 | Symbolic links | `FollowSymlinks=disabled` |
 | Dashboard and figures | `[DashboardSettings] Token` empty and `Remote=disabled` keep `/Q/dashboard`, `/Q/stats`, `/Q/metrics` local; if you set a token, generate a long random one (`openssl rand -hex 24`) and keep it secret |
@@ -617,8 +754,9 @@ Full guide: [Audit](../bc/6.0/audit.md).
 - [ ] `ezformtoken` active.
 - [ ] HTTPS on every name; HTTP redirected; HSTS raised once stable; certificate renewal watched.
 - [ ] Security headers present on pages (and on static files if you want them there).
-- [ ] Behind a proxy: `X-Forwarded-For` replaced by the proxy before `ClientIpByCustomHTTPHeader` is set; client-sent
-      `X-Forwarded-Proto` removed when there is no proxy.
+- [ ] Behind a proxy: `TrustedProxies[]` lists exactly your proxies (Velocity: `Q.webserver.proxy.trusted`), the proxy
+      sets `X-Forwarded-Proto` itself, the application server cannot be reached around it; the `curl` check of 13.10
+      shows that a visitor's own `X-Forwarded-Proto` changes nothing.
 - [ ] One user (or one group) writes `var/` and `settings/`; no world-writable files; workers never root.
 - [ ] Velocity: `Host` as intended, dashboard token and panel password set or the views kept local.
 - [ ] Mail: `exp:mail:status` ok, footer filled in, bounce reader configured.
@@ -636,6 +774,8 @@ In this repository:
 - [Security hardening of 6.0.13](../bc/6.0/hardening.md), [Datatype and input hardening](../specifications/6.0/datatype-input-hardening.md),
   [RAD tools: security](../bc/6.0/rad-security.md)
 - [Request rules](../bc/6.0/view_full_security.md)
+- [Forwarded headers are trusted only from configured proxies](../bc/6.0/trusted-proxies.md); code in
+  `lib/ezutils/classes/eztrustedproxy.php` and `lib/ezutils/classes/ezsys.php`
 - [Changing your password](../features/6.0/modern-password-change.md), [user password change notes](../bc/6.0/user-password-change.md),
   [Form expired page](../features/6.0/form-expired-page.md)
 - [The Exp Debug bar](../bc/6.0/debug-bar.md)
@@ -654,23 +794,23 @@ In this repository:
 
 External:
 
-- OWASP: [Top Ten](https://owasp.org/www-project-top-ten/),
+- OWASP: [Top Ten](https://owasp.org/projects/top-ten),
   [Session Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html),
   [Cross-Site Request Forgery Prevention](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html),
   [Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html),
   [Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html),
   [HTTP Security Response Headers](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html),
   [Content Security Policy](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html),
-  [Secure Headers Project](https://owasp.org/www-project-secure-headers/)
-- NIST [SP 800-63B, Digital Identity Guidelines: Authentication](https://pages.nist.gov/800-63-3/sp800-63b.html)
+  [Secure Headers Project](https://owasp.org/projects/secure-headers-project)
+- NIST [SP 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management](https://pages.nist.gov/800-63-4/sp800-63b.html) (revision 4, which supersedes revision 3)
 - PHP: [Security](https://www.php.net/manual/en/security.php),
   [session configuration](https://www.php.net/manual/en/session.configuration.php),
   [display_errors](https://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors),
   [password_hash](https://www.php.net/manual/en/function.password-hash.php)
-- MDN: [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie),
-  [Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security),
-  [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
-- HSTS: [RFC 6797](https://www.rfc-editor.org/rfc/rfc6797); cookies: [RFC 6265](https://www.rfc-editor.org/rfc/rfc6265)
+- MDN: [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie),
+  [Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security),
+  [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy)
+- HSTS: [RFC 6797](https://www.rfc-editor.org/rfc/rfc6797.html); cookies: [RFC 6265](https://www.rfc-editor.org/rfc/rfc6265.html)
 - Apache: [Security tips](https://httpd.apache.org/docs/2.4/misc/security_tips.html),
   [mod_headers](https://httpd.apache.org/docs/2.4/mod/mod_headers.html),
   [mod_authz_host (Require ip)](https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html)
