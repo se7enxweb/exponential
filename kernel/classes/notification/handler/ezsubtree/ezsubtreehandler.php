@@ -194,22 +194,10 @@ class eZSubTreeHandler extends eZNotificationEventHandler
             $item = $collection->addItem( $subscriber['address'] );
             // a frequency chosen on the e-mail preference page wins over the old digest settings
             $chosen = class_exists( 'expNotificationMailCategoryHandler' )
-                    ? expNotificationMailCategoryHandler::storedFrequency( $subscriber['user_id'], expNotificationMailCategoryHandler::CONTENT )
+                    ? expNotificationMailCategoryHandler::scheduleItem( $item, $subscriber['user_id'], expNotificationMailCategoryHandler::CONTENT )
                     : '';
-            if ( $chosen === 'immediate' )
+            if ( $chosen !== '' )
                 continue;
-            if ( $chosen === 'daily' || $chosen === 'weekly' )
-            {
-                $settings = eZGeneralDigestUserSettings::fetchByUserId( $subscriber['user_id'] );
-                $time = $settings !== null ? (string)$settings->attribute( 'time' ) : '';
-                $hour = $time !== '' ? (int)explode( ':', $time )[0] : 8;
-                if ( $chosen === 'daily' )
-                    eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'day', 'hour' => $hour ) );
-                else
-                    eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'week', 'day' => 1, 'hour' => $hour ) );
-                $item->store();
-                continue;
-            }
             if ( $subscriber['use_digest'] == 0 )
             {
                 $settings = eZGeneralDigestUserSettings::fetchByUserId( $subscriber['user_id'] );

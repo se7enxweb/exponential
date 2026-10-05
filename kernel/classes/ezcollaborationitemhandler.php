@@ -111,6 +111,19 @@ class eZCollaborationItemHandler
         return 'participant.tpl';
     }
 
+    /**
+     * Puts a collaboration notification into the daily or weekly digest when the person chose that frequency for
+     * "collaboration" on the e-mail preference page; otherwise it is sent at once, as before.
+     *
+     * @param eZNotificationCollectionItem|null $item
+     * @param int $userID
+     */
+    static function scheduleForPreference( $item, $userID )
+    {
+        if ( $item && class_exists( 'expNotificationMailCategoryHandler' ) )
+            expNotificationMailCategoryHandler::scheduleItem( $item, (int)$userID, expNotificationMailCategoryHandler::COLLABORATION );
+    }
+
     /*!
      \static
      Handles a notification event for collaboration items.
@@ -188,7 +201,8 @@ class eZCollaborationItemHandler
 
             foreach( $userList as $subscriber )
             {
-                $collection->addItem( $subscriber['email'] );
+                $collectionItem = $collection->addItem( $subscriber['email'] );
+                self::scheduleForPreference( $collectionItem, $subscriber['contentobject_id'] );
             }
         }
         else if ( $collectionHandling == self::NOTIFICATION_COLLECTION_PER_PARTICIPATION_ROLE )
@@ -200,7 +214,8 @@ class eZCollaborationItemHandler
                 $participant = $participantMap[$contentObjectID];
                 $participantRole = $participant['participant_role'];
                 $userItem = array( 'participant' => $participant,
-                                   'email' => $subscriber['email'] );
+                                   'email' => $subscriber['email'],
+                                   'user_id' => $contentObjectID );
                 if ( !isset( $userCollection[$participantRole] ) )
                     $userCollection[$participantRole] = array();
                 $userCollection[$participantRole][] = $userItem;
@@ -240,7 +255,8 @@ class eZCollaborationItemHandler
                 $collection->store();
                 foreach ( $collectionItems as $collectionItem )
                 {
-                    $collection->addItem( $collectionItem['email'] );
+                    $added = $collection->addItem( $collectionItem['email'] );
+                    self::scheduleForPreference( $added, $collectionItem['user_id'] );
                 }
             }
         }

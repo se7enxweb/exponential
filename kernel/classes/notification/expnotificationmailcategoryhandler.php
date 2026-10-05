@@ -152,6 +152,31 @@ class expNotificationMailCategoryHandler implements expMailCategoryHandler
     }
 
     /**
+     * Schedules a notification item for the daily or weekly digest when the person chose that frequency for the
+     * category on the preference page (the hour of their digest settings, else 8; weekly on Monday).
+     *
+     * @param eZNotificationCollectionItem $item
+     * @param int $userID
+     * @param string $category
+     * @return string the chosen frequency ('' nothing chosen: the caller keeps its own rules; 'immediate': sent now)
+     */
+    public static function scheduleItem( $item, $userID, $category )
+    {
+        $chosen = self::storedFrequency( $userID, $category );
+        if ( $chosen !== 'daily' && $chosen !== 'weekly' )
+            return $chosen;
+        $settings = eZGeneralDigestUserSettings::fetchByUserId( (int)$userID );
+        $time = $settings !== null ? (string)$settings->attribute( 'time' ) : '';
+        $hour = $time !== '' ? (int)explode( ':', $time )[0] : 8;
+        if ( $chosen === 'daily' )
+            eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'day', 'hour' => $hour ) );
+        else
+            eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'week', 'day' => 1, 'hour' => $hour ) );
+        $item->store();
+        return $chosen;
+    }
+
+    /**
      * The frequency the person chose on the preference page, when they chose one.
      *
      * @param int $userID

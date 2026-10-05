@@ -114,20 +114,34 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
             $failedAddresses = array();
             foreach ( $addressArray as $address )
             {
-                // the e-mail preferences refuse content notifications for this person: no digest is rendered, and
-                // the waiting items are dropped (switched on again, only new content is mailed)
-                if ( class_exists( 'expNotificationMailCategoryHandler' ) &&
-                     !expNotificationMailCategoryHandler::allowsAddress( $address['address'], expNotificationMailCategoryHandler::CONTENT ) )
+                // the digest holds the items of several handlers (content: ezsubtree, collaboration: ezcollaboration);
+                // the items of a category the e-mail preferences refuse for this person are dropped (switched on
+                // again, only new items are mailed), and without any left no digest is rendered
+                $mailCategory = 'content';
+                if ( class_exists( 'expNotificationMailCategoryHandler' ) )
                 {
-                    $this->removeItemsOfAddress( $address['address'], $timestamp );
-                    continue;
+                    $categories = array();
+                    foreach ( array_keys( self::fetchHandlersForUser( $timestamp, $address['address'] ) ) as $handlerID )
+                    {
+                        $category = expNotificationMailCategoryHandler::categoryForHandler( $handlerID );
+                        if ( $category === null )
+                            $category = 'content';
+                        if ( expNotificationMailCategoryHandler::allowsAddress( $address['address'], $category ) )
+                            $categories[$category] = true;
+                        else
+                            $this->removeItemsOfAddress( $address['address'], $timestamp, $handlerID );
+                    }
+                    if ( !$categories )
+                        continue;
+                    // a digest of collaboration items alone is collaboration mail; one with content is content mail
+                    $mailCategory = isset( $categories['content'] ) ? 'content' : key( $categories );
                 }
                 $tpl->setVariable( 'date', $date );
                 $tpl->setVariable( 'address', $address['address'] );
                 $result = $tpl->fetch( 'design:notification/handler/ezgeneraldigest/view/plain.tpl' );
                 $subject = $tpl->variable( 'subject' );
 
-                $parameters = array( 'mail_category' => 'content' );
+                $parameters = array( 'mail_category' => $mailCategory );
                 if ( $tpl->hasVariable( 'content_type' ) )
                     $parameters['content_type'] = $tpl->variable( 'content_type' );
 
@@ -203,14 +217,18 @@ class eZGeneralDigestHandler extends eZNotificationEventHandler
      *
      * @param string $address
      * @param int $timestamp
+     * @param string|null $handlerID only the items of this handler (ezsubtree, ezcollaboration); null: all
      */
-    function removeItemsOfAddress( $address, $timestamp )
+    function removeItemsOfAddress( $address, $timestamp, $handlerID = null )
     {
-        $items = eZPersistentObject::fetchObjectList( eZNotificationCollectionItem::definition(), array( 'id' ),
-                                                      array( 'address' => (string)$address, 'send_date' => array( '', array( 1, (int)$timestamp ) ) ),
-                                                      null, null, false );
+        if ( $handlerID !== null )
+            $items = self::fetchItemsForUser( $timestamp, $address, $handlerID );
+        else
+            $items = eZPersistentObject::fetchObjectList( eZNotificationCollectionItem::definition(), null,
+                                                          array( 'address' => (string)$address, 'send_date' => array( '', array( 1, (int)$timestamp ) ) ),
+                                                          null, null, true );
         foreach ( (array)$items as $item )
-            eZPersistentObject::removeObject( eZNotificationCollectionItem::definition(), array( 'id' => (int)$item['id'] ) );
+            eZPersistentObject::removeObject( eZNotificationCollectionItem::definition(), array( 'id' => (int)$item->attribute( 'id' ) ) );
     }
 
     function fetchUsersForDigest( $timestamp )

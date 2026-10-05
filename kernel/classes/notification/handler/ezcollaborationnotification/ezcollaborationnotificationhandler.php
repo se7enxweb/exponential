@@ -102,6 +102,9 @@ class eZCollaborationNotificationHandler extends eZNotificationEventHandler
         foreach ( $collections as $collection )
         {
             $items = $collection->attribute( 'items_to_send' );
+            // every item waits for a digest (the frequency of the e-mail preferences): nothing to send now
+            if ( !$items )
+                continue;
             $addressList = array();
             foreach ( $items as $item )
             {
