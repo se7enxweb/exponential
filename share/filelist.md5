@@ -168,7 +168,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-33c9e28055e892a7402a75b07fdf9d38  composer.json
+c34fd3e4babc7f7d558d499717311e10  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 ab9aa05ef4f1d7bed89ee4ce14129703  config.php-RECOMMENDED
@@ -2664,7 +2664,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 2101e0b2a39e88c630d7c237ef66285b  doc/bc/6.0/EXT_SORT_ORDERS.md
 8cc3cc35cb4dad8d96700c8dbd171d85  doc/bc/6.0/ICONS.md
 5a03536d715d479419eddbe98f4d9071  doc/bc/6.0/LAYOUTS.md
-5151388d1df4c10c691e3f4a7ad1409f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
+d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 d215eaca3e19242c3854c77ee4780c26  doc/bc/6.0/admin4l.md
 bfe09754ac99236f777616755fb069ff  doc/bc/6.0/audit.md
@@ -2692,7 +2692,7 @@ d88ed154806689c479cf5a1a70587fa5  doc/bc/6.0/hardening.md
 fca17d35cfc097ff4b57c3c5c871b55a  doc/bc/6.0/http-caching.md
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/bc/6.0/http2-and-cache-warming.md
 46f5abffd259cd880e032cd8d1953acb  doc/bc/6.0/httpcache.md
-ae75d362d2c3cd9588323032cc2df09c  doc/bc/6.0/kickstartercli.md
+744e2ee1ba1dbc7018c79c78bf9dc28e  doc/bc/6.0/kickstartercli.md
 a6d977d642aa2384831b54248e80ecc6  doc/bc/6.0/locations-tab-paging-and-sorting.md
 e1a1f8a4940d420e0ab02a90567834b3  doc/bc/6.0/mail-preferences.md
 abb94091360a905fee43c0792bbf9d39  doc/bc/6.0/middle-out-compression.md
@@ -2703,7 +2703,7 @@ de93c492b3a2fa49ea08a89471fc968a  doc/bc/6.0/opml.md
 6322f7b35a71418c2d496b5dfc25b319  doc/bc/6.0/pdf-export.md
 4eb26aa83f26bb69480df0792bff5fba  doc/bc/6.0/phar.md
 b7ec719d6720f46c5448e1c68ee1adff  doc/bc/6.0/php-8.0-support.md
-ca5f17a9a9ef326c2f0ec94e686df727  doc/bc/6.0/php8.md
+b5409d7272f8f2302d04c60f5229e570  doc/bc/6.0/php8.md
 17a4aa7ba8351f6dde162cf39f2d7840  doc/bc/6.0/phpunitv10.md
 ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
@@ -2875,7 +2875,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-2cc17c4a1dd655fbacaf89e6ae8f7f61  doc/changelogs/6.0/6.0.15.md
+896d44db64741775b65bd53b14f8bb27  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3286,7 +3286,7 @@ ee9fbd196fef3a6c34b154e3bedaf179  doc/features/6.0/installation-name-in-pages.md
 990e1c65645859f009d8edce234b6b21  doc/features/6.0/mail-preferences.md
 14800f3c677c11c0413e0e030c9b7a98  doc/features/6.0/maintenance-mode.md
 641dc7a61873704516939c32e1775b2c  doc/features/6.0/modern-password-change.md
-a1b52e9dbf0476197edba4affd16aa38  doc/features/6.0/mongodb-database-support.md
+e1db49cf955e0e8bfa29c12997c0066f  doc/features/6.0/mongodb-database-support.md
 bb99b84e8b8be2362e0fa4162f41016b  doc/features/6.0/multi-site-ini-overrides.md
 cfe53a9b5d897b7ffb5da2b09a770a87  doc/features/6.0/notifications.md
 6c2d12092b839df0fc9da488ef1f6b82  doc/features/6.0/online-editor-tinymce8.md
@@ -3315,7 +3315,7 @@ cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
 5546e1fd2154341af36b7d47c0e72dac  doc/features/6.0/role-and-policy-template-operators.md
 e2aa25e79eff10b38f036b95601c0782  doc/features/6.0/role-policy-order.md
 f1b7156f5a50c09f2d0dad23f221a6d7  doc/features/6.0/rss-podcast-and-feed-list.md
-938d9dcc52a452af1867f949e744500b  doc/features/6.0/setup-wizard-and-editor-siteaccess.md
+f027124ffec4b26572415236c97c1e2b  doc/features/6.0/setup-wizard-and-editor-siteaccess.md
 81216bf09a51c403d255c9b40d6792c8  doc/features/6.0/sqlite-database.md
 b4237bb304d831cb1e2814f1830146a4  doc/features/6.0/static-cache-generator.md
 f6a29d2c690968846f5c87c97133e1e8  doc/features/6.0/store-dashboard.md
@@ -3347,7 +3347,7 @@ ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
 a7d35b3d4eb62f3995401d62b9ab21d7  doc/guides/deploying.md
 5f6657b0ea73fe7a20da12e4a3d5547c  doc/guides/extensions.md
-a49a7f5284ec81f8dbb13b7c88e821b4  doc/guides/getting-started.md
+7be68b2c8907bd6952a5a389c3cce352  doc/guides/getting-started.md
 fe6be1787f910abc80987d58c54b2d16  doc/guides/mail-preferences-administrator.md
 f46af9cdee469946176953da2d241afc  doc/guides/mail-preferences-developer.md
 a45d63418940e025cb5a03004675a98c  doc/guides/notifications-administrator.md
@@ -3356,7 +3356,7 @@ db5e980a8f3711d233062169e69a4963  doc/guides/operating-a-site.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 0c6a4d567b4802cf8af7f38be42ed484  doc/guides/security-and-audit.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
-270a687babe6718f0a5c2ec35d19b979  doc/guides/upgrading.md
+d6bc8f5e52ad5f4496fb0bba2ea4c259  doc/guides/upgrading.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md
 9775fae8288f43e5b1b4de97824ba096  doc/history/2024/2024-01a.md
 d565571cb7a0c1609e2d979975017f15  doc/history/2024/2024-01b.md
@@ -3696,9 +3696,9 @@ ff900550fb82a6fac228ab80ff47055a  doc/install/01-introduction.md
 5c6e9aaa3624073011d2707a59407a71  doc/install/02-requirements.md
 72e5c3c80bf1b1f392e07e69ec601ed9  doc/install/03-getting-the-code.md
 6b4dbeb8a21746a0bd7055dd504e8365  doc/install/04-choosing-an-install-method.md
-d43174bef9308e4320323846b00542be  doc/install/05-setup-wizard.md
-509af98037d8001002d9249cd98816ca  doc/install/06-kickstarter.md
-03f14db345d821ce3ce40e5f30a3256f  doc/install/07-console-install.md
+667663e24fb9116c7371b66e191f2355  doc/install/05-setup-wizard.md
+4dfb82039b5ef94643dc122c5d0322fa  doc/install/06-kickstarter.md
+0fcd42d0082bf343ee4b0a67ef2ec1ec  doc/install/07-console-install.md
 68216b153461ec276f01a3fff7255250  doc/install/08-serving-the-site.md
 fb01dd1504158b8eacb6b9f081b7d5ed  doc/install/09-databases.md
 e78f5af8bf0daa7f1ad9987c045030cf  doc/install/10-after-installing.md
@@ -4691,7 +4691,7 @@ f83e2e3dea26d0502fff22c89939e0ea  kernel/classes/expcollaborationgroupmanager.ph
 e7456184eb299387e3eed677ae8ea469  kernel/classes/expcollaborationsampledata.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
-621e5d4f54dcc99fc2b882366c2d6408  kernel/classes/expkickstarter.php
+2a96f379f935f105bea29c86d75aca44  kernel/classes/expkickstarter.php
 342e118abe04b2b9e9ebc46328e5dfd8  kernel/classes/expkickstarterini.php
 7a07e3a463f4b41105e7fcc17ab5c98d  kernel/classes/expmaintenance.php
 846590ae94cadbe8b9122bfb25b89d0c  kernel/classes/expnotificationjob.php
@@ -5283,7 +5283,7 @@ a4426106f9957b221c8245b2bb480881  kernel/private/classes/ezptemplateoverrides.ph
 b4c8b6bdaa165af37f563c5e39f0dad4  kernel/private/classes/ezptopologicalsortnode.php
 ff87cb464a335a0d70234d2a35106203  kernel/private/classes/ezscriptclusterpurge.php
 588f79192dd3becef7f41d56d3da17bb  kernel/private/classes/ezscripttrashpurge.php
-30ba8b469b3744d4e290fb0627500f5a  kernel/private/classes/global_functions.php
+044350c27c47d06a339d22cba1c7638f  kernel/private/classes/global_functions.php
 26ad83f48c462dafccc69dff396b63e4  kernel/private/classes/httpcache/ezphttpcachecontract.php
 efce851fd45df8e8213d371b6d7b6708  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
 837e1ce0c2ab01f52e9713aa14648d06  kernel/private/classes/httpcache/ezphttpcachelistener.php
@@ -5771,7 +5771,7 @@ b4340a4f096da1d533e5882fd6d787ed  kernel/shop/basket.php
 31e3b54424cd37f82ef4fe7ba84ad267  kernel/shop/checkout.php
 e68ff446aa44b6f8b39f20e0e33ae2d5  kernel/shop/classes/exchangeratehandlers/ezecb/ezecbhandler.php
 42f1378e573abb644c0e05154f576ab2  kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php
-beb365ab9f644c3417c8f2144c464fe7  kernel/shop/classes/ezcurrencyconverter.php
+a2e3e94d5cce27b5edfaf44e99c6e944  kernel/shop/classes/ezcurrencyconverter.php
 9e68009c92d7cfe96312ff925a615e7f  kernel/shop/classes/ezcurrencydata.php
 91ec18919704f4126f917e8d8f9c3cdf  kernel/shop/classes/ezmultipricedata.php
 75535f315599eeb7ea9c3c55556af88c  kernel/shop/classes/ezpaymentcallbackchecker.php
@@ -6002,7 +6002,7 @@ ea266670e6e5f63569f9d18da4b606a6  lib/ezsoap/classes/ezsoaprequest.php
 10592c28eca1fa7522b6794961fd0801  lib/ezsoap/classes/ezsoapserver.php
 fe326a7a2677d729c1080497a8310a94  lib/eztemplate/classes/exceptions/failedexecutingcompiledtemplate.php
 71692ed038f51489b8ef73077ae04e13  lib/eztemplate/classes/eztemplate.php
-dd2c1e502be7ae4f346d6ac949411c3f  lib/eztemplate/classes/eztemplatearithmeticoperator.php
+9888e10199888f1819506a77bc4124da  lib/eztemplate/classes/eztemplatearithmeticoperator.php
 79f0ca210a49a9a42094d12601f8fc96  lib/eztemplate/classes/eztemplatearrayoperator.php
 a18e5f0d05eb1120d30dac9db87de72d  lib/eztemplate/classes/eztemplateattributeoperator.php
 14343b6210648d880e2d1dc763ce86e3  lib/eztemplate/classes/eztemplateautoload.php
@@ -6027,8 +6027,8 @@ ab731265198796a2ba464a26be7b8449  lib/eztemplate/classes/eztemplateexecuteoperat
 c7dfcb5e49cf05381653d2e6c4c6a888  lib/eztemplate/classes/eztemplateiffunction.php
 7bcbd741fbfa3705792bddeeb2eba748  lib/eztemplate/classes/eztemplateimageoperator.php
 3523b08650303010f3ff1e39c3c905a1  lib/eztemplate/classes/eztemplateincludefunction.php
-10da355497556aa61bd23c0398efe042  lib/eztemplate/classes/eztemplatelocaleoperator.php
-a8945960a4d950afec37904d12dfdd11  lib/eztemplate/classes/eztemplatelogicoperator.php
+985db2c5565c670ecce963d17e02ee3c  lib/eztemplate/classes/eztemplatelocaleoperator.php
+1ff23c99ece2394a584043299d9438a1  lib/eztemplate/classes/eztemplatelogicoperator.php
 023f900063f22ab78b9026933f1d3357  lib/eztemplate/classes/eztemplateloop.php
 c24a242645aeac124235310612a9981b  lib/eztemplate/classes/eztemplatemenufunction.php
 c5e1f5e6ca0befe5e3093310fed3c861  lib/eztemplate/classes/eztemplatemultipassparser.php
@@ -6061,7 +6061,7 @@ b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 df91c1d95383230e9c2c113c7b9f0699  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
 0ee9cef26c3240f827773cafd53d87b6  lib/ezutils/classes/ezdatetimevalidator.php
-f80b5b0b2ce791984e38095edb594c81  lib/ezutils/classes/ezdebug.php
+8c38d64f625194e88346ce284f9ae0e1  lib/ezutils/classes/ezdebug.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 2047e66b03daaf6a4e04cda96d10617b  lib/ezutils/classes/ezexecution.php
 29e3a26ddc1646c9e19f898ca1dc0472  lib/ezutils/classes/ezexpiryhandler.php
@@ -6098,7 +6098,7 @@ f340d0eff30ee5141fd587d8d067daf1  lib/ezutils/classes/ezsys.php
 ead255df95cadecdc810d3576eeddf2f  lib/ezutils/classes/ezsysinfo.php
 b8345b4eff8fc3873c7e157c12e39cf6  lib/ezutils/classes/eztexttool.php
 fde5977c704d8f50c0edf07dc1021ac7  lib/ezutils/classes/eztimestamp.php
-b8597fc4be889c983526d195954516e5  lib/ezutils/classes/ezuri.php
+908616d2a2d917de4f6e5676f90a0662  lib/ezutils/classes/ezuri.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 7dabbf7f2463e9e1009df77ab6598adc  lib/phpcompat.php
@@ -7004,6 +7004,7 @@ de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableEx
 4159402cb6f2996b0958f022dabe3050  tests/tests/kernel/classes/setup/EditorSiteaccessDefaultTest.php
 2e4f85464804cc2fe00e7e80aa8a3a24  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
 bc8f87debce9fdd6ab2277a72ff216a4  tests/tests/kernel/classes/setup/RegistrationAndDryRunTest.php
+94f7de1b3237cc5c060982a0527dbf18  tests/tests/kernel/classes/shop/eZCurrencyConverterRoundingTest.php
 34edd200b1cb4ad7763e5e9ee9bfeabb  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnCatalogueTest.php
 23e5c3bc8cf4916bbcbb1d9b8b54079c  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnsTestCase.php
 2243b908f95bac3c7b4f46997609df3d  tests/tests/kernel/classes/subitems/columns/expSubitemsGuideExamplesTest.php
@@ -7350,6 +7351,7 @@ cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 62590e69192025ffa6ffcce972f687d0  tests/tests/lib/ezsoap/ezsoapclient_test.php
 a42110e8e1698ffa85aa925d98b254b9  tests/tests/lib/ezsoap/suite.php
 3a2456958c8fdb63c88299a929e3a686  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
+c0be3d17b10801879ce3559488f18e5c  tests/tests/lib/eztemplate/eZTemplateCompiledInterpretedParityTest.php
 689824a1e09db20647f20e8885210c69  tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php
 e0e62e90ce7fd503b6e7a22b78f2975f  tests/tests/lib/eztemplate/eZTemplateFetchOperatorTest.php
 34793015486d957f67086345ea371dd3  tests/tests/lib/eztemplate/eZTemplateFunctionsAndParserTest.php
@@ -7369,7 +7371,7 @@ d55f27da992880ec276e9fc8d117a356  tests/tests/lib/ezutils/ErrorCasePageTest.php
 b04416a94a85e92fcfaf8d20cd7481f2  tests/tests/lib/ezutils/RepairQueueTest.php
 e03fa9c077e0046cda4ed2e95139fa40  tests/tests/lib/ezutils/eZCLITest.php
 19b4b7676978ad54bccd376b846ad625  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
-11328aa933ab7d0923b4b6614b57ebf3  tests/tests/lib/ezutils/eZDebugMessagesTest.php
+cf18f00c422de9b9f4ab10201485831c  tests/tests/lib/ezutils/eZDebugMessagesTest.php
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 3378e66c399d5c5780bf68e83863d413  tests/tests/lib/ezutils/eZHTTPToolRequestTest.php
 941837b4dbd18a37bcb019e8fb86fb9b  tests/tests/lib/ezutils/eZHTTPToolTest.php
@@ -7385,6 +7387,7 @@ b63b08251a27ea86e14255f2d343ba65  tests/tests/lib/ezutils/eZPHPCreatorRoundTripT
 da0bc84fe0b08ebbe5f9963ddee396aa  tests/tests/lib/ezutils/eZSysTest.php
 07818c02b506bac945abbfd6158b3af1  tests/tests/lib/ezutils/eZTextToolTest.php
 186e663c92c550ded58b636d4ed22d79  tests/tests/lib/ezutils/eZURIElementsTest.php
+e6ad2c9ac436d848b4359433b0380402  tests/tests/lib/ezutils/eZURIFilterStringTest.php
 6178821ce5542ce0e1358dbd29b28957  tests/tests/lib/ezutils/eZURITest.php
 ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 73b71352cf122c5331f60f4ca3185288  tests/tests/lib/ezutils/ezdebug_regression.php
