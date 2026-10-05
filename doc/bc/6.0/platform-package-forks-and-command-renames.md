@@ -134,7 +134,7 @@ Custom classes that extend bridge classes need the same signatures. See [the leg
 
 The Nexus 1.x install replaces the legacy directory when Composer updates `se7enxweb/exponential`. Content storage and
 the `app` extension therefore live in `src/AppBundle/ezpublish_legacy` and are linked in with the symlinks of the
-install guide ([Nexus starter](../../features/6.0/platform-nexus-starter.md#install-nexus-1x)). Never keep uploaded
+install guide ([Nexus starter](../../features/6.0/platform-nexus-starter.md#install-nexus-100x-the-25-line)). Never keep uploaded
 files only inside `ezpublish_legacy/var`.
 
 ## Step 9: legacy kernel, database update from 5.4 to 6.0
