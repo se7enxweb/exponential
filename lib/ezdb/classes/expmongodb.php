@@ -166,15 +166,41 @@ class expMongoDB extends eZDBInterface
         // user or database (another siteaccess) does not get the first instance's client.
         // Bounded by the number of configured databases.
         static $clients = array();
-        $server = $this->Server ?: 'localhost';
-        $port   = $this->Port   ?: 27017;
-        $user   = rawurlencode( $this->User );
-        $pass   = rawurlencode( $this->Password );
-        $dbName = $this->DB;
-        $uri = 'mongodb://' . $user . ':' . $pass . '@' . $server . ':' . $port . '/' . $dbName;
+        $uri = self::connectionUri( $this->Server, $this->Port, $this->User, $this->Password, $this->DB );
         if ( !isset( $clients[$uri] ) )
             $clients[$uri] = new MongoDB\Client($uri);
         return $clients[$uri];
+    }
+
+    /**
+     * The connection URI for a server, port, user, password and database.
+     *
+     * Credentials are written only when a user is configured: the driver refuses
+     * "mongodb://:@host" outright, which is what an empty user and password used to
+     * produce, so a server without authentication could not be reached at all. A user
+     * without a password is written as "user@". Both are percent-encoded, so a
+     * password containing ":", "@" or "/" does not split the URI.
+     *
+     * @param string $server Host name; empty means localhost
+     * @param int|string $port Port; empty means 27017
+     * @param string $user
+     * @param string $password
+     * @param string $database
+     * @return string
+     */
+    public static function connectionUri( $server, $port, $user, $password, $database )
+    {
+        $server = (string)$server !== '' ? (string)$server : 'localhost';
+        $port   = $port ? $port : 27017;
+        $credentials = '';
+        if ( (string)$user !== '' )
+        {
+            $credentials = rawurlencode( (string)$user );
+            if ( (string)$password !== '' )
+                $credentials .= ':' . rawurlencode( (string)$password );
+            $credentials .= '@';
+        }
+        return 'mongodb://' . $credentials . $server . ':' . $port . '/' . $database;
     }
 
     function findOne( $table, $condition, $server = false )

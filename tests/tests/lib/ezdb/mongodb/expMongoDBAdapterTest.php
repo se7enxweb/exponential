@@ -532,4 +532,47 @@ class expMongoDBAdapterTest extends PHPUnit\Framework\TestCase
             rmdir( $dir );
         }
     }
+
+    // ── connectionUri ────────────────────────────────────────────────────────
+
+    /**
+     * @testdox connectionUri() writes no credentials when no user is configured
+     *
+     * The driver refuses "mongodb://:@host", so a server without authentication
+     * could not be reached while the URI always carried "user:pass@".
+     */
+    public function testConnectionUriWithoutUserHasNoCredentials(): void
+    {
+        $this->assertSame( 'mongodb://db.example:27017/exp',
+            expMongoDB::connectionUri( 'db.example', 27017, '', '', 'exp' ) );
+        $this->assertSame( 'mongodb://db.example:27017/exp',
+            expMongoDB::connectionUri( 'db.example', 27017, '', 'ignored', 'exp' ) );
+    }
+
+    /**
+     * @testdox connectionUri() percent-encodes the user and password
+     */
+    public function testConnectionUriEncodesCredentials(): void
+    {
+        $this->assertSame( 'mongodb://ad%40min:p%3Aa%2Fss%40@db.example:27018/exp',
+            expMongoDB::connectionUri( 'db.example', 27018, 'ad@min', 'p:a/ss@', 'exp' ) );
+    }
+
+    /**
+     * @testdox connectionUri() writes "user@" for a user without a password
+     */
+    public function testConnectionUriUserWithoutPassword(): void
+    {
+        $this->assertSame( 'mongodb://reader@db.example:27017/exp',
+            expMongoDB::connectionUri( 'db.example', 27017, 'reader', '', 'exp' ) );
+    }
+
+    /**
+     * @testdox connectionUri() falls back to localhost:27017
+     */
+    public function testConnectionUriDefaults(): void
+    {
+        $this->assertSame( 'mongodb://localhost:27017/exp',
+            expMongoDB::connectionUri( '', 0, '', '', 'exp' ) );
+    }
 }
