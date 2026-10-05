@@ -69,26 +69,56 @@ class Addtonotification extends \Exponential\Runnable\ModuleView
         $tpl = \eZTemplate::factory();
         if ( $http->hasSessionVariable( "LastAccessesURI", false ) )
             $tpl->setVariable( 'redirect_url', $http->sessionVariable( "LastAccessesURI" ) );
-        //else
-        //    $tpl->setVariable( 'redirect_url', $module->functionURI( 'view' ) . '/full/2' );
 
-        $alreadyExists = true;
+        $userID = (int)$user->attribute( 'contentobject_id' );
+        $nodeIDList = \eZSubtreeNotificationRule::fetchNodesForUserID( $userID, false );
+        $subscribed = in_array( (int)$nodeID, array_map( 'intval', $nodeIDList ), true );
 
-        $nodeIDList = \eZSubtreeNotificationRule::fetchNodesForUserID( $user->attribute( 'contentobject_id' ), false );
-        if ( !in_array( $nodeID, $nodeIDList ) )
+        // Opening the address changes nothing: it asks. The change is made by the form it shows, a POST that carries
+        // the form token (the address used to subscribe on a plain GET, so a link or an image in any page could do it).
+        $post = $_SERVER['REQUEST_METHOD'] === 'POST';
+        if ( $post && $http->hasPostVariable( 'CancelNotification' ) )
         {
-            $rule = \eZSubtreeNotificationRule::create( $nodeID, $user->attribute( 'contentobject_id' ) );
-            $rule->store();
-            $alreadyExists = false;
+            $module->redirectTo( $redirectURI );
+            return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
-        $tpl->setVariable( 'already_exists', $alreadyExists );
-        $tpl->setVariable( 'node_id', $nodeID );
 
+        $tpl->setVariable( 'node_id', $nodeID );
+        $tpl->setVariable( 'node', $contentNode );
+        $tpl->setVariable( 'redirect_uri', $redirectURI );
+        $tpl->setVariable( 'view_mode', $viewMode );
+        $tpl->setVariable( 'already_exists', $subscribed );
+
+        if ( $post && $http->hasPostVariable( 'ConfirmRemoveNotification' ) )
+        {
+            if ( $subscribed )
+                \eZSubtreeNotificationRule::removeByNodeAndUserID( $userID, (int)$nodeID );
+            $tpl->setVariable( 'removed', $subscribed );
+            $tpl->setVariable( 'already_exists', false );
+            $Result = array();
+            $Result['content'] = $tpl->fetch( 'design:notification/removeresult.tpl' );
+            $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/notification', 'Notification was removed.' ), 'url' => false ) );
+            return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        }
+        if ( $post && $http->hasPostVariable( 'ConfirmAddNotification' ) )
+        {
+            $alreadyExists = $subscribed;
+            if ( !$subscribed )
+            {
+                $rule = \eZSubtreeNotificationRule::create( (int)$nodeID, $userID );
+                $rule->store();
+            }
+            $tpl->setVariable( 'already_exists', $alreadyExists );
+            $Result = array();
+            $Result['content'] = $tpl->fetch( 'design:notification/addingresult.tpl' );
+            $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/notification', ($alreadyExists ? 'Notification already exists.' : 'Notification was added successfully!') ),
+                                            'url' => false ) );
+            return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        }
 
         $Result = array();
-        $Result['content'] = $tpl->fetch( 'design:notification/addingresult.tpl' );
-        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/notification', ($alreadyExists ? 'Notification already exists.' : 'Notification was added successfully!') ),
-                                        'url' => false ) );
+        $Result['content'] = $tpl->fetch( 'design:notification/addconfirm.tpl' );
+        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/notification', 'Add to my notifications' ), 'url' => false ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
     }

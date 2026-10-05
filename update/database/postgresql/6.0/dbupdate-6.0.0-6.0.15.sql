@@ -202,3 +202,24 @@ ALTER TABLE ONLY expaudit_file ADD CONSTRAINT expaudit_file_pkey PRIMARY KEY ( c
 -- names and ids are not stemmed). On an older server leave the two statements out: search uses LIKE.
 ALTER TABLE expaudit_event ADD COLUMN search_tsv tsvector GENERATED ALWAYS AS (to_tsvector('simple', coalesce(search_text, ''))) STORED;
 CREATE INDEX expaudit_event_tsv ON expaudit_event USING GIN (search_tsv);
+
+-- Bookmark folders.
+--
+-- A user can organise bookmarks in a tree of virtual folders. folder_id is the folder
+-- of a bookmark (0 is the top level, so every existing bookmark stays where it was
+-- and nothing needs to be migrated), priority is the order within the folder.
+-- expbookmark_folder holds the folders: parent_id 0 is the top level.
+ALTER TABLE ezcontentbrowsebookmark ADD COLUMN folder_id integer DEFAULT 0 NOT NULL;
+ALTER TABLE ezcontentbrowsebookmark ADD COLUMN priority integer DEFAULT 0 NOT NULL;
+CREATE INDEX ezcontentbrowsebookmark_folder ON ezcontentbrowsebookmark USING btree ( user_id, folder_id );
+CREATE SEQUENCE expbookmark_folder_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+CREATE TABLE expbookmark_folder (
+  created integer DEFAULT 0 NOT NULL,
+  id integer DEFAULT nextval('expbookmark_folder_id_seq'::text) NOT NULL,
+  name character varying(255) DEFAULT ''::character varying NOT NULL,
+  parent_id integer DEFAULT 0 NOT NULL,
+  priority integer DEFAULT 0 NOT NULL,
+  user_id integer DEFAULT 0 NOT NULL
+);
+ALTER TABLE ONLY expbookmark_folder ADD CONSTRAINT expbookmark_folder_pkey PRIMARY KEY ( id );
+CREATE INDEX expbookmark_folder_user ON expbookmark_folder USING btree ( user_id, parent_id );

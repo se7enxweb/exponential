@@ -33,10 +33,16 @@ class eZFileTransport extends eZMailTransport
         $filename = time() . '-' . mt_rand() . '.mail';
 
         $data = preg_replace('/(\r\n|\r|\n)/', "\r\n", $mail->headerText() . "\n" . $mail->body() );
-        $returnedValue = eZFile::create( $filename, 'var/log/mail', $data );
+        // [MailSettings] FileTransportDirectory (default var/log/mail), so a test or a trial run can keep the
+        // mail it makes somewhere of its own
+        $directory = 'var/log/mail';
+        if ( $ini->hasVariable( 'MailSettings', 'FileTransportDirectory' ) &&
+             trim( $ini->variable( 'MailSettings', 'FileTransportDirectory' ) ) !== '' )
+            $directory = rtrim( trim( $ini->variable( 'MailSettings', 'FileTransportDirectory' ) ), '/' );
+        $returnedValue = eZFile::create( $filename, $directory, $data );
         if ( $returnedValue === false )
         {
-            eZDebug::writeError( 'An error occurred writing the e-mail file in var/log/mail', __METHOD__ );
+            eZDebug::writeError( 'An error occurred writing the e-mail file in ' . $directory, __METHOD__ );
         }
 
         return $returnedValue;

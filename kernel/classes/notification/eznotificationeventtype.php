@@ -43,6 +43,8 @@ class eZNotificationEventType
     */
     static function create( $notificationEventTypeString )
     {
+        if ( !isset( $GLOBALS["eZNotificationEventTypes"] ) )
+            $GLOBALS["eZNotificationEventTypes"] = array();
         $types =& $GLOBALS["eZNotificationEventTypes"];
         if( !isset( $types[$notificationEventTypeString] ) )
         {
@@ -107,11 +109,11 @@ class eZNotificationEventType
 
     static function allowedTypes()
     {
-        $allowedTypes = $GLOBALS["eZNotificationEventTypeAllowedTypes"];
+        $allowedTypes = isset( $GLOBALS["eZNotificationEventTypeAllowedTypes"] ) ? $GLOBALS["eZNotificationEventTypeAllowedTypes"] : null;
         if ( !is_array( $allowedTypes ) )
         {
             $notificationINI = eZINI::instance( 'notification.ini' );
-            $eventTypes = $notificationINI->variable( 'NotificationEventTypeSettings', 'AvailableEventTypes' );
+            $eventTypes = $notificationINI->variable( 'NotificationEventTypeSettings', 'AvailableNotificationEventTypes' );
             $allowedTypes = array_unique( $eventTypes );
         }
         return $allowedTypes;
@@ -128,7 +130,7 @@ class eZNotificationEventType
 
     static function loadAndRegisterType( $type )
     {
-        $types = $GLOBALS["eZNotificationEventTypes"];
+        $types = isset( $GLOBALS["eZNotificationEventTypes"] ) ? $GLOBALS["eZNotificationEventTypes"] : array();
         if ( isset( $types[$type] ) )
         {
             eZDebug::writeError( "Notification event type already registered: $type", __METHOD__ );

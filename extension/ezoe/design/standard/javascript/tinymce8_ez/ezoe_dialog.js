@@ -86,9 +86,11 @@ window.eZOe8Dialog = (function () {
         } );
     };
 
+    // the bookmarks come in the order of the user's folder tree, 50 to a page, each with its folder path
+    var BOOKMARK_PAGE_SIZE = 50;
     var bookmarks = function ( settings, offset ) {
-        return ezjscoreCall( settings, 'ezoe::bookmarks::' + ( offset || 0 ) + '::' + PAGE_SIZE ).then( function ( c ) {
-            return { items: c.list || [], total: c.total_count || 0, offset: c.offset || 0 };
+        return ezjscoreCall( settings, 'ezoe::bookmarks::' + ( offset || 0 ) + '::' + BOOKMARK_PAGE_SIZE + '::tree' ).then( function ( c ) {
+            return { items: c.list || [], total: c.total_count || 0, offset: c.offset || 0, folders: c.folders || [], pageSize: BOOKMARK_PAGE_SIZE };
         } );
     };
 
@@ -412,7 +414,20 @@ window.eZOe8Dialog = (function () {
         };
 
         html += '<table class="ezoe-list"><tbody>';
+        var lastFolder = null, hasFolders = list.folders && list.folders.length;
         list.items.forEach( function ( item ) {
+            if ( hasFolders && item.folder_path )
+            {
+                // bookmark folders: a heading row where the folder changes
+                var folderKey = item.folder_path.join( '/' );
+                if ( folderKey !== lastFolder )
+                {
+                    lastFolder = folderKey;
+                    var folderName = item.folder_path.length ? item.folder_path[ item.folder_path.length - 1 ] : t( 'Top level' );
+                    html += '<tr class="ezoe-list-folder"><td></td><td colspan="3" style="padding-left:' + ( Math.max( item.folder_path.length - 1, 0 ) * 14 + 4 ) + 'px"' +
+                            ( item.folder_path.length > 1 ? ' title="' + escapeHtml( item.folder_path.join( ' / ' ) ) + '"' : '' ) + '><strong>' + escapeHtml( folderName ) + '</strong></td></tr>';
+                }
+            }
             var value = options.value( item ), name = escapeHtml( decodeHtml( item.name ) );
             html += '<tr data-ezoe-action="select" data-ezoe-value="' + escapeHtml( value ) + '"' + ( value === options.selected ? ' class="ezoe-list-selected"' : '' ) + '>' +
                     '<td class="ezoe-list-radio"><input type="radio" tabindex="-1"' + ( value === options.selected ? ' checked' : '' ) + ' /></td>' +
@@ -425,13 +440,14 @@ window.eZOe8Dialog = (function () {
         } );
         html += '</tbody></table>';
 
-        if ( list.total > PAGE_SIZE )
+        var pageSize = list.pageSize || PAGE_SIZE;
+        if ( list.total > pageSize )
         {
-            var from = list.offset + 1, to = Math.min( list.offset + PAGE_SIZE, list.total );
+            var from = list.offset + 1, to = Math.min( list.offset + pageSize, list.total );
             html += '<div class="ezoe-list-paging">' +
-                    ( list.offset > 0 ? '<a href="#" data-ezoe-action="page" data-ezoe-value="' + Math.max( 0, list.offset - PAGE_SIZE ) + '">&lt;&lt; ' + escapeHtml( t( 'Previous' ) ) + '</a>' : '<span></span>' ) +
+                    ( list.offset > 0 ? '<a href="#" data-ezoe-action="page" data-ezoe-value="' + Math.max( 0, list.offset - pageSize ) + '">&lt;&lt; ' + escapeHtml( t( 'Previous' ) ) + '</a>' : '<span></span>' ) +
                     '<span>' + escapeHtml( t( '%1 to %2 of %3' ).replace( '%1', from ).replace( '%2', to ).replace( '%3', list.total ) ) + '</span>' +
-                    ( to < list.total ? '<a href="#" data-ezoe-action="page" data-ezoe-value="' + ( list.offset + PAGE_SIZE ) + '">' + escapeHtml( t( 'Next' ) ) + ' &gt;&gt;</a>' : '<span></span>' ) +
+                    ( to < list.total ? '<a href="#" data-ezoe-action="page" data-ezoe-value="' + ( list.offset + pageSize ) + '">' + escapeHtml( t( 'Next' ) ) + ' &gt;&gt;</a>' : '<span></span>' ) +
                     '</div>';
         }
         return html;

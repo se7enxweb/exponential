@@ -156,7 +156,7 @@ class eZCollaborationItemMessageLink extends eZPersistentObject
         $offset = $parameters['offset'];
         $limit = $parameters['limit'];
         $limitArray = null;
-        if ( $offset and $limit )
+        if ( $offset !== false && $limit !== false && $limit > 0 )
         {
             $limitArray = array( 'offset' => $offset,
                                  'limit' => $limit );

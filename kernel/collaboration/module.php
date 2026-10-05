@@ -26,7 +26,11 @@ $ViewList['view'] = array(
     "default_navigation_part" => 'ezmynavigationpart',
     'params' => array( 'ViewMode' ),
     "unordered_params" => array( "language" => "Language",
-                                 "offset" => "Offset" ) );
+                                 "offset" => "Offset",
+                                 "status" => "Status",
+                                 "role" => "Role",
+                                 "type" => "Type",
+                                 "group" => "Group" ) );
 $ViewList['item'] = array(
     'script' => 'item.php',
     "default_navigation_part" => 'ezmynavigationpart',
@@ -38,6 +42,9 @@ $ViewList['group'] = array(
     "default_navigation_part" => 'ezmynavigationpart',
     'params' => array( 'ViewMode', 'GroupID' ),
     "unordered_params" => array( "language" => "Language",
-                                 "offset" => "Offset" ) );
+                                 "offset" => "Offset",
+                                 "status" => "Status",
+                                 "role" => "Role",
+                                 "type" => "Type" ) );
 
 ?>

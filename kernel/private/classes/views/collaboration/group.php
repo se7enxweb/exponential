@@ -36,12 +36,34 @@ class Group extends \Exponential\Runnable\ModuleView
         if ( !is_numeric( $Offset ) )
             $Offset = 0;
 
-        $collabGroup = \eZCollaborationGroup::fetch( $GroupID );
+        // only the user's own groups
+        $userID = (int)\eZUser::currentUser()->attribute( 'contentobject_id' );
+        $collabGroup = is_numeric( $GroupID ) ? \eZCollaborationGroup::fetch( (int)$GroupID, $userID ) : null;
         if ( $collabGroup === null )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
         if ( !\eZCollaborationViewHandler::groupExists( $ViewMode ) )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+
+        $http = \eZHTTPTool::instance();
+        $groupURL = array( $ViewMode, $collabGroup->attribute( 'id' ) );
+        if ( $http->hasPostVariable( 'CollaborationGroupCreate' ) )
+            $result = \expCollaborationGroupManager::create( $userID, $http->postVariable( 'CollaborationGroupTitle', '' ), $collabGroup->attribute( 'id' ) );
+        else if ( $http->hasPostVariable( 'CollaborationGroupRename' ) )
+            $result = \expCollaborationGroupManager::rename( $userID, $collabGroup->attribute( 'id' ), $http->postVariable( 'CollaborationGroupTitle', '' ) );
+        else if ( $http->hasPostVariable( 'CollaborationGroupDelete' ) )
+        {
+            $result = \expCollaborationGroupManager::delete( $userID, $collabGroup->attribute( 'id' ) );
+            if ( $result['ok'] )
+                $groupURL = false;
+        }
+        if ( isset( $result ) )
+        {
+            \expCollaborationGroupManager::setNotice( $result['ok'] ? 'success' : 'error', $result['text'] );
+            if ( $groupURL === false )
+                return $this->viewResult( null, $Module->redirectToView( 'view', array( 'summary' ) ) );
+            return $this->viewResult( null, $Module->redirectToView( 'group', $groupURL ) );
+        }
 
         $view = \eZCollaborationViewHandler::instance( $ViewMode, \eZCollaborationViewHandler::TYPE_GROUP );
 
@@ -49,19 +71,23 @@ class Group extends \Exponential\Runnable\ModuleView
 
         $collabGroupTitle = $collabGroup->attribute( 'title' );
 
-        $viewParameters = array( 'offset' => $Offset );
+        $viewParameters = array( 'offset' => $Offset,
+                                 'status' => isset( $Params['Status'] ) && $Params['Status'] ? $Params['Status'] : 'all',
+                                 'role' => isset( $Params['Role'] ) && $Params['Role'] ? $Params['Role'] : 'all',
+                                 'type' => isset( $Params['Type'] ) && $Params['Type'] ? $Params['Type'] : 'all' );
 
         $tpl = \eZTemplate::factory();
 
         $tpl->setVariable( 'view_parameters', $viewParameters );
         $tpl->setVariable( 'collab_group', $collabGroup );
+        $tpl->setVariable( 'notice', \expCollaborationGroupManager::takeNotice() );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( $template );
         $Result['path'] = array( array( 'url' => 'collaboration/view/summary',
                                         'text' => \ezpI18n::tr( 'kernel/collaboration', 'Collaboration' ) ),
                                  array( 'url' => false,
-                                        'text' => 'Group' ),
+                                        'text' => \ezpI18n::tr( 'kernel/collaboration', 'Group' ) ),
                                  array( 'url' => false,
                                         'text' => $collabGroupTitle ) );
 

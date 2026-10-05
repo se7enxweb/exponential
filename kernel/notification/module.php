@@ -18,7 +18,7 @@ $ViewList["settings"] = array(
     'ui_context' => 'administration',
     "default_navigation_part" => 'ezmynavigationpart',
     "params" => array( ),
-    'unordered_params' => array( 'offset' => 'Offset' ) );
+    'unordered_params' => array( 'offset' => 'Offset', 'q' => 'Query', 'class' => 'ClassFilter' ) );
 
 $ViewList["runfilter"] = array(
     "functions" => array( 'administrate' ),
@@ -26,6 +26,22 @@ $ViewList["runfilter"] = array(
     'ui_context' => 'administration',
     "default_navigation_part" => 'ezsetupnavigationpart',
     "params" => array( ) );
+
+// The administrator's page: pending events, the digest items, the last runs of the notification cronjob, problems
+$ViewList["status"] = array(
+    "functions" => array( 'administrate' ),
+    "script" => "status.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( ) );
+
+// The status page's "Run now": starts exp:notification:run in the background and answers its progress as JSON
+$ViewList["job"] = array(
+    "functions" => array( 'administrate' ),
+    "script" => "job.php",
+    'ui_context' => 'ajax',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( 'JobID', 'Offset' ) );
 
 $ViewList["addtonotification"] = array(
     "functions" => array( 'use' ),

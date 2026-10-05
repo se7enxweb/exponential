@@ -98,7 +98,7 @@ class eZCollaborationItemGroupLink extends eZPersistentObject
         return $groupLink;
     }
 
-    function fetch( $collaborationID, $groupID, $userID = false, $asObject = true )
+    static function fetch( $collaborationID, $groupID, $userID = false, $asObject = true )
     {
         if ( $userID == false )
         {
@@ -113,7 +113,7 @@ class eZCollaborationItemGroupLink extends eZPersistentObject
                                                 $asObject );
     }
 
-    function fetchList( $collaborationID, $userID = false, $asObject = true )
+    static function fetchList( $collaborationID, $userID = false, $asObject = true )
     {
         if ( $userID == false )
         {

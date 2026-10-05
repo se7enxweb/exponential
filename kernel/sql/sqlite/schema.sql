@@ -164,6 +164,16 @@ CREATE TABLE `ezcontentbrowsebookmark` (
 ,  `name` varchar(255) NOT NULL DEFAULT ''
 ,  `node_id` integer NOT NULL DEFAULT '0'
 ,  `user_id` integer NOT NULL DEFAULT '0'
+,  `folder_id` integer NOT NULL DEFAULT '0'
+,  `priority` integer NOT NULL DEFAULT '0'
+);
+CREATE TABLE `expbookmark_folder` (
+  `created` integer NOT NULL DEFAULT '0'
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `name` varchar(255) NOT NULL DEFAULT ''
+,  `parent_id` integer NOT NULL DEFAULT '0'
+,  `priority` integer NOT NULL DEFAULT '0'
+,  `user_id` integer NOT NULL DEFAULT '0'
 );
 CREATE TABLE `ezcontentbrowserecent` (
   `created` integer NOT NULL DEFAULT '0'
@@ -1193,6 +1203,8 @@ CREATE INDEX "idx_ezrss_export_item_ezrss_export_rsseid" ON "ezrss_export_item" 
 CREATE INDEX "idx_ezrss_export_opml_item_ezrss_export_opml_rsseid" ON "ezrss_export_opml_item" (`rssexport_id`);
 CREATE INDEX "idx_ezworkflow_event_wid_version_placement" ON "ezworkflow_event" (`workflow_id`,`version`,`placement`);
 CREATE INDEX "idx_ezcontentbrowsebookmark_ezcontentbrowsebookmark_user" ON "ezcontentbrowsebookmark" (`user_id`);
+CREATE INDEX "idx_ezcontentbrowsebookmark_ezcontentbrowsebookmark_folder" ON "ezcontentbrowsebookmark" (`user_id`,`folder_id`);
+CREATE INDEX "idx_expbookmark_folder_expbookmark_folder_user" ON "expbookmark_folder" (`user_id`,`parent_id`);
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_from" ON "ezcontentobject_link" (`from_contentobject_id`,`from_contentobject_version`,`contentclassattribute_id`);
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_to_co_id" ON "ezcontentobject_link" (`to_contentobject_id`);
 CREATE INDEX "idx_ezprest_token_token_client_id" ON "ezprest_token" (`client_id`);

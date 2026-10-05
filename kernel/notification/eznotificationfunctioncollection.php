@@ -40,7 +40,7 @@ class eZNotificationFunctionCollection
     function eventContent( $eventID )
     {
         $event = eZNotificationEvent::fetch( $eventID );
-        return array( 'result' => $event->content() );
+        return array( 'result' => $event instanceof eZNotificationEvent ? $event->content() : false );
     }
 
     function subscribedNodesCount()

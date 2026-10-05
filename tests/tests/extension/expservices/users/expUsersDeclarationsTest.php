@@ -12,7 +12,7 @@ class expUsersDeclarationsTest extends expUsersTestCase
     public static function classes()
     {
         return array( 'expUserServices', 'expUserGroupServices', 'expRoleServices', 'expPolicyServices', 'expSessionAdminServices',
-                      'expPreferencesServices', 'expNotificationServices', 'expCollaborationServices', 'expAccountServices' );
+                      'expPreferencesServices', 'expNotificationServices', 'expCollaborationServices', 'expAccountServices', 'expBookmarkServices' );
     }
 
     public function testEveryServiceIsDeclaredAndCallable()

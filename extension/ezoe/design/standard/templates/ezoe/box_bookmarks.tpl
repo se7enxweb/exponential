@@ -30,7 +30,7 @@ eZOEPopupUtils.bookmarks = function( offset )
 {
     // browse personal bookmarks by offset
     var postData = jQuery('#bookmark_box input, #bookmark_box select').serializeArray(), o = offset ? offset : 0;
-    jQuery.ez('ezoe::bookmarks::' + o, postData, eZOEPopupUtils.bookmarksCallBack );
+    jQuery.ez('ezoe::bookmarks::' + o + '::50::tree', postData, eZOEPopupUtils.bookmarksCallBack );
     jQuery('#bookmarks_progress' ).show();
 };
 

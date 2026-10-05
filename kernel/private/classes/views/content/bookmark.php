@@ -37,6 +37,16 @@ class Bookmark extends \Exponential\Runnable\ModuleView
         $user = \eZUser::currentUser();
         $userID = $user->id();
 
+        // Folder actions: one POST field says which (create, rename, delete, move_bookmark, move_folder, reorder).
+        // They answer with a redirect to the page and a notice kept in the session, so a reload never repeats them.
+        if ( $http->hasPostVariable( 'MoveSelectedButton' ) )
+            $http->setPostVariable( 'BookmarkFolderAction', 'move_bookmark' );
+        if ( $http->hasPostVariable( 'BookmarkFolderAction' ) )
+        {
+            $notice = \eZContentBrowseBookmarkFolder::handleAction( $userID, $http );
+            $http->setSessionVariable( 'BookmarkNotice', $notice );
+            return $this->viewResult( isset( $Result ) ? $Result : null, $Module->redirectTo( 'content/bookmark' ) );
+        }
         if ( $Module->isCurrentAction( 'Remove' )  )
         {
             if ( $Module->hasActionParameter( 'DeleteIDArray' ) )
@@ -86,6 +96,11 @@ class Bookmark extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable('view_parameters', $viewParameters );
+        if ( $http->hasSessionVariable( 'BookmarkNotice' ) )
+        {
+            $tpl->setVariable( 'bookmark_notice', $http->sessionVariable( 'BookmarkNotice' ) );
+            $http->removeSessionVariable( 'BookmarkNotice' );
+        }
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:content/bookmark.tpl' );

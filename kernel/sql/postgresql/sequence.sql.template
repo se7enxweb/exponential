@@ -19,6 +19,7 @@ SELECT setval('ezcollab_profile_id_seq', max(id)) , 'ezcollab_profile' as tablen
 SELECT setval('ezcollab_simple_message_id_seq', max(id)) , 'ezcollab_simple_message' as tablename FROM ezcollab_simple_message;
 SELECT setval('ezcontent_translation_id_seq', max(id)) , 'ezcontent_translation' as tablename FROM ezcontent_translation;
 SELECT setval('ezcontentbrowsebookmark_id_seq', max(id)) , 'ezcontentbrowsebookmark' as tablename FROM ezcontentbrowsebookmark;
+SELECT setval('expbookmark_folder_id_seq', max(id)) , 'expbookmark_folder' as tablename FROM expbookmark_folder;
 SELECT setval('ezcontentbrowserecent_id_seq', max(id)) , 'ezcontentbrowserecent' as tablename FROM ezcontentbrowserecent;
 SELECT setval('ezcontentclass_id_seq', max(id)) , 'ezcontentclass' as tablename FROM ezcontentclass;
 SELECT setval('ezcontentclass_attribute_id_seq', max(id)) , 'ezcontentclass_attribute' as tablename FROM ezcontentclass_attribute;

@@ -187,3 +187,9 @@
 .tox .ezoe-classic button { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; background: #fff; color: #000; border: 1px solid #808080; border-radius: 0; padding: 1px 12px; margin-right: 4px; cursor: pointer; }
 .tox .ezoe-classic button:hover { border-color: #2B6FB6; }
 .tox .ezoe-classic .ezoe-field-error { color: #E00; font-size: 10px; }
+
+.tox table.ezoe-list tr.ezoe-list-folder td {
+    padding-top: 6px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.3);
+    cursor: default;
+}

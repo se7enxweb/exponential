@@ -1647,7 +1647,9 @@ class Action extends \Exponential\Runnable\ModuleView
             {
                 $nodeID = $http->postVariable( 'ContentNodeID' );
                 $node = \eZContentObjectTreeNode::fetch( $nodeID );
-                $bookmark = \eZContentBrowseBookmark::createNew( $user->id(), $nodeID, $node->attribute( 'name' ) );
+                // the optional folder (BookmarkFolderID, 0 or missing is the top level)
+                $folderID = $http->hasPostVariable( 'BookmarkFolderID' ) ? (int) $http->postVariable( 'BookmarkFolderID' ) : false;
+                $bookmark = \eZContentBrowseBookmark::createNew( $user->id(), $nodeID, $node->attribute( 'name' ), $folderID );
             }
             if ( !$nodeID )
             {

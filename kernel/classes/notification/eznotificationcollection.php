@@ -65,7 +65,7 @@ class eZNotificationCollection extends eZPersistentObject
 
     function addItem( $address, $sendDate = 0 )
     {
-        $item = eZNotificationCollectionItem::create( $this->attribute( 'id' ), $this->attribute( 'event_id' ), $address, $sendDate = 0  );
+        $item = eZNotificationCollectionItem::create( $this->attribute( 'id' ), $this->attribute( 'event_id' ), $address, $sendDate );
         $item->store();
         return $item;
     }

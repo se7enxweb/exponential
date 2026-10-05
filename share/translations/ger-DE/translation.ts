@@ -1510,6 +1510,265 @@
     </message>
 </context>
 <context>
+    <name>design/admin/collaboration/inbox</name>
+    <message>
+        <source>%n items in this group.</source>
+        <translation>%n Einträge in dieser Gruppe.</translation>
+    </message>
+    <message>
+        <source>%n messages</source>
+        <translation>%n Nachrichten</translation>
+    </message>
+    <message>
+        <source>1 message</source>
+        <translation>1 Nachricht</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Hinzufügen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>All items</source>
+        <translation>Alle Einträge</translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation>Beliebig</translation>
+    </message>
+    <message>
+        <source>Approve &quot;%title&quot;? It is published when the publishing workflow continues.</source>
+        <translation>&quot;%title&quot; freigeben? Der Inhalt wird veröffentlicht, sobald der Veröffentlichungs-Workflow fortgesetzt wird.</translation>
+    </message>
+    <message>
+        <source>Approved</source>
+        <translation>Freigegeben</translation>
+    </message>
+    <message>
+        <source>Attach the workflow to the trigger content / publish / before.</source>
+        <translation>Den Workflow an den Trigger content / publish / before hängen.</translation>
+    </message>
+    <message>
+        <source>Closed</source>
+        <translation>Abgeschlossen</translation>
+    </message>
+    <message>
+        <source>Collaboration</source>
+        <translation>Zusammenarbeit</translation>
+    </message>
+    <message>
+        <source>Collaboration items are created by the system, not by hand: content that is sent for approval appears here, with the conversation about it.</source>
+        <translation>Einträge der Zusammenarbeit entstehen automatisch, nicht von Hand: Inhalte, die zur Freigabe gesendet werden, erscheinen hier, zusammen mit der Unterhaltung dazu.</translation>
+    </message>
+    <message>
+        <source>Content that waits for a decision, your own submissions and the conversations about them.</source>
+        <translation>Inhalte, die auf eine Entscheidung warten, Ihre eigenen Einreichungen und die Unterhaltungen dazu.</translation>
+    </message>
+    <message>
+        <source>Create a workflow with an Approve event: choose the approvers and, if needed, the sections and user groups it applies to.</source>
+        <translation>Einen Workflow mit einem Freigabe-Ereignis anlegen: die Freigeber wählen und, falls nötig, die Bereiche und Benutzergruppen, für die er gilt.</translation>
+    </message>
+    <message>
+        <source>Decision</source>
+        <translation>Entscheidung</translation>
+    </message>
+    <message>
+        <source>Delete the group</source>
+        <translation>Gruppe löschen</translation>
+    </message>
+    <message>
+        <source>Delete this group and its subgroups? Their items move to the main group.</source>
+        <translation>Diese Gruppe und ihre Untergruppen löschen? Ihre Einträge wandern in die Hauptgruppe.</translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation>Abgelehnt</translation>
+    </message>
+    <message>
+        <source>Deny &quot;%title&quot;? It becomes a draft for the author again.</source>
+        <translation>&quot;%title&quot; ablehnen? Der Inhalt wird für den Autor wieder zum Entwurf.</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>I decide</source>
+        <translation>Ich entscheide</translation>
+    </message>
+    <message>
+        <source>I sent it</source>
+        <translation>Von mir gesendet</translation>
+    </message>
+    <message>
+        <source>Inbox</source>
+        <translation>Eingang</translation>
+    </message>
+    <message>
+        <source>Last activity</source>
+        <translation>Letzte Aktivität</translation>
+    </message>
+    <message>
+        <source>Manage this group</source>
+        <translation>Diese Gruppe verwalten</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Verschieben</translation>
+    </message>
+    <message>
+        <source>Move an item here from its page, or choose this group there.</source>
+        <translation>Verschieben Sie einen Eintrag auf seiner Seite in diese Gruppe.</translation>
+    </message>
+    <message>
+        <source>Move to group</source>
+        <translation>In Gruppe verschieben</translation>
+    </message>
+    <message>
+        <source>Needs your decision</source>
+        <translation>Wartet auf Ihre Entscheidung</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Neu</translation>
+    </message>
+    <message>
+        <source>New group</source>
+        <translation>Neue Gruppe</translation>
+    </message>
+    <message>
+        <source>New subgroup</source>
+        <translation>Neue Untergruppe</translation>
+    </message>
+    <message>
+        <source>No items in this group</source>
+        <translation>Keine Einträge in dieser Gruppe</translation>
+    </message>
+    <message>
+        <source>No items match these filters</source>
+        <translation>Keine Einträge entsprechen diesen Filtern</translation>
+    </message>
+    <message>
+        <source>Nothing to handle yet</source>
+        <translation>Noch nichts zu bearbeiten</translation>
+    </message>
+    <message>
+        <source>Only an approver can approve or deny this item.</source>
+        <translation>Nur ein Freigeber kann diesen Eintrag freigeben oder ablehnen.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Offen</translation>
+    </message>
+    <message>
+        <source>Open the content</source>
+        <translation>Inhalt öffnen</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Umbenennen</translation>
+    </message>
+    <message>
+        <source>Rename the group</source>
+        <translation>Gruppe umbenennen</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Gesendet</translation>
+    </message>
+    <message>
+        <source>Sent by</source>
+        <translation>Gesendet von</translation>
+    </message>
+    <message>
+        <source>Show all items</source>
+        <translation>Alle Einträge anzeigen</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>There are no messages yet.</source>
+        <translation>Es gibt noch keine Nachrichten.</translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation>Diese Freigabe ist abgeschlossen: Kommentare können nicht mehr hinzugefügt werden.</translation>
+    </message>
+    <message>
+        <source>This is your main group: it cannot be renamed or deleted.</source>
+        <translation>Dies ist Ihre Hauptgruppe: Sie kann nicht umbenannt oder gelöscht werden.</translation>
+    </message>
+    <message>
+        <source>To see the tool with example content, run:</source>
+        <translation>Um das Werkzeug mit Beispielinhalten zu sehen, führen Sie aus:</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Trigger</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Unread messages</source>
+        <translation>Ungelesene Nachrichten</translation>
+    </message>
+    <message>
+        <source>Version %v of the content, saved %time by %name</source>
+        <translation>Version %v des Inhalts, gespeichert %time von %name</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Wartend</translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation>Wartet auf Freigabe</translation>
+    </message>
+    <message>
+        <source>Waiting for your decision</source>
+        <translation>Wartet auf Ihre Entscheidung</translation>
+    </message>
+    <message>
+        <source>When an editor publishes content the workflow applies to, an item is created for the approvers and appears in their inbox.</source>
+        <translation>Wenn ein Redakteur Inhalt veröffentlicht, für den der Workflow gilt, wird ein Eintrag für die Freigeber angelegt und erscheint in deren Eingang.</translation>
+    </message>
+    <message>
+        <source>Workflows</source>
+        <translation>Workflows</translation>
+    </message>
+    <message>
+        <source>Your items waiting for others</source>
+        <translation>Ihre Einträge, die auf andere warten</translation>
+    </message>
+    <message>
+        <source>Your role</source>
+        <translation>Ihre Rolle</translation>
+    </message>
+    <message>
+        <source>from %name</source>
+        <translation>von %name</translation>
+    </message>
+    <message>
+        <source>sent by you</source>
+        <translation>von Ihnen gesendet</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/content/bookmark</name>
     <message>
         <source>My bookmarks [%bookmark_count]</source>
@@ -1578,6 +1837,130 @@
     <message>
         <source>My bookmarks (%bookmark_count)</source>
         <translation>Meine Lesezeichen (%bookmark_count)</translation>
+    </message>
+    <message>
+        <source>%count bookmarks</source>
+        <translation>%count Lesezeichen</translation>
+    </message>
+    <message>
+        <source>Also delete the bookmarks and folders inside</source>
+        <translation>Auch die Lesezeichen und Ordner darin löschen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Alle zuklappen</translation>
+    </message>
+    <message>
+        <source>Create folder</source>
+        <translation>Ordner anlegen</translation>
+    </message>
+    <message>
+        <source>Delete folder</source>
+        <translation>Ordner löschen</translation>
+    </message>
+    <message>
+        <source>Delete the folder "%name"? Its bookmarks and folders move up one level. No bookmark is deleted.</source>
+        <translation>Den Ordner "%name" löschen? Seine Lesezeichen und Ordner rücken eine Ebene nach oben. Es wird kein Lesezeichen gelöscht.</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <source>Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.</source>
+        <translation>Ein Lesezeichen oder einen Ordner auf einen Ordner ziehen, um ihn zu verschieben; die Schaltflächen tun dasselbe mit der Tastatur.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Alle aufklappen</translation>
+    </message>
+    <message>
+        <source>Folder name</source>
+        <translation>Ordnername</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Ordner</translation>
+    </message>
+    <message>
+        <source>Folders</source>
+        <translation>Ordner</translation>
+    </message>
+    <message>
+        <source>In folder</source>
+        <translation>In Ordner</translation>
+    </message>
+    <message>
+        <source>Move bookmark</source>
+        <translation>Lesezeichen verschieben</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Nach unten</translation>
+    </message>
+    <message>
+        <source>Move folder</source>
+        <translation>Ordner verschieben</translation>
+    </message>
+    <message>
+        <source>Move selected to</source>
+        <translation>Auswahl verschieben nach</translation>
+    </message>
+    <message>
+        <source>Move selected</source>
+        <translation>Auswahl verschieben</translation>
+    </message>
+    <message>
+        <source>Move to</source>
+        <translation>Verschieben nach</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Nach oben</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Verschieben</translation>
+    </message>
+    <message>
+        <source>New folder</source>
+        <translation>Neuer Ordner</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Neuer Name</translation>
+    </message>
+    <message>
+        <source>No bookmarks match.</source>
+        <translation>Keine Lesezeichen gefunden.</translation>
+    </message>
+    <message>
+        <source>Open or close the folder</source>
+        <translation>Ordner öffnen oder schließen</translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation>Ordner umbenennen</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Umbenennen</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Search bookmarks</source>
+        <translation>Lesezeichen suchen</translation>
+    </message>
+    <message>
+        <source>Top level</source>
+        <translation>Oberste Ebene</translation>
     </message>
 </context>
 <context>
@@ -8768,6 +9151,22 @@
         <source>Notification for node &lt;%node_name&gt; was added successfully.</source>
         <translation>Benachrichtigung bei &lt;%node_name&gt; wurde erfolgreich hinzugefügt.</translation>
     </message>
+    <message>
+        <source>My notification settings</source>
+        <translation>Meine Benachrichtigungen</translation>
+    </message>
+    <message>
+        <source>Notifications</source>
+        <translation>Benachrichtigungen</translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation>Sie sind dem Knoten &lt;%node_name&gt; nicht gefolgt.</translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
+        <translation>Sie erhalten keine Benachrichtigungen mehr für den Knoten &lt;%node_name&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/notification/collaboration</name>
@@ -8888,6 +9287,22 @@
         <source>Run notification filter</source>
         <translation>Starte Benachrichtigungsfilter</translation>
     </message>
+    <message>
+        <source>%events events handled, %mails messages sent.</source>
+        <translation>%events Ereignisse behandelt, %mails Nachrichten gesendet.</translation>
+    </message>
+    <message>
+        <source>Handles the events that wait for the notification cronjob. The notification status page shows what waits and what was sent.</source>
+        <translation>Behandelt die Ereignisse, die auf den Benachrichtigungs-Cronjob warten. Die Statusseite zeigt, was wartet und was gesendet wurde.</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Benachrichtigungs-Status</translation>
+    </message>
+    <message>
+        <source>The time event makes the digests that are due ready to be sent by the next run.</source>
+        <translation>Das Zeitereignis macht fällige Digests für den nächsten Lauf versandbereit.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/notification/settings</name>
@@ -8898,6 +9313,242 @@
     <message>
         <source>Apply changes</source>
         <translation>Änderungen anwenden</translation>
+    </message>
+    <message>
+        <source>Add items</source>
+        <translation>Einträge hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add items to your personal notification list.</source>
+        <translation>Einträge zu Ihrer persönlichen Benachrichtigungsliste hinzufügen.</translation>
+    </message>
+    <message>
+        <source>Added %count notification(s).</source>
+        <translation>%count Benachrichtigung(en) hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>Any type</source>
+        <translation>Jeder Typ</translation>
+    </message>
+    <message>
+        <source>At once</source>
+        <translation>Sofort</translation>
+    </message>
+    <message>
+        <source>By default every change is mailed at once. A digest holds the messages back and sends one e-mail with all of them: every day, once a week or once a month, at the hour you choose.</source>
+        <translation>Normalerweise wird jede Änderung sofort gemailt. Ein Digest hält die Nachrichten zurück und sendet eine einzige E-Mail mit allen: täglich, einmal pro Woche oder einmal pro Monat, zur gewählten Stunde.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Choose Add items to pick content, or open an item and choose Notify me in its menu. You are then told by e-mail when something new is published below it.</source>
+        <translation>Wählen Sie &quot;Einträge hinzufügen&quot;, um Inhalte auszusuchen, oder öffnen Sie einen Eintrag und wählen Sie in seinem Menü &quot;Benachrichtigen&quot;. Sie erhalten dann eine E-Mail, wenn darunter etwas Neues veröffentlicht wird.</translation>
+    </message>
+    <message>
+        <source>Choose which collaboration items you want to get notifications for. An item is, for example, content that waits for your approval, and the comments about it.</source>
+        <translation>Wählen Sie, zu welchen Einträgen der Zusammenarbeit Sie Benachrichtigungen erhalten möchten. Ein Eintrag ist zum Beispiel Inhalt, der auf Ihre Freigabe wartet, und die Kommentare dazu.</translation>
+    </message>
+    <message>
+        <source>Collaboration notification</source>
+        <translation>Benachrichtigung zur Zusammenarbeit</translation>
+    </message>
+    <message>
+        <source>Content no longer exists</source>
+        <translation>Inhalt existiert nicht mehr</translation>
+    </message>
+    <message>
+        <source>Content that no longer exists</source>
+        <translation>Inhalt, den es nicht mehr gibt</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation>Täglich</translation>
+    </message>
+    <message>
+        <source>Daily, at</source>
+        <translation>Täglich um</translation>
+    </message>
+    <message>
+        <source>Day of the month</source>
+        <translation>Tag des Monats</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>E-mail digest</source>
+        <translation>E-Mail-Digest</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>Hour</source>
+        <translation>Stunde</translation>
+    </message>
+    <message>
+        <source>How the messages come</source>
+        <translation>Wie die Nachrichten kommen</translation>
+    </message>
+    <message>
+        <source>If day number is larger than the number of days within the current month, the last day of the current month will be used.</source>
+        <translation>Ist die Tagesnummer größer als die Zahl der Tage des laufenden Monats, wird der letzte Tag des laufenden Monats verwendet.</translation>
+    </message>
+    <message>
+        <source>In</source>
+        <translation>In</translation>
+    </message>
+    <message>
+        <source>Items I follow</source>
+        <translation>Einträge, denen ich folge</translation>
+    </message>
+    <message>
+        <source>Last change below it</source>
+        <translation>Letzte Änderung darunter</translation>
+    </message>
+    <message>
+        <source>Messages go to this address</source>
+        <translation>Nachrichten gehen an diese Adresse</translation>
+    </message>
+    <message>
+        <source>Monthly</source>
+        <translation>Monatlich</translation>
+    </message>
+    <message>
+        <source>Name contains</source>
+        <translation>Name enthält</translation>
+    </message>
+    <message>
+        <source>No content below it yet</source>
+        <translation>Noch kein Inhalt darunter</translation>
+    </message>
+    <message>
+        <source>No followed item matches the filter</source>
+        <translation>Kein gefolgter Eintrag passt zum Filter</translation>
+    </message>
+    <message>
+        <source>No kind of collaboration item sends notifications on this site.</source>
+        <translation>Auf dieser Website sendet keine Art von Zusammenarbeits-Einträgen Benachrichtigungen.</translation>
+    </message>
+    <message>
+        <source>Nothing can be sent for this item. Remove it.</source>
+        <translation>Zu diesem Eintrag kann nichts gesendet werden. Entfernen Sie ihn.</translation>
+    </message>
+    <message>
+        <source>Nothing was added: you already follow those items, or you may not read them.</source>
+        <translation>Es wurde nichts hinzugefügt: Sie folgen diesen Einträgen bereits, oder Sie dürfen sie nicht lesen.</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Benachrichtigungs-Status</translation>
+    </message>
+    <message>
+        <source>Once per month, on day number</source>
+        <translation>Einmal pro Monat, am Tag</translation>
+    </message>
+    <message>
+        <source>Once per week, on</source>
+        <translation>Einmal pro Woche, am</translation>
+    </message>
+    <message>
+        <source>Receive all messages combined in one digest</source>
+        <translation>Alle Nachrichten gesammelt in einem Digest erhalten</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>Remove %count items from your notifications?</source>
+        <translation>%count Einträge aus Ihren Benachrichtigungen entfernen?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Auswahl entfernen</translation>
+    </message>
+    <message>
+        <source>Remove selected items.</source>
+        <translation>Ausgewählte Einträge entfernen.</translation>
+    </message>
+    <message>
+        <source>Removed %count notification(s).</source>
+        <translation>%count Benachrichtigung(en) entfernt.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Save collaboration settings</source>
+        <translation>Einstellungen zur Zusammenarbeit speichern</translation>
+    </message>
+    <message>
+        <source>Save digest settings</source>
+        <translation>Digest-Einstellungen speichern</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Select item for removal.</source>
+        <translation>Eintrag zum Entfernen auswählen.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alle anzeigen</translation>
+    </message>
+    <message>
+        <source>Switched off: one e-mail for each change, at once.</source>
+        <translation>Ausgeschaltet: eine E-Mail pro Änderung, sofort.</translation>
+    </message>
+    <message>
+        <source>The hour is the server time of the day the digest is made; the weekly and monthly choices use the time chosen above.</source>
+        <translation>Die Stunde ist die Serverzeit am Tag des Digests; die wöchentliche und die monatliche Wahl verwenden die oben gewählte Uhrzeit.</translation>
+    </message>
+    <message>
+        <source>Tick at least one item to remove.</source>
+        <translation>Markieren Sie mindestens einen Eintrag zum Entfernen.</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Weekday</source>
+        <translation>Wochentag</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation>Wöchentlich</translation>
+    </message>
+    <message>
+        <source>You are told by e-mail when content you follow changes, and about the collaboration items you take part in. Choose here what you follow and how the messages come.</source>
+        <translation>Sie erhalten eine E-Mail, wenn sich Inhalte ändern, denen Sie folgen, und zu den Einträgen der Zusammenarbeit, an denen Sie beteiligt sind. Wählen Sie hier, wem Sie folgen und wie die Nachrichten kommen.</translation>
+    </message>
+    <message>
+        <source>You do not follow any items yet</source>
+        <translation>Sie folgen noch keinen Einträgen</translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something is published below one of these items, if you may read it. Open any item in the content structure and choose Notify me to add more.</source>
+        <translation>Sie erhalten eine E-Mail, wenn unter einem dieser Einträge etwas veröffentlicht wird und Sie es lesen dürfen. Öffnen Sie einen beliebigen Eintrag in der Inhaltsstruktur und wählen Sie &quot;Benachrichtigen&quot;, um weitere hinzuzufügen.</translation>
+    </message>
+    <message>
+        <source>You stop getting e-mail about them. The items themselves are not changed.</source>
+        <translation>Sie erhalten dazu keine E-Mails mehr. Die Einträge selbst werden nicht geändert.</translation>
+    </message>
+    <message>
+        <source>Your collaboration notifications were saved.</source>
+        <translation>Ihre Benachrichtigungen zur Zusammenarbeit wurden gespeichert.</translation>
+    </message>
+    <message>
+        <source>Your notification settings were saved.</source>
+        <translation>Ihre Benachrichtigungs-Einstellungen wurden gespeichert.</translation>
     </message>
 </context>
 <context>
@@ -44891,6 +45542,90 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <source>Collaboration</source>
         <translation>Zusammenarbeit</translation>
     </message>
+    <message>
+        <source>&quot;%1&quot; was approved. It is published when the publishing workflow continues.</source>
+        <translation>&quot;%1&quot; wurde freigegeben. Der Inhalt wird veröffentlicht, sobald der Veröffentlichungs-Workflow fortgesetzt wird.</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; was denied. It is a draft for the author again.</source>
+        <translation>&quot;%1&quot; wurde abgelehnt. Der Inhalt ist für den Autor wieder ein Entwurf.</translation>
+    </message>
+    <message>
+        <source>A group with this name exists already.</source>
+        <translation>Eine Gruppe mit diesem Namen gibt es bereits.</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group.</source>
+        <translation>Geben Sie einen Namen für die Gruppe ein.</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Groups cannot be nested that deep.</source>
+        <translation>Gruppen können nicht so tief verschachtelt werden.</translation>
+    </message>
+    <message>
+        <source>Only an approver of this item can approve or deny it.</source>
+        <translation>Nur ein Freigeber dieses Eintrags kann ihn freigeben oder ablehnen.</translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was created.</source>
+        <translation>Die Gruppe &quot;%1&quot; wurde angelegt.</translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was deleted. Its items are in the main group now.</source>
+        <translation>Die Gruppe &quot;%1&quot; wurde gelöscht. Ihre Einträge sind jetzt in der Hauptgruppe.</translation>
+    </message>
+    <message>
+        <source>The group was not found.</source>
+        <translation>Die Gruppe wurde nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>The group was renamed to &quot;%1&quot;.</source>
+        <translation>Die Gruppe wurde in &quot;%1&quot; umbenannt.</translation>
+    </message>
+    <message>
+        <source>The item was moved to &quot;%1&quot;.</source>
+        <translation>Der Eintrag wurde nach &quot;%1&quot; verschoben.</translation>
+    </message>
+    <message>
+        <source>The item was not found.</source>
+        <translation>Der Eintrag wurde nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>The main group cannot be deleted.</source>
+        <translation>Die Hauptgruppe kann nicht gelöscht werden.</translation>
+    </message>
+    <message>
+        <source>The main group cannot be renamed.</source>
+        <translation>Die Hauptgruppe kann nicht umbenannt werden.</translation>
+    </message>
+    <message>
+        <source>The parent group was not found.</source>
+        <translation>Die übergeordnete Gruppe wurde nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>There are too many groups already.</source>
+        <translation>Es gibt bereits zu viele Gruppen.</translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation>Diese Freigabe ist abgeschlossen: Kommentare können nicht mehr hinzugefügt werden.</translation>
+    </message>
+    <message>
+        <source>This approval was decided already.</source>
+        <translation>Über diese Freigabe wurde bereits entschieden.</translation>
+    </message>
+    <message>
+        <source>Write a comment first.</source>
+        <translation>Schreiben Sie zuerst einen Kommentar.</translation>
+    </message>
+    <message>
+        <source>Your comment was added.</source>
+        <translation>Ihr Kommentar wurde hinzugefügt.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -45133,6 +45868,66 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <message>
         <source>Edit several items</source>
         <translation>Mehrere Elemente bearbeiten</translation>
+    </message>
+    <message>
+        <source>The folder "%name" was created.</source>
+        <translation>Der Ordner "%name" wurde angelegt.</translation>
+    </message>
+    <message>
+        <source>The folder could not be created: it needs a name and an existing parent folder.</source>
+        <translation>Der Ordner konnte nicht angelegt werden: Er braucht einen Namen und einen vorhandenen übergeordneten Ordner.</translation>
+    </message>
+    <message>
+        <source>The folder was renamed to "%name".</source>
+        <translation>Der Ordner heißt jetzt "%name".</translation>
+    </message>
+    <message>
+        <source>The folder could not be renamed: it needs a name.</source>
+        <translation>Der Ordner konnte nicht umbenannt werden: Er braucht einen Namen.</translation>
+    </message>
+    <message>
+        <source>The folder does not exist.</source>
+        <translation>Der Ordner existiert nicht.</translation>
+    </message>
+    <message>
+        <source>The folder "%name" and everything in it were deleted.</source>
+        <translation>Der Ordner "%name" und alles darin wurde gelöscht.</translation>
+    </message>
+    <message>
+        <source>The folder "%name" was deleted, its bookmarks and folders moved up one level.</source>
+        <translation>Der Ordner "%name" wurde gelöscht, seine Lesezeichen und Ordner sind eine Ebene nach oben gerückt.</translation>
+    </message>
+    <message>
+        <source>Moved %count bookmark(s).</source>
+        <translation>%count Lesezeichen verschoben.</translation>
+    </message>
+    <message>
+        <source>Nothing was moved: choose a bookmark and one of your folders.</source>
+        <translation>Es wurde nichts verschoben: Wählen Sie ein Lesezeichen und einen Ihrer Ordner.</translation>
+    </message>
+    <message>
+        <source>The folder was moved.</source>
+        <translation>Der Ordner wurde verschoben.</translation>
+    </message>
+    <message>
+        <source>The folder cannot be moved there: not into itself or into a folder below it.</source>
+        <translation>Der Ordner kann dorthin nicht verschoben werden: nicht in sich selbst und nicht in einen Ordner darunter.</translation>
+    </message>
+    <message>
+        <source>The order was saved.</source>
+        <translation>Die Reihenfolge wurde gespeichert.</translation>
+    </message>
+    <message>
+        <source>The entry was moved.</source>
+        <translation>Der Eintrag wurde verschoben.</translation>
+    </message>
+    <message>
+        <source>It cannot be moved there: not into itself or into a folder below it.</source>
+        <translation>Er kann dorthin nicht verschoben werden: nicht in sich selbst und nicht in einen Ordner darunter.</translation>
+    </message>
+    <message>
+        <source>Unknown bookmark action.</source>
+        <translation>Unbekannte Lesezeichen-Aktion.</translation>
     </message>
 </context>
 <context>
@@ -45526,12 +46321,82 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <comment>Navigation part</comment>
         <translation>Audit</translation>
     </message>
+    <message>
+        <source>Syndication</source>
+        <comment>Navigation part</comment>
+        <translation>Syndication</translation>
+    </message>
+    <message>
+        <source>CIE</source>
+        <comment>Navigation part</comment>
+        <translation>CIE</translation>
+    </message>
 </context>
 <context>
     <name>kernel/notification</name>
     <message>
         <source>Notification settings</source>
         <translation>Benachrichtigungseinstellungen</translation>
+    </message>
+    <message>
+        <source>%count digest messages are overdue; a run sends them.</source>
+        <translation>%count Digest-Nachrichten sind überfällig; ein Lauf sendet sie.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run.</source>
+        <translation>%count Ereignisse warten und es ist kein Lauf des Benachrichtigungs-Cronjobs verzeichnet. Den Cronjob-Teil &quot;frequent&quot; in die Crontab eintragen oder exp:notification:run ausführen.</translation>
+    </message>
+    <message>
+        <source>%count events wait and the last run was more than an hour ago (%time). Is the notification cronjob running?</source>
+        <translation>%count Ereignisse warten und der letzte Lauf liegt mehr als eine Stunde zurück (%time). Läuft der Benachrichtigungs-Cronjob?</translation>
+    </message>
+    <message>
+        <source>%count handled events have nothing left to send; Remove old events clears them.</source>
+        <translation>%count behandelte Ereignisse haben nichts mehr zu senden; &quot;Alte Ereignisse entfernen&quot; räumt sie auf.</translation>
+    </message>
+    <message>
+        <source>%count subscriptions belong to users that no longer exist.</source>
+        <translation>%count Abonnements gehören zu Benutzern, die es nicht mehr gibt.</translation>
+    </message>
+    <message>
+        <source>%count subscriptions point to content that no longer exists.</source>
+        <translation>%count Abonnements verweisen auf Inhalt, den es nicht mehr gibt.</translation>
+    </message>
+    <message>
+        <source>A handler failed on %count events in the last run; see the debug log.</source>
+        <translation>Ein Handler ist im letzten Lauf bei %count Ereignissen fehlgeschlagen; siehe Debug-Log.</translation>
+    </message>
+    <message>
+        <source>Add to my notifications</source>
+        <translation>Zu meinen Benachrichtigungen hinzufügen</translation>
+    </message>
+    <message>
+        <source>Mail is written to files, not sent (site.ini MailSettings Transport=file).</source>
+        <translation>E-Mails werden in Dateien geschrieben, nicht gesendet (site.ini MailSettings Transport=file).</translation>
+    </message>
+    <message>
+        <source>No run is recorded yet. The notification cronjob (part &quot;frequent&quot;) sends the notifications.</source>
+        <translation>Es ist noch kein Lauf verzeichnet. Der Benachrichtigungs-Cronjob (Teil &quot;frequent&quot;) sendet die Benachrichtigungen.</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Benachrichtigungs-Status</translation>
+    </message>
+    <message>
+        <source>Notification was removed.</source>
+        <translation>Die Benachrichtigung wurde entfernt.</translation>
+    </message>
+    <message>
+        <source>The last run failed: %error</source>
+        <translation>Der letzte Lauf ist fehlgeschlagen: %error</translation>
+    </message>
+    <message>
+        <source>The subtree handler is not available, so no one is notified about published content.</source>
+        <translation>Der Teilbaum-Handler ist nicht verfügbar, daher wird niemand über veröffentlichten Inhalt benachrichtigt.</translation>
+    </message>
+    <message>
+        <source>There is no valid sender address: set EmailSender in notification.ini or site.ini.</source>
+        <translation>Es gibt keine gültige Absenderadresse: EmailSender in notification.ini oder site.ini setzen.</translation>
     </message>
 </context>
 <context>
@@ -51762,6 +52627,413 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Location in the tree (path)</source>
         <translation>Position im Baum (Pfad)</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/addconfirm</name>
+    <message>
+        <source>Add to my notifications</source>
+        <translation>Zu meinen Benachrichtigungen hinzufügen</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Get an e-mail when something new is published below %node_name?</source>
+        <translation>Eine E-Mail erhalten, wenn unter %node_name etwas Neues veröffentlicht wird?</translation>
+    </message>
+    <message>
+        <source>Notify me</source>
+        <translation>Benachrichtigen</translation>
+    </message>
+    <message>
+        <source>Notify me about updates</source>
+        <translation>Über Änderungen benachrichtigen</translation>
+    </message>
+    <message>
+        <source>Stop notifications for this item</source>
+        <translation>Benachrichtigungen für diesen Eintrag beenden</translation>
+    </message>
+    <message>
+        <source>You already follow %node_name. You get an e-mail when something is published below it.</source>
+        <translation>Sie folgen %node_name bereits. Sie erhalten eine E-Mail, wenn darunter etwas veröffentlicht wird.</translation>
+    </message>
+    <message>
+        <source>You already follow this item</source>
+        <translation>Sie folgen diesem Eintrag bereits</translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something is published below it. You can stop that here.</source>
+        <translation>Sie erhalten eine E-Mail, wenn darunter etwas veröffentlicht wird. Das können Sie hier beenden.</translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something new is published below this item, as long as you may read it. You can change this under My notification settings.</source>
+        <translation>Sie erhalten eine E-Mail, wenn unter diesem Eintrag etwas Neues veröffentlicht wird, solange Sie es lesen dürfen. Das können Sie unter &quot;Meine Benachrichtigungen&quot; ändern.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/removeresult</name>
+    <message>
+        <source>Notifications</source>
+        <translation>Benachrichtigungen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation>Sie sind dem Knoten &lt;%node_name&gt; nicht gefolgt.</translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
+        <translation>Sie erhalten keine Benachrichtigungen mehr für den Knoten &lt;%node_name&gt;.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/status</name>
+    <message>
+        <source>1 year</source>
+        <translation>1 Jahr</translation>
+    </message>
+    <message>
+        <source>180 days</source>
+        <translation>180 Tage</translation>
+    </message>
+    <message>
+        <source>30 days</source>
+        <translation>30 Tage</translation>
+    </message>
+    <message>
+        <source>90 days</source>
+        <translation>90 Tage</translation>
+    </message>
+    <message>
+        <source>A run is in progress (process %pid, since %time).</source>
+        <translation>Ein Lauf ist im Gang (Prozess %pid, seit %time).</translation>
+    </message>
+    <message>
+        <source>Attention</source>
+        <translation>Achtung</translation>
+    </message>
+    <message>
+        <source>Choose an age of at least one day.</source>
+        <translation>Wählen Sie ein Alter von mindestens einem Tag.</translation>
+    </message>
+    <message>
+        <source>Collaboration rules</source>
+        <translation>Regeln der Zusammenarbeit</translation>
+    </message>
+    <message>
+        <source>Console:</source>
+        <translation>Konsole:</translation>
+    </message>
+    <message>
+        <source>Content no longer exists</source>
+        <translation>Inhalt existiert nicht mehr</translation>
+    </message>
+    <message>
+        <source>Digests chosen</source>
+        <translation>Gewählte Digests</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ereignisse</translation>
+    </message>
+    <message>
+        <source>Events wait here until the notification cronjob handles them: it sends the messages, or keeps them for a digest. This page shows what waits, what was sent and what looks wrong.</source>
+        <translation>Ereignisse warten hier, bis der Benachrichtigungs-Cronjob sie behandelt: er sendet die Nachrichten oder hält sie für einen Digest zurück. Diese Seite zeigt, was wartet, was gesendet wurde und was nicht stimmt.</translation>
+    </message>
+    <message>
+        <source>Events waiting to be handled</source>
+        <translation>Ereignisse, die auf Behandlung warten</translation>
+    </message>
+    <message>
+        <source>Finished. Reload the page to see the new numbers.</source>
+        <translation>Fertig. Laden Sie die Seite neu, um die neuen Zahlen zu sehen.</translation>
+    </message>
+    <message>
+        <source>Handled</source>
+        <translation>Behandelt</translation>
+    </message>
+    <message>
+        <source>Handlers</source>
+        <translation>Handler</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Eintrag</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Letzter Lauf</translation>
+    </message>
+    <message>
+        <source>Made</source>
+        <translation>Erzeugt</translation>
+    </message>
+    <message>
+        <source>Mail and handlers</source>
+        <translation>E-Mail und Handler</translation>
+    </message>
+    <message>
+        <source>Mail transport</source>
+        <translation>Mail-Transport</translation>
+    </message>
+    <message>
+        <source>Messages</source>
+        <translation>Nachrichten</translation>
+    </message>
+    <message>
+        <source>Messages kept for a digest</source>
+        <translation>Für einen Digest zurückgehaltene Nachrichten</translation>
+    </message>
+    <message>
+        <source>Messages to %count recipients, last 24 hours</source>
+        <translation>Nachrichten an %count Empfänger, letzte 24 Stunden</translation>
+    </message>
+    <message>
+        <source>Messages waiting now</source>
+        <translation>Jetzt wartende Nachrichten</translation>
+    </message>
+    <message>
+        <source>Messages: sent / recipients.</source>
+        <translation>Nachrichten: gesendet / Empfänger.</translation>
+    </message>
+    <message>
+        <source>My notification settings</source>
+        <translation>Meine Benachrichtigungen</translation>
+    </message>
+    <message>
+        <source>No events.</source>
+        <translation>Keine Ereignisse.</translation>
+    </message>
+    <message>
+        <source>No one follows any item yet.</source>
+        <translation>Noch folgt niemand einem Eintrag.</translation>
+    </message>
+    <message>
+        <source>No run is recorded yet</source>
+        <translation>Es ist noch kein Lauf verzeichnet</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Hinweis</translation>
+    </message>
+    <message>
+        <source>Nothing looks wrong.</source>
+        <translation>Alles in Ordnung.</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Benachrichtigungs-Status</translation>
+    </message>
+    <message>
+        <source>Preview (dry run)</source>
+        <translation>Vorschau (Probelauf)</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>Recent runs</source>
+        <translation>Letzte Läufe</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>Remove %count subscriptions whose content is gone</source>
+        <translation>%count Abonnements entfernen, deren Inhalt fehlt</translation>
+    </message>
+    <message>
+        <source>Remove all events older than the chosen age, with their waiting messages? This cannot be undone.</source>
+        <translation>Alle Ereignisse, die älter als das gewählte Alter sind, mit ihren wartenden Nachrichten entfernen? Das lässt sich nicht rückgängig machen.</translation>
+    </message>
+    <message>
+        <source>Remove events older than</source>
+        <translation>Ereignisse entfernen, die älter sind als</translation>
+    </message>
+    <message>
+        <source>Remove handled events with nothing left to send</source>
+        <translation>Behandelte Ereignisse ohne Restnachrichten entfernen</translation>
+    </message>
+    <message>
+        <source>Removed %count events older than the chosen age (%unknown of unknown age were kept).</source>
+        <translation>%count Ereignisse entfernt, die älter als das gewählte Alter waren (%unknown mit unbekanntem Alter blieben erhalten).</translation>
+    </message>
+    <message>
+        <source>Removed %count handled events that had nothing left to send.</source>
+        <translation>%count behandelte Ereignisse entfernt, die nichts mehr zu senden hatten.</translation>
+    </message>
+    <message>
+        <source>Removed %count subscriptions whose content no longer exists.</source>
+        <translation>%count Abonnements entfernt, deren Inhalt nicht mehr existiert.</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ergebnis</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Jetzt ausführen</translation>
+    </message>
+    <message>
+        <source>Run now needs a background process: %reason</source>
+        <translation>Jetzt ausführen braucht einen Hintergrundprozess: %reason</translation>
+    </message>
+    <message>
+        <source>Run the notifications</source>
+        <translation>Benachrichtigungen ausführen</translation>
+    </message>
+    <message>
+        <source>Run the notifications now? Messages that are due are sent.</source>
+        <translation>Die Benachrichtigungen jetzt ausführen? Fällige Nachrichten werden gesendet.</translation>
+    </message>
+    <message>
+        <source>Sender</source>
+        <translation>Absender</translation>
+    </message>
+    <message>
+        <source>Started by</source>
+        <translation>Gestartet von</translation>
+    </message>
+    <message>
+        <source>Starting in the background...</source>
+        <translation>Start im Hintergrund ...</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonnements</translation>
+    </message>
+    <message>
+        <source>Subscriptions by %users users</source>
+        <translation>Abonnements von %users Benutzern</translation>
+    </message>
+    <message>
+        <source>The list per user and item: ./console exp:notification:subscriptions list</source>
+        <translation>Die Liste je Benutzer und Eintrag: ./console exp:notification:subscriptions list</translation>
+    </message>
+    <message>
+        <source>The notification cronjob does this on a schedule (part frequent, or php runcronjobs.php notification). Run now starts the same pass in the background; Preview lists what would be sent and changes nothing.</source>
+        <translation>Der Benachrichtigungs-Cronjob erledigt das nach Zeitplan (Teil frequent oder php runcronjobs.php notification). &quot;Jetzt ausführen&quot; startet denselben Durchlauf im Hintergrund; die Vorschau listet, was gesendet würde, und ändert nichts.</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.</source>
+        <translation>Der Benachrichtigungs-Cronjob verzeichnet hier jeden seiner Läufe. Den Teil frequent in die Crontab eintragen oder exp:notification:run ausführen.</translation>
+    </message>
+    <message>
+        <source>The run failed or stopped. See the lines above.</source>
+        <translation>Der Lauf ist fehlgeschlagen oder wurde beendet. Siehe die Zeilen darüber.</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run</source>
+        <translation>Nutzen Sie die Konsole: ./console exp:notification:run</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Wartend</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wann</translation>
+    </message>
+    <message>
+        <source>Without JavaScript:</source>
+        <translation>Ohne JavaScript:</translation>
+    </message>
+    <message>
+        <source>daily</source>
+        <translation>täglich</translation>
+    </message>
+    <message>
+        <source>due</source>
+        <translation>fällig</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>monthly</source>
+        <translation>monatlich</translation>
+    </message>
+    <message>
+        <source>waiting</source>
+        <translation>wartend</translation>
+    </message>
+    <message>
+        <source>weekly</source>
+        <translation>wöchentlich</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/notification/addconfirm</name>
+    <message>
+        <source>Add to my notifications</source>
+        <translation>Zu meinen Benachrichtigungen hinzufügen</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Get an e-mail when something new is published below %node_name?</source>
+        <translation>Eine E-Mail erhalten, wenn unter %node_name etwas Neues veröffentlicht wird?</translation>
+    </message>
+    <message>
+        <source>Notify me</source>
+        <translation>Benachrichtigen</translation>
+    </message>
+    <message>
+        <source>Stop notifications for this item</source>
+        <translation>Benachrichtigungen für diesen Eintrag beenden</translation>
+    </message>
+    <message>
+        <source>You already follow %node_name. You get an e-mail when something is published below it.</source>
+        <translation>Sie folgen %node_name bereits. Sie erhalten eine E-Mail, wenn darunter etwas veröffentlicht wird.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/notification/removeresult</name>
+    <message>
+        <source>Notifications</source>
+        <translation>Benachrichtigungen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation>Sie sind dem Knoten &lt;%node_name&gt; nicht gefolgt.</translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
+        <translation>Sie erhalten keine Benachrichtigungen mehr für den Knoten &lt;%node_name&gt;.</translation>
     </message>
 </context>
 </TS>

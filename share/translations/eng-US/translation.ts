@@ -1311,6 +1311,265 @@
     </message>
 </context>
 <context>
+    <name>design/admin/collaboration/inbox</name>
+    <message>
+        <source>%n items in this group.</source>
+        <translation>%n items in this group.</translation>
+    </message>
+    <message>
+        <source>%n messages</source>
+        <translation>%n messages</translation>
+    </message>
+    <message>
+        <source>1 message</source>
+        <translation>1 message</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Add</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>All items</source>
+        <translation>All items</translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation>Any</translation>
+    </message>
+    <message>
+        <source>Approve &quot;%title&quot;? It is published when the publishing workflow continues.</source>
+        <translation>Approve &quot;%title&quot;? It is published when the publishing workflow continues.</translation>
+    </message>
+    <message>
+        <source>Approved</source>
+        <translation>Approved</translation>
+    </message>
+    <message>
+        <source>Attach the workflow to the trigger content / publish / before.</source>
+        <translation>Attach the workflow to the trigger content / publish / before.</translation>
+    </message>
+    <message>
+        <source>Closed</source>
+        <translation>Closed</translation>
+    </message>
+    <message>
+        <source>Collaboration</source>
+        <translation>Collaboration</translation>
+    </message>
+    <message>
+        <source>Collaboration items are created by the system, not by hand: content that is sent for approval appears here, with the conversation about it.</source>
+        <translation>Collaboration items are created by the system, not by hand: content that is sent for approval appears here, with the conversation about it.</translation>
+    </message>
+    <message>
+        <source>Content that waits for a decision, your own submissions and the conversations about them.</source>
+        <translation>Content that waits for a decision, your own submissions and the conversations about them.</translation>
+    </message>
+    <message>
+        <source>Create a workflow with an Approve event: choose the approvers and, if needed, the sections and user groups it applies to.</source>
+        <translation>Create a workflow with an Approve event: choose the approvers and, if needed, the sections and user groups it applies to.</translation>
+    </message>
+    <message>
+        <source>Decision</source>
+        <translation>Decision</translation>
+    </message>
+    <message>
+        <source>Delete the group</source>
+        <translation>Delete the group</translation>
+    </message>
+    <message>
+        <source>Delete this group and its subgroups? Their items move to the main group.</source>
+        <translation>Delete this group and its subgroups? Their items move to the main group.</translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation>Denied</translation>
+    </message>
+    <message>
+        <source>Deny &quot;%title&quot;? It becomes a draft for the author again.</source>
+        <translation>Deny &quot;%title&quot;? It becomes a draft for the author again.</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Dismiss</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Group</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Groups</translation>
+    </message>
+    <message>
+        <source>I decide</source>
+        <translation>I decide</translation>
+    </message>
+    <message>
+        <source>I sent it</source>
+        <translation>I sent it</translation>
+    </message>
+    <message>
+        <source>Inbox</source>
+        <translation>Inbox</translation>
+    </message>
+    <message>
+        <source>Last activity</source>
+        <translation>Last activity</translation>
+    </message>
+    <message>
+        <source>Manage this group</source>
+        <translation>Manage this group</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Move</translation>
+    </message>
+    <message>
+        <source>Move an item here from its page, or choose this group there.</source>
+        <translation>Move an item here from its page, or choose this group there.</translation>
+    </message>
+    <message>
+        <source>Move to group</source>
+        <translation>Move to group</translation>
+    </message>
+    <message>
+        <source>Needs your decision</source>
+        <translation>Needs your decision</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>New</translation>
+    </message>
+    <message>
+        <source>New group</source>
+        <translation>New group</translation>
+    </message>
+    <message>
+        <source>New subgroup</source>
+        <translation>New subgroup</translation>
+    </message>
+    <message>
+        <source>No items in this group</source>
+        <translation>No items in this group</translation>
+    </message>
+    <message>
+        <source>No items match these filters</source>
+        <translation>No items match these filters</translation>
+    </message>
+    <message>
+        <source>Nothing to handle yet</source>
+        <translation>Nothing to handle yet</translation>
+    </message>
+    <message>
+        <source>Only an approver can approve or deny this item.</source>
+        <translation>Only an approver can approve or deny this item.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>Open the content</source>
+        <translation>Open the content</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Rename</translation>
+    </message>
+    <message>
+        <source>Rename the group</source>
+        <translation>Rename the group</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Sent</translation>
+    </message>
+    <message>
+        <source>Sent by</source>
+        <translation>Sent by</translation>
+    </message>
+    <message>
+        <source>Show all items</source>
+        <translation>Show all items</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>There are no messages yet.</source>
+        <translation>There are no messages yet.</translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation>This approval is closed: comments can no longer be added.</translation>
+    </message>
+    <message>
+        <source>This is your main group: it cannot be renamed or deleted.</source>
+        <translation>This is your main group: it cannot be renamed or deleted.</translation>
+    </message>
+    <message>
+        <source>To see the tool with example content, run:</source>
+        <translation>To see the tool with example content, run:</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Triggers</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Unread messages</source>
+        <translation>Unread messages</translation>
+    </message>
+    <message>
+        <source>Version %v of the content, saved %time by %name</source>
+        <translation>Version %v of the content, saved %time by %name</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Waiting</translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation>Waiting for approval</translation>
+    </message>
+    <message>
+        <source>Waiting for your decision</source>
+        <translation>Waiting for your decision</translation>
+    </message>
+    <message>
+        <source>When an editor publishes content the workflow applies to, an item is created for the approvers and appears in their inbox.</source>
+        <translation>When an editor publishes content the workflow applies to, an item is created for the approvers and appears in their inbox.</translation>
+    </message>
+    <message>
+        <source>Workflows</source>
+        <translation>Workflows</translation>
+    </message>
+    <message>
+        <source>Your items waiting for others</source>
+        <translation>Your items waiting for others</translation>
+    </message>
+    <message>
+        <source>Your role</source>
+        <translation>Your role</translation>
+    </message>
+    <message>
+        <source>from %name</source>
+        <translation>from %name</translation>
+    </message>
+    <message>
+        <source>sent by you</source>
+        <translation>sent by you</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/content/bookmark</name>
     <message>
         <source>Name</source>
@@ -1371,6 +1630,130 @@
     <message>
         <source>My bookmarks (%bookmark_count)</source>
         <translation>My bookmarks (%bookmark_count)</translation>
+    </message>
+    <message>
+        <source>%count bookmarks</source>
+        <translation>%count bookmarks</translation>
+    </message>
+    <message>
+        <source>Also delete the bookmarks and folders inside</source>
+        <translation>Also delete the bookmarks and folders inside</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Collapse all</translation>
+    </message>
+    <message>
+        <source>Create folder</source>
+        <translation>Create folder</translation>
+    </message>
+    <message>
+        <source>Delete folder</source>
+        <translation>Delete folder</translation>
+    </message>
+    <message>
+        <source>Delete the folder "%name"? Its bookmarks and folders move up one level. No bookmark is deleted.</source>
+        <translation>Delete the folder "%name"? Its bookmarks and folders move up one level. No bookmark is deleted.</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Delete</translation>
+    </message>
+    <message>
+        <source>Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.</source>
+        <translation>Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Expand all</translation>
+    </message>
+    <message>
+        <source>Folder name</source>
+        <translation>Folder name</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Folder</translation>
+    </message>
+    <message>
+        <source>Folders</source>
+        <translation>Folders</translation>
+    </message>
+    <message>
+        <source>In folder</source>
+        <translation>In folder</translation>
+    </message>
+    <message>
+        <source>Move bookmark</source>
+        <translation>Move bookmark</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Move down</translation>
+    </message>
+    <message>
+        <source>Move folder</source>
+        <translation>Move folder</translation>
+    </message>
+    <message>
+        <source>Move selected to</source>
+        <translation>Move selected to</translation>
+    </message>
+    <message>
+        <source>Move selected</source>
+        <translation>Move selected</translation>
+    </message>
+    <message>
+        <source>Move to</source>
+        <translation>Move to</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Move up</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Move</translation>
+    </message>
+    <message>
+        <source>New folder</source>
+        <translation>New folder</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>New name</translation>
+    </message>
+    <message>
+        <source>No bookmarks match.</source>
+        <translation>No bookmarks match.</translation>
+    </message>
+    <message>
+        <source>Open or close the folder</source>
+        <translation>Open or close the folder</translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation>Rename folder</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Rename</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Search bookmarks</source>
+        <translation>Search bookmarks</translation>
+    </message>
+    <message>
+        <source>Top level</source>
+        <translation>Top level</translation>
     </message>
 </context>
 <context>
@@ -6546,6 +6929,22 @@
         <source>Notification for node &lt;%node_name&gt; was added successfully.</source>
         <translation>Notification for node &lt;%node_name&gt; was added successfully.</translation>
     </message>
+    <message>
+        <source>My notification settings</source>
+        <translation>My notification settings</translation>
+    </message>
+    <message>
+        <source>Notifications</source>
+        <translation>Notifications</translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation>You did not follow node &lt;%node_name&gt;.</translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
+        <translation>You no longer get notifications for node &lt;%node_name&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/notification/collaboration</name>
@@ -6658,6 +7057,22 @@
         <source>Run notification filter</source>
         <translation>Run notification filter</translation>
     </message>
+    <message>
+        <source>%events events handled, %mails messages sent.</source>
+        <translation>%events events handled, %mails messages sent.</translation>
+    </message>
+    <message>
+        <source>Handles the events that wait for the notification cronjob. The notification status page shows what waits and what was sent.</source>
+        <translation>Handles the events that wait for the notification cronjob. The notification status page shows what waits and what was sent.</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Notification status</translation>
+    </message>
+    <message>
+        <source>The time event makes the digests that are due ready to be sent by the next run.</source>
+        <translation>The time event makes the digests that are due ready to be sent by the next run.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/notification/settings</name>
@@ -6668,6 +7083,242 @@
     <message>
         <source>Apply changes</source>
         <translation>Apply changes</translation>
+    </message>
+    <message>
+        <source>Add items</source>
+        <translation>Add items</translation>
+    </message>
+    <message>
+        <source>Add items to your personal notification list.</source>
+        <translation>Add items to your personal notification list.</translation>
+    </message>
+    <message>
+        <source>Added %count notification(s).</source>
+        <translation>Added %count notification(s).</translation>
+    </message>
+    <message>
+        <source>Any type</source>
+        <translation>Any type</translation>
+    </message>
+    <message>
+        <source>At once</source>
+        <translation>At once</translation>
+    </message>
+    <message>
+        <source>By default every change is mailed at once. A digest holds the messages back and sends one e-mail with all of them: every day, once a week or once a month, at the hour you choose.</source>
+        <translation>By default every change is mailed at once. A digest holds the messages back and sends one e-mail with all of them: every day, once a week or once a month, at the hour you choose.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Choose Add items to pick content, or open an item and choose Notify me in its menu. You are then told by e-mail when something new is published below it.</source>
+        <translation>Choose Add items to pick content, or open an item and choose Notify me in its menu. You are then told by e-mail when something new is published below it.</translation>
+    </message>
+    <message>
+        <source>Choose which collaboration items you want to get notifications for. An item is, for example, content that waits for your approval, and the comments about it.</source>
+        <translation>Choose which collaboration items you want to get notifications for. An item is, for example, content that waits for your approval, and the comments about it.</translation>
+    </message>
+    <message>
+        <source>Collaboration notification</source>
+        <translation>Collaboration notification</translation>
+    </message>
+    <message>
+        <source>Content no longer exists</source>
+        <translation>Content no longer exists</translation>
+    </message>
+    <message>
+        <source>Content that no longer exists</source>
+        <translation>Content that no longer exists</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation>Daily</translation>
+    </message>
+    <message>
+        <source>Daily, at</source>
+        <translation>Daily, at</translation>
+    </message>
+    <message>
+        <source>Day of the month</source>
+        <translation>Day of the month</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Dismiss</translation>
+    </message>
+    <message>
+        <source>E-mail digest</source>
+        <translation>E-mail digest</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Hour</source>
+        <translation>Hour</translation>
+    </message>
+    <message>
+        <source>How the messages come</source>
+        <translation>How the messages come</translation>
+    </message>
+    <message>
+        <source>If day number is larger than the number of days within the current month, the last day of the current month will be used.</source>
+        <translation>If day number is larger than the number of days within the current month, the last day of the current month will be used.</translation>
+    </message>
+    <message>
+        <source>In</source>
+        <translation>In</translation>
+    </message>
+    <message>
+        <source>Items I follow</source>
+        <translation>Items I follow</translation>
+    </message>
+    <message>
+        <source>Last change below it</source>
+        <translation>Last change below it</translation>
+    </message>
+    <message>
+        <source>Messages go to this address</source>
+        <translation>Messages go to this address</translation>
+    </message>
+    <message>
+        <source>Monthly</source>
+        <translation>Monthly</translation>
+    </message>
+    <message>
+        <source>Name contains</source>
+        <translation>Name contains</translation>
+    </message>
+    <message>
+        <source>No content below it yet</source>
+        <translation>No content below it yet</translation>
+    </message>
+    <message>
+        <source>No followed item matches the filter</source>
+        <translation>No followed item matches the filter</translation>
+    </message>
+    <message>
+        <source>No kind of collaboration item sends notifications on this site.</source>
+        <translation>No kind of collaboration item sends notifications on this site.</translation>
+    </message>
+    <message>
+        <source>Nothing can be sent for this item. Remove it.</source>
+        <translation>Nothing can be sent for this item. Remove it.</translation>
+    </message>
+    <message>
+        <source>Nothing was added: you already follow those items, or you may not read them.</source>
+        <translation>Nothing was added: you already follow those items, or you may not read them.</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Notification status</translation>
+    </message>
+    <message>
+        <source>Once per month, on day number</source>
+        <translation>Once per month, on day number</translation>
+    </message>
+    <message>
+        <source>Once per week, on</source>
+        <translation>Once per week, on</translation>
+    </message>
+    <message>
+        <source>Receive all messages combined in one digest</source>
+        <translation>Receive all messages combined in one digest</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>Remove %count items from your notifications?</source>
+        <translation>Remove %count items from your notifications?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Remove selected</translation>
+    </message>
+    <message>
+        <source>Remove selected items.</source>
+        <translation>Remove selected items.</translation>
+    </message>
+    <message>
+        <source>Removed %count notification(s).</source>
+        <translation>Removed %count notification(s).</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Save collaboration settings</source>
+        <translation>Save collaboration settings</translation>
+    </message>
+    <message>
+        <source>Save digest settings</source>
+        <translation>Save digest settings</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Select all on this page</translation>
+    </message>
+    <message>
+        <source>Select item for removal.</source>
+        <translation>Select item for removal.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Show all</translation>
+    </message>
+    <message>
+        <source>Switched off: one e-mail for each change, at once.</source>
+        <translation>Switched off: one e-mail for each change, at once.</translation>
+    </message>
+    <message>
+        <source>The hour is the server time of the day the digest is made; the weekly and monthly choices use the time chosen above.</source>
+        <translation>The hour is the server time of the day the digest is made; the weekly and monthly choices use the time chosen above.</translation>
+    </message>
+    <message>
+        <source>Tick at least one item to remove.</source>
+        <translation>Tick at least one item to remove.</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Weekday</source>
+        <translation>Weekday</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation>Weekly</translation>
+    </message>
+    <message>
+        <source>You are told by e-mail when content you follow changes, and about the collaboration items you take part in. Choose here what you follow and how the messages come.</source>
+        <translation>You are told by e-mail when content you follow changes, and about the collaboration items you take part in. Choose here what you follow and how the messages come.</translation>
+    </message>
+    <message>
+        <source>You do not follow any items yet</source>
+        <translation>You do not follow any items yet</translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something is published below one of these items, if you may read it. Open any item in the content structure and choose Notify me to add more.</source>
+        <translation>You get an e-mail when something is published below one of these items, if you may read it. Open any item in the content structure and choose Notify me to add more.</translation>
+    </message>
+    <message>
+        <source>You stop getting e-mail about them. The items themselves are not changed.</source>
+        <translation>You stop getting e-mail about them. The items themselves are not changed.</translation>
+    </message>
+    <message>
+        <source>Your collaboration notifications were saved.</source>
+        <translation>Your collaboration notifications were saved.</translation>
+    </message>
+    <message>
+        <source>Your notification settings were saved.</source>
+        <translation>Your notification settings were saved.</translation>
     </message>
 </context>
 <context>
@@ -38078,6 +38729,90 @@ your account.</translation>
         <source>Collaboration</source>
         <translation>Collaboration</translation>
     </message>
+    <message>
+        <source>&quot;%1&quot; was approved. It is published when the publishing workflow continues.</source>
+        <translation>&quot;%1&quot; was approved. It is published when the publishing workflow continues.</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; was denied. It is a draft for the author again.</source>
+        <translation>&quot;%1&quot; was denied. It is a draft for the author again.</translation>
+    </message>
+    <message>
+        <source>A group with this name exists already.</source>
+        <translation>A group with this name exists already.</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group.</source>
+        <translation>Enter a name for the group.</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Group</translation>
+    </message>
+    <message>
+        <source>Groups cannot be nested that deep.</source>
+        <translation>Groups cannot be nested that deep.</translation>
+    </message>
+    <message>
+        <source>Only an approver of this item can approve or deny it.</source>
+        <translation>Only an approver of this item can approve or deny it.</translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was created.</source>
+        <translation>The group &quot;%1&quot; was created.</translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was deleted. Its items are in the main group now.</source>
+        <translation>The group &quot;%1&quot; was deleted. Its items are in the main group now.</translation>
+    </message>
+    <message>
+        <source>The group was not found.</source>
+        <translation>The group was not found.</translation>
+    </message>
+    <message>
+        <source>The group was renamed to &quot;%1&quot;.</source>
+        <translation>The group was renamed to &quot;%1&quot;.</translation>
+    </message>
+    <message>
+        <source>The item was moved to &quot;%1&quot;.</source>
+        <translation>The item was moved to &quot;%1&quot;.</translation>
+    </message>
+    <message>
+        <source>The item was not found.</source>
+        <translation>The item was not found.</translation>
+    </message>
+    <message>
+        <source>The main group cannot be deleted.</source>
+        <translation>The main group cannot be deleted.</translation>
+    </message>
+    <message>
+        <source>The main group cannot be renamed.</source>
+        <translation>The main group cannot be renamed.</translation>
+    </message>
+    <message>
+        <source>The parent group was not found.</source>
+        <translation>The parent group was not found.</translation>
+    </message>
+    <message>
+        <source>There are too many groups already.</source>
+        <translation>There are too many groups already.</translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation>This approval is closed: comments can no longer be added.</translation>
+    </message>
+    <message>
+        <source>This approval was decided already.</source>
+        <translation>This approval was decided already.</translation>
+    </message>
+    <message>
+        <source>Write a comment first.</source>
+        <translation>Write a comment first.</translation>
+    </message>
+    <message>
+        <source>Your comment was added.</source>
+        <translation>Your comment was added.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -38288,6 +39023,66 @@ your account.</translation>
     <message>
         <source>Edit several items</source>
         <translation>Edit several items</translation>
+    </message>
+    <message>
+        <source>The folder "%name" was created.</source>
+        <translation>The folder "%name" was created.</translation>
+    </message>
+    <message>
+        <source>The folder could not be created: it needs a name and an existing parent folder.</source>
+        <translation>The folder could not be created: it needs a name and an existing parent folder.</translation>
+    </message>
+    <message>
+        <source>The folder was renamed to "%name".</source>
+        <translation>The folder was renamed to "%name".</translation>
+    </message>
+    <message>
+        <source>The folder could not be renamed: it needs a name.</source>
+        <translation>The folder could not be renamed: it needs a name.</translation>
+    </message>
+    <message>
+        <source>The folder does not exist.</source>
+        <translation>The folder does not exist.</translation>
+    </message>
+    <message>
+        <source>The folder "%name" and everything in it were deleted.</source>
+        <translation>The folder "%name" and everything in it were deleted.</translation>
+    </message>
+    <message>
+        <source>The folder "%name" was deleted, its bookmarks and folders moved up one level.</source>
+        <translation>The folder "%name" was deleted, its bookmarks and folders moved up one level.</translation>
+    </message>
+    <message>
+        <source>Moved %count bookmark(s).</source>
+        <translation>Moved %count bookmark(s).</translation>
+    </message>
+    <message>
+        <source>Nothing was moved: choose a bookmark and one of your folders.</source>
+        <translation>Nothing was moved: choose a bookmark and one of your folders.</translation>
+    </message>
+    <message>
+        <source>The folder was moved.</source>
+        <translation>The folder was moved.</translation>
+    </message>
+    <message>
+        <source>The folder cannot be moved there: not into itself or into a folder below it.</source>
+        <translation>The folder cannot be moved there: not into itself or into a folder below it.</translation>
+    </message>
+    <message>
+        <source>The order was saved.</source>
+        <translation>The order was saved.</translation>
+    </message>
+    <message>
+        <source>The entry was moved.</source>
+        <translation>The entry was moved.</translation>
+    </message>
+    <message>
+        <source>It cannot be moved there: not into itself or into a folder below it.</source>
+        <translation>It cannot be moved there: not into itself or into a folder below it.</translation>
+    </message>
+    <message>
+        <source>Unknown bookmark action.</source>
+        <translation>Unknown bookmark action.</translation>
     </message>
 </context>
 <context>
@@ -38646,12 +39441,82 @@ You will need to change the class of the node by using the swap functionality.</
         <comment>Navigation part</comment>
         <translation>CJW Newsletter</translation>
     </message>
+    <message>
+        <source>Syndication</source>
+        <comment>Navigation part</comment>
+        <translation>Syndication</translation>
+    </message>
+    <message>
+        <source>CIE</source>
+        <comment>Navigation part</comment>
+        <translation>CIE</translation>
+    </message>
 </context>
 <context>
     <name>kernel/notification</name>
     <message>
         <source>Notification settings</source>
         <translation>Notification settings</translation>
+    </message>
+    <message>
+        <source>%count digest messages are overdue; a run sends them.</source>
+        <translation>%count digest messages are overdue; a run sends them.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run.</source>
+        <translation>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run.</translation>
+    </message>
+    <message>
+        <source>%count events wait and the last run was more than an hour ago (%time). Is the notification cronjob running?</source>
+        <translation>%count events wait and the last run was more than an hour ago (%time). Is the notification cronjob running?</translation>
+    </message>
+    <message>
+        <source>%count handled events have nothing left to send; Remove old events clears them.</source>
+        <translation>%count handled events have nothing left to send; Remove old events clears them.</translation>
+    </message>
+    <message>
+        <source>%count subscriptions belong to users that no longer exist.</source>
+        <translation>%count subscriptions belong to users that no longer exist.</translation>
+    </message>
+    <message>
+        <source>%count subscriptions point to content that no longer exists.</source>
+        <translation>%count subscriptions point to content that no longer exists.</translation>
+    </message>
+    <message>
+        <source>A handler failed on %count events in the last run; see the debug log.</source>
+        <translation>A handler failed on %count events in the last run; see the debug log.</translation>
+    </message>
+    <message>
+        <source>Add to my notifications</source>
+        <translation>Add to my notifications</translation>
+    </message>
+    <message>
+        <source>Mail is written to files, not sent (site.ini MailSettings Transport=file).</source>
+        <translation>Mail is written to files, not sent (site.ini MailSettings Transport=file).</translation>
+    </message>
+    <message>
+        <source>No run is recorded yet. The notification cronjob (part &quot;frequent&quot;) sends the notifications.</source>
+        <translation>No run is recorded yet. The notification cronjob (part &quot;frequent&quot;) sends the notifications.</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Notification status</translation>
+    </message>
+    <message>
+        <source>Notification was removed.</source>
+        <translation>Notification was removed.</translation>
+    </message>
+    <message>
+        <source>The last run failed: %error</source>
+        <translation>The last run failed: %error</translation>
+    </message>
+    <message>
+        <source>The subtree handler is not available, so no one is notified about published content.</source>
+        <translation>The subtree handler is not available, so no one is notified about published content.</translation>
+    </message>
+    <message>
+        <source>There is no valid sender address: set EmailSender in notification.ini or site.ini.</source>
+        <translation>There is no valid sender address: set EmailSender in notification.ini or site.ini.</translation>
     </message>
 </context>
 <context>
@@ -44727,6 +45592,413 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Location in the tree (path)</source>
         <translation>Location in the tree (path)</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/addconfirm</name>
+    <message>
+        <source>Add to my notifications</source>
+        <translation>Add to my notifications</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Back</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Get an e-mail when something new is published below %node_name?</source>
+        <translation>Get an e-mail when something new is published below %node_name?</translation>
+    </message>
+    <message>
+        <source>Notify me</source>
+        <translation>Notify me</translation>
+    </message>
+    <message>
+        <source>Notify me about updates</source>
+        <translation>Notify me about updates</translation>
+    </message>
+    <message>
+        <source>Stop notifications for this item</source>
+        <translation>Stop notifications for this item</translation>
+    </message>
+    <message>
+        <source>You already follow %node_name. You get an e-mail when something is published below it.</source>
+        <translation>You already follow %node_name. You get an e-mail when something is published below it.</translation>
+    </message>
+    <message>
+        <source>You already follow this item</source>
+        <translation>You already follow this item</translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something is published below it. You can stop that here.</source>
+        <translation>You get an e-mail when something is published below it. You can stop that here.</translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something new is published below this item, as long as you may read it. You can change this under My notification settings.</source>
+        <translation>You get an e-mail when something new is published below this item, as long as you may read it. You can change this under My notification settings.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/removeresult</name>
+    <message>
+        <source>Notifications</source>
+        <translation>Notifications</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation>You did not follow node &lt;%node_name&gt;.</translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
+        <translation>You no longer get notifications for node &lt;%node_name&gt;.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/status</name>
+    <message>
+        <source>1 year</source>
+        <translation>1 year</translation>
+    </message>
+    <message>
+        <source>180 days</source>
+        <translation>180 days</translation>
+    </message>
+    <message>
+        <source>30 days</source>
+        <translation>30 days</translation>
+    </message>
+    <message>
+        <source>90 days</source>
+        <translation>90 days</translation>
+    </message>
+    <message>
+        <source>A run is in progress (process %pid, since %time).</source>
+        <translation>A run is in progress (process %pid, since %time).</translation>
+    </message>
+    <message>
+        <source>Attention</source>
+        <translation>Attention</translation>
+    </message>
+    <message>
+        <source>Choose an age of at least one day.</source>
+        <translation>Choose an age of at least one day.</translation>
+    </message>
+    <message>
+        <source>Collaboration rules</source>
+        <translation>Collaboration rules</translation>
+    </message>
+    <message>
+        <source>Console:</source>
+        <translation>Console:</translation>
+    </message>
+    <message>
+        <source>Content no longer exists</source>
+        <translation>Content no longer exists</translation>
+    </message>
+    <message>
+        <source>Digests chosen</source>
+        <translation>Digests chosen</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Events</translation>
+    </message>
+    <message>
+        <source>Events wait here until the notification cronjob handles them: it sends the messages, or keeps them for a digest. This page shows what waits, what was sent and what looks wrong.</source>
+        <translation>Events wait here until the notification cronjob handles them: it sends the messages, or keeps them for a digest. This page shows what waits, what was sent and what looks wrong.</translation>
+    </message>
+    <message>
+        <source>Events waiting to be handled</source>
+        <translation>Events waiting to be handled</translation>
+    </message>
+    <message>
+        <source>Finished. Reload the page to see the new numbers.</source>
+        <translation>Finished. Reload the page to see the new numbers.</translation>
+    </message>
+    <message>
+        <source>Handled</source>
+        <translation>Handled</translation>
+    </message>
+    <message>
+        <source>Handlers</source>
+        <translation>Handlers</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Item</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Last run</translation>
+    </message>
+    <message>
+        <source>Made</source>
+        <translation>Made</translation>
+    </message>
+    <message>
+        <source>Mail and handlers</source>
+        <translation>Mail and handlers</translation>
+    </message>
+    <message>
+        <source>Mail transport</source>
+        <translation>Mail transport</translation>
+    </message>
+    <message>
+        <source>Messages</source>
+        <translation>Messages</translation>
+    </message>
+    <message>
+        <source>Messages kept for a digest</source>
+        <translation>Messages kept for a digest</translation>
+    </message>
+    <message>
+        <source>Messages to %count recipients, last 24 hours</source>
+        <translation>Messages to %count recipients, last 24 hours</translation>
+    </message>
+    <message>
+        <source>Messages waiting now</source>
+        <translation>Messages waiting now</translation>
+    </message>
+    <message>
+        <source>Messages: sent / recipients.</source>
+        <translation>Messages: sent / recipients.</translation>
+    </message>
+    <message>
+        <source>My notification settings</source>
+        <translation>My notification settings</translation>
+    </message>
+    <message>
+        <source>No events.</source>
+        <translation>No events.</translation>
+    </message>
+    <message>
+        <source>No one follows any item yet.</source>
+        <translation>No one follows any item yet.</translation>
+    </message>
+    <message>
+        <source>No run is recorded yet</source>
+        <translation>No run is recorded yet</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Note</translation>
+    </message>
+    <message>
+        <source>Nothing looks wrong.</source>
+        <translation>Nothing looks wrong.</translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation>Notification status</translation>
+    </message>
+    <message>
+        <source>Preview (dry run)</source>
+        <translation>Preview (dry run)</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>Recent runs</source>
+        <translation>Recent runs</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>Remove %count subscriptions whose content is gone</source>
+        <translation>Remove %count subscriptions whose content is gone</translation>
+    </message>
+    <message>
+        <source>Remove all events older than the chosen age, with their waiting messages? This cannot be undone.</source>
+        <translation>Remove all events older than the chosen age, with their waiting messages? This cannot be undone.</translation>
+    </message>
+    <message>
+        <source>Remove events older than</source>
+        <translation>Remove events older than</translation>
+    </message>
+    <message>
+        <source>Remove handled events with nothing left to send</source>
+        <translation>Remove handled events with nothing left to send</translation>
+    </message>
+    <message>
+        <source>Removed %count events older than the chosen age (%unknown of unknown age were kept).</source>
+        <translation>Removed %count events older than the chosen age (%unknown of unknown age were kept).</translation>
+    </message>
+    <message>
+        <source>Removed %count handled events that had nothing left to send.</source>
+        <translation>Removed %count handled events that had nothing left to send.</translation>
+    </message>
+    <message>
+        <source>Removed %count subscriptions whose content no longer exists.</source>
+        <translation>Removed %count subscriptions whose content no longer exists.</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Result</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Run now</translation>
+    </message>
+    <message>
+        <source>Run now needs a background process: %reason</source>
+        <translation>Run now needs a background process: %reason</translation>
+    </message>
+    <message>
+        <source>Run the notifications</source>
+        <translation>Run the notifications</translation>
+    </message>
+    <message>
+        <source>Run the notifications now? Messages that are due are sent.</source>
+        <translation>Run the notifications now? Messages that are due are sent.</translation>
+    </message>
+    <message>
+        <source>Sender</source>
+        <translation>Sender</translation>
+    </message>
+    <message>
+        <source>Started by</source>
+        <translation>Started by</translation>
+    </message>
+    <message>
+        <source>Starting in the background...</source>
+        <translation>Starting in the background...</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Subscriptions</translation>
+    </message>
+    <message>
+        <source>Subscriptions by %users users</source>
+        <translation>Subscriptions by %users users</translation>
+    </message>
+    <message>
+        <source>The list per user and item: ./console exp:notification:subscriptions list</source>
+        <translation>The list per user and item: ./console exp:notification:subscriptions list</translation>
+    </message>
+    <message>
+        <source>The notification cronjob does this on a schedule (part frequent, or php runcronjobs.php notification). Run now starts the same pass in the background; Preview lists what would be sent and changes nothing.</source>
+        <translation>The notification cronjob does this on a schedule (part frequent, or php runcronjobs.php notification). Run now starts the same pass in the background; Preview lists what would be sent and changes nothing.</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.</source>
+        <translation>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.</translation>
+    </message>
+    <message>
+        <source>The run failed or stopped. See the lines above.</source>
+        <translation>The run failed or stopped. See the lines above.</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run</source>
+        <translation>Use the console: ./console exp:notification:run</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Waiting</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>When</translation>
+    </message>
+    <message>
+        <source>Without JavaScript:</source>
+        <translation>Without JavaScript:</translation>
+    </message>
+    <message>
+        <source>daily</source>
+        <translation>daily</translation>
+    </message>
+    <message>
+        <source>due</source>
+        <translation>due</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>failed</translation>
+    </message>
+    <message>
+        <source>monthly</source>
+        <translation>monthly</translation>
+    </message>
+    <message>
+        <source>waiting</source>
+        <translation>waiting</translation>
+    </message>
+    <message>
+        <source>weekly</source>
+        <translation>weekly</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/notification/addconfirm</name>
+    <message>
+        <source>Add to my notifications</source>
+        <translation>Add to my notifications</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Back</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Get an e-mail when something new is published below %node_name?</source>
+        <translation>Get an e-mail when something new is published below %node_name?</translation>
+    </message>
+    <message>
+        <source>Notify me</source>
+        <translation>Notify me</translation>
+    </message>
+    <message>
+        <source>Stop notifications for this item</source>
+        <translation>Stop notifications for this item</translation>
+    </message>
+    <message>
+        <source>You already follow %node_name. You get an e-mail when something is published below it.</source>
+        <translation>You already follow %node_name. You get an e-mail when something is published below it.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/notification/removeresult</name>
+    <message>
+        <source>Notifications</source>
+        <translation>Notifications</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation>You did not follow node &lt;%node_name&gt;.</translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
+        <translation>You no longer get notifications for node &lt;%node_name&gt;.</translation>
     </message>
 </context>
 </TS>

@@ -148,6 +148,15 @@ CREATE SEQUENCE ezcontentbrowsebookmark_id_seq
 
 
 
+CREATE SEQUENCE expbookmark_folder_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 
 
 
@@ -1443,6 +1452,19 @@ CREATE TABLE ezcontentbrowsebookmark (
     id integer DEFAULT nextval('ezcontentbrowsebookmark_id_seq'::text) NOT NULL,
     name character varying(255) DEFAULT ''::character varying NOT NULL,
     node_id integer DEFAULT 0 NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL,
+    folder_id integer DEFAULT 0 NOT NULL,
+    priority integer DEFAULT 0 NOT NULL
+);
+
+
+
+CREATE TABLE expbookmark_folder (
+    created integer DEFAULT 0 NOT NULL,
+    id integer DEFAULT nextval('expbookmark_folder_id_seq'::text) NOT NULL,
+    name character varying(255) DEFAULT ''::character varying NOT NULL,
+    parent_id integer DEFAULT 0 NOT NULL,
+    priority integer DEFAULT 0 NOT NULL,
     user_id integer DEFAULT 0 NOT NULL
 );
 
@@ -3109,6 +3131,14 @@ CREATE INDEX ezcontentbrowsebookmark_user ON ezcontentbrowsebookmark USING btree
 
 
 
+CREATE INDEX ezcontentbrowsebookmark_folder ON ezcontentbrowsebookmark USING btree (user_id, folder_id);
+
+
+
+CREATE INDEX expbookmark_folder_user ON expbookmark_folder USING btree (user_id, parent_id);
+
+
+
 
 
 
@@ -4280,6 +4310,11 @@ ALTER TABLE ONLY ezcontent_language
 
 ALTER TABLE ONLY ezcontentbrowsebookmark
     ADD CONSTRAINT ezcontentbrowsebookmark_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY expbookmark_folder
+    ADD CONSTRAINT expbookmark_folder_pkey PRIMARY KEY (id);
 
 
 

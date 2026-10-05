@@ -160,6 +160,27 @@ class eZCollaborationFunctionCollection
         return $resultArray;
     }
 
+    /**
+     * The inbox of the current user (see expCollaborationInbox::fetch()).
+     */
+    function fetchInbox( $status, $role, $type, $groupID, $offset, $limit )
+    {
+        return array( 'result' => expCollaborationInbox::fetch( array( 'status' => $status, 'role' => $role, 'type' => $type,
+                                                                      'group_id' => $groupID, 'offset' => $offset, 'limit' => $limit ) ) );
+    }
+
+    /**
+     * One collaboration item as an inbox row (see expCollaborationInbox::fetchRow()).
+     */
+    function fetchInboxRow( $itemID )
+    {
+        $row = expCollaborationInbox::fetchRow( $itemID );
+        if ( $row === false )
+            return array( 'error' => array( 'error_type' => 'kernel',
+                                            'error_code' => eZError::KERNEL_NOT_FOUND ) );
+        return array( 'result' => $row );
+    }
+
 }
 }
 
