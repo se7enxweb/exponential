@@ -13,6 +13,14 @@
 */
 
 /*
+   ENVIRONMENT
+   -----------
+   The environment name (EXP_ENV) is not set here but in config.env.php, which
+   is read before this file and stays out of version control. See
+   config.env.php.example.
+*/
+
+/*
    TIMEZONES
    ---------
    The recommended way of setting timezones is via php.ini.
