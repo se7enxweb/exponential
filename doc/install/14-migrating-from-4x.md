@@ -47,6 +47,9 @@ That path is a different product and most of its work does not apply here:
 | Custom field types must be rewritten for the new stack, or replaced by a placeholder | Not needed: custom `eZDataType` classes keep working after the PHP 8 fixes in [14.9](#149-porting-your-own-extensions-from-php-5-to-php-8). |
 | The web front end and admin modules must be rewritten on Symfony | Not needed: templates, designs and modules carry over ([14.7](#147-settings-and-siteaccesses), [14.8](#148-designs-templates-and-javascript)). |
 | Remove internal drafts before migrating (`InternalDraftsCleanUpLimit`, `InternalDraftsDuration`, the internal drafts clean-up cron job) | Worth doing for a smaller database, not required: see [14.4](#144-prepare-the-old-installation). |
+| Code compatibility only for code written for the Symfony stack of 5.x; the legacy code base does not carry over | The reverse: legacy code (datatypes, modules, templates, extensions) carries over after the PHP 8 work of 14.9 |
+| Running the new platform beside legacy is "practically impossible" | Not the question here: Exponential is the legacy kernel. A bridge to a Symfony platform exists if you want both ([16.6.8](16-migrating-from-ez-platform-and-ibexa.md#1668-keeping-a-symfony-stack-next-to-the-legacy-kernel)). |
+| If you cannot migrate yet, stay on eZ Publish Enterprise 5.4 (supported until the end of 2021) | That support has ended; Exponential 6.0 is the maintained continuation of the same kernel, on PHP 8. |
 
 ## 14.2 Plan the migration on a staging copy
 
@@ -301,7 +304,18 @@ on MySQL or PostgreSQL; moving a finished site to another engine afterwards is a
 ([chapter 9](09-databases.md)).
 
 **Oracle.** The `ezoracle` extension carries the kernel chain for Oracle up to 5.3 in
-`extension/ezoracle/update/database/` ([11.3](11-upgrading.md#113-the-update-files)).
+`extension/ezoracle/update/database/` ([11.3](11-upgrading.md#113-the-update-files)). There is no Oracle file for
+5.4 or 6.0: write the 5.4 changes from the MySQL file in Oracle syntax, then run by hand what the 6.0 files do on the
+other engines, at least `ALTER TABLE ezuser MODIFY ( password_hash VARCHAR2(255) );` and, if the table lacks it,
+`ALTER TABLE ezcontentobject_trash ADD ( trashed INTEGER DEFAULT 0 NOT NULL );`
+([11.5](11-upgrading.md#115-from-54-or-590-to-600)), then the columns and tables of the 6.0.15 file in Oracle syntax
+(the audit tables come from `createaudittables.php`, which works on Oracle). Rehearse this path
+twice as often as the others; it is the least travelled.
+
+**Check the tree before you start.** `php bin/php/console exp:checkdbfiles --no-verify-branches` compares the update
+files with the upgrade path, every directory from 4.0 to 7.3 on every engine, and prints `!` for a missing file and
+`?` for one it does not expect. Silence means the tree is complete. Without `--no-verify-branches` it also tries to
+reach the retired SVN repository of the old vendor and reports one `C` line.
 
 **Patch-release markers.** Some files contain blocks marked `-- START: from 4.0.1` ... `-- END: from 4.0.1` (also
 `from 3.10.1`, `from 4.0.2`, `from 4.1.0`, `from 4.1.1`, `from 4.1.2`, `from 4.1.4`). They hold the statements that a
@@ -657,6 +671,7 @@ hash (`kernel/classes/datatypes/ezuser/ezuser.php`):
 
 | Type | Name | Notes |
 |---|---|---|
+| 0 | `empty` | no password of its own (LDAP, text-file and single-sign-on users); not in 4.x, added in 2019 |
 | 1 | `md5_password` | md5 of the password |
 | 2 | `md5_user` | md5 of login and password |
 | 3 | `md5_site` | md5 of login, password and `[UserSettings] SiteName` |
@@ -677,6 +692,11 @@ With `[UserSettings] UpdateHash=true` (the default) a successful sign-in with an
   The old chain itself deletes orphaned rows (4.0 and 5.4 files) but never creates missing ones. Find them with the
   preflight query of 14.5.3 or the queries of the
   [August 2026 security specification](../specifications/6.0/security-hardening-2026-08.md#f-06-find-accounts-that-cannot-sign-in).
+- **The hash column must be wide before anyone signs in.** A 4.x database has `ezuser.password_hash varchar(50)`;
+  the first sign-in rewrites the hash to a 60-character bcrypt hash. The 5.4 to 6.0.0 file widens the column to 255
+  (and the 6.0.0 to 6.0.15 file again, for older copies), so keep the site in maintenance until phase A is complete.
+  If users signed in against a narrow column, the column refused the hash (strict SQL mode) or cut it, and those
+  users cannot sign in again: widen the column, then reset their passwords. On Oracle widen it by hand (14.5.5).
 - **Passwords shorter than 10 characters** keep working; the new minimum applies when a password is set.
 - **Reset a password** from the command line: `php bin/php/resetuserpassword.php -a admin -ap '<admin password>' -u <login> -p '<new password>'`.
 
@@ -703,11 +723,13 @@ Run the checks of [11.7](11-upgrading.md#117-verify-the-upgrade), and in additio
    database with it; the exit code says whether they differ:
 
    ```bash
-   php bin/php/ezsqldiff.php --type=mysql --user=USER --password=PASS DATABASE share/db_schema.dba
+   php bin/php/ezsqldiff.php --type=mysql --user=USER --password=PASS share/db_schema.dba DATABASE
    ```
 
-   (`--type=postgresql` on PostgreSQL). Tables of your own extensions show up as differences; anything else is a
-   step that was missed.
+   (`--type=postgresql` on PostgreSQL). The output is the SQL that would turn the second argument (your database)
+   into the first (the reference): a `CREATE TABLE` or `ADD` line names something a missed step should have made, a
+   `DROP TABLE` line a table only your database has. Tables of your own extensions show up as such drops; anything
+   else is a step that was missed. Read the output, do not run it: repair by restoring and running the missed step.
 2. **Counts against the old database.** Run the size queries of 14.3 on the old and the migrated database. Objects,
    attributes and nodes must match exactly; `ezurlalias_ml` grows when aliases are rebuilt.
 3. **URL aliases.** `php bin/php/updateniceurls.php` (with `--update-nodes`), then
@@ -741,6 +763,7 @@ Their Exponential counterparts first, then the ones specific to the legacy path:
 | Always-available flag on all fields | A behaviour of the vendor's newer public API | Not applicable: Exponential writes and reads `language_id` the way 4.x did. |
 | Sub-items not listed (empty `sort_key_string`) | Written by the vendor's newer public API | Not applicable for data written by 4.x. Sort keys are set when an attribute is stored; republishing an object rewrites them. |
 | `SET storage_engine` fails | An update file from before October 2026; the spelling was removed in MySQL 5.7.5 and MariaDB 12.0 | Take the current file, which says `SET default_storage_engine` (14.5.5). |
+| Moving content to the trash fails; on PostgreSQL every new object, node or version fails to save | `ezcontentobject_trash.trashed` missing, or the old `<table>_s` sequence names: a 6.0 file from before October 2026 | Apply the current `6.0/dbupdate-5.4.0-6.0.0.sql` (MySQL) or `dbupdate-5.4-to-6.0.sql` (PostgreSQL) again; it changes only what is missing, then set the version row back to `6.0.15stable` ([11.3](11-upgrading.md#the-612-72-and-73-directories)). |
 | "Duplicate entry" adding `ezcontentobject_remote_id` or the digest address index | Duplicates older releases allowed | The preflight of 14.5.3. |
 | "Duplicate column" or "Duplicate key name" in the 4.0 to 4.2 files | The statements of a patch release already applied | Remove that `START: from` block from a copy (14.5.5). |
 | `Unknown column 'priority'` or similar from a repair script | Script run by today's kernel against an intermediate schema | Phase A first, then phase B (14.5.4). |
