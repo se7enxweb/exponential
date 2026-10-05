@@ -788,7 +788,9 @@ html:has(body.a4-login-page) { background: var(--a4-login-bg, #fff); }
   display: block; width: 168px; height: 40px;
   background: url('../images/admin4/logo-light.png') no-repeat 0 50% / auto 36px;
 }
-html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/logo_separator_sprite.png'); background-position: -124px 50%; background-size: auto; }
+/* the dark logo is the white one of admin3's sprite (500x100): 114x32 at x 124, in the top band, so the sprite is
+   placed by pixels like admin3's header does, not centred (centred, the box showed the separator blocks below it) */
+html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/logo_separator_sprite.png'); background-position: -124px 4px; background-size: auto; width: 114px; }
 .a4-login-box { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 380px; margin: 0 auto; padding: 32px 0; }
 .a4-login-legal { flex: 0 0 auto; text-align: center; font-size: 12.5px; color: var(--a4-muted); }
 .a4-login-legal p { margin: 4px 0; }
