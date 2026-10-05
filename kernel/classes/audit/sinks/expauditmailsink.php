@@ -227,6 +227,7 @@ class expAuditMailSink extends expAuditSinkBase
                 $ok = $t->sendMail( $mail );
             }
             else
+                $mail->setCategory( 'admin' );
                 $ok = eZMailTransport::send( $mail );
             if ( !$ok )
                 $this->lastError = 'the mail transport refused the mail';

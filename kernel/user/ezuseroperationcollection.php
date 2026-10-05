@@ -162,6 +162,7 @@ class eZUserOperationCollection
             $mail->setReceiver( $receiver );
             $mail->setSubject( $subject );
             $mail->setBody( $templateResult );
+            $mail->setCategory( 'security' );
             $mailResult = eZMailTransport::send( $mail );
         }
         return array( 'status' => eZModuleOperationInfo::STATUS_CONTINUE );
@@ -250,6 +251,7 @@ class eZUserOperationCollection
         $mail->setReceiver( $receiver );
         $mail->setSubject( $subject );
         $mail->setBody( $templateResult );
+        $mail->setCategory( 'security' );
         $mailResult = eZMailTransport::send( $mail );
 
         return array( 'status' => eZModuleOperationInfo::STATUS_CONTINUE );

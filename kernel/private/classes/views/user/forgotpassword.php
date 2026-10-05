@@ -99,6 +99,7 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                     $mail->setContentType( $tpl->variable( 'content_type' ) );
                 $mail->setSubject( $subject );
                 $mail->setBody( $templateResult );
+                $mail->setCategory( 'security' );
                 $mailResult = \eZMailTransport::send( $mail );
                 $tpl->setVariable( 'generated', true );
                 $tpl->setVariable( 'email', $email );
@@ -222,6 +223,7 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                         $subject = $tpl->variable( 'subject' );
                     $mail->setSubject( $subject );
                     $mail->setBody( $templateResult );
+                    $mail->setCategory( 'security' );
                     $mailResult = \eZMailTransport::send( $mail );
                     $tpl->setVariable( 'email', $email );
                     // Audit (doc/bc/6.0/audit.md, access.user.password.reset.request): never the hash key

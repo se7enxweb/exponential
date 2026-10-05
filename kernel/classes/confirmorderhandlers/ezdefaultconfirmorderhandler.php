@@ -55,6 +55,7 @@ class eZDefaultConfirmOrderHandler
             $mail->setSender( $emailSender );
             $mail->setSubject( $subject );
             $mail->setBody( $templateResult );
+            $mail->setCategory( 'orders' );
             $mailResult = eZMailTransport::send( $mail );
 
             $email = $ini->variable( 'MailSettings', 'AdminEmail' );
@@ -68,6 +69,7 @@ class eZDefaultConfirmOrderHandler
             $mail->setSender( $emailSender );
             $mail->setSubject( $subject );
             $mail->setBody( $templateResult );
+            $mail->setCategory( 'orders' );
             $mailResult = eZMailTransport::send( $mail );
         }
     }

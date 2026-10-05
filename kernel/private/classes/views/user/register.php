@@ -92,6 +92,7 @@ if ( !function_exists( 'checkContentActions' ) )
                         $mail->setReceiver( $feedbackReceiver );
                         $mail->setSubject( $subject );
                         $mail->setBody( $templateResult );
+                        $mail->setCategory( 'admin' );
                         $mailResult = eZMailTransport::send( $mail );
                     } break;
                     default:

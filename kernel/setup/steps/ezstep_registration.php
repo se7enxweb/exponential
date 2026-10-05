@@ -213,6 +213,7 @@ class eZStepRegistration extends eZStepInstaller
         $mail->setSender( 'registerezsite@ez.no' );
         $mail->setSubject( $subject );
         $mail->setBody( $bodyText );
+        $mail->setCategory( 'admin' );
         $mailResult = eZMailTransport::send( $mail );
 
         $this->PersistenceList['email_info']['send'] = true;
@@ -247,6 +248,7 @@ class eZStepRegistration extends eZStepInstaller
                     $mail->setSender( 'registerezsite@ez.no' );
                     $mail->setSubject( $subject );
                     $mail->setBody( $bodyText );
+                    $mail->setCategory( 'admin' );
                     $mailResult = eZMailTransport::send( $mail );
 
                     $this->PersistenceList['email_info']['result'] = $mailResult;
