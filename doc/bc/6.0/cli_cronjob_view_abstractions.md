@@ -441,6 +441,18 @@ Proof, per kind and after every stage:
 | Cronjob parts | `runcronjobs.php` runs the default and frequent groups as before; parts in no group are run through `eZRunCronjobs::runScript()` |
 | Module views | the pages of every module fetched before and after (status, title, errors, content); the edit-mode test of every content class |
 
+## The stream views under Velocity
+
+The views that answer with their own body instead of a page: setup/preloadstream, setup/staticcachestream,
+setup/cronjobsstream, and the Ajax answer of setup/cronjobs. They empty the output buffers with
+`eZExecution::discardOutputBuffers()` (since 2026-10-05). The loop they used before,
+`while ( ob_get_level() > 0 ) ob_end_clean();`, never ended under Velocity, because the worker keeps a buffer
+that cannot be removed, and the request hung.
+
+Under PHP-FPM the progress events stream as they happen. **Under Velocity (:8080) a response is sent when the
+script ends**, so a progress page shows nothing while the work runs and then gets every event at once. The
+result is complete; only the live progress is missing. Use the site's PHP-FPM address to watch a long run.
+
 ## Tests
 
 ```bash
