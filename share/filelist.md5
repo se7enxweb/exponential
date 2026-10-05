@@ -6637,7 +6637,7 @@ ebf9a7ec9809b0f855cecf8f42b88a44  tests/tests/kernel/classes/audit/expAuditRecor
 12fa489a88ec679f0a8014b7018734c4  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 48b46955f2d2754be10ad2ea72e3687d  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php
 79ddb3ce226847a0407e965b1d7e99f3  tests/tests/kernel/classes/audit/fixtures/expaudittestwebhookreceiver.php
-7650cd28a69ec3b04ce12c8ea462d938  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
+fece97afbc3620baf6286f5b96f63340  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
 590fa866a4775d0d26dbf47125ea0951  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 3716fe7631e22ea83ff4683e87988369  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
 822bc946c29f058cf3cf0247978f096b  tests/tests/kernel/classes/clusterfilehandlers/eZClusterFileHandlerAbstract.php
