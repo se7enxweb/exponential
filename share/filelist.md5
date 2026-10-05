@@ -7430,7 +7430,7 @@ b0efa92c284f320fde8c30ffc98748f5  design/standard/templates/mailpreferences/admi
 d005d69e32fff23d01d7e082875bb829  design/standard/templates/mailpreferences/admin/suppression.tpl
 504c2d00745bc2cc651d56c35c72d9a0  design/standard/templates/mailpreferences/admin/user.tpl
 2c00025e7d889c87308bd28f0562cfe6  design/standard/templates/mailpreferences/confirm.tpl
-95358261e2eb697822bd5bc001e5c2dd  design/standard/templates/mailpreferences/mail/confirm.tpl
+6348c92bd32461a786bd6c3369780d02  design/standard/templates/mailpreferences/mail/confirm.tpl
 81902709553651a8de824168bead9f35  design/standard/templates/mailpreferences/mail/email_change.tpl
 9355dcb8336a8501bc49f862764b8fba  design/standard/templates/mailpreferences/mail/footer.tpl
 a3b7b90caa405e96e1054476258dfdca  design/standard/templates/mailpreferences/mail/footer_html.tpl
