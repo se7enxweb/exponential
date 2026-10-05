@@ -4681,7 +4681,7 @@ e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
 342e118abe04b2b9e9ebc46328e5dfd8  kernel/classes/expkickstarterini.php
 7a07e3a463f4b41105e7fcc17ab5c98d  kernel/classes/expmaintenance.php
 846590ae94cadbe8b9122bfb25b89d0c  kernel/classes/expnotificationjob.php
-ec9a503f37ff84870bcbeeb4969e8d76  kernel/classes/expnotificationservice.php
+781ad650d10d04c7ad3087a1fb815c95  kernel/classes/expnotificationservice.php
 7e9b9e87ecb71237a9ed4fa317fa4844  kernel/classes/exppasswordpolicy.php
 b8ca72676a5a9dfafef6ddb0b6e9ee7a  kernel/classes/expphar.php
 1a1f23777f111cdae910ac7ef5032192  kernel/classes/exppreloadjob.php
