@@ -303,7 +303,28 @@ class eZUserType extends eZDataType
             {
                 $user = eZUser::create( $contentObjectAttribute->attribute( 'contentobject_id' ) );
             }
+            // The address the account has now, as stored (the content of the attribute may already carry the
+            // edited one): a new address takes effect only once it is confirmed from the new mailbox
+            // (expMailAddressChange, mailpreferences.ini [EmailChangeSettings])
+            $db = eZDB::instance();
+            $stored = $db->arrayQuery( 'SELECT email FROM ezuser WHERE contentobject_id = ' . (int)$contentObjectAttribute->attribute( 'contentobject_id' ) );
+            $oldEmail = isset( $stored[0]['email'] ) ? (string)$stored[0]['email'] : '';
             $user = $this->updateUserDraft( $user, $serializedDraft );
+            $newEmail = (string)$user->attribute( 'email' );
+            if ( $oldEmail !== '' && strcasecmp( trim( $oldEmail ), trim( $newEmail ) ) !== 0 && class_exists( 'expMailAddressChange' ) )
+            {
+                $user->setAttribute( 'email', $oldEmail );
+                try
+                {
+                    if ( expMailAddressChange::request( $user, $newEmail ) === expMailAddressChange::CHANGED )
+                        $user->setAttribute( 'email', $newEmail );
+                }
+                catch ( Throwable $e )
+                {
+                    // the account keeps its address; the person can ask again
+                    eZDebug::writeError( 'E-mail address change: ' . $e->getMessage(), __METHOD__ );
+                }
+            }
             $user->store();
             $contentObjectAttribute->setContent( $user );
 

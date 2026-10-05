@@ -209,6 +209,10 @@ class expAccountServices extends expUsersBase
         if ( !eZUser::authenticateHash( $user->attribute( 'login' ), $password, $user->site(), $user->attribute( 'password_hash_type' ), $user->attribute( 'password_hash' ) ) )
             throw new expServiceException( 'The password is wrong', 403 );
         self::validateNewAccount( $user->attribute( 'login' ), $email, null, (int)$user->attribute( 'contentobject_id' ) );
+        // a new address takes effect once it is confirmed from the new mailbox (mailpreferences.ini [EmailChangeSettings])
+        $change = class_exists( 'expMailAddressChange' ) ? expMailAddressChange::request( $user, $email ) : 'changed';
+        if ( $change !== 'changed' )
+            return self::ok( array( 'email' => $user->attribute( 'email' ), 'pending' => $change === 'pending_confirmation' ) );
         $user->setAttribute( 'email', $email );
         $user->store();
         return self::ok( array( 'email' => $email ) );

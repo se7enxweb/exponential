@@ -263,6 +263,18 @@ class MailPreferencesPage
                                    'double_opt_in' => (bool)$category->doubleOptIn,
                                    'subscriptions' => self::subscriptions( $recipient, $category ) );
         }
+        // a new address of the account waits for its confirmation (expMailAddressChange)
+        if ( $recipient->hasAccount() )
+        {
+            foreach ( \expMailPendingRow::fetchForKey( $recipient->key(), 'email_change' ) as $pending )
+            {
+                if ( (int)$pending->attribute( 'expires' ) > 0 && (int)$pending->attribute( 'expires' ) < time() )
+                    continue;
+                $data = $pending->dataArray();
+                $notices[] = array( 'type' => 'info', 'text' => self::tr( 'The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.',
+                    array( '%email' => \expMailPreferencesService::maskAddress( isset( $data['email'] ) ? (string)$data['email'] : '' ), '%current' => $recipient->email() ) ) );
+            }
+        }
         $notice = $notices ? array_shift( $notices ) : false;
         return array( 'mode' => $mode, 'form_action' => $formAction, 'email' => $recipient->email(), 'master' => $prefs->masterOn(),
                       'suppressed' => $prefs->isSuppressed(), 'categories' => $categories, 'essential' => $essential,

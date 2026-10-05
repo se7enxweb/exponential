@@ -286,6 +286,10 @@ class expUserServices extends expUsersBase
         $email = trim( self::post( 'email', 'string' ) );
         $user = self::user( $id );
         self::validateNewAccount( $user->attribute( 'login' ), $email, null, $id );
+        // a new address takes effect once it is confirmed from the new mailbox (mailpreferences.ini [EmailChangeSettings])
+        $change = class_exists( 'expMailAddressChange' ) ? expMailAddressChange::request( $user, $email ) : 'changed';
+        if ( $change !== 'changed' )
+            return self::ok( array( 'id' => $id, 'email' => $user->attribute( 'email' ), 'pending' => $change === 'pending_confirmation' ) );
         $user->setAttribute( 'email', $email );
         $user->store();
         return self::ok( array( 'id' => $id, 'email' => $email ) );

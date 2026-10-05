@@ -1037,6 +1037,7 @@ return array(
       'expKernelOverrideWizard'                                      => 'kernel/setup/expkerneloverridewizard.php',
       'expKickstarter'                                               => 'kernel/classes/expkickstarter.php',
       'expKickstarterIni'                                            => 'kernel/classes/expkickstarterini.php',
+      'expMailAddressChange'                                         => 'kernel/classes/mailpreferences/expmailaddresschange.php',
       'expMailBounceReader'                                          => 'kernel/classes/mailpreferences/expmailbouncereader.php',
       'expMailCategory'                                              => 'kernel/classes/mailpreferences/expmailcategory.php',
       'expMailCategoryHandler'                                       => 'kernel/classes/mailpreferences/expmailcategoryhandler.php',
