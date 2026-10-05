@@ -11,6 +11,11 @@ and `settings/`. The command console is `bin/php/console`. Many installations ad
 (`ln -s bin/php/console console`), so `./console` and `php bin/php/console` are the same program. When you run
 a script as `root`, add `--allow-root-user`; the script says so when it is needed.
 
+> **The full book.** This page is the short guide. Each section below has a chapter in the
+> [installation book](install/README.md) with the complete detail, annotated examples and references:
+> the setup wizard page by page, every kickstart.ini key, Exponential Velocity serving HTTPS without a separate web
+> server, SQLite 3 under heavy production load, the operations handbook, troubleshooting and security hardening.
+
 ## Contents
 
 1. [What you get, and the quick start](#1-what-you-get-and-the-quick-start)
@@ -27,6 +32,8 @@ a script as `root`, add `--allow-root-user`; the script says so when it is neede
 12. [Troubleshooting](#12-troubleshooting)
 
 ## 1. What you get, and the quick start
+
+*Full chapter: [01-introduction](install/01-introduction.md)*
 
 An installation is the Exponential kernel, the extensions listed in `composer.json`, a site package with its
 content and design, and three siteaccesses:
@@ -56,6 +63,8 @@ The `php` engine is PHP's own server, for development. For a real site use Expon
 Apache/nginx with PHP-FPM ([section 8](#8-serve-the-site-web-server-https-and-permissions)).
 
 ## 2. Requirements
+
+*Full chapter: [02-requirements](install/02-requirements.md)*
 
 ### PHP
 
@@ -111,6 +120,8 @@ One of these, chosen in [section 8](#8-serve-the-site-web-server-https-and-permi
 
 ## 3. Get the code
 
+*Full chapter: [03-getting-the-code](install/03-getting-the-code.md)*
+
 Pick one. All give the same installation.
 
 **Composer project** (quickest for a new site):
@@ -157,6 +168,8 @@ composer require se7enxweb/exponential-velocity:~0.0.4.42
 
 ## 4. Choose an install method
 
+*Full chapter: [04-choosing-an-install-method](install/04-choosing-an-install-method.md)*
+
 All three methods run the same setup steps (`kernel/setup/steps/`) and produce the same kind of installation.
 
 | | Setup wizard | Kickstarter | Console install |
@@ -178,6 +191,8 @@ How the site is served is chosen separately ([section 8](#8-serve-the-site-web-s
 | Role | **recommended**, every stage from development to production | the classic setup, shared hosting | production-ready alternative |
 
 ## 5. Install with the setup wizard
+
+*Full chapter: [05-setup-wizard](install/05-setup-wizard.md)*
 
 ### How it starts
 
@@ -225,6 +240,8 @@ The wizard logs its progress to `var/log/setup.log`. More: [setup wizard and edi
 [installer logs and seed data](specifications/6.0/installer-logs-and-seed-data.md).
 
 ## 6. Install with the kickstarter
+
+*Full chapter: [06-kickstarter](install/06-kickstarter.md)*
 
 The kickstarter (`bin/php/kickstarter.php`, console `exp:kickstarter`) runs the setup wizard's steps without a
 browser and reads every answer from `kickstart.ini` in the installation root. The commented template is
@@ -362,6 +379,8 @@ Full reference: [Kickstarter CLI](bc/6.0/kickstartercli.md), [Kickstarter](featu
 
 ## 7. Install with one console command
 
+*Full chapter: [07-console-install](install/07-console-install.md)*
+
 `exp:install` (`bin/php/install.php`) builds the kickstart configuration from its options, runs the same steps in
 the same process, and puts back any `kickstart.ini` that was there. Everything has a default, so this alone
 installs the `sevenx_multisite` package on SQLite with the user `admin` and a generated password:
@@ -405,6 +424,8 @@ configuration used is kept in `var/log/exp-install-<date>.ini` with passwords ma
 [Install in one command](features/6.0/install-in-one-command.md).
 
 ## 8. Serve the site: web server, HTTPS and permissions
+
+*Full chapters: [08-serving-the-site](install/08-serving-the-site.md) and [13-security-hardening](install/13-security-hardening.md)*
 
 The document root is always the installation root.
 
@@ -542,6 +563,8 @@ that can write the same files.
 
 ## 9. SQLite in production
 
+*Full chapter: [09-databases](install/09-databases.md)*
+
 SQLite is not only for trying Exponential. The kernel driver (`lib/ezdb/classes/ezsqlite3db.php`, class
 `eZSQLite3DB`) is built for a site under load.
 
@@ -604,6 +627,8 @@ More: [SQLite database support](features/6.0/sqlite-database.md),
 
 ## 10. After installing
 
+*Full chapter: [10-after-installing](install/10-after-installing.md)*
+
 1. **Log in** at the admin address the installer printed (for example `/admin/user/login`) as `admin`. Change the
    password (**Change password** in the user menu) and delete `var/log/initial-admin-password`. A lost password is
    reset with `php bin/php/resetuserpassword.php -u admin -g`.
@@ -654,6 +679,8 @@ Then continue with the guides:
 
 ## 11. Upgrading from an older version
 
+*Full chapter: [11-upgrading](install/11-upgrading.md)*
+
 Do not run the installer over an existing site. Follow [Upgrading](guides/upgrading.md): from 4.x, 5.x or an
 earlier 6.0.x to the current line, with the database update and the checklists per release.
 
@@ -661,6 +688,8 @@ The online manual has further installation notes:
 https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
 
 ## 12. Troubleshooting
+
+*Full chapter: [12-troubleshooting](install/12-troubleshooting.md)*
 
 | Symptom | Cause and fix |
 |---|---|
