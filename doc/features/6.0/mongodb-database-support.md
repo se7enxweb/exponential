@@ -78,7 +78,8 @@ leaked into other engines. Fixed in the same weeks (`e0d617f28e`, `93cdd0cf47`,
   gated to MySQL only, so those engines loaded no content. They now use the same
   SQL as MySQL, and only MongoDB takes its own path.
 - **Shared-hosting MySQL**: a database user with ordinary per-database
-  privileges (select, insert, update, delete, create, drop, index, alter) can
+  privileges (select, insert, update, delete, create, drop, index, alter,
+  lock tables, create temporary tables) can
   finish the wizard; it no longer needs root, SUPER or the right to list
   databases.
 - **PostgreSQL**: the wizard can be run again on a database that already has

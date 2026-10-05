@@ -4352,8 +4352,10 @@ EOF
 dnf install -y mongodb-org
 systemctl enable --now mongod
 
-# Create the database and application user
-mongosh admin --eval "
+# Create the application user in the site's database: the adapter connects with
+# mongodb://<user>:<password>@<server>:<port>/<database> and no authSource, so
+# MongoDB authenticates the user against that database, not against admin
+mongosh exp --eval "
   db.createUser({
     user: 'db',
     pwd: 'your-secure-password',
