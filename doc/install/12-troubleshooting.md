@@ -7,7 +7,7 @@ check, the setup wizard, the kickstarter and the console install, pages at run t
 server, caches, and signing in. Every message quoted here is copied from the code that prints it, with the file named,
 so you can search for the exact text you see. Each row gives the cause and the fix.
 
-[Contents](README.md) · Previous: [11. Upgrading](11-upgrading.md) · Next: [13. Security hardening](13-security-hardening.md)
+[Contents](README.md) · Previous: [11. Upgrading](11-upgrading.md) · Next: [13. Security hardening for production](13-security-hardening.md)
 
 ## 12.1 Start here
 
@@ -343,4 +343,4 @@ External:
 - [Exponential issue tracker](https://github.com/se7enxweb/exponential/issues),
   [community issues](https://github.com/se7enxweb/exponential-community/issues).
 
-[Contents](README.md) · Previous: [11. Upgrading](11-upgrading.md) · Next: [13. Security hardening](13-security-hardening.md)
+[Contents](README.md) · Previous: [11. Upgrading](11-upgrading.md) · Next: [13. Security hardening for production](13-security-hardening.md)

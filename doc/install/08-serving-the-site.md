@@ -9,9 +9,7 @@ workers, answers repeat pages from its own response cache and manages its own ce
 stand-in and Let's Encrypt. The chapter then covers the traditional setups (Apache with PHP-FPM, including on Plesk;
 nginx; FrankenPHP), the file permissions every setup needs, and running behind a reverse proxy.
 
-[Previous: 7. Install with one console command](07-console-install.md) ·
-[Next: 9. Databases](09-databases.md) ·
-[Contents](README.md)
+[Contents](README.md) · Previous: [7. The console install](07-console-install.md) · Next: [9. Databases](09-databases.md)
 
 ---
 
@@ -1356,6 +1354,4 @@ External:
 - Debian's Apache layout: [README.Debian of apache2](https://salsa.debian.org/apache-team/apache2/-/blob/master/debian/apache2.README.Debian)
 - HSTS: [RFC 6797](https://www.rfc-editor.org/rfc/rfc6797.html), [hstspreload.org](https://hstspreload.org/)
 
-[Previous: 7. Install with one console command](07-console-install.md) ·
-[Next: 9. Databases](09-databases.md) ·
-[Contents](README.md)
+[Contents](README.md) · Previous: [7. The console install](07-console-install.md) · Next: [9. Databases](09-databases.md)

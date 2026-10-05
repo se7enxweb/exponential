@@ -8,8 +8,7 @@ default and, with the driver Exponential ships, a full production database that 
 concurrent writes instead of failing them. The chapter ends with a comparison table and the notes that matter when
 code or content moves from one engine to another.
 
-[Previous: 8. Serving the site](08-serving-the-site.md) | [Next: 10. After installing](10-after-installing.md) |
-[Contents](README.md)
+[Contents](README.md) · Previous: [8. Serving the site](08-serving-the-site.md) · Next: [10. After installing](10-after-installing.md)
 
 ## Contents
 
@@ -1074,5 +1073,4 @@ External:
   PHP [oci8 connection handling](https://www.php.net/manual/en/oci8.connection.php) and
   [oci8 configuration](https://www.php.net/manual/en/oci8.configuration.php).
 
-[Previous: 8. Serving the site](08-serving-the-site.md) | [Next: 10. After installing](10-after-installing.md) |
-[Contents](README.md)
+[Contents](README.md) · Previous: [8. Serving the site](08-serving-the-site.md) · Next: [10. After installing](10-after-installing.md)

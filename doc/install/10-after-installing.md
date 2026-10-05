@@ -8,7 +8,7 @@ tuning it for speed, managing extensions and their order, and adding languages. 
 mechanism does, gives the commands with the settings they read, and ends with a way to check the result. Work
 through it once in order after the install; afterwards it serves as a reference.
 
-[Previous: 9. Databases](09-databases.md) | [Next: 11. Upgrading](11-upgrading.md) | [Contents](README.md)
+[Contents](README.md) · Previous: [9. Databases](09-databases.md) · Next: [11. Upgrading](11-upgrading.md)
 
 ## Contents
 
@@ -913,4 +913,4 @@ External:
   [DMARC (RFC 9989, which replaced RFC 7489)](https://www.rfc-editor.org/rfc/rfc9989.html).
 - Databases: the references of [chapter 9](09-databases.md#references).
 
-[Previous: 9. Databases](09-databases.md) | [Next: 11. Upgrading](11-upgrading.md) | [Contents](README.md)
+[Contents](README.md) · Previous: [9. Databases](09-databases.md) · Next: [11. Upgrading](11-upgrading.md)

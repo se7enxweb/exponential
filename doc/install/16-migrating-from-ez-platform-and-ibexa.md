@@ -12,7 +12,7 @@ images and URL aliases, the porting of custom bundles, and a real port from the 
 ends with the common issues, verification, rollback, a plan and a checklist. It covers every point of the vendor's
 own migration and update pages and says where the Exponential code differs from them.
 
-[Contents](README.md) · Previous: [15. Migrating from 5.x legacy](15-migrating-from-5x-legacy.md) · Next: [17. Migration reference](17-migration-reference.md)
+[Contents](README.md) · Previous: [15. Migrating from the 5.x legacy stack](15-migrating-from-5x-legacy.md) · Next: [17. Migration reference](17-migration-reference.md)
 
 ## Contents
 
@@ -1365,4 +1365,4 @@ Frameworks and PHP:
 - [Composer replace](https://getcomposer.org/doc/04-schema.md#replace), [MySQL RENAME TABLE](https://dev.mysql.com/doc/refman/8.4/en/rename-table.html),
   [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html).
 
-[Contents](README.md) · Previous: [15. Migrating from 5.x legacy](15-migrating-from-5x-legacy.md) · Next: [17. Migration reference](17-migration-reference.md)
+[Contents](README.md) · Previous: [15. Migrating from the 5.x legacy stack](15-migrating-from-5x-legacy.md) · Next: [17. Migration reference](17-migration-reference.md)

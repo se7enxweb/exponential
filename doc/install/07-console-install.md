@@ -14,8 +14,7 @@ a laptop, a test system, a container, a CI job. When you want the configuration 
 safe place and run again, use the kickstarter ([chapter 6](06-kickstarter.md)); `exp:install` runs the same steps, so
 the result is the same.
 
-[Previous: 6. The kickstarter](06-kickstarter.md) | [Next: 8. Serving the site](08-serving-the-site.md) |
-[Contents](README.md)
+[Contents](README.md) · Previous: [6. The kickstarter](06-kickstarter.md) · Next: [8. Serving the site](08-serving-the-site.md)
 
 ---
 
@@ -635,3 +634,5 @@ External:
 - Oracle Easy Connect naming: <https://docs.oracle.com/en/database/oracle/oracle-database/19/netag/configuring-naming-methods.html>
 - Symfony Console (the model for `bin/php/console`): <https://symfony.com/doc/current/console.html>
 - Exponential on GitHub: <https://github.com/se7enxweb/exponential>
+
+[Contents](README.md) · Previous: [6. The kickstarter](06-kickstarter.md) · Next: [8. Serving the site](08-serving-the-site.md)
