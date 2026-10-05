@@ -618,7 +618,7 @@ restored is a hope, not a backup. See [Maintenance mode](../features/6.0/mainten
 |---|---|---|
 | `error.log` | the kernel, always (`site.ini [DebugSettings] AlwaysLog[]=error`) | failures: the first place to look |
 | `warning.log`, `notice.log`, `debug.log`, `strict.log` | the kernel, when enabled | investigations |
-| `setup.log`, `exp-install-<date>.ini` | the installers: one record per installation run, and the configuration `exp:install` used (passwords masked) | install problems |
+| `setup.log`, `kickstart.log`, `exp-install-<date>.ini` | the installers: one record per installation run (`setup.log`), the full output of each `exp:kickstarter` run (`kickstart.log`, earlier runs in `.1` to `.9`), the configuration `exp:install` used; passwords masked in all three | install problems |
 | `mail/` | the file transports | the mails that would have gone out |
 | `oracle-slow.log` | `ezoracle`, with `SlowQueryThreshold` | slow Oracle statements |
 | `cron-*.log` | your crontab redirections | cron output |
