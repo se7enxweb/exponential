@@ -1863,6 +1863,17 @@ class eZContentObject extends eZPersistentObject
         // This is part of the new 3.8 code.
         foreach ( $nodeAssignmentList as $nodeAssignment )
         {
+            // A location still to be created (CREATE without remote_id) of an object that was never published is copied
+            // as it is: createNewVersion() rebuilds the assignments from the existing nodes, and such an object has none,
+            // so the copy of a rejected first version lost its location and asked for one again on publishing. Objects
+            // marked published without a node (object relation list) keep the old rule.
+            if ( $nodeAssignment->attribute( 'remote_id' ) == 0 &&
+                 $nodeAssignment->attribute( 'op_code' ) == eZNodeAssignment::OP_CODE_CREATE &&
+                 $this->attribute( 'status' ) == eZContentObject::STATUS_DRAFT )
+            {
+                $nodeAssignment->cloneNodeAssignment( $newVersionNumber, $contentObjectID )->store();
+                continue;
+            }
             // Only copy assignments which has a remote_id since it will be used in template code.
             if ( $nodeAssignment->attribute( 'remote_id' ) == 0 )
             {
