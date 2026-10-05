@@ -43101,6 +43101,81 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
 </context>
 <context>
+    <name>design/standard/user/password</name>
+    <message>
+        <source>Change your password</source>
+        <translation>Ihr Passwort ändern</translation>
+    </message>
+    <message>
+        <source>Your password has been changed</source>
+        <translation>Ihr Passwort wurde geändert</translation>
+    </message>
+    <message>
+        <source>You are still signed in here. Use the new password the next time you sign in.</source>
+        <translation>Sie bleiben hier angemeldet. Verwenden Sie das neue Passwort bei der nächsten Anmeldung.</translation>
+    </message>
+    <message>
+        <source>We sent a confirmation to your e-mail address.</source>
+        <translation>Wir haben eine Bestätigung an Ihre E-Mail-Adresse geschickt.</translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation>Weiter</translation>
+    </message>
+    <message>
+        <source>Your password was not changed</source>
+        <translation>Ihr Passwort wurde nicht geändert</translation>
+    </message>
+    <message>
+        <source>Signed in as %1.</source>
+        <translation>Angemeldet als %1.</translation>
+    </message>
+    <message>
+        <source>Current password</source>
+        <translation>Aktuelles Passwort</translation>
+    </message>
+    <message>
+        <source>current password</source>
+        <translation>aktuelles Passwort</translation>
+    </message>
+    <message>
+        <source>New password</source>
+        <translation>Neues Passwort</translation>
+    </message>
+    <message>
+        <source>new password</source>
+        <translation>neues Passwort</translation>
+    </message>
+    <message>
+        <source>Your new password needs:</source>
+        <translation>Ihr neues Passwort braucht:</translation>
+    </message>
+    <message>
+        <source>Generate a strong password</source>
+        <translation>Ein starkes Passwort erzeugen</translation>
+    </message>
+    <message>
+        <source>new password again</source>
+        <translation>Wiederholung des neuen Passworts</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Passwort ändern</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Confirm new password</source>
+        <translation>Neues Passwort bestätigen</translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices.</source>
+        <translation>Auf Ihren anderen Geräten wurden Sie abgemeldet.</translation>
+    </message>
+</context>
+<context>
     <name>design/standard/user/</name>
     <message>
         <source>The new password must be at least %1 characters long. Please retype your new password.</source>

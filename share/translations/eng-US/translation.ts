@@ -36669,6 +36669,81 @@ your account.</translation>
     </message>
 </context>
 <context>
+    <name>design/standard/user/password</name>
+    <message>
+        <source>Change your password</source>
+        <translation>Change your password</translation>
+    </message>
+    <message>
+        <source>Your password has been changed</source>
+        <translation>Your password has been changed</translation>
+    </message>
+    <message>
+        <source>You are still signed in here. Use the new password the next time you sign in.</source>
+        <translation>You are still signed in here. Use the new password the next time you sign in.</translation>
+    </message>
+    <message>
+        <source>We sent a confirmation to your e-mail address.</source>
+        <translation>We sent a confirmation to your e-mail address.</translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation>Continue</translation>
+    </message>
+    <message>
+        <source>Your password was not changed</source>
+        <translation>Your password was not changed</translation>
+    </message>
+    <message>
+        <source>Signed in as %1.</source>
+        <translation>Signed in as %1.</translation>
+    </message>
+    <message>
+        <source>Current password</source>
+        <translation>Current password</translation>
+    </message>
+    <message>
+        <source>current password</source>
+        <translation>current password</translation>
+    </message>
+    <message>
+        <source>New password</source>
+        <translation>New password</translation>
+    </message>
+    <message>
+        <source>new password</source>
+        <translation>new password</translation>
+    </message>
+    <message>
+        <source>Your new password needs:</source>
+        <translation>Your new password needs:</translation>
+    </message>
+    <message>
+        <source>Generate a strong password</source>
+        <translation>Generate a strong password</translation>
+    </message>
+    <message>
+        <source>new password again</source>
+        <translation>new password again</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Change password</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Confirm new password</source>
+        <translation>Confirm new password</translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices.</source>
+        <translation>You were signed out on your other devices.</translation>
+    </message>
+</context>
+<context>
     <name>design/standard/user/forgotpassword</name>
     <message>
         <source>Have you forgotten your password?</source>
