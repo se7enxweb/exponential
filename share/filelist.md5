@@ -1,8 +1,12 @@
 d2b5e30a47622d50895c8df1e65cadd7  .autoloadignore
 d3c3da531de3f903a6857f522f3ba0db  .gitattributes
+e4e94613754abb37886f57b4c7fd7914  .githooks/commit-msg
+ac5ab8e55af3e5a116d1b30f5f38e646  .githooks/pre-commit
+e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 26637bf1b89fe3b8acd7153af8c24798  .github/workflows/phpunit.yml
-afd8b5622f05fc0411184e516b3fc495  .gitignore
+beaf65bc239a1154ccf13eb0d4ea7458  .github/workflows/quality.yml
+91f2494af6f4cfcfa8f8f952b7610c22  .gitignore
 ccc8e89e611f0b022b2399eb9b74c1a8  .htaccess_root
 0f412f7d6d70465f93b7c8a6058a39db  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
@@ -10,6 +14,7 @@ a184ff1f4cd1fd4ec3a82e7744fd7e62  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
+daf6f35e80e4bc6bf6b188b463e8232c  Makefile
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 560e1aa278482b641bc07c21bf942c95  autoload.php
@@ -41,7 +46,9 @@ f916c8a57dd6118120e22bd349dddb1c  bin/mongodb/import_all.sh
 1a9635e4b6f5bb48a85dcf4160f33d9f  bin/php/cache.php
 07f79adddbab498717b40f6f5784cc16  bin/php/changelog2xmltext.php
 c30ca2405c294016ec43ed10fd9754d9  bin/php/checkclasses.php
+8681654d55b040bd395cab78e1cf5657  bin/php/checkcodestyle.php
 59d30ed928ba5ac1d5e964feca88996c  bin/php/checkdbfiles.php
+4aa28c84e066cb860abbf08b16052d6a  bin/php/checkmanifest.php
 f3b44ca8ed062f79e4bb8f1b15740b4a  bin/php/cleanuppolicies.php
 a26b90f83a935a64e5db3eb84f9a5cfd  bin/php/cleanuprss.php
 5f9ea541443a17ad9f7471ea7855812d  bin/php/cleanupversions.php
@@ -155,6 +162,8 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
+528f3356d9c25587d712abb9857271a2  composer.dev.json
+2cb63e0dd60ce9447944bffdf50e0982  composer.dev.lock
 984ec464fafc27a88a62cfc02d99d41e  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
@@ -3251,6 +3260,7 @@ cf2e7d813fabc03f01844c24a2a5448d  doc/features/6.0/platform-admin-ui-fork.md
 9e77ed427c85349ff66f9ab6e00b9206  doc/features/6.0/platform-site-bundles.md
 77b6dcb702be5b7cb2f3197dd5c1aef1  doc/features/6.0/platform-sqlite-install.md
 b87c7fd9d7a10afee71e3283bf7f4761  doc/features/6.0/preload-sites-view.md
+26f4794ee8e717e0960b931d3afdb74e  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
@@ -3751,7 +3761,9 @@ dabbc5547359447e59f6850c6902fe1e  extension/expservices/classes/expiniservices.p
 36be293163ac1ef9da44d5b5b04616cf  extension/expservices/classes/exppackageservices.php
 540c98f1747b8deddb47cc36d9f4b638  extension/expservices/classes/expradservices.php
 50c413df7333b9c20a885daa0aad77ad  extension/expservices/classes/expservicebase.php
+1eac6eb6da20ea93fddeea07cb1b06f6  extension/expservices/classes/expservicesauditbranch.php
 ed91232ef686130422706ecafd169f92  extension/expservices/classes/expservicescatalog.php
+fe03a5c7c111d7deffdc3e08379a8f7b  extension/expservices/classes/expservicetoken.php
 c02aa796a2c4c6c813e5d3d3f1693549  extension/expservices/classes/expsessionservices.php
 2f22a95d2fa9bb1cbc77e039a4df0d03  extension/expservices/classes/expsystemservices.php
 78b00bb39c097c193d88910da97153f1  extension/expservices/classes/expvelocityservices.php
@@ -3823,11 +3835,15 @@ b69d305204dd0459049af2ee6e264f8b  extension/expservices/design/expportal_wirefra
 c7f40c2be79241d3bf9a5db1bbce34f1  extension/expservices/design/expportal_wireframe/templates/pagelayout.tpl
 8c6a8841a73ab23b6440f8e3fb778984  extension/expservices/extension.xml
 7870815fbb440d2fa2f09dc82c4b29fd  extension/expservices/ezinfo.php
+510670a8cc278fe145df0788ad812015  extension/expservices/settings/audit.ini.append.php
 187c339ef03fd21551ea8df7363f2065  extension/expservices/settings/design.ini.append.php
 6323a70ff83d0ff383da2b77168aff18  extension/expservices/settings/expportal.ini
 3c7d29caeca34ce3ed1bd3e7ddb2f58a  extension/expservices/settings/expservices.ini
 2a04614e3d398cc18020dfa168599904  extension/expservices/settings/ezjscore.ini.append.php
 373dcd7dd7638a994d6c3df0fee0a850  extension/expservices/share/db_schema.dba
+69b2573111b55f50398ba0fd31ab2e41  extension/expservices/sql/mysql/schema.sql
+08e40274a6363a7b3807a6831af1f3f8  extension/expservices/sql/postgresql/schema.sql
+64b66c96ceea589f529568e9b4b52606  extension/expservices/sql/sqlite/schema.sql
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezformtoken/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezformtoken/README
 e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
@@ -5995,6 +6011,9 @@ acfe374d099f06d43a18f896956ed607  lib/ezutils/classes/ezuri.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 84e594f01e8f4f64e610fdb8eae51b19  lib/version.php
+17b83082c16bc882fdd2f8e3cab925f1  phpcs.xml.dist
+c88f3f90d20b8debb746a3716b82a87c  phpstan-baseline.neon
+1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
 523b71e0b5d19d9590a27f09d1ac44d1  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
@@ -6586,6 +6605,7 @@ e970b2ccd968d235654af846d8803d58  tests/tests/extension/expservices/commerce/exp
 5f699dc0a3ad1b4c9e7958dc0c8ddc76  tests/tests/extension/expservices/commerce/expShippingPaymentServicesTest.php
 1d6adc5bc0ac2fe37653f0778ef22aa3  tests/tests/extension/expservices/commerce/expVatCurrencyServicesTest.php
 218b2c1b170a4c25cd969554a962baad  tests/tests/extension/expservices/community/expCommentPollServicesTest.php
+428f66c93577f90a144c476e07f4738f  tests/tests/extension/expservices/community/expFeedRunImportTest.php
 a9305c9bfebd725fab55ddbab1a255e2  tests/tests/extension/expservices/community/expFeedServicesTest.php
 2fbd4dd8fc5d7d8214a23aedc0e6861f  tests/tests/extension/expservices/community/expForumServicesTest.php
 36248ad497b7042499ad22f4e11950bc  tests/tests/extension/expservices/community/expInfoCollectionServicesTest.php
@@ -6597,6 +6617,7 @@ cf38135cd5e29568ea9610633acd3552  tests/tests/extension/expservices/content/expN
 0fd11a80881d1014d56e51840f54a102  tests/tests/extension/expservices/content/expSectionStateServicesTest.php
 c659f3de4d50b3cdf560230043eae5d2  tests/tests/extension/expservices/content/expUrlSearchJobServicesTest.php
 29e6addea46cd1846105b04bdda0358e  tests/tests/extension/expservices/content/expVersionTranslationServicesTest.php
+6cf066fbcc3a0fc148f68aa4a6751dcb  tests/tests/extension/expservices/core/expApiTokenTest.php
 c4872edf5c0877c504dfe1f75b722363  tests/tests/extension/expservices/core/expIniCacheServicesTest.php
 8dd9e189abcf134a9ba20ff36b8ec0a7  tests/tests/extension/expservices/core/expServiceBaseTest.php
 5bcbfc87bbc106bfd1e515308f672614  tests/tests/extension/expservices/core/expServicesCatalogTest.php
