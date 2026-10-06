@@ -2622,6 +2622,14 @@
         <source>No content object state is configured.</source>
         <translation>No content object state is configured.</translation>
     </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Publish without notification</translation>
+    </message>
+    <message>
+        <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
+        <translation>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_attribute</name>
@@ -3097,6 +3105,46 @@
     <message>
         <source>Toggle selection</source>
         <translation>Toggle selection</translation>
+    </message>
+    <message>
+        <source>You may edit this object, but not read it</source>
+        <translation>You may edit this object, but not read it</translation>
+    </message>
+    <message>
+        <source>The list shows every version of the object. You can compare and copy its published, archived and rejected versions and your own; a draft or pending version of someone else only with the policy content/versionread for it.</source>
+        <translation>The list shows every version of the object. You can compare and copy its published, archived and rejected versions and your own; a draft or pending version of someone else only with the policy content/versionread for it.</translation>
+    </message>
+    <message>
+        <source>The versions were not compared</source>
+        <translation>The versions were not compared</translation>
+    </message>
+    <message>
+        <source>You may not read version %1.</source>
+        <translation>You may not read version %1.</translation>
+    </message>
+    <message>
+        <source>Version %1 was not copied</source>
+        <translation>Version %1 was not copied</translation>
+    </message>
+    <message>
+        <source>You may not read this version, so you cannot copy it.</source>
+        <translation>You may not read this version, so you cannot copy it.</translation>
+    </message>
+    <message>
+        <source>You may not edit the translation %1.</source>
+        <translation>You may not edit the translation %1.</translation>
+    </message>
+    <message>
+        <source>Some versions were not removed</source>
+        <translation>Some versions were not removed</translation>
+    </message>
+    <message>
+        <source>Not removed: %1. You may not remove these versions, or they are published or part of a workflow that is still running.</source>
+        <translation>Not removed: %1. You may not remove these versions, or they are published or part of a workflow that is still running.</translation>
+    </message>
+    <message>
+        <source>You cannot copy version #%version_number because you may not read it.</source>
+        <translation>You cannot copy version #%version_number because you may not read it.</translation>
     </message>
 </context>
 <context>
@@ -5439,6 +5487,14 @@
     <message>
         <source>View mode</source>
         <translation>View mode</translation>
+    </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Publish without notification</translation>
+    </message>
+    <message>
+        <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
+        <translation>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</translation>
     </message>
 </context>
 <context>
@@ -30654,6 +30710,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Descending</source>
         <translation>Descending</translation>
     </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Publish without notification</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/edit_languages</name>
@@ -31632,6 +31692,10 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
         <translation>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</translation>
+    </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Publish without notification</translation>
     </message>
 </context>
 <context>

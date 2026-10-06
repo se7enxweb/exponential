@@ -66,6 +66,12 @@ Access is decided by **roles** made of **policies** (module, function, limitatio
 
 Roles can hold dozens of policies; each policy shows its ID, the headings sort the list, and the editor has up and down buttons (they only tidy the list, the order never changes who may do what): [role policy order](../features/6.0/role-policy-order.md). A role given to many users lists them a page at a time, sorted by name, with a name filter, and shows assignments whose user or group is gone: [role assignment paging](../features/6.0/role-assignment-paging.md). Admin links already follow permissions, so a user never sees a link to something that would be refused: [admin links follow permissions](../features/6.0/admin-links-follow-permissions.md).
 
+An edit policy opens more than the editor: whoever may edit an object may also open its versions (`content/history`)
+without a read policy for it, and there see every version's number, status, translation, creator and dates, and
+compare and copy its published, archived and rejected versions. Someone else's draft or pending version stays closed
+without `content/versionread`. So limit an edit policy as you limit the read policy of the same role: [the versions
+of a draft](../bc/6.0/draft-edit-access.md#the-versions-of-such-an-object-contenthistory).
+
 Use the same rules in templates:
 
 ```

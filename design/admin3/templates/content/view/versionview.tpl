@@ -266,6 +266,9 @@
                                         <input class="button" type="submit" name="PreviewPublishButton"
                                             value="{'Publish'|i18n( 'design/admin/content/view/versionview' )}"
                                             title="{'Publish the draft that is being displayed.'|i18n( 'design/admin/content/view/versionview' )}" />
+                                        {if and( ezini( 'NotificationSettings', 'PublishWithoutNotification', 'notification.ini' )|eq( 'enabled' ), fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'publish_without_notification' ) ) )}
+                                        <input class="button" type="submit" name="PreviewPublishNotNotifyButton" value="{'Publish without notification'|i18n( 'design/admin/content/view/versionview' )}" title="{'Publish without notifying the subscribers of its location: no notification mail is sent for this version.'|i18n( 'design/admin/content/view/versionview' )}" />
+                                        {/if}
                                         <input class="button-disabled" type="submit" disabled="disabled" name="BackButton"
                                             value="{'Back'|i18n( 'design/admin/content/view/versionview' )}" />
                                     {else}
