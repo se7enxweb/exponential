@@ -172,7 +172,7 @@ b974dde24700fd18ba9d30714509893a  composer.dev.json
 878259d32483f0f5d23e3e8d4f8591be  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
-ab9aa05ef4f1d7bed89ee4ce14129703  config.php-RECOMMENDED
+875fe6f304460f35898e4a4c88ce8583  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
 61d291489da4f9b45b694496ab0a7289  cronjobs/basket_cleanup.php
 239cd3f0ef83b344abc63672ba39a9d6  cronjobs/cachecleanup.php
@@ -2693,6 +2693,7 @@ d88ed154806689c479cf5a1a70587fa5  doc/bc/6.0/hardening.md
 fca17d35cfc097ff4b57c3c5c871b55a  doc/bc/6.0/http-caching.md
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/bc/6.0/http2-and-cache-warming.md
 46f5abffd259cd880e032cd8d1953acb  doc/bc/6.0/httpcache.md
+b4b2d3cf7a13a38b86ae1add01523e49  doc/bc/6.0/ini-save-file-permissions.md
 744e2ee1ba1dbc7018c79c78bf9dc28e  doc/bc/6.0/kickstartercli.md
 a6d977d642aa2384831b54248e80ecc6  doc/bc/6.0/locations-tab-paging-and-sorting.md
 e1a1f8a4940d420e0ab02a90567834b3  doc/bc/6.0/mail-preferences.md
@@ -2877,7 +2878,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f68adfa890c03407a90ff8f35613ade1  doc/changelogs/6.0/6.0.15.md
+e0c108543673bfc87efb2a404d87ac32  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3707,7 +3708,7 @@ fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
 e58caacbe4d88c5ed85375b795dd1c12  doc/install/10-after-installing.md
 194f0353ff6ee7e056cb6177d66fd27e  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
-2b46739d05cc5f6d693bbb60eb440406  doc/install/13-security-hardening.md
+08f745b103ff5fc101954ae37d01e58c  doc/install/13-security-hardening.md
 697395aba059076da8463bce457b9957  doc/install/14-migrating-from-4x.md
 e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
@@ -4868,7 +4869,7 @@ de6ee012e09dea22e9071fcf98facb54  kernel/classes/ini/actions/expiniactionset.php
 92ce081f374b31ef211e5f7b946ab849  kernel/classes/ini/actions/expinicommandcontext.php
 2ddc412fd380595455ac2fee43339f2c  kernel/classes/ini/actions/expinimover.php
 eca28603526cd6bdc930b7bda0e841df  kernel/classes/ini/expinicorescopeprovider.php
-a45962910c3089c1379974a2ad1a1f01  kernel/classes/ini/expinieditor.php
+7d55a57328fe467503df6660a6c7a072  kernel/classes/ini/expinieditor.php
 2c6ecc7a13c99ab318bd7d18e35f6ac1  kernel/classes/ini/expiniexception.php
 9df86dab0c4b68d885f549f9011f5e37  kernel/classes/ini/expiniextensionscopeprovider.php
 afa3bc5e5f85024055c95d966eae66f5  kernel/classes/ini/expinilocator.php
@@ -6081,7 +6082,7 @@ b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
 4edd44a9789dc177db1e7a33309beca9  lib/ezutils/classes/ezhttpfile.php
 e0d8ca296bb2d3d0968aa11679a8d064  lib/ezutils/classes/ezhttppersistence.php
 89782d0c27576afcd2cecb40fb66da7d  lib/ezutils/classes/ezhttptool.php
-771f06be57200254f4ed0dc8ca8eb1a5  lib/ezutils/classes/ezini.php
+cece74d35efa4b303bacf166d2435836  lib/ezutils/classes/ezini.php
 6ee94ad4b0549a535ff40c1dc5e9326d  lib/ezutils/classes/ezinputvalidator.php
 081fb5c82a7fe6ec4e9f97d6fd96c3fa  lib/ezutils/classes/ezintegervalidator.php
 c50b0e01761551f31dadcd7f46ca5fa5  lib/ezutils/classes/ezmail.php
@@ -6996,7 +6997,7 @@ eb1ae762df6703f8f49d16c1c748ab64  tests/tests/kernel/classes/ini/command/RadSurv
 959060a9c19ac27983250250ac2ef1af  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/classes/iniactionfixture.php
 38ef8b1831a5630e0e5f2542f1de2b39  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/settings/ini.ini.append.php
 ca21dfc2294d263c74c7fc15e003d1ca  tests/tests/kernel/classes/ini/command/fixtures/iniroot.php
-c0dd8393942df9359fd823e6903cd3e4  tests/tests/kernel/classes/ini/expIniEditorTest.php
+07892ad56bd37b7455dcaf04f1abb886  tests/tests/kernel/classes/ini/expIniEditorTest.php
 28c859263582a6aebfe788f1513bc6ca  tests/tests/kernel/classes/ini/expIniLocatorTest.php
 3a175c5b36d5e85d22a09afebdcf24e3  tests/tests/kernel/classes/ini/expIniRoundTripTest.php
 e661f4e1af49a324f6b521358bf30822  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
@@ -7492,6 +7493,7 @@ cf18f00c422de9b9f4ab10201485831c  tests/tests/lib/ezutils/eZDebugMessagesTest.ph
 941837b4dbd18a37bcb019e8fb86fb9b  tests/tests/lib/ezutils/eZHTTPToolTest.php
 2c63f7f0a0f75b87643f8adc22d3d3f7  tests/tests/lib/ezutils/eZINIEnvironmentTest.php
 e45dd6fcf44b971d6a9e2eac2bd4f1bc  tests/tests/lib/ezutils/eZINIParserAndAccessTest.php
+d4eef8f014d13e399e0aba17dbed3e77  tests/tests/lib/ezutils/eZINISaveFilePermissionsTest.php
 c6644c73d74f9f7d5926761a81c29253  tests/tests/lib/ezutils/eZINITest.php
 f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
 6108d2e9ccef5a860674d71bc38cc38e  tests/tests/lib/ezutils/eZMailTest.php
