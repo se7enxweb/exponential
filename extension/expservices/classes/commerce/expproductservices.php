@@ -386,7 +386,9 @@ class expProductServices extends expServiceBase
     {
         self::guard( 'setPrice' );
         $node = self::product( self::arg( $args, 0, 'int' ) );
-        if ( !$node->canEdit() )
+        // the location's edit check, through the filter content/edit/access as the REST interface does it
+        $object = $node->attribute( 'object' );
+        if ( !$object instanceof eZContentObject || !$object->filterEditAccess( $node->canEdit() ) )
             throw new expServiceException( 'No edit access to this product', 403 );
         $price = self::post( 'price', 'string' );
         if ( !is_numeric( $price ) || (float)$price < 0 )
