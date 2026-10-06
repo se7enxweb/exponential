@@ -410,8 +410,17 @@ class eZRole extends eZPersistentObject
         $db = eZDB::instance();
         $db->begin();
         $policies = $this->attribute( 'policies' );
-        $removePolicies = function () use ( $policies ) {
+        $roleID = (int)$this->attribute( 'id' );
+        $removePolicies = function () use ( $policies, $roleID ) {
             foreach ( $policies as $policy )
+            {
+                $policy->removeThis();
+            }
+            // policyList() has only the policies in use (original_id 0). The copies role/policyedit makes to edit a
+            // policy (original_id set) belong to the role too and were left behind without it.
+            $left = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'role_id' => $roleID ),
+                                                         null, null, true );
+            foreach ( is_array( $left ) ? $left : array() as $policy )
             {
                 $policy->removeThis();
             }
