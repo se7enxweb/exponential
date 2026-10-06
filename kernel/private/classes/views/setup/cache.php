@@ -81,7 +81,10 @@ class Cache extends \Exponential\Runnable\ModuleView
         $this->staticCacheAction( $module, $cacheCleared, $result );
 
         // After a clear the catalogue is read again, so sizes and dates are those after it
-        $catalogue = \expCacheCatalogue::fromSystem( array( 'sizes' => $measure, 'translate' => true ) );
+        $clearedNow = $result && $result['ok'] && $result['ids']
+                    ? array( 'ids' => $result['ids'], 'who' => (string)\eZUser::currentUser()->attribute( 'login' ) ) : array();
+        $catalogue = \expCacheCatalogue::fromSystem( array( 'sizes' => $measure, 'translate' => true, 'audit' => true,
+                                                           'cleared_now' => $clearedNow ) );
 
         $queryCacheAvailable = \expCacheManager::queryCacheAvailable();
         $velocityCache = \expCacheManager::velocityCacheStatus();
@@ -137,6 +140,7 @@ class Cache extends \Exponential\Runnable\ModuleView
     {
         return array( 'ok' => (bool)$ok, 'message' => (string)$message,
                       'names' => isset( $consequences['names'] ) ? $consequences['names'] : array(),
+                      'ids' => isset( $consequences['ids'] ) ? $consequences['ids'] : array(),
                       'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ),
                       'restart' => !empty( $consequences['restart'] ),
                       'response_cache' => !empty( $consequences['response_cache'] ),

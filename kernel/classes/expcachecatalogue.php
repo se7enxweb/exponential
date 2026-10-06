@@ -92,8 +92,8 @@ class expCacheCatalogue
      */
     public function __construct( array $described, array $options = array() )
     {
-        $this->options = $options + array( 'root' => '', 'last_cleared' => array(), 'measured' => false,
-                                           'translate' => false, 'time' => time() );
+        $this->options = $options + array( 'root' => '', 'last_cleared' => array(), 'audit' => array(), 'audit_available' => false,
+                                           'audit_who' => false, 'measured' => false, 'translate' => false, 'time' => time() );
         $this->options['translate'] = $this->options['translate'] && class_exists( 'ezpI18n' );
         foreach ( $described as $item )
             $this->items[] = $this->complete( $item );
@@ -107,7 +107,7 @@ class expCacheCatalogue
      */
     public static function fromSystem( array $options = array() )
     {
-        $options += array( 'sizes' => false, 'budget' => 3.0, 'translate' => false );
+        $options += array( 'sizes' => false, 'budget' => 3.0, 'translate' => false, 'cleared_now' => array() );
         $manager = new expCacheManager();
         $deadline = microtime( true ) + (float)$options['budget'];
         $described = array();
@@ -129,9 +129,26 @@ class expCacheCatalogue
             }
             $described[] = $desc;
         }
+        // The audit trail's clears (one index query, a bounded read of the newest file), for every cache
+        $audit = array( 'available' => false, 'who' => false, 'records' => array() );
+        $auditMap = array();
+        if ( !empty( $options['audit'] ) )
+        {
+            $audit = self::auditRecords();
+            $allIds = array();
+            foreach ( $manager->cacheList() as $item )
+                $allIds[] = $item['id'];
+            $auditMap = self::lastClearedFromAudit( $audit['records'], $manager->tagMap(), $allIds );
+        }
         return new self( $described, array(
             'root' => class_exists( 'eZSys' ) ? rtrim( (string)eZSys::rootDir(), '/' ) : '',
             'last_cleared' => self::lastCleared(),
+            'audit' => $auditMap,
+            'audit_available' => $audit['available'],
+            'audit_who' => $audit['who'],
+            'audit_file' => isset( $audit['file'] ) ? $audit['file'] : '',
+            'audit_records' => count( $audit['records'] ),
+            'cleared_now' => $options['cleared_now'],
             'measured' => (bool)$options['sizes'],
             'measured_all' => $complete,
             'translate' => $options['translate'],
@@ -159,6 +176,183 @@ class expCacheCatalogue
                 $out[$id] = (int)$time;
         }
         return $out;
+    }
+
+    /**
+     * The newest system.cache.clear records of the audit trail, normalised: one query of the audit index (at most
+     * $limit rows) and a bounded read of the newest system channel file from its end (at most $tailLines lines),
+     * for the clears the indexer has not reached yet. Clears from the page, Setup > System information and the
+     * command line (ezcache.php, exp:cache, exp:velocity deploy) are all recorded. Who cleared is only given to a
+     * user who may read the system channel of the audit; never fails the page.
+     *
+     * @param int $limit
+     * @param int $tailLines
+     * @return array available (bool), who (bool: names included), records (see normaliseRecord())
+     */
+    public static function auditRecords( $limit = 200, $tailLines = 3000 )
+    {
+        $out = array( 'available' => false, 'who' => false, 'records' => array(), 'file' => '', 'from_file' => 0 );
+        try
+        {
+            if ( !class_exists( 'expAuditConsole' ) || !class_exists( 'expAuditConfig' ) || !expAuditConsole::available() )
+                return $out;
+            $allowed = expAuditConsole::allowedChannels();
+            $out['who'] = expAuditConsole::channelAllowed( 'system', $allowed );
+            $seen = array();
+            // what the indexer has not reached yet: the newest system file, read from its end
+            $config = expAuditConfig::get();
+            $reader = new expAuditReader( self::auditLiveDir( $config['logDir'] ) );
+            $channels = $reader->channels();
+            $out['file'] = isset( $channels['system']['newest'] ) ? expSystemReportMask::path( $reader->dir() . '/' . $channels['system']['newest'], class_exists( 'eZSys' ) ? eZSys::rootDir() : '' ) : '';
+            if ( isset( $channels['system']['newest'] ) )
+            {
+                $n = 0;
+                foreach ( $reader->linesBackwards( $reader->dir() . '/' . $channels['system']['newest'] ) as $line )
+                {
+                    if ( ++$n > $tailLines )
+                        break;
+                    if ( strpos( $line, '"system.cache.clear"' ) === false )
+                        continue;
+                    $rec = json_decode( $line, true );
+                    if ( is_array( $rec ) && ( $norm = self::normaliseRecord( $rec, '', $out['who'] ) ) && !isset( $seen[$norm['id']] ) )
+                    {
+                        $seen[$norm['id']] = true;
+                        $out['records'][] = $norm;
+                    }
+                }
+            }
+            // older clears: one query of the index
+            if ( expAuditConsole::indexUsable() )
+            {
+                $query = new expAuditQuery();
+                $rows = $query->fetch( expAuditQuery::normalise( array( 'name' => 'system.cache.clear' ) ), null, 0, $limit,
+                                       'id, time_ms, login, record' );
+                foreach ( (array)$rows as $row )
+                {
+                    $rec = json_decode( (string)$row['record'], true );
+                    if ( !is_array( $rec ) )
+                        continue;
+                    $norm = self::normaliseRecord( $rec, isset( $row['login'] ) ? (string)$row['login'] : '', $out['who'] );
+                    if ( $norm && !isset( $seen[$norm['id']] ) )
+                    {
+                        $seen[$norm['id']] = true;
+                        $out['records'][] = $norm;
+                    }
+                }
+            }
+            $out['available'] = true;
+        }
+        catch ( Throwable $e )
+        {
+            if ( class_exists( 'eZDebug' ) )
+                eZDebug::writeWarning( 'The cache clears of the audit could not be read: ' . $e->getMessage(), 'setup/cache' );
+        }
+        return $out;
+    }
+
+    /**
+     * The directory the audit writes this siteaccess's records to: [AuditSettings] LogDir under the var directory of
+     * the request. A persistent Velocity worker can hold an audit configuration built before the siteaccess was
+     * known (var/ instead of var/<site>/), whose files stop at the worker's start; the request's own var
+     * directory is used when it has the files.
+     *
+     * @param string $configured the logDir of expAuditConfig::get()
+     * @return string
+     */
+    public static function auditLiveDir( $configured )
+    {
+        if ( !class_exists( 'eZSys' ) || !class_exists( 'eZINI' ) )
+            return $configured;
+        $ini = eZINI::instance( 'audit.ini' );
+        $logDir = $ini->hasVariable( 'AuditSettings', 'LogDir' ) ? trim( (string)$ini->variable( 'AuditSettings', 'LogDir' ) ) : 'log/audit';
+        if ( $logDir === '' || $logDir[0] === '/' )
+            return $configured;
+        $var = rtrim( (string)eZSys::varDirectory(), '/' );
+        if ( $var === '' )
+            return $configured;
+        if ( $var[0] !== '/' )
+            $var = rtrim( (string)eZSys::rootDir(), '/' ) . '/' . $var;
+        $candidate = $var . '/' . rtrim( $logDir, '/' );
+        return is_dir( $candidate ) ? $candidate : $configured;
+    }
+
+    /**
+     * One system.cache.clear record as the catalogue uses it.
+     *
+     * @param array $rec the record (a line of a channel file, or the record column of the index)
+     * @param string $login the login of the index row, when the record does not carry one
+     * @param bool $who whether to keep who cleared
+     * @return array|null id, time, how (id|tag|all|purge), asked (ids or tags), ids (cleared), who, shell
+     */
+    public static function normaliseRecord( array $rec, $login = '', $who = true )
+    {
+        if ( !isset( $rec['name'] ) || $rec['name'] !== 'system.cache.clear' || !isset( $rec['time'] ) )
+            return null;
+        $time = strtotime( (string)$rec['time'] );
+        if ( !$time )
+            return null;
+        $actor = isset( $rec['actor'] ) && is_array( $rec['actor'] ) ? $rec['actor'] : array();
+        $shell = isset( $actor['cli'] ) || ( isset( $rec['request']['engine'] ) && $rec['request']['engine'] === 'cli' );
+        $name = isset( $actor['login'] ) ? (string)$actor['login'] : (string)$login;
+        if ( $name === '' && isset( $actor['cli']['os_user'] ) )
+            $name = 'os:' . $actor['cli']['os_user'];
+        $asked = isset( $rec['object']['id'] ) ? (string)$rec['object']['id'] : '';
+        return array(
+            'id' => isset( $rec['id'] ) ? (string)$rec['id'] : md5( json_encode( $rec ) ),
+            'time' => $time,
+            'how' => isset( $rec['object']['how'] ) ? (string)$rec['object']['how'] : '',
+            'asked' => $asked === '' || $asked === 'all' ? array() : explode( ',', $asked ),
+            'ids' => isset( $rec['after']['ids'] ) ? array_values( array_map( 'strval', (array)$rec['after']['ids'] ) ) : array(),
+            'who' => $who ? $name : '',
+            'shell' => $shell,
+        );
+    }
+
+    /**
+     * The newest clear of each cache from normalised records: the ids a record cleared (after.ids), else what it
+     * asked for (ids, or tags through $tagMap), else every cache for a "clear all".
+     *
+     * @param array $records normaliseRecord() results, in any order
+     * @param array $tagMap tag => ids
+     * @param array $allIds every cache id
+     * @return array id => array( time, who, shell )
+     */
+    public static function lastClearedFromAudit( array $records, array $tagMap, array $allIds )
+    {
+        $out = array();
+        foreach ( $records as $r )
+        {
+            $ids = $r['ids'];
+            if ( !$ids && $r['how'] === 'tag' )
+                foreach ( $r['asked'] as $tag )
+                    $ids = array_merge( $ids, isset( $tagMap[$tag] ) ? $tagMap[$tag] : array() );
+            elseif ( !$ids && ( $r['how'] === 'id' || $r['how'] === 'purge' ) && $r['asked'] )
+                $ids = $r['asked'];
+            elseif ( !$ids && $r['how'] === 'all' )
+                $ids = $allIds;
+            foreach ( array_unique( $ids ) as $id )
+                if ( !isset( $out[$id] ) || $out[$id]['time'] < $r['time'] )
+                    $out[$id] = array( 'time' => $r['time'], 'who' => $r['who'], 'shell' => $r['shell'] );
+        }
+        return $out;
+    }
+
+    /**
+     * A time as the page says it: "just now", "5 minutes ago", "3 hours ago", else the date.
+     *
+     * @param int $time
+     * @return string
+     */
+    public function ago( $time )
+    {
+        $s = max( 0, (int)$this->options['time'] - (int)$time );
+        if ( $s < 120 )
+            return $this->t( 'just now' );
+        if ( $s < 7200 )
+            return $this->t( '%n minutes ago', array( '%n' => (int)floor( $s / 60 ) ) );
+        if ( $s < 86400 )
+            return $this->t( '%n hours ago', array( '%n' => (int)floor( $s / 3600 ) ) );
+        return date( 'Y-m-d H:i', (int)$time );
     }
 
     protected function t( $text, array $params = array() )
@@ -214,7 +408,25 @@ class expCacheCatalogue
         $tags = array_values( (array)( isset( $item['tags'] ) ? $item['tags'] : array() ) );
         $path = isset( $item['path'] ) && $item['path'] !== null ? (string)$item['path'] : '';
         $measured = array_key_exists( 'bytes', $item );
+        // the newer of the kernel's expiry timestamp and the audit trail's newest clear, with who cleared from the audit
         $last = isset( $this->options['last_cleared'][$id] ) ? (int)$this->options['last_cleared'][$id] : 0;
+        $who = '';
+        $shell = false;
+        // the same clear: the expiry and the record's time can be several seconds apart (seen under Velocity), so a
+        // record within half a minute of the expiry names who cleared
+        if ( isset( $this->options['audit'][$id] ) && (int)$this->options['audit'][$id]['time'] >= $last - 30 )
+        {
+            $last = max( $last, (int)$this->options['audit'][$id]['time'] );
+            $who = (string)$this->options['audit'][$id]['who'];
+            $shell = !empty( $this->options['audit'][$id]['shell'] );
+        }
+        // cleared by this very request: its audit record is written when the request ends
+        if ( !empty( $this->options['cleared_now']['ids'] ) && in_array( $id, $this->options['cleared_now']['ids'], true ) )
+        {
+            $last = (int)$this->options['time'];
+            $who = isset( $this->options['cleared_now']['who'] ) ? (string)$this->options['cleared_now']['who'] : '';
+            $shell = false;
+        }
         return array(
             'id' => $id,
             'name' => (string)$item['name'],
@@ -231,7 +443,9 @@ class expCacheCatalogue
             'complete' => $measured ? !empty( $item['complete'] ) : true,
             'size_text' => $measured ? ( empty( $item['complete'] ) ? '≥ ' : '' ) . expSystemReport::size( (int)$item['bytes'] ) : '',
             'last_cleared' => $last,
-            'last_cleared_text' => $last ? date( 'Y-m-d H:i', $last ) : '',
+            'last_cleared_text' => $last ? $this->ago( $last ) : '',
+            'last_cleared_by' => $who,
+            'last_cleared_shell' => $shell,
             'restart' => self::needsVelocityRestart( $id ),
             'response_cache' => self::needsResponseCacheClear( $id ),
             'command' => self::command( array( $id ) ),
@@ -346,7 +560,11 @@ class expCacheCatalogue
         }
         $o['complete'] = $o['complete'] && $o['measured_all'];
         $o['size_text'] = $o['measured'] ? ( $o['complete'] ? '' : '≥ ' ) . expSystemReport::size( $o['bytes'] ) : '';
-        $o['last_cleared_text'] = $o['last_cleared'] ? date( 'Y-m-d H:i', $o['last_cleared'] ) : '';
+        $o['last_cleared_text'] = $o['last_cleared'] ? $this->ago( $o['last_cleared'] ) : '';
+        $o['audit'] = (bool)$this->options['audit_available'];
+        $o['audit_who'] = (bool)$this->options['audit_who'];
+        $o['audit_file'] = isset( $this->options['audit_file'] ) ? (string)$this->options['audit_file'] : '';
+        $o['audit_records'] = isset( $this->options['audit_records'] ) ? (int)$this->options['audit_records'] : 0;
         return $o;
     }
 
@@ -359,12 +577,13 @@ class expCacheCatalogue
      */
     public function consequences( array $ids )
     {
-        $out = array( 'names' => array(), 'restart' => false, 'response_cache' => false, 'command' => self::command( $ids ) );
+        $out = array( 'names' => array(), 'ids' => array(), 'restart' => false, 'response_cache' => false, 'command' => self::command( $ids ) );
         foreach ( $this->items as $item )
         {
             if ( !in_array( $item['id'], $ids, true ) )
                 continue;
             $out['names'][] = $item['name'];
+            $out['ids'][] = $item['id'];
             $out['restart'] = $out['restart'] || $item['restart'];
             $out['response_cache'] = $out['response_cache'] || $item['response_cache'];
         }
