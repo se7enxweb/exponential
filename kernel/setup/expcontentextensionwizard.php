@@ -93,7 +93,8 @@ class expContentExtensionWizard extends expExtensionWizard
         // loading one that is not: a datatype is loaded by including a file,
         // and a survey of them must not be able to fail because one of them
         // has a fault in it.
-        foreach ( eZDataType::registeredDataTypes() as $type => $object )
+        // null, not an empty array, while no datatype is registered yet
+        foreach ( (array) eZDataType::registeredDataTypes() as $type => $object )
             if ( isset( $known[$type] ) && is_object( $object ) )
                 $known[$type]['name'] = (string) $object->attribute( 'name' );
 
