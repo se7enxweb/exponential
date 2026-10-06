@@ -176,7 +176,7 @@ On 5 October 2026 the page showed:
 `eng-GB` was the case this page was redesigned to make obvious: earlier that day it had 6 classes and no siteaccess
 of `AvailableSiteAccessList` listing it (only the unused settings folder `settings/siteaccess/eng` did). Its card
 said *In no SiteLanguageList* and *Not shown by any siteaccess*, and linked to the six classes. Once their `eng-GB`
-translations were removed, the card read *Unused* and its checkbox came on.
+translations were removed, the card read *Unused* and its checkbox came on; later that day the language was removed, and the page has listed two languages since.
 
 ## 4. Adding a language
 
