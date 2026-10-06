@@ -175,6 +175,10 @@ class eZPackageCreationHandlerTest extends PHPUnit\Framework\TestCase
             'continued lines' => array( "- First change\n  goes on\n- Second", array( 'First change goes on', 'Second' ) ),
             'windows line breaks' => array( "- One\r\n- Two\r- Three", array( 'One', 'Two', 'Three' ) ),
             'no bullets' => array( "Just text", array( 'Just text' ) ),
+            'a final line break' => array( "- One\n- Two\n", array( 'One', 'Two' ) ),
+            'empty lines between' => array( "- One\n\n\n- Two", array( 'One', 'Two' ) ),
+            'text before the first bullet' => array( "Intro\n- One", array( 'Intro', 'One' ) ),
+            'nothing' => array( "\n \n", array() ),
         );
     }
 

@@ -838,29 +838,26 @@ class eZPackageCreationHandler
         $changelogEntries = array();
         $changelogText = $persistentData['changelog_text'];
         $lines = preg_split( "#\r\n|\n|\r#", $changelogText );
-        $currentEntries = false;
+        // A line starting with - or * starts an entry, other lines continue the current one; empty lines
+        // separate nothing and are left out (they made "entry " out of a final line break)
+        $currentEntries = array();
         foreach ( $lines as $line )
         {
-            if ( strlen( $line ) > 0 and
-                 ( $line[0] == '-' or $line[0] == '*' ) )
+            $line = rtrim( $line );
+            if ( trim( $line ) === '' )
+                continue;
+            if ( $line[0] == '-' or $line[0] == '*' )
             {
-                if ( $currentEntries !== false )
-                {
+                if ( $currentEntries )
                     $changelogEntries[] = implode( ' ', $currentEntries );
-                }
-                $currentEntries = array();
-                $currentEntries[] = trim( substr( $line, 1 ) );
+                $currentEntries = array( trim( substr( $line, 1 ) ) );
             }
             else
             {
-                if ( $currentEntries === false )
-                {
-                    $changelogEntries = array();
-                }
                 $currentEntries[] = trim( $line );
             }
         }
-        if ( $currentEntries !== false )
+        if ( $currentEntries )
         {
             $changelogEntries[] = implode( ' ', $currentEntries );
         }
