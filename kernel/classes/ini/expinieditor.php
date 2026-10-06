@@ -1138,13 +1138,22 @@ class expIniEditor
         {
             $uid = fileowner( $path );
             $gid = filegroup( $path );
-            $mode = fileperms( $path ) & 07777;
+            // kept, less the bit that lets other users write it (doc/bc/6.0/ini-save-file-permissions.md)
+            $mode = fileperms( $path ) & 0775;
+        }
+        else if ( class_exists( 'eZINI' ) )
+        {
+            // the same as eZINI::save(): 0640 (or EZP_INI_SAVE_FILE_PERMISSION), owner and group of the
+            // directory, or of the nearest one above it that root does not own
+            list( $uid, $gid ) = eZINI::saveFileOwnership( $dir );
+            $mode = eZINI::newSaveFileMode();
         }
         else
         {
+            // loaded on its own, without the kernel
             $uid = fileowner( $dir );
             $gid = filegroup( $dir );
-            $mode = 0644;
+            $mode = 0640;
         }
 
         $runner = function_exists( 'posix_geteuid' ) ? posix_geteuid() : null;
@@ -1168,6 +1177,8 @@ class expIniEditor
         $h = @fopen( $tmp, 'x' );
         if ( !$h )
             throw expIniException::writeFailed( "Cannot create a temporary file in $dir" );
+        // owner only until it gets its final mode: it can hold passwords (settings/override)
+        @chmod( $tmp, 0600 );
         $ok = fwrite( $h, $content ) === strlen( $content );
         $ok = fflush( $h ) && $ok;
         if ( function_exists( 'fsync' ) )

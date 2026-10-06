@@ -211,6 +211,9 @@ class expIniEditorTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $r->backup() );
         $this->assertSame( "<?php /* #?ini charset=\"utf-8\"?\n\n[VersionManagement]\nDefaultVersionHistoryLimit=10\n\n*/ ?>",
                            $this->read( 'settings/siteaccess/plain/content.ini.append.php' ) );
+        // the same mode eZINI::save() gives a new settings file (doc/bc/6.0/ini-save-file-permissions.md)
+        clearstatcache();
+        $this->assertSame( eZINI::newSaveFileMode(), fileperms( $this->root . 'settings/siteaccess/plain/content.ini.append.php' ) & 07777 );
 
         $e = expIniEngineTestFixtures::editor( 'extension:exta:siteaccess:admin' );
         $e->add( 'DesignSettings', 'AdditionalSiteDesignList', 'exta' );

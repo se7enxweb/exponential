@@ -621,7 +621,11 @@ Principles (the procedure is in [chapter 8, section 8.7](08-serving-the-site.md#
 
   and fix existing files once: `find var -type d -exec chmod 2770 {} +` and `find var -type f -exec chmod 0660 {} +`
   (with the site's group on everything).
-- **Secrets** in `settings/override` (section 13.3): `0640` or stricter.
+- **Secrets** in `settings/override` (section 13.3): `0640` or stricter. Since 6.0.15 a save from the administration,
+  the debug bar or `exp:ini` keeps the file's mode, owner and group, and creates a new settings file `0640`
+  (`EZP_INI_SAVE_FILE_PERMISSION` in `config.php`); before, every save made the file `0666`. Check once that no
+  settings file is left world-writable: `find settings extension/*/settings -perm -o+w` must print nothing
+  ([upgrade note](../bc/6.0/ini-save-file-permissions.md)). INI cache files are `0644` (`EZP_INI_FILE_PERMISSION`).
 - **Logs** name visitors: Velocity writes its own with `0640` in a `0750` directory (`[LogSettings] FileMode`,
   `DirMode`), the response cache with the same modes.
 - **Symbolic links** out of the document root are refused by Velocity (`FollowSymlinks=disabled`); with Apache use

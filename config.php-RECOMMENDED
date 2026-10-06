@@ -65,11 +65,23 @@
 
 
 /*
-    Set EZP_INI_FILE_PERMISSION constant to the permissions you want saved
-    ini and cache files to have. This setting also applies to generated autoload files.
+    Set EZP_INI_FILE_PERMISSION constant to the permissions you want the INI
+    cache files (var/cache/ini) to have; the default is 0644. This setting also
+    applies to generated autoload files. It no longer applies to settings files
+    saved through the admin: see EZP_INI_SAVE_FILE_PERMISSION below.
     Do keep an octal number as value here ( meaning it starts by a 0 ).
 */
-//define( 'EZP_INI_FILE_PERMISSION', 0666 );
+//define( 'EZP_INI_FILE_PERMISSION', 0644 );
+
+/*
+    Set EZP_INI_SAVE_FILE_PERMISSION constant to the permissions a settings file
+    gets when it is created by a save (settings editor, debug bar, setup wizard,
+    exp:ini). The default is 0640: owner read/write, group read. A file that
+    already exists keeps its own mode, owner and group. The bit that lets other
+    users write is always removed, whatever is set here.
+    See doc/bc/6.0/ini-save-file-permissions.md.
+*/
+//define( 'EZP_INI_SAVE_FILE_PERMISSION', 0640 );
 
 
 

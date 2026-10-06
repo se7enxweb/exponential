@@ -76,6 +76,22 @@ class eZINI
     const INJECTED_PATH = 'injected';
 
     /**
+     * Mode of a settings file that save() creates (owner read/write, group read),
+     * unless EZP_INI_SAVE_FILE_PERMISSION says otherwise. A file that already
+     * exists keeps its own mode. See doc/bc/6.0/ini-save-file-permissions.md.
+     *
+     * @var int
+     */
+    const SAVE_FILE_PERMISSION = 0640;
+
+    /**
+     * Mode of a settings directory that save() has to create.
+     *
+     * @var int
+     */
+    const SAVE_DIRECTORY_PERMISSION = 0755;
+
+    /**
      * Set EZP_INI_FILEMTIME_CHECK constant to false to improve performance by
      * not checking modified time on ini files. You can also set it to a string, the name
      * of a ini file you still want to check modified time on, best example would be to
@@ -86,8 +102,9 @@ class eZINI
     static protected $checkFileMtime = null;
 
     /**
-     * set EZP_INI_FILE_PERMISSION constant to the permissions you want saved
-     * ini and cache files to have.
+     * Mode of the INI cache files (var/cache/ini). Set the EZP_INI_FILE_PERMISSION
+     * constant to change it; the default is 0644 (it was 0666). Settings files
+     * written by save() do not use it: see SAVE_FILE_PERMISSION.
      *
      * @var null|int
      */
@@ -219,7 +236,9 @@ class eZINI
             if ( defined( 'EZP_INI_FILE_PERMISSION' ) )
                 self::$filePermission = EZP_INI_FILE_PERMISSION;
             else
-                self::$filePermission = 0666;
+                // a cache file is PHP that is included, and holds every merged setting (passwords too):
+                // never writable by other users. Replaced by rename, so a second writer needs only the directory.
+                self::$filePermission = 0644;
         }
 
         if ( $load )
@@ -1159,6 +1178,133 @@ class eZINI
     }
 
 
+    /**
+     * The mode save() gives a settings file it creates: EZP_INI_SAVE_FILE_PERMISSION
+     * when defined, else SAVE_FILE_PERMISSION (0640). Never writable by other users
+     * and never with setuid, setgid or sticky bits, whatever is configured.
+     *
+     * @return int
+     */
+    public static function newSaveFileMode()
+    {
+        $mode = defined( 'EZP_INI_SAVE_FILE_PERMISSION' ) ? (int)EZP_INI_SAVE_FILE_PERMISSION : self::SAVE_FILE_PERMISSION;
+        return $mode & 0775;
+    }
+
+    /**
+     * The mode save() gives a settings file: an existing file keeps its own mode
+     * (less the bit that lets other users write it), a new one gets newSaveFileMode().
+     *
+     * @param string|false $existingPath The file about to be replaced, false for a new one
+     * @return int
+     */
+    public static function saveFileMode( $existingPath = false )
+    {
+        if ( $existingPath !== false )
+        {
+            clearstatcache( true, $existingPath );
+            $mode = file_exists( $existingPath ) ? @fileperms( $existingPath ) : false;
+            if ( $mode !== false )
+                return $mode & 0775;
+        }
+        return self::newSaveFileMode();
+    }
+
+    /**
+     * Owner and group for a settings file or directory created in $dir: those of $dir.
+     * When $dir belongs to root (made by a process running as root, Velocity's workers
+     * for one), those of the nearest directory above it inside the installation that does
+     * not, so the site's own user can still read what a root process wrote.
+     *
+     * @param string $dir An existing directory
+     * @return array array( uid|false, gid|false )
+     */
+    public static function saveFileOwnership( $dir )
+    {
+        clearstatcache();
+        $uid = @fileowner( $dir );
+        $gid = @filegroup( $dir );
+        if ( $uid !== 0 )
+            return array( $uid, $gid );
+
+        $root = realpath( getcwd() );
+        $d = realpath( $dir );
+        if ( $root === false || $d === false )
+            return array( $uid, $gid );
+        $root = rtrim( $root, '/' );
+        while ( $d !== $root && strpos( $d, $root . '/' ) === 0 )
+        {
+            $d = dirname( $d );
+            $owner = @fileowner( $d );
+            if ( $owner !== false && $owner !== 0 )
+                return array( $owner, @filegroup( $d ) );
+        }
+        return array( $uid, $gid );
+    }
+
+    /**
+     * Gives the file save() is about to move to $targetPath its mode, owner and group:
+     * those of $targetPath when it exists, else newSaveFileMode() and saveFileOwnership()
+     * of its directory. The owner is set only when running as root; the group whenever
+     * this user may (root, or a group it belongs to).
+     *
+     * @param string $path The new file (not yet in place)
+     * @param string $targetPath The path it will be moved to
+     */
+    protected static function applySaveFilePermissions( $path, $targetPath )
+    {
+        clearstatcache();
+        if ( file_exists( $targetPath ) )
+        {
+            $uid = @fileowner( $targetPath );
+            $gid = @filegroup( $targetPath );
+        }
+        else
+        {
+            list( $uid, $gid ) = self::saveFileOwnership( dirname( $targetPath ) );
+        }
+        @chmod( $path, self::saveFileMode( $targetPath ) );
+        self::applySaveOwnership( $path, $uid, $gid );
+    }
+
+    /**
+     * Sets owner (as root only) and group (if allowed) of a file save() wrote, quietly.
+     */
+    protected static function applySaveOwnership( $path, $uid, $gid )
+    {
+        clearstatcache( true, $path );
+        if ( $uid !== false && function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 && @fileowner( $path ) !== $uid )
+            @chown( $path, $uid );
+        if ( $gid !== false && @filegroup( $path ) !== $gid )
+            @chgrp( $path, $gid );
+    }
+
+    /**
+     * Creates a settings directory and the missing ones above it: SAVE_DIRECTORY_PERMISSION
+     * (it was 0777) and, as root, the owner and group saveFileOwnership() names.
+     *
+     * @param string $dirPath
+     * @return bool
+     */
+    protected static function makeSaveDirectory( $dirPath )
+    {
+        $missing = array();
+        for ( $d = rtrim( $dirPath, '/' ); $d !== '' && $d !== '.' && !file_exists( $d ); $d = dirname( $d ) )
+        {
+            $missing[] = $d;
+            if ( dirname( $d ) === $d )
+                break;
+        }
+        foreach ( array_reverse( $missing ) as $d )
+        {
+            if ( !eZDir::mkdir( $d, self::SAVE_DIRECTORY_PERMISSION ) && !is_dir( $d ) )
+                return false;
+            list( $uid, $gid ) = self::saveFileOwnership( dirname( $d ) );
+            self::applySaveOwnership( $d, $uid, $gid );
+        }
+        return is_dir( $dirPath );
+    }
+
     /*!
       Saves the file to disk.
       If filename is given the file is saved with that name if not the current name is used.
@@ -1234,7 +1380,7 @@ class eZINI
 
         $dirPath = eZDir::path( $dirArray );
         if ( !file_exists( $dirPath ) )
-            eZDir::mkdir( $dirPath, octdec( '777' ), true );
+            self::makeSaveDirectory( $dirPath );
 
         $filePath = eZDir::path( array_merge( $pathArray, array( $fileName ) ) );
         $originalFilePath = eZDir::path( array_merge( $pathArray, array( $originalFileName ) ) );
@@ -1243,6 +1389,11 @@ class eZINI
         $roundTripContent = $this->buildRoundTripSaveContent( $originalFilePath, $onlyModified, $resetArrays );
         // the file as it was, for the audit record of what this save changes (system.setting.write)
         $auditOld = class_exists( 'expAudit' ) && file_exists( $originalFilePath ) ? @file_get_contents( $originalFilePath ) : '';
+
+        // The temporary file holds the settings (passwords included) until it is moved into place:
+        // readable by this user only until it gets its final mode below.
+        if ( @file_put_contents( $filePath, '' ) !== false )
+            @chmod( $filePath, 0600 );
 
         if ( $roundTripContent !== false )
         {
@@ -1379,7 +1530,9 @@ class eZINI
             }
         }
 
-        chmod( $filePath, self::$filePermission );
+        // mode, owner and group of the file it replaces; for a new file SAVE_FILE_PERMISSION
+        // and the directory's owner and group (doc/bc/6.0/ini-save-file-permissions.md)
+        self::applySaveFilePermissions( $filePath, $originalFilePath );
 
         if ( file_exists( $backupFilePath ) )
             unlink( $backupFilePath );
