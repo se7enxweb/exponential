@@ -696,8 +696,13 @@ abstract class expExtensionWizard
 
         $value = (string) $value;
 
-        // The end of a comment, however it is spelled or spaced.
-        $value = preg_replace( '#\*+/#', '*', $value );
+        // The end of a comment, however it is spelled or spaced. Again until
+        // none is left: taking "*/" out of "*//" leaves another "*/"
+        do
+        {
+            $value = preg_replace( '#\*+/#', '*', $value, -1, $count );
+        }
+        while ( $count > 0 );
 
         // And the tags that would open or close php around it.
         $value = str_replace( array( '<?', '?>' ), array( '< ?', '? >' ), $value );
