@@ -49,6 +49,11 @@
             <directory suffix="Test.php">tests/tests/kernel/datatypes</directory>
         </testsuite>
 
+        <!-- kernel/private (REST, console commands, kernel helpers); the older *_test.php files there are not run -->
+        <testsuite name="kernel-private">
+            <directory suffix="Test.php">tests/tests/kernel/private</directory>
+        </testsuite>
+
         <testsuite name="lib">
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>
