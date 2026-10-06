@@ -113,7 +113,12 @@ On the role page:
 - The heading counts them. **Find a registration** searches login, e-mail and name. Order by registration date,
   login, e-mail or name. A registration older than 30 days is marked **Old**.
 - Tick users, then open one of the confirmations:
-  - **Activate selected users**: the accounts work at once, as if their owners had clicked the link.
+  - **Activate selected users**: the accounts work at once, as if their owners had clicked the link. A registration
+    waiting for its activation is completed as the link does (the user object is published, the post_register
+    workflow runs); an account without one (made by a script or an import) is published by hand. Either way the user
+    gets the "registration approved" mail (`user/registrationapproved.tpl`), unless
+    `site.ini [UserSettings] ActivationByAdministratorSendsApprovalMail=disabled` (this page only) or
+    `EmailRegistrationInfo=disabled` (everywhere). Activating never sends a new activation link.
   - **Send the activation mail again**: each gets a new link; the earlier link stops working. The page names the
     mail transport (`site.ini [MailSettings] Transport`). A user without a valid address is reported, not mailed.
   - **Remove selected users**: removed for good, with their user objects.
@@ -127,10 +132,26 @@ Every action, here and on the role pages, needs the form token of the page. A re
 
 ## Who may do this
 
-- The role pages need access to the `role` module. The kernel does **not** stop someone with that access from giving
-  themselves more: whoever may edit roles may give any role any policy. Give the role module only to administrators.
-  The list marks such roles *Can change roles*.
-- The unactivated users page needs `user/activation`.
+- The role pages need access to the `role` module. The unactivated users page needs `user/activation`.
+- **Nobody gives more than they have.** With `site.ini [RoleSettings] PreventPrivilegeEscalation=enabled` (the
+  default), a user who may edit roles can only grant what their own roles cover:
+  - In the policy wizard, a policy they do not hold is taken out again at once and the page says *The policy was not
+    added*, naming it.
+  - **Save** of the role editor refuses a draft with a new or changed policy they do not hold (*The role was not
+    saved*); the draft stays, so you can narrow or remove the policy.
+  - The policy editor refuses a change that makes a policy broader than their access; the policy stays as it was.
+  - **Copy** is off for a role with a policy beyond their access, and **Assign** refuses such a role (*The role was not
+    assigned*). An assignment with a subtree or section limitation counts as narrowed by it.
+- What "covered" means: one of the editor's policies has the same module (or every module) and the same function (or
+  every function), and each of that policy's limitations is met at least as narrowly: a subtree inside one of its
+  subtrees (or a node inside it), sections, classes, nodes, languages, siteaccesses, owner and state values among its
+  values. Two policies for section A and section B together cover a policy for A and B. A role assigned to the editor
+  for a section or subtree counts as that limitation. The check is careful rather than clever: a subtree that happens
+  to lie in a section is not taken as covered by a policy for that section.
+- Users with every function of every module (Administrator) may grant anything. Set
+  `PreventPrivilegeEscalation=disabled` to give back the old behaviour, where anyone with the `role` module could give
+  any role any policy.
+- The role list still marks roles that let their users change roles (*Can change roles*): give them carefully.
 
 ## Problems
 
@@ -141,14 +162,17 @@ Every action, here and on the role pages, needs the form token of the page. A re
 | No grip next to the policies | The list is not in role order | Click **Role order** |
 | *(no handler, denies)* after a limitation | No extension evaluates that limitation | Activate the extension that adds it, or remove the policy |
 | A user still listed after *Activate* | They were activated meanwhile, or are not unactivated | Read the message above the list |
+| *The policy was not added* / *The role was not saved* | The policy goes beyond your own access | Narrow it to what your roles allow, or ask an administrator with full access |
 
 ## For developers
 
 - `expRolePolicySentence` (kernel/classes/role) words a policy; `expRolePage` gives the role list rows, summaries,
   the users a role reaches, the draft comparison and the policy moves (`moveSteps()`, `movePolicyTo()`, built on
-  `eZRole::movePolicy()`); `expUnactivatedUsers` (kernel/classes/user) gives the list, the age, the resend and
+  `eZRole::movePolicy()`); `expRoleGrantCheck` decides what an editor may grant; `expUserActivation` completes an
+  activation; `expUnactivatedUsers` (kernel/classes/user) gives the list, the age, the resend and
   Remove all (`removeAllWith()` takes the database work as functions).
-- Tests without a database: `php vendor/bin/phpunit tests/tests/kernel/classes/expRolePagesTest.php`.
+- Tests without a database: `php vendor/bin/phpunit tests/tests/kernel/classes/expRolePagesTest.php` and
+  `tests/tests/kernel/classes/expRoleGrantCheckTest.php`.
 - Every template is in `design/admin` and `design/admin4`; the look is `role/exp_style.tpl`, scoped to `.exp-roles`.
   No shared stylesheet is changed.
 
