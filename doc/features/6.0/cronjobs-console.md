@@ -94,6 +94,7 @@ Name it in `[CronjobSettings] Scripts[]` or in a `[CronjobPart-<name>]` block of
 ## Related pages
 
 - The user guide: [Cronjobs: running, scheduling and following them](../../guides/cronjobs.md)
+- The workflow cronjob (`workflow.php`) and the processes it resumes: [Workflows: approvals, triggers and the processes that wait](../../guides/workflows.md)
 - [Runnable commands, cronjobs and views (specification)](../../specifications/6.0/runnable-commands-cronjobs-views.md), [commands, cronjob parts and module views as classes](../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Content jobs](content-jobs.md), [Velocity scheduler](velocity-scheduler.md), [Notifications (the cronjob part `notification`)](notifications.md)
 - [RSS import cleanup cronjob part](../../bc/6.0/cleanuprss.md), [console commands](../../bc/6.0/console.md)
