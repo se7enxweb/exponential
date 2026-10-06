@@ -7033,10 +7033,11 @@ cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/compos
 93560b62a75eb48a157a8f339b6cebfa  tests/tests/extension/ezupdate/fixtures/composer_update_one_update.log
 7a425cdb99ce71ff04e1a65bc1ccd33f  tests/tests/extension/ezupdate/fixtures/probe_composer_location.php
 f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
-cfa24ec5bda21f83c5b063f3dfbc9001  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
+587119e85f15873f1f37b7a28d2c4327  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
 80f2b4056adbe4f9240733cdcfd4d5d9  tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php
-34bc090cc1b2b0a787da444ac201308c  tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
+9380c9372e4b9a2e40a2724a88705acd  tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
 f1a9d5150dd4377fec1c1db7e0702d4f  tests/tests/kernel/classes/apikey/expApiKeyTest.php
+61aa4888f10928a95ff2bf608bd5217b  tests/tests/kernel/classes/apikey/expRestLiveTestCleanup.php
 80580bf8003967c59876d6359066f6b6  tests/tests/kernel/classes/audit/expAuditAlertsTest.php
 e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchiveTest.php
 52b81f30adda648cbe262f79efc6b68b  tests/tests/kernel/classes/audit/expAuditBufferTest.php
