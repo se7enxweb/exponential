@@ -1147,6 +1147,7 @@ return array(
       'expSystemReportMask'                                          => 'kernel/classes/expsystemreportmask.php',
       'expTemplateExtensionWizard'                                   => 'kernel/setup/exptemplateextensionwizard.php',
       'expUnactivatedUsers'                                          => 'kernel/classes/user/expunactivatedusers.php',
+      'expUserAccountOverview'                                       => 'kernel/classes/user/expuseraccountoverview.php',
       'expVelocity'                                                  => 'kernel/classes/expvelocity.php',
       'expVelocityConfig'                                            => 'kernel/classes/expvelocityconfig.php',
       'expVelocityConfigLayout'                                      => 'kernel/classes/expvelocityconfiglayout.php',
