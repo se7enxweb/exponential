@@ -288,7 +288,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 // way for the same reason.
                 preg_replace( '/:\d+$/', '', (string)eZSys::hostname() ),
                 eZSys::serverPort(),
-                eZSys::indexFile()
+                eZSys::indexFile(),
+                // Only the web page request may take its siteaccess from DefaultHostUriMatchMapItems by the
+                // browser's language (and be sent on to the language segment)
+                true
             )
         ;
 
@@ -367,6 +370,31 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             'Content-language' => $this->languageCode
         ) + self::securityHeaders();
 
+        // A siteaccess chosen by the languages the browser accepts (DefaultHostUriMatchMapItems): the same address
+        // answers in another language for another browser. Vary tells a cache between; private keeps the page out
+        // of shared caches that key by address alone (Velocity's response cache), also when [HTTPHeaderSettings]
+        // makes pages public. Only the address without language segment is chosen this way.
+        if ( !empty( $this->access['vary'] ) )
+        {
+            // Added to a Vary that [HTTPHeaderSettings] already sends, not in its place
+            $vary = '';
+            foreach ( array_keys( $headerOverrides ) as $name )
+            {
+                if ( strcasecmp( $name, 'Vary' ) === 0 || strcasecmp( $name, 'Cache-Control' ) === 0 )
+                {
+                    if ( strcasecmp( $name, 'Vary' ) === 0 )
+                        $vary = trim( (string)$headerOverrides[$name] );
+                    unset( $headerOverrides[$name] );
+                }
+            }
+            if ( $vary === '' )
+                $vary = (string)$this->access['vary'];
+            else if ( $vary !== '*' && !in_array( strtolower( (string)$this->access['vary'] ), array_map( 'strtolower', array_map( 'trim', explode( ',', $vary ) ) ), true ) )
+                $vary .= ', ' . $this->access['vary'];
+            $headerOverrides['Vary'] = $vary;
+            $headerOverrides['Cache-Control'] = 'private, no-cache, must-revalidate';
+        }
+
         // Pragma is the HTTP/1.0 spelling of Cache-Control and there is no way
         // to say "cacheable" in it. So when a configured header makes a page
         // cacheable, leaving the default Pragma in place sends a response that
@@ -391,6 +419,33 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         foreach ( $headerOverrides + $headerDefaults as $key => $value )
         {
             header( $key . ': ' . $value );
+        }
+
+        // An address without language segment whose siteaccess the browser's language chose
+        // (DefaultHostUriMatchMapItems): send the browser on to the same address with the segment, the address as
+        // it was asked for (a URL alias stays one) and its query. The redirect varies by language and is private
+        // (the headers above); the page behind it has one address per language and is cached as any other.
+        //
+        // The base is the index file with the segment of the entry, never eZSys::indexDir(): with
+        // RemoveSiteAccessIfDefaultAccess=enabled that leaves out the segment of the default siteaccess, and the
+        // browser would be sent to the address it asked for, again and again. The Location is a path on this host,
+        // so a Host header the client chose is never written into it.
+        if ( !empty( $this->access['redirect'] ) && !empty( $this->access['uri_part'] )
+             && in_array( strtoupper( (string)( $_SERVER['REQUEST_METHOD'] ?? 'GET' ) ), array( 'GET', 'HEAD' ), true ) )
+        {
+            $target = self::languageRedirectLocation( (array)$this->access['uri_part'], eZSys::wwwDir() . eZSys::indexFile( false ),
+                                                      eZSys::requestURI(), (string)eZSys::queryString() );
+            if ( $target !== null )
+            {
+                $this->shutdown();
+                if ( ob_get_level() > $obLevel )
+                    ob_end_clean();
+                $content = '<html><head><meta http-equiv="Refresh" content="0;URL=' . htmlspecialchars( $target, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"></head><body></body></html>';
+                header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.1' ) . ' 302 Found' );
+                header( 'Status: 302 Found' );
+                header( 'Location: ' . $target );
+                return new ezpKernelRedirect( $target, '302 Found', $content );
+            }
         }
 
         // A refused POST from a script (XHR, a JSON body, Accept: JSON) gets
@@ -1093,6 +1148,71 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             );
         }
         return $moduleResult;
+    }
+
+    /**
+     * The address the browser is sent on to when the siteaccess of an address without language segment was chosen by
+     * its language: the index with the access path of that siteaccess (/ger), then the path that was asked for, as it
+     * was asked for, then the query.
+     *
+     * The result is always a path on this host, starting with a single "/": the path, decoded as eZSys keeps it, is
+     * encoded again (a "%0D%0A", "%2F%2F" or "%5C" asked for stays encoded and can neither split the header nor
+     * turn the Location into an address on another host), empty and dot segments are dropped, and every byte of the query
+     * outside printable ASCII is encoded.
+     *
+     * @param string $indexDir the index file with the segment, for example "/ger" or "/index.php/ger"
+     * @param string $requestURI eZSys::requestURI(), decoded, for example "/news/an-article" or ""
+     * @param string $queryString eZSys::queryString(), with the leading "?" or empty
+     * @return string
+     */
+    public static function languageRedirectURI( $indexDir, $requestURI, $queryString )
+    {
+        $segments = array();
+        foreach ( array( (string)$indexDir, (string)$requestURI ) as $part )
+        {
+            foreach ( explode( '/', $part ) as $segment )
+            {
+                // Dot segments would be resolved away by the browser and lead elsewhere than asked
+                if ( $segment !== '' && $segment !== '.' && $segment !== '..' )
+                    $segments[] = self::encodePathSegment( $segment );
+            }
+        }
+        $target = '/' . implode( '/', $segments );
+        $query = preg_replace_callback( '/[^\x21-\x7E]|#/', function ( $byte ) { return rawurlencode( $byte[0] ); },
+                                        ltrim( (string)$queryString, '?' ) );
+        return $query !== '' ? $target . '?' . $query : $target;
+    }
+
+    /**
+     * The Location of the redirect to the language: $index (the web directory and index file, without any
+     * siteaccess, for example "" or "/index.php"), the segment $uriPart of the chosen entry, the path asked for and
+     * the query, as languageRedirectURI() builds it. null when that is the address asked for itself (an empty
+     * segment), so the browser is never sent back to where it came from.
+     *
+     * @param string[] $uriPart for example array( 'ger' )
+     * @param string $index eZSys::wwwDir() . eZSys::indexFile( false )
+     * @param string $requestURI eZSys::requestURI()
+     * @param string $queryString eZSys::queryString()
+     * @return string|null
+     */
+    public static function languageRedirectLocation( array $uriPart, $index, $requestURI, $queryString )
+    {
+        $index = rtrim( (string)$index, '/' );
+        $target = self::languageRedirectURI( $index . '/' . implode( '/', $uriPart ), $requestURI, $queryString );
+        $path = strpos( $target, '?' ) === false ? $target : substr( $target, 0, strpos( $target, '?' ) );
+        return $path === self::languageRedirectURI( $index, $requestURI, '' ) ? null : $target;
+    }
+
+    /**
+     * A decoded path segment encoded for a Location header: the unreserved characters and the sub-delimiters of
+     * RFC 3986 (which the view parameters "(offset)" use) stay, everything else, "%" and "\" included, is encoded.
+     *
+     * @param string $segment
+     * @return string
+     */
+    private static function encodePathSegment( $segment )
+    {
+        return preg_replace_callback( "/[^A-Za-z0-9\\-._~!$&'()*+,;=:@]/", function ( $byte ) { return rawurlencode( $byte[0] ); }, $segment );
     }
 
     /**

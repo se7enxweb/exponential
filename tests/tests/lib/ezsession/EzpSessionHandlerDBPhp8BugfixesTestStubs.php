@@ -95,5 +95,22 @@ if ( !class_exists( 'ezpEvent', false ) )
         }
 
         public function notify( string $event, array $args = [] ): void {}
+
+        /** Without listeners a filter returns the value unchanged (eZModule filters its function list) */
+        public function filter( $event, $value )
+        {
+            return $value;
+        }
+
+        /** No listeners: eZModule and the access filters skip their filters */
+        public function hasListeners( $name )
+        {
+            return false;
+        }
+
+        public function listenerIds( $name )
+        {
+            return array();
+        }
     }
 }

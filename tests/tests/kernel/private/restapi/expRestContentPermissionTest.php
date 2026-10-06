@@ -48,7 +48,7 @@ class expRestContentPermissionTestObject extends eZContentObject
         return $this->read;
     }
 
-    public function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false )
+    public function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
         $this->calls[] = array( $functionName, $originalClassID, $parentClassID, $language );
         return in_array( $originalClassID . '/' . ( $language === false ? '*' : $language ), $this->create, true ) ? 1 : 0;

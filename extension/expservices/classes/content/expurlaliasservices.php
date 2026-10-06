@@ -58,7 +58,7 @@ class expUrlAliasServices extends expContentServiceBase
         return $value;
     }
 
-    protected static function query( $type, array $actions = null, $limit = false, $offset = 0, $text = null )
+    protected static function query( $type, ?array $actions = null, $limit = false, $offset = 0, $text = null )
     {
         $q = new eZURLAliasQuery();
         $q->type = $type;

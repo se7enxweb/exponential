@@ -30,7 +30,7 @@
     {section-exclude match=$Limitations:item.name|eq('Subtree')}
     {section-exclude match=$Limitations:item.name|eq('Node')}
     <div class="element">
-        <label>{$Limitations:item.name|wash}</label><div class="labelbreak"></div>
+        <label>{if is_set( $Limitations:item.label )}{$Limitations:item.label|wash}{else}{$Limitations:item.name|wash}{/if}</label><div class="labelbreak"></div>
         <select name="{$Limitations:item.name}[]" size="8" multiple >
             <option value="-1" {switch match=$current_limitation_list[$Limitations:item.name]}
                                {case match=-1} selected="selected"{/case}

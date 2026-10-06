@@ -14,6 +14,7 @@
  *  DL-08 - draftCreateAccess() denies (0) when the parent object is missing
  *  DL-09 - draftCreateAccess() asks the parent for create access to the object's class, with the language
  *  DL-10 - draftCreateAccess() denies when the parent refuses create
+ *  DL-11 - draftCreateAccess() asks the parent for the user it is given
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -53,9 +54,9 @@ class X1DraftLocationStandInParent extends eZContentObject
     public $answer = 1;
     public $asked = array();
 
-    public function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false )
+    public function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
-        $this->asked[] = array( $functionName, $originalClassID, $parentClassID, $returnAccessList, $language );
+        $this->asked[] = array( $functionName, $originalClassID, $parentClassID, $returnAccessList, $language, $userID );
         return $this->answer;
     }
 }
@@ -146,7 +147,7 @@ class eZContentObjectDraftLocationTest extends PHPUnit\Framework\TestCase
         $parent = new X1DraftLocationStandInParent( array( 'id' => 990002, 'contentclass_id' => 1 ) );
         $object = $this->object( eZContentObject::STATUS_DRAFT, array( $this->assignment( 58, 1, $parent ) ) );
         $this->assertSame( 1, $object->draftCreateAccess( 'ger-DE' ) );
-        $this->assertSame( array( array( 'create', 16, 1, false, 'ger-DE' ) ), $parent->asked );
+        $this->assertSame( array( array( 'create', 16, 1, false, 'ger-DE', false ) ), $parent->asked );
     }
 
     /** DL-10 */
@@ -156,5 +157,14 @@ class eZContentObjectDraftLocationTest extends PHPUnit\Framework\TestCase
         $parent->answer = 0;
         $object = $this->object( eZContentObject::STATUS_DRAFT, array( $this->assignment( 58, 1, $parent ) ) );
         $this->assertSame( 0, $object->draftCreateAccess() );
+    }
+
+    /** DL-11 */
+    public function testCreateAccessAsksTheParentForTheGivenUser()
+    {
+        $parent = new X1DraftLocationStandInParent( array( 'id' => 990002, 'contentclass_id' => 1 ) );
+        $object = $this->object( eZContentObject::STATUS_DRAFT, array( $this->assignment( 58, 1, $parent ) ) );
+        $this->assertSame( 1, $object->draftCreateAccess( false, 990003 ) );
+        $this->assertSame( array( array( 'create', 16, 1, false, false, 990003 ) ), $parent->asked );
     }
 }

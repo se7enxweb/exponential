@@ -249,8 +249,11 @@ class ezpHttpCacheContract
      *
      * The same rules as eZSiteAccess::match(), on the site.ini values the
      * kernel wrote into the contract ('match'): StaticMatch, MatchOrder with
-     * uri (URIMatchType element or map), host (HostMatchType map) and host_uri
-     * (HostUriMatchMapItems, every host match method), then DefaultAccess.
+     * uri (URIMatchType element or map), host (HostMatchType map, with
+     * HostMatchMethod and the method of an item) and host_uri
+     * (HostUriMatchMapItems, every host match method), then DefaultAccess --
+     * unless DefaultHostUriMatchMapItems has an entry for the host, where the
+     * browser's language decides (null).
      * Anything else -- port, servervar, index, the text and regexp types, a
      * name the kernel would normalise -- is null, and the page is not served
      * early. The kernel stores a page only when this gives the siteaccess it
@@ -327,9 +330,13 @@ class ezpHttpCacheContract
                     $type = $m['hostType'] ?? '';
                     if ( $type === 'map' )
                     {
+                        $hostMethod = (string)( $m['hostMethod'] ?? 'strict' );
                         foreach ( (array)( $m['hostMap'] ?? array() ) as $item )
                         {
-                            if ( isset( $item[0], $item[1] ) && $item[0] == $host )
+                            if ( !isset( $item[0], $item[1] ) || $item[0] === '' )
+                                continue;
+                            $method = isset( $item[2] ) && trim( $item[2] ) !== '' ? trim( $item[2] ) : $hostMethod;
+                            if ( self::hostMatches( $host, $item[0], $method ) )
                                 return (string)$item[1];
                         }
                     }
@@ -349,15 +356,7 @@ class ezpHttpCacheContract
                         $method = $item[3] ?? ( $m['hostUriMethod'] ?? 'strict' );
                         if ( $matchURI !== '' && !@preg_match( "@^$matchURI\b@u", $uriString ) )
                             continue;
-                        switch ( $method )
-                        {
-                            case 'strict': $hit = ( $matchHost === $host ); break;
-                            case 'start':  $hit = ( strpos( $host, $matchHost ) === 0 ); break;
-                            case 'end':    $hit = ( strstr( $host, $matchHost ) === $matchHost ); break;
-                            case 'part':   $hit = ( strpos( $host, $matchHost ) !== false ); break;
-                            default:       $hit = false;
-                        }
-                        if ( $hit )
+                        if ( self::hostMatches( $host, $matchHost, $method ) )
                             return (string)$matchAccess;
                     }
                     break;
@@ -380,7 +379,44 @@ class ezpHttpCacheContract
                 }
             }
         }
+        // No probe matched: where DefaultHostUriMatchMapItems has an entry for the host, the kernel chooses by the
+        // browser's language or sends it on, which is not known here
+        foreach ( (array)( $m['defaultHostUri'] ?? array() ) as $item )
+        {
+            if ( !isset( $item[2] ) )
+                continue;
+            $method = isset( $item[3] ) && trim( $item[3] ) !== '' && trim( $item[3] ) !== 'default'
+                ? trim( $item[3] ) : (string)( $m['hostUriMethod'] ?? 'strict' );
+            if ( self::hostMatches( $host, (string)$item[0], $method ) )
+                return null;
+        }
         return $default;
+    }
+
+    /**
+     * The host comparison of eZSiteAccess::hostMatches(), which the early exit cannot load: lower case, without a
+     * trailing dot; strict, start, end or part. A Unicode host name is left to the kernel (no match here, so the
+     * page is not served early).
+     *
+     * @param string $host
+     * @param string $matchHost
+     * @param string $method
+     * @return bool
+     */
+    private static function hostMatches( $host, $matchHost, $method )
+    {
+        $host = strtolower( rtrim( trim( (string)$host ), '.' ) );
+        $matchHost = strtolower( rtrim( trim( (string)$matchHost ), '.' ) );
+        if ( preg_match( '/[\x80-\xff]/', $host . $matchHost ) )
+            return false;
+        switch ( $method )
+        {
+            case 'strict': return $matchHost === $host;
+            case 'start':  return strpos( $host, $matchHost ) === 0;
+            case 'end':    return $matchHost !== '' && substr( $host, -strlen( $matchHost ) ) === $matchHost;
+            case 'part':   return strpos( $host, $matchHost ) !== false;
+        }
+        return false;
     }
 
     /**

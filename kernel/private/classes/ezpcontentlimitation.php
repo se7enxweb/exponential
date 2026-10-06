@@ -1,0 +1,426 @@
+<?php
+/**
+ * File containing the ezpContentLimitation class
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ */
+
+/**
+ * Asks the handler an extension registered for a content policy limitation the kernel does not know
+ * (site.ini [RoleSettings] LimitationHandlers[<limitation>]=<class>, see ezpContentLimitationHandler).
+ *
+ * Without a usable handler the limitation denies, in the PHP checks and in the SQL of fetches alike: a limitation
+ * that nobody evaluates must never widen what a policy allows. "Usable" means the class exists, implements
+ * ezpContentLimitationHandler and can be made without arguments; a handler that throws, or answers with something
+ * that is not a valid condition, denies as well. Each such case is logged once per request.
+ *
+ * The handler of a limitation is made once per request and kept for the rest of it; a persistent worker (Velocity)
+ * starts again with the next request, and a change of the setting (a test, a siteaccess switch) starts again at once.
+ *
+ * @package kernel
+ */
+class ezpContentLimitation
+{
+    /**
+     * The SQL condition of a limitation that cannot be evaluated: it matches no row.
+     */
+    const DENY_SQL = '1 = 0';
+
+    /**
+     * The limitations the kernel evaluates itself (besides StateGroup_<identifier>). An extension cannot take one
+     * of them over; where one does not apply (Language in a list fetch) it is left out, as before.
+     *
+     * @var string[]
+     */
+    public static $kernelLimitations = array( 'Class', 'ParentClass', 'ParentDepth', 'Section', 'User_Section',
+                                              'Language', 'Owner', 'ParentOwner', 'Group', 'ParentGroup', 'State',
+                                              'Status', 'Node', 'Subtree', 'User_Subtree', 'NewState' );
+
+    /**
+     * The handler of each limitation asked for in this request: the object, or false when there is none or it is
+     * unusable.
+     *
+     * @var array
+     */
+    protected static $handlers = array();
+
+    /**
+     * The request and the setting $handlers belong to: REQUEST_TIME_FLOAT and a hash of LimitationHandlers[].
+     *
+     * @var string|null
+     */
+    protected static $cacheKey = null;
+
+    /**
+     * The messages logged in this request, so that a limitation checked for every node of a list is logged once.
+     *
+     * @var array
+     */
+    protected static $logged = array();
+
+    /**
+     * Returns whether the kernel evaluates the limitation $limitation itself.
+     *
+     * @param string $limitation
+     * @return bool
+     */
+    public static function isKernelLimitation( $limitation )
+    {
+        return in_array( $limitation, self::$kernelLimitations, true ) || strncmp( (string)$limitation, 'StateGroup_', 11 ) === 0;
+    }
+
+    /**
+     * Returns the handler registered for $limitation, or null when there is none or it is unusable.
+     *
+     * @param string $limitation
+     * @return ezpContentLimitationHandler|null
+     */
+    public static function handler( $limitation )
+    {
+        if ( !is_string( $limitation ) || $limitation === '' || self::isKernelLimitation( $limitation ) )
+        {
+            return null;
+        }
+        $setting = self::requestState();
+        if ( array_key_exists( $limitation, self::$handlers ) )
+        {
+            return self::$handlers[$limitation] === false ? null : self::$handlers[$limitation];
+        }
+
+        $handler = false;
+        $class = isset( $setting[$limitation] ) && is_string( $setting[$limitation] ) ? trim( $setting[$limitation] ) : '';
+        if ( $class === '' )
+        {
+            self::log( "No handler is registered for the limitation $limitation (site.ini [RoleSettings] LimitationHandlers[$limitation]); it denies", 'notice' );
+        }
+        else if ( !class_exists( $class ) )
+        {
+            self::log( "The handler class $class of the limitation $limitation does not exist (regenerate the autoloads?); the limitation denies" );
+        }
+        else if ( !in_array( 'ezpContentLimitationHandler', class_implements( $class ), true ) )
+        {
+            self::log( "The handler $class of the limitation $limitation does not implement ezpContentLimitationHandler; the limitation denies" );
+        }
+        else
+        {
+            try
+            {
+                $handler = new $class();
+            }
+            catch ( Throwable $e )
+            {
+                self::rethrowExit( $e );
+                self::log( "The handler $class of the limitation $limitation could not be made (" . get_class( $e ) . ': ' . $e->getMessage() . '); the limitation denies' );
+                $handler = false;
+            }
+        }
+        self::$handlers[$limitation] = $handler;
+        return $handler === false ? null : $handler;
+    }
+
+    /**
+     * Returns whether the limitation $limitation with $values lets $userID use $functionName on $subject; false
+     * when no handler evaluates it, when the handler throws, and for every answer but true.
+     *
+     * @param string $limitation
+     * @param array $values
+     * @param string $functionName
+     * @param eZContentObject|eZContentObjectTreeNode|eZContentObjectVersion $subject
+     * @param int $userID
+     * @return bool
+     */
+    public static function checkAccess( $limitation, $values, $functionName, $subject, $userID )
+    {
+        $handler = self::handler( $limitation );
+        if ( $handler === null )
+        {
+            return false;
+        }
+        try
+        {
+            $answer = $handler->checkAccess( $limitation, self::values( $values ), (string)$functionName, $subject, (int)$userID );
+        }
+        catch ( Throwable $e )
+        {
+            self::rethrowExit( $e );
+            self::log( 'The handler ' . get_class( $handler ) . " of the limitation $limitation threw " . get_class( $e ) . ': ' . $e->getMessage() . '; the limitation denies' );
+            return false;
+        }
+        return $answer === true;
+    }
+
+    /**
+     * Returns the SQL condition of the limitation $limitation with $values for a content/read fetch of $userID, in
+     * parentheses; DENY_SQL when no handler evaluates it, the handler cannot express it (false), throws, or answers
+     * with something that is not a valid condition (see sqlCondition()).
+     *
+     * @param string $limitation
+     * @param array $values
+     * @param string $tableAliasName
+     * @param int|bool $userID The user of the fetch; false for the current user
+     * @return string
+     */
+    public static function permissionSQL( $limitation, $values, $tableAliasName, $userID = false )
+    {
+        $handler = self::handler( $limitation );
+        if ( $handler === null )
+        {
+            return self::DENY_SQL;
+        }
+        if ( $userID === false )
+        {
+            $userID = eZUser::currentUserID();
+        }
+        try
+        {
+            $sql = $handler->permissionSQL( $limitation, self::values( $values ), (string)$tableAliasName, (int)$userID );
+        }
+        catch ( Throwable $e )
+        {
+            self::rethrowExit( $e );
+            self::log( 'The handler ' . get_class( $handler ) . " of the limitation $limitation threw " . get_class( $e ) . ' in permissionSQL(): ' . $e->getMessage() . '; the policy gives no access in fetches' );
+            return self::DENY_SQL;
+        }
+        if ( $sql === false )
+        {
+            return self::DENY_SQL;
+        }
+        $condition = self::sqlCondition( $sql );
+        if ( $condition === false )
+        {
+            self::log( 'The handler ' . get_class( $handler ) . " of the limitation $limitation answered permissionSQL() with " .
+                       ( is_string( $sql ) ? "'" . substr( $sql, 0, 200 ) . "'" : gettype( $sql ) ) .
+                       ', which is not a condition the kernel accepts; the policy gives no access in fetches' );
+            return self::DENY_SQL;
+        }
+        return $condition;
+    }
+
+    /**
+     * Turns what a handler's permissionSQL() returned into a condition in parentheses, or false when it is none.
+     *
+     * - A string: an SQL condition. It must be self-contained: quotes and parentheses balanced, and outside quoted
+     *   strings no ";" and no comment ("--", "#", "/*"). So it cannot end the parentheses it is put in, or the
+     *   statement. Values in it are the handler's to cast or escape.
+     * - An array with 'column' and 'values' (and optionally 'type' => 'int' (default) or 'string', 'not' => true):
+     *   "<column> IN ( ... )", the values cast to integers or escaped by the kernel. The column is a name or
+     *   table.name. No values matches nothing ("NOT IN" with no values: everything). A list of such arrays is
+     *   joined by AND.
+     *
+     * @param mixed $sql
+     * @return string|false
+     */
+    public static function sqlCondition( $sql )
+    {
+        if ( is_string( $sql ) )
+        {
+            // checked before trim(), which would drop a NUL byte at either end
+            if ( !self::isSelfContainedSQL( $sql ) )
+            {
+                return false;
+            }
+            $sql = trim( $sql );
+            return $sql !== '' ? '( ' . $sql . ' )' : false;
+        }
+        if ( !is_array( $sql ) || !$sql )
+        {
+            return false;
+        }
+        $list = isset( $sql['column'] ) ? array( $sql ) : $sql;
+        $parts = array();
+        foreach ( $list as $condition )
+        {
+            if ( !is_array( $condition ) || !isset( $condition['column'] ) || !is_string( $condition['column'] ) ||
+                 !preg_match( '/^[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)?$/', $condition['column'] ) ||
+                 !isset( $condition['values'] ) || !is_array( $condition['values'] ) )
+            {
+                return false;
+            }
+            $type = isset( $condition['type'] ) ? $condition['type'] : 'int';
+            $not = !empty( $condition['not'] );
+            $literals = array();
+            foreach ( $condition['values'] as $value )
+            {
+                if ( !is_scalar( $value ) )
+                {
+                    return false;
+                }
+                if ( $type === 'int' )
+                {
+                    if ( !preg_match( '/^\s*-?[0-9]{1,19}\s*$/', (string)$value ) )
+                    {
+                        return false;
+                    }
+                    $literals[] = (string)(int)$value;
+                }
+                else if ( $type === 'string' )
+                {
+                    $literals[] = "'" . eZDB::instance()->escapeString( (string)$value ) . "'";
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            if ( !$literals )
+            {
+                $parts[] = $not ? '1 = 1' : self::DENY_SQL;
+                continue;
+            }
+            $parts[] = eZDB::instance()->generateSQLINStatement( array_values( array_unique( $literals ) ), $condition['column'], $not );
+        }
+        return '( ' . implode( ' AND ', $parts ) . ' )';
+    }
+
+    /**
+     * Whether $sql can stand inside parentheses on its own: quotes ('...', "...", `...`) closed, parentheses
+     * balanced and never closed before they open, and outside quoted strings no statement end (;) and no comment
+     * (--, #, /*, * /). A backslash escapes the next character inside a quoted string.
+     *
+     * @param string $sql
+     * @return bool
+     */
+    public static function isSelfContainedSQL( $sql )
+    {
+        if ( strpos( $sql, "\0" ) !== false )
+        {
+            return false;
+        }
+        $depth = 0;
+        $quote = null;
+        $length = strlen( $sql );
+        for ( $i = 0; $i < $length; ++$i )
+        {
+            $char = $sql[$i];
+            if ( $quote !== null )
+            {
+                if ( $char === '\\' )
+                {
+                    ++$i;
+                }
+                else if ( $char === $quote )
+                {
+                    // a doubled quote is an escaped one
+                    if ( $i + 1 < $length && $sql[$i + 1] === $quote )
+                        ++$i;
+                    else
+                        $quote = null;
+                }
+                continue;
+            }
+            $next = $i + 1 < $length ? $sql[$i + 1] : '';
+            if ( $char === "'" || $char === '"' || $char === '`' )
+            {
+                $quote = $char;
+            }
+            else if ( $char === '(' )
+            {
+                ++$depth;
+            }
+            else if ( $char === ')' )
+            {
+                if ( --$depth < 0 )
+                    return false;
+            }
+            else if ( $char === ';' || $char === '#' || ( $char === '-' && $next === '-' ) ||
+                      ( $char === '/' && $next === '*' ) || ( $char === '*' && $next === '/' ) )
+            {
+                return false;
+            }
+        }
+        return $quote === null && $depth === 0;
+    }
+
+    /**
+     * Forgets the handlers and the messages of the request; for tests, and done by itself when the request or the
+     * setting changes.
+     */
+    public static function resetCache()
+    {
+        self::$handlers = array();
+        self::$logged = array();
+        self::$cacheKey = null;
+    }
+
+    /**
+     * Returns site.ini [RoleSettings] LimitationHandlers[], after forgetting what belongs to another request or to
+     * another value of the setting.
+     *
+     * @return array
+     */
+    protected static function requestState()
+    {
+        $ini = eZINI::instance( 'site.ini' );
+        $setting = $ini->hasVariable( 'RoleSettings', 'LimitationHandlers' ) ? $ini->variable( 'RoleSettings', 'LimitationHandlers' ) : array();
+        if ( !is_array( $setting ) )
+        {
+            $setting = array();
+        }
+        $key = ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '' ) . '|' . md5( serialize( $setting ) );
+        if ( $key !== self::$cacheKey )
+        {
+            self::$handlers = array();
+            self::$logged = array();
+            self::$cacheKey = $key;
+        }
+        return $setting;
+    }
+
+    /**
+     * The values of a limitation as the handler gets them: a list of strings.
+     *
+     * @param mixed $values
+     * @return array
+     */
+    protected static function values( $values )
+    {
+        $list = array();
+        foreach ( (array)$values as $value )
+        {
+            if ( is_scalar( $value ) )
+            {
+                $list[] = (string)$value;
+            }
+        }
+        return $list;
+    }
+
+    /**
+     * Logs $message once in this request.
+     *
+     * @param string $message
+     * @param string $level 'error' or 'notice'
+     */
+    protected static function log( $message, $level = 'error' )
+    {
+        if ( isset( self::$logged[$message] ) )
+        {
+            return;
+        }
+        self::$logged[$message] = true;
+        if ( $level === 'notice' )
+        {
+            eZDebug::writeNotice( $message, __CLASS__ );
+        }
+        else
+        {
+            eZDebug::writeError( $message, __CLASS__ );
+        }
+    }
+
+    /**
+     * Lets the exception a persistent worker (Velocity) ends a request with through: it is no failure of the handler.
+     *
+     * @param Throwable $e
+     */
+    protected static function rethrowExit( $e )
+    {
+        if ( is_a( $e, 'Q_WebServer_ExitSignal' ) )
+        {
+            throw $e;
+        }
+    }
+}

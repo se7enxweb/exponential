@@ -265,6 +265,111 @@ class eZModule
     }
 
     /**
+     * The function lists the filter module/functionlist gave in this request, per module file: array( 'key' =>
+     * request and listeners, 'list' => the list ). A module is looked up many times per request (every access
+     * check of a view, the role screens), so the listeners run once per module and request, not every time.
+     *
+     * @var array
+     */
+    protected static $filteredFunctionLists = array();
+
+    /**
+     * Passes the $FunctionList of the module $moduleName through the filter module/functionlist, once per module,
+     * request and set of listeners, and keeps what the listeners return only where it has the form of a function
+     * list: an array of functions, each an array of limitations, each an array with a 'name'. A listener that
+     * throws, or returns something else, is logged and its answer left out: the module keeps the list of its
+     * module.php (access checks read the policies, not this list, so nothing is allowed by leaving it out).
+     *
+     * @param array $functionList
+     * @param string $moduleName
+     * @param string $file The module.php the list comes from
+     * @return array
+     */
+    protected static function filterFunctionList( array $functionList, $moduleName, $file )
+    {
+        $event = ezpEvent::getInstance();
+        if ( !$event->hasListeners( 'module/functionlist' ) )
+        {
+            return $functionList;
+        }
+        $key = ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '' ) . '|' .
+               implode( ',', $event->listenerIds( 'module/functionlist' ) );
+        $slot = $moduleName . '|' . $file;
+        if ( isset( self::$filteredFunctionLists[$slot] ) && self::$filteredFunctionLists[$slot]['key'] === $key )
+        {
+            return self::$filteredFunctionLists[$slot]['list'];
+        }
+        // what belongs to an earlier request or set of listeners goes, so a persistent worker does not collect it
+        foreach ( self::$filteredFunctionLists as $other => $entry )
+        {
+            if ( $entry['key'] !== $key )
+            {
+                unset( self::$filteredFunctionLists[$other] );
+            }
+        }
+
+        try
+        {
+            // written out in full so the RAD survey (Setup > RAD) finds the event
+            $filtered = ezpEvent::getInstance()->filter( 'module/functionlist', $functionList, $moduleName );
+        }
+        catch ( Throwable $e )
+        {
+            if ( is_a( $e, 'Q_WebServer_ExitSignal' ) )
+            {
+                throw $e;
+            }
+            eZDebug::writeError( "A listener of module/functionlist threw " . get_class( $e ) . ' for the module ' . $moduleName . ': ' .
+                                 $e->getMessage() . '; the module keeps the functions of its module.php', __METHOD__ );
+            $filtered = $functionList;
+        }
+
+        if ( !is_array( $filtered ) )
+        {
+            eZDebug::writeError( 'The listeners of module/functionlist returned ' . gettype( $filtered ) . " for the module $moduleName, " .
+                                 'not a function list; the module keeps the functions of its module.php', __METHOD__ );
+            $filtered = $functionList;
+        }
+        $list = array();
+        foreach ( $filtered as $functionName => $limitations )
+        {
+            if ( !is_string( $functionName ) || $functionName === '' || !is_array( $limitations ) )
+            {
+                eZDebug::writeError( "The function '$functionName' that module/functionlist gave the module $moduleName is not a list of limitations; left out", __METHOD__ );
+                if ( isset( $functionList[$functionName] ) )
+                {
+                    $list[$functionName] = $functionList[$functionName];
+                }
+                continue;
+            }
+            $list[$functionName] = array();
+            foreach ( $limitations as $limitationKey => $limitation )
+            {
+                if ( !is_array( $limitation ) || !isset( $limitation['name'] ) || !is_string( $limitation['name'] ) ||
+                     !preg_match( '/^[A-Za-z_][A-Za-z0-9_]*$/', $limitation['name'] ) ||
+                     ( isset( $limitation['class'] ) && ( !is_string( $limitation['class'] ) || !isset( $limitation['function'] ) || !is_string( $limitation['function'] ) ) ) )
+                {
+                    eZDebug::writeError( "The limitation '$limitationKey' of $moduleName/$functionName that module/functionlist gave is not of the form of module.php " .
+                                         "(an array with a 'name' of letters, digits and _, 'values' or 'class' and 'function'); left out", __METHOD__ );
+                    continue;
+                }
+                // the role screens count the values and pass the parameters on
+                if ( !isset( $limitation['values'] ) || !is_array( $limitation['values'] ) )
+                {
+                    $limitation['values'] = array();
+                }
+                if ( isset( $limitation['class'] ) && ( !isset( $limitation['parameter'] ) || !is_array( $limitation['parameter'] ) ) )
+                {
+                    $limitation['parameter'] = array();
+                }
+                $list[$functionName][$limitationKey] = $limitation;
+            }
+        }
+        self::$filteredFunctionLists[$slot] = array( 'key' => $key, 'list' => $list );
+        return $list;
+    }
+
+    /**
      * Initializes the module object.
      *
      * @param string $path
@@ -288,17 +393,16 @@ class eZModule
             include( $file );
             // a single view module defines no $ViewList
             $this->Functions = isset( $ViewList ) && is_array( $ViewList ) ? $ViewList : array();
-            if ( isset( $FunctionList ) and
-                 is_array( $FunctionList ) and
-                 count( $FunctionList ) > 0 )
+            if ( !isset( $FunctionList ) || !is_array( $FunctionList ) )
             {
-                ksort( $FunctionList, SORT_STRING );
-                $this->FunctionList = $FunctionList;
+                $FunctionList = array();
             }
-            else
-            {
-                $this->FunctionList = array();
-            }
+            // An extension adds limitations (or functions) to a module of another one through the filter
+            // module/functionlist; a limitation of the content module needs a handler as well
+            // (site.ini [RoleSettings] LimitationHandlers[], see ezpContentLimitation)
+            $FunctionList = self::filterFunctionList( $FunctionList, $moduleName, $file );
+            ksort( $FunctionList, SORT_STRING );
+            $this->FunctionList = $FunctionList;
             if ( empty( $Module ) )
             {
                 $Module = array( "name" => "null",

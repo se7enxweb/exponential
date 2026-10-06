@@ -71,7 +71,7 @@
 {if $function_limitations|count|gt(1)}
 <div class="element">
 {/if}
-<label for="ezrole_createpolizy_limitation_{$Limitations:item.name|wash}">{$Limitations:item.name|wash}:</label>
+<label for="ezrole_createpolizy_limitation_{$Limitations:item.name|wash}">{if is_set( $Limitations:item.label )}{$Limitations:item.label|wash}{else}{$Limitations:item.name|wash}{/if}:</label>
 <select id="ezrole_createpolizy_limitation_{$Limitations:item.name|wash}" name="{$Limitations:item.name|wash}[]" size="8" {if or( not( is_set( $Limitations:item.single_select ) ), not($Limitations:item.single_select) ) }multiple="multiple"{/if} >
 <option value="-1" {switch match=$current_limitation_list[$Limitations:item.name]}
 {case match=-1} selected="selected"{/case}{case}{/case}{/switch}>{'Any'|i18n( 'design/admin/role/createpolicystep3' )}</option>

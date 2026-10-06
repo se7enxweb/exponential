@@ -43,6 +43,7 @@ user preference. See [Sub-items list: custom page size](subitems-table-options.m
 |---|---|
 | Locations tab of an item | [Locations tab paging and sorting](../../bc/6.0/locations-tab-paging-and-sorting.md) |
 | Roles, and the policies of a role | [Role and policy paging](../../bc/6.0/role-policy-paging.md); the role list also shows the role id and sorts |
+| The users and groups of a role | [Role assignment paging](role-assignment-paging.md): sorted by name, with a name filter; the role list counts them per role |
 | Class list, class group list, workflow group list, PDF export list | none had paging before |
 | Discount groups, order status, VAT rules, product categories | read their whole list before |
 | VAT types, translations, extensions, cronjob scripts, REST applications | read their whole list before |

@@ -66,7 +66,7 @@ abstract class expContentServiceBase extends expServiceBase
     }
 
     /** The language code to work in: the argument, else the object's initial language. */
-    protected static function languageCode( $code, eZContentObject $object = null )
+    protected static function languageCode( $code, ?eZContentObject $object = null )
     {
         if ( $code === null || $code === '' )
             return $object ? $object->attribute( 'current_language' ) : eZContentObject::defaultLanguage();
@@ -562,8 +562,10 @@ abstract class expContentServiceBase extends expServiceBase
     /** Changes attributes and publishes the result as a new version. @return eZContentObject the fresh object */
     protected static function updateObject( eZContentObject $object, array $attrs, $language = false )
     {
-        if ( !$object->canEdit() )
-            throw new expServiceException( 'No edit access to object ' . $object->attribute( 'id' ), 403 );
+        // Decided as content/edit and the REST interface decide it (eZContentObject::editAccess()): in the language
+        // written, and through the filter content/edit/access
+        if ( !$object->editAccess( null, $language ? (string)$language : false ) )
+            throw new expServiceException( 'No edit access to object ' . $object->attribute( 'id' ) . ( $language ? " in $language" : '' ), 403 );
         if ( !$attrs )
             throw new expServiceException( 'No attributes given', 400 );
         self::checkInput( $object->contentClass(), $attrs );

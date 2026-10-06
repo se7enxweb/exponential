@@ -137,7 +137,9 @@ abstract class expCommunityBase extends expServiceBase
     /** Changes the text fields of an item the user may edit. */
     protected static function editNode( eZContentObjectTreeNode $node )
     {
-        if ( !$node->canEdit() )
+        // the location's edit check, through the filter content/edit/access as the REST interface does it
+        $object = $node->attribute( 'object' );
+        if ( !$object instanceof eZContentObject || !$object->filterEditAccess( $node->canEdit() ) )
             throw new expServiceException( 'No edit access to this item', 403 );
         $fields = self::postedFields( $node->attribute( 'class_identifier' ), false );
         if ( !$fields )

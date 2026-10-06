@@ -10923,6 +10923,18 @@ Note: The packages will not be uninstalled.</translation>
         <source>ID</source>
         <translation>ID</translation>
     </message>
+    <message>
+        <source>How many users and user groups the role is assigned to</source>
+        <translation>How many users and user groups the role is assigned to</translation>
+    </message>
+    <message>
+        <source>Assigned</source>
+        <translation>Assigned</translation>
+    </message>
+    <message>
+        <source>Show the users and user groups of the &lt;%role_name&gt; role.</source>
+        <translation>Show the users and user groups of the &lt;%role_name&gt; role.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/policyedit</name>
@@ -11112,6 +11124,50 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>ID</source>
         <translation>ID</translation>
+    </message>
+    <message>
+        <source>No extension handler evaluates this limitation, so this policy gives no access</source>
+        <translation>No extension handler evaluates this limitation, so this policy gives no access</translation>
+    </message>
+    <message>
+        <source>(no handler, denies)</source>
+        <translation>(no handler, denies)</translation>
+    </message>
+    <message>
+        <source>Name contains</source>
+        <translation>Name contains</translation>
+    </message>
+    <message>
+        <source>Show only the users and user groups whose name contains this text.</source>
+        <translation>Show only the users and user groups whose name contains this text.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Show all</translation>
+    </message>
+    <message>
+        <source>%count of %total match "%filter".</source>
+        <translation>%count of %total match "%filter".</translation>
+    </message>
+    <message>
+        <source>%count of these assignments belong to a user or user group that no longer exists. They are listed first and can be removed.</source>
+        <translation>%count of these assignments belong to a user or user group that no longer exists. They are listed first and can be removed.</translation>
+    </message>
+    <message>
+        <source>User or user group no longer exists (object %object_id)</source>
+        <translation>User or user group no longer exists (object %object_id)</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>not found</translation>
+    </message>
+    <message>
+        <source>No user or user group of this role has a name containing "%filter".</source>
+        <translation>No user or user group of this role has a name containing "%filter".</translation>
     </message>
 </context>
 <context>
@@ -16657,6 +16713,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Names, and a limitation description per function</source>
         <translation>Names, and a limitation description per function</translation>
+    </message>
+    <message>
+        <source>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])</source>
+        <translation>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])</translation>
+    </message>
+    <message>
+        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</source>
+        <translation>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</translation>
     </message>
     <message>
         <source>rest.ini, through the rest provider registry</source>

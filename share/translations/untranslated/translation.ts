@@ -9881,6 +9881,18 @@ Note: The packages will not be uninstalled.</source>
         <source>ID</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>How many users and user groups the role is assigned to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assigned</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the users and user groups of the &lt;%role_name&gt; role.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/policyedit</name>
@@ -10069,6 +10081,50 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No extension handler evaluates this limitation, so this policy gives no access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no handler, denies)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name contains</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show only the users and user groups whose name contains this text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of %total match "%filter".</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of these assignments belong to a user or user group that no longer exists. They are listed first and can be removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User or user group no longer exists (object %object_id)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user or user group of this role has a name containing "%filter".</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -15614,6 +15670,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Names, and a limitation description per function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

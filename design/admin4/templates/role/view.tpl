@@ -1,4 +1,6 @@
-<form name="role" method="post" action={concat( $module.functions.view.uri, '/', $role.id, '/')|ezurl}>
+<form name="role" method="post" action={concat( $module.functions.view.uri, '/', $role.id, $policy_uri_suffix, $assignment_uri_suffix )|ezurl}>
+{* Enter in the name filter of the assignments filters: the first button of a form is the one Enter presses, and it must not be Edit. *}
+{if or( $assignment_total|gt( $assignment_limit ), $assignment_filter )}<input type="submit" name="AssignmentFilterButton" value="{'Filter'|i18n( 'design/admin/role/view' )}" tabindex="-1" aria-hidden="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;" />{/if}
 
 <div class="context-block">
 
@@ -27,10 +29,10 @@
 <tr>
     {* Sorted by the database, because the list is shown a page at a time; the
        headings are the role editor's. ID ascending is the role's own order. *}
-    {include uri='design:parts/sortheader.tpl' key='id'         label='ID'|i18n( 'design/admin/role/view' )         sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir' cell_class='tight'}
-    {include uri='design:parts/sortheader.tpl' key='module'     label='Module'|i18n( 'design/admin/role/view' )     sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir'}
-    {include uri='design:parts/sortheader.tpl' key='function'   label='Function'|i18n( 'design/admin/role/view' )   sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir'}
-    {include uri='design:parts/sortheader.tpl' key='limitation' label='Limitation'|i18n( 'design/admin/role/view' ) sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir'}
+    {include uri='design:parts/sortheader.tpl' key='id'         label='ID'|i18n( 'design/admin/role/view' )         sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir' cell_class='tight' suffix=$assignment_uri_suffix}
+    {include uri='design:parts/sortheader.tpl' key='module'     label='Module'|i18n( 'design/admin/role/view' )     sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir' suffix=$assignment_uri_suffix}
+    {include uri='design:parts/sortheader.tpl' key='function'   label='Function'|i18n( 'design/admin/role/view' )   sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir' suffix=$assignment_uri_suffix}
+    {include uri='design:parts/sortheader.tpl' key='limitation' label='Limitation'|i18n( 'design/admin/role/view' ) sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir' suffix=$assignment_uri_suffix}
 </tr>
 {section var=Policies loop=$policies sequence=array( bglight, bgdark )}
 <tr class="{$Policies.sequence}">
@@ -60,7 +62,7 @@
     <td>
         {section show=$Policies.item.limitations}
             {section var=Limitations loop=$Policies.item.limitations}
-                {$Limitations.item.identifier|wash}(
+                {$Limitations.item.label|wash}{if $Limitations.item.denies_without_handler} <em class="limitation-denies" title="{'No extension handler evaluates this limitation, so this policy gives no access'|i18n( 'design/admin/role/view' )|wash}">{'(no handler, denies)'|i18n( 'design/admin/role/view' )|wash}</em>{/if}(
                 {foreach $Limitations.item.values_as_array_with_names as $limitation_value}
                     {if is_set( $limitation_value.node_data )}
                         <a href={concat( 'content/view/full/', $limitation_value.node_data.node_id )|ezurl} title="{'Path: \'/%path_string\', Class identifier: \'%class_identifier\''|i18n( 'design/admin/role/view',, hash( '%path_string', $limitation_value.node_data.path_identification_string, '%class_identifier', $limitation_value.node_data.class_identifier ) )|wash}">{$limitation_value.Name|wash}</a>
@@ -116,13 +118,33 @@
 
 <div class="context-block">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-<h2 class="context-title">{'Users and groups using the <%role_name> role (%users_count)'|i18n( 'design/admin/role/view',, hash('%role_name', $role.name, '%users_count', $user_array|count) )|wash}</h2>
+<h2 class="context-title">{'Users and groups using the <%role_name> role (%users_count)'|i18n( 'design/admin/role/view',, hash('%role_name', $role.name, '%users_count', $assignment_total) )|wash}</h2>
 
 
 
 {* DESIGN: Header END *}</div></div>
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
+
+{* A name filter, kept in the address as (assignment_filter); both pagers keep it.
+   Enter in the field filters: the first button of the form is a filter button. *}
+{if or( $assignment_total|gt( $assignment_limit ), $assignment_filter )}
+<div class="block role-assignment-filter">
+<label for="role-assignment-filter">{'Name contains'|i18n( 'design/admin/role/view' )}:</label>
+<input type="search" id="role-assignment-filter" name="AssignmentFilter" value="{$assignment_filter|wash}" size="30" maxlength="100" title="{'Show only the users and user groups whose name contains this text.'|i18n( 'design/admin/role/view' )}" />
+<input class="button" type="submit" name="AssignmentFilterButton" value="{'Filter'|i18n( 'design/admin/role/view' )}" />
+{if $assignment_filter}
+<input class="button" type="submit" name="AssignmentFilterClearButton" value="{'Show all'|i18n( 'design/admin/role/view' )}" />
+<p>{'%count of %total match "%filter".'|i18n( 'design/admin/role/view',, hash( '%count', $assignment_count, '%total', $assignment_total, '%filter', $assignment_filter ) )|wash}</p>
+{/if}
+</div>
+{/if}
+
+{if $assignment_orphan_count}
+<div class="block role-assignment-orphans">
+<p>{'%count of these assignments belong to a user or user group that no longer exists. They are listed first and can be removed.'|i18n( 'design/admin/role/view',, hash( '%count', $assignment_orphan_count ) )|wash}</p>
+</div>
+{/if}
 
 {section show=$user_array}
 <table class="list" cellspacing="0">
@@ -137,38 +159,53 @@
     {* Remove. *}
     <td><input type="checkbox" value="{$Users.item.user_role_id}" name="IDArray[]" title="{'Select user or user group for removal.'|i18n( 'design/admin/role/view' )}" /></td>
 
-    {* User/group icon + name. *}
+    {* User/group icon + name; an assignment whose object is gone says so. *}
     <td>
-        {$Users.item.user_object.content_class.identifier|class_icon( 'small', $Users.item.user_object.content_class.name|wash )}&nbsp;<a href={$Users.item.user_object.main_node.url_alias|ezurl}>{$Users.item.user_object.name|wash}</a>
+        {if $Users.item.user_object}
+            {$Users.item.user_object.class_identifier|class_icon( 'small', $Users.item.user_object.class_name|wash )}&nbsp;{if $Users.item.main_node_id}<a href={concat( '/content/view/full/', $Users.item.main_node_id )|ezurl}>{$Users.item.user_name|wash}</a>{else}{$Users.item.user_name|wash}{/if}
+        {else}
+            <i class="role-assignment-orphan">{'User or user group no longer exists (object %object_id)'|i18n( 'design/admin/role/view',, hash( '%object_id', $Users.item.user_id ) )}</i>
+        {/if}
     </td>
 
-    {* Linked limitation (if any). *}
+    {* Linked limitation (if any). The node or section comes with the page. *}
     <td>
-        {section show=$Users.item.limit_ident}
-         {section show=$Users.item.limit_value|begins_with( '/' )}
-              {let  limit_location_array=$Users.item.limit_value|explode( '/' )
-                    limit_location_pinpoint=$limit_location_array|count|sub(2)
-                    limit_node_id=$limit_location_array[$limit_location_pinpoint]
-                    limit_node=fetch('content','node', hash('node_id', $limit_node_id ))}
-              <a href={concat( '/content/view/full/', $limit_node_id )|ezurl} title="{'Path: \'/%path_string\', Class identifier: \'%class_identifier\''|i18n( 'design/admin/role/view',, hash( '%path_string', $limit_node.path_identification_string, '%class_identifier', $limit_node.class_identifier ) )|wash}">{$Users.item.limit_ident|wash}:&nbsp;"{$limit_node.name|wash}"&nbsp;({$Users.item.limit_value|wash})</a>
-              {/let}
-          {section-else}
-              {let limit_section=fetch( 'section', 'object', hash( 'section_id', $Users.item.limit_value ) )}
-              <a href={concat( '/section/view/', $Users.item.limit_value )|ezurl}>{$Users.item.limit_ident|wash}:&nbsp;"{$limit_section.name|wash}"&nbsp;({$Users.item.limit_value|wash})</a>
-              {/let}
-          {/section}
-        {section-else}
+        {if $Users.item.limit_ident}
+            {if $Users.item.limit_node}
+              <a href={concat( '/content/view/full/', $Users.item.limit_node.node_id )|ezurl} title="{'Path: \'/%path_string\', Class identifier: \'%class_identifier\''|i18n( 'design/admin/role/view',, hash( '%path_string', $Users.item.limit_node.path_identification_string, '%class_identifier', $Users.item.limit_node.class_identifier ) )|wash}">{$Users.item.limit_ident|wash}:&nbsp;"{$Users.item.limit_node.name|wash}"&nbsp;({$Users.item.limit_value|wash})</a>
+            {elseif $Users.item.limit_section}
+              <a href={concat( '/section/view/', $Users.item.limit_value )|ezurl}>{$Users.item.limit_ident|wash}:&nbsp;"{$Users.item.limit_section.name|wash}"&nbsp;({$Users.item.limit_value|wash})</a>
+            {else}
+              {$Users.item.limit_ident|wash}:&nbsp;({$Users.item.limit_value|wash})&nbsp;<i>{'not found'|i18n( 'design/admin/role/view' )}</i>
+            {/if}
+        {else}
         <i>{'No limitations'|i18n( 'design/admin/role/view' )}</i>
-        {/section}
+        {/if}
     </td>
 
 </tr>
 {/section}
 </table>
+{* Paged like the policies above, on an offset of its own *}
+{if $assignment_count|gt( $assignment_limit )}
+<div class="context-toolbar">
+{include name=AssignmentNavigator
+         uri='design:navigator/google.tpl'
+         offset_name='assignment_offset'
+         page_uri=$policy_page_uri
+         item_count=$assignment_count
+         view_parameters=$view_parameters
+         item_limit=$assignment_limit}
+</div>
+{/if}
 {section-else}
 <div class="block">
 <p>
+{if $assignment_filter}
+{'No user or user group of this role has a name containing "%filter".'|i18n( 'design/admin/role/view',, hash( '%filter', $assignment_filter ) )|wash}
+{else}
 {'This role is not assigned to any users or user groups.'|i18n( 'design/admin/role/view' )}
+{/if}
 </p>
 </div>
 {/section}

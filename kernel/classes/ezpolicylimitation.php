@@ -25,6 +25,9 @@ class eZPolicyLimitation extends eZPersistentObject
     public $Value;
     public $Values;
 
+    /** @var array|null|false The definition of the limitation in its module (definitionInModule()); false: not looked up */
+    public $DefinitionInModule = false;
+
     /*!
      Constructor
     */
@@ -57,7 +60,9 @@ class eZPolicyLimitation extends eZPersistentObject
                                                       'values_as_array' => 'allValues',
                                                       'values_as_string' => 'allValuesAsString',
                                                       'values_as_array_with_names' => 'allValuesAsArrayWithNames',
-                                                      'limit_value' => 'limitValue' ),
+                                                      'limit_value' => 'limitValue',
+                                                      'label' => 'label',
+                                                      'denies_without_handler' => 'deniesWithoutHandler' ),
                       "increment_key" => "id",
                       "sort" => array( "id" => "asc" ),
                       "class_name" => "eZPolicyLimitation",
@@ -214,6 +219,187 @@ class eZPolicyLimitation extends eZPersistentObject
         return $str;
     }
 
+    /**
+     * Returns the definition of this limitation in the function list of its policy's module (the entry of
+     * module.php, or of an extension through the filter module/functionlist), or null when the module, the function
+     * or the limitation is not there (an extension that added it is no longer active).
+     *
+     * @return array|null
+     */
+    function definitionInModule()
+    {
+        if ( $this->DefinitionInModule !== false )
+        {
+            return $this->DefinitionInModule;
+        }
+        $this->DefinitionInModule = null;
+        $policy = $this->attribute( 'policy' );
+        if ( !$policy )
+        {
+            return null;
+        }
+        $mod = eZModule::exists( $policy->attribute( 'module_name' ) );
+        if ( !is_object( $mod ) )
+        {
+            return null;
+        }
+        $this->DefinitionInModule = self::findDefinition( $mod->attribute( 'available_functions' ),
+                                                          $policy->attribute( 'function_name' ),
+                                                          $this->attribute( 'identifier' ) );
+        return $this->DefinitionInModule;
+    }
+
+    /**
+     * Returns the definition of the limitation $identifier of $function in the function list $functions: the entry
+     * under that key, or else the one whose 'name' it is; null when there is none.
+     *
+     * @param array $functions
+     * @param string $function
+     * @param string $identifier
+     * @return array|null
+     */
+    static function findDefinition( $functions, $function, $identifier )
+    {
+        if ( !is_array( $functions ) || !isset( $functions[$function] ) || !is_array( $functions[$function] ) )
+        {
+            return null;
+        }
+        if ( isset( $functions[$function][$identifier] ) && is_array( $functions[$function][$identifier] ) )
+        {
+            return $functions[$function][$identifier];
+        }
+        foreach ( $functions[$function] as $definition )
+        {
+            if ( is_array( $definition ) && isset( $definition['name'] ) && $definition['name'] === $identifier )
+            {
+                return $definition;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Returns the name of the limitation $definition as the role screens show it: its 'label' when the module or
+     * extension gives one (translated by whoever wrote it), otherwise its name.
+     *
+     * @param array $definition
+     * @return string
+     */
+    static function definitionLabel( $definition )
+    {
+        if ( is_array( $definition ) && isset( $definition['label'] ) && is_string( $definition['label'] ) && trim( $definition['label'] ) !== '' )
+        {
+            return $definition['label'];
+        }
+        return is_array( $definition ) && isset( $definition['name'] ) ? (string)$definition['name'] : '';
+    }
+
+    /**
+     * Returns the values the role editor offers for the limitation $definition: the 'value' of each of its
+     * 'values', or the 'id' of each entry its 'class' and 'function' list. Null when it offers none to choose from
+     * (Node and Subtree are picked in the content browser).
+     *
+     * @param array $definition
+     * @return string[]|null
+     */
+    static function offeredValues( $definition )
+    {
+        if ( !is_array( $definition ) )
+        {
+            return null;
+        }
+        $offered = array();
+        if ( isset( $definition['values'] ) && is_array( $definition['values'] ) && count( $definition['values'] ) > 0 )
+        {
+            foreach ( $definition['values'] as $value )
+            {
+                if ( is_array( $value ) && isset( $value['value'] ) && is_scalar( $value['value'] ) )
+                {
+                    $offered[] = (string)$value['value'];
+                }
+            }
+            return $offered;
+        }
+        if ( isset( $definition['class'], $definition['function'] ) && is_string( $definition['class'] ) && class_exists( $definition['class'] ) )
+        {
+            $obj = new $definition['class']( array() );
+            $list = call_user_func_array( array( $obj, $definition['function'] ),
+                                          isset( $definition['parameter'] ) && is_array( $definition['parameter'] ) ? $definition['parameter'] : array() );
+            foreach ( is_array( $list ) ? $list : array() as $value )
+            {
+                if ( is_array( $value ) && isset( $value['id'] ) && is_scalar( $value['id'] ) )
+                {
+                    $offered[] = (string)$value['id'];
+                }
+            }
+            return $offered;
+        }
+        return null;
+    }
+
+    /**
+     * Returns the values of $posted that the role editor offers for the limitation $definition, for storing a
+     * policy: a value that was not offered (a hand-made request, a value of an extension that changed) is left out
+     * and logged. '-1' ("Any") is kept as the editor treats it. Values of a limitation that offers none to choose
+     * from (Node, Subtree) are returned as they are.
+     *
+     * @param array $definition
+     * @param array $posted
+     * @return array
+     */
+    static function validValues( $definition, $posted )
+    {
+        $posted = is_array( $posted ) ? array_values( array_filter( $posted, 'is_scalar' ) ) : array();
+        $offered = self::offeredValues( $definition );
+        if ( $offered === null )
+        {
+            return array_values( array_unique( $posted ) );
+        }
+        $valid = array();
+        foreach ( $posted as $value )
+        {
+            if ( (string)$value === '-1' || in_array( (string)$value, $offered, true ) )
+            {
+                $valid[] = $value;
+            }
+            else
+            {
+                eZDebug::writeWarning( 'The value ' . substr( (string)$value, 0, 100 ) . ' is not one of the values of the limitation ' .
+                                       ( isset( $definition['name'] ) ? $definition['name'] : '?' ) . '; not stored', __METHOD__ );
+            }
+        }
+        return array_values( array_unique( $valid ) );
+    }
+
+    /**
+     * The name of this limitation as the role screens show it (see definitionLabel()); the identifier when its
+     * module does not define it any more.
+     *
+     * @return string
+     */
+    function label()
+    {
+        $definition = $this->definitionInModule();
+        return $definition ? self::definitionLabel( $definition ) : (string)$this->attribute( 'identifier' );
+    }
+
+    /**
+     * Whether this is a limitation of a content policy that the kernel does not know and that no handler evaluates
+     * (site.ini [RoleSettings] LimitationHandlers[]): its policy gives no access, which the role screens say.
+     *
+     * @return bool
+     */
+    function deniesWithoutHandler()
+    {
+        $policy = $this->attribute( 'policy' );
+        if ( !$policy || !in_array( $policy->attribute( 'module_name' ), array( 'content', '*' ), true ) )
+        {
+            return false;
+        }
+        $identifier = (string)$this->attribute( 'identifier' );
+        return !ezpContentLimitation::isKernelLimitation( $identifier ) && ezpContentLimitation::handler( $identifier ) === null;
+    }
+
     function allValuesAsArrayWithNames()
     {
         $returnValue = null;
@@ -238,7 +424,18 @@ class eZPolicyLimitation extends eZPersistentObject
         $currentFunction = $policy->attribute( 'function_name' );
         $limitationValueArray = array();
 
-        $limitation = $functions[$currentFunction ][$this->attribute( 'identifier' )];
+        $limitation = self::findDefinition( $functions, $currentFunction, $this->attribute( 'identifier' ) );
+        if ( !$limitation )
+        {
+            // A limitation its module does not define (any more): an extension that added it is not active. Its
+            // values are shown as they are stored instead of not at all.
+            $limitationValuesWithNames = array();
+            foreach ( $valueList as $value )
+            {
+                $limitationValuesWithNames[] = array( 'Name' => $value, 'value' => $value );
+            }
+            return $limitationValuesWithNames;
+        }
 
         if ( $limitation &&
              isset( $limitation['class'] ) &&

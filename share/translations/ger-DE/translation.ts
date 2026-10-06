@@ -13503,6 +13503,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>ID</source>
         <translation>ID</translation>
     </message>
+    <message>
+        <source>How many users and user groups the role is assigned to</source>
+        <translation>Wie vielen Benutzern und Benutzergruppen die Rolle zugewiesen ist</translation>
+    </message>
+    <message>
+        <source>Assigned</source>
+        <translation>Zugewiesen</translation>
+    </message>
+    <message>
+        <source>Show the users and user groups of the &lt;%role_name&gt; role.</source>
+        <translation>Die Benutzer und Benutzergruppen der Rolle &lt;%role_name&gt; zeigen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/policyedit</name>
@@ -13720,6 +13732,50 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>ID</source>
         <translation>ID</translation>
+    </message>
+    <message>
+        <source>No extension handler evaluates this limitation, so this policy gives no access</source>
+        <translation>Keine Erweiterung wertet diese Einschränkung aus, daher gewährt diese Richtlinie keinen Zugriff</translation>
+    </message>
+    <message>
+        <source>(no handler, denies)</source>
+        <translation>(ohne Auswertung, verweigert)</translation>
+    </message>
+    <message>
+        <source>Name contains</source>
+        <translation>Name enthält</translation>
+    </message>
+    <message>
+        <source>Show only the users and user groups whose name contains this text.</source>
+        <translation>Nur die Benutzer und Benutzergruppen zeigen, deren Name diesen Text enthält.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alle zeigen</translation>
+    </message>
+    <message>
+        <source>%count of %total match "%filter".</source>
+        <translation>%count von %total passen zu "%filter".</translation>
+    </message>
+    <message>
+        <source>%count of these assignments belong to a user or user group that no longer exists. They are listed first and can be removed.</source>
+        <translation>%count dieser Zuweisungen gehören zu einem Benutzer oder einer Benutzergruppe, die es nicht mehr gibt. Sie stehen am Anfang der Liste und können entfernt werden.</translation>
+    </message>
+    <message>
+        <source>User or user group no longer exists (object %object_id)</source>
+        <translation>Benutzer oder Benutzergruppe gibt es nicht mehr (Objekt %object_id)</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nicht gefunden</translation>
+    </message>
+    <message>
+        <source>No user or user group of this role has a name containing "%filter".</source>
+        <translation>Kein Benutzer und keine Benutzergruppe dieser Rolle hat einen Namen, der "%filter" enthält.</translation>
     </message>
 </context>
 <context>
@@ -19514,6 +19570,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Names, and a limitation description per function</source>
         <translation>Namen und eine Beschreibung der Einschränkungen pro Funktion</translation>
+    </message>
+    <message>
+        <source>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])</source>
+        <translation>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; die Einschränkung kommt über den Filter module/functionlist ([Event] Listeners[]) zu einer Funktion</translation>
+    </message>
+    <message>
+        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</source>
+        <translation>implementiert ezpContentLimitationHandler (checkAccess() für Objekte, Knoten und Versionen, permissionSQL() für Fetches)</translation>
     </message>
     <message>
         <source>rest.ini, through the rest provider registry</source>
