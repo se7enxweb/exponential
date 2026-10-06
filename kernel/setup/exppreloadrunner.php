@@ -64,7 +64,9 @@ class expPreloadRunner
         // into paths; that is fixed, and the rule is kept, unanchored now, in
         // case a template emits a real link to either.
         '|/(collapse-[0-9]+|debug-end)(/|$)' .
-        '|/(stats|calendar|groupeventcalendar)(/|$)#';
+        '|/(stats|calendar|groupeventcalendar)(/|$)' .
+        // Exponential Velocity's own panel (/Q/dashboard, /Q/panel, /Q/metrics ...): the server's, not the site's.
+        '|^/Q(/|$)#';
 
     /**
      * How many linking pages to keep per broken target.
@@ -359,11 +361,45 @@ class expPreloadRunner
         return true;
     }
 
+    /**
+     * The values of one attribute of one element in a page's markup, decoded, and only those that can be an address.
+     *
+     * The page's own markup only: what is inside <script>, <template>, <style> and comments is removed first. An
+     * inline script that builds markup in a string ('<a href="/' + esc(p.path) + '">') holds what looks like an
+     * attribute, and was taken for a link: every such page reported "/' + esc(p.path) + '" as a broken link. A value
+     * that still carries a quote, a JavaScript or template expression (' +, ${, {{ }}) or whitespace inside it is
+     * not an address either and is dropped.
+     *
+     * @param string $html
+     * @param string $element a, img
+     * @param string $attribute href, src
+     * @return array
+     */
+    private function attributeValues( $html, $element, $attribute )
+    {
+        $html = preg_replace( array( '#<script\b.*?</script\s*>#is', '#<template\b.*?</template\s*>#is',
+                                     '#<style\b.*?</style\s*>#is', '#<!--.*?-->#s' ), ' ', (string)$html );
+        if ( $html === null || !preg_match_all( '#<' . $element . '\b[^>]*?\s' . $attribute
+                                                . '\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s"\'>]+))#i', $html, $m, PREG_SET_ORDER ) )
+            return array();
+        $values = array();
+        foreach ( $m as $match )
+        {
+            $value = isset( $match[3] ) && $match[3] !== '' ? $match[3] : ( isset( $match[2] ) && $match[2] !== '' ? $match[2] : $match[1] );
+            $value = trim( html_entity_decode( $value, ENT_QUOTES, 'UTF-8' ) );
+            if ( $value === '' || preg_match( '#["\'`<>{}\s]|\$\{|\+\s*\'#', $value ) )
+                continue;
+            $values[] = $value;
+        }
+        return $values;
+    }
+
     /** Same-host page links worth queueing, absolute and de-fragmented. */
     private function linksFrom( $html, $pageUrl, $base )
     {
         $links = array();
-        if ( $html === '' || !preg_match_all( '#<a\b[^>]*href="([^"]+)"#i', $html, $m ) )
+        $hrefs = $this->attributeValues( $html, 'a', 'href' );
+        if ( !$hrefs )
             return $links;
 
         $skip = array_flip( explode( ',', self::SKIP_EXTENSIONS ) );
@@ -373,10 +409,8 @@ class expPreloadRunner
         $origin = parse_url( $base, PHP_URL_SCHEME ) . '://' . $host
                 . ( parse_url( $base, PHP_URL_PORT ) ? ':' . parse_url( $base, PHP_URL_PORT ) : '' );
 
-        foreach ( $m[1] as $href )
+        foreach ( $hrefs as $href )
         {
-            $href = html_entity_decode( $href, ENT_QUOTES, 'UTF-8' );
-
             // Cut the fragment off, and keep what is left even when that is
             // nothing. strtok() was used here, and it skips leading delimiters:
             // given '#main' it hands back 'main', not ''. Every in-page anchor
@@ -497,14 +531,14 @@ class expPreloadRunner
     private function imagesFrom( $html, $pageUrl, $base )
     {
         $found = array();
-        if ( $html === '' || !preg_match_all( '#<img\b[^>]*?\bsrc="([^"]+)"#i', $html, $m ) )
+        $sources = $this->attributeValues( $html, 'img', 'src' );
+        if ( !$sources )
             return $found;
         $host = parse_url( $base, PHP_URL_HOST );
         $origin = parse_url( $base, PHP_URL_SCHEME ) . '://' . $host
                 . ( parse_url( $base, PHP_URL_PORT ) ? ':' . parse_url( $base, PHP_URL_PORT ) : '' );
-        foreach ( $m[1] as $src )
+        foreach ( $sources as $src )
         {
-            $src = trim( html_entity_decode( $src, ENT_QUOTES, 'UTF-8' ) );
             if ( $src === '' || preg_match( '#^(data|javascript):#i', $src ) )
                 continue;
             if ( strpos( $src, '//' ) === 0 )
@@ -516,6 +550,10 @@ class expPreloadRunner
             else
                 $url = rtrim( dirname( $pageUrl . 'x' ), '/' ) . '/' . $src;
             if ( parse_url( $url, PHP_URL_HOST ) !== $host )
+                continue;
+            // nothing of Velocity's own panel, not even its pictures
+            if ( preg_match( '#^(/[^/]+)?/Q(/|$)#', (string)parse_url( $url, PHP_URL_PATH ), $q )
+                 && ( $q[1] === '' || isset( $this->siteaccessNames()[substr( $q[1], 1 )] ) ) )
                 continue;
             $hash = strpos( $url, '#' );
             if ( $hash !== false )
