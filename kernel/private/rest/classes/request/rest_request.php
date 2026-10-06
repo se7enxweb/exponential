@@ -105,6 +105,7 @@ class ezpRestRequest extends ezcMvcRequest
         $this->authentication = $authentication;
         $this->raw = $raw;
         $this->cookies = $cookies;
+        $this->isFatal = $isFatal;
         $this->originalProtocol = ( $originalProtocol === null ? $protocol : $originalProtocol );
     }
 
