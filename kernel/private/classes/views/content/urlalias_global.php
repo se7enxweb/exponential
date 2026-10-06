@@ -245,51 +245,34 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
         $filter->actionTypesEx = array( 'eznode', 'nop' );
         $filter->offset = $Offset;
         $filter->limit = $limitValues[$limitID];
+        // The search (the last part of the path or the destination) and the kind are conditions of the query, so
+        // a page costs one count and one page query whatever the number of aliases
+        $filter->search = $search !== '' ? $search : null;
+        $filter->redirects = $kind === 'all' ? null : $kind === 'redirect';
 
         // Prime the internal data for the template, for PHP5 this is no longer needed since objects will not be copied anymore in the template code.
         $count = $filter->count();
-        $totalCount = (int)$count;
-        if ( $search === '' && $kind === 'all' )
+        $aliasCount = (int)$count;
+        if ( $Offset > 0 && $Offset >= $aliasCount )
         {
-            if ( $Offset > 0 && $Offset >= $totalCount )
-            {
-                // a removal left the page behind the end of the list
-                $Offset = 0;
-                $filter->offset = 0;
-                $filter->prepare();
-                $viewParameters['offset'] = 0;
-            }
-            $aliasList = $filter->fetchAll();
-            $aliasCount = $totalCount;
+            // a removal or a search left the page behind the end of the list
+            $Offset = 0;
+            $filter->offset = 0;
+            $filter->prepare();
+            $viewParameters['offset'] = 0;
+        }
+        $aliasList = $filter->fetchAll();
+        if ( $filter->search === null && $filter->redirects === null )
+        {
+            $totalCount = $aliasCount;
         }
         else
         {
-            // Global aliases are made by hand and few, so a search reads them all and filters here: the path of
-            // an alias is assembled from its parents and cannot be matched by one query.
-            $matching = array();
             $all = new \eZURLAliasQuery();
             $all->actionTypesEx = array( 'eznode', 'nop' );
-            $all->limit = 500;
-            for ( $all->offset = 0; ; $all->offset += $all->limit )
-            {
-                $all->prepare();
-                $batch = $all->fetchAll();
-                foreach ( $batch as $element )
-                {
-                    if ( self::aliasMatches( self::aliasInfo( $element ), $search, $kind ) )
-                        $matching[] = $element;
-                }
-                if ( count( $batch ) < $all->limit )
-                    break;
-            }
-            $aliasCount = count( $matching );
-            if ( $Offset >= $aliasCount )
-            {
-                $Offset = 0;
-                $viewParameters['offset'] = 0;
-            }
-            $aliasList = array_slice( $matching, $Offset, $limitValues[$limitID] );
+            $totalCount = (int)$all->count();
         }
+
         $aliasInfo = array();
         foreach ( $aliasList as $element )
             $aliasInfo[self::elementKey( $element )] = self::aliasInfo( $element );
@@ -403,27 +386,6 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
         return array( 'path' => (string)$element->attribute( 'path' ),
                       'redirects' => (bool)$element->attribute( 'alias_redirects' ),
                       'destination' => self::destinationOf( $element->attribute( 'action' ) ) );
-    }
-
-    /**
-     * Whether an alias is kept by a search (in its path or its destination, without regard to case) and a kind.
-     *
-     * @param array $info see aliasInfo()
-     * @param string $search
-     * @param string $kind see kindKey()
-     * @return bool
-     */
-    public static function aliasMatches( array $info, $search, $kind )
-    {
-        if ( $kind === 'redirect' && empty( $info['redirects'] ) )
-            return false;
-        if ( $kind === 'direct' && !empty( $info['redirects'] ) )
-            return false;
-        if ( $search === '' )
-            return true;
-        $needle = mb_strtolower( $search );
-        $haystack = mb_strtolower( $info['path'] . ' ' . ( isset( $info['destination']['url'] ) ? $info['destination']['url'] : '' ) );
-        return strpos( $haystack, $needle ) !== false;
     }
 }
 

@@ -160,7 +160,7 @@
             <button type="submit" class="exp-btn" form="alias-search-form">{'Search'|i18n( 'design/admin/content/urlalias_global' )}</button>
             {if $search|ne( '' )}<a class="exp-btn" href={concat( 'content/urltranslator/', $kind_part )|ezurl}>{'Clear search'|i18n( 'design/admin/content/urlalias_global' )}</a>{/if}
         </div>
-        <span class="exp-help" id="alias-search-help">{'Any part of the alias or of its destination.'|i18n( 'design/admin/content/urlalias_global' )}</span>
+        <span class="exp-help" id="alias-search-help">{'Any part of the last segment of the alias (login in campaign/login) or of its destination.'|i18n( 'design/admin/content/urlalias_global' )}</span>
     </div>
     <div class="exp-field">
         <span id="alias-kind-label"><strong>{'Show'|i18n( 'design/admin/content/urlalias_global' )}</strong></span>

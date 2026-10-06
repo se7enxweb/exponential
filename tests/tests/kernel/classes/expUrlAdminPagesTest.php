@@ -12,9 +12,10 @@
  *  UA-05 - The objects using each URL are counted per URL, each object once, the first three named
  *  UA-06 - LIKE patterns match %, _ and ! as themselves; eZURL orders end in the id
  *  UA-07 - The search statistics WHERE and ORDER BY, and the MongoDB match
- *  UA-08 - An alias destination is read as module view, node or other; a search and a kind filter aliases
+ *  UA-08 - An alias destination is read as module view, node or other
  *  UA-09 - Wildcard placeholders without a * are found
  *  UA-10 - A tried address is translated by the first wildcard it matches, as the wildcard cache does
+ *  UA-11 - The alias and wildcard searches and kinds are query conditions, with %, _ and ! matched as themselves
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -152,12 +153,6 @@ class expUrlAdminPagesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'node', 42, 'content/view/full/42' ), array( $node['kind'], $node['node_id'], $node['url'] ) );
         $this->assertSame( 'none', UrlaliasGlobal::destinationOf( 'nop:', $exists )['kind'] );
         $this->assertSame( 'other', UrlaliasGlobal::destinationOf( 'custom:x', $exists )['kind'] );
-
-        $info = array( 'path' => 'Sign-In', 'redirects' => true, 'destination' => $module );
-        $this->assertTrue( UrlaliasGlobal::aliasMatches( $info, 'sign', 'all' ) );
-        $this->assertTrue( UrlaliasGlobal::aliasMatches( $info, 'USER/LOG', 'redirect' ) );
-        $this->assertFalse( UrlaliasGlobal::aliasMatches( $info, '', 'direct' ) );
-        $this->assertFalse( UrlaliasGlobal::aliasMatches( $info, 'basket', 'all' ) );
     }
 
     /** UA-09 */
@@ -184,7 +179,28 @@ class expUrlAdminPagesTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( UrlaliasWildcard::firstMatch( $wildcards, 'other' ) );
         $this->assertSame( '#^news/(.*)#i', UrlaliasWildcard::patternRegexp( 'news/*' ) );
         $this->assertSame( 'dev/${1}', UrlaliasWildcard::destinationReplacement( 'dev/{1}' ) );
-        $this->assertTrue( UrlaliasWildcard::wildcardMatches( 'news/*', 'articles/{1}', 2, 'ARTIC', 'direct' ) );
-        $this->assertFalse( UrlaliasWildcard::wildcardMatches( 'news/*', 'articles/{1}', 2, '', 'redirect' ) );
+    }
+
+    /** UA-11 */
+    public function testAliasAndWildcardFiltersAreQueryConditions()
+    {
+        $db = new X1UrlAdminDbStandIn();
+        $this->assertSame( array(), eZURLAliasQuery::filterConditionsSQL( $db, null, null ) );
+        $this->assertSame( array( "( LOWER( text ) LIKE LOWER( '%50!%!_o''k%' ) ESCAPE '!' OR LOWER( action ) LIKE LOWER( '%50!%!_o''k%' ) ESCAPE '!' )", 'alias_redirects = 1' ),
+                           eZURLAliasQuery::filterConditionsSQL( $db, "50%_o'k", true ) );
+        $this->assertSame( '%a!_b!!%', eZURLAliasQuery::searchLikePattern( 'a_b!' ) );
+        $this->assertSame( array( 'alias_redirects = 0' ), eZURLAliasQuery::filterConditionsSQL( $db, '', false ) );
+        $this->assertSame( array( '$or' => array( array( 'text' => array( '$regex' => 'a\.b', '$options' => 'i' ) ),
+                                                  array( 'action' => array( '$regex' => 'a\.b', '$options' => 'i' ) ) ),
+                                  'alias_redirects' => 0 ),
+                           eZURLAliasQuery::filterMongoMatch( 'a.b', false ) );
+
+        $this->assertSame( '', eZURLWildcard::filterWhereSQL( $db, null, null ) );
+        $this->assertSame( " WHERE ( LOWER( source_url ) LIKE LOWER( '%new!_s%' ) ESCAPE '!' OR LOWER( destination_url ) LIKE LOWER( '%new!_s%' ) ESCAPE '!' ) AND type = 1",
+                           eZURLWildcard::filterWhereSQL( $db, 'new_s', eZURLWildcard::TYPE_FORWARD ) );
+        $this->assertSame( array( 'type' => 2 ), eZURLWildcard::filterMongoMatch( '', eZURLWildcard::TYPE_DIRECT ) );
+        $this->assertSame( eZURLWildcard::TYPE_FORWARD, UrlaliasWildcard::typeOfKind( 'redirect' ) );
+        $this->assertSame( eZURLWildcard::TYPE_DIRECT, UrlaliasWildcard::typeOfKind( 'direct' ) );
+        $this->assertNull( UrlaliasWildcard::typeOfKind( 'all' ) );
     }
 }

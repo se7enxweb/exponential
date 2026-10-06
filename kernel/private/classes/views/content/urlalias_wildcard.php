@@ -186,17 +186,12 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
         }
         else
         {
-            // Wildcards are few (every request reads all of them from the wildcard cache), so a search filters here
-            $matching = array();
-            foreach ( \eZURLWildcard::fetchList() as $wildcard )
-            {
-                if ( self::wildcardMatches( $wildcard->attribute( 'source_url' ), $wildcard->attribute( 'destination_url' ), (int)$wildcard->attribute( 'type' ), $search, $kind ) )
-                    $matching[] = $wildcard;
-            }
-            $wildcardsCount = count( $matching );
+            // the search and the kind are conditions of the query: one count and one page query
+            $type = self::typeOfKind( $kind );
+            $wildcardsCount = \eZURLWildcard::fetchFilteredListCount( $search !== '' ? $search : null, $type );
             if ( $Offset >= $wildcardsCount )
                 $Offset = 0;
-            $wildcardList = array_slice( $matching, $Offset, $wildcardsLimit );
+            $wildcardList = \eZURLWildcard::fetchFilteredList( $Offset, $wildcardsLimit, $search !== '' ? $search : null, $type );
         }
 
         if ( $testText !== '' )
@@ -331,20 +326,18 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Whether a wildcard is kept by a search (in its pattern or destination, without regard to case) and a kind
-     * ('redirect' for TYPE_FORWARD, 'direct' for TYPE_DIRECT).
+     * The wildcard type of a kind: TYPE_FORWARD for redirect, TYPE_DIRECT for direct, null for all.
      *
-     * @return bool
+     * @param string $kind see UrlaliasGlobal::kindKey()
+     * @return int|null
      */
-    public static function wildcardMatches( $source, $destination, $type, $search, $kind )
+    public static function typeOfKind( $kind )
     {
-        if ( $kind === 'redirect' && $type != \eZURLWildcard::TYPE_FORWARD )
-            return false;
-        if ( $kind === 'direct' && $type != \eZURLWildcard::TYPE_DIRECT )
-            return false;
-        if ( $search === '' )
-            return true;
-        return strpos( mb_strtolower( $source . ' ' . $destination ), mb_strtolower( $search ) ) !== false;
+        if ( $kind === 'redirect' )
+            return \eZURLWildcard::TYPE_FORWARD;
+        if ( $kind === 'direct' )
+            return \eZURLWildcard::TYPE_DIRECT;
+        return null;
     }
 }
 

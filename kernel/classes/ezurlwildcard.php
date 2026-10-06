@@ -198,6 +198,101 @@ class eZURLWildcard extends eZPersistentObject
     }
 
     /**
+     * The wildcards whose pattern or destination contains $search (without regard to case, % and _ matched as
+     * themselves) and whose type is $type (null for any), a page at a time in the order of their ids, which is
+     * the order the wildcard cache tries them in. Since 6.0.15.
+     *
+     * @param int $offset
+     * @param int $limit 0 for all
+     * @param string|null $search
+     * @param int|null $type self::TYPE_FORWARD or self::TYPE_DIRECT
+     * @param bool $asObject
+     * @return array
+     */
+    public static function fetchFilteredList( $offset, $limit, $search = null, $type = null, $asObject = true )
+    {
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $pipeline = array( array( '$match' => (object)self::filterMongoMatch( $search, $type ) ), array( '$sort' => array( 'id' => 1 ) ) );
+            if ( $offset > 0 )
+                $pipeline[] = array( '$skip' => (int)$offset );
+            if ( $limit > 0 )
+                $pipeline[] = array( '$limit' => (int)$limit );
+            $rows = $db->aggregate( 'ezurlwildcard', $pipeline );
+        }
+        else
+        {
+            $parameters = $limit > 0 ? array( 'offset' => (int)$offset, 'limit' => (int)$limit ) : array();
+            $rows = $db->arrayQuery( 'SELECT id, source_url, destination_url, type FROM ezurlwildcard'
+                                     . self::filterWhereSQL( $db, $search, $type ) . ' ORDER BY id', $parameters );
+        }
+        $rows = is_array( $rows ) ? $rows : array();
+        return $asObject ? eZPersistentObject::handleRows( $rows, 'eZURLWildcard', true ) : $rows;
+    }
+
+    /**
+     * How many wildcards fetchFilteredList() would give without paging: one count query.
+     *
+     * @param string|null $search
+     * @param int|null $type
+     * @return int
+     */
+    public static function fetchFilteredListCount( $search = null, $type = null )
+    {
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezurlwildcard', array( array( '$match' => (object)self::filterMongoMatch( $search, $type ) ),
+                                                            array( '$count' => 'count' ) ) );
+            return !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+        }
+        $rows = $db->arrayQuery( 'SELECT count(*) AS count FROM ezurlwildcard' . self::filterWhereSQL( $db, $search, $type ) );
+        return !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+    }
+
+    /**
+     * The WHERE of fetchFilteredList(), '' without a filter.
+     *
+     * @param eZDBInterface $db
+     * @param string|null $search
+     * @param int|null $type
+     * @return string
+     */
+    public static function filterWhereSQL( $db, $search, $type )
+    {
+        $conditions = array();
+        if ( is_string( $search ) && $search !== '' )
+        {
+            $pattern = $db->escapeString( '%' . strtr( $search, array( '!' => '!!', '%' => '!%', '_' => '!_' ) ) . '%' );
+            $conditions[] = "( LOWER( source_url ) LIKE LOWER( '$pattern' ) ESCAPE '!' OR LOWER( destination_url ) LIKE LOWER( '$pattern' ) ESCAPE '!' )";
+        }
+        if ( $type !== null )
+            $conditions[] = 'type = ' . (int)$type;
+        return $conditions ? ' WHERE ' . implode( ' AND ', $conditions ) : '';
+    }
+
+    /**
+     * The MongoDB $match of fetchFilteredList().
+     *
+     * @param string|null $search
+     * @param int|null $type
+     * @return array
+     */
+    public static function filterMongoMatch( $search, $type )
+    {
+        $match = array();
+        if ( is_string( $search ) && $search !== '' )
+        {
+            $regex = array( '$regex' => preg_quote( $search ), '$options' => 'i' );
+            $match['$or'] = array( array( 'source_url' => $regex ), array( 'destination_url' => $regex ) );
+        }
+        if ( $type !== null )
+            $match['type'] = (int)$type;
+        return $match;
+    }
+
+    /**
      * Returns the number of wildcards in the database without any filtering
      * @return int Number of wildcards in the database
      */
