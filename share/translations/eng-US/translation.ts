@@ -11097,6 +11097,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>ID</source>
         <translation>ID</translation>
     </message>
+    <message>
+        <source>No extension handler evaluates this limitation, so this policy gives no access</source>
+        <translation>No extension handler evaluates this limitation, so this policy gives no access</translation>
+    </message>
+    <message>
+        <source>(no handler, denies)</source>
+        <translation>(no handler, denies)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_destination</name>

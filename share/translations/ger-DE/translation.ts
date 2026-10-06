@@ -13705,6 +13705,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>ID</source>
         <translation>ID</translation>
     </message>
+    <message>
+        <source>No extension handler evaluates this limitation, so this policy gives no access</source>
+        <translation>Keine Erweiterung wertet diese Einschränkung aus, daher gewährt diese Richtlinie keinen Zugriff</translation>
+    </message>
+    <message>
+        <source>(no handler, denies)</source>
+        <translation>(ohne Auswertung, verweigert)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_destination</name>

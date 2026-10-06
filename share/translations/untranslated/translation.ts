@@ -10055,6 +10055,14 @@ Note: The packages will not be uninstalled.</source>
         <source>ID</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>No extension handler evaluates this limitation, so this policy gives no access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no handler, denies)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_destination</name>
