@@ -63,6 +63,27 @@ Try it on one siteaccess first: activate the extension as an access extension of
 `LoginHandler` lines in that siteaccess's `site.ini.append.php`. Remember that `settings/override` outranks a
 siteaccess: mail sent from the test siteaccess still uses the global `[MailSettings] Transport`.
 
+## On alpha
+
+Two-step sign-in is on at alpha.se7enx.com since 6 October 2026, as opt-in: the extension is active, the login
+handler is `sevenxUser2fa` then `standard`, the user class has the field *Two-step sign-in* (`two_factor`), Member has
+`user2fa/setup` and `user2fa/verify`, and the secrets are encrypted with a key in
+`settings/override/sevenxauthentication2fa.ini.append.php`. Nobody is enrolled by it: every account signs in as before
+until its owner turns the second step on under *My account*.
+
+To require it for everyone, set in `settings/override/sevenxauthentication2fa.ini.append.php`:
+
+```ini
+[General]
+Enforce2FA=enabled
+DefaultMethod=totp
+```
+
+then clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`) and deploy (`./console exp:velocity deploy`).
+Each user without a second step then sets up an authenticator right after the password. Enrol the administrators
+first, so nobody is caught without a phone at hand. Every user needs `user2fa/setup` for the setup (Member has it;
+add it to Editor and any other role that signs in). To turn it off again, set `Enforce2FA=disabled`.
+
 ## Social login
 
 Buttons such as *Continue with Google* appear on the login page (admin4, admin, Admin UI and the media design) for each
