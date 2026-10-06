@@ -7159,7 +7159,7 @@ a5f311adee5cc6c0fa46486b22f14f48  tests/tests/kernel/classes/setupsteps/eZSetupS
 009298166c4d9895d0b6c4969ee530e6  tests/tests/kernel/classes/shopprices/eZPaymentCallbackCheckerTest.php
 50a3ed6254274b1d0b775f920f3e0e50  tests/tests/kernel/classes/shopprices/eZShopPricesTest.php
 f87c35d4e8f471dd00bb04d7a585ce64  tests/tests/kernel/classes/shopprices/eZShopReceiptTokenTest.php
-68f8a414f1b636890eab42c40a57ae40  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
+1c9766826ca731edd828dcb12e42ee92  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 5f7b136345d65abce93f026c8d8815d3  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
 34edd200b1cb4ad7763e5e9ee9bfeabb  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnCatalogueTest.php
 23e5c3bc8cf4916bbcbb1d9b8b54079c  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnsTestCase.php
