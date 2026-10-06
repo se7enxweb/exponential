@@ -193,8 +193,9 @@ class expModuleWizardTest extends PHPUnit\Framework\TestCase
     {
         $dir = $this->scratch . '/' . md5( $contents );
         mkdir( $dir );
-        file_put_contents( $dir . '/' . $name, $contents );
-        return eZINI::fetchFromFile( $dir . '/' . $name );
+        file_put_contents( $dir . '/' . $name . '.append.php', $contents );
+        // eZINI reads a path relative to the installation
+        return eZINI::fetchFromFile( substr( $dir, strlen( expRadWizardTestHelper::root() ) + 1 ) . '/' . $name . '.append.php' );
     }
 
     public function testViewScriptsReadTheirParameters()
