@@ -39,6 +39,13 @@ $ViewList['view'] = array(
     'params' => array( 'CollectionID' ) );
 
 
+// CSV of everything one object has collected: infocollector/export/<ObjectID> (doc/guides/collected-information.md)
+$ViewList['export'] = array(
+    'script' => 'export.php',
+    'functions' => array( 'read' ),
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array( 'ObjectID' ) );
+
 $FunctionList = array();
 $FunctionList['read'] = array();
 

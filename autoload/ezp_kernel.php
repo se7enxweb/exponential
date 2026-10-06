@@ -204,6 +204,7 @@ return array(
       'Exponential\\View\\Kernel\\Ezinfo\\Copyright'                 => 'kernel/private/classes/views/ezinfo/copyright.php',
       'Exponential\\View\\Kernel\\Ezinfo\\Isalive'                   => 'kernel/private/classes/views/ezinfo/isalive.php',
       'Exponential\\View\\Kernel\\Infocollector\\Collectionlist'     => 'kernel/private/classes/views/infocollector/collectionlist.php',
+      'Exponential\\View\\Kernel\\Infocollector\\Export'             => 'kernel/private/classes/views/infocollector/export.php',
       'Exponential\\View\\Kernel\\Infocollector\\Overview'           => 'kernel/private/classes/views/infocollector/overview.php',
       'Exponential\\View\\Kernel\\Infocollector\\View'               => 'kernel/private/classes/views/infocollector/view.php',
       'Exponential\\View\\Kernel\\Layout\\Set'                       => 'kernel/private/classes/views/layout/set.php',
