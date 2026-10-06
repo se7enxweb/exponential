@@ -6,15 +6,24 @@
  * The file manifest lists "md5  path" for every file of the distribution; the
  * system upgrade check of the admin interface compares the files against it, so
  * a stale entry shows up there as a modified file. This script needs no kernel
- * and no database, so the git hooks and CI can run it on every commit.
+ * and no database, so the git hooks and CI can run it on every commit. It reads
+ * the manifests with the same class as the upgrade check
+ * (kernel/private/classes/expfileconsistencyreport.php), so both always agree.
  *
  *   php bin/php/checkmanifest.php --all     every entry exists and has its checksum;
- *                                           git files missing from the manifest are warnings
+ *                                           git files missing from the manifest, lines out
+ *                                           of order and malformed lines are warnings
  *   php bin/php/checkmanifest.php --staged  the files staged for the next commit are listed
  *                                           with the checksum of their staged content
  *   php bin/php/checkmanifest.php --fix     rewrites stale checksums, adds missing files at
  *                                           their sorted place and drops entries of removed
  *                                           files; the order of the other lines is kept
+ *
+ * With --all:
+ *   --extensions   also checks the share/filelist.md5 every extension may carry of its own
+ *                  (every extension directory that has one, active or not)
+ *   --csv          prints the findings as CSV, the same columns as the download of the
+ *                  upgrade check, instead of the lines below
  *
  * Exit code 0 when everything matches, 1 otherwise.
  *
@@ -30,39 +39,18 @@ if ( PHP_SAPI !== 'cli' )
 
 chdir( dirname( __DIR__, 2 ) );
 
+require_once 'kernel/private/classes/expfileconsistencyreport.php';
+
 /**
  * The manifest file, relative to the root of the installation
  */
-const EXP_MANIFEST_FILE = 'share/filelist.md5';
+const EXP_MANIFEST_FILE = expFileConsistencyReport::MANIFEST_FILE;
 
 /**
  * Paths outside the manifest: the manifest itself, runtime data and the files
  * of extensions that ship their own checksum list
  */
-$manifestExcludes = array( 'share/filelist.md5', 'var/', 'extension/ezoe/' );
-
-/**
- * Returns true when $path belongs into the manifest
- *
- * @param string $path
- * @param array $excludes
- * @return bool
- */
-function manifestCovers( $path, $excludes )
-{
-    foreach ( $excludes as $exclude )
-    {
-        if ( $path === $exclude || ( substr( $exclude, -1 ) === '/' && strpos( $path, $exclude ) === 0 ) )
-        {
-            return false;
-        }
-    }
-    if ( strpos( $path, '/__pycache__/' ) !== false || substr( $path, -4 ) === '.pyc' )
-    {
-        return false;
-    }
-    return true;
-}
+$manifestExcludes = expFileConsistencyReport::ROOT_EXCLUDES;
 
 /**
  * Runs a git command and returns its output split by NUL, or false on failure
@@ -80,29 +68,33 @@ function gitList( $arguments )
     return array_values( array_filter( explode( "\0", $output ), 'strlen' ) );
 }
 
-/**
- * Parses manifest text into an ordered list of array( md5, path )
- *
- * @param string $text
- * @return array
- */
-function parseManifest( $text )
+$arguments = array_slice( $argv, 1 );
+$mode = '';
+$withExtensions = false;
+$csv = false;
+foreach ( $arguments as $argument )
 {
-    $entries = array();
-    foreach ( explode( "\n", $text ) as $line )
+    if ( in_array( $argument, array( '--all', '--staged', '--fix' ), true ) && $mode === '' )
     {
-        if ( isset( $line[34] ) && substr( $line, 32, 2 ) === '  ' )
-        {
-            $entries[] = array( substr( $line, 0, 32 ), substr( $line, 34 ) );
-        }
+        $mode = $argument;
     }
-    return $entries;
+    else if ( $argument === '--extensions' )
+    {
+        $withExtensions = true;
+    }
+    else if ( $argument === '--csv' )
+    {
+        $csv = true;
+    }
+    else
+    {
+        $mode = '';
+        break;
+    }
 }
-
-$mode = isset( $argv[1] ) ? $argv[1] : '';
-if ( !in_array( $mode, array( '--all', '--staged', '--fix' ), true ) )
+if ( $mode === '' || ( ( $withExtensions || $csv ) && $mode !== '--all' ) )
 {
-    fwrite( STDERR, "Usage: php bin/php/checkmanifest.php --all|--staged|--fix\n" );
+    fwrite( STDERR, "Usage: php bin/php/checkmanifest.php --all [--extensions] [--csv] | --staged | --fix\n" );
     exit( 1 );
 }
 
@@ -113,11 +105,11 @@ if ( $mode === '--staged' )
 {
     // Compare with the manifest as it is staged, so a commit that updates both passes
     $staged = shell_exec( 'git show :' . escapeshellarg( EXP_MANIFEST_FILE ) . ' 2>/dev/null' );
-    $entries = parseManifest( is_string( $staged ) ? $staged : (string)@file_get_contents( EXP_MANIFEST_FILE ) );
+    $parsed = expFileConsistencyReport::parseManifest( is_string( $staged ) ? $staged : (string)@file_get_contents( EXP_MANIFEST_FILE ) );
     $sums = array();
-    foreach ( $entries as $entry )
+    foreach ( $parsed['entries'] as $entry )
     {
-        $sums[$entry[1]] = $entry[0];
+        $sums[$entry['path']] = $entry['md5'];
     }
 
     $changes = gitList( 'diff --cached --name-status --no-renames -z' );
@@ -130,7 +122,7 @@ if ( $mode === '--staged' )
     {
         $status = $changes[$i];
         $path = $changes[$i + 1];
-        if ( !manifestCovers( $path, $manifestExcludes ) )
+        if ( !expFileConsistencyReport::covers( $path, $manifestExcludes ) )
         {
             continue;
         }
@@ -156,8 +148,8 @@ if ( $mode === '--staged' )
 }
 else
 {
-    $entries = parseManifest( (string)@file_get_contents( EXP_MANIFEST_FILE ) );
-    if ( !$entries )
+    $parsed = expFileConsistencyReport::parseManifest( (string)@file_get_contents( EXP_MANIFEST_FILE ) );
+    if ( !$parsed['entries'] )
     {
         fwrite( STDERR, "checkmanifest: " . EXP_MANIFEST_FILE . " is missing or empty\n" );
         exit( 1 );
@@ -169,46 +161,41 @@ else
         fwrite( STDERR, "checkmanifest: git is not available\n" );
         exit( 1 );
     }
-    $tracked = array_flip( $tracked );
 
-    $listed = array();
-    $kept = array();
-    $previous = '';
-    foreach ( $entries as $entry )
+    $extensions = $withExtensions ? expFileConsistencyReport::extensionDirectoriesWithManifest( '.' ) : array();
+    $report = expFileConsistencyReport::forInstallation( '.', $extensions );
+    $report->setTrackedFiles( 'exponential', $tracked, $manifestExcludes );
+    foreach ( $extensions as $name => $directory )
     {
-        list( $md5, $path ) = $entry;
-        $listed[$path] = true;
-        if ( !is_file( $path ) )
+        // an extension that is a git checkout of its own: its tracked files belong in its own list
+        if ( ( $own = expFileConsistencyReport::gitTrackedFiles( $directory ) ) !== false )
         {
-            $errors[] = "$path is listed but does not exist";
-            continue;
-        }
-        $current = md5_file( $path );
-        if ( $current !== $md5 )
-        {
-            $errors[] = "$path has checksum $md5 in the manifest, the file has $current";
-        }
-        if ( strcmp( $previous, $path ) > 0 )
-        {
-            $warnings[] = "$path is out of order (after $previous)";
-        }
-        $previous = $path;
-        $kept[] = array( $current, $path );
-    }
-
-    $missing = array();
-    foreach ( array_keys( $tracked ) as $path )
-    {
-        if ( !isset( $listed[$path] ) && manifestCovers( $path, $manifestExcludes ) && is_file( $path ) )
-        {
-            $missing[] = $path;
-            $warnings[] = "$path is in git but not listed";
+            $report->setTrackedFiles( $name, $own, array( EXP_MANIFEST_FILE ) );
         }
     }
+    $result = $report->run();
 
     if ( $mode === '--fix' )
     {
-        // Insert each missing file before the first entry that sorts after it
+        // Every listed file that still exists keeps its place with its current checksum; each file git tracks that
+        // is not listed goes in before the first entry that sorts after it. Malformed lines are dropped.
+        $missing = array();
+        $gone = array();
+        foreach ( $result['items'] as $item )
+        {
+            if ( $item['manifest'] !== 'exponential' )
+                continue;
+            if ( $item['state'] === expFileConsistencyReport::STATE_UNLISTED )
+                $missing[] = $item['path'];
+            else if ( $item['state'] === expFileConsistencyReport::STATE_MISSING || $item['state'] === expFileConsistencyReport::STATE_UNREADABLE )
+                $gone[$item['path']] = true;
+        }
+        $kept = array();
+        foreach ( $parsed['entries'] as $entry )
+        {
+            if ( !isset( $gone[$entry['path']] ) )
+                $kept[] = array( md5_file( $entry['path'] ), $entry['path'] );
+        }
         sort( $missing, SORT_STRING );
         foreach ( $missing as $path )
         {
@@ -230,8 +217,34 @@ else
             $text .= $entry[0] . '  ' . $entry[1] . "\n";
         }
         file_put_contents( EXP_MANIFEST_FILE, $text );
-        echo "checkmanifest: " . EXP_MANIFEST_FILE . " rewritten (" . count( $errors ) . " corrected, " . count( $missing ) . " added)\n";
+        echo "checkmanifest: " . EXP_MANIFEST_FILE . " rewritten (" . $result['problems'] . " corrected, " . count( $missing ) . " added)\n";
         exit( 0 );
+    }
+
+    if ( $csv )
+    {
+        $out = fopen( 'php://stdout', 'w' );
+        $report->writeCsv( $out, false );
+        exit( $result['status'] === expFileConsistencyReport::STATUS_OK ? 0 : 1 );
+    }
+
+    foreach ( $result['items'] as $item )
+    {
+        if ( in_array( $item['state'], expFileConsistencyReport::PROBLEM_STATES, true ) )
+        {
+            $errors[] = expFileConsistencyReport::describe( $item );
+        }
+        else
+        {
+            $warnings[] = expFileConsistencyReport::describe( $item );
+        }
+    }
+    foreach ( $result['manifests'] as $manifest )
+    {
+        if ( !$manifest['readable'] )
+        {
+            $errors[] = $manifest['file'] . ' cannot be read';
+        }
     }
 }
 
@@ -245,8 +258,8 @@ foreach ( $errors as $error )
 }
 if ( $errors )
 {
-    echo "checkmanifest: " . count( $errors ) . " problem(s) in " . EXP_MANIFEST_FILE . "; run: make manifest-fix\n";
+    echo "checkmanifest: " . count( $errors ) . " problem(s) in " . EXP_MANIFEST_FILE . ( $withExtensions ? ' and the extension manifests' : '' ) . "; run: make manifest-fix\n";
     exit( 1 );
 }
-echo "checkmanifest: " . EXP_MANIFEST_FILE . " matches" . ( $warnings ? ' (' . count( $warnings ) . ' warning(s))' : '' ) . "\n";
+echo "checkmanifest: " . EXP_MANIFEST_FILE . ( $withExtensions ? ' and the extension manifests' : '' ) . " matches" . ( $warnings ? ' (' . count( $warnings ) . ' warning(s))' : '' ) . "\n";
 exit( 0 );
