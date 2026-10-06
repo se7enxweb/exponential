@@ -13487,6 +13487,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>ID</source>
         <translation>ID</translation>
     </message>
+    <message>
+        <source>How many users and user groups the role is assigned to</source>
+        <translation>Wie vielen Benutzern und Benutzergruppen die Rolle zugewiesen ist</translation>
+    </message>
+    <message>
+        <source>Assigned</source>
+        <translation>Zugewiesen</translation>
+    </message>
+    <message>
+        <source>Show the users and user groups of the &lt;%role_name&gt; role.</source>
+        <translation>Die Benutzer und Benutzergruppen der Rolle &lt;%role_name&gt; zeigen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/policyedit</name>
@@ -13704,6 +13716,42 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>ID</source>
         <translation>ID</translation>
+    </message>
+    <message>
+        <source>Name contains</source>
+        <translation>Name enthält</translation>
+    </message>
+    <message>
+        <source>Show only the users and user groups whose name contains this text.</source>
+        <translation>Nur die Benutzer und Benutzergruppen zeigen, deren Name diesen Text enthält.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alle zeigen</translation>
+    </message>
+    <message>
+        <source>%count of %total match "%filter".</source>
+        <translation>%count von %total passen zu "%filter".</translation>
+    </message>
+    <message>
+        <source>%count of these assignments belong to a user or user group that no longer exists. They are listed first and can be removed.</source>
+        <translation>%count dieser Zuweisungen gehören zu einem Benutzer oder einer Benutzergruppe, die es nicht mehr gibt. Sie stehen am Anfang der Liste und können entfernt werden.</translation>
+    </message>
+    <message>
+        <source>User or user group no longer exists (object %object_id)</source>
+        <translation>Benutzer oder Benutzergruppe gibt es nicht mehr (Objekt %object_id)</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nicht gefunden</translation>
+    </message>
+    <message>
+        <source>No user or user group of this role has a name containing "%filter".</source>
+        <translation>Kein Benutzer und keine Benutzergruppe dieser Rolle hat einen Namen, der "%filter" enthält.</translation>
     </message>
 </context>
 <context>
