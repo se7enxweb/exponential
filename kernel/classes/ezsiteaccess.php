@@ -311,6 +311,23 @@ class eZSiteAccess
                             }
                         }
                     }
+
+                    // No entry matched, for example the address has no language segment: an entry of
+                    // DefaultHostUriMatchMapItems for the host gives the siteaccess and the uri part of its links,
+                    // chosen by the languages the browser accepts. The address itself is not shortened.
+                    if ( $ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ) )
+                    {
+                        $default = self::matchDefaultHostUri( $ini->variableArray( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ),
+                                                              $host,
+                                                              $ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' ),
+                                                              isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ? (string)$_SERVER['HTTP_ACCEPT_LANGUAGE'] : '' );
+                        if ( $default !== null )
+                        {
+                            $access = array_merge( $access, $default );
+                            $access['type'] = $type;
+                            return $access;
+                        }
+                    }
                 } break;
                 case 'index':
                 {
@@ -400,6 +417,100 @@ class eZSiteAccess
             }
         }
         return $access;
+    }
+
+    /**
+     * The default of host_uri matching for an address no HostUriMatchMapItems entry matched: the first entry of
+     * $items (DefaultHostUriMatchMapItems[]=host;uri;siteaccess[;method[;language]]) whose host matches and whose
+     * language the browser accepts, trying the languages of $acceptLanguage from the most wanted; else the first
+     * entry for the host without a language. method is strict, start, end or part; empty or "default" is
+     * $defaultMethod (HostUriMatchMethodDefault). A language matches itself and its regional forms (de: de, de-CH).
+     *
+     * @param array $items the entries, each split at ";"
+     * @param string $host
+     * @param string $defaultMethod
+     * @param string $acceptLanguage the Accept-Language header of the request
+     * @return array|null array( name, uri_part[, vary] ) with vary = Accept-Language when an entry for the host names a
+     *                    language, so the answer depends on it; null when no entry is for the host
+     */
+    static function matchDefaultHostUri( array $items, $host, $defaultMethod, $acceptLanguage )
+    {
+        $forHost = array();
+        $byLanguage = false;
+        foreach ( $items as $item )
+        {
+            $item = (array)$item;
+            if ( !isset( $item[2] ) || (string)$item[0] === '' || (string)$item[2] === '' )
+                continue;
+            $method = isset( $item[3] ) && $item[3] !== '' && $item[3] !== 'default' ? (string)$item[3] : (string)$defaultMethod;
+            if ( !self::hostMatches( $host, (string)$item[0], $method ) )
+                continue;
+            $language = isset( $item[4] ) ? strtolower( trim( (string)$item[4] ) ) : '';
+            $byLanguage = $byLanguage || $language !== '';
+            $forHost[] = array( 'uri' => trim( (string)$item[1], '/' ), 'name' => (string)$item[2], 'language' => $language );
+        }
+
+        $chosen = null;
+        foreach ( self::acceptedLanguages( $acceptLanguage ) as $wanted )
+        {
+            foreach ( $forHost as $entry )
+            {
+                if ( $entry['language'] !== '' && ( $wanted === $entry['language'] || strpos( $wanted, $entry['language'] . '-' ) === 0 ) )
+                {
+                    $chosen = $entry;
+                    break 2;
+                }
+            }
+        }
+        if ( $chosen === null )
+        {
+            foreach ( $forHost as $entry )
+            {
+                if ( $entry['language'] === '' )
+                {
+                    $chosen = $entry;
+                    break;
+                }
+            }
+        }
+        if ( $chosen === null )
+            return null;
+
+        $access = array( 'name' => $chosen['name'],
+                         'uri_part' => $chosen['uri'] !== '' ? explode( '/', $chosen['uri'] ) : array() );
+        if ( $byLanguage )
+            $access['vary'] = 'Accept-Language';
+        return $access;
+    }
+
+    /**
+     * The languages of an Accept-Language header, lower case, the most wanted first (by q, then in the order given);
+     * a language with q=0 and the wildcard are left out.
+     *
+     * @param string $header for example "de-DE,de;q=0.9,en;q=0.8"
+     * @return string[]
+     */
+    static function acceptedLanguages( $header )
+    {
+        $languages = array();
+        foreach ( explode( ',', (string)$header ) as $position => $part )
+        {
+            $fields = explode( ';', $part );
+            $tag = strtolower( trim( $fields[0] ) );
+            if ( $tag === '' || $tag === '*' || !preg_match( '/^[a-z0-9-]+$/', $tag ) )
+                continue;
+            $quality = 1.0;
+            foreach ( array_slice( $fields, 1 ) as $parameter )
+            {
+                if ( preg_match( '/^\s*q\s*=\s*([0-9.]+)\s*$/i', $parameter, $match ) )
+                    $quality = (float)$match[1];
+            }
+            if ( $quality <= 0 )
+                continue;
+            $languages[] = array( $quality, $position, $tag );
+        }
+        usort( $languages, function ( $a, $b ) { return $b[0] <=> $a[0] ?: $a[1] <=> $b[1]; } );
+        return array_column( $languages, 2 );
     }
 
     /**

@@ -367,6 +367,16 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             'Content-language' => $this->languageCode
         ) + self::securityHeaders();
 
+        // A siteaccess chosen by the languages the browser accepts (DefaultHostUriMatchMapItems): the same address
+        // answers in another language for another browser. Vary tells a cache between; private keeps the page out
+        // of shared caches that key by address alone (Velocity's response cache), also when [HTTPHeaderSettings]
+        // makes pages public. Only the address without language segment is chosen this way.
+        if ( !empty( $this->access['vary'] ) )
+        {
+            $headerOverrides['Vary'] = (string)$this->access['vary'];
+            $headerOverrides['Cache-Control'] = 'private, no-cache, must-revalidate';
+        }
+
         // Pragma is the HTTP/1.0 spelling of Cache-Control and there is no way
         // to say "cacheable" in it. So when a configured header makes a page
         // cacheable, leaving the default Pragma in place sends a response that
