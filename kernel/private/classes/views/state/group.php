@@ -42,12 +42,28 @@ class Group extends \Exponential\Runnable\ModuleView
 
 
         $tpl = \eZTemplate::factory();
+        $http = \eZHTTPTool::instance();
+        $feedback = array();
+        $confirmRemove = false;
 
         $currentAction = $Module->currentAction();
 
         if ( !$group->isInternal() )
         {
-            if ( $currentAction == 'Remove' && $Module->hasActionParameter( 'RemoveIDList' ) )
+            if ( $currentAction == 'Remove' && $Module->hasActionParameter( 'RemoveIDList' ) && !$http->hasPostVariable( 'ConfirmRemove' ) )
+            {
+                // Removing states moves their objects to another state and cannot be undone, so
+                // the page first says what goes and where the objects go; the second post carries
+                // ConfirmRemove.
+                $info = Groups::describeGroup( $group, Groups::references() );
+                $confirmRemove = Groups::removalConsequence( $info['states'], (array)$Module->actionParameter( 'RemoveIDList' ) );
+                $confirmRemove['ids'] = array();
+                foreach ( $confirmRemove['removed'] as $removedState )
+                    $confirmRemove['ids'][] = $removedState['id'];
+                if ( !$confirmRemove['removed'] )
+                    $confirmRemove = false;
+            }
+            else if ( $currentAction == 'Remove' && $Module->hasActionParameter( 'RemoveIDList' ) )
             {
                 $removeIDList = $Module->actionParameter( 'RemoveIDList' );
                 // Audit (doc/bc/6.0/audit.md, content.state.remove)
@@ -64,6 +80,7 @@ class Group extends \Exponential\Runnable\ModuleView
                     }
                 }
                 $group->removeStatesByID( $removeIDList );
+                $feedback[] = array( 'ok' => true, 'message' => \ezpI18n::tr( 'design/admin/state/group', 'The selected states were removed.' ) );
             }
             else if ( $currentAction == 'Edit' )
             {
@@ -79,16 +96,24 @@ class Group extends \Exponential\Runnable\ModuleView
                 asort( $orderArray );
                 $stateIDList = array_keys( $orderArray );
 
-                $group->reorderStates( $stateIDList );
+                if ( $group->reorderStates( $stateIDList ) )
+                    $feedback[] = array( 'ok' => true, 'message' => \ezpI18n::tr( 'design/admin/state/group', 'The order was saved. The first state is the default for new objects.' ) );
+                else
+                    $feedback[] = array( 'ok' => false, 'message' => \ezpI18n::tr( 'design/admin/state/group', 'The order could not be saved: the list of states has changed. Look at it again and save once more.' ) );
             }
         }
 
+        $LanguageCode = Groups::knownLocale( $LanguageCode );
         if ( $LanguageCode )
         {
             $group->setCurrentLanguage( $LanguageCode );
         }
 
         $tpl->setVariable( 'group', $group );
+        $tpl->setVariable( 'group_info', Groups::describeGroup( $group, Groups::references(), $LanguageCode ) );
+        $tpl->setVariable( 'state_feedback', $feedback );
+        $tpl->setVariable( 'confirm_remove', $confirmRemove );
+        $tpl->setVariable( 'current_language', $LanguageCode ? (string)$LanguageCode : '' );
 
         $Result = array(
             'path' => array(

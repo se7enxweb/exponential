@@ -54,22 +54,36 @@ class View extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( "state/edit/$GroupIdentifier/$StateIdentifier" ) );
         }
 
+        $LanguageCode = Groups::knownLocale( $LanguageCode );
         if ( $LanguageCode )
         {
             $state->setCurrentLanguage( $LanguageCode );
         }
 
-
+        // The state among the others of its group: its place in the order (the first is the
+        // default), its objects, and the roles whose policies name it.
+        $groupInfo = Groups::describeGroup( $group, Groups::references(), $LanguageCode );
+        $stateInfo = false;
+        foreach ( $groupInfo['states'] as $info )
+            if ( $info['id'] === (int)$state->attribute( 'id' ) )
+                $stateInfo = $info;
+        $stateRoles = $stateInfo ? Groups::rolesNamingState( $groupInfo['roles'], $stateInfo['id'] ) : array();
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'group', $group );
         $tpl->setVariable( 'state', $state );
+        $tpl->setVariable( 'group_info', $groupInfo );
+        $tpl->setVariable( 'state_info', $stateInfo );
+        $tpl->setVariable( 'state_roles', $stateRoles );
+        $tpl->setVariable( 'current_language', $LanguageCode );
 
         $Result = array(
             'content' => $tpl->fetch( 'design:state/view.tpl' ),
             'path' => array(
                 array( 'url' => false,
                        'text' => \ezpI18n::tr( 'kernel/state', 'State' ) ),
+                array( 'url' => 'state/groups',
+                       'text' => \ezpI18n::tr( 'kernel/state', 'Groups' ) ),
                 array( 'url' => 'state/group/' . $group->attribute( 'identifier' ),
                        'text' => $group->attribute( 'identifier' ) ),
                 array( 'url' => false,

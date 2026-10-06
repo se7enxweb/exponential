@@ -96,6 +96,12 @@ class Edit extends \Exponential\Runnable\ModuleView
 
         $tpl->setVariable( 'state', $state );
         $tpl->setVariable( 'group', $group );
+        // The other states of the group, so the form can say where a new state goes and
+        // whether it becomes the default.
+        $tpl->setVariable( 'group_info', Groups::describeGroup( $group, Groups::references() ) );
+        // The address the form posts back to: the identifier the state is stored under, not one
+        // typed into a form the kernel refused (that one names no state).
+        $tpl->setVariable( 'form_identifier', $StateIdentifier === null ? '' : (string)$StateIdentifier );
 
         if ( $StateIdentifier === null )
         {

@@ -91,6 +91,13 @@ class GroupEdit extends \Exponential\Runnable\ModuleView
         }
 
         $tpl->setVariable( 'group', $group );
+        // An existing group: its states and the roles that name it as StateGroup_<identifier>,
+        // which the form mentions next to the identifier.
+        $storedGroup = $GroupIdentifier === null ? false : \eZContentObjectStateGroup::fetchByIdentifier( $GroupIdentifier );
+        $tpl->setVariable( 'group_info', $storedGroup ? Groups::describeGroup( $storedGroup, Groups::references() ) : false );
+        // The address the form posts back to: the identifier the group is stored under, not one
+        // typed into a form the kernel refused (that one names no group).
+        $tpl->setVariable( 'form_identifier', $GroupIdentifier === null ? '' : (string)$GroupIdentifier );
 
         if ( $GroupIdentifier === null )
         {
