@@ -11,17 +11,29 @@
  *  PP-04 - The limitation part is computed once per policy and reused for the next assignment
  *  PP-05 - A policy with a limitation of the assignment's identifier goes the way of limitationList(), which narrows it
  *  PP-06 - Merging the parts in one call gives what merging them one by one gave
+ *  PP-07 - A policy whose rows were not loaded ahead (not of the roles being built) is not answered from the rows:
+ *          prefetchedAccessArray() declines and limitationList() would ask the database; the same for a limitation
+ *  PP-08 - The limitation an assignment adds is answered from the rows (id -1), not asked of the database once per
+ *          policy and assignment
+ *  PP-09 - A build inside a build gets the outer one its rows back afterwards, and the last one leaves none behind
+ *  PP-10 - The ids of one IN () list stay below Oracle's limit of 1000
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */
 
+require_once __DIR__ . '/fixtures/ezcontentpermissionsqltestdb.php';
+
 class eZPolicyPrefetchedAccessArrayTest extends PHPUnit\Framework\TestCase
 {
+    /** @var eZDBInterface|null the database before a test put a recording one in place */
+    private $previousDB;
+
     protected function setUp(): void
     {
         chdir( dirname( __DIR__, 5 ) );
+        $this->previousDB = $GLOBALS['eZDBGlobalInstance'] ?? null;
         eZPolicy::$prefetchedLimitationRows = array(
             901 => array(),
             902 => array( array( 'id' => 9021, 'policy_id' => 902, 'identifier' => 'Class' ),
@@ -32,6 +44,8 @@ class eZPolicyPrefetchedAccessArrayTest extends PHPUnit\Framework\TestCase
             9021 => array( array( 'id' => 1, 'limitation_id' => 9021, 'value' => '16' ), array( 'id' => 2, 'limitation_id' => 9021, 'value' => '2' ) ),
             9022 => array( array( 'id' => 3, 'limitation_id' => 9022, 'value' => '1' ) ),
             9031 => array( array( 'id' => 4, 'limitation_id' => 9031, 'value' => '/1/2/' ) ),
+            // The limitation an assignment adds (User_Subtree, User_Section) is built with id -1 and has no rows
+            -1 => array(),
         );
         eZPolicy::$prefetchedLimitArrays = array();
     }
@@ -41,6 +55,8 @@ class eZPolicyPrefetchedAccessArrayTest extends PHPUnit\Framework\TestCase
         eZPolicy::$prefetchedLimitationRows = null;
         eZPolicy::$prefetchedLimitArrays = array();
         eZPolicyLimitation::$prefetchedValueRows = null;
+        eZRole::$prefetchedPolicyRows = null;
+        eZDB::setInstance( $this->previousDB );
     }
 
     /** A policy as policyList() makes it, assigned with $limit = array( identifier, value, user role id ) or not */
@@ -132,5 +148,80 @@ class eZPolicyPrefetchedAccessArrayTest extends PHPUnit\Framework\TestCase
             $oneByOne = array_merge_recursive( $oneByOne, $part );
         }
         $this->assertSame( $oneByOne, array_merge_recursive( ...$parts ) );
+    }
+
+    /** A database that runs nothing and records what it was asked */
+    private function recordingDB()
+    {
+        $db = new class extends eZContentPermissionSQLTestDB {
+            public $asked = array();
+            function arrayQuery( $sql, $params = array(), $server = false )
+            {
+                $this->asked[] = $sql;
+                return array();
+            }
+        };
+        eZDB::setInstance( $db );
+        return $db;
+    }
+
+    /** PP-07 */
+    public function testRowsNotLoadedAheadAreNotAnsweredFromThem()
+    {
+        $method = new ReflectionMethod( 'eZPolicy', 'prefetchedAccessArray' );
+        $this->assertNull( $method->invoke( $this->policy( 999 ) ) );
+        $this->assertNull( $method->invoke( $this->policy( 999, array( 'Subtree', '/1/2/', 5 ) ) ) );
+
+        $db = $this->recordingDB();
+        $this->policy( 999 )->limitationList();
+        ( new eZPolicyLimitation( array( 'id' => 9999, 'policy_id' => 999, 'identifier' => 'Class' ) ) )->valueList();
+        $this->assertCount( 2, $db->asked, 'a policy and a limitation of another role ask the database' );
+        $this->assertStringContainsString( 'ezpolicy_limitation', $db->asked[0] );
+        $this->assertStringContainsString( 'ezpolicy_limitation_value', $db->asked[1] );
+    }
+
+    /** PP-08 */
+    public function testTheAssignmentsLimitationAsksNothing()
+    {
+        $db = $this->recordingDB();
+        foreach ( array( 901, 902, 903 ) as $id )
+        {
+            foreach ( array( array( 'Subtree', '/1/2/58/', 555 ), array( 'Section', '3', 556 ) ) as $limit )
+            {
+                $this->prefetched( $id, $limit );
+                $this->byLimitationList( $id, $limit );
+            }
+        }
+        $this->assertSame( array(), $db->asked );
+        $assigned = new eZPolicyLimitation( array( 'id' => -1, 'policy_id' => 902, 'identifier' => 'User_Section' ) );
+        $assigned->setAttribute( 'limit_value', '3' );
+        $this->assertSame( array( 'User_Section' => array( '3' ) ), $assigned->limitArray() );
+    }
+
+    /** PP-09 */
+    public function testABuildInsideABuildGivesTheOuterOneItsRowsBack()
+    {
+        $swap = new ReflectionMethod( 'eZRole', 'swapPrefetchState' );
+        $outer = array( eZRole::$prefetchedPolicyRows, eZPolicy::$prefetchedLimitationRows,
+                        eZPolicyLimitation::$prefetchedValueRows, eZPolicy::$prefetchedLimitArrays );
+        $before = $swap->invoke( null, array( array( 5 => array() ), array( 6 => array() ), array( -1 => array() ), array() ) );
+        $this->assertSame( array( 6 => array() ), eZPolicy::$prefetchedLimitationRows );
+        $swap->invoke( null, $before );
+        $this->assertSame( $outer, array( eZRole::$prefetchedPolicyRows, eZPolicy::$prefetchedLimitationRows,
+                                          eZPolicyLimitation::$prefetchedValueRows, eZPolicy::$prefetchedLimitArrays ) );
+
+        // The outermost build puts back "nothing loaded"
+        $swap->invoke( null, null );
+        $this->assertNull( eZRole::$prefetchedPolicyRows );
+        $this->assertNull( eZPolicy::$prefetchedLimitationRows );
+        $this->assertNull( eZPolicyLimitation::$prefetchedValueRows );
+        $this->assertSame( array(), eZPolicy::$prefetchedLimitArrays );
+    }
+
+    /** PP-10 */
+    public function testTheInListsStayBelowOraclesLimit()
+    {
+        $this->assertGreaterThan( 0, eZRole::PREFETCH_IN_LIST_SIZE );
+        $this->assertLessThanOrEqual( 1000, eZRole::PREFETCH_IN_LIST_SIZE );
     }
 }

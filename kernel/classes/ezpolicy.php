@@ -273,7 +273,8 @@ class eZPolicy extends eZPersistentObject
     */
     function accessArray( $ignoreLimitIdentifier = false )
     {
-        if ( self::$prefetchedLimitationRows !== null && $ignoreLimitIdentifier === false && !isset( $this->Limitations ) )
+        if ( isset( self::$prefetchedLimitationRows[(int)$this->attribute( 'id' )] )
+             && $ignoreLimitIdentifier === false && !isset( $this->Limitations ) )
         {
             $accessArray = $this->prefetchedAccessArray();
             if ( $accessArray !== null )
@@ -318,7 +319,11 @@ class eZPolicy extends eZPersistentObject
     protected function prefetchedAccessArray()
     {
         $policyID = (int)$this->attribute( 'id' );
-        $rows = self::$prefetchedLimitationRows[$policyID] ?? array();
+        if ( !isset( self::$prefetchedLimitationRows[$policyID] ) )
+        {
+            return null;
+        }
+        $rows = self::$prefetchedLimitationRows[$policyID];
         $limited = isset( $this->LimitIdentifier ) && $this->LimitIdentifier;
         if ( $limited )
         {
@@ -371,11 +376,11 @@ class eZPolicy extends eZPersistentObject
         if ( !isset( $this->Limitations ) || !$useCache )
         {
 
-            if ( self::$prefetchedLimitationRows !== null )
+            if ( isset( self::$prefetchedLimitationRows[(int)$this->attribute( 'id' )] ) )
             {
                 // Rows eZRole::accessArrayByUserID() loaded for all policies at once; new objects, as from the database
                 $limitations = array();
-                foreach ( self::$prefetchedLimitationRows[(int)$this->attribute( 'id' )] ?? array() as $row )
+                foreach ( self::$prefetchedLimitationRows[(int)$this->attribute( 'id' )] as $row )
                 {
                     $limitations[] = new eZPolicyLimitation( $row );
                 }

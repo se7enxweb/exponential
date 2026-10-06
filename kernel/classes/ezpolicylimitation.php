@@ -546,11 +546,11 @@ class eZPolicyLimitation extends eZPersistentObject
     {
         if ( !isset( $this->Values ) )
         {
-            if ( self::$prefetchedValueRows !== null )
+            if ( isset( self::$prefetchedValueRows[(int)$this->attribute( 'id' )] ) )
             {
-                // Rows eZRole::accessArrayByUserID() loaded for all limitations at once
+                // Rows eZRole::accessArrayByUserID() loaded for all limitations at once, by value as below
                 $values = array();
-                foreach ( self::$prefetchedValueRows[(int)$this->attribute( 'id' )] ?? array() as $row )
+                foreach ( self::$prefetchedValueRows[(int)$this->attribute( 'id' )] as $row )
                 {
                     $values[] = new eZPolicyLimitationValue( $row );
                 }

@@ -783,6 +783,7 @@ class eZRole extends eZPersistentObject
 
         $accessArray = array();
         $prefetched = self::prefetchAccessRows( $roles );
+        $stateBefore = $prefetched !== null ? self::swapPrefetchState( $prefetched ) : null;
         try
         {
             // Merged in one call: merging role by role copied the growing array for every role, which for a user
@@ -803,12 +804,10 @@ class eZRole extends eZPersistentObject
         }
         finally
         {
-            if ( $prefetched )
+            // Dropped also on failure: a persistent worker (Velocity) must not answer a later request from them
+            if ( $prefetched !== null )
             {
-                self::$prefetchedPolicyRows = null;
-                eZPolicy::$prefetchedLimitationRows = null;
-                eZPolicy::$prefetchedLimitArrays = array();
-                eZPolicyLimitation::$prefetchedValueRows = null;
+                self::swapPrefetchState( $stateBefore );
             }
         }
 
@@ -839,21 +838,34 @@ class eZRole extends eZPersistentObject
 
     /**
      * Rows of ezpolicy by role id, loaded ahead by accessArrayByUserID() while it builds an access array; null when
-     * policyList() asks the database itself.
+     * policyList() asks the database itself. Every role that was loaded ahead has an entry, also without policies; a
+     * role without one asks the database as before.
      *
      * @var array|null
      */
     public static $prefetchedPolicyRows = null;
 
     /**
+     * How many ids go into one IN () list when the rows are loaded ahead. Oracle refuses more than 1000 (ORA-01795)
+     * and eZPersistentObject writes the list as it is, so a user whose roles have more policies or limitations than
+     * that is loaded in several queries of this size.
+     */
+    const PREFETCH_IN_LIST_SIZE = 500;
+
+    /**
      * Loads the policies of $roles, their limitations and the values of those in three queries, for the access array
      * of a user, when site.ini [RoleSettings] AccessArrayPrefetch is enabled. Without it each role, policy and
      * limitation asks the database on its own: one query for every role, policy and limitation of the user, which a
-     * user with many roles and limited policies notices each time the role cache is rebuilt. The objects are built
-     * from the rows as from the database, so the access array is the same.
+     * user with many roles and limited policies notices each time the role cache is rebuilt. The rows are read in the
+     * order the methods that ask one by one read them (policies and limitations by id, values by value), and the
+     * objects are built from them as from the database, so the access array is the same, in the same order.
+     *
+     * Returns the rows as array( policies, limitations, values ) by role, policy and limitation id, with an entry for
+     * every id loaded ahead; null when the setting is off, there is nothing to load, the database is MongoDB (whose
+     * persistent layer has no IN () condition) or a query failed, and the array is then built role by role.
      *
      * @param eZRole[] $roles
-     * @return bool whether the rows were loaded (and must be dropped afterwards)
+     * @return array|null
      */
     protected static function prefetchAccessRows( array $roles )
     {
@@ -862,48 +874,106 @@ class eZRole extends eZPersistentObject
              || $ini->variable( 'RoleSettings', 'AccessArrayPrefetch' ) !== 'enabled'
              || eZDB::instance()->databaseName() === 'mongo' )
         {
-            return false;
+            return null;
         }
 
-        $roleIDs = array();
+        $policyRows = array();
         foreach ( $roles as $role )
         {
-            $roleIDs[(int)$role->attribute( 'id' )] = true;
+            $policyRows[(int)$role->attribute( 'id' )] = array();
         }
-        $policyRows = array();
-        $policyIDs = array();
-        foreach ( (array)eZPersistentObject::fetchObjectList( eZPolicy::definition(), null,
-                      array( 'role_id' => array( array_keys( $roleIDs ) ), 'original_id' => 0 ),
-                      array( 'id' => 'asc' ), null, false ) as $row )
+        $rows = self::prefetchRows( eZPolicy::definition(), 'role_id', array_keys( $policyRows ),
+                                    array( 'original_id' => 0 ), array( 'id' => 'asc' ) );
+        if ( $rows === null )
         {
-            $policyRows[(int)$row['role_id']][] = $row;
-            $policyIDs[] = (int)$row['id'];
+            return null;
         }
         $limitationRows = array();
-        $limitationIDs = array();
-        if ( $policyIDs )
+        foreach ( $rows as $row )
         {
-            foreach ( (array)eZPersistentObject::fetchObjectList( eZPolicyLimitation::definition(), null,
-                          array( 'policy_id' => array( $policyIDs ) ), array( 'id' => 'asc' ), null, false ) as $row )
-            {
-                $limitationRows[(int)$row['policy_id']][] = $row;
-                $limitationIDs[] = (int)$row['id'];
-            }
-        }
-        $valueRows = array();
-        if ( $limitationIDs )
-        {
-            foreach ( (array)eZPersistentObject::fetchObjectList( eZPolicyLimitationValue::definition(), null,
-                          array( 'limitation_id' => array( $limitationIDs ) ), array( 'id' => 'asc' ), null, false ) as $row )
-            {
-                $valueRows[(int)$row['limitation_id']][] = $row;
-            }
+            $policyRows[(int)$row['role_id']][] = $row;
+            $limitationRows[(int)$row['id']] = array();
         }
 
-        self::$prefetchedPolicyRows = $policyRows;
-        eZPolicy::$prefetchedLimitationRows = $limitationRows;
-        eZPolicyLimitation::$prefetchedValueRows = $valueRows;
-        return true;
+        $rows = self::prefetchRows( eZPolicyLimitation::definition(), 'policy_id', array_keys( $limitationRows ),
+                                    array(), array( 'id' => 'asc' ) );
+        if ( $rows === null )
+        {
+            return null;
+        }
+        // -1: the limitation an assignment adds to each policy (User_Subtree, User_Section) is built with this id and
+        // has no rows; without the entry valueList() would ask the database for it once per policy and assignment
+        $valueRows = array( -1 => array() );
+        foreach ( $rows as $row )
+        {
+            $limitationRows[(int)$row['policy_id']][] = $row;
+            $valueRows[(int)$row['id']] = array();
+        }
+
+        // By value, as valueList() reads them one limitation at a time (eZPolicyLimitationValue's default sort)
+        $rows = self::prefetchRows( eZPolicyLimitationValue::definition(), 'limitation_id',
+                                    array_diff( array_keys( $valueRows ), array( -1 ) ), array(), null );
+        if ( $rows === null )
+        {
+            return null;
+        }
+        foreach ( $rows as $row )
+        {
+            $valueRows[(int)$row['limitation_id']][] = $row;
+        }
+
+        return array( $policyRows, $limitationRows, $valueRows );
+    }
+
+    /**
+     * The rows of $definition whose $column is one of $ids, in queries of at most PREFETCH_IN_LIST_SIZE ids, with
+     * $conditions and $sorts as fetchObjectList() takes them. All rows of one id come from one query, so they keep
+     * the order of $sorts. Null when a query failed.
+     *
+     * @return array|null
+     */
+    private static function prefetchRows( array $definition, $column, array $ids, array $conditions, $sorts )
+    {
+        $rows = array();
+        sort( $ids );
+        foreach ( array_chunk( $ids, self::PREFETCH_IN_LIST_SIZE ) as $chunk )
+        {
+            $chunkRows = eZPersistentObject::fetchObjectList( $definition, null,
+                                                              array( $column => array( $chunk ) ) + $conditions,
+                                                              $sorts, null, false );
+            if ( !is_array( $chunkRows ) )
+            {
+                return null;
+            }
+            foreach ( $chunkRows as $row )
+            {
+                $rows[] = $row;
+            }
+        }
+        return $rows;
+    }
+
+    /**
+     * The rows loaded ahead that policyList(), eZPolicy::limitationList() and eZPolicyLimitation::valueList() read
+     * from, as array( policies, limitations, values, limit arrays ); null for none. accessArrayByUserID() keeps the
+     * state it found and puts it back afterwards, so a build inside a build (a handler that asks for the access
+     * array of another user) leaves the outer one its rows.
+     *
+     * @param array|null $state
+     * @return array|null the state before
+     */
+    protected static function swapPrefetchState( $state )
+    {
+        $before = self::$prefetchedPolicyRows === null && eZPolicy::$prefetchedLimitationRows === null
+                  && eZPolicyLimitation::$prefetchedValueRows === null
+            ? null
+            : array( self::$prefetchedPolicyRows, eZPolicy::$prefetchedLimitationRows,
+                     eZPolicyLimitation::$prefetchedValueRows, eZPolicy::$prefetchedLimitArrays );
+        self::$prefetchedPolicyRows = $state[0] ?? null;
+        eZPolicy::$prefetchedLimitationRows = $state[1] ?? null;
+        eZPolicyLimitation::$prefetchedValueRows = $state[2] ?? null;
+        eZPolicy::$prefetchedLimitArrays = $state[3] ?? array();
+        return $before;
     }
 
     /*!
@@ -1232,11 +1302,11 @@ class eZRole extends eZPersistentObject
             // next time the role is opened. It is also a stable order, which a
             // database left to itself is free not to return.
             $sorting = array( 'id' => 'asc' );
-            if ( self::$prefetchedPolicyRows !== null )
+            if ( isset( self::$prefetchedPolicyRows[(int)$this->attribute( 'id' )] ) )
             {
                 // Rows accessArrayByUserID() loaded for all roles at once, in the same order
                 $policies = array();
-                foreach ( self::$prefetchedPolicyRows[(int)$this->attribute( 'id' )] ?? array() as $row )
+                foreach ( self::$prefetchedPolicyRows[(int)$this->attribute( 'id' )] as $row )
                 {
                     $policies[] = new eZPolicy( $row );
                 }

@@ -7,9 +7,8 @@
  * tests are skipped.
  *
  *  AP-01 - For every user and user group (up to 300) both ways give the same access array: the same modules,
- *          functions, policies and limitations in the same order, and the same values of each limitation. The order of
- *          those values is the database's (an index may sort them), which no check depends on: they are compared
- *          with in_array() and put into SQL IN () lists
+ *          functions, policies, limitations and values, in the same order (===): the values of a limitation come
+ *          sorted by value either way, as valueList() reads them
  *  AP-02 - The rows loaded ahead are dropped afterwards, so later calls ask the database again
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -71,23 +70,6 @@ class eZRoleAccessArrayPrefetchLiveTest extends PHPUnit\Framework\TestCase
         return eZRole::accessArrayByUserID( $idList );
     }
 
-    /** The access array with the value lists of the limitations (lists of scalars) sorted; keys keep their order */
-    private static function sortedValues( $array )
-    {
-        if ( !is_array( $array ) )
-            return $array;
-        if ( $array && array_keys( $array ) === range( 0, count( $array ) - 1 ) && !array_filter( $array, 'is_array' ) )
-        {
-            sort( $array, SORT_STRING );
-            return $array;
-        }
-        foreach ( $array as $key => $value )
-        {
-            $array[$key] = self::sortedValues( $value );
-        }
-        return $array;
-    }
-
     /** AP-01 */
     public function testBothWaysGiveTheSameAccessArray()
     {
@@ -101,7 +83,7 @@ class eZRoleAccessArrayPrefetchLiveTest extends PHPUnit\Framework\TestCase
                 continue;
             $roleByRole = $this->accessArray( $user, false );
             $prefetched = $this->accessArray( $user, true );
-            $this->assertSame( self::sortedValues( $roleByRole ), self::sortedValues( $prefetched ), 'user ' . $row['contentobject_id'] );
+            $this->assertSame( $roleByRole, $prefetched, 'user ' . $row['contentobject_id'] );
             $compared++;
         }
         // Every user group on its own, as the role cache of its members starts from it
@@ -114,7 +96,7 @@ class eZRoleAccessArrayPrefetchLiveTest extends PHPUnit\Framework\TestCase
             $roleByRole = eZRole::accessArrayByUserID( array( (int)$group['id'] ) );
             ezpINIHelper::setINISetting( 'site.ini', 'RoleSettings', 'AccessArrayPrefetch', 'enabled' );
             $prefetched = eZRole::accessArrayByUserID( array( (int)$group['id'] ) );
-            $this->assertSame( self::sortedValues( $roleByRole ), self::sortedValues( $prefetched ), 'user group ' . $group['id'] );
+            $this->assertSame( $roleByRole, $prefetched, 'user group ' . $group['id'] );
             $compared++;
         }
         $this->assertGreaterThan( 2, $compared );
