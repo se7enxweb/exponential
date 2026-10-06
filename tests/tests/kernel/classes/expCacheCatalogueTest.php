@@ -9,6 +9,10 @@
  *          out except "velocity", which also holds the server's own caches
  *  CC-05 - The overview counts caches, enabled and disabled, sums sizes and takes the latest clear
  *  CC-06 - consequences() names what a clear reaches and whether Velocity needs a restart afterwards
+ *  CC-07 - Audit records are normalised: time, how, asked, cleared ids, who (only when allowed), shell or page
+ *  CC-08 - The newest clear per cache from records: cleared ids, else asked ids or tags, else all; merged with the
+ *          kernel's expiry timestamps (a record within half a minute of the expiry is the same clear), shown as "just
+ *          now", minutes or hours ago, with who cleared; this request's own clear before its record is written
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -137,5 +141,96 @@ class expCacheCatalogueTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $c->consequences( array( 'nope' ) )['names'] );
         $this->assertSame( 7, count( $c->ids() ) );
         $this->assertSame( array( 'imagealias' ), $c->ids( 'images' ) );
+    }
+
+    private function record( $time, array $object, ?array $after = null, array $actor = array( 'login' => 'editor', 'user_id' => 14 ), $engine = 'fpm' )
+    {
+        $rec = array( 'name' => 'system.cache.clear', 'id' => 'r' . $time . implode( ',', $object ), 'time' => gmdate( 'Y-m-d\TH:i:s.000\Z', $time ),
+                      'object' => $object + array( 'type' => 'cache' ), 'actor' => $actor, 'request' => array( 'engine' => $engine ) );
+        if ( $after !== null )
+            $rec['after'] = $after;
+        return $rec;
+    }
+
+    /** CC-07 */
+    public function testNormaliseRecord()
+    {
+        $r = expCacheCatalogue::normaliseRecord( $this->record( 1000, array( 'how' => 'id', 'id' => 'content,template-block' ), array( 'ids' => array( 'content', 'template-block' ) ) ) );
+        $this->assertSame( 1000, $r['time'] );
+        $this->assertSame( 'id', $r['how'] );
+        $this->assertSame( array( 'content', 'template-block' ), $r['asked'] );
+        $this->assertSame( array( 'content', 'template-block' ), $r['ids'] );
+        $this->assertSame( 'editor', $r['who'] );
+        $this->assertFalse( $r['shell'] );
+        $shell = expCacheCatalogue::normaliseRecord( $this->record( 1000, array( 'how' => 'all', 'id' => 'all' ), null,
+                                                                    array( 'cli' => array( 'os_user' => 'root' ) ), 'cli' ) );
+        $this->assertSame( 'os:root', $shell['who'] );
+        $this->assertTrue( $shell['shell'] );
+        $this->assertSame( array(), $shell['asked'] );
+        // the login of the index row when the record has none; nobody when the user may not read the channel
+        $this->assertSame( 'admin', expCacheCatalogue::normaliseRecord( $this->record( 1, array( 'how' => 'id', 'id' => 'x' ), null, array() ), 'admin' )['who'] );
+        $this->assertSame( '', expCacheCatalogue::normaliseRecord( $this->record( 1, array( 'how' => 'id', 'id' => 'x' ) ), '', false )['who'] );
+        $this->assertNull( expCacheCatalogue::normaliseRecord( array( 'name' => 'system.settings.change', 'time' => '2026-10-06T10:00:00Z' ) ) );
+        $this->assertNull( expCacheCatalogue::normaliseRecord( array( 'name' => 'system.cache.clear' ) ) );
+    }
+
+    /** CC-08 */
+    public function testLastClearedFromAudit()
+    {
+        $records = array_map( array( 'expCacheCatalogue', 'normaliseRecord' ), array(
+            $this->record( 100, array( 'how' => 'all', 'id' => 'all' ), null, array( 'cli' => array( 'os_user' => 'root' ) ), 'cli' ),
+            $this->record( 200, array( 'how' => 'tag', 'id' => 'template' ) ),
+            $this->record( 300, array( 'how' => 'id', 'id' => 'content' ), array( 'ids' => array( 'content' ) ), array( 'login' => 'admin' ) ),
+            $this->record( 250, array( 'how' => 'purge', 'id' => 'imagealias' ) ),
+        ) );
+        $map = expCacheCatalogue::lastClearedFromAudit( $records, array( 'template' => array( 'template', 'template-block' ) ),
+                                                        array( 'content', 'template', 'template-block', 'imagealias', 'global_ini' ) );
+        $this->assertSame( 300, $map['content']['time'] );
+        $this->assertSame( 'admin', $map['content']['who'] );
+        $this->assertSame( 200, $map['template-block']['time'] );
+        $this->assertSame( 'editor', $map['template-block']['who'] );
+        $this->assertSame( 250, $map['imagealias']['time'] );
+        $this->assertSame( 100, $map['global_ini']['time'] );
+        $this->assertTrue( $map['global_ini']['shell'] );
+
+        // merged with the expiry timestamps: the newer wins, the audit brings who
+        $now = 10000;
+        $c = new expCacheCatalogue( array(
+            $this->item( 'content', 'Content view cache', array( 'content' ) ),
+            $this->item( 'template-block', 'Template block cache', array( 'template' ) ),
+            $this->item( 'global_ini', 'Global INI cache', array( 'ini' ) ),
+            $this->item( 'sortkey', 'Sort key cache', array( 'content' ) ),
+        ), array( 'time' => $now, 'last_cleared' => array( 'content' => $now - 60, 'template-block' => $now - 7000 ),
+                  'audit' => array( 'content' => array( 'time' => $now - 4000, 'who' => 'admin', 'shell' => false ),
+                                    'template-block' => array( 'time' => $now - 30, 'who' => 'admin', 'shell' => false ),
+                                    'global_ini' => array( 'time' => $now - 7300, 'who' => 'os:root', 'shell' => true ) ) ) );
+        $content = $this->find( $c, 'content' );
+        $this->assertSame( 'just now', $content['last_cleared_text'] );
+        $this->assertSame( '', $content['last_cleared_by'], 'the expiry timestamp is newer and names nobody' );
+        $block = $this->find( $c, 'template-block' );
+        $this->assertSame( 'just now', $block['last_cleared_text'] );
+        $this->assertSame( 'admin', $block['last_cleared_by'] );
+        $ini = $this->find( $c, 'global_ini' );
+        $this->assertSame( '2 hours ago', $ini['last_cleared_text'] );
+        $this->assertTrue( $ini['last_cleared_shell'] );
+        $this->assertSame( '', $this->find( $c, 'sortkey' )['last_cleared_text'] );
+        $this->assertSame( '15 minutes ago', $c->ago( $now - 900 ) );
+
+        // the same clear: a record up to half a minute before the expiry names who cleared; an older one does not
+        $near = new expCacheCatalogue( array( $this->item( 'content', 'Content view cache', array( 'content' ) ),
+                                              $this->item( 'sortkey', 'Sort key cache', array( 'content' ) ) ),
+                                       array( 'time' => 5000, 'last_cleared' => array( 'content' => 4990, 'sortkey' => 4990 ),
+                                              'audit' => array( 'content' => array( 'time' => 4970, 'who' => 'admin', 'shell' => false ),
+                                                                'sortkey' => array( 'time' => 4900, 'who' => 'admin', 'shell' => false ) ) ) );
+        $this->assertSame( 'admin', $this->find( $near, 'content' )['last_cleared_by'] );
+        $this->assertSame( 4990, $this->find( $near, 'content' )['last_cleared'] );
+        $this->assertSame( '', $this->find( $near, 'sortkey' )['last_cleared_by'] );
+
+        // cleared by this request, before its own audit record is written
+        $now = new expCacheCatalogue( array( $this->item( 'sortkey', 'Sort key cache', array( 'content' ) ) ),
+                                      array( 'time' => 5000, 'cleared_now' => array( 'ids' => array( 'sortkey' ), 'who' => 'admin' ) ) );
+        $this->assertSame( 'just now', $this->find( $now, 'sortkey' )['last_cleared_text'] );
+        $this->assertSame( 'admin', $this->find( $now, 'sortkey' )['last_cleared_by'] );
+        $this->assertSame( array( 'sortkey' ), $now->consequences( array( 'sortkey' ) )['ids'] );
     }
 }
