@@ -80,7 +80,7 @@
 <div class="buttonblock">
 {if and(eq($version.status,0),$is_creator,$object.can_edit)}
 <input class="button" type="submit" name="PreviewPublishButton" value="{'Publish'|i18n('design/standard/content/view')}" />
-{if ezini( 'NotificationSettings', 'PublishWithoutNotification', 'notification.ini' )|eq( 'enabled' )}
+{if and( ezini( 'NotificationSettings', 'PublishWithoutNotification', 'notification.ini' )|eq( 'enabled' ), fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'publish_without_notification' ) ) )}
 <input class="button" type="submit" name="PreviewPublishNotNotifyButton" value="{'Publish without notification'|i18n( 'design/standard/content/view' )}" />
 {/if}
 <input class="button" type="submit" name="EditButton" value="{'Edit'|i18n('design/standard/content/view')}" />

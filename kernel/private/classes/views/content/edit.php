@@ -235,6 +235,7 @@ if ( !function_exists( 'checkContentActions' ) )
                     $tpl->setVariable( 'current_version', $version->attribute( 'version' ) );
                     $tpl->setVariable( 'object', $object );
                     $tpl->setVariable( 'draft_versions', $conflictingVersions );
+                    $tpl->setVariable( 'publish_without_notification', eZContentOperationCollection::publishWithoutNotification( 'PublishNotNotifyButton' ) );
 
                     $Result = array();
                     $Result['content'] = $tpl->fetch( 'design:content/edit_conflict.tpl' );

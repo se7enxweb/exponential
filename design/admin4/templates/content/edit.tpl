@@ -27,7 +27,7 @@
                                 <input class="defaultbutton" type="submit" name="PublishButton"
                                     value="{'Send for publishing'|i18n( 'design/admin/content/edit' )}"
                                     title="{'Publish the contents of the draft that is being edited. The draft will become the published version of the object.'|i18n( 'design/admin/content/edit' )}" />
-                                {if ezini( 'NotificationSettings', 'PublishWithoutNotification', 'notification.ini' )|eq( 'enabled' )}
+                                {if and( ezini( 'NotificationSettings', 'PublishWithoutNotification', 'notification.ini' )|eq( 'enabled' ), fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'publish_without_notification' ) ) )}
                                 <input class="button" type="submit" name="PublishNotNotifyButton" value="{'Publish without notification'|i18n( 'design/admin/content/edit' )}" title="{'Publish without notifying the subscribers of its location: no notification mail is sent for this version.'|i18n( 'design/admin/content/edit' )}" />
                                 {/if}
                                 <input class="button" type="submit" name="StoreButton"
@@ -140,7 +140,7 @@
                                 <input class="defaultbutton" type="submit" name="PublishButton"
                                     value="{'Send for publishing'|i18n( 'design/admin/content/edit' )}"
                                     title="{'Publish the contents of the draft that is being edited. The draft will become the published version of the object.'|i18n( 'design/admin/content/edit' )}" />
-                                {if ezini( 'NotificationSettings', 'PublishWithoutNotification', 'notification.ini' )|eq( 'enabled' )}
+                                {if and( ezini( 'NotificationSettings', 'PublishWithoutNotification', 'notification.ini' )|eq( 'enabled' ), fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'publish_without_notification' ) ) )}
                                 <input class="button" type="submit" name="PublishNotNotifyButton" value="{'Publish without notification'|i18n( 'design/admin/content/edit' )}" title="{'Publish without notifying the subscribers of its location: no notification mail is sent for this version.'|i18n( 'design/admin/content/edit' )}" />
                                 {/if}
                                 <input class="button" type="submit" name="StoreButton"

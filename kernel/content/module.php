@@ -767,5 +767,9 @@ $FunctionList['dashboard'] = array();
 $FunctionList['view_system_url'] = array();
 // Seeing and acting on everybody's content jobs (content/jobs/(all)/1, content/job/<id>).
 $FunctionList['jobs'] = array();
+// "Publish without notification" in content/edit and the version preview, where notification.ini
+// [NotificationSettings] PublishWithoutNotification is enabled. Without the function the button is hidden and a
+// posted one publishes with notification. No limitations of its own: a content/* policy grants it.
+$FunctionList['publish_without_notification'] = array();
 
 ?>

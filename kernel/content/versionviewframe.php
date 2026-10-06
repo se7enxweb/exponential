@@ -88,6 +88,7 @@ if ( $Module->isCurrentAction( 'Publish' ) and
         $tpl->setVariable( 'current_version', $versionObject->attribute( 'version' ) );
         $tpl->setVariable( 'object', $contentObject );
         $tpl->setVariable( 'draft_versions', $conflictingVersions );
+        $tpl->setVariable( 'publish_without_notification', eZContentOperationCollection::publishWithoutNotification( 'PreviewPublishNotNotifyButton' ) );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:content/edit_conflict.tpl' );

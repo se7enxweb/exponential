@@ -193,7 +193,7 @@ class expSettingsExtensionWizard extends expExtensionWizard
             'content/download' => 'A file attribute is being served. Where a download count belongs.',
             'content/download/access' => 'Whether the current user may download a file: the kernel\'s answer (true or false) with the object, the attribute and the version. Only true lets the file out; how an approver who may read only the version gets the file.',
             'content/edit/access' => 'Whether the current user may edit an object (eZContentObject::editAccess(), asked by every edit check of content/edit, content/history, content/versionview, content/multiedit, the online editor and the REST interface): the kernel\'s answer with the object, the version or null, the user ID and the language. Only true allows; how further editors of a draft get in.',
-            'content/notification/create' => 'A publication is about to become a notification event: true with the object ID and the version. Anything else leaves the event out, so nobody is told.',
+            'content/notification/create' => 'A publication is about to become a notification event: true (false for "Publish without notification") with the object ID and the version. Anything but true leaves the event out, so nobody is told.',
             'content/section/cache' => 'A section changed.',
             'content/state/assign' => 'An object state was assigned to an object.',
             'content/translations/cache' => 'The list of languages changed.',
