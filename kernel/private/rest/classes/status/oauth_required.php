@@ -61,8 +61,11 @@ class ezpOauthRequired implements ezcMvcResultStatusObject
             $code = $this->errorType === null
                 ? ezpHttpResponseCodes::UNAUTHORIZED
                 : ezpOauthErrorType::httpCodeforError( $this->errorType );
-            $writer->headers['HTTP/1.1 ' . $code] = "";
+            // The challenge before the status line: PHP's header() makes every response that sends
+            // WWW-Authenticate a 401, so insufficient_scope (403) and invalid_request (400) were
+            // answered as 401 when the status came first.
             $writer->headers['WWW-Authenticate'] = "OAuth realm='{$this->realm}'{$this->createErrorString()}";
+            $writer->headers['HTTP/1.1 ' . $code] = "";
         }
 
         if ( isset( $this->errorType) )

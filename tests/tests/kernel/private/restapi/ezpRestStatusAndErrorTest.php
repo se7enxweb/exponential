@@ -128,6 +128,9 @@ class ezpRestStatusAndErrorTest extends PHPUnit\Framework\TestCase
         $this->assertArrayHasKey( 'HTTP/1.1 403', $writer->headers );
         $this->assertSame( "OAuth realm='K1', error='insufficient_scope', error_description='needs more'", $writer->headers['WWW-Authenticate'] );
         $this->assertSame( array( 'error' => 'insufficient_scope', 'error_description' => 'needs more' ), json_decode( $writer->response->body, true ) );
+        // the status line after the challenge: header( 'WWW-Authenticate: ...' ) turns the response into a 401
+        $order = array_keys( $writer->headers );
+        $this->assertGreaterThan( array_search( 'WWW-Authenticate', $order ), array_search( 'HTTP/1.1 403', $order ) );
     }
 
     public function testOauthRequiredWithErrorOnly()
