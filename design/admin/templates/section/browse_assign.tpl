@@ -1,25 +1,24 @@
-{let section=fetch( section, object, hash( section_id, $browse.content.section_id ) )}
+{* The description at the top of the content browser when a section is assigned (section/assign).
 
-<div class="context-block">
+   The same file is in design/admin and design/admin4. Guide: doc/guides/sections.md *}
+{include uri='design:section/exp_style.tpl'}
+{def $section = fetch( 'section', 'object', hash( 'section_id', $browse.content.section_id ) )}
 
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
+<div class="context-block exp-sections">
 
+<div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'Choose start location for the <%section_name> section'|i18n( 'design/admin/section/browse_assign',, hash( '%section_name', $section.name ) )|wash}</h1>
+</div></div>
 
-{* DESIGN: Mainline *}<div class="header-mainline"></div>
+<div class="box-bc"><div class="box-ml"><div class="box-content">
 
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
-
-<div class="block">
+<div class="exp-feedback is-info">
 <p>{'Use the radio buttons to select an item that should have the <%section_name> section assigned.'|i18n( 'design/admin/section/browse_assign',, hash( '%section_name', $section.name ) )|wash}</p>
 <p>{'Note that the section assignment of the sub items will also be changed.'|i18n( 'design/admin/section/browse_assign' )}</p>
 <p>{'Navigate using the available tabs (above), the tree menu (left) and the content list (middle).'|i18n( 'design/admin/section/browse_assign' )}</p>
 </div>
 
-{* DESIGN: Content END *}</div></div></div>
-
+</div></div></div>
 </div>
 
-{/let}
+{undef $section}
