@@ -72,7 +72,7 @@ class eZTextType extends eZDataType
         {
             $data = self::postedText( $http->postVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) );
 
-            if ( $data == "" )
+            if ( trim( $data ) == "" )
             {
                 if ( !$classAttribute->attribute( 'is_information_collector' ) and
                      $contentObjectAttribute->validateIsRequired() )
@@ -99,7 +99,7 @@ class eZTextType extends eZDataType
             $data = self::postedText( $http->postVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) );
             $classAttribute = $contentObjectAttribute->contentClassAttribute();
 
-            if ( $data == "" )
+            if ( trim( $data ) == "" )
             {
                 if ( $contentObjectAttribute->validateIsRequired() )
                 {

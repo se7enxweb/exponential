@@ -159,7 +159,7 @@ class eZStringType extends eZDataType
                 return eZInputValidator::STATE_INVALID;
             }
 
-            if ( $data == "" )
+            if ( trim( $data ) == "" )
             {
                 if ( $contentObjectAttribute->validateIsRequired() )
                 {
