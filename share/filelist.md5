@@ -2965,7 +2965,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-5b75502f4242006649b388116fd23df6  doc/changelogs/6.0/6.0.15.md
+47841c107f7bfbd825bb87a44ab28790  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3497,7 +3497,7 @@ b96aa9f19d0e6aebe8b4e7b2569216d5  doc/guides/rss-feeds.md
 7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
 049b86dd00d762c414081e1171c16436  doc/guides/system-information.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
-4ee61d51ef41314fe41846f70b854ed5  doc/guides/upgrade-check.md
+76caaadb12a9d05063f40cfeff955325  doc/guides/upgrade-check.md
 639322264923c033f20a28212f26fea4  doc/guides/upgrading.md
 3021f8c1c3339b030c3e75dbd626d297  doc/guides/urls-and-aliases.md
 bad7f02a0224193a981336d961358c0f  doc/guides/workflows.md
@@ -5437,7 +5437,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 2898970b3f0a92a99c65c02bf7b1ffab  kernel/private/classes/exceptions/kernel/moduleviewnotfound.php
 330a3389deaa6670e6677eaf993b9a73  kernel/private/classes/expcontentaccessreport.php
 7006dcb750cb36c53efb10d3cd301720  kernel/private/classes/expfileconsistencyreport.php
-0507680bcc7839085469a3b0d3d2bdf6  kernel/private/classes/expschemaconsistencyreport.php
+405bb8762d0eb09c3cab1b207bfe2e5c  kernel/private/classes/expschemaconsistencyreport.php
 2ff49979d10dde25f4935f802ac78111  kernel/private/classes/ezautoloadgenerator.php
 7642907aab26669358d257577baedeab  kernel/private/classes/ezcontentobjectstate.php
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php
@@ -6098,7 +6098,7 @@ c7c6f99535283f00d9ff4266c494aead  lib/ezdbschema/classes/ezdbschemachecker.php
 1907acd46abe956aa8c5a02c58ca3f09  lib/ezdbschema/classes/ezlintschema.php
 5cbbca30c80114126d2e012a59dcf128  lib/ezdbschema/classes/ezmysqlschema.php
 4eec303fceb5fb0accce9f67e0d200c1  lib/ezdbschema/classes/ezpgsqlschema.php
-cc1463462ead8929aa3af8fdfe419a39  lib/ezdbschema/classes/ezsqliteschema.php
+a19adc3c2e169f64cd9351e39584b017  lib/ezdbschema/classes/ezsqliteschema.php
 e0b682cc41c5fcd3412d8c0fc8d8a306  lib/ezdiff/classes/ezdiff.php
 39be4dc56e976c4a966fe4bd7050750a  lib/ezdiff/classes/ezdiffcontainerobject.php
 b2e33a5373d71022e98560cd7477be60  lib/ezdiff/classes/ezdiffcontainerobjectengine.php
@@ -7669,6 +7669,7 @@ fb53daa907db9aed6712d715150412e5  tests/tests/lib/ezdb/mongodb/sevenxMongoDBInte
 d69d80eb919a41cca021cb8e9172bd2f  tests/tests/lib/ezdb/mongodb/stubs.php
 ed800401b82ccafb8da7b386047af5cd  tests/tests/lib/ezdb/suite.php
 2c8cd0a84a690c6c737ca90e849b5dc4  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
+f4326b68b05233745c9337fa44f844ca  tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php
 8290f19b05f206e4b8a3404f28de247d  tests/tests/lib/ezdiff/eZDiffTextEngineTest.php
 d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
 1ad512526369d4f3eb3cab8034b19950  tests/tests/lib/ezfile/eZDirAndFileHandlerTest.php
