@@ -1107,6 +1107,7 @@ return array(
       'expRestContentPermission'                                     => 'kernel/private/rest/classes/auth/content_permission.php',
       'expRestPasswordAuthFilter'                                    => 'kernel/private/rest/classes/auth/password_auth_filter.php',
       'expRestRateLimitedStatus'                                     => 'kernel/private/rest/classes/status/rate_limited.php',
+      'expRoleGrantCheck'                                            => 'kernel/classes/role/exprolegrantcheck.php',
       'expRolePage'                                                  => 'kernel/classes/role/exprolepage.php',
       'expRolePolicySentence'                                        => 'kernel/classes/role/exprolepolicysentence.php',
       'expSchemaConsistencyReport'                                   => 'kernel/private/classes/expschemaconsistencyreport.php',
