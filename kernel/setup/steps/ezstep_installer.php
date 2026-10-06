@@ -898,7 +898,7 @@ See the requirements page for more information.",
                                                            '%req_version' => $errorInfo['database_info']['required_version'] ) ),
                                   'url' => array( 'href' => 'https://exponential.earth',
                                                   'text' => 'Exponential requirements' ),
-                                  'number' => self::DB_ERROR_NO_DATABASES );
+                                  'number' => self::DB_ERROR_VERSION_INVALID );
                 break;
             }
 
