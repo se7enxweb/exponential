@@ -97,9 +97,18 @@ class eZStepSiteAdmin extends eZStepInstaller
     {
         $user = array();
 
-        $user['first_name'] = $this->Http->postVariable( 'eZSetup_site_templates_first_name' );
-        $user['last_name'] = $this->Http->postVariable( 'eZSetup_site_templates_last_name' );
-        $user['email'] = $this->Http->postVariable( 'eZSetup_site_templates_email' );
+        // A field that was not posted, or was posted as an array (name[]=x), is
+        // no answer: trim() refused it with a TypeError and ended the setup
+        $posted = array();
+        foreach ( array( 'first_name', 'last_name', 'email', 'password1', 'password2' ) as $field )
+        {
+            $value = $this->Http->postVariable( 'eZSetup_site_templates_' . $field, '' );
+            $posted[$field] = is_scalar( $value ) ? (string)$value : '';
+        }
+
+        $user['first_name'] = $posted['first_name'];
+        $user['last_name'] = $posted['last_name'];
+        $user['email'] = $posted['email'];
         if ( strlen( trim( $user['first_name'] ) ) == 0 )
         {
             $this->Error[] = self::FIRST_NAME_MISSING;
@@ -116,21 +125,21 @@ class eZStepSiteAdmin extends eZStepInstaller
         {
             $this->Error[] = self::EMAIL_INVALID;
         }
-        if ( strlen( trim( $this->Http->postVariable( 'eZSetup_site_templates_password1' ) ) ) == 0 )
+        if ( strlen( trim( $posted['password1'] ) ) == 0 )
         {
             $this->Error[] = self::PASSWORD_MISSING;
         }
-        else if ( $this->Http->postVariable( 'eZSetup_site_templates_password1' ) != $this->Http->postVariable( 'eZSetup_site_templates_password2' ) )
+        else if ( $posted['password1'] !== $posted['password2'] )
         {
             $this->Error[] = self::PASSWORD_MISSMATCH;
         }
-        else if ( !eZUser::validatePassword( trim( $this->Http->postVariable( 'eZSetup_site_templates_password1' ) ) ) )
+        else if ( !eZUser::validatePassword( trim( $posted['password1'] ) ) )
         {
             $this->Error[] = self::PASSWORD_TOO_SHORT;
         }
         else
         {
-            $user['password'] = $this->Http->postVariable( 'eZSetup_site_templates_password1' );
+            $user['password'] = $posted['password1'];
         }
         if ( !isset( $user['password'] ) )
             $user['password'] = '';
