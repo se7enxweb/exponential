@@ -397,18 +397,20 @@ class eZPackage
                         }
                         else if ( $key == 'Type' )
                         {
-                            $typeList = $limitation;
-                            if ( $packageType === false )
+                            // A policy limited to other package types gives no roles for this one; without a
+                            // package type (not chosen yet) every policy counts
+                            if ( $packageType !== false )
                             {
-                                $allowedType = in_array( $packageType, $typeList );
+                                $allowedType = in_array( $packageType, (array)$limitation );
                             }
                         }
                     }
-                    if ( $allowedType and
-                         count( $allowedRoles ) > 0 )
-                    {
-                        $allRoles = array_merge( $allRoles, $allowedRoles );
-                    }
+                    if ( !$allowedType )
+                        continue;
+                    // A policy without a Role limitation allows every role
+                    if ( $allowedRoles === false )
+                        $allowedRoles = eZINI::instance( 'package.ini' )->variable( 'MaintainerSettings', 'RoleList' );
+                    $allRoles = array_merge( $allRoles, (array)$allowedRoles );
                 }
             }
         }

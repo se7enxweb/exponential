@@ -2,7 +2,7 @@
 /**
  * Tests of the package policy checks, without the database: eZPackage::canUsePolicyFunction() and the per package
  * checks (read, export, import, install) with the policy's Type limitation, and fetchMaintainerRoleIDList(), the
- * maintainer roles a user may choose under package/create limited by Role.
+ * maintainer roles a user may choose under package/create, limited by Role and by Type.
  *
  * The current user is a stand-in (the anonymous user id) whose access array a test sets; it is put back in
  * tearDown().
@@ -107,5 +107,22 @@ class eZPackagePolicyTest extends PHPUnit\Framework\TestCase
         $this->access( array( 'create' => array( 'p_1' => array( 'Role' => array( 'lead', 'tester' ) ) ) ) );
         $this->assertSame( array( 'lead', 'tester' ), array_values( eZPackage::fetchMaintainerRoleIDList( false, true ) ) );
         $this->assertSame( array( 'lead', 'tester' ), array_column( eZPackage::fetchMaintainerRoleList( false, true ), 'id' ) );
+    }
+
+    public function testMaintainerRolesLimitedByRoleAndType()
+    {
+        $this->access( array( 'create' => array( 'p_1' => array( 'Role' => array( 'lead' ), 'Type' => array( 'contentclass' ) ),
+                                                 'p_2' => array( 'Role' => array( 'designer' ), 'Type' => array( 'design' ) ) ) ) );
+        $this->assertSame( array( 'lead' ), array_values( eZPackage::fetchMaintainerRoleIDList( 'contentclass', true ) ) );
+        $this->assertSame( array( 'designer' ), array_values( eZPackage::fetchMaintainerRoleIDList( 'design', true ) ) );
+        $this->assertSame( array( 'lead', 'designer' ), array_values( eZPackage::fetchMaintainerRoleIDList( false, true ) ), 'no package type yet: every policy counts' );
+        $this->assertSame( array(), eZPackage::fetchMaintainerRoleIDList( 'site', true ) );
+    }
+
+    public function testMaintainerRolesLimitedByTypeOnly()
+    {
+        $this->access( array( 'create' => array( 'p_1' => array( 'Type' => array( 'contentclass' ) ) ) ) );
+        $this->assertCount( 5, eZPackage::fetchMaintainerRoleIDList( 'contentclass', true ), 'no Role limitation: every role' );
+        $this->assertSame( array(), eZPackage::fetchMaintainerRoleIDList( 'design', true ) );
     }
 }
