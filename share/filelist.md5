@@ -2895,7 +2895,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-2a83dc0e877e859baa7508df5fcc6b85  doc/changelogs/6.0/6.0.15.md
+752f61d41a889a137bac1f1cba337808  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4876,7 +4876,7 @@ a1fdd12cc8b007017c4bf7964e3ff6d0  kernel/classes/ezrssimport.php
 fdfd9b8f7952710061316b8c7d7c4d4c  kernel/classes/ezserializedobjectnamelist.php
 c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
-0b73426b436c9bd8a7e90a808355b263  kernel/classes/ezsiteaccess.php
+118c40a0108759f56b85aa673082d35a  kernel/classes/ezsiteaccess.php
 d3a6b63ebff3db7a82bc883fd34182ed  kernel/classes/ezsitedata.php
 7efc4dbb1172be868577981924abbc6b  kernel/classes/ezsiteinstaller.php
 fdd616b8c3b71ca0c9d8752209056cf4  kernel/classes/ezsslzone.php
@@ -6228,7 +6228,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-8214ee91bd6d940401b68e6c6074fa9f  settings/site.ini
+ba178fb2d8c17a9fca5ce5408f7c3bdc  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7159,7 +7159,7 @@ a5f311adee5cc6c0fa46486b22f14f48  tests/tests/kernel/classes/setupsteps/eZSetupS
 009298166c4d9895d0b6c4969ee530e6  tests/tests/kernel/classes/shopprices/eZPaymentCallbackCheckerTest.php
 50a3ed6254274b1d0b775f920f3e0e50  tests/tests/kernel/classes/shopprices/eZShopPricesTest.php
 f87c35d4e8f471dd00bb04d7a585ce64  tests/tests/kernel/classes/shopprices/eZShopReceiptTokenTest.php
-1c9766826ca731edd828dcb12e42ee92  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
+b61b1af5cae0aea7aa16a43eadedd664  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 5f7b136345d65abce93f026c8d8815d3  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
 34edd200b1cb4ad7763e5e9ee9bfeabb  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnCatalogueTest.php
 23e5c3bc8cf4916bbcbb1d9b8b54079c  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnsTestCase.php
