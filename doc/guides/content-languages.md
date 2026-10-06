@@ -81,7 +81,9 @@ a language is added, it gets the lowest power of two that no other language has.
 |---|---|---|---|
 | 2 | 1 | `eng-US` | English (American) |
 | 4 | 2 | `ger-DE` | German |
-| 8 | 3 | `eng-GB` | English (United Kingdom) |
+
+Until 5 October 2026 it also had `eng-GB` (English (United Kingdom)) with ID 8, bit 3; it was removed that day
+(section 3). A language added next would get ID 8 again, the lowest free bit.
 
 **An object records its languages in one number**, its *language mask*: the sum of the IDs of the languages it has
 a translation in. An object in American English and German has the mask 2 + 4 = 6. Bit 0 (the value 1) is the
@@ -165,18 +167,19 @@ administration interface itself runs in.
 
 ### Worked example: the overview on the demonstration server
 
-On 5 October 2026 the page showed:
+On 5 October 2026, after the clean-up described below, the page showed:
 
 | Language | Objects (main, only) | Classes | Shown by | Can be removed |
 |---|---|---|---|---|
 | English (American), `eng-US` | 368 (368, 325) | 81 (74 stored, 7 unsaved edits) | 14 siteaccesses, first in 13 | No |
 | German, `ger-DE` | 53 (10, 10) | 6 | `bold_ger`, first there | No |
-| English (United Kingdom), `eng-GB` | 0 | 0 | none | Yes |
 
-`eng-GB` was the case this page was redesigned to make obvious: earlier that day it had 6 classes and no siteaccess
-of `AvailableSiteAccessList` listing it (only the unused settings folder `settings/siteaccess/eng` did). Its card
-said *In no SiteLanguageList* and *Not shown by any siteaccess*, and linked to the six classes. Once their `eng-GB`
-translations were removed, the card read *Unused* and its checkbox came on; later that day the language was removed, and the page has listed two languages since.
+Earlier that day there was a third card, English (United Kingdom), `eng-GB`: the case this page was redesigned to
+make obvious. The newsletter extension's class packages named `eng-GB`, so importing them had created the language
+(section 12), and six classes had a name in it, while no siteaccess of `AvailableSiteAccessList` listed it (only the
+unused settings folder `settings/siteaccess/eng` did). Its card said *In no SiteLanguageList* and *Not shown by any
+siteaccess* and linked to the six classes. Once their `eng-GB` translations were moved to `eng-US` and the leftovers
+of section 9 were cleaned, the card read *Unused*, and the language was removed.
 
 ## 4. Adding a language
 
@@ -221,7 +224,8 @@ What a visitor sees is decided per siteaccess, in `settings/siteaccess/<siteacce
 |---|---|
 | `SiteLanguageList[]` | The content languages this siteaccess shows, most preferred first. An object is shown in the first of these it has. |
 | `ShowUntranslatedObjects` | `disabled` (shipped): objects in none of those languages are hidden, unless always available. `enabled`: they are shown in their main language. |
-| `ContentObjectLocale` | The default language for new content, and the fallback when `SiteLanguageList` is empty. Do not change it on a site with content without reading the warning in `settings/site.ini`. |
+| `ContentObjectLocale` | The default language for new content, and the fallback when `SiteLanguageList` is empty; shipped as `eng-US`. Do not change it on a site with content without reading the warning in `settings/site.ini`. |
+| `ContentObjectFallbackLocale` | The last resort when no content language is prioritized and no `ContentObjectLocale` is set, for example while the setup wizard or a script creates classes before the site has languages; shipped as `eng-US` (it used to be a hard-coded `eng-GB`). See [Content language fallback](../bc/6.0/content-object-fallback-locale.md). |
 | `Locale` | The interface language and the locale for dates and numbers. |
 | `TextTranslation` | `enabled` to translate interface texts into `Locale`. |
 
@@ -341,6 +345,17 @@ translation cannot be removed at all.
 - **Objects** with a translation in it (any status: published, draft, archived). The card shows how many.
 - **Classes** with a name in it, including **unsaved class edits**. The language's page lists them.
 
+What the kernel does **not** count, but what still carries the language's bit or locale in the database:
+
+- **Class texts** stored per locale (serialized name lists of classes, class attributes, class groups and states),
+  for example an empty `eng-GB` description next to the `eng-US` one.
+- **Name rows of draft versions** of objects whose published version has no translation in the language.
+- **URL aliases** whose language mask still has the bit, for example aliases of removed nodes.
+
+Convert or clean these before removing a language, or a language added later with the same ID inherits them. How,
+with the cache list to clear afterwards, is in
+[Content language fallback](../bc/6.0/content-object-fallback-locale.md#removing-eng-gb-from-an-existing-site).
+
 What the page warns about but allows:
 
 - **Siteaccesses that still list it.** After removal they would ask for a language that does not exist; the page
@@ -356,7 +371,7 @@ What the page warns about but allows:
    languages and the siteaccesses that still list them.
 3. The page reports *English (United Kingdom) (eng-GB) was removed.*, and, when siteaccesses still list it, names
    them.
-4. Take the locale out of those siteaccesses' `SiteLanguageList` and clear the INI cache (section 10).
+4. Take the locale out of those siteaccesses' `SiteLanguageList`, clear the INI cache and the `content_language` cache (section 10), and clear Velocity's response cache too: both Apache and Velocity keep the list of languages.
 
 If something used the language after all (an object was translated meanwhile), the page reports *was not removed:
 N objects and M classes still have a translation in it.* and nothing changes.
@@ -376,7 +391,7 @@ installation root; add `--allow-root-user` when you run as root.
 
 | Command | When |
 |---|---|
-| `php bin/php/ezcache.php --clear-id=content_language` | The cached list of content languages, after the table was changed by hand or by a script |
+| `php bin/php/ezcache.php --clear-id=content_language` | The cached list of content languages: after removing a language, and after the table was changed by hand or by a script; then `./console exp:velocity cache clear`, so the pages on port 8080 drop it too |
 | `php bin/php/ezcache.php --clear-tag=ini` | After changing a `SiteLanguageList` or any `[RegionalSettings]` setting |
 | `php bin/php/ezcache.php --clear-tag=content` | After a change to languages or translations, so lists and pages are drawn again (adding or removing a language from the page does this itself) |
 | `./console exp:updateniceurls --update-nodes` or `php bin/php/updateniceurls.php -s admin` | Rebuild the URL aliases of all nodes, for example after many translations were added by a script; aliases are kept per language |
@@ -454,6 +469,13 @@ it on the page, or take it out of the list.
 
 **"No language was added: this installation already has the most languages it can hold."** All 62 bits are taken.
 Remove a language nothing uses first.
+
+**A language appeared that nobody added.** Importing a class package (an extension's install step, or **Setup >
+Packages**) creates every language its class definitions name. That is how `eng-GB` got onto the demonstration
+server: the `cjw_newsletter` class packages before version 4.2.1 named it. An old `kickstart.ini` with
+`Languages[]=eng-GB`, or a site created before the fallback became `eng-US`
+([Content language fallback](../bc/6.0/content-object-fallback-locale.md)), does the same. The language's card
+shows what uses it; move that content (section 8) and remove the language (section 9).
 
 **After adding a language the editor does not offer it.** The editor offers only languages the user may use: check
 the **Language** limitation of the user's `content/edit`, `content/translate` and `content/create` policies.
