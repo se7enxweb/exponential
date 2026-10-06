@@ -4752,7 +4752,7 @@ f8a467c50f0d93034097d066a7dd5085  kernel/classes/ezcontentclassgroup.php
 db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 58369fa65f68c37ae7cfa64ddc06acaa  kernel/classes/ezcontentfunctions.php
-dba862f2c686e4e505aa22c66b3b2c9a  kernel/classes/ezcontentlanguage.php
+e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
 b9870b49fa51346bb6a2e4da345d8d1f  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
@@ -6841,8 +6841,10 @@ e6f607f0cf7f48459ede5ea9888592f3  tests/tests/kernel/classes/codetemplate/eZCode
 32678a5e41a48c6e006f21154cf8b8df  tests/tests/kernel/classes/collaboration/CollaborationSampleDataTest.php
 70613220d6447007e5d7695cb754a65d  tests/tests/kernel/classes/commands/expVelocityHelpTextTest.php
 93c9c53ad735f76a5bd4bbb2961fb469  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
+f62f8590531d8ff28b478e0a0da37ffc  tests/tests/kernel/classes/contentjobs/expContentJobCopyLinksTest.php
 4735cd1c55e288f15d12ebd597a22232  tests/tests/kernel/classes/contentmodel/eZContentClassLiveTest.php
 2783c92fac8de3c6d341c3a4cab60b1d  tests/tests/kernel/classes/contentmodel/eZContentFunctionCollectionLiveTest.php
+a1d997492e24fb87107667aca8a44d82  tests/tests/kernel/classes/contentmodel/eZContentLanguageLiveTest.php
 47ff2f882d727e5486a3fe354758b529  tests/tests/kernel/classes/contentmodel/eZContentObjectLiveTest.php
 9405e5e842bdad6dac396f5f6f4b3b5a  tests/tests/kernel/classes/contentmodel/eZContentObjectTreeNodeFetchTest.php
 a2543a0a45dcc53181a6266722b1a5f7  tests/tests/kernel/classes/contentmodel/eZContentOperationsLiveTest.php
@@ -6855,9 +6857,11 @@ ced37a9f81d9eaba260d259e70b1fb25  tests/tests/kernel/classes/contentmodel/eZSear
 b0f5e308de066b9c9634ee29f470b137  tests/tests/kernel/classes/contentmodel/expContentModelLiveTestCase.php
 0f7d6b3a3845de6e9fb082f635076e4f  tests/tests/kernel/classes/datatypes/eZChoiceDatatypesTest.php
 458caf640f2064f029fb48db96abc5ac  tests/tests/kernel/classes/datatypes/eZDataTypeBaseTest.php
-536b01042dbd0a1257925f6ffc728f25  tests/tests/kernel/classes/datatypes/eZDatatypeTestFixtures.php
+9c9458345b8804e2a209c3290b461353  tests/tests/kernel/classes/datatypes/eZDatatypeTestFixtures.php
 c15e9ca2aca7c6a64bf53f6b7d2fe112  tests/tests/kernel/classes/datatypes/eZDateTimeDatatypesTest.php
 be230a8ce86ca237985d46e212686dbe  tests/tests/kernel/classes/datatypes/eZISBNAndAuthorDatatypesTest.php
+f65de49a296b8df733dd0a2f160f89bc  tests/tests/kernel/classes/datatypes/eZIdentifierAndRangeOptionDatatypesTest.php
+23a9a08096135ebe917e471b7fe54722  tests/tests/kernel/classes/datatypes/eZIniSettingDatatypeTest.php
 bf0caf2109936b5dc0623934ef62876d  tests/tests/kernel/classes/datatypes/eZMatrixAndOptionDatatypesTest.php
 8b7725310f999cfd85ede73a60ca4f95  tests/tests/kernel/classes/datatypes/eZMultiOptionDatatypeTest.php
 3838e382720201da0ba10c1f69b0ff29  tests/tests/kernel/classes/datatypes/eZNumericDatatypesTest.php
