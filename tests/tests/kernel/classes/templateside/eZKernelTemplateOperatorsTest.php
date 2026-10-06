@@ -104,6 +104,7 @@ class eZKernelTemplateOperatorsTest extends eZDatatypeTestCase
         $tpl = new eZTemplate();
         $tpl->setAutoloadPathList( array( 'lib/eztemplate/classes/', 'kernel/common/' ) );
         $tpl->autoload();
+        $tpl->registerResource( eZTemplateDesignResource::instance() );
         foreach ( $variables as $name => $value )
             $tpl->setVariable( $name, $value );
         $output = $tpl->fetch( $file );
@@ -255,6 +256,26 @@ class eZKernelTemplateOperatorsTest extends eZDatatypeTestCase
         }
         $this->assertSame( array(), $warnings );
         $this->assertNotEmpty( $bases );
+    }
+
+    public function testOverrideKeysOutsideASiteAccess()
+    {
+        $saved = array_key_exists( 'eZCurrentAccess', $GLOBALS ) ? array( $GLOBALS['eZCurrentAccess'] ) : null;
+        unset( $GLOBALS['eZCurrentAccess'] );
+        try
+        {
+            $warnings = $this->phpWarnings( function () use ( &$keys ) {
+                $keys = eZTemplateDesignResource::instance()->overrideKeys();
+            } );
+        }
+        finally
+        {
+            if ( $saved !== null )
+                $GLOBALS['eZCurrentAccess'] = $saved[0];
+        }
+        $this->assertSame( array(), $warnings );
+        $this->assertContains( 'siteaccess/', $keys );
+        $this->assertContains( eZTemplateDesignResource::designSetting( 'standard' ), $keys );
     }
 
     public function testEzdesignOfAnExistingFile()

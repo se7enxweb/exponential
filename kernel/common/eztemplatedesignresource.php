@@ -615,7 +615,8 @@ class eZTemplateDesignResource extends eZTemplateFileResource
             else
             {
                 $overrideINI = eZINI::instance( 'override.ini' );
-                $siteAccess = $GLOBALS['eZCurrentAccess']['name'];
+                // none in a script that runs without a siteaccess
+                $siteAccess = $GLOBALS['eZCurrentAccess']['name'] ?? '';
                 $keys[] = "siteaccess/$siteAccess";
             }
 
