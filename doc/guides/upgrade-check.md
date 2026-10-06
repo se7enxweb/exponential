@@ -132,7 +132,7 @@ shipped and the current definition) and the SQL for that table:
 | **Missing table** | Shipped with Exponential or an active extension, not in the database. The feature that uses it fails until it is there. | Run its CREATE statement after a backup. |
 | **Table not in the schema** | In the database, in no shipped schema: usually a table of an extension that is not active, or of an extension of your own without a schema file. | Leave it unless you know its data is no longer needed. The DROP statement is shown only to be complete, and marked **Removes something**. |
 | **Changed table** | Fields or indexes differ from the shipped definition. | Read each statement and run the ones you agree with, after a backup. Statements that remove or change a field or an index are marked **Removes something**: they can remove data of your own. |
-| **Engine notes** | The engine's schema handler writes no SQL for the difference: the engine names a type in its own words. On SQLite, `text` for `longtext`, and an `integer NOT NULL PRIMARY KEY AUTOINCREMENT` key it does not read as `auto_increment`. | Nothing. They are listed in one folded group and do not fail the check. |
+| **Engine notes** | The engine's schema handler writes no SQL for the difference. On SQLite the check first sets aside what SQLite cannot tell apart (`text` and `longtext`, the display width of an `auto_increment` key, a default left out or written as false), so a table as the SQLite schema files create it matches; what is left and still has no SQL is an engine note. | Nothing. They are listed in one folded group and do not fail the check. |
 
 **All statements** (folded) has the whole SQL as one block, as the page showed it before. The page never runs any of
 it.
