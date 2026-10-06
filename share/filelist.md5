@@ -3283,7 +3283,7 @@ efbf2cf79f254018df640a05a54f55d9  doc/features/6.0/extensions/xrowmetadata.md
 0bf857c67c7a27132fc3524a6bcad556  doc/features/6.0/ezpm-package-manager-cli.md
 47d50700cb54d62c6d694557e79788fa  doc/features/6.0/file-consistency-check.md
 dfa9c308bb3efde44b47784f72b7e244  doc/features/6.0/form-expired-page.md
-6174e7beddfde60ac26a78fbde0a3e2b  doc/features/6.0/hidden-admin-tabs.md
+0b23db05a5ad06e2633b3a47bf21c3d8  doc/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/features/6.0/icon-themes-in-extensions.md
 084d3e79b84e8ab0d8c13663d37c531e  doc/features/6.0/install-in-one-command.md
 ee9fbd196fef3a6c34b154e3bedaf179  doc/features/6.0/installation-name-in-pages.md
@@ -3322,7 +3322,7 @@ cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
 5546e1fd2154341af36b7d47c0e72dac  doc/features/6.0/role-and-policy-template-operators.md
 5eca0ca90770dd3b686d7743ecb9d33a  doc/features/6.0/role-policy-order.md
 f1b7156f5a50c09f2d0dad23f221a6d7  doc/features/6.0/rss-podcast-and-feed-list.md
-f027124ffec4b26572415236c97c1e2b  doc/features/6.0/setup-wizard-and-editor-siteaccess.md
+14dbc4a293a665daaeee0ed49cd06fb1  doc/features/6.0/setup-wizard-and-editor-siteaccess.md
 f2e61c10e09e6bcc8b934feb95c4ad08  doc/features/6.0/sqlite-database.md
 b4237bb304d831cb1e2814f1830146a4  doc/features/6.0/static-cache-generator.md
 f6a29d2c690968846f5c87c97133e1e8  doc/features/6.0/store-dashboard.md
@@ -5775,7 +5775,7 @@ e4ff6934b21338c7a03ea332852402d5  kernel/setup/radsurvey.php
 dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-cb4af1eb09247b6b395f081e112b7195  kernel/setup/steps/ezstep_create_sites.php
+c12308aef5cb8fd95d6fe7a289fca205  kernel/setup/steps/ezstep_create_sites.php
 3174823463cf9d0f9a18162ee233dc04  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -7106,6 +7106,7 @@ de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableEx
 01cfa4440a2c6387c1d3ba0efb08b7f8  tests/tests/kernel/classes/security/stubs.php
 7e6b4523a39875330fdd94382fd0f3d8  tests/tests/kernel/classes/setup/AutoloadGeneratorOptionsTest.php
 4159402cb6f2996b0958f022dabe3050  tests/tests/kernel/classes/setup/EditorSiteaccessDefaultTest.php
+8706529d254ecba5f27c68b5b1905d56  tests/tests/kernel/classes/setup/EditorSiteaccessModulesTest.php
 84a806754eee94940f2ff8fab608690f  tests/tests/kernel/classes/setup/KickstarterFailureReasonTest.php
 b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php
 2e4f85464804cc2fe00e7e80aa8a3a24  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
