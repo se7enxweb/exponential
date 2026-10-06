@@ -286,6 +286,9 @@ class eZStepInstaller
      */
     function chosenSiteType()
     {
+        // Before a site package is chosen there is no site type: an empty one,
+        // not an undefined variable
+        $chosenSiteType = array();
         if ( isset( $this->PersistenceList['chosen_site_package']['0'] ) )
         {
             $siteTypeIdentifier = $this->PersistenceList['chosen_site_package']['0'];

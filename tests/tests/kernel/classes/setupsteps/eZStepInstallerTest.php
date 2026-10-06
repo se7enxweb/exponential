@@ -116,6 +116,14 @@ class eZStepInstallerTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'k1e_site', $_POST['P_chosen_site_package-0'] );
     }
 
+    public function testNoChosenSiteTypeIsAnEmptyOne()
+    {
+        $step = $this->installer();
+        $warnings = $this->helper->warningsOf( function () use ( $step, &$type ) { $type = $step->chosenSiteType(); } );
+        $this->assertSame( array(), $warnings );
+        $this->assertSame( array(), $type );
+    }
+
     // ---------------------------------------------------------------- character sets
 
     public function testCharsetOfTheChosenLanguages()
