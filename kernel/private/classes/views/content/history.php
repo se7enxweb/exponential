@@ -61,11 +61,9 @@ class History extends \Exponential\Runnable\ModuleView
         if ( $object === null )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
-        if ( !$object->attribute( 'can_read' ) )
+        $canEdit = $object->editAccess();
+        if ( !self::canOpen( $object, $canEdit ) )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
-
-        if ( $object->editAccess() )
-            $canEdit = true;
 
         $canRemove = true;
 
@@ -369,6 +367,25 @@ class History extends \Exponential\Runnable\ModuleView
         }
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Whether the current user may open the versions of $object: who may read it, and who may edit it, so the
+     * editors of a draft that was never published can make their next version from a rejected one. Such a draft is
+     * readable for its owner only, and an extension lets further editors in through the filter content/edit/access
+     * (eZContentObject::editAccess()).
+     *
+     * @param \eZContentObject $object
+     * @param bool|null $canEdit $object->editAccess(), when the caller has it already
+     * @return bool
+     */
+    public static function canOpen( $object, $canEdit = null )
+    {
+        if ( $object->attribute( 'can_read' ) )
+        {
+            return true;
+        }
+        return $canEdit === null ? $object->editAccess() : (bool)$canEdit;
     }
 }
 
