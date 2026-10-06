@@ -49,6 +49,19 @@
 
 class eZStepCreateSites extends eZStepInstaller
 {
+    /**
+     * Modules the editor siteaccess refuses (404): site administration and developer tools, not editing.
+     */
+    const EDITOR_DISABLED_MODULES = array( 'setup', 'visual', 'explayouts_ui', 'explayouts_ui_api', 'git_manager',
+                                           'xrowextract', 'bccie', 'syndication' );
+
+    /**
+     * Top menu tabs the editor siteaccess hides; each one's module is also in EDITOR_DISABLED_MODULES, or is a
+     * kernel module (setup, design) that the rules above or the policies already keep away.
+     */
+    const EDITOR_HIDDEN_TABS = array( 'explayouts_ui_dashboard', 'setup', 'design', 'gitmanager', 'xrowextract',
+                                      'bccie_overview', 'syndication' );
+
     public $Error;
     /**
      * Constructor
@@ -448,7 +461,7 @@ class eZStepCreateSites extends eZStepInstaller
         if ( $editorURL !== '' )
             $site->setVariable( 'SiteSettings', 'SiteURL', $editorURL );
         $rules = array( 'access;enable', 'moduleall', 'access;disable' );
-        foreach ( array( 'setup', 'visual', 'explayouts_ui', 'explayouts_ui_api', 'git_manager', 'xrowextract', 'bccie' ) as $module )
+        foreach ( self::EDITOR_DISABLED_MODULES as $module )
             $rules[] = 'module;' . $module;
         $site->setVariable( 'SiteAccessRules', 'Rules', $rules );
         if ( !$site->save( false, false, false, false, true, true ) )
@@ -456,7 +469,7 @@ class eZStepCreateSites extends eZStepInstaller
 
         $menu = new eZINI( 'menu.ini.append.php', $editorDir, null, null, null, true, true );
         $menu->setVariable( 'TopAdminMenu', 'Tabs', array( 'dashboard', 'content', 'media', 'users', 'shop', 'eztags', 'newsletter' ) );
-        $menu->setVariable( 'TopAdminMenu', 'HiddenTabs', array( 'explayouts_ui_dashboard', 'setup', 'design', 'gitmanager', 'xrowextract', 'bccie_overview' ) );
+        $menu->setVariable( 'TopAdminMenu', 'HiddenTabs', self::EDITOR_HIDDEN_TABS );
         $toolbar = new eZINI( 'toolbar.ini.append.php', $editorDir, null, null, null, true, true );
         // Bookmarks first; no Clear cache (the editor has no setup module)
         $toolbar->setVariable( 'Toolbar_admin_right', 'Tool', array( 'admin_bookmarks', 'admin_current_user', 'admin_preferences' ) );

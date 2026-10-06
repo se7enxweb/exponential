@@ -21,7 +21,8 @@ The editor siteaccess (`settings/siteaccess/editor`) is made from the installed 
 - it shows the content tabs only: Dashboard, Content structure, Media, Users, Store, Tags, Newsletter;
 - it has no developer toolbar and no Layouts node tab;
 - the modules behind the hidden tabs answer 404: `setup`, `visual`, `explayouts_ui`, `explayouts_ui_api`,
-  `git_manager`, `xrowextract`, `bccie`;
+  `git_manager`, `xrowextract`, `bccie`, `syndication` (feed export and import are site administration, not
+  editing);
 - the site's service worker stays out of it, as it does of the admin (`/editor` joins `/admin`);
 - the wizard gives it a right sidebar that starts with Bookmarks.
 

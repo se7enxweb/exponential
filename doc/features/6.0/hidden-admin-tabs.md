@@ -58,7 +58,7 @@ grep -rn HiddenTabs kernel design settings
 ## The shipped editor siteaccess
 
 The editor siteaccess uses both settings. It hides `explayouts_ui_dashboard`, `setup`, `design`, `gitmanager`,
-`xrowextract` and `bccie_overview` in the top menu, and `layouts` in the node view. See
+`xrowextract`, `bccie_overview` and `syndication` in the top menu, and `layouts` in the node view. See
 [the setup wizard and the editor siteaccess](setup-wizard-and-editor-siteaccess.md).
 
 ## Changed on the same day
