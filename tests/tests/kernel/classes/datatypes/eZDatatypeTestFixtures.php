@@ -65,6 +65,8 @@ class eZDatatypeTestNoDatabase extends eZDBInterface
 {
     public function __construct()
     {
+        // cache file names are made from the database name (md5( $db->DB )); give it one of its own
+        $this->DB = 'k1-no-database';
     }
 
     private function refuse( $what )
