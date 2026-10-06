@@ -512,16 +512,19 @@ class eZXMLTextType extends eZDataType
             $textDom = $section->firstChild;
         }
 
+        // A document without text (the empty <section/> of a new object) has
+        // no title; the stored XML used to be returned as the title instead
+        $title = '';
         if ( $textDom && $textDom->hasChildNodes() )
         {
-            $text = $textDom->firstChild->textContent;
+            $title = $textDom->firstChild->textContent;
         }
         elseif ( $textDom )
         {
-            $text = $textDom->textContent;
+            $title = $textDom->textContent;
         }
 
-        return $text;
+        return $title;
     }
 
     function hasObjectAttributeContent( $contentObjectAttribute )
