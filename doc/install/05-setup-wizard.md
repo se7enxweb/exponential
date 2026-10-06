@@ -378,7 +378,9 @@ next to the languages you chose. Mapping it relabels that content as another lan
 ### 5.3.10 Site access configuration
 
 **Purpose.** How a request is matched to a siteaccess. Every installation gets three siteaccesses, `site`, `admin` and
-`editor`; this page decides what tells them apart.
+`editor`; this page decides what tells them apart. A fourth, `adminui` (the
+[Exponential Admin UI](../features/6.0/exp-adminui.md)), is added when the `exp_adminui` extension is in the
+installation; it is always reached by its path, `/adminui`, and this page does not change it.
 
 **Screen.** "Site access configuration", "Please choose the access method you want to use for your site. The access
 method determines how the site will be accessed from within a web browser. If unsure: choose URL.", the explanation of
@@ -532,8 +534,8 @@ large site package considerably longer. It:
    `share/db_data.dba`;
 2. installs the site package and the packages it requires, and runs the package's install scripts;
 3. sets up the administrator account;
-4. writes `settings/siteaccess/site/`, `settings/siteaccess/admin/` and `settings/siteaccess/editor/`, and the
-   files in `settings/override/` ([chapter 4](04-choosing-an-install-method.md#44-what-an-installation-writes)),
+4. writes `settings/siteaccess/site/`, `settings/siteaccess/admin/` and `settings/siteaccess/editor/` (and
+   `settings/siteaccess/adminui/` when `extension/exp_adminui` is there), and the files in `settings/override/` ([chapter 4](04-choosing-an-install-method.md#44-what-an-installation-writes)),
    including `CheckValidity=false`.
 
 When something fails, the page "Creating sites" appears: "The setup wizard was not able to complete the creation of
@@ -554,6 +556,7 @@ fixed the errors you can try then click the "Retry" button." Only **Retry** is o
 | `EZSW-070` | a user preference could not be created |
 | `EZSW-080` | "The post-install of site package '*name*' stopped at step *N* of *M* (*function*): the steps after it did not run" |
 | `EZSW-081` | "The editor siteaccess could not be made from settings/siteaccess/admin" |
+| `EZSW-082` | "The adminui siteaccess could not be made from settings/siteaccess/admin" |
 
 `var/log/setup.log` holds the details of the failure, with a hint beside known problems.
 
