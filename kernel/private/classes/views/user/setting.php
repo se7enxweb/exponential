@@ -76,7 +76,7 @@ class Setting extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasPostVariable( "CancelSettingButton" ) )
         {
-            $Module->redirectTo( '/content/view/full/' . $userObject->attribute( 'main_node_id' ) );
+            $Module->redirectTo( self::cancelURI( $Module, $userObject->attribute( 'main_node_id' ) ) );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
@@ -100,6 +100,7 @@ class Setting extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "userSetting", $userSetting );
         $tpl->setVariable( "failed_login_attempts", $failedLoginAttempts );
         $tpl->setVariable( "max_failed_login_attempts", $maxFailedLoginAttempts );
+        $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:user/setting.tpl" );
@@ -109,6 +110,20 @@ class Setting extends \Exponential\Runnable\ModuleView
                                         'url' => false ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Where Cancel goes: the page the form names in RedirectIfDiscarded, else the page viewed last, else the user's
+     * own page, where it always went. The rules are those of \eZRedirectManager::returnURI().
+     *
+     * @param \eZModule|null $module
+     * @param int $mainNodeID the main node of the user object
+     * @param array $options see \eZRedirectManager::returnURI()
+     * @return string
+     */
+    public static function cancelURI( $module, $mainNodeID, $options = array() )
+    {
+        return \eZRedirectManager::returnURI( $module, '/content/view/full/' . (int)$mainNodeID, \eZRedirectManager::formReturnURIs(), $options );
     }
 }
 

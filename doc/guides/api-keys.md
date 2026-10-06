@@ -38,7 +38,7 @@ addresses and host names are shortened or replaced by documentation values (`exa
 
 1. [What a key is, and what it is not](#1-what-a-key-is-and-what-it-is-not)
 2. [Getting a key](#2-getting-a-key)
-3. [Using a key with curl](#3-using-a-key-with-curl)
+3. [Using a key with curl](#3-using-a-key-with-curl): [routes](#31-routes-of-the-ezp-provider), [permissions](#32-permissions-of-the-rest-interface)
 4. [Rotating and revoking your keys](#4-rotating-and-revoking-your-keys)
 5. [Switching keys on for your users](#5-switching-keys-on-for-your-users)
 6. [Scopes](#6-scopes)
@@ -124,9 +124,9 @@ scopes, when it was made, when and from which address it was last used, and when
 ## 3. Using a key with curl
 
 Send the key in the `Authorization` header with the `Bearer` scheme. The examples read node 2 through the
-`ezp` content provider. On an installation with the `ezprestapi` extension the routes are version 2
-(`/api/ezp/v2/...`); with `ezprestapiprovider` alone they are version 1 (`/api/ezp/v1/...`). The API access page
-shows the path of your installation in its example.
+`ezp` content provider. With the `ezprestapi` extension (1.2.5 or later) the reads answer at version 1 and version 2
+(`/api/ezp/v1/...` and `/api/ezp/v2/...`) and the writes at version 2; with `ezprestapiprovider` alone everything is
+version 1 and read only. The API access page shows the path of your installation in its example.
 
 ```bash
 export EXP_API_KEY='expk_...'
@@ -145,6 +145,10 @@ must handle:
 | Status | Body | Meaning |
 |---|---|---|
 | 200 | the content | the key is valid and has the scope the route needs |
+| 201 | `{"message":"Created","objectId":...,"nodeId":...}` | a create was published |
+| 400 | `{"error":"invalid_request","error_message":...}` | a field of a write is missing, or names a class or language that does not exist |
+| 403 | `{"error":"access_denied","error_message":...}` | the owner may not read or write this content (content/read, create, edit, remove; [3.2](#32-permissions-of-the-rest-interface)) |
+| 404 | `{"error":"not_found",...}` | the node or object does not exist |
 | 401 | `{"error":"invalid_token"}` | no key, an unknown key, a wrong secret, a revoked key, a disabled owner, or a key sent in the address |
 | 401 | `{"error":"expired_token"}` | the key passed its end date |
 | 403 | `{"error":"insufficient_scope"}` | the key lacks the scope this route needs, or its owner lost the permission behind it |
@@ -169,6 +173,61 @@ request = urllib.request.Request(
 with urllib.request.urlopen(request) as answer:
     print(json.load(answer)['metadata']['objectName'])
 ```
+
+### 3.1 Routes of the ezp provider
+
+The `ezprestapi` extension serves the `ezp` provider. Reads answer at `v1` and `v2`; `v1` is the API that existing
+clients call (a mobile app reads `/api/ezp/v1/content/node/<id>/list/offset/0/limit/20?ResponseGroups=Fields`), and
+the links in its answers stay in `v1`. Writes answer at `v2` only.
+
+| Method | Path below `/api/ezp/v1` and `/api/ezp/v2` | What it does |
+|---|---|---|
+| `GET` | `/content/node/<id>` and `/content/object/<id>` | one node or object (`ResponseGroups=Metadata,Locations,Fields`) |
+| `GET` | `/content/node/<id>/list(/offset/<n>)(/limit/<n>)(/sort/<key>(/asc\|desc))` | the children |
+| `GET` | `/content/node/<id>/childrenCount`, `.../fields`, `.../field/<identifier>`, `.../listAtom` | counts, fields, Atom |
+| `POST` | `/content/node/create` (v2) | create and publish below `parentNodeID` |
+| `DELETE` or `POST` | `/content/node/delete/<id>` (v2) | remove the node's object with all its locations and what is below them |
+| `POST` | `/content/node/<id>` (v2) | update: checks content/edit, then answers 501, updating is not implemented yet |
+
+```bash
+# create a folder below node 1234 (fields: parentNodeID, classIdentifier, languageLocale, then the attributes)
+curl -s -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/content/node/create \
+     -d parentNodeID=1234 -d classIdentifier=folder -d languageLocale=eng-US -d name='From a script'
+{"message":"Created","objectId":5678,"nodeId":4321}
+
+# remove it again
+curl -s -X DELETE -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/content/node/delete/4321
+{"message":"Removed","nodeId":4321,"objectId":5678}
+```
+
+A route whose path matches but which does not take the method no longer ends the search: the router tries the routes
+after it, and answers `405` with an `Allow` header only when none takes the method. A refused write answers `401` or
+`403`, never `405` (before 6.0.15 the authentication answers of a `POST` or `DELETE` turned into `405`).
+
+### 3.2 Permissions of the REST interface
+
+Every read and write of the `ezprestapi` content controller asks the current user's policies the way the content
+module asks them, whatever the request was authenticated with: an OAuth token, a personal API key, HTTP basic
+authentication, or the anonymous user when authentication is off. One helper of the kernel does it,
+`expRestContentPermission` (`kernel/private/rest/classes/auth/content_permission.php`), and the key guard of
+[section 6](#6-scopes) asks the same helper, so a key and a token get the same answer.
+
+| Call | Policy | Checked like |
+|---|---|---|
+| read a node, an object, a list, a count | `content/read` of the node or object (a list also of its parent; the children are filtered by the fetch) | `canRead()` |
+| create | `content/create` of the class below the parent, in the language: Class, ParentClass, Section, Node, Subtree and Language limitations | the parent object's `checkAccess( 'create', ... )`, as `content/action` does for **New** |
+| update | `content/edit` of the node (and `user/selfedit` for one's own user), in the posted language | `canEdit()` |
+| remove | `content/remove` of every location of the object and of everything below them | `canRemove()` of each location and `can_remove_all` of `subtreeRemovalInformation()`, as `content/removeobject` |
+
+A refusal answers `403` with `{"error":"access_denied","error_message":"You may not create 'article' below node 60
+in eng-US (content/create)."}` and changes nothing. The content module has no `content/publish` check, and neither has
+the REST interface: a create publishes when `content/create` allows it, and the publish workflow runs as for the
+content module.
+
+The REST interface's answer cache (`rest.ini [CacheSettings] ApplicationCache`) keeps one answer per user and only
+for `GET` and `HEAD`: before 6.0.15 one user's read was served to the next for ten minutes, past `content/read`, and a
+repeated create or delete was answered from the cache without running. A refusal is never cached (it follows the
+rights of each request), and a cache file that cannot be read back is generated again rather than answered with 500.
 
 > [!NOTE]
 > **Keep the key out of code.** Put it in an environment variable, your CI's secret store or your system's keychain,
@@ -263,9 +322,12 @@ Three checks stand between a key and a route, on every request:
 The request then runs as the owner, so every policy check of the controller applies as well.
 
 > [!NOTE]
-> **Why the third check.** The content controller of `ezprestapi` creates and removes through `nxc_powercontent`
-> without asking the permission system. The guard makes sure a key can never write where its owner may not, whatever
-> the controller does.
+> **Why the third check.** Before `ezprestapi` 1.2.5 its content controller created and removed through
+> `nxc_powercontent` without asking the permission system. It now checks every call for every kind of authentication
+> ([3.2](#32-permissions-of-the-rest-interface)); the guard stays as a second line and asks the same helper, so the two
+> never disagree. Only a refusal of the rights stops a key here (`403 insufficient_scope`, recorded as
+> `access.apikey.use.failed` with the reason `permission`); a write that names no node, or an unknown one, goes on to
+> the controller, which answers `400` or `404` as it does for a token.
 
 ## 7. The administration: every key, one user, revoking
 
@@ -431,7 +493,8 @@ template-override caches, reload PHP-FPM and restart Velocity.
 | 401 `invalid_token` with a fresh key | The key was cut while copying (it is exactly 58 characters), or sent in the address, or the header is `Authorization: expk_...` without `Bearer` |
 | 401 on one server only | A proxy in front of it drops the `Authorization` header. Apache with PHP-FPM needs it passed (`SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1`, or `CGIPassAuth On`) |
 | 403 `insufficient_scope` | The route needs a scope the key lacks, the owner lost the policy, or the write is outside the owner's rights. The audit's `access.apikey.use.failed` names which (`scope`, `policy`, `permission`) and the route |
-| 405 "This method is not supported" on `/content/node/create` | The routes of the `ezprestapi` provider in use answer `GET` only there; this happens before any key is looked at |
+| 405 "This method is not supported" on `/content/node/create` | Before 6.0.15 a refused `POST` or `DELETE` (no or a wrong key) was redirected to an authentication route that took `GET` only. Upgrade the kernel and `ezprestapi` 1.2.5; `v1` is read only, a write there still answers 405 |
+| 403 `access_denied` | The user behind the token or key may not do this to this node ([3.2](#32-permissions-of-the-rest-interface)); the message names the policy |
 | 429 | Over `RateLimitPerMinute`; wait for `Retry-After` seconds or raise the setting |
 | A database error on `/apikey/list` | The table is missing: run `createapikeytable.php` ([section 10](#10-the-data-model-and-the-upgrade)) |
 | Velocity answers differently from Apache | Velocity loads classes at its start; restart it after the upgrade (`./console exp:velocity restart`) |

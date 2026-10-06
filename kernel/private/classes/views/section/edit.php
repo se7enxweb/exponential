@@ -112,10 +112,11 @@ class Edit extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasPostVariable( 'CancelButton' )  )
         {
-            $Module->redirectTo( $Module->functionURI( 'list' ) );
+            return $this->viewResult( null, $Module->redirectTo( self::cancelURI( $Module ) ) );
         }
 
         $tpl->setVariable( "section", $section );
+        $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
         // What an edit of an existing section touches (its objects, the roles naming it), and the navigation parts
         // to choose from; a new section has neither usage nor an id yet.
         $sectionUsage = false;
@@ -137,6 +138,20 @@ class Edit extends \Exponential\Runnable\ModuleView
                                         'text' => $section instanceof \eZSection ? $section->attribute('name') : $section['name'] ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Where Cancel goes: the page the form names in RedirectIfDiscarded (a section's page, the content it was
+     * opened from), else the page viewed last, else the list of sections, where it always went. The rules are
+     * those of \eZRedirectManager::returnURI().
+     *
+     * @param \eZModule|null $module
+     * @param array $options see \eZRedirectManager::returnURI()
+     * @return string
+     */
+    public static function cancelURI( $module, $options = array() )
+    {
+        return \eZRedirectManager::returnURI( $module, '/section/list', \eZRedirectManager::formReturnURIs(), $options );
     }
 }
 

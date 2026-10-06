@@ -49,6 +49,13 @@ usual choice to edit a copy as a new version.
 - Nothing changes for objects that have been published once, nor for anonymous users (they have no create access by
   default).
 
+## Extensions
+
+The edit checks named here are the kernel's answer. An extension can change that answer for its own rules (further
+editors of a draft, objects locked by a state) with a listener of the filter `content/edit/access`, which every edit
+check of `content/edit`, `content/history`, `content/removeeditversion`, `content/versionview`, `content/multiedit`
+and the REST interface asks: see [Access and view cache filters](../../features/6.0/access-and-cache-filters.md).
+
 ## Checking it
 
 - Without a database: `tests/tests/kernel/classes/eZContentObjectDraftLocationTest.php` (the choice of the main

@@ -1,8 +1,9 @@
 <?php
 /**
  * ezpRestMvcController without running an action: response groups (asked for and default ones), content variables,
- * the OPTIONS answer, the cache location, the cache key (the same request the same key, any difference another),
- * and the cache TTL and switch of rest.ini at action, controller and default level.
+ * the OPTIONS answer, the cache location, the cache key (the same request the same key, any difference another,
+ * another user another key), the cache TTL and switch of rest.ini at action, controller and default level, and no
+ * cache for a method other than GET and HEAD.
  *
  * No database and no cache is written: createResult() is not called. rest.ini settings and the prefix filter's
  * state are set by the test and put back.
@@ -31,6 +32,14 @@ class ezpRestMvcControllerBehaviourTestRouter extends ezcMvcRouter
 
 class ezpRestMvcControllerBehaviourTestController extends ezpRestMvcController
 {
+    /** the current user's id, so the cache key needs no user session */
+    public $user = 10;
+
+    protected function cacheUser()
+    {
+        return $this->user;
+    }
+
     public function call( $method, array $arguments = array() )
     {
         $reflection = new ReflectionMethod( 'ezpRestMvcController', $method );
@@ -89,9 +98,9 @@ class ezpRestMvcControllerBehaviourTest extends PHPUnit\Framework\TestCase
             $ini->setVariable( $group, $name, $value );
     }
 
-    private static function controller( array $variables = array(), array $contentVariables = array(), $action = 'view' )
+    private static function controller( array $variables = array(), array $contentVariables = array(), $action = 'view', $protocol = 'http-get' )
     {
-        $request = new ezpRestRequest( null, 'http-get', '', '/x' );
+        $request = new ezpRestRequest( null, $protocol, '', '/x' );
         $request->variables = $variables + array( 'ResponseGroups' => array() );
         $request->contentVariables = $contentVariables;
         $controller = new ezpRestMvcControllerBehaviourTestController( $action, $request );
@@ -176,5 +185,30 @@ class ezpRestMvcControllerBehaviourTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( self::controller( array(), array(), 'list' )->call( 'isCacheEnabled' ) );
         $this->setting( 'CacheSettings', 'ApplicationCacheDefault', 'disabled' );
         $this->assertFalse( self::controller( array(), array(), 'list' )->call( 'isCacheEnabled' ) );
+    }
+
+    public function testCacheKeyFollowsTheUser()
+    {
+        $anonymous = self::controller( array( 'nodeId' => '2' ) );
+        $editor = self::controller( array( 'nodeId' => '2' ) );
+        $editor->user = 14;
+        $this->assertNotSame( $anonymous->call( 'generateCacheId' ), $editor->call( 'generateCacheId' ),
+                              'the result read by one user is never served to another' );
+        $again = self::controller( array( 'nodeId' => '2' ) );
+        $again->user = 14;
+        $this->assertSame( $editor->call( 'generateCacheId' ), $again->call( 'generateCacheId' ) );
+    }
+
+    public function testOnlyReadsAreCached()
+    {
+        $this->setting( 'CacheSettings', 'ApplicationCache', 'enabled' );
+        $this->setting( 'CacheSettings', 'ApplicationCacheDefault', 'enabled' );
+        $this->setting( 'K1\\Rest\\NodeController_CacheSettings', 'ApplicationCache', null );
+        $this->setting( 'K1\\Rest\\NodeController_view_CacheSettings', 'ApplicationCache', 'enabled' );
+        $this->assertTrue( self::controller( array(), array(), 'view', 'http-get' )->call( 'isCacheEnabled' ) );
+        $this->assertTrue( self::controller( array(), array(), 'view', 'http-head' )->call( 'isCacheEnabled' ) );
+        foreach ( array( 'http-post', 'http-put', 'http-patch', 'http-delete', 'http-options' ) as $protocol )
+            $this->assertFalse( self::controller( array(), array(), 'view', $protocol )->call( 'isCacheEnabled' ),
+                                "$protocol: a create or delete is never answered from the cache" );
     }
 }

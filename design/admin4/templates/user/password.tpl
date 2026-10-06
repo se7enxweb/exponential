@@ -122,6 +122,7 @@
         <button class="a4pw-btn primary" type="submit" name="OKButton" value="OK">{'Change password'|i18n( $ctx )}</button>
         <button class="a4pw-btn" type="submit" name="CancelButton" value="Cancel" formnovalidate>{'Cancel'|i18n( $ctx )}</button>
     </div>
+{if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
 {ezscript( array( 'exp_password_field.js' ) )}
 {/if}

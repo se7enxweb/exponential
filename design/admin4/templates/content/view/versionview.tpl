@@ -1,3 +1,4 @@
+{def $view_mode_uri=cond( and( is_set( $view_mode ), $view_mode|ne( 'full' ) ), concat( '/view_mode/', $view_mode ), '' )}
 <form method="post"
     action={concat( 'content/versionview/', $object.id, '/', $version.version, '/', $language, '/', $from_language )|ezurl}>
 
@@ -147,6 +148,23 @@
                                     {/if}
                                 </div>
 
+                                {* View mode: those of content.ini [VersionView] ViewModes[] *}
+                                {def $version_view_modes=cond( ezini_hasvariable( 'VersionView', 'ViewModes', 'content.ini' ), ezini( 'VersionView', 'ViewModes', 'content.ini' ), array( 'full' ) )
+                                     $current_view_mode=cond( is_set( $view_mode ), $view_mode, 'full' )}
+                                {if $version_view_modes|count|gt( 1 )}
+                                <h6>{'View mode'|i18n( 'design/admin/content/view/versionview' )}:</h6>
+                                <div class="block">
+                                {foreach $version_view_modes as $version_view_mode}
+                                    <p>
+                                    <input type="radio" name="SelectedViewMode" value="{$version_view_mode|wash}" {if eq( $version_view_mode, $current_view_mode )}checked="checked"{/if} />&nbsp;{$version_view_mode|wash}
+                                    </p>
+                                {/foreach}
+                                </div>
+                                {else}
+                                <input type="hidden" name="SelectedViewMode" value="{$current_view_mode|wash}" />
+                                {/if}
+                                {undef $version_view_modes $current_view_mode}
+
                                 <div class="block">
                                     <input class="button" type="submit" name="ChangeSettingsButton"
                                         value="{'Update view'|i18n( 'design/admin/content/view/versionview' )}"
@@ -209,7 +227,7 @@
                                         alt="{$object_languagecode}" style="vertical-align: middle;" />
                                 </p>
                                 <p class="center full-screen">
-                                    <a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess)|ezurl}
+                                    <a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl}
                                         target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} /></a>
                                 </p>
                                 <div class="break"></div>
@@ -219,9 +237,9 @@
                             <div class="mainobject-window">
 
                                 <iframe
-                                    src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess )|ezurl}
+                                    src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri )|ezurl}
                                     width="100%" height="800">
-                                    {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess)|ezurl ) )}
+                                    {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl ) )}
                                 </iframe>
 
                             </div>

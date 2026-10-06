@@ -1080,6 +1080,7 @@ return array(
       'expRADCatalogue'                                              => 'kernel/setup/expradcatalogue.php',
       'expRADHealth'                                                 => 'kernel/setup/expradhealth.php',
       'expRADSurvey'                                                 => 'kernel/setup/expradsurvey.php',
+      'expRestContentPermission'                                     => 'kernel/private/rest/classes/auth/content_permission.php',
       'expRestPasswordAuthFilter'                                    => 'kernel/private/rest/classes/auth/password_auth_filter.php',
       'expRestRateLimitedStatus'                                     => 'kernel/private/rest/classes/status/rate_limited.php',
       'expScriptStatus'                                              => 'kernel/classes/expscriptstatus.php',

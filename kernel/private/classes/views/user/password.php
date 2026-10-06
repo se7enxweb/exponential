@@ -40,15 +40,9 @@ class Password extends \Exponential\Runnable\ModuleView
         $oldPasswordNotValid = 0;
         $newPasswordNotMatch = 0;
         $newPasswordTooShort = 0;
-        $userRedirectURI = '';
-
-        $userRedirectURI = $Module->actionParameter( 'UserRedirectURI' );
-
-        $userRedirectURI = $http->postVariable( 'RedirectURI', $http->sessionVariable( 'LastAccessesURI', '/' ) );
-
-        $redirectionURI = $userRedirectURI;
-        if ( $redirectionURI == '' )
-             $redirectionURI = $ini->variable( 'SiteSettings', 'DefaultPage' );
+        // where Continue (after a change) and Cancel go: the page the form names, else the page viewed before
+        // the form, else the default page; every one passes \eZRedirectManager::returnURI()
+        $redirectionURI = self::cancelURI( $Module, $ini->variable( 'SiteSettings', 'DefaultPage' ) );
 
         $oldPassword = '';
         $newPassword = '';
@@ -167,12 +161,7 @@ class Password extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasPostVariable( "CancelButton" ) )
         {
-            if ( $http->hasPostVariable( "RedirectOnCancel" ) )
-            {
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( $http->postVariable( "RedirectOnCancel" ) ) );
-            }
-            \eZRedirectManager::redirectTo( $Module, $redirectionURI );
-            return $this->viewResult( isset( $Result ) ? $Result : null, null );
+            return $this->viewResult( isset( $Result ) ? $Result : null, $Module->redirectTo( $redirectionURI ) );
         }
 
         $errorSummary = array();
@@ -212,6 +201,7 @@ class Password extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "other_sessions_signed_out", $otherSessionsSignedOut );
         $tpl->setVariable( "notification_sent", $notificationSent );
         $tpl->setVariable( "redirect_uri", (string)$redirectionURI );
+        $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module, self::FORM_RETURN_NAMES ) );
         $tpl->setVariable( "password_js_config", $jsConfig );
         $tpl->setVariable( "password_js_config_json", json_encode( $jsConfig, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR ) );
 
@@ -223,6 +213,27 @@ class Password extends \Exponential\Runnable\ModuleView
         $Result['content'] = $tpl->fetch( "design:user/password.tpl" );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * The form fields naming the page to go back to, in order: RedirectIfDiscarded (as every edit form), and the
+     * older RedirectOnCancel and RedirectURI this view always read.
+     */
+    const FORM_RETURN_NAMES = array( 'RedirectIfDiscarded', 'RedirectOnCancel', 'RedirectURI' );
+
+    /**
+     * Where Cancel (and Continue after a change) goes: the first page the form names in FORM_RETURN_NAMES, else
+     * the page viewed last, else $default (site.ini [SiteSettings] DefaultPage). RedirectOnCancel and RedirectURI
+     * were redirected to as posted; they now pass the rules of \eZRedirectManager::returnURI() like the rest.
+     *
+     * @param \eZModule|null $module
+     * @param string $default
+     * @param array $options see \eZRedirectManager::returnURI()
+     * @return string
+     */
+    public static function cancelURI( $module, $default, $options = array() )
+    {
+        return \eZRedirectManager::returnURI( $module, $default, \eZRedirectManager::formReturnURIs( self::FORM_RETURN_NAMES ), $options );
     }
 }
 

@@ -65,7 +65,7 @@ class Edit extends \Exponential\Runnable\ModuleView
 
         if ( $Module->isCurrentAction( "Cancel" ) )
         {
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/content/view/sitemap/5/' ) );
+            return $this->viewResult( null, $Module->redirectTo( self::cancelURI( $Module ) ) );
         }
 
         $http = \eZHTTPTool::instance();
@@ -102,6 +102,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "userAccount", $userAccount );
         $tpl->setVariable( 'view_parameters', $UserParameters );
         $tpl->setVariable( 'site_access', $GLOBALS['eZCurrentAccess'] );
+        $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:user/edit.tpl" );
@@ -109,6 +110,22 @@ class Edit extends \Exponential\Runnable\ModuleView
                                         'url' => false ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Where Cancel goes: the page the form names in RedirectIfDiscarded, as content/edit and user/register read it,
+     * else the page last viewed, else the sitemap of the users. It always went to that sitemap, a page an editor
+     * changing their own account has no business with. Every page passes the rules of
+     * \eZRedirectManager::returnURI() (a path of this site or an allowed host, never user/edit itself, a POST-only
+     * view or a page the user can no longer view); doc/features/6.0/safe-redirects.md.
+     *
+     * @param \eZModule|null $module
+     * @param array $options see \eZRedirectManager::returnURI()
+     * @return string
+     */
+    public static function cancelURI( $module, $options = array() )
+    {
+        return \eZRedirectManager::returnURI( $module, '/content/view/sitemap/5/', \eZRedirectManager::formReturnURIs(), $options );
     }
 }
 

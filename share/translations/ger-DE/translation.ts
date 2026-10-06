@@ -6971,6 +6971,10 @@
         <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
         <translation>Ihr Browser unterstützt keine iframes. Bitte verwenden Sie stattdessen diesen &lt;a href=%url&gt;Link&lt;/a&gt;.</translation>
     </message>
+    <message>
+        <source>View mode</source>
+        <translation>Ansichtsmodus</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/contentstructuremenu</name>

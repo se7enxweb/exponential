@@ -51,7 +51,7 @@ class GroupEdit extends \Exponential\Runnable\ModuleView
 
         if ( $currentAction == 'Cancel' )
         {
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( 'state/groups' ) );
+            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( self::cancelURI( $Module ) ) );
         }
         else if ( $currentAction == 'Store' )
         {
@@ -91,6 +91,7 @@ class GroupEdit extends \Exponential\Runnable\ModuleView
         }
 
         $tpl->setVariable( 'group', $group );
+        $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
         // An existing group: its states and the roles that name it as StateGroup_<identifier>,
         // which the form mentions next to the identifier.
         $storedGroup = $GroupIdentifier === null ? false : \eZContentObjectStateGroup::fetchByIdentifier( $GroupIdentifier );
@@ -121,6 +122,19 @@ class GroupEdit extends \Exponential\Runnable\ModuleView
         );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Where Cancel goes: the page the form names in RedirectIfDiscarded, else the page viewed last, else the list
+     * of state groups, where it always went. The rules are those of \eZRedirectManager::returnURI().
+     *
+     * @param \eZModule|null $module
+     * @param array $options see \eZRedirectManager::returnURI()
+     * @return string
+     */
+    public static function cancelURI( $module, $options = array() )
+    {
+        return \eZRedirectManager::returnURI( $module, '/state/groups', \eZRedirectManager::formReturnURIs(), $options );
     }
 }
 

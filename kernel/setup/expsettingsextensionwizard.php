@@ -185,14 +185,19 @@ class expSettingsExtensionWizard extends expExtensionWizard
     protected static function eventDescriptions()
     {
         return array(
+            'collaboration/item/access' => 'Whether the current user may open a collaboration item and act on it (collaboration/item, collaboration/action): whether they take part, with the item and the user. Only true allows; how a supervisor of an approval sees it. Approving still needs the approver role.',
             'content/cache' => 'View caches are being cleared for a list of nodes.',
             'content/cache/all' => 'Every view cache is being cleared.',
             'content/cache/version' => 'One version of one object had its cache cleared.',
             'content/class/cache' => 'A content class changed and its cache is going.',
             'content/download' => 'A file attribute is being served. Where a download count belongs.',
+            'content/download/access' => 'Whether the current user may download a file: the kernel\'s answer (true or false) with the object, the attribute and the version. Only true lets the file out; how an approver who may read only the version gets the file.',
+            'content/edit/access' => 'Whether the current user may edit an object (eZContentObject::editAccess(), asked by every edit check of content/edit, content/history, content/versionview, content/multiedit, the online editor and the REST interface): the kernel\'s answer with the object, the version or null, the user ID and the language. Only true allows; how further editors of a draft get in.',
+            'content/notification/create' => 'A publication is about to become a notification event: true with the object ID and the version. Anything else leaves the event out, so nobody is told.',
             'content/section/cache' => 'A section changed.',
             'content/state/assign' => 'An object state was assigned to an object.',
             'content/translations/cache' => 'The list of languages changed.',
+            'content/view/cachekeys' => 'The keys a view cache file name is made from (userroles, userlimitedlist, viewparameters, ...), with the user, node and view mode. The keys returned are used: add one for a permission the roles do not show, or leave some out for pages that are the same for everyone. Node, view mode, language, offset and layout always stay; values must be strings or numbers.',
             'content/view' => 'A node is about to be viewed; the node id is passed and the one returned is used. How a request for one node is answered with another.',
             'image/alias' => 'An image alias was generated. Where a copy to somewhere else belongs.',
             'image/purgeAliases' => 'Generated image files are being removed for good.',
@@ -1066,6 +1071,22 @@ class expSettingsExtensionWizard extends expExtensionWizard
             $ini .= "Listeners[]=" . $event . "@" . $settings['class'] . "::" . $method . "\n";
         }
 
+        // The settings the examples in the listener class read their rules from
+        $exampleSettings = array();
+        foreach ( $settings['events'] as $event )
+        {
+            $signature = self::eventSignature( $event );
+            if ( $signature )
+                $exampleSettings = array_merge( $exampleSettings, $signature['settings'] );
+        }
+        if ( $exampleSettings )
+        {
+            $ini .= "\n# The rules of the examples in " . $settings['class'] . ". Empty lists change nothing;\n";
+            $ini .= "# take the # off a line and put in your own values once a listener reads them.\n";
+            $ini .= "[" . self::settingsGroup( $settings['class'] ) . "]\n";
+            $ini .= implode( "\n", $exampleSettings ) . "\n";
+        }
+
         $ini .= "\n*/ ?>\n";
 
         return $ini;
@@ -1109,50 +1130,172 @@ class expSettingsExtensionWizard extends expExtensionWizard
 
         $methods = array();
         foreach ( $settings['events'] as $event )
-        {
-            $method = self::methodFor( $event );
-            $filter = $events[$event]['kind'] === 'filter';
-
-            $body  = "    /**\n";
-            $body .= "     * " . $event . "\n";
-            $body .= "     *\n";
-            $body .= "     * " . wordwrap( $events[$event]['what'], 70, "\n     * " ) . "\n";
-            $body .= "     *\n";
-
-            if ( $filter )
-            {
-                $body .= "     * A filter event. Whatever this returns is what the rest of the\n";
-                $body .= "     * system uses, so returning nothing destroys the value. The first\n";
-                $body .= "     * argument is the value; anything after it is context.\n";
-            }
-            else
-            {
-                $body .= "     * A notify event. What this returns is ignored, and nothing waits\n";
-                $body .= "     * for it either - anything slow here is felt by whoever caused it.\n";
-            }
-
-            $body .= "     */\n";
-            $body .= "    public static function " . $method . "( \$value = null )\n    {\n";
-
-            if ( $filter )
-            {
-                $body .= "        // Not written yet. Handing the value back unchanged leaves the\n";
-                $body .= "        // system working exactly as it did before this listener existed.\n";
-                $body .= "        return \$value;\n";
-            }
-            else
-            {
-                $body .= "        // Not written yet. Doing nothing leaves the system working\n";
-                $body .= "        // exactly as it did before this listener existed.\n";
-            }
-
-            $body .= "    }";
-            $methods[] = $body;
-        }
+            $methods[] = self::listenerMethod( $class, $event, $events[$event]['kind'], $events[$event]['what'] );
 
         $php .= implode( "\n\n", $methods ) . "\n}\n";
 
         return $php;
+    }
+
+    /**
+     * One method of the listener class: its comment, the arguments the event hands over and a body that leaves the
+     * system as it was. For an event of eventSignatures() the arguments are named and the body carries a commented
+     * example that reads its rule from the extension's settings (settingsGroup()).
+     *
+     * @param string $class The listener class
+     * @param string $event
+     * @param string $kind filter or notify
+     * @param string $what What the event is for
+     * @return string
+     */
+    public static function listenerMethod( $class, $event, $kind, $what )
+    {
+        $method    = self::methodFor( $event );
+        $filter    = $kind === 'filter';
+        $signature = self::eventSignature( $event );
+
+        $body  = "    /**\n";
+        $body .= "     * " . $event . "\n";
+        $body .= "     *\n";
+        $body .= "     * " . wordwrap( $what, 70, "\n     * " ) . "\n";
+        $body .= "     *\n";
+
+        if ( $filter )
+        {
+            $body .= "     * A filter event. Whatever this returns is what the rest of the\n";
+            $body .= "     * system uses, so returning nothing destroys the value. The first\n";
+            $body .= "     * argument is the value; anything after it is context.\n";
+            if ( $signature && $signature['only_true'] )
+            {
+                $body .= "     * Only true allows: false, null, 1 or 'yes' all refuse, and a\n";
+                $body .= "     * listener after this one sees what this one returned.\n";
+            }
+        }
+        else
+        {
+            $body .= "     * A notify event. What this returns is ignored, and nothing waits\n";
+            $body .= "     * for it either - anything slow here is felt by whoever caused it.\n";
+        }
+
+        $body .= "     */\n";
+        $body .= "    public static function " . $method . "( " . ( $signature ? $signature['params'] : "\$value = null" ) . " )\n    {\n";
+
+        if ( $signature )
+        {
+            $group = self::settingsGroup( $class );
+            foreach ( $signature['example'] as $line )
+                $body .= rtrim( "        // " . str_replace( '{group}', $group, $line ) ) . "\n";
+            $body .= "\n";
+        }
+
+        if ( $filter )
+        {
+            $body .= "        // Not written yet. Handing the value back unchanged leaves the\n";
+            $body .= "        // system working exactly as it did before this listener existed.\n";
+            $body .= "        return " . ( $signature ? $signature['returns'] : "\$value" ) . ";\n";
+        }
+        else
+        {
+            $body .= "        // Not written yet. Doing nothing leaves the system working\n";
+            $body .= "        // exactly as it did before this listener existed.\n";
+        }
+
+        $body .= "    }";
+
+        return $body;
+    }
+
+    /**
+     * The site.ini group the examples of a listener class read their rules from: the class name.
+     *
+     * @param string $class
+     * @return string
+     */
+    public static function settingsGroup( $class )
+    {
+        return preg_replace( '/[^A-Za-z0-9_]/', '', (string) $class );
+    }
+
+    /**
+     * What the access and view cache filters hand a listener, and an example of each that reads its rule from the
+     * settings of the extension (site.ini [<listener class>], see eventIni()). Null for any other event, whose
+     * listener gets $value.
+     *
+     * @param string $event
+     * @return array|null params, returns, only_true, example (lines, {group} is the settings group), settings (the
+     *                    commented settings eventIni() writes for it)
+     */
+    public static function eventSignature( $event )
+    {
+        $signatures = array(
+            'content/edit/access' => array(
+                'params'    => "\$allowed, \$object = null, \$version = null, \$userID = 0, \$language = false",
+                'returns'   => "\$allowed",
+                'only_true' => true,
+                'example'   => array(
+                    "Example: the members of the user groups in site.ini [{group}] CoEditorGroupIDs[]",
+                    "edit drafts the kernel refuses them (further editors of a draft).",
+                    "if ( !\$allowed && \$version instanceof eZContentObjectVersion )",
+                    "{",
+                    "    \$groups = eZINI::instance()->hasVariable( '{group}', 'CoEditorGroupIDs' )",
+                    "        ? eZINI::instance()->variable( '{group}', 'CoEditorGroupIDs' ) : array();",
+                    "    \$user = eZUser::fetch( \$userID );",
+                    "    if ( \$user instanceof eZUser && array_intersect( \$groups, \$user->groups() ) )",
+                    "        return true;",
+                    "}" ),
+                'settings'  => array( "CoEditorGroupIDs[]", "#CoEditorGroupIDs[]=12" ) ),
+            'content/download/access' => array(
+                'params'    => "\$allowed, \$object = null, \$attribute = null, \$version = 0",
+                'returns'   => "\$allowed",
+                'only_true' => true,
+                'example'   => array(
+                    "Example: nobody downloads the files of the classes in",
+                    "site.ini [{group}] NoDownloadClasses[], whatever the kernel says.",
+                    "if ( \$allowed && \$object instanceof eZContentObject && eZINI::instance()->hasVariable( '{group}', 'NoDownloadClasses' ) &&",
+                    "     in_array( \$object->attribute( 'class_identifier' ), eZINI::instance()->variable( '{group}', 'NoDownloadClasses' ) ) )",
+                    "    return false;" ),
+                'settings'  => array( "NoDownloadClasses[]", "#NoDownloadClasses[]=internal_file" ) ),
+            'collaboration/item/access' => array(
+                'params'    => "\$allowed, \$item = null, \$user = null",
+                'returns'   => "\$allowed",
+                'only_true' => true,
+                'example'   => array(
+                    "Example: the users in site.ini [{group}] SupervisorUserIDs[] open every",
+                    "collaboration item (approving still needs the approver role).",
+                    "if ( !\$allowed && \$user instanceof eZUser && eZINI::instance()->hasVariable( '{group}', 'SupervisorUserIDs' ) &&",
+                    "     in_array( (string) \$user->attribute( 'contentobject_id' ), eZINI::instance()->variable( '{group}', 'SupervisorUserIDs' ), true ) )",
+                    "    return true;" ),
+                'settings'  => array( "SupervisorUserIDs[]", "#SupervisorUserIDs[]=14" ) ),
+            'content/notification/create' => array(
+                'params'    => "\$create, \$objectID = 0, \$version = 0",
+                'returns'   => "\$create",
+                'only_true' => true,
+                'example'   => array(
+                    "Example: only publications of the classes in site.ini [{group}] NotifyClasses[]",
+                    "become notifications, when that list is not empty.",
+                    "\$classes = eZINI::instance()->hasVariable( '{group}', 'NotifyClasses' ) ? eZINI::instance()->variable( '{group}', 'NotifyClasses' ) : array();",
+                    "if ( \$create && \$classes )",
+                    "{",
+                    "    \$object = eZContentObject::fetch( \$objectID );",
+                    "    return \$object instanceof eZContentObject && in_array( \$object->attribute( 'class_identifier' ), \$classes );",
+                    "}" ),
+                'settings'  => array( "NotifyClasses[]", "#NotifyClasses[]=article" ) ),
+            'content/view/cachekeys' => array(
+                'params'    => "\$keys, \$context = array()",
+                'returns'   => "\$keys",
+                'only_true' => false,
+                'example'   => array(
+                    "Example: the pages of the classes in site.ini [{group}] SameForEveryoneClasses[] are",
+                    "the same for every user, so the user keys are left out (one cache file for all).",
+                    "Node, view mode, language, offset and layout always stay; values must be strings or numbers.",
+                    "\$node = isset( \$context['node_id'] ) ? eZContentObjectTreeNode::fetch( \$context['node_id'] ) : null;",
+                    "if ( \$node instanceof eZContentObjectTreeNode && eZINI::instance()->hasVariable( '{group}', 'SameForEveryoneClasses' ) &&",
+                    "     in_array( \$node->attribute( 'class_identifier' ), eZINI::instance()->variable( '{group}', 'SameForEveryoneClasses' ) ) )",
+                    "    unset( \$keys['userroles'], \$keys['userlimitedlist'], \$keys['discountlist'] );" ),
+                'settings'  => array( "SameForEveryoneClasses[]", "#SameForEveryoneClasses[]=frontpage" ) ),
+        );
+
+        return isset( $signatures[$event] ) ? $signatures[$event] : null;
     }
 
     /**

@@ -999,24 +999,29 @@ class eZModule
              strlen( $uri ) == 0 )
             $uri = '/';
 
-        $urlComponents = parse_url( $uri );
-        // eZSys::hostname() can contain port if present.
-        // So parsing it with parse_url() as well to only get host.
-        $currentHostname = eZSys::hostname();
-        $currentHostnameParsed = parse_url( $currentHostname, PHP_URL_HOST );
-        $currentHostname = $currentHostnameParsed ? $currentHostnameParsed : $currentHostname;
-        if ( isset( $urlComponents['host'] ) && $urlComponents['host'] !== $currentHostname )
+        // The rules of eZRedirectManager::unsafeReason(), the same for every redirect: a host that is neither the
+        // current one nor allowed, a scheme other than http(s) (javascript:, data:), a backslash or a control
+        // character (CR/LF) and their percent-encoded forms are refused with 403.
+        $reason = class_exists( 'eZRedirectManager' ) ? eZRedirectManager::unsafeReason( $uri ) : false;
+        if ( $reason === 'empty' )
+            $reason = false;
+        if ( $reason !== false )
         {
-            $allowedHosts = $this->getAllowedRedirectHosts();
-            if ( !isset( $allowedHosts[$urlComponents['host']] ) )
+            if ( $reason === 'host' || $reason === 'userinfo' )
             {
-                // Non-authorized host, return only the URI (without host) + query string and fragment if present.
-                eZDebug::writeError( "Redirection requested on non-authorized host '{$urlComponents['host']}'" );
-                header( $_SERVER['SERVER_PROTOCOL'] . ' 403 Forbidden' );
-                echo "Redirection requested on non-authorized host";
-                eZDB::checkTransactionCounter();
-                eZExecution::cleanExit();
+                $host = (string)parse_url( strncmp( $uri, '//', 2 ) === 0 ? 'http:' . $uri : $uri, PHP_URL_HOST );
+                eZDebug::writeError( "Redirection requested on non-authorized host '" . addcslashes( $host, "\0..\37" ) . "'" );
+                $message = "Redirection requested on non-authorized host";
             }
+            else
+            {
+                eZDebug::writeError( "Redirection requested to an unsafe address ($reason)" );
+                $message = "Redirection requested to an unsafe address";
+            }
+            header( $_SERVER['SERVER_PROTOCOL'] . ' 403 Forbidden' );
+            echo $message;
+            eZDB::checkTransactionCounter();
+            eZExecution::cleanExit();
         }
 
         $this->RedirectURI = $uri;
@@ -1024,11 +1029,13 @@ class eZModule
     }
 
     /**
-     * Returns the set of hosts that are allowed for absolute redirection
+     * Returns the set of hosts that are allowed for absolute redirection, as keys: site.ini [SiteSettings]
+     * AllowedRedirectHosts and the hosts of [SiteAccessSettings] HostMatchMapItems and HostUriMatchMapItems.
+     * The current host is always allowed and not part of it.
      *
      * @return array
      */
-    private function getAllowedRedirectHosts()
+    public static function allowedRedirectHosts()
     {
         $ini = eZINI::instance();
         $allowedHosts = array_fill_keys( $ini->variable( 'SiteSettings', 'AllowedRedirectHosts' ), true );
