@@ -2686,6 +2686,7 @@ abdb0ba00df44fe6e3ebdcd853a03ae9  doc/bc/6.0/cli_cronjob_view_abstractions.md
 a97f241d85290c2fbece2d8f20d6c401  doc/bc/6.0/console-exp-ini.md
 4fa2c2acfebf49a6d0606b3cfdadd05c  doc/bc/6.0/console.md
 99d9b2a97dcde56f99c1d40242b5be6c  doc/bc/6.0/content-jobs.md
+ec94f35b9c29418f1c35fe46d54a157f  doc/bc/6.0/content-object-fallback-locale.md
 09d05cd812d3ccabd32043b79e5023c5  doc/bc/6.0/debug-bar.md
 b9fd083f7d3fb436923279b948fbc842  doc/bc/6.0/draft-edit-access.md
 3363c1727dc13ba26af5e714957046fa  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
@@ -2884,7 +2885,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e0c108543673bfc87efb2a404d87ac32  doc/changelogs/6.0/6.0.15.md
+5f99d44db9d3f4af8d848d4a9f88f9dd  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4728,7 +4729,7 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 0dc063d43d781562aceed1ea6df05f57  kernel/classes/expbenchmark.php
 0f21cab2bd8703ec564d77e3042723f2  kernel/classes/expbenchmarkhttp.php
 a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
-136872e5fdb06bfcdc22b0cee87b6c98  kernel/classes/expbenchmarkmicro.php
+0c75a7bca2a0dce8da13908f7a1ee322  kernel/classes/expbenchmarkmicro.php
 56280e5f41b96dd6e2ab62d5b67e6a47  kernel/classes/expcachemanager.php
 84a3447a01864a5da11162284520abca  kernel/classes/expcachewarm.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
@@ -4855,7 +4856,7 @@ a1fdd12cc8b007017c4bf7964e3ff6d0  kernel/classes/ezrssimport.php
 101e697256e937ea550fc850939ad824  kernel/classes/ezsearch.php
 59fe9c1b44af855290c3a2c585bd2693  kernel/classes/ezsearchlog.php
 682005f4cfaf0a50298e89643d6ab439  kernel/classes/ezsection.php
-85e78d0c3f542010aa2a13bf60ed8cb4  kernel/classes/ezserializedobjectnamelist.php
+fdfd9b8f7952710061316b8c7d7c4d4c  kernel/classes/ezserializedobjectnamelist.php
 c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
 2a8503063922059159678381b310b635  kernel/classes/ezsiteaccess.php
@@ -5864,7 +5865,7 @@ a5a61099e4c1ed8b3d4cc85ffb11a5eb  kernel/shop/updatebasket.php
 11c090806e9636c16955a873ba5ae028  kernel/shop/vatrules.php
 a04dffad4e657eed3e6e013d3f0c0374  kernel/shop/vattype.php
 ef06c1c17f9c7019e9f5ce249bc232ee  kernel/shop/wishlist.php
-d7f2259db0e6ac97f366997c409cad04  kernel/sql/common/cleandata.sql
+898998ad7618a5d93b62f213f6fc8f0b  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
@@ -5872,7 +5873,7 @@ fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
 1b18f0a6d708b8681d45928e50943a7f  kernel/sql/postgresql/kernel_schema.sql
 7d4dae987cbf10dc03d6da8db601cea0  kernel/sql/postgresql/sequence.sql.template
 ff6a98a38fa01f4032dfbbf6718df67f  kernel/sql/postgresql/setval.sql
-ed661b7dd657484a3763e6fd5438e802  kernel/sql/sqlite/cleandata.sql
+ba5ab5cb4e39ef53a5cfac98ecb827b3  kernel/sql/sqlite/cleandata.sql
 10d2dbfc8374349e1a6509d90082c757  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
@@ -5926,8 +5927,8 @@ bd88c41cc62b684db05cbded834a97c2  kernel/workflow/module.php
 7d2f6cbe3cbe6524f7ec5ba656203387  kernel/workflow/run.php
 38583366a75c62b6281d046f435e2081  kernel/workflow/view.php
 c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
-9d7f22e7b97306e73e3db65cf6cd16a5  kickstart.ini--example
-d3d43edce8e635d31d4f02bc355a77b0  kickstart.ini-dist
+50aecf6197a8dda65b5dcdd94d3aeff0  kickstart.ini--example
+29a9398e1ffaf0295240ff21451d1f16  kickstart.ini-dist
 18078a27f7b2a800cf53ea20eae5c6ed  lib/ezdb/classes/expmongodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
 c61a113be00bbbbf68d3590c6e4a77f4  lib/ezdb/classes/ezdbinterface.php
@@ -6203,7 +6204,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-370308d5eb31db8bcda2f95b17a468b6  settings/site.ini
+4b96cc521316c9d9bcda80136d20dbd6  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -6212,7 +6213,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 6f619e35e9ab075d6bfac58736897d8a  settings/solr.ini
 c52742c7a3482a0baea30efdccf421a4  settings/staticcache.ini
 b99f0b1427d4ca29ec1ca9ccfedae3db  settings/subitems.ini
-4c8bae34e7414e3126472d94772282b6  settings/subitemscolumns.ini
+ac1d80723b983d4ec14853e543690ce8  settings/subitemscolumns.ini
 acd946aa00b0dd028f294e05e5a78206  settings/template.ini
 aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 07043a08c7729eca52c81e7bca768cff  settings/texttoimage.ini
@@ -6891,6 +6892,7 @@ b18640f932a77141d5c78065ca8348cb  tests/tests/kernel/classes/contentmodel/eZInfo
 8220cab2d24543bbb5767fd8adc9a80a  tests/tests/kernel/classes/contentmodel/eZRSSExportHeadsTest.php
 881a8fd9e937a29269d6b180a0800e58  tests/tests/kernel/classes/contentmodel/eZRSSExportLiveTest.php
 ced37a9f81d9eaba260d259e70b1fb25  tests/tests/kernel/classes/contentmodel/eZSearchEngineLiveTest.php
+c73fd8d4f3d55afe486254a66926a61b  tests/tests/kernel/classes/contentmodel/eZSerializedObjectNameListFallbackLocaleTest.php
 5c9b7947f2722161129dbe4bea8d2baa  tests/tests/kernel/classes/contentmodel/eZSerializedObjectNameListTest.php
 98c7fb9b0847a4b55acfdc559a733d02  tests/tests/kernel/classes/contentmodel/eZUserAndRoleLiveTest.php
 b0f5e308de066b9c9634ee29f470b137  tests/tests/kernel/classes/contentmodel/expContentModelLiveTestCase.php
