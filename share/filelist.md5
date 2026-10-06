@@ -4878,7 +4878,7 @@ b607c67490219f43e8a2cf31d600700e  kernel/classes/exppreloadaddress.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
 427cb5d98e573bda7873f53ef6c56bb1  kernel/classes/expsystemreport.php
 28af669e43f170c97eb589d4f920a469  kernel/classes/expsystemreportmask.php
-3c745426744516a730b1a2ed2e2da9e3  kernel/classes/expvelocity.php
+fff27c01f43c56a0eaa7ce984ac1e6a8  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 2e236435a4896494e12512315a748708  kernel/classes/expvelocityconfiglayout.php
 aca7d6f8ecb35eb8b3cf47240618e3e2  kernel/classes/expvelocitydeploy.php
@@ -7141,7 +7141,7 @@ cf5d5388e5242328fbc1f6c199a8afd8  tests/tests/kernel/classes/expSectionOverviewT
 c513b931571a3dd56abff2cfcdd557c6  tests/tests/kernel/classes/expSystemReportMaskTest.php
 1e66f7ac332da1d3639695e403a9dc2f  tests/tests/kernel/classes/expSystemReportTest.php
 f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTest.php
-5571584f622d8c32b884f5d306511331  tests/tests/kernel/classes/expVelocityEnginesTest.php
+8959c513772117fc7c49c895cf8e03a0  tests/tests/kernel/classes/expVelocityEnginesTest.php
 c8c704867551b709eb99c383b3f91b59  tests/tests/kernel/classes/expViewAccessTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
