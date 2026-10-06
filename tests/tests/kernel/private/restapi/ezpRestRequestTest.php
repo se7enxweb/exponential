@@ -116,6 +116,11 @@ class ezpRestRequestTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'f' => 'v' ), self::bodyRequest( 'http-post', 'application/x-www-form-urlencoded', 'f=other', array( 'f' => 'v' ) )->getParsedBody() );
     }
 
+    public function testPostWithoutContentTypeGivesThePostedFields()
+    {
+        $this->assertSame( array( 'f' => 'v' ), self::bodyRequest( 'http-post', null, '', array( 'f' => 'v' ) )->getParsedBody() );
+    }
+
     public function testOtherMethodsParseTheBody()
     {
         $this->assertNull( self::bodyRequest( 'http-put', null, 'x=1' )->getParsedBody() );
