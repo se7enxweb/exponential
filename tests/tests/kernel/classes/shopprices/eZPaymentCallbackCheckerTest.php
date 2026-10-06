@@ -110,6 +110,14 @@ class eZPaymentCallbackCheckerTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $checker->createDataFromGET() );
     }
 
+    public function testQueryStringFieldWithoutValue()
+    {
+        $_SERVER['QUERY_STRING'] = 'order=12&test&a=b=c';
+        $checker = self::checker();
+        $this->assertTrue( $checker->createDataFromGET() );
+        $this->assertSame( array( 'order' => '12', 'test' => '', 'a' => 'b' ), $checker->callbackData );
+    }
+
     public function testCheckDataField()
     {
         $checker = self::checker();

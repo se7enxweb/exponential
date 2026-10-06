@@ -61,7 +61,8 @@ class eZPaymentCallbackChecker
 
             foreach( $key_value_pairs as $key_value )
             {
-                $data = explode( '=', $key_value );
+                // A field without "=" has an empty value
+                $data = explode( '=', $key_value ) + array( 1 => '' );
                 $this->callbackData[$data[0]] = $data[1];
                 $this->logger->writeTimedString( "$data[0] = $data[1]" );
             }
