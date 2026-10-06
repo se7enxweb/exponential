@@ -300,13 +300,13 @@ A thing a role can be granted, and what it can be narrowed by.
 | Kernel | `kernel/classes/ezrole.php` |
 
 ### Content policy limitation  
-*Tool:* none
+*Tool:* `/setup/settingsextension` (choose the event module/functionlist: it writes the listener and a working handler)
 
 A limitation of your own for a content function such as content/read, next to Class, Section and Subtree: an extension adds it to the function, and its handler decides for objects, nodes and versions and gives the SQL condition of list and tree fetches. Without a handler the limitation denies everywhere. See [Content policy limitations of extensions](../../features/6.0/content-limitation-handlers.md).
 
 | | |
 |---|---|
-| Code | `extension/<name>/classes/<class>.php, e.g. class myExtLimitationHandler implements ezpContentLimitationHandler` |
+| Code | `extension/<name>/classes/<class>.php, e.g. class myExtLimitationHandler implements ezpContentLimitationHandler; the settings extension wizard writes a working one (MaxDepth) with a listener of module/functionlist` |
 | Registered by | site.ini [RoleSettings] LimitationHandlers[<limitation>]=<class>; the limitation added to a function through the filter module/functionlist ([Event] Listeners[]) |
 | Contract | `implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)` |
 | Mechanism | handler |

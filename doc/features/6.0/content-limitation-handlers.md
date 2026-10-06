@@ -12,8 +12,9 @@ lists sent by mail). Administrators who keep roles find what changes for them un
 | What is new | An extension can add its own limitation to a content function (`content/read`, `content/edit`, ...), next to Class, Section and Subtree. A handler class decides for objects, nodes and versions and gives the SQL condition of list and tree fetches. |
 | Registered by | The filter `module/functionlist` (`site.ini [Event] Listeners[]`) adds the limitation to the function; `site.ini [RoleSettings] LimitationHandlers[<limitation>]=<class>` names its handler. |
 | Contract | `ezpContentLimitationHandler`: `checkAccess( $limitation, $values, $functionName, $subject, $userID )` and `permissionSQL( $limitation, $values, $tableAliasName, $userID )`. |
-| Also new | `checkAccess()` of `eZContentObject`, `eZContentObjectTreeNode` and `eZContentObjectVersion` takes the user to check for as a sixth argument. |
-| Safety rule | A limitation that no handler evaluates denies, everywhere. Fetches ignored it before and listed objects that `checkAccess()` refused. |
+| Also new | `checkAccess()` of `eZContentObject`, `eZContentObjectTreeNode` and `eZContentObjectVersion` takes the user to check for as a sixth argument, `editAccess()` a third; `./console exp:access:check` asks them from the command line. |
+| Safety rule | A limitation that no handler evaluates denies, everywhere. So does a handler that is missing, cannot be made, throws, or answers with SQL that is not a self-contained condition; each is logged once per request. |
+| Start from | **Setup > RAD > Settings extension** with the event `module/functionlist`: it writes the listener and a working handler (`<class>MaxDepth`). |
 
 ## What you can do
 
@@ -49,15 +50,20 @@ The example limits reading by region. The extension `myext` keeps the region of 
            {
                $functionList['read']['Region'] = array(
                    'name' => 'Region',
-                   'values' => array( array( 'Name' => 'North', 'value' => '1' ),
-                                      array( 'Name' => 'South', 'value' => '2' ) ) );
+                   'label' => ezpI18n::tr( 'extension/myext', 'Sales region' ),
+                   'values' => array( array( 'Name' => ezpI18n::tr( 'extension/myext', 'North' ), 'value' => '1' ),
+                                      array( 'Name' => ezpI18n::tr( 'extension/myext', 'South' ), 'value' => '2' ) ) );
            }
            return $functionList;
        }
    ```
 
-   The entry has the form of the limitations in `kernel/content/module.php`: fixed `values`, or `class`, `function`
-   and `parameter` of a method that lists them.
+   The entry has the form of the limitations in `kernel/content/module.php`: a `name` of letters, digits and `_`,
+   fixed `values`, or `class`, `function` and `parameter` of a method that lists them. `label` (optional, new) is
+   what the role screens show instead of the name; translate it, and the value names, in the listener, which runs
+   in the language of the request. An entry of another form is logged and left out; a listener that throws or
+   returns no array is logged and the module keeps its own list. The listeners run once per module and request,
+   however often the module is looked up.
 
 2. Decide in PHP. `$subject` is an `eZContentObject`, an `eZContentObjectTreeNode` or an `eZContentObjectVersion`;
    `$userID` is the user the check is for, which is not always the current user. Only `true` allows:
@@ -87,6 +93,14 @@ The example limits reading by region. The extension `myext` keeps the region of 
    }
    ```
 
+   Where the rule is "this column has one of these values", return the column and the values instead, and the
+   kernel writes the `IN` statement with each value cast to an integer or escaped:
+
+   ```php
+   return array( 'column' => 'ezcontentobject.section_id', 'values' => $values, 'type' => 'int' );
+   // 'type' => 'string' escapes instead; 'not' => true writes NOT IN; a list of such arrays is joined by AND
+   ```
+
 4. Register both in `extension/myext/settings/site.ini.append.php`:
 
    ```ini
@@ -110,6 +124,32 @@ The example limits reading by region. The extension `myext` keeps the region of 
 The handler must give the same answer in `checkAccess()` and in `permissionSQL()`. Otherwise a list shows an object
 whose page is then refused, or hides one the user may open.
 
+### The contract of a handler
+
+| Rule | Why |
+|---|---|
+| `$values` is a list of strings, as the policy stores them. | The role cache and the database hand them over as strings. |
+| Only `true` from `checkAccess()` allows; `1`, `'yes'` and `null` refuse. | One reading of the answer in every check. |
+| A string from `permissionSQL()` is self-contained: quotes and parentheses balanced, and outside quoted strings no `;` and no comment (`--`, `#`, `/*`). Anything else gives the policy no access in fetches and is logged. | It is put in parentheses and joined by AND; a condition that closed them (`1 = 1 ) OR ( 1 = 1`) would open a policy of its own for everybody. The kernel cannot check that values were escaped: cast them, escape them, or use the column form. |
+| An exception denies and is logged once per request; it does not end the request. | A handler that fails must never allow, nor take a list page down. |
+| One instance per request, kept for the rest of it. Keep what you looked up in properties of the instance if you like; never in static properties. | Velocity runs the next request in the same process; the kernel makes the handler again for it. |
+| Take the user from `$userID`, never from the session or `eZUser::currentUser()`. | Checks are made for other users (subtree notifications, `exp:access:check`). |
+
+The settings extension wizard in **Setup > RAD** writes a handler that keeps all of these, as a sample: choose the
+event `module/functionlist`. It adds `<class>MaxDepth` (read only down to a depth of the tree) with the depths of
+`site.ini [<class>] MaxDepths[]`, and the commented `[RoleSettings] LimitationHandlers[]` line that switches it on.
+
+## In the role screens
+
+- The role view, the role editor, the policy lists of the node and user views and the policy forms show the
+  `label` of a limitation where it has one, and the note **(no handler, denies)** next to a content limitation that
+  no handler evaluates, with a tooltip saying that its policy gives no access.
+- A limitation whose extension is no longer active is shown with its stored values; before, it was shown empty.
+- The editors store only values the form offered for a limitation (its `values`, or what its `class` and `function`
+  list). A value made up in the request is left out and logged; a single value posted instead of a list no longer
+  ends the request. When nothing that was offered is left, no limitation is stored, as with **Any**: whoever edits
+  roles can choose Any anyway.
+
 ## Checking access for another user
 
 The three `checkAccess()` methods take the user as a sixth argument, after the language:
@@ -123,18 +163,58 @@ $version->checkAccess( 'versionread', false, false, false, false, $userID );
 `false` (the default) checks for the current user, as before. The check reads the roles of that user and passes the
 user to the handlers. An ID that is no user gets no access. The rule "anonymous users may edit what they created in
 this session" (`Owner` limitation value 2) holds only for the current user, since only the current user has a session
-to look at. `eZUser::accessUser( $userID )` returns the user a check is made for.
+to look at. `eZUser::accessUser( $userID )` returns the user a check is made for:
+
+| `$userID` | User |
+|---|---|
+| `false`, `0`, `null`, `''` | the current user |
+| the current user's ID | the current user's own object |
+| another user's ID | that user, fetched once per request and kept for the rest of it; forgotten for the next request (Velocity), by `eZUser::cleanupCache()` and when that user's cache is purged |
+| a disabled account, an ID that is no user, anything but a positive whole number (`'1 OR 1'`, `true`, an array) | none: no access |
+
+It is a PHP interface only; nothing a visitor sends reaches it. The other user is a separate `eZUser` with roles of
+its own: the current user's roles, session and the answers cached on objects (`can_read`, `can_edit`) take no part,
+and the check keeps nothing on the object.
+
+Edit access goes through the filter `content/edit/access` as well, so it has its own method:
+
+```php
+$object->editAccess( $version, $language, $userID );   // the filter gets $userID
+```
+
+For another user it uses that user's `content/edit` policies and its `user/selfedit` for its own user object.
+
+From the command line, `exp:access:check` answers for a user and names what refused:
+
+```bash
+./console exp:access:check --user=editor --node=2
+./console exp:access:check --user=14 --object=57 --function=edit --language=eng-GB
+./console exp:access:check --user=anonymous --node=2 --json
+```
+
+```
+User      14 (editor)
+Subject   node 2, object 1 "Home"
+Function  content/read
+  refused: policy 342, Class( 2 )
+  refused: policy 343, Region( 4 ), no handler evaluates it
+DENIED
+```
+
+It prints `ALLOWED` (exit 0) or `DENIED` (exit 1), exit 2 when the user, node or object is not found. It is a
+command rather than a "view as this user" page in the admin: whoever can run it can read the database anyway, and no
+session of the other user is made. `expContentAccessReport::check()` gives the same answer to PHP code.
 
 ## What the kernel does without a handler
 
 | Situation | Result |
 |---|---|
 | A limitation the kernel does not know, without `LimitationHandlers[]` entry | The policy gives no access: `checkAccess()` refuses, the fetch condition is `1 = 0`, the subtree notification is not sent through it. |
-| The class does not exist | As without a handler; an error in the debug output names the class. |
-| The class does not implement `ezpContentLimitationHandler` | As without a handler; an error in the debug output says so. |
+| The class does not exist, does not implement `ezpContentLimitationHandler`, or its constructor throws | As without a handler; an error in the debug output names the class and the reason, once per request. |
 | A handler registered for a kernel limitation (`Section`, `Subtree`, `StateGroup_<identifier>`, ...) | Ignored: the kernel evaluates its own limitations. |
 | A kernel limitation of another function in a fetch (`Language`, `ParentClass`) | Left out of the SQL, as before. |
-| An exception thrown by a handler | It is not caught: the request ends with the error rather than allowing access. |
+| An exception thrown by `checkAccess()` or `permissionSQL()` | Denies (`false`, `1 = 0`) and is logged once per request; the request goes on. |
+| `permissionSQL()` answers with something other than `false`, a self-contained string or a column condition | The policy gives no access in fetches; logged once per request with the start of the answer. |
 
 ## What changes for existing installations
 
@@ -172,15 +252,25 @@ to look at. `eZUser::accessUser( $userID )` returns the user a check is made for
 
 ## How it works
 
-- `ezpContentLimitation` (`kernel/private/classes/ezpcontentlimitation.php`) resolves the handler through
-  `eZExtension::getHandlerClass()` and returns `false` or `1 = 0` without one. `ezpContentLimitation::isKernelLimitation()`
-  names the limitations the kernel keeps for itself.
+- `ezpContentLimitation` (`kernel/private/classes/ezpcontentlimitation.php`) makes the handler once per request
+  (the request is told by `REQUEST_TIME_FLOAT`, the setting by a hash of `LimitationHandlers[]`; `resetCache()`
+  forgets both) and returns `false` or `1 = 0` without one. `sqlCondition()` checks or writes the condition of a
+  handler; `isKernelLimitation()` names the limitations the kernel keeps for itself. The exit signal of Velocity
+  passes through its `catch`.
 - The interface is `ezpContentLimitationHandler` (`kernel/private/interfaces/ezpcontentlimitationhandler.php`).
 - `eZModule::initialize()` (`lib/ezutils/classes/ezmodule.php`) passes the `$FunctionList` of every module through the
-  filter `module/functionlist`.
+  filter `module/functionlist` (`eZModule::filterFunctionList()`): only when a listener is attached, once per module
+  file, request and set of listeners (`ezpEvent::listenerIds()`), keeping what has the form of `module.php`.
+- `eZPolicyLimitation` gives the role screens `label`, `denies_without_handler` and `validValues()`.
+- `eZUser::accessUser()` and `expContentAccessReport` (`kernel/private/classes/expcontentaccessreport.php`) make the
+  checks for another user; `exp:access:check` is `kernel/private/classes/commands/accesscheck.php`.
+- The kernel's own Class, Section, Node and object state values are cast to integers in the fetch SQL.
+- The REST interface (`expRestContentPermission`) and the remote services (`expservices`) decide with the same
+  `checkAccess()`, `canRead()` and `editAccess()`, so extension limitations hold there too.
 - The extension point is listed in **Setup > RAD** and in [Extension points](../../bc/6.0/rad-extension-points.md).
 
-Tests: `ezpContentLimitationTest` and `eZContentPermissionSQLTest` (no database), `eZContentAccessForUserLiveTest`
+Tests: `ezpContentLimitationTest`, `eZContentPermissionSQLTest`, `eZContentAccessForAnotherUserTest`,
+`eZPolicyLimitationLabelsAndValuesTest` and `expRadWizardListsTest` (no database), `eZContentAccessForUserLiveTest`
 (on an installation; skipped without one).
 
 ## Related pages
