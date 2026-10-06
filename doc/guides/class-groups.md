@@ -66,7 +66,8 @@ Open a group (its name or **Open**) for `/class/classlist/<group id>`:
 - one row per class: name and icon, identifier, ID, container, published objects, the other groups it is in
   ("only here" when none), the last change, and **View**, **Edit** and **Copy**. Copy makes a copy in the same groups
   (`content.ini [CopySettings] ClassRedirect` says where you land: the copy's edit form, the list, its page or the
-  group list); it is a form button, so a copy is never made by following a link;
+  group list). Only a form makes a copy: an old link or bookmark to `/class/copy/<id>` shows what the copy will be,
+  with a **Copy** button, and copies nothing until it is pressed;
 - **Remove selected** opens the confirmation: per class how many objects go with it and their sub items, or why it
   cannot be removed. A class that is also in another group only leaves this one.
 
