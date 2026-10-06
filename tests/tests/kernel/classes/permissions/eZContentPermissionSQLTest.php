@@ -3,7 +3,8 @@
  * Tests of the SQL the tree node fetches add for the content/read limitations of a user, without the database:
  * eZContentObjectTreeNode::createPermissionCheckingSQL() (one OR group per policy, the limitations of a policy
  * joined by AND, Node and Subtree as alternatives of each other, User_Subtree and User_Section from limited role
- * assignments, object state groups joined once per group) and createShowInvisibleSQLString().
+ * assignments, object state groups joined once per group, the condition of the handler of an extension limitation
+ * and no access for one without handler) and createShowInvisibleSQLString().
  *
  * A database handler that only escapes stands in for the real one while a test runs.
  *
@@ -14,6 +15,20 @@
  */
 
 require_once __DIR__ . '/fixtures/ezcontentpermissionsqltestdb.php';
+
+/** Limits a fetch to nodes up to the depth given as the limitation value */
+class X1PermissionSQLLimitationHandler implements ezpContentLimitationHandler
+{
+    public function checkAccess( $limitation, array $values, $functionName, $subject, $userID )
+    {
+        return false;
+    }
+
+    public function permissionSQL( $limitation, array $values, $tableAliasName, $userID )
+    {
+        return "$tableAliasName.depth <= " . (int)$values[0];
+    }
+}
 
 class eZContentPermissionSQLTest extends PHPUnit\Framework\TestCase
 {
@@ -114,9 +129,44 @@ class eZContentPermissionSQLTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "identifier = 'a\\'b'", $sql['from'] );
     }
 
-    public function testUnknownLimitationsAreIgnored()
+    public function testKernelLimitationsOfOtherFunctionsAreIgnored()
     {
         $this->assertSame( '', $this->where( array( 'p_1' => array( 'ParentClass' => array( 1 ), 'Language' => array( 'eng-GB' ) ) ) ) );
+    }
+
+    /**
+     * A limitation of an extension without a handler (site.ini [RoleSettings] LimitationHandlers[]) gives its policy
+     * no access; it was ignored, and the fetch listed every object the rest of the policy allowed
+     */
+    public function testExtensionLimitationWithoutAHandlerClosesItsPolicy()
+    {
+        ezpINIHelper::setINISetting( 'site.ini', 'RoleSettings', 'LimitationHandlers', array() );
+        $this->assertSame( ' AND ((ezcontentobject.contentclass_id in (2) AND 1 = 0) OR (ezcontentobject.section_id in (3))) ',
+                           $this->where( array( 'p_1' => array( 'Class' => array( 2 ), 'X1Limitation' => array( 1 ) ),
+                                                'p_2' => array( 'Section' => array( 3 ) ) ) ) );
+        $this->assertSame( ' AND ((1 = 0)) ', $this->where( array( 'p_1' => array( 'X1Limitation' => array( 1 ) ) ) ) );
+    }
+
+    /** The condition of the handler joins the other limitations of its policy */
+    public function testExtensionLimitationWithAHandlerAddsItsCondition()
+    {
+        ezpINIHelper::setINISetting( 'site.ini', 'RoleSettings', 'LimitationHandlers', array( 'X1Limitation' => 'X1PermissionSQLLimitationHandler' ) );
+        // The handler is asked for the current user: a stand-in, so no session or database is needed
+        $hadUser = array_key_exists( 'eZUserGlobalInstance_', $GLOBALS );
+        $user = $hadUser ? $GLOBALS['eZUserGlobalInstance_'] : null;
+        $GLOBALS['eZUserGlobalInstance_'] = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'x1anonymous' ) );
+        try
+        {
+            $sql = eZContentObjectTreeNode::createPermissionCheckingSQL( array( 'p_1' => array( 'Class' => array( 2 ), 'X1Limitation' => array( 4 ) ) ), 'ezcontentobject_tree', 't' );
+        }
+        finally
+        {
+            if ( $hadUser )
+                $GLOBALS['eZUserGlobalInstance_'] = $user;
+            else
+                unset( $GLOBALS['eZUserGlobalInstance_'] );
+        }
+        $this->assertSame( ' AND ((ezcontentobject.contentclass_id in (2) AND ( t.depth <= 4 ))) ', $sql['where'] );
     }
 
     public function testShowInvisibleSQLString()

@@ -4592,16 +4592,17 @@ class eZContentObject extends eZPersistentObject
     }
 
     /**
-     * Returns whether the current user may create an object like this one under the parent of its main node
-     * assignment, for an object that was never published: 1 or 0, or null when the rule does not apply (a published
-     * object, or one without node assignment).
+     * Returns whether the user (by default the current one) may create an object like this one under the parent of
+     * its main node assignment, for an object that was never published: 1 or 0, or null when the rule does not apply
+     * (a published object, or one without node assignment).
      *
      * The edit checks fall back to this rule, at every version of such an object.
      *
      * @param string|bool $language a language code, or false
+     * @param int|bool $userID the user to check the access for; false for the current user
      * @return int|null
      */
-    function draftCreateAccess( $language = false )
+    function draftCreateAccess( $language = false, $userID = false )
     {
         $mainAssignment = $this->draftMainNodeAssignment();
         if ( !$mainAssignment )
@@ -4615,7 +4616,7 @@ class eZContentObject extends eZPersistentObject
             return 0;
         }
         return $parentObj->checkAccess( 'create', $this->attribute( 'contentclass_id' ),
-                                        $parentObj->attribute( 'contentclass_id' ), false, $language ) ? 1 : 0;
+                                        $parentObj->attribute( 'contentclass_id' ), false, $language, $userID ) ? 1 : 0;
     }
 
     /**
@@ -5147,12 +5148,17 @@ class eZContentObject extends eZPersistentObject
      * @param int|bool $parentClassID Used to check access for object creation
      * @param bool $returnAccessList If true, returns access list instead of access result
      * @param string|bool $language
+     * @param int|bool $userID The user to check the access for; false for the current user
      * @return array|int 1 if has access, 0 if not, array if $returnAccessList is true
      */
-    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false )
+    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
         $classID = $originalClassID;
-        $user = eZUser::currentUser();
+        $user = eZUser::accessUser( $userID );
+        if ( !$user instanceof eZUser )
+        {
+            return 0;
+        }
         $userID = $user->attribute( 'contentobject_id' );
         $origFunctionName = $functionName;
 
@@ -5233,7 +5239,7 @@ class eZContentObject extends eZPersistentObject
             {
                 // Check if we have 'create' access under the main parent of an object that was never published,
                 // whatever version it is at (a rejected first version is edited as version 2 and later)
-                return (int)$this->draftCreateAccess( $originalLanguage );
+                return (int)$this->draftCreateAccess( $originalLanguage, $userID );
             }
 
             if ( $returnAccessList === false )
@@ -5421,11 +5427,12 @@ class eZContentObject extends eZPersistentObject
                         case 'Owner':
                         case 'ParentOwner':
                         {
-                            // if limitation value == 2, anonymous limited to current session.
+                            // if limitation value == 2, anonymous limited to current session (only the current
+                            // user has a session to look at)
                             if ( in_array( 2, $limitationArray[$key] ) &&
                                  $user->isAnonymous() )
                             {
-                                $createdObjectIDList = eZPreferences::value( 'ObjectCreationIDList' );
+                                $createdObjectIDList = $userID == eZUser::currentUserID() ? eZPreferences::value( 'ObjectCreationIDList' ) : false;
                                 if ( $createdObjectIDList &&
                                      in_array( $this->ID, unserialize( $createdObjectIDList ) ) )
                                 {
@@ -5659,6 +5666,17 @@ class eZContentObject extends eZPersistentObject
                                     $access = 'allowed';
                                 }
                             }
+                            // A limitation of an extension: its handler decides, without one it denies
+                            else if ( ezpContentLimitation::checkAccess( $key, $limitationArray[$key], $functionName, $this, $userID ) )
+                            {
+                                $access = 'allowed';
+                            }
+                            else
+                            {
+                                $access = 'denied';
+                                $limitationList = array( 'Limitation' => $key,
+                                                         'Required' => $limitationArray[$key] );
+                            }
                         }
                     }
                     if ( $access == 'denied' )
@@ -5677,7 +5695,7 @@ class eZContentObject extends eZPersistentObject
                 {
                     // Check if we have 'create' access under the main parent of an object that was never published,
                     // whatever version it is at (a rejected first version is edited as version 2 and later)
-                    $result = $this->draftCreateAccess( $originalLanguage );
+                    $result = $this->draftCreateAccess( $originalLanguage, $userID );
                     if ( $result !== null )
                     {
                         return $result;

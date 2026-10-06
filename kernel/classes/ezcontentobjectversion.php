@@ -451,10 +451,25 @@ class eZContentObjectVersion extends eZPersistentObject
         return ( $this->Permissions['can_versionremove'] == 1 );
     }
 
-    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false )
+    /**
+     * Check access for the version
+     *
+     * @param string $functionName Function name ( versionread, versionremove, edit, etc. )
+     * @param int|bool $originalClassID Used to check access for object creation
+     * @param int|bool $parentClassID Not used; kept for the signature of eZContentObject::checkAccess()
+     * @param bool $returnAccessList Not used; kept for the signature of eZContentObject::checkAccess()
+     * @param string|bool $language
+     * @param int|bool $userID The user to check the access for; false for the current user
+     * @return int|bool 1 or true if has access, 0 or false if not
+     */
+    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
         $classID = $originalClassID;
-        $user = eZUser::currentUser();
+        $user = eZUser::accessUser( $userID );
+        if ( !$user instanceof eZUser )
+        {
+            return 0;
+        }
         $userID = $user->attribute( 'contentobject_id' );
         $accessResult =  $user->hasAccessTo( 'content' , $functionName );
         $accessWord = $accessResult['accessWord'];
@@ -518,7 +533,7 @@ class eZContentObjectVersion extends eZPersistentObject
                 // whatever version it is at (the same rule as eZContentObject::checkAccess())
                 if ( $object instanceof eZContentObject )
                 {
-                    return (int)$object->draftCreateAccess( $originalLanguage );
+                    return (int)$object->draftCreateAccess( $originalLanguage, $userID );
                 }
             }
 
@@ -789,6 +804,17 @@ class eZContentObjectVersion extends eZPersistentObject
                                 break;
                             }
                         }
+                        // A limitation of an extension: its handler decides, without one it denies
+                        else if ( ezpContentLimitation::checkAccess( $key, $limitation, $functionName, $this, $userID ) )
+                        {
+                            $access = 'allowed';
+                        }
+
+                        // A limitation that denies ends the policy; the next limitation must not allow it again
+                        if ( $access == 'denied' )
+                        {
+                            break;
+                        }
                     }
                 }
 
@@ -801,6 +827,8 @@ class eZContentObjectVersion extends eZPersistentObject
                     return 1;
                 }
             }
+            // Limited access without a policy to check gives no access (it returned null)
+            return 0;
         }
     }
 

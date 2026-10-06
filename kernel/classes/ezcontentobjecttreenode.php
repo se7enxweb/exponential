@@ -1796,6 +1796,14 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                     $sqlPartPart[] = "$stateTable.id = " . $limitationArray[$ident][0];
                                 }
                             }
+                            // A limitation of an extension: the condition of its handler. Without one the policy
+                            // gives no access here, as in checkAccess(); ignoring the limitation listed objects
+                            // that checkAccess() then refused. Kernel limitations of other functions (Language,
+                            // ParentClass, ...) do not narrow a read and stay out.
+                            else if ( !ezpContentLimitation::isKernelLimitation( $ident ) )
+                            {
+                                $sqlPartPart[] = ezpContentLimitation::permissionSQL( $ident, $limitationArray[$ident], $tableAliasName );
+                            }
                         }
                     }
                 }
@@ -4992,10 +5000,25 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
     }
 
-    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false )
+    /**
+     * Check access for the node
+     *
+     * @param string $functionName Function name ( edit, read, remove, etc. )
+     * @param int|bool $originalClassID Used to check access for object creation
+     * @param int|bool $parentClassID Used to check access for object creation
+     * @param bool $returnAccessList Not used; kept for the signature of eZContentObject::checkAccess()
+     * @param string|bool $language
+     * @param int|bool $userID The user to check the access for; false for the current user
+     * @return int 1 if has access, 0 if not
+     */
+    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
         $classID = $originalClassID;
-        $user = eZUser::currentUser();
+        $user = eZUser::accessUser( $userID );
+        if ( !$user instanceof eZUser )
+        {
+            return 0;
+        }
         $userID = $user->attribute( 'contentobject_id' );
 
         // Fetch the ID of the language if we get a string with a language code
@@ -5107,7 +5130,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 $object = $currentNode->object();
                 if ( $object instanceof eZContentObject )
                 {
-                    return (int)$object->draftCreateAccess( $originalLanguage );
+                    return (int)$object->draftCreateAccess( $originalLanguage, $userID );
                 }
             }
 
@@ -5263,11 +5286,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
                         case 'Owner':
                         case 'ParentOwner':
                         {
-                            // if limitation value == 2, anonymous limited to current session.
+                            // if limitation value == 2, anonymous limited to current session (only the current
+                            // user has a session to look at)
                             if ( in_array( 2, $valueList ) &&
                                  $user->isAnonymous() )
                             {
-                                $createdObjectIDList = eZPreferences::value( 'ObjectCreationIDList' );
+                                $createdObjectIDList = $userID == eZUser::currentUserID() ? eZPreferences::value( 'ObjectCreationIDList' ) : false;
                                 if ( $createdObjectIDList &&
                                      in_array( $contentObject->attribute( 'id' ), unserialize( $createdObjectIDList ) ) )
                                 {
@@ -5416,6 +5440,17 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                 {
                                     $access = 'allowed';
                                 }
+                            }
+                            // A limitation of an extension: its handler decides, without one it denies
+                            else if ( ezpContentLimitation::checkAccess( $key, $valueList, $functionName, $currentNode, $userID ) )
+                            {
+                                $access = 'allowed';
+                            }
+                            else
+                            {
+                                $access = 'denied';
+                                $limitationList = array( 'Limitation' => $key,
+                                                         'Required' => $valueList );
                             }
                         }
                     }

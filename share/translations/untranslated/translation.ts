@@ -15597,6 +15597,14 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>rest.ini, through the rest provider registry</source>
         <translation type="unfinished"></translation>
     </message>

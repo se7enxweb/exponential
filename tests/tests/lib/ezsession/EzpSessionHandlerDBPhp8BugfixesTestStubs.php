@@ -95,5 +95,11 @@ if ( !class_exists( 'ezpEvent', false ) )
         }
 
         public function notify( string $event, array $args = [] ): void {}
+
+        /** Without listeners a filter returns the value unchanged (eZModule filters its function list) */
+        public function filter( $event, $value )
+        {
+            return $value;
+        }
     }
 }

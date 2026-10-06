@@ -346,6 +346,7 @@ a whole request down the first time something touched it).
 | A command | `bin/php/<name>.php` | `php extension/<name>/bin/php/<name>.php --help` |
 | A translation | `translations/<locale>/translation.ts` | add `TranslationExtensions[]=<name>` in `[RegionalSettings]` |
 | A database table | `share/db_schema.dba` (the wizards write it when asked) | install it with the package installer |
+| A policy limitation of your own for `content/read` and the other content functions | a listener of `module/functionlist` and a class implementing `ezpContentLimitationHandler`, registered in `settings/site.ini.append.php` | see [Content policy limitations of extensions](../features/6.0/content-limitation-handlers.md) |
 
 For the class based forms of a command, cronjob part and view, see
 [Commands, cronjob parts and module views as classes](../bc/6.0/cli_cronjob_view_abstractions.md) and
