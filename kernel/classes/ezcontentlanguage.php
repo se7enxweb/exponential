@@ -632,7 +632,11 @@ class eZContentLanguage extends eZPersistentObject
             {
                 if ( $returnLanguageLocale )
                 {
-                    $list[] = eZContentLanguage::fetch( $newMask )->attribute( 'locale' );
+                    // A bit of a language that was removed has no locale; it
+                    // was a fatal error on the false fetch() gives for it
+                    $language = eZContentLanguage::fetch( $newMask );
+                    if ( $language )
+                        $list[] = $language->attribute( 'locale' );
                 }
                 else
                 {
