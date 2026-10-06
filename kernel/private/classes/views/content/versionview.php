@@ -35,6 +35,12 @@ class Versionview extends \Exponential\Runnable\ModuleView
         $LanguageCode = htmlspecialchars( $LanguageCode, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
         $viewParameters = array( 'offset' => $Offset );
 
+        // The view mode the version is shown in, (view_mode)/print for example; only those of
+        // content.ini [VersionView] ViewModes[] (full by default)
+        $viewMode = self::viewMode( isset( $scope['Params']['ViewMode'] ) ? $scope['Params']['ViewMode'] : null );
+        if ( $viewMode === null )
+            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+
         // Will be sent from the content/edit page and should be kept
         // incase the user decides to continue editing.
         $FromLanguage = htmlspecialchars( $Params['FromLanguage'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
@@ -280,13 +286,14 @@ class Versionview extends \Exponential\Runnable\ModuleView
         {
             $tpl->setVariable( 'redirect_uri', $http->sessionVariable( 'LastAccessesVersionURI' ) );
         }
+        $tpl->setVariable( 'view_mode', $viewMode );
 
         $designKeys = array( array( 'object', $contentObject->attribute( 'id' ) ), // Object ID
                              array( 'node', $virtualNodeID ), // Node id
                              array( 'remote_id', $contentObject->attribute( 'remote_id' ) ),
                              array( 'class', $class->attribute( 'id' ) ), // Class ID
                              array( 'class_identifier', $class->attribute( 'identifier' ) ), // Class identifier
-                             array( 'viewmode', 'full' ) );  // View mode
+                             array( 'viewmode', $viewMode ) );  // View mode
 
         if ( $assignment )
         {
@@ -301,12 +308,30 @@ class Versionview extends \Exponential\Runnable\ModuleView
         unset( $contentObject );
         $contentObject = $node->attribute( 'object' );
 
-        $Result = \eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $LanguageCode, 'full', 0, $viewParameters );
+        $Result = \eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $LanguageCode, $viewMode, 0, $viewParameters );
 
         $Result['requested_uri_string'] = $requestedURIString;
         $Result['ui_context'] = 'view';
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Returns the view mode a version is to be shown in: $requested when content.ini [VersionView] ViewModes[] lists
+     * it, full when nothing was asked for, null for a view mode that is not listed.
+     *
+     * @param string|null $requested The (view_mode) parameter of the address
+     * @return string|null
+     */
+    public static function viewMode( $requested )
+    {
+        if ( $requested === null || $requested === '' || $requested === false )
+        {
+            return 'full';
+        }
+        $ini = \eZINI::instance( 'content.ini' );
+        $allowed = $ini->hasVariable( 'VersionView', 'ViewModes' ) ? (array)$ini->variable( 'VersionView', 'ViewModes' ) : array( 'full' );
+        return in_array( (string)$requested, $allowed, true ) ? (string)$requested : null;
     }
 
     /**

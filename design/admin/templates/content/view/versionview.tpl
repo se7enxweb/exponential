@@ -1,3 +1,4 @@
+{def $view_mode_uri=cond( and( is_set( $view_mode ), $view_mode|ne( 'full' ) ), concat( '/view_mode/', $view_mode ), '' )}
 <form method="post" action={concat( 'content/versionview/', $object.id, '/', $version.version, '/', $language, '/', $from_language )|ezurl}>
 
 <div id="leftmenu">
@@ -162,7 +163,7 @@
 {$object_languagecode|locale().intl_language_name} <img src="{$object_languagecode|flag_icon}" width="18" height="12" alt="{$object_languagecode}" style="vertical-align: middle;" />
 </p>
 <p class="center full-screen">
-<a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess)|ezurl} target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} /></a>
+<a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl} target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} /></a>
 </p>
 <div class="break"></div>
 </div>
@@ -170,8 +171,8 @@
 {* Content preview in content window. *}
 <div class="mainobject-window">
 
-    <iframe src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess )|ezurl} width="100%" height="800">
-    {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess)|ezurl ) )}
+    <iframe src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri )|ezurl} width="100%" height="800">
+    {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl ) )}
 </iframe>
 
 </div>
