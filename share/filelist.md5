@@ -586,9 +586,11 @@ a050965e5a2a03298a6cfda1b4fcfa85  design/admin/templates/section/assign_notifica
 d3ec6becde114b89f085ee9ced9aaecd  design/admin/templates/section/exp_style.tpl
 21dc333145926041bb9e528bae8a93e4  design/admin/templates/section/list.tpl
 aaff04bc22338b12d39f291d3db76250  design/admin/templates/section/view.tpl
-f25c2fc56e4be195717df6a15439ba40  design/admin/templates/settings/edit.tpl
-113dcb87cad33d168ee61cb74a13307f  design/admin/templates/settings/settings_validation.tpl
-c4046e2af288689c12899c1ffc53d5c5  design/admin/templates/settings/view.tpl
+70c6fc4a56bfce37589f12efbef832eb  design/admin/templates/settings/edit.tpl
+1dd62db4973eeb15eaa19fc9da4d8eca  design/admin/templates/settings/exp_origin.tpl
+a653593844b7968fdbdbebf645b3f697  design/admin/templates/settings/exp_style.tpl
+c32996f8d5cb9db02d220b90e8b3e4d3  design/admin/templates/settings/settings_validation.tpl
+2f320cf29a67b5c19330ffbdfc1d6167  design/admin/templates/settings/view.tpl
 e35ba390f01d8127c83a367a1e3c6bd3  design/admin/templates/setup/cache.tpl
 374f51b6822192b8bbb5844e2b24d625  design/admin/templates/setup/contentextension.tpl
 a0546c08cf97a30d300cecfdcde84f5d  design/admin/templates/setup/cronjobs.tpl
@@ -1190,9 +1192,11 @@ a050965e5a2a03298a6cfda1b4fcfa85  design/admin4/templates/section/assign_notific
 d3ec6becde114b89f085ee9ced9aaecd  design/admin4/templates/section/exp_style.tpl
 21dc333145926041bb9e528bae8a93e4  design/admin4/templates/section/list.tpl
 aaff04bc22338b12d39f291d3db76250  design/admin4/templates/section/view.tpl
-f25c2fc56e4be195717df6a15439ba40  design/admin4/templates/settings/edit.tpl
-113dcb87cad33d168ee61cb74a13307f  design/admin4/templates/settings/settings_validation.tpl
-c4046e2af288689c12899c1ffc53d5c5  design/admin4/templates/settings/view.tpl
+70c6fc4a56bfce37589f12efbef832eb  design/admin4/templates/settings/edit.tpl
+1dd62db4973eeb15eaa19fc9da4d8eca  design/admin4/templates/settings/exp_origin.tpl
+a653593844b7968fdbdbebf645b3f697  design/admin4/templates/settings/exp_style.tpl
+c32996f8d5cb9db02d220b90e8b3e4d3  design/admin4/templates/settings/settings_validation.tpl
+2f320cf29a67b5c19330ffbdfc1d6167  design/admin4/templates/settings/view.tpl
 e35ba390f01d8127c83a367a1e3c6bd3  design/admin4/templates/setup/cache.tpl
 374f51b6822192b8bbb5844e2b24d625  design/admin4/templates/setup/contentextension.tpl
 a0546c08cf97a30d300cecfdcde84f5d  design/admin4/templates/setup/cronjobs.tpl
@@ -2474,7 +2478,7 @@ afb2970e090cae855ddb7334a9ea81fb  design/standard/templates/rss/edit_import_deni
 1db06f00dc4283a1b2932ba3fb27240d  design/standard/templates/section/confirmremove.tpl
 252e40339304537071a79d5f0cdfa5b9  design/standard/templates/section/edit.tpl
 31727b535590136644681d00d775878b  design/standard/templates/section/list.tpl
-a0d4a729dfdc80b24894c7d23217b87c  design/standard/templates/settings/edit.tpl
+c58810ff21ff4cff9a69a1cf709ce694  design/standard/templates/settings/edit.tpl
 d8482a05ee84a83719221085943a099a  design/standard/templates/settings/settings_validation.tpl
 0e188a19e8ec120fc72e84efe0b2d882  design/standard/templates/settings/view.tpl
 308d623abab887619a7a196dd97e98e8  design/standard/templates/setup/cache.tpl
@@ -2955,7 +2959,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-114266ad37d41fb46198fe72fa248d35  doc/changelogs/6.0/6.0.15.md
+55689f1ed937d16e8252c1e10ec1b180  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3430,7 +3434,7 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 f9c3f344c473869cfb55845caedce10f  doc/features/6.0/version-preview-view-modes.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 03252bce1fbedb6ed433f227a6265164  doc/glossary.md
-30651841dabc401f22d8a57d8877e941  doc/guides/README.md
+6a65229ac16e304fe0cc36643dfb1b43  doc/guides/README.md
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 8901e2220940757e41162287af7ecbb4  doc/guides/bookmarks.md
@@ -3482,6 +3486,7 @@ b96aa9f19d0e6aebe8b4e7b2569216d5  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
 24b38626a7d481e5608176e1c8217950  doc/guides/security-and-audit.md
 43dbd90e31972fef2826ebb622ab5c4d  doc/guides/sessions.md
+7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
 049b86dd00d762c414081e1171c16436  doc/guides/system-information.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
 4ee61d51ef41314fe41846f70b854ed5  doc/guides/upgrade-check.md
@@ -5021,6 +5026,10 @@ ef30d890e9a3882c184908deb65a0c85  kernel/classes/ini/expiniscope.php
 791f73c66d5f3d38f3c495ec24d8e667  kernel/classes/ini/expiniscopeprovider.php
 50ca7e6eb28b436686867bfe582b2f34  kernel/classes/ini/expiniwriter.php
 30cb5f5098055fcc4666e2f9f79fb95f  kernel/classes/ini/expiniwriteresult.php
+4494d34cb544eaa06c6cec9f370a0cf9  kernel/classes/ini/expsettingschain.php
+888d0894cde9f5326b118a519a03cee9  kernel/classes/ini/expsettingspage.php
+8c200c18d874c34b4f650a4fba511240  kernel/classes/ini/expsettingssecretrule.php
+f073bd9cc1ae524af2cdd0c8e4f411cb  kernel/classes/ini/expsettingstarget.php
 433fa0d8a63f3ab1be70354c7a4c145d  kernel/classes/mailpreferences/expconsentcontext.php
 edd4fe2a12021de5f1e04134421a0cca  kernel/classes/mailpreferences/expconsentlog.php
 ef42ff76c9c0799535968bb0f46defbc  kernel/classes/mailpreferences/expmailaddresschange.php
@@ -5584,8 +5593,8 @@ d6b7ee459c385cc78ca426a0b6f8b362  kernel/private/classes/views/section/assign.ph
 41a1a002428dba979b2ff3df259505af  kernel/private/classes/views/section/edit.php
 9b1a0b75aee0abf6663625558c9410a0  kernel/private/classes/views/section/list.php
 9d6b8e6a7a21e6799b0f29447166534e  kernel/private/classes/views/section/view.php
-5effc5a032e9768dc17864e9b9f115f4  kernel/private/classes/views/settings/edit.php
-af84382cc54984b208166dc9f516b1ce  kernel/private/classes/views/settings/view.php
+c72c6b1b62bba01464bc7b4e2254b9dc  kernel/private/classes/views/settings/edit.php
+e6fbbdf98872c86fa9f551892465a9df  kernel/private/classes/views/settings/view.php
 32fde1ce467f2060b28e5ce8a85fb579  kernel/private/classes/views/setup/cache.php
 8950f5ab79eb2110460527a6ab876fc8  kernel/private/classes/views/setup/cachetoolbar.php
 546ddb3d9d522a274d7a11c78c3a2762  kernel/private/classes/views/setup/contentextension.php
@@ -5856,7 +5865,7 @@ db761bae638bd8f5dadfdd0da2981c4f  kernel/section/list.php
 9cab612bf66d3bc86113a6c2a0f8b8ab  kernel/section/view.php
 d623629754beb388b4628c53dd63270d  kernel/settings/edit.php
 b6a53e276721cc39bf7b544fad588d97  kernel/settings/module.php
-b1a9287eacbabfa3452df5ffa4325bb6  kernel/settings/validation.php
+4e258e8c2fbb52fa4af51251957f2a5d  kernel/settings/validation.php
 2ee7a35b05d2618aa5ee00892e4756f3  kernel/settings/view.php
 862be49ebc0c33fd3381e453af8ebd48  kernel/setup/cache.php
 9fc9780d962c952069bcd9262206e30d  kernel/setup/cachetoolbar.php
@@ -6330,7 +6339,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-7a2948becd56285ec86ec785a3fa6758  settings/site.ini
+f58f8afe9edc4dbf8d26ae270cda0870  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7101,6 +7110,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 3d169dcf96d0f46f825095fed303ae28  tests/tests/kernel/classes/expPDFExportTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 cf5d5388e5242328fbc1f6c199a8afd8  tests/tests/kernel/classes/expSectionOverviewTest.php
+50e70542d10e85700415c8a12177c2b3  tests/tests/kernel/classes/expSettingsPageTest.php
 670c664f48487bb4403b665966751bf3  tests/tests/kernel/classes/expSystemReportMaskTest.php
 1e66f7ac332da1d3639695e403a9dc2f  tests/tests/kernel/classes/expSystemReportTest.php
 f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTest.php
