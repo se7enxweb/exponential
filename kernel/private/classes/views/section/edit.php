@@ -97,6 +97,10 @@ class Edit extends \Exponential\Runnable\ModuleView
                     } );
                 \eZContentCacheManager::clearContentCacheIfNeededBySectionID( $section->attribute( 'id' ) );
                 \ezpEvent::getInstance()->notify( 'content/section/cache', array( $section->attribute( 'id' ) ) );
+                // the list says what was done; the section pages: doc/guides/sections.md
+                $http->setSessionVariable( ListView::FEEDBACK, array( 'type' => $auditBefore === null ? 'created' : 'saved',
+                                                                     'names' => array( (string)$section->attribute( 'name' ) ),
+                                                                     'id' => (int)$section->attribute( 'id' ) ) );
                 $Module->redirectTo( $Module->functionURI( 'list' ) );
                 return $this->viewResult( isset( $Result ) ? $Result : null, null );
             }
@@ -112,6 +116,18 @@ class Edit extends \Exponential\Runnable\ModuleView
         }
 
         $tpl->setVariable( "section", $section );
+        // What an edit of an existing section touches (its objects, the roles naming it), and the navigation parts
+        // to choose from; a new section has neither usage nor an id yet.
+        $sectionUsage = false;
+        if ( $SectionID != 0 )
+        {
+            $overview = ListView::overviewFromDatabase();
+            if ( isset( $overview['sections'][(int)$SectionID] ) )
+                $sectionUsage = $overview['sections'][(int)$SectionID];
+        }
+        $tpl->setVariable( 'section_usage', $sectionUsage );
+        $tpl->setVariable( 'section_is_new', $SectionID == 0 );
+        $tpl->setVariable( 'navigation_parts', \eZNavigationPart::fetchList() );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:section/edit.tpl" );

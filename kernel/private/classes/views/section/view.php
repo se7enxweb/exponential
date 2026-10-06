@@ -46,6 +46,16 @@ class View extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "view_parameters", $viewParameters );
         $tpl->setVariable( "section", $section );
 
+        // The page leads with how the section is used (doc/guides/sections.md): its objects by status, the roles
+        // whose policies name it, the role assignments limited to it, and whether it could be removed.
+        $overview = ListView::overviewFromDatabase();
+        $sectionID = (int)$section->attribute( 'id' );
+        $currentUser = \eZUser::currentUser();
+        $editAccess = $currentUser->hasAccessTo( 'section', 'edit' );
+        $tpl->setVariable( 'section_usage', isset( $overview['sections'][$sectionID] ) ? $overview['sections'][$sectionID] : false );
+        $tpl->setVariable( 'section_can_edit', $editAccess['accessWord'] != 'no' );
+        $tpl->setVariable( 'section_can_assign', (bool)$currentUser->canAssignSection( $sectionID ) );
+
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:section/view.tpl" );
         $Result['path'] = array( array( 'url' => 'section/list',
