@@ -15,6 +15,7 @@ will keep coming back to.
 | Who is affected | Sites that want editor-controlled page arrangement. A site that does not activate the extensions is unchanged. |
 | How to check | `curl -s -o /dev/null -w '%{http_code}\n' https://<your-admin-host>/explayouts_ui_api/app` answers `200` (see [Checking it is alive](#checking-it-is-alive)). |
 | How to fix | Follow the [Installation checklist](#installation-checklist): tables, extensions, autoloads, caches, then a layout and a rule. |
+| Classic menus | A siteaccess that renders through Layouts does not read `menu.ini [SelectedMenu]`: its menus are blocks. Setup > Menus (classic) labels each siteaccess accordingly; [Classic menus](../../guides/classic-menu-settings.md) explains when that page still matters. |
 
 ## Table of contents
 

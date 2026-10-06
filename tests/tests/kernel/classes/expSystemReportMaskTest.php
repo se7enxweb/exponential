@@ -5,11 +5,12 @@
  *
  *  SM-01 - Values of secret names are never shown, only whether they are set
  *  SM-02 - Names that are not secret are not taken for secrets
- *  SM-03 - Credentials in addresses are cut out, the host stays
+ *  SM-03 - Passwords in addresses are cut out (by the shared expSecretRule), user and host stay
  *  SM-04 - "password=..." style pairs in free text lose their value
  *  SM-05 - Long runs of letters and digits (session ids, tokens) are replaced; names and versions stay
  *  SM-06 - Paths inside the installation become relative, web and home paths outside keep two parts, system paths stay
  *  SM-07 - A whole report: nested secrets hidden, strings masked, numbers and booleans kept
+ *  SM-08 - The names agree with exp:ini, the audit log and the settings pages (expSecretRule); request names are added
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -43,9 +44,9 @@ class expSystemReportMaskTest extends PHPUnit\Framework\TestCase
     /** SM-03 */
     public function testCredentialsInAddressesAreCut()
     {
-        $this->assertSame( 'mysql://***@db.example.org:3306/site', expSystemReportMask::dsn( 'mysql://site:s3cr3t@db.example.org:3306/site' ) );
-        $this->assertSame( 'see https://***@example.org/x', expSystemReportMask::dsn( 'see https://admin:pw@example.org/x' ) );
-        $this->assertSame( 'redis://***@cache:6379', expSystemReportMask::dsn( 'redis://:onlypassword@cache:6379' ) );
+        $this->assertSame( 'mysql://site:***@db.example.org:3306/site', expSystemReportMask::dsn( 'mysql://site:s3cr3t@db.example.org:3306/site' ) );
+        $this->assertSame( 'see https://admin:***@example.org/x', expSystemReportMask::dsn( 'see https://admin:pw@example.org/x' ) );
+        $this->assertSame( 'redis://:***@cache:6379', expSystemReportMask::dsn( 'redis://:onlypassword@cache:6379' ) );
         // no credentials: unchanged, ports kept
         $this->assertSame( 'https://alpha.example.org:8080/admin/', expSystemReportMask::dsn( 'https://alpha.example.org:8080/admin/' ) );
         $this->assertStringNotContainsString( 's3cr3t', expSystemReportMask::text( 'pgsql://u:s3cr3t@localhost/db' ) );
@@ -99,8 +100,32 @@ class expSystemReportMaskTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 136, $masked['database']['tables'] );
         $this->assertTrue( $masked['database']['connected'] );
         $this->assertSame( '(not set)', $masked['mail']['TransportPassword'] );
-        $this->assertSame( 'smtp://***@mail.example.org', $masked['mail']['server'] );
+        $this->assertSame( 'smtp://u:***@mail.example.org', $masked['mail']['server'] );
         $this->assertSame( array( 'a', 'Password=***' ), $masked['list'] );
         $this->assertStringNotContainsString( 'hunter2', json_encode( $masked ) );
+    }
+
+    /** SM-08 */
+    public function testAgreesWithTheSharedRule()
+    {
+        $settings = new expSettingsSecretRule();
+        foreach ( array( 'Password', 'TransportPassword', 'DbPwd', 'DatabaseDsn', 'ApiKey', 'license_key', 'Key', 'Salt', 'AccessToken',
+                         'SortKey', 'KeyField', 'SiteName', 'SessionTimeout', 'AuthorizationURL', 'CookieTimeout', 'Server' ) as $name )
+        {
+            $shared = expSecretRule::isSecretName( $name );
+            $this->assertSame( $shared, expIniEditor::isSecret( $name ), 'exp:ini ' . $name );
+            $this->assertSame( $shared, $settings->isSecretName( $name ), 'settings ' . $name );
+            $this->assertSame( $shared, expSystemReportMask::isSecretName( $name ), 'report ' . $name );
+        }
+        // the report adds the secrets of a request, as whole names only
+        foreach ( array( 'session_id', 'eZSESSID', 'cookie', 'Authorization', 'Signature' ) as $name )
+        {
+            $this->assertFalse( expSecretRule::isSecretName( $name ), $name );
+            $this->assertTrue( expSystemReportMask::isSecretName( $name ), $name );
+        }
+        // the same value is masked in the same places, each with its own mask text
+        $value = 'mysql://site:s3cr3t@db/x?token=abc&b=2';
+        $this->assertSame( str_replace( '•', '*', expSettingsSecretRule::maskInline( $value ) ), str_replace( '***', '********', expSystemReportMask::dsn( $value ) ) );
+        $this->assertSame( 'mysql://site:***@db/x?token=***&b=2', expSystemReportMask::text( $value ) );
     }
 }

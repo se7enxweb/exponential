@@ -17,7 +17,7 @@ on the demonstration server (alpha.se7enx.com) on 6 October 2026, on Apache with
 - A **PDF export** makes one PDF of a **source node**: its name as the first heading, then its attributes. A
   **tree** export adds the nodes below it, at every level, but only those of the **classes** you tick.
 - **Generated once**: the PDF is written when the export is saved and again with **Regenerate**; the file is kept in
-  `var/<site>/storage/pdf/<file name>` and downloaded from the list. Fast, but it shows the content as it was then.
+  `var/<site>/storage/pdf/<file name>` and served there at a public address. Fast, but it shows the content as it was then.
 - **Generated on the fly**: the PDF is made anew for every download. Always current; a large tree takes a while
   every time.
 - The list leads with figures, a search, filters and an order, then one card per export with **Download**,
@@ -28,9 +28,16 @@ on the demonstration server (alpha.se7enx.com) on 6 October 2026, on Apache with
 Setup > PDF export, or `/pdf/list` in the admin siteaccess. Both pages need the `pdf/edit` policy (Administrator has
 it). Downloads go through `/pdf/edit/<id>/generate`, which needs the same policy.
 
-The web server does not serve files from the storage directory except images, so a stored PDF has no public address
-of its own. Before 6.0.15 the list linked `var/<site>/storage/pdf/<name>`, which always answered 404; use
-**Download**, or publish the PDF as a File object if visitors should get it.
+A stored PDF is public: the web server serves `var/<site>/storage/pdf/<file name>` to anybody, signed in or not, and
+the card shows that **Public address** to share or link. The rule is
+`RewriteRule ^var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$ - [L]` in `.htaccess_root` and
+`.htaccess_root_static` and a `location` in the nginx example. Nothing else below the storage directory
+becomes public: other uploads stay behind `content/download` and its permissions. An installation with its own
+`.htaccess` adds that one line after the `storage/images` rule; a server that keeps such rules in its own
+configuration (a vhost file, an nginx front, Velocity's static paths) needs the same path there. Do not give an
+export a file name you would not want guessed, and use an export **generated on the fly** for content that is not
+for everybody: it is only downloaded through `/pdf/edit/<id>/generate`, by users with the `pdf/edit` policy. Before
+6.0.15 the list linked the file at that address, but the web server refused it (404).
 
 ## 2. The list
 

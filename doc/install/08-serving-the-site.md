@@ -99,8 +99,8 @@ rule for rule (`expVelocity::STATIC_PATHS`, `FRONT_CONTROLLERS` and `ENTRY_SCRIP
           |                                                               |
    a listed asset path (design and extension stylesheets, images,        |
    scripts and fonts; var/*/storage/images; image originals;              |
-   public caches; share/icons; package previews; favicon.ico,             |
-   robots.txt, index.js, sw.js, w3c/p3p.xml)  ---------------------------> sent as a file
+   stored PDF exports; public caches; share/icons; package previews;      |
+   favicon.ico, robots.txt, index.js, sw.js, w3c/p3p.xml)  --------------> sent as a file
           |                                                               |
    everything else (URL aliases, modules, /settings/site.ini, ...)  -----> index.php
 ```
@@ -1023,6 +1023,7 @@ server {
     #    a listed path that does not exist is a 404, as under Apache
     location ~ ^/var/([^/]+/)?storage/images(-versioned)?/                                    { try_files $uri =404; }
     location ~ ^/var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$             { try_files $uri =404; }
+    location ~ ^/var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$                      { try_files $uri =404; }
     location ~ ^/var/([^/]+/)?cache/(texttoimage|public)/                                       { try_files $uri =404; }
     location ~ ^/design/[^/]+/(stylesheets|images|javascript|fonts)/                            { try_files $uri =404; }
     location ~ ^/share/icons/                                                                   { try_files $uri =404; }

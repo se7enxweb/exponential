@@ -1,0 +1,19 @@
+# Your own menu templates belong in a design extension, never in a shipped design.
+#
+# extension/mysite_menus/settings/design.ini.append.php
+[ExtensionSettings]
+DesignExtensions[]=mysite_menus
+
+# extension/mysite_menus/design/mysite/templates/menu/my_top.tpl
+# extension/mysite_menus/design/mysite/templates/menu/my_section_left.tpl
+#   ("mysite" is a design in your siteaccess's SiteDesign or AdditionalSiteDesignList)
+
+# settings/siteaccess/<siteaccess>/menu.ini.append.php
+# a fifth arrangement, offered on Setup > Menus (classic) from then on
+[MenuSettings]
+AvailableMenuArray[]=MyTopAndSection
+
+[MyTopAndSection]
+TitleText=My top and section menus
+TopMenu=my_top
+LeftMenu=my_section_left

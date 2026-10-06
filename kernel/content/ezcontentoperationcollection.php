@@ -753,18 +753,90 @@ class eZContentOperationCollection
         eZDebug::accumulatorStop( 'add_object' );
     }
 
+    /**
+     * Whether notification.ini [NotificationSettings] PublishWithoutNotification is enabled (disabled by default).
+     *
+     * @return bool
+     */
+    static public function publishWithoutNotificationEnabled()
+    {
+        $ini = eZINI::instance( 'notification.ini' );
+        return $ini->hasVariable( 'NotificationSettings', 'PublishWithoutNotification' )
+               && $ini->variable( 'NotificationSettings', 'PublishWithoutNotification' ) === 'enabled';
+    }
+
+    /**
+     * Whether $user (the current user by default) may publish without notification: the setting is enabled and the
+     * user has the policy function content/publish_without_notification. The templates show the button on the same
+     * two conditions (ezini() and fetch( 'user', 'has_access_to' ), which counts a limited policy as access too).
+     *
+     * @param eZUser|null $user
+     * @return bool
+     */
+    static public function canPublishWithoutNotification( $user = null )
+    {
+        if ( !self::publishWithoutNotificationEnabled() )
+        {
+            return false;
+        }
+        if ( !$user instanceof eZUser )
+        {
+            $user = eZUser::currentUser();
+        }
+        if ( !$user instanceof eZUser )
+        {
+            return false;
+        }
+        $access = $user->hasAccessTo( 'content', 'publish_without_notification' );
+        return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
+    }
+
+    /**
+     * Whether the publication asked for is to go without notification: the button $buttonName ("Publish without
+     * notification" of content/edit or content/versionview) was posted, notification.ini [NotificationSettings]
+     * PublishWithoutNotification is enabled and the user may (canPublishWithoutNotification()). Otherwise the button
+     * counts as the ordinary publish: the version is published with notification. Nothing is kept between calls,
+     * so a persistent worker answers each request on its own.
+     *
+     * @param string $buttonName PublishNotNotifyButton or PreviewPublishNotNotifyButton
+     * @param eZUser|null $user the current user by default
+     * @return bool
+     */
+    static public function publishWithoutNotification( $buttonName, $user = null )
+    {
+        if ( !self::publishWithoutNotificationEnabled() || !eZHTTPTool::instance()->hasPostVariable( $buttonName ) )
+        {
+            return false;
+        }
+        if ( !self::canPublishWithoutNotification( $user ) )
+        {
+            eZDebug::writeWarning( "$buttonName was posted by a user without content/publish_without_notification: publishing with notification", __METHOD__ );
+            return false;
+        }
+        return true;
+    }
+
     /*!
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
+
+     Creates the notification event (type ezpublish) of a published version, which the subtree handler turns into
+     mails and digest items for the subscribers of its locations. $notify is the publish operation's parameter
+     notify (false for "Publish without notification"); the filter content/notification/create gets it and has the
+     last word. Only the ezpublish event is concerned: collaboration notifications (an approval) are made elsewhere.
      */
-    static public function createNotificationEvent( $objectID, $versionNum )
+    static public function createNotificationEvent( $objectID, $versionNum, $notify = true )
     {
         // An extension may leave out a publication nobody is to be told about (a class, a publish without
-        // notification): the filter content/notification/create gets true and the ids; only true creates the event
-        $create = ezpEvent::getInstance()->filter( 'content/notification/create', true, (int)$objectID, (int)$versionNum );
+        // notification): the filter content/notification/create gets whether the publish operation asked for the
+        // notification (its parameter notify, false for "Publish without notification") and the ids; only true
+        // creates the event. false, 0 and "0" (a caller's or a stored memento's spelling of no) mean no.
+        $notify = !( $notify === false || $notify === 0 || $notify === '0' );
+        $create = ezpEvent::getInstance()->filter( 'content/notification/create', $notify, (int)$objectID, (int)$versionNum );
         if ( $create !== true )
         {
-            eZDebug::writeDebug( "No notification event for object $objectID version $versionNum: a listener of content/notification/create left it out", __METHOD__ );
+            eZDebug::writeDebug( "No notification event for object $objectID version $versionNum: " .
+                                 ( $notify === false ? 'published without notification' : 'a listener of content/notification/create left it out' ), __METHOD__ );
             return;
         }
         $event = eZNotificationEvent::create( 'ezpublish', array( 'object' => $objectID,
@@ -1890,14 +1962,19 @@ class eZContentOperationCollection
      * Used by the content/publish operation
      * @param int $objectId
      * @param int $version
+     * @param bool $notify the publish operation's parameter notify. A publication without notification is never
+     *        queued: the asynchronous publisher runs the operation again with the object and the version only, so
+     *        notify would be lost there; it is published at once instead.
      *
      * @return array( status => int )
      * @since 4.5
      */
-    public static function sendToPublishingQueue( $objectId, $version )
+    public static function sendToPublishingQueue( $objectId, $version, $notify = true )
     {
         $behaviour = ezpContentPublishingBehaviour::getBehaviour();
         if ( $behaviour->disableAsynchronousPublishing )
+            $asyncEnabled = false;
+        else if ( $notify === false || $notify === 0 || $notify === '0' )
             $asyncEnabled = false;
         else
             $asyncEnabled = ( eZINI::instance( 'content.ini' )->variable( 'PublishingSettings', 'AsynchronousPublishing' ) == 'enabled' );

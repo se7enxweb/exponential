@@ -88,6 +88,7 @@ if ( $Module->isCurrentAction( 'Publish' ) and
         $tpl->setVariable( 'current_version', $versionObject->attribute( 'version' ) );
         $tpl->setVariable( 'object', $contentObject );
         $tpl->setVariable( 'draft_versions', $conflictingVersions );
+        $tpl->setVariable( 'publish_without_notification', eZContentOperationCollection::publishWithoutNotification( 'PreviewPublishNotNotifyButton' ) );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:content/edit_conflict.tpl' );
@@ -108,7 +109,8 @@ if ( $Module->isCurrentAction( 'Publish' ) and
     ezpContentPublishingBehaviour::setBehaviour( $behaviour );
 
     $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $ObjectID,
-                                                                                 'version' => $EditVersion ) );
+                                                                                 'version' => $EditVersion,
+                                                                                 'notify' => !eZContentOperationCollection::publishWithoutNotification( 'PreviewPublishNotNotifyButton' ) ) );
     // redirect if requested by the publishing operation
     if ( isset( $operationResult['status'] ) && ( $operationResult['status'] == eZModuleOperationInfo::STATUS_HALTED ) )
     {

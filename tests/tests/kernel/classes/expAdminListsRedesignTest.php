@@ -13,6 +13,7 @@
  *  AL-08 - Workflow groups: the card counts workflows, triggers, waiting processes and what removing does
  *  AL-09 - Class groups: classes, objects, last change and what removing removes; the summary
  *  AL-10 - An RSS import needs a name and an http or https source address to be stored
+ *  AL-11 - class/copy copies only for a POST with a copy button; a link shows the confirmation
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -77,6 +78,24 @@ class expAdminListsRedesignTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, \Exponential\View\Kernel\Rss\EditImport::validate( '  ', 'https://example.com/feed.xml' ) );
         $this->assertCount( 1, \Exponential\View\Kernel\Rss\EditImport::validate( 'News', 'file:///etc/passwd' ) );
         $this->assertCount( 2, \Exponential\View\Kernel\Rss\EditImport::validate( null, '' ) );
+    }
+
+    /** AL-11 */
+    public function testCopyNeedsAFormPost()
+    {
+        $post = function ( array $vars ) {
+            return new class( $vars ) {
+                private $vars;
+                public function __construct( $vars ) { $this->vars = $vars; }
+                public function hasPostVariable( $name ) { return array_key_exists( $name, $this->vars ); }
+            };
+        };
+        $copy = '\Exponential\View\Kernel\Class\Copy';
+        $this->assertTrue( $copy::isCopyRequest( $post( array( 'CopyClassButton' => '5' ) ), 'POST' ) );
+        $this->assertTrue( $copy::isCopyRequest( $post( array( 'ConfirmCopyButton' => '1' ) ), 'post' ) );
+        $this->assertFalse( $copy::isCopyRequest( $post( array( 'CopyClassButton' => '5' ) ), 'GET' ), 'a link never copies' );
+        $this->assertFalse( $copy::isCopyRequest( $post( array() ), 'POST' ), 'a post without a copy button does not copy' );
+        $this->assertFalse( $copy::isCopyRequest( $post( array( 'StoreButton' => '1' ) ), 'POST' ) );
     }
 
     /** AL-04 */

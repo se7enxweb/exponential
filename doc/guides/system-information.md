@@ -128,8 +128,12 @@ Folded below the cards, each opens with a click:
   itself and who may open them, other engines running.
 - **Phar App Engine** (under Velocity's own server): whether the engine runs from the archive and whether it is current.
 - **HTTP cache**, **Database queries** (query cache and SQL profile) and **Response cache**, with their buttons for
-  users with `setup/managecache`. These are the only things on the page that post, and each post carries the form
-  token.
+  users with `setup/managecache`: purge all pages, remove dead entries and reset the counters of the HTTP cache;
+  clear the query cache and reset its counters; switch the SQL profile on and off. These are the only things on the
+  page that post, and each post carries the form token. **Setup > Caches** (`/setup/cache`) has the same buttons
+  in its block "HTTP cache, query cache and SQL profile": both pages post the same fields
+  (`HttpCacheAction`, `QueryCacheAction`, `SQLProfileAction`) to the same code, `expCacheManager::sharedActionFromPost()`,
+  which checks `setup/managecache` itself. A post without the form token is refused (403).
 - **Database connection**: type, server, socket, database name, character set, read replica.
 - **Report for support**: the text of the report in a read-only field.
 
@@ -164,11 +168,16 @@ shown only with JavaScript, and selects the text for copying by hand where the c
 
 ## 7. What is never shown
 
-The masking rules are one class, `expSystemReportMask`, tested on their own (`expSystemReportMaskTest`):
+What is a secret is decided by one rule, `expSecretRule`, shared by exp:ini and `expIniEditor`, the audit log, the
+settings pages (`expSettingsSecretRule`) and this page (`expSystemReportMask`), so none of them shows what another
+hides. Each keeps its own mask text and may add names, never remove them. Tests: `expSecretRuleTest`,
+`expSystemReportMaskTest`, `expSettingsPageTest`.
 
-- a value whose name says it is a secret (password, secret, token, key, salt, credentials, session, cookie,
-  authorization, DSN) shows only "(set, hidden)" or "(not set)"; the database user is always hidden;
-- credentials inside an address are cut: `mysql://user:pw@db/site` becomes `mysql://***@db/site`;
+- a value whose name is a secret (it contains password, passwd, passphrase, secret, token, salt, credential,
+  privatekey or apikey, ends in pwd or dsn, is "key" or ends in Key, _key or -key; SortKey, KeyField and the like are
+  not) shows only "(set, hidden)" or "(not set)"; the report adds a session id, a cookie, an Authorization and a
+  Signature value; the database user is always hidden;
+- the password inside an address is cut: `mysql://user:pw@db/site` becomes `mysql://user:***@db/site`;
 - `password=...`, `token: ...` and the like in free text lose their value;
 - a run of 26 or more letters and digits with a digit in it (a session id, a token, a key) becomes `***`;
 - paths inside the installation are relative to it (`var/site/cache`), paths under a web or home directory outside

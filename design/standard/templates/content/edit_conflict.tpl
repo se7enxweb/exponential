@@ -131,6 +131,10 @@
 <div class="block">
 
 <input class="button" type="submit" name="PublishButton" value="{'Publish data'|i18n( 'design/admin/content/edit' )}" title="{'Publish the contents of the draft that is being edited. The draft will become the published version of the object.'|i18n( 'design/admin/content/edit' )}" />
+{* Pressed "Publish without notification" before the conflict: offered again here, it publishes without notification too *}
+{if is_set( $publish_without_notification )}{if $publish_without_notification}
+<input class="button" type="submit" name="PublishNotNotifyButton" value="{'Publish without notification'|i18n( 'design/admin/content/edit' )}" title="{'Publish without notifying the subscribers of its location: no notification mail is sent for this version.'|i18n( 'design/admin/content/edit' )}" />
+{/if}{/if}
 <input class="button" type="submit" name="ShowPublishedData" value="{'Show the published data'|i18n( 'design/admin/content/edit_draft' )}" title="{'Create a new draft. The contents of the new draft will be copied from the published version.'|i18n( 'design/admin/content/edit_draft' )}" />
 <input type="hidden" name="PublishAfterConflict" value="1" />
 

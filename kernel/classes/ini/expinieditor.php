@@ -347,21 +347,9 @@ class expIniEditor
      */
     public static function isSecret( $variable )
     {
-        $v = (string)$variable;
-        $lower = strtolower( $v );
-        foreach ( array( 'password', 'passwd', 'passphrase', 'secret', 'token', 'salt', 'credential', 'privatekey', 'apikey' ) as $word )
-        {
-            if ( strpos( $lower, $word ) !== false )
-                return true;
-        }
-        $notSecret = array( 'sortkey', 'cachekey', 'primarykey', 'foreignkey', 'indexkey', 'shortcutkey', 'hotkey',
-                            'groupkey', 'sectionkey', 'languagekey', 'idkey' );
-        if ( in_array( $lower, $notSecret, true ) )
-            return false;
-        if ( $lower === 'key' )
-            return true;
-        // ApiKey, LicenseKey, license_key, LICENSE-KEY; not KeyField, Keywords, MonkeyList
-        return (bool)preg_match( '#[a-z0-9]Key$#', $v ) || (bool)preg_match( '#[_-]key$#i', $v );
+        // The rule is expSecretRule's, shared with the settings pages and the system report (it also counts names
+        // ending in pwd or dsn).
+        return expSecretRule::isSecretName( (string)$variable );
     }
 
     /**

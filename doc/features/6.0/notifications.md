@@ -130,6 +130,7 @@ These mails were made on a test installation and written to files; none was sent
 | The content is hidden or invisible | Hidden content is not announced |
 | You chose a digest | Messages wait for the hour of the digest |
 | It is an update of an old version | Only the current version is announced |
+| The editor published it without notification | Corrections can be published without telling the subscribers, where the site allows it ([Publish without notification](publish-without-notification.md)) |
 | Nothing ran yet | Mail is sent by the notification cronjob; ask your administrator |
 | Your account is disabled or has no address | |
 

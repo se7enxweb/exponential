@@ -173,7 +173,7 @@
         <legend class="exp-sr">{'Export type'|i18n( 'design/admin/pdf/edit' )}</legend>
         <div class="exp-choices">
             <label class="exp-choice"><input type="radio" name="DestinationType" value="url"{if $stored} checked="checked"{/if} />
-                <span><strong>{'Generate once'|i18n( 'design/admin/pdf/edit' )}</strong><span class="exp-help">{'Written when the export is saved, and again with Regenerate on the list. The file is kept and downloaded from the list: fast, but it shows the content as it was then.'|i18n( 'design/admin/pdf/edit' )}</span></span></label>
+                <span><strong>{'Generate once'|i18n( 'design/admin/pdf/edit' )}</strong><span class="exp-help">{'Written when the export is saved, and again with Regenerate on the list. The file is kept and served at a public address anyone can download from: fast, but it shows the content as it was then.'|i18n( 'design/admin/pdf/edit' )}</span></span></label>
             <label class="exp-choice"><input type="radio" name="DestinationType" value="download"{if $stored|not} checked="checked"{/if} />
                 <span><strong>{'Generate on the fly'|i18n( 'design/admin/pdf/edit' )}</strong><span class="exp-help">{'Made for every download from the list, always current. Nothing is stored; a large tree takes a while every time.'|i18n( 'design/admin/pdf/edit' )}</span></span></label>
         </div>

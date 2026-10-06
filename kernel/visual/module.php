@@ -35,7 +35,9 @@ $ViewList["menuconfig"] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'single_post_actions' => array( 'StoreButton' => 'Store',
                                     'SelectCurrentSiteAccessButton' => 'SelectCurrentSiteAccess' ),
-    "params" => array() );
+    "params" => array(),
+    // (siteaccess)/<name> opens the page for one siteaccess without changing the remembered choice
+    "unordered_params" => array( 'siteaccess' => 'SiteAccess' ) );
 
 $ViewList["templatelist"] = array(
     "script" => "templatelist.php",

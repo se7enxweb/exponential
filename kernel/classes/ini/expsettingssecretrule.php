@@ -11,7 +11,7 @@
  * The rule the settings pages (settings/view, settings/edit) mask values by.
  *
  * A setting is a secret when its name
- *  - is one expIniEditor::isSecret() recognises (the rule of exp:ini and of the audit log; it cannot be switched
+ *  - is one expSecretRule::isSecretName() recognises (the shared rule of exp:ini, the audit log and the system report; it cannot be switched
  *    off here, so the page never shows more than the command line does), or
  *  - matches an entry of site.ini [SettingsViewSettings] MaskedNameList[] and none of UnmaskedNameList[].
  *    An entry without '*' matches anywhere in the name, ignoring case ("password" matches TransportPassword);
@@ -103,7 +103,8 @@ class expSettingsSecretRule
             $name = substr( $name, 0, -2 );
         if ( $name === '' )
             return false;
-        if ( class_exists( 'expIniEditor' ) && expIniEditor::isSecret( $name ) )
+        // the shared rule (expSecretRule, also exp:ini's, the audit log's and the system report's) comes first
+        if ( expSecretRule::isSecretName( $name ) )
             return true;
         foreach ( $this->notSecret as $entry )
         {
@@ -164,22 +165,15 @@ class expSettingsSecretRule
 
     /**
      * A value of any setting with an embedded password replaced: the password of user:password@ in a URL or DSN,
-     * and the value of password=, pwd=, pass=, secret=, token=, apikey= in a connection or query string.
+     * and the value of password=, pwd=, pass=, secret=, token=, apikey= (also "name: value") pairs (expSecretRule::maskInline()).
      *
      * @param string $value
      * @return string
      */
     public static function maskInline( $value )
     {
-        if ( !is_string( $value ) || $value === '' )
-            return $value;
-        // scheme://user:password@host (also without a user: scheme://:password@host)
-        $value = preg_replace( '#(\b[a-z][a-z0-9+.\-]*://[^\s:/@]*:)[^\s@/]+@#i', '$1' . self::MASK . '@', $value );
-        // user:password@host without a scheme, when that is the whole value
-        $value = preg_replace( '#^([\w.%+\-]+:)(?!//)[^\s@/]+(@[\w.\-]+(:\d+)?(/\S*)?)$#', '$1' . self::MASK . '$2', $value );
-        // password=..., pwd=... up to ; & , or white space
-        $value = preg_replace( '#(\b(?:password|passwd|pwd|pass|secret|token|apikey|api_key)\s*=\s*)[^;&,\s]+#i', '$1' . self::MASK, $value );
-        return $value;
+        // the shared rule: the password of user:password@ and the values of password=..., token: ... pairs
+        return expSecretRule::maskInline( $value, self::MASK );
     }
 
     /**

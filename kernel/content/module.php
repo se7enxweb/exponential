@@ -39,6 +39,7 @@ $ViewList['edit'] = array(
                                     'TranslateButton' => 'Translate',
                                     'VersionsButton' => 'VersionEdit',
                                     'PublishButton' => 'Publish',
+                                    'PublishNotNotifyButton' => 'Publish',
                                     'DiscardButton' => 'Discard',
                                     'BrowseNodeButton' => 'BrowseForNodes',
                                     'RemoveAssignmentButton' => 'RemoveAssignments',
@@ -142,7 +143,8 @@ $ViewList['versionview'] = array(
     'single_post_actions' => array( 'ChangeSettingsButton' => 'ChangeSettings',
                                     'EditButton' => 'Edit',
                                     'VersionsButton' => 'Versions',
-                                    'PreviewPublishButton' => 'Publish' ),
+                                    'PreviewPublishButton' => 'Publish',
+                                    'PreviewPublishNotNotifyButton' => 'Publish' ),
     'post_action_parameters' => array( 'ChangeSettings' => array( 'Language' => 'SelectedLanguage',
                                                                   'PlacementID' => 'SelectedPlacement',
                                                                   'SiteAccess' => 'SelectedSiteAccess',
@@ -369,7 +371,8 @@ $ViewList['draft'] = array(
     'unordered_params' => array( 'offset' => 'Offset' ) );
 
 $ViewList['history'] = array(
-    'functions' => array( 'read', 'edit' ),
+    // The view decides for the object (History::canOpen()): who may edit it, or read it with an edit policy elsewhere
+    'functions' => array( 'read or edit' ),
     'default_navigation_part' => 'ezcontentnavigationpart',
     'ui_context' => 'edit',
     'script' => 'history.php',
@@ -765,5 +768,9 @@ $FunctionList['dashboard'] = array();
 $FunctionList['view_system_url'] = array();
 // Seeing and acting on everybody's content jobs (content/jobs/(all)/1, content/job/<id>).
 $FunctionList['jobs'] = array();
+// "Publish without notification" in content/edit and the version preview, where notification.ini
+// [NotificationSettings] PublishWithoutNotification is enabled. Without the function the button is hidden and a
+// posted one publishes with notification. No limitations of its own: a content/* policy grants it.
+$FunctionList['publish_without_notification'] = array();
 
 ?>

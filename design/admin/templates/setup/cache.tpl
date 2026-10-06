@@ -1,5 +1,5 @@
 {* Feedbacks. *}
-{foreach array( 'opcache', 'apcu', 'querycache', 'httpcache' ) as $phpCache}
+{foreach array( 'opcache', 'apcu', 'querycache', 'httpcache', 'shared' ) as $phpCache}
 {if $cache_cleared[$phpCache]}
     <div class="{if $cache_cleared[$phpCache][0]}message-feedback{else}message-warning{/if}">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {$cache_cleared[$phpCache][1]|wash}</h2>
@@ -120,6 +120,64 @@
 
 
 
+
+{* The HTTP cache, the query cache and the SQL profile: the buttons Setup > System information has as well, done
+   by the same code (expCacheManager::sharedActionFromPost(), setup/managecache, the form token). The figures are
+   on System information. *}
+<div class="context-block" id="cache-maintenance">
+{literal}<style>
+#cache-maintenance button.button, #cache-maintenance button.button-disabled { margin: 2px 4px 2px 0; padding: 4px 12px; border-radius: var(--a4-radius-s, 8px); font: 600 13px/1.3 var(--a4-font, inherit); text-shadow: none; cursor: pointer;
+    background-color: #fff; border: 1px solid #c9ced6; color: var(--a4-ink, #1f2430); transition: background-color .15s ease, border-color .15s ease; }
+#cache-maintenance button.button:hover { background-color: var(--a4-soft, #f6f7f9); border-color: #9aa1ad; }
+#cache-maintenance button.button-disabled, #cache-maintenance button[disabled] { background-color: var(--a4-soft, #f6f7f9); border-color: var(--a4-line, #e3e6eb); color: #6b7280; cursor: not-allowed; }
+</style>{/literal}
+
+{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
+
+<h2 class="context-title">{'HTTP cache, query cache and SQL profile'|i18n( 'design/admin/setup/cache' )}</h2>
+
+{* DESIGN: Mainline *}<div class="header-mainline"></div>
+
+{* DESIGN: Header END *}</div></div>
+
+{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
+
+<p><small>{'The same buttons are on'|i18n( 'design/admin/setup/cache' )} <a href="{'/setup/info'|ezurl( 'no' )}#http-cache">{'System information'|i18n( 'design/admin/setup/cache' )}</a>, {'with the hit rates, the entries and the profile of recent requests.'|i18n( 'design/admin/setup/cache' )}</small></p>
+
+<table class="list cache" cellspacing="0">
+
+<tr>
+    <th width="61%">{'Categories'|i18n( 'design/admin/setup/cache' )}</th>
+    <th width="39%"></th>
+</tr>
+
+<tr class="bglight">
+<td>{'Whole pages (HTTP cache)'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $http_cache_enabled}{'enabled'|i18n( 'design/admin/setup/cache' )}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
+<td>
+    <button class="{if $http_cache_enabled}button{else}button-disabled{/if}" type="submit" name="HttpCacheAction" value="gc"{if $http_cache_enabled|not} disabled="disabled"{/if} title="{'Removes expired and purged entries, orphaned bodies and old user records from disk. Pages still valid are kept.'|i18n( 'design/admin/setup/cache' )}">{'Remove dead entries'|i18n( 'design/admin/setup/cache' )}</button>
+    <button class="{if $http_cache_enabled}button{else}button-disabled{/if}" type="submit" name="HttpCacheAction" value="reset"{if $http_cache_enabled|not} disabled="disabled"{/if} title="{'Starts the hit and miss counters of the HTTP cache again.'|i18n( 'design/admin/setup/cache' )}">{'Reset counters'|i18n( 'design/admin/setup/cache' )}</button>
+</td>
+</tr>
+
+<tr class="bgdark">
+<td>{'Database query results (SQL query cache)'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $query_cache_enabled}{$query_cache_mode|wash}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
+<td><button class="button" type="submit" name="QueryCacheAction" value="reset" title="{'Starts the query cache counters of this server again; the stored results are kept.'|i18n( 'design/admin/setup/cache' )}">{'Reset the counters'|i18n( 'design/admin/setup/cache' )}</button></td>
+</tr>
+
+<tr class="bglight">
+<td>{'SQL profile of every request'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $sql_profile_on}{'on'|i18n( 'design/admin/setup/cache' )}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
+<td>{if $sql_profile_on}
+    <button class="button" type="submit" name="SQLProfileAction" value="off" title="{'Stops writing a line per request to var/tmp/sql_profile.log.'|i18n( 'design/admin/setup/cache' )}">{'Switch the SQL profile off'|i18n( 'design/admin/setup/cache' )}</button>
+{else}
+    <button class="button" type="submit" name="SQLProfileAction" value="on" title="{'Every request then writes how many statements it ran, and how many were exact repeats, to var/tmp/sql_profile.log, on every server.'|i18n( 'design/admin/setup/cache' )}">{'Switch the SQL profile on'|i18n( 'design/admin/setup/cache' )}</button>
+{/if}</td>
+</tr>
+
+</table>
+
+{* DESIGN: Content END *}</div></div></div>
+
+</div>
 
 {* Cache overview window. *}
 

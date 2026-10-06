@@ -106,6 +106,10 @@ class expPDFExportTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $info['can_regenerate'] );
         $this->assertFalse( $info['attention'] );
         $this->assertStringContainsString( 'recipes', $info['search'] );
+        $this->assertSame( '', $info['public_url'], 'no path given, no address' );
+        $withPath = expPDFExportInfo::infoOf( self::row(), self::node(), self::file() + array( 'path' => 'var/site/storage/pdf/handbook.pdf' ), array() );
+        $this->assertSame( '/var/site/storage/pdf/handbook.pdf', $withPath['public_url'] );
+        $this->assertSame( '', expPDFExportInfo::infoOf( self::row(), self::node(), self::file( false ) + array( 'path' => 'var/site/storage/pdf/handbook.pdf' ), array() )['public_url'] );
 
         $gone = expPDFExportInfo::infoOf( self::row(), null, self::file(), array() );
         $this->assertSame( 'source_missing', $gone['problem'] );
