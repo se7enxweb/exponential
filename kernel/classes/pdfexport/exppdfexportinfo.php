@@ -138,6 +138,9 @@ class expPDFExportInfo
             'file_size' => $fileExists ? (int)$file['size'] : 0,
             'file_mtime' => $fileExists ? (int)$file['mtime'] : 0,
             'download_name' => expPDFExportFile::downloadName( $fileName, $title ),
+            // The address the web server serves the stored file at (.htaccess_root and Velocity's static paths list
+            // var/*/storage/pdf/<name>.pdf); relative to the installation root, for the template's ezroot.
+            'public_url' => $fileExists && !empty( $file['path'] ) ? '/' . ltrim( (string)$file['path'], '/' ) : '',
             'can_download' => $stored ? $fileExists : ( $status === 'onthefly' && $problem === false ),
             'can_regenerate' => $stored && $problem === false,
             'problem' => $problem,

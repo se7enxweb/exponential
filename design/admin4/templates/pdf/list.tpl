@@ -27,7 +27,7 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="exp-intro">{'A PDF export turns a node of the content tree, and if wanted the nodes below it, into one PDF document with an optional front page and a table of contents. Generated once, the file is stored and downloaded from here until it is regenerated; generated on the fly, it is made anew for every download.'|i18n( 'design/admin/pdf/list' )}</p>
+<p class="exp-intro">{'A PDF export turns a node of the content tree, and if wanted the nodes below it, into one PDF document with an optional front page and a table of contents. Generated once, the file is stored and served at a public address until it is regenerated; generated on the fly, it is made anew for every download.'|i18n( 'design/admin/pdf/list' )}</p>
 
 {if $feedback}
     {switch match=$feedback.type}
@@ -176,6 +176,12 @@
                     {else}<span class="exp-meta">{'not generated'|i18n( 'design/admin/pdf/list' )}</span>{/if}
                 {else}<span class="exp-file"><code>{$info.download_name|wash}</code></span><span class="exp-meta">{'made anew for every download'|i18n( 'design/admin/pdf/list' )}</span>{/if}</dd>
         </div>
+        {if $info.public_url|ne( '' )}
+        <div class="exp-field-wide" style="grid-column: 1 / -1;">
+            <dt>{'Public address'|i18n( 'design/admin/pdf/list' )}</dt>
+            <dd class="exp-url"><a href={$info.public_url|ezroot}>{concat( ezsys( 'serverurl' ), $info.public_url|ezroot( 'no' ) )|wash}</a><span class="exp-meta">{'Anyone with this address can download the file, without signing in.'|i18n( 'design/admin/pdf/list' )}</span></dd>
+        </div>
+        {/if}
         <div>
             <dt>{'Front page'|i18n( 'design/admin/pdf/list' )}</dt>
             <dd>{if $info.show_frontpage}{'Yes'|i18n( 'design/admin/pdf/list' )}{else}{'No'|i18n( 'design/admin/pdf/list' )}{/if}</dd>

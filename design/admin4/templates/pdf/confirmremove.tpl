@@ -25,7 +25,7 @@
     <ul class="exp-consequences">
         <li>{'The exports below are removed with their settings, and a draft somebody has open goes with them.'|i18n( 'design/admin/pdf/list' )}</li>
         {if $files|gt( 0 )}
-        <li>{'Their %count stored files (%size) are deleted.'|i18n( 'design/admin/pdf/list',, hash( '%count', $files, '%size', $bytes|si( byte, auto ) ) )|wash}</li>
+        <li>{'Their %count stored files (%size) are deleted. Their public addresses, wherever they were shared, stop working.'|i18n( 'design/admin/pdf/list',, hash( '%count', $files, '%size', $bytes|si( byte, auto ) ) )|wash}</li>
         {else}
         <li>{'None of them has a stored file, so no file is deleted.'|i18n( 'design/admin/pdf/list' )}</li>
         {/if}
@@ -49,6 +49,10 @@
                     <dd>{if $item.info.source_exists}{$item.info.source_name|wash}{elseif $item.info.source_node_id|gt( 0 )}<span class="exp-muted">{'Node %id (no longer exists)'|i18n( 'design/admin/pdf/list',, hash( '%id', $item.info.source_node_id ) )}</span>{else}<span class="exp-muted">{'not chosen'|i18n( 'design/admin/pdf/list' )}</span>{/if}</dd></div>
                 <div><dt>{'Deleted with it'|i18n( 'design/admin/pdf/list' )}</dt>
                     <dd>{if $item.info.file_exists}<span class="exp-file"><code>{$item.info.file_name|wash}</code></span><span class="exp-meta">{'%size, generated %date'|i18n( 'design/admin/pdf/list',, hash( '%size', $item.info.file_size|si( byte, auto ), '%date', $item.info.file_mtime|l10n( shortdatetime ) ) )|wash}</span>{else}<span class="exp-muted">{'no stored file'|i18n( 'design/admin/pdf/list' )}</span>{/if}</dd></div>
+                {if $item.info.public_url|ne( '' )}
+                <div style="grid-column: 1 / -1;"><dt>{'Address that stops working'|i18n( 'design/admin/pdf/list' )}</dt>
+                    <dd class="exp-url"><code>{concat( ezsys( 'serverurl' ), $item.info.public_url|ezroot( 'no' ) )|wash}</code></dd></div>
+                {/if}
             </dl>
         </li>
     {/foreach}
