@@ -5323,7 +5323,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 067830bbe2e678e9370a4a9fde87bc08  kernel/private/classes/exceptions/kernel/modulenotfound.php
 3a2502512e2a0a3ccb164d51db7a3889  kernel/private/classes/exceptions/kernel/moduleviewdisabled.php
 2898970b3f0a92a99c65c02bf7b1ffab  kernel/private/classes/exceptions/kernel/moduleviewnotfound.php
-ee0e730337d375dcb2b9c8902694a82f  kernel/private/classes/expcontentaccessreport.php
+330a3389deaa6670e6677eaf993b9a73  kernel/private/classes/expcontentaccessreport.php
 2ff49979d10dde25f4935f802ac78111  kernel/private/classes/ezautoloadgenerator.php
 7642907aab26669358d257577baedeab  kernel/private/classes/ezcontentobjectstate.php
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php

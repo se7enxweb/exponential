@@ -95,11 +95,8 @@ class expContentAccessReport
     protected static function refusals( $accessList, $function )
     {
         $refusals = array();
-        if ( !is_array( $accessList ) )
-        {
-            return $refusals;
-        }
-        if ( empty( $accessList['PolicyList'] ) )
+        // edit without a policy answers with the rule of objects never published (0) instead of an access list
+        if ( !is_array( $accessList ) || empty( $accessList['PolicyList'] ) )
         {
             $refusals[] = array( 'policy' => null, 'limitation' => null, 'required' => array(), 'handler' => null,
                                  'text' => "no policy for content/$function" );
