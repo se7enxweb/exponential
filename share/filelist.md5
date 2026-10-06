@@ -5628,7 +5628,7 @@ c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.ph
 3fb46e2cc3fe98e4a440d4cc02d8e12c  kernel/private/classes/views/setup/extensions.php
 ba095e1065f22b1f8ce06eaaaeaeb8a6  kernel/private/classes/views/setup/ezsetup.php
 af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerextension.php
-b4aa7a2ecb49758bedf54c6135655724  kernel/private/classes/views/setup/info.php
+d52e99f8c0ac6e1339b5d046c43f914c  kernel/private/classes/views/setup/info.php
 9ec471cd1828163cca17e995aaa27538  kernel/private/classes/views/setup/kerneloverride.php
 c52c0969e44db3dd969bdf15caf1427c  kernel/private/classes/views/setup/maintenance.php
 f3d410d2a77820dc00af01f2bb3ffc68  kernel/private/classes/views/setup/menuconfig.php
