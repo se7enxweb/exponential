@@ -227,7 +227,10 @@ class eZContentFunctions
      */
     public static function updateAndPublishObject( eZContentObject $object, array $params )
     {
-        if ( !array_key_exists( 'attributes', $params ) and !is_array( $params['attributes'] ) and count( $params['attributes'] ) > 0 )
+        // Refused before anything changes: a missing or empty list was meant to be
+        // refused here, but the check (joined with and) let both through, and a list
+        // that is no array failed only after a version was made, in an open transaction
+        if ( !isset( $params['attributes'] ) || !is_array( $params['attributes'] ) || count( $params['attributes'] ) == 0 )
         {
             eZDebug::writeError( 'No attributes specified for object' . $object->attribute( 'id' ), __METHOD__ );
             return false;

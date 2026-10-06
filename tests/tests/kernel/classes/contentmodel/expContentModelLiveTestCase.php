@@ -56,6 +56,19 @@ abstract class expContentModelLiveTestCase extends PHPUnit\Framework\TestCase
         static::loginAdmin();
     }
 
+    protected function tearDown(): void
+    {
+        // A test that failed inside a transaction leaves it open; everything after it, the removal of the test
+        // content included, would then be rolled back at the end of the run
+        $db = eZDB::instance();
+        $open = (int)$db->transactionCounter();
+        while ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        parent::tearDown();
+        if ( $open > 0 )
+            $this->fail( "the test left $open database transaction(s) open; rolled back" );
+    }
+
     protected static function loginAdmin()
     {
         $admin = eZUser::fetchByName( 'admin' );
