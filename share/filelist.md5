@@ -2895,7 +2895,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-632015bad1c50c16e281c9aa9e09d499  doc/changelogs/6.0/6.0.15.md
+4fbe814640303405a7c5c669ed4545dd  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3336,6 +3336,7 @@ cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
 5eca0ca90770dd3b686d7743ecb9d33a  doc/features/6.0/role-policy-order.md
 f1b7156f5a50c09f2d0dad23f221a6d7  doc/features/6.0/rss-podcast-and-feed-list.md
 09d27a55a6abd2411d3ec208cbd7cc9c  doc/features/6.0/setup-wizard-and-editor-siteaccess.md
+8b4bd1775de8e6c25c4d9edf2c537572  doc/features/6.0/siteaccess-host-and-language-matching.md
 f2e61c10e09e6bcc8b934feb95c4ad08  doc/features/6.0/sqlite-database.md
 b4237bb304d831cb1e2814f1830146a4  doc/features/6.0/static-cache-generator.md
 f6a29d2c690968846f5c87c97133e1e8  doc/features/6.0/store-dashboard.md
@@ -3345,7 +3346,7 @@ d4c0be57af82fd1faea364e278b21df7  doc/features/6.0/subitems-table-options.md
 dc7c33df0480339dc71deb0cd1e863fe  doc/features/6.0/template-editor-overrides.md
 a6b2159c09f6336f87bd6e48cf3e8240  doc/features/6.0/template-override-ordering.md
 a41622d93efd6c2f53a94f2baa3eed35  doc/features/6.0/template-path-comments.md
-7ac85e4de6c2c82ffb7a336a0eb1e1b2  doc/features/6.0/translations-and-languages.md
+9c468759f50c3e00207d31ceb9ab0cd4  doc/features/6.0/translations-and-languages.md
 617186ceb009791f653e4cbf277d7005  doc/features/6.0/trash-who-and-where.md
 9af0ca11b275e34e8a215ca6983c1589  doc/features/6.0/valkey-cache-hooks.md
 6a1799eb3cafeb0ea30fec24517bea84  doc/features/6.0/velocity-control-panel.md
