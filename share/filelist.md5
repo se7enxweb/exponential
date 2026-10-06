@@ -3220,7 +3220,7 @@ cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 0efc0a33fb1492529cd85b8d230d76d5  doc/features/6.0/class-attribute-move-to-edge.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 572d04f3da4c1377a06bd7c8c95f615b  doc/features/6.0/content-jobs.md
-6913ee5faa5fd13d9303bbcd2da13d8a  doc/features/6.0/cronjobs-console.md
+5dc9aef1305f6bb91f4dd0fdbb4fd038  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
 de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distribution.md
@@ -3381,6 +3381,10 @@ a101a3bb9c015da9204c6718c2598563  doc/guides/images/maintenance/installation-run
 5eba9aa70709fa0375f232aefaa46c35  doc/guides/images/object-states/edit.png
 8fefea8c5812e4bd258477ec07f5f70a  doc/guides/images/object-states/group.png
 53f70a93622ee392535175f10f6760c5  doc/guides/images/object-states/groups.png
+2bbc8216849c3ae8309f9f02e40f1dc6  doc/guides/images/workflows/confirm.png
+8d19a39038e4b5fd8c9aa3bb1d006424  doc/guides/images/workflows/controls.png
+2d0dfaacccd86266df5bfc75450bbcff  doc/guides/images/workflows/process-card.png
+261f6c6b6a30183007fd97d521ca819d  doc/guides/images/workflows/status-and-overview.png
 fe6be1787f910abc80987d58c54b2d16  doc/guides/mail-preferences-administrator.md
 f46af9cdee469946176953da2d241afc  doc/guides/mail-preferences-developer.md
 1f9793307d567a9779d98402c7ba398b  doc/guides/maintenance-mode.md
@@ -3393,6 +3397,7 @@ b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 0c6a4d567b4802cf8af7f38be42ed484  doc/guides/security-and-audit.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
 e6b8e0151adceb42e7d3f1ef1fd5cacb  doc/guides/upgrading.md
+60c8ae9bf5487c3a73ad4c61967b3221  doc/guides/workflows.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md
 9775fae8288f43e5b1b4de97824ba096  doc/history/2024/2024-01a.md
 d565571cb7a0c1609e2d979975017f15  doc/history/2024/2024-01b.md
@@ -5565,7 +5570,7 @@ bbb76adbc06cb9c5a4feb2a68950bf07  kernel/private/classes/views/visual/toolbarlis
 04fa77af251994dccc065aad11c233ec  kernel/private/classes/views/workflow/groupedit.php
 3b6edb3eee8abb53ba599d4f4deaa7b5  kernel/private/classes/views/workflow/grouplist.php
 941b429079a833d76cd898af7bd1e4bb  kernel/private/classes/views/workflow/process.php
-a724f673c5d5cd65c74a62c71858d54b  kernel/private/classes/views/workflow/processlist.php
+1a9ccbeb18b1383c68444067318886cd  kernel/private/classes/views/workflow/processlist.php
 d480113aa516c1417056ac8e7fe30404  kernel/private/classes/views/workflow/run.php
 d42424af816959e29248446de81f6689  kernel/private/classes/views/workflow/view.php
 c5af142ee2097a0993eba303b63a28bf  kernel/private/classes/views/workflow/workflowlist.php
