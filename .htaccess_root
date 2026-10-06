@@ -16,6 +16,9 @@ RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+# The stored files of PDF exports generated once (Setup > PDF export): only
+# names of letters, digits, ".", "_" and "-" ending in .pdf, as the export writes them.
+RewriteRule ^var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$ - [L]
 # Of the originals only the images (SVG images are shown from there);
 # other uploads stay behind content/download and its permissions.
 RewriteRule ^var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$ - [L]
