@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
-ae47731fd598a9cf00763f5b0712d7d6  autoload/ezp_kernel.php
+e43170d6e8deec4686b083475b5b93de  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -2953,7 +2953,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-dc2e6c93be8ab7c343eac3cededb69cf  doc/changelogs/6.0/6.0.15.md
+114266ad37d41fb46198fe72fa248d35  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3428,7 +3428,7 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 f9c3f344c473869cfb55845caedce10f  doc/features/6.0/version-preview-view-modes.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 03252bce1fbedb6ed433f227a6265164  doc/glossary.md
-1d79abdd8594ec9d069f7af117b03666  doc/guides/README.md
+30651841dabc401f22d8a57d8877e941  doc/guides/README.md
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 8901e2220940757e41162287af7ecbb4  doc/guides/bookmarks.md
