@@ -218,6 +218,15 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( "{$p}Keep", "{$p}Old" ), array_keys( $entries ) );
     }
 
+    public function testExtensionGivenByAnAbsolutePath()
+    {
+        $p = $this->name;
+        $this->file( 'classes/keep.php', "<?php\nclass {$p}Keep {}\n" );
+        $this->file( 'old/skip.php', "<?php\nclass {$p}Old {}\n" );
+        list( , $entries ) = $this->generated( array( 'basePath' => getcwd() . "/$this->dir/$this->name", 'excludeDirs' => array( 'old' ) ) );
+        $this->assertSame( array( "{$p}Keep" => 'classes/keep.php' ), $entries );
+    }
+
     public function testFileIsWrittenToTheOutputDirectory()
     {
         $p = $this->name;

@@ -740,7 +740,7 @@ class eZAutoloadGenerator
                 $this->updateProgressOutput( self::OUTPUT_PROGRESS_PHASE2 );
                 if ( $mode === self::MODE_SINGLE_EXTENSION )
                 {
-                    $file = getcwd() . DIRECTORY_SEPARATOR . $this->options->basePath . DIRECTORY_SEPARATOR . $file;
+                    $file = $this->singleExtensionBase() . DIRECTORY_SEPARATOR . $file;
                 }
 
                 $tokens = @token_get_all( file_get_contents( $file ) );
@@ -809,7 +809,7 @@ class eZAutoloadGenerator
 
                                 if ( $mode === self::MODE_SINGLE_EXTENSION )
                                 {
-                                    $filePath = ezcBaseFile::calculateRelativePath( $filePath, getcwd() . DIRECTORY_SEPARATOR . $this->options->basePath );
+                                    $filePath = ezcBaseFile::calculateRelativePath( $filePath, $this->singleExtensionBase() );
                                 }
 
                                 // make sure we store cross-platform file system paths,
@@ -851,6 +851,20 @@ class eZAutoloadGenerator
         }
 
         return $retArray;
+    }
+
+    /**
+     * The directory of the single extension being generated, as an absolute path: the base path
+     * given, resolved against the current directory when it is relative.
+     *
+     * @return string
+     */
+    protected function singleExtensionBase()
+    {
+        $base = $this->options->basePath;
+        if ( $base !== '' && ( $base[0] === '/' || $base[0] === '\\' || preg_match( '@^[A-Za-z]:[\\\\/]@', $base ) ) )
+            return rtrim( $base, '/\\' );
+        return getcwd() . DIRECTORY_SEPARATOR . $base;
     }
 
     /**
