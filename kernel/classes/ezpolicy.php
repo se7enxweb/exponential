@@ -562,7 +562,7 @@ class eZPolicy extends eZPersistentObject
      */
     public function saveTemporary()
     {
-        if ( $this->attribute( 'original_id' ) === 0 )
+        if ( (int)$this->attribute( 'original_id' ) === 0 )
             throw new Exception( __METHOD__ . ' can only be used on a temporary policy' );
 
         // 1. Remove the original policy
