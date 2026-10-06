@@ -18,7 +18,7 @@
 {section name=All loop=$roles sequence=array(bglight,bgdark)}
 <tr>
     <td class="{$All:sequence}">
-    <a href={concat("/role/view/",$All:item.id)|ezurl}>{$All:item.name}</a>
+    <a href={concat("/role/view/",$All:item.id)|ezurl}>{$All:item.name|wash}</a> <span class="role-assignment-count" title="{'How many users and user groups the role is assigned to'|i18n( 'design/admin/role/list' )}">({first_set( $assignment_counts[$All:item.id], 0 )})</span>
     </td>
     <td class="{$All:sequence}">
 	<a href={concat("/role/edit/",$All:item.id)|ezurl}><img src={"edit.gif"|ezimage} alt="{'Edit'|i18n('design/standard/role')}" title="{'Edit role'|i18n('design/standard/role')}" /></a>

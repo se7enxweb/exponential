@@ -35,6 +35,11 @@ class eZSiteAccess
     const SUBTYPE_PRE = 1;
     const SUBTYPE_POST = 2;
 
+    /**
+     * How many languages of an Accept-Language header acceptedLanguages() reads.
+     */
+    const MAX_ACCEPTED_LANGUAGES = 32;
+
     static function siteAccessList()
     {
         $siteAccessList = array();
@@ -248,7 +253,7 @@ class eZSiteAccess
                                     continue;
                                 $matchMapHost = $matchMapItem[0];
                                 $matchMapAccess = $matchMapItem[1];
-                                $matchHostMethod = isset( $matchMapItem[2] ) && $matchMapItem[2] !== '' ? $matchMapItem[2] : $defaultHostMatchMethod;
+                                $matchHostMethod = isset( $matchMapItem[2] ) && trim( $matchMapItem[2] ) !== '' ? trim( $matchMapItem[2] ) : $defaultHostMatchMethod;
                                 if ( self::hostMatches( $host, $matchMapHost, $matchHostMethod ) )
                                 {
                                     $access['name'] = $matchMapAccess;
@@ -363,7 +368,8 @@ class eZSiteAccess
                         if ( !$ini->hasVariable( 'SiteAccessSettings', 'NormalizeSANames' ) || $ini->variable( 'SiteAccessSettings', 'NormalizeSANames' ) == 'enabled' )
                         {
                             $name = $nameClean;
-                            if ( $ini->hasVariable( 'SiteAccessSettings', 'RedirectOnNormalize' ) && $ini->variable( 'SiteAccessSettings', 'RedirectOnNormalize' ) == 'enabled' )
+                            // Not while reachesSiteAccess() only asks where an address would lead
+                            if ( !self::$matchingTarget && $ini->hasVariable( 'SiteAccessSettings', 'RedirectOnNormalize' ) && $ini->variable( 'SiteAccessSettings', 'RedirectOnNormalize' ) == 'enabled' )
                             {
                                 header( $_SERVER['SERVER_PROTOCOL'] .  " 301 Moved Permanently" );
                                 header( "Status: 301 Moved Permanently" );
@@ -413,13 +419,19 @@ class eZSiteAccess
                                                   $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' )
                                                       ? $ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' ) : 'strict',
                                                   isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ? (string)$_SERVER['HTTP_ACCEPT_LANGUAGE'] : '' );
+            if ( $default !== null && isset( $default['name'] ) && !in_array( $default['name'], $siteAccessList ) )
+            {
+                // A siteaccess that does not exist here would be loaded without settings: keep the default
+                eZDebug::writeError( "DefaultHostUriMatchMapItems names the siteaccess '{$default['name']}', which is not in AvailableSiteAccessList", 'access' );
+                $default = isset( $default['vary'] ) ? array( 'vary' => $default['vary'] ) : null;
+            }
             if ( $default !== null )
             {
                 $access = array_merge( $access, $default );
                 // The web kernel sends the browser on to the address with the segment, once (/ to /ger), so the
                 // pages a cache keeps have one address each: only when that address reaches the siteaccess through
                 // a probe of MatchOrder, else the redirect would come back here
-                if ( $default['uri_part']
+                if ( !empty( $default['uri_part'] )
                      && ( !$ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriRedirect' )
                           || $ini->variable( 'SiteAccessSettings', 'DefaultHostUriRedirect' ) !== 'disabled' ) )
                 {
@@ -474,28 +486,45 @@ class eZSiteAccess
      * @param string $host
      * @param string $defaultMethod
      * @param string $acceptLanguage the Accept-Language header of the request
-     * @return array|null array( name, uri_part[, vary] ) with vary = Accept-Language when the entries for the host have
-     *                    more than one uri part (language variants), so the answer depends on the browser; null when no
-     *                    entry for the host applies
+     * @return array|null array( name, uri_part[, vary] ) with vary = Accept-Language when the answer for the host
+     *                    depends on the browser: an entry names a language, and the entries for the host lead to more
+     *                    than one siteaccess or segment, or none of them applies without a language. When the answer
+     *                    depends on the browser but this browser got no entry, only array( vary ) (the default
+     *                    siteaccess answers, but not for every browser). null when no entry is for the host.
      */
     static function matchDefaultHostUri( array $items, $host, $defaultMethod, $acceptLanguage )
     {
         $forHost = array();
-        $variants = array();
+        $outcomes = array();
+        $hasLanguage = false;
+        $hasFallback = false;
         foreach ( $items as $item )
         {
             $item = (array)$item;
             // An empty host matches any host with part or start, as in HostUriMatchMapItems
-            if ( !isset( $item[2] ) || (string)$item[2] === '' )
+            if ( !isset( $item[2] ) || trim( (string)$item[2] ) === '' )
                 continue;
-            $method = isset( $item[3] ) && $item[3] !== '' && $item[3] !== 'default' ? (string)$item[3] : (string)$defaultMethod;
+            $method = isset( $item[3] ) && trim( (string)$item[3] ) !== '' && trim( (string)$item[3] ) !== 'default'
+                ? trim( (string)$item[3] ) : (string)$defaultMethod;
             if ( !self::hostMatches( $host, (string)$item[0], $method ) )
                 continue;
-            $language = isset( $item[4] ) ? strtolower( trim( (string)$item[4] ) ) : '';
-            $uri = trim( (string)$item[1], '/' );
-            $variants[$uri] = true;
-            $forHost[] = array( 'uri' => $uri, 'name' => (string)$item[2], 'language' => $language );
+            // de_DE as a locale is written, de-DE as a browser sends it
+            $language = isset( $item[4] ) ? strtolower( str_replace( '_', '-', trim( (string)$item[4] ) ) ) : '';
+            $uri = trim( trim( (string)$item[1] ), '/' );
+            $name = trim( (string)$item[2] );
+            $outcomes[$name . "\0" . $uri] = true;
+            if ( $language === '' )
+                $hasFallback = true;
+            else
+                $hasLanguage = true;
+            $forHost[] = array( 'uri' => $uri, 'name' => $name, 'language' => $language );
         }
+        if ( !$forHost )
+            return null;
+
+        // The browser makes a difference only where a language entry can lead elsewhere than the others: to another
+        // siteaccess or segment, or, without an entry for every browser, to the default siteaccess
+        $vary = $hasLanguage && ( count( $outcomes ) > 1 || !$hasFallback );
 
         $chosen = null;
         foreach ( self::acceptedLanguages( $acceptLanguage ) as $wanted )
@@ -521,12 +550,11 @@ class eZSiteAccess
             }
         }
         if ( $chosen === null )
-            return null;
+            return $vary ? array( 'vary' => 'Accept-Language' ) : null;
 
         $access = array( 'name' => $chosen['name'],
-                         'uri_part' => $chosen['uri'] !== '' ? explode( '/', $chosen['uri'] ) : array() );
-        // Only where the host has more than one language variant does the browser make a difference
-        if ( count( $variants ) > 1 )
+                         'uri_part' => $chosen['uri'] !== '' ? array_values( array_filter( explode( '/', $chosen['uri'] ), 'strlen' ) ) : array() );
+        if ( $vary )
             $access['vary'] = 'Accept-Language';
         return $access;
     }
@@ -541,17 +569,18 @@ class eZSiteAccess
     static function acceptedLanguages( $header )
     {
         $languages = array();
-        foreach ( explode( ',', (string)$header ) as $position => $part )
+        // A browser names a handful; the rest of an overlong header is not read
+        foreach ( array_slice( explode( ',', (string)$header, self::MAX_ACCEPTED_LANGUAGES + 1 ), 0, self::MAX_ACCEPTED_LANGUAGES ) as $position => $part )
         {
             $fields = explode( ';', $part );
             $tag = strtolower( trim( $fields[0] ) );
-            if ( $tag === '' || $tag === '*' || !preg_match( '/^[a-z0-9-]+$/', $tag ) )
+            if ( $tag === '' || $tag === '*' || strlen( $tag ) > 35 || !preg_match( '/^[a-z0-9]+(-[a-z0-9]+)*$/', $tag ) )
                 continue;
             $quality = 1.0;
             foreach ( array_slice( $fields, 1 ) as $parameter )
             {
-                if ( preg_match( '/^\s*q\s*=\s*([0-9.]+)\s*$/i', $parameter, $match ) )
-                    $quality = (float)$match[1];
+                if ( preg_match( '/^\s*q\s*=\s*([0-9]*\.?[0-9]+)\s*$/i', $parameter, $match ) )
+                    $quality = min( 1.0, (float)$match[1] );
             }
             if ( $quality <= 0 )
                 continue;
@@ -567,6 +596,12 @@ class eZSiteAccess
      * (ends with it) or part (contains it), as host_uri always matched. An unknown method matches nothing and is
      * logged.
      *
+     * Host names do not depend on case, so both are compared in lower case, without the dot a fully qualified name
+     * may end with, and a host written in Unicode (münchen.example) is compared in its ASCII form
+     * (xn--mnchen-3ya.example), which is what a browser sends. A port on $host (example.com:8080) is ignored unless
+     * $matchHost names one itself. An empty $matchHost matches every host with start and part, and none with strict
+     * and end.
+     *
      * @param string $host
      * @param string $matchHost
      * @param string $method strict, start, end or part
@@ -574,8 +609,10 @@ class eZSiteAccess
      */
     static function hostMatches( $host, $matchHost, $method )
     {
-        $host = (string)$host;
-        $matchHost = (string)$matchHost;
+        $host = self::normalizeHost( $host );
+        $matchHost = self::normalizeHost( $matchHost );
+        if ( !preg_match( '/^(\[[^\]]*\]|[^:]*):\d+$/', $matchHost ) && preg_match( '/^(\[[^\]]*\]|[^:]*):\d+$/', $host, $withoutPort ) )
+            $host = $withoutPort[1];
         switch ( $method )
         {
             case 'strict':
@@ -583,12 +620,35 @@ class eZSiteAccess
             case 'start':
                 return strpos( $host, $matchHost ) === 0;
             case 'end':
-                return strstr( $host, $matchHost ) === $matchHost;
+                return $matchHost !== '' && str_ends_with( $host, $matchHost );
             case 'part':
                 return strpos( $host, $matchHost ) !== false;
         }
         eZDebug::writeError( "Unknown host match: $method", 'access' );
         return false;
+    }
+
+    /**
+     * A host name as hostMatches() compares it: trimmed, lower case, without a trailing dot, a Unicode name in its
+     * ASCII (punycode) form when the intl extension is there.
+     *
+     * @param string $host
+     * @return string
+     */
+    private static function normalizeHost( $host )
+    {
+        $host = strtolower( rtrim( trim( (string)$host ), '.' ) );
+        if ( $host !== '' && preg_match( '/[\x80-\xff]/', $host ) && function_exists( 'idn_to_ascii' ) )
+        {
+            $port = '';
+            if ( preg_match( '/^(.*)(:\d+)$/', $host, $parts ) )
+                list( , $host, $port ) = $parts;
+            $ascii = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
+            if ( is_string( $ascii ) && $ascii !== '' )
+                $host = strtolower( $ascii );
+            $host .= $port;
+        }
+        return $host;
     }
 
     /**

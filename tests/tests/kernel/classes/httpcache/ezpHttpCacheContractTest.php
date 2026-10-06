@@ -351,6 +351,38 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'site', $c->resolveSiteAccess( 'other.org', '/x' ) );
     }
 
+    /**
+     * The host map with HostMatchMethod and the method of an item, as eZSiteAccess::hostMatches() compares, and an
+     * address DefaultHostUriMatchMapItems may send by the browser's language, which the early exit cannot know.
+     */
+    public function testTheHostMapMethodsAndTheLanguageDefault()
+    {
+        $c = $this->contract( array( 'match' => $this->matchRules( array(
+            'order' => array( 'host', 'uri' ),
+            'hostMap' => array( array( 'bold.example.org', 'bold' ), array( 'admin.example.org', 'admin', 'start' ) ),
+            'hostMethod' => 'strict',
+        ) ) ) );
+        $this->assertSame( 'admin', $c->resolveSiteAccess( 'admin.example.org.test.local', '/x' ), 'the method of the item' );
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'bold.example.org.test.local', '/x' ), 'the others stay strict' );
+        $this->assertSame( 'bold', $c->resolveSiteAccess( 'BOLD.Example.org.', '/x' ), 'host names do not depend on case' );
+
+        $c = $this->contract( array( 'match' => $this->matchRules( array(
+            'order' => array( 'host', 'uri' ),
+            'hostMethod' => 'start',
+        ) ) ) );
+        $this->assertSame( 'bold', $c->resolveSiteAccess( 'bold.example.org.test.local:8080', '/x' ), 'HostMatchMethod' );
+
+        $c = $this->contract( array( 'match' => $this->matchRules( array(
+            'defaultHostUri' => array( array( 'example.org', 'ger', 'bold_ger', 'default', 'de' ), array( 'example.org', 'eng', 'eng' ) ),
+        ) ) ) );
+        $this->assertNull( $c->resolveSiteAccess( 'example.org', '/' ), 'the browser chooses' );
+        $this->assertNull( $c->resolveSiteAccess( 'example.org', '/kontakt' ) );
+        $this->assertSame( 'bold_ger', $c->resolveSiteAccess( 'example.org', '/bold_ger/kontakt' ), 'a probe matched' );
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'other.org', '/' ), 'another host has no entry' );
+        $this->assertSame( 'site', $this->contract( array( 'match' => $this->matchRules() ) )->resolveSiteAccess( 'example.org', '/' ),
+                           'a contract without the setting answers as before' );
+    }
+
     /** HC-14 */
     public function testMatchOrderAndWhatCannotBeKnown()
     {
