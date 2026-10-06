@@ -33,6 +33,9 @@ class eZPolicyLimitation extends eZPersistentObject
      */
     public static $prefetchedValueRows = null;
 
+    /** @var bool true when valueList() could not read the values: the policy of this limitation grants nothing */
+    public $ReadFailed = false;
+
     /** @var array|null|false The definition of the limitation in its module (definitionInModule()); false: not looked up */
     public $DefinitionInModule = false;
 
@@ -560,6 +563,13 @@ class eZPolicyLimitation extends eZPersistentObject
                 $values = eZPersistentObject::fetchObjectList( eZPolicyLimitationValue::definition(),
                                                                null, array( 'limitation_id' => $this->attribute( 'id') ), null, null,
                                                                true);
+                if ( !is_array( $values ) )
+                {
+                    // eZPolicy::accessArray() leaves out a policy with a limitation whose values could not be read
+                    eZRole::noteAccessReadFailure( 'values of limitation', $this->attribute( 'id' ) );
+                    $this->ReadFailed = true;
+                    $values = array();
+                }
             }
 
             if ( $this->LimitValue )

@@ -1879,14 +1879,17 @@ WHERE user_id = '" . $userID . "' AND
      */
     static function generateUserCacheForFile( $filePath, $userId )
     {
+        $failuresBefore = eZRole::$accessReadFailures;
         $cacheData = self::generateUserCacheData( $userId );
 
         if ( $cacheData !== null )
         {
+            // A read of the roles, policies, limitations or values failed: the access array denies what it could not
+            // read, and is used for this request only, never stored, so the next request builds it again
             $cacheData = array( 'content'  => $cacheData,
                                 'scope'    => 'user-info-cache',
                                 'datatype' => 'php',
-                                'store'    => true );
+                                'store'    => eZRole::$accessReadFailures === $failuresBefore );
         }
 
         return $cacheData;
