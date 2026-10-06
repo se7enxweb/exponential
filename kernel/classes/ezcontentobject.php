@@ -6198,6 +6198,28 @@ class eZContentObject extends eZPersistentObject
     }
 
     /**
+     * Returns whether the current user may edit this object: work on the draft $version, make a new draft from it, or
+     * remove it. The answer of the kernel (canEdit()) goes through the filter content/edit/access, so an extension can
+     * let further editors of a draft in, or keep someone out; only true allows.
+     *
+     * The views content/edit, content/history, content/removeeditversion and content/versionview, and the upload and
+     * tag dialogs of the online editor ask this.
+     *
+     * @param eZContentObjectVersion|null $version The version the edit is about, or null when there is none yet
+     * @param string|bool $language A language code, or false
+     * @return bool
+     */
+    function editAccess( $version = null, $language = false )
+    {
+        // canEdit() keeps its answer for the request when it is asked without arguments
+        $allowed = $language === false ? $this->canEdit() : $this->canEdit( false, false, false, $language );
+
+        return ezpEvent::getInstance()->filter( 'content/edit/access', $allowed, $this,
+                                                $version instanceof eZContentObjectVersion ? $version : null,
+                                                (int)eZUser::currentUserID(), $language ) === true;
+    }
+
+    /**
      * Returns true if the current user can translate this content object.
      *
      * @return bool

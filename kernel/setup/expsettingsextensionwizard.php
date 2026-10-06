@@ -185,14 +185,19 @@ class expSettingsExtensionWizard extends expExtensionWizard
     protected static function eventDescriptions()
     {
         return array(
+            'collaboration/item/access' => 'Whether the current user may open a collaboration item: whether they take part, with the item and the user. Only true opens it; how a supervisor of an approval sees it.',
             'content/cache' => 'View caches are being cleared for a list of nodes.',
             'content/cache/all' => 'Every view cache is being cleared.',
             'content/cache/version' => 'One version of one object had its cache cleared.',
             'content/class/cache' => 'A content class changed and its cache is going.',
             'content/download' => 'A file attribute is being served. Where a download count belongs.',
+            'content/download/access' => 'Whether the current user may download a file: the kernel\'s answer (true or false) with the object, the attribute and the version. Only true lets the file out; how an approver who may read only the version gets the file.',
+            'content/edit/access' => 'Whether the current user may edit an object (eZContentObject::editAccess()): canEdit() with the object, the version, the user ID and the language. Only true allows; how further editors of a draft get in.',
+            'content/notification/create' => 'A publication is about to become a notification event: true with the object ID and the version. Anything else leaves the event out, so nobody is told.',
             'content/section/cache' => 'A section changed.',
             'content/state/assign' => 'An object state was assigned to an object.',
             'content/translations/cache' => 'The list of languages changed.',
+            'content/view/cachekeys' => 'The keys a view cache file name is made from (userroles, userlimitedlist, viewparameters, ...), with the user, node and view mode. The keys returned are used: add one for a permission the roles do not show, or leave some out for pages that are the same for everyone.',
             'content/view' => 'A node is about to be viewed; the node id is passed and the one returned is used. How a request for one node is answered with another.',
             'image/alias' => 'An image alias was generated. Where a copy to somewhere else belongs.',
             'image/purgeAliases' => 'Generated image files are being removed for good.',

@@ -759,6 +759,14 @@ class eZContentOperationCollection
      */
     static public function createNotificationEvent( $objectID, $versionNum )
     {
+        // An extension may leave out a publication nobody is to be told about (a class, a publish without
+        // notification): the filter content/notification/create gets true and the ids; only true creates the event
+        $create = ezpEvent::getInstance()->filter( 'content/notification/create', true, (int)$objectID, (int)$versionNum );
+        if ( $create !== true )
+        {
+            eZDebug::writeDebug( "No notification event for object $objectID version $versionNum: a listener of content/notification/create left it out", __METHOD__ );
+            return;
+        }
         $event = eZNotificationEvent::create( 'ezpublish', array( 'object' => $objectID,
                                                                    'version' => $versionNum ) );
         $event->store();

@@ -527,8 +527,9 @@ class Edit extends \Exponential\Runnable\ModuleView
         // If $isAccessChecked is still false we need to check access ourselves.
         if ( !$isAccessChecked )
         {
-            // Check permission for object and version in specified language.
-            if ( !$obj->canEdit( false, false, false, $EditLanguage ) )
+            // Check permission for object and version in specified language (an extension may let further editors
+            // of the draft in, filter content/edit/access)
+            if ( !$obj->editAccess( $version, $EditLanguage ) )
             {
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
                                              array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
