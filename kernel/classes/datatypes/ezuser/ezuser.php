@@ -2211,6 +2211,26 @@ WHERE user_id = '" . $userID . "' AND
         return self::currentUser()->attribute( 'contentobject_id' );
     }
 
+    /**
+     * Returns the user a permission check is made for: the current user when $userID is false, null or 0, otherwise
+     * the user with the content object ID $userID, or null when there is no such user.
+     *
+     * The checkAccess() methods of objects, nodes and versions take the user this way, so code that sends
+     * notifications or builds lists for other people can ask what those people may do.
+     *
+     * @param int|bool|null $userID
+     * @return eZUser|null
+     */
+    static function accessUser( $userID = false )
+    {
+        if ( !$userID )
+        {
+            return self::currentUser();
+        }
+        $user = self::fetch( (int)$userID );
+        return $user instanceof eZUser ? $user : null;
+    }
+
     /*!
      \static
      Creates a hash out of \a $user, \a $password and \a $site according to the type \a $type.

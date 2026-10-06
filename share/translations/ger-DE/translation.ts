@@ -19500,6 +19500,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Namen und eine Beschreibung der Einschränkungen pro Funktion</translation>
     </message>
     <message>
+        <source>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])</source>
+        <translation>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; die Einschränkung kommt über den Filter module/functionlist ([Event] Listeners[]) zu einer Funktion</translation>
+    </message>
+    <message>
+        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</source>
+        <translation>implementiert ezpContentLimitationHandler (checkAccess() für Objekte, Knoten und Versionen, permissionSQL() für Fetches)</translation>
+    </message>
+    <message>
         <source>rest.ini, through the rest provider registry</source>
         <translation>rest.ini, über die Registrierung der REST-Provider</translation>
     </message>

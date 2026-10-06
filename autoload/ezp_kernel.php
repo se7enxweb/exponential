@@ -1154,6 +1154,8 @@ return array(
       'ezpContentFieldNotFoundException'                             => 'kernel/private/api/content/exceptions/content_field_not_found.php',
       'ezpContentFieldSet'                                           => 'kernel/private/api/content/field_set.php',
       'ezpContentLimitCriteria'                                      => 'kernel/private/api/content/criteria/limit.php',
+      'ezpContentLimitation'                                         => 'kernel/private/classes/ezpcontentlimitation.php',
+      'ezpContentLimitationHandler'                                  => 'kernel/private/interfaces/ezpcontentlimitationhandler.php',
       'ezpContentList'                                               => 'kernel/private/api/content/list.php',
       'ezpContentLocation'                                           => 'kernel/private/api/content/location.php',
       'ezpContentLocationCriteria'                                   => 'kernel/private/api/content/criteria/location.php',

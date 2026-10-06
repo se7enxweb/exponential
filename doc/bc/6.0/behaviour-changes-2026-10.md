@@ -32,6 +32,8 @@ Then:
 | The admin dashboard, menus and top tabs show a link only to a user who can open it. | Editors no longer see Design, Newsletter, Export tabs, Users, Upload files, Tags, Layouts, Trash entries or "Change password" without the policy. | Nothing; check your custom roles. |
 | `ezoe/upload` refuses a file whose type is not in `UploadFileExtensions[]`, and any name with an executable extension anywhere (`shell.php.jpg`), when the user's editor engine is not TinyMCE 3 (`UploadExtensionCheck=engine`). | Upload a `.zip` or `.pdf` with the TinyMCE 8 engine. | Add the type to `ezoe.ini [EditorSettings] UploadFileExtensions[]`. |
 | Request rules exist and `Enabled=true`, but `RuleList[]` is empty. | Nothing changes until you list a rule. | See [request rules](../../features/6.0/request-rules.md); check with `php bin/php/ezrequestrules.php -s <siteaccess> --check`. |
+| A content policy limitation the kernel does not know, without a handler (`site.ini [RoleSettings] LimitationHandlers[]`), gives its policy no access in list and tree fetches too; fetches ignored it and listed objects whose pages `checkAccess()` refused. Added 6 October 2026. | Look in **Users > Roles and policies** (or the table `ezpolicy_limitation`) for limitations other than Class, Section, Owner, Group, Node, Subtree, Language, Status and StateGroup_. | Remove them, or install the extension that handles them. See [content policy limitations of extensions](../../features/6.0/content-limitation-handlers.md). |
+| `versionread` and `versionremove` stop at the first limitation of a policy that denies (a `Language` that does not match, a limitation the kernel does not know); the next limitation could allow the policy again. Subtree notifications check the `Group` limitation of `content/read`. Added 6 October 2026. | A role with such a policy reads fewer versions; a subscriber outside the owner's groups gets no mail through a "Self group" policy. | Nothing, unless a role relied on it. |
 
 ## Audit trail
 
@@ -64,6 +66,9 @@ Every kernel command, cronjob part and module view is now a class
 - Code that read the old files for their logic must look in `kernel/private/classes/`.
 - An extension can replace a class with its own subclass:
   `site.ini [RunnableSettings] Implementation[<class>]=<subclass>`.
+- `checkAccess()` of `eZContentObject`, `eZContentObjectTreeNode` and `eZContentObjectVersion` takes the user to check
+  for as a sixth argument, `$userID = false` (added 6 October 2026). A class that overrides one of them must accept it,
+  or PHP 8 stops with a fatal error when the class is loaded.
 
 ## Data and jobs
 

@@ -203,6 +203,7 @@ class expSettingsExtensionWizard extends expExtensionWizard
             'image/purgeAliases' => 'Generated image files are being removed for good.',
             'image/removeAliases' => 'Generated image files are being removed.',
             'image/trashAliases' => 'An object with images went to the trash, so its aliases went with it.',
+            'module/functionlist' => 'The policy functions of a module as its module.php defines them, with the module name; the list returned is used. How an extension adds a limitation to a function of another module (a content limitation also needs its handler, site.ini [RoleSettings] LimitationHandlers[]).',
             'request/input' => 'The request, after the kernel has read it.',
             'request/preinput' => 'The request has arrived and nothing has looked at it yet.',
             'response/output' => 'The whole page, about to be sent. Whatever is returned is what the browser gets.',

@@ -16643,6 +16643,14 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Names, and a limitation description per function</translation>
     </message>
     <message>
+        <source>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])</source>
+        <translation>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])</translation>
+    </message>
+    <message>
+        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</source>
+        <translation>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</translation>
+    </message>
+    <message>
         <source>rest.ini, through the rest provider registry</source>
         <translation>rest.ini, through the rest provider registry</translation>
     </message>

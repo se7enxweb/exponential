@@ -419,6 +419,21 @@ class eZSubtreeNotificationRule extends eZPersistentObject
                     }
                 } break;
 
+                case 'Group':
+                {
+                    // Users in a group with the owner of the object; this limitation was not evaluated before and
+                    // let every user through
+                    $allowedUserIDArray = array();
+                    foreach ( $accessUserIDArray as $userID )
+                    {
+                        if ( $contentObject->checkGroupLimitationAccess( $limitationArray[$key], $userID ) === 'allowed' )
+                        {
+                            $allowedUserIDArray[] = $userID;
+                        }
+                    }
+                    $accessUserIDArray = $allowedUserIDArray;
+                } break;
+
                 case 'Node':
                 {
                     $nodeLimit = true;
@@ -501,6 +516,20 @@ class eZSubtreeNotificationRule extends eZPersistentObject
                         {
                             return array();
                         }
+                    }
+                    // A limitation of an extension: its handler decides for each user, without one nobody gets
+                    // the notification through this policy
+                    else if ( !ezpContentLimitation::isKernelLimitation( $key ) )
+                    {
+                        $allowedUserIDArray = array();
+                        foreach ( $accessUserIDArray as $userID )
+                        {
+                            if ( ezpContentLimitation::checkAccess( $key, $limitationArray[$key], 'read', $contentObject, $userID ) )
+                            {
+                                $allowedUserIDArray[] = $userID;
+                            }
+                        }
+                        $accessUserIDArray = $allowedUserIDArray;
                     }
                 }
             }

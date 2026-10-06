@@ -288,17 +288,20 @@ class eZModule
             include( $file );
             // a single view module defines no $ViewList
             $this->Functions = isset( $ViewList ) && is_array( $ViewList ) ? $ViewList : array();
-            if ( isset( $FunctionList ) and
-                 is_array( $FunctionList ) and
-                 count( $FunctionList ) > 0 )
+            if ( !isset( $FunctionList ) || !is_array( $FunctionList ) )
             {
-                ksort( $FunctionList, SORT_STRING );
-                $this->FunctionList = $FunctionList;
+                $FunctionList = array();
             }
-            else
+            // An extension adds limitations (or functions) to a module of another one through the filter
+            // module/functionlist; a limitation of the content module needs a handler as well
+            // (site.ini [RoleSettings] LimitationHandlers[], see ezpContentLimitation)
+            $filtered = ezpEvent::getInstance()->filter( 'module/functionlist', $FunctionList, $moduleName );
+            if ( is_array( $filtered ) )
             {
-                $this->FunctionList = array();
+                $FunctionList = $filtered;
             }
+            ksort( $FunctionList, SORT_STRING );
+            $this->FunctionList = $FunctionList;
             if ( empty( $Module ) )
             {
                 $Module = array( "name" => "null",
