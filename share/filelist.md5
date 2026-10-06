@@ -96,7 +96,7 @@ aef5f587ba98095996266b403af6d77c  bin/php/ezwebinupgrade.php
 6ab2dce1ea53fbf5e557a457414e0543  bin/php/flatten.php
 776d90775d3fe142bc18f7d48987b426  bin/php/frankenphp.php
 59c9fcb832a37194d1ea457b7793ae64  bin/php/ini.php
-996bcf5b88d96af2c6477175a2f39705  bin/php/install.php
+c2a6a48d1ffaa68cf520d823140dcedd  bin/php/install.php
 e4675b2c9840dcfeb3b515eb1fe87dd5  bin/php/kickstarter.php
 363da3b296a1e0748fc886f949963fee  bin/php/mailbounces.php
 356aba7479f51e2bddae6268c89b47f9  bin/php/mailconsent.php
@@ -3238,7 +3238,7 @@ e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
 de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distribution.md
 f8d44bca99ffe43f048fc03fc7ca6cc2  doc/features/6.0/environment-settings.md
-6a0ed2ff82685e8d704fdf4e5fb21e19  doc/features/6.0/exp-adminui.md
+d26f78ed5cf8ef8757d508dde440e55d  doc/features/6.0/exp-adminui.md
 42ae5703ac9bc16760935995c30223c3  doc/features/6.0/exp-debug-bar.md
 5eb04007ff0095dc046839caaae709eb  doc/features/6.0/exp-ini-command.md
 77e306e6356069788c64dac8d5947b53  doc/features/6.0/extension-list-and-downloads.md
@@ -3753,10 +3753,10 @@ af18b6c87c55fc88588ffacded884a0d  doc/history/velocity/installers-and-packages.m
 09d51bb55b69c9ca4d98e2ff9f810a1c  doc/install/01-introduction.md
 b7feb8f70b1777646af0289a40467d60  doc/install/02-requirements.md
 9cac47f954ce19b9a4e7d447b938d8f5  doc/install/03-getting-the-code.md
-ba4c36fa78c1406112aa7f470425177b  doc/install/04-choosing-an-install-method.md
-0fda51b5862b1c41da43da4537c686d9  doc/install/05-setup-wizard.md
-4d0203cccd9e74511a824e6edccd15fe  doc/install/06-kickstarter.md
-10e8d526938057bad93f0ea680fe09bf  doc/install/07-console-install.md
+f71ac215485dd1f34c31daf0f7f2489f  doc/install/04-choosing-an-install-method.md
+b837bb8f78e8b41765d74c2245edf6d6  doc/install/05-setup-wizard.md
+9c81adae2c303fc9197980ecefe948f7  doc/install/06-kickstarter.md
+d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
 2b2ffde29104f62faea8f88fde37d495  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
 14135918bd5d98cea3d5225382dafde8  doc/install/10-after-installing.md
@@ -5811,7 +5811,7 @@ e4ff6934b21338c7a03ea332852402d5  kernel/setup/radsurvey.php
 dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-f392736eef72ad9b274d806be4b9b164  kernel/setup/steps/ezstep_create_sites.php
+dc24f3be321ae69a866fd9632ecf9294  kernel/setup/steps/ezstep_create_sites.php
 3174823463cf9d0f9a18162ee233dc04  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -7149,6 +7149,7 @@ de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableEx
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 3b012276860b70c1bf74047f97abfcfb  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
 01cfa4440a2c6387c1d3ba0efb08b7f8  tests/tests/kernel/classes/security/stubs.php
+6c08da7b445e9c728db1abe71452c45c  tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php
 7e6b4523a39875330fdd94382fd0f3d8  tests/tests/kernel/classes/setup/AutoloadGeneratorOptionsTest.php
 4159402cb6f2996b0958f022dabe3050  tests/tests/kernel/classes/setup/EditorSiteaccessDefaultTest.php
 b26468a072e87640022ee9fe0bbb360e  tests/tests/kernel/classes/setup/EditorSiteaccessModulesTest.php
