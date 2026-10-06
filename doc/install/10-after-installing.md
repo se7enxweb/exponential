@@ -612,6 +612,13 @@ backup is consistent without maintenance mode; maintenance mode makes the databa
 restored is a hope, not a backup. See [Maintenance mode](../features/6.0/maintenance-mode.md) and
 [Operating a site, part 6](../guides/operating-a-site.md#6-back-up-and-restore).
 
+### Maintenance windows
+
+For an upgrade, an import or a restore, take the public site offline from **Setup > Maintenance** (message,
+expected duration, who still gets in, a preview and a confirmation) or with `php bin/php/maintenance.php on|off|status`.
+Visitors get a 503 maintenance page, the administration under `/admin` stays reachable, and deleting
+`var/maintenance.json` ends it whatever else is wrong. The full guide: [Maintenance mode](../guides/maintenance-mode.md).
+
 ## 10.10 Logs and log rotation
 
 | File (under `var/log/` unless noted) | Written by | Read it for |
@@ -818,7 +825,7 @@ after every change of order. The installed versions, licences and websites are l
 
 Content languages and interface languages are separate:
 
-- **Content languages** are the languages objects are translated into. Add one in the administration under
+- **Content languages** are the languages objects are translated into ([the guide](../guides/content-languages.md)). Add one in the administration under
   **Setup > Languages** (the `content/translations` view); afterwards editors can translate objects into it.
 - **The interface language** of a siteaccess is `site.ini [RegionalSettings] Locale` (shipped `eng-GB`); an
   administrator can choose their own in the user preferences.

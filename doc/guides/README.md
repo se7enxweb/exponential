@@ -65,11 +65,14 @@ Read them in this order the first time. Each one also stands on its own.
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
 | [Benchmarking](benchmarking.md) | Pages measured cached and rendered, Apache against Velocity, a code change and a deploy checked for regressions, the CI performance check understood | 30 minutes |
 | [Cronjobs](cronjobs.md) | Every part and script seen, a part and one script run and followed from the browser, the crontab lines installed, the logs read, the usual problems solved | 30 minutes |
+| [Workflows](workflows.md) | An approval before publishing set up with its trigger, every waiting process read in words on Setup > Workflow processes, the workflow cronjob checked, a stuck process cancelled safely | 30 minutes |
+| [Maintenance mode](maintenance-mode.md) | The site taken offline for a window with a message, an expected end and testers let through, the preview checked, the site brought back from the page and from a shell, the usual lock-outs solved | 20 minutes |
 | [Security and audit](security-and-audit.md) | The hardening checked, roles that give only what is needed, the audit trail read, debug output for your address only | 30 minutes |
 | [Notifications: running them and fixing problems](notifications-administrator.md) | The notification cronjob set up, the status page read, a run tried without sending mail, the usual problems solved | 30 minutes |
 | [Notifications: architecture, extending and testing](notifications-developer.md) | A custom event type and handler that mail an address, a test that keeps mail in files | 45 minutes |
 | [E-mail preferences: setting them up and running them](mail-preferences-administrator.md) | The footer and links set up, the status page read, a request to stop mail, an export and an erasure handled, the gate tested without sending | 30 minutes |
 | [E-mail preferences: categories, the mail gate and testing](mail-preferences-developer.md) | A category of your own with a handler for older data, mail through the gate, a test that keeps mail in files | 30 minutes |
+| [Content languages](content-languages.md) | A language added with the searchable picker, shown by a siteaccess through SiteLanguageList, content translated into it, content moved out of a wrong language, a language removed without losing anything | 30 minutes |
 | [Remote services and apps](remote-services-and-apps.md) | Services called from the shell and from Python, a personal API token, a portal front end | 20 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
 
@@ -85,7 +88,7 @@ You write and manage content in the administration interface.
    - [Online editor: TinyMCE 8](../features/6.0/online-editor-tinymce8.md)
    - [The trash: who deleted it and where it was](../features/6.0/trash-who-and-where.md)
    - [Large operations as content jobs](../features/6.0/content-jobs.md)
-   - [PDF export](../features/6.0/pdf-export.md), [Translations and languages](../features/6.0/translations-and-languages.md)
+   - [PDF export](../features/6.0/pdf-export.md), [Translations and languages](../features/6.0/translations-and-languages.md), [Content languages](content-languages.md) (the guide)
    - [Your e-mail preferences](../features/6.0/mail-preferences.md): which e-mail you get, one-click unsubscribe, your data
    - [Store dashboard](../features/6.0/store-dashboard.md) and [order receipts](../features/6.0/order-receipts.md) if you run a shop
 
@@ -130,7 +133,7 @@ You run the installation: servers, caches, backups, upgrades, security.
 2. Install on purpose: [Install in one command](../features/6.0/install-in-one-command.md), [Kickstarter](../features/6.0/kickstarter-cli.md) for repeatable installs, [SQLite](../features/6.0/sqlite-database.md), [MongoDB](../features/6.0/mongodb-database-support.md).
 3. The web server: [Velocity web server](../features/6.0/velocity-web-server.md), [its control panel](../features/6.0/velocity-control-panel.md), [HTTPS certificates](../features/6.0/velocity-https-certificates.md), [engines compared](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md).
 4. Caches and speed: [cache control](../bc/6.0/cache-console.md), [HTTP caching](../bc/6.0/http-caching.md), [SQL query cache](../bc/6.0/sql-query-cache.md), [static cache](../features/6.0/static-cache-generator.md), [preload](../features/6.0/preload-sites-view.md), [benchmark](../features/6.0/benchmark.md) and the guide [Benchmarking](benchmarking.md).
-5. Keep it healthy: [notifications](notifications-administrator.md) (the cronjob, the status page, troubleshooting), [e-mail preferences](mail-preferences-administrator.md) (the footer, consent, suppression, retention), [maintenance mode](../features/6.0/maintenance-mode.md), [repair from the browser](../features/6.0/repair-from-the-browser.md), [file consistency check](../features/6.0/file-consistency-check.md), [cronjobs](../features/6.0/cronjobs-console.md), [audit trail](../features/6.0/audit-trail.md).
+5. Keep it healthy: [notifications](notifications-administrator.md) (the cronjob, the status page, troubleshooting), [e-mail preferences](mail-preferences-administrator.md) (the footer, consent, suppression, retention), [maintenance mode](../features/6.0/maintenance-mode.md), [repair from the browser](../features/6.0/repair-from-the-browser.md), [file consistency check](../features/6.0/file-consistency-check.md), [cronjobs](../features/6.0/cronjobs-console.md), [workflows and their waiting processes](workflows.md), [audit trail](../features/6.0/audit-trail.md).
 6. Security: [Security and audit](security-and-audit.md) (the guide), [Security defaults of September 2026](../specifications/6.0/security-defaults-2026-09.md), [the August 2026 patches](../specifications/6.0/security-hardening-2026-08.md), [the 6.0.13 hardening](../specifications/6.0/security-hardening-6.0.13.md).
 7. Upgrading: follow [Upgrading](upgrading.md); read the [6.0.15 changelog](../changelogs/6.0/6.0.15.md), then the behaviour changes of [July and August](../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September](../bc/6.0/behaviour-changes-2026-09b.md) and [October](../bc/6.0/behaviour-changes-2026-10.md), in that order.
 

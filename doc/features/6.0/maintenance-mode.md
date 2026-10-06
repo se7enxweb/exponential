@@ -5,6 +5,9 @@ reinstall. Maintenance mode takes the whole public site offline, shows visitors 
 with one command or one button. The Kickstarter and the web setup wizard use the same mechanism, so a site that is
 being installed never serves a half-built page.
 
+For a step-by-step guide with screenshots, workflows and troubleshooting, read the user guide
+[Maintenance mode: taking the site offline and bringing it back](../../guides/maintenance-mode.md).
+
 Quick start:
 
 ```bash
@@ -53,15 +56,44 @@ Switching on also empties the caches that answer ahead of `index.php`.
 
 ### From the administration
 
-**Setup > Maintenance** (`/setup/maintenance`) does the same: a message for
-visitors, the expected duration, and addresses that still see the site. The
-page shows who opened the window, since when, until when and whether it is an
-installation running. It needs the `setup / administrate` right and the form
-carries the administration's form token. The administration stays reachable
-while the site is offline, otherwise the page that switches it off could not be
-opened. The address you switched it on from is let through only when **Let my
-own address still see the site** is ticked (before 27 September it was always
-let through, so to the administrator it looked as if nothing had happened).
+**Setup > Maintenance** (`/setup/maintenance`) does the same. Since 5 October
+2026 it is laid out task first, in the look of the cronjobs page:
+
+- **A state banner** at the top: green when the site is online; amber in
+  maintenance, with the reason (window, installation, setup wizard, unreadable
+  marker), who switched it on, since when and for how long, the expected end
+  and the time left, a warning once that end has passed (maintenance never ends
+  by itself), and whether you yourself see the site or the maintenance page.
+  The one action the state calls for sits in the banner: **Bring the site back
+  online**, with a warning when an installation still holds maintenance.
+- **Online, a three-step plan**: the message (with a character counter), the
+  expected duration (one click for 15 min, 30 min, 1 h, 2 h or 4 h, and the
+  local and UTC time it means), and who still gets in (the administration under
+  `/admin` always; your own address with one tick; other addresses, checked as
+  you type and again on the server, which names what it left out). A required
+  confirmation guards **Take the site offline**.
+- **A preview** of the page visitors get: the real maintenance page, filled in,
+  in a sandboxed frame; it follows the message and duration as you type.
+  Offline, it shows the page being served, with the message and the list of who
+  still gets in.
+- **From a shell**: the `on`, `off` and `status` commands with Copy buttons.
+- **Recent changes**: the latest eight `system.maintenance.change` events from
+  the audit index, linked to the audit console (needs `audit / read` on the
+  `system` channel).
+
+It needs the `setup / administrate` right and the form carries the
+administration's form token; field and button names are those of the earlier
+page. It works without JavaScript (the confirmation is a required checkbox, the
+sections are `<details>`), holds from 390 pixels up and at 200 % zoom, and keeps
+a 4.5:1 text contrast in admin4's light and dark modes; the same template serves
+the older `admin` design. The administration stays reachable while the site is
+offline, otherwise the page that switches it off could not be opened. The
+address you switched it on from is let through only when **Let my own address
+still see the site** is ticked (before 27 September it was always let through,
+so to the administrator it looked as if nothing had happened).
+
+The full user guide, with screenshots, workflows, a safety checklist and
+troubleshooting: [Maintenance mode](../../guides/maintenance-mode.md).
 
 ## How it works
 
@@ -104,6 +136,7 @@ caches pause during maintenance too (engine release 0.0.4.34 and later).
 
 ## Related pages
 
+- [Maintenance mode: the user guide](../../guides/maintenance-mode.md)
 - [Installing with one command](install-in-one-command.md), [Kickstarter](kickstarter-cli.md), [setup wizard](setup-wizard-and-editor-siteaccess.md)
 - [Velocity: running Exponential in a persistent-worker web server](velocity-persistent-worker-server.md)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
