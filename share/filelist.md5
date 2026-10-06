@@ -692,7 +692,7 @@ d941c9c9f890a8617a6ddfc1dde32325  design/admin/templates/url/edit.tpl
 a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
 f7a30c302abe5ead88aeec1589d26138  design/admin/templates/user/edit.tpl
 e7729d83b6d2d3e108c251e3364cf009  design/admin/templates/user/exp_style.tpl
-ec051aff9aef0a071fe85027dcc4ce88  design/admin/templates/user/login.tpl
+94f6a4ca5186b066b15d67a418eb3a1b  design/admin/templates/user/login.tpl
 4d5329c1f77dd014bb6074f0454361d1  design/admin/templates/user/password.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin/templates/user/register.tpl
 693d1d198fd16f0c6b455e10582be512  design/admin/templates/user/setting.tpl
@@ -2711,13 +2711,13 @@ ae2e9135bb5590d8c6a29323dee3f340  design/standard/templates/toolbar/line/node_li
 e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 6b53b793cebd9bacab5930104b6637f0  design/standard/templates/url/view_url_list.tpl
 6ff3ac4ab54a3f027a688bafaf84c337  design/standard/templates/user/activate.tpl
-eb693adf5c76c9c282727d16f96c72f1  design/standard/templates/user/edit.tpl
+2554c5f3a60f7013a82f4cbdc73c1fc1  design/standard/templates/user/edit.tpl
 05c54fc072951df5123bdf0acc95c4d3  design/standard/templates/user/forgotpassword.tpl
 0593c48408782b956ece5a87bb080492  design/standard/templates/user/forgotpasswordmail.tpl
 effa7088aa8aaca0475eecbfe46e32a8  design/standard/templates/user/login.tpl
 012058cf37cb560202e58cd45c3e6d46  design/standard/templates/user/password.tpl
 eca5d5ed39fdf3334394887dad070c6e  design/standard/templates/user/password_changed_mail.tpl
-263f95b3e124f005b4e5c5a6800ad5da  design/standard/templates/user/register.tpl
+b2e53172a5cdde6341ac4e5ad2d03163  design/standard/templates/user/register.tpl
 ed5856b59fd9402bdad145c9c129582b  design/standard/templates/user/register_user_not_valid.tpl
 c4e5053f070003e786c1929d062da852  design/standard/templates/user/registrationapproved.tpl
 8722468af0878587bad383ccc3f84010  design/standard/templates/user/registrationfeedback.tpl
@@ -2990,7 +2990,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1680c728e7e634d4ae80bdf628d568ca  doc/changelogs/6.0/6.0.15.md
+593391ba88ca9572b7c121cade0d92fd  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3527,7 +3527,7 @@ a8d5daba63dcc34fea309ba3ff76dfd1  doc/guides/security-and-audit.md
 7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
 984fbd968c27ef1981e5c835b18c8c0b  doc/guides/system-information.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
-6387229826175afe63da728788de31ad  doc/guides/two-factor-login.md
+d9f499a8c64dfd9099ebfc8310999b59  doc/guides/two-factor-login.md
 76caaadb12a9d05063f40cfeff955325  doc/guides/upgrade-check.md
 639322264923c033f20a28212f26fea4  doc/guides/upgrading.md
 3021f8c1c3339b030c3e75dbd626d297  doc/guides/urls-and-aliases.md
