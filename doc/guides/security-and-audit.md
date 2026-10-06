@@ -64,7 +64,7 @@ Access is decided by **roles** made of **policies** (module, function, limitatio
 4. Open the role, click **Assign**, and select the user or group.
 5. Sign in as that user in a private window: only the allowed content can be edited.
 
-Roles can hold dozens of policies; each policy shows its ID, the headings sort the list, and the editor has up and down buttons (they only tidy the list, the order never changes who may do what): [role policy order](../features/6.0/role-policy-order.md). Admin links already follow permissions, so a user never sees a link to something that would be refused: [admin links follow permissions](../features/6.0/admin-links-follow-permissions.md).
+Roles can hold dozens of policies; each policy shows its ID, the headings sort the list, and the editor has up and down buttons (they only tidy the list, the order never changes who may do what): [role policy order](../features/6.0/role-policy-order.md). A role given to many users lists them a page at a time, sorted by name, with a name filter, and shows assignments whose user or group is gone: [role assignment paging](../features/6.0/role-assignment-paging.md). Admin links already follow permissions, so a user never sees a link to something that would be refused: [admin links follow permissions](../features/6.0/admin-links-follow-permissions.md).
 
 Use the same rules in templates:
 

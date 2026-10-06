@@ -205,7 +205,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **repair page**: the page that explains missing libraries and lets an administrator repair them. [Repair from the browser](features/6.0/repair-from-the-browser.md), [Repair](bc/6.0/repair.md).
 - **request rule**: a rule in `requestrules.ini` that allows or refuses a request by module, view and URL. [Request rules](features/6.0/request-rules.md), [securing content/view/full](bc/6.0/view_full_security.md).
 - **response cache (Velocity)**: the server's cache of rendered pages. [Response cache](features/6.0/velocity-response-cache.md).
-- **role**: a named set of **policies** assigned to users and groups. [Roles and policies in order](features/6.0/role-policy-order.md).
+- **role**: a named set of **policies** assigned to users and groups. [Roles and policies in order](features/6.0/role-policy-order.md); its users and groups: [role assignment paging](features/6.0/role-assignment-paging.md).
 - **RSS**: feeds exported and imported by the RSS module; see also **syndication**. [RSS, podcast and feed list](features/6.0/rss-podcast-and-feed-list.md).
 - **runnable**: the class behind a command, cronjob part or module view (`Exponential\Runnable\*`); can be replaced or listened to through `[RunnableSettings]`. [Commands, cronjob parts and views as classes](specifications/6.0/runnable-commands-cronjobs-views.md).
 
