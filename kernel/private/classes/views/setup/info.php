@@ -34,43 +34,15 @@ class Info extends \Exponential\Runnable\ModuleView
         $module = $Params['Module'];
         $mode = (string)$Params['Mode'];
 
-        // phpinfo(), behind the same system_info function as the page. Without the request's variables and
-        // the environment: those carry the HTTP authorization, the session cookie and whatever secrets a
-        // server puts in the environment. Velocity runs PHP's command-line SAPI, where phpinfo() is text.
-        if ( $mode === 'php' )
-        {
-            if ( PHP_SAPI === 'cli' )
-                header( 'Content-Type: text/plain; charset=utf-8' );
-            header( 'X-Robots-Tag: noindex' );
-            header( 'Cache-Control: no-store' );
-            phpinfo( INFO_GENERAL | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE );
-            \eZExecution::cleanExit();
-        }
+        // setup/info/php: phpinfo() without the request and the environment, and the request ends there.
+        $this->phpInfoMode( $mode );
 
         // The facts, the health checks and the cards: one read-only report (expSystemReport), shared with
         // ./console exp:system:info. Directory and database sizes are only measured on request (/sizes).
         $report = \expSystemReport::gather( array( 'sizes' => $mode === 'sizes', 'translate' => true ) );
 
-        // The report for a support request, masked like the page: as text or JSON, to save.
-        if ( $mode === 'report' || $mode === 'json' )
-        {
-            $stamp = date( 'Ymd-His' );
-            header( 'Cache-Control: no-store' );
-            header( 'X-Content-Type-Options: nosniff' );
-            if ( $mode === 'json' )
-            {
-                header( 'Content-Type: application/json; charset=utf-8' );
-                header( 'Content-Disposition: attachment; filename="exponential-system-information-' . $stamp . '.json"' );
-                echo json_encode( $report->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
-            }
-            else
-            {
-                header( 'Content-Type: text/plain; charset=utf-8' );
-                header( 'Content-Disposition: attachment; filename="exponential-system-information-' . $stamp . '.txt"' );
-                echo $report->toText();
-            }
-            \eZExecution::cleanExit();
-        }
+        // setup/info/report and setup/info/json: the report as a file, and the request ends there.
+        $this->reportDownload( $mode, $report );
 
         $http = \eZHTTPTool::instance();
         $ini = \eZINI::instance();
@@ -122,27 +94,8 @@ class Info extends \Exponential\Runnable\ModuleView
         // should have to deduce from a path in an error message.
         $this->engineSourceInfo( $engineInfo, $engineServer, $velocityBrand );
 
-        if ( defined( 'EXP_ENGINE_PHAR' ) )
-        {
-            $engineInfo['source'] = 'archive';
-            $engineInfo['archive'] = EXP_ENGINE_PHAR;
-
-            if ( file_exists( EXP_ENGINE_PHAR ) )
-            {
-                $engineInfo['archive_built'] = date( 'Y-m-d H:i:s', filemtime( EXP_ENGINE_PHAR ) );
-                $engineInfo['archive_bytes'] = filesize( EXP_ENGINE_PHAR );
-            }
-
-            // Read through the wrapper the bootstrap deliberately keeps registered in
-            // this mode; there is no other way to reach inside the archive.
-            $engineVersion = @file_get_contents( 'phar://' . EXP_ENGINE_PHAR . '/ENGINE_VERSION' );
-            if ( $engineVersion !== false )
-                $engineInfo['version'] = trim( $engineVersion );
-
-            $engineManifest = @include( 'phar://' . EXP_ENGINE_PHAR . '/MANIFEST.php' );
-            if ( is_array( $engineManifest ) )
-                $engineInfo['archive_files'] = count( $engineManifest );
-        }
+        // When the engine runs from the archive: which one, when it was built, its version and its files.
+        $this->engineArchiveInUse( $engineInfo );
 
         // Whether the archive was built from what is on disk now. A mismatch is not an
         // error -- the archive only has to carry the classes it carries -- but it is
@@ -184,6 +137,105 @@ class Info extends \Exponential\Runnable\ModuleView
         // var/tmp/sql_profile.on). See doc/bc/6.0/sql-query-cache.md.
         // SQL engines only; the MongoDB driver keeps its own profile.
         $this->sqlProfileInfo( $db, $canFlushCaches, $http, $when, $tpl, $m, $n );
+
+        // The template variables of the earlier page: engine, web server, database, PHP extensions and settings.
+        $this->pageVariables( $tpl, $engineInfo, $webserverInfo, $db, $systemInfo );
+
+        $Result = array();
+        $Result['content'] = $tpl->fetch( "design:setup/info.tpl" );
+        $Result['path'] = array( array( 'url' => false,
+                                        'text' => \ezpI18n::tr( 'kernel/setup', 'System information' ) ) );
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * phpinfo(), behind the same system_info function as the page. Without the request's variables and
+     * the environment: those carry the HTTP authorization, the session cookie and whatever secrets a
+     * server puts in the environment. Velocity runs PHP's command-line SAPI, where phpinfo() is text.
+     */
+    protected function phpInfoMode( &$mode )
+    {
+        if ( $mode === 'php' )
+        {
+            if ( PHP_SAPI === 'cli' )
+                header( 'Content-Type: text/plain; charset=utf-8' );
+            header( 'X-Robots-Tag: noindex' );
+            header( 'Cache-Control: no-store' );
+            phpinfo( INFO_GENERAL | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE );
+            \eZExecution::cleanExit();
+        }
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * The report for a support request, masked like the page: as text or JSON, to save.
+     */
+    protected function reportDownload( &$mode, &$report )
+    {
+        if ( $mode === 'report' || $mode === 'json' )
+        {
+            $stamp = date( 'Ymd-His' );
+            header( 'Cache-Control: no-store' );
+            header( 'X-Content-Type-Options: nosniff' );
+            if ( $mode === 'json' )
+            {
+                header( 'Content-Type: application/json; charset=utf-8' );
+                header( 'Content-Disposition: attachment; filename="exponential-system-information-' . $stamp . '.json"' );
+                echo json_encode( $report->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+            }
+            else
+            {
+                header( 'Content-Type: text/plain; charset=utf-8' );
+                header( 'Content-Disposition: attachment; filename="exponential-system-information-' . $stamp . '.txt"' );
+                echo $report->toText();
+            }
+            \eZExecution::cleanExit();
+        }
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * When the engine runs from the archive (EXP_ENGINE_PHAR): which one, when it was built, its version and
+     * how many files it carries.
+     */
+    protected function engineArchiveInUse( &$engineInfo )
+    {
+        if ( defined( 'EXP_ENGINE_PHAR' ) )
+        {
+            $engineInfo['source'] = 'archive';
+            $engineInfo['archive'] = EXP_ENGINE_PHAR;
+
+            if ( file_exists( EXP_ENGINE_PHAR ) )
+            {
+                $engineInfo['archive_built'] = date( 'Y-m-d H:i:s', filemtime( EXP_ENGINE_PHAR ) );
+                $engineInfo['archive_bytes'] = filesize( EXP_ENGINE_PHAR );
+            }
+
+            // Read through the wrapper the bootstrap deliberately keeps registered in
+            // this mode; there is no other way to reach inside the archive.
+            $engineVersion = @file_get_contents( 'phar://' . EXP_ENGINE_PHAR . '/ENGINE_VERSION' );
+            if ( $engineVersion !== false )
+                $engineInfo['version'] = trim( $engineVersion );
+
+            $engineManifest = @include( 'phar://' . EXP_ENGINE_PHAR . '/MANIFEST.php' );
+            if ( is_array( $engineManifest ) )
+                $engineInfo['archive_files'] = count( $engineManifest );
+        }
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * The template variables of the earlier page, kept for templates that read them: engine, web server, database,
+     * PHP extensions, autoload functions, hardware and PHP settings.
+     */
+    protected function pageVariables( &$tpl, &$engineInfo, &$webserverInfo, &$db, &$systemInfo )
+    {
         // Paths as the report shows them: relative to the installation, never the server's full layout.
         $root = rtrim( \eZSys::rootDir(), '/' );
         foreach ( array( 'root', 'archive', 'switch_on', 'switch_off', 'stale_fix' ) as $key )
@@ -211,13 +263,6 @@ class Info extends \Exponential\Runnable\ModuleView
                 $phpINI[$iniName] = $value;
         }
         $tpl->setVariable( 'php_ini', $phpINI );
-
-        $Result = array();
-        $Result['content'] = $tpl->fetch( "design:setup/info.tpl" );
-        $Result['path'] = array( array( 'url' => false,
-                                        'text' => \ezpI18n::tr( 'kernel/setup', 'System information' ) ) );
-
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
     }
 
     /**
