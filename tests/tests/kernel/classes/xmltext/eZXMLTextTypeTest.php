@@ -304,6 +304,22 @@ class eZXMLTextTypeTest extends eZXMLTextTestCase
         $this->assertSame( eZInputValidator::STATE_ACCEPTED, $this->input( $attribute )->validateInput( $this->post( array() ), 'ContentObjectAttribute', $attribute ) );
     }
 
+    public function testValidateInputOfATextStartingWithAnEmptyLine()
+    {
+        // empty paragraphs not allowed (the default): the empty line is dropped like any other
+        $attribute = $this->xmlAttribute( $this->xml( '' ) );
+        $state = $this->input( $attribute )->validateInput( $this->post( array( 'ContentObjectAttribute_data_text_4711' => "\nText" ) ), 'ContentObjectAttribute', $attribute );
+        $this->assertSame( eZInputValidator::STATE_ACCEPTED, $state, (string)$attribute->validationError() );
+        $this->assertStringContainsString( '>Text</paragraph>', $attribute->attribute( 'data_text' ) );
+
+        // allowed: it is kept as an empty first paragraph
+        eZXMLSchema::instance()->Schema['paragraph']['childrenRequired'] = false;
+        $attribute = $this->xmlAttribute( $this->xml( '' ) );
+        $state = $this->input( $attribute )->validateInput( $this->post( array( 'ContentObjectAttribute_data_text_4711' => "\nText" ) ), 'ContentObjectAttribute', $attribute );
+        $this->assertSame( eZInputValidator::STATE_ACCEPTED, $state, (string)$attribute->validationError() );
+        $this->assertSame( 2, substr_count( $attribute->attribute( 'data_text' ), '<paragraph' ) );
+    }
+
     public function testInputXmlOfStoredText()
     {
         $attribute = $this->xmlAttribute( $this->xml( '<section><header>T</header><paragraph>x</paragraph></section>' ) );

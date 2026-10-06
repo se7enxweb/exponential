@@ -84,8 +84,11 @@ class eZSimplifiedXMLInput extends eZXMLInputHandler
             $text = preg_replace('/\r/', '', $text);
             $text = preg_replace('/\t/', ' ', $text);
 
-            // first empty paragraph
-            $text = preg_replace('/^\n/', '<p></p>', $text );
+            // first empty paragraph, kept where empty paragraphs are allowed
+            // ([paragraph] AllowEmpty in content.ini); elsewhere it made the
+            // parser refuse the whole text as an empty <paragraph>
+            $schema = eZXMLSchema::instance();
+            $text = preg_replace( '/^\n/', $schema->Schema['paragraph']['childrenRequired'] ? '' : '<p></p>', $text );
 
             eZDebugSetting::writeDebug( 'kernel-datatype-ezxmltext', $text, 'eZSimplifiedXMLInput::validateInput text' );
 
