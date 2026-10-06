@@ -1000,6 +1000,7 @@ return array(
       'expConsentLog'                                                => 'kernel/classes/mailpreferences/expconsentlog.php',
       'expContentAccessReport'                                       => 'kernel/private/classes/expcontentaccessreport.php',
       'expContentExtensionWizard'                                    => 'kernel/setup/expcontentextensionwizard.php',
+      'expContentHistoryList'                                        => 'kernel/classes/expcontenthistorylist.php',
       'expContentJob'                                                => 'kernel/classes/contentjob/expcontentjob.php',
       'expContentJobAddLocation'                                     => 'kernel/classes/contentjob/expcontentjobaddlocation.php',
       'expContentJobBatchType'                                       => 'kernel/classes/contentjob/expcontentjobbatchtype.php',

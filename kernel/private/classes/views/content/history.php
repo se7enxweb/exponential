@@ -2,6 +2,12 @@
 /**
  * The code of kernel/content/history.php, moved into a class (#207 stage 1). The file kernel/content/history.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ *
+ * The versions page of an object. run() takes the request in steps: the Back button, who may open the page, the
+ * comparison, the removal, the edit and the copy of a version, then the list. The list (filters, order, paging,
+ * figures, and the actions each version offers) is worked out by expContentHistoryList, which needs no database;
+ * who may open the page and whose content they see is decided here (canOpen(), canSeeVersionContent()).
+ * Guides: doc/bc/6.0/draft-edit-access.md ("The versions of such an object"), doc/guides/content-history.md
  */
 /*
  * The original header of kernel/content/history.php:
@@ -20,6 +26,32 @@ namespace Exponential\View\Kernel\Content
 
 class History extends \Exponential\Runnable\ModuleView
 {
+    /** The view name of the page sizes (admininterface.ini [PaginationSettings]) and the preference of the chosen one */
+    const LIST_VIEW = 'content/history';
+    const LIMIT_PREFERENCE = 'admin_history_list_limit';
+
+    /** @var \eZTemplate */
+    private $tpl;
+    /** @var \eZHTTPTool */
+    private $http;
+    /** @var \eZModule */
+    private $module;
+    /** @var \eZContentObject */
+    private $object;
+    private $canEdit = false;
+    private $canRead = false;
+    private $userID = 0;
+    /** @var int[] the numbers of the versions whose content the user may see */
+    private $contentVersions = array();
+    /** An action refused for some versions: array( 'action' => ..., 'versions' => array( ... ) ), or false */
+    private $refused = false;
+    /** What an action did: array( 'type' => 'removed'|'copied', ... ), or false */
+    private $feedback = false;
+    private $editWarning = false;
+    private $editVersion;
+    /** Where the Back button goes, see originURI() */
+    private $origin = '/content/dashboard';
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -28,409 +60,500 @@ class History extends \Exponential\Runnable\ModuleView
                 ${$__name} = &$scope[$__name];
         unset( $__name );
 
-        $tpl = \eZTemplate::factory();
-        $http = \eZHTTPTool::instance();
+        $this->tpl = \eZTemplate::factory();
+        $this->http = \eZHTTPTool::instance();
+        $this->module = $Module;
+        $this->editVersion = $Params['EditVersion'];
 
-        $ObjectID = $Params['ObjectID'];
-        $EditVersion = $Params['EditVersion'];
-
-        $Offset = $Params['Offset'];
-        $viewParameters = array( 'offset' => $Offset );
-
-        $object = \eZContentObject::fetch( $ObjectID );
-
+        $object = \eZContentObject::fetch( $Params['ObjectID'] );
         // Where the Back button goes (originURI()): taken when the page is opened and carried in the form as
         // RedirectURI, so the actions of the page keep it; without an origin, the object's own location
-        $origin = self::originURI( $object ? (int)$object->attribute( 'id' ) : 0, $object ? (int)$object->attribute( 'main_node_id' ) : 0,
-                                   self::originCandidates( $http ), \eZSys::indexDir() );
-        if ( $http->hasPostVariable( 'BackButton' ) )
-            return $this->viewResult( null, $Module->redirectTo( $origin ) );
-
-        $editWarning = false;
-        $removedVersions = array();
-
-        $canEdit = false;
-        $canRemove = false;
+        $this->origin = self::originURI( $object ? (int)$object->attribute( 'id' ) : 0, $object ? (int)$object->attribute( 'main_node_id' ) : 0,
+                                         self::originCandidates( $this->http ), \eZSys::indexDir() );
+        if ( $this->http->hasPostVariable( 'BackButton' ) )
+            return $this->viewResult( null, $Module->redirectTo( $this->origin ) );
 
         if ( $object === null )
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        $this->object = $object;
 
-        $canEdit = (bool)$object->editAccess();
-        if ( !self::canOpen( $object, $canEdit ) )
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
+        $this->canEdit = (bool)$object->editAccess();
+        if ( !self::canOpen( $object, $this->canEdit ) )
+            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
+        $this->canRead = (bool)$object->attribute( 'can_read' );
+        $this->userID = (int)\eZUser::currentUserID();
+        $this->contentVersions = $this->seenVersions();
 
-        $canRead = (bool)$object->attribute( 'can_read' );
-        $currentUserID = (int)\eZUser::currentUserID();
-        // Versions whose content the user may see (open, compare, copy): see canSeeVersionContent()
-        $contentVersions = array();
-        foreach ( $object->versions() as $versionItem )
+        $filters = \expContentHistoryList::filters( isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array() );
+        $offset = \expAdminPagination::offset( $Params );
+
+        // The actions of the page, each with its own check; a step that ends the request returns its result
+        foreach ( array( 'compare', 'versionLimitWarning', 'removeVersions', 'editAction', 'copyAction' ) as $step )
         {
-            if ( self::canSeeVersionContent( $versionItem, $canRead, $canEdit, $currentUserID ) )
-                $contentVersions[] = (int)$versionItem->attribute( 'version' );
+            $returned = $this->$step();
+            if ( $returned !== null )
+                return $this->viewResult( null, $returned );
         }
-        // Set below when an action of the page is refused for some versions: array( 'action' => ..., 'versions' => array( ... ) )
-        $refused = false;
+        // what the actions changed is listed as it is now
+        $this->contentVersions = $this->seenVersions();
 
-        $canRemove = true;
+        $section = $this->designKeys();
+        $this->listVariables( $filters, $offset );
 
-        //content/diff functionality
-        //Set default values
-        $previousVersion = 1;
-        $newestVersion = 1;
-
-        //By default, set preselect the previous and most recent version for diffing
-        if ( count( $object->versions() ) > 1 )
-        {
-            $versionArray = $object->versions( false );
-            $selectableVersions = array();
-            foreach( $versionArray as $versionItem )
-            {
-                //Only return version numbers of archived or published items, and drafts, the user may see
-                if ( in_array( $versionItem['status'], array( \eZContentObjectVersion::STATUS_DRAFT,
-                                                              \eZContentObjectVersion::STATUS_PUBLISHED,
-                                                              \eZContentObjectVersion::STATUS_ARCHIVED ) ) &&
-                     in_array( (int)$versionItem['version'], $contentVersions, true ) )
-                {
-                    $selectableVersions[] = $versionItem['version'];
-                }
-            }
-            if ( $selectableVersions )
-                $newestVersion = array_pop( $selectableVersions );
-            if ( $selectableVersions )
-                $previousVersion = array_pop( $selectableVersions );
-        }
-
-        $tpl->setVariable( 'selectOldVersion', $previousVersion );
-        $tpl->setVariable( 'selectNewVersion', $newestVersion );
+        $tpl = $this->tpl;
         $tpl->setVariable( 'module', $Module );
-
-        $diff = array();
-
-        if ( $http->hasPostVariable('DiffButton') && $http->hasPostVariable( 'FromVersion' ) && $http->hasPostVariable( 'ToVersion' ) )
-        {
-            if ( !$object->attribute( 'can_diff' ) )
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
-
-            $lang = false;
-            if ( $http->hasPostVariable( 'Language' ) )
-            {
-                $lang = $http->postVariable( 'Language' );
-            }
-            $oldVersion = $http->postVariable( 'FromVersion' );
-            $newVersion = $http->postVariable( 'ToVersion' );
-
-            $oldObject = is_numeric( $oldVersion ) ? $object->version( (int)$oldVersion ) : null;
-            $newObject = is_numeric( $newVersion ) ? $object->version( (int)$newVersion ) : null;
-            if ( $oldObject instanceof \eZContentObjectVersion && $newObject instanceof \eZContentObjectVersion &&
-                 ( !in_array( (int)$oldVersion, $contentVersions, true ) || !in_array( (int)$newVersion, $contentVersions, true ) ) )
-            {
-                // A version given in the request whose content the user may not see is not compared
-                $refused = array( 'action' => 'diff', 'versions' => array_values( array_diff( array( (int)$oldVersion, (int)$newVersion ), $contentVersions ) ) );
-                \eZDebug::writeNotice( 'content/history: comparing versions ' . (int)$oldVersion . ' and ' . (int)$newVersion . ' of object ' . (int)$ObjectID .
-                                       ' refused for user ' . $currentUserID, __METHOD__ );
-            }
-            else if ( $oldObject instanceof \eZContentObjectVersion && $newObject instanceof \eZContentObjectVersion )
-            {
-
-                if ( $lang )
-                {
-                    $oldAttributes = $object->fetchDataMap( $oldVersion, $lang );
-                    //Fallback, if desired language not available in version
-                    if ( !$oldAttributes )
-                    {
-                        $oldObjectLang = $oldObject->attribute( 'initial_language' );
-                        $oldAttributes = $object->fetchDataMap( $oldVersion, $oldObjectLang->attribute( 'locale' ) );
-                    }
-                    $newAttributes = $object->fetchDataMap( $newVersion, $lang );
-                    //Fallback, if desired language not available in version
-                    if ( !$newAttributes )
-                    {
-                        $newObjectLang = $newObject->attribute( 'initial_language' );
-                        $newAttributes = $object->fetchDataMap( $newVersion, $newObjectLang->attribute( 'locale' ) );
-                    }
-
-                }
-                else
-                {
-                    $oldAttributes = $oldObject->dataMap();
-                    $newAttributes = $newObject->dataMap();
-                }
-
-                //Extra options to open up for future extensions of the system.
-                $extraOptions = false;
-                if ( $http->hasPostVariable( 'ExtraOptions' ) )
-                {
-                    $extraOptions = $http->postVariable( 'ExtraOptions' );
-                }
-
-                //Invoke diff method in the datatype
-                foreach ( $oldAttributes as $attribute )
-                {
-                    $identifier = $attribute->attribute( 'contentclass_attribute_identifier' );
-                    if ( !isset( $newAttributes[$identifier] ) )
-                        continue;
-                    $newAttr = $newAttributes[$identifier];
-                    $contentClassAttr = $newAttr->attribute( 'contentclass_attribute' );
-                    $diff[$contentClassAttr->attribute( 'id' )] = $contentClassAttr->diff( $attribute, $newAttr, $extraOptions );
-                }
-
-                $tpl->setVariable( 'oldVersion', $oldVersion );
-                $tpl->setVariable( 'oldVersionObject', $object->version( $oldVersion ) );
-
-                $tpl->setVariable( 'newVersion', $newVersion );
-                $tpl->setVariable( 'newVersionObject', $object->version( $newVersion ) );
-                $tpl->setVariable( 'diff', $diff );
-            }
-        }
-        //content/diff end
-
-        //content/versions
-        if ( $http->hasSessionVariable( 'ExcessVersionHistoryLimit' ) )
-        {
-            $excessLimit = $http->sessionVariable( 'ExcessVersionHistoryLimit' );
-            if ( $excessLimit )
-                $editWarning = 3;
-            $http->removeSessionVariable( 'ExcessVersionHistoryLimit' );
-        }
-
-        if ( $http->hasPostVariable( 'RemoveButton' )  )
-        {
-            if ( !$canEdit )
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
-            if ( $http->hasPostVariable( 'DeleteIDArray' ) )
-            {
-                $db = \eZDB::instance();
-                $db->begin();
-
-                $deleteIDArray = $http->postVariable( 'DeleteIDArray' );
-                $versionArray = array();
-                $auditRemoved = array();
-                $refusedRemove = array();
-                foreach ( is_array( $deleteIDArray ) ? $deleteIDArray : array() as $deleteID )
-                {
-                    if ( !is_numeric( $deleteID ) )
-                        continue;
-                    $version = \eZContentObjectVersion::fetch( (int)$deleteID );
-                    // Only versions of this object, in a status the page offers for removal
-                    if ( !$version instanceof \eZContentObjectVersion ||
-                         (int)$version->attribute( 'contentobject_id' ) !== (int)$object->attribute( 'id' ) )
-                        continue;
-                    $versionArray[] = $version->attribute( 'version' );
-                    if ( !self::isRemovableStatus( $version->attribute( 'status' ) ) || !$version->attribute( 'can_remove' ) )
-                    {
-                        $refusedRemove[] = (int)$version->attribute( 'version' );
-                        continue;
-                    }
-                    $auditRemoved[] = array( 'version' => (int)$version->attribute( 'version' ), 'status' => (int)$version->attribute( 'status' ),
-                                             'language' => (string)$version->initialLanguageCode() );
-                    $version->removeThis();
-                }
-                $db->commit();
-
-                if ( $refusedRemove )
-                {
-                    $refused = array( 'action' => 'remove', 'versions' => $refusedRemove );
-                    \eZDebug::writeNotice( 'content/history: removing versions ' . implode( ',', $refusedRemove ) . ' of object ' . (int)$ObjectID .
-                                           ' refused for user ' . $currentUserID, __METHOD__ );
-                }
-                // The versions removed are no longer offered
-                if ( $auditRemoved )
-                {
-                    $removedNumbers = array();
-                    foreach ( $auditRemoved as $removedItem )
-                        $removedNumbers[] = $removedItem['version'];
-                    $contentVersions = array_values( array_diff( $contentVersions, $removedNumbers ) );
-                    $removedVersions = $removedNumbers;
-                }
-
-                // Audit (doc/bc/6.0/audit.md, content.version.remove)
-                if ( $auditRemoved && class_exists( 'expAuditHook' ) )
-                    \expAuditHook::emit( 'content.version.remove', function () use ( $ObjectID, $auditRemoved ) {
-                        $versions = array();
-                        foreach ( $auditRemoved as $v )
-                            $versions[] = $v['version'];
-                        $o = \expAuditHook::object( (int)$ObjectID );
-                        return array( 'object' => array( 'type' => 'version', 'id' => implode( ',', $versions ), 'object_id' => (int)$ObjectID,
-                                                         'name' => isset( $o['name'] ) ? $o['name'] : null ),
-                                      'before' => array( 'versions' => $auditRemoved ) );
-                    } );
-            }
-        }
-
-        $user = \eZUser::currentUser();
-
-        if ( $Module->isCurrentAction( 'Edit' )  )
-        {
-            if ( !$canEdit )
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
-
-            $versionID = false;
-
-            if ( is_array( $Module->actionParameter( 'VersionKeyArray' ) ) )
-            {
-                $versionID = array_keys( $Module->actionParameter( 'VersionKeyArray' ) );
-                $versionID = $versionID[0];
-            }
-            else if ( $Module->hasActionParameter( 'VersionID' ) )
-                $versionID = $Module->actionParameter( 'VersionID' );
-
-            $version = is_numeric( $versionID ) ? $object->version( (int)$versionID ) : null;
-            if ( !$version )
-            {
-                // No such version of this object: back to the list, as copying does
-                $Module->redirectToView( 'history', array( $ObjectID, $object->attribute( 'current_version' ) ) );
-                return $this->viewResult( isset( $Result ) ? $Result : null,  \eZModule::HOOK_STATUS_CANCEL_RUN );
-            }
-            $versionID = (int)$version->attribute( 'version' );
-
-            if ( $versionID !== false and
-                 !in_array( $version->attribute( 'status' ), array( \eZContentObjectVersion::STATUS_DRAFT, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT ) ) )
-            {
-                $editWarning = 1;
-                $EditVersion = $versionID;
-            }
-            else if ( $versionID !== false and
-                      $version->attribute( 'creator_id' ) != $user->attribute( 'contentobject_id' ) )
-            {
-                $editWarning = 2;
-                $EditVersion = $versionID;
-            }
-            else
-            {
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $ObjectID, $versionID, $version->initialLanguageCode() ) ) );
-            }
-        }
-
-        if ( $Module->isCurrentAction( 'CopyVersion' )  )
-        {
-            if ( !$canEdit )
-            {
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
-            }
-
-            if ( is_array( $Module->actionParameter( 'VersionKeyArray' ) ) )
-            {
-                $versionID = array_keys( $Module->actionParameter( 'VersionKeyArray' ) );
-                $versionID = $versionID[0];
-            }
-            else
-            {
-                $versionID = $Module->actionParameter( 'VersionID' );
-            }
-
-            $version = $object->version( $versionID );
-            if ( !$version )
-                $versionID = false;
-
-            // if we cannot fetch version with given versionID or if fetched version is
-            // an internal-draft then just skip copying and redirect back to the history view
-            if ( !$versionID or $version->attribute( 'status' ) == \eZContentObjectVersion::STATUS_INTERNAL_DRAFT )
-            {
-                $currentVersion = $object->attribute( 'current_version' );
-                $Module->redirectToView( 'history', array( $ObjectID, $currentVersion ) );
-                return $this->viewResult( isset( $Result ) ? $Result : null,  \eZModule::HOOK_STATUS_CANCEL_RUN );
-            }
-
-            $versionID = (int)$version->attribute( 'version' );
-            $languages = $Module->actionParameter( 'LanguageArray' );
-            $language = ( is_array( $languages ) && isset( $languages[$versionID] ) && is_string( $languages[$versionID] ) )
-                        ? $languages[$versionID] : $version->initialLanguageCode();
-            // The copy starts in one of the version's own translations
-            if ( !in_array( $language, self::versionLanguageCodes( $version ), true ) )
-                $language = $version->initialLanguageCode();
-
-            if ( !in_array( $versionID, $contentVersions, true ) )
-            {
-                // A copy shows the content of the version in the editor
-                $refused = array( 'action' => 'copy', 'versions' => array( $versionID ) );
-                \eZDebug::writeNotice( 'content/history: copying version ' . $versionID . ' of object ' . (int)$ObjectID .
-                                       ' refused for user ' . $currentUserID . ' (may not read the version)', __METHOD__ );
-            }
-            else if ( !$object->editAccess( $version, $language ) )
-            {
-                $refused = array( 'action' => 'copy-language', 'versions' => array( $versionID ), 'language' => $language );
-                \eZDebug::writeNotice( 'content/history: copying version ' . $versionID . ' of object ' . (int)$ObjectID .
-                                       ' refused for user ' . $currentUserID . ' (may not edit ' . $language . ')', __METHOD__ );
-            }
-            else
-            {
-                // Copying version (versionHistoryLimit is done in eZContentObject createNewVersion() )
-                $db = \eZDB::instance();
-                $db->begin();
-                $newVersionID = $object->copyRevertTo( $versionID, $language );
-                $db->commit();
-
-                if ( !$http->hasPostVariable( 'DoNotEditAfterCopy' ) )
-                {
-                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $ObjectID, $newVersionID, $language ) ) );
-                }
-                // The new draft is the user's own
-                if ( $newVersionID )
-                    $contentVersions[] = (int)$newVersionID;
-            }
-        }
-
-        $res = \eZTemplateDesignResource::instance();
-        $res->setKeys( array( array( 'object', $object->attribute( 'id' ) ), // Object ID
-                              array( 'remote_id', $object->attribute( 'remote_id' ) ),
-                              array( 'class', $object->attribute( 'contentclass_id' ) ), // Class ID
-                              array( 'class_identifier', $object->attribute( 'class_identifier' ) ), // Class identifier
-                              array( 'section_id', $object->attribute( 'section_id' ) ), // Section ID, typo, deprecated
-                              array( 'section', $object->attribute( 'section_id' ) ) // Section ID
-                              ) ); // Section ID, 0 so far
-
-        $section = \eZSection::fetch( $object->attribute( 'section_id' ) );
-        if( $section )
-        {
-            $res->setKeys( array( array( 'section_identifier', $section->attribute( 'identifier' ) ) ) );
-        }
-
-        // The Back button: an edit of a version that was just removed is no longer there to go back to
-        if ( $removedVersions && preg_match( '#^/content/edit/\d+/(\d+)(/|$)#', $origin, $originMatch ) && in_array( (int)$originMatch[1], $removedVersions, true ) )
-            $origin = self::originURI( (int)$object->attribute( 'id' ), (int)$object->attribute( 'main_node_id' ), array(), \eZSys::indexDir() );
-        $tpl->setVariable( 'redirect_uri', $origin );
-
-        //Fetch newer drafts and count of newer drafts.
-        $newerDraftVersionList = \eZPersistentObject::fetchObjectList( \eZContentObjectVersion::definition(),
-                                                                      null,
-                                                                      array( 'contentobject_id' => $object->attribute( 'id' ),
-                                                                             'status' => \eZContentObjectVersion::STATUS_DRAFT,
-                                                                             'version' => array( '>', $object->attribute( 'current_version' ) ) ),
-                                                                      array( 'modified' => 'asc',
-                                                                             'initial_language_id' => 'desc' ),
-                                                                      null, true );
-        $newerDraftVersionListCount = is_array( $newerDraftVersionList ) ? count( $newerDraftVersionList ) : 0;
-
-        $versions = $object->versions();
-
-        $tpl->setVariable( 'newerDraftVersionList', $newerDraftVersionList );
-        $tpl->setVariable( 'newerDraftVersionListCount', $newerDraftVersionListCount );
-        $tpl->setVariable( 'view_parameters', $viewParameters );
+        $tpl->setVariable( 'view_parameters', array( 'offset' => $offset ) );
         $tpl->setVariable( 'object', $object );
-        $tpl->setVariable( 'edit_version', $EditVersion );
-        $tpl->setVariable( 'versions', $versions );
-        $tpl->setVariable( 'edit_warning', $editWarning );
-        $tpl->setVariable( 'can_edit', $canEdit );
+        $tpl->setVariable( 'edit_version', $this->editVersion );
+        $tpl->setVariable( 'versions', $object->versions() );
+        $tpl->setVariable( 'edit_warning', $this->editWarning );
+        $tpl->setVariable( 'can_edit', $this->canEdit );
         // Whether the user may read the object; false for an editor who may edit it only (the page says so)
-        $tpl->setVariable( 'can_read', $canRead );
+        $tpl->setVariable( 'can_read', $this->canRead );
         // The numbers of the versions whose content the user may see (compare, copy, the links to the version view)
-        $tpl->setVariable( 'content_versions', $contentVersions );
+        $tpl->setVariable( 'content_versions', $this->contentVersions );
         // An action of the page refused for some versions, or false
-        $tpl->setVariable( 'refused', $refused );
-        //$tpl->setVariable( 'can_remove', $canRemove );
-        $tpl->setVariable( 'user_id', $user->attribute( 'contentobject_id' ) );
+        $tpl->setVariable( 'refused', $this->refused );
+        $tpl->setVariable( 'history_feedback', $this->feedback );
+        $tpl->setVariable( 'user_id', $this->userID );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:content/history.tpl' );
-        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/content', 'History' ),
-                                        'url' => false ) );
+        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/content', 'History' ), 'url' => false ) );
         if ( $section )
         {
             $Result['navigation_part'] = $section->attribute( 'navigation_part_identifier' );
             $Result['section_id'] = $section->attribute( 'id' );
         }
+        return $this->viewResult( $Result, null );
+    }
 
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    /** @return int[] the numbers of the versions whose content the user may see (canSeeVersionContent()) */
+    protected function seenVersions()
+    {
+        $seen = array();
+        foreach ( $this->object->versions() as $version )
+        {
+            if ( self::canSeeVersionContent( $version, $this->canRead, $this->canEdit, $this->userID ) )
+                $seen[] = (int)$version->attribute( 'version' );
+        }
+        return $seen;
+    }
+
+    /** The comparison of two versions (DiffButton, FromVersion, ToVersion, Language, ExtraOptions) */
+    protected function compare()
+    {
+        $http = $this->http;
+        $object = $this->object;
+        $this->preselectComparison();
+        // CompareButton[n] on a version compares it with the current version (or the newest one the user may see)
+        $compareWith = $http->hasPostVariable( 'CompareButton' ) && is_array( $http->postVariable( 'CompareButton' ) )
+                       ? array_keys( $http->postVariable( 'CompareButton' ) ) : array();
+        if ( !$compareWith && ( !$http->hasPostVariable( 'DiffButton' ) || !$http->hasPostVariable( 'FromVersion' ) || !$http->hasPostVariable( 'ToVersion' ) ) )
+            return null;
+        if ( !$object->attribute( 'can_diff' ) )
+            return $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+
+        $lang = $http->hasPostVariable( 'Language' ) ? $http->postVariable( 'Language' ) : false;
+        if ( $compareWith )
+        {
+            $oldVersion = $compareWith[0];
+            $newVersion = self::comparedWith( (int)$oldVersion, (int)$object->attribute( 'current_version' ), $this->contentVersions );
+            $lang = false;
+        }
+        else
+        {
+            $oldVersion = $http->postVariable( 'FromVersion' );
+            $newVersion = $http->postVariable( 'ToVersion' );
+        }
+        $oldObject = is_numeric( $oldVersion ) ? $object->version( (int)$oldVersion ) : null;
+        $newObject = is_numeric( $newVersion ) ? $object->version( (int)$newVersion ) : null;
+        if ( !$oldObject instanceof \eZContentObjectVersion || !$newObject instanceof \eZContentObjectVersion )
+            return null;
+        if ( !in_array( (int)$oldVersion, $this->contentVersions, true ) || !in_array( (int)$newVersion, $this->contentVersions, true ) )
+        {
+            // A version given in the request whose content the user may not see is not compared
+            $this->refused = array( 'action' => 'diff', 'versions' => array_values( array_diff( array( (int)$oldVersion, (int)$newVersion ), $this->contentVersions ) ) );
+            \eZDebug::writeNotice( 'content/history: comparing versions ' . (int)$oldVersion . ' and ' . (int)$newVersion . ' of object ' .
+                                   (int)$object->attribute( 'id' ) . ' refused for user ' . $this->userID, __METHOD__ );
+            return null;
+        }
+
+        if ( $lang )
+        {
+            $oldAttributes = $object->fetchDataMap( $oldVersion, $lang );
+            // Fallback, if the language asked for is not in the version
+            if ( !$oldAttributes )
+                $oldAttributes = $object->fetchDataMap( $oldVersion, $oldObject->attribute( 'initial_language' )->attribute( 'locale' ) );
+            $newAttributes = $object->fetchDataMap( $newVersion, $lang );
+            if ( !$newAttributes )
+                $newAttributes = $object->fetchDataMap( $newVersion, $newObject->attribute( 'initial_language' )->attribute( 'locale' ) );
+        }
+        else
+        {
+            $oldAttributes = $oldObject->dataMap();
+            $newAttributes = $newObject->dataMap();
+        }
+
+        // Extra options to open up for future extensions of the system.
+        $extraOptions = $http->hasPostVariable( 'ExtraOptions' ) ? $http->postVariable( 'ExtraOptions' ) : false;
+
+        // The diff method of each datatype
+        $diff = array();
+        foreach ( $oldAttributes as $attribute )
+        {
+            $identifier = $attribute->attribute( 'contentclass_attribute_identifier' );
+            if ( !isset( $newAttributes[$identifier] ) )
+                continue;
+            $newAttr = $newAttributes[$identifier];
+            $contentClassAttr = $newAttr->attribute( 'contentclass_attribute' );
+            $diff[$contentClassAttr->attribute( 'id' )] = $contentClassAttr->diff( $attribute, $newAttr, $extraOptions );
+        }
+
+        $this->tpl->setVariable( 'oldVersion', $oldVersion );
+        $this->tpl->setVariable( 'oldVersionObject', $object->version( $oldVersion ) );
+        $this->tpl->setVariable( 'newVersion', $newVersion );
+        $this->tpl->setVariable( 'newVersionObject', $object->version( $newVersion ) );
+        $this->tpl->setVariable( 'diff', $diff );
+        $this->tpl->setVariable( 'diff_language', $lang );
+        $this->tpl->setVariable( 'selectOldVersion', (int)$oldVersion );
+        $this->tpl->setVariable( 'selectNewVersion', (int)$newVersion );
+        return null;
+    }
+
+    /** The two versions the comparison offers first: the newest and the one before it, of those the user may see */
+    protected function preselectComparison()
+    {
+        $previousVersion = 1;
+        $newestVersion = 1;
+        $selectable = array();
+        foreach ( $this->object->versions( false ) as $versionItem )
+        {
+            // archived, published and drafts the user may see
+            if ( in_array( (int)$versionItem['status'], array( \eZContentObjectVersion::STATUS_DRAFT, \eZContentObjectVersion::STATUS_PUBLISHED,
+                                                               \eZContentObjectVersion::STATUS_ARCHIVED ), true ) &&
+                 in_array( (int)$versionItem['version'], $this->contentVersions, true ) )
+                $selectable[] = (int)$versionItem['version'];
+        }
+        if ( $selectable && count( $this->object->versions( false ) ) > 1 )
+        {
+            $newestVersion = array_pop( $selectable );
+            if ( $selectable )
+                $previousVersion = array_pop( $selectable );
+        }
+        $this->tpl->setVariable( 'selectOldVersion', $previousVersion );
+        $this->tpl->setVariable( 'selectNewVersion', $newestVersion );
+    }
+
+    /** The warning that the version history limit was reached (set by content/edit in the session) */
+    protected function versionLimitWarning()
+    {
+        if ( $this->http->hasSessionVariable( 'ExcessVersionHistoryLimit' ) )
+        {
+            if ( $this->http->sessionVariable( 'ExcessVersionHistoryLimit' ) )
+                $this->editWarning = 3;
+            $this->http->removeSessionVariable( 'ExcessVersionHistoryLimit' );
+        }
+        return null;
+    }
+
+    /** Removing versions (RemoveButton, DeleteIDArray[]): only versions of this object, in a status the page offers */
+    protected function removeVersions()
+    {
+        $http = $this->http;
+        if ( !$http->hasPostVariable( 'RemoveButton' ) )
+            return null;
+        if ( !$this->canEdit )
+            return $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+        if ( !$http->hasPostVariable( 'DeleteIDArray' ) )
+        {
+            $this->refused = array( 'action' => 'remove-none', 'versions' => array() );
+            return null;
+        }
+        $objectID = (int)$this->object->attribute( 'id' );
+        $db = \eZDB::instance();
+        $db->begin();
+        $deleteIDArray = $http->postVariable( 'DeleteIDArray' );
+        $auditRemoved = array();
+        $refusedRemove = array();
+        foreach ( is_array( $deleteIDArray ) ? $deleteIDArray : array() as $deleteID )
+        {
+            if ( !is_numeric( $deleteID ) )
+                continue;
+            $version = \eZContentObjectVersion::fetch( (int)$deleteID );
+            if ( !$version instanceof \eZContentObjectVersion || (int)$version->attribute( 'contentobject_id' ) !== $objectID )
+                continue;
+            if ( !self::isRemovableStatus( $version->attribute( 'status' ) ) || !$version->attribute( 'can_remove' ) )
+            {
+                $refusedRemove[] = (int)$version->attribute( 'version' );
+                continue;
+            }
+            $auditRemoved[] = array( 'version' => (int)$version->attribute( 'version' ), 'status' => (int)$version->attribute( 'status' ),
+                                     'language' => (string)$version->initialLanguageCode() );
+            $version->removeThis();
+        }
+        $db->commit();
+
+        if ( $refusedRemove )
+        {
+            $this->refused = array( 'action' => 'remove', 'versions' => $refusedRemove );
+            \eZDebug::writeNotice( 'content/history: removing versions ' . implode( ',', $refusedRemove ) . ' of object ' . $objectID .
+                                   ' refused for user ' . $this->userID, __METHOD__ );
+        }
+        if ( $auditRemoved )
+        {
+            $removedNumbers = array();
+            foreach ( $auditRemoved as $removedItem )
+                $removedNumbers[] = $removedItem['version'];
+            $this->feedback = array( 'type' => 'removed', 'versions' => $removedNumbers );
+        }
+
+        // Audit (doc/bc/6.0/audit.md, content.version.remove)
+        if ( $auditRemoved && class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'content.version.remove', function () use ( $objectID, $auditRemoved ) {
+                $versions = array();
+                foreach ( $auditRemoved as $v )
+                    $versions[] = $v['version'];
+                $o = \expAuditHook::object( $objectID );
+                return array( 'object' => array( 'type' => 'version', 'id' => implode( ',', $versions ), 'object_id' => $objectID,
+                                                 'name' => isset( $o['name'] ) ? $o['name'] : null ),
+                              'before' => array( 'versions' => $auditRemoved ) );
+            } );
+        return null;
+    }
+
+    /** @return int|false the version an action names: HistoryEditButton[n] / HistoryCopyVersionButton[n], else RevertToVersionID */
+    protected function actionVersion()
+    {
+        if ( is_array( $this->module->actionParameter( 'VersionKeyArray' ) ) )
+        {
+            $keys = array_keys( $this->module->actionParameter( 'VersionKeyArray' ) );
+            return isset( $keys[0] ) ? $keys[0] : false;
+        }
+        return $this->module->hasActionParameter( 'VersionID' ) ? $this->module->actionParameter( 'VersionID' ) : false;
+    }
+
+    /** Back to the list, when an action names no version of this object */
+    protected function backToList()
+    {
+        $this->module->redirectToView( 'history', array( $this->object->attribute( 'id' ), $this->object->attribute( 'current_version' ) ) );
+        return \eZModule::HOOK_STATUS_CANCEL_RUN;
+    }
+
+    /** Editing a version (HistoryEditButton[n]): one's own draft in place; any other version has to be copied first */
+    protected function editAction()
+    {
+        if ( !$this->module->isCurrentAction( 'Edit' ) )
+            return null;
+        if ( !$this->canEdit )
+            return $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+        $versionID = $this->actionVersion();
+        $version = is_numeric( $versionID ) ? $this->object->version( (int)$versionID ) : null;
+        if ( !$version )
+            return $this->backToList();
+        $versionID = (int)$version->attribute( 'version' );
+        if ( !in_array( $version->attribute( 'status' ), array( \eZContentObjectVersion::STATUS_DRAFT, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT ) ) )
+        {
+            $this->editWarning = 1;
+            $this->editVersion = $versionID;
+            return null;
+        }
+        if ( $version->attribute( 'creator_id' ) != $this->userID )
+        {
+            $this->editWarning = 2;
+            $this->editVersion = $versionID;
+            return null;
+        }
+        return $this->module->redirectToView( 'edit', array( $this->object->attribute( 'id' ), $versionID, $version->initialLanguageCode() ) );
+    }
+
+    /** A new draft from a version (HistoryCopyVersionButton[n], CopyVersionLanguage[n], DoNotEditAfterCopy) */
+    protected function copyAction()
+    {
+        if ( !$this->module->isCurrentAction( 'CopyVersion' ) )
+            return null;
+        if ( !$this->canEdit )
+            return $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+        $object = $this->object;
+        $versionID = $this->actionVersion();
+        $version = is_numeric( $versionID ) ? $object->version( (int)$versionID ) : null;
+        // no such version, or an untouched draft (nothing to copy): back to the list
+        if ( !$version || $version->attribute( 'status' ) == \eZContentObjectVersion::STATUS_INTERNAL_DRAFT )
+            return $this->backToList();
+
+        $versionID = (int)$version->attribute( 'version' );
+        $languages = $this->module->actionParameter( 'LanguageArray' );
+        $language = ( is_array( $languages ) && isset( $languages[$versionID] ) && is_string( $languages[$versionID] ) )
+                    ? $languages[$versionID] : $version->initialLanguageCode();
+        // The copy starts in one of the version's own translations
+        if ( !in_array( $language, self::versionLanguageCodes( $version ), true ) )
+            $language = $version->initialLanguageCode();
+
+        if ( !in_array( $versionID, $this->contentVersions, true ) )
+        {
+            // A copy shows the content of the version in the editor
+            $this->refused = array( 'action' => 'copy', 'versions' => array( $versionID ) );
+            \eZDebug::writeNotice( 'content/history: copying version ' . $versionID . ' of object ' . (int)$object->attribute( 'id' ) .
+                                   ' refused for user ' . $this->userID . ' (may not read the version)', __METHOD__ );
+            return null;
+        }
+        if ( !$object->editAccess( $version, $language ) )
+        {
+            $this->refused = array( 'action' => 'copy-language', 'versions' => array( $versionID ), 'language' => $language );
+            \eZDebug::writeNotice( 'content/history: copying version ' . $versionID . ' of object ' . (int)$object->attribute( 'id' ) .
+                                   ' refused for user ' . $this->userID . ' (may not edit ' . $language . ')', __METHOD__ );
+            return null;
+        }
+        // Copying version (versionHistoryLimit is done in eZContentObject createNewVersion() )
+        $db = \eZDB::instance();
+        $db->begin();
+        $newVersionID = $object->copyRevertTo( $versionID, $language );
+        $db->commit();
+
+        if ( !$this->http->hasPostVariable( 'DoNotEditAfterCopy' ) )
+            return $this->module->redirectToView( 'edit', array( $object->attribute( 'id' ), $newVersionID, $language ) );
+        $this->feedback = array( 'type' => 'copied', 'from' => $versionID, 'to' => (int)$newVersionID, 'language' => $language );
+        return null;
+    }
+
+    /** The keys of the design resource for template overrides; @return \eZSection|null the object's section */
+    protected function designKeys()
+    {
+        $object = $this->object;
+        $res = \eZTemplateDesignResource::instance();
+        $res->setKeys( array( array( 'object', $object->attribute( 'id' ) ),
+                              array( 'remote_id', $object->attribute( 'remote_id' ) ),
+                              array( 'class', $object->attribute( 'contentclass_id' ) ),
+                              array( 'class_identifier', $object->attribute( 'class_identifier' ) ),
+                              array( 'section_id', $object->attribute( 'section_id' ) ), // typo, deprecated
+                              array( 'section', $object->attribute( 'section_id' ) ) ) );
+        $section = \eZSection::fetch( $object->attribute( 'section_id' ) );
+        if ( $section )
+            $res->setKeys( array( array( 'section_identifier', $section->attribute( 'identifier' ) ) ) );
+        return $section ? $section : null;
+    }
+
+    /**
+     * The list: every version as a row, the figures, the filters' choices, the page of rows that match the
+     * filters with the actions of each, the newer drafts and the address of the Back button.
+     */
+    protected function listVariables( array $filters, $offset )
+    {
+        $tpl = $this->tpl;
+        $object = $this->object;
+        $all = array();
+        $byNumber = array();
+        $languageNames = array();
+        foreach ( $object->versions() as $version )
+        {
+            $locale = (string)$version->initialLanguageCode();
+            $creator = $version->attribute( 'creator' );
+            $all[] = \expContentHistoryList::row( array( 'id' => $version->attribute( 'id' ), 'version' => $version->attribute( 'version' ),
+                                                         'status' => $version->attribute( 'status' ), 'language' => $locale,
+                                                         'language_name' => self::languageName( $locale, $languageNames ),
+                                                         'creator_id' => $version->attribute( 'creator_id' ),
+                                                         'creator_name' => $creator ? (string)$creator->attribute( 'name' ) : '',
+                                                         'created' => $version->attribute( 'created' ), 'modified' => $version->attribute( 'modified' ) ) );
+            $byNumber[(int)$version->attribute( 'version' )] = $version;
+        }
+        $selected = \expContentHistoryList::select( $all, $filters );
+        $count = count( $selected );
+        list( $limit, $limitChoice, $limitChoices ) = \expAdminPagination::chosen( self::LIST_VIEW, self::LIMIT_PREFERENCE );
+        if ( $offset >= $count )
+            $offset = 0;
+
+        $page = \expAdminPagination::page( $selected, $offset, $limit );
+        // The translations of the versions on this page the user may edit (and so start a new draft in): the same
+        // check the copy makes (editAccess() in that language), which also allows a translation the object lacks
+        $editLanguages = array();
+        $languagesOf = array();
+        foreach ( $page as $row )
+        {
+            $languagesOf[$row['version']] = self::versionLanguageCodes( $byNumber[$row['version']] );
+            foreach ( $languagesOf[$row['version']] as $locale )
+            {
+                if ( $this->canEdit && !in_array( $locale, $editLanguages, true ) && $object->editAccess( null, $locale ) )
+                    $editLanguages[] = $locale;
+            }
+        }
+        $context = array( 'can_edit' => $this->canEdit, 'content_versions' => $this->contentVersions, 'edit_languages' => $editLanguages,
+                          'user_id' => $this->userID );
+        $rows = array();
+        foreach ( $page as $row )
+        {
+            $version = $byNumber[$row['version']];
+            $row['languages'] = array();
+            foreach ( $languagesOf[$row['version']] as $locale )
+                $row['languages'][$locale] = self::languageName( $locale, $languageNames );
+            $row['can_versionread'] = (bool)$version->attribute( 'can_read' );
+            $row['can_remove'] = (bool)$version->attribute( 'can_remove' );
+            $row['actions'] = \expContentHistoryList::actions( $row, $context );
+            $row['object'] = $version;
+            $rows[] = $row;
+        }
+
+        $tpl->setVariable( 'history_rows', $rows );
+        $tpl->setVariable( 'history_count', $count );
+        $tpl->setVariable( 'history_offset', $offset );
+        $tpl->setVariable( 'history_limit', $limit );
+        $tpl->setVariable( 'history_limit_choices', $limitChoices );
+        $tpl->setVariable( 'history_filters', $filters );
+        $tpl->setVariable( 'history_suffix', \expContentHistoryList::suffix( $filters ) );
+        $overview = \expContentHistoryList::overview( $all, $this->userID );
+        $choices = \expContentHistoryList::choices( $all );
+        $tpl->setVariable( 'history_overview', $overview );
+        $tpl->setVariable( 'history_choices', $choices );
+        $tpl->setVariable( 'history_links', \expContentHistoryList::links( $filters, $overview['statuses'], $choices ) );
+        $tpl->setVariable( 'history_status_names', \expContentHistoryList::STATUSES );
+        $tpl->setVariable( 'history_edit_languages', $editLanguages );
+
+        // The drafts newer than the current version, as before
+        $newerDraftVersionList = \eZPersistentObject::fetchObjectList( \eZContentObjectVersion::definition(), null,
+                                                                      array( 'contentobject_id' => $object->attribute( 'id' ),
+                                                                             'status' => \eZContentObjectVersion::STATUS_DRAFT,
+                                                                             'version' => array( '>', $object->attribute( 'current_version' ) ) ),
+                                                                      array( 'modified' => 'asc', 'initial_language_id' => 'desc' ), null, true );
+        $tpl->setVariable( 'newerDraftVersionList', $newerDraftVersionList );
+        $tpl->setVariable( 'newerDraftVersionListCount', is_array( $newerDraftVersionList ) ? count( $newerDraftVersionList ) : 0 );
+
+        // The Back button: an edit of a version that was just removed is no longer there to go back to
+        $removed = ( $this->feedback && $this->feedback['type'] === 'removed' ) ? $this->feedback['versions'] : array();
+        if ( $removed && preg_match( '#^/content/edit/\d+/(\d+)(/|$)#', $this->origin, $originMatch ) && in_array( (int)$originMatch[1], $removed, true ) )
+            $this->origin = self::originURI( (int)$object->attribute( 'id' ), (int)$object->attribute( 'main_node_id' ), array(), \eZSys::indexDir() );
+        $tpl->setVariable( 'redirect_uri', $this->origin );
+    }
+
+    /**
+     * The version a version's own Compare button compares it with: the current version, or when that is the version
+     * itself or one the user may not see, the newest other version the user may see.
+     *
+     * @param int $version
+     * @param int $current the object's current version
+     * @param int[] $seen the versions whose content the user may see
+     * @return int the version itself when there is no other
+     */
+    public static function comparedWith( $version, $current, array $seen )
+    {
+        if ( $current !== $version && in_array( $current, $seen, true ) )
+            return $current;
+        rsort( $seen );
+        foreach ( $seen as $other )
+        {
+            if ( $other !== $version )
+                return $other;
+        }
+        return $version;
+    }
+
+    /** The name of a language by its locale, remembered in $names for the request */
+    private static function languageName( $locale, array &$names )
+    {
+        if ( !isset( $names[$locale] ) )
+        {
+            $language = $locale !== '' ? \eZContentLanguage::fetchByLocale( $locale ) : false;
+            $names[$locale] = $language ? (string)$language->attribute( 'name' ) : $locale;
+        }
+        return $names[$locale];
     }
 
     /**
