@@ -384,6 +384,14 @@ class expCacheManager
                 'text' => $on ? number_format( $status['opcache_statistics']['num_cached_scripts'] ) . ' scripts cached'
                               : 'not enabled for this server' );
         }
+        elseif ( extension_loaded( 'Zend OPcache' ) )
+        {
+            // Loaded, with opcache_get_status() in disable_functions (Plesk sets that per domain): the cache works
+            // and can be reset, only its figures cannot be read. This said "not loaded".
+            $on = (bool)ini_get( 'opcache.enable' ) && ( PHP_SAPI !== 'cli' || (bool)ini_get( 'opcache.enable_cli' ) );
+            $state['opcache'] = array( 'available' => $on && function_exists( 'opcache_reset' ),
+                'text' => $on ? 'enabled (its figures are not available: opcache_get_status is disabled)' : 'not enabled for this server' );
+        }
         if ( function_exists( 'apcu_cache_info' ) )
         {
             $on = function_exists( 'apcu_enabled' ) && apcu_enabled();
@@ -408,6 +416,17 @@ class expCacheManager
     {
         $restrict = (string)ini_get( 'opcache.restrict_api' );
         $status = function_exists( 'opcache_get_status' ) ? @opcache_get_status( true ) : false;
+        // opcache_get_status() disabled (disable_functions) on a server that is not one long process: the cache can
+        // still be reset, only not counted.
+        if ( !function_exists( 'opcache_get_status' ) && extension_loaded( 'Zend OPcache' ) && PHP_SAPI !== 'cli'
+             && function_exists( 'opcache_reset' ) && ini_get( 'opcache.enable' ) )
+        {
+            if ( $dryRun )
+                return self::result( true, 'OPcache: would reset every cached script', array(), true );
+            return @opcache_reset()
+                ? self::result( true, 'OPcache was reset: every PHP file is compiled again when it is next included' )
+                : self::result( false, 'OPcache could not be reset' . ( $restrict !== '' ? ' (opcache.restrict_api allows it only for scripts under ' . $restrict . ')' : '' ) );
+        }
         if ( !is_array( $status ) || empty( $status['opcache_enabled'] ) )
             return self::result( false, 'OPcache could not be reset (it is not '
                 . ( function_exists( 'opcache_get_status' ) ? 'enabled for this server' : 'loaded' ) . ')', array(), $dryRun );
