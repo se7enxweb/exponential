@@ -13255,6 +13255,362 @@ Note: The packages will not be uninstalled.</source>
         <source>Switch maintenance on</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Takes the public site offline while you work on it: every visitor gets a maintenance page instead of the site, and the administration stays reachable so the site can be brought back from here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site is in maintenance mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site is online</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup wizard running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unreadable marker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Past the expected end</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visitors get the maintenance page (503). The administration stays reachable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visitors get the site as usual. Prepare a maintenance window below; nothing changes until you confirm it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bring the site back online</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An installation is still running: visitors would meet a half-built site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switched on by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>for %duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%duration ago, and it does not end by itself</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passed, and it does not end by itself</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in %duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not given</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ends unless the wizard is used again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See the public site (%ip is allowed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See the maintenance page on the public site (%ip)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What visitors are told</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No message of its own: the page says its default text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who still gets in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages below</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nobody: every page request gets the maintenance page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plan the maintenance window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left empty, the page says: %text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common durations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visitors are told when to expect the site back, and search engines when to try again. Maintenance does not end by itself: you switch it off here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>always, so the site can be brought back from here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To check your work on the public site while everyone else gets the maintenance page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other addresses that still see the site (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IPv4 or IPv6 addresses, separated by commas, spaces or new lines; for example the testers of your team. Ranges are not supported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I understand that the public site goes offline for every visitor not listed above, until I switch maintenance off again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Take the site offline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also empties the caches that answer ahead of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What visitors see now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview: what visitors will see</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview of the maintenance page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Served with status 503 and never cached; images, styles and scripts of the site are still served.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Follows what you type.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page comes from %file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From a shell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The same switch, run in the installation directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy the command: %what</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch on takes --message="...", --until=30m, 2h or a date and time, and --allow-ip=1.2.3.4,5.6.7.8. Run as root, add --allow-root-user. ./console exp:maintenance on|off|status does the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From the audit, newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switched on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switched off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>shell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance has not been switched on or off since the audit began.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading the changes needs the audit/read right for the system channel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The audit index is not available, so the changes cannot be listed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The audit is not available, so the changes cannot be listed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every change in the audit console</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What is served, what is not, and where the state is kept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An administration reached by its own host name rather than /admin is not let through; switch off from a shell then.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The state is the file %file: it exists while maintenance is on. Switching on and off is recorded in the audit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page is errors/maintenance.html of the first active extension that has one, else share/maintenance.html.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expected back around %local (%utc UTC).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At most %max minutes (a week).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of 500 characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not addresses, these would be left out: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The command is on the clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not copy. Select the text and copy it by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance is on: visitors see the maintenance page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance could not be switched on: %file is not writable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These entries are not addresses and were left out: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance is off: the site answers again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance was not on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count min</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>

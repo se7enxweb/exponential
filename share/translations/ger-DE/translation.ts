@@ -17138,6 +17138,362 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Switch maintenance on</source>
         <translation>Wartungsmodus einschalten</translation>
     </message>
+    <message>
+        <source>Takes the public site offline while you work on it: every visitor gets a maintenance page instead of the site, and the administration stays reachable so the site can be brought back from here.</source>
+        <translation>Nimmt die öffentliche Website vom Netz, während Sie daran arbeiten: Jeder Besucher erhält statt der Website eine Wartungsseite, und die Administration bleibt erreichbar, sodass die Website von hier aus wieder online gebracht werden kann.</translation>
+    </message>
+    <message>
+        <source>The site is in maintenance mode</source>
+        <translation>Die Website ist im Wartungsmodus</translation>
+    </message>
+    <message>
+        <source>The site is online</source>
+        <translation>Die Website ist online</translation>
+    </message>
+    <message>
+        <source>Setup wizard running</source>
+        <translation>Einrichtungsassistent läuft</translation>
+    </message>
+    <message>
+        <source>Unreadable marker</source>
+        <translation>Unlesbare Markierungsdatei</translation>
+    </message>
+    <message>
+        <source>Past the expected end</source>
+        <translation>Erwartetes Ende überschritten</translation>
+    </message>
+    <message>
+        <source>Visitors get the maintenance page (503). The administration stays reachable.</source>
+        <translation>Besucher erhalten die Wartungsseite (503). Die Administration bleibt erreichbar.</translation>
+    </message>
+    <message>
+        <source>Visitors get the site as usual. Prepare a maintenance window below; nothing changes until you confirm it.</source>
+        <translation>Besucher erhalten die Website wie gewohnt. Bereiten Sie unten ein Wartungsfenster vor; nichts ändert sich, bevor Sie es bestätigen.</translation>
+    </message>
+    <message>
+        <source>Bring the site back online</source>
+        <translation>Website wieder online bringen</translation>
+    </message>
+    <message>
+        <source>An installation is still running: visitors would meet a half-built site.</source>
+        <translation>Eine Installation läuft noch: Besucher würden eine halb aufgebaute Website sehen.</translation>
+    </message>
+    <message>
+        <source>Switched on by</source>
+        <translation>Eingeschaltet von</translation>
+    </message>
+    <message>
+        <source>for %duration</source>
+        <translation>seit %duration</translation>
+    </message>
+    <message>
+        <source>%duration ago, and it does not end by itself</source>
+        <translation>vor %duration, und der Wartungsmodus endet nicht von selbst</translation>
+    </message>
+    <message>
+        <source>Passed, and it does not end by itself</source>
+        <translation>Überschritten, und der Wartungsmodus endet nicht von selbst</translation>
+    </message>
+    <message>
+        <source>in %duration</source>
+        <translation>in %duration</translation>
+    </message>
+    <message>
+        <source>Not given</source>
+        <translation>Nicht angegeben</translation>
+    </message>
+    <message>
+        <source>Ends unless the wizard is used again</source>
+        <translation>Endet, sofern der Assistent nicht wieder verwendet wird</translation>
+    </message>
+    <message>
+        <source>You</source>
+        <translation>Sie</translation>
+    </message>
+    <message>
+        <source>See the public site (%ip is allowed)</source>
+        <translation>Sehen die öffentliche Website (%ip ist zugelassen)</translation>
+    </message>
+    <message>
+        <source>See the maintenance page on the public site (%ip)</source>
+        <translation>Sehen auf der öffentlichen Website die Wartungsseite (%ip)</translation>
+    </message>
+    <message>
+        <source>What visitors are told</source>
+        <translation>Was Besucher lesen</translation>
+    </message>
+    <message>
+        <source>No message of its own: the page says its default text.</source>
+        <translation>Keine eigene Nachricht: Die Seite zeigt ihren Standardtext.</translation>
+    </message>
+    <message>
+        <source>Who still gets in</source>
+        <translation>Wer weiterhin Zugang hat</translation>
+    </message>
+    <message>
+        <source>The administration</source>
+        <translation>Die Administration</translation>
+    </message>
+    <message>
+        <source>Pages below</source>
+        <translation>Seiten unterhalb von</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Nobody: every page request gets the maintenance page.</source>
+        <translation>Niemand: Jede Seitenanfrage erhält die Wartungsseite.</translation>
+    </message>
+    <message>
+        <source>Plan the maintenance window</source>
+        <translation>Wartungsfenster planen</translation>
+    </message>
+    <message>
+        <source>Left empty, the page says: %text</source>
+        <translation>Bleibt das Feld leer, zeigt die Seite: %text</translation>
+    </message>
+    <message>
+        <source>Common durations</source>
+        <translation>Übliche Dauern</translation>
+    </message>
+    <message>
+        <source>Visitors are told when to expect the site back, and search engines when to try again. Maintenance does not end by itself: you switch it off here.</source>
+        <translation>Besucher erfahren, wann die Website voraussichtlich zurück ist, und Suchmaschinen, wann sie es erneut versuchen sollen. Der Wartungsmodus endet nicht von selbst: Sie schalten ihn hier aus.</translation>
+    </message>
+    <message>
+        <source>always, so the site can be brought back from here</source>
+        <translation>immer, damit die Website von hier aus wieder online gebracht werden kann</translation>
+    </message>
+    <message>
+        <source>To check your work on the public site while everyone else gets the maintenance page.</source>
+        <translation>Um Ihre Arbeit auf der öffentlichen Website zu prüfen, während alle anderen die Wartungsseite erhalten.</translation>
+    </message>
+    <message>
+        <source>Other addresses that still see the site (optional)</source>
+        <translation>Weitere Adressen, die die Website weiterhin sehen (optional)</translation>
+    </message>
+    <message>
+        <source>IPv4 or IPv6 addresses, separated by commas, spaces or new lines; for example the testers of your team. Ranges are not supported.</source>
+        <translation>IPv4- oder IPv6-Adressen, getrennt durch Kommas, Leerzeichen oder Zeilenumbrüche, zum Beispiel die Tester Ihres Teams. Adressbereiche werden nicht unterstützt.</translation>
+    </message>
+    <message>
+        <source>I understand that the public site goes offline for every visitor not listed above, until I switch maintenance off again.</source>
+        <translation>Mir ist bewusst, dass die öffentliche Website für jeden oben nicht aufgeführten Besucher offline geht, bis ich den Wartungsmodus wieder ausschalte.</translation>
+    </message>
+    <message>
+        <source>Take the site offline</source>
+        <translation>Website offline nehmen</translation>
+    </message>
+    <message>
+        <source>Also empties the caches that answer ahead of the site.</source>
+        <translation>Leert außerdem die Caches, die vor der Website antworten.</translation>
+    </message>
+    <message>
+        <source>What visitors see now</source>
+        <translation>Was Besucher jetzt sehen</translation>
+    </message>
+    <message>
+        <source>Preview: what visitors will see</source>
+        <translation>Vorschau: Was Besucher sehen werden</translation>
+    </message>
+    <message>
+        <source>Preview of the maintenance page</source>
+        <translation>Vorschau der Wartungsseite</translation>
+    </message>
+    <message>
+        <source>Served with status 503 and never cached; images, styles and scripts of the site are still served.</source>
+        <translation>Ausgeliefert mit Status 503 und nie zwischengespeichert; Bilder, Stylesheets und Skripte der Website werden weiterhin ausgeliefert.</translation>
+    </message>
+    <message>
+        <source>Follows what you type.</source>
+        <translation>Folgt Ihrer Eingabe.</translation>
+    </message>
+    <message>
+        <source>The page comes from %file.</source>
+        <translation>Die Seite stammt aus %file.</translation>
+    </message>
+    <message>
+        <source>From a shell</source>
+        <translation>Von der Kommandozeile</translation>
+    </message>
+    <message>
+        <source>The same switch, run in the installation directory</source>
+        <translation>Derselbe Schalter, im Installationsverzeichnis ausgeführt</translation>
+    </message>
+    <message>
+        <source>Copy the command: %what</source>
+        <translation>Befehl kopieren: %what</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Switch on takes --message="...", --until=30m, 2h or a date and time, and --allow-ip=1.2.3.4,5.6.7.8. Run as root, add --allow-root-user. ./console exp:maintenance on|off|status does the same.</source>
+        <translation>Einschalten versteht --message="...", --until=30m, 2h oder Datum und Uhrzeit sowie --allow-ip=1.2.3.4,5.6.7.8. Als root ausgeführt, ergänzen Sie --allow-root-user. ./console exp:maintenance on|off|status bewirkt dasselbe.</translation>
+    </message>
+    <message>
+        <source>Recent changes</source>
+        <translation>Letzte Änderungen</translation>
+    </message>
+    <message>
+        <source>From the audit, newest first</source>
+        <translation>Aus dem Audit, neueste zuerst</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wann</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Änderung</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Von</translation>
+    </message>
+    <message>
+        <source>Switched on</source>
+        <translation>Eingeschaltet</translation>
+    </message>
+    <message>
+        <source>Switched off</source>
+        <translation>Ausgeschaltet</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Installation</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Unbekannt</translation>
+    </message>
+    <message>
+        <source>shell</source>
+        <translation>Kommandozeile</translation>
+    </message>
+    <message>
+        <source>Maintenance has not been switched on or off since the audit began.</source>
+        <translation>Der Wartungsmodus wurde seit Beginn des Audits weder ein- noch ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>Reading the changes needs the audit/read right for the system channel.</source>
+        <translation>Um die Änderungen zu lesen, ist das Recht audit/read für den Kanal system nötig.</translation>
+    </message>
+    <message>
+        <source>The audit index is not available, so the changes cannot be listed here.</source>
+        <translation>Der Audit-Index ist nicht verfügbar, daher können die Änderungen hier nicht aufgelistet werden.</translation>
+    </message>
+    <message>
+        <source>The audit is not available, so the changes cannot be listed here.</source>
+        <translation>Das Audit ist nicht verfügbar, daher können die Änderungen hier nicht aufgelistet werden.</translation>
+    </message>
+    <message>
+        <source>Every change in the audit console</source>
+        <translation>Alle Änderungen in der Audit-Konsole</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>So funktioniert es</translation>
+    </message>
+    <message>
+        <source>What is served, what is not, and where the state is kept</source>
+        <translation>Was ausgeliefert wird, was nicht, und wo der Zustand gespeichert ist</translation>
+    </message>
+    <message>
+        <source>An administration reached by its own host name rather than /admin is not let through; switch off from a shell then.</source>
+        <translation>Eine Administration, die über einen eigenen Hostnamen statt über /admin erreicht wird, wird nicht durchgelassen; schalten Sie den Wartungsmodus dann von der Kommandozeile aus.</translation>
+    </message>
+    <message>
+        <source>The state is the file %file: it exists while maintenance is on. Switching on and off is recorded in the audit.</source>
+        <translation>Der Zustand ist die Datei %file: Sie existiert, solange der Wartungsmodus eingeschaltet ist. Ein- und Ausschalten werden im Audit festgehalten.</translation>
+    </message>
+    <message>
+        <source>The page is errors/maintenance.html of the first active extension that has one, else share/maintenance.html.</source>
+        <translation>Die Seite ist errors/maintenance.html der ersten aktiven Erweiterung, die eine hat, sonst share/maintenance.html.</translation>
+    </message>
+    <message>
+        <source>Expected back around %local (%utc UTC).</source>
+        <translation>Voraussichtlich zurück gegen %local (%utc UTC).</translation>
+    </message>
+    <message>
+        <source>At most %max minutes (a week).</source>
+        <translation>Höchstens %max Minuten (eine Woche).</translation>
+    </message>
+    <message>
+        <source>%count of 500 characters</source>
+        <translation>%count von 500 Zeichen</translation>
+    </message>
+    <message>
+        <source>Not addresses, these would be left out: %list</source>
+        <translation>Keine Adressen, diese würden ausgelassen: %list</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiert</translation>
+    </message>
+    <message>
+        <source>The command is on the clipboard.</source>
+        <translation>Der Befehl ist in der Zwischenablage.</translation>
+    </message>
+    <message>
+        <source>Could not copy. Select the text and copy it by hand.</source>
+        <translation>Kopieren nicht möglich. Markieren Sie den Text und kopieren Sie ihn von Hand.</translation>
+    </message>
+    <message>
+        <source>Maintenance is on: visitors see the maintenance page.</source>
+        <translation>Der Wartungsmodus ist eingeschaltet: Besucher sehen die Wartungsseite.</translation>
+    </message>
+    <message>
+        <source>Maintenance could not be switched on: %file is not writable.</source>
+        <translation>Der Wartungsmodus konnte nicht eingeschaltet werden: %file ist nicht beschreibbar.</translation>
+    </message>
+    <message>
+        <source>These entries are not addresses and were left out: %list</source>
+        <translation>Diese Einträge sind keine Adressen und wurden ausgelassen: %list</translation>
+    </message>
+    <message>
+        <source>Maintenance is off: the site answers again.</source>
+        <translation>Der Wartungsmodus ist ausgeschaltet: Die Website antwortet wieder.</translation>
+    </message>
+    <message>
+        <source>Maintenance was not on.</source>
+        <translation>Der Wartungsmodus war nicht eingeschaltet.</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Ausschalten</translation>
+    </message>
+    <message>
+        <source>Show the state</source>
+        <translation>Zustand anzeigen</translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation>1 Tag</translation>
+    </message>
+    <message>
+        <source>%count days</source>
+        <translation>%count Tage</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count Std.</translation>
+    </message>
+    <message>
+        <source>%count min</source>
+        <translation>%count Min.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>

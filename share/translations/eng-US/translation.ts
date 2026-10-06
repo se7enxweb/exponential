@@ -14297,6 +14297,362 @@ Note: The packages will not be uninstalled.</translation>
         <source>Switch maintenance on</source>
         <translation>Switch maintenance on</translation>
     </message>
+    <message>
+        <source>Takes the public site offline while you work on it: every visitor gets a maintenance page instead of the site, and the administration stays reachable so the site can be brought back from here.</source>
+        <translation>Takes the public site offline while you work on it: every visitor gets a maintenance page instead of the site, and the administration stays reachable so the site can be brought back from here.</translation>
+    </message>
+    <message>
+        <source>The site is in maintenance mode</source>
+        <translation>The site is in maintenance mode</translation>
+    </message>
+    <message>
+        <source>The site is online</source>
+        <translation>The site is online</translation>
+    </message>
+    <message>
+        <source>Setup wizard running</source>
+        <translation>Setup wizard running</translation>
+    </message>
+    <message>
+        <source>Unreadable marker</source>
+        <translation>Unreadable marker</translation>
+    </message>
+    <message>
+        <source>Past the expected end</source>
+        <translation>Past the expected end</translation>
+    </message>
+    <message>
+        <source>Visitors get the maintenance page (503). The administration stays reachable.</source>
+        <translation>Visitors get the maintenance page (503). The administration stays reachable.</translation>
+    </message>
+    <message>
+        <source>Visitors get the site as usual. Prepare a maintenance window below; nothing changes until you confirm it.</source>
+        <translation>Visitors get the site as usual. Prepare a maintenance window below; nothing changes until you confirm it.</translation>
+    </message>
+    <message>
+        <source>Bring the site back online</source>
+        <translation>Bring the site back online</translation>
+    </message>
+    <message>
+        <source>An installation is still running: visitors would meet a half-built site.</source>
+        <translation>An installation is still running: visitors would meet a half-built site.</translation>
+    </message>
+    <message>
+        <source>Switched on by</source>
+        <translation>Switched on by</translation>
+    </message>
+    <message>
+        <source>for %duration</source>
+        <translation>for %duration</translation>
+    </message>
+    <message>
+        <source>%duration ago, and it does not end by itself</source>
+        <translation>%duration ago, and it does not end by itself</translation>
+    </message>
+    <message>
+        <source>Passed, and it does not end by itself</source>
+        <translation>Passed, and it does not end by itself</translation>
+    </message>
+    <message>
+        <source>in %duration</source>
+        <translation>in %duration</translation>
+    </message>
+    <message>
+        <source>Not given</source>
+        <translation>Not given</translation>
+    </message>
+    <message>
+        <source>Ends unless the wizard is used again</source>
+        <translation>Ends unless the wizard is used again</translation>
+    </message>
+    <message>
+        <source>You</source>
+        <translation>You</translation>
+    </message>
+    <message>
+        <source>See the public site (%ip is allowed)</source>
+        <translation>See the public site (%ip is allowed)</translation>
+    </message>
+    <message>
+        <source>See the maintenance page on the public site (%ip)</source>
+        <translation>See the maintenance page on the public site (%ip)</translation>
+    </message>
+    <message>
+        <source>What visitors are told</source>
+        <translation>What visitors are told</translation>
+    </message>
+    <message>
+        <source>No message of its own: the page says its default text.</source>
+        <translation>No message of its own: the page says its default text.</translation>
+    </message>
+    <message>
+        <source>Who still gets in</source>
+        <translation>Who still gets in</translation>
+    </message>
+    <message>
+        <source>The administration</source>
+        <translation>The administration</translation>
+    </message>
+    <message>
+        <source>Pages below</source>
+        <translation>Pages below</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Nobody: every page request gets the maintenance page.</source>
+        <translation>Nobody: every page request gets the maintenance page.</translation>
+    </message>
+    <message>
+        <source>Plan the maintenance window</source>
+        <translation>Plan the maintenance window</translation>
+    </message>
+    <message>
+        <source>Left empty, the page says: %text</source>
+        <translation>Left empty, the page says: %text</translation>
+    </message>
+    <message>
+        <source>Common durations</source>
+        <translation>Common durations</translation>
+    </message>
+    <message>
+        <source>Visitors are told when to expect the site back, and search engines when to try again. Maintenance does not end by itself: you switch it off here.</source>
+        <translation>Visitors are told when to expect the site back, and search engines when to try again. Maintenance does not end by itself: you switch it off here.</translation>
+    </message>
+    <message>
+        <source>always, so the site can be brought back from here</source>
+        <translation>always, so the site can be brought back from here</translation>
+    </message>
+    <message>
+        <source>To check your work on the public site while everyone else gets the maintenance page.</source>
+        <translation>To check your work on the public site while everyone else gets the maintenance page.</translation>
+    </message>
+    <message>
+        <source>Other addresses that still see the site (optional)</source>
+        <translation>Other addresses that still see the site (optional)</translation>
+    </message>
+    <message>
+        <source>IPv4 or IPv6 addresses, separated by commas, spaces or new lines; for example the testers of your team. Ranges are not supported.</source>
+        <translation>IPv4 or IPv6 addresses, separated by commas, spaces or new lines; for example the testers of your team. Ranges are not supported.</translation>
+    </message>
+    <message>
+        <source>I understand that the public site goes offline for every visitor not listed above, until I switch maintenance off again.</source>
+        <translation>I understand that the public site goes offline for every visitor not listed above, until I switch maintenance off again.</translation>
+    </message>
+    <message>
+        <source>Take the site offline</source>
+        <translation>Take the site offline</translation>
+    </message>
+    <message>
+        <source>Also empties the caches that answer ahead of the site.</source>
+        <translation>Also empties the caches that answer ahead of the site.</translation>
+    </message>
+    <message>
+        <source>What visitors see now</source>
+        <translation>What visitors see now</translation>
+    </message>
+    <message>
+        <source>Preview: what visitors will see</source>
+        <translation>Preview: what visitors will see</translation>
+    </message>
+    <message>
+        <source>Preview of the maintenance page</source>
+        <translation>Preview of the maintenance page</translation>
+    </message>
+    <message>
+        <source>Served with status 503 and never cached; images, styles and scripts of the site are still served.</source>
+        <translation>Served with status 503 and never cached; images, styles and scripts of the site are still served.</translation>
+    </message>
+    <message>
+        <source>Follows what you type.</source>
+        <translation>Follows what you type.</translation>
+    </message>
+    <message>
+        <source>The page comes from %file.</source>
+        <translation>The page comes from %file.</translation>
+    </message>
+    <message>
+        <source>From a shell</source>
+        <translation>From a shell</translation>
+    </message>
+    <message>
+        <source>The same switch, run in the installation directory</source>
+        <translation>The same switch, run in the installation directory</translation>
+    </message>
+    <message>
+        <source>Copy the command: %what</source>
+        <translation>Copy the command: %what</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copy</translation>
+    </message>
+    <message>
+        <source>Switch on takes --message="...", --until=30m, 2h or a date and time, and --allow-ip=1.2.3.4,5.6.7.8. Run as root, add --allow-root-user. ./console exp:maintenance on|off|status does the same.</source>
+        <translation>Switch on takes --message="...", --until=30m, 2h or a date and time, and --allow-ip=1.2.3.4,5.6.7.8. Run as root, add --allow-root-user. ./console exp:maintenance on|off|status does the same.</translation>
+    </message>
+    <message>
+        <source>Recent changes</source>
+        <translation>Recent changes</translation>
+    </message>
+    <message>
+        <source>From the audit, newest first</source>
+        <translation>From the audit, newest first</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>When</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Change</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>By</translation>
+    </message>
+    <message>
+        <source>Switched on</source>
+        <translation>Switched on</translation>
+    </message>
+    <message>
+        <source>Switched off</source>
+        <translation>Switched off</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Changed</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Installation</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Unknown</translation>
+    </message>
+    <message>
+        <source>shell</source>
+        <translation>shell</translation>
+    </message>
+    <message>
+        <source>Maintenance has not been switched on or off since the audit began.</source>
+        <translation>Maintenance has not been switched on or off since the audit began.</translation>
+    </message>
+    <message>
+        <source>Reading the changes needs the audit/read right for the system channel.</source>
+        <translation>Reading the changes needs the audit/read right for the system channel.</translation>
+    </message>
+    <message>
+        <source>The audit index is not available, so the changes cannot be listed here.</source>
+        <translation>The audit index is not available, so the changes cannot be listed here.</translation>
+    </message>
+    <message>
+        <source>The audit is not available, so the changes cannot be listed here.</source>
+        <translation>The audit is not available, so the changes cannot be listed here.</translation>
+    </message>
+    <message>
+        <source>Every change in the audit console</source>
+        <translation>Every change in the audit console</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>How it works</translation>
+    </message>
+    <message>
+        <source>What is served, what is not, and where the state is kept</source>
+        <translation>What is served, what is not, and where the state is kept</translation>
+    </message>
+    <message>
+        <source>An administration reached by its own host name rather than /admin is not let through; switch off from a shell then.</source>
+        <translation>An administration reached by its own host name rather than /admin is not let through; switch off from a shell then.</translation>
+    </message>
+    <message>
+        <source>The state is the file %file: it exists while maintenance is on. Switching on and off is recorded in the audit.</source>
+        <translation>The state is the file %file: it exists while maintenance is on. Switching on and off is recorded in the audit.</translation>
+    </message>
+    <message>
+        <source>The page is errors/maintenance.html of the first active extension that has one, else share/maintenance.html.</source>
+        <translation>The page is errors/maintenance.html of the first active extension that has one, else share/maintenance.html.</translation>
+    </message>
+    <message>
+        <source>Expected back around %local (%utc UTC).</source>
+        <translation>Expected back around %local (%utc UTC).</translation>
+    </message>
+    <message>
+        <source>At most %max minutes (a week).</source>
+        <translation>At most %max minutes (a week).</translation>
+    </message>
+    <message>
+        <source>%count of 500 characters</source>
+        <translation>%count of 500 characters</translation>
+    </message>
+    <message>
+        <source>Not addresses, these would be left out: %list</source>
+        <translation>Not addresses, these would be left out: %list</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copied</translation>
+    </message>
+    <message>
+        <source>The command is on the clipboard.</source>
+        <translation>The command is on the clipboard.</translation>
+    </message>
+    <message>
+        <source>Could not copy. Select the text and copy it by hand.</source>
+        <translation>Could not copy. Select the text and copy it by hand.</translation>
+    </message>
+    <message>
+        <source>Maintenance is on: visitors see the maintenance page.</source>
+        <translation>Maintenance is on: visitors see the maintenance page.</translation>
+    </message>
+    <message>
+        <source>Maintenance could not be switched on: %file is not writable.</source>
+        <translation>Maintenance could not be switched on: %file is not writable.</translation>
+    </message>
+    <message>
+        <source>These entries are not addresses and were left out: %list</source>
+        <translation>These entries are not addresses and were left out: %list</translation>
+    </message>
+    <message>
+        <source>Maintenance is off: the site answers again.</source>
+        <translation>Maintenance is off: the site answers again.</translation>
+    </message>
+    <message>
+        <source>Maintenance was not on.</source>
+        <translation>Maintenance was not on.</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Switch on</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Switch off</translation>
+    </message>
+    <message>
+        <source>Show the state</source>
+        <translation>Show the state</translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation>1 day</translation>
+    </message>
+    <message>
+        <source>%count days</source>
+        <translation>%count days</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count h</translation>
+    </message>
+    <message>
+        <source>%count min</source>
+        <translation>%count min</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>
