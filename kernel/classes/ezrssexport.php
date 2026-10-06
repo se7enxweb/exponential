@@ -1237,8 +1237,14 @@ class eZRSSExport extends eZPersistentObject
                 case 'subcategory':
                     // Only a category Apple actually lists; anything else is
                     // dropped rather than written out to be rejected.
-                    $value = self::knownPodcastCategory( $value,
-                                 $key === 'subcategory' ? $head['category'] : false );
+                    // A subcategory given alone belongs to the category already
+                    // stored; it was checked against the missing key (a warning)
+                    // and so always dropped
+                    $parent = false;
+                    if ( $key === 'subcategory' )
+                        $parent = isset( $head['category'] ) && is_scalar( $head['category'] )
+                                  ? $head['category'] : $defaults['category'];
+                    $value = self::knownPodcastCategory( $value, $parent );
                     break;
 
                 default:
