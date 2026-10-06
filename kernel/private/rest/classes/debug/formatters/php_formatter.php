@@ -77,7 +77,8 @@ class ezpRestDebugPHPFormatter implements ezcDebugOutputFormatter
                 foreach ( $group->elements as $name => $element )
                 {
                     $elapsedTime = sprintf( '%.5f', $element->elapsedTime );
-                    $percent = sprintf( '%.2f', (100 * ($element->elapsedTime / $group->elapsedTime ) ) );
+                    // A group that took no measurable time has no shares: 0 %, not a division by zero
+                    $percent = sprintf( '%.2f', $group->elapsedTime > 0 ? 100 * ( $element->elapsedTime / $group->elapsedTime ) : 0 );
                     $average = sprintf( '%.5f', ( $element->elapsedTime / $element->count ) );
                     $groupInfos = new stdClass();
                     $groupInfos->name = $name;
@@ -91,7 +92,7 @@ class ezpRestDebugPHPFormatter implements ezcDebugOutputFormatter
                     {
                         $switchInfos = new stdClass();
                         $elapsedTime = sprintf( '%.5f', $switch->time - $element->startTime );
-                        $percent = sprintf( '%.2f', ( 100 * ( $elapsedTime / $group->elapsedTime ) ) );
+                        $percent = sprintf( '%.2f', $group->elapsedTime > 0 ? 100 * ( $elapsedTime / $group->elapsedTime ) : 0 );
                         $switchInfos->name = $switch->name;
                         $switchInfos->elapsed = $elapsedTime;
                         $switchInfos->percent = $percent.' %';
