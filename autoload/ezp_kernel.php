@@ -90,6 +90,7 @@ return array(
       'Exponential\\Command\\Kernel\\Resetuserpassword'              => 'kernel/private/classes/commands/resetuserpassword.php',
       'Exponential\\Command\\Kernel\\Runcronjobs'                    => 'kernel/private/classes/commands/runcronjobs.php',
       'Exponential\\Command\\Kernel\\Solr'                           => 'kernel/private/classes/commands/solr.php',
+      'Exponential\\Command\\Kernel\\Systeminfo'                     => 'kernel/private/classes/commands/systeminfo.php',
       'Exponential\\Command\\Kernel\\Trashpurge'                     => 'kernel/private/classes/commands/trashpurge.php',
       'Exponential\\Command\\Kernel\\Updateisbn13'                   => 'kernel/private/classes/commands/updateisbn13.php',
       'Exponential\\Command\\Kernel\\Updateniceurls'                 => 'kernel/private/classes/commands/updateniceurls.php',
