@@ -451,7 +451,14 @@ class eZSiteAccess
      */
     static function matchText( &$text, $match_pre, $match_post )
     {
-        $ret = null;
+        // Without either marker there is nothing to match
+        if ( $match_pre === '' && $match_post === '' )
+            return null;
+
+        // The name is what lies between the two markers; the text keeps what is before the first marker and after
+        // the second one. Without a match the text is left as it was.
+        $ret = $text;
+        $rest = '';
         if ( $match_pre !== '' )
         {
             $pos = strpos( $text, $match_pre );
@@ -459,7 +466,7 @@ class eZSiteAccess
                 return null;
 
             $ret = substr( $text, $pos + strlen( $match_pre ) );
-            $text = substr( $text, 0, $pos );
+            $rest = substr( $text, 0, $pos );
         }
         if ( $match_post !== '' )
         {
@@ -467,9 +474,10 @@ class eZSiteAccess
             if ( $pos === false )
                 return null;
 
-            $text .= substr( $ret, $pos + 1 );
+            $rest .= substr( $ret, $pos + strlen( $match_post ) );
             $ret = substr( $ret, 0, $pos );
         }
+        $text = $rest;
         return $ret;
     }
 

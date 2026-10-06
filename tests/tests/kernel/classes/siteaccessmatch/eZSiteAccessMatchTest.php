@@ -215,6 +215,11 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         return array(
             'pre and a one character post' => array( 'site-k1eng/news', 'site-', '/', 'k1eng', 'news' ),
             'pre only' => array( 'site-k1eng', 'site-', '', 'k1eng', '' ),
+            'pre and a longer post' => array( 'www.k1eng.example.invalid', 'www.', '.example.invalid', 'k1eng', '' ),
+            'text after a longer post is kept' => array( 'site-k1eng--news/x', 'site-', '--', 'k1eng', 'news/x' ),
+            'post only' => array( 'k1eng.example.invalid', '', '.example.invalid', 'k1eng', '' ),
+            'post missing' => array( 'site-k1eng', 'site-', '--', null, 'site-k1eng' ),
+            'neither' => array( 'k1eng', '', '', null, 'k1eng' ),
             'pre missing' => array( 'k1eng', 'site-', '', null, 'k1eng' ),
         );
     }
@@ -224,6 +229,15 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( $expected, eZSiteAccess::matchText( $text, $pre, $post ) );
         $this->assertSame( $rest, $text );
+    }
+
+    public function testUriTextWithALongerPost()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'uri' );
+        $this->set( 'SiteAccessSettings', 'URIMatchType', 'text' );
+        $this->set( 'SiteAccessSettings', 'URIMatchSubtextPre', 'site-' );
+        $this->set( 'SiteAccessSettings', 'URIMatchSubtextPost', '--' );
+        $this->assertAccess( 'k1eng', eZSiteAccess::TYPE_URI, $this->match( 'site-k1eng--news' ), 'news' );
     }
 
     public function testMatchRegexp()
