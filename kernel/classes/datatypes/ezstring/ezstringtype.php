@@ -391,7 +391,7 @@ class eZStringType extends eZDataType
         $maxLengthNode->appendChild( $dom->createTextNode( $maxLength ) );
         $attributeParametersNode->appendChild( $maxLengthNode );
         $defaultStringNode = $dom->createElement( 'default-string' );
-        if ( $defaultString )
+        if ( (string)$defaultString !== '' )
         {
             $defaultStringNode->appendChild( $dom->createTextNode( $defaultString ) );
         }

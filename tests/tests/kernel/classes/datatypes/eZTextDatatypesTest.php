@@ -218,6 +218,7 @@ class eZTextDatatypesTest extends eZDatatypeTestCase
             'both' => array( 30, 'Untitled', '<datatype-parameters><max-length>30</max-length><default-string>Untitled</default-string></datatype-parameters>' ),
             'no default' => array( 0, '', '<datatype-parameters><max-length>0</max-length><default-string/></datatype-parameters>' ),
             'markup in the default' => array( 0, 'a<b>&c', '<datatype-parameters><max-length>0</max-length><default-string>a&lt;b&gt;&amp;c</default-string></datatype-parameters>' ),
+            'default "0"' => array( 0, '0', '<datatype-parameters><max-length>0</max-length><default-string>0</default-string></datatype-parameters>' ),
         );
     }
 
