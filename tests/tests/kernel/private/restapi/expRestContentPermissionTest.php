@@ -22,6 +22,7 @@
 class expRestContentPermissionTestObject extends eZContentObject
 {
     public $id = 0;
+    public $classID = 1;
     public $read = true;
     public $create = array();
     public $editLanguages = array();
@@ -35,6 +36,8 @@ class expRestContentPermissionTestObject extends eZContentObject
 
     public function attribute( $attr, $noFunction = false )
     {
+        if ( $attr === 'contentclass_id' )
+            return $this->classID;
         return $attr === 'id' ? $this->id : null;
     }
 
@@ -64,7 +67,6 @@ class expRestContentPermissionTestNode extends eZContentObjectTreeNode
 {
     public $id;
     public $object;
-    public $classID = 1;
     public $read = true;
     public $edit = true;
     public $remove = true;
@@ -81,7 +83,6 @@ class expRestContentPermissionTestNode extends eZContentObjectTreeNode
         {
             case 'node_id': return $this->id;
             case 'object': return $this->object;
-            case 'contentclass_id': return $this->classID;
         }
         return null;
     }
@@ -164,7 +165,7 @@ class expRestContentPermissionTest extends PHPUnit\Framework\TestCase
     {
         $this->folder = new expRestContentPermissionTestObject( 100 );
         $this->parent = new expRestContentPermissionTestNode( 60, $this->folder );
-        $this->parent->classID = 1;
+        $this->folder->classID = 1;
         $this->folder->nodes = array( $this->parent );
         expRestContentPermissionTestDouble::$nodes = array( 60 => $this->parent );
         expRestContentPermissionTestDouble::$objects = array( 100 => $this->folder );

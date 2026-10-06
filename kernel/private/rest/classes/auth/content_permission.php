@@ -144,7 +144,7 @@ class expRestContentPermission
     {
         $object = $parent->attribute( 'object' );
         return $object instanceof eZContentObject
-               && $object->checkAccess( 'create', $class->attribute( 'id' ), $parent->attribute( 'contentclass_id' ), false, $language ) == 1;
+               && $object->checkAccess( 'create', $class->attribute( 'id' ), $object->attribute( 'contentclass_id' ), false, $language ) == 1;
     }
 
     /**
