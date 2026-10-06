@@ -55,7 +55,8 @@ $ViewList["event"] = array(
 $ViewList["processlist"] = array(
     "script" => "processlist.php",
     "default_navigation_part" => 'ezsetupnavigationpart',
-    'unordered_params' => array( 'offset' => 'Offset' ),
+    // (status)/waiting (the default), stopped or all: which processes the list shows
+    'unordered_params' => array( 'offset' => 'Offset', 'status' => 'Status' ),
     "params" => array( ) );
 
 ?>
