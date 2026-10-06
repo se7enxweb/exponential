@@ -90,7 +90,9 @@ class eZPublishWithoutNotificationTest extends PHPUnit\Framework\TestCase
     {
         $editor = new eZPublishWithoutNotificationTestUser( 'yes' );
         $_POST['PublishNotNotifyButton'] = 'x';
-        $this->assertSame( 'disabled', eZINI::instance( 'notification.ini' )->variable( 'NotificationSettings', 'PublishWithoutNotification' ), 'the shipped default' );
+        // the shipped default, read from the file: an installation's override or INI cache must not decide the test
+        $this->assertMatchesRegularExpression( '/^\[NotificationSettings\]\n(#[^\n]*\n)*PublishWithoutNotification=disabled$/m', file_get_contents( 'settings/notification.ini' ) );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'PublishWithoutNotification', 'disabled' );
         $this->assertFalse( eZContentOperationCollection::publishWithoutNotificationEnabled() );
         $this->assertFalse( eZContentOperationCollection::publishWithoutNotification( 'PublishNotNotifyButton', $editor ) );
         $this->assertFalse( eZContentOperationCollection::canPublishWithoutNotification( $editor ) );
@@ -207,6 +209,7 @@ class eZPublishWithoutNotificationTest extends PHPUnit\Framework\TestCase
         $none = new eZPublishWithoutNotificationTestUser( 'no' );
 
         // setting disabled: notify stays true, whoever posts it
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'PublishWithoutNotification', 'disabled' );
         $this->assertTrue( !eZContentOperationCollection::publishWithoutNotification( 'PublishNotNotifyButton', $editor ) );
         $this->assertTrue( !eZContentOperationCollection::publishWithoutNotification( 'PreviewPublishNotNotifyButton', $editor ) );
 

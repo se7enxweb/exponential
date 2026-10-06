@@ -74,7 +74,16 @@ class eZPublishWithoutNotificationLiveTest extends PHPUnit\Framework\TestCase
                 $mainKey = eZOperationMemento::createKey( array( 'object_id' => $this->objectID, 'version' => $version ) );
                 eZPersistentObject::removeObject( eZOperationMemento::definition(), array( 'main_key' => $mainKey ) );
             }
+            eZContentObject::clearCache();
             $object = eZContentObject::fetch( $this->objectID );
+            $node = $object instanceof eZContentObject ? $object->attribute( 'main_node' ) : null;
+            if ( $node )
+            {
+                // the node with its URL aliases, not into the trash
+                eZContentObjectTreeNode::removeSubtrees( array( (int)$node->attribute( 'node_id' ) ), false );
+                eZContentObject::clearCache();
+                $object = eZContentObject::fetch( $this->objectID );
+            }
             if ( $object instanceof eZContentObject )
             {
                 $object->purge();
