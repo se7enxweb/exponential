@@ -297,14 +297,21 @@ class eZDateType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
-        if ( empty( $string ) )
+        // toString() writes the timestamp, or '' for no date. 0 is a date too
+        // (1 January 1970), which empty() used to read back as no date
+        $string = is_scalar( $string ) ? trim( (string)$string ) : '';
+        if ( $string === '' )
         {
             $string = null;
         }
-        // toString() writes the timestamp; anything else was stored as 0 (1970)
-        else if ( filter_var( trim( (string)$string ), FILTER_VALIDATE_INT ) === false )
+        // anything else was stored as 0 (1970)
+        else if ( filter_var( $string, FILTER_VALIDATE_INT ) === false )
         {
             return false;
+        }
+        else
+        {
+            $string = (int)$string;
         }
 
         return $contentObjectAttribute->setAttribute( 'data_int', $string );

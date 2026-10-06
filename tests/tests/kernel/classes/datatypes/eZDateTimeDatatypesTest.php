@@ -181,7 +181,9 @@ class eZDateTimeDatatypesTest extends eZDatatypeTestCase
     {
         return array(
             'timestamp' => array( '1700000000', 1700000000 ),
+            'epoch' => array( '0', 0 ),
             'empty' => array( '', null ),
+            'spaces only' => array( '  ', null ),
         );
     }
 

@@ -367,7 +367,10 @@ class eZDateTimeType extends eZDataType
     {
         // toString() gives the timestamp, so a number is read back as one; any
         // other text used to go into the int column as it was
-        if ( empty( $string ) or !is_numeric( $string ) )
+        // 0 is a time too (1 January 1970 00:00 UTC), which empty() used to read
+        // back as no time
+        $string = is_scalar( $string ) ? trim( (string)$string ) : '';
+        if ( $string === '' or !is_numeric( $string ) )
         {
             $string = null;
         }
