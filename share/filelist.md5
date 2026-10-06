@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
-96aa03202ebba96b82c74fb3b097a63b  autoload/ezp_kernel.php
+42855e97e632065e9572baff3a8400e1  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -592,7 +592,8 @@ aaff04bc22338b12d39f291d3db76250  design/admin/templates/section/view.tpl
 a653593844b7968fdbdbebf645b3f697  design/admin/templates/settings/exp_style.tpl
 c32996f8d5cb9db02d220b90e8b3e4d3  design/admin/templates/settings/settings_validation.tpl
 2f320cf29a67b5c19330ffbdfc1d6167  design/admin/templates/settings/view.tpl
-411c596d68b515f7ddda0bf4bf41f396  design/admin/templates/setup/cache.tpl
+f103aa6503150bf3db2610f4787f5580  design/admin/templates/setup/cache.tpl
+1a8e332c9e72c29b9856b13646e7d5e2  design/admin/templates/setup/cache_exp_style.tpl
 374f51b6822192b8bbb5844e2b24d625  design/admin/templates/setup/contentextension.tpl
 a0546c08cf97a30d300cecfdcde84f5d  design/admin/templates/setup/cronjobs.tpl
 a6e2bb769b7a163ac55006547b406b49  design/admin/templates/setup/datatype.tpl
@@ -1202,7 +1203,8 @@ aaff04bc22338b12d39f291d3db76250  design/admin4/templates/section/view.tpl
 a653593844b7968fdbdbebf645b3f697  design/admin4/templates/settings/exp_style.tpl
 c32996f8d5cb9db02d220b90e8b3e4d3  design/admin4/templates/settings/settings_validation.tpl
 2f320cf29a67b5c19330ffbdfc1d6167  design/admin4/templates/settings/view.tpl
-411c596d68b515f7ddda0bf4bf41f396  design/admin4/templates/setup/cache.tpl
+f103aa6503150bf3db2610f4787f5580  design/admin4/templates/setup/cache.tpl
+1a8e332c9e72c29b9856b13646e7d5e2  design/admin4/templates/setup/cache_exp_style.tpl
 374f51b6822192b8bbb5844e2b24d625  design/admin4/templates/setup/contentextension.tpl
 a0546c08cf97a30d300cecfdcde84f5d  design/admin4/templates/setup/cronjobs.tpl
 a6e2bb769b7a163ac55006547b406b49  design/admin4/templates/setup/datatype.tpl
@@ -2969,7 +2971,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e291e841f30756669ef6f54007125b9d  doc/changelogs/6.0/6.0.15.md
+dfe7125d85f100a7becfe7945d4edbbb  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3445,10 +3447,11 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 f9c3f344c473869cfb55845caedce10f  doc/features/6.0/version-preview-view-modes.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 03252bce1fbedb6ed433f227a6265164  doc/glossary.md
-97cb86bffba58c52f16e60a7a43c8252  doc/guides/README.md
+93ed7b44b5c4d4e71531ffe0f09eda0d  doc/guides/README.md
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 8901e2220940757e41162287af7ecbb4  doc/guides/bookmarks.md
+15930ce7560160704f899e1998cdbe9a  doc/guides/caches.md
 4edcb415277d457d0255e68f442b6989  doc/guides/class-groups.md
 833921c92fe7cc4360fb5640748abb88  doc/guides/classic-menu-settings.md
 8f01bc44a84c119de29cd508fe41e05b  doc/guides/collected-information.md
@@ -4850,7 +4853,8 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
 0c75a7bca2a0dce8da13908f7a1ee322  kernel/classes/expbenchmarkmicro.php
 cb5cc153932cf737535c27579b657fc3  kernel/classes/expbookmarkpage.php
-06964b283caaca1281e428c858eba521  kernel/classes/expcachemanager.php
+9726e439fc49f81d209bdc1337fc38dd  kernel/classes/expcachecatalogue.php
+8113b91c780c36df2bed7f35f0502a80  kernel/classes/expcachemanager.php
 84a3447a01864a5da11162284520abca  kernel/classes/expcachewarm.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
 f83e2e3dea26d0502fff22c89939e0ea  kernel/classes/expcollaborationgroupmanager.php
@@ -5618,7 +5622,7 @@ d6b7ee459c385cc78ca426a0b6f8b362  kernel/private/classes/views/section/assign.ph
 9d6b8e6a7a21e6799b0f29447166534e  kernel/private/classes/views/section/view.php
 c72c6b1b62bba01464bc7b4e2254b9dc  kernel/private/classes/views/settings/edit.php
 e6fbbdf98872c86fa9f551892465a9df  kernel/private/classes/views/settings/view.php
-2210106b5c906a0f3214b6e5b8d45366  kernel/private/classes/views/setup/cache.php
+26091758dd83a92b014dc2fb65eda848  kernel/private/classes/views/setup/cache.php
 8950f5ab79eb2110460527a6ab876fc8  kernel/private/classes/views/setup/cachetoolbar.php
 546ddb3d9d522a274d7a11c78c3a2762  kernel/private/classes/views/setup/contentextension.php
 b39696f0ecc6c1fde06f85def7b0aace  kernel/private/classes/views/setup/cronjobs.php
@@ -7128,6 +7132,7 @@ e385d32da9929ef38d95d06364835958  tests/tests/kernel/classes/eZUserEditCancelTes
 19ff7e4f706df3370f089e4895b31527  tests/tests/kernel/classes/engineindex/expPharCheckTest.php
 d5d338c22e6d93889bfb8f6e8f13f061  tests/tests/kernel/classes/expAdminListsRedesignTest.php
 4d598dae7c7b0975d1f25362cbd5f73a  tests/tests/kernel/classes/expAdminPaginationTest.php
+2e2e829108f85cedc0e713a491b09396  tests/tests/kernel/classes/expCacheCatalogueTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 84ebc3bbeda752f59b4ef25e20ab9b9b  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
