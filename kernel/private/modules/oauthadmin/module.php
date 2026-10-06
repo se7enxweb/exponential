@@ -49,5 +49,26 @@ $ViewList['view'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
 );
 
+// The personal API keys of every user (doc/guides/api-keys.md): figures, search and filters, revoke.
+// oauthadmin/keys/(user)/<id> is one user's keys, linked from the user's settings page.
+$ViewList['keys'] = array(
+    'script' => 'keys.php',
+    'unordered_params' => array( 'status' => 'Status', 'user' => 'UserID', 'offset' => 'Offset' ),
+    'default_navigation_part' => 'ezsetupnavigationpart',
+);
+
+// Revoking keys: the selected keys, a confirmation page, then the revocation.
+$ViewList['keyaction'] = array(
+    'script' => 'keyaction.php',
+    'single_post_actions' => array( 'RevokeKeyListButton' => 'RevokeKeyList',
+                                    'RevokeOneKeyButton' => 'RevokeOneKey' ),
+    'post_action_parameters' => array( 'RevokeKeyList' => array( 'KeyIDList' => 'RevokeKeyIDArray',
+                                                                 'ConfirmRevoke' => 'ConfirmRevoke',
+                                                                 'RedirectURI' => 'RedirectURI' ),
+                                       'RevokeOneKey' => array( 'KeyID' => 'RevokeOneKeyButton',
+                                                                'RedirectURI' => 'RedirectURI' ) ),
+    'default_navigation_part' => 'ezsetupnavigationpart',
+);
+
 $FunctionList = array( );
 ?>

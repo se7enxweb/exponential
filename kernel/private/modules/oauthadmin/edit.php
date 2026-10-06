@@ -13,31 +13,41 @@ $session = ezcPersistentSessionInstance::get();
 
 $module = $Params['Module'];
 
-// @todo Instanciate the session maybe ?
-$applicationId = $Params['ApplicationID'];
-$application = $session->load( 'ezpRestClient', $applicationId );
+$applicationId = (int)$Params['ApplicationID'];
+$application = $applicationId ? $session->loadIfExists( 'ezpRestClient', $applicationId ) : null;
+if ( !$application instanceof ezpRestClient )
+    return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
 
-// save the modified application
-eZDebug::writeDebug( $module->currentAction() );
-eZDebug::writeDebug( $_POST );
+$errors = array();
 
 if ( $module->isCurrentAction( 'Store') )
 {
-    $application->name = $module->actionParameter( 'Name' );
+    $name = trim( (string)$module->actionParameter( 'Name' ) );
+    $endPoint = trim( (string)$module->actionParameter( 'EndPointURI' ) );
+    $application->name = $name;
+    $application->description = (string)$module->actionParameter( 'Description' );
+    $application->endpoint_uri = $endPoint;
 
-    // generate id & secret
-    if ( $application->version == ezpRestClient::STATUS_DRAFT )
+    if ( $name === '' )
+        $errors[] = ezpI18n::tr( 'design/admin/oauthadmin', 'Give the application a name.' );
+    if ( $endPoint !== '' && !preg_match( '#^[a-z][a-z0-9+.-]*://\S+$#i', $endPoint ) )
+        $errors[] = ezpI18n::tr( 'design/admin/oauthadmin', 'The endpoint URI must be an absolute address, such as https://app.example.com/callback.' );
+
+    if ( !$errors )
     {
-        $application->client_id = md5( $application->name . uniqid( $application->name ) );
-        $application->client_secret = md5( $application->name . uniqid( $application->name ) );
-    }
-    $application->description = $module->actionParameter( 'Description' );
-    $application->endpoint_uri = $module->actionParameter( 'EndPointURI' );
-    $application->version = ezpRestClient::STATUS_PUBLISHED;
-    $application->modified = time();
-    $session->update( $application );
+        // A new application gets its identifier and secret when it is first stored. They come from random_bytes():
+        // the md5 of the name and uniqid() they used to be could be guessed from the name and the time.
+        if ( $application->version == ezpRestClient::STATUS_DRAFT )
+        {
+            $application->client_id = bin2hex( random_bytes( 16 ) );
+            $application->client_secret = bin2hex( random_bytes( 32 ) );
+        }
+        $application->version = ezpRestClient::STATUS_PUBLISHED;
+        $application->updated = time();
+        $session->update( $application );
 
-    return $module->redirectTo( $module->functionURI( 'list' ) );
+        return $module->redirectTo( $module->functionURI( 'view' ) . '/' . $application->id );
+    }
 }
 
 if ( $module->isCurrentAction( 'Discard' ) )
@@ -51,7 +61,9 @@ if ( $module->isCurrentAction( 'Discard' ) )
 $tpl = eZTemplate::factory();
 $tpl->setVariable( 'module', $module );
 $tpl->setVariable( 'application', $application );
-$Result['path'] = array( array( 'url' => false,
+$tpl->setVariable( 'errors', $errors );
+$tpl->setVariable( 'is_new', $application->version == ezpRestClient::STATUS_DRAFT );
+$Result['path'] = array( array( 'url' => 'oauthadmin/list',
                                 'text' => ezpI18n::tr( 'kernel/oauthadmin', 'oAuth admin' ) ),
                          array( 'url' => false,
                                 'text' => ezpI18n::tr( 'kernel/oauthadmin', 'Edit REST application' ) )

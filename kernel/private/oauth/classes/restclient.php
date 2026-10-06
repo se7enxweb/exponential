@@ -193,7 +193,7 @@ class ezpRestClient
         if ( $client === false )
             return false;
 
-        if ( $clientSecret !== null && ( $clientSecret !== $client->client_secret ) )
+        if ( $clientSecret !== null && !$client->validateSecret( $clientSecret ) )
             return false;
 
         if ( ( $client->endpoint_uri !== '' ) && ( $endPointUri !== $client->endpoint_uri ) )
@@ -228,7 +228,9 @@ class ezpRestClient
      */
     public function validateSecret( $secret )
     {
-        return $secret === $this->client_secret;
+        // constant time: the comparison must not tell how much of a guessed secret was right
+        return is_string( $secret ) && is_string( $this->client_secret ) && $this->client_secret !== ''
+               && hash_equals( $this->client_secret, $secret );
     }
 
     /**

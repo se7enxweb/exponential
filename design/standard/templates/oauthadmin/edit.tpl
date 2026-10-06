@@ -1,68 +1,64 @@
-{* Main window *}
+{* Editing a REST application: oauthadmin/edit/<id>. The form, its fields (Name, Description, EndPointURI) and its
+   buttons (StoreButton, DiscardButton) are those of the old page. A new application gets its client identifier and
+   secret when it is first stored. Styles: parts/style.tpl. *}
+{include uri='design:oauthadmin/parts/style.tpl'}
+{def $modified = cond( $application.updated|ne(0), $application.updated, $application.created )
+     $owner_name = '?'}
+{if $application.owner}{set $owner_name = $application.owner.contentobject.name}{/if}
+
 <form action={concat( 'oauthadmin/edit/', $application.id )|ezurl} method="post" id="ClassEdit" name="ApplicationEdit">
 
-<div class="context-block">
-{* DESIGN: Header START *}<div class="box-header">
+<div class="context-block exp-oauth">
 
-<h1 class="context-title" title="{'Application name'|i18n( 'design/admin/class/view' )}">
-    {'Edit application <%application_name>'|i18n( 'extension/oauthadmin',, hash( '%application_name', $application.name ) )|wash}
-</h1>
+<div class="box-header"><div class="box-ml">
+<h1 class="context-title">{if $is_new}{'New REST application'|i18n( 'extension/oauthadmin' )}{else}{'Edit application <%application_name>'|i18n( 'extension/oauthadmin',, hash( '%application_name', $application.name ) )|wash}{/if}</h1>
+</div></div>
 
-{* DESIGN: Mainline *}<div class="header-mainline"></div>
+<div class="box-bc"><div class="box-ml"><div class="box-content">
 
-{* DESIGN: Header END *}</div>
+{include uri='design:oauthadmin/parts/tabs.tpl' current='applications'}
 
-{* DESIGN: Content START *}
-<div class="box-content">
-
-<div class="context-information">
-{if $application.updated|ne(0)}
-    {def $modified=$application.updated}
+{if $is_new}
+<p class="exp-intro">{'Name the application and give the address it receives users back at after they authorized it. Its client identifier and secret are made when you store it, and shown on its page.'|i18n( 'design/admin/oauthadmin' )}</p>
 {else}
-    {def $modified=$application.created}
+<p class="exp-intro">{'Last modified: %modified by %owner'|i18n( 'extension/oauthadmin',, hash( '%modified', $modified|l10n( shortdatetime ), '%owner', $owner_name ) )|wash}</p>
 {/if}
-<p class="left modified">{'Last modified: %modified by %owner'|i18n( 'extension/oauthadmin',, hash( '%modified', concat( '&nbsp;', $modified|l10n( shortdatetime ) ), '%owner', $application.owner.contentobject.name|wash ) )}</p>
-{undef $modified}
-<div class="break"></div>
+
+{if $errors|count|gt(0)}
+<div class="exp-feedback is-bad" role="alert">
+    <strong>{'The application was not stored:'|i18n( 'design/admin/oauthadmin' )}</strong>
+    <ul>{foreach $errors as $error}<li>{$error|wash}</li>{/foreach}</ul>
 </div>
+{/if}
 
-<div class="context-attributes">
-
-    {* Name. *}
-    <div class="block">
-    <label for="ApplicationName">{'Name'|i18n( 'extension/oauthadmin' )}:</label>
-    <input class="box" type="text" id="ApplicationName" name="Name" size="30" value="{$application.name|wash}" title="{'Use this field to set the application name.'|i18n( 'extension/oauthadmin' )|wash}" />
+<div class="exp-form">
+    <div class="exp-field">
+        <label for="ApplicationName">{'Name'|i18n( 'extension/oauthadmin' )}</label>
+        <input type="text" id="ApplicationName" name="Name" maxlength="100" required="required" value="{$application.name|wash}" aria-describedby="ApplicationNameHint" />
+        <span class="exp-hint" id="ApplicationNameHint">{'Shown to users when the application asks for their authorization.'|i18n( 'design/admin/oauthadmin' )}</span>
     </div>
-
-    {* Description. *}
-    <div class="block">
-    <label for="ApplicationDescription">{'Description'|i18n( 'extension/oauthadmin' )}:</label>
-    <input class="box" type="text" id="ApplicationDescription" name="Description" size="30" value="{$application.description|wash}" title="{'Use this field to set the informal application description.'|i18n( 'extension/oauthadmin' )|wash}" />
+    <div class="exp-field">
+        <label for="ApplicationDescription">{'Description'|i18n( 'extension/oauthadmin' )}</label>
+        <textarea id="ApplicationDescription" name="Description" rows="3">{$application.description|wash}</textarea>
     </div>
-
-    {* Endpoint URI. *}
-    <div class="block">
-    <label for="ApplicationEndpointUri">{'Endpoint URI'|i18n( 'extension/oauthadmin' )}:</label>
-    <input class="box" type="text" id="ApplicationEndpointUri" name="EndPointURI" size="30" value="{$application.endpoint_uri|wash}" title="{'Use this field to set the application endpoint URI.'|i18n( 'extension/oauthadmin' )|wash}" />
+    <div class="exp-field">
+        <label for="ApplicationEndpointUri">{'Endpoint URI'|i18n( 'extension/oauthadmin' )}</label>
+        <input type="url" id="ApplicationEndpointUri" name="EndPointURI" maxlength="200" value="{$application.endpoint_uri|wash}" placeholder="https://app.example.com/oauth/callback" aria-describedby="ApplicationEndpointHint" spellcheck="false" />
+        <span class="exp-hint" id="ApplicationEndpointHint">{'The redirect_uri of the application: authorization codes and tokens are only ever sent to exactly this address.'|i18n( 'design/admin/oauthadmin' )}</span>
     </div>
-
 </div>
 
-{* DESIGN: Content END *}</div>
+<div class="exp-bar" id="controlbar-bottom">
+    <span class="exp-meta">{if $is_new}{'Cancel removes this new application again.'|i18n( 'design/admin/oauthadmin' )}{else}{'Cancel leaves the application as it was.'|i18n( 'design/admin/oauthadmin' )}{/if}</span>
+    <div class="exp-actions">
+        <button class="exp-btn" type="submit" name="DiscardButton" value="{'Cancel'|i18n( 'design/admin/class/edit' )}" formnovalidate="formnovalidate" title="{'Discard all changes and exit from edit mode.'|i18n( 'design/admin/class/edit' )|wash}">{'Cancel'|i18n( 'design/admin/class/edit' )}</button>
+        <button class="exp-btn exp-btn-primary" type="submit" name="StoreButton" value="{'OK'|i18n( 'extension/oauthadmin' )}" title="{'Store changes and exit from edit mode.'|i18n( 'design/admin/class/edit' )|wash}">{'OK'|i18n( 'extension/oauthadmin' )}</button>
+    </div>
+</div>
 
-<div id="controlbar-bottom" class="controlbar">
-{* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-<div class="block">
-<div class="element">
-    <input class="defaultbutton" type="submit" name="StoreButton" value="{'OK'|i18n( 'extension/oauthadmin' )}" title="{'Store changes and exit from edit mode.'|i18n( 'design/admin/class/edit' )|wash}" />
-
-    <input class="button" type="submit" name="DiscardButton" value="{'Cancel'|i18n( 'design/admin/class/edit' )}" title="{'Discard all changes and exit from edit mode.'|i18n( 'design/admin/class/edit' )|wash}" />
-</div>
-<div class="float-break"></div>
-</div>
-{* DESIGN: Control bar END *}</div></div>
-</div>
+</div></div></div>
 
 </div>
 
 </form>
+{undef $modified $owner_name}
