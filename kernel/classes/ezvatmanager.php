@@ -299,7 +299,7 @@ class eZVATManager
         $foundHandler = false;
         foreach ( $repositoryDirectories as $repositoryDirectory )
         {
-            $includeFile = "$repositoryDirectory/{$handlerName}vathandler.php";
+            $includeFile = "$repositoryDirectory/" . strtolower( $handlerName ) . "vathandler.php";
 
             if ( file_exists( $includeFile ) )
             {
@@ -317,7 +317,18 @@ class eZVATManager
             return false;
         }
 
+        // The file name is the handler name in lower case, as shop.ini documents it. The class
+        // name may be written in any case, but only a class declared by a file included here is
+        // found whatever its case: the autoload array knows eZDefaultVATHandler, not ezdefaultVATHandler.
+        // A class already declared (from the engine archive, say) is not declared a second time.
         $className = $handlerName . 'VATHandler';
+        if ( !class_exists( $className ) )
+            require_once( $includeFile );
+        if ( !class_exists( $className, false ) )
+        {
+            eZDebug::writeError( "VAT handler file '$includeFile' does not declare the class '$className'", __METHOD__ );
+            return false;
+        }
         return new $className;
     }
 }

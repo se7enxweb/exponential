@@ -236,6 +236,43 @@ class eZShopPricesTest extends PHPUnit\Framework\TestCase
         $this->assertNull( eZVATManager::getVAT( false, 'DE' ) );
     }
 
+    public static function handlerNameProvider()
+    {
+        return array( 'documented lower case' => array( 'ezdefault' ), 'class case' => array( 'eZDefault' ) );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('handlerNameProvider')]
+    public function testVatHandlerNamedAsDocumentedIsLoaded( $name )
+    {
+        $this->setting( 'shop.ini', 'VATSettings', 'Handler', $name );
+        $this->setting( 'shop.ini', 'VATSettings', 'RepositoryDirectories', array( 'kernel/classes/vathandlers' ) );
+        $this->setting( 'shop.ini', 'VATSettings', 'ExtensionDirectories', array() );
+        $this->assertInstanceOf( 'eZDefaultVATHandler', eZVATManager::loadVATHandler() );
+        unset( $GLOBALS['eZVATManager_isDynamicVatChargingEnabled'] );
+        $this->assertTrue( eZVATManager::isDynamicVatChargingEnabled() );
+        $this->setting( 'shop.ini', 'VATSettings', 'Handler', null );
+        $this->assertTrue( eZVATManager::isDynamicVatChargingEnabled(), 'the answer is kept for the request' );
+    }
+
+    public function testVatHandlerFileWithoutTheClassIsRefused()
+    {
+        $dir = 'var/tmp/phpunit-k1b-vathandlers-' . getmypid();
+        mkdir( $dir, 0777, true );
+        file_put_contents( "$dir/k1emptyvathandler.php", "<?php\n// no class here\n" );
+        try
+        {
+            $this->setting( 'shop.ini', 'VATSettings', 'Handler', 'k1empty' );
+            $this->setting( 'shop.ini', 'VATSettings', 'RepositoryDirectories', array( $dir ) );
+            $this->setting( 'shop.ini', 'VATSettings', 'ExtensionDirectories', array() );
+            $this->assertFalse( eZVATManager::loadVATHandler() );
+        }
+        finally
+        {
+            unlink( "$dir/k1emptyvathandler.php" );
+            rmdir( $dir );
+        }
+    }
+
     // ---------------------------------------------------------------- eZCurrencyData
 
     public static function codeProvider()
