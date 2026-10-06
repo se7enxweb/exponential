@@ -72,6 +72,19 @@
     </td>
 </tr>
 {/section}
+{if $assignment_count|gt( $assignment_limit )}
+<tr>
+    <td colspan="3">
+    {* Previous and next on (assignment_offset): the navigator of this design pages on (offset) only *}
+    {if $view_parameters.assignment_offset|gt( 0 )}
+        <a href={concat( $policy_page_uri, '/(assignment_offset)/', max( 0, sub( $view_parameters.assignment_offset, $assignment_limit ) ) )|ezurl}>&laquo;&nbsp;{'Previous'|i18n( 'design/standard/navigator' )}</a>
+    {/if}
+    {if sum( $view_parameters.assignment_offset, $assignment_limit )|lt( $assignment_count )}
+        <a href={concat( $policy_page_uri, '/(assignment_offset)/', sum( $view_parameters.assignment_offset, $assignment_limit ) )|ezurl}>{'Next'|i18n( 'design/standard/navigator' )}&nbsp;&raquo;</a>
+    {/if}
+    </td>
+</tr>
+{/if}
 <tr>
     <td>
         <input class="button" type="submit" name="AssignRoleButton" value="{'Assign'|i18n('design/standard/role')}" title="{'Assign role to user or group'|i18n('design/standard/role')}" />

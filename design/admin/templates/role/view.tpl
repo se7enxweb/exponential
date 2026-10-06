@@ -116,7 +116,7 @@
 
 <div class="context-block">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-<h2 class="context-title">{'Users and groups using the <%role_name> role (%users_count)'|i18n( 'design/admin/role/view',, hash('%role_name', $role.name, '%users_count', $user_array|count) )|wash}</h2>
+<h2 class="context-title">{'Users and groups using the <%role_name> role (%users_count)'|i18n( 'design/admin/role/view',, hash('%role_name', $role.name, '%users_count', $assignment_count) )|wash}</h2>
 
 
 
@@ -165,6 +165,18 @@
 </tr>
 {/section}
 </table>
+{* Paged like the policies above, on an offset of its own *}
+{if $assignment_count|gt( $assignment_limit )}
+<div class="context-toolbar">
+{include name=AssignmentNavigator
+         uri='design:navigator/google.tpl'
+         offset_name='assignment_offset'
+         page_uri=$policy_page_uri
+         item_count=$assignment_count
+         view_parameters=$view_parameters
+         item_limit=$assignment_limit}
+</div>
+{/if}
 {section-else}
 <div class="block">
 <p>

@@ -1482,6 +1482,72 @@ class eZRole extends eZPersistentObject
         return $userRoles;
     }
 
+    /**
+     * How many users and user groups this role is assigned to, each limited assignment counted on its own.
+     *
+     * The pager of role/view needs the total, and a page does not contain it.
+     *
+     * @return int
+     */
+    function assignmentCount()
+    {
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            return count( (array)$this->fetchUserID() );
+        }
+        $rows = $db->arrayQuery( 'SELECT COUNT(*) AS count FROM ezuser_role WHERE role_id = ' . (int)$this->ID );
+        return isset( $rows[0]['count'] ) ? (int)$rows[0]['count'] : 0;
+    }
+
+    /**
+     * One page of the users and user groups this role is assigned to, in the form of fetchUserByRole(), sorted by
+     * their names (an assignment whose object is gone comes first) and then by the assignment, so paging never
+     * drops or repeats one.
+     *
+     * fetchUserByRole() loads every assignment with its object, which the permission checks and the audit need. A
+     * screen does not: a role given to thousands of users took long to draw.
+     *
+     * @param int $offset
+     * @param int $limit
+     * @return array
+     */
+    function assignmentPage( $offset, $limit )
+    {
+        $offset = max( 0, (int)$offset );
+        $limit = max( 1, (int)$limit );
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // No join here: the assignments of the role are sorted in php
+            $userRoles = (array)$this->fetchUserByRole();
+            usort( $userRoles, function ( $a, $b )
+            {
+                $nameA = $a['user_object'] instanceof eZContentObject ? (string)$a['user_object']->attribute( 'name' ) : '';
+                $nameB = $b['user_object'] instanceof eZContentObject ? (string)$b['user_object']->attribute( 'name' ) : '';
+                return strcmp( $nameA, $nameB ) ?: ( (int)$a['user_role_id'] <=> (int)$b['user_role_id'] );
+            } );
+            return array_slice( $userRoles, $offset, $limit );
+        }
+
+        $rows = $db->arrayQuery( 'SELECT ezuser_role.contentobject_id AS user_id, ezuser_role.limit_value,
+                                         ezuser_role.limit_identifier, ezuser_role.id
+                                  FROM ezuser_role
+                                  LEFT JOIN ezcontentobject ON ezcontentobject.id = ezuser_role.contentobject_id
+                                  WHERE ezuser_role.role_id = ' . (int)$this->ID . '
+                                  ORDER BY ezcontentobject.name ASC, ezuser_role.id ASC',
+                                 array( 'offset' => $offset, 'limit' => $limit ) );
+        $userRoles = array();
+        foreach ( $rows as $row )
+        {
+            $userRoles[] = array( 'user_object' => eZContentObject::fetch( $row['user_id'] ),
+                                  'user_role_id' => $row['id'],
+                                  'limit_ident' => $row['limit_identifier'],
+                                  'limit_value' => $row['limit_value'] );
+        }
+        return $userRoles;
+    }
+
     static function fetchRolesByLimitation( $limit_identifier, $limit_value )
     {
         $db = eZDB::instance();
