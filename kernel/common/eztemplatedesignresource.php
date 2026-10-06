@@ -690,7 +690,9 @@ class eZTemplateDesignResource extends eZTemplateFileResource
         if ( eZINI::instance( 'site.ini' )->variable( 'DesignSettings', 'DesignLocationCache' ) === 'enabled' )
         {
             // Using current SA if none given
-            $siteAccessName = $siteAccess !== false ? $siteAccess : $GLOBALS['eZCurrentAccess']['name'];
+            // A script without a siteaccess has no current access: its cache is
+            // the one of no siteaccess, as findDesignBase() reads the settings it has
+            $siteAccessName = $siteAccess !== false ? $siteAccess : ( $GLOBALS['eZCurrentAccess']['name'] ?? '' );
 
             $cachePath = eZSys::cacheDirectory()
                          . '/'
