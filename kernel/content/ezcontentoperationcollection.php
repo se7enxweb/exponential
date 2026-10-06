@@ -1441,7 +1441,9 @@ class eZContentOperationCollection
              $db = eZDB::instance();
              $db->begin();
              $curNode->setAttribute( 'sort_field', $sortingField );
-             $curNode->setAttribute( 'sort_order', $sortingOrder );
+             // false (descending, the default here) is stored as 0: an empty value
+             // in this column was stored as its default, 1 (ascending)
+             $curNode->setAttribute( 'sort_order', $sortingOrder ? eZContentObjectTreeNode::SORT_ORDER_ASC : eZContentObjectTreeNode::SORT_ORDER_DESC );
              $curNode->store();
              $db->commit();
              $object = $curNode->object();

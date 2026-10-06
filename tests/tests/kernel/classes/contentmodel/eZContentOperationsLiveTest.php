@@ -205,6 +205,33 @@ class eZContentOperationsLiveTest extends expContentModelLiveTestCase
         $this->assertSame( array( array( 'priority', '1' ) ), array_map( function ( $s ) { return array( $s[0], (string)$s[1] ); }, $node->sortArray() ) );
         $sorted = eZContentObjectTreeNode::subTreeByNodeID( array( 'Depth' => 1, 'SortBy' => $node->sortArray() ), $base['node'] );
         $this->assertSame( array( 'Z', 'Y', 'X' ), static::namesOf( $sorted ) );
+
+        eZContentOperationCollection::changeSortOrder( $base['node'], eZContentObjectTreeNode::SORT_FIELD_NAME, false );
+        $node = $this->node( $base['node'] );
+        $this->assertSame( eZContentObjectTreeNode::SORT_FIELD_NAME, (int)$node->attribute( 'sort_field' ) );
+        $this->assertSame( 0, (int)$node->attribute( 'sort_order' ) );
+        $this->assertSame( array( array( 'name', 0 ) ), array_map( function ( $s ) { return array( $s[0], (int)$s[1] ); }, $node->sortArray() ) );
+        $sorted = eZContentObjectTreeNode::subTreeByNodeID( array( 'Depth' => 1, 'SortBy' => $node->sortArray() ), $base['node'] );
+        $this->assertSame( array( 'Z', 'Y', 'X' ), static::namesOf( $sorted ) );
+    }
+
+    public function testDescendingSortOrderGivenAsFalseIsKept()
+    {
+        // false is descending for both; a numeric column with a default of 1 (ascending) used to store false as 1
+        $this->assertSame( eZContentObjectTreeNode::SORT_ORDER_DESC, eZContentObjectTreeNode::create( 1, 1, 1, eZContentObjectTreeNode::SORT_FIELD_NAME, false )->attribute( 'sort_order' ) );
+        $this->assertSame( eZContentObjectTreeNode::SORT_ORDER_ASC, eZContentObjectTreeNode::create( 1, 1, 1, eZContentObjectTreeNode::SORT_FIELD_NAME, true )->attribute( 'sort_order' ) );
+        $this->assertSame( eZContentObjectTreeNode::SORT_ORDER_DESC, eZContentObjectTreeNode::create( 1, 1, 1, 9, '0' )->attribute( 'sort_order' ) );
+        $this->assertSame( eZContentObjectTreeNode::SORT_ORDER_ASC, eZContentObjectTreeNode::create()->attribute( 'sort_order' ) );
+
+        $base = $this->base( 'sort-false' );
+        eZContentOperationCollection::changeSortOrder( $base['node'], eZContentObjectTreeNode::SORT_FIELD_NAME, true );
+        $this->assertSame( 1, (int)$this->node( $base['node'] )->attribute( 'sort_order' ) );
+        eZContentOperationCollection::changeSortOrder( $base['node'], eZContentObjectTreeNode::SORT_FIELD_NAME, false );
+        $this->assertSame( 0, (int)$this->node( $base['node'] )->attribute( 'sort_order' ) );
+        eZContentOperationCollection::changeSortOrder( $base['node'], eZContentObjectTreeNode::SORT_FIELD_NAME, '1' );
+        $this->assertSame( 1, (int)$this->node( $base['node'] )->attribute( 'sort_order' ) );
+        eZContentOperationCollection::changeSortOrder( $base['node'], eZContentObjectTreeNode::SORT_FIELD_NAME );
+        $this->assertSame( 0, (int)$this->node( $base['node'] )->attribute( 'sort_order' ), 'the default is descending' );
     }
 
     // ---------------------------------------------------------------- section, always available, trash

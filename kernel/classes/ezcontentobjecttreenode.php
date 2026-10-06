@@ -195,7 +195,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
                       'is_hidden' => false,
                       'is_invisible' => false,
                       'sort_field' => $sortField,
-                      'sort_order' => $sortOrder,
+                      // the column holds 0 or 1; false stored as is became the default 1
+                      'sort_order' => $sortOrder ? self::SORT_ORDER_ASC : self::SORT_ORDER_DESC,
                       'modified_subnode' => 0,
                       'remote_id' => eZRemoteIdUtility::generate( 'node' ),
                       'priority' => 0 );
