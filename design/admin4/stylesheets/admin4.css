@@ -151,6 +151,11 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   background-position: 0 50%;
   background-size: auto 28px;
 }
+/* the header row (.header-logo) aligns its items to the bottom; the site-preview icon (24px) is shorter than the
+   logo box (32px), so it is centred on the logo's line instead, level with the logo and the search box */
+#header .site-preview {
+  align-self: center;
+}
 #header .site-preview svg,
 #header .sidebar-control svg {
   fill: var(--a4-header-ink);
