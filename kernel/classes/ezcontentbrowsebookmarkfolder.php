@@ -372,6 +372,77 @@ class eZContentBrowseBookmarkFolder extends eZPersistentObject
     }
 
     /*!
+     \static
+     \return the ids of the folders ('folder') or bookmarks ('bookmark') of user \a $userID right in folder
+     \a $parentID (0 is the top level), in their order; false when \a $parentID is not a folder of the user.
+    */
+    static function siblingIDs( $userID, $type, $parentID )
+    {
+        $parentID = (int) $parentID;
+        if ( $parentID && !self::fetchForUser( $userID, $parentID ) )
+            return false;
+        $list = $type === 'folder' ? self::fetchChildren( $userID, $parentID )
+                                   : eZContentBrowseBookmark::fetchListForUserInFolder( $userID, $parentID );
+        return array_map( function ( $o ) { return (int) $o->attribute( 'id' ); }, $list );
+    }
+
+    /*!
+     \static
+     Sets the order of some or all entries of folder \a $parentID of user \a $userID: the posted ids take the places
+     they held, in the posted order (see expBookmarkPage::reorderSlots()). Every id must be an entry of that folder of
+     that user, each once.
+     \param $type 'folder' or 'bookmark'
+     \param $postedIDs "3,1,2" or an array of ids
+     \return true, or false when anything posted is not the user's, not in that folder, or repeated.
+     \note Transaction unsafe.
+    */
+    static function setOrder( $userID, $type, $parentID, $postedIDs )
+    {
+        $type = $type === 'folder' ? 'folder' : 'bookmark';
+        $posted = expBookmarkPage::orderIDs( $postedIDs );
+        $current = self::siblingIDs( $userID, $type, $parentID );
+        if ( $posted === false || $current === false )
+            return false;
+        $order = expBookmarkPage::reorderSlots( $current, $posted );
+        if ( $order === false )
+            return false;
+        self::reorder( $userID, $type, $order );
+        return true;
+    }
+
+    /*!
+     \static
+     Moves a folder or a bookmark of user \a $userID to \a $position (1 is the first) within its folder.
+     \return the position it has now, or false when it is not the user's.
+     \note Transaction unsafe.
+    */
+    static function moveToPosition( $userID, $type, $id, $position )
+    {
+        $userID = (int) $userID;
+        if ( $type === 'folder' )
+        {
+            $entry = self::fetchForUser( $userID, $id );
+            $parentID = $entry ? (int) $entry->attribute( 'parent_id' ) : 0;
+        }
+        else
+        {
+            $type = 'bookmark';
+            $entry = eZContentBrowseBookmark::fetch( (int) $id );
+            if ( $entry && (int) $entry->attribute( 'user_id' ) !== $userID )
+                $entry = null;
+            $parentID = $entry ? (int) $entry->attribute( 'folder_id' ) : 0;
+        }
+        if ( !$entry )
+            return false;
+        $current = self::siblingIDs( $userID, $type, $parentID );
+        $order = $current === false ? false : expBookmarkPage::moveToPosition( $current, (int) $id, $position );
+        if ( $order === false )
+            return false;
+        self::reorder( $userID, $type, $order );
+        return array_search( (int) $id, $order, true ) + 1;
+    }
+
+    /*!
      Removes the folder. Without \a $deleteBookmarks the bookmarks and the subfolders move up one level
      (to the parent of this folder) and no bookmark is deleted. With \a $deleteBookmarks the folder, all
      folders below it and all bookmarks in them are deleted.

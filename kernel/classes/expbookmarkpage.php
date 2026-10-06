@@ -342,6 +342,87 @@ class expBookmarkPage
     }
 
     /**
+     * The ids of an order posted by the page: "3,1,2" or an array; positive whole numbers, each once.
+     *
+     * @return int[]|false false for anything else (a repeated id, a word, nothing)
+     */
+    static function orderIDs( $raw )
+    {
+        $parts = is_array( $raw ) ? $raw : ( is_string( $raw ) ? explode( ',', $raw ) : array() );
+        $ids = array();
+        foreach ( $parts as $part )
+        {
+            $part = is_scalar( $part ) ? trim( (string) $part ) : '';
+            if ( $part === '' || !ctype_digit( $part ) || (int) $part < 1 || strlen( $part ) > 10 )
+                return false;
+            if ( isset( $ids[(int) $part] ) )
+                return false;
+            $ids[(int) $part] = (int) $part;
+        }
+        return $ids ? array_values( $ids ) : false;
+    }
+
+    /**
+     * A new order of a folder from a posted order of some of its entries: the posted entries take the places they
+     * held in the folder, in the posted order; every other entry keeps its place. So a page that shows a part of a
+     * folder can send just the order of what it shows.
+     *
+     * @param int[] $current the ids of the folder in their order
+     * @param int[] $posted  some of those ids in the wanted order
+     * @return int[]|false the whole new order, or false when a posted id is not in the folder or is posted twice
+     */
+    static function reorderSlots( array $current, array $posted )
+    {
+        $current = array_values( array_map( 'intval', $current ) );
+        $posted = array_values( array_map( 'intval', $posted ) );
+        if ( !$posted || count( array_unique( $posted ) ) !== count( $posted ) )
+            return false;
+        $slots = array();
+        foreach ( $current as $index => $id )
+            if ( in_array( $id, $posted, true ) )
+                $slots[] = $index;
+        if ( count( $slots ) !== count( $posted ) )
+            return false; // a posted id is not in the folder
+        $order = $current;
+        foreach ( $slots as $n => $index )
+            $order[$index] = $posted[$n];
+        return $order;
+    }
+
+    /**
+     * A new order of a folder with one entry moved to a position (1 is the first; out of range is the nearest end).
+     *
+     * @return int[]|false false when the entry is not in the folder
+     */
+    static function moveToPosition( array $current, $id, $position )
+    {
+        $current = array_values( array_map( 'intval', $current ) );
+        $at = array_search( (int) $id, $current, true );
+        if ( $at === false )
+            return false;
+        $position = max( 1, min( count( $current ), (int) $position ) );
+        array_splice( $current, $at, 1 );
+        array_splice( $current, $position - 1, 0, array( (int) $id ) );
+        return $current;
+    }
+
+    /**
+     * The place of every bookmark in its folder, in the user's own order: id => array( 'position' (1 is the first),
+     * 'count' (the bookmarks of the folder) ). Bookmarks of a folder that is not there count as not in a folder.
+     */
+    static function folderPositions( array $items, array $folders )
+    {
+        $byFolder = array();
+        foreach ( $items as $item )
+            $byFolder[isset( $folders[$item['folder_id']] ) ? $item['folder_id'] : 0][] = $item['id'];
+        $positions = array();
+        foreach ( $byFolder as $ids )
+            foreach ( $ids as $index => $id )
+                $positions[$id] = array( 'position' => $index + 1, 'count' => count( $ids ) );
+        return $positions;
+    }
+
+    /**
      * The address of the page in a scope, order, search and offset, built only from checked values (a number, a
      * word of SORTS, an encoded search), so it is always a path of this view.
      */

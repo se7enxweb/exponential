@@ -15,6 +15,10 @@
  *  BP-11 - The page address is built only from checked values
  *  BP-12 - Selected ids and shift buttons accept whole positive numbers only
  *  BP-13 - Move targets leave out a folder and everything below it
+ *  BP-14 - A posted order is whole positive numbers, each once; anything else is refused
+ *  BP-15 - A posted order of some entries fills their places; an id not in the folder or repeated is refused
+ *  BP-16 - Moving to a position keeps it within the folder; an unknown entry is refused
+ *  BP-17 - Every bookmark knows its place and the size of its folder
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -232,5 +236,54 @@ class expBookmarkPageTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 10, 11, 12 ), array_column( expBookmarkPage::targets( $folders ), 'id' ) );
         $this->assertSame( 'Work / Press', expBookmarkPage::targets( $folders )[1]['label'] );
         $this->assertSame( array( 12 ), array_column( expBookmarkPage::targets( $folders, $folders[10]['subtree'] ), 'id' ) );
+    }
+
+    public function testOrderIDs()
+    {
+        $this->assertSame( array( 3, 1, 2 ), expBookmarkPage::orderIDs( '3,1,2' ) );
+        $this->assertSame( array( 3, 1 ), expBookmarkPage::orderIDs( array( '3', 1 ) ) );
+        $this->assertSame( array( 7 ), expBookmarkPage::orderIDs( ' 7 ' ) );
+        $this->assertFalse( expBookmarkPage::orderIDs( '3,3' ), 'an id twice' );
+        $this->assertFalse( expBookmarkPage::orderIDs( '3,x' ) );
+        $this->assertFalse( expBookmarkPage::orderIDs( '3,-1' ) );
+        $this->assertFalse( expBookmarkPage::orderIDs( '3,0' ) );
+        $this->assertFalse( expBookmarkPage::orderIDs( '3,,4' ) );
+        $this->assertFalse( expBookmarkPage::orderIDs( '' ) );
+        $this->assertFalse( expBookmarkPage::orderIDs( '1;DROP TABLE x' ) );
+        $this->assertFalse( expBookmarkPage::orderIDs( array( array( 1 ) ) ) );
+        $this->assertFalse( expBookmarkPage::orderIDs( 12 ), 'not a list' );
+    }
+
+    public function testReorderSlots()
+    {
+        $folder = array( 10, 11, 12, 13, 14 );
+        $this->assertSame( array( 14, 10, 11, 12, 13 ), expBookmarkPage::reorderSlots( $folder, array( 14, 10, 11, 12, 13 ) ), 'the whole folder' );
+        $this->assertSame( array( 10, 13, 11, 12, 14 ), expBookmarkPage::reorderSlots( $folder, array( 13, 11, 12 ) ), 'a page of it: the others keep their places' );
+        $this->assertSame( array( 10, 11, 12, 13, 14 ), expBookmarkPage::reorderSlots( $folder, array( 11, 12 ) ), 'unchanged' );
+        $this->assertFalse( expBookmarkPage::reorderSlots( $folder, array( 11, 99 ) ), 'an id of another folder or user' );
+        $this->assertFalse( expBookmarkPage::reorderSlots( $folder, array( 11, 11 ) ), 'an id twice' );
+        $this->assertFalse( expBookmarkPage::reorderSlots( $folder, array() ) );
+        $this->assertFalse( expBookmarkPage::reorderSlots( array(), array( 1 ) ), 'an empty folder' );
+    }
+
+    public function testMoveToPosition()
+    {
+        $folder = array( 10, 11, 12, 13 );
+        $this->assertSame( array( 12, 10, 11, 13 ), expBookmarkPage::moveToPosition( $folder, 12, 1 ) );
+        $this->assertSame( array( 11, 12, 13, 10 ), expBookmarkPage::moveToPosition( $folder, 10, 4 ) );
+        $this->assertSame( array( 11, 12, 13, 10 ), expBookmarkPage::moveToPosition( $folder, 10, 99 ), 'behind the end is the end' );
+        $this->assertSame( array( 13, 10, 11, 12 ), expBookmarkPage::moveToPosition( $folder, 13, -5 ), 'before the start is the start' );
+        $this->assertSame( $folder, expBookmarkPage::moveToPosition( $folder, 11, 2 ), 'where it is' );
+        $this->assertFalse( expBookmarkPage::moveToPosition( $folder, 99, 1 ), 'not in the folder' );
+    }
+
+    public function testFolderPositions()
+    {
+        $folders = expBookmarkPage::folders( $this->rows() );
+        $positions = expBookmarkPage::folderPositions( $this->items(), $folders );
+        $this->assertSame( array( 'position' => 1, 'count' => 1 ), $positions[3], 'Press' );
+        $this->assertSame( array( 'position' => 1, 'count' => 2 ), $positions[1], 'Work' );
+        $this->assertSame( array( 'position' => 2, 'count' => 2 ), $positions[2] );
+        $this->assertSame( array( 'position' => 2, 'count' => 2 ), $positions[5], 'not in a folder' );
     }
 }

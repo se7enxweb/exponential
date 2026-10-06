@@ -19,6 +19,7 @@
  *  BF-11 - handleAction: create, rename, delete, move, with messages; empty names are refused
  *  (BF-12, the upgrade SQL on SQLite, is BookmarkFolderUpgradeSqlTest: it needs no installation)
  *  BF-13 - shift(): one place up or down within the folder, refused at the ends and for another user
+ *  BF-14 - setOrder() and moveToPosition(): some or all of a folder ordered, one entry placed; foreign and repeated ids refused
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -322,5 +323,54 @@ class BookmarkFoldersTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( eZContentBrowseBookmarkFolder::shift( $user, 'folder', $h, -1 ) );
         $this->assertSame( array( $f, $h, $g ), $folders() );
         $this->assertFalse( eZContentBrowseBookmarkFolder::shift( $user + 1, 'folder', $h, -1 ), 'another user' );
+    }
+
+    /** BF-14 - setOrder() and moveToPosition(): the posted order of some or all entries of a folder is saved, a
+        position moves one entry; ids of another folder or user, repeated ids and another user's folder are refused.
+        It runs as user ids of its own, like BF-13. */
+    public function testSetOrderAndMoveToPosition()
+    {
+        $user = 999001;
+        $other = 999002;
+        $f = $this->folder( 'Order', 0, $user );
+        $g = $this->folder( 'Order 2', 0, $user );
+        $a = $this->bookmark( 31, $f, $user );
+        $b = $this->bookmark( 32, $f, $user );
+        $c = $this->bookmark( 33, $f, $user );
+        $d = $this->bookmark( 34, $f, $user );
+        $elsewhere = $this->bookmark( 35, $g, $user );
+        $foreign = $this->bookmark( 36, false, $other );
+        $foreignFolder = $this->folder( 'Order other', 0, $other );
+        $order = function () use ( $user, $f ) {
+            return array_map( function ( $x ) { return (int) $x->attribute( 'id' ); }, eZContentBrowseBookmark::fetchListForUserInFolder( $user, $f ) );
+        };
+        $this->assertSame( array( $a, $b, $c, $d ), $order() );
+        $this->assertTrue( eZContentBrowseBookmarkFolder::setOrder( $user, 'bookmark', $f, "$d,$c,$b,$a" ) );
+        $this->assertSame( array( $d, $c, $b, $a ), $order(), 'the whole folder' );
+        $this->assertTrue( eZContentBrowseBookmarkFolder::setOrder( $user, 'bookmark', $f, array( $a, $c ) ) );
+        $this->assertSame( array( $d, $a, $b, $c ), $order(), 'two of them swap places, the others stay' );
+
+        $this->assertFalse( eZContentBrowseBookmarkFolder::setOrder( $user, 'bookmark', $f, "$a,$elsewhere" ), 'a bookmark of another folder' );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::setOrder( $user, 'bookmark', $f, "$a,$foreign" ), 'a bookmark of another user' );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::setOrder( $user, 'bookmark', $f, "$a,$a" ), 'an id twice' );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::setOrder( $other, 'bookmark', $f, "$a,$b" ), 'another user\'s folder' );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::setOrder( $user, 'bookmark', $foreignFolder, "$foreign" ), 'a folder of another user' );
+        $this->assertSame( array( $d, $a, $b, $c ), $order(), 'nothing changed by the refused ones' );
+
+        $this->assertSame( 1, eZContentBrowseBookmarkFolder::moveToPosition( $user, 'bookmark', $c, 1 ) );
+        $this->assertSame( array( $c, $d, $a, $b ), $order() );
+        $this->assertSame( 4, eZContentBrowseBookmarkFolder::moveToPosition( $user, 'bookmark', $c, 40 ), 'behind the end is the end' );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::moveToPosition( $other, 'bookmark', $c, 1 ), 'another user' );
+        $this->assertSame( array( $d, $a, $b, $c ), $order() );
+
+        $h = $this->folder( 'Order 3', 0, $user );
+        $folders = function () use ( $user ) {
+            return array_map( function ( $x ) { return (int) $x->attribute( 'id' ); }, eZContentBrowseBookmarkFolder::fetchChildren( $user, 0 ) );
+        };
+        $this->assertTrue( eZContentBrowseBookmarkFolder::setOrder( $user, 'folder', 0, "$h,$f,$g" ) );
+        $this->assertSame( array( $h, $f, $g ), $folders() );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::setOrder( $user, 'folder', 0, "$h,$foreignFolder" ), 'a folder of another user' );
+        $this->assertSame( 3, eZContentBrowseBookmarkFolder::moveToPosition( $user, 'folder', $h, 3 ) );
+        $this->assertSame( array( $f, $g, $h ), $folders() );
     }
 }
