@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-bb0bf2fe48ff9598bea6cf5ddbc42a35  doc/changelogs/6.0/6.0.15.md
+28ac45b4c3d2aaf57669a13d546843f1  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3530,7 +3530,7 @@ a8d5daba63dcc34fea309ba3ff76dfd1  doc/guides/security-and-audit.md
 7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
 984fbd968c27ef1981e5c835b18c8c0b  doc/guides/system-information.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
-d9f499a8c64dfd9099ebfc8310999b59  doc/guides/two-factor-login.md
+29fa6d0f4b651ad28fd12b2cbd199bd5  doc/guides/two-factor-login.md
 76caaadb12a9d05063f40cfeff955325  doc/guides/upgrade-check.md
 639322264923c033f20a28212f26fea4  doc/guides/upgrading.md
 3021f8c1c3339b030c3e75dbd626d297  doc/guides/urls-and-aliases.md
