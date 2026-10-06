@@ -123,7 +123,18 @@ class expSchemaConsistencyReport
             // compare in the engine's own format: the generated SQL is written in it
             $dbSchema->transformSchema( $original, true );
             $current = $dbSchema->schema( array( 'format' => 'local', 'force_autoincrement_rebuild' => true ) );
-            $differences = eZDbSchemaChecker::diff( $current, $original );
+            if ( is_array( $current ) && method_exists( $dbSchema, 'normalizeForComparison' ) )
+            {
+                // The engine compares only what it can tell apart (SQLite: text = longtext); the SQL is still
+                // written from the shipped definitions
+                $differences = self::restoreDefinitions(
+                    eZDbSchemaChecker::diff( $dbSchema->normalizeForComparison( $current ), $dbSchema->normalizeForComparison( $original ) ),
+                    $original );
+            }
+            else
+            {
+                $differences = eZDbSchemaChecker::diff( $current, $original );
+            }
             $report = self::fromDifferences( $differences, $dbSchema, $engine, is_array( $current ) ? $current : array(), $sources );
         }
         $report->result['schema_files'] = $files;
@@ -174,6 +185,39 @@ class expSchemaConsistencyReport
             $out .= rtrim( $table['sql'] ) . "\n";
         }
         return $out;
+    }
+
+    /**
+     * Puts the shipped definitions back into differences found between normalized schemas, so the SQL written
+     * from them creates what the schema file says (a missing table, an added or changed field).
+     *
+     * @param array|false $differences eZDbSchemaChecker::diff() of the normalized schemas
+     * @param array $shipped The shipped schema, not normalized
+     * @return array|false
+     */
+    public static function restoreDefinitions( $differences, array $shipped )
+    {
+        if ( !is_array( $differences ) )
+            return $differences;
+        foreach ( isset( $differences['new_tables'] ) ? $differences['new_tables'] : array() as $table => $def )
+        {
+            if ( isset( $shipped[$table] ) )
+                $differences['new_tables'][$table] = $shipped[$table];
+        }
+        foreach ( isset( $differences['table_changes'] ) ? $differences['table_changes'] : array() as $table => $diff )
+        {
+            foreach ( isset( $diff['added_fields'] ) ? $diff['added_fields'] : array() as $field => $def )
+            {
+                if ( isset( $shipped[$table]['fields'][$field] ) )
+                    $differences['table_changes'][$table]['added_fields'][$field] = $shipped[$table]['fields'][$field];
+            }
+            foreach ( isset( $diff['changed_fields'] ) ? $diff['changed_fields'] : array() as $field => $change )
+            {
+                if ( isset( $shipped[$table]['fields'][$field] ) )
+                    $differences['table_changes'][$table]['changed_fields'][$field]['field-def'] = $shipped[$table]['fields'][$field];
+            }
+        }
+        return $differences;
     }
 
     /**

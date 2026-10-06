@@ -192,8 +192,12 @@ class eZSQLiteSchema extends eZDBSchemaInterface
 
             // Auto-increment: first PK column is bare INTEGER (no width) with notnull=0.
             // This covers both single-column PKs and composite PKs where id is first member.
-            if ( $row['pk'] == 1 && !$row['notnull']
-                 && strtolower( trim( $row['type'] ) ) === 'integer' )
+            // A key declared "integer NOT NULL PRIMARY KEY AUTOINCREMENT" (the hand-written
+            // SQLite schema files of newer tables) is one too: SQLite allows AUTOINCREMENT
+            // only on the single INTEGER PRIMARY KEY, so the keyword names this column.
+            if ( $row['pk'] == 1
+                 && strtolower( trim( $row['type'] ) ) === 'integer'
+                 && ( !$row['notnull'] || $this->declaresAutoincrement( $table ) ) )
             {
                 unset( $field['length'] );
                 $field['not_null'] = 0;
@@ -210,6 +214,67 @@ class eZSQLiteSchema extends eZDBSchemaInterface
         ksort( $fields );
 
         return $fields;
+    }
+
+    /**
+     * Whether the CREATE TABLE statement of $table uses AUTOINCREMENT.
+     *
+     * @param string $table
+     * @return bool
+     */
+    private function declaresAutoincrement( $table )
+    {
+        $rows = $this->DBInstance->arrayQuery( "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '" .
+                                               str_replace( "'", "''", (string)$table ) . "'" );
+        return is_array( $rows ) && isset( $rows[0]['sql'] ) && preg_match( '/\bAUTOINCREMENT\b/i', (string)$rows[0]['sql'] ) === 1;
+    }
+
+    /**
+     * The schema made comparable, for the database consistency check only. SQLite gives a column the
+     * affinity of its declared type and stores nothing else of it, so differences that SQLite cannot tell
+     * apart are taken out of both sides before they are compared:
+     * - text, tinytext, mediumtext and longtext are all "text" (the hand-written SQLite schema files declare
+     *   longtext as text); their length and default go (the reader never reports a text default);
+     * - an auto_increment key has no length (the display width int(11) means nothing here);
+     * - "no default" is written two ways (no key, and false): one way. A null default stays, so DEFAULT NULL
+     *   against DEFAULT 0 is still a difference.
+     * Real differences (a missing or extra field or index, another type such as varchar against int, another
+     * length of a varchar, NOT NULL against NULL, another default value) stay.
+     *
+     * The schema the reader returns (schema()) is not changed by this: dumps keep the declared types.
+     *
+     * @param array $schema A schema array (local or generic)
+     * @return array
+     */
+    static function normalizeForComparison( array $schema )
+    {
+        $textTypes = array( 'tinytext', 'text', 'mediumtext', 'longtext' );
+        foreach ( $schema as $table => $def )
+        {
+            if ( $table === '_info' || !is_array( $def ) || !isset( $def['fields'] ) || !is_array( $def['fields'] ) )
+                continue;
+            foreach ( $def['fields'] as $name => $field )
+            {
+                if ( !is_array( $field ) || !isset( $field['type'] ) )
+                    continue;
+                if ( in_array( $field['type'], $textTypes, true ) )
+                {
+                    $field['type'] = 'text';
+                    unset( $field['length'], $field['default'] );
+                }
+                else if ( $field['type'] === 'auto_increment' )
+                {
+                    unset( $field['length'] );
+                }
+                if ( array_key_exists( 'default', $field ) &&
+                     $field['default'] === false )
+                {
+                    unset( $field['default'] );
+                }
+                $schema[$table]['fields'][$name] = $field;
+            }
+        }
+        return $schema;
     }
 
     /*!
