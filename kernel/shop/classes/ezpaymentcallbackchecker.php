@@ -280,7 +280,7 @@ class eZPaymentCallbackChecker
                 $this->logger->writeTimedString('check Field ----');
                 $this->logger->writeTimedString("ERROR - receiving value doesn't match!!!");
                 $this->logger->writeTimedString("Field          :".$field);
-                $this->logger->writeTimedString("Value          :".$this->callbackData[$field]);
+                $this->logger->writeTimedString("Value          :".( isset( $this->callbackData[$field] ) ? $this->callbackData[$field] : '' ));
                 $this->logger->writeTimedString("Expected value :".$value);
                 $this->logger->writeTimedString('----');
             }

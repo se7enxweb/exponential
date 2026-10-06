@@ -128,6 +128,25 @@ class eZPaymentCallbackCheckerTest extends PHPUnit\Framework\TestCase
         $this->assertContains( 'Value          :Completed', $checker->logger->lines );
     }
 
+    public function testCheckDataFieldThatIsMissing()
+    {
+        $checker = self::checker();
+        $checker->callbackData = array();
+        $warnings = array();
+        set_error_handler( function ( $errno, $errstr ) use ( &$warnings ) { $warnings[] = $errstr; return true; } );
+        try
+        {
+            $this->assertFalse( $checker->checkDataField( 'status', 'Completed' ) );
+        }
+        finally
+        {
+            restore_error_handler();
+        }
+        $this->assertSame( array(), $warnings );
+        $this->assertContains( 'Field          :status', $checker->logger->lines );
+        $this->assertContains( 'Value          :', $checker->logger->lines );
+    }
+
     public function testServerIpCheck()
     {
         $_SERVER['REMOTE_ADDR'] = '192.0.2.10';
