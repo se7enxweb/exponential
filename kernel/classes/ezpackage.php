@@ -2269,10 +2269,13 @@ class eZPackage
             $maintainerNodes = $maintainersNode->getElementsByTagName( 'maintainer' );
             foreach ( $maintainerNodes as $maintainerNode )
             {
+                // the writer leaves out a maintainer's role when there is none
                 $maintainerName = $maintainerNode->getElementsByTagName( 'name' )->item( 0 )->textContent;
-                $maintainerEmail = $maintainerNode->getElementsByTagName( 'email' )->item( 0 )->textContent;
-                $maintainerRole = $maintainerNode->getElementsByTagName( 'role' )->item( 0 )->textContent;
-                $this->appendMaintainer( $maintainerName, $maintainerEmail, $maintainerRole );
+                $maintainerEmailNode = $maintainerNode->getElementsByTagName( 'email' )->item( 0 );
+                $maintainerRoleNode = $maintainerNode->getElementsByTagName( 'role' )->item( 0 );
+                $this->appendMaintainer( $maintainerName,
+                                         $maintainerEmailNode ? $maintainerEmailNode->textContent : false,
+                                         $maintainerRoleNode ? $maintainerRoleNode->textContent : false );
             }
         }
 
@@ -2291,9 +2294,9 @@ class eZPackage
         }
         $this->setPackager( $packagingTimestamp, $packagingHost, $packagingPackager );
 
-        // Read documents
+        // Read documents (the writer leaves the element out when there are none)
         $documentsNode = $root->getElementsByTagName( 'documents' )->item( 0 );
-        $documentNodes = $documentsNode->getElementsByTagName( 'document' );
+        $documentNodes = $documentsNode ? $documentsNode->getElementsByTagName( 'document' ) : array();
 
         foreach ( $documentNodes as $documentNode )
         {
@@ -2304,6 +2307,16 @@ class eZPackage
             $this->appendDocument( $documentName, $documentMimeType,
                                    $documentOS, $documentAudience,
                                    false, false );
+        }
+
+        // Read groups
+        $groupsNode = $root->getElementsByTagName( 'groups' )->item( 0 );
+        if ( $groupsNode )
+        {
+            foreach ( $groupsNode->getElementsByTagName( 'group' ) as $groupNode )
+            {
+                $this->appendGroup( $groupNode->getAttribute( 'name' ) );
+            }
         }
 
         // Read changelog
@@ -2317,7 +2330,12 @@ class eZPackage
                 $changelogPerson = $changelogEntryNode->getAttribute( 'person' );
                 $changelogEmail = $changelogEntryNode->getAttribute( 'email' );
                 $changelogRelease = $changelogEntryNode->getAttribute( 'release' );
-                $changelogChangeList = $changelogEntryNode->getElementsByTagName( 'change' )->item( 0 )->textContent;
+                // an entry has one <change> per change
+                $changelogChangeList = array();
+                foreach ( $changelogEntryNode->getElementsByTagName( 'change' ) as $changeNode )
+                {
+                    $changelogChangeList[] = $changeNode->textContent;
+                }
                 $this->appendChange( $changelogPerson, $changelogEmail, $changelogChangeList,
                                      $changelogRelease, $changelogTimestamp );
             }
@@ -2343,7 +2361,23 @@ class eZPackage
         $filesList = $root->getElementsByTagName( 'files' );
         if ( $filesList )
         {
-            foreach ( $filesList as $fileCollectionNode )
+            // The writer puts one <collection name="..."> per file collection into <files>; a <files> without
+            // collection elements is read as one collection named by its own name attribute
+            $fileCollectionNodes = array();
+            foreach ( $filesList as $filesNode )
+            {
+                $collectionNodes = $filesNode->getElementsByTagName( 'collection' );
+                if ( $collectionNodes->length > 0 )
+                {
+                    foreach ( $collectionNodes as $collectionNode )
+                        $fileCollectionNodes[] = $collectionNode;
+                }
+                else
+                {
+                    $fileCollectionNodes[] = $filesNode;
+                }
+            }
+            foreach ( $fileCollectionNodes as $fileCollectionNode )
             {
                 $fileCollectionName = $fileCollectionNode->getAttribute( 'name' );
                 $fileLists = $fileCollectionNode->getElementsByTagName( 'file-list' );
@@ -2393,26 +2427,26 @@ class eZPackage
             $versionNumber = $versionNode->getElementsByTagName( 'number' )->item( 0 )->textContent;
             $versionRelease = $versionNode->getElementsByTagName( 'release' )->item( 0 )->textContent;
         }
-        $licence = $root->getElementsByTagName( 'licence' )->item( 0 )->textContent;
-        $state = $root->getElementsByTagName( 'state' )->item( 0 )->textContent;
-        $this->setRelease( $versionNumber, $versionRelease, false,
+        // the release timestamp is a <timestamp> directly under the root (the packaging one is inside <packaging>)
+        $releaseTimestampNode = $xpath->query( 'timestamp', $root )->item( 0 );
+        $releaseTimestamp = $releaseTimestampNode ? $releaseTimestampNode->textContent : false;
+        $licenceNode = $root->getElementsByTagName( 'licence' )->item( 0 );
+        $stateNode = $root->getElementsByTagName( 'state' )->item( 0 );
+        $licence = $licenceNode ? $licenceNode->textContent : false;
+        $state = $stateNode ? $stateNode->textContent : false;
+        $this->setRelease( $versionNumber, $versionRelease, $releaseTimestamp,
                            $licence, $state );
 
         $dependenciesNode = $root->getElementsByTagName( 'dependencies' )->item( 0 );
         if ( $dependenciesNode )
         {
-            $providesNode = $dependenciesNode->getElementsByTagName( 'provides' )->item( 0 );
-            $providesList = $providesNode->getElementsByTagName( 'provide' );
-            $requiresNode = $dependenciesNode->getElementsByTagName( 'requires' )->item( 0 );
-            $requiresList = $requiresNode->getElementsByTagName( 'require' );
-            $obsoletesNode = $dependenciesNode->getElementsByTagName( 'obsoletes' )->item( 0 );
-            $obsoletesList = $obsoletesNode->getElementsByTagName( 'obsolete' );
-            $conflictsNode = $dependenciesNode->getElementsByTagName( 'conflicts' )->item( 0 );
-            $conflictsList = $conflictsNode->getElementsByTagName( 'conflict' );
-            $this->parseDependencyTree( $providesList, 'provides' );
-            $this->parseDependencyTree( $requiresList, 'requires' );
-            $this->parseDependencyTree( $obsoletesList, 'obsoletes' );
-            $this->parseDependencyTree( $conflictsList, 'conflicts' );
+            foreach ( array( 'provides' => 'provide', 'requires' => 'require',
+                             'obsoletes' => 'obsolete', 'conflicts' => 'conflict' ) as $sectionName => $itemName )
+            {
+                $sectionNode = $dependenciesNode->getElementsByTagName( $sectionName )->item( 0 );
+                if ( $sectionNode )
+                    $this->parseDependencyTree( $sectionNode->getElementsByTagName( $itemName ), $sectionName );
+            }
         }
 
         $settingsNode = $root->getElementsByTagName( 'settings' )->item( 0 );
@@ -2429,49 +2463,42 @@ class eZPackage
         }
 
         $installNode = $root->getElementsByTagName( 'install' )->item( 0 );
-        $installList = $installNode->getElementsByTagName( 'item' );
         $uninstallNode = $root->getElementsByTagName( 'uninstall' )->item( 0 );
-        $uninstallList = $uninstallNode->getElementsByTagName( 'item' );
-        $this->parseInstallTree( $installList, true );
-        $this->parseInstallTree( $uninstallList, false );
+        if ( $installNode )
+            $this->parseInstallTree( $installNode->getElementsByTagName( 'item' ), true );
+        if ( $uninstallNode )
+            $this->parseInstallTree( $uninstallNode->getElementsByTagName( 'item' ), false );
 
-        $installDataList = $root->getElementsByTagName( 'install-data' );
-        if ( $installDataList )
+        // Install data, as domStructure() writes it:
+        // <install-data><data type="..."><element name="" value=""/><array name=""><element .../></array></data></install-data>
+        $this->InstallData = array();
+        foreach ( $root->getElementsByTagName( 'install-data' ) as $installDataNode )
         {
-            $this->InstallData = array();
-            foreach( $installDataList as $installDataNode )
+            foreach ( $installDataNode->childNodes as $dataNode )
             {
-                if ( is_object( $installDataNode ) &&
-                     $installDataNode->getAttribute( 'name' ) == 'data' )
+                if ( !$dataNode instanceof DOMElement || $dataNode->tagName != 'data' )
+                    continue;
+                $installData = array();
+                foreach ( $dataNode->childNodes as $dataElement )
                 {
-                    $installDataType = $installDataNode->getAttribute( 'type' );
-                    $installDataElements = $installDataNode->getElementsByTagName( 'data' );
-                    $installData = array();
-                    foreach ( $installDataElements as $installDataElement )
+                    if ( !$dataElement instanceof DOMElement )
+                        continue;
+                    if ( $dataElement->tagName == 'element' )
                     {
-                        if ( $installDataElement->attribute( 'name' ) == 'element' )
-                        {
-                            $name = $installDataElement->getAttribute( 'name' );
-                            $value = $installDataElement->getAttribute( 'value' );
-                            $installData[$name] = $value;
-                        }
-                        else if ( $installDataElement->attribute( 'name' ) == 'array' )
-                        {
-                            $arrayName = $installDataElement->getAttribute( 'name' );
-                            $installDataElementArray = $installDataElement->childNodes;
-                            $array = array();
-                            foreach ( $installDataElementArray as $installDataElementArrayElement )
-                            {
-                                $name = $installDataElementArrayElement->getAttribute( 'name' );
-                                $value = $installDataElementArrayElement->getAttribute( 'value' );
-                                $array[$name] = $value;
-                            }
-                            $installData[$arrayName] = $array;
-                        }
+                        $installData[$dataElement->getAttribute( 'name' )] = $dataElement->getAttribute( 'value' );
                     }
-                    if ( count( $installData ) > 0 )
-                        $this->InstallData[$installDataType] = $installData;
+                    else if ( $dataElement->tagName == 'array' )
+                    {
+                        $array = array();
+                        foreach ( $dataElement->getElementsByTagName( 'element' ) as $arrayElement )
+                        {
+                            $array[$arrayElement->getAttribute( 'name' )] = $arrayElement->getAttribute( 'value' );
+                        }
+                        $installData[$dataElement->getAttribute( 'name' )] = $array;
+                    }
                 }
+                if ( count( $installData ) > 0 )
+                    $this->InstallData[$dataNode->getAttribute( 'type' )] = $installData;
             }
         }
 
@@ -2855,6 +2882,10 @@ class eZPackage
 
                         if ( $fileItem['subdirectory'] )
                             $fileListFile->setAttribute( 'sub-directory', $fileItem['subdirectory'] );
+
+                        // read back as the file type: a directory must stay a directory
+                        if ( !empty( $fileItem['file-type'] ) )
+                            $fileListFile->setAttribute( 'type', $fileItem['file-type'] );
 
                         $fileListNode->appendChild( $fileListFile );
                     }
