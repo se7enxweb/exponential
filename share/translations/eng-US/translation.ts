@@ -24916,6 +24916,690 @@ your account.</translation>
         <source>status : (%event_status)</source>
         <translation>status : (%event_status)</translation>
     </message>
+    <message>
+        <source>Showing %shown of %total processes on this page</source>
+        <translation>Showing %shown of %total processes on this page</translation>
+    </message>
+    <message>
+        <source>Workflow processes</source>
+        <translation>Workflow processes</translation>
+    </message>
+    <message>
+        <source>A workflow process is one run of a workflow for one piece of content that has not finished yet: it waits for an approver, for the workflow cronjob or for the user, or it has stopped. This page shows each one, what it is waiting for, and lets you cancel one that is stuck.</source>
+        <translation>A workflow process is one run of a workflow for one piece of content that has not finished yet: it waits for an approver, for the workflow cronjob or for the user, or it has stopped. This page shows each one, what it is waiting for, and lets you cancel one that is stuck.</translation>
+    </message>
+    <message>
+        <source>Cancel this workflow process?</source>
+        <translation>Cancel this workflow process?</translation>
+    </message>
+    <message>
+        <source>Cancel these %count workflow processes?</source>
+        <translation>Cancel these %count workflow processes?</translation>
+    </message>
+    <message>
+        <source>Nothing has been changed yet.</source>
+        <translation>Nothing has been changed yet.</translation>
+    </message>
+    <message>
+        <source>Process %id</source>
+        <translation>Process %id</translation>
+    </message>
+    <message>
+        <source>version %version</source>
+        <translation>version %version</translation>
+    </message>
+    <message>
+        <source>started by %user</source>
+        <translation>started by %user</translation>
+    </message>
+    <message>
+        <source>What cancelling does</source>
+        <translation>What cancelling does</translation>
+    </message>
+    <message>
+        <source>The workflow stops where it is. Its remaining steps never run, and the operation it held back (publishing, for example) does not happen.</source>
+        <translation>The workflow stops where it is. Its remaining steps never run, and the operation it held back (publishing, for example) does not happen.</translation>
+    </message>
+    <message>
+        <source>A version that is waiting to be published becomes a draft again. The author finds it among their drafts and can publish it again, which starts the workflow anew.</source>
+        <translation>A version that is waiting to be published becomes a draft again. The author finds it among their drafts and can publish it again, which starts the workflow anew.</translation>
+    </message>
+    <message>
+        <source>An approval request for it is closed in the approvers' collaboration inbox.</source>
+        <translation>An approval request for it is closed in the approvers' collaboration inbox.</translation>
+    </message>
+    <message>
+        <source>No content is deleted. The cancel cannot be undone.</source>
+        <translation>No content is deleted. The cancel cannot be undone.</translation>
+    </message>
+    <message>
+        <source>Yes, cancel the process</source>
+        <translation>Yes, cancel the process</translation>
+    </message>
+    <message>
+        <source>Yes, cancel %count processes</source>
+        <translation>Yes, cancel %count processes</translation>
+    </message>
+    <message>
+        <source>No, keep them</source>
+        <translation>No, keep them</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Now</translation>
+    </message>
+    <message>
+        <source>Processes waiting: %count</source>
+        <translation>Processes waiting: %count</translation>
+    </message>
+    <message>
+        <source>The oldest started %age ago (%time).</source>
+        <translation>The oldest started %age ago (%time).</translation>
+    </message>
+    <message>
+        <source>Nothing is waiting</source>
+        <translation>Nothing is waiting</translation>
+    </message>
+    <message>
+        <source>Resumed by the workflow cronjob (%script) in the %part part:</source>
+        <translation>Resumed by the workflow cronjob (%script) in the %part part:</translation>
+    </message>
+    <message>
+        <source>scheduled</source>
+        <translation>scheduled</translation>
+    </message>
+    <message>
+        <source>next run %time</source>
+        <translation>next run %time</translation>
+    </message>
+    <message>
+        <source>not scheduled in the crontab</source>
+        <translation>not scheduled in the crontab</translation>
+    </message>
+    <message>
+        <source>Open the cronjob</source>
+        <translation>Open the cronjob</translation>
+    </message>
+    <message>
+        <source>No cronjob part runs workflow.php, so processes waiting for the workflow cronjob never move on. Add Scripts[]=workflow.php to a part in cronjob.ini, for example [CronjobPart-frequent].</source>
+        <translation>No cronjob part runs workflow.php, so processes waiting for the workflow cronjob never move on. Add Scripts[]=workflow.php to a part in cronjob.ini, for example [CronjobPart-frequent].</translation>
+    </message>
+    <message>
+        <source>%count processes wait for the workflow cronjob, but the crontab does not run the %part part. They move on only when it runs: schedule it, or run it now from the cronjobs page.</source>
+        <translation>%count processes wait for the workflow cronjob, but the crontab does not run the %part part. They move on only when it runs: schedule it, or run it now from the cronjobs page.</translation>
+    </message>
+    <message>
+        <source>Go to the cronjobs page</source>
+        <translation>Go to the cronjobs page</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Waiting</translation>
+    </message>
+    <message>
+        <source>For the workflow cronjob</source>
+        <translation>For the workflow cronjob</translation>
+    </message>
+    <message>
+        <source>For the user</source>
+        <translation>For the user</translation>
+    </message>
+    <message>
+        <source>For a parent workflow</source>
+        <translation>For a parent workflow</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Failed</translation>
+    </message>
+    <message>
+        <source>Stopped, will not move on</source>
+        <translation>Stopped, will not move on</translation>
+    </message>
+    <message>
+        <source>Oldest waiting, since %time</source>
+        <translation>Oldest waiting, since %time</translation>
+    </message>
+    <message>
+        <source>Oldest waiting</source>
+        <translation>Oldest waiting</translation>
+    </message>
+    <message>
+        <source>Filter and select</source>
+        <translation>Filter and select</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stopped</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Find a process</source>
+        <translation>Find a process</translation>
+    </message>
+    <message>
+        <source>Content, user, workflow or status</source>
+        <translation>Content, user, workflow or status</translation>
+    </message>
+    <message>
+        <source>Processes per page</source>
+        <translation>Processes per page</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Select all on this page</translation>
+    </message>
+    <message>
+        <source>Cancel selected processes...</source>
+        <translation>Cancel selected processes...</translation>
+    </message>
+    <message>
+        <source>You confirm on the next page before anything happens.</source>
+        <translation>You confirm on the next page before anything happens.</translation>
+    </message>
+    <message>
+        <source>The trigger: module, operation and when</source>
+        <translation>The trigger: module, operation and when</translation>
+    </message>
+    <message>
+        <source>%count processes</source>
+        <translation>%count processes</translation>
+    </message>
+    <message>
+        <source>These processes no longer say which trigger started them: their memento is gone, or the trigger was removed since. The workflow cronjob cannot resume them by their operation.</source>
+        <translation>These processes no longer say which trigger started them: their memento is gone, or the trigger was removed since. The workflow cronjob cannot resume them by their operation.</translation>
+    </message>
+    <message>
+        <source>Select process %id (%name)</source>
+        <translation>Select process %id (%name)</translation>
+    </message>
+    <message>
+        <source>View the version this process runs for</source>
+        <translation>View the version this process runs for</translation>
+    </message>
+    <message>
+        <source>No change for %age</source>
+        <translation>No change for %age</translation>
+    </message>
+    <message>
+        <source>Approval</source>
+        <translation>Approval</translation>
+    </message>
+    <message>
+        <source>Cancel process %id (%name)...</source>
+        <translation>Cancel process %id (%name)...</translation>
+    </message>
+    <message>
+        <source>Cancel...</source>
+        <translation>Cancel...</translation>
+    </message>
+    <message>
+        <source>Open the approval request</source>
+        <translation>Open the approval request</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Content</translation>
+    </message>
+    <message>
+        <source>Object %id</source>
+        <translation>Object %id</translation>
+    </message>
+    <message>
+        <source>The object no longer exists.</source>
+        <translation>The object no longer exists.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>Started by</source>
+        <translation>Started by</translation>
+    </message>
+    <message>
+        <source>User %id</source>
+        <translation>User %id</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Unknown</translation>
+    </message>
+    <message>
+        <source>Workflow %id (missing)</source>
+        <translation>Workflow %id (missing)</translation>
+    </message>
+    <message>
+        <source>Current step</source>
+        <translation>Current step</translation>
+    </message>
+    <message>
+        <source>Step %position of %count</source>
+        <translation>Step %position of %count</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Started</translation>
+    </message>
+    <message>
+        <source>%age ago</source>
+        <translation>%age ago</translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation>Last change</translation>
+    </message>
+    <message>
+        <source>Technical details</source>
+        <translation>Technical details</translation>
+    </message>
+    <message>
+        <source>Process ID</source>
+        <translation>Process ID</translation>
+    </message>
+    <message>
+        <source>Memento key</source>
+        <translation>Memento key</translation>
+    </message>
+    <message>
+        <source>No process matches the search.</source>
+        <translation>No process matches the search.</translation>
+    </message>
+    <message>
+        <source>Only the processes on this page are searched.</source>
+        <translation>Only the processes on this page are searched.</translation>
+    </message>
+    <message>
+        <source>No processes are waiting.</source>
+        <translation>No processes are waiting.</translation>
+    </message>
+    <message>
+        <source>That is normal: a process exists only while a workflow waits for someone or something, and is removed when it finishes.</source>
+        <translation>That is normal: a process exists only while a workflow waits for someone or something, and is removed when it finishes.</translation>
+    </message>
+    <message>
+        <source>Show the %count stopped processes</source>
+        <translation>Show the %count stopped processes</translation>
+    </message>
+    <message>
+        <source>No stopped processes.</source>
+        <translation>No stopped processes.</translation>
+    </message>
+    <message>
+        <source>Nothing has failed or been left behind.</source>
+        <translation>Nothing has failed or been left behind.</translation>
+    </message>
+    <message>
+        <source>There are no workflow processes.</source>
+        <translation>There are no workflow processes.</translation>
+    </message>
+    <message>
+        <source>What the statuses mean</source>
+        <translation>What the statuses mean</translation>
+    </message>
+    <message>
+        <source>Waiting for the workflow cronjob</source>
+        <translation>Waiting for the workflow cronjob</translation>
+    </message>
+    <message>
+        <source>A step asked to be run again later, for example an approval that has not been decided yet. The workflow cronjob runs it each time it comes round.</source>
+        <translation>A step asked to be run again later, for example an approval that has not been decided yet. The workflow cronjob runs it each time it comes round.</translation>
+    </message>
+    <message>
+        <source>Waiting for the user</source>
+        <translation>Waiting for the user</translation>
+    </message>
+    <message>
+        <source>A step showed the user a page or sent them elsewhere and waits for them. If they never come back, the process stays; cancel it when you are sure.</source>
+        <translation>A step showed the user a page or sent them elsewhere and waits for them. If they never come back, the process stays; cancel it when you are sure.</translation>
+    </message>
+    <message>
+        <source>Waiting for its parent workflow</source>
+        <translation>Waiting for its parent workflow</translation>
+    </message>
+    <message>
+        <source>Started by a multiplexer step of another workflow; it moves on with that one.</source>
+        <translation>Started by a multiplexer step of another workflow; it moves on with that one.</translation>
+    </message>
+    <message>
+        <source>A step rejected the content or went wrong. Nothing runs it again; cancel it to tidy up and to give a held-back version back to its author.</source>
+        <translation>A step rejected the content or went wrong. Nothing runs it again; cancel it to tidy up and to give a held-back version back to its author.</translation>
+    </message>
+    <message>
+        <source>Marked as running</source>
+        <translation>Marked as running</translation>
+    </message>
+    <message>
+        <source>Only true while a request runs it. Hours later it means the run was cut off.</source>
+        <translation>Only true while a request runs it. Hours later it means the run was cut off.</translation>
+    </message>
+    <message>
+        <source>Cancelled</source>
+        <translation>Cancelled</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Reset</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Done</translation>
+    </message>
+    <message>
+        <source>Finished one way or another; such a process is normally removed at once or by the next cronjob run.</source>
+        <translation>Finished one way or another; such a process is normally removed at once or by the next cronjob run.</translation>
+    </message>
+    <message>
+        <source>Select at least one process to cancel.</source>
+        <translation>Select at least one process to cancel.</translation>
+    </message>
+    <message>
+        <source>The workflow cronjob runs this step again each time it comes round, until the step is done - for example until an approver has decided.</source>
+        <translation>The workflow cronjob runs this step again each time it comes round, until the step is done - for example until an approver has decided.</translation>
+    </message>
+    <message>
+        <source>A step showed the user a page and waits for their answer. It moves on when they send it; if they left, it stays here.</source>
+        <translation>A step showed the user a page and waits for their answer. It moves on when they send it; if they left, it stays here.</translation>
+    </message>
+    <message>
+        <source>Waiting for the user to come back</source>
+        <translation>Waiting for the user to come back</translation>
+    </message>
+    <message>
+        <source>A step sent the user to another page (a payment provider, for example) and waits for them to return.</source>
+        <translation>A step sent the user to another page (a payment provider, for example) and waits for them to return.</translation>
+    </message>
+    <message>
+        <source>This process was started by another workflow (a multiplexer step) and moves on together with it.</source>
+        <translation>This process was started by another workflow (a multiplexer step) and moves on together with it.</translation>
+    </message>
+    <message>
+        <source>A step rejected the content or went wrong. Nothing will run this process again.</source>
+        <translation>A step rejected the content or went wrong. Nothing will run this process again.</translation>
+    </message>
+    <message>
+        <source>A process is running only while a request or the cronjob runs it. One that stays marked running was cut off and will not move on by itself.</source>
+        <translation>A process is running only while a request or the cronjob runs it. One that stays marked running was cut off and will not move on by itself.</translation>
+    </message>
+    <message>
+        <source>A step cancelled the workflow. The workflow cronjob removes such processes when it meets them.</source>
+        <translation>A step cancelled the workflow. The workflow cronjob removes such processes when it meets them.</translation>
+    </message>
+    <message>
+        <source>Every step has run. A finished process is normally removed straight away.</source>
+        <translation>Every step has run. A finished process is normally removed straight away.</translation>
+    </message>
+    <message>
+        <source>A step reset the workflow for reuse. Nothing will run this process again.</source>
+        <translation>A step reset the workflow for reuse. Nothing will run this process again.</translation>
+    </message>
+    <message>
+        <source>Not started</source>
+        <translation>Not started</translation>
+    </message>
+    <message>
+        <source>The process has no state yet. Nothing will run it.</source>
+        <translation>The process has no state yet. Nothing will run it.</translation>
+    </message>
+    <message>
+        <source>Before %operation</source>
+        <translation>Before %operation</translation>
+    </message>
+    <message>
+        <source>After %operation</source>
+        <translation>After %operation</translation>
+    </message>
+    <message>
+        <source>less than a minute</source>
+        <translation>less than a minute</translation>
+    </message>
+    <message>
+        <source>1 minute</source>
+        <translation>1 minute</translation>
+    </message>
+    <message>
+        <source>%count minutes</source>
+        <translation>%count minutes</translation>
+    </message>
+    <message>
+        <source>1 hour</source>
+        <translation>1 hour</translation>
+    </message>
+    <message>
+        <source>%count hours</source>
+        <translation>%count hours</translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation>1 day</translation>
+    </message>
+    <message>
+        <source>%count days</source>
+        <translation>%count days</translation>
+    </message>
+    <message>
+        <source>draft</source>
+        <translation>draft</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>published</translation>
+    </message>
+    <message>
+        <source>waiting to be published</source>
+        <translation>waiting to be published</translation>
+    </message>
+    <message>
+        <source>archived</source>
+        <translation>archived</translation>
+    </message>
+    <message>
+        <source>rejected</source>
+        <translation>rejected</translation>
+    </message>
+    <message>
+        <source>internal draft</source>
+        <translation>internal draft</translation>
+    </message>
+    <message>
+        <source>queued for publishing</source>
+        <translation>queued for publishing</translation>
+    </message>
+    <message>
+        <source>Trigger not recorded</source>
+        <translation>Trigger not recorded</translation>
+    </message>
+    <message>
+        <source>An approver must approve or reject it in the collaboration inbox; the workflow cronjob then carries on.</source>
+        <translation>An approver must approve or reject it in the collaboration inbox; the workflow cronjob then carries on.</translation>
+    </message>
+    <message>
+        <source>Process %id no longer exists; it may have finished in the meantime.</source>
+        <translation>Process %id no longer exists; it may have finished in the meantime.</translation>
+    </message>
+    <message>
+        <source>Process %id could not be cancelled: %error</source>
+        <translation>Process %id could not be cancelled: %error</translation>
+    </message>
+    <message>
+        <source>Process %id was cancelled. Version %version of object %object is a draft again; nothing was published.</source>
+        <translation>Process %id was cancelled. Version %version of object %object is a draft again; nothing was published.</translation>
+    </message>
+    <message>
+        <source>Process %id was cancelled.</source>
+        <translation>Process %id was cancelled.</translation>
+    </message>
+    <message>
+        <source>Before publishing content</source>
+        <translation>Before publishing content</translation>
+    </message>
+    <message>
+        <source>After publishing content</source>
+        <translation>After publishing content</translation>
+    </message>
+    <message>
+        <source>Before content is read</source>
+        <translation>Before content is read</translation>
+    </message>
+    <message>
+        <source>After content is read</source>
+        <translation>After content is read</translation>
+    </message>
+    <message>
+        <source>Before content is hidden or shown</source>
+        <translation>Before content is hidden or shown</translation>
+    </message>
+    <message>
+        <source>After content is hidden or shown</source>
+        <translation>After content is hidden or shown</translation>
+    </message>
+    <message>
+        <source>Before content is deleted</source>
+        <translation>Before content is deleted</translation>
+    </message>
+    <message>
+        <source>After content is deleted</source>
+        <translation>After content is deleted</translation>
+    </message>
+    <message>
+        <source>Before content is moved</source>
+        <translation>Before content is moved</translation>
+    </message>
+    <message>
+        <source>After content is moved</source>
+        <translation>After content is moved</translation>
+    </message>
+    <message>
+        <source>Before two locations are swapped</source>
+        <translation>Before two locations are swapped</translation>
+    </message>
+    <message>
+        <source>After two locations are swapped</source>
+        <translation>After two locations are swapped</translation>
+    </message>
+    <message>
+        <source>Before a location is added</source>
+        <translation>Before a location is added</translation>
+    </message>
+    <message>
+        <source>After a location is added</source>
+        <translation>After a location is added</translation>
+    </message>
+    <message>
+        <source>Before a location is removed</source>
+        <translation>Before a location is removed</translation>
+    </message>
+    <message>
+        <source>After a location is removed</source>
+        <translation>After a location is removed</translation>
+    </message>
+    <message>
+        <source>Before the section changes</source>
+        <translation>Before the section changes</translation>
+    </message>
+    <message>
+        <source>After the section changes</source>
+        <translation>After the section changes</translation>
+    </message>
+    <message>
+        <source>Before priorities change</source>
+        <translation>Before priorities change</translation>
+    </message>
+    <message>
+        <source>After priorities change</source>
+        <translation>After priorities change</translation>
+    </message>
+    <message>
+        <source>Before the main location changes</source>
+        <translation>Before the main location changes</translation>
+    </message>
+    <message>
+        <source>After the main location changes</source>
+        <translation>After the main location changes</translation>
+    </message>
+    <message>
+        <source>Before an object state changes</source>
+        <translation>Before an object state changes</translation>
+    </message>
+    <message>
+        <source>After an object state changes</source>
+        <translation>After an object state changes</translation>
+    </message>
+    <message>
+        <source>Before the sort order changes</source>
+        <translation>Before the sort order changes</translation>
+    </message>
+    <message>
+        <source>After the sort order changes</source>
+        <translation>After the sort order changes</translation>
+    </message>
+    <message>
+        <source>Before an order is confirmed</source>
+        <translation>Before an order is confirmed</translation>
+    </message>
+    <message>
+        <source>After an order is confirmed</source>
+        <translation>After an order is confirmed</translation>
+    </message>
+    <message>
+        <source>Before checkout</source>
+        <translation>Before checkout</translation>
+    </message>
+    <message>
+        <source>After checkout</source>
+        <translation>After checkout</translation>
+    </message>
+    <message>
+        <source>Before something is added to the basket</source>
+        <translation>Before something is added to the basket</translation>
+    </message>
+    <message>
+        <source>After something is added to the basket</source>
+        <translation>After something is added to the basket</translation>
+    </message>
+    <message>
+        <source>Before the basket is updated</source>
+        <translation>Before the basket is updated</translation>
+    </message>
+    <message>
+        <source>After the basket is updated</source>
+        <translation>After the basket is updated</translation>
+    </message>
+    <message>
+        <source>Before a user account is activated</source>
+        <translation>Before a user account is activated</translation>
+    </message>
+    <message>
+        <source>After a user account is activated</source>
+        <translation>After a user account is activated</translation>
+    </message>
+    <message>
+        <source>Before a user registers</source>
+        <translation>Before a user registers</translation>
+    </message>
+    <message>
+        <source>After a user registers</source>
+        <translation>After a user registers</translation>
+    </message>
+    <message>
+        <source>Before a password is sent</source>
+        <translation>Before a password is sent</translation>
+    </message>
+    <message>
+        <source>After a password is sent</source>
+        <translation>After a password is sent</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/workflow/view</name>
