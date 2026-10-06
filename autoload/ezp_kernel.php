@@ -1108,6 +1108,7 @@ return array(
       'expRestRateLimitedStatus'                                     => 'kernel/private/rest/classes/status/rate_limited.php',
       'expSchemaConsistencyReport'                                   => 'kernel/private/classes/expschemaconsistencyreport.php',
       'expScriptStatus'                                              => 'kernel/classes/expscriptstatus.php',
+      'expSecretRule'                                                => 'kernel/classes/expsecretrule.php',
       'expSettingsChain'                                             => 'kernel/classes/ini/expsettingschain.php',
       'expSettingsExtensionWizard'                                   => 'kernel/setup/expsettingsextensionwizard.php',
       'expSettingsPage'                                              => 'kernel/classes/ini/expsettingspage.php',
