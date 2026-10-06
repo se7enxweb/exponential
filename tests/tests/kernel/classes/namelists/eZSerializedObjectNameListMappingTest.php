@@ -12,7 +12,7 @@
  * @group kernel
  */
 
-class eZSerializedObjectNameListTest extends PHPUnit\Framework\TestCase
+class eZSerializedObjectNameListMappingTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void
     {
