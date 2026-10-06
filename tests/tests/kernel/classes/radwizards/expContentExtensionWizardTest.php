@@ -78,6 +78,15 @@ class expContentExtensionWizardTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $sorted, $keys );
     }
 
+    public function testDatatypesCarryTheirNamesOnceRegistered()
+    {
+        // registered the way the datatype's own file does it when it is loaded
+        eZDataType::register( 'ezstring', 'eZStringType' );
+        $this->assertInstanceOf( 'eZStringType', eZDataType::create( 'ezstring' ) );
+        $known = expContentExtensionWizard::datatypes();
+        $this->assertSame( 'Text line', $known['ezstring']['name'] );
+    }
+
     public function testAttributeList()
     {
         $attributes = expContentExtensionWizard::attributeList(

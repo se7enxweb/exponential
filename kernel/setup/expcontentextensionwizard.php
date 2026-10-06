@@ -95,8 +95,13 @@ class expContentExtensionWizard extends expExtensionWizard
         // has a fault in it.
         // null, not an empty array, while no datatype is registered yet
         foreach ( (array) eZDataType::registeredDataTypes() as $type => $object )
-            if ( isset( $known[$type] ) && is_object( $object ) )
-                $known[$type]['name'] = (string) $object->attribute( 'name' );
+            if ( isset( $known[$type] ) && $object instanceof eZDataType )
+            {
+                // A datatype has no "name" attribute; its name is in "information"
+                $information = $object->attribute( 'information' );
+                if ( is_array( $information ) && isset( $information['name'] ) && (string) $information['name'] !== '' )
+                    $known[$type]['name'] = (string) $information['name'];
+            }
 
         ksort( $known );
 
