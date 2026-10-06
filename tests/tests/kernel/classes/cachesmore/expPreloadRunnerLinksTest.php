@@ -167,7 +167,7 @@ class expPreloadRunnerLinksTest extends PHPUnit\Framework\TestCase
         $clean = $this->runner();
         self::call( $clean, 'report' );
         $this->assertSame( array( 'report', 'No broken links were found.', array( 'broken' => array() ) ), end( $this->said ) );
-        $this->assertSame( array( 'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0 ), $clean->counts() );
+        $this->assertSame( array( 'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0, 'images' => 0, 'images_broken' => 0 ), $clean->counts() );
     }
 
     public function testSizesAndShortening()

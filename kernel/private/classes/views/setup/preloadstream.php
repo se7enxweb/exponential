@@ -23,43 +23,21 @@
  * @package kernel
  *
  */
-
 namespace Exponential\View\Kernel\Setup
 {
 
+/**
+ * The older progress stream of Setup > Preload, kept for anything that opens it. It used to run the whole crawl
+ * inside this request: it held a web server worker for minutes, ended in a time-out behind a pooled server or a
+ * buffering proxy, and started a load on the site from a plain GET. It runs nothing now. It answers the events of
+ * the run going on (or of the last run) so far, in the same Server-Sent Events format, and ends; an EventSource
+ * opens it again by itself, so a reader still follows a run. Runs are started by setup/preloadjob or the form of
+ * setup/preload.
+ */
 class Preloadstream extends \Exponential\Runnable\ModuleView
 {
     public function run( array $scope )
     {
-        // the including function's variables ($Params, $Module, $cli, ...)
-        foreach ( array_keys( $scope ) as $__name )
-            if ( $__name !== 'this' && $__name !== 'scope' )
-                ${$__name} = &$scope[$__name];
-        unset( $__name );
-
-        require_once 'kernel/setup/exppreloadrunner.php';
-
-        $Module = $Params['Module'];
-        $http = \eZHTTPTool::instance();
-
-        // Read before any output: once the stream is open there is nowhere to report a
-        // bad parameter to except the stream itself.
-        $maxPages = $http->hasVariable( 'MaxPages' ) ? (int)$http->variable( 'MaxPages' ) : 250;
-        $maxDepth = $http->hasVariable( 'MaxDepth' ) ? (int)$http->variable( 'MaxDepth' ) : 3;
-        $maxPages = max( 1, min( 5000, $maxPages ) );
-        $maxDepth = max( 0, min( 10, $maxDepth ) );
-
-        // Only a siteaccess this installation actually serves may be named, so the
-        // parameter cannot be used to point the crawler somewhere else.
-        $siteaccess = $http->hasVariable( 'SiteAccess' ) ? (string)$http->variable( 'SiteAccess' ) : '';
-        $siteIni = \eZINI::instance( 'site.ini' );
-        $allowed = $siteIni->hasVariable( 'SiteAccessSettings', 'RelatedSiteAccessList' )
-                 ? (array)$siteIni->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' ) : array();
-        if ( $siteaccess !== '' && !in_array( $siteaccess, $allowed, true ) )
-            $siteaccess = '';
-
-        // not a loop on ob_get_level(): a persistent worker's own buffer cannot be removed, and the
-        // loop would never end there (eZExecution::discardOutputBuffers())
         if ( method_exists( '\eZExecution', 'discardOutputBuffers' ) )
             \eZExecution::discardOutputBuffers();
         else
@@ -67,52 +45,35 @@ class Preloadstream extends \Exponential\Runnable\ModuleView
 
         header( 'Content-Type: text/event-stream; charset=utf-8' );
         header( 'Cache-Control: no-cache, no-store, must-revalidate' );
-        header( 'Pragma: no-cache' );
-        header( 'Connection: keep-alive' );
-        // nginx buffers proxied responses by default, which would hold the whole run
-        // back until it finished and defeat the point of streaming it.
         header( 'X-Accel-Buffering: no' );
 
-        // A run can outlast the default limit on a large site; it is bounded by
-        // max_pages rather than by the clock.
-        @set_time_limit( 0 );
-        ignore_user_abort( false );
-
-        $send = function ( $type, $message, array $data = array() )
+        $send = function ( array $payload )
         {
-            $payload = array( 'type' => $type, 'message' => $message ) + $data;
-            echo 'data: ' . json_encode( $payload ) . "\n\n";
-            // Padding defeats any remaining proxy buffer that waits for a full block.
-            echo ': ' . str_repeat( ' ', 2048 ) . "\n\n";
-            flush();
+            echo 'data: ' . json_encode( $payload, JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR ) . "\n\n";
         };
 
-        $send( 'info', 'Preloader started at ' . date( 'Y-m-d H:i:s T' ) . '.' );
-
-        try
+        $run = \expPreloadJob::running();
+        if ( $run === false || $run['id'] === '' )
         {
-            $runner = new \expPreloadRunner( $send, array(
-                'siteaccess' => $siteaccess,
-                'max_pages'  => $maxPages,
-                'max_depth'  => $maxDepth,
-            ) );
-            $runner->run();
-        }
-        catch ( \Exception $e )
-        {
-            $send( 'error', 'Preloader stopped: ' . $e->getMessage() );
-            $send( 'done', 'Stopped early.' );
-            \eZDebug::writeError( $e->getMessage(), $this->scriptFile() );
+            $runs = \expPreloadJob::history()->runs( 1 );
+            $run = $runs ? $runs[0] : false;
         }
 
+        echo "retry: 3000\n\n";
+        $send( array( 'type' => 'info', 'message' => 'This stream starts no preload; Setup > Preload starts one in the background. It shows the run going on, or the last one.' ) );
+        if ( $run !== false && $run['id'] !== '' )
+        {
+            $progress = \expPreloadJob::progress( $run['id'], 0 );
+            if ( $progress !== false )
+                foreach ( $progress['events'] as $event )
+                    $send( $event );
+        }
         echo "event: end\ndata: {}\n\n";
         flush();
 
-        // The response is already complete and is not html, so the module's normal
-        // template rendering must not run.
         \eZExecution::cleanExit();
 
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        return $this->viewResult( null, null );
     }
 }
 

@@ -81,6 +81,10 @@ class expPreloadRunner
     private $queue = array();
     private $siteaccessNames = null;
     private $storeCallback = null;
+    private $address = null;
+
+    /** image url => array( page url => true ), the pages that show it, capped like the referrers. */
+    private $images = array();
 
     /** target url => array( linking page url => true ), capped. */
     private $referrers = array();
@@ -92,7 +96,8 @@ class expPreloadRunner
     private $problems = array();
 
     private $counts = array(
-        'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0 );
+        'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0,
+        'images' => 0, 'images_broken' => 0 );
 
     /**
      * @param callable $emit  Called as $emit( $type, $message, $data ). Types are
@@ -119,6 +124,11 @@ class expPreloadRunner
             // of the site root and its sections; with max_depth 0 exactly
             // these pages are fetched.
             'start_paths' => array(),
+            // Also request the images the warmed pages show (their <img src> on this host), once each,
+            // and report the ones that do not come back. An image alias is made when a page that shows it is
+            // rendered; this finds the ones that are still missing and the pages that show them.
+            'images'     => false,
+            'max_images' => 2000,
         );
     }
 
@@ -143,6 +153,21 @@ class expPreloadRunner
     }
 
     /**
+     * The site.ini of the chosen siteaccess (its own settings/siteaccess/<name>/site.ini.append.php), or the
+     * current one when none was chosen or it has none.
+     *
+     * @return eZINI
+     */
+    private function siteaccessIni()
+    {
+        $siteaccess = trim( (string)$this->options['siteaccess'] );
+        if ( $siteaccess !== '' && preg_match( '#^[A-Za-z0-9_-]+$#', $siteaccess )
+             && file_exists( 'settings/siteaccess/' . $siteaccess . '/site.ini.append.php' ) )
+            return eZINI::instance( 'site.ini.append.php', 'settings/siteaccess/' . $siteaccess, null, false, null, true );
+        return eZINI::instance( 'site.ini' );
+    }
+
+    /**
      * The site's base url, from site.ini unless the caller supplied one.
      *
      * SiteURL is stored without a scheme, so one is added rather than assumed
@@ -160,14 +185,9 @@ class expPreloadRunner
         // same reason.
         if ( $url === '' && trim( (string)$this->options['siteaccess'] ) !== '' )
         {
-            $siteaccess = trim( (string)$this->options['siteaccess'] );
-            $dir = 'settings/siteaccess/' . $siteaccess;
-            if ( file_exists( $dir . '/site.ini.append.php' ) )
-            {
-                $saIni = eZINI::instance( 'site.ini.append.php', $dir, null, false, null, true );
-                if ( $saIni->hasVariable( 'SiteSettings', 'SiteURL' ) )
-                    $url = (string)$saIni->variable( 'SiteSettings', 'SiteURL' );
-            }
+            $saIni = $this->siteaccessIni();
+            if ( $saIni->hasVariable( 'SiteSettings', 'SiteURL' ) )
+                $url = (string)$saIni->variable( 'SiteSettings', 'SiteURL' );
         }
 
         if ( $url === '' )
@@ -178,57 +198,37 @@ class expPreloadRunner
             $url = (string)$ini->variable( 'SiteSettings', 'SiteURL' );
         }
 
-        $url = rtrim( trim( $url ), '/' );
-        if ( $url === '' )
-            return false;
-        if ( strpos( $url, '://' ) === false )
-            $url = 'https://' . $url;
-        return $url;
+        return expPreloadAddress::baseUrl( $url );
+    }
+
+    /**
+     * How the chosen siteaccess is reached at the base url (expPreloadAddress::prefix()): the prefix, whether
+     * site.ini's matching was shown to send that address to the siteaccess, and by which method.
+     *
+     * Without this every siteaccess sharing a host was warmed at the host root,
+     * which is the default site: choosing Bold Agency warmed Fit & Healthy and
+     * reported success.
+     *
+     * @return array hash prefix, reached, how
+     */
+    public function address()
+    {
+        if ( $this->address !== null )
+            return $this->address;
+        if ( $this->options['base_path'] !== null )
+            return $this->address = array( 'prefix' => rtrim( (string)$this->options['base_path'], '/' ), 'reached' => true, 'how' => 'given' );
+        $base = $this->baseUrl();
+        return $this->address = expPreloadAddress::fromINI()->prefix( (string)$this->options['siteaccess'], $base === false ? '' : $base );
     }
 
     /**
      * The url prefix that selects this siteaccess on its host, '' when it is
      * matched by host alone.
-     *
-     * Without this every siteaccess sharing a host was warmed at the host root,
-     * which is the default site: choosing Bold Agency warmed Fit & Healthy and
-     * reported success. MatchOrder decides which it is, and a siteaccess named
-     * in the host map is reached at the root of that host.
      */
     public function basePath()
     {
-        if ( $this->options['base_path'] !== null )
-            return rtrim( (string)$this->options['base_path'], '/' );
-
-        $siteaccess = trim( (string)$this->options['siteaccess'] );
-        if ( $siteaccess === '' )
-            return '';
-
-        $ini = eZINI::instance( 'site.ini' );
-        foreach ( (array)$ini->variableArray( 'SiteAccessSettings', 'MatchOrder' ) as $matchOrder )
-        {
-            if ( $matchOrder === 'host' && $ini->hasVariable( 'SiteAccessSettings', 'HostMatchMapItems' ) )
-            {
-                foreach ( (array)$ini->variable( 'SiteAccessSettings', 'HostMatchMapItems' ) as $item )
-                {
-                    $parts = explode( ';', $item );
-                    if ( isset( $parts[1] ) && $parts[1] === $siteaccess )
-                        return '';
-                }
-            }
-            else if ( $matchOrder === 'host_uri' && $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) )
-            {
-                foreach ( (array)$ini->variable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) as $item )
-                {
-                    $parts = explode( ';', $item );
-                    if ( isset( $parts[2] ) && $parts[2] === $siteaccess )
-                        return $parts[1] !== '' ? '/' . trim( $parts[1], '/' ) : '';
-                }
-            }
-        }
-
-        // Matched on the first url segment, which is the siteaccess name.
-        return '/' . $siteaccess;
+        $address = $this->address();
+        return $address['prefix'];
     }
 
     /**
@@ -237,48 +237,18 @@ class expPreloadRunner
      */
     public function startUrls( $base )
     {
-        // SiteURL may already end in the siteaccess prefix (latest.demo.exponential.earth/site):
-        // the prefix is added once, never repeated (/site/site).
-        $prefix = $this->basePath();
-        $basePart = rtrim( (string)parse_url( $base, PHP_URL_PATH ), '/' );
-        if ( $prefix !== '' && substr( $basePart, -strlen( $prefix ) ) === $prefix )
-            $prefix = '';
-        $base = $base . $prefix;
-
-        if ( $this->options['start_paths'] )
+        $keywords = '';
+        if ( !$this->options['start_paths'] )
         {
-            $urls = array();
-            foreach ( (array)$this->options['start_paths'] as $path )
-                $urls[] = $this->normalise( $base . '/' . ltrim( (string)$path, '/' ) );
-            return array_values( array_unique( $urls ) );
+            $ini = $this->siteaccessIni();
+            if ( $ini->hasVariable( 'SiteSettings', 'URLTranslationKeyword' ) )
+                $keywords = (string)$ini->variable( 'SiteSettings', 'URLTranslationKeyword' );
         }
-
-        $urls = array( $base . '/' );
-
-        $ini = eZINI::instance( 'site.ini' );
-        $siteaccess = trim( (string)$this->options['siteaccess'] );
-        if ( $siteaccess !== '' && file_exists( 'settings/siteaccess/' . $siteaccess . '/site.ini.append.php' ) )
-            $ini = eZINI::instance( 'site.ini.append.php', 'settings/siteaccess/' . $siteaccess, null, false, null, true );
-
-        if ( $ini->hasVariable( 'SiteSettings', 'URLTranslationKeyword' ) )
-        {
-            $keywords = (string)$ini->variable( 'SiteSettings', 'URLTranslationKeyword' );
-            foreach ( explode( ';', $keywords ) as $keyword )
-            {
-                $keyword = trim( $keyword, "/ \t\n\r" );
-                if ( $keyword !== '' )
-                    $urls[] = $base . '/' . $keyword . '/';
-            }
-        }
-
-        foreach ( $urls as $key => $url )
-            $urls[$key] = $this->normalise( $url );
-
-        return array_values( array_unique( $urls ) );
+        return expPreloadAddress::startUrls( $base, $this->basePath(), $keywords, (array)$this->options['start_paths'] );
     }
 
     /** One request. Returns status, timing, size and body. */
-    private function fetch( $url )
+    private function fetch( $url, $headOnly = false )
     {
         $started = microtime( true );
         $ch = curl_init();
@@ -292,6 +262,7 @@ class expPreloadRunner
             CURLOPT_SSL_VERIFYHOST => 0,
             CURLOPT_USERAGENT      => 'Exponential preloader',
             CURLOPT_ENCODING       => '',
+            CURLOPT_NOBODY         => (bool)$headOnly,
         ) );
         $body = curl_exec( $ch );
         $status = (int)curl_getinfo( $ch, CURLINFO_HTTP_CODE );
@@ -469,18 +440,22 @@ class expPreloadRunner
         }
 
         $started = microtime( true );
-        $this->say( 'info', 'Base url: ' . $base );
+        $phases = $this->options['images'] ? 3 : 2;
+        $address = $this->address();
+        $this->say( 'info', 'Base url: ' . $base . ( $address['prefix'] !== '' ? ', siteaccess prefix ' . $address['prefix'] : '' ) );
+        if ( !$address['reached'] )
+            $this->say( 'warn', 'The siteaccess matching in site.ini does not send this address to the siteaccess chosen; the pages warmed may be those of another one.' );
         $this->say( 'info', sprintf( 'Limits: %d pages, depth %d, %ds per request.',
                                      $this->options['max_pages'], $this->options['max_depth'],
                                      $this->options['timeout'] ) );
 
         $start = $this->startUrls( $base );
-        $this->say( 'phase', sprintf( 'Phase 1 of 2 - section pages (%d)', count( $start ) ) );
+        $this->say( 'phase', sprintf( 'Phase 1 of %d - section pages (%d)', $phases, count( $start ) ) );
 
         foreach ( $start as $url )
             $this->visit( $url, $base, 0, true );
 
-        $this->say( 'phase', 'Phase 2 of 2 - crawling the rest of the site' );
+        $this->say( 'phase', sprintf( 'Phase 2 of %d - crawling the rest of the site', $phases ) );
 
         while ( $this->queue )
         {
@@ -494,16 +469,99 @@ class expPreloadRunner
             $this->visit( $next['url'], $base, $next['depth'], false );
         }
 
+        if ( $this->options['images'] )
+        {
+            $this->say( 'phase', sprintf( 'Phase 3 of 3 - images shown on the warmed pages (%d)',
+                                          min( count( $this->images ), (int)$this->options['max_images'] ) ) );
+            $this->checkImages();
+        }
+
         $this->report();
 
         $elapsed = round( microtime( true ) - $started, 1 );
         $this->say( 'done', sprintf(
             '%d warmed, %d skipped, %d broken, %d denied, %s in %ss.',
             $this->counts['fetched'], $this->counts['skipped'], $this->counts['broken'],
-            $this->counts['denied'], $this->formatBytes( $this->counts['bytes'] ), $elapsed ),
+            $this->counts['denied'], $this->formatBytes( $this->counts['bytes'] ), $elapsed )
+            . ( $this->options['images'] ? sprintf( ' %d images checked, %d missing.', $this->counts['images'], $this->counts['images_broken'] ) : '' ),
             array( 'counts' => $this->counts, 'seconds' => $elapsed ) );
 
         return $this->counts['broken'] === 0;
+    }
+
+    /**
+     * The images a page shows: same host <img src> addresses, absolute, once each.
+     *
+     * @return array
+     */
+    private function imagesFrom( $html, $pageUrl, $base )
+    {
+        $found = array();
+        if ( $html === '' || !preg_match_all( '#<img\b[^>]*?\bsrc="([^"]+)"#i', $html, $m ) )
+            return $found;
+        $host = parse_url( $base, PHP_URL_HOST );
+        $origin = parse_url( $base, PHP_URL_SCHEME ) . '://' . $host
+                . ( parse_url( $base, PHP_URL_PORT ) ? ':' . parse_url( $base, PHP_URL_PORT ) : '' );
+        foreach ( $m[1] as $src )
+        {
+            $src = trim( html_entity_decode( $src, ENT_QUOTES, 'UTF-8' ) );
+            if ( $src === '' || preg_match( '#^(data|javascript):#i', $src ) )
+                continue;
+            if ( strpos( $src, '//' ) === 0 )
+                $url = 'https:' . $src;
+            elseif ( strpos( $src, '://' ) !== false )
+                $url = $src;
+            elseif ( $src[0] === '/' )
+                $url = $origin . $src;
+            else
+                $url = rtrim( dirname( $pageUrl . 'x' ), '/' ) . '/' . $src;
+            if ( parse_url( $url, PHP_URL_HOST ) !== $host )
+                continue;
+            $hash = strpos( $url, '#' );
+            if ( $hash !== false )
+                $url = substr( $url, 0, $hash );
+            $found[$url] = true;
+        }
+        return array_keys( $found );
+    }
+
+    /**
+     * Requests each image once (HEAD), and keeps the ones that do not come back with the pages that show them.
+     */
+    private function checkImages()
+    {
+        $left = (int)$this->options['max_images'];
+        foreach ( $this->images as $url => $pages )
+        {
+            if ( $left-- <= 0 )
+            {
+                $this->say( 'warn', sprintf( 'Reached the limit of %d images; %d were not checked.',
+                                             (int)$this->options['max_images'], count( $this->images ) - (int)$this->options['max_images'] ) );
+                break;
+            }
+            $result = $this->fetch( $url, true );
+            $path = (string)parse_url( $url, PHP_URL_PATH );
+            if ( $result['status'] >= 200 && $result['status'] < 400 )
+            {
+                ++$this->counts['images'];
+                $this->say( 'image', sprintf( '%-52s %3d  %5dms', ( strlen( $path ) > 52 ? "\xe2\x80\xa6" . substr( $path, -51 ) : $path ), $result['status'], $result['ms'] ),
+                            array( 'url' => $url, 'status' => $result['status'], 'ms' => $result['ms'] ) );
+                continue;
+            }
+            ++$this->counts['images_broken'];
+            $this->problems[] = array(
+                'url'       => $url,
+                'path'      => $path,
+                'status'    => (int)$result['status'],
+                'reason'    => $result['status'] === 0 ? 'Images without a response' : sprintf( 'Missing images (%d)', $result['status'] ),
+                'referrers' => array_keys( $pages ),
+                'more'      => 0,
+            );
+            $this->say( 'error', sprintf( '%s  %s  shown on %s', $path,
+                                          $result['status'] ? (string)$result['status'] : ( $result['error'] !== '' ? $result['error'] : 'no response' ),
+                                          $this->shorten( (string)parse_url( (string)key( $pages ), PHP_URL_PATH ), 40 ) ),
+                        array( 'url' => $url, 'status' => (int)$result['status'] ) );
+        }
     }
 
     private function visit( $url, $base, $depth, $isSection )
@@ -563,6 +621,17 @@ class expPreloadRunner
 
         if ( $this->storeCallback )
             call_user_func( $this->storeCallback, $url, $path, $result['body'] );
+
+        if ( $this->options['images'] )
+        {
+            foreach ( $this->imagesFrom( $result['body'], $url, $base ) as $image )
+            {
+                if ( !isset( $this->images[$image] ) )
+                    $this->images[$image] = array();
+                if ( count( $this->images[$image] ) < self::MAX_REFERRERS )
+                    $this->images[$image][$url] = true;
+            }
+        }
 
         if ( $depth >= $this->options['max_depth'] )
             return;
@@ -727,28 +796,9 @@ class expPreloadRunner
      */
     private function normalise( $url )
     {
-        $url = preg_replace( '#/index\\.php(?=/|$)#', '', $url, 1 );
-
-        $parts = parse_url( $url );
-        $path = isset( $parts['path'] ) ? $parts['path'] : '';
-
-        if ( $path === '' )
-            return rtrim( $url, '/' ) . '/';
-
-        // /bold and /bold/ are one page, and were being fetched and stored as
-        // two. The host root keeps its slash because there is nothing else of
-        // it to keep. The slash is taken off the path, not off the url: the
-        // last slash of the url can be in its query (/news/?next=/a/b), and
-        // cutting there lost the query, or half of it
-        if ( $path !== '/' && substr( $path, -1 ) === '/' )
-        {
-            $query = strpos( $url, '?' );
-            $head = $query === false ? $url : substr( $url, 0, $query );
-            $tail = $query === false ? '' : substr( $url, $query );
-            $url = substr( $head, 0, -1 ) . $tail;
-        }
-
-        return $url;
+        // /bold and /bold/ are one page, and /index.php/foo is /foo: expPreloadAddress::normalise(), which the
+        // starting pages use too
+        return expPreloadAddress::normalise( $url );
     }
 
     private function shorten( $text, $width )
