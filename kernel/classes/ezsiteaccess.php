@@ -311,35 +311,6 @@ class eZSiteAccess
                             }
                         }
                     }
-
-                    // No entry matched, for example the address has no language segment: an entry of
-                    // DefaultHostUriMatchMapItems for the host gives the siteaccess and the uri part of its links,
-                    // chosen by the languages the browser accepts. The address itself is not shortened.
-                    if ( $ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ) )
-                    {
-                        $default = self::matchDefaultHostUri( $ini->variableArray( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ),
-                                                              $host,
-                                                              $ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' ),
-                                                              isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ? (string)$_SERVER['HTTP_ACCEPT_LANGUAGE'] : '' );
-                        if ( $default !== null )
-                        {
-                            $access = array_merge( $access, $default );
-                            $access['type'] = $type;
-                            // The web kernel sends the browser on to the address with the segment, once (/ to /ger):
-                            // the pages a cache keeps then have one address and one language each. Only when an entry
-                            // of HostUriMatchMapItems takes that address, else it would land here again
-                            if ( $default['uri_part']
-                                 && ( !$ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriRedirect' )
-                                      || $ini->variable( 'SiteAccessSettings', 'DefaultHostUriRedirect' ) !== 'disabled' )
-                                 && $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) )
-                            {
-                                $access['redirect'] = self::hostUriEntryExists( $ini->variableArray( 'SiteAccessSettings', 'HostUriMatchMapItems' ),
-                                                                                $host, implode( '/', $default['uri_part'] ),
-                                                                                $ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' ) );
-                            }
-                            return $access;
-                        }
-                    }
                 } break;
                 case 'index':
                 {
@@ -428,11 +399,72 @@ class eZSiteAccess
                 }
             }
         }
+
+        // No probe matched, so the default siteaccess applies. DefaultHostUriMatchMapItems can choose it by host and
+        // by the browser's language, with the uri part its links carry (/ger)
+        if ( self::$matchingTarget )
+        {
+            $access['unmatched'] = true;
+        }
+        else if ( $ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ) )
+        {
+            $default = self::matchDefaultHostUri( $ini->variableArray( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ),
+                                                  $host,
+                                                  $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' )
+                                                      ? $ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' ) : 'strict',
+                                                  isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ? (string)$_SERVER['HTTP_ACCEPT_LANGUAGE'] : '' );
+            if ( $default !== null )
+            {
+                $access = array_merge( $access, $default );
+                // The web kernel sends the browser on to the address with the segment, once (/ to /ger), so the
+                // pages a cache keeps have one address each: only when that address reaches the siteaccess through
+                // a probe of MatchOrder, else the redirect would come back here
+                if ( $default['uri_part']
+                     && ( !$ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriRedirect' )
+                          || $ini->variable( 'SiteAccessSettings', 'DefaultHostUriRedirect' ) !== 'disabled' ) )
+                {
+                    $access['redirect'] = self::reachesSiteAccess( $default['name'], implode( '/', $default['uri_part'] ) . '/' . $uri->elements(),
+                                                                   $host, $port, $file );
+                }
+            }
+        }
         return $access;
     }
 
     /**
-     * The default of host_uri matching for an address no HostUriMatchMapItems entry matched: the first entry of
+     * Set while reachesSiteAccess() matches an address: no default and no redirect then, only whether a probe matched.
+     *
+     * @var bool
+     */
+    private static $matchingTarget = false;
+
+    /**
+     * Whether the address $uriString (with its segment, for example "ger/news/an-article") reaches the siteaccess
+     * $name through a probe of MatchOrder, so that a redirect there is not answered with another one.
+     *
+     * @param string $name
+     * @param string $uriString
+     * @param string $host
+     * @param int $port
+     * @param string $file
+     * @return bool
+     */
+    static function reachesSiteAccess( $name, $uriString, $host, $port = 80, $file = '/index.php' )
+    {
+        self::$matchingTarget = true;
+        try
+        {
+            $access = self::match( new eZURI( trim( $uriString, '/' ) ), $host, $port, $file );
+        }
+        finally
+        {
+            self::$matchingTarget = false;
+        }
+        return empty( $access['unmatched'] ) && $access['name'] === $name;
+    }
+
+    /**
+     * The default siteaccess for an address no probe of MatchOrder matched: the first entry of
      * $items (DefaultHostUriMatchMapItems[]=host;uri;siteaccess[;method[;language]]) whose host matches and whose
      * language the browser accepts, trying the languages of $acceptLanguage from the most wanted; else the first
      * entry for the host without a language. method is strict, start, end or part; empty or "default" is
@@ -497,30 +529,6 @@ class eZSiteAccess
         if ( count( $variants ) > 1 )
             $access['vary'] = 'Accept-Language';
         return $access;
-    }
-
-    /**
-     * Whether an entry of HostUriMatchMapItems ($items, each split at ";") takes the address with the uri part $uri on
-     * $host, so a redirect there does not come back to the default.
-     *
-     * @param array $items
-     * @param string $host
-     * @param string $uri for example "ger"
-     * @param string $defaultMethod HostUriMatchMethodDefault
-     * @return bool
-     */
-    static function hostUriEntryExists( array $items, $host, $uri, $defaultMethod )
-    {
-        foreach ( $items as $item )
-        {
-            $item = (array)$item;
-            if ( !isset( $item[2] ) || trim( (string)$item[1], '/' ) !== $uri )
-                continue;
-            $method = isset( $item[3] ) && $item[3] !== '' ? (string)$item[3] : (string)$defaultMethod;
-            if ( self::hostMatches( $host, (string)$item[0], $method ) )
-                return true;
-        }
-        return false;
     }
 
     /**
