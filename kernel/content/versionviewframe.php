@@ -108,7 +108,8 @@ if ( $Module->isCurrentAction( 'Publish' ) and
     ezpContentPublishingBehaviour::setBehaviour( $behaviour );
 
     $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $ObjectID,
-                                                                                 'version' => $EditVersion ) );
+                                                                                 'version' => $EditVersion,
+                                                                                 'notify' => !eZContentOperationCollection::publishWithoutNotification( 'PreviewPublishNotNotifyButton' ) ) );
     // redirect if requested by the publishing operation
     if ( isset( $operationResult['status'] ) && ( $operationResult['status'] == eZModuleOperationInfo::STATUS_HALTED ) )
     {

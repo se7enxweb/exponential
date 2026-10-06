@@ -12,7 +12,7 @@ used to be a patch of a kernel file; now the kernel asks a filter of `ezpEvent`,
 | `content/download/access` | the kernel's answer, `true` or `false` | object, attribute, version | `content/download` |
 | `content/edit/access` | the kernel's edit answer, `true` or `false` | object, version (or `null`), user ID, language | `eZContentObject::editAccess()` and `::filterEditAccess()`, see [Where edit access is asked](#where-edit-access-is-asked) |
 | `collaboration/item/access` | whether the user takes part, `true` or `false` | item, user | `collaboration/item` and `collaboration/action` |
-| `content/notification/create` | `true` | object ID, version | `eZContentOperationCollection::createNotificationEvent()` (the publish operation) |
+| `content/notification/create` | `true`, `false` for "Publish without notification" | object ID, version | `eZContentOperationCollection::createNotificationEvent()` (the publish operation) |
 
 A listener returns the value, changed or not. Without listeners everything works as before.
 
@@ -214,6 +214,22 @@ public static function create( $create, $objectID, $version )
     return $create && $object && in_array( $object->attribute( 'class_identifier' ), array( 'article', 'file' ) );
 }
 ```
+
+#### Publish without notification
+
+With `notification.ini [NotificationSettings] PublishWithoutNotification=enabled`, the edit form (`content/edit`) and
+the version preview (`content/versionview`) show "Publish without notification" next to the publish button. It
+publishes the version as the other one does, with the parameter `notify` of the publish operation set to `false`; the
+filter then gets `false`, and no event is made unless a listener returns `true`. The parameter is kept in the
+memento of a publication a workflow holds back, so a version approved later still goes without notification. Code
+that publishes through the operation passes it the same way:
+
+```php
+eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $id, 'version' => $version, 'notify' => false ) );
+```
+
+The setting is `disabled` by default: the button is hidden, and a posted `PublishNotNotifyButton` or
+`PreviewPublishNotNotifyButton` publishes with notification.
 
 ## How it works
 
