@@ -1,4 +1,4 @@
-    function classListFromPolicy( $policy, $allowedLanguageCodes = false )
+    function classListFromPolicy( $policy, $allowedLanguageCodes = false, &$assignedNodes = null )
     {
         $canCreateClassIDListPart = array();
         $hasClassIDLimitation = false;
@@ -93,10 +93,10 @@
             if ( $object === false )
                 $object = $this->attribute( 'object' );
 
-            $assignedNodes = $object->attribute( 'assigned_nodes' );
+            $assignedNodes = $assignedNodes ?? $object->attribute( 'assigned_nodes' );
 /*END:code-template::is-node*/
 /*START:code-template::is-object*/
-            $assignedNodes = $this->attribute( 'assigned_nodes' );
+            $assignedNodes = $assignedNodes ?? $this->attribute( 'assigned_nodes' );
 /*END:code-template::is-object*/
             foreach ( $assignedNodes as $assignedNode )
             {
@@ -202,10 +202,10 @@
 /*START:code-template::is-node*/
             if ( $object === false )
                 $object = $this->attribute( 'object' );
-            $assignedNodes = $object->attribute( 'assigned_nodes' );
+            $assignedNodes = $assignedNodes ?? $object->attribute( 'assigned_nodes' );
 /*END:code-template::is-node*/
 /*START:code-template::is-object*/
-            $assignedNodes = $this->attribute( 'assigned_nodes' );
+            $assignedNodes = $assignedNodes ?? $this->attribute( 'assigned_nodes' );
 /*END:code-template::is-object*/
             foreach ( $assignedNodes as $assignedNode )
             {

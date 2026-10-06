@@ -148,6 +148,9 @@
         else
         {
             $policies = $accessResult['policies'];
+            // The locations of the object are loaded by the first policy that needs them and handed to the
+            // next: a role assigned for many subtrees brings each of its policies once per subtree.
+            $assignedNodes = null;
             foreach ( $policies as $policyKey => $policy )
             {
 /*START:code-template::class-policy-list*/
@@ -164,7 +167,7 @@
 
 /*END:code-template::class-policy-list*/
 /*START:code-template::object-policy-list*/
-                $policyArray = $this->classListFromPolicy( $policy, $languageCodeList );
+                $policyArray = $this->classListFromPolicy( $policy, $languageCodeList, $assignedNodes );
                 if ( empty( $policyArray ) )
                 {
                     continue;
