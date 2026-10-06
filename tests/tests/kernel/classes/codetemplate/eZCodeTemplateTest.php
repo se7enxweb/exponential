@@ -2,7 +2,7 @@
 /**
  * Tests of eZCodeTemplate, which writes the blocks of a code template (.ctpl) into the PHP files that ask for them
  * with a "code-template::create-block:" comment: plain text, blocks for one parameter, blocks for several
- * parameters joined with & (all of them), indentation, removal of trailing whitespace,
+ * parameters joined with & (all of them) or | (one of them), indentation, removal of trailing whitespace,
  * replacing the code generated before, the check-only mode, the backup file and the errors that leave the file
  * untouched. The kernel's own generated code is checked against the shipped templates (on copies).
  *
@@ -142,13 +142,15 @@ class eZCodeTemplateTest extends PHPUnit\Framework\TestCase
         $template = "always;\n" .
                     "/*START:code-template::one*/one;\n/*END:code-template::one*/" .
                     "/*START:code-template::one&two*/both;\n/*END:code-template::one&two*/" .
+                    "/*START:code-template::two|three*/either;\n/*END:code-template::two|three*/" .
                     "<START:code-template::three>three;\n<END:code-template::three>" .
                     "last;";
         return array(
             'no parameters' => array( $template, '', "always;\nlast;" ),
             'one' => array( $template, ', one', "always;\none;\nlast;" ),
-            'one and two' => array( $template, ', one, two', "always;\none;\nboth;\nlast;" ),
-            'three' => array( $template, ',three', "always;\nthree;\nlast;" ),
+            'one and two' => array( $template, ', one, two', "always;\none;\nboth;\neither;\nlast;" ),
+            'two alone is enough for two|three' => array( $template, ', two', "always;\neither;\nlast;" ),
+            'three alone is enough for two|three' => array( $template, ',three', "always;\neither;\nthree;\nlast;" ),
             'unknown parameter' => array( $template, ', four', "always;\nlast;" ),
         );
     }

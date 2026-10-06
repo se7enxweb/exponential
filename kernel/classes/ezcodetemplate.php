@@ -253,7 +253,7 @@ class eZCodeTemplate
                         {
                             $tags = explode( '|', $tagText );
                             // Check if at least one tag is present in parameters (or match)
-                            if ( count( array_intersect( $parameters, $tags ) ) == count( $tags ) )
+                            if ( count( array_intersect( $parameters, $tags ) ) > 0 )
                             {
                                 $resultText .= implode( '', $block['blocks'] );
                             }
