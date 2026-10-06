@@ -156,10 +156,16 @@ class expApiKeyRest
     }
 
     /**
-     * The owner's rights on the node a write route acts on (the current user is the owner by now).
+     * The owner's rights on the node a write route acts on (the current user is the owner by now), checked by
+     * expRestContentPermission, the helper the ezprestapi content controller asks too, so a key and an OAuth token
+     * get the same answer.
      *
-     * create: parentNodeID and classIdentifier of the POST, checked with content/create on the parent;
-     * edit:   the route's nodeId, content/edit; remove: the route's nodeId, content/remove.
+     * create: parentNodeID, classIdentifier and languageLocale of the POST, content/create below the parent;
+     * edit:   the route's nodeId, content/edit; remove: the route's nodeId, content/remove of every location of
+     *         the object and everything below them.
+     *
+     * Only a refusal of the rights stops the key here. A request that names no node, or one that does not exist,
+     * goes on to the controller, which answers 400 or 404 for it, as it does for any other authentication.
      *
      * @param string $guard create, edit or remove
      * @param ezcMvcRequest $request
@@ -167,30 +173,11 @@ class expApiKeyRest
      */
     public static function guardAllows( $guard, ezcMvcRequest $request )
     {
-        $post = is_array( $request->post ) ? $request->post : array();
-        $variables = is_array( $request->variables ) ? $request->variables : array();
-        switch ( $guard )
-        {
-            case 'create':
-                $parent = isset( $post['parentNodeID'] ) ? eZContentObjectTreeNode::fetch( (int)$post['parentNodeID'] ) : null;
-                $class = isset( $post['classIdentifier'] ) ? eZContentClass::fetchByIdentifier( (string)$post['classIdentifier'] ) : null;
-                if ( !$parent instanceof eZContentObjectTreeNode || !$class instanceof eZContentClass )
-                    return false;
-                $object = $parent->attribute( 'object' );
-                $language = isset( $post['languageLocale'] ) ? (string)$post['languageLocale'] : false;
-                return $object instanceof eZContentObject
-                       && $object->checkAccess( 'create', $class->attribute( 'id' ), $parent->attribute( 'contentclass_id' ), false, $language ) == 1;
-
-            case 'edit':
-            case 'remove':
-                $nodeID = isset( $variables['nodeId'] ) ? (int)$variables['nodeId'] : 0;
-                $node = $nodeID ? eZContentObjectTreeNode::fetch( $nodeID ) : null;
-                if ( !$node instanceof eZContentObjectTreeNode )
-                    return false;
-                return $guard === 'edit' ? (bool)$node->canEdit() : (bool)$node->canRemove();
-        }
-        // an unknown guard name allows nothing
-        return false;
+        if ( !in_array( $guard, array( expRestContentPermission::CREATE, expRestContentPermission::EDIT, expRestContentPermission::REMOVE ), true ) )
+            // an unknown guard name allows nothing
+            return false;
+        $refusal = expRestContentPermission::forRequest( $guard, $request );
+        return $refusal === null || $refusal['status'] !== 403;
     }
 }
 ?>
