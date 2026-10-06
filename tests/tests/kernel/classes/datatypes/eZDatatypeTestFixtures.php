@@ -165,6 +165,9 @@ abstract class eZDatatypeTestCase extends PHPUnit\Framework\TestCase
                             $fields );
         $attribute = new eZDatatypeTestObjectAttribute( $row );
         $attribute->testClassAttribute = $classAttribute;
+        // the real ones are looked up by the class attribute id
+        $attribute->setContentClassAttributeIdentifier( $classAttribute->attribute( 'identifier' ) );
+        $attribute->setContentClassAttributeName( $classAttribute->attribute( 'name' ) );
         return $attribute;
     }
 

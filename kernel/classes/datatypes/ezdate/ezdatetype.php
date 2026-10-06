@@ -316,7 +316,10 @@ class eZDateType extends eZDataType
     function title( $contentObjectAttribute, $name = null )
     {
         $locale = eZLocale::instance();
-        $retVal = $contentObjectAttribute->attribute( "data_int" ) === null ? '' : $locale->formatDate( $contentObjectAttribute->attribute( "data_int" ) );
+        // The date is stored as midnight UTC of the day; like content(), read it
+        // back as that day's local time, or a time zone west of UTC names the day before
+        $stamp = $contentObjectAttribute->attribute( "data_int" );
+        $retVal = $stamp === null ? '' : $locale->formatDate( eZTimestamp::getLocalTimestampFromUtcTimestamp( $stamp ) );
         return $retVal;
     }
 
