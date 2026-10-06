@@ -1,5 +1,7 @@
 # Translations and languages
 
+The languages content is written in (Setup > Languages) have their own guide: [Content languages](../../guides/content-languages.md).
+
 This page is for administrators who run Exponential in a language other than English, and for developers who make
 their own texts translatable. On 27 and 28 September 2026 the translation catalogues of Exponential were brought up to
 date and made complete for English (`eng-US`) and German (`ger-DE`), almost every visible text of the administration
@@ -97,6 +99,7 @@ See [Extension loading order](extension-loading-order.md).
 
 ## Related pages
 
+- [Content languages](../../guides/content-languages.md): the guide to adding, showing, translating, moving and removing the languages content is written in (Setup > Languages)
 - [Translations of the package comparison](package-compare-and-import.md)
 - [Installing in one command](install-in-one-command.md) (languages of a new installation), [extension loading order](extension-loading-order.md) (translation siteaccesses)
 - [About and Copyright pages](about-and-package-pages.md)
