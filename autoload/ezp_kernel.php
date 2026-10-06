@@ -1075,6 +1075,7 @@ return array(
       'expRADCatalogue'                                              => 'kernel/setup/expradcatalogue.php',
       'expRADHealth'                                                 => 'kernel/setup/expradhealth.php',
       'expRADSurvey'                                                 => 'kernel/setup/expradsurvey.php',
+      'expRestPasswordAuthFilter'                                    => 'kernel/private/rest/classes/auth/password_auth_filter.php',
       'expScriptStatus'                                              => 'kernel/classes/expscriptstatus.php',
       'expSettingsExtensionWizard'                                   => 'kernel/setup/expsettingsextensionwizard.php',
       'expSetupLog'                                                  => 'kernel/classes/expsetuplog.php',
