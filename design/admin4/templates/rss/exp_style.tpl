@@ -253,5 +253,62 @@
 @media (max-width: 600px) {
     .exp-lists .exp-table select { width: 100%; }
 }
+
+/* ---- Edit forms ---- */
+.exp-lists .exp-panel > .exp-section-head { margin-bottom: 14px; }
+.exp-lists .exp-form-fields.exp-form-wide { max-width: none; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 18px 24px; }
+.exp-lists .exp-field textarea {
+    width: 100%; min-height: 72px; margin: 0; padding: 6px 10px; border: 1px solid #8f96a3; border-radius: 9px;
+    background: #fff; color: var(--sc-ink); font: inherit; font-size: 14px; box-shadow: none; resize: vertical;
+}
+.exp-lists .exp-field textarea:focus { border-color: var(--sc-accent); outline: 3px solid var(--sc-ring); outline-offset: 0; }
+.exp-lists .exp-field input[readonly] { background: var(--sc-soft); }
+.exp-lists .exp-field input[type="text"]::placeholder { color: var(--sc-muted); opacity: 1; }
+.exp-lists .exp-inline { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; }
+.exp-lists .exp-inline > input, .exp-lists .exp-inline > select { flex: 1 1 200px; width: auto; min-width: 0; }
+.exp-lists .exp-prefix { padding: 7px 8px; border-radius: 8px; background: var(--sc-soft); color: var(--sc-muted); white-space: nowrap; }
+.exp-lists .exp-check { display: inline-flex; align-items: center; gap: 8px; font-size: 14px !important; font-weight: 650; cursor: pointer; }
+.exp-lists .exp-check + .exp-check { margin-top: 4px; }
+.exp-lists .exp-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--sc-accent); }
+.exp-lists .exp-field > .exp-label { font-size: 12.5px; font-weight: 650; color: var(--sc-ink); }
+.exp-lists .exp-field em { font-style: normal; font-weight: 400; color: var(--sc-muted); }
+.exp-lists .exp-mapping { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 14px 18px; margin: 14px 0 0; padding: 14px 0 0; border-top: 1px dashed var(--sc-line); }
+.exp-lists .exp-url a { font-size: 13px; }
+
+/* Older markup inside a redesigned page (the OPML half of the export form, kernel lists): the shared look */
+.exp-lists fieldset:not(.exp-field) { margin: 0 0 18px; padding: 14px 16px; border: 1px solid var(--sc-line); border-radius: var(--sc-radius); background: var(--sc-card); }
+.exp-lists fieldset:not(.exp-field) > legend { padding: 0 6px; font-size: 15px; font-weight: 650; color: var(--sc-ink); background: none; }
+.exp-lists .context-attributes p, .exp-lists fieldset .block > p { color: var(--sc-muted); max-width: 78ch; margin: 0 0 8px; }
+.exp-lists fieldset .block { margin: 0 0 12px; }
+.exp-lists fieldset .block > label, .exp-lists fieldset label.inline { display: block; margin: 0 0 4px; font-size: 12.5px; font-weight: 650; color: var(--sc-ink); }
+.exp-lists fieldset input[type="text"], .exp-lists fieldset select, .exp-lists fieldset textarea {
+    max-width: 100%; min-height: 34px; padding: 4px 8px; border: 1px solid #8f96a3; border-radius: 8px; background: #fff; color: var(--sc-ink); font: inherit; font-size: 13.5px; }
+.exp-lists fieldset input.halfbox { width: min(100%, 520px); }
+.exp-lists table.list { width: 100%; margin: 0 0 8px; border-collapse: collapse; border: 1px solid var(--sc-line); border-radius: var(--sc-radius); }
+.exp-lists table.list th { padding: 8px 10px; font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .04em; color: var(--sc-muted); background-color: var(--sc-soft); border: 0; border-bottom: 1px solid var(--sc-line); text-align: left; }
+.exp-lists table.list td { padding: 8px 10px; border: 0; border-bottom: 1px solid var(--sc-line); background-color: transparent; color: var(--sc-ink); vertical-align: middle; }
+.exp-lists table.list tr.bglight, .exp-lists table.list tr.bgdark { background-color: transparent; }
+.exp-lists input.button, .exp-lists input.defaultbutton, .exp-lists button.button {
+    display: inline-flex; align-items: center; min-height: 32px; margin: 0; padding: 4px 12px; border: 1px solid #c9ced6; border-radius: 9px;
+    background-color: #fff; background-image: none; color: var(--sc-ink); font: 600 13px/1.2 inherit; font-family: inherit; cursor: pointer; box-shadow: none; text-shadow: none; }
+.exp-lists input.defaultbutton { border-color: var(--sc-accent); background-color: var(--sc-accent); color: #fff; }
+.exp-lists input.button:hover, .exp-lists button.button:hover { border-color: var(--sc-accent); color: var(--sc-accent-hover); }
+.exp-lists .opml-meta, .exp-lists .opml-more summary, .exp-lists .opml-more-grid label, .exp-lists .opml-window-field label { color: var(--sc-muted); }
+.exp-lists .opml-gone { color: var(--sc-bad); }
+.exp-lists .opml-tick { color: var(--sc-ok); }
+.exp-lists .opml-browser-pages .current { background: var(--sc-accent); border-color: var(--sc-accent); }
+.exp-lists table.list th.sortable button.sort-button { color: var(--sc-muted); text-transform: uppercase; font-weight: 650; }
+.exp-lists .opml-outlines td, .exp-lists .opml-browser td { vertical-align: middle; }
+.exp-lists .opml-outlines code, .exp-lists .opml-browser code { padding: 0 6px; border-radius: 6px; background: var(--sc-soft); }
+.exp-lists .opml-more summary { cursor: pointer; padding: 2px 0; }
+.exp-lists .opml-more-grid { display: flex; flex-wrap: wrap; gap: 12px 20px; padding: 10px 0 4px; }
+.exp-lists .opml-more-grid > span { display: flex; flex-direction: column; gap: 3px; }
+.exp-lists .opml-more-flags { flex-direction: row !important; align-items: center; gap: 14px !important; }
+.exp-lists .opml-actions, .exp-lists .opml-browser-controls, .exp-lists .opml-browser-pages, .exp-lists .opml-window { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.exp-lists .opml-window-field { display: flex; flex-direction: column; gap: 3px; }
+.exp-lists .opml-browser-pages .current { display: inline-block; padding: 3px 9px; border: 1px solid var(--sc-accent); border-radius: 8px; color: #fff; font-weight: 700; }
+.exp-lists .opml-already td { opacity: .7; }
+.exp-lists table.list th.sortable button.sort-button { background: none; border: 0; padding: 0; margin: 0; font: inherit; cursor: pointer; }
+.exp-lists .opml-outlines-wrap, .exp-lists .opml-browser-wrap { overflow-x: auto; }
 </style>
 {/literal}
