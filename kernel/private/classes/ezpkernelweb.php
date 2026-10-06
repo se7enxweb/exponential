@@ -288,7 +288,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 // way for the same reason.
                 preg_replace( '/:\d+$/', '', (string)eZSys::hostname() ),
                 eZSys::serverPort(),
-                eZSys::indexFile()
+                eZSys::indexFile(),
+                // Only the web page request may take its siteaccess from DefaultHostUriMatchMapItems by the
+                // browser's language (and be sent on to the language segment)
+                true
             )
         ;
 

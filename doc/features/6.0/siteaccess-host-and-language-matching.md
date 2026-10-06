@@ -176,6 +176,10 @@ The first two answer `302` with the language segment in `Location`, the third as
   `eZSiteAccess::matchDefaultHostUri()` (with `acceptedLanguages()` for the header) and marks the siteaccess for
   the redirect when `reachesSiteAccess()` finds a probe for the target address. Both probes with host methods use
   `eZSiteAccess::hostMatches()`.
+- Only the web page request does this: `ezpKernelWeb` calls `eZSiteAccess::match()` with its fifth parameter
+  `$languageDefault` set to `true`. The REST interface, the tree menu, extensions and scripts leave it out and get
+  the probes, then `DefaultAccess`, as before: their siteaccess never depends on the browser's language and they
+  are never redirected. A new caller gets the same unless it asks for the language default.
 - `ezpKernelWeb::run()` sends the redirect to `ezpKernelWeb::languageRedirectLocation()` (built by
   `languageRedirectURI()`) and returns it as an `ezpKernelRedirect`, as a module redirect is returned, so it works
   under Velocity as well.

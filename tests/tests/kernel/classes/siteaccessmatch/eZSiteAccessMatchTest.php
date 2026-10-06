@@ -38,10 +38,11 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         ezpINIHelper::setINISetting( 'site.ini', $group, $name, $value );
     }
 
+    /** As the web page request matches (ezpKernelWeb), the language default allowed */
     private function match( $uriString, $host = 'www.example.invalid', $port = 80, $file = '/index.php' )
     {
         $uri = new eZURI( $uriString );
-        $access = eZSiteAccess::match( $uri, $host, $port, $file );
+        $access = eZSiteAccess::match( $uri, $host, $port, $file, true );
         $access['rest'] = $uri->elements();
         return $access;
     }
@@ -513,6 +514,35 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $other, '', array() );
         $this->assertSame( 'Accept-Language', $other['vary'] );
         $this->assertArrayNotHasKey( 'redirect', $other );
+    }
+
+    /**
+     * Only the web page request asks for the language default. Any other caller of match() (the REST kernel, the
+     * tree menu, extensions, scripts) leaves the parameter out and gets the probes, then DefaultAccess, as before:
+     * no siteaccess by the browser's language, no redirect, no vary
+     */
+    public function testOnlyTheWebPageRequestGetsTheLanguageDefault()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de-DE,de;q=0.9';
+        foreach ( array( '', 'api/ezp/v2/content/objects/1', 'news/an-article' ) as $address )
+        {
+            foreach ( array( array(), array( false ), array( 1 ), array( 'true' ) ) as $extra )
+            {
+                $uri = new eZURI( $address );
+                $access = eZSiteAccess::match( $uri, 'www.example.invalid', 80, '/index.php', ...$extra );
+                $this->assertSame( array( 'name' => 'k1default', 'type' => eZSiteAccess::TYPE_DEFAULT, 'uri_part' => array() ), $access,
+                                   "/$address without asking for the language default" );
+                $this->assertSame( $address, $uri->elements(), 'the uri is left as it was' );
+            }
+        }
+        // A probe still matches as before for every caller
+        $this->assertSame( 'k1eng', eZSiteAccess::match( new eZURI( 'eng/x' ), 'www.example.invalid' )['name'] );
+        // The web page request gets it
+        $web = $this->match( '' );
+        $this->assertSame( 'k1ger', $web['name'] );
+        $this->assertTrue( $web['redirect'] );
+        $this->assertSame( 'Accept-Language', $web['vary'] );
     }
 
     /** A siteaccess that is not in AvailableSiteAccessList is never chosen: the default siteaccess stays */
