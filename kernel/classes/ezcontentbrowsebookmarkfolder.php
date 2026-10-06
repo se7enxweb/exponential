@@ -335,6 +335,43 @@ class eZContentBrowseBookmarkFolder extends eZPersistentObject
         return true;
     }
     /*!
+     \static
+     Moves a folder or a bookmark of user \a $userID one place up (\a $direction -1) or down (+1) within its folder.
+     \param $type 'folder' or 'bookmark'
+     \return true, or false when it is not the user's or is first (up) or last (down) already.
+     \note Transaction unsafe.
+    */
+    static function shift( $userID, $type, $id, $direction )
+    {
+        $userID = (int) $userID;
+        $id = (int) $id;
+        if ( $type === 'folder' )
+        {
+            $folder = self::fetchForUser( $userID, $id );
+            if ( !$folder )
+                return false;
+            $parentID = (int) $folder->attribute( 'parent_id' );
+            $siblings = array_map( function ( $f ) { return (int) $f->attribute( 'id' ); }, self::fetchChildren( $userID, $parentID ) );
+        }
+        else
+        {
+            $type = 'bookmark';
+            $bookmark = eZContentBrowseBookmark::fetch( $id );
+            if ( !$bookmark || (int) $bookmark->attribute( 'user_id' ) !== $userID )
+                return false;
+            $parentID = (int) $bookmark->attribute( 'folder_id' );
+            if ( $parentID && !self::fetchForUser( $userID, $parentID ) )
+                $parentID = 0;
+            $siblings = array_map( function ( $b ) { return (int) $b->attribute( 'id' ); },
+                                   eZContentBrowseBookmark::fetchListForUserInFolder( $userID, (int) $bookmark->attribute( 'folder_id' ) ) );
+        }
+        $before = expBookmarkPage::shiftBefore( $siblings, $id, $direction );
+        if ( $before === false )
+            return false;
+        return self::place( $userID, $type, $id, $parentID, $before );
+    }
+
+    /*!
      Removes the folder. Without \a $deleteBookmarks the bookmarks and the subfolders move up one level
      (to the parent of this folder) and no bookmark is deleted. With \a $deleteBookmarks the folder, all
      folders below it and all bookmarks in them are deleted.

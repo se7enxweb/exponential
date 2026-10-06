@@ -18,6 +18,7 @@
  *  BF-10 - Damaged data (a cycle, a missing parent) is shown at the top level, not lost and not an endless loop
  *  BF-11 - handleAction: create, rename, delete, move, with messages; empty names are refused
  *  (BF-12, the upgrade SQL on SQLite, is BookmarkFolderUpgradeSqlTest: it needs no installation)
+ *  BF-13 - shift(): one place up or down within the folder, refused at the ends and for another user
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -290,4 +291,36 @@ class BookmarkFoldersTest extends PHPUnit\Framework\TestCase
         $_POST = $saved;
     }
 
+    /** BF-13 - shift() moves a bookmark or a folder one place up or down in its folder, refuses at the ends and for another user.
+        It runs as a user id of its own, so the order of the admin's real bookmarks is never touched. */
+    public function testShift()
+    {
+        $user = 999001;
+        $f = $this->folder( 'Shift', 0, $user );
+        $a = $this->bookmark( 21, $f, $user );
+        $b = $this->bookmark( 22, $f, $user );
+        $c = $this->bookmark( 23, $f, $user );
+        $order = function () use ( $user, $f ) {
+            return array_map( function ( $x ) { return (int) $x->attribute( 'id' ); }, eZContentBrowseBookmark::fetchListForUserInFolder( $user, $f ) );
+        };
+        $this->assertSame( array( $a, $b, $c ), $order() );
+        $this->assertTrue( eZContentBrowseBookmarkFolder::shift( $user, 'bookmark', $c, -1 ) );
+        $this->assertSame( array( $a, $c, $b ), $order() );
+        $this->assertTrue( eZContentBrowseBookmarkFolder::shift( $user, 'bookmark', $a, 1 ) );
+        $this->assertSame( array( $c, $a, $b ), $order() );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::shift( $user, 'bookmark', $c, -1 ), 'first already' );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::shift( $user, 'bookmark', $b, 1 ), 'last already' );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::shift( $user + 1, 'bookmark', $a, -1 ), 'another user' );
+        $this->assertSame( array( $c, $a, $b ), $order() );
+
+        $g = $this->folder( 'Shift 2', 0, $user );
+        $h = $this->folder( 'Shift 3', 0, $user );
+        $folders = function () use ( $user ) {
+            return array_map( function ( $x ) { return (int) $x->attribute( 'id' ); }, eZContentBrowseBookmarkFolder::fetchChildren( $user, 0 ) );
+        };
+        $this->assertSame( array( $f, $g, $h ), $folders() );
+        $this->assertTrue( eZContentBrowseBookmarkFolder::shift( $user, 'folder', $h, -1 ) );
+        $this->assertSame( array( $f, $h, $g ), $folders() );
+        $this->assertFalse( eZContentBrowseBookmarkFolder::shift( $user + 1, 'folder', $h, -1 ), 'another user' );
+    }
 }
