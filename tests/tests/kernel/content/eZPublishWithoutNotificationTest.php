@@ -141,6 +141,10 @@ class eZPublishWithoutNotificationTest extends PHPUnit\Framework\TestCase
         $notify = $this->parameter( $publish['parameters'], 'notify' );
         $this->assertSame( array( 'name' => 'notify', 'type' => 'boolean', 'required' => false, 'default' => true ), $notify );
         $this->assertSame( array( 'object_id', 'version' ), $publish['keys'], 'notify is no key: a held back publication is found by object and version' );
+        $info = new eZModuleOperationInfo( 'content', false );
+        $plain = $info->makeOperationKeyArray( $publish, array( 'object_id' => 1, 'version' => 2 ) );
+        $this->assertSame( array( 'object_id' => 1, 'version' => 2 ), $plain, 'a caller without notify: the key of before' );
+        $this->assertSame( $plain, $info->makeOperationKeyArray( $publish, array( 'object_id' => 1, 'version' => 2, 'notify' => false ) ) );
 
         $step = $this->step( 'create-notification' );
         $this->assertNotNull( $step );

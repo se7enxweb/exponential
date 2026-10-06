@@ -51,6 +51,11 @@ $OperationList['publish'] = array( 'name' => 'publish',
                                                                  'type' => 'boolean',
                                                                  'required' => false,
                                                                  'default' => true ) ),
+                                   // The memento of a held back publication is found by object and version, as
+                                   // before notify existed: without keys every parameter would make the key, so a
+                                   // caller without notify would read an undefined parameter and mementos stored
+                                   // before the upgrade would no longer be found
+                                   'keys' => array( 'object_id', 'version' ),
                                    'on-interrupt' => array( 'type' => 'method',
                                                             'name' => 'commit-transaction',
                                                             'frequency' => 'once',
