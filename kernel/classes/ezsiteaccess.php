@@ -107,9 +107,13 @@ class eZSiteAccess
      * @param string $host
      * @param string(numeric) $port
      * @param string $file Example '/index.php'
+     * @param bool $languageDefault true only for the web page request (ezpKernelWeb): where no probe matched, the
+     *                              siteaccess may then come from DefaultHostUriMatchMapItems by the browser's language,
+     *                              with the keys redirect and vary. Every other caller (REST, the tree menu, scripts)
+     *                              leaves it false and gets DefaultAccess, as before.
      * @return array
      */
-    public static function match( eZURI $uri, $host, $port = 80, $file = '/index.php' )
+    public static function match( eZURI $uri, $host, $port = 80, $file = '/index.php', $languageDefault = false )
     {
         eZDebugSetting::writeDebug( 'kernel-siteaccess', array( 'uri' => $uri,
                                                                 'host' => $host,
@@ -406,13 +410,14 @@ class eZSiteAccess
             }
         }
 
-        // No probe matched, so the default siteaccess applies. DefaultHostUriMatchMapItems can choose it by host and
-        // by the browser's language, with the uri part its links carry (/ger)
+        // No probe matched, so the default siteaccess applies. For the web page request alone (ezpKernelWeb asks
+        // with $languageDefault), DefaultHostUriMatchMapItems can choose it by host and by the browser's language,
+        // with the uri part its links carry (/ger); every other caller gets DefaultAccess, as before
         if ( self::$matchingTarget )
         {
             $access['unmatched'] = true;
         }
-        else if ( $ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ) )
+        else if ( $languageDefault === true && $ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ) )
         {
             $default = self::matchDefaultHostUri( $ini->variableArray( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ),
                                                   $host,
