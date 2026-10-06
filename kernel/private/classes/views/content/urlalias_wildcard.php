@@ -82,6 +82,14 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
             {
                 $infoCode = "error-no-wildcard-destination-text";
             }
+            else if ( $unknown = self::unknownPlaceholders( $wildcardSrcText, $wildcardDstText ) )
+            {
+                // {3} with two * in the pattern is replaced by nothing: the wildcard would send visitors to a
+                // destination with a part missing
+                $infoCode = "error-wildcard-placeholder";
+                $infoData['placeholders'] = '{' . implode( '}, {', $unknown ) . '}';
+                $infoData['stars'] = substr_count( $wildcardSrcText, '*' );
+            }
             else
             {
                 $wildcard = \eZURLWildcard::fetchBySourceURL( $wildcardSrcText, false );
@@ -152,17 +160,65 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
             $limitID = 2;
         }
 
+        // A search over pattern and destination and the kind of wildcard, both off the address
+        $search = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $kind = UrlaliasGlobal::kindKey( isset( $userParameters['kind'] ) ? $userParameters['kind'] : '' );
+        // An address to try against the wildcards, and what it gives
+        $testText = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'test' ) ? $http->getVariable( 'test' ) : '' );
+        $testResult = false;
+
         // Fetch wildcads
         $wildcardsLimit = $limitValues[$limitID];
         $wildcardsCount = \eZURLWildcard::fetchListCount();
-        // check offset, it can be out of range if some wildcards were removed.
-        if ( $Offset >= $wildcardsCount )
-        {
+        $wildcardsTotalCount = (int)$wildcardsCount;
+        if ( !is_numeric( $Offset ) || $Offset < 0 )
             $Offset = 0;
+        $Offset = (int)$Offset;
+        if ( $search === '' && $kind === 'all' )
+        {
+            // check offset, it can be out of range if some wildcards were removed.
+            if ( $Offset >= $wildcardsCount )
+            {
+                $Offset = 0;
+            }
+            $wildcardList = \eZURLWildcard::fetchList( $Offset, $wildcardsLimit );
         }
-        $wildcardList = \eZURLWildcard::fetchList( $Offset, $wildcardsLimit );
+        else
+        {
+            // Wildcards are few (every request reads all of them from the wildcard cache), so a search filters here
+            $matching = array();
+            foreach ( \eZURLWildcard::fetchList() as $wildcard )
+            {
+                if ( self::wildcardMatches( $wildcard->attribute( 'source_url' ), $wildcard->attribute( 'destination_url' ), (int)$wildcard->attribute( 'type' ), $search, $kind ) )
+                    $matching[] = $wildcard;
+            }
+            $wildcardsCount = count( $matching );
+            if ( $Offset >= $wildcardsCount )
+                $Offset = 0;
+            $wildcardList = array_slice( $matching, $Offset, $wildcardsLimit );
+        }
+
+        if ( $testText !== '' )
+        {
+            $rows = \eZURLWildcard::fetchList( false, false, false );
+            $testResult = self::firstMatch( is_array( $rows ) ? $rows : array(), $testText );
+            if ( $testResult )
+            {
+                $resolved = \eZURLAliasML::urlToAction( $testResult['destination'] );
+                if ( !$resolved )
+                {
+                    $elements = \eZURLAliasML::fetchByPath( $testResult['destination'] );
+                    $resolved = $elements ? $elements[0]->attribute( 'action' ) : false;
+                }
+                $testResult['resolves'] = $resolved ? \eZURLAliasML::actionToUrl( $resolved ) : false;
+                $testResult['external'] = (bool)preg_match( '#^[a-z][a-z0-9+.-]*://#i', $testResult['destination'] );
+            }
+        }
 
         $viewParameters = array( 'offset' => $Offset );
+        if ( $kind !== 'all' )
+            $viewParameters['kind'] = $kind;
 
 
         $path = array();
@@ -180,12 +236,115 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'limitList', $limitList );
         $tpl->setVariable( 'limitID', $limitID );
         $tpl->setVariable( 'view_parameters', $viewParameters );
+        // since 6.0.15: the search, the kind, how many there are in all and the address tried
+        $tpl->setVariable( 'wildcards_total_count', $wildcardsTotalCount );
+        $tpl->setVariable( 'wildcard_search', $search );
+        $tpl->setVariable( 'wildcard_search_suffix', $search !== '' ? '?q=' . rawurlencode( $search ) : '' );
+        $tpl->setVariable( 'wildcard_kind', $kind );
+        $tpl->setVariable( 'wildcard_test', $testText );
+        $tpl->setVariable( 'wildcard_test_result', $testResult );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:content/urlalias_wildcard.tpl' );
         $Result['path'] = $path;
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * The placeholders of a destination ({1}, {2} ...) that the pattern has no * for, in ascending order. Each *
+     * of the pattern is one placeholder, counted from 1.
+     *
+     * @param string $source
+     * @param string $destination
+     * @return int[]
+     */
+    public static function unknownPlaceholders( $source, $destination )
+    {
+        $stars = substr_count( (string)$source, '*' );
+        preg_match_all( '#{([0-9]+)}#', (string)$destination, $matches );
+        $unknown = array();
+        foreach ( $matches[1] as $number )
+        {
+            $number = (int)$number;
+            if ( ( $number < 1 || $number > $stars ) && !in_array( $number, $unknown, true ) )
+                $unknown[] = $number;
+        }
+        sort( $unknown );
+        return $unknown;
+    }
+
+    /**
+     * The regular expression a wildcard pattern is matched with, as eZURLWildcard builds it: each * is any text,
+     * the rest is literal, matched from the start of the address without regard to case.
+     *
+     * @param string $source
+     * @return string
+     */
+    public static function patternRegexp( $source )
+    {
+        $parts = array();
+        foreach ( explode( '*', (string)$source ) as $part )
+            $parts[] = preg_quote( $part, '#' );
+        return '#^' . implode( '(.*)', $parts ) . '#i';
+    }
+
+    /**
+     * The replacement a destination becomes, as eZURLWildcard builds it: {n} is the text of the n-th *.
+     *
+     * @param string $destination
+     * @return string
+     */
+    public static function destinationReplacement( $destination )
+    {
+        $pieces = preg_split( '#{([0-9]+)}#', (string)$destination, -1, PREG_SPLIT_DELIM_CAPTURE );
+        $replacement = '';
+        foreach ( $pieces as $index => $piece )
+            $replacement .= ( $index % 2 ) == 0 ? $piece : '${' . $piece . '}';
+        return $replacement;
+    }
+
+    /**
+     * The first wildcard an address matches, in the order the wildcard cache tries them (the database's), and
+     * the address it is turned into. The address is cleaned the way requests are: no leading or trailing slash.
+     *
+     * @param array $wildcards rows with id, source_url, destination_url, type
+     * @param string $address
+     * @return array|false id, source, destination (the translated address), type, pattern_destination
+     */
+    public static function firstMatch( array $wildcards, $address )
+    {
+        $address = trim( (string)$address, '/ ' );
+        foreach ( $wildcards as $wildcard )
+        {
+            $regexp = self::patternRegexp( $wildcard['source_url'] );
+            if ( preg_match( $regexp, $address ) )
+            {
+                return array( 'id' => (int)$wildcard['id'],
+                              'source' => (string)$wildcard['source_url'],
+                              'pattern_destination' => (string)$wildcard['destination_url'],
+                              'destination' => preg_replace( $regexp, self::destinationReplacement( $wildcard['destination_url'] ), $address ),
+                              'type' => (int)$wildcard['type'] );
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Whether a wildcard is kept by a search (in its pattern or destination, without regard to case) and a kind
+     * ('redirect' for TYPE_FORWARD, 'direct' for TYPE_DIRECT).
+     *
+     * @return bool
+     */
+    public static function wildcardMatches( $source, $destination, $type, $search, $kind )
+    {
+        if ( $kind === 'redirect' && $type != \eZURLWildcard::TYPE_FORWARD )
+            return false;
+        if ( $kind === 'direct' && $type != \eZURLWildcard::TYPE_DIRECT )
+            return false;
+        if ( $search === '' )
+            return true;
+        return strpos( mb_strtolower( $source . ' ' . $destination ), mb_strtolower( $search ) ) !== false;
     }
 }
 
