@@ -189,6 +189,10 @@ class expLinkCheckTest extends PHPUnit\Framework\TestCase
         $this->assertSame( expLinkCheck::INVALID, $checker->check( '/missing' )['result'] );
         $this->assertSame( array(), $this->asked );
 
+        $this->assertSame( 'content/dashboard', expLinkCheck::internalPath( '/admin/content/dashboard?x=1#top', array( 'admin', 'site' ) ) );
+        $this->assertSame( 'about', expLinkCheck::internalPath( '/about/', array( 'admin' ) ) );
+        $this->assertSame( '', expLinkCheck::internalPath( '/site', array( 'site' ) ) );
+
         // a path that is no alias is tried on the site's own address, which may be private
         $this->answers = array( 'http://site.local/missing' => array( 'status' => 200 ) );
         $checker = $this->checker( array( 'SiteURL' => array( 'http://site.local' ) ), array( 'dns' => array( 'site.local' => array( '127.0.0.1' ) ) ) );

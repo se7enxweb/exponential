@@ -532,8 +532,33 @@ class expLinkCheck
      */
     public static function internalExists( $path )
     {
-        $copy = (string)$path;
+        $ini = eZINI::instance();
+        $siteAccesses = $ini->hasVariable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) ? (array)$ini->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) : array();
+        $path = self::internalPath( $path, $siteAccesses );
+        if ( $path === '' )
+            return true; // the front page
+        if ( eZURLAliasML::urlToAction( $path ) )
+            return true; // a module view such as content/view/full/2 or user/login
+        $copy = $path;
         return (bool)eZURLAliasML::translate( $copy );
+    }
+
+    /**
+     * The path of a link to this site as the URL alias system knows it: without the query, the fragment, the
+     * slashes around it and a leading siteaccess name (/admin/content/dashboard is content/dashboard).
+     *
+     * @param string $path
+     * @param string[] $siteAccesses the names of the siteaccesses
+     * @return string
+     */
+    public static function internalPath( $path, array $siteAccesses = array() )
+    {
+        $path = preg_replace( '/[?#].*$/', '', trim( (string)$path ) );
+        $path = trim( $path, '/' );
+        $parts = explode( '/', $path, 2 );
+        if ( count( $parts ) && $parts[0] !== '' && in_array( $parts[0], $siteAccesses, true ) )
+            $path = isset( $parts[1] ) ? $parts[1] : '';
+        return $path;
     }
 }
 
