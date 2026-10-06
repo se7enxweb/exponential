@@ -116,8 +116,6 @@ class View extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
 
-        $userArray = $role->fetchUserByRole();
-
         // The policy list is paged. $role.policies is every policy the role has, which
         // is what the permission system needs and what a screen must not ask for: on an
         // installation whose roles carry policies in the millions, loading them all to
@@ -157,10 +155,29 @@ class View extends \Exponential\Runnable\ModuleView
         // directly, so Apply would then write back to the wrong row.
         $tpl->setVariable( 'policy_page_uri', '/role/view/' . (int)$roleID );
         $tpl->setVariable( 'policy_limit', $policyLimit );
+        // The users and groups the role is assigned to are paged the same way, on (assignment_offset): a role
+        // given to thousands of users loaded every one of them with its object. AssignmentsPerPage=0 lists all.
+        $assignmentLimit = (int)\eZINI::instance( 'site.ini' )->variable( 'RoleSettings', 'AssignmentsPerPage' );
+        $assignmentOffset = isset( $userParameters['assignment_offset'] ) ? max( 0, (int)$userParameters['assignment_offset'] ) : 0;
+        $assignmentCount = $role->assignmentCount();
+        if ( $assignmentLimit > 0 )
+        {
+            $userArray = $role->assignmentPage( $assignmentOffset, $assignmentLimit );
+        }
+        else
+        {
+            $userArray = $role->fetchUserByRole();
+            $assignmentLimit = max( 1, $assignmentCount );
+            $assignmentOffset = 0;
+        }
+        $tpl->setVariable( 'assignment_count', $assignmentCount );
+        $tpl->setVariable( 'assignment_limit', $assignmentLimit );
+
         $tpl->setVariable( 'view_parameters', array_merge( $userParameters,
                                                            array( 'policy_offset' => $policyOffset,
                                                                   'policy_sort'   => $policySort,
-                                                                  'policy_dir'    => $policyDir ) ) );
+                                                                  'policy_dir'    => $policyDir,
+                                                                  'assignment_offset' => $assignmentOffset ) ) );
         $tpl->setVariable( 'policies', $policies );
         $tpl->setVariable( 'module', $Module );
         $tpl->setVariable( 'role', $role );
