@@ -986,6 +986,7 @@ return array(
       'expBenchmarkKernel'                                           => 'kernel/classes/expbenchmarkkernel.php',
       'expBenchmarkMicro'                                            => 'kernel/classes/expbenchmarkmicro.php',
       'expBookmarkPage'                                              => 'kernel/classes/expbookmarkpage.php',
+      'expCacheCatalogue'                                            => 'kernel/classes/expcachecatalogue.php',
       'expCacheManager'                                              => 'kernel/classes/expcachemanager.php',
       'expCacheWarm'                                                 => 'kernel/classes/expcachewarm.php',
       'expClassicMenuSettings'                                       => 'kernel/classes/classicmenu/expclassicmenusettings.php',
