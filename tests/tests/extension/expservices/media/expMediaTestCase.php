@@ -25,6 +25,8 @@ abstract class expMediaTestCase extends PHPUnit\Framework\TestCase
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
+        // every test here calls the services against the installed site: skip the class without one (CI)
+        ezpLiveInstallation::requireOrSkip();
         if ( self::$script !== null || self::$bootError !== null )
             return;
         try

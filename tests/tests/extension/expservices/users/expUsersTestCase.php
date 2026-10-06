@@ -26,6 +26,8 @@ abstract class expUsersTestCase extends PHPUnit\Framework\TestCase
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
+        // every test here calls the services against the installed site: skip the class without one (CI)
+        ezpLiveInstallation::requireOrSkip();
         self::boot();
         self::$made = array( 'objects' => array(), 'roles' => array(), 'items' => array(), 'groups' => array(), 'sessions' => array() );
         self::$fixture = array();
