@@ -102,11 +102,16 @@ $ViewList['unactivated'] = array(
     'unordered_params' => array( 'offset' => 'Offset' ),
     'single_post_actions' => array(
         'ActivateButton' => 'ActivateUsers',
-        'RemoveButton' => 'RemoveUsers'
+        'RemoveButton' => 'RemoveUsers',
+        // Sends the activation mail again, with a new link
+        'ResendButton' => 'ResendActivation',
+        // Removes every unactivated user, or every one matching the search
+        'RemoveAllButton' => 'RemoveAllUsers'
     ),
     'post_action_parameters' => array(
         'ActivateUsers' => array( 'UserIDs' => 'DeleteIDArray' ),
         'RemoveUsers' => array( 'UserIDs' => 'DeleteIDArray' ),
+        'ResendActivation' => array( 'UserIDs' => 'DeleteIDArray' ),
     ),
     'params' => array( 'SortField', 'SortOrder' ),
 );
