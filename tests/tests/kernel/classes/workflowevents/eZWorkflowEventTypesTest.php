@@ -33,6 +33,9 @@ class eZWorkflowEventTypesTest extends PHPUnit\Framework\TestCase
     {
         chdir( dirname( __DIR__, 5 ) );
         $this->exceptionHandler = self::currentExceptionHandler();
+        // the log tests write under var/tmp, which a fresh checkout does not have
+        if ( !is_dir( 'var/tmp' ) )
+            mkdir( 'var/tmp', 0775, true );
     }
 
     protected function tearDown(): void
