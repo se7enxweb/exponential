@@ -213,8 +213,8 @@ INSERT INTO ezcontent_language (
 ) VALUES (
   0,
   2,
-  'eng-GB',
-  'English (United Kingdom)'
+  'eng-US',
+  'English (American)'
 );
 
 INSERT INTO ezcontentclass (
@@ -250,7 +250,7 @@ INSERT INTO ezcontentclass (
   14,
   'a3d405b81be900468eb153d774f4f0d2',
   NULL,
-  'a:2:{s:6:"eng-GB";s:6:"Folder";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:6:"Folder";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -289,7 +289,7 @@ INSERT INTO ezcontentclass (
   14,
   'c15b600eb9198b1924063b5a68758232',
   NULL,
-  'a:2:{s:6:"eng-GB";s:7:"Article";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:7:"Article";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -328,7 +328,7 @@ INSERT INTO ezcontentclass (
   14,
   '25b4268cdcd01921b808a0d854b877ef',
   NULL,
-  'a:2:{s:6:"eng-GB";s:10:"User group";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:10:"User group";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -367,7 +367,7 @@ INSERT INTO ezcontentclass (
   14,
   '40faa822edc579b02c25f6bb7beec3ad',
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"User";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"User";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -406,7 +406,7 @@ INSERT INTO ezcontentclass (
   14,
   'f6df12aa74e36230eb675f364fccd25a',
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Image";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -445,7 +445,7 @@ INSERT INTO ezcontentclass (
   14,
   '74ec6507063150bc813549b22534ad48',
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"Link";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"Link";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -484,7 +484,7 @@ INSERT INTO ezcontentclass (
   14,
   '637d58bfddf164627bdfd265733280a0',
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"File";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"File";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -523,7 +523,7 @@ INSERT INTO ezcontentclass (
   14,
   '000c14f4f475e9f2955dedab72799941',
   NULL,
-  'a:2:{s:6:"eng-GB";s:7:"Comment";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:7:"Comment";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -562,7 +562,7 @@ INSERT INTO ezcontentclass (
   14,
   'ffedf2e73b1ea0c3e630e42e2db9c900',
   NULL,
-  'a:2:{s:6:"eng-GB";s:19:"Common ini settings";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:19:"Common ini settings";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -601,7 +601,7 @@ INSERT INTO ezcontentclass (
   14,
   '59b43cd9feaaf0e45ac974fb4bbd3f92',
   NULL,
-  'a:2:{s:6:"eng-GB";s:13:"Template look";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:13:"Template look";s:16:"always-available";s:6:"eng-US";}',
   1,
   1,
   NULL,
@@ -662,7 +662,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Title";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Title";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -719,7 +719,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"Name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -776,7 +776,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"Name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -833,7 +833,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:11:"Description";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:11:"Description";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -890,7 +890,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:10:"First name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:10:"First name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -947,7 +947,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:9:"Last name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:9:"Last name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1004,7 +1004,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:12:"User account";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:12:"User account";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1061,7 +1061,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"Name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1118,7 +1118,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:7:"Caption";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:7:"Caption";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1175,7 +1175,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Image";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1232,7 +1232,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:17:"Short description";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:17:"Short description";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1289,7 +1289,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Intro";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Intro";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1346,7 +1346,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"Body";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"Body";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1403,7 +1403,7 @@ INSERT INTO ezcontentclass_attribute (
   6,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:15:"Enable comments";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:15:"Enable comments";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1460,7 +1460,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"Name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1517,7 +1517,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:11:"Description";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:11:"Description";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1574,7 +1574,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:8:"Location";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:8:"Location";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1631,7 +1631,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"Name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1688,7 +1688,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:11:"Description";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:11:"Description";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1745,7 +1745,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"File";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"File";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1802,7 +1802,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:7:"Subject";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:7:"Subject";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1859,7 +1859,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:6:"Author";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:6:"Author";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1916,7 +1916,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:7:"Message";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:7:"Message";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1973,7 +1973,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:11:"Short title";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:11:"Short title";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2030,7 +2030,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:6:"Author";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:6:"Author";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2087,7 +2087,7 @@ INSERT INTO ezcontentclass_attribute (
   7,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Image";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2144,7 +2144,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:10:"Short name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:10:"Short name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2201,7 +2201,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:11:"Description";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:11:"Description";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2258,7 +2258,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:13:"Show children";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:13:"Show children";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2315,7 +2315,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:4:"Name";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2372,7 +2372,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:10:"Index Page";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:10:"Index Page";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2429,7 +2429,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:12:"Default Page";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:12:"Default Page";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2486,7 +2486,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:12:"Debug Output";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:12:"Debug Output";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2543,7 +2543,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:11:"Debug By IP";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:11:"Debug By IP";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2600,7 +2600,7 @@ INSERT INTO ezcontentclass_attribute (
   6,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:13:"Debug IP List";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:13:"Debug IP List";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2657,7 +2657,7 @@ INSERT INTO ezcontentclass_attribute (
   7,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:17:"Debug Redirection";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:17:"Debug Redirection";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2714,7 +2714,7 @@ INSERT INTO ezcontentclass_attribute (
   8,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:12:"View Caching";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:12:"View Caching";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2771,7 +2771,7 @@ INSERT INTO ezcontentclass_attribute (
   9,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:14:"Template Cache";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:14:"Template Cache";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2828,7 +2828,7 @@ INSERT INTO ezcontentclass_attribute (
   10,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:16:"Template Compile";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:16:"Template Compile";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2885,7 +2885,7 @@ INSERT INTO ezcontentclass_attribute (
   11,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:16:"Image Small Size";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:16:"Image Small Size";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2942,7 +2942,7 @@ INSERT INTO ezcontentclass_attribute (
   12,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:17:"Image Medium Size";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:17:"Image Medium Size";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2999,7 +2999,7 @@ INSERT INTO ezcontentclass_attribute (
   13,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:16:"Image Large Size";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:16:"Image Large Size";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3056,7 +3056,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Title";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Title";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3113,7 +3113,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:9:"Meta data";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:9:"Meta data";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3170,7 +3170,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Image";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3227,7 +3227,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:9:"Sitestyle";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:9:"Sitestyle";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3284,7 +3284,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:2:"id";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:2:"id";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3341,7 +3341,7 @@ INSERT INTO ezcontentclass_attribute (
   6,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Email";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Email";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3398,7 +3398,7 @@ INSERT INTO ezcontentclass_attribute (
   7,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:8:"Site URL";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:8:"Site URL";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3455,7 +3455,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:9:"Signature";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:9:"Signature";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3512,7 +3512,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
+  'a:2:{s:6:"eng-US";s:5:"Image";s:16:"always-available";s:6:"eng-US";}',
   0
 );
 
@@ -3637,7 +3637,7 @@ INSERT INTO ezcontentclass_name (
   1,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'Folder'
 );
 INSERT INTO ezcontentclass_name (
@@ -3650,7 +3650,7 @@ INSERT INTO ezcontentclass_name (
   2,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'Article'
 );
 INSERT INTO ezcontentclass_name (
@@ -3663,7 +3663,7 @@ INSERT INTO ezcontentclass_name (
   3,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'User group'
 );
 INSERT INTO ezcontentclass_name (
@@ -3676,7 +3676,7 @@ INSERT INTO ezcontentclass_name (
   4,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'User'
 );
 INSERT INTO ezcontentclass_name (
@@ -3689,7 +3689,7 @@ INSERT INTO ezcontentclass_name (
   5,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'Image'
 );
 INSERT INTO ezcontentclass_name (
@@ -3702,7 +3702,7 @@ INSERT INTO ezcontentclass_name (
   11,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'Link'
 );
 INSERT INTO ezcontentclass_name (
@@ -3715,7 +3715,7 @@ INSERT INTO ezcontentclass_name (
   12,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'File'
 );
 INSERT INTO ezcontentclass_name (
@@ -3728,7 +3728,7 @@ INSERT INTO ezcontentclass_name (
   13,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'Comment'
 );
 INSERT INTO ezcontentclass_name (
@@ -3741,7 +3741,7 @@ INSERT INTO ezcontentclass_name (
   14,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'Common ini settings'
 );
 INSERT INTO ezcontentclass_name (
@@ -3754,7 +3754,7 @@ INSERT INTO ezcontentclass_name (
   15,
   0,
   3,
-  'eng-GB',
+  'eng-US',
   'Template look'
 );
 
@@ -4344,7 +4344,7 @@ INSERT INTO ezcontentobject_attribute (
   'Welcome to Exponential',
   'ezstring',
   1,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'welcome to exponential',
@@ -4375,7 +4375,7 @@ INSERT INTO ezcontentobject_attribute (
 ',
   'ezxmltext',
   2,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4404,7 +4404,7 @@ INSERT INTO ezcontentobject_attribute (
   'Main group',
   'ezstring',
   7,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4433,7 +4433,7 @@ INSERT INTO ezcontentobject_attribute (
   'Users',
   'ezstring',
   8,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4462,7 +4462,7 @@ INSERT INTO ezcontentobject_attribute (
   'Anonymous',
   'ezstring',
   19,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'anonymous',
@@ -4491,7 +4491,7 @@ INSERT INTO ezcontentobject_attribute (
   'User',
   'ezstring',
   20,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'user',
@@ -4520,7 +4520,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezuser',
   21,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4549,7 +4549,7 @@ INSERT INTO ezcontentobject_attribute (
   'Guest accounts',
   'ezstring',
   22,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4578,7 +4578,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   23,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4607,7 +4607,7 @@ INSERT INTO ezcontentobject_attribute (
   'Administrator users',
   'ezstring',
   24,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4636,7 +4636,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   25,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4665,7 +4665,7 @@ INSERT INTO ezcontentobject_attribute (
   'Editors',
   'ezstring',
   26,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4694,7 +4694,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   27,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4723,7 +4723,7 @@ INSERT INTO ezcontentobject_attribute (
   'Administrator',
   'ezstring',
   28,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'administrator',
@@ -4752,7 +4752,7 @@ INSERT INTO ezcontentobject_attribute (
   'User',
   'ezstring',
   29,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'user',
@@ -4781,7 +4781,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezuser',
   30,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4810,7 +4810,7 @@ INSERT INTO ezcontentobject_attribute (
   'Media',
   'ezstring',
   98,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4842,7 +4842,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   99,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4871,7 +4871,7 @@ INSERT INTO ezcontentobject_attribute (
   'Anonymous Users',
   'ezstring',
   100,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'anonymous users',
@@ -4900,7 +4900,7 @@ INSERT INTO ezcontentobject_attribute (
   'User group for the anonymous user',
   'ezstring',
   101,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'user group for the anonymous user',
@@ -4929,7 +4929,7 @@ INSERT INTO ezcontentobject_attribute (
   'Websites',
   'ezstring',
   102,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'websites',
@@ -4958,7 +4958,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   103,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -4988,7 +4988,7 @@ INSERT INTO ezcontentobject_attribute (
 <section xmlns:image="http://ez.no/namespaces/ezpublish3/image/" xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/" xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/"><paragraph>Exponential is an open source content management platform and development framework, built on a solid eZ Publish legacy foundation and extended with modern layout, site and content APIs. The Exponential Foundation and Community continue to develop, document and support the platform, making it possible to build everything from a personal site to a multilingual enterprise web application with role based access, rich media, commerce and advanced editorial workflows.</paragraph><section><header>Resources</header><paragraph><ul><li><paragraph>For product and platform information, visit <link target="_blank" href="https://exponential.earth">exponential.earth</link>.</paragraph></li><li><paragraph>Browse community articles, forums, blogs and news on <link target="_blank" href="https://share.exponential.earth">share.exponential.earth</link>.</paragraph></li><li><paragraph>Read the eZ Publish documentation encyclopedia on <link target="_blank" href="https://ezpedia.exponential.earth">eZpedia</link>.</paragraph></li><li><paragraph>Find Exponential software extensions and projects on <link target="_blank" href="https://projects.exponential.earth">projects.exponential.earth</link>.</paragraph></li><li><paragraph>Download software packages and releases from <link target="_blank" href="https://software.se7enx.com">software.se7enx.com</link>.</paragraph></li><li><paragraph>View or report issues on the <link target="_blank" href="https://issues.exponential.earth">Exponential issue tracker</link>.</paragraph></li></ul></paragraph></section></section>',
   'ezxmltext',
   104,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5017,7 +5017,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezxmltext',
   105,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5046,7 +5046,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   108,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5075,7 +5075,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   109,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5104,7 +5104,7 @@ INSERT INTO ezcontentobject_attribute (
   'Setup',
   'ezstring',
   123,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'setup',
@@ -5133,7 +5133,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   124,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5165,7 +5165,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   125,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5197,7 +5197,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   126,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5226,7 +5226,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   128,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5255,7 +5255,7 @@ INSERT INTO ezcontentobject_attribute (
   'Images',
   'ezstring',
   142,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'images',
@@ -5284,7 +5284,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   143,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5316,7 +5316,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   144,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5348,7 +5348,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   145,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5377,7 +5377,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   146,
-  'eng-GB',
+  'eng-US',
   3,
   1,
   '',
@@ -5406,7 +5406,7 @@ INSERT INTO ezcontentobject_attribute (
   'Files',
   'ezstring',
   147,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'files',
@@ -5435,7 +5435,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   148,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5467,7 +5467,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   149,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5499,7 +5499,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   150,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5528,7 +5528,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   151,
-  'eng-GB',
+  'eng-US',
   3,
   1,
   '',
@@ -5557,7 +5557,7 @@ INSERT INTO ezcontentobject_attribute (
   'Multimedia',
   'ezstring',
   152,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'multimedia',
@@ -5586,7 +5586,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   153,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5618,7 +5618,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   154,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5650,7 +5650,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   155,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -5679,7 +5679,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   156,
-  'eng-GB',
+  'eng-US',
   3,
   1,
   '',
@@ -5708,7 +5708,7 @@ INSERT INTO ezcontentobject_attribute (
   'Common INI settings',
   'ezstring',
   157,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   'common ini settings',
@@ -5737,7 +5737,7 @@ INSERT INTO ezcontentobject_attribute (
   '/content/view/full/2/',
   'ezinisetting',
   158,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5766,7 +5766,7 @@ INSERT INTO ezcontentobject_attribute (
   '/content/view/full/2',
   'ezinisetting',
   159,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5795,7 +5795,7 @@ INSERT INTO ezcontentobject_attribute (
   'disabled',
   'ezinisetting',
   160,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5824,7 +5824,7 @@ INSERT INTO ezcontentobject_attribute (
   'disabled',
   'ezinisetting',
   161,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5853,7 +5853,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezinisetting',
   162,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5882,7 +5882,7 @@ INSERT INTO ezcontentobject_attribute (
   'enabled',
   'ezinisetting',
   163,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5911,7 +5911,7 @@ INSERT INTO ezcontentobject_attribute (
   'disabled',
   'ezinisetting',
   164,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5940,7 +5940,7 @@ INSERT INTO ezcontentobject_attribute (
   'enabled',
   'ezinisetting',
   165,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5969,7 +5969,7 @@ INSERT INTO ezcontentobject_attribute (
   'enabled',
   'ezinisetting',
   166,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -5998,7 +5998,7 @@ INSERT INTO ezcontentobject_attribute (
   '=geometry/scale=100;100',
   'ezinisetting',
   167,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -6027,7 +6027,7 @@ INSERT INTO ezcontentobject_attribute (
   '=geometry/scale=200;200',
   'ezinisetting',
   168,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -6056,7 +6056,7 @@ INSERT INTO ezcontentobject_attribute (
   '=geometry/scale=300;300',
   'ezinisetting',
   169,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -6085,7 +6085,7 @@ INSERT INTO ezcontentobject_attribute (
   'Plain site',
   'ezinisetting',
   170,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -6117,7 +6117,7 @@ description=Content Management System
 keywords=cms, publish, e-commerce, content management, development framework',
   'ezinisetting',
   171,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -6144,11 +6144,11 @@ INSERT INTO ezcontentobject_attribute (
   0,
   0,
   '<?xml version="1.0" encoding="utf-8"?>
-<ezimage serial_number="1" is_valid="" filename="" suffix="" basename="" dirpath="" url="" original_filename="" mime_type="" width="" height="" alternative_text="" alias_key="1293033771" timestamp="1082016632"><original attribute_id="172" attribute_version="2" attribute_language="eng-GB"/></ezimage>
+<ezimage serial_number="1" is_valid="" filename="" suffix="" basename="" dirpath="" url="" original_filename="" mime_type="" width="" height="" alternative_text="" alias_key="1293033771" timestamp="1082016632"><original attribute_id="172" attribute_version="2" attribute_language="eng-US"/></ezimage>
 ',
   'ezimage',
   172,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -6177,7 +6177,7 @@ INSERT INTO ezcontentobject_attribute (
   '0',
   'ezpackage',
   173,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '0',
@@ -6206,7 +6206,7 @@ INSERT INTO ezcontentobject_attribute (
   'sitestyle_identifier',
   'ezstring',
   174,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   'sitestyle_identifier',
@@ -6235,7 +6235,7 @@ INSERT INTO ezcontentobject_attribute (
   'nospam@exponential.earth',
   'ezinisetting',
   175,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -6264,7 +6264,7 @@ INSERT INTO ezcontentobject_attribute (
   'exponential.earth',
   'ezinisetting',
   176,
-  'eng-GB',
+  'eng-US',
   2,
   0,
   '',
@@ -6293,7 +6293,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'eztext',
   177,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6322,7 +6322,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'eztext',
   178,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6351,7 +6351,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezimage',
   179,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6378,11 +6378,11 @@ INSERT INTO ezcontentobject_attribute (
   0,
   0,
   '<?xml version="1.0" encoding="utf-8"?>
-<ezimage serial_number="1" is_valid="" filename="" suffix="" basename="" dirpath="" url="" original_filename="" mime_type="" width="" height="" alternative_text="" alias_key="1293033771" timestamp="1301057722"><original attribute_id="180" attribute_version="3" attribute_language="eng-GB"/></ezimage>
+<ezimage serial_number="1" is_valid="" filename="" suffix="" basename="" dirpath="" url="" original_filename="" mime_type="" width="" height="" alternative_text="" alias_key="1293033771" timestamp="1301057722"><original attribute_id="180" attribute_version="3" attribute_language="eng-US"/></ezimage>
 ',
   'ezimage',
   180,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6411,7 +6411,7 @@ INSERT INTO ezcontentobject_attribute (
   'Design',
   'ezstring',
   181,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'design',
@@ -6440,7 +6440,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   182,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6472,7 +6472,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   183,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6504,7 +6504,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   184,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6533,7 +6533,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   185,
-  'eng-GB',
+  'eng-US',
   3,
   1,
   '',
@@ -6562,7 +6562,7 @@ INSERT INTO ezcontentobject_attribute (
   'Configuration',
   'ezstring',
   3,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'configuration',
@@ -6591,7 +6591,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   4,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6623,7 +6623,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   5,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6655,7 +6655,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   6,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6684,7 +6684,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   9,
-  'eng-GB',
+  'eng-US',
   3,
   1,
   '',
@@ -6713,7 +6713,7 @@ INSERT INTO ezcontentobject_attribute (
   'Archives',
   'ezstring',
   10,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   'archives',
@@ -6742,7 +6742,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezstring',
   11,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6774,7 +6774,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   12,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6806,7 +6806,7 @@ INSERT INTO ezcontentobject_attribute (
          xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   13,
-  'eng-GB',
+  'eng-US',
   3,
   0,
   '',
@@ -6835,7 +6835,7 @@ INSERT INTO ezcontentobject_attribute (
   '',
   'ezboolean',
   14,
-  'eng-GB',
+  'eng-US',
   3,
   1,
   '',
@@ -6850,12 +6850,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   6,
   1,
   3,
   'Websites',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6865,12 +6865,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   4,
   3,
   'Users',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6880,12 +6880,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   2,
   10,
   3,
   'Anonymous User',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6895,12 +6895,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   11,
   3,
   'Guest accounts',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6910,12 +6910,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   12,
   3,
   'Administrator users',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6925,12 +6925,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   13,
   3,
   'Editors',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6940,12 +6940,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   3,
   14,
   3,
   'Administrator User',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6955,12 +6955,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   41,
   3,
   'Media',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6970,12 +6970,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   42,
   3,
   'Anonymous Users',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6985,12 +6985,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   45,
   3,
   'Setup',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -7000,12 +7000,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   49,
   3,
   'Images',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -7015,12 +7015,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   50,
   3,
   'Files',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -7030,12 +7030,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   51,
   3,
   'Multimedia',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -7045,12 +7045,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   52,
   2,
   'Common INI settings',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -7060,12 +7060,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   2,
   54,
   2,
   'Plain site',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -7075,12 +7075,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   56,
   3,
   'Design',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -7090,12 +7090,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   2,
   3,
   'Configuration',
-  'eng-GB'
+  'eng-US'
 );
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -7105,12 +7105,12 @@ INSERT INTO ezcontentobject_name (
   name,
   real_translation
 ) VALUES (
-  'eng-GB',
+  'eng-US',
   1,
   3,
   3,
   'Archives',
-  'eng-GB'
+  'eng-US'
 );
 
 INSERT INTO ezcontentobject_tree (

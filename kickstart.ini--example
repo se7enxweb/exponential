@@ -25,7 +25,7 @@ Socket=
 [language_options]
 Continue=true
 Primary=eng-US
-Languages[]=eng-GB
+Languages[]
 
 [site_types]
 Continue=true

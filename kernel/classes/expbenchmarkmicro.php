@@ -572,7 +572,7 @@ TPL;
     {
         $valid = eZInputValidator::STATE_ACCEPTED;
         $invalid = eZInputValidator::STATE_INVALID;
-        $names = serialize( array( 'eng-GB' => 'Benchmark', 'always-available' => 'eng-GB' ) );
+        $names = serialize( array( 'eng-US' => 'Benchmark', 'always-available' => 'eng-US' ) );
         $definitions = array(
             // datatype, class attribute fields, posted field, values => expected state
             array( 'ezinteger', array( 'data_int1' => 1, 'data_int2' => 1000, 'data_int4' => 3 ), '_data_integer_',
@@ -603,7 +603,7 @@ TPL;
             $GLOBALS['eZContentClassAttributeCache'][$id][eZContentClass::VERSION_STATUS_DEFINED] = $classAttribute;
             $objectAttribute = new eZContentObjectAttribute( array(
                 'id' => $id, 'version' => 1, 'contentobject_id' => 1, 'contentclassattribute_id' => $id,
-                'data_type_string' => $type, 'language_code' => 'eng-GB',
+                'data_type_string' => $type, 'language_code' => 'eng-US',
             ) );
             $datatype = eZDataType::create( $type );
             if ( !$datatype )

@@ -140,7 +140,7 @@
 #Continue=true
 ## Primary=<locale>
 ## The primary language for the site
-#Primary=eng-GB
+#Primary=eng-US
 ## Languages[]=<locale>
 ## Additional languages
 #Languages[]
