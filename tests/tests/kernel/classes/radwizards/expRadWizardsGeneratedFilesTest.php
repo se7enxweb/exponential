@@ -246,7 +246,7 @@ class expRadWizardsGeneratedFilesTest extends PHPUnit\Framework\TestCase
         $loader = $this->cache . '/load.php';
         file_put_contents( $loader, "<?php\nchdir( \$argv[1] );\nrequire 'vendor/autoload.php';\n"
                                   . "\$before = get_declared_classes();\nrequire \$argv[2];\n"
-                                  . "foreach ( array_diff( get_declared_classes(), \$before ) as \$c ) { \$r = new ReflectionClass( \$c ); if ( \$r->isAbstract() && !\$r->isInterface() ) { echo \"ABSTRACT \$c\\n\"; } }\n"
+                                  . "foreach ( array_diff( get_declared_classes(), \$before ) as \$c ) { \$r = new ReflectionClass( \$c ); if ( realpath( (string)\$r->getFileName() ) === realpath( \$argv[2] ) && \$r->isAbstract() && !\$r->isInterface() ) { echo \"ABSTRACT \$c\\n\"; } }\n"
                                   . "echo \"LOADED\\n\";\n" );
         $loaded = 0;
         foreach ( $files as $path => $contents )
