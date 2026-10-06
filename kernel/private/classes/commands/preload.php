@@ -1,8 +1,8 @@
 <?php
 /**
  * The code of bin/php/preload.php, moved into a class (#207 stage 1). The file bin/php/preload.php is one call to it.
- * @description Warm the section pages, then spider the whole site with wget to fill the caches
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * @description Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones
+ * Guide: doc/guides/preloading-caches.md
  */
 /*
  * The original header of bin/php/preload.php:
@@ -26,504 +26,143 @@
 namespace Exponential\Command\Kernel
 {
 
+/**
+ * The preload from the shell and from cron. It is the run Setup > Preload starts in the background
+ * (expPreloadJob::execute()): the same addresses, the same crawler, one lock for both, and the run is listed on the
+ * page with the others. It used to spider the site with wget and curl, separately from the page, and agreed with
+ * it neither on the address of a siteaccess nor on what counts as broken.
+ */
 class Preload extends \Exponential\Runnable\Command
 {
+    /** A run from the shell may go further than the page's default. */
+    const SHELL_MAX_PAGES = 1000;
+
     public function run()
     {
-        // the script's variables were globals; functions of the script read them with "global"
-        foreach ( array( 'authBuffer', 'authCount', 'badge', 'bar', 'bold', 'brokenCount', 'cli', 'cyan', 'dim', 'errLine', 'errLines', 'esc', 'extra', 'fetch', 'flushAuth', 'gray', 'green', 'handle', 'hasDb', 'hasKern', 'hasMem', 'host', 'humanBytes', 'isTTY', 'keywords', 'line', 'm', 'magenta', 'n', 'pendingUrl', 'phaseBanner', 'printUrl', 'r', 'rawLine', 'rawURL', 'red', 'reject', 'script', 'sectionIdx', 'sectionTotal', 'sections', 'shown', 'site', 'siteIni', 'size', 'speed', 'speedLabel', 'statusBadge', 'tmpFile', 'url', 'urlCount', 'wgetCmd', 'white', 'yellow' ) as $__name )
-            ${$__name} = &$GLOBALS[$__name];
-        unset( $__name );
-
         $cli = $this->cli();
-        $script = $this->script(
-            array(
-                'description'    => "Exponential CMS — site preloader & cache warmer\n\n" .
-                                    "Warms section pages then spiders the entire site via wget.\n\n" .
-                                    "Usage: ./bin/php/preload.php [--siteaccess <name>]",
-                'use-session'    => false,
-                'use-modules'    => false,
-                'use-extensions' => true,
-            )
-        );
-
-        $script->startup();
-        $this->options( "", "", array() );
-        $script->initialize();
-
-        // ══════════════════════════════════════════════════════════════════════════════
-        //  ANSI colour helpers — degrade gracefully when stdout is not a TTY
-        // ══════════════════════════════════════════════════════════════════════════════
-
-        $isTTY = function_exists( 'posix_isatty' ) && posix_isatty( STDOUT );
-
-        $esc = function( $code, $text ) use ( $isTTY )
-        {
-            return $isTTY ? "\033[{$code}m{$text}\033[0m" : $text;
-        };
-
-        $bold    = function( $t ) use ( $esc ) { return $esc( '1',     $t ); };
-        $dim     = function( $t ) use ( $esc ) { return $esc( '2',     $t ); };
-        $red     = function( $t ) use ( $esc ) { return $esc( '1;31',  $t ); };
-        $green   = function( $t ) use ( $esc ) { return $esc( '1;32',  $t ); };
-        $yellow  = function( $t ) use ( $esc ) { return $esc( '1;33',  $t ); };
-        $magenta = function( $t ) use ( $esc ) { return $esc( '1;35',  $t ); };
-        $cyan    = function( $t ) use ( $esc ) { return $esc( '1;36',  $t ); };
-        $white   = function( $t ) use ( $esc ) { return $esc( '1;37',  $t ); };
-        $gray    = function( $t ) use ( $esc ) { return $esc( '0;90',  $t ); };
-
-        // Speed-tier label + colour for a wall-clock value in ms
-        $speedLabel = function( $ms ) use ( $green, $yellow, $red )
-        {
-            if ( $ms < 200  ) return $green(  $ms . 'ms  blazing'  );
-            if ( $ms < 400  ) return $green(  $ms . 'ms  fast'     );
-            if ( $ms < 700  ) return $yellow( $ms . 'ms  ok'       );
-            if ( $ms < 1200 ) return $yellow( $ms . 'ms  slow'     );
-            return                   $red(    $ms . 'ms  SLOW!'    );
-        };
-
-        // HTTP status badge
-        $statusBadge = function( $http ) use ( $green, $yellow, $red, $cyan )
-        {
-            if ( $http === '200' )  return $green(  '[ 200 OK ]'       );
-            if ( $http[0] === '3' ) return $cyan(   "[ {$http} ↷  ]"  );
-            if ( $http[0] === '4' ) return $yellow( "[ {$http} ⚠  ]"  );
-            if ( $http[0] === '5' ) return $red(    "[ {$http} ✗  ]"  );
-            return $yellow( "[ {$http}    ]" );
-        };
-
-        // Bytes → human-readable
-        $humanBytes = function( $bytes )
-        {
-            if ( $bytes >= 1048576 ) return round( $bytes / 1048576, 1 ) . ' MB';
-            if ( $bytes >= 1024    ) return round( $bytes / 1024,    1 ) . ' kB';
-            return $bytes . ' B';
-        };
-
-        // Phase banner
-        $phaseBanner = function( $phase, $total, $title ) use ( $bold, $cyan )
-        {
-            $bar = str_repeat( '━', 66 );
-            echo "\n" . $cyan( $bar ) . "\n";
-            echo '  ' . $bold( $cyan( "PHASE {$phase} / {$total}" ) ) . '  ' . $bold( $title ) . "\n";
-            echo $cyan( $bar ) . "\n\n";
-        };
-
-        // ══════════════════════════════════════════════════════════════════════════════
-        //  Resolve site base URL from site.ini
-        // ══════════════════════════════════════════════════════════════════════════════
-
-        $siteIni = \eZINI::instance( 'site.ini' );
-
-        if ( !$siteIni->hasVariable( 'SiteSettings', 'SiteURL' ) )
-        {
-            $cli->error( 'Cannot determine site URL: SiteSettings.SiteURL is not set in site.ini' );
-            $script->shutdown( 1 );
-        }
-
-        $rawURL = rtrim( $siteIni->variable( 'SiteSettings', 'SiteURL' ), '/' );
-        $site   = ( strpos( $rawURL, '://' ) === false ) ? 'https://' . $rawURL : $rawURL;
-        $host   = parse_url( $site, PHP_URL_HOST );
-
-        // Build section URL list from URLTranslationKeyword (semicolon-separated)
-        $keywords = '';
-        if ( $siteIni->hasVariable( 'SiteSettings', 'URLTranslationKeyword' ) )
-            $keywords = $siteIni->variable( 'SiteSettings', 'URLTranslationKeyword' );
-
-        $sections = array_map(
-            function ( $kw ) use ( $site ) { return $site . '/' . trim( $kw, '/ ' ) . '/'; },
-            array_filter( explode( ';', $keywords ), function ( $kw ) { return trim( $kw ) !== ''; } )
-        );
-        if ( empty( $sections ) )
-            $sections = array( $site . '/' );
-
-        unset( $siteIni, $rawURL, $keywords );
-
-        // ══════════════════════════════════════════════════════════════════════════════
-        //  Curl fetch helper — returns timing, HTTP status, perf metrics
-        // ══════════════════════════════════════════════════════════════════════════════
-
-        $tmpFile = '/tmp/ezpreload_bench.html';
-
-        $fetch = function( $url ) use ( $tmpFile )
-        {
-            $t0   = microtime( true );
-            $meta = shell_exec(
-                "curl -sk" .
-                " -o "          . escapeshellarg( $tmpFile ) .
-                " -w '%{http_code} %{time_total} %{size_download}'" .
-                " --max-time 30 " . escapeshellarg( $url )
-            );
-            $wall_ms = round( ( microtime( true ) - $t0 ) * 1000 );
-
-            $parts     = array_pad( explode( ' ', trim( (string) $meta ) ), 3, '0' );
-            $http      = $parts[0];
-            $sizeBytes = is_numeric( $parts[2] ) ? (int) $parts[2] : 0;
-
-            $html = file_exists( $tmpFile ) ? file_get_contents( $tmpFile ) : '';
-
-            $extract = function( $key ) use ( $html )
-            {
-                if ( preg_match( '/\b' . preg_quote( $key, '/' ) . '\s*:\s*([0-9.]+)/', $html, $m ) )
-                    return $m[1];
-                return null;
-            };
-
-            return array(
-                'http'        => $http,
-                'wall_ms'     => $wall_ms,
-                'size_bytes'  => $sizeBytes,
-                'kernel_init' => $extract( 'kernel-init' ),
-                'kernel_run'  => $extract( 'kernel-run' ),
-                'get_content' => $extract( 'get-content' ),
-                'total_ms'    => $extract( 'total' ),
-                'peak_memory' => $extract( 'peak-memory' ),
-                'db_queries'  => $extract( 'db-queries' ),
-                'db_time'     => $extract( 'db-time' ),
-                'html'        => $html,
-            );
-        };
-
-        // ══════════════════════════════════════════════════════════════════════════════
-        //  PHASE 1 — Warm section pages
-        // ══════════════════════════════════════════════════════════════════════════════
-
-        $phaseBanner( 1, 2, 'Warming Section Pages' );
-
-        $sectionTotal = count( $sections );
-        $sectionIdx   = 0;
-
-        $this->warmSections();
-
-        // ══════════════════════════════════════════════════════════════════════════════
-        //  PHASE 2 — Spider the full site via wget, parsed line-by-line
-        // ══════════════════════════════════════════════════════════════════════════════
-
-        $phaseBanner( 2, 2, "Spidering {$site}/ — recursive, depth 3" );
-
-        $reject = implode( ',', array(
-            // styles & scripts
-            'js', 'css', 'map',
-            // images
-            'png', 'gif', 'jpg', 'jpeg', 'webp', 'svg', 'ico', 'bmp', 'tif', 'tiff',
-            'avif', 'heic', 'heif', 'jxl', 'psd', 'ai', 'eps', 'raw', 'cr2', 'nef',
-            // fonts
-            'woff', 'woff2', 'ttf', 'eot', 'otf',
-            // video
-            'mp4', 'webm', 'ogv', 'ogg', 'avi', 'mov', 'mkv', 'flv', 'wmv', 'mpg',
-            'mpeg', 'mp2', 'm4v', 'm2v', 'ts', 'mts', 'm2ts', 'vob', 'rm', 'rmvb',
-            '3gp', '3g2', 'asf', 'divx', 'xvid', 'f4v', 'swf',
-            // audio
-            'mp3', 'wav', 'flac', 'aac', 'm4a', 'wma', 'aiff', 'aif', 'ape', 'opus',
-            'ra', 'mid', 'midi', 'amr', 'au', 'mka',
-            // documents / archives
-            'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'odt', 'ods', 'odp',
-            'rtf', 'txt', 'csv', 'epub', 'mobi',
-            'zip', 'tar', 'gz', 'tgz', 'bz2', 'xz', 'zst', 'rar', '7z', 'cab',
-            'iso', 'dmg', 'img', 'bin', 'deb', 'rpm', 'apk', 'exe', 'msi', 'pkg',
-            // data / misc
-            'json', 'xml', 'rss', 'atom', 'yaml', 'yml', 'sql', 'db', 'sqlite',
+        $script = $this->script( array(
+            'description'    => "Exponential cache preloader\n\n" .
+                                "Requests the section pages of a site, then follows its links, so the caches are warm\n" .
+                                "before a visitor arrives, and reports the broken links with the pages that link to them.\n" .
+                                "The site is the one of --siteaccess (or --target). One preload runs at a time; the run is\n" .
+                                "listed in Setup > Preload.\n\n" .
+                                "Usage: php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--dry-run]",
+            'use-session'    => false,
+            'use-modules'    => true,
+            'use-extensions' => true,
+        ) );
+        $options = $this->startup( '[target:][max-pages:][max-depth:][images][dry-run]', '', array(
+            'target'    => 'the siteaccess whose site is preloaded (default: the one of --siteaccess)',
+            'max-pages' => 'most pages to request (default ' . self::SHELL_MAX_PAGES . ', at most ' . \expPreloadJob::MAX_PAGES_LIMIT . ')',
+            'max-depth' => 'most links to follow from a starting page (default ' . \expPreloadJob::DEFAULT_MAX_DEPTH . ')',
+            'images'    => 'also request the images the warmed pages show, and report the missing ones',
+            'dry-run'   => 'print the address, the starting pages and the limits, and request nothing',
         ) );
 
-        $wgetCmd =
-            "wget --no-check-certificate --spider --recursive --level=3" .
-            " --no-directories --delete-after -P /tmp -nv" .
-            " --reject="       . escapeshellarg( $reject ) .
-            " --reject-regex='/(stats|calendar|groupeventcalendar)/'" .
-            " --domains="      . escapeshellarg( $host ) .
-            " "                . escapeshellarg( $site . "/" ) .
-            " 2>&1";
-
-        $handle = popen( $wgetCmd, 'r' );
-        if ( $handle === false )
+        $siteaccess = $options['target'] !== null ? (string)$options['target']
+                    : ( isset( $GLOBALS['eZCurrentAccess']['name'] ) ? (string)$GLOBALS['eZCurrentAccess']['name'] : '' );
+        if ( $siteaccess !== '' && !in_array( $siteaccess, \expPreloadJob::knownSiteaccesses(), true ) )
         {
-            $cli->error( 'Failed to launch wget — is it installed and on $PATH?' );
+            $cli->error( 'Unknown siteaccess: ' . $siteaccess );
             $script->shutdown( 1 );
         }
+        $runOptions = \expPreloadJob::options( array(
+            'max_pages' => $options['max-pages'] !== null ? $options['max-pages'] : self::SHELL_MAX_PAGES,
+            'max_depth' => $options['max-depth'],
+            'images'    => (bool)$options['images'],
+        ) );
+        $plan = \expPreloadJob::plan( $siteaccess, $runOptions );
 
-        // Running counters
-        $urlCount    = 0;
-        $brokenCount = 0;
-        $authCount   = 0;
-        $authBuffer  = 0;   // consecutive auth-fail lines — collapsed into one summary line
-
-        $pendingUrl  = null; // bare URL waiting to see if next line is "broken link"
-
-        // Flush any buffered consecutive auth failures as a single collapsed summary line
-        $flushAuth = function() use ( &$authBuffer, $yellow, $dim )
+        if ( $options['dry-run'] )
         {
-            if ( $authBuffer === 0 ) return;
-            $plural = $authBuffer === 1 ? 'resource' : 'resources';
-            echo '  ' . $dim( $yellow( '⊘' ) )
-               . '  ' . $dim( "auth-protected — {$authBuffer} {$plural} skipped" )
-               . "\n";
-            flush();
-            $authBuffer = 0;
-        };
+            $this->printPlan( $plan );
+            $script->shutdown( $plan['base_url'] === '' ? 1 : 0 );
+        }
 
-        // Print a fetched URL line.
-        // Type is indicated by a leading marker rather than indentation, since wget
-        // does not crawl in depth-first tree order so path-depth indentation produces
-        // a misleading, jumbled hierarchy.
-        //
-        //  ✓  normal content page          — cyan path, full brightness
-        //  ▸  /layout/set/print/* variant  — dim, labelled "print"
-        //  ⬇  /content/download/* asset   — dim, labelled "download"
-        //
-        $printUrl = function( $ts, $url, $bytes, $redirects, $extra = '' )
-                     use ( &$urlCount, $gray, $green, $yellow, $cyan, $dim, $humanBytes )
-        {
-            $urlCount++;
-            $path = parse_url( $url, PHP_URL_PATH ) ?: '/';
+        $cli->output( $cli->stylize( 'bold', 'Preloading ' . ( $plan['start_urls'] ? $plan['start_urls'][0] : '(no address)' ) )
+                    . ( $siteaccess !== '' ? ' (siteaccess ' . $siteaccess . ')' : '' ) );
 
-            // Classify by path prefix
-            $isPrint    = ( strpos( $path, '/layout/set/print' ) === 0 );
-            $isDownload = ( strpos( $path, '/content/download' ) === 0 );
+        $id = \expPreloadHistory::newID();
+        $exit = \expPreloadJob::execute( $id, $siteaccess, $runOptions, array( $this, 'printEvent' ), 'shell' );
 
-            if ( $isPrint )
-            {
-                // Strip the /layout/set/print prefix so the meaningful path is visible
-                $shortPath = substr( $path, strlen( '/layout/set/print' ) ) ?: '/';
-                $icon      = $dim( '▸' );
-                $label     = $dim( 'print ' );
-                $pathStr   = $dim( $shortPath );
-            }
-            elseif ( $isDownload )
-            {
-                $icon      = $dim( '⬇' );
-                $label     = $dim( 'download ' );
-                $pathStr   = $dim( $path );
-            }
-            else
-            {
-                // Green tick for a direct fetch; yellow recycle symbol for a redirect chain
-                $icon      = ( (int) $redirects > 1 ) ? $yellow( '↻' ) : $green( '✓' );
-                $label     = '';
-                $pathStr   = $cyan( $path );
-            }
-
-            $byteStr = $bytes > 0 ? $dim( $humanBytes( $bytes ) ) : '';
-
-            echo '  ' . $gray( $ts )
-               . '  ' . $icon
-               . '  ' . $label . $pathStr
-               . ( $byteStr ? '  ' . $byteStr : '' )
-               . ( $extra   ? '  ' . $extra   : '' )
-               . '  ' . $dim( '#' . $urlCount )
-               . "\n";
-            flush();
-        };
-
-        // ── main wget output loop ─────────────────────────────────────────────────────
-
-        $this->spiderSite();
-
-        $flushAuth();
-        pclose( $handle );
-
-        // ══════════════════════════════════════════════════════════════════════════════
-        //  Final summary
-        // ══════════════════════════════════════════════════════════════════════════════
-
-        $bar = str_repeat( '━', 66 );
-        echo "\n" . $cyan( $bar ) . "\n";
-        echo '  ' . $bold( $white( 'PRELOAD COMPLETE' ) ) . "\n";
-        echo '  ' . $dim( 'Pages cached   ' ) . '  ' . $green( $urlCount   ) . "\n";
-        echo '  ' . $dim( 'Auth skipped   ' ) . '  ' . $yellow( $authCount )
-           . '  ' . $dim( '(password-protected resources)' ) . "\n";
-        echo '  ' . $dim( 'Broken links   ' ) . '  '
-           . ( $brokenCount > 0 ? $red( $brokenCount ) : $green( $brokenCount ) ) . "\n";
-        echo $cyan( $bar ) . "\n\n";
-
-        $script->shutdown();
+        $status = \expPreloadJob::history()->read( $id );
+        if ( $status !== false && $exit !== 2 )
+            $this->printSummary( $status );
+        if ( $exit === 2 )
+            $cli->error( 'Another preload is running (from Setup > Preload or another shell); try again when it has ended.' );
+        $script->shutdown( $exit );
     }
 
     /**
-     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     * One event of the run, as a line of the terminal.
      */
-    protected function warmSections()
+    public function printEvent( $type, $message, array $data = array() )
     {
-        foreach ( array( 'sections', 'url', 'sectionIdx', 'dim', 'sectionTotal', 'bold', 'cyan', 'r', 'fetch', 'badge', 'statusBadge', 'speed', 'speedLabel', 'size', 'humanBytes', 'hasDb', 'hasKern', 'hasMem', 'gray', 'yellow', 'magenta', 'red', 'errLines', 'shown', 'errLine' ) as $__name )
-            ${$__name} = &$GLOBALS[$__name];
-        unset( $__name );
-
-        foreach ( $sections as $url )
+        $cli = $this->cli();
+        switch ( $type )
         {
-            $sectionIdx++;
-
-            echo '  ' . $dim( "[{$sectionIdx}/{$sectionTotal}]" )
-               . '  ' . $bold( $cyan( $url ) ) . "\n";
-            flush();
-
-            $r = $fetch( $url );
-
-            $badge = $statusBadge( $r['http'] );
-            $speed = $speedLabel( $r['wall_ms'] );
-            $size  = $humanBytes( $r['size_bytes'] );
-
-            echo '         ' . $badge
-               . '  wall: '  . $speed
-               . '  size: '  . $dim( $size ) . "\n";
-
-            $hasDb   = $r['db_queries'] !== null || $r['db_time']    !== null;
-            $hasKern = $r['kernel_init'] !== null || $r['kernel_run'] !== null
-                    || $r['get_content'] !== null || $r['total_ms']  !== null;
-            $hasMem  = $r['peak_memory'] !== null;
-
-            if ( $hasDb )
-                echo '         ' . $gray( 'db       ' )
-                   . '  queries: ' . $yellow( $r['db_queries'] ?? '–' )
-                   . '  time: '    . $yellow( ( $r['db_time'] ?? '–' ) . 'ms' ) . "\n";
-
-            if ( $hasKern )
-                echo '         ' . $gray( 'kernel   ' )
-                   . '  init: '        . $dim( ( $r['kernel_init'] ?? '–' ) . 'ms' )
-                   . '  run: '         . $dim( ( $r['kernel_run']  ?? '–' ) . 'ms' )
-                   . '  get-content: ' . $dim( ( $r['get_content'] ?? '–' ) . 'ms' )
-                   . '  total: '       . $dim( ( $r['total_ms']    ?? '–' ) . 'ms' ) . "\n";
-
-            if ( $hasMem )
-                echo '         ' . $gray( 'memory   ' )
-                   . '  peak: ' . $magenta( $r['peak_memory'] . ' MB' ) . "\n";
-
-            if ( $r['http'] === '500' )
-            {
-                echo '         ' . $red( '── SERVER ERROR (first 5 non-empty lines) ──' ) . "\n";
-                $errLines = array_slice( explode( "\n", strip_tags( $r['html'] ) ), 0, 20 );
-                $shown    = 0;
-                foreach ( $errLines as $errLine )
-                {
-                    if ( trim( $errLine ) === '' ) continue;
-                    echo '           ' . $red( trim( $errLine ) ) . "\n";
-                    if ( ++$shown >= 5 ) break;
-                }
-            }
-
-            echo "\n";
-            flush();
+            case 'phase':
+                $cli->output();
+                $cli->output( $cli->stylize( 'cyan', '== ' . $message ) );
+                break;
+            case 'phase-item':
+            case 'ok':
+            case 'image':
+                $cli->output( '  ' . $cli->stylize( 'green', $type === 'image' ? 'img' : 'ok ' ) . ' ' . $message );
+                break;
+            case 'warn':
+                $cli->output( '  ' . $cli->stylize( 'yellow', '!  ' ) . ' ' . $message );
+                break;
+            case 'error':
+                $cli->output( '  ' . $cli->stylize( 'red', 'ERR' ) . ' ' . $message );
+                break;
+            case 'report':
+                foreach ( explode( "\n", $message ) as $line )
+                    $cli->output( $line );
+                break;
+            case 'done':
+                break;
+            default:
+                $cli->output( $cli->stylize( 'gray', $message ) );
         }
     }
 
     /**
-     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     * The closing lines; the last three say what the run did, for a log that keeps only the tail.
      */
-    protected function spiderSite()
+    protected function printSummary( array $status )
     {
-        foreach ( array( 'handle', 'rawLine', 'line', 'pendingUrl', 'flushAuth', 'brokenCount', 'red', 'bold', 'dim', 'm', 'printUrl', 'extra', 'yellow', 'authCount', 'authBuffer', 'gray', 'green', 'n' ) as $__name )
-            ${$__name} = &$GLOBALS[$__name];
-        unset( $__name );
+        $cli = $this->cli();
+        $c = $status['counts'];
+        $cli->output();
+        $cli->output( sprintf( 'Preload %s in %ss: run %s, listed in Setup > Preload.', $status['state'],
+                               $status['seconds'] === null ? '?' : $status['seconds'], $status['id'] ) );
+        if ( $status['message'] !== '' )
+            $cli->output( $status['message'] );
+        $cli->output( sprintf( 'Pages warmed %d, broken %d, denied %d, skipped %d.', $c['fetched'], $c['broken'], $c['denied'], $c['skipped'] ) );
+        $cli->output( sprintf( 'Image aliases made %s%s.', $status['aliases'] === null ? 'not counted' : (int)$status['aliases'],
+                               !empty( $status['options']['images'] ) ? sprintf( ', images checked %d, missing %d', $c['images'], $c['images_broken'] ) : '' ) );
+    }
 
-        while ( !feof( $handle ) )
+    protected function printPlan( array $plan )
+    {
+        $cli = $this->cli();
+        if ( $plan['base_url'] === '' )
         {
-            $rawLine = fgets( $handle );
-            if ( $rawLine === false ) break;
-            $line = rtrim( $rawLine );
-
-            // skip blank lines and wget's internal housekeeping noise
-            if ( $line === '' )                        continue;
-            if ( strpos( $line, 'unlink:'   ) === 0 ) continue;
-            if ( strpos( $line, 'Removing ' ) === 0 ) continue;
-
-            // ── resolve a pending bare-URL that may be a broken-link lead-in ──────────
-            if ( $pendingUrl !== null )
-            {
-                if ( strpos( $line, 'broken link' ) !== false )
-                {
-                    $flushAuth();
-                    $brokenCount++;
-                    echo '  ' . $red( '✗  BROKEN LINK' )
-                       . '  ' . $bold( $pendingUrl ) . "\n";
-                    flush();
-                    $pendingUrl = null;
-                    continue;
-                }
-                // Not a broken-link message — emit the held URL quietly and fall through
-                $flushAuth();
-                echo '  ' . $dim( $pendingUrl ) . "\n";
-                $pendingUrl = null;
-            }
-
-            // ── standard spider URL line ───────────────────────────────────────────────
-            // "2026-06-12 07:33:29 URL:https://host/path [BYTES] -> "FILE" [N]"
-            if ( preg_match(
-                '/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) URL:(https?:\/\/\S+) \[(\d+)\] -> "[^"]+" \[(\d+)\]$/',
-                $line, $m
-            ) ) {
-                $flushAuth();
-                $printUrl( $m[1], $m[2], (int) $m[3], (int) $m[4] );
-                continue;
-            }
-
-            // ── content/download line: timestamp + URL + HTTP status ──────────────────
-            // "2026-06-12 07:34:27 URL: https://host/content/download/N/M 200 OK"
-            if ( preg_match(
-                '/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) URL:\s+(https?:\/\/\S+)\s+(\d+)\s+(\w+)$/',
-                $line, $m
-            ) ) {
-                $flushAuth();
-                $extra = $m[3][0] === '2'
-                    ? $dim(    $m[3] . ' ' . $m[4] )
-                    : $yellow( $m[3] . ' ' . $m[4] );
-                $printUrl( $m[1], $m[2], 0, 1, $extra );
-                continue;
-            }
-
-            // ── bare URL ending in ":" — potential broken-link lead-in ────────────────
-            if ( preg_match( '/^(https?:\/\/\S+):$/', $line, $m ) )
-            {
-                $pendingUrl = $m[1];
-                continue;
-            }
-
-            // ── auth failure ───────────────────────────────────────────────────────────
-            if ( strpos( $line, 'Username/Password Authentication Failed' ) !== false )
-            {
-                $authCount++;
-                $authBuffer++;
-                continue;
-            }
-
-            // ── wget summary lines ─────────────────────────────────────────────────────
-            if ( preg_match( '/^FINISHED --(.+)--$/', $line, $m ) )
-            {
-                $flushAuth();
-                echo "\n  " . $bold( 'Finished' ) . '  ' . $gray( $m[1] ) . "\n";
-                continue;
-            }
-            if ( preg_match( '/^Total wall clock time:\s*(.+)$/', $line, $m ) )
-            {
-                echo '  ' . $bold( 'Total time:' ) . '  ' . $green( $m[1] ) . "\n";
-                continue;
-            }
-            if ( preg_match( '/^Downloaded:\s*(\d+) files,\s*(.+)$/', $line, $m ) )
-            {
-                echo '  ' . $bold( 'Downloaded:' )
-                   . '  ' . $green( $m[1] . ' files' )
-                   . '  ' . $dim(   $m[2] ) . "\n";
-                continue;
-            }
-            if ( preg_match( '/^Found (\d+) broken links?\.$/', $line, $m ) )
-            {
-                $n = (int) $m[1];
-                echo '  ' . ( $n > 0
-                    ? $red(   "⚠  Found {$n} broken link(s)." )
-                    : $green( '✓  No broken links found.'     ) ) . "\n";
-                continue;
-            }
-
-            // ── broken-link URL list printed by wget at the end ───────────────────────
-            // plain "https://..." lines with no trailing colon and no timestamp prefix
-            if ( preg_match( '/^https?:\/\/[^\s]+$/', $line ) )
-            {
-                echo '     ' . $red( '↳  ' ) . $dim( $line ) . "\n";
-                continue;
-            }
-
-            // ── anything else: pass through dimly ─────────────────────────────────────
-            $flushAuth();
-            echo '  ' . $dim( $line ) . "\n";
-            flush();
+            $cli->error( 'Cannot determine the site url: SiteSettings/SiteURL is not set in site.ini.' );
+            return;
         }
+        $cli->output( 'Dry run: nothing is requested.' );
+        $cli->output( 'Siteaccess:     ' . ( $plan['siteaccess'] !== '' ? $plan['siteaccess'] : '(default)' ) );
+        $cli->output( 'Site address:   ' . $plan['base_url'] . ( $plan['prefix'] !== '' ? ' with the prefix ' . $plan['prefix'] : '' ) );
+        if ( !$plan['reached'] )
+            $cli->warning( 'The siteaccess matching in site.ini does not send this address to the siteaccess; the pages warmed may be those of another one.' );
+        $cli->output( sprintf( 'Limits:         %d pages, link depth %d%s', $plan['options']['max_pages'], $plan['options']['max_depth'],
+                               $plan['options']['images'] ? ', images checked' : '' ) );
+        $cli->output( 'Starting pages:' );
+        foreach ( $plan['start_urls'] as $url )
+            $cli->output( '  ' . $url );
+        $cli->output( 'Then every link on them to the same site, up to the limits.' );
     }
 }
 

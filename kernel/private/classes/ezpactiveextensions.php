@@ -119,6 +119,198 @@ class ezpActiveExtensions
     }
 
     /**
+     * ActiveExtensions of an override file's text, in the order written (the
+     * reset line and comments left out). Lines outside [ExtensionSettings]
+     * are not looked at.
+     */
+    public static function fromText( $text )
+    {
+        $list = array();
+        foreach ( self::splitLines( $text ) as $i => $line )
+        {
+            if ( self::groupOf( $text, $i ) !== 'ExtensionSettings' )
+                continue;
+            if ( preg_match( '/^\s*ActiveExtensions\[\]\s*=\s*(\S.*?)\s*$/', rtrim( $line, "\r\n" ), $m ) && !in_array( $m[1], $list, true ) )
+                $list[] = $m[1];
+        }
+        return $list;
+    }
+
+    /**
+     * The override file's text with ActiveExtensions replaced by $list and
+     * every other byte as it was: other groups and settings, comments,
+     * blank lines, line endings and the <?php wrapper. A comment directly
+     * above an extension's line moves with that extension. Without a
+     * [ExtensionSettings] group one is added before the closing wrapper.
+     * When $list is what the text holds, the text comes back unchanged.
+     *
+     * @param string $text
+     * @param array $list
+     * @return string
+     */
+    public static function replaceInText( $text, array $list )
+    {
+        $list = array_values( array_unique( array_filter( array_map( 'strval', $list ), 'strlen' ) ) );
+        if ( self::fromText( $text ) === $list )
+            return $text;
+        $eol = strpos( $text, "\r\n" ) !== false ? "\r\n" : "\n";
+        $lines = self::splitLines( $text );
+
+        // The group's lines
+        $start = null;
+        $end = count( $lines );
+        foreach ( $lines as $i => $line )
+        {
+            $trim = trim( $line );
+            if ( $start === null )
+            {
+                if ( $trim === '[ExtensionSettings]' )
+                    $start = $i;
+                continue;
+            }
+            if ( preg_match( '/^\[[^\]]+\]$/', $trim ) || strpos( $trim, '*/' ) === 0 )
+            {
+                $end = $i;
+                break;
+            }
+        }
+
+        $entryLines = array();
+        foreach ( $list as $name )
+            $entryLines[$name] = 'ActiveExtensions[]=' . $name . $eol;
+
+        if ( $start === null )
+        {
+            // A new group, before the closing wrapper if there is one
+            $block = $eol . '[ExtensionSettings]' . $eol . 'ActiveExtensions[]' . $eol . implode( '', $entryLines );
+            $close = null;
+            for ( $i = count( $lines ) - 1; $i >= 0; $i-- )
+            {
+                if ( strpos( trim( $lines[$i] ), '*/' ) === 0 ) { $close = $i; break; }
+                if ( trim( $lines[$i] ) !== '' ) break;
+            }
+            if ( $close === null )
+            {
+                if ( $text !== '' && substr( $text, -1 ) !== "\n" )
+                    $text .= $eol;
+                return $text . ltrim( $block, "\r\n" );
+            }
+            array_splice( $lines, $close, 0, array( ltrim( $block, "\r\n" ) ) );
+            return implode( '', $lines );
+        }
+
+        // The run of ActiveExtensions lines inside the group, and the comments right above each
+        $first = null;
+        $last = null;
+        for ( $i = $start + 1; $i < $end; $i++ )
+        {
+            if ( preg_match( '/^\s*ActiveExtensions\[\]/', $lines[$i] ) )
+            {
+                if ( $first === null )
+                    $first = $i;
+                $last = $i;
+            }
+        }
+        if ( $first === null )
+        {
+            array_splice( $lines, $start + 1, 0, array( 'ActiveExtensions[]' . $eol . implode( '', $entryLines ) ) );
+            return implode( '', $lines );
+        }
+
+        $reset = array();
+        $attached = array();
+        $other = array();
+        $pending = array();
+        for ( $i = $first; $i <= $last; $i++ )
+        {
+            $line = $lines[$i];
+            $bare = rtrim( $line, "\r\n" );
+            if ( preg_match( '/^\s*[#;]/', $bare ) )
+            {
+                $pending[] = $line;
+                continue;
+            }
+            if ( preg_match( '/^\s*ActiveExtensions\[\]\s*$/', $bare ) )
+            {
+                $reset[] = $line;
+                $other = array_merge( $other, $pending );
+                $pending = array();
+                continue;
+            }
+            if ( preg_match( '/^\s*ActiveExtensions\[\]\s*=\s*(\S.*?)\s*$/', $bare, $m ) )
+            {
+                if ( !isset( $attached[$m[1]] ) )
+                    $attached[$m[1]] = array( 'comments' => $pending, 'line' => $line );
+                else
+                    $other = array_merge( $other, $pending );
+                $pending = array();
+                continue;
+            }
+            // a blank line or another setting inside the run stays, after the list
+            $other = array_merge( $other, $pending, array( $line ) );
+            $pending = array();
+        }
+
+        $run = $reset ? $reset : array( 'ActiveExtensions[]' . $eol );
+        foreach ( $list as $name )
+        {
+            if ( isset( $attached[$name] ) )
+            {
+                $line = $attached[$name]['line'];
+                if ( substr( $line, -1 ) !== "\n" )
+                    $line .= $eol;
+                $run = array_merge( $run, $attached[$name]['comments'], array( $line ) );
+            }
+            else
+            {
+                $run[] = $entryLines[$name];
+            }
+        }
+        // the comments of extensions no longer in the list are kept, after it
+        foreach ( $attached as $name => $entry )
+            if ( !in_array( $name, $list, true ) )
+                $other = array_merge( $other, $entry['comments'] );
+        $run = array_merge( $run, $other );
+        // the file's last line may have had no line ending
+        if ( $last === count( $lines ) - 1 && substr( $lines[$last], -1 ) !== "\n" )
+            $run[count( $run ) - 1] = rtrim( $run[count( $run ) - 1], "\r\n" );
+
+        array_splice( $lines, $first, $last - $first + 1, $run );
+        return implode( '', $lines );
+    }
+
+    /**
+     * Lines with their line endings.
+     */
+    private static function splitLines( $text )
+    {
+        return $text === '' ? array() : preg_split( '/(?<=\n)/', $text, -1, PREG_SPLIT_NO_EMPTY );
+    }
+
+    /**
+     * The group line $index belongs to, or ''.
+     */
+    private static function groupOf( $text, $index )
+    {
+        static $cache = array();
+        $key = md5( $text );
+        if ( !isset( $cache[$key] ) )
+        {
+            $cache = array();
+            $groups = array();
+            $group = '';
+            foreach ( self::splitLines( $text ) as $i => $line )
+            {
+                if ( preg_match( '/^\s*\[([^\]]+)\]\s*$/', $line, $m ) )
+                    $group = $m[1];
+                $groups[$i] = $group;
+            }
+            $cache[$key] = $groups;
+        }
+        return isset( $cache[$key][$index] ) ? $cache[$key][$index] : '';
+    }
+
+    /**
      * Writes $list as ActiveExtensions. Returns true, or false with $error set
      * (the file is then as it was).
      */
@@ -149,8 +341,15 @@ class ezpActiveExtensions
             return false;
         }
 
-        $before->setVariable( 'ExtensionSettings', 'ActiveExtensions', $list );
-        $saved = $before->save( false, false, false, false, true, true );
+        // Only the ActiveExtensions lines change: the file is edited as text, so its comments, its layout and the
+        // <?php /* wrapper that keeps it from being served stay as they are (eZINI::save() wrote the file anew and
+        // dropped every comment in it).
+        $text = file_get_contents( $path );
+        $newText = $text === false ? false : self::replaceInText( $text, $list );
+        $saved = false;
+        if ( $newText !== false && ( strpos( ltrim( $text ), '<?php' ) !== 0 || strpos( ltrim( $newText ), '<?php' ) === 0 ) )
+            $saved = $newText === $text || file_put_contents( $path, $newText, LOCK_EX ) === strlen( $newText );
+        clearstatcache( true, $path );
 
         // What must be in the file now: everything as before, and the list.
         $expected = $beforeGroups;

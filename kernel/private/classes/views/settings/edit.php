@@ -2,6 +2,14 @@
 /**
  * The code of kernel/settings/edit.php, moved into a class (#207 stage 1). The file kernel/settings/edit.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ *
+ * Every name in the request is checked against the installation's own lists before anything is read or written
+ * (expSettingsTarget): the INI file against the files the settings page lists, the siteaccess against
+ * RelatedSiteAccessList, the place to write against siteaccess, override and the active extensions, the block and
+ * the setting name against what eZINI reads back; read-only settings (site.ini [eZINISettings]
+ * ReadonlySettingList) are refused. eZINI::save() refuses a value that would break out of its line or out of the
+ * PHP comment of a .ini.append.php file. After a write the INI cache is cleared (expSettingsPage::afterWrite()),
+ * so PHP-FPM and Velocity both read the change on their next request. User guide: doc/guides/settings-page.md
  */
 /*
  * The original header of kernel/settings/edit.php:
@@ -41,16 +49,6 @@ function parseArrayToStr( $value, $separator )
     return $value;
 }
 }
-
-if ( !function_exists( 'getVariable' ) ) {
-function getVariable( $block, $settingName, $iniFile, $path )
-{
-    $ini = new eZINI( $iniFile, $path, null, null, null, true, true );
-    $result = $ini->hasVariable( $block, $settingName ) ? $ini->variable( $block, $settingName ) : false;
-    $result = parseArrayToStr( $result, '<br>' );
-    return $result;
-}
-}
 }
 
 namespace Exponential\View\Kernel\Settings
@@ -74,175 +72,119 @@ class Edit extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
         $http = \eZHTTPTool::instance();
-        //$ini = eZINI::instance();
+        $siteIni = \eZINI::instance();
+        $siteAccessList = array_values( array_map( 'strval', (array)$siteIni->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' ) ) );
+        $extensions = \expSettingsPage::activeExtensions();
+        $rule = \expSettingsSecretRule::fromIni( $siteIni );
 
-        if ( $Params['INIFile'] )
-            $iniFile = $Params['INIFile'];
+        $post = function ( $name, $default ) use ( $http ) {
+            return $http->hasPostVariable( $name ) ? $http->postVariable( $name ) : $default;
+        };
+        $iniFile = \expSettingsTarget::iniFile( $post( 'INIFile', $Params['INIFile'] ), \expSettingsPage::iniFileList() );
+        $siteAccess = \expSettingsTarget::siteAccess( $post( 'SiteAccess', $Params['SiteAccess'] ), $siteAccessList );
+        $block = $post( 'Block', $Params['Block'] );
+        $block = is_string( $block ) ? trim( $block ) : '';
+        $settingName = $post( 'SettingName', $Params['Setting'] );
+        $settingName = is_string( $settingName ) ? trim( $settingName ) : '';
+        $settingPlacement = $post( 'SettingPlacement', $Params['Placement'] );
+        $settingPlacement = is_string( $settingPlacement ) && $settingPlacement !== '' ? trim( $settingPlacement ) : 'siteaccess';
+        $settingType = $http->hasPostVariable( 'SettingType' ) ? trim( (string)$http->postVariable( 'SettingType' ) ) : null;
+        if ( $settingType !== null && !isset( $settingTypeArray[$settingType] ) )
+            $settingType = null;
 
-        if ( $Params['SiteAccess'] )
-            $siteAccess = $Params['SiteAccess'];
+        // Nothing here works without a file, a siteaccess and a block the installation knows
+        if ( $iniFile === null || $siteAccess === null || !\expSettingsTarget::isValidBlock( $block )
+             || ( $settingName !== '' && !\expSettingsTarget::isValidName( $settingName ) && !$http->hasPostVariable( 'WriteSetting' ) ) )
+        {
+            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        }
+        $viewURL = '/settings/view/' . $siteAccess . '/' . $iniFile;
 
-        if ( $Params['Block'] )
-            $block = $Params['Block'];
+        if ( $http->hasPostVariable( 'Cancel' ) )
+            return $this->viewResult( null, $Module->redirectTo( $viewURL ) );
 
-        if ( $Params['Setting'] )
-            $settingName = $Params['Setting'];
+        $loaded = \expSettingsPage::chainFor( $iniFile, $siteAccess, false );
+        $chain = $loaded['chain'];
+        $setting = $settingName !== '' ? $chain->setting( $block, $settingName ) : null;
+        $isSecret = $settingName !== '' && $rule->isSecretName( $settingName );
 
-        if ( $Params['Placement'] )
-            $settingPlacement = $Params['Placement'];
-
-        if ( $http->hasPostVariable( 'INIFile' ) )
-            $iniFile = $http->variable( "INIFile" );
-
-        if ( $http->hasPostVariable( 'SiteAccess' ) )
-            $siteAccess = $http->postVariable( 'SiteAccess' );
-
-        if ( $http->hasPostVariable( 'Block' ) )
-            $block = trim( $http->postVariable( 'Block' ) );
-
-        if ( $http->hasPostVariable( 'SettingType' ) )
-            $settingType = trim( $http->postVariable( 'SettingType' ) );
-
-        if ( $http->hasPostVariable( 'SettingName' ) )
-            $settingName = trim( $http->postVariable( 'SettingName' ) );
-
-        if ( $http->hasPostVariable( 'SettingPlacement' ) )
-            $settingPlacement = trim( $http->postVariable( 'SettingPlacement' ) );
-
-        if ( $http->hasPostVariable( 'Value' ) )
-            $valueToWrite = trim( $http->postVariable( 'Value' ) );
-
-        if ( !isset( $settingName ) )
-            $settingName = '';
-
-        if ( !isset( $settingPlacement ) )
-            $settingPlacement = 'siteaccess';
+        $tpl->setVariable( 'validation_error', false );
+        $tpl->setVariable( 'validation_error_type', false );
+        $tpl->setVariable( 'validation_error_message', false );
+        $tpl->setVariable( 'validation_field', false );
 
         if ( $http->hasPostVariable( 'WriteSetting' ) )
         {
-            $path = 'settings/override';
-            if ( $settingPlacement == 'siteaccess' )
-                $path = "settings/siteaccess/$siteAccess";
-            elseif ( $settingPlacement != 'override' )
-                $path = "extension/$settingPlacement/settings";
+            $valueToWrite = $http->hasPostVariable( 'Value' ) ? $http->postVariable( 'Value' ) : '';
+            if ( $settingType === null )
+                $settingType = 'string';
+            // an array keeps its leading empty line (it empties the array before the elements)
+            $valueToWrite = is_string( $valueToWrite ) ? ( $settingType === 'array' ? rtrim( $valueToWrite ) : trim( $valueToWrite ) ) : '';
+            $path = \expSettingsTarget::writeDirectory( $settingPlacement, $siteAccess, $extensions );
+            $error = self::writeError( $path, $iniFile, $block, $settingName, $settingType, $valueToWrite, $loaded['ini'] );
 
-            $ini = new \eZINI( $iniFile . '.append', $path, null, null, null, true, true );
-
-            $hasValidationError = false;
-            require 'kernel/settings/validation.php';
-            $validationResult = validate( array( 'Name' => $settingName,
-                                                 'Value' => $valueToWrite ),
-                                          array( 'name', $settingType ), true );
-            if ( $validationResult['hasValidationError'] )
+            // A secret's field starts empty: leaving it empty keeps the value that is there
+            if ( $error === null && $isSecret && $valueToWrite === '' && $setting !== null )
             {
-                $tpl->setVariable( 'validation_field', $validationResult['fieldContainingError'] );
-                $hasValidationError = true;
+                \expSettingsPage::afterWrite( 'unchanged', $iniFile, $siteAccess, array( array( 'block' => $block, 'name' => $settingName, 'path' => '' ) ) );
+                return $this->viewResult( null, $Module->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
             }
-
-            if ( !$hasValidationError )
+            if ( $error === null )
             {
-                if ( $settingType == 'array' )
+                require_once 'kernel/settings/validation.php';
+                // an array may be empty: "leave the first line empty" makes one
+                $validationResult = $settingType === 'array'
+                    ? validate( array( 'Name' => $settingName ), array( 'name' ), true )
+                    : validate( array( 'Name' => $settingName, 'Value' => $valueToWrite ), array( 'name', $settingType ), true );
+                if ( $validationResult['hasValidationError'] )
+                    $error = array( $validationResult['type'], $validationResult['message'], $validationResult['fieldContainingError'] );
+            }
+            if ( $error === null )
+            {
+                $toWrite = $valueToWrite;
+                if ( $settingType === 'array' )
                 {
-                    $valueArray = explode( "\n", $valueToWrite );
-                    $valuesToWriteArray = array();
-
-                    $settingCount = 0;
-                    foreach( $valueArray as $value )
-                    {
-                        if ( preg_match( "/^\[(.+)\]\=(.+)$/", $value, $matches ) )
-                        {
-                            $valuesToWriteArray[$matches[1]] = trim( $matches[2], "\r\n" );
-                        }
-                        else
-                        {
-                            $value = substr( strchr( $value, '=' ), 1 );
-                            if ( $value == "" )
-                            {
-                                if ( $settingCount == 0 )
-                                    $valuesToWriteArray[] = NULL;
-                            }
-                            else
-                            {
-                                $valuesToWriteArray[] = trim( $value, "\r\n" );
-                            }
-                        }
-                        ++$settingCount;
-                    }
-
-                    $ini->setVariable( $block, $settingName, $valuesToWriteArray );
-                }
-                else
-                {
-                    $ini->setVariable( $block, $settingName, $valueToWrite );
-                }
-                $writeOk = $ini->save(); // false, false, false, false, true, true );
-
-                if ( !$writeOk )
-                {
-                    $tpl->setVariable( 'validation_error', true );
-                    $tpl->setVariable( 'validation_error_type', 'write_error' );
-                    $tpl->setVariable( 'path', $path );
-                    $tpl->setVariable( 'filename',  $iniFile . '.append.php' );
-                }
-                else
-                {
-                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/settings/view/' . $siteAccess . '/' . $iniFile ) );
+                    $parsed = \expSettingsTarget::parseArrayText( $valueToWrite );
+                    if ( $parsed['invalid'] )
+                        $error = array( 'not_array', 'A key cannot contain [ or ]', 'Value' );
+                    $toWrite = $parsed['values'];
                 }
             }
-            else // found validation errors...
+            if ( $error === null )
             {
-                $tpl->setVariable( 'validation_error', true );
-                $tpl->setVariable( 'validation_error_type', $validationResult['type'] );
-                $tpl->setVariable( 'validation_error_message', $validationResult['message'] );
+                $ini = new \eZINI( $iniFile . '.append', $path, null, null, null, true, true );
+                $ini->setVariable( $block, $settingName, $toWrite );
+                if ( $ini->save() )
+                {
+                    \expSettingsPage::afterWrite( 'saved', $iniFile, $siteAccess,
+                        array( array( 'block' => $block, 'name' => $settingName, 'path' => $path . '/' . $iniFile . '.append.php' ) ) );
+                    return $this->viewResult( null, $Module->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
+                }
+                // eZINI::save() refuses a line break, a NUL byte or the end of a PHP comment, and fails on permissions
+                $error = array( 'write_error', '', 'Value' );
+                $tpl->setVariable( 'path', $path );
+                $tpl->setVariable( 'filename', $iniFile . '.append.php' );
             }
+            $tpl->setVariable( 'validation_error', true );
+            $tpl->setVariable( 'validation_error_type', $error[0] );
+            $tpl->setVariable( 'validation_error_message', $error[1] );
+            $tpl->setVariable( 'validation_field', $error[2] );
+            // the form is shown again with what was typed (never for a secret)
+            $value = $isSecret ? '' : $valueToWrite;
         }
         else
         {
-            $tpl->setVariable( 'validation_error', false );
-            $tpl->setVariable( 'validation_error_type', false );
-            $tpl->setVariable( 'validation_error_message', false );
+            $current = $setting !== null ? $setting['value'] : '';
+            if ( $settingType === null )
+                $settingType = $setting !== null ? $setting['type'] : 'string';
+            // an array is shown as it is in effect, so saving it as shown must replace it, not add to it: the
+            // empty first line empties the array in the file written before these elements
+            $value = $isSecret ? '' : ( is_array( $current ) ? "\n" . parseArrayToStr( $current, "\n" ) : (string)$current );
         }
 
-        if ( $http->hasPostVariable( 'Cancel' ) )
-        {
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/settings/view/' . $siteAccess . '/' . $iniFile ) );
-        }
-
-
-
-        $ini = \eZSiteAccess::getIni( $siteAccess, $iniFile );
-        $value = $settingName != '' ? $ini->variable( $block, $settingName ) : '';
-
-        // Do modifications to the value before it's sent to the template
-        if ( ( is_array( $value ) || $value ) and !isset( $settingType ) )
-        {
-            $settingType = $ini->settingType( $value );
-            if ( $settingType == 'array' )
-            {
-                $value = parseArrayToStr( $value, "\n" );
-            }
-
-        }
-        // Init value from ini (default\override\extensions\siteaccess)
-        $values = array();
-        $values['default'] = getVariable( $block, $settingName, $iniFile, 'settings/' );
-        $values['siteaccess'] = getVariable( $block, $settingName, $iniFile, "settings/siteaccess/$siteAccess" );
-        $values['override'] = getVariable( $block, $settingName, $iniFile, "settings/override/" );
-        // Get values from extensions
-        $ini = \eZINI::instance();
-        $extensions = $ini->hasVariable( 'ExtensionSettings','ActiveExtensions' ) ? $ini->variable( 'ExtensionSettings','ActiveExtensions' ) : array();
-        foreach ( $extensions as $extension )
-        {
-            $extensionPath = \eZExtension::extensionPath( $extension );
-            if ( $extensionPath === false )
-                continue;
-
-            $extValue = getVariable( $block, $settingName, $iniFile, "$extensionPath/settings" );
-            $values['extensions'][$extension] = $extValue;
-        }
-
-        if ( !isset( $settingType ) )
-            $settingType = 'string';
+        // Every file of the chain that sets it, in load order, values as the page may show them
+        $steps = $setting !== null ? \expSettingsPage::row( $setting, $rule, array( 'file' => $iniFile ) )['steps'] : array();
+        $values = self::locationValues( $setting, $rule, $extensions );
 
         $tpl->setVariable( 'setting_name', $settingName );
         $tpl->setVariable( 'current_siteaccess', $siteAccess );
@@ -253,6 +195,14 @@ class Edit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'value', $value );
         $tpl->setVariable( 'values', $values );
         $tpl->setVariable( 'placement', $settingPlacement );
+        // added with the redesign
+        $tpl->setVariable( 'is_secret', $isSecret );
+        $tpl->setVariable( 'secret_state', $isSecret && $setting !== null ? $rule->maskValue( $setting['value'] )['state'] : '' );
+        $tpl->setVariable( 'chain_steps', $steps );
+        $tpl->setVariable( 'exists', $setting !== null );
+        $tpl->setVariable( 'extensions', $extensions );
+        $tpl->setVariable( 'restart', \expSettingsPage::restartNeeded( $iniFile, $block, $settingName, \expSettingsPage::restartList() ) );
+        $tpl->setVariable( 'view_url', $viewURL );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:settings/edit.tpl' );
@@ -261,7 +211,52 @@ class Edit extends \Exponential\Runnable\ModuleView
                                  array( 'text' => \ezpI18n::tr( 'settings/edit', 'Edit' ),
                                         'url' => false ) );
 
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        return $this->viewResult( $Result, null );
+    }
+
+    /**
+     * Why a write cannot be made, or null: the place to write, the setting name, a read-only setting.
+     *
+     * @return array|null type, message, field
+     */
+    protected static function writeError( $path, $iniFile, $block, $settingName, $settingType, $value, \eZINI $ini )
+    {
+        if ( $path === null )
+            return array( 'not_valid_placement', 'Choose where to save the setting', 'SettingPlacement' );
+        if ( $settingName === '' )
+            return array( 'empty', 'Please specify a value', 'Name' );
+        if ( !\expSettingsTarget::isValidName( $settingName ) )
+            return array( 'not_valid_name', 'Name contains illegal characters', 'Name' );
+        // eZINI::isSettingReadOnly() answers true when the setting is NOT read only
+        if ( !$ini->isSettingReadOnly( $iniFile, $block, $settingName ) || !$ini->isSettingReadOnly( $iniFile, $block ) )
+            return array( 'read_only', 'This setting is read only', 'Name' );
+        return null;
+    }
+
+    /**
+     * The template variable "values" as it has always been (default, siteaccess, override, extensions => name),
+     * each what that one place sets, masked as the rule says, as text (array elements one per line).
+     *
+     * @return array
+     */
+    protected static function locationValues( $setting, \expSettingsSecretRule $rule, array $extensions )
+    {
+        $values = array( 'default' => false, 'siteaccess' => false, 'override' => false, 'extensions' => array() );
+        foreach ( $extensions as $extension )
+            $values['extensions'][$extension] = false;
+        if ( $setting === null )
+            return $values;
+        foreach ( $setting['steps'] as $step )
+        {
+            $shown = $rule->displayValue( $setting['name'], $step['value'] );
+            $text = is_array( $shown ) ? parseArrayToStr( $shown, "\n" ) : (string)$shown;
+            $kind = $step['placement']['kind'];
+            if ( $kind === 'extension' )
+                $values['extensions'][$step['placement']['extension']] = $text;
+            else if ( isset( $values[$kind] ) )
+                $values[$kind] = $text;
+        }
+        return $values;
     }
 }
 

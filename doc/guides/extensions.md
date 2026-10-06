@@ -13,7 +13,7 @@ installation root; the console commands are the same programs as `php bin/php/<n
 |---|---|
 | An extension is a folder named after the extension, for example `extension/ezflow`. | `[ExtensionSettings] ExtensionDirectory` in `settings/site.ini` (default `extension`) |
 | It does nothing until it is switched on. | `[ExtensionSettings] ActiveExtensions[]` in `settings/site.ini` (installation wide) or `ActiveAccessExtensions[]` (one siteaccess) |
-| The order of the list is the order of priority: a later extension's settings and templates win. | [Loading order](../features/6.0/extension-loading-order.md) |
+| The order of the list is the order of priority: an extension loaded earlier wins over a later one for settings and design templates. With `ExtensionOrdering=enabled` the declared dependencies in `extension.xml` decide the loading order first. | [The Extensions page](extensions-page.md), [Loading order](../features/6.0/extension-loading-order.md) |
 | Classes in its `classes/` folder are found through an autoload array that you regenerate. | `php bin/php/ezpgenerateautoloads.php -e` |
 | Its settings are `.ini.append.php` files in `extension/<name>/settings/`. | [Settings override placements](../specifications/6.0/ini-override-placements.md) |
 | It says what it is in `ezinfo.php` and `extension.xml`. | [Extension metadata](../specifications/6.0/extension-metadata.md) |
@@ -31,8 +31,9 @@ line per active extension, in loading order.
 
 1. Open **Setup > Extensions** (`/setup/extensions`) in the administration interface. The list shows every extension
    that is on disk, active ones first in loading order, then the rest by name.
-2. Click a column header (**Name**, **Version**, **Modified**) to sort; click again to reverse. Click **Details** on a
-   row to see description, author, licence and project page.
+2. Search, filter (all, active, inactive, problems) or order the list by name. Each card shows the description,
+   licence, project page and dependencies; **Details** adds the author, the designs in use and the downloads. The
+   whole page is explained in [The Extensions page](extensions-page.md).
 3. The version comes from the extension's own files, so a dash means the extension does not state one.
 
 From a terminal, the extensions that exist but are not active are the scopes marked inactive:
@@ -89,8 +90,9 @@ folder as described in [Extensions in more than one folder](../features/6.0/addi
 
 ## 4. Switch it on
 
-Browser: open **Setup > Extensions**, tick the box in the row, click **Activate**. The page tells you what it
-saved and where it kept a backup copy of the settings file.
+Browser: open **Setup > Extensions**, click **Activate** on the extension's card, then **Review changes** and
+**Apply changes**. The review shows the risks and the resulting `ActiveExtensions[]` lines; the page then tells you
+what it saved and where it kept a backup copy of the settings file ([The Extensions page](extensions-page.md)).
 
 Terminal (the same change, in the global override file):
 

@@ -156,13 +156,13 @@ After a clear or a deploy the first visitor pays for the render. Warm the pages 
 php bin/php/preload.php --siteaccess=site --allow-root-user
 ```
 
-It requests the section pages first, then spiders the site with `wget`, so `wget` must be installed (`wget --version`). To warm every published page, which suits a cron entry every few minutes:
+It requests the section pages first, then follows the links of the site, with PHP's curl extension (no `wget` needed); one preload runs at a time, and every run is listed on Setup > Preload. To warm every published page, which suits a cron entry every few minutes:
 
 ```bash
 php bin/php/warm.php --allow-root-user >> var/log/cache-warm.log 2>&1
 ```
 
-In the browser use the *Preload Sites* view from the administration: choose the site, a page limit (default 250) and a link depth (default 3), and watch the pages being fetched. Depth: [Preload Sites view](../features/6.0/preload-sites-view.md), [Site cache preloader](../bc/6.0/preload.md), [HTTP/2 and cache warming](../bc/6.0/http2-and-cache-warming.md).
+In the browser use the *Preload Sites* view from the administration: choose the site, a page limit (default 250) and a link depth (default 3), and watch the pages being fetched. Depth: [Preloading caches](preloading-caches.md), [Preload Sites view](../features/6.0/preload-sites-view.md), [Site cache preloader](../bc/6.0/preload.md), [HTTP/2 and cache warming](../bc/6.0/http2-and-cache-warming.md).
 
 ## 6. Back up and restore
 

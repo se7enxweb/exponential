@@ -2,6 +2,11 @@
 /**
  * The code of kernel/settings/view.php, moved into a class (#207 stage 1). The file kernel/settings/view.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ *
+ * What the page shows is worked out by expSettingsChain (which file sets a value and what it overrides),
+ * expSettingsSecretRule (what is masked) and expSettingsPage (rows, search, comparison, the notice of a write);
+ * this view reads the request, checks it against the installation's own lists (expSettingsTarget) and hands the
+ * results to the template. User guide: doc/guides/settings-page.md
  */
 /*
  * The original header of kernel/settings/view.php:
@@ -30,250 +35,123 @@ class View extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
         $http = \eZHTTPTool::instance();
-        $ini = \eZINI::instance();
-        $siteAccessList = $ini->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' );
+        $siteIni = \eZINI::instance();
+        $siteAccessList = array_values( array_map( 'strval', (array)$siteIni->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' ) ) );
+        $iniFiles = \expSettingsPage::iniFileList();
+        $extensions = \expSettingsPage::activeExtensions();
+        $rule = \expSettingsSecretRule::fromIni( $siteIni );
 
-        if ( $Params['INIFile'] )
-            $settingFile = $Params['INIFile'];
+        // The file and the siteaccess: only names the installation itself lists (no path can be smuggled in)
+        $askedFile = $http->hasPostVariable( 'selectedINIFile' ) ? $http->postVariable( 'selectedINIFile' ) : $Params['INIFile'];
+        $settingFile = \expSettingsTarget::iniFile( $askedFile, $iniFiles );
+        $askedSiteAccess = $http->hasPostVariable( 'CurrentSiteAccess' ) ? $http->postVariable( 'CurrentSiteAccess' ) : $Params['SiteAccess'];
+        $currentSiteAccess = \expSettingsTarget::siteAccess( $askedSiteAccess, $siteAccessList );
+        if ( $currentSiteAccess === null )
+            $currentSiteAccess = isset( $siteAccessList[0] ) ? $siteAccessList[0] : '';
+        $unknownFile = $askedFile && $settingFile === null;
 
-        if ( $http->hasPostVariable( 'selectedINIFile' )  )
-            $settingFile = $http->variable( "selectedINIFile" );
+        // "Select": the file and siteaccess picked become the address, so the page can be bookmarked and reloaded
+        if ( $http->hasPostVariable( 'ChangeINIFile' ) && $settingFile !== null && !$http->hasPostVariable( 'RemoveButton' ) )
+            return $this->viewResult( null, $Module->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
 
-        if ( $Params['SiteAccess'] )
-            $currentSiteAccess = $Params['SiteAccess'];
-
-        if ( $http->hasPostVariable( 'CurrentSiteAccess' ) )
-            $currentSiteAccess = $http->postVariable( 'CurrentSiteAccess' );
-
-        if ( !isset( $currentSiteAccess ) or
-             !in_array( $currentSiteAccess, $siteAccessList ) )
-            $currentSiteAccess = $siteAccessList[0];
-
-        unset( $ini );
-
-        if ( $http->hasPostVariable( 'RemoveButton' ) )
+        if ( $http->hasPostVariable( 'RemoveButton' ) && $settingFile !== null && $http->hasPostVariable( 'RemoveSettingsArray' ) )
         {
-            if ( $http->hasPostVariable( 'RemoveSettingsArray' ) )
+            $removed = self::remove( $settingFile, $currentSiteAccess, (array)$http->postVariable( 'RemoveSettingsArray' ), $extensions );
+            \expSettingsPage::afterWrite( $removed ? 'removed' : 'unchanged', $settingFile, $currentSiteAccess, $removed );
+            return $this->viewResult( null, $Module->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
+        }
+
+        // What to show: a search, the settings changed from the default, a comparison with another siteaccess
+        $query = $http->hasGetVariable( 'q' ) && is_string( $http->getVariable( 'q' ) ) ? trim( $http->getVariable( 'q' ) ) : '';
+        $query = mb_substr( (string)preg_replace( '/[\x00-\x1F\x7F]/u', '', $query ), 0, 100 );
+        $searchAll = $http->hasGetVariable( 'scope' ) && $http->getVariable( 'scope' ) === 'all' && $query !== '';
+        $changedOnly = $http->hasGetVariable( 'changed' ) && $http->getVariable( 'changed' ) === '1';
+        $compareWith = $http->hasGetVariable( 'compare' ) ? \expSettingsTarget::siteAccess( $http->getVariable( 'compare' ), $siteAccessList ) : null;
+        if ( $compareWith === $currentSiteAccess )
+            $compareWith = null;
+
+        $current = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : null;
+        $page = false;
+        $settings = false;
+        $summary = false;
+        $compareRows = false;
+        $searchHits = false;
+        if ( $settingFile !== null )
+        {
+            $loaded = \expSettingsPage::chainFor( $settingFile, $currentSiteAccess, false );
+            $chain = $loaded['chain'];
+            $ini = $loaded['ini'];
+            $readOnly = function ( $block, $name ) use ( $ini, $settingFile ) {
+                // eZINI::isSettingReadOnly() answers true when a setting is NOT read only
+                return !$ini->isSettingReadOnly( $settingFile, $block, $name === false ? false : $name );
+            };
+            // What this server runs with: for the siteaccess of this page only (other siteaccesses are not loaded)
+            $runtime = $currentSiteAccess === $current ? \eZINI::instance( $settingFile )->groups() : null;
+            $page = \expSettingsPage::rows( $chain, $rule, array(
+                'query' => $searchAll ? '' : $query, 'changed' => $changedOnly, 'runtime' => $runtime,
+                'file' => $settingFile, 'siteaccess' => $currentSiteAccess, 'extensions' => $extensions,
+                'restart' => \expSettingsPage::restartList(), 'readOnly' => $readOnly ) );
+            $settings = \expSettingsPage::legacySettings( $chain, $rule, $readOnly );
+            $summary = $chain->summary();
+            $summary['secrets'] = $page['secrets'];
+            $summary['pending'] = $runtime === null ? null
+                : ( $query === '' && !$changedOnly ? $page['pending'] : \expSettingsPage::rows( $chain, $rule, array( 'runtime' => $runtime ) )['pending'] );
+            $summary['paths'] = $chain->paths();
+            $summary['layers'] = array();
+            foreach ( $chain->layers() as $layer )
+                $summary['layers'][] = array( 'path' => $layer['path'], 'placement' => $layer['placement'], 'unreadable' => $layer['unreadable'],
+                                              'used' => $summary['files_used'][$layer['path']] );
+            if ( $compareWith !== null )
             {
-                if ( isset( $settingFile ) )
-                {
-                    $ini = \eZSiteAccess::getIni( $currentSiteAccess, $settingFile );
-                }
-
-                $placements = $ini->groupPlacements();
-
-                $deletedSettingArray = $http->postVariable( 'RemoveSettingsArray' );
-                foreach ( $deletedSettingArray as $deletedSetting )
-                {
-                    list( $block, $setting ) = explode( ':', $deletedSetting );
-
-                    if ( is_array( $placements[$block][$setting] ) )
-                    {
-                        foreach ( $placements[$block][$setting] as $settingElementKey => $key )
-                        {
-                            $placement = $ini->findSettingPlacement( $placements[$block][$setting][$settingElementKey] );
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        $placement = $ini->findSettingPlacement( $placements[$block][$setting] );
-                    }
-
-                    // Get extension name if exists, $placement might be "extension:ezdhtml"
-                    $exploded = explode( ':', $placement );
-                    $extension = ( $exploded[0] === 'extension' || $exploded[0] === 'ext-siteaccess' )
-                                ? $exploded[1]
-                                : false;
-
-                    $path = 'settings/override';
-                    if ( $placement === 'siteaccess' )
-                        $path = "settings/siteaccess/$currentSiteAccess";
-                    elseif ( $exploded[0] === 'extension' && $extension !== false )
-                        $path = "extension/$extension/settings";
-                    elseif ( $exploded[0] === 'ext-siteaccess' && $extension !== false )
-                        $path = "extension/$extension/settings/siteaccess/$currentSiteAccess";
-
-                    // We should use "reference" if multiply removing of ini setting.
-                    // if eZINI::instance() is called twice instance will be fetched from GLOBAL variable.
-                    // Without reference there will be a inconsistency with GLOBAL instance and stored ini file.
-                    $iniTemp = \eZINI::create( $settingFile . '.append.php', $path, null, null, null );
-                    $iniTemp->removeSetting( $block, $setting );
-                    $iniTemp->save();
-                }
+                $other = \expSettingsPage::chainFor( $settingFile, $compareWith, false );
+                $compareRows = \expSettingsPage::compareRows( \expSettingsChain::compare( $chain, $other['chain'] ), $rule );
+            }
+        }
+        if ( $searchAll )
+        {
+            $searchHits = array();
+            foreach ( $iniFiles as $file )
+            {
+                $loaded = \expSettingsPage::chainFor( $file, $currentSiteAccess, false );
+                $left = \expSettingsPage::SEARCH_LIMIT - count( $searchHits );
+                if ( $left <= 0 )
+                    break;
+                $searchHits = array_merge( $searchHits, \expSettingsPage::search( $file, $loaded['chain'], $rule, $query, $left ) );
             }
         }
 
-        if ( $http->hasPostVariable( 'ChangeINIFile' ) or
-             ( $Params['SiteAccess'] and $Params['INIFile'] ) )
-        {
-            if ( $GLOBALS['eZCurrentAccess']['name'] !== $currentSiteAccess )
-            {
-                // create a site ini instance using $useLocalOverrides
-                $siteIni = \eZSiteAccess::getIni( $currentSiteAccess, 'site.ini' );
-
-                // load settings file with $useLocalOverrides = true & $addArrayDefinition = true
-                $ini = new \eZINI( /*$fileName =*/ $settingFile,
-                                  /*$rootDir =*/ 'settings',
-                                  /*$useTextCodec =*/ null,
-                                  /*$useCache =*/ false,
-                                  /*$useLocalOverrides =*/ true,
-                                  /*$directAccess =*/ false,
-                                  /*$addArrayDefinition =*/ true,
-                                  /*$load =*/ false );
-                $ini->setOverrideDirs( $siteIni->overrideDirs( false ) );
-                $ini->load();
-            }
-            else
-            {
-                // load settings file more or less normally but with $addArrayDefinition = true
-                $ini = new \eZINI( $settingFile,'settings', null, false, null, false, true );
-            }
-
-            $blocks = $ini->groups();
-            $placements = $ini->groupPlacements();
-            $settings = array();
-            $blockCount = 0;
-            $totalSettingCount = 0;
-
-            foreach( $blocks as $block=>$key )
-            {
-                $settingsCount = 0;
-                $blockRemoveable = false;
-                $blockEditable = true;
-                foreach( $key as $setting=>$settingKey )
-                {
-                    $hasSetPlacement = false;
-                    $type = $ini->settingType( $settingKey );
-                    $removeable = false;
-
-                    switch ( $type )
-                    {
-                        case 'array':
-                            if ( count( $settingKey ) == 0 )
-                                $settings[$block]['content'][$setting]['content'] = array();
-
-                            foreach( $settingKey as $settingElementKey=>$settingElementValue )
-                            {
-                                $settingPlacement = $ini->findSettingPlacement( $placements[$block][$setting][$settingElementKey] );
-                                if ( $settingElementValue != null )
-                                {
-                                    // Make a space after the ';' to make it possible for
-                                    // the browser to break long lines
-                                    $settings[$block]['content'][$setting]['content'][$settingElementKey]['content'] = str_replace( ';', "; ", $settingElementValue );
-                                }
-                                else
-                                {
-                                    $settings[$block]['content'][$setting]['content'][$settingElementKey]['content'] = "";
-                                }
-                                $settings[$block]['content'][$setting]['content'][$settingElementKey]['placement'] = $settingPlacement;
-                                $hasSetPlacement = true;
-                                if ( $settingPlacement != 'default' )
-                                {
-                                    $removeable = true;
-                                    $blockRemoveable = true;
-                                }
-                            }
-                            break;
-                        case 'string':
-                            if( strpos( $settingKey, ';' ) )
-                            {
-                                // Make a space after the ';' to make it possible for
-                                // the browser to break long lines
-                                $settingArray = str_replace( ';', "; ", $settingKey );
-                                $settings[$block]['content'][$setting]['content'] = $settingArray;
-                            }
-                            else
-                            {
-                                $settings[$block]['content'][$setting]['content'] = $settingKey;
-                            }
-                            break;
-                        default:
-                            $settings[$block]['content'][$setting]['content'] = $settingKey;
-                    }
-                    $settings[$block]['content'][$setting]['type'] = $type;
-                    $settings[$block]['content'][$setting]['placement'] = "";
-
-                    if ( !$hasSetPlacement )
-                    {
-                        $placement = $ini->findSettingPlacement( $placements[$block][$setting] );
-                        $settings[$block]['content'][$setting]['placement'] = $placement;
-                        if ( $placement != 'default' )
-                        {
-                            $removeable = true;
-                            $blockRemoveable = true;
-                        }
-                    }
-                    $editable = $ini->isSettingReadOnly( $settingFile, $block, $setting );
-                    $removeable = $editable === false ? false : $removeable;
-                    $settings[$block]['content'][$setting]['editable'] = $editable;
-                    $settings[$block]['content'][$setting]['removeable'] = $removeable;
-                    ++$settingsCount;
-                }
-                $blockEditable = $ini->isSettingReadOnly( $settingFile, $block );
-                $settings[$block]['count'] = $settingsCount;
-                $settings[$block]['removeable'] = $blockRemoveable;
-                $settings[$block]['editable'] = $blockEditable;
-                $totalSettingCount += $settingsCount;
-                ++$blockCount;
-            }
-            ksort( $settings );
-            $tpl->setVariable( 'settings', $settings );
-            $tpl->setVariable( 'block_count', $blockCount );
-            $tpl->setVariable( 'setting_count', $totalSettingCount );
-            $tpl->setVariable( 'ini_file', $settingFile );
-        }
-        else
-        {
-            $tpl->setVariable( 'settings', false );
-            $tpl->setVariable( 'block_count', false );
-            $tpl->setVariable( 'setting_count', false );
-            $tpl->setVariable( 'ini_file', false );
-        }
-
-        $rootDir = 'settings';
-        $iniFiles = \eZDir::recursiveFindRelative( $rootDir, '', '.ini' );
-
-        // find all .ini files in active extensions
-        foreach ( \eZINI::globalOverrideDirs() as $iniDataSet )
-        {
-            $iniPath = $iniDataSet[1] ? $iniDataSet[0] : 'settings/' . $iniDataSet[0];
-            $iniFiles = array_merge( $iniFiles, \eZDir::recursiveFindRelative( $iniPath, '', '.ini' ) );
-            $iniFiles = array_merge( $iniFiles, \eZDir::recursiveFindRelative( $iniPath, '', '.ini.append.php' ) );
-        }
-
-        // extract all .ini files without path
-        $iniFiles = preg_replace('%.*/%', '', $iniFiles );
-        // remove *.ini[.append.php] from file name
-        $iniFiles = preg_replace('%\.ini.*%', '.ini', $iniFiles );
-        sort( $iniFiles );
-
-        $iniFiles = array_values( array_unique( $iniFiles ) );
-
-        // The drop-down is a hundred entries long and a dozen of them are what anyone
-        // is ever looking for, so the common ones are offered first, above a separator.
-        // Which ones those are is a setting rather than a list in here: an installation
-        // that lives in different files can say so without patching the kernel.
+        // The files read most often first, as site.ini [SettingsViewSettings] CommonINIFileList says
         $commonINIFiles = array();
-        foreach ( (array) \eZINI::instance()->variable( 'SettingsViewSettings', 'CommonINIFileList' ) as $candidate )
+        foreach ( (array)$siteIni->variable( 'SettingsViewSettings', 'CommonINIFileList' ) as $candidate )
         {
             $candidate = trim( $candidate );
-
-            // Only what this installation actually has. A name that is listed and not
-            // present would otherwise be offered and then fail to open.
-            if ( $candidate !== '' && in_array( $candidate, $iniFiles, true )
-                 && !in_array( $candidate, $commonINIFiles, true ) )
+            if ( $candidate !== '' && in_array( $candidate, $iniFiles, true ) && !in_array( $candidate, $commonINIFiles, true ) )
                 $commonINIFiles[] = $candidate;
         }
 
-        // The rest keep the alphabetical order they were sorted into above.
-        $otherINIFiles = array_values( array_diff( $iniFiles, $commonINIFiles ) );
-
+        $tpl->setVariable( 'settings', $settings );
+        $tpl->setVariable( 'block_count', $summary ? $summary['blocks'] : false );
+        $tpl->setVariable( 'setting_count', $summary ? $summary['settings'] : false );
+        $tpl->setVariable( 'ini_file', $settingFile !== null ? $settingFile : false );
         $tpl->setVariable( 'ini_files', $iniFiles );
         $tpl->setVariable( 'ini_files_common', $commonINIFiles );
-        $tpl->setVariable( 'ini_files_other', $otherINIFiles );
+        $tpl->setVariable( 'ini_files_other', array_values( array_diff( $iniFiles, $commonINIFiles ) ) );
         $tpl->setVariable( 'siteaccess_list', $siteAccessList );
         $tpl->setVariable( 'current_siteaccess', $currentSiteAccess );
+        // added with the redesign
+        $tpl->setVariable( 'page', $page );
+        $tpl->setVariable( 'summary', $summary );
+        $tpl->setVariable( 'query', $query );
+        $tpl->setVariable( 'search_all', $searchAll );
+        $tpl->setVariable( 'search_hits', $searchHits );
+        $tpl->setVariable( 'changed_only', $changedOnly );
+        $tpl->setVariable( 'compare_with', $compareWith !== null ? $compareWith : false );
+        $tpl->setVariable( 'compare_rows', $compareRows );
+        $tpl->setVariable( 'unknown_file', $unknownFile );
+        $tpl->setVariable( 'runtime_known', $settingFile !== null && $currentSiteAccess === $current );
+        $tpl->setVariable( 'this_siteaccess', $current );
+        $tpl->setVariable( 'served_by_velocity', \expSettingsPage::servedByVelocity() );
+        $tpl->setVariable( 'notice', \expSettingsPage::takeNotice() );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:settings/view.tpl' );
@@ -282,7 +160,52 @@ class View extends \Exponential\Runnable\ModuleView
                                  array( 'text' => \ezpI18n::tr( 'settings/view', 'View' ),
                                         'url' => false ) );
 
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        return $this->viewResult( $Result, null );
+    }
+
+    /**
+     * Takes the selected settings out of the file of the installation's own settings that sets them last
+     * (expSettingsPage::removeFrom()), after checking that file is one the page may write.
+     *
+     * @param string $settingFile Checked
+     * @param string $siteAccess Checked
+     * @param array $selected "Block:Setting" values of RemoveSettingsArray[]
+     * @param string[] $extensions
+     * @return array[] block, name, path of what was removed
+     */
+    public static function remove( $settingFile, $siteAccess, array $selected, array $extensions )
+    {
+        $loaded = \expSettingsPage::chainFor( $settingFile, $siteAccess, false );
+        $chain = $loaded['chain'];
+        $ini = $loaded['ini'];
+        $byPath = array();
+        foreach ( $selected as $item )
+        {
+            if ( !is_string( $item ) || ( $pos = strrpos( $item, ':' ) ) === false )
+                continue;
+            $block = substr( $item, 0, $pos );
+            $name = substr( $item, $pos + 1 );
+            $setting = $chain->setting( $block, $name );
+            if ( $setting === null || !$ini->isSettingReadOnly( $settingFile, $block, $name ) )
+                continue;
+            $path = \expSettingsPage::removeFrom( $setting );
+            if ( $path === null || !\expSettingsTarget::isWritableChainFile( $path, $settingFile, $siteAccess, $extensions ) )
+                continue;
+            $byPath[$path][] = array( 'block' => $block, 'name' => $name, 'path' => $path );
+        }
+        $removed = array();
+        foreach ( $byPath as $path => $items )
+        {
+            // direct access: this one file, read and written as it is (comments kept by eZINI's round trip)
+            $file = new \eZINI( basename( $path ), dirname( $path ), null, false, null, true, true );
+            foreach ( $items as $item )
+                $file->removeSetting( $item['block'], $item['name'] );
+            if ( $file->save() )
+                $removed = array_merge( $removed, $items );
+            else
+                \eZDebug::writeError( 'Could not write ' . $path . ' to remove ' . count( $items ) . ' setting(s)', __METHOD__ );
+        }
+        return $removed;
     }
 }
 

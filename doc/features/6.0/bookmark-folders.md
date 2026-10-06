@@ -8,7 +8,7 @@ online editor.
 
 | Place | What you get |
 |---|---|
-| My bookmarks (`content/bookmark`) | The tree with counts, expand/collapse all, search over all bookmarks, new, rename, delete and move folders, move bookmarks, order within a folder (buttons and drag and drop), remove selected, move selected to a folder |
+| My bookmarks (`content/bookmark`) | An overview, the folders with their counts beside the list, the bookmarks grouped by folder with their class, location, last change and whether they are hidden or gone; search, five orders and paging; new, rename, move and remove folders (saying what happens to what is inside); move selected bookmarks (select, or drag onto a folder), order within a folder, remove selected after a confirmation. See the [bookmarks guide](../../guides/bookmarks.md) |
 | Bookmarks box (right column) | The whole tree, folders open and close (remembered in the browser, shared with the page), "Add to bookmarks" with a folder to choose (top level by default) |
 | Browse dialog | The tree of bookmarks next to the content; a container in a folder opens with one click |
 | Online editor, TinyMCE 3 and 8 | The Bookmarks tab shows a heading row per folder, indented by depth |
@@ -18,11 +18,13 @@ Designs: admin4 (and admin4l, which uses its templates), admin (and admin2, admi
 
 ## Using it
 
-- **New folder**: the *New folder* button on the page, or the *New folder* button on a folder row for a subfolder.
-- **Move**: drag a bookmark or folder onto a folder (into it, last), onto another entry (in front of it), or onto the *Top level* strip. Without a mouse use the *Move* button of a row, or the up and down buttons. A folder cannot go into itself or into a folder below it; those targets are disabled.
-- **Delete a folder**: its bookmarks and subfolders move up one level and no bookmark is deleted. Tick *Also delete the bookmarks and folders inside* to delete everything in it.
-- **Search**: the box above the tree filters all bookmarks and opens the folders that hold a match.
-- Without JavaScript the page still works: the tree is open, and the forms under *Folders* create, rename and delete folders and the *Move selected to* box moves bookmarks.
+The [bookmarks guide](../../guides/bookmarks.md) walks through the page step by step. In short:
+
+- **New folder**: the *New folder* form beside the list; the folder shown is preselected as its place.
+- **Move bookmarks**: tick them and use *Move the selected bookmarks to*, or drag them onto a folder of the folder list. Folders move with *Move* in the panel of the folder shown; a folder cannot go into itself or a folder below it, so those are not offered.
+- **Remove a folder**: *Remove folder* asks whether what is inside moves to the folder it was in (the default, no bookmark removed) or is removed with it.
+- **Search, order, pages**: the search covers names, classes, locations and folders; the orders are your own, name, recently added, type and recently modified; bookmarks stay grouped by folder.
+- Without JavaScript the page works the same; the script adds *Select all* and dragging.
 
 ## Templates
 

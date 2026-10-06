@@ -1,5 +1,8 @@
 # Preload Sites (administration interface)
 
+> **Since 6 October 2026** the page is redesigned: one run at a time, live progress, the last runs with their
+> failures, a dry run and an image check. The current guide is [Preloading caches](../../guides/preloading-caches.md).
+
 This page is for administrators who want a site's caches warm after a deploy or a cache clear, and who want a list of
 broken links as a bonus. **Setup > Preload Sites** crawls every page of a site from the admin and shows the progress
 live. It is the browser counterpart of the command line preloader described in
