@@ -403,6 +403,19 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             header( $key . ': ' . $value );
         }
 
+        // An address without language segment whose siteaccess the browser's language chose
+        // (DefaultHostUriMatchMapItems): send the browser on to the same address with the segment, the address as
+        // it was asked for (a URL alias stays one) and its query. The redirect varies by language and is private
+        // (the headers above); the page behind it has one address per language and is cached as any other.
+        if ( !empty( $this->access['redirect'] ) && in_array( $_SERVER['REQUEST_METHOD'] ?? 'GET', array( 'GET', 'HEAD' ), true ) )
+        {
+            $this->shutdown();
+            if ( ob_get_level() > $obLevel )
+                ob_end_clean();
+            return eZHTTPTool::redirect( self::languageRedirectURI( eZSys::indexDir(), eZSys::requestURI(), (string)eZSys::queryString() ),
+                                         array(), '302 Found', true, true );
+        }
+
         // A refused POST from a script (XHR, a JSON body, Accept: JSON) gets
         // the refusal as JSON, without running a module or the pagelayout
         if ( $this->formTokenRefusal !== null && ezpFormTokenRefusal::wantsJson() )
@@ -1103,6 +1116,28 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             );
         }
         return $moduleResult;
+    }
+
+    /**
+     * The address the browser is sent on to when the siteaccess of an address without language segment was chosen by
+     * its language: the index with the access path of that siteaccess (/ger), then the path that was asked for, as it
+     * was asked for, then the query.
+     *
+     * @param string $indexDir eZSys::indexDir() after the siteaccess is set, for example "/ger" or "/index.php/ger"
+     * @param string $requestURI eZSys::requestURI(), for example "/news/an-article" or ""
+     * @param string $queryString eZSys::queryString(), with the leading "?" or empty
+     * @return string
+     */
+    public static function languageRedirectURI( $indexDir, $requestURI, $queryString )
+    {
+        $target = rtrim( (string)$indexDir, '/' );
+        $path = trim( (string)$requestURI, '/' );
+        if ( $path !== '' )
+            $target .= '/' . $path;
+        if ( $target === '' )
+            $target = '/';
+        $query = ltrim( (string)$queryString, '?' );
+        return $query !== '' ? $target . '?' . $query : $target;
     }
 
     /**

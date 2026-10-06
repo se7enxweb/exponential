@@ -235,6 +235,7 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $access = $this->match( 'content/view/full/2' );
         $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $access, 'content/view/full/2', array( 'ger' ) );
         $this->assertSame( 'Accept-Language', $access['vary'] );
+        $this->assertTrue( $access['redirect'], 'an entry of HostUriMatchMapItems takes ger, so the kernel sends the browser there' );
 
         $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'fr;q=0.9, en-GB;q=0.95, de;q=0.1';
         $this->assertAccess( 'k1eng', eZSiteAccess::TYPE_HTTP_HOST_URI, $this->match( '' ), '', array( 'eng' ) );
@@ -250,6 +251,48 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $this->assertAccess( 'k1eng', eZSiteAccess::TYPE_HTTP_HOST_URI, $this->match( '' ), '', array( 'eng' ) );
         // Another host has no default entry
         $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( '', 'other.example.invalid' ) );
+    }
+
+    /** Without an entry for the segment the redirect would come back: the page is shown in place */
+    public function testHostUriDefaultRedirectsOnlyWhereAnEntryTakesTheSegment()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de';
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMapItems', array( 'www.example.invalid;eng;k1eng' ) );
+        $this->assertFalse( $this->match( '' )['redirect'] );
+
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMapItems', array( 'www.example.invalid;ger;k1ger' ) );
+        $this->assertTrue( $this->match( '' )['redirect'] );
+
+        $this->set( 'SiteAccessSettings', 'DefaultHostUriRedirect', 'disabled' );
+        $this->assertArrayNotHasKey( 'redirect', $this->match( '' ) );
+    }
+
+    public function testHostUriEntryExists()
+    {
+        $items = array( array( 'www.example.invalid', 'ger', 'k1ger' ), array( 'example.invalid', 'eng/sub', 'k1eng', 'start' ) );
+        $this->assertTrue( eZSiteAccess::hostUriEntryExists( $items, 'www.example.invalid', 'ger', 'strict' ) );
+        $this->assertFalse( eZSiteAccess::hostUriEntryExists( $items, 'www.example.invalid.test', 'ger', 'strict' ) );
+        $this->assertTrue( eZSiteAccess::hostUriEntryExists( $items, 'www.example.invalid.test', 'ger', 'start' ) );
+        $this->assertTrue( eZSiteAccess::hostUriEntryExists( $items, 'example.invalid.test', 'eng/sub', 'strict' ) );
+        $this->assertFalse( eZSiteAccess::hostUriEntryExists( $items, 'www.example.invalid', 'eng', 'strict' ) );
+    }
+
+    public static function languageRedirectProvider()
+    {
+        return array(
+            'the start page' => array( '/ger', '', '', '/ger' ),
+            'a URL alias stays one' => array( '/ger', '/news/ein-artikel', '', '/ger/news/ein-artikel' ),
+            'with the index file' => array( '/index.php/ger', '/content/view/full/2', '', '/index.php/ger/content/view/full/2' ),
+            'the query goes along' => array( '/ger/', '/suche', '?SearchText=x&page=2', '/ger/suche?SearchText=x&page=2' ),
+            'a query without path' => array( '/eng/sub', '', '?a=1', '/eng/sub?a=1' ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider( 'languageRedirectProvider' )]
+    public function testLanguageRedirectURI( $indexDir, $requestURI, $query, $expected )
+    {
+        $this->assertSame( $expected, ezpKernelWeb::languageRedirectURI( $indexDir, $requestURI, $query ) );
     }
 
     public static function acceptLanguageProvider()

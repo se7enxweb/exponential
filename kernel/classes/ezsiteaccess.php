@@ -325,6 +325,18 @@ class eZSiteAccess
                         {
                             $access = array_merge( $access, $default );
                             $access['type'] = $type;
+                            // The web kernel sends the browser on to the address with the segment, so the pages a
+                            // cache keeps have one language each; only when an entry of HostUriMatchMapItems takes
+                            // that address, else it would land here again
+                            if ( !empty( $default['vary'] ) && $default['uri_part']
+                                 && ( !$ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriRedirect' )
+                                      || $ini->variable( 'SiteAccessSettings', 'DefaultHostUriRedirect' ) !== 'disabled' )
+                                 && $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) )
+                            {
+                                $access['redirect'] = self::hostUriEntryExists( $ini->variableArray( 'SiteAccessSettings', 'HostUriMatchMapItems' ),
+                                                                                $host, implode( '/', $default['uri_part'] ),
+                                                                                $ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' ) );
+                            }
                             return $access;
                         }
                     }
@@ -481,6 +493,30 @@ class eZSiteAccess
         if ( $byLanguage )
             $access['vary'] = 'Accept-Language';
         return $access;
+    }
+
+    /**
+     * Whether an entry of HostUriMatchMapItems ($items, each split at ";") takes the address with the uri part $uri on
+     * $host, so a redirect there does not come back to the default.
+     *
+     * @param array $items
+     * @param string $host
+     * @param string $uri for example "ger"
+     * @param string $defaultMethod HostUriMatchMethodDefault
+     * @return bool
+     */
+    static function hostUriEntryExists( array $items, $host, $uri, $defaultMethod )
+    {
+        foreach ( $items as $item )
+        {
+            $item = (array)$item;
+            if ( !isset( $item[2] ) || trim( (string)$item[1], '/' ) !== $uri )
+                continue;
+            $method = isset( $item[3] ) && $item[3] !== '' ? (string)$item[3] : (string)$defaultMethod;
+            if ( self::hostMatches( $host, (string)$item[0], $method ) )
+                return true;
+        }
+        return false;
     }
 
     /**
