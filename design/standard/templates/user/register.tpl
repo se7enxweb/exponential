@@ -60,6 +60,11 @@
     </div>
 {/section}
 </form>
+{* The social login buttons of sevenx_authentication_2fa, where that extension is active and enables a provider *}
+{if ezmodule( 'user2fa/oauth' )}
+    {include uri='design:user2fa/exp_style.tpl'}
+    {include uri='design:user2fa/parts/social_buttons.tpl' context='register'}
+{/if}
 
 {literal}
 <script type="text/javascript">

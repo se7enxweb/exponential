@@ -7,6 +7,7 @@
 
 {include uri='design:mailpreferences/parts/account_link.tpl' context='profile'}
 {include uri='design:apikey/parts/account_link.tpl'}
+{if ezmodule( 'user2fa/setup' )}{include uri='design:user2fa/parts/account_link.tpl' style='box'}{/if}
 
 <div class="block">
   <label>{"Username"|i18n("design/standard/user")}</label><div class="labelbreak"></div>
