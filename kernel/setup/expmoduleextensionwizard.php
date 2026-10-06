@@ -579,7 +579,9 @@ class expModuleExtensionWizard extends expExtensionWizard
         $full = strpos( $value, '/' ) === 0 ? $value : $root . '/' . $value;
         $real = realpath( $full );
 
-        if ( $real === false || strpos( $real, $root ) !== 0 )
+        // Inside the root directory, not only starting like it: /x/site-old is
+        // not inside /x/site
+        if ( $real === false || strpos( $real, $root . '/' ) !== 0 )
             return '';
 
         return substr( $real, strlen( $root ) + 1 );
