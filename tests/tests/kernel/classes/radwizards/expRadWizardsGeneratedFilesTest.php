@@ -230,4 +230,38 @@ class expRadWizardsGeneratedFilesTest extends PHPUnit\Framework\TestCase
         $problems = $class::problems( $class::settings( $input ) );
         $this->assertArrayHasKey( 'licence', $problems );
     }
+
+    /**
+     * A class that parses can still fail to load: a method incompatible with the one it overrides, an abstract
+     * method left out, a parent or interface that does not exist. Each generated class is loaded on top of the
+     * kernel's autoloads in a php process of its own (a fatal error there is reported, not the end of this run).
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('wizardProvider')]
+    public function testGeneratedClassesLoadOnTopOfTheKernel( $class, array $input )
+    {
+        if ( !function_exists( 'exec' ) )
+            $this->markTestSkipped( 'exec() is disabled' );
+        $input = self::resolve( $input );
+        $files = $class::files( $class::settings( $input + array( 'parts' => self::allParts( $class ) ) ) );
+        $loader = $this->cache . '/load.php';
+        file_put_contents( $loader, "<?php\nchdir( \$argv[1] );\nrequire 'vendor/autoload.php';\n"
+                                  . "\$before = get_declared_classes();\nrequire \$argv[2];\n"
+                                  . "foreach ( array_diff( get_declared_classes(), \$before ) as \$c ) { \$r = new ReflectionClass( \$c ); if ( \$r->isAbstract() && !\$r->isInterface() ) { echo \"ABSTRACT \$c\\n\"; } }\n"
+                                  . "echo \"LOADED\\n\";\n" );
+        $loaded = 0;
+        foreach ( $files as $path => $contents )
+        {
+            if ( substr( $path, -4 ) !== '.php' || !preg_match( '/^(abstract |final )?class \w+/m', $contents ) )
+                continue;
+            $file = $this->cache . '/' . str_replace( '/', '_', $path );
+            file_put_contents( $file, $contents );
+            $output = array();
+            exec( escapeshellarg( PHP_BINARY ) . ' ' . escapeshellarg( $loader ) . ' ' . escapeshellarg( expRadWizardTestHelper::root() )
+                  . ' ' . escapeshellarg( $file ) . ' 2>&1', $output, $status );
+            $this->assertSame( 0, $status, "$path: " . implode( "\n", $output ) );
+            $this->assertSame( array( 'LOADED' ), $output, "$path: " . implode( "\n", $output ) );
+            $loaded++;
+        }
+        $this->assertGreaterThan( 0, $loaded );
+    }
 }
