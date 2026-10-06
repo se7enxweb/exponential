@@ -472,6 +472,7 @@ class Edit extends \Exponential\Runnable\ModuleView
 
                     $tpl->setVariable( 'module', $Module );
                     $tpl->setVariable( 'class', $class );
+                    $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
 
                     $Result = array();
                     $Result['content'] = $tpl->fetch( 'design:class/select_language.tpl' );
