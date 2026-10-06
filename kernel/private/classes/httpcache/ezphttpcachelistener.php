@@ -259,7 +259,12 @@ class ezpHttpCacheListener
             'uriMap' => $items( 'URIMatchMapItems' ),
             'hostType' => (string)$var( 'SiteAccessSettings', 'HostMatchType' ),
             'hostMap' => $items( 'HostMatchMapItems' ),
+            'hostMethod' => (string)$var( 'SiteAccessSettings', 'HostMatchMethod', 'strict' ),
             'hostUri' => $items( 'HostUriMatchMapItems' ),
+            // Where one of these applies, the browser's language may choose the siteaccess (or redirect), which
+            // the early exit cannot know
+            'defaultHostUri' => array_values( array_filter( $items( 'DefaultHostUriMatchMapItems' ),
+                                                            function ( $item ) { return isset( $item[2] ) && trim( $item[2] ) !== ''; } ) ),
             'hostUriMethod' => (string)$var( 'SiteAccessSettings', 'HostUriMatchMethodDefault', 'strict' ),
         );
     }
