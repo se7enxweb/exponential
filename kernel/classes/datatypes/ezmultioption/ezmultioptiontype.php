@@ -79,7 +79,7 @@ class eZMultiOptionType extends eZDataType
 
                     if ( trim( $optionValueArray[$i] ) != "" )
                     {
-                        if ( strlen( $optionAdditionalPriceArray[$i] ) && !preg_match( "#^[-|+]?[0-9]+(\.){0,1}[0-9]{0,2}$#", $optionAdditionalPriceArray[$i] ) )
+                        if ( strlen( $optionAdditionalPriceArray[$i] ) && !preg_match( "#^[-+]?[0-9]+(\.){0,1}[0-9]{0,2}$#", $optionAdditionalPriceArray[$i] ) )
                         {
                             $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                                  'The additional price for the multioption value is not valid.' ) );

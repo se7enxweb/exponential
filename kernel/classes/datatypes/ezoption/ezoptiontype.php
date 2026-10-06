@@ -102,7 +102,7 @@ class eZOptionType extends eZDataType
                     }
                     if ( isset( $optionAdditionalPriceList[$i] ) &&
                          strlen( $optionAdditionalPriceList[$i] ) &&
-                         !preg_match( "#^[-|+]?[0-9]+(\.){0,1}[0-9]{0,2}$#", $optionAdditionalPriceList[$i] ) )
+                         !preg_match( "#^[-+]?[0-9]+(\.){0,1}[0-9]{0,2}$#", $optionAdditionalPriceList[$i] ) )
                     {
                         $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                              'The Additional price value is not valid.' ) );

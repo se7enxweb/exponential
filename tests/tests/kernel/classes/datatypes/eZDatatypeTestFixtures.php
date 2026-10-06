@@ -4,7 +4,7 @@
  * class edit views do, without a database:
  *
  *  - eZDatatypeTestObjectAttribute: a content object attribute whose class attribute is held in memory (the real
- *    one fetches it by id) and whose store() only counts calls.
+ *    one fetches it by id) and whose store() lets the datatype store its content, counts the call and writes nothing.
  *  - eZDatatypeTestClassAttribute: a class attribute whose store() only counts calls.
  *  - eZDatatypeTestNoDatabase: put in place of the database while a test runs, when no other test has opened
  *    one, so a datatype that queries is noticed at once (it throws) instead of reaching alpha's database here
@@ -29,9 +29,15 @@ class eZDatatypeTestObjectAttribute extends eZContentObjectAttribute
         return $this->testClassAttribute;
     }
 
+    /**
+     * What the real store() does before it writes the row: the datatype puts its content into the data fields.
+     */
     function store( $fieldFilters = null )
     {
         $this->storeCount++;
+        $dataType = $this->testClassAttribute->dataType();
+        if ( $dataType )
+            $dataType->storeObjectAttribute( $this );
     }
 
     function storeData()
