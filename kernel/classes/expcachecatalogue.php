@@ -147,7 +147,7 @@ class expCacheCatalogue
             'audit_available' => $audit['available'],
             'audit_who' => $audit['who'],
             'audit_file' => isset( $audit['file'] ) ? $audit['file'] : '',
-            'audit_records' => count( $audit['records'] ),
+            'audit_records' => count( $audit['records'] ) . '/' . ( isset( $audit['from_file'] ) ? $audit['from_file'] : 0 ),
             'cleared_now' => $options['cleared_now'],
             'measured' => (bool)$options['sizes'],
             'measured_all' => $complete,
@@ -199,13 +199,16 @@ class expCacheCatalogue
             $allowed = expAuditConsole::allowedChannels();
             $out['who'] = expAuditConsole::channelAllowed( 'system', $allowed );
             $seen = array();
-            // what the indexer has not reached yet: the newest system file, read from its end
+            // what the indexer has not reached yet: the newest system file of every live directory, read from its end
             $config = expAuditConfig::get();
-            $reader = new expAuditReader( self::auditLiveDir( $config['logDir'] ) );
-            $channels = $reader->channels();
-            $out['file'] = isset( $channels['system']['newest'] ) ? expSystemReportMask::path( $reader->dir() . '/' . $channels['system']['newest'], class_exists( 'eZSys' ) ? eZSys::rootDir() : '' ) : '';
-            if ( isset( $channels['system']['newest'] ) )
+            $files = array();
+            foreach ( self::auditLiveDirs( $config['logDir'] ) as $dir )
             {
+                $reader = new expAuditReader( $dir );
+                $channels = $reader->channels();
+                if ( !isset( $channels['system']['newest'] ) )
+                    continue;
+                $files[] = expSystemReportMask::path( $reader->dir() . '/' . $channels['system']['newest'], class_exists( 'eZSys' ) ? eZSys::rootDir() : '' );
                 $n = 0;
                 foreach ( $reader->linesBackwards( $reader->dir() . '/' . $channels['system']['newest'] ) as $line )
                 {
@@ -218,9 +221,11 @@ class expCacheCatalogue
                     {
                         $seen[$norm['id']] = true;
                         $out['records'][] = $norm;
+                        $out['from_file']++;
                     }
                 }
             }
+            $out['file'] = implode( ', ', $files );
             // older clears: one query of the index
             if ( expAuditConsole::indexUsable() )
             {
@@ -251,29 +256,41 @@ class expCacheCatalogue
     }
 
     /**
-     * The directory the audit writes this siteaccess's records to: [AuditSettings] LogDir under the var directory of
-     * the request. A persistent Velocity worker can hold an audit configuration built before the siteaccess was
-     * known (var/ instead of var/<site>/), whose files stop at the worker's start; the request's own var
-     * directory is used when it has the files.
+     * The directories audit records are written to now: the configured one (expAuditConfig), [AuditSettings] LogDir
+     * under the request's var directory and under var/ itself. Records are split between them: a command without a
+     * siteaccess writes under var/, a site under var/<site>/, and a persistent Velocity worker can hold either
+     * from before its siteaccess was known. Only directories that exist are returned.
      *
      * @param string $configured the logDir of expAuditConfig::get()
-     * @return string
+     * @return string[]
      */
-    public static function auditLiveDir( $configured )
+    public static function auditLiveDirs( $configured )
     {
-        if ( !class_exists( 'eZSys' ) || !class_exists( 'eZINI' ) )
-            return $configured;
-        $ini = eZINI::instance( 'audit.ini' );
-        $logDir = $ini->hasVariable( 'AuditSettings', 'LogDir' ) ? trim( (string)$ini->variable( 'AuditSettings', 'LogDir' ) ) : 'log/audit';
-        if ( $logDir === '' || $logDir[0] === '/' )
-            return $configured;
-        $var = rtrim( (string)eZSys::varDirectory(), '/' );
-        if ( $var === '' )
-            return $configured;
-        if ( $var[0] !== '/' )
-            $var = rtrim( (string)eZSys::rootDir(), '/' ) . '/' . $var;
-        $candidate = $var . '/' . rtrim( $logDir, '/' );
-        return is_dir( $candidate ) ? $candidate : $configured;
+        $dirs = array( rtrim( (string)$configured, '/' ) );
+        if ( class_exists( 'eZSys' ) && class_exists( 'eZINI' ) )
+        {
+            $ini = eZINI::instance( 'audit.ini' );
+            $logDir = $ini->hasVariable( 'AuditSettings', 'LogDir' ) ? trim( (string)$ini->variable( 'AuditSettings', 'LogDir' ) ) : 'log/audit';
+            if ( $logDir !== '' && $logDir[0] !== '/' )
+            {
+                $root = rtrim( (string)eZSys::rootDir(), '/' );
+                foreach ( array( (string)eZSys::varDirectory(), 'var' ) as $var )
+                {
+                    $var = rtrim( $var, '/' );
+                    if ( $var === '' )
+                        continue;
+                    $dirs[] = ( $var[0] === '/' ? $var : $root . '/' . $var ) . '/' . rtrim( $logDir, '/' );
+                }
+            }
+        }
+        $out = array();
+        foreach ( $dirs as $dir )
+        {
+            $real = realpath( $dir );
+            if ( $real !== false && is_dir( $real ) && !in_array( $real, $out, true ) )
+                $out[] = $real;
+        }
+        return $out;
     }
 
     /**
@@ -293,9 +310,11 @@ class expCacheCatalogue
             return null;
         $actor = isset( $rec['actor'] ) && is_array( $rec['actor'] ) ? $rec['actor'] : array();
         $shell = isset( $actor['cli'] ) || ( isset( $rec['request']['engine'] ) && $rec['request']['engine'] === 'cli' );
-        $name = isset( $actor['login'] ) ? (string)$actor['login'] : (string)$login;
-        if ( $name === '' && isset( $actor['cli']['os_user'] ) )
+        // a shell names its operating system user (its eZ user is the anonymous one the script runs as)
+        if ( isset( $actor['cli']['os_user'] ) && (string)$actor['cli']['os_user'] !== '' )
             $name = 'os:' . $actor['cli']['os_user'];
+        else
+            $name = isset( $actor['login'] ) ? (string)$actor['login'] : (string)$login;
         $asked = isset( $rec['object']['id'] ) ? (string)$rec['object']['id'] : '';
         return array(
             'id' => isset( $rec['id'] ) ? (string)$rec['id'] : md5( json_encode( $rec ) ),
@@ -412,12 +431,14 @@ class expCacheCatalogue
         $last = isset( $this->options['last_cleared'][$id] ) ? (int)$this->options['last_cleared'][$id] : 0;
         $who = '';
         $shell = false;
-        // the same clear: the expiry and the record's time can be several seconds apart (seen under Velocity), so a
-        // record within half a minute of the expiry names who cleared
-        if ( isset( $this->options['audit'][$id] ) && (int)$this->options['audit'][$id]['time'] >= $last - 30 )
+        $source = $last ? 'expiry' : '';
+        // the same clear: the expiry and the record's time are a moment apart, so a record up to five seconds
+        // before the expiry names who cleared
+        if ( isset( $this->options['audit'][$id] ) && (int)$this->options['audit'][$id]['time'] >= $last - 5 )
         {
             $last = max( $last, (int)$this->options['audit'][$id]['time'] );
             $who = (string)$this->options['audit'][$id]['who'];
+            $source = 'audit';
             $shell = !empty( $this->options['audit'][$id]['shell'] );
         }
         // cleared by this very request: its audit record is written when the request ends
@@ -426,6 +447,7 @@ class expCacheCatalogue
             $last = (int)$this->options['time'];
             $who = isset( $this->options['cleared_now']['who'] ) ? (string)$this->options['cleared_now']['who'] : '';
             $shell = false;
+            $source = 'this request';
         }
         return array(
             'id' => $id,
@@ -446,6 +468,8 @@ class expCacheCatalogue
             'last_cleared_text' => $last ? $this->ago( $last ) : '',
             'last_cleared_by' => $who,
             'last_cleared_shell' => $shell,
+            'last_cleared_source' => $source,
+            'last_audit' => isset( $this->options['audit'][$id]['time'] ) ? (int)$this->options['audit'][$id]['time'] : 0,
             'restart' => self::needsVelocityRestart( $id ),
             'response_cache' => self::needsResponseCacheClear( $id ),
             'command' => self::command( array( $id ) ),
@@ -564,7 +588,7 @@ class expCacheCatalogue
         $o['audit'] = (bool)$this->options['audit_available'];
         $o['audit_who'] = (bool)$this->options['audit_who'];
         $o['audit_file'] = isset( $this->options['audit_file'] ) ? (string)$this->options['audit_file'] : '';
-        $o['audit_records'] = isset( $this->options['audit_records'] ) ? (int)$this->options['audit_records'] : 0;
+        $o['audit_records'] = isset( $this->options['audit_records'] ) ? (string)$this->options['audit_records'] : '';
         return $o;
     }
 

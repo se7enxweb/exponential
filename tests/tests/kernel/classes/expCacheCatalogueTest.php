@@ -9,9 +9,10 @@
  *          out except "velocity", which also holds the server's own caches
  *  CC-05 - The overview counts caches, enabled and disabled, sums sizes and takes the latest clear
  *  CC-06 - consequences() names what a clear reaches and whether Velocity needs a restart afterwards
- *  CC-07 - Audit records are normalised: time, how, asked, cleared ids, who (only when allowed), shell or page
+ *  CC-07 - Audit records are normalised: time, how, asked, cleared ids, who (only when allowed; a shell by its
+ *          operating system user, not the anonymous user it runs as), shell or page
  *  CC-08 - The newest clear per cache from records: cleared ids, else asked ids or tags, else all; merged with the
- *          kernel's expiry timestamps (a record within half a minute of the expiry is the same clear), shown as "just
+ *          kernel's expiry timestamps (a record up to five seconds before the expiry is the same clear), shown as "just
  *          now", minutes or hours ago, with who cleared; this request's own clear before its record is written
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -163,7 +164,7 @@ class expCacheCatalogueTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'editor', $r['who'] );
         $this->assertFalse( $r['shell'] );
         $shell = expCacheCatalogue::normaliseRecord( $this->record( 1000, array( 'how' => 'all', 'id' => 'all' ), null,
-                                                                    array( 'cli' => array( 'os_user' => 'root' ) ), 'cli' ) );
+                                                                    array( 'cli' => array( 'os_user' => 'root' ), 'login' => 'anonymous', 'user_id' => 10 ), 'cli' ) );
         $this->assertSame( 'os:root', $shell['who'] );
         $this->assertTrue( $shell['shell'] );
         $this->assertSame( array(), $shell['asked'] );
@@ -216,11 +217,11 @@ class expCacheCatalogueTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', $this->find( $c, 'sortkey' )['last_cleared_text'] );
         $this->assertSame( '15 minutes ago', $c->ago( $now - 900 ) );
 
-        // the same clear: a record up to half a minute before the expiry names who cleared; an older one does not
+        // the same clear: a record up to five seconds before the expiry names who cleared; an older one does not
         $near = new expCacheCatalogue( array( $this->item( 'content', 'Content view cache', array( 'content' ) ),
                                               $this->item( 'sortkey', 'Sort key cache', array( 'content' ) ) ),
                                        array( 'time' => 5000, 'last_cleared' => array( 'content' => 4990, 'sortkey' => 4990 ),
-                                              'audit' => array( 'content' => array( 'time' => 4970, 'who' => 'admin', 'shell' => false ),
+                                              'audit' => array( 'content' => array( 'time' => 4987, 'who' => 'admin', 'shell' => false ),
                                                                 'sortkey' => array( 'time' => 4900, 'who' => 'admin', 'shell' => false ) ) ) );
         $this->assertSame( 'admin', $this->find( $near, 'content' )['last_cleared_by'] );
         $this->assertSame( 4990, $this->find( $near, 'content' )['last_cleared'] );
