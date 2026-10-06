@@ -786,7 +786,7 @@ class expContentJob
     {
         if ( class_exists( 'eZSys' ) && !is_array( self::$settings ) )
             return eZSys::rootDir();
-        return dirname( __DIR__, 2 );
+        return defined( 'EXP_ROOT_DIR' ) && strncmp( __DIR__, 'phar://', 7 ) === 0 ? EXP_ROOT_DIR : dirname( __DIR__, 3 );
     }
 
     /**

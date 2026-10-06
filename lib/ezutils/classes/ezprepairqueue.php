@@ -51,7 +51,7 @@ class ezpRepairQueue
 
     public static function root()
     {
-        return dirname( __DIR__, 3 );
+        return defined( 'EXP_ROOT_DIR' ) && strncmp( __DIR__, 'phar://', 7 ) === 0 ? EXP_ROOT_DIR : dirname( __DIR__, 3 );
     }
 
     /** @return array Enabled (bool), KeyHash, Composer */

@@ -114,7 +114,7 @@ class eZDBInterface
 
     private static function sqlProfilePath( $file )
     {
-        return dirname( __DIR__, 3 ) . '/var/tmp/' . $file;
+        return ( defined( 'EXP_ROOT_DIR' ) && strncmp( __DIR__, 'phar://', 7 ) === 0 ? EXP_ROOT_DIR : dirname( __DIR__, 3 ) ) . '/var/tmp/' . $file;
     }
 
     const BINDING_NO = 0;

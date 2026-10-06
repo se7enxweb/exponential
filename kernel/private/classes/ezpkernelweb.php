@@ -1752,7 +1752,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      */
     private static function writeOPcacheProfile()
     {
-        $dir = dirname( __DIR__, 3 ) . '/var/tmp/';
+        $dir = ( defined( 'EXP_ROOT_DIR' ) && strncmp( __DIR__, 'phar://', 7 ) === 0 ? EXP_ROOT_DIR : dirname( __DIR__, 3 ) ) . '/var/tmp/';
         if ( !file_exists( $dir . 'opcache_profile.on' ) || !function_exists( 'opcache_get_status' ) )
             return;
         $status = @opcache_get_status( true );

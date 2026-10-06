@@ -107,7 +107,7 @@ class expMongoDB extends eZDBInterface
     /** An absolute path under the installation's var/tmp. */
     static function profilePath( $name )
     {
-        return dirname( __DIR__, 3 ) . '/var/tmp/' . $name;
+        return ( defined( 'EXP_ROOT_DIR' ) && strncmp( __DIR__, 'phar://', 7 ) === 0 ? EXP_ROOT_DIR : dirname( __DIR__, 3 ) ) . '/var/tmp/' . $name;
     }
 
     static function writeProfile()
