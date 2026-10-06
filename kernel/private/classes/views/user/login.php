@@ -62,7 +62,8 @@ class Login extends \Exponential\Runnable\ModuleView
         {
             $userLogin = $Module->actionParameter( 'UserLogin' );
             $userPassword = $Module->actionParameter( 'UserPassword' );
-            $userRedirectURI = $Module->actionParameter( 'UserRedirectURI' );
+            // RedirectURI is optional: asked for only when posted, so a login without it is not logged as an error
+            $userRedirectURI = $Module->hasActionParameter( 'UserRedirectURI' ) ? $Module->actionParameter( 'UserRedirectURI' ) : '';
             // A form can post any of these as an array; treat that as not given
             if ( !is_string( $userLogin ) ) $userLogin = '';
             if ( !is_string( $userPassword ) ) $userPassword = '';
