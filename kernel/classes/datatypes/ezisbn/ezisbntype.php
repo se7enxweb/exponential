@@ -114,7 +114,9 @@ class eZISBNType extends eZDataType
             return eZInputValidator::STATE_ACCEPTED;
         }
 
-        if ( preg_match( "#^[0-9]{1,2}\-[0-9]+\-[0-9]+\-[0-9X]{1}$#", $isbn ) )
+        // The registration group of an ISBN-10 has one to five digits (953 is
+        // Croatia, 99936 Bhutan); only one or two were accepted
+        if ( preg_match( "#^[0-9]{1,5}\-[0-9]+\-[0-9]+\-[0-9X]{1}$#", $isbn ) )
         {
             $digits = str_replace( "-", "", $isbn );
             if ( strlen( $digits ) == 10 )

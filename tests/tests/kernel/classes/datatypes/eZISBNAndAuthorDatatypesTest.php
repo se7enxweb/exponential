@@ -33,6 +33,8 @@ class eZISBNAndAuthorDatatypesTest extends eZDatatypeTestCase
             'valid' => array( '0', '306', '40615', '2', eZInputValidator::STATE_ACCEPTED ),
             'check digit X' => array( '0', '8044', '2957', 'x', eZInputValidator::STATE_ACCEPTED ),
             'two digit group' => array( '91', '7054', '940', '0', eZInputValidator::STATE_ACCEPTED ),
+            'three digit group (Croatia)' => array( '953', '157', '105', '8', eZInputValidator::STATE_ACCEPTED ),
+            'five digit group (Bhutan)' => array( '99936', '0', '000', '8', eZInputValidator::STATE_ACCEPTED ),
             'six digit group' => array( '999360', '00', '0', '7', eZInputValidator::STATE_INVALID ),
             'bad checksum' => array( '0', '306', '40615', '3', eZInputValidator::STATE_INVALID ),
             'too short' => array( '0', '306', '4061', '2', eZInputValidator::STATE_INVALID ),
