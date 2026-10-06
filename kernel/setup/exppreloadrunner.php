@@ -737,9 +737,16 @@ class expPreloadRunner
 
         // /bold and /bold/ are one page, and were being fetched and stored as
         // two. The host root keeps its slash because there is nothing else of
-        // it to keep.
+        // it to keep. The slash is taken off the path, not off the url: the
+        // last slash of the url can be in its query (/news/?next=/a/b), and
+        // cutting there lost the query, or half of it
         if ( $path !== '/' && substr( $path, -1 ) === '/' )
-            $url = substr( $url, 0, strrpos( $url, '/' ) );
+        {
+            $query = strpos( $url, '?' );
+            $head = $query === false ? $url : substr( $url, 0, $query );
+            $tail = $query === false ? '' : substr( $url, $query );
+            $url = substr( $head, 0, -1 ) . $tail;
+        }
 
         return $url;
     }
