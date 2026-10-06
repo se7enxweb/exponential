@@ -120,11 +120,35 @@
 .exp-bm .exp-bm-nav span.current .exp-count { background: #fff; color: var(--bm-ink); }
 .exp-bm .exp-bm-nav svg { flex: 0 0 auto; color: var(--bm-muted); }
 .exp-bm .exp-bm-nav .is-sep { height: 1px; margin: 6px 4px; background: var(--bm-line); }
-.exp-bm .exp-bm-nav .d1 > * { padding-left: 24px; }
-.exp-bm .exp-bm-nav .d2 > * { padding-left: 38px; }
-.exp-bm .exp-bm-nav .d3 > * { padding-left: 52px; }
-.exp-bm .exp-bm-nav .d4 > * { padding-left: 66px; }
-.exp-bm .exp-bm-nav .is-drop > * { outline: 2px dashed var(--bm-accent); outline-offset: -2px; background: var(--bm-accent-soft); }
+.exp-bm .exp-bm-nav li { position: relative; display: flex; align-items: center; gap: 4px; min-width: 0; }
+.exp-bm .exp-bm-nav li > a, .exp-bm .exp-bm-nav li > span.current { flex: 1 1 auto; min-width: 0; }
+.exp-bm .exp-bm-nav li.d1 { padding-left: 14px; }
+.exp-bm .exp-bm-nav li.d2 { padding-left: 28px; }
+.exp-bm .exp-bm-nav li.d3 { padding-left: 42px; }
+.exp-bm .exp-bm-nav li.d4 { padding-left: 56px; }
+/* dropping a bookmark on a folder moves it into the folder: the whole entry is outlined and says so */
+.exp-bm .exp-bm-nav li.is-drop > a, .exp-bm .exp-bm-nav li.is-drop > span.current { outline: 2px dashed var(--bm-accent); outline-offset: -2px; background: var(--bm-accent-soft); }
+.exp-bm .exp-bm-nav li.is-drop::after { content: attr(data-drop-label); position: absolute; right: 6px; top: -10px; z-index: 2; padding: 1px 8px; border-radius: 999px; background: var(--bm-accent); color: #fff; font-size: 11.5px; font-weight: 650; pointer-events: none; }
+/* arranging folders: a line where the folder will go */
+.exp-bm .exp-bm-nav li.is-before { box-shadow: inset 0 3px 0 var(--bm-accent); }
+.exp-bm .exp-bm-nav li.is-after { box-shadow: inset 0 -3px 0 var(--bm-accent); }
+.exp-bm .exp-bm-nav li.is-dragged { opacity: .5; }
+.exp-bm .exp-bm-nav li.is-moved > a, .exp-bm .exp-bm-nav li.is-moved > span.current { box-shadow: 0 0 0 2px var(--bm-ring); }
+
+/* Arranging bookmarks: the grip (drag it, or the arrow keys), the place a card moves to, the position field */
+.exp-bm .exp-grip { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 26px; min-height: 30px; margin: 0; padding: 0; border: 1px dashed #aab1bd; border-radius: 8px; background: var(--bm-soft); color: var(--bm-muted); font-size: 15px; line-height: 1; cursor: grab; touch-action: none; }
+.exp-bm .exp-grip:hover, .exp-bm .exp-grip:focus-visible { border-style: solid; border-color: var(--bm-accent); color: var(--bm-accent-hover); }
+.exp-bm .exp-grip:active { cursor: grabbing; }
+.exp-bm .exp-bm-nav .exp-grip { width: 22px; min-height: 26px; font-size: 13px; }
+.exp-bm .exp-cards.is-arranging { outline: 2px dashed var(--bm-edge); outline-offset: 4px; border-radius: var(--bm-radius); }
+.exp-bm .exp-card.is-moved { border-color: var(--bm-accent); box-shadow: 0 0 0 2px var(--bm-ring); }
+.exp-bm .exp-bm-arrange { margin: 0 0 12px; }
+.exp-bm .exp-bm-cardfoot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 18px; margin: 8px 0 0; padding-left: 30px; }
+.exp-bm .exp-bm-cardfoot > .exp-facts, .exp-bm .exp-bm-cardfoot > .exp-bm-note { flex: 1 1 320px; margin: 0; padding-left: 0; }
+.exp-bm .exp-bm-position { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 0; font-size: 13px; }
+.exp-bm .exp-bm-position label { font-weight: 650; color: var(--bm-ink); }
+.exp-bm .exp-bm-position input[type="number"] { width: 4.6em; min-height: 30px; padding: 2px 6px; border: 1px solid var(--bm-field); border-radius: 8px; background: #fff; color: var(--bm-ink); font: inherit; }
+.exp-bm .exp-bm-position input[type="number"]:focus { border-color: var(--bm-accent); outline: 3px solid var(--bm-ring); outline-offset: 0; }
 
 /* Disclosures: forms that open in place, without javascript */
 .exp-bm details.exp-disclosure { margin: 0; padding: 0; border: 1px solid var(--bm-line); border-radius: var(--bm-radius); background: var(--bm-card); }
@@ -216,7 +240,7 @@
 @media (max-width: 600px) {
     .exp-bm .exp-card { padding: 12px; }
     .exp-bm .exp-facts { grid-template-columns: minmax(0, 1fr); padding-left: 0; }
-    .exp-bm .exp-bm-note { padding-left: 0; }
+    .exp-bm .exp-bm-note, .exp-bm .exp-bm-cardfoot { padding-left: 0; }
     .exp-bm .exp-card-head .exp-actions { width: 100%; }
     .exp-bm .exp-btn { white-space: normal; text-align: center; }
     .exp-bm .exp-bottombar > * { flex: 1 1 100%; }

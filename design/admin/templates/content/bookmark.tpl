@@ -5,10 +5,14 @@
    a search and an order, then one card per bookmark with its type, where it is, when it was last modified and
    whether it is hidden or no longer there, and a bar to move or remove the selected bookmarks.
 
-   Everything comes from the view (bookmark_page, see expBookmarkPage) and works without javascript; the script
-   adds Select all, the selection count and, as an extra, dragging bookmarks onto a folder. Every POST name of the
-   page is the one it always had (RemoveButton, AddButton, DeleteIDArray, MoveSelectedButton, FolderID,
-   BookmarkFolderAction ...). The same file is in design/admin and design/admin4. Guide: doc/guides/bookmarks.md *}
+   Everything comes from the view (bookmark_page, see expBookmarkPage) and works without javascript: in the user's own
+   order each card has Move up, Move down and a position field. The script adds Select all, the selection count and
+   arranging by drag and drop: a grip per card and per folder (dragged, or the up and down arrow keys on it) saves
+   the new order of one folder with one POST (BookmarkOrderButton, OrderType, OrderFolderID, OrderIDs), and dropping
+   a bookmark on a folder of the folder list moves it there. Every POST name of the page is the one it always had
+   (RemoveButton, AddButton, DeleteIDArray, MoveSelectedButton, FolderID, BookmarkFolderAction ...), with
+   BookmarkShiftButton, BookmarkOrderButton and BookmarkPosition* added. The same file is in design/admin and
+   design/admin4. Guide: doc/guides/bookmarks.md *}
 {include uri='design:content/bookmark_exp_style.tpl'}
 {def $bp = $bookmark_page
      $summary = $bp.summary
@@ -55,12 +59,12 @@
 <div class="exp-bm-side">
 <nav class="exp-panel" aria-labelledby="bm-folders-title">
     <div class="exp-panel-head"><h2 class="exp-h2" id="bm-folders-title">{'Folders'|i18n( 'design/admin/content/bookmark' )}</h2></div>
-    <ul class="exp-bm-nav" id="bm-folder-nav">
+    <ul class="exp-bm-nav" id="bm-folder-nav" data-drop-label="{'Move into this folder'|i18n( 'design/admin/content/bookmark' )|wash}">
         <li>{if eq( $bp.scope_key, 'all' )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark', cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}<span class="exp-bm-navname">{'All bookmarks'|i18n( 'design/admin/content/bookmark' )}</span> <span class="exp-count">{$summary.bookmarks}</span>{if eq( $bp.scope_key, 'all' )}</span>{else}</a>{/if}</li>
         <li data-folder="0">{if eq( $bp.scope_key, 'top' )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark/(folder)/top', cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}<span class="exp-bm-navname">{'Not in a folder'|i18n( 'design/admin/content/bookmark' )}</span> <span class="exp-count">{$summary.unfiled}</span>{if eq( $bp.scope_key, 'top' )}</span>{else}</a>{/if}</li>
         {if $bp.folders}<li class="is-sep" role="presentation"></li>{/if}
         {foreach $bp.folders as $folder}
-        <li class="d{min( $folder.depth, 4 )}" data-folder="{$folder.id}">{if and( $current, eq( $current.id, $folder.id ) )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark/(folder)/', $folder.id, cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}{$folder_icon}<span class="exp-bm-navname">{$folder.name|wash}</span> <span class="exp-count" title="{'%count bookmarks, with the folders inside'|i18n( 'design/admin/content/bookmark',, hash( '%count', $folder.count ) )}">{$folder.count}</span>{if and( $current, eq( $current.id, $folder.id ) )}</span>{else}</a>{/if}</li>
+        <li class="d{min( $folder.depth, 4 )}" data-folder="{$folder.id}" data-parent="{$folder.parent_id}"><span class="exp-grip exp-bm-fgrip" hidden draggable="true" data-folder="{$folder.id}" aria-label="{'Arrange folder %name: drag it, or press the up and down arrow keys'|i18n( 'design/admin/content/bookmark',, hash( '%name', $folder.name ) )|wash}" title="{'Drag to arrange, or use the up and down arrow keys'|i18n( 'design/admin/content/bookmark' )}" role="button" tabindex="0"><span aria-hidden="true">&#10303;</span></span>{if and( $current, eq( $current.id, $folder.id ) )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark/(folder)/', $folder.id, cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}{$folder_icon}<span class="exp-bm-navname">{$folder.name|wash}</span> <span class="exp-count" title="{'%count bookmarks, with the folders inside'|i18n( 'design/admin/content/bookmark',, hash( '%count', $folder.count ) )}">{$folder.count}</span>{if and( $current, eq( $current.id, $folder.id ) )}</span>{else}</a>{/if}</li>
         {/foreach}
     </ul>
     {if $bp.folders|not}<p class="exp-help exp-mt">{'No folders yet. Create one below, then move bookmarks into it.'|i18n( 'design/admin/content/bookmark' )}</p>{/if}
@@ -204,6 +208,8 @@
 
 {* ---- The bookmarks ---- *}
 <form name="bookmarkaction" id="bm-list-form" method="post" action={$bp.here|ezurl}>
+{* the first button of the form: Enter in a position field moves that bookmark, never adds items *}
+<button type="submit" class="exp-sr" name="BookmarkPositionDefault" value="1" tabindex="-1" aria-hidden="true">{'Move'|i18n( 'design/admin/content/bookmark' )}</button>
 <section aria-labelledby="bm-list-title">
 <div class="exp-section-head">
     <h2 class="exp-h2" id="bm-list-title">{if $bp.search|ne( '' )}{'Bookmarks matching “%search” in %scope'|i18n( 'design/admin/content/bookmark',, hash( '%search', $bp.search, '%scope', $scope_title ) )|wash}{else}{$scope_title|wash}{/if}</h2>
@@ -213,6 +219,15 @@
     <button type="submit" class="exp-btn exp-btn-primary exp-btn-small exp-bm-addtop" name="AddButton" value="1" title="{if ne( $bp.scope_key, 'all' )}{'Items you add go into this folder.'|i18n( 'design/admin/content/bookmark' )}{else}{'Add items to your personal bookmark list.'|i18n( 'design/admin/content/bookmark' )}{/if}">{'Add items'|i18n( 'design/admin/content/bookmark' )}</button>
     {/if}
 </div>
+{if $bp.count|gt( 0 )}
+{if $bp.order_buttons}
+<p class="exp-help exp-bm-arrange" id="bm-grip-help">{'To arrange, drag a bookmark by its grip to a new place in its folder, or drop it on a folder in the folder list to move it there. On a focused grip the up and down arrow keys move it one place; the position field moves it anywhere in its folder, also across pages.'|i18n( 'design/admin/content/bookmark' )}</p>
+{elseif $bp.search|ne( '' )}
+<p class="exp-help exp-bm-arrange">{'Clear the search to arrange your bookmarks.'|i18n( 'design/admin/content/bookmark' )} <a href={$bp.own_path|ezurl}>{'Your order'|i18n( 'design/admin/content/bookmark' )}</a></p>
+{else}
+<p class="exp-help exp-bm-arrange"><a href={$bp.own_path|ezurl}>{'Switch to Your order to arrange'|i18n( 'design/admin/content/bookmark' )}</a>. {'Dropping a bookmark on a folder in the folder list moves it there in every order.'|i18n( 'design/admin/content/bookmark' )}</p>
+{/if}
+{/if}
 
 {if $bp.count|eq( 0 )}
 <div class="exp-empty">
@@ -247,12 +262,13 @@
         {if $item.group_continued}<span class="exp-meta">{'continued from the previous page'|i18n( 'design/admin/content/bookmark' )}</span>{/if}
         {if and( $group_info, $group_info.path )}<p class="exp-bm-grouppath">{'in %path'|i18n( 'design/admin/content/bookmark',, hash( '%path', $group_info.path|implode( ' / ' ) ) )|wash}</p>{/if}
     </div>
-    <ul class="exp-cards">
+    <ul class="exp-cards" data-folder="{$item.group}">
     {/if}
     {set $card_id = concat( 'bm-', $item.id )}
     <li class="exp-card{if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )} is-bad{elseif or( eq( $item.state, 'hidden' ), eq( $item.state, 'invisible' ) )} is-attention{/if}" id="{$card_id}" data-bookmark="{$item.id}">
         <div class="exp-card-head">
             <div class="exp-card-title">
+                {if $bp.order_buttons}<span class="exp-grip" hidden draggable="true" data-bookmark="{$item.id}" aria-describedby="bm-grip-help" aria-label="{'Arrange %name: drag it, or press the up and down arrow keys'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}" title="{'Drag to arrange, or use the up and down arrow keys'|i18n( 'design/admin/content/bookmark' )}" role="button" tabindex="0"><span aria-hidden="true">&#10303;</span></span>{/if}
                 <label class="exp-select" title="{'Select this bookmark.'|i18n( 'design/admin/content/bookmark' )}">
                     <input type="checkbox" name="DeleteIDArray[]" value="{$item.id}" aria-label="{'Select %name'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}" />
                 </label>
@@ -280,6 +296,7 @@
                 {/if}
             </div>
         </div>
+        <div class="exp-bm-cardfoot">
         {if eq( $item.state, 'gone' )}
         <p class="exp-bm-note">{'The item was removed, is in the trash, or is not in a language of this site. Remove the bookmark, or restore the item.'|i18n( 'design/admin/content/bookmark' )}</p>
         {elseif eq( $item.state, 'denied' )}
@@ -296,6 +313,16 @@
             </div>
         </dl>
         {/if}
+        {if and( $bp.order_buttons, $item.folder_count|gt( 1 ) )}
+        <div class="exp-bm-position">
+            <label for="{$card_id}-position">{'Position in its folder'|i18n( 'design/admin/content/bookmark' )}</label>
+            <input type="number" id="{$card_id}-position" name="BookmarkPosition[{$item.id}]" value="{$item.folder_position}" min="1" max="{$item.folder_count}" inputmode="numeric" aria-describedby="{$card_id}-of" />
+            <input type="hidden" name="BookmarkPositionShown[{$item.id}]" value="{$item.folder_position}" />
+            <span class="exp-meta" id="{$card_id}-of">{'of %count'|i18n( 'design/admin/content/bookmark',, hash( '%count', $item.folder_count ) )}</span>
+            <button type="submit" class="exp-btn exp-btn-small" name="BookmarkPositionButton" value="{$item.id}" aria-describedby="{$card_id}-title" title="{'Move the bookmark to this position in its folder, also across pages'|i18n( 'design/admin/content/bookmark' )}">{'Move'|i18n( 'design/admin/content/bookmark' )}</button>
+        </div>
+        {/if}
+        </div>
     </li>
 {/foreach}
 {if $group_open}</ul></section>{/if}
@@ -355,6 +382,17 @@
 </form>
 
 {* Dragging a bookmark onto a folder (javascript only) sends this form; the select and the buttons above do the same. *}
+{* Arranging (javascript only) sends the new order of one folder with this form; moving with the keyboard sends the
+   same Move up or Move down as the buttons. The buttons and the position fields do it all without javascript. *}
+<form method="post" action={$bp.here|ezurl} id="bm-order-form" hidden>
+    <input type="hidden" name="BookmarkOrderButton" value="1" />
+    <input type="hidden" name="OrderType" value="bookmark" />
+    <input type="hidden" name="OrderFolderID" value="" />
+    <input type="hidden" name="OrderIDs" value="" />
+</form>
+<form method="post" action={$bp.here|ezurl} id="bm-shift-form" hidden>
+    <input type="hidden" name="BookmarkShiftButton" value="" />
+</form>
 <form method="post" action={$bp.here|ezurl} id="bm-drop-form" hidden>
     <input type="hidden" name="BookmarkFolderAction" value="move_bookmark" />
     <input type="hidden" name="FolderID" value="" />
@@ -372,67 +410,185 @@ var expBookmarkPageText = {ldelim}
 {rdelim};
 {literal}
 (function () {
+    'use strict';
     var list = document.getElementById( 'bm-list' );
-    if ( !list ) return;
+    var nav = document.getElementById( 'bm-folder-nav' );
+    var dropForm = document.getElementById( 'bm-drop-form' ), orderForm = document.getElementById( 'bm-order-form' ), shiftForm = document.getElementById( 'bm-shift-form' );
+    var arrange = !!document.getElementById( 'bm-grip-help' );
+    var KEY = 'exp-bm-grip';
+    function all( root, sel ) { return root ? Array.prototype.slice.call( root.querySelectorAll( sel ) ) : []; }
+    function remember( value ) { try { sessionStorage.setItem( KEY, value ); } catch ( e ) {} }
+    function submit( form ) { if ( form.requestSubmit ) form.requestSubmit(); else form.submit(); }
+
+    // ---- Select all and the selection count ----
     var selectAll = document.getElementById( 'bm-select-all' );
     var countEl = document.getElementById( 'bm-selected-count' );
     var initialNote = countEl ? countEl.textContent : '';
-    if ( selectAll ) selectAll.parentNode.hidden = false;
-    function boxes() { return list.querySelectorAll( 'input[name="DeleteIDArray[]"]' ); }
-    function selected() { return Array.prototype.filter.call( boxes(), function ( b ) { return b.checked; } ); }
+    function boxes() { return all( list, 'input[name="DeleteIDArray[]"]' ); }
+    function selected() { return boxes().filter( function ( b ) { return b.checked; } ); }
     function update() {
-        var all = boxes(), n = 0, j;
-        for ( j = 0; j < all.length; j++ ) {
-            var card = all[j].closest( '.exp-card' );
-            if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
-            if ( all[j].checked ) n++;
-        }
+        var n = 0;
+        boxes().forEach( function ( b ) {
+            var card = b.closest( '.exp-card' );
+            if ( card ) card.classList.toggle( 'is-selected', b.checked );
+            if ( b.checked ) n++;
+        } );
         if ( countEl ) countEl.textContent = n ? expBookmarkPageText.selected.split( '%count' ).join( n ) : initialNote;
-        if ( selectAll ) { selectAll.checked = n > 0 && n === all.length; selectAll.indeterminate = n > 0 && n < all.length; }
+        if ( selectAll ) { selectAll.checked = n > 0 && n === boxes().length; selectAll.indeterminate = n > 0 && n < boxes().length; }
     }
-    list.addEventListener( 'change', update );
-    if ( selectAll ) selectAll.addEventListener( 'change', function () {
-        var all = boxes(), j;
-        for ( j = 0; j < all.length; j++ ) all[j].checked = selectAll.checked;
+    if ( list ) {
+        if ( selectAll ) selectAll.parentNode.hidden = false;
+        list.addEventListener( 'change', update );
+        if ( selectAll ) selectAll.addEventListener( 'change', function () { boxes().forEach( function ( b ) { b.checked = selectAll.checked; } ); update(); } );
         update();
-    } );
-    update();
+    }
+    if ( !nav || !dropForm || !orderForm || !( 'draggable' in document.createElement( 'span' ) ) ) return;
 
-    // An extra for the mouse: drag a bookmark (or the selected ones) onto a folder of the folder list.
-    var nav = document.getElementById( 'bm-folder-nav' ), dropForm = document.getElementById( 'bm-drop-form' );
-    if ( !nav || !dropForm || !( 'draggable' in document.createElement( 'span' ) ) ) return;
+    // ---- The grips: visible with javascript; bookmark grips only in the user's own order ----
+    all( list, '.exp-grip' ).forEach( function ( g ) { g.hidden = !arrange; } );
+    all( nav, '.exp-bm-fgrip' ).forEach( function ( g ) { g.hidden = false; } );
+    all( nav, 'li[data-folder]' ).forEach( function ( li ) { li.setAttribute( 'data-drop-label', nav.getAttribute( 'data-drop-label' ) || '' ); } );
     var hint = document.querySelector( '.exp-bm .exp-bm-draghint' );
     if ( hint ) hint.hidden = false;
-    var dragged = null;
-    Array.prototype.forEach.call( list.querySelectorAll( '.exp-card[data-bookmark]' ), function ( card ) {
-        card.setAttribute( 'draggable', 'true' );
-        card.addEventListener( 'dragstart', function ( e ) {
+    all( list, '.exp-card[data-bookmark]' ).forEach( function ( card ) { card.setAttribute( 'draggable', 'true' ); } );
+
+    // ---- Dragging bookmarks: within their folder to arrange them, onto a folder of the list to move them into it ----
+    var drag = null; // { card, ul, ids, start, reorder, dropped }
+    function idsOf( ul ) { return all( ul, ':scope > .exp-card' ).map( function ( c ) { return c.getAttribute( 'data-bookmark' ); } ); }
+    function clearNav() { all( nav, '.is-drop, .is-before, .is-after' ).forEach( function ( li ) { li.classList.remove( 'is-drop', 'is-before', 'is-after' ); } ); }
+    if ( list ) {
+        list.addEventListener( 'dragstart', function ( e ) {
+            var card = e.target.closest ? e.target.closest( '.exp-card[data-bookmark]' ) : null;
+            if ( !card ) return;
             var box = card.querySelector( 'input[name="DeleteIDArray[]"]' );
-            dragged = ( box && box.checked ) ? selected().map( function ( b ) { return b.value; } ) : [ card.getAttribute( 'data-bookmark' ) ];
+            var ids = ( box && box.checked ) ? selected().map( function ( b ) { return b.value; } ) : [ card.getAttribute( 'data-bookmark' ) ];
+            var ul = card.parentNode;
+            drag = { card: card, ul: ul, ids: ids, start: idsOf( ul ).join( ',' ), reorder: arrange && ids.length === 1, dropped: false };
             card.classList.add( 'is-dragged' );
-            try { e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData( 'text/plain', dragged.join( ',' ) ); } catch ( x ) {}
+            if ( drag.reorder ) ul.classList.add( 'is-arranging' );
+            try { e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData( 'text/plain', ids.join( ',' ) ); e.dataTransfer.setDragImage( card, 24, 20 ); } catch ( x ) {}
         } );
-        card.addEventListener( 'dragend', function () { card.classList.remove( 'is-dragged' ); dragged = null; clearDrop(); } );
+        list.addEventListener( 'dragover', function ( e ) {
+            clearNav();
+            if ( !drag || !drag.card || !drag.reorder ) return;
+            var over = e.target.closest ? e.target.closest( '.exp-card[data-bookmark]' ) : null;
+            if ( !over || over.parentNode !== drag.ul ) return;
+            e.preventDefault();
+            if ( over === drag.card ) return;
+            var box = over.getBoundingClientRect();
+            drag.ul.insertBefore( drag.card, e.clientY > box.top + box.height / 2 ? over.nextSibling : over );
+        } );
+        list.addEventListener( 'drop', function ( e ) { if ( drag && drag.reorder ) e.preventDefault(); } );
+        list.addEventListener( 'dragend', function () {
+            if ( !drag || !drag.card ) return;
+            var d = drag; drag = null;
+            d.card.classList.remove( 'is-dragged' );
+            d.ul.classList.remove( 'is-arranging' );
+            clearNav();
+            if ( d.dropped || !d.reorder ) return;
+            var now = idsOf( d.ul );
+            if ( now.join( ',' ) === d.start ) return;
+            orderForm.elements.OrderType.value = 'bookmark';
+            orderForm.elements.OrderFolderID.value = d.ul.getAttribute( 'data-folder' );
+            orderForm.elements.OrderIDs.value = now.join( ',' );
+            remember( 'b:' + d.card.getAttribute( 'data-bookmark' ) );
+            window.setTimeout( function () { submit( orderForm ); }, 30 );
+        } );
+        // the arrow keys on a grip: the card's own Move up or Move down button
+        list.addEventListener( 'keydown', function ( e ) {
+            var grip = e.target.closest ? e.target.closest( '.exp-grip' ) : null;
+            if ( !grip || ( e.key !== 'ArrowUp' && e.key !== 'ArrowDown' ) ) return;
+            e.preventDefault();
+            var id = grip.getAttribute( 'data-bookmark' );
+            var b = grip.closest( '.exp-card' ).querySelector( 'button[name="BookmarkShiftButton"][value="' + ( e.key === 'ArrowUp' ? 'up-' : 'down-' ) + id + '"]' );
+            if ( !b || b.disabled ) return;
+            remember( 'b:' + id );
+            var form = document.getElementById( 'bm-list-form' );
+            if ( form.requestSubmit ) form.requestSubmit( b ); else b.click();
+        } );
+    }
+
+    // ---- The folder list: drop bookmarks into a folder; arrange folders among their neighbours ----
+    var folderDrag = null; // { li, parent }
+    function navItem( e ) { return e.target.closest ? e.target.closest( 'li[data-folder]' ) : null; }
+    function siblings( parent ) { return all( nav, 'li[data-parent="' + parent + '"]' ); }
+    nav.addEventListener( 'dragstart', function ( e ) {
+        var grip = e.target.closest ? e.target.closest( '.exp-bm-fgrip' ) : null;
+        if ( !grip ) return;
+        var li = grip.closest( 'li[data-folder]' );
+        folderDrag = { li: li, parent: li.getAttribute( 'data-parent' ) };
+        li.classList.add( 'is-dragged' );
+        try { e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData( 'text/plain', 'folder:' + li.getAttribute( 'data-folder' ) ); } catch ( x ) {}
     } );
-    function clearDrop() { Array.prototype.forEach.call( nav.querySelectorAll( '.is-drop' ), function ( li ) { li.classList.remove( 'is-drop' ); } ); }
-    function target( e ) { var li = e.target.closest ? e.target.closest( 'li[data-folder]' ) : null; return dragged ? li : null; }
-    nav.addEventListener( 'dragover', function ( e ) { var li = target( e ); clearDrop(); if ( !li ) return; e.preventDefault(); li.classList.add( 'is-drop' ); } );
-    nav.addEventListener( 'dragleave', function ( e ) { if ( !nav.contains( e.relatedTarget ) ) clearDrop(); } );
-    nav.addEventListener( 'drop', function ( e ) {
-        var li = target( e );
+    nav.addEventListener( 'dragover', function ( e ) {
+        var li = navItem( e );
+        clearNav();
         if ( !li ) return;
-        e.preventDefault();
-        dropForm.elements.FolderID.value = li.getAttribute( 'data-folder' );
-        dragged.forEach( function ( id ) {
-            var input = document.createElement( 'input' );
-            input.type = 'hidden'; input.name = 'BookmarkIDArray[]'; input.value = id;
-            dropForm.appendChild( input );
-        } );
-        dragged = null;
-        clearDrop();
-        // sent after the drop event, so the browser has finished the drag first
-        window.setTimeout( function () { dropForm.submit(); }, 30 );
+        if ( drag ) {
+            e.preventDefault();
+            li.classList.add( 'is-drop' );
+        } else if ( folderDrag && li !== folderDrag.li && li.getAttribute( 'data-parent' ) === folderDrag.parent ) {
+            e.preventDefault();
+            var box = li.getBoundingClientRect();
+            li.classList.add( e.clientY > box.top + box.height / 2 ? 'is-after' : 'is-before' );
+        }
     } );
+    // leaving a child of the list also fires dragleave, often without relatedTarget (and at 0,0): clear only when
+    // the pointer is known to be outside the list; dragging over the bookmarks or the end of a drag clears it too
+    nav.addEventListener( 'dragleave', function ( e ) { if ( e.relatedTarget && !nav.contains( e.relatedTarget ) ) clearNav(); } );
+    nav.addEventListener( 'drop', function ( e ) {
+        var li = navItem( e );
+        if ( !li ) return;
+        if ( drag ) {
+            e.preventDefault();
+            drag.dropped = true;
+            dropForm.elements.FolderID.value = li.getAttribute( 'data-folder' );
+            drag.ids.forEach( function ( id ) {
+                var input = document.createElement( 'input' );
+                input.type = 'hidden'; input.name = 'BookmarkIDArray[]'; input.value = id;
+                dropForm.appendChild( input );
+            } );
+            clearNav();
+            window.setTimeout( function () { submit( dropForm ); }, 30 );
+        } else if ( folderDrag && li !== folderDrag.li && li.getAttribute( 'data-parent' ) === folderDrag.parent ) {
+            e.preventDefault();
+            var after = li.classList.contains( 'is-after' );
+            var ids = siblings( folderDrag.parent ).filter( function ( s ) { return s !== folderDrag.li; } ).map( function ( s ) { return s.getAttribute( 'data-folder' ); } );
+            var at = ids.indexOf( li.getAttribute( 'data-folder' ) ) + ( after ? 1 : 0 );
+            ids.splice( at, 0, folderDrag.li.getAttribute( 'data-folder' ) );
+            orderForm.elements.OrderType.value = 'folder';
+            orderForm.elements.OrderFolderID.value = folderDrag.parent;
+            orderForm.elements.OrderIDs.value = ids.join( ',' );
+            remember( 'f:' + folderDrag.li.getAttribute( 'data-folder' ) );
+            clearNav();
+            window.setTimeout( function () { submit( orderForm ); }, 30 );
+        }
+    } );
+    nav.addEventListener( 'dragend', function () { if ( folderDrag ) folderDrag.li.classList.remove( 'is-dragged' ); folderDrag = null; clearNav(); } );
+    nav.addEventListener( 'keydown', function ( e ) {
+        var grip = e.target.closest ? e.target.closest( '.exp-bm-fgrip' ) : null;
+        if ( !grip || ( e.key !== 'ArrowUp' && e.key !== 'ArrowDown' ) || !shiftForm ) return;
+        e.preventDefault();
+        var li = grip.closest( 'li[data-folder]' ), sib = siblings( li.getAttribute( 'data-parent' ) ), i = sib.indexOf( li );
+        if ( ( e.key === 'ArrowUp' && i <= 0 ) || ( e.key === 'ArrowDown' && i === sib.length - 1 ) ) return;
+        shiftForm.elements.BookmarkShiftButton.value = ( e.key === 'ArrowUp' ? 'fup-' : 'fdown-' ) + li.getAttribute( 'data-folder' );
+        remember( 'f:' + li.getAttribute( 'data-folder' ) );
+        submit( shiftForm );
+    } );
+
+    // ---- Back from a move: the moved entry's grip has the focus again ----
+    var last = null;
+    try { last = sessionStorage.getItem( KEY ); sessionStorage.removeItem( KEY ); } catch ( e ) {}
+    if ( last ) {
+        var kind = last.charAt( 0 ), id = last.slice( 2 ), target = null;
+        if ( kind === 'b' && list ) target = list.querySelector( '.exp-grip[data-bookmark="' + id + '"]' );
+        if ( kind === 'f' ) target = nav.querySelector( '.exp-bm-fgrip[data-folder="' + id + '"]' );
+        if ( target && !target.hidden ) {
+            target.focus();
+            var holder = target.closest( '.exp-card, li[data-folder]' );
+            if ( holder ) holder.classList.add( 'is-moved' );
+        }
+    }
 })();
 {/literal}
 </script>

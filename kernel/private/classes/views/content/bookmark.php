@@ -84,6 +84,45 @@ class Bookmark extends \Exponential\Runnable\ModuleView
                 : array( 'level' => 'error', 'text' => \ezpI18n::tr( 'kernel/content', 'Nothing was moved: it is first or last in its folder already.' ) ) );
             return $this->viewResult( null, $Module->redirectTo( $here ) );
         }
+        // Drag and drop: the new order of the entries of one folder that the page shows (BookmarkOrderButton,
+        // OrderType bookmark|folder, OrderFolderID, OrderIDs). Every id must be the user's and in that folder.
+        if ( $http->hasPostVariable( 'BookmarkOrderButton' ) )
+        {
+            $db = \eZDB::instance();
+            $db->begin();
+            $saved = \eZContentBrowseBookmarkFolder::setOrder( $userID, $http->postVariable( 'OrderType', 'bookmark' ),
+                                                              (int) $http->postVariable( 'OrderFolderID', 0 ), $http->postVariable( 'OrderIDs', '' ) );
+            $db->commit();
+            $http->setSessionVariable( 'BookmarkNotice', $saved
+                ? array( 'level' => 'feedback', 'text' => \ezpI18n::tr( 'kernel/content', 'The order was saved.' ) )
+                : array( 'level' => 'error', 'text' => \ezpI18n::tr( 'kernel/content', 'The order was not saved: it named an entry that is not in that folder of yours.' ) ) );
+            return $this->viewResult( null, $Module->redirectTo( $here ) );
+        }
+        // The position fields: the Move button of one bookmark (BookmarkPositionButton = its id), or Enter in a field
+        // (BookmarkPositionDefault, the form's first button), which moves the first bookmark whose field was changed.
+        if ( $http->hasPostVariable( 'BookmarkPositionButton' ) || $http->hasPostVariable( 'BookmarkPositionDefault' ) )
+        {
+            $positions = (array) $http->postVariable( 'BookmarkPosition', array() );
+            $shown = (array) $http->postVariable( 'BookmarkPositionShown', array() );
+            $id = $http->hasPostVariable( 'BookmarkPositionButton' ) ? (int) $http->postVariable( 'BookmarkPositionButton' ) : 0;
+            if ( !$id )
+                foreach ( $positions as $key => $value )
+                    if ( isset( $shown[$key] ) && (string) $shown[$key] !== (string) $value )
+                    {
+                        $id = (int) $key;
+                        break;
+                    }
+            $position = ( $id && isset( $positions[$id] ) && is_scalar( $positions[$id] ) && ctype_digit( trim( (string) $positions[$id] ) ) )
+                        ? (int) $positions[$id] : 0;
+            $db = \eZDB::instance();
+            $db->begin();
+            $now = $position > 0 ? \eZContentBrowseBookmarkFolder::moveToPosition( $userID, 'bookmark', $id, $position ) : false;
+            $db->commit();
+            $http->setSessionVariable( 'BookmarkNotice', $now
+                ? array( 'level' => 'feedback', 'text' => \ezpI18n::tr( 'kernel/content', 'The bookmark is now at position %position of its folder.', null, array( '%position' => $now ) ) )
+                : array( 'level' => 'error', 'text' => \ezpI18n::tr( 'kernel/content', 'Nothing was moved: give a position as a whole number from 1.' ) ) );
+            return $this->viewResult( null, $Module->redirectTo( $here ) );
+        }
 
         if ( $Module->isCurrentAction( 'Remove' ) )
         {
@@ -153,6 +192,12 @@ class Bookmark extends \Exponential\Runnable\ModuleView
         $selection = \expBookmarkPage::select( $items, $folders, $scopeFolder, $search, $sort );
         $page = \expBookmarkPage::page( $selection, $offset, $limit );
         $pageItems = self::withPermissions( $page['items'] );
+        $positions = \expBookmarkPage::folderPositions( $items, $folders );
+        foreach ( $pageItems as $i => $item )
+        {
+            $pageItems[$i]['folder_position'] = isset( $positions[$item['id']] ) ? $positions[$item['id']]['position'] : 0;
+            $pageItems[$i]['folder_count'] = isset( $positions[$item['id']] ) ? $positions[$item['id']]['count'] : 0;
+        }
 
         $viewParameters = array( 'offset' => $page['offset'] );
         if ( $scopeFolder === 0 )
@@ -193,6 +238,7 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             'base_sorted' => \expBookmarkPage::path( $scopeFolder, $sort ),
             'search_suffix' => $search !== '' ? '?q=' . rawurlencode( $search ) : '',
             'order_buttons' => $sort === 'own' && $search === '',
+            'own_path' => \expBookmarkPage::path( $scopeFolder ),
             'first_last' => self::firstLast( $items ),
         ) );
 
