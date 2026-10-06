@@ -45,11 +45,43 @@ class expAccountServicesTest extends expUsersTestCase
     public function testChangeEmailNeedsThePassword()
     {
         $u = $this->newUser();
+        $old = $this->storedEmail( $u );
         $this->loginAs( $u );
-        $this->assertError( $this->write( 'expAccountServices', 'changeEmail', array( 'password' => 'wrong', 'email' => 'x' . self::uniq() . '@example.com' ) ), 403 );
-        $mail = 'changed' . self::uniq() . '@example.com';
-        $this->assertSame( $mail, $this->okWrite( 'expAccountServices', 'changeEmail', array( 'password' => self::PASSWORD, 'email' => $mail ) )['email'] );
-        $this->assertError( $this->write( 'expAccountServices', 'changeEmail', array( 'password' => self::PASSWORD, 'email' => 'bad' ) ), 422 );
+        try
+        {
+            $this->assertError( $this->write( 'expAccountServices', 'changeEmail', array( 'password' => 'wrong', 'email' => 'x' . self::uniq() . '@example.com' ) ), 403 );
+
+            // a new address takes effect once it is confirmed from the new mailbox (mailpreferences.ini
+            // [EmailChangeSettings] Confirm=enabled, the default): the account keeps its address until then
+            $this->setIni( 'mailpreferences.ini', 'EmailChangeSettings', 'Confirm', 'enabled' );
+            $this->assertTrue( expMailAddressChange::confirmationRequired() );
+            $mail = 'changed' . self::uniq() . '@example.com';
+            $d = $this->okWrite( 'expAccountServices', 'changeEmail', array( 'password' => self::PASSWORD, 'email' => $mail ) );
+            $this->assertSame( $old, $d['email'], 'the answer names the address the account still has' );
+            $this->assertTrue( $d['pending'] );
+            $this->assertSame( $old, $this->storedEmail( $u ), 'the account keeps its address until the change is confirmed' );
+            $this->assertCount( 1, $this->mailsTo( $old ), 'the old address is told of the change' );
+
+            // the link sent to the new address sets it
+            $confirmed = expMailPreferencesService::confirm( $this->confirmationTokenFor( $mail ), new expConsentContext( 'confirm', 'expservices test', '192.0.2.30', 0, 'admin' ) );
+            $this->assertSame( 'confirmed', $confirmed['result'] );
+            $this->assertSame( 'email_change', $confirmed['kind'] );
+            $this->assertSame( $mail, $this->storedEmail( $u ) );
+
+            $this->assertError( $this->write( 'expAccountServices', 'changeEmail', array( 'password' => self::PASSWORD, 'email' => 'bad' ) ), 422 );
+
+            // the old behaviour, by setting: the address changes at once
+            $this->setIni( 'mailpreferences.ini', 'EmailChangeSettings', 'Confirm', 'disabled' );
+            $direct = 'direct' . self::uniq() . '@example.com';
+            $d = $this->okWrite( 'expAccountServices', 'changeEmail', array( 'password' => self::PASSWORD, 'email' => $direct ) );
+            $this->assertSame( $direct, $d['email'] );
+            $this->assertArrayNotHasKey( 'pending', $d );
+            $this->assertSame( $direct, $this->storedEmail( $u ) );
+        }
+        finally
+        {
+            $this->forgetMailRecordsOf( $u );
+        }
     }
 
     public function testSelfReads()

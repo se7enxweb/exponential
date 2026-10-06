@@ -23,6 +23,13 @@ abstract class expUsersTestCase extends PHPUnit\Framework\TestCase
     protected static $counter = 0;
     protected static $fixture = array();
 
+    /** @var string|null where the file transport writes the mail of this run (var/tmp): a test never sends real mail */
+    protected static $mailDir = null;
+    /** @var array|null the [MailSettings] the run started with, put back in tearDownAfterClass */
+    protected static $savedMailSettings = null;
+    /** @var array settings a test changed in memory, "file/block/variable" => old value, put back in tearDown */
+    protected $iniBackup = array();
+
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
@@ -45,6 +52,7 @@ abstract class expUsersTestCase extends PHPUnit\Framework\TestCase
             {
                 fwrite( STDERR, "\nexpservices users test cleanup: " . $e->getMessage() . "\n" );
             }
+            self::restoreMailSettings();
         }
         parent::tearDownAfterClass();
     }
@@ -54,6 +62,7 @@ abstract class expUsersTestCase extends PHPUnit\Framework\TestCase
         parent::setUp();
         if ( self::$bootError !== null )
             $this->markTestSkipped( 'Kernel not available: ' . self::$bootError );
+        self::forceFileTransport();
         expServiceBase::$trustRequest = null;
         expServiceBase::$postData = null;
         unset( $_SERVER['REQUEST_METHOD'] );
@@ -68,7 +77,15 @@ abstract class expUsersTestCase extends PHPUnit\Framework\TestCase
         unset( $_SERVER['REQUEST_METHOD'] );
         $_POST = array();
         if ( self::$bootError === null )
+        {
+            foreach ( $this->iniBackup as $key => $value )
+            {
+                list( $file, $block, $var ) = explode( '/', $key, 3 );
+                eZINI::instance( $file )->setVariable( $block, $var, $value );
+            }
             $this->loginAdmin();
+        }
+        $this->iniBackup = array();
         parent::tearDown();
     }
 
@@ -178,6 +195,98 @@ abstract class expUsersTestCase extends PHPUnit\Framework\TestCase
         foreach ( array( 'total', 'offset', 'limit', 'count', 'has_more' ) as $k )
             $this->assertArrayHasKey( $k, $m, "meta.$k" );
         $this->assertSame( count( $r['data'] ), $m['count'] );
+    }
+
+    // ------------------------------------------------------------------ mail and settings
+
+    /**
+     * Every mail of the user services (address change confirmations, password reset links) goes to the file
+     * transport in var/tmp: the installation's own transport may be sendmail, and a test never sends real mail.
+     */
+    protected static function forceFileTransport()
+    {
+        $ini = eZINI::instance();
+        if ( self::$savedMailSettings === null )
+        {
+            self::$savedMailSettings = array();
+            foreach ( array( 'Transport', 'FileTransportDirectory', 'DebugSending' ) as $var )
+                self::$savedMailSettings[$var] = $ini->hasVariable( 'MailSettings', $var ) ? $ini->variable( 'MailSettings', $var ) : '';
+        }
+        if ( self::$mailDir === null )
+            self::$mailDir = 'var/tmp/expservices-users-mail/run-' . getmypid() . '-' . time();
+        $ini->setVariable( 'MailSettings', 'Transport', 'file' );
+        $ini->setVariable( 'MailSettings', 'FileTransportDirectory', self::$mailDir );
+        $ini->setVariable( 'MailSettings', 'DebugSending', 'disabled' );
+        if ( trim( $ini->variable( 'MailSettings', 'Transport' ) ) !== 'file' )
+            throw new RuntimeException( 'The mail transport is not the file transport: the test refuses to run.' );
+    }
+
+    protected static function restoreMailSettings()
+    {
+        if ( self::$savedMailSettings === null )
+            return;
+        $ini = eZINI::instance();
+        foreach ( self::$savedMailSettings as $var => $value )
+            $ini->setVariable( 'MailSettings', $var, $value );
+        self::$savedMailSettings = null;
+        foreach ( glob( self::$mailDir . '/*' ) ?: array() as $file )
+            if ( is_file( $file ) )
+                unlink( $file );
+        if ( is_dir( self::$mailDir ) )
+            rmdir( self::$mailDir );
+        self::$mailDir = null;
+    }
+
+    /** Changes a setting in memory for the running test; tearDown puts the old value back. */
+    protected function setIni( $file, $block, $var, $value )
+    {
+        $ini = eZINI::instance( $file );
+        $key = "$file/$block/$var";
+        if ( !array_key_exists( $key, $this->iniBackup ) )
+            $this->iniBackup[$key] = $ini->hasVariable( $block, $var ) ? $ini->variable( $block, $var ) : '';
+        $ini->setVariable( $block, $var, $value );
+    }
+
+    /** @return string[] the mails the file transport wrote to $address in this run */
+    protected function mailsTo( $address )
+    {
+        $out = array();
+        $files = glob( self::$mailDir . '/*' ) ?: array();
+        sort( $files );
+        foreach ( $files as $file )
+        {
+            $mail = is_file( $file ) ? (string)file_get_contents( $file ) : '';
+            if ( preg_match( '/^To:.*' . preg_quote( $address, '/' ) . '/mi', $mail ) )
+                $out[] = $mail;
+        }
+        return $out;
+    }
+
+    /** @return string the token of the confirmation link in the last mail to $address */
+    protected function confirmationTokenFor( $address )
+    {
+        $mails = $this->mailsTo( $address );
+        $this->assertNotEmpty( $mails, "a confirmation mail to $address" );
+        $body = quoted_printable_decode( str_replace( array( "=\r\n", "=\n" ), '', end( $mails ) ) );
+        $this->assertMatchesRegularExpression( '#mailpreferences/confirm/(m1[A-Za-z0-9_-]+)#', $body );
+        preg_match( '#mailpreferences/confirm/(m1[A-Za-z0-9_-]+)#', $body, $m );
+        return $m[1];
+    }
+
+    /** @return string the address of an account as stored, past every cache */
+    protected function storedEmail( $userId )
+    {
+        $rows = eZDB::instance()->arrayQuery( 'SELECT email FROM ezuser WHERE contentobject_id = ' . (int)$userId );
+        return $rows ? (string)$rows[0]['email'] : '';
+    }
+
+    /** Removes the address change requests and consent records of a test account. */
+    protected function forgetMailRecordsOf( $userId )
+    {
+        $db = eZDB::instance();
+        $key = "'u:" . (int)$userId . "'";
+        foreach ( array( 'expmail_pending', 'expmail_preference', 'expmail_consent_log' ) as $table )
+            $db->query( "DELETE FROM $table WHERE recipient_key = $key" );
     }
 
     // ------------------------------------------------------------------ fixtures

@@ -177,11 +177,41 @@ class expUserServicesTest extends expUsersTestCase
     public function testChangeEmailAndLogin()
     {
         $id = $this->newUser();
+        $old = $this->storedEmail( $id );
         $login = self::uniq();
-        $this->assertSame( $login, $this->okWrite( 'expUserServices', 'changeLogin', array( 'id' => $id, 'login' => $login ) )['login'] );
-        $this->assertSame( $login . '@new.example.com', $this->okWrite( 'expUserServices', 'changeEmail', array( 'id' => $id, 'email' => $login . '@new.example.com' ) )['email'] );
-        $this->assertSame( $login, eZUser::fetch( $id )->attribute( 'login' ) );
-        $this->assertError( $this->write( 'expUserServices', 'changeLogin', array( 'id' => $id, 'login' => 'admin' ) ), 409 );
+        try
+        {
+            $this->assertSame( $login, $this->okWrite( 'expUserServices', 'changeLogin', array( 'id' => $id, 'login' => $login ) )['login'] );
+
+            // an address the admin sets waits for its confirmation from the new mailbox like the person's own
+            // change (mailpreferences.ini [EmailChangeSettings] Confirm=enabled, the default)
+            $this->setIni( 'mailpreferences.ini', 'EmailChangeSettings', 'Confirm', 'enabled' );
+            $this->assertTrue( expMailAddressChange::confirmationRequired() );
+            $new = $login . '@new.example.com';
+            $d = $this->okWrite( 'expUserServices', 'changeEmail', array( 'id' => $id, 'email' => $new ) );
+            $this->assertSame( $id, $d['id'] );
+            $this->assertSame( $old, $d['email'], 'the answer names the address the account still has' );
+            $this->assertTrue( $d['pending'] );
+            $this->assertSame( $old, $this->storedEmail( $id ), 'the account keeps its address until the change is confirmed' );
+            $confirmed = expMailPreferencesService::confirm( $this->confirmationTokenFor( $new ), new expConsentContext( 'confirm', 'expservices test', '192.0.2.31', 0, 'admin' ) );
+            $this->assertSame( 'confirmed', $confirmed['result'] );
+            $this->assertSame( $new, $this->storedEmail( $id ) );
+
+            // the old behaviour, by setting: the address changes at once
+            $this->setIni( 'mailpreferences.ini', 'EmailChangeSettings', 'Confirm', 'disabled' );
+            $direct = $login . '@direct.example.com';
+            $d = $this->okWrite( 'expUserServices', 'changeEmail', array( 'id' => $id, 'email' => $direct ) );
+            $this->assertSame( $direct, $d['email'] );
+            $this->assertArrayNotHasKey( 'pending', $d );
+            $this->assertSame( $direct, $this->storedEmail( $id ) );
+
+            $this->assertSame( $login, eZUser::fetch( $id )->attribute( 'login' ) );
+            $this->assertError( $this->write( 'expUserServices', 'changeLogin', array( 'id' => $id, 'login' => 'admin' ) ), 409 );
+        }
+        finally
+        {
+            $this->forgetMailRecordsOf( $id );
+        }
     }
 
     public function testLoginInfoAndSettings()
