@@ -5628,7 +5628,7 @@ cb79b3e4be0db3793c0227197e10f902  kernel/private/modules/oauthadmin/view.php
 5d79b51aa0e31ccb6e287fca52a7db9d  kernel/private/oauth/classes/persistentobjects/ezprestauthorizedclient.php
 79192667452af42a0bf41b30083332cd  kernel/private/oauth/classes/persistentobjects/ezprestclient.php
 f7d3335e64427dbe1f9b3173a0118032  kernel/private/oauth/classes/restauthorizedclient.php
-6f3619bbf248249da240184c2822d282  kernel/private/oauth/classes/restclient.php
+016a29778ac40b5a4fba83d860fc6ac8  kernel/private/oauth/classes/restclient.php
 ad35a994d565b41897122f4abd6e060f  kernel/private/oauth/classes/tokenmanager.php
 9717275d6dc161bbd6b5354762a347ca  kernel/private/options/ezpautoloadgeneratoroptions.php
 624562404b3f80d101e5c58e96144809  kernel/private/options/ezpextensionoptions.php
