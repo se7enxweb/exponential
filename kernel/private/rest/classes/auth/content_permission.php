@@ -22,7 +22,8 @@
  *          as eZContentObject::createWithNodeAssignment() does for content/action NewButton. The Class, ParentClass,
  *          Section, Node, Subtree and Language limitations all apply.
  *  edit    content/edit of the node (nodeId), with user/selfedit for one's own user object (canEdit()), and in the
- *          language when one is given.
+ *          language when one is given; the answer goes through the filter content/edit/access, as
+ *          eZContentObject::editAccess() does for the content module.
  *  remove  content/remove of every location of the node's object and of everything below them (the REST call
  *          removes the object): canRemove() of each location and can_remove_all of
  *          eZContentObjectTreeNode::subtreeRemovalInformation(), as content/removeobject asks before it removes.
@@ -167,12 +168,14 @@ class expRestContentPermission
      */
     public static function editAllowed( eZContentObjectTreeNode $node, $language = false )
     {
-        if ( !$node->canEdit() )
-            return false;
-        if ( $language === false )
-            return true;
         $object = $node->attribute( 'object' );
-        return $object instanceof eZContentObject && (bool)$object->canEdit( false, false, false, $language );
+        $allowed = (bool)$node->canEdit();
+        if ( $allowed && $language !== false )
+            $allowed = $object instanceof eZContentObject && (bool)$object->canEdit( false, false, false, $language );
+        // Decided like eZContentObject::editAccess(): the answer goes through the filter content/edit/access
+        if ( $object instanceof eZContentObject )
+            return $object->filterEditAccess( $allowed, null, $language );
+        return $allowed;
     }
 
     /**

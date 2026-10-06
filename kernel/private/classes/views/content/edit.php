@@ -592,7 +592,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         if ( $http->hasPostVariable( 'NewDraftButton' ) )
         {
             // Check permission for object in specified language
-            if ( !$obj->canEdit( false, false, false, $EditLanguage ) )
+            if ( !$obj->editAccess( null, $EditLanguage ) )
             {
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
                                              array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
@@ -706,7 +706,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             if ( $chosenVersion )
             {
                 // Check permission for object edit in specified language
-                if ( !$obj->canEdit( false, false, false, $selectedEditLanguage ) )
+                if ( !$obj->editAccess( $chosenVersion, $selectedEditLanguage ) )
                 {
                     return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
                                                  array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
@@ -715,7 +715,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $ObjectID, 'f', $selectedEditLanguage, $selectedFromLanguage ) ) );
             }
             // Check permission for object creation in specified language
-            if ( !$obj->canEdit( false, false, false, $selectedEditLanguage ) )
+            if ( !$obj->editAccess( null, $selectedEditLanguage ) )
             {
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
                                              array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
@@ -740,7 +740,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         if ( $EditLanguage == false )
         {
             // Check permission for object
-            if ( !$obj->canEdit() )
+            if ( !$obj->editAccess( isset( $version ) && $version ? $version : null ) )
             {
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
                                              array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
@@ -756,8 +756,8 @@ class Edit extends \Exponential\Runnable\ModuleView
                 if ( $translationList )
                 {
                     $EditLanguage = $translationList[0];
-                    // Check permission for version in specified language.
-                    if ( !$version->checkAccess( 'edit', false, false, false, $EditLanguage ) )
+                    // Check permission for version in specified language (decided like editAccess(), filter content/edit/access)
+                    if ( !$obj->filterEditAccess( $version->checkAccess( 'edit', false, false, false, $EditLanguage ) == 1, $version, $EditLanguage ) )
                     {
                         return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
                     }
@@ -831,7 +831,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             if ( $ini->variable( 'ContentSettings', 'EditDirtyObjectAction' ) == 'usecurrent' )
             {
                 // Check permission for object in specified language
-                if ( !$obj->canEdit( false, false, false, $EditLanguage ) )
+                if ( !$obj->editAccess( null, $EditLanguage ) )
                 {
                     return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
                                                  array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
@@ -891,7 +891,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 elseif ( count( $draftVersions ) == 1 )
                 {
                     // Check permission for version in specified language
-                    if ( !$obj->canEdit( false, false, false, $EditLanguage ) )
+                    if ( !$obj->editAccess( $draftVersions[0], $EditLanguage ) )
                     {
                         return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
                                                      array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
@@ -936,7 +936,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 else
                 {
                     // Check permission for object in specified language
-                    if ( !$obj->canEdit( false, false, false, $EditLanguage ) )
+                    if ( !$obj->editAccess( null, $EditLanguage ) )
                     {
                         return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
                                                      array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
