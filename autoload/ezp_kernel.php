@@ -660,6 +660,7 @@ return array(
       'eZPackageComparisonFileCollector'                             => 'kernel/classes/ezpackagecomparisonfilecollector.php',
       'eZPackageComparisonImport'                                    => 'kernel/classes/ezpackagecomparisonimport.php',
       'eZPackageCreationHandler'                                     => 'kernel/classes/ezpackagecreationhandler.php',
+      'eZPackageDownload'                                            => 'kernel/classes/ezpackagedownload.php',
       'eZPackageFileBrowser'                                         => 'kernel/classes/ezpackagefilebrowser.php',
       'eZPackageFunctionCollection'                                  => 'kernel/package/ezpackagefunctioncollection.php',
       'eZPackageHandler'                                             => 'kernel/classes/ezpackagehandler.php',
