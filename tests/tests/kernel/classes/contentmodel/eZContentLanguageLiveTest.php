@@ -26,6 +26,14 @@ class eZContentLanguageLiveTest extends PHPUnit\Framework\TestCase
             self::markTestSkipped( 'needs two content languages' );
     }
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+        // the cron job mode (other tests switch it on) makes every language a prioritized one
+        eZContentLanguage::clearCronjobMode();
+        eZContentLanguage::clearPrioritizedLanguages();
+    }
+
     protected function tearDown(): void
     {
         eZContentLanguage::clearPrioritizedLanguages();
