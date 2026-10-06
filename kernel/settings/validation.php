@@ -42,7 +42,9 @@ function validate( $fields, $type, $spacesAllowed = true )
                 case 'array':
                     break;
                 case 'name':
-                    if ( !preg_match( "/^[A-Za-z0-9]*$/", $fieldValue ) )
+                    // what eZINI reads back as a setting name (eZINI::parseFile()): letters, digits and _ * @ -;
+                    // A-Z and 0-9 alone refused the names of hundreds of existing settings (Class_identifier ...)
+                    if ( !preg_match( "/^[\\w*@-]*$/D", $fieldValue ) )
                     {
                         $validationErrorType = 'not_valid_name';
                         $validationMessage = 'Name contains illegal characters';
