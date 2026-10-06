@@ -62,7 +62,8 @@ class eZModuleParamsOperator
         {
             case 'module_params':
             {
-                $operatorValue = $GLOBALS['eZRequestedModuleParams'];
+                // Outside a module view (a script, a mail template) there are none
+                $operatorValue = $GLOBALS['eZRequestedModuleParams'] ?? null;
             } break;
         }
     }

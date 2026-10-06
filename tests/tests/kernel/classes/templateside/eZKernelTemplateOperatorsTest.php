@@ -332,6 +332,17 @@ class eZKernelTemplateOperatorsTest extends eZDatatypeTestCase
         $this->assertFourWays( '{module_params().module_name}/{module_params().function_name}', null, array(), 'content/view' );
     }
 
+    public function testModuleParamsOutsideAModuleView()
+    {
+        unset( $GLOBALS['eZRequestedModuleParams'] );
+        $warnings = $this->phpWarnings( function () use ( &$output, &$errors ) {
+            list( $output, $errors ) = $this->render( '{if module_params()}y{else}n{/if}', array(), false );
+        } );
+        $this->assertSame( 'n', $output );
+        $this->assertSame( array(), $errors );
+        $this->assertSame( array(), $warnings );
+    }
+
     public function testEzmoduleOfAnUnknownModuleIsFalse()
     {
         $this->assertFourWays( "{if 'k1dnosuchmodule/view'|ezmodule}y{else}n{/if}", '{if $u|ezmodule}y{else}n{/if}', array( 'u' => 'k1dnosuchmodule/view' ), 'n' );
