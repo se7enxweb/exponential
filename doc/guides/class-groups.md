@@ -1,6 +1,6 @@
 # Class groups: finding classes and removing a group safely
 
-This guide teaches the class group page of the administration interface (Setup > Classes, `/class/grouplist`):
+This guide teaches the class pages of the administration interface (Setup > Classes, `/class/grouplist`, a group's classes, a class and its form):
 what a class group is, what every part of the page says, and how to remove a group without losing content you
 wanted to keep.
 
@@ -55,7 +55,37 @@ and **Open** and **Edit**. Below:
 
 Nothing on the list page removes anything by itself.
 
-## 4. Recently modified classes
+## 4. The classes of a group
+
+Open a group (its name or **Open**) for `/class/classlist/<group id>`:
+
+- the group's ID and last change, with **Back to class groups**, **Edit** (rename) and **Remove** (the group's
+  removal confirmation);
+- figures: classes, their published objects, containers; a search over names and identifiers;
+- **New class** creates a class in this group, in the language chosen beside it, and opens it for editing;
+- one row per class: name and icon, identifier, ID, container, published objects, the other groups it is in
+  ("only here" when none), the last change, and **View**, **Edit** and **Copy**. Copy makes a copy in the same groups
+  (`content.ini [CopySettings] ClassRedirect` says where you land: the copy's edit form, the list, its page or the
+  group list); it is a form button, so a copy is never made by following a link;
+- **Remove selected** opens the confirmation: per class how many objects go with it and their sub items, or why it
+  cannot be removed. A class that is also in another group only leaves this one.
+
+## 5. A class page and the class form
+
+The class page (`/class/view/<id>`) leads with **Edit** in the language chosen, then figures (objects, attributes,
+groups, translations), the settings, and one card per attribute with its type, flags, category, description and
+the settings of its type. The chips under it show or hide the class groups (add the class to a group, or take it
+out of the ticked ones), the override templates and the translations (view, edit, set the main one, remove).
+
+The class form keeps **OK**, **Apply** and **Cancel** and **Add attribute** in a bar at the top and again at the end.
+**The class** holds name, identifier, description, object and URL alias name patterns, default sorting, container
+and default availability, each with what it does. Each attribute is a card: order arrows and position, name,
+identifier, description, category, the flags (required, searchable, information collector, disable translation;
+those its type cannot have are greyed out) and the settings of its type. Nothing reaches the objects before **OK**;
+**Cancel** throws the draft away and goes back to the page the form was opened from. A class in a language it does
+not have yet first asks which language to add and which to start from.
+
+## 6. Recently modified classes
 
 Below the groups, the ten classes changed last, with ID, identifier, modifier, time, objects and **Edit**.
 
@@ -63,7 +93,7 @@ Below the groups, the ten classes changed last, with ID, identifier, modifier, t
 
 - Module and views: `kernel/class/module.php`, `kernel/private/classes/views/class/grouplist.php`
   (`Grouplist::links()`, `classFacts()`, `overview()`, `summary()`), `removegroup.php`.
-- Templates: `design/admin4/templates/class/grouplist.tpl`, `exp_style.tpl`, `exp_list_script.tpl` (the same files
+- Templates: `design/admin4/templates/class/grouplist.tpl`, `classlist.tpl`, `view.tpl` with `windows.tpl`, `window_controls.tpl`, `groups.tpl`, `translations.tpl`, `templates.tpl`, `edit.tpl`, `select_language.tpl`, `edit_denied.tpl`, `groupedit.tpl`, `removeclass.tpl`, `removegroup.tpl`, `removetranslation.tpl`, `exp_style.tpl`, `exp_list_script.tpl` (the same files
   in `design/admin/templates/class/`).
 - Paging: `settings/admininterface.ini [PaginationSettings] ItemsPerPage[class/grouplist]`.
 - Tests: `tests/tests/kernel/classes/expAdminListsRedesignTest.php` (no database).
