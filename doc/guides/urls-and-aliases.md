@@ -18,6 +18,9 @@ rule below was checked against the code of this repository on 6 October 2026; th
   state (valid, invalid, never checked), when it was checked and changed, and which objects use it. Search by any
   part of the address, show one state, order by address, last check or last change, and mark ticked links valid or
   invalid by hand.
+- The **link check** (`linkcheck.php`, part `infrequent`) requests http and https links alike, judges links to
+  content by their node or object, never requests addresses on a private network and waits between requests to
+  one host. Its settings are in `cronjob.ini [linkCheckSettings]`.
 - **Setup > URL translator** (`/content/urltranslator`) makes and removes **global URL aliases**: `login` for
   `user/login`, for example. Each alias shows its whole path, its destination and what that resolves to now; an
   alias to a module that no longer exists is marked.
@@ -79,25 +82,59 @@ The page size is chosen under the list (10, 25 or 50, remembered per user). The 
 
 ## 2. How links are checked
 
-The link check is the cronjob script `linkcheck.php` in the `infrequent` part (`cronjob.ini`):
+The link check is the cronjob script `linkcheck.php` in the `infrequent` part (`cronjob.ini`). It runs from the
+shell only, never in a web request (also not under Velocity). Run the whole part, or the link check alone:
 
 ```bash
 php runcronjobs.php -s <your public siteaccess> infrequent
+php runcronjobs.php -s <your public siteaccess> --script=linkcheck.php
 ```
 
-It walks every published link and treats it by its kind. The badge on each card says which kind it is:
+Run it as the user the web server runs as, like the other cronjobs. It checks the links checked longest ago first
+and prints one line per link with the result and why, then a summary such as:
+
+```
+All links have been checked! 189 valid, 72 invalid, 89 not decided, 0 skipped (checked recently or over MaxURLsPerRun), 48 changed, 725 requests, 566.7 s
+```
+
+A link changes state only when the check decides; **not decided** keeps the state it had. The time of the check is
+recorded for every link it looked at. The badge on each card says how its kind is treated:
 
 | Badge | Address | What the check does |
 |---|---|---|
-| (none) | `http:`, `ftp:`, `file:` | fetches the address; no answer marks it invalid |
-| https: not tested | `https:` | does **not** test it: prints "HTTPS protocol is not supported" and only records the time, so the state is the one the link already had |
-| E-mail | `mailto:` | looks up the mail server (MX) of the domain |
-| On this site | a path such as `/about` | looks it up as a URL alias, then on the addresses of `[linkCheckSettings] SiteURL[]` |
-| Link to content | `ezlocation://`, `eznode://`, `ezobject://` (links in rich text) | looks it up as a path, finds nothing and marks it invalid, although the link works while its target exists |
-| Not tested | any other scheme | never tested |
+| (none) | `http:`, `https:`, `ftp:` | requests it: HEAD, then GET when HEAD fails, following redirects up to `MaxRedirects`, with TLS certificates verified. A 2xx answer is valid; 404, 410, other errors, a bad certificate, an unknown host or too many redirects are invalid; 429 and 503 (try later) and 401, 403 (the site refuses automated requests) are not decided |
+| E-mail | `mailto:` | valid when the domain has a mail server (MX record) |
+| On this site | a path such as `/about` or `/admin/content/dashboard` | without the query, the fragment and a leading siteaccess name: valid when it is the front page, a module view or a URL alias, else tried on the addresses of `SiteURL[]` |
+| Link to content | `ezlocation://`, `eznode://`, `ezobject://` (links in rich text) | valid while the node or object exists, is published and is not hidden; invalid otherwise. No request is sent |
+| Not tested | `file:` | names a file on a computer, not a page: never tested, the state is kept |
+| Other address | any other scheme (`tel:`, `javascript:` ...) | looked up as a path of this site, as it always was, so usually invalid |
 
-So **Invalid** on a link to content, or **Valid** on an https address, says little: check those by hand with Open,
-or on the object.
+**Private addresses are never requested.** Before every request, also after a redirect, the host is resolved; when
+an address is on a private, loopback, link-local or otherwise reserved network (10.0.0.0/8, 127.0.0.0/8,
+169.254.0.0/16, 192.168.0.0/16, `::1`, `fe80::/10` ...), the link is not decided and nothing is sent. Otherwise a
+link in content could make the server reach inside its own network. The request then goes to the address that was
+checked, so the name cannot point elsewhere a moment later. An intranet that should be tested is listed in
+`AllowedPrivateHosts[]`; the site's own `SiteURL[]` addresses are always allowed.
+
+**One host is not hammered.** Requests to the same host wait `HostDelay` milliseconds, and a link checked less than
+`RecheckInterval` seconds ago is skipped, so running the part twice in a row costs nothing.
+
+The settings, in `cronjob.ini [linkCheckSettings]` (override them in `settings/override/cronjob.ini.append.php`):
+
+| Key | Default | Meaning |
+|---|---|---|
+| `Timeout` | `15` | seconds one request may take |
+| `ConnectTimeout` | `5` | seconds to connect |
+| `MaxRedirects` | `5` | redirects followed before the link counts as broken |
+| `HostDelay` | `1000` | milliseconds between two requests to the same host |
+| `RecheckInterval` | `72000` | seconds before a checked link is checked again; `0` checks every link on every run |
+| `MaxURLsPerRun` | `0` | links checked in one run (the ones checked longest ago first); `0` checks all |
+| `UserAgent` | `Exponential Link Validator (+https://exponential.earth)` | the User-Agent of the requests |
+| `AllowedPrivateHosts[]` | empty | hosts, addresses or IPv4 ranges (`10.1.0.0/16`) on a private network that may be tested |
+| `SiteURL[]` | empty | the site's own addresses, tried for a path that is no alias |
+
+On the 350 links of a demonstration site the first run took about nine and a half minutes and sent 725 requests:
+most of the time is the per-host delay between links to the same few hosts.
 
 ## 3. Global URL aliases
 
@@ -133,7 +170,9 @@ Each alias shows its whole path (each part links to what it is), its kind (**Red
 available. **Module not found** marks an alias whose module no longer exists, usually because an extension was
 switched off: visitors get an error page there.
 
-**Find an alias** searches the path and the destination, **Show** picks All, Redirecting or Direct.
+**Find an alias** searches the last segment of each alias (`login` in `campaign/login`) and its destination, **Show**
+picks All, Redirecting or Direct. Both are conditions of the database query, so a page costs one count and one
+page query however many aliases there are.
 
 ### Remove
 
@@ -174,7 +213,8 @@ can be sent to a colleague.
 
 ### Find and remove
 
-**Find a wildcard** searches pattern and destination, **Show** picks All, Redirecting or Direct. Removing works as
+**Find a wildcard** searches pattern and destination, **Show** picks All, Redirecting or Direct (both in the
+database query, in the order the wildcards are tried). Removing works as
 for aliases: **Remove selected** asks once, **Remove all** asks in place. Every change empties the wildcard cache.
 
 ## 5. Search statistics
@@ -227,8 +267,11 @@ Unknown values fall back to the defaults. The forms, their field names and their
 | You see | Why, and what to do |
 |---|---|
 | Most links say **Never checked** | the link check has not run on them: run the `infrequent` cronjob part |
-| An https link is **Valid** although it is broken | the link check does not test https; check it with Open |
-| Links in rich text are **Invalid** although they work | they are links to content (`ezlocation://`), which the check cannot resolve; mark them valid or ignore the state |
+| A link that works in the browser stays as it was after a run | the site answered 401, 403, 429 or 503 to the link check (refused or busy), which decides nothing; the line of the run says which |
+| A link to an intranet page is never tested | its host is on a private network; add it to `AllowedPrivateHosts[]` |
+| A link to content is **Invalid** | its node or object was removed, is hidden or is not published; the line of the run names the node or object |
+| A link to `/admin/...` or an extension's module is **Invalid** | the module is only active in that siteaccess: run the part with `-s` of that siteaccess, or ignore the state |
+| A run takes long | most of it is `HostDelay` between links to the same host; lower it carefully, or set `MaxURLsPerRun` to spread the links over several runs |
 | The search statistics stay empty | no siteaccess has `LogSearchStats=enabled`; the page says so at the top |
 | A new alias "was modified by the system" | characters not allowed in an address were changed; the message shows the result |
 | A new alias to a node does not appear in the list | aliases of nodes are on the node's URL aliases tab |
@@ -244,6 +287,13 @@ Unknown values fall back to the defaults. The forms, their field names and their
   `tests/tests/kernel/classes/expUrlAdminPagesTest.php`.
 - `eZURL::fetchList()` / `fetchListCount()` take `last_checked` (`never`, `checked`), `search` (with
   `only_published`) and `sort` (`address`, `checked`, `modified`, `id`), on every database including MongoDB.
+- `eZURLAliasQuery` has the properties `search` (the last segment or the action contains the text) and `redirects`
+  (`alias_redirects`); `eZURLWildcard::fetchFilteredList()` and `fetchFilteredListCount()` search pattern and
+  destination and filter by type. Both are conditions of the SQL query, or a `$match` on MongoDB.
+- `expLinkCheck` (`kernel/classes/explinkcheck.php`) decides whether a link works: `check( $url )` answers
+  `valid`, `invalid` or `unknown` with a reason. The request (`curlFetch()`), the DNS lookup, the content, alias
+  and MX lookups, the clock and sleeping are callables given to the constructor, which is how
+  `tests/tests/kernel/classes/expLinkCheckTest.php` tests every decision without a network or a database.
 - Every variable the templates had is still set; new ones: `url_summary`, `url_usage`, `url_checks`, `url_search`,
   `url_sort`, `url_feedback`, `limit`, `limit_choices` (url/list); `search_stats_*`, `search_total_count`
   (search/stats); `alias_list`, `alias_count`, `alias_total_count`, `alias_info`, `alias_search`, `alias_kind`,
@@ -257,7 +307,9 @@ Unknown values fall back to the defaults. The forms, their field names and their
 - `kernel/private/classes/views/url/list.php`, `kernel/private/classes/views/search/stats.php`,
   `kernel/private/classes/views/content/urlalias_global.php`, `kernel/private/classes/views/content/urlalias_wildcard.php`
 - `kernel/classes/datatypes/ezurl/ezurl.php` (`handleList()`, `listOrderSQL()`, `searchLikePattern()`)
-- `kernel/private/classes/cronjobs/linkcheck.php` (the link check), `kernel/classes/ezurlwildcard.php` (matching)
+- `kernel/private/classes/cronjobs/linkcheck.php` (the link check part), `kernel/classes/explinkcheck.php` (its decisions),
+  `settings/cronjob.ini [linkCheckSettings]`, `kernel/classes/ezurlwildcard.php` (matching, `fetchFilteredList()`),
+  `kernel/classes/ezurlaliasquery.php` (`search`, `redirects`)
 - `design/admin4/templates/url/list.tpl`, `search/stats.tpl`, `content/urlalias_global.tpl`,
   `content/urlalias_wildcard.tpl` and their copies in `design/admin`
 - `settings/site.ini [SearchSettings] LogSearchStats`, `settings/admininterface.ini [PaginationSettings]`
