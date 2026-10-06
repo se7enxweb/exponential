@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
-e43170d6e8deec4686b083475b5b93de  autoload/ezp_kernel.php
+f28316d00e89b1390062596fc109d3b7  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -112,8 +112,8 @@ ebc7f6fcdbeb5ea0edd029b2ec1907c1  bin/php/makestaticcache.php
 52f153f0099507209816b7724d55f9bd  bin/php/notificationstatus.php
 f452309050988b3c643ff4f313957ff4  bin/php/notificationsubscriptions.php
 d3ac25976f9d6e85ef034422ce8bbaec  bin/php/phar.php
-31ccda1517e1341892a96aae40e7c2c6  bin/php/preload.php
-39f16115e0399135b3254d2fbe3e68e0  bin/php/preloadjob.php
+9a3848dcbef1435b536d4b6204fc0cb4  bin/php/preload.php
+9b1f10566305bcb6e0aa69681f36577c  bin/php/preloadjob.php
 75efb466ac6abaeb440ddf71d80cd193  bin/php/publish_content.php
 dd082fa405efd942fe866dab5198c60c  bin/php/resetuserpassword.php
 f50da9f6847e4fb456ecfd2238692a46  bin/php/solr.php
@@ -608,7 +608,8 @@ bbdadba4a9dc511a67e3fedce07a424f  design/admin/templates/setup/info_exp_style.tp
 6a696879d93afecad32e8537b41650c6  design/admin/templates/setup/maintenance.tpl
 d1a3e27332a030771a8fce082ba8e306  design/admin/templates/setup/moduleextension.tpl
 a77820185ce58c7a7adadcc0a0b33c3f  design/admin/templates/setup/modulewizard.tpl
-23390efb7571c1f67c6917143520ec08  design/admin/templates/setup/preload.tpl
+2f0092bdb8c874fac18b1843d638f94c  design/admin/templates/setup/preload.tpl
+4408424b2f4021ca4c3add703e6485d6  design/admin/templates/setup/preload_exp_style.tpl
 acba5347f613d48faca4e88a62fd02ae  design/admin/templates/setup/quick_settings.tpl
 385046ac4d7141fb487a0aa843bff0f9  design/admin/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin/templates/setup/rad_licence_select.tpl
@@ -1214,7 +1215,8 @@ bbdadba4a9dc511a67e3fedce07a424f  design/admin4/templates/setup/info_exp_style.t
 6a696879d93afecad32e8537b41650c6  design/admin4/templates/setup/maintenance.tpl
 d1a3e27332a030771a8fce082ba8e306  design/admin4/templates/setup/moduleextension.tpl
 a77820185ce58c7a7adadcc0a0b33c3f  design/admin4/templates/setup/modulewizard.tpl
-23390efb7571c1f67c6917143520ec08  design/admin4/templates/setup/preload.tpl
+2f0092bdb8c874fac18b1843d638f94c  design/admin4/templates/setup/preload.tpl
+4408424b2f4021ca4c3add703e6485d6  design/admin4/templates/setup/preload_exp_style.tpl
 d86040c9bf9bb8a9d792a0c5f25b59fe  design/admin4/templates/setup/quick_settings.tpl
 385046ac4d7141fb487a0aa843bff0f9  design/admin4/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin4/templates/setup/rad_licence_select.tpl
@@ -2791,7 +2793,7 @@ b5409d7272f8f2302d04c60f5229e570  doc/bc/6.0/php8.md
 ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
 111bb729184306f633c537fe44ee078c  doc/bc/6.0/platform-package-forks-and-command-renames.md
-dfaffb77d22c8d096602674e8a110dcb  doc/bc/6.0/preload.md
+6ecbedb530c5c3804b8be217a7b1ad12  doc/bc/6.0/preload.md
 69eb6edca88c9516b6d72cf4e3e7f993  doc/bc/6.0/rad-extension-points.md
 611442352303aaa28764fab216c5ef09  doc/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
@@ -2959,7 +2961,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-55689f1ed937d16e8252c1e10ec1b180  doc/changelogs/6.0/6.0.15.md
+ec651de6d1a33048fb417c8bcd0124c7  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3390,7 +3392,7 @@ afec5a2b80e838f67a095f7657bed36d  doc/features/6.0/platform-nexus-starter.md
 62af117653c26bd7e972e1a7ce32287f  doc/features/6.0/platform-php85-framework-forks.md
 9e77ed427c85349ff66f9ab6e00b9206  doc/features/6.0/platform-site-bundles.md
 77b6dcb702be5b7cb2f3197dd5c1aef1  doc/features/6.0/platform-sqlite-install.md
-b87c7fd9d7a10afee71e3283bf7f4761  doc/features/6.0/preload-sites-view.md
+bd00eb2e724c0f4f3612917275e79456  doc/features/6.0/preload-sites-view.md
 c9dcf54bb73bc03364866daf8021fbbc  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
@@ -3434,7 +3436,7 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 f9c3f344c473869cfb55845caedce10f  doc/features/6.0/version-preview-view-modes.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 03252bce1fbedb6ed433f227a6265164  doc/glossary.md
-6a65229ac16e304fe0cc36643dfb1b43  doc/guides/README.md
+4654820f44885df11dcb914d9932267f  doc/guides/README.md
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 8901e2220940757e41162287af7ecbb4  doc/guides/bookmarks.md
@@ -3478,9 +3480,10 @@ f46af9cdee469946176953da2d241afc  doc/guides/mail-preferences-developer.md
 a45d63418940e025cb5a03004675a98c  doc/guides/notifications-administrator.md
 934e5fac274514582acb8481191f0713  doc/guides/notifications-developer.md
 8b3b80adcdda951de281fd97a9475529  doc/guides/object-states.md
-2b6485c86dd1efac5c3fab75de2f182a  doc/guides/operating-a-site.md
+f04c83c32d4598b6803721a36c8432d4  doc/guides/operating-a-site.md
 7df1c4114865c8992a482cecdd6d7bbc  doc/guides/packages.md
 235b0e785eccffff7ff80218495810ea  doc/guides/pdf-exports.md
+7cdc608cefee0c367ec5b5c7414746d1  doc/guides/preloading-caches.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 b96aa9f19d0e6aebe8b4e7b2569216d5  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
@@ -4849,7 +4852,10 @@ e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
 781ad650d10d04c7ad3087a1fb815c95  kernel/classes/expnotificationservice.php
 c558703233869e8b7789a6a6179b31c9  kernel/classes/exppasswordpolicy.php
 b8ca72676a5a9dfafef6ddb0b6e9ee7a  kernel/classes/expphar.php
-1a1f23777f111cdae910ac7ef5032192  kernel/classes/exppreloadjob.php
+b607c67490219f43e8a2cf31d600700e  kernel/classes/exppreloadaddress.php
+30008b66f7b3f58a6b55568d69810a8d  kernel/classes/exppreloadhistory.php
+9edfc6178f55f58e355f36ee45197b19  kernel/classes/exppreloadjob.php
+1c4928a9d1c8b8f16d381f23998e82b9  kernel/classes/exppreloadlock.php
 1eda4d2740e2f5e9ff0ccaef297fb1aa  kernel/classes/expprocesstools.php
 5c085c15fe530c93eb0b61571c3f36cb  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
@@ -5362,8 +5368,8 @@ daf552369e46601bfd2ffd5997528be1  kernel/private/classes/commands/notificationev
 a53300d2b6eb0afbc337252492936c30  kernel/private/classes/commands/notificationstatus.php
 40b4e0bb8021c75a23cd1ef7e2307cc3  kernel/private/classes/commands/notificationsubscriptions.php
 cb0a99abf5054a55af10c6ba4e62600b  kernel/private/classes/commands/phar.php
-c88aa62aa60a53e317f9e81f9e619a87  kernel/private/classes/commands/preload.php
-90920843d102fb3d7a3f49097dda4f21  kernel/private/classes/commands/preloadjob.php
+67532074a16d5080b8c0def9a891d780  kernel/private/classes/commands/preload.php
+e6d562440b310189c2ad9ccccc9c47f7  kernel/private/classes/commands/preloadjob.php
 99d8b60f4b15df1dcd7f01c823003c66  kernel/private/classes/commands/publish_content.php
 a08a9297ae9c54487b7a2b06e63e6a08  kernel/private/classes/commands/resetuserpassword.php
 898926376d639f730120ce5e20c6eb9e  kernel/private/classes/commands/runcronjobs.php
@@ -5611,9 +5617,9 @@ c52c0969e44db3dd969bdf15caf1427c  kernel/private/classes/views/setup/maintenance
 f3d410d2a77820dc00af01f2bb3ffc68  kernel/private/classes/views/setup/menuconfig.php
 61501b7f6b34ca1deafb8ee5faa5a76b  kernel/private/classes/views/setup/moduleextension.php
 d6ef79b10f229d2d4bb6c7789d43b935  kernel/private/classes/views/setup/modulewizard.php
-94a7ae9614198f7df91923ba157e5754  kernel/private/classes/views/setup/preload.php
-ee1b11674c99c2b135d274abaa577c84  kernel/private/classes/views/setup/preloadjob.php
-fd3cdef09a0f37d469f48a1e3084c580  kernel/private/classes/views/setup/preloadstream.php
+931b8b2eb9baefa8409baaebf9555142  kernel/private/classes/views/setup/preload.php
+408e3d20b0597a7509cb1655b10251fd  kernel/private/classes/views/setup/preloadjob.php
+b4c36a3a2c20d279b73397f64fa84f05  kernel/private/classes/views/setup/preloadstream.php
 4536ce57bd4c30d9052871a86bbac3c1  kernel/private/classes/views/setup/rad.php
 0f795642dcc1f9b120f36cfea7adfb6b  kernel/private/classes/views/setup/radsurvey.php
 f568979b041fa3c93963d451d7c98531  kernel/private/classes/views/setup/session.php
@@ -5884,7 +5890,7 @@ f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 11cd35571a5011c7ea5ec0f99593199b  kernel/setup/expkerneloverridewizard.php
 fd65c2cce9e61492592c18344e029370  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
-cb699a30ecd9f7abecbe3522cc9d74ce  kernel/setup/exppreloadrunner.php
+c5c9700e6cd4426b8b231d8489c82964  kernel/setup/exppreloadrunner.php
 bce68c62930cac0cb74d05b53d0cd24d  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
 9d29ad5fc017910fd28b55a2431641c3  kernel/setup/expradsurvey.php
@@ -6998,7 +7004,7 @@ d4cad238dad8d7b326ffbdb4af42308e  tests/tests/kernel/classes/benchmark/ExpBenchm
 1eee3d922093fab2ab61aa18f6ed8b50  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
 4dae798972d4ce3ea7750924417eff76  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
 9f35d62dea92268419f9f373c661ea91  tests/tests/kernel/classes/cachesmore/eZStaticCachePathsTest.php
-8d5e74860824bf2b11f497e6bdb6994f  tests/tests/kernel/classes/cachesmore/expPreloadRunnerLinksTest.php
+ec49325384c48adf5d56ade86b85d5dd  tests/tests/kernel/classes/cachesmore/expPreloadRunnerLinksTest.php
 590fa866a4775d0d26dbf47125ea0951  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 3716fe7631e22ea83ff4683e87988369  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
 822bc946c29f058cf3cf0247978f096b  tests/tests/kernel/classes/clusterfilehandlers/eZClusterFileHandlerAbstract.php
@@ -7244,6 +7250,8 @@ a18d90b5610abb3def710ebc7c9f49ba  tests/tests/kernel/classes/permissions/eZPolic
 f72914cc79297e8160784638e10a6494  tests/tests/kernel/classes/permissions/ezpContentLimitationTest.php
 b56a3b9639c786b875f98c6f42c8a035  tests/tests/kernel/classes/permissions/fixtures/ezcontentpermissionsqltestdb.php
 192883639379d5fd3bab7183741db6df  tests/tests/kernel/classes/permissions/fixtures/modules/k1perm/module.php
+7bff73b0bf7f58c25f88a43912fa750a  tests/tests/kernel/classes/preload/expPreloadAddressTest.php
+7a1dd4b5e958ddddbb0e09a5e8c3ce50  tests/tests/kernel/classes/preload/expPreloadLockAndHistoryTest.php
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
 57076f462adaed80c14c9883a0779e27  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
 8f7aaecdccb5cb38c3f738034ac781fe  tests/tests/kernel/classes/radwizards/expContentExtensionWizardTest.php
@@ -7262,7 +7270,7 @@ ab47780f670ed2e74e5a7167326c415c  tests/tests/kernel/classes/rest/ezpRestHttpReq
 ad3e0ca4505542e922db4e4b23351cb9  tests/tests/kernel/classes/rest/ezpRestStatusResponseTest.php
 a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php
 5cabf4962c374801c48d9d37133de735  tests/tests/kernel/classes/runnable/CommandHelpersTest.php
-4c82570012ee0e433401b418e5c79076  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
+2973ce3fd51cf4811b11def2cb6a2f0a  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
 4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
 352cfc4000709b128a2a80cbea6cf8b7  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
