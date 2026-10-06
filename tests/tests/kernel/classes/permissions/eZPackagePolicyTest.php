@@ -128,12 +128,14 @@ class eZPackagePolicyTest extends PHPUnit\Framework\TestCase
 
     public function testMaintainerStepIsSkippedWhenTheUserIsAlreadyAMaintainer()
     {
-        $objectID = 999999811;
-        $user = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'k1anonymous', 'email' => 'k1@k1.example.invalid' ) );
+        // The stand-in is the anonymous user (an anonymous current user needs no database); its content object
+        // comes from the in-memory object cache, as an object without id that answers with its own name
+        $objectID = eZUser::anonymousId();
+        $user = new eZUser( array( 'contentobject_id' => $objectID, 'login' => 'k1anonymous', 'email' => 'k1@k1.example.invalid' ) );
         $user->AccessArray = array( 'package' => array( 'create' => array( '*' => '*' ) ) );
-        $user->ContentObjectID = $objectID;
         $GLOBALS['eZUserGlobalInstance_'] = $user;
-        // an object without id answers with its own name, no database
+        $hadCached = isset( $GLOBALS['eZContentObjectContentObjectCache'][$objectID] );
+        $cached = $hadCached ? $GLOBALS['eZContentObjectContentObjectCache'][$objectID] : null;
         $GLOBALS['eZContentObjectContentObjectCache'][$objectID] = new eZContentObject( array( 'id' => null, 'name' => 'Ada Example' ) );
         try
         {
@@ -147,7 +149,10 @@ class eZPackagePolicyTest extends PHPUnit\Framework\TestCase
         }
         finally
         {
-            unset( $GLOBALS['eZContentObjectContentObjectCache'][$objectID] );
+            if ( $hadCached )
+                $GLOBALS['eZContentObjectContentObjectCache'][$objectID] = $cached;
+            else
+                unset( $GLOBALS['eZContentObjectContentObjectCache'][$objectID] );
         }
     }
 }
