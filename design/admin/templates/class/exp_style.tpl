@@ -253,5 +253,108 @@
 @media (max-width: 600px) {
     .exp-lists .exp-table select { width: 100%; }
 }
+
+/* ---- Edit forms ---- */
+.exp-lists .exp-panel > .exp-section-head { margin-bottom: 14px; }
+.exp-lists .exp-form-fields.exp-form-wide { max-width: none; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 18px 24px; }
+.exp-lists .exp-field textarea {
+    width: 100%; min-height: 72px; margin: 0; padding: 6px 10px; border: 1px solid #8f96a3; border-radius: 9px;
+    background: #fff; color: var(--sc-ink); font: inherit; font-size: 14px; box-shadow: none; resize: vertical;
+}
+.exp-lists .exp-field textarea:focus { border-color: var(--sc-accent); outline: 3px solid var(--sc-ring); outline-offset: 0; }
+.exp-lists .exp-field input[readonly] { background: var(--sc-soft); }
+.exp-lists .exp-field input[type="text"]::placeholder { color: var(--sc-muted); opacity: 1; }
+.exp-lists .exp-inline { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; }
+.exp-lists .exp-inline > input, .exp-lists .exp-inline > select { flex: 1 1 200px; width: auto; min-width: 0; }
+.exp-lists .exp-prefix { padding: 7px 8px; border-radius: 8px; background: var(--sc-soft); color: var(--sc-muted); white-space: nowrap; }
+.exp-lists .exp-check { display: inline-flex; align-items: center; gap: 8px; font-size: 14px !important; font-weight: 650; cursor: pointer; }
+.exp-lists .exp-check + .exp-check { margin-top: 4px; }
+.exp-lists .exp-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--sc-accent); }
+.exp-lists .exp-field > .exp-label { font-size: 12.5px; font-weight: 650; color: var(--sc-ink); }
+.exp-lists .exp-field em { font-style: normal; font-weight: 400; color: var(--sc-muted); }
+.exp-lists .exp-mapping { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 14px 18px; margin: 14px 0 0; padding: 14px 0 0; border-top: 1px dashed var(--sc-line); }
+.exp-lists .exp-url a { font-size: 13px; }
+
+/* Older markup inside a redesigned page (the OPML half of the export form, kernel lists): the shared look */
+.exp-lists fieldset:not(.exp-field) { margin: 0 0 18px; padding: 14px 16px; border: 1px solid var(--sc-line); border-radius: var(--sc-radius); background: var(--sc-card); }
+.exp-lists fieldset:not(.exp-field) > legend { padding: 0 6px; font-size: 15px; font-weight: 650; color: var(--sc-ink); background: none; }
+.exp-lists .context-attributes p, .exp-lists fieldset .block > p { color: var(--sc-muted); max-width: 78ch; margin: 0 0 8px; }
+.exp-lists fieldset .block { margin: 0 0 12px; }
+.exp-lists fieldset .block > label, .exp-lists fieldset label.inline { display: block; margin: 0 0 4px; font-size: 12.5px; font-weight: 650; color: var(--sc-ink); }
+.exp-lists fieldset input[type="text"], .exp-lists fieldset select, .exp-lists fieldset textarea {
+    max-width: 100%; min-height: 34px; padding: 4px 8px; border: 1px solid #8f96a3; border-radius: 8px; background: #fff; color: var(--sc-ink); font: inherit; font-size: 13.5px; }
+.exp-lists fieldset input.halfbox { width: min(100%, 520px); }
+.exp-lists table.list { width: 100%; margin: 0 0 8px; border-collapse: collapse; border: 1px solid var(--sc-line); border-radius: var(--sc-radius); }
+.exp-lists table.list th { padding: 8px 10px; font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .04em; color: var(--sc-muted); background-color: var(--sc-soft); border: 0; border-bottom: 1px solid var(--sc-line); text-align: left; }
+.exp-lists table.list td { padding: 8px 10px; border: 0; border-bottom: 1px solid var(--sc-line); background-color: transparent; color: var(--sc-ink); vertical-align: middle; }
+.exp-lists table.list tr.bglight, .exp-lists table.list tr.bgdark { background-color: transparent; }
+.exp-lists input.button, .exp-lists input.defaultbutton, .exp-lists button.button {
+    display: inline-flex; align-items: center; min-height: 32px; margin: 0; padding: 4px 12px; border: 1px solid #c9ced6; border-radius: 9px;
+    background-color: #fff; background-image: none; color: var(--sc-ink); font: 600 13px/1.2 inherit; font-family: inherit; cursor: pointer; box-shadow: none; text-shadow: none; }
+.exp-lists input.defaultbutton { border-color: var(--sc-accent); background-color: var(--sc-accent); color: #fff; }
+.exp-lists input.button:hover, .exp-lists button.button:hover { border-color: var(--sc-accent); color: var(--sc-accent-hover); }
+.exp-lists .opml-meta, .exp-lists .opml-more summary, .exp-lists .opml-more-grid label, .exp-lists .opml-window-field label { color: var(--sc-muted); }
+.exp-lists .opml-gone { color: var(--sc-bad); }
+.exp-lists .opml-tick { color: var(--sc-ok); }
+.exp-lists .opml-browser-pages .current { background: var(--sc-accent); border-color: var(--sc-accent); }
+.exp-lists table.list th.sortable button.sort-button { color: var(--sc-muted); text-transform: uppercase; font-weight: 650; }
+.exp-lists .opml-outlines td, .exp-lists .opml-browser td { vertical-align: middle; }
+.exp-lists .opml-outlines code, .exp-lists .opml-browser code { padding: 0 6px; border-radius: 6px; background: var(--sc-soft); }
+.exp-lists .opml-more summary { cursor: pointer; padding: 2px 0; }
+.exp-lists .opml-more-grid { display: flex; flex-wrap: wrap; gap: 12px 20px; padding: 10px 0 4px; }
+.exp-lists .opml-more-grid > span { display: flex; flex-direction: column; gap: 3px; }
+.exp-lists .opml-more-flags { flex-direction: row !important; align-items: center; gap: 14px !important; }
+.exp-lists .opml-actions, .exp-lists .opml-browser-controls, .exp-lists .opml-browser-pages, .exp-lists .opml-window { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.exp-lists .opml-window-field { display: flex; flex-direction: column; gap: 3px; }
+.exp-lists .opml-browser-pages .current { display: inline-block; padding: 3px 9px; border: 1px solid var(--sc-accent); border-radius: 8px; color: #fff; font-weight: 700; }
+.exp-lists .opml-already td { opacity: .7; }
+.exp-lists table.list th.sortable button.sort-button { background: none; border: 0; padding: 0; margin: 0; font: inherit; cursor: pointer; }
+.exp-lists .opml-outlines-wrap, .exp-lists .opml-browser-wrap { overflow-x: auto; }
+
+/* ---- The class pages: view, edit ---- */
+.exp-lists .exp-select-inline { min-height: 36px; max-width: 100%; padding: 4px 8px; border: 1px solid #8f96a3; border-radius: 9px; background: #fff; color: var(--sc-ink); font: inherit; font-size: 13.5px; }
+.exp-lists .exp-windows { padding: 10px 14px; }
+.exp-lists .exp-attrs { counter-reset: none; }
+.exp-lists .exp-datatype { margin: 12px 0 0; padding: 12px 0 0; border-top: 1px dashed var(--sc-line); color: var(--sc-ink); }
+.exp-lists .exp-datatype:empty { display: none; }
+.exp-lists .exp-datatype .block { margin: 0 0 10px; }
+.exp-lists .exp-datatype h6, .exp-lists .exp-datatype label { display: block; margin: 0 0 3px; font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .04em; color: var(--sc-muted); }
+.exp-lists .exp-datatype label input[type="checkbox"], .exp-lists .exp-datatype label input[type="radio"] { margin-right: 6px; }
+.exp-lists .exp-datatype input[type="text"], .exp-lists .exp-datatype select, .exp-lists .exp-datatype textarea {
+    max-width: 100%; min-height: 34px; padding: 4px 8px; border: 1px solid #8f96a3; border-radius: 8px; background: #fff; color: var(--sc-ink); font: inherit; font-size: 13.5px; }
+.exp-lists .exp-datatype .element { display: inline-block; vertical-align: top; margin: 0 18px 10px 0; }
+.exp-lists .exp-datatype p { margin: 0 0 6px; }
+.exp-lists .exp-flags { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 14px 0 0; }
+.exp-lists .exp-flags .exp-check { font-weight: 600; font-size: 13.5px !important; }
+.exp-lists .exp-check.is-off { color: var(--sc-muted); cursor: not-allowed; }
+
+/* The bar at the top of the class edit form (it keeps admin4's fixed behaviour through #controlbar-top) */
+.exp-lists #controlbar-top.exp-editbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px;
+    margin: 0 0 14px; padding: 10px 14px; border: 1px solid var(--sc-line); border-radius: var(--sc-radius); background: var(--sc-soft); box-shadow: none; }
+.exp-lists #controlbar-top.exp-editbar select, .exp-lists .exp-bottombar select { min-height: 36px; max-width: 100%; padding: 4px 8px; border: 1px solid #8f96a3; border-radius: 9px; background: #fff; color: var(--sc-ink); font: inherit; font-size: 13.5px; }
+
+/* The attribute list of the edit form: each row a card, the markup the order script relies on unchanged */
+.exp-lists table#ezcca-edit-list { display: block; width: 100%; margin: 0; border: 0; border-collapse: separate; background: none; }
+.exp-lists table#ezcca-edit-list > tbody { display: grid; gap: 12px; }
+.exp-lists table#ezcca-edit-list > tbody > tr { display: block; }
+.exp-lists table#ezcca-edit-list > tbody > tr > td { display: block; padding: 0; border: 0; background: none; }
+.exp-lists table#ezcca-edit-list tr.bglight, .exp-lists table#ezcca-edit-list tr.bgdark { background: none; }
+.exp-lists table.exp-attr { width: 100%; border: 1px solid var(--sc-line); border-radius: var(--sc-radius); border-collapse: separate; border-spacing: 0; background: var(--sc-card); box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04); overflow: hidden; }
+.exp-lists #LastChangedID table.exp-attr { border-color: var(--sc-accent); }
+.exp-lists table.exp-attr > tbody > tr > th, .exp-lists table.exp-attr > tr > th { padding: 10px 12px; border: 0; border-bottom: 1px solid var(--sc-line); background: var(--sc-soft); color: var(--sc-ink); font-size: 14px; font-weight: 650; text-align: left; vertical-align: middle; text-transform: none; letter-spacing: 0; }
+.exp-lists table.exp-attr th.tight { width: 1%; white-space: nowrap; }
+.exp-lists table.exp-attr th.tight input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--sc-accent); }
+.exp-lists table.exp-attr td.exp-attr-body { padding: 14px 16px; border: 0; background: var(--sc-card); color: var(--sc-ink); }
+.exp-lists .listbutton { display: inline-flex; align-items: center; gap: 6px; }
+.exp-lists .listbutton input[type="image"] { width: 16px; height: 16px; padding: 4px; border-radius: 6px; box-sizing: content-box; }
+.exp-lists .listbutton input[type="image"]:hover { background: var(--sc-line); }
+.exp-lists .listbutton input[type="text"] { width: 3.5em; min-height: 30px; padding: 2px 6px; border: 1px solid #8f96a3; border-radius: 8px; background: #fff; color: var(--sc-ink); font: inherit; font-size: 13px; text-align: right; }
+.exp-lists .ezcca-move-status { margin: 0 0 6px; color: var(--sc-muted); }
+.exp-lists a.scroll-to-top { position: static; display: inline-block; margin: 12px 0 0; padding: 0; background: none; color: var(--sc-accent-hover); font-size: 13px; }
+.exp-lists .ezcca-move-status.is-error { color: var(--sc-bad); font-weight: 650; }
+
+@media (max-width: 600px) {
+    .exp-lists table.exp-attr > tbody > tr:first-child { display: flex; flex-wrap: wrap; align-items: center; }
+}
 </style>
 {/literal}

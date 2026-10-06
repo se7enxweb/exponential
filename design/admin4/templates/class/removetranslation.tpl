@@ -1,52 +1,40 @@
+{* The confirmation of removing translations of a class (class/translation).
+
+   Field and button names (LanguageID[], ContentClassID, ContentClassLanguageCode, ConfirmRemoval,
+   RemoveTranslationButton, CancelButton) are unchanged. The same file is in design/admin and design/admin4. *}
+{include uri='design:class/exp_style.tpl'}
+
 <form method="post" action={'class/translation'|ezurl}>
+<div class="context-block exp-lists exp-classgroups">
 
-<div class="context-block">
+<div class="box-header"><div class="box-ml">
+<h1 class="context-title">{'Confirm translation removal'|i18n( 'design/admin/class/removetranslation' )}</h1>
+</div></div>
 
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
+<div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<h2 class="context-title">{'Confirm translation removal'|i18n( 'design/admin/class/removetranslation' )}</h2>
-
-{* DESIGN: Mainline *}<div class="header-mainline"></div>
-
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
-
-<div class="block">
-<p>{"Are you sure you want to remove the following translations from class <%1>?"|i18n("design/admin/class/removetranslation",,hash("%1",$class.nameList[$language_code]))|wash}</p>
-</div>
-
-<table class="list" cellspacing="0">
-    <tr>
-        <th>{"Language"|i18n("design/admin/class/removetranslation")}</th>
-    </tr>
-    {foreach $languages as $language sequence array( bglight, bgdark ) as $tr_class}
-    <tr class="{$tr_class}">
-        <td><input type="hidden" name="LanguageID[]" value="{$language.id}" />{$language.name|wash}</td>
-    </tr>
+<section class="exp-confirm">
+    <h2 class="exp-h2">{"Are you sure you want to remove the following translations from class <%1>?"|i18n( "design/admin/class/removetranslation",, hash( "%1", $class.nameList[$language_code] ) )|wash}</h2>
+    <ul class="exp-consequences">
+        <li>{'The class name, description and attribute names in these languages go. The class, its attributes and its objects stay.'|i18n( 'design/admin/class/removetranslation' )}</li>
+    </ul>
+    <ul class="exp-plain" style="margin-top: 10px;">
+    {foreach $languages as $language}
+        <li><input type="hidden" name="LanguageID[]" value="{$language.id}" /><strong>{$language.name|wash}</strong></li>
     {/foreach}
-</table>
+    </ul>
+</section>
 
-{* DESIGN: Content END *}</div></div></div>
-
-<div class="controlbar">
-
-{* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-
-<div class="block">
-
-    <input type="hidden" name="ContentClassID" value="{$class_id|wash}" />
-    <input type="hidden" name="ContentClassLanguageCode" value="{$language_code|wash}" />
-    <input type="hidden" name="ConfirmRemoval" value="1" />
-
-    <input type="submit" class="button" name="RemoveTranslationButton" value="{'OK'|i18n( 'design/admin/class/removetranslation' )}" />
-    <input type="submit" class="button" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/class/removetranslation' )}" title="{'Cancel the removal of translations.'|i18n( 'design/admin/class/removetranslation' )}" />
+<div class="exp-bottombar">
+    <div class="exp-actions">
+        <input type="hidden" name="ContentClassID" value="{$class_id|wash}" />
+        <input type="hidden" name="ContentClassLanguageCode" value="{$language_code|wash}" />
+        <input type="hidden" name="ConfirmRemoval" value="1" />
+        <button class="exp-btn exp-btn-danger" type="submit" name="RemoveTranslationButton" value="1">{'OK'|i18n( 'design/admin/class/removetranslation' )}</button>
+        <button class="exp-btn" type="submit" name="CancelButton" value="1" title="{'Cancel the removal of translations.'|i18n( 'design/admin/class/removetranslation' )}">{'Cancel'|i18n( 'design/admin/class/removetranslation' )}</button>
+    </div>
 </div>
 
-{* DESIGN: Control bar END *}</div></div>
-
+</div></div></div>
 </div>
-
-</div>
-
 </form>
