@@ -96,9 +96,15 @@ class ezpEvent
                     continue;
                 }
 
-                // format from ini is seperated by @
-                list( $event, $callback ) = explode( '@', $listener );
-                $this->attach( $event, $callback );
+                // The format from ini is <event>@<callback>. An entry without both parts would attach a listener
+                // that can never be called, or one to an event named '', so it is logged and left out.
+                $parts = explode( '@', $listener, 2 );
+                if ( count( $parts ) !== 2 || $parts[0] === '' || $parts[1] === '' )
+                {
+                    eZDebug::writeError( "site.ini [Event] Listeners[]=$listener is not of the form <event>@<callback>; skipped", __METHOD__ );
+                    continue;
+                }
+                $this->attach( $parts[0], $parts[1] );
             }
 
             // The role-aware HTTP cache attaches itself only when it is
