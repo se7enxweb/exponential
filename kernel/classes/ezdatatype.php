@@ -1282,6 +1282,11 @@ class eZDataType
                     if ( $elements->length !== 0 )
                     {
                         $value = $elements->item( 0 )->textContent;
+                        // serializeContentObjectAttribute() writes no value of a number
+                        // field (an integer or float left empty) as an empty element; it
+                        // is no value again, not the 0 the column would make of ''
+                        if ( $value === '' && ( $attributeName === 'data_int' || $attributeName === 'data_float' ) )
+                            $value = null;
                         $objectAttribute->setAttribute( $attributeName, $value );
                     }
                     else
