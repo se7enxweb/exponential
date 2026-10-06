@@ -2896,7 +2896,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4e0aa9778556e3417535f7fcd9d4e65c  doc/changelogs/6.0/6.0.15.md
+0b88a6f0b3b9c22be31da67b89d52d78  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5571,7 +5571,7 @@ aa89fd43a6579c8bfaf060210e8e0493  kernel/private/classes/views/url/edit.php
 58d87e76160a3eeef1dda6c4e4f62916  kernel/private/classes/views/url/list.php
 422ed1432bd2ce184617ead78261263d  kernel/private/classes/views/url/view.php
 a52fd367f71f4aa2995283b31390702f  kernel/private/classes/views/user/activate.php
-38717117eba434c46dabc0703de019a9  kernel/private/classes/views/user/edit.php
+baa2e57f66928ea637d84641d2b9464b  kernel/private/classes/views/user/edit.php
 a878101eba413cae2a95f603ca591098  kernel/private/classes/views/user/forgotpassword.php
 a9211c6d42a1168ed92ff7ccb7f6ecc3  kernel/private/classes/views/user/login.php
 f78f5a9b4365087a08e196ebde0ba8b1  kernel/private/classes/views/user/logout.php
@@ -6983,6 +6983,7 @@ cff81497a83267ad5f42597bb6c66c5c  tests/tests/kernel/classes/eZURLTest.php
 b80a0b72065201d4e81e9dbd79ed9ec0  tests/tests/kernel/classes/eZURLWildcardTest.php
 958c3b8e79be5a4fd876011251c836e4  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 1cdc6174223b1ee7b8ffd262ed6eee8c  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
+e385d32da9929ef38d95d06364835958  tests/tests/kernel/classes/eZUserEditCancelTest.php
 687ee97f9728fbbacfab101647a2acca  tests/tests/kernel/classes/eZWorkflowProcessGroupingTest.php
 39ae75087a6ede367d8e6b85e0750895  tests/tests/kernel/classes/eZWorkflowProcessListLiveTest.php
 800f311d8241aace8b5b8efd9a678d4b  tests/tests/kernel/classes/eZWorkflowProcessListPageTest.php
