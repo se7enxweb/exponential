@@ -325,10 +325,10 @@ class eZSiteAccess
                         {
                             $access = array_merge( $access, $default );
                             $access['type'] = $type;
-                            // With more than one language variant (vary) the web kernel sends the browser on to the
-                            // address with the segment, once: so the pages a cache keeps have one language each. Only
-                            // when an entry of HostUriMatchMapItems takes that address, else it would land here again
-                            if ( !empty( $default['vary'] ) && $default['uri_part']
+                            // The web kernel sends the browser on to the address with the segment, once (/ to /ger):
+                            // the pages a cache keeps then have one address and one language each. Only when an entry
+                            // of HostUriMatchMapItems takes that address, else it would land here again
+                            if ( $default['uri_part']
                                  && ( !$ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriRedirect' )
                                       || $ini->variable( 'SiteAccessSettings', 'DefaultHostUriRedirect' ) !== 'disabled' )
                                  && $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) )
@@ -453,7 +453,8 @@ class eZSiteAccess
         foreach ( $items as $item )
         {
             $item = (array)$item;
-            if ( !isset( $item[2] ) || (string)$item[0] === '' || (string)$item[2] === '' )
+            // An empty host matches any host with part or start, as in HostUriMatchMapItems
+            if ( !isset( $item[2] ) || (string)$item[2] === '' )
                 continue;
             $method = isset( $item[3] ) && $item[3] !== '' && $item[3] !== 'default' ? (string)$item[3] : (string)$defaultMethod;
             if ( !self::hostMatches( $host, (string)$item[0], $method ) )

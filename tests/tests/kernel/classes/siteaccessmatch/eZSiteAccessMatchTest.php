@@ -294,16 +294,44 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $this->assertArrayNotHasKey( 'redirect', $target );
     }
 
-    /** With one language variant for the host the browser makes no difference: no redirect, no Vary */
-    public function testOneLanguageVariantIsNotRedirected()
+    /** With one language variant the browser makes no difference: the redirect is the same for all, without Vary */
+    public function testOneLanguageVariantIsRedirectedWithoutVary()
     {
         $this->defaultHostUri();
-        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de';
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'en';
         $this->set( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems', array( 'www.example.invalid;ger;k1ger;;de', 'www.example.invalid;ger;k1ger' ) );
         $access = $this->match( 'news/an-article' );
         $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $access, 'news/an-article', array( 'ger' ) );
+        $this->assertTrue( $access['redirect'] );
         $this->assertArrayNotHasKey( 'vary', $access );
-        $this->assertArrayNotHasKey( 'redirect', $access );
+    }
+
+    /**
+     * A site with a single language siteaccess under /de, on any host: / goes to /de, an address without segment to
+     * the same address under /de, and /de itself stays
+     */
+    public function testASingleLanguageSiteSendsTheStartPageToItsSegment()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'host_uri' );
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMethodDefault', 'strict' );
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMapItems', array( ';de;k1ger;part' ) );
+        $this->set( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems', array( ';de;k1ger;part' ) );
+        unset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] );
+
+        foreach ( array( 'www.example.invalid', 'www.example.invalid.test.local' ) as $host )
+        {
+            $start = $this->match( '', $host );
+            $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $start, '', array( 'de' ) );
+            $this->assertTrue( $start['redirect'], "/ on $host goes to /de" );
+            $this->assertArrayNotHasKey( 'vary', $start );
+            $this->assertSame( '/de', ezpKernelWeb::languageRedirectURI( '/de', '', '' ) );
+
+            $this->assertTrue( $this->match( 'news/an-article', $host )['redirect'] );
+
+            $de = $this->match( 'de', $host );
+            $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $de, '', array( 'de' ) );
+            $this->assertArrayNotHasKey( 'redirect', $de, "/de on $host stays" );
+        }
     }
 
     /** Without an entry for the segment the redirect would come back: the page is shown in place */
