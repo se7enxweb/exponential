@@ -574,7 +574,7 @@ CODEPIECE;
                              '    case \'no\':'                             . "\n" .
                              '         break;'                              . "\n" .
                              '     default:'                                . "\n" .
-                             '         %tmp1 = \'"\' . %tmp1% . \'"\' ;'     . "\n" .
+                             '         %tmp1% = \'"\' . %tmp1% . \'"\' ;'    . "\n" .
                              '}'  . "\n";
                 }
                 else

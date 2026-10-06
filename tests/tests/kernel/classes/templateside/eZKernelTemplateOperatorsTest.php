@@ -164,6 +164,31 @@ class eZKernelTemplateOperatorsTest extends eZDatatypeTestCase
         $this->assertFourWays( "{'a/b'|ezurl('single')}", '{$u|ezurl($q)}', array( 'u' => 'a/b', 'q' => 'single' ), "'" . self::url( 'a/b' ) . "'" );
     }
 
+    public function testEzurlWithSharedCompiledTemplates()
+    {
+        // compiled templates shared by several sites cannot fold the address in when compiling
+        $ini = eZINI::instance();
+        $saved = $ini->hasVariable( 'TemplateSettings', 'ShareCompiledTemplates' ) ? $ini->variable( 'TemplateSettings', 'ShareCompiledTemplates' ) : null;
+        $ini->setVariable( 'TemplateSettings', 'ShareCompiledTemplates', 'enabled' );
+        try
+        {
+            foreach ( array( 'double' => '"', 'single' => "'", 'no' => '' ) as $quote => $mark )
+            {
+                $expected = $mark . self::url( 'k1d/shared' ) . $mark;
+                $this->assertFourWays( "{'k1d/shared'|ezurl('$quote')}", "{'k1d/shared'|ezurl(\$q)}", array( 'q' => $quote ), $expected, "quote $quote" );
+                $expected = $mark . self::url( '/k1d/shared', true ) . $mark;
+                $this->assertFourWays( "{'k1d/shared'|ezroot('$quote')}", "{'k1d/shared'|ezroot(\$q)}", array( 'q' => $quote ), $expected, "ezroot quote $quote" );
+            }
+        }
+        finally
+        {
+            if ( $saved === null )
+                $ini->removeSetting( 'TemplateSettings', 'ShareCompiledTemplates' );
+            else
+                $ini->setVariable( 'TemplateSettings', 'ShareCompiledTemplates', $saved );
+        }
+    }
+
     public function testEzurlOfAbsoluteAddressesIsLeftAlone()
     {
         $this->assertFourWays( "{'https://k1d.example.invalid/x'|ezurl(no)}", '{$u|ezurl(no)}', array( 'u' => 'https://k1d.example.invalid/x' ), 'https://k1d.example.invalid/x' );
