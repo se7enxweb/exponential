@@ -171,7 +171,7 @@ On 5 October 2026, after the clean-up described below, the page showed:
 
 | Language | Objects (main, only) | Classes | Shown by | Can be removed |
 |---|---|---|---|---|
-| English (American), `eng-US` | 368 (368, 325) | 81 (74 stored, 7 unsaved edits) | 14 siteaccesses, first in 13 | No |
+| English (American), `eng-US` | 367 (367, 324) | 81 (74 stored, 7 unsaved edits) | 14 siteaccesses, first in 13 | No |
 | German, `ger-DE` | 53 (10, 10) | 6 | `bold_ger`, first there | No |
 
 Earlier that day there was a third card, English (United Kingdom), `eng-GB`: the case this page was redesigned to
