@@ -117,6 +117,23 @@
 {/if}
 </div>
 
+{* View mode: those of content.ini [VersionView] ViewModes[] *}
+{def $version_view_modes=cond( ezini_hasvariable( 'VersionView', 'ViewModes', 'content.ini' ), ezini( 'VersionView', 'ViewModes', 'content.ini' ), array( 'full' ) )
+     $current_view_mode=cond( is_set( $view_mode ), $view_mode, 'full' )}
+{if $version_view_modes|count|gt( 1 )}
+<h6>{'View mode'|i18n( 'design/admin/content/view/versionview' )}:</h6>
+<div class="block">
+{foreach $version_view_modes as $version_view_mode}
+    <p>
+    <input type="radio" name="SelectedViewMode" value="{$version_view_mode|wash}" {if eq( $version_view_mode, $current_view_mode )}checked="checked"{/if} />&nbsp;{$version_view_mode|wash}
+    </p>
+{/foreach}
+</div>
+{else}
+<input type="hidden" name="SelectedViewMode" value="{$current_view_mode|wash}" />
+{/if}
+{undef $version_view_modes $current_view_mode}
+
 <div class="block">
 <input class="button" type="submit" name="ChangeSettingsButton" value="{'Update view'|i18n( 'design/admin/content/view/versionview' )}" title="{'View the version that is currently being displayed using the selected language, location and design.'|i18n( 'design/admin/content/view/versionview' )}" />
 </div>

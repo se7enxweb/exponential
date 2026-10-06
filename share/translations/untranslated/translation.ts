@@ -4925,6 +4925,10 @@
         <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>View mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/contentstructuremenu</name>

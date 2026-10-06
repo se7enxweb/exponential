@@ -153,6 +153,12 @@ class Versionview extends \Exponential\Runnable\ModuleView
             {
                 $placementID = $Module->actionParameter( 'PlacementID' );
             }
+
+            // The view mode chosen in the form (a listed one; anything else keeps the current one)
+            if ( $Module->hasActionParameter( 'ViewMode' ) )
+            {
+                $viewMode = self::changedViewMode( $Module->actionParameter( 'ViewMode' ), $viewMode );
+            }
         }
 
         $assignment = null;
@@ -329,9 +335,42 @@ class Versionview extends \Exponential\Runnable\ModuleView
         {
             return 'full';
         }
+        if ( !is_string( $requested ) || !preg_match( '/^[A-Za-z0-9_-]+$/', $requested ) )
+        {
+            // A view mode names a template (node/view/<mode>.tpl): never a path, whatever the setting lists
+            return null;
+        }
+        return in_array( $requested, self::viewModes(), true ) ? $requested : null;
+    }
+
+    /**
+     * The view modes a version can be shown in: content.ini [VersionView] ViewModes[], full when it is not set.
+     *
+     * @return string[]
+     */
+    public static function viewModes()
+    {
         $ini = \eZINI::instance( 'content.ini' );
-        $allowed = $ini->hasVariable( 'VersionView', 'ViewModes' ) ? (array)$ini->variable( 'VersionView', 'ViewModes' ) : array( 'full' );
-        return in_array( (string)$requested, $allowed, true ) ? (string)$requested : null;
+        $listed = $ini->hasVariable( 'VersionView', 'ViewModes' ) ? (array)$ini->variable( 'VersionView', 'ViewModes' ) : array( 'full' );
+        return array_values( array_unique( array_filter( array_map( 'strval', $listed ), 'strlen' ) ) );
+    }
+
+    /**
+     * The view mode after the form of the version preview was sent ("Update view"): $posted when it is a listed view
+     * mode, otherwise $current.
+     *
+     * @param mixed $posted SelectedViewMode of the form
+     * @param string $current
+     * @return string
+     */
+    public static function changedViewMode( $posted, $current )
+    {
+        if ( $posted === null || $posted === '' || $posted === false )
+        {
+            return $current;
+        }
+        $viewMode = self::viewMode( $posted );
+        return $viewMode !== null ? $viewMode : $current;
     }
 
     /**

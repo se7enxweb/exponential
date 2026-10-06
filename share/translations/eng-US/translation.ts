@@ -5436,6 +5436,10 @@
         <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
         <translation>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</translation>
     </message>
+    <message>
+        <source>View mode</source>
+        <translation>View mode</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/contentstructuremenu</name>
