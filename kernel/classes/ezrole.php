@@ -1494,12 +1494,14 @@ class eZRole extends eZPersistentObject
                      ezuser_role
                   WHERE
                      ezuser_role.limit_value = '$limit_value' AND
-                     ezuser_role.limit_identifier = '$limit_identifier'";
+                     LOWER( ezuser_role.limit_identifier ) = LOWER( '$limit_identifier' )";
 
         if ( $db->databaseName() === 'mongo' )
         {
             $userRoleArray = $db->aggregate( 'ezuser_role', [
-                [ '$match'   => [ 'limit_value' => $limit_value, 'limit_identifier' => $limit_identifier ] ],
+                [ '$match'   => [ 'limit_value' => $limit_value,
+                                 // stored as 'Section' or 'Subtree', asked for as 'section': compared without case
+                                 'limit_identifier' => [ '$regex' => '^' . preg_quote( $limit_identifier, '/' ) . '$', '$options' => 'i' ] ] ],
                 [ '$project' => [ '_id' => 0, 'contentobject_id' => 1, 'role_id' => 1 ] ],
             ] );
             $userRoleArray = array_map( function( $userRoleRow ) {
