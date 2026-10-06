@@ -401,7 +401,7 @@ b296af3623023fd29dede1e7a28c87b5  design/admin/templates/content/edit_languages.
 1d5f22905034a53be470c9c47f79dc34  design/admin/templates/content/edit_menu.tpl
 1f0c31bc65fc2ffc21fa856529fe4d96  design/admin/templates/content/edit_relations.tpl
 5b492f52a0837222e80360d4a481166c  design/admin/templates/content/edit_validation.tpl
-cf8c5b7adddad86d9c09cd7f70251191  design/admin/templates/content/history.tpl
+a7fa5bc0f2eabf06ee4e5a12bc13f6ee  design/admin/templates/content/history.tpl
 97627aabe24ba1fce9b6563c6f528b06  design/admin/templates/content/job.tpl
 2e9710db62ed76cc9a0b5d495c0b3cef  design/admin/templates/content/job_confirm.tpl
 bb5ef34d9326458c42e29b3d37337047  design/admin/templates/content/job_mode_choice.tpl
@@ -799,7 +799,7 @@ bc7937dac73f716b532f14b62505ed0d  design/admin3/templates/content/browse_mode_li
 d334aad163caedca77ef1890fca90b25  design/admin3/templates/content/edit.tpl
 35c95ad3e52bd6cf74d907b804ea2625  design/admin3/templates/content/edit_draft.tpl
 3e4218bef006d2475b552dca8bfdbe88  design/admin3/templates/content/edit_menu.tpl
-521f190cd846cd3c4de6bcd5320b23f1  design/admin3/templates/content/history.tpl
+cd5f583d6210663887473f23d271f6b8  design/admin3/templates/content/history.tpl
 67f3ffbfde19ae2a66a00a7977a5a673  design/admin3/templates/content/view/versionview.tpl
 177f84a513599a5358aed900c39aa21a  design/admin3/templates/error/parts/formtoken_style.tpl
 ce80eadd36457f38b7b0b36e1ee3e0f6  design/admin3/templates/loginpagelayout.tpl
@@ -1014,7 +1014,7 @@ be1c7acb3cd20918fd4308fdfd105403  design/admin4/templates/content/edit_attribute
 3e4218bef006d2475b552dca8bfdbe88  design/admin4/templates/content/edit_menu.tpl
 1f0c31bc65fc2ffc21fa856529fe4d96  design/admin4/templates/content/edit_relations.tpl
 5b492f52a0837222e80360d4a481166c  design/admin4/templates/content/edit_validation.tpl
-521f190cd846cd3c4de6bcd5320b23f1  design/admin4/templates/content/history.tpl
+cd5f583d6210663887473f23d271f6b8  design/admin4/templates/content/history.tpl
 7edb8ebf669de1d90b3e7ed82f3a974c  design/admin4/templates/content/job.tpl
 2e9710db62ed76cc9a0b5d495c0b3cef  design/admin4/templates/content/job_confirm.tpl
 869ecdba0e8ef07c2de0e839472e0faf  design/admin4/templates/content/job_mode_choice.tpl
@@ -2245,7 +2245,7 @@ cd3b7715af22826d463ee9fa8b2860bd  design/standard/templates/content/edit_attribu
 23dcd6d6ce6130caf3174bafbef08b4f  design/standard/templates/content/edit_redirection.tpl
 e763a23a6ec2a5da7cf2d747ef30c83d  design/standard/templates/content/edit_right_menu.tpl
 960c66b9984b7a488d7c48999833b3d2  design/standard/templates/content/edit_validation.tpl
-f62f180578d9254d8a6d2566d2b2aba2  design/standard/templates/content/history.tpl
+a634488f758570d50d423218f7c883f8  design/standard/templates/content/history.tpl
 70a935d89a747523fdc9a0c6011e979f  design/standard/templates/content/history_access_messages.tpl
 97627aabe24ba1fce9b6563c6f528b06  design/standard/templates/content/job.tpl
 2e9710db62ed76cc9a0b5d495c0b3cef  design/standard/templates/content/job_confirm.tpl
@@ -2980,7 +2980,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-871aca949538d86bc31c9863d6757bb2  doc/changelogs/6.0/6.0.15.md
+40ffb0a9c837a58de97264b841e532a2  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5557,7 +5557,7 @@ df872c5ec934f64aa7579eca83cbe3cd  kernel/private/classes/views/content/copysubtr
 f97f33002198d5a29071812cf304b9d3  kernel/private/classes/views/content/draft.php
 589c1932dd859b4d9ea2c85bef7e2292  kernel/private/classes/views/content/edit.php
 3bf4f4e45ac3adf215f6b8268c55b6db  kernel/private/classes/views/content/hide.php
-6ce710c0893b887046fcd0401f4c60ad  kernel/private/classes/views/content/history.php
+dcb1513048f740d227ef6ea7b32119a9  kernel/private/classes/views/content/history.php
 8380b2e8ac3fe2a37f91bc143c598f7f  kernel/private/classes/views/content/job.php
 f2b10780650551125b5ed1c6bb190ed4  kernel/private/classes/views/content/jobs.php
 8f90ce229245f8dd706cdf7f5abf9ec9  kernel/private/classes/views/content/keyword.php
@@ -7098,7 +7098,7 @@ d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItem
 918e9828b094735f61bf48a1ab5cc1de  tests/tests/kernel/classes/eZContentFunctionCollectionTest.php
 edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsTest.php
 4ed429eb6333847aea87608bdc25fc50  tests/tests/kernel/classes/eZContentHistoryAccessLiveTest.php
-495a8cbecc8cb4209a024e4f0f6f022c  tests/tests/kernel/classes/eZContentHistoryAccessTest.php
+2393c1f4d60f50c867e7fdbe54c1d089  tests/tests/kernel/classes/eZContentHistoryAccessTest.php
 749895a2982f127d2581d6ed8ab94895  tests/tests/kernel/classes/eZContentObjectDraftAccessLiveTest.php
 94154626b5390fd506ce342b50dadb8e  tests/tests/kernel/classes/eZContentObjectDraftLocationTest.php
 3391b6094e41c01c2e3ef953b1fbef3a  tests/tests/kernel/classes/eZContentObjectStateGroupTest.php
