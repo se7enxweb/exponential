@@ -346,7 +346,8 @@ a whole request down the first time something touched it).
 | A command | `bin/php/<name>.php` | `php extension/<name>/bin/php/<name>.php --help` |
 | A translation | `translations/<locale>/translation.ts` | add `TranslationExtensions[]=<name>` in `[RegionalSettings]` |
 | A database table | `share/db_schema.dba` (the wizards write it when asked) | install it with the package installer |
-| A say in downloads, edit access to drafts, collaboration items, notifications or view cache keys | a listener of `content/download/access`, `content/edit/access`, `collaboration/item/access`, `content/notification/create` or `content/view/cachekeys` in `[Event] Listeners[]` | see [Access and view cache filters](../features/6.0/access-and-cache-filters.md) |
+| A say in downloads, edit access to drafts, collaboration items, notifications or view cache keys | a listener of `content/download/access`, `content/edit/access`, `collaboration/item/access`, `content/notification/create` or `content/view/cachekeys` in `[Event] Listeners[]` (the settings extension wizard writes one with an example) | see [Access and view cache filters](../features/6.0/access-and-cache-filters.md) |
+| A print or PDF layout of a draft in the version preview | a view mode in `content.ini [VersionView] ViewModes[]` and its `node/view/<mode>.tpl` | see [Version preview in other view modes](../features/6.0/version-preview-view-modes.md) |
 
 For the class based forms of a command, cronjob part and view, see
 [Commands, cronjob parts and module views as classes](../bc/6.0/cli_cronjob_view_abstractions.md) and
