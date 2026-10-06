@@ -60,19 +60,22 @@ post the same fields to `expCacheManager::sharedActionFromPost()`.
 
 ## 3. Last cleared
 
-The column says when each cache was last cleared and, where the audit trail knows, by whom: "just now",
+The column says when each cache was last cleared and, from the audit trail, by whom: "just now",
 "12 minutes ago", "3 hours ago", else the date, with "by admin" or "from a shell, os:root" below.
 
-- **The audit trail** (`system.cache.clear`) records clears through this page, Setup > System information and
-  `./console exp:cache`, with the user (or the operating system user of a shell). The page reads it once per view:
-  one query of the audit index (the newest 200 clears) and the end of the newest system channel file (at most 3000
-  lines), for clears the indexer has not reached yet. Who cleared is shown to users who may read the system
-  channel of the audit (`audit/read`).
-- `bin/php/ezcache.php`, which `exp:velocity deploy` runs, is **not** audited. Its clears show only where the kernel
-  records an expiry time: content views, template blocks, user information, translations, image aliases and the
-  content tree menu.
-- The newer of the two wins; an audit record within half a minute of the expiry time is the same clear and names
-  who made it. The page that shows the result of a clear already names you, before your own record is written.
+- **The audit trail** (`system.cache.clear`) records every clear: through this page, Setup > System information,
+  `./console exp:cache` and `bin/php/ezcache.php` (one record per run, so also the clears of
+  `exp:velocity deploy`). A shell is named by its operating system user (`os:root`, `os:alpha`). A run that clears
+  nothing (`--list-ids`, `--list-tags`, an unknown id) writes no record; if the record cannot be written, the
+  caches are cleared anyway and a warning goes to stderr.
+- The page reads it once per view: one query of the audit index (the newest 200 clears) and the end of the newest
+  system file of each audit directory (at most 3000 lines each), for clears the indexer has not reached yet.
+  Records are split between `var/log/audit` (commands without a siteaccess) and `var/<site>/log/audit`; both are
+  read. Who cleared is shown to users who may read the system channel of the audit (`audit/read`).
+- The kernel also records an expiry time for content views, template blocks, user information, translations,
+  image aliases and the content tree menu. The newer of the two wins; an audit record up to five seconds before
+  the expiry is the same clear and names who made it. The page that shows the result of a clear already names you,
+  before your own record is written.
 - A cache cleared neither way says "not recorded".
 
 ## 4. Velocity

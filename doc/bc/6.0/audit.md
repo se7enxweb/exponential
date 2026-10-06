@@ -1955,7 +1955,7 @@ only with `Reads=enabled`).
 | `system.setting.write` | an INI file is written | value in that file and value in effect → the same; for `expIniEditor` also the unified diff from `diff()` (never a value whose variable `expIniEditor::isSecret()` recognises: it is written as `[secret]`) | `audit/expaudit.php:settingWrite` | write | notice | on | yes | system | at once |
 | `system.setting.undo` | a debug bar write is undone | as `system.setting.write` | `debugbar/expdebugbarsettings.php:undo` | undo | notice | on | yes | system | buffered |
 | `system.extension.change` | ActiveExtensions or its order is written | list → list | `ezpactiveextensions.php:write` | change | notice | on | yes | system | buffered |
-| `system.cache.clear` | caches are cleared on request | – → ids, ms | `ezcache.php:auditCleared` | clear | info | on | yes | system | buffered |
+| `system.cache.clear` | caches are cleared on request | – → ids, ms | `ezcache.php:auditCleared` (also for `bin/php/ezcache.php`, one record per run, through `eZCacheHelper::auditCleared()`) | clear | info | on | yes | system | buffered |
 | `system.cronjob.run` | a cronjob part runs (parent: the runcronjobs invocation) | – → ms, result | `ezruncronjobs.php:auditPart` | run | info | on | yes | system | buffered |
 | `system.cronjob.fail` | a part throws or exits non-zero | – → error | `ezruncronjobs.php:auditPart` | run | warning | on | yes | system | buffered |
 | `system.command.run` | a command runs | – → exit code, ms | `ezscript.php:shutdown` | run | info | on | yes | system | buffered |
