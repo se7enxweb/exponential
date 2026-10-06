@@ -3852,6 +3852,46 @@
         <source>Toggle selection</source>
         <translation>Auswahl umkehren</translation>
     </message>
+    <message>
+        <source>You may edit this object, but not read it</source>
+        <translation>Sie dürfen dieses Objekt bearbeiten, aber nicht lesen</translation>
+    </message>
+    <message>
+        <source>The list shows every version of the object. You can compare and copy its published, archived and rejected versions and your own; a draft or pending version of someone else only with the policy content/versionread for it.</source>
+        <translation>Die Liste zeigt alle Versionen des Objekts. Seine veröffentlichten, archivierten und abgelehnten Versionen und Ihre eigenen können Sie vergleichen und kopieren; einen Entwurf oder eine wartende Version eines anderen nur mit der Richtlinie content/versionread dafür.</translation>
+    </message>
+    <message>
+        <source>The versions were not compared</source>
+        <translation>Die Versionen wurden nicht verglichen</translation>
+    </message>
+    <message>
+        <source>You may not read version %1.</source>
+        <translation>Sie dürfen Version %1 nicht lesen.</translation>
+    </message>
+    <message>
+        <source>Version %1 was not copied</source>
+        <translation>Version %1 wurde nicht kopiert</translation>
+    </message>
+    <message>
+        <source>You may not read this version, so you cannot copy it.</source>
+        <translation>Sie dürfen diese Version nicht lesen und können sie daher nicht kopieren.</translation>
+    </message>
+    <message>
+        <source>You may not edit the translation %1.</source>
+        <translation>Sie dürfen die Übersetzung %1 nicht bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Some versions were not removed</source>
+        <translation>Einige Versionen wurden nicht entfernt</translation>
+    </message>
+    <message>
+        <source>Not removed: %1. You may not remove these versions, or they are published or part of a workflow that is still running.</source>
+        <translation>Nicht entfernt: %1. Sie dürfen diese Versionen nicht entfernen, oder sie sind veröffentlicht oder Teil eines Workflows, der noch läuft.</translation>
+    </message>
+    <message>
+        <source>You cannot copy version #%version_number because you may not read it.</source>
+        <translation>Sie können Version #%version_number nicht kopieren, weil Sie sie nicht lesen dürfen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/multiedit</name>

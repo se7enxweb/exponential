@@ -34,6 +34,33 @@ Someone else's draft stays closed for reading: a read policy for the subtree doe
 (`eZContentObjectVersion::checkAccess( 'edit' )` is unchanged); an approver who edits someone else's version gets the
 usual choice to edit a copy as a new version.
 
+## The versions of such an object (`content/history`)
+
+Since 6 October 2026 `content/history` opens for who may **edit** the object, not only for who may read it, so the
+editors of a draft (an approver with a subtree-limited edit policy, a further editor that an extension lets in) can
+make their next version from a rejected one. The page then shows only what such an editor may see:
+
+| On the page | Who may edit, not read | Who may read (with an edit policy for some content, as before) |
+| --- | --- | --- |
+| Opening the page | yes (`History::canOpen()`, with `eZContentObject::editAccess()` and the filter `content/edit/access`) | yes |
+| The list: number, status, translation, creator, dates of every version | yes | yes |
+| Comparing and copying the **published**, **archived** and own versions | yes | yes |
+| Comparing and copying a **rejected** version of someone else | yes, to make the next version from it | only with `content/versionread` for it |
+| Comparing and copying someone else's **draft** or **pending** version | only with `content/versionread` for it | only with `content/versionread` for it |
+| The link to `content/versionview` of a version | only when `content/versionread` allows that version | the same |
+| Removing versions | drafts, archived, rejected and untouched drafts, with `content/versionremove` | the same |
+
+A note at the top of the page tells an editor who may not read the object what they can do there. A comparison, copy
+or removal that a request asks for a version the user may not see or remove is not done, and the page says which
+versions were left out (`design:content/history_access_messages.tpl`); a debug notice names the user and versions.
+Copying starts the new draft in one of the version's own translations.
+
+The view's policy functions are `read or edit` (they were `read` and `edit`), so a user with an edit policy and no
+read policy reaches the view, and the view decides for the object. A reader without any edit policy, such as the
+anonymous user, stays out as before. The decisions are `History::canOpen()`, `History::canSeeVersionContent()` and
+`History::isRemovableStatus()` in `kernel/private/classes/views/content/history.php`; the templates get
+`content_versions` (the numbers of the versions whose content the user may see), `can_read` and `refused`.
+
 ## How a site notices
 
 - **Approvers with subtree-limited editor roles** get the "Edit" link of a pending item in the collaboration inbox
@@ -63,4 +90,6 @@ and the REST interface asks: see [Access and view cache filters](../../features/
 - On a running installation: `tests/tests/kernel/classes/eZContentObjectDraftAccessLiveTest.php` creates its own users
   (never published, addresses at `example.invalid`), roles and drafts and removes them again. It is skipped where
   there is no installation.
+- The history: `tests/tests/kernel/classes/eZContentHistoryAccessTest.php` (no database) and
+  `tests/tests/kernel/classes/eZContentHistoryAccessLiveTest.php` (its own users, roles and drafts, removed again).
 - With a test database: the `@group database` tests in `tests/tests/kernel/classes/eZContentObjectTest.php`.
