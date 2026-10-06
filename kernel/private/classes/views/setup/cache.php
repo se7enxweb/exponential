@@ -56,7 +56,9 @@ class Cache extends \Exponential\Runnable\ModuleView
                                // array( ok, message ) once the SQL query cache or the
                                // HTTP cache was cleared
                                'querycache' => false,
-                               'httpcache' => false );
+                               'httpcache' => false,
+                               // a button Setup > System information has too (expCacheManager::$sharedActions)
+                               'shared' => false );
 
         $contentCacheEnabled = $ini->variable( 'ContentSettings', 'ViewCaching' ) == 'enabled';
         $iniCacheEnabled = true;
@@ -80,6 +82,12 @@ class Cache extends \Exponential\Runnable\ModuleView
             \eZDebug::writeNotice( $result['message'], 'setup/cache' );
             return array( $result['ok'], $result['message'] );
         };
+
+        // The HTTP cache, query cache and SQL profile buttons Setup > System information has as well: one code
+        // path for both pages (expCacheManager::sharedActionFromPost(), which checks setup/managecache itself).
+        $sharedCacheAction = \expCacheManager::sharedActionFromPost( $http );
+        if ( $sharedCacheAction )
+            $cacheCleared['shared'] = $feedback( $sharedCacheAction );
 
         // PHP's opcode cache and APCu. Both live in the shared memory of the server
         // process that answers this request -- a php-fpm pool, a Qbix server and its
@@ -192,6 +200,7 @@ class Cache extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "cache_enabled", $cacheEnabled );
         $tpl->setVariable( 'cache_list', $cacheList );
         $tpl->setVariable( 'php_cache_state', $phpCacheState );
+        $tpl->setVariable( 'sql_profile_on', \expCacheManager::sqlProfileEnabled() );
 
 
         $Result = array();

@@ -674,6 +674,123 @@ class expCacheManager
         return self::result( true, 'The counters were reset.' );
     }
 
+    // ── The actions Setup > System information and Setup > Caches share ──
+
+    /**
+     * The form fields both pages post and the values each takes. The two pages call sharedActionFromPost(), so
+     * a button does the same on either, behind the same permission (setup/managecache) and the form token.
+     */
+    public static $sharedActions = array(
+        'HttpCacheAction'  => array( 'purge', 'gc', 'reset' ),
+        'QueryCacheAction' => array( 'clear', 'reset' ),
+        'SQLProfileAction' => array( 'on', 'off' ),
+    );
+
+    /**
+     * The shared action a POST asks for, done: null when the request posts none of the fields; a refusal when
+     * the user may not manage caches or the value is not one of the field's.
+     *
+     * @param eZHTTPTool $http
+     * @param eZUser|null $user the current user when null
+     * @return array|null result, with the field and value in data
+     */
+    public static function sharedActionFromPost( $http, $user = null )
+    {
+        if ( strtoupper( isset( $_SERVER['REQUEST_METHOD'] ) ? (string)$_SERVER['REQUEST_METHOD'] : '' ) !== 'POST' )
+            return null;
+        foreach ( self::$sharedActions as $field => $values )
+        {
+            if ( !$http->hasPostVariable( $field ) )
+                continue;
+            $value = (string)$http->postVariable( $field );
+            $user = $user ?: eZUser::currentUser();
+            $access = $user->hasAccessTo( 'setup', 'managecache' );
+            if ( $access['accessWord'] === 'no' )
+                $result = self::result( false, 'You may not manage caches (setup/managecache).' );
+            else
+                $result = self::sharedAction( $field, $value );
+            $result['data'] += array( 'field' => $field, 'value' => $value );
+            return $result;
+        }
+        return null;
+    }
+
+    /**
+     * One shared action by its form field and value.
+     *
+     * @param string $field HttpCacheAction, QueryCacheAction or SQLProfileAction
+     * @param string $value
+     * @param bool $dryRun
+     * @return array result
+     */
+    public static function sharedAction( $field, $value, $dryRun = false )
+    {
+        if ( !isset( self::$sharedActions[$field] ) || !in_array( $value, self::$sharedActions[$field], true ) )
+            return self::result( false, 'not an action of the cache pages: ' . $field . '=' . $value, array(), $dryRun );
+        switch ( $field . '=' . $value )
+        {
+            case 'HttpCacheAction=purge':  return self::clearHttpCache( $dryRun );
+            case 'HttpCacheAction=gc':     return self::httpCacheGC( $dryRun );
+            case 'HttpCacheAction=reset':  return self::httpCacheResetStatistics( $dryRun );
+            case 'QueryCacheAction=clear': return self::clearQueryCache( $dryRun );
+            case 'QueryCacheAction=reset': return self::resetQueryCacheStatistics( $dryRun );
+            case 'SQLProfileAction=on':    return self::setSqlProfile( true, $dryRun );
+            default:                       return self::setSqlProfile( false, $dryRun );
+        }
+    }
+
+    /**
+     * Starts this server's query cache counters again (their totals are per server, as APCu is).
+     *
+     * @param bool $dryRun
+     * @return array result
+     */
+    public static function resetQueryCacheStatistics( $dryRun = false )
+    {
+        if ( !self::queryCacheAvailable() )
+            return self::result( false, 'the SQL query cache is not part of this installation', array(), $dryRun );
+        if ( $dryRun )
+            return self::result( true, 'would reset the query cache counters of this server', array(), true );
+        eZDBQueryCache::resetStats();
+        return self::result( true, 'The query cache counters of this server were reset.' );
+    }
+
+    /** The file whose presence switches the SQL profile on (every server reads it) */
+    public static function sqlProfileFile()
+    {
+        return eZSys::rootDir() . '/var/tmp/sql_profile.on';
+    }
+
+    public static function sqlProfileEnabled()
+    {
+        return is_file( self::sqlProfileFile() );
+    }
+
+    /**
+     * Switches the SQL profile of every request on or off (doc/bc/6.0/sql-query-cache.md).
+     *
+     * @param bool $on
+     * @param bool $dryRun
+     * @return array result
+     */
+    public static function setSqlProfile( $on, $dryRun = false )
+    {
+        $file = self::sqlProfileFile();
+        if ( $dryRun )
+            return self::result( true, 'would switch the SQL profile ' . ( $on ? 'on' : 'off' ), array(), true );
+        if ( $on )
+        {
+            if ( !@touch( $file ) )
+                return self::result( false, 'The SQL profile could not be switched on: var/tmp is not writable.' );
+            // every server writes the log, whoever it runs as
+            @chmod( $file, 0666 );
+            return self::result( true, 'The SQL profile is on: every request now adds a line.' );
+        }
+        if ( is_file( $file ) && !@unlink( $file ) )
+            return self::result( false, 'The SQL profile could not be switched off: var/tmp/sql_profile.on cannot be removed.' );
+        return self::result( true, 'The SQL profile is off.' );
+    }
+
     /**
      * The node a url of this installation shows, or false.
      *

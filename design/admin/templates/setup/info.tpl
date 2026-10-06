@@ -367,7 +367,7 @@
         {elseif $http_cache.started|not}
             <p class="exp-note">{'The first page requested on a cached siteaccess starts it.'|i18n( 'design/admin/setup/info' )}</p>
         {/if}
-        {if $http_cache.message}<div class="exp-feedback is-ok" role="status"><p>{$http_cache.message|wash}</p></div>{/if}
+        {if $http_cache.message}<div class="exp-feedback {if and( $cache_action, $cache_action.ok|not )}is-warn{else}is-ok{/if}" role="status"><p>{$http_cache.message|wash}</p></div>{/if}
         {if $http_cache.started}
             {if $http_cache.bars}
             <dl class="exp-bars">
@@ -416,7 +416,7 @@
         <span class="exp-muted"><code>{$sql_profile.engine|wash}</code></span></summary>
     <div class="exp-panel-body">
         {if $sql_profile.mongo}<p class="exp-note">{'The query cache is for the SQL engines. The MongoDB driver keeps its own statement profile (var/tmp/mongo_profile.on).'|i18n( 'design/admin/setup/info' )}</p>{/if}
-        {if $sql_profile.message}<div class="exp-feedback is-ok" role="status"><p>{$sql_profile.message|wash}</p></div>{/if}
+        {if $sql_profile.message}<div class="exp-feedback {if and( $cache_action, $cache_action.ok|not )}is-warn{else}is-ok{/if}" role="status"><p>{$sql_profile.message|wash}</p></div>{/if}
 
         {if and( $sql_profile.mongo|not, $query_cache )}
         <div class="exp-box">

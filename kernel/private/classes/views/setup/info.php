@@ -20,6 +20,9 @@ namespace Exponential\View\Kernel\Setup
 
 class Info extends \Exponential\Runnable\ModuleView
 {
+    /** @var array|null the shared cache action this request posted (expCacheManager::sharedActionFromPost()) */
+    protected $sharedAction = null;
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -78,6 +81,11 @@ class Info extends \Exponential\Runnable\ModuleView
         // be emptied: only for a user who may clear caches there.
         $cacheAccess = \eZUser::currentUser()->hasAccessTo( 'setup', 'managecache' );
         $canFlushCaches = $cacheAccess['accessWord'] !== 'no';
+
+        // A button of the HTTP cache, query cache or SQL profile panels (the same on Setup > Caches): done before
+        // the panels read their state, refused without setup/managecache.
+        $this->sharedAction = \expCacheManager::sharedActionFromPost( $http );
+        $tpl->setVariable( 'cache_action', $this->sharedAction );
 
         $systemReport = $report->toArray();
         $systemReport['text'] = $report->toText();
@@ -1097,25 +1105,9 @@ class Info extends \Exponential\Runnable\ModuleView
             $hcContract = \ezpHttpCacheContract::fromDir( $hcDir );
             $hcMessage = '';
 
-            if ( $hcContract && $canFlushCaches && $http->hasPostVariable( 'HttpCacheAction' ) )
-            {
-                switch ( $http->postVariable( 'HttpCacheAction' ) )
-                {
-                    case 'purge':
-                        $hcContract->bumpGeneration();
-                        $hcMessage = \ezpI18n::tr( 'design/admin/setup/info', 'Every cached page was purged; each is rendered again on its next request.' );
-                        break;
-                    case 'gc':
-                        $c = $hcContract->gc();
-                        $hcMessage = \ezpI18n::tr( 'design/admin/setup/info', 'Removed %entries dead entries, %bodies orphaned bodies and %records old user records.', null,
-                            array( '%entries' => $c['entries'], '%bodies' => $c['bodies'], '%records' => $c['records'] ) );
-                        break;
-                    case 'reset':
-                        $hcContract->resetStatistics();
-                        $hcMessage = \ezpI18n::tr( 'design/admin/setup/info', 'The counters were reset.' );
-                        break;
-                }
-            }
+            // The buttons are Setup > Caches' as well: expCacheManager does them, for both pages.
+            if ( $this->sharedAction && $this->sharedAction['data']['field'] === 'HttpCacheAction' )
+                $hcMessage = $this->sharedAction['message'];
 
             $hcEnabled = $hcIni->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled';
             $httpCache = array(
@@ -1197,34 +1189,9 @@ class Info extends \Exponential\Runnable\ModuleView
         $varTmp = \eZSys::rootDir() . '/var/tmp';
         $sqlSentinel = $varTmp . '/sql_profile.on';
         $sqlMessage = '';
-        if ( !$isMongo && $canFlushCaches && $http->hasPostVariable( 'SQLProfileAction' ) )
-        {
-            if ( $http->postVariable( 'SQLProfileAction' ) === 'on' )
-            {
-                if ( @touch( $sqlSentinel ) )
-                {
-                    // Every server writes the log, whoever it runs as.
-                    @chmod( $sqlSentinel, 0666 );
-                    $sqlMessage = \ezpI18n::tr( 'design/admin/setup/info', 'The SQL profile is on: every request now adds a line.' );
-                }
-            }
-            else if ( $http->postVariable( 'SQLProfileAction' ) === 'off' )
-                $sqlMessage = ( !is_file( $sqlSentinel ) || @unlink( $sqlSentinel ) )
-                    ? \ezpI18n::tr( 'design/admin/setup/info', 'The SQL profile is off.' ) : '';
-        }
-        if ( !$isMongo && $canFlushCaches && class_exists( 'eZDBQueryCache' ) && $http->hasPostVariable( 'QueryCacheAction' ) )
-        {
-            if ( $http->postVariable( 'QueryCacheAction' ) === 'clear' )
-            {
-                \eZDBQueryCache::clearAll();
-                $sqlMessage = \ezpI18n::tr( 'design/admin/setup/info', 'The SQL query cache was cleared.' );
-            }
-            else if ( $http->postVariable( 'QueryCacheAction' ) === 'reset' )
-            {
-                \eZDBQueryCache::resetStats();
-                $sqlMessage = \ezpI18n::tr( 'design/admin/setup/info', 'The query cache counters of this server were reset.' );
-            }
-        }
+        // The buttons are Setup > Caches' as well: expCacheManager does them, for both pages.
+        if ( $this->sharedAction && in_array( $this->sharedAction['data']['field'], array( 'SQLProfileAction', 'QueryCacheAction' ), true ) )
+            $sqlMessage = $this->sharedAction['message'];
         $queryCache = false;
         if ( !$isMongo && class_exists( 'eZDBQueryCache' ) )
         {
