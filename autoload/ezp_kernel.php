@@ -1125,6 +1125,8 @@ return array(
       'expSubitemsUserColumn'                                        => 'kernel/classes/subitems/columns/expsubitemsusercolumn.php',
       'expSubitemsUserVisitRow'                                      => 'kernel/classes/subitems/columns/expsubitemscolumntables.php',
       'expSubitemsVersionColumn'                                     => 'kernel/classes/subitems/columns/expsubitemsversioncolumn.php',
+      'expSystemReport'                                              => 'kernel/classes/expsystemreport.php',
+      'expSystemReportMask'                                          => 'kernel/classes/expsystemreportmask.php',
       'expTemplateExtensionWizard'                                   => 'kernel/setup/exptemplateextensionwizard.php',
       'expVelocity'                                                  => 'kernel/classes/expvelocity.php',
       'expVelocityConfig'                                            => 'kernel/classes/expvelocityconfig.php',
