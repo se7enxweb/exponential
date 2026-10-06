@@ -157,29 +157,19 @@ class eZISBNType extends eZDataType
     */
     function validateISBNChecksum ( $isbnNr )
     {
-        $result = 0;
-        // The loop reads ten characters: anything else is not an ISBN-10 and
-        // used to raise "Uninitialized string offset" warnings
-        if ( !is_string( $isbnNr ) or strlen( $isbnNr ) != 10 )
+        // Ten characters: nine digits and a check digit that may be X (10).
+        // The old loop checked each character only after it had multiplied it,
+        // so a letter among the first five (typed into the ISBN-13 field, which
+        // passes any ten characters here) was a TypeError instead of an error
+        // message
+        if ( !is_string( $isbnNr ) or !preg_match( '/^[0-9]{9}[0-9X]$/', strtoupper( $isbnNr ) ) )
             return false;
         $isbnNr = strtoupper( $isbnNr );
-        for ( $i = 10; $i > 0; $i-- )
+        $result = 0;
+        for ( $i = 0; $i < 10; $i++ )
         {
-            if ( is_numeric( $isbnNr[$i-1] ) or ( $i == 10  and $isbnNr[$i-1] == 'X' ) )
-            {
-                if ( ( $i == 1 ) and ( $isbnNr[9] == 'X' ) )
-                {
-                    $result += 10 * $i;
-                }
-                else
-                {
-                    $result += $isbnNr[10-$i] * $i;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            $digit = $isbnNr[$i] === 'X' ? 10 : (int)$isbnNr[$i];
+            $result += $digit * ( 10 - $i );
         }
         return ( $result % 11 == 0 );
     }
