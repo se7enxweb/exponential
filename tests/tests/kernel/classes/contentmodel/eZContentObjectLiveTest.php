@@ -191,9 +191,11 @@ class eZContentObjectLiveTest extends expContentModelLiveTestCase
         $this->assertSame( array( $image['object'] ), $this->ids( $related ) );
         $this->assertSame( array( $article['object'] ), $this->ids( $this->object( $image['object'] )->reverseRelatedObjectList( false, $attributeID ) ) );
 
-        // an id that is no object is refused
+        // an id that is no object is refused, an empty one clears the relation
         $attribute->fromString( '999999999' );
         $this->assertNotSame( 999999999, (int)$attribute->attribute( 'data_int' ) );
+        $object = $this->update( $article['object'], array( 'image' => '' ) );
+        $this->assertFalse( $object->dataMap()['image']->hasContent() );
     }
 
     private function ids( $objects )

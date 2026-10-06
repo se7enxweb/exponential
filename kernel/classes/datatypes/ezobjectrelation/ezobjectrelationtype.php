@@ -759,6 +759,13 @@ class eZObjectRelationType extends eZDataType
     {
         // An object id is digits only: is_numeric() let "1.5" and "1e3" through
         $string = is_scalar( $string ) ? trim( (string)$string ) : '';
+        // toString() gives nothing for an attribute without a relation; reading
+        // that back removes the relation instead of keeping the one there was
+        if ( $string === '' )
+        {
+            $contentObjectAttribute->setAttribute( 'data_int', null );
+            return true;
+        }
         if ( !ctype_digit( $string ) || !eZContentObject::fetch( (int)$string ) )
             return false;
 
