@@ -235,6 +235,7 @@ if ( !function_exists( 'checkContentActions' ) )
                     $tpl->setVariable( 'current_version', $version->attribute( 'version' ) );
                     $tpl->setVariable( 'object', $object );
                     $tpl->setVariable( 'draft_versions', $conflictingVersions );
+                    $tpl->setVariable( 'publish_without_notification', eZContentOperationCollection::publishWithoutNotification( 'PublishNotNotifyButton' ) );
 
                     $Result = array();
                     $Result['content'] = $tpl->fetch( 'design:content/edit_conflict.tpl' );
@@ -251,7 +252,8 @@ if ( !function_exists( 'checkContentActions' ) )
             ezpContentPublishingBehaviour::setBehaviour( $behaviour );
 
             $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $object->attribute( 'id' ),
-                                                                                         'version' => $version->attribute( 'version' ) ) );
+                                                                                         'version' => $version->attribute( 'version' ),
+                                                                                         'notify' => !eZContentOperationCollection::publishWithoutNotification( 'PublishNotNotifyButton' ) ) );
             eZDebug::accumulatorStop( 'publish' );
 
             if ( ( array_key_exists( 'status', $operationResult ) && $operationResult['status'] != eZModuleOperationInfo::STATUS_CONTINUE ) )

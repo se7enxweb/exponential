@@ -2219,6 +2219,14 @@
         <source>No content object state is configured.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_attribute</name>
@@ -4927,6 +4935,14 @@
     </message>
     <message>
         <source>View mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -28957,6 +28973,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Descending</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/edit_languages</name>
@@ -29888,6 +29908,10 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publish without notification</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

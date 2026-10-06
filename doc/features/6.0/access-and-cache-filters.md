@@ -12,7 +12,7 @@ used to be a patch of a kernel file; now the kernel asks a filter of `ezpEvent`,
 | `content/download/access` | the kernel's answer, `true` or `false` | object, attribute, version | `content/download` |
 | `content/edit/access` | the kernel's edit answer, `true` or `false` | object, version (or `null`), user ID, language | `eZContentObject::editAccess()` and `::filterEditAccess()`, see [Where edit access is asked](#where-edit-access-is-asked) |
 | `collaboration/item/access` | whether the user takes part, `true` or `false` | item, user | `collaboration/item` and `collaboration/action` |
-| `content/notification/create` | `true` | object ID, version | `eZContentOperationCollection::createNotificationEvent()` (the publish operation) |
+| `content/notification/create` | `true`, `false` for "Publish without notification" | object ID, version | `eZContentOperationCollection::createNotificationEvent()` (the publish operation) |
 
 A listener returns the value, changed or not. Without listeners everything works as before.
 
@@ -204,8 +204,8 @@ public static function itemAccess( $allowed, $item, $user )
 
 ### `content/notification/create`
 
-The publish operation creates the event that the notification handlers turn into mails. The filter gets `true`,
-the object ID and the version; anything else leaves the event out. A listener that only lets some classes through:
+The publish operation creates the event that the notification handlers turn into mails. The filter gets `true` (`false` for
+a publication without notification), the object ID and the version; anything but `true` leaves the event out. A listener that only lets some classes through:
 
 ```php
 public static function create( $create, $objectID, $version )
@@ -214,6 +214,13 @@ public static function create( $create, $objectID, $version )
     return $create && $object && in_array( $object->attribute( 'class_identifier' ), array( 'article', 'file' ) );
 }
 ```
+
+#### Publish without notification
+
+"Publish without notification" (`notification.ini [NotificationSettings] PublishWithoutNotification` and the policy
+`content/publish_without_notification`) runs the publish operation with `notify` set to `false`, and the filter then
+gets `false`. A listener that returns `true` regardless makes the event anyway and overrides the editor: pass on
+`$create` when you do not mean to. The whole feature: [Publish without notification](publish-without-notification.md).
 
 ## How it works
 

@@ -248,6 +248,37 @@ the same command and progress file.
 
 To look at the raw state: `./console exp:notification:status --json` has everything the page shows.
 
+## 8. Publishing without notification
+
+Editors can publish a correction without telling the subscribers, where you allow it. Two steps:
+
+1. Enable the setting, for the administration siteaccess only for example, in
+   `settings/siteaccess/<admin siteaccess>/notification.ini.append.php`:
+
+   ```ini
+   [NotificationSettings]
+   PublishWithoutNotification=enabled
+   ```
+
+   or from the shell: `./console exp:ini set notification.ini/NotificationSettings/PublishWithoutNotification enabled siteaccess:<admin siteaccess>`.
+
+2. Give the editors the policy **content / publish_without_notification** (Roles and policies, the editor role, New
+   policy, module `content`, function `publish_without_notification`). Administrators with `content/*` have it already.
+
+Clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`), and under Velocity restart it so the workers read the
+setting. The edit form and the version preview then show **Publish without notification** next to the publish button.
+A version published with it makes no notification event: the status page counts no event for it, nobody's
+subscription sends a mail or collects a digest item for it. Approval mails (collaboration) are still sent, and the
+next ordinary publish of the object notifies again.
+
+| Symptom | Cause and cure |
+|---|---|
+| The button is not shown | The setting is not `enabled` for that siteaccess (`./console exp:ini where notification.ini/NotificationSettings/PublishWithoutNotification` names every file that sets it), or the user's roles lack the function. Log in again after a role change |
+| Subscribers got a mail although the button was used | An extension listens to `content/notification/create` and returns `true` instead of what it got; the debug output of the publish says which listener left an event out, not which made one. Check `[Event] Listeners[]` |
+| The button published with notification | The user lacks the policy (the debug output has the warning "PublishNotNotifyButton was posted by a user without content/publish_without_notification") |
+
+The whole story: [Publish without notification](../features/6.0/publish-without-notification.md).
+
 ## Related pages
 
 - [The user's guide](../features/6.0/notifications.md), [the developer's guide](notifications-developer.md)
