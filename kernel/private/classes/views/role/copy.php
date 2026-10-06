@@ -39,13 +39,22 @@ class Copy extends \Exponential\Runnable\ModuleView
             // a link or an image on another page made copies before.
             if ( $http->hasPostVariable( 'CancelCopyButton' ) )
                 return $this->viewResult( null, $Module->redirectTo( '/role/view/' . (int)$role->attribute( 'id' ) ) );
-            if ( $http->hasPostVariable( 'CopyRoleButton' ) )
+            // A copy holds the same policies: only of a role the editor could grant (PreventPrivilegeEscalation)
+            $grantCheck = \expRoleGrantCheck::forCurrentUser();
+            $refused = $grantCheck ? $grantCheck->uncovered( \expRoleGrantCheck::grantsOfRole( $role ) ) : array();
+            if ( $http->hasPostVariable( 'CopyRoleButton' ) && $refused )
+            {
+                \expRoleGrantCheck::remember( 'copy', $refused );
+            }
+            else if ( $http->hasPostVariable( 'CopyRoleButton' ) )
             {
                 $newRole = $role->copy();
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $newRole->attribute( 'id' ) ) ) );
             }
             $tpl = \eZTemplate::factory();
             $tpl->setVariable( 'role', $role );
+            $tpl->setVariable( 'grant_refused', \expRoleGrantCheck::takeRemembered() );
+            $tpl->setVariable( 'grant_blocked', count( $refused ) );
             $tpl->setVariable( 'module', $Module );
             $summaries = \expRolePage::summaries( array( (int)$role->attribute( 'id' ) ) );
             $tpl->setVariable( 'role_summary', $summaries ? reset( $summaries ) : false );

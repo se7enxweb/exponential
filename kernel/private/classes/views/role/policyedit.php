@@ -263,6 +263,18 @@ class Policyedit extends \Exponential\Runnable\ModuleView
 
             $policy->store();
 
+            // Nothing the editor could not grant (site.ini [RoleSettings] PreventPrivilegeEscalation): a change that
+            // makes the policy broader than the editor's own access is dropped and the policy stays as it was
+            $grantCheck = \expRoleGrantCheck::forCurrentUser();
+            $grant = $grantCheck ? \expRoleGrantCheck::grantOf( $policy ) : null;
+            if ( $grant && !$grantCheck->covers( $grant['module'], $grant['function'], $grant['limitations'] ) )
+            {
+                $db->commit();
+                \expRoleGrantCheck::remember( 'policy', array( $grant ) );
+                $policy->removeThis();
+                return $this->viewResult( null, $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $roleID . '/' ) );
+            }
+
             // Replace the real edited policy with the temporary one
             $policy->saveTemporary();
             $db->commit();

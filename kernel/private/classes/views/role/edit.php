@@ -119,6 +119,8 @@ class Edit extends \Exponential\Runnable\ModuleView
         }
 
         $this->addLimitation( $http, $policy, $limitationList, $limitation, $limitationID, $limitationIdentifier, $nodeLimitationValues, $currentModule, $currentFunction, $mod, $functions, $currentFunctionLimitations, $functionLimitation, $limitationValues, $policyLimitation, $limitationValue, $roleID, $db );
+        // A policy just added that the editor could not hold themselves is taken out again (PreventPrivilegeEscalation)
+        self::refuseUngrantable( $http, $policy );
 
         $this->removePolicies( $http, $role, $policyID, $removedPolicies );
 
@@ -207,6 +209,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'draft_differs', \expRolePage::draftDiffers( $role ) );
         $tpl->setVariable( 'original_role_id', (int)$role->attribute( 'version' ) );
         $tpl->setVariable( 'policies_removed', $removedPolicies );
+        $tpl->setVariable( 'grant_refused', \expRoleGrantCheck::takeRemembered() );
         $tpl->setVariable( 'policy_moved_to', $movedTo );
         $tpl->setVariable( 'modules', $modules );
         $tpl->setVariable( 'module', $Module );
@@ -315,6 +318,33 @@ class Edit extends \Exponential\Runnable\ModuleView
     }
 
     /**
+     * Takes a policy the wizard just added out of the draft again when the editor could not grant it
+     * (expRoleGrantCheck), and keeps the refusal for the page. Only after the buttons that finish a policy (AddModule,
+     * AddFunction, AddLimitation): a policy on its way through the content browser has no limitations yet.
+     *
+     * @param \eZHTTPTool $http
+     * @param mixed $policy
+     * @return bool true when the policy was refused
+     */
+    public static function refuseUngrantable( $http, $policy )
+    {
+        if ( !$policy instanceof \eZPolicy || !( $http->hasPostVariable( 'AddModule' ) || $http->hasPostVariable( 'AddFunction' )
+                                                || $http->hasPostVariable( 'AddLimitation' ) ) )
+            return false;
+        $check = \expRoleGrantCheck::forCurrentUser();
+        if ( !$check )
+            return false;
+        $grant = \expRoleGrantCheck::grantOf( $policy );
+        if ( $check->covers( $grant['module'], $grant['function'], $grant['limitations'] ) )
+            return false;
+        \expRoleGrantCheck::remember( 'policy', array( $grant ) );
+        \eZPolicy::removeByID( (int)$policy->attribute( 'id' ) );
+        if ( $http->hasSessionVariable( 'BrowsePolicyID' ) )
+            $http->removeSessionVariable( 'BrowsePolicyID' );
+        return true;
+    }
+
+    /**
      * Whether $policyID is a policy of $role (the draft this page edits).
      *
      * @param mixed $policyID
@@ -389,6 +419,17 @@ class Edit extends \Exponential\Runnable\ModuleView
      */
     protected function applyRole( &$http, &$originalRole, &$role, &$Module )
     {
+        // Save keeps nothing the editor could not grant: every new or changed policy of the draft must be covered by
+        // the editor's own access (site.ini [RoleSettings] PreventPrivilegeEscalation); else the draft stays as it is
+        if ( $http->hasPostVariable( 'Apply' ) && ( $check = \expRoleGrantCheck::forCurrentUser() ) )
+        {
+            $refused = $check->uncovered( \expRoleGrantCheck::changedGrants( $role ) );
+            if ( $refused )
+            {
+                \expRoleGrantCheck::remember( 'save', $refused );
+                return;
+            }
+        }
         if ( $http->hasPostVariable( 'Apply' ) )
         {
             $originalRole = \eZRole::fetch( $role->attribute( 'version' ) );

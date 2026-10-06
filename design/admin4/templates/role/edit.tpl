@@ -50,6 +50,7 @@
 {if $differs}
 <div class="exp-feedback is-warn" role="status" id="role-edit-unsaved"><strong>{'Unsaved changes.'|i18n( 'design/admin/role/edit' )}</strong> {'This draft differs from the saved role. Save to apply the changes, or Cancel to discard them.'|i18n( 'design/admin/role/edit' )}</div>
 {/if}
+{include uri='design:role/exp_grant_refused.tpl' refusal=first_set( $grant_refused, false() )}
 {if first_set( $policy_moved_to, false() )}
 <div class="exp-feedback is-ok" role="status" id="role-edit-moved">{'The policy was moved to position %position. Save to keep the new order.'|i18n( 'design/admin/role/edit',, hash( '%position', $policy_moved_to ) )}</div>
 {/if}

@@ -94,6 +94,19 @@ class Assign extends \Exponential\Runnable\ModuleView
             if ( $limitIdent && !isset( $limitValue ) )
                 $limitIdent = '';
 
+            // Only a role the editor could grant, narrowed by the assignment's limitation (PreventPrivilegeEscalation)
+            if ( $selectedObjectIDArray && ( $grantCheck = \expRoleGrantCheck::forCurrentUser() ) )
+            {
+                $limitPath = $limitIdent === 'subtree' ? \expRoleGrantCheck::nodePathOf( (int)$limitValue ) : (string)$limitValue;
+                $refused = $grantCheck->uncovered( \expRoleGrantCheck::narrowByAssignment( \expRoleGrantCheck::grantsOfRole( $role ),
+                                                                                          $limitIdent, (string)$limitPath ) );
+                if ( $refused )
+                {
+                    \expRoleGrantCheck::remember( 'assign', $refused );
+                    return $this->viewResult( null, $Module->redirectTo( '/role/view/' . $roleID ) );
+                }
+            }
+
             $db = \eZDB::instance();
             $db->begin();
             foreach ( $selectedObjectIDArray as $objectID )

@@ -89,6 +89,13 @@ class View extends \Exponential\Runnable\ModuleView
         if ( $Module->isCurrentAction( 'AssignRole' ) )
         {
             $selectedObjectIDArray = \eZContentBrowse::result( 'AssignRole' );
+            // Only a role the editor could grant (site.ini [RoleSettings] PreventPrivilegeEscalation)
+            $grantCheck = \expRoleGrantCheck::forCurrentUser();
+            if ( $grantCheck && $selectedObjectIDArray && $grantCheck->uncovered( \expRoleGrantCheck::grantsOfRole( $role ) ) )
+            {
+                \expRoleGrantCheck::remember( 'assign', $grantCheck->uncovered( \expRoleGrantCheck::grantsOfRole( $role ) ) );
+                $selectedObjectIDArray = array();
+            }
 
             $assignedUserIDArray = $role->fetchUserID();
 
@@ -239,6 +246,7 @@ class View extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'role_summary', isset( $roleSummaries[(int)$role->attribute( 'id' )] ) ? $roleSummaries[(int)$role->attribute( 'id' )] : false );
         $tpl->setVariable( 'role_affected', \expRolePage::affected( $role ) );
         $tpl->setVariable( 'assignments_removed', $removedAssignments );
+        $tpl->setVariable( 'grant_refused', \expRoleGrantCheck::takeRemembered() );
         $tpl->setVariable( 'module', $Module );
         $tpl->setVariable( 'role', $role );
 

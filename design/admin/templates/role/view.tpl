@@ -46,6 +46,7 @@
     </div>
 </div>
 
+{include uri='design:role/exp_grant_refused.tpl' refusal=first_set( $grant_refused, false() )}
 {if $removed|ne( false() )}
     {if $removed|gt( 0 )}
 <div class="exp-feedback is-ok" role="status">{'%count assignments were removed. Those users and groups no longer have the policies of this role.'|i18n( 'design/admin/role/view',, hash( '%count', $removed ) )}</div>
