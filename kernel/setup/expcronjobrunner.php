@@ -868,6 +868,48 @@ class expCronjobRunner
      *
      * @return array part name => the crontab line that runs it.
      */
+    /**
+     * The cronjob part a crontab line runs: the first argument of runcronjobs.php that is not an option, or the
+     * global part when there is none. Shell redirections and pipes after the command (">> var/log/cron.log 2>&1",
+     * "> /dev/null", "| logger") and commands chained after it end the arguments. A line that runs a single script
+     * (--script=...) schedules no part: null.
+     *
+     * @param string $line
+     * @return string|null
+     */
+    public static function partOfCrontabLine( $line )
+    {
+        $pos = strpos( $line, 'runcronjobs.php' );
+        if ( $pos === false )
+            return null;
+
+        // Everything after the script name, up to the first redirection, pipe or chained command.
+        $after = ' ' . substr( $line, $pos + strlen( 'runcronjobs.php' ) );
+        // A file descriptor number counts only when it stands alone before ">" ("2>&1"), not at the end of a part name.
+        $after = preg_replace( '#((?<!\S)\d+>>?|&>>?|>>?|<|\|\|?|;|&&).*$#s', '', $after );
+
+        $tokens = preg_split( '/\s+/', trim( $after ) );
+        for ( $i = 0; $i < count( $tokens ); $i++ )
+        {
+            $token = $tokens[$i];
+            if ( $token === '' )
+                continue;
+            if ( $token === '-s' || $token === '--siteaccess' )
+            {
+                $i++;   // the siteaccess that follows it
+                continue;
+            }
+            if ( strpos( $token, '--script' ) === 0 )
+                return null;
+            if ( $token[0] === '-' )
+                continue;
+
+            return $token;
+        }
+
+        return self::GLOBAL_PART;
+    }
+
     public static function scheduledParts()
     {
         $crontab = self::installedCrontab();
@@ -884,32 +926,8 @@ class expCronjobRunner
             if ( strpos( $line, $root ) === false )
                 continue;   // some other installation on the same machine
 
-            // Everything after the script name, minus its options, leaves the
-            // part - or nothing at all, which is the global one.
-            $after = substr( $line, strpos( $line, 'runcronjobs.php' ) + strlen( 'runcronjobs.php' ) );
-            $after = str_replace( array( ';', '&&' ), ' ', $after );
-            $after = preg_replace( '#>\s*/dev/null.*#', '', $after );
-
-            $part = self::GLOBAL_PART;
-            $tokens = preg_split( '/\s+/', trim( $after ) );
-            for ( $i = 0; $i < count( $tokens ); $i++ )
-            {
-                $token = $tokens[$i];
-                if ( $token === '' )
-                    continue;
-                if ( $token === '-s' || $token === '--siteaccess' )
-                {
-                    $i++;   // the siteaccess that follows it
-                    continue;
-                }
-                if ( $token[0] === '-' )
-                    continue;
-
-                $part = $token;
-                break;
-            }
-
-            if ( !isset( $scheduled[$part] ) )
+            $part = self::partOfCrontabLine( $line );
+            if ( $part !== null && !isset( $scheduled[$part] ) )
                 $scheduled[$part] = $line;
         }
 

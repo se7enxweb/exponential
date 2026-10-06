@@ -117,4 +117,26 @@ class expCronjobRunnerScheduleTest extends ezpTestCase
         $this->assertSame( '', expCronjobRunner::scriptDescription( false ) );
         $this->assertSame( '', expCronjobRunner::scriptDescription( 'cronjobs/no-such-script.php' ) );
     }
+
+    /**
+     * The crontab lines the installation guide recommends append to a log (">> var/log/... 2>&1"): the redirection
+     * was read as the part name, so the global part showed "Not scheduled".
+     */
+    public function testPartOfCrontabLineIgnoresRedirectionsAndChains()
+    {
+        $cd = '*/5 * * * * cd /path/to/installation && php ';
+        $this->assertSame( 'frequent', expCronjobRunner::partOfCrontabLine( $cd . 'runcronjobs.php -q -s site frequent >> var/log/cron-frequent.log 2>&1' ) );
+        $this->assertSame( 'global', expCronjobRunner::partOfCrontabLine( $cd . 'runcronjobs.php -q -s site >> var/log/cron-default.log 2>&1' ) );
+        $this->assertSame( 'global', expCronjobRunner::partOfCrontabLine( $cd . 'runcronjobs.php -q -s site > /dev/null 2>&1' ) );
+        $this->assertSame( 'global', expCronjobRunner::partOfCrontabLine( $cd . 'runcronjobs.php -q --siteaccess site 2>&1 | logger -t cron' ) );
+        $this->assertSame( 'infrequent', expCronjobRunner::partOfCrontabLine( $cd . 'runcronjobs.php -s site infrequent; echo done' ) );
+        $this->assertSame( 'cache_cleanup', expCronjobRunner::partOfCrontabLine( $cd . 'runcronjobs.php cache_cleanup&>>var/log/c.log' ) );
+        $this->assertSame( 'global', expCronjobRunner::partOfCrontabLine( $cd . 'runcronjobs.php' ) );
+    }
+
+    public function testASingleScriptLineSchedulesNoPart()
+    {
+        $this->assertNull( expCronjobRunner::partOfCrontabLine( '50 3 * * * cd /x && php runcronjobs.php -q -s site --script=session_gc.php >> var/log/c.log 2>&1' ) );
+        $this->assertNull( expCronjobRunner::partOfCrontabLine( '* * * * * php bin/php/ezcache.php --clear-all' ) );
+    }
 }

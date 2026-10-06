@@ -413,15 +413,16 @@ CrontabSchedule_cache_cleanup=40 3 * * *
    `crontab -e -u <site user>`, or `./console crontab:edit` as that user. Paste, save.
 4. Reload the page. The parts are *Scheduled*, the cards show the schedule in words and the next run.
 
-Prefer `>/dev/null 2>&1`, as the page writes it, or a log of your own after the part name:
+Discard the output with `>/dev/null 2>&1`, as the page writes it, or append it to a log of your own:
 
 ```
 */5 * * * * cd /path/to/installation && php runcronjobs.php -q -s site frequent >> var/log/cron-frequent.log 2>&1
+*/15 * * * * cd /path/to/installation && php runcronjobs.php -q -s site >> var/log/cron-default.log 2>&1
 ```
 
-For the global part, which has no part name, end the line with `>/dev/null 2>&1`: the page takes the first word after
-the options as the part name, so `>> var/log/cron-default.log` there would be read as a part called `>>` and the
-global part would show as not scheduled (section 17).
+The page reads the first word after the options as the part name and stops at the first redirection, pipe or chained
+command, so both lines above are recognised: the first schedules `frequent`, the second the global part. A line that
+runs a single script (`--script=session_gc.php`) schedules no part.
 
 The real crontab of the demonstration server's root user holds one line of this installation:
 
