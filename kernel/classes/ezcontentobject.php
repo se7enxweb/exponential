@@ -6225,15 +6225,39 @@ class eZContentObject extends eZPersistentObject
      * upload and tag dialogs of the online editor ask this. Checks of a location (sorting, priorities, moving) and the
      * template attribute can_edit do not.
      *
+     * With $userID the question is asked for that user instead (see eZUser::accessUser()): the same rules, the
+     * user/selfedit policy of that user for its own user object, and the filter with that user's ID. Nothing of the
+     * current user goes into it, and the answer is not kept on the object.
+     *
      * @param eZContentObjectVersion|null $version The version the edit is about, or null when there is none yet
      * @param string|bool $language A language code, or false
+     * @param int|bool $userID The user to ask for; false for the current user
      * @return bool
      */
-    function editAccess( $version = null, $language = false )
+    function editAccess( $version = null, $language = false, $userID = false )
     {
         if ( $language === null || $language === '' )
         {
             $language = false;
+        }
+        if ( $userID )
+        {
+            $user = eZUser::accessUser( $userID );
+            if ( !$user instanceof eZUser )
+            {
+                return false;
+            }
+            $userID = (int)$user->attribute( 'contentobject_id' );
+            if ( $userID !== (int)eZUser::currentUserID() )
+            {
+                $allowed = $this->checkAccess( 'edit', false, false, false, $language, $userID ) == 1;
+                if ( !$allowed && $userID === (int)$this->attribute( 'id' ) )
+                {
+                    $access = $user->hasAccessTo( 'user', 'selfedit' );
+                    $allowed = $access['accessWord'] == 'yes';
+                }
+                return $this->filterEditAccess( $allowed, $version, $language, $userID );
+            }
         }
         // canEdit() keeps its answer for the request when it is asked without arguments
         $allowed = $language === false ? $this->canEdit() : $this->canEdit( false, false, false, $language );
@@ -6252,22 +6276,24 @@ class eZContentObject extends eZPersistentObject
      * @param bool|int $allowed The kernel's answer
      * @param eZContentObjectVersion|null $version
      * @param string|bool $language
+     * @param int|bool $userID The user the answer is for; false for the current user
      * @return bool
      */
-    function filterEditAccess( $allowed, $version = null, $language = false )
+    function filterEditAccess( $allowed, $version = null, $language = false, $userID = false )
     {
         $allowed = (bool)$allowed;
         if ( !ezpEvent::getInstance()->hasListeners( 'content/edit/access' ) )
         {
             return $allowed;
         }
+        $userID = $userID ? (int)$userID : (int)eZUser::currentUserID();
         $answer = ezpEvent::getInstance()->filter( 'content/edit/access', $allowed, $this,
                                                    $version instanceof eZContentObjectVersion ? $version : null,
-                                                   (int)eZUser::currentUserID(), $language ) === true;
+                                                   $userID, $language ) === true;
         if ( $answer !== $allowed )
         {
             eZDebug::writeNotice( 'A listener of content/edit/access ' . ( $answer ? 'allowed' : 'refused' ) . ' editing object ' .
-                                  (int)$this->attribute( 'id' ) . ' for user ' . (int)eZUser::currentUserID() .
+                                  (int)$this->attribute( 'id' ) . ' for user ' . $userID .
                                   ' (the kernel ' . ( $allowed ? 'allowed' : 'refused' ) . ' it)', __METHOD__ );
         }
         return $answer;

@@ -65,6 +65,16 @@ class eZUser extends eZPersistentObject
 
     protected static $anonymousId = null;
 
+    /**
+     * The users accessUser() fetched in the request $accessUsersRequest (ID => eZUser, or null for none).
+     *
+     * @var array
+     */
+    protected static $accessUsers = array();
+
+    /** @var string|null REQUEST_TIME_FLOAT of the request $accessUsers belongs to */
+    protected static $accessUsersRequest = null;
+
     public function __construct( $row = array() )
     {
         parent::__construct( $row );
@@ -1692,6 +1702,7 @@ WHERE user_id = '" . $userID . "' AND
      */
     static public function purgeUserCacheByUserId( $userId )
     {
+        unset( self::$accessUsers[(int)$userId] );
         if ( eZINI::instance()->variable( 'RoleSettings', 'EnableCaching' ) === 'true' )
         {
             $cacheFilePath = eZUser::getCacheDir( $userId ). "/user-data-{$userId}.cache.php" ;
@@ -2213,10 +2224,17 @@ WHERE user_id = '" . $userID . "' AND
 
     /**
      * Returns the user a permission check is made for: the current user when $userID is false, null or 0, otherwise
-     * the user with the content object ID $userID, or null when there is no such user.
+     * the user with the content object ID $userID, or null when there is no such user, the user is disabled, or
+     * $userID is not a positive whole number.
      *
      * The checkAccess() methods of objects, nodes and versions take the user this way, so code that sends
-     * notifications or builds lists for other people can ask what those people may do.
+     * notifications or builds lists for other people can ask what those people may do. It is a PHP interface only:
+     * nothing a visitor sends reaches it. The other user is a separate eZUser object with roles of its own: nothing
+     * of the current user (its roles, its session, the access answers cached on objects) goes into the check.
+     *
+     * The ID of the current user gives the current user's object. Other users are fetched once per request and kept
+     * for the rest of it (a notification run checks every subscriber for every object); a persistent worker
+     * (Velocity) starts again with the next request.
      *
      * @param int|bool|null $userID
      * @return eZUser|null
@@ -2227,8 +2245,39 @@ WHERE user_id = '" . $userID . "' AND
         {
             return self::currentUser();
         }
-        $user = self::fetch( (int)$userID );
-        return $user instanceof eZUser ? $user : null;
+        if ( !is_scalar( $userID ) || is_bool( $userID ) || !preg_match( '/^\s*[1-9][0-9]{0,18}\s*$/', (string)$userID ) )
+        {
+            return null;
+        }
+        $userID = (int)$userID;
+        $current = self::currentUser();
+        if ( $userID === (int)$current->attribute( 'contentobject_id' ) )
+        {
+            return $current;
+        }
+
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
+        if ( self::$accessUsersRequest !== $request || count( self::$accessUsers ) >= 200 )
+        {
+            self::$accessUsers = array();
+            self::$accessUsersRequest = $request;
+        }
+        if ( !array_key_exists( $userID, self::$accessUsers ) )
+        {
+            $user = self::fetch( $userID );
+            // A disabled account cannot sign in, so it has no rights to check
+            self::$accessUsers[$userID] = $user instanceof eZUser && $user->isEnabled() ? $user : null;
+        }
+        return self::$accessUsers[$userID];
+    }
+
+    /**
+     * Forgets the users accessUser() kept for this request: after their roles changed, and for tests.
+     */
+    static function resetAccessUsers()
+    {
+        self::$accessUsers = array();
+        self::$accessUsersRequest = null;
     }
 
     /*!
@@ -3298,6 +3347,8 @@ WHERE user_id = '" . $userID . "' AND
      */
     static function cleanupCache()
     {
+        // the users kept by accessUser() for this request carry the old roles
+        self::resetAccessUsers();
         $handler = eZExpiryHandler::instance();
         $handler->setTimestamp( 'user-info-cache', time() );
         $handler->store();

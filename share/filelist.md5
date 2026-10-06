@@ -4725,7 +4725,7 @@ ab95b25629ede0ba7aaf6fa166250fcb  kernel/classes/datatypes/ezurl/ezurltype.php
 bc1f7d94c3e9cdcc6b029676b42ac238  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 4e5dbb722c2319d48ccf65126c404329  kernel/classes/datatypes/ezuser/ezldapuser.php
 ddb7ea2df70d86d759cbb9f485513a82  kernel/classes/datatypes/ezuser/eztextfileuser.php
-ab3b4e93c7a6f0fccb8026047d7462c7  kernel/classes/datatypes/ezuser/ezuser.php
+0e8ce1a0ef0640c84893ab2c05abd5aa  kernel/classes/datatypes/ezuser/ezuser.php
 190e03d3acc89794d927758dfc31c7cf  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -4815,7 +4815,7 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 58369fa65f68c37ae7cfa64ddc06acaa  kernel/classes/ezcontentfunctions.php
 e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
-b6c649fd822cb486de3e21112582173c  kernel/classes/ezcontentobject.php
+f649a4797a9323ffc27d13453af43920  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
@@ -7115,6 +7115,7 @@ f1bd2950cc165249465e5bd92292d4c5  tests/tests/kernel/classes/packagecomparison/e
 9225a203a3ffcc5c62e44bc458998914  tests/tests/kernel/classes/packages/eZPackageDefinitionRoundTripTest.php
 397d8e36179bac5626cb569922c5e638  tests/tests/kernel/classes/packages/eZPackageDefinitionTest.php
 13b0a545c9564ea78efae088f8483a31  tests/tests/kernel/classes/packages/eZPackageFileBrowserTest.php
+9af2d559ad67fd03c53195915b339ae6  tests/tests/kernel/classes/permissions/eZContentAccessForAnotherUserTest.php
 20dcf9ccc7dee40f0bae19edaade3a95  tests/tests/kernel/classes/permissions/eZContentAccessForUserLiveTest.php
 a8422625bada666061cfc28db6f7ad0d  tests/tests/kernel/classes/permissions/eZContentNodePathConditionTest.php
 653ab0cf04b703e90bd63800a1140092  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
