@@ -29,10 +29,17 @@
 interface ezpContentLimitationHandler
 {
     /**
-     * Returns whether the limitation lets $userID use $functionName on $subject.
+     * Returns whether the limitation lets $userID use $functionName on $subject. Only true allows; an exception
+     * denies (and is logged once per request), it does not end the request.
+     *
+     * The kernel makes one instance of the handler per request and asks it for every object, node or version it
+     * checks, so the handler may keep what it looked up in properties of its own for the rest of the request. It
+     * must not keep anything in static properties: a persistent worker (Velocity) serves the next request from
+     * the same process. Checks are made for other users than the current one (notifications), so nothing may be
+     * taken from the session or from eZUser::currentUser(): use $userID.
      *
      * @param string $limitation The limitation name, as the policy stores it
-     * @param array $values The values of the limitation in the policy
+     * @param array $values The values of the limitation in the policy, as strings
      * @param string $functionName The content function: read, edit, versionread, ...
      * @param eZContentObject|eZContentObjectTreeNode|eZContentObjectVersion $subject What the access is checked on
      * @param int $userID The user the access is checked for, not always the current user
@@ -44,15 +51,23 @@ interface ezpContentLimitationHandler
      * Returns the SQL condition that keeps the objects of a content/read list or tree fetch the limitation allows.
      *
      * The condition is joined with AND to the other limitations of the same policy. It may refer to the table
-     * ezcontentobject and to the node table under the alias $tableAliasName. Values from the policy must be cast
-     * or escaped. A handler that cannot express the limitation in SQL returns false, and the policy then gives no
-     * access in fetches.
+     * ezcontentobject and to the node table under the alias $tableAliasName. Two forms are accepted:
+     *
+     * - A string, put in parentheses by the kernel. It must be self-contained: quotes and parentheses balanced, and
+     *   outside quoted strings no ";" and no comment ("--", "#", slash-star); otherwise the policy gives no access
+     *   in fetches. Values from the policy must be cast (intval) or escaped (eZDB::escapeString()) by the handler.
+     * - array( 'column' => 'ezcontentobject.section_id', 'values' => $values, 'type' => 'int' or 'string',
+     *   'not' => false ), or a list of such arrays joined by AND: the kernel writes the IN statement and casts or
+     *   escapes the values itself. The safer form wherever it is enough.
+     *
+     * A handler that cannot express the limitation in SQL returns false, and the policy then gives no access in
+     * fetches. So does an exception, or any other answer (see ezpContentLimitation::sqlCondition()).
      *
      * @param string $limitation The limitation name, as the policy stores it
-     * @param array $values The values of the limitation in the policy
+     * @param array $values The values of the limitation in the policy, as strings
      * @param string $tableAliasName The alias of the node table in the query
      * @param int $userID The user the fetch is for
-     * @return string|false
+     * @return string|array|false
      */
     public function permissionSQL( $limitation, array $values, $tableAliasName, $userID );
 }

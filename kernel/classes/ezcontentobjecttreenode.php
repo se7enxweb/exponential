@@ -1691,14 +1691,14 @@ class eZContentObjectTreeNode extends eZPersistentObject
                         case 'Class':
                         {
                             if ( is_array( $limitationArray[$ident] ) && count( $limitationArray[$ident] ) > 0 )
-                                $sqlPartPart[] = 'ezcontentobject.contentclass_id in (' . implode( ', ', $limitationArray[$ident] ) . ')';
+                                $sqlPartPart[] = 'ezcontentobject.contentclass_id in (' . implode( ', ', array_map( 'intval', $limitationArray[$ident] ) ) . ')';
                         } break;
 
                         case 'Section':
                         case 'User_Section':
                         {
                             if ( is_array( $limitationArray[$ident] ) && count( $limitationArray[$ident] ) > 0 )
-                                $sqlPartPart[] = 'ezcontentobject.section_id in (' . implode( ', ', $limitationArray[$ident] ) . ')';
+                                $sqlPartPart[] = 'ezcontentobject.section_id in (' . implode( ', ', array_map( 'intval', $limitationArray[$ident] ) ) . ')';
                         } break;
 
                         case 'Owner':
@@ -1733,7 +1733,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
                         case 'Node':
                         {
-                            $sqlPlacementPart[] = $tableAliasName . '.node_id in (' . implode( ', ', $limitationArray[$ident] ) . ')';
+                            $sqlPlacementPart[] = $tableAliasName . '.node_id in (' . implode( ', ', array_map( 'intval', $limitationArray[$ident] ) ) . ')';
                         } break;
 
                         case 'Subtree':
@@ -1789,11 +1789,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
                                 if ( count( $limitationArray[$ident] ) > 1 )
                                 {
-                                    $sqlPartPart[] = $db->generateSQLINStatement( $limitationArray[$ident], "$stateTable.id" );
+                                    $sqlPartPart[] = $db->generateSQLINStatement( array_map( 'intval', $limitationArray[$ident] ), "$stateTable.id" );
                                 }
                                 else
                                 {
-                                    $sqlPartPart[] = "$stateTable.id = " . $limitationArray[$ident][0];
+                                    $sqlPartPart[] = "$stateTable.id = " . (int)$limitationArray[$ident][0];
                                 }
                             }
                             // A limitation of an extension: the condition of its handler. Without one the policy

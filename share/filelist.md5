@@ -4822,7 +4822,7 @@ b6c649fd822cb486de3e21112582173c  kernel/classes/ezcontentobject.php
 b6cb39e28b248e080dc6f37c5c9ca9b9  kernel/classes/ezcontentobjectoperations.php
 06d8358599723d258d5c8246b2333ff1  kernel/classes/ezcontentobjecttranslation.php
 a165301c646c2971d91fc8c0404bc1b4  kernel/classes/ezcontentobjecttrashnode.php
-ba71046f52738bffc334ec4b0b1d6527  kernel/classes/ezcontentobjecttreenode.php
+41fc84727b813a6ddcb57b4c84dcc24e  kernel/classes/ezcontentobjecttreenode.php
 8a81e1ff5086cf54d2af9b09489e199c  kernel/classes/ezcontentobjecttreenodeoperations.php
 2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
 9ba8dcdd4e7e64f8ee2755fbd4ca7fee  kernel/classes/ezcontentupload.php
@@ -5327,7 +5327,7 @@ e34ec746f18ebc7f96baa69e69ca4148  kernel/private/classes/ezcontentobjectstatelan
 b9cd5e364e4dc7219ca64f0a631bd3e3  kernel/private/classes/ezpactiveextensions.php
 bdaf3dfbfa218e33a0ee681501a10ea3  kernel/private/classes/ezpasynchronouspublishingfilter.php
 c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.php
-2cd1f53ad4532943a6b59c730c580fd5  kernel/private/classes/ezpcontentlimitation.php
+9d339c1ff30b94569982bd0271147e74  kernel/private/classes/ezpcontentlimitation.php
 8283e4f7982e9d1aff4c308f72dd9a18  kernel/private/classes/ezpcontentpublishingprocess.php
 dad70a135e50fcc3415d197dd961caad  kernel/private/classes/ezpcontentpublishingqueue.php
 483341cbf4649e24b6f15b0357bc5aee  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
@@ -5612,7 +5612,7 @@ b8448bbe375187aaa67945e723b56cbe  kernel/private/eztemplate/ezpattributeoperator
 d7c433860bc541a0a5a50a6797b353b8  kernel/private/interfaces/asynchronouspublishingfilter.php
 0e92b9eaaa3392124bcdc74450a6ec63  kernel/private/interfaces/ezclusterfilehandlerinterface.php
 b8a0a5e5b01ca67765dd1b77d8662a61  kernel/private/interfaces/ezpautoloadoutput.php
-d2f74ca17e250508ec24a42838ad2740  kernel/private/interfaces/ezpcontentlimitationhandler.php
+8722bad7c95cc66cb38e03fbb16a7f9d  kernel/private/interfaces/ezpcontentlimitationhandler.php
 948769637ef5e3623e6055a988de0348  kernel/private/interfaces/ezpcontentpublishingqueuereader.php
 4782a0104f204fc579d729a8d8e37a37  kernel/private/interfaces/ezpdatabasebasedclusterfilehandler.php
 2dce965518c756642f7cc59d65d66636  kernel/private/interfaces/ezpkernelhandler.php
@@ -7117,11 +7117,11 @@ f1bd2950cc165249465e5bd92292d4c5  tests/tests/kernel/classes/packagecomparison/e
 13b0a545c9564ea78efae088f8483a31  tests/tests/kernel/classes/packages/eZPackageFileBrowserTest.php
 20dcf9ccc7dee40f0bae19edaade3a95  tests/tests/kernel/classes/permissions/eZContentAccessForUserLiveTest.php
 a8422625bada666061cfc28db6f7ad0d  tests/tests/kernel/classes/permissions/eZContentNodePathConditionTest.php
-0cb7654e29263753103c78f87180f976  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
+653ab0cf04b703e90bd63800a1140092  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
 8c7cbac83c31166ea44ef268800334c2  tests/tests/kernel/classes/permissions/eZPackagePolicyTest.php
 7f5b329d15b658e33c4ac3f1fab1c5c2  tests/tests/kernel/classes/permissions/eZUserAccessEvaluationTest.php
 3e9f42058b135fcc91cc433dd711eafa  tests/tests/kernel/classes/permissions/expPermissionHooksTest.php
-3b79101de417042acfde5e3b186c5fa9  tests/tests/kernel/classes/permissions/ezpContentLimitationTest.php
+f49ad6f67737394bfc219ce3dc0c3b88  tests/tests/kernel/classes/permissions/ezpContentLimitationTest.php
 b56a3b9639c786b875f98c6f42c8a035  tests/tests/kernel/classes/permissions/fixtures/ezcontentpermissionsqltestdb.php
 192883639379d5fd3bab7183741db6df  tests/tests/kernel/classes/permissions/fixtures/modules/k1perm/module.php
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php

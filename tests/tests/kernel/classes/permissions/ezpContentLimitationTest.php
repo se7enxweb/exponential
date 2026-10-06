@@ -14,6 +14,11 @@
  *  CL-08 - eZContentObjectVersion::checkAccess() asks the handler with the version
  *  CL-09 - A version limitation that denies is not allowed again by the next limitation of the policy
  *  CL-10 - The filter module/functionlist adds a limitation to the functions of a module
+ *  CL-11 - A handler is made once per request, again for the next request (Velocity) and when the setting changes
+ *  CL-12 - A missing, unmakeable or throwing handler denies and is logged once per request; nothing escapes
+ *  CL-13 - The SQL condition of a handler must stay inside its parentheses; other answers deny; column conditions
+ *  CL-14 - String values of a column condition are escaped by the database handler
+ *  CL-15 - The handler gets the values of the limitation as a list of strings
  *
  * The current user is a stand-in anonymous user with the access array given to it.
  *
@@ -29,6 +34,12 @@ class X1ContentLimitationHandler implements ezpContentLimitationHandler
     public static $answer = true;
     public static $sql = 'ezcontentobject.id > 0';
     public static $asked = array();
+    public static $made = 0;
+
+    public function __construct()
+    {
+        ++self::$made;
+    }
 
     public function checkAccess( $limitation, array $values, $functionName, $subject, $userID )
     {
@@ -49,6 +60,35 @@ class X1ContentLimitationNoHandler
     public function checkAccess()
     {
         return true;
+    }
+}
+
+/** Throws in the method named by $throwIn */
+class X1ContentLimitationThrowingHandler implements ezpContentLimitationHandler
+{
+    public static $throwIn = 'checkAccess';
+
+    public function checkAccess( $limitation, array $values, $functionName, $subject, $userID )
+    {
+        if ( self::$throwIn === 'checkAccess' )
+            throw new RuntimeException( 'x1 checkAccess failed' );
+        return true;
+    }
+
+    public function permissionSQL( $limitation, array $values, $tableAliasName, $userID )
+    {
+        if ( self::$throwIn === 'permissionSQL' )
+            throw new TypeError( 'x1 permissionSQL failed' );
+        return '1 = 1';
+    }
+}
+
+/** Cannot be made: its constructor throws */
+class X1ContentLimitationUnmakeableHandler extends X1ContentLimitationHandler
+{
+    public function __construct()
+    {
+        throw new LogicException( 'x1 cannot be made' );
     }
 }
 
@@ -82,6 +122,9 @@ class ezpContentLimitationTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         chdir( dirname( __DIR__, 5 ) );
+        ezpContentLimitation::resetCache();
+        X1ContentLimitationHandler::$made = 0;
+        X1ContentLimitationThrowingHandler::$throwIn = 'checkAccess';
         X1ContentLimitationHandler::$answer = true;
         X1ContentLimitationHandler::$sql = 'ezcontentobject.id > 0';
         X1ContentLimitationHandler::$asked = array();
@@ -115,9 +158,12 @@ class ezpContentLimitationTest extends PHPUnit\Framework\TestCase
 
     private function object()
     {
-        return new eZContentObject( array( 'id' => 990101, 'contentclass_id' => 16, 'section_id' => 1,
-                                           'owner_id' => 14, 'current_version' => 1,
-                                           'status' => eZContentObject::STATUS_PUBLISHED ) );
+        $object = new eZContentObject( array( 'id' => 990101, 'contentclass_id' => 16, 'section_id' => 1,
+                                              'owner_id' => 14, 'current_version' => 1,
+                                              'status' => eZContentObject::STATUS_PUBLISHED ) );
+        // the access list of a refusal names the main node; known here, so it is not looked up in the database
+        $object->MainNodeID = 990102;
+        return $object;
     }
 
     /** CL-01 */
@@ -164,7 +210,7 @@ class ezpContentLimitationTest extends PHPUnit\Framework\TestCase
     {
         $this->registerHandlers( array( 'X1Limitation' => 'X1ContentLimitationHandler' ) );
         $this->assertSame( '( ezcontentobject.id > 0 )', ezpContentLimitation::permissionSQL( 'X1Limitation', array( 1 ), 't', 14 ) );
-        $this->assertSame( array( array( 'X1Limitation', array( 1 ), 't', 14 ) ), X1ContentLimitationHandler::$asked );
+        $this->assertSame( array( array( 'X1Limitation', array( '1' ), 't', 14 ) ), X1ContentLimitationHandler::$asked );
         X1ContentLimitationHandler::$sql = false;
         $this->assertSame( ezpContentLimitation::DENY_SQL, ezpContentLimitation::permissionSQL( 'X1Limitation', array( 1 ), 't', 14 ) );
         X1ContentLimitationHandler::$sql = ' ';
@@ -184,7 +230,7 @@ class ezpContentLimitationTest extends PHPUnit\Framework\TestCase
 
         $this->registerHandlers( array( 'X1Limitation' => 'X1ContentLimitationHandler' ) );
         $this->assertSame( 1, $object->checkAccess( 'read' ) );
-        $this->assertSame( array( array( 'X1Limitation', array( 7 ), 'read', $object, $userID ) ), X1ContentLimitationHandler::$asked );
+        $this->assertSame( array( array( 'X1Limitation', array( '7' ), 'read', $object, $userID ) ), X1ContentLimitationHandler::$asked );
         X1ContentLimitationHandler::$answer = false;
         $this->assertSame( 0, $object->checkAccess( 'read' ) );
     }
@@ -202,7 +248,7 @@ class ezpContentLimitationTest extends PHPUnit\Framework\TestCase
 
         $this->registerHandlers( array( 'X1Limitation' => 'X1ContentLimitationHandler' ) );
         $this->assertSame( 1, $node->checkAccess( 'read' ) );
-        $this->assertSame( array( array( 'X1Limitation', array( 7 ), 'read', $node, $userID ) ), X1ContentLimitationHandler::$asked );
+        $this->assertSame( array( array( 'X1Limitation', array( '7' ), 'read', $node, $userID ) ), X1ContentLimitationHandler::$asked );
     }
 
     private function version()
@@ -225,7 +271,7 @@ class ezpContentLimitationTest extends PHPUnit\Framework\TestCase
 
         $this->registerHandlers( array( 'X1Limitation' => 'X1ContentLimitationHandler' ) );
         $this->assertSame( 1, $version->checkAccess( 'versionread' ) );
-        $this->assertSame( array( array( 'X1Limitation', array( 7 ), 'versionread', $version, $userID ) ), X1ContentLimitationHandler::$asked );
+        $this->assertSame( array( array( 'X1Limitation', array( '7' ), 'versionread', $version, $userID ) ), X1ContentLimitationHandler::$asked );
     }
 
     /** CL-09 */
@@ -266,5 +312,176 @@ class ezpContentLimitationTest extends PHPUnit\Framework\TestCase
         $module = eZModule::findModule( 'k1perm', null, __DIR__ . '/fixtures/modules' );
         $functions = $module->attribute( 'available_functions' );
         $this->assertSame( array(), $functions['read'] );
+    }
+
+    private function logged()
+    {
+        $logged = new ReflectionProperty( 'ezpContentLimitation', 'logged' );
+        return array_keys( $logged->getValue() );
+    }
+
+    /** CL-11 */
+    public function testAHandlerIsMadeOncePerRequestAndAgainForTheNext()
+    {
+        $hadTime = array_key_exists( 'REQUEST_TIME_FLOAT', $_SERVER );
+        $time = $hadTime ? $_SERVER['REQUEST_TIME_FLOAT'] : null;
+        try
+        {
+            $_SERVER['REQUEST_TIME_FLOAT'] = 1000.25;
+            $this->registerHandlers( array( 'X1Limitation' => 'X1ContentLimitationHandler' ) );
+            for ( $i = 0; $i < 50; ++$i )
+            {
+                ezpContentLimitation::checkAccess( 'X1Limitation', array( 1 ), 'read', $this->object(), 14 );
+                ezpContentLimitation::permissionSQL( 'X1Limitation', array( 1 ), 't', 14 );
+            }
+            $this->assertSame( 1, X1ContentLimitationHandler::$made, 'one handler for the whole request' );
+
+            // the next request of a persistent worker (Velocity) makes it again
+            $_SERVER['REQUEST_TIME_FLOAT'] = 1001.5;
+            ezpContentLimitation::checkAccess( 'X1Limitation', array( 1 ), 'read', $this->object(), 14 );
+            $this->assertSame( 2, X1ContentLimitationHandler::$made );
+
+            // so does a change of the setting within a request
+            $this->registerHandlers( array( 'X1Limitation' => 'X1ContentLimitationHandler', 'X1Other' => 'X1ContentLimitationHandler' ) );
+            ezpContentLimitation::checkAccess( 'X1Limitation', array( 1 ), 'read', $this->object(), 14 );
+            $this->assertSame( 3, X1ContentLimitationHandler::$made );
+        }
+        finally
+        {
+            if ( $hadTime )
+                $_SERVER['REQUEST_TIME_FLOAT'] = $time;
+            else
+                unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+        }
+    }
+
+    /** CL-12 */
+    public function testAnUnusableOrFailingHandlerDeniesAndIsLoggedOnce()
+    {
+        $this->registerHandlers( array( 'X1Missing' => 'X1NoSuchLimitationHandlerClass',
+                                        'X1Unmakeable' => 'X1ContentLimitationUnmakeableHandler',
+                                        'X1Throwing' => 'X1ContentLimitationThrowingHandler' ) );
+        for ( $i = 0; $i < 3; ++$i )
+        {
+            $this->assertFalse( ezpContentLimitation::checkAccess( 'X1Missing', array( 1 ), 'read', $this->object(), 14 ) );
+            $this->assertSame( ezpContentLimitation::DENY_SQL, ezpContentLimitation::permissionSQL( 'X1Missing', array( 1 ), 't', 14 ) );
+            $this->assertFalse( ezpContentLimitation::checkAccess( 'X1Unmakeable', array( 1 ), 'read', $this->object(), 14 ) );
+            $this->assertFalse( ezpContentLimitation::checkAccess( 'X1Throwing', array( 1 ), 'read', $this->object(), 14 ) );
+            $this->assertFalse( ezpContentLimitation::checkAccess( 'X1Unknown', array( 1 ), 'read', $this->object(), 14 ) );
+        }
+        X1ContentLimitationThrowingHandler::$throwIn = 'permissionSQL';
+        $this->assertSame( ezpContentLimitation::DENY_SQL, ezpContentLimitation::permissionSQL( 'X1Throwing', array( 1 ), 't', 14 ) );
+        X1ContentLimitationThrowingHandler::$throwIn = 'none';
+        $this->assertTrue( ezpContentLimitation::checkAccess( 'X1Throwing', array( 1 ), 'read', $this->object(), 14 ) );
+
+        $logged = $this->logged();
+        $this->assertCount( 5, $logged, implode( "\n", $logged ) );
+        $this->assertStringContainsString( 'X1NoSuchLimitationHandlerClass of the limitation X1Missing does not exist', $logged[0] );
+        $this->assertStringContainsString( 'X1ContentLimitationUnmakeableHandler of the limitation X1Unmakeable could not be made (LogicException: x1 cannot be made)', $logged[1] );
+        $this->assertStringContainsString( 'threw RuntimeException: x1 checkAccess failed', $logged[2] );
+        $this->assertStringContainsString( 'No handler is registered for the limitation X1Unknown', $logged[3] );
+        $this->assertStringContainsString( 'threw TypeError in permissionSQL(): x1 permissionSQL failed', $logged[4] );
+    }
+
+    /**
+     * CL-13: a string condition must stay inside its parentheses and its statement; anything else that is not a
+     * condition the kernel accepts denies
+     *
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider( 'sqlConditions' )]
+    public function testTheConditionOfAHandlerIsChecked( $sql, $expected )
+    {
+        $this->registerHandlers( array( 'X1Limitation' => 'X1ContentLimitationHandler' ) );
+        X1ContentLimitationHandler::$sql = $sql;
+        // the IN statement of a column condition is written by the database handler: one that runs nothing
+        require_once __DIR__ . '/fixtures/ezcontentpermissionsqltestdb.php';
+        $hadDB = array_key_exists( 'eZDBGlobalInstance', $GLOBALS );
+        $db = $hadDB ? $GLOBALS['eZDBGlobalInstance'] : null;
+        eZDB::setInstance( new eZContentPermissionSQLTestDB() );
+        try
+        {
+            $this->assertSame( $expected, ezpContentLimitation::permissionSQL( 'X1Limitation', array( 1 ), 't', 14 ) );
+        }
+        finally
+        {
+            if ( $hadDB )
+                $GLOBALS['eZDBGlobalInstance'] = $db;
+            else
+                unset( $GLOBALS['eZDBGlobalInstance'] );
+        }
+    }
+
+    public static function sqlConditions()
+    {
+        $deny = ezpContentLimitation::DENY_SQL;
+        return array(
+            'plain' => array( 't.depth <= 3', '( t.depth <= 3 )' ),
+            'subquery' => array( 'ezcontentobject.id IN ( SELECT id FROM x WHERE a = 1 )', '( ezcontentobject.id IN ( SELECT id FROM x WHERE a = 1 ) )' ),
+            'semicolon in a string' => array( "x.name = 'a;b -- c # d /* e'", "( x.name = 'a;b -- c # d /* e' )" ),
+            'doubled quote' => array( "x.name = 'it''s'", "( x.name = 'it''s' )" ),
+            'escaped quote' => array( "x.name = 'it\\'s'", "( x.name = 'it\\'s' )" ),
+            'breaks out of its parentheses' => array( '1 = 1 ) OR ( 1 = 1', $deny ),
+            'closes before it opens' => array( ') OR (', $deny ),
+            'unbalanced' => array( '( 1 = 1', $deny ),
+            'second statement' => array( '1 = 1; DELETE FROM ezcontentobject', $deny ),
+            'line comment' => array( '1 = 1 -- AND x', $deny ),
+            'hash comment' => array( '1 = 1 # AND x', $deny ),
+            'block comment' => array( '1 = 1 /* AND x */', $deny ),
+            'unclosed string' => array( "x.name = 'abc", $deny ),
+            'nul byte' => array( "x.id = 1\0", $deny ),
+            'empty' => array( '  ', $deny ),
+            'false' => array( false, $deny ),
+            'true' => array( true, $deny ),
+            'null' => array( null, $deny ),
+            'number' => array( 1, $deny ),
+            'object' => array( new stdClass(), $deny ),
+            'empty array' => array( array(), $deny ),
+            'column with integers' => array( array( 'column' => 'ezcontentobject.section_id', 'values' => array( '1', 2, ' 3 ' ) ),
+                                             '( ezcontentobject.section_id IN ( 1, 2, 3 ) )' ),
+            'duplicate values' => array( array( 'column' => 'ezcontentobject.section_id', 'values' => array( 1, '1' ) ),
+                                         '( ezcontentobject.section_id IN ( 1 ) )' ),
+            'not in' => array( array( 'column' => 'section_id', 'values' => array( 4 ), 'not' => true ), '( section_id NOT IN ( 4 ) )' ),
+            'no values' => array( array( 'column' => 'section_id', 'values' => array() ), '( 1 = 0 )' ),
+            'not in no values' => array( array( 'column' => 'section_id', 'values' => array(), 'not' => true ), '( 1 = 1 )' ),
+            'list joined by and' => array( array( array( 'column' => 'a.x', 'values' => array( 1 ) ), array( 'column' => 'b.y', 'values' => array( 2 ) ) ),
+                                           '( a.x IN ( 1 ) AND b.y IN ( 2 ) )' ),
+            'column that is no name' => array( array( 'column' => 'a.x) OR (1', 'values' => array( 1 ) ), $deny ),
+            'integer that is none' => array( array( 'column' => 'a.x', 'values' => array( '1 OR 1' ) ), $deny ),
+            'array value' => array( array( 'column' => 'a.x', 'values' => array( array( 1 ) ) ), $deny ),
+            'unknown type' => array( array( 'column' => 'a.x', 'values' => array( 1 ), 'type' => 'raw' ), $deny ),
+            'values missing' => array( array( 'column' => 'a.x' ), $deny ),
+            'one bad entry of a list' => array( array( array( 'column' => 'a.x', 'values' => array( 1 ) ), 'a.y = 1' ), $deny ),
+        );
+    }
+
+    /** CL-14: string values of a column condition are escaped by the database handler */
+    public function testStringValuesOfAColumnConditionAreEscaped()
+    {
+        require_once __DIR__ . '/fixtures/ezcontentpermissionsqltestdb.php';
+        $hadDB = array_key_exists( 'eZDBGlobalInstance', $GLOBALS );
+        $db = $hadDB ? $GLOBALS['eZDBGlobalInstance'] : null;
+        eZDB::setInstance( new eZContentPermissionSQLTestDB() );
+        try
+        {
+            $this->assertSame( "( x.code IN ( 'a', 'b\\' OR \\'1' ) )",
+                               ezpContentLimitation::sqlCondition( array( 'column' => 'x.code', 'type' => 'string', 'values' => array( 'a', "b' OR '1" ) ) ) );
+        }
+        finally
+        {
+            if ( $hadDB )
+                $GLOBALS['eZDBGlobalInstance'] = $db;
+            else
+                unset( $GLOBALS['eZDBGlobalInstance'] );
+        }
+    }
+
+    /** CL-15: the handler gets the values as a list of strings, whatever the policy cache held */
+    public function testTheHandlerGetsTheValuesAsStrings()
+    {
+        $this->registerHandlers( array( 'X1Limitation' => 'X1ContentLimitationHandler' ) );
+        ezpContentLimitation::checkAccess( 'X1Limitation', array( 'a' => 3, 'b' => '4', 'c' => array( 5 ), 'd' => null ), 'read', $this->object(), 14 );
+        $this->assertSame( array( '3', '4' ), X1ContentLimitationHandler::$asked[0][1] );
+        $this->assertNull( ezpContentLimitation::handler( '' ) );
+        $this->assertNull( ezpContentLimitation::handler( array( 'X1Limitation' ) ) );
     }
 }
