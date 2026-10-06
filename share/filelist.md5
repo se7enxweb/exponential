@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
-e442155890e3326bf9a9fc2d423bf3ac  autoload/ezp_kernel.php
+1cba973bb812b2c1476eb5057d6d0d44  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -687,6 +687,8 @@ d941c9c9f890a8617a6ddfc1dde32325  design/admin/templates/url/edit.tpl
 53fb02bbc195216c9e804ca8dbf93ad2  design/admin/templates/url/list.tpl
 5025af06eb7337f589fb38d661444f5d  design/admin/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
+f7a30c302abe5ead88aeec1589d26138  design/admin/templates/user/edit.tpl
+e7729d83b6d2d3e108c251e3364cf009  design/admin/templates/user/exp_style.tpl
 ec051aff9aef0a071fe85027dcc4ce88  design/admin/templates/user/login.tpl
 4d5329c1f77dd014bb6074f0454361d1  design/admin/templates/user/password.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin/templates/user/register.tpl
@@ -1301,6 +1303,8 @@ d941c9c9f890a8617a6ddfc1dde32325  design/admin4/templates/url/edit.tpl
 53fb02bbc195216c9e804ca8dbf93ad2  design/admin4/templates/url/list.tpl
 5025af06eb7337f589fb38d661444f5d  design/admin4/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
+f7a30c302abe5ead88aeec1589d26138  design/admin4/templates/user/edit.tpl
+e7729d83b6d2d3e108c251e3364cf009  design/admin4/templates/user/exp_style.tpl
 87e284d8c1e6bec27dc79ce41343e800  design/admin4/templates/user/login.tpl
 2e4789e7e2e4e9ee6f5f607b9bf9da5b  design/admin4/templates/user/password.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin4/templates/user/register.tpl
@@ -2980,7 +2984,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-40ffb0a9c837a58de97264b841e532a2  doc/changelogs/6.0/6.0.15.md
+d926b915a6c8adde48225aa769d3a390  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3511,7 +3515,7 @@ b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 0205d50e41e1b80090339f962db5d499  doc/guides/roles-and-policies.md
 b96aa9f19d0e6aebe8b4e7b2569216d5  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
-fde5d0ab58e51303c2f246ad57cc907e  doc/guides/security-and-audit.md
+a8d5daba63dcc34fea309ba3ff76dfd1  doc/guides/security-and-audit.md
 43dbd90e31972fef2826ebb622ab5c4d  doc/guides/sessions.md
 7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
 984fbd968c27ef1981e5c835b18c8c0b  doc/guides/system-information.md
@@ -5152,6 +5156,7 @@ ad3ea82e867f46e355b785b863294064  kernel/classes/subitems/expsubitemspreference.
 9b20af08bbb1111d0336dc148b6be30e  kernel/classes/subitems/expsubitemsserverfunctions.php
 c4b4bff7b28cecd22c0cc52d9add2ca4  kernel/classes/subitems/expsubitemstemplatecolumn.php
 26ae88d9a6daa4f7c0b3ceac9c9b10b1  kernel/classes/user/expunactivatedusers.php
+1ecb253917d292bef2be612baaec6156  kernel/classes/user/expuseraccountoverview.php
 6063228c4bd6801070ca311387227290  kernel/classes/vathandlers/ezdefaultvathandler.php
 d083e9c0146d1fd5f8c0620718d2aec1  kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php
 349f6fbfecba427d0224cfccad47fdf0  kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php
@@ -5718,7 +5723,7 @@ aa89fd43a6579c8bfaf060210e8e0493  kernel/private/classes/views/url/edit.php
 ce10a3db890ed5c83f90d3e919bc2912  kernel/private/classes/views/url/list.php
 422ed1432bd2ce184617ead78261263d  kernel/private/classes/views/url/view.php
 a52fd367f71f4aa2995283b31390702f  kernel/private/classes/views/user/activate.php
-be385bebce9ff8d11b9e5d828d38ebaf  kernel/private/classes/views/user/edit.php
+a86c32c292a6686cc1a40f0d8dac6df8  kernel/private/classes/views/user/edit.php
 a878101eba413cae2a95f603ca591098  kernel/private/classes/views/user/forgotpassword.php
 a9211c6d42a1168ed92ff7ccb7f6ecc3  kernel/private/classes/views/user/login.php
 f78f5a9b4365087a08e196ebde0ba8b1  kernel/private/classes/views/user/logout.php
@@ -7378,6 +7383,7 @@ bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regressi
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 b6f45ce384a24cccf17ed74d9da7c988  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
+0cf0917e21fbd4ebf5783aff05d50b0a  tests/tests/kernel/classes/user/expUserAccountOverviewTest.php
 ead0c972fc0471e6313c129e7a4fb4ee  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
 84ad8f4e328c5f376b3003c95eeb8b12  tests/tests/kernel/classes/velocitylayout/expVelocityConfigTest.php
 0ac61d5e64e5552a1cf34e2f052523b3  tests/tests/kernel/classes/workflowevents/eZWorkflowEventTypesTest.php
