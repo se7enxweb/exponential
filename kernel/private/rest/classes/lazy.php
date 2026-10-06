@@ -63,8 +63,8 @@ class ezpRestDbConfig implements ezcBaseConfigurationInitializer
         $dbType = $dbMapping[$dbType];
 
         $dsnHost = $dbHost . ( $dbPort != '' ? ":$dbPort" : '' );
-        $dsnAuth = $dbUser . ( $dbPass != '' ? ":$dbPass" : '' );
-        $dsn = "{$dbType}://{$dbUser}:{$dbPass}@{$dsnHost}/{$dbName}";
+        // ezcDbFactory::parseDSN() rawurldecodes the user and the password, and splits them at the first colon
+        $dsn = "{$dbType}://" . rawurlencode( (string)$dbUser ) . ":" . rawurlencode( (string)$dbPass ) . "@{$dsnHost}/{$dbName}";
 
         return $dsn;
     }
