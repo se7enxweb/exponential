@@ -44,7 +44,7 @@ class Processlist extends \Exponential\Runnable\ModuleView
         $now = time();
 
         // The status filter: "waiting" (the default, and all this page ever showed), "stopped" or "all".
-        $statusFilter = self::statusFilter( isset( $Params['Status'] ) ? $Params['Status'] : null );
+        $statusFilter = self::statusFilter( isset( $scope['Params']['Status'] ) ? $scope['Params']['Status'] : null );
 
         // Cancelling, in two steps. The first button only asks: it shows the processes and what cancelling them
         // does. Only the second one, on that page, cancels; the result comes back after a redirect, so a reload
