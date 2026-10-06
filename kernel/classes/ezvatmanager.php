@@ -296,19 +296,19 @@ class eZVATManager
                 $repositoryDirectories[] = $extensionPath;
         }
 
-        $foundHandler = false;
+        $includeFile = false;
         foreach ( $repositoryDirectories as $repositoryDirectory )
         {
-            $includeFile = "$repositoryDirectory/" . strtolower( $handlerName ) . "vathandler.php";
+            $candidate = "$repositoryDirectory/" . strtolower( $handlerName ) . "vathandler.php";
 
-            if ( file_exists( $includeFile ) )
+            if ( file_exists( $candidate ) )
             {
-                $foundHandler = true;
+                $includeFile = $candidate;
                 break;
             }
         }
 
-        if ( !$foundHandler )
+        if ( $includeFile === false )
         {
             eZDebug::writeError( "VAT handler '$handlerName' not found, " .
                                    "searched in these directories: " .
