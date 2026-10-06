@@ -762,6 +762,9 @@ class eZAutoloadGenerator
                                 }
 
                                 $namespace = trim( addcslashes( $namespace, '\\' ) );
+                                // "namespace { ... }" is the global namespace: its classes have no prefix
+                                if ( $namespace === '' )
+                                    $namespace = null;
                                 break;
 
                             case T_CLASS:

@@ -152,6 +152,14 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $generator->getWarnings() );
     }
 
+    public function testClassInTheGlobalBracedNamespaceHasNoLeadingBackslash()
+    {
+        $p = $this->name;
+        $this->file( 'classes/mixed.php', "<?php\nnamespace K1\\{$p} {\n    class Named {}\n}\nnamespace {\n    class {$p}Global {}\n}\n" );
+        list( , $entries ) = $this->generated();
+        $this->assertSame( array( "K1\\{$p}\\Named" => 'classes/mixed.php', "{$p}Global" => 'classes/mixed.php' ), $entries );
+    }
+
     public function testDuplicatesAndKernelClassesAreRefused()
     {
         $p = $this->name;
