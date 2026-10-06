@@ -41,10 +41,17 @@
       available directly.
 */
 
+// Whether the user may edit the object; an extension may let further editors of the draft in (filter
+// content/edit/access)
+$canEdit = $contentObject->editAccess( isset( $versionObject ) ? $versionObject : null );
+
+// The view mode of content/versionview ((view_mode), full by default)
+$viewMode = isset( $viewMode ) ? $viewMode : 'full';
+
 /* Module action checks */
 if ( $Module->isCurrentAction( 'Edit' ) and
      $versionObject->attribute( 'status' ) == eZContentObjectVersion::STATUS_DRAFT and
-     $contentObject->attribute( 'can_edit' ) and
+     $canEdit and
      $isCreator )
 {
     return $Module->redirectToView( 'edit', array( $ObjectID, $EditVersion, $LanguageCode ) );
@@ -55,14 +62,14 @@ if ( $Module->isCurrentAction( 'Edit' ) and
 // a new version for us and start the edit operation
 if ( $Module->isCurrentAction( 'Edit' ) and
      $contentObject->attribute( 'status' ) == eZContentObject::STATUS_ARCHIVED and
-     $contentObject->attribute( 'can_edit' ) )
+     $canEdit )
 {
     return $Module->redirectToView( 'edit', array( $ObjectID, false, $LanguageCode, $FromLanguage ) );
 }
 
 if ( $Module->isCurrentAction( 'Publish' ) and
      $versionObject->attribute( 'status' ) == eZContentObjectVersion::STATUS_DRAFT and
-     $contentObject->attribute( 'can_edit' ) and
+     $canEdit and
      $isCreator )
 {
     $conflictingVersions = $versionObject->hasConflicts( $LanguageCode );
@@ -247,7 +254,7 @@ $keyArray = array( array( 'object', $contentObject->attribute( 'id' ) ),
                    array( 'parent_node', $node->attribute( 'parent_node_id' ) ),
                    array( 'class', $contentObject->attribute( 'contentclass_id' ) ),
                    array( 'class_identifier', $node->attribute( 'class_identifier' ) ),
-                   array( 'viewmode', 'full' ),
+                   array( 'viewmode', $viewMode ),
                    array( 'remote_id', $contentObject->attribute( 'remote_id' ) ),
                    array( 'node_remote_id', $node->attribute( 'remote_id' ) ),
                    array( 'navigation_part_identifier', $navigationPartIdentifier ),
@@ -290,6 +297,7 @@ $titlePath[] = array( 'text' => $contentObject->attribute( 'name' ),
                       'url_alias' => false );
 
 $tpl->setVariable( 'node_path', $path );
+$tpl->setVariable( 'view_mode', $viewMode );
 
 
 $res->setKeys( $keyArray );

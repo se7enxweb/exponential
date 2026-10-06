@@ -3,12 +3,13 @@
          is_editable=true()
 	 is_standalone=true()}
 
-{default content_object=$node.object}
+{default content_object=$node.object
+         view_mode='full'}
 
 {if $assignment}
-   {node_view_gui view=full with_children=false() versionview_mode=true() is_editable=false() is_standalone=false() content_object=$object node_name=$object.name content_node=$assignment.temp_node node=$node}
+   {node_view_gui view=$view_mode with_children=false() versionview_mode=true() is_editable=false() is_standalone=false() content_object=$object node_name=$object.name content_node=$assignment.temp_node node=$node}
 {else}
-  {node_view_gui view=full with_children=false() versionview_mode=true() is_editable=false() is_standalone=false() content_object=$object node_name=$object.name content_node=$node node=$node}
+  {node_view_gui view=$view_mode with_children=false() versionview_mode=true() is_editable=false() is_standalone=false() content_object=$object node_name=$object.name content_node=$node node=$node}
 {/if}
 
 <form method="post" action={concat("content/versionview/",$object.id,"/",$object_version,"/",$language)|ezurl}>

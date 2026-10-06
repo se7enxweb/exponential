@@ -311,34 +311,35 @@ class eZNodeviewfunctions
             $currentSiteAccess = $ini->variable( 'SiteSettings', 'DefaultAccess' );
         }
 
-        $cacheHashArray = array( $nodeID,
-                                 $viewMode,
-                                 $language,
-                                 $offset,
-                                 $layout );
+        // Named keys, so a listener of content/view/cachekeys can find them; the hash reads the values only
+        $cacheHashArray = array( 'node_id' => $nodeID,
+                                 'viewmode' => $viewMode,
+                                 'language' => $language,
+                                 'offset' => $offset,
+                                 'layout' => $layout );
 
         // several user related cache tweaks
         if ( strpos( $viewCacheTweak, 'ignore_userroles' ) === false )
         {
-            $cacheHashArray[] = implode( '.', $user->roleIDList() ?? [] );
+            $cacheHashArray['userroles'] = implode( '.', $user->roleIDList() ?? [] );
         }
 
         if ( strpos( $viewCacheTweak, 'ignore_userlimitedlist' ) === false )
         {
-            $cacheHashArray[] = implode( '.', $user->limitValueList() ?? [] );
+            $cacheHashArray['userlimitedlist'] = implode( '.', $user->limitValueList() ?? [] );
         }
 
         if ( strpos( $viewCacheTweak, 'ignore_discountlist' ) === false )
         {
-            $cacheHashArray[] = implode( '.', eZUserDiscountRule::fetchIDListByUserID( $user->attribute( 'contentobject_id' ) ) ?? [] );
+            $cacheHashArray['discountlist'] = implode( '.', eZUserDiscountRule::fetchIDListByUserID( $user->attribute( 'contentobject_id' ) ) ?? [] );
         }
 
-        $cacheHashArray[] = eZSys::indexFile();
+        $cacheHashArray['access_path'] = eZSys::indexFile();
 
         // Add access type to cache hash if current access is uri type (so uri and host doesn't share cache)
         if ( strpos( $viewCacheTweak, 'ignore_siteaccess_type' ) === false && $GLOBALS['eZCurrentAccess']['type'] === eZSiteAccess::TYPE_URI )
         {
-            $cacheHashArray[] = eZSiteAccess::TYPE_URI;
+            $cacheHashArray['siteaccess_type'] = eZSiteAccess::TYPE_URI;
         }
 
         // Make the cache unique for every logged in user
@@ -350,7 +351,7 @@ class eZNodeviewfunctions
         // Add the request protocol to the cache key generation
         if ( strpos( $viewCacheTweak, 'protocol' ) !== false )
         {
-            $cacheHashArray[] = eZSys::isSSLNow();
+            $cacheHashArray['protocol'] = eZSys::isSSLNow();
         }
 
         // Make the cache unique for every case of view parameters
@@ -364,7 +365,7 @@ class eZNodeviewfunctions
                     continue;
                 $vpString .= 'vp:' . $key . '=' . $value;
             }
-            $cacheHashArray[] = $vpString;
+            $cacheHashArray['viewparameters'] = $vpString;
         }
 
         // Make the cache unique for every case of the preferences
@@ -394,7 +395,44 @@ class eZNodeviewfunctions
                         $pString .= 'p:' . $pref[0] . '='. $pref[1]. ';';
                 }
             }
-            $cacheHashArray[] = $pString;
+            $cacheHashArray['userpreferences'] = $pString;
+        }
+
+        // An extension adds keys (a permission the roles do not show) or leaves some out (a class whose pages are the
+        // same for everyone); a listener that returns no array changes nothing
+        $filtered = ezpEvent::getInstance()->filter( 'content/view/cachekeys', $cacheHashArray,
+                                                     array( 'user' => $user,
+                                                            'node_id' => $nodeID,
+                                                            'view_mode' => $viewMode,
+                                                            'language' => $language,
+                                                            'offset' => $offset,
+                                                            'layout' => $layout,
+                                                            'view_parameters' => $viewParameters,
+                                                            'view_cache_tweak' => $viewCacheTweak ) );
+        if ( is_array( $filtered ) )
+        {
+            // The hash reads the values as strings: a value that is not a string, number, bool or null (an array, an
+            // object) would hash as "Array" or fail, so it is left out with a warning
+            foreach ( $filtered as $key => $value )
+            {
+                if ( $value !== null && !is_scalar( $value ) )
+                {
+                    eZDebug::writeWarning( "A listener of content/view/cachekeys returned the key '$key' as " . gettype( $value ) .
+                                           '; only strings and numbers are used, it was left out', __METHOD__ );
+                    unset( $filtered[$key] );
+                }
+            }
+            // The node, view mode, language, offset and layout always stay: without them two views of a node (full and
+            // line, two languages) would share one file. Kept first, in their order, so a listener that leaves them
+            // in place gets the same file names
+            $structural = array_intersect_key( $cacheHashArray, array_flip( array( 'node_id', 'viewmode', 'language', 'offset', 'layout' ) ) );
+            $missing = array_diff_key( $structural, $filtered );
+            if ( $missing )
+            {
+                eZDebug::writeWarning( 'A listener of content/view/cachekeys left out ' . implode( ', ', array_keys( $missing ) ) .
+                                       '; they always stay', __METHOD__ );
+            }
+            $cacheHashArray = array_replace( $structural, $filtered );
         }
 
         $cacheFile = $nodeID . '-' . $cacheNameExtra . md5( implode( '-', $cacheHashArray ) ) . '.cache';

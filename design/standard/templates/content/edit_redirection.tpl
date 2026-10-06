@@ -16,8 +16,8 @@
 {/if}
 
 {if is_set( $redirect_uri_after_publish) }
-    <input type="hidden" name="RedirectURIAfterPublish" value="{$redirect_uri_after_publish}" />
+    <input type="hidden" name="RedirectURIAfterPublish" value="{$redirect_uri_after_publish|wash}" />
 {/if}
 {if is_set( $redirect_if_discarded ) }
-    <input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded}" />
+    <input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />
 {/if}

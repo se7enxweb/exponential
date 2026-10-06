@@ -64,6 +64,7 @@
 </div>
 
 </div>
+{if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
 
 

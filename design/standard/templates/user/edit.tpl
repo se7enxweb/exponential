@@ -28,6 +28,8 @@
 <input class="button" type="submit" name="EditButton" value="{'Edit profile'|i18n('design/standard/user')}" />
 <input class="button" type="submit" name="ChangePasswordButton" value="{'Change password'|i18n('design/standard/user')}" />
 <input class="button" type="submit" name="ChangeSettingButton" value="{'Change setting'|i18n('design/standard/user')}" />
+<input class="button" type="submit" name="CancelButton" value="{'Cancel'|i18n('design/standard/user')}" />
 </div>
 
+{if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
