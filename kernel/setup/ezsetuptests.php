@@ -581,11 +581,13 @@ function eZSetupTestFilePermissions( $type )
 
         $resultElement = array();
         $resultElement['file'] = $file;
-        $resultElements[] = $resultElement;
+        // ok unless found otherwise: the error template leaves out the ok ones
+        $resultElement['result'] = true;
 
         $file = eZDir::cleanPath( $file );
         if ( !file_exists( $file ) )
         {
+            $resultElements[] = $resultElement;
             continue;
         }
         if ( is_dir( $file ) )
@@ -609,6 +611,9 @@ function eZSetupTestFilePermissions( $type )
                 $resultElement['result'] = false;
             }
         }
+        // Added once it is known what was checked and how it went: added before,
+        // it was a copy without the permission and the result
+        $resultElements[] = $resultElement;
     }
     $safeMode = ini_get( 'safe_mode' ) != 0;
     $userInfo = eZSetupPrvPosixExtension();

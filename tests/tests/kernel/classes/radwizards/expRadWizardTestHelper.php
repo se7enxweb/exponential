@@ -151,6 +151,20 @@ class expRadWizardTestHelper
         return $before;
     }
 
+    /**
+     * Injects settings of any ini file for one test; returns what was injected before, for restoreInjected().
+     */
+    public static function injectIni( $file, array $blocks )
+    {
+        $before = expRadWizardTestINI::injected();
+        $settings = $before;
+        foreach ( $blocks as $block => $values )
+            foreach ( $values as $name => $value )
+                $settings[$file][$block][$name] = $value;
+        eZINI::injectSettings( $settings );
+        return $before;
+    }
+
     public static function restoreInjected( $before )
     {
         eZINI::injectSettings( $before );
