@@ -7318,7 +7318,7 @@ cb03165c75d5bae854a4602fb41692d4  tests/tests/kernel/private/rest/suite.php
 3013b456947228eeecfbd9a6e02df513  tests/tests/kernel/private/rest/testfiles/controller.php
 149203a3554b279242b3a0b2a2c78584  tests/tests/kernel/private/rest/testfiles/rest_provider.php
 58d85671f9161547dbf3c50eb39defa4  tests/tests/kernel/private/rest/tools/generate_test_data.php
-322e2c4971c2301b42887be5b652d09f  tests/tests/kernel/private/restapi/expRestContentPermissionTest.php
+25dd7c9d540ad34cc7c7e57dce47118a  tests/tests/kernel/private/restapi/expRestContentPermissionTest.php
 e92b23a8b19a5157df8e6413cc5e874f  tests/tests/kernel/private/restapi/ezpRestAnswerCacheTest.php
 26a9c2d6a657e89e2b6b5bbc0a696d5a  tests/tests/kernel/private/restapi/ezpRestDbConfigTest.php
 fa7de453db2f950cf99c949a777e46fd  tests/tests/kernel/private/restapi/ezpRestDebugPHPFormatterTest.php
