@@ -241,6 +241,7 @@ class eZContentOperationsLiveTest extends expContentModelLiveTestCase
         $section = new eZSection( array( 'name' => 'k1c section ' . uniqid(), 'identifier' => 'k1c_section_' . uniqid(), 'navigation_part_identifier' => 'ezcontentnavigationpart' ) );
         $section->store();
         $sectionID = (int)$section->attribute( 'id' );
+        $identifier = $section->attribute( 'identifier' );
         try
         {
             $base = $this->base( 'section' );
@@ -270,6 +271,9 @@ class eZContentOperationsLiveTest extends expContentModelLiveTestCase
             if ( $left )
                 $left->removeThis();
         }
+        // the sections read during the request are kept; a removed one is not found any more
+        $this->assertNull( eZSection::fetch( $sectionID ) );
+        $this->assertNull( eZSection::fetchByIdentifier( $identifier ) );
     }
 
     public function testAlwaysAvailableFlag()

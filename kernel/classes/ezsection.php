@@ -178,6 +178,11 @@ class eZSection extends eZPersistentObject
     function removeThis( $conditions = null, $extraConditions = null )
     {
         $this->remove( array( "id" => $this->ID ), $extraConditions );
+        // fetch() and fetchByIdentifier() keep the sections they read; a removed
+        // one must not be found there for the rest of the request (or worker)
+        unset( $GLOBALS['eZContentSectionObjectCache'][$this->ID] );
+        if ( isset( $this->Identifier ) && $this->Identifier !== '' )
+            unset( $GLOBALS['eZContentSectionObjectCache'][$this->Identifier] );
     }
 
     /*
