@@ -433,7 +433,7 @@ class eZWorkflow extends eZPersistentObject
         $list = eZPersistentObject::fetchObjectList( eZWorkflowEvent::definition(),
                                                      array(),
                                                      array( 'version' => $version,
-                                                            'workflow_id' => $id ),
+                                                            'workflow_id' => $this->ID ),
                                                      false,
                                                      null,
                                                      false,
