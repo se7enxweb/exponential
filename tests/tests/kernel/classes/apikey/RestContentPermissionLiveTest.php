@@ -8,8 +8,10 @@
  * It calls the REST interface with an OAuth token (a throwaway REST application, authorized by the user) and with
  * personal API keys. Every step runs on each server of APIKEY_LIVE_BASES (default https://alpha.se7enx.com and
  * https://alpha.se7enx.com:8080, Apache and Velocity). Everything is removed again: the content (below the test's
- * folder), the token, the application, the keys, the role and the user. No content outside the test's folder is
- * written; node 2 is only read (and refused).
+ * folder), the token, the application, the keys, the role and the user, also when a test fails or the set up stops
+ * halfway. Their names carry the run id (start time and a random part), and each run first sweeps away what an earlier
+ * crashed run left, older than an hour, matched by name prefix only (expRestLiveTestCleanup). No content outside the
+ * test's folder is written; node 2 is only read (and refused).
  *
  * Not part of the normal run (group network-live): it needs a live installation reachable over HTTP. Run it with
  *   php vendor/bin/phpunit --group network-live tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
@@ -30,10 +32,12 @@
  */
 
 require_once dirname( __DIR__ ) . '/contentmodel/expContentModelLiveTestCase.php';
+require_once __DIR__ . '/expRestLiveTestCleanup.php';
 
 #[\PHPUnit\Framework\Attributes\Group('network-live')]
 class RestContentPermissionLiveTest extends expContentModelLiveTestCase
 {
+    protected static $runID;
     protected static $user;
     protected static $login;
     protected static $roleID;
@@ -46,9 +50,37 @@ class RestContentPermissionLiveTest extends expContentModelLiveTestCase
     protected static $startedAt;
     protected static $language;
 
+    /**
+     * The names this class gives its throwaway things: what the leftover sweep and the clean up match.
+     */
+    protected static function leftoverSpec()
+    {
+        return array( 'name' => 'REST permission live test ', 'login' => 'rplive', 'root' => 'k1c ' . static::class . ' ',
+                      'client' => 'rplive', 'keys' => array( 'REST permission live test ' ) );
+    }
+
     public static function setUpBeforeClass(): void
     {
+        static::$runID = static::$user = static::$login = static::$roleID = static::$clientID = static::$clientRowID = static::$token = null;
         parent::setUpBeforeClass();
+        try
+        {
+            static::setUpRun();
+        }
+        catch ( Throwable $e )
+        {
+            // PHPUnit runs no tearDownAfterClass() after a setUpBeforeClass() that stopped (a skip too): clean up here
+            $errors = static::cleanUp();
+            if ( $errors )
+                fwrite( STDERR, static::class . ' clean up after a failed set up: ' . implode( '; ', $errors ) . "\n" );
+            throw $e;
+        }
+    }
+
+    protected static function setUpRun()
+    {
+        // what earlier runs left behind (a crash, a killed process): older than an hour, so a running one stays
+        expRestLiveTestCleanup::sweep( static::leftoverSpec() );
         if ( !function_exists( 'curl_init' ) )
             self::markTestSkipped( 'needs curl' );
         if ( !class_exists( 'expRestContentPermission' ) )
@@ -57,7 +89,8 @@ class RestContentPermissionLiveTest extends expContentModelLiveTestCase
         static::$startedAt = time();
         static::$language = eZContentLanguage::topPriorityLanguage()->attribute( 'locale' );
 
-        $suffix = substr( md5( uniqid( '', true ) ), 0, 10 );
+        // the run id carries the start time, so a later sweep can tell the age of a leftover from its name
+        $suffix = static::$runID = expRestLiveTestCleanup::runID();
         static::$allowed = static::folder( static::$root['node'], 'allowed ' . $suffix );
         static::$outside = static::folder( static::$root['node'], 'outside ' . $suffix );
         $allowedPath = eZContentObjectTreeNode::fetch( static::$allowed['node'] )->attribute( 'path_string' );
@@ -116,24 +149,47 @@ class RestContentPermissionLiveTest extends expContentModelLiveTestCase
 
     public static function tearDownAfterClass(): void
     {
-        $db = eZDB::instance();
-        if ( static::$clientID )
+        $errors = static::cleanUp();
+        if ( $errors )
+            throw new RuntimeException( static::class . ' could not remove everything it made: ' . implode( '; ', $errors ) );
+    }
+
+    /**
+     * Removes everything of this run: the keys, the token, the application, the role, the user and its group, the
+     * test's folder with all that was made below it. Each step on its own, so one that fails does not leave the rest;
+     * then whatever still carries this run's id is looked up by name and removed too.
+     *
+     * @return string[] what could not be removed
+     */
+    protected static function cleanUp()
+    {
+        $errors = expRestLiveTestCleanup::remove( array(
+            'users' => static::$user ? array( static::$user['object'] ) : array(),
+            'clients' => static::$clientRowID ? array( static::$clientRowID ) : array(),
+            'roles' => static::$roleID ? array( static::$roleID ) : array(),
+            'objects' => static::$createdObjects ) );
+        try
         {
-            $db->query( "DELETE FROM ezprest_token WHERE client_id = '" . $db->escapeString( static::$clientID ) . "'" );
-            $db->query( 'DELETE FROM ezprest_authorized_clients WHERE rest_client_id = ' . (int)static::$clientRowID );
-            $db->query( "DELETE FROM ezprest_clients WHERE client_id = '" . $db->escapeString( static::$clientID ) . "'" );
+            // checks nothing tracked is left, and resets the root
+            parent::tearDownAfterClass();
         }
-        if ( static::$user )
+        catch ( Throwable $e )
         {
-            $db->query( 'DELETE FROM expapikey WHERE user_id = ' . (int)static::$user['object'] );
-            eZUser::removeSessionData( static::$user['object'] );
-            eZUser::purgeUserCacheByUserId( static::$user['object'] );
+            $errors[] = $e->getMessage();
         }
-        if ( static::$roleID && eZRole::fetch( static::$roleID ) )
-            eZRole::removeRole( static::$roleID );
-        parent::tearDownAfterClass();
+        if ( static::$runID )
+        {
+            $spec = array( 'run' => static::$runID ) + static::leftoverSpec();
+            if ( array_filter( expRestLiveTestCleanup::find( $spec ) ) )
+                $errors = array_merge( $errors, expRestLiveTestCleanup::remove( expRestLiveTestCleanup::find( $spec ) ) );
+            $left = array_filter( expRestLiveTestCleanup::find( $spec ) );
+            if ( $left )
+                $errors[] = 'still there: ' . json_encode( array_map( 'array_keys', $left ) );
+        }
         if ( static::$login && eZUser::fetchByName( static::$login ) )
-            throw new RuntimeException( 'the REST permission test user is still there' );
+            $errors[] = 'the REST permission test user is still there';
+        static::$runID = static::$user = static::$login = static::$roleID = static::$clientID = static::$clientRowID = static::$token = null;
+        return $errors;
     }
 
     // ------------------------------------------------------------------------------------------------ helpers

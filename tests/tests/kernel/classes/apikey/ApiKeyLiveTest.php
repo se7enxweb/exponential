@@ -6,7 +6,10 @@
  * signs in on the public site, makes a key on apikey/list, uses it against the REST interface, has it refused where
  * it must be, and revokes it; a second key is revoked by the administrator on oauthadmin/keys. Every step is checked
  * on each server of APIKEY_LIVE_BASES (default https://alpha.se7enx.com and https://alpha.se7enx.com:8080, Apache and
- * Velocity), and the audit records it wrote are read back. Everything is removed again: keys, role, user.
+ * Velocity), and the audit records it wrote are read back. Everything is removed again: keys, role, user, also when a
+ * test fails or the set up stops halfway. Their names carry the run id (start time and a random part), and each run
+ * first sweeps away what an earlier crashed run left, older than an hour, matched by name prefix only
+ * (expRestLiveTestCleanup).
  *
  * Not part of the normal run (group network-live): it needs a live installation reachable over HTTP. Run it with
  *   php vendor/bin/phpunit --group network-live tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
@@ -28,10 +31,12 @@
  */
 
 require_once dirname( __DIR__ ) . '/contentmodel/expContentModelLiveTestCase.php';
+require_once __DIR__ . '/expRestLiveTestCleanup.php';
 
 #[\PHPUnit\Framework\Attributes\Group('network-live')]
 class ApiKeyLiveTest extends expContentModelLiveTestCase
 {
+    protected static $runID;
     protected static $user;
     protected static $login;
     protected static $password;
@@ -44,19 +49,52 @@ class ApiKeyLiveTest extends expContentModelLiveTestCase
     protected static $token;
     protected static $startedAt;
 
+    /**
+     * The names this class gives its throwaway things: what the leftover sweep and the clean up match.
+     */
+    protected static function leftoverSpec()
+    {
+        return array( 'name' => 'API key live test ', 'login' => 'aklive', 'root' => 'k1c ' . static::class . ' ',
+                      'keys' => array( 'Live test ' ) );
+    }
+
     public static function setUpBeforeClass(): void
     {
+        static::$runID = static::$user = static::$login = static::$password = static::$roleID = null;
+        static::$cookies = array();
         parent::setUpBeforeClass();
+        try
+        {
+            static::setUpRun();
+        }
+        catch ( Throwable $e )
+        {
+            // PHPUnit runs no tearDownAfterClass() after a setUpBeforeClass() that stopped (a skip too): clean up here
+            $errors = static::cleanUp();
+            if ( $errors )
+                fwrite( STDERR, static::class . ' clean up after a failed set up: ' . implode( '; ', $errors ) . "\n" );
+            throw $e;
+        }
+    }
+
+    protected static function setUpRun()
+    {
         if ( !function_exists( 'curl_init' ) )
             self::markTestSkipped( 'needs curl' );
         if ( !class_exists( 'expApiKeySchema' ) || expApiKeySchema::exists() !== true )
             self::markTestSkipped( 'needs the expapikey table (update/common/scripts/6.0/createapikeytable.php)' );
+        // what earlier runs left behind (a crash, a killed process): older than an hour, so a running one stays
+        expRestLiveTestCleanup::sweep( static::leftoverSpec() );
+        foreach ( glob( dirname( __DIR__, 5 ) . '/var/tmp/apikey-cookies-*' ) ?: array() as $file )
+            if ( filemtime( $file ) < time() - expRestLiveTestCleanup::STALE_AFTER )
+                @unlink( $file );
         static::$bases = array_filter( array_map( 'trim', explode( ',', getenv( 'APIKEY_LIVE_BASES' ) ?: 'https://alpha.se7enx.com,https://alpha.se7enx.com:8080' ) ) );
         static::$siteAccess = getenv( 'APIKEY_LIVE_SITEACCESS' ) ?: 'site';
         static::$restPath = getenv( 'APIKEY_LIVE_REST_PATH' ) ?: expApiKey::examplePath();
         static::$startedAt = time();
 
-        $suffix = substr( md5( uniqid( '', true ) ), 0, 10 );
+        // the run id carries the start time, so a later sweep can tell the age of a leftover from its name
+        $suffix = static::$runID = expRestLiveTestCleanup::runID();
         static::$login = 'aklive' . $suffix;
         static::$password = 'Ak-live-' . $suffix . '-Pw9!';
         $email = 'aklive-' . $suffix . '@apikey.example.invalid';
@@ -82,20 +120,49 @@ class ApiKeyLiveTest extends expContentModelLiveTestCase
 
     public static function tearDownAfterClass(): void
     {
-        if ( static::$user )
-        {
-            $db = eZDB::instance();
-            $db->query( 'DELETE FROM expapikey WHERE user_id = ' . (int)static::$user['object'] );
-            eZUser::removeSessionData( static::$user['object'] );
-            eZUser::purgeUserCacheByUserId( static::$user['object'] );
-        }
-        if ( static::$roleID && eZRole::fetch( static::$roleID ) )
-            eZRole::removeRole( static::$roleID );
+        $errors = static::cleanUp();
+        if ( $errors )
+            throw new RuntimeException( static::class . ' could not remove everything it made: ' . implode( '; ', $errors ) );
+    }
+
+    /**
+     * Removes everything of this run: the keys, the role, the user and its group, the test's folder, the cookie
+     * files. Each step on its own, so one that fails does not leave the rest; then whatever still carries this run's
+     * id is looked up by name and removed too.
+     *
+     * @return string[] what could not be removed
+     */
+    protected static function cleanUp()
+    {
+        $errors = expRestLiveTestCleanup::remove( array(
+            'users' => static::$user ? array( static::$user['object'] ) : array(),
+            'roles' => static::$roleID ? array( static::$roleID ) : array(),
+            'objects' => static::$createdObjects ) );
         foreach ( static::$cookies as $file )
             @unlink( $file );
-        parent::tearDownAfterClass();
+        static::$cookies = array();
+        try
+        {
+            // checks nothing tracked is left, and resets the root
+            parent::tearDownAfterClass();
+        }
+        catch ( Throwable $e )
+        {
+            $errors[] = $e->getMessage();
+        }
+        if ( static::$runID )
+        {
+            $spec = array( 'run' => static::$runID ) + static::leftoverSpec();
+            if ( array_filter( expRestLiveTestCleanup::find( $spec ) ) )
+                $errors = array_merge( $errors, expRestLiveTestCleanup::remove( expRestLiveTestCleanup::find( $spec ) ) );
+            $left = array_filter( expRestLiveTestCleanup::find( $spec ) );
+            if ( $left )
+                $errors[] = 'still there: ' . json_encode( array_map( 'array_keys', $left ) );
+        }
         if ( static::$login && eZUser::fetchByName( static::$login ) )
-            throw new RuntimeException( 'the API key test user is still there' );
+            $errors[] = 'the API key test user is still there';
+        static::$runID = static::$user = static::$login = static::$password = static::$roleID = null;
+        return $errors;
     }
 
     // ------------------------------------------------------------------------------------------------ helpers
