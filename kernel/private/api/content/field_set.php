@@ -243,7 +243,8 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
         }
         else
         {
-            $this->iteratorData =  $this->fields;
+            // A data map without attributes leaves no fields: an empty set, not array_keys( null )
+            $this->iteratorData = (array)$this->fields;
             $this->iteratorPointer = array_keys( $this->iteratorData );
         }
     }

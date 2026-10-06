@@ -194,6 +194,13 @@ class ezpContentCriteriaTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'title' => 'Hello', 'intro' => 'World' ), $names );
     }
 
+    public function testEmptyDataMapGivesAnEmptySet()
+    {
+        $set = ezpContentFieldSet::fromDataMap( array() );
+        $this->assertSame( array(), iterator_to_array( $set ) );
+        $this->assertFalse( isset( $set->title ) );
+    }
+
     public function testUnknownLanguageIsRefused()
     {
         $set = ezpContentFieldSet::fromDataMap( array( self::attribute( 'title', 'x' ) ) );
