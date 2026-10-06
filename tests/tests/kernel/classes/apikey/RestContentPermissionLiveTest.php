@@ -14,7 +14,7 @@
  * Not part of the normal run (group network-live): it needs a live installation reachable over HTTP. Run it with
  *   php vendor/bin/phpunit --group network-live tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
  *
- *  RP-01 reads: v1 and v2 answer 200 inside the user's read rights, 403 outside them (content/read)
+ *  RP-01 reads: v1 and v2 answer 200 inside the user's read rights, 403 outside them (content/read), again on a repeat
  *  RP-02 v1 lists the children with links that stay in v1 (the API the mobile app calls)
  *  RP-03 a token creates where content/create allows it (201) and removes it again with DELETE and with POST (200)
  *  RP-04 a token is refused (403) a create and a removal outside its user's rights; nothing changes
@@ -215,8 +215,12 @@ class RestContentPermissionLiveTest extends expContentModelLiveTestCase
                 list( $status, , $body, $json ) = static::rest( $base, 'GET', "/ezp/v$v/content/node/" . static::$root['node'], static::$token );
                 $this->assertSame( 200, $status, "$base v$v: the user reads its folder: " . substr( $body, 0, 200 ) );
                 $this->assertSame( static::$root['node'], (int)$json['metadata']['nodeId'] );
-                list( $status, , $body ) = static::rest( $base, 'GET', "/ezp/v$v/content/node/2", static::$token );
-                $this->assertSame( 403, $status, "$base v$v: node 2 is outside its read rights: " . substr( $body, 0, 200 ) );
+                // twice: the second answer must not come from a cached refusal (that was a 500)
+                foreach ( array( 'first', 'again' ) as $round )
+                {
+                    list( $status, , $body ) = static::rest( $base, 'GET', "/ezp/v$v/content/node/2", static::$token );
+                    $this->assertSame( 403, $status, "$base v$v ($round): node 2 is outside its read rights: " . substr( $body, 0, 200 ) );
+                }
                 list( $status ) = static::rest( $base, 'GET', "/ezp/v$v/content/node/2/list", static::$token );
                 $this->assertSame( 403, $status, "$base v$v: neither is the list of node 2" );
             }

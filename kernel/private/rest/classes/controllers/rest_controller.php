@@ -183,8 +183,14 @@ abstract class ezpRestMvcController extends ezcMvcController
                     $res->responseGroups = $resGroups;
                 }
 
-                if ( $isCacheEnabled )
+                // Only a plain answer is kept. A result with a status object (a refusal such as 403 access_denied,
+                // a 201, a 501 ...) is not: its status classes cannot be read back from the cache file
+                // (var_export() writes ::__set_state() calls they do not have), and a refusal must follow the
+                // user's rights of the next request anyway.
+                if ( $isCacheEnabled && self::isCacheable( $res ) )
                     $cache->store( $controllerCacheId, $res );
+                else if ( $isCacheEnabled )
+                    $cache->abortCacheGeneration();
 
                 $debug->stopTimer( 'GeneratingCache' );
             }
@@ -264,6 +270,17 @@ abstract class ezpRestMvcController extends ezcMvcController
         }
 
         return (int)$this->restINI->variable( 'CacheSettings', 'DefaultCacheTTL' );
+    }
+
+    /**
+     * Whether a result may go into the answer cache: an ezcMvcResult without a status object.
+     *
+     * @param mixed $result
+     * @return bool
+     */
+    public static function isCacheable( $result )
+    {
+        return $result instanceof ezcMvcResult && !is_object( $result->status );
     }
 
     /**
