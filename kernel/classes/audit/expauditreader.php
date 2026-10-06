@@ -216,7 +216,17 @@ class expAuditReader
             $read = min( 65536, $pos );
             $pos -= $read;
             fseek( $h, $pos );
-            $chunk = fread( $h, $read ) . $rest;
+            // fread() returns at most one buffer (8 KB) through a userland stream wrapper, as Velocity's file wrapper
+            // is: read until the whole chunk is there, or records in the rest of it are never seen
+            $data = '';
+            while ( strlen( $data ) < $read )
+            {
+                $part = fread( $h, $read - strlen( $data ) );
+                if ( $part === false || $part === '' )
+                    break;
+                $data .= $part;
+            }
+            $chunk = $data . $rest;
             $lines = explode( "\n", $chunk );
             $rest = array_shift( $lines );
             if ( $first )
