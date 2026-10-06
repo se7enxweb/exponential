@@ -238,11 +238,18 @@ class eZSiteAccess
                         if ( $ini->hasVariable( 'SiteAccessSettings', 'HostMatchMapItems' ) )
                         {
                             $matchMapItems = $ini->variableArray( 'SiteAccessSettings', 'HostMatchMapItems' );
+                            // strict (the host as it is listed) unless HostMatchMethod or the third field of an
+                            // item says start, end or part, as for host_uri
+                            $defaultHostMatchMethod = $ini->hasVariable( 'SiteAccessSettings', 'HostMatchMethod' )
+                                ? $ini->variable( 'SiteAccessSettings', 'HostMatchMethod' ) : 'strict';
                             foreach ( $matchMapItems as $matchMapItem )
                             {
+                                if ( !isset( $matchMapItem[1] ) || $matchMapItem[0] === '' )
+                                    continue;
                                 $matchMapHost = $matchMapItem[0];
                                 $matchMapAccess = $matchMapItem[1];
-                                if ( $matchMapHost == $host )
+                                $matchHostMethod = isset( $matchMapItem[2] ) && $matchMapItem[2] !== '' ? $matchMapItem[2] : $defaultHostMatchMethod;
+                                if ( self::hostMatches( $host, $matchMapHost, $matchHostMethod ) )
                                 {
                                     $access['name'] = $matchMapAccess;
                                     $access['type'] = $type;
@@ -289,32 +296,7 @@ class eZSiteAccess
                             if ( $matchURI !== '' && !preg_match( "@^$matchURI\b@u", $uriString ) )
                                 continue;
 
-                            switch( $matchHostMethod )
-                            {
-                                case 'strict':
-                                {
-                                    $hasHostMatch = ( $matchHost === $host );
-                                } break;
-                                case 'start':
-                                {
-                                    $hasHostMatch = ( strpos($host, $matchHost) === 0 );
-                                } break;
-                                case 'end':
-                                {
-                                    $hasHostMatch = ( strstr($host, $matchHost) === $matchHost );
-                                } break;
-                                case 'part':
-                                {
-                                    $hasHostMatch = ( strpos($host, $matchHost) !== false );
-                                } break;
-                                default:
-                                {
-                                    $hasHostMatch = false;
-                                    eZDebug::writeError( "Unknown host_uri host match: $matchHostMethod", "access" );
-                                } break;
-                            }
-
-                            if ( $hasHostMatch )
+                            if ( self::hostMatches( $host, $matchHost, $matchHostMethod ) )
                             {
                                 if ( $matchURI !== '' )
                                 {
@@ -418,6 +400,36 @@ class eZSiteAccess
             }
         }
         return $access;
+    }
+
+    /**
+     * Whether $host matches the host $matchHost of a map item (HostMatchMapItems, HostUriMatchMapItems) by $method:
+     * strict (the same host), start (begins with it, so www.example.com.test.local matches www.example.com), end
+     * (ends with it) or part (contains it), as host_uri always matched. An unknown method matches nothing and is
+     * logged.
+     *
+     * @param string $host
+     * @param string $matchHost
+     * @param string $method strict, start, end or part
+     * @return bool
+     */
+    static function hostMatches( $host, $matchHost, $method )
+    {
+        $host = (string)$host;
+        $matchHost = (string)$matchHost;
+        switch ( $method )
+        {
+            case 'strict':
+                return $matchHost === $host;
+            case 'start':
+                return strpos( $host, $matchHost ) === 0;
+            case 'end':
+                return strstr( $host, $matchHost ) === $matchHost;
+            case 'part':
+                return strpos( $host, $matchHost ) !== false;
+        }
+        eZDebug::writeError( "Unknown host match: $method", 'access' );
+        return false;
     }
 
     /**

@@ -1,8 +1,8 @@
 <?php
 /**
  * Tests of eZSiteAccess::match(), the choice of the siteaccess for a request from site.ini: the static match, the
- * default, and each MatchOrder probe (port, server variable, uri by map, element, text and regexp, host by map,
- * element, text and regexp, index file by element, text and regexp), the order of the probes, names that are not
+ * default, and each MatchOrder probe (port, server variable, uri by map, element, text and regexp, host by map
+ * (strict, or by HostMatchMethod and the method of an item), element, text and regexp, index file by element, text and regexp), the order of the probes, names that are not
  * in AvailableSiteAccessList, the name washing, and what each match leaves of the URI. Also matchText() and
  * matchRegexp() on their own.
  *
@@ -159,6 +159,51 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $this->set( 'SiteAccessSettings', 'HostMatchMapItems', array( 'admin.example.invalid;k1admin', 'de.example.invalid;k1ger' ) );
         $this->assertAccess( 'k1admin', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'admin.example.invalid' ), 'x' );
         $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( 'x', 'ADMIN.example.invalid.other' ) );
+    }
+
+    /** A test host that only begins with the listed one matches with HostMatchMethod=start */
+    public function testHostMapMatchesTheStartOfTheHostWhenAsked()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'host' );
+        $this->set( 'SiteAccessSettings', 'HostMatchType', 'map' );
+        $this->set( 'SiteAccessSettings', 'HostMatchMapItems', array( 'admin.example.invalid;k1admin', 'de.example.invalid;k1ger' ) );
+        $this->set( 'SiteAccessSettings', 'HostMatchMethod', 'start' );
+        $this->assertAccess( 'k1admin', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'admin.example.invalid.test.local' ), 'x' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'de.example.invalid' ) );
+        $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( 'x', 'www.admin.example.invalid' ) );
+    }
+
+    /** The third field of an item sets its own method; the others stay strict */
+    public function testHostMapItemCarriesItsOwnMethod()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'host' );
+        $this->set( 'SiteAccessSettings', 'HostMatchType', 'map' );
+        $this->set( 'SiteAccessSettings', 'HostMatchMethod', 'strict' );
+        $this->set( 'SiteAccessSettings', 'HostMatchMapItems', array( 'admin.example.invalid;k1admin', 'example.invalid;k1ger;end', ';k1eng;part' ) );
+        $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( 'x', 'admin.example.invalid.test.local' ) );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'de.example.invalid' ) );
+        $this->assertAccess( 'k1admin', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'admin.example.invalid' ) );
+    }
+
+    public static function hostMatchProvider()
+    {
+        return array(
+            array( 'www.example.com', 'www.example.com', 'strict', true ),
+            array( 'www.example.com.test.local', 'www.example.com', 'strict', false ),
+            array( 'www.example.com.test.local', 'www.example.com', 'start', true ),
+            array( 'test.www.example.com', 'www.example.com', 'start', false ),
+            array( 'test.www.example.com', 'www.example.com', 'end', true ),
+            array( 'www.example.com.test', 'www.example.com', 'end', false ),
+            array( 'a.www.example.com.b', 'www.example.com', 'part', true ),
+            array( 'www.example.org', 'www.example.com', 'part', false ),
+            array( 'www.example.com', 'www.example.com', 'begins', false ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider( 'hostMatchProvider' )]
+    public function testHostMatches( $host, $matchHost, $method, $expected )
+    {
+        $this->assertSame( $expected, eZSiteAccess::hostMatches( $host, $matchHost, $method ) );
     }
 
     public function testHostText()
