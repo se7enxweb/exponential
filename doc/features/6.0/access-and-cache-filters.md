@@ -204,8 +204,8 @@ public static function itemAccess( $allowed, $item, $user )
 
 ### `content/notification/create`
 
-The publish operation creates the event that the notification handlers turn into mails. The filter gets `true`,
-the object ID and the version; anything else leaves the event out. A listener that only lets some classes through:
+The publish operation creates the event that the notification handlers turn into mails. The filter gets `true` (`false` for
+a publication without notification), the object ID and the version; anything but `true` leaves the event out. A listener that only lets some classes through:
 
 ```php
 public static function create( $create, $objectID, $version )
@@ -217,19 +217,10 @@ public static function create( $create, $objectID, $version )
 
 #### Publish without notification
 
-With `notification.ini [NotificationSettings] PublishWithoutNotification=enabled`, the edit form (`content/edit`) and
-the version preview (`content/versionview`) show "Publish without notification" next to the publish button. It
-publishes the version as the other one does, with the parameter `notify` of the publish operation set to `false`; the
-filter then gets `false`, and no event is made unless a listener returns `true`. The parameter is kept in the
-memento of a publication a workflow holds back, so a version approved later still goes without notification. Code
-that publishes through the operation passes it the same way:
-
-```php
-eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $id, 'version' => $version, 'notify' => false ) );
-```
-
-The setting is `disabled` by default: the button is hidden, and a posted `PublishNotNotifyButton` or
-`PreviewPublishNotNotifyButton` publishes with notification.
+"Publish without notification" (`notification.ini [NotificationSettings] PublishWithoutNotification` and the policy
+`content/publish_without_notification`) runs the publish operation with `notify` set to `false`, and the filter then
+gets `false`. A listener that returns `true` regardless makes the event anyway and overrides the editor: pass on
+`$create` when you do not mean to. The whole feature: [Publish without notification](publish-without-notification.md).
 
 ## How it works
 
