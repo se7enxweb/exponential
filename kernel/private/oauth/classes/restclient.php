@@ -265,6 +265,8 @@ class ezpRestClient
         $authorization = new ezpRestAuthorizedClient();
         $authorization->rest_client_id = $this->id;
         $authorization->user_id = $user->attribute( 'contentobject_id' );
+        // when the user authorized the application, shown on its page in the administration
+        $authorization->created = time();
 
         $session = ezcPersistentSessionInstance::get();
         $session->save( $authorization );
