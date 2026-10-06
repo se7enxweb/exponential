@@ -3236,6 +3236,7 @@ e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
 de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distribution.md
 f8d44bca99ffe43f048fc03fc7ca6cc2  doc/features/6.0/environment-settings.md
+6a0ed2ff82685e8d704fdf4e5fb21e19  doc/features/6.0/exp-adminui.md
 42ae5703ac9bc16760935995c30223c3  doc/features/6.0/exp-debug-bar.md
 5eb04007ff0095dc046839caaae709eb  doc/features/6.0/exp-ini-command.md
 77e306e6356069788c64dac8d5947b53  doc/features/6.0/extension-list-and-downloads.md
@@ -3363,7 +3364,7 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 747dd5c4a400e33d13f0fd8bad249a9c  doc/features/6.0/velocity-websockets-and-events.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 67794ef974c314087dd7c94efca9ae40  doc/glossary.md
-0c5a508053a0af01eeb2f903772e4049  doc/guides/README.md
+53e9945d2681ca5fb3a121efafec3433  doc/guides/README.md
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 aac796c334e4b9e60764279755cd9dde  doc/guides/content-languages.md
