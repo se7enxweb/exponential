@@ -97,6 +97,25 @@
         </testsuite>
 
         <!--
+          expservices: the service layer called like the ezjscore router does (content, users, commerce, community,
+          media, misc, core). Live database of the admin siteaccess, throwaway rows the tests remove again, never a
+          test database. Without an installed site (CI) every class is skipped by ezpLiveInstallation::requireOrSkip().
+          Run: php vendor/bin/phpunit - -testsuite expservices
+        -->
+        <testsuite name="expservices">
+            <directory suffix="Test.php">tests/tests/extension/expservices</directory>
+        </testsuite>
+
+        <!--
+          ezoe: the online editor's engine registry, configuration, views, upload rules and URL fetcher. Live
+          installation like expservices; skipped without one.
+          Run: php vendor/bin/phpunit - -testsuite ezoe
+        -->
+        <testsuite name="ezoe">
+            <directory suffix="Test.php">tests/tests/extension/ezoe</directory>
+        </testsuite>
+
+        <!--
           quality: the sniffs of the code style check (bin/phpcs/). Needs the development tools (make devtools).
           Run: php vendor/bin/phpunit - -testsuite quality
         -->

@@ -92,6 +92,17 @@ jobs:
       - name: Generate autoloads
         run: php bin/php/ezpgenerateautoloads.php -s -e || true
 
+      # The run below takes every suite of phpunit.xml. The live-installation suites (expservices, ezoe,
+      # cjw_newsletter, explayouts_admin, ...) find no installed site here and skip each class with the reason
+      # (ezpLiveInstallation::requireOrSkip()); a suite missing from phpunit.xml would not run at all.
+      - name: Check the suites are configured
+        run: |
+          suites=$(vendor/bin/phpunit --list-suites)
+          echo "$suites"
+          for s in security kernel-classes lib expservices ezoe; do
+            grep -qE "^ - ${s}( |$)" <<< "$suites" || { echo "::error::testsuite '${s}' is missing from phpunit.xml"; exit 1; }
+          done
+
       - name: Run PHPUnit
         run: vendor/bin/phpunit --colors=always
 
