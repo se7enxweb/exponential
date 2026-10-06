@@ -213,6 +213,28 @@ class eZSimplifiedXMLInputParserTest extends eZXMLTextTestCase
         $this->assertSame( array( "Attribute 'custom:foo' is not allowed in &lt;embed&gt; element." ), $messages );
     }
 
+    public function testEmbedWithAnUnsupportedReferenceIsAnError()
+    {
+        foreach ( array( 'http://k1d.example.invalid/x.png', 'ezobject://abc', 'ezurl://1' ) as $href )
+        {
+            $parser = $this->parser();
+            list( $xml, $messages, $valid ) = $this->parse( '<embed href="' . $href . '" />', $parser );
+            $this->assertSame( '<paragraph><embed/></paragraph>', $xml, $href );
+            $this->assertSame( array( "Invalid reference in &lt;embed&gt; tag. Note that <embed> tag supports only 'eznode' and 'ezobject' protocols." ), $messages );
+            $this->assertFalse( $valid, "$href is reported as invalid input" );
+            $this->assertSame( array(), $parser->getRelatedObjectIDArray() );
+        }
+    }
+
+    public function testEmbedWithAnUnsupportedReferenceStopsTheEditorInput()
+    {
+        // the edit view parses with every error breaking: the input is refused, not stored as an empty embed
+        $parser = $this->parser( 5, true, eZXMLInputParser::ERROR_ALL );
+        $this->assertFalse( $parser->process( '<embed href="http://k1d.example.invalid/x.png" />' ) );
+        $parser = $this->parser( 5, true, eZXMLInputParser::ERROR_ALL );
+        $this->assertFalse( $parser->process( '<embed href="ezobject://5" />' ) );
+    }
+
     public function testRemovingDefaultAttributes()
     {
         $parser = $this->parser( 5, false, eZXMLInputParser::ERROR_NONE, true );

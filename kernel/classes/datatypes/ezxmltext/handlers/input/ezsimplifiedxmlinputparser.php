@@ -14,6 +14,7 @@ class eZSimplifiedXMLInputParser extends eZXMLInputParser
 {
     /**
      * @var bool
+     * @deprecated not read: errors go through handleError(), which sets $IsInputValid
      */
     public $isInputValid;
     public $InputTags = array(
@@ -957,8 +958,11 @@ class eZSimplifiedXMLInputParser extends eZXMLInputParser
             }
             else
             {
-                $this->isInputValid = false;
-                $this->Messages[] = ezpI18n::tr( 'kernel/classes/datatypes', 'Invalid reference in &lt;embed&gt; tag. Note that <embed> tag supports only \'eznode\' and \'ezobject\' protocols.' );
+                // A data error like a node that does not exist: it used to set
+                // $isInputValid, a property nothing reads, so the input was
+                // accepted and an embed of nothing stored
+                $this->handleError( eZXMLInputParser::ERROR_DATA,
+                                    ezpI18n::tr( 'kernel/classes/datatypes', 'Invalid reference in &lt;embed&gt; tag. Note that <embed> tag supports only \'eznode\' and \'ezobject\' protocols.' ) );
                 $element->removeAttribute( 'href' );
                 return $ret;
             }
@@ -978,9 +982,9 @@ class eZSimplifiedXMLInputParser extends eZXMLInputParser
         // protection from self-embedding
         if ( $objectID == $this->contentObjectID )
         {
-            $this->isInputValid = false;
-            $this->Messages[] = ezpI18n::tr( 'kernel/classes/datatypes',
-                                        'Object %1 can not be embeded to itself.', false, array( $objectID ) );
+            $this->handleError( eZXMLInputParser::ERROR_DATA,
+                                ezpI18n::tr( 'kernel/classes/datatypes',
+                                             'Object %1 can not be embeded to itself.', false, array( $objectID ) ) );
             return $ret;
         }
 
