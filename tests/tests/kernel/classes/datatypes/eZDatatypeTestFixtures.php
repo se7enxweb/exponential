@@ -124,11 +124,31 @@ abstract class eZDatatypeTestCase extends PHPUnit\Framework\TestCase
         $this->savedDb = $this->hadDb ? $GLOBALS['eZDBGlobalInstance'] : null;
         if ( !eZDB::hasInstance() )
             eZDB::setInstance( new eZDatatypeTestNoDatabase() );
+        // The languages of the site: a class attribute's name lists ask for the default language, which
+        // eZContentLanguage reads from its cache file or, without one (CI), from the database
+        $this->savedLanguageGlobals = array();
+        foreach ( self::$languageGlobals as $name )
+            $this->savedLanguageGlobals[$name] = array_key_exists( $name, $GLOBALS ) ? array( $GLOBALS[$name] ) : null;
+        $english = new eZContentLanguage( array( 'id' => 2, 'locale' => 'eng-GB', 'name' => 'English (United Kingdom)', 'disabled' => 0 ) );
+        $GLOBALS['eZContentLanguageList'] = array( 2 => $english );
+        $GLOBALS['eZContentLanguageMask'] = 3;
+        $GLOBALS['eZContentLanguagePrioritizedLanguages'] = array( $english );
     }
+
+    private static $languageGlobals = array( 'eZContentLanguageList', 'eZContentLanguageMask', 'eZContentLanguagePrioritizedLanguages' );
+
+    private $savedLanguageGlobals = array();
 
     protected function tearDown(): void
     {
         $_POST = $this->savedPost;
+        foreach ( $this->savedLanguageGlobals as $name => $saved )
+        {
+            if ( $saved === null )
+                unset( $GLOBALS[$name] );
+            else
+                $GLOBALS[$name] = $saved[0];
+        }
         date_default_timezone_set( $this->savedTimezone );
         if ( $this->hadDb )
             $GLOBALS['eZDBGlobalInstance'] = $this->savedDb;

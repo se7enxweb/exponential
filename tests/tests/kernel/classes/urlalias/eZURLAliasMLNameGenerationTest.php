@@ -198,7 +198,9 @@ class eZURLAliasMLNameGenerationTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( 'eznode:2', eZURLAliasML::urlToAction( 'content/view/full/2' ) );
         $this->assertSame( 'module:user/login', eZURLAliasML::urlToAction( 'user/login' ) );
-        $this->assertSame( 'module:content/view/full/2/x', eZURLAliasML::urlToAction( 'content/view/full/2/x' ) );
+        // (a URL of the content module is left out: loading its definition reads the object state groups from
+        // the database)
+        $this->assertSame( 'module:user/edit/14/x', eZURLAliasML::urlToAction( 'user/edit/14/x' ) );
         $this->assertFalse( eZURLAliasML::urlToAction( 'nosuchmodulek1/view' ) );
         $this->assertFalse( eZURLAliasML::urlToAction( 'user' ) );
         $this->assertFalse( eZURLAliasML::urlToAction( '' ) );
