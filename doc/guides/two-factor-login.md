@@ -37,7 +37,7 @@ Lost the phone? An administrator opens the user's object in the administration, 
 
 2. Add the field to the user class: a class attribute of the datatype *7x 2FA Configuration* (identifier for example
    `two_factor`). Users of a class without it cannot keep a second step; the setup page says so.
-3. Give the roles that should manage their own second step the policy `user2fa/setup` (Member, Editor,
+3. Give every role that signs in the policies `user2fa/setup` and `user2fa/verify` (Member, Editor,
    Administrator ...). Nothing is needed for anonymous visitors: the steps before signing in are in
    `[RoleSettings] PolicyOmitList` of the extension and check their own state.
 4. Recommended: a key that encrypts the authenticator secrets in the database, in
@@ -66,8 +66,9 @@ siteaccess: mail sent from the test siteaccess still uses the global `[MailSetti
 ## On alpha
 
 Two-step sign-in is on at alpha.se7enx.com since 6 October 2026, as opt-in: the extension is active, the login
-handler is `sevenxUser2fa` then `standard`, the user class has the field *Two-step sign-in* (`two_factor`), Member has
-`user2fa/setup` and `user2fa/verify`, and the secrets are encrypted with a key in
+handler is `sevenxUser2fa` then `standard`, the user class has the field *Two-step sign-in* (`two_factor`), every role that signs
+in (Member, Editor and the custom editor role; Administrator has all) has `user2fa/setup` and
+`user2fa/verify`, and the secrets are encrypted with a key in
 `settings/override/sevenxauthentication2fa.ini.append.php`. Nobody is enrolled by it: every account signs in as before
 until its owner turns the second step on under *My account*.
 
@@ -81,8 +82,8 @@ DefaultMethod=totp
 
 then clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`) and deploy (`./console exp:velocity deploy`).
 Each user without a second step then sets up an authenticator right after the password. Enrol the administrators
-first, so nobody is caught without a phone at hand. Every user needs `user2fa/setup` for the setup (Member has it;
-add it to Editor and any other role that signs in). To turn it off again, set `Enforce2FA=disabled`.
+first, so nobody is caught without a phone at hand. A role made later needs `user2fa/setup` and `user2fa/verify`
+for its users to set it up. To turn it off again, set `Enforce2FA=disabled`.
 
 ## Social login
 
