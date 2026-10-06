@@ -2,7 +2,8 @@
 /**
  * ezpKernelResult (content and attributes), ezpKernelRedirect (target and status code from the status line) and
  * ezpEvent (attach, detach, notify, filter, uncallable listeners skipped, the listeners of site.ini [Event] attached
- * once however often registerEventListeners() runs, entries without <event>@<callback> skipped).
+ * once however often registerEventListeners() runs, entries without <event>@<callback> or with a callback that is
+ * no function or Class::method name skipped, blanks dropped, duplicates attached once, mistakes logged once).
  *
  * No database. site.ini [Event] Listeners is injected and put back.
  *
@@ -223,6 +224,96 @@ class ezpKernelResultAndEventTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, $attached['k1/malformed'] );
         $event->notify( 'k1/malformed', array( 'n' ) );
         $this->assertSame( array( array( 'n' ) ), ezpKernelResultAndEventTestListener::$calls );
+        eZINI::injectSettings( $this->injected );
+        eZINI::instance()->load();
+    }
+
+    /** Injects $listeners as site.ini [Event] Listeners[] and returns a fresh ezpEvent that registered them */
+    private function eventWithGlobalListeners( array $listeners )
+    {
+        $settings = $this->injected;
+        $settings['site.ini']['Event']['Listeners'] = $listeners;
+        eZINI::injectSettings( $settings );
+        eZINI::instance()->loadPlacement();
+        eZINI::instance()->load();
+        $event = new ezpEvent( true );
+        $event->registerEventListeners();
+        return $event;
+    }
+
+    private function attachedListeners( ezpEvent $event )
+    {
+        $listeners = new ReflectionProperty( 'ezpEvent', 'listeners' );
+        return $listeners->getValue( $event );
+    }
+
+    private function loggedOnce()
+    {
+        $logged = new ReflectionProperty( 'ezpEvent', 'loggedOnce' );
+        return $logged->getValue();
+    }
+
+    /** Blanks around the event and the callback are dropped; the entry is attached under the trimmed event name */
+    public function testBlanksAroundAGlobalListenerAreDropped()
+    {
+        $event = $this->eventWithGlobalListeners( array( "  k1/blank @ ezpKernelResultAndEventTestListener::record \t" ) );
+        $attached = $this->attachedListeners( $event );
+        $this->assertArrayHasKey( 'k1/blank', $attached );
+        $this->assertSame( array( array( 'ezpKernelResultAndEventTestListener', 'record' ) ), array_values( $attached['k1/blank'] ) );
+        $event->notify( 'k1/blank', array( 'b' ) );
+        $this->assertSame( array( array( 'b' ) ), ezpKernelResultAndEventTestListener::$calls );
+        eZINI::injectSettings( $this->injected );
+        eZINI::instance()->load();
+    }
+
+    /** The same listener listed twice (also with other blanks) is attached once and runs once per event */
+    public function testADuplicateGlobalListenerIsAttachedOnce()
+    {
+        $event = $this->eventWithGlobalListeners( array( 'k1/dup@ezpKernelResultAndEventTestListener::record',
+                                                         ' k1/dup@ezpKernelResultAndEventTestListener::record',
+                                                         'k1/dup@ezpKernelResultAndEventTestListener::upper' ) );
+        $this->assertCount( 2, $this->attachedListeners( $event )['k1/dup'] );
+        $event->notify( 'k1/dup', array( 'x' ) );
+        $this->assertSame( array( array( 'x' ) ), ezpKernelResultAndEventTestListener::$calls );
+        $this->assertArrayHasKey( 'site.ini [Event] Listeners[]=k1/dup@ezpKernelResultAndEventTestListener::record is listed more than once; attached once', $this->loggedOnce() );
+        eZINI::injectSettings( $this->injected );
+        eZINI::instance()->load();
+    }
+
+    /** A callback that is not written as a function or Class::method name is skipped without being looked up */
+    public function testACallbackThatIsNoNameIsSkipped()
+    {
+        $event = $this->eventWithGlobalListeners( array( 'k1/name@ezpKernelResultAndEventTestListener::record; drop',
+                                                         'k1/name@k1 Class::method',
+                                                         'k1/name@ezpKernelResultAndEventTestListener:::record',
+                                                         'k1/name@\\k1\\Name\\Space\\k1Class::method',
+                                                         'k1/name@ezpKernelResultAndEventTestListener::record' ) );
+        $attached = array_values( $this->attachedListeners( $event )['k1/name'] );
+        $this->assertSame( array( array( '\\k1\\Name\\Space\\k1Class', 'method' ),
+                                  array( 'ezpKernelResultAndEventTestListener', 'record' ) ), $attached );
+        eZINI::injectSettings( $this->injected );
+        eZINI::instance()->load();
+    }
+
+    /**
+     * A mistake in site.ini is logged once in the life of the process, not once per request: a persistent worker
+     * registers the listeners again for every request. A listener whose class is missing is logged once as well.
+     */
+    public function testMistakesAreLoggedOncePerProcess()
+    {
+        $event = $this->eventWithGlobalListeners( array( 'k1/once-without-callback', 'k1/once@k1NoSuchClassOnce::method' ) );
+        $before = $this->loggedOnce();
+        $this->assertArrayHasKey( 'site.ini [Event] Listeners[]=k1/once-without-callback is not of the form <event>@<callback>; skipped', $before );
+        $event->notify( 'k1/once' );
+        $afterFirst = $this->loggedOnce();
+        $this->assertArrayHasKey( 'Listener k1NoSuchClassOnce::method for event k1/once cannot be called (no such class, method or function); skipped', $afterFirst );
+
+        // the next "request"
+        $event->registerEventListeners();
+        $event->notify( 'k1/once' );
+        $event->notify( 'k1/once' );
+        $this->assertSame( $afterFirst, $this->loggedOnce() );
+        $this->assertCount( 1, $this->attachedListeners( $event )['k1/once'] );
         eZINI::injectSettings( $this->injected );
         eZINI::instance()->load();
     }

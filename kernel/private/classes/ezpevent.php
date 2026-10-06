@@ -60,6 +60,14 @@ class ezpEvent
     protected $recordingGlobal = false;
 
     /**
+     * The messages about listeners this process has logged already (logOnce()). A mistake in site.ini is the same
+     * on every request; under a persistent worker (Velocity) it is logged once, not once per request.
+     *
+     * @var array
+     */
+    protected static $loggedOnce = array();
+
+    /**
      * Constructer
      * In most cases you would want to use {@see getInstance()} instead
      *
@@ -88,23 +96,40 @@ class ezpEvent
             $this->recordingGlobal = true;
 
             $listeners = eZINI::instance()->variable( 'Event', 'Listeners' );
-            foreach ( $listeners as $listener )
+            $seen = array();
+            foreach ( is_array( $listeners ) ? $listeners : array() as $listener )
             {
                 // $listener may be empty if some override logic has been involved
-                if ( $listener == "" )
+                if ( !is_string( $listener ) || trim( $listener ) === '' )
                 {
                     continue;
                 }
 
                 // The format from ini is <event>@<callback>. An entry without both parts would attach a listener
-                // that can never be called, or one to an event named '', so it is logged and left out.
-                $parts = explode( '@', $listener, 2 );
-                if ( count( $parts ) !== 2 || $parts[0] === '' || $parts[1] === '' )
+                // that can never be called, or one to an event named '', so it is logged and left out. Blanks
+                // around either part (a line written "content/view @ myClass::method") are dropped.
+                $parts = explode( '@', trim( $listener ), 2 );
+                $name = count( $parts ) === 2 ? trim( $parts[0] ) : '';
+                $callback = count( $parts ) === 2 ? trim( $parts[1] ) : '';
+                if ( $name === '' || $callback === '' )
                 {
-                    eZDebug::writeError( "site.ini [Event] Listeners[]=$listener is not of the form <event>@<callback>; skipped", __METHOD__ );
+                    self::logOnce( "site.ini [Event] Listeners[]=$listener is not of the form <event>@<callback>; skipped", __METHOD__ );
                     continue;
                 }
-                $this->attach( $parts[0], $parts[1] );
+                if ( !self::isCallbackName( $callback ) )
+                {
+                    self::logOnce( "site.ini [Event] Listeners[]=$listener: '$callback' is not the name of a function or of a Class::method; skipped", __METHOD__ );
+                    continue;
+                }
+                // The same listener listed twice (by the site and by an extension, say) is attached once: it ran
+                // twice for every event
+                if ( isset( $seen["$name@$callback"] ) )
+                {
+                    self::logOnce( "site.ini [Event] Listeners[]=$name@$callback is listed more than once; attached once", __METHOD__, 'notice' );
+                    continue;
+                }
+                $seen["$name@$callback"] = true;
+                $this->attach( $name, $callback );
             }
 
             // The role-aware HTTP cache attaches itself only when it is
@@ -239,11 +264,54 @@ class ezpEvent
     {
         if ( is_callable( $listener ) )
             return true;
-        $label = is_array( $listener )
-            ? ( is_object( $listener[0] ) ? get_class( $listener[0] ) : (string)$listener[0] ) . '::' . (string)$listener[1]
+        $label = is_array( $listener ) && count( $listener ) === 2 && isset( $listener[0], $listener[1] )
+            ? ( is_object( $listener[0] ) ? get_class( $listener[0] ) : (string)$listener[0] ) . '::' . ( is_scalar( $listener[1] ) ? (string)$listener[1] : gettype( $listener[1] ) )
             : ( is_string( $listener ) ? $listener : gettype( $listener ) );
-        eZDebug::writeError( "Listener $label for event $name cannot be called; skipped", __METHOD__ );
+        // A missing class or method stays missing for the life of the process: logged once, skipped every time
+        self::logOnce( "Listener $label for event $name cannot be called (no such class, method or function); skipped", __METHOD__ );
         return false;
+    }
+
+    /**
+     * Whether $callback is written as the name of a function or of a static method ("myClass::method",
+     * "My\Name\Space\myClass::method"). It is not looked up: the class is autoloaded when the event is sent.
+     *
+     * @param string $callback
+     * @return bool
+     */
+    protected static function isCallbackName( $callback )
+    {
+        $name = '[A-Za-z_\x80-\xff][A-Za-z0-9_\x80-\xff]*';
+        return (bool)preg_match( "/^\\\\?$name(\\\\$name)*(::$name)?$/", $callback );
+    }
+
+    /**
+     * Logs $message once in the life of the process (see $loggedOnce).
+     *
+     * @param string $message
+     * @param string $method
+     * @param string $level 'error' or 'notice'
+     */
+    protected static function logOnce( $message, $method, $level = 'error' )
+    {
+        if ( isset( self::$loggedOnce[$message] ) )
+        {
+            return;
+        }
+        if ( count( self::$loggedOnce ) > 500 )
+        {
+            // a listener that keeps producing new messages must not grow the worker's memory without end
+            self::$loggedOnce = array();
+        }
+        self::$loggedOnce[$message] = true;
+        if ( $level === 'notice' )
+        {
+            eZDebug::writeNotice( $message, $method );
+        }
+        else
+        {
+            eZDebug::writeError( $message, $method );
+        }
     }
 
     /**
