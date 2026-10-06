@@ -617,12 +617,21 @@ class eZXMLInputParser
     {
         // A loop rather than one recursive call per '>' found inside an
         // attribute: a text with thousands of them must not exhaust the stack
+        $firstEndPos = false;
         while ( true )
         {
             $endPos = strpos( $data, '>', $tagBeginPos + $offset );
             if ( $endPos === false )
             {
-                return false;
+                // No '>' makes a well-formed tag: the tag is not XML, as with
+                // an unquoted attribute value (<td colspan=2>), which
+                // parseAttributes() reads. End it at the first '>', as before
+                // '>' inside attribute values were looked for
+                return $firstEndPos;
+            }
+            if ( $firstEndPos === false )
+            {
+                $firstEndPos = $endPos;
             }
             $tagCode = substr( $data, $tagBeginPos, $endPos - $tagBeginPos );
             if ( strpos( $tagCode, '=' ) === false )
