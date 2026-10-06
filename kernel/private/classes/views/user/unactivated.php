@@ -64,11 +64,10 @@ class Unactivated extends \Exponential\Runnable\ModuleView
                     {
                         \eZUserOperationCollection::activation( $id, $accountKey->attribute( 'hash_key' ), true );
                     }
-                    // Publish the user object if it is not published yet (#18886), as the register operation does
-                    // after its activation check. The whole operation is not run again: started afresh it sends a new
-                    // activation mail, which disables the account again (VerifyUserType=email), so "Activate" left the
-                    // user unactivated and mailed them a new link.
-                    \eZUserOperationCollection::publishUserContentObject( $id );
+                    // Finish the registration as the user's own activation link does (#18886): resume user/register
+                    // when it is pending (publish, the approval mail, post_register), else make those steps by hand.
+                    // The approval mail follows site.ini [UserSettings] ActivationByAdministratorSendsApprovalMail.
+                    \expUserActivation::finish( $id, true );
                     $success[] = $id;
                 }
                 else

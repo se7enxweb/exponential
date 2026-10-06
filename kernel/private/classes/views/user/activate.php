@@ -85,8 +85,10 @@ class Activate extends \Exponential\Runnable\ModuleView
                 \eZUserOperationCollection::activation( $userID, $hash, true );
             }
 
-            // execute operation to publish the user object
-            $publishResult = \eZOperationHandler::execute( 'user' , 'register', array( 'user_id'=> $userID ) );
+            // Finish the registration: resume user/register when it waits for this activation (publish, the approval
+            // mail, post_register), else make those steps by hand. Running user/register afresh for an account without
+            // a pending registration sent a new activation mail and disabled the account again.
+            $publishResult = \expUserActivation::finish( $userID );
             if( $publishResult['status'] === \eZModuleOperationInfo::STATUS_HALTED )
             {
                 $isPending = true;

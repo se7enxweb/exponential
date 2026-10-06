@@ -191,7 +191,9 @@ class eZUserOperationCollection
     static public function publishUserContentObject( $userID )
     {
         $object = eZContentObject::fetch( $userID );
-        if( $object->attribute( 'current_version' ) !== '1' )
+        // compared as a number: a driver that types its results (SQLite, PDO) gives 1, not '1', and every activation
+        // was cancelled here, so the user object stayed unpublished and no approval mail went out
+        if( (int)$object->attribute( 'current_version' ) !== 1 )
         {
             eZDebug::writeError( 'Current version is wrong for the user object. User ID: ' . $userID , 'user/register' );
             return array( 'status' => eZModuleOperationInfo::STATUS_CANCELLED );
@@ -220,6 +222,12 @@ class eZUserOperationCollection
         $ini = eZINI::instance();
 
         if ( $ini->variable( 'UserSettings', 'EmailRegistrationInfo' ) === "disabled" )
+        {
+            return array( 'status' => eZModuleOperationInfo::STATUS_CONTINUE );
+        }
+        // An administrator's activation with [UserSettings] ActivationByAdministratorSendsApprovalMail=disabled
+        // (expUserActivation::finish() holds the mail while it resumes the operation)
+        if ( class_exists( 'expUserActivation' ) && expUserActivation::$holdApprovalMail )
         {
             return array( 'status' => eZModuleOperationInfo::STATUS_CONTINUE );
         }
