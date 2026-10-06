@@ -841,7 +841,18 @@ class expModuleExtensionWizard extends expExtensionWizard
         if ( !is_object( $dbSchema ) )
             return array();
 
-        $schema = $dbSchema->schema( array( 'format' => 'generic' ) );
+        // A file that is not a database (or a damaged one) answers its queries
+        // with false, which the schema readers do not all expect; the page says
+        // no tables were found rather than ending with a TypeError
+        try
+        {
+            $schema = $dbSchema->schema( array( 'format' => 'generic' ) );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeError( 'Could not read the schema: ' . $e->getMessage(), __METHOD__ );
+            return array();
+        }
 
         return is_array( $schema ) ? self::onlyTables( $schema ) : array();
     }

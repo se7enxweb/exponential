@@ -255,6 +255,18 @@ class expModuleExtensionWizardTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), expModuleExtensionWizard::schema( array( 'ok' => false ) ) );
     }
 
+    public function testAFileThatIsNoDatabaseIsNoConnection()
+    {
+        file_put_contents( $this->scratch . '/shop.sqlite', 'not a database' );
+        $connection = expModuleExtensionWizard::connection( $this->settings() );
+        if ( $connection['ok'] )
+            $this->assertSame( array(), expModuleExtensionWizard::schema( $connection ) );
+        else
+            $this->assertNotSame( '', $connection['message'] );
+        $missing = expModuleExtensionWizard::connection( $this->settings( array( 'db_file' => '' ) ) );
+        $this->assertFalse( $missing['ok'] );
+    }
+
     public function testTheExtensionForTheTables()
     {
         $this->makeDatabase();
