@@ -46,7 +46,7 @@ class ezpContentClassCriteria implements ezpContentCriteriaInterface
         else
             return "Content class is one of " .
                 join( ', ', array_slice( $this->classes, 0, -1 ) ) .
-                " or " . join( '', array_slice( $this->classes, 0, -1 ) );
+                " or " . $this->classes[count( $this->classes ) - 1];
     }
 
     public $classes = array();
