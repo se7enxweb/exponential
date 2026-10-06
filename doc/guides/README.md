@@ -64,6 +64,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Deploying](deploying.md) | The site served by Apache with PHP-FPM, by Velocity or by FrankenPHP, with HTTPS | 30 minutes |
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
 | [Benchmarking](benchmarking.md) | Pages measured cached and rendered, Apache against Velocity, a code change and a deploy checked for regressions, the CI performance check understood | 30 minutes |
+| [Cronjobs](cronjobs.md) | Every part and script seen, a part and one script run and followed from the browser, the crontab lines installed, the logs read, the usual problems solved | 30 minutes |
 | [Security and audit](security-and-audit.md) | The hardening checked, roles that give only what is needed, the audit trail read, debug output for your address only | 30 minutes |
 | [Notifications: running them and fixing problems](notifications-administrator.md) | The notification cronjob set up, the status page read, a run tried without sending mail, the usual problems solved | 30 minutes |
 | [Notifications: architecture, extending and testing](notifications-developer.md) | A custom event type and handler that mail an address, a test that keeps mail in files | 45 minutes |
