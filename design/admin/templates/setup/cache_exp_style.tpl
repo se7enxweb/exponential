@@ -276,5 +276,7 @@
 .exp-cachepage fieldset.exp-field { background: none; box-shadow: none; border-radius: 0; }
 .exp-cachepage fieldset.exp-field > legend { background: none; }
 @media (max-width: 760px) { .exp-cachepage .exp-caches th:nth-child(n), .exp-cachepage .exp-caches td:nth-child(n) { width: 100%; } .exp-cachepage .exp-caches td.exp-check-cell { width: auto; } }
+.exp-cachepage .exp-caches .exp-cleared-when, .exp-cachepage .exp-caches .exp-cleared-by { display: block; } .exp-cachepage .exp-caches .exp-cleared-by { color: var(--cp-muted); font-size: 12.5px; } .exp-cachepage .exp-caches th:nth-child(4), .exp-cachepage .exp-caches td:nth-child(4) { width: 11em; }
+@media (max-width: 760px) { .exp-cachepage .exp-caches td:nth-child(4) { width: 100%; } }
 </style>
 {/literal}

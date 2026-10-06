@@ -19,7 +19,7 @@
                               hash( 'tag', 'ini', 'name', 'ClearINICacheButton', 'label', 'Clear INI caches'|i18n( 'design/admin/setup/cache' ) ) )
      $cp_consequence = false()}
 <form name="clearcacheform" id="clearcacheform" method="post" action={"/setup/cache/"|ezurl}>
-<div class="context-block exp-cachepage" id="exp-cachepage" data-cache-count="{$cache_overview.caches|wash}"
+<div class="context-block exp-cachepage" id="exp-cachepage" data-cache-count="{$cache_overview.caches|wash}" data-audit-file="{$cache_overview.audit_file|wash}" data-audit-records="{$cache_overview.audit_records|wash}"
      data-selected="{'selected'|i18n( 'design/admin/setup/cache' )|wash}" data-none="{'No cache is selected yet.'|i18n( 'design/admin/setup/cache' )|wash}" data-shown="{'caches shown'|i18n( 'design/admin/setup/cache' )|wash}">
 
 <div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
@@ -54,7 +54,7 @@
     {else}
     <li class="exp-figure"><strong>&ndash;</strong><span><a href={'/setup/cache/(sizes)/1'|ezurl}>{'Measure the sizes'|i18n( 'design/admin/setup/cache' )}</a></span></li>
     {/if}
-    <li class="exp-figure is-date"><strong>{if $cache_overview.last_cleared_text}{$cache_overview.last_cleared_text|wash}{else}&ndash;{/if}</strong><span>{'last expiry of content, blocks or users'|i18n( 'design/admin/setup/cache' )}</span></li>
+    <li class="exp-figure is-date"><strong>{if $cache_overview.last_cleared_text}{$cache_overview.last_cleared_text|wash}{else}&ndash;{/if}</strong><span>{'last clear'|i18n( 'design/admin/setup/cache' )}</span></li>
 </ul>
 
 {* Clear all and by tag, each confirmed in place *}
@@ -88,6 +88,7 @@
         <a class="exp-btn" href={'/setup/cache/(sizes)/1'|ezurl}>{'Measure sizes'|i18n( 'design/admin/setup/cache' )}</a>
     {/if}
     <p class="exp-meta">{if $cache_sizes}{'Sizes were measured for this view, within three seconds; a size marked ≥ was cut short.'|i18n( 'design/admin/setup/cache' )}{else}{'Sizes are measured only on request, as that reads every file.'|i18n( 'design/admin/setup/cache' )}{/if}</p>
+<p class="exp-meta">{if $cache_overview.audit}{'Last cleared comes from the audit trail, with who cleared, for clears through this page, System information and ./console exp:cache; bin/php/ezcache.php (which exp:velocity deploy runs) is not audited, so its clears show the time only, where the kernel records one.'|i18n( 'design/admin/setup/cache' )}{if $cache_overview.audit_who|not} {'Who cleared is shown to users who may read the system channel of the audit.'|i18n( 'design/admin/setup/cache' )}{/if}{else}{'Last cleared comes from the expiry times the kernel records; the audit trail is not available here.'|i18n( 'design/admin/setup/cache' )}{/if}</p>
 </div>
 
 {* Search and group filter (javascript; without it every cache is shown) *}
@@ -146,7 +147,7 @@
             {if $cp_item.response_cache}<span class="exp-badge is-info">{'also in Velocity\'s response cache'|i18n( 'design/admin/setup/cache' )}</span>{/if}
         </td>
         <td class="exp-num" data-label="{'Size'|i18n( 'design/admin/setup/cache' )}">{if $cp_item.measured}{$cp_item.size_text|wash}<br /><span class="exp-muted">{cond( eq( $cp_item.files, 1 ), '1 file'|i18n( 'design/admin/setup/cache' ), '%files files'|i18n( 'design/admin/setup/cache',, hash( '%files', $cp_item.files|wash ) ) )}</span>{else}<span class="exp-muted">&ndash;</span>{/if}</td>
-        <td data-label="{'Last cleared'|i18n( 'design/admin/setup/cache' )}">{if $cp_item.last_cleared_text}{$cp_item.last_cleared_text|wash}{else}<span class="exp-muted">{'not recorded'|i18n( 'design/admin/setup/cache' )}</span>{/if}</td>
+        <td class="exp-cleared-cell" data-cleared="{$cp_item.last_cleared|wash}" data-label="{'Last cleared'|i18n( 'design/admin/setup/cache' )}">{if $cp_item.last_cleared_text}<span class="exp-cleared-when">{$cp_item.last_cleared_text|wash}</span>{if $cp_item.last_cleared_by}<span class="exp-cleared-by">{if $cp_item.last_cleared_shell}{'from a shell, %who'|i18n( 'design/admin/setup/cache',, hash( '%who', $cp_item.last_cleared_by|wash ) )}{else}{'by %who'|i18n( 'design/admin/setup/cache',, hash( '%who', $cp_item.last_cleared_by|wash ) )}{/if}</span>{/if}{else}<span class="exp-muted">{'not recorded'|i18n( 'design/admin/setup/cache' )}</span>{/if}</td>
     </tr>
     {/foreach}
     </tbody>
