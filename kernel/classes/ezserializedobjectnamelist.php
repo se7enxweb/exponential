@@ -13,6 +13,8 @@ class eZSerializedObjectNameList
 {
     public $nameList;
     const ALWAYS_AVAILABLE_STR = 'always-available';
+    /** The fallback locale when site.ini [RegionalSettings] ContentObjectFallbackLocale is not set. */
+    const DEFAULT_FALLBACK_LOCALE = 'eng-US';
 
     public function __construct( $serializedNamesString = false )
     {
@@ -346,15 +348,47 @@ class eZSerializedObjectNameList
         // which no language lookup finds, so the admin showed the name blank.
         // The configured content locale is the language the site will have.
         if ( !$languageLocale )
-        {
-            $ini = eZINI::instance();
-            if ( $ini->hasVariable( 'RegionalSettings', 'ContentObjectLocale' ) )
-                $languageLocale = (string)$ini->variable( 'RegionalSettings', 'ContentObjectLocale' );
-            if ( !$languageLocale )
-                $languageLocale = 'eng-GB';
-        }
+            $languageLocale = self::configuredLanguageLocale();
 
         return $languageLocale;
+    }
+
+    /**
+     * The locale a name is stored in when no content language is prioritized yet:
+     * site.ini [RegionalSettings] ContentObjectLocale, else the fallback locale
+     * (see fallbackLanguageLocale()).
+     *
+     * @param eZINI|null $ini site.ini; the current instance when not given
+     * @return string
+     */
+    public static function configuredLanguageLocale( $ini = null )
+    {
+        if ( $ini === null )
+            $ini = eZINI::instance();
+        $languageLocale = '';
+        if ( $ini->hasVariable( 'RegionalSettings', 'ContentObjectLocale' ) )
+            $languageLocale = trim( (string)$ini->variable( 'RegionalSettings', 'ContentObjectLocale' ) );
+        return $languageLocale !== '' ? $languageLocale : self::fallbackLanguageLocale( $ini );
+    }
+
+    /**
+     * The last resort locale, used when neither a prioritized content language
+     * nor ContentObjectLocale is set: site.ini [RegionalSettings]
+     * ContentObjectFallbackLocale, and eng-US when that setting is missing or
+     * empty. It used to be a hard-coded eng-GB, which left class names and
+     * descriptions in a language the site did not have.
+     *
+     * @param eZINI|null $ini site.ini; the current instance when not given
+     * @return string
+     */
+    public static function fallbackLanguageLocale( $ini = null )
+    {
+        if ( $ini === null )
+            $ini = eZINI::instance();
+        $languageLocale = '';
+        if ( $ini->hasVariable( 'RegionalSettings', 'ContentObjectFallbackLocale' ) )
+            $languageLocale = trim( (string)$ini->variable( 'RegionalSettings', 'ContentObjectFallbackLocale' ) );
+        return $languageLocale !== '' ? $languageLocale : self::DEFAULT_FALLBACK_LOCALE;
     }
 
     function defaultLanguage()
