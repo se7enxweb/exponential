@@ -368,6 +368,10 @@ class ezpHttpCacheListener
         // page otherwise (ezpRequestRuleKernel::keepOutOfSharedCaches())
         if ( !empty( $GLOBALS['ezpRequestRuleNoStore'] ) )
             return 'request rule';
+        // The siteaccess was chosen by the browser's languages (DefaultHostUriMatchMapItems); the cache keys an
+        // address, not a language
+        if ( !empty( $GLOBALS['eZCurrentAccess']['vary'] ) )
+            return 'varies by ' . $GLOBALS['eZCurrentAccess']['vary'];
         foreach ( headers_list() as $h )
         {
             // A cookie set for this response belongs to this visitor alone,

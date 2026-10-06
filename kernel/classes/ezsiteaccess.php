@@ -238,11 +238,18 @@ class eZSiteAccess
                         if ( $ini->hasVariable( 'SiteAccessSettings', 'HostMatchMapItems' ) )
                         {
                             $matchMapItems = $ini->variableArray( 'SiteAccessSettings', 'HostMatchMapItems' );
+                            // strict (the host as it is listed) unless HostMatchMethod or the third field of an
+                            // item says start, end or part, as for host_uri
+                            $defaultHostMatchMethod = $ini->hasVariable( 'SiteAccessSettings', 'HostMatchMethod' )
+                                ? $ini->variable( 'SiteAccessSettings', 'HostMatchMethod' ) : 'strict';
                             foreach ( $matchMapItems as $matchMapItem )
                             {
+                                if ( !isset( $matchMapItem[1] ) || $matchMapItem[0] === '' )
+                                    continue;
                                 $matchMapHost = $matchMapItem[0];
                                 $matchMapAccess = $matchMapItem[1];
-                                if ( $matchMapHost == $host )
+                                $matchHostMethod = isset( $matchMapItem[2] ) && $matchMapItem[2] !== '' ? $matchMapItem[2] : $defaultHostMatchMethod;
+                                if ( self::hostMatches( $host, $matchMapHost, $matchHostMethod ) )
                                 {
                                     $access['name'] = $matchMapAccess;
                                     $access['type'] = $type;
@@ -289,32 +296,7 @@ class eZSiteAccess
                             if ( $matchURI !== '' && !preg_match( "@^$matchURI\b@u", $uriString ) )
                                 continue;
 
-                            switch( $matchHostMethod )
-                            {
-                                case 'strict':
-                                {
-                                    $hasHostMatch = ( $matchHost === $host );
-                                } break;
-                                case 'start':
-                                {
-                                    $hasHostMatch = ( strpos($host, $matchHost) === 0 );
-                                } break;
-                                case 'end':
-                                {
-                                    $hasHostMatch = ( strstr($host, $matchHost) === $matchHost );
-                                } break;
-                                case 'part':
-                                {
-                                    $hasHostMatch = ( strpos($host, $matchHost) !== false );
-                                } break;
-                                default:
-                                {
-                                    $hasHostMatch = false;
-                                    eZDebug::writeError( "Unknown host_uri host match: $matchHostMethod", "access" );
-                                } break;
-                            }
-
-                            if ( $hasHostMatch )
+                            if ( self::hostMatches( $host, $matchHost, $matchHostMethod ) )
                             {
                                 if ( $matchURI !== '' )
                                 {
@@ -417,7 +399,196 @@ class eZSiteAccess
                 }
             }
         }
+
+        // No probe matched, so the default siteaccess applies. DefaultHostUriMatchMapItems can choose it by host and
+        // by the browser's language, with the uri part its links carry (/ger)
+        if ( self::$matchingTarget )
+        {
+            $access['unmatched'] = true;
+        }
+        else if ( $ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ) )
+        {
+            $default = self::matchDefaultHostUri( $ini->variableArray( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ),
+                                                  $host,
+                                                  $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' )
+                                                      ? $ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' ) : 'strict',
+                                                  isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ? (string)$_SERVER['HTTP_ACCEPT_LANGUAGE'] : '' );
+            if ( $default !== null )
+            {
+                $access = array_merge( $access, $default );
+                // The web kernel sends the browser on to the address with the segment, once (/ to /ger), so the
+                // pages a cache keeps have one address each: only when that address reaches the siteaccess through
+                // a probe of MatchOrder, else the redirect would come back here
+                if ( $default['uri_part']
+                     && ( !$ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriRedirect' )
+                          || $ini->variable( 'SiteAccessSettings', 'DefaultHostUriRedirect' ) !== 'disabled' ) )
+                {
+                    $access['redirect'] = self::reachesSiteAccess( $default['name'], implode( '/', $default['uri_part'] ) . '/' . $uri->elements(),
+                                                                   $host, $port, $file );
+                }
+            }
+        }
         return $access;
+    }
+
+    /**
+     * Set while reachesSiteAccess() matches an address: no default and no redirect then, only whether a probe matched.
+     *
+     * @var bool
+     */
+    private static $matchingTarget = false;
+
+    /**
+     * Whether the address $uriString (with its segment, for example "ger/news/an-article") reaches the siteaccess
+     * $name through a probe of MatchOrder, so that a redirect there is not answered with another one.
+     *
+     * @param string $name
+     * @param string $uriString
+     * @param string $host
+     * @param int $port
+     * @param string $file
+     * @return bool
+     */
+    static function reachesSiteAccess( $name, $uriString, $host, $port = 80, $file = '/index.php' )
+    {
+        self::$matchingTarget = true;
+        try
+        {
+            $access = self::match( new eZURI( trim( $uriString, '/' ) ), $host, $port, $file );
+        }
+        finally
+        {
+            self::$matchingTarget = false;
+        }
+        return empty( $access['unmatched'] ) && $access['name'] === $name;
+    }
+
+    /**
+     * The default siteaccess for an address no probe of MatchOrder matched: the first entry of
+     * $items (DefaultHostUriMatchMapItems[]=host;uri;siteaccess[;method[;language]]) whose host matches and whose
+     * language the browser accepts, trying the languages of $acceptLanguage from the most wanted; else the first
+     * entry for the host without a language. method is strict, start, end or part; empty or "default" is
+     * $defaultMethod (HostUriMatchMethodDefault). A language matches itself and its regional forms (de: de, de-CH).
+     *
+     * @param array $items the entries, each split at ";"
+     * @param string $host
+     * @param string $defaultMethod
+     * @param string $acceptLanguage the Accept-Language header of the request
+     * @return array|null array( name, uri_part[, vary] ) with vary = Accept-Language when the entries for the host have
+     *                    more than one uri part (language variants), so the answer depends on the browser; null when no
+     *                    entry for the host applies
+     */
+    static function matchDefaultHostUri( array $items, $host, $defaultMethod, $acceptLanguage )
+    {
+        $forHost = array();
+        $variants = array();
+        foreach ( $items as $item )
+        {
+            $item = (array)$item;
+            // An empty host matches any host with part or start, as in HostUriMatchMapItems
+            if ( !isset( $item[2] ) || (string)$item[2] === '' )
+                continue;
+            $method = isset( $item[3] ) && $item[3] !== '' && $item[3] !== 'default' ? (string)$item[3] : (string)$defaultMethod;
+            if ( !self::hostMatches( $host, (string)$item[0], $method ) )
+                continue;
+            $language = isset( $item[4] ) ? strtolower( trim( (string)$item[4] ) ) : '';
+            $uri = trim( (string)$item[1], '/' );
+            $variants[$uri] = true;
+            $forHost[] = array( 'uri' => $uri, 'name' => (string)$item[2], 'language' => $language );
+        }
+
+        $chosen = null;
+        foreach ( self::acceptedLanguages( $acceptLanguage ) as $wanted )
+        {
+            foreach ( $forHost as $entry )
+            {
+                if ( $entry['language'] !== '' && ( $wanted === $entry['language'] || strpos( $wanted, $entry['language'] . '-' ) === 0 ) )
+                {
+                    $chosen = $entry;
+                    break 2;
+                }
+            }
+        }
+        if ( $chosen === null )
+        {
+            foreach ( $forHost as $entry )
+            {
+                if ( $entry['language'] === '' )
+                {
+                    $chosen = $entry;
+                    break;
+                }
+            }
+        }
+        if ( $chosen === null )
+            return null;
+
+        $access = array( 'name' => $chosen['name'],
+                         'uri_part' => $chosen['uri'] !== '' ? explode( '/', $chosen['uri'] ) : array() );
+        // Only where the host has more than one language variant does the browser make a difference
+        if ( count( $variants ) > 1 )
+            $access['vary'] = 'Accept-Language';
+        return $access;
+    }
+
+    /**
+     * The languages of an Accept-Language header, lower case, the most wanted first (by q, then in the order given);
+     * a language with q=0 and the wildcard are left out.
+     *
+     * @param string $header for example "de-DE,de;q=0.9,en;q=0.8"
+     * @return string[]
+     */
+    static function acceptedLanguages( $header )
+    {
+        $languages = array();
+        foreach ( explode( ',', (string)$header ) as $position => $part )
+        {
+            $fields = explode( ';', $part );
+            $tag = strtolower( trim( $fields[0] ) );
+            if ( $tag === '' || $tag === '*' || !preg_match( '/^[a-z0-9-]+$/', $tag ) )
+                continue;
+            $quality = 1.0;
+            foreach ( array_slice( $fields, 1 ) as $parameter )
+            {
+                if ( preg_match( '/^\s*q\s*=\s*([0-9.]+)\s*$/i', $parameter, $match ) )
+                    $quality = (float)$match[1];
+            }
+            if ( $quality <= 0 )
+                continue;
+            $languages[] = array( $quality, $position, $tag );
+        }
+        usort( $languages, function ( $a, $b ) { return $b[0] <=> $a[0] ?: $a[1] <=> $b[1]; } );
+        return array_column( $languages, 2 );
+    }
+
+    /**
+     * Whether $host matches the host $matchHost of a map item (HostMatchMapItems, HostUriMatchMapItems) by $method:
+     * strict (the same host), start (begins with it, so www.example.com.test.local matches www.example.com), end
+     * (ends with it) or part (contains it), as host_uri always matched. An unknown method matches nothing and is
+     * logged.
+     *
+     * @param string $host
+     * @param string $matchHost
+     * @param string $method strict, start, end or part
+     * @return bool
+     */
+    static function hostMatches( $host, $matchHost, $method )
+    {
+        $host = (string)$host;
+        $matchHost = (string)$matchHost;
+        switch ( $method )
+        {
+            case 'strict':
+                return $matchHost === $host;
+            case 'start':
+                return strpos( $host, $matchHost ) === 0;
+            case 'end':
+                return strstr( $host, $matchHost ) === $matchHost;
+            case 'part':
+                return strpos( $host, $matchHost ) !== false;
+        }
+        eZDebug::writeError( "Unknown host match: $method", 'access' );
+        return false;
     }
 
     /**

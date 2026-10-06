@@ -150,7 +150,9 @@ which is right only when you open the site on the same machine.
 
 As with every install method, the siteaccess directories are `settings/siteaccess/site`, `admin` and `editor`;
 `--site-access`, `--admin-access` and `--editor-access` choose the URL paths that lead to them; see
-[7.8](#78-the-editor-siteaccess-with-expinstall).
+[7.8](#78-the-editor-siteaccess-with-expinstall). When `extension/exp_adminui` is in the installation, `adminui` is
+made too, from the admin siteaccess, and reached by the path `/adminui` whatever `--access` says; the summary then
+ends its `Siteaccesses` line with `adminui (by uri)`. See [Exponential Admin UI](../features/6.0/exp-adminui.md).
 
 ### Administrator (login `admin`)
 

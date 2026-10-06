@@ -334,7 +334,10 @@ $summary = array(
     'Database'       => $db . ' ' . $dbName . ( $db === 'sqlite' ? '' : ' at ' . ( $options['db-socket'] !== '' ? $options['db-socket'] : $options['db-host'] . ( $dbPort !== '' ? ':' . $dbPort : '' ) ) )
                         . ( $dbUser !== '' ? ', user ' . $dbUser : '' ),
     'Package'        => $options['package'] . ', ' . $options['language'] . ( $languages ? ' + ' . implode( ',', $languages ) : '' ),
-    'Siteaccesses'   => $options['site-access'] . ', ' . $options['admin-access'] . ', editor (by ' . ( $accessType === 'hostname' ? 'host' : $accessType ) . ')',
+    'Siteaccesses'   => $options['site-access'] . ', ' . $options['admin-access'] . ', editor (by ' . ( $accessType === 'hostname' ? 'host' : $accessType ) . ')'
+                        // the Admin UI siteaccess, made when exp_adminui is in the installation, always by URI
+                        . ( class_exists( 'eZStepCreateSites' ) && method_exists( 'eZStepCreateSites', 'adminUIAvailable' )
+                            && eZStepCreateSites::adminUIAvailable( $rootDir . '/extension' ) ? ', adminui (by uri)' : '' ),
     'Configuration'  => 'var/log/exp-install-' . $stamp . '.ini (passwords masked)',
 );
 register_shutdown_function( function () use ( $kickstart, $aside, $sections, $logDir, $stamp, $startedAt, $overrideFile, $flags, &$summary, &$passwordNote, $passwordGiven, $rootDir ) {
