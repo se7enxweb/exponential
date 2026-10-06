@@ -2895,7 +2895,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-fdc9e4c13702320bc144603f43d70e1f  doc/changelogs/6.0/6.0.15.md
+ed638e2507bcab5ed7863cf0585cab92  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3364,7 +3364,7 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 67794ef974c314087dd7c94efca9ae40  doc/glossary.md
 0c5a508053a0af01eeb2f903772e4049  doc/guides/README.md
-f5c0e77df9e7bf16fd9b967d098791ab  doc/guides/api-keys.md
+ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 aac796c334e4b9e60764279755cd9dde  doc/guides/content-languages.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
@@ -5637,7 +5637,7 @@ ad35a994d565b41897122f4abd6e060f  kernel/private/oauth/classes/tokenmanager.php
 e3415973129d22e9eca5f8e9bf4c9673  kernel/private/rest/classes/auth/auth_configuration.php
 ab0ae845e96725ad9c59bc714282bab2  kernel/private/rest/classes/auth/auth_provider.php
 b3e471f9a8b74cc50150f55f7a6e9001  kernel/private/rest/classes/auth/auth_style.php
-791201c4215d7d826e250f2b148c60ee  kernel/private/rest/classes/auth/content_permission.php
+46aeece35a826221be4f4f359bc4ba27  kernel/private/rest/classes/auth/content_permission.php
 0de6707493756469caac8ab5c3db55bf  kernel/private/rest/classes/auth/ini_route_security.php
 f0ff6ceb30ea0476bed235fc644955fd  kernel/private/rest/classes/auth/native_user_authfilter.php
 c8ffd33380bf4d00b66e4d9d786f9f76  kernel/private/rest/classes/auth/password_auth_filter.php
@@ -5647,7 +5647,7 @@ df8b23dc1d8dd93b8b319b56f370384f  kernel/private/rest/classes/auth/styles/abstra
 384c848d375b72126a875fb34166483c  kernel/private/rest/classes/auth/styles/oauth.php
 ea9f6bf27886a24e8d465fad180f60fd  kernel/private/rest/classes/cache/apc.php
 680977ffc546c24f0bad7052dab6302a  kernel/private/rest/classes/cache/clear_routes.php
-ea9891f62006978bde51c2ed493cdb5e  kernel/private/rest/classes/cache/cluster.php
+16bfd206b5fdb07d5c90b26151fde631  kernel/private/rest/classes/cache/cluster.php
 6034fe35ea066827f8ee1d000a76829f  kernel/private/rest/classes/cache/exceptions/cluster.php
 d587c032b6436fa56169485ce5d6c190  kernel/private/rest/classes/cache/object.php
 b70ab5d832559492657ceb94c8d63faa  kernel/private/rest/classes/cache/options/storage_cluster.php
@@ -5656,7 +5656,7 @@ f688b66dbcc427e808dc90540217df12  kernel/private/rest/classes/content_renderer.p
 034de641ec3c65d1f61c99c1e12abd46  kernel/private/rest/classes/controllers/auth.php
 0b6574eea43984924b4c4b7069581232  kernel/private/rest/classes/controllers/error.php
 697c78b2796188771e7d6f2978f95532  kernel/private/rest/classes/controllers/oauth_token.php
-7fa08a379392f2e048d05a26efd87834  kernel/private/rest/classes/controllers/rest_controller.php
+9d1e29271766054745de281a4dc8b649  kernel/private/rest/classes/controllers/rest_controller.php
 71a8cf3b576559380dfcb988119ba1e3  kernel/private/rest/classes/debug/debug.php
 14cfa6812d869e32ad0947000d4b40f1  kernel/private/rest/classes/debug/formatters/php_formatter.php
 dca5311534b43adcbb52331cfe94f028  kernel/private/rest/classes/default_regexp_prefix_filter.php
@@ -6862,7 +6862,7 @@ cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/compos
 f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
 cfa24ec5bda21f83c5b063f3dfbc9001  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
 80f2b4056adbe4f9240733cdcfd4d5d9  tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php
-207dfa2ab01c3404dc35ef120c4400b7  tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
+34bc090cc1b2b0a787da444ac201308c  tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
 f1a9d5150dd4377fec1c1db7e0702d4f  tests/tests/kernel/classes/apikey/expApiKeyTest.php
 80580bf8003967c59876d6359066f6b6  tests/tests/kernel/classes/audit/expAuditAlertsTest.php
 e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchiveTest.php
@@ -7304,7 +7304,8 @@ cb03165c75d5bae854a4602fb41692d4  tests/tests/kernel/private/rest/suite.php
 3013b456947228eeecfbd9a6e02df513  tests/tests/kernel/private/rest/testfiles/controller.php
 149203a3554b279242b3a0b2a2c78584  tests/tests/kernel/private/rest/testfiles/rest_provider.php
 58d85671f9161547dbf3c50eb39defa4  tests/tests/kernel/private/rest/tools/generate_test_data.php
-cfef56b0bb686c7f31d809de37e24027  tests/tests/kernel/private/restapi/expRestContentPermissionTest.php
+13190b2e6721f35ab90a7041ddcfe5d7  tests/tests/kernel/private/restapi/expRestContentPermissionTest.php
+e92b23a8b19a5157df8e6413cc5e874f  tests/tests/kernel/private/restapi/ezpRestAnswerCacheTest.php
 26a9c2d6a657e89e2b6b5bbc0a696d5a  tests/tests/kernel/private/restapi/ezpRestDbConfigTest.php
 fa7de453db2f950cf99c949a777e46fd  tests/tests/kernel/private/restapi/ezpRestDebugPHPFormatterTest.php
 0dacd48beadb95bd6c1a7801c6430215  tests/tests/kernel/private/restapi/ezpRestMvcControllerBehaviourTest.php
