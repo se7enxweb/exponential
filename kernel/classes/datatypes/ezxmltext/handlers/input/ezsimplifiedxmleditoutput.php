@@ -157,7 +157,9 @@ class eZSimplifiedXMLEditOutput
 
                     $name = $attributeRules[$name];
                 }
-                $attrString .= ' ' . $name . '="' . $value . '"';
+                // Escaped like the text: a value with a double quote ended the
+                // attribute early and lost the rest when the text was saved again
+                $attrString .= ' ' . $name . '="' . htmlspecialchars( $value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"';
             }
 
             $this->formatBeforeOpeningTag( $element, $isInline, $hasChildren );
