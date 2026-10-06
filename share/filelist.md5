@@ -342,7 +342,7 @@ fabc85823f540a78884d74ac334557ad  design/admin/templates/class/groups.tpl
 dad8fc54133e1a2994f79b3f24ca75cd  design/admin/templates/class/removeclass.tpl
 81cf4b906e5a4fc032870724591aa089  design/admin/templates/class/removegroup.tpl
 595b95d4060e7fb3ad149c5b7d133499  design/admin/templates/class/removetranslation.tpl
-d87b8b93020e33f608d1310ccccf4872  design/admin/templates/class/select_language.tpl
+b849e1fccf214cf8051bf524c4a581db  design/admin/templates/class/select_language.tpl
 985295049339a6e93979ee4ca692fd74  design/admin/templates/class/templates.tpl
 5a0fdc72f6f1098968021b652f00cce5  design/admin/templates/class/translations.tpl
 53941821cb20991752ce0fbcc649d5f5  design/admin/templates/class/view.tpl
@@ -912,7 +912,7 @@ fabc85823f540a78884d74ac334557ad  design/admin4/templates/class/groups.tpl
 dad8fc54133e1a2994f79b3f24ca75cd  design/admin4/templates/class/removeclass.tpl
 81cf4b906e5a4fc032870724591aa089  design/admin4/templates/class/removegroup.tpl
 595b95d4060e7fb3ad149c5b7d133499  design/admin4/templates/class/removetranslation.tpl
-d87b8b93020e33f608d1310ccccf4872  design/admin4/templates/class/select_language.tpl
+b849e1fccf214cf8051bf524c4a581db  design/admin4/templates/class/select_language.tpl
 985295049339a6e93979ee4ca692fd74  design/admin4/templates/class/templates.tpl
 5a0fdc72f6f1098968021b652f00cce5  design/admin4/templates/class/translations.tpl
 53941821cb20991752ce0fbcc649d5f5  design/admin4/templates/class/view.tpl
@@ -5388,7 +5388,7 @@ e334734c8268b04d168b27f398f8c8eb  kernel/private/classes/views/audit/event.php
 3e1dc7a7d24d2bf03e1e24c6ac9834ab  kernel/private/classes/views/audit/settings.php
 12d9dcb476cff1f95ac67087f03bfbd5  kernel/private/classes/views/class/classlist.php
 ffc8672410948c57510eb05e3be54cce  kernel/private/classes/views/class/copy.php
-b850743e34b7b193e39d6e7f4b92cbcf  kernel/private/classes/views/class/edit.php
+c7ef85af29c03f64ee77ee4965a6f577  kernel/private/classes/views/class/edit.php
 f948b6d93cc483349b279f8d64285315  kernel/private/classes/views/class/groupedit.php
 58cab781a4d40a4a46d94d1869891a5b  kernel/private/classes/views/class/grouplist.php
 cd2c4177f21571ec2dcdcad07cf20a7f  kernel/private/classes/views/class/removeclass.php
