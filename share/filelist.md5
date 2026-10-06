@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
-646bb23f93949581f63427485aa36af8  autoload/ezp_kernel.php
+533cf345491e15bd580b078da48c172a  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -117,6 +117,7 @@ d3ac25976f9d6e85ef034422ce8bbaec  bin/php/phar.php
 75efb466ac6abaeb440ddf71d80cd193  bin/php/publish_content.php
 dd082fa405efd942fe866dab5198c60c  bin/php/resetuserpassword.php
 f50da9f6847e4fb456ecfd2238692a46  bin/php/solr.php
+48493b670037161e4213d50e48ad88d1  bin/php/systeminfo.php
 36c68132c66b63fe8aec8fe302f38ba7  bin/php/trashpurge.php
 2d3fc3ae8e55c2006647eccae2575fe9  bin/php/updateisbn13.php
 d030d05ebafed911ddf792cf4ffce3fa  bin/php/updateniceurls.php
@@ -595,7 +596,8 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 2728695be0d700fa0eedcbef59b578de  design/admin/templates/setup/designextension.tpl
 ab2536d3e436c4fcf8b692efbb6a01d3  design/admin/templates/setup/extensions.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin/templates/setup/handlerextension.tpl
-b040f6983ae847ee50d402ddc0156fc1  design/admin/templates/setup/info.tpl
+c0fdd5c1ea91fad8be2742c3df45a8aa  design/admin/templates/setup/info.tpl
+bbdadba4a9dc511a67e3fedce07a424f  design/admin/templates/setup/info_exp_style.tpl
 6b72cbcef562564b15e7e151788d788c  design/admin/templates/setup/kerneloverride.tpl
 6a696879d93afecad32e8537b41650c6  design/admin/templates/setup/maintenance.tpl
 d1a3e27332a030771a8fce082ba8e306  design/admin/templates/setup/moduleextension.tpl
@@ -1194,7 +1196,8 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tp
 2728695be0d700fa0eedcbef59b578de  design/admin4/templates/setup/designextension.tpl
 ab2536d3e436c4fcf8b692efbb6a01d3  design/admin4/templates/setup/extensions.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin4/templates/setup/handlerextension.tpl
-b040f6983ae847ee50d402ddc0156fc1  design/admin4/templates/setup/info.tpl
+c0fdd5c1ea91fad8be2742c3df45a8aa  design/admin4/templates/setup/info.tpl
+bbdadba4a9dc511a67e3fedce07a424f  design/admin4/templates/setup/info_exp_style.tpl
 6b72cbcef562564b15e7e151788d788c  design/admin4/templates/setup/kerneloverride.tpl
 6a696879d93afecad32e8537b41650c6  design/admin4/templates/setup/maintenance.tpl
 d1a3e27332a030771a8fce082ba8e306  design/admin4/templates/setup/moduleextension.tpl
@@ -2944,7 +2947,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-66645900d70942b482a80f76703c1f69  doc/changelogs/6.0/6.0.15.md
+6785684eb40e7c6a745e4b1b8021d636  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3419,7 +3422,7 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 f9c3f344c473869cfb55845caedce10f  doc/features/6.0/version-preview-view-modes.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 03252bce1fbedb6ed433f227a6265164  doc/glossary.md
-4be3acdbcd6db6d5d312db45ca0982ed  doc/guides/README.md
+7fe8c8022b4b48a7c58721d3e64a532b  doc/guides/README.md
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 42286cd290aabfe8b6873ffffafb338c  doc/guides/class-groups.md
@@ -3468,6 +3471,7 @@ b96aa9f19d0e6aebe8b4e7b2569216d5  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
 24b38626a7d481e5608176e1c8217950  doc/guides/security-and-audit.md
 43dbd90e31972fef2826ebb622ab5c4d  doc/guides/sessions.md
+049b86dd00d762c414081e1171c16436  doc/guides/system-information.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
 4ee61d51ef41314fe41846f70b854ed5  doc/guides/upgrade-check.md
 639322264923c033f20a28212f26fea4  doc/guides/upgrading.md
@@ -4830,6 +4834,8 @@ b8ca72676a5a9dfafef6ddb0b6e9ee7a  kernel/classes/expphar.php
 1eda4d2740e2f5e9ff0ccaef297fb1aa  kernel/classes/expprocesstools.php
 5c085c15fe530c93eb0b61571c3f36cb  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
+427cb5d98e573bda7873f53ef6c56bb1  kernel/classes/expsystemreport.php
+d2888ac5df0bd42be7d4f81d85a4b1c6  kernel/classes/expsystemreportmask.php
 3c745426744516a730b1a2ed2e2da9e3  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 2e236435a4896494e12512315a748708  kernel/classes/expvelocityconfiglayout.php
@@ -5334,6 +5340,7 @@ c88aa62aa60a53e317f9e81f9e619a87  kernel/private/classes/commands/preload.php
 a08a9297ae9c54487b7a2b06e63e6a08  kernel/private/classes/commands/resetuserpassword.php
 898926376d639f730120ce5e20c6eb9e  kernel/private/classes/commands/runcronjobs.php
 85a16d1fee5629e075e01a840df7b6c1  kernel/private/classes/commands/solr.php
+4465a716b5fc1723bd7bcdba839111cf  kernel/private/classes/commands/systeminfo.php
 99a776cdd909256a5d8069ef603d7820  kernel/private/classes/commands/trashpurge.php
 3a507b2f3d401cd470b42f6186e5c49d  kernel/private/classes/commands/updateisbn13.php
 e418cf8846889816fde6983b02b7af7a  kernel/private/classes/commands/updateniceurls.php
@@ -5570,7 +5577,7 @@ c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.ph
 84d5e4047a58b8ca8a3131ba6a8d8b8c  kernel/private/classes/views/setup/extensions.php
 ba095e1065f22b1f8ce06eaaaeaeb8a6  kernel/private/classes/views/setup/ezsetup.php
 af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerextension.php
-c9a768bdc16096cb3fbdbea5cba537d0  kernel/private/classes/views/setup/info.php
+183e52789302bec1b82b77704ce5ed36  kernel/private/classes/views/setup/info.php
 9ec471cd1828163cca17e995aaa27538  kernel/private/classes/views/setup/kerneloverride.php
 c52c0969e44db3dd969bdf15caf1427c  kernel/private/classes/views/setup/maintenance.php
 f3d410d2a77820dc00af01f2bb3ffc68  kernel/private/classes/views/setup/menuconfig.php
@@ -7074,6 +7081,8 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 3d169dcf96d0f46f825095fed303ae28  tests/tests/kernel/classes/expPDFExportTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 cf5d5388e5242328fbc1f6c199a8afd8  tests/tests/kernel/classes/expSectionOverviewTest.php
+670c664f48487bb4403b665966751bf3  tests/tests/kernel/classes/expSystemReportMaskTest.php
+1e66f7ac332da1d3639695e403a9dc2f  tests/tests/kernel/classes/expSystemReportTest.php
 f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTest.php
 5571584f622d8c32b884f5d306511331  tests/tests/kernel/classes/expVelocityEnginesTest.php
 c8c704867551b709eb99c383b3f91b59  tests/tests/kernel/classes/expViewAccessTest.php
