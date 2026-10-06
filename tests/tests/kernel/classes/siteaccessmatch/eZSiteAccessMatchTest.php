@@ -283,6 +283,29 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $this->match( 'news/an-article' )['redirect'] );
     }
 
+    /** The redirect runs once: the address it sends to is taken by HostUriMatchMapItems and not sent on again */
+    public function testTheRedirectRunsOnce()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de';
+        $this->assertTrue( $this->match( '' )['redirect'] );
+        $target = $this->match( 'ger' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $target, '', array( 'ger' ) );
+        $this->assertArrayNotHasKey( 'redirect', $target );
+    }
+
+    /** With one language variant for the host the browser makes no difference: no redirect, no Vary */
+    public function testOneLanguageVariantIsNotRedirected()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de';
+        $this->set( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems', array( 'www.example.invalid;ger;k1ger;;de', 'www.example.invalid;ger;k1ger' ) );
+        $access = $this->match( 'news/an-article' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $access, 'news/an-article', array( 'ger' ) );
+        $this->assertArrayNotHasKey( 'vary', $access );
+        $this->assertArrayNotHasKey( 'redirect', $access );
+    }
+
     /** Without an entry for the segment the redirect would come back: the page is shown in place */
     public function testHostUriDefaultRedirectsOnlyWhereAnEntryTakesTheSegment()
     {

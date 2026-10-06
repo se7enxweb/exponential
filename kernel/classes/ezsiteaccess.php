@@ -325,9 +325,9 @@ class eZSiteAccess
                         {
                             $access = array_merge( $access, $default );
                             $access['type'] = $type;
-                            // The web kernel sends the browser on to the address with the segment, so the pages a
-                            // cache keeps have one language each; only when an entry of HostUriMatchMapItems takes
-                            // that address, else it would land here again
+                            // With more than one language variant (vary) the web kernel sends the browser on to the
+                            // address with the segment, once: so the pages a cache keeps have one language each. Only
+                            // when an entry of HostUriMatchMapItems takes that address, else it would land here again
                             if ( !empty( $default['vary'] ) && $default['uri_part']
                                  && ( !$ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriRedirect' )
                                       || $ini->variable( 'SiteAccessSettings', 'DefaultHostUriRedirect' ) !== 'disabled' )
@@ -442,13 +442,14 @@ class eZSiteAccess
      * @param string $host
      * @param string $defaultMethod
      * @param string $acceptLanguage the Accept-Language header of the request
-     * @return array|null array( name, uri_part[, vary] ) with vary = Accept-Language when an entry for the host names a
-     *                    language, so the answer depends on it; null when no entry is for the host
+     * @return array|null array( name, uri_part[, vary] ) with vary = Accept-Language when the entries for the host have
+     *                    more than one uri part (language variants), so the answer depends on the browser; null when no
+     *                    entry for the host applies
      */
     static function matchDefaultHostUri( array $items, $host, $defaultMethod, $acceptLanguage )
     {
         $forHost = array();
-        $byLanguage = false;
+        $variants = array();
         foreach ( $items as $item )
         {
             $item = (array)$item;
@@ -458,8 +459,9 @@ class eZSiteAccess
             if ( !self::hostMatches( $host, (string)$item[0], $method ) )
                 continue;
             $language = isset( $item[4] ) ? strtolower( trim( (string)$item[4] ) ) : '';
-            $byLanguage = $byLanguage || $language !== '';
-            $forHost[] = array( 'uri' => trim( (string)$item[1], '/' ), 'name' => (string)$item[2], 'language' => $language );
+            $uri = trim( (string)$item[1], '/' );
+            $variants[$uri] = true;
+            $forHost[] = array( 'uri' => $uri, 'name' => (string)$item[2], 'language' => $language );
         }
 
         $chosen = null;
@@ -490,7 +492,8 @@ class eZSiteAccess
 
         $access = array( 'name' => $chosen['name'],
                          'uri_part' => $chosen['uri'] !== '' ? explode( '/', $chosen['uri'] ) : array() );
-        if ( $byLanguage )
+        // Only where the host has more than one language variant does the browser make a difference
+        if ( count( $variants ) > 1 )
             $access['vary'] = 'Accept-Language';
         return $access;
     }
