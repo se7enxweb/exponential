@@ -87,9 +87,10 @@ class Download extends \Exponential\Runnable\ModuleView
 
     /**
      * Whether the current user may download the file of $contentObjectAttribute in version $version: null when they
-     * may, otherwise the error to answer with. The answer of the kernel (kernelAccess()) goes through the filter
-     * content/download/access with the object, the attribute and the version, so an extension can let someone in
-     * (an approver who may read the version only) or keep someone out; only true allows.
+     * may, otherwise the error to answer with. An attribute of another object or version is refused first, without
+     * asking anybody. Then the answer of the kernel (kernelAccess()) goes through the filter content/download/access
+     * with the object, the attribute and the version, so an extension can let someone in (an approver who may read
+     * the version only) or keep someone out; only true allows, and a refusal keeps the kernel's error.
      *
      * @param \eZContentObject $contentObject
      * @param \eZContentObjectAttribute $contentObjectAttribute
@@ -99,14 +100,45 @@ class Download extends \Exponential\Runnable\ModuleView
      */
     public static function access( $contentObject, $contentObjectAttribute, $version, $currentVersion )
     {
+        // The attribute must belong to the object and to the version asked for; no listener is asked otherwise, so
+        // none can let out the file of another object or version
+        if ( !self::attributeBelongs( $contentObject, $contentObjectAttribute, $version ) )
+        {
+            return \eZError::KERNEL_ACCESS_DENIED;
+        }
+
         $denied = self::kernelAccess( $contentObject, $version, $currentVersion );
         $allowed = \ezpEvent::getInstance()->filter( 'content/download/access', $denied === null,
-                                                      $contentObject, $contentObjectAttribute, (int)$version );
-        if ( $allowed === true )
+                                                      $contentObject, $contentObjectAttribute, (int)$version ) === true;
+        if ( $allowed !== ( $denied === null ) )
+        {
+            \eZDebug::writeNotice( 'A listener of content/download/access ' . ( $allowed ? 'allowed' : 'refused' ) . ' the file of attribute ' .
+                                   (int)$contentObjectAttribute->attribute( 'id' ) . ' of object ' . (int)$contentObject->attribute( 'id' ) .
+                                   ' version ' . (int)$version . ' (the kernel ' . ( $denied === null ? 'allowed' : 'refused' ) . ' it)', __METHOD__ );
+        }
+        if ( $allowed )
         {
             return null;
         }
         return $denied !== null ? $denied : \eZError::KERNEL_ACCESS_DENIED;
+    }
+
+    /**
+     * Whether $contentObjectAttribute is an attribute of $contentObject in version $version.
+     *
+     * @param \eZContentObject $contentObject
+     * @param \eZContentObjectAttribute $contentObjectAttribute
+     * @param int $version
+     * @return bool
+     */
+    public static function attributeBelongs( $contentObject, $contentObjectAttribute, $version )
+    {
+        if ( !$contentObject instanceof \eZContentObject || !$contentObjectAttribute instanceof \eZContentObjectAttribute )
+        {
+            return false;
+        }
+        return (int)$contentObjectAttribute->attribute( 'contentobject_id' ) === (int)$contentObject->attribute( 'id' ) &&
+               (int)$contentObjectAttribute->attribute( 'version' ) === (int)$version;
     }
 
     /**

@@ -91,9 +91,9 @@ class Item extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Whether $user may open $collabItem. Participants may; the filter collaboration/item/access gets that answer with
-     * the item and the user, so an extension can let others in (a supervisor of an approval) or keep a participant
-     * out. Only true opens it.
+     * Whether $user may open $collabItem, and act on it in collaboration/action. Participants may; the filter
+     * collaboration/item/access gets that answer with the item and the user, so an extension can let others in (a
+     * supervisor of an approval) or keep a participant out. Only true opens it.
      *
      * @param \eZCollaborationItem $collabItem
      * @param \eZUser $user
@@ -103,7 +103,14 @@ class Item extends \Exponential\Runnable\ModuleView
     public static function access( $collabItem, $user, &$isParticipant = false )
     {
         $isParticipant = (bool)$collabItem->userIsParticipant( $user );
-        return \ezpEvent::getInstance()->filter( 'collaboration/item/access', $isParticipant, $collabItem, $user ) === true;
+        $allowed = \ezpEvent::getInstance()->filter( 'collaboration/item/access', $isParticipant, $collabItem, $user ) === true;
+        if ( $allowed !== $isParticipant )
+        {
+            \eZDebug::writeNotice( 'A listener of collaboration/item/access ' . ( $allowed ? 'let' : 'kept' ) . ' user ' .
+                                   (int)$user->attribute( 'contentobject_id' ) . ( $allowed ? ' into' : ' out of' ) . ' collaboration item ' .
+                                   (int)$collabItem->attribute( 'id' ), __METHOD__ );
+        }
+        return $allowed;
     }
 }
 

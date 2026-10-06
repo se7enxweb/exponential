@@ -411,7 +411,28 @@ class eZNodeviewfunctions
                                                             'view_cache_tweak' => $viewCacheTweak ) );
         if ( is_array( $filtered ) )
         {
-            $cacheHashArray = $filtered;
+            // The hash reads the values as strings: a value that is not a string, number, bool or null (an array, an
+            // object) would hash as "Array" or fail, so it is left out with a warning
+            foreach ( $filtered as $key => $value )
+            {
+                if ( $value !== null && !is_scalar( $value ) )
+                {
+                    eZDebug::writeWarning( "A listener of content/view/cachekeys returned the key '$key' as " . gettype( $value ) .
+                                           '; only strings and numbers are used, it was left out', __METHOD__ );
+                    unset( $filtered[$key] );
+                }
+            }
+            // The node, view mode, language, offset and layout always stay: without them two views of a node (full and
+            // line, two languages) would share one file. Kept first, in their order, so a listener that leaves them
+            // in place gets the same file names
+            $structural = array_intersect_key( $cacheHashArray, array_flip( array( 'node_id', 'viewmode', 'language', 'offset', 'layout' ) ) );
+            $missing = array_diff_key( $structural, $filtered );
+            if ( $missing )
+            {
+                eZDebug::writeWarning( 'A listener of content/view/cachekeys left out ' . implode( ', ', array_keys( $missing ) ) .
+                                       '; they always stay', __METHOD__ );
+            }
+            $cacheHashArray = array_replace( $structural, $filtered );
         }
 
         $cacheFile = $nodeID . '-' . $cacheNameExtra . md5( implode( '-', $cacheHashArray ) ) . '.cache';

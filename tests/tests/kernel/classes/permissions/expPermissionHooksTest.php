@@ -11,6 +11,14 @@
  *  PH-04 - content/edit/access gets canEdit() with object, version, user and language; only true allows
  *  PH-05 - collaboration/item/access gets whether the user takes part, with item and user; only true opens the item
  *  PH-06 - content/notification/create gets true with object and version; false leaves the event out
+ *  PH-07 - Every edit check of content/edit and content/multiedit asks editAccess(), and a version's own edit check
+ *          goes through the same filter (filterEditAccess()), so a listener decides the same way on every path
+ *  PH-08 - content/download refuses the attribute of another object or version before the filter: a listener that
+ *          answers true is not even asked
+ *  PH-09 - collaboration/action acts only on an existing item of the posted type that the user may open
+ *          (collaboration/item/access)
+ *  PH-10 - content/view/cachekeys: a key a listener leaves out among node, view mode, language, offset and layout
+ *          stays; a value that is not a string or number is left out
  *
  * Objects, nodes, collaboration items and the user are stand-ins whose answers are given.
  *
@@ -252,5 +260,95 @@ class expPermissionHooksTest extends PHPUnit\Framework\TestCase
         // false never reaches the database: no event is created
         $this->assertNull( eZContentOperationCollection::createNotificationEvent( '990206', '4' ) );
         $this->assertSame( array( array( true, 990206, 4 ) ), $this->asked['content/notification/create'] );
+    }
+
+    /** PH-07 */
+    public function testEveryEditCheckOfTheEditViewsAsksTheFilter()
+    {
+        foreach ( array( 'kernel/private/classes/views/content/edit.php', 'kernel/content/multiedit_functions.php' ) as $file )
+        {
+            $source = file_get_contents( $file );
+            $this->assertSame( 0, preg_match( '/\$obj(ect)?->canEdit\(|\$obj(ect)?->attribute\( \'can_edit\' \)/', $source ),
+                               "$file decides edit access without editAccess()" );
+            $this->assertGreaterThan( 0, substr_count( $source, 'editAccess(' ), $file );
+        }
+        $this->assertSame( 8, substr_count( file_get_contents( 'kernel/private/classes/views/content/edit.php' ), '->editAccess(' ) );
+
+        // The check of one version goes through the same filter, with the version and the language
+        $object = new eZContentObject( array( 'id' => 990207 ) );
+        $version = new eZContentObjectVersion( array( 'id' => 990208, 'contentobject_id' => 990207, 'version' => 4 ) );
+        $this->assertTrue( $object->filterEditAccess( 1, $version, 'ger-DE' ) );
+        $this->assertFalse( $object->filterEditAccess( 0, $version, 'ger-DE' ) );
+        $this->listen( 'content/edit/access', function ( $allowed ) { return !$allowed; } );
+        $this->assertFalse( $object->filterEditAccess( 1, $version, 'ger-DE' ) );
+        $this->assertTrue( $object->filterEditAccess( 0, $version, 'ger-DE' ) );
+        $this->assertSame( array( true, $object, $version, (int)eZUser::anonymousId(), 'ger-DE' ), $this->asked['content/edit/access'][0] );
+
+        // An empty language is no language
+        $permissions = array( 'can_edit' => 1 );
+        $object->setPermissions( $permissions );
+        $this->assertFalse( $object->editAccess( null, '' ) );
+        $this->assertFalse( end( $this->asked['content/edit/access'] )[4] );
+    }
+
+    /** PH-08 */
+    public function testDownloadRefusesAnotherObjectsOrVersionsAttributeBeforeTheFilter()
+    {
+        $download = '\Exponential\View\Kernel\Content\Download';
+        $this->listen( 'content/download/access', function ( $allowed ) { return true; } );
+        $object = $this->downloadObject( 1 );
+
+        $foreign = new eZContentObjectAttribute( array( 'id' => 990209, 'contentobject_id' => 990299, 'version' => 3 ) );
+        $this->assertSame( eZError::KERNEL_ACCESS_DENIED, $download::access( $object, $foreign, 3, 3 ) );
+        $otherVersion = new eZContentObjectAttribute( array( 'id' => 990210, 'contentobject_id' => 990201, 'version' => 2 ) );
+        $this->assertSame( eZError::KERNEL_ACCESS_DENIED, $download::access( $object, $otherVersion, 3, 3 ) );
+        $this->assertArrayNotHasKey( 'content/download/access', $this->asked, 'no listener is asked about a file of another object or version' );
+
+        $own = new eZContentObjectAttribute( array( 'id' => 990211, 'contentobject_id' => 990201, 'version' => 3 ) );
+        $this->assertTrue( $download::attributeBelongs( $object, $own, '3' ) );
+        $this->assertFalse( $download::attributeBelongs( $object, null, 3 ) );
+        $this->assertNull( $download::access( $object, $own, 3, 3 ) );
+    }
+
+    /** PH-09 */
+    public function testCollaborationActionsNeedItemAccess()
+    {
+        $user = $this->user();
+        $action = '\Exponential\View\Kernel\Collaboration\Action';
+        $collabItem = new X1PermissionHooksCollaborationItem( array( 'id' => 990212, 'type_identifier' => 'ezapprove' ) );
+
+        $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $action::access( null, 'ezapprove', $user ) );
+        $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $action::access( $collabItem, 'other', $user ) );
+        $this->assertSame( eZError::KERNEL_ACCESS_DENIED, $action::access( $collabItem, 'ezapprove', $user ), 'not a participant' );
+        $collabItem->participant = true;
+        $this->assertNull( $action::access( $collabItem, 'ezapprove', $user ) );
+
+        // The filter decides for actions as it does for opening the item
+        $this->listen( 'collaboration/item/access', function ( $allowed ) { return false; } );
+        $this->assertSame( eZError::KERNEL_ACCESS_DENIED, $action::access( $collabItem, 'ezapprove', $user ) );
+    }
+
+    /** PH-10 */
+    public function testCacheKeysKeepTheStructuralKeysAndOnlyScalars()
+    {
+        $before = $this->cacheFile();
+        $this->listen( 'content/view/cachekeys', function ( $keys )
+        {
+            unset( $keys['node_id'], $keys['language'] );
+            return $keys;
+        } );
+        $this->assertSame( $before, $this->cacheFile(), 'node and language stay, in their place' );
+
+        $this->tearDown();
+        $this->setUp();
+        $this->listen( 'content/view/cachekeys', function ( $keys )
+        {
+            $keys['x1_list'] = array( 1, 2 );
+            $keys['x1_object'] = new stdClass();
+            $keys['x1_flag'] = 'f1';
+            return $keys;
+        } );
+        $this->assertSame( '2-' . md5( implode( '-', array( 2, 'full', 'eng-US', 0, false, '1.2', '', eZSys::indexFile(), 'f1' ) ) ) . '.cache',
+                           $this->cacheFile() );
     }
 }
