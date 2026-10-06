@@ -308,12 +308,12 @@ class expRADCatalogue
             'group' => 'modules',
             'title' => 'Content policy limitation',
             'what'  => 'A limitation of your own for a content function such as content/read, next to Class, Section and Subtree: an extension adds it to the function, and its handler decides for objects, nodes and versions and gives the SQL condition of list and tree fetches. Without a handler the limitation denies everywhere.',
-            'where' => 'extension/<name>/classes/<class>.php, e.g. class myExtLimitationHandler implements ezpContentLimitationHandler',
+            'where' => 'extension/<name>/classes/<class>.php, e.g. class myExtLimitationHandler implements ezpContentLimitationHandler; the settings extension wizard writes a working one (MaxDepth) with a listener of module/functionlist',
             'register' => ezpI18n::tr( 'design/admin/setup/rad', 'site.ini [RoleSettings] LimitationHandlers[<limitation>]=<class>; the limitation added to a function through the filter module/functionlist ([Event] Listeners[])' ),
             'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)' ),
             'mechanism' => 'handler',
             'source' => 'kernel/private/classes/ezpcontentlimitation.php',
-            'tool'  => false ),
+            'tool'  => 'setup/settingsextension' ),
 
         'restprovider' => array(
             'group' => 'modules',

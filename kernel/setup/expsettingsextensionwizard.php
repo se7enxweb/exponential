@@ -899,6 +899,10 @@ class expSettingsExtensionWizard extends expExtensionWizard
 
             if ( $parts['listener'] )
                 $files['classes/' . strtolower( $settings['class'] ) . '.php'] = self::listenerClass( $settings );
+
+            // a limitation added through module/functionlist needs a handler as well
+            if ( $parts['listener'] && in_array( 'module/functionlist', $settings['events'], true ) )
+                $files['classes/' . strtolower( self::limitationHandlerName( $settings['class'] ) ) . '.php'] = self::limitationHandlerClass( $settings );
         }
 
         if ( in_array( 'viewcache', $topics, true ) )
@@ -1087,6 +1091,17 @@ class expSettingsExtensionWizard extends expExtensionWizard
             $ini .= implode( "\n", $exampleSettings ) . "\n";
         }
 
+        if ( in_array( 'module/functionlist', $settings['events'], true ) )
+        {
+            $group = self::settingsGroup( $settings['class'] );
+            $ini .= "\n# The handler that evaluates the limitation the module/functionlist example\n";
+            $ini .= "# adds: in access checks of objects, nodes and versions and in the SQL of\n";
+            $ini .= "# fetches. Take the # off together with the example; a limitation that no\n";
+            $ini .= "# handler evaluates denies everywhere.\n";
+            $ini .= "[RoleSettings]\n";
+            $ini .= "#LimitationHandlers[" . $group . "MaxDepth]=" . self::limitationHandlerName( $settings['class'] ) . "\n";
+        }
+
         $ini .= "\n*/ ?>\n";
 
         return $ini;
@@ -1206,6 +1221,79 @@ class expSettingsExtensionWizard extends expExtensionWizard
     }
 
     /**
+     * The name of the limitation handler written next to the listener class $class.
+     *
+     * @param string $class
+     * @return string
+     */
+    public static function limitationHandlerName( $class )
+    {
+        return self::settingsGroup( $class ) . 'LimitationHandler';
+    }
+
+    /**
+     * A handler of the content limitation the module/functionlist example adds (<group>MaxDepth): a working,
+     * documented sample of ezpContentLimitationHandler. It allows what lies no deeper in the tree than the smallest
+     * depth of the policy, decides objects, nodes and versions by their main location, and gives fetches the same
+     * rule as SQL. It is only asked once it is named in site.ini [RoleSettings] LimitationHandlers[].
+     *
+     * @param array $settings
+     * @return string
+     */
+    public static function limitationHandlerClass( array $settings )
+    {
+        $class = self::limitationHandlerName( $settings['class'] );
+        $group = self::settingsGroup( $settings['class'] );
+
+        $php  = "<?php\n/**\n * " . $class . " - evaluates the content policy limitation " . $group . "MaxDepth.\n *\n";
+        $php .= " * The limitation is added to content/read by " . $settings['class'] . "::moduleFunctionlist()\n";
+        $php .= " * (the filter module/functionlist) and this class is named in site.ini\n";
+        $php .= " * [RoleSettings] LimitationHandlers[" . $group . "MaxDepth]. The kernel then asks it:\n";
+        $php .= " *\n";
+        $php .= " * - checkAccess() for each object, node or version it checks (\$node.can_read,\n";
+        $php .= " *   content/view, notifications for other users). Only true allows.\n";
+        $php .= " * - permissionSQL() once per policy for the SQL of list and tree fetches. It\n";
+        $php .= " *   must give the same answer, or lists show what pages refuse.\n";
+        $php .= " *\n";
+        $php .= " * The kernel makes one instance per request. Keep nothing in static properties\n";
+        $php .= " * (a persistent worker serves the next request from the same process) and take\n";
+        $php .= " * the user from \$userID, never from the session: checks are made for other users.\n";
+        $php .= " * An exception denies and is logged, it does not end the request.\n *\n";
+        $php .= self::licenceNotice( $settings );
+        $php .= " */\n\n";
+        $php .= "class " . $class . " implements ezpContentLimitationHandler\n{\n";
+        $php .= "    /**\n     * Whether \$subject lies no deeper than the smallest depth in \$values.\n";
+        $php .= "     *\n     * @param string \$limitation\n     * @param array \$values The depths of the policy, as strings\n";
+        $php .= "     * @param string \$functionName\n     * @param eZContentObject|eZContentObjectTreeNode|eZContentObjectVersion \$subject\n";
+        $php .= "     * @param int \$userID The user the check is for\n     * @return bool\n     */\n";
+        $php .= "    public function checkAccess( \$limitation, array \$values, \$functionName, \$subject, \$userID )\n    {\n";
+        $php .= "        \$maxDepth = self::maxDepth( \$values );\n";
+        $php .= "        if ( \$subject instanceof eZContentObjectVersion )\n";
+        $php .= "            \$subject = \$subject->attribute( 'contentobject' );\n";
+        $php .= "        if ( \$subject instanceof eZContentObject )\n";
+        $php .= "            \$subject = \$subject->attribute( 'main_node' );\n";
+        $php .= "        // an object without a location (a draft never published) is not in the tree yet: refused\n";
+        $php .= "        return \$maxDepth > 0 && \$subject instanceof eZContentObjectTreeNode\n";
+        $php .= "               && (int)\$subject->attribute( 'depth' ) <= \$maxDepth;\n    }\n\n";
+        $php .= "    /**\n     * The same rule for fetches. Values are cast to integers here; for a list of\n";
+        $php .= "     * values, return array( 'column' => ..., 'values' => \$values ) and the kernel\n";
+        $php .= "     * casts or escapes them itself. A string must keep its quotes and parentheses\n";
+        $php .= "     * balanced and hold no ; or comment, or the policy gives no access in fetches.\n";
+        $php .= "     *\n     * @param string \$limitation\n     * @param array \$values\n     * @param string \$tableAliasName The alias of the node table\n";
+        $php .= "     * @param int \$userID\n     * @return string|array|false\n     */\n";
+        $php .= "    public function permissionSQL( \$limitation, array \$values, \$tableAliasName, \$userID )\n    {\n";
+        $php .= "        \$maxDepth = self::maxDepth( \$values );\n";
+        $php .= "        return \$maxDepth > 0 ? \$tableAliasName . '.depth <= ' . \$maxDepth : false;\n    }\n\n";
+        $php .= "    /**\n     * The smallest positive depth of \$values, 0 when there is none.\n";
+        $php .= "     *\n     * @param array \$values\n     * @return int\n     */\n";
+        $php .= "    protected static function maxDepth( array \$values )\n    {\n";
+        $php .= "        \$depths = array_filter( array_map( 'intval', \$values ), function ( \$depth ) { return \$depth > 0; } );\n";
+        $php .= "        return \$depths ? min( \$depths ) : 0;\n    }\n}\n";
+
+        return $php;
+    }
+
+    /**
      * The site.ini group the examples of a listener class read their rules from: the class name.
      *
      * @param string $class
@@ -1293,6 +1381,25 @@ class expSettingsExtensionWizard extends expExtensionWizard
                     "     in_array( \$node->attribute( 'class_identifier' ), eZINI::instance()->variable( '{group}', 'SameForEveryoneClasses' ) ) )",
                     "    unset( \$keys['userroles'], \$keys['userlimitedlist'], \$keys['discountlist'] );" ),
                 'settings'  => array( "SameForEveryoneClasses[]", "#SameForEveryoneClasses[]=frontpage" ) ),
+            'module/functionlist' => array(
+                'params'    => "\$functionList, \$moduleName = ''",
+                'returns'   => "\$functionList",
+                'only_true' => false,
+                'example'   => array(
+                    "Example: content/read offers the limitation {group}MaxDepth, with the depths of",
+                    "site.ini [{group}] MaxDepths[], so a role can let users read only the top of the tree.",
+                    "Its handler is {group}LimitationHandler, next to this class, registered in site.ini",
+                    "[RoleSettings] LimitationHandlers[]: a limitation no handler evaluates denies everywhere.",
+                    "if ( \$moduleName === 'content' && isset( \$functionList['read'] ) && eZINI::instance()->hasVariable( '{group}', 'MaxDepths' ) )",
+                    "{",
+                    "    \$values = array();",
+                    "    foreach ( eZINI::instance()->variable( '{group}', 'MaxDepths' ) as \$depth )",
+                    "        \$values[] = array( 'Name' => ezpI18n::tr( 'extension/{group}', 'Up to depth %depth', null, array( '%depth' => (int)\$depth ) ), 'value' => (string)(int)\$depth );",
+                    "    if ( \$values )",
+                    "        \$functionList['read']['{group}MaxDepth'] = array( 'name' => '{group}MaxDepth', 'values' => \$values,",
+                    "                                                         'label' => ezpI18n::tr( 'extension/{group}', 'Depth in the tree' ) );",
+                    "}" ),
+                'settings'  => array( "MaxDepths[]", "#MaxDepths[]=2", "#MaxDepths[]=3" ) ),
         );
 
         return isset( $signatures[$event] ) ? $signatures[$event] : null;

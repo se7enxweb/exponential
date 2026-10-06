@@ -310,7 +310,8 @@ class eZModule
 
         try
         {
-            $filtered = $event->filter( 'module/functionlist', $functionList, $moduleName );
+            // written out in full so the RAD survey (Setup > RAD) finds the event
+            $filtered = ezpEvent::getInstance()->filter( 'module/functionlist', $functionList, $moduleName );
         }
         catch ( Throwable $e )
         {

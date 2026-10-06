@@ -160,6 +160,51 @@ class expRadWizardListsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'node_id' => 2 ), $class::contentViewCachekeys( array( 'node_id' => 2 ), array() ) );
     }
 
+    /**
+     * module/functionlist: the listener's example adds a limitation from the extension's settings, and the wizard
+     * writes a working handler for it next to the listener, with its LimitationHandlers[] line in site.ini
+     */
+    public function testAFunctionListListenerComesWithALimitationHandler()
+    {
+        $class = 'K1eLimitationListener' . getmypid();
+        $settings = expSettingsExtensionWizard::settings( array( 'name' => 'k1e_limit', 'class' => $class,
+                                                                 'events' => array( 'module/functionlist' ), 'parts' => array( 'event', 'listener' ) ) );
+        $files = expSettingsExtensionWizard::files( $settings );
+        $handler = expSettingsExtensionWizard::limitationHandlerName( $class );
+        $this->assertArrayHasKey( 'classes/' . strtolower( $handler ) . '.php', $files );
+        $this->assertStringContainsString( "[RoleSettings]\n#LimitationHandlers[" . $class . "MaxDepth]=" . $handler . "\n", $files['settings/site.ini.append.php'] );
+        $this->assertStringContainsString( "#MaxDepths[]=2", $files['settings/site.ini.append.php'] );
+
+        // the listener hands the list back unchanged as long as the example is commented out
+        $listener = $files['classes/' . strtolower( $class ) . '.php'];
+        $this->assertStringContainsString( 'public static function moduleFunctionlist( $functionList, $moduleName = \'\' )', $listener );
+        $this->assertStringContainsString( "LimitationHandlers[]", $listener );
+        eval( substr( $listener, 5 ) );
+        $this->assertSame( array( 'read' => array() ), $class::moduleFunctionlist( array( 'read' => array() ), 'content' ) );
+
+        // the handler parses, implements the contract and gives the same rule in PHP and SQL
+        $code = $files['classes/' . strtolower( $handler ) . '.php'];
+        $this->assertNotEmpty( token_get_all( $code, TOKEN_PARSE ) );
+        eval( substr( $code, 5 ) );
+        $instance = new $handler();
+        $this->assertInstanceOf( 'ezpContentLimitationHandler', $instance );
+        $sql = $instance->permissionSQL( $class . 'MaxDepth', array( '3', '2', 'x' ), 't', 14 );
+        $this->assertSame( 't.depth <= 2', $sql );
+        $this->assertSame( '( t.depth <= 2 )', ezpContentLimitation::sqlCondition( $sql ) );
+        $this->assertFalse( $instance->permissionSQL( $class . 'MaxDepth', array( 'x' ), 't', 14 ) );
+        $shallow = new eZContentObjectTreeNode( array( 'node_id' => 990601, 'depth' => 2 ) );
+        $deep = new eZContentObjectTreeNode( array( 'node_id' => 990602, 'depth' => 4 ) );
+        $this->assertTrue( $instance->checkAccess( $class . 'MaxDepth', array( '3' ), 'read', $shallow, 14 ) );
+        $this->assertFalse( $instance->checkAccess( $class . 'MaxDepth', array( '3' ), 'read', $deep, 14 ) );
+        $this->assertFalse( $instance->checkAccess( $class . 'MaxDepth', array(), 'read', $shallow, 14 ) );
+
+        // without module/functionlist there is no handler file and no RoleSettings
+        $plain = expSettingsExtensionWizard::files( expSettingsExtensionWizard::settings( array( 'name' => 'k1e_limit', 'class' => $class,
+                                                                                                 'events' => array( 'content/cache' ), 'parts' => array( 'event', 'listener' ) ) ) );
+        $this->assertArrayNotHasKey( 'classes/' . strtolower( $handler ) . '.php', $plain );
+        $this->assertStringNotContainsString( '[RoleSettings]', $plain['settings/site.ini.append.php'] );
+    }
+
     public function testEventsOnlyKnownOnes()
     {
         $this->assertSame( array(), expSettingsExtensionWizard::chosenEvents( 'content/cache' ) );
