@@ -20,6 +20,21 @@ namespace Exponential\View\Kernel\Rss
 
 class EditExport extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * The address readers subscribe to, as the RSS list shows it: the public site of the export's siteaccess,
+     * then rss/feed/<access url>. Empty when the export has no access URL.
+     *
+     * @param \eZRSSExport|mixed $rssExport
+     * @return string
+     */
+    public static function feedURL( $rssExport )
+    {
+        if ( !$rssExport instanceof \eZRSSExport || (string)$rssExport->attribute( 'access_url' ) === '' )
+            return '';
+        $siteAccess = (string)$rssExport->attribute( 'site_access' );
+        return \eZRSSExport::publicSiteURL( $siteAccess !== '' ? $siteAccess : false ) . '/rss/feed/' . $rssExport->attribute( 'access_url' );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -152,14 +167,7 @@ class EditExport extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'rss_export', $rssExport );
         $tpl->setVariable( 'rss_export_id', $rssExportID );
 
-        // The address readers subscribe to, as the RSS list shows it: the public site of the export's siteaccess.
-        $feedURL = '';
-        if ( $rssExport instanceof \eZRSSExport && (string)$rssExport->attribute( 'access_url' ) !== '' )
-        {
-            $siteAccess = (string)$rssExport->attribute( 'site_access' );
-            $feedURL = \eZRSSExport::publicSiteURL( $siteAccess !== '' ? $siteAccess : false ) . '/rss/feed/' . $rssExport->attribute( 'access_url' );
-        }
-        $tpl->setVariable( 'rss_feed_url', $feedURL );
+        $tpl->setVariable( 'rss_feed_url', self::feedURL( $rssExport ) );
 
         // BC for old templates
         $tpl->setVariable( 'validaton', !$valid );
