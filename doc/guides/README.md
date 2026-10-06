@@ -63,6 +63,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Extensions](extensions.md) | An extension found, installed, switched on and configured; one of your own built and released | 45 minutes |
 | [Deploying](deploying.md) | The site served by Apache with PHP-FPM, by Velocity or by FrankenPHP, with HTTPS | 30 minutes |
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
+| [System information](system-information.md) | Which server answered and how it runs PHP, the health checks read and acted on, the overview cards understood, a masked report downloaded for support, the same from the command line | 15 minutes |
 | [Benchmarking](benchmarking.md) | Pages measured cached and rendered, Apache against Velocity, a code change and a deploy checked for regressions, the CI performance check understood | 30 minutes |
 | [Cronjobs](cronjobs.md) | Every part and script seen, a part and one script run and followed from the browser, the crontab lines installed, the logs read, the usual problems solved | 30 minutes |
 | [Workflows](workflows.md) | An approval before publishing set up with its trigger, every waiting process read in words on Setup > Workflow processes, the workflow cronjob checked, a stuck process cancelled safely, the triggers and workflow groups read and a group removed knowing what goes with it | 30 minutes |
