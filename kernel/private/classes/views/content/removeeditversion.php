@@ -114,9 +114,15 @@ class Removeeditversion extends \Exponential\Runnable\ModuleView
             $hasRedirected = false;
             if ( $http->hasSessionVariable( 'RedirectIfDiscarded' ) )
             {
-                $Module->redirectTo( $http->sessionVariable( 'RedirectIfDiscarded' ) );
+                // the page the edit form named: only when it passes the rules of \eZRedirectManager::returnURI(),
+                // else the redirect below, as without one
+                $discardURI = \eZRedirectManager::returnURI( $Module, false, $http->sessionVariable( 'RedirectIfDiscarded' ), array( 'session' => false ) );
                 $http->removeSessionVariable( 'RedirectIfDiscarded' );
-                $hasRedirected = true;
+                if ( $discardURI !== false )
+                {
+                    $Module->redirectTo( $discardURI );
+                    $hasRedirected = true;
+                }
             }
             if ( $http->hasSessionVariable( 'ParentObject' ) && $http->sessionVariable( 'NewObjectID' ) == $objectID )
             {
