@@ -226,7 +226,8 @@ content module.
 
 The REST interface's answer cache (`rest.ini [CacheSettings] ApplicationCache`) keeps one answer per user and only
 for `GET` and `HEAD`: before 6.0.15 one user's read was served to the next for ten minutes, past `content/read`, and a
-repeated create or delete was answered from the cache without running.
+repeated create or delete was answered from the cache without running. A refusal is never cached (it follows the
+rights of each request), and a cache file that cannot be read back is generated again rather than answered with 500.
 
 > [!NOTE]
 > **Keep the key out of code.** Put it in an environment variable, your CI's secret store or your system's keychain,
