@@ -253,6 +253,36 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( '', 'other.example.invalid' ) );
     }
 
+    /**
+     * A German browser that switched to English stays in English: only the address without segment follows the
+     * browser; every address with a segment, the start page of a language (/eng) among them, keeps its language and
+     * is never sent on
+     */
+    public function testAfterSwitchingTheLanguageTheSegmentDecides()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de-DE,de;q=0.9';
+
+        // The first visit: / follows the browser to German
+        $first = $this->match( '' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $first, '', array( 'ger' ) );
+        $this->assertTrue( $first['redirect'] );
+
+        // The visitor switches to English: the English pages, their links and the English start page stay English
+        foreach ( array( 'eng', 'eng/news/an-article', 'eng/content/view/full/2' ) as $address )
+        {
+            $access = $this->match( $address );
+            $this->assertSame( 'k1eng', $access['name'], $address );
+            $this->assertSame( array( 'eng' ), $access['uri_part'], $address );
+            $this->assertArrayNotHasKey( 'redirect', $access, "$address is not sent on" );
+            $this->assertArrayNotHasKey( 'vary', $access, "$address does not depend on the browser" );
+        }
+
+        // Only the address without segment asks the browser again
+        $this->assertSame( 'k1ger', $this->match( 'news/an-article' )['name'] );
+        $this->assertTrue( $this->match( 'news/an-article' )['redirect'] );
+    }
+
     /** Without an entry for the segment the redirect would come back: the page is shown in place */
     public function testHostUriDefaultRedirectsOnlyWhereAnEntryTakesTheSegment()
     {
