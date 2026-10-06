@@ -572,7 +572,9 @@ class expSettingsExtensionWizard extends expExtensionWizard
 
             $overrides[] = array( 'ini'      => strtolower( $found[1] ),
                                   'section'  => $found[2],
-                                  'variable' => $found[3],
+                                  // The key of an array setting can hold anything but "]",
+                                  // and it is written into the ini file's php comment too
+                                  'variable' => self::commentText( $found[3] ),
                                   'value'    => self::iniValue( $found[4], 400 ) );
 
             if ( count( $overrides ) >= 60 )
