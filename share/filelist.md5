@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
-a17e9aa29816aa3d1601937a1619115f  autoload/ezp_kernel.php
+1d2aa1417b4976a7191a602b5d3a038d  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -401,7 +401,9 @@ b296af3623023fd29dede1e7a28c87b5  design/admin/templates/content/edit_languages.
 1d5f22905034a53be470c9c47f79dc34  design/admin/templates/content/edit_menu.tpl
 1f0c31bc65fc2ffc21fa856529fe4d96  design/admin/templates/content/edit_relations.tpl
 5b492f52a0837222e80360d4a481166c  design/admin/templates/content/edit_validation.tpl
-a7fa5bc0f2eabf06ee4e5a12bc13f6ee  design/admin/templates/content/history.tpl
+0cb2a9879cb392a9dc67f0eb40d42973  design/admin/templates/content/history.tpl
+eaa6b0850ee2e08a8e5a5d54fd02e66b  design/admin/templates/content/history_access_messages.tpl
+754bafb509616563ba83f16fbe467e47  design/admin/templates/content/history_exp_style.tpl
 97627aabe24ba1fce9b6563c6f528b06  design/admin/templates/content/job.tpl
 2e9710db62ed76cc9a0b5d495c0b3cef  design/admin/templates/content/job_confirm.tpl
 bb5ef34d9326458c42e29b3d37337047  design/admin/templates/content/job_mode_choice.tpl
@@ -802,7 +804,7 @@ bc7937dac73f716b532f14b62505ed0d  design/admin3/templates/content/browse_mode_li
 d334aad163caedca77ef1890fca90b25  design/admin3/templates/content/edit.tpl
 35c95ad3e52bd6cf74d907b804ea2625  design/admin3/templates/content/edit_draft.tpl
 3e4218bef006d2475b552dca8bfdbe88  design/admin3/templates/content/edit_menu.tpl
-cd5f583d6210663887473f23d271f6b8  design/admin3/templates/content/history.tpl
+0cb2a9879cb392a9dc67f0eb40d42973  design/admin3/templates/content/history.tpl
 67f3ffbfde19ae2a66a00a7977a5a673  design/admin3/templates/content/view/versionview.tpl
 177f84a513599a5358aed900c39aa21a  design/admin3/templates/error/parts/formtoken_style.tpl
 ce80eadd36457f38b7b0b36e1ee3e0f6  design/admin3/templates/loginpagelayout.tpl
@@ -1017,7 +1019,9 @@ be1c7acb3cd20918fd4308fdfd105403  design/admin4/templates/content/edit_attribute
 3e4218bef006d2475b552dca8bfdbe88  design/admin4/templates/content/edit_menu.tpl
 1f0c31bc65fc2ffc21fa856529fe4d96  design/admin4/templates/content/edit_relations.tpl
 5b492f52a0837222e80360d4a481166c  design/admin4/templates/content/edit_validation.tpl
-cd5f583d6210663887473f23d271f6b8  design/admin4/templates/content/history.tpl
+0cb2a9879cb392a9dc67f0eb40d42973  design/admin4/templates/content/history.tpl
+eaa6b0850ee2e08a8e5a5d54fd02e66b  design/admin4/templates/content/history_access_messages.tpl
+754bafb509616563ba83f16fbe467e47  design/admin4/templates/content/history_exp_style.tpl
 7edb8ebf669de1d90b3e7ed82f3a974c  design/admin4/templates/content/job.tpl
 2e9710db62ed76cc9a0b5d495c0b3cef  design/admin4/templates/content/job_confirm.tpl
 869ecdba0e8ef07c2de0e839472e0faf  design/admin4/templates/content/job_mode_choice.tpl
@@ -2252,7 +2256,7 @@ cd3b7715af22826d463ee9fa8b2860bd  design/standard/templates/content/edit_attribu
 e763a23a6ec2a5da7cf2d747ef30c83d  design/standard/templates/content/edit_right_menu.tpl
 960c66b9984b7a488d7c48999833b3d2  design/standard/templates/content/edit_validation.tpl
 a634488f758570d50d423218f7c883f8  design/standard/templates/content/history.tpl
-70a935d89a747523fdc9a0c6011e979f  design/standard/templates/content/history_access_messages.tpl
+a716d7ff7c19c5cac43aaafeeb84c4a1  design/standard/templates/content/history_access_messages.tpl
 97627aabe24ba1fce9b6563c6f528b06  design/standard/templates/content/job.tpl
 2e9710db62ed76cc9a0b5d495c0b3cef  design/standard/templates/content/job_confirm.tpl
 bb5ef34d9326458c42e29b3d37337047  design/standard/templates/content/job_mode_choice.tpl
@@ -3471,6 +3475,7 @@ ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 4edcb415277d457d0255e68f442b6989  doc/guides/class-groups.md
 833921c92fe7cc4360fb5640748abb88  doc/guides/classic-menu-settings.md
 8f01bc44a84c119de29cd508fe41e05b  doc/guides/collected-information.md
+c5bc08dd00377761032a0fe460b3ef2a  doc/guides/content-history.md
 aac796c334e4b9e60764279755cd9dde  doc/guides/content-languages.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
 a841ba0d4e6df12e066d8ac43bf433be  doc/guides/cronjobs.md
@@ -4878,6 +4883,7 @@ f163435421aa66729d958a47d7d34fbe  kernel/classes/expbookmarkpage.php
 f83e2e3dea26d0502fff22c89939e0ea  kernel/classes/expcollaborationgroupmanager.php
 027f1a4c2d2834c623131b188c540872  kernel/classes/expcollaborationinbox.php
 e7456184eb299387e3eed677ae8ea469  kernel/classes/expcollaborationsampledata.php
+817ffe4f29fcb2fc58741e44fdd18603  kernel/classes/expcontenthistorylist.php
 4f8b979e7bac49349e8bab2c65a8e142  kernel/classes/expextensioncatalogue.php
 e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
@@ -5567,7 +5573,7 @@ df872c5ec934f64aa7579eca83cbe3cd  kernel/private/classes/views/content/copysubtr
 f97f33002198d5a29071812cf304b9d3  kernel/private/classes/views/content/draft.php
 589c1932dd859b4d9ea2c85bef7e2292  kernel/private/classes/views/content/edit.php
 3bf4f4e45ac3adf215f6b8268c55b6db  kernel/private/classes/views/content/hide.php
-dcb1513048f740d227ef6ea7b32119a9  kernel/private/classes/views/content/history.php
+97cb6c0dd9dd7cf929c767809cd7cc01  kernel/private/classes/views/content/history.php
 8380b2e8ac3fe2a37f91bc143c598f7f  kernel/private/classes/views/content/job.php
 f2b10780650551125b5ed1c6bb190ed4  kernel/private/classes/views/content/jobs.php
 8f90ce229245f8dd706cdf7f5abf9ec9  kernel/private/classes/views/content/keyword.php
@@ -7159,6 +7165,7 @@ d5d338c22e6d93889bfb8f6e8f13f061  tests/tests/kernel/classes/expAdminListsRedesi
 4d598dae7c7b0975d1f25362cbd5f73a  tests/tests/kernel/classes/expAdminPaginationTest.php
 135686ccfd037a5c215e355ce73ee9f9  tests/tests/kernel/classes/expCacheCatalogueTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
+115b0e92a323a40d3724c25915ed820c  tests/tests/kernel/classes/expContentHistoryListTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 84ebc3bbeda752f59b4ef25e20ab9b9b  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
