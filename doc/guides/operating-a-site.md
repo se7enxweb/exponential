@@ -101,7 +101,7 @@ php runcronjobs.php --siteaccess=site frequent --allow-root-user
 php runcronjobs.php --siteaccess=site --script=notification.php --allow-root-user
 ```
 
-Use the name of your own public siteaccess for `--siteaccess`. The same list is in the administration at **Setup > Cronjobs** (`/setup/cronjobs`), where each part has a *Run* button, the output follows while the job runs, and the page proposes the crontab lines. Show what is installed now:
+Use the name of your own public siteaccess for `--siteaccess`. The same list is in the administration at **Setup > Cronjobs** (`/setup/cronjobs`), where each part has a card with its schedule, its next and last run, a *Run part* button and its shell command to copy; the output follows while the job runs, and the page proposes the crontab lines. Show what is installed now:
 
 ```bash
 ./console crontab:list
