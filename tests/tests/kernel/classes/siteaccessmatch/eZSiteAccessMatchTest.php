@@ -1,8 +1,9 @@
 <?php
 /**
  * Tests of eZSiteAccess::match(), the choice of the siteaccess for a request from site.ini: the static match, the
- * default, and each MatchOrder probe (port, server variable, uri by map, element, text and regexp, host by map,
- * element, text and regexp, index file by element, text and regexp), the order of the probes, names that are not
+ * default, and each MatchOrder probe (port, server variable, uri by map, element, text and regexp, host by map
+ * (strict, or by HostMatchMethod and the method of an item), element, text and regexp, host_uri and its default by
+ * the browser's languages (DefaultHostUriMatchMapItems), index file by element, text and regexp), the order of the probes, names that are not
  * in AvailableSiteAccessList, the name washing, and what each match leaves of the URI. Also matchText() and
  * matchRegexp() on their own.
  *
@@ -29,7 +30,7 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
     protected function tearDown(): void
     {
         ezpINIHelper::restoreINISettings();
-        unset( $_SERVER['K1_SITEACCESS'] );
+        unset( $_SERVER['K1_SITEACCESS'], $_SERVER['HTTP_ACCEPT_LANGUAGE'] );
     }
 
     private function set( $group, $name, $value )
@@ -159,6 +160,305 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $this->set( 'SiteAccessSettings', 'HostMatchMapItems', array( 'admin.example.invalid;k1admin', 'de.example.invalid;k1ger' ) );
         $this->assertAccess( 'k1admin', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'admin.example.invalid' ), 'x' );
         $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( 'x', 'ADMIN.example.invalid.other' ) );
+    }
+
+    /** A test host that only begins with the listed one matches with HostMatchMethod=start */
+    public function testHostMapMatchesTheStartOfTheHostWhenAsked()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'host' );
+        $this->set( 'SiteAccessSettings', 'HostMatchType', 'map' );
+        $this->set( 'SiteAccessSettings', 'HostMatchMapItems', array( 'admin.example.invalid;k1admin', 'de.example.invalid;k1ger' ) );
+        $this->set( 'SiteAccessSettings', 'HostMatchMethod', 'start' );
+        $this->assertAccess( 'k1admin', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'admin.example.invalid.test.local' ), 'x' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'de.example.invalid' ) );
+        $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( 'x', 'www.admin.example.invalid' ) );
+    }
+
+    /** The third field of an item sets its own method; the others stay strict */
+    public function testHostMapItemCarriesItsOwnMethod()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'host' );
+        $this->set( 'SiteAccessSettings', 'HostMatchType', 'map' );
+        $this->set( 'SiteAccessSettings', 'HostMatchMethod', 'strict' );
+        $this->set( 'SiteAccessSettings', 'HostMatchMapItems', array( 'admin.example.invalid;k1admin', 'example.invalid;k1ger;end', ';k1eng;part' ) );
+        $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( 'x', 'admin.example.invalid.test.local' ) );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'de.example.invalid' ) );
+        $this->assertAccess( 'k1admin', eZSiteAccess::TYPE_HTTP_HOST, $this->match( 'x', 'admin.example.invalid' ) );
+    }
+
+    public static function hostMatchProvider()
+    {
+        return array(
+            array( 'www.example.com', 'www.example.com', 'strict', true ),
+            array( 'www.example.com.test.local', 'www.example.com', 'strict', false ),
+            array( 'www.example.com.test.local', 'www.example.com', 'start', true ),
+            array( 'test.www.example.com', 'www.example.com', 'start', false ),
+            array( 'test.www.example.com', 'www.example.com', 'end', true ),
+            array( 'www.example.com.test', 'www.example.com', 'end', false ),
+            array( 'a.www.example.com.b', 'www.example.com', 'part', true ),
+            array( 'www.example.org', 'www.example.com', 'part', false ),
+            array( 'www.example.com', 'www.example.com', 'begins', false ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider( 'hostMatchProvider' )]
+    public function testHostMatches( $host, $matchHost, $method, $expected )
+    {
+        $this->assertSame( $expected, eZSiteAccess::hostMatches( $host, $matchHost, $method ) );
+    }
+
+    private function defaultHostUri()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'host_uri' );
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMethodDefault', 'strict' );
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMapItems', array( 'www.example.invalid;ger;k1ger', 'www.example.invalid;eng;k1eng' ) );
+        $this->set( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems', array( 'www.example.invalid;ger;k1ger;default;de',
+                                                                                'www.example.invalid;eng;k1eng;;en',
+                                                                                'www.example.invalid;eng;k1eng' ) );
+    }
+
+    /** An address with a language segment is matched by HostUriMatchMapItems, whatever the browser wants */
+    public function testHostUriWithSegmentIgnoresTheBrowserLanguage()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de-DE,de;q=0.9';
+        $access = $this->match( 'eng/content/view/full/2' );
+        $this->assertAccess( 'k1eng', eZSiteAccess::TYPE_HTTP_HOST_URI, $access, 'content/view/full/2', array( 'eng' ) );
+        $this->assertArrayNotHasKey( 'vary', $access );
+    }
+
+    /** Without segment the browser's most wanted language chooses, and the links get its segment */
+    public function testHostUriDefaultFollowsTheBrowserLanguage()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de-CH,de;q=0.9,en;q=0.8';
+        $access = $this->match( 'content/view/full/2' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_DEFAULT, $access, 'content/view/full/2', array( 'ger' ) );
+        $this->assertSame( 'Accept-Language', $access['vary'] );
+        $this->assertTrue( $access['redirect'], 'an entry of HostUriMatchMapItems takes ger, so the kernel sends the browser there' );
+
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'fr;q=0.9, en-GB;q=0.95, de;q=0.1';
+        $this->assertAccess( 'k1eng', eZSiteAccess::TYPE_DEFAULT, $this->match( '' ), '', array( 'eng' ) );
+    }
+
+    /** A language the entries do not name, or none at all, takes the entry without a language */
+    public function testHostUriDefaultWithoutAMatchingLanguage()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'fr-FR,fr;q=0.9,de;q=0';
+        $this->assertAccess( 'k1eng', eZSiteAccess::TYPE_DEFAULT, $this->match( '' ), '', array( 'eng' ) );
+        unset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] );
+        $this->assertAccess( 'k1eng', eZSiteAccess::TYPE_DEFAULT, $this->match( '' ), '', array( 'eng' ) );
+        // Another host has no default entry
+        $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( '', 'other.example.invalid' ) );
+    }
+
+    /**
+     * A German browser that switched to English stays in English: only the address without segment follows the
+     * browser; every address with a segment, the start page of a language (/eng) among them, keeps its language and
+     * is never sent on
+     */
+    public function testAfterSwitchingTheLanguageTheSegmentDecides()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de-DE,de;q=0.9';
+
+        // The first visit: / follows the browser to German
+        $first = $this->match( '' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_DEFAULT, $first, '', array( 'ger' ) );
+        $this->assertTrue( $first['redirect'] );
+
+        // The visitor switches to English: the English pages, their links and the English start page stay English
+        foreach ( array( 'eng', 'eng/news/an-article', 'eng/content/view/full/2' ) as $address )
+        {
+            $access = $this->match( $address );
+            $this->assertSame( 'k1eng', $access['name'], $address );
+            $this->assertSame( array( 'eng' ), $access['uri_part'], $address );
+            $this->assertArrayNotHasKey( 'redirect', $access, "$address is not sent on" );
+            $this->assertArrayNotHasKey( 'vary', $access, "$address does not depend on the browser" );
+        }
+
+        // Only the address without segment asks the browser again
+        $this->assertSame( 'k1ger', $this->match( 'news/an-article' )['name'] );
+        $this->assertTrue( $this->match( 'news/an-article' )['redirect'] );
+    }
+
+    /** The redirect runs once: the address it sends to is taken by HostUriMatchMapItems and not sent on again */
+    public function testTheRedirectRunsOnce()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de';
+        $this->assertTrue( $this->match( '' )['redirect'] );
+        $target = $this->match( 'ger' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $target, '', array( 'ger' ) );
+        $this->assertArrayNotHasKey( 'redirect', $target );
+    }
+
+    /** With one language variant the browser makes no difference: the redirect is the same for all, without Vary */
+    public function testOneLanguageVariantIsRedirectedWithoutVary()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'en';
+        $this->set( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems', array( 'www.example.invalid;ger;k1ger;;de', 'www.example.invalid;ger;k1ger' ) );
+        $access = $this->match( 'news/an-article' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_DEFAULT, $access, 'news/an-article', array( 'ger' ) );
+        $this->assertTrue( $access['redirect'] );
+        $this->assertArrayNotHasKey( 'vary', $access );
+    }
+
+    /**
+     * A site with a single language siteaccess under /de, on any host: / goes to /de, an address without segment to
+     * the same address under /de, and /de itself stays
+     */
+    public function testASingleLanguageSiteSendsTheStartPageToItsSegment()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'host_uri' );
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMethodDefault', 'strict' );
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMapItems', array( ';de;k1ger;part' ) );
+        $this->set( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems', array( ';de;k1ger;part' ) );
+        unset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] );
+
+        foreach ( array( 'www.example.invalid', 'www.example.invalid.test.local' ) as $host )
+        {
+            $start = $this->match( '', $host );
+            $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_DEFAULT, $start, '', array( 'de' ) );
+            $this->assertTrue( $start['redirect'], "/ on $host goes to /de" );
+            $this->assertArrayNotHasKey( 'vary', $start );
+            $this->assertSame( '/de', ezpKernelWeb::languageRedirectURI( '/de', '', '' ) );
+
+            $this->assertTrue( $this->match( 'news/an-article', $host )['redirect'] );
+
+            $de = $this->match( 'de', $host );
+            $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_HTTP_HOST_URI, $de, '', array( 'de' ) );
+            $this->assertArrayNotHasKey( 'redirect', $de, "/de on $host stays" );
+        }
+    }
+
+    /** Without a probe that takes the segment the redirect would come back: the page is shown in place */
+    public function testHostUriDefaultRedirectsOnlyWhereAnEntryTakesTheSegment()
+    {
+        $this->defaultHostUri();
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'de';
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMapItems', array( 'www.example.invalid;eng;k1eng' ) );
+        $this->assertFalse( $this->match( '' )['redirect'] );
+
+        $this->set( 'SiteAccessSettings', 'HostUriMatchMapItems', array( 'www.example.invalid;ger;k1ger' ) );
+        $this->assertTrue( $this->match( '' )['redirect'] );
+
+        $this->set( 'SiteAccessSettings', 'DefaultHostUriRedirect', 'disabled' );
+        $this->assertArrayNotHasKey( 'redirect', $this->match( '' ) );
+    }
+
+    /**
+     * A site whose siteaccesses are matched by the first element of the URL (MatchOrder=uri), with one language
+     * siteaccess ger: / and an address without siteaccess go to /ger, /admin and /ger stay where they are
+     */
+    public function testUriMatchedSiteSendsAddressesWithoutSiteAccessToTheLanguage()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'uri;host' );
+        $this->set( 'SiteAccessSettings', 'URIMatchType', 'element' );
+        $this->set( 'SiteAccessSettings', 'URIMatchElement', '1' );
+        $this->set( 'SiteAccessSettings', 'HostMatchType', 'map' );
+        $this->set( 'SiteAccessSettings', 'HostMatchMapItems', array() );
+        $this->set( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems', array( ';k1ger;k1ger;part' ) );
+        unset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] );
+
+        $start = $this->match( '' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_URI, $start, '', array( 'k1ger' ) );
+        $this->assertTrue( $start['redirect'], '/ goes to /k1ger' );
+        $this->assertTrue( $this->match( 'news/an-article' )['redirect'], 'an address without siteaccess goes to /k1ger/...' );
+
+        $admin = $this->match( 'k1admin/content/dashboard' );
+        $this->assertAccess( 'k1admin', eZSiteAccess::TYPE_URI, $admin, 'content/dashboard' );
+        $this->assertArrayNotHasKey( 'redirect', $admin, 'another siteaccess is not touched' );
+
+        $ger = $this->match( 'k1ger/news/an-article' );
+        $this->assertAccess( 'k1ger', eZSiteAccess::TYPE_URI, $ger, 'news/an-article' );
+        $this->assertArrayNotHasKey( 'redirect', $ger );
+    }
+
+    /** The redirect is checked against the probes: a segment no probe takes would come back, so there is none */
+    public function testReachesSiteAccess()
+    {
+        $this->defaultHostUri();
+        $this->assertTrue( eZSiteAccess::reachesSiteAccess( 'k1ger', 'ger/news', 'www.example.invalid' ) );
+        $this->assertFalse( eZSiteAccess::reachesSiteAccess( 'k1eng', 'ger/news', 'www.example.invalid' ), 'another siteaccess' );
+        $this->assertFalse( eZSiteAccess::reachesSiteAccess( 'k1ger', 'deu/news', 'www.example.invalid' ), 'no probe takes deu' );
+        $this->assertFalse( eZSiteAccess::reachesSiteAccess( 'k1ger', 'ger', 'other.example.invalid' ), 'another host' );
+    }
+
+    public static function languageRedirectProvider()
+    {
+        return array(
+            'the start page' => array( '/ger', '', '', '/ger' ),
+            'a URL alias stays one' => array( '/ger', '/news/ein-artikel', '', '/ger/news/ein-artikel' ),
+            'with the index file' => array( '/index.php/ger', '/content/view/full/2', '', '/index.php/ger/content/view/full/2' ),
+            'the query goes along' => array( '/ger/', '/suche', '?SearchText=x&page=2', '/ger/suche?SearchText=x&page=2' ),
+            'a query without path' => array( '/eng/sub', '', '?a=1', '/eng/sub?a=1' ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider( 'languageRedirectProvider' )]
+    public function testLanguageRedirectURI( $indexDir, $requestURI, $query, $expected )
+    {
+        $this->assertSame( $expected, ezpKernelWeb::languageRedirectURI( $indexDir, $requestURI, $query ) );
+    }
+
+    public static function acceptLanguageProvider()
+    {
+        return array(
+            array( 'de-DE,de;q=0.9,en;q=0.8', array( 'de-de', 'de', 'en' ) ),
+            array( 'fr;q=0.1, EN-gb;q=0.95 , de', array( 'de', 'en-gb', 'fr' ) ),
+            array( 'en;q=0, *;q=0.5, de;q=0.5', array( 'de' ) ),
+            array( '', array() ),
+            array( 'de;q=abc, x<y>', array( 'de' ) ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider( 'acceptLanguageProvider' )]
+    public function testAcceptedLanguages( $header, $expected )
+    {
+        $this->assertSame( $expected, eZSiteAccess::acceptedLanguages( $header ) );
+    }
+
+    public function testDefaultHostUriEntries()
+    {
+        $items = array( array( 'example.invalid', 'ger', 'k1ger', 'start', 'de' ),
+                        array( 'example.invalid', 'eng/sub', 'k1eng', 'start' ),
+                        array( '', 'x', 'k1admin' ),
+                        array( 'example.invalid', 'y' ) );
+        $this->assertSame( array( 'name' => 'k1ger', 'uri_part' => array( 'ger' ), 'vary' => 'Accept-Language' ),
+                           eZSiteAccess::matchDefaultHostUri( $items, 'example.invalid.test', 'strict', 'de' ) );
+        $this->assertSame( array( 'name' => 'k1eng', 'uri_part' => array( 'eng', 'sub' ), 'vary' => 'Accept-Language' ),
+                           eZSiteAccess::matchDefaultHostUri( $items, 'example.invalid.test', 'strict', 'it' ) );
+        // Without language entries for the host the answer does not vary
+        $this->assertSame( array( 'name' => 'k1eng', 'uri_part' => array( 'eng', 'sub' ) ),
+                           eZSiteAccess::matchDefaultHostUri( array( $items[1] ), 'example.invalid', 'strict', 'de' ) );
+        // Only language entries, none accepted: no default
+        $this->assertNull( eZSiteAccess::matchDefaultHostUri( array( $items[0] ), 'example.invalid', 'strict', 'en' ) );
+        $this->assertNull( eZSiteAccess::matchDefaultHostUri( $items, 'other.invalid', 'strict', 'de' ) );
+    }
+
+    /** The role-aware HTTP cache does not store a page whose siteaccess the browser's language chose */
+    public function testHttpCacheDoesNotStoreAPageChosenByLanguage()
+    {
+        $reason = new ReflectionMethod( 'ezpHttpCacheListener', 'uncacheableReason' );
+        $hadAccess = array_key_exists( 'eZCurrentAccess', $GLOBALS );
+        $access = $hadAccess ? $GLOBALS['eZCurrentAccess'] : null;
+        try
+        {
+            $GLOBALS['eZCurrentAccess'] = array( 'name' => 'k1ger', 'type' => eZSiteAccess::TYPE_HTTP_HOST_URI, 'vary' => 'Accept-Language' );
+            $this->assertSame( 'varies by Accept-Language', $reason->invoke( null, '<html></html>' ) );
+            unset( $GLOBALS['eZCurrentAccess']['vary'] );
+            $this->assertNull( $reason->invoke( null, '<html></html>' ) );
+        }
+        finally
+        {
+            if ( $hadAccess )
+                $GLOBALS['eZCurrentAccess'] = $access;
+            else
+                unset( $GLOBALS['eZCurrentAccess'] );
+        }
     }
 
     public function testHostText()

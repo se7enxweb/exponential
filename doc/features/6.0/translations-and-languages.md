@@ -99,6 +99,7 @@ See [Extension loading order](extension-loading-order.md).
 
 ## Related pages
 
+- [Siteaccess by host prefix, and the redirect to the language](siteaccess-host-and-language-matching.md): which language siteaccess the start page and test hosts reach
 - [Content languages](../../guides/content-languages.md): the guide to adding, showing, translating, moving and removing the languages content is written in (Setup > Languages)
 - [Translations of the package comparison](package-compare-and-import.md)
 - [Installing in one command](install-in-one-command.md) (languages of a new installation), [extension loading order](extension-loading-order.md) (translation siteaccesses)
