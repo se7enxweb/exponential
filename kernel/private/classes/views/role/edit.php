@@ -120,47 +120,9 @@ class Edit extends \Exponential\Runnable\ModuleView
 
         $this->addLimitation( $http, $policy, $limitationList, $limitation, $limitationID, $limitationIdentifier, $nodeLimitationValues, $currentModule, $currentFunction, $mod, $functions, $currentFunctionLimitations, $functionLimitation, $limitationValues, $policyLimitation, $limitationValue, $roleID, $db );
 
-        if ( $http->hasPostVariable( 'RemovePolicy' ) )
-        {
-            $policyID = $http->postVariable( 'RolePolicy' ) ;
-            \eZDebugSetting::writeDebug( 'kernel-role-edit', $policyID, 'trying to remove policy' );
-            \eZPolicy::removeByID( $policyID );
-            // Set flag for audit. If true audit will be processed
-            $http->setSessionVariable( 'RoleWasChanged', true );
-        }
-        if ( $http->hasPostVariable( 'RemovePolicies' ) and
-             $http->hasPostVariable( 'DeleteIDArray' ) )
-        {
-            $db = \eZDB::instance();
-            $db->begin();
-            foreach( $http->postVariable( 'DeleteIDArray' ) as $deleteID)
-            {
-                \eZDebugSetting::writeDebug( 'kernel-role-edit', $deleteID, 'trying to remove policy' );
-                \eZPolicy::removeByID( $deleteID );
-            }
-            $db->commit();
-            // Set flag for audit. If true audit will be processed
-            $http->setSessionVariable( 'RoleWasChanged', true );
-        }
+        $this->removePolicies( $http, $role, $policyID, $removedPolicies );
 
-        // The up and down buttons of the policy list. They are image buttons named
-        // MovePolicyUp_<id> and MovePolicyDown_<id>, which eZHTTPTool turns into
-        // MovePolicyUp=<id>. The move is made in the temporary version this page
-        // edits, so Save keeps it and Cancel drops it; movePolicy() refuses a policy
-        // that is not this role's.
-        foreach ( array( 'MovePolicyUp' => 'up', 'MovePolicyDown' => 'down' ) as $movePostName => $moveDirection )
-        {
-            if ( $http->hasPostVariable( $movePostName ) )
-            {
-                if ( $role->movePolicy( (int)$http->postVariable( $movePostName ), $moveDirection ) )
-                {
-                    // Set flag for audit. If true audit will be processed
-                    $http->setSessionVariable( 'RoleWasChanged', true );
-                }
-                break;
-            }
-        }
-
+        $this->movePolicies( $http, $role, $movedTo );
 
         if ( ( $__return = $this->customFunction( $http, $currentModule, $mod, $functions, $functionNames, $showModules, $showFunctions, $showLimitations, $noFunctions, $tpl, $Module, $role, $Result ) ) !== $this )
             return $__return;
@@ -239,6 +201,13 @@ class Edit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'show_functions', $showFunctions );
 
         $tpl->setVariable( 'policies', $policies );
+        // The policies of the page in words, by policy id; whether the draft differs from the saved role (null:
+        // too many policies to compare); the saved role, for the page's links back to it
+        $tpl->setVariable( 'policy_sentences', \expRolePage::describePolicies( $policies ) );
+        $tpl->setVariable( 'draft_differs', \expRolePage::draftDiffers( $role ) );
+        $tpl->setVariable( 'original_role_id', (int)$role->attribute( 'version' ) );
+        $tpl->setVariable( 'policies_removed', $removedPolicies );
+        $tpl->setVariable( 'policy_moved_to', $movedTo );
         $tpl->setVariable( 'modules', $modules );
         $tpl->setVariable( 'module', $Module );
         $tpl->setVariable( 'role', $role );
@@ -249,7 +218,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         $Module->setTitle( 'Edit ' . $role->attribute( 'name' ) );
 
         $Result = array();
-        $Result['path'] = array( array( 'text' => 'Role',
+        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/role', 'Role list' ),
                                         'url' => 'role/list' ),
                                  array( 'text' => $role->attribute( 'name' ),
                                         'url' => false ) );
@@ -257,6 +226,107 @@ class Edit extends \Exponential\Runnable\ModuleView
         $Result['content'] = $tpl->fetch( 'design:role/edit.tpl' );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function movePolicies( &$http, &$role, &$movedTo )
+    {
+        // The up and down buttons of the policy list. They are image buttons named
+        // MovePolicyUp_<id> and MovePolicyDown_<id>, which eZHTTPTool turns into
+        // MovePolicyUp=<id>. The move is made in the temporary version this page
+        // edits, so Save keeps it and Cancel drops it; movePolicy() refuses a policy
+        // that is not this role's.
+        // Drag and drop, and the "Move to position" field: MovePolicyTo=<policy id> with MovePolicyPosition[<policy id>]
+        // = the place in the whole list, 1 for the first. Made as up and down moves in this draft
+        // (expRolePage::movePolicyTo()), so the order is the same one the buttons change: Save keeps it, Cancel drops it.
+        $movedTo = false;
+        if ( $http->hasPostVariable( 'MovePolicyTo' ) )
+        {
+            $moveID = $http->postVariable( 'MovePolicyTo' );
+            $positions = $http->hasPostVariable( 'MovePolicyPosition' ) ? (array)$http->postVariable( 'MovePolicyPosition' ) : array();
+            if ( self::isPolicyOf( $moveID, $role ) && isset( $positions[(int)$moveID] ) && is_scalar( $positions[(int)$moveID] )
+                 && ctype_digit( (string)$positions[(int)$moveID] ) )
+            {
+                if ( \expRolePage::movePolicyTo( $role, (int)$moveID, (int)$positions[(int)$moveID] ) > 0 )
+                {
+                    $movedTo = (int)$positions[(int)$moveID];
+                    // Set flag for audit. If true audit will be processed
+                    $http->setSessionVariable( 'RoleWasChanged', true );
+                }
+            }
+        }
+
+        foreach ( array( 'MovePolicyUp' => 'up', 'MovePolicyDown' => 'down' ) as $movePostName => $moveDirection )
+        {
+            if ( $http->hasPostVariable( $movePostName ) )
+            {
+                if ( $role->movePolicy( (int)$http->postVariable( $movePostName ), $moveDirection ) )
+                {
+                    // Set flag for audit. If true audit will be processed
+                    $http->setSessionVariable( 'RoleWasChanged', true );
+                }
+                break;
+            }
+        }
+
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function removePolicies( &$http, &$role, &$policyID, &$removedPolicies )
+    {
+        // Removing works on the draft this page edits, and only on its policies: eZPolicy::removeByID() removes any
+        // policy by its id, so an id of a saved role's policy posted here removed it from that role at once.
+        $removedPolicies = false;
+        if ( $http->hasPostVariable( 'RemovePolicy' ) )
+        {
+            $policyID = $http->postVariable( 'RolePolicy' ) ;
+            \eZDebugSetting::writeDebug( 'kernel-role-edit', $policyID, 'trying to remove policy' );
+            if ( self::isPolicyOf( $policyID, $role ) )
+            {
+                \eZPolicy::removeByID( $policyID );
+                $removedPolicies = 1;
+            }
+            // Set flag for audit. If true audit will be processed
+            $http->setSessionVariable( 'RoleWasChanged', true );
+        }
+        if ( $http->hasPostVariable( 'RemovePolicies' ) )
+        {
+            $removedPolicies = 0;
+            $db = \eZDB::instance();
+            $db->begin();
+            foreach( (array)( $http->hasPostVariable( 'DeleteIDArray' ) ? $http->postVariable( 'DeleteIDArray' ) : array() ) as $deleteID )
+            {
+                \eZDebugSetting::writeDebug( 'kernel-role-edit', $deleteID, 'trying to remove policy' );
+                if ( self::isPolicyOf( $deleteID, $role ) )
+                {
+                    \eZPolicy::removeByID( $deleteID );
+                    $removedPolicies++;
+                }
+            }
+            $db->commit();
+            // Set flag for audit. If true audit will be processed
+            if ( $removedPolicies )
+                $http->setSessionVariable( 'RoleWasChanged', true );
+        }
+    }
+
+    /**
+     * Whether $policyID is a policy of $role (the draft this page edits).
+     *
+     * @param mixed $policyID
+     * @param \eZRole $role
+     * @return bool
+     */
+    public static function isPolicyOf( $policyID, $role )
+    {
+        if ( !is_scalar( $policyID ) || !ctype_digit( (string)$policyID ) || !$role instanceof \eZRole )
+            return false;
+        $policy = \eZPolicy::fetch( (int)$policyID );
+        return $policy instanceof \eZPolicy && (int)$policy->attribute( 'role_id' ) === (int)$role->attribute( 'id' );
     }
 
     /**

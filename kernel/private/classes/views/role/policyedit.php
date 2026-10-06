@@ -80,14 +80,15 @@ class Policyedit extends \Exponential\Runnable\ModuleView
         $Module = $Params['Module'];
         $policyID = $Params['PolicyID'];
 
-        $policy = \eZPolicy::fetchTemporaryCopy( $policyID );
-        $policyID = $policy->attribute( 'id' );
-        $originalPolicyID = $policy->attribute( 'original_id' );
-
-        if( $policy === null )
+        // A policy that does not exist is "not available" (it was a fatal error: the id was read before the check)
+        $policy = ( is_scalar( $policyID ) && ctype_digit( (string)$policyID ) && \eZPolicy::fetch( (int)$policyID ) )
+                ? \eZPolicy::fetchTemporaryCopy( (int)$policyID ) : null;
+        if ( !$policy instanceof \eZPolicy )
         {
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         }
+        $policyID = $policy->attribute( 'id' );
+        $originalPolicyID = $policy->attribute( 'original_id' );
 
         $currentModule = $policy->attribute( 'module_name' );
         $currentFunction = $policy->attribute( 'function_name' );

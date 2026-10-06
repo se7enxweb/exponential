@@ -31,11 +31,30 @@ class Copy extends \Exponential\Runnable\ModuleView
         $Module = $Params['Module'];
         $roleID = $Params['RoleID'];
 
-        $role = \eZRole::fetch( $roleID );
-        if ( $role )
+        $role = ( is_scalar( $roleID ) && ctype_digit( (string)$roleID ) ) ? \eZRole::fetch( (int)$roleID ) : null;
+        if ( $role && (int)$role->attribute( 'version' ) === 0 )
         {
-            $newRole = $role->copy();
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $newRole->attribute( 'id' ) ) ) );
+            $http = \eZHTTPTool::instance();
+            // The copy is made by the form of the page (a POST, with the form token), not by opening the address:
+            // a link or an image on another page made copies before.
+            if ( $http->hasPostVariable( 'CancelCopyButton' ) )
+                return $this->viewResult( null, $Module->redirectTo( '/role/view/' . (int)$role->attribute( 'id' ) ) );
+            if ( $http->hasPostVariable( 'CopyRoleButton' ) )
+            {
+                $newRole = $role->copy();
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $newRole->attribute( 'id' ) ) ) );
+            }
+            $tpl = \eZTemplate::factory();
+            $tpl->setVariable( 'role', $role );
+            $tpl->setVariable( 'module', $Module );
+            $summaries = \expRolePage::summaries( array( (int)$role->attribute( 'id' ) ) );
+            $tpl->setVariable( 'role_summary', $summaries ? reset( $summaries ) : false );
+            $Result = array();
+            $Result['content'] = $tpl->fetch( 'design:role/copy.tpl' );
+            $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/role', 'Role list' ), 'url' => 'role/list' ),
+                                     array( 'text' => $role->attribute( 'name' ), 'url' => 'role/view/' . (int)$role->attribute( 'id' ) ),
+                                     array( 'text' => \ezpI18n::tr( 'kernel/role', 'Copy' ), 'url' => false ) );
+            return $this->viewResult( $Result, null );
         }
         else
         {

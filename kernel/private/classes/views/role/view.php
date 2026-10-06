@@ -79,7 +79,9 @@ class View extends \Exponential\Runnable\ModuleView
         }
         else if ( $http->hasPostVariable( 'AssignRoleLimitedButton' ) )
         {
-            $Module->redirectTo( '/role/assign/' . $roleID . '/' . $http->postVariable( 'AssignRoleType' ) );
+            // subtree or section only: the value becomes part of the address
+            $limitType = \expRolePage::assignLimitType( $http->postVariable( 'AssignRoleType' ) );
+            $Module->redirectTo( '/role/' . ( $limitType ? 'assign/' : 'view/' ) . (int)$roleID . ( $limitType ? '/' . $limitType : '' ) );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
@@ -112,11 +114,27 @@ class View extends \Exponential\Runnable\ModuleView
         }
 
         // Remove the role assignment
+        $removedAssignments = false;
         if ( $http->hasPostVariable( 'RemoveRoleAssignmentButton' ) )
         {
-            $idArray = $http->postVariable( "IDArray" );
-
+            $idArray = array();
+            foreach ( (array)( $http->hasPostVariable( 'IDArray' ) ? $http->postVariable( 'IDArray' ) : array() ) as $id )
+            {
+                if ( is_scalar( $id ) && ctype_digit( (string)$id ) )
+                    $idArray[(int)$id] = (int)$id;
+            }
+            // Only assignments of this role: removeUserAssignmentByID() removes any assignment by its id, so an
+            // id of another role's assignment posted here removed that one.
             $db = \eZDB::instance();
+            $ownRows = $db->databaseName() === 'mongo'
+                     ? $db->aggregate( 'ezuser_role', array( array( '$match' => array( 'role_id' => (int)$role->attribute( 'id' ) ) ) ) )
+                     : $db->arrayQuery( 'SELECT id FROM ezuser_role WHERE role_id = ' . (int)$role->attribute( 'id' ) );
+            $own = array();
+            foreach ( (array)$ownRows as $ownRow )
+                $own[(int)$ownRow['id']] = true;
+            $idArray = array_intersect_key( $idArray, $own );
+            $removedAssignments = count( $idArray );
+
             $db->begin();
             foreach ( $idArray as $id )
             {
@@ -215,6 +233,12 @@ class View extends \Exponential\Runnable\ModuleView
                                                            array( 'assignment_offset' => $assignmentOffset,
                                                                   'assignment_filter' => rawurlencode( $assignmentFilter ) ) ) );
         $tpl->setVariable( 'policies', $policies );
+        // The policies of the page in words, by policy id, and what the whole role holds and reaches
+        $tpl->setVariable( 'policy_sentences', \expRolePage::describePolicies( $policies ) );
+        $roleSummaries = \expRolePage::summaries( array( (int)$role->attribute( 'id' ) ) );
+        $tpl->setVariable( 'role_summary', isset( $roleSummaries[(int)$role->attribute( 'id' )] ) ? $roleSummaries[(int)$role->attribute( 'id' )] : false );
+        $tpl->setVariable( 'role_affected', \expRolePage::affected( $role ) );
+        $tpl->setVariable( 'assignments_removed', $removedAssignments );
         $tpl->setVariable( 'module', $Module );
         $tpl->setVariable( 'role', $role );
 
@@ -224,7 +248,7 @@ class View extends \Exponential\Runnable\ModuleView
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:role/view.tpl' );
-        $Result['path'] = array( array( 'text' => 'Role',
+        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/role', 'Role list' ),
                                         'url' => 'role/list' ),
                                  array( 'text' => $role->attribute( 'name' ),
                                         'url' => false ) );
