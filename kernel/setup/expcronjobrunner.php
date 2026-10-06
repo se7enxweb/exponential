@@ -1007,6 +1007,267 @@ class expCronjobRunner
     }
 
     /**
+     * The command that runs a part, or one script of it, from a shell, now.
+     *
+     * The same command the scheduler's line runs, without the schedule and
+     * without the redirection to /dev/null, so whoever pastes it sees what the
+     * job says. One script is named with --script, as the console launches it.
+     *
+     * @param string $part
+     * @param string $siteaccess
+     * @param string|false $script
+     * @return string
+     */
+    public static function commandLine( $part, $siteaccess, $script = false )
+    {
+        $php = self::phpBinary();
+        if ( $php === false )
+            $php = 'php';
+
+        $command = 'cd ' . self::installationRoot() . ' && ' . $php . ' runcronjobs.php -s ' . $siteaccess;
+        if ( $script !== false )
+            $command .= ' --script=' . $script;
+        else if ( $part !== self::GLOBAL_PART )
+            $command .= ' ' . $part;
+
+        return $command;
+    }
+
+    /**
+     * What a cronjob script says it does: the @description tag of its header.
+     *
+     * The same tag the console's command list reads. An entry point whose code
+     * lives in a class file (#207) carries it there, so that file is read too
+     * when the entry point has none of its own.
+     *
+     * @param string|false $path
+     * @return string an empty string when the script does not say.
+     */
+    public static function scriptDescription( $path )
+    {
+        if ( $path === false || !is_file( $path ) )
+            return '';
+
+        $head = (string)@file_get_contents( $path, false, null, 0, 8192 );
+        if ( preg_match( '/^\s*(?:\*|\/\/)\s*@description\s+(.+)$/m', $head, $match ) )
+            return trim( $match[1] );
+
+        if ( preg_match( '/The code is in (\S+\.php) \(#207\)/', $head, $match ) )
+        {
+            $code = self::installationRoot() . '/' . $match[1];
+            if ( is_file( $code ) )
+            {
+                $head = (string)@file_get_contents( $code, false, null, 0, 16384 );
+                if ( preg_match( '/^\s*\*\s*@description\s+(.+)$/m', $head, $match ) )
+                    return trim( $match[1] );
+            }
+        }
+
+        return '';
+    }
+
+    /**
+     * The five schedule fields of a crontab line, or of a schedule on its own.
+     *
+     * The @hourly style macros are expanded, so everything after this deals in
+     * five fields. Anything that is not a schedule gives false.
+     *
+     * @param string $line
+     * @return string|false
+     */
+    public static function scheduleOfLine( $line )
+    {
+        $line = trim( (string)$line );
+        $macros = array( '@yearly' => '0 0 1 1 *', '@annually' => '0 0 1 1 *', '@monthly' => '0 0 1 * *',
+                         '@weekly' => '0 0 * * 0', '@daily' => '0 0 * * *', '@midnight' => '0 0 * * *',
+                         '@hourly' => '0 * * * *' );
+        $first = strtolower( (string)strtok( $line, " \t" ) );
+        if ( isset( $macros[$first] ) )
+            return $macros[$first];
+        if ( $first === '@reboot' )
+            return false;
+
+        $fields = preg_split( '/\s+/', $line );
+        if ( count( $fields ) < 5 )
+            return false;
+
+        $fields = array_slice( $fields, 0, 5 );
+        foreach ( $fields as $field )
+        {
+            if ( !preg_match( '#^[0-9a-zA-Z*/,\-]+$#', $field ) )
+                return false;
+        }
+
+        return implode( ' ', $fields );
+    }
+
+    /**
+     * A schedule as a person reads it, for the common shapes; anything else is
+     * given back as the expression, which is still exact.
+     *
+     * @param string $schedule five fields.
+     * @return string
+     */
+    public static function describeSchedule( $schedule )
+    {
+        $fields = preg_split( '/\s+/', trim( (string)$schedule ) );
+        if ( count( $fields ) !== 5 )
+            return (string)$schedule;
+
+        list( $minute, $hour, $day, $month, $weekday ) = $fields;
+        $context = 'design/admin/setup/cronjobs';
+        $everyDay = ( $day === '*' && $month === '*' && $weekday === '*' );
+
+        if ( $everyDay && $hour === '*' )
+        {
+            if ( $minute === '*' )
+                return ezpI18n::tr( $context, 'Every minute' );
+            if ( preg_match( '#^\*/(\d+)$#', $minute, $m ) )
+                return ezpI18n::tr( $context, 'Every %count minutes', null, array( '%count' => (int)$m[1] ) );
+            if ( ctype_digit( $minute ) )
+                return ezpI18n::tr( $context, 'Every hour at minute %minute', null, array( '%minute' => (int)$minute ) );
+        }
+        if ( $everyDay && ctype_digit( $minute ) && preg_match( '#^\*/(\d+)$#', $hour, $m ) )
+            return ezpI18n::tr( $context, 'Every %count hours at minute %minute', null, array( '%count' => (int)$m[1], '%minute' => (int)$minute ) );
+        if ( $everyDay && ctype_digit( $minute ) && ctype_digit( $hour ) )
+            return ezpI18n::tr( $context, 'Every day at %time', null, array( '%time' => sprintf( '%02d:%02d', $hour, $minute ) ) );
+
+        return (string)$schedule;
+    }
+
+    /**
+     * When a schedule next comes round, after a moment, in this server's time.
+     *
+     * Standard cron rules: numbers, ranges, steps and lists in every field,
+     * month and weekday names, Sunday as 0 or 7, and a day of month and a
+     * weekday that are both restricted matching either. It jumps a month, a day
+     * or an hour at a time where the field rules that one out, so even a yearly
+     * schedule takes a few hundred steps rather than half a million.
+     *
+     * @param string $schedule five fields.
+     * @param int|false $after a timestamp; now when false.
+     * @return int|false the timestamp, or false when the schedule cannot be read or never comes round.
+     */
+    public static function nextRun( $schedule, $after = false )
+    {
+        $fields = preg_split( '/\s+/', trim( (string)$schedule ) );
+        if ( count( $fields ) !== 5 )
+            return false;
+
+        $names = array( 'jan' => 1, 'feb' => 2, 'mar' => 3, 'apr' => 4, 'may' => 5, 'jun' => 6, 'jul' => 7,
+                        'aug' => 8, 'sep' => 9, 'oct' => 10, 'nov' => 11, 'dec' => 12,
+                        'sun' => 0, 'mon' => 1, 'tue' => 2, 'wed' => 3, 'thu' => 4, 'fri' => 5, 'sat' => 6 );
+        $ranges = array( array( 0, 59 ), array( 0, 23 ), array( 1, 31 ), array( 1, 12 ), array( 0, 7 ) );
+        $sets = array();
+        foreach ( $fields as $index => $field )
+        {
+            $set = self::cronFieldValues( strtolower( $field ), $ranges[$index][0], $ranges[$index][1], $names );
+            if ( $set === false )
+                return false;
+            $sets[] = $set;
+        }
+        if ( isset( $sets[4][7] ) )
+            $sets[4][0] = true;
+
+        $dayRestricted = ( $fields[2] !== '*' );
+        $weekdayRestricted = ( $fields[4] !== '*' );
+
+        $time = ( $after === false ? time() : (int)$after );
+        $time = $time - ( $time % 60 ) + 60;   // the next whole minute
+
+        for ( $steps = 0; $steps < 5000; $steps++ )
+        {
+            list( $minute, $hour, $day, $month, $year, $weekday ) =
+                array_map( 'intval', explode( ' ', date( 'i G j n Y w', $time ) ) );
+
+            if ( !isset( $sets[3][$month] ) )
+            {
+                $time = mktime( 0, 0, 0, $month + 1, 1, $year );
+                continue;
+            }
+
+            $dayMatches = isset( $sets[2][$day] );
+            $weekdayMatches = isset( $sets[4][$weekday] );
+            if ( $dayRestricted && $weekdayRestricted )
+                $dayOk = $dayMatches || $weekdayMatches;
+            else
+                $dayOk = $dayMatches && $weekdayMatches;
+            if ( !$dayOk )
+            {
+                $time = mktime( 0, 0, 0, $month, $day + 1, $year );
+                continue;
+            }
+
+            if ( !isset( $sets[1][$hour] ) )
+            {
+                $time = mktime( $hour + 1, 0, 0, $month, $day, $year );
+                continue;
+            }
+
+            if ( !isset( $sets[0][$minute] ) )
+            {
+                $time += 60;
+                continue;
+            }
+
+            return $time;
+        }
+
+        return false;
+    }
+
+    /**
+     * The values one cron field allows, as keys of an array.
+     *
+     * @return array|false
+     */
+    private static function cronFieldValues( $field, $min, $max, array $names )
+    {
+        $values = array();
+        foreach ( explode( ',', $field ) as $item )
+        {
+            $step = 1;
+            if ( strpos( $item, '/' ) !== false )
+            {
+                list( $item, $step ) = explode( '/', $item, 2 );
+                if ( !ctype_digit( $step ) || (int)$step < 1 )
+                    return false;
+                $step = (int)$step;
+            }
+
+            if ( $item === '*' )
+            {
+                $from = $min;
+                $to = $max;
+            }
+            else
+            {
+                $bounds = explode( '-', $item, 2 );
+                foreach ( $bounds as $i => $bound )
+                {
+                    if ( isset( $names[$bound] ) )
+                        $bounds[$i] = $names[$bound];
+                    else if ( ctype_digit( $bound ) )
+                        $bounds[$i] = (int)$bound;
+                    else
+                        return false;
+                }
+                $from = $bounds[0];
+                // "5/10" is 5, 15, 25 ... up to the end of the field
+                $to = isset( $bounds[1] ) ? $bounds[1] : ( $step > 1 ? $max : $from );
+            }
+
+            if ( $from < $min || $to > $max || $from > $to )
+                return false;
+
+            for ( $value = $from; $value <= $to; $value += $step )
+                $values[$value] = true;
+        }
+
+        return $values;
+    }
+
+    /**
      * The last lines of a log file.
      *
      * Reads from the end rather than loading the file, because a cronjob log

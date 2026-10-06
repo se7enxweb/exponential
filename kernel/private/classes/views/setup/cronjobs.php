@@ -202,19 +202,75 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
         $cronjobCrontab = \expCronjobRunner::installedCrontab();
         $cronjobScheduled = \expCronjobRunner::scheduledParts();
 
+        // The newest run of each part, whole or one script of it, so every part can
+        // say when it last ran from here and how that went.
+        $cronjobLastRuns = array();
+        foreach ( \expCronjobRunner::history( 100 ) as $run )
+        {
+            if ( isset( $run['part'] ) && !isset( $cronjobLastRuns[$run['part']] ) )
+                $cronjobLastRuns[$run['part']] = $run;
+        }
+
+        // A command is shown with the siteaccess cut out of it, so the page can put
+        // back whichever site is chosen in the select without asking the server.
+        $siteAccessMark = "\x01";
+        $splitCommand = function ( $command ) use ( $siteAccessMark )
+        {
+            $pieces = explode( $siteAccessMark, $command, 2 );
+            return array( 'head' => $pieces[0], 'tail' => isset( $pieces[1] ) ? $pieces[1] : '' );
+        };
+
+        $summary = array( 'parts' => count( $parts ), 'scheduled' => 0, 'unscheduled' => 0,
+                          'attention' => 0, 'scripts' => 0 );
+        $now = time();
+
         foreach ( $parts as $index => $part )
         {
             $parts[$index]['crontab'] = \expCronjobRunner::crontabLine( $part['name'], $defaultSiteAccess );
             $parts[$index]['schedule'] = \expCronjobRunner::crontabSchedule( $part['name'] );
             $parts[$index]['scheduled'] = isset( $cronjobScheduled[$part['name']] );
             $parts[$index]['log'] = \expCronjobRunner::targetLogFile( $part['name'] );
+
+            // The schedule that counts is the one the crontab really has; the
+            // suggested one only when nothing schedules the part.
+            $schedule = $parts[$index]['scheduled']
+                      ? \expCronjobRunner::scheduleOfLine( $cronjobScheduled[$part['name']] )
+                      : $parts[$index]['schedule'];
+            $parts[$index]['schedule_active'] = $schedule === false ? '' : $schedule;
+            $parts[$index]['schedule_text'] = $schedule === false ? '' : \expCronjobRunner::describeSchedule( $schedule );
+            $parts[$index]['next_run'] = ( $parts[$index]['scheduled'] && $schedule !== false )
+                                       ? (int)\expCronjobRunner::nextRun( $schedule, $now ) : 0;
+            $parts[$index]['last_run'] = isset( $cronjobLastRuns[$part['name']] ) ? $cronjobLastRuns[$part['name']] : false;
+            $parts[$index]['command'] = $splitCommand( \expCronjobRunner::commandLine( $part['name'], $siteAccessMark ) );
+            $parts[$index]['attention'] = $part['forbidden'] || $part['missing'] > 0
+                                        || ( $parts[$index]['last_run'] !== false && $parts[$index]['last_run']['errors'] > 0 );
+
+            $searchText = array( $part['name'], $part['label'] );
             foreach ( $part['scripts'] as $scriptIndex => $script )
             {
                 $parts[$index]['scripts'][$scriptIndex]['directory'] =
                     $script['path'] === false ? '' : dirname( $script['path'] );
                 $parts[$index]['scripts'][$scriptIndex]['log'] =
                     \expCronjobRunner::targetLogFile( $part['name'], $script['name'] );
+                $parts[$index]['scripts'][$scriptIndex]['description'] =
+                    \expCronjobRunner::scriptDescription( $script['path'] );
+                $parts[$index]['scripts'][$scriptIndex]['command'] =
+                    $splitCommand( \expCronjobRunner::commandLine( $part['name'], $siteAccessMark, $script['name'] ) );
+                $searchText[] = $script['name'];
+                $searchText[] = $parts[$index]['scripts'][$scriptIndex]['description'];
             }
+            // The scripts by name, for the line a folded script list shows.
+            $scriptNames = array();
+            foreach ( $part['scripts'] as $script )
+                $scriptNames[] = $script['name'];
+            $parts[$index]['script_names'] = implode( ', ', $scriptNames );
+            // What the filter on the page matches against, lower case.
+            $parts[$index]['search'] = mb_strtolower( implode( ' ', $searchText ), 'UTF-8' );
+
+            $summary['scripts'] += count( $part['scripts'] );
+            $summary[$parts[$index]['scheduled'] ? 'scheduled' : 'unscheduled']++;
+            if ( $parts[$index]['attention'] )
+                $summary['attention']++;
         }
 
         // The parts and their scripts are the long list on this page - it grows with
@@ -231,9 +287,15 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'limit', $pageLimit );
         $tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
         // On disk, named by no part, so never run by anything.
-        $tpl->setVariable( 'cronjob_available_scripts', \expCronjobRunner::availableScripts() );
+        $availableScripts = \expCronjobRunner::availableScripts();
+        foreach ( $availableScripts as $spareIndex => $spare )
+            $availableScripts[$spareIndex]['description'] = \expCronjobRunner::scriptDescription( $spare['path'] );
+        $tpl->setVariable( 'cronjob_available_scripts', $availableScripts );
         // What ran, when, and whether it complained.
-        $tpl->setVariable( 'cronjob_history', \expCronjobRunner::history( 20 ) );
+        $cronjobHistory = \expCronjobRunner::history( 20 );
+        $tpl->setVariable( 'cronjob_history', $cronjobHistory );
+        $tpl->setVariable( 'cronjob_last_run', $cronjobHistory ? $cronjobHistory[0] : false );
+        $tpl->setVariable( 'cronjob_summary', $summary );
         // Joined here, not in the template. A newline written between two template
         // tags is whitespace between tags, and the engine drops it - which turned the
         // crontab block into one unreadable run-on line.
