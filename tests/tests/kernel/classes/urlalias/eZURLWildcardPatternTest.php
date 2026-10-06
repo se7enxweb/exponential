@@ -58,6 +58,7 @@ class eZURLWildcardPatternTest extends PHPUnit\Framework\TestCase
     public function testDestinationRefersToTheGroups()
     {
         $replace = eZURLWildcardPatternTestProbe::replace( array( 'destination_url' => 'archive/{2}/{1}', 'type' => 1 ) );
+        $this->assertSame( 'archive/${2}/${1}', $replace['uri'] );
         $this->assertSame( array( 'destination_url' => 'archive/{2}/{1}', 'type' => 1 ), $replace['info'] );
         $this->assertSame( '', eZURLWildcardPatternTestProbe::replace( array() )['uri'] );
     }
@@ -71,6 +72,7 @@ class eZURLWildcardPatternTest extends PHPUnit\Framework\TestCase
             'case insensitive' => array( 'News/*', 'n/{1}', 'NEWS/Item', 'n/Item' ),
             'no match' => array( 'news/*', 'n/{1}', 'blog/news/1', false ),
             'star may be empty' => array( 'news/*', 'n/{1}', 'news/', 'n/' ),
+            'digit after a group reference' => array( 'news/*', 'page/{1}0', 'news/5', 'page/50' ),
             'unused group' => array( 'shop/*', 'products', 'shop/anything', 'products' ),
         );
     }

@@ -561,7 +561,8 @@ class eZURLWildcard extends eZPersistentObject
             }
             else
             {
-                $replaceArray[] = "\${$replaceWildcardItem}";
+                // ${n}, not $n: a digit after {1} in the destination must not make it group 10
+                $replaceArray[] = '${' . $replaceWildcardItem . '}';
             }
         }
         $replaceCode = implode( '', $replaceArray );
