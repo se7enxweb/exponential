@@ -166,7 +166,7 @@ class expBenchmarkHttp
      * @param int $count
      * @param array $options
      * @param array|null $connections from connections(); null for a pool of this batch only
-     * @return array( 'requests' => list of array( ms, ttfb, status, bytes, cache, error ), 'wall' => seconds )
+     * @return array( 'requests' => list of array( ms, ttfb, status, bytes, cache, server, error ), 'wall' => seconds )
      */
     public static function batch( $url, $count, $options = array(), $connections = null )
     {
@@ -185,12 +185,14 @@ class expBenchmarkHttp
         $start = function ( $handle ) use ( &$headers, &$queued, &$inFlight, $multi, $url, $options )
         {
             $id = spl_object_id( $handle );
-            $headers[$id] = '';
+            $headers[$id] = array( 'cache' => '', 'server' => '' );
             curl_setopt( $handle, CURLOPT_URL, $options['cold'] ? self::bust( $url ) : $url );
             curl_setopt( $handle, CURLOPT_HEADERFUNCTION, function ( $ch, $line ) use ( &$headers, $id )
             {
                 if ( stripos( $line, 'x-exp-cache:' ) === 0 or stripos( $line, 'x-cache:' ) === 0 )
-                    $headers[$id] = trim( substr( $line, strpos( $line, ':' ) + 1 ) );
+                    $headers[$id]['cache'] = trim( substr( $line, strpos( $line, ':' ) + 1 ) );
+                else if ( stripos( $line, 'server:' ) === 0 )
+                    $headers[$id]['server'] = trim( substr( $line, 7 ) );
                 return strlen( $line );
             } );
             curl_multi_add_handle( $multi, $handle );
@@ -217,7 +219,8 @@ class expBenchmarkHttp
             while ( $info = curl_multi_info_read( $multi ) )
             {
                 $handle = $info['handle'];
-                $results[] = self::record( $handle, $info['result'], $headers[spl_object_id( $handle )] );
+                $seen = $headers[spl_object_id( $handle )];
+                $results[] = self::record( $handle, $info['result'], $seen['cache'], $seen['server'] );
                 curl_multi_remove_handle( $multi, $handle );
                 $inFlight--;
                 if ( $queued > 0 )
@@ -572,7 +575,7 @@ class expBenchmarkHttp
     /**
      * One finished request as a sample.
      */
-    protected static function record( $handle, $result, $cacheHeader )
+    protected static function record( $handle, $result, $cacheHeader, $serverHeader = '' )
     {
         $error = '';
         if ( $result !== CURLE_OK )
@@ -588,6 +591,7 @@ class expBenchmarkHttp
             'status' => (int)curl_getinfo( $handle, CURLINFO_RESPONSE_CODE ),
             'bytes'  => (int)curl_getinfo( $handle, CURLINFO_SIZE_DOWNLOAD ),
             'cache'  => (string)$cacheHeader,
+            'server' => (string)$serverHeader,
             'error'  => $error,
         );
     }

@@ -41,6 +41,13 @@ class expBenchmark
     const DEFAULT_MIN_DELTA_MS = 1.0;
 
     /**
+     * Default regression threshold of the micro mode, in percent of the normalised median. Higher than the
+     * HTTP and kernel default because a shared CI runner is noisier than any machine a person benchmarks on,
+     * even after normalisation.
+     */
+    const DEFAULT_MICRO_THRESHOLD = 40.0;
+
+    /**
      * The p-th percentile of a sorted list, by linear interpolation between the two nearest ranks
      * (the method of numpy's default, Excel's PERCENTILE.INC and R's type 7).
      *
@@ -69,7 +76,7 @@ class expBenchmark
      * Summary statistics of a list of durations.
      *
      * @param array $samples milliseconds, in any order
-     * @return array n, min, mean, median, p95, p99, max, stddev (all null when there are no samples)
+     * @return array n, min, mean, median, p90, p95, p99, max, stddev (sample standard deviation, n - 1) (all null when there are no samples)
      */
     public static function summarize( $samples )
     {
@@ -78,7 +85,7 @@ class expBenchmark
         $n = count( $samples );
         if ( $n === 0 )
         {
-            return array( 'n' => 0, 'min' => null, 'mean' => null, 'median' => null, 'p95' => null,
+            return array( 'n' => 0, 'min' => null, 'mean' => null, 'median' => null, 'p90' => null, 'p95' => null,
                           'p99' => null, 'max' => null, 'stddev' => null );
         }
 
@@ -93,6 +100,7 @@ class expBenchmark
             'min'    => $samples[0],
             'mean'   => $mean,
             'median' => self::percentile( $samples, 50 ),
+            'p90'    => self::percentile( $samples, 90 ),
             'p95'    => self::percentile( $samples, 95 ),
             'p99'    => self::percentile( $samples, 99 ),
             'max'    => $samples[$n - 1],
@@ -106,7 +114,7 @@ class expBenchmark
      * @param string $target the base URL the request went to ("https://example.com:8080")
      * @param string $name the path that was asked for
      * @param array $requests list of array( 'ms' => float, 'ttfb' => float, 'status' => int, 'bytes' => int,
-     *                        'cache' => string, 'error' => string ) -- one per request
+     *                        'cache' => string, 'server' => string, 'error' => string ) -- one per request
      * @param float $wallSeconds how long the requests took together (for requests per second)
      * @param string $tool the client that made them
      * @return array a row
@@ -117,6 +125,7 @@ class expBenchmark
         $ttfb = array();
         $status = array();
         $cache = array();
+        $servers = array();
         $bytes = 0;
         $errors = 0;
         $ok = 0;
@@ -147,6 +156,8 @@ class expBenchmark
             if ( isset( $request['ttfb'] ) )
                 $ttfb[] = (float)$request['ttfb'];
             $bytes += isset( $request['bytes'] ) ? (int)$request['bytes'] : 0;
+            if ( isset( $request['server'] ) and $request['server'] !== '' )
+                $servers[$request['server']] = isset( $servers[$request['server']] ) ? $servers[$request['server']] + 1 : 1;
             if ( isset( $request['cache'] ) and $request['cache'] !== '' )
             {
                 // "BYPASS (query string)" and "BYPASS (cookie)" are the same answer for a summary.
@@ -181,6 +192,9 @@ class expBenchmark
         $row['status'] = $status;
         $row['bytes'] = count( $times ) > 0 ? (int)round( $bytes / count( $times ) ) : 0;
         $row['cache'] = $cache;
+        // what answered: the Server header most responses carried ("" when the server sends none)
+        arsort( $servers );
+        $row['server'] = $servers ? (string)key( $servers ) : '';
         return $row;
     }
 
@@ -196,7 +210,7 @@ class expBenchmark
      */
     public static function toolRow( $target, $name, $parsed, $tool )
     {
-        $fields = array( 'n', 'min', 'mean', 'median', 'p95', 'p99', 'max', 'stddev', 'rps', 'errors', 'bytes' );
+        $fields = array( 'n', 'min', 'mean', 'median', 'p90', 'p95', 'p99', 'max', 'stddev', 'rps', 'errors', 'bytes' );
         $row = array(
             'key'    => self::key( $target, $name ),
             'kind'   => 'http',
@@ -258,7 +272,7 @@ class expBenchmark
 
     /**
      * A whole run: what was measured, where, with what, and the rows. This is what --save and --json write
-     * and what --baseline reads.
+     * and what --baseline reads. It carries the environment (environment()) unless $extra brings its own.
      *
      * @param string $mode "http" or "kernel"
      * @param array $rows
@@ -279,8 +293,258 @@ class expBenchmark
             'php'         => PHP_VERSION,
             'exponential' => $version,
             'settings'    => $settings,
+            'environment' => isset( $extra['environment'] ) ? $extra['environment'] : self::environment(),
             'rows'        => array_values( $rows ),
         ) + $extra;
+    }
+
+    /**
+     * What a run was made with, so two runs can be judged comparable or not: PHP, the engine, OPcache and
+     * JIT, Xdebug (which alone makes PHP several times slower), the machine and its load, and the commit.
+     *
+     * @param string|null $root the installation root, for the commit (default: EXP_ROOT_DIR or the current directory)
+     * @return array
+     */
+    public static function environment( $root = null )
+    {
+        $opcache = function_exists( 'opcache_get_status' ) && @opcache_get_status( false ) !== false;
+        $jit = '';
+        if ( $opcache )
+        {
+            $status = @opcache_get_status( false );
+            if ( is_array( $status ) and !empty( $status['jit']['enabled'] ) and !empty( $status['jit']['on'] ) )
+                $jit = (string)ini_get( 'opcache.jit' );
+        }
+        $load = function_exists( 'sys_getloadavg' ) ? @sys_getloadavg() : false;
+        $version = class_exists( 'eZPublishSDK' ) ? eZPublishSDK::version() : '';
+        if ( $root === null )
+            $root = defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : getcwd();
+
+        return array(
+            'date'        => gmdate( 'Y-m-d\TH:i:s\Z' ),
+            'php'         => PHP_VERSION,
+            'sapi'        => PHP_SAPI,
+            'engine'      => 'php-' . PHP_SAPI . ( defined( 'EXP_ENGINE_PHAR' ) ? ' (engine archive)' : '' ),
+            'opcache'     => $opcache,
+            'jit'         => $jit !== '' ? $jit : false,
+            'xdebug'      => extension_loaded( 'xdebug' ) ? (string)ini_get( 'xdebug.mode' ) : false,
+            'os'          => PHP_OS_FAMILY . ' ' . php_uname( 'r' ),
+            'arch'        => php_uname( 'm' ),
+            'machine'     => php_uname( 'n' ),
+            'cpus'        => self::cpuCount(),
+            'load'        => is_array( $load ) ? round( (float)$load[0], 2 ) : null,
+            'exponential' => $version,
+            'git_commit'  => self::gitCommit( $root ),
+            'ci'          => getenv( 'GITHUB_ACTIONS' ) === 'true' ? 'github-actions' : ( getenv( 'CI' ) ? 'ci' : '' ),
+        );
+    }
+
+    /**
+     * The commit the installation is at, read from .git without running git (it need not be installed), or
+     * GITHUB_SHA in a GitHub workflow. A linked worktree (.git is a file) and packed refs are followed.
+     *
+     * @param string $root
+     * @return string the full hash, or an empty string
+     */
+    public static function gitCommit( $root )
+    {
+        $git = rtrim( (string)$root, '/' ) . '/.git';
+        if ( is_file( $git ) and preg_match( '/^gitdir:\s*(.+)$/m', (string)@file_get_contents( $git ), $m ) )
+        {
+            $git = trim( $m[1] );
+            if ( $git !== '' and $git[0] !== '/' )
+                $git = rtrim( (string)$root, '/' ) . '/' . $git;
+        }
+        $sha = '';
+        $head = is_file( $git . '/HEAD' ) ? trim( (string)@file_get_contents( $git . '/HEAD' ) ) : '';
+        if ( preg_match( '/^[0-9a-f]{40,64}$/', $head ) )
+        {
+            $sha = $head;
+        }
+        else if ( preg_match( '#^ref:\s*(\S+)$#', $head, $m ) )
+        {
+            $dirs = array( $git );
+            if ( is_file( $git . '/commondir' ) )
+            {
+                $common = trim( (string)@file_get_contents( $git . '/commondir' ) );
+                $dirs[] = $common !== '' && $common[0] === '/' ? $common : $git . '/' . $common;
+            }
+            foreach ( $dirs as $dir )
+            {
+                if ( is_file( $dir . '/' . $m[1] ) )
+                {
+                    $sha = trim( (string)@file_get_contents( $dir . '/' . $m[1] ) );
+                    break;
+                }
+                if ( is_file( $dir . '/packed-refs' ) and
+                     preg_match( '#^([0-9a-f]{40,64}) ' . preg_quote( $m[1], '#' ) . '$#m', (string)@file_get_contents( $dir . '/packed-refs' ), $p ) )
+                {
+                    $sha = $p[1];
+                    break;
+                }
+            }
+        }
+        if ( !preg_match( '/^[0-9a-f]{40,64}$/', $sha ) )
+            $sha = preg_match( '/^[0-9a-f]{40,64}$/', (string)getenv( 'GITHUB_SHA' ) ) ? (string)getenv( 'GITHUB_SHA' ) : '';
+        return $sha;
+    }
+
+    /**
+     * What differs between the environments of two runs in a way that moves the numbers by more than noise:
+     * the PHP minor version, OPcache, the JIT and Xdebug. A comparison across such a difference compares the
+     * set-up, not the code; the command prints these as notes.
+     *
+     * @param array|null $baseline the environment of the baseline (null for a run saved before it was recorded)
+     * @param array|null $current
+     * @return array list of "what: baseline -> current"
+     */
+    public static function environmentDifferences( $baseline, $current )
+    {
+        if ( !is_array( $baseline ) or !is_array( $current ) )
+            return array();
+        $differences = array();
+        $minor = function ( $version )
+        {
+            return implode( '.', array_slice( explode( '.', (string)$version ), 0, 2 ) );
+        };
+        if ( isset( $baseline['php'], $current['php'] ) and $minor( $baseline['php'] ) !== $minor( $current['php'] ) )
+            $differences[] = 'PHP: ' . $baseline['php'] . ' -> ' . $current['php'];
+        $show = function ( $value )
+        {
+            return $value === false || $value === null || $value === '' ? 'off' : ( $value === true ? 'on' : (string)$value );
+        };
+        foreach ( array( 'opcache' => 'OPcache', 'jit' => 'JIT', 'xdebug' => 'Xdebug' ) as $key => $label )
+        {
+            if ( array_key_exists( $key, $baseline ) and array_key_exists( $key, $current )
+                 and $show( $baseline[$key] ) !== $show( $current[$key] ) )
+                $differences[] = $label . ': ' . $show( $baseline[$key] ) . ' -> ' . $show( $current[$key] );
+        }
+        return $differences;
+    }
+
+    /**
+     * @return int|null the number of logical processors, null when it cannot be told
+     */
+    public static function cpuCount()
+    {
+        if ( is_readable( '/proc/cpuinfo' ) )
+        {
+            $count = preg_match_all( '/^processor\s*:/m', (string)@file_get_contents( '/proc/cpuinfo' ) );
+            if ( $count > 0 )
+                return $count;
+        }
+        $env = getenv( 'NUMBER_OF_PROCESSORS' );
+        return $env !== false && (int)$env > 0 ? (int)$env : null;
+    }
+
+    /**
+     * One row of a micro probe: $samples are the times of one iteration, each of which did $ops operations.
+     *
+     * @param string $name
+     * @param array $samples milliseconds per iteration
+     * @param int $ops operations per iteration
+     * @param float|null $calibration the median of the calibration loop of the same run, in milliseconds
+     * @param int $errors iterations that failed
+     * @param string $note what the probe does
+     * @return array a row; rps is operations per second at the median, normalized the median divided by $calibration
+     */
+    public static function microRow( $name, $samples, $ops, $calibration = null, $errors = 0, $note = '' )
+    {
+        $row = array(
+            'key'    => self::key( 'micro', $name ),
+            'kind'   => 'micro',
+            'target' => 'micro',
+            'name'   => (string)$name,
+            'tool'   => 'hrtime',
+        ) + self::summarize( $samples );
+        $ops = max( 1, (int)$ops );
+        $row['requests'] = $row['n'] + (int)$errors;
+        $row['errors'] = (int)$errors;
+        $row['error_messages'] = array();
+        $row['ops'] = $ops;
+        $row['rps'] = ( $row['median'] !== null and $row['median'] > 0 ) ? $ops * 1000.0 / $row['median'] : null;
+        $row['normalized'] = self::normalize( $row['median'], $calibration );
+        $row['note'] = (string)$note;
+        return $row;
+    }
+
+    /**
+     * A time relative to the calibration loop measured in the same run: what is left when the speed of the
+     * machine is divided out. 2.0 means "takes twice as long as the reference loop", on any machine.
+     *
+     * @param float|null $ms
+     * @param float|null $calibrationMs
+     * @return float|null
+     */
+    public static function normalize( $ms, $calibrationMs )
+    {
+        if ( $ms === null or $calibrationMs === null or (float)$calibrationMs <= 0.0 )
+            return null;
+        return (float)$ms / (float)$calibrationMs;
+    }
+
+    /**
+     * Compares two micro runs after normalisation: a probe regressed when its median relative to the run's own
+     * calibration loop grew by more than $threshold percent. Runs on machines of different speed compare,
+     * because the machine's speed is divided out on both sides.
+     *
+     * @param array $baseline a saved micro run (with 'calibration' and rows)
+     * @param array $document the current micro run
+     * @param float $threshold percent
+     * @return array the structure of compare(), plus 'calibration' => array( baseline, current, speed )
+     *               where speed above 1 means this machine ran the reference loop faster than the baseline's
+     * @throws RuntimeException when either run has no calibration
+     */
+    public static function compareNormalized( $baseline, $document, $threshold = self::DEFAULT_MICRO_THRESHOLD )
+    {
+        $threshold = (float)$threshold;
+        $baseCalibration = isset( $baseline['calibration']['median'] ) ? (float)$baseline['calibration']['median'] : 0.0;
+        $calibration = isset( $document['calibration']['median'] ) ? (float)$document['calibration']['median'] : 0.0;
+        if ( $baseCalibration <= 0.0 or $calibration <= 0.0 )
+            throw new RuntimeException( 'Both runs need a calibration loop to be compared after normalisation (micro mode)' );
+
+        $old = array();
+        foreach ( (array)$baseline['rows'] as $row )
+            $old[$row['key']] = $row;
+        $new = array();
+        foreach ( (array)$document['rows'] as $row )
+            $new[$row['key']] = $row;
+
+        $checks = array();
+        $regressions = 0;
+        foreach ( $new as $key => $row )
+        {
+            if ( !isset( $old[$key] ) )
+                continue;
+            $before = isset( $old[$key]['median'] ) ? self::normalize( $old[$key]['median'], $baseCalibration ) : null;
+            $now = isset( $row['median'] ) ? self::normalize( $row['median'], $calibration ) : null;
+            if ( $before === null or $now === null )
+                continue;
+            $change = self::changePercent( $before, $now );
+            $regressed = $change !== null && $change > $threshold;
+            $checks[] = self::check( $key, 'normalized', $before, $now, $change, $regressed );
+            $regressions += $regressed ? 1 : 0;
+
+            $baseRate = self::errorRate( $old[$key] );
+            $rate = self::errorRate( $row );
+            if ( $baseRate !== null and $rate !== null and $rate > $baseRate )
+            {
+                $checks[] = self::check( $key, 'error_pct', $baseRate, $rate, $rate - $baseRate, true );
+                $regressions++;
+            }
+        }
+
+        return array(
+            'method'      => 'normalized',
+            'threshold'   => $threshold,
+            'min_delta'   => 0.0,
+            'regressions' => $regressions,
+            'checks'      => $checks,
+            'missing'     => array_values( array_diff( array_keys( $old ), array_keys( $new ) ) ),
+            'new'         => array_values( array_diff( array_keys( $new ), array_keys( $old ) ) ),
+            'calibration' => array( 'baseline' => $baseCalibration, 'current' => $calibration,
+                                    'speed' => $baseCalibration / $calibration ),
+        );
     }
 
     /**
@@ -459,8 +723,9 @@ class expBenchmark
      */
     public static function csv( $rows )
     {
-        $columns = array( 'key', 'kind', 'target', 'name', 'tool', 'n', 'errors', 'min', 'mean', 'median',
-                          'p95', 'p99', 'max', 'stddev', 'rps', 'ttfb_median', 'bytes', 'status', 'cache', 'mem_peak' );
+        $columns = array( 'key', 'kind', 'target', 'name', 'tool', 'n', 'errors', 'min', 'mean', 'median', 'p90',
+                          'p95', 'p99', 'max', 'stddev', 'rps', 'ttfb_median', 'bytes', 'status', 'cache', 'server',
+                          'mem_peak', 'ops', 'normalized' );
         $handle = fopen( 'php://temp', 'r+' );
         fputcsv( $handle, $columns, ',', '"', '' );
         foreach ( (array)$rows as $row )
@@ -495,10 +760,13 @@ class expBenchmark
         if ( empty( $rows ) )
             return "  (nothing measured)\n";
 
-        $kernel = isset( $rows[0]['kind'] ) && $rows[0]['kind'] === 'kernel';
+        $kind = isset( $rows[0]['kind'] ) ? $rows[0]['kind'] : 'http';
+        if ( $kind === 'micro' )
+            return self::microTable( $rows );
+        $kernel = $kind === 'kernel';
         $header = $kernel
-            ? array( 'probe', 'n', 'min', 'median', 'p95', 'p99', 'max', 'ops/s', 'err', 'mem peak', 'note' )
-            : array( 'target', 'url', 'n', 'min', 'median', 'p95', 'p99', 'max', 'req/s', 'err', 'status', 'bytes', 'cache' );
+            ? array( 'probe', 'n', 'min', 'median', 'p90', 'p99', 'max', 'sd', 'ops/s', 'err', 'mem peak', 'note' )
+            : array( 'target', 'url', 'n', 'min', 'median', 'p90', 'p99', 'max', 'sd', 'req/s', 'err', 'status', 'bytes', 'cache' );
 
         $lines = array( $header );
         foreach ( $rows as $row )
@@ -507,8 +775,8 @@ class expBenchmark
             {
                 $lines[] = array(
                     $row['name'], (string)$row['n'], self::ms( $row['min'] ), self::ms( $row['median'] ),
-                    self::ms( $row['p95'] ), self::ms( $row['p99'] ), self::ms( $row['max'] ),
-                    self::number( $row['rps'] ), (string)$row['errors'],
+                    self::ms( self::field( $row, 'p90' ) ), self::ms( $row['p99'] ), self::ms( $row['max'] ),
+                    self::ms( self::field( $row, 'stddev' ) ), self::number( $row['rps'] ), (string)$row['errors'],
                     isset( $row['mem_peak'] ) ? self::bytes( $row['mem_peak'] ) : '-',
                     isset( $row['note'] ) ? $row['note'] : '',
                 );
@@ -517,14 +785,37 @@ class expBenchmark
             {
                 $lines[] = array(
                     self::shortTarget( $row['target'] ), $row['name'], (string)$row['n'], self::ms( $row['min'] ),
-                    self::ms( $row['median'] ), self::ms( $row['p95'] ), self::ms( $row['p99'] ),
-                    self::ms( $row['max'] ), self::number( $row['rps'] ), (string)$row['errors'],
-                    self::counts( $row['status'] ), self::bytes( $row['bytes'] ),
+                    self::ms( $row['median'] ), self::ms( self::field( $row, 'p90' ) ), self::ms( $row['p99'] ),
+                    self::ms( $row['max'] ), self::ms( self::field( $row, 'stddev' ) ), self::number( $row['rps'] ),
+                    (string)$row['errors'], self::counts( $row['status'] ), self::bytes( $row['bytes'] ),
                     $row['tool'] !== 'curl' ? '(' . $row['tool'] . ')' : self::counts( $row['cache'] ),
                 );
             }
         }
-        return self::render( $lines, $kernel ? array( 0, 10 ) : array( 0, 1, 10, 12 ) );
+        return self::render( $lines, $kernel ? array( 0, 11 ) : array( 0, 1, 11, 13 ) );
+    }
+
+    /**
+     * Micro rows as a text table: the time of one iteration, the operations per second at the median and the
+     * median relative to the calibration loop of the same run.
+     *
+     * @param array $rows micro rows
+     * @return string
+     */
+    public static function microTable( $rows )
+    {
+        $lines = array( array( 'probe', 'n', 'ops', 'min', 'median', 'p90', 'p99', 'max', 'sd', 'ops/s', 'x calib', 'err', 'note' ) );
+        foreach ( (array)$rows as $row )
+        {
+            $lines[] = array(
+                $row['name'], (string)$row['n'], (string)self::field( $row, 'ops' ), self::ms( $row['min'] ),
+                self::ms( $row['median'] ), self::ms( self::field( $row, 'p90' ) ), self::ms( $row['p99'] ),
+                self::ms( $row['max'] ), self::ms( self::field( $row, 'stddev' ) ), self::number( $row['rps'] ),
+                self::field( $row, 'normalized' ) === null ? '-' : sprintf( '%.3f', $row['normalized'] ),
+                (string)$row['errors'], isset( $row['note'] ) ? $row['note'] : '',
+            );
+        }
+        return self::render( $lines, array( 0, 12 ) );
     }
 
     /**
@@ -564,6 +855,13 @@ class expBenchmark
             if ( !$all and !$check['regressed'] )
                 continue;
             $isPct = $check['metric'] === 'error_pct';
+            if ( $check['metric'] === 'normalized' )
+            {
+                $lines[] = array( $check['key'], 'median/calib', sprintf( '%.3f', $check['baseline'] ), sprintf( '%.3f', $check['current'] ),
+                                  $check['change_pct'] === null ? '-' : sprintf( '%+.1f%%', $check['change_pct'] ),
+                                  $check['regressed'] ? 'REGRESSED' : 'ok' );
+                continue;
+            }
             $lines[] = array(
                 $check['key'], $check['metric'],
                 $isPct ? self::number( $check['baseline'] ) . '%' : self::number( $check['baseline'] ),
@@ -615,6 +913,14 @@ class expBenchmark
         if ( $requests <= 0 or !isset( $row['errors'] ) )
             return null;
         return (int)$row['errors'] / $requests * 100.0;
+    }
+
+    /**
+     * @return mixed the field of a row, null when it does not have it (a run saved before the field existed)
+     */
+    protected static function field( $row, $name )
+    {
+        return isset( $row[$name] ) ? $row[$name] : null;
     }
 
     protected static function check( $key, $metric, $baseline, $current, $change, $regressed )
