@@ -84,6 +84,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Remote services and apps](remote-services-and-apps.md) | Services called from the shell and from Python, a personal API token, a portal front end | 20 minutes |
 | [Personal API keys](api-keys.md) | A key made on the site with only the scopes it needs, REST called with it from curl and Python, a key rotated and revoked; as an administrator: keys allowed for a role, every key seen and revoked, the audit read | 20 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
+| [The upgrade check](upgrade-check.md) | The files and the database compared with the release on Setup > Upgrade check, every kind of finding read and dealt with, the report downloaded, the same check run from a shell | 15 minutes |
 
 ## Road 1: editors
 

@@ -31,8 +31,28 @@ Exit status `0` means every file matches. `1` means something changed, went
 missing, or the list could not be read. The script runs `md5sum --check` on
 `share/filelist.md5`.
 
-In the browser use **Setup > System upgrade > Check file consistency**; it reads
-the same file.
+In the browser use **Setup > Upgrade check > Check file consistency**; it reads
+the same file, and the `share/filelist.md5` of every active extension that carries
+one. Since October 2026 it groups what it finds (modified, missing, unreadable;
+files git tracks but the manifest does not list, malformed and unsorted lines as
+notes), shows the manifest's dates and which extensions it covers, has a search
+and filters, says how to deal with each finding and offers the result as CSV or
+text. The guide: [The upgrade check](../../guides/upgrade-check.md).
+
+`php bin/php/checkmanifest.php` reads the manifests with the same class as the
+page (`expFileConsistencyReport`), so both agree on the same tree:
+
+```bash
+php bin/php/checkmanifest.php --all                        # the manifest of Exponential
+php bin/php/checkmanifest.php --all --extensions           # and every extension's own manifest
+php bin/php/checkmanifest.php --all --extensions --csv     # the findings as CSV
+```
+
+A manifest line is "32 hex digits, two spaces, a path relative to the manifest's
+directory". A line ending in CRLF is read like one ending in LF. A line that is
+not in that form, names a path outside the installation or repeats a path is a
+malformed line: it is skipped and reported, never followed. An extension's
+manifest may start with `name:`, `version:` and `files_count:` lines.
 
 ## Create the list for a release (maintainers)
 
