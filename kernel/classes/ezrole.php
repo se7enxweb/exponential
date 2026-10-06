@@ -1425,12 +1425,29 @@ class eZRole extends eZPersistentObject
      */
     protected function auditAssignmentRows()
     {
-        $rows = array();
-        foreach ( (array)$this->fetchUserByRole() as $r )
+        // The rows themselves, without their objects: removing the selected assignments of a role given to
+        // thousands of users asked for these once per removed assignment, and fetchUserByRole() loaded every
+        // object each time. The user id is the one of the row, also when its object is gone (it was 0 then).
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
         {
-            $rows[] = array( 'user_id' => $r['user_object'] instanceof eZContentObject ? (int)$r['user_object']->attribute( 'id' ) : 0,
-                             'id' => (int)$r['user_role_id'], 'limit_identifier' => (string)$r['limit_ident'],
-                             'limit_value' => (string)$r['limit_value'] );
+            $found = (array)$db->aggregate( 'ezuser_role', array(
+                array( '$match' => array( 'role_id' => (int)$this->ID ) ),
+                array( '$project' => array( '_id' => 0, 'contentobject_id' => 1, 'id' => 1, 'limit_identifier' => 1, 'limit_value' => 1 ) ),
+            ) );
+        }
+        else
+        {
+            $found = (array)$db->arrayQuery( 'SELECT contentobject_id, id, limit_identifier, limit_value
+                                              FROM ezuser_role WHERE role_id = ' . (int)$this->ID );
+        }
+        $rows = array();
+        foreach ( $found as $r )
+        {
+            $rows[] = array( 'user_id' => (int)$r['contentobject_id'],
+                             'id' => (int)$r['id'],
+                             'limit_identifier' => isset( $r['limit_identifier'] ) ? (string)$r['limit_identifier'] : '',
+                             'limit_value' => isset( $r['limit_value'] ) ? (string)$r['limit_value'] : '' );
         }
         return $rows;
     }
@@ -1485,67 +1502,445 @@ class eZRole extends eZPersistentObject
     /**
      * How many users and user groups this role is assigned to, each limited assignment counted on its own.
      *
-     * The pager of role/view needs the total, and a page does not contain it.
+     * The pager of role/view needs the total, and a page does not contain it. With a $filter only the assignments
+     * whose user or group has a name containing it count (see assignmentRows()), so an assignment whose object is
+     * gone never matches a filter.
      *
+     * @param string $filter
      * @return int
      */
-    function assignmentCount()
+    function assignmentCount( $filter = '' )
     {
+        $filter = self::normaliseAssignmentFilter( $filter );
         $db = eZDB::instance();
         if ( $db->databaseName() === 'mongo' )
         {
-            return count( (array)$this->fetchUserID() );
+            if ( $filter === '' )
+                return (int)$db->count( 'ezuser_role', array( 'role_id' => (int)$this->ID ) );
+            return count( self::sortAssignmentRows( $this->mongoAssignmentRows(), $filter ) );
         }
-        $rows = $db->arrayQuery( 'SELECT COUNT(*) AS count FROM ezuser_role WHERE role_id = ' . (int)$this->ID );
-        return isset( $rows[0]['count'] ) ? (int)$rows[0]['count'] : 0;
+        if ( $filter === '' )
+        {
+            $rows = $db->arrayQuery( 'SELECT COUNT(*) AS assignment_count FROM ezuser_role WHERE role_id = ' . (int)$this->ID );
+        }
+        else
+        {
+            $rows = $db->arrayQuery( 'SELECT COUNT(*) AS assignment_count
+                                      FROM ezuser_role
+                                      LEFT JOIN ezcontentobject ON ezcontentobject.id = ezuser_role.contentobject_id
+                                      WHERE ezuser_role.role_id = ' . (int)$this->ID . '
+                                        AND ' . self::assignmentFilterSQL( $db, $filter ) );
+        }
+        return isset( $rows[0]['assignment_count'] ) ? (int)$rows[0]['assignment_count'] : 0;
     }
 
     /**
-     * One page of the users and user groups this role is assigned to, in the form of fetchUserByRole(), sorted by
-     * their names (an assignment whose object is gone comes first) and then by the assignment, so paging never
-     * drops or repeats one.
+     * How many assignments of this role point to a user or group that no longer exists (its content object was
+     * removed without the assignment). They are listed first on role/view, without a name, so they can be removed.
      *
-     * fetchUserByRole() loads every assignment with its object, which the permission checks and the audit need. A
-     * screen does not: a role given to thousands of users took long to draw.
-     *
-     * @param int $offset
-     * @param int $limit
-     * @return array
+     * @return int
      */
-    function assignmentPage( $offset, $limit )
+    function assignmentOrphanCount()
     {
-        $offset = max( 0, (int)$offset );
-        $limit = max( 1, (int)$limit );
         $db = eZDB::instance();
         if ( $db->databaseName() === 'mongo' )
         {
-            // No join here: the assignments of the role are sorted in php
-            $userRoles = (array)$this->fetchUserByRole();
-            usort( $userRoles, function ( $a, $b )
+            $orphans = 0;
+            foreach ( $this->mongoAssignmentRows() as $row )
             {
-                $nameA = $a['user_object'] instanceof eZContentObject ? (string)$a['user_object']->attribute( 'name' ) : '';
-                $nameB = $b['user_object'] instanceof eZContentObject ? (string)$b['user_object']->attribute( 'name' ) : '';
-                return strcmp( $nameA, $nameB ) ?: ( (int)$a['user_role_id'] <=> (int)$b['user_role_id'] );
-            } );
-            return array_slice( $userRoles, $offset, $limit );
+                if ( $row['object_id'] === null )
+                    $orphans++;
+            }
+            return $orphans;
         }
-
-        $rows = $db->arrayQuery( 'SELECT ezuser_role.contentobject_id AS user_id, ezuser_role.limit_value,
-                                         ezuser_role.limit_identifier, ezuser_role.id
+        $rows = $db->arrayQuery( 'SELECT COUNT(*) AS assignment_count
                                   FROM ezuser_role
                                   LEFT JOIN ezcontentobject ON ezcontentobject.id = ezuser_role.contentobject_id
                                   WHERE ezuser_role.role_id = ' . (int)$this->ID . '
-                                  ORDER BY ezcontentobject.name ASC, ezuser_role.id ASC',
+                                    AND ezcontentobject.id IS NULL' );
+        return isset( $rows[0]['assignment_count'] ) ? (int)$rows[0]['assignment_count'] : 0;
+    }
+
+    /**
+     * How many assignments each of the given roles has, in one query: role id => count, 0 for a role without any.
+     * The role list shows it per role.
+     *
+     * @param array $roleIDs
+     * @return array
+     */
+    static function assignmentCounts( $roleIDs )
+    {
+        $ids = array();
+        foreach ( (array)$roleIDs as $id )
+        {
+            if ( (int)$id > 0 )
+                $ids[(int)$id] = 0;
+        }
+        if ( !$ids )
+            return array();
+
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezuser_role', array(
+                array( '$match' => array( 'role_id' => array( '$in' => array_keys( $ids ) ) ) ),
+                array( '$group' => array( '_id' => '$role_id', 'assignment_count' => array( '$sum' => 1 ) ) ),
+            ) );
+            foreach ( (array)$rows as $row )
+            {
+                if ( isset( $ids[(int)$row['_id']] ) )
+                    $ids[(int)$row['_id']] = (int)$row['assignment_count'];
+            }
+            return $ids;
+        }
+
+        $rows = $db->arrayQuery( 'SELECT role_id, COUNT(*) AS assignment_count
+                                  FROM ezuser_role
+                                  WHERE ' . $db->generateSQLINStatement( array_keys( $ids ), 'role_id', false, true, 'int' ) . '
+                                  GROUP BY role_id' );
+        foreach ( (array)$rows as $row )
+        {
+            if ( isset( $ids[(int)$row['role_id']] ) )
+                $ids[(int)$row['role_id']] = (int)$row['assignment_count'];
+        }
+        return $ids;
+    }
+
+    /**
+     * One page of the users and user groups this role is assigned to, in the form of fetchUserByRole() plus:
+     *
+     *  - user_id: the content object id of the assignment, also when the object is gone
+     *  - user_name: the name of the user or group in the language shown ('' when it is gone)
+     *  - main_node_id: the main node of the user or group, 0 when it has none (gone or in the trash)
+     *  - limit_node: for a Subtree limitation the node it points to, otherwise null
+     *  - limit_section: for a Section limitation the section, otherwise null
+     *
+     * Sorted as assignmentRows() sorts. The objects of a page come in one query, their main nodes in another and the
+     * nodes of the subtree limitations in a third, so a page costs the same few queries whatever its size and however
+     * many assignments the role has. fetchUserByRole() loads every assignment with its object, which the permission
+     * checks need; a screen does not: a role given to thousands of users took long to draw.
+     *
+     * @param int $offset
+     * @param int $limit
+     * @param string $filter
+     * @return array
+     */
+    function assignmentPage( $offset, $limit, $filter = '' )
+    {
+        return self::assignmentPageFromRows( $this->assignmentRows( $offset, $limit, $filter ) );
+    }
+
+    /**
+     * The rows of one page of assignments, without objects: user_id, id, limit_identifier, limit_value, name and
+     * object_id (null for an assignment whose object is gone).
+     *
+     * Sorted the same on every engine: the assignments whose object is gone first, then by name without regard to
+     * case, then by the assignment id, so paging never drops or repeats one. An empty name comes before the others
+     * (Oracle stores it as null). Upper and lower case of the letters a to z sort together on every engine; how
+     * other letters (accents, umlauts) and punctuation sort is the database's collation (MySQL's general_ci puts
+     * "Müller" next to "Muller" and "_" after the letters), and MongoDB, which sorts here in php, sorts them by
+     * their bytes after lowering them. The name is the one stored with the object (ezcontentobject.name), which
+     * is what a filter matches too.
+     *
+     * $filter keeps the assignments whose user or group has a name containing it, without regard to case; % and _
+     * in it are matched as they are, not as wildcards.
+     *
+     * @param int $offset
+     * @param int $limit
+     * @param string $filter
+     * @return array
+     */
+    function assignmentRows( $offset, $limit, $filter = '' )
+    {
+        $offset = max( 0, (int)$offset );
+        $limit = max( 1, (int)$limit );
+        $filter = self::normaliseAssignmentFilter( $filter );
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // No join on this engine: the assignments of the role and the names of their objects come in two
+            // queries and are sorted and filtered in php
+            return array_slice( self::sortAssignmentRows( $this->mongoAssignmentRows(), $filter ), $offset, $limit );
+        }
+
+        $rows = $db->arrayQuery( 'SELECT ezuser_role.contentobject_id AS user_id, ezuser_role.id,
+                                         ezuser_role.limit_identifier, ezuser_role.limit_value,
+                                         ezcontentobject.id AS object_id, ezcontentobject.name
+                                  FROM ezuser_role
+                                  LEFT JOIN ezcontentobject ON ezcontentobject.id = ezuser_role.contentobject_id
+                                  WHERE ezuser_role.role_id = ' . (int)$this->ID .
+                                  ( $filter !== '' ? ' AND ' . self::assignmentFilterSQL( $db, $filter ) : '' ) . '
+                                  ORDER BY CASE WHEN ezcontentobject.id IS NULL THEN 0
+                                                WHEN ezcontentobject.name IS NULL OR ezcontentobject.name = \'\' THEN 1
+                                                ELSE 2 END ASC,
+                                           LOWER( ezcontentobject.name ) ASC,
+                                           ezuser_role.id ASC',
                                  array( 'offset' => $offset, 'limit' => $limit ) );
-        $userRoles = array();
+        $result = array();
+        foreach ( (array)$rows as $row )
+        {
+            $result[] = self::assignmentRow( $row['user_id'], $row['id'], $row['limit_identifier'], $row['limit_value'],
+                                             $row['object_id'] === null || $row['object_id'] === '' ? null : $row['name'] );
+        }
+        return $result;
+    }
+
+    /**
+     * Every assignment of this role with the name of its object, for MongoDB: two queries, no objects.
+     *
+     * @return array rows as assignmentRows() returns them, unsorted
+     */
+    protected function mongoAssignmentRows()
+    {
+        $db = eZDB::instance();
+        $assignments = (array)$db->aggregate( 'ezuser_role', array(
+            array( '$match' => array( 'role_id' => (int)$this->ID ) ),
+            array( '$project' => array( '_id' => 0, 'contentobject_id' => 1, 'id' => 1, 'limit_identifier' => 1, 'limit_value' => 1 ) ),
+        ) );
+        $ids = array();
+        foreach ( $assignments as $assignment )
+            $ids[(int)$assignment['contentobject_id']] = true;
+
+        $names = array();
+        if ( $ids )
+        {
+            $objects = (array)$db->aggregate( 'ezcontentobject', array(
+                array( '$match' => array( 'id' => array( '$in' => array_keys( $ids ) ) ) ),
+                array( '$project' => array( '_id' => 0, 'id' => 1, 'name' => 1 ) ),
+            ) );
+            foreach ( $objects as $object )
+                $names[(int)$object['id']] = isset( $object['name'] ) ? (string)$object['name'] : '';
+        }
+
+        $rows = array();
+        foreach ( $assignments as $assignment )
+        {
+            $userID = (int)$assignment['contentobject_id'];
+            $rows[] = self::assignmentRow( $userID, isset( $assignment['id'] ) ? $assignment['id'] : 0,
+                                           isset( $assignment['limit_identifier'] ) ? $assignment['limit_identifier'] : '',
+                                           isset( $assignment['limit_value'] ) ? $assignment['limit_value'] : '',
+                                           array_key_exists( $userID, $names ) ? $names[$userID] : null );
+        }
+        return $rows;
+    }
+
+    /**
+     * One row of assignmentRows(), the same on every engine: an empty limitation is '' (Oracle returns null for an
+     * empty string) and object_id is null when the object is gone.
+     *
+     * @param mixed $userID
+     * @param mixed $id
+     * @param mixed $limitIdentifier
+     * @param mixed $limitValue
+     * @param string|null $name null when the object is gone
+     * @return array
+     */
+    static function assignmentRow( $userID, $id, $limitIdentifier, $limitValue, $name )
+    {
+        return array( 'user_id' => (int)$userID,
+                      'id' => (int)$id,
+                      'limit_identifier' => (string)$limitIdentifier,
+                      'limit_value' => (string)$limitValue,
+                      'name' => $name === null ? null : (string)$name,
+                      'object_id' => $name === null ? null : (int)$userID );
+    }
+
+    /**
+     * Filters and sorts rows of assignmentRows() the way the SQL of assignmentRows() does, for an engine that
+     * cannot join (MongoDB): the gone ones first, then by the lowered name, then by the assignment id. A filter
+     * keeps the rows whose name contains it without regard to case, and never one whose object is gone.
+     *
+     * @param array $rows
+     * @param string $filter
+     * @return array
+     */
+    static function sortAssignmentRows( array $rows, $filter = '' )
+    {
+        $filter = self::normaliseAssignmentFilter( $filter );
+        $needle = $filter === '' ? '' : self::lowerName( $filter );
+        $keep = array();
         foreach ( $rows as $row )
         {
-            $userRoles[] = array( 'user_object' => eZContentObject::fetch( $row['user_id'] ),
-                                  'user_role_id' => $row['id'],
-                                  'limit_ident' => $row['limit_identifier'],
-                                  'limit_value' => $row['limit_value'] );
+            if ( $needle !== '' && ( $row['name'] === null || strpos( self::lowerName( $row['name'] ), $needle ) === false ) )
+                continue;
+            $keep[] = $row;
         }
-        return $userRoles;
+        usort( $keep, function ( $a, $b )
+        {
+            $goneA = $a['name'] === null ? 0 : 1;
+            $goneB = $b['name'] === null ? 0 : 1;
+            if ( $goneA !== $goneB )
+                return $goneA <=> $goneB;
+            $byName = strcmp( self::lowerName( (string)$a['name'] ), self::lowerName( (string)$b['name'] ) );
+            if ( $byName !== 0 )
+                return $byName < 0 ? -1 : 1;
+            return (int)$a['id'] <=> (int)$b['id'];
+        } );
+        return $keep;
+    }
+
+    /**
+     * A name lowered for sorting and filtering in php.
+     *
+     * @param string $name
+     * @return string
+     */
+    static function lowerName( $name )
+    {
+        return function_exists( 'mb_strtolower' ) ? mb_strtolower( (string)$name, 'UTF-8' ) : strtolower( (string)$name );
+    }
+
+    /**
+     * A name filter as it is used and put in the address: control characters, '/', '(' and ')' become spaces (the
+     * address of a view is split at '/' and an unordered parameter starts with '('), runs of spaces become one, and
+     * it is cut to 100 characters.
+     *
+     * @param mixed $filter
+     * @return string
+     */
+    static function normaliseAssignmentFilter( $filter )
+    {
+        if ( !is_scalar( $filter ) )
+            return '';
+        $filter = preg_replace( '#[\x00-\x1F\x7F/()]+#u', ' ', (string)$filter );
+        if ( $filter === null )
+            return '';
+        $filter = trim( preg_replace( '#\s+#u', ' ', $filter ) );
+        return function_exists( 'mb_substr' ) ? mb_substr( $filter, 0, 100, 'UTF-8' ) : substr( $filter, 0, 100 );
+    }
+
+    /**
+     * The LIKE pattern of a name filter: the filter between two %, its own %, _ and the escape character ! escaped
+     * with !, so they match only themselves. Written with ESCAPE '!', which every SQL engine takes (SQLite and
+     * Oracle have no default escape character, and a backslash is read differently by MySQL and PostgreSQL).
+     *
+     * @param string $filter
+     * @return string
+     */
+    static function assignmentFilterLikePattern( $filter )
+    {
+        return '%' . strtr( (string)$filter, array( '!' => '!!', '%' => '!%', '_' => '!_' ) ) . '%';
+    }
+
+    /**
+     * The condition of a name filter for assignmentRows() and assignmentCount(), on the joined ezcontentobject.
+     *
+     * @param eZDBInterface $db
+     * @param string $filter
+     * @return string
+     */
+    protected static function assignmentFilterSQL( $db, $filter )
+    {
+        return "LOWER( ezcontentobject.name ) LIKE LOWER( '" . $db->escapeString( self::assignmentFilterLikePattern( $filter ) ) . "' ) ESCAPE '!'";
+    }
+
+    /**
+     * Turns rows of assignmentRows() into the entries of assignmentPage(), with the objects, main nodes and
+     * limitation nodes of all rows fetched at once.
+     *
+     * @param array $rows
+     * @return array
+     */
+    static function assignmentPageFromRows( array $rows )
+    {
+        if ( !$rows )
+            return array();
+
+        $db = eZDB::instance();
+        $objectIDs = array();
+        $limitNodeIDs = array();
+        foreach ( $rows as $row )
+        {
+            if ( $row['object_id'] !== null )
+                $objectIDs[(int)$row['user_id']] = (int)$row['user_id'];
+            $nodeID = self::subtreeLimitationNodeID( $row['limit_identifier'], $row['limit_value'] );
+            if ( $nodeID )
+                $limitNodeIDs[$nodeID] = $nodeID;
+        }
+
+        $objects = $objectIDs ? (array)eZContentObject::fetchIDArray( array_values( $objectIDs ) ) : array();
+
+        $mainNodeIDs = array();
+        if ( $objectIDs )
+        {
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $treeRows = (array)$db->aggregate( 'ezcontentobject_tree', array(
+                    array( '$match' => array( 'contentobject_id' => array( '$in' => array_values( $objectIDs ) ) ) ),
+                    array( '$project' => array( '_id' => 0, 'contentobject_id' => 1, 'node_id' => 1, 'main_node_id' => 1 ) ),
+                ) );
+            }
+            else
+            {
+                $treeRows = (array)$db->arrayQuery( 'SELECT contentobject_id, node_id, main_node_id
+                                                     FROM ezcontentobject_tree
+                                                     WHERE ' . $db->generateSQLINStatement( array_values( $objectIDs ), 'contentobject_id', false, true, 'int' ) );
+            }
+            foreach ( $treeRows as $treeRow )
+            {
+                if ( (int)$treeRow['node_id'] === (int)$treeRow['main_node_id'] )
+                    $mainNodeIDs[(int)$treeRow['contentobject_id']] = (int)$treeRow['main_node_id'];
+            }
+        }
+
+        $limitNodes = array();
+        if ( $limitNodeIDs )
+        {
+            $fetched = eZContentObjectTreeNode::fetch( array_values( $limitNodeIDs ) );
+            if ( $fetched instanceof eZContentObjectTreeNode )
+                $fetched = array( $fetched );
+            foreach ( (array)$fetched as $node )
+            {
+                if ( $node instanceof eZContentObjectTreeNode )
+                    $limitNodes[(int)$node->attribute( 'node_id' )] = $node;
+            }
+        }
+
+        $page = array();
+        foreach ( $rows as $row )
+        {
+            $userID = (int)$row['user_id'];
+            $object = null;
+            if ( $row['object_id'] !== null )
+            {
+                // An object the language filter of fetchIDArray() leaves out (not translated to a language shown
+                // and not always available) is fetched on its own; that is rare for users and groups
+                $object = isset( $objects[$userID] ) ? $objects[$userID] : eZContentObject::fetch( $userID );
+            }
+            $nodeID = self::subtreeLimitationNodeID( $row['limit_identifier'], $row['limit_value'] );
+            $section = null;
+            if ( !$nodeID && strtolower( $row['limit_identifier'] ) === 'section' && (int)$row['limit_value'] > 0 )
+                $section = eZSection::fetch( (int)$row['limit_value'] );
+
+            $page[] = array( 'user_object' => $object instanceof eZContentObject ? $object : null,
+                             'user_role_id' => $row['id'],
+                             'limit_ident' => $row['limit_identifier'],
+                             'limit_value' => $row['limit_value'],
+                             'user_id' => $userID,
+                             // The name in the language shown, as fetchIDArray() joined it: the template reading
+                             // user_object.name would ask the database once for every user or group of the page
+                             'user_name' => $object instanceof eZContentObject ? ( $object->Name !== null && $object->Name !== '' ? (string)$object->Name : (string)$object->attribute( 'name' ) ) : '',
+                             'main_node_id' => isset( $mainNodeIDs[$userID] ) ? $mainNodeIDs[$userID] : 0,
+                             'limit_node' => $nodeID && isset( $limitNodes[$nodeID] ) ? $limitNodes[$nodeID] : null,
+                             'limit_section' => $section instanceof eZSection ? $section : null );
+        }
+        return $page;
+    }
+
+    /**
+     * The node a Subtree limitation points to: the last element of its path string (/1/2/42/ gives 42), or 0 for
+     * any other limitation.
+     *
+     * @param string $limitIdentifier
+     * @param string $limitValue
+     * @return int
+     */
+    static function subtreeLimitationNodeID( $limitIdentifier, $limitValue )
+    {
+        if ( strtolower( (string)$limitIdentifier ) !== 'subtree' )
+            return 0;
+        $parts = array_values( array_filter( explode( '/', (string)$limitValue ), 'strlen' ) );
+        return $parts ? (int)end( $parts ) : 0;
     }
 
     static function fetchRolesByLimitation( $limit_identifier, $limit_value )
