@@ -44,13 +44,53 @@ class ezpRestRouter extends ezcMvcRouter
     }
 
     /**
+     * The first route that matches the URI and the method.
+     *
+     * A route whose pattern matches but which does not take the request's method no longer ends the search with
+     * "405 Method Not Allowed": the routes after it are tried too, so a provider can register a read route and a
+     * write route for the same path, or a general pattern before a specific one (/content/node/:nodeId before
+     * /content/node/create), in any order. 405 is answered only when no route takes the method; its Allow header
+     * lists the methods of every route that matched the path.
+     *
+     * @return ezcMvcRoutingInformation
+     * @throws ezpRouteMethodNotAllowedException|ezcMvcRouteNotFoundException
+     */
+    public function getRoutingInformation()
+    {
+        $routes = $this->createRoutes();
+        $allowed = null;
+        foreach ( $routes as $route )
+        {
+            try
+            {
+                $routingInformation = $route->matches( $this->request );
+            }
+            catch ( ezpRouteMethodNotAllowedException $e )
+            {
+                $allowed = array_merge( (array)$allowed, $e->getAllowedMethods() );
+                continue;
+            }
+            if ( $routingInformation !== null )
+            {
+                $routingInformation->router = $this;
+                return $routingInformation;
+            }
+        }
+
+        if ( $allowed !== null )
+            throw new ezpRouteMethodNotAllowedException( array_values( array_unique( $allowed ) ) );
+        throw new ezcMvcRouteNotFoundException( $this->request );
+    }
+
+    /**
      * Do create the REST routes
      * @return array The route objects
      */
     protected function doCreateRoutes()
     {
         $providerRoutes = ezpRestProvider::getProvider( ezpRestPrefixFilterInterface::getApiProviderName() )->getRoutes();
-        $providerRoutes['fatal'] = new ezpMvcRailsRoute( '/fatal', 'ezpRestErrorController', 'show' );
+        // the error page is reached by internal redirects that may keep the method of the failed request
+        $providerRoutes['fatal'] = new ezpMvcRailsRoute( '/fatal', 'ezpRestErrorController', ezpMvcRailsRoute::anyMethod( 'show' ) );
 
         return ezcMvcRouter::prefix(
             eZINI::instance( 'rest.ini' )->variable( 'System', 'ApiPrefix' ),

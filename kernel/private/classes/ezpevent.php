@@ -167,6 +167,18 @@ class ezpEvent
     }
 
     /**
+     * Whether any listener is attached to the event $name. For a caller whose context is costly to gather (the
+     * current user, a fetch) and that can skip it when nobody listens.
+     *
+     * @param string $name
+     * @return bool
+     */
+    public function hasListeners( $name )
+    {
+        return !empty( $this->listeners[$name] );
+    }
+
+    /**
      * Notify all listeners of an event
      *
      * @param string $name In the form "content/delete/1", "content/delete", "content/read"

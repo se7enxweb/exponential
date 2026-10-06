@@ -37,6 +37,8 @@
   EZSW-070: Could not create ezpreference for <user_id>
 
   EZSW-080: The site package post-install stopped before its last step
+  EZSW-081: The editor siteaccess could not be made from the admin siteaccess
+  EZSW-082: The adminui siteaccess could not be made from the admin siteaccess
 
 */
 
@@ -53,7 +55,8 @@ class eZStepCreateSites extends eZStepInstaller
      * Modules the editor siteaccess refuses (404): site administration and developer tools, not editing.
      */
     const EDITOR_DISABLED_MODULES = array( 'setup', 'visual', 'explayouts_ui', 'explayouts_ui_api', 'git_manager',
-                                           'xrowextract', 'bccie', 'syndication' );
+                                           'xrowextract', 'bccie', 'syndication', 'audit', 'oauthadmin', 'class', 'role',
+                                           'section', 'state', 'workflow', 'trigger', 'package', 'rss' );
 
     /**
      * Top menu tabs the editor siteaccess hides; each one's module is also in EDITOR_DISABLED_MODULES, or is a
@@ -61,6 +64,31 @@ class eZStepCreateSites extends eZStepInstaller
      */
     const EDITOR_HIDDEN_TABS = array( 'explayouts_ui_dashboard', 'setup', 'design', 'gitmanager', 'xrowextract',
                                       'bccie_overview', 'syndication' );
+
+    /**
+     * The Admin UI siteaccess (extension exp_adminui, design adminui): made from the admin siteaccess whenever the
+     * extension is in the installation, reached by URI only (/adminui), never given a host or port of its own.
+     */
+    const ADMINUI_SITEACCESS = 'adminui';
+    const ADMINUI_EXTENSION = 'exp_adminui';
+    const ADMINUI_SITE_DESIGN = 'adminui';
+    const ADMINUI_ADDITIONAL_SITE_DESIGNS = array( 'admin4l', 'admin4', 'admin3', 'admin2', 'admin' );
+
+    /**
+     * Admin siteaccess files the adminui siteaccess does not take over: they would win over the icon set and the
+     * editor settings exp_adminui ships for the siteaccess (settings/siteaccess outranks an extension's own
+     * siteaccess settings). They are written as files without settings instead, so a copy left from an earlier
+     * installation is emptied too.
+     */
+    const ADMINUI_EMPTIED_FILES = array( 'icon.ini.append.php', 'ezoe.ini.append.php' );
+
+    /**
+     * Admin UI siteaccesses made in this request, so the setup does not make one a second time after a site
+     * package's post-install has made it.
+     *
+     * @var array
+     */
+    static $AdminUISiteAccessesMade = array();
 
     public $Error;
     /**
@@ -308,6 +336,9 @@ class eZStepCreateSites extends eZStepInstaller
         {
             $portMatchMapItems[$port] = $siteAccessName;
         }
+        // the adminui siteaccess is matched by URI only, whatever the others are matched by
+        if ( in_array( self::ADMINUI_SITEACCESS, (array)$accessMap['accesses'], true ) && !in_array( 'uri', explode( ';', $matchOrder ), true ) )
+            $matchOrder = 'uri;' . $matchOrder;
         $ini->setVariable( 'SiteAccessSettings', 'MatchOrder', $matchOrder );
         $ini->setVariable( 'SiteAccessSettings', 'HostMatchMapItems', $hostMatchMapItems );
         foreach ( $portMatchMapItems as $port => $siteAccessName )
@@ -482,6 +513,144 @@ class eZStepCreateSites extends eZStepInstaller
             && $interface->save( false, false, false, false, true, true );
     }
 
+    /**
+     * Whether the installation has the exp_adminui extension, which the adminui siteaccess needs for its design.
+     *
+     * @param string $extensionRoot the extension directory of the installation
+     * @return bool
+     */
+    static function adminUIAvailable( $extensionRoot = 'extension' )
+    {
+        return is_dir( rtrim( (string)$extensionRoot, '/' ) . '/' . self::ADMINUI_EXTENSION );
+    }
+
+    /**
+     * The address of the adminui siteaccess: the admin siteaccess's SiteURL with the siteaccess name as its path
+     * (example.com/admin -> example.com/adminui, admin.example.com -> admin.example.com/adminui). It is reached by
+     * URI matching only, so its address is a path on whatever host or port the admin siteaccess has.
+     *
+     * @param string $adminSiteURL the admin siteaccess's SiteURL, with or without a scheme
+     * @param string $adminSiteaccessName
+     * @param string $name the adminui siteaccess's name
+     * @return string without a scheme, '' when the admin siteaccess has no SiteURL
+     */
+    static function adminUISiteURL( $adminSiteURL, $adminSiteaccessName, $name = self::ADMINUI_SITEACCESS )
+    {
+        $url = preg_replace( '#^[a-zA-Z0-9]+://#', '', rtrim( trim( (string)$adminSiteURL ), '/' ) );
+        if ( $url === '' )
+            return '';
+        $suffix = '/' . $adminSiteaccessName;
+        if ( (string)$adminSiteaccessName !== '' && substr( $url, -strlen( $suffix ) ) === $suffix )
+            $url = substr( $url, 0, -strlen( $suffix ) );
+        return $url . '/' . $name;
+    }
+
+    /**
+     * What the adminui siteaccess's site.ini.append.php changes in the copy of the admin one: its name, address,
+     * design chain and the extension switched on for it alone. Everything else (database, languages, VarDir,
+     * RequireUserLogin, LoginPage, ShowHiddenNodes, RelatedSiteAccessList, access rules) stays as the admin has it.
+     *
+     * @param string $adminSiteURL
+     * @param string $adminSiteaccessName
+     * @param array $accessExtensions the ActiveAccessExtensions the admin siteaccess has
+     * @param string $name
+     * @return array [block][setting] => value
+     */
+    static function adminUISiteINIChanges( $adminSiteURL, $adminSiteaccessName, array $accessExtensions = array(), $name = self::ADMINUI_SITEACCESS )
+    {
+        $accessExtensions = array_values( array_unique( array_merge( array_values( array_filter( array_map( 'strval', $accessExtensions ), 'strlen' ) ),
+                                                                     array( self::ADMINUI_EXTENSION ) ) ) );
+        $changes = array( 'SiteSettings' => array( 'SiteName' => 'Admin UI' ),
+                          'ExtensionSettings' => array( 'ActiveAccessExtensions' => $accessExtensions ),
+                          'DesignSettings' => array( 'SiteDesign' => self::ADMINUI_SITE_DESIGN,
+                                                     'AdditionalSiteDesignList' => self::ADMINUI_ADDITIONAL_SITE_DESIGNS ),
+                          'SiteAccessSettings' => array( 'RequireUserLogin' => 'true' ) );
+        $url = self::adminUISiteURL( $adminSiteURL, $adminSiteaccessName, $name );
+        if ( $url !== '' )
+            $changes['SiteSettings']['SiteURL'] = $url;
+        return $changes;
+    }
+
+    /**
+     * settings/siteaccess/<adminui> from the admin siteaccess: a copy of every admin settings file, then the changes
+     * of adminUISiteINIChanges() in site.ini and the icon and editor settings files emptied (ADMINUI_EMPTIED_FILES).
+     * Writes files only; whether the siteaccess is wanted is createAdminUISiteAccess()'s question.
+     *
+     * @param string $adminDir settings/siteaccess/<admin>
+     * @param string $targetDir settings/siteaccess/<adminui>
+     * @param string $adminSiteaccessName
+     * @param string $name
+     * @return bool
+     */
+    static function writeAdminUISiteAccess( $adminDir, $targetDir, $adminSiteaccessName, $name = self::ADMINUI_SITEACCESS )
+    {
+        $files = glob( rtrim( $adminDir, '/' ) . '/*.ini.append.php' );
+        if ( !$files || !file_exists( rtrim( $adminDir, '/' ) . '/site.ini.append.php' ) )
+            return false;
+        if ( !is_dir( $targetDir ) && !eZDir::mkdir( $targetDir, false, true ) && !is_dir( $targetDir ) )
+            return false;
+        foreach ( $files as $file )
+        {
+            if ( in_array( basename( $file ), self::ADMINUI_EMPTIED_FILES, true ) )
+                continue;
+            if ( !copy( $file, $targetDir . '/' . basename( $file ) ) )
+                return false;
+        }
+        foreach ( self::ADMINUI_EMPTIED_FILES as $emptied )
+        {
+            $text = "<?php /* #?ini charset=\"utf-8\"?\n"
+                  . "# $name: the " . ( $emptied === 'icon.ini.append.php' ? 'icon set' : 'editor settings' )
+                  . " come from the " . self::ADMINUI_EXTENSION . " extension (its settings/siteaccess/" . self::ADMINUI_SITEACCESS . ")\n"
+                  . "*/ ?>\n";
+            if ( file_put_contents( $targetDir . '/' . $emptied, $text ) === false )
+                return false;
+        }
+
+        $site = new eZINI( 'site.ini.append.php', $targetDir, null, null, null, true, true );
+        $site->setReadOnlySettingsCheck( false );
+        $adminURL = $site->hasVariable( 'SiteSettings', 'SiteURL' ) ? (string)$site->variable( 'SiteSettings', 'SiteURL' ) : '';
+        $accessExtensions = $site->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
+                          ? (array)$site->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) : array();
+        foreach ( self::adminUISiteINIChanges( $adminURL, $adminSiteaccessName, $accessExtensions, $name ) as $block => $settings )
+        {
+            foreach ( $settings as $setting => $value )
+                $site->setVariable( $block, $setting, $value );
+        }
+        return (bool)$site->save( false, false, false, false, true, true );
+    }
+
+    /**
+     * Makes the adminui siteaccess from the installed admin siteaccess when the exp_adminui extension is in the
+     * installation, and logs why not when it is not. Called by the multisite package's post-install
+     * (sevenx-multi-site-installer.php) and by the setup after the post-install, once per request.
+     *
+     * @param string $adminSiteaccessName
+     * @param string $siteaccessRoot settings/siteaccess of the installation
+     * @param string $extensionRoot extension of the installation
+     * @param bool $log write the outcome to var/log/setup.log
+     * @return bool|null true made, null skipped (no exp_adminui), false failed
+     */
+    static function createAdminUISiteAccess( $adminSiteaccessName, $siteaccessRoot = 'settings/siteaccess', $extensionRoot = 'extension', $log = true )
+    {
+        $name = self::ADMINUI_SITEACCESS;
+        $siteaccessRoot = rtrim( (string)$siteaccessRoot, '/' );
+        $targetDir = $siteaccessRoot . '/' . $name;
+        if ( !self::adminUIAvailable( $extensionRoot ) )
+        {
+            if ( $log )
+                eZLog::write( "eZStepCreateSites: no $name siteaccess, the " . self::ADMINUI_EXTENSION . " extension is not in $extensionRoot", 'setup.log' );
+            return null;
+        }
+        if ( isset( self::$AdminUISiteAccessesMade[$targetDir] ) )
+            return true;
+        $made = self::writeAdminUISiteAccess( $siteaccessRoot . '/' . $adminSiteaccessName, $targetDir, $adminSiteaccessName, $name );
+        if ( $made )
+            self::$AdminUISiteAccessesMade[$targetDir] = true;
+        if ( $log )
+            eZLog::write( "eZStepCreateSites: the $name siteaccess " . ( $made ? 'was made' : 'could not be made' ) . " from $siteaccessRoot/$adminSiteaccessName", 'setup.log' );
+        return $made;
+    }
+
     function initializePackage( // $package,
                                 $siteType,
                                 &$accessMap, $charset,
@@ -529,6 +698,10 @@ class eZStepCreateSites extends eZStepInstaller
         $editorMap = in_array( $siteType['access_type'], array( 'port', 'hostname' ) ) ? $siteType['access_type'] : 'url';
         $accessMap[$editorMap][$editorAccessValue] = $editorSiteaccessName;
         $accessMap['accesses'][] = $editorSiteaccessName;
+        // the Admin UI siteaccess when exp_adminui is in the installation: by URI only (/adminui), so it is
+        // listed but given no host, port or path entry of the access map
+        if ( self::adminUIAvailable() )
+            $accessMap['accesses'][] = self::ADMINUI_SITEACCESS;
         $accessMap['sites'][] = $userSiteaccessName;
         $userDesignName = $siteType['identifier'];
 
@@ -1773,6 +1946,14 @@ language_locale='eng-GB'";
         {
             $resultArray['errors'][] = array( 'code' => 'EZSW-081',
                                               'text' => "The editor siteaccess could not be made from settings/siteaccess/$adminSiteaccessName" );
+        }
+
+        // the Admin UI siteaccess, unless the site package's post-install has made it already (or there is no
+        // exp_adminui, which is logged)
+        if ( self::createAdminUISiteAccess( $adminSiteaccessName ) === false )
+        {
+            $resultArray['errors'][] = array( 'code' => 'EZSW-082',
+                                              'text' => "The adminui siteaccess could not be made from settings/siteaccess/$adminSiteaccessName" );
         }
 
         // get all siteaccesses. do it via 'RelatedSiteAccessesList' settings.

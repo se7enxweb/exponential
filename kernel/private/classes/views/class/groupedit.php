@@ -52,7 +52,7 @@ class Groupedit extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
         if ( $http->hasPostVariable( "DiscardButton" ) )
         {
-            $Module->redirectTo( $Module->functionURI( "grouplist" ) );
+            $Module->redirectTo( self::cancelURI( $Module ) );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
@@ -89,6 +89,7 @@ class Groupedit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "http", $http );
         $tpl->setVariable( "module", $Module );
         $tpl->setVariable( "classgroup", $classgroup );
+        $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:class/groupedit.tpl" );
@@ -98,6 +99,19 @@ class Groupedit extends \Exponential\Runnable\ModuleView
                                         'text' => $classgroup->attribute( 'name' ) ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Where Discard goes: the page the form names in RedirectIfDiscarded, else the page viewed last, else the
+     * list of class groups, where it always went. The rules are those of \eZRedirectManager::returnURI().
+     *
+     * @param \eZModule|null $module
+     * @param array $options see \eZRedirectManager::returnURI()
+     * @return string
+     */
+    public static function cancelURI( $module, $options = array() )
+    {
+        return \eZRedirectManager::returnURI( $module, '/class/grouplist', \eZRedirectManager::formReturnURIs(), $options );
     }
 }
 

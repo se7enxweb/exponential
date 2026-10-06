@@ -141,7 +141,18 @@ abstract class ezpRestCacheStorageCluster extends ezpRestCacheStorageFile implem
      */
     public function clusterRetrieve( $file, $mtime, $args )
     {
-        return $this->fetchData( $file );
+        // A cache file that cannot be read back (one written for an object without __set_state(), or a broken file)
+        // counts as expired: the answer is generated again and the file replaced, instead of a fatal error and a 500
+        // on every request until the TTL ends.
+        try
+        {
+            return $this->fetchData( $file );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeWarning( "Unreadable REST cache file $file, regenerated: " . $e->getMessage(), __METHOD__ );
+            return new eZClusterFileFailure( eZClusterFileFailure::FILE_EXPIRED, $e->getMessage() );
+        }
     }
 
     /**

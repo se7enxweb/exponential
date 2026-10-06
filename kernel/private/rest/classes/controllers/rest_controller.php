@@ -183,8 +183,14 @@ abstract class ezpRestMvcController extends ezcMvcController
                     $res->responseGroups = $resGroups;
                 }
 
-                if ( $isCacheEnabled )
+                // Only a plain answer is kept. A result with a status object (a refusal such as 403 access_denied,
+                // a 201, a 501 ...) is not: its status classes cannot be read back from the cache file
+                // (var_export() writes ::__set_state() calls they do not have), and a refusal must follow the
+                // user's rights of the next request anyway.
+                if ( $isCacheEnabled && self::isCacheable( $res ) )
                     $cache->store( $controllerCacheId, $res );
+                else if ( $isCacheEnabled )
+                    $cache->abortCacheGeneration();
 
                 $debug->stopTimer( 'GeneratingCache' );
             }
@@ -267,6 +273,27 @@ abstract class ezpRestMvcController extends ezcMvcController
     }
 
     /**
+     * Whether a result may go into the answer cache: an ezcMvcResult without a status object.
+     *
+     * @param mixed $result
+     * @return bool
+     */
+    public static function isCacheable( $result )
+    {
+        return $result instanceof ezcMvcResult && !is_object( $result->status );
+    }
+
+    /**
+     * The user part of the cache ID: the id of the current user (the anonymous user shares one entry).
+     *
+     * @return int
+     */
+    protected function cacheUser()
+    {
+        return (int)eZUser::currentUserID();
+    }
+
+    /**
      * Generates unique cache ID for current request.
      *
      * The cache ID is a MD5 hash and takes into account :
@@ -274,6 +301,7 @@ abstract class ezpRestMvcController extends ezcMvcController
      *  - API Version
      *  - Controller class
      *  - Action
+     *  - The current user (results follow the user's policies)
      *  - Internal variables (passed parameters, ResponseGroups...)
      *  - Content variables (Translation...)
      *
@@ -287,7 +315,10 @@ abstract class ezpRestMvcController extends ezcMvcController
             ezpRestPrefixFilterInterface::getApiProviderName(),
             ezpRestPrefixFilterInterface::getApiVersion(),
             $routingInfos->controllerClass,
-            $routingInfos->action
+            $routingInfos->action,
+            // The answer depends on who asks: an action checks content/read and the other policies of the current
+            // user, so the result of one user must never be served to another
+            'user=' . $this->cacheUser()
         );
         // Add internal variables, caught in the URL. See ezpRestHttpRequestParser::fillVariables()
         // Also add content variables
@@ -311,6 +342,12 @@ abstract class ezpRestMvcController extends ezcMvcController
     {
         // Global switch
         if ( $this->restINI->variable( 'CacheSettings', 'ApplicationCache' ) !== 'enabled' )
+        {
+            return false;
+        }
+
+        // Only reads are kept: a cached create or delete would answer the second call without doing anything
+        if ( !in_array( $this->request->protocol, array( 'http-get', 'http-head' ), true ) )
         {
             return false;
         }

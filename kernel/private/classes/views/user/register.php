@@ -25,15 +25,9 @@ if ( !function_exists( 'checkContentActions' ) )
     {
         if ( $module->isCurrentAction( 'Cancel' ) )
         {
-            $http = eZHTTPTool::instance();
-            if ( $http->hasPostVariable( 'RedirectIfDiscarded' ) )
-            {
-                eZRedirectManager::redirectTo( $module, $http->postVariable( 'RedirectIfDiscarded' ) );
-            }
-            else
-            {
-               eZRedirectManager::redirectTo( $module, '/' );
-            }
+            // the page the form names, else the page viewed last, else the front page; the form's page was
+            // redirected to as posted, it now passes the rules of eZRedirectManager::returnURI() like the rest
+            $module->redirectTo( eZRedirectManager::returnURI( $module, '/', eZRedirectManager::formReturnURIs() ) );
 
             $version->removeThis();
 

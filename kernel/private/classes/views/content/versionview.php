@@ -35,6 +35,12 @@ class Versionview extends \Exponential\Runnable\ModuleView
         $LanguageCode = htmlspecialchars( $LanguageCode, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
         $viewParameters = array( 'offset' => $Offset );
 
+        // The view mode the version is shown in, (view_mode)/print for example; only those of
+        // content.ini [VersionView] ViewModes[] (full by default)
+        $viewMode = self::viewMode( isset( $scope['Params']['ViewMode'] ) ? $scope['Params']['ViewMode'] : null );
+        if ( $viewMode === null )
+            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+
         // Will be sent from the content/edit page and should be kept
         // incase the user decides to continue editing.
         $FromLanguage = htmlspecialchars( $Params['FromLanguage'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
@@ -146,6 +152,12 @@ class Versionview extends \Exponential\Runnable\ModuleView
             if ( $Module->hasActionParameter( 'PlacementID' ) )
             {
                 $placementID = $Module->actionParameter( 'PlacementID' );
+            }
+
+            // The view mode chosen in the form (a listed one; anything else keeps the current one)
+            if ( $Module->hasActionParameter( 'ViewMode' ) )
+            {
+                $viewMode = self::changedViewMode( $Module->actionParameter( 'ViewMode' ), $viewMode );
             }
         }
 
@@ -280,13 +292,14 @@ class Versionview extends \Exponential\Runnable\ModuleView
         {
             $tpl->setVariable( 'redirect_uri', $http->sessionVariable( 'LastAccessesVersionURI' ) );
         }
+        $tpl->setVariable( 'view_mode', $viewMode );
 
         $designKeys = array( array( 'object', $contentObject->attribute( 'id' ) ), // Object ID
                              array( 'node', $virtualNodeID ), // Node id
                              array( 'remote_id', $contentObject->attribute( 'remote_id' ) ),
                              array( 'class', $class->attribute( 'id' ) ), // Class ID
                              array( 'class_identifier', $class->attribute( 'identifier' ) ), // Class identifier
-                             array( 'viewmode', 'full' ) );  // View mode
+                             array( 'viewmode', $viewMode ) );  // View mode
 
         if ( $assignment )
         {
@@ -301,12 +314,63 @@ class Versionview extends \Exponential\Runnable\ModuleView
         unset( $contentObject );
         $contentObject = $node->attribute( 'object' );
 
-        $Result = \eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $LanguageCode, 'full', 0, $viewParameters );
+        $Result = \eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $LanguageCode, $viewMode, 0, $viewParameters );
 
         $Result['requested_uri_string'] = $requestedURIString;
         $Result['ui_context'] = 'view';
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Returns the view mode a version is to be shown in: $requested when content.ini [VersionView] ViewModes[] lists
+     * it, full when nothing was asked for, null for a view mode that is not listed.
+     *
+     * @param string|null $requested The (view_mode) parameter of the address
+     * @return string|null
+     */
+    public static function viewMode( $requested )
+    {
+        if ( $requested === null || $requested === '' || $requested === false )
+        {
+            return 'full';
+        }
+        if ( !is_string( $requested ) || !preg_match( '/^[A-Za-z0-9_-]+$/', $requested ) )
+        {
+            // A view mode names a template (node/view/<mode>.tpl): never a path, whatever the setting lists
+            return null;
+        }
+        return in_array( $requested, self::viewModes(), true ) ? $requested : null;
+    }
+
+    /**
+     * The view modes a version can be shown in: content.ini [VersionView] ViewModes[], full when it is not set.
+     *
+     * @return string[]
+     */
+    public static function viewModes()
+    {
+        $ini = \eZINI::instance( 'content.ini' );
+        $listed = $ini->hasVariable( 'VersionView', 'ViewModes' ) ? (array)$ini->variable( 'VersionView', 'ViewModes' ) : array( 'full' );
+        return array_values( array_unique( array_filter( array_map( 'strval', $listed ), 'strlen' ) ) );
+    }
+
+    /**
+     * The view mode after the form of the version preview was sent ("Update view"): $posted when it is a listed view
+     * mode, otherwise $current.
+     *
+     * @param mixed $posted SelectedViewMode of the form
+     * @param string $current
+     * @return string
+     */
+    public static function changedViewMode( $posted, $current )
+    {
+        if ( $posted === null || $posted === '' || $posted === false )
+        {
+            return $current;
+        }
+        $viewMode = self::viewMode( $posted );
+        return $viewMode !== null ? $viewMode : $current;
     }
 
     /**

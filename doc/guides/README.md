@@ -107,6 +107,7 @@ You shape how the site looks and which extensions it uses.
    - [Template path comments](../features/6.0/template-path-comments.md): see which file wrote which markup
    - [Template editor](../features/6.0/template-editor-overrides.md) and [override order](../features/6.0/template-override-ordering.md)
    - [The Exp Debug bar](../features/6.0/exp-debug-bar.md)
+   - [Exponential Admin UI](../features/6.0/exp-adminui.md): the Admin UI look for the administration, as its own `adminui` siteaccess
    - [Exponential Layouts](../bc/6.0/LAYOUTS.md): blocks, zones and rules built in the browser
 4. [Extensions](extensions.md): find, install, switch on and configure an extension. Depth:
    - [What a new installation comes with](../features/6.0/default-extension-distribution.md), [the extension list](../features/6.0/extension-list-and-downloads.md), [loading order](../features/6.0/extension-loading-order.md)

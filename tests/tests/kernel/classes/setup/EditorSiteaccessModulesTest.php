@@ -19,7 +19,8 @@ class EditorSiteaccessModulesTest extends PHPUnit\Framework\TestCase
 
     public function testAdministrationModulesAreRefused()
     {
-        foreach ( array( 'setup', 'visual', 'git_manager', 'bccie', 'xrowextract', 'explayouts_ui', 'explayouts_ui_api' ) as $module )
+        foreach ( array( 'setup', 'visual', 'git_manager', 'bccie', 'xrowextract', 'explayouts_ui', 'explayouts_ui_api',
+                         'audit', 'oauthadmin', 'class', 'role', 'section', 'state', 'workflow', 'trigger', 'package', 'rss' ) as $module )
         {
             $this->assertContains( $module, eZStepCreateSites::EDITOR_DISABLED_MODULES, $module );
         }

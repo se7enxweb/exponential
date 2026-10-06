@@ -247,4 +247,5 @@
 {include uri="design:gui/button.tpl" name=Apply id_name=ApplyButton value="Apply"|i18n("design/standard/class/edit")}
 {include uri="design:gui/button.tpl" name=Discard id_name=DiscardButton value="Discard changes"|i18n("design/standard/class/edit")}
 </div>
+{if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>

@@ -130,7 +130,7 @@ class eZMultiEdit
 
             $name = $object->attribute( 'name' );
 
-            if ( !$object->attribute( 'can_edit' ) )
+            if ( !$object->editAccess() )
             {
                 $refused[$objectID] = array( 'name' => $name, 'reason' => 'no-permission' );
                 continue;
@@ -649,7 +649,7 @@ class eZMultiEdit
                                eZContentObjectVersion::STATUS_INTERNAL_DRAFT ), true ) )
             return false;
 
-        if ( !$object->attribute( 'can_edit' ) )
+        if ( !$object->editAccess( $version ) )
             return false;
 
         return (int) $version->attribute( 'creator_id' ) === (int) eZUser::currentUserID();

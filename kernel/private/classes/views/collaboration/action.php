@@ -36,8 +36,19 @@ class Action extends \Exponential\Runnable\ModuleView
         {
             $typeIdentifier = $Module->actionParameter( 'TypeIdentifer' );
             $itemID = $Module->actionParameter( 'ItemID' );
-            $collaborationItem = \eZCollaborationItem::fetch( $itemID );
-            $handler = \eZCollaborationItemHandler::instantiate( $typeIdentifier );
+            $collaborationItem = is_numeric( $itemID ) ? \eZCollaborationItem::fetch( (int)$itemID ) : null;
+            // Only someone who may open the item acts on it (filter collaboration/item/access); what each action
+            // needs beyond that (the approver role to approve) is still decided by the handler
+            $denied = self::access( $collaborationItem, $typeIdentifier, \eZUser::currentUser() );
+            if ( $denied !== null )
+            {
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( $denied, 'kernel' ) );
+            }
+            $handler = $collaborationItem->handler();
+            if ( !$handler instanceof \eZCollaborationItemHandler )
+            {
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            }
             return $this->viewResult( isset( $Result ) ? $Result : null,  $handler->handleCustomAction( $Module, $collaborationItem ) );
         }
 
@@ -47,6 +58,26 @@ class Action extends \Exponential\Runnable\ModuleView
                                         \ezpI18n::tr( 'kernel/collaboration', 'Collaboration custom action' ) ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Whether $user may act on $collabItem: null when they may, otherwise the error to answer with. The item must
+     * exist and be of the type the form names (not available otherwise), and the user must be allowed to open it
+     * (Item::access(), the participants and whoever the filter collaboration/item/access lets in).
+     *
+     * @param \eZCollaborationItem|null $collabItem
+     * @param string $typeIdentifier The type the form names
+     * @param \eZUser $user
+     * @return int|null
+     */
+    public static function access( $collabItem, $typeIdentifier, $user )
+    {
+        if ( !$collabItem instanceof \eZCollaborationItem ||
+             (string)$collabItem->attribute( 'type_identifier' ) !== (string)$typeIdentifier )
+        {
+            return \eZError::KERNEL_NOT_AVAILABLE;
+        }
+        return Item::access( $collabItem, $user ) ? null : \eZError::KERNEL_ACCESS_DENIED;
     }
 }
 

@@ -401,7 +401,9 @@ package, remove its imported directory first.
 Only the keys of the chosen access type are used. The admin's port default counts up from 8080 only when you leave
 it out: with `AccessPort=9000` and nothing else, the admin gets 8080 and the editor 9002. Give all three to be sure.
 
-The siteaccess **directories** are always `site`, `admin` and `editor`. `Access`, `AdminAccess` and `EditorAccess`
+The siteaccess **directories** are always `site`, `admin` and `editor`, plus `adminui` when the `exp_adminui`
+extension is in the installation (reached by the path `/adminui` only, so it has no key here; see
+[Exponential Admin UI](../features/6.0/exp-adminui.md)). `Access`, `AdminAccess` and `EditorAccess`
 are the values that select them, not their names. Unlike the browser wizard, the command line does not refuse `admin`
 as a path, so `AdminAccess=admin` gives the familiar `/admin`.
 

@@ -47,6 +47,11 @@ php update/common/scripts/6.0/createapikeytable.php --allow-root-user
 | A new OAuth application got `md5( name . uniqid( name ) )` as identifier and secret | `random_bytes()`: 32 hex characters of identifier, 64 of secret |
 | Removing an application left its authorizations and tokens | They are removed with it |
 | Client secrets compared with `===` | `hash_equals()` |
+| A refused `POST` or `DELETE` (no token, a wrong one, a key without the scope) answered `405` | `401` or `403`: the authentication and error routes answer every method |
+| A route that matched the path but not the method ended the search with `405` | The next routes are tried; `405` only when none takes the method |
+| The answer cache was shared by every user and kept writes too | One entry per user, `GET` and `HEAD` only |
+| The `ezprestapi` writes asked no policy for tokens or basic authentication | Every read and write checks the user's policies (`expRestContentPermission`), `403 access_denied` otherwise; needs `ezprestapi` 1.2.5 |
+| `/api/ezp/v1/...` answered 404 with `ezprestapi` active | Reads answer at v1 and v2 (`ezpRestVersionedRoute` takes a list of versions) |
 
 Every REST request with a key is checked against a scope: `[ApiKeySettings] RouteScopes[<Controller>_<action>]`, else
 `DefaultReadScope` for GET and HEAD, else refused. A REST route of your own that writes is closed to keys until you
