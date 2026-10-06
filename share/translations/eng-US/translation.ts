@@ -23167,6 +23167,62 @@ Note: The packages will not be uninstalled.</translation>
         <source>Save changes to this state.</source>
         <translation>Save changes to this state.</translation>
     </message>
+    <message>
+        <source>New state in %group</source>
+        <translation>New state in %group</translation>
+    </message>
+    <message>
+        <source>Edit the state "%state_name"</source>
+        <translation>Edit the state "%state_name"</translation>
+    </message>
+    <message>
+        <source>This is the first state of the group. Every object that exists gets it when it is saved, and it becomes the default for new objects.</source>
+        <translation>This is the first state of the group. Every object that exists gets it when it is saved, and it becomes the default for new objects.</translation>
+    </message>
+    <message>
+        <source>The new state is added at the end, as number %position. Objects keep their state; set it on content under Content state in the Details tab of a node. The order can be changed on the page of the group.</source>
+        <translation>The new state is added at the end, as number %position. Objects keep their state; set it on content under Content state in the Details tab of a node. The order can be changed on the page of the group.</translation>
+    </message>
+    <message>
+        <source>Changing the names and descriptions changes what editors see. Templates, request rules and searches refer to the state by its identifier, so change that only together with them.</source>
+        <translation>Changing the names and descriptions changes what editors see. Templates, request rules and searches refer to the state by its identifier, so change that only together with them.</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>Lower-case letters a-z, digits and underscores, at most 45 characters, unique in the group. It is written %example in templates and request rules.</source>
+        <translation>Lower-case letters a-z, digits and underscores, at most 45 characters, unique in the group. It is written %example in templates and request rules.</translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation>Main language</translation>
+    </message>
+    <message>
+        <source>Shown where a language has no name of its own. The main language needs a name.</source>
+        <translation>Shown where a language has no name of its own. The main language needs a name.</translation>
+    </message>
+    <message>
+        <source>A name and description per language. A language left empty is not translated; emptying a translation removes it.</source>
+        <translation>A name and description per language. A language left empty is not translated; emptying a translation removes it.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Description</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the group without saving.</source>
+        <translation>Cancel goes back to the group without saving.</translation>
+    </message>
+    <message>
+        <source>Create state</source>
+        <translation>Create state</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/group</name>
@@ -23238,6 +23294,234 @@ Note: The packages will not be uninstalled.</translation>
         <source>Yes</source>
         <translation>Yes</translation>
     </message>
+    <message>
+        <source>State group</source>
+        <translation>State group</translation>
+    </message>
+    <message>
+        <source>System, protected</source>
+        <translation>System, protected</translation>
+    </message>
+    <message>
+        <source>1 state</source>
+        <translation>1 state</translation>
+    </message>
+    <message>
+        <source>%count states</source>
+        <translation>%count states</translation>
+    </message>
+    <message>
+        <source>Shown in %locale</source>
+        <translation>Shown in %locale</translation>
+    </message>
+    <message>
+        <source>Every content object is in exactly one state of this group. New objects get the first state.</source>
+        <translation>Every content object is in exactly one state of this group. New objects get the first state.</translation>
+    </message>
+    <message>
+        <source>Exponential keeps this group for its own use (locking content): its states, their order and its translations cannot be changed here, and roles cannot limit by it.</source>
+        <translation>Exponential keeps this group for its own use (locking content): its states, their order and its translations cannot be changed here, and roles cannot limit by it.</translation>
+    </message>
+    <message>
+        <source>Remove this state?</source>
+        <translation>Remove this state?</translation>
+    </message>
+    <message>
+        <source>Remove %count states?</source>
+        <translation>Remove %count states?</translation>
+    </message>
+    <message>
+        <source>No state would be left in the group. The %count objects in the removed states then have no state of this group, and new objects get none until a state is added again.</source>
+        <translation>No state would be left in the group. The %count objects in the removed states then have no state of this group, and new objects get none until a state is added again.</translation>
+    </message>
+    <message>
+        <source>The %count objects in the removed states are moved to "%state", the first state that stays.</source>
+        <translation>The %count objects in the removed states are moved to "%state", the first state that stays.</translation>
+    </message>
+    <message>
+        <source>No object is in a state that is removed, so no object changes.</source>
+        <translation>No object is in a state that is removed, so no object changes.</translation>
+    </message>
+    <message>
+        <source>A removed state is gone for good, with its translations. Policies that name it no longer match it. This cannot be undone.</source>
+        <translation>A removed state is gone for good, with its translations. Policies that name it no longer match it. This cannot be undone.</translation>
+    </message>
+    <message>
+        <source>States to remove</source>
+        <translation>States to remove</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count objects</translation>
+    </message>
+    <message>
+        <source>Remove for good</source>
+        <translation>Remove for good</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Default state</source>
+        <translation>Default state</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>None yet</translation>
+    </message>
+    <message>
+        <source>Objects with a state of this group</source>
+        <translation>Objects with a state of this group</translation>
+    </message>
+    <message>
+        <source>Policy limitation</source>
+        <translation>Policy limitation</translation>
+    </message>
+    <message>
+        <source>None: policies cannot limit by system groups</source>
+        <translation>None: policies cannot limit by system groups</translation>
+    </message>
+    <message>
+        <source>States, in order</source>
+        <translation>States, in order</translation>
+    </message>
+    <message>
+        <source>New state</source>
+        <translation>New state</translation>
+    </message>
+    <message>
+        <source>The first state is the default: every new object gets it. The order is also the order editors see the states in. To change it, change the positions and save the order.</source>
+        <translation>The first state is the default: every new object gets it. The order is also the order editors see the states in. To change it, change the positions and save the order.</translation>
+    </message>
+    <message>
+        <source>This group has no states yet. The first state you add is given to every object that exists, and becomes the default for new ones.</source>
+        <translation>This group has no states yet. The first state you add is given to every object that exists, and becomes the default for new ones.</translation>
+    </message>
+    <message>
+        <source>Default for new objects</source>
+        <translation>Default for new objects</translation>
+    </message>
+    <message>
+        <source>Languages: %locales</source>
+        <translation>Languages: %locales</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>Move %state up</source>
+        <translation>Move %state up</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Move up</translation>
+    </message>
+    <message>
+        <source>Move %state down</source>
+        <translation>Move %state down</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Move down</translation>
+    </message>
+    <message>
+        <source>Edit the state %state</source>
+        <translation>Edit the state %state</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Select</translation>
+    </message>
+    <message>
+        <source>Save order keeps the positions above. Remove selected asks first and says where the objects of the removed states go.</source>
+        <translation>Save order keeps the positions above. Remove selected asks first and says where the objects of the removed states go.</translation>
+    </message>
+    <message>
+        <source>Save order</source>
+        <translation>Save order</translation>
+    </message>
+    <message>
+        <source>Translations (%count)</source>
+        <translation>Translations (%count)</translation>
+    </message>
+    <message>
+        <source>Edit group and translations</source>
+        <translation>Edit group and translations</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Language</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locale</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Main</translation>
+    </message>
+    <message>
+        <source>Show the group in %language</source>
+        <translation>Show the group in %language</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Roles that use this group</source>
+        <translation>Roles that use this group</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Role</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Policies</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>How</translation>
+    </message>
+    <message>
+        <source>Applies only to objects in some states</source>
+        <translation>Applies only to objects in some states</translation>
+    </message>
+    <message>
+        <source>Lets users set some states</source>
+        <translation>Lets users set some states</translation>
+    </message>
+    <message>
+        <source>No role policy uses this group yet. To let a role read, edit or publish only content in some states, add the limitation %limitation to its policy.</source>
+        <translation>No role policy uses this group yet. To let a role read, edit or publish only content in some states, add the limitation %limitation to its policy.</translation>
+    </message>
+    <message>
+        <source>Roles cannot limit by system groups.</source>
+        <translation>Roles cannot limit by system groups.</translation>
+    </message>
+    <message>
+        <source>%state is now at position %position. Save the order to keep it.</source>
+        <translation>%state is now at position %position. Save the order to keep it.</translation>
+    </message>
+    <message>
+        <source>The selected states were removed.</source>
+        <translation>The selected states were removed.</translation>
+    </message>
+    <message>
+        <source>The order was saved. The first state is the default for new objects.</source>
+        <translation>The order was saved. The first state is the default for new objects.</translation>
+    </message>
+    <message>
+        <source>The order could not be saved: the list of states has changed. Look at it again and save once more.</source>
+        <translation>The order could not be saved: the list of states has changed. Look at it again and save once more.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/group_edit</name>
@@ -23293,6 +23577,66 @@ Note: The packages will not be uninstalled.</translation>
         <source>Description:</source>
         <translation>Description:</translation>
     </message>
+    <message>
+        <source>New state group</source>
+        <translation>New state group</translation>
+    </message>
+    <message>
+        <source>Edit the state group "%group_name"</source>
+        <translation>Edit the state group "%group_name"</translation>
+    </message>
+    <message>
+        <source>A group holds the states content can be in, one at a time: for example a group "Review" with the states Draft, In review and Approved. After creating it you add its states; the first one is given to every object.</source>
+        <translation>A group holds the states content can be in, one at a time: for example a group "Review" with the states Draft, In review and Approved. After creating it you add its states; the first one is given to every object.</translation>
+    </message>
+    <message>
+        <source>Changing the names and descriptions changes what editors see. Templates, request rules and searches refer to the group by its identifier, and policies limit by StateGroup_ followed by it, so change the identifier only together with them.</source>
+        <translation>Changing the names and descriptions changes what editors see. Templates, request rules and searches refer to the group by its identifier, and policies limit by StateGroup_ followed by it, so change the identifier only together with them.</translation>
+    </message>
+    <message>
+        <source>These roles limit by %limitation:</source>
+        <translation>These roles limit by %limitation:</translation>
+    </message>
+    <message>
+        <source>Look at their policies after changing the identifier.</source>
+        <translation>Look at their policies after changing the identifier.</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>Lower-case letters a-z, digits and underscores, at most 45 characters, unique. Identifiers starting with "ez" are reserved for Exponential. Policies limit by StateGroup_ followed by the identifier.</source>
+        <translation>Lower-case letters a-z, digits and underscores, at most 45 characters, unique. Identifiers starting with "ez" are reserved for Exponential. Policies limit by StateGroup_ followed by the identifier.</translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation>Main language</translation>
+    </message>
+    <message>
+        <source>Shown where a language has no name of its own. The main language needs a name.</source>
+        <translation>Shown where a language has no name of its own. The main language needs a name.</translation>
+    </message>
+    <message>
+        <source>A name and description per language. A language left empty is not translated; emptying a translation removes it.</source>
+        <translation>A name and description per language. A language left empty is not translated; emptying a translation removes it.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Description</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the list of groups without creating anything.</source>
+        <translation>Cancel goes back to the list of groups without creating anything.</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the list of groups without saving.</source>
+        <translation>Cancel goes back to the list of groups without saving.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/groups</name>
@@ -23344,6 +23688,190 @@ Note: The packages will not be uninstalled.</translation>
         <source>Create a new state group.</source>
         <translation>Create a new state group.</translation>
     </message>
+    <message>
+        <source>Object states</source>
+        <translation>Object states</translation>
+    </message>
+    <message>
+        <source>An object state is a label every content object carries, one from each state group: a stage of your own such as draft, in review and approved. States change nothing by themselves; roles use them to decide who may read, edit or publish what, and templates and searches can ask for them. New objects get the first state of each group.</source>
+        <translation>An object state is a label every content object carries, one from each state group: a stage of your own such as draft, in review and approved. States change nothing by themselves; roles use them to decide who may read, edit or publish what, and templates and searches can ask for them. New objects get the first state of each group.</translation>
+    </message>
+    <message>
+        <source>Remove this state group?</source>
+        <translation>Remove this state group?</translation>
+    </message>
+    <message>
+        <source>Remove %count state groups?</source>
+        <translation>Remove %count state groups?</translation>
+    </message>
+    <message>
+        <source>A removed group and its states are gone for good, with their translations. This cannot be undone.</source>
+        <translation>A removed group and its states are gone for good, with their translations. This cannot be undone.</translation>
+    </message>
+    <message>
+        <source>States of %group</source>
+        <translation>States of %group</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count objects</translation>
+    </message>
+    <message>
+        <source>%count objects lose their state in this group.</source>
+        <translation>%count objects lose their state in this group.</translation>
+    </message>
+    <message>
+        <source>No object has a state of this group.</source>
+        <translation>No object has a state of this group.</translation>
+    </message>
+    <message>
+        <source>These roles have policies that use the group. A policy limited by %limitation matches no object any more and stops granting access; edit those policies first:</source>
+        <translation>These roles have policies that use the group. A policy limited by %limitation matches no object any more and stops granting access; edit those policies first:</translation>
+    </message>
+    <message>
+        <source>No role policy uses this group.</source>
+        <translation>No role policy uses this group.</translation>
+    </message>
+    <message>
+        <source>Left alone, because system groups belong to Exponential and cannot be removed:</source>
+        <translation>Left alone, because system groups belong to Exponential and cannot be removed:</translation>
+    </message>
+    <message>
+        <source>Remove for good</source>
+        <translation>Remove for good</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>State groups</source>
+        <translation>State groups</translation>
+    </message>
+    <message>
+        <source>States in them</source>
+        <translation>States in them</translation>
+    </message>
+    <message>
+        <source>Your own groups</source>
+        <translation>Your own groups</translation>
+    </message>
+    <message>
+        <source>System groups</source>
+        <translation>System groups</translation>
+    </message>
+    <message>
+        <source>Roles that use states</source>
+        <translation>Roles that use states</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>New state group</source>
+        <translation>New state group</translation>
+    </message>
+    <message>
+        <source>There are no state groups yet. A group holds the states content can be in, for example "Review" with Draft, In review and Approved.</source>
+        <translation>There are no state groups yet. A group holds the states content can be in, for example "Review" with Draft, In review and Approved.</translation>
+    </message>
+    <message>
+        <source>Belongs to Exponential; it cannot be edited or removed</source>
+        <translation>Belongs to Exponential; it cannot be edited or removed</translation>
+    </message>
+    <message>
+        <source>System, protected</source>
+        <translation>System, protected</translation>
+    </message>
+    <message>
+        <source>1 state</source>
+        <translation>1 state</translation>
+    </message>
+    <message>
+        <source>%count states</source>
+        <translation>%count states</translation>
+    </message>
+    <message>
+        <source>Used by %count roles</source>
+        <translation>Used by %count roles</translation>
+    </message>
+    <message>
+        <source>Edit the group %group</source>
+        <translation>Edit the group %group</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Select</translation>
+    </message>
+    <message>
+        <source>Open the group %group</source>
+        <translation>Open the group %group</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>States of %group, in order</source>
+        <translation>States of %group, in order</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>default</translation>
+    </message>
+    <message>
+        <source>This group has no states yet, so it does nothing. Open it and add the first state; every existing object gets it.</source>
+        <translation>This group has no states yet, so it does nothing. Open it and add the first state; every existing object gets it.</translation>
+    </message>
+    <message>
+        <source>Policy limitation</source>
+        <translation>Policy limitation</translation>
+    </message>
+    <message>
+        <source>None: policies cannot limit by system groups</source>
+        <translation>None: policies cannot limit by system groups</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>main: %locale</source>
+        <translation>main: %locale</translation>
+    </message>
+    <message>
+        <source>Used in roles</source>
+        <translation>Used in roles</translation>
+    </message>
+    <message>
+        <source>No role policy uses this group</source>
+        <translation>No role policy uses this group</translation>
+    </message>
+    <message>
+        <source>Exponential keeps this group for its own use (locking content) and keeps it as it is: it cannot be edited or removed here, and roles cannot limit by it.</source>
+        <translation>Exponential keeps this group for its own use (locking content) and keeps it as it is: it cannot be edited or removed here, and roles cannot limit by it.</translation>
+    </message>
+    <message>
+        <source>Select groups with their checkbox to remove them. You will see what is removed and what it touches before anything happens.</source>
+        <translation>Select groups with their checkbox to remove them. You will see what is removed and what it touches before anything happens.</translation>
+    </message>
+    <message>
+        <source>Groups per page:</source>
+        <translation>Groups per page:</translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation>Removed: %names.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/view</name>
@@ -23362,6 +23890,102 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Description</source>
         <translation>Description</translation>
+    </message>
+    <message>
+        <source>State in the group</source>
+        <translation>State in the group</translation>
+    </message>
+    <message>
+        <source>Default for new objects</source>
+        <translation>Default for new objects</translation>
+    </message>
+    <message>
+        <source>System, protected</source>
+        <translation>System, protected</translation>
+    </message>
+    <message>
+        <source>Shown in %locale</source>
+        <translation>Shown in %locale</translation>
+    </message>
+    <message>
+        <source>No description. A description tells editors when content belongs in this state.</source>
+        <translation>No description. A description tells editors when content belongs in this state.</translation>
+    </message>
+    <message>
+        <source>Objects in this state</source>
+        <translation>Objects in this state</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>%position of %count</source>
+        <translation>%position of %count</translation>
+    </message>
+    <message>
+        <source>The states of %group</source>
+        <translation>The states of %group</translation>
+    </message>
+    <message>
+        <source>States of %group, in order</source>
+        <translation>States of %group, in order</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count objects</translation>
+    </message>
+    <message>
+        <source>Translations (%count)</source>
+        <translation>Translations (%count)</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Language</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locale</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Main</translation>
+    </message>
+    <message>
+        <source>Show the state in %language</source>
+        <translation>Show the state in %language</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Roles that name this state</source>
+        <translation>Roles that name this state</translation>
+    </message>
+    <message>
+        <source>No role policy names this state.</source>
+        <translation>No role policy names this state.</translation>
+    </message>
+    <message>
+        <source>This state belongs to a system group and cannot be edited.</source>
+        <translation>This state belongs to a system group and cannot be edited.</translation>
+    </message>
+    <message>
+        <source>Edit changes the identifier, the names and the descriptions.</source>
+        <translation>Edit changes the identifier, the names and the descriptions.</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Back to the group</source>
+        <translation>Back to the group</translation>
     </message>
 </context>
 <context>
@@ -49118,6 +49742,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>The password does not meet the requirements.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/state/assign</name>
+    <message>
+        <source>An object is in one state of every state group. Choose the states and press Set states; only the states your role lets you set are offered.</source>
+        <translation>An object is in one state of every state group. Choose the states and press Set states; only the states your role lets you set are offered.</translation>
+    </message>
+    <message>
+        <source>Only the current state may be set.</source>
+        <translation>Only the current state may be set.</translation>
+    </message>
+    <message>
+        <source>The object is saved with the new states at once; no new version is made.</source>
+        <translation>The object is saved with the new states at once; no new version is made.</translation>
+    </message>
+    <message>
+        <source>Back to the object</source>
+        <translation>Back to the object</translation>
     </message>
 </context>
 </TS>

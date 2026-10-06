@@ -26171,6 +26171,62 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Save changes to this state.</source>
         <translation>Statusänderungen sichern.</translation>
     </message>
+    <message>
+        <source>New state in %group</source>
+        <translation>Neuer Zustand in %group</translation>
+    </message>
+    <message>
+        <source>Edit the state "%state_name"</source>
+        <translation>Zustand „%state_name“ bearbeiten</translation>
+    </message>
+    <message>
+        <source>This is the first state of the group. Every object that exists gets it when it is saved, and it becomes the default for new objects.</source>
+        <translation>Dies ist der erste Zustand der Gruppe. Jedes vorhandene Objekt erhält ihn beim Speichern, und er wird der Standard für neue Objekte.</translation>
+    </message>
+    <message>
+        <source>The new state is added at the end, as number %position. Objects keep their state; set it on content under Content state in the Details tab of a node. The order can be changed on the page of the group.</source>
+        <translation>Der neue Zustand wird am Ende als Nummer %position angefügt. Objekte behalten ihren Zustand; gesetzt wird er unter Zustand des Objekts im Reiter Details eines Knotens. Die Reihenfolge lässt sich auf der Seite der Gruppe ändern.</translation>
+    </message>
+    <message>
+        <source>Changing the names and descriptions changes what editors see. Templates, request rules and searches refer to the state by its identifier, so change that only together with them.</source>
+        <translation>Namen und Beschreibungen ändern, was Redakteure sehen. Templates, Request-Regeln und Suchen sprechen den Zustand über seinen Bezeichner an; ändern Sie ihn deshalb nur zusammen mit ihnen.</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>Lower-case letters a-z, digits and underscores, at most 45 characters, unique in the group. It is written %example in templates and request rules.</source>
+        <translation>Kleinbuchstaben a-z, Ziffern und Unterstriche, höchstens 45 Zeichen, eindeutig in der Gruppe. In Templates und Request-Regeln wird er %example geschrieben.</translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation>Hauptsprache</translation>
+    </message>
+    <message>
+        <source>Shown where a language has no name of its own. The main language needs a name.</source>
+        <translation>Wird gezeigt, wo eine Sprache keinen eigenen Namen hat. Die Hauptsprache braucht einen Namen.</translation>
+    </message>
+    <message>
+        <source>A name and description per language. A language left empty is not translated; emptying a translation removes it.</source>
+        <translation>Ein Name und eine Beschreibung je Sprache. Eine leer gelassene Sprache wird nicht übersetzt; eine geleerte Übersetzung wird entfernt.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschreibung</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the group without saving.</source>
+        <translation>Abbrechen kehrt ohne Speichern zur Gruppe zurück.</translation>
+    </message>
+    <message>
+        <source>Create state</source>
+        <translation>Zustand anlegen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/group</name>
@@ -26242,6 +26298,234 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
+    <message>
+        <source>State group</source>
+        <translation>Zustandsgruppe</translation>
+    </message>
+    <message>
+        <source>System, protected</source>
+        <translation>System, geschützt</translation>
+    </message>
+    <message>
+        <source>1 state</source>
+        <translation>1 Zustand</translation>
+    </message>
+    <message>
+        <source>%count states</source>
+        <translation>%count Zustände</translation>
+    </message>
+    <message>
+        <source>Shown in %locale</source>
+        <translation>Angezeigt in %locale</translation>
+    </message>
+    <message>
+        <source>Every content object is in exactly one state of this group. New objects get the first state.</source>
+        <translation>Jedes Inhaltsobjekt hat genau einen Zustand dieser Gruppe. Neue Objekte erhalten den ersten Zustand.</translation>
+    </message>
+    <message>
+        <source>Exponential keeps this group for its own use (locking content): its states, their order and its translations cannot be changed here, and roles cannot limit by it.</source>
+        <translation>Exponential nutzt diese Gruppe selbst (zum Sperren von Inhalten): Ihre Zustände, deren Reihenfolge und ihre Übersetzungen lassen sich hier nicht ändern, und Rollen können nicht nach ihr einschränken.</translation>
+    </message>
+    <message>
+        <source>Remove this state?</source>
+        <translation>Diesen Zustand entfernen?</translation>
+    </message>
+    <message>
+        <source>Remove %count states?</source>
+        <translation>%count Zustände entfernen?</translation>
+    </message>
+    <message>
+        <source>No state would be left in the group. The %count objects in the removed states then have no state of this group, and new objects get none until a state is added again.</source>
+        <translation>In der Gruppe bliebe kein Zustand übrig. Die %count Objekte in den entfernten Zuständen haben dann keinen Zustand dieser Gruppe, und neue Objekte erhalten keinen, bis wieder ein Zustand angelegt wird.</translation>
+    </message>
+    <message>
+        <source>The %count objects in the removed states are moved to "%state", the first state that stays.</source>
+        <translation>Die %count Objekte in den entfernten Zuständen erhalten „%state“, den ersten Zustand, der bleibt.</translation>
+    </message>
+    <message>
+        <source>No object is in a state that is removed, so no object changes.</source>
+        <translation>Kein Objekt hat einen der entfernten Zustände, daher ändert sich kein Objekt.</translation>
+    </message>
+    <message>
+        <source>A removed state is gone for good, with its translations. Policies that name it no longer match it. This cannot be undone.</source>
+        <translation>Ein entfernter Zustand ist samt Übersetzungen endgültig weg. Richtlinien, die ihn nennen, treffen ihn nicht mehr. Das lässt sich nicht rückgängig machen.</translation>
+    </message>
+    <message>
+        <source>States to remove</source>
+        <translation>Zu entfernende Zustände</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count Objekte</translation>
+    </message>
+    <message>
+        <source>Remove for good</source>
+        <translation>Endgültig entfernen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Default state</source>
+        <translation>Standardzustand</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Noch keiner</translation>
+    </message>
+    <message>
+        <source>Objects with a state of this group</source>
+        <translation>Objekte mit einem Zustand dieser Gruppe</translation>
+    </message>
+    <message>
+        <source>Policy limitation</source>
+        <translation>Richtlinien-Einschränkung</translation>
+    </message>
+    <message>
+        <source>None: policies cannot limit by system groups</source>
+        <translation>Keine: Richtlinien können nicht nach Systemgruppen einschränken</translation>
+    </message>
+    <message>
+        <source>States, in order</source>
+        <translation>Zustände in ihrer Reihenfolge</translation>
+    </message>
+    <message>
+        <source>New state</source>
+        <translation>Neuer Zustand</translation>
+    </message>
+    <message>
+        <source>The first state is the default: every new object gets it. The order is also the order editors see the states in. To change it, change the positions and save the order.</source>
+        <translation>Der erste Zustand ist der Standard: Jedes neue Objekt erhält ihn. In dieser Reihenfolge sehen auch Redakteure die Zustände. Um sie zu ändern, ändern Sie die Positionen und speichern die Reihenfolge.</translation>
+    </message>
+    <message>
+        <source>This group has no states yet. The first state you add is given to every object that exists, and becomes the default for new ones.</source>
+        <translation>Diese Gruppe hat noch keine Zustände. Der erste Zustand, den Sie anlegen, wird jedem vorhandenen Objekt gegeben und der Standard für neue.</translation>
+    </message>
+    <message>
+        <source>Default for new objects</source>
+        <translation>Standard für neue Objekte</translation>
+    </message>
+    <message>
+        <source>Languages: %locales</source>
+        <translation>Sprachen: %locales</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>Move %state up</source>
+        <translation>%state nach oben verschieben</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Nach oben</translation>
+    </message>
+    <message>
+        <source>Move %state down</source>
+        <translation>%state nach unten verschieben</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Nach unten</translation>
+    </message>
+    <message>
+        <source>Edit the state %state</source>
+        <translation>Zustand %state bearbeiten</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Save order keeps the positions above. Remove selected asks first and says where the objects of the removed states go.</source>
+        <translation>Reihenfolge speichern übernimmt die Positionen oben. Auswahl entfernen fragt vorher nach und sagt, welchen Zustand die Objekte der entfernten Zustände erhalten.</translation>
+    </message>
+    <message>
+        <source>Save order</source>
+        <translation>Reihenfolge speichern</translation>
+    </message>
+    <message>
+        <source>Translations (%count)</source>
+        <translation>Übersetzungen (%count)</translation>
+    </message>
+    <message>
+        <source>Edit group and translations</source>
+        <translation>Gruppe und Übersetzungen bearbeiten</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locale</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Haupt</translation>
+    </message>
+    <message>
+        <source>Show the group in %language</source>
+        <translation>Gruppe auf %language anzeigen</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>Roles that use this group</source>
+        <translation>Rollen, die diese Gruppe verwenden</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rolle</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Richtlinien</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Wie</translation>
+    </message>
+    <message>
+        <source>Applies only to objects in some states</source>
+        <translation>Gilt nur für Objekte in bestimmten Zuständen</translation>
+    </message>
+    <message>
+        <source>Lets users set some states</source>
+        <translation>Lässt Benutzer bestimmte Zustände setzen</translation>
+    </message>
+    <message>
+        <source>No role policy uses this group yet. To let a role read, edit or publish only content in some states, add the limitation %limitation to its policy.</source>
+        <translation>Noch keine Richtlinie einer Rolle verwendet diese Gruppe. Soll eine Rolle nur Inhalte in bestimmten Zuständen lesen, bearbeiten oder veröffentlichen dürfen, fügen Sie ihrer Richtlinie die Einschränkung %limitation hinzu.</translation>
+    </message>
+    <message>
+        <source>Roles cannot limit by system groups.</source>
+        <translation>Rollen können nicht nach Systemgruppen einschränken.</translation>
+    </message>
+    <message>
+        <source>%state is now at position %position. Save the order to keep it.</source>
+        <translation>%state steht jetzt an Position %position. Speichern Sie die Reihenfolge, um sie zu behalten.</translation>
+    </message>
+    <message>
+        <source>The selected states were removed.</source>
+        <translation>Die ausgewählten Zustände wurden entfernt.</translation>
+    </message>
+    <message>
+        <source>The order was saved. The first state is the default for new objects.</source>
+        <translation>Die Reihenfolge wurde gespeichert. Der erste Zustand ist der Standard für neue Objekte.</translation>
+    </message>
+    <message>
+        <source>The order could not be saved: the list of states has changed. Look at it again and save once more.</source>
+        <translation>Die Reihenfolge konnte nicht gespeichert werden: Die Liste der Zustände hat sich geändert. Prüfen Sie sie und speichern Sie erneut.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/group_edit</name>
@@ -26297,6 +26581,66 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
+    <message>
+        <source>New state group</source>
+        <translation>Neue Zustandsgruppe</translation>
+    </message>
+    <message>
+        <source>Edit the state group "%group_name"</source>
+        <translation>Zustandsgruppe „%group_name“ bearbeiten</translation>
+    </message>
+    <message>
+        <source>A group holds the states content can be in, one at a time: for example a group "Review" with the states Draft, In review and Approved. After creating it you add its states; the first one is given to every object.</source>
+        <translation>Eine Gruppe enthält die Zustände, in denen Inhalte sein können, jeweils einen: etwa eine Gruppe „Prüfung“ mit den Zuständen Entwurf, In Prüfung und Freigegeben. Nach dem Anlegen fügen Sie ihre Zustände hinzu; der erste wird jedem Objekt gegeben.</translation>
+    </message>
+    <message>
+        <source>Changing the names and descriptions changes what editors see. Templates, request rules and searches refer to the group by its identifier, and policies limit by StateGroup_ followed by it, so change the identifier only together with them.</source>
+        <translation>Namen und Beschreibungen ändern, was Redakteure sehen. Templates, Request-Regeln und Suchen sprechen die Gruppe über ihren Bezeichner an, und Richtlinien schränken mit StateGroup_ und dem Bezeichner ein; ändern Sie den Bezeichner deshalb nur zusammen mit ihnen.</translation>
+    </message>
+    <message>
+        <source>These roles limit by %limitation:</source>
+        <translation>Diese Rollen schränken nach %limitation ein:</translation>
+    </message>
+    <message>
+        <source>Look at their policies after changing the identifier.</source>
+        <translation>Prüfen Sie deren Richtlinien, nachdem Sie den Bezeichner geändert haben.</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>Lower-case letters a-z, digits and underscores, at most 45 characters, unique. Identifiers starting with "ez" are reserved for Exponential. Policies limit by StateGroup_ followed by the identifier.</source>
+        <translation>Kleinbuchstaben a-z, Ziffern und Unterstriche, höchstens 45 Zeichen, eindeutig. Bezeichner, die mit „ez“ beginnen, sind Exponential vorbehalten. Richtlinien schränken mit StateGroup_ und dem Bezeichner ein.</translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation>Hauptsprache</translation>
+    </message>
+    <message>
+        <source>Shown where a language has no name of its own. The main language needs a name.</source>
+        <translation>Wird gezeigt, wo eine Sprache keinen eigenen Namen hat. Die Hauptsprache braucht einen Namen.</translation>
+    </message>
+    <message>
+        <source>A name and description per language. A language left empty is not translated; emptying a translation removes it.</source>
+        <translation>Ein Name und eine Beschreibung je Sprache. Eine leer gelassene Sprache wird nicht übersetzt; eine geleerte Übersetzung wird entfernt.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschreibung</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the list of groups without creating anything.</source>
+        <translation>Abbrechen kehrt zur Liste der Gruppen zurück, ohne etwas anzulegen.</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the list of groups without saving.</source>
+        <translation>Abbrechen kehrt ohne Speichern zur Liste der Gruppen zurück.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/groups</name>
@@ -26348,6 +26692,190 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Create a new state group.</source>
         <translation>Neue Status Gruppe erstellen.</translation>
     </message>
+    <message>
+        <source>Object states</source>
+        <translation>Objektzustände</translation>
+    </message>
+    <message>
+        <source>An object state is a label every content object carries, one from each state group: a stage of your own such as draft, in review and approved. States change nothing by themselves; roles use them to decide who may read, edit or publish what, and templates and searches can ask for them. New objects get the first state of each group.</source>
+        <translation>Ein Objektzustand ist eine Markierung, die jedes Inhaltsobjekt trägt, eine aus jeder Zustandsgruppe: eine selbst definierte Stufe wie Entwurf, In Prüfung und Freigegeben. Zustände bewirken von sich aus nichts; Rollen entscheiden mit ihnen, wer was lesen, bearbeiten oder veröffentlichen darf, und Templates und Suchen können nach ihnen fragen. Neue Objekte erhalten den ersten Zustand jeder Gruppe.</translation>
+    </message>
+    <message>
+        <source>Remove this state group?</source>
+        <translation>Diese Zustandsgruppe entfernen?</translation>
+    </message>
+    <message>
+        <source>Remove %count state groups?</source>
+        <translation>%count Zustandsgruppen entfernen?</translation>
+    </message>
+    <message>
+        <source>A removed group and its states are gone for good, with their translations. This cannot be undone.</source>
+        <translation>Eine entfernte Gruppe und ihre Zustände sind samt Übersetzungen endgültig weg. Das lässt sich nicht rückgängig machen.</translation>
+    </message>
+    <message>
+        <source>States of %group</source>
+        <translation>Zustände von %group</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count Objekte</translation>
+    </message>
+    <message>
+        <source>%count objects lose their state in this group.</source>
+        <translation>%count Objekte verlieren ihren Zustand in dieser Gruppe.</translation>
+    </message>
+    <message>
+        <source>No object has a state of this group.</source>
+        <translation>Kein Objekt hat einen Zustand dieser Gruppe.</translation>
+    </message>
+    <message>
+        <source>These roles have policies that use the group. A policy limited by %limitation matches no object any more and stops granting access; edit those policies first:</source>
+        <translation>Diese Rollen haben Richtlinien, die die Gruppe verwenden. Eine nach %limitation eingeschränkte Richtlinie trifft dann kein Objekt mehr und gewährt keinen Zugriff mehr; bearbeiten Sie diese Richtlinien zuerst:</translation>
+    </message>
+    <message>
+        <source>No role policy uses this group.</source>
+        <translation>Keine Richtlinie einer Rolle verwendet diese Gruppe.</translation>
+    </message>
+    <message>
+        <source>Left alone, because system groups belong to Exponential and cannot be removed:</source>
+        <translation>Unverändert gelassen, weil Systemgruppen zu Exponential gehören und nicht entfernt werden können:</translation>
+    </message>
+    <message>
+        <source>Remove for good</source>
+        <translation>Endgültig entfernen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>State groups</source>
+        <translation>Zustandsgruppen</translation>
+    </message>
+    <message>
+        <source>States in them</source>
+        <translation>Zustände darin</translation>
+    </message>
+    <message>
+        <source>Your own groups</source>
+        <translation>Eigene Gruppen</translation>
+    </message>
+    <message>
+        <source>System groups</source>
+        <translation>Systemgruppen</translation>
+    </message>
+    <message>
+        <source>Roles that use states</source>
+        <translation>Rollen, die Zustände verwenden</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>New state group</source>
+        <translation>Neue Zustandsgruppe</translation>
+    </message>
+    <message>
+        <source>There are no state groups yet. A group holds the states content can be in, for example "Review" with Draft, In review and Approved.</source>
+        <translation>Es gibt noch keine Zustandsgruppen. Eine Gruppe enthält die Zustände, in denen Inhalte sein können, etwa „Prüfung“ mit Entwurf, In Prüfung und Freigegeben.</translation>
+    </message>
+    <message>
+        <source>Belongs to Exponential; it cannot be edited or removed</source>
+        <translation>Gehört zu Exponential; kann nicht bearbeitet oder entfernt werden</translation>
+    </message>
+    <message>
+        <source>System, protected</source>
+        <translation>System, geschützt</translation>
+    </message>
+    <message>
+        <source>1 state</source>
+        <translation>1 Zustand</translation>
+    </message>
+    <message>
+        <source>%count states</source>
+        <translation>%count Zustände</translation>
+    </message>
+    <message>
+        <source>Used by %count roles</source>
+        <translation>Von %count Rollen verwendet</translation>
+    </message>
+    <message>
+        <source>Edit the group %group</source>
+        <translation>Gruppe %group bearbeiten</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Open the group %group</source>
+        <translation>Gruppe %group öffnen</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>States of %group, in order</source>
+        <translation>Zustände von %group in ihrer Reihenfolge</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>This group has no states yet, so it does nothing. Open it and add the first state; every existing object gets it.</source>
+        <translation>Diese Gruppe hat noch keine Zustände und bewirkt daher nichts. Öffnen Sie sie und legen Sie den ersten Zustand an; jedes vorhandene Objekt erhält ihn.</translation>
+    </message>
+    <message>
+        <source>Policy limitation</source>
+        <translation>Richtlinien-Einschränkung</translation>
+    </message>
+    <message>
+        <source>None: policies cannot limit by system groups</source>
+        <translation>Keine: Richtlinien können nicht nach Systemgruppen einschränken</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Sprachen</translation>
+    </message>
+    <message>
+        <source>main: %locale</source>
+        <translation>Haupt: %locale</translation>
+    </message>
+    <message>
+        <source>Used in roles</source>
+        <translation>Verwendet in Rollen</translation>
+    </message>
+    <message>
+        <source>No role policy uses this group</source>
+        <translation>Keine Richtlinie einer Rolle verwendet diese Gruppe</translation>
+    </message>
+    <message>
+        <source>Exponential keeps this group for its own use (locking content) and keeps it as it is: it cannot be edited or removed here, and roles cannot limit by it.</source>
+        <translation>Exponential nutzt diese Gruppe selbst (zum Sperren von Inhalten) und hält sie unverändert: Sie lässt sich hier weder bearbeiten noch entfernen, und Rollen können nicht nach ihr einschränken.</translation>
+    </message>
+    <message>
+        <source>Select groups with their checkbox to remove them. You will see what is removed and what it touches before anything happens.</source>
+        <translation>Wählen Sie Gruppen mit ihrem Kästchen aus, um sie zu entfernen. Bevor etwas geschieht, sehen Sie, was entfernt wird und was davon betroffen ist.</translation>
+    </message>
+    <message>
+        <source>Groups per page:</source>
+        <translation>Gruppen pro Seite:</translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation>Entfernt: %names.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/view</name>
@@ -26366,6 +26894,102 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Description</source>
         <translation>Beschreibung</translation>
+    </message>
+    <message>
+        <source>State in the group</source>
+        <translation>Zustand in der Gruppe</translation>
+    </message>
+    <message>
+        <source>Default for new objects</source>
+        <translation>Standard für neue Objekte</translation>
+    </message>
+    <message>
+        <source>System, protected</source>
+        <translation>System, geschützt</translation>
+    </message>
+    <message>
+        <source>Shown in %locale</source>
+        <translation>Angezeigt in %locale</translation>
+    </message>
+    <message>
+        <source>No description. A description tells editors when content belongs in this state.</source>
+        <translation>Keine Beschreibung. Eine Beschreibung sagt Redakteuren, wann Inhalte in diesen Zustand gehören.</translation>
+    </message>
+    <message>
+        <source>Objects in this state</source>
+        <translation>Objekte in diesem Zustand</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>%position of %count</source>
+        <translation>%position von %count</translation>
+    </message>
+    <message>
+        <source>The states of %group</source>
+        <translation>Die Zustände von %group</translation>
+    </message>
+    <message>
+        <source>States of %group, in order</source>
+        <translation>Zustände von %group in ihrer Reihenfolge</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count Objekte</translation>
+    </message>
+    <message>
+        <source>Translations (%count)</source>
+        <translation>Übersetzungen (%count)</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locale</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Haupt</translation>
+    </message>
+    <message>
+        <source>Show the state in %language</source>
+        <translation>Zustand auf %language anzeigen</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>Roles that name this state</source>
+        <translation>Rollen, die diesen Zustand nennen</translation>
+    </message>
+    <message>
+        <source>No role policy names this state.</source>
+        <translation>Keine Richtlinie einer Rolle nennt diesen Zustand.</translation>
+    </message>
+    <message>
+        <source>This state belongs to a system group and cannot be edited.</source>
+        <translation>Dieser Zustand gehört zu einer Systemgruppe und kann nicht bearbeitet werden.</translation>
+    </message>
+    <message>
+        <source>Edit changes the identifier, the names and the descriptions.</source>
+        <translation>Bearbeiten ändert den Bezeichner, die Namen und die Beschreibungen.</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Back to the group</source>
+        <translation>Zurück zur Gruppe</translation>
     </message>
 </context>
 <context>
@@ -56177,6 +56801,25 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>Das Passwort erfüllt die Anforderungen nicht.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/state/assign</name>
+    <message>
+        <source>An object is in one state of every state group. Choose the states and press Set states; only the states your role lets you set are offered.</source>
+        <translation>Ein Objekt hat aus jeder Zustandsgruppe genau einen Zustand. Wählen Sie die Zustände und klicken Sie auf Zustände einstellen; angeboten werden nur die Zustände, die Ihre Rolle Sie setzen lässt.</translation>
+    </message>
+    <message>
+        <source>Only the current state may be set.</source>
+        <translation>Nur der aktuelle Zustand darf gesetzt werden.</translation>
+    </message>
+    <message>
+        <source>The object is saved with the new states at once; no new version is made.</source>
+        <translation>Das Objekt wird sofort mit den neuen Zuständen gespeichert; es entsteht keine neue Version.</translation>
+    </message>
+    <message>
+        <source>Back to the object</source>
+        <translation>Zurück zum Objekt</translation>
     </message>
 </context>
 </TS>
