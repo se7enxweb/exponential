@@ -80,13 +80,15 @@ class eZStepEmailSettings extends eZStepInstaller
                             'result' => false );
         if ( isset( $this->PersistenceList['email_info'] ) )
             $emailInfo = array_merge( $emailInfo, $this->PersistenceList['email_info'] );
-        if ( $emailInfo['server'] and
+        // What the settings already have fills a field nothing was typed into;
+        // what was typed is shown as it was typed
+        if ( !$emailInfo['server'] and
              $this->Ini->variable( 'MailSettings', 'TransportServer' ) )
             $emailInfo['server'] = $this->Ini->variable( 'MailSettings', 'TransportServer' );
-        if ( $emailInfo['user'] and
+        if ( !$emailInfo['user'] and
              $this->Ini->variable( 'MailSettings', 'TransportUser' ) )
             $emailInfo['user'] = $this->Ini->variable( 'MailSettings', 'TransportUser' );
-        if ( $emailInfo['password'] and
+        if ( !$emailInfo['password'] and
              $this->Ini->variable( 'MailSettings', 'TransportPassword' ) )
             $emailInfo['password'] = $this->Ini->variable( 'MailSettings', 'TransportPassword' );
 

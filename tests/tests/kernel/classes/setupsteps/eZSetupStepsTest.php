@@ -210,6 +210,22 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( eZSys::filesystemType() == 'win32' ? 2 : 1, $mta->PersistenceList['email_info']['type'] );
     }
 
+    public function testEmailPageShowsWhatWasTypedOrElseTheConfiguredServer()
+    {
+        $this->helper->injectSite( array( 'MailSettings' => array( 'TransportServer' => 'configured.k1e.example.invalid', 'TransportUser' => 'configured-user', 'TransportPassword' => 'configured-password' ) ) );
+        $typed = $this->step( 'eZStepEmailSettings', array( 'email_info' => array( 'type' => 2, 'server' => 'typed.k1e.example.invalid', 'user' => 'typed-user', 'password' => 'typed-password' ) ) );
+        $result = $typed->display();
+        $this->assertSame( '[design:setup/init/email_settings.tpl]', $result['content'] );
+        $info = $this->variable( 'email_info' );
+        $this->assertSame( array( 'typed.k1e.example.invalid', 'typed-user', 'typed-password' ), array( $info['server'], $info['user'], $info['password'] ) );
+
+        $empty = $this->step( 'eZStepEmailSettings', array( 'email_info' => array( 'type' => 2 ) ) );
+        $empty->display();
+        $info = $this->variable( 'email_info' );
+        $this->assertSame( array( 'configured.k1e.example.invalid', 'configured-user', 'configured-password' ), array( $info['server'], $info['user'], $info['password'] ) );
+        $this->assertSame( array( 'type' => eZSys::filesystemType() ), $this->variable( 'system' ) );
+    }
+
     // ---------------------------------------------------------------- database choice
 
     public function testDatabaseChoice()
