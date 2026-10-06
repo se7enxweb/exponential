@@ -3356,7 +3356,7 @@ ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 d2188ee720e90436ac33eb65e1e659eb  doc/guides/content-languages.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
-31b51dea8209beb85999e3e89e17c1f5  doc/guides/cronjobs.md
+a841ba0d4e6df12e066d8ac43bf433be  doc/guides/cronjobs.md
 16abc76337749d4e4334c2373b362366  doc/guides/deploying.md
 5f6657b0ea73fe7a20da12e4a3d5547c  doc/guides/extensions.md
 9ab2a55cb8c3f5b50331448d91683c53  doc/guides/getting-started.md
@@ -5740,7 +5740,7 @@ e7b23bc87cf9927a49ff016b0cbd58b3  kernel/setup/cronjobs.php
 f8e92677e7dfa02f5c12c3ba4f51ade5  kernel/setup/designextension.php
 b462e56894c442c6bf96165b9c6dc66e  kernel/setup/expclassloadcheck.php
 ed6865ef97c920d6eb14d15012b89e2f  kernel/setup/expcontentextensionwizard.php
-5c457c6a9a48757b066e6e7ebd4041bb  kernel/setup/expcronjobrunner.php
+198437326e0a4ae3eb1a54428b925eaa  kernel/setup/expcronjobrunner.php
 85793a606ddbd4ee54b0270da49553d4  kernel/setup/expdatatypewizard.php
 881799255dbd1feb026ddb939906d0df  kernel/setup/expdesignextensionwizard.php
 d3dfc840ae6f3f96db5e9f61a7d50941  kernel/setup/expextensionwizard.php
@@ -6957,7 +6957,7 @@ b80a0b72065201d4e81e9dbd79ed9ec0  tests/tests/kernel/classes/eZURLWildcardTest.p
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 84ebc3bbeda752f59b4ef25e20ab9b9b  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
-2b540335b2256d5253454a627968abc2  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
+e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 cf5d5388e5242328fbc1f6c199a8afd8  tests/tests/kernel/classes/expSectionOverviewTest.php
 5571584f622d8c32b884f5d306511331  tests/tests/kernel/classes/expVelocityEnginesTest.php
