@@ -8,7 +8,7 @@
  *  UA-01 - Unknown list modes, orders and filters fall back to the defaults; the known ones are kept
  *  UA-02 - A search text is one trimmed line of at most 200 characters; anything else is no search
  *  UA-03 - A posted selection keeps whole positive numbers, each once
- *  UA-04 - The link check kind follows the scheme; only web, mail and site addresses become links
+ *  UA-04 - The link check kind is the one expLinkCheck uses; only web, mail and site addresses become links
  *  UA-05 - The objects using each URL are counted per URL, each object once, the first three named
  *  UA-06 - LIKE patterns match %, _ and ! as themselves; eZURL orders end in the id
  *  UA-07 - The search statistics WHERE and ORDER BY, and the MongoDB match
@@ -78,11 +78,12 @@ class expUrlAdminPagesTest extends PHPUnit\Framework\TestCase
     /** UA-04 */
     public function testCheckKindAndOpenable()
     {
-        $this->assertSame( 'http', ListView::checkKind( 'http://example.org/' ) );
-        $this->assertSame( 'https', ListView::checkKind( 'HTTPS://example.org/' ) );
+        $this->assertSame( 'web', ListView::checkKind( 'http://example.org/' ) );
+        $this->assertSame( 'web', ListView::checkKind( 'HTTPS://example.org/' ) );
         $this->assertSame( 'mailto', ListView::checkKind( 'mailto:someone@example.org' ) );
         $this->assertSame( 'internal', ListView::checkKind( '/about' ) );
         $this->assertSame( 'content', ListView::checkKind( 'ezlocation://506' ) );
+        $this->assertSame( 'file', ListView::checkKind( 'file:///etc/passwd' ) );
         $this->assertFalse( ListView::isOpenable( 'ezobject://12' ) );
         $this->assertSame( 'other', ListView::checkKind( 'javascript:alert(1)' ) );
         $this->assertTrue( ListView::isOpenable( 'https://example.org/' ) );
