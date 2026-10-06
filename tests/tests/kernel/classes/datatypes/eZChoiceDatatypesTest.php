@@ -241,7 +241,10 @@ class eZChoiceDatatypesTest extends eZDatatypeTestCase
     {
         return array(
             'address' => array( 'a@k1.example.invalid', true, 'a@k1.example.invalid' ),
+            'spaces around' => array( "  a@k1.example.invalid\n", true, 'a@k1.example.invalid' ),
             'empty' => array( '', true, '' ),
+            'header injection' => array( "a@k1.example.invalid\r\nBcc: b@k1.example.invalid", false, 'kept@k1.example.invalid' ),
+            'control character' => array( "a\x00@k1.example.invalid", false, 'kept@k1.example.invalid' ),
         );
     }
 

@@ -196,6 +196,12 @@ class eZEmailType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
+        // Imported text is stored the way the edit form stores an address:
+        // trimmed, and never with a control character, which in a mail header
+        // (a form's receiver or sender) starts a header of its own
+        $string = trim( self::postedText( $string ) );
+        if ( preg_match( '/[\x00-\x1F\x7F]/', $string ) )
+            return false;
         return $contentObjectAttribute->setAttribute( 'data_text', $string );
     }
 
