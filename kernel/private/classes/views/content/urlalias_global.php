@@ -32,7 +32,17 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
 
         $Offset = $Params['Offset'];
+        if ( !is_numeric( $Offset ) || $Offset < 0 )
+            $Offset = 0;
+        $Offset = (int)$Offset;
         $viewParameters = array( 'offset' => $Offset );
+
+        // A search over the alias and its destination, and the kind of alias, both off the address
+        $search = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $kind = self::kindKey( isset( $userParameters['kind'] ) ? $userParameters['kind'] : '' );
+        // What the form held, given back to it when the alias could not be created
+        $aliasForm = array( 'language' => false, 'all_languages' => false, 'redirects' => true );
 
         $tpl = \eZTemplate::factory();
         $limit = 20;
@@ -98,6 +108,9 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
             $languageCode = $Module->actionParameter( 'LanguageCode' );
             $language = \eZContentLanguage::fetchByLocale( $languageCode );
             $aliasRedirects  = $http->hasPostVariable( 'AliasRedirects' ) && $http->postVariable( 'AliasRedirects' );
+            $aliasForm = array( 'language' => is_string( $languageCode ) ? $languageCode : false,
+                                'all_languages' => $isAlwaysAvailable,
+                                'redirects' => (bool)$aliasRedirects );
 
             if ( !$language )
             {
@@ -185,6 +198,13 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // An alias that was not created leaves what was typed in the form, so it can be corrected instead of retyped
+        if ( $Module->isCurrentAction( 'NewAlias' ) && ( strpos( $infoCode, 'error-' ) === 0 || $infoCode === 'feedback-alias-exists' ) )
+        {
+            $aliasOutputText = is_string( $aliasText ) ? $aliasText : '';
+            $aliasOutputDestinationText = isset( $aliasDestinationTextUnmodified ) && is_string( $aliasDestinationTextUnmodified ) ? trim( $aliasDestinationTextUnmodified ) : '';
+        }
+
         // Audit (doc/bc/6.0/audit.md, content.urlalias.change): an alias or wildcard added or removed
         if ( class_exists( 'expAuditHook' ) && in_array( $infoCode, array( 'feedback-removed-all', 'feedback-removed', 'feedback-alias-created',
                                                                            'feedback-alias-cleanup', 'feedback-wildcard-removed-all',
@@ -228,7 +248,53 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
 
         // Prime the internal data for the template, for PHP5 this is no longer needed since objects will not be copied anymore in the template code.
         $count = $filter->count();
-        $aliasList = $filter->fetchAll();
+        $totalCount = (int)$count;
+        if ( $search === '' && $kind === 'all' )
+        {
+            if ( $Offset > 0 && $Offset >= $totalCount )
+            {
+                // a removal left the page behind the end of the list
+                $Offset = 0;
+                $filter->offset = 0;
+                $filter->prepare();
+                $viewParameters['offset'] = 0;
+            }
+            $aliasList = $filter->fetchAll();
+            $aliasCount = $totalCount;
+        }
+        else
+        {
+            // Global aliases are made by hand and few, so a search reads them all and filters here: the path of
+            // an alias is assembled from its parents and cannot be matched by one query.
+            $matching = array();
+            $all = new \eZURLAliasQuery();
+            $all->actionTypesEx = array( 'eznode', 'nop' );
+            $all->limit = 500;
+            for ( $all->offset = 0; ; $all->offset += $all->limit )
+            {
+                $all->prepare();
+                $batch = $all->fetchAll();
+                foreach ( $batch as $element )
+                {
+                    if ( self::aliasMatches( self::aliasInfo( $element ), $search, $kind ) )
+                        $matching[] = $element;
+                }
+                if ( count( $batch ) < $all->limit )
+                    break;
+            }
+            $aliasCount = count( $matching );
+            if ( $Offset >= $aliasCount )
+            {
+                $Offset = 0;
+                $viewParameters['offset'] = 0;
+            }
+            $aliasList = array_slice( $matching, $Offset, $limitValues[$limitID] );
+        }
+        $aliasInfo = array();
+        foreach ( $aliasList as $element )
+            $aliasInfo[self::elementKey( $element )] = self::aliasInfo( $element );
+        if ( $kind !== 'all' )
+            $viewParameters['kind'] = $kind;
         $path = array();
         $path[] = array( 'url'  => false,
                          'text' => \ezpI18n::tr( 'kernel/content/urlalias_global', 'Global URL aliases' ) );
@@ -244,12 +310,120 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'limitList', $limitList );
         $tpl->setVariable( 'limitID', $limitID );
         $tpl->setVariable( 'view_parameters', $viewParameters );
+        // since 6.0.15: the page of aliases shown (the filter's page, or the matches of a search), how many there
+        // are, what each one points to, the search, the kind and what the form held
+        $tpl->setVariable( 'alias_list', $aliasList );
+        $tpl->setVariable( 'alias_count', $aliasCount );
+        $tpl->setVariable( 'alias_total_count', $totalCount );
+        $tpl->setVariable( 'alias_info', $aliasInfo );
+        $tpl->setVariable( 'alias_limit', $limitValues[$limitID] );
+        $tpl->setVariable( 'alias_search', $search );
+        $tpl->setVariable( 'alias_search_suffix', $search !== '' ? '?q=' . rawurlencode( $search ) : '' );
+        $tpl->setVariable( 'alias_kind', $kind );
+        $tpl->setVariable( 'alias_form', $aliasForm );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:content/urlalias_global.tpl' );
         $Result['path'] = $path;
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * The kind of alias asked for: 'all', 'redirect' (answers with a 301 to its destination) or 'direct' (shows
+     * the destination under the alias's own address).
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public static function kindKey( $value )
+    {
+        return in_array( $value, array( 'redirect', 'direct' ), true ) ? $value : 'all';
+    }
+
+    /**
+     * The value of an alias in the ElementList[] of the removal: parent, text md5 and language.
+     *
+     * @param \eZPathElement $element
+     * @return string
+     */
+    public static function elementKey( $element )
+    {
+        $language = $element->attribute( 'language_object' );
+        return $element->attribute( 'parent' ) . '.' . $element->attribute( 'text_md5' ) . '.'
+             . ( is_object( $language ) ? $language->attribute( 'locale' ) : '' );
+    }
+
+    /**
+     * What an alias's action points to: a module view ('module'), a node ('node'), another kind ('other') or
+     * nothing that can be resolved ('none'), with the module, the view and whether the module exists.
+     *
+     * @param string $action e.g. module:user/login, eznode:2, nop:
+     * @param callable|null $moduleExists given a module name, true when it exists (eZModule::exists by default)
+     * @return array kind, url, module, view, node_id, module_exists
+     */
+    public static function destinationOf( $action, $moduleExists = null )
+    {
+        $action = (string)$action;
+        $info = array( 'kind' => 'none', 'url' => '', 'module' => '', 'view' => '', 'node_id' => 0, 'module_exists' => false );
+        if ( preg_match( '#^module:(.*)$#', $action, $matches ) )
+        {
+            $url = trim( $matches[1], '/' );
+            $parts = explode( '/', $url );
+            $info['kind'] = 'module';
+            $info['url'] = $url;
+            $info['module'] = $parts[0];
+            $info['view'] = isset( $parts[1] ) ? $parts[1] : '';
+            if ( $moduleExists === null )
+                $moduleExists = function ( $name ) { return \eZModule::exists( $name ) !== null; };
+            $info['module_exists'] = $parts[0] !== '' && (bool)call_user_func( $moduleExists, $parts[0] );
+        }
+        else if ( preg_match( '#^eznode:([0-9]+)$#', $action, $matches ) )
+        {
+            $info['kind'] = 'node';
+            $info['node_id'] = (int)$matches[1];
+            $info['url'] = 'content/view/full/' . (int)$matches[1];
+        }
+        else if ( $action !== '' && $action !== 'nop:' )
+        {
+            $info['kind'] = 'other';
+            $info['url'] = $action;
+        }
+        return $info;
+    }
+
+    /**
+     * What the page shows of an alias besides its row: its whole path, its destination and what that resolves to.
+     *
+     * @param \eZPathElement $element
+     * @return array path, redirects, destination (see destinationOf())
+     */
+    public static function aliasInfo( $element )
+    {
+        return array( 'path' => (string)$element->attribute( 'path' ),
+                      'redirects' => (bool)$element->attribute( 'alias_redirects' ),
+                      'destination' => self::destinationOf( $element->attribute( 'action' ) ) );
+    }
+
+    /**
+     * Whether an alias is kept by a search (in its path or its destination, without regard to case) and a kind.
+     *
+     * @param array $info see aliasInfo()
+     * @param string $search
+     * @param string $kind see kindKey()
+     * @return bool
+     */
+    public static function aliasMatches( array $info, $search, $kind )
+    {
+        if ( $kind === 'redirect' && empty( $info['redirects'] ) )
+            return false;
+        if ( $kind === 'direct' && !empty( $info['redirects'] ) )
+            return false;
+        if ( $search === '' )
+            return true;
+        $needle = mb_strtolower( $search );
+        $haystack = mb_strtolower( $info['path'] . ' ' . ( isset( $info['destination']['url'] ) ? $info['destination']['url'] : '' ) );
+        return strpos( $haystack, $needle ) !== false;
     }
 }
 
