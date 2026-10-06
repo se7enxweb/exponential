@@ -571,7 +571,7 @@ f25c2fc56e4be195717df6a15439ba40  design/admin/templates/settings/edit.tpl
 c4046e2af288689c12899c1ffc53d5c5  design/admin/templates/settings/view.tpl
 e35ba390f01d8127c83a367a1e3c6bd3  design/admin/templates/setup/cache.tpl
 374f51b6822192b8bbb5844e2b24d625  design/admin/templates/setup/contentextension.tpl
-f300103eefc3300265c1d611470a68a9  design/admin/templates/setup/cronjobs.tpl
+a0546c08cf97a30d300cecfdcde84f5d  design/admin/templates/setup/cronjobs.tpl
 a6e2bb769b7a163ac55006547b406b49  design/admin/templates/setup/datatype.tpl
 161a4466280769f50dfb372278524759  design/admin/templates/setup/datatype_basic.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
@@ -1143,7 +1143,7 @@ f25c2fc56e4be195717df6a15439ba40  design/admin4/templates/settings/edit.tpl
 c4046e2af288689c12899c1ffc53d5c5  design/admin4/templates/settings/view.tpl
 e35ba390f01d8127c83a367a1e3c6bd3  design/admin4/templates/setup/cache.tpl
 374f51b6822192b8bbb5844e2b24d625  design/admin4/templates/setup/contentextension.tpl
-f300103eefc3300265c1d611470a68a9  design/admin4/templates/setup/cronjobs.tpl
+a0546c08cf97a30d300cecfdcde84f5d  design/admin4/templates/setup/cronjobs.tpl
 a6e2bb769b7a163ac55006547b406b49  design/admin4/templates/setup/datatype.tpl
 161a4466280769f50dfb372278524759  design/admin4/templates/setup/datatype_basic.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tpl
