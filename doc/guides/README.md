@@ -61,6 +61,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [The content model and editing content](content-model-and-editing.md) | A content class, an object, the sub-items table, the trash, a content job | 30 minutes |
 | [Templates and design](templates-and-design.md) | The design you use, the template that wrote a piece of a page, an override you can undo, the admin4 design | 15 minutes |
 | [Extensions](extensions.md) | An extension found, installed, switched on and configured; one of your own built and released | 45 minutes |
+| [The Extensions page](extensions-page.md) | Extensions activated, deactivated and put in order in one list, the changes reviewed with their risks and applied, the written and the real loading order told apart | 10 minutes |
 | [Deploying](deploying.md) | The site served by Apache with PHP-FPM, by Velocity or by FrankenPHP, with HTTPS | 30 minutes |
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
 | [System information](system-information.md) | Which server answered and how it runs PHP, the health checks read and acted on, the overview cards understood, a masked report downloaded for support, the same from the command line | 15 minutes |

@@ -5,6 +5,11 @@ lists the extensions on disk and lets you activate them. Since 5 August 2026 (co
 `3d125848e8`) it also answers the questions an administrator actually asks: which extension is this, which version,
 when did it change, and can I take a copy of it?
 
+> **Since 6 October 2026** the page is one list of cards with the loading order, activation and deactivation in it,
+> and changes are applied after a review: see [The Extensions page](../../guides/extensions-page.md). The list is no
+> longer paged and orders by loading order or by name; the other `(sort)` values of the table below fall back to the
+> loading order. The download links are under **Details** on each card, at the same addresses.
+
 ## Take a copy of an extension before an upgrade
 
 1. Open **Setup > Extensions**.
