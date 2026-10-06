@@ -167,7 +167,7 @@ class expVelocityEnginesTest extends ezpTestCase
                          '/extension/ezwebin/design/ezwebin/javascript/x.js', '/share/icons/crystal/a.png',
                          '/extension/sevenx_themes_media/design/media/fonts/inter.woff2',
                          '/favicon.ico', '/robots.txt', '/index.js', '/sw.js', '/var/site/storage/original/image/logo.svg',
-                         '/var/site/cache/public/javascript/x.js', '/var/storage/packages/7x/a/thumbnail.png',
+                         '/var/site/cache/public/javascript/x.js', '/var/storage/packages/7x/a/thumbnail.png', '/var/site/storage/pdf/handbook-2026_1.pdf',
                          '/extension/explayouts_ui_api/design/standard/vendor/ace-editor/ace.js' ) as $path )
             $this->assertSame( 1, preg_match( $static, $path ), $path );
 
@@ -182,6 +182,7 @@ class expVelocityEnginesTest extends ezpTestCase
                          '/var/storage/packages/7x/a/package.xml', '/var/storage/packages/7x/a/preview.svg',
                          '/var/storage/packages/7x/a/design/standard/stylesheets/x.css',
                          '/var/site/storage/original/image/x.php', '/var/site/storage/original/image/x.html',
+                         '/var/site/storage/pdf/x.php', '/var/site/storage/pdf/.x.pdf', '/var/site/storage/pdf/a/b.pdf', '/var/site/storage/pdf/x.pdf.txt', '/var/site/storage/pdf/x y.pdf',
                          '/share/filelist.md5', '/extension/x/settings/x.css' ) as $path )
             $this->assertSame( 0, preg_match( $static, $path ), $path );
 
