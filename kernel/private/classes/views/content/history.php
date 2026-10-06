@@ -37,23 +37,17 @@ class History extends \Exponential\Runnable\ModuleView
         $Offset = $Params['Offset'];
         $viewParameters = array( 'offset' => $Offset );
 
-        if ( $http->hasPostVariable( 'BackButton' )  )
-        {
-            $userRedirectURI = '';
-            if ( $http->hasPostVariable( 'RedirectURI' ) )
-            {
-                $redurectURI = $http->postVariable( 'RedirectURI' );
-                $http->removeSessionVariable( 'LastAccessesVersionURI' );
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( $redurectURI ) );
-            }
-            if ( $http->hasSessionVariable( "LastAccessesURI", false ) )
-                $userRedirectURI = $http->sessionVariable( "LastAccessesURI" );
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( $userRedirectURI ) );
-        }
-
         $object = \eZContentObject::fetch( $ObjectID );
 
+        // Where the Back button goes (originURI()): taken when the page is opened and carried in the form as
+        // RedirectURI, so the actions of the page keep it; without an origin, the object's own location
+        $origin = self::originURI( $object ? (int)$object->attribute( 'id' ) : 0, $object ? (int)$object->attribute( 'main_node_id' ) : 0,
+                                   self::originCandidates( $http ), \eZSys::indexDir() );
+        if ( $http->hasPostVariable( 'BackButton' ) )
+            return $this->viewResult( null, $Module->redirectTo( $origin ) );
+
         $editWarning = false;
+        $removedVersions = array();
 
         $canEdit = false;
         $canRemove = false;
@@ -246,6 +240,7 @@ class History extends \Exponential\Runnable\ModuleView
                     foreach ( $auditRemoved as $removedItem )
                         $removedNumbers[] = $removedItem['version'];
                     $contentVersions = array_values( array_diff( $contentVersions, $removedNumbers ) );
+                    $removedVersions = $removedNumbers;
                 }
 
                 // Audit (doc/bc/6.0/audit.md, content.version.remove)
@@ -390,11 +385,10 @@ class History extends \Exponential\Runnable\ModuleView
             $res->setKeys( array( array( 'section_identifier', $section->attribute( 'identifier' ) ) ) );
         }
 
-        $versionArray =( isset( $versionArray ) && is_array( $versionArray ) ) ? array_unique( $versionArray, SORT_REGULAR ) : array();
-        $LastAccessesVersionURI = $http->hasSessionVariable( 'LastAccessesVersionURI' ) ? $http->sessionVariable( 'LastAccessesVersionURI' ) : null;
-        $explodedURI = $LastAccessesVersionURI ? explode ( '/', $LastAccessesVersionURI ) : null;
-        if ( $LastAccessesVersionURI and is_array( $versionArray ) and !in_array( $explodedURI[3], $versionArray ) )
-          $tpl->setVariable( 'redirect_uri', $http->sessionVariable( 'LastAccessesVersionURI' ) );
+        // The Back button: an edit of a version that was just removed is no longer there to go back to
+        if ( $removedVersions && preg_match( '#^/content/edit/\d+/(\d+)(/|$)#', $origin, $originMatch ) && in_array( (int)$originMatch[1], $removedVersions, true ) )
+            $origin = self::originURI( (int)$object->attribute( 'id' ), (int)$object->attribute( 'main_node_id' ), array(), \eZSys::indexDir() );
+        $tpl->setVariable( 'redirect_uri', $origin );
 
         //Fetch newer drafts and count of newer drafts.
         $newerDraftVersionList = \eZPersistentObject::fetchObjectList( \eZContentObjectVersion::definition(),
@@ -524,6 +518,95 @@ class History extends \Exponential\Runnable\ModuleView
     {
         return in_array( (int)$status, array( \eZContentObjectVersion::STATUS_DRAFT, \eZContentObjectVersion::STATUS_ARCHIVED,
                                               \eZContentObjectVersion::STATUS_REJECTED, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT ), true );
+    }
+
+    /**
+     * The pages the Back button may return to, best first: the one the page's form carries (RedirectURI), the edit
+     * page that opened it with "Manage versions" (the session's LastAccessesVersionURI, taken once so that a later
+     * visit does not find it again) and the page the browser came from (the Referer header).
+     *
+     * @param \eZHTTPTool $http
+     * @return array
+     */
+    protected static function originCandidates( $http )
+    {
+        $candidates = array();
+        if ( $http->hasPostVariable( 'RedirectURI' ) )
+            $candidates[] = $http->postVariable( 'RedirectURI' );
+        if ( $http->hasSessionVariable( 'LastAccessesVersionURI' ) )
+        {
+            $candidates[] = $http->sessionVariable( 'LastAccessesVersionURI' );
+            $http->removeSessionVariable( 'LastAccessesVersionURI' );
+        }
+        $candidates[] = \eZSys::serverVariable( 'HTTP_REFERER', true );
+        return $candidates;
+    }
+
+    /**
+     * Where the Back button of the versions page goes: the first of $candidates that originCandidate() takes, else
+     * the object's own location in the full view, else (an object never published) the content dashboard. Never
+     * an edit that would make a new draft.
+     *
+     * @param int $objectID
+     * @param int $mainNodeID 0 when the object has no location
+     * @param array $candidates see originCandidates()
+     * @param string $prefix the siteaccess prefix of the addresses ("/admin" with URI matching), see eZSys::indexDir()
+     * @param array|null $allowedHosts, $currentHost as for eZRedirectManager::safeURI()
+     * @return string a path of this site without the siteaccess prefix, such as "/content/view/full/2"
+     */
+    public static function originURI( $objectID, $mainNodeID, array $candidates, $prefix = '', $allowedHosts = null, $currentHost = null )
+    {
+        foreach ( $candidates as $candidate )
+        {
+            $uri = self::originCandidate( $candidate, $objectID, $prefix, $allowedHosts, $currentHost );
+            if ( $uri !== false )
+                return $uri;
+        }
+        return (int)$mainNodeID > 0 ? '/content/view/full/' . (int)$mainNodeID : '/content/dashboard';
+    }
+
+    /**
+     * One page the Back button may return to, as a path of this site without the siteaccess prefix, or false: an
+     * address that eZRedirectManager::safeURI() refuses (another host, a script, an encoded host ...), the versions
+     * page itself, a view a return never goes to (site.ini [SiteSettings] DisallowedReturnViews), and an edit that
+     * is not of a version of this object (content/edit/<object> without a version makes a new draft).
+     *
+     * @param mixed $uri
+     * @param int $objectID
+     * @param string $prefix
+     * @param array|null $allowedHosts
+     * @param string|null $currentHost
+     * @return string|false
+     */
+    public static function originCandidate( $uri, $objectID, $prefix = '', $allowedHosts = null, $currentHost = null )
+    {
+        if ( !is_string( $uri ) || trim( $uri ) === '' || \eZRedirectManager::safeURI( $uri, $allowedHosts, $currentHost ) === false )
+            return false;
+        $uri = trim( $uri );
+        if ( preg_match( '#^(?:https?:)?//#i', $uri ) )
+        {
+            // an address of this site with its host (the Referer header): its path and query
+            $parts = parse_url( preg_match( '#^//#', $uri ) ? 'https:' . $uri : $uri );
+            if ( !is_array( $parts ) )
+                return false;
+            $uri = ( isset( $parts['path'] ) ? $parts['path'] : '/' ) . ( isset( $parts['query'] ) ? '?' . $parts['query'] : '' );
+        }
+        $path = '/' . ltrim( $uri, '/' );
+        $prefix = rtrim( (string)$prefix, '/' );
+        if ( $prefix !== '' && ( $path === $prefix || strpos( $path, $prefix . '/' ) === 0 || strpos( $path, $prefix . '?' ) === 0 ) )
+            $path = '/' . ltrim( substr( $path, strlen( $prefix ) ), '/' );
+        if ( \eZRedirectManager::safeURI( $path, $allowedHosts, $currentHost ) === false )
+            return false;
+
+        $view = \eZRedirectManager::moduleView( $path, '' );
+        if ( $view === 'content/history' )
+            return false;
+        if ( $view !== false && in_array( $view, array_map( 'strtolower', \eZRedirectManager::disallowedReturnViews() ), true ) )
+            return false;
+        if ( $view === 'content/edit' &&
+             ( !preg_match( '#^/content/edit/(\d+)/(\d+)(?:[/?]|$)#i', $path, $m ) || (int)$m[1] !== (int)$objectID ) )
+            return false;
+        return $path;
     }
 
     /**

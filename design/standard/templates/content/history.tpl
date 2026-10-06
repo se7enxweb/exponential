@@ -190,7 +190,7 @@
 <div class="left">
 <form name="versionsback" action={concat( '/content/history/', $object.id, '/' )|ezurl} method="post">
 {if is_set( $redirect_uri )}
-<input class="text" type="hidden" name="RedirectURI" value="{$redirect_uri}" />
+<input class="text" type="hidden" name="RedirectURI" value="{$redirect_uri|wash}" />
 {/if}
 <input class="button" type="submit" name="BackButton" value="{'Back'|i18n( 'design/standard/content/history' )}" />
 </form>

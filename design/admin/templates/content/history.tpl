@@ -197,7 +197,7 @@
 <div class="block">
 <div class="button-left">
 {if is_set( $redirect_uri )}
-<input class="text" type="hidden" name="RedirectURI" value="{$redirect_uri}" />
+<input class="text" type="hidden" name="RedirectURI" value="{$redirect_uri|wash}" />
 {/if}
 <input class="button" type="submit" name="BackButton" value="{'Back'|i18n( 'design/admin/content/history' )}" />
 

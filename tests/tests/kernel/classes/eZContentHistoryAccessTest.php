@@ -14,6 +14,8 @@
  *          version shows it to who may edit the object, to make the next version from it
  *  HA-09 - Removal is offered and done for drafts, archived, rejected and untouched drafts only
  *  HA-10 - The view's policy functions are "read or edit", so the view decides for the object
+ *  HA-11 - The Back button: without an origin the object's own location (never node 2 by rule, never an edit that makes a
+ *          draft), else the page the history was opened from when it is safe
  *
  * The object and its versions are stand-ins whose permissions are given; the current user is a stand-in anonymous
  * user.
@@ -182,5 +184,40 @@ class eZContentHistoryAccessTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( "/\\\$ViewList\\['history'\\] = array\\((?:\\s*\\/\\/[^\\n]*)?\\s*'functions' => array\\( 'read or edit' \\),/", $source );
         $this->assertMatchesRegularExpression( "/\\\$ViewList\\['versionview'\\] = array\\(\\s*'functions' => array\\( 'versionread' \\),/", $source,
                                                'the version view keeps asking versionread' );
+    }
+
+    private function origin( array $candidates, $objectID = 1, $mainNodeID = 2 )
+    {
+        return History::originURI( $objectID, $mainNodeID, $candidates, '/admin', array(), 'alpha.example' );
+    }
+
+    /** HA-11 */
+    public function testWhereTheBackButtonGoes()
+    {
+        // opened directly: the object's own location, or the dashboard for an object without one
+        $this->assertSame( '/content/view/full/2', $this->origin( array() ) );
+        $this->assertSame( '/content/view/full/61', $this->origin( array( null, '' ), 57, 61 ) );
+        $this->assertSame( '/content/dashboard', $this->origin( array(), 990401, 0 ) );
+        // from a node view, with or without the siteaccess prefix and the host of this site
+        $this->assertSame( '/content/view/full/61', $this->origin( array( 'https://alpha.example/admin/content/view/full/61' ) ) );
+        $this->assertSame( '/content/view/full/61', $this->origin( array( '/admin/content/view/full/61' ) ) );
+        $this->assertSame( '/Company/About', $this->origin( array( '/admin/Company/About' ) ) );
+        // from the edit of a version of this object ("Manage versions"): back to it
+        $this->assertSame( '/content/edit/1/9/eng-GB', $this->origin( array( 'content/edit/1/9/eng-GB' ) ) );
+        $this->assertSame( '/content/edit/1/9/eng-GB', $this->origin( array( 'https://alpha.example/admin/content/edit/1/9/eng-GB' ) ) );
+        // never an edit that makes a new draft, nor the edit of another object
+        $this->assertSame( '/content/view/full/2', $this->origin( array( '/content/edit/1' ) ) );
+        $this->assertSame( '/content/view/full/2', $this->origin( array( '/content/edit/1/' ) ) );
+        $this->assertSame( '/content/view/full/2', $this->origin( array( '/content/edit/57/3/eng-GB' ) ) );
+        // never the history itself, a view a return never goes to, another host or a script
+        $this->assertSame( '/content/view/full/2', $this->origin( array( 'https://alpha.example/admin/content/history/1' ) ) );
+        $this->assertSame( '/content/view/full/2', $this->origin( array( '/user/logout' ) ) );
+        $this->assertSame( '/content/view/full/2', $this->origin( array( 'https://evil.example/admin/content/view/full/61' ) ) );
+        $this->assertSame( '/content/view/full/2', $this->origin( array( '//evil.example/x' ) ) );
+        $this->assertSame( '/content/view/full/2', $this->origin( array( 'javascript:alert(1)' ) ) );
+        $this->assertSame( '/content/view/full/2', $this->origin( array( "/content/view/full/61\r\nX: y" ) ) );
+        // the first that passes wins: the form's own, then the edit, then the Referer header
+        $this->assertSame( '/content/dashboard', $this->origin( array( '/content/dashboard', '/content/edit/1/9', '/content/view/full/61' ) ) );
+        $this->assertSame( '/content/view/full/61', $this->origin( array( '/content/edit/1', 'https://alpha.example/admin/content/view/full/61' ) ) );
     }
 }
