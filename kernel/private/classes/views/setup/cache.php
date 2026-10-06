@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/setup/cache.php, moved into a class (#207 stage 1). The file kernel/setup/cache.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md, doc/guides/caches.md
  */
 /*
  * The original header of kernel/setup/cache.php:
@@ -18,6 +18,17 @@
 namespace Exponential\View\Kernel\Setup
 {
 
+/**
+ * Setup > Caches. The caches are described by expCacheCatalogue and cleared by expCacheManager; this view only
+ * reads the request, calls them and hands the results to setup/cache.tpl.
+ *
+ * Every POST name of the earlier page works as before (ClearAllCacheButton, ClearContentCacheButton,
+ * ClearINICacheButton, ClearTemplateCacheButton, ClearCacheButton with CacheList[], ClearQueryCacheButton,
+ * ClearHttpCacheButton, ResetOPcacheButton, ClearAPCuButton, RegenerateStaticCacheButton, and the fields shared
+ * with Setup > System information). New: ClearGroupButton=<group> clears the caches of one group,
+ * ClearVelocityCacheButton clears Velocity's response cache. The page measures sizes on request:
+ * setup/cache/(sizes)/1.
+ */
 class Cache extends \Exponential\Runnable\ModuleView
 {
     public function run( array $scope )
@@ -30,178 +41,75 @@ class Cache extends \Exponential\Runnable\ModuleView
 
         $http = \eZHTTPTool::instance();
         $module = $Params['Module'];
-
-
         $ini = \eZINI::instance( );
         $tpl = \eZTemplate::factory();
 
-        // Every action below is expCacheManager's, which the command line
-        // (exp:cache, bin/php/cache.php) calls too, so the two cannot differ. Loaded
-        // by path: a server whose workers kept an autoload array from before the class
-        // existed (Velocity) must still render this page.
         require_once 'kernel/classes/expcachemanager.php';
+        require_once 'kernel/setup/expstaticcacherunner.php';
         $cacheManager = new \expCacheManager();
-
         $cacheList = $cacheManager->cacheList();
 
-        $cacheCleared = array( 'all' => false,
-                               'content' => false,
-                               'ini' => false,
-                               'template' => false,
-                               'list' => false,
-                               'static' => false,
-                               // array( ok, message ) once OPcache or APCu was emptied
-                               'opcache' => false,
-                               'apcu' => false,
-                               // array( ok, message ) once the SQL query cache or the
-                               // HTTP cache was cleared
-                               'querycache' => false,
+        $cacheCleared = array( 'all' => false, 'content' => false, 'ini' => false, 'template' => false, 'list' => false,
+                               'static' => false, 'opcache' => false, 'apcu' => false, 'querycache' => false,
                                'httpcache' => false,
                                // a button Setup > System information has too (expCacheManager::$sharedActions)
-                               'shared' => false );
-
-        $contentCacheEnabled = $ini->variable( 'ContentSettings', 'ViewCaching' ) == 'enabled';
-        $iniCacheEnabled = true;
-        $templateCacheEnabled = $ini->variable( 'TemplateSettings', 'TemplateCache' ) == 'enabled';
+                               'shared' => false, 'group' => false, 'velocity' => false );
 
         $cacheEnabledList = array();
         foreach ( $cacheList as $cacheItem )
-        {
             $cacheEnabledList[$cacheItem['id']] = $cacheItem['enabled'];
-        }
-
         $cacheEnabled = array( 'all' => true,
-                               'content' => $contentCacheEnabled,
-                               'ini' => $iniCacheEnabled,
-                               'template' => $templateCacheEnabled,
+                               'content' => $ini->variable( 'ContentSettings', 'ViewCaching' ) == 'enabled',
+                               'ini' => true,
+                               'template' => $ini->variable( 'TemplateSettings', 'TemplateCache' ) == 'enabled',
                                'list' => $cacheEnabledList );
 
-        // The feedback rows take array( ok, message ).
-        $feedback = function ( array $result )
-        {
-            \eZDebug::writeNotice( $result['message'], 'setup/cache' );
-            return array( $result['ok'], $result['message'] );
-        };
+        // What the page describes: groups, sizes (on request), hints, commands
+        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $measure = !empty( $userParameters['sizes'] );
+        $catalogue = \expCacheCatalogue::fromSystem( array( 'sizes' => false, 'translate' => true ) );
 
-        // The HTTP cache, query cache and SQL profile buttons Setup > System information has as well: one code
-        // path for both pages (expCacheManager::sharedActionFromPost(), which checks setup/managecache itself).
-        $sharedCacheAction = \expCacheManager::sharedActionFromPost( $http );
-        if ( $sharedCacheAction )
-            $cacheCleared['shared'] = $feedback( $sharedCacheAction );
+        // The clear asked for, if any: done, timed, and described for the result notice
+        $result = null;
+        $this->clearRequested( $module, $http, $cacheManager, $catalogue, $cacheCleared, $result );
 
-        // PHP's opcode cache and APCu. Both live in the shared memory of the server
-        // process that answers this request -- a php-fpm pool, a Qbix server and its
-        // workers, a FrankenPHP process and its threads, php -S and its workers -- so
-        // emptying one here empties it for that server, and for nothing else: a
-        // command-line script, another pool or another engine keeps its own.
-        if ( $module->isCurrentAction( 'ResetOPcache' ) )
-            $cacheCleared['opcache'] = $feedback( \expCacheManager::resetOPcache() );
-
-        if ( $module->isCurrentAction( 'ClearAPCu' ) )
-            $cacheCleared['apcu'] = $feedback( \expCacheManager::clearAPCu() );
-
-        // What the two rows say about each cache before its button.
+        // PHP's opcode cache and APCu, of the server process that answers this request
+        $this->phpCacheActions( $module, $cacheCleared, $result );
         $phpCacheState = \expCacheManager::phpCacheState();
 
-        if ( $module->isCurrentAction( 'ClearAllCache' ) )
-        {
-            $cacheManager->clear( 'all' );
-            $cacheCleared['all'] = true;
-        }
+        // The static cache, generated by the same runner as the streamed console
+        $this->staticCacheAction( $module, $cacheCleared, $result );
 
-        if ( $module->isCurrentAction( 'ClearContentCache' ) )
-        {
-            $cacheManager->clear( 'tag', array( 'content' ) );
-            $cacheCleared['content'] = true;
-        }
-
-        if ( $module->isCurrentAction( 'ClearINICache' ) )
-        {
-            $cacheManager->clear( 'tag', array( 'ini' ) );
-            $cacheCleared['ini'] = true;
-        }
-
-        if ( $module->isCurrentAction( 'ClearTemplateCache' ) )
-        {
-            $cacheManager->clear( 'tag', array( 'template' ) );
-            $cacheCleared['template'] = true;
-        }
-
-        if ( $module->isCurrentAction( 'ClearCache' ) && $module->hasActionParameter( 'CacheList' ) && is_array( $module->actionParameter( 'CacheList' ) ) )
-        {
-            // Only ids of the list: anything else in the form is ignored, as before.
-            $cacheIDList = \eZCache::fetchIDList( $cacheList );
-            $cacheClearList = array_values( array_intersect( array_map( 'strval', $module->actionParameter( 'CacheList' ) ), $cacheIDList ) );
-            $cacheItemList = array();
-            if ( $cacheClearList )
-            {
-                $result = $cacheManager->clear( 'id', $cacheClearList );
-                foreach ( $cacheClearList as $cacheClearItem )
-                {
-                    foreach ( $cacheList as $cacheItem )
-                    {
-                        if ( $cacheItem['id'] == $cacheClearItem )
-                        {
-                            $cacheItemList[] = $cacheItem;
-                            break;
-                        }
-                    }
-                }
-            }
-            $cacheCleared['list'] = $cacheItemList;
-        }
-
-        // Which sites can be generated, and where the pages are written. Shown on the
-        // page so the operator chooses a site before pressing the button, and can see
-        // the target directory without reading two ini files.
-        require_once 'kernel/setup/expstaticcacherunner.php';
-        $staticCacheSiteAccessList = \expStaticCacheRunner::availableSiteAccesses();
-        $staticCacheStorageDir = \expStaticCacheRunner::storageDirectory();
-        $staticCacheEnabled = \expCacheManager::staticCacheEnabled();
-
-        if ( $module->isCurrentAction( 'RegenerateStaticCache' ) )
-        {
-            // The chosen site, empty meaning every cacheable one. Only a name this
-            // installation serves is accepted.
-            $staticCacheSiteAccess = $module->hasActionParameter( 'StaticCacheSiteAccess' )
-                                   ? (string)$module->actionParameter( 'StaticCacheSiteAccess' ) : '';
-            if ( $staticCacheSiteAccess !== '' &&
-                 !in_array( $staticCacheSiteAccess, \eZStaticCache::cacheableSiteAccessList(), true ) )
-                $staticCacheSiteAccess = '';
-
-            // The same runner the streamed console uses, so the two cannot behave
-            // differently. This path is the fallback for a browser without
-            // EventSource: it produces the same files, it just says nothing until it
-            // is finished.
-            $result = \expCacheManager::regenerateStaticCache( null, array( 'siteaccess' => $staticCacheSiteAccess ) );
-
-            // Report what happened rather than that the code ran. This was set to true
-            // unconditionally, so a run that wrote nothing - and the shipped
-            // configuration could write nothing at all - still reported success.
-            $cacheCleared['static'] = (int)( $result['data']['stored'] ?? 0 );
-        }
+        // After a clear the catalogue is read again, so sizes and dates are those after it
+        $catalogue = \expCacheCatalogue::fromSystem( array( 'sizes' => $measure, 'translate' => true ) );
 
         $queryCacheAvailable = \expCacheManager::queryCacheAvailable();
-
-        if ( $queryCacheAvailable && $module->isCurrentAction( 'ClearQueryCache' ) )
-            $cacheCleared['querycache'] = $feedback( \expCacheManager::clearQueryCache() );
-
-        if ( $module->isCurrentAction( 'ClearHttpCache' ) )
-            $cacheCleared['httpcache'] = $feedback( \expCacheManager::clearHttpCache() );
-
-        $tpl->setVariable( "cache_cleared", $cacheCleared );
+        $velocityCache = \expCacheManager::velocityCacheStatus();
+        $tpl->setVariable( 'cache_cleared', $cacheCleared );
+        $tpl->setVariable( 'cache_result', $result );
+        $tpl->setVariable( 'cache_catalogue', $catalogue->items() );
+        $tpl->setVariable( 'cache_groups', $catalogue->groups() );
+        $tpl->setVariable( 'cache_overview', $catalogue->overview() );
+        $tpl->setVariable( 'cache_all', $catalogue->consequences( $catalogue->ids() ) );
+        $tpl->setVariable( 'cache_tags', array( 'content' => $catalogue->consequences( $this->tagIds( $cacheList, 'content' ) ),
+                                                'template' => $catalogue->consequences( $this->tagIds( $cacheList, 'template' ) ),
+                                                'ini' => $catalogue->consequences( $this->tagIds( $cacheList, 'ini' ) ) ) );
+        $tpl->setVariable( 'cache_sizes', $measure );
+        $tpl->setVariable( 'velocity_cache', $velocityCache['ok'] ? array( 'files' => $velocityCache['data']['files'],
+            'size' => \expSystemReport::size( $velocityCache['data']['bytes'] ),
+            'cleared' => $velocityCache['data']['cleared'] ? date( 'Y-m-d H:i', $velocityCache['data']['cleared'] ) : '',
+            'engine' => $velocityCache['data']['engine'], 'serving' => defined( 'QBIX_SERVER_VERSION' ) ) : false );
         $tpl->setVariable( 'query_cache_enabled', $queryCacheAvailable && \eZDBQueryCache::enabled() );
         $tpl->setVariable( 'query_cache_mode', $queryCacheAvailable ? ( \eZDBQueryCache::settings()['mode'] ?? 'off' ) : 'off' );
         $tpl->setVariable( 'http_cache_enabled', \expCacheManager::httpCacheEnabled() );
-        $tpl->setVariable( 'static_cache_siteaccess_list', $staticCacheSiteAccessList );
-        $tpl->setVariable( 'static_cache_storage_dir', $staticCacheStorageDir );
-        $tpl->setVariable( 'static_cache_enabled', $staticCacheEnabled );
+        $tpl->setVariable( 'static_cache_siteaccess_list', \expStaticCacheRunner::availableSiteAccesses() );
+        $tpl->setVariable( 'static_cache_storage_dir', \expSystemReportMask::path( \expStaticCacheRunner::storageDirectory(), \eZSys::rootDir() ) );
+        $tpl->setVariable( 'static_cache_enabled', \expCacheManager::staticCacheEnabled() );
         $tpl->setVariable( 'static_cache_stream_url', 'setup/staticcachestream' );
-        $tpl->setVariable( "cache_enabled", $cacheEnabled );
+        $tpl->setVariable( 'cache_enabled', $cacheEnabled );
         $tpl->setVariable( 'cache_list', $cacheList );
         $tpl->setVariable( 'php_cache_state', $phpCacheState );
         $tpl->setVariable( 'sql_profile_on', \expCacheManager::sqlProfileEnabled() );
-
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:setup/cache.tpl" );
@@ -209,6 +117,155 @@ class Cache extends \Exponential\Runnable\ModuleView
                                         'text' => \ezpI18n::tr( 'kernel/setup', 'Cache admin' ) ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /** The ids of the caches a tag clears */
+    protected function tagIds( array $cacheList, $tag )
+    {
+        $ids = array();
+        foreach ( \eZCache::fetchByTag( $tag, $cacheList ) as $item )
+            $ids[] = $item['id'];
+        return $ids;
+    }
+
+    /**
+     * The result notice: what was cleared, whether it worked, how long it took, and what to do next.
+     *
+     * @return array ok, message, names, ms, restart, response_cache, command
+     */
+    protected static function result( $ok, $message, array $consequences, $start )
+    {
+        return array( 'ok' => (bool)$ok, 'message' => (string)$message,
+                      'names' => isset( $consequences['names'] ) ? $consequences['names'] : array(),
+                      'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ),
+                      'restart' => !empty( $consequences['restart'] ),
+                      'response_cache' => !empty( $consequences['response_cache'] ),
+                      'command' => isset( $consequences['command'] ) ? $consequences['command'] : '' );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * Clear all, by tag (content, INI, template), the selected caches, a group, the query cache, the HTTP cache,
+     * Velocity's response cache and the actions shared with Setup > System information.
+     */
+    protected function clearRequested( &$module, &$http, &$cacheManager, &$catalogue, &$cacheCleared, &$result )
+    {
+        $start = microtime( true );
+        $cacheList = $cacheManager->cacheList();
+        $feedback = function ( array $r )
+        {
+            \eZDebug::writeNotice( $r['message'], 'setup/cache' );
+            return array( $r['ok'], $r['message'] );
+        };
+
+        $shared = \expCacheManager::sharedActionFromPost( $http );
+        if ( $shared )
+        {
+            $cacheCleared['shared'] = $feedback( $shared );
+            $result = self::result( $shared['ok'], $shared['message'], array(), $start );
+        }
+        if ( $module->isCurrentAction( 'ClearAllCache' ) )
+        {
+            $cacheManager->clear( 'all' );
+            $cacheCleared['all'] = true;
+            $result = self::result( true, \ezpI18n::tr( 'design/admin/setup/cache', 'Every cache was cleared.' ),
+                                    $catalogue->consequences( $catalogue->ids() ), $start );
+        }
+        foreach ( array( 'ClearContentCache' => 'content', 'ClearINICache' => 'ini', 'ClearTemplateCache' => 'template' ) as $action => $tag )
+        {
+            if ( !$module->isCurrentAction( $action ) )
+                continue;
+            $cacheManager->clear( 'tag', array( $tag ) );
+            $cacheCleared[$tag] = true;
+            $result = self::result( true, \ezpI18n::tr( 'design/admin/setup/cache', 'The caches tagged %tag were cleared.', null, array( '%tag' => $tag ) ),
+                                    $catalogue->consequences( $this->tagIds( $cacheList, $tag ) ), $start );
+        }
+        if ( $module->isCurrentAction( 'ClearCache' ) && $module->hasActionParameter( 'CacheList' ) && is_array( $module->actionParameter( 'CacheList' ) ) )
+        {
+            $ids = array_values( array_intersect( array_map( 'strval', $module->actionParameter( 'CacheList' ) ), \eZCache::fetchIDList( $cacheList ) ) );
+            $cacheCleared['list'] = array();
+            if ( $ids )
+            {
+                $cacheManager->clear( 'id', $ids );
+                foreach ( $ids as $id )
+                    if ( $item = \eZCache::fetchByID( $id, $cacheList ) )
+                        $cacheCleared['list'][] = $item;
+            }
+            $result = $ids ? self::result( true, \ezpI18n::tr( 'design/admin/setup/cache', 'The selected caches were cleared.' ), $catalogue->consequences( $ids ), $start )
+                           : self::result( false, \ezpI18n::tr( 'design/admin/setup/cache', 'No cache was selected.' ), array(), $start );
+        }
+        if ( $http->hasPostVariable( 'ClearGroupButton' ) )
+        {
+            $group = (string)$http->postVariable( 'ClearGroupButton' );
+            $ids = in_array( $group, \expCacheCatalogue::GROUPS, true ) ? $catalogue->ids( $group ) : array();
+            if ( $ids )
+                $cacheManager->clear( 'id', $ids );
+            $cacheCleared['group'] = $ids ? $group : false;
+            $result = $ids ? self::result( true, \ezpI18n::tr( 'design/admin/setup/cache', 'The caches of the group were cleared.' ), $catalogue->consequences( $ids ), $start )
+                           : self::result( false, \ezpI18n::tr( 'design/admin/setup/cache', 'That group has no cache to clear.' ), array(), $start );
+        }
+        if ( \expCacheManager::queryCacheAvailable() && $module->isCurrentAction( 'ClearQueryCache' ) )
+        {
+            $r = \expCacheManager::clearQueryCache();
+            $cacheCleared['querycache'] = $feedback( $r );
+            $result = self::result( $r['ok'], $r['message'], $catalogue->consequences( array( 'querycache' ) ), $start );
+        }
+        if ( $module->isCurrentAction( 'ClearHttpCache' ) )
+        {
+            $r = \expCacheManager::clearHttpCache();
+            $cacheCleared['httpcache'] = $feedback( $r );
+            $result = self::result( $r['ok'], $r['message'], $catalogue->consequences( array( 'exphttpcache' ) ), $start );
+        }
+        if ( $http->hasPostVariable( 'ClearVelocityCacheButton' ) )
+        {
+            $r = \expCacheManager::clearVelocityCache();
+            $cacheCleared['velocity'] = $feedback( $r );
+            $result = self::result( $r['ok'], $r['message'], array( 'names' => array( \ezpI18n::tr( 'design/admin/setup/cache', 'Velocity response cache' ) ),
+                                                                    'command' => './console exp:velocity cache clear' ), $start );
+        }
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * PHP's opcode cache and APCu. Both live in the shared memory of the server process that answers this request
+     * -- a php-fpm pool, a Qbix server and its workers, a FrankenPHP process and its threads -- so emptying one here
+     * empties it for that server, and for nothing else.
+     */
+    protected function phpCacheActions( &$module, &$cacheCleared, &$result )
+    {
+        foreach ( array( 'ResetOPcache' => array( 'opcache', 'resetOPcache', 'OPcache' ), 'ClearAPCu' => array( 'apcu', 'clearAPCu', 'APCu' ) ) as $action => $what )
+        {
+            if ( !$module->isCurrentAction( $action ) )
+                continue;
+            $start = microtime( true );
+            $r = call_user_func( array( '\expCacheManager', $what[1] ) );
+            \eZDebug::writeNotice( $r['message'], 'setup/cache' );
+            $cacheCleared[$what[0]] = array( $r['ok'], $r['message'] );
+            $result = self::result( $r['ok'], $r['message'], array( 'names' => array( $what[2] ) ), $start );
+        }
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * The static cache, for a browser without EventSource: the same runner the streamed console uses, so the two
+     * cannot behave differently; it only says nothing until it is finished. Only a siteaccess this installation
+     * serves is accepted; empty means every cacheable one.
+     */
+    protected function staticCacheAction( &$module, &$cacheCleared, &$result )
+    {
+        if ( !$module->isCurrentAction( 'RegenerateStaticCache' ) )
+            return;
+        $start = microtime( true );
+        $siteAccess = $module->hasActionParameter( 'StaticCacheSiteAccess' ) ? (string)$module->actionParameter( 'StaticCacheSiteAccess' ) : '';
+        if ( $siteAccess !== '' && !in_array( $siteAccess, \eZStaticCache::cacheableSiteAccessList(), true ) )
+            $siteAccess = '';
+        $r = \expCacheManager::regenerateStaticCache( null, array( 'siteaccess' => $siteAccess ) );
+        // what happened, not that the code ran: the number of pages written
+        $cacheCleared['static'] = (int)( $r['data']['stored'] ?? 0 );
+        $result = self::result( $cacheCleared['static'] > 0, $r['message'], array( 'command' => 'php bin/php/makestaticcache.php --allow-root-user' ), $start );
     }
 }
 

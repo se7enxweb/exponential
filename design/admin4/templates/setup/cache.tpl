@@ -1,319 +1,285 @@
-{* Feedbacks. *}
-{foreach array( 'opcache', 'apcu', 'querycache', 'httpcache', 'shared' ) as $phpCache}
-{if $cache_cleared[$phpCache]}
-    <div class="{if $cache_cleared[$phpCache][0]}message-feedback{else}message-warning{/if}">
-        <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {$cache_cleared[$phpCache][1]|wash}</h2>
-    </div>
+{* Setup > Caches: every cache of the installation in groups, with what it holds, its id and tags, its directory,
+   its size (on request), when it was last cleared and what clearing it reaches; clear selected, a group, by tag
+   or all, each with an in-place confirmation that names what goes; the HTTP cache, the query cache, the SQL
+   profile, Velocity's response cache and PHP's caches of the server that answered; the static cache; and the
+   commands that do the same from a shell.
+
+   The caches are described by expCacheCatalogue ($cache_groups, $cache_overview) and cleared by expCacheManager.
+   Every POST name of the earlier page is kept (ClearAllCacheButton, ClearContentCacheButton, ClearINICacheButton,
+   ClearTemplateCacheButton, ClearCacheButton with CacheList[], ClearQueryCacheButton, ClearHttpCacheButton,
+   ResetOPcacheButton, ClearAPCuButton, RegenerateStaticCacheButton, StaticCacheSiteAccess); new are
+   ClearGroupButton and ClearVelocityCacheButton. The form carries the form token.
+
+   The same file is in design/admin and design/admin4. The styling is setup/cache_exp_style.tpl, scoped to
+   .exp-cachepage. Everything works without javascript; the search, the group filter, the selection count and the
+   confirmation of "Clear selected" need it. Guide: doc/guides/caches.md *}
+{include uri='design:setup/cache_exp_style.tpl'}
+{def $cp_tag_buttons = array( hash( 'tag', 'content', 'name', 'ClearContentCacheButton', 'label', 'Clear content caches'|i18n( 'design/admin/setup/cache' ) ),
+                              hash( 'tag', 'template', 'name', 'ClearTemplateCacheButton', 'label', 'Clear template caches'|i18n( 'design/admin/setup/cache' ) ),
+                              hash( 'tag', 'ini', 'name', 'ClearINICacheButton', 'label', 'Clear INI caches'|i18n( 'design/admin/setup/cache' ) ) )
+     $cp_consequence = false()}
+<form name="clearcacheform" id="clearcacheform" method="post" action={"/setup/cache/"|ezurl}>
+<div class="context-block exp-cachepage" id="exp-cachepage" data-cache-count="{$cache_overview.caches|wash}"
+     data-selected="{'selected'|i18n( 'design/admin/setup/cache' )|wash}" data-none="{'No cache is selected yet.'|i18n( 'design/admin/setup/cache' )|wash}" data-shown="{'caches shown'|i18n( 'design/admin/setup/cache' )|wash}">
+
+<div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
+<h1 class="context-title">{'Caches'|i18n( 'design/admin/setup/cache' )}</h1>
+<div class="header-mainline"></div>
+</div></div></div></div></div></div>
+
+<div class="box-ml"><div class="box-mr"><div class="box-content">
+
+<p class="exp-intro">{'Every cache of this installation, what it holds and what clearing it reaches. A cleared cache is made again on the next requests, which are slower until then. The files are in var/, which Apache with PHP-FPM and Exponential Velocity share: clearing them here reaches both servers. Velocity keeps settings in memory and serves pages from its own response cache, so some caches ask for one more step, named where it is needed.'|i18n( 'design/admin/setup/cache' )}</p>
+
+{* What the last action did *}
+{if $cache_result}
+<div class="exp-feedback {if $cache_result.ok}is-ok{else}is-warn{/if}" role="status" id="exp-cache-result">
+    <p><strong>{$cache_result.message|wash}</strong> <span>{'%ms ms'|i18n( 'design/admin/setup/cache',, hash( '%ms', $cache_result.ms|wash ) )} &middot; {currentdate()|l10n( shortdatetime )}</span></p>
+    {if $cache_result.names}
+    <ul>{foreach $cache_result.names as $cp_name}<li>{$cp_name|wash}</li>{/foreach}</ul>
+    {/if}
+    {if $cache_result.restart}<p>{'A running Velocity still holds the old settings in memory: restart it with %command.'|i18n( 'design/admin/setup/cache',, hash( '%command', '<code>./console exp:velocity restart</code>' ) )}</p>{/if}
+    {if $cache_result.response_cache}<p>{'Velocity\'s response cache may serve pages made before this for a few seconds more; clear it below or with %command.'|i18n( 'design/admin/setup/cache',, hash( '%command', '<code>./console exp:velocity cache clear</code>' ) )}</p>{/if}
+    {if $cache_result.command}<p>{'From a shell:'|i18n( 'design/admin/setup/cache' )} <code>{$cache_result.command|wash}</code></p>{/if}
+</div>
 {/if}
+
+{* Overview *}
+<ul class="exp-figures">
+    <li class="exp-figure"><strong>{$cache_overview.caches|wash}</strong><span>{'caches'|i18n( 'design/admin/setup/cache' )}</span></li>
+    <li class="exp-figure"><strong>{$cache_overview.enabled|wash}</strong><span>{'enabled'|i18n( 'design/admin/setup/cache' )}</span></li>
+    <li class="exp-figure"><strong>{$cache_overview.groups|wash}</strong><span>{'groups'|i18n( 'design/admin/setup/cache' )}</span></li>
+    {if $cache_overview.measured}
+    <li class="exp-figure"><strong>{$cache_overview.size_text|wash}</strong><span>{'%files files on disk'|i18n( 'design/admin/setup/cache',, hash( '%files', $cache_overview.files|wash ) )}</span></li>
+    {else}
+    <li class="exp-figure"><strong>&ndash;</strong><span><a href={'/setup/cache/(sizes)/1'|ezurl}>{'Measure the sizes'|i18n( 'design/admin/setup/cache' )}</a></span></li>
+    {/if}
+    <li class="exp-figure is-date"><strong>{if $cache_overview.last_cleared_text}{$cache_overview.last_cleared_text|wash}{else}&ndash;{/if}</strong><span>{'last expiry of content, blocks or users'|i18n( 'design/admin/setup/cache' )}</span></li>
+</ul>
+
+{* Clear all and by tag, each confirmed in place *}
+<div class="exp-actionbar">
+    <details class="exp-confirm">
+        <summary class="exp-btn exp-btn-primary">{'Clear all caches…'|i18n( 'design/admin/setup/cache' )}</summary>
+        <div class="exp-confirm-body">
+            <p><strong>{'These %count caches are cleared:'|i18n( 'design/admin/setup/cache',, hash( '%count', $cache_all.names|count ) )}</strong></p>
+            <ul>{foreach $cache_all.names as $cp_name}<li>{$cp_name|wash}</li>{/foreach}</ul>
+            <p>{'The site is slow until they are made again, on every server that shares var/.'|i18n( 'design/admin/setup/cache' )}{if $cache_all.restart} {'Restart Velocity afterwards: it keeps settings in memory.'|i18n( 'design/admin/setup/cache' )}{/if}</p>
+            <p><code>php bin/php/ezcache.php --clear-all --allow-root-user</code></p>
+            <input class="exp-btn exp-btn-danger" type="submit" name="ClearAllCacheButton" value="{'Clear all caches'|i18n( 'design/admin/setup/cache' )}" />
+        </div>
+    </details>
+    {foreach $cp_tag_buttons as $cp_tag}
+    {set $cp_consequence = $cache_tags[$cp_tag.tag]}
+    <details class="exp-confirm">
+        <summary class="exp-btn">{$cp_tag.label|wash}…</summary>
+        <div class="exp-confirm-body">
+            <p><strong>{'The caches tagged %tag:'|i18n( 'design/admin/setup/cache',, hash( '%tag', $cp_tag.tag ) )}</strong></p>
+            <ul>{foreach $cp_consequence.names as $cp_name}<li>{$cp_name|wash}</li>{/foreach}</ul>
+            {if $cp_consequence.restart}<p>{'Restart Velocity afterwards: it keeps settings in memory.'|i18n( 'design/admin/setup/cache' )}</p>{/if}
+            <p><code>php bin/php/ezcache.php --clear-tag={$cp_tag.tag|wash} --allow-root-user</code></p>
+            <input class="exp-btn exp-btn-danger" type="submit" name="{$cp_tag.name|wash}" value="{$cp_tag.label|wash}" />
+        </div>
+    </details>
+    {/foreach}
+    {if $cache_sizes}
+        <a class="exp-btn" href={'/setup/cache'|ezurl}>{'Without sizes (faster)'|i18n( 'design/admin/setup/cache' )}</a>
+    {else}
+        <a class="exp-btn" href={'/setup/cache/(sizes)/1'|ezurl}>{'Measure sizes'|i18n( 'design/admin/setup/cache' )}</a>
+    {/if}
+    <p class="exp-meta">{if $cache_sizes}{'Sizes were measured for this view, within three seconds; a size marked ≥ was cut short.'|i18n( 'design/admin/setup/cache' )}{else}{'Sizes are measured only on request, as that reads every file.'|i18n( 'design/admin/setup/cache' )}{/if}</p>
+</div>
+
+{* Search and group filter (javascript; without it every cache is shown) *}
+<div class="exp-toolbar" id="exp-cache-toolbar" hidden>
+    <div class="exp-field">
+        <label for="exp-cache-search">{'Search'|i18n( 'design/admin/setup/cache' )}</label>
+        <input type="search" id="exp-cache-search" placeholder="{'Name, id, tag or directory'|i18n( 'design/admin/setup/cache' )}" autocomplete="off" />
+    </div>
+    <fieldset class="exp-field">
+        <legend>{'Groups'|i18n( 'design/admin/setup/cache' )}</legend>
+        <div class="exp-filter-chips">
+            <label class="exp-filter-chip"><input type="radio" name="exp-cache-group-filter" value="" checked="checked" /><span>{'All'|i18n( 'design/admin/setup/cache' )}</span></label>
+            {foreach $cache_groups as $cp_key => $cp_group}
+            <label class="exp-filter-chip"><input type="radio" name="exp-cache-group-filter" value="{$cp_key|wash}" /><span>{$cp_group.title|wash}</span></label>
+            {/foreach}
+        </div>
+    </fieldset>
+    <p class="exp-filter-count" id="exp-cache-count" role="status" aria-live="polite"></p>
+</div>
+
+{* The groups *}
+{foreach $cache_groups as $cp_key => $cp_group}
+<section class="exp-group" id="exp-cache-group-{$cp_key|wash}" data-group="{$cp_key|wash}" aria-labelledby="exp-cache-group-title-{$cp_key|wash}">
+    <div class="exp-group-head">
+        <h2 class="exp-h2" id="exp-cache-group-title-{$cp_key|wash}">{$cp_group.title|wash}</h2>
+        <span class="exp-muted">{if eq( $cp_group.count, 1 )}{'1 cache'|i18n( 'design/admin/setup/cache' )}{else}{'%count caches'|i18n( 'design/admin/setup/cache',, hash( '%count', $cp_group.count ) )}{/if}{if $cp_group.measured} &middot; {$cp_group.size_text|wash}, {'%files files'|i18n( 'design/admin/setup/cache',, hash( '%files', $cp_group.files|wash ) )}{/if}</span>
+        {if $cp_group.restart}<span class="exp-badge is-warn">{'restart Velocity after clearing'|i18n( 'design/admin/setup/cache' )}</span>{/if}
+        <p>{$cp_group.intro|wash}</p>
+    </div>
+
+    {if $cp_group.items}
+    <div class="exp-table-wrap">
+    <table class="exp-caches">
+    <thead><tr>
+        <th scope="col"><span class="exp-sr">{'Select'|i18n( 'design/admin/setup/cache' )}</span></th>
+        <th scope="col">{'Cache'|i18n( 'design/admin/setup/cache' )}</th>
+        <th scope="col" class="exp-num">{'Size'|i18n( 'design/admin/setup/cache' )}</th>
+        <th scope="col">{'Last cleared'|i18n( 'design/admin/setup/cache' )}</th>
+    </tr></thead>
+    <tbody>
+    {foreach $cp_group.items as $cp_item}
+    <tr data-search="{$cp_item.search|wash}" class="exp-cache-row{if $cp_item.enabled|not} is-disabled{/if}">
+        <td class="exp-check-cell">
+            {if $cp_item.enabled}
+            <input type="checkbox" name="CacheList[]" value="{$cp_item.id|wash}" id="exp-cache-{$cp_item.id|wash}" data-name="{$cp_item.name|wash}" />
+            {else}
+            <input type="checkbox" name="CacheList[]" value="{$cp_item.id|wash}" id="exp-cache-{$cp_item.id|wash}" disabled="disabled" />
+            {/if}
+        </td>
+        <td>
+            <label class="exp-cache-name" for="exp-cache-{$cp_item.id|wash}">{$cp_item.name|wash}</label>
+            {if $cp_item.holds}<span class="exp-cache-holds">{$cp_item.holds|wash}</span>{/if}
+            <span class="exp-cache-meta"><code>{$cp_item.id|wash}</code>{if $cp_item.tags} &middot; {'tags'|i18n( 'design/admin/setup/cache' )} {$cp_item.tags|implode( ', ' )|wash}{/if} &middot; {if $cp_item.path}<code>{$cp_item.path|wash}</code>{if $cp_item.exists|not} ({'not there yet'|i18n( 'design/admin/setup/cache' )}){/if}{else}{'no directory'|i18n( 'design/admin/setup/cache' )}{/if}</span>
+            {if $cp_item.enabled|not}<span class="exp-badge">{'disabled in the settings'|i18n( 'design/admin/setup/cache' )}</span>{/if}
+            {if $cp_item.restart}<span class="exp-badge is-warn">{'restart Velocity after clearing'|i18n( 'design/admin/setup/cache' )}</span>{/if}
+            {if $cp_item.response_cache}<span class="exp-badge is-info">{'also in Velocity\'s response cache'|i18n( 'design/admin/setup/cache' )}</span>{/if}
+        </td>
+        <td class="exp-num" data-label="{'Size'|i18n( 'design/admin/setup/cache' )}">{if $cp_item.measured}{$cp_item.size_text|wash}<br /><span class="exp-muted">{cond( eq( $cp_item.files, 1 ), '1 file'|i18n( 'design/admin/setup/cache' ), '%files files'|i18n( 'design/admin/setup/cache',, hash( '%files', $cp_item.files|wash ) ) )}</span>{else}<span class="exp-muted">&ndash;</span>{/if}</td>
+        <td data-label="{'Last cleared'|i18n( 'design/admin/setup/cache' )}">{if $cp_item.last_cleared_text}{$cp_item.last_cleared_text|wash}{else}<span class="exp-muted">{'not recorded'|i18n( 'design/admin/setup/cache' )}</span>{/if}</td>
+    </tr>
+    {/foreach}
+    </tbody>
+    </table>
+    </div>
+    {/if}
+
+    {if $cp_group.ids}
+    <div class="exp-group-foot">
+        <details class="exp-confirm">
+            <summary class="exp-btn">{'Clear this group…'|i18n( 'design/admin/setup/cache' )}</summary>
+            <div class="exp-confirm-body">
+                <p><strong>{'These %count caches are cleared:'|i18n( 'design/admin/setup/cache',, hash( '%count', $cp_group.ids|count ) )}</strong></p>
+                <ul>{foreach $cp_group.items as $cp_item}{if $cp_item.enabled}<li>{$cp_item.name|wash}</li>{/if}{/foreach}</ul>
+                {if $cp_group.restart}<p>{'Restart Velocity afterwards: it keeps settings in memory.'|i18n( 'design/admin/setup/cache' )}</p>{/if}
+                <button class="exp-btn exp-btn-danger" type="submit" name="ClearGroupButton" value="{$cp_key|wash}">{'Clear %group'|i18n( 'design/admin/setup/cache',, hash( '%group', $cp_group.title|wash ) )}</button>
+            </div>
+        </details>
+        <code>{$cp_group.command|wash}</code>
+    </div>
+    {/if}
+
+    {if eq( $cp_key, 'velocity' )}
+    {* The server's own caches and the buttons System information has too (expCacheManager::$sharedActions) *}
+    <ul class="exp-server-rows" id="cache-maintenance">
+        <li>
+            <div class="exp-server-text"><strong>{'Whole pages (HTTP cache)'|i18n( 'design/admin/setup/cache' )}</strong> <span class="exp-badge {if $http_cache_enabled}is-ok{/if}">{if $http_cache_enabled}{'enabled'|i18n( 'design/admin/setup/cache' )}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if}</span>
+                <small>{'Hit rates and entries are on'|i18n( 'design/admin/setup/cache' )} <a href="{'/setup/info'|ezurl( 'no' )}#http-cache">{'System information'|i18n( 'design/admin/setup/cache' )}</a>. {'Publishing already purges the pages it affects.'|i18n( 'design/admin/setup/cache' )}</small></div>
+            <div class="exp-actions">
+                <input class="exp-btn exp-btn-small" type="submit" name="ClearHttpCacheButton" value="{'Clear HTTP cache'|i18n( 'design/admin/setup/cache' )}"{if $http_cache_enabled|not} disabled="disabled"{/if} />
+                <button class="exp-btn exp-btn-small" type="submit" name="HttpCacheAction" value="gc"{if $http_cache_enabled|not} disabled="disabled"{/if}>{'Remove dead entries'|i18n( 'design/admin/setup/cache' )}</button>
+                <button class="exp-btn exp-btn-small" type="submit" name="HttpCacheAction" value="reset"{if $http_cache_enabled|not} disabled="disabled"{/if}>{'Reset counters'|i18n( 'design/admin/setup/cache' )}</button>
+            </div>
+        </li>
+        <li>
+            <div class="exp-server-text"><strong>{'Database query results (SQL query cache)'|i18n( 'design/admin/setup/cache' )}</strong> <span class="exp-badge {if $query_cache_enabled}is-ok{/if}">{if $query_cache_enabled}{$query_cache_mode|wash}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if}</span>
+                <small>{'Writes already invalidate the tables they touch; clear it after changing the database outside Exponential.'|i18n( 'design/admin/setup/cache' )}</small></div>
+            <div class="exp-actions">
+                <input class="exp-btn exp-btn-small" type="submit" name="ClearQueryCacheButton" value="{'Clear query cache'|i18n( 'design/admin/setup/cache' )}" />
+                <button class="exp-btn exp-btn-small" type="submit" name="QueryCacheAction" value="reset">{'Reset the counters'|i18n( 'design/admin/setup/cache' )}</button>
+            </div>
+        </li>
+        <li>
+            <div class="exp-server-text"><strong>{'SQL profile of every request'|i18n( 'design/admin/setup/cache' )}</strong> <span class="exp-badge {if $sql_profile_on}is-info{/if}">{if $sql_profile_on}{'on'|i18n( 'design/admin/setup/cache' )}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if}</span>
+                <small>{'Each request writes how many statements it ran to var/tmp/sql_profile.log, on every server.'|i18n( 'design/admin/setup/cache' )}</small></div>
+            <div class="exp-actions">
+            {if $sql_profile_on}
+                <button class="exp-btn exp-btn-small" type="submit" name="SQLProfileAction" value="off">{'Switch the SQL profile off'|i18n( 'design/admin/setup/cache' )}</button>
+            {else}
+                <button class="exp-btn exp-btn-small" type="submit" name="SQLProfileAction" value="on">{'Switch the SQL profile on'|i18n( 'design/admin/setup/cache' )}</button>
+            {/if}
+            </div>
+        </li>
+        {if $velocity_cache}
+        <li>
+            <div class="exp-server-text"><strong>{'Velocity response cache'|i18n( 'design/admin/setup/cache' )}</strong>
+                <span class="exp-badge">{'%files files, %size'|i18n( 'design/admin/setup/cache',, hash( '%files', $velocity_cache.files|wash, '%size', $velocity_cache.size|wash ) )}</span>
+                <small>{'Pages Velocity answers without PHP, for a few seconds each.'|i18n( 'design/admin/setup/cache' )} {if $velocity_cache.cleared}{'Last cleared %time.'|i18n( 'design/admin/setup/cache',, hash( '%time', $velocity_cache.cleared|wash ) )}{/if} <code>./console exp:velocity cache clear</code></small></div>
+            <div class="exp-actions">
+                <input class="exp-btn exp-btn-small" type="submit" name="ClearVelocityCacheButton" value="{'Clear Velocity\'s response cache'|i18n( 'design/admin/setup/cache' )}" />
+            </div>
+        </li>
+        {/if}
+        <li id="php-caches">
+            <div class="exp-server-text"><strong>{'OPcache (compiled PHP scripts)'|i18n( 'design/admin/setup/cache' )}</strong> <span class="exp-badge">{$php_cache_state.opcache.text|wash}</span>
+                <small>{'Of the server process that answered this page only; another server or pool keeps its own.'|i18n( 'design/admin/setup/cache' )}</small></div>
+            <div class="exp-actions">
+                <input class="exp-btn exp-btn-small" type="submit" name="ResetOPcacheButton" value="{'Reset OPcache'|i18n( 'design/admin/setup/cache' )}"{if $php_cache_state.opcache.available|not} disabled="disabled"{/if} />
+            </div>
+        </li>
+        <li>
+            <div class="exp-server-text"><strong>{'APCu (data in shared memory)'|i18n( 'design/admin/setup/cache' )}</strong> <span class="exp-badge">{$php_cache_state.apcu.text|wash}</span>
+                <small>{'Every entry any application stored there is gone, including the memory tier of Velocity\'s response cache.'|i18n( 'design/admin/setup/cache' )}</small></div>
+            <div class="exp-actions">
+                <input class="exp-btn exp-btn-small" type="submit" name="ClearAPCuButton" value="{'Empty APCu'|i18n( 'design/admin/setup/cache' )}"{if $php_cache_state.apcu.available|not} disabled="disabled"{/if} />
+            </div>
+        </li>
+    </ul>
+    {/if}
+</section>
 {/foreach}
 
-{if $cache_cleared.content}
-    <div class="message-feedback">
-        <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Content view cache was cleared'|i18n( 'design/admin/setup/cache' )}</h2>
+{* Clear selected: the existing ClearCacheButton with CacheList[]; with javascript it names the selection first *}
+<div class="exp-bottombar" id="exp-cache-selected">
+    <label class="exp-btn exp-btn-small" for="exp-cache-select-all" hidden id="exp-cache-select-all-label"><input type="checkbox" id="exp-cache-select-all" /> {'Select all shown'|i18n( 'design/admin/setup/cache' )}</label>
+    <span class="exp-meta" id="exp-cache-selection" role="status" aria-live="polite">{'Tick caches in the lists above, then clear them.'|i18n( 'design/admin/setup/cache' )}</span>
+    <input class="exp-btn exp-btn-primary" type="submit" name="ClearCacheButton" id="exp-cache-clear-selected" value="{'Clear selected'|i18n( 'design/admin/setup/cache' )}" />
+</div>
+<div class="exp-feedback is-warn" id="exp-cache-confirm" hidden role="alertdialog" aria-labelledby="exp-cache-confirm-title">
+    <p><strong id="exp-cache-confirm-title">{'These caches are cleared:'|i18n( 'design/admin/setup/cache' )}</strong></p>
+    <ul id="exp-cache-confirm-list"></ul>
+    <div class="exp-actions">
+        <button class="exp-btn exp-btn-danger" type="button" id="exp-cache-confirm-yes">{'Clear them'|i18n( 'design/admin/setup/cache' )}</button>
+        <button class="exp-btn" type="button" id="exp-cache-confirm-no">{'Cancel'|i18n( 'design/admin/setup/cache' )}</button>
     </div>
-{/if}
-
-{if $cache_cleared.all}
-    <div class="message-feedback">
-        <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'All caches were cleared'|i18n( 'design/admin/setup/cache' )}</h2>
-    </div>
-{/if}
-
-{if $cache_cleared.ini}
-    <div class="message-feedback">
-        <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Ini file cache was cleared'|i18n( 'design/admin/setup/cache' )}</h2>
-    </div>
-{/if}
-
-{if $cache_cleared.template}
-    <div class="message-feedback">
-        <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Template cache was cleared'|i18n( 'design/admin/setup/cache' )}</h2>
-    </div>
-{/if}
-
-{* cache_cleared.static is the number of pages written, not a flag: a run that
-   wrote nothing must not report success. *}
-{if $cache_cleared.static}
-    <div class="message-feedback">
-        <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Static content cache was regenerated, %count pages written to %dir'|i18n( 'design/admin/setup/cache',, hash( '%count', $cache_cleared.static, '%dir', $static_cache_storage_dir ) )}</h2>
-    </div>
-{/if}
-
-{section show=$cache_cleared.list}
-    <div class="message-feedback">
-        <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The following caches were cleared'|i18n( 'design/admin/setup/cache' )}:</h2>
-        <ul>
-        {section var=Caches loop=$cache_cleared.list}
-            <li>{'%name was cleared'|i18n( 'design/admin/setup/cache',, hash( '%name', $Caches.item.name ) )}</li>
-        {/section}
-        </ul>
-    </div>
-{/section}
-
-
-
-
-<form name="clearcacheform" method="post" action={"/setup/cache/"|ezurl}>
-
-{* Clear caches window. *}
-
-<div class="context-block">
-
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-
-<h1 class="context-title">{'Clear caches'|i18n( 'design/admin/setup/cache' )}</h1>
-
-{* DESIGN: Mainline *}<div class="header-mainline"></div>
-
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
-
-<table class="list cache" cellspacing="0">
-
-<tr>
-    <th width="61%">{'Categories'|i18n( 'design/admin/setup/cache' )}</th>
-    <th width="39%"></th>
-</tr>
-
-{* Template cache. *}
-<tr class="bglight">
-<td>{'Template overrides and compiled templates'|i18n( 'design/admin/setup/cache' )}:</td>
-<td><input class="button" type="submit" name="ClearTemplateCacheButton" value="{'Clear template caches'|i18n( 'design/admin/setup/cache' )}" title="{'This operation will clear all the template override caches and the compiled templates. It may lead to slower site performance until the caches are recreated.'|i18n( 'design/admin/setup/cache' )}" /></td>
-</tr>
-
-{* Content cache. *}
-<tr class="bgdark">
-<td>{'Content views and template blocks'|i18n( 'design/admin/setup/cache' )}:</td>
-<td><input class="button" type="submit" name="ClearContentCacheButton" value="{'Clear content caches'|i18n( 'design/admin/setup/cache' )}" title="{'This operation will clear all caches that are related to either template views or cache blocks inside the pagelayout template. Use it if you have modified templates or if you have made changes inside a cache block.'|i18n( 'design/admin/setup/cache' )}"/></td>
-</tr>
-
-{* Configuration cache. *}
-<tr class="bglight">
-<td>{'Configuration (ini) caches'|i18n( 'design/admin/setup/cache' )}:</td>
-<td><input class="button" type="submit" name="ClearINICacheButton" value="{'Clear Ini caches'|i18n( 'design/admin/setup/cache' )}" title="{'This operation will clear all the configuration caches. Use it to force the system to re-read the configuration files if you have changed settings.'|i18n( 'design/admin/setup/cache' )}" /></td>
-</tr>
-
-{* SQL query cache. *}
-<tr class="bgdark">
-<td>{'Database query results (SQL query cache)'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $query_cache_enabled}{$query_cache_mode|wash}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
-<td><input class="button" type="submit" name="ClearQueryCacheButton" value="{'Clear query cache'|i18n( 'design/admin/setup/cache' )}" title="{'Makes every stored SQL result stale at once, on every server sharing this installation. Writes already invalidate the tables they touch; use this after changing the database outside Exponential, for example with a SQL client or a restore.'|i18n( 'design/admin/setup/cache' )}" /></td>
-</tr>
-
-{* HTTP cache. *}
-<tr class="bglight">
-<td>{'Whole pages (HTTP cache)'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $http_cache_enabled}{'enabled'|i18n( 'design/admin/setup/cache' )}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
-<td><input class="{if $http_cache_enabled}button{else}button-disabled{/if}" type="submit" name="ClearHttpCacheButton" value="{'Clear HTTP cache'|i18n( 'design/admin/setup/cache' )}"{if $http_cache_enabled|not} disabled="disabled"{/if} title="{'Drops every cached page for every permission context, including the copies the Velocity response cache holds. Publishing already purges the pages it affects.'|i18n( 'design/admin/setup/cache' )}" /></td>
-</tr>
-
-{* All caches. *}
-<tr class="bgdark">
-<td>{'Everything'|i18n( 'design/admin/setup/cache' )}:</td>
-<td><input class="button" type="submit" name="ClearAllCacheButton" value="{'Clear all caches'|i18n( 'design/admin/setup/cache' )}" title="{'This operation will clear all the caches and may lead to slow site response times until the caches are recreated.'|i18n( 'design/admin/setup/cache' )}" /></td>
-</tr>
-
-</table>
-
-{* DESIGN: Content END *}</div></div></div>
-
 </div>
 
-
-
-
-{* The HTTP cache, the query cache and the SQL profile: the buttons Setup > System information has as well, done
-   by the same code (expCacheManager::sharedActionFromPost(), setup/managecache, the form token). The figures are
-   on System information. *}
-<div class="context-block" id="cache-maintenance">
-{literal}<style>
-#cache-maintenance button.button, #cache-maintenance button.button-disabled { margin: 2px 4px 2px 0; padding: 4px 12px; border-radius: var(--a4-radius-s, 8px); font: 600 13px/1.3 var(--a4-font, inherit); text-shadow: none; cursor: pointer;
-    background-color: #fff; border: 1px solid #c9ced6; color: var(--a4-ink, #1f2430); transition: background-color .15s ease, border-color .15s ease; }
-#cache-maintenance button.button:hover { background-color: var(--a4-soft, #f6f7f9); border-color: #9aa1ad; }
-#cache-maintenance button.button-disabled, #cache-maintenance button[disabled] { background-color: var(--a4-soft, #f6f7f9); border-color: var(--a4-line, #e3e6eb); color: #6b7280; cursor: not-allowed; }
-</style>{/literal}
-
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-
-<h2 class="context-title">{'HTTP cache, query cache and SQL profile'|i18n( 'design/admin/setup/cache' )}</h2>
-
-{* DESIGN: Mainline *}<div class="header-mainline"></div>
-
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
-
-<p><small>{'The same buttons are on'|i18n( 'design/admin/setup/cache' )} <a href="{'/setup/info'|ezurl( 'no' )}#http-cache">{'System information'|i18n( 'design/admin/setup/cache' )}</a>, {'with the hit rates, the entries and the profile of recent requests.'|i18n( 'design/admin/setup/cache' )}</small></p>
-
-<table class="list cache" cellspacing="0">
-
-<tr>
-    <th width="61%">{'Categories'|i18n( 'design/admin/setup/cache' )}</th>
-    <th width="39%"></th>
-</tr>
-
-<tr class="bglight">
-<td>{'Whole pages (HTTP cache)'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $http_cache_enabled}{'enabled'|i18n( 'design/admin/setup/cache' )}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
-<td>
-    <button class="{if $http_cache_enabled}button{else}button-disabled{/if}" type="submit" name="HttpCacheAction" value="gc"{if $http_cache_enabled|not} disabled="disabled"{/if} title="{'Removes expired and purged entries, orphaned bodies and old user records from disk. Pages still valid are kept.'|i18n( 'design/admin/setup/cache' )}">{'Remove dead entries'|i18n( 'design/admin/setup/cache' )}</button>
-    <button class="{if $http_cache_enabled}button{else}button-disabled{/if}" type="submit" name="HttpCacheAction" value="reset"{if $http_cache_enabled|not} disabled="disabled"{/if} title="{'Starts the hit and miss counters of the HTTP cache again.'|i18n( 'design/admin/setup/cache' )}">{'Reset counters'|i18n( 'design/admin/setup/cache' )}</button>
-</td>
-</tr>
-
-<tr class="bgdark">
-<td>{'Database query results (SQL query cache)'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $query_cache_enabled}{$query_cache_mode|wash}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
-<td><button class="button" type="submit" name="QueryCacheAction" value="reset" title="{'Starts the query cache counters of this server again; the stored results are kept.'|i18n( 'design/admin/setup/cache' )}">{'Reset the counters'|i18n( 'design/admin/setup/cache' )}</button></td>
-</tr>
-
-<tr class="bglight">
-<td>{'SQL profile of every request'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $sql_profile_on}{'on'|i18n( 'design/admin/setup/cache' )}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
-<td>{if $sql_profile_on}
-    <button class="button" type="submit" name="SQLProfileAction" value="off" title="{'Stops writing a line per request to var/tmp/sql_profile.log.'|i18n( 'design/admin/setup/cache' )}">{'Switch the SQL profile off'|i18n( 'design/admin/setup/cache' )}</button>
-{else}
-    <button class="button" type="submit" name="SQLProfileAction" value="on" title="{'Every request then writes how many statements it ran, and how many were exact repeats, to var/tmp/sql_profile.log, on every server.'|i18n( 'design/admin/setup/cache' )}">{'Switch the SQL profile on'|i18n( 'design/admin/setup/cache' )}</button>
-{/if}</td>
-</tr>
-
-</table>
-
-{* DESIGN: Content END *}</div></div></div>
-
-</div>
-
-{* Cache overview window. *}
-
-<div class="context-block">
-
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-
-<h2 class="context-title">{'Fine-grained cache control'|i18n( 'design/admin/setup/cache' )}</h2>
-
-
-
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
-
-<table class="list" cellspacing="0">
-<tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/setup/cache' )}" onclick="ezjs_toggleCheckboxes( document.clearcacheform, 'CacheList[]' ); return false;" title="{'Invert selection.'|i18n( 'design/admin/setup/cache' )}" /></th>
-    <th>{'Name'|i18n( 'design/admin/setup/cache' )}</th>
-    <th>{'Path'|i18n( 'design/admin/setup/cache' )}</th>
-</tr>
-{section var=Caches loop=$cache_list sequence=array( bglight, bgdark )}
-
-{* Checkbox *}
-<tr class="{$Caches.sequence}">
-{if $cache_enabled.list[$Caches.item.id]}
-<td><input type="checkbox" name="CacheList[]" value="{$Caches.item.id}" title="{'Select the <%cache_name> for clearing.'|i18n( 'design/admin/setup/cache',, hash( '%cache_name', $Caches.item.name ) )|wash}" /></td>
-{else}
-<td><input type="checkbox" name="CacheList[]" value="{$Caches.item.id}" disabled="disabled" title="{'The <%cache_name> is disabled and thus it cannot be marked for clearing.'|i18n( 'design/admin/setup/cache',, hash( '%cache_name', $Caches.item.name ) )|wash}" /></td>
-{/if}
-
-{* Name *}
-<td>{$Caches.item.name}&nbsp;</td>
-
-{* Path *}
-<td>{$Caches.item.path}&nbsp;</td>
-
-</tr>
-{/section}
-</table>
-
-{* DESIGN: Content END *}</div></div></div>
-
-<div class="controlbar">
-{* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-<div class="block">
-<input class="button" type="submit" name="ClearCacheButton" value="{'Clear selected'|i18n( 'design/admin/setup/cache' )}" title="{'Clear the selected caches.'|i18n( 'design/admin/setup/cache' )}" />
-</div>
-{* DESIGN: Control bar END *}</div></div>
-</div>
-
-</div>
-
-
-{* Regenerate static cache window. *}
-
-<div class="context-block">
-
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-
-<h2 class="context-title">{'Static content cache'|i18n( 'design/admin/setup/cache' )}</h2>
-
-
-
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
-
-{if $static_cache_siteaccess_list|count|eq(0)}
-<div class="warning" style="padding:1em;border:2px solid #c00;margin:0 0 1em 0;">
-    <b>{'No site can be cached.'|i18n( 'design/admin/setup/cache' )}</b><br />
-    {'Every siteaccess either requires a login or has no SiteSettings/SiteURL, so there is no page to fetch and store.'|i18n( 'design/admin/setup/cache' )}
-</div>
-{else}
-
-<table class="list cache" cellspacing="0">
-<tr>
-    <th width="61%">{'Categories'|i18n( 'design/admin/setup/cache' )}</th>
-    <th width="39%"></th>
-</tr>
-
-<tr class="bglight">
-<td>{'Pages are written to'|i18n( 'design/admin/setup/cache' )}:</td>
-<td><code>{$static_cache_storage_dir|wash}</code></td>
-</tr>
-
-{* Which site to generate is chosen, not inferred: one installation serves
-   several, each with its own host or url prefix, and generating all of them is
-   rarely what is wanted. *}
-<tr class="bgdark">
-<td>{'Site to generate'|i18n( 'design/admin/setup/cache' )}:</td>
-<td>
-    <select id="staticcache-siteaccess" name="StaticCacheSiteAccess">
-    {foreach $static_cache_siteaccess_list as $static_cache_target}
-        <option value="{$static_cache_target.name|wash}">{$static_cache_target.name|wash} &mdash; {$static_cache_target.url|wash}</option>
-    {/foreach}
-        <option value="">{'All sites'|i18n( 'design/admin/setup/cache' )}</option>
-    </select>
-</td>
-</tr>
-
-{* The crawl is bounded, so a large site cannot run away and a first pass can
-   be kept short deliberately. *}
-<tr class="bglight">
-<td>{'Limits'|i18n( 'design/admin/setup/cache' )}:</td>
-<td>
-    <label for="staticcache-max-pages">{'Pages'|i18n( 'design/admin/setup/cache' )}</label>
-    <input id="staticcache-max-pages" type="text" size="6" value="2500" />
-    &nbsp;
-    <label for="staticcache-max-depth">{'Link depth'|i18n( 'design/admin/setup/cache' )}</label>
-    <input id="staticcache-max-depth" type="text" size="4" value="12" />
-</td>
-</tr>
-
-{* Static content cache. *}
-<tr class="bgdark">
-<td width="60%">{'Regenerate static content cache'|i18n( 'design/admin/setup/cache' )}:</td>
-<td width="40%"><input class="button" id="staticcache-start" type="submit" name="RegenerateStaticCacheButton" value="{'Create new'|i18n( 'design/admin/setup/cache' )}" title="{'Fetches every url of the chosen site that the site itself links to and stores the page, so the web server can answer the next visitor from a file instead of starting the CMS. This can take some time on a large site. If you encounter time-out problems, use the &quot;bin/php/makestaticcache.php&quot; shell script.'|i18n( 'design/admin/setup/cache' )}" />
-<input class="button" id="staticcache-stop" type="button" disabled="disabled" value="{'Stop'|i18n( 'design/admin/setup/cache' )}" title="{'Stops listening and leaves the pages written so far in place.'|i18n( 'design/admin/setup/cache' )}" />
-<span id="staticcache-status" style="margin-left:1em;"></span></td>
-</tr>
-
-</table>
-
-{if $static_cache_enabled|not}
-<div class="warning" style="padding:.8em;border:1px solid #e8c765;margin:1em 0;">
-    {'Generated pages will not be refreshed when an editor publishes, because site.ini [ContentSettings] StaticCache is not enabled.'|i18n( 'design/admin/setup/cache' )}
-</div>
-{/if}
-
-{* A fixed height, scrolling region: a full site prints hundreds of lines and
-   should not push the rest of the interface off the screen. *}
-<pre id="staticcache-console" style="background:#1b1b1b;color:#d8d8d8;padding:.8em;
-     height:20em;overflow:auto;font:12px/1.5 monospace;border:1px solid #444;
-     margin:1em 0 0 0;white-space:pre-wrap;word-break:break-word;display:none;"></pre>
-
+{* The static cache *}
+<details class="exp-panel" id="exp-static-cache">
+    <summary><h2 class="exp-h2">{'Static content cache'|i18n( 'design/admin/setup/cache' )}</h2><span class="exp-muted">{'pages stored as files, answered by the web server without the CMS'|i18n( 'design/admin/setup/cache' )}</span></summary>
+    <div class="exp-panel-body">
+    {if $static_cache_siteaccess_list|count|eq(0)}
+        <div class="exp-feedback is-warn"><p><strong>{'No site can be cached.'|i18n( 'design/admin/setup/cache' )}</strong> {'Every siteaccess either requires a login or has no SiteSettings/SiteURL, so there is no page to fetch and store.'|i18n( 'design/admin/setup/cache' )}</p></div>
+    {else}
+        <p class="exp-note">{'Pages are written to'|i18n( 'design/admin/setup/cache' )}: <code>{$static_cache_storage_dir|wash}</code></p>
+        <div class="exp-static-grid">
+            <div class="exp-field">
+                <label for="staticcache-siteaccess">{'Site to generate'|i18n( 'design/admin/setup/cache' )}</label>
+                <select id="staticcache-siteaccess" name="StaticCacheSiteAccess">
+                {foreach $static_cache_siteaccess_list as $static_cache_target}
+                    <option value="{$static_cache_target.name|wash}">{$static_cache_target.name|wash} &mdash; {$static_cache_target.url|wash}</option>
+                {/foreach}
+                    <option value="">{'All sites'|i18n( 'design/admin/setup/cache' )}</option>
+                </select>
+            </div>
+            <div class="exp-field">
+                <label for="staticcache-max-pages">{'Pages'|i18n( 'design/admin/setup/cache' )}</label>
+                <input id="staticcache-max-pages" type="text" size="6" value="2500" />
+            </div>
+            <div class="exp-field">
+                <label for="staticcache-max-depth">{'Link depth'|i18n( 'design/admin/setup/cache' )}</label>
+                <input id="staticcache-max-depth" type="text" size="4" value="12" />
+            </div>
+        </div>
+        <div class="exp-actions">
+            <input class="exp-btn exp-btn-primary" id="staticcache-start" type="submit" name="RegenerateStaticCacheButton" value="{'Create new'|i18n( 'design/admin/setup/cache' )}" title="{'Fetches every url of the chosen site that the site itself links to and stores the page, so the web server can answer the next visitor from a file instead of starting the CMS. This can take some time on a large site. If you encounter time-out problems, use the &quot;bin/php/makestaticcache.php&quot; shell script.'|i18n( 'design/admin/setup/cache' )}" />
+            <input class="exp-btn" id="staticcache-stop" type="button" disabled="disabled" value="{'Stop'|i18n( 'design/admin/setup/cache' )}" />
+            <span id="staticcache-status"></span>
+        </div>
+        {if $static_cache_enabled|not}
+        <div class="exp-feedback is-warn"><p>{'Generated pages will not be refreshed when an editor publishes, because site.ini [ContentSettings] StaticCache is not enabled.'|i18n( 'design/admin/setup/cache' )}</p></div>
+        {/if}
+        <pre id="staticcache-console" style="background:#1b1b1b;color:#d8d8d8;padding:.8em;height:20em;overflow:auto;font:12px/1.5 monospace;border:1px solid #444;border-radius:9px;margin:0;white-space:pre-wrap;word-break:break-word;display:none;"></pre>
 <script type="text/javascript">
 (function () {ldelim}
     var streamUrl = {$static_cache_stream_url|ezurl()};
@@ -423,52 +389,105 @@
     {rdelim};
 {rdelim})();
 </script>
+    {/if}
+    </div>
+</details>
 
-{/if}
+{* The same from a shell *}
+<details class="exp-panel" id="exp-cache-commands">
+    <summary><h2 class="exp-h2">{'From a shell'|i18n( 'design/admin/setup/cache' )}</h2><span class="exp-muted">{'the commands that do what this page does'|i18n( 'design/admin/setup/cache' )}</span></summary>
+    <div class="exp-panel-body">
+        <ul class="exp-commands">
+            <li>{'One cache or several, by id'|i18n( 'design/admin/setup/cache' )}<code>php bin/php/ezcache.php --clear-id=template-block,content --allow-root-user</code></li>
+            <li>{'By tag'|i18n( 'design/admin/setup/cache' )}<code>php bin/php/ezcache.php --clear-tag=template --allow-root-user</code></li>
+            <li>{'Everything'|i18n( 'design/admin/setup/cache' )}<code>php bin/php/ezcache.php --clear-all --allow-root-user</code></li>
+            <li>{'What would be cleared, with sizes, without clearing'|i18n( 'design/admin/setup/cache' )}<code>./console exp:cache clear --id=content --dry-run --allow-root-user</code></li>
+            <li>{'Velocity\'s response cache'|i18n( 'design/admin/setup/cache' )}<code>./console exp:velocity cache clear</code></li>
+            <li>{'Velocity, after settings changed'|i18n( 'design/admin/setup/cache' )}<code>./console exp:velocity restart --allow-root-user</code></li>
+        </ul>
+    </div>
+</details>
 
-{* DESIGN: Content END *}</div></div></div>
-
+</div></div></div>
 </div>
-
-{* PHP's own caches. Not part of "Clear all caches": they are not files of
-   this installation but memory of the server process answering this page,
-   and emptying them costs every other site that process serves as well. *}
-
-<div class="context-block" id="php-caches" style="scroll-margin-top: calc(var(--header-height, 4rem) + 1rem);">
-
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-
-<h2 class="context-title">{'PHP caches of this server process'|i18n( 'design/admin/setup/cache' )}</h2>
-
-{* DESIGN: Mainline *}<div class="header-mainline"></div>
-
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
-
-<p><small>{'The figures and settings are on'|i18n( 'design/admin/setup/cache' )} <a href="{'/setup/info'|ezurl( 'no' )}#php-caches">{'System information'|i18n( 'design/admin/setup/cache' )}</a>.</small></p>
-
-<table class="list cache" cellspacing="0">
-
-<tr>
-    <th width="61%">{'Categories'|i18n( 'design/admin/setup/cache' )}</th>
-    <th width="39%"></th>
-</tr>
-
-<tr class="bglight">
-<td>{'OPcache (compiled PHP scripts)'|i18n( 'design/admin/setup/cache' )}: <small>{$php_cache_state.opcache.text|wash}</small></td>
-<td><input class="{if $php_cache_state.opcache.available}button{else}button-disabled{/if}" type="submit" name="ResetOPcacheButton" value="{'Reset OPcache'|i18n( 'design/admin/setup/cache' )}"{if $php_cache_state.opcache.available|not} disabled="disabled"{/if} title="{'Empties the opcode cache of the server process answering this page. Every PHP file is compiled again on its next include, so the next requests are slower. Use it when an edited PHP file is not picked up.'|i18n( 'design/admin/setup/cache' )}" /></td>
-</tr>
-<tr class="bgdark">
-<td>{'APCu (data in shared memory)'|i18n( 'design/admin/setup/cache' )}: <small>{$php_cache_state.apcu.text|wash}</small></td>
-<td><input class="{if $php_cache_state.apcu.available}button{else}button-disabled{/if}" type="submit" name="ClearAPCuButton" value="{'Empty APCu'|i18n( 'design/admin/setup/cache' )}"{if $php_cache_state.apcu.available|not} disabled="disabled"{/if} title="{'Empties APCu for the server process answering this page: every entry any application stored there is gone, including the memory tier of a Qbix response cache.'|i18n( 'design/admin/setup/cache' )}" /></td>
-</tr>
-
-
-</table>
-
-{* DESIGN: Content END *}</div></div></div>
-
-</div>
-
 </form>
+
+{literal}
+<script>
+(function () {
+    var page = document.getElementById('exp-cachepage');
+    if (!page) return;
+    var rows = Array.prototype.slice.call(page.querySelectorAll('tr.exp-cache-row'));
+    var groups = Array.prototype.slice.call(page.querySelectorAll('section.exp-group'));
+    var toolbar = document.getElementById('exp-cache-toolbar');
+    var search = document.getElementById('exp-cache-search');
+    var count = document.getElementById('exp-cache-count');
+    var selection = document.getElementById('exp-cache-selection');
+    var selectAll = document.getElementById('exp-cache-select-all');
+    var clearButton = document.getElementById('exp-cache-clear-selected');
+    var confirmBox = document.getElementById('exp-cache-confirm');
+    var confirmList = document.getElementById('exp-cache-confirm-list');
+    var texts = page.dataset;
+    toolbar.hidden = false;
+    document.getElementById('exp-cache-select-all-label').hidden = false;
+
+    function boxes(onlyShown) {
+        return rows.filter(function (r) { return !onlyShown || !r.hidden; })
+                   .map(function (r) { return r.querySelector('input[name="CacheList[]"]'); })
+                   .filter(function (b) { return b && !b.disabled; });
+    }
+    function chosen() { return boxes(false).filter(function (b) { return b.checked; }); }
+    function updateSelection() {
+        var n = chosen().length;
+        selection.textContent = n ? n + ' ' + texts.selected : texts.none;
+    }
+    function filter() {
+        var q = (search.value || '').trim().toLowerCase();
+        var g = (page.querySelector('input[name="exp-cache-group-filter"]:checked') || {}).value || '';
+        var shown = 0;
+        rows.forEach(function (r) {
+            var inGroup = !g || r.closest('section.exp-group').dataset.group === g;
+            var hit = !q || r.dataset.search.indexOf(q) !== -1;
+            r.hidden = !(inGroup && hit);
+            if (!r.hidden) shown++;
+        });
+        groups.forEach(function (s) {
+            var visible = !g || s.dataset.group === g;
+            if (q && visible) visible = s.querySelectorAll('tr.exp-cache-row:not([hidden])').length > 0 || s.dataset.group === 'velocity' && !q;
+            s.hidden = !visible;
+        });
+        count.textContent = shown + ' / ' + rows.length + ' ' + texts.shown;
+    }
+    search.addEventListener('input', filter);
+    page.querySelectorAll('input[name="exp-cache-group-filter"]').forEach(function (r) { r.addEventListener('change', filter); });
+    page.addEventListener('change', function (e) { if (e.target.name === 'CacheList[]') updateSelection(); });
+    selectAll.addEventListener('change', function () {
+        boxes(true).forEach(function (b) { b.checked = selectAll.checked; });
+        updateSelection();
+    });
+    // Clear selected: name what goes, in place, before the form is sent
+    var confirmed = false;
+    clearButton.addEventListener('click', function (e) {
+        if (confirmed) return;
+        e.preventDefault();
+        var list = chosen();
+        confirmList.innerHTML = '';
+        if (!list.length) { selection.textContent = texts.none; return; }
+        list.forEach(function (b) { var li = document.createElement('li'); li.textContent = b.dataset.name || b.value; confirmList.appendChild(li); });
+        confirmBox.hidden = false;
+        document.getElementById('exp-cache-confirm-yes').focus();
+    });
+    document.getElementById('exp-cache-confirm-yes').addEventListener('click', function () {
+        confirmed = true;
+        clearButton.click();
+    });
+    document.getElementById('exp-cache-confirm-no').addEventListener('click', function () {
+        confirmBox.hidden = true;
+        clearButton.focus();
+    });
+    filter();
+    updateSelection();
+})();
+</script>
+{/literal}
+{undef $cp_tag_buttons $cp_consequence}
