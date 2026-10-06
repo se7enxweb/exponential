@@ -597,7 +597,8 @@ a6e2bb769b7a163ac55006547b406b49  design/admin/templates/setup/datatype.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 29d3e871e6de1979d29105f427637288  design/admin/templates/setup/datatype_describe.tpl
 2728695be0d700fa0eedcbef59b578de  design/admin/templates/setup/designextension.tpl
-ab2536d3e436c4fcf8b692efbb6a01d3  design/admin/templates/setup/extensions.tpl
+335d150760b72b20eaa1e2cbede0233a  design/admin/templates/setup/extensions.tpl
+d5bb255f3b23a012d0fbd889a08adf23  design/admin/templates/setup/extensions_exp_style.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin/templates/setup/handlerextension.tpl
 c0fdd5c1ea91fad8be2742c3df45a8aa  design/admin/templates/setup/info.tpl
 bbdadba4a9dc511a67e3fedce07a424f  design/admin/templates/setup/info_exp_style.tpl
@@ -1200,7 +1201,8 @@ a6e2bb769b7a163ac55006547b406b49  design/admin4/templates/setup/datatype.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tpl
 29d3e871e6de1979d29105f427637288  design/admin4/templates/setup/datatype_describe.tpl
 2728695be0d700fa0eedcbef59b578de  design/admin4/templates/setup/designextension.tpl
-ab2536d3e436c4fcf8b692efbb6a01d3  design/admin4/templates/setup/extensions.tpl
+335d150760b72b20eaa1e2cbede0233a  design/admin4/templates/setup/extensions.tpl
+d5bb255f3b23a012d0fbd889a08adf23  design/admin4/templates/setup/extensions_exp_style.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin4/templates/setup/handlerextension.tpl
 c0fdd5c1ea91fad8be2742c3df45a8aa  design/admin4/templates/setup/info.tpl
 bbdadba4a9dc511a67e3fedce07a424f  design/admin4/templates/setup/info_exp_style.tpl
@@ -3299,8 +3301,8 @@ f8d44bca99ffe43f048fc03fc7ca6cc2  doc/features/6.0/environment-settings.md
 d26f78ed5cf8ef8757d508dde440e55d  doc/features/6.0/exp-adminui.md
 42ae5703ac9bc16760935995c30223c3  doc/features/6.0/exp-debug-bar.md
 5eb04007ff0095dc046839caaae709eb  doc/features/6.0/exp-ini-command.md
-77e306e6356069788c64dac8d5947b53  doc/features/6.0/extension-list-and-downloads.md
-54a9bf8ce6ab2dd306c8518ffe27abc1  doc/features/6.0/extension-loading-order.md
+5c7a4b79d8119e3152f415e6dd55ef2b  doc/features/6.0/extension-list-and-downloads.md
+244d74a450d733edbbb098d118101a62  doc/features/6.0/extension-loading-order.md
 8f1fcebd72db9526f18bbcbb0cdef769  doc/features/6.0/extension-module-override.md
 2d0a604152c0b63239f761b1fae94615  doc/features/6.0/extensions/AdminAid.md
 ce13e92e19daf0753273662b6b47c0d8  doc/features/6.0/extensions/README.md
@@ -3438,7 +3440,8 @@ aac796c334e4b9e60764279755cd9dde  doc/guides/content-languages.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
 a841ba0d4e6df12e066d8ac43bf433be  doc/guides/cronjobs.md
 16abc76337749d4e4334c2373b362366  doc/guides/deploying.md
-4c5238caa797bf849f429849a27bff43  doc/guides/extensions.md
+89fc578ae0ff375a2ddbada72586b72a  doc/guides/extensions-page.md
+d66816a653e1d073775286ddd516fa19  doc/guides/extensions.md
 9ab2a55cb8c3f5b50331448d91683c53  doc/guides/getting-started.md
 b53242f489a852760b7b824ee3e042a2  doc/guides/images/cronjobs/available-scripts.png
 2e5094f1511066d9fac842cb2464db9c  doc/guides/images/cronjobs/controls.png
@@ -4829,6 +4832,8 @@ cb5cc153932cf737535c27579b657fc3  kernel/classes/expbookmarkpage.php
 f83e2e3dea26d0502fff22c89939e0ea  kernel/classes/expcollaborationgroupmanager.php
 027f1a4c2d2834c623131b188c540872  kernel/classes/expcollaborationinbox.php
 e7456184eb299387e3eed677ae8ea469  kernel/classes/expcollaborationsampledata.php
+4f8b979e7bac49349e8bab2c65a8e142  kernel/classes/expextensioncatalogue.php
+e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
 2a96f379f935f105bea29c86d75aca44  kernel/classes/expkickstarter.php
@@ -5412,7 +5417,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php
 00e0da11d764b55e34ca0f7094fe1c96  kernel/private/classes/ezcontentobjectstategrouplanguage.php
 e34ec746f18ebc7f96baa69e69ca4148  kernel/private/classes/ezcontentobjectstatelanguage.php
-b9cd5e364e4dc7219ca64f0a631bd3e3  kernel/private/classes/ezpactiveextensions.php
+9c6f19a00ddaad6fde34c61189ce50e5  kernel/private/classes/ezpactiveextensions.php
 bdaf3dfbfa218e33a0ee681501a10ea3  kernel/private/classes/ezpasynchronouspublishingfilter.php
 c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.php
 9d339c1ff30b94569982bd0271147e74  kernel/private/classes/ezpcontentlimitation.php
@@ -5588,7 +5593,7 @@ b39696f0ecc6c1fde06f85def7b0aace  kernel/private/classes/views/setup/cronjobs.ph
 7d08d5aac41889ecbc986434986c09e6  kernel/private/classes/views/setup/cronjobsstream.php
 c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.php
 5f37b9085a959384971d12d73b481856  kernel/private/classes/views/setup/designextension.php
-84d5e4047a58b8ca8a3131ba6a8d8b8c  kernel/private/classes/views/setup/extensions.php
+3fb46e2cc3fe98e4a440d4cc02d8e12c  kernel/private/classes/views/setup/extensions.php
 ba095e1065f22b1f8ce06eaaaeaeb8a6  kernel/private/classes/views/setup/ezsetup.php
 af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerextension.php
 183e52789302bec1b82b77704ce5ed36  kernel/private/classes/views/setup/info.php
@@ -7263,6 +7268,7 @@ de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableEx
 7e6b4523a39875330fdd94382fd0f3d8  tests/tests/kernel/classes/setup/AutoloadGeneratorOptionsTest.php
 4159402cb6f2996b0958f022dabe3050  tests/tests/kernel/classes/setup/EditorSiteaccessDefaultTest.php
 b26468a072e87640022ee9fe0bbb360e  tests/tests/kernel/classes/setup/EditorSiteaccessModulesTest.php
+f2423dc1a4140e9f8bb33a822575aec8  tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php
 84a806754eee94940f2ff8fab608690f  tests/tests/kernel/classes/setup/KickstarterFailureReasonTest.php
 b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php
 2e4f85464804cc2fe00e7e80aa8a3a24  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
