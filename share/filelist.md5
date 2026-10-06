@@ -4869,7 +4869,7 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 0f21cab2bd8703ec564d77e3042723f2  kernel/classes/expbenchmarkhttp.php
 a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
 0c75a7bca2a0dce8da13908f7a1ee322  kernel/classes/expbenchmarkmicro.php
-cb5cc153932cf737535c27579b657fc3  kernel/classes/expbookmarkpage.php
+f163435421aa66729d958a47d7d34fbe  kernel/classes/expbookmarkpage.php
 6b2cd5d7c8a88757b0a974feec9028f7  kernel/classes/expcachecatalogue.php
 8113b91c780c36df2bed7f35f0502a80  kernel/classes/expcachemanager.php
 84a3447a01864a5da11162284520abca  kernel/classes/expcachewarm.php
@@ -4928,7 +4928,7 @@ b1c9067e57548448916dbd904a6379d8  kernel/classes/ezcollaborationviewhandler.php
 dc91b6f083d6703de83ba6568985266c  kernel/classes/ezconfirmorderhandler.php
 86ea8bbbefbb6e6dd542a1eb1c5961ee  kernel/classes/ezcontentbrowse.php
 d32c6962dd7f135b3bd18c0f2d036263  kernel/classes/ezcontentbrowsebookmark.php
-a02b37efc3bf3a4ad31926ddd66153b3  kernel/classes/ezcontentbrowsebookmarkfolder.php
+5d417cf9a9b4c176d015b54d94856296  kernel/classes/ezcontentbrowsebookmarkfolder.php
 e03967a373ba9e46d7ba161d72500151  kernel/classes/ezcontentbrowserecent.php
 be5967e47609a568319111fd808d10e2  kernel/classes/ezcontentcache.php
 60f96273f58116cb5a510e2cd1909244  kernel/classes/ezcontentcachemanager.php
@@ -7045,8 +7045,8 @@ d4cad238dad8d7b326ffbdb4af42308e  tests/tests/kernel/classes/benchmark/ExpBenchm
 394a087f40f53144839310eb15d89e4e  tests/tests/kernel/classes/benchmark/ExpBenchmarkTest.php
 18aaa771e4a43688b0c491beef27096e  tests/tests/kernel/classes/benchmark/stub_server.php
 8a01acd9d7c4f0241e600a97c1238dc9  tests/tests/kernel/classes/bookmarks/BookmarkFolderUpgradeSqlTest.php
-1eee3d922093fab2ab61aa18f6ed8b50  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
-4dae798972d4ce3ea7750924417eff76  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
+02038e9154fe79a5d2954b16f6ba6612  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
+dfd97bff94227d161392e0066590a9f3  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
 9f35d62dea92268419f9f373c661ea91  tests/tests/kernel/classes/cachesmore/eZStaticCachePathsTest.php
 ec49325384c48adf5d56ade86b85d5dd  tests/tests/kernel/classes/cachesmore/expPreloadRunnerLinksTest.php
 7fd83806d836bd31a31622cd6ae94e4e  tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php
