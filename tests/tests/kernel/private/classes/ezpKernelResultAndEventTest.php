@@ -2,7 +2,7 @@
 /**
  * ezpKernelResult (content and attributes), ezpKernelRedirect (target and status code from the status line) and
  * ezpEvent (attach, detach, notify, filter, uncallable listeners skipped, the listeners of site.ini [Event] attached
- * once however often registerEventListeners() runs).
+ * once however often registerEventListeners() runs, entries without <event>@<callback> skipped).
  *
  * No database. site.ini [Event] Listeners is injected and put back.
  *
@@ -193,6 +193,36 @@ class ezpKernelResultAndEventTest extends PHPUnit\Framework\TestCase
         $event->notify( 'k1/global', array( 'n' ) );
         $this->assertSame( array( array( 'n' ), array( 'n' ) ), ezpKernelResultAndEventTestListener::$calls, 'one from site.ini, one attached at run time' );
         $this->assertTrue( $event->detach( 'k1/global', $runtime ) );
+        eZINI::injectSettings( $this->injected );
+        eZINI::instance()->load();
+    }
+
+    /**
+     * An entry of site.ini [Event] Listeners[] without the form <event>@<callback> is logged and skipped; it raised
+     * an "Undefined array key" warning and attached a listener without a callback (or one to an event named '').
+     */
+    public function testMalformedGlobalListenersAreSkipped()
+    {
+        $settings = $this->injected;
+        $settings['site.ini']['Event']['Listeners'] = array(
+            'k1/nocallback',
+            '@ezpKernelResultAndEventTestListener::record',
+            'k1/malformed@',
+            'k1/malformed@ezpKernelResultAndEventTestListener::record',
+        );
+        eZINI::injectSettings( $settings );
+        eZINI::instance()->loadPlacement();
+        eZINI::instance()->load();
+        $event = new ezpEvent( true );
+        $event->registerEventListeners();
+
+        $listeners = new ReflectionProperty( 'ezpEvent', 'listeners' );
+        $attached = $listeners->getValue( $event );
+        $this->assertArrayNotHasKey( '', $attached );
+        $this->assertArrayNotHasKey( 'k1/nocallback', $attached );
+        $this->assertCount( 1, $attached['k1/malformed'] );
+        $event->notify( 'k1/malformed', array( 'n' ) );
+        $this->assertSame( array( array( 'n' ) ), ezpKernelResultAndEventTestListener::$calls );
         eZINI::injectSettings( $this->injected );
         eZINI::instance()->load();
     }

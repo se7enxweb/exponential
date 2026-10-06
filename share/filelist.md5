@@ -2896,7 +2896,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-47c7929b1b0c2255da61aad964dfcec5  doc/changelogs/6.0/6.0.15.md
+1b4d31ea7c8f26409a2275c8740df242  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5329,7 +5329,7 @@ c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.ph
 8283e4f7982e9d1aff4c308f72dd9a18  kernel/private/classes/ezpcontentpublishingprocess.php
 dad70a135e50fcc3415d197dd961caad  kernel/private/classes/ezpcontentpublishingqueue.php
 483341cbf4649e24b6f15b0357bc5aee  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
-1260005a4e4f479bac8cdb6d40977e92  kernel/private/classes/ezpevent.php
+fe7ffb1457c5cf4d4b53ae3f4be1d190  kernel/private/classes/ezpevent.php
 93ec1ada8eab0c1428a81264a05a9e2d  kernel/private/classes/ezpextension.php
 1cab90fbf1daca018c7fd0f2e9d3f9a0  kernel/private/classes/ezpformtokenrefusal.php
 cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
@@ -7275,7 +7275,7 @@ bf4805eef66167c3d4a3a93b22e382b3  tests/tests/kernel/datatypes/ezxmltext/handler
 9d2f2238449173a5c027ec1dfcee4e4f  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 0133feca9084b5d356221439d79d6841  tests/tests/kernel/private/classes/ezpExtensionInfoTest.php
 5277128e032a8ba916fd550e97672c58  tests/tests/kernel/private/classes/ezpFormTokenRefusalTest.php
-2a765819bf88077e84f41e8716428e3e  tests/tests/kernel/private/classes/ezpKernelResultAndEventTest.php
+408ef02dcf7414617682703f30a02a4a  tests/tests/kernel/private/classes/ezpKernelResultAndEventTest.php
 12c5500d56b2e450e4e386e169596632  tests/tests/kernel/private/classes/ezpLanguageSwitcherTest.php
 d3aece307cd87977077761c98dcfa905  tests/tests/kernel/private/classes/ezpSiteAccessURLTest.php
 2000c194dcb439f91bf20cee50496582  tests/tests/kernel/private/classes/ezpSmallKernelHelpersTest.php
