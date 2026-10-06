@@ -988,6 +988,8 @@ return array(
       'expBookmarkPage'                                              => 'kernel/classes/expbookmarkpage.php',
       'expCacheManager'                                              => 'kernel/classes/expcachemanager.php',
       'expCacheWarm'                                                 => 'kernel/classes/expcachewarm.php',
+      'expClassicMenuSettings'                                       => 'kernel/classes/classicmenu/expclassicmenusettings.php',
+      'expClassicMenuSiteAccessInspector'                            => 'kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php',
       'expCleanupRSS'                                                => 'kernel/classes/expcleanuprss.php',
       'expCollaborationGroupManager'                                 => 'kernel/classes/expcollaborationgroupmanager.php',
       'expCollaborationInbox'                                        => 'kernel/classes/expcollaborationinbox.php',
