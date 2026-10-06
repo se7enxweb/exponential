@@ -251,4 +251,30 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
         $text = 'a/b/c';
         $this->assertSame( 'a/b', eZSiteAccess::matchRegexp( $text, '^(a/b)', 1 ), 'a slash in the pattern needs no escaping' );
     }
+
+    public function testMatchRegexpRemovesOnlyTheMatchedText()
+    {
+        $text = 'k1eng/k1eng-news';
+        $this->assertSame( 'k1eng', eZSiteAccess::matchRegexp( $text, '^(k1[a-z]+)', 1 ) );
+        $this->assertSame( '/k1eng-news', $text );
+    }
+
+    public function testUriRegexpKeepsTheRestOfTheUri()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'uri' );
+        $this->set( 'SiteAccessSettings', 'URIMatchType', 'regexp' );
+        $this->set( 'SiteAccessSettings', 'URIMatchRegexp', '^(k1[a-z]+)/' );
+        $this->set( 'SiteAccessSettings', 'URIMatchRegexpItem', '1' );
+        $this->assertAccess( 'k1eng', eZSiteAccess::TYPE_URI, $this->match( 'k1eng/about-k1eng' ), 'about-k1eng' );
+    }
+
+    public function testHostAndIndexElementsBeyondTheEnd()
+    {
+        $this->set( 'SiteAccessSettings', 'MatchOrder', 'host;index' );
+        $this->set( 'SiteAccessSettings', 'HostMatchType', 'element' );
+        $this->set( 'SiteAccessSettings', 'HostMatchElement', '5' );
+        $this->set( 'SiteAccessSettings', 'IndexMatchType', 'element' );
+        $this->set( 'SiteAccessSettings', 'IndexMatchElement', '3' );
+        $this->assertAccess( 'k1default', eZSiteAccess::TYPE_DEFAULT, $this->match( 'x', 'localhost', 80, 'index_k1ger.php' ) );
+    }
 }

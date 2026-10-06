@@ -255,7 +255,7 @@ class eZSiteAccess
                     {
                         $match_index = $ini->variable( 'SiteAccessSettings', 'HostMatchElement' );
                         $match_arr = explode( '.', $match_item );
-                        $name = $match_arr[$match_index];
+                        $name = $match_arr[$match_index] ?? '';
                     }
                     else if ( $match_type == 'text' )
                     {
@@ -343,7 +343,7 @@ class eZSiteAccess
                         {
                             $match_item = substr( $match_item, 0, $match_pos );
                             $match_arr = explode( '_', $match_item );
-                            $name = $match_arr[$match_index];
+                            $name = $match_arr[$match_index] ?? '';
                         }
                     }
                     else if ( $match_type == 'text' )
@@ -432,10 +432,13 @@ class eZSiteAccess
     static function matchRegexp( &$text, $reg, $num )
     {
         $reg = str_replace( '/', "\\/", $reg );
-        if ( preg_match( "/$reg/", $text, $regs ) && $num < count( $regs ) )
+        if ( preg_match( "/$reg/", $text, $regs, PREG_OFFSET_CAPTURE ) && $num < count( $regs ) )
         {
-            $text = str_replace( $regs[$num], '', $text );
-            return $regs[$num];
+            // remove the matched text where it was matched, not every other place the same text occurs
+            list( $matched, $offset ) = $regs[$num];
+            if ( $offset >= 0 )
+                $text = substr_replace( $text, '', $offset, strlen( $matched ) );
+            return $matched;
         }
         return null;
     }
