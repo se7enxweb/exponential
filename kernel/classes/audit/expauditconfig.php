@@ -149,11 +149,21 @@ class expAuditConfig
         return self::$snapshot = self::build( self::raw() );
     }
 
-    /** @return string The installation root, with a trailing slash */
+    /**
+     * The installation root, with a trailing slash.
+     *
+     * Read out of the engine archive, __DIR__ names a path inside the archive and
+     * the audit directory would be looked for there, so EXP_ROOT_DIR (published
+     * by autoload.php, which is always on disk) is used then.
+     *
+     * @return string
+     */
     public static function root()
     {
         if ( self::$override !== null && isset( self::$override['root'] ) )
             return rtrim( self::$override['root'], '/' ) . '/';
+        if ( defined( 'EXP_ROOT_DIR' ) && strncmp( __DIR__, 'phar://', 7 ) === 0 )
+            return rtrim( EXP_ROOT_DIR, '/' ) . '/';
         return dirname( __DIR__, 3 ) . '/';
     }
 
