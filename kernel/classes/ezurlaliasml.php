@@ -2485,8 +2485,8 @@ class eZURLAliasML extends eZPersistentObject
         }
 
         $exclude = $ini->hasVariable( 'SiteAccessSettings', 'PathPrefixExclude' )
-            ? $ini->variable( 'SiteAccessSettings', 'PathPrefixExclude' )
-            : false;
+            ? (array)$ini->variable( 'SiteAccessSettings', 'PathPrefixExclude' )
+            : array();
         foreach ( $exclude as $item )
         {
             $escapedItem = preg_quote( $item, '#' );
@@ -2496,8 +2496,9 @@ class eZURLAliasML extends eZPersistentObject
             }
         }
 
+        // The prefix is a whole first path element: "Shop" is removed from "Shop/a" and "Shop", not from "Shopping/a".
         $escapedPrefix = preg_quote( $prefix, '#' );
-        $modifiedUriString = preg_replace( "#^$escapedPrefix/?#i", '', $uriString );
+        $modifiedUriString = preg_replace( "#^$escapedPrefix(/|$)#i", '', $uriString );
         return $modifiedUriString === null ? $uriString : $modifiedUriString;
     }
 
