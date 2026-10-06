@@ -169,7 +169,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-878259d32483f0f5d23e3e8d4f8591be  composer.json
+fa89b8430710f8cfa5afa583ebb92eb2  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 875fe6f304460f35898e4a4c88ce8583  config.php-RECOMMENDED
@@ -6683,6 +6683,7 @@ ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 e71599015464e106c536eedfe12d9676  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
 52ce45237dc18d73206a7fb95a62e4bb  tests/tests/extension/cjw_newsletter/cjwNewsletterBounceTest.php
+93a0086f8dab8574f944068e648a9569  tests/tests/extension/cjw_newsletter/cjwNewsletterClassLanguagesTest.php
 c35bdce82d59e45fe10e006d97fb1568  tests/tests/extension/cjw_newsletter/cjwNewsletterCommandsTest.php
 b0db8af6eacbffb2eb9a40225875bf19  tests/tests/extension/cjw_newsletter/cjwNewsletterCronjobTest.php
 be09468ed70f896c4f843733d36bf92e  tests/tests/extension/cjw_newsletter/cjwNewsletterCsvTest.php
