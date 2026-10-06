@@ -19,7 +19,7 @@ aliases.
 - The page lists every cache in six groups: **Content and views**, **Templates**, **INI and settings**, **Images**,
   **Pages, queries and the server**, **Other** (caches of extensions that fit no other group).
 - For each cache: its name and what it holds, its id and tags, its directory (relative to the installation), its
-  size and number of files (**Measure sizes**, `/setup/cache/(sizes)/1`, at most three seconds), when it was last
+  size and number of files (**Measure sizes**, `/setup/cache/(sizes)/1`, at most three seconds), when and by whom it was last
   cleared where the installation records it, and badges: **restart Velocity after clearing**, **also in Velocity's
   response cache**, **disabled in the settings**.
 - Clear **selected** caches (tick them, **Clear selected**, confirm the list), a **group** (**Clear this group…**),
@@ -60,9 +60,20 @@ post the same fields to `expCacheManager::sharedActionFromPost()`.
 
 ## 3. Last cleared
 
-The kernel expires some caches instead of deleting them, and records when: content views, template blocks, user
-information, translations, image aliases and the content tree menu. Those show the time; the others say
-"not recorded". Every clear is also written to the audit (`system.cache.clear`).
+The column says when each cache was last cleared and, where the audit trail knows, by whom: "just now",
+"12 minutes ago", "3 hours ago", else the date, with "by admin" or "from a shell, os:root" below.
+
+- **The audit trail** (`system.cache.clear`) records clears through this page, Setup > System information and
+  `./console exp:cache`, with the user (or the operating system user of a shell). The page reads it once per view:
+  one query of the audit index (the newest 200 clears) and the end of the newest system channel file (at most 3000
+  lines), for clears the indexer has not reached yet. Who cleared is shown to users who may read the system
+  channel of the audit (`audit/read`).
+- `bin/php/ezcache.php`, which `exp:velocity deploy` runs, is **not** audited. Its clears show only where the kernel
+  records an expiry time: content views, template blocks, user information, translations, image aliases and the
+  content tree menu.
+- The newer of the two wins; an audit record within half a minute of the expiry time is the same clear and names
+  who made it. The page that shows the result of a clear already names you, before your own record is written.
+- A cache cleared neither way says "not recorded".
 
 ## 4. Velocity
 
