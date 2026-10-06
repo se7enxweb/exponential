@@ -12072,6 +12072,22 @@ Note: The packages will not be uninstalled.</translation>
         <source>You do not have permission to assign the section &lt; %1 &gt; to any object.</source>
         <translation>You do not have permission to assign the section &lt; %1 &gt; to any object.</translation>
     </message>
+    <message>
+        <source>The other items were assigned. A section/assign policy decides which objects you may assign (its Class, Owner and Section limitations) and which sections you may assign them to (NewSection).</source>
+        <translation>The other items were assigned. A section/assign policy decides which objects you may assign (its Class, Owner and Section limitations) and which sections you may assign them to (NewSection).</translation>
+    </message>
+    <message>
+        <source>A section/assign policy allows this section, but no class of object it names. An administrator can widen its Class limitation.</source>
+        <translation>A section/assign policy allows this section, but no class of object it names. An administrator can widen its Class limitation.</translation>
+    </message>
+    <message>
+        <source>Assigning a section needs a section/assign policy whose NewSection limitation includes it, or one without that limitation.</source>
+        <translation>Assigning a section needs a section/assign policy whose NewSection limitation includes it, or one without that limitation.</translation>
+    </message>
+    <message>
+        <source>Back to the section list.</source>
+        <translation>Back to the section list.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/browse_assign</name>
@@ -12134,6 +12150,50 @@ Note: The packages will not be uninstalled.</translation>
         <source>Proceed only if you are sure that it is safe.</source>
         <translation>Proceed only if you are sure that it is safe.</translation>
     </message>
+    <message>
+        <source>Remove sections?</source>
+        <translation>Remove sections?</translation>
+    </message>
+    <message>
+        <source>The sections cannot be removed</source>
+        <translation>The sections cannot be removed</translation>
+    </message>
+    <message>
+        <source>A section can only be removed when no object is in it, drafts and archived objects included, and no policy or role assignment is limited to it.</source>
+        <translation>A section can only be removed when no object is in it, drafts and archived objects included, and no policy or role assignment is limited to it.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Removal cannot be undone. Templates, override conditions and settings that name a removed section by its ID or identifier stop matching, and a section/assign policy that offers it (NewSection) keeps a value that points nowhere.</source>
+        <translation>Removal cannot be undone. Templates, override conditions and settings that name a removed section by its ID or identifier stop matching, and a section/assign policy that offers it (NewSection) keeps a value that points nowhere.</translation>
+    </message>
+    <message>
+        <source>Holds %objects objects (%published published, %drafts drafts, %archived archived). Move them to another section with Assign content first.</source>
+        <translation>Holds %objects objects (%published published, %drafts drafts, %archived archived). Move them to another section with Assign content first.</translation>
+    </message>
+    <message>
+        <source>%count policies are limited to it. Remove the section from their limitations in these roles first:</source>
+        <translation>%count policies are limited to it. Remove the section from their limitations in these roles first:</translation>
+    </message>
+    <message>
+        <source>%count role assignments are limited to it. Remove those assignments first.</source>
+        <translation>%count role assignments are limited to it. Remove those assignments first.</translation>
+    </message>
+    <message>
+        <source>Remove these sections</source>
+        <translation>Remove these sections</translation>
+    </message>
+    <message>
+        <source>Back to the sections</source>
+        <translation>Back to the sections</translation>
+    </message>
+    <message>
+        <source>Cancel keeps every section.</source>
+        <translation>Cancel keeps every section.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/edit</name>
@@ -12180,6 +12240,74 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Identifier</source>
         <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>New section</source>
+        <translation>New section</translation>
+    </message>
+    <message>
+        <source>Edit section %name</source>
+        <translation>Edit section %name</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>A section groups content for permissions, navigation and designs. Every object belongs to exactly one section.</source>
+        <translation>A section groups content for permissions, navigation and designs. Every object belongs to exactly one section.</translation>
+    </message>
+    <message>
+        <source>The section was not saved.</source>
+        <translation>The section was not saved.</translation>
+    </message>
+    <message>
+        <source>Shown in the section lists, in role limitations and in the section choice of an object.</source>
+        <translation>Shown in the section lists, in role limitations and in the section choice of an object.</translation>
+    </message>
+    <message>
+        <source>Letters, digits and _, starting with a letter, unique among the sections. Templates, fetch functions and override conditions (section_identifier) can name the section by it.</source>
+        <translation>Letters, digits and _, starting with a letter, unique among the sections. Templates, fetch functions and override conditions (section_identifier) can name the section by it.</translation>
+    </message>
+    <message>
+        <source>The top menu tab of the administration interface that is active while an object of this section is viewed or edited. The parts are listed in menu.ini [NavigationPart].</source>
+        <translation>The top menu tab of the administration interface that is active while an object of this section is viewed or edited. The parts are listed in menu.ini [NavigationPart].</translation>
+    </message>
+    <message>
+        <source>What a change affects</source>
+        <translation>What a change affects</translation>
+    </message>
+    <message>
+        <source>This section holds %published published objects (%objects with drafts and archived ones), and %policies policies in %roles roles and %assignments role assignments are limited to it.</source>
+        <translation>This section holds %published published objects (%objects with drafts and archived ones), and %policies policies in %roles roles and %assignments role assignments are limited to it.</translation>
+    </message>
+    <message>
+        <source>Renaming changes no permission: roles name the section by its ID.</source>
+        <translation>Renaming changes no permission: roles name the section by its ID.</translation>
+    </message>
+    <message>
+        <source>A new identifier stops templates, fetches and override conditions that use the old one from matching.</source>
+        <translation>A new identifier stops templates, fetches and override conditions that use the old one from matching.</translation>
+    </message>
+    <message>
+        <source>A new navigation part changes the active top menu tab for all objects of the section.</source>
+        <translation>A new navigation part changes the active top menu tab for all objects of the section.</translation>
+    </message>
+    <message>
+        <source>Saving clears the view cache of the objects in the section.</source>
+        <translation>Saving clears the view cache of the objects in the section.</translation>
+    </message>
+    <message>
+        <source>Create section</source>
+        <translation>Create section</translation>
+    </message>
+    <message>
+        <source>Save section</source>
+        <translation>Save section</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the section list without saving.</source>
+        <translation>Cancel goes back to the section list without saving.</translation>
     </message>
 </context>
 <context>
@@ -12251,6 +12379,190 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Show %count items per page.</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sections</translation>
+    </message>
+    <message>
+        <source>Sections divide the content into groups. Every object belongs to exactly one section. Roles can allow or deny access by section, the section decides which top menu tab is active while its content is viewed, and templates can be overridden for one section.</source>
+        <translation>Sections divide the content into groups. Every object belongs to exactly one section. Roles can allow or deny access by section, the section decides which top menu tab is active while its content is viewed, and templates can be overridden for one section.</translation>
+    </message>
+    <message>
+        <source>The section %name was created. Assign content to it with Assign content on its card.</source>
+        <translation>The section %name was created. Assign content to it with Assign content on its card.</translation>
+    </message>
+    <message>
+        <source>The section %name was saved.</source>
+        <translation>The section %name was saved.</translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation>Removed: %names.</translation>
+    </message>
+    <message>
+        <source>No section was selected. Tick the sections to remove first.</source>
+        <translation>No section was selected. Tick the sections to remove first.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>Published objects</source>
+        <translation>Published objects</translation>
+    </message>
+    <message>
+        <source>Used by roles</source>
+        <translation>Used by roles</translation>
+    </message>
+    <message>
+        <source>Without published objects</source>
+        <translation>Without published objects</translation>
+    </message>
+    <message>
+        <source>Can be removed</source>
+        <translation>Can be removed</translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation>Need attention</translation>
+    </message>
+    <message>
+        <source>Find and create</source>
+        <translation>Find and create</translation>
+    </message>
+    <message>
+        <source>Find a section</source>
+        <translation>Find a section</translation>
+    </message>
+    <message>
+        <source>Name, identifier, ID, navigation part or role.</source>
+        <translation>Name, identifier, ID, navigation part or role.</translation>
+    </message>
+    <message>
+        <source>A new section starts empty: give it a name and an identifier, then assign content to it.</source>
+        <translation>A new section starts empty: give it a name and an identifier, then assign content to it.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>With published objects</source>
+        <translation>With published objects</translation>
+    </message>
+    <message>
+        <source>All sections</source>
+        <translation>All sections</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Select all on this page</translation>
+    </message>
+    <message>
+        <source>There are no sections. A section is needed for every object; create one with New section.</source>
+        <translation>There are no sections. A section is needed for every object; create one with New section.</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>Select %name for removal</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>%count published</source>
+        <translation>%count published</translation>
+    </message>
+    <message>
+        <source>No published objects</source>
+        <translation>No published objects</translation>
+    </message>
+    <message>
+        <source>No identifier</source>
+        <translation>No identifier</translation>
+    </message>
+    <message>
+        <source>Unknown navigation part</source>
+        <translation>Unknown navigation part</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
+    <message>
+        <source>Assign content</source>
+        <translation>Assign content</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Navigation part</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objects</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>%count drafts</source>
+        <translation>%count drafts</translation>
+    </message>
+    <message>
+        <source>%count archived</source>
+        <translation>%count archived</translation>
+    </message>
+    <message>
+        <source>Roles with a policy limited to this section</source>
+        <translation>Roles with a policy limited to this section</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roles</translation>
+    </message>
+    <message>
+        <source>Roles assigned to users or groups with the limitation to this section</source>
+        <translation>Roles assigned to users or groups with the limitation to this section</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Role assignments</translation>
+    </message>
+    <message>
+        <source>No section on this page matches. Clear the search or choose All.</source>
+        <translation>No section on this page matches. Clear the search or choose All.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per page</translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first. A section that still holds objects, or that a role or role assignment names, is never removed.</source>
+        <translation>Remove selected asks for confirmation first. A section that still holds objects, or that a role or role assignment names, is never removed.</translation>
+    </message>
+    <message>
+        <source>%shown of %count sections on this page shown</source>
+        <translation>%shown of %count sections on this page shown</translation>
+    </message>
+    <message>
+        <source>%count sections on this page</source>
+        <translation>%count sections on this page</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count selected.</translation>
     </message>
 </context>
 <context>
@@ -12326,6 +12638,130 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Identifier</source>
         <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>Section, ID %id</source>
+        <translation>Section, ID %id</translation>
+    </message>
+    <message>
+        <source>Every object in this section is affected by what the section stands for: the policies limited to it, its navigation part, and templates overridden for it.</source>
+        <translation>Every object in this section is affected by what the section stands for: the policies limited to it, its navigation part, and templates overridden for it.</translation>
+    </message>
+    <message>
+        <source>Assign content</source>
+        <translation>Assign content</translation>
+    </message>
+    <message>
+        <source>All sections</source>
+        <translation>All sections</translation>
+    </message>
+    <message>
+        <source>Assign content picks one item; it and everything below it move to this section.</source>
+        <translation>Assign content picks one item; it and everything below it move to this section.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>Published objects</source>
+        <translation>Published objects</translation>
+    </message>
+    <message>
+        <source>Drafts of new objects</source>
+        <translation>Drafts of new objects</translation>
+    </message>
+    <message>
+        <source>Archived objects</source>
+        <translation>Archived objects</translation>
+    </message>
+    <message>
+        <source>Roles with policies for it</source>
+        <translation>Roles with policies for it</translation>
+    </message>
+    <message>
+        <source>Role assignments limited to it</source>
+        <translation>Role assignments limited to it</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>Templates and fetches cannot name it; set one with Edit.</source>
+        <translation>Templates and fetches cannot name it; set one with Edit.</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Navigation part</translation>
+    </message>
+    <message>
+        <source>Unknown navigation part</source>
+        <translation>Unknown navigation part</translation>
+    </message>
+    <message>
+        <source>Removal</source>
+        <translation>Removal</translation>
+    </message>
+    <message>
+        <source>Can be removed</source>
+        <translation>Can be removed</translation>
+    </message>
+    <message>
+        <source>Nothing uses it: no objects, no policies, no role assignments.</source>
+        <translation>Nothing uses it: no objects, no policies, no role assignments.</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>In use</translation>
+    </message>
+    <message>
+        <source>It can only be removed when no object is in it (drafts and archived objects included) and no policy or role assignment names it.</source>
+        <translation>It can only be removed when no object is in it (drafts and archived objects included) and no policy or role assignment names it.</translation>
+    </message>
+    <message>
+        <source>Roles with policies limited to this section (%number_of_roles)</source>
+        <translation>Roles with policies limited to this section (%number_of_roles)</translation>
+    </message>
+    <message>
+        <source>A policy with a Section limitation applies only to objects in the sections it names, for example content/read for Standard.</source>
+        <translation>A policy with a Section limitation applies only to objects in the sections it names, for example content/read for Standard.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>A role assigned with the limitation to a section gives its policies only for objects in that section.</source>
+        <translation>A role assigned with the limitation to a section gives its policies only for objects in that section.</translation>
+    </message>
+    <message>
+        <source>This section is not used for limiting roles that are assigned to users or user groups.</source>
+        <translation>This section is not used for limiting roles that are assigned to users or user groups.</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>Published objects, newest first. Drafts and archived objects are counted above but not listed.</source>
+        <translation>Published objects, newest first. Drafts and archived objects are counted above but not listed.</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modified</translation>
+    </message>
+    <message>
+        <source>Use Assign content to move a subtree into it.</source>
+        <translation>Use Assign content to move a subtree into it.</translation>
     </message>
 </context>
 <context>

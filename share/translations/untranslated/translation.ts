@@ -11030,6 +11030,22 @@ Note: The packages will not be uninstalled.</source>
         <source>You do not have permission to assign the section &lt; %1 &gt; to any object.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The other items were assigned. A section/assign policy decides which objects you may assign (its Class, Owner and Section limitations) and which sections you may assign them to (NewSection).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A section/assign policy allows this section, but no class of object it names. An administrator can widen its Class limitation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assigning a section needs a section/assign policy whose NewSection limitation includes it, or one without that limitation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the section list.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/browse_assign</name>
@@ -11092,6 +11108,50 @@ Note: The packages will not be uninstalled.</source>
         <source>Proceed only if you are sure that it is safe.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Remove sections?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The sections cannot be removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A section can only be removed when no object is in it, drafts and archived objects included, and no policy or role assignment is limited to it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removal cannot be undone. Templates, override conditions and settings that name a removed section by its ID or identifier stop matching, and a section/assign policy that offers it (NewSection) keeps a value that points nowhere.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Holds %objects objects (%published published, %drafts drafts, %archived archived). Move them to another section with Assign content first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count policies are limited to it. Remove the section from their limitations in these roles first:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count role assignments are limited to it. Remove those assignments first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove these sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel keeps every section.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/edit</name>
@@ -11137,6 +11197,74 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit section %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A section groups content for permissions, navigation and designs. Every object belongs to exactly one section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The section was not saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown in the section lists, in role limitations and in the section choice of an object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Letters, digits and _, starting with a letter, unique among the sections. Templates, fetch functions and override conditions (section_identifier) can name the section by it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The top menu tab of the administration interface that is active while an object of this section is viewed or edited. The parts are listed in menu.ini [NavigationPart].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What a change affects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This section holds %published published objects (%objects with drafts and archived ones), and %policies policies in %roles roles and %assignments role assignments are limited to it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Renaming changes no permission: roles name the section by its ID.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new identifier stops templates, fetches and override conditions that use the old one from matching.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new navigation part changes the active top menu tab for all objects of the section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving clears the view cache of the objects in the section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the section list without saving.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11208,6 +11336,190 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sections divide the content into groups. Every object belongs to exactly one section. Roles can allow or deny access by section, the section decides which top menu tab is active while its content is viewed, and templates can be overridden for one section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The section %name was created. Assign content to it with Assign content on its card.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The section %name was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No section was selected. Tick the sections to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used by roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without published objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can be removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find and create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, identifier, ID, navigation part or role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new section starts empty: give it a name and an identifier, then assign content to it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With published objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no sections. A section is needed for every object; create one with New section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No published objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown navigation part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assign content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count archived</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles with a policy limited to this section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles assigned to users or groups with the limitation to this section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No section on this page matches. Clear the search or choose All.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first. A section that still holds objects, or that a role or role assignment names, is never removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count sections on this page shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sections on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11283,6 +11595,130 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section, ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every object in this section is affected by what the section stands for: the policies limited to it, its navigation part, and templates overridden for it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assign content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assign content picks one item; it and everything below it move to this section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drafts of new objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archived objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles with policies for it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role assignments limited to it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates and fetches cannot name it; set one with Edit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown navigation part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can be removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing uses it: no objects, no policies, no role assignments.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It can only be removed when no object is in it (drafts and archived objects included) and no policy or role assignment names it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles with policies limited to this section (%number_of_roles)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A policy with a Section limitation applies only to objects in the sections it names, for example content/read for Standard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A role assigned with the limitation to a section gives its policies only for objects in that section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This section is not used for limiting roles that are assigned to users or user groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published objects, newest first. Drafts and archived objects are counted above but not listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Assign content to move a subtree into it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

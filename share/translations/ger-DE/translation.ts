@@ -14832,6 +14832,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>You do not have permission to assign the section &lt; %1 &gt; to any object.</source>
         <translation>Sie haben nicht die Berechtigung die Sektion &lt; %1 &gt; irgendeinem Inhaltsobjekt zuzuweisen.</translation>
     </message>
+    <message>
+        <source>The other items were assigned. A section/assign policy decides which objects you may assign (its Class, Owner and Section limitations) and which sections you may assign them to (NewSection).</source>
+        <translation>Die übrigen Elemente wurden zugewiesen. Eine Richtlinie section/assign legt fest, welche Objekte Sie zuweisen dürfen (ihre Einschränkungen Klasse, Besitzer und Sektion) und welchen Sektionen (NewSection).</translation>
+    </message>
+    <message>
+        <source>A section/assign policy allows this section, but no class of object it names. An administrator can widen its Class limitation.</source>
+        <translation>Eine Richtlinie section/assign erlaubt diese Sektion, aber keine Objektklasse, die sie nennt. Ein Administrator kann ihre Klassen-Einschränkung erweitern.</translation>
+    </message>
+    <message>
+        <source>Assigning a section needs a section/assign policy whose NewSection limitation includes it, or one without that limitation.</source>
+        <translation>Um eine Sektion zuzuweisen, braucht es eine Richtlinie section/assign, deren Einschränkung NewSection sie enthält, oder eine ohne diese Einschränkung.</translation>
+    </message>
+    <message>
+        <source>Back to the section list.</source>
+        <translation>Zurück zur Liste der Sektionen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/browse_assign</name>
@@ -14914,6 +14930,50 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Proceed only if you are sure that it is safe.</source>
         <translation>Fahren Sie nur dann fort, wenn Sie sich der Folgen bewusst sind.</translation>
     </message>
+    <message>
+        <source>Remove sections?</source>
+        <translation>Sektionen entfernen?</translation>
+    </message>
+    <message>
+        <source>The sections cannot be removed</source>
+        <translation>Die Sektionen können nicht entfernt werden</translation>
+    </message>
+    <message>
+        <source>A section can only be removed when no object is in it, drafts and archived objects included, and no policy or role assignment is limited to it.</source>
+        <translation>Eine Sektion kann nur entfernt werden, wenn kein Objekt darin ist, Entwürfe und archivierte Objekte eingeschlossen, und keine Richtlinie und keine Rollenzuweisung auf sie eingeschränkt ist.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Removal cannot be undone. Templates, override conditions and settings that name a removed section by its ID or identifier stop matching, and a section/assign policy that offers it (NewSection) keeps a value that points nowhere.</source>
+        <translation>Das Entfernen lässt sich nicht rückgängig machen. Templates, Override-Bedingungen und Einstellungen, die eine entfernte Sektion über ihre ID oder ihren Bezeichner nennen, greifen nicht mehr, und eine Richtlinie section/assign, die sie anbietet (NewSection), behält einen Wert, der ins Leere zeigt.</translation>
+    </message>
+    <message>
+        <source>Holds %objects objects (%published published, %drafts drafts, %archived archived). Move them to another section with Assign content first.</source>
+        <translation>Enthält %objects Objekte (%published veröffentlicht, %drafts Entwürfe, %archived archiviert). Verschieben Sie sie zuerst mit Inhalt zuweisen in eine andere Sektion.</translation>
+    </message>
+    <message>
+        <source>%count policies are limited to it. Remove the section from their limitations in these roles first:</source>
+        <translation>%count Richtlinien sind auf sie eingeschränkt. Entfernen Sie die Sektion zuerst aus deren Einschränkungen in diesen Rollen:</translation>
+    </message>
+    <message>
+        <source>%count role assignments are limited to it. Remove those assignments first.</source>
+        <translation>%count Rollenzuweisungen sind auf sie eingeschränkt. Entfernen Sie diese Zuweisungen zuerst.</translation>
+    </message>
+    <message>
+        <source>Remove these sections</source>
+        <translation>Diese Sektionen entfernen</translation>
+    </message>
+    <message>
+        <source>Back to the sections</source>
+        <translation>Zurück zu den Sektionen</translation>
+    </message>
+    <message>
+        <source>Cancel keeps every section.</source>
+        <translation>Abbrechen behält alle Sektionen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/edit</name>
@@ -14964,6 +15024,74 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Identifier</source>
         <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>New section</source>
+        <translation>Neue Sektion</translation>
+    </message>
+    <message>
+        <source>Edit section %name</source>
+        <translation>Sektion %name bearbeiten</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>A section groups content for permissions, navigation and designs. Every object belongs to exactly one section.</source>
+        <translation>Eine Sektion fasst Inhalte für Berechtigungen, Navigation und Designs zusammen. Jedes Objekt gehört zu genau einer Sektion.</translation>
+    </message>
+    <message>
+        <source>The section was not saved.</source>
+        <translation>Die Sektion wurde nicht gespeichert.</translation>
+    </message>
+    <message>
+        <source>Shown in the section lists, in role limitations and in the section choice of an object.</source>
+        <translation>Erscheint in den Sektionslisten, in Rolleneinschränkungen und in der Sektionsauswahl eines Objekts.</translation>
+    </message>
+    <message>
+        <source>Letters, digits and _, starting with a letter, unique among the sections. Templates, fetch functions and override conditions (section_identifier) can name the section by it.</source>
+        <translation>Buchstaben, Ziffern und _, beginnend mit einem Buchstaben, eindeutig unter den Sektionen. Templates, Fetch-Funktionen und Override-Bedingungen (section_identifier) können die Sektion darüber ansprechen.</translation>
+    </message>
+    <message>
+        <source>The top menu tab of the administration interface that is active while an object of this section is viewed or edited. The parts are listed in menu.ini [NavigationPart].</source>
+        <translation>Der Reiter im oberen Menü der Administrationsoberfläche, der aktiv ist, während ein Objekt dieser Sektion angezeigt oder bearbeitet wird. Die Navigationsbereiche stehen in menu.ini [NavigationPart].</translation>
+    </message>
+    <message>
+        <source>What a change affects</source>
+        <translation>Was eine Änderung betrifft</translation>
+    </message>
+    <message>
+        <source>This section holds %published published objects (%objects with drafts and archived ones), and %policies policies in %roles roles and %assignments role assignments are limited to it.</source>
+        <translation>Diese Sektion enthält %published veröffentlichte Objekte (%objects mit Entwürfen und archivierten), und %policies Richtlinien in %roles Rollen sowie %assignments Rollenzuweisungen sind auf sie eingeschränkt.</translation>
+    </message>
+    <message>
+        <source>Renaming changes no permission: roles name the section by its ID.</source>
+        <translation>Umbenennen ändert keine Berechtigung: Rollen nennen die Sektion über ihre ID.</translation>
+    </message>
+    <message>
+        <source>A new identifier stops templates, fetches and override conditions that use the old one from matching.</source>
+        <translation>Ein neuer Bezeichner lässt Templates, Fetches und Override-Bedingungen, die den alten verwenden, nicht mehr greifen.</translation>
+    </message>
+    <message>
+        <source>A new navigation part changes the active top menu tab for all objects of the section.</source>
+        <translation>Ein neuer Navigationsbereich ändert den aktiven Reiter im oberen Menü für alle Objekte der Sektion.</translation>
+    </message>
+    <message>
+        <source>Saving clears the view cache of the objects in the section.</source>
+        <translation>Speichern leert den Ansichts-Cache der Objekte in der Sektion.</translation>
+    </message>
+    <message>
+        <source>Create section</source>
+        <translation>Sektion anlegen</translation>
+    </message>
+    <message>
+        <source>Save section</source>
+        <translation>Sektion speichern</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the section list without saving.</source>
+        <translation>Abbrechen kehrt ohne zu speichern zur Liste der Sektionen zurück.</translation>
     </message>
 </context>
 <context>
@@ -15043,6 +15171,190 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sektionen</translation>
+    </message>
+    <message>
+        <source>Sections divide the content into groups. Every object belongs to exactly one section. Roles can allow or deny access by section, the section decides which top menu tab is active while its content is viewed, and templates can be overridden for one section.</source>
+        <translation>Sektionen teilen die Inhalte in Gruppen. Jedes Objekt gehört zu genau einer Sektion. Rollen können den Zugriff nach Sektion erlauben oder verwehren, die Sektion bestimmt, welcher Reiter im oberen Menü aktiv ist, während ihre Inhalte angezeigt werden, und Templates können für eine Sektion überschrieben werden.</translation>
+    </message>
+    <message>
+        <source>The section %name was created. Assign content to it with Assign content on its card.</source>
+        <translation>Die Sektion %name wurde angelegt. Weisen Sie ihr Inhalte mit Inhalt zuweisen auf ihrer Karte zu.</translation>
+    </message>
+    <message>
+        <source>The section %name was saved.</source>
+        <translation>Die Sektion %name wurde gespeichert.</translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation>Entfernt: %names.</translation>
+    </message>
+    <message>
+        <source>No section was selected. Tick the sections to remove first.</source>
+        <translation>Es wurde keine Sektion ausgewählt. Markieren Sie zuerst die Sektionen, die entfernt werden sollen.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Published objects</source>
+        <translation>Veröffentlichte Objekte</translation>
+    </message>
+    <message>
+        <source>Used by roles</source>
+        <translation>Von Rollen verwendet</translation>
+    </message>
+    <message>
+        <source>Without published objects</source>
+        <translation>Ohne veröffentlichte Objekte</translation>
+    </message>
+    <message>
+        <source>Can be removed</source>
+        <translation>Kann entfernt werden</translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation>Brauchen Aufmerksamkeit</translation>
+    </message>
+    <message>
+        <source>Find and create</source>
+        <translation>Finden und anlegen</translation>
+    </message>
+    <message>
+        <source>Find a section</source>
+        <translation>Sektion finden</translation>
+    </message>
+    <message>
+        <source>Name, identifier, ID, navigation part or role.</source>
+        <translation>Name, Bezeichner, ID, Navigationsbereich oder Rolle.</translation>
+    </message>
+    <message>
+        <source>A new section starts empty: give it a name and an identifier, then assign content to it.</source>
+        <translation>Eine neue Sektion ist zunächst leer: Geben Sie ihr einen Namen und einen Bezeichner und weisen Sie ihr dann Inhalte zu.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>With published objects</source>
+        <translation>Mit veröffentlichten Objekten</translation>
+    </message>
+    <message>
+        <source>All sections</source>
+        <translation>Alle Sektionen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>There are no sections. A section is needed for every object; create one with New section.</source>
+        <translation>Es gibt keine Sektionen. Jedes Objekt braucht eine Sektion; legen Sie eine mit Neue Sektion an.</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>%count published</source>
+        <translation>%count veröffentlicht</translation>
+    </message>
+    <message>
+        <source>No published objects</source>
+        <translation>Keine veröffentlichten Objekte</translation>
+    </message>
+    <message>
+        <source>No identifier</source>
+        <translation>Kein Bezeichner</translation>
+    </message>
+    <message>
+        <source>Unknown navigation part</source>
+        <translation>Unbekannter Navigationsbereich</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Assign content</source>
+        <translation>Inhalt zuweisen</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Navigationsbereich</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekte</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>%count drafts</source>
+        <translation>%count Entwürfe</translation>
+    </message>
+    <message>
+        <source>%count archived</source>
+        <translation>%count archiviert</translation>
+    </message>
+    <message>
+        <source>Roles with a policy limited to this section</source>
+        <translation>Rollen mit einer auf diese Sektion eingeschränkten Richtlinie</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollen</translation>
+    </message>
+    <message>
+        <source>Roles assigned to users or groups with the limitation to this section</source>
+        <translation>Rollen, die Benutzern oder Gruppen mit der Einschränkung auf diese Sektion zugewiesen sind</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rollenzuweisungen</translation>
+    </message>
+    <message>
+        <source>No section on this page matches. Clear the search or choose All.</source>
+        <translation>Keine Sektion auf dieser Seite passt. Leeren Sie die Suche oder wählen Sie Alle.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first. A section that still holds objects, or that a role or role assignment names, is never removed.</source>
+        <translation>Ausgewähltes entfernen fragt zuerst nach einer Bestätigung. Eine Sektion, die noch Objekte enthält oder die eine Rolle oder Rollenzuweisung nennt, wird nie entfernt.</translation>
+    </message>
+    <message>
+        <source>%shown of %count sections on this page shown</source>
+        <translation>%shown von %count Sektionen auf dieser Seite angezeigt</translation>
+    </message>
+    <message>
+        <source>%count sections on this page</source>
+        <translation>%count Sektionen auf dieser Seite</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
     </message>
 </context>
 <context>
@@ -15130,6 +15442,130 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Identifier</source>
         <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>Section, ID %id</source>
+        <translation>Sektion, ID %id</translation>
+    </message>
+    <message>
+        <source>Every object in this section is affected by what the section stands for: the policies limited to it, its navigation part, and templates overridden for it.</source>
+        <translation>Für jedes Objekt in dieser Sektion gilt, wofür die Sektion steht: die auf sie eingeschränkten Richtlinien, ihr Navigationsbereich und die für sie überschriebenen Templates.</translation>
+    </message>
+    <message>
+        <source>Assign content</source>
+        <translation>Inhalt zuweisen</translation>
+    </message>
+    <message>
+        <source>All sections</source>
+        <translation>Alle Sektionen</translation>
+    </message>
+    <message>
+        <source>Assign content picks one item; it and everything below it move to this section.</source>
+        <translation>Inhalt zuweisen wählt ein Element; es und alles darunter kommen in diese Sektion.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Published objects</source>
+        <translation>Veröffentlichte Objekte</translation>
+    </message>
+    <message>
+        <source>Drafts of new objects</source>
+        <translation>Entwürfe neuer Objekte</translation>
+    </message>
+    <message>
+        <source>Archived objects</source>
+        <translation>Archivierte Objekte</translation>
+    </message>
+    <message>
+        <source>Roles with policies for it</source>
+        <translation>Rollen mit Richtlinien dafür</translation>
+    </message>
+    <message>
+        <source>Role assignments limited to it</source>
+        <translation>Darauf eingeschränkte Rollenzuweisungen</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keiner</translation>
+    </message>
+    <message>
+        <source>Templates and fetches cannot name it; set one with Edit.</source>
+        <translation>Templates und Fetches können sie nicht ansprechen; legen Sie mit Bearbeiten einen fest.</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Navigationsbereich</translation>
+    </message>
+    <message>
+        <source>Unknown navigation part</source>
+        <translation>Unbekannter Navigationsbereich</translation>
+    </message>
+    <message>
+        <source>Removal</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>Can be removed</source>
+        <translation>Kann entfernt werden</translation>
+    </message>
+    <message>
+        <source>Nothing uses it: no objects, no policies, no role assignments.</source>
+        <translation>Nichts verwendet sie: keine Objekte, keine Richtlinien, keine Rollenzuweisungen.</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>In Gebrauch</translation>
+    </message>
+    <message>
+        <source>It can only be removed when no object is in it (drafts and archived objects included) and no policy or role assignment names it.</source>
+        <translation>Sie kann nur entfernt werden, wenn kein Objekt darin ist (Entwürfe und archivierte Objekte eingeschlossen) und keine Richtlinie oder Rollenzuweisung sie nennt.</translation>
+    </message>
+    <message>
+        <source>Roles with policies limited to this section (%number_of_roles)</source>
+        <translation>Rollen mit auf diese Sektion eingeschränkten Richtlinien (%number_of_roles)</translation>
+    </message>
+    <message>
+        <source>A policy with a Section limitation applies only to objects in the sections it names, for example content/read for Standard.</source>
+        <translation>Eine Richtlinie mit Sektions-Einschränkung gilt nur für Objekte in den Sektionen, die sie nennt, zum Beispiel content/read für Standard.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>A role assigned with the limitation to a section gives its policies only for objects in that section.</source>
+        <translation>Eine mit der Einschränkung auf eine Sektion zugewiesene Rolle gewährt ihre Richtlinien nur für Objekte in dieser Sektion.</translation>
+    </message>
+    <message>
+        <source>This section is not used for limiting roles that are assigned to users or user groups.</source>
+        <translation>Diese Sektion wird nicht verwendet, um Rollen einzuschränken, die Benutzern oder Benutzergruppen zugewiesen sind.</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Published objects, newest first. Drafts and archived objects are counted above but not listed.</source>
+        <translation>Veröffentlichte Objekte, die neuesten zuerst. Entwürfe und archivierte Objekte sind oben gezählt, aber nicht aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Use Assign content to move a subtree into it.</source>
+        <translation>Mit Inhalt zuweisen bringen Sie einen Teilbaum hinein.</translation>
     </message>
 </context>
 <context>
