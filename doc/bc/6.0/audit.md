@@ -71,7 +71,7 @@ What it is made of:
 - **Channels and files.** Five channels: `content`, `access`, `system`, `commerce` (with `data`), and `read` for
   sampled reads, which is off by default. Each channel writes one file per UTC day,
   `var/<site>/log/audit/<channel>-<YYYY-MM-DD>.jsonl`, and starts a new part past `MaxFileSize`.
-- **140 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
+- **141 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
   `content.node.remove.*`). Extensions add their own branches. See the [event reference](#8-event-reference).
 - **A hash chain per channel**, daily signed checkpoints and signed archive manifests (HMAC-SHA-256 with a key that is
   generated on first use and never leaves `settings/override`).
@@ -1869,7 +1869,7 @@ generator. Columns: Sev. = severity; Default = shipped (`always` cannot be switc
 only with `Reads=enabled`).
 
 <!-- event-reference:start (generated from expAuditTaxonomy::registry() and the settings in effect on 2026-10-03; do not edit by hand) -->
-140 names (42 content, 37 access, 40 system, 12 commerce, 9 data); shipped default: 91 on, 23 off, 23 always, 3 sampled.
+141 names (42 content, 37 access, 41 system, 12 commerce, 9 data); shipped default: 92 on, 23 off, 23 always, 3 sampled.
 
 | Event | Fires when | Records (before → after; never) | Raised in | Verb | Sev. | Default | On here | Ch. | Written |
 |---|---|---|---|---|---|---|---|---|---|
@@ -1962,6 +1962,7 @@ only with `Reads=enabled`).
 | `system.package.install` | a package is installed | – → name, version, items | `ezpackage.php:install` | install | notice | on | yes | system | buffered |
 | `system.package.uninstall` | a package is uninstalled | name, version → – | `ezpackage.php:uninstall` | uninstall | notice | on | yes | system | buffered |
 | `system.package.import` | a package archive is imported | – → name, version, sha256 of the archive | `ezpackage.php:import` | import | notice | on | yes | system | buffered |
+| `system.package.remove` | a package is removed from its repository (package/list) | name, version, repository, files, bytes, installed, installer source → – | `views/package/list.php:remove` | remove | notice | on | yes | system | buffered |
 | `system.install.run` | an installation is made | – → siteaccesses, packages, database engine | `setup/steps/ezstep_create_sites.php:init` | install | notice | on | yes | system | buffered |
 | `system.upgrade.run` | an upgrade check or upgrade script runs | – → result | `views/setup/systemupgrade.php:run` | run | notice | on | yes | system | buffered |
 | `system.velocity.deploy` | `exp:velocity deploy` or `restart` runs | – → steps, ms, result | `expvelocity.php:restart`, `expvelocitydeploy.php:run` | deploy | notice | on | yes | system | buffered |
