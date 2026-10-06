@@ -757,11 +757,32 @@ class eZContentOperationCollection
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
      */
-    static public function createNotificationEvent( $objectID, $versionNum )
+    /**
+     * Whether the publication asked for is to go without notification: the button $buttonName ("Publish without
+     * notification" of content/edit or content/versionview) was pressed and notification.ini [NotificationSettings]
+     * PublishWithoutNotification is enabled. Without the setting the button counts as the ordinary publish.
+     *
+     * @param string $buttonName PublishNotNotifyButton or PreviewPublishNotNotifyButton
+     * @return bool
+     */
+    static public function publishWithoutNotification( $buttonName )
+    {
+        $ini = eZINI::instance( 'notification.ini' );
+        if ( !$ini->hasVariable( 'NotificationSettings', 'PublishWithoutNotification' )
+             || $ini->variable( 'NotificationSettings', 'PublishWithoutNotification' ) !== 'enabled' )
+        {
+            return false;
+        }
+        return eZHTTPTool::instance()->hasPostVariable( $buttonName );
+    }
+
+    static public function createNotificationEvent( $objectID, $versionNum, $notify = true )
     {
         // An extension may leave out a publication nobody is to be told about (a class, a publish without
-        // notification): the filter content/notification/create gets true and the ids; only true creates the event
-        $create = ezpEvent::getInstance()->filter( 'content/notification/create', true, (int)$objectID, (int)$versionNum );
+        // notification): the filter content/notification/create gets whether the publish operation asked for the
+        // notification (its parameter notify, false for "Publish without notification") and the ids; only true
+        // creates the event
+        $create = ezpEvent::getInstance()->filter( 'content/notification/create', $notify !== false, (int)$objectID, (int)$versionNum );
         if ( $create !== true )
         {
             eZDebug::writeDebug( "No notification event for object $objectID version $versionNum: a listener of content/notification/create left it out", __METHOD__ );

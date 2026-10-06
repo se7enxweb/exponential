@@ -2622,6 +2622,14 @@
         <source>No content object state is configured.</source>
         <translation>No content object state is configured.</translation>
     </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Publish without notification</translation>
+    </message>
+    <message>
+        <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
+        <translation>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_attribute</name>
@@ -5439,6 +5447,14 @@
     <message>
         <source>View mode</source>
         <translation>View mode</translation>
+    </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Publish without notification</translation>
+    </message>
+    <message>
+        <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
+        <translation>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</translation>
     </message>
 </context>
 <context>
@@ -30590,6 +30606,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Descending</source>
         <translation>Descending</translation>
     </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Publish without notification</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/edit_languages</name>
@@ -31568,6 +31588,10 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
         <translation>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</translation>
+    </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Publish without notification</translation>
     </message>
 </context>
 <context>

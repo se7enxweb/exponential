@@ -3272,6 +3272,14 @@
         <source>No content object state is configured.</source>
         <translation>Es ist kein Content-Objekt-Status konfiguriert.</translation>
     </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Ohne Benachrichtigung veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
+        <translation>Ohne Benachrichtigung der Abonnenten dieses Ortes veröffentlichen: für diese Version wird keine Benachrichtigungsmail verschickt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_attribute</name>
@@ -6974,6 +6982,14 @@
     <message>
         <source>View mode</source>
         <translation>Ansichtsmodus</translation>
+    </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Ohne Benachrichtigung veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
+        <translation>Ohne Benachrichtigung der Abonnenten dieses Ortes veröffentlichen: für diese Version wird keine Benachrichtigungsmail verschickt.</translation>
     </message>
 </context>
 <context>
@@ -34817,6 +34833,10 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
         <source>Descending</source>
         <translation>Absteigend</translation>
     </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Ohne Benachrichtigung veröffentlichen</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/edit_languages</name>
@@ -36309,6 +36329,10 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     <message>
         <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
         <translation>Ihr Browser unterstützt keine iframes. Bitte verwenden Sie stattdessen diesen &lt;a href=%url&gt;Link&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>Publish without notification</source>
+        <translation>Ohne Benachrichtigung veröffentlichen</translation>
     </message>
 </context>
 <context>

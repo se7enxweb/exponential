@@ -251,7 +251,8 @@ if ( !function_exists( 'checkContentActions' ) )
             ezpContentPublishingBehaviour::setBehaviour( $behaviour );
 
             $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $object->attribute( 'id' ),
-                                                                                         'version' => $version->attribute( 'version' ) ) );
+                                                                                         'version' => $version->attribute( 'version' ),
+                                                                                         'notify' => !eZContentOperationCollection::publishWithoutNotification( 'PublishNotNotifyButton' ) ) );
             eZDebug::accumulatorStop( 'publish' );
 
             if ( ( array_key_exists( 'status', $operationResult ) && $operationResult['status'] != eZModuleOperationInfo::STATUS_CONTINUE ) )
