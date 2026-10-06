@@ -11,7 +11,7 @@ the setting that turns it off.
 |---|---|
 | What changed | The access array of a user is built from the rows of all their roles, loaded in three queries, and the limitations of a policy are turned into their part of the array once, not once per assignment. |
 | Measured | A user with 600 subtree assignments (120 teamrooms × 5 member roles of 20 policies): 3,550 ms and about 48,600 queries before, 244 ms and 4 queries now (14.6×). |
-| Result | The same access array: the same modules, functions, policies and limitations with the same values. |
+| Result | The same access array, in the same order: the same modules, functions, policies, limitations and values. |
 | Setting | `site.ini [RoleSettings] AccessArrayPrefetch=enabled` (default); `disabled` builds it role by role as before. |
 | Who must act | Nobody. |
 
@@ -55,7 +55,23 @@ every role: 74 ms of the 3.5 seconds for this user.
 3. **One merge.** The parts of a role and the roles of a user are merged in one `array_merge_recursive()` call, which
    gives the same array as merging them one by one. This also speeds up the build with `AccessArrayPrefetch=disabled`.
 
-The rows are dropped when the array is built, also when building it fails. On MongoDB the array is built role by role.
+The rows are kept only while the array is built and dropped afterwards, also when building it fails, so a persistent
+worker (Velocity) never answers a later request from them. A build inside a build (an extension that asks for the
+access array of another user while one is built) gets its own rows and gives the outer build its rows back.
+
+Only the roles, policies and limitations that were loaded ahead are answered from the rows; any other one asks the
+database as before, also while an array is built. The limitation an assignment adds is built in memory and asks
+nothing (before, it was one query per policy and assignment, answered with no rows).
+
+Each IN () list carries at most 500 ids (`eZRole::PREFETCH_IN_LIST_SIZE`): Oracle refuses more than 1000, and the
+lists of a user whose roles have more policies or limitations than that are loaded in several queries. All rows of
+one role, policy or limitation come from one query. When a query fails, the array is built role by role. On MongoDB,
+whose persistent layer has no IN () condition, the array is built role by role.
+
+| Database | What is asked |
+|---|---|
+| SQLite, MySQL/MariaDB, PostgreSQL, Oracle | `ezpolicy WHERE role_id IN (...) AND original_id = 0 ORDER BY id`, `ezpolicy_limitation WHERE policy_id IN (...) ORDER BY id`, `ezpolicy_limitation_value WHERE limitation_id IN (...) ORDER BY value` |
+| MongoDB | role by role, as before |
 
 ## Measurements
 
@@ -82,11 +98,29 @@ the assignment's identifier: a second implementation of the permission rules dri
 
 ## The same access array
 
-The tests compare both ways for every user and user group of an installation and for the cases above. The modules,
-functions, policies and limitations come in the same order, with the same values. Only the order of the values
-within one limitation may differ: built role by role it is the order the database returns them in (an index can sort
-them by value), with the rows loaded ahead it is the order of their ids. Nothing depends on it: the values are
-compared with `in_array()` and written into SQL `IN ()` lists.
+The array is the same as before, in the same order (compared with `===`). The rows loaded ahead are read in the order
+the methods that ask one by one read them: policies and limitations by id, the values of a limitation by value (the
+default sort of `eZPolicyLimitationValue`). The objects are built from them as from the database, the methods that
+turn them into the array are the same, and a policy whose own limitation has the assignment's identifier is built by
+`limitationList()` as before.
+
+On alpha (SQLite) every user, every user or group with a role of its own, and throwaway roles with a policy of every
+limitation kind were built both ways, by the code before the change and by this one, and compared with `===`:
+31 subjects, all identical. The throwaway roles carried Class, Section, Owner, Group, Node, Subtree, Language, a
+state group, ParentOwner, ParentGroup, ParentClass, ParentDepth, SiteAccess, a limitation of an extension (as
+content limitation handlers add), User_Subtree and User_Section on the policy itself, a limitation without values,
+values out of order and repeated, a temporary editing copy of a policy, unlimited and `*` policies, and a role of 520
+policies; they were assigned plainly, for 40 subtrees and for sections, to a user, to groups, to a nested group and
+together with the groups of the anonymous user.
+
+| Built on alpha (SQLite, PHP 8.5), query cache off, fastest of 5 builds | Before: queries, time | Now: queries, time |
+|---|---|---|
+| Administrator (1 role) | 3, 0.2 ms | 3, 0.2 ms |
+| Anonymous (1 role) | 27, 1.3 ms | 4, 1.6 ms |
+| An editor (3 roles) | 156, 12.5 ms | 4, 3.0 ms |
+| User in groups, 50 assignments of 2 roles | 1,843, 130 ms | 4, 15 ms |
+| 520 policies assigned 41 times | 84,802, 7,057 ms | 7, 850 ms |
+| All 31 subjects | 177,651, 14.3 s | 104, 1.6 s |
 
 ## Settings
 
@@ -94,14 +128,17 @@ compared with `in_array()` and written into SQL `IN ()` lists.
 |---|---|---|---|---|
 | `settings/site.ini` | `RoleSettings` | `AccessArrayPrefetch` | `enabled` | `disabled` builds the access array role by role, asking the database for each role, policy and limitation. |
 
+Both ways give the same array, so the user caches built by one stay valid under the other.
+
 ## Tests
 
 - `eZPolicyPrefetchedAccessArrayTest` (no database): the part of a policy computed once and reused gives the same
   array as `limitationList()` from the same rows, unlimited, with limitations, assigned for a subtree or a section, for
   a policy with a limitation of the assignment's identifier, and merging in one call gives what merging one by one
-  gave.
-- `eZRoleAccessArrayPrefetchLiveTest` (on an installation): both ways for every user and user group, with a role of its
-  own assigned for 40 subtrees and for a section; the loaded rows are dropped afterwards.
+  gave. A policy or limitation that was not loaded ahead asks the database; the limitation an assignment adds asks
+  nothing; a build inside a build gets the outer one its rows back; the IN () lists stay below Oracle's limit.
+- `eZRoleAccessArrayPrefetchLiveTest` (on an installation): both ways for every user and user group, identical with
+  `===`, with a role of its own assigned for 40 subtrees and for a section; the loaded rows are dropped afterwards.
 
 ## Related pages
 
