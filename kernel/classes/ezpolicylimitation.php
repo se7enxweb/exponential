@@ -25,6 +25,14 @@ class eZPolicyLimitation extends eZPersistentObject
     public $Value;
     public $Values;
 
+    /**
+     * Rows of ezpolicy_limitation_value by limitation id, loaded ahead by eZRole::accessArrayByUserID() (site.ini
+     * [RoleSettings] AccessArrayPrefetch) while it builds an access array; null when valueList() asks the database.
+     *
+     * @var array|null
+     */
+    public static $prefetchedValueRows = null;
+
     /** @var array|null|false The definition of the limitation in its module (definitionInModule()); false: not looked up */
     public $DefinitionInModule = false;
 
@@ -538,9 +546,21 @@ class eZPolicyLimitation extends eZPersistentObject
     {
         if ( !isset( $this->Values ) )
         {
-            $values = eZPersistentObject::fetchObjectList( eZPolicyLimitationValue::definition(),
-                                                           null, array( 'limitation_id' => $this->attribute( 'id') ), null, null,
-                                                           true);
+            if ( self::$prefetchedValueRows !== null )
+            {
+                // Rows eZRole::accessArrayByUserID() loaded for all limitations at once
+                $values = array();
+                foreach ( self::$prefetchedValueRows[(int)$this->attribute( 'id' )] ?? array() as $row )
+                {
+                    $values[] = new eZPolicyLimitationValue( $row );
+                }
+            }
+            else
+            {
+                $values = eZPersistentObject::fetchObjectList( eZPolicyLimitationValue::definition(),
+                                                               null, array( 'limitation_id' => $this->attribute( 'id') ), null, null,
+                                                               true);
+            }
 
             if ( $this->LimitValue )
             {

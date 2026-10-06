@@ -273,6 +273,15 @@ class eZPolicy extends eZPersistentObject
     */
     function accessArray( $ignoreLimitIdentifier = false )
     {
+        if ( self::$prefetchedLimitationRows !== null && $ignoreLimitIdentifier === false && !isset( $this->Limitations ) )
+        {
+            $accessArray = $this->prefetchedAccessArray();
+            if ( $accessArray !== null )
+            {
+                return $accessArray;
+            }
+        }
+
         $limitations = $this->limitationList( true, $ignoreLimitIdentifier );
         if ( $this->Disabled === true )
         {
@@ -296,6 +305,62 @@ class eZPolicy extends eZPersistentObject
         return array( $this->attribute( 'module_name' ) => array ( $this->attribute( 'function_name' ) => array( $policyName => $limitArray ) ) );
     }
 
+    /**
+     * accessArray() while eZRole::accessArrayByUserID() has the rows loaded ahead: the limitations of the policy are
+     * turned into their part of the access array once per policy, with eZPolicyLimitation::limitArray(), and reused
+     * for every assignment of its role. A role assigned for 120 subtrees has every policy 120 times; only the limitation
+     * the assignment adds (User_Subtree, User_Section) differs, and it is added as limitationList() adds it, as the
+     * last limitation. Null when limitationList() has to look at the limitations themselves: the policy has a limitation
+     * with the identifier of the assignment, which limitationList() narrows or disables.
+     *
+     * @return array|null
+     */
+    protected function prefetchedAccessArray()
+    {
+        $policyID = (int)$this->attribute( 'id' );
+        $rows = self::$prefetchedLimitationRows[$policyID] ?? array();
+        $limited = isset( $this->LimitIdentifier ) && $this->LimitIdentifier;
+        if ( $limited )
+        {
+            foreach ( $rows as $row )
+            {
+                if ( $row['identifier'] == $this->attribute( 'limit_identifier' ) )
+                {
+                    return null;
+                }
+            }
+        }
+
+        if ( !isset( self::$prefetchedLimitArrays[$policyID] ) )
+        {
+            $limitArray = array();
+            foreach ( $rows as $row )
+            {
+                $limitation = new eZPolicyLimitation( $row );
+                $limitArray = array_merge_recursive( $limitArray, $limitation->limitArray() );
+            }
+            self::$prefetchedLimitArrays[$policyID] = $limitArray;
+        }
+        $limitArray = self::$prefetchedLimitArrays[$policyID];
+
+        if ( $limited )
+        {
+            $assignment = new eZPolicyLimitation( array( 'id' => -1,
+                                                         'policy_id' => $policyID,
+                                                         'identifier' => $this->attribute( 'limit_identifier' ) ) );
+            $assignment->setAttribute( 'limit_value', $this->attribute( 'limit_value' ) );
+            $limitArray = array_merge_recursive( $limitArray, $assignment->limitArray() );
+        }
+        else if ( !$rows )
+        {
+            return array( $this->attribute( 'module_name' ) => array ( $this->attribute( 'function_name' ) => array( '*' => '*' ) ) );
+        }
+
+        $policyName = 'p_' . $policyID . ( isset( $this->UserRoleID ) ? ( '_' . $this->UserRoleID ) : '' );
+
+        return array( $this->attribute( 'module_name' ) => array ( $this->attribute( 'function_name' ) => array( $policyName => $limitArray ) ) );
+    }
+
     /*!
      Fetch limitation array()
 
@@ -306,9 +371,21 @@ class eZPolicy extends eZPersistentObject
         if ( !isset( $this->Limitations ) || !$useCache )
         {
 
-            $limitations = eZPersistentObject::fetchObjectList( eZPolicyLimitation::definition(),
-                                                                 null, array( 'policy_id' => $this->attribute( 'id') ), null, null,
-                                                                 true );
+            if ( self::$prefetchedLimitationRows !== null )
+            {
+                // Rows eZRole::accessArrayByUserID() loaded for all policies at once; new objects, as from the database
+                $limitations = array();
+                foreach ( self::$prefetchedLimitationRows[(int)$this->attribute( 'id' )] ?? array() as $row )
+                {
+                    $limitations[] = new eZPolicyLimitation( $row );
+                }
+            }
+            else
+            {
+                $limitations = eZPersistentObject::fetchObjectList( eZPolicyLimitation::definition(),
+                                                                     null, array( 'policy_id' => $this->attribute( 'id') ), null, null,
+                                                                     true );
+            }
 
             eZDebugSetting::writeDebug( 'kernel-policy-limitation', $limitations, "before policy limitations " . $this->ID );
             eZDebugSetting::writeDebug( 'kernel-policy-limitation', $this, "policy itself before before limitations check"  );
@@ -478,6 +555,22 @@ class eZPolicy extends eZPersistentObject
 
         return $this;
     }
+
+    /**
+     * Rows of ezpolicy_limitation by policy id, loaded ahead by eZRole::accessArrayByUserID() (site.ini [RoleSettings]
+     * AccessArrayPrefetch) while it builds an access array; null when limitationList() asks the database itself.
+     *
+     * @var array|null
+     */
+    public static $prefetchedLimitationRows = null;
+
+    /**
+     * The part of the access array the limitations of a policy make, by policy id, while
+     * $prefetchedLimitationRows is set; dropped with it.
+     *
+     * @var array
+     */
+    public static $prefetchedLimitArrays = array();
 
     // Used for assign based limitations.
     public $Disabled = false;
