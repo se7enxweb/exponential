@@ -400,6 +400,11 @@ class eZWorkflowType
                       self::STATUS_DEFERRED_TO_CRON_REPEAT => ezpI18n::tr( 'kernel/classes', 'Event deferred to cron job, event will be rerun' ),
                       self::STATUS_RUN_SUB_EVENT => ezpI18n::tr( 'kernel/classes', 'Event runs a sub event' ),
                       self::STATUS_WORKFLOW_CANCELLED => ezpI18n::tr( 'kernel/classes', 'Canceled whole workflow' ),
+                      self::STATUS_FETCH_TEMPLATE => ezpI18n::tr( 'kernel/classes', 'Event shows a page to the user' ),
+                      self::STATUS_FETCH_TEMPLATE_REPEAT => ezpI18n::tr( 'kernel/classes', 'Event shows a page to the user, event will be rerun' ),
+                      self::STATUS_WORKFLOW_DONE => ezpI18n::tr( 'kernel/classes', 'Workflow done' ),
+                      self::STATUS_REDIRECT => ezpI18n::tr( 'kernel/classes', 'Event redirects the user' ),
+                      self::STATUS_REDIRECT_REPEAT => ezpI18n::tr( 'kernel/classes', 'Event redirects the user, event will be rerun' ),
                       self::STATUS_WORKFLOW_RESET => ezpI18n::tr( 'kernel/classes', 'Workflow was reset for reuse' ) );
     }
 

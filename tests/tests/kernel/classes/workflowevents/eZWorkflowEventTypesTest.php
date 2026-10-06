@@ -140,6 +140,25 @@ class eZWorkflowEventTypesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', $type->workflowEventContent( $event ) );
     }
 
+    public static function statusProvider()
+    {
+        $statuses = array();
+        foreach ( ( new ReflectionClass( 'eZWorkflowType' ) )->getConstants() as $name => $value )
+        {
+            if ( strncmp( $name, 'STATUS_', 7 ) === 0 )
+                $statuses[$name] = array( $value );
+        }
+        return $statuses;
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('statusProvider')]
+    public function testEveryStatusHasAName( $status )
+    {
+        $name = eZWorkflowType::statusName( $status );
+        $this->assertIsString( $name );
+        $this->assertNotSame( '', $name );
+    }
+
     public function testUnknownStatusHasNoName()
     {
         $this->assertFalse( eZWorkflowType::statusName( 999 ) );
