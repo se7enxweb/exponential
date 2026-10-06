@@ -724,7 +724,7 @@ class eZPackageComparison
      * One of the site's attribute values in normalised form: serialized by its datatype's own
      * package serializer (with a file collector standing in for the package), then normalizeValue().
      */
-    static function siteValue( array $row, array $classAttribute, array $prefetched = null )
+    static function siteValue( array $row, array $classAttribute, ?array $prefetched = null )
     {
         $datatypeString = (string)$row['data_type_string'];
         // ezimage: read from its own stored XML (the image's original file), not through its
