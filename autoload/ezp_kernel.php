@@ -1024,6 +1024,8 @@ return array(
       'expDebugBarSummary'                                           => 'kernel/classes/debugbar/expdebugbarsummary.php',
       'expDesignExtensionWizard'                                     => 'kernel/setup/expdesignextensionwizard.php',
       'expEnvironmentOperator'                                       => 'kernel/common/expenvironmentoperator.php',
+      'expExtensionCatalogue'                                        => 'kernel/classes/expextensioncatalogue.php',
+      'expExtensionChangePlan'                                       => 'kernel/classes/expextensionchangeplan.php',
       'expExtensionWizard'                                           => 'kernel/setup/expextensionwizard.php',
       'expFileConsistencyReport'                                     => 'kernel/private/classes/expfileconsistencyreport.php',
       'expHandlerWizard'                                             => 'kernel/setup/exphandlerwizard.php',
