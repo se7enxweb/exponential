@@ -20,6 +20,27 @@ namespace Exponential\View\Kernel\Class
 
 class Copy extends \Exponential\Runnable\ModuleView
 {
+    /** The buttons that copy: CopyClassButton on the class lists, ConfirmCopyButton on the confirmation page. */
+    const COPY_BUTTONS = array( 'CopyClassButton', 'ConfirmCopyButton' );
+
+    /**
+     * Whether this request makes the copy: a POST carrying one of the copy buttons. Anything else only shows the
+     * confirmation.
+     *
+     * @param \eZHTTPTool|object $http anything with hasPostVariable()
+     * @param string $method the request method
+     * @return bool
+     */
+    public static function isCopyRequest( $http, $method )
+    {
+        if ( strtoupper( (string)$method ) !== 'POST' )
+            return false;
+        foreach ( self::COPY_BUTTONS as $button )
+            if ( $http->hasPostVariable( $button ) )
+                return true;
+        return false;
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -35,6 +56,23 @@ class Copy extends \Exponential\Runnable\ModuleView
         $class = \eZContentClass::fetch( $ClassID, true, 0 );
         if ( !$class )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE ) );
+
+        // A copy is made only by a form: a POST (which the form token protects) with one of the copy buttons. A plain
+        // link - an old bookmark, a template that still links here, a page that sends the browser here - only shows
+        // what would be copied, with a Copy button that posts.
+        if ( !self::isCopyRequest( \eZHTTPTool::instance(), isset( $_SERVER['REQUEST_METHOD'] ) ? $_SERVER['REQUEST_METHOD'] : 'GET' ) )
+        {
+            $tpl = \eZTemplate::factory();
+            $tpl->setVariable( 'module', $Module );
+            $tpl->setVariable( 'class', $class );
+            $tpl->setVariable( 'copy_redirect', strtolower( trim( \eZINI::instance( 'content.ini' )->variable( 'CopySettings', 'ClassRedirect' ) ) ) );
+            $Result = array();
+            $Result['content'] = $tpl->fetch( 'design:class/copy_confirm.tpl' );
+            $Result['path'] = array( array( 'url' => '/class/grouplist/', 'text' => \ezpI18n::tr( 'kernel/class', 'Class groups' ) ),
+                                     array( 'url' => '/class/view/' . $class->attribute( 'id' ), 'text' => (string)$class->attribute( 'name' ) ),
+                                     array( 'url' => false, 'text' => \ezpI18n::tr( 'design/admin/class/copy', 'Copy' ) ) );
+            return $this->viewResult( $Result, null );
+        }
 
         $classCopy = clone $class;
         $classCopy->initializeCopy( $class );

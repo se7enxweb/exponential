@@ -39,7 +39,7 @@
     <td><span class="small">{$Classes:item.modified|l10n(shortdatetime)}</span></td>
     <td><span class="small">{$Classes:item.object_count}</span></td>
     <td width="1%"><div class="listbutton"><a href={concat("class/edit/",$Classes:item.id)|ezurl}><img class="button" src={"edit.gif"|ezimage} width="16" height="16" alt="{'edit'|i18n( 'design/standard/class/classlist' )}" /></a></div></td>
-    <td width="1%"><div class="listbutton"><a href={concat("class/copy/",$Classes:item.id)|ezurl}><img class="button" src={"copy.gif"|ezimage} width="16" height="16" alt="{'edit'|i18n( 'design/standard/class/classlist' )}" /></a></div></td>
+    <td width="1%"><div class="listbutton"><button type="submit" class="button" style="padding: 0; border: 0; background: none;" formaction={concat("class/copy/",$Classes:item.id)|ezurl} name="CopyClassButton" value="{$Classes:item.id}" title="{'copy'|i18n( 'design/admin/class/classlist' )}"><img src={"copy.gif"|ezimage} width="16" height="16" alt="{'copy'|i18n( 'design/admin/class/classlist' )}" /></button></div></td>
     <td width="1%"><div align="right"><input type="checkbox" name="DeleteIDArray[]" value="{$Classes:item.id}"></div></td>
 </tr>
 {/section}
@@ -89,7 +89,7 @@
             <td><span class="small">{$class.item.modified|l10n(shortdatetime)}</span></td>
             <td><span class="small">{$class.item.object_count}</span></td>
             <td width="1%"><div class="listbutton"><a href={concat("class/edit/",$class.item.id)|ezurl}><img class="button" src={"edit.gif"|ezimage} width="16" height="16" alt="{'edit'|i18n( 'design/standard/class/classlist' )}" /></a></div></td>
-            <td width="1%"><div class="listbutton"><a href={concat("class/copy/",$class.item.id)|ezurl}><img class="button" src={"copy.gif"|ezimage} width="16" height="16" alt="{'edit'|i18n( 'design/standard/class/classlist' )}" /></a></div></td>
+            <td width="1%"><div class="listbutton"><button type="submit" class="button" style="padding: 0; border: 0; background: none;" formaction={concat("class/copy/",$class.item.id)|ezurl} name="CopyClassButton" value="{$class.item.id}" title="{'copy'|i18n( 'design/admin/class/classlist' )}"><img src={"copy.gif"|ezimage} width="16" height="16" alt="{'copy'|i18n( 'design/admin/class/classlist' )}" /></button></div></td>
         </tr>
     {/section}
     </table>
