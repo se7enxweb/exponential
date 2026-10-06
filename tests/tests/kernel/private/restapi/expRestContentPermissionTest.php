@@ -11,6 +11,8 @@
  *  CP-04 remove: canRemove() of every location of the object and every node below them
  *  CP-05 an unknown action allows nothing; ids must be positive integers
  *  CP-06 forRequest() reads the route variables and the POST fields; the API key guard refuses only on 403
+ *  CP-07 the edit check goes through the filter content/edit/access as eZContentObject::editAccess() does: a
+ *        listener gets the kernel's answer, the object, no version and the language; only true allows
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -278,5 +280,51 @@ class expRestContentPermissionTest extends PHPUnit\Framework\TestCase
         // the key guard: unknown guard names refuse; an empty request is left to the controller (400 there)
         $this->assertFalse( expApiKeyRest::guardAllows( 'publish', new ezpRestRequest() ) );
         $this->assertTrue( expApiKeyRest::guardAllows( 'create', new ezpRestRequest() ) );
+    }
+
+    /** CP-07 */
+    public function testEditGoesThroughTheEditAccessFilter()
+    {
+        $asked = array();
+        $answer = null;
+        // The filter gets the ID of the current user: an anonymous stand-in, so no session or database is asked
+        $hadUser = array_key_exists( 'eZUserGlobalInstance_', $GLOBALS );
+        $previousUser = $hadUser ? $GLOBALS['eZUserGlobalInstance_'] : null;
+        $GLOBALS['eZUserGlobalInstance_'] = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'cp07', 'email' => 'cp07@example.invalid' ) );
+        $id = ezpEvent::getInstance()->attach( 'content/edit/access', function ( $allowed, $object, $version, $userID, $language ) use ( &$asked, &$answer )
+        {
+            $asked[] = array( $allowed, $object, $version, $language );
+            return $answer === null ? $allowed : $answer;
+        } );
+        try
+        {
+            // A listener that hands the answer back changes nothing, and gets the object and the language
+            $this->folder->editLanguages = array( 'eng-US' );
+            $this->assertSame( 'allowed', self::outcome( self::check( 'edit', array( 'nodeId' => 60, 'languageLocale' => 'eng-US' ) ) ) );
+            $this->assertSame( array( true, $this->folder, null, 'eng-US' ), $asked[0] );
+            $this->assertSame( '403 access_denied', self::outcome( self::check( 'edit', array( 'nodeId' => 60, 'languageLocale' => 'ger-DE' ) ) ) );
+            $this->assertFalse( $asked[1][0], 'the kernel refused the other language' );
+
+            // A listener keeps someone out where the kernel allows
+            $answer = false;
+            $this->assertSame( '403 access_denied', self::outcome( self::check( 'edit', array( 'nodeId' => 60 ) ) ) );
+            // ... and only true allows: a truthy answer that is not true refuses
+            $answer = 1;
+            $this->assertSame( '403 access_denied', self::outcome( self::check( 'edit', array( 'nodeId' => 60 ) ) ) );
+
+            // A listener lets someone in where the kernel refuses
+            $answer = true;
+            $this->parent->edit = false;
+            $this->assertSame( 'allowed', self::outcome( self::check( 'edit', array( 'nodeId' => 60 ) ) ) );
+            $this->assertFalse( $asked[count( $asked ) - 1][0], 'the listener saw the kernel refuse' );
+        }
+        finally
+        {
+            ezpEvent::getInstance()->detach( 'content/edit/access', $id );
+            if ( $hadUser )
+                $GLOBALS['eZUserGlobalInstance_'] = $previousUser;
+            else
+                unset( $GLOBALS['eZUserGlobalInstance_'] );
+        }
     }
 }

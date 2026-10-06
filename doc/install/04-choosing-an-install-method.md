@@ -208,14 +208,16 @@ reinstall replaces and what has to be backed up.
 | `settings/siteaccess/site/` | `CreateSites` | the public siteaccess: `site.ini.append.php` with `[DatabaseSettings]` (`DatabaseImplementation`, `Server`, `Port`, `Database`, `User`, `Password`, `Socket`, `Charset`), `[SiteSettings] SiteName` and `SiteURL`, `[RegionalSettings]`, `[FileSettings] VarDir`, `[DesignSettings] SiteDesign`, plus the package's siteaccess settings |
 | `settings/siteaccess/admin/` | `CreateSites` | the admin siteaccess, with the same `[DatabaseSettings]` |
 | `settings/siteaccess/editor/` | `CreateSites` (`createEditorSiteAccess()`) | a copy of the admin siteaccess's `*.ini.append.php` files with `SiteDesign=editor`, `AdditionalSiteDesignList[]` `admin4l`, `admin4`, `admin3`, `admin2`, `admin`, `ExtensionSettingsSiteAccess=admin`, `SiteName=Editor`, its own `SiteURL`, and `[SiteAccessRules]` that switch off the modules `setup`, `visual`, `explayouts_ui`, `explayouts_ui_api`, `git_manager`, `xrowextract` and `bccie`; plus `menu.ini`, `toolbar.ini` and `admininterface.ini` appends |
+| `settings/siteaccess/adminui/` | `CreateSites` (`createAdminUISiteAccess()`), or the multisite package's post-install with the same function; only when `extension/exp_adminui` is there | a copy of the admin siteaccess's `*.ini.append.php` files with `SiteDesign=adminui`, `AdditionalSiteDesignList[]` `admin4l`, `admin4`, `admin3`, `admin2`, `admin`, `ActiveAccessExtensions[]=exp_adminui`, `SiteName=Admin UI`, `SiteURL` the admin's address with the path `/adminui`, and an `icon.ini` and `ezoe.ini` without settings. Listed in `AvailableSiteAccessList[]` and `SiteList[]`, matched by URI only (no host match line, no port; `uri` is added to `MatchOrder`). See [Exponential Admin UI](../features/6.0/exp-adminui.md) |
 
-The siteaccess **directory names are always `site`, `admin` and `editor`.** What you choose in the wizard, in
+The siteaccess **directory names are always `site`, `admin` and `editor`**, plus `adminui` when the `exp_adminui`
+extension is in the installation. What you choose in the wizard, in
 `kickstart.ini` or with `exp:install --site-access=` is the **match value**: the URL path, the port or the host name
 that leads to each siteaccess. `Access=www` in URL mode therefore means "the path `/www` serves the siteaccess
 `site`", not a siteaccess called `www`.
 
 The database password ends up in `settings/siteaccess/site/site.ini.append.php` and
-`settings/siteaccess/admin/site.ini.append.php` (and the editor copy), and an SMTP password in
+`settings/siteaccess/admin/site.ini.append.php` (and the editor and adminui copies), and an SMTP password in
 `settings/override/site.ini.append.php`. Keep `settings/override/` and `settings/siteaccess/` out of version control
 and readable only by the web server user; [chapter 13](13-security-hardening.md) covers this.
 

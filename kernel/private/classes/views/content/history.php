@@ -64,7 +64,7 @@ class History extends \Exponential\Runnable\ModuleView
         if ( !$object->attribute( 'can_read' ) )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
 
-        if ( $object->attribute( 'can_edit' ) )
+        if ( $object->editAccess() )
             $canEdit = true;
 
         $canRemove = true;
@@ -296,7 +296,7 @@ class History extends \Exponential\Runnable\ModuleView
                 $language = $version->initialLanguageCode();
             }
 
-            if ( !$object->checkAccess( 'edit', false, false, false, $language ) )
+            if ( !$object->editAccess( $version, $language ) )
             {
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
             }

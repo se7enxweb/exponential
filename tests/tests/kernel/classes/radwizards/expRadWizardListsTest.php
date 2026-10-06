@@ -129,6 +129,37 @@ class expRadWizardListsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'normal', 'small' ), array_column( $defaults, 'name' ) );
     }
 
+    public function testListenersOfTheAccessFiltersNameTheirArguments()
+    {
+        $class = 'K1eAccessListener' . getmypid();
+        $events = array( 'content/edit/access', 'content/download/access', 'collaboration/item/access',
+                         'content/notification/create', 'content/view/cachekeys' );
+        $methods = array();
+        foreach ( $events as $event )
+        {
+            $signature = expSettingsExtensionWizard::eventSignature( $event );
+            $this->assertNotNull( $signature, $event );
+            $method = expSettingsExtensionWizard::listenerMethod( $class, $event, 'filter', 'What it is for.' );
+            $this->assertStringContainsString( '( ' . $signature['params'] . ' )', $method, $event );
+            $this->assertStringContainsString( "eZINI::instance()->hasVariable( '" . $class . "'", $method, $event . ': the example reads the settings of the extension' );
+            $this->assertStringContainsString( 'return ' . $signature['returns'] . ';', $method, $event );
+            $this->assertSame( $signature['only_true'], strpos( $method, 'Only true allows' ) !== false, $event );
+            $methods[] = $method;
+        }
+        $this->assertNull( expSettingsExtensionWizard::eventSignature( 'content/cache' ) );
+        $this->assertStringContainsString( '( $value = null )', expSettingsExtensionWizard::listenerMethod( $class, 'content/cache', 'notify', 'x' ) );
+
+        // The generated class parses, and with empty settings every method hands the value back unchanged
+        $code = "class " . $class . "\n{\n" . implode( "\n\n", $methods ) . "\n}\n";
+        $this->assertNotEmpty( token_get_all( '<?php ' . $code, TOKEN_PARSE ) );
+        eval( $code );
+        $this->assertFalse( $class::contentEditAccess( false, null, null, 10, false ) );
+        $this->assertTrue( $class::contentDownloadAccess( true, null, null, 3 ) );
+        $this->assertFalse( $class::collaborationItemAccess( false, null, null ) );
+        $this->assertTrue( $class::contentNotificationCreate( true, 0, 0 ) );
+        $this->assertSame( array( 'node_id' => 2 ), $class::contentViewCachekeys( array( 'node_id' => 2 ), array() ) );
+    }
+
     public function testEventsOnlyKnownOnes()
     {
         $this->assertSame( array(), expSettingsExtensionWizard::chosenEvents( 'content/cache' ) );

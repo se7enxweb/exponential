@@ -6198,6 +6198,64 @@ class eZContentObject extends eZPersistentObject
     }
 
     /**
+     * Returns whether the current user may edit this object: work on the draft $version, make a new draft from it, or
+     * remove it. The answer of the kernel (canEdit()) goes through the filter content/edit/access, so an extension can
+     * let further editors of a draft in, or keep someone out; only true allows.
+     *
+     * Every edit check of content/edit (opening a draft, a new draft, choosing a language), content/history,
+     * content/removeeditversion, content/versionview, content/multiedit, the edit check of the REST interface, and the
+     * upload and tag dialogs of the online editor ask this. Checks of a location (sorting, priorities, moving) and the
+     * template attribute can_edit do not.
+     *
+     * @param eZContentObjectVersion|null $version The version the edit is about, or null when there is none yet
+     * @param string|bool $language A language code, or false
+     * @return bool
+     */
+    function editAccess( $version = null, $language = false )
+    {
+        if ( $language === null || $language === '' )
+        {
+            $language = false;
+        }
+        // canEdit() keeps its answer for the request when it is asked without arguments
+        $allowed = $language === false ? $this->canEdit() : $this->canEdit( false, false, false, $language );
+
+        return $this->filterEditAccess( $allowed, $version, $language );
+    }
+
+    /**
+     * Passes an edit answer of the kernel through the filter content/edit/access: $allowed with this object, the
+     * version (or null), the ID of the current user and the language. Only true allows. For a check that starts from
+     * something other than canEdit() (the edit check of one version, the REST check of a location), so that it is
+     * decided the same way as editAccess().
+     *
+     * When a listener changes the kernel's answer, a debug notice says so.
+     *
+     * @param bool|int $allowed The kernel's answer
+     * @param eZContentObjectVersion|null $version
+     * @param string|bool $language
+     * @return bool
+     */
+    function filterEditAccess( $allowed, $version = null, $language = false )
+    {
+        $allowed = (bool)$allowed;
+        if ( !ezpEvent::getInstance()->hasListeners( 'content/edit/access' ) )
+        {
+            return $allowed;
+        }
+        $answer = ezpEvent::getInstance()->filter( 'content/edit/access', $allowed, $this,
+                                                   $version instanceof eZContentObjectVersion ? $version : null,
+                                                   (int)eZUser::currentUserID(), $language ) === true;
+        if ( $answer !== $allowed )
+        {
+            eZDebug::writeNotice( 'A listener of content/edit/access ' . ( $answer ? 'allowed' : 'refused' ) . ' editing object ' .
+                                  (int)$this->attribute( 'id' ) . ' for user ' . (int)eZUser::currentUserID() .
+                                  ' (the kernel ' . ( $allowed ? 'allowed' : 'refused' ) . ' it)', __METHOD__ );
+        }
+        return $answer;
+    }
+
+    /**
      * Returns true if the current user can translate this content object.
      *
      * @return bool
