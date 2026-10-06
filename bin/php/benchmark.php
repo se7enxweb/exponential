@@ -9,6 +9,7 @@
  *   bin/php/console exp:benchmark --compare=A,B           two servers, back to back
  *   bin/php/console exp:benchmark --cold                  past every response cache
  *   bin/php/console exp:benchmark kernel                  the parts of a page, in-process
+ *   bin/php/console exp:benchmark micro                   hot paths without HTTP or a database (CI)
  *   bin/php/console exp:benchmark --baseline=base.json    exit 1 when slower than a saved run
  *
  * Guide: doc/features/6.0/benchmark.md

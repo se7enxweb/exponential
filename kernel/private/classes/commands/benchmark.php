@@ -40,6 +40,9 @@ class Benchmark extends \Exponential\Runnable\Command
                 "  kernel    time the parts of a page in-process: boot, full view render cold and warm,\n" .
                 "            INI load, content fetch, node list, database round trip, cache write and\n" .
                 "            read, image alias lookup\n" .
+                "  micro     (or --micro) pure-PHP hot paths without HTTP or a database: template compile\n" .
+                "            and render, INI parsing, autoload, eZURI, translations, datatype validation;\n" .
+                "            normalised against a calibration loop, so runs on different machines compare\n" .
                 "  compare <baseline.json> <run.json>   compare two saved runs\n" .
                 "  show <run.json>                      print a saved run as a table\n\n" .
                 "Examples:\n" .
@@ -47,6 +50,9 @@ class Benchmark extends \Exponential\Runnable\Command
                 "  ./console exp:benchmark --compare=https://example.com,https://example.com:8080\n" .
                 "  ./console exp:benchmark --cold --requests=50\n" .
                 "  ./console exp:benchmark kernel --repeat=30\n" .
+                "  ./console exp:benchmark --runs=200 --warmup=10 --format=json > run.json\n" .
+                "  ./console exp:benchmark micro --baseline=tests/benchmark/baseline.json\n" .
+                "  ./console exp:benchmark micro --save=tests/benchmark/baseline.json   (refresh the baseline)\n" .
                 "  ./console exp:benchmark --save=var/benchmark/base.json\n" .
                 "  ./console exp:benchmark --baseline=var/benchmark/base.json --threshold=15\n\n" .
                 "Polite by default: 100 requests per URL, 4 at a time. Against a host other than\n" .
@@ -62,7 +68,7 @@ class Benchmark extends \Exponential\Runnable\Command
         ) );
 
         $options = $this->startup(
-            '[base:][compare:][url:*][urls-file:][pages:][no-admin][requests:][concurrency:][warmup:][rounds:]' .
+            '[base:][compare:][url:*][urls-file:][pages:][no-admin][no-search][search:][requests:][runs:][concurrency:][warmup:][rounds:][micro][format:]' .
             '[cold][cold-clear][insecure][auth:][header:*][cookie:][resolve:*][http:][encoding:][timeout:][no-keepalive]' .
             '[tool:][duration:][repeat:][boot-repeat:][node:][probe:*][json][csv][save:][baseline:][threshold:]' .
             '[min-delta:][all-checks][force]',
@@ -74,9 +80,14 @@ class Benchmark extends \Exponential\Runnable\Command
                 'urls-file'    => 'A file with one URL or path per line (# starts a comment)',
                 'pages'        => 'How many pages of the menu the default list takes (default 3)',
                 'no-admin'     => 'Leave the admin login page out of the default list',
+                'no-search'    => 'Leave the search page out of the default list',
+                'search'       => 'The words the default search page searches for (default: the first word of the first menu page)',
                 'requests'     => 'Requests per URL and server (default 100)',
+                'runs'         => 'The same as --requests: measured runs per URL and server',
                 'concurrency'  => 'Requests at the same time (default 4)',
-                'warmup'       => 'Unmeasured requests per URL and server first (default 5)',
+                'warmup'       => 'Unmeasured runs first: requests per URL and server (default 5, at least one per connection), micro: iterations per probe (default 3)',
+                'micro'        => 'The same as the micro mode',
+                'format'       => 'Output: table (default), json or csv',
                 'rounds'       => 'Split the requests into rounds, alternating the server order (default 2)',
                 'cold'         => 'A unique query string on every request, so no response cache answers',
                 'cold-clear'   => 'Clear the content view cache once before the run (this installation only)',
@@ -91,23 +102,37 @@ class Benchmark extends \Exponential\Runnable\Command
                 'no-keepalive' => 'A new connection for every request',
                 'tool'         => 'curl (default, built in), ab, wrk or oha when installed',
                 'duration'     => 'Seconds per URL for wrk (default 10)',
-                'repeat'       => 'kernel: runs of every probe (default 20)',
+                'repeat'       => 'kernel: runs of every probe (default 20); micro: measured iterations of every probe (default 30)',
                 'boot-repeat'  => 'kernel: new processes for boot and the cold render (default 5)',
                 'node'         => 'kernel: the node to render and fetch (default: the front page)',
-                'probe'        => 'kernel: only these probes; repeat it for more',
+                'probe'        => 'kernel, micro: only these probes; repeat it for more',
                 'json'         => 'Print the run as JSON',
                 'csv'          => 'Print the rows as CSV',
                 'save'         => 'Write the run as JSON to this file',
                 'baseline'     => 'Compare with this saved run; exit 1 when a metric regressed',
-                'threshold'    => 'Percent a metric may get worse before it counts as a regression (default 15)',
+                'threshold'    => 'Percent a metric may get worse before it counts as a regression (default 15; micro: 40, after normalisation)',
                 'min-delta'    => 'Milliseconds a latency must grow by, too, to count (default 1)',
                 'all-checks'   => 'Show every comparison, not only the regressions',
                 'force'        => 'Allow more than the polite limits against a host that is not loopback',
             ) );
 
-        $this->machine = !empty( $options['json'] ) || !empty( $options['csv'] );
         $arguments = isset( $options['arguments'] ) ? array_values( (array)$options['arguments'] ) : array();
-        $mode = isset( $arguments[0] ) ? strtolower( (string)$arguments[0] ) : 'http';
+        $mode = isset( $arguments[0] ) ? strtolower( (string)$arguments[0] ) : ( !empty( $options['micro'] ) ? 'micro' : 'http' );
+        if ( !empty( $options['format'] ) )
+        {
+            $format = strtolower( (string)$options['format'] );
+            if ( !in_array( $format, array( 'table', 'json', 'csv' ), true ) )
+            {
+                $this->error( "--format must be table, json or csv" );
+                $this->shutdown( self::EXIT_USAGE );
+                return self::EXIT_USAGE;
+            }
+            $options['json'] = $format === 'json';
+            $options['csv'] = $format === 'csv';
+        }
+        if ( isset( $options['runs'] ) and $options['runs'] !== false and $options['runs'] !== null )
+            $options['requests'] = $options['runs'];
+        $this->machine = !empty( $options['json'] ) || !empty( $options['csv'] );
 
         try
         {
@@ -118,6 +143,9 @@ class Benchmark extends \Exponential\Runnable\Command
                     break;
                 case 'kernel':
                     $code = $this->runKernel( $options );
+                    break;
+                case 'micro':
+                    $code = $this->runMicro( $options );
                     break;
                 case 'compare':
                     $code = $this->runCompare( $options, $arguments );
@@ -132,7 +160,7 @@ class Benchmark extends \Exponential\Runnable\Command
                     $code = self::EXIT_OK;
                     break;
                 default:
-                    $this->error( "Unknown mode \"$mode\": http, kernel, compare or show. See --help." );
+                    $this->error( "Unknown mode \"$mode\": http, kernel, micro, compare or show. See --help." );
                     $code = self::EXIT_USAGE;
             }
         }
@@ -239,7 +267,8 @@ class Benchmark extends \Exponential\Runnable\Command
             else
             {
                 $pages = isset( $options['pages'] ) && $options['pages'] !== false && $options['pages'] !== null ? max( 0, (int)$options['pages'] ) : 3;
-                $paths = $this->defaultPaths( $pages, empty( $options['no-admin'] ) );
+                $paths = $this->defaultPaths( $pages, empty( $options['no-admin'] ), empty( $options['no-search'] ),
+                                              isset( $options['search'] ) && is_string( $options['search'] ) ? $options['search'] : '' );
             }
             $groups[implode( ',', $targets )] = array_values( array_unique( $paths ) );
         }
@@ -344,6 +373,39 @@ class Benchmark extends \Exponential\Runnable\Command
     }
 
     /**
+     * micro mode: pure-PHP hot paths, no HTTP, no database.
+     */
+    protected function runMicro( $options )
+    {
+        $settings = \expBenchmarkMicro::defaults();
+        foreach ( array( 'repeat' => 'repeat', 'warmup' => 'warmup' ) as $option => $key )
+        {
+            if ( isset( $options[$option] ) and $options[$option] !== false and $options[$option] !== null )
+            {
+                if ( !preg_match( '/^\d+$/', (string)$options[$option] ) )
+                    throw new \InvalidArgumentException( "--$option must be a whole number" );
+                $settings[$key] = (int)$options[$option];
+            }
+        }
+        if ( $settings['repeat'] < 1 )
+            throw new \InvalidArgumentException( '--repeat must be at least 1' );
+        $settings['probes'] = $this->listOption( $options, 'probe' );
+        foreach ( $settings['probes'] as $probe )
+        {
+            if ( !in_array( $probe, \expBenchmarkMicro::probeNames(), true ) )
+                throw new \InvalidArgumentException( "Unknown probe \"$probe\": " . implode( ', ', \expBenchmarkMicro::probeNames() ) );
+        }
+
+        $this->progress( sprintf( 'exp:benchmark micro  %d measured and %d warm-up iterations per probe, PHP %s, OPcache %s',
+            $settings['repeat'], $settings['warmup'], PHP_VERSION,
+            function_exists( 'opcache_get_status' ) && @opcache_get_status( false ) !== false ? 'on' : 'off' ) );
+
+        $result = \expBenchmarkMicro::run( $settings, array( $this, 'progress' ) );
+        $document = \expBenchmark::document( 'micro', $result['rows'], $settings, array( 'calibration' => $result['calibration'] ) );
+        return $this->finish( $document, $options );
+    }
+
+    /**
      * compare mode: two saved runs.
      */
     protected function runCompare( $options, $arguments )
@@ -352,8 +414,7 @@ class Benchmark extends \Exponential\Runnable\Command
             throw new \InvalidArgumentException( 'compare needs two files: compare <baseline.json> <run.json>' );
         $baseline = \expBenchmark::load( $arguments[1] );
         $current = \expBenchmark::load( $arguments[2] );
-        list( $threshold, $minDelta ) = $this->thresholds( $options );
-        $comparison = \expBenchmark::compare( $baseline['rows'], $current['rows'], $threshold, $minDelta );
+        $comparison = $this->comparison( $baseline, $current, $options );
         if ( !empty( $options['json'] ) )
             fwrite( STDOUT, \expBenchmark::json( $comparison ) . "\n" );
         else
@@ -383,8 +444,7 @@ class Benchmark extends \Exponential\Runnable\Command
         if ( !empty( $options['baseline'] ) )
         {
             $baseline = \expBenchmark::load( (string)$options['baseline'] );
-            list( $threshold, $minDelta ) = $this->thresholds( $options );
-            $comparison = \expBenchmark::compare( $baseline['rows'], $document['rows'], $threshold, $minDelta );
+            $comparison = $this->comparison( $baseline, $document, $options );
             $document['comparison'] = $comparison + array( 'baseline' => (string)$options['baseline'],
                                                            'baseline_started' => isset( $baseline['started'] ) ? $baseline['started'] : '' );
             if ( $comparison['regressions'] > 0 )
@@ -422,7 +482,26 @@ class Benchmark extends \Exponential\Runnable\Command
 
         $this->say( '' );
         $this->say( sprintf( '  %s mode, %s, PHP %s, %s', $document['mode'], $document['machine'], $document['php'], $document['started'] ) );
-        $this->say( '  times in milliseconds; req/s counts successful requests' );
+        if ( isset( $document['environment'] ) )
+        {
+            $env = $document['environment'];
+            $this->say( sprintf( '  %s, OPcache %s%s, Xdebug %s, %s CPUs, load %s, commit %s',
+                $env['engine'], $env['opcache'] ? 'on' : 'off', !empty( $env['jit'] ) ? ' (JIT ' . $env['jit'] . ')' : '',
+                $env['xdebug'] === false ? 'off' : 'ON (' . $env['xdebug'] . '): times are not representative',
+                $env['cpus'] === null ? '?' : $env['cpus'], $env['load'] === null ? '?' : $env['load'],
+                $env['git_commit'] !== '' ? substr( $env['git_commit'], 0, 10 ) : 'unknown' ) );
+        }
+        if ( $document['mode'] === 'micro' )
+        {
+            $calibration = isset( $document['calibration'] ) ? $document['calibration'] : array();
+            $this->say( sprintf( '  times in milliseconds per iteration; ops/s at the median; x calib = median / calibration loop median (%s ms, drift %s)',
+                isset( $calibration['median'] ) ? sprintf( '%.3f', $calibration['median'] ) : '-',
+                isset( $calibration['drift_pct'] ) && $calibration['drift_pct'] !== null ? sprintf( '%+.1f %%', $calibration['drift_pct'] ) : '-' ) );
+        }
+        else
+        {
+            $this->say( '  times in milliseconds; req/s counts successful requests; sd = standard deviation' );
+        }
         $this->say( '' );
         $this->say( rtrim( \expBenchmark::table( $document['rows'] ), "\n" ) );
         foreach ( $document['rows'] as $row )
@@ -438,11 +517,57 @@ class Benchmark extends \Exponential\Runnable\Command
         }
     }
 
+    /**
+     * A run against a saved one: micro runs after normalisation by their calibration loops, the others by
+     * their times.
+     */
+    protected function comparison( $baseline, $document, $options )
+    {
+        $micro = ( isset( $document['mode'] ) && $document['mode'] === 'micro' ) || ( isset( $baseline['mode'] ) && $baseline['mode'] === 'micro' );
+        list( $threshold, $minDelta ) = $this->thresholds( $options, $micro );
+        if ( $micro )
+        {
+            if ( !isset( $document['mode'], $baseline['mode'] ) or $document['mode'] !== $baseline['mode'] )
+                throw new \InvalidArgumentException( 'A micro run compares only with a micro run' );
+            $comparison = \expBenchmark::compareNormalized( $baseline, $document, $threshold );
+        }
+        else
+        {
+            $comparison = \expBenchmark::compare( $baseline['rows'], $document['rows'], $threshold, $minDelta );
+        }
+        $comparison['environment_differences'] = \expBenchmark::environmentDifferences(
+            isset( $baseline['environment'] ) ? $baseline['environment'] : null,
+            isset( $document['environment'] ) ? $document['environment'] : null );
+        return $comparison;
+    }
+
     protected function printComparison( $comparison, $baselineFile, $all )
     {
         $this->say( '' );
-        $this->say( sprintf( '  against %s: %d regression(s), threshold %.0f %%, noise floor %.1f ms',
-            $baselineFile, $comparison['regressions'], $comparison['threshold'], $comparison['min_delta'] ) );
+        if ( isset( $comparison['method'] ) and $comparison['method'] === 'normalized' )
+        {
+            $this->say( sprintf( '  against %s: %d regression(s), threshold %.0f %% of the median relative to the calibration loop',
+                $baselineFile, $comparison['regressions'], $comparison['threshold'] ) );
+            $this->say( sprintf( '  calibration loop: baseline %.3f ms, now %.3f ms (this machine x%.2f the speed of the baseline\'s)',
+                $comparison['calibration']['baseline'], $comparison['calibration']['current'], $comparison['calibration']['speed'] ) );
+        }
+        else
+        {
+            $this->say( sprintf( '  against %s: %d regression(s), threshold %.0f %%, noise floor %.1f ms',
+                $baselineFile, $comparison['regressions'], $comparison['threshold'], $comparison['min_delta'] ) );
+        }
+        foreach ( isset( $comparison['environment_differences'] ) ? $comparison['environment_differences'] : array() as $difference )
+            $this->say( '  note: the baseline was made with another set-up, ' . $difference . '; the numbers compare the set-ups too' );
+        if ( getenv( 'GITHUB_ACTIONS' ) === 'true' )
+        {
+            // annotations on the workflow run
+            foreach ( $comparison['checks'] as $check )
+            {
+                if ( $check['regressed'] )
+                    $this->say( sprintf( '::warning title=Benchmark regression::%s %s %+.1f %% against %s',
+                        $check['key'], $check['metric'], (float)$check['change_pct'], $baselineFile ) );
+            }
+        }
         $text = \expBenchmark::comparisonTable( $comparison, $all );
         if ( $text !== '' )
             $this->say( rtrim( $text, "\n" ) );
@@ -570,27 +695,42 @@ class Benchmark extends \Exponential\Runnable\Command
     }
 
     /**
-     * The default URL list: the front page, the first pages of the menu (the children of the front page node
-     * with an URL alias, by priority) and the login page of the admin siteaccess.
+     * The default URL list, always in this order so that runs compare: the front page, the first pages of the menu
+     * (the children of the front page node with an URL alias, by priority, then node id), the search page when
+     * anonymous visitors may search, and the login page of the admin siteaccess.
      */
-    protected function defaultPaths( $pages, $withAdmin )
+    protected function defaultPaths( $pages, $withAdmin, $withSearch = true, $searchText = '' )
     {
         $paths = array( '/' );
-        if ( $pages > 0 )
+        $firstName = '';
+        if ( $pages > 0 or ( $withSearch and $searchText === '' ) )
         {
             $children = \eZContentObjectTreeNode::subTreeByNodeID(
-                array( 'Depth' => 1, 'DepthOperator' => 'eq', 'Limit' => $pages * 3, 'Limitation' => array(),
-                       'SortBy' => array( 'priority', true ) ),
+                array( 'Depth' => 1, 'DepthOperator' => 'eq', 'Limit' => max( 1, $pages ) * 3, 'Limitation' => array(),
+                       'SortBy' => array( array( 'priority', true ), array( 'node_id', true ) ) ),
                 \expBenchmarkKernel::frontPageNodeID() );
             foreach ( (array)$children as $child )
             {
                 $alias = trim( (string)$child->urlAlias(), '/' );
                 if ( $alias === '' )
                     continue;
-                $paths[] = '/' . $alias;
+                if ( $firstName === '' )
+                    $firstName = (string)$child->attribute( 'name' );
                 if ( count( $paths ) > $pages )
                     break;
+                $paths[] = '/' . $alias;
             }
+        }
+
+        if ( $withSearch and $this->anonymousMaySearch() )
+        {
+            if ( $searchText === '' )
+            {
+                $searchText = 'exponential';
+                if ( preg_match( '/[\p{L}\p{N}]{3,}/u', $firstName, $m ) )
+                    $searchText = mb_strtolower( $m[0] );
+            }
+            $paths[] = '/content/search?SearchText=' . rawurlencode( $searchText );
         }
 
         if ( $withAdmin )
@@ -605,6 +745,31 @@ class Benchmark extends \Exponential\Runnable\Command
                 $paths[] = '/' . $admin . '/user/login';
         }
         return $paths;
+    }
+
+    /**
+     * Whether the anonymous user may use content/search (its view requires content/read, or it is in the
+     * PolicyOmitList), so the search page of the default list answers with results and not with the login form.
+     */
+    protected function anonymousMaySearch()
+    {
+        try
+        {
+            $id = (int)\eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' );
+            $user = $id > 0 ? \eZUser::fetch( $id ) : null;
+            if ( !$user instanceof \eZUser )
+                return false;
+            $omit = \eZINI::instance()->variable( 'RoleSettings', 'PolicyOmitList' );
+            if ( in_array( 'content/search', (array)$omit, true ) )
+                return true;
+            // the content/search view requires the content/read function (kernel/content/module.php)
+            $access = $user->hasAccessTo( 'content', 'read' );
+            return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
+        }
+        catch ( \Throwable $e )
+        {
+            return false;
+        }
     }
 
     /**
@@ -648,10 +813,10 @@ class Benchmark extends \Exponential\Runnable\Command
         return array_values( array_filter( array_map( 'trim', (array)$options[$name] ), 'strlen' ) );
     }
 
-    protected function thresholds( $options )
+    protected function thresholds( $options, $micro = false )
     {
         $threshold = isset( $options['threshold'] ) && $options['threshold'] !== false && $options['threshold'] !== null
-                   ? (float)$options['threshold'] : \expBenchmark::DEFAULT_THRESHOLD;
+                   ? (float)$options['threshold'] : ( $micro ? \expBenchmark::DEFAULT_MICRO_THRESHOLD : \expBenchmark::DEFAULT_THRESHOLD );
         $minDelta = isset( $options['min-delta'] ) && $options['min-delta'] !== false && $options['min-delta'] !== null
                   ? (float)$options['min-delta'] : \expBenchmark::DEFAULT_MIN_DELTA_MS;
         if ( $threshold <= 0 )
