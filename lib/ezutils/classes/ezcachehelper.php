@@ -21,6 +21,11 @@ class eZCacheHelper
      */
     private $script;
 
+    /**
+     * @var array the cache items cleared or purged by this helper, by id (for the audit record)
+     */
+    private $cleared = array();
+
     public function __construct( eZCLI $cli, eZScript $script )
     {
         $this->cli = $cli;
@@ -35,6 +40,42 @@ class eZCacheHelper
     public function purgeItems( $cacheEntries, $name, $purgeSleep, $purgeMax, $purgeExpiry )
     {
         $this->internalClear( true, $cacheEntries, $name, $purgeSleep, $purgeMax, $purgeExpiry );
+    }
+
+    /**
+     * The cache items this helper cleared or purged so far, in order.
+     *
+     * @return array
+     */
+    public function clearedItems()
+    {
+        return array_values( $this->cleared );
+    }
+
+    /**
+     * Writes one system.cache.clear audit record for everything this helper cleared, through eZCache::auditCleared()
+     * as exp:cache clear and Setup > Caches do (the actor of a shell is its operating system user). Nothing is
+     * written when nothing was cleared. A failure is a warning on stderr: the caches are cleared either way.
+     *
+     * @param string $how all, tag, id or purge
+     * @param array $asked the tags or ids asked for (empty for all)
+     * @param float $start microtime of the start
+     * @return bool whether a record was handed to the audit
+     */
+    public function auditCleared( $how, array $asked, $start )
+    {
+        if ( !$this->cleared )
+            return false;
+        try
+        {
+            eZCache::auditCleared( $how, array_values( $asked ), array_values( $this->cleared ), $start );
+            return true;
+        }
+        catch ( Throwable $e )
+        {
+            @fwrite( STDERR, 'Warning: the cache clear could not be audited: ' . $e->getMessage() . "\n" );
+            return false;
+        }
     }
 
     private function internalClear( $purge, $cacheEntries, $name, $purgeSleep = null, $purgeMax = null, $purgeExpiry = null )
@@ -134,6 +175,7 @@ class eZCacheHelper
                     eZCache::clearItem( $cacheEntry, true, array( $this, 'reportProgress'), $purgeSleep, $purgeMax, $purgeExpiry );
                 else
                     eZCache::clearItem( $cacheEntry );
+                $this->cleared[(string)$cacheEntry['id']] = $cacheEntry;
             }
         }
         finally

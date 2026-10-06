@@ -94,6 +94,9 @@ class Ezcache extends \Exponential\Runnable\Command
                 $purgeExpiry = time();
             $purge = true;
         }
+        // One system.cache.clear audit record per run, for what was cleared, as exp:cache clear writes it
+        $auditStart = microtime( true );
+        $auditAsked = array();
         $noAction = true;
 
         $cacheList = \eZCache::fetchList();
@@ -173,6 +176,7 @@ class Ezcache extends \Exponential\Runnable\Command
                 $helper->purgeItems( $cacheList, false, $purgeSleep, $purgeMax, $purgeExpiry );
             else
                 $helper->clearItems( $cacheList, false );
+            $helper->auditCleared( $purge ? 'purge' : 'all', array(), $auditStart );
             $script->shutdown( 0 );
         }
 
@@ -180,6 +184,7 @@ class Ezcache extends \Exponential\Runnable\Command
         {
             $noAction = false;
             $tagName = $options['clear-tag'];
+            $auditAsked = array_merge( $auditAsked, array_filter( array_map( 'trim', explode( ',', $tagName ) ), 'strlen' ) );
             $cacheEntries = \eZCache::fetchByTag( $tagName, $cacheList );
             if ( $purge )
                 $helper->purgeItems( $cacheEntries, $tagName, $purgeSleep, $purgeMax, $purgeExpiry );
@@ -191,6 +196,7 @@ class Ezcache extends \Exponential\Runnable\Command
         {
             $noAction = false;
             $idName = $options['clear-id'];
+            $auditAsked = array_merge( $auditAsked, array_filter( array_map( 'trim', explode( ',', $idName ) ), 'strlen' ) );
             $missingIDList = array();
             $cacheEntries = array();
             foreach ( explode( ',', $idName ) as $id )
@@ -208,6 +214,7 @@ class Ezcache extends \Exponential\Runnable\Command
             if ( count( $missingIDList ) > 0 )
             {
                 $cli->warning( 'No such cache ID: ' . $cli->stylize( 'emphasize', implode( ', ', $missingIDList ) ) );
+                $helper->auditCleared( $purge ? 'purge' : 'tag', $auditAsked, $auditStart );
                 $script->shutdown( 1 );
             }
             if ( $options['clear-id'] )
@@ -228,6 +235,7 @@ class Ezcache extends \Exponential\Runnable\Command
             $cli->warning( "To clear caches use one of the options --clear-id, --clear-tag or --clear-all. Use --help option for more details." );
         }
 
+        $helper->auditCleared( $purge ? 'purge' : ( $options['clear-id'] ? 'id' : 'tag' ), $auditAsked, $auditStart );
         $script->shutdown();
     }
 }
