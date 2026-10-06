@@ -2115,7 +2115,7 @@ class eZModule
      */
     static function addGlobalPathList( $pathList )
     {
-        if ( !is_array( $GLOBALS['eZModuleGlobalPathList'] ) )
+        if ( !isset( $GLOBALS['eZModuleGlobalPathList'] ) || !is_array( $GLOBALS['eZModuleGlobalPathList'] ) )
         {
             $GLOBALS['eZModuleGlobalPathList'] = array();
         }

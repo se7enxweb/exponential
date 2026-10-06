@@ -352,6 +352,26 @@ $Result = array( "content" => "single " . $Params["Name"] );
         $this->assertContains( 'another', eZModule::globalPathList() );
     }
 
+    public function testAddGlobalPathListBeforeAnyIsSetRaisesNoWarning()
+    {
+        unset( $GLOBALS['eZModuleGlobalPathList'] );
+        $warnings = array();
+        set_error_handler( function ( $no, $str ) use ( &$warnings ) {
+            $warnings[] = $str;
+            return true;
+        } );
+        try
+        {
+            eZModule::addGlobalPathList( 'first' );
+        }
+        finally
+        {
+            restore_error_handler();
+        }
+        $this->assertSame( array(), $warnings );
+        $this->assertSame( array( 'first' ), eZModule::globalPathList() );
+    }
+
     public function testTitleAndStatus()
     {
         $m = $this->module();
