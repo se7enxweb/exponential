@@ -17,8 +17,86 @@ class expRadWizardTestINI extends eZINI
     }
 }
 
+/**
+ * A database that is there and empty: every query answers no rows. Put in place so that what a wizard asks the
+ * database (is there a class of this identifier?) has the same answer on a runner without one as here.
+ */
+class expRadWizardTestEmptyDatabase extends eZDBInterface
+{
+    public $queries = array();
+
+    public function __construct()
+    {
+        $this->DB = 'k1e-empty';
+    }
+
+    function query( $sql, $server = false )
+    {
+        $this->queries[] = $sql;
+        return true;
+    }
+
+    function arrayQuery( $sql, $params = array(), $server = false )
+    {
+        $this->queries[] = $sql;
+        return array();
+    }
+
+    function isConnected()
+    {
+        return true;
+    }
+
+    function escapeString( $str )
+    {
+        return addslashes( (string)$str );
+    }
+
+    function databaseName()
+    {
+        return 'empty';
+    }
+}
+
+/**
+ * The state limitations are kept for the process once read; read from the empty database they must not outlive it.
+ */
+class expRadWizardTestStateGroup extends eZContentObjectStateGroup
+{
+    public static function forgetLimitations()
+    {
+        self::$limitationsCache = null;
+    }
+}
+
 class expRadWizardTestHelper
 {
+    private static $savedDb = array();
+
+    /**
+     * Puts an empty database in place; restoreDatabase() puts back what was there.
+     *
+     * @return expRadWizardTestEmptyDatabase
+     */
+    public static function useEmptyDatabase()
+    {
+        self::$savedDb[] = array( array_key_exists( 'eZDBGlobalInstance', $GLOBALS ), $GLOBALS['eZDBGlobalInstance'] ?? null );
+        $db = new expRadWizardTestEmptyDatabase();
+        eZDB::setInstance( $db );
+        expRadWizardTestStateGroup::forgetLimitations();
+        return $db;
+    }
+
+    public static function restoreDatabase()
+    {
+        expRadWizardTestStateGroup::forgetLimitations();
+        list( $had, $db ) = array_pop( self::$savedDb );
+        if ( $had )
+            $GLOBALS['eZDBGlobalInstance'] = $db;
+        else
+            unset( $GLOBALS['eZDBGlobalInstance'] );
+    }
+
     public static function root()
     {
         return dirname( __DIR__, 5 );
