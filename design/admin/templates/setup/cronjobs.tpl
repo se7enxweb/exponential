@@ -410,7 +410,7 @@
         <button type="submit" class="exp-btn exp-btn-outline exp-run" name="LaunchCronjobButton"
                 data-blocked="{if $cronjob_blocked}1{else}0{/if}"
                 value="{$cronjob_part.name|wash}"{if $cronjob_runnable|not} disabled="disabled"{/if}
-                aria-describedby="{$cronjob_part_id|wash}-title"
+                aria-label="{'Run the whole %part part now'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}"
                 title="{'Run the whole %part part now'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.5v11l9-5.5z"/></svg>{'Run part'|i18n( 'design/admin/setup/cronjobs' )}</button>
     </div>
 
