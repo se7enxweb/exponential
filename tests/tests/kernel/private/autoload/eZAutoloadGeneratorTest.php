@@ -205,6 +205,19 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( "{$p}InTests", "{$p}Keep" ), array_keys( $entries ) );
     }
 
+    public function testIgnoreFileAndExcludeDirsApplyToAnExtensionGivenByItsPath()
+    {
+        $p = $this->name;
+        $this->file( 'classes/keep.php', "<?php\nclass {$p}Keep {}\n" );
+        $this->file( 'vendorish/skip.php', "<?php\nclass {$p}Ignored {}\n" );
+        $this->file( 'old/skip.php', "<?php\nclass {$p}Old {}\n" );
+        $this->file( '.autoloadignore', "\n# a comment, then a blank line\n\nvendorish\n" );
+        list( , $entries ) = $this->generated( array( 'excludeDirs' => array( 'old' ) ) );
+        $this->assertSame( array( "{$p}Keep" ), array_keys( $entries ) );
+        list( , $entries ) = $this->generated();
+        $this->assertSame( array( "{$p}Keep", "{$p}Old" ), array_keys( $entries ) );
+    }
+
     public function testFileIsWrittenToTheOutputDirectory()
     {
         $p = $this->name;

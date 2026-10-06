@@ -431,12 +431,18 @@ class eZAutoloadGenerator
         $sanitisedBasePath = DIRECTORY_SEPARATOR == '/' ? $path : strtr( $path, DIRECTORY_SEPARATOR, '/' );
         $dirSep = preg_quote( DIRECTORY_SEPARATOR );
 
+        // The files are found under the real path of the base (buildFileList() resolves it), so
+        // the exclusions are anchored there too: with an extension given by a relative path
+        // (ezpgenerateautoloads.php extension/foo) neither .autoloadignore nor --exclude matched
+        $realExcludeBase = realpath( $path );
+        $excludeBase = $realExcludeBase !== false ? preg_quote( $realExcludeBase, '@' ) : $sanitisedBasePath;
+
         $extraExcludeDirs = array();
         if ( $excludeDirs !== false and is_array( $excludeDirs ) )
         {
             foreach ( $excludeDirs as $dir )
             {
-                $extraExcludeDirs[] = "@^{$sanitisedBasePath}{$dirSep}{$dir}@";
+                $extraExcludeDirs[] = "@^{$excludeBase}{$dirSep}{$dir}@";
             }
         }
 
