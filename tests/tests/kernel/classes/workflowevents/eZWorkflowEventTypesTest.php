@@ -340,6 +340,29 @@ class eZWorkflowEventTypesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'K1OneGateway', $type->getGateways( array( 'k1one' ) )[0]['class_name'], 'the first registration is kept' );
     }
 
+    public function testPaymentGatewayTypesThatAreNotRegisteredAreLeftOut()
+    {
+        $type = eZWorkflowType::createType( 'event_ezpaymentgateway' );
+        eZPaymentGatewayType::registerGateway( 'k1one', 'K1OneGateway', 'One' );
+        $this->assertSame( array( 'k1one' ), array_column( $type->getGateways( array( 'k1gone', 'k1one' ) ), 'value' ) );
+        // an event with no gateways chosen stores the empty string
+        $event = $this->event( 'event_ezpaymentgateway', array( 'data_text1' => '' ) );
+        $this->assertSame( array(), $event->attribute( 'selected_gateways' ) );
+        $logger = $type->logger;
+        $log = 'var/tmp/phpunit-paymentgateway-' . getmypid() . '-' . mt_rand() . '.log';
+        $type->logger = eZPaymentLogger::CreateForAdd( $log );
+        try
+        {
+            $this->assertNull( $type->createGateway( 'k1gone' ) );
+        }
+        finally
+        {
+            $type->logger = $logger;
+            if ( file_exists( $log ) )
+                unlink( $log );
+        }
+    }
+
     public function testPaymentGatewayDecodesItsSettings()
     {
         eZWorkflowType::createType( 'event_ezpaymentgateway' );

@@ -230,7 +230,7 @@ class eZPaymentGatewayType extends eZWorkflowEventType
     function getGateways( $gatewaysTypes )
     {
         $gateways           = array();
-        $availableGateways  = $GLOBALS[ 'eZPaymentGateways' ];
+        $availableGateways  = $GLOBALS[ 'eZPaymentGateways' ] ?? null;
         if ( !is_array( $availableGateways ) ){
             return $gateways;
         }
@@ -242,6 +242,10 @@ class eZPaymentGatewayType extends eZWorkflowEventType
 
         foreach ( $gatewaysTypes as $key )
         {
+            // A type that is not registered (an extension since disabled, the empty string of an event with none
+            // chosen) is not offered.
+            if ( !isset( $availableGateways[$key] ) )
+                continue;
             $gateway = $availableGateways[$key];
 
             $gateway['Name']    = $gateway['description'];
@@ -258,7 +262,7 @@ class eZPaymentGatewayType extends eZWorkflowEventType
 
     function createGateway( $inGatewayType )
     {
-        $gateway_difinition = $GLOBALS[ 'eZPaymentGateways' ][ $inGatewayType ];
+        $gateway_difinition = $GLOBALS[ 'eZPaymentGateways' ][ $inGatewayType ] ?? null;
 
         $this->logger->writeTimedString( $gateway_difinition, "createGateway. gateway_difinition" );
 
