@@ -334,6 +334,7 @@ b48b39c83861fbbbb2847eb9cc89f197  design/admin/templates/audit/event.tpl
 001ec42ede673f1e5de54c82bcdd9d6f  design/admin/templates/children.tpl
 db53c988fab8b3d6cda341110af8871b  design/admin/templates/children_detailed.tpl
 bd4c05b6fcd842ad51e6de4acf23676f  design/admin/templates/class/classlist.tpl
+f3249d9b028eb1bfdd96dbbaeb4564f9  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin/templates/class/datatype/browse_objectrelationlist_placement.tpl
 14b57c7c129491dc5195d3b07f0f08f6  design/admin/templates/class/edit.tpl
@@ -937,6 +938,7 @@ e002d70967d5f151cca6861170e9584f  design/admin4/templates/ajaxuploader/upload.tp
 001ec42ede673f1e5de54c82bcdd9d6f  design/admin4/templates/children.tpl
 db53c988fab8b3d6cda341110af8871b  design/admin4/templates/children_detailed.tpl
 bd4c05b6fcd842ad51e6de4acf23676f  design/admin4/templates/class/classlist.tpl
+f3249d9b028eb1bfdd96dbbaeb4564f9  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin4/templates/class/datatype/browse_objectrelationlist_placement.tpl
 14b57c7c129491dc5195d3b07f0f08f6  design/admin4/templates/class/edit.tpl
@@ -1814,7 +1816,8 @@ bf10f75146b395c672f63bb0d24f2934  design/standard/templates/apikey/parts/page_en
 c57fa5b494c59a0ee259483f8a73eae4  design/standard/templates/apikey/parts/page_start.tpl
 e5187c6abc1b8f6494a41af7cd63228d  design/standard/templates/apikey/parts/style.tpl
 ae32ee94149a7efba6f437a7c042dfff  design/standard/templates/audit/refused.tpl
-e59e15fb9785279605e26d4a967257b2  design/standard/templates/class/classlist.tpl
+474a4adeaba16bb5a4fc78e86d104565  design/standard/templates/class/classlist.tpl
+f47de11e875ed0ad80fe4040debc490d  design/standard/templates/class/copy_confirm.tpl
 2263c302c75ba1cfc52521d6cd43fdfc  design/standard/templates/class/datatype/browse_objectrelation_placement.tpl
 eb577cd1a9dcac2c8198e25149150124  design/standard/templates/class/datatype/browse_objectrelationlist_placement.tpl
 0a7aa5c3a174fc74aa64007e7afe7e8d  design/standard/templates/class/datatype/edit/ezauthor.tpl
@@ -1892,7 +1895,7 @@ ee5346a14e08301c40c944571342057b  design/standard/templates/class/datatypes.tpl
 b386bafcd1aadf9ed1a81b35eaa9ed83  design/standard/templates/class/edit_denied.tpl
 f735dd213cb2a89e0fc2b4e3c570ce4e  design/standard/templates/class/edit_locked.tpl
 6bf04dbeed23fbe7c7a82887a29d3a70  design/standard/templates/class/groupedit.tpl
-8796f9a5deafdf9ed4069c677b7c0ad6  design/standard/templates/class/grouplist.tpl
+d039e3f81fdab5db317e251eafe926d9  design/standard/templates/class/grouplist.tpl
 9380cad935a6f3e0b3a8dba40b9e5629  design/standard/templates/class/removeclass.tpl
 43a27fda2e4b3cc4838ce76b2545142d  design/standard/templates/class/removegroup.tpl
 a7b4967a797ef5922f6de4b4237ee552  design/standard/templates/class/view.tpl
@@ -2966,7 +2969,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-8fcae878a7fe8cb969a55f8ed017b9e5  doc/changelogs/6.0/6.0.15.md
+92bc773f94bf438b6c852ccacf54cbbc  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3446,7 +3449,7 @@ ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 8901e2220940757e41162287af7ecbb4  doc/guides/bookmarks.md
-42286cd290aabfe8b6873ffffafb338c  doc/guides/class-groups.md
+4edcb415277d457d0255e68f442b6989  doc/guides/class-groups.md
 833921c92fe7cc4360fb5640748abb88  doc/guides/classic-menu-settings.md
 8f01bc44a84c119de29cd508fe41e05b  doc/guides/collected-information.md
 aac796c334e4b9e60764279755cd9dde  doc/guides/content-languages.md
@@ -5510,7 +5513,7 @@ e334734c8268b04d168b27f398f8c8eb  kernel/private/classes/views/audit/event.php
 04d670629090b592011aa79983ee721c  kernel/private/classes/views/audit/recent.php
 3e1dc7a7d24d2bf03e1e24c6ac9834ab  kernel/private/classes/views/audit/settings.php
 12d9dcb476cff1f95ac67087f03bfbd5  kernel/private/classes/views/class/classlist.php
-ffc8672410948c57510eb05e3be54cce  kernel/private/classes/views/class/copy.php
+6ea651f9e643a0d923c7b81983f5a215  kernel/private/classes/views/class/copy.php
 c7ef85af29c03f64ee77ee4965a6f577  kernel/private/classes/views/class/edit.php
 f948b6d93cc483349b279f8d64285315  kernel/private/classes/views/class/groupedit.php
 ceb7d6bf8990d8c4cbd8836c5891b31b  kernel/private/classes/views/class/grouplist.php
@@ -5603,7 +5606,7 @@ a22c0c418b4da40667bc5a0aacf3219e  kernel/private/classes/views/package/view.php
 7a6262090746f55e8f05ad7524588559  kernel/private/classes/views/role/list.php
 5cd8232da659885c707cc976c558ec8a  kernel/private/classes/views/role/policyedit.php
 f337fa754dc07e8415f8a79d6ac59c08  kernel/private/classes/views/role/view.php
-8b0b5495d2e2347cdad4fd6020d112d9  kernel/private/classes/views/rss/edit_export.php
+8154b079a9275b1203500d4c52d0e397  kernel/private/classes/views/rss/edit_export.php
 f459d40d87e48b3316f3ae0576012ba6  kernel/private/classes/views/rss/edit_import.php
 5a231d7a83ab0ce2151a6a382fb8a200  kernel/private/classes/views/rss/feed.php
 6235543e994cc6dabfb5dd5bac0a8e9e  kernel/private/classes/views/rss/list.php
@@ -7122,7 +7125,7 @@ e385d32da9929ef38d95d06364835958  tests/tests/kernel/classes/eZUserEditCancelTes
 800f311d8241aace8b5b8efd9a678d4b  tests/tests/kernel/classes/eZWorkflowProcessListPageTest.php
 84f351231c9f1560c61cc1d443ff9ea0  tests/tests/kernel/classes/eZWorkflowProcessListTest.php
 19ff7e4f706df3370f089e4895b31527  tests/tests/kernel/classes/engineindex/expPharCheckTest.php
-cdbc6b5b2dd8b36cdbf9b1ae53e22d9e  tests/tests/kernel/classes/expAdminListsRedesignTest.php
+d5d338c22e6d93889bfb8f6e8f13f061  tests/tests/kernel/classes/expAdminListsRedesignTest.php
 4d598dae7c7b0975d1f25362cbd5f73a  tests/tests/kernel/classes/expAdminPaginationTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
