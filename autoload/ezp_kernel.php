@@ -983,6 +983,7 @@ return array(
       'expBenchmarkHttp'                                             => 'kernel/classes/expbenchmarkhttp.php',
       'expBenchmarkKernel'                                           => 'kernel/classes/expbenchmarkkernel.php',
       'expBenchmarkMicro'                                            => 'kernel/classes/expbenchmarkmicro.php',
+      'expBookmarkPage'                                              => 'kernel/classes/expbookmarkpage.php',
       'expCacheManager'                                              => 'kernel/classes/expcachemanager.php',
       'expCacheWarm'                                                 => 'kernel/classes/expcachewarm.php',
       'expCleanupRSS'                                                => 'kernel/classes/expcleanuprss.php',
