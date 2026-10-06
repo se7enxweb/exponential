@@ -1524,13 +1524,21 @@ class eZSearchEngine implements ezpSearchEngine
     */
     function normalizeText( $text, $isMetaData = false )
     {
-        $text = self::removeDuplicatedSpaces(
-            trim(
-                self::removeAllQuotes(
-                    eZCharTransform::instance()->transformByGroup( $text, 'search' )
-                )
-            )
-        );
+        $text = eZCharTransform::instance()->transformByGroup( $text, 'search' );
+        if ( $isMetaData )
+        {
+            $text = self::removeAllQuotes( $text );
+        }
+        else
+        {
+            // A phrase in double quotes is what getPhrases() looks for in a search:
+            // removing every quote here (as for indexed text) left no phrase to
+            // find, and "b a" found every object with both words in any order.
+            // Typographic double quotes count as straight ones, other quotes go.
+            $text = preg_replace( "/[\x{201c}-\x{201f}]/u", '"', $text );
+            $text = preg_replace( "/([\x{2018}-\x{201b}]|')/u", ' ', $text );
+        }
+        $text = self::removeDuplicatedSpaces( trim( $text ) );
 
         // Remove quotes and asterix when not handling search text by end-user
         if ( $isMetaData )
