@@ -2961,7 +2961,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-ec651de6d1a33048fb417c8bcd0124c7  doc/changelogs/6.0/6.0.15.md
+32ff94d2324ee18a821e3c78fd6e9bb1  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3385,6 +3385,7 @@ cfe53a9b5d897b7ffb5da2b09a770a87  doc/features/6.0/notifications.md
 6c53b0ca08b13ccb2808dcf421203dfc  doc/features/6.0/package-installer-batching.md
 b47a4321fa9313d0a7cc23d90a4ce51c  doc/features/6.0/package-licenses-and-versions.md
 95a369fb91a5cec3dd5235c86b8aa8c4  doc/features/6.0/pdf-export.md
+b418a9d7f20636a3767537556eac0a9a  doc/features/6.0/permission-checks-for-many-assignments.md
 cf2e7d813fabc03f01844c24a2a5448d  doc/features/6.0/platform-admin-ui-fork.md
 455df6432f547d19bc798dc5a97c9f27  doc/features/6.0/platform-dxp-skeleton.md
 07c5ae5a21bc7019d7836c4fdd7ac202  doc/features/6.0/platform-layouts-core-fork.md
@@ -4904,14 +4905,14 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 58369fa65f68c37ae7cfa64ddc06acaa  kernel/classes/ezcontentfunctions.php
 e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
-f649a4797a9323ffc27d13453af43920  kernel/classes/ezcontentobject.php
+35ff46e82550d9744404c69b7f9c2f9f  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
 b6cb39e28b248e080dc6f37c5c9ca9b9  kernel/classes/ezcontentobjectoperations.php
 06d8358599723d258d5c8246b2333ff1  kernel/classes/ezcontentobjecttranslation.php
 a165301c646c2971d91fc8c0404bc1b4  kernel/classes/ezcontentobjecttrashnode.php
-41fc84727b813a6ddcb57b4c84dcc24e  kernel/classes/ezcontentobjecttreenode.php
+b466de72202292f3986c4c92d35ebcaf  kernel/classes/ezcontentobjecttreenode.php
 8a81e1ff5086cf54d2af9b09489e199c  kernel/classes/ezcontentobjecttreenodeoperations.php
 2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
 9ba8dcdd4e7e64f8ee2755fbd4ca7fee  kernel/classes/ezcontentupload.php
@@ -6345,7 +6346,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-f58f8afe9edc4dbf8d26ae270cda0870  settings/site.ini
+7ac05947700e782d9e2a1f558438bf34  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -6839,8 +6840,8 @@ bbf7725461035c86849d38862a196496  support/ezlupdate-qt4.5/shared/translatortools
 170293340b33ba77e4af142122bbe16a  support/ezlupdate-qt4.5/shared/ui.cpp
 9c207840404b174293f1845568e88b5b  support/ezlupdate-qt4.5/shared/xliff.cpp
 19153bd5a6ddfda719b168850835c20c  sw.js
-036c73d2f6f1eba67ead2d00390aa531  templates/classcreatelist.ctpl
-100b0d65f9bfd7230c8bcf94db8cb4fa  templates/classlistfrompolicy.ctpl
+3b577277c1ae85e409e5d1237fcb3443  templates/classcreatelist.ctpl
+5b4b301a1e393f6412807579526ffd9e  templates/classlistfrompolicy.ctpl
 25e70e1788eace5f8699ebb1e3e3fb1d  tests/benchmark/baseline.json
 76e8c2aac7fc67c5b82a93007420ada0  tests/bin/bootsmoke.php
 a08f3fc912ea0e876de1c21aabc43b5f  tests/bin/ezp_lint_patched.php
@@ -7242,6 +7243,8 @@ eacca614b86b64086f3813c700dc4fd8  tests/tests/kernel/classes/packages/eZPackageR
 42e0e22ad6571e63b3af124140cf8975  tests/tests/kernel/classes/permissions/eZContentAccessForAnotherUserTest.php
 20dcf9ccc7dee40f0bae19edaade3a95  tests/tests/kernel/classes/permissions/eZContentAccessForUserLiveTest.php
 a8422625bada666061cfc28db6f7ad0d  tests/tests/kernel/classes/permissions/eZContentNodePathConditionTest.php
+5a9a193d9c49de6866ae9c58ffc2872e  tests/tests/kernel/classes/permissions/eZContentPermissionSQLOptimizationLiveTest.php
+34da6516e08df5a9e6c1a20ba236e763  tests/tests/kernel/classes/permissions/eZContentPermissionSQLOptimizationTest.php
 653ab0cf04b703e90bd63800a1140092  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
 8c7cbac83c31166ea44ef268800334c2  tests/tests/kernel/classes/permissions/eZPackagePolicyTest.php
 a18d90b5610abb3def710ebc7c9f49ba  tests/tests/kernel/classes/permissions/eZPolicyLimitationLabelsAndValuesTest.php
