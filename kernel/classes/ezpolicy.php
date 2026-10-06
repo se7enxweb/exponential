@@ -299,6 +299,12 @@ class eZPolicy extends eZPersistentObject
         foreach( array_keys( $limitations ) as $limitKey )
         {
             $limitArray = array_merge_recursive( $limitArray, $limitations[$limitKey]->limitArray() );
+            if ( $limitations[$limitKey]->ReadFailed )
+            {
+                // The values of a limitation could not be read: the policy is left out rather than granted with
+                // fewer (or no) values
+                return array();
+            }
         }
 
         $policyName = 'p_' . $this->attribute( 'id' ) . ( isset($this->UserRoleID) ? ( '_' . $this->UserRoleID ) : '' );
@@ -390,6 +396,15 @@ class eZPolicy extends eZPersistentObject
                 $limitations = eZPersistentObject::fetchObjectList( eZPolicyLimitation::definition(),
                                                                      null, array( 'policy_id' => $this->attribute( 'id') ), null, null,
                                                                      true );
+                if ( !is_array( $limitations ) )
+                {
+                    // A read that failed must not leave the policy without limitations, that is unlimited: it is
+                    // disabled and grants nothing (accessArray() gives it no part)
+                    eZRole::noteAccessReadFailure( 'limitations of policy', $this->attribute( 'id' ) );
+                    $this->Disabled = true;
+                    $this->Limitations = array();
+                    return $this->Limitations;
+                }
             }
 
             eZDebugSetting::writeDebug( 'kernel-policy-limitation', $limitations, "before policy limitations " . $this->ID );

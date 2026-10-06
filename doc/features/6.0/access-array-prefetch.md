@@ -73,6 +73,23 @@ whose persistent layer has no IN () condition, the array is built role by role.
 | SQLite, MySQL/MariaDB, PostgreSQL, Oracle | `ezpolicy WHERE role_id IN (...) AND original_id = 0 ORDER BY id`, `ezpolicy_limitation WHERE policy_id IN (...) ORDER BY id`, `ezpolicy_limitation_value WHERE limitation_id IN (...) ORDER BY value` |
 | MongoDB | role by role, as before |
 
+## When a read fails
+
+The access array fails closed. When the database answers a read with an error, what could not be read is denied:
+
+| Read that fails | What the access array gets |
+|---|---|
+| The roles of the user (`eZRole::fetchByUser()`) | no roles |
+| The policies of a role (`policyList()`) | nothing from that role |
+| The limitations of a policy (`eZPolicy::limitationList()`) | nothing from that policy (it is marked `Disabled`); before, it was unlimited (`*`) |
+| The values of a limitation (`eZPolicyLimitation::valueList()`) | nothing from that policy (the limitation has `ReadFailed`) |
+| Loading the rows ahead | the array is built role by role, which reads, and fails closed, itself |
+
+`eZRole::accessArrayByUserID()` logs one error per build with the number of failed reads and the first of them.
+`eZUser` does not store a user cache built with a failed read (`eZRole::$accessReadFailures` counts them), so the
+denial lasts only for that request and the next one builds the array again. MongoDB reads are not covered: its
+persistent layer answers a failed read with no rows.
+
 ## Measurements
 
 Built 3 times each on a local installation (SQLite, PHP 8.4), for a user to whom 5 member roles of 20 to 22 policies
@@ -139,6 +156,9 @@ Both ways give the same array, so the user caches built by one stay valid under 
   nothing; a build inside a build gets the outer one its rows back; the IN () lists stay below Oracle's limit.
 - `eZRoleAccessArrayPrefetchLiveTest` (on an installation): both ways for every user and user group, identical with
   `===`, with a role of its own assigned for 40 subtrees and for a section; the loaded rows are dropped afterwards.
+- `eZAccessArrayFailClosedTest` (no database): a stub answers each read with an error; roles, role ids, policies,
+  limitations and values that cannot be read deny, with the rows loaded ahead and role by role, and nothing is
+  counted when every read answers.
 
 ## Related pages
 

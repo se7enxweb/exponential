@@ -410,8 +410,17 @@ class eZRole extends eZPersistentObject
         $db = eZDB::instance();
         $db->begin();
         $policies = $this->attribute( 'policies' );
-        $removePolicies = function () use ( $policies ) {
+        $roleID = (int)$this->attribute( 'id' );
+        $removePolicies = function () use ( $policies, $roleID ) {
             foreach ( $policies as $policy )
+            {
+                $policy->removeThis();
+            }
+            // policyList() has only the policies in use (original_id 0). The copies role/policyedit makes to edit a
+            // policy (original_id set) belong to the role too and were left behind without it.
+            $left = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'role_id' => $roleID ),
+                                                         null, null, true );
+            foreach ( is_array( $left ) ? $left : array() as $policy )
             {
                 $policy->removeThis();
             }
@@ -742,6 +751,11 @@ class eZRole extends eZPersistentObject
             else
             {
                 $roleArray = $db->arrayQuery( $query );
+                if ( !is_array( $roleArray ) )
+                {
+                    self::noteAccessReadFailure( 'roles of', implode( ',', array_map( 'intval', (array)$idArray ) ) );
+                    $roleArray = array();
+                }
             }
 
         $roles = array();
@@ -777,6 +791,66 @@ class eZRole extends eZPersistentObject
      * @return array Hash with complete access limitation description
      */
     static function accessArrayByUserID( $idArray, $recursive = false )
+    {
+        $failuresBefore = self::$accessReadFailures;
+        self::$accessBuildDepth++;
+        try
+        {
+            $accessArray = self::buildAccessArrayByUserID( $idArray, $recursive );
+        }
+        finally
+        {
+            self::$accessBuildDepth--;
+        }
+        $failed = self::$accessReadFailures - $failuresBefore;
+        if ( $failed > 0 )
+        {
+            // Once per build, with what failed first: the array denies what could not be read, and eZUser does not
+            // keep it in the user cache, so the next request builds it again
+            eZDebug::writeError( "$failed reads of roles, policies, limitations or values failed while the access array of "
+                                 . implode( ',', array_map( 'intval', (array)$idArray ) ) . ' was built (first: '
+                                 . self::$lastAccessReadFailure . '). What could not be read is denied; the array is not cached.',
+                                 __METHOD__ );
+        }
+        return $accessArray;
+    }
+
+    /**
+     * Reads of roles, policies, limitations and values for an access array that failed, counted since the process
+     * started. eZUser compares the count before and after building a user's cache and does not store a cache built
+     * with a failed read. A read that fails denies: a role gets no policies, a policy is left out.
+     *
+     * @var int
+     */
+    public static $accessReadFailures = 0;
+
+    /** @var string what the last failed read was ("limitations of policy 12") */
+    public static $lastAccessReadFailure = '';
+
+    /** @var int how many accessArrayByUserID() calls are running (a failure inside one is logged once, by it) */
+    protected static $accessBuildDepth = 0;
+
+    /**
+     * Counts a read for the access array that failed (the database answered with an error) and logs it, unless an
+     * access array is being built: accessArrayByUserID() then logs all of them once.
+     *
+     * @param string $what
+     * @param int|string $id
+     */
+    public static function noteAccessReadFailure( $what, $id )
+    {
+        self::$accessReadFailures++;
+        self::$lastAccessReadFailure = $what . ' ' . $id;
+        if ( self::$accessBuildDepth === 0 )
+        {
+            eZDebug::writeError( "Reading the $what $id failed; it grants nothing.", __METHOD__ );
+        }
+    }
+
+    /**
+     * The access array of accessArrayByUserID(), built.
+     */
+    protected static function buildAccessArrayByUserID( $idArray, $recursive )
     {
         $roles = eZRole::fetchByUser( $idArray, $recursive );
         $userLimitation = false;
@@ -943,6 +1017,8 @@ class eZRole extends eZPersistentObject
                                                               $sorts, null, false );
             if ( !is_array( $chunkRows ) )
             {
+                // Not a failure of the array: it is then built role by role, which reads (and fails closed) itself
+                eZDebug::writeWarning( "Loading the rows of " . $definition['name'] . " ahead failed; the access array is built role by role.", __METHOD__ );
                 return null;
             }
             foreach ( $chunkRows as $row )
@@ -1318,6 +1394,12 @@ class eZRole extends eZPersistentObject
                     null,
                     array( 'role_id' => $this->attribute( 'id' ), 'original_id' => 0 ),
                     $sorting, null, true );
+                if ( !is_array( $policies ) )
+                {
+                    // A read that failed gives the role no policies: it grants nothing
+                    self::noteAccessReadFailure( 'policies of role', $this->attribute( 'id' ) );
+                    $policies = array();
+                }
             }
 
             if ( $this->LimitIdentifier )
@@ -1357,7 +1439,13 @@ class eZRole extends eZPersistentObject
                     WHERE $groupINSQL AND
                             ezuser_role.role_id = ezrole.id ORDER BY ezrole.id";
 
-            foreach( $db->arrayQuery( $query ) as $resultSet )
+            $idRows = $db->arrayQuery( $query );
+            if ( !is_array( $idRows ) )
+            {
+                self::noteAccessReadFailure( 'role ids of', implode( ',', array_map( 'intval', (array)$idArray ) ) );
+                $idRows = array();
+            }
+            foreach( $idRows as $resultSet )
             {
                 $retArray[] = $resultSet['id'];
             }

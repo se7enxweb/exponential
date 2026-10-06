@@ -89,6 +89,9 @@ class Edit extends \Exponential\Runnable\ModuleView
             $role->removeThis();
             if ( $originalRole != null && $originalRole->attribute( 'is_new' ) == 1 )
             {
+                // A new role that was never stored: its policies go with it (remove() took only the role row and
+                // left them behind); removePolicies() records nothing for a role that is still new
+                $originalRole->removePolicies();
                 $originalRole->remove();
             }
             return $this->viewResult( null, $Module->redirectTo( self::cancelURI( $Module ) ) );
