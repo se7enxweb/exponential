@@ -12,7 +12,7 @@
  * @group kernel
  */
 
-class ezpTopologicalSortTest extends PHPUnit\Framework\TestCase
+class ezpTopologicalSortOrderTest extends PHPUnit\Framework\TestCase
 {
     private function assertBefore( array $sorted, $first, $second )
     {
