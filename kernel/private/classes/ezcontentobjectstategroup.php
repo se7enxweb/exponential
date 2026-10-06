@@ -537,6 +537,10 @@ class eZContentObjectStateGroup extends eZPersistentObject
         }
         eZPersistentObject::removeObject( eZContentObjectStateGroupLanguage::definition(), array( 'contentobject_state_group_id' => $id ) );
         eZPersistentObject::removeObject( eZContentObjectStateGroup::definition(), array( 'id' => $id ) );
+        // the group's StateGroup_<identifier> limitation goes with it, as store() adds it
+        eZExpiryHandler::instance()->setTimestamp( 'state-limitations', time() );
+        self::$limitationsCache = null;
+        eZContentObjectState::cleanDefaultsCache();
         $db->commit();
     }
 
