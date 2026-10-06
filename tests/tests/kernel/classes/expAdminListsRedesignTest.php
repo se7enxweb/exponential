@@ -12,6 +12,7 @@
  *  AL-07 - Workflow groups: a workflow in another group stays, one only in removed groups goes
  *  AL-08 - Workflow groups: the card counts workflows, triggers, waiting processes and what removing does
  *  AL-09 - Class groups: classes, objects, last change and what removing removes; the summary
+ *  AL-10 - An RSS import needs a name and an http or https source address to be stored
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -67,6 +68,15 @@ class expAdminListsRedesignTest extends PHPUnit\Framework\TestCase
                                   'imports' => 1, 'active_imports' => 1, 'inactive_imports' => 0, 'imported' => 40 ),
                            RssList::summaryOf( 3, 2, 1, 5, 40 ) );
         $this->assertSame( 0, RssList::summaryOf( -1, 4, 0, 0, -3 )['inactive_exports'] );
+    }
+
+    /** AL-10 */
+    public function testImportValidation()
+    {
+        $this->assertSame( array(), \Exponential\View\Kernel\Rss\EditImport::validate( 'News', 'https://example.com/feed.xml' ) );
+        $this->assertCount( 1, \Exponential\View\Kernel\Rss\EditImport::validate( '  ', 'https://example.com/feed.xml' ) );
+        $this->assertCount( 1, \Exponential\View\Kernel\Rss\EditImport::validate( 'News', 'file:///etc/passwd' ) );
+        $this->assertCount( 2, \Exponential\View\Kernel\Rss\EditImport::validate( null, '' ) );
     }
 
     /** AL-04 */

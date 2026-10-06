@@ -101,7 +101,32 @@ with nothing ticked says so instead of doing nothing silently.
 
 To stop a feed for a while instead, edit it and clear **Active**.
 
-## 6. Troubleshooting
+## 6. Editing an export or an import
+
+Opening a feed makes a draft of it; readers see nothing of a change until **OK**. **Cancel** throws the draft away
+and goes back to the RSS list. While someone else has the same feed open (`content.ini` DraftTimeout), the page says
+who and until when, with **Retry** and **Back to the RSS list**.
+
+The export form has three parts, each field with a line on what it is for:
+
+- **The feed**: name, description, feed format, access URL (`rss/feed/` and this; the full public address is shown
+  with **Open feed** when the export is active), Active, Site URL and the image (RSS 2.0 only).
+- **What the feed lists**: the number of items, Main node only, and one card per source with its location
+  (**Browse** opens the content browser with a note on what the location means), Subnodes, the class (**Set** loads
+  its attributes) and which attributes become the title, description, category and enclosure. **Add source** adds a
+  card; **Remove this source** removes one. Hidden for OPML, which lists other feeds instead.
+- **Apple Podcasts** or the **OPML** fields, when that format is chosen.
+
+What keeps an export from being saved (a class without the chosen attribute, an active export without an address)
+is listed at the top.
+
+The import form follows the order an import is set up: **1. The feed** (name and source URL; **Update** reads the feed
+and finds its format), **2. Where the items go** (destination and owner), **3. What each item becomes** (class and
+the mapping of feed fields to attributes) and **4. Run it** (Active). An import needs a name and an http or https
+source URL to be saved; otherwise it stays a draft and the form says why. When it has created objects, the form
+says how many and when the newest came.
+
+## 7. Troubleshooting
 
 | Problem | Look at | Fix |
 |---|---|---|
@@ -115,7 +140,7 @@ To stop a feed for a while instead, edit it and clear **Active**.
 - Module and view: `kernel/rss/module.php`, `kernel/private/classes/views/rss/list.php`
   (`ListView::exportInfo()`, `importInfo()`, `importedObjects()`, `lastGenerated()`, `summary()`,
   `removeExports()`, `removeImports()`); the pager `kernel/rss/ezrsslistpager.php`.
-- Templates: `design/admin4/templates/rss/list.tpl`, `confirmremove.tpl`, `exp_style.tpl`, `exp_list_script.tpl`
+- Templates: `design/admin4/templates/rss/list.tpl`, `confirmremove.tpl`, `edit_export.tpl`, `edit_export_opml.tpl`, `edit_import.tpl`, `edit_export_denied.tpl`, `edit_import_denied.tpl`, `browse_*.tpl`, `exp_style.tpl`, `exp_list_script.tpl`
   (the same files in `design/admin/templates/rss/`); the shared pager `design/standard/templates/rss/pagination.tpl`.
 - The cronjob part: `Processlist::scriptCronjob()` in `kernel/private/classes/views/workflow/processlist.php`.
 - Tests: `tests/tests/kernel/classes/expAdminListsRedesignTest.php` (no database).
