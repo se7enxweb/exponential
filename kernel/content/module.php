@@ -369,7 +369,8 @@ $ViewList['draft'] = array(
     'unordered_params' => array( 'offset' => 'Offset' ) );
 
 $ViewList['history'] = array(
-    'functions' => array( 'read', 'edit' ),
+    // The view decides for the object (History::canOpen()): who may edit it, or read it with an edit policy elsewhere
+    'functions' => array( 'read or edit' ),
     'default_navigation_part' => 'ezcontentnavigationpart',
     'ui_context' => 'edit',
     'script' => 'history.php',

@@ -48,6 +48,8 @@
             {/case}
             {/switch}
 
+            {include uri='design:content/history_access_messages.tpl' can_read=$can_read refused=$refused}
+
 
             {def $page_limit   = 30
      $list_count   = fetch( 'content', 'version_count', hash( 'contentobject', $object ))}
@@ -105,8 +107,8 @@
                                                 </td>
 
                                                 {* Version/view. *}
-                                                <td><a href={concat( '/content/versionview/', $object.id, '/', $version.version, '/', $initial_language.locale )|ezurl}
-                                                        title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%version_number', $version.version, '%translation', $initial_language.name ) )}">{$version.version}</a>
+                                                <td>{if $version.can_read}<a href={concat( '/content/versionview/', $object.id, '/', $version.version, '/', $initial_language.locale )|ezurl}
+                                                        title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%version_number', $version.version, '%translation', $initial_language.name ) )}">{$version.version}</a>{else}{$version.version}{/if}
                                                 </td>
 
                                                 {* Status. *}
@@ -116,9 +118,9 @@
                                                 {* Modified translation. *}
                                                 <td>
                                                     <img src="{$initial_language.locale|flag_icon}" width="18" height="12"
-                                                        alt="{$initial_language.locale}" />&nbsp;<a
+                                                        alt="{$initial_language.locale}" />&nbsp;{if $version.can_read}<a
                                                         href={concat('/content/versionview/', $object.id, '/', $version.version, '/', $initial_language.locale, '/' )|ezurl}
-                                                        title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%translation', $initial_language.name, '%version_number', $version.version ) )}">{$initial_language.name|wash}</a>
+                                                        title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%translation', $initial_language.name, '%version_number', $version.version ) )}">{$initial_language.name|wash}</a>{else}{$initial_language.name|wash}{/if}
                                                 </td>
 
                                                 {* Creator. *}
@@ -138,7 +140,11 @@
                                                         {/if}
                                                     {/foreach}
 
-                                                    {if and( $can_edit, $can_edit_lang )}
+                                                    {if and( $can_edit, $can_edit_lang, $content_versions|contains( $version.version )|not )}
+                                                        <input type="image" src={'copy-disabled.gif'|ezimage} name="_Disabled"
+                                                            value="" disabled="disabled"
+                                                            title="{'You cannot copy version #%version_number because you may not read it.'|i18n( 'design/admin/content/history',, hash( '%version_number', $version.version ) )}" />
+                                                    {elseif and( $can_edit, $can_edit_lang )}
                                                         {if eq( $version.status, 5 )}
                                                             <input type="image" src={'copy-disabled.gif'|ezimage} name="_Disabled"
                                                                 value="" disabled="disabled"
@@ -218,14 +224,14 @@
                                             </select>
                                             <select name="FromVersion">
                                                 {foreach $object.versions as $ver}
-                                                    <option {if eq( $ver.version, $selectOldVersion)}selected="selected" {/if}
-                                                        value="{$ver.version}">{$ver.version|wash}</option>
+                                                    {if $content_versions|contains( $ver.version )}<option {if eq( $ver.version, $selectOldVersion)}selected="selected" {/if}
+                                                        value="{$ver.version}">{$ver.version|wash}</option>{/if}
                                                 {/foreach}
                                             </select>
                                             <select name="ToVersion">
                                                 {foreach $object.versions as $ver}
-                                                    <option {if eq( $ver.version, $selectNewVersion)}selected="selected" {/if}
-                                                        value="{$ver.version}">{$ver.version|wash}</option>
+                                                    {if $content_versions|contains( $ver.version )}<option {if eq( $ver.version, $selectNewVersion)}selected="selected" {/if}
+                                                        value="{$ver.version}">{$ver.version|wash}</option>{/if}
                                                 {/foreach}
                                             </select>
                                             <input type="hidden" name="ObjectID" value="{$object.id}" />
@@ -295,8 +301,8 @@
                                         <tr>
 
                                             {* Version/view. *}
-                                            <td><a href={concat( '/content/versionview/', $object.id, '/', $published_item.version, '/', $initial_language.locale )|ezurl}
-                                                    title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%version_number', $published_item.version, '%translation', $initial_language.name ) )}">{$published_item.version}</a>
+                                            <td>{if $published_item.can_read}<a href={concat( '/content/versionview/', $object.id, '/', $published_item.version, '/', $initial_language.locale )|ezurl}
+                                                    title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%version_number', $published_item.version, '%translation', $initial_language.name ) )}">{$published_item.version}</a>{else}{$published_item.version}{/if}
                                             </td>
 
                                             {* Translations *}
@@ -305,8 +311,8 @@
                                                     {delimiter}<br />{/delimiter}
                                                     <img src="{$lang.language_code|flag_icon}" width="18" height="12"
                                                         alt="{$lang.language_code|wash}" />&nbsp;
-                                                    <a
-                                                        href={concat("/content/versionview/",$object.id,"/",$published_item.version,"/",$lang.language_code,"/")|ezurl}>{$lang.locale.intl_language_name|wash}</a>
+                                                    {if $published_item.can_read}<a
+                                                        href={concat("/content/versionview/",$object.id,"/",$published_item.version,"/",$lang.language_code,"/")|ezurl}>{$lang.locale.intl_language_name|wash}</a>{else}{$lang.locale.intl_language_name|wash}{/if}
                                                 {/foreach}
                                             </td>
 
@@ -340,7 +346,11 @@
                                                     {/if}
                                                 {/foreach}
 
-                                                {if and( $can_edit, $can_edit_lang )}
+                                                {if and( $can_edit, $can_edit_lang, $content_versions|contains( $published_item.version )|not )}
+                                                    <input type="image" src={'copy-disabled.gif'|ezimage} name="_Disabled"
+                                                        value="" disabled="disabled"
+                                                        title="{'You cannot copy version #%version_number because you may not read it.'|i18n( 'design/admin/content/history',, hash( '%version_number', $published_item.version ) )}" />
+                                                {elseif and( $can_edit, $can_edit_lang )}
                                                     <input type="image" src={'copy.gif'|ezimage}
                                                         name="HistoryCopyVersionButton[{$published_item.version}]" value=""
                                                         title="{'Create a copy of version #%version_number.'|i18n( 'design/admin/content/history',, hash( '%version_number', $published_item.version ) )}" />
@@ -397,16 +407,16 @@
                                             <tr class="{$seq}">
 
                                                 {* Version/view. *}
-                                                <td><a href={concat( '/content/versionview/', $object.id, '/', $draft_version.version, '/', $initial_language.locale )|ezurl}
-                                                        title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%version_number', $draft_version.version, '%translation', $initial_language.name ) )}">{$draft_version.version}</a>
+                                                <td>{if $draft_version.can_read}<a href={concat( '/content/versionview/', $object.id, '/', $draft_version.version, '/', $initial_language.locale )|ezurl}
+                                                        title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%version_number', $draft_version.version, '%translation', $initial_language.name ) )}">{$draft_version.version}</a>{else}{$draft_version.version}{/if}
                                                 </td>
 
                                                 {* Modified translation. *}
                                                 <td>
                                                     <img src="{$initial_language.locale|flag_icon}" width="18" height="12"
-                                                        alt="{$initial_language.locale}" />&nbsp;<a
+                                                        alt="{$initial_language.locale}" />&nbsp;{if $draft_version.can_read}<a
                                                         href={concat('/content/versionview/', $object.id, '/', $draft_version.version, '/', $initial_language.locale, '/' )|ezurl}
-                                                        title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%translation', $initial_language.name, '%version_number', $draft_version.version ) )}">{$initial_language.name|wash}</a>
+                                                        title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%translation', $initial_language.name, '%version_number', $draft_version.version ) )}">{$initial_language.name|wash}</a>{else}{$initial_language.name|wash}{/if}
                                                 </td>
 
                                                 {* Creator. *}
@@ -427,7 +437,11 @@
                                                         {/if}
                                                     {/foreach}
 
-                                                    {if and( $can_edit, $can_edit_lang )}
+                                                    {if and( $can_edit, $can_edit_lang, $content_versions|contains( $draft_version.version )|not )}
+                                                        <input type="image" src={'copy-disabled.gif'|ezimage} name="_Disabled"
+                                                            value="" disabled="disabled"
+                                                            title="{'You cannot copy version #%version_number because you may not read it.'|i18n( 'design/admin/content/history',, hash( '%version_number', $draft_version.version ) )}" />
+                                                    {elseif and( $can_edit, $can_edit_lang )}
                                                         <input type="hidden" name="CopyVersionLanguage[{$draft_version.version}]"
                                                             value="{$initial_language.locale}" />
                                                         <input type="image" src={'copy.gif'|ezimage}
