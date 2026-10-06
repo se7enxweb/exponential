@@ -197,8 +197,9 @@ class eZSerializedObjectNameList
 
         if ( !$this->hasNameInLocale( $alwaysAvailableLocale ) )
         {
-            $languageLocaleList = array_keys( $this->nameList() );
-            $alwaysAvailableLocale = $languageLocaleList[0];
+            // the first name; none at all: no always available language
+            $languageLocaleList = $this->languageLocaleList();
+            $alwaysAvailableLocale = $languageLocaleList[0] ?? false;
         }
 
         $this->setAlwaysAvailableLanguage( $alwaysAvailableLocale );
@@ -308,7 +309,7 @@ class eZSerializedObjectNameList
 
     function nameListCount()
     {
-        return count( $this->nameList );
+        return is_array( $this->NameList ) ? count( $this->NameList ) : 0;
     }
 
     function setNameList( $nameListArray )
@@ -545,6 +546,7 @@ class eZSerializedObjectNameList
             //                            'ger-DE' => 'skip_language' )
             // will produce different results.
             $nameList = clone $this;
+            $alwaysAvailableLocale = $this->alwaysAvailableLanguageLocale();
             $this->resetNameList();
 
             foreach ( $languageInfo['map_table'] as $fromLanguageLocale => $toLanguageLocale )
@@ -564,11 +566,16 @@ class eZSerializedObjectNameList
                 $nameList->removeName( $fromLanguageLocale );
             }
 
-            // copy names which were not transformed
-            $this->mergeNameList( $nameList );
+            // copy names which were not transformed (the names only: the always-available entry is set below)
+            $this->mergeNameList( $nameList->cleanNameList() );
 
-            // update always-available(probably original 'always-available' was skiped)
-            $this->updateAlwaysAvailable();
+            // the always available language follows its mapping; if it was skipped, the first name takes its place
+            if ( isset( $languageInfo['map_table'][$alwaysAvailableLocale] ) &&
+                 $languageInfo['map_table'][$alwaysAvailableLocale] != 'skip_language' )
+            {
+                $alwaysAvailableLocale = $languageInfo['map_table'][$alwaysAvailableLocale];
+            }
+            $this->updateAlwaysAvailable( $alwaysAvailableLocale );
         }
     }
 

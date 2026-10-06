@@ -162,4 +162,42 @@ class eZSerializedObjectNameListTest extends PHPUnit\Framework\TestCase
         $list->resetNameList();
         $this->assertTrue( $list->isEmpty() );
     }
+    public function testNameListCount()
+    {
+        $this->assertSame( 3, $this->names( array( 'eng-GB' => 'A', 'ger-DE' => 'B', 'always-available' => 'eng-GB' ) )->nameListCount() );
+        $this->assertSame( 0, $this->names( array() )->nameListCount() );
+    }
+
+    public function testNormalizeMapsAndSkipsLanguages()
+    {
+        $list = $this->names( array( 'eng-GB' => 'Article', 'ger-DE' => 'Artikel', 'nor-NO' => 'Artikkel', 'always-available' => 'ger-DE' ) );
+        $list->normalize( array( 'map_table' => array( 'ger-DE' => 'skip_language', 'eng-GB' => 'eng-US' ) ) );
+        $this->assertSame( array( 'eng-US' => 'Article', 'nor-NO' => 'Artikkel', 'always-available' => 'eng-US' ), $list->nameList() );
+    }
+
+    public function testNormalizeDoesNotDependOnTheOrderOfTheMap()
+    {
+        $names = array( 'eng-GB' => 'Article', 'ger-DE' => 'Artikel', 'always-available' => 'eng-GB' );
+        $one = $this->names( $names );
+        $one->normalize( array( 'map_table' => array( 'ger-DE' => 'skip_language', 'eng-GB' => 'ger-DE' ) ) );
+        $two = $this->names( $names );
+        $two->normalize( array( 'map_table' => array( 'eng-GB' => 'ger-DE', 'ger-DE' => 'skip_language' ) ) );
+        $this->assertSame( array( 'ger-DE' => 'Article', 'always-available' => 'ger-DE' ), $one->nameList() );
+        $this->assertSame( $one->nameList(), $two->nameList() );
+    }
+
+    public function testNormalizeWithoutAMapChangesNothing()
+    {
+        $names = array( 'eng-GB' => 'Article', 'always-available' => 'eng-GB' );
+        $list = $this->names( $names );
+        $list->normalize( array() );
+        $this->assertSame( $names, $list->nameList() );
+    }
+
+    public function testNormalizeThatSkipsEveryNameLeavesAnEmptyList()
+    {
+        $list = $this->names( array( 'eng-GB' => 'Article', 'always-available' => 'eng-GB' ) );
+        $list->normalize( array( 'map_table' => array( 'eng-GB' => 'skip_language' ) ) );
+        $this->assertSame( array(), $list->nameList() );
+    }
 }
