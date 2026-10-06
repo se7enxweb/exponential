@@ -201,17 +201,12 @@ class eZPDFExport extends eZPersistentObject
     */
     function remove( $conditions = null, $extraConditions = null )
     {
+        // The stored file goes with the export. Only a file name that is safe as part of a path is used: an empty
+        // one, or one written by an older version, never reaches the storage directory itself (expPDFExportFile).
         if ( $this->attribute( 'version' ) == eZPDFExport::VERSION_VALID &&
              $this->attribute( 'status' ) != eZPDFExport::CREATE_ONFLY )
         {
-            $sys = eZSys::instance();
-            $storage_dir = $sys->storageDirectory();
-
-            $filename = $storage_dir . '/pdf/' . $this->attribute( 'pdf_filename' );
-            if ( file_exists( $filename ) )
-            {
-                unlink( $filename );
-            }
+            expPDFExportFile::remove( (string)$this->attribute( 'pdf_filename' ) );
         }
         parent::remove( $conditions, $extraConditions);
     }
@@ -250,11 +245,14 @@ class eZPDFExport extends eZPersistentObject
         return null;
     }
 
+    /*!
+     The path of the stored file, <storage directory>/pdf/<file name>; '' when the file name is not one that is
+     safe as part of a path (see expPDFExportFile::isSafeName()).
+    */
     function filepath()
     {
-        $sys = eZSys::instance();
-        $storage_dir = $sys->storageDirectory();
-        return $storage_dir . '/pdf/' . $this->attribute( 'pdf_filename' );
+        $path = expPDFExportFile::path( (string)$this->attribute( 'pdf_filename' ) );
+        return $path === false ? '' : $path;
     }
 
     function exportClassesArray()

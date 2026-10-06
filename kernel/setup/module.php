@@ -297,7 +297,10 @@ $ViewList['systemupgrade'] = array(
     'ui_context' => 'administration',
     'default_navigation_part' => 'ezsetupnavigationpart',
     'single_post_actions' => array( 'MD5CheckButton' => 'MD5Check',
-                                    'DBCheckButton' => 'DBCheck' ),
+                                    'DBCheckButton' => 'DBCheck',
+                                    // the same checks, answered with their report as a file (csv or txt; sql)
+                                    'DownloadFileReportButton' => 'DownloadFileReport',
+                                    'DownloadSchemaReportButton' => 'DownloadSchemaReport' ),
     'params' => array( ) );
 
 

@@ -53,7 +53,7 @@ $ViewList['export'] = array(
     'script' => 'export.php',
     'ui_context' => 'edit',
     'default_navigation_part' => 'ezsetupnavigationpart',
-    'params' => array( 'PackageName' ) );
+    'params' => array( 'PackageName', 'RepositoryID' ) );
 
 $ViewList['view'] = array(
     'functions' => array( 'read' ),
@@ -71,7 +71,7 @@ $ViewList['view'] = array(
 $ViewList['viewfile'] = array(
     'functions' => array( 'read' ),
     'script' => 'viewfile.php',
-    'params' => array( 'PackageName', 'FileIndex' ) );
+    'params' => array( 'PackageName', 'FileIndex', 'RepositoryID' ) );
 
 // package/compare/<PackageName>: the package's content compared with the site's content tree and
 // classes (eZPackageComparison), read-only; its state in view parameters, (filter)/(class)/

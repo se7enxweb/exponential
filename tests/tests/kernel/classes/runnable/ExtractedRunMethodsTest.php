@@ -55,7 +55,6 @@ class ExtractedRunMethodsTest extends PHPUnit\Framework\TestCase
         'views/rss/edit_export.php' => 150,
         'commands/ezpm.php' => 300,
         'commands/updateniceurls.php' => 400,
-        'commands/preload.php' => 320,
         'commands/cache.php' => 240,
     );
 

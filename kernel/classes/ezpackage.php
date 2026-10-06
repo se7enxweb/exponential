@@ -1086,7 +1086,10 @@ class eZPackage
                 eZDir::copy( $dir, $destDir );
         }
 
-        $archiveTmpPath = $temporaryExportPath . '/archive.tmp';
+        // A file of its own for every export: ezcArchive::open() reads an existing file before truncate() empties
+        // it, so a stale archive.tmp left by an export that ended early ("the checksum of the file ... is
+        // invalid") made every later export of this user fail, and two exports at once wrote into one file.
+        $archiveTmpPath = $temporaryExportPath . '/archive-' . bin2hex( random_bytes( 6 ) ) . '.tmp';
 
         if ( $format === 'zip' )
         {
@@ -1202,7 +1205,8 @@ class eZPackage
             // Search for the files we want to extract
             foreach( $archive as $entry )
             {
-                if ( in_array( $entry->getPath(), $fileList ) )
+                // a plain file only: a package.xml that is a link would be followed when it is read
+                if ( in_array( $entry->getPath(), $fileList ) && $entry->getType() === ezcArchiveEntry::IS_FILE )
                 {
                     if ( !$archive->extractCurrent( $archivePath ) )
                     {
@@ -1242,6 +1246,22 @@ class eZPackage
                 }
 
                 unset( $package );
+
+                // An entry outside the package directory ("..", an absolute path), a link or a device would be
+                // written where it says: such an archive is refused before anything of it is extracted. So is a
+                // vendor that gives no directory name of its own ("..", "." give an empty one, which put the
+                // package at the top of the package storage, where it showed as a repository).
+                if ( !eZPackageRequestGuard::isSafeName( (string)$repositoryID ) )
+                {
+                    eZDebug::writeError( "The package $packageName names no usable repository, not imported", __METHOD__ );
+                    return false;
+                }
+                $problem = eZPackageUploadInspector::entriesProblem( $archive );
+                if ( $problem !== null )
+                {
+                    eZDebug::writeError( "The archive of package $packageName was refused ({$problem['code']}: {$problem['path']}), not imported", __METHOD__ );
+                    return false;
+                }
 
                 $fullRepositoryPath = eZPackage::repositoryPath() . '/' . $repositoryID;
                 $packagePath = $fullRepositoryPath . '/' . $packageName;
@@ -2213,12 +2233,23 @@ class eZPackage
     {
         $root = $dom->documentElement;
 
+        // A definition without a root element or a name is no package. Each element read below without a check
+        // ended the request with a fatal error ("call to a member function on null") when it was missing, which
+        // took every page that lists packages down with one broken package.xml; they now read as empty.
+        $nameNode = $root ? $root->getElementsByTagName( 'name' )->item( 0 ) : null;
+        if ( !$nameNode || trim( $nameNode->textContent ) === '' )
+        {
+            eZDebug::writeError( 'A package definition without a name was not read', __METHOD__ );
+            return false;
+        }
+
         // Read basic info
         $parameters = array();
-        $parameters['name'] = $root->getElementsByTagName( 'name' )->item( 0 )->textContent;
+        $parameters['name'] = $nameNode->textContent;
         $vendorNode = $root->getElementsByTagName( 'vendor' )->item( 0 );
         $parameters['vendor'] = is_object( $vendorNode ) ? $vendorNode->textContent : false;
-        $parameters['summary'] = $root->getElementsByTagName( 'summary' )->item( 0 )->textContent;
+        $summaryNode = $root->getElementsByTagName( 'summary' )->item( 0 );
+        $parameters['summary'] = $summaryNode ? $summaryNode->textContent : '';
         $description = $root->getElementsByTagName( 'description' );
         if ( $description->length > 0 )
         {
@@ -2260,8 +2291,10 @@ class eZPackage
         if ( $extensionNode )
             $parameters['extension'] = $extensionNode->getAttribute( 'name' );
         $ezpublishNode = $root->getElementsByTagName( 'ezpublish' )->item( 0 );
-        $parameters['ezpublish']['version'] = $ezpublishNode->getElementsByTagName( 'version' )->item( 0 )->textContent;
-        $parameters['ezpublish']['named-version'] = $ezpublishNode->getElementsByTagName( 'named-version' )->item( 0 )->textContent;
+        $ezpublishVersionNode = $ezpublishNode ? $ezpublishNode->getElementsByTagName( 'version' )->item( 0 ) : null;
+        $ezpublishNamedNode = $ezpublishNode ? $ezpublishNode->getElementsByTagName( 'named-version' )->item( 0 ) : null;
+        $parameters['ezpublish']['version'] = $ezpublishVersionNode ? $ezpublishVersionNode->textContent : '';
+        $parameters['ezpublish']['named-version'] = $ezpublishNamedNode ? $ezpublishNamedNode->textContent : '';
         $this->setParameters( $parameters );
 
         // Read maintainers
@@ -2272,7 +2305,7 @@ class eZPackage
             foreach ( $maintainerNodes as $maintainerNode )
             {
                 // the writer leaves out a maintainer's role when there is none
-                $maintainerName = $maintainerNode->getElementsByTagName( 'name' )->item( 0 )->textContent;
+                $maintainerName = $maintainerNode->getElementsByTagName( 'name' )->item( 0 )?->textContent ?? '';
                 $maintainerEmailNode = $maintainerNode->getElementsByTagName( 'email' )->item( 0 );
                 $maintainerRoleNode = $maintainerNode->getElementsByTagName( 'role' )->item( 0 );
                 $this->appendMaintainer( $maintainerName,
@@ -2283,18 +2316,28 @@ class eZPackage
 
         // Read packaging info
         $packagingNode = $root->getElementsByTagName( 'packaging' )->item( 0 );
-        $packagingTimestamp = $packagingNode->getElementsByTagName( 'timestamp' )->item( 0 )->textContent;
-        $packagingHost = $packagingNode->getElementsByTagName( 'host' )->item( 0 )->textContent;
-        $packagerNodes = $packagingNode->getElementsByTagName( 'packager' );
-        if ( $packagerNodes->length > 0 )
+        if ( $packagingNode )
         {
-            $packagingPackager = $packagerNodes->item( 0 )->textContent;
+            $packagingTimestampNode = $packagingNode->getElementsByTagName( 'timestamp' )->item( 0 );
+            $packagingHostNode = $packagingNode->getElementsByTagName( 'host' )->item( 0 );
+            $packagingTimestamp = $packagingTimestampNode ? $packagingTimestampNode->textContent : '';
+            $packagingHost = $packagingHostNode ? $packagingHostNode->textContent : '';
+            $packagerNodes = $packagingNode->getElementsByTagName( 'packager' );
+            if ( $packagerNodes->length > 0 )
+            {
+                $packagingPackager = $packagerNodes->item( 0 )->textContent;
+            }
+            else
+            {
+                $packagingPackager = false;
+            }
+            $this->setPackager( $packagingTimestamp, $packagingHost, $packagingPackager );
         }
         else
         {
-            $packagingPackager = false;
+            // not packaged: no time and no host, rather than the time and host of this request
+            $this->Parameters['packaging'] = array( 'timestamp' => false, 'host' => false, 'packager' => false );
         }
-        $this->setPackager( $packagingTimestamp, $packagingHost, $packagingPackager );
 
         // Read documents (the writer leaves the element out when there are none)
         $documentsNode = $root->getElementsByTagName( 'documents' )->item( 0 );
@@ -2426,8 +2469,8 @@ class eZPackage
         $versionRelease = false;
         if ( $versionNode )
         {
-            $versionNumber = $versionNode->getElementsByTagName( 'number' )->item( 0 )->textContent;
-            $versionRelease = $versionNode->getElementsByTagName( 'release' )->item( 0 )->textContent;
+            $versionNumber = $versionNode->getElementsByTagName( 'number' )->item( 0 )?->textContent ?? false;
+            $versionRelease = $versionNode->getElementsByTagName( 'release' )->item( 0 )?->textContent ?? false;
         }
         // the release timestamp is a <timestamp> directly under the root (the packaging one is inside <packaging>)
         $releaseTimestampNode = $xpath->query( 'timestamp', $root )->item( 0 );

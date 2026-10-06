@@ -136,6 +136,7 @@ class expAuditTaxonomy
         'system.package.install' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.package.uninstall' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.package.import' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        'system.package.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.install.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.upgrade.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),

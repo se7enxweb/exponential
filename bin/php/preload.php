@@ -3,12 +3,12 @@
 /**
  * File containing the preload.php script to preload your website cache files to speed up page loading of your website by siteaccess name parameter.
  *
- * Warms the main section pages (derived from site.ini [SiteSettings] SiteURL /
- * URLTranslationKeyword) then spiders the entire site via wget (recursive,
- * level 3) to warm all page caches.  Produces rich, colourised terminal output.
+ * Warms the section pages of the site of a siteaccess (site.ini [SiteSettings] SiteURL and
+ * URLTranslationKeyword), then follows its links, and reports the broken ones with the pages that link to
+ * them. The same run as Setup > Preload: one at a time, and listed there. Guide: doc/guides/preloading-caches.md
  *
  * Usage:
- *   ./bin/php/preload.php [--siteaccess <name>]
+ *   php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--dry-run]
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

@@ -35,7 +35,7 @@
 
 
 {if ezini_hasvariable( $ini_section, 'Links', 'menu.ini' )}
-    {def $url_list   = ezini( $ini_section, 'Links', 'menu.ini' )
+    {def $ini_menu_url_list   = ezini( $ini_section, 'Links', 'menu.ini' )
          $name_list  = ezini( $ini_section, 'LinkNames', 'menu.ini' )
          $menu_name  = ''
          $check      = array()
@@ -72,7 +72,7 @@
     {/if}
 
     {if $has_access}
-        {foreach $url_list as $link_key => $link_url}
+        {foreach $ini_menu_url_list as $link_key => $link_url}
             {if is_set( $name_list[ $link_key ] )}
                 {set $item_name = $name_list[$link_key]|d18n($i18n_section)}
             {else}
@@ -144,5 +144,5 @@
 
         {* DESIGN: Content END *}</div></div></div>
     {/if}
-    {undef $url_list $menu_name $check $has_access $items $check_view $hide_no_access}
+    {undef $ini_menu_url_list $menu_name $check $has_access $items $check_view $hide_no_access}
 {/if}

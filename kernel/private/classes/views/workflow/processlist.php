@@ -531,6 +531,21 @@ class Processlist extends \Exponential\Runnable\ModuleView
      */
     public static function workflowCronjob( array $parts, array $scheduledParts, $now )
     {
+        return self::scriptCronjob( self::CRONJOB_SCRIPT, $parts, $scheduledParts, $now );
+    }
+
+    /**
+     * Where the cronjob that runs one script is, as workflowCronjob() says it for workflow.php. The RSS list uses
+     * it for rssimport.php.
+     *
+     * @param string $scriptName the script's file name, e.g. rssimport.php
+     * @param array $parts expCronjobRunner::parts()
+     * @param array $scheduledParts expCronjobRunner::scheduledParts(): part => crontab line
+     * @param int $now
+     * @return array as workflowCronjob()
+     */
+    public static function scriptCronjob( $scriptName, array $parts, array $scheduledParts, $now )
+    {
         $found = array();
         foreach ( $parts as $part )
         {
@@ -538,7 +553,7 @@ class Processlist extends \Exponential\Runnable\ModuleView
                 continue;
             foreach ( $part['scripts'] as $script )
             {
-                if ( isset( $script['name'] ) && $script['name'] === self::CRONJOB_SCRIPT )
+                if ( isset( $script['name'] ) && $script['name'] === $scriptName )
                 {
                     $found[] = $part;
                     break;

@@ -29,14 +29,45 @@ class Info extends \Exponential\Runnable\ModuleView
         unset( $__name );
 
         $module = $Params['Module'];
-        $mode = $Params['Mode'];
+        $mode = (string)$Params['Mode'];
 
-        if ( $mode and $mode === 'php' )
+        // phpinfo(), behind the same system_info function as the page. Without the request's variables and
+        // the environment: those carry the HTTP authorization, the session cookie and whatever secrets a
+        // server puts in the environment. Velocity runs PHP's command-line SAPI, where phpinfo() is text.
+        if ( $mode === 'php' )
         {
-            phpinfo();
+            if ( PHP_SAPI === 'cli' )
+                header( 'Content-Type: text/plain; charset=utf-8' );
+            header( 'X-Robots-Tag: noindex' );
+            header( 'Cache-Control: no-store' );
+            phpinfo( INFO_GENERAL | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE );
             \eZExecution::cleanExit();
         }
 
+        // The facts, the health checks and the cards: one read-only report (expSystemReport), shared with
+        // ./console exp:system:info. Directory and database sizes are only measured on request (/sizes).
+        $report = \expSystemReport::gather( array( 'sizes' => $mode === 'sizes', 'translate' => true ) );
+
+        // The report for a support request, masked like the page: as text or JSON, to save.
+        if ( $mode === 'report' || $mode === 'json' )
+        {
+            $stamp = date( 'Ymd-His' );
+            header( 'Cache-Control: no-store' );
+            header( 'X-Content-Type-Options: nosniff' );
+            if ( $mode === 'json' )
+            {
+                header( 'Content-Type: application/json; charset=utf-8' );
+                header( 'Content-Disposition: attachment; filename="exponential-system-information-' . $stamp . '.json"' );
+                echo json_encode( $report->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+            }
+            else
+            {
+                header( 'Content-Type: text/plain; charset=utf-8' );
+                header( 'Content-Disposition: attachment; filename="exponential-system-information-' . $stamp . '.txt"' );
+                echo $report->toText();
+            }
+            \eZExecution::cleanExit();
+        }
 
         $http = \eZHTTPTool::instance();
         $ini = \eZINI::instance();
@@ -47,6 +78,11 @@ class Info extends \Exponential\Runnable\ModuleView
         // be emptied: only for a user who may clear caches there.
         $cacheAccess = \eZUser::currentUser()->hasAccessTo( 'setup', 'managecache' );
         $canFlushCaches = $cacheAccess['accessWord'] !== 'no';
+
+        $systemReport = $report->toArray();
+        $systemReport['text'] = $report->toText();
+        $systemReport['sizes'] = $mode === 'sizes';
+        $tpl->setVariable( 'system_report', $systemReport );
 
         $this->systemInfo( $info, $e, $systemInfo, $phpAcceleratorInfo );
 
@@ -140,6 +176,11 @@ class Info extends \Exponential\Runnable\ModuleView
         // var/tmp/sql_profile.on). See doc/bc/6.0/sql-query-cache.md.
         // SQL engines only; the MongoDB driver keeps its own profile.
         $this->sqlProfileInfo( $db, $canFlushCaches, $http, $when, $tpl, $m, $n );
+        // Paths as the report shows them: relative to the installation, never the server's full layout.
+        $root = rtrim( \eZSys::rootDir(), '/' );
+        foreach ( array( 'root', 'archive', 'switch_on', 'switch_off', 'stale_fix' ) as $key )
+            if ( isset( $engineInfo[$key] ) && is_string( $engineInfo[$key] ) )
+                $engineInfo[$key] = \expSystemReportMask::paths( $engineInfo[$key], $root );
         $tpl->setVariable( 'engine_info', $engineInfo );
         $tpl->setVariable( 'webserver_info', $webserverInfo );
         $tpl->setVariable( 'database_info', $db->databaseName() );
@@ -153,12 +194,9 @@ class Info extends \Exponential\Runnable\ModuleView
         // values are not immediately available in the old template engine.
         $tpl->setVariable( 'system_info', $systemInfo );
 
-        $phpINI = array();
-        foreach ( array( 'safe_mode', 'register_globals', 'file_uploads' ) as $iniName )
-        {
-            $phpINI[ $iniName ] = ini_get( $iniName ) != 0;
-        }
-        foreach ( array( 'open_basedir', 'post_max_size', 'memory_limit', 'max_execution_time' ) as $iniName )
+        // safe_mode and register_globals were removed from PHP (5.4); the keys stay, always off, for templates that read them.
+        $phpINI = array( 'safe_mode' => false, 'register_globals' => false, 'file_uploads' => (bool)ini_get( 'file_uploads' ) );
+        foreach ( array( 'open_basedir', 'post_max_size', 'memory_limit', 'max_execution_time', 'upload_max_filesize' ) as $iniName )
         {
             $value = ini_get( $iniName );
             if ( $value !== '' )
@@ -411,7 +449,7 @@ class Info extends \Exponential\Runnable\ModuleView
             'matches_repo'  => '',
             'phar_wrapper'  => in_array( 'phar', stream_get_wrappers() ) ? 'registered' : 'unregistered',
             'phar_readonly' => ini_get( 'phar.readonly' ) ? 'on' : 'off',
-            'opcache'       => 'not loaded',
+            'opcache'       => extension_loaded( 'Zend OPcache' ) ? ( ini_get( 'opcache.enable' ) ? 'enabled (figures not available)' : 'loaded but not enabled' ) : 'not loaded',
         );
 
         if ( function_exists( 'opcache_get_status' ) )
@@ -700,6 +738,26 @@ class Info extends \Exponential\Runnable\ModuleView
                 $opcache['settings']['restrict_api'] = (string)ini_get( 'opcache.restrict_api' );
             $phpCaches['opcache'] = $opcache;
         }
+        elseif ( extension_loaded( 'Zend OPcache' ) )
+        {
+            // Loaded, but opcache_get_status() is in disable_functions (Plesk sets that per domain): the cache
+            // works, only its figures cannot be read. This said "not installed".
+            $enabled = (bool)ini_get( 'opcache.enable' ) && ( PHP_SAPI !== 'cli' || (bool)ini_get( 'opcache.enable_cli' ) );
+            $phpCaches['opcache'] = array(
+                'enabled'  => $enabled,
+                'version'  => (string)phpversion( 'Zend OPcache' ),
+                'why_off'  => $enabled ? '' : 'opcache.enable is off',
+                'hidden'   => true,
+                'figures'  => array( 'statistics' => 'not available: opcache_get_status is disabled in this PHP (disable_functions)' ),
+                'bars'     => array(),
+                'settings' => array(
+                    'memory_consumption' => $megabytes( \expSystemReport::bytes( (string)ini_get( 'opcache.memory_consumption' ), 1048576 ) ),
+                    'validate_timestamps' => ini_get( 'opcache.validate_timestamps' ) ? 'on' : 'off (an edited PHP file is not noticed until a restart)',
+                    'revalidate_freq' => (int)ini_get( 'opcache.revalidate_freq' ) . ' s',
+                    'jit' => (string)ini_get( 'opcache.jit' ),
+                ),
+            );
+        }
         if ( function_exists( 'apcu_cache_info' ) )
         {
             $enabled = function_exists( 'apcu_enabled' ) && apcu_enabled();
@@ -773,7 +831,13 @@ class Info extends \Exponential\Runnable\ModuleView
                         ? (int)$_SERVER['SERVER_PORT']
                         : ( $servingEngine === 'qbix' && class_exists( 'Q_WebServer', false ) && \Q_WebServer::$port
                             ? (int)\Q_WebServer::$port : 0 );
-            $configured = in_array( $servedPort, array_filter( array( $velocity->httpPort(), $velocity->httpsPort() ) ), true );
+            // The HTTPS port as configured: httpsPort() is null when this worker cannot read the certificate
+            // (it runs as another user than the parent that opened it), which made a server exp:velocity started
+            // say it was started by hand.
+            $httpsPort = $velocity->httpsPort();
+            if ( !$httpsPort && $servingEngine === 'qbix' && \eZSys::isSSLNow() )
+                $httpsPort = (int)\eZINI::instance( 'velocity.ini' )->variable( 'ServerSettings', 'HTTPSPort' );
+            $configured = in_array( $servedPort, array_filter( array( $velocity->httpPort(), $httpsPort ) ), true );
             $status = $configured ? $velocity->status() : array();
 
             $bind = $velocity->bindHost();
@@ -868,8 +932,8 @@ class Info extends \Exponential\Runnable\ModuleView
                 'brand'      => $velocityBrand ? $velocityBrand['name'] : 'Exponential Velocity',
                 'pid'        => isset( $status['parent'] ) && $status['parent'] ? $status['parent'] : '',
                 'processes'  => isset( $status['processes'] ) ? $status['processes'] : 0,
-                'config'     => isset( $status['caddyfile'] ) ? $status['caddyfile'] : '',
-                'log'        => isset( $status['log'] ) ? $status['log'] : '',
+                'config'     => isset( $status['caddyfile'] ) ? \expSystemReportMask::path( $status['caddyfile'], \eZSys::rootDir() ) : '',
+                'log'        => isset( $status['log'] ) ? \expSystemReportMask::path( $status['log'], \eZSys::rootDir() ) : '',
                 'notes'      => method_exists( $velocity, 'ignoredSettings' ) ? $velocity->ignoredSettings() : array(),
                 'views'      => $views,
                 'others'     => $others,
@@ -1015,6 +1079,8 @@ class Info extends \Exponential\Runnable\ModuleView
             }
         }
 
+        if ( $responseCache )
+            $responseCache['dir'] = \expSystemReportMask::path( $responseCache['dir'], \eZSys::rootDir() );
         $tpl->setVariable( 'response_cache', $responseCache );
     }
 
@@ -1115,6 +1181,8 @@ class Info extends \Exponential\Runnable\ModuleView
                 );
             }
         }
+        if ( $httpCache )
+            $httpCache['dir'] = \expSystemReportMask::path( $httpCache['dir'], \eZSys::rootDir() );
         $tpl->setVariable( 'http_cache', $httpCache );
     }
 
@@ -1190,7 +1258,7 @@ class Info extends \Exponential\Runnable\ModuleView
                 $db_ms = (float)$m[7];
                 // Design B: a warm shared cache answers each statement in ~15 µs.
                 $shared = max( 0.0, $db_ms - $statements * 0.015 );
-                $rows[] = array( 'time' => $m[1], 'uri' => $m[2], 'statements' => $statements, 'distinct' => (int)$m[5],
+                $rows[] = array( 'time' => $m[1], 'uri' => \expSystemReportMask::text( $m[2] ), 'statements' => $statements, 'distinct' => (int)$m[5],
                                  'repeats' => (int)$m[6], 'db_ms' => round( $db_ms, 1 ), 'memo_ms' => round( (float)$m[8], 1 ),
                                  'shared_ms' => round( $shared, 1 ) );
                 if ( count( $rows ) >= 12 )

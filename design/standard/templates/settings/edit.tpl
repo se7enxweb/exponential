@@ -65,7 +65,7 @@
     </td>
     <td>
         {if and( is_set( $values['default'] ), ne( $values['default'], false() ))}
-	    {$values['default']}
+	    {$values['default']|wash|nl2br}
 	{else}
 	    {'No value'|i18n( 'design/admin/settings' )|wash}
 	{/if}
@@ -75,7 +75,7 @@
     <td><label><input type="radio" name="SettingPlacement" {if eq( $placement, "siteaccess" )}checked="checked"{/if} value="siteaccess">{'Siteaccess setting'|i18n('design/admin/settings')}</label></td>
     <td>
 	{if and( is_set( $values['siteaccess'] ), ne( $values['siteaccess'], false() ) )}
-	    {$values['siteaccess']}
+	    {$values['siteaccess']|wash|nl2br}
 	{else}
 	    {'No value'|i18n( 'design/admin/settings' )|wash}
 	{/if}
@@ -86,7 +86,7 @@
     <td><label><input type="radio" name="SettingPlacement" value="{$extension_name}">{$extension_name}</label></td>
     <td>
         {if ne( $extension_value, false() )}
-	    {$extension_value}
+	    {$extension_value|wash|nl2br}
 	{else}
 	    {'No value'|i18n( 'design/admin/settings' )|wash}
 	{/if}
@@ -97,7 +97,7 @@
     <td><label><input type="radio" name="SettingPlacement" value="override" {if ne( $placement, "siteaccess" )}checked="checked"{/if}>{'Override setting (global)'|i18n( 'design/admin/settings' )}</label></td>
     <td>
         {if and( is_set( $values['override'] ), ne( $values['override'], false() ) )}
-	    {$values['override']}
+	    {$values['override']|wash|nl2br}
 	{else}
 	    {'No value'|i18n( 'design/admin/settings' )|wash}
 	{/if}

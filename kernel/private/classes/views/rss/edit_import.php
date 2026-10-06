@@ -113,6 +113,24 @@ namespace Exponential\View\Kernel\Rss
 
 class EditImport extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * What keeps an import from being stored: no name, or a source address the server will not fetch
+     * (eZRSSImport::isFetchableURL(): http or https with a host).
+     *
+     * @param mixed $name
+     * @param mixed $url
+     * @return string[] the messages, empty when it may be stored
+     */
+    public static function validate( $name, $url )
+    {
+        $errors = array();
+        if ( !is_string( $name ) || trim( $name ) === '' )
+            $errors[] = \ezpI18n::tr( 'design/admin/rss/edit_import', 'Give the import a name.' );
+        if ( !\eZRSSImport::isFetchableURL( $url ) )
+            $errors[] = \ezpI18n::tr( 'design/admin/rss/edit_import', 'The source URL must be an http or https address of a feed.' );
+        return $errors;
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -188,8 +206,16 @@ class EditImport extends \Exponential\Runnable\ModuleView
         }
         else if ( $Module->isCurrentAction( 'Store' ) )
         {
-            storeRSSImport( $rssImport, $http, true );
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/rss/list' ) );
+            // An import without a name cannot be told apart in the list, and one whose address the server will
+            // not fetch never brings anything in: both stay a draft with what was typed, and the form says why.
+            $validationErrors = self::validate( $http->hasPostVariable( 'name' ) ? $http->postVariable( 'name' ) : '',
+                                                $http->hasPostVariable( 'url' ) ? $http->postVariable( 'url' ) : '' );
+            if ( !$validationErrors )
+            {
+                storeRSSImport( $rssImport, $http, true );
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/rss/list' ) );
+            }
+            storeRSSImport( $rssImport, $http );
         }
         else if ( $Module->isCurrentAction( 'Cancel' ) )
         {
@@ -248,6 +274,9 @@ class EditImport extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'rss_class_array', $classArray );
         $tpl->setVariable( 'rss_import', $rssImport );
         $tpl->setVariable( 'step', $step );
+        $tpl->setVariable( 'validation_errors', isset( $validationErrors ) ? $validationErrors : array() );
+        $imported = ListView::importedObjects( (int)$rssImport->attribute( 'id' ) );
+        $tpl->setVariable( 'rss_import_imported', $imported );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:rss/edit_import.tpl" );

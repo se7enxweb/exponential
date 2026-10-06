@@ -1,5 +1,9 @@
 # Site cache preloader: `bin/php/preload.php`
 
+> **Since 6 October 2026** the command runs the same crawler as Setup > Preload, with PHP's curl extension instead of
+> `wget` and the `curl` program, one run at a time, and records every run. What follows about `wget` describes the
+> earlier version. The current guide is [Preloading caches](../../guides/preloading-caches.md).
+
 Read this page if you clear caches on deploy and want the first visitors to get fast pages. `bin/php/preload.php`
 (also `php bin/php/console exp:preload`, new in Exponential 6.0.15) fetches your pages before any visitor does, so
 the page caches are warm, and it reports every broken link with the pages that link to it.

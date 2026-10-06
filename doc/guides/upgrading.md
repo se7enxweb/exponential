@@ -203,6 +203,7 @@ Then in the browser: the front page loads; log in to the admin; open **Setup** >
 version; publish a test item and see it on the site. In the admin, **Setup** > **Upgrade check** and
 **Check file consistency** list files of the code that differ from the release
 ([File consistency check](../features/6.0/file-consistency-check.md)). Files you changed on purpose are expected there.
+[The upgrade check](upgrade-check.md) explains each finding and the database check on the same page.
 
 Last, clear the content cache and, if you use Velocity, its response cache, after the PHP-FPM reload, so a page
 rendered by old code is not served again.

@@ -1,153 +1,275 @@
-{let item_type=ezpreference( 'admin_url_list_limit' )
-     number_of_items=min( $item_type, 3)|choose( 10, 10, 25, 50 )}
+{* The link list (url/list/<all|valid|invalid|unchecked>).
 
-<div class="context-block">
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
+   What the list is and how links are checked, an overview of every published link by state, a search over the
+   addresses, the order, then one card per link with its state, when it was checked and changed, which objects use
+   it, and its View, Edit and Open actions. Ticked links are marked valid or invalid by hand (SetValid, SetInvalid).
 
+   The same file is in design/admin and design/admin4. The figures, the usage and the search come from the view
+   (url_summary, url_usage, url_search); without them (an older view class) the cards show what the URL rows hold.
+   Everything works without javascript; the script only adds Select all and the selection count.
+   Guide: doc/guides/urls-and-aliases.md *}
+{include uri='design:url/exp_style.tpl'}
+
+{def $summary = first_set( $url_summary, false() )
+     $usage_map = first_set( $url_usage, hash() )
+     $search = first_set( $url_search, '' )
+     $search_suffix = first_set( $url_search_suffix, '' )
+     $sort = first_set( $url_sort, 'address' )
+     $page_limit = first_set( $limit, $view_parameters.limit, 10 )
+     $sort_part = cond( $sort|ne( 'address' ), concat( '/(sort)/', $sort ), '' )
+     $feedback = first_set( $url_feedback, false() )}
+
+<div class="context-block exp-urls">
+
+<div class="box-header"><div class="box-ml">
+<h1 class="context-title">
 {switch match=$view_mode}
-{case match='valid'}
-    <h1 class="context-title">{'Valid links (%url_list_count)'|i18n( 'design/admin/url/list',, hash( '%url_list_count', $url_list_count) )}</h1>
-{/case}
-
-{case match='invalid'}
-    <h1 class="context-title">{'Invalid links (%url_list_count)'|i18n( 'design/admin/url/list',, hash( '%url_list_count', $url_list_count) )}</h1>
-{/case}
-
-{case}
-    <h1 class="context-title">{'All links (%url_list_count)'|i18n( 'design/admin/url/list',, hash( '%url_list_count', $url_list_count) )}</h1>
-{/case}
+{case match='valid'}{'Valid links (%url_list_count)'|i18n( 'design/admin/url/list',, hash( '%url_list_count', $url_list_count ) )}{/case}
+{case match='invalid'}{'Invalid links (%url_list_count)'|i18n( 'design/admin/url/list',, hash( '%url_list_count', $url_list_count ) )}{/case}
+{case match='unchecked'}{'Links never checked (%url_list_count)'|i18n( 'design/admin/url/list',, hash( '%url_list_count', $url_list_count ) )}{/case}
+{case}{'All links (%url_list_count)'|i18n( 'design/admin/url/list',, hash( '%url_list_count', $url_list_count ) )}{/case}
 {/switch}
+</h1>
+</div></div>
 
-{* DESIGN: Mainline *}<div class="header-mainline"></div>
+<div class="box-bc"><div class="box-ml"><div class="box-content">
 
-{* DESIGN: Header END *}</div></div>
+<p class="exp-intro">{'Every address that published content links to, from a URL field or a link in rich text, is registered here once. The link check (the cronjob script linkcheck.php, in the infrequent part) tries each address and marks it valid or invalid; you can also mark links by hand. A link is changed in one place here and every object that uses it shows the new address.'|i18n( 'design/admin/url/list' )}</p>
 
-{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
+{if $feedback}
+    {if eq( $feedback.type, 'set_valid' )}
+<div class="exp-feedback is-ok" role="status">{'%count links were marked valid. The next link check tests them again.'|i18n( 'design/admin/url/list',, hash( '%count', $feedback.count ) )}</div>
+    {elseif eq( $feedback.type, 'set_invalid' )}
+<div class="exp-feedback is-ok" role="status">{'%count links were marked invalid. The next link check tests them again.'|i18n( 'design/admin/url/list',, hash( '%count', $feedback.count ) )}</div>
+    {else}
+<div class="exp-feedback is-warn" role="alert">{'No link was selected. Tick the links to mark first.'|i18n( 'design/admin/url/list' )}</div>
+    {/if}
+{/if}
 
-{* Items per page and view mode selector. *}
-<div class="context-toolbar">
-<div class="button-left">
-    <p class="table-preferences">
-    {switch match=$number_of_items}
-    {case match=25}
-        <a href={'/user/preferences/set/admin_url_list_limit/1'|ezurl}>10</a>
-        <span class="current">25</span>
-        <a href={'/user/preferences/set/admin_url_list_limit/3'|ezurl}>50</a>
+{if $summary}
+<section aria-labelledby="url-overview-title">
+<h2 class="exp-sr" id="url-overview-title">{'Overview'|i18n( 'design/admin/url/list' )}</h2>
+<ul class="exp-figures">
+    <li class="exp-figure{if eq( $view_mode, 'all' )} is-current{/if}"><a href={concat( '/url/list/all', $sort_part )|ezurl}><strong>{$summary.all}</strong> <span>{'Links in published content'|i18n( 'design/admin/url/list' )}</span></a></li>
+    <li class="exp-figure{if eq( $view_mode, 'valid' )} is-current{/if}"><a href={concat( '/url/list/valid', $sort_part )|ezurl}><strong>{$summary.valid}</strong> <span>{'Valid'|i18n( 'design/admin/url/list' )}</span></a></li>
+    <li class="exp-figure{if $summary.invalid|gt( 0 )} is-attention{/if}{if eq( $view_mode, 'invalid' )} is-current{/if}"><a href={concat( '/url/list/invalid', $sort_part )|ezurl}><strong>{$summary.invalid}</strong> <span>{'Invalid'|i18n( 'design/admin/url/list' )}</span></a></li>
+    <li class="exp-figure{if eq( $view_mode, 'unchecked' )} is-current{/if}"><a href={concat( '/url/list/unchecked', $sort_part )|ezurl}><strong>{$summary.unchecked}</strong> <span>{'Never checked'|i18n( 'design/admin/url/list' )}</span></a></li>
+    <li class="exp-figure"><strong>{if $summary.last_check|gt( 0 )}{$summary.last_check|l10n( shortdate )}{else}&ndash;{/if}</strong> <span>{if $summary.last_check|gt( 0 )}{'Last link check, %time'|i18n( 'design/admin/url/list',, hash( '%time', $summary.last_check|l10n( shorttime ) ) )}{else}{'The link check has not run yet'|i18n( 'design/admin/url/list' )}{/if}</span></li>
+</ul>
+</section>
+{/if}
 
-        {/case}
+<section aria-labelledby="url-find-title">
+<h2 class="exp-sr" id="url-find-title">{'Find links'|i18n( 'design/admin/url/list' )}</h2>
+<form class="exp-toolbar" method="get" action={concat( '/url/list/', $view_mode, $sort_part )|ezurl} role="search">
+    <div class="exp-field exp-field-wide">
+        <label for="url-search">{'Find a link'|i18n( 'design/admin/url/list' )}</label>
+        <div class="exp-searchrow">
+            <input type="search" id="url-search" name="q" value="{$search|wash}" autocomplete="off" spellcheck="false" maxlength="200" aria-describedby="url-search-help" />
+            <button type="submit" class="exp-btn exp-btn-primary">{'Search'|i18n( 'design/admin/url/list' )}</button>
+            {if $search|ne( '' )}<a class="exp-btn" href={concat( '/url/list/', $view_mode, $sort_part )|ezurl}>{'Clear search'|i18n( 'design/admin/url/list' )}</a>{/if}
+        </div>
+        <span class="exp-help" id="url-search-help">{'Any part of the address, such as a domain or a path. Upper and lower case are the same.'|i18n( 'design/admin/url/list' )}</span>
+    </div>
+    <div class="exp-field">
+        <span class="exp-field-label" id="url-show-label"><strong>{'Show'|i18n( 'design/admin/url/list' )}</strong></span>
+        <ul class="exp-tabs" aria-labelledby="url-show-label">
+        {foreach array( hash( 'mode', 'all', 'text', 'All'|i18n( 'design/admin/url/list' ) ),
+                        hash( 'mode', 'valid', 'text', 'Valid'|i18n( 'design/admin/url/list' ) ),
+                        hash( 'mode', 'invalid', 'text', 'Invalid'|i18n( 'design/admin/url/list' ) ),
+                        hash( 'mode', 'unchecked', 'text', 'Never checked'|i18n( 'design/admin/url/list' ) ) ) as $tab}
+            <li>{if eq( $tab.mode, $view_mode )}<span class="current" aria-current="page">{$tab.text|wash}</span>{else}<a href={concat( '/url/list/', $tab.mode, $sort_part, $search_suffix )|ezurl}>{$tab.text|wash}</a>{/if}</li>
+        {/foreach}
+        </ul>
+    </div>
+    <div class="exp-field">
+        <span class="exp-field-label" id="url-sort-label"><strong>{'Order'|i18n( 'design/admin/url/list' )}</strong></span>
+        <ul class="exp-tabs" aria-labelledby="url-sort-label">
+        {foreach array( hash( 'sort', 'address', 'text', 'Address A to Z'|i18n( 'design/admin/url/list' ) ),
+                        hash( 'sort', 'checked', 'text', 'Last checked'|i18n( 'design/admin/url/list' ) ),
+                        hash( 'sort', 'modified', 'text', 'Last modified'|i18n( 'design/admin/url/list' ) ) ) as $tab}
+            <li>{if eq( $tab.sort, $sort )}<span class="current" aria-current="true">{$tab.text|wash}</span>{else}<a href={concat( '/url/list/', $view_mode, cond( $tab.sort|ne( 'address' ), concat( '/(sort)/', $tab.sort ), '' ), $search_suffix )|ezurl}>{$tab.text|wash}</a>{/if}</li>
+        {/foreach}
+        </ul>
+    </div>
+</form>
+</section>
 
-        {case match=50}
-        <a href={'/user/preferences/set/admin_url_list_limit/1'|ezurl}>10</a>
-        <a href={'/user/preferences/set/admin_url_list_limit/2'|ezurl}>25</a>
-        <span class="current">50</span>
-        {/case}
+<form name="urllist" method="post" action={concat( '/url/list/', $view_mode, $sort_part, $search_suffix )|ezurl}>
 
-        {case}
-        <span class="current">10</span>
-        <a href={'/user/preferences/set/admin_url_list_limit/2'|ezurl}>25</a>
-        <a href={'/user/preferences/set/admin_url_list_limit/3'|ezurl}>50</a>
-        {/case}
-
-        {/switch}
-    </p>
+<section class="exp-section" aria-labelledby="url-list-title">
+<div class="exp-section-head">
+    <h2 class="exp-h2" id="url-list-title">{if $search|ne( '' )}{'Links containing “%search”'|i18n( 'design/admin/url/list',, hash( '%search', $search ) )|wash}{else}{'Links'|i18n( 'design/admin/url/list' )}{/if}</h2>
+    {if $url_list_count|gt( 0 )}
+    <span class="exp-meta">{'%from to %to of %count'|i18n( 'design/admin/url/list',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $page_limit ), $url_list_count ), '%count', $url_list_count ) )}</span>
+    <label class="exp-meta exp-js-only" hidden><input type="checkbox" id="url-select-all" /> {'Select all on this page'|i18n( 'design/admin/url/list' )}</label>
+    {/if}
 </div>
-<div class="button-right">
-<p class="table-preferences">
-{switch match=$view_mode}
-{case match='valid'}
-<a href={'/url/list/all'|ezurl} title="{'Show all URLs.'|i18n( 'design/admin/url/list' )}">{'All'|i18n( 'design/admin/url/list' )}</a>
-<span class="current">{'Valid'|i18n( 'design/admin/url/list' )}</span>
-<a href={'/url/list/invalid'|ezurl} title="{'Show only invalid URLs.'|i18n( 'design/admin/url/list' )}">{'Invalid'|i18n( 'design/admin/url/list' )}</a>
-{/case}
 
-{case match='invalid'}
-<a href={'/url/list/all'|ezurl} title="{'Show all URLs.'|i18n( 'design/admin/url/list' )}">{'All'|i18n( 'design/admin/url/list' )}</a>
-<a href={'/url/list/valid'|ezurl} title="{'Show only valid URLs.'|i18n( 'design/admin/url/list' )}">{'Valid'|i18n( 'design/admin/url/list' )}</a>
-<span class="current">{'Invalid'|i18n( 'design/admin/url/list' )}</span>
-{/case}
-
-{case}
-<span class="current">{'All'|i18n( 'design/admin/url/list' )}</span>
-<a href={'/url/list/valid'|ezurl} title="{'Show only valid URLs.'|i18n( 'design/admin/url/list' )}">{'Valid'|i18n( 'design/admin/url/list' )}</a>
-<a href={'/url/list/invalid'|ezurl} title="{'Show only invalid URLs.'|i18n( 'design/admin/url/list' )}">{'Invalid'|i18n( 'design/admin/url/list' )}</a>
-{/case}
-{/switch}
+{if $url_list|count|eq( 0 )}
+<p class="exp-empty">
+{if $search|ne( '' )}
+    {'No link matches this search. Check the spelling, search for a shorter part of the address, or show all links.'|i18n( 'design/admin/url/list' )}
+{elseif eq( $view_mode, 'invalid' )}
+    {'No link is marked invalid. Either every link works, or the link check has not found a broken one yet.'|i18n( 'design/admin/url/list' )}
+{elseif eq( $view_mode, 'unchecked' )}
+    {'Every link has been checked at least once.'|i18n( 'design/admin/url/list' )}
+{elseif eq( $view_mode, 'valid' )}
+    {'No link is marked valid yet. Run the link check, or mark links valid by hand.'|i18n( 'design/admin/url/list' )}
+{else}
+    {'No published content links to an address yet. Links appear here when content with a URL field or a link in rich text is published.'|i18n( 'design/admin/url/list' )}
+{/if}
 </p>
+{else}
+<ul class="exp-cards" id="url-list">
+{foreach $url_list as $url}
+    {def $url_id = $url.id
+         $card_id = concat( 'url-', $url_id )
+         $info = first_set( $usage_map[$url_id], false() )
+         $check = first_set( $url_checks[$url_id], hash( 'kind', '', 'openable', false() ) )
+         $kind = $check.kind}
+<li class="exp-card{if $url.is_valid|not} is-bad{/if}" id="{$card_id}">
+    <div class="exp-card-head">
+        <div class="exp-card-title">
+            <label class="exp-select" title="{'Select this link.'|i18n( 'design/admin/url/list' )}">
+                <input type="checkbox" name="URLSelection[]" value="{$url_id}" aria-label="{'Select %url'|i18n( 'design/admin/url/list',, hash( '%url', $url.url ) )|wash}" />
+            </label>
+            <h3 class="exp-card-addr" id="{$card_id}-title"><a href={concat( '/url/view/', $url_id )|ezurl} title="{'View information about URL.'|i18n( 'design/admin/url/list' )}">{$url.url|wash}</a></h3>
+            <ul class="exp-badges">
+                {if $url.is_valid}
+                <li class="exp-badge is-ok">{'Valid'|i18n( 'design/admin/url/list' )}</li>
+                {else}
+                <li class="exp-badge is-bad">{'Invalid'|i18n( 'design/admin/url/list' )}</li>
+                {/if}
+                {if $url.last_checked|eq( 0 )}
+                <li class="exp-badge is-warn">{'Never checked'|i18n( 'design/admin/url/list' )}</li>
+                {/if}
+                {if eq( $kind, 'mailto' )}
+                <li class="exp-badge is-info" title="{'For an e-mail address the link check looks up the mail server of its domain.'|i18n( 'design/admin/url/list' )}">{'E-mail'|i18n( 'design/admin/url/list' )}</li>
+                {elseif eq( $kind, 'internal' )}
+                <li class="exp-badge is-info" title="{'A path on this site: the link check looks it up as a URL alias.'|i18n( 'design/admin/url/list' )}">{'On this site'|i18n( 'design/admin/url/list' )}</li>
+                {elseif eq( $kind, 'content' )}
+                <li class="exp-badge is-info" title="{'A link to a node or object in rich text: the link check marks it valid while its target exists, is published and is visible.'|i18n( 'design/admin/url/list' )}">{'Link to content'|i18n( 'design/admin/url/list' )}</li>
+                {elseif eq( $kind, 'file' )}
+                <li class="exp-badge" title="{'A file address names a file on a computer, not a page: the link check never tests it and keeps its state.'|i18n( 'design/admin/url/list' )}">{'Not tested'|i18n( 'design/admin/url/list' )}</li>
+                {elseif eq( $kind, 'other' )}
+                <li class="exp-badge is-warn" title="{'An address of another kind: the link check looks it up as a path of this site, so it is usually marked invalid.'|i18n( 'design/admin/url/list' )}">{'Other address'|i18n( 'design/admin/url/list' )}</li>
+                {/if}
+            </ul>
+        </div>
+        <div class="exp-actions">
+            <a class="exp-btn exp-btn-small" href={concat( '/url/view/', $url_id )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/url/list' )}</a>
+            <a class="exp-btn exp-btn-small" href={concat( '/url/edit/', $url_id )|ezurl} aria-describedby="{$card_id}-title" title="{'Edit URL.'|i18n( 'design/admin/url/list' )}">{'Edit'|i18n( 'design/admin/url/list' )}</a>
+            {* only web, mail and site addresses are made links: never javascript: or data: *}
+            {if $check.openable}
+            <a class="exp-btn exp-btn-small" href="{$url.url|wash}" target="_blank" rel="noopener noreferrer" aria-describedby="{$card_id}-title" title="{'Open URL in new window.'|i18n( 'design/admin/url/list' )}">{'Open'|i18n( 'design/admin/url/list' )}</a>
+            {/if}
+        </div>
+    </div>
+    <dl class="exp-facts">
+        <div>
+            <dt>{'Checked'|i18n( 'design/admin/url/list' )}</dt>
+            <dd>{if $url.last_checked|gt( 0 )}{$url.last_checked|l10n( shortdatetime )}{else}{'Never'|i18n( 'design/admin/url/list' )}{/if}</dd>
+        </div>
+        <div>
+            <dt>{'Modified'|i18n( 'design/admin/url/list' )}</dt>
+            <dd>{if $url.modified|gt( 0 )}{$url.modified|l10n( shortdatetime )}{else}{'Unknown'|i18n( 'design/admin/url/list' )}{/if}</dd>
+        </div>
+        <div class="exp-field-wide">
+            <dt>{'Used by'|i18n( 'design/admin/url/list' )}</dt>
+            <dd>
+            {if $info}
+                {if $info.count|eq( 0 )}
+                {'No published object'|i18n( 'design/admin/url/list' )}
+                {else}
+                <ul class="exp-usage">
+                {foreach $info.objects as $object}
+                    <li>{if $object.node_id|gt( 0 )}<a href={concat( '/content/view/full/', $object.node_id )|ezurl}>{$object.name|wash}</a>{else}{$object.name|wash}{/if}</li>
+                {/foreach}
+                </ul>
+                {if $info.count|gt( $info.objects|count )} <a href={concat( '/url/view/', $url_id )|ezurl}>{'and %count more'|i18n( 'design/admin/url/list',, hash( '%count', sub( $info.count, $info.objects|count ) ) )}</a>{/if}
+                {/if}
+            {else}
+                <a href={concat( '/url/view/', $url_id )|ezurl}>{'See the objects on the link page'|i18n( 'design/admin/url/list' )}</a>
+            {/if}
+            </dd>
+        </div>
+    </dl>
+</li>
+    {undef $url_id $card_id $info $check $kind}
+{/foreach}
+</ul>
+{/if}
+
+<div class="exp-listfoot">
+    {* The sizes come from admininterface.ini [PaginationSettings]; the preference stores the position in that list. *}
+    <p class="exp-sizes">
+        <span>{'Per page'|i18n( 'design/admin/url/list' )}:</span>
+    {foreach first_set( $limit_choices, array( 10, 25, 50 ) ) as $limit_index => $limit_option}
+        {if eq( $limit_option, $page_limit )}
+        <span class="current" aria-current="true">{$limit_option}</span>
+        {else}
+        <a href={concat( '/user/preferences/set/admin_url_list_limit/', $limit_index|inc )|ezurl} title="{'Show %count items per page.'|i18n( 'design/admin/url/list',, hash( '%count', $limit_option ) )}">{$limit_option}</a>
+        {/if}
+    {/foreach}
+    </p>
+    <div class="exp-pager">
+    {include name=navigator
+             uri='design:navigator/google.tpl'
+             page_uri=concat( '/url/list/', $view_mode )
+             page_uri_suffix=$search_suffix
+             item_count=$url_list_count
+             view_parameters=$view_parameters
+             item_limit=$page_limit}
+    </div>
 </div>
-<div class="float-break"></div>
+</section>
+
+{if $url_list|count|gt( 0 )}
+<div class="exp-bottombar">
+    <div class="exp-actions">
+        <button type="submit" class="exp-btn" name="SetValid" value="1" aria-describedby="url-mark-help">{'Mark selected valid'|i18n( 'design/admin/url/list' )}</button>
+        <button type="submit" class="exp-btn exp-btn-outline-danger" name="SetInvalid" value="1" aria-describedby="url-mark-help">{'Mark selected invalid'|i18n( 'design/admin/url/list' )}</button>
+    </div>
+    <p class="exp-meta" id="url-mark-help">{'Marking changes only the state shown here and in templates that hide invalid links; nothing is removed and no content changes. The next link check tests the links again.'|i18n( 'design/admin/url/list' )} <span id="url-selected-count" aria-live="polite"></span></p>
+</div>
+{/if}
+
+</form>
+
+</div></div></div>
 </div>
 
-{section show=$url_list}
-<table class="list" cellspacing="0">
-
-<tr>
-  <th>{'Address'|i18n( 'design/admin/url/list' )}</th>
-  <th>{'Status'|i18n( 'design/admin/url/list' )}</th>
-  <th>{'Checked'|i18n( 'design/admin/url/list' )}</th>
-  <th>{'Modified'|i18n( 'design/admin/url/list' )}</th>
-  <th class="tight">&nbsp;</th>
-</tr>
-
-{section var=urls loop=$url_list sequence=array( bglight, bgdark )}
-
-<tr class="{$urls.sequence}">
-
-  {* URL & popup. *}
-  <td>{'url'|icon( 'small', 'URL'|i18n( 'design/admin/url/list' ) )}&nbsp;<a href={concat( 'url/view/', $urls.item.id)|ezurl} title="{'View information about URL.'|i18n( 'design/admin/url/list' )}">{$urls.item.url}</a>
-  (<a href="{$urls.item.url}" target="_blank" title="{'Open URL in new window.'|i18n( 'design/admin/url/list' )}">{'open'|i18n( 'design/admin/url/list' )}</a>)
-  </td>
-
-  {* Status. *}
-  <td>
-  {if $urls.is_valid}
-      {'Valid'|i18n( 'design/admin/url/list' )}
-  {else}
-      {'Invalid'|i18n( 'design/admin/url/list' )}
-  {/if}
-  </td>
-
-  {* Last checked. *}
-  <td>
-    {if $urls.item.last_checked|gt( 0 )}
-      {$urls.item.last_checked|l10n( shortdatetime )}
-    {else}
-        {'Never'|i18n( 'design/admin/url/list' )}
-    {/if}
-  </td>
-
-  {* Last modified. *}
-  <td>
-    {if $urls.item.modified|gt( 0 )}
-      {$urls.item.modified|l10n( shortdatetime )}
-    {else}
-      {'Unknown'|i18n( 'design/admin/url/list' )}
-    {/if}
-  </td>
-
-  {* Edit. *}
-  <td><a href={concat( 'url/edit/', $urls.item.id )|ezurl}><img src={'edit.gif'|ezimage} width="16" height="16" alt="{'Edit'|i18n( 'design/admin/url/list')}" title="{'Edit URL.'|i18n( 'design/admin/url/list' )}" /></a></td>
-
-</tr>
-{/section}
-</table>
-
-<div class="context-toolbar">
-{include name=navigator
-         uri='design:navigator/google.tpl'
-         page_uri=concat( '/url/list/', $view_mode )
-         item_count=$url_list_count
-         view_parameters=$view_parameters
-         item_limit=$number_of_items}
-</div>
-
-{section-else}
-<div class="block">
-<p>{'The requested list is empty.'|i18n( 'design/admin/url/list' )}</p>
-</div>
-{/section}
-
-{* DESIGN: Content END *}</div></div></div>
-
-</div>
-
-{/let}
+<script type="text/javascript">
+var expUrlListText = {ldelim}
+    selected: '{'%count selected.'|i18n( 'design/admin/url/list' )|wash( javascript )}'
+{rdelim};
+{literal}
+(function () {
+    var list = document.getElementById( 'url-list' );
+    var nodes = document.querySelectorAll( '.exp-urls .exp-js-only' ), i;
+    for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
+    if ( !list ) return;
+    var selectAll = document.getElementById( 'url-select-all' );
+    var countEl = document.getElementById( 'url-selected-count' );
+    function boxes() { return list.querySelectorAll( 'input[name="URLSelection[]"]' ); }
+    function update() {
+        var all = boxes(), n = 0, j;
+        for ( j = 0; j < all.length; j++ ) {
+            var card = all[j].closest( '.exp-card' );
+            if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
+            if ( all[j].checked ) n++;
+        }
+        if ( countEl ) countEl.textContent = n ? expUrlListText.selected.split( '%count' ).join( n ) : '';
+        if ( selectAll ) { selectAll.checked = n > 0 && n === all.length; selectAll.indeterminate = n > 0 && n < all.length; }
+    }
+    list.addEventListener( 'change', update );
+    if ( selectAll ) selectAll.addEventListener( 'change', function () {
+        var all = boxes(), j;
+        for ( j = 0; j < all.length; j++ ) all[j].checked = selectAll.checked;
+        update();
+    } );
+    update();
+})();
+{/literal}
+</script>
