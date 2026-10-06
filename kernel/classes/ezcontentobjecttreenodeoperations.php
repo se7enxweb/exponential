@@ -51,6 +51,16 @@ class eZContentObjectTreeNodeOperations
         if ( !$object )
             return false;
 
+        // A node cannot go below itself: the paths of the subtree would point
+        // into the subtree, and the nodes would be cut off from the tree
+        $newParentNode = eZContentObjectTreeNode::fetch( $newParentNodeID );
+        if ( !$newParentNode ||
+             strpos( $newParentNode->attribute( 'path_string' ), $node->attribute( 'path_string' ) ) === 0 )
+        {
+            eZDebug::writeError( "Node $nodeID cannot be moved below node $newParentNodeID", __METHOD__ );
+            return false;
+        }
+
         $objectID = $object->attribute( 'id' );
         $oldParentNode = $node->fetchParent();
         $oldParentObject = $oldParentNode->object();
