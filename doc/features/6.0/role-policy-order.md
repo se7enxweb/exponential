@@ -44,6 +44,7 @@ policies in list order, Save keeps those copies and Cancel deletes them, so the 
 
 - [Role and policy paging](../../bc/6.0/role-policy-paging.md)
 - [Role and policy template operators](role-and-policy-template-operators.md)
+- [Object states](../../guides/object-states.md): the `StateGroup_<identifier>` and `NewState` limitations, with a worked review workflow
 - [Admin list paging](admin-list-paging.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

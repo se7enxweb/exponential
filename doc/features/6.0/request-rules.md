@@ -82,6 +82,7 @@ Three rules ship, all off:
 
 - [Hardening](../../bc/6.0/hardening.md)
 - [The audit trail](audit-trail.md)
+- [Object states](../../guides/object-states.md#10-states-in-templates-fetches-and-request-rules): the states `Conditions[state]` matches
 - [Admin links follow permissions](admin-links-follow-permissions.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
 - [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)

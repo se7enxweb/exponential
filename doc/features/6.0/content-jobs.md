@@ -68,6 +68,7 @@ Jobs live under `var/<site var dir>/jobs/content/`; a cluster needs a shared var
 ## Related pages
 
 - [The trash: who and where](../../bc/6.0/trash.md)
+- [Object states](../../guides/object-states.md#72-a-whole-subtree): setting a state on a subtree, now or as a job
 - [Audit trail specification](../../specifications/6.0/audit-event-model.md)
 - [Runnable classes](../../specifications/6.0/runnable-commands-cronjobs-views.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)

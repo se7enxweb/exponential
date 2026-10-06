@@ -68,6 +68,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Workflows](workflows.md) | An approval before publishing set up with its trigger, every waiting process read in words on Setup > Workflow processes, the workflow cronjob checked, a stuck process cancelled safely | 30 minutes |
 | [Maintenance mode](maintenance-mode.md) | The site taken offline for a window with a message, an expected end and testers let through, the preview checked, the site brought back from the page and from a shell, the usual lock-outs solved | 20 minutes |
 | [Security and audit](security-and-audit.md) | The hardening checked, roles that give only what is needed, the audit trail read, debug output for your address only | 30 minutes |
+| [Object states](object-states.md) | A state group with its states, ordered and translated, content moved between states one by one and by subtree, roles that read, edit and set states by stage, a review workflow, the usual problems solved | 30 minutes |
 | [Notifications: running them and fixing problems](notifications-administrator.md) | The notification cronjob set up, the status page read, a run tried without sending mail, the usual problems solved | 30 minutes |
 | [Notifications: architecture, extending and testing](notifications-developer.md) | A custom event type and handler that mail an address, a test that keeps mail in files | 45 minutes |
 | [E-mail preferences: setting them up and running them](mail-preferences-administrator.md) | The footer and links set up, the status page read, a request to stop mail, an export and an erasure handled, the gate tested without sending | 30 minutes |
@@ -88,6 +89,7 @@ You write and manage content in the administration interface.
    - [Online editor: TinyMCE 8](../features/6.0/online-editor-tinymce8.md)
    - [The trash: who deleted it and where it was](../features/6.0/trash-who-and-where.md)
    - [Large operations as content jobs](../features/6.0/content-jobs.md)
+   - [Object states](object-states.md): setting a stage such as In review or Approved on content
    - [PDF export](../features/6.0/pdf-export.md), [Translations and languages](../features/6.0/translations-and-languages.md), [Content languages](content-languages.md) (the guide)
    - [Your e-mail preferences](../features/6.0/mail-preferences.md): which e-mail you get, one-click unsubscribe, your data
    - [Store dashboard](../features/6.0/store-dashboard.md) and [order receipts](../features/6.0/order-receipts.md) if you run a shop
@@ -108,7 +110,7 @@ You shape how the site looks and which extensions it uses.
    - [What a new installation comes with](../features/6.0/default-extension-distribution.md), [the extension list](../features/6.0/extension-list-and-downloads.md), [loading order](../features/6.0/extension-loading-order.md)
    - [Changing settings from the command line](../features/6.0/exp-ini-command.md), [multi-site INI overrides](../features/6.0/multi-site-ini-overrides.md)
    - [Request rules](../features/6.0/request-rules.md), [robots.txt](../features/6.0/robots-txt.md)
-   - [Roles and policies in order](../features/6.0/role-policy-order.md), [hidden admin tabs](../features/6.0/hidden-admin-tabs.md)
+   - [Roles and policies in order](../features/6.0/role-policy-order.md), [hidden admin tabs](../features/6.0/hidden-admin-tabs.md), [object states](object-states.md) (stages such as draft, in review and approved that roles respect)
    - One page per extension: [extension index](../features/6.0/extensions/README.md)
 
 ## Road 3: developers
