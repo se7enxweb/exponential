@@ -10,6 +10,7 @@
  *  AU-05 - The check reads the other user's roles, never the current user's, and keeps nothing on the object
  *  AU-06 - editAccess() for another user: that user's policies, its user/selfedit, the filter gets its ID
  *  AU-07 - An extension limitation handler is asked with the other user's ID
+ *  AU-08 - The report of exp:access:check names the policy and the limitation that refused, and its handler
  *
  * The current user and the other users are stand-ins with the access arrays given to them; a database handler that
  * runs nothing stands in for the real one, so a user that was not given is not found.
@@ -239,5 +240,37 @@ class eZContentAccessForAnotherUserTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 1, $object->checkAccess( 'read', false, false, false, false, self::OTHER ) );
         $this->assertSame( 0, $object->checkAccess( 'read' ) );
         $this->assertSame( array( self::OTHER, self::CURRENT ), X1AnotherUserLimitationHandler::$asked );
+    }
+
+    /** AU-08: the report of exp:access:check names the policy and the limitation that refused, and its handler */
+    public function testTheAccessReportNamesWhatRefused()
+    {
+        ezpINIHelper::setINISetting( 'site.ini', 'RoleSettings', 'LimitationHandlers', array( 'X1Region' => 'X1AnotherUserLimitationHandler' ) );
+        $this->makeCurrent( $this->standIn( self::CURRENT, array( 'read' => array( '*' => '*' ) ) ) );
+        $this->keep( array( $this->standIn( self::OTHER, array( 'read' => array( 'p_7' => array( 'Class' => array( 2 ) ),
+                                                                                   'p_8' => array( 'X1Unhandled' => array( 4 ) ) ) ) ),
+                            $this->standIn( self::THIRD, array( 'read' => array( 'p_9' => array( 'Class' => array( 16 ), 'X1Region' => array( 1 ) ) ) ) ) ) );
+        $object = $this->object();
+
+        $denied = expContentAccessReport::check( $object, self::OTHER, 'read' );
+        $this->assertFalse( $denied['allowed'] );
+        $this->assertNull( $denied['error'] );
+        $this->assertSame( self::OTHER, $denied['user_id'] );
+        $this->assertSame( array( 'p_7', 'p_8' ), array_column( $denied['refused_by'], 'policy' ) );
+        $this->assertSame( array( 'Class', 'X1Unhandled' ), array_column( $denied['refused_by'], 'limitation' ) );
+        $this->assertSame( 'X1Unhandled( 4 ), no handler evaluates it', $denied['refused_by'][1]['text'] );
+
+        // the handler of X1Region refuses everybody but OTHER
+        $third = expContentAccessReport::check( $object, self::THIRD, 'read' );
+        $this->assertFalse( $third['allowed'] );
+        $this->assertSame( 'X1Region( 1 ), evaluated by X1AnotherUserLimitationHandler', $third['refused_by'][0]['text'] );
+
+        $this->assertTrue( expContentAccessReport::check( $object, self::CURRENT, 'read' )['allowed'] );
+        $none = expContentAccessReport::check( $object, self::OTHER, 'pdf' );
+        $this->assertSame( 'no policy for content/pdf', $none['refused_by'][0]['text'] );
+
+        $this->assertStringContainsString( 'is not checked on an object', expContentAccessReport::check( $object, self::OTHER, 'create' )['error'] );
+        $this->assertStringContainsString( 'no such user', expContentAccessReport::check( $object, 990299, 'read' )['error'] );
+        $this->assertStringContainsString( 'no such object', expContentAccessReport::check( null, self::OTHER, 'read' )['error'] );
     }
 }

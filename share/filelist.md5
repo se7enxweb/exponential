@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
-af4da379813c25020d6f00f689fa3129  autoload/ezp_kernel.php
+34754fdcddaef6e1109c67e13c7335de  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -42,6 +42,7 @@ a9586e3978dfedf84e40af4d9ff7edd6  bin/mongodb/fixup_ndjson.py
 f916c8a57dd6118120e22bd349dddb1c  bin/mongodb/import_all.sh
 97b3bd6db790ba2f8193ed70104eb119  bin/mongodb/mysql2ndjson.py
 1374ed9d080d58b9372d49d958ba0ed1  bin/mongodb/validate_ndjson.sh
+04ea36d6c950a3853af68f0b8424a2b2  bin/php/accesscheck.php
 11893714c574088dd6f49b8aba0e9018  bin/php/adddefaultstates.php
 4460e42dd61f6e055992cf55cb0f1b4c  bin/php/audit.php
 19f4d817d3033c84df9cbbba89e0cfd1  bin/php/benchmark.php
@@ -5198,6 +5199,7 @@ f35bba1fe44c1f0f7b56d74bf15cdd66  kernel/private/classes/clusterfilehandlers/ezd
 b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlistener.php
 20656a179cf535afff572d16ad2e78f0  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlogger.php
 3d3a0ae30251fcd03d11507ca6aca2bb  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventnotifier.php
+7b075fff6b1e2111d3f2b9f83e59c705  kernel/private/classes/commands/accesscheck.php
 637c34664ef032d92963815921a3581e  kernel/private/classes/commands/adddefaultstates.php
 d5716ef67993d9309dc0f3c0f0d316d6  kernel/private/classes/commands/audit.php
 d53b7dccb94ddb3425c6c7a3487d3b95  kernel/private/classes/commands/benchmark.php
@@ -5319,6 +5321,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 067830bbe2e678e9370a4a9fde87bc08  kernel/private/classes/exceptions/kernel/modulenotfound.php
 3a2502512e2a0a3ccb164d51db7a3889  kernel/private/classes/exceptions/kernel/moduleviewdisabled.php
 2898970b3f0a92a99c65c02bf7b1ffab  kernel/private/classes/exceptions/kernel/moduleviewnotfound.php
+ee0e730337d375dcb2b9c8902694a82f  kernel/private/classes/expcontentaccessreport.php
 2ff49979d10dde25f4935f802ac78111  kernel/private/classes/ezautoloadgenerator.php
 7642907aab26669358d257577baedeab  kernel/private/classes/ezcontentobjectstate.php
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php
@@ -7115,7 +7118,7 @@ f1bd2950cc165249465e5bd92292d4c5  tests/tests/kernel/classes/packagecomparison/e
 9225a203a3ffcc5c62e44bc458998914  tests/tests/kernel/classes/packages/eZPackageDefinitionRoundTripTest.php
 397d8e36179bac5626cb569922c5e638  tests/tests/kernel/classes/packages/eZPackageDefinitionTest.php
 13b0a545c9564ea78efae088f8483a31  tests/tests/kernel/classes/packages/eZPackageFileBrowserTest.php
-9af2d559ad67fd03c53195915b339ae6  tests/tests/kernel/classes/permissions/eZContentAccessForAnotherUserTest.php
+42e0e22ad6571e63b3af124140cf8975  tests/tests/kernel/classes/permissions/eZContentAccessForAnotherUserTest.php
 20dcf9ccc7dee40f0bae19edaade3a95  tests/tests/kernel/classes/permissions/eZContentAccessForUserLiveTest.php
 a8422625bada666061cfc28db6f7ad0d  tests/tests/kernel/classes/permissions/eZContentNodePathConditionTest.php
 653ab0cf04b703e90bd63800a1140092  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
