@@ -169,7 +169,7 @@ public static function editAccess( $allowed, $object, $version, $userID, $langua
 | Where | What |
 |---|---|
 | `content/edit` | every edit check: a new draft, the choice of a language, the choice between drafts, a new draft in the language, the final check, and the edit check of one version (`filterEditAccess()`) |
-| `content/history` | whether the history offers editing, and the edit of a version |
+| `content/history` | whether the history opens (who may edit it may open it without reading it), whether it offers editing, the copy of a version in its language, and which versions its editors see (a rejected one too) |
 | `content/removeeditversion` | removing a draft (an object never published also allows someone who may create it there) |
 | `content/versionview` | the Edit and Publish buttons of the preview (they also need the version's creator) |
 | `content/multiedit` | each object, and a draft it reuses |
