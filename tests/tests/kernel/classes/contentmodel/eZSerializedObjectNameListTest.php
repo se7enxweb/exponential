@@ -133,8 +133,13 @@ class eZSerializedObjectNameListTest extends PHPUnit\Framework\TestCase
     {
         $list = new eZSerializedObjectNameList( self::stored( array( 'eng-GB' => 'A', 'always-available' => 'eng-GB' ) ) );
         $list->setNameByLanguageLocale( 'B', 'ger-DE' );
+        // copy() takes the default language along; given here, it is not looked up in the database
+        $language = new eZContentLanguage( array( 'id' => 2, 'locale' => 'eng-GB', 'name' => 'English' ) );
+        $list->setDefaultLanguage( $language );
         $other = new eZSerializedObjectNameList();
         $list->copy( $other );
+        $this->assertSame( $language, $other->defaultLanguage() );
+        $this->assertSame( 'eng-GB', $other->defaultLanguageLocale() );
         $this->assertSame( $list->nameList(), $other->nameList() );
         $this->assertTrue( $other->hasDirtyData() );
 
