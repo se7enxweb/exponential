@@ -4954,7 +4954,7 @@ c4b4bff7b28cecd22c0cc52d9add2ca4  kernel/classes/subitems/expsubitemstemplatecol
 d083e9c0146d1fd5f8c0620718d2aec1  kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php
 349f6fbfecba427d0224cfccad47fdf0  kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php
 5c2178f2f7cdf34fb18f23bb8fef95e3  kernel/classes/workflowtypes/event/ezmultiplexer/ezmultiplexertype.php
-8f169e33b02ae1a1950b5afeeabd0d6c  kernel/classes/workflowtypes/event/ezpaymentgateway/ezpaymentgatewaytype.php
+78d0d3e525b4269a8901c6d72d60dc94  kernel/classes/workflowtypes/event/ezpaymentgateway/ezpaymentgatewaytype.php
 b1fb309ec9947c9253cd3a0a2619cbd2  kernel/classes/workflowtypes/event/ezpaymentgateway/ezpaymentlogger.php
 b629f03aada885567e0346305912edec  kernel/classes/workflowtypes/event/ezsimpleshipping/ezsimpleshippingtype.php
 3d66baff2408941e6f8f57f821cde59e  kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildate.php
@@ -7055,7 +7055,7 @@ bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regressi
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 b6f45ce384a24cccf17ed74d9da7c988  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
-428406f42deef00aeea4a6597fbcf560  tests/tests/kernel/classes/workflowevents/eZWorkflowEventTypesTest.php
+55e159b6cdaec418391a2cfedf825f57  tests/tests/kernel/classes/workflowevents/eZWorkflowEventTypesTest.php
 00800605c5f972a1b7b4a21e99503ea6  tests/tests/kernel/classes/workflowevents/fixtures/k1workflowtesthttp.php
 f685b80d3c26e9a851940b63e056c6c5  tests/tests/kernel/classes/workflowtypes/ezapprovetype_regression.php
 b2e46951bdb7165f0a97de3990a4e4e4  tests/tests/kernel/common/eZKernelCommonOperatorsTest.php
