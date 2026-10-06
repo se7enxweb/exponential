@@ -362,8 +362,8 @@ b4b34f914818c0bd36436302269f45fc  design/admin/templates/collaboration/handlers/
 881cf558f5a24a4b3fea18fe9e942ca9  design/admin/templates/collaboration/message/view/element/ezapprove_comment.tpl
 843ee667523786c1fb95a1473abec47f  design/admin/templates/collaboration/view/summary.tpl
 a8dd06e48594df07847950b72761ab8c  design/admin/templates/content/advancedsearch.tpl
-5793e3738a05c08cc7a03454660120aa  design/admin/templates/content/bookmark.tpl
-6d72afa4d792da6ee76b1743b2f75975  design/admin/templates/content/bookmark_exp_style.tpl
+1adb3236c7c51ee0fdb0560c69b8d4e2  design/admin/templates/content/bookmark.tpl
+b591e82d5d594fe63959dccd75f74be5  design/admin/templates/content/bookmark_exp_style.tpl
 b2f87e74a3bcb06fde37ad421a389916  design/admin/templates/content/browse.tpl
 831b12a91aa1878bc9d253d5c6aacf03  design/admin/templates/content/browse_add_locations.tpl
 89b996a34bdb703ef3ea87043b4be6f2  design/admin/templates/content/browse_bookmark.tpl
@@ -977,8 +977,8 @@ b157e65a938f52e5798b57a44b352d97  design/admin4/templates/collaboration/parts/no
 dca1770fb80e999dee31eee08a149034  design/admin4/templates/collaboration/parts/style.tpl
 f51923d8b629f2505558579eda49a325  design/admin4/templates/collaboration/view/summary.tpl
 a8dd06e48594df07847950b72761ab8c  design/admin4/templates/content/advancedsearch.tpl
-5793e3738a05c08cc7a03454660120aa  design/admin4/templates/content/bookmark.tpl
-6d72afa4d792da6ee76b1743b2f75975  design/admin4/templates/content/bookmark_exp_style.tpl
+1adb3236c7c51ee0fdb0560c69b8d4e2  design/admin4/templates/content/bookmark.tpl
+b591e82d5d594fe63959dccd75f74be5  design/admin4/templates/content/bookmark_exp_style.tpl
 b2f87e74a3bcb06fde37ad421a389916  design/admin4/templates/content/browse.tpl
 831b12a91aa1878bc9d253d5c6aacf03  design/admin4/templates/content/browse_add_locations.tpl
 89b996a34bdb703ef3ea87043b4be6f2  design/admin4/templates/content/browse_bookmark.tpl
@@ -2986,7 +2986,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f24cc9296e6068230b31a8c31238b667  doc/changelogs/6.0/6.0.15.md
+b592ec617b16fdf376a82e5a77950084  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3466,7 +3466,7 @@ ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.
 8f31cf1e0dbdf3f74c473a1a9be4f238  doc/guides/README.md
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
-8901e2220940757e41162287af7ecbb4  doc/guides/bookmarks.md
+86daab2738bd0ed7df614903b3e51231  doc/guides/bookmarks.md
 2bfb1da932f9d1213a7a950664c94785  doc/guides/caches.md
 4edcb415277d457d0255e68f442b6989  doc/guides/class-groups.md
 833921c92fe7cc4360fb5640748abb88  doc/guides/classic-menu-settings.md
@@ -5555,7 +5555,7 @@ a8f236b033308a59d6b884709d19d67e  kernel/private/classes/views/collaboration/gro
 19ae411e65b94854c991daf6fe02d2dd  kernel/private/classes/views/collaboration/view.php
 c7ce945ff20429be1d975aba8de6c868  kernel/private/classes/views/content/action.php
 3c21e3ff8a3501078da35d926a36b6c3  kernel/private/classes/views/content/advancedsearch.php
-b606d9f719f683a8506525bc1dea7261  kernel/private/classes/views/content/bookmark.php
+138afcb7de0cb2cbe0443fe2e4b119ab  kernel/private/classes/views/content/bookmark.php
 06f21be135d5e53e5cb5c58378ecc030  kernel/private/classes/views/content/browse.php
 667385c683f0777a6a3c8212b5ee0234  kernel/private/classes/views/content/collectedinfo.php
 e4b8872022000056c55f2cd172f70a7b  kernel/private/classes/views/content/collectinformation.php
