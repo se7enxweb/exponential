@@ -76,6 +76,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [E-mail preferences: categories, the mail gate and testing](mail-preferences-developer.md) | A category of your own with a handler for older data, mail through the gate, a test that keeps mail in files | 30 minutes |
 | [Content languages](content-languages.md) | A language added with the searchable picker, shown by a siteaccess through SiteLanguageList, content translated into it, content moved out of a wrong language, a language removed without losing anything | 30 minutes |
 | [Remote services and apps](remote-services-and-apps.md) | Services called from the shell and from Python, a personal API token, a portal front end | 20 minutes |
+| [Personal API keys](api-keys.md) | A key made on the site with only the scopes it needs, REST called with it from curl and Python, a key rotated and revoked; as an administrator: keys allowed for a role, every key seen and revoked, the audit read | 20 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
 
 ## Road 1: editors
@@ -122,7 +123,7 @@ You write extensions, templates with logic, commands and integrations.
 2. [Extensions](extensions.md), section 6 and 7: build an extension by hand or with the RAD wizards, and release it.
    Extension points (RAD): [RAD tools](../features/6.0/rad-tools.md), [the extension points](../bc/6.0/rad-extension-points.md), [the extension surface](../bc/6.0/rad-extension-surface.md), [RAD security](../bc/6.0/rad-security.md).
 3. Commands, cronjobs and module views as classes: [Commands, cronjob parts and module views](../bc/6.0/cli_cronjob_view_abstractions.md) and the [specification](../specifications/6.0/runnable-commands-cronjobs-views.md); [Console](../bc/6.0/console.md).
-4. Metadata and services: [Remote services and apps](remote-services-and-apps.md) (the guide), [Extension metadata](../specifications/6.0/extension-metadata.md), [Backend services over ezjscore](../bc/6.0/backend_ezjscore_services.md).
+4. Metadata and services: [Remote services and apps](remote-services-and-apps.md) (the guide), [Personal API keys](api-keys.md) (REST with a key), [Extension metadata](../specifications/6.0/extension-metadata.md), [Backend services over ezjscore](../bc/6.0/backend_ezjscore_services.md).
 5. Notifications: [architecture, extending and testing](notifications-developer.md), [the specification](../specifications/6.0/notifications.md), [the INI reference](../specifications/6.0/notifications-ini.md), [the commands](../specifications/6.0/notifications-cli.md).
    E-mail preferences: [categories, the mail gate and testing](mail-preferences-developer.md), [the specification](../specifications/6.0/mail-preferences.md), [the commands](../specifications/6.0/mail-preferences-cli.md), [the law checklist](../specifications/6.0/mail-preferences-compliance.md).
 6. Tests and compatibility: [Continuous integration](../specifications/6.0/continuous-integration.md), [PHP 8 support](../bc/6.0/php8.md).

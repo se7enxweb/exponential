@@ -71,7 +71,7 @@ What it is made of:
 - **Channels and files.** Five channels: `content`, `access`, `system`, `commerce` (with `data`), and `read` for
   sampled reads, which is off by default. Each channel writes one file per UTC day,
   `var/<site>/log/audit/<channel>-<YYYY-MM-DD>.jsonl`, and starts a new part past `MaxFileSize`.
-- **136 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
+- **140 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
   `content.node.remove.*`). Extensions add their own branches. See the [event reference](#8-event-reference).
 - **A hash chain per channel**, daily signed checkpoints and signed archive manifests (HMAC-SHA-256 with a key that is
   generated on first use and never leaves `settings/override`).
@@ -1869,7 +1869,7 @@ generator. Columns: Sev. = severity; Default = shipped (`always` cannot be switc
 only with `Reads=enabled`).
 
 <!-- event-reference:start (generated from expAuditTaxonomy::registry() and the settings in effect on 2026-10-03; do not edit by hand) -->
-136 names (42 content, 33 access, 40 system, 12 commerce, 9 data); shipped default: 87 on, 23 off, 23 always, 3 sampled.
+140 names (42 content, 37 access, 40 system, 12 commerce, 9 data); shipped default: 91 on, 23 off, 23 always, 3 sampled.
 
 | Event | Fires when | Records (before → after; never) | Raised in | Verb | Sev. | Default | On here | Ch. | Written |
 |---|---|---|---|---|---|---|---|---|---|
@@ -1948,6 +1948,10 @@ only with `Reads=enabled`).
 | `access.role.unassign` | an assignment is removed | limitation → – | `ezrole.php:removeUserAssignment`, `ezrole.php:removeUserAssignmentByID` | unassign | notice | on | yes | access | at once |
 | `access.policy.add` | a policy is added to a role | – → module, function, limitations | `ezrole.php:appendPolicy`, `views/role/edit.php:auditRoleStored` | add | notice | on | yes | access | at once |
 | `access.policy.remove` | a policy is removed | module, function, limitations → – | `ezpolicy.php:removeThis`, `views/role/edit.php:auditRoleStored` | remove | notice | on | yes | access | at once |
+| `access.apikey.create` | a user makes a personal API key on apikey/list ([API keys](../../guides/api-keys.md)) | – → key id, name, prefix, owner; scopes, expiry (never the secret, its hash or its salt) | `apikey/list.php` | create | notice | on | yes | access | at once |
+| `access.apikey.revoke` | a key is revoked by its owner or on oauthadmin/keys | status → status, by (owner or administrator) | `private/modules/oauthadmin/keyaction.php`, `apikey/list.php` | revoke | notice | on | yes | access | at once |
+| `access.apikey.use` | a key is used for the first time | – → first use, scopes | `private/rest/classes/auth/apikey_auth_filter.php:run` | use | info | on | yes | access | at once |
+| `access.apikey.use.failed` | a REST request with a key is refused | – → reason malformed, unknown, secret, revoked, expired, owner, transport, scope, policy, permission, rate_limited; route and scope for a scope refusal (an unknown key by the prefix it claims; never the secret) | `private/rest/classes/auth/apikey_auth_filter.php:refuse`, `private/rest/classes/auth/apikey_rest.php:authorize` | use | notice | on | yes | access | at once |
 | `system.setting.write` | an INI file is written | value in that file and value in effect → the same; for `expIniEditor` also the unified diff from `diff()` (never a value whose variable `expIniEditor::isSecret()` recognises: it is written as `[secret]`) | `audit/expaudit.php:settingWrite` | write | notice | on | yes | system | at once |
 | `system.setting.undo` | a debug bar write is undone | as `system.setting.write` | `debugbar/expdebugbarsettings.php:undo` | undo | notice | on | yes | system | buffered |
 | `system.extension.change` | ActiveExtensions or its order is written | list → list | `ezpactiveextensions.php:write` | change | notice | on | yes | system | buffered |

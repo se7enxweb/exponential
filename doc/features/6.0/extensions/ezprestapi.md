@@ -20,6 +20,9 @@ The routes are served below the REST prefix of the installation and carry a vers
 
 The create, update and delete calls are backed by [nxc_powercontent](nxc_powercontent.md). Authentication is the REST
 framework's OAuth2: obtain a token (for example with a password grant) and send it as the `oauth_token` parameter.
+A user can also make a [personal API key](../../../guides/api-keys.md) on the site and send it as
+`Authorization: Bearer expk_...`; the create, update and delete routes then need the key's `publish`, `edit` or
+`remove` scope and the owner's rights on the node (`rest.ini [ApiKeySettings] RouteScopes[]`, `RouteGuards[]`).
 
 ## Routes (version 1)
 
@@ -70,6 +73,7 @@ credentials or tokens in a script, or in shell history on shared machines.
 
 - [nxc_powercontent](nxc_powercontent.md), [ezprestapiprovider](ezprestapiprovider.md)
 - [Remote services (expservices)](../remote-services-expservices.md)
+- [Personal API keys](../../../guides/api-keys.md): REST requests with a key of the user
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Chronicle](../../../history/extensions/ezprestapi.md) and [release notes](../../../changelogs/extensions/ezprestapi.md)
 - [Change ledger](../../../history/ledger/ezprestapi.md)
