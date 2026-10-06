@@ -110,7 +110,6 @@ class eZPaymentCallbackCheckerTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $checker->createDataFromGET() );
     }
 
-
     public function testCheckDataField()
     {
         $checker = self::checker();
@@ -120,7 +119,6 @@ class eZPaymentCallbackCheckerTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $checker->checkDataField( 'status', 'Pending' ) );
         $this->assertContains( 'Value          :Completed', $checker->logger->lines );
     }
-
 
     public function testServerIpCheck()
     {
@@ -143,6 +141,9 @@ class eZPaymentCallbackCheckerTest extends PHPUnit\Framework\TestCase
             'rounded the same' => array( 9.999, '10.00', 2, true ),
             'different cent' => array( '10.00', '10.01', 2, false ),
             'precision zero' => array( '10.40', '10.20', 0, true ),
+            'not a number' => array( '10.00', 'ten', 2, false ),
+            'empty' => array( '10.00', '', 2, false ),
+            'array' => array( '10.00', array( '10.00' ), 2, false ),
         );
     }
 

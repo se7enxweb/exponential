@@ -225,6 +225,14 @@ class eZPaymentCallbackChecker
     {
         $orderAmount = $this->order->attribute( 'total_inc_vat' );
 
+        // What the payment server sent is not trusted to be a number: anything else does not match
+        if ( !is_numeric( $amount ) || !is_numeric( $orderAmount ) )
+        {
+            $amountText = is_scalar( $amount ) ? (string)$amount : gettype( $amount );
+            $this->logger->writeTimedString( "Order amount ($orderAmount) and received amount ($amountText) do not match.", 'checkAmount failed' );
+            return false;
+        }
+
         // To avoid floating errors, round the value down before checking.
         $shopINI = eZINI::instance( 'shop.ini' );
         $precisionValue = (int)$shopINI->variable( 'MathSettings', 'RoundingPrecision' );
