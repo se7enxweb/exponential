@@ -11773,6 +11773,206 @@ Note: The packages will not be uninstalled.</source>
         <source>Running %count parts, one after another.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob parts, %count scripts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scheduled in the crontab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not scheduled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last run %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count issues</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run and filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a part or script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scheduled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last run, from %file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No output yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cronjob parts are defined. Parts are the [CronjobSettings] and [CronjobPart-...] groups of cronjob.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suggested schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not read from the crontab line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only when run by hand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last run from here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shell command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy the command that runs %part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scripts (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy the command that runs %script on its own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cronjob part on this page matches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count scripts no part names, so they never run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started from this page, newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Issues are the log lines of a run that mention an error, a failure or a warning.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy the suggested entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every part is scheduled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count parts on this page shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count parts on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The command is on the clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not copy. Select the text and copy it by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every minute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every %count minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every hour at minute %minute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every %count hours at minute %minute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every day at %time</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/datatypecode</name>

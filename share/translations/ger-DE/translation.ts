@@ -15683,6 +15683,206 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Running %count parts, one after another.</source>
         <translation>%count Teile werden nacheinander ausgeführt.</translation>
     </message>
+    <message>
+        <source>Now</source>
+        <translation>Jetzt</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Cronjob parts, %count scripts</source>
+        <translation>Cronjob-Teile, %count Skripte</translation>
+    </message>
+    <message>
+        <source>Scheduled in the crontab</source>
+        <translation>In der Crontab geplant</translation>
+    </message>
+    <message>
+        <source>Not scheduled</source>
+        <translation>Nicht geplant</translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation>Brauchen Aufmerksamkeit</translation>
+    </message>
+    <message>
+        <source>Last run %time</source>
+        <translation>Zuletzt ausgeführt %time</translation>
+    </message>
+    <message>
+        <source>%count issues</source>
+        <translation>%count Probleme</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Run and filter</source>
+        <translation>Starten und filtern</translation>
+    </message>
+    <message>
+        <source>Find a part or script</source>
+        <translation>Teil oder Skript suchen</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Scheduled</source>
+        <translation>Geplant</translation>
+    </message>
+    <message>
+        <source>The last run, from %file</source>
+        <translation>Die letzte Ausführung, aus %file</translation>
+    </message>
+    <message>
+        <source>No output yet.</source>
+        <translation>Noch keine Ausgabe.</translation>
+    </message>
+    <message>
+        <source>Cronjob parts</source>
+        <translation>Cronjob-Teile</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>No cronjob parts are defined. Parts are the [CronjobSettings] and [CronjobPart-...] groups of cronjob.ini.</source>
+        <translation>Es sind keine Cronjob-Teile definiert. Teile sind die Gruppen [CronjobSettings] und [CronjobPart-...] der cronjob.ini.</translation>
+    </message>
+    <message>
+        <source>Run part</source>
+        <translation>Teil starten</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Zeitplan</translation>
+    </message>
+    <message>
+        <source>Suggested schedule</source>
+        <translation>Vorgeschlagener Zeitplan</translation>
+    </message>
+    <message>
+        <source>Not read from the crontab line</source>
+        <translation>Aus der Crontab-Zeile nicht lesbar</translation>
+    </message>
+    <message>
+        <source>Next run</source>
+        <translation>Nächste Ausführung</translation>
+    </message>
+    <message>
+        <source>Only when run by hand</source>
+        <translation>Nur bei manuellem Start</translation>
+    </message>
+    <message>
+        <source>Last run from here</source>
+        <translation>Zuletzt von hier gestartet</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Noch nicht</translation>
+    </message>
+    <message>
+        <source>Shell command</source>
+        <translation>Shell-Befehl</translation>
+    </message>
+    <message>
+        <source>Copy the command that runs %part</source>
+        <translation>Den Befehl kopieren, der %part ausführt</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Scripts (%count)</source>
+        <translation>Skripte (%count)</translation>
+    </message>
+    <message>
+        <source>Copy the command that runs %script on its own</source>
+        <translation>Den Befehl kopieren, der nur %script ausführt</translation>
+    </message>
+    <message>
+        <source>Copy command</source>
+        <translation>Befehl kopieren</translation>
+    </message>
+    <message>
+        <source>No cronjob part on this page matches.</source>
+        <translation>Kein Cronjob-Teil auf dieser Seite passt.</translation>
+    </message>
+    <message>
+        <source>%count scripts no part names, so they never run</source>
+        <translation>%count Skripte, die kein Teil nennt und die deshalb nie laufen</translation>
+    </message>
+    <message>
+        <source>Started from this page, newest first</source>
+        <translation>Von dieser Seite gestartet, neueste zuerst</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ergebnis</translation>
+    </message>
+    <message>
+        <source>Issues are the log lines of a run that mention an error, a failure or a warning.</source>
+        <translation>Probleme sind die Zeilen im Protokoll einer Ausführung, die einen Fehler, ein Scheitern oder eine Warnung nennen.</translation>
+    </message>
+    <message>
+        <source>Copy the suggested entries</source>
+        <translation>Vorgeschlagene Einträge kopieren</translation>
+    </message>
+    <message>
+        <source>Every part is scheduled.</source>
+        <translation>Jeder Teil ist geplant.</translation>
+    </message>
+    <message>
+        <source>%shown of %count parts on this page shown</source>
+        <translation>%shown von %count Teilen dieser Seite angezeigt</translation>
+    </message>
+    <message>
+        <source>%count parts on this page</source>
+        <translation>%count Teile auf dieser Seite</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiert</translation>
+    </message>
+    <message>
+        <source>The command is on the clipboard.</source>
+        <translation>Der Befehl ist in der Zwischenablage.</translation>
+    </message>
+    <message>
+        <source>Could not copy. Select the text and copy it by hand.</source>
+        <translation>Kopieren nicht möglich. Bitte den Text markieren und von Hand kopieren.</translation>
+    </message>
+    <message>
+        <source>Every minute</source>
+        <translation>Jede Minute</translation>
+    </message>
+    <message>
+        <source>Every %count minutes</source>
+        <translation>Alle %count Minuten</translation>
+    </message>
+    <message>
+        <source>Every hour at minute %minute</source>
+        <translation>Stündlich zur Minute %minute</translation>
+    </message>
+    <message>
+        <source>Every %count hours at minute %minute</source>
+        <translation>Alle %count Stunden zur Minute %minute</translation>
+    </message>
+    <message>
+        <source>Every day at %time</source>
+        <translation>Täglich um %time</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/datatypecode</name>
