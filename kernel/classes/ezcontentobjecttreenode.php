@@ -2399,6 +2399,10 @@ class eZContentObjectTreeNode extends eZPersistentObject
             {
                 $nodeParams['ClassFilterType'] = false;
             }
+            // Only the parent node is required; the filters are optional as in
+            // subTreeByNodeID(), and the result id goes into the SQL as a number
+            $nodeParams += array( 'ClassFilterArray' => false, 'AttributeFilter' => false, 'ExtendedAttributeFilter' => false );
+            $resultID = isset( $nodeParams['ResultID'] ) ? (int)$nodeParams['ResultID'] : 0;
 
             $sortingInfo             = eZContentObjectTreeNode::createSortingSQLStrings( $sortBy );
             $attributeFilter         = eZContentObjectTreeNode::createAttributeFilterSQLStrings( $nodeParams['AttributeFilter'], $sortingInfo, $language );
@@ -2478,7 +2482,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
             "ezcontentobject_tree.node_id, ezcontentobject_tree.parent_node_id, ezcontentobject_tree.path_identification_string, ezcontentobject_tree.path_string, " .
             "ezcontentobject_tree.priority, ezcontentobject_tree.remote_id, ezcontentobject_tree.sort_field, ezcontentobject_tree.sort_order, ezcontentclass.serialized_name_list as class_serialized_name_list, " .
             "ezcontentclass.identifier as class_identifier, ezcontentclass.is_container $groupBySelectText, ezcontentobject_name.name, ezcontentobject_name.real_translation " .
-            "$sortingInfo[attributeTargetSQL], $nodeParams[ResultID] AS resultid " .
+            "$sortingInfo[attributeTargetSQL], $resultID AS resultid " .
             "FROM ezcontentobject_tree " .
             "INNER JOIN ezcontentobject ON (ezcontentobject.id = ezcontentobject_tree.contentobject_id) " .
             "INNER JOIN ezcontentclass ON (ezcontentclass.id = ezcontentobject.contentclass_id) " .
