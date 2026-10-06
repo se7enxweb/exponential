@@ -65,6 +65,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Deploying](deploying.md) | The site served by Apache with PHP-FPM, by Velocity or by FrankenPHP, with HTTPS | 30 minutes |
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
 | [System information](system-information.md) | Which server answered and how it runs PHP, the health checks read and acted on, the overview cards understood, a masked report downloaded for support, the same from the command line | 15 minutes |
+| [Caches](caches.md) | Every cache read in its group with what it holds, its size and when it was last cleared, one cache, a group or all cleared with the confirmation that names what goes, Velocity's response cache and restart understood, the same from a shell | 15 minutes |
 | [Benchmarking](benchmarking.md) | Pages measured cached and rendered, Apache against Velocity, a code change and a deploy checked for regressions, the CI performance check understood | 30 minutes |
 | [Cronjobs](cronjobs.md) | Every part and script seen, a part and one script run and followed from the browser, the crontab lines installed, the logs read, the usual problems solved | 30 minutes |
 | [Preloading caches](preloading-caches.md) | A site warmed from Setup > Preload and from the shell, a dry run read, a run followed and its broken links and image aliases read, the cron line installed, the address of a siteaccess checked | 15 minutes |
