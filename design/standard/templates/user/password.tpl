@@ -101,6 +101,7 @@
         <input class="defaultbutton exp-pw-button exp-pw-primary" type="submit" name="OKButton" value="{'Change password'|i18n( 'design/standard/user/password' )}" />
         <input class="button exp-pw-button" type="submit" name="CancelButton" value="{'Cancel'|i18n( 'design/standard/user/password' )}" formnovalidate />
     </div>
+{if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
 {ezscript( array( 'exp_password_field.js' ) )}
 {/if}

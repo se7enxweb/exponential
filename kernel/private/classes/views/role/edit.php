@@ -91,7 +91,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             {
                 $originalRole->remove();
             }
-            $Module->redirectTo( $Module->functionURI( 'list' ) . '/' );
+            return $this->viewResult( null, $Module->redirectTo( self::cancelURI( $Module ) ) );
         }
 
         if ( $http->hasPostVariable( 'ChangeRoleName' ) )
@@ -242,6 +242,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'modules', $modules );
         $tpl->setVariable( 'module', $Module );
         $tpl->setVariable( 'role', $role );
+        $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
 
         $tpl->setVariable( 'step', 0 );
 
@@ -256,6 +257,20 @@ class Edit extends \Exponential\Runnable\ModuleView
         $Result['content'] = $tpl->fetch( 'design:role/edit.tpl' );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Where Discard goes, after the draft of the role is removed: the page the form names in RedirectIfDiscarded
+     * (the role's page, the list), else the page viewed last, else the list of roles, where it always went. The
+     * rules are those of \eZRedirectManager::returnURI().
+     *
+     * @param \eZModule|null $module
+     * @param array $options see \eZRedirectManager::returnURI()
+     * @return string
+     */
+    public static function cancelURI( $module, $options = array() )
+    {
+        return \eZRedirectManager::returnURI( $module, '/role/list/', \eZRedirectManager::formReturnURIs(), $options );
     }
 
     /**

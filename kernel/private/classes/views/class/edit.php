@@ -95,14 +95,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             $class->setVersion( \eZContentClass::VERSION_STATUS_TEMPORARY );
             $class->remove( true, \eZContentClass::VERSION_STATUS_TEMPORARY );
             \eZContentClassClassGroup::removeClassMembers( $ClassID, \eZContentClass::VERSION_STATUS_TEMPORARY );
-            if ( $fromGroupID === false )
-            {
-                $Module->redirectToView( 'grouplist' );
-            }
-            else
-            {
-                $Module->redirectTo( $Module->functionURI( 'classlist' ) . '/' . $fromGroupID . '/' );
-            }
+            $Module->redirectTo( self::cancelURI( $Module, $fromGroupID ) );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
         if ( $http->hasPostVariable( 'AddGroupButton' ) && $http->hasPostVariable( 'ContentClass_group' ) )
@@ -282,6 +275,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'datatype', $cur_datatype );
         $tpl->setVariable( 'language_code', $EditLanguage );
         $tpl->setVariable( 'last_changed_id', $lastChangedID );
+        $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
 
 
         $Result = array();
@@ -297,6 +291,23 @@ class Edit extends \Exponential\Runnable\ModuleView
                                    'text' => $class->attribute( 'name' ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Where Discard goes, after the draft of the class is removed: the page the form names in
+     * RedirectIfDiscarded, else the page viewed last, else the class group the edit started from (the session's
+     * FromGroupID), else the list of class groups, where it always went. The rules are those of
+     * \eZRedirectManager::returnURI().
+     *
+     * @param \eZModule|null $module
+     * @param int|false $fromGroupID
+     * @param array $options see \eZRedirectManager::returnURI()
+     * @return string
+     */
+    public static function cancelURI( $module, $fromGroupID, $options = array() )
+    {
+        $default = $fromGroupID === false || $fromGroupID === null ? '/class/grouplist' : '/class/classlist/' . (int)$fromGroupID . '/';
+        return \eZRedirectManager::returnURI( $module, $default, \eZRedirectManager::formReturnURIs(), $options );
     }
 
     /**
