@@ -1,3 +1,4 @@
+{def $view_mode_uri=cond( and( is_set( $view_mode ), $view_mode|ne( 'full' ) ), concat( '/view_mode/', $view_mode ), '' )}
 <form method="post"
     action={concat( 'content/versionview/', $object.id, '/', $version.version, '/', $language, '/', $from_language )|ezurl}>
 
@@ -209,7 +210,7 @@
                                         alt="{$object_languagecode}" style="vertical-align: middle;" />
                                 </p>
                                 <p class="center full-screen">
-                                    <a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess)|ezurl}
+                                    <a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl}
                                         target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} /></a>
                                 </p>
                                 <div class="break"></div>
@@ -219,9 +220,9 @@
                             <div class="mainobject-window">
 
                                 <iframe
-                                    src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess )|ezurl}
+                                    src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri )|ezurl}
                                     width="100%" height="800">
-                                    {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess)|ezurl ) )}
+                                    {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl ) )}
                                 </iframe>
 
                             </div>

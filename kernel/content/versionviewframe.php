@@ -41,6 +41,9 @@
       available directly.
 */
 
+// The view mode of content/versionview ((view_mode), full by default)
+$viewMode = isset( $viewMode ) ? $viewMode : 'full';
+
 /* Module action checks */
 if ( $Module->isCurrentAction( 'Edit' ) and
      $versionObject->attribute( 'status' ) == eZContentObjectVersion::STATUS_DRAFT and
@@ -247,7 +250,7 @@ $keyArray = array( array( 'object', $contentObject->attribute( 'id' ) ),
                    array( 'parent_node', $node->attribute( 'parent_node_id' ) ),
                    array( 'class', $contentObject->attribute( 'contentclass_id' ) ),
                    array( 'class_identifier', $node->attribute( 'class_identifier' ) ),
-                   array( 'viewmode', 'full' ),
+                   array( 'viewmode', $viewMode ),
                    array( 'remote_id', $contentObject->attribute( 'remote_id' ) ),
                    array( 'node_remote_id', $node->attribute( 'remote_id' ) ),
                    array( 'navigation_part_identifier', $navigationPartIdentifier ),
@@ -290,6 +293,7 @@ $titlePath[] = array( 'text' => $contentObject->attribute( 'name' ),
                       'url_alias' => false );
 
 $tpl->setVariable( 'node_path', $path );
+$tpl->setVariable( 'view_mode', $viewMode );
 
 
 $res->setKeys( $keyArray );

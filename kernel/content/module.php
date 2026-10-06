@@ -149,7 +149,8 @@ $ViewList['versionview'] = array(
     'params' => array( 'ObjectID', 'EditVersion', 'LanguageCode', 'FromLanguage' ),
     'unordered_params' => array( 'language' => 'Language',
                                  'offset' => 'Offset',
-                                 'site_access' => 'SiteAccess' ) );
+                                 'site_access' => 'SiteAccess',
+                                 'view_mode' => 'ViewMode' ) );
 
 $ViewList['restore'] = array(
     'functions' => array( 'restore' ),
