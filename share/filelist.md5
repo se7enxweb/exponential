@@ -169,7 +169,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-5cc744f5caa2d3f459b3d629dd2c78bd  composer.json
+f78a38053b739f12d56092518dda7475  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 875fe6f304460f35898e4a4c88ce8583  config.php-RECOMMENDED
@@ -2956,7 +2956,7 @@ a030b187be2788aaac08fafb86df5ed4  doc/changelogs/extensions/ezplatform-standard-
 ce83e8e2c90d4c7bec91e0e22a39aa0a  doc/changelogs/extensions/ezplatform-user.md
 e22d438d82698de558096ae59397852e  doc/changelogs/extensions/ezplatform-xmltext-fieldtype.md
 18d6f0a5dcb7bebf2698ade2a34018d8  doc/changelogs/extensions/ezpm.md
-6dabee4bc9e55bc764bb4c2d5988bcce  doc/changelogs/extensions/ezprestapi.md
+e8dad4eb20050060ab6d32a012956ba5  doc/changelogs/extensions/ezprestapi.md
 664963c0b0347025e4aee5e4458f12e6  doc/changelogs/extensions/ezprestapiprovider.md
 af5e4c21a392554a80b98b15423481ef  doc/changelogs/extensions/ezpublish-kernel.md
 ecb2e66aeb166671398b74e060a99e52  doc/changelogs/extensions/ezstarrating.md
