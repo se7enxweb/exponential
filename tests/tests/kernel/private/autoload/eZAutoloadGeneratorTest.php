@@ -160,6 +160,16 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( "K1\\{$p}\\Named" => 'classes/mixed.php', "{$p}Global" => 'classes/mixed.php' ), $entries );
     }
 
+    public function testEnumsBecomeEntries()
+    {
+        if ( PHP_VERSION_ID < 80100 )
+            $this->markTestSkipped( 'enums need PHP 8.1' );
+        $p = $this->name;
+        $this->file( 'classes/enum.php', "<?php\nenum {$p}Suit: string { case Hearts = 'H'; }\nenum {$p}Plain { case A; }\n" );
+        list( , $entries ) = $this->generated();
+        $this->assertSame( array( "{$p}Plain" => 'classes/enum.php', "{$p}Suit" => 'classes/enum.php' ), $entries );
+    }
+
     public function testDuplicatesAndKernelClassesAreRefused()
     {
         $p = $this->name;

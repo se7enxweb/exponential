@@ -726,6 +726,9 @@ class eZAutoloadGenerator
             // Traits support, see http://issues.ez.no/19028
             $tTrait = defined( 'T_TRAIT' ) ? T_TRAIT : self::UNDEFINED_TOKEN;
 
+            // Enums (PHP 8.1) are classes to the autoloader too
+            $tEnum = defined( 'T_ENUM' ) ? T_ENUM : self::UNDEFINED_TOKEN;
+
             foreach( $fileList as $file )
             {
                 $this->updateProgressOutput( self::OUTPUT_PROGRESS_PHASE2 );
@@ -770,6 +773,7 @@ class eZAutoloadGenerator
                             case T_CLASS:
                             case T_INTERFACE:
                             case $tTrait:
+                            case $tEnum:
                                 // Ignore token if prefixed by a double colon: "<ClassName>::class"
                                 // @see http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class
                                 // TEXT_TOKEN - "::"-TEXT_TOKEN - CLASS_TOKEN
