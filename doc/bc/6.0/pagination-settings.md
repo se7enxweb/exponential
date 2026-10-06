@@ -83,6 +83,7 @@ These five predate the block and keep settings of their own:
 |---|---|---|---|
 | Locations tab of an item | `[LocationsSettings] LocationsPerPage` | `content.ini` | 25 |
 | Policies on `role/edit` and `role/view` | `[RoleSettings] PoliciesPerPage` | `site.ini` | 25 |
+| Users and groups of a role on `role/view` ([paging and filter](../../features/6.0/role-assignment-paging.md)) | `[RoleSettings] AssignmentsPerPage` (0: all) | `site.ini` | 50 |
 | Policy preview per role, on a user or user group | `[RoleSettings] PolicyPreviewPerRole` | `site.ini` | 10 |
 | `role/list` | `[RoleSettings] RolesPerPageList[]` | `site.ini` | 10, 25, 50 |
 | `rss/list` (exports and imports) | `[RSSListSettings] ItemsPerPageList[]` | `content.ini` | 25, 50, 250 |

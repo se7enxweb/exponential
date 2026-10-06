@@ -32,6 +32,7 @@ Then:
 | The admin dashboard, menus and top tabs show a link only to a user who can open it. | Editors no longer see Design, Newsletter, Export tabs, Users, Upload files, Tags, Layouts, Trash entries or "Change password" without the policy. | Nothing; check your custom roles. |
 | `ezoe/upload` refuses a file whose type is not in `UploadFileExtensions[]`, and any name with an executable extension anywhere (`shell.php.jpg`), when the user's editor engine is not TinyMCE 3 (`UploadExtensionCheck=engine`). | Upload a `.zip` or `.pdf` with the TinyMCE 8 engine. | Add the type to `ezoe.ini [EditorSettings] UploadFileExtensions[]`. |
 | Request rules exist and `Enabled=true`, but `RuleList[]` is empty. | Nothing changes until you list a rule. | See [request rules](../../features/6.0/request-rules.md); check with `php bin/php/ezrequestrules.php -s <siteaccess> --check`. |
+| `role/view` lists the users and groups of a role a page at a time (`site.ini [RoleSettings] AssignmentsPerPage`, default 50). `$user_array` holds one page; every assignment is `$assignment_total`, those the name filter keeps `$assignment_count`. `$user_array` entries carry `user_name` and a `null` `user_object` for a gone object. Added 6 October 2026. | A design that overrides `role/view.tpl` shows only the first 50 assignments and counts `$user_array`. | Add a pager on `(assignment_offset)` as `design/admin/templates/role/view.tpl` does ([role assignment paging](../../features/6.0/role-assignment-paging.md)), or set `AssignmentsPerPage=0` to list all. |
 
 ## Audit trail
 
