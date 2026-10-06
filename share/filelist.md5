@@ -674,7 +674,7 @@ e6f2beb981d05020c3f04859b9b191ff  design/admin/templates/workflow/edit.tpl
 ccf8ff98f9e278cda31b41d550ee0be6  design/admin/templates/workflow/eventtype/edit/event_ezwaituntildate.tpl
 e7081b42039be849f2a5fb783a687fe7  design/admin/templates/workflow/groupedit.tpl
 948bce1827b91aca828ed61187dc7cea  design/admin/templates/workflow/grouplist.tpl
-dc39637a84a699b8a9c4022966f35109  design/admin/templates/workflow/processlist.tpl
+e43937837afc0adaf26cc0986ca88f90  design/admin/templates/workflow/processlist.tpl
 70d1bb08e78f1694d97c4b84277970ce  design/admin/templates/workflow/view.tpl
 2f2a21d30560591b6274fb6361464e42  design/admin/templates/workflow/workflowlist.tpl
 a41265a8c8cf4698837a304aae23bb6a  design/admin3/fonts/IcoMoon.eot
@@ -1245,7 +1245,7 @@ e6f2beb981d05020c3f04859b9b191ff  design/admin4/templates/workflow/edit.tpl
 ccf8ff98f9e278cda31b41d550ee0be6  design/admin4/templates/workflow/eventtype/edit/event_ezwaituntildate.tpl
 e7081b42039be849f2a5fb783a687fe7  design/admin4/templates/workflow/groupedit.tpl
 948bce1827b91aca828ed61187dc7cea  design/admin4/templates/workflow/grouplist.tpl
-dc39637a84a699b8a9c4022966f35109  design/admin4/templates/workflow/processlist.tpl
+e43937837afc0adaf26cc0986ca88f90  design/admin4/templates/workflow/processlist.tpl
 70d1bb08e78f1694d97c4b84277970ce  design/admin4/templates/workflow/view.tpl
 2f2a21d30560591b6274fb6361464e42  design/admin4/templates/workflow/workflowlist.tpl
 14afe23eaa9aa8bb6b9302eeb32a2311  design/admin4l/templates/explayouts/admin_zone.tpl
@@ -3214,7 +3214,7 @@ cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 0efc0a33fb1492529cd85b8d230d76d5  doc/features/6.0/class-attribute-move-to-edge.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 ae8f7f000cdb16bfabf8c2871976b012  doc/features/6.0/content-jobs.md
-6913ee5faa5fd13d9303bbcd2da13d8a  doc/features/6.0/cronjobs-console.md
+5dc9aef1305f6bb91f4dd0fdbb4fd038  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
 de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distribution.md
@@ -3371,6 +3371,10 @@ a101a3bb9c015da9204c6718c2598563  doc/guides/images/maintenance/installation-run
 44c5a61aed34c415332d7bb75f6834db  doc/guides/images/maintenance/plan-form.png
 8b4d3edf4ae002a550e28a25993119d1  doc/guides/images/maintenance/recent-changes.png
 3060c677ef4e6237716348f4d44a1dd6  doc/guides/images/maintenance/shell.png
+2bbc8216849c3ae8309f9f02e40f1dc6  doc/guides/images/workflows/confirm.png
+8d19a39038e4b5fd8c9aa3bb1d006424  doc/guides/images/workflows/controls.png
+2d0dfaacccd86266df5bfc75450bbcff  doc/guides/images/workflows/process-card.png
+261f6c6b6a30183007fd97d521ca819d  doc/guides/images/workflows/status-and-overview.png
 fe6be1787f910abc80987d58c54b2d16  doc/guides/mail-preferences-administrator.md
 f46af9cdee469946176953da2d241afc  doc/guides/mail-preferences-developer.md
 1f9793307d567a9779d98402c7ba398b  doc/guides/maintenance-mode.md
@@ -3381,6 +3385,7 @@ b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 0c6a4d567b4802cf8af7f38be42ed484  doc/guides/security-and-audit.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
 e6b8e0151adceb42e7d3f1ef1fd5cacb  doc/guides/upgrading.md
+60c8ae9bf5487c3a73ad4c61967b3221  doc/guides/workflows.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md
 9775fae8288f43e5b1b4de97824ba096  doc/history/2024/2024-01a.md
 d565571cb7a0c1609e2d979975017f15  doc/history/2024/2024-01b.md
