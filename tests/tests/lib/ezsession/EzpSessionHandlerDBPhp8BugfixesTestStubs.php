@@ -101,5 +101,16 @@ if ( !class_exists( 'ezpEvent', false ) )
         {
             return $value;
         }
+
+        /** No listeners: eZModule and the access filters skip their filters */
+        public function hasListeners( $name )
+        {
+            return false;
+        }
+
+        public function listenerIds( $name )
+        {
+            return array();
+        }
     }
 }

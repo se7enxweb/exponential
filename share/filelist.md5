@@ -5331,7 +5331,7 @@ c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.ph
 8283e4f7982e9d1aff4c308f72dd9a18  kernel/private/classes/ezpcontentpublishingprocess.php
 dad70a135e50fcc3415d197dd961caad  kernel/private/classes/ezpcontentpublishingqueue.php
 483341cbf4649e24b6f15b0357bc5aee  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
-cd67b7247451c36bada2c965a0ed52f9  kernel/private/classes/ezpevent.php
+0776e5d1ac1cb5de51f7dee8b46cf113  kernel/private/classes/ezpevent.php
 93ec1ada8eab0c1428a81264a05a9e2d  kernel/private/classes/ezpextension.php
 1cab90fbf1daca018c7fd0f2e9d3f9a0  kernel/private/classes/ezpformtokenrefusal.php
 cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
@@ -6159,7 +6159,7 @@ c50b0e01761551f31dadcd7f46ca5fa5  lib/ezutils/classes/ezmail.php
 460744d83abf5db145f9225f928df710  lib/ezutils/classes/ezmailtransport.php
 f332b18175f3da43c2c40839be7bd864  lib/ezutils/classes/ezmath.php
 654f90c8d02e3fafb48c7dbf58430d80  lib/ezutils/classes/ezmimetype.php
-00855bedd34c45e0e9213d2c6b2198e1  lib/ezutils/classes/ezmodule.php
+1e72d88a231fd655e0e8e4400f315d42  lib/ezutils/classes/ezmodule.php
 4d85f9c9b02437d343216e59f82af72c  lib/ezutils/classes/ezmodulefunctioninfo.php
 00659429fa87d76613424c750f32df41  lib/ezutils/classes/ezmoduleoperationinfo.php
 c6a982a5274b0db1e73f40d6ef9c1d75  lib/ezutils/classes/ezmutex.php
@@ -7122,7 +7122,7 @@ a8422625bada666061cfc28db6f7ad0d  tests/tests/kernel/classes/permissions/eZConte
 8c7cbac83c31166ea44ef268800334c2  tests/tests/kernel/classes/permissions/eZPackagePolicyTest.php
 7f5b329d15b658e33c4ac3f1fab1c5c2  tests/tests/kernel/classes/permissions/eZUserAccessEvaluationTest.php
 3e9f42058b135fcc91cc433dd711eafa  tests/tests/kernel/classes/permissions/expPermissionHooksTest.php
-f49ad6f67737394bfc219ce3dc0c3b88  tests/tests/kernel/classes/permissions/ezpContentLimitationTest.php
+f72914cc79297e8160784638e10a6494  tests/tests/kernel/classes/permissions/ezpContentLimitationTest.php
 b56a3b9639c786b875f98c6f42c8a035  tests/tests/kernel/classes/permissions/fixtures/ezcontentpermissionsqltestdb.php
 192883639379d5fd3bab7183741db6df  tests/tests/kernel/classes/permissions/fixtures/modules/k1perm/module.php
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
@@ -7556,7 +7556,7 @@ b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
 60e3422dd7a813f76038a3ecb5b842f4  tests/tests/lib/ezmath/eZMathHandlersTest.php
 d72315fa9b3256a89308f3109ca900e0  tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php
 b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
-e6f586f68ed3bb63281d041d39a9155d  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
+b078858df9972d3e704af87be75bc3b2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
 cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 62590e69192025ffa6ffcce972f687d0  tests/tests/lib/ezsoap/ezsoapclient_test.php

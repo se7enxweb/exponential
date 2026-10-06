@@ -19,6 +19,9 @@
  *  CL-13 - The SQL condition of a handler must stay inside its parentheses; other answers deny; column conditions
  *  CL-14 - String values of a column condition are escaped by the database handler
  *  CL-15 - The handler gets the values of the limitation as a list of strings
+ *  CL-16 - The listeners of module/functionlist run once per module and request, again for the next request
+ *  CL-17 - A listener that throws or returns no function list leaves the list of module.php
+ *  CL-18 - Limitations from the filter that are not of the form of module.php are left out
  *
  * The current user is a stand-in anonymous user with the access array given to it.
  *
@@ -483,5 +486,103 @@ class ezpContentLimitationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( '3', '4' ), X1ContentLimitationHandler::$asked[0][1] );
         $this->assertNull( ezpContentLimitation::handler( '' ) );
         $this->assertNull( ezpContentLimitation::handler( array( 'X1Limitation' ) ) );
+    }
+
+    /** Finds the fixture module k1perm with the listener $listener of module/functionlist attached */
+    private function functionsWith( $listener, $times = 1 )
+    {
+        $event = ezpEvent::getInstance();
+        $id = $event->attach( 'module/functionlist', $listener );
+        try
+        {
+            for ( $i = 0; $i < $times; ++$i )
+            {
+                $module = eZModule::findModule( 'k1perm', null, __DIR__ . '/fixtures/modules' );
+                $functions = $module->attribute( 'available_functions' );
+            }
+        }
+        finally
+        {
+            $event->detach( 'module/functionlist', $id );
+        }
+        return $functions;
+    }
+
+    /** CL-16: the listeners run once per module and request, however often the module is looked up */
+    public function testTheFunctionListFilterRunsOncePerModuleAndRequest()
+    {
+        $hadTime = array_key_exists( 'REQUEST_TIME_FLOAT', $_SERVER );
+        $time = $hadTime ? $_SERVER['REQUEST_TIME_FLOAT'] : null;
+        $calls = 0;
+        $listener = function ( $functionList, $moduleName ) use ( &$calls )
+        {
+            if ( $moduleName === 'k1perm' )
+            {
+                ++$calls;
+                $functionList['read']['X1Limitation'] = array( 'name' => 'X1Limitation', 'values' => array() );
+            }
+            return $functionList;
+        };
+        $event = ezpEvent::getInstance();
+        $id = $event->attach( 'module/functionlist', $listener );
+        try
+        {
+            $_SERVER['REQUEST_TIME_FLOAT'] = 3000.5;
+            for ( $i = 0; $i < 5; ++$i )
+            {
+                $module = eZModule::findModule( 'k1perm', null, __DIR__ . '/fixtures/modules' );
+                $this->assertSame( array( 'X1Limitation' ), array_keys( $module->attribute( 'available_functions' )['read'] ) );
+            }
+            $this->assertSame( 1, $calls );
+            // the next request of a persistent worker asks the listeners again
+            $_SERVER['REQUEST_TIME_FLOAT'] = 3001.5;
+            eZModule::findModule( 'k1perm', null, __DIR__ . '/fixtures/modules' );
+            $this->assertSame( 2, $calls );
+        }
+        finally
+        {
+            $event->detach( 'module/functionlist', $id );
+            if ( $hadTime )
+                $_SERVER['REQUEST_TIME_FLOAT'] = $time;
+            else
+                unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+        }
+    }
+
+    /** CL-17: a listener that throws or returns no function list leaves the list of module.php */
+    public function testAFailingFunctionListListenerLeavesTheModuleAlone()
+    {
+        $expected = array( 'create' => array(), 'edit' => array(), 'read' => array(), 'readall' => array() );
+        $this->assertSame( $expected, $this->functionsWith( function ( $functionList, $moduleName )
+        {
+            throw new RuntimeException( 'x1 functionlist failed' );
+        } ) );
+        $this->assertSame( $expected, $this->functionsWith( function ( $functionList, $moduleName )
+        {
+            return 'no list';
+        } ) );
+    }
+
+    /** CL-18: limitations that are not of the form of module.php are left out; values default to none */
+    public function testMalformedLimitationsFromTheFilterAreLeftOut()
+    {
+        $functions = $this->functionsWith( function ( $functionList, $moduleName )
+        {
+            $functionList['read']['Good'] = array( 'name' => 'Good' );
+            $functionList['read']['Dynamic'] = array( 'name' => 'Dynamic', 'class' => 'X1Lister', 'function' => 'all' );
+            $functionList['read']['NoName'] = array( 'values' => array() );
+            $functionList['read']['BadName'] = array( 'name' => 'Bad Name"', 'values' => array() );
+            $functionList['read']['NotAnArray'] = 'Region';
+            $functionList['read']['ClassWithoutFunction'] = array( 'name' => 'ClassWithoutFunction', 'class' => 'X1Lister' );
+            $functionList['edit'] = 'not a list';
+            $functionList['extra'] = array();
+            return $functionList;
+        } );
+        $this->assertSame( array( 'Good' => array( 'name' => 'Good', 'values' => array() ),
+                                  'Dynamic' => array( 'name' => 'Dynamic', 'class' => 'X1Lister', 'function' => 'all',
+                                                      'values' => array(), 'parameter' => array() ) ),
+                           $functions['read'] );
+        $this->assertSame( array(), $functions['edit'], 'a function the listener broke keeps its list from module.php' );
+        $this->assertSame( array(), $functions['extra'], 'a function a listener adds is kept' );
     }
 }

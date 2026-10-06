@@ -204,6 +204,19 @@ class ezpEvent
     }
 
     /**
+     * The ids of the listeners attached to the event $name, in the order they run. Every attach() gives a new id,
+     * so a caller that keeps what the listeners returned can tell whether the same listeners are still attached
+     * (eZModule keeps the filtered function list of a module for the request this way).
+     *
+     * @param string $name
+     * @return int[]
+     */
+    public function listenerIds( $name )
+    {
+        return empty( $this->listeners[$name] ) ? array() : array_keys( $this->listeners[$name] );
+    }
+
+    /**
      * Notify all listeners of an event
      *
      * @param string $name In the form "content/delete/1", "content/delete", "content/read"
