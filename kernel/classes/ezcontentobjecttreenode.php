@@ -1841,8 +1841,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $sliceOffset = $limit && $pathArrayCount > $limit ? $pathArrayCount - $limit : 0;
         $sliceLength = $includingLastNodeInThePath ? $pathArrayCount - $sliceOffset : $pathArrayCount - ( $sliceOffset + 1 );
 
-        // only take a slice when necessary
-        if ( ( $sliceOffset + $sliceLength ) < $pathArrayCount )
+        // only take a slice when necessary: when nodes are left out at the start (a limit) or at the end (the last node)
+        if ( $sliceOffset > 0 || ( $sliceOffset + $sliceLength ) < $pathArrayCount )
         {
             $pathArray = array_slice( $pathArray, $sliceOffset, $sliceLength );
         }
