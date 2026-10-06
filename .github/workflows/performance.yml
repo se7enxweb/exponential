@@ -1,0 +1,115 @@
+name: Performance
+
+# The micro benchmark (exp:benchmark micro): pure-PHP hot paths of the kernel -- template
+# compile and render, INI parsing, autoload, eZURI, translations, datatype validation --
+# timed without HTTP or a database and compared with tests/benchmark/baseline.json.
+#
+# Runners differ in speed, so every probe is divided by a calibration loop measured in the
+# same run, and only a probe more than 40 % slower after that normalisation counts.
+#
+# WARNING ONLY. This workflow is separate from PHPUnit and Quality, its job has
+# continue-on-error, and a regression is reported as an annotation and in the job summary,
+# never as a red check. To make it blocking: remove both "continue-on-error: true" lines
+# below and add "Micro benchmark (PHP 8.5)" to the required status checks of the branch
+# protection of main. Do that only after several runs on main have stayed well inside the
+# threshold.
+#
+# Refresh the baseline (after an intended change of speed, or a new probe):
+#   gh run download <run id> -n benchmark-micro -D var/tmp/benchmark-micro
+#   cp var/tmp/benchmark-micro/benchmark-micro.json tests/benchmark/baseline.json
+# or, on a quiet machine with PHP 8.5 and OPcache off for the CLI:
+#   php bin/php/benchmark.php micro --save=tests/benchmark/baseline.json
+# See doc/features/6.0/benchmark.md ("The CI performance check").
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - '**.php'
+      - '**.tpl'
+      - 'settings/**'
+      - 'share/translations/ger-DE/**'
+      - 'tests/benchmark/**'
+      - '.github/workflows/performance.yml'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - '**.php'
+      - '**.tpl'
+      - 'settings/**'
+      - 'share/translations/ger-DE/**'
+      - 'tests/benchmark/**'
+      - '.github/workflows/performance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: performance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  micro:
+    name: Micro benchmark (PHP 8.5)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    continue-on-error: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, curl
+          # The baseline is measured with OPcache off for the CLI and without Xdebug;
+          # either one changes the numbers far more than any regression would.
+          ini-values: opcache.enable_cli=0, memory_limit=1G
+          coverage: none
+          tools: composer:v2
+
+      - name: Install the production dependencies
+        run: composer install --no-dev --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+
+      - name: Micro benchmark against the baseline (warning only)
+        id: micro
+        continue-on-error: true
+        run: |
+          php bin/php/benchmark.php micro --repeat=30 --warmup=3 \
+            --baseline=tests/benchmark/baseline.json --all-checks \
+            --save="$RUNNER_TEMP/benchmark-micro.json"
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo '### Micro benchmark'
+            echo
+            if [ "${{ steps.micro.outcome }}" = "success" ]; then
+              echo 'No probe is more than 40 % slower than tests/benchmark/baseline.json after normalisation.'
+            else
+              echo '**Warning:** a probe is slower than the baseline, or the benchmark did not run. This check does not block; see the log.'
+            fi
+            echo
+            echo '```'
+            if [ -f "$RUNNER_TEMP/benchmark-micro.json" ]; then
+              php bin/php/benchmark.php compare tests/benchmark/baseline.json "$RUNNER_TEMP/benchmark-micro.json" --all-checks -q || true
+              php bin/php/benchmark.php show "$RUNNER_TEMP/benchmark-micro.json" -q || true
+            fi
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.micro.outcome }}" != "success" ]; then
+            echo "::warning title=Micro benchmark::slower than tests/benchmark/baseline.json, or failed to run (warning only)"
+          fi
+
+      - name: Keep the run (the file to commit as a new baseline)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-micro
+          path: ${{ runner.temp }}/benchmark-micro.json
+          if-no-files-found: ignore
+          retention-days: 30
