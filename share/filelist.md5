@@ -1307,7 +1307,7 @@ d941c9c9f890a8617a6ddfc1dde32325  design/admin4/templates/url/edit.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 f7a30c302abe5ead88aeec1589d26138  design/admin4/templates/user/edit.tpl
 e7729d83b6d2d3e108c251e3364cf009  design/admin4/templates/user/exp_style.tpl
-87e284d8c1e6bec27dc79ce41343e800  design/admin4/templates/user/login.tpl
+db9fe9a68ae459d0404e90b409e57040  design/admin4/templates/user/login.tpl
 2e4789e7e2e4e9ee6f5f607b9bf9da5b  design/admin4/templates/user/password.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin4/templates/user/register.tpl
 693d1d198fd16f0c6b455e10582be512  design/admin4/templates/user/setting.tpl
@@ -2986,7 +2986,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-b592ec617b16fdf376a82e5a77950084  doc/changelogs/6.0/6.0.15.md
+1a5ffef5f1523acdab0a13de3b4d6def  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3463,7 +3463,7 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 f9c3f344c473869cfb55845caedce10f  doc/features/6.0/version-preview-view-modes.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 03252bce1fbedb6ed433f227a6265164  doc/glossary.md
-8f31cf1e0dbdf3f74c473a1a9be4f238  doc/guides/README.md
+551e2103239441165e92a39993871a26  doc/guides/README.md
 ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 56b1e4a36d22f7cb8158c2765d91525b  doc/guides/benchmarking.md
 86daab2738bd0ed7df614903b3e51231  doc/guides/bookmarks.md
@@ -3522,6 +3522,7 @@ a8d5daba63dcc34fea309ba3ff76dfd1  doc/guides/security-and-audit.md
 7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
 984fbd968c27ef1981e5c835b18c8c0b  doc/guides/system-information.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
+6387229826175afe63da728788de31ad  doc/guides/two-factor-login.md
 76caaadb12a9d05063f40cfeff955325  doc/guides/upgrade-check.md
 639322264923c033f20a28212f26fea4  doc/guides/upgrading.md
 3021f8c1c3339b030c3e75dbd626d297  doc/guides/urls-and-aliases.md
