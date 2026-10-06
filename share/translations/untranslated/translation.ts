@@ -24061,6 +24061,18 @@ your account.</source>
         <source>Account has been locked because the maximum number of failed login attempts was exceeded.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>API keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%active active, %total in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show and revoke the API keys of this user</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
@@ -40319,6 +40331,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>REST application: %application_name%</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>API keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm revocation</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/package</name>
@@ -43893,6 +43913,624 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Back to the object</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/oauthadmin</name>
+    <message>
+        <source>Its users can no longer sign in through it: the authorizations and tokens it was given end with it. This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name the application and give the address it receives users back at after they authorized it. Its client identifier and secret are made when you store it, and shown on its page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application was not stored:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown to users when the application asks for their authorization.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The redirect_uri of the application: authorization codes and tokens are only ever sent to exactly this address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel removes this new application again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel leaves the application as it was.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm revocation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke this API key?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke these %count API keys?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every request with a revoked key is refused at once, and the key cannot be made valid again. The owner sees that it was revoked and can make a new one if they still may.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed user %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>API keys of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users make these keys themselves on the API access page of their account. A key acts as its owner, within the scopes it was given, so it can never do more than the owner may. Revoke a key that is no longer needed, leaked, or belongs to someone who should not publish any more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count keys revoked. Requests with them are refused from now on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>API keys are switched off (rest.ini [ApiKeySettings] ApiKeys=disabled): no key is accepted and none can be made.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The rate limit of %limit requests per minute is not enforced here: it is counted in APCu, which this PHP does not have.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the keys of %name (%login) are shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The user %id no longer exists; these are the keys that were theirs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show every user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expiring within 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active, never used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, prefix, login or e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>matching "%search"</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No key matches this filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No API key has been made yet. Users with the apikey/create policy make them on the API access page of their account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the key %name for revoking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expires soon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Made %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>revoked %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every key of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke the key %name of %owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoking cannot be undone: the owner makes a new key if one is still needed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Applications sign users in with OAuth and act for them through the REST interface. Personal API keys are the other way in: a user makes one on the site for a script or an integration of their own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Applications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authorizations by users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tokens still valid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active API keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>API keys expiring within 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No REST application is registered yet. An application is what a mobile app, a partner site or a service uses to sign users in and call the REST interface for them: create one with New application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authorized by: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valid tokens: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View the application %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing an application also ends the authorizations and tokens it was given.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How the application signs in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the secret</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None: the authorization page cannot send anyone back to the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count tokens still valid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user has authorized this application yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users who authorized this application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authorized</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>REST administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give the application a name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/apikey</name>
+    <message>
+        <source>API access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Personal API keys let your own scripts and tools publish and read through the REST interface as you, without your password. Each key has a name, the scopes it may use and an end date, and you can revoke it at any time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>API keys are switched off on this site: none can be made, and existing keys are not accepted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in to manage your keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keys belong to an account and act as it, so you need to be signed in. You come back to this page afterwards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username or e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forgot your password?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No account yet?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Register first. Once your account is active and allowed to use the API, open My account and then API access to make your first key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create an account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key was not made:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your new key "%name"</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy it now. It is shown this once and is not stored anywhere: if you lose it, revoke it and make a new one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key is on the clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try it:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke the key "%name"?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every program that uses it stops working at once, and it cannot be made valid again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke the key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have no API keys yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%active of %max keys in use. The full value of a key was shown only when it was made; here it is known by its first characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expires soon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke the key %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Made</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from %address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account may not make API keys. If you need one, ask the site administrator to allow it for you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account may make keys, but none of the scopes a key can have is open to you, so there is nothing a key could do. Ask the site administrator.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have %count active keys, the most allowed. Revoke one you no longer use to make another.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give each program its own key, so you can revoke one without stopping the others. Choose only the scopes it needs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>e.g. Newsroom import script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the key is used, so you recognise it later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs your %policy permission; the key never gets more than you have.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valid for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No end date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key stops working on its end date; make a new one before then.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using a key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send it in the Authorization header of every request, never in the address: addresses end up in logs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A key works until its end date or until you revoke it. If a key may have leaked, revoke it here at once and make a new one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have %count active API keys.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make a personal key for your own scripts and tools to publish through the REST interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage my API keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not make API keys. Ask an administrator if you need one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This form was already sent. If a key was made, it is in the list below; its value cannot be shown again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give the key a name, so you know later where it is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose at least one scope.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One of the chosen scopes is not available to you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose one of the offered lifetimes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already have %count active keys, the most allowed. Revoke one you no longer use first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key "%name" is revoked. Requests with it are refused from now on.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

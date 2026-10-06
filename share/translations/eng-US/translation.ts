@@ -25656,6 +25656,18 @@ your account.</translation>
         <source>Account has been locked because the maximum number of failed login attempts was exceeded.</source>
         <translation>Account has been locked because the maximum number of failed login attempts was exceeded.</translation>
     </message>
+    <message>
+        <source>API keys</source>
+        <translation>API keys</translation>
+    </message>
+    <message>
+        <source>%active active, %total in all</source>
+        <translation>%active active, %total in all</translation>
+    </message>
+    <message>
+        <source>Show and revoke the API keys of this user</source>
+        <translation>Show and revoke the API keys of this user</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
@@ -42583,6 +42595,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>REST application: %application_name%</source>
         <translation>REST application: %application_name%</translation>
     </message>
+    <message>
+        <source>API keys</source>
+        <translation>API keys</translation>
+    </message>
+    <message>
+        <source>Confirm revocation</source>
+        <translation>Confirm revocation</translation>
+    </message>
 </context>
 <context>
     <name>kernel/package</name>
@@ -50733,6 +50753,624 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Back to the object</source>
         <translation>Back to the object</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/oauthadmin</name>
+    <message>
+        <source>Its users can no longer sign in through it: the authorizations and tokens it was given end with it. This cannot be undone.</source>
+        <translation>Its users can no longer sign in through it: the authorizations and tokens it was given end with it. This cannot be undone.</translation>
+    </message>
+    <message>
+        <source>Name the application and give the address it receives users back at after they authorized it. Its client identifier and secret are made when you store it, and shown on its page.</source>
+        <translation>Name the application and give the address it receives users back at after they authorized it. Its client identifier and secret are made when you store it, and shown on its page.</translation>
+    </message>
+    <message>
+        <source>The application was not stored:</source>
+        <translation>The application was not stored:</translation>
+    </message>
+    <message>
+        <source>Shown to users when the application asks for their authorization.</source>
+        <translation>Shown to users when the application asks for their authorization.</translation>
+    </message>
+    <message>
+        <source>The redirect_uri of the application: authorization codes and tokens are only ever sent to exactly this address.</source>
+        <translation>The redirect_uri of the application: authorization codes and tokens are only ever sent to exactly this address.</translation>
+    </message>
+    <message>
+        <source>Cancel removes this new application again.</source>
+        <translation>Cancel removes this new application again.</translation>
+    </message>
+    <message>
+        <source>Cancel leaves the application as it was.</source>
+        <translation>Cancel leaves the application as it was.</translation>
+    </message>
+    <message>
+        <source>Confirm revocation</source>
+        <translation>Confirm revocation</translation>
+    </message>
+    <message>
+        <source>Revoke this API key?</source>
+        <translation>Revoke this API key?</translation>
+    </message>
+    <message>
+        <source>Revoke these %count API keys?</source>
+        <translation>Revoke these %count API keys?</translation>
+    </message>
+    <message>
+        <source>Every request with a revoked key is refused at once, and the key cannot be made valid again. The owner sees that it was revoked and can make a new one if they still may.</source>
+        <translation>Every request with a revoked key is refused at once, and the key cannot be made valid again. The owner sees that it was revoked and can make a new one if they still may.</translation>
+    </message>
+    <message>
+        <source>Removed user %id</source>
+        <translation>Removed user %id</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revoke</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>API keys of %name</source>
+        <translation>API keys of %name</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API keys</translation>
+    </message>
+    <message>
+        <source>Users make these keys themselves on the API access page of their account. A key acts as its owner, within the scopes it was given, so it can never do more than the owner may. Revoke a key that is no longer needed, leaked, or belongs to someone who should not publish any more.</source>
+        <translation>Users make these keys themselves on the API access page of their account. A key acts as its owner, within the scopes it was given, so it can never do more than the owner may. Revoke a key that is no longer needed, leaked, or belongs to someone who should not publish any more.</translation>
+    </message>
+    <message>
+        <source>%count keys revoked. Requests with them are refused from now on.</source>
+        <translation>%count keys revoked. Requests with them are refused from now on.</translation>
+    </message>
+    <message>
+        <source>API keys are switched off (rest.ini [ApiKeySettings] ApiKeys=disabled): no key is accepted and none can be made.</source>
+        <translation>API keys are switched off (rest.ini [ApiKeySettings] ApiKeys=disabled): no key is accepted and none can be made.</translation>
+    </message>
+    <message>
+        <source>The rate limit of %limit requests per minute is not enforced here: it is counted in APCu, which this PHP does not have.</source>
+        <translation>The rate limit of %limit requests per minute is not enforced here: it is counted in APCu, which this PHP does not have.</translation>
+    </message>
+    <message>
+        <source>Only the keys of %name (%login) are shown.</source>
+        <translation>Only the keys of %name (%login) are shown.</translation>
+    </message>
+    <message>
+        <source>The user %id no longer exists; these are the keys that were theirs.</source>
+        <translation>The user %id no longer exists; these are the keys that were theirs.</translation>
+    </message>
+    <message>
+        <source>User settings</source>
+        <translation>User settings</translation>
+    </message>
+    <message>
+        <source>Show every user</source>
+        <translation>Show every user</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Active</translation>
+    </message>
+    <message>
+        <source>Expiring within 7 days</source>
+        <translation>Expiring within 7 days</translation>
+    </message>
+    <message>
+        <source>Active, never used</source>
+        <translation>Active, never used</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Expired</translation>
+    </message>
+    <message>
+        <source>Revoked</source>
+        <translation>Revoked</translation>
+    </message>
+    <message>
+        <source>Find keys</source>
+        <translation>Find keys</translation>
+    </message>
+    <message>
+        <source>Name, prefix, login or e-mail</source>
+        <translation>Name, prefix, login or e-mail</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Keys</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>matching "%search"</source>
+        <translation>matching "%search"</translation>
+    </message>
+    <message>
+        <source>No key matches this filter.</source>
+        <translation>No key matches this filter.</translation>
+    </message>
+    <message>
+        <source>No API key has been made yet. Users with the apikey/create policy make them on the API access page of their account.</source>
+        <translation>No API key has been made yet. Users with the apikey/create policy make them on the API access page of their account.</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Key</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Owner</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Scopes</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Last used</translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation>Expires</translation>
+    </message>
+    <message>
+        <source>Select the key %name for revoking</source>
+        <translation>Select the key %name for revoking</translation>
+    </message>
+    <message>
+        <source>Expires soon</source>
+        <translation>Expires soon</translation>
+    </message>
+    <message>
+        <source>Made %date</source>
+        <translation>Made %date</translation>
+    </message>
+    <message>
+        <source>revoked %date</source>
+        <translation>revoked %date</translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation>by %name</translation>
+    </message>
+    <message>
+        <source>Every key of %name</source>
+        <translation>Every key of %name</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Never</translation>
+    </message>
+    <message>
+        <source>Revoke the key %name of %owner</source>
+        <translation>Revoke the key %name of %owner</translation>
+    </message>
+    <message>
+        <source>Revoking cannot be undone: the owner makes a new key if one is still needed.</source>
+        <translation>Revoking cannot be undone: the owner makes a new key if one is still needed.</translation>
+    </message>
+    <message>
+        <source>Revoke selected</source>
+        <translation>Revoke selected</translation>
+    </message>
+    <message>
+        <source>Applications sign users in with OAuth and act for them through the REST interface. Personal API keys are the other way in: a user makes one on the site for a script or an integration of their own.</source>
+        <translation>Applications sign users in with OAuth and act for them through the REST interface. Personal API keys are the other way in: a user makes one on the site for a script or an integration of their own.</translation>
+    </message>
+    <message>
+        <source>Applications</source>
+        <translation>Applications</translation>
+    </message>
+    <message>
+        <source>Authorizations by users</source>
+        <translation>Authorizations by users</translation>
+    </message>
+    <message>
+        <source>Tokens still valid</source>
+        <translation>Tokens still valid</translation>
+    </message>
+    <message>
+        <source>Active API keys</source>
+        <translation>Active API keys</translation>
+    </message>
+    <message>
+        <source>API keys expiring within 7 days</source>
+        <translation>API keys expiring within 7 days</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Select all on this page</translation>
+    </message>
+    <message>
+        <source>No REST application is registered yet. An application is what a mobile app, a partner site or a service uses to sign users in and call the REST interface for them: create one with New application.</source>
+        <translation>No REST application is registered yet. An application is what a mobile app, a partner site or a service uses to sign users in and call the REST interface for them: create one with New application.</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>Select %name for removal</translation>
+    </message>
+    <message>
+        <source>Authorized by: %count</source>
+        <translation>Authorized by: %count</translation>
+    </message>
+    <message>
+        <source>Valid tokens: %count</source>
+        <translation>Valid tokens: %count</translation>
+    </message>
+    <message>
+        <source>View the application %name</source>
+        <translation>View the application %name</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
+    <message>
+        <source>Removed user</source>
+        <translation>Removed user</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>Removing an application also ends the authorizations and tokens it was given.</source>
+        <translation>Removing an application also ends the authorizations and tokens it was given.</translation>
+    </message>
+    <message>
+        <source>How the application signs in</source>
+        <translation>How the application signs in</translation>
+    </message>
+    <message>
+        <source>Show the secret</source>
+        <translation>Show the secret</translation>
+    </message>
+    <message>
+        <source>None: the authorization page cannot send anyone back to the application.</source>
+        <translation>None: the authorization page cannot send anyone back to the application.</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Created</translation>
+    </message>
+    <message>
+        <source>Use</source>
+        <translation>Use</translation>
+    </message>
+    <message>
+        <source>%count tokens still valid</source>
+        <translation>%count tokens still valid</translation>
+    </message>
+    <message>
+        <source>No user has authorized this application yet.</source>
+        <translation>No user has authorized this application yet.</translation>
+    </message>
+    <message>
+        <source>Users who authorized this application</source>
+        <translation>Users who authorized this application</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>Authorized</source>
+        <translation>Authorized</translation>
+    </message>
+    <message>
+        <source>REST administration</source>
+        <translation>REST administration</translation>
+    </message>
+    <message>
+        <source>Give the application a name.</source>
+        <translation>Give the application a name.</translation>
+    </message>
+    <message>
+        <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
+        <translation>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/apikey</name>
+    <message>
+        <source>API access</source>
+        <translation>API access</translation>
+    </message>
+    <message>
+        <source>Personal API keys let your own scripts and tools publish and read through the REST interface as you, without your password. Each key has a name, the scopes it may use and an end date, and you can revoke it at any time.</source>
+        <translation>Personal API keys let your own scripts and tools publish and read through the REST interface as you, without your password. Each key has a name, the scopes it may use and an end date, and you can revoke it at any time.</translation>
+    </message>
+    <message>
+        <source>API keys are switched off on this site: none can be made, and existing keys are not accepted.</source>
+        <translation>API keys are switched off on this site: none can be made, and existing keys are not accepted.</translation>
+    </message>
+    <message>
+        <source>Sign in to manage your keys</source>
+        <translation>Sign in to manage your keys</translation>
+    </message>
+    <message>
+        <source>Keys belong to an account and act as it, so you need to be signed in. You come back to this page afterwards.</source>
+        <translation>Keys belong to an account and act as it, so you need to be signed in. You come back to this page afterwards.</translation>
+    </message>
+    <message>
+        <source>Username or e-mail</source>
+        <translation>Username or e-mail</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Sign in</translation>
+    </message>
+    <message>
+        <source>Forgot your password?</source>
+        <translation>Forgot your password?</translation>
+    </message>
+    <message>
+        <source>No account yet?</source>
+        <translation>No account yet?</translation>
+    </message>
+    <message>
+        <source>Register first. Once your account is active and allowed to use the API, open My account and then API access to make your first key.</source>
+        <translation>Register first. Once your account is active and allowed to use the API, open My account and then API access to make your first key.</translation>
+    </message>
+    <message>
+        <source>Create an account</source>
+        <translation>Create an account</translation>
+    </message>
+    <message>
+        <source>The key was not made:</source>
+        <translation>The key was not made:</translation>
+    </message>
+    <message>
+        <source>Your new key "%name"</source>
+        <translation>Your new key "%name"</translation>
+    </message>
+    <message>
+        <source>Copy it now. It is shown this once and is not stored anywhere: if you lose it, revoke it and make a new one.</source>
+        <translation>Copy it now. It is shown this once and is not stored anywhere: if you lose it, revoke it and make a new one.</translation>
+    </message>
+    <message>
+        <source>The key is on the clipboard.</source>
+        <translation>The key is on the clipboard.</translation>
+    </message>
+    <message>
+        <source>Copy key</source>
+        <translation>Copy key</translation>
+    </message>
+    <message>
+        <source>Try it:</source>
+        <translation>Try it:</translation>
+    </message>
+    <message>
+        <source>Revoke the key "%name"?</source>
+        <translation>Revoke the key "%name"?</translation>
+    </message>
+    <message>
+        <source>Every program that uses it stops working at once, and it cannot be made valid again.</source>
+        <translation>Every program that uses it stops working at once, and it cannot be made valid again.</translation>
+    </message>
+    <message>
+        <source>Revoke the key</source>
+        <translation>Revoke the key</translation>
+    </message>
+    <message>
+        <source>Keep it</source>
+        <translation>Keep it</translation>
+    </message>
+    <message>
+        <source>Your keys</source>
+        <translation>Your keys</translation>
+    </message>
+    <message>
+        <source>You have no API keys yet.</source>
+        <translation>You have no API keys yet.</translation>
+    </message>
+    <message>
+        <source>%active of %max keys in use. The full value of a key was shown only when it was made; here it is known by its first characters.</source>
+        <translation>%active of %max keys in use. The full value of a key was shown only when it was made; here it is known by its first characters.</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Active</translation>
+    </message>
+    <message>
+        <source>Expires soon</source>
+        <translation>Expires soon</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Expired</translation>
+    </message>
+    <message>
+        <source>Revoked</source>
+        <translation>Revoked</translation>
+    </message>
+    <message>
+        <source>Revoke the key %name</source>
+        <translation>Revoke the key %name</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revoke</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Key</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Scopes</translation>
+    </message>
+    <message>
+        <source>Made</source>
+        <translation>Made</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Last used</translation>
+    </message>
+    <message>
+        <source>from %address</source>
+        <translation>from %address</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Never</translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation>Expires</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Make a new key</translation>
+    </message>
+    <message>
+        <source>Your account may not make API keys. If you need one, ask the site administrator to allow it for you.</source>
+        <translation>Your account may not make API keys. If you need one, ask the site administrator to allow it for you.</translation>
+    </message>
+    <message>
+        <source>Your account may make keys, but none of the scopes a key can have is open to you, so there is nothing a key could do. Ask the site administrator.</source>
+        <translation>Your account may make keys, but none of the scopes a key can have is open to you, so there is nothing a key could do. Ask the site administrator.</translation>
+    </message>
+    <message>
+        <source>You have %count active keys, the most allowed. Revoke one you no longer use to make another.</source>
+        <translation>You have %count active keys, the most allowed. Revoke one you no longer use to make another.</translation>
+    </message>
+    <message>
+        <source>Give each program its own key, so you can revoke one without stopping the others. Choose only the scopes it needs.</source>
+        <translation>Give each program its own key, so you can revoke one without stopping the others. Choose only the scopes it needs.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>e.g. Newsroom import script</source>
+        <translation>e.g. Newsroom import script</translation>
+    </message>
+    <message>
+        <source>Where the key is used, so you recognise it later.</source>
+        <translation>Where the key is used, so you recognise it later.</translation>
+    </message>
+    <message>
+        <source>Needs your %policy permission; the key never gets more than you have.</source>
+        <translation>Needs your %policy permission; the key never gets more than you have.</translation>
+    </message>
+    <message>
+        <source>Valid for</source>
+        <translation>Valid for</translation>
+    </message>
+    <message>
+        <source>No end date</source>
+        <translation>No end date</translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation>1 day</translation>
+    </message>
+    <message>
+        <source>%count days</source>
+        <translation>%count days</translation>
+    </message>
+    <message>
+        <source>The key stops working on its end date; make a new one before then.</source>
+        <translation>The key stops working on its end date; make a new one before then.</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Make the key</translation>
+    </message>
+    <message>
+        <source>Using a key</source>
+        <translation>Using a key</translation>
+    </message>
+    <message>
+        <source>Send it in the Authorization header of every request, never in the address: addresses end up in logs.</source>
+        <translation>Send it in the Authorization header of every request, never in the address: addresses end up in logs.</translation>
+    </message>
+    <message>
+        <source>A key works until its end date or until you revoke it. If a key may have leaked, revoke it here at once and make a new one.</source>
+        <translation>A key works until its end date or until you revoke it. If a key may have leaked, revoke it here at once and make a new one.</translation>
+    </message>
+    <message>
+        <source>You have %count active API keys.</source>
+        <translation>You have %count active API keys.</translation>
+    </message>
+    <message>
+        <source>Make a personal key for your own scripts and tools to publish through the REST interface.</source>
+        <translation>Make a personal key for your own scripts and tools to publish through the REST interface.</translation>
+    </message>
+    <message>
+        <source>Manage my API keys</source>
+        <translation>Manage my API keys</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>My account</translation>
+    </message>
+    <message>
+        <source>You may not make API keys. Ask an administrator if you need one.</source>
+        <translation>You may not make API keys. Ask an administrator if you need one.</translation>
+    </message>
+    <message>
+        <source>This form was already sent. If a key was made, it is in the list below; its value cannot be shown again.</source>
+        <translation>This form was already sent. If a key was made, it is in the list below; its value cannot be shown again.</translation>
+    </message>
+    <message>
+        <source>Give the key a name, so you know later where it is used.</source>
+        <translation>Give the key a name, so you know later where it is used.</translation>
+    </message>
+    <message>
+        <source>Choose at least one scope.</source>
+        <translation>Choose at least one scope.</translation>
+    </message>
+    <message>
+        <source>One of the chosen scopes is not available to you.</source>
+        <translation>One of the chosen scopes is not available to you.</translation>
+    </message>
+    <message>
+        <source>Choose one of the offered lifetimes.</source>
+        <translation>Choose one of the offered lifetimes.</translation>
+    </message>
+    <message>
+        <source>You already have %count active keys, the most allowed. Revoke one you no longer use first.</source>
+        <translation>You already have %count active keys, the most allowed. Revoke one you no longer use first.</translation>
+    </message>
+    <message>
+        <source>The key "%name" is revoked. Requests with it are refused from now on.</source>
+        <translation>The key "%name" is revoked. Requests with it are refused from now on.</translation>
     </message>
 </context>
 </TS>

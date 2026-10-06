@@ -28784,6 +28784,18 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Account has been locked because the maximum number of failed login attempts was exceeded.</source>
         <translation>Das Konto wurde gesperrt, weil die maximale Anzahl von fehlgeschlagenen Anmeldungen erreicht wurde.</translation>
     </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-Schlüssel</translation>
+    </message>
+    <message>
+        <source>%active active, %total in all</source>
+        <translation>%active aktiv, %total insgesamt</translation>
+    </message>
+    <message>
+        <source>Show and revoke the API keys of this user</source>
+        <translation>API-Schlüssel dieses Benutzers anzeigen und widerrufen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/success</name>
@@ -49487,6 +49499,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>REST application: %application_name%</source>
         <translation>REST-Anwendung: %application_name%</translation>
     </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-Schlüssel</translation>
+    </message>
+    <message>
+        <source>Confirm revocation</source>
+        <translation>Widerruf bestätigen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/package</name>
@@ -57792,6 +57812,624 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Back to the object</source>
         <translation>Zurück zum Objekt</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/oauthadmin</name>
+    <message>
+        <source>Its users can no longer sign in through it: the authorizations and tokens it was given end with it. This cannot be undone.</source>
+        <translation>Ihre Benutzer können sich dann nicht mehr darüber anmelden: Die Autorisierungen und Tokens, die sie erhalten hat, enden mit ihr. Das lässt sich nicht rückgängig machen.</translation>
+    </message>
+    <message>
+        <source>Name the application and give the address it receives users back at after they authorized it. Its client identifier and secret are made when you store it, and shown on its page.</source>
+        <translation>Benennen Sie die Anwendung und geben Sie die Adresse an, an die Benutzer nach der Autorisierung zurückgeschickt werden. Client-Kennung und Geheimnis werden beim Speichern erzeugt und auf ihrer Seite angezeigt.</translation>
+    </message>
+    <message>
+        <source>The application was not stored:</source>
+        <translation>Die Anwendung wurde nicht gespeichert:</translation>
+    </message>
+    <message>
+        <source>Shown to users when the application asks for their authorization.</source>
+        <translation>Wird Benutzern angezeigt, wenn die Anwendung um ihre Autorisierung bittet.</translation>
+    </message>
+    <message>
+        <source>The redirect_uri of the application: authorization codes and tokens are only ever sent to exactly this address.</source>
+        <translation>Die redirect_uri der Anwendung: Autorisierungscodes und Tokens werden nur an genau diese Adresse gesendet.</translation>
+    </message>
+    <message>
+        <source>Cancel removes this new application again.</source>
+        <translation>Abbrechen entfernt diese neue Anwendung wieder.</translation>
+    </message>
+    <message>
+        <source>Cancel leaves the application as it was.</source>
+        <translation>Abbrechen lässt die Anwendung, wie sie war.</translation>
+    </message>
+    <message>
+        <source>Confirm revocation</source>
+        <translation>Widerruf bestätigen</translation>
+    </message>
+    <message>
+        <source>Revoke this API key?</source>
+        <translation>Diesen API-Schlüssel widerrufen?</translation>
+    </message>
+    <message>
+        <source>Revoke these %count API keys?</source>
+        <translation>Diese %count API-Schlüssel widerrufen?</translation>
+    </message>
+    <message>
+        <source>Every request with a revoked key is refused at once, and the key cannot be made valid again. The owner sees that it was revoked and can make a new one if they still may.</source>
+        <translation>Jede Anfrage mit einem widerrufenen Schlüssel wird sofort abgewiesen, und der Schlüssel kann nicht wieder gültig werden. Der Besitzer sieht, dass er widerrufen wurde, und kann einen neuen erstellen, sofern er noch darf.</translation>
+    </message>
+    <message>
+        <source>Removed user %id</source>
+        <translation>Entfernter Benutzer %id</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Widerrufen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>API keys of %name</source>
+        <translation>API-Schlüssel von %name</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-Schlüssel</translation>
+    </message>
+    <message>
+        <source>Users make these keys themselves on the API access page of their account. A key acts as its owner, within the scopes it was given, so it can never do more than the owner may. Revoke a key that is no longer needed, leaked, or belongs to someone who should not publish any more.</source>
+        <translation>Benutzer erstellen diese Schlüssel selbst auf der Seite „API-Zugang“ ihres Kontos. Ein Schlüssel handelt als sein Besitzer, innerhalb der Bereiche, die er erhalten hat, und kann daher nie mehr als der Besitzer. Widerrufen Sie einen Schlüssel, der nicht mehr gebraucht wird, bekannt geworden ist oder jemandem gehört, der nicht mehr veröffentlichen soll.</translation>
+    </message>
+    <message>
+        <source>%count keys revoked. Requests with them are refused from now on.</source>
+        <translation>%count Schlüssel widerrufen. Anfragen damit werden ab jetzt abgewiesen.</translation>
+    </message>
+    <message>
+        <source>API keys are switched off (rest.ini [ApiKeySettings] ApiKeys=disabled): no key is accepted and none can be made.</source>
+        <translation>API-Schlüssel sind ausgeschaltet (rest.ini [ApiKeySettings] ApiKeys=disabled): Kein Schlüssel wird angenommen und keiner kann erstellt werden.</translation>
+    </message>
+    <message>
+        <source>The rate limit of %limit requests per minute is not enforced here: it is counted in APCu, which this PHP does not have.</source>
+        <translation>Das Limit von %limit Anfragen pro Minute wird hier nicht durchgesetzt: Es wird in APCu gezählt, das diesem PHP fehlt.</translation>
+    </message>
+    <message>
+        <source>Only the keys of %name (%login) are shown.</source>
+        <translation>Es werden nur die Schlüssel von %name (%login) angezeigt.</translation>
+    </message>
+    <message>
+        <source>The user %id no longer exists; these are the keys that were theirs.</source>
+        <translation>Den Benutzer %id gibt es nicht mehr; dies sind die Schlüssel, die ihm gehörten.</translation>
+    </message>
+    <message>
+        <source>User settings</source>
+        <translation>Benutzereinstellungen</translation>
+    </message>
+    <message>
+        <source>Show every user</source>
+        <translation>Alle Benutzer zeigen</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktiv</translation>
+    </message>
+    <message>
+        <source>Expiring within 7 days</source>
+        <translation>Laufen innerhalb von 7 Tagen ab</translation>
+    </message>
+    <message>
+        <source>Active, never used</source>
+        <translation>Aktiv, nie benutzt</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Abgelaufen</translation>
+    </message>
+    <message>
+        <source>Revoked</source>
+        <translation>Widerrufen</translation>
+    </message>
+    <message>
+        <source>Find keys</source>
+        <translation>Schlüssel finden</translation>
+    </message>
+    <message>
+        <source>Name, prefix, login or e-mail</source>
+        <translation>Name, Präfix, Login oder E-Mail</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>matching "%search"</source>
+        <translation>passend zu „%search“</translation>
+    </message>
+    <message>
+        <source>No key matches this filter.</source>
+        <translation>Kein Schlüssel passt zu diesem Filter.</translation>
+    </message>
+    <message>
+        <source>No API key has been made yet. Users with the apikey/create policy make them on the API access page of their account.</source>
+        <translation>Es wurde noch kein API-Schlüssel erstellt. Benutzer mit der Richtlinie apikey/create erstellen sie auf der Seite „API-Zugang“ ihres Kontos.</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Besitzer</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Bereiche</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Zuletzt benutzt</translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation>Läuft ab</translation>
+    </message>
+    <message>
+        <source>Select the key %name for revoking</source>
+        <translation>Den Schlüssel %name zum Widerrufen auswählen</translation>
+    </message>
+    <message>
+        <source>Expires soon</source>
+        <translation>Läuft bald ab</translation>
+    </message>
+    <message>
+        <source>Made %date</source>
+        <translation>Erstellt %date</translation>
+    </message>
+    <message>
+        <source>revoked %date</source>
+        <translation>widerrufen %date</translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation>von %name</translation>
+    </message>
+    <message>
+        <source>Every key of %name</source>
+        <translation>Alle Schlüssel von %name</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Revoke the key %name of %owner</source>
+        <translation>Den Schlüssel %name von %owner widerrufen</translation>
+    </message>
+    <message>
+        <source>Revoking cannot be undone: the owner makes a new key if one is still needed.</source>
+        <translation>Ein Widerruf lässt sich nicht rückgängig machen: Der Besitzer erstellt einen neuen Schlüssel, falls er noch einen braucht.</translation>
+    </message>
+    <message>
+        <source>Revoke selected</source>
+        <translation>Ausgewählte widerrufen</translation>
+    </message>
+    <message>
+        <source>Applications sign users in with OAuth and act for them through the REST interface. Personal API keys are the other way in: a user makes one on the site for a script or an integration of their own.</source>
+        <translation>Anwendungen melden Benutzer mit OAuth an und handeln für sie über die REST-Schnittstelle. Persönliche API-Schlüssel sind der andere Weg: Ein Benutzer erstellt einen auf der Website für ein eigenes Skript oder eine eigene Anbindung.</translation>
+    </message>
+    <message>
+        <source>Applications</source>
+        <translation>Anwendungen</translation>
+    </message>
+    <message>
+        <source>Authorizations by users</source>
+        <translation>Autorisierungen durch Benutzer</translation>
+    </message>
+    <message>
+        <source>Tokens still valid</source>
+        <translation>Noch gültige Tokens</translation>
+    </message>
+    <message>
+        <source>Active API keys</source>
+        <translation>Aktive API-Schlüssel</translation>
+    </message>
+    <message>
+        <source>API keys expiring within 7 days</source>
+        <translation>API-Schlüssel, die innerhalb von 7 Tagen ablaufen</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>No REST application is registered yet. An application is what a mobile app, a partner site or a service uses to sign users in and call the REST interface for them: create one with New application.</source>
+        <translation>Es ist noch keine REST-Anwendung registriert. Eine Anwendung ist das, womit eine mobile App, eine Partner-Website oder ein Dienst Benutzer anmeldet und für sie die REST-Schnittstelle aufruft: Erstellen Sie eine mit „Neue Anwendung“.</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Authorized by: %count</source>
+        <translation>Autorisiert von: %count</translation>
+    </message>
+    <message>
+        <source>Valid tokens: %count</source>
+        <translation>Gültige Tokens: %count</translation>
+    </message>
+    <message>
+        <source>View the application %name</source>
+        <translation>Die Anwendung %name ansehen</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansehen</translation>
+    </message>
+    <message>
+        <source>Removed user</source>
+        <translation>Entfernter Benutzer</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Removing an application also ends the authorizations and tokens it was given.</source>
+        <translation>Das Entfernen einer Anwendung beendet auch die Autorisierungen und Tokens, die sie erhalten hat.</translation>
+    </message>
+    <message>
+        <source>How the application signs in</source>
+        <translation>Wie sich die Anwendung anmeldet</translation>
+    </message>
+    <message>
+        <source>Show the secret</source>
+        <translation>Das Geheimnis zeigen</translation>
+    </message>
+    <message>
+        <source>None: the authorization page cannot send anyone back to the application.</source>
+        <translation>Keine: Die Autorisierungsseite kann niemanden zur Anwendung zurückschicken.</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Erstellt</translation>
+    </message>
+    <message>
+        <source>Use</source>
+        <translation>Nutzung</translation>
+    </message>
+    <message>
+        <source>%count tokens still valid</source>
+        <translation>%count Tokens noch gültig</translation>
+    </message>
+    <message>
+        <source>No user has authorized this application yet.</source>
+        <translation>Noch kein Benutzer hat diese Anwendung autorisiert.</translation>
+    </message>
+    <message>
+        <source>Users who authorized this application</source>
+        <translation>Benutzer, die diese Anwendung autorisiert haben</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Authorized</source>
+        <translation>Autorisiert</translation>
+    </message>
+    <message>
+        <source>REST administration</source>
+        <translation>REST-Verwaltung</translation>
+    </message>
+    <message>
+        <source>Give the application a name.</source>
+        <translation>Geben Sie der Anwendung einen Namen.</translation>
+    </message>
+    <message>
+        <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
+        <translation>Die Endpunkt-URI muss eine absolute Adresse sein, etwa https://app.example.com/callback.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/apikey</name>
+    <message>
+        <source>API access</source>
+        <translation>API-Zugang</translation>
+    </message>
+    <message>
+        <source>Personal API keys let your own scripts and tools publish and read through the REST interface as you, without your password. Each key has a name, the scopes it may use and an end date, and you can revoke it at any time.</source>
+        <translation>Mit persönlichen API-Schlüsseln veröffentlichen und lesen Ihre eigenen Skripte und Werkzeuge über die REST-Schnittstelle in Ihrem Namen, ohne Ihr Passwort. Jeder Schlüssel hat einen Namen, die Bereiche, die er nutzen darf, und ein Enddatum, und Sie können ihn jederzeit widerrufen.</translation>
+    </message>
+    <message>
+        <source>API keys are switched off on this site: none can be made, and existing keys are not accepted.</source>
+        <translation>API-Schlüssel sind auf dieser Website ausgeschaltet: Es können keine erstellt werden, und vorhandene Schlüssel werden nicht angenommen.</translation>
+    </message>
+    <message>
+        <source>Sign in to manage your keys</source>
+        <translation>Anmelden, um Ihre Schlüssel zu verwalten</translation>
+    </message>
+    <message>
+        <source>Keys belong to an account and act as it, so you need to be signed in. You come back to this page afterwards.</source>
+        <translation>Schlüssel gehören zu einem Konto und handeln als dieses, deshalb müssen Sie angemeldet sein. Danach kommen Sie auf diese Seite zurück.</translation>
+    </message>
+    <message>
+        <source>Username or e-mail</source>
+        <translation>Benutzername oder E-Mail</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Anmelden</translation>
+    </message>
+    <message>
+        <source>Forgot your password?</source>
+        <translation>Passwort vergessen?</translation>
+    </message>
+    <message>
+        <source>No account yet?</source>
+        <translation>Noch kein Konto?</translation>
+    </message>
+    <message>
+        <source>Register first. Once your account is active and allowed to use the API, open My account and then API access to make your first key.</source>
+        <translation>Registrieren Sie sich zuerst. Sobald Ihr Konto aktiv ist und die API nutzen darf, öffnen Sie „Mein Konto“ und dann „API-Zugang“, um Ihren ersten Schlüssel zu erstellen.</translation>
+    </message>
+    <message>
+        <source>Create an account</source>
+        <translation>Konto erstellen</translation>
+    </message>
+    <message>
+        <source>The key was not made:</source>
+        <translation>Der Schlüssel wurde nicht erstellt:</translation>
+    </message>
+    <message>
+        <source>Your new key "%name"</source>
+        <translation>Ihr neuer Schlüssel „%name“</translation>
+    </message>
+    <message>
+        <source>Copy it now. It is shown this once and is not stored anywhere: if you lose it, revoke it and make a new one.</source>
+        <translation>Kopieren Sie ihn jetzt. Er wird nur dieses eine Mal angezeigt und nirgends gespeichert: Wenn Sie ihn verlieren, widerrufen Sie ihn und erstellen einen neuen.</translation>
+    </message>
+    <message>
+        <source>The key is on the clipboard.</source>
+        <translation>Der Schlüssel ist in der Zwischenablage.</translation>
+    </message>
+    <message>
+        <source>Copy key</source>
+        <translation>Schlüssel kopieren</translation>
+    </message>
+    <message>
+        <source>Try it:</source>
+        <translation>Ausprobieren:</translation>
+    </message>
+    <message>
+        <source>Revoke the key "%name"?</source>
+        <translation>Den Schlüssel „%name“ widerrufen?</translation>
+    </message>
+    <message>
+        <source>Every program that uses it stops working at once, and it cannot be made valid again.</source>
+        <translation>Jedes Programm, das ihn benutzt, funktioniert sofort nicht mehr, und er kann nicht wieder gültig werden.</translation>
+    </message>
+    <message>
+        <source>Revoke the key</source>
+        <translation>Schlüssel widerrufen</translation>
+    </message>
+    <message>
+        <source>Keep it</source>
+        <translation>Behalten</translation>
+    </message>
+    <message>
+        <source>Your keys</source>
+        <translation>Ihre Schlüssel</translation>
+    </message>
+    <message>
+        <source>You have no API keys yet.</source>
+        <translation>Sie haben noch keine API-Schlüssel.</translation>
+    </message>
+    <message>
+        <source>%active of %max keys in use. The full value of a key was shown only when it was made; here it is known by its first characters.</source>
+        <translation>%active von %max Schlüsseln in Gebrauch. Der vollständige Wert eines Schlüssels wurde nur beim Erstellen angezeigt; hier erkennen Sie ihn an seinen ersten Zeichen.</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktiv</translation>
+    </message>
+    <message>
+        <source>Expires soon</source>
+        <translation>Läuft bald ab</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Abgelaufen</translation>
+    </message>
+    <message>
+        <source>Revoked</source>
+        <translation>Widerrufen</translation>
+    </message>
+    <message>
+        <source>Revoke the key %name</source>
+        <translation>Den Schlüssel %name widerrufen</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Widerrufen</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Bereiche</translation>
+    </message>
+    <message>
+        <source>Made</source>
+        <translation>Erstellt</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Zuletzt benutzt</translation>
+    </message>
+    <message>
+        <source>from %address</source>
+        <translation>von %address</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation>Läuft ab</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Neuen Schlüssel erstellen</translation>
+    </message>
+    <message>
+        <source>Your account may not make API keys. If you need one, ask the site administrator to allow it for you.</source>
+        <translation>Ihr Konto darf keine API-Schlüssel erstellen. Wenn Sie einen brauchen, bitten Sie den Administrator der Website, es Ihnen zu erlauben.</translation>
+    </message>
+    <message>
+        <source>Your account may make keys, but none of the scopes a key can have is open to you, so there is nothing a key could do. Ask the site administrator.</source>
+        <translation>Ihr Konto darf Schlüssel erstellen, aber keiner der Bereiche, die ein Schlüssel haben kann, steht Ihnen offen, ein Schlüssel könnte also nichts tun. Fragen Sie den Administrator der Website.</translation>
+    </message>
+    <message>
+        <source>You have %count active keys, the most allowed. Revoke one you no longer use to make another.</source>
+        <translation>Sie haben %count aktive Schlüssel, das erlaubte Maximum. Widerrufen Sie einen, den Sie nicht mehr benutzen, um einen weiteren zu erstellen.</translation>
+    </message>
+    <message>
+        <source>Give each program its own key, so you can revoke one without stopping the others. Choose only the scopes it needs.</source>
+        <translation>Geben Sie jedem Programm einen eigenen Schlüssel, damit Sie einen widerrufen können, ohne die anderen anzuhalten. Wählen Sie nur die Bereiche, die es braucht.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>e.g. Newsroom import script</source>
+        <translation>z. B. Import-Skript der Redaktion</translation>
+    </message>
+    <message>
+        <source>Where the key is used, so you recognise it later.</source>
+        <translation>Wo der Schlüssel benutzt wird, damit Sie ihn später wiedererkennen.</translation>
+    </message>
+    <message>
+        <source>Needs your %policy permission; the key never gets more than you have.</source>
+        <translation>Braucht Ihre Berechtigung %policy; der Schlüssel bekommt nie mehr, als Sie haben.</translation>
+    </message>
+    <message>
+        <source>Valid for</source>
+        <translation>Gültig für</translation>
+    </message>
+    <message>
+        <source>No end date</source>
+        <translation>Ohne Enddatum</translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation>1 Tag</translation>
+    </message>
+    <message>
+        <source>%count days</source>
+        <translation>%count Tage</translation>
+    </message>
+    <message>
+        <source>The key stops working on its end date; make a new one before then.</source>
+        <translation>Der Schlüssel funktioniert ab seinem Enddatum nicht mehr; erstellen Sie vorher einen neuen.</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Schlüssel erstellen</translation>
+    </message>
+    <message>
+        <source>Using a key</source>
+        <translation>Einen Schlüssel benutzen</translation>
+    </message>
+    <message>
+        <source>Send it in the Authorization header of every request, never in the address: addresses end up in logs.</source>
+        <translation>Senden Sie ihn im Authorization-Header jeder Anfrage, nie in der Adresse: Adressen landen in Protokollen.</translation>
+    </message>
+    <message>
+        <source>A key works until its end date or until you revoke it. If a key may have leaked, revoke it here at once and make a new one.</source>
+        <translation>Ein Schlüssel funktioniert bis zu seinem Enddatum oder bis Sie ihn widerrufen. Wenn ein Schlüssel bekannt geworden sein könnte, widerrufen Sie ihn hier sofort und erstellen einen neuen.</translation>
+    </message>
+    <message>
+        <source>You have %count active API keys.</source>
+        <translation>Sie haben %count aktive API-Schlüssel.</translation>
+    </message>
+    <message>
+        <source>Make a personal key for your own scripts and tools to publish through the REST interface.</source>
+        <translation>Erstellen Sie einen persönlichen Schlüssel, mit dem Ihre eigenen Skripte und Werkzeuge über die REST-Schnittstelle veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>Manage my API keys</source>
+        <translation>Meine API-Schlüssel verwalten</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mein Konto</translation>
+    </message>
+    <message>
+        <source>You may not make API keys. Ask an administrator if you need one.</source>
+        <translation>Sie dürfen keine API-Schlüssel erstellen. Fragen Sie einen Administrator, wenn Sie einen brauchen.</translation>
+    </message>
+    <message>
+        <source>This form was already sent. If a key was made, it is in the list below; its value cannot be shown again.</source>
+        <translation>Dieses Formular wurde bereits gesendet. Wenn ein Schlüssel erstellt wurde, steht er in der Liste unten; sein Wert kann nicht noch einmal angezeigt werden.</translation>
+    </message>
+    <message>
+        <source>Give the key a name, so you know later where it is used.</source>
+        <translation>Geben Sie dem Schlüssel einen Namen, damit Sie später wissen, wo er benutzt wird.</translation>
+    </message>
+    <message>
+        <source>Choose at least one scope.</source>
+        <translation>Wählen Sie mindestens einen Bereich.</translation>
+    </message>
+    <message>
+        <source>One of the chosen scopes is not available to you.</source>
+        <translation>Einer der gewählten Bereiche steht Ihnen nicht zur Verfügung.</translation>
+    </message>
+    <message>
+        <source>Choose one of the offered lifetimes.</source>
+        <translation>Wählen Sie eine der angebotenen Laufzeiten.</translation>
+    </message>
+    <message>
+        <source>You already have %count active keys, the most allowed. Revoke one you no longer use first.</source>
+        <translation>Sie haben bereits %count aktive Schlüssel, das erlaubte Maximum. Widerrufen Sie zuerst einen, den Sie nicht mehr benutzen.</translation>
+    </message>
+    <message>
+        <source>The key "%name" is revoked. Requests with it are refused from now on.</source>
+        <translation>Der Schlüssel „%name“ ist widerrufen. Anfragen damit werden ab jetzt abgewiesen.</translation>
     </message>
 </context>
 </TS>
