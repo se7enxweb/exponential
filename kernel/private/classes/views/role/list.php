@@ -116,6 +116,15 @@ class ListView extends \Exponential\Runnable\ModuleView
         // every one of them was loaded with its policies on every view of this page.
         $tpl->setVariable( 'roles', $roles );
         $tpl->setVariable( 'role_count', $roleCount );
+        // How many users and groups each role on the page is assigned to, in one query for
+        // the page (eZRole::assignmentCounts()); role/view lists them.
+        $roleIDs = array();
+        foreach ( (array)$roles as $listedRole )
+        {
+            if ( $listedRole instanceof \eZRole )
+                $roleIDs[] = (int)$listedRole->attribute( 'id' );
+        }
+        $tpl->setVariable( 'assignment_counts', \eZRole::assignmentCounts( $roleIDs ) );
         $tpl->setVariable( 'module', $Module );
         $tpl->setVariable( 'view_parameters', $viewParameters );
         $tpl->setVariable( 'limit', $limit );
