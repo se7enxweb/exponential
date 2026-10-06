@@ -144,16 +144,16 @@
                 {if $url.last_checked|eq( 0 )}
                 <li class="exp-badge is-warn">{'Never checked'|i18n( 'design/admin/url/list' )}</li>
                 {/if}
-                {if eq( $kind, 'https' )}
-                <li class="exp-badge" title="{'The link check does not test https addresses: it records the time only, so this state is the one the link was given or set by hand.'|i18n( 'design/admin/url/list' )}">{'https: not tested'|i18n( 'design/admin/url/list' )}</li>
-                {elseif eq( $kind, 'mailto' )}
+                {if eq( $kind, 'mailto' )}
                 <li class="exp-badge is-info" title="{'For an e-mail address the link check looks up the mail server of its domain.'|i18n( 'design/admin/url/list' )}">{'E-mail'|i18n( 'design/admin/url/list' )}</li>
                 {elseif eq( $kind, 'internal' )}
                 <li class="exp-badge is-info" title="{'A path on this site: the link check looks it up as a URL alias.'|i18n( 'design/admin/url/list' )}">{'On this site'|i18n( 'design/admin/url/list' )}</li>
                 {elseif eq( $kind, 'content' )}
-                <li class="exp-badge" title="{'A link to a node or object in rich text. The link check looks it up as a path, finds nothing and marks it invalid, although the link works while its target exists.'|i18n( 'design/admin/url/list' )}">{'Link to content'|i18n( 'design/admin/url/list' )}</li>
+                <li class="exp-badge is-info" title="{'A link to a node or object in rich text: the link check marks it valid while its target exists, is published and is visible.'|i18n( 'design/admin/url/list' )}">{'Link to content'|i18n( 'design/admin/url/list' )}</li>
+                {elseif eq( $kind, 'file' )}
+                <li class="exp-badge" title="{'A file address names a file on a computer, not a page: the link check never tests it and keeps its state.'|i18n( 'design/admin/url/list' )}">{'Not tested'|i18n( 'design/admin/url/list' )}</li>
                 {elseif eq( $kind, 'other' )}
-                <li class="exp-badge" title="{'The link check does not test this kind of address.'|i18n( 'design/admin/url/list' )}">{'Not tested'|i18n( 'design/admin/url/list' )}</li>
+                <li class="exp-badge is-warn" title="{'An address of another kind: the link check looks it up as a path of this site, so it is usually marked invalid.'|i18n( 'design/admin/url/list' )}">{'Other address'|i18n( 'design/admin/url/list' )}</li>
                 {/if}
             </ul>
         </div>

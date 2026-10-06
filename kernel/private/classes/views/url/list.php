@@ -201,42 +201,33 @@ class ListView extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * How the link check treats an address, by its scheme (see the linkcheck cronjob): 'http' (fetched),
-     * 'https' (not tested: the check says it does not support it and only records the time), 'mailto' (the mail
-     * domain is looked up), 'content' (a rich text link to a node or object, ezlocation:// and the like, which the
-     * check looks up as a path and so marks invalid), 'other' (another scheme, never tested) or 'internal' (a path on this site, looked up
-     * as an alias or on the configured site addresses).
+     * How the link check treats an address (expLinkCheck::kind()): 'web' (http, https and ftp are requested),
+     * 'mailto' (the mail domain is looked up), 'content' (a rich text link to a node or object is judged by
+     * whether its target is published and visible), 'file' (never tested), 'internal' (a path of this site,
+     * looked up as an alias or on SiteURL[]) or 'other' (another scheme, looked up as a path like 'internal', so
+     * usually invalid).
      *
      * @param string $url
      * @return string
      */
     public static function checkKind( $url )
     {
-        $url = (string)$url;
-        if ( preg_match( '#^(http|ftp|file):#i', $url ) )
-            return 'http';
-        if ( preg_match( '#^https:#i', $url ) )
-            return 'https';
-        if ( preg_match( '#^mailto:#i', $url ) )
-            return 'mailto';
-        if ( preg_match( '#^(ezlocation|eznode|ezobject)://#i', $url ) )
-            return 'content';
-        if ( preg_match( '#^[a-z][a-z0-9+.-]*:#i', $url ) )
+        $kind = \expLinkCheck::kind( $url );
+        if ( $kind === 'internal' && preg_match( '#^[a-z][a-z0-9+.-]*:#i', trim( (string)$url ) ) )
             return 'other';
-        return 'internal';
+        return $kind;
     }
 
     /**
-     * Whether the page may make the address a link to open it: only web, ftp and mail addresses and paths, never
-     * a javascript: or data: address that an editor's link could carry.
+     * Whether the page may make the address a link to open it: only web and mail addresses and paths, never a
+     * javascript:, data: or file: address that an editor's link could carry.
      *
      * @param string $url
      * @return bool
      */
     public static function isOpenable( $url )
     {
-        return in_array( self::checkKind( $url ), array( 'http', 'https', 'mailto', 'internal' ), true )
-               && !preg_match( '#^file:#i', (string)$url );
+        return in_array( self::checkKind( $url ), array( 'web', 'mailto', 'internal' ), true );
     }
 
     /**
