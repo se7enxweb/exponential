@@ -146,7 +146,8 @@ class eZSOAPServer
                 $params[] = eZSOAPResponse::decodeDataTypes( $parameterNode );
             }
 
-            list( $objectName, $objectFunctionName ) = preg_split('/::/', $functionName, 2, PREG_SPLIT_NO_EMPTY);
+            // a plain function name has no '::' and so no second part
+            list( $objectName, $objectFunctionName ) = array_pad( preg_split( '/::/', (string)$functionName, 2, PREG_SPLIT_NO_EMPTY ), 2, null );
             if ( !$objectFunctionName and in_array( $functionName, $this->FunctionList ) &&
                  function_exists( $functionName ) )
             {
@@ -218,7 +219,7 @@ class eZSOAPServer
     }
 
     /// Contains a list over registered functions
-    public $FunctionList;
+    public $FunctionList = array();
     /// Contains the RAW HTTP post data information
     public $RawPostData;
 }
