@@ -209,9 +209,12 @@ class expVelocityConfigLayout
         foreach ( self::$modules as $name => $paths )
         {
             $mod = array();
+            $moved = false;
             foreach ( $paths as $path )
-                $this->movePath( $site, $mod, explode( '.', $path ) );
-            if ( $mod )
+                $moved = $this->movePath( $site, $mod, explode( '.', $path ) ) || $moved;
+            // movePath() makes the blocks on the way even when the setting is not there:
+            // a module none of whose settings were generated gets no file
+            if ( $moved )
                 $mods[$name] = $mod;
         }
 
@@ -224,6 +227,8 @@ class expVelocityConfigLayout
 
     /**
      * Move one path from $from to $to, leaving site keys behind.
+     *
+     * @return bool whether a setting was moved
      */
     protected function movePath( array &$from, array &$to, array $keys )
     {
@@ -233,7 +238,7 @@ class expVelocityConfigLayout
         foreach ( $keys as $k )
         {
             if ( !isset( $src[$k] ) || !is_array( $src[$k] ) )
-                return;
+                return false;
             if ( !isset( $dst[$k] ) )
                 $dst[$k] = array();
             $src =& $src[$k];
@@ -243,6 +248,7 @@ class expVelocityConfigLayout
             ? array_values( array_filter( array_keys( $src ), function ( $n ) use ( $last ) {
                   return strpos( (string)$n, substr( $last, 0, -1 ) ) === 0; } ) )
             : ( array_key_exists( $last, $src ) ? array( $last ) : array() );
+        $moved = false;
         foreach ( $names as $name )
         {
             $value = $src[$name];
@@ -254,15 +260,23 @@ class expVelocityConfigLayout
                 foreach ( array_keys( $src[$name] ) as $sub )
                     if ( !in_array( $sub, self::$siteKeys, true ) )
                         unset( $src[$name][$sub] );
+                // A block left with no site key is gone from the site file, not an empty []
+                if ( !$src[$name] )
+                    unset( $src[$name] );
                 if ( $value )
+                {
                     $dst[$name] = $value;
+                    $moved = true;
+                }
             }
             else
             {
                 $dst[$name] = $value;
                 unset( $src[$name] );
+                $moved = true;
             }
         }
+        return $moved;
     }
 
     /** Drop blocks left empty by the split. */
