@@ -360,7 +360,10 @@ exp:benchmark micro  30 measured and 3 warm-up iterations per probe, PHP 8.5.11,
   datatype_validate  30   360  3.07    3.97  4.64  5.47  5.78  0.54    90725    0.424    0  18 inputs 20 times: ...
 ```
 
-(This is the run committed as `tests/benchmark/baseline.json`; the notes are shortened.)
+(The notes are shortened.) The same probes on a GitHub Actions runner, the run committed as
+`tests/benchmark/baseline.json`, took 19.3 ms for `template_compile` and 91 ms for `i18n_load` with a calibration
+median of 5.3 ms, and a standard deviation of 2 % of the median or less: a dedicated runner is much steadier than a
+shared server, which is why the CI check can compare at all.
 
 - The times are milliseconds per iteration; `ops` is the work one iteration does; `ops/s` is operations per second
   at the median (`ops × 1000 / median`).
