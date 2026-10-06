@@ -945,7 +945,7 @@ class eZPackageCreationHandler
                 $maintainers = $package->attribute( 'maintainers' );
                 foreach ( $maintainers as $maintainer )
                 {
-                    if ( $maintainer['person'] == $maintainerPerson )
+                    if ( $maintainer['name'] == $maintainerPerson )
                     {
                            return false;
                     }

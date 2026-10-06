@@ -125,4 +125,29 @@ class eZPackagePolicyTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 5, eZPackage::fetchMaintainerRoleIDList( 'contentclass', true ), 'no Role limitation: every role' );
         $this->assertSame( array(), eZPackage::fetchMaintainerRoleIDList( 'design', true ) );
     }
+
+    public function testMaintainerStepIsSkippedWhenTheUserIsAlreadyAMaintainer()
+    {
+        $objectID = 999999811;
+        $user = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'k1anonymous', 'email' => 'k1@k1.example.invalid' ) );
+        $user->AccessArray = array( 'package' => array( 'create' => array( '*' => '*' ) ) );
+        $user->ContentObjectID = $objectID;
+        $GLOBALS['eZUserGlobalInstance_'] = $user;
+        // an object without id answers with its own name, no database
+        $GLOBALS['eZContentObjectContentObjectCache'][$objectID] = new eZContentObject( array( 'id' => null, 'name' => 'Ada Example' ) );
+        try
+        {
+            $creator = new eZPackageCreationHandler( 'k1', 'K1', array() );
+            $data = array();
+            $package = new eZPackage( array( 'name' => 'k1_maintained' ), 'var/tmp' );
+            $this->assertTrue( $creator->checkPackageMaintainer( $package, $data ), 'not a maintainer yet' );
+            $package->appendMaintainer( 'Ada Example', 'ada@k1.example.invalid', 'lead' );
+            $this->assertFalse( $creator->checkPackageMaintainer( $package, $data ), 'already a maintainer: the step is left out' );
+            $this->assertTrue( $creator->checkPackageMaintainer( false, $data ), 'a package not created yet' );
+        }
+        finally
+        {
+            unset( $GLOBALS['eZContentObjectContentObjectCache'][$objectID] );
+        }
+    }
 }
