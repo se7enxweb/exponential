@@ -400,9 +400,9 @@ class Edit extends \Exponential\Runnable\ModuleView
                                  $functionLimitation['name'] != 'Node' and
                                  $functionLimitation['name'] != 'Subtree' )
                             {
-                                $limitationValues = $http->postVariable( $functionLimitation['name'] );
+                                $limitationValues = \eZPolicyLimitation::validValues( $functionLimitation, $http->postVariable( $functionLimitation['name'] ) );
 
-                                if ( !in_array( '-1', $limitationValues ) )
+                                if ( $limitationValues && !in_array( '-1', $limitationValues ) )
                                 {
                                     $policyLimitation = \eZPolicyLimitation::createNew( $policy->attribute('id'), $functionLimitation['name'] );
                                     foreach ( $limitationValues as $limitationValue )
@@ -435,10 +435,10 @@ class Edit extends \Exponential\Runnable\ModuleView
                 {
                     if ( $http->hasPostVariable( $functionLimitation['name'] ) )
                     {
-                        $limitationValues = $http->postVariable( $functionLimitation['name'] );
+                        $limitationValues = \eZPolicyLimitation::validValues( $functionLimitation, $http->postVariable( $functionLimitation['name'] ) );
                         \eZDebugSetting::writeDebug( 'kernel-role-edit', $limitationValues, 'limitationValues' );
 
-                        if ( !in_array('-1', $limitationValues ) )
+                        if ( $limitationValues && !in_array( '-1', $limitationValues ) )
                         {
                             $policyLimitation = \eZPolicyLimitation::createNew( $policy->attribute('id'), $functionLimitation['name'] );
                             foreach ( $limitationValues as $limitationValue )
@@ -674,10 +674,10 @@ class Edit extends \Exponential\Runnable\ModuleView
                              $functionLimitation['name'] != 'Node' and
                              $functionLimitation['name'] != 'Subtree' )
                         {
-                            $limitationValues = $http->postVariable( $functionLimitation['name'] );
+                            $limitationValues = \eZPolicyLimitation::validValues( $functionLimitation, $http->postVariable( $functionLimitation['name'] ) );
                             \eZDebugSetting::writeDebug( 'kernel-role-edit', $limitationValues, 'limitationValues');
 
-                            if ( !in_array('-1', $limitationValues ) )
+                            if ( $limitationValues && !in_array( '-1', $limitationValues ) )
                             {
                                 $policyLimitation = \eZPolicyLimitation::createNew( $policy->attribute('id'), $functionLimitation['name'] );
                                 foreach ( $limitationValues as $limitationValue )
@@ -699,10 +699,10 @@ class Edit extends \Exponential\Runnable\ModuleView
                     {
                         if ( $http->hasPostVariable( $functionLimitation['name'] ))
                         {
-                            $limitationValues = $http->postVariable( $functionLimitation['name'] );
+                            $limitationValues = \eZPolicyLimitation::validValues( $functionLimitation, $http->postVariable( $functionLimitation['name'] ) );
                             \eZDebugSetting::writeDebug( 'kernel-role-edit', $limitationValues, 'limitationValues');
 
-                            if ( is_array( $limitationValues ) && !in_array( '-1', $limitationValues ) )
+                            if ( $limitationValues && !in_array( '-1', $limitationValues ) )
                             {
                                 $policyLimitation = \eZPolicyLimitation::createNew( $policy->attribute('id'), $functionLimitation['name'] );
                                 \eZDebugSetting::writeDebug( 'kernel-role-edit', $policyLimitation, 'policyLimitationCreated' );

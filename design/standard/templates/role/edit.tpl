@@ -31,7 +31,7 @@
     <td>
         {section show=$Policy:item.limitations}
           {section name=Limitation loop=$Policy:item.limitations}
-              {$Policy:Limitation:item.identifier}(
+              {$Policy:Limitation:item.label|wash}{if $Policy:Limitation:item.denies_without_handler} <em class="limitation-denies" title="{'No extension handler evaluates this limitation, so this policy gives no access'|i18n( 'design/admin/role/view' )|wash}">{'(no handler, denies)'|i18n( 'design/admin/role/view' )|wash}</em>{/if}(
               {section name=LimitationValues loop=$Policy:Limitation:item.values_as_array_with_names}
                   {$Policy:Limitation:LimitationValues:item.Name}
                   {delimiter}, {/delimiter}

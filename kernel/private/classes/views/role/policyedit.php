@@ -42,9 +42,9 @@ function processDropdownLimitations( &$policy, $currentModule, $currentFunction,
             $functionLimitation['name'] != 'Node' and
             $functionLimitation['name'] != 'Subtree' )
         {
-            $limitationValueList = $http->postVariable( $functionLimitation['name'] );
+            $limitationValueList = \eZPolicyLimitation::validValues( $functionLimitation, $http->postVariable( $functionLimitation['name'] ) );
 
-            if ( !in_array('-1', $limitationValueList ) )
+            if ( $limitationValueList && !in_array( '-1', $limitationValueList ) )
             {
                 $hasLimitation = true;
                 $policyLimitation = eZPolicyLimitation::createNew( $policy->attribute( 'id' ),

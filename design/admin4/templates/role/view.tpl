@@ -60,7 +60,7 @@
     <td>
         {section show=$Policies.item.limitations}
             {section var=Limitations loop=$Policies.item.limitations}
-                {$Limitations.item.identifier|wash}(
+                {$Limitations.item.label|wash}{if $Limitations.item.denies_without_handler} <em class="limitation-denies" title="{'No extension handler evaluates this limitation, so this policy gives no access'|i18n( 'design/admin/role/view' )|wash}">{'(no handler, denies)'|i18n( 'design/admin/role/view' )|wash}</em>{/if}(
                 {foreach $Limitations.item.values_as_array_with_names as $limitation_value}
                     {if is_set( $limitation_value.node_data )}
                         <a href={concat( 'content/view/full/', $limitation_value.node_data.node_id )|ezurl} title="{'Path: \'/%path_string\', Class identifier: \'%class_identifier\''|i18n( 'design/admin/role/view',, hash( '%path_string', $limitation_value.node_data.path_identification_string, '%class_identifier', $limitation_value.node_data.class_identifier ) )|wash}">{$limitation_value.Name|wash}</a>
