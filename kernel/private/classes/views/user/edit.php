@@ -65,7 +65,7 @@ class Edit extends \Exponential\Runnable\ModuleView
 
         if ( $Module->isCurrentAction( "Cancel" ) )
         {
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/content/view/sitemap/5/' ) );
+            return $this->viewResult( null, $Module->redirectTo( self::cancelURI( $Module ) ) );
         }
 
         $http = \eZHTTPTool::instance();
@@ -109,6 +109,23 @@ class Edit extends \Exponential\Runnable\ModuleView
                                         'url' => false ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Where Cancel goes: the page the form names in RedirectIfDiscarded, as content/edit and user/register read it,
+     * else the page last viewed, else the sitemap of the users. It always went to that sitemap, a page an editor
+     * changing their own account has no business with. eZModule::redirectTo() refuses a host that
+     * site.ini [SiteSettings] AllowedRedirectHosts does not list.
+     *
+     * @param \eZModule $module
+     * @return string
+     */
+    public static function cancelURI( $module )
+    {
+        $http = \eZHTTPTool::instance();
+        $preferred = $http->hasPostVariable( 'RedirectIfDiscarded' ) ? $http->postVariable( 'RedirectIfDiscarded' ) : '';
+        $preferred = is_string( $preferred ) ? trim( $preferred ) : '';
+        return \eZRedirectManager::redirectURI( $module, '/content/view/sitemap/5/', true, false, $preferred !== '' ? $preferred : false );
     }
 }
 
