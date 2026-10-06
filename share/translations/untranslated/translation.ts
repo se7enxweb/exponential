@@ -3355,6 +3355,90 @@
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add a content language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%used of at most %max languages are in use.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language and country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The locales in share/locale. Languages already added are listed but cannot be chosen again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, code or country, e.g. German, ger, Austria</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom: a name and a locale code of its own (below)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name of the language is taken from the locale. A language chosen here wins over the custom fields below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For a language that is not in the list. Choose "Custom" above, then give it a name and a locale code; a share/locale file with that code must exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Three letters for the language, a dash, two for the country: ger-CH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After adding it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translate content: open an object, choose Edit and pick the new language; the editor offers to start from an existing translation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show it: add SiteLanguageList[]=&lt;code&gt; to the site.ini of each siteaccess that should show it; first in the list means shown first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optionally give it a siteaccess of its own with Locale set to it, so the templates speak it too.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing is translated or shown until you do the steps above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count languages match</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count languages</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translations</name>
@@ -3412,6 +3496,282 @@
     </message>
     <message>
         <source>Toggle all.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The languages content can be written in. Every object keeps one translation per language it has, and each siteaccess shows the languages in its SiteLanguageList, the first one first. The language of the administration interface itself is a different setting (Locale) and is not managed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More can be added (at most %max)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Need a look</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unused, can be removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default for new content in this siteaccess (ContentObjectLocale)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no content languages yet. Add one to be able to create content.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default for new content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown first by %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In no SiteLanguageList</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only %count objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%main in it as main language, %only only in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with a name in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bit %bit of the language mask</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown by siteaccesses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Highlighted: the siteaccesses that list it first, so show it first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not shown by any siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count objects have a translation in %locale, but no siteaccess lists it, so visitors never see these translations. Either add %locale to the SiteLanguageList of the siteaccess that should show it, or move the content into a language your sites use and then remove this one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to move it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No object is in %locale, but %count classes have a name in it, so it cannot be removed yet. Remove the %locale translation from these classes first; then the language can be removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See the classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unused.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing is written in %locale and no siteaccess lists it. It can be removed safely, or added to a SiteLanguageList to start using it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only %count objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Few objects have a translation in %locale. If they were created in it by mistake, move them into the right language; the page of the language lists them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See the objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No object or class has a translation in %locale yet. Translate content into it from the editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can be removed, but %sites still list it: take it out of their SiteLanguageList as well.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can be removed: no object and no class has a translation in it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot be removed while %objects objects and %classes classes have a translation in it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing a language takes away the possibility to write in it. It never deletes content: a language that any object or class has is refused.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccesses and their languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>site.ini [RegionalSettings] SiteLanguageList of each siteaccess, first language first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A siteaccess shows an object in the first of its languages the object has. With ShowUntranslatedObjects disabled, objects in none of them are hidden, unless they are always available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the siteaccesses in site.ini [SiteAccessSettings] AvailableSiteAccessList are counted; a settings folder that is not listed there serves nothing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages, in order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not a content language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No SiteLanguageList: the siteaccess uses the default of site.ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No siteaccess is listed in site.ini [SiteAccessSettings] AvailableSiteAccessList.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content languages and interface languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What this page manages, and what it does not</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A content language is a language your articles, folders and other objects can be written in. Each one has an ID that is a single bit, so an object records all of its translations in one number, its language mask; the lowest bit marks an object as always available, shown even where none of its languages is listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The texts of the administration interface and the templates (buttons, menus) come from translation files (.ts) and follow the Locale setting of a siteaccess instead. A site can show German content with an English interface and the other way round.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove these languages?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Still listed by siteaccesses: %sites. Take it out of their SiteLanguageList as well.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select at least one unused language to remove.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a language from the list, or give the locale code of a custom one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>"%locale" is not a locale code. A code is three letters for the language, a dash and two letters for the country, such as ger-DE.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name (%locale) is already a content language. Nothing was added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name (%locale) was added. Content can now be translated into it; add %locale to the SiteLanguageList of each siteaccess that should show it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no locale %locale in share/locale. Choose one from the list, or add its .ini file to share/locale first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No language was selected, so nothing was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name (%locale) was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These siteaccesses still list %locale in SiteLanguageList; take it out there: %sites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name (%locale) was not removed: %objects objects and %classes classes still have a translation in it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3563,6 +3923,182 @@
     </message>
     <message>
         <source>Country/region variation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All content languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default for new content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language of this interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In no SiteLanguageList</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only %count objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects with a translation in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Of them in it as main language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only in this language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes with a name in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID, bit %bit of the language mask</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Highlighted: the siteaccesses that list it first, so show it first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No siteaccess lists %locale in its SiteLanguageList, so no site shows content in it, except objects that are always available and have no translation in a language of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To show it, add SiteLanguageList[]=%locale to settings/siteaccess/&lt;siteaccess&gt;/site.ini.append.php. If it should not be used at all, move its content into another language and remove it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing this language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No object and no class has a translation in %locale, so it can be removed. Nothing else is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%sites still list it: take it out of their SiteLanguageList as well, or they will list a language that does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is the language this administration interface runs in, so it is not removed from here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name cannot be removed while %objects objects and %classes classes have a translation in it; the kernel refuses it. To take it out of use without losing anything:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For each object below, open it and translate it into the language it should be in (Edit, then choose that language and translate from %locale). Publish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the Translations window of the object, make the new language its main language, then remove the %locale translation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For each class below, open it (Setup, Classes); in its Translations window make another language the main one if needed (Set main), then remove the %locale translation. A class edit that was never stored counts too: edit that class and store or cancel the edit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unsaved edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A class edit that was never stored; it counts until it is stored or cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When both counts are 0, remove the language here and take it out of every SiteLanguageList.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %shown changed last, of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>always available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>this one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No object has a translation in this language.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class has a name in this language.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How dates, numbers and money are written in it, from share/locale</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

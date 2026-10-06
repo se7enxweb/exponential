@@ -3758,6 +3758,90 @@
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
+    <message>
+        <source>Add a content language</source>
+        <translation>Add a content language</translation>
+    </message>
+    <message>
+        <source>Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.</source>
+        <translation>Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.</translation>
+    </message>
+    <message>
+        <source>%used of at most %max languages are in use.</source>
+        <translation>%used of at most %max languages are in use.</translation>
+    </message>
+    <message>
+        <source>Language and country</source>
+        <translation>Language and country</translation>
+    </message>
+    <message>
+        <source>The locales in share/locale. Languages already added are listed but cannot be chosen again.</source>
+        <translation>The locales in share/locale. Languages already added are listed but cannot be chosen again.</translation>
+    </message>
+    <message>
+        <source>Find a language</source>
+        <translation>Find a language</translation>
+    </message>
+    <message>
+        <source>Name, code or country, e.g. German, ger, Austria</source>
+        <translation>Name, code or country, e.g. German, ger, Austria</translation>
+    </message>
+    <message>
+        <source>Custom: a name and a locale code of its own (below)</source>
+        <translation>Custom: a name and a locale code of its own (below)</translation>
+    </message>
+    <message>
+        <source>already added</source>
+        <translation>already added</translation>
+    </message>
+    <message>
+        <source>The name of the language is taken from the locale. A language chosen here wins over the custom fields below.</source>
+        <translation>The name of the language is taken from the locale. A language chosen here wins over the custom fields below.</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation>Custom language</translation>
+    </message>
+    <message>
+        <source>For a language that is not in the list. Choose "Custom" above, then give it a name and a locale code; a share/locale file with that code must exist.</source>
+        <translation>For a language that is not in the list. Choose "Custom" above, then give it a name and a locale code; a share/locale file with that code must exist.</translation>
+    </message>
+    <message>
+        <source>Three letters for the language, a dash, two for the country: ger-CH</source>
+        <translation>Three letters for the language, a dash, two for the country: ger-CH</translation>
+    </message>
+    <message>
+        <source>After adding it</source>
+        <translation>After adding it</translation>
+    </message>
+    <message>
+        <source>Translate content: open an object, choose Edit and pick the new language; the editor offers to start from an existing translation.</source>
+        <translation>Translate content: open an object, choose Edit and pick the new language; the editor offers to start from an existing translation.</translation>
+    </message>
+    <message>
+        <source>Show it: add SiteLanguageList[]=&lt;code&gt; to the site.ini of each siteaccess that should show it; first in the list means shown first.</source>
+        <translation>Show it: add SiteLanguageList[]=&lt;code&gt; to the site.ini of each siteaccess that should show it; first in the list means shown first.</translation>
+    </message>
+    <message>
+        <source>Optionally give it a siteaccess of its own with Locale set to it, so the templates speak it too.</source>
+        <translation>Optionally give it a siteaccess of its own with Locale set to it, so the templates speak it too.</translation>
+    </message>
+    <message>
+        <source>Nothing is translated or shown until you do the steps above.</source>
+        <translation>Nothing is translated or shown until you do the steps above.</translation>
+    </message>
+    <message>
+        <source>Add language</source>
+        <translation>Add language</translation>
+    </message>
+    <message>
+        <source>%shown of %count languages match</source>
+        <translation>%shown of %count languages match</translation>
+    </message>
+    <message>
+        <source>%count languages</source>
+        <translation>%count languages</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translations</name>
@@ -3816,6 +3900,282 @@
     <message>
         <source>Toggle all.</source>
         <translation>Toggle all.</translation>
+    </message>
+    <message>
+        <source>Content languages</source>
+        <translation>Content languages</translation>
+    </message>
+    <message>
+        <source>The languages content can be written in. Every object keeps one translation per language it has, and each siteaccess shows the languages in its SiteLanguageList, the first one first. The language of the administration interface itself is a different setting (Locale) and is not managed here.</source>
+        <translation>The languages content can be written in. Every object keeps one translation per language it has, and each siteaccess shows the languages in its SiteLanguageList, the first one first. The language of the administration interface itself is a different setting (Locale) and is not managed here.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>More can be added (at most %max)</source>
+        <translation>More can be added (at most %max)</translation>
+    </message>
+    <message>
+        <source>Need a look</source>
+        <translation>Need a look</translation>
+    </message>
+    <message>
+        <source>Unused, can be removed</source>
+        <translation>Unused, can be removed</translation>
+    </message>
+    <message>
+        <source>Default for new content in this siteaccess (ContentObjectLocale)</source>
+        <translation>Default for new content in this siteaccess (ContentObjectLocale)</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>There are no content languages yet. Add one to be able to create content.</source>
+        <translation>There are no content languages yet. Add one to be able to create content.</translation>
+    </message>
+    <message>
+        <source>Default for new content</source>
+        <translation>Default for new content</translation>
+    </message>
+    <message>
+        <source>Shown first by %count</source>
+        <translation>Shown first by %count</translation>
+    </message>
+    <message>
+        <source>In no SiteLanguageList</source>
+        <translation>In no SiteLanguageList</translation>
+    </message>
+    <message>
+        <source>Only %count objects</source>
+        <translation>Only %count objects</translation>
+    </message>
+    <message>
+        <source>Unused</source>
+        <translation>Unused</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>In use</translation>
+    </message>
+    <message>
+        <source>Select for removal</source>
+        <translation>Select for removal</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objects</translation>
+    </message>
+    <message>
+        <source>%main in it as main language, %only only in it</source>
+        <translation>%main in it as main language, %only only in it</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>with a name in it</source>
+        <translation>with a name in it</translation>
+    </message>
+    <message>
+        <source>Language ID</source>
+        <translation>Language ID</translation>
+    </message>
+    <message>
+        <source>bit %bit of the language mask</source>
+        <translation>bit %bit of the language mask</translation>
+    </message>
+    <message>
+        <source>Shown by siteaccesses</source>
+        <translation>Shown by siteaccesses</translation>
+    </message>
+    <message>
+        <source>Highlighted: the siteaccesses that list it first, so show it first.</source>
+        <translation>Highlighted: the siteaccesses that list it first, so show it first.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>Not shown by any siteaccess.</source>
+        <translation>Not shown by any siteaccess.</translation>
+    </message>
+    <message>
+        <source>%count objects have a translation in %locale, but no siteaccess lists it, so visitors never see these translations. Either add %locale to the SiteLanguageList of the siteaccess that should show it, or move the content into a language your sites use and then remove this one.</source>
+        <translation>%count objects have a translation in %locale, but no siteaccess lists it, so visitors never see these translations. Either add %locale to the SiteLanguageList of the siteaccess that should show it, or move the content into a language your sites use and then remove this one.</translation>
+    </message>
+    <message>
+        <source>How to move it</source>
+        <translation>How to move it</translation>
+    </message>
+    <message>
+        <source>No object is in %locale, but %count classes have a name in it, so it cannot be removed yet. Remove the %locale translation from these classes first; then the language can be removed.</source>
+        <translation>No object is in %locale, but %count classes have a name in it, so it cannot be removed yet. Remove the %locale translation from these classes first; then the language can be removed.</translation>
+    </message>
+    <message>
+        <source>See the classes</source>
+        <translation>See the classes</translation>
+    </message>
+    <message>
+        <source>Unused.</source>
+        <translation>Unused.</translation>
+    </message>
+    <message>
+        <source>Nothing is written in %locale and no siteaccess lists it. It can be removed safely, or added to a SiteLanguageList to start using it.</source>
+        <translation>Nothing is written in %locale and no siteaccess lists it. It can be removed safely, or added to a SiteLanguageList to start using it.</translation>
+    </message>
+    <message>
+        <source>Only %count objects.</source>
+        <translation>Only %count objects.</translation>
+    </message>
+    <message>
+        <source>Few objects have a translation in %locale. If they were created in it by mistake, move them into the right language; the page of the language lists them.</source>
+        <translation>Few objects have a translation in %locale. If they were created in it by mistake, move them into the right language; the page of the language lists them.</translation>
+    </message>
+    <message>
+        <source>See the objects</source>
+        <translation>See the objects</translation>
+    </message>
+    <message>
+        <source>Not used yet.</source>
+        <translation>Not used yet.</translation>
+    </message>
+    <message>
+        <source>No object or class has a translation in %locale yet. Translate content into it from the editor.</source>
+        <translation>No object or class has a translation in %locale yet. Translate content into it from the editor.</translation>
+    </message>
+    <message>
+        <source>Can be removed, but %sites still list it: take it out of their SiteLanguageList as well.</source>
+        <translation>Can be removed, but %sites still list it: take it out of their SiteLanguageList as well.</translation>
+    </message>
+    <message>
+        <source>Can be removed: no object and no class has a translation in it.</source>
+        <translation>Can be removed: no object and no class has a translation in it.</translation>
+    </message>
+    <message>
+        <source>Cannot be removed while %objects objects and %classes classes have a translation in it.</source>
+        <translation>Cannot be removed while %objects objects and %classes classes have a translation in it.</translation>
+    </message>
+    <message>
+        <source>Removing a language takes away the possibility to write in it. It never deletes content: a language that any object or class has is refused.</source>
+        <translation>Removing a language takes away the possibility to write in it. It never deletes content: a language that any object or class has is refused.</translation>
+    </message>
+    <message>
+        <source>Siteaccesses and their languages</source>
+        <translation>Siteaccesses and their languages</translation>
+    </message>
+    <message>
+        <source>site.ini [RegionalSettings] SiteLanguageList of each siteaccess, first language first</source>
+        <translation>site.ini [RegionalSettings] SiteLanguageList of each siteaccess, first language first</translation>
+    </message>
+    <message>
+        <source>A siteaccess shows an object in the first of its languages the object has. With ShowUntranslatedObjects disabled, objects in none of them are hidden, unless they are always available.</source>
+        <translation>A siteaccess shows an object in the first of its languages the object has. With ShowUntranslatedObjects disabled, objects in none of them are hidden, unless they are always available.</translation>
+    </message>
+    <message>
+        <source>Only the siteaccesses in site.ini [SiteAccessSettings] AvailableSiteAccessList are counted; a settings folder that is not listed there serves nothing.</source>
+        <translation>Only the siteaccesses in site.ini [SiteAccessSettings] AvailableSiteAccessList are counted; a settings folder that is not listed there serves nothing.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Languages, in order</source>
+        <translation>Languages, in order</translation>
+    </message>
+    <message>
+        <source>not a content language</source>
+        <translation>not a content language</translation>
+    </message>
+    <message>
+        <source>No SiteLanguageList: the siteaccess uses the default of site.ini</source>
+        <translation>No SiteLanguageList: the siteaccess uses the default of site.ini</translation>
+    </message>
+    <message>
+        <source>No siteaccess is listed in site.ini [SiteAccessSettings] AvailableSiteAccessList.</source>
+        <translation>No siteaccess is listed in site.ini [SiteAccessSettings] AvailableSiteAccessList.</translation>
+    </message>
+    <message>
+        <source>Content languages and interface languages</source>
+        <translation>Content languages and interface languages</translation>
+    </message>
+    <message>
+        <source>What this page manages, and what it does not</source>
+        <translation>What this page manages, and what it does not</translation>
+    </message>
+    <message>
+        <source>A content language is a language your articles, folders and other objects can be written in. Each one has an ID that is a single bit, so an object records all of its translations in one number, its language mask; the lowest bit marks an object as always available, shown even where none of its languages is listed.</source>
+        <translation>A content language is a language your articles, folders and other objects can be written in. Each one has an ID that is a single bit, so an object records all of its translations in one number, its language mask; the lowest bit marks an object as always available, shown even where none of its languages is listed.</translation>
+    </message>
+    <message>
+        <source>The texts of the administration interface and the templates (buttons, menus) come from translation files (.ts) and follow the Locale setting of a siteaccess instead. A site can show German content with an English interface and the other way round.</source>
+        <translation>The texts of the administration interface and the templates (buttons, menus) come from translation files (.ts) and follow the Locale setting of a siteaccess instead. A site can show German content with an English interface and the other way round.</translation>
+    </message>
+    <message>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.</source>
+        <translation>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.</translation>
+    </message>
+    <message>
+        <source>Remove these languages?</source>
+        <translation>Remove these languages?</translation>
+    </message>
+    <message>
+        <source>Still listed by siteaccesses: %sites. Take it out of their SiteLanguageList as well.</source>
+        <translation>Still listed by siteaccesses: %sites. Take it out of their SiteLanguageList as well.</translation>
+    </message>
+    <message>
+        <source>Select at least one unused language to remove.</source>
+        <translation>Select at least one unused language to remove.</translation>
+    </message>
+    <message>
+        <source>Choose a language from the list, or give the locale code of a custom one.</source>
+        <translation>Choose a language from the list, or give the locale code of a custom one.</translation>
+    </message>
+    <message>
+        <source>"%locale" is not a locale code. A code is three letters for the language, a dash and two letters for the country, such as ger-DE.</source>
+        <translation>"%locale" is not a locale code. A code is three letters for the language, a dash and two letters for the country, such as ger-DE.</translation>
+    </message>
+    <message>
+        <source>%name (%locale) is already a content language. Nothing was added.</source>
+        <translation>%name (%locale) is already a content language. Nothing was added.</translation>
+    </message>
+    <message>
+        <source>%name (%locale) was added. Content can now be translated into it; add %locale to the SiteLanguageList of each siteaccess that should show it.</source>
+        <translation>%name (%locale) was added. Content can now be translated into it; add %locale to the SiteLanguageList of each siteaccess that should show it.</translation>
+    </message>
+    <message>
+        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
+        <translation>No language was added: this installation already has the most languages it can hold (%max).</translation>
+    </message>
+    <message>
+        <source>There is no locale %locale in share/locale. Choose one from the list, or add its .ini file to share/locale first.</source>
+        <translation>There is no locale %locale in share/locale. Choose one from the list, or add its .ini file to share/locale first.</translation>
+    </message>
+    <message>
+        <source>No language was selected, so nothing was removed.</source>
+        <translation>No language was selected, so nothing was removed.</translation>
+    </message>
+    <message>
+        <source>%name (%locale) was removed.</source>
+        <translation>%name (%locale) was removed.</translation>
+    </message>
+    <message>
+        <source>These siteaccesses still list %locale in SiteLanguageList; take it out there: %sites</source>
+        <translation>These siteaccesses still list %locale in SiteLanguageList; take it out there: %sites</translation>
+    </message>
+    <message>
+        <source>%name (%locale) was not removed: %objects objects and %classes classes still have a translation in it.</source>
+        <translation>%name (%locale) was not removed: %objects objects and %classes classes still have a translation in it.</translation>
     </message>
 </context>
 <context>
@@ -3967,6 +4327,182 @@
     <message>
         <source>Country/region variation</source>
         <translation>Country/region variation</translation>
+    </message>
+    <message>
+        <source>All content languages</source>
+        <translation>All content languages</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>Default for new content</source>
+        <translation>Default for new content</translation>
+    </message>
+    <message>
+        <source>Language of this interface</source>
+        <translation>Language of this interface</translation>
+    </message>
+    <message>
+        <source>In no SiteLanguageList</source>
+        <translation>In no SiteLanguageList</translation>
+    </message>
+    <message>
+        <source>Only %count objects</source>
+        <translation>Only %count objects</translation>
+    </message>
+    <message>
+        <source>Unused</source>
+        <translation>Unused</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>In use</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>Objects with a translation in it</source>
+        <translation>Objects with a translation in it</translation>
+    </message>
+    <message>
+        <source>Of them in it as main language</source>
+        <translation>Of them in it as main language</translation>
+    </message>
+    <message>
+        <source>Only in this language</source>
+        <translation>Only in this language</translation>
+    </message>
+    <message>
+        <source>Classes with a name in it</source>
+        <translation>Classes with a name in it</translation>
+    </message>
+    <message>
+        <source>ID, bit %bit of the language mask</source>
+        <translation>ID, bit %bit of the language mask</translation>
+    </message>
+    <message>
+        <source>Shown by</source>
+        <translation>Shown by</translation>
+    </message>
+    <message>
+        <source>Highlighted: the siteaccesses that list it first, so show it first.</source>
+        <translation>Highlighted: the siteaccesses that list it first, so show it first.</translation>
+    </message>
+    <message>
+        <source>No siteaccess lists %locale in its SiteLanguageList, so no site shows content in it, except objects that are always available and have no translation in a language of the site.</source>
+        <translation>No siteaccess lists %locale in its SiteLanguageList, so no site shows content in it, except objects that are always available and have no translation in a language of the site.</translation>
+    </message>
+    <message>
+        <source>To show it, add SiteLanguageList[]=%locale to settings/siteaccess/&lt;siteaccess&gt;/site.ini.append.php. If it should not be used at all, move its content into another language and remove it.</source>
+        <translation>To show it, add SiteLanguageList[]=%locale to settings/siteaccess/&lt;siteaccess&gt;/site.ini.append.php. If it should not be used at all, move its content into another language and remove it.</translation>
+    </message>
+    <message>
+        <source>Removing this language</source>
+        <translation>Removing this language</translation>
+    </message>
+    <message>
+        <source>No object and no class has a translation in %locale, so it can be removed. Nothing else is deleted.</source>
+        <translation>No object and no class has a translation in %locale, so it can be removed. Nothing else is deleted.</translation>
+    </message>
+    <message>
+        <source>%sites still list it: take it out of their SiteLanguageList as well, or they will list a language that does not exist.</source>
+        <translation>%sites still list it: take it out of their SiteLanguageList as well, or they will list a language that does not exist.</translation>
+    </message>
+    <message>
+        <source>It is the language this administration interface runs in, so it is not removed from here.</source>
+        <translation>It is the language this administration interface runs in, so it is not removed from here.</translation>
+    </message>
+    <message>
+        <source>%name cannot be removed while %objects objects and %classes classes have a translation in it; the kernel refuses it. To take it out of use without losing anything:</source>
+        <translation>%name cannot be removed while %objects objects and %classes classes have a translation in it; the kernel refuses it. To take it out of use without losing anything:</translation>
+    </message>
+    <message>
+        <source>For each object below, open it and translate it into the language it should be in (Edit, then choose that language and translate from %locale). Publish.</source>
+        <translation>For each object below, open it and translate it into the language it should be in (Edit, then choose that language and translate from %locale). Publish.</translation>
+    </message>
+    <message>
+        <source>In the Translations window of the object, make the new language its main language, then remove the %locale translation.</source>
+        <translation>In the Translations window of the object, make the new language its main language, then remove the %locale translation.</translation>
+    </message>
+    <message>
+        <source>For each class below, open it (Setup, Classes); in its Translations window make another language the main one if needed (Set main), then remove the %locale translation. A class edit that was never stored counts too: edit that class and store or cancel the edit.</source>
+        <translation>For each class below, open it (Setup, Classes); in its Translations window make another language the main one if needed (Set main), then remove the %locale translation. A class edit that was never stored counts too: edit that class and store or cancel the edit.</translation>
+    </message>
+    <message>
+        <source>unsaved edit</source>
+        <translation>unsaved edit</translation>
+    </message>
+    <message>
+        <source>A class edit that was never stored; it counts until it is stored or cancelled.</source>
+        <translation>A class edit that was never stored; it counts until it is stored or cancelled.</translation>
+    </message>
+    <message>
+        <source>When both counts are 0, remove the language here and take it out of every SiteLanguageList.</source>
+        <translation>When both counts are 0, remove the language here and take it out of every SiteLanguageList.</translation>
+    </message>
+    <message>
+        <source>Remove %name</source>
+        <translation>Remove %name</translation>
+    </message>
+    <message>
+        <source>The %shown changed last, of %count</source>
+        <translation>The %shown changed last, of %count</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count objects</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Object</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Class</translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation>Main language</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>no location</source>
+        <translation>no location</translation>
+    </message>
+    <message>
+        <source>always available</source>
+        <translation>always available</translation>
+    </message>
+    <message>
+        <source>this one</source>
+        <translation>this one</translation>
+    </message>
+    <message>
+        <source>No object has a translation in this language.</source>
+        <translation>No object has a translation in this language.</translation>
+    </message>
+    <message>
+        <source>%count classes</source>
+        <translation>%count classes</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>No class has a name in this language.</source>
+        <translation>No class has a name in this language.</translation>
+    </message>
+    <message>
+        <source>How dates, numbers and money are written in it, from share/locale</source>
+        <translation>How dates, numbers and money are written in it, from share/locale</translation>
     </message>
 </context>
 <context>
