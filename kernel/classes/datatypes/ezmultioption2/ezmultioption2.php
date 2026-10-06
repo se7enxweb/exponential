@@ -44,6 +44,15 @@ class eZMultiOption2
         $this->Rules = array();
     }
 
+    /*!
+     Sets the name of the group. eZMultiOption2Type::initializeObjectAttribute()
+     gives a new object the class attribute's default name with it.
+    */
+    function setName( $name )
+    {
+        $this->Name = $name;
+    }
+
     function setGroupIDCounter( $groupIDCounter )
     {
         $this->GroupIDCounter = $groupIDCounter;

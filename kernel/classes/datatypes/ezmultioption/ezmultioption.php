@@ -130,6 +130,15 @@ class eZMultiOption
     }
 
     /*!
+     Sets the name of the option set. eZMultiOptionType::initializeObjectAttribute()
+     gives a new object the class attribute's default name with it.
+    */
+    function setName( $name )
+    {
+        $this->Name = $name;
+    }
+
+    /*!
       Adds an Multioption named \a $name
       \param $name contains the name of multioption.
       \param $multiOptionPriority is stored for displaying the array in order.
