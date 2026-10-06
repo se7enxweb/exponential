@@ -41,10 +41,14 @@
       available directly.
 */
 
+// Whether the user may edit the object; an extension may let further editors of the draft in (filter
+// content/edit/access)
+$canEdit = $contentObject->editAccess( isset( $versionObject ) ? $versionObject : null );
+
 /* Module action checks */
 if ( $Module->isCurrentAction( 'Edit' ) and
      $versionObject->attribute( 'status' ) == eZContentObjectVersion::STATUS_DRAFT and
-     $contentObject->attribute( 'can_edit' ) and
+     $canEdit and
      $isCreator )
 {
     return $Module->redirectToView( 'edit', array( $ObjectID, $EditVersion, $LanguageCode ) );
@@ -55,14 +59,14 @@ if ( $Module->isCurrentAction( 'Edit' ) and
 // a new version for us and start the edit operation
 if ( $Module->isCurrentAction( 'Edit' ) and
      $contentObject->attribute( 'status' ) == eZContentObject::STATUS_ARCHIVED and
-     $contentObject->attribute( 'can_edit' ) )
+     $canEdit )
 {
     return $Module->redirectToView( 'edit', array( $ObjectID, false, $LanguageCode, $FromLanguage ) );
 }
 
 if ( $Module->isCurrentAction( 'Publish' ) and
      $versionObject->attribute( 'status' ) == eZContentObjectVersion::STATUS_DRAFT and
-     $contentObject->attribute( 'can_edit' ) and
+     $canEdit and
      $isCreator )
 {
     $conflictingVersions = $versionObject->hasConflicts( $LanguageCode );

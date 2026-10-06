@@ -78,7 +78,7 @@ class Removeeditversion extends \Exponential\Runnable\ModuleView
             if ( is_object( $versionObject ) and
                  in_array( $versionObject->attribute( 'status' ), array( \eZContentObjectVersion::STATUS_DRAFT, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT ) ) )
             {
-                if ( !$object->attribute( 'can_edit' ) )
+                if ( !$object->editAccess( $versionObject ) )
                 {
                     // An object that was never published may be edited, at every version, by someone who may create
                     // it under the parent of its main node assignment (no assignment or no parent: denied).

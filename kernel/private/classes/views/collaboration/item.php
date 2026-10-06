@@ -45,13 +45,15 @@ class Item extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         }
 
-        if ( !$collabItem->userIsParticipant( \eZUser::currentUser() ) )
+        $isParticipant = false;
+        if ( !self::access( $collabItem, \eZUser::currentUser(), $isParticipant ) )
         {
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel', array() ) );
         }
 
+        // Only a participant files the item in a group of their own inbox
         $http = \eZHTTPTool::instance();
-        if ( $http->hasPostVariable( 'CollaborationMoveItem' ) )
+        if ( $isParticipant && $http->hasPostVariable( 'CollaborationMoveItem' ) )
         {
             $result = \expCollaborationGroupManager::moveItem( \eZUser::currentUser()->attribute( 'contentobject_id' ), $collabItem->attribute( 'id' ),
                                                                 (int)$http->postVariable( 'CollaborationGroupID', 0 ) );
@@ -72,6 +74,7 @@ class Item extends \Exponential\Runnable\ModuleView
 
         $tpl->setVariable( 'view_parameters', $viewParameters );
         $tpl->setVariable( 'collab_item', $collabItem );
+        $tpl->setVariable( 'is_participant', $isParticipant );
         $tpl->setVariable( 'notice', \expCollaborationGroupManager::takeNotice() );
 
         $Result = array();
@@ -85,6 +88,22 @@ class Item extends \Exponential\Runnable\ModuleView
                                         'text' => $collabTitle ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Whether $user may open $collabItem. Participants may; the filter collaboration/item/access gets that answer with
+     * the item and the user, so an extension can let others in (a supervisor of an approval) or keep a participant
+     * out. Only true opens it.
+     *
+     * @param \eZCollaborationItem $collabItem
+     * @param \eZUser $user
+     * @param bool $isParticipant Set to whether $user takes part in the item
+     * @return bool
+     */
+    public static function access( $collabItem, $user, &$isParticipant = false )
+    {
+        $isParticipant = (bool)$collabItem->userIsParticipant( $user );
+        return \ezpEvent::getInstance()->filter( 'collaboration/item/access', $isParticipant, $collabItem, $user ) === true;
     }
 }
 
