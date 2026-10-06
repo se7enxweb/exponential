@@ -2,6 +2,11 @@
 /**
  * The code of kernel/setup/extensions.php, moved into a class (#207 stage 1). The file kernel/setup/extensions.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ *
+ * Setup > Extensions: one list of every extension, in which the active ones are moved, activated and deactivated
+ * and the result is written to ActiveExtensions in one step after a review (doc/guides/extensions-page.md). The view
+ * is thin: what is known about each extension comes from expExtensionCatalogue, what a change means from
+ * expExtensionChangePlan, and the write from ezpActiveExtensions.
  */
 /*
  * The original header of kernel/setup/extensions.php:
@@ -21,6 +26,7 @@ if ( !function_exists( 'updateAutoload' ) ) {
 function updateAutoload( $tpl = null )
 {
     $autoloadGenerator = new eZAutoloadGenerator();
+    $warnings = array();
     try
     {
         $autoloadGenerator->buildAutoloadArrays();
@@ -48,6 +54,7 @@ function updateAutoload( $tpl = null )
                 $warning = str_replace( $m[3], '<em>'.$m[3].'</em>', $warning );
             }
         }
+        unset( $warning );
 
         if ( $tpl !== null )
         {
@@ -57,7 +64,9 @@ function updateAutoload( $tpl = null )
     catch ( Exception $e )
     {
         eZDebug::writeError( $e->getMessage() );
+        $warnings[] = $e->getMessage();
     }
+    return $warnings;
 }
 }
 }
@@ -67,6 +76,12 @@ namespace Exponential\View\Kernel\Setup
 
 class Extensions extends \Exponential\Runnable\ModuleView
 {
+    /** The session key of the notice shown once after a change was applied. */
+    const NOTICE = 'ExpSetupExtensionsNotice';
+
+    /** Filters of the list. */
+    public static $filters = array( 'all', 'active', 'inactive', 'problems' );
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -116,268 +131,318 @@ class Extensions extends \Exponential\Runnable\ModuleView
             }
         }
 
-        // Reordering the active extensions: posted by the loading order list on the
-        // page each time an extension is dropped in a new place, and answered in JSON.
-        // Only the order of ActiveExtensions changes; a list that does not hold exactly
-        // the extensions active now (the page was loaded before they changed) is
-        // refused, so a reorder never switches one on or off.
+        // The JSON reorder of the former loading order card (6.0.15 before the redesign), kept for anything that
+        // still posts it: it changes only the order, and only when the list holds exactly the active extensions.
         if ( $http->hasPostVariable( 'ReorderExtensions' ) )
         {
-            $order = $http->hasPostVariable( 'ExtensionOrder' ) ? (array)$http->postVariable( 'ExtensionOrder' ) : array();
-            $current = \ezpActiveExtensions::current();
-            $list = \ezpActiveExtensions::reorder( $current, $order );
-            $response = array( 'ok' => false );
-            if ( $list === false )
-            {
-                $response['error'] = \ezpI18n::tr( 'design/admin/setup/extensions', 'The active extensions changed since this page was loaded. Reload the page and try again.' );
-                $response['order'] = $current;
-            }
-            else if ( $list === $current )
-            {
-                $response = array( 'ok' => true, 'order' => $current, 'message' => '' );
-            }
-            else
-            {
-                $activeExtensions = new \ezpActiveExtensions();
-                if ( $activeExtensions->write( $list ) )
-                {
-                    // The order decides which extension's settings, templates and
-                    // design files win, so these caches are built on it.
-                    \eZCache::clearByTag( 'ini' );
-                    \eZCache::clearByID( array( 'template-override', 'design_base', 'active_extensions' ) );
-                    $response = array(
-                        'ok' => true,
-                        'order' => \ezpActiveExtensions::current(),
-                        'message' => \ezpI18n::tr( 'design/admin/setup/extensions', 'Loading order saved; a copy of the previous settings is in %file.',
-                                                  null, array( '%file' => $activeExtensions->backup ) ) );
-                }
-                else
-                {
-                    $response['error'] = $activeExtensions->error;
-                    $response['order'] = \ezpActiveExtensions::current();
-                }
-            }
-            header( 'Content-Type: application/json; charset=utf-8' );
-            header( 'Cache-Control: no-store' );
-            echo json_encode( $response );
-            \eZExecution::cleanExit();
+            $this->legacyReorder( $http );
         }
 
         $tpl = \eZTemplate::factory();
+        $current = \ezpActiveExtensions::current();
+        $catalogue = \expExtensionCatalogue::gather( $current );
+        $available = array_keys( $catalogue->info );
 
-        // Sorting. The column travels on the address as a view parameter rather than
-        // in a query string, so that the pager carries it: the pager appends the offset
-        // to the page address, and a query string on the end of that address would be
-        // left behind - paging would silently reset the order. The old SortBy and
-        // SortOrder are still read, so a bookmarked link keeps working.
-        $extensionSortColumns = array( 'order', 'name', 'info_name', 'license', 'version', 'mtime' );
-
-        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
-
-        // Sorted by the loading order by default: the order the system loads the
-        // extensions in, active ones first, then the others by name.
-        $sortBy = isset( $userParameters['sort'] ) ? (string)$userParameters['sort']
-                : ( $http->hasGetVariable( 'SortBy' ) ? strtolower( $http->getVariable( 'SortBy' ) ) : 'order' );
-
-        $sortOrder = isset( $userParameters['dir'] ) ? (string)$userParameters['dir']
-                   : ( $http->hasGetVariable( 'SortOrder' ) ? strtolower( $http->getVariable( 'SortOrder' ) ) : 'asc' );
-
-        $sortBy    = in_array( $sortBy, $extensionSortColumns, true ) ? $sortBy : 'order';
-        $sortOrder = $sortOrder === 'desc' ? 'desc' : 'asc';
-
-        // Use expInfo to collect and normalise all extension metadata
-        $extensionInfo = \expInfo::availableExtensions();
-
-        // The loading order: the position in ActiveExtensions, as the file on disk has
-        // it. Extensions active only for a siteaccess come after them, the inactive
-        // ones last.
-        $extensionPositions = \ezpActiveExtensions::positions( \ezpActiveExtensions::current() );
-
-        uasort( $extensionInfo, function( $a, $b ) use ( $sortBy, $extensionPositions ) {
-            $nameA = (string) $a['extension_name'];
-            $nameB = (string) $b['extension_name'];
-
-            if ( $sortBy === 'order' )
-            {
-                $aVal = isset( $extensionPositions[$nameA] ) ? $extensionPositions[$nameA] : PHP_INT_MAX;
-                $bVal = isset( $extensionPositions[$nameB] ) ? $extensionPositions[$nameB] : PHP_INT_MAX;
-                if ( $aVal !== $bVal )
-                    return $aVal < $bVal ? -1 : 1;
-                return strnatcasecmp( $nameA, $nameB );
-            }
-            else if ( $sortBy === 'mtime' )
-            {
-                $aVal = (int) $a['mtime'];
-                $bVal = (int) $b['mtime'];
-                if ( $aVal !== $bVal )
-                    return $aVal < $bVal ? -1 : 1;
-                return strnatcasecmp( $nameA, $nameB );
-            }
-            else if ( $sortBy === 'version' )
-            {
-                $aVal = isset( $a['version'] ) && is_string( $a['version'] ) ? $a['version'] : '0';
-                $bVal = isset( $b['version'] ) && is_string( $b['version'] ) ? $b['version'] : '0';
-                $cmp = version_compare( $aVal, $bVal );
-                if ( $cmp !== 0 )
-                    return $cmp;
-                return strnatcasecmp( $nameA, $nameB );
-            }
-            else if ( $sortBy === 'info_name' )
-            {
-                // The name the extension gives itself, which carries spaces and
-                // capitals, so it is compared the way a reader would read it. An
-                // extension that declares no name falls back to its directory, which
-                // is what the column shows in its place.
-                $aVal = isset( $a['name'] ) && trim( (string)$a['name'] ) !== '' ? (string)$a['name'] : $nameA;
-                $bVal = isset( $b['name'] ) && trim( (string)$b['name'] ) !== '' ? (string)$b['name'] : $nameB;
-
-                $cmp = strnatcasecmp( trim( $aVal ), trim( $bVal ) );
-                return $cmp !== 0 ? $cmp : strnatcasecmp( $nameA, $nameB );
-            }
-            else if ( $sortBy === 'license' )
-            {
-                // Extensions with no license declared sort together at the end rather
-                // than at the front, where an empty string would put them.
-                $aVal = isset( $a['license'] ) ? trim( (string)$a['license'] ) : '';
-                $bVal = isset( $b['license'] ) ? trim( (string)$b['license'] ) : '';
-
-                if ( ( $aVal === '' ) !== ( $bVal === '' ) )
-                    return $aVal === '' ? 1 : -1;
-
-                $cmp = strnatcasecmp( $aVal, $bVal );
-                return $cmp !== 0 ? $cmp : strnatcasecmp( $nameA, $nameB );
-            }
-            else
-            {
-                // Sort by the extension (directory) name, which matches the visible "Name" column
-                return strnatcasecmp( $nameA, $nameB );
-            }
-        } );
-
-        if ( $sortOrder === 'desc' )
-        {
-            $extensionInfo = array_reverse( $extensionInfo, true );
-        }
-
-        $availableExtensionArray = array_keys( $extensionInfo );
-
-        // open site.ini for reading
         $siteINI = \eZINI::instance();
-        $siteINI->load();
-        $selectedExtensionArray       = $siteINI->variable( 'ExtensionSettings', "ActiveExtensions" );
-        $selectedAccessExtensionArray = $siteINI->variable( 'ExtensionSettings', "ActiveAccessExtensions" );
-        $selectedExtensions           = array_merge( $selectedExtensionArray, $selectedAccessExtensionArray );
-        $selectedExtensions           = array_unique( $selectedExtensions );
+        $selectedAccessExtensionArray = (array)$siteINI->variable( 'ExtensionSettings', 'ActiveAccessExtensions' );
 
-        // When the user clicks on "Apply changes" button in admin interface in the Extensions section
-        if ( $module->isCurrentAction( 'ActivateExtensions' ) )
+        // The form of the former page and of the standard design: the ticked boxes, written at once as before.
+        if ( $module->isCurrentAction( 'ActivateExtensions' ) && !$http->hasPostVariable( 'ExtensionPlanForm' ) )
         {
-            $ini = \eZINI::instance( 'module.ini' );
-            $oldModules = $ini->variable( 'ModuleSettings', 'ModuleList' );
-
-            if ( $http->hasPostVariable( "ActiveExtensionList" ) )
+            $checked = $http->hasPostVariable( 'ActiveExtensionList' ) ? (array)$http->postVariable( 'ActiveExtensionList' ) : array();
+            $shown = $http->hasPostVariable( 'ShownExtensionList' ) ? (array)$http->postVariable( 'ShownExtensionList' ) : $available;
+            $list = \ezpActiveExtensions::merge( $current, $checked, $shown, $available, $selectedAccessExtensionArray );
+            $notice = $this->applyList( $current, $list, $tpl );
+            if ( $notice['ok'] )
             {
-                $selectedExtensionArray = $http->postVariable( "ActiveExtensionList" );
-                if ( !is_array( $selectedExtensionArray ) )
-                    $selectedExtensionArray = array( $selectedExtensionArray );
+                $tpl->setVariable( 'save_message', $notice['message'] );
+                $current = \ezpActiveExtensions::current();
+                $catalogue = \expExtensionCatalogue::gather( $current );
             }
             else
             {
-                $selectedExtensionArray = array();
-            }
-
-            // Only the extensions this page showed can be switched off: the list is
-            // paged, and one on another page keeps its state. A form without the list
-            // of shown extensions (an older template) is taken to have shown all.
-            $shownExtensionArray = $http->hasPostVariable( 'ShownExtensionList' )
-                ? (array)$http->postVariable( 'ShownExtensionList' )
-                : $availableExtensionArray;
-
-            // The list is read from settings/override/site.ini.append.php itself, and
-            // only its ActiveExtensions is written: ezpActiveExtensions reads the file
-            // from disk (not a cached or kept INI instance), keeps a copy, and checks
-            // the file afterwards, putting the copy back if anything else changed.
-            $activeExtensions = new \ezpActiveExtensions();
-            $toSave = \ezpActiveExtensions::merge(
-                \ezpActiveExtensions::current(),
-                $selectedExtensionArray,
-                $shownExtensionArray,
-                $availableExtensionArray,
-                $selectedAccessExtensionArray
-            );
-
-            if ( $activeExtensions->write( $toSave ) )
-            {
-                \eZCache::clearByTag( 'ini' );
-                \eZSiteAccess::reInitialise();
-
-                $ini = \eZINI::instance( 'module.ini' );
-                $currentModules = $ini->variable( 'ModuleSettings', 'ModuleList' );
-                if ( $currentModules != $oldModules )
-                {
-                    // ensure that evaluated policy wildcards in the user info cache
-                    // will be up to date with the currently activated modules
-                    \eZCache::clearByID( 'user_info_cache' );
-                }
-
-                updateAutoload( $tpl );
-                $tpl->setVariable( 'save_message', \ezpI18n::tr( 'design/admin/setup/extensions', 'The active extensions were saved; a copy of the previous settings is in %file.',
-                                                                null, array( '%file' => $activeExtensions->backup ) ) );
-            }
-            else
-            {
-                $tpl->setVariable( 'save_error', $activeExtensions->error );
+                $tpl->setVariable( 'save_error', $notice['error'] );
             }
         }
-
-        // open site.ini for reading (need to do it again to take into account the changes made to site.ini after clicking "Apply changes" button above
-        $siteINI = \eZINI::instance();
-        $siteINI->load();
-        $selectedExtensionArray       = $siteINI->variable( 'ExtensionSettings', "ActiveExtensions" );
-        $selectedAccessExtensionArray = $siteINI->variable( 'ExtensionSettings', "ActiveAccessExtensions" );
-        $selectedExtensions           = array_merge( $selectedExtensionArray, $selectedAccessExtensionArray );
-        $selectedExtensions           = array_unique( $selectedExtensions );
 
         if ( $module->isCurrentAction( 'GenerateAutoloadArrays' ) )
         {
             updateAutoload( $tpl );
+            $tpl->setVariable( 'save_message', \ezpI18n::tr( 'design/admin/setup/extensions', 'The autoload arrays of the extensions were regenerated.' ) );
         }
 
-        // Paged. Every extension the installation can see was drawn on one screen,
-        // and an installation with a hundred of them is not unusual.
-        $pageCount  = count( $availableExtensionArray );
-        $pageLimit  = \expAdminPagination::limit( 'setup/extensions' );
-        $pageOffset = \expAdminPagination::offset( $Params );
+        // The plan the form carries: the order of the active extensions as edited so far. Without one, the file.
+        $planned = $current;
+        $base = \expExtensionChangePlan::fingerprint( $current );
+        $stale = false;
+        if ( $http->hasPostVariable( 'ExtensionPlanForm' ) )
+        {
+            if ( $http->hasPostVariable( 'ExtensionDiscardButton' ) )
+                return $this->viewResult( null, $module->redirectToView( 'extensions' ) );
+            $postedBase = (string)$http->postVariable( 'ExtensionBase', '' );
+            $planned = \expExtensionChangePlan::fromPost( $http->postVariable( 'ExtensionPlan', array() ), array_merge( $available, $current ) );
+            if ( $postedBase !== $base )
+            {
+                // Changed elsewhere since the form was drawn: start again from the file, and say so.
+                $stale = true;
+                $planned = $current;
+            }
+            $action = (string)$http->postVariable( 'ExtensionAction', '' );
+            if ( !$stale && preg_match( '/^(up|down|top|bottom|activate|deactivate):(.+)$/', $action, $m ) && in_array( $m[2], array_merge( $available, $current ), true ) )
+                $planned = \expExtensionChangePlan::apply( $planned, $m[1], $m[2], $catalogue->facts );
+        }
 
-        $tpl->setVariable( "available_extension_array",
-                           \expAdminPagination::page( $availableExtensionArray, $pageOffset, $pageLimit ) );
-        $tpl->setVariable( "extension_count", $pageCount );
-        $tpl->setVariable( "limit", $pageLimit );
-        $tpl->setVariable( "view_parameters", array( 'offset' => $pageOffset,
-                                                     'sort'   => $sortBy,
-                                                     'dir'    => $sortOrder ) );
-        $tpl->setVariable( "extension_sort", array( 'field'     => $sortBy,
-                                                    'direction' => $sortOrder,
-                                                    'opposite'  => $sortOrder === 'asc' ? 'desc' : 'asc' ) );
-        $tpl->setVariable( "selected_extension_array", $selectedExtensions );
-        $tpl->setVariable( "access_extension_array", array_values( array_diff( $selectedAccessExtensionArray, $selectedExtensionArray ) ) );
-        // Read again: an Update above may have changed the list.
-        $activeOrder = \ezpActiveExtensions::current();
-        $tpl->setVariable( "active_extension_order", $activeOrder );
-        $tpl->setVariable( "extension_positions", \ezpActiveExtensions::positions( $activeOrder ) );
-        $tpl->setVariable( "extension_info", $extensionInfo );
-        $tpl->setVariable( "sort_by", $sortBy );
-        $tpl->setVariable( "sort_order", $sortOrder );
+        $plan = $catalogue->plan( $current, $planned );
+        $risks = $plan->risks();
+        $needsAck = \expExtensionChangePlan::needsAcknowledgement( $risks );
+        $review = !$stale && $plan->changed() && ( $http->hasPostVariable( 'ExtensionReviewButton' ) || $http->hasPostVariable( 'ExtensionApplyButton' ) );
+
+        if ( !$stale && $http->hasPostVariable( 'ExtensionApplyButton' ) && $plan->changed() )
+        {
+            if ( $needsAck && !$http->hasPostVariable( 'ExtensionAcknowledgeRisks' ) )
+            {
+                $tpl->setVariable( 'ack_missing', true );
+            }
+            else
+            {
+                $notice = $this->applyList( $current, $plan->planned, null, $plan->diff() );
+                if ( $notice['ok'] )
+                {
+                    $http->setSessionVariable( self::NOTICE, $notice );
+                    return $this->viewResult( null, $module->redirectToView( 'extensions' ) );
+                }
+                $tpl->setVariable( 'save_error', $notice['error'] );
+            }
+        }
+
+        // The notice of the change just applied, once
+        $notice = false;
+        if ( $http->hasSessionVariable( self::NOTICE ) )
+        {
+            $notice = $http->sessionVariable( self::NOTICE );
+            $http->removeSessionVariable( self::NOTICE );
+            if ( is_array( $notice ) && !empty( $notice['warnings'] ) )
+                $tpl->setVariable( 'warning_messages', $notice['warnings'] );
+        }
+
+        // Filter, search and sort: posted with the form (they keep the plan), or on the address
+        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $filter = (string)$http->postVariable( 'ExtensionFilter', isset( $userParameters['show'] ) ? $userParameters['show'] : 'all' );
+        $filter = in_array( $filter, self::$filters, true ) ? $filter : 'all';
+        $search = trim( mb_substr( (string)$http->postVariable( 'ExtensionSearch', '' ), 0, 100 ) );
+        $sort = (string)$http->postVariable( 'ExtensionSort', isset( $userParameters['sort'] ) ? $userParameters['sort']
+                : ( $http->hasGetVariable( 'SortBy' ) ? strtolower( $http->getVariable( 'SortBy' ) ) : 'order' ) );
+        $sort = $sort === 'name' ? 'name' : 'order';
+
+        $rows = $catalogue->rows( $plan, $sort );
+        foreach ( $rows as $i => $row )
+        {
+            foreach ( $row['problems'] as $j => $problem )
+                $rows[$i]['problems'][$j]['text'] = self::problemText( $problem['code'], $problem );
+            $rows[$i]['hidden'] = !self::matches( $row, $filter, $search );
+        }
+
+        $riskRows = array();
+        foreach ( $risks as $risk )
+            $riskRows[] = array( 'code' => $risk[0], 'severity' => $risk[1], 'text' => self::riskText( $risk[0], $risk[2] ) );
+
+        $velocityRunning = null;
+        try
+        {
+            if ( class_exists( 'expVelocity' ) )
+                $velocityRunning = \expVelocity::create()->isRunning();
+        }
+        catch ( \Throwable $e )
+        {
+            $velocityRunning = null;
+        }
+
+        $tpl->setVariable( 'extension_rows', $rows );
+        $tpl->setVariable( 'extension_summary', \expExtensionCatalogue::summary( $rows ) );
+        $tpl->setVariable( 'extension_plan', array(
+            'planned' => $plan->planned,
+            'base' => $base,
+            'changed' => $plan->changed(),
+            'diff' => $plan->diff(),
+            'risks' => $riskRows,
+            'needs_ack' => $needsAck,
+            'lines' => \expExtensionChangePlan::lines( $plan->planned ),
+            'effective_moves' => count( array_diff_assoc( $plan->effectiveOrder(), $plan->planned ) ),
+        ) );
+        $tpl->setVariable( 'extension_review', $review );
+        $tpl->setVariable( 'extension_stale', $stale );
+        $tpl->setVariable( 'extension_filter', $filter );
+        $tpl->setVariable( 'extension_search', $search );
+        $tpl->setVariable( 'extension_sort_mode', $sort );
+        $tpl->setVariable( 'extension_ordering', $catalogue->ordering );
+        $tpl->setVariable( 'extension_access_map', $catalogue->accessBySiteaccess );
+        $tpl->setVariable( 'extension_notice', $notice );
+        $tpl->setVariable( 'velocity_running', $velocityRunning );
+        $tpl->setVariable( 'settings_file', \ezpActiveExtensions::DIR . '/' . \ezpActiveExtensions::FILE );
+
+        // The variables of the former page, kept for override templates written against it.
+        $selectedExtensions = array_values( array_unique( array_merge( $current, $selectedAccessExtensionArray ) ) );
+        $sortedNames = array_column( $rows, 'name' );
+        $tpl->setVariable( 'available_extension_array', array_values( array_intersect( $sortedNames, $available ) ) );
+        $tpl->setVariable( 'extension_count', count( $available ) );
+        $tpl->setVariable( 'limit', count( $available ) );
+        $tpl->setVariable( 'view_parameters', array( 'offset' => 0, 'sort' => $sort, 'dir' => 'asc' ) );
+        $tpl->setVariable( 'extension_sort', array( 'field' => $sort, 'direction' => 'asc', 'opposite' => 'desc' ) );
+        $tpl->setVariable( 'selected_extension_array', $selectedExtensions );
+        $tpl->setVariable( 'access_extension_array', array_values( array_diff( $selectedAccessExtensionArray, $current ) ) );
+        $tpl->setVariable( 'active_extension_order', $current );
+        $tpl->setVariable( 'extension_positions', \ezpActiveExtensions::positions( $current ) );
+        $tpl->setVariable( 'extension_info', $catalogue->info );
+        $tpl->setVariable( 'sort_by', $sort );
+        $tpl->setVariable( 'sort_order', 'asc' );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:setup/extensions.tpl" );
         $Result['path'] = array( array( 'url' => false,
                                         'text' => \ezpI18n::tr( 'kernel/setup', 'Extension configuration' ) ) );
 
+        return $this->viewResult( $Result, null );
+    }
 
-        /* expInfo::availableExtensions() now provides normalised extension metadata */
+    /**
+     * Writes $list and does what a new list needs: the INI, override, design and active extension caches, the
+     * siteaccess settings, the user info cache when the modules changed, and the autoload arrays.
+     *
+     * @return array ok, message or error, backup, warnings, velocity, diff
+     */
+    protected function applyList( array $current, array $list, $tpl = null, $diff = null )
+    {
+        $moduleINI = \eZINI::instance( 'module.ini' );
+        $oldModules = $moduleINI->variable( 'ModuleSettings', 'ModuleList' );
+        $writer = new \ezpActiveExtensions();
+        if ( !$writer->write( $list ) )
+            return array( 'ok' => false, 'error' => $writer->error );
 
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        // The order decides which extension's settings, templates and design files win, so these caches are
+        // built on it.
+        \eZCache::clearByTag( 'ini' );
+        \eZCache::clearByID( array( 'template-override', 'design_base', 'active_extensions' ) );
+        \eZSiteAccess::reInitialise();
+        $moduleINI = \eZINI::instance( 'module.ini' );
+        if ( $moduleINI->variable( 'ModuleSettings', 'ModuleList' ) != $oldModules )
+        {
+            // evaluated policy wildcards in the user info cache follow the active modules
+            \eZCache::clearByID( 'user_info_cache' );
+        }
+        $warnings = updateAutoload( $tpl );
+
+        $velocity = null;
+        try
+        {
+            if ( class_exists( 'expVelocity' ) )
+                $velocity = \expVelocity::create()->isRunning();
+        }
+        catch ( \Throwable $e )
+        {
+            $velocity = null;
+        }
+
+        return array(
+            'ok' => true,
+            'message' => \ezpI18n::tr( 'design/admin/setup/extensions', 'The active extensions were saved; a copy of the previous settings is in %file.',
+                                      null, array( '%file' => $writer->backup ) ),
+            'backup' => $writer->backup,
+            'warnings' => $warnings,
+            'velocity' => $velocity,
+            'diff' => $diff !== null ? $diff : array( 'added' => array_values( array_diff( $list, $current ) ),
+                                                      'removed' => array_values( array_diff( $current, $list ) ), 'moved' => array() ),
+        );
+    }
+
+    /**
+     * The JSON answer to the former loading order card's reorder.
+     */
+    protected function legacyReorder( \eZHTTPTool $http )
+    {
+        $order = $http->hasPostVariable( 'ExtensionOrder' ) ? (array)$http->postVariable( 'ExtensionOrder' ) : array();
+        $current = \ezpActiveExtensions::current();
+        $list = \ezpActiveExtensions::reorder( $current, $order );
+        $response = array( 'ok' => false );
+        if ( $list === false )
+        {
+            $response['error'] = \ezpI18n::tr( 'design/admin/setup/extensions', 'The active extensions changed since this page was loaded. Reload the page and try again.' );
+            $response['order'] = $current;
+        }
+        else if ( $list === $current )
+        {
+            $response = array( 'ok' => true, 'order' => $current, 'message' => '' );
+        }
+        else
+        {
+            $notice = $this->applyList( $current, $list );
+            $response = $notice['ok']
+                ? array( 'ok' => true, 'order' => \ezpActiveExtensions::current(),
+                         'message' => \ezpI18n::tr( 'design/admin/setup/extensions', 'Loading order saved; a copy of the previous settings is in %file.',
+                                                   null, array( '%file' => $notice['backup'] ) ) )
+                : array( 'ok' => false, 'error' => $notice['error'], 'order' => \ezpActiveExtensions::current() );
+        }
+        header( 'Content-Type: application/json; charset=utf-8' );
+        header( 'Cache-Control: no-store' );
+        echo json_encode( $response );
+        \eZExecution::cleanExit();
+    }
+
+    /**
+     * Whether a row is shown for a filter and a search.
+     */
+    public static function matches( array $row, $filter, $search )
+    {
+        if ( $filter === 'active' && !$row['active'] )
+            return false;
+        if ( $filter === 'inactive' && $row['active'] )
+            return false;
+        if ( $filter === 'problems' && $row['problem_level'] !== 'warn' && $row['problem_level'] !== 'bad' )
+            return false;
+        return $search === '' || mb_strpos( $row['search'], mb_strtolower( $search ) ) !== false;
+    }
+
+    public static function problemText( $code, array $p )
+    {
+        $other = isset( $p['other'] ) ? $p['other'] : '';
+        $ctx = 'design/admin/setup/extensions';
+        switch ( $code )
+        {
+            case 'not_installed':
+                return \ezpI18n::tr( $ctx, 'Listed in ActiveExtensions, but its directory is missing.' );
+            case 'requires_missing':
+                return \ezpI18n::tr( $ctx, 'Requires %other, which is not active.', null, array( '%other' => $other ) );
+            case 'requires_later':
+                return \ezpI18n::tr( $ctx, 'Needs %other, which is written later in the list.', null, array( '%other' => $other ) );
+            case 'extends_earlier':
+                return \ezpI18n::tr( $ctx, 'Extends %other, which is written earlier in the list.', null, array( '%other' => $other ) );
+            case 'settings_lose':
+                return \ezpI18n::tr( $ctx, 'Changes %file, which %other ships in full and loads earlier: single values of %other win.', null,
+                                     array( '%other' => $other, '%file' => isset( $p['file'] ) ? $p['file'] : '' ) );
+        }
+        return $code;
+    }
+
+    public static function riskText( $code, array $p )
+    {
+        $ctx = 'design/admin/setup/extensions';
+        $name = isset( $p['name'] ) ? $p['name'] : '';
+        $other = isset( $p['other'] ) ? $p['other'] : '';
+        switch ( $code )
+        {
+            case 'removes_required':
+                return \ezpI18n::tr( $ctx, '%name is deactivated, but %other stays active and requires it.', null, array( '%name' => $name, '%other' => $other ) );
+            case 'removes_design':
+                return \ezpI18n::tr( $ctx, '%name is deactivated, but the siteaccesses %siteaccesses use its design %design, which no other active extension provides.', null,
+                                     array( '%name' => $name, '%design' => $p['design'], '%siteaccesses' => $p['siteaccesses'] ) );
+            case 'removes_critical':
+                return \ezpI18n::tr( $ctx, '%name is deactivated: this switches off %what.', null,
+                                     array( '%name' => $name, '%what' => \ezpI18n::tr( $ctx, $p['what'] ) ) );
+            case 'new_problem':
+                return $name . ': ' . self::problemText( $p['problem'], $p );
+            case 'no_effect':
+                return \ezpI18n::tr( $ctx, 'Only the written order changes. The declared dependencies decide the loading order of these extensions, so they load in the same order as before.' );
+        }
+        return $code;
     }
 }
 
