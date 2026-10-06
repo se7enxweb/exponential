@@ -20,6 +20,8 @@ repository on 6 October 2026; the files are named in [References](#references).
   by folder**, with its type, where it is in the tree, when it was last modified and whether it is hidden or no
   longer there.
 - Search, order and paging are kept in the address, so a link to the page shows the same list.
+- In **Your order** you arrange bookmarks and folders by dragging them by their grip, with the arrow keys on the grip,
+  with Move up and Move down, or with a position field that also works across pages.
 - Every action works without JavaScript. With JavaScript you can also tick **Select all** and drag bookmarks onto a
   folder.
 
@@ -84,7 +86,28 @@ The page size comes from `admininterface.ini [PaginationSettings] ItemsPerPageLi
   ticked bookmarks move with it.
 - **Remove selected** opens a short confirmation first. Only the bookmarks are removed.
 
-## 4. Folders
+## 4. Arranging bookmarks and folders
+
+In **Your order** (without a search) every card has a **grip** (⠿) at its left, and every folder of the folder list
+has one too. The order you set is the order of the Bookmarks box and the browse dialog.
+
+- **Drag** a bookmark by its grip to a new place within its folder. The folder's list is outlined while you drag and
+  the card moves with the pointer; when you let go, the new order is saved and the page shows "The order was saved".
+- **Drop it on a folder** of the folder list instead to move it into that folder. The folder is outlined and labelled
+  **Move into this folder**, so a reorder and a move are easy to tell apart. Ticked bookmarks move together.
+- **Folders** are arranged the same way: drag a folder's grip above or below a neighbour with the same parent; a line
+  shows where it will go.
+- **Keyboard**: focus a grip with Tab and press the up or down arrow key. The entry moves one place, the page is saved
+  and the grip has the focus again, so you can press the key again.
+- **Position field**: each card has "Position in its folder". Type a number and press **Move** (or Enter): the bookmark
+  goes to that place in the whole folder, also when the folder runs over several pages.
+- **Without JavaScript** the grips are not shown; **Move up**, **Move down** and the position field do the same.
+
+In the other orders (name, recently added, type, recently modified) and while searching, the list cannot be arranged:
+the page says **Switch to Your order to arrange** (or to clear the search) and links to it. Dropping a bookmark on a
+folder of the folder list still moves it there.
+
+## 5. Folders
 
 Open a folder in the folder list. Its panel offers:
 
@@ -99,18 +122,19 @@ Open a folder in the folder list. Its panel offers:
   In both cases the items the bookmarks point to are not changed. After the removal the page shows the folder it was
   in.
 
-## 5. Problems and answers
+## 6. Problems and answers
 
 | You see | Why, and what to do |
 |---|---|
 | A card says **Not found** | The item was removed or moved to the trash, or it exists only in a language this siteaccess does not show. Remove the bookmark, or restore the item from the trash |
 | A card says **No access** | A role was changed and you may no longer read the item. Remove the bookmark, or ask an administrator |
-| **Move up** and **Move down** are missing | They are shown in *Your order* without a search only. Choose *Your order* and clear the search |
+| The grips, **Move up**, **Move down** and the position field are missing | They are shown in *Your order* without a search only. Choose *Your order* and clear the search |
+| "The order was not saved" | The order named a bookmark that is no longer in that folder, for example after a change in another window. Reload the page and arrange again |
 | "Nothing was moved" after Move selected | No bookmark was ticked, or the folder chosen is not one of yours |
 | A link to someone else's folder shows all your bookmarks | Folders are personal: an address with a folder that is not yours shows your own bookmarks |
 | The page is unchanged after a template change | Clear the template, template-override, content and template-block caches, and Velocity's response cache |
 
-## 6. For developers
+## 7. For developers
 
 - The view is `kernel/private/classes/views/content/bookmark.php`. It reads the folders and bookmarks
   (`eZContentBrowseBookmarkFolder::fetchRowsForUser()`), the nodes of all bookmarks in one query and the names of
@@ -118,13 +142,19 @@ Open a folder in the folder list. Its panel offers:
 - `expBookmarkPage` (`kernel/classes/expbookmarkpage.php`) works out the folders and their counts, the scope of
   `(folder)`, the search, the orders, the grouping, the paging, the figures, the Move up and down targets and the
   address. It reads no database and is tested without one.
-- `eZContentBrowseBookmarkFolder::shift()` moves a folder or a bookmark one place up or down within its folder.
+- `eZContentBrowseBookmarkFolder::shift()` moves a folder or a bookmark one place up or down within its folder;
+  `setOrder()` saves the order of some or all entries of one folder (the posted entries take the places they held, see
+  `expBookmarkPage::reorderSlots()`), and `moveToPosition()` puts one entry at a place. Both refuse an id that is not
+  the user's, not in that folder, or repeated.
 - Addresses: `content/bookmark/(folder)/<id>|top/(sort)/name|added|type|modified/(offset)/<n>?q=<text>`. Every POST
   answers with a redirect to the same folder, order and search, with the result as a notice.
 - The POST names are the ones the page always had: `RemoveButton`, `AddButton`, `DeleteIDArray[]`,
   `MoveSelectedButton` with `FolderID`, and `BookmarkFolderAction` (create, rename, delete, move_bookmark,
   move_folder, place, reorder) with `FolderName`, `ParentFolderID`, `FolderID`, `DeleteBookmarks`, `BookmarkID`,
-  `BookmarkIDArray[]`. New: `BookmarkShiftButton` (`up-<id>`, `down-<id>`, `fup-<id>`, `fdown-<id>`).
+  `BookmarkIDArray[]`. New: `BookmarkShiftButton` (`up-<id>`, `down-<id>`, `fup-<id>`, `fdown-<id>`), `BookmarkOrderButton`
+  with `OrderType` (bookmark or folder), `OrderFolderID` and `OrderIDs` (the ids in their new order, comma separated),
+  and `BookmarkPositionButton` (the id) with `BookmarkPosition[<id>]`; `BookmarkPositionDefault` is the form's first
+  button, so Enter in a position field moves that bookmark.
 - Only the user's own bookmarks and folders are read or changed; another user's ids are refused. Every form carries
   the form token. `NeedRedirectBack` with `RedirectURI` goes only to a page of this site
   ([safe redirects](../features/6.0/safe-redirects.md)).
@@ -134,7 +164,7 @@ Open a folder in the folder list. Its panel offers:
   language of the section, link list and session pages.
 
 Tests, no database: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php`.
-With an installation: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php --filter testShift`.
+With an installation: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php --filter 'testShift|testSetOrderAndMoveToPosition'`.
 
 ## References
 
