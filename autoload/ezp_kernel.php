@@ -12,6 +12,7 @@
 
 return array(
       'Cezpdf'                                                       => 'lib/ezpdf/classes/class.ezpdf.php',
+      'CommandLineArguments'                                         => 'kernel/private/classes/commands/ezconvertdbcharset.php',
       'Cpdf'                                                         => 'lib/ezpdf/classes/class.pdf.php',
       'ExpInstallationDetailsOutputFilter'                           => 'kernel/classes/expinstallationdetailsoutputfilter.php',
       'ExpInstallationOperator'                                      => 'kernel/classes/expinstallationoperator.php',
@@ -353,7 +354,6 @@ return array(
       'Exponential\\View\\Kernel\\Workflow\\Run'                     => 'kernel/private/classes/views/workflow/run.php',
       'Exponential\\View\\Kernel\\Workflow\\View'                    => 'kernel/private/classes/views/workflow/view.php',
       'Exponential\\View\\Kernel\\Workflow\\Workflowlist'            => 'kernel/private/classes/views/workflow/workflowlist.php',
-      '\\CommandLineArguments'                                       => 'kernel/private/classes/commands/ezconvertdbcharset.php',
       'bcusauserShopAccountHandler'                                  => 'kernel/classes/shopaccounthandlers/bcusausershopaccounthandler.php',
       'eZ1337Translator'                                             => 'lib/ezi18n/classes/ez1337translator.php',
       'eZAlphabetOperator'                                           => 'kernel/common/ezalphabetoperator.php',
