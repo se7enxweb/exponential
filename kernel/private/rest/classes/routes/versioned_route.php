@@ -11,6 +11,10 @@
 
 /**
  * Route wrapping around existing instance of ezcMvcRoute providing multiple versions of it.
+ *
+ * The version is one number, or a list of them: new ezpRestVersionedRoute( $route, array( 1, 2 ) ) answers at
+ * /v1/... and /v2/..., so a provider that adds a version keeps the routes of the old one without registering each
+ * twice. getVersions() tells a provider that the kernel takes a list.
  */
 class ezpRestVersionedRoute implements ezcMvcRoute, ezcMvcReversibleRoute
 {
@@ -20,35 +24,50 @@ class ezpRestVersionedRoute implements ezcMvcRoute, ezcMvcReversibleRoute
     protected $route;
 
     /**
-     * @var int The version number
+     * @var int The version number (the first one, when the route answers for several)
      */
     protected $version;
 
+    /**
+     * @var int[] Every version the route answers for
+     */
+    protected $versions;
+
+    /**
+     * @param ezcMvcRoute $route
+     * @param int|int[] $version one version, or the list of versions the route answers for
+     */
     public function __construct( ezcMvcRoute $route, $version )
     {
         $this->route = $route;
-        $this->version = (int)$version;
+        $versions = array();
+        foreach ( is_array( $version ) ? $version : array( $version ) as $one )
+            $versions[] = (int)$one;
+        $versions = array_values( array_unique( $versions ) );
+        if ( !$versions )
+            $versions = array( 1 );
+        $this->versions = $versions;
+        $this->version = $versions[0];
+    }
+
+    /**
+     * The versions the route answers for.
+     *
+     * @return int[]
+     */
+    public function getVersions()
+    {
+        // a route kept in the route cache before the list existed carries only $version
+        return is_array( $this->versions ) && $this->versions ? $this->versions : array( (int)$this->version );
     }
 
     public function matches( ezcMvcRequest $request )
     {
-        // IF we put versionToken back into route pattern, then the following is true
-        // new ezcMvcRailsRoute( '/api/:versionToken/foo', 'myController', 'myAction' ),
-        // the token is available at: $request->variables['versionToken']
-        // Which means, specifying it in the route pattern, allows us to reuse more of the current MvcTols code.
-        // But results in more code and configuration up-front for developers.
-        //
-        // In the case of ezpRestRequest, a specific getVersion() could also be implemented.
-        // /api/v1 + /foo ezpRestVersionedRailsRoute
-        // /api/v1/foo -> ezPrestVersionedRailsRoute /api/v1/foo -> /foo
-
-        // matches() ==> is this version string registered? if so call it, if not call the default, as if no version info is provided or fail?
-        switch ( ezpRestPrefixFilterInterface::getApiVersion() )
-        {
-            case $this->version:
-                return $this->route->matches( $request );
-                break;
-        }
+        // The version token was taken out of the URI by the prefix filter (/api/ezp/v2/foo -> /api/foo), which
+        // remembers it: the route matches only when that version is one of its own.
+        if ( in_array( (int)ezpRestPrefixFilterInterface::getApiVersion(), $this->getVersions(), true ) )
+            return $this->route->matches( $request );
+        return null;
     }
 
     /**
@@ -65,6 +84,9 @@ class ezpRestVersionedRoute implements ezcMvcRoute, ezcMvcReversibleRoute
     /**
      * Generates an URL back out of a route, including possible arguments
      *
+     * The URL carries the version of the current request when the route answers for it (a link made while
+     * answering /v1/... stays in v1), else the route's first version.
+     *
      * @param array $arguments
      */
     public function generateUrl( ?array $arguments = null )
@@ -72,7 +94,10 @@ class ezpRestVersionedRoute implements ezcMvcRoute, ezcMvcReversibleRoute
         // ezpRestPrefixFilterInterface::getScheme() ==> '/v'
         $apiPrefix = ezpRestPrefixFilterInterface::getApiPrefix() . '/';
         $apiProviderName = ezpRestPrefixFilterInterface::getApiProviderName();
+        $current = (int)ezpRestPrefixFilterInterface::getApiVersion();
+        $versions = $this->getVersions();
+        $version = in_array( $current, $versions, true ) ? $current : $versions[0];
 
-        return $apiPrefix . ( !$apiProviderName ? ''  : $apiProviderName . '/' ) . 'v' . $this->version . '/' . str_replace( $apiPrefix, '', $this->route->generateUrl( $arguments ) );
+        return $apiPrefix . ( !$apiProviderName ? ''  : $apiProviderName . '/' ) . 'v' . $version . '/' . str_replace( $apiPrefix, '', $this->route->generateUrl( $arguments ) );
     }
 }

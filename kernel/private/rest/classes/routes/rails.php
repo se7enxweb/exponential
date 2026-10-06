@@ -69,6 +69,24 @@ class ezpMvcRailsRoute extends ezcMvcRailsRoute
     }
 
     /**
+     * A protocol/action map that runs $action for every HTTP method.
+     *
+     * For the routes the REST layer redirects to internally (authentication required, the error page): the
+     * redirected request keeps the method of the original one, so a route that answered GET only turned a refused
+     * POST or DELETE into "405 Method Not Allowed" instead of the 401 or 403 it was.
+     *
+     * @param string $action
+     * @return array
+     */
+    public static function anyMethod( $action )
+    {
+        $map = array();
+        foreach ( array( 'get', 'head', 'post', 'put', 'patch', 'delete', 'options' ) as $method )
+            $map['http-' . $method] = $action;
+        return $map;
+    }
+
+    /**
      * Evaluates the URI against this route and allowed protocols.
      *
      * @param ezcMvcRequest $request
