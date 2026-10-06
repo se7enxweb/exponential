@@ -599,3 +599,4 @@ The access rules in "Views and who may open them" above are the ones `exp:veloci
 - [FrankenPHP](frankenphp.md)
 - [Engine archive (phar)](phar.md)
 - [Deploying guide](../../guides/deploying.md)
+- [Benchmarking guide](../../guides/benchmarking.md): measuring the engines against each other

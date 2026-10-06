@@ -686,21 +686,33 @@ single server. In the administration, **Setup > System information** shows versi
 
 ## 10.12 Performance tuning
 
-Measure before and after every change. `exp:benchmark` requests the front page, the first menu pages and the admin
-login page, 100 times each, 4 at a time, and prints percentiles; `kernel` mode times the parts of a page
-in-process (boot, render cold and warm, INI load, content fetch, database round trip, cache write and read):
+Measure before and after every change. `exp:benchmark` requests the front page, the first menu pages, the search
+page (when visitors may search) and the admin login page, always in that order, 100 times each after 5 warm-up
+requests, 4 at a time, and prints median, p90, p99, minimum, maximum and standard deviation; `kernel` mode times the
+parts of a page in-process (boot, render cold and warm, INI load, content fetch, database round trip, cache write
+and read), and `micro` mode times pure-PHP hot paths without HTTP or a database:
 
 ```bash
 php bin/php/console exp:benchmark --save=var/benchmark/base.json --allow-root-user
 # ... make a change ...
 php bin/php/console exp:benchmark --baseline=var/benchmark/base.json --threshold=15 --allow-root-user
+php bin/php/console exp:benchmark --runs=200 --warmup=10 --format=json --allow-root-user > var/benchmark/run.json
 php bin/php/console exp:benchmark kernel --repeat=30 --allow-root-user
+php bin/php/console exp:benchmark micro --allow-root-user                 # no web server, no database
 php bin/php/console exp:benchmark --compare=https://www.example.com,https://www.example.com:8443 --allow-root-user
 php bin/php/console exp:benchmark --cold --requests=50 --allow-root-user   # past the response caches
 ```
 
+Every run records its environment (PHP, OPcache and JIT, Xdebug, CPUs, load, the commit, the date), and a
+comparison with a baseline made under another set-up says so. For numbers that compare: the same machine, nothing
+else running, OPcache as in production, Xdebug off, and judge two servers only by runs made back to back. The
+repository's CI runs the micro mode against `tests/benchmark/baseline.json` as a warning-only check.
+
 It is polite by default: against another host than this machine more than 1000 requests per URL or 16 at a time
-needs `--force`. See [Benchmark: exp:benchmark](../features/6.0/benchmark.md).
+needs `--force`. The guide [Benchmarking Exponential](../guides/benchmarking.md) teaches every use with real
+output: reading median, p90 and p99, comparing runs fairly, the noise checklist, workflows for a code change, Apache
+against Velocity and a deploy, and the CI check; [Benchmark: exp:benchmark](../features/6.0/benchmark.md) is the
+reference.
 
 ### The levers, in order of effect
 

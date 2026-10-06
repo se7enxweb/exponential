@@ -273,5 +273,6 @@ All are in `settings/velocity.ini` (shipped defaults). `exp:velocity config set`
 
 - Features: [Velocity web server](../features/6.0/velocity-web-server.md), [Velocity HTTPS and certificates](../features/6.0/velocity-https-certificates.md), [Installing in one command](../features/6.0/install-in-one-command.md).
 - Specifications: [Velocity engine settings](../specifications/6.0/velocity-engine-settings.md), [worker pool](../specifications/6.0/velocity-worker-pool.md), [HTTP/2 and security](../specifications/6.0/velocity-http2-and-security.md).
+- Measuring the result: [Benchmarking Exponential](benchmarking.md) (Apache against Velocity, a deploy checked for regressions).
 - Upgrade notes: [Velocity engines](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md), [Velocity engine upgrade notes](../bc/6.0/velocity-engine-upgrade-notes.md), [cache console](../bc/6.0/cache-console.md).
 - History: [Velocity chronicle](../history/velocity/2026-09a.md), [October 2026](../history/2026/2026-10.md).

@@ -73,7 +73,8 @@ php bin/php/console exp:benchmark --compare=https://www.example.com,https://www.
 php bin/php/console exp:benchmark kernel --save=var/benchmark/base.json
 ```
 
-The benchmark command is described in [Benchmark](../../features/6.0/benchmark.md).
+The benchmark command is described in [Benchmark](../../features/6.0/benchmark.md) and taught in the guide
+[Benchmarking Exponential](../../guides/benchmarking.md).
 
 Before a script runs, the console prints a short notice to **stderr**, so piped output stays clean:
 
