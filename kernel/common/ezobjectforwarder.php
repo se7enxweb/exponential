@@ -80,8 +80,10 @@ class eZObjectForwarder
             }
             $renderMode = eZTemplateNodeTool::elementConstantValue( $renderData );
         }
+        // (this appended to $view_dir, a variable of process(), not of this
+        // method: compiled templates ignored the render mode with a warning)
         if ( $renderMode )
-            $view_dir .= "/render-$renderMode";
+            $viewDir .= "/render-$renderMode";
 
         $viewValue = false;
         $viewName = false;

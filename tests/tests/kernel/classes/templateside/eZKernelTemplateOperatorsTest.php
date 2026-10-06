@@ -401,6 +401,21 @@ class eZKernelTemplateOperatorsTest extends eZDatatypeTestCase
         $this->assertFourWays( '{exp_environment()}', null, array(), $environment === false ? '' : (string)$environment );
     }
 
+    public function testAttributeViewWithARenderModeCompilesWithoutWarnings()
+    {
+        $attribute = new eZKernelTemplateTestForwardedAttribute();
+        foreach ( array( false, true ) as $compiled )
+        {
+            $warnings = $this->phpWarnings( function () use ( $attribute, $compiled, &$output, &$templateWarnings ) {
+                list( $output, , $templateWarnings ) = $this->render( "{attribute_view_gui attribute=\$a render-mode='k1dprint'}", array( 'a' => $attribute ), $compiled );
+            } );
+            // (other warnings depend on what the process set up before: a siteaccess, the design caches)
+            $this->assertSame( array(), preg_grep( '/view_dir/', $warnings ), $compiled ? 'compiled' : 'interpreted' );
+            // no design has a template for this attribute: nothing is shown, the template engine says why
+            $this->assertSame( '', $output );
+        }
+    }
+
     public function testSiteAccessUrlIsWorkedOutAtEveryRender()
     {
         $expected = (string)ezpSiteAccessURL::root();
@@ -410,5 +425,27 @@ class eZKernelTemplateOperatorsTest extends eZDatatypeTestCase
         foreach ( glob( self::$dir . '/compiled/*.php' ) as $file )
             $compiledSource .= file_get_contents( $file );
         $this->assertStringContainsString( 'ezpSiteAccessURL::root()', $compiledSource );
+    }
+}
+
+class eZKernelTemplateTestForwardedAttribute
+{
+    private $values = array( 'is_information_collector' => false, 'view_template' => 'k1dnosuchdatatype',
+                             'contentclass_attribute_identifier' => 'k1d', 'contentclassattribute_id' => 0,
+                             'object' => null, 'id' => 0 );
+
+    function hasAttribute( $name )
+    {
+        return array_key_exists( $name, $this->values );
+    }
+
+    function attribute( $name )
+    {
+        return $this->values[$name] ?? null;
+    }
+
+    function attributes()
+    {
+        return array_keys( $this->values );
     }
 }
