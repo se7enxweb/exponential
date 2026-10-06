@@ -235,6 +235,121 @@
         <source>edit</source>
         <translation>bearbeiten</translation>
     </message>
+    <message>
+        <source>The classes listed in this group. A class can be in several groups; removing a class here asks first and says how many objects go with it, while a class that is also in another group only leaves this one.</source>
+        <translation>Die Klassen dieser Gruppe. Eine Klasse kann in mehreren Gruppen sein; das Entfernen einer Klasse fragt hier zuerst nach und sagt, wie viele Objekte mit ihr entfernt werden, während eine Klasse, die auch in einer anderen Gruppe ist, nur diese verlässt.</translation>
+    </message>
+    <message>
+        <source>Published objects on this page</source>
+        <translation>Veröffentlichte Objekte auf dieser Seite</translation>
+    </message>
+    <message>
+        <source>Containers</source>
+        <translation>Container</translation>
+    </message>
+    <message>
+        <source>Find a class</source>
+        <translation>Klasse finden</translation>
+    </message>
+    <message>
+        <source>Language of the new class</source>
+        <translation>Sprache der neuen Klasse</translation>
+    </message>
+    <message>
+        <source>A new class starts with a name, an identifier and no attributes.</source>
+        <translation>Eine neue Klasse beginnt mit einem Namen, einem Bezeichner und ohne Attribute.</translation>
+    </message>
+    <message>
+        <source>Create one with New class, or add an existing class to this group from its page.</source>
+        <translation>Legen Sie mit „Neue Klasse“ eine an oder fügen Sie eine bestehende Klasse auf ihrer Seite dieser Gruppe hinzu.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Also in</source>
+        <translation>Auch in</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>container</source>
+        <translation>Container</translation>
+    </message>
+    <message>
+        <source>only here</source>
+        <translation>nur hier</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansehen</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>No class on this page matches. Clear the search.</source>
+        <translation>Keine Klasse auf dieser Seite passt. Leeren Sie die Suche.</translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first. A class only in this group is removed with all its objects; one that is also in another group only leaves this one. Copy makes a copy of the class in the same groups.</source>
+        <translation>„Auswahl entfernen“ fragt zuerst nach. Eine Klasse, die nur in dieser Gruppe ist, wird mit allen ihren Objekten entfernt; eine, die auch in einer anderen Gruppe ist, verlässt nur diese. „Kopieren“ legt eine Kopie der Klasse in denselben Gruppen an.</translation>
+    </message>
+    <message>
+        <source>%shown of %count classes on this page shown</source>
+        <translation>%shown von %count Klassen auf dieser Seite angezeigt</translation>
+    </message>
+    <message>
+        <source>Classes on this page: %count</source>
+        <translation>Klassen auf dieser Seite: %count</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/copy</name>
+    <message>
+        <source>Copy the &lt;%class_name&gt; class?</source>
+        <translation>Die Klasse &lt;%class_name&gt; kopieren?</translation>
+    </message>
+    <message>
+        <source>A copy is a new class with the same attributes and settings, in the same class groups, named "Copy of" the class with the identifier copy_of_ and the original identifier. Its objects are not copied; the original class is not changed.</source>
+        <translation>Eine Kopie ist eine neue Klasse mit denselben Attributen und Einstellungen in denselben Klassengruppen, benannt „Kopie von“ der Klasse mit dem Bezeichner copy_of_ und dem ursprünglichen Bezeichner. Ihre Objekte werden nicht kopiert; die ursprüngliche Klasse bleibt unverändert.</translation>
+    </message>
+    <message>
+        <source>After copying, the class list of its first group opens.</source>
+        <translation>Nach dem Kopieren öffnet sich die Klassenliste ihrer ersten Gruppe.</translation>
+    </message>
+    <message>
+        <source>After copying, the class groups open.</source>
+        <translation>Nach dem Kopieren öffnen sich die Klassengruppen.</translation>
+    </message>
+    <message>
+        <source>After copying, the page of the copy opens.</source>
+        <translation>Nach dem Kopieren öffnet sich die Seite der Kopie.</translation>
+    </message>
+    <message>
+        <source>After copying, the copy opens for editing; Cancel there throws it away.</source>
+        <translation>Nach dem Kopieren öffnet sich die Kopie zum Bearbeiten; „Abbrechen“ verwirft sie dort.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Nothing has been copied yet.</source>
+        <translation>Es wurde noch nichts kopiert.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/datatype/browse_objectrelation_placement</name>
@@ -588,6 +703,38 @@
         <source>The attribute could not be moved; the order is as it was.</source>
         <translation>Das Attribut konnte nicht verschoben werden; die Reihenfolge ist unverändert.</translation>
     </message>
+    <message>
+        <source>Attribute type</source>
+        <translation>Attributtyp</translation>
+    </message>
+    <message>
+        <source>Nothing changes for the objects of this class until you press OK. Cancel throws the draft away.</source>
+        <translation>Für die Objekte dieser Klasse ändert sich nichts, bis Sie OK drücken. „Abbrechen“ verwirft den Entwurf.</translation>
+    </message>
+    <message>
+        <source>The class</source>
+        <translation>Die Klasse</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>The fields of every object of this class. The arrows and the position numbers set the order; tick attributes and press Remove selected attributes to remove them with their content in every object when the class is stored.</source>
+        <translation>Die Felder jedes Objekts dieser Klasse. Die Pfeile und die Positionszahlen legen die Reihenfolge fest; haken Sie Attribute an und drücken Sie „Ausgewählte Attribute entfernen“, um sie beim Speichern der Klasse samt ihrem Inhalt in jedem Objekt zu entfernen.</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>Choose a type below and press Add attribute.</source>
+        <translation>Wählen Sie unten einen Typ und drücken Sie „Attribut hinzufügen“.</translation>
+    </message>
+    <message>
+        <source>OK stores the class and updates its objects; Apply stores it and keeps the form open; Cancel throws away the changes and goes back to the page you came from.</source>
+        <translation>OK speichert die Klasse und aktualisiert ihre Objekte; „Übernehmen“ speichert sie und lässt das Formular offen; „Abbrechen“ verwirft die Änderungen und kehrt zur vorherigen Seite zurück.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/edit_denied</name>
@@ -677,6 +824,18 @@
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
+    <message>
+        <source>A class group files classes so they are easy to find. Its name is shown on Setup &gt; Classes and in the class lists; renaming it changes nothing for the classes or their objects.</source>
+        <translation>Eine Klassengruppe ordnet Klassen, damit man sie leicht findet. Ihr Name erscheint unter Einrichtung &gt; Klassen und in den Klassenlisten; eine Umbenennung ändert nichts an den Klassen oder ihren Objekten.</translation>
+    </message>
+    <message>
+        <source>For example Content, Media or Users.</source>
+        <translation>Zum Beispiel Inhalt, Medien oder Benutzer.</translation>
+    </message>
+    <message>
+        <source>Cancel goes back without saving.</source>
+        <translation>„Abbrechen“ kehrt ohne Speichern zurück.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/grouplist</name>
@@ -760,6 +919,146 @@
         <source>Objects</source>
         <translation>Objekte</translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>Published objects</source>
+        <translation>Veröffentlichte Objekte</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>A class defines a kind of content: its fields, how its objects are named and where they may be created. Classes are kept in groups so that they are easy to find; a class can belong to more than one group. Removing a group removes the classes that are in no other group, and with them all their objects.</source>
+        <translation>Eine Klasse beschreibt eine Art von Inhalt: ihre Felder, wie ihre Objekte benannt werden und wo sie angelegt werden dürfen. Klassen werden in Gruppen geführt, damit man sie leicht findet; eine Klasse kann mehreren Gruppen angehören. Wird eine Gruppe entfernt, werden die Klassen entfernt, die in keiner anderen Gruppe sind, und mit ihnen alle ihre Objekte.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>In more than one group</source>
+        <translation>In mehr als einer Gruppe</translation>
+    </message>
+    <message>
+        <source>In no group</source>
+        <translation>In keiner Gruppe</translation>
+    </message>
+    <message>
+        <source>Find a group or class</source>
+        <translation>Gruppe oder Klasse finden</translation>
+    </message>
+    <message>
+        <source>Group name, class name or identifier.</source>
+        <translation>Gruppenname, Klassenname oder Bezeichner.</translation>
+    </message>
+    <message>
+        <source>Open a group to create classes in it, copy or remove them.</source>
+        <translation>Öffnen Sie eine Gruppe, um darin Klassen anzulegen, zu kopieren oder zu entfernen.</translation>
+    </message>
+    <message>
+        <source>All class groups</source>
+        <translation>Alle Klassengruppen</translation>
+    </message>
+    <message>
+        <source>There are no class groups. Create one with New class group; every class needs a group to be listed in.</source>
+        <translation>Es gibt keine Klassengruppen. Legen Sie mit „Neue Klassengruppe“ eine an; jede Klasse braucht eine Gruppe, in der sie aufgeführt wird.</translation>
+    </message>
+    <message>
+        <source>Empty</source>
+        <translation>Leer</translation>
+    </message>
+    <message>
+        <source>%count classes</source>
+        <translation>%count Klassen</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count Objekte</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>und %count weitere</translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation>Letzte Änderung</translation>
+    </message>
+    <message>
+        <source>class %name</source>
+        <translation>Klasse %name</translation>
+    </message>
+    <message>
+        <source>Group modified</source>
+        <translation>Gruppe geändert</translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation>von %name</translation>
+    </message>
+    <message>
+        <source>Removing it</source>
+        <translation>Beim Entfernen</translation>
+    </message>
+    <message>
+        <source>Removes only the group.</source>
+        <translation>Entfernt nur die Gruppe.</translation>
+    </message>
+    <message>
+        <source>Its %count classes stay in their other groups.</source>
+        <translation>Ihre %count Klassen bleiben in ihren anderen Gruppen.</translation>
+    </message>
+    <message>
+        <source>Removes %classes classes and their %objects objects.</source>
+        <translation>Entfernt %classes Klassen und ihre %objects Objekte.</translation>
+    </message>
+    <message>
+        <source>%count classes stay in their other groups.</source>
+        <translation>%count Klassen bleiben in ihren anderen Gruppen.</translation>
+    </message>
+    <message>
+        <source>No group on this page matches. Clear the search.</source>
+        <translation>Keine Gruppe auf dieser Seite passt. Leeren Sie die Suche.</translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first and lists the classes and objects that would go.</source>
+        <translation>„Auswahl entfernen“ fragt zuerst nach und nennt die Klassen und Objekte, die entfernt würden.</translation>
+    </message>
+    <message>
+        <source>%shown of %count groups on this page shown</source>
+        <translation>%shown von %count Gruppen auf dieser Seite angezeigt</translation>
+    </message>
+    <message>
+        <source>Groups on this page: %count</source>
+        <translation>Gruppen auf dieser Seite: %count</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/list</name>
@@ -842,6 +1141,34 @@
         <source>Removing class &lt;%1&gt; will result in the removal of %2 objects and all their sub items.</source>
         <translation>Wenn die Klasse &lt;%1&gt; gelöscht wird, werden auch %2 Objekte und alle Unterelemente gelöscht.</translation>
     </message>
+    <message>
+        <source>A removed class takes all its objects with it, and their sub items. This cannot be undone.</source>
+        <translation>Eine entfernte Klasse nimmt alle ihre Objekte mit, samt deren Unterelementen. Das lässt sich nicht rückgängig machen.</translation>
+    </message>
+    <message>
+        <source>%count objects in all.</source>
+        <translation>Insgesamt %count Objekte.</translation>
+    </message>
+    <message>
+        <source>%count classes cannot be removed; the reasons are below. The others are removed.</source>
+        <translation>%count Klassen können nicht entfernt werden; die Gründe stehen unten. Die anderen werden entfernt.</translation>
+    </message>
+    <message>
+        <source>Cannot be removed</source>
+        <translation>Kann nicht entfernt werden</translation>
+    </message>
+    <message>
+        <source>%count objects go with it</source>
+        <translation>%count Objekte werden mit entfernt</translation>
+    </message>
+    <message>
+        <source>No objects</source>
+        <translation>Keine Objekte</translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation>Es wurde noch nichts entfernt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removegroup</name>
@@ -877,6 +1204,26 @@
         <source>%objects objects will be removed</source>
         <translation>%objects Objekte werden gelöscht</translation>
     </message>
+    <message>
+        <source>%classes classes that are in no other group are removed, and with them %objects objects and their sub items. This cannot be undone.</source>
+        <translation>%classes Klassen, die in keiner anderen Gruppe sind, werden entfernt und mit ihnen %objects Objekte samt Unterelementen. Das lässt sich nicht rückgängig machen.</translation>
+    </message>
+    <message>
+        <source>No class is removed: these groups hold no class that is in no other group.</source>
+        <translation>Es wird keine Klasse entfernt: Diese Gruppen enthalten keine Klasse, die in keiner anderen Gruppe ist.</translation>
+    </message>
+    <message>
+        <source>Classes that are also in another group stay there.</source>
+        <translation>Klassen, die auch in einer anderen Gruppe sind, bleiben dort.</translation>
+    </message>
+    <message>
+        <source>Only the group is removed.</source>
+        <translation>Nur die Gruppe wird entfernt.</translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation>Es wurde noch nichts entfernt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removetranslation</name>
@@ -904,6 +1251,10 @@
         <source>Cancel the removal of translations.</source>
         <translation>Das Entfernen der Übersetzungen abbrechen.</translation>
     </message>
+    <message>
+        <source>The class name, description and attribute names in these languages go. The class, its attributes and its objects stay.</source>
+        <translation>Klassenname, Beschreibung und Attributnamen in diesen Sprachen werden entfernt. Die Klasse, ihre Attribute und ihre Objekte bleiben.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/select_language</name>
@@ -926,6 +1277,10 @@
     <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Translate the class: its name, description and attribute names in another language. Its attributes and objects stay as they are.</source>
+        <translation>Übersetzen Sie die Klasse: Name, Beschreibung und Attributnamen in einer anderen Sprache. Ihre Attribute und Objekte bleiben, wie sie sind.</translation>
     </message>
 </context>
 <context>
@@ -1292,6 +1647,38 @@
     <message>
         <source>%namelist [%object_count objects]</source>
         <translation>%namelist [%object_count Objekte]</translation>
+    </message>
+    <message>
+        <source>Groups only file the class; they change nothing about its objects.</source>
+        <translation>Gruppen ordnen die Klasse nur ein; an ihren Objekten ändern sie nichts.</translation>
+    </message>
+    <message>
+        <source>Templates that draw the objects of this class instead of the standard ones, by siteaccess.</source>
+        <translation>Templates, die die Objekte dieser Klasse statt der Standardtemplates darstellen, nach Siteaccess.</translation>
+    </message>
+    <message>
+        <source>The class name, description and attribute names in each language. The main language cannot be removed.</source>
+        <translation>Klassenname, Beschreibung und Attributnamen in jeder Sprache. Die Hauptsprache kann nicht entfernt werden.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>as the object name</source>
+        <translation>wie der Objektname</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>The fields every object of this class has, in the order the edit form shows them.</source>
+        <translation>Die Felder, die jedes Objekt dieser Klasse hat, in der Reihenfolge des Bearbeitungsformulars.</translation>
+    </message>
+    <message>
+        <source>Show on this page</source>
+        <translation>Auf dieser Seite anzeigen</translation>
     </message>
 </context>
 <context>
@@ -1961,6 +2348,354 @@
     <message>
         <source>Top level</source>
         <translation>Oberste Ebene</translation>
+    </message>
+    <message>
+        <source>Not in a folder</source>
+        <translation>In keinem Ordner</translation>
+    </message>
+    <message>
+        <source>All bookmarks</source>
+        <translation>Alle Lesezeichen</translation>
+    </message>
+    <message>
+        <source>Bookmarks take you back to the items you work on: they are personal, nobody else sees them, and removing one never changes the item. Sort them into folders; the Bookmarks box at the side and the browse dialog show the same folders.</source>
+        <translation>Lesezeichen führen Sie zu den Einträgen zurück, an denen Sie arbeiten: Sie sind persönlich, niemand sonst sieht sie, und das Entfernen eines Lesezeichens ändert den Eintrag nie. Ordnen Sie sie in Ordner; der Lesezeichen-Kasten an der Seite und der Auswahldialog zeigen dieselben Ordner.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Lesezeichen</translation>
+    </message>
+    <message>
+        <source>Hidden items</source>
+        <translation>Verborgene Einträge</translation>
+    </message>
+    <message>
+        <source>No longer available</source>
+        <translation>Nicht mehr verfügbar</translation>
+    </message>
+    <message>
+        <source>Move into this folder</source>
+        <translation>In diesen Ordner verschieben</translation>
+    </message>
+    <message>
+        <source>Arrange folder %name: drag it, or press the up and down arrow keys</source>
+        <translation>Ordner %name anordnen: ziehen oder die Pfeiltasten nach oben und unten drücken</translation>
+    </message>
+    <message>
+        <source>Drag to arrange, or use the up and down arrow keys</source>
+        <translation>Zum Anordnen ziehen oder die Pfeiltasten nach oben und unten verwenden</translation>
+    </message>
+    <message>
+        <source>%count bookmarks, with the folders inside</source>
+        <translation>%count Lesezeichen, mit den Ordnern darin</translation>
+    </message>
+    <message>
+        <source>No folders yet. Create one below, then move bookmarks into it.</source>
+        <translation>Noch keine Ordner. Legen Sie unten einen an und verschieben Sie dann Lesezeichen hinein.</translation>
+    </message>
+    <message>
+        <source>Tip: drag a bookmark onto a folder here to move it.</source>
+        <translation>Tipp: Ziehen Sie ein Lesezeichen auf einen Ordner hier, um es zu verschieben.</translation>
+    </message>
+    <message>
+        <source>Inside</source>
+        <translation>In</translation>
+    </message>
+    <message>
+        <source>No folder (top level)</source>
+        <translation>Kein Ordner (oberste Ebene)</translation>
+    </message>
+    <message>
+        <source>Folder path</source>
+        <translation>Ordnerpfad</translation>
+    </message>
+    <message>
+        <source>Bookmarks in it</source>
+        <translation>Lesezeichen darin</translation>
+    </message>
+    <message>
+        <source>Including subfolders</source>
+        <translation>Mit Unterordnern</translation>
+    </message>
+    <message>
+        <source>Folders inside</source>
+        <translation>Ordner darin</translation>
+    </message>
+    <message>
+        <source>Save name</source>
+        <translation>Namen speichern</translation>
+    </message>
+    <message>
+        <source>Put this folder inside</source>
+        <translation>Diesen Ordner verschieben in</translation>
+    </message>
+    <message>
+        <source>Its bookmarks and folders move with it.</source>
+        <translation>Seine Lesezeichen und Ordner werden mit verschoben.</translation>
+    </message>
+    <message>
+        <source>Order among its neighbours</source>
+        <translation>Reihenfolge unter seinen Nachbarn</translation>
+    </message>
+    <message>
+        <source>Remove folder</source>
+        <translation>Ordner entfernen</translation>
+    </message>
+    <message>
+        <source>What happens to what is inside?</source>
+        <translation>Was geschieht mit dem Inhalt?</translation>
+    </message>
+    <message>
+        <source>Keep what is inside: it moves to %target (bookmarks: %count, folders: %folders).</source>
+        <translation>Inhalt behalten: er wird nach %target verschoben (Lesezeichen: %count, Ordner: %folders).</translation>
+    </message>
+    <message>
+        <source>the top level</source>
+        <translation>die oberste Ebene</translation>
+    </message>
+    <message>
+        <source>Remove everything inside with it (bookmarks: %all, folders: %folders).</source>
+        <translation>Den gesamten Inhalt mit entfernen (Lesezeichen: %all, Ordner: %folders).</translation>
+    </message>
+    <message>
+        <source>Only bookmarks are removed, never the items they point to.</source>
+        <translation>Es werden nur Lesezeichen entfernt, nie die Einträge, auf die sie zeigen.</translation>
+    </message>
+    <message>
+        <source>Find bookmarks</source>
+        <translation>Lesezeichen finden</translation>
+    </message>
+    <message>
+        <source>Find a bookmark</source>
+        <translation>Lesezeichen finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Searches the names, types, locations and folders of all your bookmarks.</source>
+        <translation>Durchsucht Namen, Typen, Orte und Ordner all Ihrer Lesezeichen.</translation>
+    </message>
+    <message>
+        <source>Searches this folder only. Choose All bookmarks to search everywhere.</source>
+        <translation>Durchsucht nur diesen Ordner. Wählen Sie „Alle Lesezeichen“, um überall zu suchen.</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Your order</source>
+        <translation>Ihre Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Name A to Z</source>
+        <translation>Name A bis Z</translation>
+    </message>
+    <message>
+        <source>Recently added</source>
+        <translation>Zuletzt hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Recently modified</source>
+        <translation>Zuletzt geändert</translation>
+    </message>
+    <message>
+        <source>Bookmarks stay grouped by folder in every order. Your order is the one of the Bookmarks box.</source>
+        <translation>Lesezeichen bleiben in jeder Reihenfolge nach Ordnern gruppiert. Ihre Reihenfolge ist die des Lesezeichen-Kastens.</translation>
+    </message>
+    <message>
+        <source>Bookmarks matching “%search” in %scope</source>
+        <translation>Lesezeichen mit „%search“ in %scope</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Items you add go into this folder.</source>
+        <translation>Einträge, die Sie hinzufügen, kommen in diesen Ordner.</translation>
+    </message>
+    <message>
+        <source>To arrange, drag a bookmark by its grip to a new place in its folder, or drop it on a folder in the folder list to move it there. On a focused grip the up and down arrow keys move it one place; the position field moves it anywhere in its folder, also across pages.</source>
+        <translation>Zum Anordnen ziehen Sie ein Lesezeichen an seinem Griff an eine neue Stelle in seinem Ordner oder legen es auf einem Ordner in der Ordnerliste ab, um es dorthin zu verschieben. Auf einem fokussierten Griff verschieben die Pfeiltasten nach oben und unten es um eine Stelle; das Positionsfeld verschiebt es an jede Stelle in seinem Ordner, auch über Seiten hinweg.</translation>
+    </message>
+    <message>
+        <source>Clear the search to arrange your bookmarks.</source>
+        <translation>Setzen Sie die Suche zurück, um Ihre Lesezeichen anzuordnen.</translation>
+    </message>
+    <message>
+        <source>Switch to Your order to arrange</source>
+        <translation>Zum Anordnen zu „Ihre Reihenfolge“ wechseln</translation>
+    </message>
+    <message>
+        <source>Dropping a bookmark on a folder in the folder list moves it there in every order.</source>
+        <translation>Ein Lesezeichen, das auf einen Ordner in der Ordnerliste gezogen wird, wird in jeder Reihenfolge dorthin verschoben.</translation>
+    </message>
+    <message>
+        <source>No bookmark matches this search.</source>
+        <translation>Kein Lesezeichen passt zu dieser Suche.</translation>
+    </message>
+    <message>
+        <source>Check the spelling, search for a shorter part of the name, or search all bookmarks.</source>
+        <translation>Prüfen Sie die Schreibweise, suchen Sie nach einem kürzeren Teil des Namens oder durchsuchen Sie alle Lesezeichen.</translation>
+    </message>
+    <message>
+        <source>Search all bookmarks</source>
+        <translation>Alle Lesezeichen durchsuchen</translation>
+    </message>
+    <message>
+        <source>You have no bookmarks yet.</source>
+        <translation>Sie haben noch keine Lesezeichen.</translation>
+    </message>
+    <message>
+        <source>Add items here, or choose Add to bookmarks in the menu of any item in the content tree.</source>
+        <translation>Fügen Sie hier Einträge hinzu oder wählen Sie „Zu Lesezeichen hinzufügen“ im Menü eines Eintrags im Inhaltsbaum.</translation>
+    </message>
+    <message>
+        <source>Every bookmark is in a folder.</source>
+        <translation>Jedes Lesezeichen liegt in einem Ordner.</translation>
+    </message>
+    <message>
+        <source>This folder is empty.</source>
+        <translation>Dieser Ordner ist leer.</translation>
+    </message>
+    <message>
+        <source>Add items to it, or select bookmarks in another folder and move them here.</source>
+        <translation>Fügen Sie Einträge hinzu oder wählen Sie Lesezeichen in einem anderen Ordner aus und verschieben Sie sie hierher.</translation>
+    </message>
+    <message>
+        <source>1 bookmark</source>
+        <translation>1 Lesezeichen</translation>
+    </message>
+    <message>
+        <source>continued from the previous page</source>
+        <translation>Fortsetzung von der vorigen Seite</translation>
+    </message>
+    <message>
+        <source>in %path</source>
+        <translation>in %path</translation>
+    </message>
+    <message>
+        <source>Arrange %name: drag it, or press the up and down arrow keys</source>
+        <translation>%name anordnen: ziehen oder die Pfeiltasten nach oben und unten drücken</translation>
+    </message>
+    <message>
+        <source>Select this bookmark.</source>
+        <translation>Dieses Lesezeichen auswählen.</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name auswählen</translation>
+    </message>
+    <message>
+        <source>Hidden: visitors of the site do not see it.</source>
+        <translation>Verborgen: Besucher der Website sehen ihn nicht.</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Verborgen</translation>
+    </message>
+    <message>
+        <source>An item above it is hidden, so visitors of the site do not see it.</source>
+        <translation>Ein Eintrag darüber ist verborgen, daher sehen Besucher der Website ihn nicht.</translation>
+    </message>
+    <message>
+        <source>Hidden by a parent</source>
+        <translation>Durch übergeordneten Eintrag verborgen</translation>
+    </message>
+    <message>
+        <source>Not found</source>
+        <translation>Nicht gefunden</translation>
+    </message>
+    <message>
+        <source>No access</source>
+        <translation>Kein Zugriff</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Move %name up</source>
+        <translation>%name nach oben verschieben</translation>
+    </message>
+    <message>
+        <source>Move %name down</source>
+        <translation>%name nach unten verschieben</translation>
+    </message>
+    <message>
+        <source>The item was removed, is in the trash, or is not in a language of this site. Remove the bookmark, or restore the item.</source>
+        <translation>Der Eintrag wurde entfernt, liegt im Papierkorb oder ist in keiner Sprache dieser Website vorhanden. Entfernen Sie das Lesezeichen oder stellen Sie den Eintrag wieder her.</translation>
+    </message>
+    <message>
+        <source>You may no longer read this item. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Sie dürfen diesen Eintrag nicht mehr lesen. Entfernen Sie das Lesezeichen oder bitten Sie einen Administrator um Zugriff.</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>Top of the tree</source>
+        <translation>Oberste Ebene des Baums</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Position in its folder</source>
+        <translation>Position im Ordner</translation>
+    </message>
+    <message>
+        <source>of %count</source>
+        <translation>von %count</translation>
+    </message>
+    <message>
+        <source>Move the bookmark to this position in its folder, also across pages</source>
+        <translation>Das Lesezeichen an diese Position in seinem Ordner verschieben, auch über Seiten hinweg</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count bookmarks per page.</source>
+        <translation>%count Lesezeichen pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>Move the selected bookmarks to</source>
+        <translation>Ausgewählte Lesezeichen verschieben nach</translation>
+    </message>
+    <message>
+        <source>The selected bookmarks are removed from your list. The items they point to are not changed.</source>
+        <translation>Die ausgewählten Lesezeichen werden aus Ihrer Liste entfernt. Die Einträge, auf die sie zeigen, bleiben unverändert.</translation>
+    </message>
+    <message>
+        <source>Remove the selected bookmarks</source>
+        <translation>Ausgewählte Lesezeichen entfernen</translation>
+    </message>
+    <message>
+        <source>Tick bookmarks to move or remove them.</source>
+        <translation>Markieren Sie Lesezeichen, um sie zu verschieben oder zu entfernen.</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
     </message>
 </context>
 <context>
@@ -2688,6 +3423,262 @@
     <message>
         <source>My drafts (%draft_count)</source>
         <translation>Meine Entwürfe (%draft_count)</translation>
+    </message>
+    <message>
+        <source>A draft is a version you started and have not published yet: of a new object, or of an object that is already published, which stays as it is until you publish. Only you see and edit your drafts. Remove the ones you no longer need; a draft of a new object takes the new object with it.</source>
+        <translation>Ein Entwurf ist eine Version, die Sie begonnen und noch nicht veröffentlicht haben: eines neuen Objekts oder eines schon veröffentlichten Objekts, das bleibt, wie es ist, bis Sie veröffentlichen. Nur Sie sehen und bearbeiten Ihre Entwürfe. Entfernen Sie die, die Sie nicht mehr brauchen; der Entwurf eines neuen Objekts nimmt das neue Objekt mit.</translation>
+    </message>
+    <message>
+        <source>One draft not modified for %days days or more was removed.</source>
+        <translation>Ein Entwurf, der seit %days Tagen oder länger nicht geändert wurde, wurde entfernt.</translation>
+    </message>
+    <message>
+        <source>%count drafts not modified for %days days or more were removed.</source>
+        <translation>%count Entwürfe, die seit %days Tagen oder länger nicht geändert wurden, wurden entfernt.</translation>
+    </message>
+    <message>
+        <source>One draft was removed.</source>
+        <translation>Ein Entwurf wurde entfernt.</translation>
+    </message>
+    <message>
+        <source>%count drafts were removed.</source>
+        <translation>%count Entwürfe wurden entfernt.</translation>
+    </message>
+    <message>
+        <source>No draft is that old; nothing was removed.</source>
+        <translation>Kein Entwurf ist so alt; nichts wurde entfernt.</translation>
+    </message>
+    <message>
+        <source>No draft was selected. Tick the drafts to remove first.</source>
+        <translation>Kein Entwurf wurde ausgewählt. Kreuzen Sie zuerst die Entwürfe an, die entfernt werden sollen.</translation>
+    </message>
+    <message>
+        <source>%count of the versions asked for are not drafts of yours and were left as they are.</source>
+        <translation>%count der angefragten Versionen sind keine Entwürfe von Ihnen und blieben, wie sie sind.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>Entwürfe</translation>
+    </message>
+    <message>
+        <source>Of new objects</source>
+        <translation>Neuer Objekte</translation>
+    </message>
+    <message>
+        <source>Not modified for %days days</source>
+        <translation>Seit %days Tagen nicht geändert</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Übersetzungen</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>Find drafts</source>
+        <translation>Entwürfe finden</translation>
+    </message>
+    <message>
+        <source>Find a draft</source>
+        <translation>Einen Entwurf finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Any part of the name, the location or the class. Upper and lower case are the same.</source>
+        <translation>Ein Teil des Namens, des Orts oder der Klasse. Groß- und Kleinschreibung zählen nicht.</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>Übersetzung</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Not modified for</source>
+        <translation>Nicht geändert seit</translation>
+    </message>
+    <message>
+        <source>Any time</source>
+        <translation>Beliebig</translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation>%days Tagen</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation>Zuletzt geändert</translation>
+    </message>
+    <message>
+        <source>Oldest first</source>
+        <translation>Älteste zuerst</translation>
+    </message>
+    <message>
+        <source>Drafts containing “%search”</source>
+        <translation>Entwürfe mit „%search“</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>A draft appears here when you start editing and leave without publishing.</source>
+        <translation>Ein Entwurf erscheint hier, wenn Sie mit dem Bearbeiten beginnen und ohne Veröffentlichen gehen.</translation>
+    </message>
+    <message>
+        <source>No draft matches these filters.</source>
+        <translation>Kein Entwurf passt zu diesen Filtern.</translation>
+    </message>
+    <message>
+        <source>Show all drafts</source>
+        <translation>Alle Entwürfe zeigen</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>New object</source>
+        <translation>Neues Objekt</translation>
+    </message>
+    <message>
+        <source>%days days old</source>
+        <translation>%days Tage alt</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansehen</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>This draft of a new object is removed for good, and the new object with it.</source>
+        <translation>Dieser Entwurf eines neuen Objekts wird endgültig entfernt, und das neue Objekt mit ihm.</translation>
+    </message>
+    <message>
+        <source>This draft is removed for good; the published version stays as it is.</source>
+        <translation>Dieser Entwurf wird endgültig entfernt; die veröffentlichte Version bleibt, wie sie ist.</translation>
+    </message>
+    <message>
+        <source>Remove for good</source>
+        <translation>Endgültig entfernen</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>New, to be published below %location</source>
+        <translation>Neu, wird unter %location veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Below %location</source>
+        <translation>Unter %location</translation>
+    </message>
+    <message>
+        <source>Its page</source>
+        <translation>Seine Seite</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Erstellt</translation>
+    </message>
+    <message>
+        <source>today</source>
+        <translation>heute</translation>
+    </message>
+    <message>
+        <source>%days days ago</source>
+        <translation>vor %days Tagen</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count drafts per page.</source>
+        <translation>%count Entwürfe pro Seite zeigen.</translation>
+    </message>
+    <message>
+        <source>The ticked drafts are removed for good. A draft of a new object takes the new object with it.</source>
+        <translation>Die angekreuzten Entwürfe werden endgültig entfernt. Der Entwurf eines neuen Objekts nimmt das neue Objekt mit.</translation>
+    </message>
+    <message>
+        <source>Remove selected for good</source>
+        <translation>Ausgewählte endgültig entfernen</translation>
+    </message>
+    <message>
+        <source>Remove old drafts</source>
+        <translation>Alte Entwürfe entfernen</translation>
+    </message>
+    <message>
+        <source>Drafts not modified for</source>
+        <translation>Entwürfe, nicht geändert seit</translation>
+    </message>
+    <message>
+        <source>%days days or more (%count drafts)</source>
+        <translation>%days Tagen oder länger (%count Entwürfe)</translation>
+    </message>
+    <message>
+        <source>They are removed for good, whatever the filters show.</source>
+        <translation>Sie werden endgültig entfernt, was immer die Filter zeigen.</translation>
+    </message>
+    <message>
+        <source>Remove these drafts for good</source>
+        <translation>Diese Entwürfe endgültig entfernen</translation>
+    </message>
+    <message>
+        <source>All %count of your drafts are removed for good, whatever the filters show.</source>
+        <translation>Alle %count Ihrer Entwürfe werden endgültig entfernt, was immer die Filter zeigen.</translation>
+    </message>
+    <message>
+        <source>Remove all for good</source>
+        <translation>Alle endgültig entfernen</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>These drafts are removed for good: %list. A draft of a new object takes the new object with it.</source>
+        <translation>Diese Entwürfe werden endgültig entfernt: %list. Der Entwurf eines neuen Objekts nimmt das neue Objekt mit.</translation>
+    </message>
+    <message>
+        <source>Tick the drafts to remove in the list first.</source>
+        <translation>Kreuzen Sie zuerst in der Liste die Entwürfe an, die entfernt werden sollen.</translation>
     </message>
 </context>
 <context>
@@ -3892,6 +4883,250 @@
         <source>You cannot copy version #%version_number because you may not read it.</source>
         <translation>Sie können Version #%version_number nicht kopieren, weil Sie sie nicht lesen dürfen.</translation>
     </message>
+    <message>
+        <source>Viewing it needs the policy content/versionread for this version.</source>
+        <translation>Zum Ansehen braucht es die Richtlinie content/versionread für diese Version.</translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation>Sie dürfen dieses Objekt nicht bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Only drafts are edited: make a new draft from this version to change it.</source>
+        <translation>Bearbeitet werden nur Entwürfe: Machen Sie aus dieser Version einen neuen Entwurf, um sie zu ändern.</translation>
+    </message>
+    <message>
+        <source>This draft belongs to someone else: make a new draft from it to change it.</source>
+        <translation>Dieser Entwurf gehört jemand anderem: Machen Sie daraus einen neuen Entwurf, um ihn zu ändern.</translation>
+    </message>
+    <message>
+        <source>An untouched draft has nothing to copy.</source>
+        <translation>Ein unberührter Entwurf hat nichts, was kopiert werden könnte.</translation>
+    </message>
+    <message>
+        <source>You may not read this version, so it is not copied or compared.</source>
+        <translation>Sie dürfen diese Version nicht lesen, daher wird sie weder kopiert noch verglichen.</translation>
+    </message>
+    <message>
+        <source>You may not edit any translation of this version.</source>
+        <translation>Sie dürfen keine Übersetzung dieser Version bearbeiten.</translation>
+    </message>
+    <message>
+        <source>The published version is not removed.</source>
+        <translation>Die veröffentlichte Version wird nicht entfernt.</translation>
+    </message>
+    <message>
+        <source>This version is in a workflow that is still running, so it is not removed.</source>
+        <translation>Diese Version ist in einem Workflow, der noch läuft, daher wird sie nicht entfernt.</translation>
+    </message>
+    <message>
+        <source>You may not remove this version.</source>
+        <translation>Sie dürfen diese Version nicht entfernen.</translation>
+    </message>
+    <message>
+        <source>Versions of “%name” (%count)</source>
+        <translation>Versionen von „%name“ (%count)</translation>
+    </message>
+    <message>
+        <source>Each save of an object is a version. A draft becomes the published version when it is published, and the version before it is archived. To change an older version or someone else’s draft, make a new draft from it: the new draft is yours, in the translation you choose, and you edit and publish it as usual. When the object already has as many versions as the version history limit of content.ini allows, the oldest archived version is removed to make room.</source>
+        <translation>Jedes Speichern eines Objekts ist eine Version. Ein Entwurf wird beim Veröffentlichen zur veröffentlichten Version, und die Version davor wird archiviert. Um eine ältere Version oder den Entwurf eines anderen zu ändern, machen Sie daraus einen neuen Entwurf: Der neue Entwurf gehört Ihnen, in der Übersetzung Ihrer Wahl, und Sie bearbeiten und veröffentlichen ihn wie gewohnt. Hat das Objekt schon so viele Versionen, wie das Versionslimit von content.ini erlaubt, wird die älteste archivierte Version entfernt, um Platz zu machen.</translation>
+    </message>
+    <message>
+        <source>Removed: version %versions.</source>
+        <translation>Entfernt: Version %versions.</translation>
+    </message>
+    <message>
+        <source>Version %from was copied to your new draft %to (%language). Edit it from the list below.</source>
+        <translation>Version %from wurde in Ihren neuen Entwurf %to (%language) kopiert. Bearbeiten Sie ihn aus der Liste unten.</translation>
+    </message>
+    <message>
+        <source>Close the comparison</source>
+        <translation>Vergleich schließen</translation>
+    </message>
+    <message>
+        <source>Removed text is struck through, added text is underlined. Choose how the changes are shown:</source>
+        <translation>Entfernter Text ist durchgestrichen, hinzugefügter unterstrichen. Wählen Sie, wie die Änderungen gezeigt werden:</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Versions</source>
+        <translation>Versionen</translation>
+    </message>
+    <message>
+        <source>Your drafts</source>
+        <translation>Ihre Entwürfe</translation>
+    </message>
+    <message>
+        <source>Filter and order</source>
+        <translation>Filter und Reihenfolge</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>Übersetzung</translation>
+    </message>
+    <message>
+        <source>Anyone</source>
+        <translation>Alle Ersteller</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Newest first</source>
+        <translation>Neueste zuerst</translation>
+    </message>
+    <message>
+        <source>Oldest first</source>
+        <translation>Älteste zuerst</translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation>Zuletzt geändert</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Opening the versions needs the policy content/versionread; you see what each version is, and compare and copy those you may read.</source>
+        <translation>Zum Öffnen der Versionen braucht es die Richtlinie content/versionread; Sie sehen, was jede Version ist, und vergleichen und kopieren die, die Sie lesen dürfen.</translation>
+    </message>
+    <message>
+        <source>No version on this page can be removed by you: removing needs the policy content/versionremove, and the published version and versions in a running workflow are never removed.</source>
+        <translation>Keine Version auf dieser Seite können Sie entfernen: Dazu braucht es die Richtlinie content/versionremove, und die veröffentlichte Version und Versionen in einem laufenden Workflow werden nie entfernt.</translation>
+    </message>
+    <message>
+        <source>No version matches these filters.</source>
+        <translation>Keine Version passt zu diesen Filtern.</translation>
+    </message>
+    <message>
+        <source>Show all versions</source>
+        <translation>Alle Versionen zeigen</translation>
+    </message>
+    <message>
+        <source>Select version %number for removal.</source>
+        <translation>Version %number zum Entfernen auswählen.</translation>
+    </message>
+    <message>
+        <source>Select version %number for removal</source>
+        <translation>Version %number zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Version %number</source>
+        <translation>Version %number</translation>
+    </message>
+    <message>
+        <source>Current version</source>
+        <translation>Aktuelle Version</translation>
+    </message>
+    <message>
+        <source>Yours</source>
+        <translation>Ihre</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansehen</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Compare with the newest other version you may read.</source>
+        <translation>Mit der neuesten anderen Version vergleichen, die Sie lesen dürfen.</translation>
+    </message>
+    <message>
+        <source>Compare with the current version.</source>
+        <translation>Mit der aktuellen Version vergleichen.</translation>
+    </message>
+    <message>
+        <source>Compare</source>
+        <translation>Vergleichen</translation>
+    </message>
+    <message>
+        <source>modified</source>
+        <translation>geändert</translation>
+    </message>
+    <message>
+        <source>New draft from this version, in</source>
+        <translation>Neuer Entwurf aus dieser Version, in</translation>
+    </message>
+    <message>
+        <source>Make a new draft</source>
+        <translation>Neuen Entwurf machen</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count versions per page.</source>
+        <translation>%count Versionen pro Seite zeigen.</translation>
+    </message>
+    <message>
+        <source>Compare two versions</source>
+        <translation>Zwei Versionen vergleichen</translation>
+    </message>
+    <message>
+        <source>Only the versions whose content you may read are offered.</source>
+        <translation>Angeboten werden nur die Versionen, deren Inhalt Sie lesen dürfen.</translation>
+    </message>
+    <message>
+        <source>Older version</source>
+        <translation>Ältere Version</translation>
+    </message>
+    <message>
+        <source>Newer version</source>
+        <translation>Neuere Version</translation>
+    </message>
+    <message>
+        <source>Remove selected versions</source>
+        <translation>Ausgewählte Versionen entfernen</translation>
+    </message>
+    <message>
+        <source>The ticked versions are removed for good, with all their translations.</source>
+        <translation>Die angekreuzten Versionen werden endgültig entfernt, mit allen Übersetzungen.</translation>
+    </message>
+    <message>
+        <source>The published version and versions in a running workflow are never removed.</source>
+        <translation>Die veröffentlichte Version und Versionen in einem laufenden Workflow werden nie entfernt.</translation>
+    </message>
+    <message>
+        <source>Remove for good</source>
+        <translation>Endgültig entfernen</translation>
+    </message>
+    <message>
+        <source>Stay on this page after making a new draft (untick to open the new draft in the editor at once).</source>
+        <translation>Nach dem Anlegen eines neuen Entwurfs auf dieser Seite bleiben (abwählen, um den neuen Entwurf sofort im Editor zu öffnen).</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>Versions %list are removed for good, with all their translations.</source>
+        <translation>Die Versionen %list werden endgültig entfernt, mit allen Übersetzungen.</translation>
+    </message>
+    <message>
+        <source>Tick the versions to remove in the list first.</source>
+        <translation>Kreuzen Sie zuerst in der Liste die Versionen an, die entfernt werden sollen.</translation>
+    </message>
+    <message>
+        <source>No version was removed</source>
+        <translation>Keine Version wurde entfernt</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/multiedit</name>
@@ -4097,6 +5332,170 @@
     <message>
         <source>My pending items (%pending_count)</source>
         <translation>Ihre wartenden Einträge (%pending_count)</translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation>Wartet auf Freigabe</translation>
+    </message>
+    <message>
+        <source>Approved</source>
+        <translation>Freigegeben</translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation>Abgelehnt</translation>
+    </message>
+    <message>
+        <source>Sent back for changes</source>
+        <translation>Zur Überarbeitung zurückgegeben</translation>
+    </message>
+    <message>
+        <source>A version is pending when you have sent it for publishing and a workflow holds it, usually an approval: it is published when it is approved. Here are your pending versions and, if you approve content, the versions waiting for your approval that you may read. Open the approval to read the comments or to approve.</source>
+        <translation>Eine Version wartet, wenn Sie sie zum Veröffentlichen geschickt haben und ein Workflow sie hält, meist eine Freigabe: Sie wird veröffentlicht, wenn sie freigegeben ist. Hier stehen Ihre wartenden Versionen und, wenn Sie Inhalte freigeben, die Versionen, die auf Ihre Freigabe warten und die Sie lesen dürfen. Öffnen Sie die Freigabe, um die Kommentare zu lesen oder freizugeben.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Sent by you</source>
+        <translation>Von Ihnen geschickt</translation>
+    </message>
+    <message>
+        <source>Waiting for your approval</source>
+        <translation>Wartet auf Ihre Freigabe</translation>
+    </message>
+    <message>
+        <source>Held by an approval</source>
+        <translation>Von einer Freigabe gehalten</translation>
+    </message>
+    <message>
+        <source>Filter and order</source>
+        <translation>Filter und Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Newest first</source>
+        <translation>Neueste zuerst</translation>
+    </message>
+    <message>
+        <source>Waiting longest</source>
+        <translation>Am längsten wartend</translation>
+    </message>
+    <message>
+        <source>Pending versions</source>
+        <translation>Wartende Versionen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>A version appears here when you send it for publishing and a workflow, such as an approval, holds it.</source>
+        <translation>Eine Version erscheint hier, wenn Sie sie zum Veröffentlichen schicken und ein Workflow, etwa eine Freigabe, sie hält.</translation>
+    </message>
+    <message>
+        <source>No pending version matches these filters.</source>
+        <translation>Keine wartende Version passt zu diesen Filtern.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alle zeigen</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ausstehend</translation>
+    </message>
+    <message>
+        <source>You approve it</source>
+        <translation>Sie geben sie frei</translation>
+    </message>
+    <message>
+        <source>New object</source>
+        <translation>Neues Objekt</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansehen</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Freigabe öffnen</translation>
+    </message>
+    <message>
+        <source>Approval and comments</source>
+        <translation>Freigabe und Kommentare</translation>
+    </message>
+    <message>
+        <source>Published page</source>
+        <translation>Veröffentlichte Seite</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>New, to be published below %location</source>
+        <translation>Neu, wird unter %location veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Below %location</source>
+        <translation>Unter %location</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>Übersetzung</translation>
+    </message>
+    <message>
+        <source>version %number</source>
+        <translation>Version %number</translation>
+    </message>
+    <message>
+        <source>Sent by</source>
+        <translation>Gesendet von</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Gesendet</translation>
+    </message>
+    <message>
+        <source>Held by an approval.</source>
+        <translation>Von einer Freigabe gehalten.</translation>
+    </message>
+    <message>
+        <source>Approvers: %names.</source>
+        <translation>Freigebende: %names.</translation>
+    </message>
+    <message>
+        <source>Workflow: %names.</source>
+        <translation>Workflow: %names.</translation>
+    </message>
+    <message>
+        <source>No workflow process or approval holds this version any more. If it stays pending, ask an administrator to look at Setup &gt; Workflow processes.</source>
+        <translation>Kein Workflow-Prozess und keine Freigabe hält diese Version mehr. Bleibt sie wartend, bitten Sie einen Administrator, unter Einstellungen &gt; Workflow-Prozesse nachzusehen.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count versions per page.</source>
+        <translation>%count Versionen pro Seite zeigen.</translation>
     </message>
 </context>
 <context>
@@ -6347,6 +7746,142 @@
         <source>no</source>
         <translation>nein</translation>
     </message>
+    <message>
+        <source>A global URL alias gives a module view, or another alias, an address of your choosing: for example login for user/login. Visitors who open the alias get the destination, either redirected to its address or shown under the alias. The aliases of content (the addresses of nodes) are made on the URL aliases tab of each node and are not listed here.</source>
+        <translation>Ein globaler URL-Alias gibt einer Modulansicht oder einem anderen Alias eine Adresse Ihrer Wahl: zum Beispiel login für user/login. Wer den Alias aufruft, erhält das Ziel, entweder per Weiterleitung auf dessen Adresse oder unter dem Alias angezeigt. Die Aliase von Inhalten (die Adressen von Knoten) werden im Reiter URL-Aliase des jeweiligen Knotens angelegt und sind hier nicht aufgeführt.</translation>
+    </message>
+    <message>
+        <source>The alias is the address visitors will use, the destination is what they get there.</source>
+        <translation>Der Alias ist die Adresse, die Besucher verwenden, das Ziel ist das, was sie dort erhalten.</translation>
+    </message>
+    <message>
+        <source>Without the host and without a leading slash, for example login or campaign/autumn. Characters that are not allowed in an address are changed, and the page says so.</source>
+        <translation>Ohne Host und ohne führenden Schrägstrich, zum Beispiel login oder kampagne/herbst. Zeichen, die in einer Adresse nicht erlaubt sind, werden geändert, und die Seite weist darauf hin.</translation>
+    </message>
+    <message>
+        <source>This alias is taken. Choose another address, or remove the existing alias first.</source>
+        <translation>Dieser Alias ist vergeben. Wählen Sie eine andere Adresse oder entfernen Sie zuerst den vorhandenen Alias.</translation>
+    </message>
+    <message>
+        <source>Enter the address of the alias.</source>
+        <translation>Geben Sie die Adresse des Alias ein.</translation>
+    </message>
+    <message>
+        <source>A module view such as user/login or content/search, or an existing address of content such as about-us. A node given as content/view/full/&lt;node ID&gt; becomes an alias of that node, listed on its URL aliases tab.</source>
+        <translation>Eine Modulansicht wie user/login oder content/search oder eine vorhandene Adresse eines Inhalts wie ueber-uns. Ein als content/view/full/&lt;Knoten-ID&gt; angegebener Knoten wird zum Alias dieses Knotens und steht in dessen Reiter URL-Aliase.</translation>
+    </message>
+    <message>
+        <source>Enter a module view or an existing address.</source>
+        <translation>Geben Sie eine Modulansicht oder eine vorhandene Adresse ein.</translation>
+    </message>
+    <message>
+        <source>The alias works in siteaccesses that show this language.</source>
+        <translation>Der Alias funktioniert in Siteaccesses, die diese Sprache anzeigen.</translation>
+    </message>
+    <message>
+        <source>Global aliases</source>
+        <translation>Globale Aliase</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Find an alias</source>
+        <translation>Einen Alias finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche löschen</translation>
+    </message>
+    <message>
+        <source>Any part of the last segment of the alias (login in campaign/login) or of its destination.</source>
+        <translation>Ein beliebiger Teil des letzten Abschnitts des Alias (login in kampagne/login) oder seines Ziels.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Redirecting</source>
+        <translation>Weiterleitend</translation>
+    </message>
+    <message>
+        <source>Create one with the form above, for example login with the destination user/login.</source>
+        <translation>Legen Sie einen mit dem Formular oben an, zum Beispiel login mit dem Ziel user/login.</translation>
+    </message>
+    <message>
+        <source>No alias matches. Search for a shorter part, or show all aliases.</source>
+        <translation>Kein Alias passt. Suchen Sie nach einem kürzeren Teil oder zeigen Sie alle Aliase an.</translation>
+    </message>
+    <message>
+        <source>Select this alias for removal.</source>
+        <translation>Diesen Alias zum Entfernen auswählen.</translation>
+    </message>
+    <message>
+        <source>Select %alias for removal</source>
+        <translation>%alias zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Visitors are sent on to the destination with a 301 redirect.</source>
+        <translation>Besucher werden mit einer 301-Weiterleitung zum Ziel geschickt.</translation>
+    </message>
+    <message>
+        <source>The destination is shown under the alias; the address stays the same.</source>
+        <translation>Das Ziel wird unter dem Alias angezeigt; die Adresse bleibt gleich.</translation>
+    </message>
+    <message>
+        <source>Module not found</source>
+        <translation>Modul nicht gefunden</translation>
+    </message>
+    <message>
+        <source>Resolves to</source>
+        <translation>Führt zu</translation>
+    </message>
+    <message>
+        <source>The view %view of the module %module</source>
+        <translation>Die Ansicht %view des Moduls %module</translation>
+    </message>
+    <message>
+        <source>The module %module does not exist (any more): visitors get an error page.</source>
+        <translation>Das Modul %module existiert nicht (mehr): Besucher erhalten eine Fehlerseite.</translation>
+    </message>
+    <message>
+        <source>Node %node</source>
+        <translation>Knoten %node</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>A removed alias stops working at once; links to it then lead to an error page. The destination itself is not changed.</source>
+        <translation>Ein entfernter Alias funktioniert sofort nicht mehr; Links darauf führen dann zu einer Fehlerseite. Das Ziel selbst bleibt unverändert.</translation>
+    </message>
+    <message>
+        <source>This removes every global alias, %count in all, not only those shown. Aliases of content nodes are kept. It cannot be undone.</source>
+        <translation>Damit wird jeder globale Alias entfernt, insgesamt %count, nicht nur die angezeigten. Die Aliase von Inhaltsknoten bleiben erhalten. Das kann nicht rückgängig gemacht werden.</translation>
+    </message>
+    <message>
+        <source>Remove all global aliases</source>
+        <translation>Alle globalen Aliase entfernen</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/urlalias_wildcard</name>
@@ -6489,6 +8024,198 @@
     <message>
         <source>Enter the destination URL for the new wildcard. Example: dev/{1}</source>
         <translation>Geben Sie die Ziel-URL für den neuen Platzhalter ein. Beispiel: dev/{1}</translation>
+    </message>
+    <message>
+        <source>URL wildcards (%wildcard_count)</source>
+        <translation>URL-Platzhalter (%wildcard_count)</translation>
+    </message>
+    <message>
+        <source>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1}, {2} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</source>
+        <translation>Ein URL-Platzhalter leitet eine ganze Gruppe von Adressen mit einer Regel anderswohin: news/* nach articles/{1} macht aus news/2026/october articles/2026/october. Jedes * im Muster passt auf beliebigen Text, und {1}, {2} ... im Ziel setzen diesen Text wieder ein. Platzhalter werden in der Reihenfolge ihrer Anlage geprüft, der erste passende wird verwendet, und sie werden nur befragt, wenn kein URL-Alias auf die Adresse passt.</translation>
+    </message>
+    <message>
+        <source>The destination uses %placeholders, but the pattern has %count * only.</source>
+        <translation>Das Ziel verwendet %placeholders, das Muster hat aber nur %count *.</translation>
+    </message>
+    <message>
+        <source>Each * of the pattern is one placeholder, numbered from {1}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</source>
+        <translation>Jedes * im Muster ist ein Platzhalter, nummeriert ab {1}. Fügen Sie dem Muster ein * hinzu oder entfernen Sie den Platzhalter; sonst würden Besucher auf eine Adresse geschickt, der ein Teil fehlt.</translation>
+    </message>
+    <message>
+        <source>The addresses to catch, without the host, with * where any text may follow. Example: developer/*</source>
+        <translation>Die abzufangenden Adressen, ohne Host, mit * dort, wo beliebiger Text folgen darf. Beispiel: developer/*</translation>
+    </message>
+    <message>
+        <source>A wildcard with this pattern exists already. Change the pattern, or remove the old wildcard first.</source>
+        <translation>Ein Platzhalter mit diesem Muster existiert bereits. Ändern Sie das Muster oder entfernen Sie zuerst den alten Platzhalter.</translation>
+    </message>
+    <message>
+        <source>Enter the pattern of the wildcard.</source>
+        <translation>Geben Sie das Muster des Platzhalters ein.</translation>
+    </message>
+    <message>
+        <source>Where the addresses go: a path of this site, or a full address when redirecting. {1} is the text the first * matched. Example: dev/{1}</source>
+        <translation>Wohin die Adressen führen: ein Pfad dieser Website oder bei Weiterleitung eine vollständige Adresse. {1} ist der Text, auf den das erste * passte. Beispiel: dev/{1}</translation>
+    </message>
+    <message>
+        <source>Use only placeholders the pattern has a * for.</source>
+        <translation>Verwenden Sie nur Platzhalter, für die das Muster ein * hat.</translation>
+    </message>
+    <message>
+        <source>Enter the destination.</source>
+        <translation>Geben Sie das Ziel ein.</translation>
+    </message>
+    <message>
+        <source>Checked, visitors are redirected (HTTP 301) and see the destination address. Unchecked, the destination is shown under the address they asked for.</source>
+        <translation>Angehakt werden Besucher weitergeleitet (HTTP 301) und sehen die Zieladresse. Nicht angehakt wird das Ziel unter der aufgerufenen Adresse angezeigt.</translation>
+    </message>
+    <message>
+        <source>Try an address</source>
+        <translation>Eine Adresse ausprobieren</translation>
+    </message>
+    <message>
+        <source>See which wildcard an address matches and where it would lead. Nothing is changed.</source>
+        <translation>Sehen Sie, auf welchen Platzhalter eine Adresse passt und wohin sie führen würde. Es wird nichts geändert.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Try</source>
+        <translation>Ausprobieren</translation>
+    </message>
+    <message>
+        <source>Without the host, for example news/2026/october.</source>
+        <translation>Ohne Host, zum Beispiel news/2026/october.</translation>
+    </message>
+    <message>
+        <source>The address matches the wildcard %pattern.</source>
+        <translation>Die Adresse passt auf den Platzhalter %pattern.</translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation>Wird zu</translation>
+    </message>
+    <message>
+        <source>Visitors</source>
+        <translation>Besucher</translation>
+    </message>
+    <message>
+        <source>are redirected to this address (HTTP 301).</source>
+        <translation>werden auf diese Adresse weitergeleitet (HTTP 301).</translation>
+    </message>
+    <message>
+        <source>see this address's page under the address they asked for.</source>
+        <translation>sehen die Seite dieser Adresse unter der Adresse, die sie aufgerufen haben.</translation>
+    </message>
+    <message>
+        <source>Resolves to</source>
+        <translation>Führt zu</translation>
+    </message>
+    <message>
+        <source>An address on another site.</source>
+        <translation>Eine Adresse auf einer anderen Website.</translation>
+    </message>
+    <message>
+        <source>Nothing on this site: no URL alias or module has this address, so visitors get an error page.</source>
+        <translation>Nichts auf dieser Website: Kein URL-Alias und kein Modul hat diese Adresse, Besucher erhalten also eine Fehlerseite.</translation>
+    </message>
+    <message>
+        <source>No wildcard matches this address. It is answered by URL aliases and modules alone.</source>
+        <translation>Kein Platzhalter passt auf diese Adresse. Sie wird allein von URL-Aliasen und Modulen beantwortet.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Platzhalter</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Find a wildcard</source>
+        <translation>Einen Platzhalter finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche löschen</translation>
+    </message>
+    <message>
+        <source>Any part of the pattern or of the destination.</source>
+        <translation>Ein beliebiger Teil des Musters oder des Ziels.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Redirecting</source>
+        <translation>Weiterleitend</translation>
+    </message>
+    <message>
+        <source>Create one with the form above, for example old-blog/* to blog/{1}.</source>
+        <translation>Legen Sie einen mit dem Formular oben an, zum Beispiel old-blog/* nach blog/{1}.</translation>
+    </message>
+    <message>
+        <source>No wildcard matches. Search for a shorter part, or show all wildcards.</source>
+        <translation>Kein Platzhalter passt. Suchen Sie nach einem kürzeren Teil oder zeigen Sie alle Platzhalter an.</translation>
+    </message>
+    <message>
+        <source>Select this wildcard for removal.</source>
+        <translation>Diesen Platzhalter zum Entfernen auswählen.</translation>
+    </message>
+    <message>
+        <source>Select %wildcard for removal</source>
+        <translation>%wildcard zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>leads to</source>
+        <translation>führt zu</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected (HTTP 301).</source>
+        <translation>Besucher werden weitergeleitet (HTTP 301).</translation>
+    </message>
+    <message>
+        <source>The destination is shown under the address asked for.</source>
+        <translation>Das Ziel wird unter der aufgerufenen Adresse angezeigt.</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>A removed wildcard stops working at once: its addresses are then answered by URL aliases and modules alone.</source>
+        <translation>Ein entfernter Platzhalter funktioniert sofort nicht mehr: Seine Adressen werden dann allein von URL-Aliasen und Modulen beantwortet.</translation>
+    </message>
+    <message>
+        <source>This removes every wildcard, %count in all, not only those shown. It cannot be undone.</source>
+        <translation>Damit wird jeder Platzhalter entfernt, insgesamt %count, nicht nur die angezeigten. Das kann nicht rückgängig gemacht werden.</translation>
+    </message>
+    <message>
+        <source>Remove all wildcards</source>
+        <translation>Alle Platzhalter entfernen</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
     </message>
 </context>
 <context>
@@ -7945,6 +9672,14 @@
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
+    <message>
+        <source>What the visitors sent is deleted and cannot be brought back; export it as CSV first if it is still needed. The objects and their forms stay and go on collecting.</source>
+        <translation>Was die Besucher gesendet haben, wird gelöscht und kann nicht zurückgeholt werden; exportieren Sie es vorher als CSV, wenn es noch gebraucht wird. Die Objekte und ihre Formulare bleiben und sammeln weiter.</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/overview</name>
@@ -8003,6 +9738,146 @@
     <message>
         <source>Show %count items per page.</source>
         <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>1 collection</source>
+        <translation>1 Sammlung</translation>
+    </message>
+    <message>
+        <source>%count collections</source>
+        <translation>%count Sammlungen</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Gesammelte Informationen</translation>
+    </message>
+    <message>
+        <source>Forms, polls and feedback pages collect what visitors send when their class has attributes marked as information collectors. Each sending is one collection. Here you see which objects have collected, how much and how recently, read the collections, export them as CSV and remove them.</source>
+        <translation>Formulare, Umfragen und Feedback-Seiten sammeln, was Besucher absenden, wenn ihre Klasse Attribute hat, die als Informationssammler markiert sind. Jedes Absenden ist eine Sammlung. Hier sehen Sie, welche Objekte gesammelt haben, wie viel und wie kürzlich, lesen die Sammlungen, exportieren sie als CSV und entfernen sie.</translation>
+    </message>
+    <message>
+        <source>%collections collections of %objects objects were removed.</source>
+        <translation>%collections Sammlungen von %objects Objekten wurden entfernt.</translation>
+    </message>
+    <message>
+        <source>Nothing was selected. Tick the objects whose collections should be removed first.</source>
+        <translation>Nichts wurde ausgewählt. Haken Sie zuerst die Objekte an, deren Sammlungen entfernt werden sollen.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Überblick</translation>
+    </message>
+    <message>
+        <source>Objects with collections</source>
+        <translation>Objekte mit Sammlungen</translation>
+    </message>
+    <message>
+        <source>Collections in all</source>
+        <translation>Sammlungen insgesamt</translation>
+    </message>
+    <message>
+        <source>In the last %days days</source>
+        <translation>In den letzten %days Tagen</translation>
+    </message>
+    <message>
+        <source>In the last 7 days</source>
+        <translation>In den letzten 7 Tagen</translation>
+    </message>
+    <message>
+        <source>Latest collection</source>
+        <translation>Letzte Sammlung</translation>
+    </message>
+    <message>
+        <source>Objects removed or in the trash, with collections not listed here</source>
+        <translation>Entfernte Objekte oder Objekte im Papierkorb, deren Sammlungen hier nicht aufgeführt sind</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Finden</translation>
+    </message>
+    <message>
+        <source>Find an object</source>
+        <translation>Objekt finden</translation>
+    </message>
+    <message>
+        <source>Part of the name of a form, poll or page.</source>
+        <translation>Teil des Namens eines Formulars, einer Umfrage oder Seite.</translation>
+    </message>
+    <message>
+        <source>Update list</source>
+        <translation>Liste aktualisieren</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche löschen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Sorted; select to reverse the order.</source>
+        <translation>Sortiert; auswählen, um die Reihenfolge umzukehren.</translation>
+    </message>
+    <message>
+        <source>Select the collections of %name for removal</source>
+        <translation>Sammlungen von %name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>%count in the last %days days</source>
+        <translation>%count in den letzten %days Tagen</translation>
+    </message>
+    <message>
+        <source>Download every collection of this object as a CSV file for a spreadsheet.</source>
+        <translation>Jede Sammlung dieses Objekts als CSV-Datei für eine Tabellenkalkulation herunterladen.</translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation>CSV exportieren</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>Object ID</source>
+        <translation>Objekt-ID</translation>
+    </message>
+    <message>
+        <source>No object with collections matches “%search”. Clear the search to see all of them.</source>
+        <translation>Kein Objekt mit Sammlungen passt zu „%search“. Löschen Sie die Suche, um alle zu sehen.</translation>
+    </message>
+    <message>
+        <source>An object collects once a visitor sends its form; the objects that can are listed below.</source>
+        <translation>Ein Objekt sammelt, sobald ein Besucher sein Formular absendet; die Objekte, die das können, sind unten aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Removing deletes every collection of the ticked objects; the objects themselves stay. Asks first.</source>
+        <translation>Entfernen löscht jede Sammlung der angehakten Objekte; die Objekte selbst bleiben. Fragt vorher nach.</translation>
+    </message>
+    <message>
+        <source>Objects that can collect but have nothing yet (%count)</source>
+        <translation>Objekte, die sammeln können, aber noch nichts haben (%count)</translation>
+    </message>
+    <message>
+        <source>Their class has information collector attributes. Open one on the site and send its form to test it; what is sent appears above.</source>
+        <translation>Ihre Klasse hat Informationssammler-Attribute. Öffnen Sie eines auf der Website und senden Sie sein Formular ab, um es zu testen; was gesendet wird, erscheint oben.</translation>
+    </message>
+    <message>
+        <source>The first %shown by name are shown.</source>
+        <translation>Die ersten %shown nach Namen werden angezeigt.</translation>
     </message>
 </context>
 <context>
@@ -11518,6 +13393,214 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>You are not allowed to install packages (package/install), so the Install button is not shown.</source>
         <translation>Sie dürfen keine Pakete installieren (package/install), daher wird die Schaltfläche „Installieren“ nicht angezeigt.</translation>
     </message>
+    <message>
+        <source>Package list</source>
+        <translation>Paketliste</translation>
+    </message>
+    <message>
+        <source>A new package is made in the "local" repository from what this site has. Choose what it should carry; the wizard then asks for its parts, its name, version, license and maintainer, and writes it. Nothing on the site changes.</source>
+        <translation>Ein neues Paket wird im Repository "local" aus dem erstellt, was diese Site hat. Wählen Sie, was es enthalten soll; der Assistent fragt dann nach seinen Teilen, seinem Namen, seiner Version, Lizenz und seinem Betreuer und schreibt es. Auf der Site ändert sich nichts.</translation>
+    </message>
+    <message>
+        <source>You are not allowed to use any of the package wizards (package/create).</source>
+        <translation>Sie dürfen keinen der Paket-Assistenten verwenden (package/create).</translation>
+    </message>
+    <message>
+        <source>This package is installed already. Installing it again repeats every item below; content it creates is created again.</source>
+        <translation>Dieses Paket ist bereits installiert. Eine erneute Installation wiederholt jedes Element unten; Inhalte, die es anlegt, werden erneut angelegt.</translation>
+    </message>
+    <message>
+        <source>This package has no install items.</source>
+        <translation>Dieses Paket hat keine Installationselemente.</translation>
+    </message>
+    <message>
+        <source>Each item is installed in turn; a step may ask how to handle a conflict.</source>
+        <translation>Jedes Element wird der Reihe nach installiert; ein Schritt kann fragen, wie ein Konflikt behandelt werden soll.</translation>
+    </message>
+    <message>
+        <source>Uninstalling removes what the items below created on this site, content included. It cannot be undone.</source>
+        <translation>Die Deinstallation entfernt, was die Elemente unten auf dieser Site angelegt haben, Inhalte eingeschlossen. Sie kann nicht rückgängig gemacht werden.</translation>
+    </message>
+    <message>
+        <source>This package has nothing to uninstall.</source>
+        <translation>Dieses Paket hat nichts zu deinstallieren.</translation>
+    </message>
+    <message>
+        <source>The package was not imported.</source>
+        <translation>Das Paket wurde nicht importiert.</translation>
+    </message>
+    <message>
+        <source>Import a package exported from this or another installation. It is added to the repository its vendor names ("local" when it names none) and is not installed yet: a package with install items opens its install step next, any other its page.</source>
+        <translation>Importieren Sie ein Paket, das aus dieser oder einer anderen Installation exportiert wurde. Es wird dem Repository hinzugefügt, das sein Anbieter nennt ("local", wenn er keines nennt), und ist noch nicht installiert: Ein Paket mit Installationselementen öffnet als Nächstes seinen Installationsschritt, jedes andere seine Seite.</translation>
+    </message>
+    <message>
+        <source>An .ezpkg, .tar.gz or .tgz archive of at most %size. The server accepts uploads of at most %server.</source>
+        <translation>Ein .ezpkg-, .tar.gz- oder .tgz-Archiv von höchstens %size. Der Server nimmt Uploads von höchstens %server an.</translation>
+    </message>
+    <message>
+        <source>What is checked first</source>
+        <translation>Was zuerst geprüft wird</translation>
+    </message>
+    <message>
+        <source>The file is a gzip compressed tar archive with one of the allowed names.</source>
+        <translation>Die Datei ist ein gzip-komprimiertes tar-Archiv mit einem der erlaubten Namen.</translation>
+    </message>
+    <message>
+        <source>It has at most %entries entries that unpack to at most %size.</source>
+        <translation>Es hat höchstens %entries Einträge, die zu höchstens %size entpackt werden.</translation>
+    </message>
+    <message>
+        <source>It is not too large.</source>
+        <translation>Es ist nicht zu groß.</translation>
+    </message>
+    <message>
+        <source>Every entry is a plain file or directory inside the package: no "..", no absolute path, no link, no device.</source>
+        <translation>Jeder Eintrag ist eine einfache Datei oder ein Verzeichnis im Paket: kein "..", kein absoluter Pfad, kein Link, kein Gerät.</translation>
+    </message>
+    <message>
+        <source>It has a well formed package.xml with a valid package name, and no package of that name exists yet: an existing package is never overwritten.</source>
+        <translation>Es hat eine wohlgeformte package.xml mit einem gültigen Paketnamen, und es gibt noch kein Paket dieses Namens: Ein vorhandenes Paket wird nie überschrieben.</translation>
+    </message>
+    <message>
+        <source>A package whose vendor is %vendor goes into the setup wizard's repository and becomes an installer source.</source>
+        <translation>Ein Paket, dessen Anbieter %vendor ist, kommt in das Repository des Setup-Assistenten und wird eine Installer-Quelle.</translation>
+    </message>
+    <message>
+        <source>It is in the setup wizard's repository, which the published packages are built from.</source>
+        <translation>Es liegt im Repository des Setup-Assistenten, aus dem die veröffentlichten Pakete gebaut werden.</translation>
+    </message>
+    <message>
+        <source>It is a site package the setup wizard offers for new sites.</source>
+        <translation>Es ist ein Site-Paket, das der Setup-Assistent für neue Sites anbietet.</translation>
+    </message>
+    <message>
+        <source>Another installer source requires it.</source>
+        <translation>Eine andere Installer-Quelle benötigt es.</translation>
+    </message>
+    <message>
+        <source>Installer source</source>
+        <translation>Installer-Quelle</translation>
+    </message>
+    <message>
+        <source>Back to the packages</source>
+        <translation>Zurück zu den Paketen</translation>
+    </message>
+    <message>
+        <source>Download the package as an .ezpkg file.</source>
+        <translation>Das Paket als .ezpkg-Datei herunterladen.</translation>
+    </message>
+    <message>
+        <source>Asks first and says what goes.</source>
+        <translation>Fragt zuerst nach und nennt, was entfernt wird.</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>The installer takes this package as a source.</source>
+        <translation>Der Installer verwendet dieses Paket als Quelle.</translation>
+    </message>
+    <message>
+        <source>Change it only on purpose: new installations and published packages are built from it.</source>
+        <translation>Ändern Sie es nur mit Absicht: Neue Installationen und veröffentlichte Pakete werden daraus gebaut.</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repository</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Packaged</source>
+        <translation>Gepackt</translation>
+    </message>
+    <message>
+        <source>For Exponential</source>
+        <translation>Für Exponential</translation>
+    </message>
+    <message>
+        <source>Requires</source>
+        <translation>Benötigt</translation>
+    </message>
+    <message>
+        <source>Nothing</source>
+        <translation>Nichts</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>fehlt</translation>
+    </message>
+    <message>
+        <source>Required by</source>
+        <translation>Benötigt von</translation>
+    </message>
+    <message>
+        <source>No package</source>
+        <translation>Kein Paket</translation>
+    </message>
+    <message>
+        <source>%count files</source>
+        <translation>%count Dateien</translation>
+    </message>
+    <message>
+        <source>The newest file of the package directory</source>
+        <translation>Die neueste Datei des Paketverzeichnisses</translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation>Letzte Änderung</translation>
+    </message>
+    <message>
+        <source>What it carries</source>
+        <translation>Was es enthält</translation>
+    </message>
+    <message>
+        <source>From the package definition and its files. Nothing here changes the site; Compare shows how it differs from what the site has.</source>
+        <translation>Aus der Paketdefinition und seinen Dateien. Nichts hier ändert die Site; Vergleichen zeigt, wie es sich von dem unterscheidet, was die Site hat.</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Inhaltsklassen</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Inhalte</translation>
+    </message>
+    <message>
+        <source>%items content install item(s), %files object file(s)</source>
+        <translation>%items Inhalts-Installationselement(e), %files Objektdatei(en)</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Erweiterungen</translation>
+    </message>
+    <message>
+        <source>Settings files</source>
+        <translation>Einstellungsdateien</translation>
+    </message>
+    <message>
+        <source>Other install items</source>
+        <translation>Weitere Installationselemente</translation>
+    </message>
+    <message>
+        <source>Files by kind</source>
+        <translation>Dateien nach Art</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>Only the first megabyte is shown here; Download gives the whole file.</source>
+        <translation>Hier wird nur das erste Megabyte gezeigt; Herunterladen liefert die ganze Datei.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -11624,6 +13707,422 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Remove</source>
         <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>It is in the setup wizard's repository, which the published packages are built from.</source>
+        <translation>Es liegt im Repository des Setup-Assistenten, aus dem die veröffentlichten Pakete gebaut werden.</translation>
+    </message>
+    <message>
+        <source>It is a site package the setup wizard offers for new sites.</source>
+        <translation>Es ist ein Site-Paket, das der Setup-Assistent für neue Sites anbietet.</translation>
+    </message>
+    <message>
+        <source>Another installer source requires it.</source>
+        <translation>Eine andere Installer-Quelle benötigt es.</translation>
+    </message>
+    <message>
+        <source>not a package name</source>
+        <translation>kein Paketname</translation>
+    </message>
+    <message>
+        <source>no such package (any more)</source>
+        <translation>kein solches Paket (mehr)</translation>
+    </message>
+    <message>
+        <source>packages of that name are in more than one repository; remove it from its repository list</source>
+        <translation>Pakete dieses Namens liegen in mehr als einem Repository; entfernen Sie es aus der Liste seines Repositorys</translation>
+    </message>
+    <message>
+        <source>you are not allowed to remove packages of its type</source>
+        <translation>Sie dürfen Pakete dieses Typs nicht entfernen</translation>
+    </message>
+    <message>
+        <source>its directory contains links, and removing it could delete files elsewhere; remove it on the server</source>
+        <translation>sein Verzeichnis enthält Links, und das Entfernen könnte Dateien an anderer Stelle löschen; entfernen Sie es auf dem Server</translation>
+    </message>
+    <message>
+        <source>Remove packages?</source>
+        <translation>Pakete entfernen?</translation>
+    </message>
+    <message>
+        <source>Nothing was removed: tick the box under the list to confirm that installer sources are to be removed too.</source>
+        <translation>Es wurde nichts entfernt: Kreuzen Sie das Feld unter der Liste an, um zu bestätigen, dass auch Installer-Quellen entfernt werden sollen.</translation>
+    </message>
+    <message>
+        <source>Nothing was removed: the removal was not confirmed on this page. Check the list and confirm again.</source>
+        <translation>Es wurde nichts entfernt: Das Entfernen wurde nicht auf dieser Seite bestätigt. Prüfen Sie die Liste und bestätigen Sie erneut.</translation>
+    </message>
+    <message>
+        <source>The directories below are deleted from the package storage with every file in them. This cannot be undone: download a package first to keep a copy. Removing a package does not uninstall it: the classes, content and files it installed stay on the site; only the record that it is installed goes.</source>
+        <translation>Die folgenden Verzeichnisse werden mit allen Dateien darin aus dem Paketspeicher gelöscht. Das kann nicht rückgängig gemacht werden: Laden Sie ein Paket zuerst herunter, um eine Kopie zu behalten. Das Entfernen eines Pakets deinstalliert es nicht: Die Klassen, Inhalte und Dateien, die es installiert hat, bleiben auf der Site; nur der Eintrag, dass es installiert ist, entfällt.</translation>
+    </message>
+    <message>
+        <source>%count files</source>
+        <translation>%count Dateien</translation>
+    </message>
+    <message>
+        <source>Installer sources</source>
+        <translation>Installer-Quellen</translation>
+    </message>
+    <message>
+        <source>Required by packages that stay</source>
+        <translation>Von verbleibenden Paketen benötigt</translation>
+    </message>
+    <message>
+        <source>What goes</source>
+        <translation>Was entfernt wird</translation>
+    </message>
+    <message>
+        <source>Installer source</source>
+        <translation>Installer-Quelle</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation>Verzeichnis</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Required by</source>
+        <translation>Benötigt von</translation>
+    </message>
+    <message>
+        <source>No package</source>
+        <translation>Kein Paket</translation>
+    </message>
+    <message>
+        <source>Installer source:</source>
+        <translation>Installer-Quelle:</translation>
+    </message>
+    <message>
+        <source>A new installation or a published package built without it will lack it.</source>
+        <translation>Einer neuen Installation oder einem ohne es gebauten veröffentlichten Paket wird es fehlen.</translation>
+    </message>
+    <message>
+        <source>It is installed here. What it installed stays; the site will no longer know which package it came from, and it cannot be uninstalled from here afterwards.</source>
+        <translation>Es ist hier installiert. Was es installiert hat, bleibt; die Site weiß danach nicht mehr, aus welchem Paket es stammt, und es kann hier nicht mehr deinstalliert werden.</translation>
+    </message>
+    <message>
+        <source>%names require it and will miss it when they are installed.</source>
+        <translation>%names benötigen es und werden es bei ihrer Installation vermissen.</translation>
+    </message>
+    <message>
+        <source>These cannot be removed and stay:</source>
+        <translation>Diese können nicht entfernt werden und bleiben:</translation>
+    </message>
+    <message>
+        <source>I understand that %count installer source(s) will be deleted, and that new installations and published packages depend on them.</source>
+        <translation>Ich verstehe, dass %count Installer-Quelle(n) gelöscht werden und dass neue Installationen und veröffentlichte Pakete von ihnen abhängen.</translation>
+    </message>
+    <message>
+        <source>Remove %count package(s)</source>
+        <translation>%count Paket(e) entfernen</translation>
+    </message>
+    <message>
+        <source>Nothing selected can be removed.</source>
+        <translation>Nichts von der Auswahl kann entfernt werden.</translation>
+    </message>
+    <message>
+        <source>Back to the packages</source>
+        <translation>Zurück zu den Paketen</translation>
+    </message>
+    <message>
+        <source>Imported, nothing to install</source>
+        <translation>Importiert, nichts zu installieren</translation>
+    </message>
+    <message>
+        <source>No install items</source>
+        <translation>Keine Installationselemente</translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation>Letzte Änderung</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Install state</source>
+        <translation>Installationsstatus</translation>
+    </message>
+    <message>
+        <source>In the setup wizard's repository</source>
+        <translation>Im Repository des Setup-Assistenten</translation>
+    </message>
+    <message>
+        <source>A site package the setup wizard offers</source>
+        <translation>Ein Site-Paket, das der Setup-Assistent anbietet</translation>
+    </message>
+    <message>
+        <source>Required by another installer source</source>
+        <translation>Von einer anderen Installer-Quelle benötigt</translation>
+    </message>
+    <message>
+        <source>Packages in %repository</source>
+        <translation>Pakete in %repository</translation>
+    </message>
+    <message>
+        <source>A package carries content classes, content, extensions, settings or a whole site, to install here or to take to another installation. Packages are kept in repositories under %path: "local" holds the packages made or imported here, the others hold packages by vendor. The setup wizard installs new sites from these packages, and the published packages are built from them, so a package marked "Installer source" should be changed only on purpose.</source>
+        <translation>Ein Paket enthält Inhaltsklassen, Inhalte, Erweiterungen, Einstellungen oder eine ganze Site, um sie hier zu installieren oder in eine andere Installation mitzunehmen. Pakete liegen in Repositories unter %path: "local" enthält die hier erstellten oder importierten Pakete, die anderen enthalten Pakete nach Anbieter. Der Setup-Assistent installiert neue Sites aus diesen Paketen, und die veröffentlichten Pakete werden aus ihnen gebaut; ein als "Installer-Quelle" markiertes Paket sollte daher nur mit Absicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation>Entfernt: %names.</translation>
+    </message>
+    <message>
+        <source>Nothing was removed.</source>
+        <translation>Es wurde nichts entfernt.</translation>
+    </message>
+    <message>
+        <source>No package was selected. Tick the packages to remove first.</source>
+        <translation>Es wurde kein Paket ausgewählt. Kreuzen Sie zuerst die zu entfernenden Pakete an.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Imported only</source>
+        <translation>Nur importiert</translation>
+    </message>
+    <message>
+        <source>Unreadable</source>
+        <translation>Nicht lesbar</translation>
+    </message>
+    <message>
+        <source>Repositories</source>
+        <translation>Repositories</translation>
+    </message>
+    <message>
+        <source>Each repository is a directory of the package storage. Choose one to list only its packages.</source>
+        <translation>Jedes Repository ist ein Verzeichnis des Paketspeichers. Wählen Sie eines, um nur seine Pakete aufzulisten.</translation>
+    </message>
+    <message>
+        <source>All repositories</source>
+        <translation>Alle Repositories</translation>
+    </message>
+    <message>
+        <source>packages in %count repositories</source>
+        <translation>Pakete in %count Repositories</translation>
+    </message>
+    <message>
+        <source>Setup wizard's repository</source>
+        <translation>Repository des Setup-Assistenten</translation>
+    </message>
+    <message>
+        <source>Made or imported here</source>
+        <translation>Hier erstellt oder importiert</translation>
+    </message>
+    <message>
+        <source>package</source>
+        <translation>Paket</translation>
+    </message>
+    <message>
+        <source>packages</source>
+        <translation>Pakete</translation>
+    </message>
+    <message>
+        <source>%installed installed, %not not installed, %import imported only</source>
+        <translation>%installed installiert, %not nicht installiert, %import nur importiert</translation>
+    </message>
+    <message>
+        <source>%count installer sources</source>
+        <translation>%count Installer-Quellen</translation>
+    </message>
+    <message>
+        <source>%count directories without a package definition (not listed)</source>
+        <translation>%count Verzeichnisse ohne Paketdefinition (nicht aufgelistet)</translation>
+    </message>
+    <message>
+        <source>%count unreadable</source>
+        <translation>%count nicht lesbar</translation>
+    </message>
+    <message>
+        <source>These directories have a package definition that cannot be read, and are left out of the list:</source>
+        <translation>Diese Verzeichnisse haben eine Paketdefinition, die nicht gelesen werden kann, und fehlen in der Liste:</translation>
+    </message>
+    <message>
+        <source>package.xml is not a well formed package definition, or names no package.</source>
+        <translation>package.xml ist keine wohlgeformte Paketdefinition oder nennt kein Paket.</translation>
+    </message>
+    <message>
+        <source>package.xml names another package than its directory.</source>
+        <translation>package.xml nennt ein anderes Paket als sein Verzeichnis.</translation>
+    </message>
+    <message>
+        <source>the directory name is not a valid package name.</source>
+        <translation>der Verzeichnisname ist kein gültiger Paketname.</translation>
+    </message>
+    <message>
+        <source>Find packages</source>
+        <translation>Pakete finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Name, summary, type, vendor, version, maintainer or a required package.</source>
+        <translation>Name, Zusammenfassung, Typ, Anbieter, Version, Betreuer oder ein benötigtes Paket.</translation>
+    </message>
+    <message>
+        <source>Any type</source>
+        <translation>Jeder Typ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Any state</source>
+        <translation>Jeder Status</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Anwenden</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Matching packages</source>
+        <translation>Passende Pakete</translation>
+    </message>
+    <message>
+        <source>All packages</source>
+        <translation>Alle Pakete</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>%sort, descending</source>
+        <translation>%sort, absteigend</translation>
+    </message>
+    <message>
+        <source>%sort, ascending</source>
+        <translation>%sort, aufsteigend</translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation>Umkehren</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>There are no packages yet. Import one with Import new package, or make one with Create new package.</source>
+        <translation>Es gibt noch keine Pakete. Importieren Sie eines mit Neues Paket importieren oder erstellen Sie eines mit Neues Paket erstellen.</translation>
+    </message>
+    <message>
+        <source>No package matches. Clear the search or choose another repository, type or state.</source>
+        <translation>Kein Paket passt. Leeren Sie die Suche oder wählen Sie ein anderes Repository, einen anderen Typ oder Status.</translation>
+    </message>
+    <message>
+        <source>Select the package for removal.</source>
+        <translation>Das Paket zum Entfernen auswählen.</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Contains links</source>
+        <translation>Enthält Links</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Download the package as an .ezpkg file.</source>
+        <translation>Das Paket als .ezpkg-Datei herunterladen.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Herunterladen</translation>
+    </message>
+    <message>
+        <source>Maintainers</source>
+        <translation>Betreuer</translation>
+    </message>
+    <message>
+        <source>None named</source>
+        <translation>Keiner genannt</translation>
+    </message>
+    <message>
+        <source>Requires</source>
+        <translation>Benötigt</translation>
+    </message>
+    <message>
+        <source>Nothing</source>
+        <translation>Nichts</translation>
+    </message>
+    <message>
+        <source>Not in any repository</source>
+        <translation>In keinem Repository</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>fehlt</translation>
+    </message>
+    <message>
+        <source>The newest file of the package directory</source>
+        <translation>Die neueste Datei des Paketverzeichnisses</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Unbekannt</translation>
+    </message>
+    <message>
+        <source>Packaged %date</source>
+        <translation>Gepackt am %date</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count packages per page.</source>
+        <translation>%count Pakete pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Weiter</translation>
+    </message>
+    <message>
+        <source>Remove selected asks first and says what goes. Removing a package deletes its files from the repository; what it installed stays on the site.</source>
+        <translation>Ausgewählte entfernen fragt zuerst nach und nennt, was entfernt wird. Das Entfernen eines Pakets löscht seine Dateien aus dem Repository; was es installiert hat, bleibt auf der Site.</translation>
+    </message>
+    <message>
+        <source>You are not allowed to remove packages (package/remove).</source>
+        <translation>Sie dürfen keine Pakete entfernen (package/remove).</translation>
+    </message>
+    <message>
+        <source>You are not allowed to import packages (package/import).</source>
+        <translation>Sie dürfen keine Pakete importieren (package/import).</translation>
+    </message>
+    <message>
+        <source>You are not allowed to create packages (package/create).</source>
+        <translation>Sie dürfen keine Pakete erstellen (package/create).</translation>
     </message>
 </context>
 <context>
@@ -12541,6 +15040,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Template Editor</source>
         <translation>Template-Editor</translation>
     </message>
+    <message>
+        <source>Menus (classic)</source>
+        <translation>Menüs (klassisch)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pdf/edit</name>
@@ -12656,6 +15159,170 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Shown at the foot of every page, beside the page number. Leave the box empty for the default wording, or clear the tick for no text at all.</source>
         <translation>Wird am Fuß jeder Seite neben der Seitenzahl angezeigt. Lassen Sie das Feld leer für den Standardtext, oder entfernen Sie das Häkchen für gar keinen Text.</translation>
     </message>
+    <message>
+        <source>New PDF export</source>
+        <translation>Neuer PDF-Export</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>A PDF export makes one PDF document of a node of the content tree, and if wanted of the nodes below it. Saving with OK stores the export; one that is generated once also writes its file at once.</source>
+        <translation>Ein PDF-Export erstellt ein PDF-Dokument aus einem Knoten des Inhaltsbaums und auf Wunsch aus den Knoten darunter. OK speichert den Export; ein einmal erzeugter schreibt dabei auch gleich seine Datei.</translation>
+    </message>
+    <message>
+        <source>Correct these fields:</source>
+        <translation>Bitte korrigieren Sie diese Felder:</translation>
+    </message>
+    <message>
+        <source>%name has had this export open since %time. Saving replaces what they have not saved.</source>
+        <translation>%name hat diesen Export seit %time geöffnet. Speichern ersetzt, was dort noch nicht gespeichert ist.</translation>
+    </message>
+    <message>
+        <source>Another user</source>
+        <translation>Ein anderer Benutzer</translation>
+    </message>
+    <message>
+        <source>The name of the export in this list. It is not printed in the PDF; the front page and the headings come from the content.</source>
+        <translation>Der Name des Exports in dieser Liste. Er wird nicht ins PDF gedruckt; Titelseite und Überschriften kommen aus den Inhalten.</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Inhalt</translation>
+    </message>
+    <message>
+        <source>The PDF starts with the source node: its name as the first heading, then its attributes. A tree adds the nodes below it, level by level, but only those of the classes ticked below; the others and everything under them are left out.</source>
+        <translation>Das PDF beginnt mit dem Quellknoten: sein Name als erste Überschrift, dann seine Attribute. Ein Baum fügt die Knoten darunter hinzu, Ebene für Ebene, aber nur die der unten angekreuzten Klassen; die anderen und alles darunter bleiben weg.</translation>
+    </message>
+    <message>
+        <source>%class, section %section, node %id, %children direct children</source>
+        <translation>%class, Bereich %section, Knoten %id, %children direkte Unterelemente</translation>
+    </message>
+    <message>
+        <source>Choose another source node. What is typed in the form is kept.</source>
+        <translation>Einen anderen Quellknoten wählen. Was im Formular eingegeben ist, bleibt erhalten.</translation>
+    </message>
+    <message>
+        <source>Node %id no longer exists.</source>
+        <translation>Knoten %id existiert nicht mehr.</translation>
+    </message>
+    <message>
+        <source>Choose another source node.</source>
+        <translation>Wählen Sie einen anderen Quellknoten.</translation>
+    </message>
+    <message>
+        <source>Choose the node the PDF starts from.</source>
+        <translation>Wählen Sie den Knoten, mit dem das PDF beginnt.</translation>
+    </message>
+    <message>
+        <source>The source node only.</source>
+        <translation>Nur der Quellknoten.</translation>
+    </message>
+    <message>
+        <source>The source node and the nodes below it of the classes ticked below, at every level.</source>
+        <translation>Der Quellknoten und die Knoten darunter von den unten angekreuzten Klassen, auf allen Ebenen.</translation>
+    </message>
+    <message>
+        <source>Only read for a tree. A node of another class is left out together with everything below it, so tick the folders that hold the content as well.</source>
+        <translation>Wird nur für einen Baum gelesen. Ein Knoten einer anderen Klasse bleibt mit allem darunter weg; kreuzen Sie also auch die Ordner an, die die Inhalte enthalten.</translation>
+    </message>
+    <message>
+        <source>An optional first page with two lines of text, centred, before the table of contents.</source>
+        <translation>Eine optionale erste Seite mit zwei Textzeilen, zentriert, vor dem Inhaltsverzeichnis.</translation>
+    </message>
+    <message>
+        <source>The large line, such as the name of the document.</source>
+        <translation>Die große Zeile, etwa der Name des Dokuments.</translation>
+    </message>
+    <message>
+        <source>The smaller line below it, such as a date or an edition.</source>
+        <translation>Die kleinere Zeile darunter, etwa ein Datum oder eine Ausgabe.</translation>
+    </message>
+    <message>
+        <source>Print a footer line</source>
+        <translation>Eine Fußzeile drucken</translation>
+    </message>
+    <message>
+        <source>Whether the PDF is written once and kept, or made anew whenever somebody downloads it.</source>
+        <translation>Ob das PDF einmal geschrieben und aufbewahrt oder bei jedem Herunterladen neu erstellt wird.</translation>
+    </message>
+    <message>
+        <source>Written when the export is saved, and again with Regenerate on the list. The file is kept and served at a public address anyone can download from: fast, but it shows the content as it was then.</source>
+        <translation>Wird beim Speichern des Exports geschrieben und erneut mit „Neu erzeugen“ in der Liste. Die Datei wird aufbewahrt und unter einer öffentlichen Adresse bereitgestellt, von der jeder sie herunterladen kann: schnell, zeigt aber die Inhalte von damals.</translation>
+    </message>
+    <message>
+        <source>Made for every download from the list, always current. Nothing is stored; a large tree takes a while every time.</source>
+        <translation>Wird bei jedem Herunterladen aus der Liste erstellt, immer aktuell. Es wird nichts gespeichert; ein großer Baum braucht jedes Mal eine Weile.</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation>Dateiname</translation>
+    </message>
+    <message>
+        <source>Letters, digits, dots, dashes and underscores; ".pdf" is added when it is missing. Generated once, the file is written to %directory under this name, which no other stored export may use. Generated on the fly, it is the name the download is offered under.</source>
+        <translation>Buchstaben, Ziffern, Punkte, Bindestriche und Unterstriche; „.pdf“ wird angehängt, wenn es fehlt. Einmal erzeugt, wird die Datei unter diesem Namen nach %directory geschrieben; kein anderer gespeicherter Export darf ihn verwenden. Bei Bedarf erzeugt, ist es der Name, unter dem der Download angeboten wird.</translation>
+    </message>
+    <message>
+        <source>The stored file %name has %size and was generated %date. Saving with OK writes it anew; another name or generating on the fly deletes it.</source>
+        <translation>Die gespeicherte Datei %name hat %size und wurde am %date erzeugt. OK schreibt sie neu; ein anderer Name oder die Erzeugung bei Bedarf löscht sie.</translation>
+    </message>
+    <message>
+        <source>OK stores the export and, when it is generated once, writes its file; that can take a while for a large tree. Cancel throws away the changes made here.</source>
+        <translation>OK speichert den Export und schreibt bei einmal erzeugten Exporten seine Datei; das kann bei einem großen Baum dauern. Abbrechen verwirft die hier gemachten Änderungen.</translation>
+    </message>
+    <message>
+        <source>Give the export a title.</source>
+        <translation>Geben Sie dem Export einen Titel.</translation>
+    </message>
+    <message>
+        <source>The title is longer than 255 characters.</source>
+        <translation>Der Titel ist länger als 255 Zeichen.</translation>
+    </message>
+    <message>
+        <source>The footer text is longer than 255 characters.</source>
+        <translation>Der Fußzeilentext ist länger als 255 Zeichen.</translation>
+    </message>
+    <message>
+        <source>Choose at least one class to include below the source node, or export the source node only.</source>
+        <translation>Wählen Sie mindestens eine Klasse, die unter dem Quellknoten aufgenommen wird, oder exportieren Sie nur den Quellknoten.</translation>
+    </message>
+    <message>
+        <source>Too many classes are chosen to be stored. Choose fewer classes.</source>
+        <translation>Es sind zu viele Klassen gewählt, um sie zu speichern. Wählen Sie weniger Klassen.</translation>
+    </message>
+    <message>
+        <source>A stored export needs a file name.</source>
+        <translation>Ein gespeicherter Export braucht einen Dateinamen.</translation>
+    </message>
+    <message>
+        <source>The file name is longer than 100 characters.</source>
+        <translation>Der Dateiname ist länger als 100 Zeichen.</translation>
+    </message>
+    <message>
+        <source>The file name must be a name only, without a folder, "..", or a leading dot.</source>
+        <translation>Der Dateiname muss ein reiner Name sein, ohne Ordner, „..“ oder führenden Punkt.</translation>
+    </message>
+    <message>
+        <source>Use only letters, digits, dots, dashes and underscores in the file name.</source>
+        <translation>Verwenden Sie im Dateinamen nur Buchstaben, Ziffern, Punkte, Bindestriche und Unterstriche.</translation>
+    </message>
+    <message>
+        <source>Another stored export already writes a file of that name.</source>
+        <translation>Ein anderer gespeicherter Export schreibt bereits eine Datei dieses Namens.</translation>
+    </message>
+    <message>
+        <source>Choose the source node with Browse.</source>
+        <translation>Wählen Sie den Quellknoten mit „Durchsuchen“.</translation>
+    </message>
+    <message>
+        <source>The chosen source node no longer exists. Choose another one with Browse.</source>
+        <translation>Der gewählte Quellknoten existiert nicht mehr. Wählen Sie mit „Durchsuchen“ einen anderen.</translation>
+    </message>
+    <message>
+        <source>This value is not valid.</source>
+        <translation>Dieser Wert ist nicht gültig.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pdf/list</name>
@@ -12722,6 +15389,398 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>PDF exports (%export_count)</source>
         <translation>PDF Exporte (%export_count)</translation>
+    </message>
+    <message>
+        <source>Remove PDF exports?</source>
+        <translation>PDF-Exporte entfernen?</translation>
+    </message>
+    <message>
+        <source>What happens</source>
+        <translation>Was geschieht</translation>
+    </message>
+    <message>
+        <source>The exports below are removed with their settings, and a draft somebody has open goes with them.</source>
+        <translation>Die folgenden Exporte werden mit ihren Einstellungen entfernt, und ein Entwurf, den jemand offen hat, geht mit.</translation>
+    </message>
+    <message>
+        <source>Their %count stored files (%size) are deleted. Their public addresses, wherever they were shared, stop working.</source>
+        <translation>Ihre %count gespeicherten Dateien (%size) werden gelöscht. Ihre öffentlichen Adressen funktionieren nicht mehr, wo immer sie weitergegeben wurden.</translation>
+    </message>
+    <message>
+        <source>None of them has a stored file, so no file is deleted.</source>
+        <translation>Keiner von ihnen hat eine gespeicherte Datei, also wird keine Datei gelöscht.</translation>
+    </message>
+    <message>
+        <source>The content they were made from is not touched.</source>
+        <translation>Die Inhalte, aus denen sie erstellt wurden, bleiben unberührt.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Generated once</source>
+        <translation>Einmal erzeugt</translation>
+    </message>
+    <message>
+        <source>On the fly</source>
+        <translation>Bei Bedarf</translation>
+    </message>
+    <message>
+        <source>Open in the editor by %name</source>
+        <translation>Im Editor geöffnet von %name</translation>
+    </message>
+    <message>
+        <source>Open in the editor</source>
+        <translation>Im Editor geöffnet</translation>
+    </message>
+    <message>
+        <source>Source node</source>
+        <translation>Quellknoten</translation>
+    </message>
+    <message>
+        <source>Node %id (no longer exists)</source>
+        <translation>Knoten %id (existiert nicht mehr)</translation>
+    </message>
+    <message>
+        <source>not chosen</source>
+        <translation>nicht gewählt</translation>
+    </message>
+    <message>
+        <source>Deleted with it</source>
+        <translation>Wird mit gelöscht</translation>
+    </message>
+    <message>
+        <source>%size, generated %date</source>
+        <translation>%size, erzeugt am %date</translation>
+    </message>
+    <message>
+        <source>no stored file</source>
+        <translation>keine gespeicherte Datei</translation>
+    </message>
+    <message>
+        <source>Address that stops working</source>
+        <translation>Adresse, die nicht mehr funktioniert</translation>
+    </message>
+    <message>
+        <source>Remove the export</source>
+        <translation>Den Export entfernen</translation>
+    </message>
+    <message>
+        <source>Remove %count exports</source>
+        <translation>%count Exporte entfernen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation>Es wurde noch nichts entfernt.</translation>
+    </message>
+    <message>
+        <source>No source node is chosen. Edit the export and choose one with Browse.</source>
+        <translation>Es ist kein Quellknoten gewählt. Bearbeiten Sie den Export und wählen Sie einen mit „Durchsuchen“.</translation>
+    </message>
+    <message>
+        <source>Its source node no longer exists. Edit the export and choose another one.</source>
+        <translation>Sein Quellknoten existiert nicht mehr. Bearbeiten Sie den Export und wählen Sie einen anderen.</translation>
+    </message>
+    <message>
+        <source>Its file name cannot be used for a stored file. Edit the export and give it a name of letters, digits, dots, dashes and underscores.</source>
+        <translation>Sein Dateiname kann für eine gespeicherte Datei nicht verwendet werden. Bearbeiten Sie den Export und geben Sie ihm einen Namen aus Buchstaben, Ziffern, Punkten, Bindestrichen und Unterstrichen.</translation>
+    </message>
+    <message>
+        <source>Its file has not been generated yet. Regenerate it first.</source>
+        <translation>Seine Datei wurde noch nicht erzeugt. Erzeugen Sie sie zuerst neu.</translation>
+    </message>
+    <message>
+        <source>It is generated on the fly and has no stored file.</source>
+        <translation>Er wird bei Bedarf erzeugt und hat keine gespeicherte Datei.</translation>
+    </message>
+    <message>
+        <source>The PDF templates wrote no file. The error log says why.</source>
+        <translation>Die PDF-Templates haben keine Datei geschrieben. Das Fehlerprotokoll nennt den Grund.</translation>
+    </message>
+    <message>
+        <source>A PDF export turns a node of the content tree, and if wanted the nodes below it, into one PDF document with an optional front page and a table of contents. Generated once, the file is stored and served at a public address until it is regenerated; generated on the fly, it is made anew for every download.</source>
+        <translation>Ein PDF-Export macht aus einem Knoten des Inhaltsbaums, auf Wunsch mit den Knoten darunter, ein PDF-Dokument mit optionaler Titelseite und Inhaltsverzeichnis. Einmal erzeugt, wird die Datei gespeichert und unter einer öffentlichen Adresse bereitgestellt, bis sie neu erzeugt wird; bei Bedarf erzeugt, wird sie bei jedem Herunterladen neu erstellt.</translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation>Entfernt: %names.</translation>
+    </message>
+    <message>
+        <source>Stored files removed: %files.</source>
+        <translation>Gespeicherte Dateien entfernt: %files.</translation>
+    </message>
+    <message>
+        <source>The PDF export %name was created.</source>
+        <translation>Der PDF-Export %name wurde angelegt.</translation>
+    </message>
+    <message>
+        <source>The PDF export %name was saved.</source>
+        <translation>Der PDF-Export %name wurde gespeichert.</translation>
+    </message>
+    <message>
+        <source>Its file was generated (%size).</source>
+        <translation>Seine Datei wurde erzeugt (%size).</translation>
+    </message>
+    <message>
+        <source>It is generated on the fly for every download.</source>
+        <translation>Er wird bei jedem Herunterladen neu erzeugt.</translation>
+    </message>
+    <message>
+        <source>The file of %name was generated anew (%size).</source>
+        <translation>Die Datei von %name wurde neu erzeugt (%size).</translation>
+    </message>
+    <message>
+        <source>%name could not be generated.</source>
+        <translation>%name konnte nicht erzeugt werden.</translation>
+    </message>
+    <message>
+        <source>No export was selected. Tick the exports to remove first.</source>
+        <translation>Es wurde kein Export ausgewählt. Kreuzen Sie zuerst die zu entfernenden Exporte an.</translation>
+    </message>
+    <message>
+        <source>The selected exports no longer exist; somebody may have removed them already.</source>
+        <translation>Die ausgewählten Exporte existieren nicht mehr; vielleicht hat sie schon jemand entfernt.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Überblick</translation>
+    </message>
+    <message>
+        <source>Exports</source>
+        <translation>Exporte</translation>
+    </message>
+    <message>
+        <source>Generated on the fly</source>
+        <translation>Bei Bedarf erzeugt</translation>
+    </message>
+    <message>
+        <source>Stored files</source>
+        <translation>Gespeicherte Dateien</translation>
+    </message>
+    <message>
+        <source>Stored in total</source>
+        <translation>Insgesamt gespeichert</translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation>Brauchen Aufmerksamkeit</translation>
+    </message>
+    <message>
+        <source>%count new exports were started and never saved. Their drafts are removed once the draft timeout has passed (content.ini [PDFExportSettings] DraftTimeout) and a new export is started.</source>
+        <translation>%count neue Exporte wurden begonnen und nie gespeichert. Ihre Entwürfe werden entfernt, sobald die Entwurfszeit abgelaufen ist (content.ini [PDFExportSettings] DraftTimeout) und ein neuer Export begonnen wird.</translation>
+    </message>
+    <message>
+        <source>Find an export</source>
+        <translation>Export finden</translation>
+    </message>
+    <message>
+        <source>Title, file name, ID, source node or class. Every word must match.</source>
+        <translation>Titel, Dateiname, ID, Quellknoten oder Klasse. Jedes Wort muss passen.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>With a stored file</source>
+        <translation>Mit gespeicherter Datei</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Erzeugt</translation>
+    </message>
+    <message>
+        <source>File size</source>
+        <translation>Dateigröße</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>ascending</source>
+        <translation>aufsteigend</translation>
+    </message>
+    <message>
+        <source>descending</source>
+        <translation>absteigend</translation>
+    </message>
+    <message>
+        <source>No export matches. Clear the search or show all exports.</source>
+        <translation>Kein Export passt. Leeren Sie die Suche oder zeigen Sie alle Exporte.</translation>
+    </message>
+    <message>
+        <source>There are no PDF exports yet. Create one with New PDF export: give it a title, choose the node it starts from and whether its file is stored or made for every download.</source>
+        <translation>Es gibt noch keine PDF-Exporte. Legen Sie einen mit „Neuer PDF-Export“ an: geben Sie ihm einen Titel, wählen Sie den Knoten, mit dem er beginnt, und ob seine Datei gespeichert oder bei jedem Herunterladen erstellt wird.</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>File ready</source>
+        <translation>Datei bereit</translation>
+    </message>
+    <message>
+        <source>No file</source>
+        <translation>Keine Datei</translation>
+    </message>
+    <message>
+        <source>Source missing</source>
+        <translation>Quelle fehlt</translation>
+    </message>
+    <message>
+        <source>Generate the PDF now and download it.</source>
+        <translation>Das PDF jetzt erzeugen und herunterladen.</translation>
+    </message>
+    <message>
+        <source>Download the stored file.</source>
+        <translation>Die gespeicherte Datei herunterladen.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Herunterladen</translation>
+    </message>
+    <message>
+        <source>Generate the stored file anew from the current content.</source>
+        <translation>Die gespeicherte Datei aus den aktuellen Inhalten neu erzeugen.</translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation>Neu erzeugen</translation>
+    </message>
+    <message>
+        <source>node %id</source>
+        <translation>Knoten %id</translation>
+    </message>
+    <message>
+        <source>Contains</source>
+        <translation>Enthält</translation>
+    </message>
+    <message>
+        <source>The source node and the nodes below it of these classes:</source>
+        <translation>Den Quellknoten und die Knoten darunter von diesen Klassen:</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keine</translation>
+    </message>
+    <message>
+        <source>The source node only</source>
+        <translation>Nur den Quellknoten</translation>
+    </message>
+    <message>
+        <source>Stored file</source>
+        <translation>Gespeicherte Datei</translation>
+    </message>
+    <message>
+        <source>Download name</source>
+        <translation>Name beim Herunterladen</translation>
+    </message>
+    <message>
+        <source>not generated</source>
+        <translation>nicht erzeugt</translation>
+    </message>
+    <message>
+        <source>made anew for every download</source>
+        <translation>bei jedem Herunterladen neu erstellt</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Öffentliche Adresse</translation>
+    </message>
+    <message>
+        <source>Anyone with this address can download the file, without signing in.</source>
+        <translation>Jeder mit dieser Adresse kann die Datei ohne Anmeldung herunterladen.</translation>
+    </message>
+    <message>
+        <source>Front page</source>
+        <translation>Titelseite</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation>von %name</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count exports per page.</source>
+        <translation>%count Exporte pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first and says which stored files go with the exports.</source>
+        <translation>„Ausgewählte entfernen“ fragt zuerst nach und nennt die gespeicherten Dateien, die mit den Exporten gehen.</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>No source node is chosen: there is nothing to export.</source>
+        <translation>Es ist kein Quellknoten gewählt: es gibt nichts zu exportieren.</translation>
+    </message>
+    <message>
+        <source>The source node %id no longer exists. Choose another one, or remove the export.</source>
+        <translation>Der Quellknoten %id existiert nicht mehr. Wählen Sie einen anderen oder entfernen Sie den Export.</translation>
+    </message>
+    <message>
+        <source>The file name cannot be used for a stored file. Give the export a file name of letters, digits, dots, dashes and underscores.</source>
+        <translation>Der Dateiname kann für eine gespeicherte Datei nicht verwendet werden. Geben Sie dem Export einen Dateinamen aus Buchstaben, Ziffern, Punkten, Bindestrichen und Unterstrichen.</translation>
+    </message>
+    <message>
+        <source>The file has not been generated, or it was removed. Regenerate it.</source>
+        <translation>Die Datei wurde nicht erzeugt oder wurde entfernt. Erzeugen Sie sie neu.</translation>
+    </message>
+    <message>
+        <source>No class is chosen for the tree: only the source node itself is exported.</source>
+        <translation>Für den Baum ist keine Klasse gewählt: nur der Quellknoten selbst wird exportiert.</translation>
+    </message>
+    <message>
+        <source>%count of the chosen classes no longer exist.</source>
+        <translation>%count der gewählten Klassen existieren nicht mehr.</translation>
+    </message>
+    <message>
+        <source>Confirm removal</source>
+        <translation>Entfernen bestätigen</translation>
     </message>
 </context>
 <context>
@@ -13040,6 +16099,53 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
+    <message>
+        <source>Assign &lt;%role_name&gt; in one section</source>
+        <translation>&lt;%role_name&gt; in einer Sektion zuweisen</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Schritte</translation>
+    </message>
+    <message>
+        <source>Users and groups</source>
+        <translation>Benutzer und Gruppen</translation>
+    </message>
+    <message>
+        <source>The role will apply to the users and groups you choose next only for content in this section.</source>
+        <translation>Die Rolle gilt für die Benutzer und Gruppen, die Sie als Nächstes wählen, nur für Inhalte in dieser Sektion.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/role/copy</name>
+    <message>
+        <source>Copy the &lt;%role_name&gt; role</source>
+        <translation>Die Rolle &lt;%role_name&gt; kopieren</translation>
+    </message>
+    <message>
+        <source>The copy is a new role with the same policies, named “Copy of %role_name”. It is not assigned to anyone, so it gives nobody anything until you assign it. It opens in the role editor, where you can rename it and change its policies.</source>
+        <translation>Die Kopie ist eine neue Rolle mit denselben Richtlinien, genannt „Copy of %role_name“. Sie ist niemandem zugewiesen und gibt daher niemandem etwas, bis Sie sie zuweisen. Sie öffnet sich im Rolleneditor, wo Sie sie umbenennen und ihre Richtlinien ändern können.</translation>
+    </message>
+    <message>
+        <source>Policies copied</source>
+        <translation>Kopierte Richtlinien</translation>
+    </message>
+    <message>
+        <source>Assignments of the original (not copied)</source>
+        <translation>Zuweisungen des Originals (nicht kopiert)</translation>
+    </message>
+    <message>
+        <source>This role has a policy that gives access to everything. The copy will have it too.</source>
+        <translation>Diese Rolle hat eine Richtlinie, die Zugriff auf alles gibt. Die Kopie hat sie auch.</translation>
+    </message>
+    <message>
+        <source>Make the copy</source>
+        <translation>Kopie erstellen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/createpolicystep1</name>
@@ -13106,6 +16212,50 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Every function</source>
         <translation>Alle Funktionen</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Schritte</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funktion</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Einschränkungen</translation>
+    </message>
+    <message>
+        <source>A policy lets the users of the role use a module: all of it, or one of its functions, possibly only in some sections, classes or subtrees. The policy is added to the draft of the role; it reaches its users when you save the role.</source>
+        <translation>Eine Richtlinie erlaubt den Benutzern der Rolle, ein Modul zu nutzen: ganz oder eine seiner Funktionen, gegebenenfalls nur in einigen Sektionen, Klassen oder Teilbäumen. Die Richtlinie wird dem Entwurf der Rolle hinzugefügt; ihre Benutzer erhalten sie, wenn Sie die Rolle speichern.</translation>
+    </message>
+    <message>
+        <source>The module the users of the role may use, such as content (reading and editing content), user (logging in) or shop.</source>
+        <translation>Das Modul, das die Benutzer der Rolle nutzen dürfen, etwa content (Inhalte lesen und bearbeiten), user (anmelden) oder shop.</translation>
+    </message>
+    <message>
+        <source>Every module with every function gives access to everything, including roles, users and setup. Give it only to administrators.</source>
+        <translation>Jedes Modul mit jeder Funktion gibt Zugriff auf alles, auch auf Rollen, Benutzer und Einrichtung. Geben Sie das nur Administratoren.</translation>
+    </message>
+    <message>
+        <source>All functions of the module</source>
+        <translation>Alle Funktionen des Moduls</translation>
+    </message>
+    <message>
+        <source>Unlimited access to everything the module does. The policy is added at once.</source>
+        <translation>Uneingeschränkter Zugriff auf alles, was das Modul tut. Die Richtlinie wird sofort hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>One function</source>
+        <translation>Eine Funktion</translation>
+    </message>
+    <message>
+        <source>Access to one function only, such as reading content; the next step lets you limit it to sections, classes or subtrees where the function supports it.</source>
+        <translation>Zugriff nur auf eine Funktion, etwa das Lesen von Inhalten; im nächsten Schritt können Sie sie auf Sektionen, Klassen oder Teilbäume einschränken, wo die Funktion das unterstützt.</translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the role editor; nothing has been added.</source>
+        <translation>Abbrechen führt zurück zum Rolleneditor; es wurde nichts hinzugefügt.</translation>
     </message>
 </context>
 <context>
@@ -13209,6 +16359,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>It is not possible to grant limited access to all modules at once. To grant unlimited access to all modules and their functions, go back to step one and select &quot;Grant access to all functions&quot;. To grant limited access to different functions within different modules, you must set up a collection of policies.</source>
         <translation>Leider ist es nicht möglich eingeschränkten Zugriff auf alle Module gleichzeitig zu gewähren. Um unbeschränkten Zugriff auf alle Module und ihre Funktionen zu gewähren, gehen Sie bitte einen Schritt zurück und klicken Sie auf &quot;Zugriff auf alle Funktionen gewähren&quot;. Falls Sie eingeschränkten Zugriff auf unterschiedliche Funktionen innerhalb unterschiedlicher Module definieren möchten, müssen Sie mehrere Richtlinien erstellen.</translation>
+    </message>
+    <message>
+        <source>Module: %module</source>
+        <translation>Modul: %module</translation>
+    </message>
+    <message>
+        <source>The function of the %module module the users of the role may use.</source>
+        <translation>Die Funktion des Moduls %module, die die Benutzer der Rolle nutzen dürfen.</translation>
+    </message>
+    <message>
+        <source>Full access to the function</source>
+        <translation>Voller Zugriff auf die Funktion</translation>
+    </message>
+    <message>
+        <source>Everywhere, without limitations. The policy is added at once.</source>
+        <translation>Überall, ohne Einschränkungen. Die Richtlinie wird sofort hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>Limited access</source>
+        <translation>Eingeschränkter Zugriff</translation>
+    </message>
+    <message>
+        <source>Only in some sections, classes, subtrees, languages or siteaccesses, as the function supports. If it supports none, the policy gives full access to it.</source>
+        <translation>Nur in einigen Sektionen, Klassen, Teilbäumen, Sprachen oder Siteaccesses, soweit die Funktion das unterstützt. Unterstützt sie nichts davon, gibt die Richtlinie vollen Zugriff auf sie.</translation>
     </message>
 </context>
 <context>
@@ -13336,6 +16510,26 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Subtrees (%subtree_count)</source>
         <translation>Teilbäume (%subtree_count)</translation>
+    </message>
+    <message>
+        <source>Function: %function</source>
+        <translation>Funktion: %function</translation>
+    </message>
+    <message>
+        <source>Choose where the function may be used. "Any" leaves a limitation out. Several limitations must all be met; several values of one limitation are alternatives. Press OK to add the policy to the draft of the role.</source>
+        <translation>Wählen Sie, wo die Funktion genutzt werden darf. „Beliebig“ lässt eine Einschränkung weg. Mehrere Einschränkungen müssen alle erfüllt sein; mehrere Werte einer Einschränkung sind Alternativen. Drücken Sie OK, um die Richtlinie dem Entwurf der Rolle hinzuzufügen.</translation>
+    </message>
+    <message>
+        <source>Hold Ctrl (Cmd on a Mac) to choose more than one value.</source>
+        <translation>Halten Sie Strg (auf dem Mac Cmd), um mehr als einen Wert zu wählen.</translation>
+    </message>
+    <message>
+        <source>Only these nodes themselves, not what lies below them. Choosing nodes drops the other limitations the function names.</source>
+        <translation>Nur diese Knoten selbst, nicht was darunter liegt. Die Wahl von Knoten entfernt die anderen Einschränkungen, die die Funktion nennt.</translation>
+    </message>
+    <message>
+        <source>These nodes and everything below them.</source>
+        <translation>Diese Knoten und alles darunter.</translation>
     </message>
 </context>
 <context>
@@ -13472,6 +16666,169 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Sort the list by ID, ascending, to change the order of the policies.</source>
         <translation>Sortieren Sie die Liste aufsteigend nach ID, um die Reihenfolge der Richtlinien zu ändern.</translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>You are editing a draft of this role. Nothing changes for its users until you press Save; Cancel throws every change of this draft away.</source>
+        <translation>Sie bearbeiten einen Entwurf dieser Rolle. Für ihre Benutzer ändert sich nichts, bis Sie Speichern drücken; Abbrechen verwirft jede Änderung dieses Entwurfs.</translation>
+    </message>
+    <message>
+        <source>Unsaved changes.</source>
+        <translation>Nicht gespeicherte Änderungen.</translation>
+    </message>
+    <message>
+        <source>This draft differs from the saved role. Save to apply the changes, or Cancel to discard them.</source>
+        <translation>Dieser Entwurf weicht von der gespeicherten Rolle ab. Speichern übernimmt die Änderungen, Abbrechen verwirft sie.</translation>
+    </message>
+    <message>
+        <source>The policy was moved to position %position. Save to keep the new order.</source>
+        <translation>Die Richtlinie wurde an Position %position verschoben. Speichern Sie, um die neue Reihenfolge zu behalten.</translation>
+    </message>
+    <message>
+        <source>%count policies were removed from the draft. Save to apply this.</source>
+        <translation>%count Richtlinien wurden aus dem Entwurf entfernt. Speichern Sie, um das zu übernehmen.</translation>
+    </message>
+    <message>
+        <source>No policy was selected. Tick the policies to remove first.</source>
+        <translation>Keine Richtlinie ausgewählt. Kreuzen Sie zuerst die zu entfernenden Richtlinien an.</translation>
+    </message>
+    <message>
+        <source>Shown in the role list and wherever the role is assigned.</source>
+        <translation>Wird in der Rollenliste und überall dort angezeigt, wo die Rolle zugewiesen ist.</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Order of the policies</source>
+        <translation>Reihenfolge der Richtlinien</translation>
+    </message>
+    <message>
+        <source>Role order</source>
+        <translation>Reihenfolge der Rolle</translation>
+    </message>
+    <message>
+        <source>By module</source>
+        <translation>Nach Modul</translation>
+    </message>
+    <message>
+        <source>By function</source>
+        <translation>Nach Funktion</translation>
+    </message>
+    <message>
+        <source>By limitation</source>
+        <translation>Nach Einschränkung</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reihenfolge umkehren</translation>
+    </message>
+    <message>
+        <source>Drag a policy by its grip to a new place, or focus the grip and press the up or down arrow key. The arrow buttons move a policy one place, also across pages; the position field moves it to any place in the whole list. The order is kept in the draft until you save.</source>
+        <translation>Ziehen Sie eine Richtlinie an ihrem Griff an eine neue Stelle, oder setzen Sie den Fokus auf den Griff und drücken Sie die Pfeiltaste nach oben oder unten. Die Pfeilschaltflächen verschieben eine Richtlinie um eine Stelle, auch über Seiten hinweg; das Positionsfeld verschiebt sie an jede Stelle der ganzen Liste. Die Reihenfolge bleibt im Entwurf, bis Sie speichern.</translation>
+    </message>
+    <message>
+        <source>Every module</source>
+        <translation>Jedes Modul</translation>
+    </message>
+    <message>
+        <source>Module %module</source>
+        <translation>Modul %module</translation>
+    </message>
+    <message>
+        <source>Select policy %id for removal</source>
+        <translation>Richtlinie %id zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Move policy at position %position</source>
+        <translation>Richtlinie an Position %position verschieben</translation>
+    </message>
+    <message>
+        <source>Drag to move, or use the up and down arrow keys</source>
+        <translation>Zum Verschieben ziehen, oder die Pfeiltasten nach oben und unten verwenden</translation>
+    </message>
+    <message>
+        <source>Move policy %id up</source>
+        <translation>Richtlinie %id nach oben verschieben</translation>
+    </message>
+    <message>
+        <source>Move policy %id down</source>
+        <translation>Richtlinie %id nach unten verschieben</translation>
+    </message>
+    <message>
+        <source>Position of policy %id</source>
+        <translation>Position der Richtlinie %id</translation>
+    </message>
+    <message>
+        <source>Move the policy to the position in the field, in the whole list</source>
+        <translation>Die Richtlinie an die Position im Feld verschieben, in der ganzen Liste</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation>Verschieben</translation>
+    </message>
+    <message>
+        <source>There are no policies set up for this role. Add one with New policy.</source>
+        <translation>Für diese Rolle sind keine Richtlinien eingerichtet. Fügen Sie eine mit „Neue Richtlinie“ hinzu.</translation>
+    </message>
+    <message>
+        <source>The ticked policies are removed from this draft. Their users lose what they gave when you press Save; Cancel keeps them.</source>
+        <translation>Die angekreuzten Richtlinien werden aus diesem Entwurf entfernt. Ihre Benutzer verlieren, was sie gaben, wenn Sie Speichern drücken; Abbrechen behält sie.</translation>
+    </message>
+    <message>
+        <source>Remove the ticked policies</source>
+        <translation>Angekreuzte Richtlinien entfernen</translation>
+    </message>
+    <message>
+        <source>Unsaved changes</source>
+        <translation>Nicht gespeicherte Änderungen</translation>
+    </message>
+    <message>
+        <source>Save applies the draft to everyone the role is assigned to. Cancel discards it and goes back.</source>
+        <translation>Speichern wendet den Entwurf auf alle an, denen die Rolle zugewiesen ist. Abbrechen verwirft ihn und führt zurück.</translation>
+    </message>
+    <message>
+        <source>This draft has unsaved changes. Leave the page anyway?</source>
+        <translation>Dieser Entwurf hat nicht gespeicherte Änderungen. Die Seite trotzdem verlassen?</translation>
+    </message>
+    <message>
+        <source>Moved to position %position.</source>
+        <translation>An Position %position verschoben.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/role/grant</name>
+    <message>
+        <source>%count policies of this role go beyond your own access, so you cannot copy it. You can only give what you have yourself.</source>
+        <translation>%count Richtlinien dieser Rolle gehen über Ihren eigenen Zugriff hinaus, daher können Sie sie nicht kopieren. Sie können nur vergeben, was Sie selbst haben.</translation>
+    </message>
+    <message>
+        <source>The role was not saved.</source>
+        <translation>Die Rolle wurde nicht gespeichert.</translation>
+    </message>
+    <message>
+        <source>The role was not assigned.</source>
+        <translation>Die Rolle wurde nicht zugewiesen.</translation>
+    </message>
+    <message>
+        <source>The role was not copied.</source>
+        <translation>Die Rolle wurde nicht kopiert.</translation>
+    </message>
+    <message>
+        <source>The policy was not added.</source>
+        <translation>Die Richtlinie wurde nicht hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>You can only give what you have yourself. These policies go beyond your own access:</source>
+        <translation>Sie können nur vergeben, was Sie selbst haben. Diese Richtlinien gehen über Ihren eigenen Zugriff hinaus:</translation>
+    </message>
+    <message>
+        <source>Narrow them to what your own roles allow, or ask an administrator with full access.</source>
+        <translation>Schränken Sie sie auf das ein, was Ihre eigenen Rollen erlauben, oder fragen Sie einen Administrator mit vollem Zugriff.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/list</name>
@@ -13555,6 +16912,138 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Show the users and user groups of the &lt;%role_name&gt; role.</source>
         <translation>Die Benutzer und Benutzergruppen der Rolle &lt;%role_name&gt; zeigen.</translation>
     </message>
+    <message>
+        <source>A role is a set of policies; each policy lets its users use one module or function, possibly only in some sections, classes or subtrees. A role does nothing until it is assigned to users or user groups; a user has every policy of every role assigned to them or to one of their groups.</source>
+        <translation>Eine Rolle ist eine Menge von Richtlinien; jede Richtlinie erlaubt ihren Benutzern ein Modul oder eine Funktion, gegebenenfalls nur in einigen Sektionen, Klassen oder Teilbäumen. Eine Rolle bewirkt nichts, bis sie Benutzern oder Benutzergruppen zugewiesen ist; ein Benutzer hat jede Richtlinie jeder Rolle, die ihm oder einer seiner Gruppen zugewiesen ist.</translation>
+    </message>
+    <message>
+        <source>%count roles were removed, with their policies and assignments.</source>
+        <translation>%count Rollen wurden entfernt, mit ihren Richtlinien und Zuweisungen.</translation>
+    </message>
+    <message>
+        <source>No role was selected. Tick the roles to remove first.</source>
+        <translation>Keine Rolle ausgewählt. Kreuzen Sie zuerst die zu entfernenden Rollen an.</translation>
+    </message>
+    <message>
+        <source>Find roles</source>
+        <translation>Rollen finden</translation>
+    </message>
+    <message>
+        <source>Find a role</source>
+        <translation>Eine Rolle finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Any part of the name, or the ID. Upper and lower case are the same.</source>
+        <translation>Ein beliebiger Teil des Namens, oder die ID. Groß- und Kleinschreibung sind gleich.</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Richtlinien</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reihenfolge umkehren</translation>
+    </message>
+    <message>
+        <source>Ordered by</source>
+        <translation>Sortiert nach</translation>
+    </message>
+    <message>
+        <source>Roles matching “%search”</source>
+        <translation>Rollen mit „%search“</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>No role matches this search.</source>
+        <translation>Keine Rolle passt zu dieser Suche.</translation>
+    </message>
+    <message>
+        <source>There are no roles yet. Create one with New role.</source>
+        <translation>Es gibt noch keine Rollen. Legen Sie eine mit „Neue Rolle“ an.</translation>
+    </message>
+    <message>
+        <source>Select %role_name</source>
+        <translation>%role_name auswählen</translation>
+    </message>
+    <message>
+        <source>A policy of this role gives access to every function of every module.</source>
+        <translation>Eine Richtlinie dieser Rolle gibt Zugriff auf jede Funktion jedes Moduls.</translation>
+    </message>
+    <message>
+        <source>Full access</source>
+        <translation>Voller Zugriff</translation>
+    </message>
+    <message>
+        <source>Its users can change roles and policies, and so give themselves any access.</source>
+        <translation>Ihre Benutzer können Rollen und Richtlinien ändern und sich so jeden Zugriff geben.</translation>
+    </message>
+    <message>
+        <source>Can change roles</source>
+        <translation>Kann Rollen ändern</translation>
+    </message>
+    <message>
+        <source>Not assigned to any user or group, so it gives nobody anything.</source>
+        <translation>Keinem Benutzer und keiner Gruppe zugewiesen, gibt also niemandem etwas.</translation>
+    </message>
+    <message>
+        <source>Not assigned</source>
+        <translation>Nicht zugewiesen</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansehen</translation>
+    </message>
+    <message>
+        <source>Assigned to users and groups</source>
+        <translation>Benutzern und Gruppen zugewiesen</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>The ticked roles are removed for good, with their policies. Every user and group they are assigned to loses what they gave. This cannot be undone.</source>
+        <translation>Die angekreuzten Rollen werden endgültig entfernt, mit ihren Richtlinien. Jeder Benutzer und jede Gruppe, denen sie zugewiesen sind, verliert, was sie gaben. Das kann nicht rückgängig gemacht werden.</translation>
+    </message>
+    <message>
+        <source>Remove the ticked roles</source>
+        <translation>Angekreuzte Rollen entfernen</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>Nothing is ticked yet.</source>
+        <translation>Noch nichts angekreuzt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/policyedit</name>
@@ -13637,6 +17126,409 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Subtrees (%subtree_count)</source>
         <translation>Teilbäume (%subtree_count)</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rolle</translation>
+    </message>
+    <message>
+        <source>Choose where the function may be used. "Any" leaves a limitation out. The change is kept in the draft of the role; it reaches the users when you save the role.</source>
+        <translation>Wählen Sie, wo die Funktion genutzt werden darf. „Beliebig“ lässt eine Einschränkung weg. Die Änderung bleibt im Entwurf der Rolle; die Benutzer erhalten sie, wenn Sie die Rolle speichern.</translation>
+    </message>
+    <message>
+        <source>Both go back to the role editor.</source>
+        <translation>Beide führen zurück zum Rolleneditor.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/role/sentence</name>
+    <message>
+        <source>May %action, %conditions</source>
+        <translation>Darf %action, %conditions</translation>
+    </message>
+    <message>
+        <source>May %action</source>
+        <translation>Darf %action</translation>
+    </message>
+    <message>
+        <source>do everything, in every module</source>
+        <translation>alles tun, in jedem Modul</translation>
+    </message>
+    <message>
+        <source>use every function of the %module module</source>
+        <translation>jede Funktion des Moduls %module nutzen</translation>
+    </message>
+    <message>
+        <source>use the function %function of the %module module</source>
+        <translation>die Funktion %function des Moduls %module nutzen</translation>
+    </message>
+    <message>
+        <source>%label: none of the chosen values exists any more</source>
+        <translation>%label: keiner der gewählten Werte existiert mehr</translation>
+    </message>
+    <message>
+        <source>only content they own</source>
+        <translation>nur Inhalte, die ihnen gehören</translation>
+    </message>
+    <message>
+        <source>only below content they own</source>
+        <translation>nur unterhalb von Inhalten, die ihnen gehören</translation>
+    </message>
+    <message>
+        <source>only content owned by a member of their groups</source>
+        <translation>nur Inhalte, die einem Mitglied ihrer Gruppen gehören</translation>
+    </message>
+    <message>
+        <source>only below content owned by a member of their groups</source>
+        <translation>nur unterhalb von Inhalten, die einem Mitglied ihrer Gruppen gehören</translation>
+    </message>
+    <message>
+        <source>%label: %list</source>
+        <translation>%label: %list</translation>
+    </message>
+    <message>
+        <source>%list and %count more</source>
+        <translation>%list und %count weitere</translation>
+    </message>
+    <message>
+        <source>%list and %last</source>
+        <translation>%list und %last</translation>
+    </message>
+    <message>
+        <source>in section %list</source>
+        <translation>in der Sektion %list</translation>
+    </message>
+    <message>
+        <source>in the sections %list</source>
+        <translation>in den Sektionen %list</translation>
+    </message>
+    <message>
+        <source>of class %list</source>
+        <translation>der Klasse %list</translation>
+    </message>
+    <message>
+        <source>of the classes %list</source>
+        <translation>der Klassen %list</translation>
+    </message>
+    <message>
+        <source>below objects of class %list</source>
+        <translation>unterhalb von Objekten der Klasse %list</translation>
+    </message>
+    <message>
+        <source>below objects of the classes %list</source>
+        <translation>unterhalb von Objekten der Klassen %list</translation>
+    </message>
+    <message>
+        <source>at depth %list</source>
+        <translation>in Tiefe %list</translation>
+    </message>
+    <message>
+        <source>at the depths %list</source>
+        <translation>in den Tiefen %list</translation>
+    </message>
+    <message>
+        <source>on the node %list</source>
+        <translation>am Knoten %list</translation>
+    </message>
+    <message>
+        <source>on the nodes %list</source>
+        <translation>an den Knoten %list</translation>
+    </message>
+    <message>
+        <source>in the subtree %list</source>
+        <translation>im Teilbaum %list</translation>
+    </message>
+    <message>
+        <source>in the subtrees %list</source>
+        <translation>in den Teilbäumen %list</translation>
+    </message>
+    <message>
+        <source>on the siteaccess %list</source>
+        <translation>im Siteaccess %list</translation>
+    </message>
+    <message>
+        <source>on the siteaccesses %list</source>
+        <translation>in den Siteaccesses %list</translation>
+    </message>
+    <message>
+        <source>in the language %list</source>
+        <translation>in der Sprache %list</translation>
+    </message>
+    <message>
+        <source>in the languages %list</source>
+        <translation>in den Sprachen %list</translation>
+    </message>
+    <message>
+        <source>into section %list</source>
+        <translation>in die Sektion %list</translation>
+    </message>
+    <message>
+        <source>into the sections %list</source>
+        <translation>in die Sektionen %list</translation>
+    </message>
+    <message>
+        <source>to the state %list</source>
+        <translation>in den Status %list</translation>
+    </message>
+    <message>
+        <source>to the states %list</source>
+        <translation>in die Status %list</translation>
+    </message>
+    <message>
+        <source>only the function %list</source>
+        <translation>nur die Funktion %list</translation>
+    </message>
+    <message>
+        <source>only the functions %list</source>
+        <translation>nur die Funktionen %list</translation>
+    </message>
+    <message>
+        <source>in the state %list (%label)</source>
+        <translation>im Status %list (%label)</translation>
+    </message>
+    <message>
+        <source>in the states %list (%label)</source>
+        <translation>in den Status %list (%label)</translation>
+    </message>
+    <message>
+        <source>do everything with content</source>
+        <translation>alles mit Inhalten tun</translation>
+    </message>
+    <message>
+        <source>do everything in the user module (log in, edit accounts, activate users)</source>
+        <translation>alles im Benutzermodul tun (anmelden, Konten bearbeiten, Benutzer aktivieren)</translation>
+    </message>
+    <message>
+        <source>manage roles and policies</source>
+        <translation>Rollen und Richtlinien verwalten</translation>
+    </message>
+    <message>
+        <source>use every setup and maintenance page</source>
+        <translation>jede Einrichtungs- und Wartungsseite nutzen</translation>
+    </message>
+    <message>
+        <source>manage sections</source>
+        <translation>Sektionen verwalten</translation>
+    </message>
+    <message>
+        <source>manage content classes</source>
+        <translation>Inhaltsklassen verwalten</translation>
+    </message>
+    <message>
+        <source>manage object states</source>
+        <translation>Objektstatus verwalten</translation>
+    </message>
+    <message>
+        <source>do everything in the shop</source>
+        <translation>alles im Shop tun</translation>
+    </message>
+    <message>
+        <source>manage and read RSS feeds</source>
+        <translation>RSS-Feeds verwalten und lesen</translation>
+    </message>
+    <message>
+        <source>manage links</source>
+        <translation>Links verwalten</translation>
+    </message>
+    <message>
+        <source>use every search function</source>
+        <translation>jede Suchfunktion nutzen</translation>
+    </message>
+    <message>
+        <source>read content</source>
+        <translation>Inhalte lesen</translation>
+    </message>
+    <message>
+        <source>create content</source>
+        <translation>Inhalte anlegen</translation>
+    </message>
+    <message>
+        <source>edit content</source>
+        <translation>Inhalte bearbeiten</translation>
+    </message>
+    <message>
+        <source>remove content</source>
+        <translation>Inhalte entfernen</translation>
+    </message>
+    <message>
+        <source>move content</source>
+        <translation>Inhalte verschieben</translation>
+    </message>
+    <message>
+        <source>hide and reveal content</source>
+        <translation>Inhalte verbergen und anzeigen</translation>
+    </message>
+    <message>
+        <source>translate content</source>
+        <translation>Inhalte übersetzen</translation>
+    </message>
+    <message>
+        <source>manage the locations of content</source>
+        <translation>die Orte von Inhalten verwalten</translation>
+    </message>
+    <message>
+        <source>read old versions and drafts of content</source>
+        <translation>alte Versionen und Entwürfe von Inhalten lesen</translation>
+    </message>
+    <message>
+        <source>remove versions of content</source>
+        <translation>Versionen von Inhalten entfernen</translation>
+    </message>
+    <message>
+        <source>compare versions of content</source>
+        <translation>Versionen von Inhalten vergleichen</translation>
+    </message>
+    <message>
+        <source>view content as PDF</source>
+        <translation>Inhalte als PDF ansehen</translation>
+    </message>
+    <message>
+        <source>view embedded content</source>
+        <translation>eingebettete Inhalte ansehen</translation>
+    </message>
+    <message>
+        <source>see what links to content</source>
+        <translation>sehen, was auf Inhalte verweist</translation>
+    </message>
+    <message>
+        <source>restore content from the trash</source>
+        <translation>Inhalte aus dem Papierkorb wiederherstellen</translation>
+    </message>
+    <message>
+        <source>empty the trash</source>
+        <translation>den Papierkorb leeren</translation>
+    </message>
+    <message>
+        <source>use bookmarks</source>
+        <translation>Lesezeichen nutzen</translation>
+    </message>
+    <message>
+        <source>use the dashboard</source>
+        <translation>das Dashboard nutzen</translation>
+    </message>
+    <message>
+        <source>see the list of pending content</source>
+        <translation>die Liste wartender Inhalte sehen</translation>
+    </message>
+    <message>
+        <source>send content to a friend</source>
+        <translation>Inhalte an Bekannte senden</translation>
+    </message>
+    <message>
+        <source>manage URL aliases</source>
+        <translation>URL-Aliase verwalten</translation>
+    </message>
+    <message>
+        <source>publish content</source>
+        <translation>Inhalte veröffentlichen</translation>
+    </message>
+    <message>
+        <source>log in</source>
+        <translation>sich anmelden</translation>
+    </message>
+    <message>
+        <source>change their password</source>
+        <translation>ihr Passwort ändern</translation>
+    </message>
+    <message>
+        <source>change their preferences</source>
+        <translation>ihre Einstellungen ändern</translation>
+    </message>
+    <message>
+        <source>register an account</source>
+        <translation>ein Konto registrieren</translation>
+    </message>
+    <message>
+        <source>edit their own account</source>
+        <translation>ihr eigenes Konto bearbeiten</translation>
+    </message>
+    <message>
+        <source>activate user accounts</source>
+        <translation>Benutzerkonten aktivieren</translation>
+    </message>
+    <message>
+        <source>use the setup pages</source>
+        <translation>die Einrichtungsseiten nutzen</translation>
+    </message>
+    <message>
+        <source>clear caches</source>
+        <translation>Caches leeren</translation>
+    </message>
+    <message>
+        <source>view the system information</source>
+        <translation>die Systeminformationen ansehen</translation>
+    </message>
+    <message>
+        <source>assign sections to content</source>
+        <translation>Inhalten Sektionen zuweisen</translation>
+    </message>
+    <message>
+        <source>edit sections</source>
+        <translation>Sektionen bearbeiten</translation>
+    </message>
+    <message>
+        <source>view sections</source>
+        <translation>Sektionen ansehen</translation>
+    </message>
+    <message>
+        <source>change the states of content</source>
+        <translation>den Status von Inhalten ändern</translation>
+    </message>
+    <message>
+        <source>read RSS feeds</source>
+        <translation>RSS-Feeds lesen</translation>
+    </message>
+    <message>
+        <source>edit RSS feeds</source>
+        <translation>RSS-Feeds bearbeiten</translation>
+    </message>
+    <message>
+        <source>buy in the shop</source>
+        <translation>im Shop kaufen</translation>
+    </message>
+    <message>
+        <source>administer the shop</source>
+        <translation>den Shop verwalten</translation>
+    </message>
+    <message>
+        <source>change the status of orders</source>
+        <translation>den Status von Bestellungen ändern</translation>
+    </message>
+    <message>
+        <source>set up the shop</source>
+        <translation>den Shop einrichten</translation>
+    </message>
+    <message>
+        <source>edit content classes</source>
+        <translation>Inhaltsklassen bearbeiten</translation>
+    </message>
+    <message>
+        <source>use notifications</source>
+        <translation>Benachrichtigungen nutzen</translation>
+    </message>
+    <message>
+        <source>use collaboration</source>
+        <translation>die Zusammenarbeit nutzen</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>suchen</translation>
+    </message>
+    <message>
+        <source>view tags</source>
+        <translation>Tags ansehen</translation>
+    </message>
+    <message>
+        <source>edit tags</source>
+        <translation>Tags bearbeiten</translation>
+    </message>
+    <message>
+        <source>call server functions from the browser</source>
+        <translation>Serverfunktionen aus dem Browser aufrufen</translation>
+    </message>
+    <message>
+        <source>use the website toolbar</source>
+        <translation>die Website-Werkzeugleiste nutzen</translation>
     </message>
 </context>
 <context>
@@ -13817,6 +17709,150 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>No user or user group of this role has a name containing "%filter".</source>
         <translation>Kein Benutzer und keine Benutzergruppe dieser Rolle hat einen Namen, der "%filter" enthält.</translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>A user has every policy of every role assigned to them or to one of their groups. Changing the policies of this role changes what all of them may do.</source>
+        <translation>Ein Benutzer hat jede Richtlinie jeder Rolle, die ihm oder einer seiner Gruppen zugewiesen ist. Wer die Richtlinien dieser Rolle ändert, ändert, was sie alle dürfen.</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>All roles</source>
+        <translation>Alle Rollen</translation>
+    </message>
+    <message>
+        <source>%count assignments were removed. Those users and groups no longer have the policies of this role.</source>
+        <translation>%count Zuweisungen wurden entfernt. Diese Benutzer und Gruppen haben die Richtlinien dieser Rolle nicht mehr.</translation>
+    </message>
+    <message>
+        <source>No assignment was selected. Tick the users and groups to remove first.</source>
+        <translation>Keine Zuweisung ausgewählt. Kreuzen Sie zuerst die zu entfernenden Benutzer und Gruppen an.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Richtlinien</translation>
+    </message>
+    <message>
+        <source>Assignments to users and groups</source>
+        <translation>Zuweisungen an Benutzer und Gruppen</translation>
+    </message>
+    <message>
+        <source>User groups</source>
+        <translation>Benutzergruppen</translation>
+    </message>
+    <message>
+        <source>Users assigned directly</source>
+        <translation>Direkt zugewiesene Benutzer</translation>
+    </message>
+    <message>
+        <source>Users affected in all</source>
+        <translation>Betroffene Benutzer insgesamt</translation>
+    </message>
+    <message>
+        <source>%count of the assignments have a subtree or section limitation: the role applies to those users only there. They are counted above.</source>
+        <translation>%count der Zuweisungen haben eine Einschränkung auf einen Teilbaum oder eine Sektion: Die Rolle gilt für diese Benutzer nur dort. Sie sind oben mitgezählt.</translation>
+    </message>
+    <message>
+        <source>Full access.</source>
+        <translation>Voller Zugriff.</translation>
+    </message>
+    <message>
+        <source>A policy of this role gives access to every function of every module, including roles, users and setup. Assign it only to administrators.</source>
+        <translation>Eine Richtlinie dieser Rolle gibt Zugriff auf jede Funktion jedes Moduls, auch auf Rollen, Benutzer und Einrichtung. Weisen Sie sie nur Administratoren zu.</translation>
+    </message>
+    <message>
+        <source>Can change roles.</source>
+        <translation>Kann Rollen ändern.</translation>
+    </message>
+    <message>
+        <source>Its users may change roles and policies, and so give themselves any access.</source>
+        <translation>Ihre Benutzer dürfen Rollen und Richtlinien ändern und sich so jeden Zugriff geben.</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Order of the policies</source>
+        <translation>Reihenfolge der Richtlinien</translation>
+    </message>
+    <message>
+        <source>Role order</source>
+        <translation>Reihenfolge der Rolle</translation>
+    </message>
+    <message>
+        <source>By module</source>
+        <translation>Nach Modul</translation>
+    </message>
+    <message>
+        <source>By function</source>
+        <translation>Nach Funktion</translation>
+    </message>
+    <message>
+        <source>By limitation</source>
+        <translation>Nach Einschränkung</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reihenfolge umkehren</translation>
+    </message>
+    <message>
+        <source>Every module</source>
+        <translation>Jedes Modul</translation>
+    </message>
+    <message>
+        <source>Module %module</source>
+        <translation>Modul %module</translation>
+    </message>
+    <message>
+        <source>Policy</source>
+        <translation>Richtlinie</translation>
+    </message>
+    <message>
+        <source>Assign the role to a user group rather than to single users where you can: every member of the group, now and later, gets it.</source>
+        <translation>Weisen Sie die Rolle wo möglich einer Benutzergruppe statt einzelnen Benutzern zu: Jedes Mitglied der Gruppe, jetzt und später, erhält sie.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Only in the subtree %name</source>
+        <translation>Nur im Teilbaum %name</translation>
+    </message>
+    <message>
+        <source>Only in section %name</source>
+        <translation>Nur in der Sektion %name</translation>
+    </message>
+    <message>
+        <source>The ticked users and groups lose this role at once: they keep only what other roles give them. The users and groups themselves are not removed.</source>
+        <translation>Die angekreuzten Benutzer und Gruppen verlieren diese Rolle sofort: Sie behalten nur, was andere Rollen ihnen geben. Die Benutzer und Gruppen selbst werden nicht entfernt.</translation>
+    </message>
+    <message>
+        <source>Remove the ticked assignments</source>
+        <translation>Angekreuzte Zuweisungen entfernen</translation>
+    </message>
+    <message>
+        <source>With a limitation, the role applies only inside one subtree or section. You choose the users and groups in the next step.</source>
+        <translation>Mit einer Einschränkung gilt die Rolle nur innerhalb eines Teilbaums oder einer Sektion. Die Benutzer und Gruppen wählen Sie im nächsten Schritt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_destination</name>
@@ -13836,6 +17872,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Use the radio buttons to choose a destination location for RSS import then click &quot;OK&quot;.</source>
         <translation>Benutzen Sie die Optionsfelder, um einen Zielort für den RSS Import auszuwählen. Klicken Sie dann auf &quot;OK&quot;.</translation>
     </message>
+    <message>
+        <source>Every new item of the feed becomes an object directly below this location.</source>
+        <translation>Jeder neue Eintrag des Feeds wird ein Objekt direkt unterhalb dieses Knotens.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_image</name>
@@ -13854,6 +17894,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Use the radio buttons to choose an image to use in the RSS export then click &quot;OK&quot;.</source>
         <translation>Benutzen Sie die Optionsfelder, um ein Bild für die Verwendung im RSS Import auszuwählen. Klicken Sie dann auf &quot;OK&quot;.</translation>
+    </message>
+    <message>
+        <source>Only RSS 2.0 feeds carry the image; feed readers show it beside the feed name.</source>
+        <translation>Nur RSS-2.0-Feeds enthalten das Bild; Feedreader zeigen es neben dem Feednamen.</translation>
     </message>
 </context>
 <context>
@@ -13878,6 +17922,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Use the radio buttons to choose the item that you want to export using RSS then click &quot;OK&quot;.</source>
         <translation>Benutzen Sie die Optionsfelder, um das Element auszuwählen, dass für den RSS Export verwendet werden soll. Klicken Sie dann auf &quot;OK&quot;.</translation>
     </message>
+    <message>
+        <source>The feed lists the newest objects of the chosen class published below this location; with Subnodes ticked, also those deeper down.</source>
+        <translation>Der Feed listet die neuesten Objekte der gewählten Klasse, die unterhalb dieses Knotens veröffentlicht wurden; mit „Unterknoten“ auch die tiefer liegenden.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_user</name>
@@ -13896,6 +17944,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Use the radio buttons to choose a user then click &quot;OK&quot;. The user will become the owner of the objects that were imported using RSS.</source>
         <translation>Benutzen Sie die Optionsfelder, um einen Benutzer auszuwählen und klicken Sie dann auf &quot;OK&quot;. Der Benutzer wird der Besitzer der Objekte werden, die per RSS importiert wurden.</translation>
+    </message>
+    <message>
+        <source>The owner needs no login of their own; the import creates the objects on their behalf.</source>
+        <translation>Der Eigentümer braucht keine eigene Anmeldung; der Import legt die Objekte in seinem Namen an.</translation>
     </message>
 </context>
 <context>
@@ -14556,6 +18608,70 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Sort by %column</source>
         <translation>Nach %column sortieren</translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>An export is a feed at its own address. It lists the newest objects below its sources; feed readers and other sites subscribe to it. Nothing changes for them until you press OK.</source>
+        <translation>Ein Export ist ein Feed unter einer eigenen Adresse. Er listet die neuesten Objekte unterhalb seiner Quellen; Feedreader und andere Sites abonnieren ihn. Für sie ändert sich nichts, bis Sie OK drücken.</translation>
+    </message>
+    <message>
+        <source>The export was not saved. Correct the following and press OK again:</source>
+        <translation>Der Export wurde nicht gespeichert. Korrigieren Sie Folgendes und drücken Sie erneut OK:</translation>
+    </message>
+    <message>
+        <source>The feed</source>
+        <translation>Der Feed</translation>
+    </message>
+    <message>
+        <source>Feeds also carry it as their title.</source>
+        <translation>Feeds tragen ihn auch als Titel.</translation>
+    </message>
+    <message>
+        <source>The address readers subscribe to is the site address followed by rss/feed/ and this. An active export needs one; changing it leaves the readers of the old address with an error.</source>
+        <translation>Die Adresse, die Leser abonnieren, ist die Site-Adresse gefolgt von rss/feed/ und diesem Wert. Ein aktiver Export braucht ihn; eine Änderung lässt die Leser der alten Adresse mit einem Fehler zurück.</translation>
+    </message>
+    <message>
+        <source>Open feed</source>
+        <translation>Feed öffnen</translation>
+    </message>
+    <message>
+        <source>Only an active export answers at its address. Clear this to stop a feed for a while without losing its settings.</source>
+        <translation>Nur ein aktiver Export antwortet unter seiner Adresse. Entfernen Sie den Haken, um einen Feed vorübergehend anzuhalten, ohne seine Einstellungen zu verlieren.</translation>
+    </message>
+    <message>
+        <source>No image</source>
+        <translation>Kein Bild</translation>
+    </message>
+    <message>
+        <source>What the feed lists</source>
+        <translation>Was der Feed listet</translation>
+    </message>
+    <message>
+        <source>Each source is a location: the feed lists the newest objects of its class published below it. Browse picks the location; Set loads the attributes of the chosen class for the fields below it.</source>
+        <translation>Jede Quelle ist ein Knoten: Der Feed listet die neuesten Objekte ihrer Klasse, die darunter veröffentlicht wurden. „Durchsuchen“ wählt den Knoten; „Setzen“ lädt die Attribute der gewählten Klasse für die Felder darunter.</translation>
+    </message>
+    <message>
+        <source>An object with several locations below the sources is listed once, by its main location.</source>
+        <translation>Ein Objekt mit mehreren Knoten unterhalb der Quellen wird einmal aufgeführt, über seinen Hauptknoten.</translation>
+    </message>
+    <message>
+        <source>No source yet: the feed has no items. Press Add source, then Browse to pick the location whose content it lists.</source>
+        <translation>Noch keine Quelle: Der Feed hat keine Einträge. Drücken Sie „Quelle hinzufügen“ und dann „Durchsuchen“, um den Knoten zu wählen, dessen Inhalte er listet.</translation>
+    </message>
+    <message>
+        <source>No location chosen</source>
+        <translation>Kein Knoten gewählt</translation>
+    </message>
+    <message>
+        <source>A direct link to a media file of the item: choose a media, image or file attribute. Podcasts need it.</source>
+        <translation>Ein direkter Link auf eine Mediendatei des Eintrags: Wählen Sie ein Medien-, Bild- oder Dateiattribut. Podcasts brauchen ihn.</translation>
+    </message>
+    <message>
+        <source>OK saves the export and goes back to the RSS list. Cancel throws away every change made since the export was opened, including added or removed sources, and goes back to the list.</source>
+        <translation>OK speichert den Export und kehrt zur RSS-Liste zurück. „Abbrechen“ verwirft alle Änderungen seit dem Öffnen des Exports, auch hinzugefügte oder entfernte Quellen, und kehrt zur Liste zurück.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/edit_import</name>
@@ -14727,6 +18843,70 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Click this button to load the correct values into the drop-down fields below. Use the drop-down menu on the left to select the class.</source>
         <translation>Klicken Sie auf diesen Knopf, um die richtigen Werte in die Auswahlliste unten zu laden. Benutzen Sie die Auswahlliste links, um die richtige Klasse auszuwählen.</translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>An import reads the feed of another site. The rssimport cronjob creates an object below the destination for every item it has not seen before; objects it created stay when the import is changed or removed.</source>
+        <translation>Ein Import liest den Feed einer anderen Site. Der rssimport-Cronjob legt unterhalb des Ziels für jeden noch nicht gesehenen Eintrag ein Objekt an; angelegte Objekte bleiben, wenn der Import geändert oder entfernt wird.</translation>
+    </message>
+    <message>
+        <source>Invalid input</source>
+        <translation>Ungültige Eingabe</translation>
+    </message>
+    <message>
+        <source>The import was not saved. Correct the following and press OK again:</source>
+        <translation>Der Import wurde nicht gespeichert. Korrigieren Sie Folgendes und drücken Sie erneut OK:</translation>
+    </message>
+    <message>
+        <source>This import has created %count objects so far, the newest on %time.</source>
+        <translation>Dieser Import hat bisher %count Objekte angelegt, das neueste am %time.</translation>
+    </message>
+    <message>
+        <source>1. The feed</source>
+        <translation>1. Der Feed</translation>
+    </message>
+    <message>
+        <source>The http or https address of the feed. Update reads it and finds its format; the fields below appear once it has been read.</source>
+        <translation>Die http- oder https-Adresse des Feeds. „Aktualisieren“ liest ihn und erkennt sein Format; die Felder darunter erscheinen, sobald er gelesen wurde.</translation>
+    </message>
+    <message>
+        <source>Not read yet: press Update.</source>
+        <translation>Noch nicht gelesen: Drücken Sie „Aktualisieren“.</translation>
+    </message>
+    <message>
+        <source>2. Where the items go</source>
+        <translation>2. Wohin die Einträge kommen</translation>
+    </message>
+    <message>
+        <source>No location chosen</source>
+        <translation>Kein Knoten gewählt</translation>
+    </message>
+    <message>
+        <source>3. What each item becomes</source>
+        <translation>3. Was aus jedem Eintrag wird</translation>
+    </message>
+    <message>
+        <source>Choose the class of the new objects and press Set; then choose which part of a feed item fills each attribute. Ignore leaves an attribute empty.</source>
+        <translation>Wählen Sie die Klasse der neuen Objekte und drücken Sie „Setzen“; wählen Sie dann, welcher Teil eines Feedeintrags jedes Attribut füllt. „Ignorieren“ lässt ein Attribut leer.</translation>
+    </message>
+    <message>
+        <source>4. Run it</source>
+        <translation>4. Ausführen</translation>
+    </message>
+    <message>
+        <source>OK saves the import and goes back to the RSS list. Cancel throws away the changes made since the import was opened and goes back to the list.</source>
+        <translation>OK speichert den Import und kehrt zur RSS-Liste zurück. „Abbrechen“ verwirft die Änderungen seit dem Öffnen des Imports und kehrt zur Liste zurück.</translation>
+    </message>
+    <message>
+        <source>Give the import a name.</source>
+        <translation>Geben Sie dem Import einen Namen.</translation>
+    </message>
+    <message>
+        <source>The source URL must be an http or https address of a feed.</source>
+        <translation>Die Quell-URL muss eine http- oder https-Adresse eines Feeds sein.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/list</name>
@@ -14890,6 +19070,394 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Page %page of %pages</source>
         <translation>Seite %page von %pages</translation>
     </message>
+    <message>
+        <source>Remove RSS exports?</source>
+        <translation>RSS-Exporte entfernen?</translation>
+    </message>
+    <message>
+        <source>Remove RSS imports?</source>
+        <translation>RSS-Importe entfernen?</translation>
+    </message>
+    <message>
+        <source>What happens</source>
+        <translation>Was passiert</translation>
+    </message>
+    <message>
+        <source>The feed addresses below stop answering. Feed readers and sites subscribed to them get an error from then on.</source>
+        <translation>Die Feed-Adressen unten antworten nicht mehr. Feedreader und Sites, die sie abonniert haben, erhalten ab dann einen Fehler.</translation>
+    </message>
+    <message>
+        <source>The sources of each export go with it. The content the feeds listed is not touched.</source>
+        <translation>Die Quellen jedes Exports werden mit entfernt. Die Inhalte, die die Feeds aufgeführt haben, bleiben unberührt.</translation>
+    </message>
+    <message>
+        <source>An export can be made inactive instead: its settings stay and it can be switched on again.</source>
+        <translation>Ein Export kann stattdessen deaktiviert werden: Seine Einstellungen bleiben, und er lässt sich wieder einschalten.</translation>
+    </message>
+    <message>
+        <source>The rssimport cronjob stops reading these feeds.</source>
+        <translation>Der rssimport-Cronjob liest diese Feeds nicht mehr.</translation>
+    </message>
+    <message>
+        <source>The %count objects they created stay where they are. Remove them in the content tree if they are no longer wanted.</source>
+        <translation>Die %count angelegten Objekte bleiben, wo sie sind. Entfernen Sie sie im Inhaltsbaum, wenn sie nicht mehr gebraucht werden.</translation>
+    </message>
+    <message>
+        <source>An import can be made inactive instead: its settings stay and it can be switched on again.</source>
+        <translation>Ein Import kann stattdessen deaktiviert werden: Seine Einstellungen bleiben, und er lässt sich wieder einschalten.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Feed address</source>
+        <translation>Feed-Adresse</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Feeds listed</source>
+        <translation>Aufgeführte Feeds</translation>
+    </message>
+    <message>
+        <source>Sources</source>
+        <translation>Quellen</translation>
+    </message>
+    <message>
+        <source>Destination</source>
+        <translation>Ziel</translation>
+    </message>
+    <message>
+        <source>Imported</source>
+        <translation>Importiert</translation>
+    </message>
+    <message>
+        <source>%count objects, which stay</source>
+        <translation>%count Objekte, die bleiben</translation>
+    </message>
+    <message>
+        <source>Remove %count exports</source>
+        <translation>%count Exporte entfernen</translation>
+    </message>
+    <message>
+        <source>Remove %count imports</source>
+        <translation>%count Importe entfernen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation>Es wurde noch nichts entfernt.</translation>
+    </message>
+    <message>
+        <source>Back to the RSS list</source>
+        <translation>Zurück zur RSS-Liste</translation>
+    </message>
+    <message>
+        <source>RSS feeds</source>
+        <translation>RSS-Feeds</translation>
+    </message>
+    <message>
+        <source>An RSS export publishes content of this site as a feed that feed readers and other sites subscribe to. An RSS import reads the feed of another site and creates an object in the content tree for every new item; the rssimport cronjob runs the active imports.</source>
+        <translation>Ein RSS-Export veröffentlicht Inhalte dieser Site als Feed, den Feedreader und andere Sites abonnieren. Ein RSS-Import liest den Feed einer anderen Site und legt für jeden neuen Eintrag ein Objekt im Inhaltsbaum an; der rssimport-Cronjob führt die aktiven Importe aus.</translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation>Entfernt: %names.</translation>
+    </message>
+    <message>
+        <source>No import was selected. Tick the imports to remove first.</source>
+        <translation>Kein Import ausgewählt. Haken Sie zuerst die zu entfernenden Importe an.</translation>
+    </message>
+    <message>
+        <source>No export was selected. Tick the exports to remove first.</source>
+        <translation>Kein Export ausgewählt. Haken Sie zuerst die zu entfernenden Exporte an.</translation>
+    </message>
+    <message>
+        <source>The selected feeds no longer exist; somebody may have removed them already.</source>
+        <translation>Die ausgewählten Feeds existieren nicht mehr; vielleicht hat sie bereits jemand entfernt.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Exports</source>
+        <translation>Exporte</translation>
+    </message>
+    <message>
+        <source>Active exports</source>
+        <translation>Aktive Exporte</translation>
+    </message>
+    <message>
+        <source>Imports</source>
+        <translation>Importe</translation>
+    </message>
+    <message>
+        <source>Active imports</source>
+        <translation>Aktive Importe</translation>
+    </message>
+    <message>
+        <source>Imported objects</source>
+        <translation>Importierte Objekte</translation>
+    </message>
+    <message>
+        <source>Find a feed</source>
+        <translation>Feed finden</translation>
+    </message>
+    <message>
+        <source>Name, address, format, source, destination or ID, on this page of each list.</source>
+        <translation>Name, Adresse, Format, Quelle, Ziel oder ID, auf dieser Seite jeder Liste.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation>Brauchen Aufmerksamkeit</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>Feeds are written anew for every request (site.ini [RSSSettings] CacheTime is 0).</source>
+        <translation>Feeds werden bei jeder Anfrage neu geschrieben (site.ini [RSSSettings] CacheTime ist 0).</translation>
+    </message>
+    <message>
+        <source>A feed is written at most every %minutes minutes and served from a cached copy in between (site.ini [RSSSettings] CacheTime).</source>
+        <translation>Ein Feed wird höchstens alle %minutes Minuten neu geschrieben und dazwischen aus einer zwischengespeicherten Kopie ausgeliefert (site.ini [RSSSettings] CacheTime).</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Each export is a feed at its own address. It lists the newest objects below its sources, written as RSS, Atom, OPML or a podcast feed.</source>
+        <translation>Jeder Export ist ein Feed unter einer eigenen Adresse. Er listet die neuesten Objekte unterhalb seiner Quellen, geschrieben als RSS, Atom, OPML oder Podcast-Feed.</translation>
+    </message>
+    <message>
+        <source>There are no RSS exports yet. Create one with New export: give it a name and an address, then choose the folders whose content it lists.</source>
+        <translation>Es gibt noch keine RSS-Exporte. Legen Sie mit „Neuer Export“ einen an: Geben Sie ihm einen Namen und eine Adresse und wählen Sie dann die Ordner, deren Inhalte er auflistet.</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Braucht Aufmerksamkeit</translation>
+    </message>
+    <message>
+        <source>Open feed</source>
+        <translation>Feed öffnen</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Location %id (missing)</source>
+        <translation>Knoten %id (fehlt)</translation>
+    </message>
+    <message>
+        <source>with subitems</source>
+        <translation>mit Unterelementen</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>und %count weitere</translation>
+    </message>
+    <message>
+        <source>Items in the feed</source>
+        <translation>Einträge im Feed</translation>
+    </message>
+    <message>
+        <source>up to %count</source>
+        <translation>bis zu %count</translation>
+    </message>
+    <message>
+        <source>main locations only</source>
+        <translation>nur Hauptknoten</translation>
+    </message>
+    <message>
+        <source>Last written</source>
+        <translation>Zuletzt geschrieben</translation>
+    </message>
+    <message>
+        <source>Not served while inactive</source>
+        <translation>Wird nicht ausgeliefert, solange inaktiv</translation>
+    </message>
+    <message>
+        <source>On every request</source>
+        <translation>Bei jeder Anfrage</translation>
+    </message>
+    <message>
+        <source>Not requested since the cache was cleared</source>
+        <translation>Seit dem Leeren des Caches nicht abgerufen</translation>
+    </message>
+    <message>
+        <source>Links point to</source>
+        <translation>Links zeigen auf</translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation>von %name</translation>
+    </message>
+    <message>
+        <source>No export on this page matches. Clear the search or choose All.</source>
+        <translation>Kein Export auf dieser Seite passt. Leeren Sie die Suche oder wählen Sie „Alle“.</translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first and says which feed addresses stop working.</source>
+        <translation>„Auswahl entfernen“ fragt zuerst nach und nennt die Feed-Adressen, die nicht mehr funktionieren werden.</translation>
+    </message>
+    <message>
+        <source>Each import reads one feed of another site and creates an object below its destination for every item it has not seen before. Removing an import keeps the objects it created.</source>
+        <translation>Jeder Import liest einen Feed einer anderen Site und legt unterhalb seines Ziels für jeden noch nicht gesehenen Eintrag ein Objekt an. Wird ein Import entfernt, bleiben die angelegten Objekte erhalten.</translation>
+    </message>
+    <message>
+        <source>No cronjob part runs rssimport.php, so no import is ever read. Add Scripts[]=rssimport.php to a part in cronjob.ini.</source>
+        <translation>Kein Cronjob-Teil führt rssimport.php aus, daher wird nie ein Import gelesen. Fügen Sie Scripts[]=rssimport.php einem Teil in cronjob.ini hinzu.</translation>
+    </message>
+    <message>
+        <source>Go to the cronjobs page</source>
+        <translation>Zur Cronjob-Seite</translation>
+    </message>
+    <message>
+        <source>Active imports are read by the rssimport cronjob (%script) in the %part part:</source>
+        <translation>Aktive Importe liest der rssimport-Cronjob (%script) im Teil %part:</translation>
+    </message>
+    <message>
+        <source>scheduled</source>
+        <translation>eingeplant</translation>
+    </message>
+    <message>
+        <source>next run %time</source>
+        <translation>nächster Lauf %time</translation>
+    </message>
+    <message>
+        <source>not scheduled in the crontab</source>
+        <translation>nicht in der Crontab eingeplant</translation>
+    </message>
+    <message>
+        <source>Imports are read only when that part is started by hand.</source>
+        <translation>Importe werden nur gelesen, wenn dieser Teil von Hand gestartet wird.</translation>
+    </message>
+    <message>
+        <source>Open the cronjob</source>
+        <translation>Cronjob öffnen</translation>
+    </message>
+    <message>
+        <source>There are no RSS imports. Create one with New import: give it the address of a feed, choose where its items go and which class they become.</source>
+        <translation>Es gibt keine RSS-Importe. Legen Sie mit „Neuer Import“ einen an: Geben Sie die Adresse eines Feeds an und wählen Sie, wohin die Einträge kommen und welche Klasse sie erhalten.</translation>
+    </message>
+    <message>
+        <source>View destination</source>
+        <translation>Ziel ansehen</translation>
+    </message>
+    <message>
+        <source>Creates</source>
+        <translation>Legt an</translation>
+    </message>
+    <message>
+        <source>owned by %name</source>
+        <translation>Eigentümer %name</translation>
+    </message>
+    <message>
+        <source>Nothing yet</source>
+        <translation>Noch nichts</translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation>%count Objekte</translation>
+    </message>
+    <message>
+        <source>Newest item</source>
+        <translation>Neuester Eintrag</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keiner</translation>
+    </message>
+    <message>
+        <source>No import on this page matches. Clear the search or choose All.</source>
+        <translation>Kein Import auf dieser Seite passt. Leeren Sie die Suche oder wählen Sie „Alle“.</translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first. The objects an import created stay in the content tree.</source>
+        <translation>„Auswahl entfernen“ fragt zuerst nach. Die von einem Import angelegten Objekte bleiben im Inhaltsbaum.</translation>
+    </message>
+    <message>
+        <source>%shown of %count feeds on this page shown</source>
+        <translation>%shown von %count Feeds auf dieser Seite angezeigt</translation>
+    </message>
+    <message>
+        <source>Feeds on this page: %count</source>
+        <translation>Feeds auf dieser Seite: %count</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>No feed address: readers cannot reach it.</source>
+        <translation>Keine Feed-Adresse: Leser können ihn nicht erreichen.</translation>
+    </message>
+    <message>
+        <source>The list of feeds is empty.</source>
+        <translation>Die Liste der Feeds ist leer.</translation>
+    </message>
+    <message>
+        <source>No source: the feed has no items.</source>
+        <translation>Keine Quelle: Der Feed hat keine Einträge.</translation>
+    </message>
+    <message>
+        <source>%count sources no longer exist.</source>
+        <translation>%count Quellen existieren nicht mehr.</translation>
+    </message>
+    <message>
+        <source>No source address.</source>
+        <translation>Keine Quelladresse.</translation>
+    </message>
+    <message>
+        <source>The destination no longer exists.</source>
+        <translation>Das Ziel existiert nicht mehr.</translation>
+    </message>
+    <message>
+        <source>No destination is set.</source>
+        <translation>Kein Ziel festgelegt.</translation>
+    </message>
+    <message>
+        <source>No class is set for the imported items.</source>
+        <translation>Für die importierten Einträge ist keine Klasse festgelegt.</translation>
+    </message>
+    <message>
+        <source>Confirm removal</source>
+        <translation>Entfernen bestätigen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/search/stats</name>
@@ -14924,6 +19492,150 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>Which words visitors search for on the site, how often, and how many results they got on average. A phrase that is searched for often and finds nothing points to content that is missing, or to words the content does not use.</source>
+        <translation>Nach welchen Wörtern Besucher auf der Website suchen, wie oft und wie viele Treffer sie im Schnitt bekommen. Ein oft gesuchter Begriff ohne Treffer weist auf fehlende Inhalte hin oder auf Wörter, die die Inhalte nicht verwenden.</translation>
+    </message>
+    <message>
+        <source>The search statistics were reset. Counting starts again with the next search.</source>
+        <translation>Die Suchstatistik wurde zurückgesetzt. Mit der nächsten Suche beginnt die Zählung neu.</translation>
+    </message>
+    <message>
+        <source>No siteaccess records searches at the moment.</source>
+        <translation>Derzeit zeichnet kein Siteaccess Suchen auf.</translation>
+    </message>
+    <message>
+        <source>A search is only counted when the siteaccess the visitor searches in has LogSearchStats=enabled in the [SearchSettings] block of its site.ini; it is disabled by default. What is listed below was recorded earlier.</source>
+        <translation>Eine Suche wird nur gezählt, wenn der Siteaccess, in dem der Besucher sucht, LogSearchStats=enabled im Block [SearchSettings] seiner site.ini hat; standardmäßig ist es deaktiviert. Was unten steht, wurde früher aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Searches are recorded on: %siteaccesses.</source>
+        <translation>Suchen werden aufgezeichnet auf: %siteaccesses.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Different phrases</source>
+        <translation>Verschiedene Suchbegriffe</translation>
+    </message>
+    <message>
+        <source>Searches</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Phrases that found nothing</source>
+        <translation>Suchbegriffe ohne Treffer</translation>
+    </message>
+    <message>
+        <source>Of all searches found nothing</source>
+        <translation>aller Suchen fanden nichts</translation>
+    </message>
+    <message>
+        <source>Find phrases</source>
+        <translation>Suchbegriffe finden</translation>
+    </message>
+    <message>
+        <source>Find a phrase</source>
+        <translation>Einen Suchbegriff finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche löschen</translation>
+    </message>
+    <message>
+        <source>Any part of a phrase. Upper and lower case are the same.</source>
+        <translation>Ein beliebiger Teil eines Suchbegriffs. Groß- und Kleinschreibung spielen keine Rolle.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All phrases</source>
+        <translation>Alle Suchbegriffe</translation>
+    </message>
+    <message>
+        <source>Found nothing</source>
+        <translation>Ohne Treffer</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Most searched</source>
+        <translation>Am häufigsten gesucht</translation>
+    </message>
+    <message>
+        <source>Phrase A to Z</source>
+        <translation>Suchbegriff A bis Z</translation>
+    </message>
+    <message>
+        <source>Fewest results</source>
+        <translation>Wenigste Treffer</translation>
+    </message>
+    <message>
+        <source>Phrases</source>
+        <translation>Suchbegriffe</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>No search has been recorded yet. Searches appear here once a siteaccess records them (LogSearchStats=enabled) and visitors search.</source>
+        <translation>Es wurde noch keine Suche aufgezeichnet. Suchen erscheinen hier, sobald ein Siteaccess sie aufzeichnet (LogSearchStats=enabled) und Besucher suchen.</translation>
+    </message>
+    <message>
+        <source>No phrase matches this search. Search for a shorter part, or clear the search.</source>
+        <translation>Kein Suchbegriff passt. Suchen Sie nach einem kürzeren Teil oder löschen Sie die Suche.</translation>
+    </message>
+    <message>
+        <source>Every recorded phrase found at least one result.</source>
+        <translation>Jeder aufgezeichnete Suchbegriff fand mindestens einen Treffer.</translation>
+    </message>
+    <message>
+        <source>Search phrases with the number of searches and the average number of results</source>
+        <translation>Suchbegriffe mit der Zahl der Suchen und der durchschnittlichen Zahl der Treffer</translation>
+    </message>
+    <message>
+        <source>Share of the most searched phrase on this page</source>
+        <translation>Anteil am häufigsten gesuchten Begriff dieser Seite</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>Run this search in the administration interface to see what it finds now.</source>
+        <translation>Diese Suche in der Administrationsoberfläche ausführen, um zu sehen, was sie jetzt findet.</translation>
+    </message>
+    <message>
+        <source>Search now</source>
+        <translation>Jetzt suchen</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>This removes all %count recorded phrases and their counts for good, not only those shown. It cannot be undone.</source>
+        <translation>Damit werden alle %count aufgezeichneten Suchbegriffe mit ihren Zählungen endgültig entfernt, nicht nur die angezeigten. Das kann nicht rückgängig gemacht werden.</translation>
+    </message>
+    <message>
+        <source>Remove all recorded phrases</source>
+        <translation>Alle aufgezeichneten Suchbegriffe entfernen</translation>
+    </message>
+    <message>
+        <source>There is nothing to reset.</source>
+        <translation>Es gibt nichts zurückzusetzen.</translation>
     </message>
 </context>
 <context>
@@ -16010,6 +20722,522 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
+    <message>
+        <source>New setting in [%block]</source>
+        <translation>Neue Einstellung in [%block]</translation>
+    </message>
+    <message>
+        <source>INI file</source>
+        <translation>INI-Datei</translation>
+    </message>
+    <message>
+        <source>new</source>
+        <translation>neu</translation>
+    </message>
+    <message>
+        <source>This setting holds a secret. Its value is never shown: type a new one to replace it, or leave the field empty to keep the value it has.</source>
+        <translation>Diese Einstellung enthält ein Geheimnis. Ihr Wert wird nie angezeigt: Geben Sie einen neuen ein, um ihn zu ersetzen, oder lassen Sie das Feld leer, um den bisherigen Wert zu behalten.</translation>
+    </message>
+    <message>
+        <source>At the moment it is empty.</source>
+        <translation>Im Moment ist sie leer.</translation>
+    </message>
+    <message>
+        <source>At the moment it is set.</source>
+        <translation>Im Moment ist sie gesetzt.</translation>
+    </message>
+    <message>
+        <source>Velocity reads this setting only when it starts: after saving, restart it with ./console exp:velocity restart. PHP-FPM reads it on its next request.</source>
+        <translation>Velocity liest diese Einstellung nur beim Start: Starten Sie es nach dem Speichern mit ./console exp:velocity restart neu. PHP-FPM liest sie bei der nächsten Anfrage.</translation>
+    </message>
+    <message>
+        <source>Where it is set</source>
+        <translation>Wo sie gesetzt wird</translation>
+    </message>
+    <message>
+        <source>The files that set it, in the order they are read; the last one wins (an array collects the elements of all of them unless one empties it first).</source>
+        <translation>Die Dateien, die sie setzen, in der Lesereihenfolge; die letzte gewinnt (ein Array sammelt die Elemente aller Dateien, außer eine leert es zuerst).</translation>
+    </message>
+    <message>
+        <source>in effect</source>
+        <translation>wirksam</translation>
+    </message>
+    <message>
+        <source>elements in effect</source>
+        <translation>Elemente wirksam</translation>
+    </message>
+    <message>
+        <source>empties it, adds nothing</source>
+        <translation>leert es, fügt nichts hinzu</translation>
+    </message>
+    <message>
+        <source>overridden</source>
+        <translation>überschrieben</translation>
+    </message>
+    <message>
+        <source>empties the array: what earlier files added is dropped</source>
+        <translation>leert das Array: was frühere Dateien hinzugefügt haben, entfällt</translation>
+    </message>
+    <message>
+        <source>adds an element</source>
+        <translation>fügt ein Element hinzu</translation>
+    </message>
+    <message>
+        <source>sets the key, replacing an earlier one</source>
+        <translation>setzt den Schlüssel und ersetzt einen früheren</translation>
+    </message>
+    <message>
+        <source>No file sets it yet in this siteaccess.</source>
+        <translation>In diesem Siteaccess setzt sie noch keine Datei.</translation>
+    </message>
+    <message>
+        <source>New value</source>
+        <translation>Neuer Wert</translation>
+    </message>
+    <message>
+        <source>Letters, digits and _ * @ -.</source>
+        <translation>Buchstaben, Ziffern und _ * @ -.</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Change type</source>
+        <translation>Typ ändern</translation>
+    </message>
+    <message>
+        <source>One element per line: =value adds an element, [key]=value sets a key. Leave the first line empty to empty the array before these elements; without it they are added to what the earlier files give.</source>
+        <translation>Ein Element pro Zeile: =Wert fügt ein Element hinzu, [Schlüssel]=Wert setzt einen Schlüssel. Lassen Sie die erste Zeile leer, um das Array vor diesen Elementen zu leeren; ohne sie werden sie zu dem hinzugefügt, was frühere Dateien liefern.</translation>
+    </message>
+    <message>
+        <source>Leave empty to keep the value it has.</source>
+        <translation>Leer lassen, um den bisherigen Wert zu behalten.</translation>
+    </message>
+    <message>
+        <source>One line. A value cannot contain a line break or */.</source>
+        <translation>Eine Zeile. Ein Wert darf weder einen Zeilenumbruch noch */ enthalten.</translation>
+    </message>
+    <message>
+        <source>Save it in</source>
+        <translation>Speichern in</translation>
+    </message>
+    <message>
+        <source>Siteaccess %siteaccess only</source>
+        <translation>Nur Siteaccess %siteaccess</translation>
+    </message>
+    <message>
+        <source>Every siteaccess (global override)</source>
+        <translation>Alle Siteaccesses (globaler Override)</translation>
+    </message>
+    <message>
+        <source>In an extension</source>
+        <translation>In einer Erweiterung</translation>
+    </message>
+    <message>
+        <source>Changes the extension’s own settings file, which an update of the extension replaces. Prefer the siteaccess or the global override.</source>
+        <translation>Ändert die Einstellungsdatei der Erweiterung selbst, die ein Update der Erweiterung ersetzt. Besser den Siteaccess oder den globalen Override wählen.</translation>
+    </message>
+    <message>
+        <source>Saving clears the INI cache, so PHP-FPM and Velocity read the change on their next request.</source>
+        <translation>Speichern leert den INI-Cache, damit PHP-FPM und Velocity die Änderung bei ihrer nächsten Anfrage lesen.</translation>
+    </message>
+    <message>
+        <source>The file chosen above gets this value; the other files are not changed.</source>
+        <translation>Die oben gewählte Datei erhält diesen Wert; die anderen Dateien bleiben unverändert.</translation>
+    </message>
+    <message>
+        <source>The setting is added to the file chosen above.</source>
+        <translation>Die Einstellung wird der oben gewählten Datei hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Global override</source>
+        <translation>Globaler Override</translation>
+    </message>
+    <message>
+        <source>Siteaccess %siteaccess</source>
+        <translation>Siteaccess %siteaccess</translation>
+    </message>
+    <message>
+        <source>Extension %extension</source>
+        <translation>Erweiterung %extension</translation>
+    </message>
+    <message>
+        <source>Extension %extension for %siteaccess</source>
+        <translation>Erweiterung %extension für %siteaccess</translation>
+    </message>
+    <message>
+        <source>Extension %extension (%dir)</source>
+        <translation>Erweiterung %extension (%dir)</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Unbekannt</translation>
+    </message>
+    <message>
+        <source>The setting was not saved.</source>
+        <translation>Die Einstellung wurde nicht gespeichert.</translation>
+    </message>
+    <message>
+        <source>A value with a line break, a NUL byte or */ is refused, because it would change other settings or end the PHP comment that hides the file. Otherwise make sure the web server may write to %path and try again.</source>
+        <translation>Ein Wert mit Zeilenumbruch, NUL-Byte oder */ wird abgelehnt, weil er andere Einstellungen ändern oder den PHP-Kommentar beenden würde, der die Datei verbirgt. Andernfalls stellen Sie sicher, dass der Webserver in %path schreiben darf, und versuchen Sie es erneut.</translation>
+    </message>
+    <message>
+        <source>A name can contain letters, digits and _ * @ -.</source>
+        <translation>Ein Name darf Buchstaben, Ziffern und _ * @ - enthalten.</translation>
+    </message>
+    <message>
+        <source>Choose where to save the setting: the siteaccess, the global override or an active extension.</source>
+        <translation>Wählen Sie, wo die Einstellung gespeichert wird: im Siteaccess, im globalen Override oder in einer aktiven Erweiterung.</translation>
+    </message>
+    <message>
+        <source>This setting is read only (site.ini [eZINISettings] ReadonlySettingList) and cannot be changed here.</source>
+        <translation>Diese Einstellung ist schreibgeschützt (site.ini [eZINISettings] ReadonlySettingList) und kann hier nicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>%valfield does not contain valid array.</source>
+        <translation>%valfield enthält kein gültiges Array.</translation>
+    </message>
+    <message>
+        <source>A key cannot contain [ or ].</source>
+        <translation>Ein Schlüssel darf weder [ noch ] enthalten.</translation>
+    </message>
+    <message>
+        <source>%file in %siteaccess</source>
+        <translation>%file in %siteaccess</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>INI settings</source>
+        <translation>INI-Einstellungen</translation>
+    </message>
+    <message>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Jede INI-Datei wird in Schichten gelesen: zuerst settings/&lt;Datei&gt;.ini, dann die Dateien der aktiven Erweiterungen und des Siteaccess, dann settings/override. Eine spätere Datei gewinnt: Sie ersetzt einen einfachen Wert und ergänzt ein Array, außer sie leert es zuerst. Diese Seite zeigt den wirksamen Wert, die Datei, aus der er kommt, und jede Datei, die ihn setzt. Passwörter, Schlüssel, Tokens und andere Geheimnisse werden nie angezeigt.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation>Es wurde nichts geändert.</translation>
+    </message>
+    <message>
+        <source>Removed:</source>
+        <translation>Entfernt:</translation>
+    </message>
+    <message>
+        <source>Saved:</source>
+        <translation>Gespeichert:</translation>
+    </message>
+    <message>
+        <source>in</source>
+        <translation>in</translation>
+    </message>
+    <message>
+        <source>Cleared so that both servers read the change on their next request:</source>
+        <translation>Geleert, damit beide Server die Änderung bei ihrer nächsten Anfrage lesen:</translation>
+    </message>
+    <message>
+        <source>The INI cache could not be cleared. Until it is, neither PHP-FPM nor Velocity uses the change: run php bin/php/ezcache.php --clear-tag=ini.</source>
+        <translation>Der INI-Cache konnte nicht geleert werden. Bis dahin verwenden weder PHP-FPM noch Velocity die Änderung: führen Sie php bin/php/ezcache.php --clear-tag=ini aus.</translation>
+    </message>
+    <message>
+        <source>Velocity reads this setting only when it starts.</source>
+        <translation>Velocity liest diese Einstellung nur beim Start.</translation>
+    </message>
+    <message>
+        <source>Velocity is running: restart it with ./console exp:velocity restart for the change to reach it.</source>
+        <translation>Velocity läuft: Starten Sie es mit ./console exp:velocity restart neu, damit die Änderung ankommt.</translation>
+    </message>
+    <message>
+        <source>Velocity is not running here, so nothing more is needed.</source>
+        <translation>Velocity läuft hier nicht, es ist also nichts weiter nötig.</translation>
+    </message>
+    <message>
+        <source>There is no INI file of that name. Pick one from the list.</source>
+        <translation>Eine INI-Datei mit diesem Namen gibt es nicht. Wählen Sie eine aus der Liste.</translation>
+    </message>
+    <message>
+        <source>Show settings</source>
+        <translation>Einstellungen anzeigen</translation>
+    </message>
+    <message>
+        <source>Pick an INI file and a siteaccess to see its settings.</source>
+        <translation>Wählen Sie eine INI-Datei und einen Siteaccess, um die Einstellungen zu sehen.</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Blocks</source>
+        <translation>Blöcke</translation>
+    </message>
+    <message>
+        <source>Arrays</source>
+        <translation>Arrays</translation>
+    </message>
+    <message>
+        <source>Changed from the default</source>
+        <translation>Vom Standard geändert</translation>
+    </message>
+    <message>
+        <source>Without a default</source>
+        <translation>Ohne Standard</translation>
+    </message>
+    <message>
+        <source>Secrets, masked</source>
+        <translation>Geheimnisse, verborgen</translation>
+    </message>
+    <message>
+        <source>Files read</source>
+        <translation>Gelesene Dateien</translation>
+    </message>
+    <message>
+        <source>Not in effect yet</source>
+        <translation>Noch nicht wirksam</translation>
+    </message>
+    <message>
+        <source>%count settings in the files differ from what this server is running with. The INI cache still holds the old values: clear it (Setup &gt; Cache management, INI caches, or php bin/php/ezcache.php --clear-tag=ini). They are marked "Not in effect yet" below.</source>
+        <translation>%count Einstellungen in den Dateien weichen von dem ab, womit dieser Server läuft. Der INI-Cache enthält noch die alten Werte: leeren Sie ihn (Setup &gt; Cache-Verwaltung, INI-Caches, oder php bin/php/ezcache.php --clear-tag=ini). Sie sind unten mit „Noch nicht wirksam“ markiert.</translation>
+    </message>
+    <message>
+        <source>This page is served by Velocity. "In effect" compares the files with the settings this Velocity worker runs with; PHP-FPM can differ until its INI cache is read again.</source>
+        <translation>Diese Seite liefert Velocity. „Wirksam“ vergleicht die Dateien mit den Einstellungen, mit denen dieser Velocity-Worker läuft; PHP-FPM kann abweichen, bis sein INI-Cache neu gelesen wird.</translation>
+    </message>
+    <message>
+        <source>This page is served by PHP-FPM. "In effect" compares the files with the settings PHP-FPM runs with; open the page on the Velocity port to check Velocity.</source>
+        <translation>Diese Seite liefert PHP-FPM. „Wirksam“ vergleicht die Dateien mit den Einstellungen, mit denen PHP-FPM läuft; öffnen Sie die Seite auf dem Velocity-Port, um Velocity zu prüfen.</translation>
+    </message>
+    <message>
+        <source>Whether the values are in effect can only be checked for %siteaccess, the siteaccess this page runs in.</source>
+        <translation>Ob die Werte wirksam sind, lässt sich nur für %siteaccess prüfen, den Siteaccess, in dem diese Seite läuft.</translation>
+    </message>
+    <message>
+        <source>%count files of the load order could not be read by this server, so their settings are missing here and in what it runs with. Check their owner and permissions:</source>
+        <translation>%count Dateien der Ladereihenfolge konnte dieser Server nicht lesen; ihre Einstellungen fehlen hier und in dem, womit er läuft. Prüfen Sie Eigentümer und Rechte:</translation>
+    </message>
+    <message>
+        <source>The %count files read for %file, in order</source>
+        <translation>Die %count für %file gelesenen Dateien, in Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Later files win. The number is how many settings each file sets.</source>
+        <translation>Spätere Dateien gewinnen. Die Zahl gibt an, wie viele Einstellungen jede Datei setzt.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>not readable</source>
+        <translation>nicht lesbar</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Block, setting name or value. The values of secrets are never searched.</source>
+        <translation>Block, Name oder Wert einer Einstellung. Die Werte von Geheimnissen werden nie durchsucht.</translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation>Suchen in</translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation>Diese Datei</translation>
+    </message>
+    <message>
+        <source>Every file</source>
+        <translation>Alle Dateien</translation>
+    </message>
+    <message>
+        <source>Compare with siteaccess</source>
+        <translation>Mit Siteaccess vergleichen</translation>
+    </message>
+    <message>
+        <source>No comparison</source>
+        <translation>Kein Vergleich</translation>
+    </message>
+    <message>
+        <source>Only settings changed from the default</source>
+        <translation>Nur vom Standard geänderte Einstellungen</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alle anzeigen</translation>
+    </message>
+    <message>
+        <source>%count settings in every file match "%query"</source>
+        <translation>%count Einstellungen in allen Dateien passen zu „%query“</translation>
+    </message>
+    <message>
+        <source>In siteaccess %siteaccess. A file name leads to that setting.</source>
+        <translation>Im Siteaccess %siteaccess. Ein Dateiname führt zu der Einstellung.</translation>
+    </message>
+    <message>
+        <source>Value in effect</source>
+        <translation>Wirksamer Wert</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Aus</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>leer</translation>
+    </message>
+    <message>
+        <source>No setting matches.</source>
+        <translation>Keine Einstellung passt.</translation>
+    </message>
+    <message>
+        <source>%count settings of %file differ between %a and %b</source>
+        <translation>%count Einstellungen von %file unterscheiden sich zwischen %a und %b</translation>
+    </message>
+    <message>
+        <source>Only the settings whose value in effect differs are listed. A secret only says that it differs.</source>
+        <translation>Aufgeführt sind nur Einstellungen mit abweichendem wirksamem Wert. Bei einem Geheimnis steht nur, dass es abweicht.</translation>
+    </message>
+    <message>
+        <source>secret</source>
+        <translation>Geheimnis</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nicht gesetzt</translation>
+    </message>
+    <message>
+        <source>Both siteaccesses run with the same values.</source>
+        <translation>Beide Siteaccesses laufen mit denselben Werten.</translation>
+    </message>
+    <message>
+        <source>%shown of %total settings</source>
+        <translation>%shown von %total Einstellungen</translation>
+    </message>
+    <message>
+        <source>All %total settings</source>
+        <translation>Alle %total Einstellungen</translation>
+    </message>
+    <message>
+        <source>Only settings whose value in effect differs from settings/%file, or that it does not have.</source>
+        <translation>Nur Einstellungen, deren wirksamer Wert von settings/%file abweicht oder die dort fehlen.</translation>
+    </message>
+    <message>
+        <source>%total settings</source>
+        <translation>%total Einstellungen</translation>
+    </message>
+    <message>
+        <source>Add setting</source>
+        <translation>Einstellung hinzufügen</translation>
+    </message>
+    <message>
+        <source>Remove %setting from %file</source>
+        <translation>%setting aus %file entfernen</translation>
+    </message>
+    <message>
+        <source>Remove from %file</source>
+        <translation>Aus %file entfernen</translation>
+    </message>
+    <message>
+        <source>secret, masked</source>
+        <translation>Geheimnis, verborgen</translation>
+    </message>
+    <message>
+        <source>no default</source>
+        <translation>kein Standard</translation>
+    </message>
+    <message>
+        <source>changed</source>
+        <translation>geändert</translation>
+    </message>
+    <message>
+        <source>list of %count</source>
+        <translation>Liste mit %count</translation>
+    </message>
+    <message>
+        <source>%count keys</source>
+        <translation>%count Schlüssel</translation>
+    </message>
+    <message>
+        <source>%count elements, some with keys</source>
+        <translation>%count Elemente, einige mit Schlüssel</translation>
+    </message>
+    <message>
+        <source>Velocity reads it only when it starts</source>
+        <translation>Velocity liest sie nur beim Start</translation>
+    </message>
+    <message>
+        <source>Velocity restart</source>
+        <translation>Velocity-Neustart</translation>
+    </message>
+    <message>
+        <source>not in effect yet</source>
+        <translation>noch nicht wirksam</translation>
+    </message>
+    <message>
+        <source>set, hidden</source>
+        <translation>gesetzt, verborgen</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>gesetzt</translation>
+    </message>
+    <message>
+        <source>(password masked)</source>
+        <translation>(Passwort verborgen)</translation>
+    </message>
+    <message>
+        <source>empty array</source>
+        <translation>leeres Array</translation>
+    </message>
+    <message>
+        <source>Show %count more</source>
+        <translation>%count weitere anzeigen</translation>
+    </message>
+    <message>
+        <source>This server does not have this setting yet.</source>
+        <translation>Dieser Server kennt diese Einstellung noch nicht.</translation>
+    </message>
+    <message>
+        <source>This server still runs with: %value</source>
+        <translation>Dieser Server läuft noch mit: %value</translation>
+    </message>
+    <message>
+        <source>Default:</source>
+        <translation>Standard:</translation>
+    </message>
+    <message>
+        <source>Set in 1 file</source>
+        <translation>In 1 Datei gesetzt</translation>
+    </message>
+    <message>
+        <source>Set in %count files, %overridden overridden</source>
+        <translation>In %count Dateien gesetzt, %overridden überschrieben</translation>
+    </message>
+    <message>
+        <source>from</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>Edit %setting</source>
+        <translation>%setting bearbeiten</translation>
+    </message>
+    <message>
+        <source>Remove takes a ticked setting out of settings/override or the siteaccess file that sets it last; the value of the next file down, or the default, takes over. Settings from settings/%file and from extensions cannot be removed here.</source>
+        <translation>Entfernen nimmt eine angehakte Einstellung aus settings/override oder der Siteaccess-Datei, die sie zuletzt setzt; dann gilt der Wert der nächsten Datei darunter oder der Standard. Einstellungen aus settings/%file und aus Erweiterungen lassen sich hier nicht entfernen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup</name>
@@ -16403,6 +21631,522 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Empties APCu for the server process answering this page: every entry any application stored there is gone, including the memory tier of a Qbix response cache.</source>
         <translation>Leert APCu für den Serverprozess, der diese Seite beantwortet: Jeder Eintrag, den eine Anwendung dort gespeichert hat, ist weg, einschließlich der Speicherebene eines Qbix-Antwort-Caches.</translation>
+    </message>
+    <message>
+        <source>Clear INI caches</source>
+        <translation>INI-Caches leeren</translation>
+    </message>
+    <message>
+        <source>selected</source>
+        <translation>ausgewählt</translation>
+    </message>
+    <message>
+        <source>No cache is selected yet.</source>
+        <translation>Noch ist kein Cache ausgewählt.</translation>
+    </message>
+    <message>
+        <source>caches shown</source>
+        <translation>Caches angezeigt</translation>
+    </message>
+    <message>
+        <source>Caches</source>
+        <translation>Caches</translation>
+    </message>
+    <message>
+        <source>Every cache of this installation, what it holds and what clearing it reaches. A cleared cache is made again on the next requests, which are slower until then. The files are in var/, which Apache with PHP-FPM and Exponential Velocity share: clearing them here reaches both servers. Velocity keeps settings in memory and serves pages from its own response cache, so some caches ask for one more step, named where it is needed.</source>
+        <translation>Jeder Cache dieser Installation, was er enthält und was sein Leeren erreicht. Ein geleerter Cache wird bei den nächsten Anfragen neu aufgebaut, die bis dahin langsamer sind. Die Dateien liegen in var/, das Apache mit PHP-FPM und Exponential Velocity gemeinsam nutzen: hier geleert, erreicht es beide Server. Velocity hält Einstellungen im Speicher und liefert Seiten aus seinem eigenen Antwort-Cache, daher verlangen manche Caches einen weiteren Schritt, der dort genannt wird, wo er nötig ist.</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>A running Velocity still holds the old settings in memory: restart it with %command.</source>
+        <translation>Ein laufendes Velocity hält noch die alten Einstellungen im Speicher: starten Sie es mit %command neu.</translation>
+    </message>
+    <message>
+        <source>Velocity's response cache may serve pages made before this for a few seconds more; clear it below or with %command.</source>
+        <translation>Der Antwort-Cache von Velocity kann vorher erstellte Seiten noch einige Sekunden ausliefern; leeren Sie ihn unten oder mit %command.</translation>
+    </message>
+    <message>
+        <source>From a shell:</source>
+        <translation>In einer Shell:</translation>
+    </message>
+    <message>
+        <source>caches</source>
+        <translation>Caches</translation>
+    </message>
+    <message>
+        <source>groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>%files files on disk</source>
+        <translation>%files Dateien auf der Festplatte</translation>
+    </message>
+    <message>
+        <source>Measure the sizes</source>
+        <translation>Größen messen</translation>
+    </message>
+    <message>
+        <source>last clear</source>
+        <translation>letztes Leeren</translation>
+    </message>
+    <message>
+        <source>Clear all caches…</source>
+        <translation>Alle Caches leeren …</translation>
+    </message>
+    <message>
+        <source>These %count caches are cleared:</source>
+        <translation>Diese %count Caches werden geleert:</translation>
+    </message>
+    <message>
+        <source>The site is slow until they are made again, on every server that shares var/.</source>
+        <translation>Die Website ist langsam, bis sie neu aufgebaut sind, auf jedem Server, der var/ nutzt.</translation>
+    </message>
+    <message>
+        <source>Restart Velocity afterwards: it keeps settings in memory.</source>
+        <translation>Starten Sie Velocity danach neu: es hält Einstellungen im Speicher.</translation>
+    </message>
+    <message>
+        <source>The caches tagged %tag:</source>
+        <translation>Die Caches mit dem Tag %tag:</translation>
+    </message>
+    <message>
+        <source>Without sizes (faster)</source>
+        <translation>Ohne Größen (schneller)</translation>
+    </message>
+    <message>
+        <source>Measure sizes</source>
+        <translation>Größen messen</translation>
+    </message>
+    <message>
+        <source>Sizes were measured for this view, within three seconds; a size marked ≥ was cut short.</source>
+        <translation>Die Größen wurden für diese Ansicht gemessen, innerhalb von drei Sekunden; eine mit ≥ markierte Größe wurde vorzeitig abgebrochen.</translation>
+    </message>
+    <message>
+        <source>Sizes are measured only on request, as that reads every file.</source>
+        <translation>Größen werden nur auf Anfrage gemessen, da dabei jede Datei gelesen wird.</translation>
+    </message>
+    <message>
+        <source>Last cleared comes from the audit trail, with who cleared: clears through this page, System information, ./console exp:cache and bin/php/ezcache.php (which exp:velocity deploy runs) are recorded; a shell is named by its operating system user.</source>
+        <translation>„Zuletzt geleert“ kommt aus dem Audit-Protokoll, mit wer geleert hat: Leerungen über diese Seite, Systeminformationen, ./console exp:cache und bin/php/ezcache.php (das exp:velocity deploy ausführt) werden protokolliert; eine Shell wird mit ihrem Betriebssystembenutzer genannt.</translation>
+    </message>
+    <message>
+        <source>Who cleared is shown to users who may read the system channel of the audit.</source>
+        <translation>Wer geleert hat, sehen Benutzer, die den Systemkanal des Audits lesen dürfen.</translation>
+    </message>
+    <message>
+        <source>Last cleared comes from the expiry times the kernel records; the audit trail is not available here.</source>
+        <translation>„Zuletzt geleert“ kommt aus den Ablaufzeiten, die der Kernel festhält; das Audit-Protokoll ist hier nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Name, id, tag or directory</source>
+        <translation>Name, ID, Tag oder Verzeichnis</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>1 cache</source>
+        <translation>1 Cache</translation>
+    </message>
+    <message>
+        <source>%count caches</source>
+        <translation>%count Caches</translation>
+    </message>
+    <message>
+        <source>%files files</source>
+        <translation>%files Dateien</translation>
+    </message>
+    <message>
+        <source>restart Velocity after clearing</source>
+        <translation>Velocity nach dem Leeren neu starten</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Cache</source>
+        <translation>Cache</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Last cleared</source>
+        <translation>Zuletzt geleert</translation>
+    </message>
+    <message>
+        <source>tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message>
+        <source>not there yet</source>
+        <translation>noch nicht vorhanden</translation>
+    </message>
+    <message>
+        <source>no directory</source>
+        <translation>kein Verzeichnis</translation>
+    </message>
+    <message>
+        <source>disabled in the settings</source>
+        <translation>in den Einstellungen deaktiviert</translation>
+    </message>
+    <message>
+        <source>also in Velocity's response cache</source>
+        <translation>auch im Antwort-Cache von Velocity</translation>
+    </message>
+    <message>
+        <source>1 file</source>
+        <translation>1 Datei</translation>
+    </message>
+    <message>
+        <source>from a shell, %who</source>
+        <translation>aus einer Shell, %who</translation>
+    </message>
+    <message>
+        <source>by %who</source>
+        <translation>von %who</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nicht erfasst</translation>
+    </message>
+    <message>
+        <source>Clear this group…</source>
+        <translation>Diese Gruppe leeren …</translation>
+    </message>
+    <message>
+        <source>Clear %group</source>
+        <translation>%group leeren</translation>
+    </message>
+    <message>
+        <source>Hit rates and entries are on</source>
+        <translation>Trefferquoten und Einträge stehen unter</translation>
+    </message>
+    <message>
+        <source>Publishing already purges the pages it affects.</source>
+        <translation>Das Veröffentlichen löscht die betroffenen Seiten bereits.</translation>
+    </message>
+    <message>
+        <source>Remove dead entries</source>
+        <translation>Tote Einträge entfernen</translation>
+    </message>
+    <message>
+        <source>Reset counters</source>
+        <translation>Zähler zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Writes already invalidate the tables they touch; clear it after changing the database outside Exponential.</source>
+        <translation>Schreibvorgänge machen die berührten Tabellen bereits ungültig; leeren Sie ihn nach Änderungen an der Datenbank außerhalb von Exponential.</translation>
+    </message>
+    <message>
+        <source>Reset the counters</source>
+        <translation>Die Zähler zurücksetzen</translation>
+    </message>
+    <message>
+        <source>SQL profile of every request</source>
+        <translation>SQL-Profil jeder Anfrage</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>an</translation>
+    </message>
+    <message>
+        <source>Each request writes how many statements it ran to var/tmp/sql_profile.log, on every server.</source>
+        <translation>Jede Anfrage schreibt auf jedem Server in var/tmp/sql_profile.log, wie viele Anweisungen sie ausgeführt hat.</translation>
+    </message>
+    <message>
+        <source>Switch the SQL profile off</source>
+        <translation>SQL-Profil ausschalten</translation>
+    </message>
+    <message>
+        <source>Switch the SQL profile on</source>
+        <translation>SQL-Profil einschalten</translation>
+    </message>
+    <message>
+        <source>Velocity response cache</source>
+        <translation>Antwort-Cache von Velocity</translation>
+    </message>
+    <message>
+        <source>%files files, %size</source>
+        <translation>%files Dateien, %size</translation>
+    </message>
+    <message>
+        <source>Pages Velocity answers without PHP, for a few seconds each.</source>
+        <translation>Seiten, die Velocity ohne PHP beantwortet, jeweils für einige Sekunden.</translation>
+    </message>
+    <message>
+        <source>Last cleared %time.</source>
+        <translation>Zuletzt geleert %time.</translation>
+    </message>
+    <message>
+        <source>Clear Velocity's response cache</source>
+        <translation>Antwort-Cache von Velocity leeren</translation>
+    </message>
+    <message>
+        <source>Of the server process that answered this page only; another server or pool keeps its own.</source>
+        <translation>Nur des Serverprozesses, der diese Seite beantwortet hat; ein anderer Server oder Pool hat seinen eigenen.</translation>
+    </message>
+    <message>
+        <source>Every entry any application stored there is gone, including the memory tier of Velocity's response cache.</source>
+        <translation>Jeder Eintrag, den eine Anwendung dort abgelegt hat, ist weg, auch die Speicherstufe des Antwort-Caches von Velocity.</translation>
+    </message>
+    <message>
+        <source>Select all shown</source>
+        <translation>Alle angezeigten auswählen</translation>
+    </message>
+    <message>
+        <source>Tick caches in the lists above, then clear them.</source>
+        <translation>Markieren Sie Caches in den Listen oben und leeren Sie sie dann.</translation>
+    </message>
+    <message>
+        <source>These caches are cleared:</source>
+        <translation>Diese Caches werden geleert:</translation>
+    </message>
+    <message>
+        <source>Clear them</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>pages stored as files, answered by the web server without the CMS</source>
+        <translation>als Dateien gespeicherte Seiten, vom Webserver ohne das CMS ausgeliefert</translation>
+    </message>
+    <message>
+        <source>From a shell</source>
+        <translation>In einer Shell</translation>
+    </message>
+    <message>
+        <source>the commands that do what this page does</source>
+        <translation>die Befehle, die tun, was diese Seite tut</translation>
+    </message>
+    <message>
+        <source>One cache or several, by id</source>
+        <translation>Ein oder mehrere Caches, nach ID</translation>
+    </message>
+    <message>
+        <source>By tag</source>
+        <translation>Nach Tag</translation>
+    </message>
+    <message>
+        <source>What would be cleared, with sizes, without clearing</source>
+        <translation>Was geleert würde, mit Größen, ohne zu leeren</translation>
+    </message>
+    <message>
+        <source>Velocity's response cache</source>
+        <translation>Antwort-Cache von Velocity</translation>
+    </message>
+    <message>
+        <source>Velocity, after settings changed</source>
+        <translation>Velocity, nach geänderten Einstellungen</translation>
+    </message>
+    <message>
+        <source>Every cache was cleared.</source>
+        <translation>Jeder Cache wurde geleert.</translation>
+    </message>
+    <message>
+        <source>The caches tagged %tag were cleared.</source>
+        <translation>Die Caches mit dem Tag %tag wurden geleert.</translation>
+    </message>
+    <message>
+        <source>The selected caches were cleared.</source>
+        <translation>Die ausgewählten Caches wurden geleert.</translation>
+    </message>
+    <message>
+        <source>No cache was selected.</source>
+        <translation>Es wurde kein Cache ausgewählt.</translation>
+    </message>
+    <message>
+        <source>The caches of the group were cleared.</source>
+        <translation>Die Caches der Gruppe wurden geleert.</translation>
+    </message>
+    <message>
+        <source>That group has no cache to clear.</source>
+        <translation>Diese Gruppe hat keinen Cache zum Leeren.</translation>
+    </message>
+    <message>
+        <source>Content and views</source>
+        <translation>Inhalte und Ansichten</translation>
+    </message>
+    <message>
+        <source>Rendered views, URL aliases, class and user information.</source>
+        <translation>Gerenderte Ansichten, URL-Aliase, Klassen- und Benutzerinformationen.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Compiled templates, template blocks, overrides and packed scripts.</source>
+        <translation>Kompilierte Templates, Template-Blöcke, Overrides und gepackte Skripte.</translation>
+    </message>
+    <message>
+        <source>INI and settings</source>
+        <translation>INI und Einstellungen</translation>
+    </message>
+    <message>
+        <source>Settings, extensions and translations. A running Velocity keeps settings in memory: restart it after clearing them.</source>
+        <translation>Einstellungen, Erweiterungen und Übersetzungen. Ein laufendes Velocity hält Einstellungen im Speicher: starten Sie es nach dem Leeren neu.</translation>
+    </message>
+    <message>
+        <source>Images</source>
+        <translation>Bilder</translation>
+    </message>
+    <message>
+        <source>Image variations, made again when an image is next shown.</source>
+        <translation>Bildvarianten, die neu erstellt werden, wenn ein Bild das nächste Mal angezeigt wird.</translation>
+    </message>
+    <message>
+        <source>Pages, queries and the server</source>
+        <translation>Seiten, Abfragen und der Server</translation>
+    </message>
+    <message>
+        <source>The HTTP cache, the SQL query cache, Velocity's response cache and the PHP caches of the server that answered.</source>
+        <translation>Der HTTP-Cache, der SQL-Abfrage-Cache, der Antwort-Cache von Velocity und die PHP-Caches des Servers, der geantwortet hat.</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Sonstige</translation>
+    </message>
+    <message>
+        <source>Caches of extensions that belong to no other group.</source>
+        <translation>Caches von Erweiterungen, die zu keiner anderen Gruppe gehören.</translation>
+    </message>
+    <message>
+        <source>The rendered views of content: what a page shows of each object, per view mode and user.</source>
+        <translation>Die gerenderten Ansichten von Inhalten: was eine Seite von jedem Objekt zeigt, pro Ansichtsmodus und Benutzer.</translation>
+    </message>
+    <message>
+        <source>Whole pages per permission context, answered before the kernel starts.</source>
+        <translation>Ganze Seiten pro Berechtigungskontext, beantwortet bevor der Kernel startet.</translation>
+    </message>
+    <message>
+        <source>Results of SQL queries, kept until a write touches their tables.</source>
+        <translation>Ergebnisse von SQL-Abfragen, aufbewahrt, bis ein Schreibvorgang ihre Tabellen berührt.</translation>
+    </message>
+    <message>
+        <source>The settings files read once for every siteaccess.</source>
+        <translation>Die Einstellungsdateien, einmal für jeden Siteaccess gelesen.</translation>
+    </message>
+    <message>
+        <source>The settings of each siteaccess, merged from every override.</source>
+        <translation>Die Einstellungen jedes Siteaccess, aus jedem Override zusammengeführt.</translation>
+    </message>
+    <message>
+        <source>Character set conversion tables.</source>
+        <translation>Tabellen zur Zeichensatzumwandlung.</translation>
+    </message>
+    <message>
+        <source>The identifiers of content classes and their attributes.</source>
+        <translation>Die Bezeichner von Inhaltsklassen und ihren Attributen.</translation>
+    </message>
+    <message>
+        <source>The sort keys of content classes.</source>
+        <translation>Die Sortierschlüssel von Inhaltsklassen.</translation>
+    </message>
+    <message>
+        <source>URL wildcards and their translations.</source>
+        <translation>URL-Platzhalter und ihre Übersetzungen.</translation>
+    </message>
+    <message>
+        <source>Character transformation tables for URLs and search.</source>
+        <translation>Zeichenumwandlungstabellen für URLs und die Suche.</translation>
+    </message>
+    <message>
+        <source>Image variations (aliases) made from uploaded images.</source>
+        <translation>Bildvarianten (Aliase), aus hochgeladenen Bildern erstellt.</translation>
+    </message>
+    <message>
+        <source>Templates compiled to PHP.</source>
+        <translation>Nach PHP kompilierte Templates.</translation>
+    </message>
+    <message>
+        <source>The cache-blocks of templates, such as the page layout's menus.</source>
+        <translation>Die Cache-Blöcke von Templates, etwa die Menüs des Seitenlayouts.</translation>
+    </message>
+    <message>
+        <source>Which template answers which view, worked out from the override settings.</source>
+        <translation>Welches Template welche Ansicht beantwortet, aus den Override-Einstellungen ermittelt.</translation>
+    </message>
+    <message>
+        <source>Images made from text.</source>
+        <translation>Aus Text erzeugte Bilder.</translation>
+    </message>
+    <message>
+        <source>Generated RSS feeds.</source>
+        <translation>Erzeugte RSS-Feeds.</translation>
+    </message>
+    <message>
+        <source>Each user's roles, policies and groups.</source>
+        <translation>Rollen, Richtlinien und Gruppen jedes Benutzers.</translation>
+    </message>
+    <message>
+        <source>The content tree of the administration, as browsers keep it.</source>
+        <translation>Der Inhaltsbaum der Administration, wie Browser ihn aufbewahren.</translation>
+    </message>
+    <message>
+        <source>Object states used in policy limitations.</source>
+        <translation>In Richtlinienbeschränkungen verwendete Objektzustände.</translation>
+    </message>
+    <message>
+        <source>The content languages of the site.</source>
+        <translation>Die Inhaltssprachen der Website.</translation>
+    </message>
+    <message>
+        <source>Which design directories each siteaccess uses.</source>
+        <translation>Welche Design-Verzeichnisse jeder Siteaccess verwendet.</translation>
+    </message>
+    <message>
+        <source>The list of active extensions.</source>
+        <translation>Die Liste der aktiven Erweiterungen.</translation>
+    </message>
+    <message>
+        <source>Compiled translations of the interface.</source>
+        <translation>Kompilierte Übersetzungen der Oberfläche.</translation>
+    </message>
+    <message>
+        <source>The SSL zones of the site.</source>
+        <translation>Die SSL-Zonen der Website.</translation>
+    </message>
+    <message>
+        <source>Answers of the REST interface.</source>
+        <translation>Antworten der REST-Schnittstelle.</translation>
+    </message>
+    <message>
+        <source>The routes of the REST interface.</source>
+        <translation>Die Routen der REST-Schnittstelle.</translation>
+    </message>
+    <message>
+        <source>Packed and minified scripts and style sheets.</source>
+        <translation>Gepackte und minimierte Skripte und Stylesheets.</translation>
+    </message>
+    <message>
+        <source>just now</source>
+        <translation>gerade eben</translation>
+    </message>
+    <message>
+        <source>%n minutes ago</source>
+        <translation>vor %n Minuten</translation>
+    </message>
+    <message>
+        <source>%n hours ago</source>
+        <translation>vor %n Stunden</translation>
     </message>
 </context>
 <context>
@@ -17180,6 +22924,338 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Writing %file did not give the expected settings, so the previous file was put back (a copy is in %backup).</source>
         <translation>Das Schreiben von %file ergab nicht die erwarteten Einstellungen, daher wurde die vorherige Datei wiederhergestellt (eine Kopie liegt in %backup).</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Erweiterungen</translation>
+    </message>
+    <message>
+        <source>Every extension this installation can see, in one list. The active ones come first, in the order of ActiveExtensions in %file: an extension higher in the list has the higher priority for settings, templates and designs. Move, activate and deactivate them here, then review and apply the changes in one step.</source>
+        <translation>Alle Erweiterungen, die diese Installation sieht, in einer Liste. Die aktiven stehen zuerst, in der Reihenfolge von ActiveExtensions in %file: Eine Erweiterung weiter oben hat Vorrang bei Einstellungen, Templates und Designs. Verschieben, aktivieren und deaktivieren Sie sie hier, prüfen Sie die Änderungen und übernehmen Sie sie in einem Schritt.</translation>
+    </message>
+    <message>
+        <source>The extensions were not changed.</source>
+        <translation>Die Erweiterungen wurden nicht geändert.</translation>
+    </message>
+    <message>
+        <source>Activated: %names</source>
+        <translation>Aktiviert: %names</translation>
+    </message>
+    <message>
+        <source>Deactivated: %names</source>
+        <translation>Deaktiviert: %names</translation>
+    </message>
+    <message>
+        <source>Moved: %names</source>
+        <translation>Verschoben: %names</translation>
+    </message>
+    <message>
+        <source>The autoload arrays were regenerated, and the INI, template override, design and active extension caches were cleared.</source>
+        <translation>Die Autoload-Arrays wurden neu erzeugt, und die Caches für INI, Template-Overrides, Designs und aktive Erweiterungen wurden geleert.</translation>
+    </message>
+    <message>
+        <source>Velocity is running: restart it with ./console exp:velocity restart, so that its workers load the new list.</source>
+        <translation>Velocity läuft: Starten Sie es mit ./console exp:velocity restart neu, damit seine Worker die neue Liste laden.</translation>
+    </message>
+    <message>
+        <source>If this installation is also served by Velocity, restart it with ./console exp:velocity restart, so that its workers load the new list.</source>
+        <translation>Wenn diese Installation auch von Velocity ausgeliefert wird, starten Sie es mit ./console exp:velocity restart neu, damit seine Worker die neue Liste laden.</translation>
+    </message>
+    <message>
+        <source>Velocity is not running here, so nothing more is needed.</source>
+        <translation>Velocity läuft hier nicht, es ist also nichts weiter nötig.</translation>
+    </message>
+    <message>
+        <source>The active extensions were changed elsewhere since this page was drawn, so the list below starts again from the file. Make your changes again.</source>
+        <translation>Die aktiven Erweiterungen wurden anderswo geändert, seit diese Seite angezeigt wurde. Die Liste unten beginnt deshalb wieder mit dem Stand der Datei. Nehmen Sie Ihre Änderungen erneut vor.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Inactive</source>
+        <translation>Inaktiv</translation>
+    </message>
+    <message>
+        <source>Only for siteaccesses</source>
+        <translation>Nur für Siteaccesses</translation>
+    </message>
+    <message>
+        <source>Git checkouts</source>
+        <translation>Git-Checkouts</translation>
+    </message>
+    <message>
+        <source>With problems</source>
+        <translation>Mit Problemen</translation>
+    </message>
+    <message>
+        <source>ExtensionOrdering is enabled, so the system loads the active extensions in the order their extension.xml dependencies (requires, uses, extends) give, and the written order only decides where nothing is declared. %count of %total load at another position than written; each card says where.</source>
+        <translation>ExtensionOrdering ist eingeschaltet: Das System lädt die aktiven Erweiterungen in der Reihenfolge, die ihre Abhängigkeiten in extension.xml (requires, uses, extends) vorgeben; die geschriebene Reihenfolge entscheidet nur, wo nichts angegeben ist. %count von %total werden an einer anderen Stelle geladen als geschrieben; jede Karte sagt, wo.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Review the changes</source>
+        <translation>Änderungen prüfen</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Apply changes writes the list below to %file, keeps a copy of the previous file, regenerates the autoload arrays and clears the caches built on the list.</source>
+        <translation>Noch ist nichts geschrieben. „Änderungen übernehmen“ schreibt die Liste unten nach %file, behält eine Kopie der bisherigen Datei, erzeugt die Autoload-Arrays neu und leert die Caches, die auf der Liste aufbauen.</translation>
+    </message>
+    <message>
+        <source>Activated</source>
+        <translation>Aktiviert</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Deactivated</source>
+        <translation>Deaktiviert</translation>
+    </message>
+    <message>
+        <source>Moved</source>
+        <translation>Verschoben</translation>
+    </message>
+    <message>
+        <source>The ActiveExtensions lines after the change (changed lines marked):</source>
+        <translation>Die ActiveExtensions-Zeilen nach der Änderung (geänderte Zeilen markiert):</translation>
+    </message>
+    <message>
+        <source>activated</source>
+        <translation>aktiviert</translation>
+    </message>
+    <message>
+        <source>moved</source>
+        <translation>verschoben</translation>
+    </message>
+    <message>
+        <source>Tick the box to confirm the risks above, or go back and change the plan.</source>
+        <translation>Bestätigen Sie die Risiken oben mit dem Kästchen, oder gehen Sie zurück und ändern Sie den Plan.</translation>
+    </message>
+    <message>
+        <source>I have read the risks above and want to apply these changes anyway.</source>
+        <translation>Ich habe die Risiken oben gelesen und möchte die Änderungen trotzdem übernehmen.</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Zurück zur Liste</translation>
+    </message>
+    <message>
+        <source>Discard changes</source>
+        <translation>Änderungen verwerfen</translation>
+    </message>
+    <message>
+        <source>Not applied yet: %added to activate, %removed to deactivate, %moved moved.</source>
+        <translation>Noch nicht übernommen: %added zu aktivieren, %removed zu deaktivieren, %moved verschoben.</translation>
+    </message>
+    <message>
+        <source>The order was changed. Nothing is written until you review and apply it.</source>
+        <translation>Die Reihenfolge wurde geändert. Geschrieben wird erst, wenn Sie sie prüfen und übernehmen.</translation>
+    </message>
+    <message>
+        <source>Review changes</source>
+        <translation>Änderungen prüfen</translation>
+    </message>
+    <message>
+        <source>Find extensions</source>
+        <translation>Erweiterungen finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Name, description or license</source>
+        <translation>Name, Beschreibung oder Lizenz</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Probleme</translation>
+    </message>
+    <message>
+        <source>All extensions</source>
+        <translation>Alle Erweiterungen</translation>
+    </message>
+    <message>
+        <source>Use the arrows to move an active extension, or drag it by its grip (on the grip, the up and down arrow keys move it too). Activate places an extension after the extensions it requires and before the ones it extends, otherwise at the end.</source>
+        <translation>Verschieben Sie eine aktive Erweiterung mit den Pfeilen oder ziehen Sie sie am Griff (auf dem Griff verschieben auch die Pfeiltasten nach oben und unten). „Aktivieren“ setzt eine Erweiterung hinter die Erweiterungen, die sie benötigt, und vor die, die sie erweitert, sonst ans Ende.</translation>
+    </message>
+    <message>
+        <source>No extension matches.</source>
+        <translation>Keine Erweiterung passt.</translation>
+    </message>
+    <message>
+        <source>%name is now number %position.</source>
+        <translation>%name ist jetzt Nummer %position.</translation>
+    </message>
+    <message>
+        <source>Showing %shown of %total extensions.</source>
+        <translation>%shown von %total Erweiterungen angezeigt.</translation>
+    </message>
+    <message>
+        <source>Position in ActiveExtensions</source>
+        <translation>Position in ActiveExtensions</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>Move %name: drag, or use the up and down arrow keys</source>
+        <translation>%name verschieben: ziehen oder die Pfeiltasten nach oben und unten verwenden</translation>
+    </message>
+    <message>
+        <source>Not in ActiveExtensions</source>
+        <translation>Nicht in ActiveExtensions</translation>
+    </message>
+    <message>
+        <source>Will be activated</source>
+        <translation>Wird aktiviert</translation>
+    </message>
+    <message>
+        <source>Will be deactivated</source>
+        <translation>Wird deaktiviert</translation>
+    </message>
+    <message>
+        <source>Moved from %position</source>
+        <translation>Verschoben von %position</translation>
+    </message>
+    <message>
+        <source>ActiveAccessExtensions of this siteaccess</source>
+        <translation>ActiveAccessExtensions dieses Siteaccess</translation>
+    </message>
+    <message>
+        <source>Access extension: %siteaccess</source>
+        <translation>Access-Erweiterung: %siteaccess</translation>
+    </message>
+    <message>
+        <source>A git checkout: updated with git, not by a package</source>
+        <translation>Ein Git-Checkout: wird mit Git aktualisiert, nicht über ein Paket</translation>
+    </message>
+    <message>
+        <source>Not installed</source>
+        <translation>Nicht installiert</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Warnung</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Website</translation>
+    </message>
+    <message>
+        <source>Loads as</source>
+        <translation>Geladen als</translation>
+    </message>
+    <message>
+        <source>number %position (dependency order)</source>
+        <translation>Nummer %position (Reihenfolge der Abhängigkeiten)</translation>
+    </message>
+    <message>
+        <source>Requires</source>
+        <translation>Benötigt</translation>
+    </message>
+    <message>
+        <source>Uses</source>
+        <translation>Verwendet</translation>
+    </message>
+    <message>
+        <source>Extends</source>
+        <translation>Erweitert</translation>
+    </message>
+    <message>
+        <source>Needed by</source>
+        <translation>Benötigt von</translation>
+    </message>
+    <message>
+        <source>Designs in use</source>
+        <translation>Verwendete Designs</translation>
+    </message>
+    <message>
+        <source>Deactivate %name</source>
+        <translation>%name deaktivieren</translation>
+    </message>
+    <message>
+        <source>Deactivate</source>
+        <translation>Deaktivieren</translation>
+    </message>
+    <message>
+        <source>Remove from the list</source>
+        <translation>Aus der Liste entfernen</translation>
+    </message>
+    <message>
+        <source>Activate %name</source>
+        <translation>%name aktivieren</translation>
+    </message>
+    <message>
+        <source>Changes are written only by Apply changes, after the review. Regenerate the autoload arrays after adding classes to an extension.</source>
+        <translation>Änderungen werden erst mit „Änderungen übernehmen“ nach der Prüfung geschrieben. Erzeugen Sie die Autoload-Arrays neu, nachdem Sie einer Erweiterung Klassen hinzugefügt haben.</translation>
+    </message>
+    <message>
+        <source>Regenerate autoload arrays</source>
+        <translation>Autoload-Arrays neu erzeugen</translation>
+    </message>
+    <message>
+        <source>The autoload arrays of the extensions were regenerated.</source>
+        <translation>Die Autoload-Arrays der Erweiterungen wurden neu erzeugt.</translation>
+    </message>
+    <message>
+        <source>Listed in ActiveExtensions, but its directory is missing.</source>
+        <translation>In ActiveExtensions eingetragen, aber ihr Verzeichnis fehlt.</translation>
+    </message>
+    <message>
+        <source>Requires %other, which is not active.</source>
+        <translation>Benötigt %other, das nicht aktiv ist.</translation>
+    </message>
+    <message>
+        <source>Needs %other, which is written later in the list.</source>
+        <translation>Benötigt %other, das weiter unten in der Liste steht.</translation>
+    </message>
+    <message>
+        <source>Extends %other, which is written earlier in the list.</source>
+        <translation>Erweitert %other, das weiter oben in der Liste steht.</translation>
+    </message>
+    <message>
+        <source>Changes %file, which %other ships in full and loads earlier: single values of %other win.</source>
+        <translation>Ändert %file, das %other vollständig mitbringt und früher lädt: Einzelwerte von %other haben Vorrang.</translation>
+    </message>
+    <message>
+        <source>%name is deactivated, but %other stays active and requires it.</source>
+        <translation>%name wird deaktiviert, aber %other bleibt aktiv und benötigt es.</translation>
+    </message>
+    <message>
+        <source>%name is deactivated, but the siteaccesses %siteaccesses use its design %design, which no other active extension provides.</source>
+        <translation>%name wird deaktiviert, aber die Siteaccesses %siteaccesses verwenden sein Design %design, das keine andere aktive Erweiterung bereitstellt.</translation>
+    </message>
+    <message>
+        <source>%name is deactivated: this switches off %what.</source>
+        <translation>%name wird deaktiviert: Damit wird %what abgeschaltet.</translation>
+    </message>
+    <message>
+        <source>Only the written order changes. The declared dependencies decide the loading order of these extensions, so they load in the same order as before.</source>
+        <translation>Nur die geschriebene Reihenfolge ändert sich. Die angegebenen Abhängigkeiten bestimmen die Ladereihenfolge dieser Erweiterungen, sie werden also in derselben Reihenfolge wie bisher geladen.</translation>
+    </message>
+    <message>
+        <source>the CSRF protection of every form</source>
+        <translation>den CSRF-Schutz aller Formulare</translation>
+    </message>
+    <message>
+        <source>the scripts and styles of the administration</source>
+        <translation>die Skripte und Styles der Administration</translation>
     </message>
 </context>
 <context>
@@ -18147,6 +24223,874 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Mails, feeds and links made outside a request (cronjobs, notifications) use this setting. Set it in settings/siteaccess/%siteaccess/site.ini.append.php.</source>
         <translation>E-Mails, Feeds und Links, die außerhalb einer Anfrage erzeugt werden (Cronjobs, Benachrichtigungen), verwenden diese Einstellung. Setzen Sie sie in settings/siteaccess/%siteaccess/site.ini.append.php.</translation>
     </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Warnung</translation>
+    </message>
+    <message>
+        <source>Failure</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Hinweis</translation>
+    </message>
+    <message>
+        <source>What this installation runs on, as the server that answered this page sees it, and what needs attention. Nothing here changes the site. To ask for help, download the report: passwords, keys, session ids and full server paths are left out.</source>
+        <translation>Worauf diese Installation läuft, so wie der Server sie sieht, der diese Seite beantwortet hat, und was Aufmerksamkeit braucht. Nichts hier verändert die Website. Um Hilfe zu bitten, laden Sie den Bericht herunter: Passwörter, Schlüssel, Session-IDs und vollständige Serverpfade sind darin nicht enthalten.</translation>
+    </message>
+    <message>
+        <source>This page was answered by</source>
+        <translation>Diese Seite wurde beantwortet von</translation>
+    </message>
+    <message>
+        <source>PHP-FPM pool %pool</source>
+        <translation>PHP-FPM-Pool %pool</translation>
+    </message>
+    <message>
+        <source>Each server has its own PHP, OPcache and settings: Apache with PHP-FPM and Exponential Velocity show different figures. Open this page on the other server to see its own.</source>
+        <translation>Jeder Server hat sein eigenes PHP, seinen eigenen OPcache und eigene Einstellungen: Apache mit PHP-FPM und Exponential Velocity zeigen unterschiedliche Werte. Öffnen Sie diese Seite auf dem anderen Server, um dessen Werte zu sehen.</translation>
+    </message>
+    <message>
+        <source>The report was copied to the clipboard.</source>
+        <translation>Der Bericht wurde in die Zwischenablage kopiert.</translation>
+    </message>
+    <message>
+        <source>Select the text of the report below and copy it.</source>
+        <translation>Markieren Sie den Text des Berichts unten und kopieren Sie ihn.</translation>
+    </message>
+    <message>
+        <source>Copy report as text</source>
+        <translation>Bericht als Text kopieren</translation>
+    </message>
+    <message>
+        <source>Download report (.txt)</source>
+        <translation>Bericht herunterladen (.txt)</translation>
+    </message>
+    <message>
+        <source>Download as JSON</source>
+        <translation>Als JSON herunterladen</translation>
+    </message>
+    <message>
+        <source>Without sizes (faster)</source>
+        <translation>Ohne Größen (schneller)</translation>
+    </message>
+    <message>
+        <source>Measure sizes</source>
+        <translation>Größen messen</translation>
+    </message>
+    <message>
+        <source>Generated %time.</source>
+        <translation>Erstellt %time.</translation>
+    </message>
+    <message>
+        <source>Sizes were measured for this view, within three seconds; a size marked ≥ was cut short.</source>
+        <translation>Die Größen wurden für diese Ansicht gemessen, innerhalb von drei Sekunden; eine mit ≥ markierte Größe wurde vorzeitig abgebrochen.</translation>
+    </message>
+    <message>
+        <source>Sizes of var/, the cache directories and a database on a server are measured only on request, as that reads every file.</source>
+        <translation>Die Größen von var/, der Cache-Verzeichnisse und einer Datenbank auf einem Server werden nur auf Anfrage gemessen, da dabei jede Datei gelesen wird.</translation>
+    </message>
+    <message>
+        <source>Health checks</source>
+        <translation>Zustandsprüfungen</translation>
+    </message>
+    <message>
+        <source>What needs attention first, each with what to do. Checked for the server that answered.</source>
+        <translation>Was zuerst Aufmerksamkeit braucht, jeweils mit dem, was zu tun ist. Geprüft für den Server, der geantwortet hat.</translation>
+    </message>
+    <message>
+        <source>failures</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>warnings</source>
+        <translation>Warnungen</translation>
+    </message>
+    <message>
+        <source>notes</source>
+        <translation>Hinweise</translation>
+    </message>
+    <message>
+        <source>in order</source>
+        <translation>in Ordnung</translation>
+    </message>
+    <message>
+        <source>%count checks in order</source>
+        <translation>%count Prüfungen in Ordnung</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Aktive Erweiterungen</translation>
+    </message>
+    <message>
+        <source>in load order, with the version their extension.xml, ezinfo.php or composer.json states</source>
+        <translation>in Ladereihenfolge, mit der Version, die ihre extension.xml, ezinfo.php oder composer.json angibt</translation>
+    </message>
+    <message>
+        <source>Their authors, licences and websites are on</source>
+        <translation>Ihre Autoren, Lizenzen und Websites stehen unter</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Über</translation>
+    </message>
+    <message>
+        <source>PHP extensions and settings</source>
+        <translation>PHP-Erweiterungen und -Einstellungen</translation>
+    </message>
+    <message>
+        <source>extensions</source>
+        <translation>Erweiterungen</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>an</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>gesetzt</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nicht gesetzt</translation>
+    </message>
+    <message>
+        <source>The full PHP configuration of this server process, without the request and the environment (they carry the sign-in and the session cookie):</source>
+        <translation>Die vollständige PHP-Konfiguration dieses Serverprozesses, ohne die Anfrage und die Umgebung (sie enthalten die Anmeldung und das Session-Cookie):</translation>
+    </message>
+    <message>
+        <source>PHP details (phpinfo)</source>
+        <translation>PHP-Details (phpinfo)</translation>
+    </message>
+    <message>
+        <source>Site addresses</source>
+        <translation>Adressen der Website</translation>
+    </message>
+    <message>
+        <source>figures of the process that answered</source>
+        <translation>Werte des Prozesses, der geantwortet hat</translation>
+    </message>
+    <message>
+        <source>Individual files on disk</source>
+        <translation>Einzelne Dateien auf der Festplatte</translation>
+    </message>
+    <message>
+        <source>%size, built %built</source>
+        <translation>%size, erstellt %built</translation>
+    </message>
+    <message>
+        <source>Database connection</source>
+        <translation>Datenbankverbindung</translation>
+    </message>
+    <message>
+        <source>Read replica</source>
+        <translation>Lesereplikat</translation>
+    </message>
+    <message>
+        <source>Report for support</source>
+        <translation>Bericht für den Support</translation>
+    </message>
+    <message>
+        <source>the text the download and the Copy button give</source>
+        <translation>der Text, den der Download und die Kopieren-Schaltfläche liefern</translation>
+    </message>
+    <message>
+        <source>Passwords, keys, tokens, session ids, credentials in addresses and the full paths of the server are left out; paths inside the installation are relative to it.</source>
+        <translation>Passwörter, Schlüssel, Tokens, Session-IDs, Zugangsdaten in Adressen und die vollständigen Pfade des Servers sind nicht enthalten; Pfade innerhalb der Installation sind relativ zu ihr angegeben.</translation>
+    </message>
+    <message>
+        <source>%n seconds ago</source>
+        <translation>vor %n Sekunden</translation>
+    </message>
+    <message>
+        <source>%n minutes ago</source>
+        <translation>vor %n Minuten</translation>
+    </message>
+    <message>
+        <source>%n hours ago</source>
+        <translation>vor %n Stunden</translation>
+    </message>
+    <message>
+        <source>%n days ago</source>
+        <translation>vor %n Tagen</translation>
+    </message>
+    <message>
+        <source>Command line</source>
+        <translation>Kommandozeile</translation>
+    </message>
+    <message>
+        <source>persistent workers: one process answers many requests and keeps its classes and caches between them</source>
+        <translation>dauerhafte Worker: ein Prozess beantwortet viele Anfragen und behält seine Klassen und Caches zwischen ihnen</translation>
+    </message>
+    <message>
+        <source>worker mode: the script stays in memory between requests</source>
+        <translation>Worker-Modus: das Skript bleibt zwischen den Anfragen im Speicher</translation>
+    </message>
+    <message>
+        <source>a fresh worker forked for every request</source>
+        <translation>ein neu geforkter Worker für jede Anfrage</translation>
+    </message>
+    <message>
+        <source>a pool of PHP processes, a clean state for every request</source>
+        <translation>ein Pool von PHP-Prozessen, ein sauberer Zustand für jede Anfrage</translation>
+    </message>
+    <message>
+        <source>PHP inside the Apache processes</source>
+        <translation>PHP innerhalb der Apache-Prozesse</translation>
+    </message>
+    <message>
+        <source>a pool of PHP threads, a clean state for every request</source>
+        <translation>ein Pool von PHP-Threads, ein sauberer Zustand für jede Anfrage</translation>
+    </message>
+    <message>
+        <source>one command-line process</source>
+        <translation>ein Kommandozeilenprozess</translation>
+    </message>
+    <message>
+        <source>PHP %version is below the supported minimum %minimum</source>
+        <translation>PHP %version liegt unter dem unterstützten Minimum %minimum</translation>
+    </message>
+    <message>
+        <source>Upgrade PHP to a supported version (8.3 or later).</source>
+        <translation>Aktualisieren Sie PHP auf eine unterstützte Version (8.3 oder neuer).</translation>
+    </message>
+    <message>
+        <source>PHP %branch no longer gets security fixes</source>
+        <translation>PHP %branch erhält keine Sicherheitskorrekturen mehr</translation>
+    </message>
+    <message>
+        <source>Its security support ended on %date.</source>
+        <translation>Die Sicherheitsunterstützung endete am %date.</translation>
+    </message>
+    <message>
+        <source>Plan an upgrade to a supported PHP branch.</source>
+        <translation>Planen Sie eine Aktualisierung auf einen unterstützten PHP-Zweig.</translation>
+    </message>
+    <message>
+        <source>PHP %version is supported</source>
+        <translation>PHP %version wird unterstützt</translation>
+    </message>
+    <message>
+        <source>Security fixes until %date.</source>
+        <translation>Sicherheitskorrekturen bis %date.</translation>
+    </message>
+    <message>
+        <source>PHP extensions the kernel needs are missing: %list</source>
+        <translation>PHP-Erweiterungen, die der Kernel braucht, fehlen: %list</translation>
+    </message>
+    <message>
+        <source>Install and enable them for the PHP that serves the site, then reload it.</source>
+        <translation>Installieren und aktivieren Sie sie für das PHP, das die Website ausliefert, und laden Sie es dann neu.</translation>
+    </message>
+    <message>
+        <source>Every PHP extension the kernel needs is loaded</source>
+        <translation>Jede PHP-Erweiterung, die der Kernel braucht, ist geladen</translation>
+    </message>
+    <message>
+        <source>Recommended PHP extensions are missing: %list</source>
+        <translation>Empfohlene PHP-Erweiterungen fehlen: %list</translation>
+    </message>
+    <message>
+        <source>Images, link checks, translations or the caches work without them only in part.</source>
+        <translation>Bilder, Linkprüfungen, Übersetzungen oder die Caches funktionieren ohne sie nur teilweise.</translation>
+    </message>
+    <message>
+        <source>OPcache is off</source>
+        <translation>OPcache ist aus</translation>
+    </message>
+    <message>
+        <source>Every request compiles every PHP file again; pages take several times as long.</source>
+        <translation>Jede Anfrage kompiliert jede PHP-Datei neu; Seiten brauchen ein Mehrfaches der Zeit.</translation>
+    </message>
+    <message>
+        <source>Set opcache.enable_cli=1 in [PHPSettings] IniOptions[] of velocity.ini, then restart Velocity.</source>
+        <translation>Setzen Sie opcache.enable_cli=1 in [PHPSettings] IniOptions[] der velocity.ini und starten Sie Velocity dann neu.</translation>
+    </message>
+    <message>
+        <source>Set opcache.enable=1 in the php.ini of the PHP that serves the site, then reload it.</source>
+        <translation>Setzen Sie opcache.enable=1 in der php.ini des PHP, das die Website ausliefert, und laden Sie es dann neu.</translation>
+    </message>
+    <message>
+        <source>OPcache is on</source>
+        <translation>OPcache ist an</translation>
+    </message>
+    <message>
+        <source>Its statistics are not available: opcache_get_status is in disable_functions of this PHP.</source>
+        <translation>Seine Statistik ist nicht verfügbar: opcache_get_status steht in disable_functions dieses PHP.</translation>
+    </message>
+    <message>
+        <source>Its statistics are not available to this script (opcache.restrict_api).</source>
+        <translation>Seine Statistik ist für dieses Skript nicht verfügbar (opcache.restrict_api).</translation>
+    </message>
+    <message>
+        <source>OPcache is full</source>
+        <translation>OPcache ist voll</translation>
+    </message>
+    <message>
+        <source>Scripts that do not fit are compiled on every request.</source>
+        <translation>Skripte, die nicht hineinpassen, werden bei jeder Anfrage kompiliert.</translation>
+    </message>
+    <message>
+        <source>Raise opcache.memory_consumption or opcache.max_accelerated_files.</source>
+        <translation>Erhöhen Sie opcache.memory_consumption oder opcache.max_accelerated_files.</translation>
+    </message>
+    <message>
+        <source>OPcache hit rate is %rate %</source>
+        <translation>Die Trefferquote von OPcache beträgt %rate %</translation>
+    </message>
+    <message>
+        <source>Below 90 %, many scripts are compiled again; the cache may be too small or reset too often.</source>
+        <translation>Unter 90 % werden viele Skripte erneut kompiliert; der Cache ist vielleicht zu klein oder wird zu oft zurückgesetzt.</translation>
+    </message>
+    <message>
+        <source>Raise opcache.memory_consumption and check that nothing resets the cache.</source>
+        <translation>Erhöhen Sie opcache.memory_consumption und prüfen Sie, dass nichts den Cache zurücksetzt.</translation>
+    </message>
+    <message>
+        <source>opcache.file_update_protection is %n under Velocity</source>
+        <translation>opcache.file_update_protection ist unter Velocity %n</translation>
+    </message>
+    <message>
+        <source>A persistent worker never caches a file written less than that many seconds before the request started, so recently deployed files are compiled on every request.</source>
+        <translation>Ein dauerhafter Worker speichert nie eine Datei, die weniger als so viele Sekunden vor dem Beginn der Anfrage geschrieben wurde; kürzlich ausgerollte Dateien werden deshalb bei jeder Anfrage kompiliert.</translation>
+    </message>
+    <message>
+        <source>Set IniOptions[]=opcache.file_update_protection=0 in [PHPSettings] of velocity.ini, then restart Velocity.</source>
+        <translation>Setzen Sie IniOptions[]=opcache.file_update_protection=0 in [PHPSettings] der velocity.ini und starten Sie Velocity dann neu.</translation>
+    </message>
+    <message>
+        <source>memory_limit is %limit</source>
+        <translation>memory_limit ist %limit</translation>
+    </message>
+    <message>
+        <source>Publishing, image variations and cache clearing need more.</source>
+        <translation>Veröffentlichen, Bildvarianten und das Leeren der Caches brauchen mehr.</translation>
+    </message>
+    <message>
+        <source>Set memory_limit to 256M or more.</source>
+        <translation>Setzen Sie memory_limit auf 256M oder mehr.</translation>
+    </message>
+    <message>
+        <source>Large imports and image variations can run out.</source>
+        <translation>Bei großen Importen und Bildvarianten kann der Speicher ausgehen.</translation>
+    </message>
+    <message>
+        <source>unlimited</source>
+        <translation>unbegrenzt</translation>
+    </message>
+    <message>
+        <source>max_execution_time is %n seconds</source>
+        <translation>max_execution_time ist %n Sekunden</translation>
+    </message>
+    <message>
+        <source>Publishing large objects and clearing caches can take longer.</source>
+        <translation>Das Veröffentlichen großer Objekte und das Leeren der Caches können länger dauern.</translation>
+    </message>
+    <message>
+        <source>Set max_execution_time to 30 or more.</source>
+        <translation>Setzen Sie max_execution_time auf 30 oder mehr.</translation>
+    </message>
+    <message>
+        <source>The var directory is not writable</source>
+        <translation>Das var-Verzeichnis ist nicht beschreibbar</translation>
+    </message>
+    <message>
+        <source>Caches, uploaded files, logs and sessions cannot be written.</source>
+        <translation>Caches, hochgeladene Dateien, Logs und Sessions können nicht geschrieben werden.</translation>
+    </message>
+    <message>
+        <source>Give the user the web server runs as write access to var/ and everything below it.</source>
+        <translation>Geben Sie dem Benutzer, unter dem der Webserver läuft, Schreibzugriff auf var/ und alles darunter.</translation>
+    </message>
+    <message>
+        <source>The cache or storage directory is not writable</source>
+        <translation>Das Cache- oder Storage-Verzeichnis ist nicht beschreibbar</translation>
+    </message>
+    <message>
+        <source>The var directory is writable</source>
+        <translation>Das var-Verzeichnis ist beschreibbar</translation>
+    </message>
+    <message>
+        <source>%free free on the disk of var/ (%percent %)</source>
+        <translation>%free frei auf dem Datenträger von var/ (%percent %)</translation>
+    </message>
+    <message>
+        <source>Free space: old logs, var/tmp and caches can be cleared; uploads and the database need room to grow.</source>
+        <translation>Schaffen Sie Platz: alte Logs, var/tmp und Caches können geleert werden; Uploads und die Datenbank brauchen Raum zum Wachsen.</translation>
+    </message>
+    <message>
+        <source>Debug output is shown to every visitor</source>
+        <translation>Die Debug-Ausgabe wird jedem Besucher gezeigt</translation>
+    </message>
+    <message>
+        <source>It shows SQL, templates, file paths and timings to anyone.</source>
+        <translation>Sie zeigt jedem SQL, Templates, Dateipfade und Zeitmessungen.</translation>
+    </message>
+    <message>
+        <source>Set [DebugSettings] DebugByIP=enabled with DebugIPList[], or DebugOutput=disabled, in site.ini.</source>
+        <translation>Setzen Sie in der site.ini [DebugSettings] DebugByIP=enabled mit DebugIPList[] oder DebugOutput=disabled.</translation>
+    </message>
+    <message>
+        <source>Debug output is on for chosen addresses or users only</source>
+        <translation>Die Debug-Ausgabe ist nur für ausgewählte Adressen oder Benutzer an</translation>
+    </message>
+    <message>
+        <source>Fine for a staging site; switch it off on a production site.</source>
+        <translation>In Ordnung für eine Staging-Website; schalten Sie sie auf einer Produktionswebsite aus.</translation>
+    </message>
+    <message>
+        <source>Debug output is off</source>
+        <translation>Die Debug-Ausgabe ist aus</translation>
+    </message>
+    <message>
+        <source>Development settings are on: %list</source>
+        <translation>Entwicklungseinstellungen sind an: %list</translation>
+    </message>
+    <message>
+        <source>They slow every page down and can put debug comments into pages and mails.</source>
+        <translation>Sie verlangsamen jede Seite und können Debug-Kommentare in Seiten und E-Mails schreiben.</translation>
+    </message>
+    <message>
+        <source>Set them to disabled in site.ini on a production site.</source>
+        <translation>Setzen Sie sie auf einer Produktionswebsite in der site.ini auf disabled.</translation>
+    </message>
+    <message>
+        <source>PHP shows errors in the page (display_errors)</source>
+        <translation>PHP zeigt Fehler in der Seite an (display_errors)</translation>
+    </message>
+    <message>
+        <source>Error messages can show file paths and settings to visitors.</source>
+        <translation>Fehlermeldungen können Besuchern Dateipfade und Einstellungen zeigen.</translation>
+    </message>
+    <message>
+        <source>Set display_errors=Off and log_errors=On for the PHP that serves the site.</source>
+        <translation>Setzen Sie display_errors=Off und log_errors=On für das PHP, das die Website ausliefert.</translation>
+    </message>
+    <message>
+        <source>Caches are switched off: %list</source>
+        <translation>Caches sind ausgeschaltet: %list</translation>
+    </message>
+    <message>
+        <source>Usual while templates are being developed; every page is slower until they are on.</source>
+        <translation>Üblich, solange Templates entwickelt werden; jede Seite ist langsamer, bis sie an sind.</translation>
+    </message>
+    <message>
+        <source>Set them to enabled in site.ini on a production site.</source>
+        <translation>Setzen Sie sie auf einer Produktionswebsite in der site.ini auf enabled.</translation>
+    </message>
+    <message>
+        <source>The view, template and override caches are on</source>
+        <translation>Der View-, Template- und Override-Cache sind an</translation>
+    </message>
+    <message>
+        <source>SiteURL is not an address visitors can reach</source>
+        <translation>SiteURL ist keine Adresse, die Besucher erreichen können</translation>
+    </message>
+    <message>
+        <source>Mails, feeds and links made outside a request (cronjobs, notifications) use it.</source>
+        <translation>E-Mails, Feeds und Links, die außerhalb einer Anfrage entstehen (Cronjobs, Benachrichtigungen), verwenden sie.</translation>
+    </message>
+    <message>
+        <source>Set [SiteSettings] SiteURL in the siteaccess settings.</source>
+        <translation>Setzen Sie [SiteSettings] SiteURL in den Einstellungen des Siteaccess.</translation>
+    </message>
+    <message>
+        <source>No cronjob run was found</source>
+        <translation>Es wurde kein Cronjob-Lauf gefunden</translation>
+    </message>
+    <message>
+        <source>Without cronjobs, notifications, link checks, the trash and timed publishing do not run.</source>
+        <translation>Ohne Cronjobs laufen Benachrichtigungen, Linkprüfungen, der Papierkorb und zeitgesteuertes Veröffentlichen nicht.</translation>
+    </message>
+    <message>
+        <source>Schedule runcronjobs.php in the crontab of the user the site runs as (Setup &gt; Cronjobs shows the lines).</source>
+        <translation>Planen Sie runcronjobs.php in der Crontab des Benutzers ein, unter dem die Website läuft (Setup &gt; Cronjobs zeigt die Zeilen).</translation>
+    </message>
+    <message>
+        <source>The last cronjob run was %ago</source>
+        <translation>Der letzte Cronjob-Lauf war %ago</translation>
+    </message>
+    <message>
+        <source>Check the crontab of the user the site runs as (Setup &gt; Cronjobs).</source>
+        <translation>Prüfen Sie die Crontab des Benutzers, unter dem die Website läuft (Setup &gt; Cronjobs).</translation>
+    </message>
+    <message>
+        <source>Cronjobs ran %ago</source>
+        <translation>Cronjobs liefen %ago</translation>
+    </message>
+    <message>
+        <source>Mail is written to files, not sent</source>
+        <translation>E-Mails werden in Dateien geschrieben, nicht versendet</translation>
+    </message>
+    <message>
+        <source>Right for a test site; a production site needs sendmail or SMTP.</source>
+        <translation>Richtig für eine Testwebsite; eine Produktionswebsite braucht sendmail oder SMTP.</translation>
+    </message>
+    <message>
+        <source>Set [MailSettings] Transport in site.ini.</source>
+        <translation>Setzen Sie [MailSettings] Transport in der site.ini.</translation>
+    </message>
+    <message>
+        <source>SMTP is chosen, but no SMTP server is set</source>
+        <translation>SMTP ist gewählt, aber kein SMTP-Server ist gesetzt</translation>
+    </message>
+    <message>
+        <source>Set [MailSettings] TransportServer in site.ini.</source>
+        <translation>Setzen Sie [MailSettings] TransportServer in der site.ini.</translation>
+    </message>
+    <message>
+        <source>There is no database connection</source>
+        <translation>Es besteht keine Datenbankverbindung</translation>
+    </message>
+    <message>
+        <source>Check [DatabaseSettings] in site.ini and that the database server runs.</source>
+        <translation>Prüfen Sie [DatabaseSettings] in der site.ini und ob der Datenbankserver läuft.</translation>
+    </message>
+    <message>
+        <source>The database character set is %charset</source>
+        <translation>Der Zeichensatz der Datenbank ist %charset</translation>
+    </message>
+    <message>
+        <source>Exponential stores text as UTF-8.</source>
+        <translation>Exponential speichert Text als UTF-8.</translation>
+    </message>
+    <message>
+        <source>Convert the database to UTF-8 (bin/php/ezconvertdbcharset.php).</source>
+        <translation>Konvertieren Sie die Datenbank nach UTF-8 (bin/php/ezconvertdbcharset.php).</translation>
+    </message>
+    <message>
+        <source>The database is connected</source>
+        <translation>Die Datenbank ist verbunden</translation>
+    </message>
+    <message>
+        <source>No time zone is set</source>
+        <translation>Es ist keine Zeitzone gesetzt</translation>
+    </message>
+    <message>
+        <source>PHP falls back to UTC, so dates and timed publishing can be hours off.</source>
+        <translation>PHP fällt auf UTC zurück, daher können Datumsangaben und zeitgesteuertes Veröffentlichen um Stunden abweichen.</translation>
+    </message>
+    <message>
+        <source>Set date.timezone in php.ini or [TimeZoneSettings] TimeZone in site.ini.</source>
+        <translation>Setzen Sie date.timezone in der php.ini oder [TimeZoneSettings] TimeZone in der site.ini.</translation>
+    </message>
+    <message>
+        <source>Release line</source>
+        <translation>Release-Linie</translation>
+    </message>
+    <message>
+        <source>Database schema</source>
+        <translation>Datenbankschema</translation>
+    </message>
+    <message>
+        <source>Engine archive build</source>
+        <translation>Build des Engine-Archivs</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Answered by</source>
+        <translation>Beantwortet von</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Webserver</translation>
+    </message>
+    <message>
+        <source>not stated</source>
+        <translation>nicht angegeben</translation>
+    </message>
+    <message>
+        <source>Worker model</source>
+        <translation>Worker-Modell</translation>
+    </message>
+    <message>
+        <source>PHP-FPM pool</source>
+        <translation>PHP-FPM-Pool</translation>
+    </message>
+    <message>
+        <source>Processes</source>
+        <translation>Prozesse</translation>
+    </message>
+    <message>
+        <source>%active busy, %idle idle, %total in all</source>
+        <translation>%active beschäftigt, %idle frei, %total insgesamt</translation>
+    </message>
+    <message>
+        <source>max_children reached %n times</source>
+        <translation>max_children %n-mal erreicht</translation>
+    </message>
+    <message>
+        <source>Workers</source>
+        <translation>Worker</translation>
+    </message>
+    <message>
+        <source>%n configured, %spare spare</source>
+        <translation>%n konfiguriert, %spare in Reserve</translation>
+    </message>
+    <message>
+        <source>from the engine archive</source>
+        <translation>aus dem Engine-Archiv</translation>
+    </message>
+    <message>
+        <source>from the files on disk</source>
+        <translation>aus den Dateien auf der Festplatte</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>keine Grenze</translation>
+    </message>
+    <message>
+        <source>Uploads</source>
+        <translation>Uploads</translation>
+    </message>
+    <message>
+        <source>%upload per file, %post per request</source>
+        <translation>%upload pro Datei, %post pro Anfrage</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>Betriebssystem</translation>
+    </message>
+    <message>
+        <source>not loaded</source>
+        <translation>nicht geladen</translation>
+    </message>
+    <message>
+        <source>%used of %total</source>
+        <translation>%used von %total</translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistik</translation>
+    </message>
+    <message>
+        <source>not available: opcache_get_status is disabled in this PHP</source>
+        <translation>nicht verfügbar: opcache_get_status ist in diesem PHP deaktiviert</translation>
+    </message>
+    <message>
+        <source>not available to this script</source>
+        <translation>für dieses Skript nicht verfügbar</translation>
+    </message>
+    <message>
+        <source>on, on every request</source>
+        <translation>an, bei jeder Anfrage</translation>
+    </message>
+    <message>
+        <source>on, every %n s</source>
+        <translation>an, alle %n s</translation>
+    </message>
+    <message>
+        <source>off: an edited file is seen after a restart</source>
+        <translation>aus: eine geänderte Datei wird nach einem Neustart erkannt</translation>
+    </message>
+    <message>
+        <source>%free free of %size</source>
+        <translation>%free frei von %size</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Treiber</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabellen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>measured on request</source>
+        <translation>auf Anfrage gemessen</translation>
+    </message>
+    <message>
+        <source>var directory</source>
+        <translation>var-Verzeichnis</translation>
+    </message>
+    <message>
+        <source>writable</source>
+        <translation>beschreibbar</translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation>nicht beschreibbar</translation>
+    </message>
+    <message>
+        <source>Size of var</source>
+        <translation>Größe von var</translation>
+    </message>
+    <message>
+        <source>Free disk</source>
+        <translation>Freier Speicherplatz</translation>
+    </message>
+    <message>
+        <source>%free of %total</source>
+        <translation>%free von %total</translation>
+    </message>
+    <message>
+        <source>Storage</source>
+        <translation>Speicher</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>View-Cache</translation>
+    </message>
+    <message>
+        <source>Template compiling</source>
+        <translation>Template-Kompilierung</translation>
+    </message>
+    <message>
+        <source>Template cache</source>
+        <translation>Template-Cache</translation>
+    </message>
+    <message>
+        <source>Override cache</source>
+        <translation>Override-Cache</translation>
+    </message>
+    <message>
+        <source>Static cache</source>
+        <translation>Statischer Cache</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>HTTP-Cache</translation>
+    </message>
+    <message>
+        <source>SQL query cache</source>
+        <translation>SQL-Abfrage-Cache</translation>
+    </message>
+    <message>
+        <source>Velocity response cache</source>
+        <translation>Antwort-Cache von Velocity</translation>
+    </message>
+    <message>
+        <source>Caches</source>
+        <translation>Caches</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Letzter Lauf</translation>
+    </message>
+    <message>
+        <source>none found</source>
+        <translation>keiner gefunden</translation>
+    </message>
+    <message>
+        <source>Seen in</source>
+        <translation>Gesehen in</translation>
+    </message>
+    <message>
+        <source>runs started from Setup &gt; Cronjobs</source>
+        <translation>Läufen, gestartet unter Setup &gt; Cronjobs</translation>
+    </message>
+    <message>
+        <source>the cronjob log</source>
+        <translation>dem Cronjob-Log</translation>
+    </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>Transport</source>
+        <translation>Transport</translation>
+    </message>
+    <message>
+        <source>SMTP server</source>
+        <translation>SMTP-Server</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Verschlüsselung</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keine</translation>
+    </message>
+    <message>
+        <source>Sign-in</source>
+        <translation>Anmeldung</translation>
+    </message>
+    <message>
+        <source>yes (credentials hidden)</source>
+        <translation>ja (Zugangsdaten verborgen)</translation>
+    </message>
+    <message>
+        <source>Sender address</source>
+        <translation>Absenderadresse</translation>
+    </message>
+    <message>
+        <source>Mail</source>
+        <translation>E-Mail</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Gebietsschema</translation>
+    </message>
+    <message>
+        <source>Content languages</source>
+        <translation>Inhaltssprachen</translation>
+    </message>
+    <message>
+        <source>Time zone</source>
+        <translation>Zeitzone</translation>
+    </message>
+    <message>
+        <source>Server time</source>
+        <translation>Serverzeit</translation>
+    </message>
+    <message>
+        <source>Locale and time</source>
+        <translation>Gebietsschema und Zeit</translation>
+    </message>
+    <message>
+        <source>Processor</source>
+        <translation>Prozessor</translation>
+    </message>
+    <message>
+        <source>Load</source>
+        <translation>Last</translation>
+    </message>
+    <message>
+        <source>Machine</source>
+        <translation>Maschine</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Erweiterungen</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Zeichensatz</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -18735,6 +25679,318 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Stopped by operator.</source>
         <translation>Vom Bediener angehalten.</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Abgeschlossen</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Angehalten</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Ended without finishing</source>
+        <translation>Ohne Abschluss beendet</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Läuft</translation>
+    </message>
+    <message>
+        <source>Starting</source>
+        <translation>Startet</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Preload</source>
+        <translation>Setup &gt; Vorladen</translation>
+    </message>
+    <message>
+        <source>Shell or cron</source>
+        <translation>Shell oder Cron</translation>
+    </message>
+    <message>
+        <source>Requests the pages of a site as a visitor would, so its caches are warm before the first visitor arrives: the page views, the image aliases and the compiled templates. It starts at the section pages and follows the links of the site, and lists the links that are broken with the pages that link to them.</source>
+        <translation>Ruft die Seiten einer Site so ab, wie es ein Besucher tun würde, damit ihre Caches warm sind, bevor der erste Besucher kommt: die Seitenansichten, die Bildvarianten und die kompilierten Templates. Es beginnt bei den Bereichsseiten, folgt den Links der Site und listet defekte Links mit den Seiten auf, die auf sie verweisen.</translation>
+    </message>
+    <message>
+        <source>The preload of %siteaccess was started in the background. Its progress is shown below; you can leave this page and come back.</source>
+        <translation>Das Vorladen von %siteaccess wurde im Hintergrund gestartet. Der Fortschritt wird unten angezeigt; Sie können diese Seite verlassen und später zurückkehren.</translation>
+    </message>
+    <message>
+        <source>The preload was asked to stop. It ends after the page it is requesting.</source>
+        <translation>Das Vorladen wurde zum Anhalten aufgefordert. Es endet nach der Seite, die es gerade abruft.</translation>
+    </message>
+    <message>
+        <source>That preload is not running any more.</source>
+        <translation>Dieses Vorladen läuft nicht mehr.</translation>
+    </message>
+    <message>
+        <source>A preload is already running. Only one runs at a time: wait for it to end, or stop it first.</source>
+        <translation>Es läuft bereits ein Vorladen. Es läuft immer nur eines: Warten Sie, bis es beendet ist, oder halten Sie es zuerst an.</translation>
+    </message>
+    <message>
+        <source>Choose one of the sites in the list.</source>
+        <translation>Wählen Sie eine der Sites aus der Liste.</translation>
+    </message>
+    <message>
+        <source>The preload could not be started.</source>
+        <translation>Das Vorladen konnte nicht gestartet werden.</translation>
+    </message>
+    <message>
+        <source>There is no site to warm.</source>
+        <translation>Es gibt keine Site zum Vorwärmen.</translation>
+    </message>
+    <message>
+        <source>Add the siteaccesses of your sites to site.ini [SiteAccessSettings] RelatedSiteAccessList and give each a SiteURL.</source>
+        <translation>Tragen Sie die Siteaccesses Ihrer Sites in site.ini [SiteAccessSettings] RelatedSiteAccessList ein und geben Sie jedem eine SiteURL.</translation>
+    </message>
+    <message>
+        <source>%site, started %time from %source</source>
+        <translation>%site, gestartet %time über %source</translation>
+    </message>
+    <message>
+        <source>%pages of at most %max pages warmed, %broken broken</source>
+        <translation>%pages von höchstens %max Seiten vorgewärmt, %broken defekt</translation>
+    </message>
+    <message>
+        <source>Idle</source>
+        <translation>Bereit</translation>
+    </message>
+    <message>
+        <source>Last run %time: %site</source>
+        <translation>Letzter Lauf %time: %site</translation>
+    </message>
+    <message>
+        <source>No site has been preloaded yet.</source>
+        <translation>Es wurde noch keine Site vorgeladen.</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Aktualisieren</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Ausgabe</translation>
+    </message>
+    <message>
+        <source>Output of the preload</source>
+        <translation>Ausgabe des Vorladens</translation>
+    </message>
+    <message>
+        <source>Start a preload</source>
+        <translation>Vorladen starten</translation>
+    </message>
+    <message>
+        <source>Choose the site and how far to go. A dry run shows the address and the starting pages without requesting anything.</source>
+        <translation>Wählen Sie die Site und wie weit es gehen soll. Ein Probelauf zeigt die Adresse und die Startseiten, ohne etwas abzurufen.</translation>
+    </message>
+    <message>
+        <source>The siteaccesses of site.ini RelatedSiteAccessList, at the address their SiteURL and the siteaccess matching give them.</source>
+        <translation>Die Siteaccesses aus site.ini RelatedSiteAccessList, unter der Adresse, die ihre SiteURL und die Siteaccess-Zuordnung ergeben.</translation>
+    </message>
+    <message>
+        <source>The most pages one run requests, 1 to %max.</source>
+        <translation>Die meisten Seiten, die ein Lauf abruft, 1 bis %max.</translation>
+    </message>
+    <message>
+        <source>How many links from a starting page are followed; 0 warms the starting pages only.</source>
+        <translation>Wie viele Links ab einer Startseite verfolgt werden; 0 wärmt nur die Startseiten vor.</translation>
+    </message>
+    <message>
+        <source>What to warm</source>
+        <translation>Was vorgewärmt wird</translation>
+    </message>
+    <message>
+        <source>Also check the images on each page</source>
+        <translation>Auch die Bilder jeder Seite prüfen</translation>
+    </message>
+    <message>
+        <source>The pages make their image aliases when they are rendered. This also requests every image they show, once, and lists the ones that are missing with the pages that show them.</source>
+        <translation>Die Seiten erzeugen ihre Bildvarianten beim Rendern. Dies ruft zusätzlich jedes Bild, das sie zeigen, einmal ab und listet die fehlenden mit den Seiten auf, die sie zeigen.</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Probelauf</translation>
+    </message>
+    <message>
+        <source>A preload is running; the next one can start when it has ended.</source>
+        <translation>Ein Vorladen läuft; das nächste kann starten, wenn es beendet ist.</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background. One preload runs at a time.</source>
+        <translation>Der Lauf geht im Hintergrund weiter. Es läuft immer nur ein Vorladen.</translation>
+    </message>
+    <message>
+        <source>Nothing was requested. A run would start at these pages and follow their links to the same site, up to the limits.</source>
+        <translation>Es wurde nichts abgerufen. Ein Lauf würde bei diesen Seiten beginnen und ihren Links auf derselben Site folgen, bis zu den Grenzen.</translation>
+    </message>
+    <message>
+        <source>The siteaccess matching in site.ini does not send this address to %siteaccess, so the pages warmed may be those of another siteaccess. Check SiteURL and the match settings of the siteaccess.</source>
+        <translation>Die Siteaccess-Zuordnung in site.ini leitet diese Adresse nicht zu %siteaccess, daher können die vorgewärmten Seiten die eines anderen Siteaccess sein. Prüfen Sie SiteURL und die Zuordnungseinstellungen des Siteaccess.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation>Präfix</translation>
+    </message>
+    <message>
+        <source>none, matched by host</source>
+        <translation>keines, über den Host zugeordnet</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Grenzen</translation>
+    </message>
+    <message>
+        <source>%pages pages, link depth %depth</source>
+        <translation>%pages Seiten, Link-Tiefe %depth</translation>
+    </message>
+    <message>
+        <source>images checked</source>
+        <translation>Bilder geprüft</translation>
+    </message>
+    <message>
+        <source>The same from the shell</source>
+        <translation>Dasselbe in der Shell</translation>
+    </message>
+    <message>
+        <source>Which caches it warms</source>
+        <translation>Welche Caches vorgewärmt werden</translation>
+    </message>
+    <message>
+        <source>The run requests each page at the address of the site, so the server that answers that address renders it: here %address.</source>
+        <translation>Der Lauf ruft jede Seite unter der Adresse der Site ab, also rendert sie der Server, der diese Adresse beantwortet: hier %address.</translation>
+    </message>
+    <message>
+        <source>The page view cache, the image aliases and the compiled templates are files of this installation. Apache with PHP-FPM and Exponential Velocity share them, so a run warms them for both, whichever server answers.</source>
+        <translation>Der Seitenansichts-Cache, die Bildvarianten und die kompilierten Templates sind Dateien dieser Installation. Apache mit PHP-FPM und Exponential Velocity teilen sie, daher wärmt ein Lauf sie für beide vor, gleich welcher Server antwortet.</translation>
+    </message>
+    <message>
+        <source>Velocity is running here (ports %port). Its own response cache keeps a page for %ttl seconds only, so warming it ahead of visitors does not last; the shared caches above are what a run is for.</source>
+        <translation>Velocity läuft hier (Ports %port). Sein eigener Antwort-Cache behält eine Seite nur %ttl Sekunden, daher hält ein Vorwärmen vor den Besuchern nicht an; ein Lauf ist für die oben genannten gemeinsamen Caches da.</translation>
+    </message>
+    <message>
+        <source>Pages for signed-in users are not warmed: the run is an anonymous visitor.</source>
+        <translation>Seiten für angemeldete Benutzer werden nicht vorgewärmt: Der Lauf ist ein anonymer Besucher.</translation>
+    </message>
+    <message>
+        <source>From the shell or cron</source>
+        <translation>In der Shell oder per Cron</translation>
+    </message>
+    <message>
+        <source>The same run, from the installation directory. It waits for nobody: when a preload is already running it says so and ends. Its runs are listed below with the others.</source>
+        <translation>Derselbe Lauf, aus dem Installationsverzeichnis. Er wartet auf niemanden: Läuft bereits ein Vorladen, meldet er das und endet. Seine Läufe werden unten mit den anderen aufgeführt.</translation>
+    </message>
+    <message>
+        <source>For cron, after the nightly cache clear for example:</source>
+        <translation>Für Cron, zum Beispiel nach dem nächtlichen Leeren der Caches:</translation>
+    </message>
+    <message>
+        <source>Runs are kept in %dir (the last 20).</source>
+        <translation>Die Läufe werden in %dir aufbewahrt (die letzten 20).</translation>
+    </message>
+    <message>
+        <source>Last runs</source>
+        <translation>Letzte Läufe</translation>
+    </message>
+    <message>
+        <source>From this page, the shell and cron, newest first. Image aliases made counts the alias files the pages created while the run requested them.</source>
+        <translation>Von dieser Seite, aus der Shell und per Cron, die neuesten zuerst. Erzeugte Bildvarianten zählt die Variantendateien, die die Seiten erzeugt haben, während der Lauf sie abrief.</translation>
+    </message>
+    <message>
+        <source>No runs yet. Start one above, or run the command from the shell.</source>
+        <translation>Noch keine Läufe. Starten Sie oben einen oder führen Sie den Befehl in der Shell aus.</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Lauf</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ergebnis</translation>
+    </message>
+    <message>
+        <source>Duration</source>
+        <translation>Dauer</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
+    <message>
+        <source>Image aliases made</source>
+        <translation>Erzeugte Bildvarianten</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>%min min %sec s</source>
+        <translation>%min Min. %sec s</translation>
+    </message>
+    <message>
+        <source>%sec s</source>
+        <translation>%sec s</translation>
+    </message>
+    <message>
+        <source>not counted</source>
+        <translation>nicht gezählt</translation>
+    </message>
+    <message>
+        <source>%count images checked</source>
+        <translation>%count Bilder geprüft</translation>
+    </message>
+    <message>
+        <source>%count denied</source>
+        <translation>%count verweigert</translation>
+    </message>
+    <message>
+        <source>The addresses that failed, with the pages that link to them</source>
+        <translation>Die fehlgeschlagenen Adressen mit den Seiten, die auf sie verweisen</translation>
+    </message>
+    <message>
+        <source>%count more are in the output of the run.</source>
+        <translation>%count weitere stehen in der Ausgabe des Laufs.</translation>
+    </message>
+    <message>
+        <source>Pages warmed</source>
+        <translation>Vorgewärmte Seiten</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Defekte Links</translation>
+    </message>
+    <message>
+        <source>Images checked</source>
+        <translation>Geprüfte Bilder</translation>
+    </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Sekunden</translation>
+    </message>
+    <message>
+        <source>Broken links and the pages that link to them</source>
+        <translation>Defekte Links und die Seiten, die auf sie verweisen</translation>
+    </message>
+    <message>
+        <source>The progress could not be read. Reload the page to see how the run is doing.</source>
+        <translation>Der Fortschritt konnte nicht gelesen werden. Laden Sie die Seite neu, um zu sehen, wie der Lauf steht.</translation>
+    </message>
+    <message>
+        <source>Show it in the list of runs</source>
+        <translation>In der Liste der Läufe zeigen</translation>
     </message>
 </context>
 <context>
@@ -25278,6 +32534,889 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>The operation was cut short in order to avoid execution timeout.</source>
         <translation>Der Ablauf wurde abgebrochen, um einen Laufzeitüberschreitung zu vermeiden.</translation>
     </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sitzungen von %name</translation>
+    </message>
+    <message>
+        <source>A session is what keeps a browser signed in: one is opened at the first request that needs it and kept for %lifetime after the last activity. Removing a session signs that browser out; an anonymous visitor only loses a basket or a choice kept for the visit.</source>
+        <translation>Eine Sitzung hält einen Browser angemeldet: Sie wird bei der ersten Anfrage geöffnet, die sie braucht, und %lifetime nach der letzten Aktivität aufbewahrt. Wer eine Sitzung entfernt, meldet diesen Browser ab; ein anonymer Besucher verliert nur einen Warenkorb oder eine für den Besuch gemerkte Auswahl.</translation>
+    </message>
+    <message>
+        <source>%count sessions were removed; everybody, you included, signs in again.</source>
+        <translation>%count Sitzungen wurden entfernt; alle, auch Sie, melden sich neu an.</translation>
+    </message>
+    <message>
+        <source>%count timed out sessions were removed.</source>
+        <translation>%count abgelaufene Sitzungen wurden entfernt.</translation>
+    </message>
+    <message>
+        <source>%count sessions of %users users were removed.</source>
+        <translation>%count Sitzungen von %users Benutzern wurden entfernt.</translation>
+    </message>
+    <message>
+        <source>%count sessions were removed.</source>
+        <translation>%count Sitzungen wurden entfernt.</translation>
+    </message>
+    <message>
+        <source>The session you are using now was kept.</source>
+        <translation>Die Sitzung, die Sie gerade verwenden, wurde behalten.</translation>
+    </message>
+    <message>
+        <source>Nothing was selected. Tick the users or sessions to remove first.</source>
+        <translation>Nichts wurde ausgewählt. Haken Sie zuerst die Benutzer oder Sitzungen an, die entfernt werden sollen.</translation>
+    </message>
+    <message>
+        <source>Only the session you are using now was selected, and it is never removed from this list. Sign out to end it.</source>
+        <translation>Nur die Sitzung, die Sie gerade verwenden, war ausgewählt, und sie wird aus dieser Liste nie entfernt. Melden Sie sich ab, um sie zu beenden.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Überblick</translation>
+    </message>
+    <message>
+        <source>Sessions in all</source>
+        <translation>Sitzungen insgesamt</translation>
+    </message>
+    <message>
+        <source>Users active in the last %time</source>
+        <translation>Benutzer aktiv in den letzten %time</translation>
+    </message>
+    <message>
+        <source>Sessions of signed in users</source>
+        <translation>Sitzungen angemeldeter Benutzer</translation>
+    </message>
+    <message>
+        <source>Anonymous sessions</source>
+        <translation>Anonyme Sitzungen</translation>
+    </message>
+    <message>
+        <source>Timed out, not yet removed</source>
+        <translation>Abgelaufen, noch nicht entfernt</translation>
+    </message>
+    <message>
+        <source>Removing timed out sessions is safe: nobody is signed out. Removing all sessions signs out everybody, you included.</source>
+        <translation>Abgelaufene Sitzungen zu entfernen ist gefahrlos: Niemand wird abgemeldet. Alle Sitzungen zu entfernen meldet alle ab, auch Sie.</translation>
+    </message>
+    <message>
+        <source>There are no timed out sessions now.</source>
+        <translation>Zurzeit gibt es keine abgelaufenen Sitzungen.</translation>
+    </message>
+    <message>
+        <source>Asks first.</source>
+        <translation>Fragt vorher nach.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Each card is one browser or device this user is signed in with.</source>
+        <translation>Jede Karte ist ein Browser oder Gerät, mit dem dieser Benutzer angemeldet ist.</translation>
+    </message>
+    <message>
+        <source>Find a user</source>
+        <translation>Benutzer suchen</translation>
+    </message>
+    <message>
+        <source>Part of a name, login or e-mail address.</source>
+        <translation>Teil eines Namens, Logins oder einer E-Mail-Adresse.</translation>
+    </message>
+    <message>
+        <source>Also users whose last activity is more than %time ago.</source>
+        <translation>Auch Benutzer, deren letzte Aktivität mehr als %time zurückliegt.</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche löschen</translation>
+    </message>
+    <message>
+        <source>Showing users matching “%search”.</source>
+        <translation>Angezeigt werden Benutzer, die zu „%search“ passen.</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Last activity</source>
+        <translation>Letzte Aktivität</translation>
+    </message>
+    <message>
+        <source>Sorted; select to reverse the order.</source>
+        <translation>Sortiert; auswählen, um die Reihenfolge umzukehren.</translation>
+    </message>
+    <message>
+        <source>The session you are using now cannot be removed here.</source>
+        <translation>Die Sitzung, die Sie gerade verwenden, kann hier nicht entfernt werden.</translation>
+    </message>
+    <message>
+        <source>Select the session %hint for removal</source>
+        <translation>Sitzung %hint zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Select the sessions of %name for removal</source>
+        <translation>Sitzungen von %name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sitzung</translation>
+    </message>
+    <message>
+        <source>Show the sessions of this user one by one.</source>
+        <translation>Die Sitzungen dieses Benutzers einzeln anzeigen.</translation>
+    </message>
+    <message>
+        <source>The session you are using now</source>
+        <translation>Die Sitzung, die Sie gerade verwenden</translation>
+    </message>
+    <message>
+        <source>You</source>
+        <translation>Sie</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonyme Besucher</translation>
+    </message>
+    <message>
+        <source>%count sessions</source>
+        <translation>%count Sitzungen</translation>
+    </message>
+    <message>
+        <source>1 session</source>
+        <translation>1 Sitzung</translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation>Abgelaufen</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Ends</source>
+        <translation>Endet</translation>
+    </message>
+    <message>
+        <source>No user matches “%search”. Clear the search or include inactive users.</source>
+        <translation>Kein Benutzer passt zu „%search“. Löschen Sie die Suche oder beziehen Sie inaktive Benutzer ein.</translation>
+    </message>
+    <message>
+        <source>This user has no sessions now.</source>
+        <translation>Dieser Benutzer hat zurzeit keine Sitzungen.</translation>
+    </message>
+    <message>
+        <source>Choose Everyone or include inactive users to see more.</source>
+        <translation>Wählen Sie „Alle“ oder beziehen Sie inaktive Benutzer ein, um mehr zu sehen.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>The ticked sessions are signed out. Asks first.</source>
+        <translation>Die angehakten Sitzungen werden abgemeldet. Fragt vorher nach.</translation>
+    </message>
+    <message>
+        <source>Every session of the ticked users is signed out; your own current session stays. Asks first.</source>
+        <translation>Jede Sitzung der angehakten Benutzer wird abgemeldet; Ihre eigene aktuelle Sitzung bleibt. Fragt vorher nach.</translation>
+    </message>
+    <message>
+        <source>Remove sessions</source>
+        <translation>Sitzungen entfernen</translation>
+    </message>
+    <message>
+        <source>Remove all %count sessions?</source>
+        <translation>Alle %count Sitzungen entfernen?</translation>
+    </message>
+    <message>
+        <source>Everybody who is signed in is signed out, you included: you will see the login page next. Anonymous visitors lose their baskets and the choices kept for their visit.</source>
+        <translation>Alle Angemeldeten werden abgemeldet, auch Sie: Als Nächstes sehen Sie die Anmeldeseite. Anonyme Besucher verlieren ihre Warenkörbe und die für ihren Besuch gemerkte Auswahl.</translation>
+    </message>
+    <message>
+        <source>This cannot be undone. To remove only what is no longer used, choose Remove timed out sessions instead.</source>
+        <translation>Das kann nicht rückgängig gemacht werden. Um nur zu entfernen, was nicht mehr verwendet wird, wählen Sie stattdessen „Abgelaufene Sitzungen entfernen“.</translation>
+    </message>
+    <message>
+        <source>Remove %count sessions of this user?</source>
+        <translation>%count Sitzungen dieses Benutzers entfernen?</translation>
+    </message>
+    <message>
+        <source>Remove the sessions of this user?</source>
+        <translation>Die Sitzungen dieses Benutzers entfernen?</translation>
+    </message>
+    <message>
+        <source>Remove the sessions of %users users?</source>
+        <translation>Die Sitzungen von %users Benutzern entfernen?</translation>
+    </message>
+    <message>
+        <source>The browsers of these sessions are signed out and have to sign in again. Nothing else changes: the users, their content and their settings stay.</source>
+        <translation>Die Browser dieser Sitzungen werden abgemeldet und müssen sich neu anmelden. Sonst ändert sich nichts: Die Benutzer, ihre Inhalte und ihre Einstellungen bleiben.</translation>
+    </message>
+    <message>
+        <source>Your own user is among them: its other sessions are removed, the one you are using now stays.</source>
+        <translation>Ihr eigener Benutzer ist darunter: Seine anderen Sitzungen werden entfernt, die, die Sie gerade verwenden, bleibt.</translation>
+    </message>
+    <message>
+        <source>%count of its sessions</source>
+        <translation>%count seiner Sitzungen</translation>
+    </message>
+    <message>
+        <source>Remove the sessions</source>
+        <translation>Die Sitzungen entfernen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Sessions are kept by %handler (PHP session storage: %storage), not in a table this page can read, so they cannot be counted or removed one by one here. Each session ends by itself %lifetime after its last use.</source>
+        <translation>Sitzungen werden von %handler verwaltet (PHP-Sitzungsspeicher: %storage), nicht in einer Tabelle, die diese Seite lesen kann; sie können hier daher weder gezählt noch einzeln entfernt werden. Jede Sitzung endet von selbst %lifetime nach ihrer letzten Verwendung.</translation>
+    </message>
+    <message>
+        <source>Signed in within the last %time</source>
+        <translation>Angemeldet in den letzten %time</translation>
+    </message>
+    <message>
+        <source>Signed in within the last day</source>
+        <translation>Angemeldet am letzten Tag</translation>
+    </message>
+    <message>
+        <source>Signed in within the session lifetime (%time)</source>
+        <translation>Angemeldet innerhalb der Sitzungsdauer (%time)</translation>
+    </message>
+    <message>
+        <source>Signed in within</source>
+        <translation>Angemeldet innerhalb</translation>
+    </message>
+    <message>
+        <source>the last %time</source>
+        <translation>der letzten %time</translation>
+    </message>
+    <message>
+        <source>the last day</source>
+        <translation>des letzten Tages</translation>
+    </message>
+    <message>
+        <source>the session lifetime</source>
+        <translation>der Sitzungsdauer</translation>
+    </message>
+    <message>
+        <source>Recently signed in</source>
+        <translation>Kürzlich angemeldet</translation>
+    </message>
+    <message>
+        <source>The last sign-in of each user, from the visit records every session handler keeps. A user listed here may still have an open session; one who signed out or whose browser forgot the session has none.</source>
+        <translation>Die letzte Anmeldung jedes Benutzers, aus den Besuchsdaten, die jeder Sitzungs-Handler führt. Ein hier aufgeführter Benutzer kann noch eine offene Sitzung haben; wer sich abgemeldet hat oder wessen Browser die Sitzung vergessen hat, hat keine.</translation>
+    </message>
+    <message>
+        <source>Last sign-in</source>
+        <translation>Letzte Anmeldung</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Anmeldungen</translation>
+    </message>
+    <message>
+        <source>%time ago</source>
+        <translation>vor %time</translation>
+    </message>
+    <message>
+        <source>Sign-in before</source>
+        <translation>Anmeldung davor</translation>
+    </message>
+    <message>
+        <source>No user matches “%search”. Clear the search or choose a longer time.</source>
+        <translation>Kein Benutzer passt zu „%search“. Löschen Sie die Suche oder wählen Sie einen längeren Zeitraum.</translation>
+    </message>
+    <message>
+        <source>Nobody signed in within this time. Choose a longer time to see more.</source>
+        <translation>In diesem Zeitraum hat sich niemand angemeldet. Wählen Sie einen längeren Zeitraum, um mehr zu sehen.</translation>
+    </message>
+    <message>
+        <source>How to administer sessions on this page</source>
+        <translation>So verwalten Sie Sitzungen auf dieser Seite</translation>
+    </message>
+    <message>
+        <source>Keep sessions in the database: in settings/override/site.ini.append.php set</source>
+        <translation>Sitzungen in der Datenbank führen: in settings/override/site.ini.append.php setzen Sie</translation>
+    </message>
+    <message>
+        <source>Clear the INI cache and reload the PHP workers (or deploy). Everybody signs in again once, because the sessions kept by PHP are not carried over.</source>
+        <translation>Leeren Sie den INI-Cache und laden Sie die PHP-Worker neu (oder deployen Sie). Alle melden sich einmal neu an, weil die von PHP geführten Sitzungen nicht übernommen werden.</translation>
+    </message>
+    <message>
+        <source>This page then lists every session with its user and last activity, and removes the sessions of chosen users. Set ForceStart=enabled only if anonymous visitors should be counted too: it opens a session for every visitor.</source>
+        <translation>Diese Seite listet dann jede Sitzung mit Benutzer und letzter Aktivität auf und entfernt die Sitzungen ausgewählter Benutzer. Setzen Sie ForceStart=enabled nur, wenn auch anonyme Besucher gezählt werden sollen: Es öffnet für jeden Besucher eine Sitzung.</translation>
+    </message>
+    <message>
+        <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
+        <translation>Abgelaufene Sitzungen des PHP-Handlers entfernt PHP selbst (session.gc_maxlifetime), nicht diese Seite oder der Cronjob-Teil session_gc.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/systemupgrade</name>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Missing</source>
+        <translation>Fehlt</translation>
+    </message>
+    <message>
+        <source>Unreadable</source>
+        <translation>Nicht lesbar</translation>
+    </message>
+    <message>
+        <source>Not listed</source>
+        <translation>Nicht aufgeführt</translation>
+    </message>
+    <message>
+        <source>Malformed lines</source>
+        <translation>Fehlerhafte Zeilen</translation>
+    </message>
+    <message>
+        <source>Out of order</source>
+        <translation>Nicht in Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Missing table</source>
+        <translation>Fehlende Tabelle</translation>
+    </message>
+    <message>
+        <source>Table not in the schema</source>
+        <translation>Tabelle nicht im Schema</translation>
+    </message>
+    <message>
+        <source>Changed table</source>
+        <translation>Geänderte Tabelle</translation>
+    </message>
+    <message>
+        <source>Missing field</source>
+        <translation>Fehlendes Feld</translation>
+    </message>
+    <message>
+        <source>Field not in the schema</source>
+        <translation>Feld nicht im Schema</translation>
+    </message>
+    <message>
+        <source>Changed field</source>
+        <translation>Geändertes Feld</translation>
+    </message>
+    <message>
+        <source>Missing index</source>
+        <translation>Fehlender Index</translation>
+    </message>
+    <message>
+        <source>Index not in the schema</source>
+        <translation>Index nicht im Schema</translation>
+    </message>
+    <message>
+        <source>Changed index</source>
+        <translation>Geänderter Index</translation>
+    </message>
+    <message>
+        <source>Both checks only read: they change no file and no table.</source>
+        <translation>Beide Prüfungen lesen nur: Sie ändern keine Datei und keine Tabelle.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Without the file list of the release the check cannot compare anything. The guide says where to get it.</source>
+        <translation>Ohne die Dateiliste des Releases kann die Prüfung nichts vergleichen. Die Anleitung sagt, woher Sie sie bekommen.</translation>
+    </message>
+    <message>
+        <source>Guide: upgrade check</source>
+        <translation>Anleitung: Upgrade-Prüfung</translation>
+    </message>
+    <message>
+        <source>All %count listed files match their checksums.</source>
+        <translation>Alle %count aufgeführten Dateien stimmen mit ihren Prüfsummen überein.</translation>
+    </message>
+    <message>
+        <source>%count notes below do not stop an upgrade.</source>
+        <translation>%count Hinweise unten stehen einem Upgrade nicht im Weg.</translation>
+    </message>
+    <message>
+        <source>%problems of %count listed files differ from the release: %modified modified, %missing missing, %unreadable unreadable.</source>
+        <translation>%problems von %count aufgeführten Dateien weichen vom Release ab: %modified geändert, %missing fehlend, %unreadable nicht lesbar.</translation>
+    </message>
+    <message>
+        <source>The database schema could not be read.</source>
+        <translation>Das Datenbankschema konnte nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>There is no schema handler for the database engine %engine, or the database did not answer. dbschema.ini [SchemaSettings] names the handlers.</source>
+        <translation>Für die Datenbank-Engine %engine gibt es keinen Schema-Handler, oder die Datenbank hat nicht geantwortet. dbschema.ini [SchemaSettings] nennt die Handler.</translation>
+    </message>
+    <message>
+        <source>The database matches the schema of Exponential and the active extensions (%files schema files).</source>
+        <translation>Die Datenbank entspricht dem Schema von Exponential und der aktiven Erweiterungen (%files Schemadateien).</translation>
+    </message>
+    <message>
+        <source>Every collection Exponential needs is there.</source>
+        <translation>Jede Collection, die Exponential braucht, ist vorhanden.</translation>
+    </message>
+    <message>
+        <source>%count tables differ only in how the %engine engine names their types; nothing needs to change.</source>
+        <translation>%count Tabellen unterscheiden sich nur darin, wie die Engine %engine ihre Typen benennt; nichts muss geändert werden.</translation>
+    </message>
+    <message>
+        <source>%count tables differ: %missing missing, %extra not in the schema, %changed changed. The SQL below would bring the database in line; read it before you run any of it, after a backup.</source>
+        <translation>%count Tabellen weichen ab: %missing fehlend, %extra nicht im Schema, %changed geändert. Das SQL unten würde die Datenbank angleichen; lesen Sie es, bevor Sie etwas davon ausführen, und nur nach einer Sicherung.</translation>
+    </message>
+    <message>
+        <source>%count collections are missing.</source>
+        <translation>%count Collections fehlen.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Überblick</translation>
+    </message>
+    <message>
+        <source>Exponential version</source>
+        <translation>Exponential-Version</translation>
+    </message>
+    <message>
+        <source>Files in share/filelist.md5</source>
+        <translation>Dateien in share/filelist.md5</translation>
+    </message>
+    <message>
+        <source>share/filelist.md5 is missing</source>
+        <translation>share/filelist.md5 fehlt</translation>
+    </message>
+    <message>
+        <source>Manifest last committed</source>
+        <translation>Manifest zuletzt committet</translation>
+    </message>
+    <message>
+        <source>Manifest written</source>
+        <translation>Manifest geschrieben</translation>
+    </message>
+    <message>
+        <source>of %count active extensions carry a manifest of their own</source>
+        <translation>von %count aktiven Erweiterungen haben ein eigenes Manifest</translation>
+    </message>
+    <message>
+        <source>Database engine</source>
+        <translation>Datenbank-Engine</translation>
+    </message>
+    <message>
+        <source>Checks</source>
+        <translation>Prüfungen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Could not run</source>
+        <translation>Konnte nicht laufen</translation>
+    </message>
+    <message>
+        <source>%count to look at</source>
+        <translation>%count anzusehen</translation>
+    </message>
+    <message>
+        <source>Compares every file listed in share/filelist.md5, and in the share/filelist.md5 of each active extension that has one, with its checksum. The same check from a shell: %command</source>
+        <translation>Vergleicht jede in share/filelist.md5 aufgeführte Datei, und in der share/filelist.md5 jeder aktiven Erweiterung, die eine hat, mit ihrer Prüfsumme. Dieselbe Prüfung in einer Shell: %command</translation>
+    </message>
+    <message>
+        <source>Download CSV</source>
+        <translation>CSV herunterladen</translation>
+    </message>
+    <message>
+        <source>Download text</source>
+        <translation>Text herunterladen</translation>
+    </message>
+    <message>
+        <source>Compares the tables, fields and indexes of the database with the schema that ships with Exponential and the active extensions, and shows the SQL that would bring the database in line. Nothing is run: read the SQL, make a backup, then run what you agree with yourself.</source>
+        <translation>Vergleicht die Tabellen, Felder und Indizes der Datenbank mit dem Schema, das mit Exponential und den aktiven Erweiterungen ausgeliefert wird, und zeigt das SQL, das die Datenbank angleichen würde. Nichts wird ausgeführt: Lesen Sie das SQL, legen Sie eine Sicherung an und führen Sie dann selbst aus, was Sie für richtig halten.</translation>
+    </message>
+    <message>
+        <source>Download SQL</source>
+        <translation>SQL herunterladen</translation>
+    </message>
+    <message>
+        <source>Checking. This takes a few seconds; the page reloads with the result.</source>
+        <translation>Prüfung läuft. Das dauert einige Sekunden; die Seite lädt mit dem Ergebnis neu.</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>%count files checked in %seconds s</source>
+        <translation>%count Dateien in %seconds s geprüft</translation>
+    </message>
+    <message>
+        <source>Matching</source>
+        <translation>Übereinstimmend</translation>
+    </message>
+    <message>
+        <source>Not listed (notes)</source>
+        <translation>Nicht aufgeführt (Hinweise)</translation>
+    </message>
+    <message>
+        <source>Manifest lines to tidy (notes)</source>
+        <translation>Manifestzeilen zum Aufräumen (Hinweise)</translation>
+    </message>
+    <message>
+        <source>Manifests read</source>
+        <translation>Gelesene Manifeste</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>To look at</source>
+        <translation>Anzusehen</translation>
+    </message>
+    <message>
+        <source>Written</source>
+        <translation>Geschrieben</translation>
+    </message>
+    <message>
+        <source>Not listed files</source>
+        <translation>Nicht aufgeführte Dateien</translation>
+    </message>
+    <message>
+        <source>version %version</source>
+        <translation>Version %version</translation>
+    </message>
+    <message>
+        <source>Its header says %header files, it lists %count</source>
+        <translation>Sein Kopf nennt %header Dateien, es führt %count auf</translation>
+    </message>
+    <message>
+        <source>Cannot be read</source>
+        <translation>Nicht lesbar</translation>
+    </message>
+    <message>
+        <source>Checked against git</source>
+        <translation>Gegen git geprüft</translation>
+    </message>
+    <message>
+        <source>Not checked: no git checkout</source>
+        <translation>Nicht geprüft: kein git-Checkout</translation>
+    </message>
+    <message>
+        <source>Find a file</source>
+        <translation>Datei suchen</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wo</translation>
+    </message>
+    <message>
+        <source>Everywhere</source>
+        <translation>Überall</translation>
+    </message>
+    <message>
+        <source>Exponential (outside extension/)</source>
+        <translation>Exponential (außerhalb von extension/)</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>A note: it does not stop an upgrade</source>
+        <translation>Ein Hinweis: Er steht einem Upgrade nicht im Weg</translation>
+    </message>
+    <message>
+        <source>What it means and what to do</source>
+        <translation>Was es bedeutet und was zu tun ist</translation>
+    </message>
+    <message>
+        <source>The file differs from the one the release shipped. If you changed it on purpose, move the change into an override, a design or an extension of your own, because an upgrade replaces this file, and merge it into the new version. If nobody changed it on purpose, restore it from the release.</source>
+        <translation>Die Datei weicht von der im Release ausgelieferten ab. Wenn Sie sie absichtlich geändert haben, verschieben Sie die Änderung in einen Override, ein Design oder eine eigene Erweiterung, denn ein Upgrade ersetzt diese Datei, und übernehmen Sie sie in die neue Version. Wenn niemand sie absichtlich geändert hat, stellen Sie sie aus dem Release wieder her.</translation>
+    </message>
+    <message>
+        <source>For a maintainer who changed it in the source: refresh its line with %command and commit the manifest with the change.</source>
+        <translation>Für Maintainer, die sie im Quellcode geändert haben: Aktualisieren Sie ihre Zeile mit %command und committen Sie das Manifest mit der Änderung.</translation>
+    </message>
+    <message>
+        <source>The file is listed but not there. Copy it back from the release this installation runs. A maintainer who removed it on purpose drops its line with %command.</source>
+        <translation>Die Datei ist aufgeführt, aber nicht vorhanden. Kopieren Sie sie aus dem Release zurück, mit dem diese Installation läuft. Maintainer, die sie absichtlich entfernt haben, entfernen ihre Zeile mit %command.</translation>
+    </message>
+    <message>
+        <source>The file is there but could not be read: a directory where a file belongs, or permissions that keep the web server out. Check its owner and mode.</source>
+        <translation>Die Datei ist vorhanden, konnte aber nicht gelesen werden: ein Verzeichnis, wo eine Datei hingehört, oder Rechte, die den Webserver aussperren. Prüfen Sie Besitzer und Rechte.</translation>
+    </message>
+    <message>
+        <source>Git tracks the file but the manifest does not list it, so this check cannot tell whether it changed. Nothing to do on an installed site; a maintainer adds it with %command in the release that adds the file.</source>
+        <translation>Git verfolgt die Datei, aber das Manifest führt sie nicht auf, daher kann diese Prüfung nicht sagen, ob sie geändert wurde. Auf einer installierten Site ist nichts zu tun; Maintainer fügen sie mit %command in dem Release hinzu, das die Datei hinzufügt.</translation>
+    </message>
+    <message>
+        <source>A line of the manifest is not a checksum, two spaces and a path inside the installation, or it lists a file a second time. The line is skipped. Take the manifest from the release, or write it again with %command.</source>
+        <translation>Eine Zeile des Manifests ist nicht Prüfsumme, zwei Leerzeichen und ein Pfad innerhalb der Installation, oder sie führt eine Datei ein zweites Mal auf. Die Zeile wird übersprungen. Nehmen Sie das Manifest aus dem Release oder schreiben Sie es mit %command neu.</translation>
+    </message>
+    <message>
+        <source>The manifest is kept in sorted order so that its changes are easy to review. A line out of order is only a note; %command writes it sorted.</source>
+        <translation>Das Manifest wird sortiert gehalten, damit seine Änderungen leicht zu prüfen sind. Eine Zeile außer der Reihe ist nur ein Hinweis; %command schreibt es sortiert.</translation>
+    </message>
+    <message>
+        <source>The first %shown of %count are listed here; the download has them all.</source>
+        <translation>Die ersten %shown von %count stehen hier; der Download enthält alle.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
+    <message>
+        <source>line %line</source>
+        <translation>Zeile %line</translation>
+    </message>
+    <message>
+        <source>listed</source>
+        <translation>aufgeführt</translation>
+    </message>
+    <message>
+        <source>now</source>
+        <translation>jetzt</translation>
+    </message>
+    <message>
+        <source>after %path</source>
+        <translation>nach %path</translation>
+    </message>
+    <message>
+        <source>lists a file a second time</source>
+        <translation>führt eine Datei ein zweites Mal auf</translation>
+    </message>
+    <message>
+        <source>a path outside the installation</source>
+        <translation>ein Pfad außerhalb der Installation</translation>
+    </message>
+    <message>
+        <source>not a checksum and a path</source>
+        <translation>keine Prüfsumme mit Pfad</translation>
+    </message>
+    <message>
+        <source>No finding matches the search and the filters.</source>
+        <translation>Kein Befund passt zur Suche und zu den Filtern.</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datenbank</translation>
+    </message>
+    <message>
+        <source>%engine, checked in %seconds s</source>
+        <translation>%engine, in %seconds s geprüft</translation>
+    </message>
+    <message>
+        <source>Tables with SQL to review</source>
+        <translation>Tabellen mit zu prüfendem SQL</translation>
+    </message>
+    <message>
+        <source>Missing tables</source>
+        <translation>Fehlende Tabellen</translation>
+    </message>
+    <message>
+        <source>Tables not in the schema</source>
+        <translation>Tabellen nicht im Schema</translation>
+    </message>
+    <message>
+        <source>Changed tables</source>
+        <translation>Geänderte Tabellen</translation>
+    </message>
+    <message>
+        <source>Engine notes</source>
+        <translation>Engine-Hinweise</translation>
+    </message>
+    <message>
+        <source>Schema files compared</source>
+        <translation>Verglichene Schemadateien</translation>
+    </message>
+    <message>
+        <source>Engine note</source>
+        <translation>Engine-Hinweis</translation>
+    </message>
+    <message>
+        <source>Removes something</source>
+        <translation>Entfernt etwas</translation>
+    </message>
+    <message>
+        <source>The %engine schema handler writes no SQL for this: the engine names these types in its own words (on SQLite, text for longtext and an integer key it does not read as auto_increment). Nothing needs to change.</source>
+        <translation>Der Schema-Handler von %engine schreibt hierfür kein SQL: Die Engine benennt diese Typen mit eigenen Worten (unter SQLite text für longtext und einen Integer-Schlüssel, den sie nicht als auto_increment liest). Nichts muss geändert werden.</translation>
+    </message>
+    <message>
+        <source>The table ships with Exponential or an active extension, and the database does not have it. Run the CREATE statement after a backup; the feature that uses the table fails until it is there.</source>
+        <translation>Die Tabelle wird mit Exponential oder einer aktiven Erweiterung ausgeliefert, und die Datenbank hat sie nicht. Führen Sie die CREATE-Anweisung nach einer Sicherung aus; die Funktion, die die Tabelle nutzt, schlägt fehl, bis sie da ist.</translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table: usually it belongs to an extension that is not active, or to an extension of your own without a schema file. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
+        <translation>Kein ausgeliefertes Schema nennt diese Tabelle: Meist gehört sie zu einer nicht aktiven Erweiterung oder zu einer eigenen Erweiterung ohne Schemadatei. Lassen Sie sie, sofern Sie nicht wissen, dass ihre Daten nicht mehr gebraucht werden; die DROP-Anweisung steht nur der Vollständigkeit halber da.</translation>
+    </message>
+    <message>
+        <source>Fields or indexes differ from the shipped definition. Read each statement and run the ones you agree with, after a backup. A statement that removes a field or an index may remove data of your own.</source>
+        <translation>Felder oder Indizes weichen von der ausgelieferten Definition ab. Lesen Sie jede Anweisung und führen Sie nach einer Sicherung die aus, die Sie für richtig halten. Eine Anweisung, die ein Feld oder einen Index entfernt, kann eigene Daten entfernen.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Was</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Shipped</source>
+        <translation>Ausgeliefert</translation>
+    </message>
+    <message>
+        <source>In the database</source>
+        <translation>In der Datenbank</translation>
+    </message>
+    <message>
+        <source>SQL for %engine (not run)</source>
+        <translation>SQL für %engine (nicht ausgeführt)</translation>
+    </message>
+    <message>
+        <source>Nothing to change</source>
+        <translation>Nichts zu ändern</translation>
+    </message>
+    <message>
+        <source>The %engine schema handler writes no SQL for these: the engine names these types in its own words (on SQLite, text for longtext and an integer key it does not read as auto_increment). Nothing needs to change.</source>
+        <translation>Der Schema-Handler von %engine schreibt hierfür kein SQL: Die Engine benennt diese Typen mit eigenen Worten (unter SQLite text für longtext und einen Integer-Schlüssel, den sie nicht als auto_increment liest). Nichts muss geändert werden.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabelle</translation>
+    </message>
+    <message>
+        <source>All statements</source>
+        <translation>Alle Anweisungen</translation>
+    </message>
+    <message>
+        <source>MongoDB creates a collection on its first write, so a missing collection is often harmless until its feature is used. Create them up front with the mongosh command below.</source>
+        <translation>MongoDB legt eine Collection beim ersten Schreiben an, daher ist eine fehlende Collection oft harmlos, bis ihre Funktion genutzt wird. Legen Sie sie vorab mit dem mongosh-Befehl unten an.</translation>
+    </message>
+    <message>
+        <source>Collections not in the schema</source>
+        <translation>Collections nicht im Schema</translation>
+    </message>
+    <message>
+        <source>What the file check reads</source>
+        <translation>Was die Dateiprüfung liest</translation>
+    </message>
+    <message>
+        <source>%own extensions with a manifest of their own, %root in the manifest of Exponential, %none without one</source>
+        <translation>%own Erweiterungen mit eigenem Manifest, %root im Manifest von Exponential, %none ohne</translation>
+    </message>
+    <message>
+        <source>share/filelist.md5 lists every file of the Exponential release with its checksum, the extensions shipped inside it included. An extension released on its own may carry a share/filelist.md5 of its own, refreshed in each of its releases. An extension with neither is not checked.</source>
+        <translation>share/filelist.md5 führt jede Datei des Exponential-Releases mit ihrer Prüfsumme auf, einschließlich der darin ausgelieferten Erweiterungen. Eine eigenständig veröffentlichte Erweiterung kann eine eigene share/filelist.md5 mitbringen, die in jedem ihrer Releases aktualisiert wird. Eine Erweiterung ohne beides wird nicht geprüft.</translation>
+    </message>
+    <message>
+        <source>Files listed</source>
+        <translation>Aufgeführte Dateien</translation>
+    </message>
+    <message>
+        <source>%count malformed lines</source>
+        <translation>%count fehlerhafte Zeilen</translation>
+    </message>
+    <message>
+        <source>Last committed</source>
+        <translation>Zuletzt committet</translation>
+    </message>
+    <message>
+        <source>not a git checkout</source>
+        <translation>kein git-Checkout</translation>
+    </message>
+    <message>
+        <source>Active extension</source>
+        <translation>Aktive Erweiterung</translation>
+    </message>
+    <message>
+        <source>Checked by</source>
+        <translation>Geprüft durch</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Its own manifest</source>
+        <translation>Eigenes Manifest</translation>
+    </message>
+    <message>
+        <source>The manifest of Exponential</source>
+        <translation>Das Manifest von Exponential</translation>
+    </message>
+    <message>
+        <source>manifest %version</source>
+        <translation>Manifest %version</translation>
+    </message>
+    <message>
+        <source>extension %version</source>
+        <translation>Erweiterung %version</translation>
+    </message>
+    <message>
+        <source>The versions differ</source>
+        <translation>Die Versionen weichen ab</translation>
+    </message>
+    <message>
+        <source>Its header says %header files</source>
+        <translation>Sein Kopf nennt %header Dateien</translation>
+    </message>
+    <message>
+        <source>as Exponential</source>
+        <translation>wie Exponential</translation>
+    </message>
+    <message>
+        <source>Not checked (no manifest):</source>
+        <translation>Nicht geprüft (kein Manifest):</translation>
+    </message>
+    <message>
+        <source>How each finding is read and fixed, and how the check runs from the command line:</source>
+        <translation>Wie jeder Befund zu lesen und zu beheben ist und wie die Prüfung auf der Kommandozeile läuft:</translation>
+    </message>
+    <message>
+        <source>The file manifest</source>
+        <translation>Das Datei-Manifest</translation>
+    </message>
+    <message>
+        <source>Upgrading</source>
+        <translation>Upgrade</translation>
+    </message>
+    <message>
+        <source>%shown of %count findings shown</source>
+        <translation>%shown von %count Befunden angezeigt</translation>
+    </message>
+    <message>
+        <source>%count findings</source>
+        <translation>%count Befunde</translation>
+    </message>
+    <message>
+        <source>Checking...</source>
+        <translation>Prüfung läuft...</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/accounthandlers/html/ez</name>
@@ -28141,6 +36280,198 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Workflow triggers (%trigger_count)</source>
         <translation>Workflow Auslöser (%trigger_count)</translation>
     </message>
+    <message>
+        <source>A trigger connects a workflow to an operation of the system: before or after content is published, an order is confirmed, something is added to the basket. When the operation runs, the workflow runs with it; a workflow run before an operation can hold it back, for example until an approver agrees. Each operation can run one workflow before and one after it.</source>
+        <translation>Ein Trigger verbindet einen Workflow mit einer Operation des Systems: vor oder nach dem Veröffentlichen von Inhalten, dem Bestätigen einer Bestellung, dem Hinzufügen zum Warenkorb. Läuft die Operation, läuft der Workflow mit; ein Workflow vor einer Operation kann sie zurückhalten, zum Beispiel bis ein Freigebender zustimmt. Jede Operation kann einen Workflow davor und einen danach ausführen.</translation>
+    </message>
+    <message>
+        <source>Saved: %count triggers changed.</source>
+        <translation>Gespeichert: %count Trigger geändert.</translation>
+    </message>
+    <message>
+        <source>Saved. Nothing had changed.</source>
+        <translation>Gespeichert. Es hatte sich nichts geändert.</translation>
+    </message>
+    <message>
+        <source>Removed: %count triggers.</source>
+        <translation>Entfernt: %count Trigger.</translation>
+    </message>
+    <message>
+        <source>No trigger was selected. Tick the triggers to remove first.</source>
+        <translation>Kein Trigger ausgewählt. Haken Sie zuerst die zu entfernenden Trigger an.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Possible triggers</source>
+        <translation>Mögliche Trigger</translation>
+    </message>
+    <message>
+        <source>Run a workflow</source>
+        <translation>Führen einen Workflow aus</translation>
+    </message>
+    <message>
+        <source>Not set</source>
+        <translation>Nicht gesetzt</translation>
+    </message>
+    <message>
+        <source>Processes waiting</source>
+        <translation>Wartende Prozesse</translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation>Brauchen Aufmerksamkeit</translation>
+    </message>
+    <message>
+        <source>Not offered any more</source>
+        <translation>Nicht mehr angeboten</translation>
+    </message>
+    <message>
+        <source>Find a trigger</source>
+        <translation>Trigger finden</translation>
+    </message>
+    <message>
+        <source>Operation in words, module, operation or workflow.</source>
+        <translation>Operation in Worten, Modul, Operation oder Workflow.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Operations and their workflows</source>
+        <translation>Operationen und ihre Workflows</translation>
+    </message>
+    <message>
+        <source>Choose a workflow for an operation, or No workflow, then Apply changes. A select lists only the workflows whose events all allow that operation.</source>
+        <translation>Wählen Sie für eine Operation einen Workflow oder „Kein Workflow“ und dann „Änderungen übernehmen“. Eine Auswahl bietet nur die Workflows an, deren Ereignisse alle diese Operation erlauben.</translation>
+    </message>
+    <message>
+        <source>No operation is offered for triggers. Add operations to workflow.ini [OperationSettings] AvailableOperationList, for example content_publish.</source>
+        <translation>Für Trigger wird keine Operation angeboten. Fügen Sie Operationen zu workflow.ini [OperationSettings] AvailableOperationList hinzu, zum Beispiel content_publish.</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wann</translation>
+    </message>
+    <message>
+        <source>Runs now</source>
+        <translation>Läuft jetzt</translation>
+    </message>
+    <message>
+        <source>Module %module</source>
+        <translation>Modul %module</translation>
+    </message>
+    <message>
+        <source>%set of %count run a workflow</source>
+        <translation>%set von %count führen einen Workflow aus</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>davor</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>danach</translation>
+    </message>
+    <message>
+        <source>%name (not offered here)</source>
+        <translation>%name (hier nicht angeboten)</translation>
+    </message>
+    <message>
+        <source>Workflow %id (removed)</source>
+        <translation>Workflow %id (entfernt)</translation>
+    </message>
+    <message>
+        <source>No workflow can run here yet.</source>
+        <translation>Hier kann noch kein Workflow laufen.</translation>
+    </message>
+    <message>
+        <source>Removed workflow</source>
+        <translation>Entfernter Workflow</translation>
+    </message>
+    <message>
+        <source>The trigger names a workflow that no longer exists. Choose another or No workflow.</source>
+        <translation>Der Trigger nennt einen Workflow, der nicht mehr existiert. Wählen Sie einen anderen oder „Kein Workflow“.</translation>
+    </message>
+    <message>
+        <source>Events: %count</source>
+        <translation>Ereignisse: %count</translation>
+    </message>
+    <message>
+        <source>%count processes waiting</source>
+        <translation>%count Prozesse warten</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Deaktiviert</translation>
+    </message>
+    <message>
+        <source>Its events no longer all allow this operation, so the select does not offer it. It stays until you choose another.</source>
+        <translation>Seine Ereignisse erlauben diese Operation nicht mehr alle, daher bietet die Auswahl ihn nicht an. Er bleibt, bis Sie einen anderen wählen.</translation>
+    </message>
+    <message>
+        <source>No trigger matches. Clear the search or choose All.</source>
+        <translation>Kein Trigger passt. Leeren Sie die Suche oder wählen Sie „Alle“.</translation>
+    </message>
+    <message>
+        <source>A change takes effect for the next operation; processes already waiting keep the workflow they started with.</source>
+        <translation>Eine Änderung gilt ab der nächsten Operation; bereits wartende Prozesse behalten den Workflow, mit dem sie begonnen haben.</translation>
+    </message>
+    <message>
+        <source>Triggers this list no longer offers</source>
+        <translation>Trigger, die diese Liste nicht mehr anbietet</translation>
+    </message>
+    <message>
+        <source>These triggers are stored, but their operation, or this side of it, is not in workflow.ini [OperationSettings] AvailableOperationList. Add it there to use them again, or remove them.</source>
+        <translation>Diese Trigger sind gespeichert, aber ihre Operation oder diese Seite davon steht nicht in workflow.ini [OperationSettings] AvailableOperationList. Fügen Sie sie dort hinzu, um sie wieder zu nutzen, oder entfernen Sie sie.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Select the trigger %label for removal</source>
+        <translation>Den Trigger %label zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Workflow %id</source>
+        <translation>Workflow %id</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keiner</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Auswahl entfernen</translation>
+    </message>
+    <message>
+        <source>Removing one of these changes nothing that runs now: an operation not offered here does not run its triggers. The workflow stays.</source>
+        <translation>Das Entfernen eines dieser Trigger ändert nichts an dem, was jetzt läuft: Eine hier nicht angebotene Operation führt ihre Trigger nicht aus. Der Workflow bleibt.</translation>
+    </message>
+    <message>
+        <source>%shown of %count triggers shown</source>
+        <translation>%shown von %count Triggern angezeigt</translation>
+    </message>
+    <message>
+        <source>Triggers: %count</source>
+        <translation>Trigger: %count</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>%count unsaved changes.</source>
+        <translation>%count ungespeicherte Änderungen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/url/edit</name>
@@ -28266,6 +36597,218 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>All links (%url_list_count)</source>
         <translation>Alle URLs (%url_list_count)</translation>
+    </message>
+    <message>
+        <source>Links never checked (%url_list_count)</source>
+        <translation>Nie geprüfte Links (%url_list_count)</translation>
+    </message>
+    <message>
+        <source>Every address that published content links to, from a URL field or a link in rich text, is registered here once. The link check (the cronjob script linkcheck.php, in the infrequent part) tries each address and marks it valid or invalid; you can also mark links by hand. A link is changed in one place here and every object that uses it shows the new address.</source>
+        <translation>Jede Adresse, auf die veröffentlichte Inhalte verweisen, aus einem URL-Feld oder einem Link im Rich Text, ist hier einmal erfasst. Die Linkprüfung (das Cronjob-Skript linkcheck.php im Teil infrequent) ruft jede Adresse auf und markiert sie als gültig oder ungültig; Sie können Links auch von Hand markieren. Ein Link wird hier an einer Stelle geändert, und jedes Objekt, das ihn verwendet, zeigt die neue Adresse.</translation>
+    </message>
+    <message>
+        <source>%count links were marked valid. The next link check tests them again.</source>
+        <translation>%count Links wurden als gültig markiert. Die nächste Linkprüfung testet sie erneut.</translation>
+    </message>
+    <message>
+        <source>%count links were marked invalid. The next link check tests them again.</source>
+        <translation>%count Links wurden als ungültig markiert. Die nächste Linkprüfung testet sie erneut.</translation>
+    </message>
+    <message>
+        <source>No link was selected. Tick the links to mark first.</source>
+        <translation>Es wurde kein Link ausgewählt. Haken Sie zuerst die zu markierenden Links an.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Links in published content</source>
+        <translation>Links in veröffentlichten Inhalten</translation>
+    </message>
+    <message>
+        <source>Never checked</source>
+        <translation>Nie geprüft</translation>
+    </message>
+    <message>
+        <source>Last link check, %time</source>
+        <translation>Letzte Linkprüfung, %time</translation>
+    </message>
+    <message>
+        <source>The link check has not run yet</source>
+        <translation>Die Linkprüfung ist noch nicht gelaufen</translation>
+    </message>
+    <message>
+        <source>Find links</source>
+        <translation>Links finden</translation>
+    </message>
+    <message>
+        <source>Find a link</source>
+        <translation>Einen Link finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche löschen</translation>
+    </message>
+    <message>
+        <source>Any part of the address, such as a domain or a path. Upper and lower case are the same.</source>
+        <translation>Ein beliebiger Teil der Adresse, etwa eine Domain oder ein Pfad. Groß- und Kleinschreibung spielen keine Rolle.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Address A to Z</source>
+        <translation>Adresse A bis Z</translation>
+    </message>
+    <message>
+        <source>Last checked</source>
+        <translation>Zuletzt geprüft</translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation>Zuletzt geändert</translation>
+    </message>
+    <message>
+        <source>Links containing “%search”</source>
+        <translation>Links mit „%search“</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Links</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>No link matches this search. Check the spelling, search for a shorter part of the address, or show all links.</source>
+        <translation>Kein Link passt zu dieser Suche. Prüfen Sie die Schreibweise, suchen Sie nach einem kürzeren Teil der Adresse oder zeigen Sie alle Links an.</translation>
+    </message>
+    <message>
+        <source>No link is marked invalid. Either every link works, or the link check has not found a broken one yet.</source>
+        <translation>Kein Link ist als ungültig markiert. Entweder funktionieren alle Links, oder die Linkprüfung hat noch keinen defekten gefunden.</translation>
+    </message>
+    <message>
+        <source>Every link has been checked at least once.</source>
+        <translation>Jeder Link wurde mindestens einmal geprüft.</translation>
+    </message>
+    <message>
+        <source>No link is marked valid yet. Run the link check, or mark links valid by hand.</source>
+        <translation>Noch kein Link ist als gültig markiert. Führen Sie die Linkprüfung aus oder markieren Sie Links von Hand als gültig.</translation>
+    </message>
+    <message>
+        <source>No published content links to an address yet. Links appear here when content with a URL field or a link in rich text is published.</source>
+        <translation>Noch verweist kein veröffentlichter Inhalt auf eine Adresse. Links erscheinen hier, sobald Inhalte mit einem URL-Feld oder einem Link im Rich Text veröffentlicht werden.</translation>
+    </message>
+    <message>
+        <source>Select this link.</source>
+        <translation>Diesen Link auswählen.</translation>
+    </message>
+    <message>
+        <source>Select %url</source>
+        <translation>%url auswählen</translation>
+    </message>
+    <message>
+        <source>For an e-mail address the link check looks up the mail server of its domain.</source>
+        <translation>Bei einer E-Mail-Adresse sucht die Linkprüfung den Mailserver ihrer Domain.</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>E-Mail</translation>
+    </message>
+    <message>
+        <source>A path on this site: the link check looks it up as a URL alias.</source>
+        <translation>Ein Pfad auf dieser Website: Die Linkprüfung sucht ihn als URL-Alias.</translation>
+    </message>
+    <message>
+        <source>On this site</source>
+        <translation>Auf dieser Website</translation>
+    </message>
+    <message>
+        <source>A link to a node or object in rich text: the link check marks it valid while its target exists, is published and is visible.</source>
+        <translation>Ein Link auf einen Knoten oder ein Objekt im Rich Text: Die Linkprüfung markiert ihn als gültig, solange sein Ziel existiert, veröffentlicht und sichtbar ist.</translation>
+    </message>
+    <message>
+        <source>Link to content</source>
+        <translation>Link auf Inhalt</translation>
+    </message>
+    <message>
+        <source>A file address names a file on a computer, not a page: the link check never tests it and keeps its state.</source>
+        <translation>Eine Dateiadresse bezeichnet eine Datei auf einem Rechner, keine Seite: Die Linkprüfung testet sie nie und behält ihren Zustand bei.</translation>
+    </message>
+    <message>
+        <source>Not tested</source>
+        <translation>Nicht getestet</translation>
+    </message>
+    <message>
+        <source>An address of another kind: the link check looks it up as a path of this site, so it is usually marked invalid.</source>
+        <translation>Eine Adresse anderer Art: Die Linkprüfung sucht sie als Pfad dieser Website, daher wird sie meist als ungültig markiert.</translation>
+    </message>
+    <message>
+        <source>Other address</source>
+        <translation>Andere Adresse</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>Verwendet von</translation>
+    </message>
+    <message>
+        <source>No published object</source>
+        <translation>Kein veröffentlichtes Objekt</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>und %count weitere</translation>
+    </message>
+    <message>
+        <source>See the objects on the link page</source>
+        <translation>Die Objekte auf der Seite des Links ansehen</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>Mark selected valid</source>
+        <translation>Ausgewählte als gültig markieren</translation>
+    </message>
+    <message>
+        <source>Mark selected invalid</source>
+        <translation>Ausgewählte als ungültig markieren</translation>
+    </message>
+    <message>
+        <source>Marking changes only the state shown here and in templates that hide invalid links; nothing is removed and no content changes. The next link check tests the links again.</source>
+        <translation>Das Markieren ändert nur den hier angezeigten Zustand und den in Templates, die ungültige Links ausblenden; nichts wird entfernt und kein Inhalt geändert. Die nächste Linkprüfung testet die Links erneut.</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
     </message>
 </context>
 <context>
@@ -28494,6 +37037,321 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>There are no unactivated users</source>
         <translation>Es gibt keine nicht aktivierten Benutzer</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/edit</name>
+    <message>
+        <source>Active</source>
+        <translation>Aktiv</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Deaktiviert</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Gesperrt</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mein Konto</translation>
+    </message>
+    <message>
+        <source>User account: %name</source>
+        <translation>Benutzerkonto: %name</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Your account at a glance, and every page to change it from.</source>
+        <translation>Ihr Konto auf einen Blick, und jede Seite, auf der Sie es ändern.</translation>
+    </message>
+    <message>
+        <source>The account of this user at a glance, and every page to change it from.</source>
+        <translation>Das Konto dieses Benutzers auf einen Blick, und jede Seite, auf der es geändert wird.</translation>
+    </message>
+    <message>
+        <source>Edit profile</source>
+        <translation>Profil bearbeiten</translation>
+    </message>
+    <message>
+        <source>Show in the content tree</source>
+        <translation>Im Inhaltsbaum anzeigen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Security hints</source>
+        <translation>Sicherheitshinweise</translation>
+    </message>
+    <message>
+        <source>Disabled.</source>
+        <translation>Deaktiviert.</translation>
+    </message>
+    <message>
+        <source>This account is disabled: its user cannot sign in. It is enabled again under Account settings.</source>
+        <translation>Dieses Konto ist deaktiviert: Sein Benutzer kann sich nicht anmelden. Unter Kontoeinstellungen wird es wieder aktiviert.</translation>
+    </message>
+    <message>
+        <source>Locked.</source>
+        <translation>Gesperrt.</translation>
+    </message>
+    <message>
+        <source>This account is locked after too many failed sign-ins. Resetting the count under Account settings lets its user sign in again.</source>
+        <translation>Dieses Konto ist nach zu vielen fehlgeschlagenen Anmeldungen gesperrt. Wird der Zähler unter Kontoeinstellungen zurückgesetzt, kann sich sein Benutzer wieder anmelden.</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins.</source>
+        <translation>Fehlgeschlagene Anmeldungen.</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins since the last successful one; the account is locked after %max.</source>
+        <translation>%count fehlgeschlagene Anmeldungen seit der letzten erfolgreichen; nach %max wird das Konto gesperrt.</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins since the last successful one.</source>
+        <translation>%count fehlgeschlagene Anmeldungen seit der letzten erfolgreichen.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in is off.</source>
+        <translation>Die zweistufige Anmeldung ist aus.</translation>
+    </message>
+    <message>
+        <source>A code from your phone at sign-in keeps your account safe even if your password leaks.</source>
+        <translation>Ein Code von Ihrem Telefon bei der Anmeldung schützt Ihr Konto, selbst wenn Ihr Passwort bekannt wird.</translation>
+    </message>
+    <message>
+        <source>This user signs in with the password alone.</source>
+        <translation>Dieser Benutzer meldet sich nur mit dem Passwort an.</translation>
+    </message>
+    <message>
+        <source>No password.</source>
+        <translation>Kein Passwort.</translation>
+    </message>
+    <message>
+        <source>This account has no password set: nobody can sign in with it until one is set.</source>
+        <translation>Für dieses Konto ist kein Passwort gesetzt: Niemand kann sich damit anmelden, bis eines gesetzt ist.</translation>
+    </message>
+    <message>
+        <source>Old password storage.</source>
+        <translation>Veraltete Passwortspeicherung.</translation>
+    </message>
+    <message>
+        <source>The password is stored with an older method. Changing it stores it with the current, stronger one.</source>
+        <translation>Das Passwort ist mit einem älteren Verfahren gespeichert. Wird es geändert, wird es mit dem aktuellen, stärkeren gespeichert.</translation>
+    </message>
+    <message>
+        <source>Old password.</source>
+        <translation>Altes Passwort.</translation>
+    </message>
+    <message>
+        <source>The password was last changed %days days ago.</source>
+        <translation>Das Passwort wurde zuletzt vor %days Tagen geändert.</translation>
+    </message>
+    <message>
+        <source>Never signed in.</source>
+        <translation>Nie angemeldet.</translation>
+    </message>
+    <message>
+        <source>This account has not been used to sign in yet.</source>
+        <translation>Mit diesem Konto wurde sich noch nie angemeldet.</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Benutzername</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>E-Mail</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollen</translation>
+    </message>
+    <message>
+        <source>Last sign-in</source>
+        <translation>Letzte Anmeldung</translation>
+    </message>
+    <message>
+        <source>%count sign-ins in all</source>
+        <translation>%count Anmeldungen insgesamt</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Passwort geändert</translation>
+    </message>
+    <message>
+        <source>today</source>
+        <translation>heute</translation>
+    </message>
+    <message>
+        <source>%days days ago</source>
+        <translation>vor %days Tagen</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nicht erfasst</translation>
+    </message>
+    <message>
+        <source>Manage your account</source>
+        <translation>Ihr Konto verwalten</translation>
+    </message>
+    <message>
+        <source>Manage this account</source>
+        <translation>Dieses Konto verwalten</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address, image and the other fields of your user.</source>
+        <translation>Ihr Name, Ihre E-Mail-Adresse, Ihr Bild und die weiteren Felder Ihres Benutzers.</translation>
+    </message>
+    <message>
+        <source>The name, e-mail address, image and the other fields of this user.</source>
+        <translation>Name, E-Mail-Adresse, Bild und die weiteren Felder dieses Benutzers.</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Change the password you sign in with.</source>
+        <translation>Das Passwort ändern, mit dem Sie sich anmelden.</translation>
+    </message>
+    <message>
+        <source>Set a new password for this user.</source>
+        <translation>Ein neues Passwort für diesen Benutzer festlegen.</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Passwort ändern</translation>
+    </message>
+    <message>
+        <source>Account settings</source>
+        <translation>Kontoeinstellungen</translation>
+    </message>
+    <message>
+        <source>Enable or disable the account, reset failed sign-ins, and see its API keys.</source>
+        <translation>Das Konto aktivieren oder deaktivieren, fehlgeschlagene Anmeldungen zurücksetzen und seine API-Schlüssel ansehen.</translation>
+    </message>
+    <message>
+        <source>Open settings</source>
+        <translation>Einstellungen öffnen</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in</source>
+        <translation>Zweistufige Anmeldung</translation>
+    </message>
+    <message>
+        <source>A code from an authenticator app or by e-mail at sign-in, besides your password.</source>
+        <translation>Bei der Anmeldung zusätzlich zum Passwort ein Code aus einer Authenticator-App oder per E-Mail.</translation>
+    </message>
+    <message>
+        <source>Set in the profile of this user.</source>
+        <translation>Wird im Profil dieses Benutzers eingestellt.</translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation>Verwalten</translation>
+    </message>
+    <message>
+        <source>Turn on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>On, authenticator app</source>
+        <translation>An, Authenticator-App</translation>
+    </message>
+    <message>
+        <source>On, e-mail codes</source>
+        <translation>An, Codes per E-Mail</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Aus</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-Schlüssel</translation>
+    </message>
+    <message>
+        <source>Personal keys for your own scripts and tools to publish through the REST interface.</source>
+        <translation>Persönliche Schlüssel für Ihre eigenen Skripte und Werkzeuge, um über die REST-Schnittstelle zu veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>Show and revoke the API keys of this user.</source>
+        <translation>Die API-Schlüssel dieses Benutzers anzeigen und widerrufen.</translation>
+    </message>
+    <message>
+        <source>Manage my API keys</source>
+        <translation>Meine API-Schlüssel verwalten</translation>
+    </message>
+    <message>
+        <source>Show API keys</source>
+        <translation>API-Schlüssel anzeigen</translation>
+    </message>
+    <message>
+        <source>%active active, %total in all</source>
+        <translation>%active aktiv, %total insgesamt</translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Lesezeichen</translation>
+    </message>
+    <message>
+        <source>Your bookmarks, in folders, for quick access to content.</source>
+        <translation>Ihre Lesezeichen, in Ordnern, für den schnellen Zugriff auf Inhalte.</translation>
+    </message>
+    <message>
+        <source>Open bookmarks</source>
+        <translation>Lesezeichen öffnen</translation>
+    </message>
+    <message>
+        <source>Notifications</source>
+        <translation>Benachrichtigungen</translation>
+    </message>
+    <message>
+        <source>The content you follow, and how often you hear about changes to it.</source>
+        <translation>Die Inhalte, denen Sie folgen, und wie oft Sie von Änderungen erfahren.</translation>
+    </message>
+    <message>
+        <source>Notification settings</source>
+        <translation>Benachrichtigungseinstellungen</translation>
+    </message>
+    <message>
+        <source>E-mail preferences</source>
+        <translation>E-Mail-Einstellungen</translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you get, download your e-mail data, or stop all optional e-mail.</source>
+        <translation>Wählen Sie, welche E-Mails Sie erhalten, laden Sie Ihre E-Mail-Daten herunter oder beenden Sie alle optionalen E-Mails.</translation>
+    </message>
+    <message>
+        <source>The e-mail preferences and consents of this user.</source>
+        <translation>Die E-Mail-Einstellungen und Einwilligungen dieses Benutzers.</translation>
+    </message>
+    <message>
+        <source>Open e-mail preferences</source>
+        <translation>E-Mail-Einstellungen öffnen</translation>
     </message>
 </context>
 <context>
@@ -28929,6 +37787,237 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
 </context>
 <context>
+    <name>design/admin/user/unactivated</name>
+    <message>
+        <source>People who registered on the site but never clicked the link of their activation mail. Their accounts exist but cannot be used to log in. You can activate them by hand, send the mail again, or remove registrations nobody will finish.</source>
+        <translation>Personen, die sich auf der Website registriert, aber nie auf den Link ihrer Aktivierungsmail geklickt haben. Ihre Konten bestehen, können aber nicht zum Anmelden genutzt werden. Sie können sie von Hand aktivieren, die Mail erneut senden oder Registrierungen entfernen, die niemand abschließen wird.</translation>
+    </message>
+    <message>
+        <source>They were activated or removed meanwhile.</source>
+        <translation>Sie wurden inzwischen aktiviert oder entfernt.</translation>
+    </message>
+    <message>
+        <source>Only users who are still unactivated are removed; the others were activated or removed meanwhile.</source>
+        <translation>Nur Benutzer, die noch nicht aktiviert sind, werden entfernt; die anderen wurden inzwischen aktiviert oder entfernt.</translation>
+    </message>
+    <message>
+        <source>The activation mail was sent again to %count users, each with a new link.</source>
+        <translation>Die Aktivierungsmail wurde erneut an %count Benutzer gesendet, jeweils mit einem neuen Link.</translation>
+    </message>
+    <message>
+        <source>The mail could not be sent to some users:</source>
+        <translation>Die Mail konnte an einige Benutzer nicht gesendet werden:</translation>
+    </message>
+    <message>
+        <source>%count without a valid e-mail address</source>
+        <translation>%count ohne gültige E-Mail-Adresse</translation>
+    </message>
+    <message>
+        <source>%count no longer unactivated</source>
+        <translation>%count nicht mehr unaktiviert</translation>
+    </message>
+    <message>
+        <source>%count not accepted by the mail transport</source>
+        <translation>%count vom Mailversand nicht angenommen</translation>
+    </message>
+    <message>
+        <source>%removed removed, %skipped skipped.</source>
+        <translation>%removed entfernt, %skipped übersprungen.</translation>
+    </message>
+    <message>
+        <source>%count were activated meanwhile and kept</source>
+        <translation>%count wurden inzwischen aktiviert und behalten</translation>
+    </message>
+    <message>
+        <source>%count are the anonymous user, the administrator account or you, and are never removed</source>
+        <translation>%count sind der anonyme Benutzer, das Administratorkonto oder Sie und werden nie entfernt</translation>
+    </message>
+    <message>
+        <source>%count were removed meanwhile by someone else</source>
+        <translation>%count wurden inzwischen von jemand anderem entfernt</translation>
+    </message>
+    <message>
+        <source>%count could not be removed</source>
+        <translation>%count konnten nicht entfernt werden</translation>
+    </message>
+    <message>
+        <source>No user was selected. Tick the users first.</source>
+        <translation>Kein Benutzer ausgewählt. Kreuzen Sie zuerst die Benutzer an.</translation>
+    </message>
+    <message>
+        <source>Find users</source>
+        <translation>Benutzer finden</translation>
+    </message>
+    <message>
+        <source>Find a registration</source>
+        <translation>Eine Registrierung finden</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation>Suche zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Any part of the login, the e-mail address or the name.</source>
+        <translation>Ein beliebiger Teil des Anmeldenamens, der E-Mail-Adresse oder des Namens.</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reihenfolge umkehren</translation>
+    </message>
+    <message>
+        <source>Registrations matching “%search”</source>
+        <translation>Registrierungen mit „%search“</translation>
+    </message>
+    <message>
+        <source>Registrations</source>
+        <translation>Registrierungen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registriert</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(kein Name)</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Unbekannt</translation>
+    </message>
+    <message>
+        <source>%count days ago</source>
+        <translation>vor %count Tagen</translation>
+    </message>
+    <message>
+        <source>%count hours ago</source>
+        <translation>vor %count Stunden</translation>
+    </message>
+    <message>
+        <source>Registered more than %days days ago: it is unlikely to be finished.</source>
+        <translation>Vor mehr als %days Tagen registriert: Die Registrierung wird kaum noch abgeschlossen.</translation>
+    </message>
+    <message>
+        <source>Old</source>
+        <translation>Alt</translation>
+    </message>
+    <message>
+        <source>No unactivated user matches this search.</source>
+        <translation>Kein unaktivierter Benutzer passt zu dieser Suche.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>The ticked accounts work at once, as if their owners had clicked the activation link. Only do this when you know the e-mail addresses are theirs.</source>
+        <translation>Die angekreuzten Konten funktionieren sofort, als hätten ihre Inhaber auf den Aktivierungslink geklickt. Tun Sie das nur, wenn Sie wissen, dass die E-Mail-Adressen ihnen gehören.</translation>
+    </message>
+    <message>
+        <source>Activate the ticked users</source>
+        <translation>Angekreuzte Benutzer aktivieren</translation>
+    </message>
+    <message>
+        <source>Send the activation mail again</source>
+        <translation>Aktivierungsmail erneut senden</translation>
+    </message>
+    <message>
+        <source>Each ticked user gets a new activation mail with a new link; the link of the earlier mail stops working.</source>
+        <translation>Jeder angekreuzte Benutzer erhält eine neue Aktivierungsmail mit neuem Link; der Link der früheren Mail funktioniert nicht mehr.</translation>
+    </message>
+    <message>
+        <source>Mail is sent with the transport “%transport” (site.ini [MailSettings]).</source>
+        <translation>Mail wird mit dem Versand „%transport“ gesendet (site.ini [MailSettings]).</translation>
+    </message>
+    <message>
+        <source>Send the mail to the ticked users</source>
+        <translation>Mail an die angekreuzten Benutzer senden</translation>
+    </message>
+    <message>
+        <source>The ticked registrations are removed for good, with their user objects. This cannot be undone. Activated users are never removed here.</source>
+        <translation>Die angekreuzten Registrierungen werden endgültig entfernt, mit ihren Benutzerobjekten. Das kann nicht rückgängig gemacht werden. Aktivierte Benutzer werden hier nie entfernt.</translation>
+    </message>
+    <message>
+        <source>Remove the ticked users</source>
+        <translation>Angekreuzte Benutzer entfernen</translation>
+    </message>
+    <message>
+        <source>Remove all %count matching the search</source>
+        <translation>Alle %count Treffer der Suche entfernen</translation>
+    </message>
+    <message>
+        <source>Remove all unactivated users</source>
+        <translation>Alle unaktivierten Benutzer entfernen</translation>
+    </message>
+    <message>
+        <source>The %count unactivated users matching “%search” are removed for good, on every page, not only this one. This cannot be undone.</source>
+        <translation>Die %count unaktivierten Benutzer mit „%search“ werden endgültig entfernt, auf allen Seiten, nicht nur auf dieser. Das kann nicht rückgängig gemacht werden.</translation>
+    </message>
+    <message>
+        <source>All %count unactivated users are removed for good, on every page, not only this one. This cannot be undone.</source>
+        <translation>Alle %count unaktivierten Benutzer werden endgültig entfernt, auf allen Seiten, nicht nur auf dieser. Das kann nicht rückgängig gemacht werden.</translation>
+    </message>
+    <message>
+        <source>Each one is checked again just before it is removed: anyone activated meanwhile, the anonymous user, the administrator account and you are kept.</source>
+        <translation>Jeder wird unmittelbar vor dem Entfernen erneut geprüft: Wer inzwischen aktiviert wurde, der anonyme Benutzer, das Administratorkonto und Sie bleiben erhalten.</translation>
+    </message>
+    <message>
+        <source>Remove the %count matching users</source>
+        <translation>Die %count passenden Benutzer entfernen</translation>
+    </message>
+    <message>
+        <source>Remove all %count</source>
+        <translation>Alle %count entfernen</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>Activate your account at %siteurl</source>
+        <translation>Aktivieren Sie Ihr Konto bei %siteurl</translation>
+    </message>
+    <message>
+        <source>You registered at %siteurl but have not activated your account yet.</source>
+        <translation>Sie haben sich bei %siteurl registriert, Ihr Konto aber noch nicht aktiviert.</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Benutzername</translation>
+    </message>
+    <message>
+        <source>Click the following address to activate your account:</source>
+        <translation>Klicken Sie auf folgende Adresse, um Ihr Konto zu aktivieren:</translation>
+    </message>
+    <message>
+        <source>The link of any earlier activation mail no longer works. If you did not register, you can ignore this mail.</source>
+        <translation>Der Link jeder früheren Aktivierungsmail funktioniert nicht mehr. Wenn Sie sich nicht registriert haben, können Sie diese Mail ignorieren.</translation>
+    </message>
+    <message>
+        <source>Activate your account</source>
+        <translation>Aktivieren Sie Ihr Konto</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/visual/menuconfig</name>
     <message>
         <source>Menu management</source>
@@ -28957,6 +38046,634 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>Siteaccess</source>
         <translation>Seitenzugang</translation>
+    </message>
+    <message>
+        <source>Menus (classic)</source>
+        <translation>Menüs (klassisch)</translation>
+    </message>
+    <message>
+        <source>Classic designs</source>
+        <translation>Klassische Designs</translation>
+    </message>
+    <message>
+        <source>The top and left menus of sites built with the classic designs, chosen per siteaccess.</source>
+        <translation>Die oberen und linken Menüs von Sites mit den klassischen Designs, je Siteaccess gewählt.</translation>
+    </message>
+    <message>
+        <source>Saved: %siteaccess now uses %menu.</source>
+        <translation>Gespeichert: %siteaccess verwendet jetzt %menu.</translation>
+    </message>
+    <message>
+        <source>The file %file was created with the three settings.</source>
+        <translation>Die Datei %file wurde mit den drei Einstellungen angelegt.</translation>
+    </message>
+    <message>
+        <source>The three settings were written to %file; the rest of the file is unchanged.</source>
+        <translation>Die drei Einstellungen wurden in %file geschrieben; der Rest der Datei ist unverändert.</translation>
+    </message>
+    <message>
+        <source>The INI cache, the compiled page layouts and the template blocks were cleared.</source>
+        <translation>Der INI-Cache, die kompilierten Seitenlayouts und die Template-Blöcke wurden geleert.</translation>
+    </message>
+    <message>
+        <source>The file as it was before is kept in %backup.</source>
+        <translation>Die Datei im vorherigen Zustand liegt in %backup.</translation>
+    </message>
+    <message>
+        <source>No restart is needed, neither of PHP-FPM nor of Velocity: every request reads the settings again. Pages kept in a response cache show the old menus until that cache is cleared.</source>
+        <translation>Kein Neustart nötig, weder von PHP-FPM noch von Velocity: Jede Anfrage liest die Einstellungen neu. Seiten in einem Antwort-Cache zeigen die alten Menüs, bis dieser Cache geleert wird.</translation>
+    </message>
+    <message>
+        <source>%siteaccess already uses %menu. Nothing was written.</source>
+        <translation>%siteaccess verwendet bereits %menu. Es wurde nichts geschrieben.</translation>
+    </message>
+    <message>
+        <source>Choose one of the menu arrangements below. Nothing was saved.</source>
+        <translation>Wählen Sie eine der Menüanordnungen unten. Es wurde nichts gespeichert.</translation>
+    </message>
+    <message>
+        <source>The menu settings of %siteaccess were not saved.</source>
+        <translation>Die Menüeinstellungen von %siteaccess wurden nicht gespeichert.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write %file. Make it writable for the web server user, or set the value in that file by hand.</source>
+        <translation>Der Webserver kann %file nicht schreiben. Machen Sie die Datei für den Benutzer des Webservers schreibbar oder tragen Sie den Wert von Hand ein.</translation>
+    </message>
+    <message>
+        <source>The write was refused because the audit cannot record it right now. Nothing was written; try again when the audit works.</source>
+        <translation>Das Schreiben wurde abgelehnt, weil das Audit es gerade nicht aufzeichnen kann. Es wurde nichts geschrieben; versuchen Sie es erneut, wenn das Audit funktioniert.</translation>
+    </message>
+    <message>
+        <source>What was written could not be read back as written, so the file was put back exactly as it was.</source>
+        <translation>Das Geschriebene ließ sich nicht wie geschrieben zurücklesen, daher wurde die Datei genau so wiederhergestellt, wie sie war.</translation>
+    </message>
+    <message>
+        <source>The settings directory of this siteaccess was not found under settings/siteaccess.</source>
+        <translation>Das Einstellungsverzeichnis dieses Siteaccess wurde unter settings/siteaccess nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>Writing the file failed; it was left as it was. The error log has the details.</source>
+        <translation>Das Schreiben der Datei ist fehlgeschlagen; sie blieb unverändert. Details stehen im Fehlerprotokoll.</translation>
+    </message>
+    <message>
+        <source>What these settings do</source>
+        <translation>Was diese Einstellungen bewirken</translation>
+    </message>
+    <message>
+        <source>Sites built with the classic designs (base, ezwebin, the demo and the simple design) draw their top and left menus from one of four arrangements, chosen here for each siteaccess and stored in menu.ini.</source>
+        <translation>Sites mit den klassischen Designs (base, ezwebin, das Demo- und das Simple-Design) zeichnen ihr oberes und linkes Menü nach einer von vier Anordnungen, die hier je Siteaccess gewählt und in menu.ini gespeichert wird.</translation>
+    </message>
+    <message>
+        <source>Sites built with Exponential Layouts do not read them: their menus are blocks in a layout, set in the layout editor. The administration interface does not read them either.</source>
+        <translation>Sites mit Exponential Layouts lesen sie nicht: Ihre Menüs sind Blöcke in einem Layout und werden im Layout-Editor festgelegt. Auch die Administrationsoberfläche liest sie nicht.</translation>
+    </message>
+    <message>
+        <source>Open the layout editor</source>
+        <translation>Layout-Editor öffnen</translation>
+    </message>
+    <message>
+        <source>None of the siteaccesses listed here reads these settings.</source>
+        <translation>Keiner der hier aufgeführten Siteaccesses liest diese Einstellungen.</translation>
+    </message>
+    <message>
+        <source>Saving would change a file but no page. Nothing needs to be done here unless a siteaccess with a classic design is added.</source>
+        <translation>Speichern würde eine Datei ändern, aber keine Seite. Hier ist nichts zu tun, solange kein Siteaccess mit einem klassischen Design hinzukommt.</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccesses</translation>
+    </message>
+    <message>
+        <source>Found from the page layout each siteaccess uses: only those whose page layout reads these settings are affected by them.</source>
+        <translation>Ermittelt aus dem Seitenlayout, das jeder Siteaccess verwendet: Nur Siteaccesses, deren Seitenlayout diese Einstellungen liest, sind davon betroffen.</translation>
+    </message>
+    <message>
+        <source>Siteaccesses where these settings do nothing</source>
+        <translation>Siteaccesses, in denen diese Einstellungen nichts bewirken</translation>
+    </message>
+    <message>
+        <source>Menu of %siteaccess</source>
+        <translation>Menü von %siteaccess</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>The pages of %siteaccess read these settings: what you save here changes their menus.</source>
+        <translation>Die Seiten von %siteaccess lesen diese Einstellungen: Was Sie hier speichern, ändert ihre Menüs.</translation>
+    </message>
+    <message>
+        <source>The page layout of %siteaccess reads these settings and also renders Exponential Layouts: what you save here changes the menus it draws itself.</source>
+        <translation>Das Seitenlayout von %siteaccess liest diese Einstellungen und rendert außerdem Exponential Layouts: Was Sie hier speichern, ändert die Menüs, die es selbst zeichnet.</translation>
+    </message>
+    <message>
+        <source>Not used here: %siteaccess renders through Exponential Layouts.</source>
+        <translation>Hier nicht verwendet: %siteaccess rendert über Exponential Layouts.</translation>
+    </message>
+    <message>
+        <source>Saving changes the file, not the site. Its menus are blocks in its layouts.</source>
+        <translation>Speichern ändert die Datei, nicht die Site. Ihre Menüs sind Blöcke in ihren Layouts.</translation>
+    </message>
+    <message>
+        <source>Not used here: %siteaccess is an administration siteaccess.</source>
+        <translation>Hier nicht verwendet: %siteaccess ist ein Administrations-Siteaccess.</translation>
+    </message>
+    <message>
+        <source>Its tabs and side menus come from menu.ini [TopAdminMenu] and the Leftmenu sections, not from these settings.</source>
+        <translation>Seine Reiter und Seitenmenüs kommen aus menu.ini [TopAdminMenu] und den Leftmenu-Abschnitten, nicht aus diesen Einstellungen.</translation>
+    </message>
+    <message>
+        <source>Not used here: the page layout of %siteaccess does not read these settings.</source>
+        <translation>Hier nicht verwendet: Das Seitenlayout von %siteaccess liest diese Einstellungen nicht.</translation>
+    </message>
+    <message>
+        <source>Saving changes the file, not the site.</source>
+        <translation>Speichern ändert die Datei, nicht die Site.</translation>
+    </message>
+    <message>
+        <source>No page layout was found for %siteaccess, so it is not known whether it reads these settings.</source>
+        <translation>Für %siteaccess wurde kein Seitenlayout gefunden, daher ist unbekannt, ob es diese Einstellungen liest.</translation>
+    </message>
+    <message>
+        <source>A file read after the siteaccess settings decides the value:</source>
+        <translation>Eine nach den Siteaccess-Einstellungen gelesene Datei bestimmt den Wert:</translation>
+    </message>
+    <message>
+        <source>Saving here would not change what %siteaccess uses until that setting is removed there.</source>
+        <translation>Speichern hier würde nicht ändern, was %siteaccess verwendet, bis die Einstellung dort entfernt ist.</translation>
+    </message>
+    <message>
+        <source>Current setting</source>
+        <translation>Aktuelle Einstellung</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keine</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Stammt aus</translation>
+    </message>
+    <message>
+        <source>the default</source>
+        <translation>die Vorgabe</translation>
+    </message>
+    <message>
+        <source>this siteaccess</source>
+        <translation>diesem Siteaccess</translation>
+    </message>
+    <message>
+        <source>an extension</source>
+        <translation>einer Erweiterung</translation>
+    </message>
+    <message>
+        <source>an extension, for this siteaccess</source>
+        <translation>einer Erweiterung, für diesen Siteaccess</translation>
+    </message>
+    <message>
+        <source>the global override</source>
+        <translation>der globalen Überschreibung</translation>
+    </message>
+    <message>
+        <source>Saving writes to</source>
+        <translation>Speichern schreibt in</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>vorhanden</translation>
+    </message>
+    <message>
+        <source>will be created</source>
+        <translation>wird angelegt</translation>
+    </message>
+    <message>
+        <source>no settings directory for this siteaccess</source>
+        <translation>kein Einstellungsverzeichnis für diesen Siteaccess</translation>
+    </message>
+    <message>
+        <source>All three settings and the classes the menus list</source>
+        <translation>Alle drei Einstellungen und die Klassen, die die Menüs auflisten</translation>
+    </message>
+    <message>
+        <source>[SelectedMenu] of %siteaccess</source>
+        <translation>[SelectedMenu] von %siteaccess</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Einstellung</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>The menus list only objects of these classes (menu.ini [MenuContentSettings], not changed by this page):</source>
+        <translation>Die Menüs listen nur Objekte dieser Klassen (menu.ini [MenuContentSettings], von dieser Seite nicht geändert):</translation>
+    </message>
+    <message>
+        <source>Top menu</source>
+        <translation>Oberes Menü</translation>
+    </message>
+    <message>
+        <source>Left menu</source>
+        <translation>Linkes Menü</translation>
+    </message>
+    <message>
+        <source>Menu arrangement</source>
+        <translation>Menüanordnung</translation>
+    </message>
+    <message>
+        <source>Each preview puts this installation's pages where the menus would show them, for a visitor in the first top menu page that has pages of its own.</source>
+        <translation>Jede Vorschau setzt die Seiten dieser Installation dorthin, wo die Menüs sie zeigen würden, für einen Besucher in der ersten Seite des oberen Menüs, die eigene Unterseiten hat.</translation>
+    </message>
+    <message>
+        <source>current</source>
+        <translation>aktuell</translation>
+    </message>
+    <message>
+        <source>Start page</source>
+        <translation>Startseite</translation>
+    </message>
+    <message>
+        <source>Visitor in: %page</source>
+        <translation>Besucher in: %page</translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation>Oben:</translation>
+    </message>
+    <message>
+        <source>one row of links to the pages directly below the start page.</source>
+        <translation>eine Reihe Links zu den Seiten direkt unter der Startseite.</translation>
+    </message>
+    <message>
+        <source>two rows: the pages directly below the start page and, under them, the pages of the first-level page the visitor is in.</source>
+        <translation>zwei Reihen: die Seiten direkt unter der Startseite und darunter die Seiten der Seite erster Ebene, in der sich der Besucher befindet.</translation>
+    </message>
+    <message>
+        <source>no menu.</source>
+        <translation>kein Menü.</translation>
+    </message>
+    <message>
+        <source>the design's own template menu/%name.tpl.</source>
+        <translation>das eigene Template menu/%name.tpl des Designs.</translation>
+    </message>
+    <message>
+        <source>Left:</source>
+        <translation>Links:</translation>
+    </message>
+    <message>
+        <source>a column with the pages directly below the start page, opened further below the page the visitor is in.</source>
+        <translation>eine Spalte mit den Seiten direkt unter der Startseite, unterhalb der aktuellen Seite des Besuchers weiter aufgeklappt.</translation>
+    </message>
+    <message>
+        <source>a column with the pages of the first-level page the visitor is in, opened further below the page the visitor is in.</source>
+        <translation>eine Spalte mit den Seiten der Seite erster Ebene, in der sich der Besucher befindet, unterhalb seiner aktuellen Seite weiter aufgeklappt.</translation>
+    </message>
+    <message>
+        <source>a column with the pages of the first-level page the visitor is in, one level.</source>
+        <translation>eine Spalte mit den Seiten der Seite erster Ebene, in der sich der Besucher befindet, eine Ebene.</translation>
+    </message>
+    <message>
+        <source>Template, content and the lines it writes</source>
+        <translation>Template, Inhalt und die geschriebenen Zeilen</translation>
+    </message>
+    <message>
+        <source>Drawn by</source>
+        <translation>Gezeichnet von</translation>
+    </message>
+    <message>
+        <source>not found in the designs of this siteaccess</source>
+        <translation>in den Designs dieses Siteaccess nicht gefunden</translation>
+    </message>
+    <message>
+        <source>this design/base template lists the children of node 2, the top of the content tree, not those of content.ini RootNode</source>
+        <translation>dieses design/base-Template listet die Kinder von Knoten 2, der Spitze des Inhaltsbaums, nicht die von content.ini RootNode</translation>
+    </message>
+    <message>
+        <source>Top row</source>
+        <translation>Obere Reihe</translation>
+    </message>
+    <message>
+        <source>Second row</source>
+        <translation>Zweite Reihe</translation>
+    </message>
+    <message>
+        <source>Left column</source>
+        <translation>Linke Spalte</translation>
+    </message>
+    <message>
+        <source>the children of the start page "%page" (node %id)</source>
+        <translation>die Kinder der Startseite "%page" (Knoten %id)</translation>
+    </message>
+    <message>
+        <source>the children of the start page</source>
+        <translation>die Kinder der Startseite</translation>
+    </message>
+    <message>
+        <source>the children of the first-level page the visitor is in</source>
+        <translation>die Kinder der Seite erster Ebene, in der sich der Besucher befindet</translation>
+    </message>
+    <message>
+        <source>here: "%page"</source>
+        <translation>hier: "%page"</translation>
+    </message>
+    <message>
+        <source>classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>opened further along the visitor's path</source>
+        <translation>entlang des Pfads des Besuchers weiter aufgeklappt</translation>
+    </message>
+    <message>
+        <source>Every list follows its parent page's sort order and leaves hidden pages out (ShowHiddenNodes=false).</source>
+        <translation>Jede Liste folgt der Sortierung ihrer Elternseite und lässt versteckte Seiten aus (ShowHiddenNodes=false).</translation>
+    </message>
+    <message>
+        <source>What saving does</source>
+        <translation>Was Speichern bewirkt</translation>
+    </message>
+    <message>
+        <source>Writes the three settings of the chosen arrangement into the section [SelectedMenu] of %file, and nothing else. The other sections and comments of that file stay as they are.</source>
+        <translation>Schreibt die drei Einstellungen der gewählten Anordnung in den Abschnitt [SelectedMenu] von %file, und nichts sonst. Die anderen Abschnitte und Kommentare der Datei bleiben, wie sie sind.</translation>
+    </message>
+    <message>
+        <source>Keeps a copy of the file as it was in var/backup/ini, then reads the new file back; if it does not hold what was written, puts the old one back exactly as it was.</source>
+        <translation>Legt eine Kopie der Datei im vorherigen Zustand in var/backup/ini ab und liest die neue Datei dann zurück; enthält sie nicht das Geschriebene, wird die alte genau so wiederhergestellt, wie sie war.</translation>
+    </message>
+    <message>
+        <source>Clears the INI cache, the compiled page layouts and the template blocks. No restart of PHP-FPM or Velocity is needed.</source>
+        <translation>Leert den INI-Cache, die kompilierten Seitenlayouts und die Template-Blöcke. Ein Neustart von PHP-FPM oder Velocity ist nicht nötig.</translation>
+    </message>
+    <message>
+        <source>For the arrangement checked when the page was opened, the section reads:</source>
+        <translation>Für die beim Öffnen der Seite gewählte Anordnung lautet der Abschnitt:</translation>
+    </message>
+    <message>
+        <source>I understand that %siteaccess does not read these settings and saving changes no page.</source>
+        <translation>Mir ist bewusst, dass %siteaccess diese Einstellungen nicht liest und Speichern keine Seite ändert.</translation>
+    </message>
+    <message>
+        <source>Saves for %siteaccess only.</source>
+        <translation>Speichert nur für %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write the settings file of %siteaccess, so saving is not possible here.</source>
+        <translation>Der Webserver kann die Einstellungsdatei von %siteaccess nicht schreiben, daher ist Speichern hier nicht möglich.</translation>
+    </message>
+    <message>
+        <source>Save the chosen arrangement for this siteaccess.</source>
+        <translation>Die gewählte Anordnung für diesen Siteaccess speichern.</translation>
+    </message>
+    <message>
+        <source>Save for %siteaccess</source>
+        <translation>Für %siteaccess speichern</translation>
+    </message>
+    <message>
+        <source>menu.ini [MenuSettings] AvailableMenuArray lists no menu arrangement, so there is nothing to choose.</source>
+        <translation>menu.ini [MenuSettings] AvailableMenuArray nennt keine Menüanordnung, daher gibt es nichts zu wählen.</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Beispiele</translation>
+    </message>
+    <message>
+        <source>Common recipes with the exact lines and what a visitor sees. The lines that choose an arrangement are the ones this page writes when you save it; the others go into the same files by hand.</source>
+        <translation>Häufige Rezepte mit den genauen Zeilen und dem, was ein Besucher sieht. Die Zeilen, die eine Anordnung wählen, schreibt diese Seite beim Speichern; die anderen kommen von Hand in dieselben Dateien.</translation>
+    </message>
+    <message>
+        <source>None of these examples does anything for %list: they render through Exponential Layouts, where a menu is a block in the layout.</source>
+        <translation>Keines dieser Beispiele bewirkt etwas für %list: Sie rendern über Exponential Layouts, wo ein Menü ein Block im Layout ist.</translation>
+    </message>
+    <message>
+        <source>Top menu only</source>
+        <translation>Nur oberes Menü</translation>
+    </message>
+    <message>
+        <source>Top menu plus a left menu for the current section</source>
+        <translation>Oberes Menü plus ein linkes Menü für den aktuellen Bereich</translation>
+    </message>
+    <message>
+        <source>Limit the menus to folders and landing pages</source>
+        <translation>Die Menüs auf Ordner und Landing Pages beschränken</translation>
+    </message>
+    <message>
+        <source>Hide one page from the menus</source>
+        <translation>Eine Seite aus den Menüs ausblenden</translation>
+    </message>
+    <message>
+        <source>A different menu per siteaccess</source>
+        <translation>Ein anderes Menü je Siteaccess</translation>
+    </message>
+    <message>
+        <source>The arrangement Only top menu: menu/flat_top.tpl draws one row, no left column.</source>
+        <translation>Die Anordnung Nur oberes Menü: menu/flat_top.tpl zeichnet eine Reihe, keine linke Spalte.</translation>
+    </message>
+    <message>
+        <source>The arrangement Left and top: the top row as above, and menu/sub_left.tpl draws a left column with the pages of the first-level page the visitor is in. On the start page there is no left column.</source>
+        <translation>Die Anordnung Links und oben: die obere Reihe wie oben, und menu/sub_left.tpl zeichnet eine linke Spalte mit den Seiten der Seite erster Ebene, in der sich der Besucher befindet. Auf der Startseite gibt es keine linke Spalte.</translation>
+    </message>
+    <message>
+        <source>The empty TopIdentifierList[] line clears the list read from the files before, so only the classes that follow are menu items: folder and frontpage (the landing page class of ezwebin). It applies to every arrangement.</source>
+        <translation>Die leere Zeile TopIdentifierList[] leert die zuvor aus den Dateien gelesene Liste, sodass nur die folgenden Klassen Menüeinträge sind: folder und frontpage (die Landing-Page-Klasse von ezwebin). Das gilt für jede Anordnung.</translation>
+    </message>
+    <message>
+        <source>Hide the page in the content structure (its menu: Hide / unhide). The menus fetch pages as visitors see them, so a hidden page is left out of every classic menu as long as ShowHiddenNodes stays false, the default shown below. Another way: give the page a class that is not in the lists of the recipe above.</source>
+        <translation>Verstecken Sie die Seite in der Inhaltsstruktur (ihr Menü: Verstecken / Anzeigen). Die Menüs holen Seiten so, wie Besucher sie sehen, daher fehlt eine versteckte Seite in jedem klassischen Menü, solange ShowHiddenNodes false bleibt, die unten gezeigte Vorgabe. Ein anderer Weg: Geben Sie der Seite eine Klasse, die nicht in den Listen des Rezepts oben steht.</translation>
+    </message>
+    <message>
+        <source>Every siteaccess reads its own settings/siteaccess/(name)/menu.ini.append.php. Save on this page once per siteaccess, or put the lines in the two files:</source>
+        <translation>Jeder Siteaccess liest seine eigene settings/siteaccess/(name)/menu.ini.append.php. Speichern Sie auf dieser Seite einmal je Siteaccess oder tragen Sie die Zeilen in die zwei Dateien ein:</translation>
+    </message>
+    <message>
+        <source>A visitor sees:</source>
+        <translation>Ein Besucher sieht:</translation>
+    </message>
+    <message>
+        <source>one row of links under the header: %names.</source>
+        <translation>eine Reihe Links unter dem Kopf: %names.</translation>
+    </message>
+    <message>
+        <source>one row of links under the header.</source>
+        <translation>eine Reihe Links unter dem Kopf.</translation>
+    </message>
+    <message>
+        <source>the same row; inside %page, a left column with %names.</source>
+        <translation>dieselbe Reihe; innerhalb von %page eine linke Spalte mit %names.</translation>
+    </message>
+    <message>
+        <source>the same row, and inside a first-level page a left column with its pages.</source>
+        <translation>dieselbe Reihe und innerhalb einer Seite erster Ebene eine linke Spalte mit ihren Seiten.</translation>
+    </message>
+    <message>
+        <source>only folders and landing pages as menu items; articles, links and other pages stay reachable but are no longer in the menus.</source>
+        <translation>nur Ordner und Landing Pages als Menüeinträge; Artikel, Links und andere Seiten bleiben erreichbar, stehen aber nicht mehr in den Menüs.</translation>
+    </message>
+    <message>
+        <source>the page gone from the menus and from the site; editors still see it in the administration.</source>
+        <translation>die Seite verschwindet aus den Menüs und von der Site; Redakteure sehen sie weiterhin in der Administration.</translation>
+    </message>
+    <message>
+        <source>on %first a top menu only, on %second a top menu and a left column.</source>
+        <translation>auf %first nur ein oberes Menü, auf %second ein oberes Menü und eine linke Spalte.</translation>
+    </message>
+    <message>
+        <source>Use in your templates</source>
+        <translation>In eigenen Templates verwenden</translation>
+    </message>
+    <message>
+        <source>Saving here only changes what a page layout asks menu.ini for. A menu appears only where a page layout includes it. In this installation:</source>
+        <translation>Speichern ändert hier nur, was ein Seitenlayout aus menu.ini abfragt. Ein Menü erscheint nur dort, wo ein Seitenlayout es einbindet. In dieser Installation:</translation>
+    </message>
+    <message>
+        <source>its page layout draws the menus, with the templates %list.</source>
+        <translation>sein Seitenlayout zeichnet die Menüs, mit den Templates %list.</translation>
+    </message>
+    <message>
+        <source>has menu templates (%list), but its page layout does not include them: the settings do nothing until a page layout of yours does.</source>
+        <translation>hat Menü-Templates (%list), aber sein Seitenlayout bindet sie nicht ein: Die Einstellungen bewirken nichts, bis ein eigenes Seitenlayout es tut.</translation>
+    </message>
+    <message>
+        <source>renders through Exponential Layouts; its menus are layout blocks.</source>
+        <translation>rendert über Exponential Layouts; seine Menüs sind Layout-Blöcke.</translation>
+    </message>
+    <message>
+        <source>no menu templates, and its page layout draws no classic menu.</source>
+        <translation>keine Menü-Templates, und sein Seitenlayout zeichnet kein klassisches Menü.</translation>
+    </message>
+    <message>
+        <source>Draw the chosen menus from a page layout</source>
+        <translation>Die gewählten Menüs aus einem Seitenlayout zeichnen</translation>
+    </message>
+    <message>
+        <source>A top menu template of your own</source>
+        <translation>Ein eigenes Template für das obere Menü</translation>
+    </message>
+    <message>
+        <source>A left menu for the current section</source>
+        <translation>Ein linkes Menü für den aktuellen Bereich</translation>
+    </message>
+    <message>
+        <source>Where the files go</source>
+        <translation>Wohin die Dateien gehören</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Put it where the menus go in your pagelayout.tpl. The cache-block keys are those of design/base: the address, and the roles and limitations of the user, so every visitor gets the selected item of the page and only what their rights allow; the siteaccess is part of every cache-block key by itself, and the block expires whenever content is published.</source>
+        <translation>Setzen Sie es dorthin in Ihr pagelayout.tpl, wo die Menüs hingehören. Die Schlüssel des cache-block sind die von design/base: die Adresse sowie die Rollen und Beschränkungen des Benutzers, sodass jeder Besucher den markierten Eintrag der Seite und nur das bekommt, was seine Rechte erlauben; der Siteaccess ist von selbst Teil jedes cache-block-Schlüssels, und der Block verfällt bei jeder Veröffentlichung von Inhalten.</translation>
+    </message>
+    <message>
+        <source>The visible children of the start page (content.ini RootNode) of the TopIdentifierList classes, with the item the visitor is in marked. Unlike the design/base templates it follows RootNode, so it also fits a site whose start page is not node 2.</source>
+        <translation>Die sichtbaren Kinder der Startseite (content.ini RootNode) der Klassen aus TopIdentifierList, mit markiertem Eintrag, in dem sich der Besucher befindet. Anders als die design/base-Templates folgt es RootNode und passt daher auch zu einer Site, deren Startseite nicht Knoten 2 ist.</translation>
+    </message>
+    <message>
+        <source>The pages of the first-level page the visitor is in, of the LeftIdentifierList classes, with the current page marked; nothing on the start page.</source>
+        <translation>Die Seiten der Seite erster Ebene, in der sich der Besucher befindet, aus den Klassen von LeftIdentifierList, mit markierter aktueller Seite; nichts auf der Startseite.</translation>
+    </message>
+    <message>
+        <source>Never edit a shipped design: an update replaces it. Your design extension is found before the shipped designs, and the extra [MenuSettings] entry offers your templates as a fifth arrangement on this page.</source>
+        <translation>Bearbeiten Sie nie ein mitgeliefertes Design: Ein Update ersetzt es. Ihre Design-Erweiterung wird vor den mitgelieferten Designs gefunden, und der zusätzliche Eintrag in [MenuSettings] bietet Ihre Templates auf dieser Seite als fünfte Anordnung an.</translation>
+    </message>
+    <message>
+        <source>With Exponential Layouts:</source>
+        <translation>Mit Exponential Layouts:</translation>
+    </message>
+    <message>
+        <source>a siteaccess that renders through Layouts draws its menus with blocks in a layout zone, so none of these templates apply there. Classic and Layouts siteaccesses can live side by side in one installation, each with its own design.</source>
+        <translation>Ein Siteaccess, der über Layouts rendert, zeichnet seine Menüs mit Blöcken in einer Layout-Zone, daher gilt keines dieser Templates dort. Klassische und Layouts-Siteaccesses können in einer Installation nebeneinander bestehen, jeder mit seinem eigenen Design.</translation>
+    </message>
+    <message>
+        <source>Why this page exists</source>
+        <translation>Warum es diese Seite gibt</translation>
+    </message>
+    <message>
+        <source>a short history</source>
+        <translation>eine kurze Geschichte</translation>
+    </message>
+    <message>
+        <source>The classic designs build every page from one page layout, and that page layout asks menu.ini which menus to draw. This page has chosen that since the first versions: four arrangements of a top and a left menu, saved per siteaccess.</source>
+        <translation>Die klassischen Designs bauen jede Seite aus einem Seitenlayout, und dieses Seitenlayout fragt menu.ini, welche Menüs es zeichnen soll. Diese Seite wählt das seit den ersten Versionen: vier Anordnungen aus oberem und linkem Menü, je Siteaccess gespeichert.</translation>
+    </message>
+    <message>
+        <source>Exponential Layouts replaced that for new sites: a layout holds zones and blocks, a menu is one of the blocks, and a rule picks the layout for each page. A siteaccess built that way never reads these settings.</source>
+        <translation>Exponential Layouts hat das für neue Sites abgelöst: Ein Layout enthält Zonen und Blöcke, ein Menü ist einer der Blöcke, und eine Regel wählt das Layout für jede Seite. Ein so gebauter Siteaccess liest diese Einstellungen nie.</translation>
+    </message>
+    <message>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Die Seite bleibt für Sites, die noch ein klassisches Design verwenden. Eine Einstellung hier für einen Siteaccess mit Layouts zu ändern, schadet nicht, bewirkt aber nichts. Die Anleitung doc/guides/classic-menu-settings.md erklärt beide Wege.</translation>
+    </message>
+    <message>
+        <source>Uses these settings</source>
+        <translation>Verwendet diese Einstellungen</translation>
+    </message>
+    <message>
+        <source>Uses these settings, with Layouts</source>
+        <translation>Verwendet diese Einstellungen, mit Layouts</translation>
+    </message>
+    <message>
+        <source>Not used: renders through Layouts</source>
+        <translation>Nicht verwendet: rendert über Layouts</translation>
+    </message>
+    <message>
+        <source>Administration siteaccess</source>
+        <translation>Administrations-Siteaccess</translation>
+    </message>
+    <message>
+        <source>Not used by its design</source>
+        <translation>Von seinem Design nicht verwendet</translation>
+    </message>
+    <message>
+        <source>No page layout found</source>
+        <translation>Kein Seitenlayout gefunden</translation>
+    </message>
+    <message>
+        <source>Its page layout draws the top and left menus from these settings.</source>
+        <translation>Sein Seitenlayout zeichnet das obere und linke Menü nach diesen Einstellungen.</translation>
+    </message>
+    <message>
+        <source>Its page layout draws menus from these settings and also renders Exponential Layouts.</source>
+        <translation>Sein Seitenlayout zeichnet Menüs nach diesen Einstellungen und rendert außerdem Exponential Layouts.</translation>
+    </message>
+    <message>
+        <source>Its pages are built with Exponential Layouts; menus are blocks in the layout editor.</source>
+        <translation>Seine Seiten sind mit Exponential Layouts gebaut; Menüs sind Blöcke im Layout-Editor.</translation>
+    </message>
+    <message>
+        <source>The administration interface. Its tabs and side menus are set elsewhere in menu.ini.</source>
+        <translation>Die Administrationsoberfläche. Ihre Reiter und Seitenmenüs werden an anderer Stelle in menu.ini festgelegt.</translation>
+    </message>
+    <message>
+        <source>Its page layout does not read these settings.</source>
+        <translation>Sein Seitenlayout liest diese Einstellungen nicht.</translation>
+    </message>
+    <message>
+        <source>None of its designs has a pagelayout.tpl.</source>
+        <translation>Keines seiner Designs hat ein pagelayout.tpl.</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
+    </message>
+    <message>
+        <source>fixed by settings/override</source>
+        <translation>durch settings/override festgelegt</translation>
+    </message>
+    <message>
+        <source>Shown below</source>
+        <translation>Unten angezeigt</translation>
+    </message>
+    <message>
+        <source>Show its settings</source>
+        <translation>Seine Einstellungen anzeigen</translation>
     </message>
 </context>
 <context>
@@ -29792,6 +39509,246 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>Workflow groups (%groups_count)</source>
         <translation>Workflow Gruppen (%groups_count)</translation>
+    </message>
+    <message>
+        <source>Remove workflow groups?</source>
+        <translation>Workflow-Gruppen entfernen?</translation>
+    </message>
+    <message>
+        <source>What happens</source>
+        <translation>Was passiert</translation>
+    </message>
+    <message>
+        <source>%count workflows that belong only to these groups are removed, with their events.</source>
+        <translation>%count Workflows, die nur diesen Gruppen angehören, werden mit ihren Ereignissen entfernt.</translation>
+    </message>
+    <message>
+        <source>%count workflows that also belong to another group stay there.</source>
+        <translation>%count Workflows, die auch einer anderen Gruppe angehören, bleiben dort.</translation>
+    </message>
+    <message>
+        <source>%count of the removed workflows are run by triggers. Those triggers are removed too, so the operations they belong to run without a workflow from then on.</source>
+        <translation>%count der entfernten Workflows werden von Triggern ausgeführt. Diese Trigger werden ebenfalls entfernt, sodass ihre Operationen ab dann ohne Workflow laufen.</translation>
+    </message>
+    <message>
+        <source>%count processes wait in the removed workflows and could never finish. Cancel them first on the workflow processes page.</source>
+        <translation>%count Prozesse warten in den entfernten Workflows und könnten nie abschließen. Brechen Sie sie zuerst auf der Seite „Workflow-Prozesse“ ab.</translation>
+    </message>
+    <message>
+        <source>Workflow processes</source>
+        <translation>Workflow-Prozesse</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Workflow</source>
+        <translation>Workflow</translation>
+    </message>
+    <message>
+        <source>What happens to it</source>
+        <translation>Was mit ihm passiert</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Läuft</translation>
+    </message>
+    <message>
+        <source>Stays</source>
+        <translation>Bleibt</translation>
+    </message>
+    <message>
+        <source>in:</source>
+        <translation>in:</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Entfernt</translation>
+    </message>
+    <message>
+        <source>No trigger</source>
+        <translation>Kein Trigger</translation>
+    </message>
+    <message>
+        <source>%count processes waiting</source>
+        <translation>%count Prozesse warten</translation>
+    </message>
+    <message>
+        <source>The group is empty: only the group is removed.</source>
+        <translation>Die Gruppe ist leer: Nur die Gruppe wird entfernt.</translation>
+    </message>
+    <message>
+        <source>Remove %count groups</source>
+        <translation>%count Gruppen entfernen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation>Es wurde noch nichts entfernt.</translation>
+    </message>
+    <message>
+        <source>Workflows are kept in groups so that they are easy to find. A group changes nothing about when a workflow runs: that is decided by the triggers. A workflow can belong to more than one group.</source>
+        <translation>Workflows werden in Gruppen geführt, damit man sie leicht findet. Eine Gruppe ändert nichts daran, wann ein Workflow läuft: Das entscheiden die Trigger. Ein Workflow kann mehreren Gruppen angehören.</translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation>Entfernt: %names.</translation>
+    </message>
+    <message>
+        <source>%removed workflows were removed with them, %unlinked stay in their other groups.</source>
+        <translation>%removed Workflows wurden mit entfernt, %unlinked bleiben in ihren anderen Gruppen.</translation>
+    </message>
+    <message>
+        <source>No group was selected. Tick the groups to remove first.</source>
+        <translation>Keine Gruppe ausgewählt. Haken Sie zuerst die zu entfernenden Gruppen an.</translation>
+    </message>
+    <message>
+        <source>The selected groups no longer exist; somebody may have removed them already.</source>
+        <translation>Die ausgewählten Gruppen existieren nicht mehr; vielleicht hat sie bereits jemand entfernt.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>Workflows</source>
+        <translation>Workflows</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Aktiviert</translation>
+    </message>
+    <message>
+        <source>Run by a trigger</source>
+        <translation>Von einem Trigger ausgeführt</translation>
+    </message>
+    <message>
+        <source>Processes waiting</source>
+        <translation>Wartende Prozesse</translation>
+    </message>
+    <message>
+        <source>In no group</source>
+        <translation>In keiner Gruppe</translation>
+    </message>
+    <message>
+        <source>Find a group or workflow</source>
+        <translation>Gruppe oder Workflow finden</translation>
+    </message>
+    <message>
+        <source>Open a group to create workflows in it, change their order of events or remove them. Triggers connect a workflow to an operation.</source>
+        <translation>Öffnen Sie eine Gruppe, um darin Workflows anzulegen, die Reihenfolge ihrer Ereignisse zu ändern oder sie zu entfernen. Trigger verbinden einen Workflow mit einer Operation.</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Trigger</translation>
+    </message>
+    <message>
+        <source>All workflow groups</source>
+        <translation>Alle Workflow-Gruppen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>There are no workflow groups. Create one with New workflow group, then create workflows in it.</source>
+        <translation>Es gibt keine Workflow-Gruppen. Legen Sie mit „Neue Workflow-Gruppe“ eine an und darin dann Workflows.</translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation>%name zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Empty</source>
+        <translation>Leer</translation>
+    </message>
+    <message>
+        <source>%count workflows</source>
+        <translation>%count Workflows</translation>
+    </message>
+    <message>
+        <source>%count run by triggers</source>
+        <translation>%count von Triggern ausgeführt</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ereignisse</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Deaktiviert</translation>
+    </message>
+    <message>
+        <source>Also in:</source>
+        <translation>Auch in:</translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation>Letzte Änderung</translation>
+    </message>
+    <message>
+        <source>of the group or one of its workflows</source>
+        <translation>der Gruppe oder eines ihrer Workflows</translation>
+    </message>
+    <message>
+        <source>Removing it</source>
+        <translation>Beim Entfernen</translation>
+    </message>
+    <message>
+        <source>Removes only the group.</source>
+        <translation>Entfernt nur die Gruppe.</translation>
+    </message>
+    <message>
+        <source>Removes %removes workflows that are only in this group; %unlinks stay in their other groups.</source>
+        <translation>Entfernt %removes Workflows, die nur in dieser Gruppe sind; %unlinks bleiben in ihren anderen Gruppen.</translation>
+    </message>
+    <message>
+        <source>%count of them are run by triggers, which go with them.</source>
+        <translation>%count davon werden von Triggern ausgeführt, die mit entfernt werden.</translation>
+    </message>
+    <message>
+        <source>No group on this page matches. Clear the search.</source>
+        <translation>Keine Gruppe auf dieser Seite passt. Leeren Sie die Suche.</translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first and lists the workflows, triggers and waiting processes it affects.</source>
+        <translation>„Auswahl entfernen“ fragt zuerst nach und nennt die betroffenen Workflows, Trigger und wartenden Prozesse.</translation>
+    </message>
+    <message>
+        <source>%shown of %count groups on this page shown</source>
+        <translation>%shown von %count Gruppen auf dieser Seite angezeigt</translation>
+    </message>
+    <message>
+        <source>Groups on this page: %count</source>
+        <translation>Gruppen auf dieser Seite: %count</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>Confirm removal</source>
+        <translation>Entfernen bestätigen</translation>
     </message>
 </context>
 <context>
@@ -37314,6 +47271,10 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     <message>
         <source>Siteaccess</source>
         <translation>Seitenzugang</translation>
+    </message>
+    <message>
+        <source>Menus (classic)</source>
+        <translation>Menüs (klassisch)</translation>
     </message>
 </context>
 <context>
@@ -49131,6 +59092,34 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <source>Unknown bookmark action.</source>
         <translation>Unbekannte Lesezeichen-Aktion.</translation>
     </message>
+    <message>
+        <source>Nothing was moved: it is first or last in its folder already.</source>
+        <translation>Nichts wurde verschoben: Es steht bereits an erster oder letzter Stelle in seinem Ordner.</translation>
+    </message>
+    <message>
+        <source>The order was not saved: it named an entry that is not in that folder of yours.</source>
+        <translation>Die Reihenfolge wurde nicht gespeichert: Sie nannte einen Eintrag, der nicht in diesem Ihrer Ordner liegt.</translation>
+    </message>
+    <message>
+        <source>The bookmark is now at position %position of its folder.</source>
+        <translation>Das Lesezeichen steht jetzt an Position %position seines Ordners.</translation>
+    </message>
+    <message>
+        <source>Nothing was moved: give a position as a whole number from 1.</source>
+        <translation>Nichts wurde verschoben: Geben Sie die Position als ganze Zahl ab 1 an.</translation>
+    </message>
+    <message>
+        <source>Removed %count bookmark(s). The items themselves are not changed.</source>
+        <translation>%count Lesezeichen entfernt. Die Einträge selbst bleiben unverändert.</translation>
+    </message>
+    <message>
+        <source>No bookmark was selected. Tick the bookmarks to remove first.</source>
+        <translation>Es wurde kein Lesezeichen ausgewählt. Markieren Sie zuerst die zu entfernenden Lesezeichen.</translation>
+    </message>
+    <message>
+        <source>Added %count bookmark(s).</source>
+        <translation>%count Lesezeichen hinzugefügt.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content/copysubtree</name>
@@ -49474,6 +59463,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Collected information</source>
         <translation>Gesammelte Informationen</translation>
+    </message>
+    <message>
+        <source>Collection ID</source>
+        <translation>Sammlungs-ID</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Gesendet</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Benutzer-ID</translation>
     </message>
 </context>
 <context>
@@ -50102,6 +60107,74 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The version must follow Semantic Versioning 2.0.0: three numbers delimited by dots (MAJOR.MINOR.PATCH), optionally followed by -prerelease and +build, at most %max characters, e.g. 1.0.0, 1.2.3, 3.4.0-beta.1</source>
         <translation>Die Version muss Semantic Versioning 2.0.0 folgen: drei durch Punkte getrennte Zahlen (MAJOR.MINOR.PATCH), optional gefolgt von -Vorabversion und +Build, höchstens %max Zeichen, z. B. 1.0.0, 1.2.3, 3.4.0-beta.1</translation>
     </message>
+    <message>
+        <source>No file was uploaded, or the file is empty.</source>
+        <translation>Es wurde keine Datei hochgeladen, oder die Datei ist leer.</translation>
+    </message>
+    <message>
+        <source>The file is not a package: its name must end in %suffixes.</source>
+        <translation>Die Datei ist kein Paket: Ihr Name muss auf %suffixes enden.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the %size a package may have.</source>
+        <translation>Die Datei ist größer als die %size, die ein Paket haben darf.</translation>
+    </message>
+    <message>
+        <source>The file is not a package: a package is a gzip compressed tar archive.</source>
+        <translation>Die Datei ist kein Paket: Ein Paket ist ein gzip-komprimiertes tar-Archiv.</translation>
+    </message>
+    <message>
+        <source>The archive cannot be read; it may be damaged.</source>
+        <translation>Das Archiv kann nicht gelesen werden; es ist möglicherweise beschädigt.</translation>
+    </message>
+    <message>
+        <source>The archive has more than %count entries.</source>
+        <translation>Das Archiv hat mehr als %count Einträge.</translation>
+    </message>
+    <message>
+        <source>The archive unpacks to more than %size.</source>
+        <translation>Das Archiv entpackt sich zu mehr als %size.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" points outside the package.</source>
+        <translation>Das Archiv wurde abgelehnt: Der Eintrag "%path" zeigt aus dem Paket heraus.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
+        <translation>Das Archiv wurde abgelehnt: Der Eintrag "%path" ist ein Link oder ein Gerät, und ein Paket enthält nur Dateien und Verzeichnisse.</translation>
+    </message>
+    <message>
+        <source>The archive has no package.xml at its top, so it is not a package.</source>
+        <translation>Das Archiv hat keine package.xml auf oberster Ebene und ist daher kein Paket.</translation>
+    </message>
+    <message>
+        <source>The package.xml of the archive is not a well formed package definition.</source>
+        <translation>Die package.xml des Archivs ist keine wohlgeformte Paketdefinition.</translation>
+    </message>
+    <message>
+        <source>The package.xml of the archive names no package.</source>
+        <translation>Die package.xml des Archivs nennt kein Paket.</translation>
+    </message>
+    <message>
+        <source>The package.xml of the archive lacks its version or packaging information.</source>
+        <translation>Der package.xml des Archivs fehlen die Versions- oder Paketierungsangaben.</translation>
+    </message>
+    <message>
+        <source>The vendor of the package gives no usable repository name.</source>
+        <translation>Der Anbieter des Pakets ergibt keinen verwendbaren Repository-Namen.</translation>
+    </message>
+    <message>
+        <source>The package could not be imported.</source>
+        <translation>Das Paket konnte nicht importiert werden.</translation>
+    </message>
+    <message>
+        <source>Remove packages</source>
+        <translation>Pakete entfernen</translation>
+    </message>
+    <message>
+        <source>No file was uploaded, or it was larger than the server accepts (%size).</source>
+        <translation>Es wurde keine Datei hochgeladen, oder sie war größer, als der Server annimmt (%size).</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -50157,6 +60230,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Create new policy, step one: select module</source>
         <translation>Neue Richtlinie erstellen, Schritt 1: Modul wählen</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
     </message>
 </context>
 <context>
@@ -50363,6 +60440,42 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Workflow event wizard</source>
         <translation>Assistent für Workflow-Ereignisse</translation>
+    </message>
+    <message>
+        <source>Remove sessions</source>
+        <translation>Sitzungen entfernen</translation>
+    </message>
+    <message>
+        <source>%count s</source>
+        <translation>%count s</translation>
+    </message>
+    <message>
+        <source>%count min</source>
+        <translation>%count min</translation>
+    </message>
+    <message>
+        <source>%hours h %minutes min</source>
+        <translation>%hours h %minutes min</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count h</translation>
+    </message>
+    <message>
+        <source>%days d %hours h</source>
+        <translation>%days T %hours h</translation>
+    </message>
+    <message>
+        <source>%count d</source>
+        <translation>%count T</translation>
+    </message>
+    <message>
+        <source>File %1 cannot be read. Check that the web server may read it.</source>
+        <translation>Die Datei %1 kann nicht gelesen werden. Prüfen Sie, ob der Webserver sie lesen darf.</translation>
+    </message>
+    <message>
+        <source>File %1 lists no files. Copy it from the Exponential release this installation runs.</source>
+        <translation>Die Datei %1 führt keine Dateien auf. Kopieren Sie sie aus dem Exponential-Release, mit dem diese Installation läuft.</translation>
     </message>
 </context>
 <context>

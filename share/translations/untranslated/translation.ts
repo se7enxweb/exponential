@@ -218,6 +218,121 @@
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The classes listed in this group. A class can be in several groups; removing a class here asks first and says how many objects go with it, while a class that is also in another group only leaves this one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published objects on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Containers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language of the new class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new class starts with a name, an identifier and no attributes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create one with New class, or add an existing class to this group from its page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>container</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class on this page matches. Clear the search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first. A class only in this group is removed with all its objects; one that is also in another group only leaves this one. Copy makes a copy of the class in the same groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count classes on this page shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes on this page: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/copy</name>
+    <message>
+        <source>Copy the &lt;%class_name&gt; class?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A copy is a new class with the same attributes and settings, in the same class groups, named "Copy of" the class with the identifier copy_of_ and the original identifier. Its objects are not copied; the original class is not changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After copying, the class list of its first group opens.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After copying, the class groups open.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After copying, the page of the copy opens.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After copying, the copy opens for editing; Cancel there throws it away.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been copied yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/datatype/browse_objectrelation_placement</name>
@@ -487,6 +602,58 @@
         <source>attribute &apos;%identifier&apos;: %name (%id)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Attribute type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing changes for the objects of this class until you press OK. Cancel throws the draft away.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The fields of every object of this class. The arrows and the position numbers set the order; tick attributes and press Remove selected attributes to remove them with their content in every object when the class is stored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The attribute could not be moved; the order is as it was.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move this attribute to the top.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move this attribute to the bottom.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a type below and press Add attribute.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK stores the class and updates its objects; Apply stores it and keeps the form open; Cancel throws away the changes and goes back to the page you came from.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/edit_denied</name>
@@ -568,6 +735,18 @@
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A class group files classes so they are easy to find. Its name is shown on Setup &gt; Classes and in the class lists; renaming it changes nothing for the classes or their objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For example Content, Media or Users.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel goes back without saving.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/grouplist</name>
@@ -647,6 +826,146 @@
         <source>Objects</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A class defines a kind of content: its fields, how its objects are named and where they may be created. Classes are kept in groups so that they are easy to find; a class can belong to more than one group. Removing a group removes the classes that are in no other group, and with them all their objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In more than one group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In no group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a group or class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group name, class name or identifier.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open a group to create classes in it, copy or remove them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All class groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no class groups. Create one with New class group; every class needs a group to be listed in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>class %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removes only the group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its %count classes stay in their other groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removes %classes classes and their %objects objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count classes stay in their other groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No group on this page matches. Clear the search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first and lists the classes and objects that would go.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count groups on this page shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups on this page: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -690,6 +1009,34 @@
         <source>Removing class &lt;%1&gt; will result in the removal of %2 objects and all their sub items.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A removed class takes all its objects with it, and their sub items. This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count objects in all.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count classes cannot be removed; the reasons are below. The others are removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot be removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count objects go with it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removegroup</name>
@@ -721,6 +1068,26 @@
         <source>%objects objects will be removed</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%classes classes that are in no other group are removed, and with them %objects objects and their sub items. This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class is removed: these groups hold no class that is in no other group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes that are also in another group stay there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the group is removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removetranslation</name>
@@ -748,6 +1115,10 @@
         <source>Cancel the removal of translations.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The class name, description and attribute names in these languages go. The class, its attributes and its objects stay.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/select_language</name>
@@ -769,6 +1140,10 @@
     </message>
     <message>
         <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translate the class: its name, description and attribute names in another language. Its attributes and objects stay as they are.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1101,6 +1476,38 @@
         <source>%namelist [%object_count objects]</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Groups only file the class; they change nothing about its objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates that draw the objects of this class instead of the standard ones, by siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The class name, description and attribute names in each language. The main language cannot be removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>as the object name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The fields every object of this class has, in the order the edit form shows them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/collaboration</name>
@@ -1350,6 +1757,454 @@
     </message>
     <message>
         <source>My bookmarks (%bookmark_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not in a folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks take you back to the items you work on: they are personal, nobody else sees them, and removing one never changes the item. Sort them into folders; the Bookmarks box at the side and the browse dialog show the same folders.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No longer available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move into this folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrange folder %name: drag it, or press the up and down arrow keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag to arrange, or use the up and down arrow keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count bookmarks, with the folders inside</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No folders yet. Create one below, then move bookmarks into it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tip: drag a bookmark onto a folder here to move it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inside</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No folder (top level)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Including subfolders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folders inside</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Put this folder inside</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its bookmarks and folders move with it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order among its neighbours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What happens to what is inside?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep what is inside: it moves to %target (bookmarks: %count, folders: %folders).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the top level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove everything inside with it (bookmarks: %all, folders: %folders).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only bookmarks are removed, never the items they point to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches the names, types, locations and folders of all your bookmarks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches this folder only. Choose All bookmarks to search everywhere.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name A to Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recently added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recently modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks stay grouped by folder in every order. Your order is the one of the Bookmarks box.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks matching “%search” in %scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items you add go into this folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To arrange, drag a bookmark by its grip to a new place in its folder, or drop it on a folder in the folder list to move it there. On a focused grip the up and down arrow keys move it one place; the position field moves it anywhere in its folder, also across pages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear the search to arrange your bookmarks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to Your order to arrange</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dropping a bookmark on a folder in the folder list moves it there in every order.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No bookmark matches this search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check the spelling, search for a shorter part of the name, or search all bookmarks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search all bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have no bookmarks yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add items here, or choose Add to bookmarks in the menu of any item in the content tree.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every bookmark is in a folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This folder is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add items to it, or select bookmarks in another folder and move them here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>continued from the previous page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in %path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrange %name: drag it, or press the up and down arrow keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select this bookmark.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden: visitors of the site do not see it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An item above it is hidden, so visitors of the site do not see it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden by a parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move %name up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move %name down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The item was removed, is in the trash, or is not in a language of this site. Remove the bookmark, or restore the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may no longer read this item. Remove the bookmark, or ask an administrator for access.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top of the tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position in its folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move the bookmark to this position in its folder, also across pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count bookmarks per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move the selected bookmarks to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected bookmarks are removed from your list. The items they point to are not changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the selected bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick bookmarks to move or remove them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also delete the bookmarks and folders inside</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete the folder "%name"? Its bookmarks and folders move up one level. No bookmark is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open or close the folder</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1826,6 +2681,262 @@
     </message>
     <message>
         <source>My drafts (%draft_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A draft is a version you started and have not published yet: of a new object, or of an object that is already published, which stays as it is until you publish. Only you see and edit your drafts. Remove the ones you no longer need; a draft of a new object takes the new object with it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One draft not modified for %days days or more was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count drafts not modified for %days days or more were removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One draft was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count drafts were removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No draft is that old; nothing was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No draft was selected. Tick the drafts to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of the versions asked for are not drafts of yours and were left as they are.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Of new objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not modified for %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of the name, the location or the class. Upper and lower case are the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not modified for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Oldest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drafts containing “%search”</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A draft appears here when you start editing and leave without publishing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No draft matches these filters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days days old</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This draft of a new object is removed for good, and the new object with it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This draft is removed for good; the published version stays as it is.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove for good</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New, to be published below %location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Below %location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days days ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count drafts per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ticked drafts are removed for good. A draft of a new object takes the new object with it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected for good</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove old drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drafts not modified for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days days or more (%count drafts)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>They are removed for good, whatever the filters show.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove these drafts for good</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All %count of your drafts are removed for good, whatever the filters show.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all for good</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These drafts are removed for good: %list. A draft of a new object takes the new object with it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick the drafts to remove in the list first.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2743,6 +3854,250 @@
         <source>You cannot copy version #%version_number because you may not read it.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Viewing it needs the policy content/versionread for this version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only drafts are edited: make a new draft from this version to change it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This draft belongs to someone else: make a new draft from it to change it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An untouched draft has nothing to copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not read this version, so it is not copied or compared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not edit any translation of this version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The published version is not removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This version is in a workflow that is still running, so it is not removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not remove this version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions of “%name” (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each save of an object is a version. A draft becomes the published version when it is published, and the version before it is archived. To change an older version or someone else’s draft, make a new draft from it: the new draft is yours, in the translation you choose, and you edit and publish it as usual. When the object already has as many versions as the version history limit of content.ini allows, the oldest archived version is removed to make room.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed: version %versions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %from was copied to your new draft %to (%language). Edit it from the list below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the comparison</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed text is struck through, added text is underlined. Choose how the changes are shown:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter and order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anyone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Oldest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening the versions needs the policy content/versionread; you see what each version is, and compare and copy those you may read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No version on this page can be removed by you: removing needs the policy content/versionremove, and the published version and versions in a running workflow are never removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No version matches these filters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select version %number for removal.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select version %number for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare with the newest other version you may read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare with the current version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New draft from this version, in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make a new draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count versions per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare two versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the versions whose content you may read are offered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Older version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newer version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ticked versions are removed for good, with all their translations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The published version and versions in a running workflow are never removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove for good</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stay on this page after making a new draft (untick to open the new draft in the editor at once).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions %list are removed for good, with all their translations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick the versions to remove in the list first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No version was removed</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/multiedit</name>
@@ -2943,6 +4298,170 @@
     </message>
     <message>
         <source>My pending items (%pending_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent back for changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A version is pending when you have sent it for publishing and a workflow holds it, usually an approval: it is published when it is approved. Here are your pending versions and, if you approve content, the versions waiting for your approval that you may read. Open the approval to read the comments or to approve.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent by you</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for your approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Held by an approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter and order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting longest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A version appears here when you send it for publishing and a workflow, such as an approval, holds it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No pending version matches these filters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You approve it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approval and comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New, to be published below %location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Below %location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>version %number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Held by an approval.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approvers: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No workflow process or approval holds this version any more. If it stays pending, ask an administrator to look at Setup &gt; Workflow processes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count versions per page.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4704,6 +6223,142 @@
         <source>no</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A global URL alias gives a module view, or another alias, an address of your choosing: for example login for user/login. Visitors who open the alias get the destination, either redirected to its address or shown under the alias. The aliases of content (the addresses of nodes) are made on the URL aliases tab of each node and are not listed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The alias is the address visitors will use, the destination is what they get there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without the host and without a leading slash, for example login or campaign/autumn. Characters that are not allowed in an address are changed, and the page says so.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This alias is taken. Choose another address, or remove the existing alias first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the address of the alias.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A module view such as user/login or content/search, or an existing address of content such as about-us. A node given as content/view/full/&lt;node ID&gt; becomes an alias of that node, listed on its URL aliases tab.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter a module view or an existing address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The alias works in siteaccesses that show this language.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find an alias</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of the last segment of the alias (login in campaign/login) or of its destination.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redirecting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create one with the form above, for example login with the destination user/login.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No alias matches. Search for a shorter part, or show all aliases.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select this alias for removal.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %alias for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visitors are sent on to the destination with a 301 redirect.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The destination is shown under the alias; the address stays the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resolves to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The view %view of the module %module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The module %module does not exist (any more): visitors get an error page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node %node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A removed alias stops working at once; links to it then lead to an error page. The destination itself is not changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This removes every global alias, %count in all, not only those shown. Aliases of content nodes are kept. It cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all global aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/urlalias_wildcard</name>
@@ -4829,6 +6484,202 @@
     </message>
     <message>
         <source>Defined URL aliases with wildcard(%wildcard_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL wildcards (%wildcard_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1}, {2} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The destination uses %placeholders, but the pattern has %count * only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each * of the pattern is one placeholder, numbered from {1}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The addresses to catch, without the host, with * where any text may follow. Example: developer/*</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A wildcard with this pattern exists already. Change the pattern, or remove the old wildcard first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the pattern of the wildcard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the destination URL for the new wildcard. Example: dev/{1}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the addresses go: a path of this site, or a full address when redirecting. {1} is the text the first * matched. Example: dev/{1}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use only placeholders the pattern has a * for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the destination.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checked, visitors are redirected (HTTP 301) and see the destination address. Unchecked, the destination is shown under the address they asked for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try an address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See which wildcard an address matches and where it would lead. Nothing is changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without the host, for example news/2026/october.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address matches the wildcard %pattern.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visitors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>are redirected to this address (HTTP 301).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>see this address's page under the address they asked for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resolves to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An address on another site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing on this site: no URL alias or module has this address, so visitors get an error page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No wildcard matches this address. It is answered by URL aliases and modules alone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a wildcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of the pattern or of the destination.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redirecting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create one with the form above, for example old-blog/* to blog/{1}.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No wildcard matches. Search for a shorter part, or show all wildcards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select this wildcard for removal.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %wildcard for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>leads to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visitors are redirected (HTTP 301).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The destination is shown under the address asked for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A removed wildcard stops working at once: its addresses are then answered by URL aliases and modules alone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This removes every wildcard, %count in all, not only those shown. It cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all wildcards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5706,6 +7557,14 @@
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>What the visitors sent is deleted and cannot be brought back; export it as CSV first if it is still needed. The objects and their forms stay and go on collecting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/overview</name>
@@ -5759,6 +7618,146 @@
     </message>
     <message>
         <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 collection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count collections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forms, polls and feedback pages collect what visitors send when their class has attributes marked as information collectors. Each sending is one collection. Here you see which objects have collected, how much and how recently, read the collections, export them as CSV and remove them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%collections collections of %objects objects were removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was selected. Tick the objects whose collections should be removed first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects with collections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collections in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the last %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the last 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latest collection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects removed or in the trash, with collections not listed here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find an object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Part of the name of a form, poll or page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sorted; select to reverse the order.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the collections of %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count in the last %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download every collection of this object as a CSV file for a spreadsheet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No object with collections matches “%search”. Clear the search to see all of them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An object collects once a visitor sends its form; the objects that can are listed below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing deletes every collection of the ticked objects; the objects themselves stay. Asks first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects that can collect but have nothing yet (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Their class has information collector attributes. Open one on the site and send its form to test it; what is sent appears above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first %shown by name are shown.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8241,6 +10240,218 @@ You can also remove the package without uninstalling it from the package list.</
         <source>You are not allowed to install packages (package/install), so the Install button is not shown.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Package list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new package is made in the "local" repository from what this site has. Choose what it should carry; the wizard then asks for its parts, its name, version, license and maintainer, and writes it. Nothing on the site changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are not allowed to use any of the package wizards (package/create).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%arrowleft Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This package is installed already. Installing it again repeats every item below; content it creates is created again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This package has no install items.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each item is installed in turn; a step may ask how to handle a conflict.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uninstalling removes what the items below created on this site, content included. It cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This package has nothing to uninstall.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package was not imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import a package exported from this or another installation. It is added to the repository its vendor names ("local" when it names none) and is not installed yet: a package with install items opens its install step next, any other its page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An .ezpkg, .tar.gz or .tgz archive of at most %size. The server accepts uploads of at most %server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What is checked first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is a gzip compressed tar archive with one of the allowed names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It has at most %entries entries that unpack to at most %size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is not too large.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every entry is a plain file or directory inside the package: no "..", no absolute path, no link, no device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It has a well formed package.xml with a valid package name, and no package of that name exists yet: an existing package is never overwritten.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A package whose vendor is %vendor goes into the setup wizard's repository and becomes an installer source.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is in the setup wizard's repository, which the published packages are built from.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is a site package the setup wizard offers for new sites.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another installer source requires it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installer source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download the package as an .ezpkg file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Asks first and says what goes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The installer takes this package as a source.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change it only on purpose: new installations and published packages are built from it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packaged</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requires</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Required by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The newest file of the package directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it carries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From the package definition and its files. Nothing here changes the site; Compare shows how it differs from what the site has.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%items content install item(s), %files object file(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other install items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files by kind</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the first megabyte is shown here; Download gives the whole file.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -8332,6 +10543,426 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is in the setup wizard's repository, which the published packages are built from.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is a site package the setup wizard offers for new sites.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another installer source requires it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not a package name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no such package (any more)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>packages of that name are in more than one repository; remove it from its repository list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>you are not allowed to remove packages of its type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>its directory contains links, and removing it could delete files elsewhere; remove it on the server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove packages?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was removed: tick the box under the list to confirm that installer sources are to be removed too.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was removed: the removal was not confirmed on this page. Check the list and confirm again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directories below are deleted from the package storage with every file in them. This cannot be undone: download a package first to keep a copy. Removing a package does not uninstall it: the classes, content and files it installed stay on the site; only the record that it is installed goes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installer sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Required by packages that stay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installer source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Required by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installer source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new installation or a published package built without it will lack it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is installed here. What it installed stays; the site will no longer know which package it came from, and it cannot be uninstalled from here afterwards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%names require it and will miss it when they are installed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These cannot be removed and stay:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I understand that %count installer source(s) will be deleted, and that new installations and published packages depend on them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count package(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing selected can be removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Imported, nothing to install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No install items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the setup wizard's repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A site package the setup wizard offers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Required by another installer source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packages in %repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A package carries content classes, content, extensions, settings or a whole site, to install here or to take to another installation. Packages are kept in repositories under %path: "local" holds the packages made or imported here, the others hold packages by vendor. The setup wizard installs new sites from these packages, and the published packages are built from them, so a package marked "Installer source" should be changed only on purpose.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No package was selected. Tick the packages to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Imported only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unreadable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repositories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each repository is a directory of the package storage. Choose one to list only its packages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All repositories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>packages in %count repositories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup wizard's repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Made or imported here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%installed installed, %not not installed, %import imported only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count installer sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count directories without a package definition (not listed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count unreadable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These directories have a package definition that cannot be read, and are left out of the list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>package.xml is not a well formed package definition, or names no package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>package.xml names another package than its directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the directory name is not a valid package name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, summary, type, vendor, version, maintainer or a required package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Matching packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%sort, descending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%sort, ascending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no packages yet. Import one with Import new package, or make one with Create new package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No package matches. Clear the search or choose another repository, type or state.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the package for removal.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contains links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download the package as an .ezpkg file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintainers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None named</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requires</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not in any repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The newest file of the package directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packaged %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count packages per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected asks first and says what goes. Removing a package deletes its files from the repository; what it installed stays on the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are not allowed to remove packages (package/remove).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are not allowed to import packages (package/import).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are not allowed to create packages (package/create).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8891,6 +11522,14 @@ Note: The packages will not be uninstalled.</source>
         <source>oAuth admin</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Audit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -9051,6 +11690,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Template Editor</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Menus (classic)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pdf/edit</name>
@@ -9166,6 +11809,170 @@ Note: The packages will not be uninstalled.</source>
         <source>Shown at the foot of every page, beside the page number. Leave the box empty for the default wording, or clear the tick for no text at all.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New PDF export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A PDF export makes one PDF document of a node of the content tree, and if wanted of the nodes below it. Saving with OK stores the export; one that is generated once also writes its file at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Correct these fields:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name has had this export open since %time. Saving replaces what they have not saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name of the export in this list. It is not printed in the PDF; the front page and the headings come from the content.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The PDF starts with the source node: its name as the first heading, then its attributes. A tree adds the nodes below it, level by level, but only those of the classes ticked below; the others and everything under them are left out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%class, section %section, node %id, %children direct children</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose another source node. What is typed in the form is kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node %id no longer exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose another source node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the node the PDF starts from.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The source node only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The source node and the nodes below it of the classes ticked below, at every level.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only read for a tree. A node of another class is left out together with everything below it, so tick the folders that hold the content as well.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An optional first page with two lines of text, centred, before the table of contents.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The large line, such as the name of the document.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The smaller line below it, such as a date or an edition.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print a footer line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the PDF is written once and kept, or made anew whenever somebody downloads it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written when the export is saved, and again with Regenerate on the list. The file is kept and served at a public address anyone can download from: fast, but it shows the content as it was then.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Made for every download from the list, always current. Nothing is stored; a large tree takes a while every time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Letters, digits, dots, dashes and underscores; ".pdf" is added when it is missing. Generated once, the file is written to %directory under this name, which no other stored export may use. Generated on the fly, it is the name the download is offered under.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The stored file %name has %size and was generated %date. Saving with OK writes it anew; another name or generating on the fly deletes it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK stores the export and, when it is generated once, writes its file; that can take a while for a large tree. Cancel throws away the changes made here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give the export a title.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The title is longer than 255 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The footer text is longer than 255 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose at least one class to include below the source node, or export the source node only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Too many classes are chosen to be stored. Choose fewer classes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A stored export needs a file name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file name is longer than 100 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file name must be a name only, without a folder, "..", or a leading dot.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use only letters, digits, dots, dashes and underscores in the file name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another stored export already writes a file of that name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the source node with Browse.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The chosen source node no longer exists. Choose another one with Browse.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This value is not valid.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pdf/list</name>
@@ -9223,6 +12030,398 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>PDF exports (%export_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove PDF exports?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What happens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The exports below are removed with their settings, and a draft somebody has open goes with them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Their %count stored files (%size) are deleted. Their public addresses, wherever they were shared, stop working.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None of them has a stored file, so no file is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content they were made from is not touched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On the fly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in the editor by %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in the editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node %id (no longer exists)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not chosen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleted with it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size, generated %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no stored file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address that stops working</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count exports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No source node is chosen. Edit the export and choose one with Browse.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its source node no longer exists. Edit the export and choose another one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its file name cannot be used for a stored file. Edit the export and give it a name of letters, digits, dots, dashes and underscores.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its file has not been generated yet. Regenerate it first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is generated on the fly and has no stored file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The PDF templates wrote no file. The error log says why.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A PDF export turns a node of the content tree, and if wanted the nodes below it, into one PDF document with an optional front page and a table of contents. Generated once, the file is stored and served at a public address until it is regenerated; generated on the fly, it is made anew for every download.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stored files removed: %files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The PDF export %name was created.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The PDF export %name was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its file was generated (%size).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is generated on the fly for every download.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file of %name was generated anew (%size).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name could not be generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No export was selected. Tick the exports to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected exports no longer exist; somebody may have removed them already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated on the fly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stored files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stored in total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count new exports were started and never saved. Their drafts are removed once the draft timeout has passed (content.ini [PDFExportSettings] DraftTimeout) and a new export is started.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find an export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title, file name, ID, source node or class. Every word must match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With a stored file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ascending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>descending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No export matches. Clear the search or show all exports.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no PDF exports yet. Create one with New PDF export: give it a title, choose the node it starts from and whether its file is stored or made for every download.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File ready</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate the PDF now and download it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download the stored file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate the stored file anew from the current content.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>node %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contains</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The source node and the nodes below it of these classes:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The source node only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stored file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not generated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>made anew for every download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anyone with this address can download the file, without signing in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Front page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count exports per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first and says which stored files go with the exports.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No source node is chosen: there is nothing to export.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The source node %id no longer exists. Choose another one, or remove the export.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file name cannot be used for a stored file. Give the export a file name of letters, digits, dots, dashes and underscores.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file has not been generated, or it was removed. Regenerate it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class is chosen for the tree: only the source node itself is exported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of the chosen classes no longer exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm removal</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9502,6 +12701,53 @@ Note: The packages will not be uninstalled.</source>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Assign &lt;%role_name&gt; in one section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users and groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The role will apply to the users and groups you choose next only for content in this section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/role/copy</name>
+    <message>
+        <source>Copy the &lt;%role_name&gt; role</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The copy is a new role with the same policies, named “Copy of %role_name”. It is not assigned to anyone, so it gives nobody anything until you assign it. It opens in the role editor, where you can rename it and change its policies.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Policies copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assignments of the original (not copied)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This role has a policy that gives access to everything. The copy will have it too.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make the copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/createpolicystep1</name>
@@ -9559,6 +12805,50 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Every function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A policy lets the users of the role use a module: all of it, or one of its functions, possibly only in some sections, classes or subtrees. The policy is added to the draft of the role; it reaches its users when you save the role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The module the users of the role may use, such as content (reading and editing content), user (logging in) or shop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every module with every function gives access to everything, including roles, users and setup. Give it only to administrators.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All functions of the module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlimited access to everything the module does. The policy is added at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Access to one function only, such as reading content; the next step lets you limit it to sections, classes or subtrees where the function supports it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel goes back to the role editor; nothing has been added.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9642,6 +12932,30 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>It is not possible to grant limited access to all modules at once. To grant unlimited access to all modules and their functions, go back to step one and select &quot;Grant access to all functions&quot;. To grant limited access to different functions within different modules, you must set up a collection of policies.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module: %module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The function of the %module module the users of the role may use.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full access to the function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everywhere, without limitations. The policy is added at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limited access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only in some sections, classes, subtrees, languages or siteaccesses, as the function supports. If it supports none, the policy gives full access to it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9759,6 +13073,26 @@ Note: The packages will not be uninstalled.</source>
         <source>Subtrees (%subtree_count)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Function: %function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose where the function may be used. "Any" leaves a limitation out. Several limitations must all be met; several values of one limitation are alternatives. Press OK to add the policy to the draft of the role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hold Ctrl (Cmd on a Mac) to choose more than one value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only these nodes themselves, not what lies below them. Choosing nodes drops the other limitations the function names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These nodes and everything below them.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/edit</name>
@@ -9854,6 +13188,181 @@ Note: The packages will not be uninstalled.</source>
         <source>Policies (%policy_count)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are editing a draft of this role. Nothing changes for its users until you press Save; Cancel throws every change of this draft away.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This draft differs from the saved role. Save to apply the changes, or Cancel to discard them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The policy was moved to position %position. Save to keep the new order.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count policies were removed from the draft. Save to apply this.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No policy was selected. Tick the policies to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown in the role list and wherever the role is assigned.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order of the policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By limitation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag a policy by its grip to a new place, or focus the grip and press the up or down arrow key. The arrow buttons move a policy one place, also across pages; the position field moves it to any place in the whole list. The order is kept in the draft until you save.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort the list by ID, ascending, to change the order of the policies.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module %module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select policy %id for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move policy at position %position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag to move, or use the up and down arrow keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move policy %id up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move policy %id down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position of policy %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move the policy to the position in the field, in the whole list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no policies set up for this role. Add one with New policy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ticked policies are removed from this draft. Their users lose what they gave when you press Save; Cancel keeps them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the ticked policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsaved changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save applies the draft to everyone the role is assigned to. Cancel discards it and goes back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This draft has unsaved changes. Leave the page anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved to position %position.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/role/grant</name>
+    <message>
+        <source>%count policies of this role go beyond your own access, so you cannot copy it. You can only give what you have yourself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The role was not saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The role was not assigned.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The role was not copied.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The policy was not added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can only give what you have yourself. These policies go beyond your own access:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Narrow them to what your own roles allow, or ask an administrator with full access.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/list</name>
@@ -9933,6 +13442,138 @@ Note: The packages will not be uninstalled.</source>
         <source>Show the users and user groups of the &lt;%role_name&gt; role.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A role is a set of policies; each policy lets its users use one module or function, possibly only in some sections, classes or subtrees. A role does nothing until it is assigned to users or user groups; a user has every policy of every role assigned to them or to one of their groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count roles were removed, with their policies and assignments.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No role was selected. Tick the roles to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a role</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of the name, or the ID. Upper and lower case are the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ordered by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles matching “%search”</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No role matches this search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no roles yet. Create one with New role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %role_name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A policy of this role gives access to every function of every module.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its users can change roles and policies, and so give themselves any access.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can change roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not assigned to any user or group, so it gives nobody anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not assigned</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assigned to users and groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ticked roles are removed for good, with their policies. Every user and group they are assigned to loses what they gave. This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the ticked roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing is ticked yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/policyedit</name>
@@ -10002,6 +13643,409 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Subtrees (%subtree_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose where the function may be used. "Any" leaves a limitation out. The change is kept in the draft of the role; it reaches the users when you save the role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both go back to the role editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/role/sentence</name>
+    <message>
+        <source>May %action, %conditions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>May %action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>do everything, in every module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use every function of the %module module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use the function %function of the %module module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%label: none of the chosen values exists any more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only content they own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only below content they own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only content owned by a member of their groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only below content owned by a member of their groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%label: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%list and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%list and %last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in section %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the sections %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of class %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of the classes %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>below objects of class %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>below objects of the classes %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at depth %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at the depths %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on the node %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on the nodes %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the subtree %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the subtrees %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on the siteaccess %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on the siteaccesses %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the language %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the languages %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>into section %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>into the sections %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to the state %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to the states %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only the function %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only the functions %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the state %list (%label)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the states %list (%label)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>do everything with content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>do everything in the user module (log in, edit accounts, activate users)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manage roles and policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use every setup and maintenance page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manage sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manage content classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manage object states</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>do everything in the shop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manage and read RSS feeds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manage links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use every search function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>read content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>create content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>edit content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>remove content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>move content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hide and reveal content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>translate content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manage the locations of content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>read old versions and drafts of content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>remove versions of content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>compare versions of content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>view content as PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>view embedded content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>see what links to content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>restore content from the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empty the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use the dashboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>see the list of pending content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>send content to a friend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manage URL aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>publish content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>log in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>change their password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>change their preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>register an account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>edit their own account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>activate user accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use the setup pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>clear caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>view the system information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>assign sections to content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>edit sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>view sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>change the states of content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>read RSS feeds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>edit RSS feeds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>buy in the shop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>administer the shop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>change the status of orders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>set up the shop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>edit content classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use collaboration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>view tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>edit tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>call server functions from the browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>use the website toolbar</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10167,6 +14211,150 @@ Note: The packages will not be uninstalled.</source>
         <source>No user or user group of this role has a name containing "%filter".</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A user has every policy of every role assigned to them or to one of their groups. Changing the policies of this role changes what all of them may do.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count assignments were removed. Those users and groups no longer have the policies of this role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No assignment was selected. Tick the users and groups to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assignments to users and groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users assigned directly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users affected in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of the assignments have a subtree or section limitation: the role applies to those users only there. They are counted above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full access.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A policy of this role gives access to every function of every module, including roles, users and setup. Assign it only to administrators.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can change roles.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its users may change roles and policies, and so give themselves any access.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order of the policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By limitation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module %module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assign the role to a user group rather than to single users where you can: every member of the group, now and later, gets it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only in the subtree %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only in section %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ticked users and groups lose this role at once: they keep only what other roles give them. The users and groups themselves are not removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the ticked assignments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With a limitation, the role applies only inside one subtree or section. You choose the users and groups in the next step.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_destination</name>
@@ -10180,6 +14368,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Use the radio buttons to choose a destination location for RSS import then click &quot;OK&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every new item of the feed becomes an object directly below this location.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10197,6 +14389,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Use the radio buttons to choose an image to use in the RSS export then click &quot;OK&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Only RSS 2.0 feeds carry the image; feed readers show it beside the feed name.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_source</name>
@@ -10212,6 +14408,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Use the radio buttons to choose the item that you want to export using RSS then click &quot;OK&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The feed lists the newest objects of the chosen class published below this location; with Subnodes ticked, also those deeper down.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_user</name>
@@ -10225,6 +14425,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Use the radio buttons to choose a user then click &quot;OK&quot;. The user will become the owner of the objects that were imported using RSS.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The owner needs no login of their own; the import creates the objects on their behalf.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10814,6 +15018,70 @@ Note: The packages will not be uninstalled.</source>
         <source>Sort by %column</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An export is a feed at its own address. It lists the newest objects below its sources; feed readers and other sites subscribe to it. Nothing changes for them until you press OK.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The export was not saved. Correct the following and press OK again:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The feed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feeds also carry it as their title.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address readers subscribe to is the site address followed by rss/feed/ and this. An active export needs one; changing it leaves the readers of the old address with an error.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open feed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only an active export answers at its address. Clear this to stop a feed for a while without losing its settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What the feed lists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each source is a location: the feed lists the newest objects of its class published below it. Browse picks the location; Set loads the attributes of the chosen class for the fields below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An object with several locations below the sources is listed once, by its main location.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No source yet: the feed has no items. Press Add source, then Browse to pick the location whose content it lists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No location chosen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A direct link to a media file of the item: choose a media, image or file attribute. Podcasts need it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK saves the export and goes back to the RSS list. Cancel throws away every change made since the export was opened, including added or removed sources, and goes back to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/edit_import</name>
@@ -10931,6 +15199,70 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Click this button to load the correct values into the drop-down fields below. Use the drop-down menu on the left to select the class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An import reads the feed of another site. The rssimport cronjob creates an object below the destination for every item it has not seen before; objects it created stay when the import is changed or removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The import was not saved. Correct the following and press OK again:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This import has created %count objects so far, the newest on %time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1. The feed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The http or https address of the feed. Update reads it and finds its format; the fields below appear once it has been read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not read yet: press Update.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2. Where the items go</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No location chosen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3. What each item becomes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the class of the new objects and press Set; then choose which part of a feed item fills each attribute. Ignore leaves an attribute empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>4. Run it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK saves the import and goes back to the RSS list. Cancel throws away the changes made since the import was opened and goes back to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give the import a name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The source URL must be an http or https address of a feed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11088,6 +15420,394 @@ Note: The packages will not be uninstalled.</source>
         <source>Page %page of %pages</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Remove RSS exports?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove RSS imports?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What happens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The feed addresses below stop answering. Feed readers and sites subscribed to them get an error from then on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The sources of each export go with it. The content the feeds listed is not touched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An export can be made inactive instead: its settings stay and it can be switched on again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The rssimport cronjob stops reading these feeds.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %count objects they created stay where they are. Remove them in the content tree if they are no longer wanted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An import can be made inactive instead: its settings stay and it can be switched on again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feed address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feeds listed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Destination</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Imported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count objects, which stay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count exports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count imports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RSS list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RSS feeds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An RSS export publishes content of this site as a feed that feed readers and other sites subscribe to. An RSS import reads the feed of another site and creates an object in the content tree for every new item; the rssimport cronjob runs the active imports.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No import was selected. Tick the imports to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No export was selected. Tick the exports to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected feeds no longer exist; somebody may have removed them already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active exports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Imports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active imports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Imported objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a feed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, address, format, source, destination or ID, on this page of each list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feeds are written anew for every request (site.ini [RSSSettings] CacheTime is 0).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A feed is written at most every %minutes minutes and served from a cached copy in between (site.ini [RSSSettings] CacheTime).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each export is a feed at its own address. It lists the newest objects below its sources, written as RSS, Atom, OPML or a podcast feed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no RSS exports yet. Create one with New export: give it a name and an address, then choose the folders whose content it lists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open feed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location %id (missing)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with subitems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items in the feed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>up to %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>main locations only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not served while inactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On every request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not requested since the cache was cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Links point to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No export on this page matches. Clear the search or choose All.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first and says which feed addresses stop working.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each import reads one feed of another site and creates an object below its destination for every item it has not seen before. Removing an import keeps the objects it created.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cronjob part runs rssimport.php, so no import is ever read. Add Scripts[]=rssimport.php to a part in cronjob.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go to the cronjobs page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active imports are read by the rssimport cronjob (%script) in the %part part:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>scheduled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>next run %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not scheduled in the crontab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Imports are read only when that part is started by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the cronjob</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no RSS imports. Create one with New import: give it the address of a feed, choose where its items go and which class they become.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View destination</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>owned by %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newest item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No import on this page matches. Clear the search or choose All.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first. The objects an import created stay in the content tree.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count feeds on this page shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feeds on this page: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No feed address: readers cannot reach it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The list of feeds is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No source: the feed has no items.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sources no longer exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No source address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The destination no longer exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No destination is set.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class is set for the imported items.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm removal</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/search/stats</name>
@@ -11121,6 +15841,150 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which words visitors search for on the site, how often, and how many results they got on average. A phrase that is searched for often and finds nothing points to content that is missing, or to words the content does not use.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The search statistics were reset. Counting starts again with the next search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No siteaccess records searches at the moment.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A search is only counted when the siteaccess the visitor searches in has LogSearchStats=enabled in the [SearchSettings] block of its site.ini; it is disabled by default. What is listed below was recorded earlier.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches are recorded on: %siteaccesses.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Different phrases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phrases that found nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Of all searches found nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find phrases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a phrase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of a phrase. Upper and lower case are the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All phrases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Found nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Most searched</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phrase A to Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fewest results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phrases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No search has been recorded yet. Searches appear here once a siteaccess records them (LogSearchStats=enabled) and visitors search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No phrase matches this search. Search for a shorter part, or clear the search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every recorded phrase found at least one result.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search phrases with the number of searches and the average number of results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Share of the most searched phrase on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run this search in the administration interface to see what it finds now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This removes all %count recorded phrases and their counts for good, not only those shown. It cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all recorded phrases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is nothing to reset.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12132,6 +16996,522 @@ Note: The packages will not be uninstalled.</source>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New setting in [%block]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INI file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This setting holds a secret. Its value is never shown: type a new one to replace it, or leave the field empty to keep the value it has.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At the moment it is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At the moment it is set.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity reads this setting only when it starts: after saving, restart it with ./console exp:velocity restart. PHP-FPM reads it on its next request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where it is set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The files that set it, in the order they are read; the last one wins (an array collects the elements of all of them unless one empties it first).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>elements in effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empties it, adds nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>overridden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empties the array: what earlier files added is dropped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>adds an element</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sets the key, replacing an earlier one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No file sets it yet in this siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Letters, digits and _ * @ -.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One element per line: =value adds an element, [key]=value sets a key. Leave the first line empty to empty the array before these elements; without it they are added to what the earlier files give.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leave empty to keep the value it has.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One line. A value cannot contain a line break or */.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save it in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess %siteaccess only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every siteaccess (global override)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In an extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changes the extension’s own settings file, which an update of the extension replaces. Prefer the siteaccess or the global override.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving clears the INI cache, so PHP-FPM and Velocity read the change on their next request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file chosen above gets this value; the other files are not changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The setting is added to the file chosen above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension %extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension %extension for %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension %extension (%dir)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The setting was not saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A value with a line break, a NUL byte or */ is refused, because it would change other settings or end the PHP comment that hides the file. Otherwise make sure the web server may write to %path and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A name can contain letters, digits and _ * @ -.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose where to save the setting: the siteaccess, the global override or an active extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This setting is read only (site.ini [eZINISettings] ReadonlySettingList) and cannot be changed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%valfield does not contain valid array.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A key cannot contain [ or ].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%file in %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INI settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cleared so that both servers read the change on their next request:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The INI cache could not be cleared. Until it is, neither PHP-FPM nor Velocity uses the change: run php bin/php/ezcache.php --clear-tag=ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity reads this setting only when it starts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity is running: restart it with ./console exp:velocity restart for the change to reach it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity is not running here, so nothing more is needed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no INI file of that name. Pick one from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick an INI file and a siteaccess to see its settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blocks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed from the default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without a default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secrets, masked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not in effect yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count settings in the files differ from what this server is running with. The INI cache still holds the old values: clear it (Setup &gt; Cache management, INI caches, or php bin/php/ezcache.php --clear-tag=ini). They are marked "Not in effect yet" below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is served by Velocity. "In effect" compares the files with the settings this Velocity worker runs with; PHP-FPM can differ until its INI cache is read again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is served by PHP-FPM. "In effect" compares the files with the settings PHP-FPM runs with; open the page on the Velocity port to check Velocity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the values are in effect can only be checked for %siteaccess, the siteaccess this page runs in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files of the load order could not be read by this server, so their settings are missing here and in what it runs with. Check their owner and permissions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %count files read for %file, in order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Later files win. The number is how many settings each file sets.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not readable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Block, setting name or value. The values of secrets are never searched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare with siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No comparison</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only settings changed from the default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count settings in every file match "%query"</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In siteaccess %siteaccess. A file name leads to that setting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value in effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No setting matches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count settings of %file differ between %a and %b</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the settings whose value in effect differs are listed. A secret only says that it differs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>secret</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both siteaccesses run with the same values.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %total settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All %total settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only settings whose value in effect differs from settings/%file, or that it does not have.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%total settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %setting from %file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove from %file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>secret, masked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>list of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count elements, some with keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity reads it only when it starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity restart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not in effect yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>set, hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(password masked)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empty array</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This server does not have this setting yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This server still runs with: %value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set in 1 file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set in %count files, %overridden overridden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove takes a ticked setting out of settings/override or the siteaccess file that sets it last; the value of the next file down, or the default, takes over. Settings from settings/%file and from extensions cannot be removed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup</name>
@@ -12472,6 +17852,522 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Stopped by operator. Pages written so far are kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear INI caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cache is selected yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>caches shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every cache of this installation, what it holds and what clearing it reaches. A cleared cache is made again on the next requests, which are slower until then. The files are in var/, which Apache with PHP-FPM and Exponential Velocity share: clearing them here reaches both servers. Velocity keeps settings in memory and serves pages from its own response cache, so some caches ask for one more step, named where it is needed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A running Velocity still holds the old settings in memory: restart it with %command.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity's response cache may serve pages made before this for a few seconds more; clear it below or with %command.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From a shell:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%files files on disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measure the sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>last clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear all caches…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These %count caches are cleared:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site is slow until they are made again, on every server that shares var/.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restart Velocity afterwards: it keeps settings in memory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The caches tagged %tag:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without sizes (faster)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measure sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sizes were measured for this view, within three seconds; a size marked ≥ was cut short.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sizes are measured only on request, as that reads every file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last cleared comes from the audit trail, with who cleared: clears through this page, System information, ./console exp:cache and bin/php/ezcache.php (which exp:velocity deploy runs) are recorded; a shell is named by its operating system user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who cleared is shown to users who may read the system channel of the audit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last cleared comes from the expiry times the kernel records; the audit trail is not available here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, id, tag or directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%files files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>restart Velocity after clearing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not there yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>disabled in the settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>also in Velocity's response cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from a shell, %who</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by %who</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear this group…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear %group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hit rates and entries are on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing already purges the pages it affects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove dead entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset counters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writes already invalidate the tables they touch; clear it after changing the database outside Exponential.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset the counters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL profile of every request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each request writes how many statements it ran to var/tmp/sql_profile.log, on every server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch the SQL profile off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch the SQL profile on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity response cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%files files, %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages Velocity answers without PHP, for a few seconds each.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last cleared %time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Velocity's response cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Of the server process that answered this page only; another server or pool keeps its own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every entry any application stored there is gone, including the memory tier of Velocity's response cache.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick caches in the lists above, then clear them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These caches are cleared:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pages stored as files, answered by the web server without the CMS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From a shell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the commands that do what this page does</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One cache or several, by id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What would be cleared, with sizes, without clearing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity's response cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity, after settings changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every cache was cleared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The caches tagged %tag were cleared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected caches were cleared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cache was selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The caches of the group were cleared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>That group has no cache to clear.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content and views</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rendered views, URL aliases, class and user information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled templates, template blocks, overrides and packed scripts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INI and settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings, extensions and translations. A running Velocity keeps settings in memory: restart it after clearing them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image variations, made again when an image is next shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages, queries and the server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The HTTP cache, the SQL query cache, Velocity's response cache and the PHP caches of the server that answered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Caches of extensions that belong to no other group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The rendered views of content: what a page shows of each object, per view mode and user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole pages per permission context, answered before the kernel starts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results of SQL queries, kept until a write touches their tables.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings files read once for every siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings of each siteaccess, merged from every override.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Character set conversion tables.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The identifiers of content classes and their attributes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The sort keys of content classes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL wildcards and their translations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Character transformation tables for URLs and search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image variations (aliases) made from uploaded images.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates compiled to PHP.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The cache-blocks of templates, such as the page layout's menus.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which template answers which view, worked out from the override settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images made from text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated RSS feeds.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each user's roles, policies and groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content tree of the administration, as browsers keep it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object states used in policy limitations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content languages of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which design directories each siteaccess uses.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The list of active extensions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled translations of the interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The SSL zones of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Answers of the REST interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The routes of the REST interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packed and minified scripts and style sheets.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>just now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n minutes ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n hours ago</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13213,6 +19109,386 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>SA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every extension this installation can see, in one list. The active ones come first, in the order of ActiveExtensions in %file: an extension higher in the list has the higher priority for settings, templates and designs. Move, activate and deactivate them here, then review and apply the changes in one step.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extensions were not changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activated: %names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivated: %names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved: %names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The autoload arrays were regenerated, and the INI, template override, design and active extension caches were cleared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity is running: restart it with ./console exp:velocity restart, so that its workers load the new list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If this installation is also served by Velocity, restart it with ./console exp:velocity restart, so that its workers load the new list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity is not running here, so nothing more is needed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The active extensions were changed elsewhere since this page was drawn, so the list below starts again from the file. Make your changes again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only for siteaccesses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Git checkouts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ExtensionOrdering is enabled, so the system loads the active extensions in the order their extension.xml dependencies (requires, uses, extends) give, and the written order only decides where nothing is declared. %count of %total load at another position than written; each card says where.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review the changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Apply changes writes the list below to %file, keeps a copy of the previous file, regenerates the autoload arrays and clears the caches built on the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ActiveExtensions lines after the change (changed lines marked):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>activated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>moved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick the box to confirm the risks above, or go back and change the plan.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I have read the risks above and want to apply these changes anyway.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not applied yet: %added to activate, %removed to deactivate, %moved moved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The order was changed. Nothing is written until you review and apply it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, description or license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use the arrows to move an active extension, or drag it by its grip (on the grip, the up and down arrow keys move it too). Activate places an extension after the extensions it requires and before the ones it extends, otherwise at the end.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No extension matches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name is now number %position.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Showing %shown of %total extensions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position in ActiveExtensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move %name: drag, or use the up and down arrow keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not in ActiveExtensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will be activated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will be deactivated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved from %position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ActiveAccessExtensions of this siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Access extension: %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A git checkout: updated with git, not by a package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loads as</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>number %position (dependency order)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requires</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extends</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needed by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Designs in use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load %name earlier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load %name later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivate %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove from the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changes are written only by Apply changes, after the review. Regenerate the autoload arrays after adding classes to an extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate autoload arrays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%file cannot be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%file holds no settings; nothing was written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No copy of %file could be kept; nothing was written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writing %file did not give the expected settings, so the previous file was put back (a copy is in %backup).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The autoload arrays of the extensions were regenerated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The active extensions were saved; a copy of the previous settings is in %file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The active extensions changed since this page was loaded. Reload the page and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading order saved; a copy of the previous settings is in %file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listed in ActiveExtensions, but its directory is missing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requires %other, which is not active.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs %other, which is written later in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extends %other, which is written earlier in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changes %file, which %other ships in full and loads earlier: single values of %other win.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name is deactivated, but %other stays active and requires it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name is deactivated, but the siteaccesses %siteaccesses use its design %design, which no other active extension provides.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name is deactivated: this switches off %what.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the written order changes. The declared dependencies decide the loading order of these extensions, so they load in the same order as before.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the CSRF protection of every form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the scripts and styles of the administration</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14264,6 +20540,874 @@ Note: The packages will not be uninstalled.</source>
         <source>This is not an address visitors can reach.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What this installation runs on, as the server that answered this page sees it, and what needs attention. Nothing here changes the site. To ask for help, download the report: passwords, keys, session ids and full server paths are left out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page was answered by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP-FPM pool %pool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each server has its own PHP, OPcache and settings: Apache with PHP-FPM and Exponential Velocity show different figures. Open this page on the other server to see its own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The report was copied to the clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the text of the report below and copy it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy report as text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download report (.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as JSON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without sizes (faster)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measure sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated %time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sizes were measured for this view, within three seconds; a size marked ≥ was cut short.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sizes of var/, the cache directories and a database on a server are measured only on request, as that reads every file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Health checks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What needs attention first, each with what to do. Checked for the server that answered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>failures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>warnings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count checks in order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in load order, with the version their extension.xml, ezinfo.php or composer.json states</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Their authors, licences and websites are on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP extensions and settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The full PHP configuration of this server process, without the request and the environment (they carry the sign-in and the session cookie):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP details (phpinfo)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mails, feeds and links made outside a request (cronjobs, notifications) use this setting. Set it in settings/siteaccess/%siteaccess/site.ini.append.php.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>figures of the process that answered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size, built %built</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read replica</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Report for support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the text the download and the Copy button give</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passwords, keys, tokens, session ids, credentials in addresses and the full paths of the server are left out; paths inside the installation are relative to it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n seconds ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n minutes ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n hours ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n days ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Command line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>persistent workers: one process answers many requests and keeps its classes and caches between them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>worker mode: the script stays in memory between requests</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a fresh worker forked for every request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a pool of PHP processes, a clean state for every request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP inside the Apache processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a pool of PHP threads, a clean state for every request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>one command-line process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP %version is below the supported minimum %minimum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upgrade PHP to a supported version (8.3 or later).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP %branch no longer gets security fixes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its security support ended on %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plan an upgrade to a supported PHP branch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP %version is supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security fixes until %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP extensions the kernel needs are missing: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install and enable them for the PHP that serves the site, then reload it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every PHP extension the kernel needs is loaded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recommended PHP extensions are missing: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images, link checks, translations or the caches work without them only in part.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache is off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every request compiles every PHP file again; pages take several times as long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set opcache.enable_cli=1 in [PHPSettings] IniOptions[] of velocity.ini, then restart Velocity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set opcache.enable=1 in the php.ini of the PHP that serves the site, then reload it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache is on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its statistics are not available: opcache_get_status is in disable_functions of this PHP.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its statistics are not available to this script (opcache.restrict_api).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache is full</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scripts that do not fit are compiled on every request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Raise opcache.memory_consumption or opcache.max_accelerated_files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache hit rate is %rate %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Below 90 %, many scripts are compiled again; the cache may be too small or reset too often.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Raise opcache.memory_consumption and check that nothing resets the cache.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>opcache.file_update_protection is %n under Velocity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A persistent worker never caches a file written less than that many seconds before the request started, so recently deployed files are compiled on every request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set IniOptions[]=opcache.file_update_protection=0 in [PHPSettings] of velocity.ini, then restart Velocity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>memory_limit is %limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing, image variations and cache clearing need more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set memory_limit to 256M or more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Large imports and image variations can run out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unlimited</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max_execution_time is %n seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing large objects and clearing caches can take longer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set max_execution_time to 30 or more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The var directory is not writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Caches, uploaded files, logs and sessions cannot be written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give the user the web server runs as write access to var/ and everything below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The cache or storage directory is not writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The var directory is writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%free free on the disk of var/ (%percent %)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Free space: old logs, var/tmp and caches can be cleared; uploads and the database need room to grow.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug output is shown to every visitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It shows SQL, templates, file paths and timings to anyone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set [DebugSettings] DebugByIP=enabled with DebugIPList[], or DebugOutput=disabled, in site.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug output is on for chosen addresses or users only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fine for a staging site; switch it off on a production site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug output is off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Development settings are on: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>They slow every page down and can put debug comments into pages and mails.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set them to disabled in site.ini on a production site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP shows errors in the page (display_errors)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error messages can show file paths and settings to visitors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set display_errors=Off and log_errors=On for the PHP that serves the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Caches are switched off: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Usual while templates are being developed; every page is slower until they are on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set them to enabled in site.ini on a production site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The view, template and override caches are on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SiteURL is not an address visitors can reach</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mails, feeds and links made outside a request (cronjobs, notifications) use it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set [SiteSettings] SiteURL in the siteaccess settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cronjob run was found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without cronjobs, notifications, link checks, the trash and timed publishing do not run.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule runcronjobs.php in the crontab of the user the site runs as (Setup &gt; Cronjobs shows the lines).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last cronjob run was %ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check the crontab of the user the site runs as (Setup &gt; Cronjobs).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjobs ran %ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail is written to files, not sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right for a test site; a production site needs sendmail or SMTP.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set [MailSettings] Transport in site.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SMTP is chosen, but no SMTP server is set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set [MailSettings] TransportServer in site.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no database connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check [DatabaseSettings] in site.ini and that the database server runs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The database character set is %charset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential stores text as UTF-8.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Convert the database to UTF-8 (bin/php/ezconvertdbcharset.php).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The database is connected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No time zone is set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP falls back to UTC, so dates and timed publishing can be hours off.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set date.timezone in php.ini or [TimeZoneSettings] TimeZone in site.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database schema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Engine archive build</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Answered by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not stated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Worker model</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP-FPM pool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%active busy, %idle idle, %total in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max_children reached %n times</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n configured, %spare spare</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from the engine archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from the files on disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uploads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%upload per file, %post per request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not loaded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%used of %total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not available: opcache_get_status is disabled in this PHP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not available to this script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on, on every request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on, every %n s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>off: an edited file is seen after a restart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%free free of %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>measured on request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>var directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size of var</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Free disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%free of %total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template compiling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Override cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Static cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL query cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity response cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seen in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>runs started from Setup &gt; Cronjobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the cronjob log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SMTP server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>yes (credentials hidden)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sender address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time zone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale and time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Processor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Machine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -14847,6 +21991,318 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Stopped by operator.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ended without finishing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup &gt; Preload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shell or cron</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requests the pages of a site as a visitor would, so its caches are warm before the first visitor arrives: the page views, the image aliases and the compiled templates. It starts at the section pages and follows the links of the site, and lists the links that are broken with the pages that link to them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The preload of %siteaccess was started in the background. Its progress is shown below; you can leave this page and come back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The preload was asked to stop. It ends after the page it is requesting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>That preload is not running any more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A preload is already running. Only one runs at a time: wait for it to end, or stop it first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose one of the sites in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The preload could not be started.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no site to warm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the siteaccesses of your sites to site.ini [SiteAccessSettings] RelatedSiteAccessList and give each a SiteURL.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%site, started %time from %source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%pages of at most %max pages warmed, %broken broken</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Idle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last run %time: %site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No site has been preloaded yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output of the preload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start a preload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the site and how far to go. A dry run shows the address and the starting pages without requesting anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The siteaccesses of site.ini RelatedSiteAccessList, at the address their SiteURL and the siteaccess matching give them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The most pages one run requests, 1 to %max.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many links from a starting page are followed; 0 warms the starting pages only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What to warm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also check the images on each page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The pages make their image aliases when they are rendered. This also requests every image they show, once, and lists the ones that are missing with the pages that show them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A preload is running; the next one can start when it has ended.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The run goes on in the background. One preload runs at a time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was requested. A run would start at these pages and follow their links to the same site, up to the limits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The siteaccess matching in site.ini does not send this address to %siteaccess, so the pages warmed may be those of another siteaccess. Check SiteURL and the match settings of the siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none, matched by host</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%pages pages, link depth %depth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>images checked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The same from the shell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which caches it warms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The run requests each page at the address of the site, so the server that answers that address renders it: here %address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page view cache, the image aliases and the compiled templates are files of this installation. Apache with PHP-FPM and Exponential Velocity share them, so a run warms them for both, whichever server answers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity is running here (ports %port). Its own response cache keeps a page for %ttl seconds only, so warming it ahead of visitors does not last; the shared caches above are what a run is for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages for signed-in users are not warmed: the run is an anonymous visitor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From the shell or cron</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The same run, from the installation directory. It waits for nobody: when a preload is already running it says so and ends. Its runs are listed below with the others.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For cron, after the nightly cache clear for example:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runs are kept in %dir (the last 20).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last runs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From this page, the shell and cron, newest first. Image aliases made counts the alias files the pages created while the run requested them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No runs yet. Start one above, or run the command from the shell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image aliases made</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%min min %sec s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%sec s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not counted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count images checked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count denied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The addresses that failed, with the pages that link to them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count more are in the output of the run.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages warmed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images checked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Broken links and the pages that link to them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The progress could not be read. Reload the page to see how the run is doing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show it in the list of runs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -15970,6 +23426,38 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Implements the RSS import handler interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>subitemscolumns.ini [Column_&lt;key&gt;] Class=&lt;class&gt;, Handler=&lt;class&gt;::&lt;method&gt; or Template=design:subitems/columns/&lt;name&gt;.tpl in extension/&lt;name&gt;/settings/subitemscolumns.ini.append.php; defaults and presets in subitems.ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extends expSubitemsColumn (value; html and text to change how it is shown), or a static method ( node, settings, column ) returning the value, or a template getting $node, $column and $key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>site.ini [RunnableSettings] Implementation[&lt;class&gt;]=&lt;subclass&gt;; listeners of runnable/&lt;kind&gt;/before and runnable/&lt;kind&gt;/after in [RunnableSettings] Listeners[]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>implements expIniAction (name, description, usage, run( expIniCommandContext )) or expIniScopeProvider (scopes( $root ))</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>content.ini [ContentJobSettings] JobTypes[&lt;name&gt;]=&lt;class&gt; in extension/&lt;name&gt;/settings/content.ini.append.php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>implements expContentJobType (validate, countNodes, locks, describe, prepare, runBatch, afterBatch, finish)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -21015,6 +28503,893 @@ Note: The packages will not be uninstalled.</source>
         <source>The operation was cut short in order to avoid execution timeout.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A session is what keeps a browser signed in: one is opened at the first request that needs it and kept for %lifetime after the last activity. Removing a session signs that browser out; an anonymous visitor only loses a basket or a choice kept for the visit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sessions were removed; everybody, you included, signs in again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count timed out sessions were removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sessions of %users users were removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sessions were removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The session you are using now was kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was selected. Tick the users or sessions to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the session you are using now was selected, and it is never removed from this list. Sign out to end it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users active in the last %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions of signed in users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anonymous sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timed out, not yet removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing timed out sessions is safe: nobody is signed out. Removing all sessions signs out everybody, you included.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no timed out sessions now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Asks first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each card is one browser or device this user is signed in with.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Part of a name, login or e-mail address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also users whose last activity is more than %time ago.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Showing users matching “%search”.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sorted; select to reverse the order.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The session you are using now cannot be removed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the session %hint for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the sessions of %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the sessions of this user one by one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The session you are using now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ends</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user matches “%search”. Clear the search or include inactive users.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This user has no sessions now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose Everyone or include inactive users to see more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ticked sessions are signed out. Asks first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every session of the ticked users is signed out; your own current session stays. Asks first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all %count sessions?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everybody who is signed in is signed out, you included: you will see the login page next. Anonymous visitors lose their baskets and the choices kept for their visit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This cannot be undone. To remove only what is no longer used, choose Remove timed out sessions instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count sessions of this user?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the sessions of this user?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the sessions of %users users?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The browsers of these sessions are signed out and have to sign in again. Nothing else changes: the users, their content and their settings stay.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your own user is among them: its other sessions are removed, the one you are using now stays.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of its sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions are kept by %handler (PHP session storage: %storage), not in a table this page can read, so they cannot be counted or removed one by one here. Each session ends by itself %lifetime after its last use.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in within the last %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in within the last day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in within the session lifetime (%time)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in within</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the last %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the last day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the session lifetime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recently signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last sign-in of each user, from the visit records every session handler keeps. A user listed here may still have an open session; one who signed out or whose browser forgot the session has none.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last sign-in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%time ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user matches “%search”. Clear the search or choose a longer time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nobody signed in within this time. Choose a longer time to see more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to administer sessions on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep sessions in the database: in settings/override/site.ini.append.php set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear the INI cache and reload the PHP workers (or deploy). Everybody signs in again once, because the sessions kept by PHP are not carried over.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page then lists every session with its user and last activity, and removes the sessions of chosen users. Set ForceStart=enabled only if anonymous visitors should be counted too: it opens a session for every visitor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/systemupgrade</name>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unreadable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not listed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Malformed lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Out of order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Table not in the schema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Field not in the schema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index not in the schema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both checks only read: they change no file and no table.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without the file list of the release the check cannot compare anything. The guide says where to get it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guide: upgrade check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All %count listed files match their checksums.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count notes below do not stop an upgrade.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%problems of %count listed files differ from the release: %modified modified, %missing missing, %unreadable unreadable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The database schema could not be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no schema handler for the database engine %engine, or the database did not answer. dbschema.ini [SchemaSettings] names the handlers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The database matches the schema of Exponential and the active extensions (%files schema files).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every collection Exponential needs is there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count tables differ only in how the %engine engine names their types; nothing needs to change.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count tables differ: %missing missing, %extra not in the schema, %changed changed. The SQL below would bring the database in line; read it before you run any of it, after a backup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count collections are missing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files in share/filelist.md5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>share/filelist.md5 is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manifest last committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manifest written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of %count active extensions carry a manifest of their own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count to look at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compares every file listed in share/filelist.md5, and in the share/filelist.md5 of each active extension that has one, with its checksum. The same check from a shell: %command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compares the tables, fields and indexes of the database with the schema that ships with Exponential and the active extensions, and shows the SQL that would bring the database in line. Nothing is run: read the SQL, make a backup, then run what you agree with yourself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download SQL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checking. This takes a few seconds; the page reloads with the result.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files checked in %seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Matching</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not listed (notes)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manifest lines to tidy (notes)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manifests read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To look at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not listed files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>version %version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its header says %header files, it lists %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot be read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checked against git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not checked: no git checkout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everywhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential (outside extension/)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A note: it does not stop an upgrade</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it means and what to do</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file differs from the one the release shipped. If you changed it on purpose, move the change into an override, a design or an extension of your own, because an upgrade replaces this file, and merge it into the new version. If nobody changed it on purpose, restore it from the release.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For a maintainer who changed it in the source: refresh its line with %command and commit the manifest with the change.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is listed but not there. Copy it back from the release this installation runs. A maintainer who removed it on purpose drops its line with %command.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is there but could not be read: a directory where a file belongs, or permissions that keep the web server out. Check its owner and mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Git tracks the file but the manifest does not list it, so this check cannot tell whether it changed. Nothing to do on an installed site; a maintainer adds it with %command in the release that adds the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A line of the manifest is not a checksum, two spaces and a path inside the installation, or it lists a file a second time. The line is skipped. Take the manifest from the release, or write it again with %command.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The manifest is kept in sorted order so that its changes are easy to review. A line out of order is only a note; %command writes it sorted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first %shown of %count are listed here; the download has them all.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>line %line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>listed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>after %path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lists a file a second time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a path outside the installation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not a checksum and a path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No finding matches the search and the filters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%engine, checked in %seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tables with SQL to review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tables not in the schema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Engine notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schema files compared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Engine note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removes something</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %engine schema handler writes no SQL for this: the engine names these types in its own words (on SQLite, text for longtext and an integer key it does not read as auto_increment). Nothing needs to change.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table ships with Exponential or an active extension, and the database does not have it. Run the CREATE statement after a backup; the feature that uses the table fails until it is there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table: usually it belongs to an extension that is not active, or to an extension of your own without a schema file. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fields or indexes differ from the shipped definition. Read each statement and run the ones you agree with, after a backup. A statement that removes a field or an index may remove data of your own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shipped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL for %engine (not run)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %engine schema handler writes no SQL for these: the engine names these types in its own words (on SQLite, text for longtext and an integer key it does not read as auto_increment). Nothing needs to change.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All statements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MongoDB creates a collection on its first write, so a missing collection is often harmless until its feature is used. Create them up front with the mongosh command below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collections not in the schema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What the file check reads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%own extensions with a manifest of their own, %root in the manifest of Exponential, %none without one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>share/filelist.md5 lists every file of the Exponential release with its checksum, the extensions shipped inside it included. An extension released on its own may carry a share/filelist.md5 of its own, refreshed in each of its releases. An extension with neither is not checked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files listed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count malformed lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not a git checkout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checked by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its own manifest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The manifest of Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>manifest %version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension %version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The versions differ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its header says %header files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>as Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not checked (no manifest):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How each finding is read and fixed, and how the check runs from the command line:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file manifest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upgrading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count findings shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count findings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checking...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/accounthandlers/html/ez</name>
@@ -23663,6 +32038,198 @@ Note: The packages will not be uninstalled.</source>
         <source>Workflow triggers (%trigger_count)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A trigger connects a workflow to an operation of the system: before or after content is published, an order is confirmed, something is added to the basket. When the operation runs, the workflow runs with it; a workflow run before an operation can hold it back, for example until an approver agrees. Each operation can run one workflow before and one after it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved: %count triggers changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved. Nothing had changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed: %count triggers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No trigger was selected. Tick the triggers to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Possible triggers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run a workflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Processes waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Need attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not offered any more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a trigger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operation in words, module, operation or workflow.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operations and their workflows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a workflow for an operation, or No workflow, then Apply changes. A select lists only the workflows whose events all allow that operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No operation is offered for triggers. Add operations to workflow.ini [OperationSettings] AvailableOperationList, for example content_publish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runs now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module %module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%set of %count run a workflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name (not offered here)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow %id (removed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No workflow can run here yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed workflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The trigger names a workflow that no longer exists. Choose another or No workflow.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count processes waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its events no longer all allow this operation, so the select does not offer it. It stays until you choose another.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No trigger matches. Clear the search or choose All.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A change takes effect for the next operation; processes already waiting keep the workflow they started with.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Triggers this list no longer offers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These triggers are stored, but their operation, or this side of it, is not in workflow.ini [OperationSettings] AvailableOperationList. Add it there to use them again, or remove them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the trigger %label for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing one of these changes nothing that runs now: an operation not offered here does not run its triggers. The workflow stays.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count triggers shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Triggers: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/url/edit</name>
@@ -23775,6 +32342,218 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>All links (%url_list_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Links never checked (%url_list_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every address that published content links to, from a URL field or a link in rich text, is registered here once. The link check (the cronjob script linkcheck.php, in the infrequent part) tries each address and marks it valid or invalid; you can also mark links by hand. A link is changed in one place here and every object that uses it shows the new address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count links were marked valid. The next link check tests them again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count links were marked invalid. The next link check tests them again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No link was selected. Tick the links to mark first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Links in published content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never checked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last link check, %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link check has not run yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of the address, such as a domain or a path. Upper and lower case are the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address A to Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last checked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Links containing “%search”</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No link matches this search. Check the spelling, search for a shorter part of the address, or show all links.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No link is marked invalid. Either every link works, or the link check has not found a broken one yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every link has been checked at least once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No link is marked valid yet. Run the link check, or mark links valid by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No published content links to an address yet. Links appear here when content with a URL field or a link in rich text is published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select this link.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For an e-mail address the link check looks up the mail server of its domain.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A path on this site: the link check looks it up as a URL alias.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On this site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A link to a node or object in rich text: the link check marks it valid while its target exists, is published and is visible.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Link to content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A file address names a file on a computer, not a page: the link check never tests it and keeps its state.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not tested</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An address of another kind: the link check looks it up as a path of this site, so it is usually marked invalid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No published object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See the objects on the link page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark selected valid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark selected invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Marking changes only the state shown here and in templates that hide invalid links; nothing is removed and no content changes. The next link check tests the links again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -23970,6 +32749,321 @@ your account.</source>
     </message>
 </context>
 <context>
+    <name>design/admin/user/edit</name>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User account: %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account at a glance, and every page to change it from.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account of this user at a glance, and every page to change it from.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show in the content tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security hints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This account is disabled: its user cannot sign in. It is enabled again under Account settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This account is locked after too many failed sign-ins. Resetting the count under Account settings lets its user sign in again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed sign-ins.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins since the last successful one; the account is locked after %max.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins since the last successful one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two-step sign-in is off.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A code from your phone at sign-in keeps your account safe even if your password leaks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This user signs in with the password alone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This account has no password set: nobody can sign in with it until one is set.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Old password storage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password is stored with an older method. Changing it stores it with the current, stronger one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Old password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password was last changed %days days ago.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never signed in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This account has not been used to sign in yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last sign-in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sign-ins in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days days ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage this account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address, image and the other fields of your user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name, e-mail address, image and the other fields of this user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change the password you sign in with.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set a new password for this user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable or disable the account, reset failed sign-ins, and see its API keys.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two-step sign-in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A code from an authenticator app or by e-mail at sign-in, besides your password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set in the profile of this user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turn on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On, authenticator app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On, e-mail codes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Personal keys for your own scripts and tools to publish through the REST interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show and revoke the API keys of this user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage my API keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show API keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%active active, %total in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your bookmarks, in folders, for quick access to content.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content you follow, and how often you hear about changes to it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you get, download your e-mail data, or stop all optional e-mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The e-mail preferences and consents of this user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>design/admin/user/login</name>
     <message>
         <source>The system could not log you in.</source>
@@ -24042,6 +33136,38 @@ your account.</source>
     </message>
     <message>
         <source>Register new account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in to Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration of %site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forgot your password?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signing in…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No account yet?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -24199,6 +33325,237 @@ your account.</source>
     </message>
 </context>
 <context>
+    <name>design/admin/user/unactivated</name>
+    <message>
+        <source>People who registered on the site but never clicked the link of their activation mail. Their accounts exist but cannot be used to log in. You can activate them by hand, send the mail again, or remove registrations nobody will finish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>They were activated or removed meanwhile.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only users who are still unactivated are removed; the others were activated or removed meanwhile.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The activation mail was sent again to %count users, each with a new link.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The mail could not be sent to some users:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count without a valid e-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count no longer unactivated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count not accepted by the mail transport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%removed removed, %skipped skipped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count were activated meanwhile and kept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count are the anonymous user, the administrator account or you, and are never removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count were removed meanwhile by someone else</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count could not be removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user was selected. Tick the users first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a registration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of the login, the e-mail address or the name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registrations matching “%search”</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registrations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count days ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count hours ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registered more than %days days ago: it is unlikely to be finished.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Old</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No unactivated user matches this search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ticked accounts work at once, as if their owners had clicked the activation link. Only do this when you know the e-mail addresses are theirs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate the ticked users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send the activation mail again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each ticked user gets a new activation mail with a new link; the link of the earlier mail stops working.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail is sent with the transport “%transport” (site.ini [MailSettings]).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send the mail to the ticked users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ticked registrations are removed for good, with their user objects. This cannot be undone. Activated users are never removed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the ticked users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all %count matching the search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all unactivated users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %count unactivated users matching “%search” are removed for good, on every page, not only this one. This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All %count unactivated users are removed for good, on every page, not only this one. This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each one is checked again just before it is removed: anyone activated meanwhile, the anonymous user, the administrator account and you are kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the %count matching users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate your account at %siteurl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You registered at %siteurl but have not activated your account yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click the following address to activate your account:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link of any earlier activation mail no longer works. If you did not register, you can ignore this mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>design/admin/visual/menuconfig</name>
     <message>
         <source>Menu management</source>
@@ -24222,6 +33579,634 @@ your account.</source>
     </message>
     <message>
         <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menus (classic)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic designs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The top and left menus of sites built with the classic designs, chosen per siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved: %siteaccess now uses %menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file %file was created with the three settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The three settings were written to %file; the rest of the file is unchanged.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The INI cache, the compiled page layouts and the template blocks were cleared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file as it was before is kept in %backup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No restart is needed, neither of PHP-FPM nor of Velocity: every request reads the settings again. Pages kept in a response cache show the old menus until that cache is cleared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%siteaccess already uses %menu. Nothing was written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose one of the menu arrangements below. Nothing was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The menu settings of %siteaccess were not saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write %file. Make it writable for the web server user, or set the value in that file by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The write was refused because the audit cannot record it right now. Nothing was written; try again when the audit works.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What was written could not be read back as written, so the file was put back exactly as it was.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings directory of this siteaccess was not found under settings/siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writing the file failed; it was left as it was. The error log has the details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What these settings do</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sites built with the classic designs (base, ezwebin, the demo and the simple design) draw their top and left menus from one of four arrangements, chosen here for each siteaccess and stored in menu.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sites built with Exponential Layouts do not read them: their menus are blocks in a layout, set in the layout editor. The administration interface does not read them either.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the layout editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None of the siteaccesses listed here reads these settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving would change a file but no page. Nothing needs to be done here unless a siteaccess with a classic design is added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Found from the page layout each siteaccess uses: only those whose page layout reads these settings are affected by them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccesses where these settings do nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menu of %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The pages of %siteaccess read these settings: what you save here changes their menus.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page layout of %siteaccess reads these settings and also renders Exponential Layouts: what you save here changes the menus it draws itself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used here: %siteaccess renders through Exponential Layouts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving changes the file, not the site. Its menus are blocks in its layouts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used here: %siteaccess is an administration siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its tabs and side menus come from menu.ini [TopAdminMenu] and the Leftmenu sections, not from these settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used here: the page layout of %siteaccess does not read these settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving changes the file, not the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No page layout was found for %siteaccess, so it is not known whether it reads these settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A file read after the siteaccess settings decides the value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving here would not change what %siteaccess uses until that setting is removed there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>this siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>an extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>an extension, for this siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the global override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving writes to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>will be created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no settings directory for this siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All three settings and the classes the menus list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[SelectedMenu] of %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The menus list only objects of these classes (menu.ini [MenuContentSettings], not changed by this page):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menu arrangement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each preview puts this installation's pages where the menus would show them, for a visitor in the first top menu page that has pages of its own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>current</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visitor in: %page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>one row of links to the pages directly below the start page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>two rows: the pages directly below the start page and, under them, the pages of the first-level page the visitor is in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the design's own template menu/%name.tpl.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a column with the pages directly below the start page, opened further below the page the visitor is in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a column with the pages of the first-level page the visitor is in, opened further below the page the visitor is in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a column with the pages of the first-level page the visitor is in, one level.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template, content and the lines it writes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drawn by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not found in the designs of this siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>this design/base template lists the children of node 2, the top of the content tree, not those of content.ini RootNode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the children of the start page "%page" (node %id)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the children of the start page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the children of the first-level page the visitor is in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>here: "%page"</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>opened further along the visitor's path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every list follows its parent page's sort order and leaves hidden pages out (ShowHiddenNodes=false).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What saving does</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writes the three settings of the chosen arrangement into the section [SelectedMenu] of %file, and nothing else. The other sections and comments of that file stay as they are.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keeps a copy of the file as it was in var/backup/ini, then reads the new file back; if it does not hold what was written, puts the old one back exactly as it was.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clears the INI cache, the compiled page layouts and the template blocks. No restart of PHP-FPM or Velocity is needed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For the arrangement checked when the page was opened, the section reads:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I understand that %siteaccess does not read these settings and saving changes no page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saves for %siteaccess only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write the settings file of %siteaccess, so saving is not possible here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save the chosen arrangement for this siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save for %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>menu.ini [MenuSettings] AvailableMenuArray lists no menu arrangement, so there is nothing to choose.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common recipes with the exact lines and what a visitor sees. The lines that choose an arrangement are the ones this page writes when you save it; the others go into the same files by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None of these examples does anything for %list: they render through Exponential Layouts, where a menu is a block in the layout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top menu only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top menu plus a left menu for the current section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limit the menus to folders and landing pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide one page from the menus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A different menu per siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The arrangement Only top menu: menu/flat_top.tpl draws one row, no left column.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The arrangement Left and top: the top row as above, and menu/sub_left.tpl draws a left column with the pages of the first-level page the visitor is in. On the start page there is no left column.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The empty TopIdentifierList[] line clears the list read from the files before, so only the classes that follow are menu items: folder and frontpage (the landing page class of ezwebin). It applies to every arrangement.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide the page in the content structure (its menu: Hide / unhide). The menus fetch pages as visitors see them, so a hidden page is left out of every classic menu as long as ShowHiddenNodes stays false, the default shown below. Another way: give the page a class that is not in the lists of the recipe above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every siteaccess reads its own settings/siteaccess/(name)/menu.ini.append.php. Save on this page once per siteaccess, or put the lines in the two files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A visitor sees:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>one row of links under the header: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>one row of links under the header.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the same row; inside %page, a left column with %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the same row, and inside a first-level page a left column with its pages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only folders and landing pages as menu items; articles, links and other pages stay reachable but are no longer in the menus.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the page gone from the menus and from the site; editors still see it in the administration.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on %first a top menu only, on %second a top menu and a left column.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use in your templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving here only changes what a page layout asks menu.ini for. A menu appears only where a page layout includes it. In this installation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>its page layout draws the menus, with the templates %list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>has menu templates (%list), but its page layout does not include them: the settings do nothing until a page layout of yours does.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>renders through Exponential Layouts; its menus are layout blocks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no menu templates, and its page layout draws no classic menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw the chosen menus from a page layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A top menu template of your own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A left menu for the current section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the files go</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Put it where the menus go in your pagelayout.tpl. The cache-block keys are those of design/base: the address, and the roles and limitations of the user, so every visitor gets the selected item of the page and only what their rights allow; the siteaccess is part of every cache-block key by itself, and the block expires whenever content is published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The visible children of the start page (content.ini RootNode) of the TopIdentifierList classes, with the item the visitor is in marked. Unlike the design/base templates it follows RootNode, so it also fits a site whose start page is not node 2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The pages of the first-level page the visitor is in, of the LeftIdentifierList classes, with the current page marked; nothing on the start page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never edit a shipped design: an update replaces it. Your design extension is found before the shipped designs, and the extra [MenuSettings] entry offers your templates as a fifth arrangement on this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With Exponential Layouts:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a siteaccess that renders through Layouts draws its menus with blocks in a layout zone, so none of these templates apply there. Classic and Layouts siteaccesses can live side by side in one installation, each with its own design.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Why this page exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a short history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The classic designs build every page from one page layout, and that page layout asks menu.ini which menus to draw. This page has chosen that since the first versions: four arrangements of a top and a left menu, saved per siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential Layouts replaced that for new sites: a layout holds zones and blocks, a menu is one of the blocks, and a rule picks the layout for each page. A siteaccess built that way never reads these settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/guides/classic-menu-settings.md explains both ways.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uses these settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uses these settings, with Layouts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used: renders through Layouts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used by its design</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No page layout found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its page layout draws the top and left menus from these settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its page layout draws menus from these settings and also renders Exponential Layouts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its pages are built with Exponential Layouts; menus are blocks in the layout editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The administration interface. Its tabs and side menus are set elsewhere in menu.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its page layout does not read these settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None of its designs has a pagelayout.tpl.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>fixed by settings/override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown below</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show its settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -24913,6 +34898,246 @@ your account.</source>
     </message>
     <message>
         <source>Workflow groups (%groups_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove workflow groups?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What happens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count workflows that belong only to these groups are removed, with their events.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count workflows that also belong to another group stay there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of the removed workflows are run by triggers. Those triggers are removed too, so the operations they belong to run without a workflow from then on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count processes wait in the removed workflows and could never finish. Cancel them first on the workflow processes page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What happens to it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No trigger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count processes waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group is empty: only the group is removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been removed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflows are kept in groups so that they are easy to find. A group changes nothing about when a workflow runs: that is decided by the triggers. A workflow can belong to more than one group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%removed workflows were removed with them, %unlinked stay in their other groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No group was selected. Tick the groups to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected groups no longer exist; somebody may have removed them already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run by a trigger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Processes waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In no group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a group or workflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open a group to create workflows in it, change their order of events or remove them. Triggers connect a workflow to an operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All workflow groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no workflow groups. Create one with New workflow group, then create workflows in it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count workflows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count run by triggers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also in:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of the group or one of its workflows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removes only the group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removes %removes workflows that are only in this group; %unlinks stay in their other groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of them are run by triggers, which go with them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No group on this page matches. Clear the search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected asks for confirmation first and lists the workflows, triggers and waiting processes it affects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count groups on this page shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups on this page: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm removal</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -30726,6 +40951,10 @@ If you do all the children will be removed as well.</source>
     </message>
     <message>
         <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menus (classic)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -37868,6 +48097,81 @@ your account.</source>
     </message>
 </context>
 <context>
+    <name>design/standard/user/password</name>
+    <message>
+        <source>Change your password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your password has been changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are still signed in here. Use the new password the next time you sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We sent a confirmation to your e-mail address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your password was not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in as %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>current password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>new password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your new password needs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate a strong password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm new password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>new password again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>design/standard/user/register</name>
     <message>
         <source>%1 registration info</source>
@@ -40091,6 +50395,38 @@ your account.</source>
         <source>Edit several items</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The order was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was moved: it is first or last in its folder already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The order was not saved: it named an entry that is not in that folder of yours.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bookmark is now at position %position of its folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was moved: give a position as a whole number from 1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed %count bookmark(s). The items themselves are not changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No bookmark was selected. Tick the bookmarks to remove first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added %count bookmark(s).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/content/copysubtree</name>
@@ -40387,6 +50723,22 @@ You will need to change the class of the node by using the swap functionality.</
     <name>kernel/infocollector</name>
     <message>
         <source>Collected information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collection ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User ID</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -40882,6 +51234,74 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The version must follow Semantic Versioning 2.0.0: three numbers delimited by dots (MAJOR.MINOR.PATCH), optionally followed by -prerelease and +build, at most %max characters, e.g. 1.0.0, 1.2.3, 3.4.0-beta.1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>No file was uploaded, or the file is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is not a package: its name must end in %suffixes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is larger than the %size a package may have.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is not a package: a package is a gzip compressed tar archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive cannot be read; it may be damaged.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive has more than %count entries.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive unpacks to more than %size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" points outside the package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive has no package.xml at its top, so it is not a package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package.xml of the archive is not a well formed package definition.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package.xml of the archive names no package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package.xml of the archive lacks its version or packaging information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The vendor of the package gives no usable repository name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package could not be imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No file was uploaded, or it was larger than the server accepts (%size).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -40929,6 +51349,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Editing policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -41103,6 +51527,42 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Workflow event wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%hours h %minutes min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days d %hours h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count d</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File %1 cannot be read. Check that the web server may read it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File %1 lists no files. Copy it from the Exponential release this installation runs.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -41593,6 +52053,21 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Unactivated users</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/password</name>
+    <message>
+        <source>The two new passwords do not match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password could not be changed. Please try again later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your current password is not correct.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
