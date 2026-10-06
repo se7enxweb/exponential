@@ -64,9 +64,13 @@ class Install extends \Exponential\Runnable\ModuleView
         }
         @ini_set( 'max_execution_time', '0' );
 
-        $package = \eZPackage::fetch( $packageName );
+        // a package name that is a directory name (eZPackageRequestGuard), and the install policy for this
+        // package's own type: the check above only asks whether the policy exists for any type
+        $package = \eZPackageRequestGuard::isSafeName( $packageName ) ? \eZPackage::fetch( $packageName ) : false;
         if ( !$package )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        if ( !$package->attribute( 'can_install' ) )
+            return $this->viewResult( null, $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
 
         $installItemArray = $package->installItemsList( false, \eZSys::osType() );
 

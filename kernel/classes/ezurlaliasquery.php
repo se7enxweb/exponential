@@ -57,6 +57,16 @@ class eZURLAliasQuery
      */
     public $text;
     /*!
+     If non-null only elements whose text (the last part of their path) or action contains this text, without
+     regard to case, are considered. % and _ match themselves. Since 6.0.15.
+     */
+    public $search = null;
+    /*!
+     If non-null only elements that redirect (true) or do not redirect (false) to their destination are
+     considered (the alias_redirects column). Since 6.0.15.
+     */
+    public $redirects = null;
+    /*!
      Type of elements to count, use 'name' for only real names for actions, 'alias' for only aliases to the actions or 'all' for real and aliases.
      */
     public $type      = 'alias';
@@ -165,6 +175,8 @@ class eZURLAliasQuery
 
         if ( $this->text !== null )
             $match['text_md5'] = md5( $this->text );
+
+        $match = array_merge( $match, self::filterMongoMatch( $this->search, $this->redirects ) );
 
         if ( $this->languages === true )
         {
@@ -330,6 +342,11 @@ class eZURLAliasQuery
             $conds[] = "text_md5 = " . $db->md5( "'" . $db->escapeString( $this->text ) . "'" );
         }
 
+        foreach ( self::filterConditionsSQL( $db, $this->search, $this->redirects ) as $condition )
+        {
+            $conds[] = $condition;
+        }
+
         if ( $this->actions !== null )
         {
             // Check for conditions which will return no rows.
@@ -421,6 +438,63 @@ class eZURLAliasQuery
         }
 
         return "FROM ezurlalias_ml WHERE " . join( " AND ", $conds );
+    }
+
+    /**
+     * The LIKE pattern of a search: the text between two %, its own %, _ and the escape character ! escaped with
+     * !, so they match only themselves. Used with ESCAPE '!', which every SQL engine takes.
+     *
+     * @param string $search
+     * @return string
+     */
+    static public function searchLikePattern( $search )
+    {
+        return '%' . strtr( (string)$search, array( '!' => '!!', '%' => '!%', '_' => '!_' ) ) . '%';
+    }
+
+    /**
+     * The SQL conditions of the search and redirects filters (see the properties of the same names).
+     *
+     * @param eZDBInterface $db
+     * @param string|null $search
+     * @param bool|null $redirects
+     * @return string[]
+     */
+    static public function filterConditionsSQL( $db, $search, $redirects )
+    {
+        $conditions = array();
+        if ( is_string( $search ) && $search !== '' )
+        {
+            $pattern = $db->escapeString( self::searchLikePattern( $search ) );
+            $conditions[] = "( LOWER( text ) LIKE LOWER( '$pattern' ) ESCAPE '!' OR LOWER( action ) LIKE LOWER( '$pattern' ) ESCAPE '!' )";
+        }
+        if ( $redirects !== null )
+        {
+            $conditions[] = 'alias_redirects = ' . ( $redirects ? 1 : 0 );
+        }
+        return $conditions;
+    }
+
+    /**
+     * The MongoDB $match fields of the search and redirects filters.
+     *
+     * @param string|null $search
+     * @param bool|null $redirects
+     * @return array
+     */
+    static public function filterMongoMatch( $search, $redirects )
+    {
+        $match = array();
+        if ( is_string( $search ) && $search !== '' )
+        {
+            $regex = array( '$regex' => preg_quote( $search ), '$options' => 'i' );
+            $match['$or'] = array( array( 'text' => $regex ), array( 'action' => $regex ) );
+        }
+        if ( $redirects !== null )
+        {
+            $match['alias_redirects'] = $redirects ? 1 : 0;
+        }
+        return $match;
     }
 
     /*!

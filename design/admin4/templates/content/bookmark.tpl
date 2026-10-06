@@ -1,79 +1,438 @@
-{* My bookmarks: the bookmarks of the user in a tree of virtual folders. The folders, moving, renaming and
-   deleting work without JavaScript through the form at the end; with JavaScript the tree opens and closes, searches,
-   and entries move by drag and drop or with the buttons (the keyboard does the same as the mouse). *}
-{def $bookmark_list = fetch( 'content', 'bookmarks', hash() )
-     $bookmark_rows = fetch( 'content', 'bookmark_rows', hash() )
-     $bookmark_folders = fetch( 'content', 'bookmark_folders', hash() )
-     $bookmark_node = 0}
-<form name="bookmarkaction" id="exp-bm-form" action={concat( 'content/bookmark/' )|ezurl} method="post" >
+{* My bookmarks (content/bookmark): the bookmarks of the user grouped by folder.
 
-<div class="context-block content-bookmark exp-bm-page" data-exp-bm-page="1">
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-<h1 class="context-title">{'My bookmarks (%bookmark_count)'|i18n( 'design/admin/content/bookmark',, hash( '%bookmark_count', $bookmark_list|count ) )}</h1>
+   What bookmarks are for, an overview, the folders with their counts beside the list, the folder that is shown
+   with Rename, New folder, Move, the order and Remove (each opens in place and says what happens to the bookmarks),
+   a search and an order, then one card per bookmark with its type, where it is, when it was last modified and
+   whether it is hidden or no longer there, and a bar to move or remove the selected bookmarks.
 
-{* DESIGN: Mainline *}<div class="header-mainline"></div>
+   Everything comes from the view (bookmark_page, see expBookmarkPage) and works without javascript; the script
+   adds Select all, the selection count and, as an extra, dragging bookmarks onto a folder. Every POST name of the
+   page is the one it always had (RemoveButton, AddButton, DeleteIDArray, MoveSelectedButton, FolderID,
+   BookmarkFolderAction ...). The same file is in design/admin and design/admin4. Guide: doc/guides/bookmarks.md *}
+{include uri='design:content/bookmark_exp_style.tpl'}
+{def $bp = $bookmark_page
+     $summary = $bp.summary
+     $current = $bp.current
+     $folder_icon = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M1.5 3A1.5 1.5 0 0 1 3 1.5h3.1c.4 0 .78.16 1.06.44L8.2 3H13a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 13 14H3a1.5 1.5 0 0 1-1.5-1.5V3Zm1.5-.5a.5.5 0 0 0-.5.5v9.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5H8a.5.5 0 0 1-.35-.15L6.45 2.65a.5.5 0 0 0-.35-.15H3Z"/></svg>'
+     $scope_title = ''
+     $group_open = false()
+     $group_info = false()
+     $card_id = ''}
+{switch match=$bp.scope_key}
+{case match='top'}{set $scope_title = 'Not in a folder'|i18n( 'design/admin/content/bookmark' )}{/case}
+{case match='folder'}{set $scope_title = $current.name}{/case}
+{case}{set $scope_title = 'All bookmarks'|i18n( 'design/admin/content/bookmark' )}{/case}
+{/switch}
 
-{* DESIGN: Header END *}</div></div>
+<div class="context-block exp-bm">
 
-{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
+<div class="box-header"><div class="box-ml">
+<h1 class="context-title">{'My bookmarks (%bookmark_count)'|i18n( 'design/admin/content/bookmark',, hash( '%bookmark_count', $summary.bookmarks ) )}</h1>
+</div></div>
+
+<div class="box-bc"><div class="box-ml"><div class="box-content">
+
+<p class="exp-intro">{'Bookmarks take you back to the items you work on: they are personal, nobody else sees them, and removing one never changes the item. Sort them into folders; the Bookmarks box at the side and the browse dialog show the same folders.'|i18n( 'design/admin/content/bookmark' )}</p>
 
 {if is_set( $bookmark_notice )}
-    <div class="message-{if eq( $bookmark_notice.level, 'error' )}error{else}feedback{/if}" role="status"><h2>{$bookmark_notice.text|wash}</h2></div>
+<div class="exp-feedback {if eq( $bookmark_notice.level, 'error' )}is-bad{else}is-ok{/if}" role="{if eq( $bookmark_notice.level, 'error' )}alert{else}status{/if}">{$bookmark_notice.text|wash}</div>
 {/if}
 
-{if or( $bookmark_list, $bookmark_folders )}
-<div class="exp-bm-toolbar exp-bm-js">
-    <label class="exp-bm-search"><span class="exp-bm-sr">{'Search bookmarks'|i18n( 'design/admin/content/bookmark' )}</span>
-        <input type="search" class="halfbox" id="exp-bm-search" placeholder="{'Search bookmarks'|i18n( 'design/admin/content/bookmark' )}" autocomplete="off" /></label>
-    <button type="button" class="button" data-exp-bm-all="open">{'Expand all'|i18n( 'design/admin/content/bookmark' )}</button>
-    <button type="button" class="button" data-exp-bm-all="close">{'Collapse all'|i18n( 'design/admin/content/bookmark' )}</button>
-    <button type="button" class="button" data-exp-bm-new="0">{'New folder'|i18n( 'design/admin/content/bookmark' )}</button>
-</div>
-<p class="exp-bm-hint exp-bm-js">{'Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.'|i18n( 'design/admin/content/bookmark' )}</p>
-<div class="exp-bm-root-drop" data-exp-bm-root="1">{'Top level'|i18n( 'design/admin/content/bookmark' )}</div>
-<p class="exp-bm-nomatch" hidden="hidden">{'No bookmarks match.'|i18n( 'design/admin/content/bookmark' )}</p>
+<section aria-labelledby="bm-overview-title">
+<h2 class="exp-sr" id="bm-overview-title">{'Overview'|i18n( 'design/admin/content/bookmark' )}</h2>
+<ul class="exp-figures">
+    <li class="exp-figure{if eq( $bp.scope_key, 'all' )} is-current{/if}"><a href={'content/bookmark'|ezurl}><strong>{$summary.bookmarks}</strong> <span>{'Bookmarks'|i18n( 'design/admin/content/bookmark' )}</span></a></li>
+    <li class="exp-figure"><strong>{$summary.folders}</strong> <span>{'Folders'|i18n( 'design/admin/content/bookmark' )}</span></li>
+    <li class="exp-figure{if eq( $bp.scope_key, 'top' )} is-current{/if}"><a href={'content/bookmark/(folder)/top'|ezurl}><strong>{$summary.unfiled}</strong> <span>{'Not in a folder'|i18n( 'design/admin/content/bookmark' )}</span></a></li>
+    <li class="exp-figure"><strong>{$summary.hidden}</strong> <span>{'Hidden items'|i18n( 'design/admin/content/bookmark' )}</span></li>
+    <li class="exp-figure{if $summary.gone|gt( 0 )} is-attention{/if}"><strong>{$summary.gone}</strong> <span>{'No longer available'|i18n( 'design/admin/content/bookmark' )}</span></li>
+</ul>
+</section>
 
-{include uri='design:content/bookmark_tree.tpl' mode='page' rows=$bookmark_rows}
-{else}
-    <div class="block">
-    <p>{'There are no bookmarks in the list.'|i18n( 'design/admin/content/bookmark' )}</p>
-    </div>
-{/if}
+<div class="exp-bm-layout">
 
-{* DESIGN: Content END *}</div></div></div>
-
-<div class="controlbar">
-{* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-<div class="block">
-
-{if $bookmark_list}
-<input class="button" type="submit" name="RemoveButton" value="{'Remove selected'|i18n( 'design/admin/content/bookmark' )}" title="{'Remove selected bookmarks.'|i18n( 'design/admin/content/bookmark' )}" />
-{else}
-<input class="button-disabled" type="submit" name="RemoveButton" value="{'Remove selected'|i18n( 'design/admin/content/bookmark' )}" disabled="disabled" />
-{/if}
-
-<input class="button" type="submit" name="AddButton" value="{'Add items'|i18n( 'design/admin/content/bookmark' )}" title="{'Add items to your personal bookmark list.'|i18n( 'design/admin/content/bookmark' )}" />
-</div>
-{if $bookmark_list}
-<div class="block exp-bm-move-selected">
-    <label for="exp-bm-move-target">{'Move selected to'|i18n( 'design/admin/content/bookmark' )}</label>
-    <select name="FolderID" id="exp-bm-move-target">
-        <option value="0">{'Top level'|i18n( 'design/admin/content/bookmark' )}</option>
-        {foreach $bookmark_folders as $folder}
-        <option value="{$folder.id}">{'&nbsp;&nbsp;'|repeat( $folder.depth )}{$folder.name|wash}</option>
+{* ---- The folders ---- *}
+<div class="exp-bm-side">
+<nav class="exp-panel" aria-labelledby="bm-folders-title">
+    <div class="exp-panel-head"><h2 class="exp-h2" id="bm-folders-title">{'Folders'|i18n( 'design/admin/content/bookmark' )}</h2></div>
+    <ul class="exp-bm-nav" id="bm-folder-nav">
+        <li>{if eq( $bp.scope_key, 'all' )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark', cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}<span class="exp-bm-navname">{'All bookmarks'|i18n( 'design/admin/content/bookmark' )}</span> <span class="exp-count">{$summary.bookmarks}</span>{if eq( $bp.scope_key, 'all' )}</span>{else}</a>{/if}</li>
+        <li data-folder="0">{if eq( $bp.scope_key, 'top' )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark/(folder)/top', cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}<span class="exp-bm-navname">{'Not in a folder'|i18n( 'design/admin/content/bookmark' )}</span> <span class="exp-count">{$summary.unfiled}</span>{if eq( $bp.scope_key, 'top' )}</span>{else}</a>{/if}</li>
+        {if $bp.folders}<li class="is-sep" role="presentation"></li>{/if}
+        {foreach $bp.folders as $folder}
+        <li class="d{min( $folder.depth, 4 )}" data-folder="{$folder.id}">{if and( $current, eq( $current.id, $folder.id ) )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark/(folder)/', $folder.id, cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}{$folder_icon}<span class="exp-bm-navname">{$folder.name|wash}</span> <span class="exp-count" title="{'%count bookmarks, with the folders inside'|i18n( 'design/admin/content/bookmark',, hash( '%count', $folder.count ) )}">{$folder.count}</span>{if and( $current, eq( $current.id, $folder.id ) )}</span>{else}</a>{/if}</li>
         {/foreach}
-    </select>
-    <input type="hidden" name="BookmarkFolderActionDefault" value="move_bookmark" />
-    <button class="button" type="submit" name="MoveSelectedButton" value="1" formaction={'content/bookmark/'|ezurl}>{'Move selected'|i18n( 'design/admin/content/bookmark' )}</button>
+    </ul>
+    {if $bp.folders|not}<p class="exp-help exp-mt">{'No folders yet. Create one below, then move bookmarks into it.'|i18n( 'design/admin/content/bookmark' )}</p>{/if}
+    <p class="exp-help exp-bm-draghint" hidden>{'Tip: drag a bookmark onto a folder here to move it.'|i18n( 'design/admin/content/bookmark' )}</p>
+</nav>
+
+<details class="exp-disclosure"{if $bp.folders|not} open{/if}>
+    <summary>{'New folder'|i18n( 'design/admin/content/bookmark' )}</summary>
+    <div>
+    <form method="post" action={$bp.here|ezurl} class="exp-inline-form">
+        <input type="hidden" name="BookmarkFolderAction" value="create" />
+        <div class="exp-field">
+            <label for="bm-new-name">{'Name'|i18n( 'design/admin/content/bookmark' )}</label>
+            <input type="text" id="bm-new-name" name="FolderName" maxlength="255" required="required" autocomplete="off" />
+        </div>
+        <div class="exp-field">
+            <label for="bm-new-parent">{'Inside'|i18n( 'design/admin/content/bookmark' )}</label>
+            <select name="ParentFolderID" id="bm-new-parent">
+                <option value="0">{'No folder (top level)'|i18n( 'design/admin/content/bookmark' )}</option>
+                {foreach $bp.targets as $target}
+                <option value="{$target.id}"{if and( $current, eq( $current.id, $target.id ) )} selected="selected"{/if}>{$target.label|wash}</option>
+                {/foreach}
+            </select>
+        </div>
+        <div class="exp-actions"><button type="submit" class="exp-btn exp-btn-primary">{'Create folder'|i18n( 'design/admin/content/bookmark' )}</button></div>
+    </form>
+    </div>
+</details>
+</div>
+
+<div class="exp-bm-main">
+
+{* ---- The folder that is shown ---- *}
+{if $current}
+<section class="exp-panel exp-bm-folderhead" aria-labelledby="bm-folder-title">
+    <ol class="exp-bm-crumbs" aria-label="{'Folder path'|i18n( 'design/admin/content/bookmark' )}">
+        <li><a href={'content/bookmark'|ezurl}>{'All bookmarks'|i18n( 'design/admin/content/bookmark' )}</a></li>
+        {foreach $current.path as $crumb}<li>{$crumb|wash}</li>{/foreach}
+    </ol>
+    <h2 class="exp-h2" id="bm-folder-title">{$current.name|wash}</h2>
+    <dl class="exp-facts exp-bm-folderfacts">
+        <div><dt>{'Bookmarks in it'|i18n( 'design/admin/content/bookmark' )}</dt><dd>{$current.direct}</dd></div>
+        <div><dt>{'Including subfolders'|i18n( 'design/admin/content/bookmark' )}</dt><dd>{$current.count}</dd></div>
+        <div><dt>{'Folders inside'|i18n( 'design/admin/content/bookmark' )}</dt><dd>{$current.subfolders}</dd></div>
+    </dl>
+
+    <div class="exp-bm-folderacts">
+        <details class="exp-disclosure">
+            <summary>{'Rename'|i18n( 'design/admin/content/bookmark' )}</summary>
+            <div>
+            <form method="post" action={$bp.here|ezurl} class="exp-inline-form">
+                <input type="hidden" name="BookmarkFolderAction" value="rename" />
+                <input type="hidden" name="FolderID" value="{$current.id}" />
+                <div class="exp-field">
+                    <label for="bm-rename">{'New name'|i18n( 'design/admin/content/bookmark' )}</label>
+                    <input type="text" id="bm-rename" name="FolderName" value="{$current.name|wash}" maxlength="255" required="required" autocomplete="off" />
+                </div>
+                <div class="exp-actions"><button type="submit" class="exp-btn exp-btn-primary">{'Save name'|i18n( 'design/admin/content/bookmark' )}</button></div>
+            </form>
+            </div>
+        </details>
+        <details class="exp-disclosure">
+            <summary>{'Move'|i18n( 'design/admin/content/bookmark' )}</summary>
+            <div>
+            <form method="post" action={$bp.here|ezurl} class="exp-inline-form">
+                <input type="hidden" name="BookmarkFolderAction" value="move_folder" />
+                <input type="hidden" name="FolderID" value="{$current.id}" />
+                <div class="exp-field">
+                    <label for="bm-move-folder">{'Put this folder inside'|i18n( 'design/admin/content/bookmark' )}</label>
+                    <select name="ParentFolderID" id="bm-move-folder">
+                        <option value="0"{if eq( $current.parent_id, 0 )} selected="selected"{/if}>{'No folder (top level)'|i18n( 'design/admin/content/bookmark' )}</option>
+                        {foreach $bp.current_targets as $target}
+                        <option value="{$target.id}"{if eq( $current.parent_id, $target.id )} selected="selected"{/if}>{$target.label|wash}</option>
+                        {/foreach}
+                    </select>
+                    <span class="exp-help">{'Its bookmarks and folders move with it.'|i18n( 'design/admin/content/bookmark' )}</span>
+                </div>
+                <div class="exp-actions"><button type="submit" class="exp-btn exp-btn-primary">{'Move folder'|i18n( 'design/admin/content/bookmark' )}</button></div>
+            </form>
+            {if or( $bp.current_siblings.first|not, $bp.current_siblings.last|not )}
+            <form method="post" action={$bp.here|ezurl} class="exp-inline-form exp-mt">
+                <span class="exp-field-label">{'Order among its neighbours'|i18n( 'design/admin/content/bookmark' )}</span>
+                <div class="exp-actions exp-actions-tight">
+                    {if $bp.current_siblings.first|not}<button type="submit" class="exp-btn exp-btn-small" name="BookmarkShiftButton" value="fup-{$current.id}">{'Move up'|i18n( 'design/admin/content/bookmark' )}</button>{/if}
+                    {if $bp.current_siblings.last|not}<button type="submit" class="exp-btn exp-btn-small" name="BookmarkShiftButton" value="fdown-{$current.id}">{'Move down'|i18n( 'design/admin/content/bookmark' )}</button>{/if}
+                </div>
+            </form>
+            {/if}
+            </div>
+        </details>
+        <details class="exp-disclosure is-danger">
+            <summary>{'Remove folder'|i18n( 'design/admin/content/bookmark' )}</summary>
+            <div>
+            <form method="post" action={$bp.here|ezurl} class="exp-inline-form">
+                <input type="hidden" name="BookmarkFolderAction" value="delete" />
+                <input type="hidden" name="FolderID" value="{$current.id}" />
+                <fieldset class="exp-choice">
+                    <legend>{'What happens to what is inside?'|i18n( 'design/admin/content/bookmark' )}</legend>
+                    <label class="exp-check"><input type="radio" name="DeleteBookmarks" value="0" checked="checked" />
+                        <span>{'Keep what is inside: it moves to %target (bookmarks: %count, folders: %folders).'|i18n( 'design/admin/content/bookmark',, hash( '%count', $current.direct, '%folders', $current.children|count, '%target', cond( $bp.current_parent, concat( '“', $bp.current_parent.name, '”' ), 'the top level'|i18n( 'design/admin/content/bookmark' ) ) ) )|wash}</span></label>
+                    <label class="exp-check"><input type="radio" name="DeleteBookmarks" value="1" />
+                        <span>{'Remove everything inside with it (bookmarks: %all, folders: %folders).'|i18n( 'design/admin/content/bookmark',, hash( '%all', $current.count, '%folders', $current.subfolders ) )}</span></label>
+                </fieldset>
+                <p class="exp-help">{'Only bookmarks are removed, never the items they point to.'|i18n( 'design/admin/content/bookmark' )}</p>
+                <div class="exp-actions"><button type="submit" class="exp-btn exp-btn-danger">{'Remove folder'|i18n( 'design/admin/content/bookmark' )}</button></div>
+            </form>
+            </div>
+        </details>
+    </div>
+</section>
+{/if}
+
+{* ---- Search and order ---- *}
+<section aria-labelledby="bm-find-title">
+<h2 class="exp-sr" id="bm-find-title">{'Find bookmarks'|i18n( 'design/admin/content/bookmark' )}</h2>
+<form class="exp-toolbar" method="get" action={$bp.base_sorted|ezurl} role="search">
+    <div class="exp-field">
+        <label for="bm-search">{'Find a bookmark'|i18n( 'design/admin/content/bookmark' )}</label>
+        <div class="exp-searchrow">
+            <input type="search" id="bm-search" name="q" value="{$bp.search|wash}" autocomplete="off" maxlength="100" aria-describedby="bm-search-help" />
+            <button type="submit" class="exp-btn exp-btn-primary">{'Search'|i18n( 'design/admin/content/bookmark' )}</button>
+            {if $bp.search|ne( '' )}<a class="exp-btn" href={$bp.base_sorted|ezurl}>{'Clear search'|i18n( 'design/admin/content/bookmark' )}</a>{/if}
+        </div>
+        <span class="exp-help" id="bm-search-help">{if eq( $bp.scope_key, 'all' )}{'Searches the names, types, locations and folders of all your bookmarks.'|i18n( 'design/admin/content/bookmark' )}{else}{'Searches this folder only. Choose All bookmarks to search everywhere.'|i18n( 'design/admin/content/bookmark' )}{/if}</span>
+    </div>
+    <div class="exp-field">
+        <span class="exp-field-label" id="bm-sort-label">{'Order'|i18n( 'design/admin/content/bookmark' )}</span>
+        <ul class="exp-tabs" aria-labelledby="bm-sort-label">
+        {foreach array( hash( 'sort', 'own', 'text', 'Your order'|i18n( 'design/admin/content/bookmark' ) ),
+                        hash( 'sort', 'name', 'text', 'Name A to Z'|i18n( 'design/admin/content/bookmark' ) ),
+                        hash( 'sort', 'added', 'text', 'Recently added'|i18n( 'design/admin/content/bookmark' ) ),
+                        hash( 'sort', 'type', 'text', 'Type'|i18n( 'design/admin/content/bookmark' ) ),
+                        hash( 'sort', 'modified', 'text', 'Recently modified'|i18n( 'design/admin/content/bookmark' ) ) ) as $tab}
+            <li>{if eq( $tab.sort, $bp.sort )}<span class="current" aria-current="true">{$tab.text|wash}</span>{else}<a href={concat( $bp.base, cond( $tab.sort|ne( 'own' ), concat( '/(sort)/', $tab.sort ), '' ), $bp.search_suffix )|ezurl}>{$tab.text|wash}</a>{/if}</li>
+        {/foreach}
+        </ul>
+        <span class="exp-help">{'Bookmarks stay grouped by folder in every order. Your order is the one of the Bookmarks box.'|i18n( 'design/admin/content/bookmark' )}</span>
+    </div>
+</form>
+</section>
+
+{* ---- The bookmarks ---- *}
+<form name="bookmarkaction" id="bm-list-form" method="post" action={$bp.here|ezurl}>
+<section aria-labelledby="bm-list-title">
+<div class="exp-section-head">
+    <h2 class="exp-h2" id="bm-list-title">{if $bp.search|ne( '' )}{'Bookmarks matching “%search” in %scope'|i18n( 'design/admin/content/bookmark',, hash( '%search', $bp.search, '%scope', $scope_title ) )|wash}{else}{$scope_title|wash}{/if}</h2>
+    {if $bp.count|gt( 0 )}
+    <span class="exp-meta">{'%from to %to of %count'|i18n( 'design/admin/content/bookmark',, hash( '%from', sum( $bp.offset, 1 ), '%to', min( sum( $bp.offset, $bp.limit ), $bp.count ), '%count', $bp.count ) )}</span>
+    <label class="exp-meta exp-bm-selectall" hidden><input type="checkbox" id="bm-select-all" /> {'Select all on this page'|i18n( 'design/admin/content/bookmark' )}</label>
+    <button type="submit" class="exp-btn exp-btn-primary exp-btn-small exp-bm-addtop" name="AddButton" value="1" title="{if ne( $bp.scope_key, 'all' )}{'Items you add go into this folder.'|i18n( 'design/admin/content/bookmark' )}{else}{'Add items to your personal bookmark list.'|i18n( 'design/admin/content/bookmark' )}{/if}">{'Add items'|i18n( 'design/admin/content/bookmark' )}</button>
+    {/if}
+</div>
+
+{if $bp.count|eq( 0 )}
+<div class="exp-empty">
+{if $bp.search|ne( '' )}
+    <strong>{'No bookmark matches this search.'|i18n( 'design/admin/content/bookmark' )}</strong>
+    {'Check the spelling, search for a shorter part of the name, or search all bookmarks.'|i18n( 'design/admin/content/bookmark' )}
+    <div class="exp-actions"><a class="exp-btn" href={$bp.base_sorted|ezurl}>{'Clear search'|i18n( 'design/admin/content/bookmark' )}</a>{if ne( $bp.scope_key, 'all' )} <a class="exp-btn" href={concat( 'content/bookmark', $bp.search_suffix )|ezurl}>{'Search all bookmarks'|i18n( 'design/admin/content/bookmark' )}</a>{/if}</div>
+{elseif $summary.bookmarks|eq( 0 )}
+    <strong>{'You have no bookmarks yet.'|i18n( 'design/admin/content/bookmark' )}</strong>
+    {'Add items here, or choose Add to bookmarks in the menu of any item in the content tree.'|i18n( 'design/admin/content/bookmark' )}
+    <div class="exp-actions"><button type="submit" class="exp-btn exp-btn-primary" name="AddButton" value="1">{'Add items'|i18n( 'design/admin/content/bookmark' )}</button></div>
+{elseif eq( $bp.scope_key, 'top' )}
+    <strong>{'Every bookmark is in a folder.'|i18n( 'design/admin/content/bookmark' )}</strong>
+{else}
+    <strong>{'This folder is empty.'|i18n( 'design/admin/content/bookmark' )}</strong>
+    {'Add items to it, or select bookmarks in another folder and move them here.'|i18n( 'design/admin/content/bookmark' )}
+    <div class="exp-actions"><button type="submit" class="exp-btn exp-btn-primary" name="AddButton" value="1">{'Add items'|i18n( 'design/admin/content/bookmark' )}</button></div>
+{/if}
+</div>
+{else}
+<div id="bm-list">
+{foreach $bp.items as $item}
+    {if $item.group_start}
+        {if $group_open}</ul></section>{/if}
+        {set $group_open = true()}
+        {if $item.group|gt( 0 )}{set $group_info = $bp.folder_names[$item.group]}{else}{set $group_info = false()}{/if}
+<section class="exp-bm-group" aria-labelledby="bm-group-{$item.group}">
+    <div class="exp-bm-grouphead">
+        {if $group_info}{$folder_icon}{/if}
+        <h3 class="exp-h3" id="bm-group-{$item.group}">{if $group_info}{$group_info.name|wash}{else}{'Not in a folder'|i18n( 'design/admin/content/bookmark' )}{/if}</h3>
+        <span class="exp-badge">{if $item.group_count|eq( 1 )}{'1 bookmark'|i18n( 'design/admin/content/bookmark' )}{else}{'%count bookmarks'|i18n( 'design/admin/content/bookmark',, hash( '%count', $item.group_count ) )}{/if}</span>
+        {if $item.group_continued}<span class="exp-meta">{'continued from the previous page'|i18n( 'design/admin/content/bookmark' )}</span>{/if}
+        {if and( $group_info, $group_info.path )}<p class="exp-bm-grouppath">{'in %path'|i18n( 'design/admin/content/bookmark',, hash( '%path', $group_info.path|implode( ' / ' ) ) )|wash}</p>{/if}
+    </div>
+    <ul class="exp-cards">
+    {/if}
+    {set $card_id = concat( 'bm-', $item.id )}
+    <li class="exp-card{if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )} is-bad{elseif or( eq( $item.state, 'hidden' ), eq( $item.state, 'invisible' ) )} is-attention{/if}" id="{$card_id}" data-bookmark="{$item.id}">
+        <div class="exp-card-head">
+            <div class="exp-card-title">
+                <label class="exp-select" title="{'Select this bookmark.'|i18n( 'design/admin/content/bookmark' )}">
+                    <input type="checkbox" name="DeleteIDArray[]" value="{$item.id}" aria-label="{'Select %name'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}" />
+                </label>
+                {if $item.class_identifier}{$item.class_identifier|class_icon( small, $item.class_name )}{/if}
+                <h4 id="{$card_id}-title">{if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )}{$item.name|wash}{else}<a href={concat( 'content/view/full/', $item.node_id )|ezurl}>{$item.name|wash}</a>{/if}</h4>
+                <ul class="exp-badges">
+                    {if $item.class_name}<li class="exp-badge">{$item.class_name|wash}</li>{/if}
+                    {switch match=$item.state}
+                    {case match='hidden'}<li class="exp-badge is-warn" title="{'Hidden: visitors of the site do not see it.'|i18n( 'design/admin/content/bookmark' )}">{'Hidden'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
+                    {case match='invisible'}<li class="exp-badge is-warn" title="{'An item above it is hidden, so visitors of the site do not see it.'|i18n( 'design/admin/content/bookmark' )}">{'Hidden by a parent'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
+                    {case match='gone'}<li class="exp-badge is-bad">{'Not found'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
+                    {case match='denied'}<li class="exp-badge is-bad">{'No access'|i18n( 'design/admin/content/bookmark' )}</li>{/case}
+                    {case}{/case}
+                    {/switch}
+                </ul>
+            </div>
+            <div class="exp-actions exp-actions-tight">
+                {if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )|not}
+                <a class="exp-btn exp-btn-small" href={concat( 'content/view/full/', $item.node_id )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/content/bookmark' )}</a>
+                {if $item.can_edit}<a class="exp-btn exp-btn-small" href={concat( 'content/edit/', $item.contentobject_id )|ezurl} aria-describedby="{$card_id}-title">{'Edit'|i18n( 'design/admin/content/bookmark' )}</a>{/if}
+                {/if}
+                {if $bp.order_buttons}
+                <button type="submit" class="exp-btn exp-btn-small exp-btn-icon" name="BookmarkShiftButton" value="up-{$item.id}" title="{'Move up'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name up'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.first|contains( $item.id )} disabled="disabled"{/if}><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 3.5 13 9l-1.06 1.06L8.75 6.8V13h-1.5V6.8l-3.19 3.26L3 9z"/></svg></button>
+                <button type="submit" class="exp-btn exp-btn-small exp-btn-icon" name="BookmarkShiftButton" value="down-{$item.id}" title="{'Move down'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name down'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.last|contains( $item.id )} disabled="disabled"{/if}><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 12.5 3 7l1.06-1.06 3.19 3.26V3h1.5v6.2l3.19-3.26L13 7z"/></svg></button>
+                {/if}
+            </div>
+        </div>
+        {if eq( $item.state, 'gone' )}
+        <p class="exp-bm-note">{'The item was removed, is in the trash, or is not in a language of this site. Remove the bookmark, or restore the item.'|i18n( 'design/admin/content/bookmark' )}</p>
+        {elseif eq( $item.state, 'denied' )}
+        <p class="exp-bm-note">{'You may no longer read this item. Remove the bookmark, or ask an administrator for access.'|i18n( 'design/admin/content/bookmark' )}</p>
+        {else}
+        <dl class="exp-facts">
+            <div>
+                <dt>{'Location'|i18n( 'design/admin/content/bookmark' )}</dt>
+                <dd>{if $item.path}{$item.path|implode( ' / ' )|wash}{else}{'Top of the tree'|i18n( 'design/admin/content/bookmark' )}{/if}</dd>
+            </div>
+            <div>
+                <dt>{'Modified'|i18n( 'design/admin/content/bookmark' )}</dt>
+                <dd>{if $item.modified|gt( 0 )}{$item.modified|l10n( shortdatetime )}{else}{'Unknown'|i18n( 'design/admin/content/bookmark' )}{/if}</dd>
+            </div>
+        </dl>
+        {/if}
+    </li>
+{/foreach}
+{if $group_open}</ul></section>{/if}
 </div>
 {/if}
-{* DESIGN: Control bar END *}</div></div>
-</div>
 
+{if $bp.count|gt( 0 )}
+<div class="exp-listfoot">
+    {* The sizes come from admininterface.ini [PaginationSettings] ItemsPerPageList_content_bookmark; the preference stores the position in that list. *}
+    <p class="exp-sizes">
+        <span>{'Per page'|i18n( 'design/admin/content/bookmark' )}:</span>
+    {foreach $bp.limit_choices as $limit_index => $limit_option}
+        {if eq( $limit_option, $bp.limit )}
+        <span class="current" aria-current="true">{$limit_option}</span>
+        {else}
+        <a href={concat( '/user/preferences/set/admin_bookmark_list_limit/', $limit_index|inc )|ezurl} title="{'Show %count bookmarks per page.'|i18n( 'design/admin/content/bookmark',, hash( '%count', $limit_option ) )}">{$limit_option}</a>
+        {/if}
+    {/foreach}
+    </p>
+    <div class="exp-pager">
+    {include name=navigator
+             uri='design:navigator/google.tpl'
+             page_uri='/content/bookmark'
+             page_uri_suffix=$bp.search_suffix
+             item_count=$bp.count
+             view_parameters=$view_parameters
+             item_limit=$bp.limit}
+    </div>
 </div>
+{/if}
+</section>
 
+{if $bp.count|gt( 0 )}
+<div class="exp-bottombar">
+    <div class="exp-bm-movegroup">
+        <div class="exp-field">
+            <label for="bm-move-target">{'Move the selected bookmarks to'|i18n( 'design/admin/content/bookmark' )}</label>
+            <select name="FolderID" id="bm-move-target">
+                <option value="0">{'No folder (top level)'|i18n( 'design/admin/content/bookmark' )}</option>
+                {foreach $bp.targets as $target}
+                <option value="{$target.id}">{$target.label|wash}</option>
+                {/foreach}
+            </select>
+        </div>
+        <button type="submit" class="exp-btn" name="MoveSelectedButton" value="1">{'Move selected'|i18n( 'design/admin/content/bookmark' )}</button>
+    </div>
+    <details class="exp-confirm">
+        <summary>{'Remove selected'|i18n( 'design/admin/content/bookmark' )}</summary>
+        <div>
+            <p>{'The selected bookmarks are removed from your list. The items they point to are not changed.'|i18n( 'design/admin/content/bookmark' )}</p>
+            <button type="submit" class="exp-btn exp-btn-danger" name="RemoveButton" value="1">{'Remove the selected bookmarks'|i18n( 'design/admin/content/bookmark' )}</button>
+        </div>
+    </details>
+    <p class="exp-meta" id="bm-selected-count" aria-live="polite">{'Tick bookmarks to move or remove them.'|i18n( 'design/admin/content/bookmark' )}</p>
+</div>
+{/if}
 </form>
 
-{include uri='design:content/bookmark_folder_forms.tpl' folders=$bookmark_folders}
+{* Dragging a bookmark onto a folder (javascript only) sends this form; the select and the buttons above do the same. *}
+<form method="post" action={$bp.here|ezurl} id="bm-drop-form" hidden>
+    <input type="hidden" name="BookmarkFolderAction" value="move_bookmark" />
+    <input type="hidden" name="FolderID" value="" />
+</form>
 
-{undef $bookmark_list $bookmark_rows $bookmark_folders $bookmark_node}
+</div>{* exp-bm-main *}
+</div>{* exp-bm-layout *}
+
+</div></div></div>
+</div>
+
+<script type="text/javascript">
+var expBookmarkPageText = {ldelim}
+    selected: '{'%count selected.'|i18n( 'design/admin/content/bookmark' )|wash( javascript )}'
+{rdelim};
+{literal}
+(function () {
+    var list = document.getElementById( 'bm-list' );
+    if ( !list ) return;
+    var selectAll = document.getElementById( 'bm-select-all' );
+    var countEl = document.getElementById( 'bm-selected-count' );
+    var initialNote = countEl ? countEl.textContent : '';
+    if ( selectAll ) selectAll.parentNode.hidden = false;
+    function boxes() { return list.querySelectorAll( 'input[name="DeleteIDArray[]"]' ); }
+    function selected() { return Array.prototype.filter.call( boxes(), function ( b ) { return b.checked; } ); }
+    function update() {
+        var all = boxes(), n = 0, j;
+        for ( j = 0; j < all.length; j++ ) {
+            var card = all[j].closest( '.exp-card' );
+            if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
+            if ( all[j].checked ) n++;
+        }
+        if ( countEl ) countEl.textContent = n ? expBookmarkPageText.selected.split( '%count' ).join( n ) : initialNote;
+        if ( selectAll ) { selectAll.checked = n > 0 && n === all.length; selectAll.indeterminate = n > 0 && n < all.length; }
+    }
+    list.addEventListener( 'change', update );
+    if ( selectAll ) selectAll.addEventListener( 'change', function () {
+        var all = boxes(), j;
+        for ( j = 0; j < all.length; j++ ) all[j].checked = selectAll.checked;
+        update();
+    } );
+    update();
+
+    // An extra for the mouse: drag a bookmark (or the selected ones) onto a folder of the folder list.
+    var nav = document.getElementById( 'bm-folder-nav' ), dropForm = document.getElementById( 'bm-drop-form' );
+    if ( !nav || !dropForm || !( 'draggable' in document.createElement( 'span' ) ) ) return;
+    var hint = document.querySelector( '.exp-bm .exp-bm-draghint' );
+    if ( hint ) hint.hidden = false;
+    var dragged = null;
+    Array.prototype.forEach.call( list.querySelectorAll( '.exp-card[data-bookmark]' ), function ( card ) {
+        card.setAttribute( 'draggable', 'true' );
+        card.addEventListener( 'dragstart', function ( e ) {
+            var box = card.querySelector( 'input[name="DeleteIDArray[]"]' );
+            dragged = ( box && box.checked ) ? selected().map( function ( b ) { return b.value; } ) : [ card.getAttribute( 'data-bookmark' ) ];
+            card.classList.add( 'is-dragged' );
+            try { e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData( 'text/plain', dragged.join( ',' ) ); } catch ( x ) {}
+        } );
+        card.addEventListener( 'dragend', function () { card.classList.remove( 'is-dragged' ); dragged = null; clearDrop(); } );
+    } );
+    function clearDrop() { Array.prototype.forEach.call( nav.querySelectorAll( '.is-drop' ), function ( li ) { li.classList.remove( 'is-drop' ); } ); }
+    function target( e ) { var li = e.target.closest ? e.target.closest( 'li[data-folder]' ) : null; return dragged ? li : null; }
+    nav.addEventListener( 'dragover', function ( e ) { var li = target( e ); clearDrop(); if ( !li ) return; e.preventDefault(); li.classList.add( 'is-drop' ); } );
+    nav.addEventListener( 'dragleave', function ( e ) { if ( !nav.contains( e.relatedTarget ) ) clearDrop(); } );
+    nav.addEventListener( 'drop', function ( e ) {
+        var li = target( e );
+        if ( !li ) return;
+        e.preventDefault();
+        dropForm.elements.FolderID.value = li.getAttribute( 'data-folder' );
+        dragged.forEach( function ( id ) {
+            var input = document.createElement( 'input' );
+            input.type = 'hidden'; input.name = 'BookmarkIDArray[]'; input.value = id;
+            dropForm.appendChild( input );
+        } );
+        dragged = null;
+        clearDrop();
+        // sent after the drop event, so the browser has finished the drag first
+        window.setTimeout( function () { dropForm.submit(); }, 30 );
+    } );
+})();
+{/literal}
+</script>

@@ -2,6 +2,7 @@
 /**
  * The code of cronjobs/linkcheck.php, moved into a class (#207 stage 1). The file cronjobs/linkcheck.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * User guide of the link check: doc/guides/urls-and-aliases.md (section "How links are checked")
  */
 /*
  * The original header of cronjobs/linkcheck.php:
@@ -26,7 +27,6 @@ class Linkcheck extends \Exponential\Runnable\CronjobPart
 {
     public function run( array $scope )
     {
-        // the including function's variables ($Params, $Module, $cli, ...)
         foreach ( array_keys( $scope ) as $__name )
             if ( $__name !== 'this' && $__name !== 'scope' )
                 ${$__name} = &$scope[$__name];
@@ -34,107 +34,70 @@ class Linkcheck extends \Exponential\Runnable\CronjobPart
 
         $cli->output( "Checking link ..." );
 
-        $cronjobIni = \eZINI::instance( 'cronjob.ini' );
-        $siteURLs = $cronjobIni->variable( 'linkCheckSettings', 'SiteURL' );
-        $linkList = \eZURL::fetchList( array( 'only_published' => true ) );
+        // What is decided, and how, is expLinkCheck: https is tested like http, links to content by their
+        // target, private addresses are not requested; settings in cronjob.ini [linkCheckSettings]
+        $settings = \expLinkCheck::settingsFromIni();
+        $checker = new \expLinkCheck( $settings );
+        $started = microtime( true );
+        $now = time();
+        $counts = array( \expLinkCheck::VALID => 0, \expLinkCheck::INVALID => 0, \expLinkCheck::UNKNOWN => 0, 'skipped' => 0, 'changed' => 0 );
+
+        $linkList = \eZURL::fetchList( array( 'only_published' => true, 'sort' => 'checked', 'as_object' => false ) );
+        // the links checked longest ago first, so a run cut short by MaxURLsPerRun moves on next time
+        $linkList = array_reverse( is_array( $linkList ) ? $linkList : array() );
+        $checked = 0;
         foreach ( $linkList as $link )
         {
-            $linkID = $link->attribute( 'id' );
-            $url = $link->attribute( 'url' );
-            $isValid = $link->attribute( 'is_valid' );
-
-            $cli->output( "check-" . $cli->stylize( 'emphasize', $url ) . " ", false );
-            if ( preg_match("/^(http:)/i", $url ) or
-                 preg_match("/^(ftp:)/i", $url ) or
-                 preg_match("/^(https:)/i", $url ) or
-                 preg_match("/^(file:)/i", $url ) or
-                 preg_match("/^(mailto:)/i", $url ) )
+            $linkID = (int)$link['id'];
+            $url = (string)$link['url'];
+            $isValid = (bool)$link['is_valid'];
+            if ( self::isRecent( (int)$link['last_checked'], $now, (int)$settings['RecheckInterval'] ) )
             {
-                if ( preg_match("/^(mailto:)/i", $url))
-                {
-                    if ( \eZSys::osType() != 'win32' )
-                    {
-                        $url = trim( preg_replace("/^mailto:(.+)/i", "\\1", $url));
-                        list($userName, $host) = explode( '@', $url );
-                        list($host, $junk) = explode( '?', $host );
-                        $dnsCheck = checkdnsrr( $host,"MX" );
-                        if ( !$dnsCheck )
-                        {
-                            if ( $isValid )
-                                \eZURL::setIsValid( $linkID, false );
-                            $cli->output( $cli->stylize( 'warning', "invalid" ) );
-                        }
-                        else
-                        {
-                            if ( !$isValid )
-                                \eZURL::setIsValid( $linkID, true );
-                            $cli->output( $cli->stylize( 'success', "valid" ) );
-                        }
-                    }
-                }
-                else if ( preg_match("/^(http:)/i", $url ) or
-                          preg_match("/^(file:)/i", $url ) or
-                          preg_match("/^(ftp:)/i", $url ) )
-                {
-                    if ( !\eZHTTPTool::getDataByURL( $url, true, 'Exponential Link Validator' ) )
-                    {
-                        if ( $isValid )
-                            \eZURL::setIsValid( $linkID, false );
-                        $cli->output( $cli->stylize( 'warning', "invalid" ) );
-                    }
-                    else
-                    {
-                        if ( !$isValid )
-                            \eZURL::setIsValid( $linkID, true );
-                        $cli->output( $cli->stylize( 'success', "valid" ) );
-                    }
-                }
-                else
-                {
-                    $cli->output( "HTTPS protocol is not supported by linkcheck" );
-                }
+                $counts['skipped']++;
+                continue;
             }
-            else
+            if ( $settings['MaxURLsPerRun'] > 0 && $checked >= $settings['MaxURLsPerRun'] )
             {
-                $translateResult = \eZURLAliasML::translate( $url );
+                $counts['skipped']++;
+                continue;
+            }
+            $checked++;
 
-                if ( !$translateResult )
-                {
-                      $isInternal = false;
-                      // Check if it is a valid internal link.
-                      foreach ( $siteURLs as $siteURL )
-                      {
-                          $siteURL = preg_replace("/\/$/", "", $siteURL );
-                          $fp = @fopen( $siteURL . "/". $url, "r" );
-                          if ( !$fp )
-                          {
-                              // do nothing
-                          }
-                          else
-                          {
-                              $isInternal = true;
-                              fclose($fp);
-                          }
-                      }
-                      $translateResult = $isInternal;
-                }
-                if ( $translateResult )
-                {
-                    if ( !$isValid )
-                        \eZURL::setIsValid( $linkID, true );
-                    $cli->output( $cli->stylize( 'success', "valid" ) );
-                }
-                else
-                {
-                    if ( $isValid )
-                        \eZURL::setIsValid( $linkID, false );
-                    $cli->output( $cli->stylize( 'warning', "invalid" ) );
-                }
+            $answer = $checker->check( $url );
+            $counts[$answer['result']]++;
+            if ( $answer['result'] === \expLinkCheck::VALID && !$isValid )
+            {
+                \eZURL::setIsValid( $linkID, true );
+                $counts['changed']++;
+            }
+            else if ( $answer['result'] === \expLinkCheck::INVALID && $isValid )
+            {
+                \eZURL::setIsValid( $linkID, false );
+                $counts['changed']++;
             }
             \eZURL::setLastChecked( $linkID );
+
+            $style = $answer['result'] === \expLinkCheck::VALID ? 'success' : ( $answer['result'] === \expLinkCheck::INVALID ? 'warning' : 'notice' );
+            $cli->output( "check-" . $cli->stylize( 'emphasize', $url ) . " " . $cli->stylize( $style, $answer['result'] ) . " (" . $answer['reason'] . ")" );
         }
 
-        $cli->output( "All links have been checked!" );
+        $cli->output( sprintf( "All links have been checked! %d valid, %d invalid, %d not decided, %d skipped (checked recently or over MaxURLsPerRun), %d changed, %d requests, %.1f s",
+                               $counts[\expLinkCheck::VALID], $counts[\expLinkCheck::INVALID], $counts[\expLinkCheck::UNKNOWN],
+                               $counts['skipped'], $counts['changed'], $checker->requests, microtime( true ) - $started ) );
+    }
+
+    /**
+     * Whether a link was checked less than $interval seconds ago (never, when the interval is 0 or it was never
+     * checked).
+     *
+     * @param int $lastChecked
+     * @param int $now
+     * @param int $interval
+     * @return bool
+     */
+    public static function isRecent( $lastChecked, $now, $interval )
+    {
+        return $interval > 0 && $lastChecked > 0 && $lastChecked > $now - $interval;
     }
 }
 

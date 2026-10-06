@@ -60,7 +60,7 @@
 <legend>{'Feeds in this document'|i18n( 'design/admin/rss/edit_export' )} ({$opml_items|count})</legend>
 
 {if $opml_items|count|gt( 0 )}
-<table class="list opml-outlines" cellspacing="0">
+<div class="opml-outlines-wrap"><table class="list opml-outlines" cellspacing="0">
 <tr>
     <th class="tight">&nbsp;</th>
     <th class="tight">{'Order'|i18n( 'design/admin/rss/edit_export' )}</th>
@@ -141,7 +141,7 @@
     </td>
 </tr>
 {/foreach}
-</table>
+</table></div>
 {else}
 <div class="block"><p>{'Nothing is listed yet. Find feeds below and add them.'|i18n( 'design/admin/rss/edit_export' )}</p></div>
 {/if}
@@ -176,7 +176,7 @@
 </div>
 
 {if $opml_browser_list|count|gt( 0 )}
-<table class="list opml-browser" cellspacing="0">
+<div class="opml-browser-wrap"><table class="list opml-browser" cellspacing="0">
 <tr>
     <th class="tight">&nbsp;</th>
     {include uri='design:rss/sortbutton.tpl' key='id'          label='ID'|i18n( 'design/admin/rss/edit_export' )       sort=$opml_browser_pager.sort}
@@ -197,7 +197,7 @@
     <td class="opml-meta">{$opml_candidate.modified|l10n( shortdatetime )}</td>
 </tr>
 {/foreach}
-</table>
+</table></div>
 
 {if $opml_browser_pager.needed}
 <div class="block opml-browser-pages">

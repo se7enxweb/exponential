@@ -15,9 +15,15 @@
  *
  */
 
+
 namespace Exponential\View\Kernel\Package
 {
 
+/**
+ * package/export/<PackageName>[/<RepositoryID>]: the package as an .ezpkg archive (gzip compressed tar), built in
+ * the user's own export directory, sent in pieces by eZPackageDownload and removed again. The package itself is
+ * only read. Needs package/export for the package's type.
+ */
 class Export extends \Exponential\Runnable\ModuleView
 {
     public function run( array $scope )
@@ -29,76 +35,53 @@ class Export extends \Exponential\Runnable\ModuleView
         unset( $__name );
 
         $module = $Params['Module'];
-
         $packageName = $Params['PackageName'];
+        $repositoryID = isset( $Params['RepositoryID'] ) && $Params['RepositoryID'] ? $Params['RepositoryID'] : false;
+        $repository = $repositoryID !== false ? \eZPackageRequestGuard::repository( $repositoryID ) : null;
+        if ( !\eZPackageRequestGuard::isSafeName( $packageName ) || $repository === false )
+            return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
-        $package = \eZPackage::fetch( $packageName );
+        $package = \eZPackage::fetch( $packageName, $repository ? $repository['path'] : false );
         if ( !$package )
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        if ( $repository )
+            $package->setCurrentRepositoryInformation( $repository );
 
         if ( !$package->attribute( 'can_export' ) )
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
+            return $this->viewResult( null, $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
 
-
-        $exportDirectory = \eZPackage::temporaryExportPath();
+        // Building the archive is the only part that may fail with an exception; sending it and ending the request
+        // stay outside the try: under Exponential Velocity eZExecution::cleanExit() ends a request by throwing,
+        // and a catch around it would render the page on after the file.
         $exportName = $package->exportName();
-        $exportPath = $exportDirectory . '/' . $exportName;
-        $exportPath = $package->exportToArchive( $exportPath );
-
-        //return $module->redirectToView( 'view', array( 'full', $package->attribute( 'name' ) ) );
-
-        $fileName = $exportPath;
-        if ( $fileName != "" and file_exists( $fileName ) )
+        $fileName = false;
+        try
         {
-            // Audit (doc/bc/6.0/audit.md, data.export.package)
-            if ( class_exists( 'expAuditHook' ) )
-                \expAuditHook::emit( 'data.export.package', array( 'object' => array( 'type' => 'package', 'id' => (string)$package->attribute( 'name' ) ),
-                    'verb' => 'export', 'after' => array( 'name' => (string)$package->attribute( 'name' ), 'file' => (string)$exportName,
-                                                          'sha256' => hash_file( 'sha256', $fileName ) ) ) );
-            clearstatcache();
-            $fileSize = filesize( $fileName );
-            $mimeType =  'application/octet-stream';
-            $originalFileName = $exportName;
-            $contentLength = $fileSize;
-            $fileOffset = false;
-            $fileLength = false;
-            if ( isset( $_SERVER['HTTP_RANGE'] ) )
-            {
-                $httpRange = trim( $_SERVER['HTTP_RANGE'] );
-                if ( preg_match( "/^bytes=([0-9]+)-$/", $httpRange, $matches ) )
-                {
-                    $fileOffset = $matches[1];
-                    header( "Content-Range: bytes $fileOffset-" . $fileSize - 1 . "/$fileSize" );
-                    header( "HTTP/1.1 206 Partial Content" );
-                    $contentLength -= $fileOffset;
-                }
-            }
-
-            header( "Pragma: " );
-            header( "Cache-Control: " );
-            header( "Content-Length: $contentLength" );
-            header( "Content-Type: $mimeType" );
-            header( "X-Powered-By: " . \ExponentialSDK::EDITION );
-            header( "Content-disposition: attachment; filename=$originalFileName" );
-            header( "Content-Transfer-Encoding: binary" );
-            header( "Accept-Ranges: bytes" );
-
-            $fh = fopen( $fileName, "rb" );
-            if ( $fileOffset )
-            {
-                \eZDebug::writeDebug( $fileOffset, "seeking to fileoffset" );
-                fseek( $fh, $fileOffset );
-            }
-
-            ob_end_clean();
-            fpassthru( $fh );
-            fflush( $fh );
-            fclose( $fh );
-            unlink( $fileName );
-            \eZExecution::cleanExit();
+            $exportDirectory = \eZPackage::temporaryExportPath();
+            if ( !is_dir( $exportDirectory ) )
+                \eZDir::mkdir( $exportDirectory, false, true );
+            $fileName = $package->exportToArchive( $exportDirectory . '/' . $exportName );
         }
+        catch ( \Exception $e )
+        {
+            \eZDebug::writeError( 'Exporting package ' . $packageName . ' failed: ' . $e->getMessage(), __METHOD__ );
+            $fileName = false;
+        }
+        if ( !$fileName || !is_file( $fileName ) )
+            return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        // Audit (doc/bc/6.0/audit.md, data.export.package)
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'data.export.package', array( 'object' => array( 'type' => 'package', 'id' => (string)$package->attribute( 'name' ) ),
+                'verb' => 'export', 'after' => array( 'name' => (string)$package->attribute( 'name' ), 'file' => (string)$exportName,
+                                                      'sha256' => hash_file( 'sha256', $fileName ) ) ) );
+
+        header( 'X-Powered-By: ' . \ExponentialSDK::EDITION );
+        \eZPackageDownload::send( $fileName, $exportName, 'application/octet-stream' );
+        @unlink( $fileName );
+        \eZExecution::cleanExit();
+
+        return $this->viewResult( null, null );
     }
 }
 

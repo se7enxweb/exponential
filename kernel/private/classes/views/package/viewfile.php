@@ -31,9 +31,18 @@ class Viewfile extends \Exponential\Runnable\ModuleView
         $module = $Params['Module'];
         $packageName = $Params['PackageName'];
         $fileIndex = isset( $Params['FileIndex'] ) && ctype_digit( (string)$Params['FileIndex'] ) ? (int)$Params['FileIndex'] : -1;
+        $repositoryID = isset( $Params['RepositoryID'] ) && $Params['RepositoryID'] ? $Params['RepositoryID'] : false;
+        $repository = $repositoryID !== false ? \eZPackageRequestGuard::repository( $repositoryID ) : null;
 
-        $package = \eZPackage::fetch( $packageName );
-        if ( !is_object( $package ) || !$package->attribute( 'can_read' ) || $fileIndex < 0 )
+        // A package name that is a directory name and a repository the storage has, as on package/view
+        $package = false;
+        if ( \eZPackageRequestGuard::isSafeName( $packageName ) && $repository !== false && $fileIndex >= 0 )
+        {
+            $package = \eZPackage::fetch( $packageName, $repository ? $repository['path'] : false );
+            if ( $package && $repository )
+                $package->setCurrentRepositoryInformation( $repository );
+        }
+        if ( !is_object( $package ) || !$package->attribute( 'can_read' ) )
         {
             header( 'HTTP/1.1 404 Not Found' );
             \eZExecution::cleanExit();
@@ -57,27 +66,14 @@ class Viewfile extends \Exponential\Runnable\ModuleView
         // Every kind but a real image is offered as data, never as a type a browser would try to render
         // as markup or execute - an .xml/.txt item included, even though this same file is shown
         // pretty-printed as text on the contents browser page itself.
-        $type = ( $kind === 'image' && isset( $mimeMap[$ext] ) ) ? $mimeMap[$ext] : 'application/octet-stream';
+        $image = $kind === 'image' && isset( $mimeMap[$ext] );
+        $type = $image ? $mimeMap[$ext] : 'application/octet-stream';
 
-        header( 'Cache-Control: private, no-store, max-age=0' );
-        header( 'Pragma: no-cache' );
-        header( 'X-Content-Type-Options: nosniff' );
         // A package is uploaded content: an SVG in it may carry script. Inside the browser's <img> it never
         // runs, but opened directly under the admin's own origin it would; the sandbox stops that.
         header( "Content-Security-Policy: default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; sandbox" );
-        header( 'Content-Type: ' . $type );
-        header( 'Content-Length: ' . filesize( $realPath ) );
-        if ( $kind !== 'image' )
-            header( 'Content-Disposition: attachment; filename="' . str_replace( array( '"', '\\' ), '_', basename( $fileRow['path'] ) ) . '"' );
-
-        while ( @ob_end_clean() );
-
-        $fh = fopen( $realPath, 'rb' );
-        while ( $fh && !feof( $fh ) )
-            echo fread( $fh, 1048576 );
-        if ( $fh )
-            fclose( $fh );
-
+        // in pieces, never read whole (eZPackageDownload); the request ends outside any try/catch
+        \eZPackageDownload::send( $realPath, basename( $fileRow['path'] ), $type, $image );
         \eZExecution::cleanExit();
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );

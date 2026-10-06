@@ -190,9 +190,9 @@ class expAuditRecordTest extends PHPUnit\Framework\TestCase
     public function testCatalogue()
     {
         $catalogue = expAuditTaxonomy::catalogue();
-        $this->assertCount( 140, $catalogue );
+        $this->assertCount( 141, $catalogue );
         $defaults = array_count_values( array_column( $catalogue, 'default' ) );
-        $this->assertSame( array( 'always' => 23, 'off' => 23, 'on' => 91, 'sampled' => 3 ), array( 'always' => $defaults['always'], 'off' => $defaults['off'],
+        $this->assertSame( array( 'always' => 23, 'off' => 23, 'on' => 92, 'sampled' => 3 ), array( 'always' => $defaults['always'], 'off' => $defaults['off'],
                                                                                                   'on' => $defaults['on'], 'sampled' => $defaults['sampled'] ) );
         foreach ( $catalogue as $name => $def )
         {

@@ -35,7 +35,17 @@ class View extends \Exponential\Runnable\ModuleView
         if ( isset( $Params['RepositoryID'] ) and $Params['RepositoryID'] )
             $repositoryID = $Params['RepositoryID'];
 
-        $package = \eZPackage::fetch( $packageName, false, $repositoryID );
+        // Only a view mode with a template, a package name that is a directory name and a repository the storage
+        // has: a name such as "../7x/x" made eZPackage::fetch() read a package.xml outside the repository asked for,
+        // and an unknown mode drew an empty page.
+        $viewMode = \eZPackageRequestGuard::viewMode( $viewMode );
+        $repository = $repositoryID !== false ? \eZPackageRequestGuard::repository( $repositoryID ) : null;
+        if ( $viewMode === false || !\eZPackageRequestGuard::isSafeName( $packageName ) || $repository === false )
+            return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+
+        $package = \eZPackage::fetch( $packageName, $repository ? $repository['path'] : false, false );
+        if ( is_object( $package ) && $repository )
+            $package->setCurrentRepositoryInformation( $repository );
         if ( !is_object( $package ) )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
@@ -45,7 +55,7 @@ class View extends \Exponential\Runnable\ModuleView
 
         if ( $module->isCurrentAction( 'Export' ) )
         {
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $module->run( 'export', array( $packageName ) ) );
+            return $this->viewResult( isset( $Result ) ? $Result : null,  $module->run( 'export', $repositoryID !== false ? array( $packageName, $repositoryID ) : array( $packageName ) ) );
         }
         else if ( $module->isCurrentAction( 'Install' ) )
         {
@@ -94,9 +104,9 @@ class View extends \Exponential\Runnable\ModuleView
                 );
             };
             // The path suffix for a state; only what differs from the defaults is written.
-            $browseURL = function ( array $state ) use ( $packageName )
+            $browseURL = function ( array $state ) use ( $packageName, $repositoryID )
             {
-                $url = '/package/view/full/' . $packageName;
+                $url = '/package/view/full/' . $packageName . ( $repositoryID !== false ? '/' . $repositoryID : '' );
                 if ( $state['type'] !== '' )
                     $url .= '/(type)/' . $state['type'];
                 if ( $state['search'] !== '' )
@@ -161,7 +171,9 @@ class View extends \Exponential\Runnable\ModuleView
                     $realPath = \eZPackageFileBrowser::filePath( $package, $viewedFile['path'] );
                     if ( $realPath !== false && $viewedFile['kind'] !== 'image' )
                     {
-                        $bytes = (string)@file_get_contents( $realPath );
+                        // at most 1 MB is shown on the page; the whole file is a download
+                        $bytes = (string)@file_get_contents( $realPath, false, null, 0, 1048576 );
+                        $viewedFile['truncated'] = (int)$viewedFile['size'] > strlen( $bytes );
                         $viewedContent = \eZPackageFileBrowser::prettyPrintXML( $bytes );
                         if ( $viewedFile['kind'] === 'object' )
                             $viewedObject = \eZPackageFileBrowser::objectItemSummary( $bytes );
@@ -204,6 +216,23 @@ class View extends \Exponential\Runnable\ModuleView
             unset( $fileRow );
         }
         $tpl->setVariable( 'ContentsBrowser', $ContentsBrowser );
+
+        // The package's card (version, state, size, last change, dependencies, whether the installer takes it as a
+        // source) and what it carries, read-only (eZPackageCatalog)
+        $card = false;
+        $contents = false;
+        if ( $viewMode === 'full' )
+        {
+            $scan = \eZPackageCatalog::scan();
+            $currentRepository = $package->currentRepositoryInformation();
+            $key = $packageName . '@' . ( $currentRepository ? $currentRepository['id'] : 'local' );
+            $card = isset( $scan['cards'][$key] ) ? $scan['cards'][$key] : false;
+            $contents = \eZPackageCatalog::contents( $package );
+        }
+        $tpl->setVariable( 'package_card', $card );
+        $tpl->setVariable( 'package_contents', $contents );
+        $tpl->setVariable( 'package_can_remove', $package->canUsePackagePolicyFunction( 'remove' ) );
+        $tpl->setVariable( 'package_repository', $package->currentRepositoryInformation() );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:package/view/$viewMode.tpl" );

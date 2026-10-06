@@ -5,6 +5,12 @@ decides which extension's settings, templates and design files win when two exte
 28 September 2026 you could only change it by editing `settings/override/site.ini.append.php` by hand, and saving the
 Extensions page could silently switch extensions off. Both are fixed.
 
+> **Since 6 October 2026** there is no separate Loading order card: the order is changed in the one list of the page,
+> together with activation and deactivation, and written only after a review. The save now edits the file as text, so
+> comments in it survive. With `ExtensionOrdering=enabled` the declared dependencies decide most of the real loading
+> order; each card shows where an extension really loads. See [The Extensions page](../../guides/extensions-page.md).
+> The steps below describe the page before that change.
+
 ## Change the loading order
 
 1. Open **Setup > Extensions** (`/setup/extensions`).

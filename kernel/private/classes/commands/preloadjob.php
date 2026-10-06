@@ -19,7 +19,7 @@
  * between two events.
  *
  * Usage (started by setup/preloadjob, not meant to be typed):
- *   php bin/php/preloadjob.php --id=<hex> [--target=<siteaccess>] [--max-pages=<n>] [--max-depth=<n>]
+ *   php bin/php/preloadjob.php --id=<hex> [--target=<siteaccess>] [--max-pages=<n>] [--max-depth=<n>] [--images]
  *
  * @copyright Copyright (C) 1998 - 2026 7x and others. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -34,74 +34,40 @@ class Preloadjob extends \Exponential\Runnable\Command
 {
     public function run()
     {
-        // the script's variables were globals; functions of the script read them with "global"
-        foreach ( array( 'cli', 'dir', 'e', 'events', 'exit', 'handle', 'id', 'maxDepth', 'maxPages', 'options', 'runner', 'script', 'send', 'siteaccess', 'stopFile', 'stopped' ) as $__name )
-            ${$__name} = &$GLOBALS[$__name];
-        unset( $__name );
-
         $cli = $this->cli();
         $script = $this->script( array(
-            'description'    => 'Runs one preload for Setup > Preload and writes its events.',
+            'description'    => 'Runs one preload for Setup > Preload and writes its events and status.',
             'use-session'    => false,
             'use-modules'    => true,
             'use-extensions' => true,
         ) );
-        $options = $this->startup( '[id:][target:][max-pages:][max-depth:]', '', array(
+        $options = $this->startup( '[id:][target:][max-pages:][max-depth:][images]', '', array(
             'id'        => 'the job id (hex), chosen by setup/preloadjob',
             'target'    => 'the siteaccess whose site is preloaded (default: DefaultAccess)',
             'max-pages' => 'most pages to fetch (default 250)',
             'max-depth' => 'most links to follow from a starting page (default 3)',
+            'images'    => 'also request the images the warmed pages show, and report the missing ones',
         ) );
 
         $id = (string)$options['id'];
-        if ( !preg_match( '#^[a-f0-9]{16}$#', $id ) )
+        if ( !\expPreloadJob::isID( $id ) )
         {
             $cli->error( 'A --id of 16 hex characters is needed.' );
             $script->shutdown( 1 );
         }
-        $dir = \expPreloadJob::directory();
-        $events = $dir . '/' . $id . '.jsonl';
-        $stopFile = $dir . '/' . $id . '.stop';
-        $handle = fopen( $events, 'a' );
-        if ( !$handle )
+        $siteaccess = $options['target'] !== null ? (string)$options['target'] : '';
+        if ( $siteaccess !== '' && !in_array( $siteaccess, \expPreloadJob::knownSiteaccesses(), true ) )
         {
-            $cli->error( "Cannot write $events." );
+            $cli->error( 'Unknown siteaccess: ' . $siteaccess );
             $script->shutdown( 1 );
         }
 
-        $send = function ( $type, $message, array $data = array() ) use ( $handle, $stopFile )
-        {
-            fwrite( $handle, json_encode( array( 'type' => $type, 'message' => $message, 'time' => time() ) + $data ) . "\n" );
-            fflush( $handle );
-            if ( $type !== 'done' && is_file( $stopFile ) )
-                throw new \RuntimeException( 'stopped from the administration' );
-        };
-
-        $siteaccess = $options['target'] !== null ? (string)$options['target'] : '';
-        $maxPages = $options['max-pages'] !== null ? max( 1, min( 5000, (int)$options['max-pages'] ) ) : 250;
-        $maxDepth = $options['max-depth'] !== null ? max( 0, min( 10, (int)$options['max-depth'] ) ) : 3;
-
-        $exit = 0;
-        try
-        {
-            $send( 'info', 'Preloader started at ' . date( 'Y-m-d H:i:s T' ) . '.' );
-            $runner = new \expPreloadRunner( $send, array(
-                'siteaccess' => $siteaccess,
-                'max_pages'  => $maxPages,
-                'max_depth'  => $maxDepth,
-            ) );
-            $runner->run();
-        }
-        catch ( \Exception $e )
-        {
-            $stopped = is_file( $stopFile );
-            fwrite( $handle, json_encode( array( 'type' => $stopped ? 'warn' : 'error', 'message' => 'Preloader stopped: ' . $e->getMessage(), 'time' => time() ) ) . "\n" );
-            fwrite( $handle, json_encode( array( 'type' => 'done', 'message' => 'Stopped early.', 'time' => time() ) ) . "\n" );
-            $exit = $stopped ? 0 : 1;
-        }
-        fwrite( $handle, json_encode( array( 'type' => 'end', 'message' => '', 'time' => time() ) ) . "\n" );
-        fclose( $handle );
-        @unlink( $stopFile );
+        // The run itself, its lock, events and status: the same as bin/php/preload.php from the shell.
+        $exit = \expPreloadJob::execute( $id, $siteaccess, array(
+            'max_pages' => $options['max-pages'],
+            'max_depth' => $options['max-depth'],
+            'images'    => (bool)$options['images'],
+        ), null, 'page' );
         $script->shutdown( $exit );
     }
 }

@@ -61,14 +61,26 @@ Read them in this order the first time. Each one also stands on its own.
 | [The content model and editing content](content-model-and-editing.md) | A content class, an object, the sub-items table, the trash, a content job | 30 minutes |
 | [Templates and design](templates-and-design.md) | The design you use, the template that wrote a piece of a page, an override you can undo, the admin4 design | 15 minutes |
 | [Extensions](extensions.md) | An extension found, installed, switched on and configured; one of your own built and released | 45 minutes |
+| [The Extensions page](extensions-page.md) | Extensions activated, deactivated and put in order in one list, the changes reviewed with their risks and applied, the written and the real loading order told apart | 10 minutes |
 | [Deploying](deploying.md) | The site served by Apache with PHP-FPM, by Velocity or by FrankenPHP, with HTTPS | 30 minutes |
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
+| [System information](system-information.md) | Which server answered and how it runs PHP, the health checks read and acted on, the overview cards understood, a masked report downloaded for support, the same from the command line | 15 minutes |
 | [Benchmarking](benchmarking.md) | Pages measured cached and rendered, Apache against Velocity, a code change and a deploy checked for regressions, the CI performance check understood | 30 minutes |
 | [Cronjobs](cronjobs.md) | Every part and script seen, a part and one script run and followed from the browser, the crontab lines installed, the logs read, the usual problems solved | 30 minutes |
-| [Workflows](workflows.md) | An approval before publishing set up with its trigger, every waiting process read in words on Setup > Workflow processes, the workflow cronjob checked, a stuck process cancelled safely | 30 minutes |
+| [Preloading caches](preloading-caches.md) | A site warmed from Setup > Preload and from the shell, a dry run read, a run followed and its broken links and image aliases read, the cron line installed, the address of a siteaccess checked | 15 minutes |
+| [Workflows](workflows.md) | An approval before publishing set up with its trigger, every waiting process read in words on Setup > Workflow processes, the workflow cronjob checked, a stuck process cancelled safely, the triggers and workflow groups read and a group removed knowing what goes with it | 30 minutes |
 | [Maintenance mode](maintenance-mode.md) | The site taken offline for a window with a message, an expected end and testers let through, the preview checked, the site brought back from the page and from a shell, the usual lock-outs solved | 20 minutes |
 | [Security and audit](security-and-audit.md) | The hardening checked, roles that give only what is needed, the audit trail read, debug output for your address only | 30 minutes |
+| [The settings page](settings-page.md) | Where every INI value comes from read on Setup > Ini settings with its override chain, a setting found in every file, two siteaccesses compared, a value changed and seen in effect on PHP-FPM and Velocity, secrets kept masked | 20 minutes |
+| [RSS feeds](rss-feeds.md) | Every export and import read on the redesigned RSS page with its address, sources, items and last run, the import cronjob checked, a feed removed knowing what it means for its readers | 20 minutes |
+| [Class groups](class-groups.md) | Every class group read with its classes and objects, what removing a group would remove known before it is ticked, a group removed safely | 15 minutes |
 | [Sections](sections.md) | Sections understood and seen on the redesigned pages, one created, content assigned to it, a role limited to it, a template overridden for it, an unused one removed, the usual problems solved | 30 minutes |
+| [Packages](packages.md) | Every repository and package read on Setup > Packages with its install state, size and dependencies, the installer's own packages recognised, a package downloaded, an upload checked before it is accepted, a package removed knowing what goes | 20 minutes |
+| [Sessions](sessions.md) | Who signed in recently and who is signed in now, the session handler understood, sessions searched, sorted and removed safely without signing yourself out | 15 minutes |
+| [Bookmarks](bookmarks.md) | Your bookmarks read grouped by folder with their state, found, ordered and paged, moved between folders by selecting or dragging, a folder renamed and removed knowing what happens to what is inside, the usual problems solved | 15 minutes |
+| [Collected information](collected-information.md) | The forms that collected found and sorted, their collections read and exported as CSV, collections removed after an export, the usual problems solved | 15 minutes |
+| [PDF exports](pdf-exports.md) | A PDF made of a part of the content tree, generated once or on the fly, downloaded and regenerated from the list, its form filled in without errors, an export removed knowing which file goes with it | 15 minutes |
+| [Links, URL aliases, wildcards and search statistics](urls-and-aliases.md) | Broken and unchecked links found with the objects that use them, links marked by hand, a global alias and a wildcard created and tried, the search phrases that find nothing read, the usual problems solved | 30 minutes |
 | [Object states](object-states.md) | A state group with its states, ordered and translated, content moved between states one by one and by subtree, roles that read, edit and set states by stage, a review workflow, the usual problems solved | 30 minutes |
 | [Notifications: running them and fixing problems](notifications-administrator.md) | The notification cronjob set up, the status page read, a run tried without sending mail, the usual problems solved | 30 minutes |
 | [Notifications: architecture, extending and testing](notifications-developer.md) | A custom event type and handler that mail an address, a test that keeps mail in files | 45 minutes |
@@ -78,6 +90,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Remote services and apps](remote-services-and-apps.md) | Services called from the shell and from Python, a personal API token, a portal front end | 20 minutes |
 | [Personal API keys](api-keys.md) | A key made on the site with only the scopes it needs, REST called with it from curl and Python, a key rotated and revoked; as an administrator: keys allowed for a role, every key seen and revoked, the audit read | 20 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
+| [The upgrade check](upgrade-check.md) | The files and the database compared with the release on Setup > Upgrade check, every kind of finding read and dealt with, the report downloaded, the same check run from a shell | 15 minutes |
 
 ## Road 1: editors
 

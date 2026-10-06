@@ -245,8 +245,46 @@ class eZURL extends eZPersistentObject
                                     $asObject );
     }
 
+    /**
+     * The LIKE pattern of an address search: the text between two %, its own %, _ and the escape character !
+     * escaped with !, so they match only themselves. Used with ESCAPE '!', which every SQL engine takes.
+     *
+     * @param string $search
+     * @return string
+     */
+    static function searchLikePattern( $search )
+    {
+        return '%' . strtr( (string)$search, array( '!' => '!!', '%' => '!%', '_' => '!_' ) ) . '%';
+    }
+
+    /**
+     * The ORDER BY of a listing, from the 'sort' parameter of fetchList(): 'address' (A to Z), 'checked' (most
+     * recently checked first, never checked last), 'modified' (most recently changed first) or 'id' (oldest
+     * first). Anything else gives '', the order the database chooses, which is what a listing has always had.
+     * Every order ends with the id, so a page boundary never splits rows that compare equal.
+     *
+     * @param string|null $sort
+     * @return string
+     */
+    static function listOrderSQL( $sort )
+    {
+        switch ( $sort )
+        {
+            case 'address':  return ' ORDER BY ezurl.url ASC, ezurl.id ASC';
+            case 'checked':  return ' ORDER BY ezurl.last_checked DESC, ezurl.id ASC';
+            case 'modified': return ' ORDER BY ezurl.modified DESC, ezurl.id ASC';
+            case 'id':       return ' ORDER BY ezurl.id ASC';
+        }
+        return '';
+    }
+
     /*!
      \return all registered URLs.
+
+     Parameters: as_object, is_valid (null, true or false), offset, limit, only_published, and since 6.0.15:
+     - last_checked: null (any), 'never' (never checked by the link check) or 'checked';
+     - search: text the address contains, without regard to case (only with only_published);
+     - sort: see listOrderSQL(); null keeps the order the database chooses.
     */
     static function handleList( $parameters = array(), $asCount = false )
     {
@@ -254,13 +292,19 @@ class eZURL extends eZPersistentObject
                                           'is_valid' => null,
                                           'offset' => false,
                                           'limit' => false,
-                                          'only_published' => false ),
+                                          'only_published' => false,
+                                          'last_checked' => null,
+                                          'search' => null,
+                                          'sort' => null ),
                                    $parameters );
         $asObject = $parameters['as_object'];
         $isValid = $parameters['is_valid'];
         $offset = $parameters['offset'];
         $limit = $parameters['limit'];
         $onlyPublished = $parameters['only_published'];
+        $lastChecked = in_array( $parameters['last_checked'], array( 'never', 'checked' ), true ) ? $parameters['last_checked'] : null;
+        $search = is_string( $parameters['search'] ) && trim( $parameters['search'] ) !== '' ? trim( $parameters['search'] ) : null;
+        $sort = $parameters['sort'];
         $limitArray = null;
         if ( !$asCount and $offset !== false and $limit !== false )
             $limitArray = array( 'offset' => $offset,
@@ -271,23 +315,39 @@ class eZURL extends eZPersistentObject
         {
             $conditions['is_valid'] = $isValid;
         }
+        if ( $lastChecked === 'never' )
+            $conditions['last_checked'] = 0;
+        else if ( $lastChecked === 'checked' )
+            $conditions['last_checked'] = array( '>', 0 );
         if ( count( $conditions ) == 0 )
             $conditions = null;
 
         if ( $onlyPublished )  // Only fetch published urls
         {
+            $db = eZDB::instance();
             $conditionQuery = "";
             if ( $isValid !== null )
             {
                 $isValid = (int) $isValid;
                 $conditionQuery = " AND ezurl.is_valid=$isValid ";
             }
-            $db = eZDB::instance();
+            if ( $lastChecked === 'never' )
+                $conditionQuery .= " AND ezurl.last_checked = 0 ";
+            else if ( $lastChecked === 'checked' )
+                $conditionQuery .= " AND ezurl.last_checked > 0 ";
+            if ( $search !== null && $db->databaseName() !== 'mongo' )
+                $conditionQuery .= " AND LOWER( ezurl.url ) LIKE LOWER( '" . $db->escapeString( self::searchLikePattern( $search ) ) . "' ) ESCAPE '!' ";
             $cObjAttrVersionColumn = eZPersistentObject::getShortAttributeName( $db, eZURLObjectLink::definition(), 'contentobject_attribute_version' );
 
             if ( $db->databaseName() === 'mongo' )
             {
                 $isValidFilter = ( $isValid !== null ) ? [ 'is_valid' => (int) $isValid ] : [];
+                if ( $lastChecked === 'never' )
+                    $isValidFilter['last_checked'] = 0;
+                else if ( $lastChecked === 'checked' )
+                    $isValidFilter['last_checked'] = [ '$gt' => 0 ];
+                if ( $search !== null )
+                    $isValidFilter['url'] = [ '$regex' => preg_quote( $search ), '$options' => 'i' ];
                 $pipeline = [
                     [ '$match' => $isValidFilter ],
                     [ '$lookup' => [
@@ -324,12 +384,20 @@ class eZURL extends eZPersistentObject
                         'is_valid'      => [ '$first' => '$is_valid' ],
                         'last_checked'  => [ '$first' => '$last_checked' ],
                         'last_modified' => [ '$first' => '$last_modified' ],
+                        'created'       => [ '$first' => '$created' ],
+                        'modified'      => [ '$first' => '$modified' ],
                     ]],
                     [ '$project' => [ '_id' => 0, 'id' => '$_id',
                         'url' => 1, 'original_url_md5' => 1, 'is_valid' => 1,
-                        'last_checked' => 1, 'last_modified' => 1,
+                        'last_checked' => 1, 'last_modified' => 1, 'created' => 1, 'modified' => 1,
                     ]],
                 ];
+                $mongoSorts = array( 'address'  => [ 'url' => 1, 'id' => 1 ],
+                                     'checked'  => [ 'last_checked' => -1, 'id' => 1 ],
+                                     'modified' => [ 'modified' => -1, 'id' => 1 ],
+                                     'id'       => [ 'id' => 1 ] );
+                if ( !$asCount && is_string( $sort ) && isset( $mongoSorts[$sort] ) )
+                    $pipeline[] = [ '$sort' => $mongoSorts[$sort] ];
                 if ( $asCount )
                 {
                     $countPipeline = $pipeline;
@@ -381,7 +449,7 @@ class eZURL extends eZPersistentObject
                                                          AND ezcontentobject_version.contentobject_id = ezcontentobject_attribute.contentobject_id
                                                          AND ezcontentobject_version.version          = ezcontentobject_attribute.version
                                                          AND ezcontentobject_version.status           = " . eZContentObjectVersion::STATUS_PUBLISHED . " )
-                             $conditionQuery";
+                             $conditionQuery" . self::listOrderSQL( $sort );
 
                 if ( !$offset && !$limit )
                 {
@@ -423,8 +491,14 @@ class eZURL extends eZPersistentObject
             }
             else
             {
+                $plainSorts = array( 'address'  => array( 'url' => 'asc', 'id' => 'asc' ),
+                                     'checked'  => array( 'last_checked' => 'desc', 'id' => 'asc' ),
+                                     'modified' => array( 'modified' => 'desc', 'id' => 'asc' ),
+                                     'id'       => array( 'id' => 'asc' ) );
                 return eZPersistentObject::fetchObjectList( eZURL::definition(),
-                                                            null, $conditions, null, $limitArray,
+                                                            null, $conditions,
+                                                            is_string( $sort ) && isset( $plainSorts[$sort] ) ? $plainSorts[$sort] : null,
+                                                            $limitArray,
                                                             $asObject );
             }
         }

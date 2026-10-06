@@ -31,7 +31,7 @@ class Compare extends \Exponential\Runnable\ModuleView
         $module = $Params['Module'];
         $packageName = $Params['PackageName'];
 
-        $package = \eZPackage::fetch( $packageName );
+        $package = \eZPackageRequestGuard::isSafeName( $packageName ) ? \eZPackage::fetch( $packageName ) : false;
         if ( !is_object( $package ) )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         if ( !$package->attribute( 'can_read' ) )

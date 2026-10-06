@@ -3,7 +3,9 @@
  * How the cache preloader (expPreloadRunner) decides what to request, without requesting anything: the links it
  * takes from a page (same host, same site, no files, no module or admin paths, no in-page anchors), how it writes an
  * address so one page is fetched once, which siteaccess prefixes it knows, and the referrers and problems it keeps
- * for its closing report.
+ * for its closing report. Only the page's own markup is read: nothing inside <script>, <template>, <style> or
+ * comments, no value that holds a quote, a JavaScript or template expression or whitespace, and nothing of
+ * Velocity's /Q/ panel.
  *
  * No database, no network: the private helpers are called directly.
  *
@@ -70,6 +72,65 @@ class expPreloadRunnerLinksTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $expected, self::call( $this->runner(), 'normalise', array( $url ) ) );
     }
 
+    /** Links and images in scripts, templates, styles and comments are not the page's: only its own markup counts. */
+    public function testOnlyThePagesOwnMarkupIsRead()
+    {
+        $html = '<a href="/real">real</a>'
+              . '<script>var row = \'<a href="/\' + esc(p.path) + \'">\' + x + \'</a>\'; var y = "<a href=\'/also-in-script\'>";</script>'
+              . '<script type="text/template"><a href="/in-script-template">t</a></script>'
+              . '<template><a href="/in-template">t</a><img src="/in-template.jpg"></template>'
+              . '<style>a[href="/in-style"] { color: red }</style>'
+              . '<!-- <a href="/in-comment">c</a> -->'
+              . '<a class="x" href=\'/single-quoted\'>s</a> <a href=/unquoted>u</a> <A HREF="/upper">U</A>'
+              . '<img alt="x" src="/real.jpg"><img src="/b.png" />';
+        $runner = $this->runner();
+        $this->assertSame( array( 'https://k1e.example.invalid/real', 'https://k1e.example.invalid/single-quoted',
+                                  'https://k1e.example.invalid/unquoted', 'https://k1e.example.invalid/upper' ),
+                           self::call( $runner, 'linksFrom', array( $html, 'https://k1e.example.invalid/', 'https://k1e.example.invalid' ) ) );
+        $this->assertSame( array( 'https://k1e.example.invalid/real.jpg', 'https://k1e.example.invalid/b.png' ),
+                           self::call( $runner, 'imagesFrom', array( $html, 'https://k1e.example.invalid/', 'https://k1e.example.invalid' ) ) );
+    }
+
+    public static function notAnAddressProvider()
+    {
+        return array(
+            'string concatenation' => array( "/' + esc(p.path) + '" ),
+            'concatenation without spaces' => array( "/Q/'+logs+'" ),
+            'a quote' => array( "/a'b" ),
+            'a double quote, entity encoded' => array( '/a&quot;b' ),
+            'template literal' => array( '/x/${item.path}' ),
+            'mustache' => array( '/x/{{ path }}' ),
+            'braces' => array( '/x/{path}' ),
+            'whitespace inside' => array( '/two words' ),
+            'a tab inside' => array( "/a\tb" ),
+            'a backtick' => array( '/a`b' ),
+            'markup' => array( '/a<b' ),
+        );
+    }
+
+    /** Values that hold a JavaScript or template expression, quotes or whitespace are not followed, outside scripts too. */
+    #[\PHPUnit\Framework\Attributes\DataProvider('notAnAddressProvider')]
+    public function testValuesThatAreNoAddressAreDropped( $value )
+    {
+        $html = '<a href="' . str_replace( '"', '&quot;', $value ) . '">x</a><a href="/kept">k</a>'
+              . '<img src="' . str_replace( '"', '&quot;', $value ) . '">';
+        $this->assertSame( array( 'https://k1e.example.invalid/kept' ),
+                           self::call( $this->runner(), 'linksFrom', array( $html, 'https://k1e.example.invalid/', 'https://k1e.example.invalid' ) ) );
+        $this->assertSame( array(), self::call( $this->runner(), 'imagesFrom', array( $html, 'https://k1e.example.invalid/', 'https://k1e.example.invalid' ) ) );
+    }
+
+    /** Velocity's /Q/ panel is never crawled, however it is linked. */
+    public function testVelocityPanelIsNotCrawled()
+    {
+        $html = '<a href="/Q/dashboard">d</a><a href="/Q/phpinfo">p</a><a href="/Q/metrics">m</a><a href="/k1e_site/Q/panel">p</a>'
+              . '<a href="https://k1e.example.invalid/Q/">q</a><a href="/Quiz">quiz</a>'
+              . '<img src="/Q/icon-48.png"><img src="/k1e_site/Q/logo.svg"><img src="/Quiz.png">';
+        $this->assertSame( array( 'https://k1e.example.invalid/Quiz' ),
+                           self::call( $this->runner(), 'linksFrom', array( $html, 'https://k1e.example.invalid/', 'https://k1e.example.invalid' ) ) );
+        $this->assertSame( array( 'https://k1e.example.invalid/Quiz.png' ),
+                           self::call( $this->runner(), 'imagesFrom', array( $html, 'https://k1e.example.invalid/', 'https://k1e.example.invalid' ) ) );
+    }
+
     public function testLinksTakenFromAPage()
     {
         $html = '<a href="/news">News</a> <a class="x" href="/news/">again</a> <a href="about">relative</a>'
@@ -118,6 +179,9 @@ class expPreloadRunnerLinksTest extends PHPUnit\Framework\TestCase
             array( '/user/register', false ), array( '/k1e_site/visual/menu', true ), array( '/unknown_prefix/visual/menu', false ),
             array( '/a/collapse-12', true ), array( '/a/debug-end', true ), array( '/news/stats', true ), array( '/settingsx', false ),
             array( '/healthy-eating', false ),
+            // Velocity's own panel, with or without a siteaccess prefix; a path that only begins with Q is content
+            array( '/Q/dashboard', true ), array( '/Q/panel', true ), array( '/Q', true ), array( '/k1e_site/Q/metrics', true ),
+            array( '/Quarterly-report', false ), array( '/q/lower-case', false ),
         );
     }
 
@@ -167,7 +231,7 @@ class expPreloadRunnerLinksTest extends PHPUnit\Framework\TestCase
         $clean = $this->runner();
         self::call( $clean, 'report' );
         $this->assertSame( array( 'report', 'No broken links were found.', array( 'broken' => array() ) ), end( $this->said ) );
-        $this->assertSame( array( 'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0 ), $clean->counts() );
+        $this->assertSame( array( 'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0, 'images' => 0, 'images_broken' => 0 ), $clean->counts() );
     }
 
     public function testSizesAndShortening()

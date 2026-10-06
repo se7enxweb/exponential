@@ -34,6 +34,9 @@ cancelled or resumed to make them.
 - **Cancel...** on a process asks first and says what will happen; confirmed, the workflow stops, a pending version
   becomes a draft again, an approval request is closed and the process is removed. No content is deleted.
 - An empty list is normal: a process exists only while a workflow waits.
+- **Setup > Triggers** shows every operation in words with the workflow it runs, those not set, and those needing
+  attention ([section 11](#11-the-trigger-list-page)); **Setup > Workflows** shows each group with its workflows,
+  their triggers and waiting processes, and asks before removing a group ([section 12](#12-the-workflow-group-list-page)).
 
 ## Contents
 
@@ -47,6 +50,8 @@ cancelled or resumed to make them.
 - [8. From the shell](#8-from-the-shell)
 - [9. Troubleshooting](#9-troubleshooting)
 - [10. Worked examples](#10-worked-examples)
+- [11. The trigger list page](#11-the-trigger-list-page)
+- [12. The workflow group list page](#12-the-workflow-group-list-page)
 - [References](#references)
 
 ## 1. Workflows, events, triggers and processes
@@ -115,7 +120,7 @@ the version through. Press **OK** to store the workflow.
 ### 3.3 Connect it with a trigger
 
 Setup > Triggers lists every operation that can start a workflow, with the connection type *before* or *after*.
-In the row **content / publish / before**, choose *Approval before publishing* and press **Apply changes**. One
+In the row **Before publishing content** (`content/publish`, before), choose *Approval before publishing* and press **Apply changes**. One
 workflow per trigger: to run several, put a *Multiplexer* event in the triggered workflow.
 
 *Before* holds the operation back until the workflow is done; *after* runs the workflow once the operation has
@@ -461,8 +466,56 @@ SELECT id, workflow_id, status, event_position, event_status, user_id, created, 
 2. Setup > Workflow processes: the status bar must name the part with `workflow.php` and say it is scheduled.
 3. With `exp:collaborationsampledata`, three waiting processes appear; `--remove` takes them away again.
 
+## 11. The trigger list page
+
+Setup > Triggers (`/trigger/list`) says which workflow runs on which operation, and changes it.
+
+- **The overview** counts the possible triggers (every operation of `workflow.ini [OperationSettings]
+  AvailableOperationList`, before and after), those that run a workflow, those not set, the processes waiting in
+  the triggered workflows, and those needing attention.
+- **Find a trigger** and **Show** (All, Run a workflow, Not set, Need attention) filter the rows.
+- The rows are grouped by module. Each says when it runs in words ("Before publishing content") with
+  `content/publish` and before or after, has the select that chooses its workflow, and under **Runs now** the
+  workflow (a link), its number of events, *Disabled* when it is, and its waiting processes (a link to Workflow
+  processes). A trigger without a workflow says **Not set**; a row whose select is empty says no workflow can run
+  there yet (a workflow is offered only when all its events allow the operation).
+- **Need attention**: a trigger whose workflow was removed (*Removed workflow*), or whose workflow the select does not
+  offer any more (an event no longer allows the operation). The select then keeps that workflow as an extra choice
+  "(not offered here)", so **Apply changes** does not drop it unless you choose another.
+- **Apply changes** stores every select. A changed select is highlighted and counted before you press it; afterwards
+  the page says how many triggers changed, or that nothing had changed. A change applies to the next operation;
+  waiting processes keep their workflow.
+- **Triggers this list no longer offers** (shown only when there are any): triggers stored for an operation that is
+  no longer in AvailableOperationList. They do not run. Add the operation back to use them, or tick them and
+  **Remove selected**; the workflow stays.
+
+## 12. The workflow group list page
+
+Setup > Workflows (`/workflow/grouplist`) lists the workflow groups. A group only keeps workflows together; when a
+workflow runs is decided by the triggers.
+
+- **The overview** counts groups, workflows, enabled workflows, workflows run by a trigger, waiting processes, and
+  workflows in no group.
+- Each group is a card with its workflows in a table: the workflow (a link), *Disabled*, the other groups it is
+  also in, the triggers that run it in words, its waiting processes, its number of events and when it was last
+  changed. **Last change** is the newest change of the group or its workflows. **Removing it** says what removing
+  the group does.
+- **Remove selected** asks first. The confirmation lists, per group, each workflow and what happens to it:
+  **Removed** (it is in no other group; its events, both versions and its trigger go with it) or **Stays** (it
+  remains in the groups named). It warns when removed workflows are run by triggers, which go too, and when processes
+  wait in them; cancel those first on Workflow processes. **Remove N groups** removes them; **Cancel** changes
+  nothing.
+- Changed on 6 October 2026: a workflow that is also in another group is no longer removed with the group, a
+  disabled workflow is no longer left behind without a group, and the events of a removed workflow go with it.
+  This is what Remove does in a group's workflow list as well.
+
 ## References
 
+- The trigger list: `kernel/private/classes/views/trigger/list.php` (`ListView::rows()`, `orphans()`, `summary()`),
+  `design/admin4/templates/trigger/list.tpl`; the workflow group list:
+  `kernel/private/classes/views/workflow/grouplist.php` (`Grouplist::removalPlan()`, `overview()`, `removeGroups()`),
+  `design/admin4/templates/workflow/grouplist.tpl` and `confirmremovegroup.tpl` (the same files in `design/admin`);
+  test `tests/tests/kernel/classes/expAdminListsRedesignTest.php` (no database).
 - The page: `design/admin4/templates/workflow/processlist.tpl` (the same file in `design/admin`) and
   `kernel/private/classes/views/workflow/processlist.php`; tests `tests/tests/kernel/classes/eZWorkflowProcessListPageTest.php`
   (no database), `eZWorkflowProcessGroupingTest.php` and `eZWorkflowProcessListLiveTest.php`.

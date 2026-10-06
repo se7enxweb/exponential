@@ -152,6 +152,15 @@ class EditExport extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'rss_export', $rssExport );
         $tpl->setVariable( 'rss_export_id', $rssExportID );
 
+        // The address readers subscribe to, as the RSS list shows it: the public site of the export's siteaccess.
+        $feedURL = '';
+        if ( $rssExport instanceof \eZRSSExport && (string)$rssExport->attribute( 'access_url' ) !== '' )
+        {
+            $siteAccess = (string)$rssExport->attribute( 'site_access' );
+            $feedURL = \eZRSSExport::publicSiteURL( $siteAccess !== '' ? $siteAccess : false ) . '/rss/feed/' . $rssExport->attribute( 'access_url' );
+        }
+        $tpl->setVariable( 'rss_feed_url', $feedURL );
+
         // BC for old templates
         $tpl->setVariable( 'validaton', !$valid );
         // New validation handling

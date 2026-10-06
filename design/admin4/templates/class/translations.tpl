@@ -1,105 +1,47 @@
-{def $translations=$class.prioritized_languages
-     $translations_count=$translations|count}
+{* The translations of a class, on the class page: view or edit one, set the main language, remove the ticked
+   ones (class/translation asks first). Field and button names (LanguageID[], InitialLanguageID,
+   RemoveTranslationButton, UpdateInitialLanguageButton, ContentClassID, ContentClassLanguageCode) are unchanged.
+   The same file is in design/admin and design/admin4. *}
+{def $translations = $class.prioritized_languages
+     $translations_count = $translations|count}
 
 <form name="translationsform" method="post" action={'class/translation'|ezurl}>
 <input type="hidden" name="ContentClassID" value="{$class.id}" />
 <input type="hidden" name="ContentClassLanguageCode" value="{$language_code|wash}" />
 
-<div class="context-block">
-
-{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-
-<h2 class="context-title">{'Translations (%translations)'|i18n( 'design/admin/class/view',, hash( '%translations', $translations_count ) )}</h2>
-
-
-
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
-
-<div class="block">
-<fieldset>
-<legend>{'Existing languages'|i18n( 'design/admin/class/view' )}</legend>
-
-<table class="list" cellspacing="0">
+<section class="exp-section" aria-labelledby="class-view-translations">
+<div class="exp-section-head">
+    <h2 class="exp-h2" id="class-view-translations">{'Translations (%translations)'|i18n( 'design/admin/class/view',, hash( '%translations', $translations_count ) )}</h2>
+    <p>{'The class name, description and attribute names in each language. The main language cannot be removed.'|i18n( 'design/admin/class/view' )}</p>
+</div>
+<div class="exp-table-wrap">
+<table class="exp-table">
+<thead><tr>
+    <th scope="col"><span class="exp-sr">{'Select'|i18n( 'design/admin/class/classlist' )}</span></th>
+    <th scope="col">{'Language'|i18n( 'design/admin/class/view' )}</th>
+    <th scope="col">{'Locale'|i18n( 'design/admin/class/view' )}</th>
+    <th scope="col">{'Main'|i18n( 'design/admin/class/view' )}</th>
+    <th scope="col"><span class="exp-sr">{'Edit'|i18n( 'design/admin/class/view' )}</span></th>
+</tr></thead>
+<tbody>
+{foreach $translations as $translation}
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/class/view' )}" title="{'Invert selection.'|i18n( 'design/admin/class/view' )}" onclick="ezjs_toggleCheckboxes( document.translationsform, 'LanguageID[]' ); return false;"/></th>
-    <th>{'Language'|i18n( 'design/admin/class/view' )}</th>
-    <th>{'Locale'|i18n( 'design/admin/class/view' )}</th>
-    <th class="tight">{'Main'|i18n( 'design/admin/class/view' )}</th>
-    <th class="tight">&nbsp;</th>
+    <td><input type="checkbox" name="LanguageID[]" value="{$translation.id}"{if $translation.id|eq( $class.initial_language_id )} disabled="disabled"{/if} aria-label="{$translation.name|wash}" /></td>
+    <td><img src="{$translation.locale|flag_icon}" width="18" height="12" alt="" />&nbsp;<a href={concat( 'class/view/', $class.id, '/(language)/', $translation.locale )|ezurl} title="{'View translation.'|i18n( 'design/admin/class/view' )}">{if eq( $translation.locale, $language_code )}<strong>{$translation.name|wash}</strong>{else}{$translation.name|wash}{/if}</a></td>
+    <td><code>{$translation.locale|wash}</code></td>
+    <td><input type="radio"{if $translation.id|eq( $class.initial_language_id )} checked="checked"{/if} name="InitialLanguageID" value="{$translation.id}" aria-label="{'Use these radio buttons to select the desired main language.'|i18n( 'design/admin/class/view' )}" /></td>
+    <td><a class="exp-btn exp-btn-small" href={concat( 'class/edit/', $class.id, '/(language)/', $translation.locale )|ezurl} title="{'Edit in <%language_name>.'|i18n( 'design/admin/class/view',, hash( '%language_name', $translation.locale_object.intl_language_name ) )|wash}">{'Edit'|i18n( 'design/admin/class/view' )}</a></td>
 </tr>
-
-{section var=Translations loop=$translations sequence=array( bglight, bgdark )}
-
-<tr class="{$Translations.sequence}">
-
-{* Remove. *}
-<td>
-    <input type="checkbox" name="LanguageID[]" value="{$Translations.item.id}"{if $Translations.item.id|eq($class.initial_language_id)} disabled="disabled"{/if} />
-</td>
-
-{* Language name. *}
-<td>
-<img src="{$Translations.item.locale|flag_icon}" width="18" height="12" alt="{$Translations.item.locale}" />
-&nbsp;
-{if eq( $Translations.item.locale, $language_code )}
-<b><a href={concat( 'class/view/', $class.id, '/(language)/', $Translations.item.locale )|ezurl} title="{'View translation.'|i18n( 'design/admin/class/view' )}">{$Translations.item.name}</a></b>
-{else}
-<a href={concat( 'class/view/', $class.id, '/(language)/', $Translations.item.locale )|ezurl} title="{'View translation.'|i18n( 'design/admin/class/view' )}">{$Translations.item.name}</a>
-{/if}
-</td>
-
-{* Locale code. *}
-<td>{$Translations.item.locale}</td>
-
-{* Main. *}
-<td>
-
-<input type="radio"{if $Translations.item.id|eq($class.initial_language_id)} checked="checked"{/if} name="InitialLanguageID" value="{$Translations.item.id}" title="{'Use these radio buttons to select the desired main language.'|i18n( 'design/admin/class/view' )}" />
-
-</td>
-
-{* Edit. *}
-<td>
-
-<a href={concat( 'class/edit/', $class.id, '/(language)/', $Translations.item.locale )|ezurl}><img src={'edit.gif'|ezimage} width="16" height="16" alt="{'Edit in <%language_name>.'|i18n( 'design/admin/class/view',, hash( '%language_name', $Translations.item.locale_object.intl_language_name ) )|wash}" title="{'Edit in <%language_name>.'|i18n( 'design/admin/class/view',, hash( '%language_name', $Translations.item.locale_object.intl_language_name ) )|wash}" /></a>
-
-</td>
-
-</tr>
-
-{/section}
+{/foreach}
+</tbody>
 </table>
-
-<div class="block">
-<div class="button-left">
-    {if $translations_count|gt( 1 )}
-    <input class="button" type="submit" name="RemoveTranslationButton" value="{'Remove selected'|i18n( 'design/admin/class/view' )}" title="{'Remove selected languages from the list above.'|i18n( 'design/admin/class/view' )}" />
-    {else}
-    <input class="button-disabled" type="submit" name="RemoveTranslationButton" value="{'Remove selected'|i18n( 'design/admin/class/view' )}" title="{'There is no removable language.'|i18n( 'design/admin/class/view' )}" disabled="disabled" />
-    {/if}
 </div>
-
-<div class="button-right">
-    {if $translations_count|gt( 1 )}
-    <input class="button" type="submit" name="UpdateInitialLanguageButton" value="{'Set main'|i18n( 'design/admin/class/view' )}" title="{'Select the desired main language using the radio buttons above then click this button to store the setting.'|i18n( 'design/admin/class/view' )}" />
-    {else}
-    <input class="button-disabled" type="submit" name="_Disabled" value="{'Set main'|i18n( 'design/admin/class/view' )}" disabled="disabled" title="{'You cannot change the main language because the object is not translated to any other languages.'|i18n( 'design/admin/class/view' )}" />
-    {/if}
+<div class="exp-bottombar">
+    <div class="exp-actions">
+        <button class="exp-btn exp-btn-outline-danger" type="submit" name="RemoveTranslationButton" value="1" title="{'Remove selected languages from the list above.'|i18n( 'design/admin/class/view' )}"{if $translations_count|le( 1 )} disabled="disabled"{/if}>{'Remove selected'|i18n( 'design/admin/class/view' )}</button>
+        <button class="exp-btn" type="submit" name="UpdateInitialLanguageButton" value="1" title="{'Select the desired main language using the radio buttons above then click this button to store the setting.'|i18n( 'design/admin/class/view' )}"{if $translations_count|le( 1 )} disabled="disabled"{/if}>{'Set main'|i18n( 'design/admin/class/view' )}</button>
+    </div>
 </div>
-
-<div class="break"></div>
-</div>
-</fieldset>
-
-</div>
-
-{* DESIGN: Content END *}</div></div></div>
-
-</div>
-
+</section>
 </form>
-
-{undef $translations
-       $translations_count}
+{undef $translations $translations_count}
