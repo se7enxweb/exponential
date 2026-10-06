@@ -3,7 +3,7 @@
     'design',             'Design'|i18n( 'design/admin/parts/visual/menu' ),
     'look_and_feel',      'Look and feel'|i18n( 'design/admin/parts/visual/menu' ),
     'template_editor',    'Template Editor'|i18n( 'design/admin/parts/visual/menu' ),
-    'menu_management',    'Menu management'|i18n( 'design/admin/parts/visual/menu' ),
+    'menu_management',    'Menus (classic)'|i18n( 'design/admin/parts/visual/menu' ),
     'toolbar_management', 'Toolbar management'|i18n( 'design/admin/parts/visual/menu' ),
     'templates',    'Templates'|i18n( 'design/admin/parts/visual/menu' ),
 )}
