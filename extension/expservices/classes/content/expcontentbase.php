@@ -66,7 +66,7 @@ abstract class expContentServiceBase extends expServiceBase
     }
 
     /** The language code to work in: the argument, else the object's initial language. */
-    protected static function languageCode( $code, eZContentObject $object = null )
+    protected static function languageCode( $code, ?eZContentObject $object = null )
     {
         if ( $code === null || $code === '' )
             return $object ? $object->attribute( 'current_language' ) : eZContentObject::defaultLanguage();

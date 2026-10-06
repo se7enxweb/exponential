@@ -56,7 +56,8 @@ $ezjscServerFunctionList = array(
     'values'=> array()
     );
 
-$iniFunctionList = eZINI::instance('ezjscore.ini')->variable( 'ezjscServer', 'FunctionList' );
+// (array): without ezjscore.ini (the extension not active, a test) the setting is false
+$iniFunctionList = (array)eZINI::instance( 'ezjscore.ini' )->variable( 'ezjscServer', 'FunctionList' );
 foreach ( $iniFunctionList as $iniFunction )
 {
     $ezjscServerFunctionList['values'][] = array(
