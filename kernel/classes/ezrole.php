@@ -782,12 +782,33 @@ class eZRole extends eZPersistentObject
         $userLimitation = false;
 
         $accessArray = array();
-        foreach ( array_keys ( $roles )  as $roleKey )
+        $prefetched = self::prefetchAccessRows( $roles );
+        try
         {
-            $accessArray = array_merge_recursive( $accessArray, $roles[$roleKey]->accessArray() );
-            if ( $roles[$roleKey]->attribute( 'limit_identifier' ) )
+            // Merged in one call: merging role by role copied the growing array for every role, which for a user
+            // with hundreds of assignments cost more than building the parts. The result is the same.
+            $parts = array();
+            foreach ( array_keys ( $roles )  as $roleKey )
             {
-                $userLimitation = true;
+                $parts[] = $roles[$roleKey]->accessArray();
+                if ( $roles[$roleKey]->attribute( 'limit_identifier' ) )
+                {
+                    $userLimitation = true;
+                }
+            }
+            if ( $parts )
+            {
+                $accessArray = array_merge_recursive( ...$parts );
+            }
+        }
+        finally
+        {
+            if ( $prefetched )
+            {
+                self::$prefetchedPolicyRows = null;
+                eZPolicy::$prefetchedLimitationRows = null;
+                eZPolicy::$prefetchedLimitArrays = array();
+                eZPolicyLimitation::$prefetchedValueRows = null;
             }
         }
 
@@ -816,6 +837,75 @@ class eZRole extends eZPersistentObject
         return $accessArray;
     }
 
+    /**
+     * Rows of ezpolicy by role id, loaded ahead by accessArrayByUserID() while it builds an access array; null when
+     * policyList() asks the database itself.
+     *
+     * @var array|null
+     */
+    public static $prefetchedPolicyRows = null;
+
+    /**
+     * Loads the policies of $roles, their limitations and the values of those in three queries, for the access array
+     * of a user, when site.ini [RoleSettings] AccessArrayPrefetch is enabled. Without it each role, policy and
+     * limitation asks the database on its own: one query for every role, policy and limitation of the user, which a
+     * user with many roles and limited policies notices each time the role cache is rebuilt. The objects are built
+     * from the rows as from the database, so the access array is the same.
+     *
+     * @param eZRole[] $roles
+     * @return bool whether the rows were loaded (and must be dropped afterwards)
+     */
+    protected static function prefetchAccessRows( array $roles )
+    {
+        $ini = eZINI::instance();
+        if ( !$roles || !$ini->hasVariable( 'RoleSettings', 'AccessArrayPrefetch' )
+             || $ini->variable( 'RoleSettings', 'AccessArrayPrefetch' ) !== 'enabled'
+             || eZDB::instance()->databaseName() === 'mongo' )
+        {
+            return false;
+        }
+
+        $roleIDs = array();
+        foreach ( $roles as $role )
+        {
+            $roleIDs[(int)$role->attribute( 'id' )] = true;
+        }
+        $policyRows = array();
+        $policyIDs = array();
+        foreach ( (array)eZPersistentObject::fetchObjectList( eZPolicy::definition(), null,
+                      array( 'role_id' => array( array_keys( $roleIDs ) ), 'original_id' => 0 ),
+                      array( 'id' => 'asc' ), null, false ) as $row )
+        {
+            $policyRows[(int)$row['role_id']][] = $row;
+            $policyIDs[] = (int)$row['id'];
+        }
+        $limitationRows = array();
+        $limitationIDs = array();
+        if ( $policyIDs )
+        {
+            foreach ( (array)eZPersistentObject::fetchObjectList( eZPolicyLimitation::definition(), null,
+                          array( 'policy_id' => array( $policyIDs ) ), array( 'id' => 'asc' ), null, false ) as $row )
+            {
+                $limitationRows[(int)$row['policy_id']][] = $row;
+                $limitationIDs[] = (int)$row['id'];
+            }
+        }
+        $valueRows = array();
+        if ( $limitationIDs )
+        {
+            foreach ( (array)eZPersistentObject::fetchObjectList( eZPolicyLimitationValue::definition(), null,
+                          array( 'limitation_id' => array( $limitationIDs ) ), array( 'id' => 'asc' ), null, false ) as $row )
+            {
+                $valueRows[(int)$row['limitation_id']][] = $row;
+            }
+        }
+
+        self::$prefetchedPolicyRows = $policyRows;
+        eZPolicy::$prefetchedLimitationRows = $limitationRows;
+        eZPolicyLimitation::$prefetchedValueRows = $valueRows;
+        return true;
+    }
+
     /*!
      Fetch access array of current role
     */
@@ -824,9 +914,15 @@ class eZRole extends eZPersistentObject
         $accessArray = array();
 
         $policies = $this->attribute( 'policies' );
+        $parts = array();
         foreach ( array_keys( $policies ) as $policyKey )
         {
-            $accessArray = array_merge_recursive( $accessArray, $policies[$policyKey]->accessArray( $ignoreLimitIdentifier ) );
+            $parts[] = $policies[$policyKey]->accessArray( $ignoreLimitIdentifier );
+        }
+        if ( $parts )
+        {
+            // In one call, as accessArrayByUserID() merges the roles
+            $accessArray = array_merge_recursive( ...$parts );
         }
 
         return $accessArray;
@@ -1136,11 +1232,23 @@ class eZRole extends eZPersistentObject
             // next time the role is opened. It is also a stable order, which a
             // database left to itself is free not to return.
             $sorting = array( 'id' => 'asc' );
-            $policies = eZPersistentObject::fetchObjectList(
-                eZPolicy::definition(),
-                null,
-                array( 'role_id' => $this->attribute( 'id' ), 'original_id' => 0 ),
-                $sorting, null, true );
+            if ( self::$prefetchedPolicyRows !== null )
+            {
+                // Rows accessArrayByUserID() loaded for all roles at once, in the same order
+                $policies = array();
+                foreach ( self::$prefetchedPolicyRows[(int)$this->attribute( 'id' )] ?? array() as $row )
+                {
+                    $policies[] = new eZPolicy( $row );
+                }
+            }
+            else
+            {
+                $policies = eZPersistentObject::fetchObjectList(
+                    eZPolicy::definition(),
+                    null,
+                    array( 'role_id' => $this->attribute( 'id' ), 'original_id' => 0 ),
+                    $sorting, null, true );
+            }
 
             if ( $this->LimitIdentifier )
             {

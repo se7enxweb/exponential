@@ -2980,7 +2980,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-0696c125d6c4a8c1093fbdd97a5a12cb  doc/changelogs/6.0/6.0.15.md
+b51886236d76bfe0f3a4c448f6e34322  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3301,6 +3301,7 @@ a544b58ffc5373f62719eb86f5a2c284  doc/features/5.90/README.md
 b4be8467e14cc6acd7f41becc1a4879f  doc/features/5.90/event.md
 97524871fd5bd5de6d1bd178f1ba6a05  doc/features/6.0/about-and-package-pages.md
 aeb5dbdd484271dbae8fc766f407e5d2  doc/features/6.0/access-and-cache-filters.md
+da7c605f3b38ffb2efabe20334418131  doc/features/6.0/access-array-prefetch.md
 c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-directories.md
 8179e76efd7b989806870487ad25c732  doc/features/6.0/admin-content-tree-top-node.md
 8807f67700e024fbcd49fd8bce10563f  doc/features/6.0/admin-links-follow-permissions.md
@@ -4985,8 +4986,8 @@ f3b29307a8a38c5f06cffb143afde12f  kernel/classes/ezpackageinstallationhandler.ph
 a2852263baec56cf69eb8d53f12b2483  kernel/classes/ezpdfexport.php
 3d3da61017eaaab0308ec6ff06cd9c83  kernel/classes/ezpendingactions.php
 8e32bdb4a112f9db4c69038409aa983f  kernel/classes/ezpersistentobject.php
-450db0a7b925dfad03f7f97c61f63305  kernel/classes/ezpolicy.php
-e71212fec1009f4cefa1e3de8d8579ac  kernel/classes/ezpolicylimitation.php
+a88952312583403fd206e7618c2d3e16  kernel/classes/ezpolicy.php
+96d78efb66a7464cc3f05b8acaec3346  kernel/classes/ezpolicylimitation.php
 fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
 93b5e7c7b368273a7ab39ff1f5ac4352  kernel/classes/ezpreferences.php
 9690558c0aab179c0a9102105f25b725  kernel/classes/ezproductcategory.php
@@ -4994,7 +4995,7 @@ fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
 6dabfe4a7a93996f8b0793801eb9e4b7  kernel/classes/ezproductcollectionitem.php
 2be8eddb0c1fde222c140d80b889bb40  kernel/classes/ezproductcollectionitemoption.php
 b3ce2fbb025a84a941f84ac41f2ad35f  kernel/classes/ezredirectmanager.php
-4557da2c8e1d9df8549e7fb93c79fcf0  kernel/classes/ezrole.php
+01b0abad18f85e83f2f5365c79892fd7  kernel/classes/ezrole.php
 e094631e523211106016c1f6ccd2021e  kernel/classes/ezrssexport.php
 2be618c5672383f41c76aabb6b47016a  kernel/classes/ezrssexportitem.php
 6ef539ffae5c45b5237f4166bb4c601a  kernel/classes/ezrssexportopmlitem.php
@@ -6379,7 +6380,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-f58f8afe9edc4dbf8d26ae270cda0870  settings/site.ini
+2bbbb1e15b04ff45d5383003a218d19b  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7123,6 +7124,7 @@ b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutO
 83ec413caa9e9402a28244439d1a438d  tests/tests/kernel/classes/eZRSSExportOPMLItemTest.php
 d9f6d3efe5a8afd75e31f0b790fa0cb7  tests/tests/kernel/classes/eZRSSExportTest.php
 3528336b2b35db6809b0fc58b8da79f7  tests/tests/kernel/classes/eZRedirectManagerSafeURITest.php
+f00800fe3634ee5e3bc8fd49e986f49c  tests/tests/kernel/classes/eZRoleAccessArrayPrefetchLiveTest.php
 a63064e47b622565a9525d6f40914936  tests/tests/kernel/classes/eZRoleAssignmentPageLiveTest.php
 be1aa0e87f92a94fba8582a57d54aca5  tests/tests/kernel/classes/eZRoleAssignmentSortTest.php
 2d3854eee9fdd39d64f775b25ee439ae  tests/tests/kernel/classes/eZRoleTest.php
@@ -7285,6 +7287,7 @@ a8422625bada666061cfc28db6f7ad0d  tests/tests/kernel/classes/permissions/eZConte
 653ab0cf04b703e90bd63800a1140092  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
 8c7cbac83c31166ea44ef268800334c2  tests/tests/kernel/classes/permissions/eZPackagePolicyTest.php
 a18d90b5610abb3def710ebc7c9f49ba  tests/tests/kernel/classes/permissions/eZPolicyLimitationLabelsAndValuesTest.php
+fc1b0c098ebbc24bbaad7515b5e75eff  tests/tests/kernel/classes/permissions/eZPolicyPrefetchedAccessArrayTest.php
 7f5b329d15b658e33c4ac3f1fab1c5c2  tests/tests/kernel/classes/permissions/eZUserAccessEvaluationTest.php
 3e9f42058b135fcc91cc433dd711eafa  tests/tests/kernel/classes/permissions/expPermissionHooksTest.php
 f72914cc79297e8160784638e10a6494  tests/tests/kernel/classes/permissions/ezpContentLimitationTest.php
