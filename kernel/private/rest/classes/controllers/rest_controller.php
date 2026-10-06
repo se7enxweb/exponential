@@ -267,6 +267,16 @@ abstract class ezpRestMvcController extends ezcMvcController
     }
 
     /**
+     * The user part of the cache ID: the id of the current user (the anonymous user shares one entry).
+     *
+     * @return int
+     */
+    protected function cacheUser()
+    {
+        return (int)eZUser::currentUserID();
+    }
+
+    /**
      * Generates unique cache ID for current request.
      *
      * The cache ID is a MD5 hash and takes into account :
@@ -274,6 +284,7 @@ abstract class ezpRestMvcController extends ezcMvcController
      *  - API Version
      *  - Controller class
      *  - Action
+     *  - The current user (results follow the user's policies)
      *  - Internal variables (passed parameters, ResponseGroups...)
      *  - Content variables (Translation...)
      *
@@ -287,7 +298,10 @@ abstract class ezpRestMvcController extends ezcMvcController
             ezpRestPrefixFilterInterface::getApiProviderName(),
             ezpRestPrefixFilterInterface::getApiVersion(),
             $routingInfos->controllerClass,
-            $routingInfos->action
+            $routingInfos->action,
+            // The answer depends on who asks: an action checks content/read and the other policies of the current
+            // user, so the result of one user must never be served to another
+            'user=' . $this->cacheUser()
         );
         // Add internal variables, caught in the URL. See ezpRestHttpRequestParser::fillVariables()
         // Also add content variables
@@ -311,6 +325,12 @@ abstract class ezpRestMvcController extends ezcMvcController
     {
         // Global switch
         if ( $this->restINI->variable( 'CacheSettings', 'ApplicationCache' ) !== 'enabled' )
+        {
+            return false;
+        }
+
+        // Only reads are kept: a cached create or delete would answer the second call without doing anything
+        if ( !in_array( $this->request->protocol, array( 'http-get', 'http-head' ), true ) )
         {
             return false;
         }
