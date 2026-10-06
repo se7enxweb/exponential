@@ -65,8 +65,13 @@ class eZBooleanType extends eZDataType
             if ( $http->hasPostVariable( $base . "_data_boolean_" . $contentObjectAttribute->attribute( "id" ) ) )
             {
                 $data = $http->postVariable( $base . "_data_boolean_" . $contentObjectAttribute->attribute( "id" ) );
-                if ( isset( $data ) )
+                if ( self::postedChecked( $data ) )
                     return eZInputValidator::STATE_ACCEPTED;
+                // "0" or "false" (a hidden field in front of the checkbox) is stored
+                // as unchecked by fetching, so it does not fill a required checkbox
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'Input required.' ) );
+                return eZInputValidator::STATE_INVALID;
             }
             else
             {
@@ -85,8 +90,13 @@ class eZBooleanType extends eZDataType
             if ( $http->hasPostVariable( $base . "_data_boolean_" . $contentObjectAttribute->attribute( "id" ) ) )
             {
                 $data = $http->postVariable( $base . "_data_boolean_" . $contentObjectAttribute->attribute( "id" ) );
-                if ( isset( $data ) )
+                if ( self::postedChecked( $data ) )
                     return eZInputValidator::STATE_ACCEPTED;
+                // "0" or "false" (a hidden field in front of the checkbox) is stored
+                // as unchecked by fetching, so it does not fill a required checkbox
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'Input required.' ) );
+                return eZInputValidator::STATE_INVALID;
             }
             else
             {
@@ -108,7 +118,7 @@ class eZBooleanType extends eZDataType
         if ( $http->hasPostVariable( $base . "_data_boolean_" . $contentObjectAttribute->attribute( "id" ) ))
         {
             $data = $http->postVariable( $base . "_data_boolean_" . $contentObjectAttribute->attribute( "id" ) );
-            if ( isset( $data ) && $data !== '0' && $data !== 'false' )
+            if ( self::postedChecked( $data ) )
                 $data = 1;
             else
                 $data = 0;
@@ -134,7 +144,7 @@ class eZBooleanType extends eZDataType
         if ( $http->hasPostVariable( $base . "_data_boolean_" . $contentObjectAttribute->attribute( "id" ) ))
         {
             $data = $http->postVariable( $base . "_data_boolean_" . $contentObjectAttribute->attribute( "id" ) );
-            if ( isset( $data ) && $data !== '0' && $data !== 'false' )
+            if ( self::postedChecked( $data ) )
                 $data = 1;
             else
                 $data = 0;
@@ -186,6 +196,16 @@ class eZBooleanType extends eZDataType
         // ("yes" read back as 0 on MySQL, and stayed "yes" on SQLite).
         $contentObjectAttribute->setAttribute( 'data_int', self::booleanFromString( $string ) );
         return true;
+    }
+
+    /*!
+     \private
+     \return true when the posted value of the checkbox means checked: posted at
+     all, and not "0" or "false" (what a hidden field in front of it sends).
+    */
+    static function postedChecked( $data )
+    {
+        return isset( $data ) && $data !== '0' && $data !== 'false';
     }
 
     /*!

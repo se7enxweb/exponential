@@ -154,7 +154,7 @@ abstract class eZDatatypeTestCase extends PHPUnit\Framework\TestCase
      *
      * @return eZDatatypeTestObjectAttribute
      */
-    protected function objectAttribute( $dataTypeString, array $classFields = array(), array $fields = array() )
+    protected function objectAttribute( $dataTypeString, $classFields = array(), array $fields = array() )
     {
         $classAttribute = $classFields instanceof eZContentClassAttribute ? $classFields : $this->classAttribute( $dataTypeString, $classFields );
         $row = array_merge( array( 'id' => 4711, 'contentobject_id' => 812, 'version' => 1, 'language_code' => 'eng-GB',
