@@ -103,6 +103,8 @@ class Edit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'view_parameters', $UserParameters );
         $tpl->setVariable( 'site_access', $GLOBALS['eZCurrentAccess'] );
         $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module ) );
+        // the overview of the account page: state, groups, roles, hints and the pages to go on to (expUserAccountOverview)
+        $tpl->setVariable( 'account_overview', \expUserAccountOverview::fromUser( $userAccount, \eZUser::currentUser() )->toArray() );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:user/edit.tpl" );

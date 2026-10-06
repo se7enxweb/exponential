@@ -179,6 +179,31 @@ Expected: with a wrong code the sign-in is refused and the audit shows the faile
 
 Depth: [two-factor and social login](../features/6.0/extensions/sevenx_authentication_2fa.md) (every setting, social login, adding a provider).
 
+## 6. Check an account on its account page (2 minutes)
+
+**My account** (`/user/edit`) is your own account page; `/user/edit/<id>` is another user's, for an administrator
+who may edit that user.
+
+1. Open `/user/edit`. The top card shows the name, login, e-mail address, groups, roles (linked to the role pages
+   when you may read them), the last sign-in with the number of sign-ins, and when the password was last changed
+   (from the audit index; "Not recorded" when the audit has no such event). A badge says whether the account is
+   **Active**, **Disabled** or **Locked** (too many failed sign-ins).
+2. Read the hints above it, the most pressing first: the account is disabled or locked, failed sign-ins since the
+   last good one, two-step sign-in is off, the password is stored with an old method (changing it stores it with
+   the current one), the password was changed more than a year ago, the account never signed in.
+3. Go on from a card: **Profile** (content edit of the user), **Password**, **Account settings** (enable,
+   disable, reset failed sign-ins), **Two-step sign-in** (`/user2fa/setup`, when the extension is active and the
+   user class has its field), **API keys**, **Bookmarks**, **Notifications** and **E-mail preferences**. Only the
+   cards you may open are shown: bookmarks, notifications and two-step setup are always your own, so they are not
+   on another user's page; there **API keys** opens `/oauthadmin/keys/(user)/<id>` and **E-mail preferences** the
+   administration page of that user.
+4. **Cancel** goes back to the page you came from.
+
+Expected: an administrator sees every card on their own page; an editor without the `user/password` or
+`user/preferences` policy sees no Password or Account settings card. For developers: the page is
+`design/admin4/templates/user/edit.tpl` (the same file in `design/admin`), its style `user/exp_style.tpl`, and the
+overview `expUserAccountOverview` (tested in `tests/tests/kernel/classes/user/expUserAccountOverviewTest.php`).
+
 ## Checklist
 
 - [ ] Five security headers present, dot files and PHP files answer 404
