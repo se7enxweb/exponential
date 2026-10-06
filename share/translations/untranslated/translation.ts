@@ -2695,6 +2695,46 @@
         <source>Toggle selection</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>You may edit this object, but not read it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The list shows every version of the object. You can compare and copy its published, archived and rejected versions and your own; a draft or pending version of someone else only with the policy content/versionread for it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The versions were not compared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not read version %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1 was not copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not read this version, so you cannot copy it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not edit the translation %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some versions were not removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not removed: %1. You may not remove these versions, or they are published or part of a workflow that is still running.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You cannot copy version #%version_number because you may not read it.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/multiedit</name>
