@@ -6,6 +6,7 @@
 </div>
 
 {include uri='design:mailpreferences/parts/account_link.tpl' context='profile'}
+{include uri='design:apikey/parts/account_link.tpl'}
 
 <div class="block">
   <label>{"Username"|i18n("design/standard/user")}</label><div class="labelbreak"></div>

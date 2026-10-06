@@ -232,8 +232,16 @@ class ezxFormToken
         // makes the page say so itself.
         //
         // It replaces the kernel's Cache-Control, which is sent before the
-        // output filters run, and keeps its no-cache, must-revalidate.
-        if ( !headers_sent() )
+        // output filters run, and keeps its no-cache, must-revalidate. A view
+        // that said no-store (a page that shows a secret once, such as a new
+        // API key) is stricter still and keeps its own header.
+        $noStore = false;
+        foreach ( headers_list() as $sentHeader )
+        {
+            if ( stripos( $sentHeader, 'Cache-Control:' ) === 0 && stripos( $sentHeader, 'no-store' ) !== false )
+                $noStore = true;
+        }
+        if ( !headers_sent() && !$noStore )
             header( 'Cache-Control: private, no-cache, must-revalidate' );
 
         // Inject token for programmatical use (also system default for historical reasons)

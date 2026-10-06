@@ -479,3 +479,40 @@ CREATE TABLE expmail_suppression (
 );
 ALTER TABLE ONLY expmail_suppression ADD CONSTRAINT expmail_suppression_pkey PRIMARY KEY ( id );
 CREATE UNIQUE INDEX expmail_suppression_hash ON expmail_suppression USING btree ( email_hash );
+
+-- Personal API keys (doc/guides/api-keys.md).
+--
+-- One row per key a user made on the API access page (apikey/list). key_prefix is the
+-- public part of the key (expk_<id>); the secret is never stored, only secret_hash,
+-- HMAC-SHA-256 of the secret keyed with the row's own salt. scopes is a space separated
+-- list of the scope ids of rest.ini [ApiKeySettings]. expires, last_used and revoked are
+-- timestamps (0 = never / not yet). Created only when the table is missing (a DO block,
+-- PostgreSQL 9.0 or newer), so running this block again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'expapikey' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'expapikey_id_seq' ) THEN
+            CREATE SEQUENCE expapikey_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE expapikey (
+          created integer DEFAULT 0 NOT NULL,
+          created_by integer DEFAULT 0 NOT NULL,
+          expires integer DEFAULT 0 NOT NULL,
+          id integer DEFAULT nextval('expapikey_id_seq'::text) NOT NULL,
+          key_prefix character varying(40) DEFAULT ''::character varying NOT NULL,
+          last_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+          last_used integer DEFAULT 0 NOT NULL,
+          name character varying(255) DEFAULT ''::character varying NOT NULL,
+          revoked integer DEFAULT 0 NOT NULL,
+          revoked_by integer DEFAULT 0 NOT NULL,
+          salt character varying(64) DEFAULT ''::character varying NOT NULL,
+          scopes character varying(255) DEFAULT ''::character varying NOT NULL,
+          secret_hash character varying(128) DEFAULT ''::character varying NOT NULL,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY expapikey ADD CONSTRAINT expapikey_pkey PRIMARY KEY ( id );
+        CREATE UNIQUE INDEX expapikey_prefix ON expapikey USING btree ( key_prefix );
+        CREATE INDEX expapikey_user ON expapikey USING btree ( user_id );
+    END IF;
+END
+$$;

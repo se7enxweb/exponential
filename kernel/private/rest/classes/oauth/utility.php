@@ -92,6 +92,35 @@ class ezpOauthUtility extends ezpRestModel
     protected static function getTokenFromAuthorizationHeader()
     {
         $token = null;
+        $authHeader = self::getAuthorizationHeader();
+
+        if ( isset( $authHeader ) )
+        {
+            // "OAuth <token>" (draft 10) and "Bearer <token>" (RFC 6750). A personal API key (expk_...) is not an
+            // OAuth token: expApiKeyRest takes it from the header, so it is never looked up as one here.
+            $tokenPattern = "/^(?P<authscheme>OAuth|Bearer)\s(?P<token>[a-zA-Z0-9]+)$/i";
+            $match = preg_match( $tokenPattern, $authHeader, $m );
+            if ( $match > 0 )
+            {
+                $token = $m['token'];
+            }
+        }
+
+
+        return $token;
+    }
+
+    /**
+     * The raw value of the request's Authorization header, or null when there is none.
+     *
+     * PHP does not expose the Authorization header unless it uses the 'Basic' or 'Digest' schemes, so it is read
+     * from the raw Apache headers, else from HTTP_AUTHORIZATION (CGI, FastCGI, and servers that emulate
+     * apache_request_headers() for the CLI SAPI without carrying it).
+     *
+     * @return string|null
+     */
+    public static function getAuthorizationHeader()
+    {
         $authHeader = null;
         if ( function_exists( 'apache_request_headers' ) )
         {
@@ -112,18 +141,7 @@ class ezpOauthUtility extends ezpRestModel
             $authHeader = $_SERVER[self::AUTH_CGI_HEADER_NAME];
         }
 
-        if ( isset( $authHeader ) )
-        {
-            $tokenPattern = "/^(?P<authscheme>OAuth)\s(?P<token>[a-zA-Z0-9]+)$/";
-            $match = preg_match( $tokenPattern, $authHeader, $m );
-            if ( $match > 0 )
-            {
-                $token = $m['token'];
-            }
-        }
-
-
-        return $token;
+        return is_string( $authHeader ) ? $authHeader : null;
     }
 
     /**

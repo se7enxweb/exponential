@@ -47,6 +47,12 @@ class ezpRestAuthController extends ezcMvcController
                 $res->variables['error'] = ezpOauthErrorType::INVALID_TOKEN;
             break;
 
+            case expApiKeyAuthFilter::STATUS_RATE_LIMITED:
+                // a personal API key over [ApiKeySettings] RateLimitPerMinute
+                $res->status = new expRestRateLimitedStatus( 60 - ( time() % 60 ) );
+                $res->variables['error'] = 'rate_limited';
+                return $res;
+
             case ezpOauthFilter::STATUS_TOKEN_INSUFFICIENT_SCOPE:
                 $status = new ezpOauthRequired( ezpOauthRequired::DEFAULT_REALM, ezpOauthErrorType::INSUFFICIENT_SCOPE );
                 $res->variables['error'] = ezpOauthErrorType::INSUFFICIENT_SCOPE;

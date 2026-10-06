@@ -19,6 +19,14 @@ class ezpRestOauthAuthenticationStyle extends ezpRestAuthenticationStyle impleme
         // Fail if too many components are required (according to spec, later)
         // Validate components
 
+        // A personal API key ("Authorization: Bearer expk_...") is checked by its own filter (expApiKeyRest).
+        if ( class_exists( 'expApiKeyRest' ) )
+        {
+            $keyAuth = expApiKeyRest::authentication( $request );
+            if ( $keyAuth !== null )
+                return $keyAuth;
+        }
+
         $token = ezpOauthUtility::getToken( $request );
         $cred = new ezcAuthenticationIdCredentials( $token );
         $oauthFilter = new ezpOauthFilter();
@@ -36,7 +44,7 @@ class ezpRestOauthAuthenticationStyle extends ezpRestAuthenticationStyle impleme
             $statusCode = null;
             foreach ( $aStatuses as $status )
             {
-                if ( key( $status ) === 'ezpOauthFilter' )
+                if ( key( $status ) === 'ezpOauthFilter' || key( $status ) === 'expApiKeyAuthFilter' )
                 {
                     $statusCode = current( $status );
                     break;
@@ -50,6 +58,14 @@ class ezpRestOauthAuthenticationStyle extends ezpRestAuthenticationStyle impleme
         }
         else
         {
+            if ( class_exists( 'expApiKeyRest' ) && expApiKeyRest::current() !== null )
+            {
+                $user = expApiKeyRest::current()->owner();
+                if ( !$user instanceof eZUser )
+                    throw new ezpUserNotFoundException( expApiKeyRest::current()->attribute( 'user_id' ) );
+                return $user;
+            }
+
             $user = eZUser::fetch( ezpOauthFilter::$tokenInfo->user_id );
             if ( !$user instanceof eZUser )
             {

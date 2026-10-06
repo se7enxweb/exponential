@@ -46,6 +46,10 @@ class ezpRestAuthConfiguration
             throw new ezpRestHTTPSRequiredException();
         }
 
+        // Nothing of a personal API key of an earlier request of this worker is kept.
+        if ( class_exists( 'expApiKeyRest' ) )
+            expApiKeyRest::reset();
+
         // 0. Check if the given route needs authentication.
         if ( !$this->shallAuthenticate() )
         {
@@ -82,6 +86,19 @@ class ezpRestAuthConfiguration
                 eZUser::setCurrentlyLoggedInUser( $user, $userID );
             }
             $this->filter->setUser( $user );
+
+            // 3. A personal API key may run only the routes its scopes cover, within its owner's rights.
+            if ( class_exists( 'expApiKeyRest' ) && expApiKeyRest::current() !== null )
+            {
+                $reason = expApiKeyRest::authorize( expApiKeyRest::current(), $this->info, $this->req, $user );
+                if ( $reason !== null )
+                {
+                    $this->req->variables['ezpAuth_redirUrl'] = $this->req->uri;
+                    $this->req->variables['ezpAuth_reason'] = ezpOauthFilter::STATUS_TOKEN_INSUFFICIENT_SCOPE;
+                    $this->req->uri = eZINI::instance( 'rest.ini' )->variable( 'System', 'ApiPrefix' ) . '/auth/oauth/login';
+                    return new ezcMvcInternalRedirect( $this->req );
+                }
+            }
         }
         else if ( $user instanceof ezcMvcInternalRedirect )
         {

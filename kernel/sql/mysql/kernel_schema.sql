@@ -1208,6 +1208,28 @@ CREATE TABLE ezprest_token (
 
 
 
+CREATE TABLE expapikey (
+  created int(11) NOT NULL default '0',
+  created_by int(11) NOT NULL default '0',
+  expires int(11) NOT NULL default '0',
+  id int(11) NOT NULL auto_increment,
+  key_prefix varchar(40) NOT NULL default '',
+  last_ip varchar(64) NOT NULL default '',
+  last_used int(11) NOT NULL default '0',
+  name varchar(255) NOT NULL default '',
+  revoked int(11) NOT NULL default '0',
+  revoked_by int(11) NOT NULL default '0',
+  salt varchar(64) NOT NULL default '',
+  scopes varchar(255) NOT NULL default '',
+  secret_hash varchar(128) NOT NULL default '',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  UNIQUE KEY expapikey_prefix (key_prefix),
+  KEY expapikey_user (user_id)
+) ENGINE=InnoDB;
+
+
+
 
 
 CREATE TABLE ezproductcategory (

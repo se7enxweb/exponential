@@ -343,3 +343,31 @@ CREATE TABLE expmail_suppression (
   PRIMARY KEY ( id ),
   UNIQUE KEY expmail_suppression_hash ( email_hash )
 ) ENGINE=InnoDB;
+
+-- Personal API keys (doc/guides/api-keys.md).
+--
+-- One row per key a user made on the API access page (apikey/list). key_prefix is the
+-- public part of the key (expk_<id>); the secret is never stored, only secret_hash,
+-- HMAC-SHA-256 of the secret keyed with the row's own salt. scopes is a space separated
+-- list of the scope ids of rest.ini [ApiKeySettings]. expires, last_used and revoked are
+-- timestamps (0 = never / not yet). Written with IF NOT EXISTS, so running this
+-- statement again changes nothing.
+CREATE TABLE IF NOT EXISTS expapikey (
+  created int(11) NOT NULL DEFAULT '0',
+  created_by int(11) NOT NULL DEFAULT '0',
+  expires int(11) NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  key_prefix varchar(40) NOT NULL DEFAULT '',
+  last_ip varchar(64) NOT NULL DEFAULT '',
+  last_used int(11) NOT NULL DEFAULT '0',
+  name varchar(255) NOT NULL DEFAULT '',
+  revoked int(11) NOT NULL DEFAULT '0',
+  revoked_by int(11) NOT NULL DEFAULT '0',
+  salt varchar(64) NOT NULL DEFAULT '',
+  scopes varchar(255) NOT NULL DEFAULT '',
+  secret_hash varchar(128) NOT NULL DEFAULT '',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY expapikey_prefix ( key_prefix ),
+  KEY expapikey_user ( user_id )
+) ENGINE=InnoDB;

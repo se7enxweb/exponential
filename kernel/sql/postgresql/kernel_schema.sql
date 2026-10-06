@@ -755,6 +755,15 @@ CREATE SEQUENCE ezprest_clients_id_seq
 
 
 
+CREATE SEQUENCE expapikey_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 
 
 
@@ -2361,6 +2370,25 @@ CREATE TABLE ezprest_token (
 
 
 
+CREATE TABLE expapikey (
+    created integer DEFAULT 0 NOT NULL,
+    created_by integer DEFAULT 0 NOT NULL,
+    expires integer DEFAULT 0 NOT NULL,
+    id integer DEFAULT nextval('expapikey_id_seq'::text) NOT NULL,
+    key_prefix character varying(40) DEFAULT ''::character varying NOT NULL,
+    last_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+    last_used integer DEFAULT 0 NOT NULL,
+    name character varying(255) DEFAULT ''::character varying NOT NULL,
+    revoked integer DEFAULT 0 NOT NULL,
+    revoked_by integer DEFAULT 0 NOT NULL,
+    salt character varying(64) DEFAULT ''::character varying NOT NULL,
+    scopes character varying(255) DEFAULT ''::character varying NOT NULL,
+    secret_hash character varying(128) DEFAULT ''::character varying NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
 
 
 
@@ -3771,6 +3799,14 @@ CREATE INDEX token_client_id ON ezprest_token USING btree (client_id);
 
 
 
+CREATE UNIQUE INDEX expapikey_prefix ON expapikey USING btree (key_prefix);
+
+
+
+CREATE INDEX expapikey_user ON expapikey USING btree (user_id);
+
+
+
 
 
 
@@ -4810,6 +4846,11 @@ ALTER TABLE ONLY ezprest_clients
 
 ALTER TABLE ONLY ezprest_token
     ADD CONSTRAINT ezprest_token_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY expapikey
+    ADD CONSTRAINT expapikey_pkey PRIMARY KEY (id);
 
 
 

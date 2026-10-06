@@ -306,3 +306,30 @@ CREATE TABLE expmail_suppression (
   reason varchar(30) NOT NULL DEFAULT ''
 );
 CREATE UNIQUE INDEX expmail_suppression_hash ON expmail_suppression ( email_hash );
+
+-- Personal API keys (doc/guides/api-keys.md).
+--
+-- One row per key a user made on the API access page (apikey/list). key_prefix is the
+-- public part of the key (expk_<id>); the secret is never stored, only secret_hash,
+-- HMAC-SHA-256 of the secret keyed with the row's own salt. scopes is a space separated
+-- list of the scope ids of rest.ini [ApiKeySettings]. expires, last_used and revoked are
+-- timestamps (0 = never / not yet). Written with IF NOT EXISTS, so running these
+-- statements again changes nothing.
+CREATE TABLE IF NOT EXISTS expapikey (
+  created integer NOT NULL DEFAULT 0,
+  created_by integer NOT NULL DEFAULT 0,
+  expires integer NOT NULL DEFAULT 0,
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  key_prefix varchar(40) NOT NULL DEFAULT '',
+  last_ip varchar(64) NOT NULL DEFAULT '',
+  last_used integer NOT NULL DEFAULT 0,
+  name varchar(255) NOT NULL DEFAULT '',
+  revoked integer NOT NULL DEFAULT 0,
+  revoked_by integer NOT NULL DEFAULT 0,
+  salt varchar(64) NOT NULL DEFAULT '',
+  scopes varchar(255) NOT NULL DEFAULT '',
+  secret_hash varchar(128) NOT NULL DEFAULT '',
+  user_id integer NOT NULL DEFAULT 0
+);
+CREATE UNIQUE INDEX IF NOT EXISTS expapikey_prefix ON expapikey ( key_prefix );
+CREATE INDEX IF NOT EXISTS expapikey_user ON expapikey ( user_id );

@@ -6495,17 +6495,147 @@ $schema = array (
           0 => 'id',
         ),
       ),
-      'token_client_id' => 
+      'token_client_id' =>
       array (
         'type' => 'non-unique',
-        'fields' => 
+        'fields' =>
         array (
           0 => 'client_id',
         ),
       ),
     ),
   ),
-  'ezproductcategory' => 
+  'expapikey' =>
+  array (
+    'name' => 'expapikey',
+    'fields' =>
+    array (
+      'created' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'created_by' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'expires' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'id' =>
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'key_prefix' =>
+      array (
+        'length' => 40,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'last_ip' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'last_used' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'name' =>
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'revoked' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'revoked_by' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'salt' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'scopes' =>
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'secret_hash' =>
+      array (
+        'length' => 128,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'user_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'id',
+        ),
+      ),
+      'expapikey_prefix' =>
+      array (
+        'type' => 'unique',
+        'fields' =>
+        array (
+          0 => 'key_prefix',
+        ),
+      ),
+      'expapikey_user' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'user_id',
+        ),
+      ),
+    ),
+  ),
+  'ezproductcategory' =>
   array (
     'name' => 'ezproductcategory',
     'fields' => 

@@ -700,6 +700,22 @@ CREATE TABLE `ezprest_token` (
 ,  `user_id` integer NOT NULL DEFAULT '0'
 ,  PRIMARY KEY (`id`)
 );
+CREATE TABLE `expapikey` (
+  `created` integer NOT NULL DEFAULT '0'
+,  `created_by` integer NOT NULL DEFAULT '0'
+,  `expires` integer NOT NULL DEFAULT '0'
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `key_prefix` varchar(40) NOT NULL DEFAULT ''
+,  `last_ip` varchar(64) NOT NULL DEFAULT ''
+,  `last_used` integer NOT NULL DEFAULT '0'
+,  `name` varchar(255) NOT NULL DEFAULT ''
+,  `revoked` integer NOT NULL DEFAULT '0'
+,  `revoked_by` integer NOT NULL DEFAULT '0'
+,  `salt` varchar(64) NOT NULL DEFAULT ''
+,  `scopes` varchar(255) NOT NULL DEFAULT ''
+,  `secret_hash` varchar(128) NOT NULL DEFAULT ''
+,  `user_id` integer NOT NULL DEFAULT '0'
+);
 CREATE TABLE `ezproductcategory` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
 ,  `name` varchar(255) NOT NULL DEFAULT ''
@@ -1208,6 +1224,8 @@ CREATE INDEX "idx_expbookmark_folder_expbookmark_folder_user" ON "expbookmark_fo
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_from" ON "ezcontentobject_link" (`from_contentobject_id`,`from_contentobject_version`,`contentclassattribute_id`);
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_to_co_id" ON "ezcontentobject_link" (`to_contentobject_id`);
 CREATE INDEX "idx_ezprest_token_token_client_id" ON "ezprest_token" (`client_id`);
+CREATE UNIQUE INDEX expapikey_prefix ON expapikey ( key_prefix );
+CREATE INDEX expapikey_user ON expapikey ( user_id );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_sid" ON "ezorder_status_history" (`status_id`);
