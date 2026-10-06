@@ -53,7 +53,8 @@ class eZStepCreateSites extends eZStepInstaller
      * Modules the editor siteaccess refuses (404): site administration and developer tools, not editing.
      */
     const EDITOR_DISABLED_MODULES = array( 'setup', 'visual', 'explayouts_ui', 'explayouts_ui_api', 'git_manager',
-                                           'xrowextract', 'bccie', 'syndication' );
+                                           'xrowextract', 'bccie', 'syndication', 'audit', 'oauthadmin', 'class', 'role',
+                                           'section', 'state', 'workflow', 'trigger', 'package', 'rss' );
 
     /**
      * Top menu tabs the editor siteaccess hides; each one's module is also in EDITOR_DISABLED_MODULES, or is a
