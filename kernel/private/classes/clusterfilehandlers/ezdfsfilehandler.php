@@ -513,7 +513,7 @@ class eZDFSFileHandler implements eZClusterFileHandlerInterface, ezpDatabaseBase
                     if ( $this->useStaleCache && $this->metaData === false )
                     {
                         // configuration says we have to generate our own version
-                        if ( $this->nonExistantStaleCacheHandling[ $this->cacheType ] == 'generate' )
+                        if ( self::$nonExistantStaleCacheHandling[ $this->cacheType ] == 'generate' )
                         {
                             // no cache available, but a generate callback exists, skip to generation
                             if ( $generateCallback !== false )

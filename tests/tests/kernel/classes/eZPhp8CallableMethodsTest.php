@@ -104,6 +104,8 @@ class eZPhp8CallableMethodsTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( '$this->metaData = ', $source,
             'metaData is served by __get(); assigning it creates a public property that hides the reload' );
         $this->assertMatchesRegularExpression( '/public \$uniqueName\b/', $source );
+        $this->assertStringNotContainsString( '$this->nonExistantStaleCacheHandling', $source,
+            'a static property read through $this is undefined (a warning) and never matches the setting' );
     }
 
     public function testViewsDoNotRemovePersistentObjectsStatically()
