@@ -148,7 +148,13 @@ When no address reaches the siteaccess, the run uses `/<name>` (when `uri` is in
 run and the output warn that the pages warmed may be those of another siteaccess. Check the `SiteURL` and the match
 settings of that siteaccess.
 
-A `SiteURL` that already ends in the prefix (`demo.example/site`) does not get it again.
+A `SiteURL` that already ends in the prefix (`demo.example/site`) does not get it again. The site a run stays in is
+everything below the path of `SiteURL` plus the prefix (`/site/...` there, `/bold/...` for a uri prefix, the whole
+host but other siteaccesses' prefixes for a site matched by host); links to `/admin/...` and other siteaccesses are not
+followed.
+
+The section pages of phase 1 are the root, the sections of `URLTranslationKeyword`, and the top level pages the
+starting pages link to (`/site/fitness`, `/fitness`).
 
 ## 5. Runs, the lock and the files
 
