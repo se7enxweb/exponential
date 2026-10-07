@@ -369,6 +369,78 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertTrue( method_exists( 'eZSiteAccess', 'resetSitePaths' ) );
     }
 
+    /**
+     * The pool requires the warm-up inside a function (Q_WebServer_Pool), so the variables of
+     * bin/php/velocity-warmup.php are not globals. Run that way, the warm-up reads the site's own maintenance
+     * marker -- a site in maintenance renders nothing -- and its final sweep removes what the warm-up added but
+     * keeps the globals the server had before it: those of the snapshot the entry script hands over.
+     */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState(false)]
+    public function testTheWarmUpRunAsThePoolRunsItKeepsTheServersGlobalsAndReadsItsRoot()
+    {
+        $root = sys_get_temp_dir() . '/x1velocitywarmup' . substr( uniqid(), -6 );
+        mkdir( $root . '/var', 0777, true );
+        $installation = dirname( __DIR__, 4 );
+        file_put_contents( $root . '/autoload.php', "<?php\nrequire_once " . var_export( $installation . '/autoload.php', true ) . ";\n" );
+        // In maintenance (as index.php reads it): the warm-up renders nothing. Not found, it would render the front page.
+        file_put_contents( $root . '/var/maintenance.json', json_encode( array( 'reason' => 'test' ) ) );
+        $cwd = getcwd();
+        putenv( 'VELOCITY_WARMUP_URLS' );
+        $GLOBALS['x1VelocityServerOwn'] = 'kept';
+        try
+        {
+            chdir( $root );
+            $run = static function ( $file )
+            {
+                require $file;
+            };
+            $run( $installation . '/bin/php/velocity-warmup.php' );
+
+            $this->assertSame( 'kept', $GLOBALS['x1VelocityServerOwn'] ?? null );
+            $this->assertArrayHasKey( '_SERVER', $GLOBALS );
+            foreach ( array( '__warmupGlobalsBefore', 'root', 'urls', 'kernel', 'clearPrefixes', 'expVelocityWarmup' ) as $name )
+                $this->assertArrayNotHasKey( $name, $GLOBALS, $name );
+        }
+        finally
+        {
+            chdir( $cwd );
+            @unlink( $root . '/var/maintenance.json' );
+            @unlink( $root . '/autoload.php' );
+            @rmdir( $root . '/var' );
+            @rmdir( $root );
+        }
+    }
+
+    /** What the entry script hands over: the snapshot is taken out of $GLOBALS; without a root, the working directory */
+    public function testTheWarmUpReadsWhatItsEntryScriptHandsOver()
+    {
+        $had = array_key_exists( 'root', $GLOBALS );
+        $old = $had ? $GLOBALS['root'] : null;
+        try
+        {
+            $GLOBALS['__warmupGlobalsBefore'] = array( '_SERVER' => 0 );
+            $this->assertSame( array( '_SERVER' => 0 ), \Exponential\Command\Kernel\VelocityWarmup::globalsBefore() );
+            $this->assertArrayNotHasKey( '__warmupGlobalsBefore', $GLOBALS );
+            $this->assertNull( \Exponential\Command\Kernel\VelocityWarmup::globalsBefore() );
+
+            $GLOBALS['root'] = '/srv/site';
+            $this->assertSame( '/srv/site', \Exponential\Command\Kernel\VelocityWarmup::warmupRoot() );
+            foreach ( array( null, '', 5 ) as $value )
+            {
+                $GLOBALS['root'] = $value;
+                $this->assertSame( getcwd(), \Exponential\Command\Kernel\VelocityWarmup::warmupRoot() );
+            }
+        }
+        finally
+        {
+            if ( $had )
+                $GLOBALS['root'] = $old;
+            else
+                unset( $GLOBALS['root'] );
+        }
+    }
+
     /** Only a plain directory inside the installation may widen the list */
     public function testACacheVarDirThatIsNoPlainDirectoryIsNotServed()
     {

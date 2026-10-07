@@ -41,6 +41,13 @@ class VelocityWarmup extends \Exponential\Runnable\Command
 {
     public function run()
     {
+        // What bin/php/velocity-warmup.php hands over through $GLOBALS: the pool requires that file inside a
+        // function, so its own variables are not globals. The globals that existed before the kernel was loaded
+        // (the server's own), taken out of $GLOBALS so the sweep at the end does not see them as one of its own;
+        // and the document root, the working directory when none was handed over.
+        $__warmupGlobalsBefore = self::globalsBefore();
+        $GLOBALS['root'] = self::warmupRoot();
+
         // the script's variables were globals; functions of the script read them with "global"
         foreach ( array( 'clearPrefixes', 'e', 'kernel', 'result', 'root', 'uri', 'urls', 'warmUrls' ) as $__name )
             ${$__name} = &$GLOBALS[$__name];
@@ -78,7 +85,9 @@ class VelocityWarmup extends \Exponential\Runnable\Command
         // from the browser that is on it. $GLOBALS['expVelocityWarmup'] tells the
         // wizard a render is the warm-up (it starts no run and no lease then).
         if (is_file($root . '/var/maintenance.json')) {
-            require_once $root . '/kernel/classes/expmaintenance.php';
+            if (!class_exists('expMaintenance')) {
+                require_once $root . '/kernel/classes/expmaintenance.php';
+            }
             if (\expMaintenance::state($root) !== false) {
                 $urls = array();
             }
@@ -368,9 +377,13 @@ class VelocityWarmup extends \Exponential\Runnable\Command
                 $__warmupKeep[(string)$__g] = true;
             }
         }
-        foreach (array_keys($GLOBALS) as $__g) {
-            if (!isset($__warmupGlobalsBefore[$__g]) && !isset($__warmupKeep[$__g])) {
-                unset($GLOBALS[$__g]);
+        // Without the snapshot of the server's globals nothing is swept: removing every global but the kept ones
+        // would take the server's own with them (only the named list above is cleared then).
+        if ($__warmupGlobalsBefore !== null) {
+            foreach (array_keys($GLOBALS) as $__g) {
+                if (!isset($__warmupGlobalsBefore[$__g]) && !isset($__warmupKeep[$__g])) {
+                    unset($GLOBALS[$__g]);
+                }
             }
         }
 
@@ -378,6 +391,35 @@ class VelocityWarmup extends \Exponential\Runnable\Command
         if ($__warmupFailure !== null) {
             throw $__warmupFailure;
         }
+    }
+
+    /**
+     * The globals that existed before the kernel was loaded, as bin/php/velocity-warmup.php recorded them in
+     * $GLOBALS['__warmupGlobalsBefore'] (names as keys), taken out of $GLOBALS; null when none were recorded.
+     *
+     * @return array|null
+     */
+    public static function globalsBefore()
+    {
+        $before = isset($GLOBALS['__warmupGlobalsBefore']) && is_array($GLOBALS['__warmupGlobalsBefore'])
+            ? $GLOBALS['__warmupGlobalsBefore'] : null;
+        unset($GLOBALS['__warmupGlobalsBefore']);
+        return $before;
+    }
+
+    /**
+     * The document root of the warm-up: $GLOBALS['root'] as bin/php/velocity-warmup.php set it, or the working
+     * directory (the pool's --root, where that script looked for autoload.php).
+     *
+     * @return string
+     */
+    public static function warmupRoot()
+    {
+        if (isset($GLOBALS['root']) && is_string($GLOBALS['root']) && $GLOBALS['root'] !== '') {
+            return $GLOBALS['root'];
+        }
+        $cwd = getcwd();
+        return is_string($cwd) ? $cwd : '.';
     }
 }
 
