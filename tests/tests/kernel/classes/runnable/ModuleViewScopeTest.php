@@ -10,6 +10,8 @@
  *          $scope['Params']['Module'] is there either way
  *  MS-03 — A view of the kernel that reads $scope['Module'] without a fallback belongs to a module with
  *          'variable_params' => true, the only case in which it is set
+ *  MS-04 — settings/view and settings/edit answer through the module of $scope['Params'], with and without
+ *          'variable_params': the "Select" button redirects, a file the installation does not list is not available
  *
  * No database.
  *
@@ -46,8 +48,50 @@ class ezpTestModuleViewScopeProbe extends \Exponential\Runnable\ModuleView
     }
 }
 
+/** A module that records what a view asks of it */
+class ezpTestModuleViewScopeModule
+{
+    public $calls = array();
+
+    public function redirectTo( $uri )
+    {
+        $this->calls[] = 'redirectTo ' . $uri;
+        return 'redirected';
+    }
+
+    public function handleError( $errorCode, $errorType )
+    {
+        $this->calls[] = 'handleError ' . $errorCode . ' ' . $errorType;
+        return 'error';
+    }
+
+    public function isCurrentAction( $name )
+    {
+        return false;
+    }
+
+    public function hasActionParameter( $name )
+    {
+        return false;
+    }
+}
+
 class ModuleViewScopeTest extends PHPUnit\Framework\TestCase
 {
+    private $post;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->post = $_POST;
+    }
+
+    protected function tearDown(): void
+    {
+        $_POST = $this->post;
+        parent::tearDown();
+    }
+
     private static function root()
     {
         return dirname( __DIR__, 5 );
@@ -122,6 +166,35 @@ class ModuleViewScopeTest extends PHPUnit\Framework\TestCase
             $source = (string)file_get_contents( self::root() . '/' . $definition );
             $this->assertMatchesRegularExpression( '/\$Module\s*=\s*array\s*\(([^;]*?)[\'"]variable_params[\'"]\s*=>\s*true\b[^;]*\);/s', $source,
                                "$relative reads \$scope['Module'], which $definition does not set: read \$scope['Params']['Module']" );
+        }
+    }
+
+    /** @return array the settings view's or edit view's answer and what it asked of the module */
+    private static function runSettings( $view, $paramsAsVar, array $post )
+    {
+        $_POST = $post;
+        $module = new ezpTestModuleViewScopeModule();
+        $params = array( 'Module' => $module, 'SiteAccess' => false, 'INIFile' => false, 'Block' => false,
+                         'Setting' => false, 'Placement' => false, 'UserParameters' => array() );
+        $result = eZProcess::run( self::root() . '/kernel/settings/' . $view . '.php', $params, $paramsAsVar );
+        return array( $result, $module->calls );
+    }
+
+    /** MS-04 */
+    public function testSettingsViewsAnswerThroughTheModuleOfTheParameters()
+    {
+        foreach ( array( true, false ) as $paramsAsVar )
+        {
+            $label = $paramsAsVar ? 'with variable_params' : 'without variable_params';
+
+            list( $result, $calls ) = self::runSettings( 'view', $paramsAsVar, array( 'ChangeINIFile' => '1', 'selectedINIFile' => 'site.ini' ) );
+            $this->assertSame( 'redirected', $result, "settings/view $label" );
+            $this->assertCount( 1, $calls );
+            $this->assertMatchesRegularExpression( '#^redirectTo /settings/view/[^/]*/site\.ini$#', $calls[0] );
+
+            list( $result, $calls ) = self::runSettings( 'edit', $paramsAsVar, array( 'INIFile' => 'no-such-file.ini' ) );
+            $this->assertSame( 'error', $result, "settings/edit $label" );
+            $this->assertSame( array( 'handleError ' . eZError::KERNEL_NOT_AVAILABLE . ' kernel' ), $calls );
         }
     }
 }
