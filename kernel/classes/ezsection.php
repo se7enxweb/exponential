@@ -66,6 +66,13 @@ class eZSection extends eZPersistentObject
     {
         global $eZContentSectionObjectCache;
 
+        // No id (a template asking for the section of an object it does not have): no section, no query,
+        // and no null array offset in the cache below
+        if ( $sectionID === null || $sectionID === '' || $sectionID === false )
+        {
+            return null;
+        }
+
         // If the object given by its id is not cached or should be returned as array
         // then we fetch it from the DB (objects are always cached as arrays).
         if ( !isset( $eZContentSectionObjectCache[$sectionID] ) or $asObject === false )
