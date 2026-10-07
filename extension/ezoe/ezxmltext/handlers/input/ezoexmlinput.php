@@ -1183,6 +1183,16 @@ class eZOEXMLInput extends eZXMLInputHandler
                 $output .= $this->inputSectionXML( $tdNode, $currentSectionLevel, $tdSectionLevel );
             }break;
 
+            case '#text' :
+            {
+                // The indentation of XML stored with line breaks (imported content) between the cell and its
+                // paragraphs: nothing to show. Text of its own in a cell is not valid there and is reported.
+                if ( trim( $tdNode->nodeValue ) !== '' )
+                {
+                    eZDebug::writeError( "Unsupported tag at this level: $tagName", __METHOD__ );
+                }
+            }break;
+
             default :
             {
                 eZDebug::writeError( "Unsupported tag at this level: $tagName", __METHOD__ );

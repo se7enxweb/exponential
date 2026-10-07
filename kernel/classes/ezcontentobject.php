@@ -5238,8 +5238,14 @@ class eZContentObject extends eZPersistentObject
             if ( $functionName == 'edit' )
             {
                 // Check if we have 'create' access under the main parent of an object that was never published,
-                // whatever version it is at (a rejected first version is edited as version 2 and later)
-                return (int)$this->draftCreateAccess( $originalLanguage, $userID );
+                // whatever version it is at (a rejected first version is edited as version 2 and later).
+                // When it is denied and the access list was asked for, the list is returned like for any
+                // other function: the access denied page reads it as an array.
+                $draftCreateAccess = (int)$this->draftCreateAccess( $originalLanguage, $userID );
+                if ( $draftCreateAccess || $returnAccessList === false )
+                {
+                    return $draftCreateAccess;
+                }
             }
 
             if ( $returnAccessList === false )

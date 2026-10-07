@@ -57,7 +57,16 @@ class ezpRestRouter extends ezcMvcRouter
      */
     public function getRoutingInformation()
     {
-        $routes = $this->createRoutes();
+        try
+        {
+            $routes = $this->createRoutes();
+        }
+        catch ( ezpRestProviderNotFoundException $e )
+        {
+            // The first element of the path names no API provider (/api/v1/config, /api/fs/read): there is no
+            // route for it, a 404 like any other unknown path, not an uncaught exception and a 500
+            throw new ezcMvcRouteNotFoundException( $this->request );
+        }
         $allowed = null;
         foreach ( $routes as $route )
         {
