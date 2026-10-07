@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-a12077dd0db3dcfe4b893277013a4824  doc/changelogs/6.0/6.0.15.md
+9d05407567676b2522443d77eeabdba3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4169,10 +4169,10 @@ a816b6bff7b91f94b91681927dd330eb  extension/ezoe/classes/expoeurlexception.php
 53ac72fee1421196ea7adbfd9b001b1a  extension/ezoe/classes/expoeurlfetcher.php
 4c23a9e19cae5d4d9a92c33f630045c9  extension/ezoe/classes/ezoeserverfunctions.php
 d8765d028ea543e378067d65c0eac1bd  extension/ezoe/classes/runnable/views/ezoe/atd_rpc.php
-42d8f20d22cb4dc369aa2198035e619c  extension/ezoe/classes/runnable/views/ezoe/dialog.php
+462c3fd3414f8a067b7a19f08026ebae  extension/ezoe/classes/runnable/views/ezoe/dialog.php
 0473e9fbd4329be2c8e9ba010b2f1925  extension/ezoe/classes/runnable/views/ezoe/embed_view.php
 75dd302bd7c6f2f9e57a7da7a479cb22  extension/ezoe/classes/runnable/views/ezoe/load.php
-7e00654ceec83e801f365cdd4095a9bf  extension/ezoe/classes/runnable/views/ezoe/relations.php
+3376f3eaf3425c054fe35496c3e4d90b  extension/ezoe/classes/runnable/views/ezoe/relations.php
 3cb7ff865bd748517082efa50d4c8d8b  extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php
 dca390bb9761c002daf96504a1aa2472  extension/ezoe/classes/runnable/views/ezoe/tags.php
 4a83fd59cd77bc7207a48deab6c26538  extension/ezoe/classes/runnable/views/ezoe/upload.php
@@ -4618,7 +4618,7 @@ e957ad0751e2c0d271450a92c8ab1e64  extension/ezoe/design/standard/templates/ezoe/
 432508f8b8c2b01e6ced699e524f4abe  extension/ezoe/doc/oe5_intro.pdf
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
-760b73fe00413afcc4ad32140a4c8d9e  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
+f801e88a86700884026d37c019eba428  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
 0bf0f15f65f71fef5f7ac8851292386b  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 ec9d0894a9b5155ca5bfa598488a5854  extension/ezoe/modules/ezoe/atd_rpc.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
@@ -7013,10 +7013,12 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 02bf8c6b6d73f53dcd28b4b50eda7195  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
+5973ccb32a7ebadd3900bee754ed946a  tests/tests/extension/ezoe/expOEDialogAccessTest.php
 f6cf185c8c7b6205b83513395a280767  tests/tests/extension/ezoe/expOEEditorRegistryTest.php
 ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServicesTest.php
 1f431d2787ac5ae352d9bc4e7c3e5ef0  tests/tests/extension/ezoe/expOEEngineConfigTest.php
 8788b408ac3034b0742e9ca87316bd77  tests/tests/extension/ezoe/expOEEngineViewTest.php
+9a7f16efa0e2944384ae92ca524a9ede  tests/tests/extension/ezoe/expOEPastedStylesTest.php
 12e337e5d6b9e90a74cd6889c0936ef8  tests/tests/extension/ezoe/expOERoundTripTest.php
 10becba9add2f221837f6d4eb8cdef5e  tests/tests/extension/ezoe/expOETestCase.php
 8693268e9c25820e2d7b65e59d997ba8  tests/tests/extension/ezoe/expOEUploadRulesTest.php
