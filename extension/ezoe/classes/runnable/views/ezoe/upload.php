@@ -9,6 +9,33 @@ namespace Exponential\View\Extension\Ezoe\Ezoe
 
 class Upload extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * Whether the current user may upload into version $versionNumber of $object: an upload creates an object and
+     * makes it a relation of that version, so it is a write and needs what content/edit needs
+     * (Dialog::mayEditVersion(): a draft of the user's own, edit access in its language, not in the trash).
+     *
+     * @param \eZContentObject|null $object
+     * @param int $versionNumber
+     * @return bool
+     */
+    public static function mayUpload( $object, $versionNumber )
+    {
+        return Dialog::mayEditVersion( $object, $versionNumber );
+    }
+
+    /**
+     * Makes the uploaded object an embed relation of the version being edited ($versionNumber of $object), not of
+     * whatever version number the new object happens to have.
+     *
+     * @param \eZContentObject $object The object being edited
+     * @param int $versionNumber The version being edited
+     * @param int $newObjectID The uploaded object
+     */
+    public static function addEmbedRelation( $object, $versionNumber, $newObjectID )
+    {
+        $object->addContentObjectRelation( (int)$newObjectID, (int)$versionNumber, 0, \eZContentObject::RELATION_EMBED );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -62,9 +89,10 @@ class Upload extends \Exponential\Runnable\ModuleView
         $params    = array('dataMap' => array('image'));
 
 
-        // The version being edited goes along, so an extension can let further editors of the draft in
-        // (filter content/edit/access)
-        if ( !$object instanceof \eZContentObject || !$object->editAccess( $object->version( $objectVersion ) ) )
+        // The dialog (the form, and what the version already relates to) opens by the rule of the dialogs and edit
+        // access to the object (Dialog::mayOpenForEditing()). The version being edited goes along, so an extension can
+        // let further editors of the draft in (filter content/edit/access)
+        if ( !Dialog::mayOpenForEditing( $object, $objectVersion ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'ObjectId', '%value' => $objectID ) );
            \eZExecution::cleanExit();
@@ -77,7 +105,11 @@ class Upload extends \Exponential\Runnable\ModuleView
         if ( $http->hasPostVariable( 'uploadButton' ) || $forcedUpload )
         {
             $version   = \eZContentObjectVersion::fetchVersion( $objectVersion, $objectID );
-            if ( !$version )
+            // An upload writes into the version being edited (the new object becomes a relation of it): only into a
+            // draft of the current user's own that they may edit, as content/edit decides it (Dialog::mayEditVersion()),
+            // never into someone else's draft or a published or archived version. Checked before anything is fetched
+            // or created.
+            if ( !$version || !self::mayUpload( $object, $objectVersion ) )
             {
                 echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'ObjectVersion', '%value' => $objectVersion ) );
                 \eZExecution::cleanExit();
@@ -234,12 +266,7 @@ class Upload extends \Exponential\Runnable\ModuleView
                 $newObjectName = $newObject->attribute( 'name' );
                 $newObjectNodeID = (int)$newObject->attribute( 'main_node_id' );
 
-                $object->addContentObjectRelation(
-                    $newObjectID,
-                    $uploadVersion->attribute( 'version' ),
-                    0,
-                    \eZContentObject::RELATION_EMBED
-                );
+                self::addEmbedRelation( $object, $objectVersion, $newObjectID );
                 if ( $fetched !== false && class_exists( 'expAudit' ) )
                 {
                     \expAudit::event( 'content.ezoe.upload.url', array(

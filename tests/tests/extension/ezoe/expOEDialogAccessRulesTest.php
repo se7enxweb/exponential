@@ -1,7 +1,8 @@
 <?php
 /**
- * Who may open the dialogs of the online editor (ezoe/dialog, ezoe/relations), without the database:
- * Exponential\View\Extension\Ezoe\Ezoe\Dialog::mayOpen() and mayEditVersion().
+ * Who may open the dialogs of the online editor (ezoe/dialog, ezoe/relations, ezoe/tags, ezoe/upload) and who may
+ * upload into a version, without the database: Exponential\View\Extension\Ezoe\Ezoe\Dialog::mayOpen(),
+ * mayOpenForEditing() and mayEditVersion(), Upload::mayUpload() and Upload::addEmbedRelation().
  *
  *  DA-01 - Who may read the object opens them, whatever version the address names, as before
  *  DA-02 - The creator of a draft (draft, internal draft, to be repeated) who may edit the object opens them without
@@ -14,6 +15,15 @@
  *  DA-08 - Without edit access nothing opens; a listener of content/edit/access has its say both ways
  *  DA-09 - Both views ask Dialog::mayOpen()
  *  DA-10 - The dialog the address names is a template name in design:ezoe/ only (letters, digits, "_", "-")
+ *  DA-11 - ezoe/tags and the upload dialog open by the rule of the dialogs and edit access to the object: who may
+ *          read and edit, any version, as before; who may edit but not read, their own draft only; who may read
+ *          but not edit, nothing, as before
+ *  DA-12 - An upload writes only into a draft of the user's own (mayEditVersion()): never into someone else's
+ *          draft, a published, pending or archived version, a version that is not there, an object in the trash
+ *          or a version in a language the user may not edit, also for who may read and edit the object
+ *  DA-13 - The uploaded object becomes a relation of the version being edited, not of the version number the new
+ *          object has
+ *  DA-14 - ezoe/tags and ezoe/upload ask these rules, and the upload asks before it fetches or creates anything
  *
  * The object and its versions are stand-ins whose permissions are given; the current user is a stand-in user.
  *
@@ -23,8 +33,10 @@
  */
 
 require_once dirname( __DIR__, 4 ) . '/extension/ezoe/classes/runnable/views/ezoe/dialog.php';
+require_once dirname( __DIR__, 4 ) . '/extension/ezoe/classes/runnable/views/ezoe/upload.php';
 
 use Exponential\View\Extension\Ezoe\Ezoe\Dialog;
+use Exponential\View\Extension\Ezoe\Ezoe\Upload;
 
 /** An object whose versions are given, and which can record the edit checks asked of it */
 class expOEDialogTestObject extends eZContentObject
@@ -47,6 +59,13 @@ class expOEDialogTestObject extends eZContentObject
         }
         $this->editCalls[] = array( $version, $language );
         return $this->editAnswer;
+    }
+
+    public $relationCalls = array();
+
+    function addContentObjectRelation( $toObjectID, $fromObjectVersion = false, $attributeID = 0, $relationType = eZContentObject::RELATION_COMMON )
+    {
+        $this->relationCalls[] = array( $toObjectID, $fromObjectVersion, $attributeID, $relationType );
     }
 }
 
@@ -233,6 +252,105 @@ class expOEDialogAccessRulesTest extends PHPUnit\Framework\TestCase
             $this->assertFalse( Dialog::isDialogName( $name ), var_export( $name, true ) );
         $source = file_get_contents( dirname( __DIR__, 4 ) . '/extension/ezoe/classes/runnable/views/ezoe/dialog.php' );
         $this->assertStringContainsString( 'if ( !self::isDialogName( $dialog ) )', $source );
+    }
+
+    /** DA-11 */
+    public function testTagsAndTheUploadDialogOpenByTheDialogRuleAndEditAccess()
+    {
+        // who may read and edit: any version, as before
+        $object = $this->object( 1, 1, eZContentObject::STATUS_PUBLISHED );
+        $this->addVersion( $object, 1, eZContentObjectVersion::STATUS_PUBLISHED, self::OTHER_ID );
+        $this->assertTrue( Dialog::mayOpenForEditing( $object, 1 ) );
+        $this->assertTrue( Dialog::mayOpenForEditing( $object, 7 ) );
+
+        // who may read but not edit: nothing, as before
+        $reader = $this->object( 1, 0, eZContentObject::STATUS_PUBLISHED );
+        $this->addVersion( $reader, 1, eZContentObjectVersion::STATUS_PUBLISHED, self::OTHER_ID );
+        $this->assertFalse( Dialog::mayOpenForEditing( $reader, 1 ) );
+
+        // who may edit but not read: their own draft only
+        $editor = $this->object( 0, 1 );
+        $this->addVersion( $editor, 1, eZContentObjectVersion::STATUS_PUBLISHED, self::OTHER_ID );
+        $this->addVersion( $editor, 2, eZContentObjectVersion::STATUS_DRAFT, self::EDITOR_ID );
+        $this->addVersion( $editor, 3, eZContentObjectVersion::STATUS_DRAFT, self::OTHER_ID );
+        $this->assertTrue( Dialog::mayOpenForEditing( $editor, 2 ) );
+        $this->assertFalse( Dialog::mayOpenForEditing( $editor, 1 ), 'the published version' );
+        $this->assertFalse( Dialog::mayOpenForEditing( $editor, 3 ), "someone else's draft" );
+        $this->assertFalse( Dialog::mayOpenForEditing( $editor, 99 ), 'a version that is not there' );
+
+        $this->assertFalse( Dialog::mayOpenForEditing( null, 1 ) );
+    }
+
+    /** DA-12 */
+    public function testAnUploadWritesOnlyIntoADraftOfTheUsersOwn()
+    {
+        $object = $this->object( 1, 1, eZContentObject::STATUS_PUBLISHED );
+        $this->addVersion( $object, 1, eZContentObjectVersion::STATUS_PUBLISHED, self::EDITOR_ID );
+        $this->addVersion( $object, 2, eZContentObjectVersion::STATUS_DRAFT, self::EDITOR_ID );
+        $this->addVersion( $object, 3, eZContentObjectVersion::STATUS_DRAFT, self::OTHER_ID );
+        $this->addVersion( $object, 4, eZContentObjectVersion::STATUS_ARCHIVED, self::EDITOR_ID );
+        $this->addVersion( $object, 5, eZContentObjectVersion::STATUS_PENDING, self::EDITOR_ID );
+        $this->addVersion( $object, 6, eZContentObjectVersion::STATUS_INTERNAL_DRAFT, self::EDITOR_ID );
+        $this->addVersion( $object, 7, eZContentObjectVersion::STATUS_REPEAT, self::EDITOR_ID );
+
+        $this->assertTrue( Upload::mayUpload( $object, 2 ) );
+        $this->assertTrue( Upload::mayUpload( $object, '2' ), 'the number as the address gives it' );
+        $this->assertTrue( Upload::mayUpload( $object, 6 ) );
+        $this->assertTrue( Upload::mayUpload( $object, 7 ) );
+        $this->assertFalse( Upload::mayUpload( $object, 1 ), 'the published version, although the dialog opens' );
+        $this->assertTrue( Dialog::mayOpenForEditing( $object, 1 ), 'the dialog does open for it' );
+        $this->assertFalse( Upload::mayUpload( $object, 3 ), "someone else's draft" );
+        $this->assertFalse( Upload::mayUpload( $object, 4 ), 'an archived version' );
+        $this->assertFalse( Upload::mayUpload( $object, 5 ), 'a pending version' );
+        $this->assertFalse( Upload::mayUpload( $object, 99 ), 'a version that is not there' );
+        $this->assertFalse( Upload::mayUpload( $object, 0 ) );
+        $this->assertFalse( Upload::mayUpload( null, 2 ) );
+
+        $trashed = $this->object( 1, 1, eZContentObject::STATUS_ARCHIVED );
+        $this->addVersion( $trashed, 2, eZContentObjectVersion::STATUS_DRAFT, self::EDITOR_ID );
+        $this->assertFalse( Upload::mayUpload( $trashed, 2 ), 'an object in the trash' );
+
+        $language = $this->object( 1, 1 );
+        $language->recordEdit = true;
+        $language->editAnswer = false;
+        $version = $this->addVersion( $language, 2, eZContentObjectVersion::STATUS_DRAFT, self::EDITOR_ID );
+        $version->testLanguage = 'ger-DE';
+        $this->assertFalse( Upload::mayUpload( $language, 2 ), 'a language the user may not edit' );
+        $this->assertSame( array( array( $version, 'ger-DE' ) ), $language->editCalls );
+    }
+
+    /** DA-13 */
+    public function testTheUploadedObjectBecomesARelationOfTheVersionBeingEdited()
+    {
+        $object = $this->object( 1, 1 );
+        Upload::addEmbedRelation( $object, '5', 4711 );
+        $this->assertSame( array( array( 4711, 5, 0, eZContentObject::RELATION_EMBED ) ), $object->relationCalls );
+
+        $source = file_get_contents( dirname( __DIR__, 4 ) . '/extension/ezoe/classes/runnable/views/ezoe/upload.php' );
+        $this->assertStringContainsString( 'self::addEmbedRelation( $object, $objectVersion, $newObjectID );', $source );
+        $this->assertStringNotContainsString( 'addContentObjectRelation( $newObjectID', $source );
+        $this->assertDoesNotMatchRegularExpression( '/addContentObjectRelation\(\s*\$newObjectID,\s*\$uploadVersion/', $source );
+    }
+
+    /** DA-14 */
+    public function testTagsAndUploadAskTheRules()
+    {
+        $root = dirname( __DIR__, 4 ) . '/extension/ezoe/classes/runnable/views/ezoe/';
+        $tags = file_get_contents( $root . 'tags.php' );
+        $this->assertStringContainsString( 'if ( !Dialog::mayOpenForEditing( $object, $objectVersion ) )', $tags );
+        $this->assertStringNotContainsString( '->editAccess(', $tags );
+
+        $upload = file_get_contents( $root . 'upload.php' );
+        $this->assertStringContainsString( 'if ( !Dialog::mayOpenForEditing( $object, $objectVersion ) )', $upload );
+        $check = strpos( $upload, '!self::mayUpload( $object, $objectVersion )' );
+        $this->assertNotFalse( $check );
+        foreach ( array( '\expOEUrlFetcher::fetch(', 'new \eZContentUpload()', '->handleUpload(', '->handleLocalFile(' ) as $write )
+        {
+            $at = strpos( $upload, $write );
+            $this->assertNotFalse( $at, $write );
+            $this->assertGreaterThan( $check, $at, $write . ' comes after the check' );
+        }
+        $this->assertStringNotContainsString( '!$object->editAccess(', $upload );
     }
 
     /** DA-09 */
