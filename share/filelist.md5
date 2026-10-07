@@ -8,8 +8,8 @@ c0109dc6b712cfb2edaf1634f9613f51  .github/workflows/performance.yml
 57ca66c9047538723f176eb991e5e98c  .github/workflows/phpunit.yml
 d90ea65a5fc53148a747a8092668e3af  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
-cd053b4ad01ff66b57a20ac4f3eb2be5  .htaccess_root
-b1990623b992d933539be1f4a0910f32  .htaccess_root_static
+78a931cd19b2463147b08f6724421806  .htaccess_root
+cae6b5db9c9f45f8e87552cdc09e083a  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 a184ff1f4cd1fd4ec3a82e7744fd7e62  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-469d55bf62d531e7394f36f0b0eb8749  doc/changelogs/6.0/6.0.15.md
+e8f794960e12e74dffa9276a1af6a359  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3092,7 +3092,7 @@ d72949069c08060df9e1dab5d8c1e162  doc/changelogs/extensions/twig.md
 f830a55d8b7229af0c9461a0ec204c19  doc/changelogs/extensions/xrowmetadata.md
 777ba1591b154a4677f45796e0c729ca  doc/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/doxygen/empty.html
-a358ff9800363d81266a4347686ec81e  doc/examples/ezpublish.conf
+03d55145f7d84ac5b157738af3daf69d  doc/examples/ezpublish.conf
 a9c0712f62d01097722c34da242c3d12  doc/examples/htaccess
 12168c4284dad565903c95947bcf8b2b  doc/examples/staticcache_offload.conf
 26753303b5832b9148eba27b93eb9c56  doc/features/3.10/cluster_enhancement.txt
@@ -3409,7 +3409,7 @@ fcc435d9803fe432b0b4baeb2676948c  doc/features/6.0/legacy-bridge.md
 641dc7a61873704516939c32e1775b2c  doc/features/6.0/modern-password-change.md
 e1db49cf955e0e8bfa29c12997c0066f  doc/features/6.0/mongodb-database-support.md
 2b3c44897fbe517e7617d0352ad0b0a3  doc/features/6.0/multi-site-ini-overrides.md
-edd44ebf16e28a7fb5d14d1471094bfd  doc/features/6.0/multi-site-log-and-cache-paths.md
+dd1cf64d092e90f73c3744c66de7c7e9  doc/features/6.0/multi-site-log-and-cache-paths.md
 c0691593f61bb3546f5fbded91be4f27  doc/features/6.0/notifications.md
 6c2d12092b839df0fc9da488ef1f6b82  doc/features/6.0/online-editor-tinymce8.md
 90e05c00de5038b784dc9b8e430529de  doc/features/6.0/order-list-sorting.md
@@ -3879,7 +3879,7 @@ f71ac215485dd1f34c31daf0f7f2489f  doc/install/04-choosing-an-install-method.md
 b837bb8f78e8b41765d74c2245edf6d6  doc/install/05-setup-wizard.md
 9c81adae2c303fc9197980ecefe948f7  doc/install/06-kickstarter.md
 d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
-5ae1ce91220fde76f875b7cc1e32261a  doc/install/08-serving-the-site.md
+4f5a89d708dfeff88bb50227abd3d599  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
 14135918bd5d98cea3d5225382dafde8  doc/install/10-after-installing.md
 194f0353ff6ee7e056cb6177d66fd27e  doc/install/11-upgrading.md
@@ -4913,13 +4913,13 @@ b607c67490219f43e8a2cf31d600700e  kernel/classes/exppreloadaddress.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
 427cb5d98e573bda7873f53ef6c56bb1  kernel/classes/expsystemreport.php
 28af669e43f170c97eb589d4f920a469  kernel/classes/expsystemreportmask.php
-fff27c01f43c56a0eaa7ce984ac1e6a8  kernel/classes/expvelocity.php
+d34e1a0287f50168bf843a09e07b9e7f  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 2e236435a4896494e12512315a748708  kernel/classes/expvelocityconfiglayout.php
 aca7d6f8ecb35eb8b3cf47240618e3e2  kernel/classes/expvelocitydeploy.php
-8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
+f379068464ad12a922eb80b5a5f86606  kernel/classes/expvelocityfrankenphp.php
 13a0bb95af7b52a10396eb5d6912f0f4  kernel/classes/expvelocityfrankenphpinstaller.php
-2de9e75d5e65b35f50a202ba34c78b86  kernel/classes/expvelocityphpserver.php
+11c3dc6efe9cddcf26beb1b85c2a8b3a  kernel/classes/expvelocityphpserver.php
 09e9dc70a834dd21ce8f66886a92258c  kernel/classes/expviewaccess.php
 d782ee2d01085b91030f56681357286e  kernel/classes/ezaudit.php
 6235fea69dfbb9e5d965e4879d7203db  kernel/classes/ezbasket.php
@@ -6340,7 +6340,7 @@ f607c04ba265e18c3ddbd633162270bd  lib/ezutils/classes/ezremoteidutility.php
 9656a1bf4d20f9598a5f5b6600f59aff  lib/ezutils/classes/ezsendmailtransport.php
 8332652b485a80bf465c56d2d240dd63  lib/ezutils/classes/ezsmtptransport.php
 0db1d3279d37725c3a0bc60388c04861  lib/ezutils/classes/ezstringutils.php
-3bdbab3f88149072b9abccd7e52653a5  lib/ezutils/classes/ezsys.php
+f1925c673bd8b86f8588b7495f69e4d9  lib/ezutils/classes/ezsys.php
 ead255df95cadecdc810d3576eeddf2f  lib/ezutils/classes/ezsysinfo.php
 b8345b4eff8fc3873c7e157c12e39cf6  lib/ezutils/classes/eztexttool.php
 fde5977c704d8f50c0edf07dc1021ac7  lib/ezutils/classes/eztimestamp.php
@@ -6403,7 +6403,7 @@ fce5a3e3f0663f62cde1337a65d9ba06  settings/package.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-68c7c228936b2e30c38e89fe54677143  settings/site.ini
+0c984dd21c2a3108ecfe900a7ce0cf6a  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7159,7 +7159,7 @@ be1aa0e87f92a94fba8582a57d54aca5  tests/tests/kernel/classes/eZRoleAssignmentSor
 2d3854eee9fdd39d64f775b25ee439ae  tests/tests/kernel/classes/eZRoleTest.php
 f54782a8f10898bc22d75eaf1c33d2de  tests/tests/kernel/classes/eZSectionTest.php
 d2b2aa97184624a1b60cebe09319e82a  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
-7ca3cc5190dfdb5134559391596c87c8  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
+97542864ff72cf614f80025653bd4bef  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
 68d772f3db6a9ae2a865ce3eb3a607e3  tests/tests/kernel/classes/eZSiteAccess_Test.php
 aec17c87e108b370bb8d629a55864026  tests/tests/kernel/classes/eZSiteDataTest.php
 d046fb97bcc75a96538b30760c09dde6  tests/tests/kernel/classes/eZSiteInstallerTest.php
@@ -7195,7 +7195,7 @@ cf5d5388e5242328fbc1f6c199a8afd8  tests/tests/kernel/classes/expSectionOverviewT
 c513b931571a3dd56abff2cfcdd557c6  tests/tests/kernel/classes/expSystemReportMaskTest.php
 1e66f7ac332da1d3639695e403a9dc2f  tests/tests/kernel/classes/expSystemReportTest.php
 f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTest.php
-8959c513772117fc7c49c895cf8e03a0  tests/tests/kernel/classes/expVelocityEnginesTest.php
+bf6e7ba594da3d1790eb1bb05257fe34  tests/tests/kernel/classes/expVelocityEnginesTest.php
 c8c704867551b709eb99c383b3f91b59  tests/tests/kernel/classes/expViewAccessTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
@@ -7815,7 +7815,7 @@ f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
 ad9b40230e54fa366826f27052a68264  tests/tests/lib/ezutils/eZModuleFunctionInfoTest.php
 26c41a9afb4c712f40d17e26402319d5  tests/tests/lib/ezutils/eZModuleTest.php
 b63b08251a27ea86e14255f2d343ba65  tests/tests/lib/ezutils/eZPHPCreatorRoundTripTest.php
-016b5484122e7912482bd34280ab1fc9  tests/tests/lib/ezutils/eZSiteLogAndExpiryPathsTest.php
+d77eeb024b865b1cd9c131bf9d254c70  tests/tests/lib/ezutils/eZSiteLogAndExpiryPathsTest.php
 295ccf384fbb67b358a39cf87d5b809d  tests/tests/lib/ezutils/eZSysInfoTest.php
 38b8261a40b5efcedacee8de80588e08  tests/tests/lib/ezutils/eZSysTest.php
 50ed353411957196e6040f292c66e818  tests/tests/lib/ezutils/eZSysTrustedProxyTest.php
