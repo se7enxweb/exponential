@@ -4932,7 +4932,7 @@ ccaaa94850a3994a6ec5ad6e4fb11c88  kernel/classes/ezclusterfilehandler.php
 d466e26a73141e07f2f9eaf7ab14be0e  kernel/classes/ezcollaborationgroup.php
 9db87cffca5b84ab90b33484fdcd5d45  kernel/classes/ezcollaborationitem.php
 b72844a5ba57c3d4c4f6c0f66bd6c36a  kernel/classes/ezcollaborationitemgrouplink.php
-957a8d2a60476d53f97c864c31a14a2b  kernel/classes/ezcollaborationitemhandler.php
+c156fd03b46116be734d2914a7bb29a2  kernel/classes/ezcollaborationitemhandler.php
 d4e5641768c6d52afc4b76fd571f9f8c  kernel/classes/ezcollaborationitemmessagelink.php
 354ece6e31f35221b99a77f19631f33e  kernel/classes/ezcollaborationitemparticipantlink.php
 44284c35f629dadcb92208c873e1a12e  kernel/classes/ezcollaborationitemstatus.php
@@ -4946,7 +4946,7 @@ d32c6962dd7f135b3bd18c0f2d036263  kernel/classes/ezcontentbrowsebookmark.php
 e03967a373ba9e46d7ba161d72500151  kernel/classes/ezcontentbrowserecent.php
 be5967e47609a568319111fd808d10e2  kernel/classes/ezcontentcache.php
 60f96273f58116cb5a510e2cd1909244  kernel/classes/ezcontentcachemanager.php
-4f02d8b8fdde2b92e922558c67ad7044  kernel/classes/ezcontentclass.php
+f0f02ee28505eb2c4f41ed9c1755df1b  kernel/classes/ezcontentclass.php
 1b6e5128718bb11668a859b0c083cda1  kernel/classes/ezcontentclassattribute.php
 57be7f3d46bf77207cc381abf151a22c  kernel/classes/ezcontentclassclassgroup.php
 80531ede01d01d5e75317285416f594a  kernel/classes/ezcontentclassedithandler.php
@@ -4966,10 +4966,10 @@ a165301c646c2971d91fc8c0404bc1b4  kernel/classes/ezcontentobjecttrashnode.php
 297bda5bea725298fb6fe77e78fcbda4  kernel/classes/ezcontentobjecttreenode.php
 8a81e1ff5086cf54d2af9b09489e199c  kernel/classes/ezcontentobjecttreenodeoperations.php
 2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
-9ba8dcdd4e7e64f8ee2755fbd4ca7fee  kernel/classes/ezcontentupload.php
+e8be51d8d9c192d201048782b383b7f5  kernel/classes/ezcontentupload.php
 908a9d23c197d5b893c609bdaa444433  kernel/classes/ezcontentuploadhandler.php
 9662925adfb7aaf224b0b8ad868b2a6d  kernel/classes/ezdatatype.php
-3509a8281a1766cf5765bbbbff8a4869  kernel/classes/ezdbgarbagecollector.php
+ee2b49030950e53b41b84ce544acd87d  kernel/classes/ezdbgarbagecollector.php
 1339229a6783eed279acaa8901f2dd6e  kernel/classes/ezdiscount.php
 ea26685655b4643bd297100dbdd9a9f5  kernel/classes/ezdiscountrule.php
 fb132e7c863174626926237fdc954d34  kernel/classes/ezdiscountsubrule.php
@@ -4983,7 +4983,7 @@ a44920d95ac2d04c9a60749688f571bb  kernel/classes/ezinformationcollection.php
 a14bddf5ee8c6d1e97d2620e2878d87a  kernel/classes/eznodeassignment.php
 06f40a01df189bfc13b05c175291b528  kernel/classes/eznodeviewfunctions.php
 ebda5d8078f433fe76246c662c46b105  kernel/classes/ezorder.php
-aff87ce6790ad07fafb6af670ea15dd7  kernel/classes/ezorderitem.php
+86309a3a8345d384269aa6c9a40b96a6  kernel/classes/ezorderitem.php
 2f9eac8dc6b5df15a80011f7c1fe7d60  kernel/classes/ezorderstatus.php
 278dfacf412d1922b529c20fd13dbad2  kernel/classes/ezorderstatushistory.php
 30863425bdbfd442740b78a9cc9b3289  kernel/classes/ezpackage.php
@@ -5030,7 +5030,7 @@ c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
 db259eaa0bd7d33f5d216101986ad969  kernel/classes/ezsiteaccess.php
 d3a6b63ebff3db7a82bc883fd34182ed  kernel/classes/ezsitedata.php
-7efc4dbb1172be868577981924abbc6b  kernel/classes/ezsiteinstaller.php
+fb7d18141de54975752467d31e706002  kernel/classes/ezsiteinstaller.php
 fdd616b8c3b71ca0c9d8752209056cf4  kernel/classes/ezsslzone.php
 ba77012c30b83091d4134a3b0bab90d6  kernel/classes/ezstaticcache.php
 4c4ebf0efde00cda84dd42cd126a5e6f  kernel/classes/ezsubtreecache.php
@@ -5054,7 +5054,7 @@ ffa9e9baf2cf65dcdc82df1ea0a82df5  kernel/classes/ezvatmanager.php
 fed8c81116bb99b4cb223d494f6fedb6  kernel/classes/ezworkflowgroup.php
 ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 08af60f44b4c8d91729d951cbbf01ac5  kernel/classes/ezworkflowgrouptype.php
-e20cfc3d4c56c83cb4ba950bf188d924  kernel/classes/ezworkflowprocess.php
+b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
 85b05708b2165d0dc398973d33ba0a0e  kernel/classes/ini/actions/expiniactionactions.php
@@ -5346,15 +5346,15 @@ cbce63c22982c719849fa400be067280  kernel/private/api/interfaces/content_criteria
 454bece061085b16921dd2752c1d192d  kernel/private/classes/asynchronouspublisheroutput/cli.php
 5294fdb5b23f81c500db3d24d76dd39f  kernel/private/classes/asynchronouspublisheroutput/log.php
 c2b3e73a3d43b300bec35adcf5f69cde  kernel/private/classes/clusterfilehandlers/dfsbackends/dfs.php
-732acf05d1e9a6373eddd92c32f22910  kernel/private/classes/clusterfilehandlers/dfsbackends/dfs_filter_iterator.php
+0f65b178e03d1a5dd04d0691b824c01d  kernel/private/classes/clusterfilehandlers/dfsbackends/dfs_filter_iterator.php
 c667f32a339c2a38a8a3413048c3021c  kernel/private/classes/clusterfilehandlers/dfsbackends/ezdfsfilehandlerbackendexception.php
 450854583b087069435df310b3524b88  kernel/private/classes/clusterfilehandlers/dfsbackends/ezdfsfilehandlerdfsbackendfactoryinterface.php
 b95c9d9770cf06b720716c883539b2d4  kernel/private/classes/clusterfilehandlers/dfsbackends/ezdfsfilehandlerdfsbackendinterface.php
 5552a25ac91125905997331e9b6274d0  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqlbackenderror.php
-ee307b00ccb2ce733c220e01e4be1714  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
+7a3eb838587d7b5e46a546fd2b94573f  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
 cd9d3c201b1739ef37402786abce4e24  kernel/private/classes/clusterfilehandlers/ezclustereventloggerezdebug.php
 876c214dda68f63c5e9a3c053ed3749f  kernel/private/classes/clusterfilehandlers/ezclustereventloggerphp.php
-644f52cb6930554b6982cb467c086f53  kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
+6a8fbdbb5933aacb96292007698f499b  kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
 f35bba1fe44c1f0f7b56d74bf15cdd66  kernel/private/classes/clusterfilehandlers/ezdfsfilehandlerbackendfactory.php
 b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlistener.php
 20656a179cf535afff572d16ad2e78f0  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlogger.php
@@ -5384,7 +5384,7 @@ cda4cbaf33d52dd91d8535d9f9f81ac0  kernel/private/classes/commands/ezcheckphptag.
 47b6813a81f63df8380ac56d02e3d3e7  kernel/private/classes/commands/ezchecktranslation.php
 848a3296b95f6e4371c426fb0407a957  kernel/private/classes/commands/ezcontentcache.php
 a93bf1a0898ca2833b305741a26cf259  kernel/private/classes/commands/ezconvert2isbn13.php
-83e867a4e23aab846d8c15bea885d474  kernel/private/classes/commands/ezconvertdbcharset.php
+915af3c5c2d5e115025d9cd2de644ece  kernel/private/classes/commands/ezconvertdbcharset.php
 4d3aade813d0aed447452cffc4b3bfd5  kernel/private/classes/commands/ezconvertmysqltabletype.php
 49519dbafe3e3b7a1c8d7ddce5be34d0  kernel/private/classes/commands/ezcsvexport.php
 651ddddd9d9bb015355f213a990d7674  kernel/private/classes/commands/ezcsvimport.php
@@ -5431,7 +5431,7 @@ e6d562440b310189c2ad9ccccc9c47f7  kernel/private/classes/commands/preloadjob.php
 99d8b60f4b15df1dcd7f01c823003c66  kernel/private/classes/commands/publish_content.php
 a08a9297ae9c54487b7a2b06e63e6a08  kernel/private/classes/commands/resetuserpassword.php
 898926376d639f730120ce5e20c6eb9e  kernel/private/classes/commands/runcronjobs.php
-85a16d1fee5629e075e01a840df7b6c1  kernel/private/classes/commands/solr.php
+e1d9e0f769a45da197cfcb11ce9f29a7  kernel/private/classes/commands/solr.php
 4465a716b5fc1723bd7bcdba839111cf  kernel/private/classes/commands/systeminfo.php
 99a776cdd909256a5d8069ef603d7820  kernel/private/classes/commands/trashpurge.php
 3a507b2f3d401cd470b42f6186e5c49d  kernel/private/classes/commands/updateisbn13.php
@@ -5706,7 +5706,7 @@ d2772caf55e40f555a830d12062d5780  kernel/private/classes/views/shop/checkout.php
 16daab537d4400c1de57521fd04ccb2a  kernel/private/classes/views/shop/dashboard.php
 8dfa3825edfbe9fa54aaf9a46da7dd58  kernel/private/classes/views/shop/discountgroup.php
 53c8ca51ca64693af19004763f2a090d  kernel/private/classes/views/shop/discountgroupedit.php
-c9ad565a983a43d996c9f9b160ad1e84  kernel/private/classes/views/shop/discountgroupmembershipview.php
+75ad074d5b58b6ac6365b639be3bf029  kernel/private/classes/views/shop/discountgroupmembershipview.php
 5dc9590e49d3e1987554ee65a4823bc0  kernel/private/classes/views/shop/discountruleedit.php
 4066159088acba5cdea586a7670399c5  kernel/private/classes/views/shop/editcurrency.php
 ab2d19dbc494b29e645446e139e9911e  kernel/private/classes/views/shop/editvatrule.php
@@ -5736,7 +5736,7 @@ a1d4271aa40a1c6fe0b0704275781728  kernel/private/classes/views/state/group.php
 6e311a1d98a970435d8a0f2656e5d429  kernel/private/classes/views/state/group_edit.php
 9eb2428b894a0b1e14fe9d95ad4c7f57  kernel/private/classes/views/state/groups.php
 cdf41320093ea0943c97f6e600fb8392  kernel/private/classes/views/state/view.php
-64daefdfac85a732ada4c154a1e28d34  kernel/private/classes/views/trigger/list.php
+efe4008bb1f5797b99b77cc075ad617a  kernel/private/classes/views/trigger/list.php
 aa89fd43a6579c8bfaf060210e8e0493  kernel/private/classes/views/url/edit.php
 614227d2b9a35a99a84ed09c51f5db92  kernel/private/classes/views/url/list.php
 422ed1432bd2ce184617ead78261263d  kernel/private/classes/views/url/view.php
@@ -6173,7 +6173,7 @@ c4aeb110c07ea17b1f3067a30f96bb23  lib/ezi18n/classes/ezborktranslator.php
 8622872908ea029bd1f88c060a61092e  lib/ezi18n/classes/ezcharsetinfo.php
 a7615d8a999f5ce48cf1043eac41d2d3  lib/ezi18n/classes/ezchartransform.php
 94a6a8eb57c4e0a3294a288b1fc519ee  lib/ezi18n/classes/ezcodemapper.php
-36012d3b9849a1a7b82226413c618435  lib/ezi18n/classes/ezcodepage.php
+eb49ceb800ff5fd2c43ab4d440d9d630  lib/ezi18n/classes/ezcodepage.php
 67bdaad907c6b8e518cf6322a95d32cb  lib/ezi18n/classes/ezcodepagecodec.php
 6a93e1563ded21ae7cb03a29316a8cf4  lib/ezi18n/classes/ezcodepagemapper.php
 caa7eba86ab571bccaa88f372cb91029  lib/ezi18n/classes/ezmbstringmapper.php
@@ -6211,7 +6211,7 @@ c20160e270170e2ef235c0615dc28d9f  lib/ezmath/classes/mathhandlers/ezbcmath.php
 5b78c851f7caa9efed0daa2adffc8f57  lib/ezmath/classes/mathhandlers/ezphpmath.php
 d50e58599b2d6eb78ae243defb06e9ec  lib/ezpdf/classes/class.ezpdf.php
 99db897f848af8ed95a67354e7b650b6  lib/ezpdf/classes/class.ezpdftable.php
-95e7835d8e39c1458de84d5186ef70f4  lib/ezpdf/classes/class.pdf.php
+6e58b2dfba0da26ae4e068a64869f6ee  lib/ezpdf/classes/class.pdf.php
 ccbb99622ec772de1abae4c7c366fb0c  lib/ezpdf/classes/ezpdf.php
 05afa7a4e6700b91ab34a1f648300f4b  lib/ezpdf/classes/eztemplateautoload.php
 1ed26aa7506bc37808b8951ca8168e33  lib/ezpdf/classes/eztruetypefont.php
@@ -6265,7 +6265,7 @@ b625c64166e6ed68aecfc4397247479d  lib/eztemplate/classes/eztemplatedigestoperato
 8a6de9473e27afe0c866ff60fdf7fa6c  lib/eztemplate/classes/eztemplatedofunction.php
 6dd76dc30dcf0bd0cb3af8c792eadcbc  lib/eztemplate/classes/eztemplateelementparser.php
 ab731265198796a2ba464a26be7b8449  lib/eztemplate/classes/eztemplateexecuteoperator.php
-0d855e6358e69227146c51c682d17a74  lib/eztemplate/classes/eztemplateexpinfooperator.php
+4964475c92d864e7b2cb50dc17ff8d44  lib/eztemplate/classes/eztemplateexpinfooperator.php
 5b0b229fdf199090398b7c878a14c747  lib/eztemplate/classes/eztemplatefileresource.php
 5568f59aab6103cd71b1ca2eceb4304d  lib/eztemplate/classes/eztemplateforeachfunction.php
 7f12f9fa17934e8f6f1664e3a9581664  lib/eztemplate/classes/eztemplateforfunction.php
@@ -7154,6 +7154,7 @@ b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutO
 1a61ba02eb30739edcb683230c3cfc97  tests/tests/kernel/classes/eZPackageLicenseTest.php
 6855c387598fbee39d880905abac28cc  tests/tests/kernel/classes/eZPackageVersionTest.php
 7a21b3cc90e141e63b00372345c15fba  tests/tests/kernel/classes/eZPendingActionsTest.php
+886365cd039d8ce252b62db1a6bfb4fe  tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php
 c9c4cb539a1a23f7edb9104a225c117c  tests/tests/kernel/classes/eZPolicySaveTemporaryTest.php
 4ab6d50e1369ffc790e40c356d0cb3df  tests/tests/kernel/classes/eZPolicyTest.php
 74a56404c3de4b8aaa885226b2d8f530  tests/tests/kernel/classes/eZProductCollectionItemOptionTest.php
