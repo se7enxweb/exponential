@@ -1524,8 +1524,22 @@ class eZOEInputParser extends eZXMLInputParser
                 $name  = strtolower( trim( $parts[0] ) );
                 $value = trim( $parts[1] );
 
+                // Only a plain CSS property name becomes an attribute name: not a namespace declaration (xmlns),
+                // which would go into the stored XML as one, nor a vendor prefix or a name an attribute can not have
+                if ( !preg_match( '/^[a-z_][a-z0-9_-]*$/', $name ) || strncmp( $name, 'xml', 3 ) === 0 )
+                    continue;
+
                 if ( $name === 'float' || $name === 'text-align' )
                     $name = 'align';
+
+                // An alignment is a keyword (left, right, center, justify, ...); anything else is left out, as the
+                // editor writes it into the markup it loads
+                if ( $name === 'align' )
+                {
+                    $value = strtolower( preg_replace( '/\s*!\s*important$/i', '', $value ) );
+                    if ( !preg_match( '/^[a-z][a-z-]*$/', $value ) )
+                        continue;
+                }
 
                 if ( $name )
                 {
