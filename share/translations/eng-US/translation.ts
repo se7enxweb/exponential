@@ -56134,6 +56134,26 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Show messages</translation>
     </message>
     <message>
+        <source>Copy Messages</source>
+        <translation>Copy Messages</translation>
+    </message>
+    <message>
+        <source>Copied 1 message</source>
+        <translation>Copied 1 message</translation>
+    </message>
+    <message>
+        <source>Copied %count messages</source>
+        <translation>Copied %count messages</translation>
+    </message>
+    <message>
+        <source>No messages to copy.</source>
+        <translation>No messages to copy.</translation>
+    </message>
+    <message>
+        <source>Could not copy the messages.</source>
+        <translation>Could not copy the messages.</translation>
+    </message>
+    <message>
         <source>Sort by time</source>
         <translation>Sort by time</translation>
     </message>

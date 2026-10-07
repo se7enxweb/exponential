@@ -63133,6 +63133,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Meldungen anzeigen</translation>
     </message>
     <message>
+        <source>Copy Messages</source>
+        <translation>Meldungen kopieren</translation>
+    </message>
+    <message>
+        <source>Copied 1 message</source>
+        <translation>1 Meldung kopiert</translation>
+    </message>
+    <message>
+        <source>Copied %count messages</source>
+        <translation>%count Meldungen kopiert</translation>
+    </message>
+    <message>
+        <source>No messages to copy.</source>
+        <translation>Keine Meldungen zum Kopieren.</translation>
+    </message>
+    <message>
+        <source>Could not copy the messages.</source>
+        <translation>Die Meldungen konnten nicht kopiert werden.</translation>
+    </message>
+    <message>
         <source>Sort by time</source>
         <translation>Nach Zeit sortieren</translation>
     </message>
