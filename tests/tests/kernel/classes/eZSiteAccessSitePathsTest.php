@@ -198,6 +198,25 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'site', eZINI::instance()->variable( 'FileSettings', 'INICacheDir' ) );
     }
 
+    /**
+     * An INI file read before the siteaccess is known holds no settings of the site and stays in the shared INI cache;
+     * front controllers and scripts read every INI file again after change() (eZINI::resetAllInstances( false )),
+     * and that copy, with the settings of the site, is cached in the INI cache of the site
+     */
+    public function testAnINIFileReadBeforeTheChangeIsReadAgainIntoTheCacheOfTheSite()
+    {
+        list( $site, $dir ) = $this->site( 'm', array( 'INICacheDir' => 'site', 'CacheDir' => '{dir}/cache' ) );
+        $before = eZINI::instance( 'shopaccount.ini' );
+        $this->assertStringStartsNotWith( $dir, (string)$before->CacheFile );
+
+        eZSiteAccess::change( array( 'name' => $site, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+        eZINI::resetAllInstances( false );
+
+        $after = eZINI::instance( 'shopaccount.ini' );
+        $this->assertNotSame( $before, $after );
+        $this->assertStringStartsWith( $dir . '/cache/ini/', (string)$after->CacheFile );
+    }
+
     /** Changing to the same site twice keeps one state, which a third site then undoes */
     public function testChangingToTheSameSiteTwiceIsIdempotent()
     {
