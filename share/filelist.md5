@@ -2785,7 +2785,7 @@ f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 7c829017c001901d87afec4e42579df4  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 250a9d7e6948ddd176f5c6c54bb0febb  doc/bc/6.0/behaviour-changes-2026-09b.md
-0d9e987dc5793e14c0a6e446dc501a40  doc/bc/6.0/behaviour-changes-2026-10.md
+0f857de0818fefb0bcf5859a7cc714be  doc/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/bc/6.0/bookmark-folders.md
 d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e984f123c45d3bc74e2e5889aaa7fed3  doc/changelogs/6.0/6.0.15.md
+59311d01d92d79da174f509af1c71726  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4851,7 +4851,7 @@ ab95b25629ede0ba7aaf6fa166250fcb  kernel/classes/datatypes/ezurl/ezurltype.php
 bc1f7d94c3e9cdcc6b029676b42ac238  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 4e5dbb722c2319d48ccf65126c404329  kernel/classes/datatypes/ezuser/ezldapuser.php
 ddb7ea2df70d86d759cbb9f485513a82  kernel/classes/datatypes/ezuser/eztextfileuser.php
-24ee17bc79d834d6e49f204e46639470  kernel/classes/datatypes/ezuser/ezuser.php
+85659279019b47f738e367df4f8fbe1e  kernel/classes/datatypes/ezuser/ezuser.php
 190e03d3acc89794d927758dfc31c7cf  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -4962,7 +4962,7 @@ e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
 b6cb39e28b248e080dc6f37c5c9ca9b9  kernel/classes/ezcontentobjectoperations.php
 06d8358599723d258d5c8246b2333ff1  kernel/classes/ezcontentobjecttranslation.php
 a165301c646c2971d91fc8c0404bc1b4  kernel/classes/ezcontentobjecttrashnode.php
-49bc5f74f9f7df06e4325a00398cf455  kernel/classes/ezcontentobjecttreenode.php
+297bda5bea725298fb6fe77e78fcbda4  kernel/classes/ezcontentobjecttreenode.php
 8a81e1ff5086cf54d2af9b09489e199c  kernel/classes/ezcontentobjecttreenodeoperations.php
 2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
 9ba8dcdd4e7e64f8ee2755fbd4ca7fee  kernel/classes/ezcontentupload.php
@@ -7318,7 +7318,7 @@ eacca614b86b64086f3813c700dc4fd8  tests/tests/kernel/classes/packages/eZPackageR
 a8422625bada666061cfc28db6f7ad0d  tests/tests/kernel/classes/permissions/eZContentNodePathConditionTest.php
 4349df33be71dcfd09b0a49bf472ecbb  tests/tests/kernel/classes/permissions/eZContentPermissionSQLOptimizationLiveTest.php
 97879ccc697976aa5f8517905214e1d4  tests/tests/kernel/classes/permissions/eZContentPermissionSQLOptimizationTest.php
-653ab0cf04b703e90bd63800a1140092  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
+779e3bbe4351fbbcf647ee5836683168  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
 8c7cbac83c31166ea44ef268800334c2  tests/tests/kernel/classes/permissions/eZPackagePolicyTest.php
 a18d90b5610abb3def710ebc7c9f49ba  tests/tests/kernel/classes/permissions/eZPolicyLimitationLabelsAndValuesTest.php
 7912afca659ccb05b5e7ee37e934c398  tests/tests/kernel/classes/permissions/eZPolicyPrefetchedAccessArrayTest.php
@@ -7473,6 +7473,7 @@ e27e540790efb057acf5b0e9955ada06  tests/tests/kernel/datatypes/ezstring/eZString
 bc30de6594ec7dde7b08948f89129a7a  tests/tests/kernel/datatypes/ezuser/eZLDAPUserTest.php
 beb4ea1cd19edf033b537f7e3c855419  tests/tests/kernel/datatypes/ezuser/eZTextFileUserTest.php
 d870567095cccca2caf22f47138d41b6  tests/tests/kernel/datatypes/ezuser/eZUserCacheTest.php
+10043f2da0d2f36334080b8607155e47  tests/tests/kernel/datatypes/ezuser/eZUserDisabledCurrentUserLiveTest.php
 6728ae33daaf7d78675888b09635ceb9  tests/tests/kernel/datatypes/ezuser/eZUserTest.php
 4a9301bc59a82d9e59a4cecd3b20b3a1  tests/tests/kernel/datatypes/ezuser/ezldapuser_test.php
 ad0918c3bcd020a69bad17c2d10d356c  tests/tests/kernel/datatypes/ezuser/eztextfileuser_test.php
