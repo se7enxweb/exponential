@@ -271,7 +271,7 @@ class expPreloadRunner
         $status = (int)curl_getinfo( $ch, CURLINFO_HTTP_CODE );
         $type = (string)curl_getinfo( $ch, CURLINFO_CONTENT_TYPE );
         $error = curl_error( $ch );
-        curl_close( $ch );
+        if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
 
         return array(
             'status'  => $status,

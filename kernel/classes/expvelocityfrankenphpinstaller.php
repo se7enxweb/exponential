@@ -377,7 +377,7 @@ class expVelocityFrankenPHPInstaller
             ) );
             $ok = curl_exec( $handle );
             $error = curl_error( $handle );
-            curl_close( $handle );
+            if ( PHP_VERSION_ID < 80000 ) curl_close( $handle ); // no effect since PHP 8.0, deprecated in 8.5
             fclose( $out );
             return $ok ? true : ( $error !== '' ? $error : 'curl failed' );
         }
