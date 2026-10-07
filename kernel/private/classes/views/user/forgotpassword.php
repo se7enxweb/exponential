@@ -36,7 +36,8 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
 
         $http = \eZHTTPTool::instance();
         $module = $Params['Module'];
-        $hashKey = $Params["HashKey"];
+        // No key in the address (the plain form) arrives as null: treat it as an empty key
+        $hashKey = (string)( $Params["HashKey"] ?? "" );
         $ini = \eZINI::instance();
 
         if ( strlen( $hashKey ) == 32 )

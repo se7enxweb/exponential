@@ -5742,7 +5742,7 @@ ce10a3db890ed5c83f90d3e919bc2912  kernel/private/classes/views/url/list.php
 422ed1432bd2ce184617ead78261263d  kernel/private/classes/views/url/view.php
 675b6dec132dda2f5ecaa1ddbfda7b9e  kernel/private/classes/views/user/activate.php
 a86c32c292a6686cc1a40f0d8dac6df8  kernel/private/classes/views/user/edit.php
-a878101eba413cae2a95f603ca591098  kernel/private/classes/views/user/forgotpassword.php
+f0be515ed967ec62f8b8ae92a42b6b3c  kernel/private/classes/views/user/forgotpassword.php
 8f26834de574e7fc29e03ffb5df66d2d  kernel/private/classes/views/user/login.php
 f78f5a9b4365087a08e196ebde0ba8b1  kernel/private/classes/views/user/logout.php
 d407061c56d24d97e47bb1d720fe70b7  kernel/private/classes/views/user/password.php
