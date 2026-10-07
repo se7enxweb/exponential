@@ -55,7 +55,16 @@ class eZStepSiteTypes extends eZStepInstaller
     /**
      * Downloads file.
      *
-     * Sets $this->ErrorMsg in case of an error.
+     * A failed attempt is tried again ([RepositorySettings] DownloadAttempts in
+     * package.ini, waiting DownloadRetryDelays seconds in between): a package
+     * server that is being republished answers with errors for a few minutes.
+     * An attempt fails on a transfer error, an HTTP status other than 200, an
+     * empty or truncated body, and an .ezpkg file that is not gzip data. A
+     * failed attempt leaves no file behind.
+     *
+     * Sets $this->ErrorMsg in case of an error: the reason of the last attempt
+     * (curl error, HTTP status, bytes received). $this->DownloadAttemptCount
+     * says how many attempts were made.
      *
      * \private
      * \param $url            URL.
@@ -73,77 +82,237 @@ class eZStepSiteTypes extends eZStepInstaller
         if ( !file_exists( $outDir ) )
             eZDir::mkdir( $outDir, false, true );
 
-        // First try CURL
-        if ( extension_loaded( 'curl' ) )
+        $attempts = max( 1, (int)$this->downloadSetting( 'DownloadAttempts', 3 ) );
+        $delays = (array)$this->downloadSetting( 'DownloadRetryDelays', array( 2, 5, 10 ) );
+        $this->DownloadAttemptCount = 0;
+
+        for ( $attempt = 1; $attempt <= $attempts; ++$attempt )
         {
-            $ch = curl_init( $url );
-            $fp = eZStepSiteTypes::fopen( $fileName, 'wb' );
+            $this->DownloadAttemptCount = $attempt;
+            $failure = $this->DownloadTransport === 'stream' || ( $this->DownloadTransport !== 'curl' && !extension_loaded( 'curl' ) )
+                ? $this->downloadAttemptStream( $url, $fileName )
+                : $this->downloadAttemptCurl( $url, $fileName );
 
-            if ( $fp === false )
-            {
-                $this->ErrorMsg = ezpI18n::tr( 'design/standard/setup/init', 'Cannot write to file' ) .
-                    ': ' . $this->FileOpenErrorMsg;
-                return false;
-            }
+            if ( $failure === null )
+                return $fileName;
 
-            curl_setopt( $ch, CURLOPT_FILE, $fp );
-            curl_setopt( $ch, CURLOPT_HEADER, 0 );
-            curl_setopt( $ch, CURLOPT_FAILONERROR, 1 );
-            curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 30 );
-            // Get proxy
-            $ini = eZINI::instance();
-            $proxy = $ini->hasVariable( 'ProxySettings', 'ProxyServer' ) ? $ini->variable( 'ProxySettings', 'ProxyServer' ) : false;
-            if ( $proxy )
-            {
-                curl_setopt ( $ch, CURLOPT_PROXY , $proxy );
-                $userName = $ini->hasVariable( 'ProxySettings', 'User' ) ? $ini->variable( 'ProxySettings', 'User' ) : false;
-                $password = $ini->hasVariable( 'ProxySettings', 'Password' ) ? $ini->variable( 'ProxySettings', 'Password' ) : false;
-                if ( $userName )
-                {
-                    curl_setopt ( $ch, CURLOPT_PROXYUSERPWD, "$userName:$password" );
-                }
-            }
+            $this->removeDownloadedFile( $fileName );
+            $this->ErrorMsg = $failure['reason'];
 
-            if ( !curl_exec( $ch ) )
-            {
-                $this->ErrorMsg = curl_error( $ch );
-                return false;
-            }
+            if ( !$failure['retry'] || $attempt >= $attempts )
+                break;
 
-            fclose( $fp );
+            $delays = array_values( $delays );
+            $delay = $delays ? (float)$delays[min( $attempt, count( $delays ) ) - 1] : 0;
+            $message = "Download of $url, attempt $attempt of $attempts failed: {$failure['reason']}; trying again in {$delay} s";
+            eZDebug::writeWarning( $message );
+            expSetupLog::problem( 'WARNING', $message );
+            if ( $delay > 0 )
+                usleep( (int)round( $delay * 1000000 ) );
         }
+
+        return false;
+    }
+
+    /**
+     * One download over curl. Null on success, otherwise array( 'reason' => string, 'retry' => bool ).
+     */
+    protected function downloadAttemptCurl( $url, $fileName )
+    {
+        $fp = $this->fopen( $fileName, 'wb' );
+        if ( $fp === false )
+        {
+            return array( 'reason' => ezpI18n::tr( 'design/standard/setup/init', 'Cannot write to file' ) .
+                                      ': ' . $this->FileOpenErrorMsg,
+                          'retry' => false );
+        }
+
+        $ch = curl_init( $url );
+        curl_setopt( $ch, CURLOPT_FILE, $fp );
+        curl_setopt( $ch, CURLOPT_HEADER, 0 );
+        // The status is checked below, so that the reason can name it
+        curl_setopt( $ch, CURLOPT_FAILONERROR, 0 );
+        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1 );
+        curl_setopt( $ch, CURLOPT_MAXREDIRS, 5 );
+        curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, (int)$this->downloadSetting( 'DownloadConnectTimeout', 30 ) );
+        curl_setopt( $ch, CURLOPT_TIMEOUT, (int)$this->downloadSetting( 'DownloadTimeout', 300 ) );
+        // Get proxy
+        $ini = eZINI::instance();
+        $proxy = $ini->hasVariable( 'ProxySettings', 'ProxyServer' ) ? $ini->variable( 'ProxySettings', 'ProxyServer' ) : false;
+        if ( $proxy )
+        {
+            curl_setopt ( $ch, CURLOPT_PROXY , $proxy );
+            $userName = $ini->hasVariable( 'ProxySettings', 'User' ) ? $ini->variable( 'ProxySettings', 'User' ) : false;
+            $password = $ini->hasVariable( 'ProxySettings', 'Password' ) ? $ini->variable( 'ProxySettings', 'Password' ) : false;
+            if ( $userName )
+            {
+                curl_setopt ( $ch, CURLOPT_PROXYUSERPWD, "$userName:$password" );
+            }
+        }
+
+        $ok = curl_exec( $ch );
+        $errno = curl_errno( $ch );
+        $error = curl_error( $ch );
+        $status = (int)curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+        $expected = (float)curl_getinfo( $ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD );
+        // curl_close() does nothing since PHP 8.0 and is deprecated in 8.5: the handle closes when it is released
+        unset( $ch );
+        fclose( $fp );
+
+        $bytes = $this->downloadedSize( $fileName );
+        if ( $ok === false || $errno )
+        {
+            $reason = 'curl error ' . $errno . ': ' . $error;
+            if ( $status > 0 )
+                $reason .= ', HTTP ' . $status;
+            return array( 'reason' => $reason . ', ' . $bytes . ' bytes received', 'retry' => true );
+        }
+
+        return $this->checkDownloadedFile( $url, $fileName, $status, $bytes, $expected > 0 ? (int)$expected : -1 );
+    }
+
+    /**
+     * One download over the PHP stream wrappers, for an installation without
+     * curl. Null on success, otherwise array( 'reason' => string, 'retry' => bool ).
+     */
+    protected function downloadAttemptStream( $url, $fileName )
+    {
+        $parsedUrl = parse_url( $url );
+        $isHttp = isset( $parsedUrl['scheme'] ) && in_array( strtolower( $parsedUrl['scheme'] ), array( 'http', 'https' ) );
+        if ( $isHttp )
+        {
+            $host = isset( $parsedUrl['host'] ) ? $parsedUrl['host'] : '';
+            if ( $host === '' || ip2long( gethostbyname( $host ) ) === false )
+                return array( 'reason' => "cannot resolve the host '$host'", 'retry' => true );
+        }
+
+        $timeout = (int)$this->downloadSetting( 'DownloadTimeout', 300 );
+        $context = stream_context_create( array( 'http' => array( 'timeout' => $timeout,
+                                                                  'ignore_errors' => true,
+                                                                  'follow_location' => 1,
+                                                                  'max_redirects' => 5 ) ) );
+        // Note: Could be blocked by not allowing remote calls.
+        error_clear_last();
+        $body = @file_get_contents( $url, false, $context );
+        $headers = array();
+        if ( function_exists( 'http_get_last_response_headers' ) )
+            $headers = (array)http_get_last_response_headers();
         else
+            $headers = (array)( get_defined_vars()['http_response_header'] ?? array() );
+
+        $status = 0;
+        $expected = -1;
+        foreach ( $headers as $header )
         {
-            $parsedUrl = parse_url( $url );
-            $checkIP = isset( $parsedUrl[ 'host' ] ) ? ip2long( gethostbyname( $parsedUrl[ 'host' ] ) ) : false;
-            if ( $checkIP === false )
+            // After a redirect, the last response's lines come last
+            if ( preg_match( '#^HTTP/\S+\s+(\d{3})#', $header, $matches ) )
             {
-                return false;
+                $status = (int)$matches[1];
+                $expected = -1;
             }
-
-            // If we don't have CURL installed we used standard fopen urlwrappers
-            // Note: Could be blocked by not allowing remote calls.
-            if ( !copy( $url, $fileName ) )
-            {
-                $buf = eZHTTPTool::sendHTTPRequest( $url, 80, false, 'Exponential', false );
-
-                $header = false;
-                $body = false;
-                if ( eZHTTPTool::parseHTTPResponse( $buf, $header, $body ) )
-                {
-                    eZFile::create( $fileName, false, $body );
-                }
-                else
-                {
-                    $this->ErrorMsg = ezpI18n::tr( 'design/standard/setup/init', 'Failed to copy %url to local file %filename', null,
-                                              array( "%url" => $url,
-                                                     "%filename" => $fileName ) );
-                    return false;
-                }
-            }
+            elseif ( preg_match( '#^Content-Length:\s*(\d+)#i', $header, $matches ) )
+                $expected = (int)$matches[1];
         }
 
-        return $fileName;
+        if ( $body === false && $isHttp && strtolower( $parsedUrl['scheme'] ) === 'http' )
+        {
+            $buf = eZHTTPTool::sendHTTPRequest( $url, 80, false, 'Exponential', false );
+            $header = false;
+            if ( $buf && eZHTTPTool::parseHTTPResponse( $buf, $header, $body ) &&
+                 preg_match( '#^HTTP/\S+\s+(\d{3})#', $buf, $matches ) )
+            {
+                $status = (int)$matches[1];
+                $expected = isset( $header['content-length'] ) ? (int)$header['content-length'] : -1;
+            }
+            else
+                $body = false;
+        }
+
+        if ( $body === false )
+        {
+            $last = error_get_last();
+            $reason = ezpI18n::tr( 'design/standard/setup/init', 'Failed to copy %url to local file %filename', null,
+                                   array( "%url" => $url, "%filename" => $fileName ) );
+            if ( $last && !empty( $last['message'] ) )
+                $reason .= ': ' . $last['message'];
+            if ( $status > 0 )
+                $reason .= ', HTTP ' . $status;
+            return array( 'reason' => $reason, 'retry' => true );
+        }
+
+        if ( @file_put_contents( $fileName, $body ) === false )
+        {
+            return array( 'reason' => ezpI18n::tr( 'design/standard/setup/init', 'Cannot write to file' ) . ': ' . $fileName,
+                          'retry' => false );
+        }
+
+        return $this->checkDownloadedFile( $url, $fileName, $status, strlen( $body ), $expected );
+    }
+
+    /**
+     * Whether a finished transfer is a complete file. Null when it is,
+     * otherwise array( 'reason' => string, 'retry' => true ).
+     *
+     * \param $expected the Content-Length the server announced, -1 when it announced none.
+     */
+    protected function checkDownloadedFile( $url, $fileName, $status, $bytes, $expected )
+    {
+        $scheme = strtolower( (string)parse_url( $url, PHP_URL_SCHEME ) );
+        $reason = false;
+        if ( ( $scheme === 'http' || $scheme === 'https' ) && $status !== 200 )
+            $reason = 'HTTP ' . $status;
+        elseif ( $bytes <= 0 )
+            $reason = 'the server sent an empty file';
+        elseif ( $expected >= 0 && $bytes != $expected )
+            $reason = "the file is truncated, $expected bytes expected";
+        elseif ( substr( $fileName, -6 ) === '.ezpkg' && !$this->isGzipFile( $fileName ) )
+            $reason = 'the file is not a gzip-compressed package';
+
+        if ( $reason === false )
+            return null;
+        return array( 'reason' => $reason . ', ' . $bytes . ' bytes received', 'retry' => true );
+    }
+
+    /** Whether a file starts with the gzip magic bytes. */
+    protected function isGzipFile( $fileName )
+    {
+        $fp = @fopen( $fileName, 'rb' );
+        if ( !$fp )
+            return false;
+        $magic = fread( $fp, 2 );
+        fclose( $fp );
+        return $magic === "\x1f\x8b";
+    }
+
+    protected function downloadedSize( $fileName )
+    {
+        clearstatcache( true, $fileName );
+        return file_exists( $fileName ) ? (int)filesize( $fileName ) : 0;
+    }
+
+    protected function removeDownloadedFile( $fileName )
+    {
+        clearstatcache( true, $fileName );
+        if ( file_exists( $fileName ) )
+            @unlink( $fileName );
+    }
+
+    /**
+     * A download setting: the property of the same name when it is set (tests
+     * set it), else package.ini [RepositorySettings], else $default.
+     */
+    protected function downloadSetting( $name, $default )
+    {
+        if ( isset( $this->DownloadSettings[$name] ) )
+            return $this->DownloadSettings[$name];
+        $ini = eZINI::instance( 'package.ini' );
+        if ( $ini->hasVariable( 'RepositorySettings', $name ) )
+        {
+            $value = $ini->variable( 'RepositorySettings', $name );
+            if ( $value !== '' && $value !== array() )
+                return $value;
+        }
+        return $default;
     }
 
     /**
@@ -178,10 +347,16 @@ class eZStepSiteTypes extends eZStepInstaller
         $archiveName = $this->downloadFile( $packageUrl, /* $outDir = */ eZStepSiteTypes::tempDir() );
         if ( $archiveName === false )
         {
-            eZDebug::writeWarning( "Download of package '$packageName' from '$packageUrl' failed: $this->ErrorMsg" );
-            $this->ErrorMsg = ezpI18n::tr( 'design/standard/setup/init',
-                                      'Download of package \'%pkg\' failed. You may upload the package manually.',
-                                      false, array( '%pkg' => $packageName ) );
+            $reason = $this->ErrorMsg;
+            eZDebug::writeWarning( "Download of package '$packageName' from '$packageUrl' failed after $this->DownloadAttemptCount attempt(s): $reason" );
+            if ( $this->DownloadAttemptCount > 1 )
+                $this->ErrorMsg = ezpI18n::tr( 'design/standard/setup/init',
+                                          'Download of package \'%pkg\' failed after %count attempts: %reason. You may upload the package manually.',
+                                          false, array( '%pkg' => $packageName, '%count' => $this->DownloadAttemptCount, '%reason' => $reason ) );
+            else
+                $this->ErrorMsg = ezpI18n::tr( 'design/standard/setup/init',
+                                          'Download of package \'%pkg\' failed: %reason. You may upload the package manually.',
+                                          false, array( '%pkg' => $packageName, '%reason' => $reason ) );
 
             return false;
         }
@@ -803,6 +978,13 @@ class eZStepSiteTypes extends eZStepInstaller
     public $ErrorMsg = false;
     public $FileOpenErrorMsg = false;
     public $Message = false;
+
+    /** How many attempts the last downloadFile() made. */
+    public $DownloadAttemptCount = 0;
+    /** Download settings that take precedence over package.ini, e.g. array( 'DownloadRetryDelays' => array( 0.01 ) ). */
+    public $DownloadSettings = array();
+    /** 'curl', 'stream', or false for curl when the extension is loaded. */
+    public $DownloadTransport = false;
 }
 
 ?>
