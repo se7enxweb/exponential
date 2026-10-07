@@ -1515,15 +1515,33 @@ class eZOEInputParser extends eZXMLInputParser
             $styleArray = explode( ';', $styleString );
             foreach( $styleArray as $style )
             {
-                if ( !$style )
+                // A declaration without a colon (left over from pasted content) gives no attribute; the value may
+                // hold colons itself (an address)
+                $parts = explode( ':', $style, 2 );
+                if ( count( $parts ) < 2 )
                     continue;
 
-                list( $name, $value ) = explode( ':', $style );
-                $name  = strtolower( trim( $name ) );
-                $value = trim( $value );
+                $name  = strtolower( trim( $parts[0] ) );
+                $value = trim( $parts[1] );
+
+                // Only a plain CSS property name becomes an attribute name: not a namespace declaration (xmlns),
+                // which would go into the stored XML as one, nor a vendor prefix or a name an attribute can not have
+                if ( !preg_match( '/^[a-z_][a-z0-9_-]*$/', $name ) || strncmp( $name, 'xml', 3 ) === 0 )
+                    continue;
 
                 if ( $name === 'float' || $name === 'text-align' )
                     $name = 'align';
+
+                // An alignment is a keyword (left, right, center, justify, ...); anything else is left out, as the
+                // editor writes it into the markup it loads. A browser's own keyword (-webkit-center, pasted from a
+                // centered block) is the plain one.
+                if ( $name === 'align' )
+                {
+                    $value = strtolower( preg_replace( '/\s*!\s*important$/i', '', $value ) );
+                    $value = preg_replace( '/^-(?:webkit|moz|ms|o)-/', '', $value );
+                    if ( !preg_match( '/^[a-z][a-z-]*$/', $value ) )
+                        continue;
+                }
 
                 if ( $name )
                 {
