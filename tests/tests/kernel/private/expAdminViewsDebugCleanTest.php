@@ -44,6 +44,25 @@ class expAdminViewsDebugCleanTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '->isRegistered()', file_get_contents( $this->root . '/kernel/private/classes/views/' . $view ), $view );
     }
 
+    public function testVersionViewWithoutLanguageWritesNoDeprecation()
+    {
+        // content/versionview/<id>/<version> without a language and FromLanguage passed null to htmlspecialchars()
+        $source = file_get_contents( $this->root . '/kernel/private/classes/views/content/versionview.php' );
+        $this->assertStringContainsString( 'htmlspecialchars( (string)$LanguageCode,', $source );
+        $this->assertStringContainsString( "htmlspecialchars( (string)( \$Params['FromLanguage'] ?? '' ),", $source );
+        $deprecations = array();
+        set_error_handler( function ( $no, $str ) use ( &$deprecations ) { $deprecations[] = $str; return true; }, E_DEPRECATED );
+        try
+        {
+            $this->assertSame( '', htmlspecialchars( (string)null, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) );
+        }
+        finally
+        {
+            restore_error_handler();
+        }
+        $this->assertSame( array(), $deprecations );
+    }
+
     public function testSystemInformationDoesNotReuseMenuVariable()
     {
         $menu = file_get_contents( $this->root . '/design/admin/templates/parts/ini_menu.tpl' );
