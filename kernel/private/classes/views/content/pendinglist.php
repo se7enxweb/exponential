@@ -40,8 +40,8 @@ class Pendinglist extends \Exponential\Runnable\ModuleView
         unset( $__name );
 
         $Module = $Params['Module'];
-        $offset = \expAdminPagination::offset( $Params );
-        $filters = \expContentPendingList::filters( isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array() );
+        $offset = \expAdminPagination::offset( $scope['Params'] );
+        $filters = \expContentPendingList::filters( isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array() );
 
         $user = \eZUser::currentUser();
         $rows = $user->isRegistered() ? self::rows( $user ) : array();

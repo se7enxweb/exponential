@@ -39,7 +39,7 @@ class Versionview extends \Exponential\Runnable\ModuleView
         // content.ini [VersionView] ViewModes[] (full by default)
         $viewMode = self::viewMode( isset( $scope['Params']['ViewMode'] ) ? $scope['Params']['ViewMode'] : null );
         if ( $viewMode === null )
-            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            return $this->viewResult( null, $scope['Params']['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
         // Will be sent from the content/edit page and should be kept
         // incase the user decides to continue editing.
@@ -155,9 +155,9 @@ class Versionview extends \Exponential\Runnable\ModuleView
             }
 
             // The view mode chosen in the form (a listed one; anything else keeps the current one)
-            if ( $Module->hasActionParameter( 'ViewMode' ) )
+            if ( $scope['Params']['Module']->hasActionParameter( 'ViewMode' ) )
             {
-                $viewMode = self::changedViewMode( $Module->actionParameter( 'ViewMode' ), $viewMode );
+                $viewMode = self::changedViewMode( $scope['Params']['Module']->actionParameter( 'ViewMode' ), $viewMode );
             }
         }
 

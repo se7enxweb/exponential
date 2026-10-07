@@ -39,7 +39,7 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
 
         // A search over the alias and its destination, and the kind of alias, both off the address
         $search = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
-        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $kind = self::kindKey( isset( $userParameters['kind'] ) ? $userParameters['kind'] : '' );
         // What the form held, given back to it when the alias could not be created
         $aliasForm = array( 'language' => false, 'all_languages' => false, 'redirects' => true );

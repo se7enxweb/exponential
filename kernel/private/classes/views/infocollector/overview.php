@@ -126,7 +126,7 @@ class Overview extends \Exponential\Runnable\ModuleView
             $offset = 0;
         }
 
-        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $sortBy = self::cleanSort( isset( $userParameters['sortby'] ) ? $userParameters['sortby'] : '' );
         $order = self::cleanOrder( isset( $userParameters['order'] ) ? $userParameters['order'] : '', self::defaultOrder( $sortBy ) );
 

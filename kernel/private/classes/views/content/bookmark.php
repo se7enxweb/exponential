@@ -45,8 +45,8 @@ class Bookmark extends \Exponential\Runnable\ModuleView
         $user = \eZUser::currentUser();
         $userID = (int) $user->id();
 
-        $userParameters = isset( $Params['UserParameters'] ) ? (array) $Params['UserParameters'] : array();
-        $offset = isset( $Params['Offset'] ) && is_numeric( $Params['Offset'] ) ? max( 0, (int) $Params['Offset'] ) : 0;
+        $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array) $scope['Params']['UserParameters'] : array();
+        $offset = isset( $scope['Params']['Offset'] ) && is_numeric( $scope['Params']['Offset'] ) ? max( 0, (int) $scope['Params']['Offset'] ) : 0;
         $sort = \expBookmarkPage::sortKey( isset( $userParameters['sort'] ) ? $userParameters['sort'] : '' );
         $search = \expBookmarkPage::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
 

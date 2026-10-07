@@ -49,7 +49,7 @@ class ListView extends \Exponential\Runnable\ModuleView
         $repositories = \eZPackage::packageRepositories();
 
         // The repository: none means every repository. One the storage does not have is not found.
-        $repositoryID = isset( $Params['RepositoryID'] ) && $Params['RepositoryID'] !== false ? (string)$Params['RepositoryID'] : '';
+        $repositoryID = isset( $scope['Params']['RepositoryID'] ) && $scope['Params']['RepositoryID'] !== false ? (string)$scope['Params']['RepositoryID'] : '';
         if ( $repositoryID !== '' && !\eZPackageRequestGuard::repository( $repositoryID, $repositories ) )
             return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
@@ -135,7 +135,7 @@ class ListView extends \Exponential\Runnable\ModuleView
         }
 
         // The list
-        $userParameters = isset( $Params['UserParameters'] ) && is_array( $Params['UserParameters'] ) ? $Params['UserParameters'] : array();
+        $userParameters = isset( $scope['Params']['UserParameters'] ) && is_array( $scope['Params']['UserParameters'] ) ? $scope['Params']['UserParameters'] : array();
         if ( isset( $userParameters['search'] ) )
             $userParameters['search'] = rawurldecode( $userParameters['search'] );
         $types = \eZPackageCatalog::types( $cards );
@@ -144,7 +144,7 @@ class ListView extends \Exponential\Runnable\ModuleView
 
         list( $limit, $limitChoice, $limitChoices ) = self::pageSize();
         $total = count( $filtered );
-        $offset = \expAdminPagination::offset( $Params );
+        $offset = \expAdminPagination::offset( $scope['Params'] );
         if ( $offset >= $total && $total > 0 )
             $offset = (int)( floor( ( $total - 1 ) / $limit ) * $limit );
         $page = array_slice( $filtered, $offset, $limit, true );
