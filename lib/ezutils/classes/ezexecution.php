@@ -145,14 +145,20 @@ class eZExecution
         // when the callbackfunction is called. eZDocumentRoot is set in ::registerShutdownHandler
         // Getting the previous current working directory as we might need to get back there (i.e. Symfony web/ directory).
         $previousCwd = getcwd();
-        if ( self::$eZDocumentRoot !== null )
+        $restorePreviousCwd = false;
+        if ( self::$eZDocumentRoot !== null && $previousCwd !== self::$eZDocumentRoot )
         {
             chdir( self::$eZDocumentRoot );
+            $restorePreviousCwd = is_string( $previousCwd );
         }
 
         if ( eZExecution::isCleanExit() )
         {
-            chdir( $previousCwd );
+            // Under LiteSpeed (lsapi) shutdown runs in the PHP binary's
+            // directory, which open_basedir does not allow: going back there
+            // fails and only matters to a caller that set its own directory.
+            if ( $restorePreviousCwd )
+                @chdir( $previousCwd );
             return;
         }
 
@@ -167,7 +173,8 @@ class eZExecution
                 eZDebug::writeError('Could not call fatal error handler, is it a static public function?', __METHOD__ );
         }
 
-        chdir( $previousCwd );
+        if ( $restorePreviousCwd )
+            @chdir( $previousCwd );
     }
 
     /*!
