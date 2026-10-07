@@ -1438,8 +1438,20 @@ WHERE user_id = '" . $userID . "' AND
         $contentObjectID = $http->sessionVariable( 'eZUserLoggedInID' );
 
         // Recorded while the user is still the current one, with the session that ends
-        if ( class_exists( 'expAudit' ) && $contentObjectID && $contentObjectID != self::anonymousId() )
-            expAudit::event( 'access.session.logout', array( 'object' => array( 'type' => 'user', 'id' => (int)$contentObjectID ) ) );
+        // The audit asks currentUser() who acts; for a disabled user that logged out again and recorded again,
+        // until memory ran out. While it records, currentUser() answers with the user being logged out.
+        if ( class_exists( 'expAudit' ) && $contentObjectID && $contentObjectID != self::anonymousId() && !self::$recordingLogout )
+        {
+            self::$recordingLogout = true;
+            try
+            {
+                expAudit::event( 'access.session.logout', array( 'object' => array( 'type' => 'user', 'id' => (int)$contentObjectID ) ) );
+            }
+            finally
+            {
+                self::$recordingLogout = false;
+            }
+        }
 
         $id = false;
         $GLOBALS["eZUserGlobalInstance_$id"] = false;
@@ -2197,8 +2209,9 @@ WHERE user_id = '" . $userID . "' AND
     static function currentUser()
     {
         $user = self::instance();
-        if ( $user->isAnonymous() )
+        if ( $user->isAnonymous() || self::$recordingLogout )
         {
+            // While logoutCurrent() records a logout: the user being logged out, enabled or not
             return $user;
         }
         if ( $user->isEnabled() )
@@ -3640,6 +3653,16 @@ WHERE user_id = '" . $userID . "' AND
      * @since 4.3
      */
     protected static $userHasLoggedOut = false;
+
+    /**
+     * True while logoutCurrent() records the logout: currentUser() then answers with the user being logged out
+     * instead of logging a disabled user out again (which recorded the logout again, without end). A static
+     * property, so a persistent worker (Velocity) starts every request with false; logoutCurrent() resets it in a
+     * finally block as well.
+     *
+     * @var bool
+     */
+    protected static $recordingLogout = false;
 
     private $CachingEnabled = true;
 }
