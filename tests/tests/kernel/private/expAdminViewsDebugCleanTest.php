@@ -80,6 +80,17 @@ class expAdminViewsDebugCleanTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    public function testUrlViewStatusLabelsCoverEveryStatus()
+    {
+        foreach ( array( 'admin', 'admin4' ) as $design )
+        {
+            $source = file_get_contents( $this->root . '/design/' . $design . '/templates/url/view.tpl' );
+            $this->assertSame( 3, preg_match_all( '/object_version_status\|choose\((.*?)\)\}/', $source, $m ), $design );
+            foreach ( $m[1] as $list )
+                $this->assertSame( eZContentObjectVersion::STATUS_QUEUED + 1, preg_match_all( '/\$status_(?!in_trash)\w+/', $list ), "$design: $list" );
+        }
+    }
+
     public function testSystemInformationDoesNotReuseMenuVariable()
     {
         $menu = file_get_contents( $this->root . '/design/admin/templates/parts/ini_menu.tpl' );
