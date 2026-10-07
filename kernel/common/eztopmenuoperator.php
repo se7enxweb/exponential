@@ -103,6 +103,15 @@ class eZTopMenuOperator
             $tabIDs = array_values( array_diff( $tabIDs, (array)$ini->variable( 'TopAdminMenu', 'HiddenTabs' ) ) );
         foreach ( $tabIDs as $tabID )
         {
+            // A tab listed without its [Topmenu_<tab>] group (a siteaccess naming the tab of an extension that is
+            // not active there) has no address, name or access rules: it is left out, with one warning, instead
+            // of a half-built tab and a PHP warning for each of its settings
+            if ( !$ini->hasGroup( 'Topmenu_' . $tabID ) )
+            {
+                eZDebug::writeWarning( "Tab '$tabID' is listed in [TopAdminMenu] Tabs[] but menu.ini has no [Topmenu_$tabID] group", __METHOD__ );
+                continue;
+            }
+
             $shownList = $ini->variable( 'Topmenu_' . $tabID , 'Shown' );
             if ( isset( $shownList[$context] ) && $shownList[$context] === 'false' )
             {
