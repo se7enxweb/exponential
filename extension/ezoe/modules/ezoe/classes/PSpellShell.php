@@ -7,6 +7,8 @@
  */
 
 class PSpellShell extends SpellChecker {
+	public $_tmpfile;
+
 	/**
 	 * Spellchecks an array of words.
 	 *

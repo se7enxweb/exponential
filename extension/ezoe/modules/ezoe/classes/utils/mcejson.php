@@ -107,7 +107,7 @@ class Moxiecode_JSONReader
 		if ($chr != null) {
 			switch ($chr) {
 				case '[':
-					$this->_lastLocation[] = $this->_location;
+					$this->_lastLocations[] = $this->_location;
 					$this->_location = Moxiecode_JSONReader::JSON_IN_ARRAY;
 					$this->_token = Moxiecode_JSONReader::JSON_START_ARRAY;
 					$this->_value = null;
@@ -115,7 +115,7 @@ class Moxiecode_JSONReader
 					return true;
 
 				case ']':
-					$this->_location = array_pop($this->_lastLocation);
+					$this->_location = array_pop($this->_lastLocations);
 					$this->_token = Moxiecode_JSONReader::JSON_END_ARRAY;
 					$this->_value = null;
 					$this->readAway();
@@ -126,7 +126,7 @@ class Moxiecode_JSONReader
 					return true;
 
 				case '{':
-					$this->_lastLocation[] = $this->_location;
+					$this->_lastLocations[] = $this->_location;
 					$this->_location = Moxiecode_JSONReader::JSON_IN_OBJECT;
 					$this->_needProp = true;
 					$this->_token = Moxiecode_JSONReader::JSON_START_OBJ;
@@ -135,7 +135,7 @@ class Moxiecode_JSONReader
 					return true;
 
 				case '}':
-					$this->_location = array_pop($this->_lastLocation);
+					$this->_location = array_pop($this->_lastLocations);
 					$this->_token = Moxiecode_JSONReader::JSON_END_OBJ;
 					$this->_value = null;
 					$this->readAway();
@@ -351,7 +351,7 @@ class Moxiecode_JSONReader
 
 				return $str;
 			} else
-				return $this->_data[++$this->_pos];
+				return isset($this->_data[++$this->_pos]) ? $this->_data[$this->_pos] : null;
 		}
 
 		return null;
@@ -363,7 +363,7 @@ class Moxiecode_JSONReader
 
 	function peek() {
 		if ($this->_pos < $this->_len)
-			return $this->_data[$this->_pos + 1];
+			return isset($this->_data[$this->_pos + 1]) ? $this->_data[$this->_pos + 1] : null;
 
 		return null;
 	}
@@ -375,6 +375,10 @@ class Moxiecode_JSONReader
  * @package MCManager.utils
  */
 class Moxiecode_JSON {
+	public $data;
+	public $parents;
+	public $cur;
+
 	function __construct() {
 	}
 
