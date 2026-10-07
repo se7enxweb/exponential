@@ -145,7 +145,7 @@ class Show extends \Exponential\Runnable\ModuleView
 {
     public function run( array $scope )
     {
-        $Module = $scope['Module'];
+        $Module = $scope['Params']['Module'];
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'report', \myReportService::build( $scope['Params']['Month'] ) );
         return array( 'content' => $tpl->fetch( 'design:report/show.tpl' ),
@@ -159,6 +159,11 @@ class Show extends \Exponential\Runnable\ModuleView
 // extension/myext/modules/report/show.php (named in module.php ViewList as before)
 return \Exponential\View\Extension\Myext\Report\Show::main( __FILE__, get_defined_vars() );
 ```
+
+`$scope` is what `eZProcess::runFile()` defines: `$scope['Params']` (with the module as `$scope['Params']['Module']`)
+and `$scope['Result']` always, the view's parameters as variables of their own (`$scope['Module']` among them) only
+when the module's `module.php` sets `'variable_params' => true`. Read the module as `$scope['Params']['Module']`, which
+every module has.
 
 ## Shared option parsing, help and output
 
