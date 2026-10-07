@@ -4625,9 +4625,9 @@ ec9d0894a9b5155ca5bfa598488a5854  extension/ezoe/modules/ezoe/atd_rpc.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
 c49986d2339f33f44be6a2a7baf863a6  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
 65a0f0399147b26ab995e1f10b7bdad1  extension/ezoe/modules/ezoe/classes/PSpell.php
-38bb44d4d35e30492f4d244407ddabc8  extension/ezoe/modules/ezoe/classes/PSpellShell.php
-801530be20c2528bdfafc2e5cbe954c2  extension/ezoe/modules/ezoe/classes/SpellChecker.php
-67037c0d49c2b5280114f2b5286634db  extension/ezoe/modules/ezoe/classes/utils/mcejson.php
+5e240fc9a87763dbf50d4f1039dad21b  extension/ezoe/modules/ezoe/classes/PSpellShell.php
+aaf0e11d569bc46a21521c6ecd72a7f0  extension/ezoe/modules/ezoe/classes/SpellChecker.php
+bd6c65dc8c66b6cb152ad3002f09007b  extension/ezoe/modules/ezoe/classes/utils/mcejson.php
 f6803342ef7516ba57d2207bb2426376  extension/ezoe/modules/ezoe/dialog.php
 9e968c050c2edc54d6fe738d5b5dbef3  extension/ezoe/modules/ezoe/embed_view.php
 c27bc87282e1785a68c80795e73a0478  extension/ezoe/modules/ezoe/engine.php
@@ -7031,6 +7031,7 @@ c986f5766a23f4b954a6b74c5c4f8931  tests/tests/extension/ezoe/expOEEditorViewAcce
 1236b3c9d5976285c3e0a842868d1392  tests/tests/extension/ezoe/expOEUploadRulesTest.php
 e7dea128dd036272156d08066e83a740  tests/tests/extension/ezoe/expOEUrlFetcherTest.php
 982cbfcccf0ec493627b9b8f20f3d3dd  tests/tests/extension/ezoe/expOEViewsJsonTest.php
+9ed8f54e3c2ea5c50e0e31f4007ed15d  tests/tests/extension/ezoe/ezoeSpellCheckerPropertiesTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
 8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
 228e5c524d3f47d50fb5303b7b76e37c  tests/tests/extension/ezupdate/ezUpdateInstallabilityTest.php
