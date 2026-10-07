@@ -558,20 +558,8 @@ class expClassicMenuSettings
      */
     protected static function cacheDirectory( $directory )
     {
-        $ini = eZINI::instance();
-        $siteINI = eZINI::instance( 'site.ini.append', $directory );
-        if ( $siteINI->hasVariable( 'FileSettings', 'CacheDir' ) )
-        {
-            $cacheDir = $siteINI->variable( 'FileSettings', 'CacheDir' );
-            if ( $cacheDir !== '' && $cacheDir[0] == '/' )
-                return eZDir::path( array( $cacheDir ) );
-            if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
-                return eZDir::path( array( $siteINI->variable( 'FileSettings', 'VarDir' ), $cacheDir ) );
-            return eZDir::path( array( $ini->variable( 'FileSettings', 'VarDir' ), $cacheDir ) );
-        }
-        if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
-            return eZDir::path( array( $siteINI->variable( 'FileSettings', 'VarDir' ), $ini->variable( 'FileSettings', 'CacheDir' ) ) );
-        return eZSys::cacheDirectory();
+        // Derived as eZSys::cacheDirectory() derives the current one, also below site.ini [FileSettings] CacheVarDir
+        return eZSys::cacheDirectoryOf( eZINI::instance( 'site.ini.append', $directory ) );
     }
 }
 ?>

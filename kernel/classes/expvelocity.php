@@ -80,6 +80,315 @@ class expVelocity
     const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)';
 
     /**
+     * STATIC_PATHS, and the generated public caches below site.ini [FileSettings] CacheVarDir when the caches of the
+     * sites are kept in a tree of their own (var_cache/<site>/cache/public, as eZSys::cacheDirectory() puts them).
+     * Every engine serves this list. A CacheVarDir that is an absolute path or holds anything but letters, digits,
+     * '_', '-', '.' and '/' is not served.
+     *
+     * The list is written when the server starts, without a siteaccess: CacheVarDir is read from the global settings
+     * and from the full settings of every siteaccess in [SiteAccessSettings] AvailableSiteAccessList
+     * (as eZSiteAccess::getIni() reads them, without changing the state of the process: see cacheVarDirs()), so a
+     * CacheVarDir set for some sites only is served too. A change of it takes a restart of the server, as every
+     * setting it starts with.
+     *
+     * @return string
+     */
+    public static function staticPaths()
+    {
+        $cachePaths = array();
+        foreach ( self::cacheVarDirs() as $cacheVarDir )
+        {
+            // As eZSys::cacheDirectory() writes it: "./var_cache/" is the directory var_cache
+            $cacheVarDir = eZDir::path( array( trim( (string)$cacheVarDir ) ) );
+            // Only a directory inside the installation is served, and one regular expression must never be able to
+            // widen another: the name may hold letters, digits and _ - . / but no "..".
+            if ( $cacheVarDir === '' || $cacheVarDir === 'var' || !preg_match( '#^[A-Za-z0-9_][A-Za-z0-9_./-]*$#', $cacheVarDir ) ||
+                 strpos( $cacheVarDir, '..' ) !== false )
+            {
+                continue;
+            }
+            $cachePaths[$cacheVarDir] = str_replace( '.', '\\.', $cacheVarDir ) . '/([^/]+/)?cache/(texttoimage|public)/';
+        }
+        if ( !$cachePaths )
+        {
+            return self::STATIC_PATHS;
+        }
+        ksort( $cachePaths );
+        return '^/(' . implode( '|', $cachePaths ) . '|' . substr( self::STATIC_PATHS, strlen( '^/(' ) );
+    }
+
+    /**
+     * Every value of site.ini [FileSettings] CacheVarDir: the global one and that of each siteaccess.
+     *
+     * The settings of a siteaccess are read as eZSiteAccess::getIni() reads them -- the global extension and override
+     * directories, the siteaccess's own, those its extensions keep for it, its ActiveAccessExtensions -- but on an
+     * eZINI of its own that is never cached, on disk or in eZINI::instance(), and without eZSiteAccess::load(): no
+     * extension is activated, $GLOBALS['eZCurrentAccess'] and the global INI instances are not touched, no INI or
+     * extension cache file is written, and what eZExtension and ezpExtension remember about extensions is put back as
+     * it was. The server starts with the same process state whatever its siteaccesses hold.
+     *
+     * Not cached, the settings are parsed: once for what every siteaccess shares, and again only for a siteaccess
+     * with a settings file of its own that names CacheVarDir or ActiveAccessExtensions (any other file of its own
+     * cannot change the value): of 17 siteaccesses of which one names ActiveAccessExtensions, only that one is parsed.
+     *
+     * @return string[]
+     */
+    protected static function cacheVarDirs()
+    {
+        $values = array();
+        if ( !class_exists( 'eZINI' ) )
+        {
+            return $values;
+        }
+        $ini = eZINI::instance();
+        if ( $ini->hasVariable( 'FileSettings', 'CacheVarDir' ) )
+        {
+            $values[] = (string)$ini->variable( 'FileSettings', 'CacheVarDir' );
+        }
+        if ( !class_exists( 'eZExtension' ) || !$ini->hasVariable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) )
+        {
+            return array_unique( $values );
+        }
+        $remembered = self::staticProperties( array( 'eZExtension', 'ezpExtension' ) );
+        try
+        {
+            // What every siteaccess shares: the extension and override directories of the global settings
+            $shared = self::privateSiteIni( $ini->overrideDirs( false ) );
+            $shared->findInputFiles( $sharedFiles, $iniFile );
+            $shared->load();
+            if ( $shared->hasVariable( 'FileSettings', 'CacheVarDir' ) )
+            {
+                $values[] = (string)$shared->variable( 'FileSettings', 'CacheVarDir' );
+            }
+            // Access extensions for every siteaccess place directories of their own for each: parse each one then
+            $sharedAccessExtensions = (bool)self::extensionNames( $shared, 'ActiveAccessExtensions' );
+            // The extensions that keep settings for a siteaccess, as eZExtension::activeExtensions( 'default' ) lists
+            // them; asked here, without its cache file and the expiry and cluster handlers it starts
+            $defaultExtensions = self::extensionNames( $ini, 'ActiveExtensions',
+                isset( $GLOBALS['eZActiveExtensions'] ) ? (array)$GLOBALS['eZActiveExtensions'] : array() );
+
+            foreach ( array_unique( (array)$ini->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) ) as $siteAccess )
+            {
+                if ( !is_string( $siteAccess ) || !preg_match( '/^[A-Za-z0-9_-]+$/', $siteAccess ) )
+                {
+                    continue;
+                }
+                try
+                {
+                    $siteINI = self::siteAccessIni( $siteAccess, $shared, $defaultExtensions );
+                    if ( !$sharedAccessExtensions && !self::ownFilesName( $siteINI, $sharedFiles, array( 'CacheVarDir', 'ActiveAccessExtensions' ) ) )
+                    {
+                        // Nothing of its own names it: its value is the shared one
+                        continue;
+                    }
+                    self::loadSiteAccessIni( $siteINI, $siteAccess );
+                    if ( $siteINI->hasVariable( 'FileSettings', 'CacheVarDir' ) )
+                    {
+                        $values[] = (string)$siteINI->variable( 'FileSettings', 'CacheVarDir' );
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                    // A siteaccess whose settings cannot be read serves nothing extra
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // Settings that cannot be read serve nothing extra
+        }
+        finally
+        {
+            self::restoreStaticProperties( $remembered );
+        }
+        return array_unique( $values );
+    }
+
+    /**
+     * A site.ini nobody else holds, with the extension and override directories of $globalDirs, not read yet.
+     *
+     * useTextCodec false: the files are read as they are, without a codec of the process (CacheVarDir is ASCII);
+     * useCache false: neither read nor written below var/cache/ini; useLocalOverrides true: directories of its own;
+     * load false: read once the directories are placed.
+     *
+     * @param array $globalDirs eZINI::overrideDirs( false ) of the global site.ini
+     * @return eZINI
+     */
+    protected static function privateSiteIni( array $globalDirs )
+    {
+        $dirs = eZINI::defaultOverrideDirs();
+        foreach ( array( 'extension', 'override' ) as $scope )
+        {
+            if ( isset( $globalDirs[$scope] ) )
+            {
+                $dirs[$scope] = $globalDirs[$scope];
+            }
+        }
+        $siteINI = new eZINI( 'site.ini', 'settings', false, false, true, false, false, false );
+        $siteINI->setOverrideDirs( $dirs );
+        return $siteINI;
+    }
+
+    /**
+     * The site.ini of a siteaccess, on an eZINI nobody else holds and that is never cached, not read yet.
+     *
+     * The override directories are those eZSiteAccess::getIni() gives it before it reads the access extensions: the
+     * extension and override directories of the global settings, the siteaccess's own directory and those its default
+     * extensions keep for it (as eZExtension::prependExtensionSiteAccesses() places them). loadSiteAccessIni() reads
+     * it.
+     *
+     * @param string $siteAccess
+     * @param eZINI $shared from privateSiteIni()
+     * @param string[] $defaultExtensions the default extensions, in their order
+     * @return eZINI
+     */
+    protected static function siteAccessIni( $siteAccess, eZINI $shared, array $defaultExtensions )
+    {
+        $siteINI = self::privateSiteIni( $shared->overrideDirs( false ) );
+        $siteINI->prependOverrideDir( "siteaccess/$siteAccess", false, 'siteaccess', 'siteaccess' );
+        foreach ( $defaultExtensions as $extension )
+        {
+            eZExtension::prependSiteAccess( $extension, $siteAccess, $siteINI );
+        }
+        return $siteINI;
+    }
+
+    /**
+     * Reads a siteAccessIni(), then places its ActiveAccessExtensions with the directories they keep for the
+     * siteaccess and reads it again, as eZSiteAccess::load() does. Only directories are placed; no extension is
+     * activated.
+     *
+     * @param eZINI $siteINI
+     * @param string $siteAccess
+     */
+    protected static function loadSiteAccessIni( eZINI $siteINI, $siteAccess )
+    {
+        $siteINI->load();
+        $placed = false;
+        foreach ( self::extensionNames( $siteINI, 'ActiveAccessExtensions' ) as $extension )
+        {
+            $path = eZExtension::extensionPath( $extension, $siteINI );
+            if ( $path === false )
+            {
+                continue;
+            }
+            $siteINI->prependOverrideDir( $path . '/settings', true, 'extension:' . $extension, 'sa-extension' );
+            eZExtension::prependSiteAccess( $extension, $siteAccess, $siteINI );
+            $placed = true;
+        }
+        if ( $placed )
+        {
+            $siteINI->load();
+        }
+    }
+
+    /**
+     * The extensions site.ini [ExtensionSettings] $variable of $siteINI names, and $more, by their names on disk and
+     * in the order of their dependencies when ExtensionOrdering is enabled, as eZExtension::activeExtensions() lists
+     * them.
+     *
+     * @param eZINI $siteINI
+     * @param string $variable ActiveExtensions or ActiveAccessExtensions
+     * @param string[] $more
+     * @return string[]
+     */
+    protected static function extensionNames( eZINI $siteINI, $variable, array $more = array() )
+    {
+        $names = $siteINI->hasVariable( 'ExtensionSettings', $variable )
+            ? (array)$siteINI->variable( 'ExtensionSettings', $variable ) : array();
+        $names = array_filter( array_merge( $names, $more ), function ( $name ) { return is_string( $name ) && $name !== ''; } );
+        $names = array_values( array_unique( array_map( array( 'eZExtension', 'extensionName' ), $names ) ) );
+        if ( $names && $siteINI->hasVariable( 'ExtensionSettings', 'ExtensionOrdering' ) &&
+             $siteINI->variable( 'ExtensionSettings', 'ExtensionOrdering' ) === 'enabled' )
+        {
+            $names = eZExtension::extensionOrdering( $names );
+        }
+        return $names;
+    }
+
+    /**
+     * Whether a settings file of $siteINI that the shared settings do not read names one of $names.
+     *
+     * @param eZINI $siteINI
+     * @param string[] $sharedFiles
+     * @param string[] $names
+     * @return bool
+     */
+    protected static function ownFilesName( eZINI $siteINI, array $sharedFiles, array $names )
+    {
+        $siteINI->findInputFiles( $files, $iniFile );
+        foreach ( array_diff( (array)$files, $sharedFiles ) as $file )
+        {
+            $text = @file_get_contents( $file );
+            if ( $text === false )
+            {
+                return true;
+            }
+            foreach ( $names as $name )
+            {
+                if ( strpos( $text, $name ) !== false )
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * The static properties of classes, by class and name, for restoreStaticProperties().
+     *
+     * @param string[] $classes
+     * @return array
+     */
+    protected static function staticProperties( array $classes )
+    {
+        $state = array();
+        foreach ( $classes as $class )
+        {
+            if ( !class_exists( $class ) )
+            {
+                continue;
+            }
+            $reflection = new ReflectionClass( $class );
+            foreach ( $reflection->getProperties( ReflectionProperty::IS_STATIC ) as $property )
+            {
+                if ( $property->getDeclaringClass()->getName() !== $reflection->getName() )
+                {
+                    continue;
+                }
+                if ( PHP_VERSION_ID < 80100 )
+                {
+                    $property->setAccessible( true );
+                }
+                $state[$class][$property->getName()] = $property->getValue();
+            }
+        }
+        return $state;
+    }
+
+    /**
+     * Puts back static properties as staticProperties() found them.
+     *
+     * @param array $state
+     */
+    protected static function restoreStaticProperties( array $state )
+    {
+        foreach ( $state as $class => $properties )
+        {
+            foreach ( $properties as $name => $value )
+            {
+                $property = new ReflectionProperty( $class, $name );
+                if ( PHP_VERSION_ID < 80100 )
+                {
+                    $property->setAccessible( true );
+                }
+                $property->setValue( null, $value );
+            }
+        }
+    }
+
+    /**
      * What is never served as a file even below a STATIC_PATHS directory:
      * scripts (their source would be sent) and dot paths (.htaccess, .git,
      * a package's .cache). Case-insensitive, for Caddy's RE2 and preg alike.
@@ -1594,7 +1903,7 @@ class expVelocity
         // Q.webserver.scripts; an older one ignores all three keys.
         $webserver['scripts'] = self::ENTRY_SCRIPTS;
         $webserver['frontControllers'] = self::FRONT_CONTROLLERS;
-        $web['static']['paths'] = array( self::STATIC_PATHS );
+        $web['static']['paths'] = array( self::staticPaths() );
         // Always revalidated, whatever the static lifetime: the service worker decides how every later
         // navigation is answered, so a fixed copy has to reach browsers at once. The server's own list
         // knows sw.js and service-worker.js; the Exponential Service Workers Index is index.js in the

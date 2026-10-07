@@ -12,7 +12,9 @@
  *
  * A run opens with an introduction and the environment, records each step
  * (">> Step" ... "<< Step status, time, errors, warnings") with what it wrote
- * to var/log/error.log and warning.log and what PHP raised, a hint beside
+ * to error.log and warning.log (where eZDebug writes them: var/log, or the log
+ * directory of the site with site.ini [FileSettings] UseGlobalLogDir=disabled)
+ * and what PHP raised, a hint beside
  * each known problem, and - after an installation - health checks that catch
  * a run which returned without an error but left the site unusable. It closes
  * with a summary: every step, the result, each distinct problem once, and a
@@ -107,9 +109,11 @@ class expSetupLog
             return;
         if ( self::$run['current'] )
             self::stepEnd( 'unfinished' );
+        // The kernel logs are read where eZDebug writes them when the step begins, from the size they have then
+        $logDir = self::kernelLogDir();
         self::$run['current'] = array( 'name' => $step, 'started' => microtime( true ),
-                                       'problems' => count( self::$run['problems'] ),
-                                       'error' => self::size( 'error.log' ), 'warning' => self::size( 'warning.log' ) );
+                                       'problems' => count( self::$run['problems'] ), 'logdir' => $logDir,
+                                       'error' => self::size( 'error.log', $logDir ), 'warning' => self::size( 'warning.log', $logDir ) );
         self::line( '>> ' . $step, $step );
         self::updateLogContext();
     }
@@ -137,7 +141,7 @@ class expSetupLog
         // Each distinct entry once, with how often and when it was written
         foreach ( array( 'ERROR' => array( 'error.log', 'error' ), 'WARNING' => array( 'warning.log', 'warning' ) ) as $level => $log )
         {
-            $entries = self::since( $log[0], $step[$log[1]] );
+            $entries = self::since( $log[0], $step[$log[1]], isset( $step['logdir'] ) ? $step['logdir'] : null );
             $ours = array_filter( $entries, function ( $e ) { return !empty( $e['ours'] ); } );
             $others = array_filter( $entries, function ( $e ) { return empty( $e['ours'] ); } );
             foreach ( self::group( $ours ) as $g )
@@ -736,12 +740,35 @@ class expSetupLog
     /**
      * Where setup.log and the web setup's state are kept: var/log, or the
      * directory in EXP_SETUP_LOG_DIR (tests, so they never rotate the log of a
-     * real installation away). The kernel's own logs are read from var/log.
+     * real installation away). The kernel's own logs are read from
+     * kernelLogDir().
      */
     protected static function setupLogDir()
     {
         $dir = getenv( 'EXP_SETUP_LOG_DIR' );
         return is_string( $dir ) && $dir !== '' ? rtrim( $dir, '/' ) : self::LOG_DIR;
+    }
+
+    /**
+     * Where eZDebug writes error.log and warning.log: var/log, or the log
+     * directory of the site when site.ini [FileSettings] UseGlobalLogDir is
+     * disabled (multi-site hosting, eZSiteAccess::updateLogDirectory()).
+     */
+    protected static function kernelLogDir()
+    {
+        try
+        {
+            if ( class_exists( 'eZDebug' ) && method_exists( 'eZDebug', 'logDirectory' ) )
+            {
+                $dir = rtrim( (string)eZDebug::instance()->logDirectory(), '/' );
+                if ( $dir !== '' )
+                    return $dir;
+            }
+        }
+        catch ( Throwable $e )
+        {
+        }
+        return self::LOG_DIR;
     }
 
     /**
@@ -771,16 +798,16 @@ class expSetupLog
      */
     protected static function markErrorLog( $text )
     {
-        $f = self::LOG_DIR . '/error.log';
+        $f = self::kernelLogDir() . '/error.log';
         $ip = eZSys::serverVariable( 'HOSTNAME', true );
         if ( !$ip )
             $ip = php_uname( 'n' );
         @file_put_contents( $f, '[ ' . date( 'M d Y H:i:s' ) . ' ] [' . $ip . "] expSetupLog:\n" . $text . "\n", FILE_APPEND | LOCK_EX );
     }
 
-    protected static function size( $log )
+    protected static function size( $log, $dir = null )
     {
-        $f = self::LOG_DIR . '/' . $log;
+        $f = ( $dir !== null ? $dir : self::kernelLogDir() ) . '/' . $log;
         clearstatcache( true, $f );
         return file_exists( $f ) ? filesize( $f ) : 0;
     }
@@ -790,9 +817,9 @@ class expSetupLog
      * message: eZLog and eZDebug start an entry with "[ date ][ siteaccess ]
      * [ command or URL ]" and eZDebug puts its label on a line of its own.
      */
-    protected static function since( $log, $offset )
+    protected static function since( $log, $offset, $dir = null )
     {
-        $f = self::LOG_DIR . '/' . $log;
+        $f = ( $dir !== null ? $dir : self::kernelLogDir() ) . '/' . $log;
         clearstatcache( true, $f );
         if ( !file_exists( $f ) )
             return array();

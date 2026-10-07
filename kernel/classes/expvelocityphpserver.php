@@ -379,7 +379,7 @@ class expVelocityPHPServer extends expVelocity
         $workers = (int)$this->setting( 'ServerSettings', 'Workers', 4 );
         $environment = array(
             'EXP_VELOCITY_ROOT'         => $this->absolute( $this->setting( 'ServerSettings', 'DocumentRoot', '' ) ),
-            'EXP_VELOCITY_STATIC_PATHS' => self::STATIC_PATHS,
+            'EXP_VELOCITY_STATIC_PATHS' => self::staticPaths(),
             'EXP_VELOCITY_NEVER_STATIC' => self::NEVER_STATIC,
             'EXP_VELOCITY_FOLLOW_SYMLINKS' => $this->followsSymlinks() ? '1' : '0',
             // For Setup > System information, as the frankenphp engine sets it.

@@ -41,8 +41,8 @@ class expDebugBarLog
             $ini = eZINI::instance( 'debugbar.ini' );
             if ( $ini->hasVariable( 'DebugBarSettings', 'LogFile' ) && basename( $ini->variable( 'DebugBarSettings', 'LogFile' ) ) !== '' )
                 $name = basename( $ini->variable( 'DebugBarSettings', 'LogFile' ) );
-            $logDir = eZINI::instance()->variable( 'FileSettings', 'LogDir' );
-            return eZSys::varDirectory() . '/' . ( $logDir ? $logDir : 'log' ) . '/' . $name;
+            // The log directory of the site; site.ini [FileSettings] LogDir may be an absolute path
+            return eZSys::logDirectory() . '/' . $name;
         }
         return 'var/log/' . $name;
     }

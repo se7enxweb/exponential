@@ -35,10 +35,10 @@ class eZAudit
         $auditNames = $ini->hasVariable( 'AuditSettings', 'AuditFileNames' )
                       ? $ini->variable( 'AuditSettings', 'AuditFileNames' )
                       : array();
-        $varDir = eZINI::instance()->variable( 'FileSettings', 'VarDir' );
-        // concat varDir setting with LogDir setting
-        $logDir = $varDir . '/';
-        $logDir .= $ini->hasVariable( 'AuditSettings', 'LogDir' ) ? $ini->variable( 'AuditSettings', 'LogDir' ): self::DEFAULT_LOG_DIR;
+        // [AuditSettings] LogDir inside VarDir, or as it is when absolute: the directory expAudit writes its records
+        // to (expAuditConfig::path()). The audit trail stays with the storage of the site; site.ini [FileSettings]
+        // LogDir, LogVarDir and UseGlobalLogDir do not move it.
+        $logDir = expAuditConfig::path( $ini->hasVariable( 'AuditSettings', 'LogDir' ) ? $ini->variable( 'AuditSettings', 'LogDir' ) : self::DEFAULT_LOG_DIR );
 
         $resultArray = array();
         foreach ( array_keys( $auditNames ) as $auditNameKey )
