@@ -188,4 +188,41 @@ class ezpLanguageSwitcherTest extends PHPUnit\Framework\TestCase
         $this->setting( 'site.ini', 'RegionalSettings', 'TranslationSA', array() );
         $this->assertSame( array(), ezpLanguageSwitcher::setupTranslationSAList() );
     }
+
+    /**
+     * A URI-matched siteaccess: process() builds the base URL from the site root and raises no
+     * "ltrim(): Passing null" deprecation (it passed an unset variable to eZURI::transformURI()).
+     */
+    public function testProcessOnUriSiteAccessRaisesNoDeprecation()
+    {
+        $savedAccess = isset( $GLOBALS['eZCurrentAccess'] ) ? $GLOBALS['eZCurrentAccess'] : null;
+        $GLOBALS['eZCurrentAccess'] = array( 'name' => 'starter', 'type' => eZSiteAccess::TYPE_URI );
+        $raised = array();
+        // the cluster handler set up by eZURI::transformURI() installs an exception handler of its own
+        $exceptionHandler = set_exception_handler( null );
+        restore_exception_handler();
+        set_error_handler( function ( $no, $str ) use ( &$raised ) { $raised[] = $str; return true; }, E_DEPRECATED | E_NOTICE | E_WARNING );
+        try
+        {
+            $switcher = new ezpLanguageSwitcherTestDouble();
+            $switcher->setIni( $this->siteAccessIni( array( 'RegionalSettings' => array( 'ContentObjectLocale' => 'eng-US' ) ) ) );
+            $switcher->process();
+            $base = $switcher->exposed( 'baseDestinationUrl' );
+        }
+        finally
+        {
+            restore_error_handler();
+            $current = set_exception_handler( null );
+            restore_exception_handler();
+            if ( $current !== $exceptionHandler )
+                restore_exception_handler();
+            if ( $savedAccess === null )
+                unset( $GLOBALS['eZCurrentAccess'] );
+            else
+                $GLOBALS['eZCurrentAccess'] = $savedAccess;
+        }
+        $this->assertSame( array(), $raised );
+        $this->assertIsString( $base );
+        $this->assertStringNotContainsString( '//' . '/', $base );
+    }
 }

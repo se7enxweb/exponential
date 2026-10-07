@@ -129,6 +129,9 @@ class Search extends \Exponential\Runnable\ModuleView
                     $subTreeArray[] = $subTreeItem;
             }
         }
+        // no subtree asked for: the siteaccess's own tree when it has a PathPrefix
+        if ( !$subTreeArray && $ini->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) )
+            $subTreeArray = self::pathPrefixSubTreeArray( $ini->variable( 'SiteAccessSettings', 'PathPrefix' ) );
 
         $Module->setTitle( "Search for: " . htmlspecialchars( $searchText, ENT_QUOTES, 'UTF-8' ) );
 
@@ -248,6 +251,38 @@ class Search extends \Exponential\Runnable\ModuleView
         }
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * The subtree a search without SubTreeArray is limited to: the node of the siteaccess's
+     * PathPrefix (site.ini [SiteAccessSettings] PathPrefix), or none.
+     *
+     * A siteaccess with a PathPrefix only reaches the content under that node: everything
+     * else is linked with the prefix in front of its own path and answers 404. Unscoped, the
+     * search of /bold listed the other sites' pages as /bold/fit-healthy/..., all broken.
+     *
+     * @param string $pathPrefix
+     * @param callable|null $resolver maps a URL alias path to a node id (0 when there is none);
+     *                                defaults to the URL alias table
+     * @return int[] the node id, or an empty array (no PathPrefix, or one that is not a node)
+     */
+    public static function pathPrefixSubTreeArray( $pathPrefix, $resolver = null )
+    {
+        $pathPrefix = trim( (string)$pathPrefix, '/' );
+        if ( $pathPrefix === '' )
+            return array();
+        if ( $resolver === null )
+        {
+            $resolver = function ( $path )
+            {
+                $elements = \eZURLAliasML::fetchByPath( $path );
+                if ( !$elements || !preg_match( '#^eznode:(\d+)$#', (string)$elements[0]->attribute( 'action' ), $m ) )
+                    return 0;
+                return (int)$m[1];
+            };
+        }
+        $nodeID = (int)call_user_func( $resolver, $pathPrefix );
+        return $nodeID > 0 ? array( $nodeID ) : array();
     }
 }
 
