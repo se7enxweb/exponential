@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-385771ea790989f99718c611f731b186  doc/changelogs/6.0/6.0.15.md
+ec0825510f0e4b02b287fd3c9085a102  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5995,7 +5995,7 @@ ffddbb8b67a94adf006b39beef35eb7b  kernel/setup/steps/ezstep_site_admin.php
 1524d76a733d4ff74668d248ffae6dce  kernel/setup/steps/ezstep_site_details.php
 9ccf85d01b8fde71c9490f586339434d  kernel/setup/steps/ezstep_site_packages.php
 fd806de9de6e0bc7e046b71a56335641  kernel/setup/steps/ezstep_site_templates.php
-0a9657087d527bf94ffe7fc300fa1524  kernel/setup/steps/ezstep_site_types.php
+9e95164d3df2477ef91757854a73f12e  kernel/setup/steps/ezstep_site_types.php
 d8b94dd3d3767d082e176d3d86f92b14  kernel/setup/steps/ezstep_system_check.php
 f1d1232dff6f4addd1c2fdbf108a578b  kernel/setup/steps/ezstep_system_finetune.php
 3722d444a6de2ba0539c9fb8f14b2d73  kernel/setup/steps/ezstep_welcome.php
@@ -6392,7 +6392,7 @@ f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 f6d12f47055cf42fcfa55fd165ac42a4  settings/module.ini
 9e25842dc1d4d8e3e5daf095b22f707f  settings/notification.ini
 ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
-6e03a3640a39023fd272000202700970  settings/package.ini
+fce5a3e3f0663f62cde1337a65d9ba06  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
 9bc9f7cc6a5478119f3a150b1ce7d177  settings/querycache.ini
@@ -7369,6 +7369,7 @@ b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIn
 45c4fd96321c423c32cf68eb6f67f2a4  tests/tests/kernel/classes/setup/MaintenanceRunTest.php
 bc8f87debce9fdd6ab2277a72ff216a4  tests/tests/kernel/classes/setup/RegistrationAndDryRunTest.php
 ae30bcf264ae9a0e1b6e2e582bb0e469  tests/tests/kernel/classes/setup/SessionPageTest.php
+6f791a2bce8d7fd28c8ba73af0026faf  tests/tests/kernel/classes/setup/SetupPackageDownloadTest.php
 2671ef0292727fae9b58c4f6fc4614f4  tests/tests/kernel/classes/setup/SetupPhpVersionTest.php
 be124ca8bd5eed793ebfb648619273d6  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 ff0f446447b511ded16794509df958e8  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
