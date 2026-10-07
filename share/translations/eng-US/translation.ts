@@ -21831,6 +21831,22 @@ Note: The packages will not be uninstalled.</translation>
         <translation>The cache or storage directory is not writable</translation>
     </message>
     <message>
+        <source>The log directory is not writable</source>
+        <translation>The log directory is not writable</translation>
+    </message>
+    <message>
+        <source>Errors and warnings of the site are not recorded.</source>
+        <translation>Errors and warnings of the site are not recorded.</translation>
+    </message>
+    <message>
+        <source>Give the user the web server runs as write access to var/log and to the log directory of the site.</source>
+        <translation>Give the user the web server runs as write access to var/log and to the log directory of the site.</translation>
+    </message>
+    <message>
+        <source>Log directory</source>
+        <translation>Log directory</translation>
+    </message>
+    <message>
         <source>The var directory is writable</source>
         <translation>The var directory is writable</translation>
     </message>

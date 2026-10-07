@@ -174,6 +174,60 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $dirB . '/shared-ini-cache/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
     }
 
+    /**
+     * site.ini of a site with INICacheDir=site is cached in its own INI cache too, so clearing that cache refreshes it;
+     * and a site changed to afterwards never leaves a copy of its site.ini in the INI cache of the site before
+     */
+    public function testSiteINIIsCachedInTheINICacheOfItsOwnSite()
+    {
+        list( $siteA, $dirA ) = $this->site( 'h', array( 'INICacheDir' => 'site', 'CacheDir' => '{dir}/cache' ) );
+        list( $siteB, $dirB ) = $this->site( 'i', array( 'CacheDir' => '{dir}/cache' ) );
+
+        eZSiteAccess::change( array( 'name' => $siteA, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+        $this->assertStringStartsWith( $dirA . '/cache/ini/', eZINI::instance()->CacheFile );
+        $this->assertFileExists( eZINI::instance()->CacheFile );
+        $cachedInA = glob( $dirA . '/cache/ini/*' );
+
+        eZSiteAccess::change( array( 'name' => $siteB, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+        $this->assertStringStartsNotWith( $dirA, eZINI::instance()->CacheFile );
+        $this->assertSame( $cachedInA, glob( $dirA . '/cache/ini/*' ), 'site B leaves nothing in the INI cache of site A' );
+
+        // And back: site A reads its site.ini from its own cache again
+        eZSiteAccess::change( array( 'name' => $siteA, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+        $this->assertStringStartsWith( $dirA . '/cache/ini/', eZINI::instance()->CacheFile );
+        $this->assertSame( 'site', eZINI::instance()->variable( 'FileSettings', 'INICacheDir' ) );
+    }
+
+    /** Changing to the same site twice keeps one state, which a third site then undoes */
+    public function testChangingToTheSameSiteTwiceIsIdempotent()
+    {
+        list( $siteA, $dirA ) = $this->site( 'j', array(
+            'INICacheDir' => 'site', 'CacheDir' => '{dir}/cache', 'UseGlobalLogDir' => 'disabled', 'LogDir' => '{dir}/log',
+        ) );
+        list( $siteB, $dirB ) = $this->site( 'k', array() );
+
+        eZSiteAccess::change( array( 'name' => $siteA, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+        eZSiteAccess::change( array( 'name' => $siteA, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+        $this->assertSame( $dirA . '/cache/ini/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $dirA . '/log/', eZDebug::instance()->logDirectory() );
+
+        eZSiteAccess::change( array( 'name' => $siteB, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+        // Back to var/cache/ini/, which eZINI::loadCache() puts there itself when nothing else is set
+        $this->assertSame( $this->root . '/var/cache/ini/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertArrayNotHasKey( 'eZSiteAccessINICacheDir', $GLOBALS );
+        $this->assertSame( 'var/log/', eZDebug::instance()->logDirectory() );
+    }
+
+    /** soap.php and webdav.php declare their own eZUpdateDebugSettings(); the log directory must not depend on it */
+    public function testTheLogDirectoryIsSetWithoutTheDebugSettingsFunctions()
+    {
+        list( $site, $siteDir ) = $this->site( 'l', array( 'UseGlobalLogDir' => 'disabled', 'LogDir' => '{dir}/log' ) );
+        eZSiteAccess::change( array( 'name' => $site, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+
+        $this->assertSame( $siteDir . '/log', eZSiteAccess::updateLogDirectory( eZINI::instance() ) );
+        $this->assertSame( $siteDir . '/log/', eZDebug::instance()->logDirectory() );
+    }
+
     /** The globals a persistent worker removes between requests: the next request starts with the defaults */
     public function testANewRequestWithoutTheGlobalsStartsWithTheDefaults()
     {
