@@ -64,7 +64,8 @@ class Relations extends \Exponential\Runnable\ModuleView
         $imageIni  = \eZINI::instance( 'image.ini' );
         $params    = array('loadImages' => true, 'imagePreGenerateSizes' => array('small', 'original') );
 
-        if ( !$object instanceof \eZContentObject || !$object->canRead() )
+        // Read access to the object, or edit access to the version being edited (Dialog::mayOpen())
+        if ( !Dialog::mayOpen( $object, $objectVersion ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'ObjectId', '%value' => $objectID ) );
            \eZExecution::cleanExit();

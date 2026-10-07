@@ -1515,12 +1515,14 @@ class eZOEInputParser extends eZXMLInputParser
             $styleArray = explode( ';', $styleString );
             foreach( $styleArray as $style )
             {
-                if ( !$style )
+                // A declaration without a colon (left over from pasted content) gives no attribute; the value may
+                // hold colons itself (an address)
+                $parts = explode( ':', $style, 2 );
+                if ( count( $parts ) < 2 )
                     continue;
 
-                list( $name, $value ) = explode( ':', $style );
-                $name  = strtolower( trim( $name ) );
-                $value = trim( $value );
+                $name  = strtolower( trim( $parts[0] ) );
+                $value = trim( $parts[1] );
 
                 if ( $name === 'float' || $name === 'text-align' )
                     $name = 'align';

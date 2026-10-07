@@ -9,6 +9,30 @@ namespace Exponential\View\Extension\Ezoe\Ezoe
 
 class Dialog extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * Whether the dialogs of the editor open for $object: for whoever may read the object, and for whoever may edit
+     * the version being edited. Someone who edits a draft of an object that was never published can not read the
+     * object yet (it has no location), and an extension may let others edit a version (filter content/edit/access,
+     * as for uploads and custom tags); both need the dialogs of the editor they work in.
+     *
+     * @param \eZContentObject|null $object
+     * @param int $versionNumber The version being edited
+     * @return bool
+     */
+    public static function mayOpen( $object, $versionNumber )
+    {
+        if ( !$object instanceof \eZContentObject )
+        {
+            return false;
+        }
+        if ( $object->canRead() )
+        {
+            return true;
+        }
+        $version = $object->version( (int)$versionNumber );
+        return $version instanceof \eZContentObjectVersion && (bool)$object->editAccess( $version );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -28,7 +52,7 @@ class Dialog extends \Exponential\Runnable\ModuleView
         }
 
         $object = \eZContentObject::fetch( $objectID );
-        if ( !$object instanceof \eZContentObject || !$object->canRead() )
+        if ( !self::mayOpen( $object, $objectVersion ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'ObjectId', '%value' => $objectID ) );
            \eZExecution::cleanExit();
