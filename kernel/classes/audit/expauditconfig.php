@@ -238,8 +238,7 @@ class expAuditConfig
             $logDir = trim( (string)$v['AuditSettings/LogDir'] ) !== '' ? trim( $v['AuditSettings/LogDir'] ) : 'log/audit';
             if ( $logDir[0] !== '/' )
             {
-                $varDir = isset( $v['varDir'] ) && trim( $v['varDir'] ) !== '' ? trim( $v['varDir'], '/ ' ) : 'var';
-                $logDir = $root . $varDir . '/' . $logDir;
+                $logDir = self::varPath( isset( $v['varDir'] ) ? $v['varDir'] : '' ) . '/' . $logDir;
             }
             $logDir = rtrim( $logDir, '/' );
         }
@@ -426,16 +425,35 @@ class expAuditConfig
             $rel = preg_replace( '#^log/audit/?#', '', $value );
             return rtrim( $config['logDir'] . ( $rel !== '' ? '/' . $rel : '' ), '/' );
         }
-        $varDir = 'var';
+        $varDir = '';
         try
         {
             if ( class_exists( 'eZINI' ) )
-                $varDir = trim( (string)eZINI::instance()->variable( 'FileSettings', 'VarDir' ), '/ ' ) ?: 'var';
+                $varDir = (string)eZINI::instance()->variable( 'FileSettings', 'VarDir' );
         }
         catch ( Throwable $e )
         {
         }
-        return rtrim( self::root() . $varDir . '/' . ( $value !== '' ? $value : 'log/audit' ), '/' );
+        return rtrim( self::varPath( $varDir ) . '/' . ( $value !== '' ? $value : 'log/audit' ), '/' );
+    }
+
+    /**
+     * site.ini [FileSettings] VarDir as an absolute path without a trailing slash: an absolute VarDir as it is, a
+     * relative one inside the installation, "var" when empty.
+     *
+     * The audit records stay inside VarDir (or in an absolute [AuditSettings] LogDir): they are kept with the storage
+     * of the site, and LogVarDir, LogDir and UseGlobalLogDir of site.ini do not move them.
+     *
+     * @param string $varDir
+     * @return string
+     */
+    protected static function varPath( $varDir )
+    {
+        $varDir = trim( (string)$varDir );
+        if ( $varDir !== '' && $varDir[0] === '/' )
+            return rtrim( $varDir, '/' );
+        $varDir = trim( preg_replace( '#^(\./)+#', '', $varDir ), '/ ' );
+        return self::root() . ( $varDir !== '' ? $varDir : 'var' );
     }
 
     /** @return array The shipped settings/audit.ini as block => variable => value */
