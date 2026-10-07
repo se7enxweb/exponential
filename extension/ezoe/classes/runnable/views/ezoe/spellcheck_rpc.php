@@ -6,6 +6,24 @@
 
 namespace
 {
+if ( !function_exists( 'formatParam' ) ) {
+/**
+ * Returns a request value as it is, or only its letters, digits and "-_," when sanitized
+ * (the helper of the TinyMCE spell checker that getRequestParam() calls).
+ *
+ * @param String $str Request value.
+ * @param bool $sanitize True to strip everything else.
+ * @return String
+ */
+function formatParam($str, $sanitize = false)
+{
+    if ($sanitize)
+        $str = preg_replace("/[^0-9a-z\-_,]+/i", "", (string)$str);
+
+    return $str;
+}
+}
+
 if ( !function_exists( 'getRequestParam' ) ) {
 /**
  * Returns an request value by name without magic quoting.
