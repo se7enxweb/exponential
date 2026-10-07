@@ -123,6 +123,34 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
         $this->assertStringStartsNotWith( $dirA, eZSys::cacheDirectory() );
     }
 
+    /** The setup of a multi-site installation: one log tree and one cache tree for all sites, set by one line each */
+    public function testLogVarDirAndCacheVarDirMoveLogsCachesAndTheINICache()
+    {
+        foreach ( array( 'x1-var-log', 'x1-var-cache' ) as $tree )
+        {
+            if ( !file_exists( $tree ) )
+            {
+                $this->created[] = $this->root . '/' . $tree;
+            }
+        }
+        list( $site, $siteDir ) = $this->site( 'g', array(
+            'UseGlobalLogDir' => 'disabled', 'LogVarDir' => 'x1-var-log',
+            'CacheVarDir' => 'x1-var-cache', 'INICacheDir' => 'site', 'ExpiryDir' => 'expiry',
+        ) );
+
+        eZSiteAccess::change( array( 'name' => $site, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
+
+        $varDir = eZSys::varDirectory();
+        $rest = substr( $varDir, strpos( $varDir . '/', '/' ) );
+        $this->assertSame( 'x1-var-log' . $rest . '/log/', eZDebug::instance()->logDirectory() );
+        $this->assertSame( 'x1-var-cache' . $rest . '/cache', eZSys::cacheDirectory() );
+        $this->assertSame( $this->root . '/x1-var-cache' . $rest . '/cache/ini/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $varDir . '/expiry/expiry.php', eZExpiryHandler::instance()->CacheFile->name() );
+
+        eZINI::instance( 'shopaccount.ini' );
+        $this->assertNotEmpty( glob( 'x1-var-cache' . $rest . '/cache/ini/shopaccount*' ) );
+    }
+
     public function testADirectoryTheInstallationSetIsLeftAlone()
     {
         list( $site, $siteDir ) = $this->site( 'c', array() );

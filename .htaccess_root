@@ -23,6 +23,9 @@ RewriteRule ^var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$ - [L]
 # other uploads stay behind content/download and its permissions.
 RewriteRule ^var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$ - [L]
 RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* - [L]
+# With site.ini [FileSettings] CacheVarDir=var_cache (the caches of the sites in a
+# tree of their own, multi-site hosting) their public caches are served from there:
+#RewriteRule ^var_cache/([^/]+/)?cache/(texttoimage|public)/.* - [L]
 RewriteRule ^design/[^/]+/(stylesheets|images|javascript|fonts)/.* - [L]
 RewriteRule ^share/icons/.* - [L]
 RewriteRule ^extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.* - [L]

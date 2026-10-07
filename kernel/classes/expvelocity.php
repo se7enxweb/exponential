@@ -80,6 +80,32 @@ class expVelocity
     const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)';
 
     /**
+     * STATIC_PATHS, and the generated public caches below site.ini [FileSettings] CacheVarDir when the caches of the
+     * sites are kept in a tree of their own (var_cache/<site>/cache/public, as eZSys::cacheDirectory() puts them).
+     * Every engine serves this list. A CacheVarDir that is an absolute path or holds anything but letters, digits,
+     * '_', '-', '.' and '/' is not served.
+     *
+     * @return string
+     */
+    public static function staticPaths()
+    {
+        $cacheVarDir = '';
+        if ( class_exists( 'eZINI' ) && eZINI::instance()->hasVariable( 'FileSettings', 'CacheVarDir' ) )
+        {
+            $cacheVarDir = rtrim( trim( (string)eZINI::instance()->variable( 'FileSettings', 'CacheVarDir' ) ), '/' );
+        }
+        // Only a directory inside the installation is served, and one regular expression must never be able to
+        // widen another: the name may hold letters, digits and _ - . / but no "..".
+        if ( $cacheVarDir === '' || $cacheVarDir === 'var' || !preg_match( '#^[A-Za-z0-9_][A-Za-z0-9_./-]*$#', $cacheVarDir ) ||
+             strpos( $cacheVarDir, '..' ) !== false )
+        {
+            return self::STATIC_PATHS;
+        }
+        $cachePath = str_replace( '.', '\\.', $cacheVarDir ) . '/([^/]+/)?cache/(texttoimage|public)/';
+        return '^/(' . $cachePath . '|' . substr( self::STATIC_PATHS, strlen( '^/(' ) );
+    }
+
+    /**
      * What is never served as a file even below a STATIC_PATHS directory:
      * scripts (their source would be sent) and dot paths (.htaccess, .git,
      * a package's .cache). Case-insensitive, for Caddy's RE2 and preg alike.
@@ -1594,7 +1620,7 @@ class expVelocity
         // Q.webserver.scripts; an older one ignores all three keys.
         $webserver['scripts'] = self::ENTRY_SCRIPTS;
         $webserver['frontControllers'] = self::FRONT_CONTROLLERS;
-        $web['static']['paths'] = array( self::STATIC_PATHS );
+        $web['static']['paths'] = array( self::staticPaths() );
         // Always revalidated, whatever the static lifetime: the service worker decides how every later
         // navigation is answered, so a fixed copy has to reach browsers at once. The server's own list
         // knows sw.js and service-worker.js; the Exponential Service Workers Index is index.js in the

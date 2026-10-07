@@ -160,6 +160,31 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertStringContainsString( 'auto_https off', $text );
     }
 
+    /** With the caches of the sites in a tree of their own (multi-site hosting) their public caches are served too */
+    public function testTheStaticListServesThePublicCachesBelowCacheVarDir()
+    {
+        $this->assertSame( expVelocity::STATIC_PATHS, expVelocity::staticPaths() );
+
+        ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'CacheVarDir', 'var_cache' );
+        $static = '~' . expVelocity::staticPaths() . '~';
+        foreach ( array( '/var_cache/example/cache/public/javascript/x.js', '/var_cache/example/cache/texttoimage/x.png',
+                         '/var/site/cache/public/javascript/x.js', '/design/standard/stylesheets/core.css' ) as $path )
+            $this->assertSame( 1, preg_match( $static, $path ), $path );
+        foreach ( array( '/var_cache/example/cache/template/compiled/x.php', '/var_cache/example/cache/ini/site.php',
+                         '/var_cache/example/log/error.log', '/var_cacheX/example/cache/public/x.js', '/var/site/cache/ini/x.php' ) as $path )
+            $this->assertSame( 0, preg_match( $static, $path ), $path );
+    }
+
+    /** Only a plain directory inside the installation may widen the list */
+    public function testACacheVarDirThatIsNoPlainDirectoryIsNotServed()
+    {
+        foreach ( array( '/srv/cache', '../cache', 'var_cache/..', 'a b', 'x|y', 'var', '(.*)' ) as $value )
+        {
+            ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'CacheVarDir', $value );
+            $this->assertSame( expVelocity::STATIC_PATHS, expVelocity::staticPaths(), $value );
+        }
+    }
+
     public function testTheStaticListLeavesInternalFilesOut()
     {
         $static = '~' . expVelocity::STATIC_PATHS . '~';

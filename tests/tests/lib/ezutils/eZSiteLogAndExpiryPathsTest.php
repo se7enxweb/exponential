@@ -96,6 +96,60 @@ class eZSiteLogAndExpiryPathsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $logDir, eZSys::logDirectory() );
     }
 
+    /** One setting moves the logs and caches of every site into a tree of their own, as on a multi-site installation */
+    public function testLogVarDirAndCacheVarDirReplaceTheFirstDirectoryOfVarDir()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var/example' );
+        $ini->setVariable( 'FileSettings', 'LogDir', 'log' );
+        $ini->setVariable( 'FileSettings', 'CacheDir', 'cache' );
+        $ini->setVariable( 'FileSettings', 'LogVarDir', 'var_log' );
+        $ini->setVariable( 'FileSettings', 'CacheVarDir', 'var_cache' );
+
+        $this->assertSame( 'var_log/example/log', eZSys::logDirectory() );
+        $this->assertSame( 'var_cache/example/cache', eZSys::cacheDirectory() );
+        $this->assertSame( 'var/example/storage', eZSys::storageDirectory() );
+
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var' );
+        $this->assertSame( 'var_cache/cache', eZSys::cacheDirectory() );
+
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var/example' );
+        $ini->setVariable( 'FileSettings', 'LogVarDir', '/srv/logs/' );
+        $this->assertSame( '/srv/logs/example/log', eZSys::logDirectory() );
+    }
+
+    public function testWithoutLogVarDirAndCacheVarDirNothingMoves()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var/example' );
+        $ini->setVariable( 'FileSettings', 'LogDir', 'log' );
+        $ini->setVariable( 'FileSettings', 'CacheDir', 'cache' );
+        $ini->setVariable( 'FileSettings', 'LogVarDir', '' );
+        $ini->setVariable( 'FileSettings', 'CacheVarDir', '' );
+
+        $this->assertSame( 'var/example/log', eZSys::logDirectory() );
+        $this->assertSame( 'var/example/cache', eZSys::cacheDirectory() );
+
+        // An absolute VarDir is not relocated
+        $ini->setVariable( 'FileSettings', 'CacheVarDir', 'var_cache' );
+        $ini->setVariable( 'FileSettings', 'VarDir', '/srv/example/var' );
+        $this->assertSame( '/srv/example/var/cache', eZSys::cacheDirectory() );
+    }
+
+    /** With the cache in a tree of its own, ExpiryDir keeps the timestamps inside VarDir */
+    public function testExpiryDirStaysInsideVarDirWhenTheCacheMoves()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var/example' );
+        $ini->setVariable( 'FileSettings', 'CacheDir', 'cache' );
+        $ini->setVariable( 'FileSettings', 'CacheVarDir', 'var_cache' );
+        $ini->setVariable( 'FileSettings', 'ExpiryDir', '' );
+        $this->assertSame( 'var_cache/example/cache/expiry.php', eZExpiryHandler::filePath() );
+
+        $ini->setVariable( 'FileSettings', 'ExpiryDir', 'expiry' );
+        $this->assertSame( 'var/example/expiry/expiry.php', eZExpiryHandler::filePath() );
+    }
+
     public function testDebugLogsGoToTheDirectoryGivenAndBack()
     {
         $logDir = $this->tempDir( 'logs' );

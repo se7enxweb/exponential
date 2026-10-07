@@ -521,7 +521,8 @@ class eZSys
     }
 
     /**
-     * Returns the current cache directory.
+     * Returns the current cache directory: site.ini [FileSettings] CacheDir inside VarDir (or inside the tree
+     * CacheVarDir names, see relocatedVarDirectory()), or CacheDir itself when it is an absolute path.
      *
      * @return string
      */
@@ -536,13 +537,40 @@ class eZSys
         }
         else
         {
-            return eZDir::path( array( self::varDirectory(), $cacheDir ) );
+            return eZDir::path( array( self::relocatedVarDirectory( 'CacheVarDir' ), $cacheDir ) );
         }
     }
 
     /**
-     * Returns the log directory of the site: site.ini [FileSettings] LogDir inside VarDir, or LogDir itself when it
-     * is an absolute path, as CacheDir.
+     * VarDir, or VarDir with its first directory replaced by site.ini [FileSettings] $setting when that is set:
+     * with LogVarDir=var_log the logs of a site with VarDir=var/example go to var_log/example/log, with
+     * CacheVarDir=var_cache its cache to var_cache/example/cache. One setting moves the logs or caches of every site
+     * of a multi-site installation into a tree of their own, for instance on a memory file system.
+     *
+     * An absolute VarDir is not relocated.
+     *
+     * @param string $setting 'LogVarDir' or 'CacheVarDir'
+     * @return string
+     */
+    public static function relocatedVarDirectory( $setting )
+    {
+        $varDir = self::varDirectory();
+        $ini = eZINI::instance();
+        $root = $ini->hasVariable( 'FileSettings', $setting ) ? rtrim( trim( (string)$ini->variable( 'FileSettings', $setting ) ), '/' ) : '';
+        if ( $root === '' || $varDir === '' || $varDir[0] === '/' )
+        {
+            return $varDir;
+        }
+
+        $parts = explode( '/', trim( $varDir, '/' ) );
+        array_shift( $parts );
+        array_unshift( $parts, $root );
+        return eZDir::path( $parts );
+    }
+
+    /**
+     * Returns the log directory of the site: site.ini [FileSettings] LogDir inside VarDir (or inside the tree
+     * LogVarDir names, see relocatedVarDirectory()), or LogDir itself when it is an absolute path, as CacheDir.
      *
      * @return string
      */
@@ -555,7 +583,7 @@ class eZSys
         {
             return eZDir::path( array( $logDir ) );
         }
-        return eZDir::path( array( self::varDirectory(), $logDir !== '' ? $logDir : 'log' ) );
+        return eZDir::path( array( self::relocatedVarDirectory( 'LogVarDir' ), $logDir !== '' ? $logDir : 'log' ) );
     }
 
     /**

@@ -10,8 +10,8 @@ they differ from the older project patch they replace.
 | | |
 |---|---|
 | Logs per site | `site.ini [FileSettings] UseGlobalLogDir=disabled`: the debug logs (`error.log`, `warning.log`, ...) and the default logs of `eZLog` go to the log directory of the site instead of `var/log`. |
-| Logs on another file system | `LogDir` may be an absolute path, as `CacheDir`. |
-| Cache in memory | Mount the file system at `var/<site>/cache`; `ExpiryDir` keeps `expiry.php` where the storage is, so a restart does not lose the expiry timestamps. |
+| Logs on another file system | `LogDir` may be an absolute path, as `CacheDir`; `LogVarDir=var_log` puts the logs of every site in `var_log/<site>/log` with one line. |
+| Cache in memory | `CacheVarDir=var_cache` puts the caches of every site in `var_cache/<site>/cache`, one memory file system for all of them; or mount one at `var/<site>/cache`. `ExpiryDir` keeps `expiry.php` where the storage is, so a restart does not lose the expiry timestamps. |
 | INI cache per site | `INICacheDir=site`: the INI files of the site are cached in its cache directory, and clearing them leaves the other sites alone. |
 | Default | Every setting keeps the behaviour of before. |
 | Velocity, scripts | Every value is derived again from site.ini when the siteaccess changes; nothing is kept from one request or one site to the next. |
@@ -26,8 +26,40 @@ All in `site.ini [FileSettings]`, for each siteaccess of the site (or in an over
 |---|---|---|
 | `LogDir` | `log` | The log directory, inside VarDir; an absolute path is used as it is. `storage.log` and the debug bar's log go there in any case. |
 | `UseGlobalLogDir` | `enabled` | `disabled` writes the debug logs and the logs `eZLog::write()` writes to its default directory into the log directory of the site. |
+| `LogVarDir` | empty | A tree for the logs of every site: the first directory of VarDir is replaced, `var/example` → `var_log/example`, so the log directory is `var_log/example/log`. A relative or an absolute path. |
+| `CacheVarDir` | empty | The same for the caches: `var_cache/example/cache`. A directory inside the installation, so that its public caches can be served. |
 | `ExpiryDir` | empty | Where `expiry.php` is kept: empty in the cache directory, otherwise a directory inside VarDir or an absolute path. |
 | `INICacheDir` | `global` | `site` caches the INI files of the site in `<cache directory>/ini/`; `global` in `var/cache/ini/`. |
+
+## Many sites with their logs and caches in trees of their own
+
+The setup of an installation with dozens of sites, each in a site extension with `VarDir=var/<site>`: one line each
+in `settings/override/site.ini.append.php` for all of them.
+
+```ini
+[FileSettings]
+UseGlobalLogDir=disabled
+LogVarDir=var_log
+CacheVarDir=var_cache
+ExpiryDir=expiry
+INICacheDir=site
+```
+
+```
+# /etc/fstab: the caches of all sites in memory
+tmpfs  /srv/www/exponential/var_cache  tmpfs  size=8g,mode=0775,uid=www-data,gid=www-data  0 0
+```
+
+- The logs of `var/example` are in `var_log/example/log`, its cache in `var_cache/example/cache` (with the INI cache
+  in `ini/`), `expiry.php` in `var/example/expiry/`. The storage stays in `var/example/storage`.
+- Velocity serves the public caches below `var_cache/` (packed scripts and style sheets, text to image) and nothing
+  else there: `expVelocity::staticPaths()` adds them to the paths of all three engines when `CacheVarDir` is set. For
+  Apache, enable the commented `var_cache` rule in `.htaccess_root`; for nginx the commented `location` in
+  [serving the site](../../install/08-serving-the-site.md).
+- With a cluster file handler the rewrite rules of `index_cluster.php` name `var/` only; the cache would have to be
+  added there as well.
+- Set the settings where every siteaccess of every site reads them (the global override): Velocity reads
+  `CacheVarDir` from the settings it starts with.
 
 ## A site with its cache in memory
 
@@ -95,7 +127,11 @@ Checked with Velocity 0.0.4.45 (engine qbix, four persistent workers) on an inst
 with `UseGlobalLogDir=disabled`, `INICacheDir=site` and `ExpiryDir` set, one without: of 40 requests alternating
 between them, each worker serving both, the 20 errors of the one were all in its own log directory and the 20 of the
 other all in `var/log`. Thirty further requests to the site without the settings left the INI cache of the other
-untouched and wrote theirs into `var/cache/ini`.
+untouched and wrote theirs into `var/cache/ini`. With `LogVarDir=var_log`, `CacheVarDir=var_cache`,
+`INICacheDir=site` and `ExpiryDir=expiry` in the global override, Velocity served the packed style sheets and scripts
+from `var_cache/<site>/cache/public/` and refused the other files there, the errors went to `var_log/<site>/log`, and
+clearing and purging the INI cache, the content tag and all caches worked on `var_cache` while `expiry.php` stayed in
+`var/<site>/expiry/`. The same with nginx and PHP-FPM.
 
 ## The original project patch
 
@@ -105,28 +141,35 @@ these differences:
 | | Original | Now |
 |---|---|---|
 | Debug logs per site | `UseGlobalLogDir=disabled` | The same setting and meaning; `eZLog` and the CSRF refusal log follow it too |
-| Separate log tree | `define( 'JAC_PATCH_USE_EXTRA_FOLDER_VAR_LOG', true )` rewrote `var/` to `var_log/` | `LogDir` as an absolute path |
-| Separate cache tree | `define( 'JAC_PATCH_USE_EXTRA_FOLDER_VAR_CACHE', true )` rewrote `var/` to `var_cache/` | A mount at `var/<site>/cache`: the served cache files keep their paths, which `var_cache/` broke |
+| Separate log tree | `define( 'JAC_PATCH_USE_EXTRA_FOLDER_VAR_LOG', true )` rewrote `var/` to `var_log/` | `LogVarDir=var_log`, or `LogDir` as an absolute path for one site |
+| Separate cache tree | `define( 'JAC_PATCH_USE_EXTRA_FOLDER_VAR_CACHE', true )` rewrote `var/` to `var_cache/`; the web server needed rules of its own for `/var_cache/` | `CacheVarDir=var_cache`; Velocity serves its public caches itself, Apache and nginx have the rule ready to enable |
 | `expiry.php` outside the cache | `var/cache/expiry_<database name>.php`, the name derived from the database name and `DatabasePrefix` | `ExpiryDir` |
 | INI cache per site | Always on; the directory of the first site stayed for every later one in the same process | `INICacheDir=site`; derived again on every siteaccess change |
-| Rewriting `var/<x>/log` in `eZDir::path()` | Every such path in the installation, to catch extensions that write there themselves | Not taken over: it changed paths no one asked to change. Extensions that log through `eZLog` follow the setting |
+| Rewriting `var/<x>/log` in `eZDir::path()` | Every such path in the installation, to catch extensions that write there themselves | Not taken over: it changed paths no one asked to change. Extensions that log through `eZLog` or `eZSys::logDirectory()` follow the setting; `cjw_newsletter` builds VarDir/LogDir itself and does not yet |
 | Switched on by | Constants in `config.php` | `site.ini`, per siteaccess |
 
 ## For extension authors
 
-- `eZSys::logDirectory()` returns the log directory of the site, as `eZSys::cacheDirectory()` does for the cache.
+- `eZSys::logDirectory()` returns the log directory of the site, as `eZSys::cacheDirectory()` does for the cache;
+  both follow `LogVarDir` and `CacheVarDir` (`eZSys::relocatedVarDirectory()`). Build no log or cache path from
+  `VarDir` yourself.
 - `eZDebug::instance()->logDirectory()` returns where the debug logs go; `eZLog::write()` without a directory writes
   there. A log written to `var/log` by hand stays in `var/log`.
 - `eZExpiryHandler::filePath()` returns the `expiry.php` of the site.
 
 ## Tests
 
-- `eZSiteLogAndExpiryPathsTest` (no database): the log directory inside VarDir and absolute, the debug logs and
-  `eZLog` there and back to `var/log`, `storage.log` in an absolute `LogDir`, `UseGlobalLogDir`, `ExpiryDir` empty,
-  relative and absolute, timestamps that survive an emptied cache directory, the shared expiry instance after a change.
-- `eZSiteAccessSitePathsTest` (writes two siteaccesses of its own, no database): `eZSiteAccess::change()` to a site
-  with the settings and then to one without, in the same process; a directory the installation set, kept and restored;
-  a new request without the globals Velocity removes.
+- `eZSiteLogAndExpiryPathsTest` (no database): the log directory inside VarDir and absolute; `LogVarDir` and
+  `CacheVarDir`, relative and absolute, with VarDir `var` and with an absolute VarDir; the debug logs and `eZLog` there
+  and back to `var/log`; `storage.log` in an absolute `LogDir`; `UseGlobalLogDir`; `ExpiryDir` empty, relative,
+  absolute and with a moved cache; timestamps that survive an emptied cache directory; the shared expiry instance
+  after a change.
+- `eZSiteAccessSitePathsTest` (writes siteaccesses of its own, no database): `eZSiteAccess::change()` to a site with
+  the settings and then to one without, in the same process; `LogVarDir`, `CacheVarDir` and the INI cache in the
+  moved cache; a directory the installation set, kept and restored; a new request without the globals Velocity
+  removes.
+- `expVelocityEnginesTest`: the public caches below `CacheVarDir` are served and nothing else there; an absolute
+  path, `..` or other characters are not.
 
 ## Related pages
 
