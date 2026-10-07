@@ -1094,6 +1094,8 @@ class eZModule
      */
     function redirectTo( $uri )
     {
+        // No address (a session variable that was never set) is the empty one, as before, without a deprecation
+        $uri = (string)$uri;
         $originalURI = $uri;
         $uri = preg_replace( "#/+$#", "", $uri );
         if ( strlen( $originalURI ) != 0 and
