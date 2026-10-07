@@ -4174,7 +4174,7 @@ d7f679dbab7f1b6752c3dae71175c8c1  extension/ezoe/classes/runnable/views/ezoe/dia
 0473e9fbd4329be2c8e9ba010b2f1925  extension/ezoe/classes/runnable/views/ezoe/embed_view.php
 b656555c61cf975c56958dd42d4718dd  extension/ezoe/classes/runnable/views/ezoe/load.php
 68a782c84a70af752905f917629fd3de  extension/ezoe/classes/runnable/views/ezoe/relations.php
-3cb7ff865bd748517082efa50d4c8d8b  extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php
+bcf0ee6ce97fa5471bb0400ade8de944  extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php
 0094bd5d9f9f73d0742050175de07d5d  extension/ezoe/classes/runnable/views/ezoe/tags.php
 feb9529c2eb7b37bd52f5f68fb790217  extension/ezoe/classes/runnable/views/ezoe/upload.php
 a215d5fc30b402fd3f2608e4272eafbe  extension/ezoe/design/standard/images/tango/bookmark-new.png
@@ -6162,7 +6162,7 @@ b4517d02af1a2133eb3338269efd60f2  lib/ezfile/classes/ezcompressionhandler.php
 68a04fe7b7451d5cfee5dde6d8b2662f  lib/ezfile/classes/ezfile.php
 d83033ffebe31082215f09131a285daf  lib/ezfile/classes/ezfilehandler.php
 bec03c44a375a6eafbb3a7cf109240e6  lib/ezfile/classes/ezforwardcompressionhandler.php
-65f16474940bead5d71fcdcac3d378f4  lib/ezfile/classes/ezgzipcompressionhandler.php
+25f22feb4450b3d809285377cbf9fddb  lib/ezfile/classes/ezgzipcompressionhandler.php
 8975300cc5c3fa93f32240fa0385580a  lib/ezfile/classes/ezgzipshellcompressionhandler.php
 5410e76467997c8508cb2263d8544a3d  lib/ezfile/classes/ezgzipzlibcompressionhandler.php
 c9e3b121df514f3a43e18cd1dc2a2afa  lib/ezfile/classes/ezlog.php
@@ -7032,6 +7032,7 @@ c986f5766a23f4b954a6b74c5c4f8931  tests/tests/extension/ezoe/expOEEditorViewAcce
 e7dea128dd036272156d08066e83a740  tests/tests/extension/ezoe/expOEUrlFetcherTest.php
 982cbfcccf0ec493627b9b8f20f3d3dd  tests/tests/extension/ezoe/expOEViewsJsonTest.php
 9ed8f54e3c2ea5c50e0e31f4007ed15d  tests/tests/extension/ezoe/ezoeSpellCheckerPropertiesTest.php
+9e12b292511466e7dbd49a30b818d4c4  tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
 8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
 228e5c524d3f47d50fb5303b7b76e37c  tests/tests/extension/ezupdate/ezUpdateInstallabilityTest.php
@@ -7768,6 +7769,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 20a3b922c00f5aea2bb7cc3b68d0af26  tests/tests/lib/ezfile/eZDirTestOutsideRootTest.php
 0dd718f8618cc4879dffae43841d1edd  tests/tests/lib/ezfile/eZFileDownloadTest.php
 2eaffb8e67d3f31c3e3900c40e4110f2  tests/tests/lib/ezfile/eZFileRenameTest.php
+317a34f0b93988ea8049d998b6461d96  tests/tests/lib/ezfile/eZGZIPCompressionHandlerLevelTest.php
 0e500c4c33e2c792446c79d92088be2b  tests/tests/lib/ezfile/eZMD5Test.php
 7a4cee107fc363201c9e225b433ecc8e  tests/tests/lib/ezfile/ezdirinsideroot_test.php
 78c44bc71a3cf9a273ef914528144964  tests/tests/lib/ezfile/ezdiroutsideroot_test.php
