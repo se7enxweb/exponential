@@ -1056,6 +1056,44 @@ class eZContentClassAttribute extends eZPersistentObject
     }
 
     /**
+     * Gives an id to the object attribute rows of a class attribute that have none.
+     *
+     * SQLite numbers a row by itself only when the primary key is a single
+     * INTEGER column; ezcontentobject_attribute's key is ( id, version ), so a
+     * batch INSERT ... SELECT that names no id leaves it NULL. One new id is
+     * taken per object and language, after the highest id in the table, and
+     * every version of that object and language gets the same id, as the
+     * other databases' batch initialization does.
+     *
+     * @param eZDBInterface $db only arrayQuery() and query() are used
+     * @param int $classAttributeID
+     * @return int the number of ids given (one per object and language)
+     */
+    public static function assignMissingSQLiteObjectAttributeIDs( $db, $classAttributeID )
+    {
+        $classAttributeID = (int)$classAttributeID;
+        $groups = $db->arrayQuery( "SELECT contentobject_id, language_code
+                                    FROM ezcontentobject_attribute
+                                    WHERE contentclassattribute_id = $classAttributeID AND id IS NULL
+                                    GROUP BY contentobject_id, language_code
+                                    ORDER BY contentobject_id, language_code" );
+        if ( !is_array( $groups ) || empty( $groups ) )
+            return 0;
+
+        $max = $db->arrayQuery( "SELECT MAX( id ) AS maximum FROM ezcontentobject_attribute" );
+        $nextID = (int)( $max[0]['maximum'] ?? 0 );
+        foreach ( $groups as $group )
+        {
+            ++$nextID;
+            $db->query( "UPDATE ezcontentobject_attribute SET id = $nextID
+                         WHERE contentclassattribute_id = $classAttributeID AND id IS NULL
+                               AND contentobject_id = " . (int)$group['contentobject_id'] . "
+                               AND language_code = '" . $db->escapeString( $group['language_code'] ) . "'" );
+        }
+        return count( $groups );
+    }
+
+    /**
      * Initialize the attribute in the existing objects.
      *
      * @param mixed $objects not used, the existing objects are fetched if
@@ -1144,7 +1182,18 @@ class eZContentClassAttribute extends eZPersistentObject
             {
                 $updateSql = "";
             }
-            $db->query( $updateSql );
+            if ( $db->databaseName() == 'sqlite' )
+            {
+                // The table's key is ( id, version ), so SQLite does not number
+                // the inserted rows itself: the id stays NULL, and every page
+                // showing such an object asks its image alias handler to store
+                // an attribute that cannot be fetched back.
+                self::assignMissingSQLiteObjectAttributeIDs( $db, $classAttributeID );
+            }
+            else if ( $updateSql !== "" )
+            {
+                $db->query( $updateSql );
+            }
         }
         else
         {
