@@ -71,12 +71,24 @@ class Dialog extends \Exponential\Runnable\ModuleView
             return false;
         }
         $userID = (int)\eZUser::currentUserID();
-        if ( $userID < 1 ||(int)$version->attribute( 'creator_id' ) !== (int)$userID )
+        if ( $userID < 1 || (int)$version->attribute( 'creator_id' ) !== $userID )
         {
             return false;
         }
         $language = $version->initialLanguageCode();
         return (bool)$object->editAccess( $version, is_string( $language ) && $language !== '' ? $language : false );
+    }
+
+    /**
+     * Whether $name names a dialog: the name of a template in design:ezoe/ (tag_link, help, merge_cells, ...), letters,
+     * digits, "_" and "-" only, so the address can not name a template elsewhere or one with a dot in its name.
+     *
+     * @param string $name
+     * @return bool
+     */
+    public static function isDialogName( $name )
+    {
+        return is_string( $name ) && preg_match( '/^[A-Za-z0-9_-]{1,100}\z/', $name ) === 1;
     }
 
     public function run( array $scope )
@@ -105,7 +117,7 @@ class Dialog extends \Exponential\Runnable\ModuleView
         }
 
 
-        if ( $dialog === '' )
+        if ( !self::isDialogName( $dialog ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid or missing parameter: %parameter', null, array( '%parameter' => 'Dialog' ) );
            \eZExecution::cleanExit();

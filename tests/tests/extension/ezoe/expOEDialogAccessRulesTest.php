@@ -13,6 +13,7 @@
  *  DA-07 - Edit access is asked for the version in its own language (a Language limitation applies)
  *  DA-08 - Without edit access nothing opens; a listener of content/edit/access has its say both ways
  *  DA-09 - Both views ask Dialog::mayOpen()
+ *  DA-10 - The dialog the address names is a template name in design:ezoe/ only (letters, digits, "_", "-")
  *
  * The object and its versions are stand-ins whose permissions are given; the current user is a stand-in user.
  *
@@ -220,6 +221,18 @@ class expOEDialogAccessRulesTest extends PHPUnit\Framework\TestCase
         $this->addVersion( $refusing, 2, eZContentObjectVersion::STATUS_DRAFT, self::EDITOR_ID );
         $this->listeners[] = ezpEvent::getInstance()->attach( 'content/edit/access', function () { return false; } );
         $this->assertFalse( Dialog::mayOpen( $refusing, 2 ), 'a listener keeps the creator out' );
+    }
+
+    /** DA-10 */
+    public function testTheDialogIsATemplateNameInTheEditorsDesignOnly()
+    {
+        foreach ( array( 'tag_link', 'help', 'merge_cells', 'tag_table_cell', 'my-dialog', 'Tag2' ) as $name )
+            $this->assertTrue( Dialog::isDialogName( $name ), $name );
+        foreach ( array( '', '..', 'tag_link.tpl', 'a/b', '../content/edit', "tag_link\n", 'tag link', 'tag_l%69nk',
+                         str_repeat( 'a', 101 ), null, array( 'help' ) ) as $name )
+            $this->assertFalse( Dialog::isDialogName( $name ), var_export( $name, true ) );
+        $source = file_get_contents( dirname( __DIR__, 4 ) . '/extension/ezoe/classes/runnable/views/ezoe/dialog.php' );
+        $this->assertStringContainsString( 'if ( !self::isDialogName( $dialog ) )', $source );
     }
 
     /** DA-09 */
