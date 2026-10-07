@@ -64,6 +64,8 @@ class Edit extends \Exponential\Runnable\ModuleView
                 ${$__name} = &$scope[$__name];
         unset( $__name );
 
+        $module = $scope['Params']['Module'];
+
         $settingTypeArray = array( 'array' => 'Array',
                                    'true/false' => 'True/False',
                                    'enable/disable' => 'Enabled/Disabled',
@@ -96,12 +98,12 @@ class Edit extends \Exponential\Runnable\ModuleView
         if ( $iniFile === null || $siteAccess === null || !\expSettingsTarget::isValidBlock( $block )
              || ( $settingName !== '' && !\expSettingsTarget::isValidName( $settingName ) && !$http->hasPostVariable( 'WriteSetting' ) ) )
         {
-            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         }
         $viewURL = '/settings/view/' . $siteAccess . '/' . $iniFile;
 
         if ( $http->hasPostVariable( 'Cancel' ) )
-            return $this->viewResult( null, $scope['Module']->redirectTo( $viewURL ) );
+            return $this->viewResult( null, $module->redirectTo( $viewURL ) );
 
         $loaded = \expSettingsPage::chainFor( $iniFile, $siteAccess, false );
         $chain = $loaded['chain'];
@@ -127,7 +129,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             if ( $error === null && $isSecret && $valueToWrite === '' && $setting !== null )
             {
                 \expSettingsPage::afterWrite( 'unchanged', $iniFile, $siteAccess, array( array( 'block' => $block, 'name' => $settingName, 'path' => '' ) ) );
-                return $this->viewResult( null, $scope['Module']->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
+                return $this->viewResult( null, $module->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
             }
             if ( $error === null )
             {
@@ -158,7 +160,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 {
                     \expSettingsPage::afterWrite( 'saved', $iniFile, $siteAccess,
                         array( array( 'block' => $block, 'name' => $settingName, 'path' => $path . '/' . $iniFile . '.append.php' ) ) );
-                    return $this->viewResult( null, $scope['Module']->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
+                    return $this->viewResult( null, $module->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
                 }
                 // eZINI::save() refuses a line break, a NUL byte or the end of a PHP comment, and fails on permissions
                 $error = array( 'write_error', '', 'Value' );

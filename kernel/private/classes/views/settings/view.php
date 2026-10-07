@@ -33,6 +33,8 @@ class View extends \Exponential\Runnable\ModuleView
                 ${$__name} = &$scope[$__name];
         unset( $__name );
 
+        $module = $scope['Params']['Module'];
+
         $tpl = \eZTemplate::factory();
         $http = \eZHTTPTool::instance();
         $siteIni = \eZINI::instance();
@@ -52,13 +54,13 @@ class View extends \Exponential\Runnable\ModuleView
 
         // "Select": the file and siteaccess picked become the address, so the page can be bookmarked and reloaded
         if ( $http->hasPostVariable( 'ChangeINIFile' ) && $settingFile !== null && !$http->hasPostVariable( 'RemoveButton' ) )
-            return $this->viewResult( null, $scope['Module']->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
+            return $this->viewResult( null, $module->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
 
         if ( $http->hasPostVariable( 'RemoveButton' ) && $settingFile !== null && $http->hasPostVariable( 'RemoveSettingsArray' ) )
         {
             $removed = self::remove( $settingFile, $currentSiteAccess, (array)$http->postVariable( 'RemoveSettingsArray' ), $extensions );
             \expSettingsPage::afterWrite( $removed ? 'removed' : 'unchanged', $settingFile, $currentSiteAccess, $removed );
-            return $this->viewResult( null, $scope['Module']->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
+            return $this->viewResult( null, $module->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
         }
 
         // What to show: a search, the settings changed from the default, a comparison with another siteaccess

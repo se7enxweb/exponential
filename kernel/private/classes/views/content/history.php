@@ -62,7 +62,7 @@ class History extends \Exponential\Runnable\ModuleView
 
         $this->tpl = \eZTemplate::factory();
         $this->http = \eZHTTPTool::instance();
-        $this->module = $scope['Module'];
+        $this->module = $scope['Params']['Module'];
         $this->editVersion = $scope['Params']['EditVersion'];
 
         $object = \eZContentObject::fetch( $scope['Params']['ObjectID'] );
@@ -71,15 +71,15 @@ class History extends \Exponential\Runnable\ModuleView
         $this->origin = self::originURI( $object ? (int)$object->attribute( 'id' ) : 0, $object ? (int)$object->attribute( 'main_node_id' ) : 0,
                                          self::originCandidates( $this->http ), \eZSys::indexDir() );
         if ( $this->http->hasPostVariable( 'BackButton' ) )
-            return $this->viewResult( null, $scope['Module']->redirectTo( $this->origin ) );
+            return $this->viewResult( null, $this->module->redirectTo( $this->origin ) );
 
         if ( $object === null )
-            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            return $this->viewResult( null, $this->module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         $this->object = $object;
 
         $this->canEdit = (bool)$object->editAccess();
         if ( !self::canOpen( $object, $this->canEdit ) )
-            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
+            return $this->viewResult( null, $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
         $this->canRead = (bool)$object->attribute( 'can_read' );
         $this->userID = (int)\eZUser::currentUserID();
         $this->contentVersions = $this->seenVersions();
@@ -101,7 +101,7 @@ class History extends \Exponential\Runnable\ModuleView
         $this->listVariables( $filters, $offset );
 
         $tpl = $this->tpl;
-        $tpl->setVariable( 'module', $scope['Module'] );
+        $tpl->setVariable( 'module', $this->module );
         $tpl->setVariable( 'view_parameters', array( 'offset' => $offset ) );
         $tpl->setVariable( 'object', $object );
         $tpl->setVariable( 'edit_version', $this->editVersion );
