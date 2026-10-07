@@ -395,7 +395,7 @@ a2b1f1227859c749295ad9ee14ef4602  design/admin/templates/content/datatype/edit/e
 675a34c4e1dadeb3455c6da21f7ce7b1  design/admin/templates/content/draft_exp_style.tpl
 e7e09e0dbb99eaf1315189963d6d20f7  design/admin/templates/content/edit.tpl
 be1c7acb3cd20918fd4308fdfd105403  design/admin/templates/content/edit_attribute.tpl
-3fd7d162ee95c3f70fabb48fe2997ab3  design/admin/templates/content/edit_conflict.tpl
+00f93086667ce9e241dae6c699728f85  design/admin/templates/content/edit_conflict.tpl
 a038803bfb7afe020d14c41475a8859b  design/admin/templates/content/edit_draft.tpl
 b296af3623023fd29dede1e7a28c87b5  design/admin/templates/content/edit_languages.tpl
 143c6f02b16e30519fa4ba79242ef957  design/admin/templates/content/edit_locations.tpl
@@ -436,7 +436,7 @@ a1f9f35ddf7628f6d51fb625e579dc78  design/admin/templates/content/upload.tpl
 77c27453551792679be3d55c753ea011  design/admin/templates/content/urlalias.tpl
 b64233a99b87f27de9e7c76976ded89f  design/admin/templates/content/urlalias_global.tpl
 23590a878d121db4026147f7c9ee338a  design/admin/templates/content/urlalias_wildcard.tpl
-932070d85ccd98a04f52ca0a88f3bc5a  design/admin/templates/content/view/versionview.tpl
+0e971d447986b8d4def0835bc04c63b6  design/admin/templates/content/view/versionview.tpl
 ba8c648fc4f2027dc40190499da291b9  design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
 d04d82dd75e144017a4e56fa6875c770  design/admin/templates/contentstructuremenu/show_content_structure.tpl
 ff0b1a2bfe7ddc2f479128e4e841ce2b  design/admin/templates/dashboard/maintenance.tpl
@@ -516,8 +516,8 @@ ad52e41f03032b0e43159a341de2896a  design/admin/templates/package/upload.tpl
 af46a950a91555aad32cb5f618995f19  design/admin/templates/package/view/files.tpl
 15b8deae9ac01e2c5ce247dd7d11bf30  design/admin/templates/package/view/full.tpl
 f8ca49e9ca11f9c274e375cd0ea3aad4  design/admin/templates/page_copyright.tpl
-870244c1a24f9eb612d6ea5f97d243d0  design/admin/templates/page_head_script.tpl
-2cd3c4680460a07dee7d3ab40c9cc9e8  design/admin/templates/page_head_style.tpl
+fda9299f029c731efb3f2a7d8cae2fe8  design/admin/templates/page_head_script.tpl
+4dc8123e40e1467fe497e4e4b40de00b  design/admin/templates/page_head_style.tpl
 eb3ca06f34a16cc723002aea58265b43  design/admin/templates/page_head_style_inline.tpl
 f0474d761bfda4475aafd6de5d1c6922  design/admin/templates/page_header.tpl
 32010fcff8ea37c44c1d536724a92611  design/admin/templates/page_leftmenu.tpl
@@ -611,7 +611,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 335d150760b72b20eaa1e2cbede0233a  design/admin/templates/setup/extensions.tpl
 d5bb255f3b23a012d0fbd889a08adf23  design/admin/templates/setup/extensions_exp_style.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin/templates/setup/handlerextension.tpl
-f1bed32572da15946c7d7fb6fab66aee  design/admin/templates/setup/info.tpl
+61eb80f03b0e2044c5d91392446d9915  design/admin/templates/setup/info.tpl
 bbdadba4a9dc511a67e3fedce07a424f  design/admin/templates/setup/info_exp_style.tpl
 6b72cbcef562564b15e7e151788d788c  design/admin/templates/setup/kerneloverride.tpl
 6a696879d93afecad32e8537b41650c6  design/admin/templates/setup/maintenance.tpl
@@ -689,7 +689,7 @@ aea24705832e54ea2f23a7bc5ef3fb7e  design/admin/templates/trigger/list.tpl
 d941c9c9f890a8617a6ddfc1dde32325  design/admin/templates/url/edit.tpl
 0ef40200c624f5612cdcb43bfb5bc85f  design/admin/templates/url/exp_style.tpl
 53fb02bbc195216c9e804ca8dbf93ad2  design/admin/templates/url/list.tpl
-5025af06eb7337f589fb38d661444f5d  design/admin/templates/url/view.tpl
+544c98b0e3f60c4a1240b1c1347d40f6  design/admin/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
 f7a30c302abe5ead88aeec1589d26138  design/admin/templates/user/edit.tpl
 e7729d83b6d2d3e108c251e3364cf009  design/admin/templates/user/exp_style.tpl
@@ -806,7 +806,7 @@ d334aad163caedca77ef1890fca90b25  design/admin3/templates/content/edit.tpl
 35c95ad3e52bd6cf74d907b804ea2625  design/admin3/templates/content/edit_draft.tpl
 3e4218bef006d2475b552dca8bfdbe88  design/admin3/templates/content/edit_menu.tpl
 0cb2a9879cb392a9dc67f0eb40d42973  design/admin3/templates/content/history.tpl
-67f3ffbfde19ae2a66a00a7977a5a673  design/admin3/templates/content/view/versionview.tpl
+ac6c2d2b75c8b74715587f718512ea01  design/admin3/templates/content/view/versionview.tpl
 177f84a513599a5358aed900c39aa21a  design/admin3/templates/error/parts/formtoken_style.tpl
 ce80eadd36457f38b7b0b36e1ee3e0f6  design/admin3/templates/loginpagelayout.tpl
 870244c1a24f9eb612d6ea5f97d243d0  design/admin3/templates/page_head_script.tpl
@@ -1014,7 +1014,7 @@ a2b1f1227859c749295ad9ee14ef4602  design/admin4/templates/content/datatype/edit/
 675a34c4e1dadeb3455c6da21f7ce7b1  design/admin4/templates/content/draft_exp_style.tpl
 94641b02f59e48a6255e00bfbcb3b104  design/admin4/templates/content/edit.tpl
 be1c7acb3cd20918fd4308fdfd105403  design/admin4/templates/content/edit_attribute.tpl
-70e5e23c2322b21fda9427428abf81f3  design/admin4/templates/content/edit_conflict.tpl
+82a07c0496c926248e1881a803de29a7  design/admin4/templates/content/edit_conflict.tpl
 35c95ad3e52bd6cf74d907b804ea2625  design/admin4/templates/content/edit_draft.tpl
 9cee1ea5bcb4068740e7558557c9c518  design/admin4/templates/content/edit_languages.tpl
 143c6f02b16e30519fa4ba79242ef957  design/admin4/templates/content/edit_locations.tpl
@@ -1055,7 +1055,7 @@ c58456f930801986a94ae1c6a68e4fdc  design/admin4/templates/content/searchresult.t
 77c27453551792679be3d55c753ea011  design/admin4/templates/content/urlalias.tpl
 b64233a99b87f27de9e7c76976ded89f  design/admin4/templates/content/urlalias_global.tpl
 23590a878d121db4026147f7c9ee338a  design/admin4/templates/content/urlalias_wildcard.tpl
-67f3ffbfde19ae2a66a00a7977a5a673  design/admin4/templates/content/view/versionview.tpl
+ac6c2d2b75c8b74715587f718512ea01  design/admin4/templates/content/view/versionview.tpl
 ba8c648fc4f2027dc40190499da291b9  design/admin4/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
 d04d82dd75e144017a4e56fa6875c770  design/admin4/templates/contentstructuremenu/show_content_structure.tpl
 ff0b1a2bfe7ddc2f479128e4e841ce2b  design/admin4/templates/dashboard/maintenance.tpl
@@ -1232,7 +1232,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tp
 335d150760b72b20eaa1e2cbede0233a  design/admin4/templates/setup/extensions.tpl
 d5bb255f3b23a012d0fbd889a08adf23  design/admin4/templates/setup/extensions_exp_style.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin4/templates/setup/handlerextension.tpl
-f1bed32572da15946c7d7fb6fab66aee  design/admin4/templates/setup/info.tpl
+61eb80f03b0e2044c5d91392446d9915  design/admin4/templates/setup/info.tpl
 bbdadba4a9dc511a67e3fedce07a424f  design/admin4/templates/setup/info_exp_style.tpl
 6b72cbcef562564b15e7e151788d788c  design/admin4/templates/setup/kerneloverride.tpl
 6a696879d93afecad32e8537b41650c6  design/admin4/templates/setup/maintenance.tpl
@@ -1309,7 +1309,7 @@ aea24705832e54ea2f23a7bc5ef3fb7e  design/admin4/templates/trigger/list.tpl
 d941c9c9f890a8617a6ddfc1dde32325  design/admin4/templates/url/edit.tpl
 0ef40200c624f5612cdcb43bfb5bc85f  design/admin4/templates/url/exp_style.tpl
 53fb02bbc195216c9e804ca8dbf93ad2  design/admin4/templates/url/list.tpl
-5025af06eb7337f589fb38d661444f5d  design/admin4/templates/url/view.tpl
+544c98b0e3f60c4a1240b1c1347d40f6  design/admin4/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 f7a30c302abe5ead88aeec1589d26138  design/admin4/templates/user/edit.tpl
 e7729d83b6d2d3e108c251e3364cf009  design/admin4/templates/user/exp_style.tpl
@@ -2250,7 +2250,7 @@ c747620857acc5decddfeecf14399756  design/standard/templates/content/datatype/vie
 d06d9d8dfac5787752ea2938a6670b7f  design/standard/templates/content/draft.tpl
 9ce76845b1f18e60a751604199e3ae01  design/standard/templates/content/edit.tpl
 cd3b7715af22826d463ee9fa8b2860bd  design/standard/templates/content/edit_attribute.tpl
-5fc72ccd42360e2135b649d77e41679d  design/standard/templates/content/edit_conflict.tpl
+511e6926226a8d4a7ff7dd175062dff1  design/standard/templates/content/edit_conflict.tpl
 119ffc782b77946fc36270b5d91da7de  design/standard/templates/content/edit_draft.tpl
 7ca164e73065352e657da7c3de8244ab  design/standard/templates/content/edit_languages.tpl
 681975f4b609ea5464b7cee93facf3c0  design/standard/templates/content/edit_placement.tpl
@@ -5024,7 +5024,7 @@ a1fdd12cc8b007017c4bf7964e3ff6d0  kernel/classes/ezrssimport.php
 6aa1971683af3d160277cc405f740854  kernel/classes/ezscript.php
 101e697256e937ea550fc850939ad824  kernel/classes/ezsearch.php
 59fe9c1b44af855290c3a2c585bd2693  kernel/classes/ezsearchlog.php
-682005f4cfaf0a50298e89643d6ab439  kernel/classes/ezsection.php
+165108fb9078c688cbb30bc59e1bf7c1  kernel/classes/ezsection.php
 fdfd9b8f7952710061316b8c7d7c4d4c  kernel/classes/ezserializedobjectnamelist.php
 c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
@@ -5209,7 +5209,7 @@ e5173154b8dda8d8a484430bcd35dd78  kernel/collaboration/function_definition.php
 5d87902cd7e04a68768a510883df4e47  kernel/common/ezpsiteaccessurloperator.php
 017b674d3da82376774e263117ee3ce8  kernel/common/ezsimpletagsoperator.php
 da918f13b83149e6feee8a05e8c5b4be  kernel/common/eztemplateautoload.php
-41abf2e4990e0b5666f96f1d20d20571  kernel/common/eztemplatedesignresource.php
+86d89f588dc9c810312b60aa5fb9a508  kernel/common/eztemplatedesignresource.php
 6316d1979ad32700bcc5c6873e3cdaaa  kernel/common/eztemplatesstatisticsreporter.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
 19e4522dfc4bc1774656c0bd823b7981  kernel/common/eztopmenuoperator.php
@@ -5607,7 +5607,7 @@ ade3050a695a1188b44283460111d3c9  kernel/private/classes/views/content/treemenu.
 4f11008ad9b5c1f0dd76badc81989f91  kernel/private/classes/views/content/urlalias.php
 a022490fad3a8e2011f803b9489af953  kernel/private/classes/views/content/urlalias_global.php
 4448c86277f3d36c9516e2fc707d7b2b  kernel/private/classes/views/content/urlalias_wildcard.php
-040d7b152a219345a2370e2ebffe537a  kernel/private/classes/views/content/versionview.php
+99c10b0ab4c299e6a5ac9b47ef851f73  kernel/private/classes/views/content/versionview.php
 e88eae5e2e444bc3a85ebc168aa3cd39  kernel/private/classes/views/content/view.php
 7f666f92857068a3dfc239970934ae84  kernel/private/classes/views/error/view.php
 5b93b97bc4e87108308011f4ae05eb0f  kernel/private/classes/views/ezinfo/about.php
@@ -5641,7 +5641,7 @@ ad1e42e63076a7827524ab56c24f9d7a  kernel/private/classes/views/package/upload.ph
 a22c0c418b4da40667bc5a0aacf3219e  kernel/private/classes/views/package/view.php
 e051b54a48ef07ac5fbaf71dc5a07d43  kernel/private/classes/views/package/viewfile.php
 98bc4a7e6f41761e0632a7234c37a304  kernel/private/classes/views/pdf/edit.php
-b9ef44576e54b4a524ddb6ec6d47d883  kernel/private/classes/views/pdf/list.php
+7e78daf791479f44bf902e733a4b9a67  kernel/private/classes/views/pdf/list.php
 77880056509af0081fda49518b9a357e  kernel/private/classes/views/role/assign.php
 471c510cf78aa3f11e1b579a96d8c07b  kernel/private/classes/views/role/copy.php
 c9598881c2f5653249d56756d7f0d23f  kernel/private/classes/views/role/edit.php
@@ -5651,7 +5651,7 @@ c9598881c2f5653249d56756d7f0d23f  kernel/private/classes/views/role/edit.php
 8154b079a9275b1203500d4c52d0e397  kernel/private/classes/views/rss/edit_export.php
 f459d40d87e48b3316f3ae0576012ba6  kernel/private/classes/views/rss/edit_import.php
 5a231d7a83ab0ce2151a6a382fb8a200  kernel/private/classes/views/rss/feed.php
-6235543e994cc6dabfb5dd5bac0a8e9e  kernel/private/classes/views/rss/list.php
+a3e3feceda06ed2502be10a1e992ae66  kernel/private/classes/views/rss/list.php
 55934e148dfa9683d7ae7e12e5e73f83  kernel/private/classes/views/search/stats.php
 d6b7ee459c385cc78ca426a0b6f8b362  kernel/private/classes/views/section/assign.php
 41a1a002428dba979b2ff3df259505af  kernel/private/classes/views/section/edit.php
@@ -7166,6 +7166,7 @@ d9f6d3efe5a8afd75e31f0b790fa0cb7  tests/tests/kernel/classes/eZRSSExportTest.php
 a63064e47b622565a9525d6f40914936  tests/tests/kernel/classes/eZRoleAssignmentPageLiveTest.php
 be1aa0e87f92a94fba8582a57d54aca5  tests/tests/kernel/classes/eZRoleAssignmentSortTest.php
 2d3854eee9fdd39d64f775b25ee439ae  tests/tests/kernel/classes/eZRoleTest.php
+b3726da0cf9d0921445aa33e1c1c1991  tests/tests/kernel/classes/eZSectionFetchWithoutIdTest.php
 f54782a8f10898bc22d75eaf1c33d2de  tests/tests/kernel/classes/eZSectionTest.php
 d2b2aa97184624a1b60cebe09319e82a  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
 d61e47486ee9a916d28189fd4e6aba6d  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
@@ -7443,6 +7444,7 @@ cd6b8bec864c53c4f18dff9bcdaf5580  tests/tests/kernel/classes/xmltext/eZXMLSchema
 ea5121e0baece60295a0b95688fbc918  tests/tests/kernel/classes/xmltext/eZXMLTextTestFixtures.php
 def1f1bcfd84b00003409aaa701e48dc  tests/tests/kernel/classes/xmltext/eZXMLTextTypeTest.php
 b2e46951bdb7165f0a97de3990a4e4e4  tests/tests/kernel/common/eZKernelCommonOperatorsTest.php
+70d869f72e457b82bd78d016a1016392  tests/tests/kernel/common/eZTemplateDesignResourceNullSiteAccessTest.php
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
 7584758a4f40031bd44aedd755614046  tests/tests/kernel/content/eZContentOperationCollectionTest.php
@@ -7517,6 +7519,7 @@ d3aece307cd87977077761c98dcfa905  tests/tests/kernel/private/classes/ezpSiteAcce
 2000c194dcb439f91bf20cee50496582  tests/tests/kernel/private/classes/ezpSmallKernelHelpersTest.php
 f8bd96cb7671e92382f05210af3b11eb  tests/tests/kernel/private/classes/ezpTopologicalSortOrderTest.php
 ccedf985750dd7fe3adf44e8e474cdc3  tests/tests/kernel/private/contentapi/ezpContentCriteriaTest.php
+1f6099d45628709ed897b0bbdcb26655  tests/tests/kernel/private/expAdminViewsDebugCleanTest.php
 b6b6e540825226d42728ede902f6b71e  tests/tests/kernel/private/ezp_api/ezpcontent_regression.php
 d99d278d87120c88f0d79c961fc6ccdc  tests/tests/kernel/private/ezp_api/suite.php
 4da85a88c01da664a6eee41080c9ed23  tests/tests/kernel/private/ezpautoloadgenerator_test.php
