@@ -545,6 +545,8 @@ class eZURLAliasML extends eZPersistentObject
         $languageMask = $languageID;
         if ( $alwaysAvailable )
             $languageMask |= 1;
+        // Set before the MongoDB branch, which stores new entries with it too
+        $alwaysMask = $alwaysAvailable ? 1 : 0;
 
         $path = eZURLAliasML::cleanURL( $path );
         $elements = explode( '/', $path );
@@ -915,7 +917,6 @@ class eZURLAliasML extends eZPersistentObject
         $actionName  = $matches[1];
         $actionValue = $matches[2];
         $existingElementID = null;
-        $alwaysMask = $alwaysAvailable ? 1 : 0;
 
         $actionStr = $db->escapeString( $action );
         $actionTypeStr = $db->escapeString( $actionName );
