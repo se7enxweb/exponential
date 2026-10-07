@@ -68,10 +68,23 @@ class eZContentPermissionSQLTest extends PHPUnit\Framework\TestCase
         return $sql['where'];
     }
 
-    public function testNoLimitationsAddNothing()
+    public function testFullAccessAddsNoCondition()
     {
+        // An empty list: accessWord 'yes', or a fetch given an empty Limitation
         $this->assertSame( array( 'from' => '', 'where' => '', 'temp_tables' => array() ), eZContentObjectTreeNode::createPermissionCheckingSQL( array() ) );
-        $this->assertSame( array( 'from' => '', 'where' => '', 'temp_tables' => array() ), eZContentObjectTreeNode::createPermissionCheckingSQL( false ) );
+    }
+
+    public function testNoReadAccessGivesAConditionNoNodeMeets()
+    {
+        // false: a user without any content/read policy, or whose access array could not be read (fail-closed).
+        // The empty condition of before listed every node to such a user.
+        $this->assertSame( array( 'from' => '', 'where' => ' AND 0 = 1 ', 'temp_tables' => array() ), eZContentObjectTreeNode::createPermissionCheckingSQL( false ) );
+        foreach ( array( 'enabled', 'disabled' ) as $setting )
+        {
+            ezpINIHelper::setINISetting( 'site.ini', 'RoleSettings', 'PermissionSQLOptimization', $setting );
+            $this->assertSame( ' AND 0 = 1 ', eZContentObjectTreeNode::createPermissionCheckingSQL( false, 'ezcontentobject_trash', 'ezcot',
+                                                                                                    array( 'paths' => array( '/1/2/' ) ) )['where'], $setting );
+        }
     }
 
     public function testClassAndSectionOfOnePolicyAreJoinedByAnd()

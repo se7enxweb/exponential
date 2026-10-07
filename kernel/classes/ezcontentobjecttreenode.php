@@ -1988,7 +1988,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * policies that cannot give access to a fetched node are left out (pruneLimitationList()). When none is left,
      * the condition matches no node.
      *
-     * @param array|bool $limitationList The list of getLimitationList()
+     * false, the list of a user without any content/read policy (accessWord 'no', also when every read of the
+     * access array failed), gives a condition no node meets. An empty array (accessWord 'yes', or a fetch given an
+     * empty Limitation) gives no condition: every node.
+     *
+     * @param array|bool $limitationList The list of getLimitationList(): false for no read access, an empty array
+     *        for full access
      * @param string $treeTableName
      * @param string $tableAliasName
      * @param array $fetchScope What the fetch tells about its nodes, from permissionFetchScope()
@@ -1996,6 +2001,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     static function createPermissionCheckingSQL( $limitationList, $treeTableName = 'ezcontentobject_tree', $tableAliasName = 'ezcontentobject_tree', $fetchScope = array() )
     {
+        if ( $limitationList === false )
+        {
+            // No read access at all: not one node. The empty condition this returned before listed every node.
+            return array( 'from' => '', 'where' => ' AND 0 = 1 ', 'temp_tables' => array() );
+        }
+
         $db = eZDB::instance();
 
         $sqlPermissionCheckingFrom = '';
