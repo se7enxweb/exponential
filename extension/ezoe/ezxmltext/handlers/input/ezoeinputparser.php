@@ -1186,7 +1186,9 @@ class eZOEInputParser extends eZXMLInputParser
         $ret = array();
 
         $parentNode = $element->parentNode;
-        if ( $parentNode->nodeName === 'custom' &&
+        // a paragraph whose parent was removed already (a custom tag that is not configured) has none
+        if ( $parentNode instanceof DOMElement &&
+                $parentNode->nodeName === 'custom' &&
                 !$this->XMLSchema->isInline( $parentNode ) &&
                 $parentNode->childNodes->length === 1 &&
                 $parentNode->getAttribute( 'name' ) === $element->textContent )
