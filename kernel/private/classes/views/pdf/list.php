@@ -230,7 +230,7 @@ class ListView extends \Exponential\Runnable\ModuleView
 
         $default = \expAdminPagination::limit( 'pdf/list' );
         $sizes = self::sizesOf( $default, \expAdminPagination::sizes( 'pdf/list' ) );
-        $loggedIn = \eZUser::currentUser()->isLoggedIn();
+        $loggedIn = \eZUser::currentUser()->isRegistered();
         $remembered = $loggedIn ? \eZPreferences::value( self::LIMIT_PREFERENCE ) : false;
         $limit = self::limitOf( $param( 'limit' ), $remembered, $default, $sizes );
         if ( $loggedIn && $param( 'limit' ) !== '' && (string)$limit === $param( 'limit' ) && (string)$remembered !== (string)$limit )
