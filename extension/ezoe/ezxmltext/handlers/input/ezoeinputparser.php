@@ -1533,10 +1533,12 @@ class eZOEInputParser extends eZXMLInputParser
                     $name = 'align';
 
                 // An alignment is a keyword (left, right, center, justify, ...); anything else is left out, as the
-                // editor writes it into the markup it loads
+                // editor writes it into the markup it loads. A browser's own keyword (-webkit-center, pasted from a
+                // centered block) is the plain one.
                 if ( $name === 'align' )
                 {
                     $value = strtolower( preg_replace( '/\s*!\s*important$/i', '', $value ) );
+                    $value = preg_replace( '/^-(?:webkit|moz|ms|o)-/', '', $value );
                     if ( !preg_match( '/^[a-z][a-z-]*$/', $value ) )
                         continue;
                 }

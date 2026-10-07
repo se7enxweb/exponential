@@ -6,7 +6,8 @@
  *  PS-01 - A declaration without a colon, or with an empty name, is left out without a PHP warning
  *  PS-02 - A namespace declaration (xmlns, xmlns:x, xml:...) never reaches the stored XML, which loads again
  *  PS-03 - An alignment is a keyword; markup, a script address, an expression or a second colon is left out
- *  PS-04 - An alignment keeps its keyword in lower case, also with !important
+ *  PS-04 - An alignment keeps its keyword in lower case, also with !important; a browser's own keyword
+ *          (-webkit-center) is the plain one
  *  PS-05 - Names that are not CSS property names (vendor prefixes, other scripts, @rules) are left out
  *  PS-06 - Very long declarations do not break the parser
  *
@@ -86,6 +87,9 @@ class expOEPastedStyleRulesTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( '<paragraph align="center">a</paragraph>', $this->xml( '<p style="TEXT-ALIGN: Center">a</p>' ) );
         $this->assertSame( '<paragraph align="justify">a</paragraph>', $this->xml( '<p style="text-align: justify !important">a</p>' ) );
+        $this->assertSame( '<paragraph align="center">a</paragraph>', $this->xml( '<p style="text-align: -webkit-center">a</p>' ), 'pasted from a centered block' );
+        $this->assertSame( '<paragraph align="right">a</paragraph>', $this->xml( '<p style="text-align: -moz-right">a</p>' ) );
+        $this->assertSame( '<paragraph>a</paragraph>', $this->xml( '<p style="text-align: -webkit-">a</p>' ) );
         $this->assertSame( '<header align="right">a</header>',
                            preg_replace( '/^(<section>)+|(<\/section>)+$/', '', $this->xml( '<h2 style="text-align: right">a</h2>' ) ) );
     }
