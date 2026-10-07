@@ -276,6 +276,8 @@ class ezpLanguageSwitcher implements ezpLanguageSwitcherCapable
         switch ( $GLOBALS['eZCurrentAccess']['type'] )
         {
             case eZSiteAccess::TYPE_URI:
+                // The server URL with the web root: transformURI() fills in the empty link
+                $host = '';
                 eZURI::transformURI( $host, true, 'full' );
                 break;
 
