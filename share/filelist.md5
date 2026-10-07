@@ -5354,7 +5354,7 @@ b95c9d9770cf06b720716c883539b2d4  kernel/private/classes/clusterfilehandlers/dfs
 7a3eb838587d7b5e46a546fd2b94573f  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
 cd9d3c201b1739ef37402786abce4e24  kernel/private/classes/clusterfilehandlers/ezclustereventloggerezdebug.php
 876c214dda68f63c5e9a3c053ed3749f  kernel/private/classes/clusterfilehandlers/ezclustereventloggerphp.php
-6a8fbdbb5933aacb96292007698f499b  kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
+7c227c42081d5018b618df0659210d7d  kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
 f35bba1fe44c1f0f7b56d74bf15cdd66  kernel/private/classes/clusterfilehandlers/ezdfsfilehandlerbackendfactory.php
 b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlistener.php
 20656a179cf535afff572d16ad2e78f0  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlogger.php
@@ -7157,7 +7157,7 @@ b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutO
 6855c387598fbee39d880905abac28cc  tests/tests/kernel/classes/eZPackageVersionTest.php
 7a21b3cc90e141e63b00372345c15fba  tests/tests/kernel/classes/eZPendingActionsTest.php
 af2328d092a107a74a930bb217ed1d9e  tests/tests/kernel/classes/eZPhp85NoEffectCallsTest.php
-886365cd039d8ce252b62db1a6bfb4fe  tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php
+ac59faa36dd49a5a0b4751814db11085  tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php
 c9c4cb539a1a23f7edb9104a225c117c  tests/tests/kernel/classes/eZPolicySaveTemporaryTest.php
 4ab6d50e1369ffc790e40c356d0cb3df  tests/tests/kernel/classes/eZPolicyTest.php
 74a56404c3de4b8aaa885226b2d8f530  tests/tests/kernel/classes/eZProductCollectionItemOptionTest.php
