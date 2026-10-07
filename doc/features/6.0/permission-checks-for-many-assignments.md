@@ -11,7 +11,8 @@ setting that turns the shorter permission condition off.
 |---|---|
 | What changed | `eZContentObject::checkAccess()` and `canCreateClassList()` load the locations of an object once per call instead of once per policy. The content fetches merge the read policies that differ only in the subtree their role is assigned for and leave out those that cannot give access to a fetched node. |
 | Measured | For a member of 120 teamrooms (1,203 read policies): checking read access to an article took 120 queries and 27.8 ms, now 1 query and 1.0 ms; the create menu of a folder 601 queries and about 100 ms, now 2 queries and 2 ms; listing the children of a folder 24.4 ms, now 1.2 ms. |
-| Fixed | On SQLite every content fetch of a user with 1,000 read policies or more failed ("Expression tree is too large") and returned nothing. |
+| Fixed | On SQLite every content fetch of a user with 1,000 read policies or more failed ("Expression tree is too large") and returned nothing. Long OR chains are now written in groups, so thousands of policies or subtrees stay below the limit. |
+| Checked | On alpha, for every user, the read policies of every role and six throwaway users covering every limitation kind: 3,294 fetches, 28,224 access checks and 2,712 create lists give the same answers as before (see [Checked on alpha](#checked-on-alpha)). |
 | Result | The same answers: `checkAccess()` and `canCreateClassList()` compare the same locations, the fetches return the same nodes. |
 | Setting | `site.ini [RoleSettings] PermissionSQLOptimization=enabled` (default); `disabled` ORs every read policy into the fetch condition as before. |
 | Who must act | Nobody. |
@@ -47,7 +48,9 @@ queries of one access check cost 25 to 60 ms there, the 601 queries of a create 
 2. **Merged policies.** `eZContentObjectTreeNode::mergeLimitationList()` makes one policy of the policies whose
    limitations are equal except for `User_Subtree`, with all their subtrees: the policies of a list are ORed and so are
    the values of a limitation, so `(A AND subtree 1) OR (A AND subtree 2)` is `A AND (subtree 1 OR subtree 2)`. Equal
-   subtrees are listed once. The 1,203 read policies of the member above become 5, the condition 13.7 KB. The last
+   subtrees are listed once. The subtrees of a merged policy stand in parentheses: the other limitations of the
+   policy are ANDed with them, and `Class AND subtree 1 OR subtree 2` would give subtree 2 to every class. The 1,203
+   read policies of the member above become 5, the condition 13.7 KB. The last
    lists merged are remembered: the list of the current user arrives with every fetch, and comparing it with the same
    array costs nothing. `createPermissionCheckingSQL()` merges every list, so search, trash, the content structure menu
    and the fetches of extensions profit too.
@@ -67,7 +70,18 @@ What the pruning never does:
   alternatives, the node may lie in the fetched subtree.
 - It keeps every value that is not a path of node ids, since SQL compares it with `LIKE` and a `%` or `_` in it could
   match more than its text.
+- It never leaves out a policy whose `Class` limitation has no values: the condition skips such a limitation, so it
+  narrows nothing. Class ids are compared as numbers, as the database compares them, and the class filter type is
+  read as the fetches read it (`true` is an include filter).
+- It never turns a condition into no condition. A policy whose limitations a read ignores (only `ParentClass`, say)
+  adds nothing to the condition and was left out of the OR before as well; when only such policies remain after the
+  others were left out, the condition is `0 = 1`, as the full condition would have matched no node of the fetch.
 - `subTreeMultiPaths()` builds the joins of the condition once for several parts, so it only merges and does not prune.
+
+4. **Short OR chains.** A database reads an OR chain of n parts as an expression n levels deep, and SQLite refuses one
+   deeper than 1,000. With the setting enabled, `permissionSQLOr()` writes a chain of more than 100 parts (the
+   subtrees of a merged policy, the policies of the condition) in parenthesised groups of 100, and the groups in
+   groups again. Up to 100 parts nothing changes in the SQL; a million parts stay below 400 levels.
 
 ## Measurements
 
@@ -107,11 +121,59 @@ path lookup of a fetch of children 0.03 ms.
 These are local numbers without a network. With MySQL or PostgreSQL on a server of its own the queries that are saved
 weigh more, each a round trip; how the planner of each database treats a long OR condition was not measured here.
 
+## Checked on alpha
+
+The fetches, access checks and create lists of every user on alpha (one disabled user left out: a disabled user is
+anonymous for every request), of the read policies of every role on their own, and of six throwaway users were
+computed with the code before the change, with the change as first submitted and with the change as it is now. The
+throwaway users cover every limitation kind: a member role of 5 read, 3 create and 2 edit policies assigned for 120
+subtrees (and an editor with the same, for the browser), Owner, Group, Section and Class mixes assigned plainly, for
+a section, for subtrees and through the user group, `Node`, `Node` next to `Subtree`, `ParentDepth`, `ParentClass`,
+`Language` and a state, 1,100 read policies (10 policies for 110 subtrees), a limitation with a handler, one without,
+a `Class` limitation without values and a read policy with only a `ParentClass` limitation. The content they were
+checked on includes an article with two locations and an article that was never published.
+
+| | Before | Now | As first submitted |
+|---|---|---|---|
+| Fetches (list, count, calendar, search, keywords): 3,294 | | same | 125 different |
+| `checkAccess()` read, edit, remove, move, create: 28,224 | | same | same |
+| `canCreateClassList()` of objects and nodes: 2,712 | | same | same |
+
+The fetches of the user with 1,100 policies failed before on SQLite (154 times); 140 of them were compared with the
+union of the fetches over chunks of 400 policies, and the 3 searches and keyword counts the old code answered with
+nothing are now consistent with that user's tree fetches. The first submission listed nodes to a real user and to
+the throwaway users that they may not read (the subtrees of a merged policy without parentheses), and hid nodes from
+the role with a `Class` limitation without values.
+
+Figures on alpha (SQLite, PHP 8.5, 330 nodes), median of 5, queries of one call:
+
+| Call | User | Before | Now |
+|---|---|---|---|
+| `checkAccess( 'read' )`, article in the 120th subtree | member of 120 subtrees | 359 queries, 102.8 ms | 2 queries, 1.8 ms |
+| `checkAccess( 'edit' )`, same article | member of 120 subtrees | 239 queries, 47.0 ms | 1 query, 0.8 ms |
+| `canCreateClassList()`, folder | member of 120 subtrees | 363 queries, 82.0 ms | 3 queries, 3.6 ms |
+| Children of a node | member of 120 subtrees | 7 queries, 22.9 ms | 8 queries, 1.7 ms |
+| Whole tree, 20 newest | member of 120 subtrees | 22.2 ms | 5.9 ms |
+| Whole tree, count of articles | member of 120 subtrees | 21.2 ms | 4.9 ms |
+| Search | member of 120 subtrees | 50.6 ms | 20.3 ms |
+| Children of a node | 1,100 read policies | fails | 2.0 ms |
+| `checkAccess( 'read' )`, `canCreateClassList()`, fetches | anonymous, administrator | unchanged | unchanged |
+
+The extra query of a children fetch is the path lookup of its parent node.
+
 ## Limits
 
-The subtrees of one merged policy are ORed one after the other. A user with more than about 1,000 subtree assignments
-of the same role still reaches the expression limit of SQLite in a fetch over the whole tree; within one subtree the
-pruning keeps only the subtrees of that subtree.
+- The access checks still compare the policies one by one; only the database work is shared.
+- The `IN ()` lists of a policy (`Class`, `Section`, `Node`) are written as the policy has them; merging does not
+  lengthen them.
+- `Owner` and `Group` in the condition are those of the current user, as before; a `Limitation` given to a fetch for
+  another user is merged and narrowed like any other list.
+
+## Debugging
+
+`debug.ini [GeneralCondition] kernel-content-treenode=enabled` writes, for each fetch, how many policies it was
+given, how many remained merged and how many are in its condition, with the paths it was narrowed to. To compare with
+the condition of before, set `PermissionSQLOptimization=disabled`.
 
 ## The original project patch
 
@@ -131,7 +193,7 @@ An older project patch had the same aims. It was not taken over as it was:
 
 | File | Block | Key | Default | Meaning |
 |---|---|---|---|---|
-| `settings/site.ini` | `RoleSettings` | `PermissionSQLOptimization` | `enabled` | `disabled` ORs every read policy into the condition of a fetch, as before. The locations in `checkAccess()` and `canCreateClassList()` are loaded once either way. |
+| `settings/site.ini` | `RoleSettings` | `PermissionSQLOptimization` | `enabled` | `disabled` ORs every read policy into the condition of a fetch in one chain, as before. The locations in `checkAccess()` and `canCreateClassList()` are loaded once either way, and the subtrees of a policy with several stand in parentheses either way. |
 
 ## For extension authors
 
@@ -140,18 +202,22 @@ An older project patch had the same aims. It was not taken over as it was:
 - `createPathConditionAndNotEqParentSQLStrings()` returns the paths it loaded through an optional sixth parameter.
 - `classListFromPolicy()` takes the locations of the object as an optional third parameter, by reference; called with
   two parameters it loads them as before.
-- `mergeLimitationList()` and `pruneLimitationList()` are public and work without the database.
+- `mergeLimitationList()`, `pruneLimitationList()` and `permissionSQLOr()` are public and work without the database.
 
 ## Tests
 
 - `eZContentPermissionSQLOptimizationTest` (no database): merging (only policies that differ in `User_Subtree`, equal
   subtrees once, the remembered list), 600 assignments giving the condition of three policies, the setting, pruning
   by path, by a `Node` next to a `Subtree`, by values that are no path and by class filter, and the condition no node
-  meets when nothing remains.
+  meets when nothing remains; a merged policy keeping its class for every subtree, a `Class` limitation without
+  values, class ids compared as numbers, the class filter type `true`, policies without a condition left alone after
+  pruning, OR chains of 100 parts written as before, and a condition of 1,500 policies and 2,500 subtrees that runs
+  on SQLite (the chain of before is refused there).
 - `eZContentPermissionSQLOptimizationLiveTest` (on an installation): a user whose role is assigned for 40 subtrees.
   `checkAccess()` and `canCreateClassList()` need at most 3 and 5 queries (41 and more before), and subtree, children,
   whole tree, class filter and multi-node fetches and their counts return the same nodes with the setting enabled
-  and disabled.
+  and disabled; PO-04 does so for a folder-only policy and one for an empty section, where subtrees ORed past their
+  class would show.
 
 ## Related pages
 
