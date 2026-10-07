@@ -76,10 +76,24 @@ class ezpDfsMySQLiClusterGateway extends ezpClusterGateway
         $fp = fopen( $dfsFilePath, 'rb' );
         if ( $offset !== false && @fseek( $fp, $offset ) === -1 )
             throw new RuntimeException( "Failed to seek offset $offset on file '$filepath'" );
-        if ( $offset === false && $length === false )
+        if ( $length === false )
+        {
             fpassthru( $fp );
+        }
         else
-            echo fread( $fp, $length );
+        {
+            // One fread() may return less than asked for (a userland stream wrapper or a network
+            // mount returns what it has), so read until the requested length or the end of file.
+            $left = (int)$length;
+            while ( $left > 0 && !feof( $fp ) )
+            {
+                $data = fread( $fp, min( $left, 16384 ) );
+                if ( $data === false || $data === '' )
+                    break;
+                echo $data;
+                $left -= strlen( $data );
+            }
+        }
 
         fclose( $fp );
     }

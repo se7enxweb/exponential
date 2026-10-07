@@ -335,14 +335,23 @@ class eZFile
         $packetSize = self::READ_PACKET_SIZE;
         $endOffset = ( $length === false ) ? $fileSize - 1 : $length + $startOffset - 1;
 
+        // Count the bytes fread() actually returned, not the bytes asked for: a stream may return
+        // less than requested (a userland stream wrapper returns one 8 KB buffer per call, network
+        // and cluster streams return what has arrived), and counting the request ended the
+        // transfer early with a truncated body.
         while ( !feof( $fp ) && $transferred < $endOffset + 1 )
         {
             if ( $transferred + $packetSize > $endOffset + 1 )
             {
                 $packetSize = $endOffset + 1 - $transferred;
             }
-            echo fread( $fp, $packetSize );
-            $transferred += $packetSize;
+            $data = fread( $fp, $packetSize );
+            if ( $data === false || $data === '' )
+            {
+                break;
+            }
+            echo $data;
+            $transferred += strlen( $data );
         }
         fclose( $fp );
 
