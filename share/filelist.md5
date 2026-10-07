@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-51a6229eab0185558498ff1fbfd53e9c  doc/changelogs/6.0/6.0.15.md
+385771ea790989f99718c611f731b186  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3520,7 +3520,7 @@ f46af9cdee469946176953da2d241afc  doc/guides/mail-preferences-developer.md
 f04c83c32d4598b6803721a36c8432d4  doc/guides/operating-a-site.md
 7df1c4114865c8992a482cecdd6d7bbc  doc/guides/packages.md
 cc611e7dbef014fc2da486cc2c00a934  doc/guides/pdf-exports.md
-7cdc608cefee0c367ec5b5c7414746d1  doc/guides/preloading-caches.md
+46fbc00d7c88471f641908622888e41f  doc/guides/preloading-caches.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 5a7bde298cd3b3eb7329db6460fd4743  doc/guides/roles-and-policies.md
 b96aa9f19d0e6aebe8b4e7b2569216d5  doc/guides/rss-feeds.md
@@ -5946,7 +5946,7 @@ f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 11cd35571a5011c7ea5ec0f99593199b  kernel/setup/expkerneloverridewizard.php
 fd65c2cce9e61492592c18344e029370  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
-c5c9700e6cd4426b8b231d8489c82964  kernel/setup/exppreloadrunner.php
+961d19e26472f29fd7602d10639cfed4  kernel/setup/exppreloadrunner.php
 bce68c62930cac0cb74d05b53d0cd24d  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
 9d29ad5fc017910fd28b55a2431641c3  kernel/setup/expradsurvey.php
@@ -7064,6 +7064,8 @@ d4cad238dad8d7b326ffbdb4af42308e  tests/tests/kernel/classes/benchmark/ExpBenchm
 dfd97bff94227d161392e0066590a9f3  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
 9f35d62dea92268419f9f373c661ea91  tests/tests/kernel/classes/cachesmore/eZStaticCachePathsTest.php
 ec49325384c48adf5d56ade86b85d5dd  tests/tests/kernel/classes/cachesmore/expPreloadRunnerLinksTest.php
+91468a69c1c96cc74112894400196b4f  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
+89a4d84cf90433287afc8977a6bd3ecb  tests/tests/kernel/classes/cachesmore/fixtures/preload-demo-site-front-page-uri-matching.html
 7fd83806d836bd31a31622cd6ae94e4e  tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php
 590fa866a4775d0d26dbf47125ea0951  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 3716fe7631e22ea83ff4683e87988369  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
