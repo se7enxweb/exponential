@@ -45,7 +45,7 @@ class PSpellShell extends SpellChecker {
 			preg_match("/\& ([^ ]+) .*/i", $dstr, $matches);
 
 			if (!empty($matches[1]))
-				$returnData[] = utf8_encode(trim($matches[1]));
+				$returnData[] = mb_convert_encoding(trim($matches[1]), 'UTF-8', 'ISO-8859-1');
 		}
 
 		return $returnData;
@@ -64,7 +64,7 @@ class PSpellShell extends SpellChecker {
         if (function_exists("mb_convert_encoding"))
             $word = mb_convert_encoding($word, "ISO-8859-1", mb_detect_encoding($word, "UTF-8"));
         else
-            $word = utf8_encode($word);
+            $word = mb_convert_encoding($word, 'UTF-8', 'ISO-8859-1');
 
 		if ($fh = fopen($this->_tmpfile, "w")) {
 			fwrite($fh, "!\n");

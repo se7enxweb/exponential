@@ -20,7 +20,7 @@ class PSpell extends SpellChecker {
 		$outWords = array();
 		foreach ($words as $word) {
 			if (!pspell_check($plink, trim($word)))
-				$outWords[] = utf8_encode($word);
+				$outWords[] = mb_convert_encoding($word, 'UTF-8', 'ISO-8859-1');
 		}
 
 		return $outWords;
@@ -37,7 +37,7 @@ class PSpell extends SpellChecker {
 		$words = pspell_suggest($this->_getPLink($lang), $word);
 
 		for ($i=0; $i<count($words); $i++)
-			$words[$i] = utf8_encode($words[$i]);
+			$words[$i] = mb_convert_encoding($words[$i], 'UTF-8', 'ISO-8859-1');
 
 		return $words;
 	}
