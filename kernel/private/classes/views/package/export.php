@@ -36,7 +36,7 @@ class Export extends \Exponential\Runnable\ModuleView
 
         $module = $Params['Module'];
         $packageName = $Params['PackageName'];
-        $repositoryID = isset( $Params['RepositoryID'] ) && $Params['RepositoryID'] ? $Params['RepositoryID'] : false;
+        $repositoryID = isset( $scope['Params']['RepositoryID'] ) && $scope['Params']['RepositoryID'] ? $scope['Params']['RepositoryID'] : false;
         $repository = $repositoryID !== false ? \eZPackageRequestGuard::repository( $repositoryID ) : null;
         if ( !\eZPackageRequestGuard::isSafeName( $packageName ) || $repository === false )
             return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );

@@ -80,13 +80,13 @@ class Edit extends \Exponential\Runnable\ModuleView
         $post = function ( $name, $default ) use ( $http ) {
             return $http->hasPostVariable( $name ) ? $http->postVariable( $name ) : $default;
         };
-        $iniFile = \expSettingsTarget::iniFile( $post( 'INIFile', $Params['INIFile'] ), \expSettingsPage::iniFileList() );
-        $siteAccess = \expSettingsTarget::siteAccess( $post( 'SiteAccess', $Params['SiteAccess'] ), $siteAccessList );
-        $block = $post( 'Block', $Params['Block'] );
+        $iniFile = \expSettingsTarget::iniFile( $post( 'INIFile', $scope['Params']['INIFile'] ), \expSettingsPage::iniFileList() );
+        $siteAccess = \expSettingsTarget::siteAccess( $post( 'SiteAccess', $scope['Params']['SiteAccess'] ), $siteAccessList );
+        $block = $post( 'Block', $scope['Params']['Block'] );
         $block = is_string( $block ) ? trim( $block ) : '';
-        $settingName = $post( 'SettingName', $Params['Setting'] );
+        $settingName = $post( 'SettingName', $scope['Params']['Setting'] );
         $settingName = is_string( $settingName ) ? trim( $settingName ) : '';
-        $settingPlacement = $post( 'SettingPlacement', $Params['Placement'] );
+        $settingPlacement = $post( 'SettingPlacement', $scope['Params']['Placement'] );
         $settingPlacement = is_string( $settingPlacement ) && $settingPlacement !== '' ? trim( $settingPlacement ) : 'siteaccess';
         $settingType = $http->hasPostVariable( 'SettingType' ) ? trim( (string)$http->postVariable( 'SettingType' ) ) : null;
         if ( $settingType !== null && !isset( $settingTypeArray[$settingType] ) )
@@ -96,12 +96,12 @@ class Edit extends \Exponential\Runnable\ModuleView
         if ( $iniFile === null || $siteAccess === null || !\expSettingsTarget::isValidBlock( $block )
              || ( $settingName !== '' && !\expSettingsTarget::isValidName( $settingName ) && !$http->hasPostVariable( 'WriteSetting' ) ) )
         {
-            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         }
         $viewURL = '/settings/view/' . $siteAccess . '/' . $iniFile;
 
         if ( $http->hasPostVariable( 'Cancel' ) )
-            return $this->viewResult( null, $Module->redirectTo( $viewURL ) );
+            return $this->viewResult( null, $scope['Module']->redirectTo( $viewURL ) );
 
         $loaded = \expSettingsPage::chainFor( $iniFile, $siteAccess, false );
         $chain = $loaded['chain'];
@@ -127,7 +127,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             if ( $error === null && $isSecret && $valueToWrite === '' && $setting !== null )
             {
                 \expSettingsPage::afterWrite( 'unchanged', $iniFile, $siteAccess, array( array( 'block' => $block, 'name' => $settingName, 'path' => '' ) ) );
-                return $this->viewResult( null, $Module->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
+                return $this->viewResult( null, $scope['Module']->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
             }
             if ( $error === null )
             {
@@ -158,7 +158,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 {
                     \expSettingsPage::afterWrite( 'saved', $iniFile, $siteAccess,
                         array( array( 'block' => $block, 'name' => $settingName, 'path' => $path . '/' . $iniFile . '.append.php' ) ) );
-                    return $this->viewResult( null, $Module->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
+                    return $this->viewResult( null, $scope['Module']->redirectTo( $viewURL . '#' . \expSettingsPage::anchor( $block . '-' . $settingName ) ) );
                 }
                 // eZINI::save() refuses a line break, a NUL byte or the end of a PHP comment, and fails on permissions
                 $error = array( 'write_error', '', 'Value' );

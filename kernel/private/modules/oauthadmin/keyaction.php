@@ -12,6 +12,8 @@
  * @package kernel
  */
 
+/** @var array $Params */
+
 $module = $Params['Module'];
 
 $redirect = (string)$module->actionParameter( 'RedirectURI' );

@@ -39,7 +39,7 @@ class ListView extends \Exponential\Runnable\ModuleView
         unset( $__name );
 
         $Module = $Params['Module'];
-        $ViewMode = self::viewMode( $Params['ViewMode'] );
+        $ViewMode = self::viewMode( $scope['Params']['ViewMode'] );
         $http = \eZHTTPTool::instance();
 
         // The sizes come from admininterface.ini [PaginationSettings] (10, 25 and 50 unless configured); the
@@ -53,7 +53,7 @@ class ListView extends \Exponential\Runnable\ModuleView
         }
         $offset = (int)$offset;
 
-        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $sort = self::sortKey( isset( $userParameters['sort'] ) ? $userParameters['sort'] : '' );
         $search = self::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
 

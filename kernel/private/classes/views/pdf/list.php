@@ -214,12 +214,13 @@ class ListView extends \Exponential\Runnable\ModuleView
         }
         $summary = \expPDFExportInfo::summaryOf( $infos, count( \expPDFExportInfo::unfinished() ) );
 
-        $user = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
-        $param = function ( $name ) use ( $Params, $user )
+        $user = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
+        $params = $scope['Params'];
+        $param = function ( $name ) use ( $params, $user )
         {
             $key = ucfirst( $name );
-            if ( isset( $Params[$key] ) && $Params[$key] !== false )
-                return (string)$Params[$key];
+            if ( isset( $params[$key] ) && $params[$key] !== false )
+                return (string)$params[$key];
             return isset( $user[$name] ) ? (string)$user[$name] : '';
         };
 
@@ -237,7 +238,7 @@ class ListView extends \Exponential\Runnable\ModuleView
 
         $matching = \expPDFExportInfo::sortList( \expPDFExportInfo::filterOf( $infos, $search, $filter ), $sort );
         $count = count( $matching );
-        $offset = self::offsetOf( \expAdminPagination::offset( $Params ), $limit, $count );
+        $offset = self::offsetOf( \expAdminPagination::offset( $scope['Params'] ), $limit, $count );
         $page = array_slice( $matching, $offset, $limit, true );
 
         $exportList = array();

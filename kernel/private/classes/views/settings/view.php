@@ -42,9 +42,9 @@ class View extends \Exponential\Runnable\ModuleView
         $rule = \expSettingsSecretRule::fromIni( $siteIni );
 
         // The file and the siteaccess: only names the installation itself lists (no path can be smuggled in)
-        $askedFile = $http->hasPostVariable( 'selectedINIFile' ) ? $http->postVariable( 'selectedINIFile' ) : $Params['INIFile'];
+        $askedFile = $http->hasPostVariable( 'selectedINIFile' ) ? $http->postVariable( 'selectedINIFile' ) : $scope['Params']['INIFile'];
         $settingFile = \expSettingsTarget::iniFile( $askedFile, $iniFiles );
-        $askedSiteAccess = $http->hasPostVariable( 'CurrentSiteAccess' ) ? $http->postVariable( 'CurrentSiteAccess' ) : $Params['SiteAccess'];
+        $askedSiteAccess = $http->hasPostVariable( 'CurrentSiteAccess' ) ? $http->postVariable( 'CurrentSiteAccess' ) : $scope['Params']['SiteAccess'];
         $currentSiteAccess = \expSettingsTarget::siteAccess( $askedSiteAccess, $siteAccessList );
         if ( $currentSiteAccess === null )
             $currentSiteAccess = isset( $siteAccessList[0] ) ? $siteAccessList[0] : '';
@@ -52,13 +52,13 @@ class View extends \Exponential\Runnable\ModuleView
 
         // "Select": the file and siteaccess picked become the address, so the page can be bookmarked and reloaded
         if ( $http->hasPostVariable( 'ChangeINIFile' ) && $settingFile !== null && !$http->hasPostVariable( 'RemoveButton' ) )
-            return $this->viewResult( null, $Module->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
+            return $this->viewResult( null, $scope['Module']->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
 
         if ( $http->hasPostVariable( 'RemoveButton' ) && $settingFile !== null && $http->hasPostVariable( 'RemoveSettingsArray' ) )
         {
             $removed = self::remove( $settingFile, $currentSiteAccess, (array)$http->postVariable( 'RemoveSettingsArray' ), $extensions );
             \expSettingsPage::afterWrite( $removed ? 'removed' : 'unchanged', $settingFile, $currentSiteAccess, $removed );
-            return $this->viewResult( null, $Module->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
+            return $this->viewResult( null, $scope['Module']->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
         }
 
         // What to show: a search, the settings changed from the default, a comparison with another siteaccess

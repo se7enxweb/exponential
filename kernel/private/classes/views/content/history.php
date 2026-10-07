@@ -62,30 +62,30 @@ class History extends \Exponential\Runnable\ModuleView
 
         $this->tpl = \eZTemplate::factory();
         $this->http = \eZHTTPTool::instance();
-        $this->module = $Module;
-        $this->editVersion = $Params['EditVersion'];
+        $this->module = $scope['Module'];
+        $this->editVersion = $scope['Params']['EditVersion'];
 
-        $object = \eZContentObject::fetch( $Params['ObjectID'] );
+        $object = \eZContentObject::fetch( $scope['Params']['ObjectID'] );
         // Where the Back button goes (originURI()): taken when the page is opened and carried in the form as
         // RedirectURI, so the actions of the page keep it; without an origin, the object's own location
         $this->origin = self::originURI( $object ? (int)$object->attribute( 'id' ) : 0, $object ? (int)$object->attribute( 'main_node_id' ) : 0,
                                          self::originCandidates( $this->http ), \eZSys::indexDir() );
         if ( $this->http->hasPostVariable( 'BackButton' ) )
-            return $this->viewResult( null, $Module->redirectTo( $this->origin ) );
+            return $this->viewResult( null, $scope['Module']->redirectTo( $this->origin ) );
 
         if ( $object === null )
-            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         $this->object = $object;
 
         $this->canEdit = (bool)$object->editAccess();
         if ( !self::canOpen( $object, $this->canEdit ) )
-            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
+            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
         $this->canRead = (bool)$object->attribute( 'can_read' );
         $this->userID = (int)\eZUser::currentUserID();
         $this->contentVersions = $this->seenVersions();
 
-        $filters = \expContentHistoryList::filters( isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array() );
-        $offset = \expAdminPagination::offset( $Params );
+        $filters = \expContentHistoryList::filters( isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array() );
+        $offset = \expAdminPagination::offset( $scope['Params'] );
 
         // The actions of the page, each with its own check; a step that ends the request returns its result
         foreach ( array( 'compare', 'versionLimitWarning', 'removeVersions', 'editAction', 'copyAction' ) as $step )
@@ -101,7 +101,7 @@ class History extends \Exponential\Runnable\ModuleView
         $this->listVariables( $filters, $offset );
 
         $tpl = $this->tpl;
-        $tpl->setVariable( 'module', $Module );
+        $tpl->setVariable( 'module', $scope['Module'] );
         $tpl->setVariable( 'view_parameters', array( 'offset' => $offset ) );
         $tpl->setVariable( 'object', $object );
         $tpl->setVariable( 'edit_version', $this->editVersion );

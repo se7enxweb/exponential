@@ -52,9 +52,9 @@ class Draft extends \Exponential\Runnable\ModuleView
             return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
         $this->userID = (int)$user->id();
 
-        $filters = \expContentDraftList::filters( isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array(),
+        $filters = \expContentDraftList::filters( isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array(),
                                                   $this->http->hasGetVariable( 'q' ) ? $this->http->getVariable( 'q' ) : '' );
-        $offset = \expAdminPagination::offset( $Params );
+        $offset = \expAdminPagination::offset( $scope['Params'] );
 
         $this->removeSelected();
         $this->removeOne();

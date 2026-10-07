@@ -31,7 +31,7 @@ class Viewfile extends \Exponential\Runnable\ModuleView
         $module = $Params['Module'];
         $packageName = $Params['PackageName'];
         $fileIndex = isset( $Params['FileIndex'] ) && ctype_digit( (string)$Params['FileIndex'] ) ? (int)$Params['FileIndex'] : -1;
-        $repositoryID = isset( $Params['RepositoryID'] ) && $Params['RepositoryID'] ? $Params['RepositoryID'] : false;
+        $repositoryID = isset( $scope['Params']['RepositoryID'] ) && $scope['Params']['RepositoryID'] ? $scope['Params']['RepositoryID'] : false;
         $repository = $repositoryID !== false ? \eZPackageRequestGuard::repository( $repositoryID ) : null;
 
         // A package name that is a directory name and a repository the storage has, as on package/view

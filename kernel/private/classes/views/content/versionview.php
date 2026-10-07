@@ -155,9 +155,9 @@ class Versionview extends \Exponential\Runnable\ModuleView
             }
 
             // The view mode chosen in the form (a listed one; anything else keeps the current one)
-            if ( $Module->hasActionParameter( 'ViewMode' ) )
+            if ( $scope['Module']->hasActionParameter( 'ViewMode' ) )
             {
-                $viewMode = self::changedViewMode( $Module->actionParameter( 'ViewMode' ), $viewMode );
+                $viewMode = self::changedViewMode( $scope['Module']->actionParameter( 'ViewMode' ), $viewMode );
             }
         }
 
