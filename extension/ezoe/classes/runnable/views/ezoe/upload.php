@@ -64,6 +64,13 @@ class Upload extends \Exponential\Runnable\ModuleView
            \eZExecution::cleanExit();
         }
 
+        // The content type goes into the path of the template (design:ezoe/upload_<type>.tpl): a known one only
+        if ( !Dialog::isContentType( $contentType ) )
+        {
+           echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid or missing parameter: %parameter', null, array( '%parameter' => 'ContentType' ) );
+           \eZExecution::cleanExit();
+        }
+
 
         $user = \eZUser::currentUser();
         if ( $user instanceOf \eZUser )

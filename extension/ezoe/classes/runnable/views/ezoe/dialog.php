@@ -113,6 +113,40 @@ class Dialog extends \Exponential\Runnable\ModuleView
         return is_string( $name ) && preg_match( '/^[A-Za-z0-9_-]{1,100}\z/', $name ) === 1;
     }
 
+    /**
+     * The content types of the upload and embed dialogs (the template design:ezoe/upload_<type>.tpl and
+     * design:ezoe/tag_embed_<type>.tpl): the relation groups of content.ini [RelationGroupSettings] (Groups[] and
+     * DefaultGroup) and the three the editor ships with (objects, images, files), each a plain template name.
+     *
+     * @return string[]
+     */
+    public static function contentTypes()
+    {
+        $types = array( 'objects', 'images', 'files' );
+        $ini = \eZINI::instance( 'content.ini' );
+        if ( $ini->hasVariable( 'RelationGroupSettings', 'Groups' ) )
+        {
+            $types = array_merge( $types, (array)$ini->variable( 'RelationGroupSettings', 'Groups' ) );
+        }
+        if ( $ini->hasVariable( 'RelationGroupSettings', 'DefaultGroup' ) )
+        {
+            $types[] = $ini->variable( 'RelationGroupSettings', 'DefaultGroup' );
+        }
+        return array_values( array_unique( array_filter( $types, array( __CLASS__, 'isDialogName' ) ) ) );
+    }
+
+    /**
+     * Whether $type, from the address, names a content type of contentTypes(); only such a type goes into the path
+     * of a template.
+     *
+     * @param mixed $type
+     * @return bool
+     */
+    public static function isContentType( $type )
+    {
+        return self::isDialogName( $type ) && in_array( $type, self::contentTypes(), true );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
