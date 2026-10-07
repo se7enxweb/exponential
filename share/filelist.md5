@@ -3409,7 +3409,7 @@ fcc435d9803fe432b0b4baeb2676948c  doc/features/6.0/legacy-bridge.md
 641dc7a61873704516939c32e1775b2c  doc/features/6.0/modern-password-change.md
 e1db49cf955e0e8bfa29c12997c0066f  doc/features/6.0/mongodb-database-support.md
 2b3c44897fbe517e7617d0352ad0b0a3  doc/features/6.0/multi-site-ini-overrides.md
-dd1cf64d092e90f73c3744c66de7c7e9  doc/features/6.0/multi-site-log-and-cache-paths.md
+432a3d7a40bbb04212433c18d9559c28  doc/features/6.0/multi-site-log-and-cache-paths.md
 c0691593f61bb3546f5fbded91be4f27  doc/features/6.0/notifications.md
 6c2d12092b839df0fc9da488ef1f6b82  doc/features/6.0/online-editor-tinymce8.md
 90e05c00de5038b784dc9b8e430529de  doc/features/6.0/order-list-sorting.md
