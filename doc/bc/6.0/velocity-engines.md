@@ -272,6 +272,55 @@ Measured on a test installation (12 cores, 2026-09-27), cached front page over T
 Full renders are not faster with more instances; they are bounded by the
 workers and by Exponential itself.
 
+## Stop, restart and status of the Qbix engine
+
+What counts as this installation's server is every process of it, not only the
+ones the pid files name:
+
+- a PHP process running the engine's server script (as a real path, so either
+  path to the same tree counts) whose `--pid` is one of this installation's pid
+  files, or, without one, whose `--root` is its document root -- never a shell,
+  `timeout` or another wrapper that only mentions the script, never the
+  engine's own `--stop` and `--reload` commands, never `exp:velocity` itself or
+  anything above it, and never a server of another installation or of an engine
+  checkout's tests using the same script;
+- everything those started (the zygote is titled `qbixserver: zygote` and
+  names no script);
+- any PHP process whose output still goes to the server log directory (the
+  directory of `LogFile`): what a server left behind when it ended.
+
+`stop` asks each instance with a pid file through the server's own `--stop`,
+sends SIGTERM to every top-level process (the parents and anything whose parent
+has gone), then to every process if the servers have not taken their pools down
+within three seconds. Whatever is still there after `[ControlSettings]
+StopTimeout` (15 s) is killed with SIGKILL, and the result says so. It succeeds
+only when no process of the installation is left and its ports are free; a port
+still held by another program is named with its process.
+
+`restart` rebuilds the engine archive first (the running server is left alone if
+that fails), stops as above, starts, and reports success only when every
+instance has a **new** parent and the HTTP port answers a request
+(`GET /Q/health`, any status) within 30 seconds. Otherwise it fails with a
+message and a non-zero exit. Because the stop finds processes without the pid
+files, a restart interrupted half-way -- a caller's timeout between "stopped" and
+"started" -- is finished by the next `restart`, and a `start` that finds an
+instance without its parent ends the leftovers first. A `start` never ends a
+server whose instances all have their parents, answering or not; it says
+`already running, but it does not answer` and leaves that to `restart`.
+
+`status` says `running` only for a server that answers an HTTP request (asked
+twice, five seconds each); processes that do not answer are `not answering`, and
+the command exits non-zero. Under `Problem` it names an instance without its
+parent, processes of the installation without a running server (and the ports
+they hold), connections queued on a port and not accepted, and a parent blocked
+in the kernel (`futex_do_wait`), which acts on no signal but SIGKILL.
+
+The server bounds its own stop too: `[ControlSettings] ShutdownTimeout` (12 s,
+below `StopTimeout`) becomes the engine's `Q.webserver.shutdownTimeout`, after
+which the server and every process it started are killed. Its workers stop at a
+point where they hold no APCu lock, so a request timeout no longer leaves the
+lock held and the server blocked on it (the cause of the 2026-10-07 hang).
+
 ## FrankenPHP
 
 ```bash
