@@ -76,18 +76,20 @@ class expSubitemsURLColumnTest extends expSubitemsColumnsTestCase
         $this->assertSame( '/', $this->value( 'publicpath', $node ) );
     }
 
-    /** Node 89 of the alpha database, "Fit & Healthy": an "&" in the name, the site root element, a named alias too. */
+    /**
+     * Node 89 of the alpha database, "Fit & Healthy": an "&" in the name, and a named alias at the top level that
+     * its children hang below (the root element belongs to the content root, node 2).
+     */
     public function testFitAndHealthyNode()
     {
         $node = eZContentObjectTreeNode::fetch( 89 );
         if ( !$node || $node->getName() !== 'Fit & Healthy' )
             $this->markTestSkipped( 'not the alpha database' );
-        $this->assertSame( '', (string)$node->attribute( 'url_alias' ), 'the kernel answers an empty alias' );
-        $this->assertSame( '/', $this->value( 'urlalias', $node ) );
-        // the root element and the named alias its children hang below (more appear when the node
-        // is translated or was moved, so the list is checked for these two, not for being only them)
+        $this->assertSame( 'fit-healthy', (string)$node->attribute( 'url_alias' ) );
+        $this->assertSame( eZURLAliasML::cleanURL( $node->attribute( 'url_alias' ) ), $this->value( 'urlalias', $node ) );
+        // the named alias its children hang below (more appear when the node is translated or was moved,
+        // so the list is checked for it, not for being only it)
         $aliases = $this->value( 'allaliases', $node );
-        $this->assertContains( '/', $aliases );
         $this->assertContains( 'fit-healthy', $aliases );
         $this->assertSame( count( $aliases ), $this->value( 'aliascount', $node ) );
         // the public title: the page title equals SiteName ("Fit & Healthy"), so it stands alone
