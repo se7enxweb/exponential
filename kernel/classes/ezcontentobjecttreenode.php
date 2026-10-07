@@ -33,6 +33,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
     const SORT_ORDER_DESC = 0;
     const SORT_ORDER_ASC = 1;
 
+    /**
+     * From how many Subtree and User_Subtree values on a fetch of children looks up the path of the parent node,
+     * so that the values outside it stay out of the permission condition (permissionFetchScope()).
+     */
+    const PERMISSION_PATH_LOOKUP_MIN_VALUES = 20;
+
     public function __construct( $row = array() )
     {
         parent::__construct( $row );
@@ -1463,10 +1469,13 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * @param int $nodeID
      * @param bool $depth
      * @param string $depthOperator
+     * @param string[]|null $outNodePaths The path strings of the given nodes when they were loaded for the condition,
+     *        null when a parent_node_id condition sufficed (children only) and they were not
      * @return bool
      */
-    static function createPathConditionAndNotEqParentSQLStrings( &$outPathConditionStr, &$outNotEqParentStr, $nodeID, $depth = false, $depthOperator = 'le' )
+    static function createPathConditionAndNotEqParentSQLStrings( &$outPathConditionStr, &$outNotEqParentStr, $nodeID, $depth = false, $depthOperator = 'le', &$outNodePaths = null )
     {
+        $outNodePaths = null;
         if ( !$depthOperator )
         {
             $depthOperator = 'le';
@@ -1497,6 +1506,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
             {
                 $nodeIDList             = $nodeID;
                 $sqlPartForOneNodeList  = array();
+                $nodePaths              = array();
 
                 foreach ( $nodeIDList as $nodeID )
                 {
@@ -1505,6 +1515,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                         return false;
 
                     $nodePath       = $node['path_string'];
+                    $nodePaths[]    = $nodePath;
                     $nodeDepth      = $node['depth'];
                     $depthCond      = '';
                     if ( $depth )
@@ -1543,6 +1554,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 }
                 $outPathConditionStr = implode( ' or ', $sqlPartForOneNodeList );
                 $outPathConditionStr = ' (' . $outPathConditionStr . ') and';
+                $outNodePaths = $nodePaths;
             }
         }
         else
@@ -1569,6 +1581,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
                 $outNotEqParentStr   = eZContentObjectTreeNode::createNotEqParentSQLString( $nodeID, $depth, $depthOperator );
                 $outPathConditionStr = eZContentObjectTreeNode::createPathConditionSQLString( $nodePath, $nodeDepth, $depth, $depthOperator );
+                $outNodePaths        = array( $nodePath );
             }
         }
 
@@ -1662,10 +1675,260 @@ class eZContentObjectTreeNode extends eZPersistentObject
         return $versionNameJoins;
     }
 
-    /*!
-        \a static
-    */
-    static function createPermissionCheckingSQL( $limitationList, $treeTableName = 'ezcontentobject_tree', $tableAliasName = 'ezcontentobject_tree' )
+    /**
+     * Whether the permission condition of a fetch is built from the shortened limitation list
+     * (site.ini [RoleSettings] PermissionSQLOptimization, enabled unless set to disabled).
+     *
+     * @return bool
+     */
+    static function permissionSQLOptimization()
+    {
+        $ini = eZINI::instance();
+        return !$ini->hasVariable( 'RoleSettings', 'PermissionSQLOptimization' ) ||
+               $ini->variable( 'RoleSettings', 'PermissionSQLOptimization' ) !== 'disabled';
+    }
+
+    /**
+     * Merges the policies of a limitation list that differ only in their User_Subtree limitation.
+     *
+     * A role assigned for a subtree adds a User_Subtree limitation to each of its policies, so a role assigned
+     * for 120 subtrees brings every policy 120 times. The policies of a list are ORed and the values of one
+     * limitation are ORed as well, so these policies are the same as one policy with all their subtrees. The
+     * permission condition shrinks accordingly; SQLite refused a condition of 1000 policies and more.
+     *
+     * The last lists merged are remembered: a list of the current user arrives for every fetch, and comparing it
+     * with the same array costs nothing.
+     *
+     * @param array|bool $limitationList The list of getLimitationList()
+     * @return array|bool The merged list, a policy keeping the key of its first occurrence
+     */
+    static function mergeLimitationList( $limitationList )
+    {
+        if ( !is_array( $limitationList ) || count( $limitationList ) < 2 )
+        {
+            return $limitationList;
+        }
+        foreach ( self::$mergedLimitationLists as $merged )
+        {
+            if ( $merged[0] === $limitationList )
+            {
+                return $merged[1];
+            }
+        }
+
+        $mergedList = array();
+        $keyByRest = array();
+        foreach ( $limitationList as $policyKey => $limitationArray )
+        {
+            if ( !is_array( $limitationArray ) || !isset( $limitationArray['User_Subtree'] ) || !is_array( $limitationArray['User_Subtree'] ) )
+            {
+                $mergedList[$policyKey] = $limitationArray;
+                continue;
+            }
+            $rest = $limitationArray;
+            unset( $rest['User_Subtree'] );
+            $restKey = serialize( $rest );
+            if ( isset( $keyByRest[$restKey] ) )
+            {
+                foreach ( $limitationArray['User_Subtree'] as $pathString )
+                {
+                    $mergedList[$keyByRest[$restKey]]['User_Subtree'][] = $pathString;
+                }
+                continue;
+            }
+            $keyByRest[$restKey] = $policyKey;
+            $mergedList[$policyKey] = $limitationArray;
+        }
+        foreach ( $keyByRest as $policyKey )
+        {
+            $mergedList[$policyKey]['User_Subtree'] = array_values( array_unique( $mergedList[$policyKey]['User_Subtree'] ) );
+        }
+
+        array_unshift( self::$mergedLimitationLists, array( $limitationList, $mergedList ) );
+        array_splice( self::$mergedLimitationLists, 4 );
+
+        return $mergedList;
+    }
+
+    /**
+     * Leaves out of a limitation list what cannot give access to a node of a fetch.
+     *
+     * Every node a subtree fetch returns lies under one of the paths given. A Subtree or User_Subtree value is
+     * compared with the path of a node as its start, so a value that neither starts with one of these paths nor
+     * begins one of them matches no node of the fetch; a policy whose values of such a limitation are all left out
+     * gives no access there and is left out. Subtree is ORed with Node, so a policy with a Node limitation keeps
+     * it. With a class filter that includes classes, a policy for other classes only is left out, with one that
+     * excludes classes a policy for these classes only. Values other than a path of node ids are kept as they are.
+     *
+     * @param array $limitationList A list of policies
+     * @param string[]|null $nodePaths The paths the fetched nodes lie under; null when they are not known
+     * @param string|bool $classFilterType 'include', 'exclude' or false
+     * @param array $classIDList The ids of the classes of the class filter
+     * @return array The policies that can give access; an empty array when none can
+     */
+    static function pruneLimitationList( array $limitationList, $nodePaths, $classFilterType = false, array $classIDList = array() )
+    {
+        $prunedList = array();
+        foreach ( $limitationList as $policyKey => $limitationArray )
+        {
+            if ( !is_array( $limitationArray ) )
+            {
+                $prunedList[$policyKey] = $limitationArray;
+                continue;
+            }
+            if ( is_array( $nodePaths ) && count( $nodePaths ) > 0 )
+            {
+                if ( isset( $limitationArray['User_Subtree'] ) && is_array( $limitationArray['User_Subtree'] ) )
+                {
+                    $limitationArray['User_Subtree'] = self::pathValuesUnderPaths( $limitationArray['User_Subtree'], $nodePaths );
+                    if ( count( $limitationArray['User_Subtree'] ) == 0 )
+                    {
+                        continue;
+                    }
+                }
+                if ( isset( $limitationArray['Subtree'] ) && is_array( $limitationArray['Subtree'] ) )
+                {
+                    $limitationArray['Subtree'] = self::pathValuesUnderPaths( $limitationArray['Subtree'], $nodePaths );
+                    if ( count( $limitationArray['Subtree'] ) == 0 )
+                    {
+                        if ( !isset( $limitationArray['Node'] ) )
+                        {
+                            continue;
+                        }
+                        unset( $limitationArray['Subtree'] );
+                    }
+                }
+            }
+            if ( isset( $limitationArray['Class'] ) && is_array( $limitationArray['Class'] ) && count( $classIDList ) > 0 )
+            {
+                $classIDs = array_map( 'strval', $classIDList );
+                $policyClassIDs = array_map( 'strval', $limitationArray['Class'] );
+                if ( $classFilterType == 'include' && count( array_intersect( $policyClassIDs, $classIDs ) ) == 0 )
+                {
+                    continue;
+                }
+                if ( $classFilterType == 'exclude' && count( array_diff( $policyClassIDs, $classIDs ) ) == 0 )
+                {
+                    continue;
+                }
+            }
+            $prunedList[$policyKey] = $limitationArray;
+        }
+
+        return $prunedList;
+    }
+
+    /**
+     * The values of a Subtree or User_Subtree limitation that can match a node under one of the paths.
+     *
+     * @param array $pathValues The values of the limitation
+     * @param string[] $nodePaths
+     * @return array
+     */
+    protected static function pathValuesUnderPaths( array $pathValues, array $nodePaths )
+    {
+        $kept = array();
+        foreach ( $pathValues as $pathValue )
+        {
+            if ( !is_string( $pathValue ) || !preg_match( '#^[0-9/]+$#', $pathValue ) )
+            {
+                $kept[] = $pathValue;
+                continue;
+            }
+            foreach ( $nodePaths as $nodePath )
+            {
+                if ( strncmp( $pathValue, $nodePath, strlen( $nodePath ) ) === 0 ||
+                     strncmp( $nodePath, $pathValue, strlen( $pathValue ) ) === 0 )
+                {
+                    $kept[] = $pathValue;
+                    break;
+                }
+            }
+        }
+
+        return $kept;
+    }
+
+    /**
+     * What a subtree fetch tells the permission condition about the nodes it returns, for pruneLimitationList().
+     *
+     * The paths come from createPathConditionAndNotEqParentSQLStrings(). A fetch of children only does not load
+     * them; they are looked up when the list has so many subtree values that a smaller condition is worth a query.
+     *
+     * @param array|bool $limitationList The list of getLimitationList()
+     * @param int|int[] $nodeID The node or nodes the fetch starts from
+     * @param string[]|null $nodePaths Their paths when known
+     * @param array $params The fetch parameters, for ClassFilterType and ClassFilterArray
+     * @return array For createPermissionCheckingSQL(): 'paths', 'class_filter_type' and 'class_ids'
+     */
+    static function permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params )
+    {
+        if ( !is_array( $limitationList ) || count( $limitationList ) == 0 || !self::permissionSQLOptimization() )
+        {
+            return array();
+        }
+
+        if ( $nodePaths === null )
+        {
+            $pathValueCount = 0;
+            foreach ( self::mergeLimitationList( $limitationList ) as $limitationArray )
+            {
+                foreach ( array( 'Subtree', 'User_Subtree' ) as $identifier )
+                {
+                    if ( isset( $limitationArray[$identifier] ) && is_array( $limitationArray[$identifier] ) )
+                    {
+                        $pathValueCount += count( $limitationArray[$identifier] );
+                    }
+                }
+            }
+            if ( $pathValueCount >= self::PERMISSION_PATH_LOOKUP_MIN_VALUES )
+            {
+                $nodeIDList = array_map( 'intval', (array)$nodeID );
+                $rows = eZDB::instance()->arrayQuery( 'SELECT path_string FROM ezcontentobject_tree WHERE ' .
+                                                      eZDB::instance()->generateSQLINStatement( $nodeIDList, 'node_id', false, true, 'int' ) );
+                if ( is_array( $rows ) && count( $rows ) == count( array_unique( $nodeIDList ) ) )
+                {
+                    $nodePaths = array_column( $rows, 'path_string' );
+                }
+            }
+        }
+
+        $classFilterType = isset( $params['ClassFilterType'] ) ? $params['ClassFilterType'] : false;
+        $classIDList = array();
+        if ( ( $classFilterType == 'include' || $classFilterType == 'exclude' ) &&
+             isset( $params['ClassFilterArray'] ) && is_array( $params['ClassFilterArray'] ) )
+        {
+            // The ids of the class filter as createClassFilteringSQLString() puts them into the query.
+            foreach ( $params['ClassFilterArray'] as $classID )
+            {
+                if ( is_string( $classID ) && !is_numeric( $classID ) )
+                {
+                    $classID = eZContentClass::classIDByIdentifier( $classID );
+                }
+                if ( is_numeric( $classID ) )
+                {
+                    $classIDList[] = $classID;
+                }
+            }
+        }
+
+        return array( 'paths' => $nodePaths, 'class_filter_type' => $classFilterType, 'class_ids' => $classIDList );
+    }
+
+    /**
+     * Returns the permission condition of a fetch: the joins, the WHERE part and the temporary tables it needs.
+     *
+     * The policies are merged first (mergeLimitationList()); with a fetch scope (permissionFetchScope()) the
+     * policies that cannot give access to a fetched node are left out (pruneLimitationList()). When none is left,
+     * the condition matches no node.
+     *
+     * @param array|bool $limitationList The list of getLimitationList()
+     * @param string $treeTableName
+     * @param string $tableAliasName
+     * @param array $fetchScope What the fetch tells about its nodes, from permissionFetchScope()
+     * @return array 'from', 'where' and 'temp_tables'
+     */
+    static function createPermissionCheckingSQL( $limitationList, $treeTableName = 'ezcontentobject_tree', $tableAliasName = 'ezcontentobject_tree', $fetchScope = array() )
     {
         $db = eZDB::instance();
 
@@ -1674,6 +1937,22 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $sqlPermissionTempTables = array();
         $groupPermTempTable = false;
         $createdStateAliases = array();
+
+        if ( is_array( $limitationList ) && count( $limitationList ) > 0 && self::permissionSQLOptimization() )
+        {
+            $limitationList = self::mergeLimitationList( $limitationList );
+            if ( isset( $fetchScope['paths'] ) || !empty( $fetchScope['class_ids'] ) )
+            {
+                $limitationList = self::pruneLimitationList( $limitationList,
+                                                             isset( $fetchScope['paths'] ) ? $fetchScope['paths'] : null,
+                                                             isset( $fetchScope['class_filter_type'] ) ? $fetchScope['class_filter_type'] : false,
+                                                             isset( $fetchScope['class_ids'] ) ? $fetchScope['class_ids'] : array() );
+                if ( count( $limitationList ) == 0 )
+                {
+                    return array( 'from' => '', 'where' => ' AND 0 = 1 ', 'temp_tables' => array() );
+                }
+            }
+        }
 
         if ( is_array( $limitationList ) && count( $limitationList ) > 0 )
         {
@@ -1915,6 +2194,13 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     protected static $showInvisibleNodesCache = null;
 
+    /**
+     * The last limitation lists mergeLimitationList() merged, each as array( list, merged list ).
+     *
+     * @var array[]
+     */
+    protected static $mergedLimitationLists = array();
+
     /*!
         \a static
     */
@@ -2047,7 +2333,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $pathStringCond     = '';
         $notEqParentString  = '';
         // If the node(s) doesn't exist we return null.
-        if ( !eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator ) )
+        if ( !eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator, $nodePaths ) )
         {
             return null;
         }
@@ -2085,7 +2371,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $limitation = ( isset( $params['Limitation']  ) && is_array( $params['Limitation']  ) ) ? $params['Limitation']: false;
         $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
-        $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList );
+        $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList, 'ezcontentobject_tree', 'ezcontentobject_tree',
+            eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params ) );
 
         // Determine whether we should show invisible nodes.
         $showInvisibleNodesCond = eZContentObjectTreeNode::createShowInvisibleSQLString( !$ignoreVisibility );
@@ -2603,7 +2890,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $pathStringCond     = '';
         $notEqParentString  = '';
         // If the node(s) doesn't exist we return null.
-        if ( !eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator ) )
+        if ( !eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator, $nodePaths ) )
         {
             return null;
         }
@@ -2697,7 +2984,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $limitation = ( isset( $params['Limitation']  ) && is_array( $params['Limitation']  ) ) ? $params['Limitation']: false;
         $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
-        $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList );
+        $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList, 'ezcontentobject_tree', 'ezcontentobject_tree',
+            eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params ) );
 
         $query = "SELECT
                         count( DISTINCT ezcontentobject_tree.node_id ) as count
@@ -2840,7 +3128,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $pathStringCond     = '';
         $notEqParentString  = '';
-        eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator );
+        eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator, $nodePaths );
 
         $groupBySelectText  = '';
         $groupBySQL         = $extendedAttributeFilter['group_by'];
@@ -2855,7 +3143,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $limitation = ( isset( $params['Limitation']  ) && is_array( $params['Limitation']  ) ) ? $params['Limitation']: false;
         $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
-        $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList );
+        $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList, 'ezcontentobject_tree', 'ezcontentobject_tree',
+            eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params ) );
 
         // Determine whether we should show invisible nodes.
         $showInvisibleNodesCond = eZContentObjectTreeNode::createShowInvisibleSQLString( !$ignoreVisibility );
@@ -5485,7 +5774,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
     // This code is automatically generated from templates/classlistfrompolicy.ctpl
     // DO NOT EDIT THIS CODE DIRECTLY, CHANGE THE TEMPLATE FILE INSTEAD
 
-    function classListFromPolicy( $policy, $allowedLanguageCodes = false )
+    function classListFromPolicy( $policy, $allowedLanguageCodes = false, &$assignedNodes = null )
     {
         $canCreateClassIDListPart = array();
         $hasClassIDLimitation = false;
@@ -5550,7 +5839,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
             if ( $object === false )
                 $object = $this->attribute( 'object' );
 
-            $assignedNodes = $object->attribute( 'assigned_nodes' );
+            $assignedNodes = $assignedNodes ?? $object->attribute( 'assigned_nodes' );
             foreach ( $assignedNodes as $assignedNode )
             {
                 $path = $assignedNode->attribute( 'path_string' );
@@ -5637,7 +5926,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
             $allowed = false;
             if ( $object === false )
                 $object = $this->attribute( 'object' );
-            $assignedNodes = $object->attribute( 'assigned_nodes' );
+            $assignedNodes = $assignedNodes ?? $object->attribute( 'assigned_nodes' );
             foreach ( $assignedNodes as $assignedNode )
             {
                 $path = $assignedNode->attribute( 'path_string' );
@@ -5762,9 +6051,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
         else
         {
+            // The locations of the object are loaded by the first policy that needs them and handed to the
+            // next: a role assigned for many subtrees brings each of its policies once per subtree.
+            $assignedNodes = null;
             foreach ( $accessResult['policies'] as $policy )
             {
-                $policyArray = $this->classListFromPolicy( $policy, $languageCodeList );
+                $policyArray = $this->classListFromPolicy( $policy, $languageCodeList, $assignedNodes );
                 if ( empty( $policyArray ) )
                     continue;
 

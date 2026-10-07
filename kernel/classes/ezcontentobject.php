@@ -5255,6 +5255,12 @@ class eZContentObject extends eZPersistentObject
         {
             $policies  =& $accessResult['policies'];
             $access = 'denied';
+            // The locations of the object are loaded once for all policies. A user whose role is assigned for
+            // many subtrees (a member of 120 teamrooms) has a policy for every one of them, and each asked the
+            // database for the same locations again.
+            $assignedNodes = null;
+            $draftParentPaths = null;
+            $nodeMainNodeIDs = array();
             foreach ( array_keys( $policies ) as $pkey  )
             {
                 $limitationArray =& $policies[ $pkey ];
@@ -5329,7 +5335,7 @@ class eZContentObject extends eZPersistentObject
 
                         case 'ParentDepth':
                         {
-                            $assignedNodes = $this->attribute( 'assigned_nodes' );
+                            $assignedNodes = $assignedNodes ?? $this->attribute( 'assigned_nodes' );
                             if ( count( $assignedNodes ) > 0 )
                             {
                                 foreach ( $assignedNodes as  $assignedNode )
@@ -5483,8 +5489,12 @@ class eZContentObject extends eZPersistentObject
                             $mainNodeID = $this->attribute( 'main_node_id' );
                             foreach ( $limitationArray[$key] as $nodeID )
                             {
-                                $node = eZContentObjectTreeNode::fetch( $nodeID, false, false );
-                                $limitationNodeID = $node['main_node_id'];
+                                if ( !array_key_exists( $nodeID, $nodeMainNodeIDs ) )
+                                {
+                                    $node = eZContentObjectTreeNode::fetch( $nodeID, false, false );
+                                    $nodeMainNodeIDs[$nodeID] = is_array( $node ) ? $node['main_node_id'] : null;
+                                }
+                                $limitationNodeID = $nodeMainNodeIDs[$nodeID];
                                 if ( $mainNodeID == $limitationNodeID )
                                 {
                                     $access = 'allowed';
@@ -5509,7 +5519,7 @@ class eZContentObject extends eZPersistentObject
                         case 'Subtree':
                         {
                             $accessSubtree = false;
-                            $assignedNodes = $this->attribute( 'assigned_nodes' );
+                            $assignedNodes = $assignedNodes ?? $this->attribute( 'assigned_nodes' );
                             if ( count( $assignedNodes ) != 0 )
                             {
                                 foreach (  $assignedNodes as  $assignedNode )
@@ -5529,34 +5539,17 @@ class eZContentObject extends eZPersistentObject
                             }
                             else
                             {
-                                $parentNodes = $this->attribute( 'parent_nodes' );
-                                if ( count( $parentNodes ) == 0 )
+                                $draftParentPaths = $draftParentPaths ?? $this->accessCheckParentPaths( $functionName );
+                                if ( !$draftParentPaths['has_parents'] &&
+                                     ( $this->attribute( 'owner_id' ) == $userID || $this->ID == $userID ) )
                                 {
-                                    if ( $this->attribute( 'owner_id' ) == $userID || $this->ID == $userID )
-                                    {
-                                        $access = 'allowed';
-                                        $accessSubtree = true;
-                                    }
-                                    else if ( $functionName == 'edit' )
-                                    {
-                                        // An object that was never published has no parent nodes yet; for edit, the
-                                        // location it will be published under counts, so that someone with a subtree
-                                        // policy there (an approver) can edit it. Only for edit: read and the other
-                                        // functions keep someone else's draft closed.
-                                        $parentNodes = $this->draftParentNodeIDArray();
-                                    }
+                                    $access = 'allowed';
+                                    $accessSubtree = true;
                                 }
-                                if ( $access != 'allowed' )
+                                else
                                 {
-                                    foreach ( $parentNodes as $parentNode )
+                                    foreach ( $draftParentPaths['paths'] as $path )
                                     {
-                                        $parentNode = eZContentObjectTreeNode::fetch( $parentNode, false, false );
-                                        if ( !is_array( $parentNode ) )
-                                        {
-                                            continue;
-                                        }
-                                        $path = $parentNode['path_string'];
-
                                         $subtreeArray = $limitationArray[$key];
                                         foreach ( $subtreeArray as $subtreeString )
                                         {
@@ -5586,7 +5579,7 @@ class eZContentObject extends eZPersistentObject
 
                         case 'User_Subtree':
                         {
-                            $assignedNodes = $this->attribute( 'assigned_nodes' );
+                            $assignedNodes = $assignedNodes ?? $this->attribute( 'assigned_nodes' );
                             if ( count( $assignedNodes ) != 0 )
                             {
                                 foreach (  $assignedNodes as  $assignedNode )
@@ -5604,32 +5597,16 @@ class eZContentObject extends eZPersistentObject
                             }
                             else
                             {
-                                $parentNodes = $this->attribute( 'parent_nodes' );
-                                if ( count( $parentNodes ) == 0 )
+                                $draftParentPaths = $draftParentPaths ?? $this->accessCheckParentPaths( $functionName );
+                                if ( !$draftParentPaths['has_parents'] &&
+                                     ( $this->attribute( 'owner_id' ) == $userID || $this->ID == $userID ) )
                                 {
-                                    if ( $this->attribute( 'owner_id' ) == $userID || $this->ID == $userID )
-                                    {
-                                        $access = 'allowed';
-                                    }
-                                    else if ( $functionName == 'edit' )
-                                    {
-                                        // As for Subtree: for edit, the location an object that was never published
-                                        // will be published under counts, so that someone whose role is assigned for
-                                        // that subtree (an approver) can edit it. Only for edit.
-                                        $parentNodes = $this->draftParentNodeIDArray();
-                                    }
+                                    $access = 'allowed';
                                 }
-                                if ( $access != 'allowed' )
+                                else
                                 {
-                                    foreach ( $parentNodes as $parentNode )
+                                    foreach ( $draftParentPaths['paths'] as $path )
                                     {
-                                        $parentNode = eZContentObjectTreeNode::fetch( $parentNode, false, false );
-                                        if ( !is_array( $parentNode ) )
-                                        {
-                                            continue;
-                                        }
-                                        $path = $parentNode['path_string'];
-
                                         $subtreeArray = $limitationArray[$key];
                                         foreach ( $subtreeArray as $subtreeString )
                                         {
@@ -5725,6 +5702,39 @@ class eZContentObject extends eZPersistentObject
         }
     }
 
+    /**
+     * The paths a Subtree or User_Subtree limitation of checkAccess() is compared with for an object without
+     * locations: those of its parent nodes, and for edit those of the location an object that was never published
+     * will be published under, so that someone with a subtree policy there (an approver) can edit it. Read and the
+     * other functions keep someone else's draft closed.
+     *
+     * checkAccess() asks once and keeps the answer for all the policies it compares.
+     *
+     * @param string $functionName The function checkAccess() checks, 'edit' for move
+     * @return array 'has_parents' (bool, whether the object has parent nodes) and 'paths' (string[])
+     */
+    protected function accessCheckParentPaths( $functionName )
+    {
+        $parentNodes = $this->attribute( 'parent_nodes' );
+        $hasParents = count( $parentNodes ) > 0;
+        if ( !$hasParents && $functionName == 'edit' )
+        {
+            $parentNodes = $this->draftParentNodeIDArray();
+        }
+
+        $paths = array();
+        foreach ( $parentNodes as $parentNodeID )
+        {
+            $parentNode = eZContentObjectTreeNode::fetch( $parentNodeID, false, false );
+            if ( is_array( $parentNode ) )
+            {
+                $paths[] = $parentNode['path_string'];
+            }
+        }
+
+        return array( 'has_parents' => $hasParents, 'paths' => $paths );
+    }
+
     // code-template::create-block: class-list-from-policy, is-object
     // code-template::auto-generated:START class-list-from-policy
     // This code is automatically generated from templates/classlistfrompolicy.ctpl
@@ -5735,9 +5745,11 @@ class eZContentObject extends eZPersistentObject
      *
      * @param array $policy
      * @param array|bool $allowedLanguageCodes
+     * @param array|null $assignedNodes The locations of the object, loaded here when null and handed back to be
+     *        given with the next policy
      * @return array
      */
-    function classListFromPolicy( $policy, $allowedLanguageCodes = false )
+    function classListFromPolicy( $policy, $allowedLanguageCodes = false, &$assignedNodes = null )
     {
         $canCreateClassIDListPart = array();
         $hasClassIDLimitation = false;
@@ -5789,7 +5801,7 @@ class eZContentObject extends eZPersistentObject
         if ( isset( $policy['User_Subtree'] ) )
         {
             $allowed = false;
-            $assignedNodes = $this->attribute( 'assigned_nodes' );
+            $assignedNodes = $assignedNodes ?? $this->attribute( 'assigned_nodes' );
             foreach ( $assignedNodes as $assignedNode )
             {
                 $path = $assignedNode->attribute( 'path_string' );
@@ -5856,7 +5868,7 @@ class eZContentObject extends eZPersistentObject
         if ( isset( $policy['Subtree'] ) )
         {
             $allowed = false;
-            $assignedNodes = $this->attribute( 'assigned_nodes' );
+            $assignedNodes = $assignedNodes ?? $this->attribute( 'assigned_nodes' );
             foreach ( $assignedNodes as $assignedNode )
             {
                 $path = $assignedNode->attribute( 'path_string' );
@@ -5939,9 +5951,12 @@ class eZContentObject extends eZPersistentObject
         else
         {
             $policies = $accessResult['policies'];
+            // The locations of the object are loaded by the first policy that needs them and handed to the
+            // next: a role assigned for many subtrees brings each of its policies once per subtree.
+            $assignedNodes = null;
             foreach ( $policies as $policyKey => $policy )
             {
-                $policyArray = $this->classListFromPolicy( $policy, $languageCodeList );
+                $policyArray = $this->classListFromPolicy( $policy, $languageCodeList, $assignedNodes );
                 if ( empty( $policyArray ) )
                 {
                     continue;
