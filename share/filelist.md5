@@ -7349,7 +7349,7 @@ a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPur
 5cabf4962c374801c48d9d37133de735  tests/tests/kernel/classes/runnable/CommandHelpersTest.php
 2973ce3fd51cf4811b11def2cb6a2f0a  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
 4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
-65c92eb71cc3bbaf1aac4f619b5a5427  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
+afa2082e1b51519a99944e89da43c447  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
 352cfc4000709b128a2a80cbea6cf8b7  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
 2beaf208438078d39f0f448ab74d46c8  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
