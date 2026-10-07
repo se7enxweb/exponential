@@ -665,6 +665,11 @@ class eZTemplateDesignResource extends eZTemplateFileResource
     */
     static function allDesignBases( $siteAccess = false )
     {
+        // No siteaccess (null or empty, as a session variable that was never set) is the current one
+        if ( $siteAccess === null || $siteAccess === '' )
+        {
+            $siteAccess = false;
+        }
         // in memory caching
         if ( $siteAccess )
         {
@@ -897,6 +902,11 @@ class eZTemplateDesignResource extends eZTemplateFileResource
 
     static function overrideArray( $siteAccess = false )
     {
+        // No siteaccess (null or empty) is the current one, with its cache
+        if ( $siteAccess === null || $siteAccess === '' )
+        {
+            $siteAccess = false;
+        }
 
         if ( $siteAccess === false and self::$overrideArrayCache !== null )
         {
