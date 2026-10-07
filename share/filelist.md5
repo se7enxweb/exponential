@@ -4947,7 +4947,7 @@ e03967a373ba9e46d7ba161d72500151  kernel/classes/ezcontentbrowserecent.php
 be5967e47609a568319111fd808d10e2  kernel/classes/ezcontentcache.php
 60f96273f58116cb5a510e2cd1909244  kernel/classes/ezcontentcachemanager.php
 4f02d8b8fdde2b92e922558c67ad7044  kernel/classes/ezcontentclass.php
-17d3ad94830b7a2f9885c2f20f592eed  kernel/classes/ezcontentclassattribute.php
+1b6e5128718bb11668a859b0c083cda1  kernel/classes/ezcontentclassattribute.php
 57be7f3d46bf77207cc381abf151a22c  kernel/classes/ezcontentclassclassgroup.php
 80531ede01d01d5e75317285416f594a  kernel/classes/ezcontentclassedithandler.php
 f8a467c50f0d93034097d066a7dd5085  kernel/classes/ezcontentclassgroup.php
@@ -7129,6 +7129,7 @@ d3c199ef12933087e7bf07a63474ce7f  tests/tests/kernel/classes/datatypes/eZTextDat
 e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php
 062018e3e4d87a916782e66db435dacb  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItemTest.php
+7b567299532ebfe85e27a12b7508924f  tests/tests/kernel/classes/eZContentClassAttributeSQLiteIDsTest.php
 95a20d0e1c4f0d4edb32e80ea290d23a  tests/tests/kernel/classes/eZContentClassAttributeTest.php
 4ca02673913513270eaef99170d6106d  tests/tests/kernel/classes/eZContentClassTest.php
 918e9828b094735f61bf48a1ab5cc1de  tests/tests/kernel/classes/eZContentFunctionCollectionTest.php
