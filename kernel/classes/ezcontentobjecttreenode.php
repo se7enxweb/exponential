@@ -39,6 +39,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     const PERMISSION_PATH_LOOKUP_MIN_VALUES = 20;
 
+    /**
+     * The longest OR chain permissionSQLOr() writes into a permission condition; longer ones are grouped.
+     */
+    const PERMISSION_SQL_OR_GROUP_SIZE = 100;
+
     public function __construct( $row = array() )
     {
         parent::__construct( $row );
@@ -1689,6 +1694,31 @@ class eZContentObjectTreeNode extends eZPersistentObject
     }
 
     /**
+     * ORs the parts of a permission condition. Up to PERMISSION_SQL_OR_GROUP_SIZE parts this is the plain OR the
+     * condition always had; beyond, the parts are put into parenthesised groups of that size (and the groups into
+     * groups again), so that no OR chain is longer than that. The database reads a chain of n ORs as an expression
+     * n levels deep, and SQLite refuses one deeper than 1000 levels ("Expression tree is too large"); the groups
+     * keep a condition of a million parts below 400 levels. The parts and their meaning do not change.
+     *
+     * @param string[] $parts
+     * @return string
+     */
+    static function permissionSQLOr( array $parts )
+    {
+        if ( count( $parts ) <= self::PERMISSION_SQL_OR_GROUP_SIZE )
+        {
+            return implode( ' OR ', $parts );
+        }
+        $groups = array();
+        foreach ( array_chunk( $parts, self::PERMISSION_SQL_OR_GROUP_SIZE ) as $chunk )
+        {
+            $groups[] = '( ' . implode( ' OR ', $chunk ) . ' )';
+        }
+
+        return self::permissionSQLOr( $groups );
+    }
+
+    /**
      * Merges the policies of a limitation list that differ only in their User_Subtree limitation.
      *
      * A role assigned for a subtree adds a User_Subtree limitation to each of its policies, so a role assigned
@@ -1758,7 +1788,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * begins one of them matches no node of the fetch; a policy whose values of such a limitation are all left out
      * gives no access there and is left out. Subtree is ORed with Node, so a policy with a Node limitation keeps
      * it. With a class filter that includes classes, a policy for other classes only is left out, with one that
-     * excludes classes a policy for these classes only. Values other than a path of node ids are kept as they are.
+     * excludes classes a policy for these classes only; a Class limitation without values adds no condition and
+     * leaves nothing out, and class ids are compared as numbers, as the database compares them. Values other than a
+     * path of node ids are kept as they are.
+     *
+     * createPermissionCheckingSQL() writes "0 = 1" when no policy is left, and also when the policies left add no
+     * condition (only limitations a read ignores): such policies were left out of the OR before as well.
      *
      * @param array $limitationList A list of policies
      * @param string[]|null $nodePaths The paths the fetched nodes lie under; null when they are not known
@@ -1799,15 +1834,33 @@ class eZContentObjectTreeNode extends eZPersistentObject
                     }
                 }
             }
-            if ( isset( $limitationArray['Class'] ) && is_array( $limitationArray['Class'] ) && count( $classIDList ) > 0 )
+            // A Class limitation without values adds no condition (createPermissionCheckingSQL() skips it), so it
+            // narrows nothing here either. The values are compared as the database compares them: the policy's as
+            // integers (intval() in the condition), those of the filter as the numbers the filter puts into the query.
+            if ( isset( $limitationArray['Class'] ) && is_array( $limitationArray['Class'] ) && count( $limitationArray['Class'] ) > 0 &&
+                 count( $classIDList ) > 0 && ( $classFilterType === 'include' || $classFilterType === 'exclude' ) )
             {
-                $classIDs = array_map( 'strval', $classIDList );
-                $policyClassIDs = array_map( 'strval', $limitationArray['Class'] );
-                if ( $classFilterType == 'include' && count( array_intersect( $policyClassIDs, $classIDs ) ) == 0 )
+                $filterClassIDs = array();
+                foreach ( $classIDList as $classID )
+                {
+                    if ( is_numeric( $classID ) && (float)$classID == (int)$classID )
+                    {
+                        $filterClassIDs[(int)$classID] = true;
+                    }
+                }
+                $matching = 0;
+                foreach ( $limitationArray['Class'] as $policyClassID )
+                {
+                    if ( isset( $filterClassIDs[intval( $policyClassID )] ) )
+                    {
+                        $matching++;
+                    }
+                }
+                if ( $classFilterType === 'include' && $matching == 0 )
                 {
                     continue;
                 }
-                if ( $classFilterType == 'exclude' && count( array_diff( $policyClassIDs, $classIDs ) ) == 0 )
+                if ( $classFilterType === 'exclude' && $matching == count( $limitationArray['Class'] ) )
                 {
                     continue;
                 }
@@ -1893,9 +1946,22 @@ class eZContentObjectTreeNode extends eZPersistentObject
             }
         }
 
+        // Read as the fetches read it: a loose comparison, 'include' first (true counts as 'include')
         $classFilterType = isset( $params['ClassFilterType'] ) ? $params['ClassFilterType'] : false;
+        if ( $classFilterType == 'include' )
+        {
+            $classFilterType = 'include';
+        }
+        else if ( $classFilterType == 'exclude' )
+        {
+            $classFilterType = 'exclude';
+        }
+        else
+        {
+            $classFilterType = false;
+        }
         $classIDList = array();
-        if ( ( $classFilterType == 'include' || $classFilterType == 'exclude' ) &&
+        if ( $classFilterType &&
              isset( $params['ClassFilterArray'] ) && is_array( $params['ClassFilterArray'] ) )
         {
             // The ids of the class filter as createClassFilteringSQLString() puts them into the query.
@@ -1938,19 +2004,29 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $groupPermTempTable = false;
         $createdStateAliases = array();
 
+        $optimized = false;
+        $prunedPolicies = false;
         if ( is_array( $limitationList ) && count( $limitationList ) > 0 && self::permissionSQLOptimization() )
         {
+            $optimized = true;
+            $givenCount = count( $limitationList );
             $limitationList = self::mergeLimitationList( $limitationList );
+            $mergedCount = count( $limitationList );
             if ( isset( $fetchScope['paths'] ) || !empty( $fetchScope['class_ids'] ) )
             {
                 $limitationList = self::pruneLimitationList( $limitationList,
                                                              isset( $fetchScope['paths'] ) ? $fetchScope['paths'] : null,
                                                              isset( $fetchScope['class_filter_type'] ) ? $fetchScope['class_filter_type'] : false,
                                                              isset( $fetchScope['class_ids'] ) ? $fetchScope['class_ids'] : array() );
-                if ( count( $limitationList ) == 0 )
-                {
-                    return array( 'from' => '', 'where' => ' AND 0 = 1 ', 'temp_tables' => array() );
-                }
+                $prunedPolicies = count( $limitationList ) < $mergedCount;
+            }
+            // debug.ini [GeneralCondition] kernel-content-treenode=enabled shows what each fetch used
+            eZDebugSetting::writeDebug( 'kernel-content-treenode', "$givenCount policies given, $mergedCount merged, " .
+                                        count( $limitationList ) . ' in the condition' . ( isset( $fetchScope['paths'] ) ? ' (paths ' . implode( ' ', (array)$fetchScope['paths'] ) . ')' : '' ),
+                                        __METHOD__ );
+            if ( count( $limitationList ) == 0 )
+            {
+                return array( 'from' => '', 'where' => ' AND 0 = 1 ', 'temp_tables' => array() );
             }
         }
 
@@ -2023,7 +2099,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                 $safePathString = $db->escapeString( $limitationPathString );
                                 $sqlSubtreePart[] = "$tableAliasName.path_string like '$safePathString%'";
                             }
-                            $sqlPlacementPart[] = implode( ' OR ', $sqlSubtreePart );
+                            $sqlPlacementPart[] = $optimized ? self::permissionSQLOr( $sqlSubtreePart ) : implode( ' OR ', $sqlSubtreePart );
                         } break;
 
                         case 'User_Subtree':
@@ -2034,7 +2110,16 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                 $safePathString = $db->escapeString( $limitationPathString );
                                 $sqlPartUserSubtree[] = "$tableAliasName.path_string like '$safePathString%'";
                             }
-                            $sqlPartPart[] = implode( ' OR ', $sqlPartUserSubtree );
+                            // ANDed with the other limitations of the policy: more than one value (a merged policy)
+                            // needs the parentheses, or "Class AND a OR b" would give b to every class
+                            if ( count( $sqlPartUserSubtree ) > 1 )
+                            {
+                                $sqlPartPart[] = '( ' . ( $optimized ? self::permissionSQLOr( $sqlPartUserSubtree ) : implode( ' OR ', $sqlPartUserSubtree ) ) . ' )';
+                            }
+                            else
+                            {
+                                $sqlPartPart[] = implode( ' OR ', $sqlPartUserSubtree );
+                            }
                         } break;
 
                         default:
@@ -2098,7 +2183,28 @@ class eZContentObjectTreeNode extends eZPersistentObject
                     $sqlParts[] = implode( ' AND ', $sqlPartPart );
             }
             if ( count( $sqlParts ) > 0 )
-                $sqlPermissionCheckingWhere .= ' AND ((' . implode( ") OR (", $sqlParts ) . ')) ';
+            {
+                if ( $optimized )
+                {
+                    $wrappedParts = array();
+                    foreach ( $sqlParts as $sqlPart )
+                    {
+                        $wrappedParts[] = '(' . $sqlPart . ')';
+                    }
+                    $sqlPermissionCheckingWhere .= ' AND (' . self::permissionSQLOr( $wrappedParts ) . ') ';
+                }
+                else
+                {
+                    $sqlPermissionCheckingWhere .= ' AND ((' . implode( ") OR (", $sqlParts ) . ')) ';
+                }
+            }
+            else if ( $prunedPolicies )
+            {
+                // A policy that adds no condition (only limitations a read ignores) is left out of the OR, and
+                // the condition is empty only when no policy adds one. The policies that did were all left out as
+                // matching no node of the fetch: none matches, not every one.
+                $sqlPermissionCheckingWhere = ' AND 0 = 1 ';
+            }
         }
 
         $sqlPermissionChecking = array( 'from' => $sqlPermissionCheckingFrom,

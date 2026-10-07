@@ -101,8 +101,131 @@ class eZContentPermissionSQLOptimizationTest extends PHPUnit\Framework\TestCase
     public function testAThousandAssignmentsGiveTheConditionOfThreePolicies()
     {
         $sql = eZContentObjectTreeNode::createPermissionCheckingSQL( $this->memberPolicies( 600 ) );
-        $this->assertSame( 2, substr_count( $sql['where'], ') OR (' ), 'three policies, ORed' );
+        // ') OR (ezcontentobject.' only between policies; the 600 subtrees of a policy are ORed in groups
+        $this->assertSame( 2, substr_count( $sql['where'], ') OR (ezcontentobject.' ), 'three policies, ORed' );
         $this->assertSame( 1200, substr_count( $sql['where'], 'path_string like' ) );
+    }
+
+    public function testAMergedPolicyKeepsItsOtherLimitationsForEverySubtree()
+    {
+        // Without the parentheses "Class AND a OR b" would give subtree b to every class
+        $sql = eZContentObjectTreeNode::createPermissionCheckingSQL( array(
+            'a' => array( 'Class' => array( '5' ), 'User_Subtree' => array( '/1/2/100/' ) ),
+            'b' => array( 'Class' => array( '5' ), 'User_Subtree' => array( '/1/2/101/' ) ),
+        ) );
+        $this->assertSame( " AND ((ezcontentobject.contentclass_id in (5) AND ( ezcontentobject_tree.path_string like '/1/2/100/%' OR ezcontentobject_tree.path_string like '/1/2/101/%' ))) ",
+                           $sql['where'] );
+    }
+
+    public function testAClassLimitationWithoutValuesNarrowsNothing()
+    {
+        // The condition skips a Class limitation without values, so a class filter must not leave the policy out
+        $list = array( 'a' => array( 'Class' => array(), 'Section' => array( '1' ) ) );
+        $this->assertSame( $list, eZContentObjectTreeNode::pruneLimitationList( $list, null, 'include', array( 2 ) ) );
+        $this->assertSame( $list, eZContentObjectTreeNode::pruneLimitationList( $list, null, 'exclude', array( 2 ) ) );
+    }
+
+    public function testClassIDsAreComparedAsTheDatabaseComparesThem()
+    {
+        // The filter puts its numbers into the query as given ('1e1' is 10), the policy's are intval()ed
+        $list = array( 'a' => array( 'Class' => array( '10' ) ), 'b' => array( 'Class' => array( '16' ) ) );
+        $this->assertSame( array( 'a' ), array_keys( eZContentObjectTreeNode::pruneLimitationList( $list, null, 'include', array( '1e1' ) ) ) );
+        $this->assertSame( array( 'b' ), array_keys( eZContentObjectTreeNode::pruneLimitationList( $list, null, 'exclude', array( 10.0 ) ) ) );
+        // 16.5 is no class id: it matches no node, so it neither keeps a policy in nor leaves one out
+        $this->assertSame( array(), array_keys( eZContentObjectTreeNode::pruneLimitationList( $list, null, 'include', array( '16.5' ) ) ) );
+        $this->assertSame( array( 'a', 'b' ), array_keys( eZContentObjectTreeNode::pruneLimitationList( $list, null, 'exclude', array( '16.5' ) ) ) );
+    }
+
+    public function testTheClassFilterTypeIsReadAsTheFetchesReadIt()
+    {
+        // The fetches compare loosely and take 'include' first: true is an include filter, not both
+        $scope = eZContentObjectTreeNode::permissionFetchScope( array( 'a' => array( 'Class' => array( '2' ) ) ), 2, array( '/1/2/' ),
+                                                                array( 'ClassFilterType' => true, 'ClassFilterArray' => array( 2 ) ) );
+        $this->assertSame( 'include', $scope['class_filter_type'] );
+        $scope = eZContentObjectTreeNode::permissionFetchScope( array( 'a' => array( 'Class' => array( '2' ) ) ), 2, array( '/1/2/' ),
+                                                                array( 'ClassFilterType' => 'other', 'ClassFilterArray' => array( 2 ) ) );
+        $this->assertFalse( $scope['class_filter_type'] );
+        $this->assertSame( array(), $scope['class_ids'] );
+    }
+
+    public function testAPolicyWithoutConditionLeftAloneAfterPruningGivesNoAccess()
+    {
+        // 'b' adds no condition (ParentClass does not narrow a read) and was left out of the OR before as well:
+        // the condition was the subtree of 'a' alone. Under another subtree that is no node, not every node.
+        $list = array(
+            'a' => array( 'Subtree' => array( '/1/2/50/' ) ),
+            'b' => array( 'ParentClass' => array( '1' ) ),
+        );
+        $sql = eZContentObjectTreeNode::createPermissionCheckingSQL( $list, 'ezcontentobject_tree', 'ezcontentobject_tree',
+                                                                     array( 'paths' => array( '/1/2/60/' ) ) );
+        $this->assertSame( ' AND 0 = 1 ', $sql['where'] );
+        // Without pruning, nothing changes: such a list alone has no condition, as always
+        $sql = eZContentObjectTreeNode::createPermissionCheckingSQL( array( 'b' => $list['b'] ), 'ezcontentobject_tree', 'ezcontentobject_tree',
+                                                                     array( 'paths' => array( '/1/2/60/' ) ) );
+        $this->assertSame( '', $sql['where'] );
+    }
+
+    public function testShortOrChainsAreWrittenAsBefore()
+    {
+        $parts = array();
+        for ( $i = 0; $i < eZContentObjectTreeNode::PERMISSION_SQL_OR_GROUP_SIZE; $i++ )
+        {
+            $parts[] = "p$i";
+        }
+        $this->assertSame( implode( ' OR ', $parts ), eZContentObjectTreeNode::permissionSQLOr( $parts ) );
+        $parts[] = 'last';
+        $this->assertSame( '( ' . implode( ' OR ', array_slice( $parts, 0, -1 ) ) . ' ) OR ( last )', eZContentObjectTreeNode::permissionSQLOr( $parts ) );
+    }
+
+    /**
+     * SQLite refuses an expression deeper than 1000 levels, and reads an OR chain of n parts as n levels. With 1,500
+     * policies that cannot be merged (each has its own Subtree) and a merged policy of 2,500 subtrees, the
+     * condition of the optimisation runs on SQLite and finds the same rows; the plain OR of before is refused.
+     */
+    public function testAConditionOfThousandsOfPoliciesAndSubtreesRunsOnSQLite()
+    {
+        if ( !extension_loaded( 'pdo_sqlite' ) )
+        {
+            $this->markTestSkipped( 'pdo_sqlite is not loaded' );
+        }
+        $list = array();
+        for ( $i = 0; $i < 1500; $i++ )
+        {
+            $list["p_1_$i"] = array( 'Subtree' => array( '/1/2/' . ( 1000 + $i ) . '/' ), 'User_Subtree' => array( '/1/2/' . ( 1000 + $i ) . '/' ) );
+        }
+        for ( $i = 0; $i < 2500; $i++ )
+        {
+            $list["p_2_$i"] = array( 'Class' => array( '5' ), 'User_Subtree' => array( '/1/2/' . ( 5000 + $i ) . '/' ) );
+        }
+
+        $pdo = new PDO( 'sqlite::memory:' );
+        $pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $pdo->exec( 'CREATE TABLE ezcontentobject_tree ( node_id INTEGER, contentobject_id INTEGER, path_string TEXT )' );
+        $pdo->exec( 'CREATE TABLE ezcontentobject ( id INTEGER, contentclass_id INTEGER, section_id INTEGER, owner_id INTEGER )' );
+        $rows = array( array( 1, '/1/2/1499/', 2 ), array( 2, '/1/2/1499/7/', 2 ), array( 3, '/1/2/7499/', 5 ),
+                       array( 4, '/1/2/7499/', 2 ), array( 5, '/1/2/9999/', 5 ) );
+        foreach ( $rows as $row )
+        {
+            $pdo->exec( "INSERT INTO ezcontentobject_tree VALUES ( $row[0], $row[0], '$row[1]' )" );
+            $pdo->exec( "INSERT INTO ezcontentobject VALUES ( $row[0], $row[2], 1, 14 )" );
+        }
+        $query = 'SELECT ezcontentobject_tree.node_id FROM ezcontentobject_tree ' .
+                 'INNER JOIN ezcontentobject ON ezcontentobject.id = ezcontentobject_tree.contentobject_id WHERE 1 = 1 %s ORDER BY 1';
+
+        $sql = eZContentObjectTreeNode::createPermissionCheckingSQL( $list );
+        $this->assertSame( array( 1, 2, 3 ), array_map( 'intval', $pdo->query( sprintf( $query, $sql['where'] ) )->fetchAll( PDO::FETCH_COLUMN ) ) );
+
+        ezpINIHelper::setINISetting( 'site.ini', 'RoleSettings', 'PermissionSQLOptimization', 'disabled' );
+        $sql = eZContentObjectTreeNode::createPermissionCheckingSQL( $list );
+        try
+        {
+            $pdo->query( sprintf( $query, $sql['where'] ) );
+            $this->fail( 'the plain OR of 4,000 policies was expected to be refused by SQLite' );
+        }
+        catch ( PDOException $e )
+        {
+            $this->assertStringContainsString( 'too large', $e->getMessage() );
+        }
     }
 
     public function testDisabledOrsEveryPolicy()
