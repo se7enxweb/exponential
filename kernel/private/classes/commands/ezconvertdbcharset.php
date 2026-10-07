@@ -33,22 +33,22 @@ class CommandLineArguments
     protected static $iconvCharacterSet = false;
     protected static $logFilename = false;
 
-    function iconvCharacterSet()
+    static function iconvCharacterSet()
     {
         return CommandLineArguments::$iconvCharacterSet;
     }
 
-    function setIconvCharacterSet( $iconvCharacterSet )
+    static function setIconvCharacterSet( $iconvCharacterSet )
     {
         CommandLineArguments::$iconvCharacterSet = $iconvCharacterSet;
     }
 
-    function logFilename()
+    static function logFilename()
     {
         return CommandLineArguments::$logFilename;
     }
 
-    function setLogFilename( $logFilename )
+    static function setLogFilename( $logFilename )
     {
         CommandLineArguments::$logFilename = $logFilename;
     }

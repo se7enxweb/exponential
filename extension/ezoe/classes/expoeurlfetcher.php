@@ -421,7 +421,7 @@ class expOEUrlFetcher
         ) );
         $ok = curl_exec( $ch );
         $errno = curl_errno( $ch );
-        curl_close( $ch );
+        if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
         fclose( $fp );
         if ( $state['tooBig'] )
             throw new expOEUrlException( self::tr( 'The file is larger than the allowed %size.', array( '%size' => self::formatSize( $max ) ) ) );

@@ -384,7 +384,7 @@ class ListView extends \Exponential\Runnable\ModuleView
                 $db->begin();
                 foreach ( $deleteIDArray as $deleteID )
                 {
-                    \eZTrigger::remove( $deleteID );
+                    \eZPersistentObject::removeObject( \eZTrigger::definition(), array( 'id' => (int)$deleteID ) );
                 }
                 $db->commit();
                 $auditAfter = $auditTriggers();

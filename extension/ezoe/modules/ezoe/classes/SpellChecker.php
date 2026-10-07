@@ -7,6 +7,8 @@
  */
 
 class SpellChecker {
+	public $_config;
+
 	/**
 	 * Constructor.
 	 *

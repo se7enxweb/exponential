@@ -363,7 +363,7 @@ class eZCodePage
         return $cache;
     }
 
-    function fileModification( $charset_code )
+    static function fileModification( $charset_code )
     {
         $file = eZCodePage::fileName( $charset_code );
         if ( !file_exists( $file ) )

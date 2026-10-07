@@ -35,6 +35,9 @@ Examples:
 
 class eZTemplateExpInfoOperator
 {
+    public $ExpInfoName;
+    public $Operators;
+
     public function __construct( $expInfoName = 'expinfo' )
     {
         $this->ExpInfoName = $expInfoName;

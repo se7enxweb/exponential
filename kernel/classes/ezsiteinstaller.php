@@ -1483,7 +1483,7 @@ class eZSiteInstaller
      a language in the list keeps the short name; later ones add their
      country in lower case ('eng_gb').
     */
-    function languageNameFromLocale( $locale, $localeList = array() )
+    static function languageNameFromLocale( $locale, $localeList = array() )
     {
          $pos = strpos( $locale , "-");
          if ( $pos === false )
@@ -1631,7 +1631,7 @@ class eZSiteInstaller
     /*!
      Create localized siteaccess: copy general setting form 'source' siteaccess, apply new custom settings(locale, others...).
     */
-    function createSiteAccess( $params )
+    static function createSiteAccess( $params )
     {
         $srcSiteaccess = $params['src']['siteaccess'];
         $dstSiteaccess = $params['dst']['siteaccess'];

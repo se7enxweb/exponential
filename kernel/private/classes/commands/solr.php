@@ -85,8 +85,12 @@ function solrPing( array $d )
     if ( $body === false )
         return array( 'reachable' => false, 'url' => $base, 'note' => 'no response from ' . $endpoint );
     $ok = false;
-    if ( isset( $http_response_header ) )
-        foreach ( $http_response_header as $h )
+    // PHP 8.5 deprecates the local $http_response_header in favour of http_get_last_response_headers()
+    $responseHeaders = function_exists( 'http_get_last_response_headers' )
+        ? http_get_last_response_headers()
+        : ( get_defined_vars()['http_response_header'] ?? null );
+    if ( is_array( $responseHeaders ) )
+        foreach ( $responseHeaders as $h )
             if ( preg_match( '#^HTTP/\S+\s+(\d+)#', $h, $m ) && (int)$m[1] < 500 )
                 $ok = true;
     return array( 'reachable' => $ok, 'url' => $base,

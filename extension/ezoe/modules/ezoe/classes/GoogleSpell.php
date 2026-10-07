@@ -79,7 +79,7 @@ class GoogleSpell extends SpellChecker {
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $header);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 			$xml = curl_exec($ch);
-			curl_close($ch);
+			if ( PHP_VERSION_ID < 80000 ) curl_close($ch); // no effect since PHP 8.0, deprecated in 8.5
 		} else {
 			// Use raw sockets
 			$fp = fsockopen("ssl://" . $server, $port, $errno, $errstr, 30);

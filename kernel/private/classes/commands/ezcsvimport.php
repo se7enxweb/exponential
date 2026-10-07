@@ -98,7 +98,7 @@ class Ezcsvimport extends \Exponential\Runnable\Command
         }
 
         $auditCreated = 0;
-        while ( $objectData = fgetcsv( $fp, $csvLineLength , ';', '"' ) )
+        while ( $objectData = fgetcsv( $fp, $csvLineLength , ';', '"', '\\' ) )
         {
 
             $contentObject = $class->instantiate( $creator );

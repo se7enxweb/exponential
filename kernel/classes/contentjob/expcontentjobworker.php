@@ -432,7 +432,7 @@ class expContentJobWorker
         if ( class_exists( 'eZContentCacheManager', false ) )
         {
             $prop = new ReflectionProperty( 'eZContentCacheManager', 'additionalNodeIDsPerObject' );
-            $prop->setAccessible( true );
+            if ( PHP_VERSION_ID < 80100 ) $prop->setAccessible( true ); // no effect since PHP 8.1, deprecated in 8.5
             $prop->setValue( null, array() );
         }
         if ( class_exists( 'eZDebug', false ) )
