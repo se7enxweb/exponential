@@ -56,7 +56,9 @@ class Discountgroupmembershipview extends \Exponential\Runnable\ModuleView
             foreach ( $discountRuleIDList  as $discountRuleID )
             {
                 \eZDiscountSubRuleValue::removeBySubRuleID ( $discountRuleID );
-                \eZDiscountSubRule::remove( $discountRuleID );
+                $discountRule = \eZDiscountSubRule::fetch( $discountRuleID );
+                if ( $discountRule )
+                    $discountRule->remove( $discountRuleID );
             }
             $db->commit();
 

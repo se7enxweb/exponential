@@ -227,7 +227,7 @@ class eZCollaborationItemHandler
             {
                 $templateName = $itemHandler->notificationParticipantTemplate( $participantRole );
                 if ( !$templateName )
-                    $templateName = eZCollaborationItemHandler::notificationParticipantTemplate( $participantRole );
+                    $templateName = 'participant.tpl';
 
                 $itemInfo = $itemHandler->attribute( 'info' );
                 $typeIdentifier = $itemInfo['type-identifier'];
