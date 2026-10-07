@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e984f123c45d3bc74e2e5889aaa7fed3  doc/changelogs/6.0/6.0.15.md
+f290651566aec262d25a9292802b4067  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5038,7 +5038,7 @@ ba77012c30b83091d4134a3b0bab90d6  kernel/classes/ezstaticcache.php
 fc7fa34174c5cee8bc17b62a30b96e92  kernel/classes/eztipafriendrequest.php
 7abfc577ecaacc5617a7347c072b040d  kernel/classes/eztrigger.php
 1df62bdfdc3b3a179e8f4921852d9da9  kernel/classes/ezurlaliasfilter.php
-7f547b21b773df195b91c37d64a24930  kernel/classes/ezurlaliasml.php
+e69de198a99fa1c85aedae7e3d33a885  kernel/classes/ezurlaliasml.php
 9f512d42b59c1b80477a480600b3c506  kernel/classes/ezurlaliasquery.php
 d39772a202a0a6b5ee8dd80f7b9a3262  kernel/classes/ezurlwildcard.php
 600d29d9cf5862c89a4a6f4acdf683e4  kernel/classes/ezuserdiscountrule.php
@@ -7391,7 +7391,7 @@ fe5f4210cdceac6efc7c3e768b84db39  tests/tests/kernel/classes/subitems/columns/ex
 04d19acb708e82ac3fd3b32132212c6d  tests/tests/kernel/classes/subitems/columns/expSubitemsNodeColumnTest.php
 de97a98387704d6bf4bc41a13bd1c306  tests/tests/kernel/classes/subitems/columns/expSubitemsObjectColumnTest.php
 efb45fe88dbea057da1e97ccd50974c3  tests/tests/kernel/classes/subitems/columns/expSubitemsPrefetchTest.php
-5c0c92fa2f86bde2cdb7a70380f3c714  tests/tests/kernel/classes/subitems/columns/expSubitemsURLColumnTest.php
+8493c255124aba68d86938acd1556148  tests/tests/kernel/classes/subitems/columns/expSubitemsURLColumnTest.php
 f1830de0e00e4f17b610cd3314a4e8ba  tests/tests/kernel/classes/subitems/columns/fixtures/subitemscolumns.ini.append.php
 2a38ac9c38a9bd94c952911660288568  tests/tests/kernel/classes/subitems/expSubitemsCSVExportTest.php
 9c5848ffa7a5ad540bde601e94cd00db  tests/tests/kernel/classes/subitems/expSubitemsColumnRegistryTest.php
@@ -7406,6 +7406,8 @@ add07cb25b789ade09730d3c616fa69a  tests/tests/kernel/classes/trash/eZContentObje
 68e7667ba121abeb9d36fd8d734c3249  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 1c6a47aeb40312b9889117f163f96d63  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
 cec5fbb54ca85b64799fb51a87f5d380  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
+6fe8e87b68838aff774d60ef6241d38f  tests/tests/kernel/classes/urlalias/eZURLAliasMLHistoryLiveTest.php
+c18a432021e5a648ddcaaffb8177b9bb  tests/tests/kernel/classes/urlalias/eZURLAliasMLMongoStorePathTest.php
 fd13f368d0002af718e950c81b7708d1  tests/tests/kernel/classes/urlalias/eZURLAliasMLNameGenerationTest.php
 98c5bdcbff593649bc7a2d1e0ae1d598  tests/tests/kernel/classes/urlalias/eZURLAliasMLPathPrefixTest.php
 240835728a1cf1cde742aa54c504dff7  tests/tests/kernel/classes/urlalias/eZURLWildcardPatternTest.php
