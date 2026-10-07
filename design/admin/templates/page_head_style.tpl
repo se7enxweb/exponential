@@ -21,6 +21,14 @@
 {if $load_main_css}
   {* load main css files and required css files *}
   {if $load_css_file_list}
+    {* BackendCSSFileList names responsive.css, the responsive layout of the admin3 and admin4 designs; this
+       design (and admin2, which uses it) has no such file, so it is left out instead of being looked for *}
+    {def $admin_backend_css_list = array()}
+    {foreach ezini( 'StylesheetSettings', 'BackendCSSFileList', 'design.ini' ) as $admin_backend_css}
+      {if $admin_backend_css|ne( 'responsive.css' )}
+        {set $admin_backend_css_list = $admin_backend_css_list|append( $admin_backend_css )}
+      {/if}
+    {/foreach}
     {ezcss_load( array( 'core.css',
                         'debug.css',
                         'pagelayout.css',
@@ -28,7 +36,8 @@
                         $admin_theme_css,
                         'theme/admin_datatable.css',
                         'theme/modalwindow.css',
-                        ezini( 'StylesheetSettings', 'BackendCSSFileList', 'design.ini' ) ) )}
+                        $admin_backend_css_list ) )}
+    {undef $admin_backend_css_list}
   {else}
     {ezcss_load( array( 'core.css',
                         'debug.css',

@@ -462,11 +462,11 @@ class ListView extends \Exponential\Runnable\ModuleView
         require_once 'kernel/rss/ezrsslistpager.php';
 
         $user = \eZUser::currentUser();
-        $remembered = $user->isLoggedIn() ? \eZPreferences::value( 'admin_rss_list_limit' ) : false;
+        $remembered = $user->isRegistered() ? \eZPreferences::value( 'admin_rss_list_limit' ) : false;
         $limit = \eZRSSListPager::limit( isset( $Params['Limit'] ) ? $Params['Limit'] : false, $remembered );
 
         // Remember a size the user picked, so the next visit opens the way they left it.
-        if ( $user->isLoggedIn() && isset( $Params['Limit'] ) && $Params['Limit'] !== false
+        if ( $user->isRegistered() && isset( $Params['Limit'] ) && $Params['Limit'] !== false
              && (string) $limit === (string) (int) $Params['Limit'] && (string) $remembered !== (string) $limit )
         {
             \eZPreferences::setValue( 'admin_rss_list_limit', $limit );

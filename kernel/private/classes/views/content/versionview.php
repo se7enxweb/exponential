@@ -32,7 +32,7 @@ class Versionview extends \Exponential\Runnable\ModuleView
         $Offset = (int)$Params['Offset'];
         $ObjectID = (int)$ObjectID;
         $EditVersion = (int)$EditVersion;
-        $LanguageCode = htmlspecialchars( $LanguageCode, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+        $LanguageCode = htmlspecialchars( (string)$LanguageCode, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
         $viewParameters = array( 'offset' => $Offset );
 
         // The view mode the version is shown in, (view_mode)/print for example; only those of
@@ -43,7 +43,7 @@ class Versionview extends \Exponential\Runnable\ModuleView
 
         // Will be sent from the content/edit page and should be kept
         // incase the user decides to continue editing.
-        $FromLanguage = htmlspecialchars( $Params['FromLanguage'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+        $FromLanguage = htmlspecialchars( (string)( $Params['FromLanguage'] ?? '' ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
         if ( $http->hasPostVariable( 'BackButton' )  )
         {

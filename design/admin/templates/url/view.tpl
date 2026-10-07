@@ -11,6 +11,9 @@
      status_pending='Pending'|i18n( 'design/admin/url/view' )
      status_archived='Archived'|i18n( 'design/admin/url/view' )
      status_rejected='Rejected'|i18n( 'design/admin/url/view' )
+     status_untouched='Untouched draft'|i18n( 'design/admin/url/view' )
+     status_repeat='Repeat'|i18n( 'design/admin/url/view' )
+     status_queued='Queued'|i18n( 'design/admin/url/view' )
      status_in_trash=' (in trash)'|i18n( 'design/admin/url/view' )}
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
@@ -155,15 +158,15 @@
     <td>{$Objects.item.contentobject.class_identifier|class_icon( 'small', $Objects.item.contentobject.class_identifier )}&nbsp;<a href={concat( '/content/versionview/', $Objects.item.contentobject.id, '/', $Objects.item.version )|ezurl} title="{'View the contents of version #%version_number.'|i18n( 'design/admin/url/view',, hash( '%version_number', $Objects.item.version, ) )}">{$Objects.item.name|wash}</a></td>
     {switch match=$Objects.item.contentobject.status}
     {case match=0}
-        <td>{$object_version_status|choose( $status_draft, $status_published, $status_pending, $status_archived, $status_rejected )}</td>
+        <td>{$object_version_status|choose( $status_draft, $status_published, $status_pending, $status_archived, $status_rejected, $status_untouched, $status_repeat, $status_queued )}</td>
     {/case}
 
     {case match=2}
-        <td>{$object_version_status|choose( concat($status_draft,$status_in_trash), concat($status_published,$status_in_trash), concat($status_pending,$status_in_trash), concat($status_archived,$status_in_trash), concat($status_rejected,$status_in_trash) )}</td>
+        <td>{$object_version_status|choose( concat($status_draft,$status_in_trash), concat($status_published,$status_in_trash), concat($status_pending,$status_in_trash), concat($status_archived,$status_in_trash), concat($status_rejected,$status_in_trash), concat($status_untouched,$status_in_trash), concat($status_repeat,$status_in_trash), concat($status_queued,$status_in_trash) )}</td>
     {/case}
 
     {case}
-        <td>{$object_version_status|choose( $status_draft, $status_published, $status_pending, $status_archived, $status_rejected )}</td>
+        <td>{$object_version_status|choose( $status_draft, $status_published, $status_pending, $status_archived, $status_rejected, $status_untouched, $status_repeat, $status_queued )}</td>
     {/case}
     {/switch}
     <td>{$Objects.item.version}</td>

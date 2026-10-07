@@ -7,7 +7,16 @@
 {include uri='design:page_head_exp.tpl'}
 
 {if $load_javascript_list}
- {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
+ {* BackendJavaScriptList names ezadmin_menubar.js, the sidebar toggle of the admin3 and admin4 designs; this
+    design (and admin2, which uses it) has no such file and no sidebar, so it is left out instead of being looked for *}
+ {def $admin_backend_script_list = array( 'ezjsc::jquery', 'ezjsc::jqueryio' )}
+ {foreach ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' ) as $admin_backend_script}
+  {if $admin_backend_script|ne( 'ezadmin_menubar.js' )}
+   {set $admin_backend_script_list = $admin_backend_script_list|append( $admin_backend_script )}
+  {/if}
+ {/foreach}
+ {ezscript_load( $admin_backend_script_list )}
+ {undef $admin_backend_script_list}
 {else}
  {ezscript_load( array( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
 {/if}
