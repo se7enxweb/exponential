@@ -5505,7 +5505,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 ddec744dfff68595b33fab3f301af457  kernel/private/classes/ezpkerneltreemenu.php
 5c4f3b050d473855aa2727c0fef4d8e3  kernel/private/classes/ezpkernelweb.php
-87e025c1384c926ea5208118634e0847  kernel/private/classes/ezplanguageswitcher.php
+2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 281e9dba3bcb1ca40c9f793bfcdcd065  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
 2624f73f09c71233ff19dfbd28ff79b5  kernel/private/classes/ezpmobiledevicedetectfilter.php
@@ -5596,7 +5596,7 @@ f9c430c252eb94b8b5efdea21168d97e  kernel/private/classes/views/content/removenod
 84f0fd52974fc2981cd69ccbb70fbe60  kernel/private/classes/views/content/removeobject.php
 0532c6bf42a37a33462247c62b31155d  kernel/private/classes/views/content/restore.php
 c75e831d1d57e3a1709fb41a3c094441  kernel/private/classes/views/content/reverserelatedlist.php
-0c4ade4da3a00f98c7cb92d13a402c1b  kernel/private/classes/views/content/search.php
+ec0f48d257992d71464c3a73a2698f90  kernel/private/classes/views/content/search.php
 ea6d82cea689a55292679f82eaff72a7  kernel/private/classes/views/content/subitemsexport.php
 e7f6b7b2a1cb6cc5b80c5da35be68003  kernel/private/classes/views/content/tipafriend.php
 8633e40b09f4a5a11c208e5424129bad  kernel/private/classes/views/content/translation.php
@@ -7510,11 +7510,12 @@ ca73bee703a0441de0ebd3f1c8fabc1a  tests/tests/kernel/datatypes/ezxmltext/ezxmlte
 bf4805eef66167c3d4a3a93b22e382b3  tests/tests/kernel/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput_regression.php
 20e4366dd2d283c394b1ec6f50294dd9  tests/tests/kernel/datatypes/suite.php
 9d2f2238449173a5c027ec1dfcee4e4f  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
+aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 e2866895244944ed9c19f75a4b7d748f  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
 0133feca9084b5d356221439d79d6841  tests/tests/kernel/private/classes/ezpExtensionInfoTest.php
 5277128e032a8ba916fd550e97672c58  tests/tests/kernel/private/classes/ezpFormTokenRefusalTest.php
 f6f7a6d0fedaac36b1b7a203e3f349cf  tests/tests/kernel/private/classes/ezpKernelResultAndEventTest.php
-12c5500d56b2e450e4e386e169596632  tests/tests/kernel/private/classes/ezpLanguageSwitcherTest.php
+13eaad81e6d99804ce2a4564858cdf7c  tests/tests/kernel/private/classes/ezpLanguageSwitcherTest.php
 d3aece307cd87977077761c98dcfa905  tests/tests/kernel/private/classes/ezpSiteAccessURLTest.php
 2000c194dcb439f91bf20cee50496582  tests/tests/kernel/private/classes/ezpSmallKernelHelpersTest.php
 f8bd96cb7671e92382f05210af3b11eb  tests/tests/kernel/private/classes/ezpTopologicalSortOrderTest.php
