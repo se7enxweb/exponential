@@ -4620,7 +4620,7 @@ e957ad0751e2c0d271450a92c8ab1e64  extension/ezoe/design/standard/templates/ezoe/
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
 fa78c13489b745a7ac8d722d12634244  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
-3aa2739bc860c7fcb5725c4b10c6f8fc  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
+ae32ed3595f7a32e18c693d7686d43fa  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 ec9d0894a9b5155ca5bfa598488a5854  extension/ezoe/modules/ezoe/atd_rpc.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
 c49986d2339f33f44be6a2a7baf863a6  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
@@ -4956,7 +4956,7 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 58369fa65f68c37ae7cfa64ddc06acaa  kernel/classes/ezcontentfunctions.php
 e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
-35ff46e82550d9744404c69b7f9c2f9f  kernel/classes/ezcontentobject.php
+9d2a107a92e87bb7bbc1bf52adf14f60  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
@@ -5209,10 +5209,10 @@ e5173154b8dda8d8a484430bcd35dd78  kernel/collaboration/function_definition.php
 5d87902cd7e04a68768a510883df4e47  kernel/common/ezpsiteaccessurloperator.php
 017b674d3da82376774e263117ee3ce8  kernel/common/ezsimpletagsoperator.php
 da918f13b83149e6feee8a05e8c5b4be  kernel/common/eztemplateautoload.php
-41abf2e4990e0b5666f96f1d20d20571  kernel/common/eztemplatedesignresource.php
+a204e8b913b5728fc16485a9f934b362  kernel/common/eztemplatedesignresource.php
 6316d1979ad32700bcc5c6873e3cdaaa  kernel/common/eztemplatesstatisticsreporter.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
-19e4522dfc4bc1774656c0bd823b7981  kernel/common/eztopmenuoperator.php
+64682ac067bb26a667eb12e75ea84919  kernel/common/eztopmenuoperator.php
 84fe1fae52b9b8b9f029ff975ce1e09b  kernel/common/eztreemenuoperator.php
 c308876db97436c2d2343e099c62932c  kernel/common/ezurloperator.php
 33112e10449d1ace7abd21ca64f35d8e  kernel/common/ezwordtoimageoperator.php
@@ -5505,7 +5505,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 ddec744dfff68595b33fab3f301af457  kernel/private/classes/ezpkerneltreemenu.php
 5c4f3b050d473855aa2727c0fef4d8e3  kernel/private/classes/ezpkernelweb.php
-87e025c1384c926ea5208118634e0847  kernel/private/classes/ezplanguageswitcher.php
+d6d4451f239f1b48522fa2a03af3bd95  kernel/private/classes/ezplanguageswitcher.php
 281e9dba3bcb1ca40c9f793bfcdcd065  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
 2624f73f09c71233ff19dfbd28ff79b5  kernel/private/classes/ezpmobiledevicedetectfilter.php
@@ -5609,7 +5609,7 @@ a022490fad3a8e2011f803b9489af953  kernel/private/classes/views/content/urlalias_
 4448c86277f3d36c9516e2fc707d7b2b  kernel/private/classes/views/content/urlalias_wildcard.php
 040d7b152a219345a2370e2ebffe537a  kernel/private/classes/views/content/versionview.php
 e88eae5e2e444bc3a85ebc168aa3cd39  kernel/private/classes/views/content/view.php
-7f666f92857068a3dfc239970934ae84  kernel/private/classes/views/error/view.php
+aeefe67c184400d0c476ef2e6aa70c1f  kernel/private/classes/views/error/view.php
 5b93b97bc4e87108308011f4ae05eb0f  kernel/private/classes/views/ezinfo/about.php
 bb1ec8ba0c555192359eb58e004d8b65  kernel/private/classes/views/ezinfo/copyright.php
 cf544b983924d800e72fd6e275e038f1  kernel/private/classes/views/ezinfo/isalive.php
@@ -5884,7 +5884,7 @@ e3d2254fb755ce7c408a9081a4fc9622  kernel/private/rest/classes/request/http_parse
 462e34f0ae451134464422b9d9bb2968  kernel/private/rest/classes/rest_http_response_writer.php
 26c2759fd6653c01d00aebf8d7a89255  kernel/private/rest/classes/rest_provider.php
 504675901b71ac3a29f70e7c5bc9307f  kernel/private/rest/classes/restkernel_functions.php
-659f4c41c4e3f749f81c4576b2510662  kernel/private/rest/classes/router.php
+ce5786e66258b4b9f154e89763581e35  kernel/private/rest/classes/router.php
 13b286100f17157d5c26663270043e4a  kernel/private/rest/classes/routes/rails.php
 39a1b593998ebfc13cd278920c95bfcc  kernel/private/rest/classes/routes/regexp.php
 e6167e2b05cdb20308015d6991da2ca7  kernel/private/rest/classes/routes/versioned_route.php
@@ -6326,7 +6326,7 @@ c50b0e01761551f31dadcd7f46ca5fa5  lib/ezutils/classes/ezmail.php
 460744d83abf5db145f9225f928df710  lib/ezutils/classes/ezmailtransport.php
 f332b18175f3da43c2c40839be7bd864  lib/ezutils/classes/ezmath.php
 654f90c8d02e3fafb48c7dbf58430d80  lib/ezutils/classes/ezmimetype.php
-9a9fdf32df779ef1cf772af6037a0627  lib/ezutils/classes/ezmodule.php
+5c2fcc0c55758a02e3be81de0aeea93b  lib/ezutils/classes/ezmodule.php
 4d85f9c9b02437d343216e59f82af72c  lib/ezutils/classes/ezmodulefunctioninfo.php
 00659429fa87d76613424c750f32df41  lib/ezutils/classes/ezmoduleoperationinfo.php
 c6a982a5274b0db1e73f40d6ef9c1d75  lib/ezutils/classes/ezmutex.php
@@ -6345,7 +6345,7 @@ ead255df95cadecdc810d3576eeddf2f  lib/ezutils/classes/ezsysinfo.php
 b8345b4eff8fc3873c7e157c12e39cf6  lib/ezutils/classes/eztexttool.php
 fde5977c704d8f50c0edf07dc1021ac7  lib/ezutils/classes/eztimestamp.php
 d1430e6d3fe0292c03f024139ffc91f7  lib/ezutils/classes/eztrustedproxy.php
-908616d2a2d917de4f6e5676f90a0662  lib/ezutils/classes/ezuri.php
+977ba7cc059620f28a2c1542ec3a30eb  lib/ezutils/classes/ezuri.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 7dabbf7f2463e9e1009df77ab6598adc  lib/phpcompat.php
@@ -7022,6 +7022,7 @@ ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServices
 c986f5766a23f4b954a6b74c5c4f8931  tests/tests/extension/ezoe/expOEEditorViewAccessTest.php
 1f431d2787ac5ae352d9bc4e7c3e5ef0  tests/tests/extension/ezoe/expOEEngineConfigTest.php
 8788b408ac3034b0742e9ca87316bd77  tests/tests/extension/ezoe/expOEEngineViewTest.php
+6834ab097cfc296675fecaebdf5dfcb3  tests/tests/extension/ezoe/expOEInputTableCellTextTest.php
 27e63da049b02963fa347d079a52ebd4  tests/tests/extension/ezoe/expOEMarkupEscapeTest.php
 3cf802a4bee66800dd7d3366cbc9ec69  tests/tests/extension/ezoe/expOEPastedStyleRulesTest.php
 9a7f16efa0e2944384ae92ca524a9ede  tests/tests/extension/ezoe/expOEPastedStylesTest.php
@@ -7138,6 +7139,7 @@ edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsT
 2393c1f4d60f50c867e7fdbe54c1d089  tests/tests/kernel/classes/eZContentHistoryAccessTest.php
 749895a2982f127d2581d6ed8ab94895  tests/tests/kernel/classes/eZContentObjectDraftAccessLiveTest.php
 94154626b5390fd506ce342b50dadb8e  tests/tests/kernel/classes/eZContentObjectDraftLocationTest.php
+8bb07645c2018bb5fdcbed07ccff375d  tests/tests/kernel/classes/eZContentObjectEditAccessListTest.php
 3391b6094e41c01c2e3ef953b1fbef3a  tests/tests/kernel/classes/eZContentObjectStateGroupTest.php
 a8745a8d6011fe2c7fcfe4c0413a61ce  tests/tests/kernel/classes/eZContentObjectStateTest.php
 098c7943a8f995b52453eaa6d82d83bb  tests/tests/kernel/classes/eZContentObjectTest.php
@@ -7443,6 +7445,8 @@ cd6b8bec864c53c4f18dff9bcdaf5580  tests/tests/kernel/classes/xmltext/eZXMLSchema
 ea5121e0baece60295a0b95688fbc918  tests/tests/kernel/classes/xmltext/eZXMLTextTestFixtures.php
 def1f1bcfd84b00003409aaa701e48dc  tests/tests/kernel/classes/xmltext/eZXMLTextTypeTest.php
 b2e46951bdb7165f0a97de3990a4e4e4  tests/tests/kernel/common/eZKernelCommonOperatorsTest.php
+3e7af50c17c7d009b9be3ef7da6be27a  tests/tests/kernel/common/eZTemplateDesignResourceNoSiteAccessTest.php
+d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMissingTabGroupTest.php
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
 7584758a4f40031bd44aedd755614046  tests/tests/kernel/content/eZContentOperationCollectionTest.php
@@ -7555,7 +7559,7 @@ e92b23a8b19a5157df8e6413cc5e874f  tests/tests/kernel/private/restapi/ezpRestAnsw
 fa7de453db2f950cf99c949a777e46fd  tests/tests/kernel/private/restapi/ezpRestDebugPHPFormatterTest.php
 0dacd48beadb95bd6c1a7801c6430215  tests/tests/kernel/private/restapi/ezpRestMvcControllerBehaviourTest.php
 d731695df12bfdbe203a7b1451dbb498  tests/tests/kernel/private/restapi/ezpRestRequestTest.php
-dcc73cd40591cc680f96a4bcacb27259  tests/tests/kernel/private/restapi/ezpRestRouteMatchingTest.php
+fd187ef4813fd3abf41eb49dcdead49e  tests/tests/kernel/private/restapi/ezpRestRouteMatchingTest.php
 50e5af23a7738f7eb224505c4c59a540  tests/tests/kernel/private/restapi/ezpRestRouteSecurityTest.php
 3cebf066838a2b8fc6f89f49f5ac2dfd  tests/tests/kernel/private/restapi/ezpRestStatusAndErrorTest.php
 e9080d1886071fced9c71d05268dffde  tests/tests/kernel/private/views/StateViewDatabaseTest.php
@@ -7827,7 +7831,7 @@ c6644c73d74f9f7d5926761a81c29253  tests/tests/lib/ezutils/eZINITest.php
 f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
 6108d2e9ccef5a860674d71bc38cc38e  tests/tests/lib/ezutils/eZMailTest.php
 ad9b40230e54fa366826f27052a68264  tests/tests/lib/ezutils/eZModuleFunctionInfoTest.php
-26c41a9afb4c712f40d17e26402319d5  tests/tests/lib/ezutils/eZModuleTest.php
+4de84b483d83f06ae1d82c0bfacee32c  tests/tests/lib/ezutils/eZModuleTest.php
 b63b08251a27ea86e14255f2d343ba65  tests/tests/lib/ezutils/eZPHPCreatorRoundTripTest.php
 a46d1ff58bc1d58f91c2cbadffe983bf  tests/tests/lib/ezutils/eZSiteLogAndExpiryPathsTest.php
 295ccf384fbb67b358a39cf87d5b809d  tests/tests/lib/ezutils/eZSysInfoTest.php
@@ -7838,6 +7842,7 @@ a46d1ff58bc1d58f91c2cbadffe983bf  tests/tests/lib/ezutils/eZSiteLogAndExpiryPath
 186e663c92c550ded58b636d4ed22d79  tests/tests/lib/ezutils/eZURIElementsTest.php
 e6ad2c9ac436d848b4359433b0380402  tests/tests/lib/ezutils/eZURIFilterStringTest.php
 6178821ce5542ce0e1358dbd29b28957  tests/tests/lib/ezutils/eZURITest.php
+40005d9e868e02bfbd2cae8d1e693583  tests/tests/lib/ezutils/eZURITransformURINullTest.php
 ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 e1ded5c31f3bf78de4fea62839e1cb99  tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php
 73b71352cf122c5331f60f4ca3185288  tests/tests/lib/ezutils/ezdebug_regression.php
