@@ -883,6 +883,21 @@ class eZSiteAccess
     }
 
     /**
+     * Puts the paths change() set for a site back to those of a request whose siteaccess is not known yet: the log
+     * files to var/log, the INI cache to the directory there was before (var/cache/ini/ or the one the installation
+     * set). For the Velocity warm-up, which renders a site in the parent process before the workers are forked and
+     * must not hand the paths of that site to the start of every request.
+     *
+     * @return void
+     */
+    static function resetSitePaths()
+    {
+        self::restoreINICacheDirectory();
+        eZDebug::setLogDirectory( false );
+        unset( $GLOBALS['eZDebugLogDir'] );
+    }
+
+    /**
      * Points the log files of eZDebug and the default logs of eZLog at the log directory of the site
      * (eZSys::logDirectory()) when site.ini [FileSettings] UseGlobalLogDir is disabled, and back at var/log otherwise.
      *

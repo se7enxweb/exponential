@@ -193,6 +193,15 @@ class VelocityWarmup extends \Exponential\Runnable\Command
             'eZLocale', 'eZTSTranslationTables', 'eZTranslatorManagerInstance',
             'eZTranslationCache', 'eZContentLanguage',
         );
+        // The log directory and the INI cache directory of the rendered site (site.ini [FileSettings]
+        // UseGlobalLogDir=disabled, INICacheDir=site), set by eZSiteAccess::change(): back to those of a request
+        // whose siteaccess is not known yet, before the globals that record them are cleared. Kept, every request
+        // would log into that site's directory and read its INI files from that site's cache until its own
+        // siteaccess was known. The sweep of every other global at the end removes them too; this does not
+        // depend on it, nor on which globals existed before the warm-up.
+        if (class_exists('eZSiteAccess') && method_exists('eZSiteAccess', 'resetSitePaths')) {
+            try { \eZSiteAccess::resetSitePaths(); } catch (\Throwable $e) {}
+        }
         foreach (array_keys($GLOBALS) as $__g) {
             foreach ($clearPrefixes as $__p) {
                 if (strncmp($__g, $__p, strlen($__p)) === 0) {
