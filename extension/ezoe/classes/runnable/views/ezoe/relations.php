@@ -135,6 +135,13 @@ class Relations extends \Exponential\Runnable\ModuleView
             $contentType = \eZOEXMLInput::embedTagContentType( $embedClassIdentifier, $embedClassID );
         }
 
+        // The content type goes into the path of the template (design:ezoe/tag_embed_<type>.tpl): a known one only
+        if ( !Dialog::isContentType( $contentType ) )
+        {
+           echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid or missing parameter: %parameter', null, array( '%parameter' => 'ContentType' ) );
+           \eZExecution::cleanExit();
+        }
+
 
         if ( $embedSize && $contentType === 'images' )
         {

@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-45bdb9604c0b5cc8dc30893608291ecb  doc/changelogs/6.0/6.0.15.md
+c41be22af3b17559c92eb2d23099700d  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4170,13 +4170,13 @@ a816b6bff7b91f94b91681927dd330eb  extension/ezoe/classes/expoeurlexception.php
 53ac72fee1421196ea7adbfd9b001b1a  extension/ezoe/classes/expoeurlfetcher.php
 4c23a9e19cae5d4d9a92c33f630045c9  extension/ezoe/classes/ezoeserverfunctions.php
 d8765d028ea543e378067d65c0eac1bd  extension/ezoe/classes/runnable/views/ezoe/atd_rpc.php
-09778ed3552eaaf2c5278684df6380be  extension/ezoe/classes/runnable/views/ezoe/dialog.php
+d7f679dbab7f1b6752c3dae71175c8c1  extension/ezoe/classes/runnable/views/ezoe/dialog.php
 0473e9fbd4329be2c8e9ba010b2f1925  extension/ezoe/classes/runnable/views/ezoe/embed_view.php
-75dd302bd7c6f2f9e57a7da7a479cb22  extension/ezoe/classes/runnable/views/ezoe/load.php
-3648c991d5bcb152e8e8051ddbaa94c4  extension/ezoe/classes/runnable/views/ezoe/relations.php
+b656555c61cf975c56958dd42d4718dd  extension/ezoe/classes/runnable/views/ezoe/load.php
+68a782c84a70af752905f917629fd3de  extension/ezoe/classes/runnable/views/ezoe/relations.php
 3cb7ff865bd748517082efa50d4c8d8b  extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php
 0094bd5d9f9f73d0742050175de07d5d  extension/ezoe/classes/runnable/views/ezoe/tags.php
-4cace5b3d4e70f70b02958e32b35f991  extension/ezoe/classes/runnable/views/ezoe/upload.php
+feb9529c2eb7b37bd52f5f68fb790217  extension/ezoe/classes/runnable/views/ezoe/upload.php
 a215d5fc30b402fd3f2608e4272eafbe  extension/ezoe/design/standard/images/tango/bookmark-new.png
 ca0901b4491d61ced030d0c91b4185e3  extension/ezoe/design/standard/images/tango/document-open.png
 e70141a37e7034c38d885651869c8adc  extension/ezoe/design/standard/images/tango/document-save.png
@@ -7014,6 +7014,7 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 02bf8c6b6d73f53dcd28b4b50eda7195  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
+ec8572119e27a0e1b8b1dd9112ffed40  tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php
 b35407af9e2ca6ea1f275c2f3ebbb002  tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php
 9c2ff5a50c1feff03a2718dd04f3a755  tests/tests/extension/ezoe/expOEDialogAccessTest.php
 f6cf185c8c7b6205b83513395a280767  tests/tests/extension/ezoe/expOEEditorRegistryTest.php
