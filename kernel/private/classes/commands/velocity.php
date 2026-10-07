@@ -31,6 +31,27 @@ function velocityShortPaths( $text )
 }
 
 /**
+ * The state a status array reports: running (it answers), not answering
+ * (processes, but no server that takes a request), or stopped.
+ */
+function velocityState( array $status )
+{
+    if ( isset( $status['state'] ) )
+        return $status['state'];
+    return $status['running'] ? 'running' : 'stopped';
+}
+
+/**
+ * The state word, styled: success, error or warning.
+ */
+function velocityStyledState( eZCLI $cli, array $status, $pad = 0 )
+{
+    $state = velocityState( $status );
+    $text = $pad ? sprintf( '%-' . (int)$pad . 's', $state ) : $state;
+    return $cli->stylize( $state === 'running' ? 'success' : ( $state === 'stopped' ? 'warning' : 'error' ), $text );
+}
+
+/**
  * Render a status array for a person to read: a header with the engine and
  * its state, the addresses to open (full URLs, so a terminal makes them
  * clickable), then the details, paths relative to the installation.
@@ -50,12 +71,12 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null, $full
     if ( $velocity !== null )
     {
         $name = $velocity->engineName() . '  ' . $velocity->role() . ( $velocity->isDefault() ? ', default' : '' );
-        $state = $status['running'] ? $cli->stylize( 'success', 'running' ) : $cli->stylize( 'warning', 'stopped' );
-        $dot = $status['running'] ? $cli->stylize( 'success', '●' ) : '○';
+        $state = velocityStyledState( $cli, $status );
+        $dot = !$status['running'] ? '○' : $cli->stylize( velocityState( $status ) === 'running' ? 'success' : 'error', '●' );
         $cli->output( '  ' . $dot . ' ' . $cli->stylize( 'emphasize', $name ) . '   ' . $state );
     }
     else
-        $cli->output( '  ' . ( $status['running'] ? 'running' : 'stopped' ) );
+        $cli->output( '  ' . velocityState( $status ) );
 
     if ( $velocity !== null && !$status['running'] && !$full )
     {
@@ -110,6 +131,8 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null, $full
         if ( isset( $status['server'] ) )
             $process .= ' · ' . $status['threads'] . ( $status['server'] === 'php' ? ' workers' : ' threads' );
         $row( 'Process', $process );
+        foreach ( array_values( $status['problems'] ?? array() ) as $n => $problem )
+            $row( $n === 0 ? 'Problem' : '', $cli->stylize( 'error', '· ' . velocityShortPaths( $problem ) ) );
     }
     if ( isset( $status['server'] ) )
     {
@@ -180,16 +203,15 @@ function velocityPrintOverview( eZCLI $cli, array $engines )
     {
         list( $velocity, $status ) = $engine;
         $role = $velocity->role() . ( $velocity->isDefault() ? ', default' : '' );
-        $state = $status['running'] ? 'running' : 'stopped';
         // The site's addresses: plain HTTP, and HTTPS beside it when it is on
         // -- the overview is all start --all prints, so it has to say so.
         $addresses = array();
         foreach ( $velocity->urls() as $url )
             if ( $url[0] === 'Site' || $url[0] === 'HTTPS' )
                 $addresses[] = $cli->stylize( 'link', $url[1] );
-        $cli->output( '  ' . ( $status['running'] ? $cli->stylize( 'success', '●' ) : '○' ) . ' '
+        $cli->output( '  ' . ( !$status['running'] ? '○' : $cli->stylize( velocityState( $status ) === 'running' ? 'success' : 'error', '●' ) ) . ' '
             . sprintf( '%-11s %-24s ', $velocity->engineName(), $role )
-            . $cli->stylize( $status['running'] ? 'success' : 'warning', sprintf( '%-8s', $state ) ) . ' '
+            . velocityStyledState( $cli, $status, 8 ) . ' '
             . implode( '  ', $addresses ) );
     }
     $running = array();
@@ -250,11 +272,14 @@ class Velocity extends \Exponential\Runnable\Command
         $script = $this->script( array( 'description' => (
             "Exponential Velocity - control the bundled application server\n\n" .
             "Commands:\n" .
-            "  status     what it is doing (the default)\n" .
+            "  status     what it is doing (the default); running only when it answers a request,\n" .
+            "             else not answering, with the problems it finds (exit 1)\n" .
             "  start      start it\n" .
-            "  stop       ask it to stop, and wait\n" .
+            "  stop       ask it to stop, and wait; every process of this installation, not only\n" .
+            "             the pid files' (qbix: SIGKILL after [ControlSettings] StopTimeout)\n" .
             "  graceful   re-exec without dropping the listening socket\n" .
-            "  restart    stop, then start\n" .
+            "  restart    stop, then start; succeeds only when a new parent answers (qbix),\n" .
+            "             and finishes a restart that was interrupted\n" .
             "             (the engine archive is rebuilt first only when a file in kernel/,\n" .
             "              lib/ or autoload/ was added, removed or changed; --rebuild-phar: always)\n" .
             "  deploy     everything a PHP code change needs, in order, PASS/FAIL per step:\n" .
@@ -894,8 +919,9 @@ class Velocity extends \Exponential\Runnable\Command
                     velocityPrintStatus( $cli, $status, $velocity );
                     $cli->output( '' );
                 }
-                // The default engine's state, as before: what monitoring checks.
-                $script->shutdown( $status['running'] ? 0 : 1 );
+                // The default engine's state: what monitoring checks. Running
+                // means answering; processes that accept nothing are a failure.
+                $script->shutdown( velocityState( $status ) === 'running' ? 0 : 1 );
                 break;
 
             default:
