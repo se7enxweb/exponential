@@ -328,6 +328,67 @@ class eZSiteLogAndExpiryPathsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '/srv/other-cache', eZSys::cacheDirectoryOf( $other ) );
     }
 
+    /** A new directory outside the installation, or a skip where the system temp directory is inside it */
+    private function outsideDir( $name )
+    {
+        $dir = $this->tempDir( $name );
+        $root = realpath( eZSys::rootDir() ) . '/';
+        if ( strpos( realpath( $dir ) . '/', $root ) === 0 )
+        {
+            $this->markTestSkipped( 'The system temp directory is inside the installation' );
+        }
+        return $dir;
+    }
+
+    /**
+     * Clearing a cache, the log or expiry directory that site.ini puts outside the root (an absolute CacheDir,
+     * LogDir, ExpiryDir, or CacheVarDir/LogVarDir) is allowed inside those directories, and nowhere beside them
+     */
+    public function testRecursiveDeleteIsAllowedInsideTheConfiguredDirectoriesOutsideTheRoot()
+    {
+        $outside = $this->outsideDir( 'outside' );
+        foreach ( array( 'cache/template/compiled', 'log/old', 'expiry/old', 'other/sub' ) as $dir )
+        {
+            mkdir( $outside . '/' . $dir, 0777, true );
+            touch( $outside . '/' . $dir . '/x1.txt' );
+        }
+        $this->useSite( array( 'CacheDir' => $outside . '/cache', 'LogDir' => $outside . '/log', 'ExpiryDir' => $outside . '/expiry' ) );
+
+        $this->assertTrue( eZDir::recursiveDelete( $outside . '/cache/template' ) );
+        $this->assertDirectoryDoesNotExist( $outside . '/cache/template' );
+        $this->assertTrue( eZDir::recursiveDelete( $outside . '/log/old' ) );
+        $this->assertTrue( eZDir::recursiveDelete( $outside . '/expiry/old' ) );
+
+        // Beside them stays refused, and the log and expiry directories themselves (the cache directory as a whole
+        // may go, see eZDirDeletionGuardTest)
+        $this->assertFalse( eZDir::recursiveDelete( $outside . '/other/sub' ) );
+        $this->assertFileExists( $outside . '/other/sub/x1.txt' );
+        $this->assertFalse( eZDir::recursiveDelete( $outside . '/log' ) );
+        $this->assertDirectoryExists( $outside . '/log' );
+        $this->assertFalse( eZDir::recursiveDelete( $outside . '/expiry' ) );
+        $this->assertDirectoryExists( $outside . '/expiry' );
+    }
+
+    /** An AllowedDeletionDirs entry that does not exist allows nothing, and one directory is no prefix of another */
+    public function testAllowedDeletionDirsAreDirectoriesNotPrefixes()
+    {
+        $outside = $this->outsideDir( 'outside' );
+        mkdir( $outside . '/allowed-other/sub', 0777, true );
+        mkdir( $outside . '/allowed', 0777, true );
+        $this->useSite();
+        $ini = eZINI::instance();
+
+        $ini->setVariable( 'FileSettings', 'AllowedDeletionDirs', array( $outside . '/does-not-exist' ) );
+        $this->assertFalse( eZDir::recursiveDelete( $outside . '/allowed-other/sub' ) );
+
+        $ini->setVariable( 'FileSettings', 'AllowedDeletionDirs', array( $outside . '/allowed' ) );
+        $this->assertFalse( eZDir::recursiveDelete( $outside . '/allowed-other/sub' ) );
+        $this->assertDirectoryExists( $outside . '/allowed-other/sub' );
+
+        $ini->setVariable( 'FileSettings', 'AllowedDeletionDirs', array( $outside . '/allowed-other' ) );
+        $this->assertTrue( eZDir::recursiveDelete( $outside . '/allowed-other/sub' ) );
+    }
+
     public function testTheSharedInstanceFollowsAChangedExpiryDir()
     {
         $varDir = $this->useSite( array( 'ExpiryDir' => '' ) );

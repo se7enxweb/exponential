@@ -263,9 +263,73 @@ class eZDir
         return $path;
     }
 
+    /**
+     * The directories the current site writes its caches and logs to, as site.ini [FileSettings] configures them:
+     * the cache directory, the log directory, eZDebug's log directory, the directory of expiry.php and the INI cache
+     * directory, as real paths. recursiveDelete() may delete inside them also when they are outside the root.
+     * A file system root is never one of them, nor the root of the installation or a directory that contains it:
+     * a LogDir of /var/www would otherwise allow deleting the installation itself.
+     *
+     * @return string[]
+     */
+    protected static function siteDirectories()
+    {
+        $dirs = array();
+        try
+        {
+            $dirs[] = eZSys::cacheDirectory();
+            $dirs[] = eZSys::logDirectory();
+            if ( class_exists( 'eZExpiryHandler' ) )
+                $dirs[] = dirname( eZExpiryHandler::filePath() );
+            if ( class_exists( 'eZDebug' ) )
+                $dirs[] = eZDebug::instance()->logDirectory();
+            if ( isset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) && is_string( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) )
+                $dirs[] = $GLOBALS['eZINI_CONFIG_CACHE_DIR'];
+        }
+        catch ( Throwable $e )
+        {
+        }
+        $root = realpath( eZSys::rootDir() );
+        $out = array();
+        foreach ( $dirs as $dir )
+        {
+            $real = is_string( $dir ) && $dir !== '' ? realpath( $dir ) : false;
+            if ( $real === false || $real === dirname( $real ) )
+                continue;
+            if ( $root !== false && strpos( $root . DIRECTORY_SEPARATOR, rtrim( $real, DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR ) === 0 )
+                continue;
+            $out[] = $real;
+        }
+        return array_values( array_unique( $out ) );
+    }
+
+    /**
+     * The cache directory of the current site as a real path, when recursiveDelete() may remove it as a whole: it
+     * exists and is no file system root, nor the root of the installation or a directory that contains it. Inside the
+     * root the cache directory is removed like any directory there; this allows the same for one that site.ini
+     * [FileSettings] CacheDir or CacheVarDir puts outside the root, or a link to a memory file system.
+     *
+     * @return string|false
+     */
+    protected static function siteCacheDirectory()
+    {
+        try
+        {
+            $real = realpath( eZSys::cacheDirectory() );
+        }
+        catch ( Throwable $e )
+        {
+            return false;
+        }
+        return $real !== false && in_array( $real, self::siteDirectories(), true ) ? $real : false;
+    }
 
     /**
      * Removes a directory and all it's contents, recursively.
+     *
+     * With $rootCheck only a directory inside the root, inside a directory of site.ini [FileSettings]
+     * AllowedDeletionDirs or inside a cache or log directory of the site (siteDirectories()) is removed, or the
+     * cache directory of the site itself (siteCacheDirectory()).
      *
      * @param string $dir Directory to remove
      * @param bool $rootCheck Check whether $dir is supposed to be contained in
@@ -295,12 +359,28 @@ class eZDir
             // Also adding eZ Publish root dir.
             $rootDir = eZSys::rootDir() . DIRECTORY_SEPARATOR;
             array_unshift( $allowedDirs, $rootDir );
+            // And the directories the site writes its caches and logs to, which site.ini [FileSettings] CacheDir,
+            // LogDir, CacheVarDir, LogVarDir and ExpiryDir may put outside the root (multi-site hosting): what is
+            // inside them may be deleted, and the cache directory as a whole, nothing beside them.
+            foreach ( self::siteDirectories() as $siteDir )
+            {
+                $allowedDirs[] = $siteDir;
+            }
 
             $dirRealPath = dirname( realpath( $dir ) ) . DIRECTORY_SEPARATOR;
-            $canDelete = false;
+            // The cache directory itself, wherever it is (inside the root that is already so)
+            $canDelete = realpath( $dir ) !== false && realpath( $dir ) === self::siteCacheDirectory();
             foreach ( $allowedDirs as $allowedDir )
             {
-                if ( strpos( $dirRealPath, realpath( $allowedDir ) ) === 0 )
+                // A directory that does not exist allows nothing (realpath() false would match every path), and
+                // /srv/cache allows /srv/cache/x, never /srv/cache-other/x
+                $allowedRealPath = is_string( $allowedDir ) && $allowedDir !== '' ? realpath( $allowedDir ) : false;
+                if ( $allowedRealPath === false )
+                {
+                    continue;
+                }
+                $allowedRealPath = rtrim( $allowedRealPath, DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR;
+                if ( strpos( $dirRealPath, $allowedRealPath ) === 0 )
                 {
                     $canDelete = true;
                     break;
