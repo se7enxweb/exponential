@@ -2789,7 +2789,7 @@ e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 634c9b738dac08042ef4b52dee1d3212  doc/bc/6.0/bookmark-folders.md
 d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
-abdb0ba00df44fe6e3ebdcd853a03ae9  doc/bc/6.0/cli_cronjob_view_abstractions.md
+f8dec2dfb81fbb16a107d0bde08c230b  doc/bc/6.0/cli_cronjob_view_abstractions.md
 a97f241d85290c2fbece2d8f20d6c401  doc/bc/6.0/console-exp-ini.md
 4fa2c2acfebf49a6d0606b3cfdadd05c  doc/bc/6.0/console.md
 99d9b2a97dcde56f99c1d40242b5be6c  doc/bc/6.0/content-jobs.md
@@ -5579,7 +5579,7 @@ df872c5ec934f64aa7579eca83cbe3cd  kernel/private/classes/views/content/copysubtr
 34575b3cf8f61d2b53dd79be756cd20d  kernel/private/classes/views/content/draft.php
 589c1932dd859b4d9ea2c85bef7e2292  kernel/private/classes/views/content/edit.php
 3bf4f4e45ac3adf215f6b8268c55b6db  kernel/private/classes/views/content/hide.php
-c2de674d77869d4436fe719e06574f8c  kernel/private/classes/views/content/history.php
+df0f2b87f7a2de9df8a5af38324c20a1  kernel/private/classes/views/content/history.php
 8380b2e8ac3fe2a37f91bc143c598f7f  kernel/private/classes/views/content/job.php
 f2b10780650551125b5ed1c6bb190ed4  kernel/private/classes/views/content/jobs.php
 8f90ce229245f8dd706cdf7f5abf9ec9  kernel/private/classes/views/content/keyword.php
@@ -5606,7 +5606,7 @@ ade3050a695a1188b44283460111d3c9  kernel/private/classes/views/content/treemenu.
 4f11008ad9b5c1f0dd76badc81989f91  kernel/private/classes/views/content/urlalias.php
 a022490fad3a8e2011f803b9489af953  kernel/private/classes/views/content/urlalias_global.php
 4448c86277f3d36c9516e2fc707d7b2b  kernel/private/classes/views/content/urlalias_wildcard.php
-ca9ca569c0e5176c12c3e14cbecbd574  kernel/private/classes/views/content/versionview.php
+040d7b152a219345a2370e2ebffe537a  kernel/private/classes/views/content/versionview.php
 e88eae5e2e444bc3a85ebc168aa3cd39  kernel/private/classes/views/content/view.php
 7f666f92857068a3dfc239970934ae84  kernel/private/classes/views/error/view.php
 5b93b97bc4e87108308011f4ae05eb0f  kernel/private/classes/views/ezinfo/about.php
@@ -5656,8 +5656,8 @@ d6b7ee459c385cc78ca426a0b6f8b362  kernel/private/classes/views/section/assign.ph
 41a1a002428dba979b2ff3df259505af  kernel/private/classes/views/section/edit.php
 9b1a0b75aee0abf6663625558c9410a0  kernel/private/classes/views/section/list.php
 9d6b8e6a7a21e6799b0f29447166534e  kernel/private/classes/views/section/view.php
-454041866214c08f04ada736a5d42626  kernel/private/classes/views/settings/edit.php
-9f9a3a6ccee8ae9b040bd03b8aae2a96  kernel/private/classes/views/settings/view.php
+0c1935726355dcf0167553344932733a  kernel/private/classes/views/settings/edit.php
+3c861e6abde5f2b757eaba861a259cbf  kernel/private/classes/views/settings/view.php
 22849693faf9d703c551c63c715f375e  kernel/private/classes/views/setup/cache.php
 8950f5ab79eb2110460527a6ab876fc8  kernel/private/classes/views/setup/cachetoolbar.php
 546ddb3d9d522a274d7a11c78c3a2762  kernel/private/classes/views/setup/contentextension.php
@@ -7349,12 +7349,14 @@ a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPur
 5cabf4962c374801c48d9d37133de735  tests/tests/kernel/classes/runnable/CommandHelpersTest.php
 2973ce3fd51cf4811b11def2cb6a2f0a  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
 4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
+65c92eb71cc3bbaf1aac4f619b5a5427  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
 352cfc4000709b128a2a80cbea6cf8b7  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
 2beaf208438078d39f0f448ab74d46c8  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
 de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableExtensionPointsTest.php
 6b5a504ace7f81f831359ad296472b95  tests/tests/kernel/classes/runnable/RunnableTest.php
 57cea5c99d78dc76f0bba6f2c9845766  tests/tests/kernel/classes/runnable/ServicesTest.php
+9b857db0b585f8663b50a1c2f5428eb1  tests/tests/kernel/classes/runnable/fixtures/moduleview_scope_probe.php
 79c911a18db2fd725a84abec3b804393  tests/tests/kernel/classes/runnable/fixtures/settings/site.ini
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 3b012276860b70c1bf74047f97abfcfb  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
