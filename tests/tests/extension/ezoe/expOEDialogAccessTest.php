@@ -2,8 +2,9 @@
 /**
  * The dialogs of the editor (ezoe/dialog, ezoe/relations) open for whoever may read the object and for whoever may
  * edit the version being edited: Exponential\View\Extension\Ezoe\Ezoe\Dialog::mayOpen(). Someone who edits a draft of
- * an object that was never published can not read the object yet, and an extension may let others edit a version
- * (filter content/edit/access, as for uploads and custom tags).
+ * an object that was never published can not read the object yet. "May edit the version" is decided as content/edit
+ * decides it (one's own draft, edit access in its language); the rules without the database are in
+ * expOEDialogAccessRulesTest.
  *
  * Each test creates its own user (never published, address at x1.example.invalid) with a role of its own and removes
  * both again; the object is the one of the content root, which is not changed.
@@ -106,14 +107,15 @@ class expOEDialogAccessTest extends expOETestCase
         $this->assertTrue( Dialog::mayOpen( $object, $version ) );
     }
 
-    public function testWhoMayEditTheVersionButNotReadTheObjectOpensTheDialogs()
+    public function testWhoMayEditTheObjectButNotReadItDoesNotOpenThePublishedVersion()
     {
         $this->logInUserWith( array( array( 'content', 'edit' ) ) );
         list( $object, $version ) = $this->rootObject();
 
         $this->assertFalse( (bool)$object->canRead(), 'the user may not read the object' );
-        $this->assertTrue( (bool)$object->editAccess( $object->version( $version ) ), 'the user may edit the version' );
-        $this->assertTrue( Dialog::mayOpen( $object, $version ) );
+        $this->assertTrue( (bool)$object->editAccess( $object->version( $version ) ), 'the user may edit the object' );
+        // content/edit edits only one's own drafts; the published version (someone else's) opens nothing
+        $this->assertFalse( Dialog::mayOpen( $object, $version ) );
     }
 
     public function testWhoMayNeitherReadNorEditDoesNotOpenThem()
