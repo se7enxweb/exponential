@@ -7,6 +7,7 @@
  *  PO-01 - checkAccess() loads the locations of the object once, not once for every policy
  *  PO-02 - The tree fetches return the same nodes with the shortened permission condition as without it
  *  PO-03 - canCreateClassList() loads the locations of the object once, not once for every policy
+ *  PO-04 - A merged policy keeps its class and section limitations for every one of its subtrees
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -98,9 +99,10 @@ class eZContentPermissionSQLOptimizationLiveTest extends PHPUnit\Framework\TestC
      * subtree given.
      *
      * @param int[] $nodeIDs
+     * @param array[]|null $readPolicies The limitations of the read policies, two of classes and sections if null
      * @return int the user's content object ID
      */
-    private function userWithSubtreeRole( array $nodeIDs )
+    private function userWithSubtreeRole( array $nodeIDs, $readPolicies = null )
     {
         $login = 'x1-permission-sql-' . bin2hex( random_bytes( 4 ) );
         $userObject = eZContentClass::fetchByIdentifier( 'user' )->instantiate( self::ADMIN_ID );
@@ -122,8 +124,10 @@ class eZContentPermissionSQLOptimizationLiveTest extends PHPUnit\Framework\TestC
         $role = eZRole::create( 'X1 permission SQL ' . $login );
         $role->store();
         $this->roles[] = $role;
-        $role->appendPolicy( 'content', 'read', array( 'Class' => array( 1, 2, 3, 4, 5 ) ) );
-        $role->appendPolicy( 'content', 'read', array( 'Section' => array( 1, 2, 3 ) ) );
+        foreach ( $readPolicies ?? array( array( 'Class' => array( 1, 2, 3, 4, 5 ) ), array( 'Section' => array( 1, 2, 3 ) ) ) as $limitations )
+        {
+            $role->appendPolicy( 'content', 'read', $limitations );
+        }
         $role->appendPolicy( 'content', 'create', array( 'Class' => array( 1, 2 ) ) );
         foreach ( $nodeIDs as $nodeID )
         {
@@ -187,7 +191,6 @@ class eZContentPermissionSQLOptimizationLiveTest extends PHPUnit\Framework\TestC
         list( $nodeIDs, $target ) = $this->subtreesAndTarget();
         $userID = $this->userWithSubtreeRole( $nodeIDs );
         $policies = eZUser::fetch( $userID )->hasAccessTo( 'content', 'read' );
-        $limitation = $policies['policies'];
 
         $fetches = array(
             'children of the target subtree' => array( (int)$target['parent_node_id'], array( 'Depth' => 1 ) ),
@@ -198,6 +201,34 @@ class eZContentPermissionSQLOptimizationLiveTest extends PHPUnit\Framework\TestC
             'everything but folders' => array( 1, array( 'ClassFilterType' => 'exclude', 'ClassFilterArray' => array( 'folder' ) ) ),
             'two subtrees' => array( array( $nodeIDs[0], $nodeIDs[1] ), array() ),
         );
+        $this->assertSameNodesEnabledAndDisabled( $fetches, $policies['policies'] );
+    }
+
+    /** PO-04 - A merged policy keeps its class and section limitations for every one of its subtrees */
+    public function testAMergedPolicyKeepsItsOtherLimitationsInEverySubtree()
+    {
+        list( $nodeIDs, $target ) = $this->subtreesAndTarget();
+        // Folders only, and the other classes in a section nothing is in: merged, the subtrees of these policies
+        // must stay ANDed with the class and the section, or every node of the subtrees but the first is listed
+        $userID = $this->userWithSubtreeRole( $nodeIDs, array( array( 'Class' => array( 1 ) ), array( 'Section' => array( 999999 ) ) ) );
+        $policies = eZUser::fetch( $userID )->hasAccessTo( 'content', 'read' );
+        $this->assertSameNodesEnabledAndDisabled( array(
+            'the whole tree' => array( 1, array() ),
+            'the target subtree' => array( (int)$target['parent_node_id'], array() ),
+            'everything but folders' => array( 1, array( 'ClassFilterType' => 'exclude', 'ClassFilterArray' => array( 'folder' ) ) ),
+        ), $policies['policies'], false );
+    }
+
+    /**
+     * Fetches each of $fetches with the policies given as the Limitation, with the setting disabled and enabled, and
+     * asserts the same nodes and counts.
+     *
+     * @param array $fetches label => array( node ID(s), parameters )
+     * @param array $limitation
+     * @param bool $mustFind Whether the fetches together must find nodes
+     */
+    private function assertSameNodesEnabledAndDisabled( array $fetches, array $limitation, $mustFind = true )
+    {
         $foundAny = 0;
         foreach ( $fetches as $label => list( $nodeID, $params ) )
         {
@@ -215,7 +246,10 @@ class eZContentPermissionSQLOptimizationLiveTest extends PHPUnit\Framework\TestC
             $this->assertSame( $found['disabled'], $found['enabled'], $label );
             $foundAny += count( $found['enabled'] );
         }
-        $this->assertGreaterThan( 0, $foundAny, 'the fetches find nodes' );
+        if ( $mustFind )
+        {
+            $this->assertGreaterThan( 0, $foundAny, 'the fetches find nodes' );
+        }
     }
 
     /** PO-03 */
