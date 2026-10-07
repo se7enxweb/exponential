@@ -28,6 +28,11 @@ at the bottom.
 - **The panel** above the bar (at most 60% of the window, scrolling on its own) has the tabs Messages, Settings,
   Cache, Timing, SQL, Templates, Included files, Memory and Velocity. Every section of the classic report is still
   there with its old id.
+- **Copy Messages** on the Messages tab copies the messages that are shown (the level buttons and the filter box
+  applied) to the clipboard as plain text: per entry a line "Level: source", a tab and the time, then the message,
+  with a blank line between entries. It uses the browser's clipboard and, where that is not available (a page on
+  plain http), a hidden text field; a line next to the button says how many messages were copied or that the copy
+  failed.
 - **Minimise**: click the Exponential symbol at the left end (or press Enter or Space on it) and the whole bar
   becomes a 40 px tab in the bottom right corner showing only the symbol and the error count.
 - **Keep open on reload**: the bar remembers whether it was open (browser `localStorage` keys `exp-debug-keep` and

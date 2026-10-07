@@ -81,7 +81,7 @@ class expDebugBarReport
             'Debug report sections', 'Filter', 'Filter settings and report rows', 'No rows match the filter.',
             '%count rows match', 'Clear filter',
             'All', 'Errors', 'Warnings', 'Notices', 'Debug', 'Timing points', 'Strict',
-            'Show messages', 'Sort by time', 'Sort by order', 'Slowest first',
+            'Show messages', 'Copied 1 message', 'Copied %count messages','No messages to copy.', 'Could not copy the messages.', 'Sort by time', 'Sort by order', 'Slowest first',
             'Loading...', 'Could not load: %error', 'Retry',
             'Sign in with a user who may change settings (setup/setup) to change them here.', 'Sign in with setup access to change debug settings', 'Sign in with cache access to manage caches',
             'The settings service is not available yet. The classic controls below still work.',
@@ -262,7 +262,10 @@ class expDebugBarReport
 
         // --- Messages
         self::panelStart( 'messages', $tabs );
+        echo '<div class="exp-debug-message-tools">';
         echo '<div class="exp-debug-levels" data-counts="' . htmlspecialchars( json_encode( $messages['counts'] ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"></div>';
+        echo self::copyMessagesHtml();
+        echo '</div>';
         echo "<table id='main-debug-table' title='Table for actual debug output, shows notices, warnings and errors'>";
         echo $otherTop;
         echo implode( '', $messages['rows'] );
@@ -378,6 +381,19 @@ class expDebugBarReport
     protected static function panelEnd()
     {
         echo '</section>';
+    }
+
+    /**
+     * The "Copy Messages" button of the Messages tab and the line that reports how the copy went. The script
+     * (expdebugbar.js) shows the button and copies the messages that are shown (level and filter applied) as
+     * plain text; without the script it stays hidden, as it could do nothing.
+     */
+    public static function copyMessagesHtml()
+    {
+        return '<span class="exp-debug-copy">'
+             . '<button type="button" class="exp-debug-button exp-debug-copy-messages" hidden>' . self::h( 'Copy Messages' ) . '</button>'
+             . ' <span class="exp-debug-copy-status" role="status" aria-live="polite"></span>'
+             . '</span>';
     }
 
     /**
