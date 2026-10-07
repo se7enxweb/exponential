@@ -2,8 +2,8 @@
 
 Read this page if you host several sites on one Exponential installation, each with a VarDir of its own, and want the
 logs of each site in its own directory, the cache of a site on another file system (memory) or the INI cache of each
-site cleared on its own. It describes the settings, how they behave under Velocity and on the command line, and how
-they differ from the older project patch they replace.
+site cleared on its own. It describes the settings, how they behave under Velocity and on the command line, and what
+to do when an installation moves from a setup of its own to them.
 
 ## In short
 
@@ -133,20 +133,21 @@ from `var_cache/<site>/cache/public/` and refused the other files there, the err
 clearing and purging the INI cache, the content tag and all caches worked on `var_cache` while `expiry.php` stayed in
 `var/<site>/expiry/`. The same with nginx and PHP-FPM.
 
-## The original project patch
+## Moving an existing multi-site setup to these settings
 
-This replaces three patches of an older project branch (G_03, G_44, G_48). The new settings do what they did, with
-these differences:
+Installations that already kept logs and caches apart, with changes of their own to the kernel, can do the same with
+the settings:
 
-| | Original | Now |
-|---|---|---|
-| Debug logs per site | `UseGlobalLogDir=disabled` | The same setting and meaning; `eZLog` and the CSRF refusal log follow it too |
-| Separate log tree | `define( 'JAC_PATCH_USE_EXTRA_FOLDER_VAR_LOG', true )` rewrote `var/` to `var_log/` | `LogVarDir=var_log`, or `LogDir` as an absolute path for one site |
-| Separate cache tree | `define( 'JAC_PATCH_USE_EXTRA_FOLDER_VAR_CACHE', true )` rewrote `var/` to `var_cache/`; the web server needed rules of its own for `/var_cache/` | `CacheVarDir=var_cache`; Velocity serves its public caches itself, Apache and nginx have the rule ready to enable |
-| `expiry.php` outside the cache | `var/cache/expiry_<database name>.php`, the name derived from the database name and `DatabasePrefix` | `ExpiryDir` |
-| INI cache per site | Always on; the directory of the first site stayed for every later one in the same process | `INICacheDir=site`; derived again on every siteaccess change |
-| Rewriting `var/<x>/log` in `eZDir::path()` | Every such path in the installation, to catch extensions that write there themselves | Not taken over: it changed paths no one asked to change. Extensions that log through `eZLog` or `eZSys::logDirectory()` follow the setting; `cjw_newsletter` builds VarDir/LogDir itself and does not yet |
-| Switched on by | Constants in `config.php` | `site.ini`, per siteaccess |
+- Logs in a tree of their own (`var_log/<site>/log`): `UseGlobalLogDir=disabled` and `LogVarDir=var_log`.
+- Caches in a tree of their own (`var_cache/<site>/cache`): `CacheVarDir=var_cache`. Rules the web server already has
+  for `/var_cache/` keep working; Velocity serves the public caches itself.
+- An `expiry.php` kept outside the cache under another name: copy it to `var/<site>/expiry/expiry.php` before the
+  first request and set `ExpiryDir=expiry`. Without it, image aliases created before the last clear would count as
+  current.
+- An INI cache per site: `INICacheDir=site`.
+- Code that rewrote every `var/<site>/log` path of the installation is not needed and not provided: extensions that
+  log through `eZLog` or `eZSys::logDirectory()` follow the settings; one that builds the path from VarDir and LogDir
+  itself has to be changed to use `eZSys::logDirectory()`.
 
 ## For extension authors
 
