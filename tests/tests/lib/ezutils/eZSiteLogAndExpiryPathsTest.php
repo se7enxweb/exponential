@@ -252,6 +252,82 @@ class eZSiteLogAndExpiryPathsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 1234, eZExpiryHandler::getTimestamp( 'image-alias' ) );
     }
 
+    /** Without any of the new settings the directories are exactly those of before */
+    public function testTheDefaultsKeepTheDirectoriesOfBefore()
+    {
+        $ini = eZINI::instance();
+        foreach ( array( 'LogVarDir', 'CacheVarDir', 'ExpiryDir' ) as $name )
+        {
+            $this->assertSame( '', (string)$ini->variable( 'FileSettings', $name ), $name );
+        }
+        $this->assertSame( 'enabled', $ini->variable( 'FileSettings', 'UseGlobalLogDir' ) );
+        $this->assertSame( 'global', $ini->variable( 'FileSettings', 'INICacheDir' ) );
+
+        $varDir = $ini->variable( 'FileSettings', 'VarDir' );
+        $this->assertSame( eZDir::path( array( $varDir, $ini->variable( 'FileSettings', 'CacheDir' ) ) ), eZSys::cacheDirectory() );
+        $this->assertSame( eZDir::path( array( $varDir, $ini->variable( 'FileSettings', 'LogDir' ) ) ), eZSys::logDirectory() );
+        $this->assertSame( eZSys::cacheDirectory() . '/expiry.php', eZExpiryHandler::filePath() );
+        $this->assertFalse( eZUpdateDebugLogDirectory() );
+        $this->assertSame( 'var/log/', eZDebug::instance()->logDirectory() );
+    }
+
+    /** A VarDir that leads out of the installation has no first directory to replace */
+    public function testAVarDirStartingWithDotDotIsNotRelocated()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'FileSettings', 'VarDir', '../shared/var/example' );
+        $ini->setVariable( 'FileSettings', 'CacheDir', 'cache' );
+        $ini->setVariable( 'FileSettings', 'LogDir', 'log' );
+        $ini->setVariable( 'FileSettings', 'CacheVarDir', 'var_cache' );
+        $ini->setVariable( 'FileSettings', 'LogVarDir', 'var_log' );
+
+        $this->assertSame( '../shared/var/example/cache', eZSys::cacheDirectory() );
+        $this->assertSame( '../shared/var/example/log', eZSys::logDirectory() );
+
+        // "./var/example" is the same directory as "var/example"
+        $ini->setVariable( 'FileSettings', 'VarDir', './var/example' );
+        $this->assertSame( 'var_cache/example/cache', eZSys::cacheDirectory() );
+    }
+
+    /** An empty CacheDir or LogDir no longer reads past the end of the string */
+    public function testEmptyDirectorySettings()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var/example' );
+        $ini->setVariable( 'FileSettings', 'CacheDir', '' );
+        $ini->setVariable( 'FileSettings', 'LogDir', '' );
+        $ini->setVariable( 'FileSettings', 'CacheVarDir', '' );
+        $ini->setVariable( 'FileSettings', 'LogVarDir', '' );
+
+        $this->assertSame( 'var/example', eZSys::cacheDirectory() );
+        $this->assertSame( 'var/example/log', eZSys::logDirectory() );
+    }
+
+    /**
+     * The cache directory of another siteaccess, as the caches of the classic menu and the toolbar clear it: derived as
+     * that of the current site, also below CacheVarDir
+     */
+    public function testTheCacheDirectoryOfAnotherSiteaccess()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var/example' );
+        $ini->setVariable( 'FileSettings', 'CacheDir', 'cache' );
+        $ini->setVariable( 'FileSettings', 'CacheVarDir', 'var_cache' );
+
+        // Settings of another siteaccess, without reading any file
+        $other = new eZINI( 'x1-site-paths.ini', 'var/tmp', null, false, false, false, false, false );
+        $this->assertSame( eZSys::cacheDirectory(), eZSys::cacheDirectoryOf( $other ) );
+
+        $other->setVariable( 'FileSettings', 'VarDir', 'var/other' );
+        $this->assertSame( 'var_cache/other/cache', eZSys::cacheDirectoryOf( $other ) );
+
+        $other->setVariable( 'FileSettings', 'CacheVarDir', '' );
+        $this->assertSame( 'var/other/cache', eZSys::cacheDirectoryOf( $other ) );
+
+        $other->setVariable( 'FileSettings', 'CacheDir', '/srv/other-cache/' );
+        $this->assertSame( '/srv/other-cache', eZSys::cacheDirectoryOf( $other ) );
+    }
+
     public function testTheSharedInstanceFollowsAChangedExpiryDir()
     {
         $varDir = $this->useSite( array( 'ExpiryDir' => '' ) );

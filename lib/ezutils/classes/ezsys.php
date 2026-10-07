@@ -529,16 +529,28 @@ class eZSys
     public static function cacheDirectory()
     {
         $ini = eZINI::instance();
-        $cacheDir = $ini->variable( 'FileSettings', 'CacheDir' );
+        return self::siteDirectory( $ini->variable( 'FileSettings', 'VarDir' ), $ini->variable( 'FileSettings', 'CacheDir' ),
+                                    self::fileSetting( $ini, 'CacheVarDir' ) );
+    }
 
-        if ( $cacheDir[0] == "/" )
+    /**
+     * Returns the cache directory of another siteaccess, from its own site.ini.append(.php) as
+     * eZINI::instance( 'site.ini.append', <its settings directory> ) reads it: its VarDir, CacheDir and CacheVarDir
+     * where it sets them, those of the current site.ini otherwise. It is derived as cacheDirectory() derives the
+     * current one, so code that clears a cache of another siteaccess clears the directory that siteaccess writes to
+     * (also below CacheVarDir).
+     *
+     * @param eZINI $siteINI
+     * @return string
+     */
+    public static function cacheDirectoryOf( eZINI $siteINI )
+    {
+        $ini = eZINI::instance();
+        $setting = function ( $name ) use ( $siteINI, $ini )
         {
-            return eZDir::path( array( $cacheDir ) );
-        }
-        else
-        {
-            return eZDir::path( array( self::relocatedVarDirectory( 'CacheVarDir' ), $cacheDir ) );
-        }
+            return self::fileSetting( $siteINI->hasVariable( 'FileSettings', $name ) ? $siteINI : $ini, $name );
+        };
+        return self::siteDirectory( $setting( 'VarDir' ), $setting( 'CacheDir' ), $setting( 'CacheVarDir' ) );
     }
 
     /**
@@ -547,43 +559,86 @@ class eZSys
      * CacheVarDir=var_cache its cache to var_cache/example/cache. One setting moves the logs or caches of every site
      * of a multi-site installation into a tree of their own, for instance on a memory file system.
      *
-     * An absolute VarDir is not relocated.
+     * A VarDir that is an absolute path or starts with ".." is not relocated.
      *
      * @param string $setting 'LogVarDir' or 'CacheVarDir'
      * @return string
      */
     public static function relocatedVarDirectory( $setting )
     {
-        $varDir = self::varDirectory();
-        $ini = eZINI::instance();
-        $root = $ini->hasVariable( 'FileSettings', $setting ) ? rtrim( trim( (string)$ini->variable( 'FileSettings', $setting ) ), '/' ) : '';
-        if ( $root === '' || $varDir === '' || $varDir[0] === '/' )
-        {
-            return $varDir;
-        }
-
-        $parts = explode( '/', trim( $varDir, '/' ) );
-        array_shift( $parts );
-        array_unshift( $parts, $root );
-        return eZDir::path( $parts );
+        return self::relocateVarDirectory( self::varDirectory(), self::fileSetting( eZINI::instance(), $setting ) );
     }
 
     /**
      * Returns the log directory of the site: site.ini [FileSettings] LogDir inside VarDir (or inside the tree
      * LogVarDir names, see relocatedVarDirectory()), or LogDir itself when it is an absolute path, as CacheDir.
+     * An empty LogDir is "log".
      *
      * @return string
      */
     public static function logDirectory()
     {
         $ini = eZINI::instance();
-        $logDir = (string)$ini->variable( 'FileSettings', 'LogDir' );
+        $logDir = self::fileSetting( $ini, 'LogDir' );
+        return self::siteDirectory( $ini->variable( 'FileSettings', 'VarDir' ), $logDir !== '' ? $logDir : 'log',
+                                    self::fileSetting( $ini, 'LogVarDir' ) );
+    }
 
-        if ( $logDir !== '' && $logDir[0] == '/' )
+    /**
+     * The one derivation behind cacheDirectory(), cacheDirectoryOf() and logDirectory(): $dir itself when it is an
+     * absolute path, else $dir inside $varDir, relocated into the tree $varRoot names when that is not empty.
+     *
+     * @param string $varDir VarDir
+     * @param string $dir CacheDir or LogDir
+     * @param string $varRoot CacheVarDir or LogVarDir, '' for none
+     * @return string
+     */
+    protected static function siteDirectory( $varDir, $dir, $varRoot )
+    {
+        $dir = (string)$dir;
+        // substr(), not $dir[0]: an empty setting raised a warning on PHP 8
+        if ( substr( $dir, 0, 1 ) === '/' )
         {
-            return eZDir::path( array( $logDir ) );
+            return eZDir::path( array( $dir ) );
         }
-        return eZDir::path( array( self::relocatedVarDirectory( 'LogVarDir' ), $logDir !== '' ? $logDir : 'log' ) );
+        return eZDir::path( array( self::relocateVarDirectory( $varDir, $varRoot ), $dir ) );
+    }
+
+    /**
+     * $varDir with its first directory replaced by $varRoot. $varDir itself when $varRoot is empty, or when $varDir
+     * is empty, an absolute path or starts with ".." (it has no directory of the installation to replace).
+     *
+     * @param string $varDir
+     * @param string $varRoot
+     * @return string
+     */
+    protected static function relocateVarDirectory( $varDir, $varRoot )
+    {
+        $varDir = eZDir::path( array( (string)$varDir ) );
+        $varRoot = rtrim( (string)$varRoot, '/' );
+        if ( $varRoot === '' || $varDir === '' || $varDir[0] === '/' )
+        {
+            return $varDir;
+        }
+        $parts = explode( '/', $varDir );
+        if ( $parts[0] === '..' )
+        {
+            return $varDir;
+        }
+        $parts[0] = $varRoot;
+        return eZDir::path( $parts );
+    }
+
+    /**
+     * A [FileSettings] value of $ini as a trimmed string, '' when it is not set.
+     *
+     * @param eZINI $ini
+     * @param string $name
+     * @return string
+     */
+    protected static function fileSetting( eZINI $ini, $name )
+    {
+        return $ini->hasVariable( 'FileSettings', $name ) ? trim( (string)$ini->variable( 'FileSettings', $name ) ) : '';
     }
 
     /**

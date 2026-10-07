@@ -122,37 +122,8 @@ class eZPackageType extends eZDataType
     */
     function storeObjectAttribute( $attribute )
     {
-        $ini = eZINI::instance();
-        // Delete compiled template
-        $siteINI = eZINI::instance();
-        if ( $siteINI->hasVariable( 'FileSettings', 'CacheDir' ) )
-        {
-            $cacheDir = (string)$siteINI->variable( 'FileSettings', 'CacheDir' );
-            // $cacheDir[0] raised a warning on PHP 8 when the setting is empty
-            if ( substr( $cacheDir, 0, 1 ) == "/" )
-            {
-                $cacheDir = eZDir::path( array( $cacheDir ) );
-            }
-            else
-            {
-                if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
-                {
-                    $varDir = $siteINI->variable( 'FileSettings', 'VarDir' );
-                    $cacheDir = eZDir::path( array( $varDir, $cacheDir ) );
-                }
-            }
-        }
-        else if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
-        {
-            $varDir = $siteINI->variable( 'FileSettings', 'VarDir' );
-            $cacheDir = $ini->variable( 'FileSettings', 'CacheDir' );
-            $cacheDir = eZDir::path( array( $varDir, $cacheDir ) );
-        }
-        else
-        {
-            $cacheDir =  eZSys::cacheDirectory();
-        }
-        $compiledTemplateDir = $cacheDir ."/template/compiled";
+        // Delete compiled template, in the cache directory of the current site (also below CacheVarDir)
+        $compiledTemplateDir = eZSys::cacheDirectory() . "/template/compiled";
         eZDir::unlinkWildcard( $compiledTemplateDir . "/", "*pagelayout*.*" );
 
         // Expire template block cache

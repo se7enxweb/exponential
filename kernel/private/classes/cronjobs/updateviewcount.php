@@ -46,7 +46,8 @@ class Updateviewcount extends \Exponential\Runnable\CronjobPart
         $startLine = "";
         $hasStartLine = false;
 
-        $updateViewLogPath = \eZSys::instance()->varDirectory() . "/" . \eZINI::instance()->variable( 'FileSettings', 'LogDir' ) . "/updateview.log";
+        // The log directory of the site, as eZSys::logDirectory() derives it (an absolute LogDir, LogVarDir)
+        $updateViewLogPath = \eZSys::logDirectory() . "/updateview.log";
         if ( is_file( $updateViewLogPath ) )
         {
             $fh = fopen( $updateViewLogPath, "r" );
