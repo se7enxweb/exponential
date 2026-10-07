@@ -793,11 +793,73 @@ class eZSiteAccess
             // must not expire the caches of every site (multi-site hosting)
             eZExpiryHandler::resetForCurrentCacheDirectory();
 
+            // Its INI files are cached in its own cache directory when site.ini says so, and its logs go to its
+            // own log directory. Both are derived again on every change, so a process that serves several sites
+            // one after another (a persistent worker, a script that changes siteaccess) never keeps those of the
+            // previous one.
+            self::updateINICacheDirectory( $ini );
+            if ( function_exists( 'eZUpdateDebugLogDirectory' ) )
+            {
+                eZUpdateDebugLogDirectory();
+            }
+
             eZUpdateDebugSettings();
             eZDebugSetting::writeDebug( 'kernel-siteaccess', "Updated settings to use siteaccess '$name'", __METHOD__ );
         }
 
         return $access;
+    }
+
+    /**
+     * Sets where the INI files read from now on are cached: in the cache directory of the site
+     * (<CacheDir>/ini/) when site.ini [FileSettings] INICacheDir is "site", in var/cache/ini/ (or the directory the
+     * installation set) otherwise.
+     *
+     * With several sites on one installation (multi-site hosting), each with a VarDir of its own, clearing the INI
+     * cache of one site no longer removes that of all the others. The INI files read before the siteaccess is known
+     * stay in var/cache/ini/. A directory set by the installation or a multi-site wrapper before is kept for a site
+     * without the setting, and comes back after a site with it.
+     *
+     * @param eZINI $ini site.ini of the siteaccess
+     * @return string|false The directory set, false for var/cache/ini/
+     */
+    static function updateINICacheDirectory( eZINI $ini )
+    {
+        if ( $ini->hasVariable( 'FileSettings', 'INICacheDir' ) && $ini->variable( 'FileSettings', 'INICacheDir' ) === 'site' )
+        {
+            $cacheDirectory = eZSys::cacheDirectory();
+            if ( $cacheDirectory === '' || $cacheDirectory[0] !== '/' )
+            {
+                // The installation root, as eZINI::loadCache() puts it before var/cache/ini/
+                $cacheDirectory = ( defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : dirname( __DIR__, 2 ) ) . '/' . $cacheDirectory;
+            }
+            if ( !isset( $GLOBALS['eZSiteAccessINICacheDir'] ) )
+            {
+                // What was there before, set by the installation or a multi-site wrapper, comes back for a site
+                // without the setting
+                $GLOBALS['eZSiteAccessINICacheDirBefore'] = isset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) ? $GLOBALS['eZINI_CONFIG_CACHE_DIR'] : null;
+            }
+            $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = rtrim( $cacheDirectory, '/' ) . '/ini/';
+            $GLOBALS['eZSiteAccessINICacheDir'] = $GLOBALS['eZINI_CONFIG_CACHE_DIR'];
+            return $GLOBALS['eZINI_CONFIG_CACHE_DIR'];
+        }
+
+        if ( isset( $GLOBALS['eZSiteAccessINICacheDir'] ) )
+        {
+            if ( isset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) && $GLOBALS['eZINI_CONFIG_CACHE_DIR'] === $GLOBALS['eZSiteAccessINICacheDir'] )
+            {
+                if ( isset( $GLOBALS['eZSiteAccessINICacheDirBefore'] ) )
+                {
+                    $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = $GLOBALS['eZSiteAccessINICacheDirBefore'];
+                }
+                else
+                {
+                    unset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+                }
+            }
+            unset( $GLOBALS['eZSiteAccessINICacheDir'], $GLOBALS['eZSiteAccessINICacheDirBefore'] );
+        }
+        return false;
     }
 
     /**

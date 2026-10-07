@@ -541,6 +541,24 @@ class eZSys
     }
 
     /**
+     * Returns the log directory of the site: site.ini [FileSettings] LogDir inside VarDir, or LogDir itself when it
+     * is an absolute path, as CacheDir.
+     *
+     * @return string
+     */
+    public static function logDirectory()
+    {
+        $ini = eZINI::instance();
+        $logDir = (string)$ini->variable( 'FileSettings', 'LogDir' );
+
+        if ( $logDir !== '' && $logDir[0] == '/' )
+        {
+            return eZDir::path( array( $logDir ) );
+        }
+        return eZDir::path( array( self::varDirectory(), $logDir !== '' ? $logDir : 'log' ) );
+    }
+
+    /**
      * Returns the absolute path to the eZ Publish root directory
      *
      * @return string|null
