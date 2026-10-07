@@ -63,6 +63,23 @@ class expAdminViewsDebugCleanTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $deprecations );
     }
 
+    public function testVersionStatusLabelsCoverEveryStatus()
+    {
+        // eZContentObjectVersion statuses run from STATUS_DRAFT (0) to STATUS_QUEUED (7); a label list that stops at
+        // Rejected wrote "eZTemplate:choose Index 5 out of range" for an untouched draft (status 5)
+        $this->assertSame( 7, eZContentObjectVersion::STATUS_QUEUED );
+        $files = array( 'design/admin/templates/content/view/versionview.tpl', 'design/admin3/templates/content/view/versionview.tpl',
+                        'design/admin4/templates/content/view/versionview.tpl', 'design/admin/templates/content/edit_conflict.tpl',
+                        'design/admin4/templates/content/edit_conflict.tpl', 'design/standard/templates/content/edit_conflict.tpl' );
+        foreach ( $files as $file )
+        {
+            $source = file_get_contents( $this->root . '/' . $file );
+            $this->assertSame( 1, preg_match( '/status\|choose\((.*?)\)\}/', $source, $m ), $file );
+            $this->assertSame( eZContentObjectVersion::STATUS_QUEUED + 1, substr_count( $m[1], '|i18n(' ), $file );
+            $this->assertStringContainsString( "'Rejected'|i18n(", $m[1], $file );
+        }
+    }
+
     public function testSystemInformationDoesNotReuseMenuVariable()
     {
         $menu = file_get_contents( $this->root . '/design/admin/templates/parts/ini_menu.tpl' );

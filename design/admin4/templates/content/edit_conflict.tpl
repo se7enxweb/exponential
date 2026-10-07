@@ -70,7 +70,7 @@
     <td>{$Drafts.item.modified|l10n( shortdatetime )}</td>
 
     {* Status. *}
-    <td>{$Drafts.item.status|choose( 'Draft'|i18n( 'design/admin/content/versions' ),'Published'|i18n( 'design/admin/content/versions' ), 'Pending'|i18n( 'design/admin/content/versions' ), 'Archived'|i18n( 'design/admin/content/versions' ), 'Untouched draft'|i18n( 'design/admin/content/versions' ) )}</td>
+    <td>{$Drafts.item.status|choose( 'Draft'|i18n( 'design/admin/content/versions' ),'Published'|i18n( 'design/admin/content/versions' ), 'Pending'|i18n( 'design/admin/content/versions' ), 'Archived'|i18n( 'design/admin/content/versions' ), 'Rejected'|i18n( 'design/admin/content/versions' ), 'Untouched draft'|i18n( 'design/admin/content/versions' ), 'Repeat'|i18n( 'design/admin/content/versions' ), 'Queued'|i18n( 'design/admin/content/versions' ) )}</td>
 </tr>
 {/section}
 </table>
