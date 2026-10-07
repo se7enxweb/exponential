@@ -308,7 +308,7 @@ A limitation of your own for a content function such as content/read, next to Cl
 |---|---|
 | Code | `extension/<name>/classes/<class>.php, e.g. class myExtLimitationHandler implements ezpContentLimitationHandler; the settings extension wizard writes a working one (MaxDepth) with a listener of module/functionlist` |
 | Registered by | site.ini [RoleSettings] LimitationHandlers[<limitation>]=<class>; the limitation added to a function through the filter module/functionlist ([Event] Listeners[]) |
-| Contract | `implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)` |
+| Contract | `implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches); ezpContentLimitationSolrHandler adds solrFilter() for searches that filter by the policies themselves (eZ Find)` |
 | Mechanism | handler |
 | Kernel | `kernel/private/classes/ezpcontentlimitation.php` |
 

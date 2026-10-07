@@ -231,6 +231,36 @@ session of the other user is made. `expContentAccessReport::check()` gives the s
   must accept the sixth argument `$userID = false`. PHP 8 refuses a method with fewer parameters than the one it
   overrides, with a fatal error when the class is loaded.
 
+## Searches
+
+A search engine that filters by the policies of the user itself, such as eZ Find with Solr, does not run the SQL of
+the fetches. A handler that implements `ezpContentLimitationSolrHandler` as well supplies the filter for it:
+
+```php
+class myExtLimitationHandler implements ezpContentLimitationSolrHandler
+{
+    // checkAccess() and permissionSQL() as above
+
+    public function solrFilter( $limitation, array $values, $userID )
+    {
+        // the safer form: the kernel writes "meta_section_id_si:(1 OR 2)" and escapes the values
+        return array( 'field' => eZSolr::getMetaFieldName( 'section_id' ), 'values' => $values );
+    }
+}
+```
+
+The search extension calls `ezpContentLimitation::solrFilter( $limitation, $values, $userID )` for every
+limitation it does not know. It gets the filter in parentheses, to join with AND to the other limitations of the
+policy, or `false`: then the policy gives no access in the search, and the extension leaves it out. `false` comes
+back without a handler, for a handler that does not implement the interface, when it returns false or throws, and
+for an answer that is no filter:
+
+- A string must be self-contained: double quotes closed, parentheses balanced and never closed before they open,
+  no local parameters (`{!`), no NUL byte. Values in it are escaped with `ezpContentLimitation::solrValue()`.
+- An array `array( 'field' => ..., 'values' => ..., 'not' => false )`, or a list of them joined by AND: the field
+  is a name of letters, digits and `_`, the values are scalars and not empty. No values matches nothing (with
+  `'not' => true`: everything).
+
 ## Limits
 
 - `[Event] Listeners[]` are attached to web requests. A command or cronjob part that reads the function list of a
@@ -239,8 +269,9 @@ session of the other user is made. `expContentAccessReport::check()` gives the s
 - The view cache keeps one copy per set of roles and limitations of a user. A handler whose answer depends on data
   that is not in the role (a matrix stored per user) needs view cache keys of its own, or a view cache that is off
   for the classes it guards.
-- Search engines that build their own permission filter (eZ Find) do not ask the handler. Check with the search
-  extension how it treats limitations it does not know.
+- A search engine that builds its own permission filter asks the handler only if the handler implements
+  `ezpContentLimitationSolrHandler` and the search extension calls `ezpContentLimitation::solrFilter()` (see
+  [Searches](#searches)). One that does neither treats the limitation as it treats any it does not know.
 - The `state/assign` policy (`eZContentObject::allowedAssignStateIDList()`) does not ask handlers yet.
 
 ## Settings

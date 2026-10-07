@@ -12,7 +12,8 @@
  * Asks the handler an extension registered for a content policy limitation the kernel does not know
  * (site.ini [RoleSettings] LimitationHandlers[<limitation>]=<class>, see ezpContentLimitationHandler).
  *
- * Without a usable handler the limitation denies, in the PHP checks and in the SQL of fetches alike: a limitation
+ * Without a usable handler the limitation denies, in the PHP checks, in the SQL of fetches and in the filters of
+ * searches (solrFilter(), for handlers that implement ezpContentLimitationSolrHandler) alike: a limitation
  * that nobody evaluates must never widen what a policy allows. "Usable" means the class exists, implements
  * ezpContentLimitationHandler and can be made without arguments; a handler that throws, or answers with something
  * that is not a valid condition, denies as well. Each such case is logged once per request.
@@ -28,6 +29,11 @@ class ezpContentLimitation
      * The SQL condition of a limitation that cannot be evaluated: it matches no row.
      */
     const DENY_SQL = '1 = 0';
+
+    /**
+     * The search filter of a limitation that cannot be evaluated: it matches no document.
+     */
+    const DENY_SOLR = '( *:* -*:* )';
 
     /**
      * The limitations the kernel evaluates itself (besides StateGroup_<identifier>). An extension cannot take one
@@ -332,6 +338,189 @@ class ezpContentLimitation
             }
         }
         return $quote === null && $depth === 0;
+    }
+
+    /**
+     * Returns the search filter of the extension limitation $limitation, in parentheses, for a search engine that
+     * filters by the policies of the user itself (eZ Find), or false when the policy gives no access in searches.
+     *
+     * False comes back when no handler is registered, when the handler does not implement
+     * ezpContentLimitationSolrHandler, when it returns false or throws, and when its answer is no filter the kernel
+     * accepts (see solrCondition()). The search engine must then leave the whole policy out: a limitation that
+     * nobody evaluates must never widen what a policy allows.
+     *
+     * @param string $limitation
+     * @param array $values
+     * @param int|bool $userID The user of the search; false for the current user
+     * @return string|false
+     */
+    public static function solrFilter( $limitation, $values, $userID = false )
+    {
+        $handler = self::handler( $limitation );
+        if ( $handler === null )
+        {
+            return false;
+        }
+        if ( !$handler instanceof ezpContentLimitationSolrHandler )
+        {
+            self::log( 'The handler ' . get_class( $handler ) . " of the limitation $limitation does not implement ezpContentLimitationSolrHandler; the policy gives no access in searches", 'warning' );
+            return false;
+        }
+        if ( $userID === false )
+        {
+            $userID = eZUser::currentUserID();
+        }
+        try
+        {
+            $filter = $handler->solrFilter( $limitation, self::values( $values ), (int)$userID );
+        }
+        catch ( Throwable $e )
+        {
+            self::rethrowExit( $e );
+            self::log( 'The handler ' . get_class( $handler ) . " of the limitation $limitation threw " . get_class( $e ) . ' in solrFilter(): ' . $e->getMessage() . '; the policy gives no access in searches' );
+            return false;
+        }
+        if ( $filter === false )
+        {
+            return false;
+        }
+        $condition = self::solrCondition( $filter );
+        if ( $condition === false )
+        {
+            self::log( 'The handler ' . get_class( $handler ) . " of the limitation $limitation answered solrFilter() with " .
+                       ( is_string( $filter ) ? "'" . substr( $filter, 0, 200 ) . "'" : gettype( $filter ) ) .
+                       ', which is not a filter the kernel accepts; the policy gives no access in searches' );
+            return false;
+        }
+        return $condition;
+    }
+
+    /**
+     * Turns what a handler's solrFilter() returned into a filter in parentheses, or false when it is none.
+     *
+     * - A string: a Solr query. It must be self-contained: quotes closed, parentheses balanced and never closed
+     *   before they open, no local parameters ("{!", which change the parser of the whole filter) and no NUL byte.
+     *   So it cannot end the parentheses it is put in. Values in it are the handler's to escape (solrValue()).
+     * - An array with 'field' and 'values' (and optionally 'not' => true): "field:(v1 OR v2)", the values escaped by
+     *   the kernel. The field is a name of letters, digits and "_". No values matches nothing ("not" with no values:
+     *   everything). A list of such arrays is joined by AND.
+     *
+     * @param mixed $filter
+     * @return string|false
+     */
+    public static function solrCondition( $filter )
+    {
+        if ( is_string( $filter ) )
+        {
+            if ( !self::isSelfContainedSolr( $filter ) )
+            {
+                return false;
+            }
+            $filter = trim( $filter );
+            return $filter !== '' ? '( ' . $filter . ' )' : false;
+        }
+        if ( !is_array( $filter ) || !$filter )
+        {
+            return false;
+        }
+        $list = isset( $filter['field'] ) ? array( $filter ) : $filter;
+        $parts = array();
+        foreach ( $list as $condition )
+        {
+            if ( !is_array( $condition ) || !isset( $condition['field'] ) || !is_string( $condition['field'] ) ||
+                 !preg_match( '/^[A-Za-z_][A-Za-z0-9_]*$/', $condition['field'] ) ||
+                 !isset( $condition['values'] ) || !is_array( $condition['values'] ) )
+            {
+                return false;
+            }
+            $not = !empty( $condition['not'] );
+            $literals = array();
+            foreach ( $condition['values'] as $value )
+            {
+                if ( !is_scalar( $value ) || (string)$value === '' )
+                {
+                    return false;
+                }
+                $literals[] = self::solrValue( (string)$value );
+            }
+            $literals = array_values( array_unique( $literals ) );
+            if ( !$literals )
+            {
+                $parts[] = $not ? '*:*' : self::DENY_SOLR;
+                continue;
+            }
+            $in = $condition['field'] . ':(' . implode( ' OR ', $literals ) . ')';
+            $parts[] = $not ? '( *:* -' . $in . ' )' : $in;
+        }
+        return '( ' . implode( ' AND ', $parts ) . ' )';
+    }
+
+    /**
+     * Escapes $value for a Solr query, so that it stands for itself: every character the standard query parser
+     * gives a meaning (+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ / and whitespace) gets a backslash.
+     *
+     * @param string $value
+     * @return string
+     */
+    public static function solrValue( $value )
+    {
+        return preg_replace( '/([+\-&|!(){}\[\]^"~*?:\\\\\/\s])/u', '\\\\$1', (string)$value );
+    }
+
+    /**
+     * Whether $filter can stand inside parentheses on its own in a Solr query: double quotes closed (a backslash
+     * escapes the next character), parentheses outside quotes balanced and never closed before they open, no local
+     * parameters ("{!") outside quotes, no NUL byte.
+     *
+     * @param string $filter
+     * @return bool
+     */
+    public static function isSelfContainedSolr( $filter )
+    {
+        if ( strpos( $filter, "\0" ) !== false )
+        {
+            return false;
+        }
+        $depth = 0;
+        $quoted = false;
+        $length = strlen( $filter );
+        for ( $i = 0; $i < $length; ++$i )
+        {
+            $char = $filter[$i];
+            if ( $char === '\\' )
+            {
+                ++$i;
+                continue;
+            }
+            if ( $quoted )
+            {
+                if ( $char === '"' )
+                {
+                    $quoted = false;
+                }
+                continue;
+            }
+            if ( $char === '"' )
+            {
+                $quoted = true;
+            }
+            else if ( $char === '(' )
+            {
+                ++$depth;
+            }
+            else if ( $char === ')' )
+            {
+                if ( --$depth < 0 )
+                {
+                    return false;
+                }
+            }
+            else if ( $char === '{' && $i + 1 < $length && $filter[$i + 1] === '!' )
+            {
+                return false;
+            }
+        }
+        return !$quoted && $depth === 0 && $i === $length;
     }
 
     /**
