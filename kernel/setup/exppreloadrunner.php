@@ -84,6 +84,7 @@ class expPreloadRunner
     private $siteaccessNames = null;
     private $storeCallback = null;
     private $address = null;
+    private $sitePath = null;
 
     /** image url => array( page url => true ), the pages that show it, capped like the referrers. */
     private $images = array();
@@ -335,28 +336,80 @@ class expPreloadRunner
     }
 
     /**
+     * The path the site lives under on its host: the path of the base url (SiteURL may end in the siteaccess
+     * prefix, latest.demo.exponential.earth/site, or name the folder of the installation) plus the prefix that
+     * selects the siteaccess, which is not added twice. '' for a site at the root of a host.
+     *
+     * @return string
+     */
+    public function sitePath()
+    {
+        if ( $this->sitePath !== null )
+            return $this->sitePath;
+        $base = $this->baseUrl();
+        $basePart = $base === false ? '' : rtrim( (string)parse_url( $base, PHP_URL_PATH ), '/' );
+        $prefix = rtrim( $this->basePath(), '/' );
+        if ( $prefix !== '' && substr( $basePart, -strlen( $prefix ) ) === $prefix )
+            $prefix = '';
+        return $this->sitePath = $basePart . $prefix;
+    }
+
+    /**
+     * Takes the queued addresses that are one level below the site (sitePath()/fitness) out of the queue, in the
+     * order they were found: the sections of the site, for phase 1.
+     *
+     * @return array of hash url, depth
+     */
+    private function takeTopLevel()
+    {
+        $sitePath = $this->sitePath();
+        $top = array();
+        $rest = array();
+        foreach ( $this->queue as $item )
+        {
+            $path = (string)parse_url( $item['url'], PHP_URL_PATH );
+            $below = $sitePath === '' ? $path : ( strpos( $path, $sitePath . '/' ) === 0 ? substr( $path, strlen( $sitePath ) ) : '' );
+            if ( preg_match( '#^/[^/]+$#', $below ) && parse_url( $item['url'], PHP_URL_QUERY ) === null )
+                $top[] = $item;
+            else
+                $rest[] = $item;
+        }
+        $this->queue = $rest;
+        return $top;
+    }
+
+    /**
      * Whether a path belongs to the site being warmed.
      *
      * One host can serve several siteaccesses, so same-host is not the same as
      * same-site: without this, warming Bold Agency followed every link into
      * Fit & Healthy and back, and the static cache generator stored the other
      * site's pages under this one's name.
+     *
+     * The site is everything below sitePath(). The prefix used to be taken alone: a SiteURL that already ends in
+     * it (/site, uri matching) left no prefix, the site was taken for one matched by its host, and every /site/...
+     * link was dropped as another siteaccess's, so only the front page was warmed.
      */
     private function belongsToSite( $path )
     {
-        $basePath = $this->basePath();
+        $sitePath = $this->sitePath();
+        $names = $this->siteaccessNames();
 
-        if ( $basePath !== '' )
-            return $path === $basePath || strpos( $path, $basePath . '/' ) === 0;
+        if ( $sitePath !== '' )
+        {
+            if ( $path !== $sitePath && strpos( $path, $sitePath . '/' ) !== 0 )
+                return false;
+            // Selected by a path segment (/site, /bold): everything below it is this site's.
+            if ( $this->basePath() !== '' || isset( $names[basename( $sitePath )] ) )
+                return true;
+            // An installation in a folder, its siteaccess matched by host: as at the root of a host, below it.
+            $path = (string)substr( $path, strlen( $sitePath ) );
+        }
 
         // Matched by host, so this site is everything on it that does not begin
         // with the name of another siteaccess.
-        if ( preg_match( '#^/([^/]+)(/|$)#', $path, $m ) )
-        {
-            $names = $this->siteaccessNames();
-            if ( isset( $names[$m[1]] ) )
-                return false;
-        }
+        if ( preg_match( '#^/([^/]+)(/|$)#', $path, $m ) && isset( $names[$m[1]] ) )
+            return false;
 
         return true;
     }
@@ -488,6 +541,22 @@ class expPreloadRunner
 
         foreach ( $start as $url )
             $this->visit( $url, $base, 0, true );
+
+        // The sections: the top level pages the starting pages link to (/site/fitness under uri matching,
+        // /fitness under host matching), warmed with them before the rest of the site.
+        $sections = $this->takeTopLevel();
+        if ( $sections )
+            $this->say( 'info', sprintf( '%d section pages linked from the starting pages.', count( $sections ) ) );
+        $left = array();
+        foreach ( $sections as $next )
+        {
+            // what the page limit leaves goes back to the crawl, which says the limit was reached
+            if ( $this->counts['fetched'] >= $this->options['max_pages'] )
+                $left[] = $next;
+            else
+                $this->visit( $next['url'], $base, $next['depth'], true );
+        }
+        $this->queue = array_merge( $left, $this->queue );
 
         $this->say( 'phase', sprintf( 'Phase 2 of %d - crawling the rest of the site', $phases ) );
 
