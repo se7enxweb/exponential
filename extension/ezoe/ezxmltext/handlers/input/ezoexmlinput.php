@@ -193,7 +193,8 @@ class eZOEXMLInput extends eZXMLInputHandler
         if ( self::$browserType === null )
         {
             self::$browserType = false;
-            $userAgent = eZSys::serverVariable( 'HTTP_USER_AGENT' );
+            // none on the command line
+            $userAgent = (string)eZSys::serverVariable( 'HTTP_USER_AGENT', true );
             // Opera 9.6+
             if ( strpos( $userAgent, 'Presto' ) !== false &&
                  preg_match('/Presto\/([0-9\.]+)/i', $userAgent, $browserInfo ) )
@@ -1032,12 +1033,12 @@ class eZOEXMLInput extends eZXMLInputHandler
 
                     if ( $headerClassName )
                     {
-                        $customAttributePart .= ' class="' . $headerClassName . '"';
+                        $customAttributePart .= ' class="' . self::markupValue( $headerClassName ) . '"';
                     }
 
                     if ( $headerAlign )
                     {
-                        $customAttributePart .= ' align="' . $headerAlign . '"';
+                        $customAttributePart .= ' align="' . self::markupValue( $headerAlign ) . '"';
                     }
 
                     $tagContent = '';
@@ -1069,8 +1070,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                     $archorName = $sectionNode->getAttribute( 'anchor_name' );
                     if ( $archorName != null )
                     {
-                        $output .= "<h$level$customAttributePart$styleString><a name=\"$archorName\"" .
-                                   ' class="mceItemAnchor"></a>' . $sectionNode->textContent. "</h$level>";
+                        $output .= "<h$level$customAttributePart$styleString><a name=\"" . self::markupValue( $archorName ) . '"' .
+                                   ' class="mceItemAnchor"></a>' . self::markupValue( $sectionNode->textContent ) . "</h$level>";
                     }
                     else
                     {
@@ -1215,12 +1216,12 @@ class eZOEXMLInput extends eZXMLInputHandler
 
         if ( $paragraphAlign )
         {
-            $customAttributePart .= ' align="' . $paragraphAlign . '"';
+            $customAttributePart .= ' align="' . self::markupValue( $paragraphAlign ) . '"';
         }
 
         if ( $paragraphClassName )
         {
-            $customAttributePart .= ' class="' . $paragraphClassName . '"';
+            $customAttributePart .= ' class="' . self::markupValue( $paragraphClassName ) . '"';
         }
 
         $openPara = "<p$customAttributePart$styleString>";
@@ -1353,12 +1354,12 @@ class eZOEXMLInput extends eZXMLInputHandler
                 }
 
                 $objectAttr = '';
-                $objectAttr .= ' alt="' . $size . '"';
-                $objectAttr .= ' view="' . $view . '"';
+                $objectAttr .= ' alt="' . self::markupValue( $size ) . '"';
+                $objectAttr .= ' view="' . self::markupValue( $view ) . '"';
 
                 if ( $htmlID != '' )
                 {
-                    $objectAttr .= ' html_id="' . $htmlID . '"';
+                    $objectAttr .= ' html_id="' . self::markupValue( $htmlID ) . '"';
                 }
                 if ( $showPath === 'true' )
                 {
@@ -1465,13 +1466,13 @@ class eZOEXMLInput extends eZXMLInputHandler
                         $className .= ' ezoeAlignmiddle'; // align="middle" is not taken into account by browsers on img
                     }
                     else if ( $alignment )
-                        $objectAttr .= ' align="' . $alignment . '"';
+                        $objectAttr .= ' align="' . self::markupValue( $alignment ) . '"';
 
                     if ( $className != '' )
-                        $objectAttr .= ' class="' . $className . '"';
+                        $objectAttr .= ' class="' . self::markupValue( $className ) . '"';
 
-                    $output .= '<img id="' . $idString . '" title="' . $objectName . '" src="' .
-                               htmlspecialchars( $srcString, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '" width="' . $imageWidth . '" height="' . $imageHeight .
+                    $output .= '<img id="' . $idString . '" title="' . self::markupValue( $objectName ) . '" src="' .
+                               htmlspecialchars( $srcString, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '" width="' . self::markupValue( $imageWidth ) . '" height="' . self::markupValue( $imageHeight ) .
                                '" ' . $objectAttr . $customAttributePart . $styleString . ' />';
                 }
                 else if ( self::embedTagIsCompatibilityMode() )
@@ -1480,22 +1481,22 @@ class eZOEXMLInput extends eZXMLInputHandler
                     if ( $alignment === 'center' )
                         $objectAttr .= ' align="middle"';
                     else if ( $alignment )
-                        $objectAttr .= ' align="' . $alignment . '"';
+                        $objectAttr .= ' align="' . self::markupValue( $alignment ) . '"';
 
                     if ( $className != '' )
-                        $objectAttr .= ' class="' . $className . '"';
+                        $objectAttr .= ' class="' . self::markupValue( $className ) . '"';
 
-                    $output .= '<img id="' . $idString . '" title="' . $objectName . '" src="' .
+                    $output .= '<img id="' . $idString . '" title="' . self::markupValue( $objectName ) . '" src="' .
                                $srcString . '" width="32" height="32" ' . $objectAttr .
                                $customAttributePart . $styleString . ' />';
                 }
                 else
                 {
                     if ( $alignment )
-                        $objectAttr .= ' align="' . $alignment . '"';
+                        $objectAttr .= ' align="' . self::markupValue( $alignment ) . '"';
 
                     if ( $className )
-                        $objectAttr .= ' class="ezoeItemNonEditable ' . $className . ' ezoeItemContentType' .
+                        $objectAttr .= ' class="ezoeItemNonEditable ' . self::markupValue( $className ) . ' ezoeItemContentType' .
                                        ucfirst( $embedContentType ) . '"';
                     else
                         $objectAttr .= ' class="ezoeItemNonEditable ezoeItemContentType' .
@@ -1534,7 +1535,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                         ));
                     }
 
-                    $output .= '<' . $htmlTagName . ' id="' . $idString . '" title="' . $objectName . '"' .
+                    $output .= '<' . $htmlTagName . ' id="' . $idString . '" title="' . self::markupValue( $objectName ) . '"' .
                                $objectAttr . $customAttributePart . $styleString . '>' . $templateOutput .
                                '</' . $htmlTagName . '>';
                 }
@@ -1546,9 +1547,10 @@ class eZOEXMLInput extends eZXMLInputHandler
                 $align = $tag->getAttribute( 'align' );
                 $customAttributePart = self::getCustomAttrPart( $tag, $styleString );
                 $inline = self::customTagIsInline( $name );
+                $htmlName = self::markupValue( $name );
                 if ( $align )
                 {
-                    $customAttributePart .= ' align="' . $align . '"';
+                    $customAttributePart .= ' align="' . self::markupValue( $align ) . '"';
                 }
 
                 if ( isset( self::$nativeCustomTags[ $name ] ))
@@ -1561,7 +1563,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                 {
                     if ( !$childTagText ) $childTagText = '&nbsp;';
                     $tagName = $name === 'underline' ? 'u' : 'span';
-                    $output .= '<' . $tagName . ' class="ezoeItemCustomTag ' . $name . '" type="custom"' .
+                    $output .= '<' . $tagName . ' class="ezoeItemCustomTag ' . $htmlName . '" type="custom"' .
                                $customAttributePart . $styleString . '>' . $childTagText . '</' . $tagName . '>';
                 }
                 else if ( $inline )
@@ -1569,18 +1571,23 @@ class eZOEXMLInput extends eZXMLInputHandler
                     $imageUrl = self::getCustomAttribute( $tag, 'image_url' );
                     if ( $imageUrl === null || !$imageUrl )
                     {
+                        // escaped by getDesignFile()
                         $imageUrl = self::getDesignFile( $inline );
                         $customAttributePart .= ' width="22" height="22"';
                     }
-                    $output .= '<img src="' . $imageUrl . '" class="ezoeItemCustomTag ' . $name .
+                    else
+                    {
+                        $imageUrl = self::markupValue( $imageUrl );
+                    }
+                    $output .= '<img src="' . $imageUrl . '" class="ezoeItemCustomTag ' . $htmlName .
                                '" type="custom"' . $customAttributePart . $styleString . ' />';
                 }
                 else if ( $tag->textContent === '' && !$tag->hasChildNodes() )
                 {
                     // for empty custom tag, just put a paragraph with the name
                     // of the custom tag in to handle it in the rich text editor
-                    $output .= '<div class="ezoeItemCustomTag ' . $name . '" type="custom"' .
-                                    $customAttributePart . $styleString . '><p>' . $name . '</p></div>';
+                    $output .= '<div class="ezoeItemCustomTag ' . $htmlName . '" type="custom"' .
+                                    $customAttributePart . $styleString . '><p>' . $htmlName . '</p></div>';
                 }
                 else
                 {
@@ -1591,7 +1598,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                                                                 $currentSectionLevel,
                                                                 $tdSectionLevel );
                     }*/
-                    $output .= '<div class="ezoeItemCustomTag ' . $name . '" type="custom"' .
+                    $output .= '<div class="ezoeItemCustomTag ' . $htmlName . '" type="custom"' .
                                $customAttributePart . $styleString . '>' . $customTagContent . '</div>';
                 }
             }break;
@@ -1611,7 +1618,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                 $literalText = str_replace( "\n", '<br>', $literalText );
 
                 if ( $className != '' )
-                    $customAttributePart .= ' class="' . $className . '"';
+                    $customAttributePart .= ' class="' . self::markupValue( $className ) . '"';
 
                 $output .= '<pre' . $customAttributePart . $styleString . '>' . $literalText . '</pre>';
 
@@ -1659,14 +1666,14 @@ class eZOEXMLInput extends eZXMLInputHandler
                     $LIclassName = $listItemNode->getAttribute( 'class' );
 
                     if ( $LIclassName )
-                        $LIcustomAttributePart .= ' class="' . $LIclassName . '"';
+                        $LIcustomAttributePart .= ' class="' . self::markupValue( $LIclassName ) . '"';
 
                     $listContent .= '<li' . $LIcustomAttributePart . $listItemStyleString . '>' .
                                     $listItemContent . '</li>';
                 }
                 $className = $tag->getAttribute( 'class' );
                 if ( $className != '' )
-                    $customAttributePart .= ' class="' . $className . '"';
+                    $customAttributePart .= ' class="' . self::markupValue( $className ) . '"';
 
                 $output .= '<' . $tagName . $customAttributePart . $styleString . '>' . $listContent . '</' .
                            $tagName . '>';
@@ -1713,23 +1720,23 @@ class eZOEXMLInput extends eZXMLInputHandler
                                                                  'width' );
                         if ( $className != '' )
                         {
-                            $TDcustomAttributePart .= ' class="' . $className . '"';
+                            $TDcustomAttributePart .= ' class="' . self::markupValue( $className ) . '"';
                         }
                         if ( $cellWidth != '' )
                         {
-                            $TDcustomAttributePart .= ' width="' . $cellWidth . '"';
+                            $TDcustomAttributePart .= ' width="' . self::markupValue( $cellWidth ) . '"';
                         }
                         if ( $colspan && $colspan !== '1' )
                         {
-                            $TDcustomAttributePart .= ' colspan="' . $colspan . '"';
+                            $TDcustomAttributePart .= ' colspan="' . self::markupValue( $colspan ) . '"';
                         }
                         if ( $rowspan && $rowspan !== '1' )
                         {
-                            $TDcustomAttributePart .= ' rowspan="' . $rowspan . '"';
+                            $TDcustomAttributePart .= ' rowspan="' . self::markupValue( $rowspan ) . '"';
                         }
                         if ( $cellAlign )
                         {
-                        	$TDcustomAttributePart .= ' align="' . $cellAlign . '"';
+                        	$TDcustomAttributePart .= ' align="' . self::markupValue( $cellAlign ) . '"';
                         }
                         $cellContent = '';
                         $tdSectionLevel = $currentSectionLevel;
@@ -1757,14 +1764,14 @@ class eZOEXMLInput extends eZXMLInputHandler
                         }
                     }
                     if ( $TRclassName )
-                        $TRcustomAttributePart .= ' class="' . $TRclassName . '"';
+                        $TRcustomAttributePart .= ' class="' . self::markupValue( $TRclassName ) . '"';
 
                     $tableRows .= '<tr' . $TRcustomAttributePart . $tableRowStyleString . '>' .
                                   $tableData . '</tr>';
                 }
                 //if ( self::browserSupportsDHTMLType() === 'Trident' )
                 //{
-                    $customAttributePart .= ' width="' . $width . '"';
+                    $customAttributePart .= ' width="' . self::markupValue( $width ) . '"';
                 /*}
                 else
                 {
@@ -1777,17 +1784,17 @@ class eZOEXMLInput extends eZXMLInputHandler
                     if ( $border === '0%' )
                         $border = '0';// Strip % if 0 to make sure TinyMCE shows a dotted border
 
-                    $customAttributePart .= ' border="' . $border . '"';
+                    $customAttributePart .= ' border="' . self::markupValue( $border ) . '"';
                 }
 
                 if ( $align )
                 {
-                    $customAttributePart .= ' align="' . $align . '"';
+                    $customAttributePart .= ' align="' . self::markupValue( $align ) . '"';
                 }
 
                 if ( $tableClassName )
                 {
-                    $customAttributePart .= ' class="' . $tableClassName . '"';
+                    $customAttributePart .= ' class="' . self::markupValue( $tableClassName ) . '"';
                 }
 
                 $output .= '<table' . $customAttributePart . $styleString . '><tbody>' . $tableRows .
@@ -1802,7 +1809,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                 $className = $tag->getAttribute( 'class' );
                 if ( $className )
                 {
-                    $customAttributePart .= ' class="' . $className . '"';
+                    $customAttributePart .= ' class="' . self::markupValue( $className ) . '"';
                 }
                 $output .= '<em' . $customAttributePart . $styleString . '>' . $childTagText  . '</em>';
             }break;
@@ -1814,7 +1821,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                 $className = $tag->getAttribute( 'class' );
                 if ( $className  )
                 {
-                    $customAttributePart .= ' class="' . $className . '"';
+                    $customAttributePart .= ' class="' . self::markupValue( $className ) . '"';
                 }
                 $output .= '<strong' . $customAttributePart . $styleString . '>' . $childTagText  . '</strong>';
             }break;
@@ -1830,7 +1837,7 @@ class eZOEXMLInput extends eZXMLInputHandler
 
                 $customAttributePart = self::getCustomAttrPart( $tag, $styleString );
 
-                $output .= '<a name="' . $name . '" class="mceItemAnchor"' . $customAttributePart .
+                $output .= '<a name="' . self::markupValue( $name ) . '" class="mceItemAnchor"' . $customAttributePart .
                            $styleString . '></a>';
             }break;
 
@@ -1884,28 +1891,28 @@ class eZOEXMLInput extends eZXMLInputHandler
 
                 if ( $className != '' )
                 {
-                    $attributes[] = 'class="' . $className . '"';
+                    $attributes[] = 'class="' . self::markupValue( $className ) . '"';
                 }
 
                 if ( $viewName != '' )
                 {
-                    $attributes[] = 'view="' . $viewName . '"';
+                    $attributes[] = 'view="' . self::markupValue( $viewName ) . '"';
                 }
 
-                $attributes[] = 'href="' . $href . '"';
+                $attributes[] = 'href="' . self::markupValue( $href ) . '"';
                 // Also set mce_href for use by OE to make sure href attribute is not messed up by IE 6 / 7
-                $attributes[] = 'data-mce-href="' . $href . '"';
+                $attributes[] = 'data-mce-href="' . self::markupValue( $href ) . '"';
                 if ( $target != '' )
                 {
-                    $attributes[] = 'target="' . $target . '"';
+                    $attributes[] = 'target="' . self::markupValue( $target ) . '"';
                 }
                 if ( $htmlTitle != '' )
                 {
-                    $attributes[] = 'title="' . $htmlTitle . '"';
+                    $attributes[] = 'title="' . self::markupValue( $htmlTitle ) . '"';
                 }
                 if ( $htmlID != '' )
                 {
-                   $attributes[] = 'id="' . $htmlID . '"';
+                   $attributes[] = 'id="' . self::markupValue( $htmlID ) . '"';
                 }
 
                 $attributeText = '';
@@ -1931,6 +1938,22 @@ class eZOEXMLInput extends eZXMLInputHandler
         return $output;
     }
 
+    /**
+     * A stored value as it goes into the markup of the editor, as an attribute value or as text.
+     *
+     * The values come from the DOM of the stored XML, which has already decoded them ("&amp;" in the XML is "&"
+     * here), so they are escaped exactly once, here, and a value such as 'a" onmouseover="x' stays one attribute
+     * value. Values that are escaped already (getDesignFile(), the custom attributes of getCustomAttrPart(), the
+     * text of #text) do not come through here.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public static function markupValue( $value )
+    {
+        return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8' );
+    }
+
     /*
      * Generates custom attribute value, and also sets tag styles to styleString variable (by ref)
      */
@@ -1944,8 +1967,9 @@ class eZOEXMLInput extends eZXMLInputHandler
             // Filtered styles because the browser (ie,ff&opera) convert span tag to
             // font tag in certain circumstances
             $oeini = eZINI::instance( 'ezoe.ini' );
-            $styles = $oeini->variable('EditorSettings', 'CustomAttributeStyleMap' );
-            $customAttributeStyleMap = array();
+            $styles = $oeini->hasVariable( 'EditorSettings', 'CustomAttributeStyleMap' ) ?
+                      (array)$oeini->variable( 'EditorSettings', 'CustomAttributeStyleMap' ) : array();
+            self::$customAttributeStyleMap = array();
             foreach( $styles as $name => $style )
             {
                 if ( preg_match("/(margin|border|padding|width|height)/", $style ) )
@@ -1989,7 +2013,7 @@ class eZOEXMLInput extends eZXMLInputHandler
         }
         if ( $styleString !== '' )
         {
-            $styleString = ' style="' . $styleString . '"';
+            $styleString = ' style="' . self::markupValue( $styleString ) . '"';
         }
         return $customAttributePart;
     }

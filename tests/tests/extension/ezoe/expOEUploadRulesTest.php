@@ -110,8 +110,12 @@ class expOEUploadRulesTest extends expOETestCase
     {
         $source = file_get_contents( dirname( __DIR__, 4 ) . '/extension/ezoe/classes/runnable/views/ezoe/upload.php' );
         $this->assertStringContainsString( "hasAccessTo( 'ezoe', 'relations' )", $source );
-        // The edit right, through eZContentObject::editAccess() (canEdit() and the filter content/edit/access)
-        $this->assertStringContainsString( '->editAccess(', $source );
+        // The edit right, through eZContentObject::editAccess() (canEdit() and the filter content/edit/access): the
+        // dialog through Dialog::mayOpenForEditing(), the upload through Upload::mayUpload() (Dialog::mayEditVersion())
+        $this->assertStringContainsString( 'Dialog::mayOpenForEditing( $object, $objectVersion )', $source );
+        $this->assertStringContainsString( 'self::mayUpload( $object, $objectVersion )', $source );
+        $dialog = file_get_contents( dirname( __DIR__, 4 ) . '/extension/ezoe/classes/runnable/views/ezoe/dialog.php' );
+        $this->assertStringContainsString( '->editAccess(', $dialog );
     }
 
     public function testAnonymousHasNoAccessToTheEditorViews()

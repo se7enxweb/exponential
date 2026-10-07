@@ -31,9 +31,10 @@ class Tags extends \Exponential\Runnable\ModuleView
         }
 
         $object = \eZContentObject::fetch( $objectID );
-        // The version being edited goes along, so an extension can let further editors of the draft in
-        // (filter content/edit/access)
-        if ( !$object instanceof \eZContentObject || !$object->editAccess( $object->version( $objectVersion ) ) )
+        // The rule of the dialogs and edit access to the object (Dialog::mayOpenForEditing()): the version number of
+        // someone else's draft or of a published version opens nothing for who may not read the object. The version
+        // being edited goes along, so an extension can let further editors of the draft in (filter content/edit/access)
+        if ( !Dialog::mayOpenForEditing( $object, $objectVersion ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'ObjectId', '%value' => $objectID ) );
            \eZExecution::cleanExit();

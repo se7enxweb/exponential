@@ -37,6 +37,28 @@ class Dialog extends \Exponential\Runnable\ModuleView
     }
 
     /**
+     * Whether a view of the editor that only shows something and that used to need edit access to the object
+     * (ezoe/tags, the upload dialog of ezoe/upload) opens: the rule of the dialogs (mayOpen()) and edit access to the
+     * object, so nobody who could not open it before opens it now. Who may edit the object but not read it opens it
+     * only for a draft of their own (mayEditVersion()), not for any version number the address names.
+     *
+     * Writing into the version (an upload, a relation) needs mayEditVersion() on top.
+     *
+     * @param \eZContentObject|null $object
+     * @param int $versionNumber The version being edited
+     * @return bool
+     */
+    public static function mayOpenForEditing( $object, $versionNumber )
+    {
+        if ( !self::mayOpen( $object, $versionNumber ) )
+        {
+            return false;
+        }
+        $version = $object->version( (int)$versionNumber );
+        return (bool)$object->editAccess( $version instanceof \eZContentObjectVersion ? $version : null );
+    }
+
+    /**
      * Whether the current user may edit version $versionNumber of $object in the editor, decided as content/edit
      * decides it: the version exists, is a draft (a draft, an internal draft or one to be repeated), was made by the
      * current user, the object is not in the trash, and eZContentObject::editAccess() allows it for the version in its
