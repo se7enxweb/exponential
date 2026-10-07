@@ -342,7 +342,7 @@ class expPreloadJob
         };
 
         // A fatal error ends the process without a catch: the run is still recorded as failed, with the error.
-        register_shutdown_function( function () use ( &$finished, $write, $history, $id, $lock, &$handle )
+        register_shutdown_function( function () use ( &$finished, $write, $history, $id, $lock )
         {
             if ( $finished )
                 return;

@@ -47,9 +47,9 @@ class Action extends \Exponential\Runnable\ModuleView
             $handler = $collaborationItem->handler();
             if ( !$handler instanceof \eZCollaborationItemHandler )
             {
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                return $this->viewResult( $scope['Result'] ?? null, $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
             }
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $handler->handleCustomAction( $Module, $collaborationItem ) );
+            return $this->viewResult( $scope['Result'] ?? null, $handler->handleCustomAction( $Module, $collaborationItem ) );
         }
 
         $Result = array();
