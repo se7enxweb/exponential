@@ -1032,9 +1032,10 @@ class eZURLAliasML extends eZPersistentObject
             }
             $createdPath[] = $newText;
 
-            // OMS-urlalias-fix: MongoDB-only — mark old entries as history and reparent children.
-            // For SQL databases (mysql, postgresql, sqlite) this is handled by the existing
-            // SQL-based cleanup that follows; skip the mongo-specific aggregate/mongoUpdateMany calls.
+            // OMS-urlalias-fix: mark the old entries of this action and language as history
+            // entries and reparent their children. MongoDB uses its own calls (the MongoDB
+            // branch at the top of this method returns before reaching this point); every SQL
+            // driver (MySQL, PostgreSQL, SQLite, Oracle) runs the SQL step in the else branch.
             if ( $db->databaseName() === 'mongo' )
             {
             // Entries with same action, same language bit, is_original=1, is_alias=0, different position
@@ -1123,6 +1124,110 @@ class eZURLAliasML extends eZPersistentObject
                 );
             }
             } // end if mongo
+            else
+            {
+            // OMS-urlalias-fix: We want to retain the lang_mask of url entries, but mark others as history elements is_original = 0
+            // Furthermore this change is not performed on custom alias entries.
+            $bitAnd = $db->bitAnd( 'lang_mask', $languageID );
+
+            // First we look at the entries to mark as history entries, if an entry comprise more languages, it must not be set as history element.
+            $query = "SELECT * FROM ezurlalias_ml " .
+                     "WHERE action = '{$actionStr}' AND ({$bitAnd} > 0) AND is_original = 1 AND is_alias = 0 AND (parent != $parentID OR text_md5 != {$textMD5})";
+            $toBeUpdated = $db->arrayQuery( $query );
+
+            // 0. Check if the entry to be updated represents multiple languages:
+            // IF YES:
+            //  1. "Downgrade" existing entry, by removing the active translation's language id from the language_mask.
+            // IF NO:
+            //  1. Mark entry as a history entry
+
+            if ( count( $toBeUpdated ) > 0 )
+            {
+                $languageMask = $toBeUpdated[0]['lang_mask'];
+                if ( ( $languageMask & ~( $languageID | 1 ) ) != 0 )
+                {
+                    // "Composite entry", downgrade current entry
+                    $currentEntry = new eZURLAliasML( $toBeUpdated[0] );
+                    $currentEntry->LangMask = (int)$currentEntry->LangMask & ~$languageID;
+                    $currentEntry->store();
+                }
+                else
+                {
+                    // Mark as history element.
+                    $query = "UPDATE ezurlalias_ml SET is_original = 0 " .
+                             "WHERE action = '{$actionStr}' AND ({$bitAnd} > 0) AND is_original = 1 AND is_alias = 0 AND (parent != $parentID OR text_md5 != {$textMD5})";
+                    $res = $db->query( $query );
+                    if ( !$res ) return eZURLAliasML::dbError( $db );
+                }
+            }
+
+            // OMS-urlalias-fix: instead entries without language we look at history elements with same action (and language)
+            // Look for other nodes with the same action and language
+            // if found make then link to the new entry
+            $bitAnd = $db->bitAnd( 'lang_mask', $languageID );
+            $query = "SELECT * FROM ezurlalias_ml " .
+                     "WHERE action = '{$actionStr}' AND ({$bitAnd} > 0) AND is_original = 0 AND (parent != $parentID OR text_md5 != {$textMD5})";
+            $rows = $db->arrayQuery( $query );
+            foreach ( $rows as $row )
+            {
+                $idtmp = (int)$row['id'];
+                if ( $idtmp == $newElementID )
+                {
+                    $idtmp = self::getNewID();
+                }
+                $parentIDTmp = (int)$row['parent'];
+                $textMD5Tmp = eZURLAliasML::md5( $db, $row['text'] );
+
+                // OMS-urlalias-fix: We do not touch the lang_mask here
+                $res = $db->query( "UPDATE ezurlalias_ml SET id = {$idtmp}, link = {$newElementID}, is_alias = 0, is_original = 0 " .
+                                   "WHERE parent = {$parentIDTmp} AND text_md5 = {$textMD5Tmp}" );
+                if ( !$res ) return eZURLAliasML::dbError( $db );
+            }
+
+            // Look for other nodes which is a link for the current action
+            // if found make then link to the new entry
+            // OMS-urlalias-fix: We only want to update the links of entries within the same language.
+            // Also, only to be applied on normal entries, not custom aliases
+            $bitAnd = $db->bitAnd( 'lang_mask', $languageID );
+            $query = "UPDATE ezurlalias_ml SET link = {$newElementID}, is_alias = 0, is_original = 0 " .
+                     "WHERE action = '{$actionStr}' AND is_original = 0 AND is_alias = 0 AND ({$bitAnd} > 0) AND (parent != $parentID OR text_md5 != {$textMD5})";
+            $res = $db->query( $query );
+            if ( !$res ) return eZURLAliasML::dbError( $db );
+
+
+            // Move children from old node to the new node
+            // Conflicts:
+            // New       |       Old |  Action
+            // -------------------------------
+            // Element   | Link      | Delete old
+            // Element   | Element   | Will not happen, if so delete old
+            // Element   | Other     | Reparent with new name
+            // Element   | nop       | Delete old
+            // Link      | Link      | Delete old
+            // Link      | Element   | Delete new, reparent
+            // Link      | Other     | Delete new, reparent
+            // Link      | nop       | Delete old
+            // nop       | Link      | Delete new, reparent
+            // nop       | Element   | Delete new, reparent
+            // nop       | nop       | Delete old
+
+            // TODO: Handle all conflict cases, for now only the `Delete old, reparent` action is done
+
+            // OMS-urlalias-fix: We are only updating child nodes within the same language,
+            // and only for real system-generated url aliases. Custom aliases are left alone.
+            $bitAnd = $db->bitAnd( 'lang_mask', $languageID );
+            $query = "SELECT id FROM ezurlalias_ml " .
+                     "WHERE action = '{$actionStr}' AND is_alias = 0 AND (parent != $parentID OR text_md5 != {$textMD5})";
+            $rows = $db->arrayQuery( $query );
+            foreach ( $rows as $row )
+            {
+                $oldParentID = (int)$row['id'];
+                $query = "UPDATE ezurlalias_ml SET parent = {$newElementID} " .
+                         "WHERE parent = {$oldParentID} AND ({$bitAnd} > 0)";
+                $res = $db->query( $query );
+                if ( !$res ) return eZURLAliasML::dbError( $db );
+            }
+            } // end else (SQL)
         }
         else
         {
