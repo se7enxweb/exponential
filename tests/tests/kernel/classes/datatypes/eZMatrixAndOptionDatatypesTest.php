@@ -156,6 +156,62 @@ class eZMatrixAndOptionDatatypesTest extends eZDatatypeTestCase
         $this->assertSame( array( 'b1', '' ), $matrix->attribute( 'cells' ) );
     }
 
+    public function testMatrixCopyKeepsTheCellsOfColumnsRenamedInPlace()
+    {
+        $type = $this->dataType( 'ezmatrix' );
+        // a published version as a package installed it; every case copies a
+        // fresh one, as the copy adjusts the original's matrix in place
+        $published = function () use ( $type ) {
+            $original = $this->newMatrix( $this->matrixClass( array( 'Specification', 'Value' ), 2 ) );
+            $type->fetchObjectAttributeHTTPInput( $this->post( array( 'ContentObjectAttribute_ezmatrix_cell_4711' => array( 'Material', 'Recycled polyester', 'Weight', '480 g' ) ) ), 'ContentObjectAttribute', $original );
+            return $original;
+        };
+
+        // the class has other identifiers at the same positions (the placeholder
+        // columns a class installed without its column definition was left with)
+        $copy = $this->objectAttribute( 'ezmatrix', $this->matrixClass( array( 'Col_0', 'Col_1' ), 0 ) );
+        $type->initializeObjectAttribute( $copy, 2, $published() );
+        $matrix = $copy->content();
+        $this->assertSame( array( 'col_0', 'col_1' ), array_column( $matrix->attribute( 'columns' )['sequential'], 'identifier' ) );
+        $this->assertSame( array( 'Col_0', 'Col_1' ), array_column( $matrix->attribute( 'columns' )['sequential'], 'name' ) );
+        $this->assertSame( array( 'Material', 'Recycled polyester', 'Weight', '480 g' ), $matrix->attribute( 'cells' ) );
+        $this->assertStringContainsString( '<c>480 g</c>', $copy->attribute( 'data_text' ) );
+
+        // one column renamed in place, one kept, one added at the end
+        $copy = $this->objectAttribute( 'ezmatrix', $this->matrixClass( array( 'Property', 'Value', 'Unit' ), 0 ) );
+        $type->initializeObjectAttribute( $copy, 2, $published() );
+        $matrix = $copy->content();
+        $this->assertSame( array( 'property', 'value', 'unit' ), array_column( $matrix->attribute( 'columns' )['sequential'], 'identifier' ) );
+        $this->assertSame( array( 'Material', 'Recycled polyester', '', 'Weight', '480 g', '' ), $matrix->attribute( 'cells' ) );
+
+        // the same columns in another order still follow their identifiers
+        $copy = $this->objectAttribute( 'ezmatrix', $this->matrixClass( array( 'Value', 'Specification' ), 0 ) );
+        $type->initializeObjectAttribute( $copy, 2, $published() );
+        $this->assertSame( array( 'Recycled polyester', 'Material', '480 g', 'Weight' ), $copy->content()->attribute( 'cells' ) );
+    }
+
+    public function testMatrixClassFromAPackageWritesItsColumnsToTheStoredDefinition()
+    {
+        $type = $this->dataType( 'ezmatrix' );
+        $dom = new DOMDocument();
+        $dom->loadXML( '<attribute><datatype-parameters><default-name/><default-row-count>0</default-row-count><columns>'
+                     . '<column name="Specification" identifier="specification" index="0"/><column name="Value" identifier="value" index="1"/>'
+                     . '</columns></datatype-parameters></attribute>' );
+        // as the package installer has it: a new attribute stored once (with the
+        // placeholder columns of an empty definition), then only sync()ed
+        $classAttribute = $this->classAttribute( 'ezmatrix', array( 'data_int1' => 0, 'data_text1' => '', 'data_text5' => '' ) );
+        $classAttribute->setAttribute( 'data_text5', $classAttribute->content()->xmlString() );
+        $this->assertStringContainsString( 'id="col_0"', $classAttribute->attribute( 'data_text5' ) );
+        $classAttribute->setHasDirtyData( false );
+
+        $type->unserializeContentClassAttribute( $classAttribute, $dom->documentElement, $dom->documentElement->firstChild );
+        $this->assertTrue( $classAttribute->hasDirtyData(), 'sync() after the import must store the columns' );
+        $stored = new eZMatrixDefinition();
+        $stored->decodeClassAttribute( $classAttribute->attribute( 'data_text5' ) );
+        $this->assertSame( array( 'specification', 'value' ), array_column( $stored->attribute( 'columns' ), 'identifier' ) );
+        $this->assertSame( array( 'Specification', 'Value' ), array_column( $stored->attribute( 'columns' ), 'name' ) );
+    }
+
     public function testMatrixFromStringCutsAndPadsRowsToTheColumns()
     {
         $type = $this->dataType( 'ezmatrix' );
