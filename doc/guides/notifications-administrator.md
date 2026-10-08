@@ -276,6 +276,19 @@ next ordinary publish of the object notifies again.
 | The button is not shown | The setting is not `enabled` for that siteaccess (`./console exp:ini where notification.ini/NotificationSettings/PublishWithoutNotification` names every file that sets it), or the user's roles lack the function. Log in again after a role change |
 | Subscribers got a mail although the button was used | An extension listens to `content/notification/create` and returns `true` instead of what it got; the debug output of the publish says which listener left an event out, not which made one. Check `[Event] Listeners[]` |
 | The button published with notification | The user lacks the policy (the debug output has the warning "PublishNotNotifyButton was posted by a user without content/publish_without_notification") |
+| Publications of some classes send nothing | `notification.ini [NotificationSettings] NotificationFilterByClassIdentifier=enabled` lets only the classes in `IncludeClasses[]` notify; the debug output of the publish says "its class is not in ... IncludeClasses" |
+
+To notify for some classes only (articles and files, not every folder or image), list them:
+
+```ini
+[NotificationSettings]
+NotificationFilterByClassIdentifier=enabled
+IncludeClasses[]
+IncludeClasses[]=article
+IncludeClasses[]=file
+```
+
+Every other class then counts as published without notification. The default (`disabled`) notifies for every class.
 
 The whole story: [Publish without notification](../features/6.0/publish-without-notification.md).
 

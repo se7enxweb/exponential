@@ -9,6 +9,10 @@
  *  PL-03 - A publication held back at pre_publish (as an approval workflow holds it) and resumed from its memento the
  *          way the workflow cronjob resumes it keeps notify=false: published, no event
  *  PL-04 - The policy function: the administrator has content/publish_without_notification, the anonymous user not
+ *  PL-05 - With NotificationFilterByClassIdentifier enabled, a folder makes its event only when folder is in
+ *          IncludeClasses[]
+ *  PL-06 - eZContentFunctions::createAndPublishObject() returns the object as published (status, current version, main
+ *          node) and with notify false makes no event; updateAndPublishObject() takes notify as well
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -210,5 +214,56 @@ class eZPublishWithoutNotificationLiveTest extends PHPUnit\Framework\TestCase
                 ezpINIHelper::restoreINISettings();
             }
         }
+    }
+
+    /** PL-05 */
+    public function testTheClassFilter()
+    {
+        $this->newFolder( 'X1 notification class filter' );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', 'enabled' );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array( 'article' ) );
+        try
+        {
+            $published = $this->publish( 1 );
+            $this->assertSame( eZContentObject::STATUS_PUBLISHED, (int)$published->attribute( 'status' ) );
+            $this->assertSame( 0, $this->events(), 'folder is not in IncludeClasses: no event' );
+
+            ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array( 'article', 'folder' ) );
+            $newVersion = $published->createNewVersion();
+            $this->publish( (int)$newVersion->attribute( 'version' ) );
+            $this->assertSame( 1, $this->events(), 'folder is in IncludeClasses: the event is made' );
+        }
+        finally
+        {
+            ezpINIHelper::restoreINISettings();
+        }
+    }
+
+    /** PL-06 */
+    public function testCreateAndPublishObjectReturnsThePublishedObject()
+    {
+        if ( !eZContentClass::fetchByIdentifier( 'folder' ) instanceof eZContentClass )
+        {
+            $this->markTestSkipped( 'needs the folder class' );
+        }
+        $object = eZContentFunctions::createAndPublishObject( array( 'parent_node_id' => 2, 'class_identifier' => 'folder', 'creator_id' => self::ADMIN_ID,
+                                                                     'attributes' => array( 'name' => 'X1 createAndPublishObject without notification' ) ), false );
+        $this->assertInstanceOf( eZContentObject::class, $object );
+        $this->objectID = (int)$object->attribute( 'id' );
+        if ( (int)$this->fresh()->attribute( 'status' ) !== eZContentObject::STATUS_PUBLISHED )
+        {
+            $this->markTestSkipped( 'a workflow holds the publication back on this installation' );
+        }
+        $this->assertSame( eZContentObject::STATUS_PUBLISHED, (int)$object->attribute( 'status' ), 'the returned object says published' );
+        $this->assertSame( 1, (int)$object->attribute( 'current_version' ) );
+        $this->assertGreaterThan( 0, (int)$object->attribute( 'main_node_id' ), 'the returned object has its main node' );
+        $this->assertSame( 0, $this->events(), 'notify false: no event' );
+
+        $this->assertTrue( eZContentFunctions::updateAndPublishObject( $object, array( 'attributes' => array( 'name' => 'X1 updated without notification' ) ), false ) );
+        $this->assertSame( 2, (int)$this->fresh()->attribute( 'current_version' ) );
+        $this->assertSame( 0, $this->events(), 'updateAndPublishObject() with notify false: no event' );
+
+        $this->assertTrue( eZContentFunctions::updateAndPublishObject( $this->fresh(), array( 'attributes' => array( 'name' => 'X1 updated with notification' ) ) ) );
+        $this->assertSame( 1, $this->events(), 'without notify: the event is made' );
     }
 }

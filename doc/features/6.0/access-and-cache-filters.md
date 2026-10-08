@@ -205,7 +205,10 @@ public static function itemAccess( $allowed, $item, $user )
 ### `content/notification/create`
 
 The publish operation creates the event that the notification handlers turn into mails. The filter gets `true` (`false` for
-a publication without notification), the object ID and the version; anything but `true` leaves the event out. A listener that only lets some classes through:
+a publication without notification, and for a class that `notification.ini [NotificationSettings]
+NotificationFilterByClassIdentifier` leaves out), the object ID and the version; anything but `true` leaves the event
+out. For a fixed list of classes the setting is enough; a listener can decide by anything else. A listener that only
+lets some classes through:
 
 ```php
 public static function create( $create, $objectID, $version )

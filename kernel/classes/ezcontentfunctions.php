@@ -84,9 +84,12 @@ class eZContentFunctions
      *                      - 'storage_dir'      :
      *                      - 'remote_id'        : The value for the remoteID  (optional)
      *                      - 'section_id'       : The value for the sectionID (optional)
-     * @return eZContentObject|false An eZContentObject object if success, false otherwise
+     * @param bool $notify False publishes without notification (the publish operation's parameter notify): no
+     *                     notification event is made, as with "Publish without notification" in content/edit
+     * @return eZContentObject|false An eZContentObject object if success, false otherwise; after the publish
+     *                               operation ran, the object as it is now (published, its current version)
      */
-    static function createAndPublishObject( $params )
+    static function createAndPublishObject( $params, $notify = true )
     {
         $parentNodeID = $params['parent_node_id'];
         $classIdentifier = $params['class_identifier'];
@@ -159,7 +162,17 @@ class eZContentFunctions
                 $db->commit();
 
                 $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $contentObject->attribute( 'id' ),
-                                                                                             'version' => 1 ) );
+                                                                                             'version' => 1,
+                                                                                             'notify' => (bool)$notify ) );
+
+                // The object instantiated above still says draft and version 1 of nothing published; the publish
+                // operation changed the stored one, so the caller gets that (status, current version, main node)
+                eZContentObject::clearCache( array( $contentObject->attribute( 'id' ) ) );
+                $published = eZContentObject::fetch( $contentObject->attribute( 'id' ) );
+                if ( $published instanceof eZContentObject )
+                {
+                    $contentObject = $published;
+                }
             }
             else
             {
@@ -223,9 +236,10 @@ class eZContentFunctions
      * @param eZContentObject an eZContentObject object
      * @param array an array with the attributes to update
      * @static
+     * @param bool $notify False publishes without notification (the publish operation's parameter notify)
      * @return bool true if the object has been successfully updated, false otherwise
      */
-    public static function updateAndPublishObject( eZContentObject $object, array $params )
+    public static function updateAndPublishObject( eZContentObject $object, array $params, $notify = true )
     {
         // Refused before anything changes: a missing or empty list was meant to be
         // refused here, but the check (joined with and) let both through, and a list
@@ -316,7 +330,8 @@ class eZContentFunctions
         $db->commit();
 
         $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newVersion->attribute( 'contentobject_id' ),
-                                                                                     'version'   => $newVersion->attribute( 'version' ) ) );
+                                                                                     'version'   => $newVersion->attribute( 'version' ),
+                                                                                     'notify'    => (bool)$notify ) );
 
         if( $operationResult['status'] == eZModuleOperationInfo::STATUS_CONTINUE )
             return true;
