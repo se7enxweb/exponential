@@ -760,7 +760,11 @@ class eZPersistentObject
                     $field_text .= $field_text_entry;
                     ++$i;
                 }
-                $cond_text = eZPersistentObject::conditionText( $key_conds );
+                // The condition names the keys as the table does: by their short names where the database uses them
+                // (Oracle), as the field list above and the lookup of the row do
+                $update_conds = $key_conds;
+                eZPersistentObject::replaceFieldsWithShortNames( $db, $fields, $update_conds );
+                $cond_text = eZPersistentObject::conditionText( $update_conds );
                 $sql = "UPDATE $table SET $field_text$cond_text";
                 $db->query( $sql );
             }
