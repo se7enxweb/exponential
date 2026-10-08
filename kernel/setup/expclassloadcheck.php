@@ -226,7 +226,7 @@ class eZCheckClasses
         $directory = 'var/cache/classcheck';
 
         if ( !is_dir( $directory ) )
-            @mkdir( $directory, 0775, true );
+            @mkdir( $directory, eZDir::dirMode( 0775 ), true );
 
         return $directory . '/' . $what . '-' . getmypid() . '-' . mt_rand() . '.txt';
     }

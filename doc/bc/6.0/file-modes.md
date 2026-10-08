@@ -10,8 +10,8 @@ Read this page if you run Exponential on a server where other accounts must not 
 - A mode the code asks for is only narrowed by them, never widened: 0777 becomes 0750, a deliberate 0600 stays 0600.
 - They apply to logs, caches (INI cache, PHP caches, autoload arrays, static cache), storage (uploads, image
   variations, the file handlers of the cluster) and everything written without a mode of its own: the umask of the
-  process is set from them at start-up. A few further places still set modes of their own; they are listed in the
-  security test and follow in the next release (see [What is not covered yet](#what-is-not-covered-yet)).
+  process is set from them at start-up. Every place in the kernel, the libraries, the scripts and the extensions of the
+  repository that gives a file or directory a mode goes through them; a security test keeps it so.
 - Without the constants nothing changes. Nobody has to act; live servers should set them.
 
 ## Why
@@ -45,7 +45,11 @@ define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothin
   setting an administrator can change in the admin interface.
 - Where the web server and the command line scripts (cronjobs, `bin/php/*`) run as different users, they need a
   common group with write access: use `0770` / `0660` and put both users in the group. With one user for both, `0700`
-  / `0600` is the tightest choice.
+  / `0600` is the tightest choice. Some files are written by both, whoever comes first creates them: the lock and the
+  run log of the notification service, the SQL profile of the cache manager, the maintenance state, the content job
+  store, the query cache. They used to be made writable for everybody (0666) for that reason; with `0750` / `0640` and
+  two users, the second one can no longer write them (a notification run, for example, finds the lock busy). Run both
+  as one user, or as one group with `0770` / `0660`.
 - The `site.ini [FileSettings]` permissions still apply below the limits: `StorageFilePermissions=0666` with
   `EZP_FILE_MODE_MAX=0640` gives 0640.
 
@@ -63,6 +67,7 @@ find var -type f -exec chmod 0640 {} +
 |---|---|
 | `eZFile::fileMode( $mode )` | `$mode` limited to `EZP_FILE_MODE_MAX` |
 | `eZDir::dirMode( $mode )` | `$mode` limited to `EZP_DIR_MODE_MAX` |
+| `eZFile::executableMode( $mode )` | `$mode` of a file that has to stay executable (a downloaded binary), limited by `EZP_DIR_MODE_MAX`, which keeps the execute bits it allows (0755 with 0750 gives 0750) |
 | `eZFile::creationUmask()` | The umask to write with in place of `umask( 0 )`: 0 without limits (as before), else the bits neither limit allows (0027 for 0750/0640) |
 | `eZFile::applyCreationUmask()` | Called by `autoload.php` after `config.php` when a limit is set: adds those bits to the umask of the process, so `fopen()`, `file_put_contents()` and `touch()` stay inside the limits too. Under Velocity this holds for the whole worker |
 
@@ -102,12 +107,12 @@ argument is a call of a helper and nothing else (`eZFile::fileMode( 0640 ) | 077
 only when it puts back a umask saved before. A call through a variable function name or `call_user_func()` is not
 seen; do not write one.
 
-## What is not covered yet
-
-About a hundred calls in some fifty files still give a mode of their own: among them the audit trail, content jobs,
-Velocity and FrankenPHP (whose binaries need the execute bit), the INI editor, mail preferences, the setup wizard and
-the HTTP cache. Most ask for 0600/0640/0700 already, which is inside any sensible limit; the list in
-`expFileModeLimitsTest::BYPASSES` names every one, and they move to the helpers in the next release.
+All other places use them too: the audit trail (`expAuditWriter::ownLikeParent()` limits a directory as a directory
+and a file as a file), content jobs, Velocity and FrankenPHP (the binary through `executableMode()`), the INI editor
+and mover, mail preferences, the setup wizard and the installer, the HTTP cache, the debug bar, maintenance and
+notification state, packages, templates written in the admin, shop receipts, the query cache and the SQLite
+database directory. Narrow umasks they set on purpose (`umask( 0077 )` around a secret) stay at least that narrow:
+`umask( eZFile::creationUmask( 0077 ) )`.
 
 ## Tests
 

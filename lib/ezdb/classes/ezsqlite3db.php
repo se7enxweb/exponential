@@ -181,7 +181,7 @@ class eZSQLite3DB extends eZDBInterface
             // or a file that cannot be opened, is a failed connection, not a
             // PHP warning followed by an uncaught exception.
             if ( $fullPath !== ':memory:' && !is_dir( $directoryPath ) )
-                @mkdir( $directoryPath, 0775, true );
+                @mkdir( $directoryPath, eZDir::dirMode( 0775 ), true );
             try
             {
                 $connection = new SQLite3( $fullPath );

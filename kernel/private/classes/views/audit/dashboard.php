@@ -104,7 +104,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         }
         $data = $compute();
         // owned like the cache directory, also when written by a process running as root
-        if ( is_dir( $dir ) || ( @mkdir( $dir, 0770, true ) && ( \expAuditWriter::ownLikeParent( $dir, 0770 ) || true ) ) )
+        if ( is_dir( $dir ) || ( @mkdir( $dir, \eZDir::dirMode( 0770 ), true ) && ( \expAuditWriter::ownLikeParent( $dir, 0770 ) || true ) ) )
         {
             $tmp = $file . '.' . getmypid() . '.tmp';
             if ( @file_put_contents( $tmp, '<?php return ' . var_export( $data, true ) . ';' ) !== false )

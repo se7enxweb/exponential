@@ -104,7 +104,7 @@ class expDebugBarLog
         $dir = dirname( $this->path );
         if ( !is_dir( $dir ) )
         {
-            if ( !@mkdir( $dir, 0775, true ) && !is_dir( $dir ) )
+            if ( !@mkdir( $dir, eZDir::dirMode( 0775 ), true ) && !is_dir( $dir ) )
                 throw new RuntimeException( "The debug bar log directory $dir cannot be created" );
             self::ownLikeParent( $dir );
         }
@@ -113,7 +113,7 @@ class expDebugBarLog
             throw new RuntimeException( "The debug bar log {$this->path} cannot be written" );
         if ( $created )
         {
-            @chmod( $this->path, 0640 );
+            @chmod( $this->path, eZFile::fileMode( 0640 ) );
             self::ownLikeParent( $this->path );
         }
         if ( $this->cache !== null )

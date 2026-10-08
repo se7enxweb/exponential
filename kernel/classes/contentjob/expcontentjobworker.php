@@ -69,7 +69,7 @@ class expContentJobWorker
         if ( !posix_setgid( $gid ) || !posix_setuid( $uid ) )
             return "could not switch to the installation's owner (uid $uid)";
         putenv( 'HOME=' . ( $pw ? $pw['dir'] : $root ) );
-        umask( 0007 );
+        umask( eZFile::creationUmask( 0007 ) );
         return null;
     }
 

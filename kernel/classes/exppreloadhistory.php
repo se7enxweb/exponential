@@ -397,7 +397,7 @@ class expPreloadHistory
 
     private function ensureDirectory()
     {
-        return is_dir( $this->dir ) || @mkdir( $this->dir, 0775, true ) || is_dir( $this->dir );
+        return is_dir( $this->dir ) || @mkdir( $this->dir, eZDir::dirMode( 0775 ), true ) || is_dir( $this->dir );
     }
 
     /**
@@ -409,7 +409,7 @@ class expPreloadHistory
         $temp = $file . '.' . getmypid() . '.tmp';
         if ( @file_put_contents( $temp, json_encode( $status, JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR ) ) === false )
             return false;
-        @chmod( $temp, 0664 );
+        @chmod( $temp, eZFile::fileMode( 0664 ) );
         if ( !@rename( $temp, $file ) )
         {
             @unlink( $temp );

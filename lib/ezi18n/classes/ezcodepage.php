@@ -473,10 +473,10 @@ class eZCodePage
         if ( file_exists( $filename ) )
         {
             // Store the old umask and set a new one.
-            $oldPermissionSetting = umask( 0 );
+            $oldPermissionSetting = umask( eZFile::creationUmask() );
 
             // Change the permission setting.
-            @chmod( $filename, $permissionArray['file_permission'] );
+            @chmod( $filename, eZFile::fileMode( $permissionArray['file_permission'] ) );
 
             // Restore the old umask.
             umask( $oldPermissionSetting );

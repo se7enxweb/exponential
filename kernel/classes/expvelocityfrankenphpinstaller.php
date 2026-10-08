@@ -218,7 +218,7 @@ class expVelocityFrankenPHPInstaller
         }
 
         $directory = $this->directory();
-        if ( !is_dir( $directory ) && !@mkdir( $directory, 0755, true ) )
+        if ( !is_dir( $directory ) && !@mkdir( $directory, eZDir::dirMode( 0755 ), true ) )
             return $this->result( false, "could not create $directory" );
 
         $part = $directory . '/.' . basename( $target ) . '.part.' . getmypid();
@@ -251,7 +251,7 @@ class expVelocityFrankenPHPInstaller
             return $this->result( false, "SHA-256 mismatch for $asset: expected $expected, got $actual -- nothing installed" );
         }
 
-        @chmod( $part, 0755 );
+        @chmod( $part, eZFile::executableMode( 0755 ) );
         $output = array();
         $code = 1;
         @exec( escapeshellarg( $part ) . ' version 2>&1', $output, $code );

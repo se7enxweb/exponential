@@ -65,6 +65,19 @@ class eZFile
     }
 
     /**
+     * The mode $mode of a file that has to stay executable (a downloaded binary, a script), limited to
+     * EZP_DIR_MODE_MAX: that limit keeps the execute bits where it allows them (0755 with 0750 gives 0750), where the
+     * file limit would take them away.
+     *
+     * @param int $mode
+     * @return int
+     */
+    static function executableMode( $mode )
+    {
+        return eZDir::dirMode( $mode );
+    }
+
+    /**
      * The umask to create files and directories with in place of umask( 0 ): 0 without limits (the mode asked for is
      * the mode the file gets, as before); with them, the bits neither limit allows, so a file fopen() makes (0666) or
      * a directory mkdir() makes stays inside the limits. A file mode limit narrower than the directory one without its

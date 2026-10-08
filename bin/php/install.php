@@ -298,14 +298,14 @@ if ( file_exists( $kickstart ) )
 {
     $aside = $rootDir . '/var/log/kickstart.ini.before-exp-install-' . $stamp;
     if ( !is_dir( $logDir ) )
-        @mkdir( $logDir, 0775, true );
+        @mkdir( $logDir, eZDir::dirMode( 0775 ), true );
     if ( !@rename( $kickstart, $aside ) )
     {
         fwrite( STDERR, "Could not move the existing kickstart.ini aside; nothing was changed.\n" );
         exit( 1 );
     }
 }
-$oldUmask = umask( 0077 );
+$oldUmask = umask( eZFile::creationUmask( 0077 ) );
 $written = file_put_contents( $kickstart, installIniText( $sections, false ) );
 umask( $oldUmask );
 if ( $written === false )
@@ -341,7 +341,7 @@ $summary = array(
     'Configuration'  => 'var/log/exp-install-' . $stamp . '.ini (passwords masked)',
 );
 register_shutdown_function( function () use ( $kickstart, $aside, $sections, $logDir, $stamp, $startedAt, $overrideFile, $flags, &$summary, &$passwordNote, $passwordGiven, $rootDir ) {
-    if ( is_dir( $logDir ) || @mkdir( $logDir, 0775, true ) )
+    if ( is_dir( $logDir ) || @mkdir( $logDir, eZDir::dirMode( 0775 ), true ) )
         @file_put_contents( $logDir . '/exp-install-' . $stamp . '.ini', installIniText( $sections, true ) );
     @unlink( $kickstart );
     if ( $aside !== null )

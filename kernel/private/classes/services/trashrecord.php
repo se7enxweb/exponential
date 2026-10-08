@@ -163,7 +163,7 @@ class TrashRecord
             $dir = dirname( $file );
             if ( !is_dir( $dir ) )
             {
-                @mkdir( $dir, 0775, true );
+                @mkdir( $dir, \eZDir::dirMode( 0775 ), true );
                 self::giveToSiteUser( $dir );
             }
             $lock = @fopen( $file . '.lock', 'c' );
@@ -181,7 +181,7 @@ class TrashRecord
                 $ok = @file_put_contents( $tmp, json_encode( $map, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) ) !== false;
                 if ( $ok )
                 {
-                    @chmod( $tmp, 0664 );
+                    @chmod( $tmp, \eZFile::fileMode( 0664 ) );
                     self::giveToSiteUser( $tmp );
                     $ok = @rename( $tmp, $file );
                 }

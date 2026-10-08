@@ -96,7 +96,7 @@ class Ezasynchronouspublisher extends \Exponential\Runnable\Command
         $pidFileDirectory = dirname( $pidFile );
         if ( !file_exists( $pidFileDirectory ) )
         {
-            if ( !mkdir( $pidFileDirectory ) )
+            if ( !mkdir( $pidFileDirectory, \eZDir::dirMode( 0777 ) ) )
             {
                 $script->shutdown( 3, "Error creating PID file directory '$pidFileDirectory'" );
             }

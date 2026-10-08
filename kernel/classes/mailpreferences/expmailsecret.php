@@ -190,7 +190,7 @@ class expMailSecret
     {
         $dir = self::keyDir();
         $file = self::keyFile();
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0775, true ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0775 ), true ) )
             return false;
         $existed = is_file( $file );
         if ( class_exists( 'expIniEditor' ) && class_exists( 'expIniScope' ) )
@@ -231,7 +231,7 @@ class expMailSecret
         if ( class_exists( 'expAuditWriter' ) )
             expAuditWriter::ownLikeParent( $file, 0640 );
         else
-            @chmod( $file, 0640 );
+            @chmod( $file, eZFile::fileMode( 0640 ) );
         if ( function_exists( 'opcache_invalidate' ) )
             @opcache_invalidate( $file, true );
     }

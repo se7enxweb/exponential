@@ -508,10 +508,10 @@ class Templatecreate extends \Exponential\Runnable\ModuleView
                 if ( $fp )
                 {
                     $filePermission = $ini->variable( 'FileSettings', 'StorageFilePermissions' );
-                    $oldumask = umask( 0 );
+                    $oldumask = umask( \eZFile::creationUmask() );
                     fwrite( $fp, $templateCode );
                     fclose( $fp );
-                    chmod( $fileName, octdec( $filePermission ) );
+                    chmod( $fileName, \eZFile::fileMode( octdec( $filePermission ) ) );
                     umask( $oldumask );
                     // Audit (doc/bc/6.0/audit.md, system.template.change): a new override template, never its text
                     if ( class_exists( 'expAuditHook' ) )
@@ -550,7 +550,7 @@ class Templatecreate extends \Exponential\Runnable\ModuleView
                     // effect immediately without requiring a manual reorder.
                     $overrideINI->setVariable( $overrideName, 'Priority', 0 );
 
-                    $oldumask = umask( 0 );
+                    $oldumask = umask( \eZFile::creationUmask() );
                     $overrideINI->save( "siteaccess/$siteAccess/override.ini.append" );
                     $overridePath = "settings/siteaccess/$siteAccess/override.ini.append.php";
                     if ( file_exists( $overridePath ) )
@@ -559,7 +559,7 @@ class Templatecreate extends \Exponential\Runnable\ModuleView
                         $mode = $s["mode"] & 0777; // get only the last 9 bits.
                         if ($mode & $filePermission != $filePermission ) // filePermission wrong?
                         {
-                            chmod( $overridePath, octdec( $filePermission ) );
+                            chmod( $overridePath, \eZFile::fileMode( octdec( $filePermission ) ) );
                         }
                     }
                     umask( $oldumask );

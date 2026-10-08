@@ -17,7 +17,7 @@ class expFileModeCalls
                          'index_rest.php', 'index_treemenu.php', 'runcronjobs.php', 'soap.php', 'webdav.php', 'ezpm.php' );
 
     /** Helpers whose result is a mode within the limits */
-    const HELPERS = array( 'fileMode', 'dirMode', 'creationUmask' );
+    const HELPERS = array( 'fileMode', 'dirMode', 'executableMode', 'creationUmask' );
 
     /**
      * The calls that bypass the limits, per file: array( 'path' => array( line, ... ) ).

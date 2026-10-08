@@ -327,7 +327,7 @@ class expAuditKeys
             }
             $editor->save( array( 'backup' => false ) );
             if ( !$existed )
-                @chmod( $scope->path( 'audit.ini' ), 0640 );
+                @chmod( $scope->path( 'audit.ini' ), eZFile::fileMode( 0640 ) );
             return true;
         }
         catch ( Throwable $e )

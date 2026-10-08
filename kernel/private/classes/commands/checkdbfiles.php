@@ -432,13 +432,13 @@ class Checkdbfiles extends \Exponential\Runnable\Command
         $base = rtrim( $base, '/' );
         if ( $base === '' )
             $base = '.';
-        if ( !is_dir( $base ) && !@mkdir( $base, 0777, true ) && !is_dir( $base ) )
+        if ( !is_dir( $base ) && !@mkdir( $base, \eZDir::dirMode( 0777 ), true ) && !is_dir( $base ) )
             return false;
         for ( $attempt = 0; $attempt < 10; $attempt++ )
         {
             $dir = $base . '/checkdbfiles-export-' . getmypid() . '-' . bin2hex( random_bytes( 4 ) );
             // mkdir fails if the name exists, so the directory is always one this call made
-            if ( @mkdir( $dir, 0700 ) )
+            if ( @mkdir( $dir, \eZDir::dirMode( 0700 ) ) )
             {
                 self::$createdExportDirectories[] = $dir;
                 return $dir;

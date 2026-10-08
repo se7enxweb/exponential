@@ -14,8 +14,12 @@
  *  FM-03 - Without the limits the modes asked for are kept, as before
  *  FM-04 - No code of the installation gives a file or directory its mode past the helpers: every native chmod(),
  *          mkdir() and umask() in kernel, lib, bin, cronjobs, update, the extensions of the repository and the entry
- *          scripts uses eZFile::fileMode(), eZDir::dirMode() or eZFile::creationUmask() (BYPASSES lists what is still
- *          to be moved, file by file; a new call, or a list that no longer matches, fails)
+ *          scripts uses eZFile::fileMode(), eZDir::dirMode(), eZFile::executableMode() or eZFile::creationUmask()
+ *          (BYPASSES is empty; a new call that bypasses them fails)
+ *  FM-07 - Executables keep their execute bits within the directory limit; expAuditWriter::ownLikeParent() limits a
+ *          directory as a directory and a file as a file
+ *  FM-08 - The code that runs before the autoloader (the HTTP cache early exit, the repair queue) loads the helpers
+ *          itself
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -27,65 +31,10 @@ require_once __DIR__ . '/fixtures/expfilemodecalls.php';
 class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
 {
     /**
-     * Calls that still bypass the limits, per file, until they are moved to the helpers. Only ever shrinks.
+     * Calls that still bypass the limits, per file (path => number of calls). Empty: every native chmod(), mkdir() and
+     * umask() goes through the helpers. An entry needs a reason that no helper fits.
      */
-    const BYPASSES = array(
-        'bin/php/install.php'                                                       => 3,
-        'extension/ezoe/classes/expoeurlfetcher.php'                                => 3,
-        'kernel/classes/audit/archive/expauditarchiver.php'                         => 3,
-        'kernel/classes/audit/expauditkeys.php'                                     => 1,
-        'kernel/classes/audit/expauditwriter.php'                                   => 3,
-        'kernel/classes/contentjob/expcontentjob.php'                               => 1,
-        'kernel/classes/contentjob/expcontentjobstore.php'                          => 4,
-        'kernel/classes/contentjob/expcontentjobworker.php'                         => 1,
-        'kernel/classes/datatypes/ezbinaryfile/ezbinaryfiletype.php'                => 1,
-        'kernel/classes/datatypes/ezbinaryfile/plugins/ezwordparser.php'            => 1,
-        'kernel/classes/debugbar/expdebugbarlog.php'                                => 2,
-        'kernel/classes/expcachemanager.php'                                        => 1,
-        'kernel/classes/expkickstarterini.php'                                      => 2,
-        'kernel/classes/expmaintenance.php'                                         => 2,
-        'kernel/classes/expnotificationservice.php'                                 => 2,
-        'kernel/classes/expphar.php'                                                => 1,
-        'kernel/classes/exppreloadhistory.php'                                      => 2,
-        'kernel/classes/exppreloadlock.php'                                         => 1,
-        'kernel/classes/expsetuplog.php'                                            => 1,
-        'kernel/classes/expvelocity.php'                                            => 2,
-        'kernel/classes/expvelocityconfig.php'                                      => 2,
-        'kernel/classes/expvelocityconfiglayout.php'                                => 4,
-        'kernel/classes/expvelocityfrankenphp.php'                                  => 5,
-        'kernel/classes/expvelocityfrankenphpinstaller.php'                         => 2,
-        'kernel/classes/ezpackage.php'                                              => 1,
-        'kernel/classes/ezsslzone.php'                                              => 1,
-        'kernel/classes/ini/actions/expinimover.php'                                => 4,
-        'kernel/classes/ini/expinieditor.php'                                       => 8,
-        'kernel/classes/mailpreferences/expmailbouncereader.php'                    => 1,
-        'kernel/classes/mailpreferences/expmailgate.php'                            => 1,
-        'kernel/classes/mailpreferences/expmailsecret.php'                          => 2,
-        'kernel/classes/mailpreferences/expmailsenderdetails.php'                   => 2,
-        'kernel/private/classes/commands/checkdbfiles.php'                          => 2,
-        'kernel/private/classes/commands/ezasynchronouspublisher.php'               => 1,
-        'kernel/private/classes/commands/install.php'                               => 3,
-        'kernel/private/classes/commands/kickstarter.php'                           => 1,
-        'kernel/private/classes/commands/mailconsent.php'                           => 1,
-        'kernel/private/classes/commands/mailpreferences.php'                       => 1,
-        'kernel/private/classes/commands/solr.php'                                  => 1,
-        'kernel/private/classes/ezpformtokenrefusal.php'                            => 1,
-        'kernel/private/classes/httpcache/ezphttpcachecontract.php'                 => 2,
-        'kernel/private/classes/httpcache/ezphttpcachelistener.php'                 => 3,
-        'kernel/private/classes/services/trashrecord.php'                           => 2,
-        'kernel/private/classes/views/audit/dashboard.php'                          => 1,
-        'kernel/private/classes/views/visual/templatecreate.php'                    => 4,
-        'kernel/private/classes/views/visual/templateedit.php'                      => 1,
-        'kernel/setup/expclassloadcheck.php'                                        => 1,
-        'kernel/setup/expextensionwizard.php'                                       => 3,
-        'kernel/setup/expradsurvey.php'                                             => 1,
-        'kernel/setup/steps/ezstep_site_admin.php'                                  => 3,
-        'kernel/shop/classes/ezshopreceipt.php'                                     => 2,
-        'lib/ezdb/classes/ezdbquerycache.php'                                       => 2,
-        'lib/ezdb/classes/ezsqlite3db.php'                                          => 1,
-        'lib/ezi18n/classes/ezcodepage.php'                                         => 2,
-        'lib/ezutils/classes/ezprepairqueue.php'                                    => 3,
-    );
+    const BYPASSES = array();
 
     /** @var string Absolute path of this test's directory under var/tmp */
     private $dir;
@@ -161,6 +110,8 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 0750, eZDir::dirMode( 0777 ) );
         $this->assertSame( 0700, eZDir::dirMode( 0700 ) );
         $this->assertSame( 0027, eZFile::creationUmask() );
+        $this->assertSame( 0077, eZFile::creationUmask( 0077 ), 'a narrower umask asked for stays' );
+        $this->assertSame( 0750, eZFile::executableMode( 0755 ), 'FM-07: still executable' );
         umask( 0002 );
         eZFile::applyCreationUmask();
         $this->assertSame( 0027, umask(), 'the umask at start-up: the server umask with what the limits forbid' );
@@ -214,6 +165,14 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( (bool)$creator->store() );
         $this->assertSame( 0750, $this->mode( $this->dir . '/php' ) );
         $this->assertSame( 0640, $this->mode( $this->dir . '/php/x1.php' ) );
+
+        // FM-07: the audit trail's helper for a directory and for a file
+        mkdir( $this->dir . '/audit', 0700 );
+        expAuditWriter::ownLikeParent( $this->dir . '/audit', 0770 );
+        $this->assertSame( 0750, $this->mode( $this->dir . '/audit' ), 'a directory keeps its search bits' );
+        file_put_contents( $this->dir . '/audit/x.log', 'x' );
+        expAuditWriter::ownLikeParent( $this->dir . '/audit/x.log', 0660 );
+        $this->assertSame( 0640, $this->mode( $this->dir . '/audit/x.log' ) );
 
         // nothing under the test directory is wider than the limits
         $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $this->dir, FilesystemIterator::SKIP_DOTS ), RecursiveIteratorIterator::SELF_FIRST );
@@ -290,6 +249,17 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'EZP_FILE_MODE_MAX in config.php is no file mode', $lines[0] );
     }
 
+    /** FM-08 */
+    public function testCodeBeforeTheAutoloaderHasTheHelpers()
+    {
+        $code = 'require "lib/ezutils/classes/ezprepairqueue.php"; require "kernel/private/classes/httpcache/ezphttpcachecontract.php"; ' .
+                'echo class_exists( "ezpAutoloader", false ) ? "autoloader" : "plain", " ", eZFile::fileMode( 0660 ), " ", eZDir::dirMode( 0770 );';
+        $output = array();
+        exec( escapeshellarg( PHP_BINARY ) . ' -n -r ' . escapeshellarg( $code ) . ' 2>&1', $output, $status );
+        $this->assertSame( 0, $status, implode( "\n", $output ) );
+        $this->assertSame( 'plain ' . 0660 . ' ' . 0770, implode( "\n", $output ) );
+    }
+
     /** FM-04 */
     public function testNoCodeBypassesTheLimits()
     {
@@ -343,7 +313,8 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
             chmod( $a, eZFile::fileMode( 0 ) | 0777 );
             umask( $m );
             $oldUmask = umask( eZFile::creationUmask() );
-            umask( $oldUmask );';
+            umask( $oldUmask );
+            chmod( $bin, eZFile::executableMode( 0755 ) );';
         $this->assertSame( array( 2, 4, 5, 7, 14, 15, 17, 18 ), expFileModeCalls::bypassesIn( $source ) );
     }
 }

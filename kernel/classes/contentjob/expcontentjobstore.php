@@ -53,8 +53,8 @@ class expContentJobStore
         }
         if ( !is_dir( $dir ) )
         {
-            $old = umask( 0007 );
-            @mkdir( $dir, 0770, true );
+            $old = umask( eZFile::creationUmask( 0007 ) );
+            @mkdir( $dir, eZDir::dirMode( 0770 ), true );
             umask( $old );
             if ( !is_dir( $dir ) )
                 throw new expContentJobException( "The content job directory $dir cannot be created." );
@@ -144,7 +144,7 @@ class expContentJobStore
             @unlink( $tmp );
             throw new expContentJobException( "The content job file $file could not be written completely (disk full?)." );
         }
-        @chmod( $tmp, 0660 );
+        @chmod( $tmp, eZFile::fileMode( 0660 ) );
         self::fixOwner( $tmp );
         if ( !@rename( $tmp, $file ) )
         {
@@ -261,7 +261,7 @@ class expContentJobStore
         fclose( $fh );
         if ( $new )
         {
-            @chmod( $file, 0660 );
+            @chmod( $file, eZFile::fileMode( 0660 ) );
             self::fixOwner( $file );
         }
         if ( !$ok )

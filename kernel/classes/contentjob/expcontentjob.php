@@ -656,7 +656,7 @@ class expContentJob
         if ( !is_file( $out ) )
         {
             @touch( $out );
-            @chmod( $out, 0660 );
+            @chmod( $out, eZFile::fileMode( 0660 ) );
             expContentJobStore::fixOwner( $out );
         }
         $setsid = class_exists( 'expProcessTools' ) ? (string)expProcessTools::setsid()

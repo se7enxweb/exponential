@@ -510,7 +510,7 @@ class ezpFormTokenRefusal
         {
             $permissions = octdec( eZINI::instance()->variable( 'FileSettings', 'LogFilePermissions' ) );
             if ( $permissions )
-                @chmod( $file, $permissions );
+                @chmod( $file, eZFile::fileMode( $permissions ) );
         }
         catch ( Throwable $ignored )
         {

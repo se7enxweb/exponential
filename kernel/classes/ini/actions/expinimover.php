@@ -204,7 +204,7 @@ class expIniMover
             $this->c->data( 'created_extension', $ext );
             return;
         }
-        if ( !is_dir( $base ) && !mkdir( $base, 0755, true ) )
+        if ( !is_dir( $base ) && !mkdir( $base, eZDir::dirMode( 0755 ), true ) )
             throw expIniException::writeFailed( "cannot create $base" );
 
         $owner = fileowner( $base );
@@ -218,7 +218,7 @@ class expIniMover
         };
         foreach ( array( $dir, "$dir/settings" ) as $d )
         {
-            if ( !is_dir( $d ) && !mkdir( $d, 0755 ) )
+            if ( !is_dir( $d ) && !mkdir( $d, eZDir::dirMode( 0755 ) ) )
                 throw expIniException::writeFailed( "cannot create $d" );
             $own( $d );
         }
@@ -226,7 +226,7 @@ class expIniMover
         {
             if ( file_put_contents( "$dir/$name", $content ) === false )
                 throw expIniException::writeFailed( "cannot write $dir/$name" );
-            chmod( "$dir/$name", 0644 );
+            chmod( "$dir/$name", eZFile::fileMode( 0644 ) );
             $own( "$dir/$name" );
         }
         $this->c->line( "Created extension/$ext/ (extension.xml, ezinfo.php, settings/); it has no classes, so no autoloads to generate" );
@@ -574,7 +574,7 @@ class expIniMover
             return;
         $aside = expIniEditor::root() . 'var/backup/ini/' . date( 'Ymd-His' ) . '-rollback/' . $relative;
         if ( !is_dir( dirname( $aside ) ) )
-            mkdir( dirname( $aside ), 0700, true );
+            mkdir( dirname( $aside ), eZDir::dirMode( 0700 ), true );
         if ( !rename( $path, $aside ) )
             $this->c->warn( "could not move the new $relative aside" );
         else

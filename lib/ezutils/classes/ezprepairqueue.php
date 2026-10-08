@@ -33,6 +33,14 @@
  *
  * The key is used once: starting a repair removes it. State lives in var/repair/.
  */
+
+// Plain PHP, loaded by bin/php/exprepair.php and index.php ?exp_repair without the autoloader: the mode helpers are
+// loaded here
+if ( !class_exists( 'eZFile', false ) )
+    require_once dirname( __DIR__, 3 ) . '/lib/ezfile/classes/ezfile.php';
+if ( !class_exists( 'eZDir', false ) )
+    require_once dirname( __DIR__, 3 ) . '/lib/ezfile/classes/ezdir.php';
+
 class ezpRepairQueue
 {
     const SETTINGS = 'settings/override/exprepair.ini.append.php';
@@ -76,10 +84,10 @@ class ezpRepairQueue
               . 'Enabled=' . ( $s['Enabled'] ? 'true' : 'false' ) . "\nKeyHash=" . $s['KeyHash'] . "\n"
               . ( $s['Composer'] !== '' ? 'Composer=' . $s['Composer'] . "\n" : '' ) . "\n*/ ?>\n";
         if ( !is_dir( dirname( $file ) ) )
-            mkdir( dirname( $file ), 0775, true );
+            mkdir( dirname( $file ), eZDir::dirMode( 0775 ), true );
         $before = self::settings();
         file_put_contents( $file, $text, LOCK_EX );
-        @chmod( $file, 0640 );
+        @chmod( $file, eZFile::fileMode( 0640 ) );
 
         // Audit (doc/bc/6.0/audit.md, system.repair.queue): whether a key is set, never the key or its hash. The
         // audit may be one of the things missing here, so it is only asked for when its class can be loaded.
@@ -130,7 +138,7 @@ class ezpRepairQueue
         $d = self::root() . '/' . self::STATE;
         if ( !is_dir( $d ) )
         {
-            mkdir( $d, 0770, true );
+            mkdir( $d, eZDir::dirMode( 0770 ), true );
             file_put_contents( "$d/.htaccess", "Require all denied\n" );
         }
         return $d;

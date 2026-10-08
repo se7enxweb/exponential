@@ -105,7 +105,7 @@ class expMaintenance
         $tmp = $file . '.tmp' . getmypid();
         if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
             return false;
-        @chmod( $tmp, 0666 );
+        @chmod( $tmp, eZFile::fileMode( 0666 ) );
         return @rename( $tmp, $file );
     }
 
@@ -151,7 +151,7 @@ class expMaintenance
         $auditBefore = self::state( $root );
         if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
             return false;
-        @chmod( $tmp, 0666 );
+        @chmod( $tmp, eZFile::fileMode( 0666 ) );
         // Renamed into place, so a request never reads half a marker
         if ( !@rename( $tmp, $file ) )
             return false;

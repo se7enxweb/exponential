@@ -597,10 +597,10 @@ class expKickstarterIni
 
         // The file holds the database and administrator passwords: owner only,
         // also when it existed before with a wider mode
-        $oldUmask = umask( 0077 );
+        $oldUmask = umask( eZFile::creationUmask( 0077 ) );
         $written = file_put_contents( $this->iniFile, $content );
         umask( $oldUmask );
-        if ( $written === false || !chmod( $this->iniFile, 0600 ) )
+        if ( $written === false || !chmod( $this->iniFile, eZFile::fileMode( 0600 ) ) )
         {
             $this->error( 'Failed to write ' . $this->rel( $this->iniFile ) . ' with mode 0600' );
             exit( 1 );

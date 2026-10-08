@@ -72,8 +72,8 @@ class eZStepSiteAdmin extends eZStepInstaller
 
         $file = 'var/log/initial-admin-password';
         if ( !is_dir( dirname( $file ) ) )
-            @mkdir( dirname( $file ), 0770, true );
-        $old = umask( 0077 );
+            @mkdir( dirname( $file ), eZDir::dirMode( 0770 ), true );
+        $old = umask( eZFile::creationUmask( 0077 ) );
         $written = @file_put_contents( $file,
             "Exponential administrator login: admin\n" .
             "Password: $password\n" .
@@ -81,7 +81,7 @@ class eZStepSiteAdmin extends eZStepInstaller
             "Log in, change it, then delete this file.\n" );
         umask( $old );
         if ( $written !== false )
-            @chmod( $file, 0600 );
+            @chmod( $file, eZFile::fileMode( 0600 ) );
 
         if ( class_exists( 'eZCLI', false ) && PHP_SAPI === 'cli' )
         {

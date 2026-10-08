@@ -197,7 +197,7 @@ class expVelocityFrankenPHP extends expVelocity
             return 'HTTPS without [HTTPSSettings] Certificate and Key needs the openssl extension'
                  . ' to make a self-signed certificate';
         $dir = dirname( $cert );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0700, true ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0700 ), true ) )
             return 'could not create ' . $dir;
 
         $names = array( 'DNS:localhost', 'IP:127.0.0.1', 'IP:::1' );
@@ -234,11 +234,11 @@ class expVelocityFrankenPHP extends expVelocity
             return 'could not make a self-signed certificate' . ( $errors ? ': ' . implode( '; ', $errors ) : '' );
         }
 
-        $old = umask( 077 );
+        $old = umask( eZFile::creationUmask( 077 ) );
         $written = @file_put_contents( $key, $keyPem ) !== false && @file_put_contents( $cert, $certPem ) !== false;
         umask( $old );
-        @chmod( $key, 0600 );
-        @chmod( $cert, 0644 );
+        @chmod( $key, eZFile::fileMode( 0600 ) );
+        @chmod( $cert, eZFile::fileMode( 0644 ) );
         return $written ? true : 'could not write the self-signed certificate to ' . $dir;
     }
 
@@ -738,7 +738,7 @@ class expVelocityFrankenPHP extends expVelocity
             $this->writeError = 'could not write ' . $tmp;
             return false;
         }
-        @chmod( $tmp, 0600 );
+        @chmod( $tmp, eZFile::fileMode( 0600 ) );
         if ( $validate )
         {
             $valid = $this->validate( $tmp );

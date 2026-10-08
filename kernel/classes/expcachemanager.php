@@ -802,7 +802,7 @@ class expCacheManager
             if ( !@touch( $file ) )
                 return self::result( false, 'The SQL profile could not be switched on: var/tmp is not writable.' );
             // every server writes the log, whoever it runs as
-            @chmod( $file, 0666 );
+            @chmod( $file, eZFile::fileMode( 0666 ) );
             return self::result( true, 'The SQL profile is on: every request now adds a line.' );
         }
         if ( is_file( $file ) && !@unlink( $file ) )

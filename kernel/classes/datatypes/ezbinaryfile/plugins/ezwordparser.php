@@ -29,7 +29,7 @@ class eZWordParser
         fclose( $handle );
 
         $perm = octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
-        chmod( $tmpName, $perm );
+        chmod( $tmpName, eZFile::fileMode( $perm ) );
 
         // Security hardening (F-05, CWE-78): escape shell arguments.
         exec( escapeshellcmd( $textExtractionTool ) . ' ' . escapeshellarg( $fileName ) . ' > ' . escapeshellarg( $tmpName ), $ret );

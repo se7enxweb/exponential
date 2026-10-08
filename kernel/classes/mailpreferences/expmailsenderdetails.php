@@ -223,7 +223,7 @@ class expMailSenderDetails
         if ( $dir === null && self::$dir !== null )
             $dir = self::$dir;
         $dir = $dir !== null ? rtrim( $dir, "/" ) : rtrim( getcwd(), "/" ) . "/settings/override";
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0775, true ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0775 ), true ) )
             return false;
         $file = $dir . '/mailpreferences.ini.append.php';
         $scope = new expIniScope( 'mailpreferences-sender', expIniScope::KIND_GLOBAL, basename( $dir ), dirname( $dir ) . '/', 'Mail sender details' );
@@ -234,7 +234,7 @@ class expMailSenderDetails
         if ( class_exists( 'expAuditWriter' ) )
             expAuditWriter::ownLikeParent( $file, 0640 );
         else
-            @chmod( $file, 0640 );
+            @chmod( $file, eZFile::fileMode( 0640 ) );
         if ( function_exists( 'opcache_invalidate' ) )
             @opcache_invalidate( $file, true );
         if ( $dir === rtrim( getcwd(), '/' ) . '/settings/override' )

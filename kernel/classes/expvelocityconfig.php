@@ -239,7 +239,7 @@ class expVelocityConfig
 
         // The override holds a private key path among other things, so it is
         // not for every account on the machine to read.
-        @chmod( self::OVERRIDE_DIR . '/' . self::OVERRIDE_FILE, 0600 );
+        @chmod( self::OVERRIDE_DIR . '/' . self::OVERRIDE_FILE, eZFile::fileMode( 0600 ) );
 
         $this->forgetCaches();
 
@@ -272,7 +272,7 @@ class expVelocityConfig
             return array( 'ok' => false, 'message' =>
                 'could not write ' . self::OVERRIDE_DIR . '/' . self::OVERRIDE_FILE );
         }
-        @chmod( self::OVERRIDE_DIR . '/' . self::OVERRIDE_FILE, 0600 );
+        @chmod( self::OVERRIDE_DIR . '/' . self::OVERRIDE_FILE, eZFile::fileMode( 0600 ) );
 
         $this->forgetCaches();
 

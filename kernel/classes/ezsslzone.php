@@ -146,7 +146,7 @@ class eZSSLZone
                     fclose( $fh );
 
                     $perm = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
-                    chmod( $cacheFileName, octdec( $perm ) );
+                    chmod( $cacheFileName, eZFile::fileMode( octdec( $perm ) ) );
                 }
 
                 return $GLOBALS['eZSSLZonesCachedPathStrings'] = $pathStringsArray;

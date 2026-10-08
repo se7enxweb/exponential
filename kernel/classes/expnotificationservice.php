@@ -114,7 +114,7 @@ class expNotificationService
         $existed = is_file( $file );
         @file_put_contents( $file, json_encode( $run ) . "\n", FILE_APPEND | LOCK_EX );
         if ( !$existed )
-            @chmod( $file, 0666 );
+            @chmod( $file, eZFile::fileMode( 0666 ) );
         $lines = @file( $file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
         if ( is_array( $lines ) && count( $lines ) > self::KEEP_RUNS * 2 )
             @file_put_contents( $file, implode( "\n", array_slice( $lines, -self::KEEP_RUNS ) ) . "\n", LOCK_EX );
@@ -161,7 +161,7 @@ class expNotificationService
             return false;
         }
         if ( !$existed )
-            @chmod( $file, 0666 ); // the command line (root) and the web server (a site user) both take it
+            @chmod( $file, eZFile::fileMode( 0666 ) ); // the command line (root) and the web server (a site user) both take it
         if ( !flock( $handle, LOCK_EX | LOCK_NB ) )
         {
             fclose( $handle );

@@ -239,7 +239,7 @@ class expRADSurvey
         if ( @file_put_contents( $temp, $data ) === false )
             return;
 
-        @chmod( $temp, 0664 );
+        @chmod( $temp, eZFile::fileMode( 0664 ) );
         if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 && ( $uid = @fileowner( $dir ) ) !== false )
         {
             @chown( $temp, $uid );

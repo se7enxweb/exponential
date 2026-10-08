@@ -390,7 +390,7 @@ class expPhar
         $output = $target;
 
         $distDir = dirname( $output );
-        if ( !is_dir( $distDir ) && !@mkdir( $distDir, 0755, true ) )
+        if ( !is_dir( $distDir ) && !@mkdir( $distDir, eZDir::dirMode( 0755 ), true ) )
             return self::fail( "could not create $distDir" );
 
         $files = self::collect();

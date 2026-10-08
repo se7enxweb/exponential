@@ -28,7 +28,7 @@ function expKickstarterRunLogged( $rootDir, $argv )
     $logDir = $rootDir . '/var/log';
     $log = $logDir . '/kickstart.log';
     if ( !is_dir( $logDir ) )
-        @mkdir( $logDir, 0775, true );
+        @mkdir( $logDir, \eZDir::dirMode( 0775 ), true );
     for ( $i = 9; $i >= 1; --$i )
     {
         $from = $i === 1 ? $log : $log . '.' . ( $i - 1 );
