@@ -845,7 +845,7 @@ class expDebugBarReport
 #debug > h2 > label.debug-keep-open { margin-right: 12px; color: #222; }
 #debug-details { display: none; }
 #debug-details.active { display: block; position: fixed; left: 0; right: 0; bottom: var(--exp-debug-bar-h, 38px); z-index: 2147482999;
-  max-height: 60vh; overflow: auto; background: var(--xd-bg, #fff); color: var(--xd-fg, #222); border-top: 2px solid #999;
+  height: 60vh; overflow: auto; background: var(--xd-bg, #fff); color: var(--xd-fg, #222); border-top: 2px solid #999;
   box-shadow: 0 -4px 12px rgba(0,0,0,.2); box-sizing: border-box; }
 body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 @media (prefers-color-scheme: dark) {

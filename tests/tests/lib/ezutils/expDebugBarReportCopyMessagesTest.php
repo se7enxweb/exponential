@@ -89,6 +89,15 @@ class expDebugBarReportCopyMessagesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '<pre>a &lt;warning&gt; for the copy</pre>', $report );
     }
 
+    public function testOpenPanelKeepsOneHeightForEveryTab()
+    {
+        $source = file_get_contents( __DIR__ . '/../../../../lib/ezutils/classes/expdebugbarreport.php' );
+        $this->assertMatchesRegularExpression( '/#debug-details\.active \{[^}]*\bheight: 60vh;[^}]*overflow: auto;/s', $source,
+            'the open panel has a fixed height, so switching tabs does not resize it; longer tabs scroll inside it' );
+        $this->assertDoesNotMatchRegularExpression( '/#debug-details\.active \{[^}]*max-height:/s', $source,
+            'a max-height alone lets the panel grow and shrink with each tab' );
+    }
+
     public function testEveryScriptWordIsListedAndTheButtonIsTranslated()
     {
         $js = file_get_contents( $this->root . '/design/standard/javascript/expdebugbar.js' );

@@ -1989,7 +1989,7 @@ class eZDebug
 #debug > h2 > a { flex: 1; padding: 8px 12px; color: #222; text-decoration: none; }
 #debug > h2 > label.debug-keep-open { margin-right: 12px; color: #222; }
 #debug-details.active { position: fixed; left: 0; right: 0; bottom: 38px; z-index: 2147482999;
-  max-height: 60vh; overflow: auto; background: #fff; border-top: 2px solid #999;
+  height: 60vh; overflow: auto; background: #fff; border-top: 2px solid #999;
   box-shadow: 0 -4px 12px rgba(0,0,0,.2); box-sizing: border-box; }
 body.exp-debug-bar { padding-bottom: 46px; }
 @media (prefers-color-scheme: dark) {
