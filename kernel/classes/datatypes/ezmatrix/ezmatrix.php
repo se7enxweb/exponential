@@ -221,15 +221,17 @@ class eZMatrix
         If columns ids are wrong or
            there are additional/redundant columns in definition/eZMatrix object
         then current eZMatix object will be adjusted according to \a $matrixColumnDefinition.
-        Note: if id of some column was changed form "old_id" to "new_id"
-              then a column with "old_id" will be removed(all data of this column
-              will be lost) and an empty column with "new_id" will be created.
+        Note: a column whose id the class changed in place (the class has, at
+              the same position, a column the matrix does not have) keeps its
+              cells under the new id. A column the class no longer has at all is
+              removed with its cells, and a new class column starts empty.
         Returns \a true if adjustment(matrix modification) was performed. Otherwise - \a false.
     */
     function adjustColumnsToDefinition( $classColumnsDefinition )
     {
         $matrixWasModified = false;
 
+        $matrixWasModified |= $this->renameColumnsChangedInPlace( $classColumnsDefinition );
         $matrixWasModified |= $this->removeUselessColumns( $classColumnsDefinition );
         $matrixWasModified |= $this->updateColumns( $classColumnsDefinition );
 
@@ -246,6 +248,50 @@ class eZMatrix
         }
 
         return $matrixWasModified;
+    }
+
+    /**
+     * Gives a matrix column whose identifier the class does not know the
+     * identifier of the class column at the same position, when the matrix has
+     * no column with that identifier yet: the column's identifier was changed
+     * in place (in the class editor, or by a class installed with other
+     * identifiers than the objects it describes). Its cells are kept instead of
+     * being dropped with the old identifier on the next edit of the object.
+     *
+     * @param eZMatrixDefinition $classColumnsDefinition
+     * @return bool true if a column was renamed
+     */
+    protected function renameColumnsChangedInPlace( $classColumnsDefinition )
+    {
+        if ( !$classColumnsDefinition || !isset( $this->Matrix['columns']['sequential'] ) )
+            return false;
+
+        $classColumnsByIndex = array();
+        $classIdentifiers = array();
+        foreach ( $classColumnsDefinition->attribute( 'columns' ) as $column )
+        {
+            $classColumnsByIndex[(int)$column['index']] = $column;
+            $classIdentifiers[(string)$column['identifier']] = true;
+        }
+        $matrixIdentifiers = array();
+        foreach ( $this->Matrix['columns']['sequential'] as $column )
+            $matrixIdentifiers[(string)$column['identifier']] = true;
+
+        $renamed = false;
+        foreach ( $this->Matrix['columns']['sequential'] as $position => $column )
+        {
+            $identifier = (string)$column['identifier'];
+            if ( isset( $classIdentifiers[$identifier] ) || !isset( $classColumnsByIndex[$position] ) )
+                continue;
+            $newIdentifier = (string)$classColumnsByIndex[$position]['identifier'];
+            if ( $newIdentifier === '' || isset( $matrixIdentifiers[$newIdentifier] ) )
+                continue;
+            $this->Matrix['columns']['sequential'][$position]['identifier'] = $newIdentifier;
+            unset( $matrixIdentifiers[$identifier] );
+            $matrixIdentifiers[$newIdentifier] = true;
+            $renamed = true;
+        }
+        return $renamed;
     }
 
     /*!
