@@ -490,18 +490,27 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             // but we want it to be set for the whole eZ publish site
             $cookiePath = $wwwDir != '' ? $wwwDir : '/';
 
+            // Secure and SameSite as the session cookie has them; readable by scripts (eZSession::siteCookieOptions())
             if ( eZUser::isCurrentUserRegistered() )
             {
                 // Only set the cookie if it doesnt exist. This way we are not constantly sending the set request in the headers.
                 if ( !isset( $_COOKIE['is_logged_in'] ) || $_COOKIE['is_logged_in'] !== 'true' )
                 {
-                    setcookie( 'is_logged_in', 'true', 0, $cookiePath );
+                    setcookie( 'is_logged_in', 'true', eZSession::siteCookieOptions( $cookiePath ) );
                 }
             }
             else if ( isset( $_COOKIE['is_logged_in'] ) )
             {
-                setcookie( 'is_logged_in', false, 0, $cookiePath );
+                setcookie( 'is_logged_in', '', array( 'expires' => 1 ) + eZSession::siteCookieOptions( $cookiePath ) );
             }
+        }
+
+        // site.ini [Session] CookieAlwaysAddToHttpResponse: the session cookie in every response, for a load balancer
+        // that keeps a user on one server by the session id
+        $sessionCookie = eZSession::responseCookie();
+        if ( $sessionCookie !== null )
+        {
+            setcookie( $sessionCookie['name'], $sessionCookie['value'], $sessionCookie['options'] );
         }
 
         if ( $this->module->exitStatus() == eZModule::STATUS_REDIRECT )

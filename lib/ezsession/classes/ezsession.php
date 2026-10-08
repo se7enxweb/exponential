@@ -335,6 +335,18 @@ class eZSession
     */
     static public function setCookieParams( $lifetime = false )
     {
+        session_set_cookie_params( self::cookieParams( $lifetime ) );
+    }
+
+    /**
+     * The parameters of the session cookie from site.ini [Session] (falling back to php.ini), as setCookieParams()
+     * sets them, without setting anything: lifetime, path, domain, secure, httponly, samesite.
+     *
+     * @param int|false $lifetime Cookie timeout of the session cookie, read from the ini if false
+     * @return array
+     */
+    static public function cookieParams( $lifetime = false )
+    {
         $ini      = eZINI::instance();
         $params   = session_get_cookie_params();
         if ( $lifetime === false )
@@ -367,14 +379,14 @@ class eZSession
         if ( strtolower( $samesite ) === 'none' && !$secure )
             $samesite = 'Lax';
 
-        session_set_cookie_params( array(
+        return array(
             'lifetime' => (int)$lifetime,
             'path'     => $path,
             'domain'   => $domain,
             'secure'   => (bool)$secure,
             'httponly' => (bool)$httponly,
             'samesite' => $samesite === '' ? '' : ucfirst( strtolower( $samesite ) ),
-        ) );
+        );
     }
 
     /**
@@ -396,6 +408,99 @@ class eZSession
         if ( $value === 'auto' )
             return 'auto';
         return in_array( $value, array( 'true', 'enabled', '1', 'yes', 'on' ), true );
+    }
+
+    /**
+     * The session cookie to send with every response, or null: only with site.ini [Session]
+     * CookieAlwaysAddToHttpResponse enabled (disabled by default), a started session with an id and headers not sent.
+     * PHP sends the session cookie when it starts a new session only; a load balancer that keeps a user on one server
+     * by the session id (cookie persistence) needs it in every response. Name, value and the options of setcookie()
+     * (path, domain, secure, httponly, samesite and expires from the lifetime) are those of the session cookie, as
+     * setCookieParams() set them.
+     *
+     * @return array|null array( 'name' => ..., 'value' => ..., 'options' => array( ... ) )
+     */
+    static public function responseCookie()
+    {
+        if ( !self::cookieOnEveryResponse() )
+        {
+            return null;
+        }
+        $id = session_id();
+        if ( !self::$hasStarted || $id === '' || $id === false || headers_sent() )
+        {
+            return null;
+        }
+        return self::sessionCookie( session_name(), $id, session_get_cookie_params(), time() );
+    }
+
+    /**
+     * Whether site.ini [Session] CookieAlwaysAddToHttpResponse is enabled ("enabled" or "true"; disabled by default).
+     *
+     * @return bool
+     */
+    static public function cookieOnEveryResponse()
+    {
+        $ini = eZINI::instance();
+        return $ini->hasVariable( 'Session', 'CookieAlwaysAddToHttpResponse' ) &&
+               in_array( strtolower( trim( (string)$ini->variable( 'Session', 'CookieAlwaysAddToHttpResponse' ) ) ),
+                         array( 'enabled', 'true' ), true );
+    }
+
+    /**
+     * The session cookie $name with the session id $id and the cookie parameters $params (session_get_cookie_params())
+     * as setcookie() takes it; a lifetime counts from $now.
+     *
+     * @param string $name
+     * @param string $id
+     * @param array $params
+     * @param int $now
+     * @return array array( 'name' => ..., 'value' => ..., 'options' => array( ... ) )
+     */
+    static public function sessionCookie( $name, $id, array $params, $now )
+    {
+        $lifetime = isset( $params['lifetime'] ) ? (int)$params['lifetime'] : 0;
+        return array( 'name' => (string)$name,
+                      'value' => (string)$id,
+                      'options' => self::cookieOptions( $params, $lifetime > 0 ? (int)$now + $lifetime : 0 ) );
+    }
+
+    /**
+     * The options of setcookie() for a cookie of the site beside the session cookie (is_logged_in): Secure and
+     * SameSite as the session cookie has them (cookieParams()), with $path and expires 0. Not HttpOnly: such a cookie
+     * holds no secret, and HTTP caches and the scripts of cached pages read it.
+     *
+     * @param string $path
+     * @return array
+     */
+    static public function siteCookieOptions( $path )
+    {
+        $options = self::cookieOptions( self::cookieParams(), 0 );
+        $options['path'] = (string)$path;
+        $options['httponly'] = false;
+        unset( $options['domain'] );
+        return $options;
+    }
+
+    /**
+     * setcookie() options from the session cookie parameters $params.
+     *
+     * @param array $params session_get_cookie_params()
+     * @param int $expires
+     * @return array
+     */
+    static protected function cookieOptions( array $params, $expires )
+    {
+        $options = array( 'expires' => (int)$expires,
+                          'path' => isset( $params['path'] ) && $params['path'] !== '' ? $params['path'] : '/',
+                          'domain' => isset( $params['domain'] ) ? (string)$params['domain'] : '',
+                          'secure' => !empty( $params['secure'] ),
+                          'httponly' => !empty( $params['httponly'] ) );
+        if ( isset( $params['samesite'] ) && $params['samesite'] !== '' )
+        {
+            $options['samesite'] = $params['samesite'];
+        }
+        return $options;
     }
 
     /**
