@@ -36,7 +36,7 @@ class eZLog
             $dir = rtrim( eZDebug::instance()->logDirectory(), '/' );
         }
         $fileName = $dir . '/' . $logName;
-        $oldumask = @umask( 0 );
+        $oldumask = @umask( eZFile::creationUmask() );
 
         $fileExisted = file_exists( $fileName );
         if ( $fileExisted and
@@ -65,7 +65,7 @@ class eZLog
             if ( !$fileExisted )
             {
                 $permissions = octdec( $ini->variable( 'FileSettings', 'LogFilePermissions' ) );
-                @chmod( $fileName, $permissions );
+                @chmod( $fileName, eZFile::fileMode( $permissions ) );
             }
             @umask( $oldumask );
         }
@@ -139,7 +139,7 @@ class eZLog
         $logDirectory = eZSys::logDirectory();
         $logName = 'storage.log';
         $fileName = $logDirectory . '/' . $logName;
-        $oldumask = @umask( 0 );
+        $oldumask = @umask( eZFile::creationUmask() );
 
         clearstatcache( true, $fileName );
         $fileExisted = file_exists( $fileName );
@@ -174,7 +174,7 @@ class eZLog
             if ( !$fileExisted )
             {
                 $permissions = octdec( $ini->variable( 'FileSettings', 'LogFilePermissions' ) );
-                @chmod( $fileName, $permissions );
+                @chmod( $fileName, eZFile::fileMode( $permissions ) );
             }
             @umask( $oldumask );
         }

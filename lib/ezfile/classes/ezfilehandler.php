@@ -397,7 +397,7 @@ class eZFileHandler
         }
 
         $destinationFD = fopen( $destinationFilename, 'wb' );
-        chmod( $destinationFilename, octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
+        chmod( $destinationFilename, eZFile::fileMode( octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) ) );
         if ( !$destinationFD )
         {
             @fclose( $sourceFD );

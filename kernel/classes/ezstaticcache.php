@@ -963,7 +963,7 @@ class eZStaticCache implements ezpStaticCache
             eZDir::mkdir( $dir, false, true );
         }
 
-        $oldumask = umask( 0 );
+        $oldumask = umask( eZFile::creationUmask() );
 
         $tmpFileName = $file . '.' . md5( $file. uniqid( "ezp". getmypid(), true ) );
 
@@ -981,7 +981,7 @@ class eZStaticCache implements ezpStaticCache
             eZFile::rename( $tmpFileName, $file, false, eZFile::CLEAN_ON_FAILURE | eZFile::APPEND_DEBUG_ON_FAILURE );
 
             $perm = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
-            chmod( $file, octdec( $perm ) );
+            chmod( $file, eZFile::fileMode( octdec( $perm ) ) );
         }
 
         umask( $oldumask );

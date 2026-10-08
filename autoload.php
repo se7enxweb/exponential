@@ -280,4 +280,11 @@ if ( EZCBASE_ENABLED )
     spl_autoload_register( array( 'ezcBase', 'autoload' ) );
 }
 
+// With EZP_FILE_MODE_MAX / EZP_DIR_MODE_MAX in config.php, files and directories created without a mode of their own
+// stay inside the limits too (doc/bc/6.0/file-modes.md); without them the umask is left alone
+if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+{
+    eZFile::applyCreationUmask();
+}
+
 ?>

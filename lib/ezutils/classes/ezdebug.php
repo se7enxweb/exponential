@@ -947,7 +947,7 @@ class eZDebug
         {
             eZDir::mkdir( $logDir, false, true );
         }
-        $oldumask = @umask( 0 );
+        $oldumask = @umask( eZFile::creationUmask() );
         clearstatcache( true, $fileName );
         $fileExisted = file_exists( $fileName );
         if ( $fileExisted and
@@ -990,7 +990,7 @@ class eZDebug
             {
                 $ini = eZINI::instance();
                 $permissions = octdec( $ini->variable( 'FileSettings', 'LogFilePermissions' ) );
-                @chmod( $fileName, $permissions );
+                @chmod( $fileName, eZFile::fileMode( $permissions ) );
             }
             @umask( $oldumask );
         }

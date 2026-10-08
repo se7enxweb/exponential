@@ -195,7 +195,7 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
         eZFile::create( basename( $filePath ), dirname( $filePath ), $contents, true );
 
         $perm = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
-        chmod( $filePath, octdec( $perm ) );
+        chmod( $filePath, eZFile::fileMode( octdec( $perm ) ) );
 
         eZDebug::accumulatorStop( 'dbfile' );
     }
@@ -220,7 +220,7 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
 
         eZFile::create( basename( $filePath ), dirname( $filePath ), $contents, true );
         $perm = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
-        chmod( $filePath, octdec( $perm ) );
+        chmod( $filePath, eZFile::fileMode( octdec( $perm ) ) );
 
         eZDebug::accumulatorStop( 'dbfile' );
     }
