@@ -4820,9 +4820,9 @@ a1ef5dadbbbfd8b1c87a3973d05f5ae8  kernel/classes/datatypes/ezisbn/ezisbntype.php
 2ae515145aa256ea8e8ec08d17f32f8b  kernel/classes/datatypes/ezisbn/share/db_data.dba
 6a6b82fac0cccbcdd7f4c39e54c98346  kernel/classes/datatypes/ezkeyword/ezkeyword.php
 28fc47a51d5002418a54c2de7d9d53f8  kernel/classes/datatypes/ezkeyword/ezkeywordtype.php
-e9e32668928cd3ae238b9d0ec515f586  kernel/classes/datatypes/ezmatrix/ezmatrix.php
+68bc60ba91ebe4127ac00e9426f50594  kernel/classes/datatypes/ezmatrix/ezmatrix.php
 9de1e919281f99004475e61f94692d51  kernel/classes/datatypes/ezmatrix/ezmatrixdefinition.php
-7f50f5f370952092e33a410d28687c7e  kernel/classes/datatypes/ezmatrix/ezmatrixtype.php
+ac232800770033279d30dec7893d47b7  kernel/classes/datatypes/ezmatrix/ezmatrixtype.php
 e62faf1dccdd52c02632eef4a5a1f0f9  kernel/classes/datatypes/ezmedia/ezmedia.php
 844de7bfb21f6e666798e4bfc2f40c08  kernel/classes/datatypes/ezmedia/ezmediatype.php
 b8f5be715f6f7bc1166f3789c870b989  kernel/classes/datatypes/ezmultioption/ezmultioption.php
@@ -7124,7 +7124,7 @@ c15e9ca2aca7c6a64bf53f6b7d2fe112  tests/tests/kernel/classes/datatypes/eZDateTim
 be230a8ce86ca237985d46e212686dbe  tests/tests/kernel/classes/datatypes/eZISBNAndAuthorDatatypesTest.php
 f65de49a296b8df733dd0a2f160f89bc  tests/tests/kernel/classes/datatypes/eZIdentifierAndRangeOptionDatatypesTest.php
 23a9a08096135ebe917e471b7fe54722  tests/tests/kernel/classes/datatypes/eZIniSettingDatatypeTest.php
-bf0caf2109936b5dc0623934ef62876d  tests/tests/kernel/classes/datatypes/eZMatrixAndOptionDatatypesTest.php
+efe59a322e82b01b5d198f5ce4ac2d5c  tests/tests/kernel/classes/datatypes/eZMatrixAndOptionDatatypesTest.php
 8b7725310f999cfd85ede73a60ca4f95  tests/tests/kernel/classes/datatypes/eZMultiOptionDatatypeTest.php
 3838e382720201da0ba10c1f69b0ff29  tests/tests/kernel/classes/datatypes/eZNumericDatatypesTest.php
 d3c199ef12933087e7bf07a63474ce7f  tests/tests/kernel/classes/datatypes/eZTextDatatypesTest.php
