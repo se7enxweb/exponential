@@ -90,7 +90,7 @@ class Session extends \Exponential\Runnable\ModuleView
         if ( $http->hasSessionVariable( 'eZSessionSearchText' ) )
             $search = self::cleanSearch( $http->sessionVariable( 'eZSessionSearchText' ) );
 
-        $viewParameters = $Params['UserParameters'];
+        $viewParameters = $scope['Params']['UserParameters'];
 
         // "Clear search" is a button of its own, outside the module's actions
         if ( $http->hasPostVariable( 'ClearSessionSearchButton' ) )
@@ -118,7 +118,7 @@ class Session extends \Exponential\Runnable\ModuleView
             }
 
             list( $limit, $limitChoice, $limitChoices ) = \expAdminPagination::chosen( 'setup/session', 'admin_session_list_limit', array( 50, 25, 100 ) );
-            $offset = \expAdminPagination::offset( $Params );
+            $offset = \expAdminPagination::offset( $scope['Params'] );
             $sortBy = self::cleanSort( isset( $viewParameters['sortby'] ) ? $viewParameters['sortby'] : '', self::VISIT_SORT_COLUMNS, 'last' );
             $order = self::cleanOrder( isset( $viewParameters['order'] ) ? $viewParameters['order'] : '', $sortBy === 'last' || $sortBy === 'logins' ? 'desc' : 'asc' );
             $now = time();

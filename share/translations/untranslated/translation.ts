@@ -20933,6 +20933,22 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>The log directory is not writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Errors and warnings of the site are not recorded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give the user the web server runs as write access to var/log and to the log directory of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The var directory is writable</source>
         <translation type="unfinished"></translation>
     </message>

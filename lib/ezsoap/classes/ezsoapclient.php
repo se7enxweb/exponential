@@ -200,13 +200,13 @@ class eZSOAPClient
                     if ( $rawResponse === false )
                     {
                         $this->ErrorString = "<b>Error:</b> could not send the XML-SOAP with SSL call. Could not write to the socket. cURL failed: " . curl_error($ch) . " (errno " . curl_errno($ch) . ")";
-                        curl_close( $ch );
+                        if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
                         $response = 0;
                         return $response;
                     }
                 }
 
-                curl_close( $ch );
+                if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
             }
         }
 

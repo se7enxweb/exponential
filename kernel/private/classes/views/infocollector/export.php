@@ -33,8 +33,8 @@ class Export extends \Exponential\Runnable\ModuleView
                 ${$__name} = &$scope[$__name];
         unset( $__name );
 
-        $module = $Params['Module'];
-        $objectID = isset( $Params['ObjectID'] ) && ctype_digit( (string)$Params['ObjectID'] ) ? (int)$Params['ObjectID'] : 0;
+        $module = $scope['Params']['Module'];
+        $objectID = isset( $scope['Params']['ObjectID'] ) && ctype_digit( (string)$scope['Params']['ObjectID'] ) ? (int)$scope['Params']['ObjectID'] : 0;
         $object = $objectID > 0 ? \eZContentObject::fetch( $objectID ) : null;
         if ( !$object instanceof \eZContentObject )
             return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );

@@ -10,6 +10,7 @@
  *  RM-06 a route kept in the route cache before the list existed still answers for its one version
  *  RM-07 the authentication and error routes answer every method (a refused POST gets its 401/403, not 405)
  *  RM-08 the ezp provider of ezprestapi: reads at v1 and v2, create/update/delete at v2 with POST (delete with DELETE too)
+ *  RM-09 a first path element that names no API provider (/api/v1/config): 404, not an uncaught exception
  *
  * No database: the routes are built in memory and the prefix filter's static state is set by the test and put back.
  *
@@ -27,6 +28,15 @@ class ezpRestRouteMatchingTestRouter extends ezpRestRouter
     public function createRoutes()
     {
         return $this->testRoutes;
+    }
+}
+
+/** The routes of the request's provider, built without the route cache */
+class ezpRestRouteMatchingTestUncachedRouter extends ezpRestRouter
+{
+    public function createRoutes()
+    {
+        return $this->doCreateRoutes();
     }
 }
 
@@ -186,6 +196,15 @@ class ezpRestRouteMatchingTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( 'ezpRestOauthTokenController::handleRequest', self::pick( $routes, 'POST', '/oauth/token' ) );
         $this->assertSame( '405 OPTIONS,POST', self::pick( $routes, 'GET', '/oauth/token' ), 'the token endpoint stays POST only' );
+    }
+
+    /** RM-09 */
+    public function testUnknownProviderIsNotFound()
+    {
+        $this->version( 1, 'x316-no-such-provider' );
+        $router = new ezpRestRouteMatchingTestUncachedRouter( self::request( 'GET', '/api/x316-no-such-provider/config' ) );
+        $this->expectException( ezcMvcRouteNotFoundException::class );
+        $router->getRoutingInformation();
     }
 
     /** RM-08 */

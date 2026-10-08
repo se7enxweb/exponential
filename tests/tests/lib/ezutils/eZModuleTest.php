@@ -232,6 +232,28 @@ $Result = array( "content" => "single " . $Params["Name"] );
         $this->assertSame( '/elsewhere', $m->redirectURI() );
     }
 
+    /** shop/basket's Continue shopping redirects to the session's FromPage, which may never have been set */
+    public function testRedirectToNoAddressIsTheEmptyOneWithoutDeprecation()
+    {
+        $m = $this->module();
+        $deprecations = array();
+        set_error_handler( function ( $errno, $errstr ) use ( &$deprecations ) {
+            $deprecations[] = $errstr;
+            return true;
+        }, E_DEPRECATED );
+        try
+        {
+            $m->redirectTo( null );
+        }
+        finally
+        {
+            restore_error_handler();
+        }
+        $this->assertSame( array(), $deprecations );
+        $this->assertSame( '', $m->redirectURI() );
+        $this->assertSame( eZModule::STATUS_REDIRECT, $m->exitStatus() );
+    }
+
     public function testDefaultAction()
     {
         $_POST = array( 'StoreButton' => '1', 'Data' => 'x' );

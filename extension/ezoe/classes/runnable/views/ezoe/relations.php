@@ -9,6 +9,33 @@ namespace Exponential\View\Extension\Ezoe\Ezoe
 
 class Relations extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * Reads the EmbedID of the address: an object id ("12"), "eZObject_12" or "eZNode_34" (the prefix in any case).
+     *
+     * @param mixed $value
+     * @return array|false array( 'eZObject'|'eZNode', id > 0 ), or false for a missing or malformed value
+     */
+    public static function parseEmbedId( $value )
+    {
+        if ( is_int( $value ) )
+        {
+            $value = (string)$value;
+        }
+        if ( !is_string( $value ) || $value === '' )
+        {
+            return false;
+        }
+        if ( preg_match( '/^[0-9]{1,18}\z/', $value ) === 1 )
+        {
+            return (int)$value > 0 ? array( 'eZObject', (int)$value ) : false;
+        }
+        if ( preg_match( '/^(eZObject|eZNode)_([0-9]{1,18})\z/i', $value, $match ) === 1 && (int)$match[2] > 0 )
+        {
+            return array( strcasecmp( $match[1], 'eZNode' ) === 0 ? 'eZNode' : 'eZObject', (int)$match[2] );
+        }
+        return false;
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -64,31 +91,31 @@ class Relations extends \Exponential\Runnable\ModuleView
         $imageIni  = \eZINI::instance( 'image.ini' );
         $params    = array('loadImages' => true, 'imagePreGenerateSizes' => array('small', 'original') );
 
-        if ( !$object instanceof \eZContentObject || !$object->canRead() )
+        // Read access to the object, or edit access to the version being edited (Dialog::mayOpen())
+        if ( !Dialog::mayOpen( $object, $objectVersion ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'ObjectId', '%value' => $objectID ) );
            \eZExecution::cleanExit();
         }
 
 
-        if ( isset( $Params['EmbedID'] )  && $Params['EmbedID'])
+        // A missing or malformed EmbedID ends here with the message, without a warning
+        $embedType   = 'eZObject';
+        $embedObject = false;
+        $embedParsed = self::parseEmbedId( isset( $Params['EmbedID'] ) ? $Params['EmbedID'] : null );
+        if ( $embedParsed !== false )
         {
-            $embedType = 'eZObject';
-            if ( is_numeric( $Params['EmbedID'] ) )
-                $embedId = $Params['EmbedID'];
-            else
-                list($embedType, $embedId) = explode('_', $Params['EmbedID']);
+            list( $embedType, $embedId ) = $embedParsed;
             if ( $embedType === 'eZNode' )
                 $embedObject = \eZContentObject::fetchByNodeID( $embedId );
             else
                 $embedObject = \eZContentObject::fetch( $embedId );
-                
         }
 
 
         if ( !$embedObject instanceof \eZContentObject || !$embedObject->canRead()  )
         {
-           echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'EmbedID', '%value' => (int)$Params['EmbedID'] ) );
+           echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'EmbedID', '%value' => $embedParsed !== false ? $embedParsed[1] : 0 ) );
            \eZExecution::cleanExit();
         }
 
@@ -106,6 +133,13 @@ class Relations extends \Exponential\Runnable\ModuleView
         {
             // figgure out what content type group this class is in
             $contentType = \eZOEXMLInput::embedTagContentType( $embedClassIdentifier, $embedClassID );
+        }
+
+        // The content type goes into the path of the template (design:ezoe/tag_embed_<type>.tpl): a known one only
+        if ( !Dialog::isContentType( $contentType ) )
+        {
+           echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid or missing parameter: %parameter', null, array( '%parameter' => 'ContentType' ) );
+           \eZExecution::cleanExit();
         }
 
 

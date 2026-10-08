@@ -347,7 +347,7 @@ class eZContentClass extends eZPersistentObject
         return $object;
     }
 
-    function canInstantiateClasses()
+    static function canInstantiateClasses()
     {
         $accessResult = eZUser::currentUser()->hasAccessTo( 'content' , 'create' );
         $canInstantiateClasses = 1;

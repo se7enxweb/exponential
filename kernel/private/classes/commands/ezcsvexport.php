@@ -165,7 +165,7 @@ class Ezcsvexport extends \Exponential\Runnable\Command
                 $script->shutdown( 5 );
             }
 
-            if ( !fputcsv( $fp, $objectData, ';' ) )
+            if ( !fputcsv( $fp, $objectData, ';', '"', '\\' ) )
             {
                 $cli->error( "Can not write to file" );
                 $script->shutdown( 6 );

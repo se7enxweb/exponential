@@ -40,7 +40,7 @@ class eZGZIPCompressionHandler extends eZForwardCompressionHandler
     */
     function setCompressionLevel( $level )
     {
-        $handler =& $this->handler();
+        $handler =& $this->forwardHandler();
         if ( method_exists( $handler, 'setCompressionLevel' ) )
             $handler->setCompressionLevel( $level );
     }
@@ -50,7 +50,7 @@ class eZGZIPCompressionHandler extends eZForwardCompressionHandler
     */
     function compressionLevel()
     {
-        $handler =& $this->handler();
+        $handler =& $this->forwardHandler();
         if ( method_exists( $handler, 'compressionLevel' ) )
             return $handler->compressionLevel();
         return false;

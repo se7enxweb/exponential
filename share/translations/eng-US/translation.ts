@@ -21831,6 +21831,22 @@ Note: The packages will not be uninstalled.</translation>
         <translation>The cache or storage directory is not writable</translation>
     </message>
     <message>
+        <source>The log directory is not writable</source>
+        <translation>The log directory is not writable</translation>
+    </message>
+    <message>
+        <source>Errors and warnings of the site are not recorded.</source>
+        <translation>Errors and warnings of the site are not recorded.</translation>
+    </message>
+    <message>
+        <source>Give the user the web server runs as write access to var/log and to the log directory of the site.</source>
+        <translation>Give the user the web server runs as write access to var/log and to the log directory of the site.</translation>
+    </message>
+    <message>
+        <source>Log directory</source>
+        <translation>Log directory</translation>
+    </message>
+    <message>
         <source>The var directory is writable</source>
         <translation>The var directory is writable</translation>
     </message>
@@ -56116,6 +56132,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show messages</source>
         <translation>Show messages</translation>
+    </message>
+    <message>
+        <source>Copy Messages</source>
+        <translation>Copy Messages</translation>
+    </message>
+    <message>
+        <source>Copied 1 message</source>
+        <translation>Copied 1 message</translation>
+    </message>
+    <message>
+        <source>Copied %count messages</source>
+        <translation>Copied %count messages</translation>
+    </message>
+    <message>
+        <source>No messages to copy.</source>
+        <translation>No messages to copy.</translation>
+    </message>
+    <message>
+        <source>Could not copy the messages.</source>
+        <translation>Could not copy the messages.</translation>
     </message>
     <message>
         <source>Sort by time</source>

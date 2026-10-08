@@ -57,7 +57,9 @@ three. Files are named like the normal ones (`site.ini.append.php` and so on).
 `eZINI` used to compute its cache directory relative to its own file. It now takes it from
 `$GLOBALS['eZINI_CONFIG_CACHE_DIR']`, and computes the old default only when nothing set it. A multi-site wrapper can
 set the global before bootstrapping, so every project on the installation uses the same cache directory; clearing the
-INI cache for one project then clears it for all of them. If you do not set it, nothing changes.
+INI cache for one project then clears it for all of them. If you do not set it, nothing changes. The opposite, an
+INI cache of its own for each site, is `site.ini [FileSettings] INICacheDir=site`: see
+[logs, INI cache and expiry timestamps per site](multi-site-log-and-cache-paths.md).
 
 ## Optional speed-up for many site extensions
 
@@ -68,6 +70,7 @@ off unless you host many sites.
 
 ## Related pages
 
+- [Logs, INI cache and expiry timestamps per site](multi-site-log-and-cache-paths.md)
 - [Specification: INI override placements](../../specifications/6.0/ini-override-placements.md)
 - [Console: exp:ini](exp-ini-command.md), [extensions in more than one folder](additional-extension-directories.md)
 - [Changelog 6.0.12](../../changelogs/6.0/6.0.12.md)

@@ -672,7 +672,7 @@ class expVelocityFrankenPHP extends expVelocity
         // holds package settings as PHP), and .htaccess, .git or .cache are
         // not the site's to serve. Both fall through to index.php.
         $lines[] = "\t\t@static {";
-        $lines[] = "\t\t\tpath_regexp static " . self::STATIC_PATHS;
+        $lines[] = "\t\t\tpath_regexp static " . self::staticPaths();
         $lines[] = "\t\t\tnot path_regexp " . self::NEVER_STATIC;
         $lines[] = "\t\t}";
         if ( $maxAge > 0 )

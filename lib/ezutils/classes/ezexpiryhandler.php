@@ -20,9 +20,33 @@ class eZExpiryHandler
         $this->Timestamps = array();
         $this->IsModified = false;
 
-        $cacheDirectory = eZSys::cacheDirectory();
-        $this->CacheFile = eZClusterFileHandler::instance( $cacheDirectory . '/' . 'expiry.php' );
+        $this->CacheFile = eZClusterFileHandler::instance( self::filePath() );
         $this->restore();
+    }
+
+    /**
+     * The expiry.php of the current site: in its cache directory, or in site.ini [FileSettings] ExpiryDir when that
+     * is set, inside VarDir or as an absolute path.
+     *
+     * The timestamps in it decide whether the image aliases and caches kept elsewhere are still valid. A cache
+     * directory on a file system that is emptied at a restart (memory) lost them with it; ExpiryDir keeps them
+     * where the storage is.
+     *
+     * @return string
+     */
+    static function filePath()
+    {
+        $ini = eZINI::instance();
+        $expiryDir = $ini->hasVariable( 'FileSettings', 'ExpiryDir' ) ? trim( (string)$ini->variable( 'FileSettings', 'ExpiryDir' ) ) : '';
+        if ( $expiryDir === '' )
+        {
+            return eZSys::cacheDirectory() . '/' . 'expiry.php';
+        }
+        if ( $expiryDir[0] == '/' )
+        {
+            return eZDir::path( array( $expiryDir, 'expiry.php' ) );
+        }
+        return eZDir::path( array( eZSys::varDirectory(), $expiryDir, 'expiry.php' ) );
     }
 
     /**
@@ -170,8 +194,8 @@ class eZExpiryHandler
     }
 
     /**
-     * Stores and drops the shared instance when it reads another expiry file than the one of the current cache
-     * directory, so that the next instance() reads the right one.
+     * Stores and drops the shared instance when it reads another expiry file than the one of the current site
+     * (filePath(): its cache directory or ExpiryDir), so that the next instance() reads the right one.
      *
      * The instance can be created before the siteaccess is known, with the expiry.php of the default VarDir. A
      * siteaccess with a VarDir of its own (multi-site hosting) has its own expiry.php; without the reset, clearing a
@@ -187,7 +211,7 @@ class eZExpiryHandler
             return false;
         }
         $instance = $GLOBALS['eZExpiryHandlerInstance'];
-        if ( $instance->CacheFile->name() === eZSys::cacheDirectory() . '/' . 'expiry.php' )
+        if ( $instance->CacheFile->name() === self::filePath() )
         {
             return false;
         }

@@ -9,6 +9,144 @@ namespace Exponential\View\Extension\Ezoe\Ezoe
 
 class Dialog extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * Whether the dialogs of the editor open for $object: for whoever may read the object, as before, and for whoever
+     * may edit the version being edited. Someone who edits a draft of an object that was never published can not read
+     * the object yet (it has no location), and needs the dialogs of the editor they work in.
+     *
+     * "May edit the version" is decided the way content/edit decides it (Edit::findEditVersion() and the check
+     * before the edit page): see mayEditVersion(). A version number of someone else's draft, of a published,
+     * archived or pending version, or of a version that does not exist opens nothing for who may not read the
+     * object.
+     *
+     * @param \eZContentObject|null $object
+     * @param int $versionNumber The version being edited
+     * @return bool
+     */
+    public static function mayOpen( $object, $versionNumber )
+    {
+        if ( !$object instanceof \eZContentObject )
+        {
+            return false;
+        }
+        if ( $object->canRead() )
+        {
+            return true;
+        }
+        return self::mayEditVersion( $object, $versionNumber );
+    }
+
+    /**
+     * Whether a view of the editor that only shows something and that used to need edit access to the object
+     * (ezoe/tags, the upload dialog of ezoe/upload) opens: the rule of the dialogs (mayOpen()) and edit access to the
+     * object, so nobody who could not open it before opens it now. Who may edit the object but not read it opens it
+     * only for a draft of their own (mayEditVersion()), not for any version number the address names.
+     *
+     * Writing into the version (an upload, a relation) needs mayEditVersion() on top.
+     *
+     * @param \eZContentObject|null $object
+     * @param int $versionNumber The version being edited
+     * @return bool
+     */
+    public static function mayOpenForEditing( $object, $versionNumber )
+    {
+        if ( !self::mayOpen( $object, $versionNumber ) )
+        {
+            return false;
+        }
+        $version = $object->version( (int)$versionNumber );
+        return (bool)$object->editAccess( $version instanceof \eZContentObjectVersion ? $version : null );
+    }
+
+    /**
+     * Whether the current user may edit version $versionNumber of $object in the editor, decided as content/edit
+     * decides it: the version exists, is a draft (a draft, an internal draft or one to be repeated), was made by the
+     * current user, the object is not in the trash, and eZContentObject::editAccess() allows it for the version in its
+     * own language (so a Language limitation applies, and a listener of the filter content/edit/access has its say).
+     *
+     * @param \eZContentObject|null $object
+     * @param int $versionNumber
+     * @return bool
+     */
+    public static function mayEditVersion( $object, $versionNumber )
+    {
+        $versionNumber = (int)$versionNumber;
+        if ( !$object instanceof \eZContentObject || $versionNumber < 1 )
+        {
+            return false;
+        }
+        if ( (int)$object->attribute( 'status' ) === \eZContentObject::STATUS_ARCHIVED )
+        {
+            return false;
+        }
+        $version = $object->version( $versionNumber );
+        if ( !$version instanceof \eZContentObjectVersion
+             || (int)$version->attribute( 'contentobject_id' ) !== (int)$object->attribute( 'id' )
+             || (int)$version->attribute( 'version' ) !== $versionNumber )
+        {
+            return false;
+        }
+        if ( !in_array( (int)$version->attribute( 'status' ), array( \eZContentObjectVersion::STATUS_DRAFT,
+                                                                       \eZContentObjectVersion::STATUS_INTERNAL_DRAFT,
+                                                                       \eZContentObjectVersion::STATUS_REPEAT ), true ) )
+        {
+            return false;
+        }
+        $userID = (int)\eZUser::currentUserID();
+        if ( $userID < 1 || (int)$version->attribute( 'creator_id' ) !== $userID )
+        {
+            return false;
+        }
+        $language = $version->initialLanguageCode();
+        return (bool)$object->editAccess( $version, is_string( $language ) && $language !== '' ? $language : false );
+    }
+
+    /**
+     * Whether $name names a dialog: the name of a template in design:ezoe/ (tag_link, help, merge_cells, ...), letters,
+     * digits, "_" and "-" only, so the address can not name a template elsewhere or one with a dot in its name.
+     *
+     * @param string $name
+     * @return bool
+     */
+    public static function isDialogName( $name )
+    {
+        return is_string( $name ) && preg_match( '/^[A-Za-z0-9_-]{1,100}\z/', $name ) === 1;
+    }
+
+    /**
+     * The content types of the upload and embed dialogs (the template design:ezoe/upload_<type>.tpl and
+     * design:ezoe/tag_embed_<type>.tpl): the relation groups of content.ini [RelationGroupSettings] (Groups[] and
+     * DefaultGroup) and the three the editor ships with (objects, images, files), each a plain template name.
+     *
+     * @return string[]
+     */
+    public static function contentTypes()
+    {
+        $types = array( 'objects', 'images', 'files' );
+        $ini = \eZINI::instance( 'content.ini' );
+        if ( $ini->hasVariable( 'RelationGroupSettings', 'Groups' ) )
+        {
+            $types = array_merge( $types, (array)$ini->variable( 'RelationGroupSettings', 'Groups' ) );
+        }
+        if ( $ini->hasVariable( 'RelationGroupSettings', 'DefaultGroup' ) )
+        {
+            $types[] = $ini->variable( 'RelationGroupSettings', 'DefaultGroup' );
+        }
+        return array_values( array_unique( array_filter( $types, array( __CLASS__, 'isDialogName' ) ) ) );
+    }
+
+    /**
+     * Whether $type, from the address, names a content type of contentTypes(); only such a type goes into the path
+     * of a template.
+     *
+     * @param mixed $type
+     * @return bool
+     */
+    public static function isContentType( $type )
+    {
+        return self::isDialogName( $type ) && in_array( $type, self::contentTypes(), true );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -28,14 +166,14 @@ class Dialog extends \Exponential\Runnable\ModuleView
         }
 
         $object = \eZContentObject::fetch( $objectID );
-        if ( !$object instanceof \eZContentObject || !$object->canRead() )
+        if ( !self::mayOpen( $object, $objectVersion ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'ObjectId', '%value' => $objectID ) );
            \eZExecution::cleanExit();
         }
 
 
-        if ( $dialog === '' )
+        if ( !self::isDialogName( $dialog ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid or missing parameter: %parameter', null, array( '%parameter' => 'Dialog' ) );
            \eZExecution::cleanExit();

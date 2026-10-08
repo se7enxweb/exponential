@@ -769,6 +769,13 @@ class eZSiteAccess
         /* Make sure extension siteaccesses are prepended */
         eZExtension::prependExtensionSiteAccesses( $name, $ini );
 
+        if ( $siteINI === null )
+        {
+            // site.ini of this siteaccess is read from the INI cache directory every site shares, never from that of
+            // the site before (a persistent worker or a script that changes siteaccess): the site before would hold a
+            // copy of it that clearing the INI cache of this site does not refresh
+            self::restoreINICacheDirectory();
+        }
         $ini->loadCache();
 
         // change some global settings if $siteINI is null
@@ -793,11 +800,123 @@ class eZSiteAccess
             // must not expire the caches of every site (multi-site hosting)
             eZExpiryHandler::resetForCurrentCacheDirectory();
 
+            // Its INI files are cached in its own cache directory when site.ini says so, and its logs go to its
+            // own log directory. Both are derived again on every change, so a process that serves several sites
+            // one after another (a persistent worker, a script that changes siteaccess) never keeps those of the
+            // previous one.
+            if ( self::updateINICacheDirectory( $ini ) !== false )
+            {
+                // site.ini itself was read above from the shared directory. Read it again from the directory of this
+                // site, so that it is cached there too and clearing the INI cache of this site refreshes it.
+                $ini->loadCache();
+            }
+            self::updateLogDirectory( $ini );
+
             eZUpdateDebugSettings();
             eZDebugSetting::writeDebug( 'kernel-siteaccess', "Updated settings to use siteaccess '$name'", __METHOD__ );
         }
 
         return $access;
+    }
+
+    /**
+     * Sets where the INI files read from now on are cached: in the cache directory of the site
+     * (<CacheDir>/ini/) when site.ini [FileSettings] INICacheDir is "site", in var/cache/ini/ (or the directory the
+     * installation set) otherwise.
+     *
+     * With several sites on one installation (multi-site hosting), each with a VarDir of its own, clearing the INI
+     * cache of one site no longer removes that of all the others. The INI files read before the siteaccess is known
+     * stay in var/cache/ini/. A directory set by the installation or a multi-site wrapper before is kept for a site
+     * without the setting, and comes back after a site with it.
+     *
+     * @param eZINI $ini site.ini of the siteaccess
+     * @return string|false The directory set, false for var/cache/ini/
+     */
+    static function updateINICacheDirectory( eZINI $ini )
+    {
+        if ( $ini->hasVariable( 'FileSettings', 'INICacheDir' ) && $ini->variable( 'FileSettings', 'INICacheDir' ) === 'site' )
+        {
+            $cacheDirectory = eZSys::cacheDirectory();
+            if ( $cacheDirectory === '' || $cacheDirectory[0] !== '/' )
+            {
+                // The installation root, as eZINI::loadCache() puts it before var/cache/ini/
+                $cacheDirectory = ( defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : dirname( __DIR__, 2 ) ) . '/' . $cacheDirectory;
+            }
+            if ( !isset( $GLOBALS['eZSiteAccessINICacheDir'] ) )
+            {
+                // What was there before, set by the installation or a multi-site wrapper, comes back for a site
+                // without the setting
+                $GLOBALS['eZSiteAccessINICacheDirBefore'] = isset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) ? $GLOBALS['eZINI_CONFIG_CACHE_DIR'] : null;
+            }
+            $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = rtrim( $cacheDirectory, '/' ) . '/ini/';
+            $GLOBALS['eZSiteAccessINICacheDir'] = $GLOBALS['eZINI_CONFIG_CACHE_DIR'];
+            return $GLOBALS['eZINI_CONFIG_CACHE_DIR'];
+        }
+
+        self::restoreINICacheDirectory();
+        return false;
+    }
+
+    /**
+     * Undoes what updateINICacheDirectory() set for a site with INICacheDir=site: the directory there was before
+     * comes back, unless something else has set another one since. Does nothing when no site directory is set.
+     *
+     * @return void
+     */
+    protected static function restoreINICacheDirectory()
+    {
+        if ( isset( $GLOBALS['eZSiteAccessINICacheDir'] ) )
+        {
+            if ( isset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) && $GLOBALS['eZINI_CONFIG_CACHE_DIR'] === $GLOBALS['eZSiteAccessINICacheDir'] )
+            {
+                if ( isset( $GLOBALS['eZSiteAccessINICacheDirBefore'] ) )
+                {
+                    $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = $GLOBALS['eZSiteAccessINICacheDirBefore'];
+                }
+                else
+                {
+                    unset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+                }
+            }
+            unset( $GLOBALS['eZSiteAccessINICacheDir'], $GLOBALS['eZSiteAccessINICacheDirBefore'] );
+        }
+    }
+
+    /**
+     * Puts the paths change() set for a site back to those of a request whose siteaccess is not known yet: the log
+     * files to var/log, the INI cache to the directory there was before (var/cache/ini/ or the one the installation
+     * set). For the Velocity warm-up, which renders a site in the parent process before the workers are forked and
+     * must not hand the paths of that site to the start of every request.
+     *
+     * @return void
+     */
+    static function resetSitePaths()
+    {
+        self::restoreINICacheDirectory();
+        eZDebug::setLogDirectory( false );
+        unset( $GLOBALS['eZDebugLogDir'] );
+    }
+
+    /**
+     * Points the log files of eZDebug and the default logs of eZLog at the log directory of the site
+     * (eZSys::logDirectory()) when site.ini [FileSettings] UseGlobalLogDir is disabled, and back at var/log otherwise.
+     *
+     * change() calls it for every front controller and every script, whether or not that has loaded the function
+     * file of eZUpdateDebugLogDirectory() (soap.php and webdav.php declare their own eZUpdateDebugSettings()).
+     *
+     * @param eZINI $ini site.ini of the siteaccess
+     * @return string|false The log directory used, false for var/log
+     */
+    static function updateLogDirectory( eZINI $ini )
+    {
+        $logDir = false;
+        if ( $ini->hasVariable( 'FileSettings', 'UseGlobalLogDir' ) &&
+             $ini->variable( 'FileSettings', 'UseGlobalLogDir' ) === 'disabled' )
+        {
+            $logDir = eZSys::logDirectory();
+        }
+        eZDebug::setLogDirectory( $logDir );
+        return $logDir;
     }
 
     /**

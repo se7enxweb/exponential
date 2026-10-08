@@ -48,7 +48,7 @@ class Stats extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
         $module = $Params['Module'];
 
-        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $sort = self::sortKey( isset( $userParameters['sort'] ) ? $userParameters['sort'] : '' );
         $show = self::showKey( isset( $userParameters['show'] ) ? $userParameters['show'] : '' );
         $search = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );

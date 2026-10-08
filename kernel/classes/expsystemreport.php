@@ -492,7 +492,9 @@ class expSystemReport
             'var_writable' => is_dir( $varPath ) && is_writable( $varPath ),
             'cache' => class_exists( 'eZSys' ) ? $absolute( (string)eZSys::cacheDirectory() ) : $varPath . '/cache',
             'storage' => class_exists( 'eZSys' ) ? $absolute( (string)eZSys::storageDirectory() ) : $varPath . '/storage',
-            'log_writable' => is_dir( $root . '/var/log' ) && is_writable( $root . '/var/log' ),
+            // Where the logs of this site go: eZDebug's directory (var/log, or the log directory of the site with
+            // site.ini [FileSettings] UseGlobalLogDir=disabled)
+            'log' => $absolute( class_exists( 'eZDebug' ) ? rtrim( (string)eZDebug::instance()->logDirectory(), '/' ) : 'var/log' ),
             'disk_free' => @disk_free_space( $varPath ) ?: null,
             'disk_total' => @disk_total_space( $varPath ) ?: null,
             'var_size' => null,
@@ -500,6 +502,21 @@ class expSystemReport
         );
         $facts['cache_writable'] = is_dir( $facts['cache'] ) && is_writable( $facts['cache'] );
         $facts['storage_writable'] = is_dir( $facts['storage'] ) && is_writable( $facts['storage'] );
+        // var/log takes what is logged before the siteaccess is known; the log directory of the site (also
+        // storage.log, eZSys::logDirectory()) what is logged after. Each is created on the first entry, so one that
+        // does not exist yet counts as writable when the directory it would be created in is.
+        $logDirs = array( $root . '/var/log', $facts['log'] );
+        if ( class_exists( 'eZSys' ) )
+            $logDirs[] = $absolute( (string)eZSys::logDirectory() );
+        $facts['log_writable'] = true;
+        foreach ( array_unique( $logDirs ) as $logDir )
+        {
+            $existing = $logDir;
+            while ( !is_dir( $existing ) && dirname( $existing ) !== $existing )
+                $existing = dirname( $existing );
+            if ( !is_writable( $existing ) )
+                $facts['log_writable'] = false;
+        }
         if ( $withSizes )
         {
             $size = self::directorySize( $varPath, $deadline );
@@ -595,7 +612,11 @@ class expSystemReport
             }
         }
         // Runs from a crontab write their output to a log of their own
-        $logs = array_merge( (array)glob( $root . '/var/log/cronjob*.log' ), (array)glob( $var . '/log/cronjob*.log' ), (array)glob( $var . '/cronjobs/*.log' ) );
+        // (var/log, and the log directory of the site: site.ini [FileSettings] LogDir, LogVarDir)
+        $siteLog = class_exists( 'eZSys' ) ? rtrim( (string)eZSys::logDirectory(), '/' ) : $var . '/log';
+        if ( $siteLog !== '' && $siteLog[0] !== '/' )
+            $siteLog = $root . '/' . $siteLog;
+        $logs = array_merge( (array)glob( $root . '/var/log/cronjob*.log' ), (array)glob( $siteLog . '/cronjob*.log' ), (array)glob( $var . '/cronjobs/*.log' ) );
         foreach ( array_filter( $logs ) as $log )
         {
             $time = @filemtime( $log );
@@ -950,6 +971,10 @@ class expSystemReport
         elseif ( !$this->fact( 'storage', 'cache_writable', true ) || !$this->fact( 'storage', 'storage_writable', true ) )
             $add( 'var_writable', self::FAIL, $this->t( 'The cache or storage directory is not writable' ), '',
                   $this->t( 'Give the user the web server runs as write access to var/ and everything below it.' ) );
+        elseif ( !$this->fact( 'storage', 'log_writable', true ) )
+            $add( 'var_writable', self::WARN, $this->t( 'The log directory is not writable' ),
+                  $this->t( 'Errors and warnings of the site are not recorded.' ),
+                  $this->t( 'Give the user the web server runs as write access to var/log and to the log directory of the site.' ) );
         else
             $add( 'var_writable', self::OK, $this->t( 'The var directory is writable' ) );
         $free = $this->fact( 'storage', 'disk_free' );
@@ -1215,6 +1240,7 @@ class expSystemReport
         $total = $this->fact( 'storage', 'disk_total' );
         $rows = array(
             array( $this->t( 'var directory' ), $path( $this->fact( 'storage', 'var', '' ) ) . ' · ' . ( $this->fact( 'storage', 'var_writable', false ) ? $this->t( 'writable' ) : $this->t( 'not writable' ) ) ),
+            array( $this->t( 'Log directory' ), $this->fact( 'storage', 'log', '' ) === '' ? '' : $path( $this->fact( 'storage', 'log', '' ) ) . ' · ' . ( $this->fact( 'storage', 'log_writable', true ) ? $this->t( 'writable' ) : $this->t( 'not writable' ) ) ),
             array( $this->t( 'Size of var' ), $this->fact( 'storage', 'var_size' ) !== null
                 ? ( $this->fact( 'storage', 'var_counted_all', true ) ? '' : '≥ ' ) . self::size( $this->fact( 'storage', 'var_size' ) ) : $this->t( 'measured on request' ) ),
             array( $this->t( 'Free disk' ), $free !== null && $total ? $this->t( '%free of %total', array( '%free' => self::size( $free ), '%total' => self::size( $total ) ) ) : '' ),

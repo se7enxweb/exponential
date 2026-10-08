@@ -78,13 +78,13 @@
         <li class="exp-figure is-ok"><strong>{$si.summary.ok|wash}</strong><span>{'in order'|i18n( 'design/admin/setup/info' )}</span></li>
     </ul>
     <ul class="exp-checks">
-    {foreach $si.checks as $check}{if ne( $check.state, 'ok' )}
-        <li class="exp-check {$si_state_class[$check.state]}">
-            <span class="exp-badge {$si_state_class[$check.state]}">{$si_state_label[$check.state]|wash}</span>
+    {foreach $si.checks as $si_check}{if ne( $si_check.state, 'ok' )}
+        <li class="exp-check {$si_state_class[$si_check.state]}">
+            <span class="exp-badge {$si_state_class[$si_check.state]}">{$si_state_label[$si_check.state]|wash}</span>
             <div class="exp-check-text">
-                <strong>{$check.title|wash}</strong>
-                {if $check.detail}<p>{$check.detail|wash}</p>{/if}
-                {if $check.fix}<p class="exp-fix">{$check.fix|wash}</p>{/if}
+                <strong>{$si_check.title|wash}</strong>
+                {if $si_check.detail}<p>{$si_check.detail|wash}</p>{/if}
+                {if $si_check.fix}<p class="exp-fix">{$si_check.fix|wash}</p>{/if}
             </div>
         </li>
     {/if}{/foreach}
@@ -93,10 +93,10 @@
     <details class="exp-ok-checks"{if and( $si.summary.fail|eq( 0 ), $si.summary.warn|eq( 0 ), $si.summary.info|eq( 0 ) )} open{/if}>
         <summary>{'%count checks in order'|i18n( 'design/admin/setup/info',, hash( '%count', $si.summary.ok ) )}</summary>
         <ul class="exp-checks">
-        {foreach $si.checks as $check}{if eq( $check.state, 'ok' )}
+        {foreach $si.checks as $si_check}{if eq( $si_check.state, 'ok' )}
             <li class="exp-check is-ok">
                 <span class="exp-badge is-ok">{$si_state_label.ok|wash}</span>
-                <div class="exp-check-text"><strong>{$check.title|wash}</strong>{if $check.detail}<p>{$check.detail|wash}</p>{/if}</div>
+                <div class="exp-check-text"><strong>{$si_check.title|wash}</strong>{if $si_check.detail}<p>{$si_check.detail|wash}</p>{/if}</div>
             </li>
         {/if}{/foreach}
         </ul>

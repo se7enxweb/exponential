@@ -20,36 +20,9 @@ namespace
 if ( !function_exists( 'removeRelatedCache' ) ) {
 function removeRelatedCache( $siteAccess )
 {
-    // Delete compiled template
-    $ini = eZINI::instance();
+    // Delete compiled template, in the cache directory of that siteaccess (also below CacheVarDir)
     $iniPath = eZSiteAccess::findPathToSiteAccess( $siteAccess );
-    $siteINI = eZINI::instance( 'site.ini.append', $iniPath );
-    if ( $siteINI->hasVariable( 'FileSettings', 'CacheDir' ) )
-    {
-        $cacheDir = $siteINI->variable( 'FileSettings', 'CacheDir' );
-        if ( $cacheDir[0] == "/" )
-        {
-            $cacheDir = eZDir::path( array( $cacheDir ) );
-        }
-        else
-        {
-            if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
-            {
-                $varDir = $siteINI->variable( 'FileSettings', 'VarDir' );
-                $cacheDir = eZDir::path( array( $varDir, $cacheDir ) );
-            }
-        }
-    }
-    else if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
-    {
-         $varDir = $siteINI->variable( 'FileSettings', 'VarDir' );
-         $cacheDir = $ini->variable( 'FileSettings', 'CacheDir' );
-         $cacheDir = eZDir::path( array( $varDir, $cacheDir ) );
-    }
-    else
-    {
-        $cacheDir =  eZSys::cacheDirectory();
-    }
+    $cacheDir = eZSys::cacheDirectoryOf( eZINI::instance( 'site.ini.append', $iniPath ) );
     $compiledTemplateDir = $cacheDir . "/template/compiled";
     eZDir::unlinkWildcard( $compiledTemplateDir . "/", "*pagelayout*.*" );
     eZCache::clearByTag( 'template-block' );

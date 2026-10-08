@@ -160,6 +160,297 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertStringContainsString( 'auto_https off', $text );
     }
 
+    /** With the caches of the sites in a tree of their own (multi-site hosting) their public caches are served too */
+    public function testTheStaticListServesThePublicCachesBelowCacheVarDir()
+    {
+        $this->assertSame( expVelocity::STATIC_PATHS, expVelocity::staticPaths() );
+
+        ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'CacheVarDir', 'var_cache' );
+        $static = '~' . expVelocity::staticPaths() . '~';
+        foreach ( array( '/var_cache/example/cache/public/javascript/x.js', '/var_cache/example/cache/texttoimage/x.png',
+                         '/var/site/cache/public/javascript/x.js', '/design/standard/stylesheets/core.css' ) as $path )
+            $this->assertSame( 1, preg_match( $static, $path ), $path );
+        foreach ( array( '/var_cache/example/cache/template/compiled/x.php', '/var_cache/example/cache/ini/site.php',
+                         '/var_cache/example/log/error.log', '/var_cacheX/example/cache/public/x.js', '/var/site/cache/ini/x.php' ) as $path )
+            $this->assertSame( 0, preg_match( $static, $path ), $path );
+    }
+
+    /** "./var_cache/" is the directory eZSys::cacheDirectory() writes as var_cache, and is served as that */
+    public function testACacheVarDirIsServedAsTheCacheDirectoryIsWritten()
+    {
+        ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'CacheVarDir', 'var_cache' );
+        $plain = expVelocity::staticPaths();
+        foreach ( array( './var_cache/', ' var_cache ', 'var_cache//' ) as $value )
+        {
+            ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'CacheVarDir', $value );
+            $this->assertSame( $plain, expVelocity::staticPaths(), $value );
+        }
+    }
+
+    /**
+     * The list is written without a siteaccess: a CacheVarDir set for some siteaccesses only is read from their own
+     * settings and served too, next to the global one
+     */
+    public function testACacheVarDirOfASiteaccessIsServedToo()
+    {
+        $name = 'x1velocity' . substr( uniqid(), -6 );
+        $dir = 'settings/siteaccess/' . $name;
+        mkdir( $dir, 0777, true );
+        try
+        {
+            file_put_contents( $dir . '/site.ini.append.php',
+                "<?php /* #?ini charset=\"utf-8\"?\n\n[FileSettings]\nCacheVarDir=x1_sa_cache\n*/ ?>\n" );
+            $list = (array)eZINI::instance()->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' );
+            ezpINIHelper::setINISetting( 'site.ini', 'SiteAccessSettings', 'AvailableSiteAccessList', array_merge( $list, array( $name ) ) );
+            ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'CacheVarDir', 'var_cache' );
+
+            $static = '~' . expVelocity::staticPaths() . '~';
+            foreach ( array( '/x1_sa_cache/example/cache/public/javascript/x.js', '/var_cache/example/cache/public/x.css' ) as $path )
+                $this->assertSame( 1, preg_match( $static, $path ), $path );
+            $this->assertSame( 0, preg_match( $static, '/x1_sa_cache/example/cache/ini/site.php' ) );
+        }
+        finally
+        {
+            @unlink( $dir . '/site.ini.append.php' );
+            @rmdir( $dir );
+        }
+    }
+
+    /**
+     * A siteaccess's ActiveAccessExtensions are read as eZSiteAccess::getIni() reads them: the settings of such an
+     * extension, and those it keeps for that siteaccess, set its CacheVarDir too
+     */
+    public function testACacheVarDirOfAnAccessExtensionIsServed()
+    {
+        $id = substr( uniqid(), -6 );
+        $siteAccess = 'x1velocitysa' . $id;
+        $extension = 'x1velocityext' . $id;
+        $made = $this->makeSiteaccessWithAccessExtension( $siteAccess, $extension, 'x1_ext_cache', 'x1_extsa_cache' );
+        try
+        {
+            $static = '~' . expVelocity::staticPaths() . '~';
+            // The siteaccess's own directory in the extension wins over the extension's settings, as it does on a request
+            $this->assertSame( 1, preg_match( $static, '/x1_extsa_cache/example/cache/public/x.js' ) );
+            $this->assertSame( 0, preg_match( $static, '/x1_ext_cache/example/cache/public/x.js' ) );
+        }
+        finally
+        {
+            $this->removeMadePaths( $made );
+        }
+    }
+
+    /**
+     * Reading the settings of every siteaccess leaves the process as it found it: the server starts with the same
+     * state whatever its siteaccesses hold. No current siteaccess set or left set to null, no exception handler, no
+     * INI instance added or changed, no extension remembered, no cache file written.
+     */
+    public function testReadingTheSettingsOfTheSiteaccessesChangesNoState()
+    {
+        $id = substr( uniqid(), -6 );
+        $siteAccess = 'x1velocitysa' . $id;
+        $extension = 'x1velocityext' . $id;
+        $made = $this->makeSiteaccessWithAccessExtension( $siteAccess, $extension, 'x1_ext_cache', 'x1_extsa_cache' );
+        $hadAccess = array_key_exists( 'eZCurrentAccess', $GLOBALS );
+        $access = $hadAccess ? $GLOBALS['eZCurrentAccess'] : null;
+        $handler = function_exists( 'get_exception_handler' ) ? get_exception_handler() : null;
+        $ini = eZINI::instance();
+        $overrideDirs = $ini->overrideDirs( false );
+        $globalOverrideDirs = eZINI::globalOverrideDirs( false );
+        $instances = $this->staticValue( 'eZINI', 'instances' );
+        $extensionState = array();
+        foreach ( array( 'activeExtensionsCache', 'extensionNameCache', 'extensionPathCache', 'extensionSettingsSiteAccessCache' ) as $property )
+            $extensionState[$property] = $this->staticValue( 'eZExtension', $property );
+        $activeExtensions = $GLOBALS['eZActiveExtensions'] ?? null;
+        $cacheFiles = $this->cacheFiles();
+        try
+        {
+            $this->assertSame( 1, preg_match( '~' . expVelocity::staticPaths() . '~', '/x1_extsa_cache/example/cache/public/x.js' ) );
+
+            $this->assertSame( $hadAccess, array_key_exists( 'eZCurrentAccess', $GLOBALS ) );
+            if ( $hadAccess )
+                $this->assertSame( $access, $GLOBALS['eZCurrentAccess'] );
+            if ( function_exists( 'get_exception_handler' ) )
+                $this->assertSame( $handler, get_exception_handler() );
+            $this->assertSame( $ini, eZINI::instance() );
+            $this->assertSame( $overrideDirs, $ini->overrideDirs( false ) );
+            $this->assertSame( $globalOverrideDirs, eZINI::globalOverrideDirs( false ) );
+            $this->assertSame( array_keys( $instances ), array_keys( $this->staticValue( 'eZINI', 'instances' ) ) );
+            foreach ( $instances as $key => $instance )
+                $this->assertSame( $instance, $this->staticValue( 'eZINI', 'instances' )[$key], $key );
+            foreach ( $extensionState as $property => $value )
+                $this->assertSame( $value, $this->staticValue( 'eZExtension', $property ), $property );
+            $this->assertSame( $activeExtensions, $GLOBALS['eZActiveExtensions'] ?? null );
+            $this->assertSame( $cacheFiles, $this->cacheFiles() );
+        }
+        finally
+        {
+            $this->removeMadePaths( $made );
+        }
+    }
+
+    /**
+     * A siteaccess in AvailableSiteAccessList whose site.ini names an access extension, with a CacheVarDir in the
+     * extension's settings and another in what the extension keeps for that siteaccess.
+     *
+     * @return string[] what was made, files first
+     */
+    protected function makeSiteaccessWithAccessExtension( $siteAccess, $extension, $extensionValue, $extensionSiteAccessValue )
+    {
+        $settings = function ( $body ) { return "<?php /* #?ini charset=\"utf-8\"?\n\n$body\n*/ ?>\n"; };
+        $files = array(
+            "settings/siteaccess/$siteAccess/site.ini.append.php" =>
+                $settings( "[ExtensionSettings]\nActiveAccessExtensions[]=$extension" ),
+            "extension/$extension/settings/site.ini.append.php" =>
+                $settings( "[FileSettings]\nCacheVarDir=$extensionValue" ),
+            "extension/$extension/settings/siteaccess/$siteAccess/site.ini.append.php" =>
+                $settings( "[FileSettings]\nCacheVarDir=$extensionSiteAccessValue" ),
+        );
+        $made = array();
+        foreach ( $files as $file => $text )
+        {
+            for ( $dir = dirname( $file ); !is_dir( $dir ); $dir = dirname( $dir ) )
+                $made[] = $dir;
+            if ( !is_dir( dirname( $file ) ) )
+                mkdir( dirname( $file ), 0777, true );
+            file_put_contents( $file, $text );
+            array_unshift( $made, $file );
+        }
+        $list = (array)eZINI::instance()->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' );
+        ezpINIHelper::setINISetting( 'site.ini', 'SiteAccessSettings', 'AvailableSiteAccessList', array_merge( $list, array( $siteAccess ) ) );
+        return $made;
+    }
+
+    protected function removeMadePaths( array $made )
+    {
+        $dirs = array();
+        foreach ( $made as $path )
+        {
+            if ( is_file( $path ) )
+                @unlink( $path );
+            else
+                $dirs[] = $path;
+        }
+        // Deepest first
+        usort( $dirs, function ( $a, $b ) { return strlen( $b ) - strlen( $a ); } );
+        foreach ( $dirs as $dir )
+            @rmdir( $dir );
+    }
+
+    protected function staticValue( $class, $property )
+    {
+        $reflection = new ReflectionProperty( $class, $property );
+        if ( PHP_VERSION_ID < 80100 )
+            $reflection->setAccessible( true );
+        return $reflection->getValue();
+    }
+
+    /** Every file below the INI cache directory and the extension cache directory */
+    protected function cacheFiles()
+    {
+        $files = array();
+        $dirs = array( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ?? 'var/cache/ini/', eZExtension::CACHE_DIR );
+        foreach ( $dirs as $dir )
+            foreach ( glob( rtrim( $dir, '/' ) . '/*' ) ?: array() as $file )
+                $files[] = $file;
+        sort( $files );
+        return $files;
+    }
+
+    /**
+     * The warm-up renders a site in the parent process; the log and INI cache directories that site set
+     * (eZSiteAccess::change()) are put back before the globals are swept, so no request starts with them
+     */
+    public function testTheWarmUpPutsBackThePathsOfTheSiteItRendered()
+    {
+        $source = file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/commands/velocity-warmup.php' );
+        $reset = strpos( $source, 'eZSiteAccess::resetSitePaths()' );
+        $this->assertNotFalse( $reset );
+        $this->assertLessThan( strpos( $source, 'foreach ($clearPrefixes as $__p)' ), $reset );
+        $this->assertTrue( method_exists( 'eZSiteAccess', 'resetSitePaths' ) );
+    }
+
+    /**
+     * The pool requires the warm-up inside a function (Q_WebServer_Pool), so the variables of
+     * bin/php/velocity-warmup.php are not globals. Run that way, the warm-up reads the site's own maintenance
+     * marker -- a site in maintenance renders nothing -- and its final sweep removes what the warm-up added but
+     * keeps the globals the server had before it: those of the snapshot the entry script hands over.
+     */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState(false)]
+    public function testTheWarmUpRunAsThePoolRunsItKeepsTheServersGlobalsAndReadsItsRoot()
+    {
+        $root = sys_get_temp_dir() . '/x1velocitywarmup' . substr( uniqid(), -6 );
+        mkdir( $root . '/var', 0777, true );
+        $installation = dirname( __DIR__, 4 );
+        file_put_contents( $root . '/autoload.php', "<?php\nrequire_once " . var_export( $installation . '/autoload.php', true ) . ";\n" );
+        // In maintenance (as index.php reads it): the warm-up renders nothing. Not found, it would render the front page.
+        file_put_contents( $root . '/var/maintenance.json', json_encode( array( 'reason' => 'test' ) ) );
+        $cwd = getcwd();
+        putenv( 'VELOCITY_WARMUP_URLS' );
+        $GLOBALS['x1VelocityServerOwn'] = 'kept';
+        try
+        {
+            chdir( $root );
+            $run = static function ( $file )
+            {
+                require $file;
+            };
+            $run( $installation . '/bin/php/velocity-warmup.php' );
+
+            $this->assertSame( 'kept', $GLOBALS['x1VelocityServerOwn'] ?? null );
+            $this->assertArrayHasKey( '_SERVER', $GLOBALS );
+            foreach ( array( '__warmupGlobalsBefore', 'root', 'urls', 'kernel', 'clearPrefixes', 'expVelocityWarmup' ) as $name )
+                $this->assertArrayNotHasKey( $name, $GLOBALS, $name );
+        }
+        finally
+        {
+            chdir( $cwd );
+            @unlink( $root . '/var/maintenance.json' );
+            @unlink( $root . '/autoload.php' );
+            @rmdir( $root . '/var' );
+            @rmdir( $root );
+        }
+    }
+
+    /** What the entry script hands over: the snapshot is taken out of $GLOBALS; without a root, the working directory */
+    public function testTheWarmUpReadsWhatItsEntryScriptHandsOver()
+    {
+        $had = array_key_exists( 'root', $GLOBALS );
+        $old = $had ? $GLOBALS['root'] : null;
+        try
+        {
+            $GLOBALS['__warmupGlobalsBefore'] = array( '_SERVER' => 0 );
+            $this->assertSame( array( '_SERVER' => 0 ), \Exponential\Command\Kernel\VelocityWarmup::globalsBefore() );
+            $this->assertArrayNotHasKey( '__warmupGlobalsBefore', $GLOBALS );
+            $this->assertNull( \Exponential\Command\Kernel\VelocityWarmup::globalsBefore() );
+
+            $GLOBALS['root'] = '/srv/site';
+            $this->assertSame( '/srv/site', \Exponential\Command\Kernel\VelocityWarmup::warmupRoot() );
+            foreach ( array( null, '', 5 ) as $value )
+            {
+                $GLOBALS['root'] = $value;
+                $this->assertSame( getcwd(), \Exponential\Command\Kernel\VelocityWarmup::warmupRoot() );
+            }
+        }
+        finally
+        {
+            if ( $had )
+                $GLOBALS['root'] = $old;
+            else
+                unset( $GLOBALS['root'] );
+        }
+    }
+
+    /** Only a plain directory inside the installation may widen the list */
+    public function testACacheVarDirThatIsNoPlainDirectoryIsNotServed()
+    {
+        foreach ( array( '/srv/cache', '../cache', 'var_cache/..', 'a b', 'x|y', 'var', '(.*)' ) as $value )
+        {
+            ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'CacheVarDir', $value );
+            $this->assertSame( expVelocity::STATIC_PATHS, expVelocity::staticPaths(), $value );
+        }
+    }
+
     public function testTheStaticListLeavesInternalFilesOut()
     {
         $static = '~' . expVelocity::STATIC_PATHS . '~';

@@ -801,7 +801,7 @@ EOT;
             }
 
             $result = curl_exec( $ch );
-            curl_close( $ch );
+            if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
 
             // If we should check url without downloading data from it.
             if ( $justCheckURL )

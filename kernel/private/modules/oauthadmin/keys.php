@@ -11,6 +11,8 @@
  * @package kernel
  */
 
+/** @var array $Params */
+
 $module = $Params['Module'];
 $http = eZHTTPTool::instance();
 

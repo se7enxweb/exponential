@@ -58,7 +58,7 @@ class eZDBGarbageCollector
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
     */
-    function collectBaskets( $maxTime = false, $sleepTime = false, $limit = false )
+    static function collectBaskets( $maxTime = false, $sleepTime = false, $limit = false )
     {
         $db = eZDB::instance();
 
@@ -173,7 +173,7 @@ WHERE ezsession.session_key IS NULL";
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
     */
-    function collectProductCollections( $maxTime = false, $sleepTime = false, $limit = false )
+    static function collectProductCollections( $maxTime = false, $sleepTime = false, $limit = false )
     {
         $db = eZDB::instance();
 
@@ -313,7 +313,7 @@ WHERE ezproductcollection_used.id IS NULL";
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
     */
-    function collectProductCollectionItems( $maxTime = false, $sleepTime = false, $limit = false )
+    static function collectProductCollectionItems( $maxTime = false, $sleepTime = false, $limit = false )
     {
         $db = eZDB::instance();
 
@@ -421,7 +421,7 @@ WHERE ezproductcollection.id IS NULL";
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
     */
-    function collectProductCollectionItemOptions( $maxTime = false, $sleepTime = false, $limit = false )
+    static function collectProductCollectionItemOptions( $maxTime = false, $sleepTime = false, $limit = false )
     {
         $db = eZDB::instance();
 

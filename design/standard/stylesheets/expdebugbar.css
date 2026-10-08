@@ -119,6 +119,16 @@ html[data-a4-theme="dark"] #debug {
 #debug .exp-debug-panel fieldset { border: 1px solid var(--xd-line); border-radius: 6px; padding: 6px 10px 10px; margin: 8px 0; }
 #debug .exp-debug-panel legend { font-weight: 600; padding: 0 4px; font-size: 13px; }
 #debug .exp-debug-levels { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+#debug .exp-debug-message-tools { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; }
+#debug .exp-debug-message-tools > .exp-debug-levels { margin-bottom: 0; }
+#debug .exp-debug-copy { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+#debug .exp-debug-copy .exp-debug-button { margin: 0; }
+#debug .exp-debug-copy .exp-debug-button[hidden] { display: none; }
+#debug .exp-debug-copy-status { font-size: 13px; }
+#debug .exp-debug-copy-status:empty { display: none; }
+#debug .exp-debug-copy-status.exp-debug-ok { color: var(--xd-ok); }
+#debug .exp-debug-copy-status.exp-debug-warn { color: var(--xd-warn); }
+#debug .exp-debug-copy-status.exp-debug-high { color: var(--xd-high); }
 
 /* --- settings */
 #debug .exp-debug-presets { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 6px 0 10px; }

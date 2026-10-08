@@ -36,7 +36,7 @@
 {* Status *}
 <p>
 <label>{'Status'|i18n( 'design/admin/content/view/versionview' )}:</label>
-{$version.status|choose( 'Draft'|i18n( 'design/admin/content/view/versionview' ), 'Published / current'|i18n( 'design/admin/content/view/versionview' ), 'Pending'|i18n( 'design/admin/content/view/versionview' ), 'Archived'|i18n( 'design/admin/content/view/versionview' ), 'Rejected'|i18n( 'design/admin/content/view/versionview' ) )}
+{$version.status|choose( 'Draft'|i18n( 'design/admin/content/view/versionview' ), 'Published / current'|i18n( 'design/admin/content/view/versionview' ), 'Pending'|i18n( 'design/admin/content/view/versionview' ), 'Archived'|i18n( 'design/admin/content/view/versionview' ), 'Rejected'|i18n( 'design/admin/content/view/versionview' ), 'Untouched draft'|i18n( 'design/admin/content/view/versionview' ), 'Repeat'|i18n( 'design/admin/content/view/versionview' ), 'Queued'|i18n( 'design/admin/content/view/versionview' ) )}
 </p>
 
 {* Version *}

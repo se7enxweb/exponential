@@ -538,7 +538,7 @@ class eZLDAPUser extends eZUser
                             {
                                 if ( $isUtf8Encoding )
                                 {
-                                    $groupName = utf8_decode( $info[0][$LDAPUserGroupAttribute][$i] );
+                                    $groupName = mb_convert_encoding( $info[0][$LDAPUserGroupAttribute][$i], 'ISO-8859-1', 'UTF-8' );
                                 }
                                 else
                                 {
@@ -556,7 +556,7 @@ class eZLDAPUser extends eZUser
                             {
                                 if ( $isUtf8Encoding )
                                 {
-                                    $groupID = utf8_decode( $info[0][$LDAPUserGroupAttribute][$i] );
+                                    $groupID = mb_convert_encoding( $info[0][$LDAPUserGroupAttribute][$i], 'ISO-8859-1', 'UTF-8' );
                                 }
                                 else
                                 {
@@ -689,8 +689,8 @@ class eZLDAPUser extends eZUser
 
         if ( $isUtf8Encoding )
         {
-            $first_name = utf8_decode( $first_name );
-            $last_name = utf8_decode( $last_name );
+            $first_name = mb_convert_encoding( $first_name, 'ISO-8859-1', 'UTF-8' );
+            $last_name = mb_convert_encoding( $last_name, 'ISO-8859-1', 'UTF-8' );
         }
 
         $user = eZUser::fetchByName( $login );
@@ -1037,7 +1037,7 @@ class eZLDAPUser extends eZUser
         if ( $nameContentAttribute )
         {
             if ( $isUtf8Encoding )
-                $newGroupAttributes[ 'name' ] = utf8_decode( $newGroupAttributes[ 'name' ] );
+                $newGroupAttributes[ 'name' ] = mb_convert_encoding( $newGroupAttributes[ 'name' ], 'ISO-8859-1', 'UTF-8' );
             $nameContentAttribute->setAttribute( 'data_text', $newGroupAttributes[ 'name' ] );
             $nameContentAttribute->store();
         }
@@ -1045,7 +1045,7 @@ class eZLDAPUser extends eZUser
              isset( $newGroupAttributes[ 'description' ] ) )
         {
             if ( $isUtf8Encoding )
-                $newGroupAttributes[ 'description' ] = utf8_decode( $newGroupAttributes[ 'description' ] );
+                $newGroupAttributes[ 'description' ] = mb_convert_encoding( $newGroupAttributes[ 'description' ], 'ISO-8859-1', 'UTF-8' );
             $descContentAttribute->setAttribute( 'data_text', $newGroupAttributes[ 'description' ] );
             $descContentAttribute->store();
         }

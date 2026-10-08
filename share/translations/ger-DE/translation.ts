@@ -24616,6 +24616,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Das Cache- oder Storage-Verzeichnis ist nicht beschreibbar</translation>
     </message>
     <message>
+        <source>The log directory is not writable</source>
+        <translation>Das Log-Verzeichnis ist nicht beschreibbar</translation>
+    </message>
+    <message>
+        <source>Errors and warnings of the site are not recorded.</source>
+        <translation>Fehler und Warnungen der Site werden nicht aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Give the user the web server runs as write access to var/log and to the log directory of the site.</source>
+        <translation>Geben Sie dem Benutzer, unter dem der Webserver läuft, Schreibzugriff auf var/log und auf das Log-Verzeichnis der Site.</translation>
+    </message>
+    <message>
+        <source>Log directory</source>
+        <translation>Log-Verzeichnis</translation>
+    </message>
+    <message>
         <source>The var directory is writable</source>
         <translation>Das var-Verzeichnis ist beschreibbar</translation>
     </message>
@@ -63115,6 +63131,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Show messages</source>
         <translation>Meldungen anzeigen</translation>
+    </message>
+    <message>
+        <source>Copy Messages</source>
+        <translation>Meldungen kopieren</translation>
+    </message>
+    <message>
+        <source>Copied 1 message</source>
+        <translation>1 Meldung kopiert</translation>
+    </message>
+    <message>
+        <source>Copied %count messages</source>
+        <translation>%count Meldungen kopiert</translation>
+    </message>
+    <message>
+        <source>No messages to copy.</source>
+        <translation>Keine Meldungen zum Kopieren.</translation>
+    </message>
+    <message>
+        <source>Could not copy the messages.</source>
+        <translation>Die Meldungen konnten nicht kopiert werden.</translation>
     </message>
     <message>
         <source>Sort by time</source>

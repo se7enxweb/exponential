@@ -49,9 +49,16 @@ unset($_SERVER['HTTP_COOKIE'], $_SERVER['HTTP_AUTHORIZATION']);
 
 // The globals that exist before Exponential is loaded: the server's own. What
 // the kernel and the render add after this is removed again at the end (see
-// "Every other global the render left" below), except what the server keeps
-// across requests anyway.
-$__warmupGlobalsBefore = array_flip(array_keys($GLOBALS));
+// "Every other global the render left" in VelocityWarmup::run()), except what
+// the server keeps across requests anyway.
+//
+// The pool requires this file inside a function, so its variables are not
+// globals: the snapshot and the root are handed to VelocityWarmup::run()
+// through $GLOBALS by name. Kept in local variables only, run() found neither:
+// it checked /var/maintenance.json instead of the site's, and with no snapshot
+// it removed every global but the superglobals and the kept ones.
+$GLOBALS['__warmupGlobalsBefore'] = array_flip(array_keys($GLOBALS));
+$GLOBALS['root'] = $root;
 
 require $root . '/autoload.php';
 

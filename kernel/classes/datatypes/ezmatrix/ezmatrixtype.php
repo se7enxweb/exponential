@@ -544,6 +544,13 @@ class eZMatrixType extends eZDataType
             $matrixDefinition->addColumn( $columnName, $columnIdentifier );
         }
         $classAttribute->setContent( $matrixDefinition );
+        // The columns are written to data_text5 here as well, not only by the
+        // next store(): the package installer stores a new attribute before it
+        // calls this method, and then only sync()s it, which writes nothing
+        // when no field changed. The attribute then kept the two placeholder
+        // columns col_0/col_1 its first store() wrote, and every edit of an
+        // object dropped the cells stored under the package's columns.
+        $classAttribute->setAttribute( 'data_text5', $matrixDefinition->xmlString() );
     }
 
     function serializeContentObjectAttribute( $package, $objectAttribute )

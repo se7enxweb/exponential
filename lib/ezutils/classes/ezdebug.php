@@ -83,6 +83,9 @@ class eZDebug
     const MAX_LOGFILE_SIZE = 204800; // 200*1024
     const MAX_LOGROTATE_FILES = 3;
 
+    /// Where the log files go unless setLogDirectory() names the log directory of the site
+    const DEFAULT_LOG_DIR = 'var/log/';
+
     /// The entry flushLogRepeats() writes; readers of the log files (expSetupLog) match it
     const REPEAT_MESSAGE = 'The entry above was written %d more %s, the last at %s';
 
@@ -168,6 +171,10 @@ class eZDebug
         {
             $this->GlobalLogFileEnabled = $GLOBALS['eZDebugLogFileEnabled'];
         }
+        if ( isset( $GLOBALS['eZDebugLogDir'] ) )
+        {
+            $this->applyLogDirectory( $GLOBALS['eZDebugLogDir'] );
+        }
         $this->ShowTypes = self::SHOW_ALL;
         $this->HandleType = self::HANDLE_NONE;
         $this->OldHandler = false;
@@ -201,6 +208,50 @@ class eZDebug
     function messageName( $messageType )
     {
         return $this->MessageNames[$messageType];
+    }
+
+    /**
+     * Sets the directory of the log files for the rest of the request: the log directory of the site when
+     * site.ini [FileSettings] UseGlobalLogDir is disabled (eZUpdateDebugLogDirectory()), var/log/ for false.
+     *
+     * The directory is kept in $GLOBALS, so that an instance created later writes there too, and a persistent worker
+     * that clears the globals between requests starts the next request with var/log/.
+     *
+     * @param string|false $logDir
+     * @return void
+     */
+    static function setLogDirectory( $logDir )
+    {
+        $GLOBALS['eZDebugLogDir'] = $logDir;
+        if ( isset( $GLOBALS['eZDebugGlobalInstance'] ) && $GLOBALS['eZDebugGlobalInstance'] instanceof eZDebug )
+        {
+            $GLOBALS['eZDebugGlobalInstance']->applyLogDirectory( $logDir );
+        }
+    }
+
+    /**
+     * The directory the log files are written to, with a trailing slash; eZLog writes its default logs there too.
+     *
+     * @return string
+     */
+    function logDirectory()
+    {
+        return $this->LogFiles[self::LEVEL_ERROR][0];
+    }
+
+    /**
+     * Writes every log file of this instance into $logDir, var/log/ for false or an empty string.
+     *
+     * @param string|false $logDir
+     * @return void
+     */
+    protected function applyLogDirectory( $logDir )
+    {
+        $logDir = ( $logDir === false || $logDir === null || $logDir === '' ) ? self::DEFAULT_LOG_DIR : rtrim( $logDir, '/' ) . '/';
+        foreach ( array_keys( $this->LogFiles ) as $level )
+        {
+            $this->LogFiles[$level][0] = $logDir;
+        }
     }
 
     /**
@@ -1938,7 +1989,7 @@ class eZDebug
 #debug > h2 > a { flex: 1; padding: 8px 12px; color: #222; text-decoration: none; }
 #debug > h2 > label.debug-keep-open { margin-right: 12px; color: #222; }
 #debug-details.active { position: fixed; left: 0; right: 0; bottom: 38px; z-index: 2147482999;
-  max-height: 60vh; overflow: auto; background: #fff; border-top: 2px solid #999;
+  height: 60vh; overflow: auto; background: #fff; border-top: 2px solid #999;
   box-shadow: 0 -4px 12px rgba(0,0,0,.2); box-sizing: border-box; }
 body.exp-debug-bar { padding-bottom: 46px; }
 @media (prefers-color-scheme: dark) {

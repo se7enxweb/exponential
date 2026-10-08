@@ -32,18 +32,18 @@ class Versionview extends \Exponential\Runnable\ModuleView
         $Offset = (int)$Params['Offset'];
         $ObjectID = (int)$ObjectID;
         $EditVersion = (int)$EditVersion;
-        $LanguageCode = htmlspecialchars( $LanguageCode, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+        $LanguageCode = htmlspecialchars( (string)$LanguageCode, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
         $viewParameters = array( 'offset' => $Offset );
 
         // The view mode the version is shown in, (view_mode)/print for example; only those of
         // content.ini [VersionView] ViewModes[] (full by default)
         $viewMode = self::viewMode( isset( $scope['Params']['ViewMode'] ) ? $scope['Params']['ViewMode'] : null );
         if ( $viewMode === null )
-            return $this->viewResult( null, $scope['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            return $this->viewResult( null, $scope['Params']['Module']->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
         // Will be sent from the content/edit page and should be kept
         // incase the user decides to continue editing.
-        $FromLanguage = htmlspecialchars( $Params['FromLanguage'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+        $FromLanguage = htmlspecialchars( (string)( $Params['FromLanguage'] ?? '' ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
         if ( $http->hasPostVariable( 'BackButton' )  )
         {
@@ -155,9 +155,9 @@ class Versionview extends \Exponential\Runnable\ModuleView
             }
 
             // The view mode chosen in the form (a listed one; anything else keeps the current one)
-            if ( $Module->hasActionParameter( 'ViewMode' ) )
+            if ( $scope['Params']['Module']->hasActionParameter( 'ViewMode' ) )
             {
-                $viewMode = self::changedViewMode( $Module->actionParameter( 'ViewMode' ), $viewMode );
+                $viewMode = self::changedViewMode( $scope['Params']['Module']->actionParameter( 'ViewMode' ), $viewMode );
             }
         }
 

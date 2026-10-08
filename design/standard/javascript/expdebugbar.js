@@ -125,6 +125,61 @@
     applyLevel();
   }
 
+  /* ---------------------------------------------------------------- copy messages */
+  // The messages that are shown (level and filter applied) as plain text, as selecting the list would give
+  // them: "Level: source<TAB>time", then the message, a blank line between entries.
+  const shownMessagesText = () => {
+    const entries = [];
+    root.querySelectorAll('#main-debug-table tr[data-level]:not(.debugbody)').forEach((tr) => {
+      if (tr.classList.contains('exp-debug-level-hidden') || tr.classList.contains('exp-debug-filter-hidden')) return;
+      const cells = tr.cells;
+      const head = (cells[0] ? cells[0].textContent : '').trim() + (cells[1] ? '\t' + cells[1].textContent.trim() : '');
+      const body = tr.nextElementSibling && tr.nextElementSibling.classList.contains('debugbody') ? tr.nextElementSibling : null;
+      const text = body ? body.textContent.replace(/\s+$/, '') : '';
+      entries.push(text !== '' ? head + '\n' + text : head);
+    });
+    return { count: entries.length, text: entries.join('\n\n') };
+  };
+  const copyByTextarea = (text) => {
+    const area = el('textarea', { readonly: 'readonly', 'aria-hidden': 'true', tabindex: '-1',
+      style: 'position:fixed;top:0;left:-9999px;width:1px;height:1px;opacity:0;' });
+    area.value = text;
+    document.body.append(area);
+    const active = document.activeElement;
+    let ok = false;
+    try { area.select(); area.setSelectionRange(0, text.length); ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    area.remove();
+    if (active && active.focus) active.focus();
+    return ok;
+  };
+  const copyText = (text) => {
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(() => true, () => copyByTextarea(text));
+    }
+    return Promise.resolve(copyByTextarea(text));
+  };
+  const copyButton = root.querySelector('.exp-debug-copy-messages');
+  const copyStatus = root.querySelector('.exp-debug-copy-status');
+  if (copyButton) {
+    let statusTimer = null;
+    const say = (text, level) => {
+      if (!copyStatus) return;
+      copyStatus.textContent = text;
+      copyStatus.className = 'exp-debug-copy-status' + (level ? ' exp-debug-' + level : '');
+      clearTimeout(statusTimer);
+      statusTimer = setTimeout(() => { copyStatus.textContent = ''; copyStatus.className = 'exp-debug-copy-status'; }, 4000);
+    };
+    copyButton.hidden = false;
+    copyButton.addEventListener('click', () => {
+      const shown = shownMessagesText();
+      if (!shown.count) { say(t('No messages to copy.'), 'warn'); return; }
+      copyText(shown.text).then((ok) => {
+        if (ok) say(shown.count === 1 ? t('Copied 1 message') : t('Copied %count messages', { '%count': shown.count }), 'ok');
+        else say(t('Could not copy the messages.'), 'high');
+      });
+    });
+  }
+
   /* ---------------------------------------------------------------- summary chips */
   root.querySelectorAll('.exp-debug-chip').forEach((chip) => {
     chip.addEventListener('click', (e) => {

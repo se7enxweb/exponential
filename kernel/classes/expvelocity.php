@@ -80,6 +80,315 @@ class expVelocity
     const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)';
 
     /**
+     * STATIC_PATHS, and the generated public caches below site.ini [FileSettings] CacheVarDir when the caches of the
+     * sites are kept in a tree of their own (var_cache/<site>/cache/public, as eZSys::cacheDirectory() puts them).
+     * Every engine serves this list. A CacheVarDir that is an absolute path or holds anything but letters, digits,
+     * '_', '-', '.' and '/' is not served.
+     *
+     * The list is written when the server starts, without a siteaccess: CacheVarDir is read from the global settings
+     * and from the full settings of every siteaccess in [SiteAccessSettings] AvailableSiteAccessList
+     * (as eZSiteAccess::getIni() reads them, without changing the state of the process: see cacheVarDirs()), so a
+     * CacheVarDir set for some sites only is served too. A change of it takes a restart of the server, as every
+     * setting it starts with.
+     *
+     * @return string
+     */
+    public static function staticPaths()
+    {
+        $cachePaths = array();
+        foreach ( self::cacheVarDirs() as $cacheVarDir )
+        {
+            // As eZSys::cacheDirectory() writes it: "./var_cache/" is the directory var_cache
+            $cacheVarDir = eZDir::path( array( trim( (string)$cacheVarDir ) ) );
+            // Only a directory inside the installation is served, and one regular expression must never be able to
+            // widen another: the name may hold letters, digits and _ - . / but no "..".
+            if ( $cacheVarDir === '' || $cacheVarDir === 'var' || !preg_match( '#^[A-Za-z0-9_][A-Za-z0-9_./-]*$#', $cacheVarDir ) ||
+                 strpos( $cacheVarDir, '..' ) !== false )
+            {
+                continue;
+            }
+            $cachePaths[$cacheVarDir] = str_replace( '.', '\\.', $cacheVarDir ) . '/([^/]+/)?cache/(texttoimage|public)/';
+        }
+        if ( !$cachePaths )
+        {
+            return self::STATIC_PATHS;
+        }
+        ksort( $cachePaths );
+        return '^/(' . implode( '|', $cachePaths ) . '|' . substr( self::STATIC_PATHS, strlen( '^/(' ) );
+    }
+
+    /**
+     * Every value of site.ini [FileSettings] CacheVarDir: the global one and that of each siteaccess.
+     *
+     * The settings of a siteaccess are read as eZSiteAccess::getIni() reads them -- the global extension and override
+     * directories, the siteaccess's own, those its extensions keep for it, its ActiveAccessExtensions -- but on an
+     * eZINI of its own that is never cached, on disk or in eZINI::instance(), and without eZSiteAccess::load(): no
+     * extension is activated, $GLOBALS['eZCurrentAccess'] and the global INI instances are not touched, no INI or
+     * extension cache file is written, and what eZExtension and ezpExtension remember about extensions is put back as
+     * it was. The server starts with the same process state whatever its siteaccesses hold.
+     *
+     * Not cached, the settings are parsed: once for what every siteaccess shares, and again only for a siteaccess
+     * with a settings file of its own that names CacheVarDir or ActiveAccessExtensions (any other file of its own
+     * cannot change the value): of 17 siteaccesses of which one names ActiveAccessExtensions, only that one is parsed.
+     *
+     * @return string[]
+     */
+    protected static function cacheVarDirs()
+    {
+        $values = array();
+        if ( !class_exists( 'eZINI' ) )
+        {
+            return $values;
+        }
+        $ini = eZINI::instance();
+        if ( $ini->hasVariable( 'FileSettings', 'CacheVarDir' ) )
+        {
+            $values[] = (string)$ini->variable( 'FileSettings', 'CacheVarDir' );
+        }
+        if ( !class_exists( 'eZExtension' ) || !$ini->hasVariable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) )
+        {
+            return array_unique( $values );
+        }
+        $remembered = self::staticProperties( array( 'eZExtension', 'ezpExtension' ) );
+        try
+        {
+            // What every siteaccess shares: the extension and override directories of the global settings
+            $shared = self::privateSiteIni( $ini->overrideDirs( false ) );
+            $shared->findInputFiles( $sharedFiles, $iniFile );
+            $shared->load();
+            if ( $shared->hasVariable( 'FileSettings', 'CacheVarDir' ) )
+            {
+                $values[] = (string)$shared->variable( 'FileSettings', 'CacheVarDir' );
+            }
+            // Access extensions for every siteaccess place directories of their own for each: parse each one then
+            $sharedAccessExtensions = (bool)self::extensionNames( $shared, 'ActiveAccessExtensions' );
+            // The extensions that keep settings for a siteaccess, as eZExtension::activeExtensions( 'default' ) lists
+            // them; asked here, without its cache file and the expiry and cluster handlers it starts
+            $defaultExtensions = self::extensionNames( $ini, 'ActiveExtensions',
+                isset( $GLOBALS['eZActiveExtensions'] ) ? (array)$GLOBALS['eZActiveExtensions'] : array() );
+
+            foreach ( array_unique( (array)$ini->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) ) as $siteAccess )
+            {
+                if ( !is_string( $siteAccess ) || !preg_match( '/^[A-Za-z0-9_-]+$/', $siteAccess ) )
+                {
+                    continue;
+                }
+                try
+                {
+                    $siteINI = self::siteAccessIni( $siteAccess, $shared, $defaultExtensions );
+                    if ( !$sharedAccessExtensions && !self::ownFilesName( $siteINI, $sharedFiles, array( 'CacheVarDir', 'ActiveAccessExtensions' ) ) )
+                    {
+                        // Nothing of its own names it: its value is the shared one
+                        continue;
+                    }
+                    self::loadSiteAccessIni( $siteINI, $siteAccess );
+                    if ( $siteINI->hasVariable( 'FileSettings', 'CacheVarDir' ) )
+                    {
+                        $values[] = (string)$siteINI->variable( 'FileSettings', 'CacheVarDir' );
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                    // A siteaccess whose settings cannot be read serves nothing extra
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // Settings that cannot be read serve nothing extra
+        }
+        finally
+        {
+            self::restoreStaticProperties( $remembered );
+        }
+        return array_unique( $values );
+    }
+
+    /**
+     * A site.ini nobody else holds, with the extension and override directories of $globalDirs, not read yet.
+     *
+     * useTextCodec false: the files are read as they are, without a codec of the process (CacheVarDir is ASCII);
+     * useCache false: neither read nor written below var/cache/ini; useLocalOverrides true: directories of its own;
+     * load false: read once the directories are placed.
+     *
+     * @param array $globalDirs eZINI::overrideDirs( false ) of the global site.ini
+     * @return eZINI
+     */
+    protected static function privateSiteIni( array $globalDirs )
+    {
+        $dirs = eZINI::defaultOverrideDirs();
+        foreach ( array( 'extension', 'override' ) as $scope )
+        {
+            if ( isset( $globalDirs[$scope] ) )
+            {
+                $dirs[$scope] = $globalDirs[$scope];
+            }
+        }
+        $siteINI = new eZINI( 'site.ini', 'settings', false, false, true, false, false, false );
+        $siteINI->setOverrideDirs( $dirs );
+        return $siteINI;
+    }
+
+    /**
+     * The site.ini of a siteaccess, on an eZINI nobody else holds and that is never cached, not read yet.
+     *
+     * The override directories are those eZSiteAccess::getIni() gives it before it reads the access extensions: the
+     * extension and override directories of the global settings, the siteaccess's own directory and those its default
+     * extensions keep for it (as eZExtension::prependExtensionSiteAccesses() places them). loadSiteAccessIni() reads
+     * it.
+     *
+     * @param string $siteAccess
+     * @param eZINI $shared from privateSiteIni()
+     * @param string[] $defaultExtensions the default extensions, in their order
+     * @return eZINI
+     */
+    protected static function siteAccessIni( $siteAccess, eZINI $shared, array $defaultExtensions )
+    {
+        $siteINI = self::privateSiteIni( $shared->overrideDirs( false ) );
+        $siteINI->prependOverrideDir( "siteaccess/$siteAccess", false, 'siteaccess', 'siteaccess' );
+        foreach ( $defaultExtensions as $extension )
+        {
+            eZExtension::prependSiteAccess( $extension, $siteAccess, $siteINI );
+        }
+        return $siteINI;
+    }
+
+    /**
+     * Reads a siteAccessIni(), then places its ActiveAccessExtensions with the directories they keep for the
+     * siteaccess and reads it again, as eZSiteAccess::load() does. Only directories are placed; no extension is
+     * activated.
+     *
+     * @param eZINI $siteINI
+     * @param string $siteAccess
+     */
+    protected static function loadSiteAccessIni( eZINI $siteINI, $siteAccess )
+    {
+        $siteINI->load();
+        $placed = false;
+        foreach ( self::extensionNames( $siteINI, 'ActiveAccessExtensions' ) as $extension )
+        {
+            $path = eZExtension::extensionPath( $extension, $siteINI );
+            if ( $path === false )
+            {
+                continue;
+            }
+            $siteINI->prependOverrideDir( $path . '/settings', true, 'extension:' . $extension, 'sa-extension' );
+            eZExtension::prependSiteAccess( $extension, $siteAccess, $siteINI );
+            $placed = true;
+        }
+        if ( $placed )
+        {
+            $siteINI->load();
+        }
+    }
+
+    /**
+     * The extensions site.ini [ExtensionSettings] $variable of $siteINI names, and $more, by their names on disk and
+     * in the order of their dependencies when ExtensionOrdering is enabled, as eZExtension::activeExtensions() lists
+     * them.
+     *
+     * @param eZINI $siteINI
+     * @param string $variable ActiveExtensions or ActiveAccessExtensions
+     * @param string[] $more
+     * @return string[]
+     */
+    protected static function extensionNames( eZINI $siteINI, $variable, array $more = array() )
+    {
+        $names = $siteINI->hasVariable( 'ExtensionSettings', $variable )
+            ? (array)$siteINI->variable( 'ExtensionSettings', $variable ) : array();
+        $names = array_filter( array_merge( $names, $more ), function ( $name ) { return is_string( $name ) && $name !== ''; } );
+        $names = array_values( array_unique( array_map( array( 'eZExtension', 'extensionName' ), $names ) ) );
+        if ( $names && $siteINI->hasVariable( 'ExtensionSettings', 'ExtensionOrdering' ) &&
+             $siteINI->variable( 'ExtensionSettings', 'ExtensionOrdering' ) === 'enabled' )
+        {
+            $names = eZExtension::extensionOrdering( $names );
+        }
+        return $names;
+    }
+
+    /**
+     * Whether a settings file of $siteINI that the shared settings do not read names one of $names.
+     *
+     * @param eZINI $siteINI
+     * @param string[] $sharedFiles
+     * @param string[] $names
+     * @return bool
+     */
+    protected static function ownFilesName( eZINI $siteINI, array $sharedFiles, array $names )
+    {
+        $siteINI->findInputFiles( $files, $iniFile );
+        foreach ( array_diff( (array)$files, $sharedFiles ) as $file )
+        {
+            $text = @file_get_contents( $file );
+            if ( $text === false )
+            {
+                return true;
+            }
+            foreach ( $names as $name )
+            {
+                if ( strpos( $text, $name ) !== false )
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * The static properties of classes, by class and name, for restoreStaticProperties().
+     *
+     * @param string[] $classes
+     * @return array
+     */
+    protected static function staticProperties( array $classes )
+    {
+        $state = array();
+        foreach ( $classes as $class )
+        {
+            if ( !class_exists( $class ) )
+            {
+                continue;
+            }
+            $reflection = new ReflectionClass( $class );
+            foreach ( $reflection->getProperties( ReflectionProperty::IS_STATIC ) as $property )
+            {
+                if ( $property->getDeclaringClass()->getName() !== $reflection->getName() )
+                {
+                    continue;
+                }
+                if ( PHP_VERSION_ID < 80100 )
+                {
+                    $property->setAccessible( true );
+                }
+                $state[$class][$property->getName()] = $property->getValue();
+            }
+        }
+        return $state;
+    }
+
+    /**
+     * Puts back static properties as staticProperties() found them.
+     *
+     * @param array $state
+     */
+    protected static function restoreStaticProperties( array $state )
+    {
+        foreach ( $state as $class => $properties )
+        {
+            foreach ( $properties as $name => $value )
+            {
+                $property = new ReflectionProperty( $class, $name );
+                if ( PHP_VERSION_ID < 80100 )
+                {
+                    $property->setAccessible( true );
+                }
+                $property->setValue( null, $value );
+            }
+        }
+    }
+
+    /**
      * What is never served as a file even below a STATIC_PATHS directory:
      * scripts (their source would be sent) and dot paths (.htaccess, .git,
      * a package's .cache). Case-insensitive, for Caddy's RE2 and preg alike.
@@ -1594,7 +1903,7 @@ class expVelocity
         // Q.webserver.scripts; an older one ignores all three keys.
         $webserver['scripts'] = self::ENTRY_SCRIPTS;
         $webserver['frontControllers'] = self::FRONT_CONTROLLERS;
-        $web['static']['paths'] = array( self::STATIC_PATHS );
+        $web['static']['paths'] = array( self::staticPaths() );
         // Always revalidated, whatever the static lifetime: the service worker decides how every later
         // navigation is answered, so a fixed copy has to reach browsers at once. The server's own list
         // knows sw.js and service-worker.js; the Exponential Service Workers Index is index.js in the
@@ -1709,6 +2018,15 @@ class expVelocity
         if ( in_array( $dashRemote, array( 'enabled', 'true', '1', 'yes' ), true ) )
             $dashboard['remote'] = true;
 
+        // [ControlSettings] ShutdownTimeout -> Q.webserver.shutdownTimeout: the
+        // server's own bound on a graceful stop, after which it and every
+        // process it started are killed (an engine from before the setting
+        // ignores it). Below StopTimeout, so the server ends itself
+        // before exp:velocity stop sends SIGKILL.
+        $shutdown = (int)$this->setting( 'ControlSettings', 'ShutdownTimeout', 12 );
+        if ( $shutdown > 0 )
+            $webserver['shutdownTimeout'] = $shutdown;
+
         $config = array( 'Q' => array( 'web' => $web, 'compat' => $compat ) );
         // [ServerSettings] Instances > 1: every instance shares the ports.
         if ( $this->instances() > 1 )
@@ -1745,15 +2063,189 @@ class expVelocity
      */
     public function processIDs()
     {
+        $table = $this->processTable();
+        // This command and the shells and wrappers above it are never the
+        // server, whatever their command lines say: `timeout 280 php
+        // .../qbixserver.php`, or a shell whose -c names the script, would
+        // otherwise be signalled along with it.
+        $caller = $this->callerChain( $table );
+
         // The script ScriptPath names and the server's other path in the
         // engine's tree: a server qbixctl started runs sbin/qbixserver.php.
-        $scripts = $this->scriptPaths();
-        $pids = array();
-        foreach ( $this->processTable() as $proc )
-            if ( self::runsServerScript( $proc['args'], $scripts ) )
-                $pids[] = $proc['pid'];
+        // Compared as real paths, so a server started through another path to
+        // the same tree (a symbolic link to the installation) is found too,
+        // and one started from another installation's tree is not.
+        $scripts = array();
+        foreach ( $this->scriptPaths() as $script )
+            $scripts[] = ( $real = realpath( $script ) ) !== false ? $real : $script;
 
+        // The same script can serve other sites (an engine checkout running
+        // its own tests, another installation pointed at this engine): a
+        // server that names its pid file or document root must name ours.
+        $pidFiles = array();
+        for ( $i = 0; $i < max( $this->instances(), 1 ); $i++ )
+            $pidFiles[] = self::realFile( $this->pidFile( $i ) );
+        $docRoot = self::realFile( $this->absolute( $this->setting( 'ServerSettings', 'DocumentRoot', '' ) ) );
+
+        $pids = array();
+        foreach ( $table as $proc )
+            if ( !isset( $caller[$proc['pid']] ) && self::runsServerScriptArgv( $proc['argv'], $scripts )
+                 && self::isOwnServer( $proc['argv'], $pidFiles, $docRoot ) )
+                $pids[$proc['pid']] = true;
+
+        // What the servers started: their zygote and workers (a zygote is
+        // titled "qbixserver: zygote" and names no script), and whatever a
+        // worker ran in turn.
+        $children = array();
+        foreach ( $table as $proc )
+            $children[$proc['ppid']][] = $proc['pid'];
+        $queue = array_keys( $pids );
+        while ( $queue )
+            foreach ( $children[array_shift( $queue )] ?? array() as $child )
+                if ( !isset( $pids[$child] ) && !isset( $caller[$child] ) )
+                {
+                    $pids[$child] = true;
+                    $queue[] = $child;
+                }
+
+        // And what a server left behind when it ended: a zygote or a worker
+        // whose server is gone has nothing in its command line to say whose
+        // it is, but its output still goes to this installation's server log.
+        foreach ( $this->logHolders( $table ) as $pid )
+            if ( !isset( $caller[$pid] ) )
+                $pids[$pid] = true;
+
+        $pids = array_keys( $pids );
+        sort( $pids );
         return $pids;
+    }
+
+    /**
+     * Whether a server's arguments make it this installation's: its --pid is
+     * one of our pid files, or, without one, its --root is our document
+     * root. A server that names neither is taken as ours, as before.
+     *
+     * @param array $argv
+     * @param array $pidFiles realFile() of each instance's pid file
+     * @param string $docRoot realFile() of the document root
+     * @return bool
+     */
+    protected static function isOwnServer( array $argv, array $pidFiles, $docRoot )
+    {
+        $pid = $root = null;
+        foreach ( $argv as $arg )
+        {
+            if ( strpos( $arg, '--pid=' ) === 0 )
+                $pid = substr( $arg, 6 );
+            elseif ( strpos( $arg, '--root=' ) === 0 )
+                $root = substr( $arg, 7 );
+        }
+        if ( $pid !== null && $pid !== '' )
+            return in_array( self::realFile( $pid ), $pidFiles, true );
+        if ( $root !== null && $root !== '' )
+            return self::realFile( $root ) === $docRoot;
+        return true;
+    }
+
+    /**
+     * A path with its directory resolved (symbolic links, ..), whether or not
+     * the file itself exists: a pid file is gone once its server has ended.
+     *
+     * @param string $path
+     * @return string
+     */
+    protected static function realFile( $path )
+    {
+        $path = rtrim( (string)$path, '/' );
+        if ( ( $real = realpath( $path ) ) !== false )
+            return $real;
+        $dir = realpath( dirname( $path ) );
+        return $dir !== false ? $dir . '/' . basename( $path ) : $path;
+    }
+
+    /**
+     * This process and every process above it, pid => true.
+     *
+     * @param array $table processTable()
+     * @return array
+     */
+    protected function callerChain( array $table )
+    {
+        $parents = array();
+        foreach ( $table as $proc )
+            $parents[$proc['pid']] = $proc['ppid'];
+        $chain = array();
+        $pid = getmypid();
+        while ( $pid > 1 && !isset( $chain[$pid] ) )
+        {
+            $chain[$pid] = true;
+            $pid = $parents[$pid] ?? ( function_exists( 'posix_getppid' ) && $pid === getmypid() ? posix_getppid() : 0 );
+        }
+        return $chain;
+    }
+
+    /**
+     * PHP processes whose standard output or error is a file in this
+     * installation's server log directory (the directory of LogFile, which
+     * holds every instance's log and the rotated ones). Linux only; empty
+     * where /proc has no fd links to read.
+     *
+     * @param array $table processTable()
+     * @return array of int
+     */
+    protected function logHolders( array $table )
+    {
+        $dir = realpath( dirname( $this->logFile() ) );
+        if ( $dir === false || !is_dir( '/proc/self/fd' ) )
+            return array();
+        $dir .= '/';
+        $pids = array();
+        foreach ( $table as $proc )
+        {
+            $exe = basename( (string)@readlink( '/proc/' . $proc['pid'] . '/exe' ) );
+            if ( strpos( $exe, 'php' ) !== 0 )
+                continue;
+            foreach ( array( 1, 2 ) as $fd )
+            {
+                $target = (string)@readlink( '/proc/' . $proc['pid'] . '/fd/' . $fd );
+                if ( substr( $target, -10 ) === ' (deleted)' )
+                    $target = substr( $target, 0, -10 );
+                if ( $target !== '' && strpos( $target, $dir ) === 0 )
+                {
+                    $pids[] = $proc['pid'];
+                    break;
+                }
+            }
+        }
+        return $pids;
+    }
+
+    /**
+     * Whether a process's argument vector runs one of the given scripts: a
+     * PHP binary with the script as an argument of its own -- not a shell or
+     * a wrapper that merely mentions it, and not the server's own --stop and
+     * --reload commands, which only send a signal and end.
+     *
+     * @param array $argv
+     * @param array $scripts real paths
+     * @return bool
+     */
+    protected static function runsServerScriptArgv( array $argv, array $scripts )
+    {
+        if ( !$argv || strpos( basename( (string)$argv[0] ), 'php' ) !== 0 )
+            return false;
+        $runs = false;
+        foreach ( array_slice( $argv, 1 ) as $arg )
+        {
+            if ( $arg === '--stop' || $arg === '--reload' )
+                return false;
+            if ( !$runs && substr( $arg, -4 ) === '.php' )
+            {
+                $real = realpath( $arg );
+                $runs = in_array( $real !== false ? $real : $arg, $scripts, true );
+            }
+        }
+        return $runs;
     }
 
     /**
@@ -1783,19 +2275,26 @@ class expVelocity
                 // A zombie has exited: it is not running anything.
                 if ( ( $rest[0] ?? '' ) === 'Z' )
                     continue;
+                // argv as the process has it: NUL-separated, unless it set a
+                // title, which is one string.
+                $argv = strpos( rtrim( $cmd, "\0" ), "\0" ) !== false
+                      ? explode( "\0", rtrim( $cmd, "\0" ) )
+                      : preg_split( '/\s+/', trim( $cmd ) );
                 $table[] = array( 'pid' => (int)basename( $dir ), 'ppid' => (int)( $rest[1] ?? 0 ),
-                                  'args' => trim( str_replace( "\0", ' ', $cmd ) ) );
+                                  'pgrp' => (int)( $rest[2] ?? 0 ), 'state' => (string)( $rest[0] ?? '' ),
+                                  'args' => trim( str_replace( "\0", ' ', $cmd ) ), 'argv' => $argv );
             }
             return $table;
         }
 
         $output = array();
-        @exec( 'ps -eo pid=,ppid=,args= 2>/dev/null', $output );
+        @exec( 'ps -eo pid=,ppid=,pgid=,args= 2>/dev/null', $output );
         foreach ( $output as $line )
         {
-            $parts = preg_split( '/\s+/', trim( $line ), 3 );
-            if ( count( $parts ) === 3 && ctype_digit( $parts[0] ) && ctype_digit( $parts[1] ) )
-                $table[] = array( 'pid' => (int)$parts[0], 'ppid' => (int)$parts[1], 'args' => $parts[2] );
+            $parts = preg_split( '/\s+/', trim( $line ), 4 );
+            if ( count( $parts ) === 4 && ctype_digit( $parts[0] ) && ctype_digit( $parts[1] ) )
+                $table[] = array( 'pid' => (int)$parts[0], 'ppid' => (int)$parts[1], 'pgrp' => (int)$parts[2],
+                                  'state' => '', 'args' => $parts[3], 'argv' => preg_split( '/\s+/', $parts[3] ) );
         }
         return $table;
     }
@@ -1960,9 +2459,56 @@ class expVelocity
      */
     public function start()
     {
+        $leftover = '';
         if ( $this->isRunning() )
-            return $this->result( false, 'already running', $this->status() );
+        {
+            // Every instance has its parent: a server, slow or stuck as it may
+            // be. start never ends one; restart does, when asked to.
+            $parents = $this->parentIDs();
+            if ( count( $parents ) >= $this->instances() )
+                return $this->result( false, $this->answers()
+                    ? 'already running'
+                    : 'already running, but it does not answer; exp:velocity restart replaces it', $this->status() );
+            // A server still coming up (its warm-up takes a while) is not
+            // taken for a broken one.
+            foreach ( array_keys( $parents ) as $i )
+                if ( time() - (int)@filemtime( $this->pidFile( $i ) ) < 60 )
+                    return $this->result( false, 'already starting (parent ' . $parents[$i] . ' started less than a minute ago)', $this->status() );
 
+            // Processes of this installation, but an instance without its
+            // parent: what an interrupted stop or restart leaves (2026-10-07,
+            // three instances serving old code with the first one gone).
+            // Ended, then started anew.
+            $found = count( $this->processIDs() );
+            $stopped = $this->stop();
+            if ( !$stopped['ok'] )
+                return $this->result( false, 'found ' . $found . ' process(es) of this installation that do not make a working'
+                    . ' server, and could not stop them: ' . $stopped['message'], $this->status() );
+            $leftover = '; first ended ' . $found . ' leftover process(es) of an interrupted stop or restart, or of a server'
+                . ' that did not answer';
+        }
+        elseif ( $held = $this->listeningPorts() )
+        {
+            $who = array();
+            foreach ( $this->portHolders( $held ) as $port => $pids )
+                $who[] = 'port ' . $port . ( $pids ? ' (' . implode( ', ', array_map( array( $this, 'describeProcess' ), $pids ) ) . ')' : '' );
+            return $this->result( false, implode( '; ', $who ) . ' is already in use by a process that is not this'
+                . ' installation\'s server', $this->status() );
+        }
+
+        $result = $this->startUnchecked();
+        if ( $leftover !== '' )
+            $result['message'] .= $leftover;
+        return $result;
+    }
+
+    /**
+     * start(), once nothing of this installation runs.
+     *
+     * @return array
+     */
+    protected function startUnchecked()
+    {
         $script = $this->scriptPath();
         if ( !is_file( $script ) )
             return $this->result( false, "no server script at $script" );
@@ -2105,59 +2651,259 @@ class expVelocity
 
         $pids = $this->processIDs();
         if ( !$pids )
-            return $this->result( true, 'not running' );
-
-        // Ask the server to stop itself first. It knows the order to take its
-        // own pool down in; signalling is the fallback for when it cannot.
-        for ( $i = 0; $i < $this->instances(); $i++ )
-            $this->control( '--stop', $i );
-
-        $settle = microtime( true ) + 3;
-        while ( microtime( true ) < $settle )
-        {
-            if ( !$this->isRunning() )
-            {
-                $this->removePidFiles();
-                return $this->result( true, 'stopped' );
-            }
-            usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
-        }
-
-        $pids = $this->processIDs();
-        if ( !$pids )
         {
             $this->removePidFiles();
-            return $this->result( true, 'stopped' );
+            return $this->portsFreeResult( 'not running' );
         }
 
-        // The parents first, so each can take its own pool down in order.
-        foreach ( $this->parentIDs() as $parent )
-        {
-            if ( in_array( $parent, $pids, true ) )
-            {
-                $this->signal( $parent, $signal );
-                array_unshift( $pids, $parent );
-            }
-        }
-
-        foreach ( $pids as $pid )
+        // Every server of this installation is asked: each instance's parent,
+        // whether or not its pid file is still there, and any process whose
+        // parent has gone. A stop that went by the pid files alone left the
+        // other instances running on the shared port when the first one's
+        // file was missing, serving the old code.
+        //
+        // The parents first, through the server's own --stop where there is a
+        // pid file, so each takes its own pool down in order.
+        for ( $i = 0; $i < $this->instances(); $i++ )
+            if ( $this->parentID( $i ) )
+                $this->control( '--stop', $i );
+        foreach ( $this->topLevelIDs( $pids ) as $pid )
             $this->signal( $pid, $signal );
 
         $timeout = (float)$this->setting( 'ControlSettings', 'StopTimeout', 15 );
-        $deadline = microtime( true ) + ( $timeout > 0 ? $timeout : 15 );
-
+        if ( $timeout <= 0 )
+            $timeout = 15;
+        $deadline = microtime( true ) + $timeout;
+        $settle = microtime( true ) + min( 3, $timeout / 2 );
+        $everyone = false;
         while ( microtime( true ) < $deadline )
         {
-            if ( !$this->isRunning() )
+            usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
+            $left = $this->processIDs();
+            if ( !$left )
             {
                 $this->removePidFiles();
-                return $this->result( true, 'stopped' );
+                return $this->portsFreeResult( 'stopped' );
             }
-            usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
+            // A server that has not taken its pool down by now is not going
+            // to do it in order: every process is asked directly.
+            if ( !$everyone && microtime( true ) >= $settle )
+            {
+                foreach ( $left as $pid )
+                    $this->signal( $pid, $signal );
+                $everyone = true;
+            }
         }
 
-        return $this->result( false, 'still running after ' . $timeout . 's; try kill',
-                              $this->status() );
+        // Asked and still there after StopTimeout -- a parent blocked in the
+        // kernel acts on no signal it can catch (2026-10-07: futex_do_wait,
+        // port held, connections queued and never accepted). SIGKILL.
+        $left = $this->processIDs();
+        $killed = $this->killProcesses( $left );
+        $this->removePidFiles();
+        if ( $killed['left'] )
+            return $this->result( false, count( $left ) . ' process(es) did not stop within ' . $timeout . 's, and '
+                . count( $killed['left'] ) . ' survived SIGKILL: ' . implode( ', ', $killed['left'] ), $this->status() );
+
+        return $this->portsFreeResult( 'stopped; ' . count( $left ) . ' process(es) did not end within '
+            . $timeout . 's and were killed (' . implode( ', ', $left ) . ')' );
+    }
+
+    /**
+     * The processes among $pids whose parent is not among them: the servers,
+     * and whatever a server left behind when it ended.
+     *
+     * @param array $pids
+     * @return array
+     */
+    protected function topLevelIDs( array $pids )
+    {
+        $set = array_flip( $pids );
+        $top = array();
+        foreach ( $this->processTable() as $proc )
+            if ( isset( $set[$proc['pid']] ) && !isset( $set[$proc['ppid']] ) )
+                $top[] = $proc['pid'];
+        return $top;
+    }
+
+    /**
+     * SIGKILL to each of $pids, and to any process of this installation that
+     * appears meanwhile (a worker forked in the last instant), until none is
+     * left or five seconds have passed.
+     *
+     * @param array $pids
+     * @return array( 'left' => pids still there )
+     */
+    protected function killProcesses( array $pids )
+    {
+        $signal = defined( 'SIGKILL' ) ? SIGKILL : 9;
+        $deadline = microtime( true ) + 5;
+        $left = $pids;
+        while ( $left )
+        {
+            foreach ( $left as $pid )
+                $this->signal( $pid, $signal );
+            usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
+            $left = $this->processIDs();
+            if ( microtime( true ) >= $deadline )
+                break;
+        }
+        return array( 'left' => $left );
+    }
+
+    /**
+     * A stop's result once this installation's processes are gone: true,
+     * unless something else still listens on one of its ports (which a
+     * start would then fail on), named in the message.
+     *
+     * @param string $message
+     * @return array
+     */
+    protected function portsFreeResult( $message )
+    {
+        // The kernel closes a killed process's listeners as it goes; give the
+        // socket table a moment to agree.
+        $deadline = microtime( true ) + 3;
+        while ( ( $held = $this->listeningPorts() ) && microtime( true ) < $deadline )
+            usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
+        if ( !$held )
+            return $this->result( true, $message );
+
+        $who = array();
+        foreach ( $this->portHolders( $held ) as $port => $pids )
+            $who[] = 'port ' . $port . ( $pids ? ' by ' . implode( ', ', array_map( array( $this, 'describeProcess' ), $pids ) ) : '' );
+        return $this->result( false, $message . ', but ' . ( $who ? implode( '; ', $who ) : 'port ' . implode( ', ', $held ) )
+            . ' is still held by a process that is not this installation\'s server', $this->status() );
+    }
+
+    /**
+     * "pid (command)", the command shortened, for a message.
+     *
+     * @param int $pid
+     * @return string
+     */
+    public function describeProcess( $pid )
+    {
+        $cmd = trim( str_replace( "\0", ' ', (string)@file_get_contents( '/proc/' . (int)$pid . '/cmdline' ) ) );
+        if ( strlen( $cmd ) > 60 )
+            $cmd = substr( $cmd, 0, 57 ) . '...';
+        return (int)$pid . ( $cmd !== '' ? ' (' . $cmd . ')' : '' );
+    }
+
+    /**
+     * The listening TCP sockets on this machine, port => list of
+     * array( inode, queued ), queued being the connections waiting in the
+     * accept queue (ss's Recv-Q). From /proc/net; empty elsewhere.
+     *
+     * @return array
+     */
+    public function listenSockets()
+    {
+        $sockets = array();
+        foreach ( array( '/proc/net/tcp', '/proc/net/tcp6' ) as $file )
+        {
+            if ( !is_readable( $file ) )
+                continue;
+            foreach ( array_slice( file( $file, FILE_IGNORE_NEW_LINES ) ?: array(), 1 ) as $row )
+            {
+                $cols = preg_split( '/\s+/', trim( $row ) );
+                if ( ( $cols[3] ?? '' ) !== '0A' || strpos( $cols[1], ':' ) === false )
+                    continue;
+                $port = hexdec( substr( $cols[1], strrpos( $cols[1], ':' ) + 1 ) );
+                $queued = strpos( (string)( $cols[4] ?? '' ), ':' ) !== false ? hexdec( substr( $cols[4], strpos( $cols[4], ':' ) + 1 ) ) : 0;
+                $sockets[$port][] = array( 'inode' => (int)( $cols[9] ?? 0 ), 'queued' => (int)$queued );
+            }
+        }
+        return $sockets;
+    }
+
+    /**
+     * Which processes hold a listening socket on each of $ports: port => pids.
+     * Reads every process's descriptors, so as root it sees them all.
+     *
+     * @param array $ports
+     * @return array
+     */
+    public function portHolders( array $ports )
+    {
+        $sockets = $this->listenSockets();
+        $inodes = array();
+        foreach ( $ports as $port )
+            foreach ( $sockets[(int)$port] ?? array() as $socket )
+                if ( $socket['inode'] > 0 )
+                    $inodes['socket:[' . $socket['inode'] . ']'] = (int)$port;
+        $holders = array();
+        foreach ( $ports as $port )
+            $holders[(int)$port] = array();
+        if ( !$inodes )
+            return $holders;
+        foreach ( glob( '/proc/[0-9]*/fd/*' ) ?: array() as $fd )
+        {
+            $target = @readlink( $fd );
+            if ( $target !== false && isset( $inodes[$target] ) )
+            {
+                $pid = (int)substr( $fd, 6 );
+                $port = $inodes[$target];
+                if ( !in_array( $pid, $holders[$port], true ) )
+                    $holders[$port][] = $pid;
+            }
+        }
+        return $holders;
+    }
+
+    /**
+     * The ports this server is configured to listen on.
+     *
+     * @return array
+     */
+    public function configuredPorts()
+    {
+        $ports = array( (int)$this->setting( 'ServerSettings', 'Port', 8088 ) );
+        if ( $this->httpsEnabled() )
+            $ports[] = (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 );
+        return $ports;
+    }
+
+    /**
+     * Whether the server takes a connection and answers an HTTP request on
+     * its port -- a status line, whatever the status. Listening is not
+     * enough: a server blocked in the kernel keeps its port bound, and the
+     * kernel goes on queueing connections that nobody accepts.
+     *
+     * Plain HTTP on Port; TLS on HTTPSPort when HTTPS is on and the plain
+     * port is not served.
+     *
+     * @param float $timeout seconds for the connection and the answer
+     * @return bool
+     */
+    public function answers( $timeout = 5.0 )
+    {
+        $host = $this->bindHost();
+        if ( $host === '' || $host === '0.0.0.0' || $host === '*' )
+            $host = '127.0.0.1';
+        elseif ( $host === '::' || $host === '[::]' )
+            $host = '[::1]';
+        elseif ( strpos( $host, ':' ) !== false && $host[0] !== '[' )
+            $host = '[' . $host . ']';
+
+        $port = (int)$this->setting( 'ServerSettings', 'Port', 8088 );
+        $scheme = 'tcp';
+        $context = stream_context_create();
+        if ( $port <= 0 && $this->httpsEnabled() )
+        {
+            $port = (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 );
+            $scheme = 'tls';
+            $context = stream_context_create( array( 'ssl' => array( 'verify_peer' => false, 'verify_peer_name' => false ) ) );
+        }
+        $socket = @stream_socket_client( $scheme . '://' . $host . ':' . $port, $errno, $errstr, $timeout,
+                                         STREAM_CLIENT_CONNECT, $context );
+        if ( !$socket )
+            return false;
+        stream_set_timeout( $socket, (int)ceil( $timeout ) );
+        @fwrite( $socket, "GET /Q/health HTTP/1.1\r\nHost: " . trim( $host, '[]' ) . "\r\nConnection: close\r\n\r\n" );
+        $line = @fgets( $socket );
+        fclose( $socket );
+        return (bool)preg_match( '#^HTTP/\d(?:\.\d)?\s+\d{3}#', (string)$line );
     }
 
     /**
@@ -2367,11 +3113,40 @@ class expVelocity
         if ( $ready !== true )
             return $this->result( false, $ready . ' -- the running server was left as it is', $this->status() );
 
+        // Every process of this installation, found by what it runs and where
+        // its output goes rather than by the pid files alone. A restart that
+        // was interrupted half-way (a caller's timeout, 2026-10-07) can leave
+        // instances running with no pid file; this run finds and ends them.
+        $before = $this->processIDs();
         $stopped = $this->stop();
-        if ( !$stopped['ok'] && $this->isRunning() )
-            return $this->result( false, 'could not stop: ' . $stopped['message'], $this->status() );
+        if ( !$stopped['ok'] )
+            return $this->result( false, 'could not stop: ' . $stopped['message'] . ' -- nothing was started', $this->status() );
 
-        return $this->start();
+        $started = $this->start();
+        if ( !$started['ok'] )
+            return $started;
+
+        // A restart is done when a new server answers, not when a command
+        // has been run: it reported the old process's status as running
+        // while that process accepted nothing.
+        $parents = $this->parentIDs();
+        $old = array_values( array_intersect( $parents, $before ) );
+        if ( $old )
+            return $this->result( false, 'restarted, but parent ' . implode( ', ', $old ) . ' is from before the restart', $this->status() );
+        if ( count( $parents ) < $this->instances() )
+            return $this->result( false, 'restarted, but only ' . count( $parents ) . ' of ' . $this->instances()
+                . ' instances are up; see ' . $this->logFile(), $this->status() );
+        $deadline = microtime( true ) + 30;
+        while ( !( $answers = $this->answers() ) && microtime( true ) < $deadline )
+            usleep( (int)( self::POLL_INTERVAL * 2 * 1000000 ) );
+        if ( !$answers )
+            return $this->result( false, 'restarted (parent ' . implode( ', ', $parents ) . '), but port '
+                . (int)$this->setting( 'ServerSettings', 'Port', 8088 ) . ' does not answer an HTTP request; see '
+                . $this->logFile(), $this->status() );
+
+        return $this->result( true, ( $before ? '' : 'was not running; ' ) . $started['message']
+            . ( strpos( $stopped['message'], 'killed' ) !== false ? ' (' . $stopped['message'] . ')' : '' )
+            . '; new parent ' . implode( ', ', $parents ) . ' answers', $started['data'] );
     }
 
     /**
@@ -2385,21 +3160,19 @@ class expVelocity
     {
         $pids = $this->processIDs();
         if ( !$pids )
-            return $this->result( true, 'not running' );
+        {
+            $this->removePidFiles();
+            return $this->portsFreeResult( 'not running' );
+        }
 
-        $signal = defined( 'SIGKILL' ) ? SIGKILL : 9;
-        foreach ( $pids as $pid )
-            $this->signal( $pid, $signal );
-
-        usleep( (int)( self::POLL_INTERVAL * 2 * 1000000 ) );
+        $killed = $this->killProcesses( $pids );
         $this->removePidFiles();
 
-        $left = $this->processIDs();
-        if ( $left )
-            return $this->result( false, count( $left ) . ' process(es) survived SIGKILL',
-                                  $this->status() );
+        if ( $killed['left'] )
+            return $this->result( false, count( $killed['left'] ) . ' process(es) survived SIGKILL: '
+                                  . implode( ', ', $killed['left'] ), $this->status() );
 
-        return $this->result( true, 'killed ' . count( $pids ) . ' process(es)' );
+        return $this->portsFreeResult( 'killed ' . count( $pids ) . ' process(es)' );
     }
 
     /**
@@ -2687,9 +3460,15 @@ class expVelocity
     {
         $pids = $this->processIDs();
         $ports = $this->listeningPorts();
+        $health = $pids ? $this->health( $pids ) : array( 'answering' => false, 'problems' => array() );
 
         return array(
+            // Processes of this installation exist. Whether they make a
+            // server is 'state': running only when it answers a request.
             'running'   => $pids ? true : false,
+            'state'     => !$pids ? 'stopped' : ( $health['answering'] ? 'running' : 'not answering' ),
+            'answering' => $health['answering'],
+            'problems'  => $health['problems'],
             'parent'    => $this->parentID(),
             'instances' => $this->instances(),
             'parents'   => array_values( $this->parentIDs() ),
@@ -2706,6 +3485,68 @@ class expVelocity
             'log'       => $this->logFile(),
             'pidFile'   => $this->pidFile(),
         );
+    }
+
+    /**
+     * Whether the running processes make a working server, and what is wrong
+     * when they do not: an instance without its parent, processes whose
+     * server has gone (and which ports they hold), connections queued that
+     * nobody accepts, a parent blocked in the kernel.
+     *
+     * @param array $pids processIDs()
+     * @return array( 'answering' => bool, 'problems' => list of strings )
+     */
+    public function health( array $pids )
+    {
+        // Asked twice before it counts as not answering: one probe can meet a
+        // moment of heavy load, and with several instances each lands on one.
+        $answering = $this->answers() || $this->answers();
+        $problems = array();
+
+        $parents = $this->parentIDs();
+        for ( $i = 0; $i < $this->instances(); $i++ )
+            if ( !isset( $parents[$i] ) )
+                $problems[] = ( $this->instances() > 1 ? 'instance ' . $i . ' has' : 'has' ) . ' no running parent'
+                    . ' (' . $this->relativePath( $this->pidFile( $i ) ) . ' is missing or names a process that is gone)';
+
+        $ports = $this->configuredPorts();
+        $holders = $this->portHolders( $ports );
+        $orphans = array_values( array_diff( $this->topLevelIDs( $pids ), $parents ) );
+        if ( $orphans )
+        {
+            $holding = array();
+            foreach ( $holders as $port => $who )
+                if ( array_intersect( $who, $orphans ) )
+                    $holding[] = $port;
+            $problems[] = count( $orphans ) . ' process(es) of this installation without a running server: '
+                . implode( ', ', $orphans ) . ( $holding ? ', holding port ' . implode( ', ', $holding ) : '' )
+                . ' -- exp:velocity restart ends them';
+        }
+
+        if ( !$answering )
+        {
+            $sockets = $this->listenSockets();
+            foreach ( $ports as $port )
+            {
+                $queued = 0;
+                foreach ( $sockets[$port] ?? array() as $socket )
+                    $queued += $socket['queued'];
+                if ( !isset( $sockets[$port] ) )
+                    $problems[] = 'nothing listens on port ' . $port;
+                elseif ( $queued > 0 )
+                    $problems[] = $queued . ' connection(s) queued on port ' . $port . ' and not accepted';
+            }
+            foreach ( $parents as $parent )
+            {
+                $wchan = trim( (string)@file_get_contents( '/proc/' . $parent . '/wchan' ) );
+                if ( strpos( $wchan, 'futex' ) !== false )
+                    $problems[] = 'parent ' . $parent . ' is blocked in the kernel (' . $wchan . '); it acts on no signal'
+                        . ' but SIGKILL -- exp:velocity restart ends it';
+            }
+            $problems[] = 'does not answer an HTTP request on port ' . (int)$this->setting( 'ServerSettings', 'Port', 8088 );
+        }
+
+        return array( 'answering' => $answering, 'problems' => $problems );
     }
 
     // ── Internals ────────────────────────────────────────────────────────

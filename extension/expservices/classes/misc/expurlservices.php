@@ -208,7 +208,7 @@ class expUrlServices extends expServiceBase
                                            CURLOPT_RETURNTRANSFER => true, CURLOPT_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS ) );
             curl_exec( $ch );
             $code = (int)curl_getinfo( $ch, CURLINFO_RESPONSE_CODE );
-            curl_close( $ch );
+            if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
         }
         $valid = $code >= 200 && $code < 400;
         eZURL::setIsValid( (int)$u->attribute( 'id' ), $valid ? 1 : 0 );

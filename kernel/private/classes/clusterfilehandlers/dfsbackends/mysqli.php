@@ -1297,7 +1297,7 @@ class eZDFSFileHandlerMySQLiBackend implements eZClusterEventNotifier
      *
      * @return bool|array
      */
-    protected function _selectOne( $query, $fname, $error = false, $debug = false, $fetchCall )
+    protected function _selectOne( $query, $fname, $error, $debug, $fetchCall )
     {
         eZDebug::accumulatorStart( 'mysql_cluster_query', 'MySQL Cluster', 'DB queries' );
         $time = microtime( true );

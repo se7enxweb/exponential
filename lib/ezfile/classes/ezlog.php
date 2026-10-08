@@ -29,6 +29,12 @@ class eZLog
     */
     static function write( $message, $logName = 'common.log', $dir = 'var/log' )
     {
+        // The default directory is the one eZDebug writes to: the log directory of the site when site.ini
+        // [FileSettings] UseGlobalLogDir is disabled (multi-site hosting), var/log otherwise.
+        if ( $dir === 'var/log' || $dir === 'var/log/' )
+        {
+            $dir = rtrim( eZDebug::instance()->logDirectory(), '/' );
+        }
         $fileName = $dir . '/' . $logName;
         $oldumask = @umask( 0 );
 
@@ -129,10 +135,10 @@ class eZLog
     static function writeStorageLog( $name, $dir = false )
     {
         $ini = eZINI::instance();
-        $varDir = $ini->variable( 'FileSettings', 'VarDir' );
-        $logDir = $ini->variable( 'FileSettings', 'LogDir' );
+        // The log directory of the site; site.ini [FileSettings] LogDir may be an absolute path
+        $logDirectory = eZSys::logDirectory();
         $logName = 'storage.log';
-        $fileName = $varDir . '/' . $logDir . '/' . $logName;
+        $fileName = $logDirectory . '/' . $logName;
         $oldumask = @umask( 0 );
 
         clearstatcache( true, $fileName );
@@ -143,9 +149,9 @@ class eZLog
             if ( eZLog::rotateLog( $fileName ) )
                 $fileExisted = false;
         }
-        else if ( !$fileExisted and !file_exists( $varDir . '/' . $logDir ) )
+        else if ( !$fileExisted and !file_exists( $logDirectory ) )
         {
-            eZDir::mkdir( $varDir . '/' . $logDir, false, true );
+            eZDir::mkdir( $logDirectory, false, true );
         }
 
         if ( $dir !== false )

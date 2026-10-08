@@ -162,7 +162,7 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
 
         // A search over pattern and destination and the kind of wildcard, both off the address
         $search = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
-        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $kind = UrlaliasGlobal::kindKey( isset( $userParameters['kind'] ) ? $userParameters['kind'] : '' );
         // An address to try against the wildcards, and what it gives
         $testText = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'test' ) ? $http->getVariable( 'test' ) : '' );

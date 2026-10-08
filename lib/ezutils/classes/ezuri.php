@@ -614,7 +614,7 @@ class eZURI
         {
             // The initial / needs to be removed as it is not expected by the cluster handler,
             // but we must use a temp variable since $href is required later
-            $trimmedHref = ltrim( $href, '/' );
+            $trimmedHref = ltrim( (string)$href, '/' );
             $modifiedHref = eZClusterFileHandler::instance()->applyServerUri( $trimmedHref );
             if ( $modifiedHref != $trimmedHref )
             {

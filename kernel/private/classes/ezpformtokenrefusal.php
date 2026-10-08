@@ -32,7 +32,7 @@ class ezpFormTokenRefusal
     /** The translation context of the built-in wording */
     const I18N_CONTEXT = 'kernel/error/formtoken';
 
-    /** The log file the warning line is written to (in var/log, as eZDebug's) */
+    /** The log file the warning line is written to (in eZDebug's log directory, var/log by default) */
     const LOG_FILE = 'warning.log';
 
     /** Seconds in which repeats of the same refusal are counted, not written */
@@ -469,7 +469,7 @@ class ezpFormTokenRefusal
     }
 
     /**
-     * Appends one line to var/log/warning.log in eZDebug's format.
+     * Appends one line to the warning.log of eZDebug (var/log/warning.log by default), in eZDebug's format.
      *
      * @param string $line
      * @param string $ip
@@ -477,8 +477,9 @@ class ezpFormTokenRefusal
      */
     protected static function writeLine( $line, $ip )
     {
-        // Where eZDebug writes its warning.log, beside error.log
-        $dir = 'var/log';
+        // Where eZDebug writes its warning.log, beside error.log: var/log, or the log directory of the site with
+        // site.ini [FileSettings] UseGlobalLogDir=disabled
+        $dir = class_exists( 'eZDebug' ) ? rtrim( eZDebug::instance()->logDirectory(), '/' ) : 'var/log';
         $file = $dir . '/' . self::LOG_FILE;
         if ( !is_dir( $dir ) )
             @eZDir::mkdir( $dir, false, true );

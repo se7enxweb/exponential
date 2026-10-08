@@ -58,7 +58,7 @@ class Menuconfig extends \Exponential\Runnable\ModuleView
         // The siteaccess shown: the URL's (siteaccess)/<name>, a posted choice, the session, else the first one where
         // the settings take effect, else the first of the list
         $siteAccess = false;
-        $fromUrl = isset( $Params['SiteAccess'] ) ? self::knownSiteAccess( $Params['SiteAccess'], $siteAccessList ) : false;
+        $fromUrl = isset( $scope['Params']['SiteAccess'] ) ? self::knownSiteAccess( $scope['Params']['SiteAccess'], $siteAccessList ) : false;
         if ( $module->isCurrentAction( 'SelectCurrentSiteAccess' ) && $http->hasPostVariable( 'CurrentSiteAccess' ) )
         {
             $posted = self::knownSiteAccess( $http->postVariable( 'CurrentSiteAccess' ), $siteAccessList );

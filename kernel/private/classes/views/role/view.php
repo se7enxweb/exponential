@@ -44,7 +44,7 @@ class View extends \Exponential\Runnable\ModuleView
         // (policy_offset), (policy_sort) and (policy_dir), the users and groups the role is
         // assigned to on (assignment_offset) and (assignment_filter). Paging or sorting one
         // keeps the other where it is.
-        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+        $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $assignmentFilter = \eZRole::normaliseAssignmentFilter( isset( $userParameters['assignment_filter'] ) ? $userParameters['assignment_filter'] : '' );
 
         // The name filter of the assignments. The field is sent with the form of the page, so
@@ -57,7 +57,7 @@ class View extends \Exponential\Runnable\ModuleView
                        : \eZRole::normaliseAssignmentFilter( $http->postVariable( 'AssignmentFilter', '' ) );
             $Module->redirectTo( '/role/view/' . (int)$roleID . self::policyUriSuffix( $userParameters )
                                  . self::assignmentUriSuffix( 0, $newFilter ) );
-            return $this->viewResult( isset( $Result ) ? $Result : null, null );
+            return $this->viewResult( $scope['Result'] ?? null, null );
         }
 
         // Redirect to role edit

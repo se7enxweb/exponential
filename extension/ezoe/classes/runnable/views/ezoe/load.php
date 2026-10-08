@@ -20,15 +20,13 @@ class Load extends \Exponential\Runnable\ModuleView
         $embedId         = 0;
         $http            = \eZHTTPTool::instance();
 
-        if ( isset( $Params['EmbedID'] ) && $Params['EmbedID'])
+        // A missing or malformed EmbedID answers false, without a warning (Relations::parseEmbedId())
+        $embedObject = false;
+        $embedParsed = Relations::parseEmbedId( isset( $Params['EmbedID'] ) ? $Params['EmbedID'] : null );
+        if ( $embedParsed !== false )
         {
-            $embedType = 'ezobject';
-            if (  is_numeric( $Params['EmbedID'] ) )
-                $embedId = $Params['EmbedID'];
-            else
-                list($embedType, $embedId) = explode('_', $Params['EmbedID']);
-
-            if ( strcasecmp( $embedType  , 'eznode'  ) === 0 )
+            list( $embedType, $embedId ) = $embedParsed;
+            if ( $embedType === 'eZNode' )
                 $embedObject = \eZContentObject::fetchByNodeID( $embedId );
             else
                 $embedObject = \eZContentObject::fetch( $embedId );

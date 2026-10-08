@@ -513,7 +513,7 @@ class eZDFSFileHandler implements eZClusterFileHandlerInterface, ezpDatabaseBase
                     if ( $this->useStaleCache && $this->metaData === false )
                     {
                         // configuration says we have to generate our own version
-                        if ( $this->nonExistantStaleCacheHandling[ $this->cacheType ] == 'generate' )
+                        if ( self::$nonExistantStaleCacheHandling[ $this->cacheType ] == 'generate' )
                         {
                             // no cache available, but a generate callback exists, skip to generation
                             if ( $generateCallback !== false )
@@ -1044,7 +1044,7 @@ class eZDFSFileHandler implements eZClusterFileHandlerInterface, ezpDatabaseBase
 
         self::$dbbackend->_delete( $path );
 
-        $this->metaData = null;
+        $this->_metaData = null;
     }
 
     /**
@@ -1218,7 +1218,7 @@ class eZDFSFileHandler implements eZClusterFileHandlerInterface, ezpDatabaseBase
         // @todo Catch an exception
         self::$dbbackend->_rename( $srcPath, $dstPath );
 
-        $this->metaData = null;
+        $this->_metaData = null;
     }
 
     /**
@@ -1234,7 +1234,7 @@ class eZDFSFileHandler implements eZClusterFileHandlerInterface, ezpDatabaseBase
 
         self::$dbbackend->_rename( $srcPath, $dstPath );
 
-        $this->metaData = null;
+        $this->_metaData = null;
     }
 
     /**
@@ -1478,6 +1478,12 @@ class eZDFSFileHandler implements eZClusterFileHandlerInterface, ezpDatabaseBase
      * @var string
      */
     public $filePath = null;
+
+    /**
+     * Local path of the copy made by the last fetchUnique()
+     * @var string|bool|null
+     */
+    public $uniqueName = null;
 
     /**
      * holds the real file path. This is only used when we are generating a cache

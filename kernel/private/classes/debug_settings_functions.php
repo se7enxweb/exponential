@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing eZUpdateDebugSettings(), shared by every front controller
+ * File containing eZUpdateDebugSettings() and eZUpdateDebugLogDirectory(), shared by every front controller
  *
  * index.php, index_rest.php, index_treemenu.php and the command line scripts
  * each used to declare their own eZUpdateDebugSettings(). A PHP process can
@@ -108,5 +108,24 @@ if ( !function_exists( 'eZUpdateDebugSettings' ) )
                 eZDebug::updateSettings( $settings );
                 return null;
         }
+    }
+}
+
+if ( !function_exists( 'eZUpdateDebugLogDirectory' ) )
+{
+    /**
+     * Points the log files of eZDebug and the default logs of eZLog at the log directory of the site when site.ini
+     * [FileSettings] UseGlobalLogDir is disabled, and back at var/log otherwise.
+     *
+     * eZSiteAccess::change() does the same through eZSiteAccess::updateLogDirectory() for every front controller and
+     * every script, whatever eZDebugSettingsMode() says, so the logs of a site with a VarDir of its own (multi-site
+     * hosting) stay apart from those of the other sites. Messages written before the siteaccess is known go to
+     * var/log.
+     *
+     * @return string|false The log directory used, false for var/log
+     */
+    function eZUpdateDebugLogDirectory()
+    {
+        return eZSiteAccess::updateLogDirectory( eZINI::instance() );
     }
 }

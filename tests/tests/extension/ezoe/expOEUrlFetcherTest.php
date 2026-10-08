@@ -2,7 +2,8 @@
 /**
  * Upload from a URL in the online editor: the address checks, the limits, the file checks and one real fetch of a
  * small public image served by this installation itself, which creates an image object under Media (node 43) that
- * is removed in tearDown. Live installation, no test database.
+ * is removed in tearDown. Live installation, no test database. The upload goes into a draft of the admin's own, as
+ * from content/edit; a published version and someone else's draft are refused and nothing is created.
  *
  * Run: php vendor/bin/phpunit tests/tests/extension/ezoe/expOEUrlFetcherTest.php
  *
@@ -295,16 +296,47 @@ class expOEUrlFetcherTest extends expOETestCase
         $this->assertSame( array(), $this->leftovers() );
     }
 
-    public function testTheUploadViewCreatesAnImageObjectFromAUrl()
+    /**
+     * A published folder under Media (43), removed in tearDown, and a draft of it made by the admin, as content/edit
+     * makes one: an upload goes into the version being edited, which is a draft of the editor's own.
+     *
+     * @return array( eZContentObject, int the number of the draft )
+     */
+    protected function containerWithDraft( $name, $someoneElse = false )
     {
         $this->loginAdmin();
         $container = eZContentFunctions::createAndPublishObject( array(
             'parent_node_id' => 43, 'class_identifier' => 'folder', 'creator_id' => 14,
-            'attributes' => array( 'name' => 'ezoe url upload test ' . getmypid() ) ) );
+            'attributes' => array( 'name' => $name . ' ' . getmypid() ) ) );
         $this->assertNotFalse( $container, 'the test folder under Media (43) was not created' );
         $this->objectIDs[] = (int) $container->attribute( 'id' );
+        if ( $someoneElse )
+        {
+            // a draft of someone else's (the anonymous user's); the admin edits nothing of it
+            $this->loginAnonymous();
+        }
+        $draft = $container->createNewVersion();
+        $creator = (int) eZUser::currentUserID();
+        $this->loginAdmin();
+        $this->assertInstanceOf( 'eZContentObjectVersion', $draft );
+        $this->assertSame( $creator, (int) $draft->attribute( 'creator_id' ) );
+        $this->assertNotSame( (int) $container->attribute( 'current_version' ), (int) $draft->attribute( 'version' ) );
+        return array( $container, (int) $draft->attribute( 'version' ) );
+    }
 
-        $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $container->attribute( 'current_version' ), 'objects', '0' ),
+    /** @return int[] the version numbers of $fromID that relate to $toID, straight from the database */
+    protected function relationVersions( $fromID, $toID )
+    {
+        $rows = eZDB::instance()->arrayQuery( 'SELECT from_contentobject_version AS v, ' . mt_rand() . ' AS nonce FROM ezcontentobject_link'
+            . ' WHERE from_contentobject_id = ' . (int) $fromID . ' AND to_contentobject_id = ' . (int) $toID );
+        return array_map( 'intval', array_column( $rows, 'v' ) );
+    }
+
+    public function testTheUploadViewCreatesAnImageObjectFromAUrl()
+    {
+        list( $container, $draft ) = $this->containerWithDraft( 'ezoe url upload test' );
+
+        $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $draft, 'objects', '0' ),
             array( 'uploadButton' => '1', 'uploadUrl' => self::IMAGE_URL, 'location' => '43', 'objectName' => 'ezoe url upload image ' . getmypid(), 'ContentObjectAttribute_image' => 'alt from url' ) );
         $this->assertSame( 1, preg_match( '/selectByEmbedId\(\s*(\d+)\s*,\s*(\d+)\s*,\s*("(?:[^"\\\\]|\\\\.)*")\s*\)/', $out, $m ), $out );
         $this->objectIDs[] = (int) $m[1];
@@ -314,6 +346,39 @@ class expOEUrlFetcherTest extends expOETestCase
         $this->assertSame( 'ezoe url upload image ' . getmypid(), $created->attribute( 'name' ) );
         $this->assertSame( 43, (int) $created->attribute( 'main_node' )->attribute( 'parent_node_id' ) );
         $this->assertTrue( (bool) $created->attribute( 'can_read' ) );
+        // the relation belongs to the draft being edited, not to version 1 (the version the new image has)
+        $this->assertSame( array( $draft ), $this->relationVersions( $container->attribute( 'id' ), $m[1] ) );
+        $this->assertSame( array(), $this->leftovers() );
+    }
+
+    public function testTheUploadViewDoesNotWriteIntoAPublishedVersion()
+    {
+        list( $container, $draft ) = $this->containerWithDraft( 'ezoe url upload published' );
+        $before = (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c, ' . mt_rand() . ' AS nonce FROM ezcontentobject' )[0]['c'];
+        $links = (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c, ' . mt_rand() . ' AS nonce FROM ezcontentobject_link WHERE from_contentobject_id = ' . (int) $container->attribute( 'id' ) )[0]['c'];
+
+        foreach ( array( (int) $container->attribute( 'current_version' ), $draft + 50 ) as $version )
+        {
+            $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $version, 'objects', '0' ),
+                array( 'uploadButton' => '1', 'uploadUrl' => self::IMAGE_URL, 'location' => '43', 'objectName' => 'ezoe url upload refused ' . getmypid() ) );
+            $this->assertStringNotContainsString( 'selectByEmbedId', $out, "version $version" );
+            $this->assertStringContainsString( 'ObjectVersion', $out, "version $version" );
+        }
+        $this->assertSame( $before, (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c, ' . mt_rand() . ' AS nonce FROM ezcontentobject' )[0]['c'] );
+        $this->assertSame( $links, (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c, ' . mt_rand() . ' AS nonce FROM ezcontentobject_link WHERE from_contentobject_id = ' . (int) $container->attribute( 'id' ) )[0]['c'] );
+        $this->assertSame( array(), $this->leftovers() );
+    }
+
+    public function testTheUploadViewDoesNotWriteIntoSomeoneElsesDraft()
+    {
+        // the admin may read and edit the folder, but the draft is the anonymous user's
+        list( $container, $draft ) = $this->containerWithDraft( 'ezoe url upload foreign draft', true );
+        $before = (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c, ' . mt_rand() . ' AS nonce FROM ezcontentobject' )[0]['c'];
+        $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $draft, 'objects', '0' ),
+            array( 'uploadButton' => '1', 'uploadUrl' => self::IMAGE_URL, 'location' => '43' ) );
+        $this->assertStringNotContainsString( 'selectByEmbedId', $out );
+        $this->assertStringContainsString( 'ObjectVersion', $out );
+        $this->assertSame( $before, (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c, ' . mt_rand() . ' AS nonce FROM ezcontentobject' )[0]['c'] );
         $this->assertSame( array(), $this->leftovers() );
     }
 
@@ -327,13 +392,9 @@ class expOEUrlFetcherTest extends expOETestCase
     #[PHPUnit\Framework\Attributes\DataProvider( 'viewRefusals' )]
     public function testTheUploadViewShowsTheServerErrorAndCreatesNothing( $url )
     {
-        $this->loginAdmin();
-        $container = eZContentFunctions::createAndPublishObject( array(
-            'parent_node_id' => 43, 'class_identifier' => 'folder', 'creator_id' => 14,
-            'attributes' => array( 'name' => 'ezoe url upload refusal ' . getmypid() ) ) );
-        $this->objectIDs[] = (int) $container->attribute( 'id' );
+        list( $container, $draft ) = $this->containerWithDraft( 'ezoe url upload refusal' );
         $before = (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c FROM ezcontentobject' )[0]['c'];
-        $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $container->attribute( 'current_version' ), 'objects', '0' ),
+        $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $draft, 'objects', '0' ),
             array( 'uploadButton' => '1', 'uploadUrl' => $url, 'location' => '43' ) );
         $this->assertStringNotContainsString( 'selectByEmbedId', $out );
         $this->assertStringContainsString( 'color: red', $out, $out );

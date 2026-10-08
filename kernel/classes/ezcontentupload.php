@@ -117,7 +117,7 @@ class eZContentUpload
      Most data will be automatically derived from the \c action_name value taken from settings/upload.ini, other
      values will override default values.
     */
-    static function upload( $parameters = array(), $module )
+    static function upload( $parameters, $module )
     {
         $ini = eZINI::instance( 'upload.ini' );
 
@@ -1277,7 +1277,7 @@ class eZContentUpload
      \static
      \return the node ID for the node alias \a $nodeName or \c false if no ID could be found.
     */
-    function nodeAliasID( $nodeName )
+    static function nodeAliasID( $nodeName )
     {
         if ( is_numeric( $nodeName ) )
         {

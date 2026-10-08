@@ -28,6 +28,7 @@ class eZDFSFileHandlerDFSBackendFilterIterator extends FilterIterator
     /**
      * Filters directories out
      */
+    #[\ReturnTypeWillChange]
     public function accept()
     {
         return $this->getInnerIterator()->current()->isFile();
@@ -38,6 +39,7 @@ class eZDFSFileHandlerDFSBackendFilterIterator extends FilterIterator
      *
      * @return string The relative path to the current file
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         /** @var SplFileInfo $file */
