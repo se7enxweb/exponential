@@ -14,6 +14,29 @@
 class ezpMail extends ezcMail
 {
     /**
+     * The User-Agent eZMail::setUserAgent() gave this mail. ezcMail::generateHeaders() sets its own
+     * ("Apache Zeta Components") on every call, which replaced it for mails sent by SMTP; null or '' keeps that
+     * default.
+     *
+     * @var string|null
+     */
+    public $userAgent = null;
+
+    /**
+     * Override of {@link ezcMailPart::setHeader()}: the User-Agent stays the one of {@link $userAgent} when set.
+     *
+     * @param string $name
+     * @param string $value
+     * @param string $charset
+     */
+    public function setHeader( $name, $value, $charset = 'us-ascii' )
+    {
+        if ( is_string( $this->userAgent ) && $this->userAgent !== '' && strcasecmp( $name, 'User-Agent' ) === 0 )
+            $value = $this->userAgent;
+        parent::setHeader( $name, $value, $charset );
+    }
+
+    /**
      * Override of original {@link ezcMail::generateHeaders()}.
      * Allows headers customization
      *
