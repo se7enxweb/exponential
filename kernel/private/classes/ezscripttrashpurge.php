@@ -87,6 +87,12 @@ class eZScriptTrashPurge
         }
 
         $trashed = $trashedDays ? strtotime( "-{$trashedDays} days" ) : null;
+        // A huge number of days overflows the date arithmetic into a future time, which would purge everything
+        if ( $trashedDays && ( !is_int( $trashed ) || $trashed >= time() ) )
+        {
+            $this->cli->error( "Cannot purge items trashed at least $trashedDays days ago: the date is out of range." );
+            return false;
+        }
 
         if ( $this->memoryMonitoring )
         {

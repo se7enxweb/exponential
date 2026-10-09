@@ -218,8 +218,8 @@ The kernel's parts (`settings/cronjob.ini`):
 Single parts exist for `contentjobs`, `audit`, `notification`, `mailpreferences` and `mailbounces`, so each can run
 on its own schedule. `cronjobs/` holds more scripts that no shipped part lists, to be run with `--script=` or added
 to a part of your own: `session_gc.php` (expired sessions, see below), `old_drafts_cleanup.php`, `trashpurge.php`
-(empties the trash: only if you mean it), `staticcache_cleanup.php`, `subtreeexpirycleanup.php` and
-`updateviewcount.php`.
+(empties the trash, or with `content.ini [TrashSettings] KeepItemsForDays` only what is older),
+`staticcache_cleanup.php`, `subtreeexpirycleanup.php` and `updateviewcount.php`.
 
 Active extensions add more parts; `php bin/php/console list cron` shows them with a description, for example the
 newsletter parts ([10.5](#105-notifications-and-newsletters)), the sitemap parts of `bcgooglesitemaps` and
