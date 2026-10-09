@@ -2838,7 +2838,7 @@ a466ef74bde1432f443d1b0f37c843bc  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
-7d17961d5f1e85e07d0cbd2f3704b766  doc/bc/6.0/trash.md
+a66ac6f1dbdc7bbef53653c12e8fbda2  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-106d7dda506b1d4f605a95c15697a977  doc/changelogs/6.0/6.0.15.md
+1ac8f5e3359bd501e9b0da1ddd2c3b5e  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3891,7 +3891,7 @@ ca1072dfabc7149d9495ecf02fa60e77  doc/install/11-upgrading.md
 697395aba059076da8463bce457b9957  doc/install/14-migrating-from-4x.md
 e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
-339772e4c87ff4d4e6a33072f295baba  doc/install/17-migration-reference.md
+c16be8cb22d2ac62ecb044e4af371544  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/shop/classeshierarchy.html
@@ -5545,7 +5545,7 @@ d0693dcf25d6d8639c3579bd618844d9  kernel/private/classes/services/mailpreference
 691b2b62e924bdef2a7010ea9b8e0960  kernel/private/classes/services/sessiongarbagecollector.php
 d3411a771db07379843c263813850cf0  kernel/private/classes/services/trash.php
 da76a751f12bab985e32e8d444175c8f  kernel/private/classes/services/trashlist.php
-ac09f6f2d4e9a7f6e27b3d162ed62edc  kernel/private/classes/services/trashrecord.php
+fe83678e4d8716e0fc68dc4d95636930  kernel/private/classes/services/trashrecord.php
 bfc58e59d09c7c1fdadbb3449f289abe  kernel/private/classes/treemenu_functions.php
 874103f52c97395bb1704a3e40d2e245  kernel/private/classes/urlaliasfilters/ezurlaliasfilterappendnodeid.php
 2dc28861d9ea79d507d8cdf297b01ca3  kernel/private/classes/views/audit/alerts.php
@@ -7435,9 +7435,9 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
 45a11042cf23d383859f6cd2ff5e6d2a  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
-4f9dac68d46b26402c67d88a0ccc8070  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
+935a3def6becc46f294c5d5ff9ada7d3  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
-62dfd037b228719d5e4fd0da06db3c40  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
+ea50143daead7aa1e955f23e52ba4112  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 23908179beefb9ebfcc66883726b8fe1  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
 68e7667ba121abeb9d36fd8d734c3249  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 5860e301a7bc07bf5415a8e7b57900d0  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
@@ -7995,7 +7995,7 @@ d15a1e6ead412a243d3acb16db52d655  update/common/scripts/5.4/cleanupfieldvaluerel
 895b419a0138eea6b196f43965f519b1  update/common/scripts/5.4/fixtrashedimagereferences.php
 bc079b0feeee78fa2200402accdda0bb  update/common/scripts/6.0/createapikeytable.php
 a6115918db1ff3743526d26ef7d794c9  update/common/scripts/6.0/createaudittables.php
-5c2afe383e3ec7e1e1626a57534f0173  update/common/scripts/6.0/movetrashrecords.php
+c52b4f8c03f179ac0c3c8b2ebaa5aa88  update/common/scripts/6.0/movetrashrecords.php
 a31b7f17bf452d571ea23b33e005831e  update/common/scripts/cleanup.php
 18d258c9c59f4e4e0b5d8d1361630f20  update/common/scripts/updatecontentobjectname.php
 76f81ca253757f0ca61d6c72915a1298  update/common/scripts/updatenbxmlcontents.php
