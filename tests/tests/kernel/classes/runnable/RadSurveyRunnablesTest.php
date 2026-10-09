@@ -7,7 +7,8 @@
  *  RS-02 — A class of those namespaces that is not a runnable (the built-in server's router) is not counted
  *  RS-03 — Implementation[] entries: a subclass is counted as re-implemented, an entry naming no runnable, a missing
  *          replacement and one that does not extend the class are broken, with the reason
- *  RS-04 — runnableEvents(): before and after for each kind, before notifies, after filters
+ *  RS-04 — runnableEvents(): before and after for each kind, before notifies, after filters; the filter
+ *          cronjob/part/run of runcronjobs.php
  *  RS-05 — The survey counts: runnables per kind and owner add up, the six events are in the event list, and the
  *          total includes the runnables
  *  RS-06 — The catalogue explains the mechanism with an example, and the survey view has a runnables section
@@ -109,7 +110,8 @@ class RadSurveyRunnablesTest extends PHPUnit\Framework\TestCase
     public function testRunnableEvents()
     {
         $events = expRADSurvey::runnableEvents();
-        $this->assertCount( 6, $events );
+        $this->assertCount( 7, $events );
+        $this->assertSame( 'filter', $events[\Exponential\Command\Kernel\Runcronjobs::PART_RUN_EVENT]['kind'] );
         foreach ( array( 'command', 'cronjob', 'view' ) as $kind )
         {
             $this->assertSame( 'notify', $events["runnable/$kind/before"]['kind'] );

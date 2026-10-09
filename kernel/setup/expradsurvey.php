@@ -957,7 +957,9 @@ class expRADSurvey
     }
 
     /**
-     * The events every runnable announces around run() (see Exponential\Runnable\Runnable::runWithEvents()).
+     * The events every runnable announces around run() (see Exponential\Runnable\Runnable::runWithEvents()), and
+     * the filter runcronjobs.php asks before a part, which the source sweep cannot see either because its name is a
+     * class constant.
      *
      * @return array event => array( event, kind, where )
      */
@@ -971,6 +973,8 @@ class expRADSurvey
             $events["runnable/$kind/after"]  = array( 'event' => "runnable/$kind/after", 'kind' => 'filter',
                                                       'where' => array( 'kernel/private/classes/runnable/runnable.php' ) );
         }
+        $events['cronjob/part/run'] = array( 'event' => 'cronjob/part/run', 'kind' => 'filter',
+                                             'where' => array( 'kernel/private/classes/commands/runcronjobs.php' ) );
         return $events;
     }
 

@@ -90,6 +90,29 @@ namespace Exponential\Command\Kernel
 
 class Runcronjobs extends \Exponential\Runnable\Command
 {
+    /** The filter asked before the scripts of a cronjob part run */
+    const PART_RUN_EVENT = 'cronjob/part/run';
+
+    /**
+     * Whether the scripts of a cronjob part may run. The listeners of cronjob/part/run ([RunnableSettings]
+     * Listeners[], or attached in code) get ( true, $part, $siteaccess, $scripts, $single ) and return true to run
+     * the part; anything else leaves it out. Without listeners every part runs, as before.
+     *
+     * @param string $part the part as given on the command line; '' for the scripts of [CronjobSettings] and for
+     *                     a single script run with --script
+     * @param string $siteaccess the siteaccess the scripts run in
+     * @param string[] $scripts the file names of the scripts the part would run
+     * @param bool $single true for a single script run with --script, so a listener can tell it from the default part
+     * @return bool
+     */
+    public static function partMayRun( $part, $siteaccess, array $scripts, $single = false )
+    {
+        $events = self::events();
+        if ( $events === null )
+            return true;
+        return $events->filter( self::PART_RUN_EVENT, true, (string)$part, (string)$siteaccess, $scripts, (bool)$single ) === true;
+    }
+
     public function run()
     {
         // the script's variables were globals; functions of the script read them with "global"
@@ -400,6 +423,19 @@ class Runcronjobs extends \Exponential\Runnable\Command
         if ( !is_array( $scripts ) or empty( $scripts ) )
         {
             $cli->notice( 'Notice: No scripts found for execution.' );
+            $script->shutdown( 0 );
+        }
+
+        // A listener may leave the part out, for instance while a release is deployed; that is not an error.
+        $currentAccess = \eZSiteAccess::current();
+        $single = $cronScript !== false && $cronScript !== '';
+        $partName = !$single && $cronPart !== false ? (string)$cronPart : '';
+        if ( !static::partMayRun( $partName, $currentAccess !== null ? $currentAccess['name'] : (string)$siteaccess, $scripts, $single ) )
+        {
+            if ( $single )
+                $cli->notice( "Notice: A listener of " . self::PART_RUN_EVENT . " left out the cronjob script '" . $scripts[0] . "'." );
+            else
+                $cli->notice( "Notice: A listener of " . self::PART_RUN_EVENT . " left out the cronjob part '" . ( $partName !== '' ? $partName : 'default' ) . "'." );
             $script->shutdown( 0 );
         }
 
