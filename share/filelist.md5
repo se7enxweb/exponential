@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-be4b38d635c0ff183a4f95ad0706dc14  doc/changelogs/6.0/6.0.15.md
+c1676188f08f4180154ed281da917f28  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3527,7 +3527,7 @@ b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 5a7bde298cd3b3eb7329db6460fd4743  doc/guides/roles-and-policies.md
 b96aa9f19d0e6aebe8b4e7b2569216d5  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
-a8d5daba63dcc34fea309ba3ff76dfd1  doc/guides/security-and-audit.md
+a958f9ae9c28cf523a5869fe16577039  doc/guides/security-and-audit.md
 43dbd90e31972fef2826ebb622ab5c4d  doc/guides/sessions.md
 7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
 984fbd968c27ef1981e5c835b18c8c0b  doc/guides/system-information.md
@@ -5504,7 +5504,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 28b56f2df1290892158aedc26b81b0c8  kernel/private/classes/ezpkernelredirect.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 ddec744dfff68595b33fab3f301af457  kernel/private/classes/ezpkerneltreemenu.php
-5c4f3b050d473855aa2727c0fef4d8e3  kernel/private/classes/ezpkernelweb.php
+17b7f5aa4e9215027690ffd9b1ff48d1  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 281e9dba3bcb1ca40c9f793bfcdcd065  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -6236,7 +6236,7 @@ d73a83f7c7f486155ada0fde2a844de1  lib/ezsession/classes/ezpsessionhandler.php
 969e0f80c467e02f0e7a89af37cba0c7  lib/ezsession/classes/ezpsessionhandlerdb.php
 61ce52dbf3abdda928d0491e36033258  lib/ezsession/classes/ezpsessionhandlerphp.php
 64646af1921464f785521bc911d8eb97  lib/ezsession/classes/ezpsessionhandlersymfony.php
-44fbda9d4356125163a3f5603e78c045  lib/ezsession/classes/ezsession.php
+4ab523184135d95fbe1bd96b5964015b  lib/ezsession/classes/ezsession.php
 995cfd2eb1246294e6e921d401106f48  lib/ezsoap/classes/ezsoapbody.php
 148ccc8a49b48beb40c9516c87a432f2  lib/ezsoap/classes/ezsoapclient.php
 4e0d0628ea5bc587e9595c5be5332418  lib/ezsoap/classes/ezsoapcodec.php
@@ -6404,7 +6404,7 @@ fce5a3e3f0663f62cde1337a65d9ba06  settings/package.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-89520ae3ce34dbcb7b97222c5f8bf1ae  settings/site.ini
+b752b0c61165cdcf17badbef42a2cd5e  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7805,6 +7805,7 @@ b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
 d72315fa9b3256a89308f3109ca900e0  tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php
 b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
 b078858df9972d3e704af87be75bc3b2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
+acbb9b3905b1d5cad1c75014265dec30  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
 cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 e231512efb2176cef5ba4a4fd0320d57  tests/tests/lib/ezsoap/eZSOAPServerFunctionNameTest.php
