@@ -119,7 +119,8 @@ class SixZeroPathSchemaUpdateSqlTest extends PHPUnit\Framework\TestCase
     public function testEveryKernelSequenceIsCovered()
     {
         preg_match_all( '/^CREATE SEQUENCE ([a-z_0-9]+)\b/m', self::read( 'kernel/sql/postgresql/kernel_schema.sql' ), $kernel );
-        preg_match_all( '/^CREATE SEQUENCE ([a-z_0-9]+)\b/m', self::read( 'update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql' ), $created );
+        // also those created inside a DO block, which are indented (expapikey_id_seq, created with its table)
+        preg_match_all( '/^\s*CREATE SEQUENCE ([a-z_0-9]+)\b/m', self::statements( 'update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql' ), $created );
         $renamed = array();
         foreach ( self::renameRows( 'update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql' ) as $row )
             $renamed[] = $row[0] . '_' . $row[1] . '_seq';
