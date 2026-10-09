@@ -167,11 +167,36 @@ each with `TrashedByFileObjectIDList` for the rows known only from the old file.
 
 ### The presenter: `Exponential\Service\TrashList`
 
-The view (`kernel/private/classes/views/content/trash.php`) reads the trash rows once without joins (`context()`),
-then builds the page from them. For each row, `describe()` works out the path, the parent state, the nodes below it
-(trash rows under its `path_string`), the owner, last modifier, dates, languages and remaining locations. The class
-(`kernel/private/classes/services/trashlist.php`) also provides `summary()`, `userOptions()`, `classOptions()`, and
-`filters()`, `filterURI()` and `listParams()` for the URL filters.
+The view (`kernel/private/classes/views/content/trash.php`) asks the database for what one page needs; it never
+reads the whole trash. `context()` only tells whether the columns `trashed_by` and `trashed_via` exist and reads
+the entries of the old file for rows without a `trashed_by`. For each item of the page, `describe()` works out the
+path (the trash rows among its ancestors, read once for the page), the parent state, the nodes below it (a count on
+the indexed `path_string`, `TrashList::belowCondition()`), the owner, last modifier, dates, languages and remaining
+locations. `summary()` and `userOptions()` count in SQL (`userOptions()` groups by `trashed_by`, which has the
+index `ezcobj_trash_trashed_by`). The class (`kernel/private/classes/services/trashlist.php`) also provides
+`classOptions()`, and `filters()`, `filterURI()` and `listParams()` for the URL filters.
+
+### A large trash
+
+Measured on SQLite with synthetic trash rows (groups of one item and nine below it, pointing to published objects),
+as administrator, one page of 50 items, the PHP steps of the view without the template, for the filters none / by
+user / unknown. The scripts and the results are kept with the change; the times vary by about a fifth between runs.
+
+| Rows in the trash | Before | After (with the index) | Memory before | Memory after |
+|---|---|---|---|---|
+| 30,000 | 0.84–1.04 s | 0.17–0.32 s | 48 MB | 2–3 MB |
+| 100,000 | 2.7–3.2 s | 0.54–0.90 s | 160 MB | 2–3 MB |
+
+Before, the view read every trash row (`SELECT *`, the long `path_identification_string` included) and counted the
+nodes below each item of the page by going through all of them. What is left is the list query itself
+(`trashList()` and `trashListCount()`, about 0.13–0.32 s each at 100,000 rows) and the summary line (0.18–0.24 s).
+The index on `trashed_by` cut the user list from about 100 ms to 16 ms at 100,000 rows.
+
+The nodes below an item are counted with a range on `path_string` on SQLite (which answers `LIKE` without the
+index) and with `LIKE '<path>%'` on the other engines, as the kernel's subtree queries do. A range is not used
+there because a locale collation (PostgreSQL with `en_US.UTF-8`) ignores the slashes when it compares. Like those
+subtree queries, PostgreSQL answers the `LIKE` from an index only when the database uses the C collation or the
+index has `text_pattern_ops`.
 
 ### Tests
 

@@ -3473,6 +3473,14 @@ $schema = array (
           0 => 'path_identification_string',
         ),
       ),
+      'ezcobj_trash_trashed_by' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'trashed_by',
+        ),
+      ),
     ),
   ),
   'ezcontentobject_tree' => 

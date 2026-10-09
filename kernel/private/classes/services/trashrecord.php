@@ -201,15 +201,47 @@ class TrashRecord
      */
     public static function columnsExist( $db )
     {
-        $rows = $db->arrayQuery( 'SELECT * FROM ezcontentobject_trash', array( 'limit' => 1 ) );
-        if ( !is_array( $rows ) )
-            return false;
-        if ( $rows )
-            return array_key_exists( 'trashed_by', $rows[0] ) && array_key_exists( 'trashed_via', $rows[0] );
-        // an empty trash: ask for the columns themselves
-        $probe = $db->arrayQuery( 'SELECT trashed_by, trashed_via FROM ezcontentobject_trash', array( 'limit' => 1 ) );
-        return is_array( $probe );
+        // asked by every view of the trash: once per connection (a persistent worker asks again after its restart,
+        // which the deploy order includes), and from the catalogue of the engine, so that a database without the
+        // columns logs no failed query
+        $key = spl_object_id( $db );
+        if ( isset( self::$columnsExist[$key] ) )
+            return self::$columnsExist[$key];
+        $names = null;
+        switch ( $db->databaseName() )
+        {
+            case 'sqlite':
+                $names = array_column( (array)$db->arrayQuery( 'PRAGMA table_info(ezcontentobject_trash)' ), 'name' );
+                break;
+            case 'mysql':
+                $names = array_column( (array)$db->arrayQuery( 'SHOW COLUMNS FROM ezcontentobject_trash' ), 'Field' );
+                break;
+            case 'postgresql':
+                $names = array_column( (array)$db->arrayQuery( "SELECT column_name FROM information_schema.columns "
+                                                             . "WHERE table_schema = current_schema() AND table_name = 'ezcontentobject_trash'" ), 'column_name' );
+                break;
+            case 'oracle':
+                $names = array();
+                foreach ( (array)$db->arrayQuery( "SELECT column_name FROM user_tab_columns WHERE table_name = 'EZCONTENTOBJECT_TRASH'" ) as $row )
+                    $names[] = (string)reset( $row );
+                break;
+        }
+        if ( $names === null )
+        {
+            // another engine: a row of the trash tells, an empty trash is asked for the columns themselves
+            $rows = $db->arrayQuery( 'SELECT * FROM ezcontentobject_trash', array( 'limit' => 1 ) );
+            if ( is_array( $rows ) && $rows )
+                $names = array_keys( $rows[0] );
+            else
+                $names = is_array( $db->arrayQuery( 'SELECT trashed_by, trashed_via FROM ezcontentobject_trash', array( 'limit' => 1 ) ) )
+                         ? array( 'trashed_by', 'trashed_via' ) : array();
+        }
+        $names = array_map( 'strtolower', $names );
+        return self::$columnsExist[$key] = in_array( 'trashed_by', $names, true ) && in_array( 'trashed_via', $names, true );
     }
+
+    /** @var array spl_object_id of the connection => bool, what columnsExist() found */
+    private static $columnsExist = array();
 
     /**
      * Where the trash move came from: "web <siteaccess>" or "cli <script>".

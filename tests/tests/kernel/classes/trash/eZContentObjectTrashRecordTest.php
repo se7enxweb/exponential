@@ -74,6 +74,10 @@ class eZContentObjectTrashRecordTest extends PHPUnit\Framework\TestCase
             if ( !class_exists( $class ) )
                 require_once 'kernel/private/classes/services/' . $file;
 
+        // without the columns moving to the trash fails and ends the process: create nothing
+        if ( !Exponential\Service\TrashRecord::columnsExist( eZDB::instance() ) )
+            $this->markTestSkipped( 'ezcontentobject_trash has no trashed_by and trashed_via: run the database update first' );
+
         $admin = eZUser::fetchByName( 'admin' );
         $this->assertInstanceOf( 'eZUser', $admin, 'the admin user exists' );
         eZUser::setCurrentlyLoggedInUser( $admin, $admin->attribute( 'contentobject_id' ), eZUser::NO_SESSION_REGENERATE );
@@ -191,6 +195,11 @@ class eZContentObjectTrashRecordTest extends PHPUnit\Framework\TestCase
             $this->assertNotFalse( $item['section_name'] );
             $this->assertGreaterThan( 0, $item['published'] );
         }
+
+        $mine = array_values( array_filter( Exponential\Service\TrashList::userOptions( $context ),
+                                            function ( $option ) { return $option['id'] === $this->adminID; } ) );
+        $this->assertNotEmpty( $mine, 'the user is in the user list' );
+        $this->assertGreaterThanOrEqual( 3, $mine[0]['count'], 'the user list counts the trash rows of the user' );
 
         $summary = Exponential\Service\TrashList::summary( $context );
         $this->assertGreaterThanOrEqual( 3, $summary['items'] );

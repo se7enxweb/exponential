@@ -3381,6 +3381,14 @@ CREATE INDEX ezcobj_trash_path_ident ON ezcontentobject_trash USING btree (path_
 
 
 
+CREATE INDEX ezcobj_trash_trashed_by ON ezcontentobject_trash USING btree (trashed_by);
+
+
+
+
+
+
+
 CREATE INDEX ezcontentobject_tree_co_id ON ezcontentobject_tree USING btree (contentobject_id);
 
 
