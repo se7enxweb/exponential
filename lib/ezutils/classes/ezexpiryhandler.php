@@ -61,7 +61,7 @@ class eZExpiryHandler
         {
             $errMsg = 'Fatal error - could not restore expiry.php file.';
             eZDebug::writeError( $errMsg, __METHOD__ );
-            trigger_error( $errMsg, E_USER_ERROR );
+            eZFatalUserError::raise( $errMsg );
         }
 
         $this->Timestamps = $Timestamps;

@@ -525,6 +525,7 @@ return array(
       'eZExtensionPackageCreator'                                    => 'kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php',
       'eZExtensionPackageHandler'                                    => 'kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php',
       'eZFSFileHandler'                                              => 'kernel/classes/clusterfilehandlers/ezfsfilehandler.php',
+      'eZFatalUserError'                                             => 'lib/ezutils/classes/ezfatalusererror.php',
       'eZFile'                                                       => 'lib/ezfile/classes/ezfile.php',
       'eZFileExtensionBlackListValidator'                            => 'lib/ezutils/classes/ezfileextensionblacklistvalidator.php',
       'eZFileHandler'                                                => 'lib/ezfile/classes/ezfilehandler.php',

@@ -38,7 +38,10 @@ if ( !defined( 'CLUSTER_STORAGE_BACKEND' ) || CLUSTER_STORAGE_BACKEND === null )
 <h1>$message</h1>
 </body></html>
 EOF;
-    trigger_error( $message, E_USER_ERROR );
+    // stops the script as a fatal error does; there is no autoloader here
+    if ( !class_exists( 'eZFatalUserError', false ) )
+        require __DIR__ . '/lib/ezutils/classes/ezfatalusererror.php';
+    eZFatalUserError::raise( $message );
 }
 
 // default values
@@ -81,7 +84,10 @@ if ( !file_exists( $clusterGatewayFile ) )
 <h1>$message</h1>
 </body></html>
 EOF;
-    trigger_error( $message, E_USER_ERROR );
+    // stops the script as a fatal error does; there is no autoloader here
+    if ( !class_exists( 'eZFatalUserError', false ) )
+        require __DIR__ . '/lib/ezutils/classes/ezfatalusererror.php';
+    eZFatalUserError::raise( $message );
 }
 
 // We use require_once as the gateway file may have been included before for initialization purpose
