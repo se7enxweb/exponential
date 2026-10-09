@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-0a0c34cf5cde771d4e6b786828263fcf  doc/changelogs/6.0/6.0.15.md
+0ad1d1a54dff1bdc04e952743fdd3563  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5955,7 +5955,7 @@ b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
 f8a8b3ab728ec3dd7278d4ae8a0983e9  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
-783bac675b8d504c9d2a59e765dec068  kernel/setup/expradsurvey.php
+415a725f309cd92f728fe0dc76aa5320  kernel/setup/expradsurvey.php
 dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
 1f83c0a2d52102dcc25243247dca9d32  kernel/setup/expstaticcacherunner.php
 9bc458d96c3589dc82f294aca4d45a21  kernel/setup/exptemplateextensionwizard.php
@@ -7362,7 +7362,7 @@ e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPre
 786026da4135d9ca5173810226bbbd69  tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php
 94cef15579368cffdb3346797016694f  tests/tests/kernel/classes/radwizards/expModuleExtensionWizardTest.php
 90077aa03acd6d1efc2f870f94e20c8a  tests/tests/kernel/classes/radwizards/expModuleWizardTest.php
-cc0dd7bf5e4b2415abb95171a51d13ec  tests/tests/kernel/classes/radwizards/expRadSurveyHelpersTest.php
+68abb643985330a505f5503d74a9d34a  tests/tests/kernel/classes/radwizards/expRadSurveyHelpersTest.php
 3ab10ee87df7947262044f0a1f2bd062  tests/tests/kernel/classes/radwizards/expRadWizardListsTest.php
 439fb99a6b841e5fe4b26659fb14b01b  tests/tests/kernel/classes/radwizards/expRadWizardTestHelper.php
 74e872122daba48572e05606bca781cc  tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php
