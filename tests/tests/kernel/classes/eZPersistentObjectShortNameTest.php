@@ -316,6 +316,11 @@ class eZPersistentObjectShortNameTest extends PHPUnit\Framework\TestCase
         $rows = eZPersistentObject::fetchObjectList( eZPersistentObjectShortNameTestObject::definition(), null, null, null, null, false );
         $this->assertSame( array( array( 'id' => 7, 'title' => 'x1', 'contentobject_attribute_version' => null ) ), $rows );
 
+        // a NULL short column does not overwrite a value the row already has under the long name
+        $this->db->answers = array( '/^SELECT /' => array( array( 'id' => 7, 'contentobject_attribute_version' => 4, 'contentobject_attr_version' => null ) ) );
+        $rows = eZPersistentObject::fetchObjectList( eZPersistentObjectShortNameTestObject::definition(), null, null, null, null, false );
+        $this->assertSame( 4, $rows[0]['contentobject_attribute_version'] );
+
         $this->db->answers = array( '/^SELECT /' => array( array( 'id' => 7, 'contentobject_attr_version' => 3, 'title' => 'x1' ) ) );
         $objects = eZPersistentObject::fetchObjectList( eZPersistentObjectShortNameTestObject::definition() );
         $this->assertSame( 3, $objects[0]->attribute( 'contentobject_attribute_version' ) );

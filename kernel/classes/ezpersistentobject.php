@@ -195,10 +195,13 @@ class eZPersistentObject
                 continue;
             }
             $shortName = $fieldDefinition['short_name'];
-            // A column that is NULL is renamed too (isset() alone would leave it under its short name)
-            if ( !isset( $fields[$shortName] ) && !( is_array( $fields ) && array_key_exists( $shortName, $fields ) ) )
+            if ( !isset( $fields[$shortName] ) )
             {
-                continue;
+                // A column that is NULL is renamed too, unless the row already has a value under the long name
+                if ( !is_array( $fields ) || !array_key_exists( $shortName, $fields ) || array_key_exists( $fieldName, $fields ) )
+                {
+                    continue;
+                }
             }
             $fields[$fieldName] = $fields[$shortName];
             unset( $fields[$shortName] );
