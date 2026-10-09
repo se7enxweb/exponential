@@ -2838,7 +2838,7 @@ a466ef74bde1432f443d1b0f37c843bc  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
-2607f03906077be19d26d511d1a27ea7  doc/bc/6.0/trash.md
+b3619f3dd7b2c0c98ea03f16cba624e4  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-118418d7c38cdc8e44cb1c32bcf54d3c  doc/changelogs/6.0/6.0.15.md
+71324719b94828210358625cea9d1333  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5544,7 +5544,7 @@ d831b71988f68ca14c9ccacb11ed32ba  kernel/private/classes/services/contentjobdeta
 d0693dcf25d6d8639c3579bd618844d9  kernel/private/classes/services/mailpreferencespage.php
 691b2b62e924bdef2a7010ea9b8e0960  kernel/private/classes/services/sessiongarbagecollector.php
 d3411a771db07379843c263813850cf0  kernel/private/classes/services/trash.php
-1ec6b8ff44a928919f1b28ed4074ca4f  kernel/private/classes/services/trashlist.php
+c8342101c1e8df5c14c7223835a7f549  kernel/private/classes/services/trashlist.php
 fe83678e4d8716e0fc68dc4d95636930  kernel/private/classes/services/trashrecord.php
 bfc58e59d09c7c1fdadbb3449f289abe  kernel/private/classes/treemenu_functions.php
 874103f52c97395bb1704a3e40d2e245  kernel/private/classes/urlaliasfilters/ezurlaliasfilterappendnodeid.php
@@ -7436,6 +7436,7 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 45a11042cf23d383859f6cd2ff5e6d2a  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
 173c7582c0a9772090ad0f6f0e8cf2ca  tests/tests/kernel/classes/trash/TrashListMongoTest.php
+397cc60950363e47baa1ab8cbbcaafb9  tests/tests/kernel/classes/trash/TrashListPagedTest.php
 2cdb0ad8f51e15f030e8ca024863a522  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
 dabfc062ade252e4f52b051c893a73a8  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
