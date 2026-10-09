@@ -137,10 +137,14 @@ another siteaccess, scheme or host.
 
 - **An edit, publish, move, hide or delete** — the view cache clear the kernel
   already does fires `content/cache`; with `ContentChangePurges=all` every page
-  goes, with `tags` the pages tagged with what changed: as Ibexa's HTTP cache
-  purges, `l`, `pl` and `rl` of every node, `c` and `r` of every object (a
-  Varnish or CDN that follows Ibexa's tags purges the same pages). Scripts and
-  cronjobs purge too (`eZScript` attaches the listeners).
+  goes, with `tags` the pages tagged with what changed: the tags Ibexa's HTTP
+  cache purges, `l`, `pl` and `rl` of every node, `c` and `r` of every object.
+  Exponential's own pages carry no `r` or `rl` tag; those two purge pages an
+  extension tagged with them (`ezpHttpCacheListener::addTags()`) the Ibexa
+  way. The purge is this cache's own: nothing is sent to a proxy in front
+  (`TagHeader` only shows the tags). More than 10000 tags purged within
+  `MaxAge` purge every page instead, so the state every lookup reads stays
+  small. Scripts and cronjobs purge too (`eZScript` attaches the listeners).
 - **Layout editor** — any successful write request to an `explayouts*` module
   purges every page. Layout blocks tag the page with every item they show and,
   for query blocks, `dq`, which every content change purges.
@@ -199,12 +203,30 @@ two work together:
 - **Answered from the page without a made-up parameter:** with `set
   cache-unknown-query hit-only` request-shield names, in
   `REQUEST_SHIELD_CACHE_LOOKUP`, the address a request with a parameter no key
-  holds may be answered from. The early exit takes it for the same path only,
-  and only when its query is allowed itself (`X-Exp-Cache: HIT (request-shield
-  lookup)`); nothing is stored for the request's own address. Velocity answers
-  in its own process before PHP, so there it does not apply.
-- **Its statistics** read `X-Exp-Cache` (HIT, STALE, MISS, BYPASS): the
-  response times by hit and miss in its dashboard.
+  holds may be answered from. The early exit takes it only when it names the
+  request's own path and exactly the request's own parameters that
+  `QueryStringParameters[]` lists, in any order (`X-Exp-Cache: HIT
+  (request-shield lookup)`); a shield whose `cache-query` leaves one of them
+  out gets a miss, never another page of a list. Nothing is stored for the
+  request's own address, the answer says `Cache-Control: private` so a proxy
+  in front keeps none either, and an expired page is served `STALE` without
+  the lookup taking its refresh.
+- **Its statistics** read `X-Exp-Cache` (HIT, STALE, MISS, BYPASS, each
+  possibly followed by a reason in brackets): the response times by hit and
+  miss in its dashboard.
+
+**Under Velocity** the server process answers from this cache before a
+worker, and so before request-shield, which runs inside the worker from the
+first line of `index.php`: it sees the address as the visitor sent it, with
+no `cache-ignore` and no `REQUEST_SHIELD_CACHE_LOOKUP`, so neither of those
+two saves a render there. The early exit does not run in a worker at all.
+What does apply is **Never kept**: the listener that stores the page runs in
+the worker after request-shield, so an `allow-uncached` page is not stored
+under Velocity either. Velocity keeps `$_SERVER` entries whose name starts
+with `REQUEST_` from one request to the next in a persistent worker; switch
+request-shield off with `set mode off` (it still sets `REQUEST_SHIELD` on
+every request), not by removing the include, or a worker keeps the last
+request's `allow-uncached` and stores nothing until it is restarted.
 
 ## Security
 

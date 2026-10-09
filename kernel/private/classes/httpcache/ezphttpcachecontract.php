@@ -42,6 +42,13 @@ class ezpHttpCacheContract
     /** Per-user limitation identifiers that make a context private. */
     const PER_USER_LIMITATIONS = array( 'Owner', 'ParentOwner', 'Group', 'ParentGroup', 'User_Section', 'User_Subtree' );
 
+    /**
+     * Most purged tags the state keeps: it is read by every lookup, so more
+     * (a large subtree changed under ContentChangePurges=tags) purge every
+     * page instead -- each entry carries ez-all.
+     */
+    const MAX_PURGED_TAGS = 10000;
+
     /** @var array */
     public $config;
 
@@ -168,6 +175,25 @@ class ezpHttpCacheContract
             return substr( $u, 0, $cut );
         };
         return $path( $uri ) === $path( $lookup ) ? $lookup : null;
+    }
+
+    /** $uri with only the query parameters a cache key holds (QueryStringParameters), without a fragment. */
+    public function keyedUri( $uri )
+    {
+        $uri = (string)$uri;
+        $hash = strpos( $uri, '#' );
+        if ( $hash !== false )
+            $uri = substr( $uri, 0, $hash );
+        $q = strpos( $uri, '?' );
+        if ( $q === false )
+            return $uri;
+        $kept = array();
+        foreach ( explode( '&', substr( $uri, $q + 1 ) ) as $pair )
+        {
+            if ( $pair !== '' && in_array( urldecode( explode( '=', $pair, 2 )[0] ), (array)$this->config['queryParameters'], true ) )
+                $kept[] = $pair;
+        }
+        return substr( $uri, 0, $q ) . ( $kept ? '?' . implode( '&', $kept ) : '' );
     }
 
     // ── Origin: the scheme and host the kernel sees ─────────────────────
@@ -580,6 +606,8 @@ class ezpHttpCacheContract
             }
             foreach ( $tags as $t )
                 $s['tags'][(string)$t] = $now;
+            if ( count( $s['tags'] ) > self::MAX_PURGED_TAGS )
+                $s['tags'] = array( 'ez-all' => $now );
             return $s;
         } );
     }
@@ -648,8 +676,12 @@ class ezpHttpCacheContract
         return $this->entryPath( $key, substr( (string)$etag, 0, 16 ) . '.body' );
     }
 
-    /** [meta, body] for a current entry, or null. */
-    public function loadEntry( $key )
+    /**
+     * [meta, body] for a current entry, or null. $mayRefresh false: a request
+     * that never stores the page (request-shield's lookup) is served an
+     * expired page as stale and never becomes the one to render it again.
+     */
+    public function loadEntry( $key, $mayRefresh = true )
     {
         $cached = $this->apcuUsable() ? @apcu_fetch( 'exphttpcache:' . $key ) : false;
         if ( is_array( $cached ) )
@@ -682,7 +714,7 @@ class ezpHttpCacheContract
             $swr = (int)( $meta['swr'] ?? 0 );
             if ( $swr <= 0 || $age > $meta['maxAge'] + $swr )
                 return $this->miss( 'expired' );
-            if ( $this->claimRefresh( $key ) )
+            if ( $mayRefresh && $this->claimRefresh( $key ) )
                 return $this->miss( 'expired, refreshing' );
             $meta['stale'] = true;
         }
@@ -1111,9 +1143,12 @@ class ezpHttpCacheContract
         {
             // request-shield in front (set cache-unknown-query hit-only) names the page without the
             // parameters no key holds: answered from it, if kept; never stored for this address (the
-            // listener sees the query is not allowed).
+            // listener sees the query is not allowed). Taken only when it names exactly this request's
+            // own parameters the key holds: a shield whose cache-query leaves out one of
+            // QueryStringParameters (page) would otherwise answer /news?page=2&x=7 with /news, and a
+            // value from anywhere else can name no other variant.
             $lookup = self::shieldLookupUri( $uri, $request['lookupUri'] ?? null );
-            if ( $lookup === null || !$this->queryAllowed( $lookup ) )
+            if ( $lookup === null || self::normalizeURI( $lookup ) !== self::normalizeURI( $this->keyedUri( $uri ) ) )
                 return $this->miss( 'query string' );
             $uri = $lookup;
             $viaShield = true;
@@ -1151,7 +1186,7 @@ class ezpHttpCacheContract
         }
 
         $key = $this->entryKey( $scheme, $host, $siteaccess, $uri, $context );
-        $entry = $this->loadEntry( $key );
+        $entry = $this->loadEntry( $key, !$viaShield );
         if ( !$entry )
             return null;
         list( $meta, $body ) = $entry;
@@ -1165,7 +1200,8 @@ class ezpHttpCacheContract
         $headers['ETag'] = $etag;
         $headers['Age'] = (string)max( 0, (int)( microtime( true ) - $meta['created'] ) );
         $headers['X-Exp-Cache'] = ( empty( $meta['stale'] ) ? 'HIT' : 'STALE' ) . ( $viaShield ? ' (request-shield lookup)' : '' );
-        $headers['Cache-Control'] = $userID === 0 ? 'public, max-age=300' : 'private, no-cache, must-revalidate';
+        // A lookup answers an address no cache may keep: a proxy in front must not keep it either.
+        $headers['Cache-Control'] = $userID !== 0 ? 'private, no-cache, must-revalidate' : ( $viaShield ? 'private, max-age=300' : 'public, max-age=300' );
         // Only the one TagHeader asks for, never one an older entry kept.
         unset( $headers['xkey'], $headers['Surrogate-Key'], $headers['Cache-Tag'] );
         $headers = $this->tagHeaders( $meta['tags'] ) + $headers;
