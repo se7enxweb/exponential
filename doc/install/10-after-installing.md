@@ -270,6 +270,7 @@ transport is set in `site.ini [MailSettings]`:
 | `EmailSender`, `EmailReplyTo` | empty | `From` and `Reply-To` unless a template sets them. |
 | `ContentType`, `OutputCharset` | `text/plain`, `utf-8` | |
 | `SendmailOptions[]` | empty | Extra options for sendmail, one per line, e.g. `-f` with the envelope sender. |
+| `SendmailEnvelopeSender` | `enabled` | `disabled` leaves out the `-f <sender>` the sendmail transport adds, for msmtp with `--read-envelope-from`; a mail without a sender of its own then gets a From header with `EmailSender`, else `AdminEmail`. |
 | `DebugSending`, `DebugReceiverEmail` | `disabled` | `enabled` sends every mail to one test address instead of its recipients. |
 | `ExcludeHeaders[]` | empty | Headers removed before sending over SMTP (add `bcc` if your server does not hide them). |
 
