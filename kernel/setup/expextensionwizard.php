@@ -564,7 +564,7 @@ abstract class expExtensionWizard
 
         $files = static::files( $settings );
 
-        if ( !@mkdir( $target, 0775, true ) && !is_dir( $target ) )
+        if ( !@mkdir( $target, eZDir::dirMode( 0775 ), true ) && !is_dir( $target ) )
             return array( 'ok' => false,
                           'message' => ezpI18n::tr( 'kernel/setup/rad', 'extension/ could not be written to. Check that the web server owns it, or take the archive instead.' ),
                           'written' => array() );
@@ -575,7 +575,7 @@ abstract class expExtensionWizard
             $full = $target . '/' . $path;
             $directory = dirname( $full );
 
-            if ( !is_dir( $directory ) && !@mkdir( $directory, 0775, true ) && !is_dir( $directory ) )
+            if ( !is_dir( $directory ) && !@mkdir( $directory, eZDir::dirMode( 0775 ), true ) && !is_dir( $directory ) )
                 return array( 'ok' => false,
                               'message' => ezpI18n::tr( 'kernel/setup/rad', 'Could not create %path. %count file(s) were written before that.', null,
                                                         array( '%path' => $path, '%count' => count( $written ) ) ),
@@ -589,7 +589,7 @@ abstract class expExtensionWizard
 
             // Readable by the web server, writable by its owner, and nothing
             // else: the umask of whatever ran this is not a permission policy.
-            @chmod( $full, 0644 );
+            @chmod( $full, eZFile::fileMode( 0644 ) );
 
             $written[] = $path;
         }

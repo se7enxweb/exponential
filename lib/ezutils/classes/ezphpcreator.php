@@ -777,7 +777,7 @@ $php->addInclude( 'lib/ezutils/classes/ezphpcreator.php' );
                 eZDir::mkdir( $this->PHPDir, false, true );
             }
             $path = $this->PHPDir . '/' . $this->PHPFile;
-            $oldumask = umask( 0 );
+            $oldumask = umask( eZFile::creationUmask() );
             $pathExisted = file_exists( $path );
             if ( $atomic )
             {
@@ -794,7 +794,7 @@ $php->addInclude( 'lib/ezutils/classes/ezphpcreator.php' );
                 eZDebug::writeError( "Could not open file '$path' for writing, perhaps wrong permissions" );
             if ( $this->FileResource and
                  !$pathExisted )
-                chmod( $path, $perm );
+                chmod( $path, eZFile::fileMode( $perm ) );
             umask( $oldumask );
         }
         return $this->FileResource;
@@ -967,7 +967,7 @@ print( $values['MyValue'] );
             if ( !$this->ClusteringEnabled )
             {
                 $perm = octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
-                chmod( eZDir::path( array( $this->PHPDir, $this->PHPFile ) ), $perm );
+                chmod( eZDir::path( array( $this->PHPDir, $this->PHPFile ) ), eZFile::fileMode( $perm ) );
             }
 
             // Write log message to storage.log

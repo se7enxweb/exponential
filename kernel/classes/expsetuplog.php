@@ -732,7 +732,7 @@ class expSetupLog
         @flock( $fh, LOCK_UN );
         @fclose( $fh );
         if ( !$existed )
-            @chmod( $file, octdec( eZINI::instance()->variable( 'FileSettings', 'LogFilePermissions' ) ) );
+            @chmod( $file, eZFile::fileMode( octdec( eZINI::instance()->variable( 'FileSettings', 'LogFilePermissions' ) ) ) );
         if ( !$existed || @fileowner( $file ) === 0 )
             self::giveToVarOwner( $file );
     }

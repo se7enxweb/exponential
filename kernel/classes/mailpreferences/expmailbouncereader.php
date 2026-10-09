@@ -137,7 +137,7 @@ class expMailBounceReader
         $file = self::statusFile();
         $dir = dirname( $file );
         if ( !is_dir( $dir ) )
-            @mkdir( $dir, 0775, true );
+            @mkdir( $dir, eZDir::dirMode( 0775 ), true );
         $new = !is_file( $file );
         @file_put_contents( $file, json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n", LOCK_EX );
         if ( $new && class_exists( 'expAuditWriter' ) )

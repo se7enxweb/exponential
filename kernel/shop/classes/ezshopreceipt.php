@@ -230,7 +230,7 @@ class eZShopReceipt
         $secret = is_file( $file ) ? trim( (string)file_get_contents( $file ) ) : '';
         if ( strlen( $secret ) >= 32 )
             return $secret;
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0700, true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0700 ), true ) && !is_dir( $dir ) )
             throw new RuntimeException( "cannot create $dir for the order receipt secret" );
         $secret = bin2hex( random_bytes( 32 ) );
         // Created exclusively, so two first requests at once cannot each keep
@@ -246,7 +246,7 @@ class eZShopReceipt
         }
         fwrite( $fh, $secret . "\n" );
         fclose( $fh );
-        @chmod( $file, 0600 );
+        @chmod( $file, eZFile::fileMode( 0600 ) );
         // Made by a server running as root, it must still be readable by the
         // web server's own user, who owns the var directory.
         if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )

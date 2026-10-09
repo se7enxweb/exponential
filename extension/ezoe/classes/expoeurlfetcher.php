@@ -326,11 +326,11 @@ class expOEUrlFetcher
         $baseDir = eZSys::varDirectory() . '/tmp/ezoe_url';
         if ( !is_dir( $baseDir ) )
         {
-            @mkdir( $baseDir, 0777, true );
-            @chmod( $baseDir, 0777 );
+            @mkdir( $baseDir, eZDir::dirMode( 0777 ), true );
+            @chmod( $baseDir, eZDir::dirMode( 0777 ) );
         }
         $dir = $baseDir . '/' . bin2hex( random_bytes( 12 ) );
-        if ( !@mkdir( $dir, 0700 ) )
+        if ( !@mkdir( $dir, eZDir::dirMode( 0700 ) ) )
             throw new expOEUrlException( self::tr( 'The file could not be fetched.' ) );
         $tmp = $dir . '/download';
         $result = null;

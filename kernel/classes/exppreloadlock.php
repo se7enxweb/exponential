@@ -103,7 +103,7 @@ class expPreloadLock
     private function open()
     {
         $dir = dirname( $this->file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0775, true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0775 ), true ) && !is_dir( $dir ) )
             return false;
         $handle = @fopen( $this->file, 'c' );
         if ( !$handle )

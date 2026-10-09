@@ -143,7 +143,7 @@ class Mailpreferences extends \Exponential\Runnable\Command
                     {
                         if ( file_put_contents( (string)$options['output'], $text ) === false )
                             throw new \RuntimeException( 'cannot write ' . $options['output'] );
-                        @chmod( (string)$options['output'], 0600 );
+                        @chmod( (string)$options['output'], \eZFile::fileMode( 0600 ) );
                         $cli->output( 'written to ' . $options['output'] . ' (' . strlen( $text ) . ' bytes, mode 0600)' );
                     }
                     else

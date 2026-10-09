@@ -582,9 +582,9 @@ class expAuditWriter
         $mode &= 0770;
         foreach ( array_reverse( $missing ) as $d )
         {
-            if ( !@mkdir( $d, $mode ) && !is_dir( $d ) )
+            if ( !@mkdir( $d, eZDir::dirMode( $mode ) ) && !is_dir( $d ) )
                 return false;
-            @chmod( $d, $mode | 0700 );
+            @chmod( $d, eZDir::dirMode( $mode | 0700 ) );
             self::ownLikeParent( $d, null );
         }
         return is_dir( $dir );
@@ -598,8 +598,11 @@ class expAuditWriter
      */
     public static function ownLikeParent( $path, $mode = null )
     {
-        if ( $mode !== null )
-            @chmod( $path, $mode );
+        // a directory keeps its search bits within EZP_DIR_MODE_MAX, a file is limited by EZP_FILE_MODE_MAX
+        if ( $mode !== null && is_dir( $path ) )
+            @chmod( $path, eZDir::dirMode( $mode ) );
+        else if ( $mode !== null )
+            @chmod( $path, eZFile::fileMode( $mode ) );
         $parent = dirname( $path );
         clearstatcache( true, $parent );
         $uid = @fileowner( $parent );

@@ -133,7 +133,7 @@ class expVelocityConfigLayout
         if ( !file_exists( $new ) && is_dir( $old ) && !is_link( $old ) )
         {
             if ( !is_dir( dirname( $new ) ) )
-                @mkdir( dirname( $new ), 0755, true );
+                @mkdir( dirname( $new ), eZDir::dirMode( 0755 ), true );
             if ( @rename( $old, $new ) )
                 $this->actions[] = "moved $before to $path";
         }
@@ -340,7 +340,7 @@ class expVelocityConfigLayout
         {
             if ( !is_dir( $dir . $sub ) )
             {
-                if ( !@mkdir( $dir . $sub, 0755, true ) )
+                if ( !@mkdir( $dir . $sub, eZDir::dirMode( 0755 ), true ) )
                     return array( 'ok' => false, 'message' => "could not create $dir$sub", 'actions' => $this->actions );
                 $this->actions[] = "created $dir$sub";
             }
@@ -512,7 +512,7 @@ class expVelocityConfigLayout
         {
             $tmp = $file . '.' . getmypid() . '.tmp';
             file_put_contents( $tmp, $json );
-            @chmod( $tmp, $mode );
+            @chmod( $tmp, eZFile::fileMode( $mode ) );
             rename( $tmp, $file );
             $this->actions[] = ( $new ? 'created ' : 'updated ' ) . $file;
         }
@@ -527,7 +527,7 @@ class expVelocityConfigLayout
     {
         $file = $this->metadataFile();
         if ( !is_dir( dirname( $file ) ) )
-            @mkdir( dirname( $file ), 0755, true );
+            @mkdir( dirname( $file ), eZDir::dirMode( 0755 ), true );
         $previous = is_file( $file ) ? (array)json_decode( (string)file_get_contents( $file ), true ) : array();
         $meta = array(
             'site'        => $this->siteName(),

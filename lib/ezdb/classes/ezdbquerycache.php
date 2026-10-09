@@ -423,7 +423,7 @@ class eZDBQueryCache
         $asRoot = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0;
         if ( !is_dir( $dir ) )
         {
-            @mkdir( $dir, 0770, true );
+            @mkdir( $dir, eZDir::dirMode( 0770 ), true );
             // A root process (Velocity, a CLI script) must not leave a root-owned
             // directory behind: the site user's cron and FPM could no longer write in it.
             if ( $asRoot && ( $parent = @stat( dirname( $dir ) ) ) && $parent['uid'] !== 0 )
@@ -438,7 +438,7 @@ class eZDBQueryCache
         self::$state = null;
         $state = call_user_func( $change, self::state() );
         $tmp = $dir . '/state.ser.' . getmypid() . '.' . mt_rand() . '.tmp';
-        $ok = @file_put_contents( $tmp, serialize( $state ) ) !== false && @chmod( $tmp, 0660 ) !== null && @rename( $tmp, $dir . '/state.ser' );
+        $ok = @file_put_contents( $tmp, serialize( $state ) ) !== false && @chmod( $tmp, eZFile::fileMode( 0660 ) ) !== null && @rename( $tmp, $dir . '/state.ser' );
         if ( !$ok )
             error_log( 'eZDBQueryCache: could not write ' . $dir . '/state.ser; cached results may be stale until MaxAge' );
         // A root process (a script, a server) leaves the files to the directory's owner.

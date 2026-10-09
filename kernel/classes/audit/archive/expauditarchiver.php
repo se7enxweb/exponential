@@ -216,7 +216,7 @@ class expAuditArchiver
         if ( !expAuditWriter::ensureDirectory( $dir ) )
             return array( 'error' => "The archive directory $dir cannot be created" );
         foreach ( array( $this->archiveDir() . '/' . $channel, $dir ) as $d )
-            @chmod( $d, $dirMode );
+            @chmod( $d, eZDir::dirMode( $dirMode ) );
         $manifestPath = $dir . '/' . self::manifestName( $channel, $date );
         if ( is_file( $manifestPath ) )
             return array( 'error' => "$manifestPath exists already: the day was archived before" );
@@ -717,11 +717,11 @@ class expAuditArchiver
                 $p = dirname( $path ) . '/' . $f['name'];
                 if ( is_file( $p ) )
                 {
-                    @chmod( $p, 0640 );
+                    @chmod( $p, eZFile::fileMode( 0640 ) );
                     @unlink( $p );
                 }
             }
-            @chmod( $path, 0640 );
+            @chmod( $path, eZFile::fileMode( 0640 ) );
             @unlink( $path );
         }
         // the keys: needed by retained manifests (and by checkpoints in the live system channel)

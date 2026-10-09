@@ -180,7 +180,7 @@ class Templateedit extends \Exponential\Runnable\ModuleView
 
                 $siteConfig = \eZINI::instance( 'site.ini' );
                 $filePermissions = $siteConfig->variable( 'FileSettings', 'StorageFilePermissions');
-                chmod( $template, octdec( $filePermissions ) );
+                chmod( $template, \eZFile::fileMode( octdec( $filePermissions ) ) );
 
                 // Expire content view cache
                 \eZContentCacheManager::clearAllContentCache();

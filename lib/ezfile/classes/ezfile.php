@@ -32,6 +32,150 @@ class eZFile
     const CLEAN_ON_FAILURE = 1,
           APPEND_DEBUG_ON_FAILURE = 2;
 
+    /**
+     * The upper limit for the mode of the files the installation creates: the constant EZP_FILE_MODE_MAX (config.php);
+     * with only EZP_DIR_MODE_MAX set, that limit without the search bits (0750 gives 0640); null without either (no
+     * limit, the modes asked for are used as before). A constant that is no usable limit counts as not set (see
+     * limitFromConstant()). See doc/bc/6.0/file-modes.md.
+     *
+     * @return int|null
+     */
+    static function fileModeLimit()
+    {
+        $limit = self::limitFromConstant( 'EZP_FILE_MODE_MAX', 0600 );
+        if ( $limit !== null )
+        {
+            return $limit;
+        }
+        $dirLimit = self::limitFromConstant( 'EZP_DIR_MODE_MAX', 0700 );
+        return $dirLimit === null ? null : ( $dirLimit & 0666 );
+    }
+
+    /**
+     * The mode $mode limited to EZP_FILE_MODE_MAX: never wider than the limit, a narrower mode stays as it is.
+     *
+     * @param int $mode
+     * @return int
+     */
+    static function fileMode( $mode )
+    {
+        $limit = self::fileModeLimit();
+        return $limit === null ? (int)$mode : ( (int)$mode & $limit );
+    }
+
+    /**
+     * The mode $mode of a file that has to stay executable (a downloaded binary, a script), limited to
+     * EZP_DIR_MODE_MAX: that limit keeps the execute bits where it allows them (0755 with 0750 gives 0750), where the
+     * file limit would take them away.
+     *
+     * @param int $mode
+     * @return int
+     */
+    static function executableMode( $mode )
+    {
+        return eZDir::dirMode( $mode );
+    }
+
+    /**
+     * The umask to create files and directories with in place of umask( 0 ): 0 without limits (the mode asked for is
+     * the mode the file gets, as before); with them, every bit except those both a file (read, write) and a directory
+     * (read, write, search) may have under the limits, so a file fopen() makes (0666) stays inside the file limit and a
+     * directory mkdir() makes (0777) inside the directory limit. For a matching pair (0750/0640, 0770/0660) that is
+     * the bits the directory limit forbids (0027); for another pair what both allow (0750/0600 gives 0067: files 0600,
+     * directories 0710).
+     *
+     * @param int $keep A umask whose bits stay set (the umask of the process, see applyCreationUmask())
+     * @return int
+     */
+    static function creationUmask( $keep = 0 )
+    {
+        $fileLimit = self::fileModeLimit();
+        $dirLimit = eZDir::dirModeLimit();
+        if ( $fileLimit === null && $dirLimit === null )
+        {
+            return (int)$keep & 0777;
+        }
+        // a file gets the read and write bits both limits allow, a directory also the search bits of its own limit
+        $allowed = ( $fileLimit & $dirLimit ) | ( $dirLimit & 0111 );
+        return ( (int)$keep | ~$allowed ) & 0777;
+    }
+
+    /**
+     * Sets the umask of the process to creationUmask() when a limit is set, keeping what the server umask already
+     * forbids, so files written without a mode of their own (fopen(), file_put_contents(), touch()) stay inside the
+     * limits too. Called by autoload.php after config.php; without the limits the umask is left alone.
+     *
+     * @return void
+     */
+    static function applyCreationUmask()
+    {
+        if ( self::fileModeLimit() !== null )
+        {
+            umask( self::creationUmask( umask() ) );
+        }
+    }
+
+    /**
+     * A mode from a constant or setting: an integer (0640) or a string of octal digits ("0640", "640"). An integer
+     * above 0777 written without the leading 0 (750) is read as its octal digits; a smaller one cannot be told from
+     * an octal number (440 is 0670), so write the 0 or use a string. Anything else (another type, a float, a
+     * negative number, more than three octal digits, "rwxr-x---") gives null.
+     *
+     * @param mixed $value
+     * @return int|null
+     */
+    static function modeFromSetting( $value )
+    {
+        if ( is_int( $value ) )
+        {
+            if ( $value >= 0 && $value <= 0777 )
+            {
+                return $value;
+            }
+            return preg_match( '/^[0-7]{3}$/', (string)$value ) ? octdec( (string)$value ) : null;
+        }
+        if ( !is_string( $value ) )
+        {
+            return null;
+        }
+        return preg_match( '/^0*([0-7]{1,3})$/', trim( $value ), $match ) ? octdec( $match[1] ) : null;
+    }
+
+    /**
+     * The limit the constant $name sets, or null when it is not defined. A value that is no mode, or a limit that
+     * would take rights from the owner ($ownerBits: 0600 for files, 0700 for directories; 0 would leave every new
+     * file 0000), fails safe: it counts as not set, so the modes asked for are used as without the limits, and it is
+     * reported once per process to the PHP error log. Never a narrower limit than the owner's own rights, which could
+     * lock the site out of its own files.
+     *
+     * @param string $name EZP_FILE_MODE_MAX or EZP_DIR_MODE_MAX
+     * @param int $ownerBits The rights the owner must keep
+     * @return int|null
+     */
+    static function limitFromConstant( $name, $ownerBits )
+    {
+        if ( !defined( $name ) )
+        {
+            return null;
+        }
+        $value = constant( $name );
+        $mode = self::modeFromSetting( $value );
+        if ( $mode !== null && ( $mode & $ownerBits ) === $ownerBits )
+        {
+            return $mode;
+        }
+        // error_log(), not eZDebug: eZDebug writes its log through these limits
+        if ( !isset( $GLOBALS['eZFileModeLimitReported'][$name] ) )
+        {
+            $GLOBALS['eZFileModeLimitReported'][$name] = true;
+            error_log( "Exponential: $name in config.php is ignored, " .
+                       ( $mode === null ? 'it is no file mode (' . var_export( $value, true ) . ')' :
+                                          sprintf( '%04o takes rights from the owner (it needs at least %04o)', $mode, $ownerBits ) ) .
+                       '. Write it as an octal number such as ' . ( $ownerBits === 0700 ? '0750' : '0640' ) . '.' );
+        }
+        return null;
+    }
+
     /*!
      Creates a file called \a $filename.
      If \a $directory is specified the file is placed there, the directory will also be created if missing.

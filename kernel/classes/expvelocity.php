@@ -2045,7 +2045,7 @@ class expVelocity
         if ( file_put_contents( $path, json_encode( $config, JSON_PRETTY_PRINT ) ) === false )
             return false;
 
-        @chmod( $path, 0600 );
+        @chmod( $path, eZFile::fileMode( 0600 ) );
         return $path;
     }
 
@@ -3383,7 +3383,7 @@ class expVelocity
                                   array( 'marker' => $marker ) );
         }
 
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0750, true ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0750 ), true ) )
             return $this->result( false, 'cache directory does not exist and could not be created: ' . $dir );
         if ( !@touch( $marker ) )
             return $this->result( false, 'could not touch ' . $marker );

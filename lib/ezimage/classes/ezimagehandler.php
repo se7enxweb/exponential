@@ -300,12 +300,13 @@ class eZImageHandler
         // chmod on a file someone else owns fails, and error.log said so,
         // although the file already had the permissions (they were set on the
         // temporary file before the rename, see publishTemporary()).
+        $mode = eZFile::fileMode( octdec( $perm ) & 0777 );
         clearstatcache( true, $filepath );
-        if ( ( @fileperms( $filepath ) & 0777 ) === ( octdec( $perm ) & 0777 ) )
+        if ( ( @fileperms( $filepath ) & 0777 ) === $mode )
             return true;
         $success = false;
-        $oldmask = umask( 0 );
-        if ( !chmod( $filepath, octdec( $perm ) ) )
+        $oldmask = umask( eZFile::creationUmask() );
+        if ( !chmod( $filepath, eZFile::fileMode( octdec( $perm ) ) ) )
             eZDebug::writeError( "Chmod $perm $filepath failed", __METHOD__ );
         else
             $success = true;

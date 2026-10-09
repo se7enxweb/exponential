@@ -123,7 +123,7 @@ function solrEnsureDirs()
         $dir = trim( (string)solrSetting( $key, $default ) );
         if ( $dir === '' ) $dir = $default;
         $abs = ( $dir[0] === '/' ) ? $dir : $root . '/' . $dir;
-        if ( !is_dir( $abs ) ) @mkdir( $abs, 0755, true );
+        if ( !is_dir( $abs ) ) @mkdir( $abs, \eZDir::dirMode( 0755 ), true );
     }
     $logDir = trim( (string)solrSetting( 'LogDir', 'var/vc/solr/log' ) );
     if ( $logDir === '' ) $logDir = 'var/vc/solr/log';

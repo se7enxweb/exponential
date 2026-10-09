@@ -121,8 +121,8 @@ class eZHTTPFile
             $ret = true;
             $this->Filename = $dest_name;
             $perm = $ini->variable( "FileSettings", "StorageFilePermissions" );
-            $oldumask = umask( 0 );
-            chmod( $dest_name, octdec( $perm ) );
+            $oldumask = umask( eZFile::creationUmask() );
+            chmod( $dest_name, eZFile::fileMode( octdec( $perm ) ) );
             umask( $oldumask );
 
             // Write log message to storage.log

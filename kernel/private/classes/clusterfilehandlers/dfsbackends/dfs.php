@@ -333,7 +333,7 @@ class eZDFSFileHandlerDFSBackend implements eZDFSFileHandlerDFSBackendInterface
 
     protected function fixPermissions( $filePath )
     {
-        chmod( $filePath, $this->filePermissionMask );
+        chmod( $filePath, eZFile::fileMode( $this->filePermissionMask ) );
     }
 
     /**

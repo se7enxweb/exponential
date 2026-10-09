@@ -102,7 +102,7 @@ class ezpHttpCacheListener
             $c = new ezpHttpCacheContract( $config );
             $c->ensureDir( $dir );
             $c->atomicWrite( $file, $php );
-            @chmod( $file, 0640 );
+            @chmod( $file, eZFile::fileMode( 0640 ) );
             // The early exit includes it; OPcache would keep the old one for
             // up to opcache.revalidate_freq seconds.
             if ( function_exists( 'opcache_invalidate' ) )
@@ -121,11 +121,11 @@ class ezpHttpCacheListener
         if ( !is_string( $secret ) || strlen( $secret ) < 64 )
         {
             if ( !is_dir( $dir ) )
-                @mkdir( $dir, 0770, true );
+                @mkdir( $dir, eZDir::dirMode( 0770 ), true );
             $secret = bin2hex( random_bytes( 32 ) );
             if ( @file_put_contents( $secretFile, $secret ) === false )
                 return null;
-            @chmod( $secretFile, 0600 );
+            @chmod( $secretFile, eZFile::fileMode( 0600 ) );
         }
         $site = eZINI::instance();
         // eZSiteAccess::match() decides before any siteaccess is loaded, on

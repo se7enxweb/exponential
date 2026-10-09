@@ -74,6 +74,25 @@
 //define( 'EZP_INI_FILE_PERMISSION', 0644 );
 
 /*
+    Set EZP_DIR_MODE_MAX and EZP_FILE_MODE_MAX to the widest modes any directory
+    and any file the installation creates may get: logs, caches, storage and
+    everything else. A mode asked for is only narrowed, never widened (0777
+    becomes 0750, 0600 stays 0600), and the umask of the process is set from
+    them, so files written without a mode of their own stay inside them too.
+    Without them nothing changes. Recommended on a live server: 0750 / 0640;
+    0770 / 0660 where the web server and the command line scripts run as
+    different users of one group, with the directories of var/ set-group-ID
+    to that group (root creates root:root files otherwise). Existing files
+    keep their mode. One of them is enough, the other follows from it. A
+    value that is no mode, or that takes rights from the owner, is ignored
+    and reported in the PHP error log.
+    doc/bc/6.0/file-modes.md
+    Do keep octal numbers as values here ( meaning they start by a 0 ).
+*/
+//define( 'EZP_DIR_MODE_MAX', 0750 );
+//define( 'EZP_FILE_MODE_MAX', 0640 );
+
+/*
     Set EZP_INI_SAVE_FILE_PERMISSION constant to the permissions a settings file
     gets when it is created by a save (settings editor, debug bar, setup wizard,
     exp:ini). The default is 0640: owner read/write, group read. A file that

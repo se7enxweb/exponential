@@ -260,7 +260,7 @@ class expMailGate
         $file = self::logFile();
         $dir = dirname( $file );
         if ( !is_dir( $dir ) )
-            @mkdir( $dir, 0775, true );
+            @mkdir( $dir, eZDir::dirMode( 0775 ), true );
         $ini = eZINI::instance( 'mailpreferences.ini' );
         $max = $ini->hasVariable( 'GateSettings', 'MaxLogSize' ) ? (int)$ini->variable( 'GateSettings', 'MaxLogSize' ) : 5242880;
         clearstatcache( true, $file );

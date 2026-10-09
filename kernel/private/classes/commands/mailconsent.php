@@ -82,7 +82,7 @@ class Mailconsent extends \Exponential\Runnable\Command
                     {
                         if ( file_put_contents( (string)$options['output'], $csv ) === false )
                             throw new \RuntimeException( 'cannot write ' . $options['output'] );
-                        @chmod( (string)$options['output'], 0600 );
+                        @chmod( (string)$options['output'], \eZFile::fileMode( 0600 ) );
                         $cli->output( sprintf( 'written to %s (%d rows, mode 0600)', $options['output'], max( 0, substr_count( $csv, "\n" ) - 1 ) ) );
                     }
                     else

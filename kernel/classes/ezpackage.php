@@ -1339,7 +1339,7 @@ class eZPackage
     {
         $siteConfig = eZINI::instance( 'site.ini' );
         $filePermissions = $siteConfig->variable( 'FileSettings', 'StorageFilePermissions');
-        chmod( $filename, octdec( $filePermissions ) );
+        chmod( $filename, eZFile::fileMode( octdec( $filePermissions ) ) );
     }
 
     /*!

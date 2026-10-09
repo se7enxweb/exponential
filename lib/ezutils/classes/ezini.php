@@ -941,7 +941,7 @@ class eZINI
         // Rename cache temp file to final desitination and set permissions
         if( eZFile::rename( $tmpCacheFile, $cachedFile ) )
         {
-            chmod( $cachedFile, self::$filePermission );
+            chmod( $cachedFile, eZFile::fileMode( self::$filePermission ) );
         }
 
         // EZP-22579: php5.5 opcache caches php files very aggressively & needs direct call on invalidation in this case
@@ -1263,7 +1263,7 @@ class eZINI
         {
             list( $uid, $gid ) = self::saveFileOwnership( dirname( $targetPath ) );
         }
-        @chmod( $path, self::saveFileMode( $targetPath ) );
+        @chmod( $path, eZFile::fileMode( self::saveFileMode( $targetPath ) ) );
         self::applySaveOwnership( $path, $uid, $gid );
     }
 
@@ -1393,7 +1393,7 @@ class eZINI
         // The temporary file holds the settings (passwords included) until it is moved into place:
         // readable by this user only until it gets its final mode below.
         if ( @file_put_contents( $filePath, '' ) !== false )
-            @chmod( $filePath, 0600 );
+            @chmod( $filePath, eZFile::fileMode( 0600 ) );
 
         if ( $roundTripContent !== false )
         {

@@ -9,6 +9,9 @@ $kernel = dirname( __DIR__, 6 ) . '/kernel/classes/ini/';
 foreach ( array( 'expiniexception', 'expiniscope', 'expiniscopeprovider', 'expinicorescopeprovider',
                  'expiniextensionscopeprovider', 'expinilocator', 'expiniwriteresult', 'expiniwriter', 'expinieditor' ) as $f )
     require_once $kernel . $f . '.php';
+// the mode limits (EZP_FILE_MODE_MAX, EZP_DIR_MODE_MAX) the editor gives new files and directories through
+require_once dirname( __DIR__, 6 ) . '/lib/ezfile/classes/ezfile.php';
+require_once dirname( __DIR__, 6 ) . '/lib/ezfile/classes/ezdir.php';
 
 if ( posix_geteuid() === 0 )
 {

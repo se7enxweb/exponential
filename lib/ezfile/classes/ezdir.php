@@ -82,10 +82,39 @@ class eZDir
         }
         $dir = eZDir::cleanPath( $dir, self::SEPARATOR_UNIX );
 
-        $oldumask = umask( 0 );
-        $success = @mkdir( $dir, $perm, $recursive );
-        umask( $oldumask );
-        return $success;
+        return self::doMkdir( $dir, $perm, $recursive );
+    }
+
+    /**
+     * The upper limit for the mode of the directories the installation creates: the constant EZP_DIR_MODE_MAX
+     * (config.php); with only EZP_FILE_MODE_MAX set, that limit with the search bits where it allows reading (0640
+     * gives 0750); null without either. A constant that is no usable limit counts as not set. See
+     * eZFile::fileModeLimit().
+     *
+     * @return int|null
+     */
+    static function dirModeLimit()
+    {
+        $limit = eZFile::limitFromConstant( 'EZP_DIR_MODE_MAX', 0700 );
+        if ( $limit !== null )
+        {
+            return $limit;
+        }
+        $fileLimit = eZFile::limitFromConstant( 'EZP_FILE_MODE_MAX', 0600 );
+        // with only EZP_FILE_MODE_MAX: the search bit wherever reading is allowed (0640 gives 0750)
+        return $fileLimit === null ? null : ( $fileLimit | ( ( $fileLimit & 0444 ) >> 2 ) );
+    }
+
+    /**
+     * The mode $mode limited to EZP_DIR_MODE_MAX: never wider than the limit, a narrower mode stays as it is.
+     *
+     * @param int $mode
+     * @return int
+     */
+    static function dirMode( $mode )
+    {
+        $limit = self::dirModeLimit();
+        return $limit === null ? (int)$mode : ( (int)$mode & $limit );
     }
 
     /*!
@@ -142,7 +171,7 @@ class eZDir
     */
     static function directoryPermission()
     {
-        return octdec( eZINI::instance()->variable( 'FileSettings', 'StorageDirPermissions' ) );
+        return self::dirMode( octdec( eZINI::instance()->variable( 'FileSettings', 'StorageDirPermissions' ) ) );
     }
 
     /*!
@@ -152,8 +181,9 @@ class eZDir
     */
     static function doMkdir( $dir, $perm, $recursive = false )
     {
-        $oldumask = umask( 0 );
-        $success = @mkdir( $dir, $perm, $recursive );
+        // The mode asked for, within EZP_DIR_MODE_MAX; the parents a recursive mkdir() makes get it too
+        $oldumask = umask( eZFile::creationUmask() );
+        $success = @mkdir( $dir, self::dirMode( $perm ), $recursive );
         umask( $oldumask );
         return $success;
     }

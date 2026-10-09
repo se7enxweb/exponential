@@ -29,6 +29,11 @@
  */
 if ( !class_exists( 'eZTrustedProxy', false ) )
     require_once dirname( __DIR__, 4 ) . '/lib/ezutils/classes/eztrustedproxy.php';
+// The early exit (ezphttpcacheearlyexit.php) runs before the autoloader: the mode helpers are loaded here
+if ( !class_exists( 'eZFile', false ) )
+    require_once dirname( __DIR__, 4 ) . '/lib/ezfile/classes/ezfile.php';
+if ( !class_exists( 'eZDir', false ) )
+    require_once dirname( __DIR__, 4 ) . '/lib/ezfile/classes/ezdir.php';
 
 class ezpHttpCacheContract
 {
@@ -1165,7 +1170,7 @@ class ezpHttpCacheContract
 
     public function ensureDir( $dir )
     {
-        if ( !is_dir( $dir ) && @mkdir( $dir, 0770, true ) )
+        if ( !is_dir( $dir ) && @mkdir( $dir, eZDir::dirMode( 0770 ), true ) )
             $this->adopt( $dir );
     }
 
@@ -1174,7 +1179,7 @@ class ezpHttpCacheContract
         $tmp = $path . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $tmp, $data ) === false )
             return false;
-        @chmod( $tmp, 0660 );
+        @chmod( $tmp, eZFile::fileMode( 0660 ) );
         $this->adopt( $tmp );
         return @rename( $tmp, $path );
     }

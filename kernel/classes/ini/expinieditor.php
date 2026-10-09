@@ -1045,9 +1045,9 @@ class expIniEditor
         $mode = fileperms( $parent ) & 0777;
         foreach ( array_reverse( $missing ) as $d )
         {
-            if ( !@mkdir( $d, $mode ) && !is_dir( $d ) )
+            if ( !@mkdir( $d, eZDir::dirMode( $mode ) ) && !is_dir( $d ) )
                 throw expIniException::writeFailed( "Cannot create the directory $d" );
-            @chmod( $d, $mode );
+            @chmod( $d, eZDir::dirMode( $mode ) );
             if ( !self::applyOwnership( $d, $uid, $gid ) )
                 $warnings[] = "The new directory $d could not be given the owner of " . $parent . ' (not running as root)';
         }
@@ -1095,9 +1095,9 @@ class expIniEditor
             $created = false;
             if ( !is_dir( $d ) )
             {
-                if ( !@mkdir( $d, 0700 ) && !is_dir( $d ) )
+                if ( !@mkdir( $d, eZDir::dirMode( 0700 ) ) && !is_dir( $d ) )
                     throw expIniException::writeFailed( "Cannot create the backup directory $d; nothing written" );
-                @chmod( $d, 0700 );
+                @chmod( $d, eZDir::dirMode( 0700 ) );
                 $created = true;
             }
             // as root, the backup tree itself is kept in the site's hands (also when an earlier root run made it)
@@ -1107,7 +1107,7 @@ class expIniEditor
         if ( !@copy( $path, $target ) )
             throw expIniException::writeFailed( "Cannot back up $path to $target; nothing written" );
         // the backup can hold secrets (settings/override): readable by its owner only
-        @chmod( $target, 0600 );
+        @chmod( $target, eZFile::fileMode( 0600 ) );
         if ( $uid !== false && self::isRoot() )
             self::applyOwnership( $target, $uid, $gid );
         return $target;
@@ -1166,7 +1166,7 @@ class expIniEditor
         if ( !$h )
             throw expIniException::writeFailed( "Cannot create a temporary file in $dir" );
         // owner only until it gets its final mode: it can hold passwords (settings/override)
-        @chmod( $tmp, 0600 );
+        @chmod( $tmp, eZFile::fileMode( 0600 ) );
         $ok = fwrite( $h, $content ) === strlen( $content );
         $ok = fflush( $h ) && $ok;
         if ( function_exists( 'fsync' ) )
@@ -1177,7 +1177,7 @@ class expIniEditor
             self::moveAside( $tmp );
             throw expIniException::writeFailed( "Cannot write the temporary file for $path" );
         }
-        @chmod( $tmp, $mode );
+        @chmod( $tmp, eZFile::fileMode( $mode ) );
         if ( !self::applyOwnership( $tmp, $uid, $gid ) )
         {
             if ( $existed && !self::isRoot() )
@@ -1229,7 +1229,7 @@ class expIniEditor
     {
         $aside = self::root() . 'var/tmp/ini-failed';
         if ( !is_dir( $aside ) )
-            @mkdir( $aside, 0700, true );
+            @mkdir( $aside, eZDir::dirMode( 0700 ), true );
         @rename( $tmp, $aside . '/' . basename( $tmp ) );
     }
 
