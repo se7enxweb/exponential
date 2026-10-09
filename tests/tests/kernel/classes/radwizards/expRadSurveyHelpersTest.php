@@ -87,11 +87,26 @@ class expRadSurveyHelpersTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( expRADSurvey::isImplemented( array( 'implementations' => array() ) ) );
     }
 
+    public function testSourceTreeDoesNotEnterTestsOrDependencyTrees()
+    {
+        $method = new ReflectionMethod( 'expRADSurvey', 'sourceTree' );
+        if ( PHP_VERSION_ID < 80100 )
+            $method->setAccessible( true );
+        $tree = $method->invoke( null, true );
+        $this->assertNotEmpty( $tree['files'] );
+        foreach ( array_merge( $tree['files'], $tree['dirs'] ) as $path )
+        {
+            foreach ( array( 'tests', 'vendor', 'node_modules', '.git' ) as $skipped )
+                $this->assertStringNotContainsString( '/' . $skipped . '/', $path . '/', "$path is inside a $skipped directory" );
+        }
+    }
+
     public function testRunnables()
     {
         $events = expRADSurvey::runnableEvents();
-        $this->assertCount( 6, $events );
+        $this->assertCount( 7, $events );
         $this->assertSame( 'notify', $events['runnable/cronjob/before']['kind'] );
+        $this->assertSame( 'filter', $events['cronjob/part/run']['kind'] );
         $this->assertSame( 'filter', $events['runnable/view/after']['kind'] );
 
         $list = array( array( 'kind' => 'command', 'owner' => 'kernel' ), array( 'kind' => 'view', 'owner' => 'kernel' ), array( 'kind' => 'command', 'owner' => 'k1e' ) );

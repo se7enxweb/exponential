@@ -1474,6 +1474,13 @@ class expRADSurvey
     }
 
     /**
+     * Directories the source sweep never enters: tests, dependency trees and repository metadata.
+     *
+     * @var string[]
+     */
+    protected static $sourceTreeSkippedDirectories = array( 'tests', 'vendor', 'node_modules', '.git' );
+
+    /**
      * The php files worth reading and the directories that were walked to find them.
      *
      * @param bool $withExtensions also the extensions'
@@ -1500,16 +1507,17 @@ class expRADSurvey
             $dirs[]  = $root;
 
             $directory = new RecursiveDirectoryIterator( $root, FilesystemIterator::SKIP_DOTS );
+            // None of these is anybody's extension point, and between them they are a large part of the tree
+            // (an extension's node_modules alone holds thousands of files): they are not entered at all, so
+            // neither the walk nor the check of the kept sweep stats them.
+            $directory = new RecursiveCallbackFilterIterator( $directory, function ( $file ) {
+                return !( $file->isDir() && in_array( $file->getFilename(), self::$sourceTreeSkippedDirectories, true ) );
+            } );
             $iterator  = new RecursiveIteratorIterator( $directory, RecursiveIteratorIterator::SELF_FIRST );
 
             foreach ( $iterator as $file )
             {
                 $path = $file->getPathname();
-
-                // Neither of these is anybody's extension point, and between
-                // them they are a large part of the tree.
-                if ( strpos( $path, '/tests/' ) !== false || strpos( $path, '/vendor/' ) !== false )
-                    continue;
 
                 if ( $iterator->callHasChildren() )
                 {
