@@ -58,7 +58,8 @@ interface ezpContentLimitationHandler
      *   in fetches. Values from the policy must be cast (intval) or escaped (eZDB::escapeString()) by the handler.
      * - array( 'column' => 'ezcontentobject.section_id', 'values' => $values, 'type' => 'int' or 'string',
      *   'not' => false ), or a list of such arrays joined by AND: the kernel writes the IN statement and casts or
-     *   escapes the values itself. The safer form wherever it is enough.
+     *   escapes the values itself. The safer form wherever it is enough. 'not' must be a boolean: any other value
+     *   ('false', 1) gives no access in fetches.
      *
      * A handler that cannot express the limitation in SQL returns false, and the policy then gives no access in
      * fetches. So does an exception, or any other answer (see ezpContentLimitation::sqlCondition()).

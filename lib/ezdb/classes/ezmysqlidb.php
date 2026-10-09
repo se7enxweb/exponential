@@ -487,7 +487,7 @@ class eZMySQLiDB extends eZDBInterface
                 // functions which throws an error with a failing request.
                 if ( $this->errorHandling == eZDB::ERROR_HANDLING_STANDARD )
                 {
-                    trigger_error( "mysqli_query(): $errorMessage", E_USER_ERROR );
+                    eZFatalUserError::raise( "mysqli_query(): $errorMessage" );
                 }
                 else
                 {
