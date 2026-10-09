@@ -522,7 +522,8 @@ CREATE TABLE ezcontentobject_trash (
   KEY ezcobj_trash_modified_subnode (modified_subnode),
   KEY ezcobj_trash_p_node_id (parent_node_id),
   KEY ezcobj_trash_path (path_string),
-  KEY ezcobj_trash_path_ident (path_identification_string(50))
+  KEY ezcobj_trash_path_ident (path_identification_string(50)),
+  KEY ezcobj_trash_trashed_by (trashed_by)
 ) ENGINE=InnoDB;
 
 

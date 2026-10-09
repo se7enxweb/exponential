@@ -18,7 +18,7 @@ namespace Exponential\Service;
  *   TrashList::filters( $viewParameters )        the filters in the URL: (trashed_by) (class) (from) (to)
  *   TrashList::filterURI( $filters )             the same as a URL part
  *   TrashList::listParams( $filters, $context )  eZContentObjectTrashNode::trashList() parameters
- *   TrashList::context()                         the trash rows (light) and the recorded entries, read once
+ *   TrashList::context()                         whether the columns exist, the entries of the old file
  *   TrashList::describe( $nodes, $context )      one hash per trash node for the template
  *   TrashList::summary( $context )               items, removed directly, below them, oldest
  *   TrashList::userOptions( $context )           who trashed what is in the trash now
@@ -87,38 +87,33 @@ class TrashList
     }
 
     /**
-     * The trash rows without joins (one table, so it reads on every engine) and the recorded entries.
+     * What the view needs about the whole trash, kept small: whether the columns trashed_by and trashed_via exist,
+     * and the entries of the old file <VarDir>/trash/trashed.json for rows without a trashed_by (read only when the
+     * file exists). Everything else is asked of the database for the page: a trash of tens of thousands of rows is
+     * not read whole.
      *
-     * @return array( 'rows' => array( node_id => row ), 'records' => array( object id => entry ) ) records only those matching a row
+     * @return array( 'columns' => bool, 'records' => array( object id => entry ) ) records: those from the old file
+     *               that match a trash row
      */
     public static function context()
     {
         $db = \eZDB::instance();
-        $rows = array();
-        // all columns: before the database update has added trashed_by and trashed_via the view keeps working
-        $result = $db->arrayQuery( 'SELECT * FROM ezcontentobject_trash' );
-        foreach ( is_array( $result ) ? $result : array() as $row )
-            $rows[(int)$row['node_id']] = $row;
-
+        $columns = \eZContentObjectTrashNode::hasTrashedByColumns();
         $records = array();
-        $map = null;
-        foreach ( $rows as $row )
+        $map = TrashRecord::all();
+        if ( $map )
         {
-            if ( isset( $row['trashed_by'] ) && (int)$row['trashed_by'] > 0 )
+            // rows trashed before the columns existed; after movetrashrecords.php there are few or none
+            $result = $db->arrayQuery( 'SELECT node_id, contentobject_id, trashed FROM ezcontentobject_trash'
+                                     . ( $columns ? ' WHERE trashed_by = 0' : '' ) );
+            foreach ( is_array( $result ) ? $result : array() as $row )
             {
-                $records[(int)$row['contentobject_id']] = array( 'user_id' => (int)$row['trashed_by'], 'user_name' => '',
-                                                                 'via' => isset( $row['trashed_via'] ) ? (string)$row['trashed_via'] : '',
-                                                                 'source' => 'row' );
-                continue;
+                $entry = TrashRecord::entryFor( $map, $row['contentobject_id'], $row['node_id'], $row['trashed'] );
+                if ( $entry )
+                    $records[(int)$row['contentobject_id']] = array_merge( $entry, array( 'source' => 'file' ) );
             }
-            // trashed before the columns existed: what the old file holds, read once and only when needed
-            if ( $map === null )
-                $map = class_exists( 'Exponential\\Service\\TrashRecord' ) ? TrashRecord::all() : array();
-            $entry = $map ? TrashRecord::entryFor( $map, $row['contentobject_id'], $row['node_id'], $row['trashed'] ) : null;
-            if ( $entry )
-                $records[(int)$row['contentobject_id']] = array_merge( $entry, array( 'source' => 'file' ) );
         }
-        return array( 'rows' => $rows, 'records' => $records );
+        return array( 'columns' => $columns, 'records' => $records );
     }
 
     /**
@@ -136,7 +131,8 @@ class TrashList
         if ( $filters['to'] )
             $params['TrashedTo'] = (int)strtotime( $filters['to'] . ' 23:59:59' );
         // before the database update there is no column to filter on: everything known comes from the old file
-        if ( $filters['trashed_by'] && !\eZContentObjectTrashNode::hasTrashedByColumns() )
+        $columns = isset( $context['columns'] ) ? (bool)$context['columns'] : \eZContentObjectTrashNode::hasTrashedByColumns();
+        if ( $filters['trashed_by'] && !$columns )
         {
             $ids = array();
             foreach ( $context['records'] as $objectID => $entry )
@@ -157,8 +153,7 @@ class TrashList
             $params['TrashedByFileObjectIDList'] = array();
             foreach ( $context['records'] as $objectID => $entry )
             {
-                if ( isset( $entry['source'] ) && $entry['source'] === 'file' )
-                    $params['TrashedByFileObjectIDList'][] = (int)$objectID;
+                $params['TrashedByFileObjectIDList'][] = (int)$objectID;
             }
         }
         else if ( $filters['trashed_by'] )
@@ -167,7 +162,7 @@ class TrashList
             $params['TrashedByFileObjectIDList'] = array();
             foreach ( $context['records'] as $objectID => $entry )
             {
-                if ( isset( $entry['source'] ) && $entry['source'] === 'file' && (int)$entry['user_id'] === (int)$filters['trashed_by'] )
+                if ( (int)$entry['user_id'] === (int)$filters['trashed_by'] )
                     $params['TrashedByFileObjectIDList'][] = (int)$objectID;
             }
         }
@@ -175,23 +170,28 @@ class TrashList
     }
 
     /**
+     * Counted by the database.
+     *
      * @param array $context
      * @return array( 'items' => int, 'top' => int, 'below' => int, 'oldest' => int|false, 'recorded' => int )
      */
     public static function summary( array $context )
     {
-        $top = 0;
-        $oldest = false;
-        foreach ( $context['rows'] as $row )
-        {
-            if ( !isset( $context['rows'][(int)$row['parent_node_id']] ) )
-                $top++;
-            if ( $oldest === false || (int)$row['trashed'] < $oldest )
-                $oldest = (int)$row['trashed'];
-        }
-        $items = count( $context['rows'] );
-        return array( 'items' => $items, 'top' => $top, 'below' => $items - $top, 'oldest' => $oldest,
-                      'recorded' => count( $context['records'] ) );
+        $db = \eZDB::instance();
+        if ( self::isMongo( $db ) )
+            return self::summaryMongo( $db, $context );
+        $totals = $db->arrayQuery( 'SELECT COUNT(*) AS items, MIN(trashed) AS oldest'
+                                 . ( !empty( $context['columns'] ) ? ', SUM( CASE WHEN trashed_by > 0 THEN 1 ELSE 0 END ) AS recorded' : '' )
+                                 . ' FROM ezcontentobject_trash' );
+        // removed directly: the parent is not in the trash too
+        $top = $db->arrayQuery( 'SELECT COUNT(*) AS top FROM ezcontentobject_trash t WHERE NOT EXISTS '
+                              . '( SELECT 1 FROM ezcontentobject_trash p WHERE p.node_id = t.parent_node_id )' );
+        $items = isset( $totals[0]['items'] ) ? (int)$totals[0]['items'] : 0;
+        $topCount = isset( $top[0]['top'] ) ? (int)$top[0]['top'] : 0;
+        $recorded = isset( $totals[0]['recorded'] ) ? (int)$totals[0]['recorded'] : 0;
+        return array( 'items' => $items, 'top' => $topCount, 'below' => $items - $topCount,
+                      'oldest' => $items > 0 ? (int)$totals[0]['oldest'] : false,
+                      'recorded' => $recorded + count( $context['records'] ) );
     }
 
     /**
@@ -201,6 +201,26 @@ class TrashList
     public static function userOptions( array $context )
     {
         $users = array();
+        if ( !empty( $context['columns'] ) )
+        {
+            $db = \eZDB::instance();
+            if ( self::isMongo( $db ) )
+            {
+                // the driver translates no GROUP BY: the same count from a $group
+                $result = array();
+                foreach ( (array)$db->aggregate( 'ezcontentobject_trash', array(
+                              array( '$match' => array( 'trashed_by' => array( '$gt' => 0 ) ) ),
+                              array( '$group' => array( '_id' => '$trashed_by', 'items' => array( '$sum' => 1 ) ) ) ) ) as $row )
+                    $result[] = array( 'trashed_by' => $row['_id'], 'items' => $row['items'] );
+            }
+            else
+                $result = $db->arrayQuery( 'SELECT trashed_by, COUNT(*) AS items FROM ezcontentobject_trash WHERE trashed_by > 0 GROUP BY trashed_by' );
+            foreach ( is_array( $result ) ? $result : array() as $row )
+            {
+                $id = (int)$row['trashed_by'];
+                $users[$id] = array( 'id' => $id, 'name' => self::userName( $id, '' ), 'count' => (int)$row['items'] );
+            }
+        }
         foreach ( $context['records'] as $entry )
         {
             $id = (int)$entry['user_id'];
@@ -258,7 +278,7 @@ class TrashList
      */
     public static function describe( array $trashNodes, array $context )
     {
-        $rows = $context['rows'];
+        $db = \eZDB::instance();
 
         // the ancestors of every item on the page, in the tree or in the trash, read once
         $ancestorIDs = array();
@@ -266,6 +286,15 @@ class TrashList
         {
             foreach ( self::ancestorIDs( $trashNode->attribute( 'path_string' ) ) as $id )
                 $ancestorIDs[$id] = $id;
+        }
+        // the trash rows among them (the parent is one of them, unless it is the root)
+        $rows = array();
+        if ( $ancestorIDs )
+        {
+            $result = $db->arrayQuery( 'SELECT node_id, contentobject_id FROM ezcontentobject_trash WHERE '
+                                     . $db->generateSQLINStatement( array_values( $ancestorIDs ), 'node_id', false, true, 'int' ) );
+            foreach ( is_array( $result ) ? $result : array() as $row )
+                $rows[(int)$row['node_id']] = $row;
         }
         $treeNodes = array();
         if ( $ancestorIDs )
@@ -323,12 +352,13 @@ class TrashList
                 $parentState = $trashNode->originalParent() ? 'exists' : 'moved';
             }
 
-            // nodes that were below it: trash rows under its path
+            // nodes that were below it: trash rows under its path, counted from the index on path_string
             $below = 0;
-            foreach ( $rows as $row )
+            $condition = self::belowCondition( $db, $pathString );
+            if ( $condition !== false )
             {
-                if ( (int)$row['node_id'] !== $nodeID && strpos( (string)$row['path_string'], $pathString ) === 0 )
-                    $below++;
+                $result = $db->arrayQuery( 'SELECT COUNT(*) AS below FROM ezcontentobject_trash WHERE ' . $condition );
+                $below = isset( $result[0]['below'] ) ? (int)$result[0]['below'] : 0;
             }
 
             $owner = ( $object && $object->attribute( 'owner_id' ) ) ? \eZContentObject::fetch( (int)$object->attribute( 'owner_id' ) ) : null;
@@ -353,7 +383,13 @@ class TrashList
             $section = $object ? \eZSection::fetch( $object->attribute( 'section_id' ) ) : null;
 
             $trashedBy = false;
-            if ( isset( $context['records'][$objectID] ) )
+            $trashedByID = !empty( $context['columns'] ) ? (int)$trashNode->attribute( 'trashed_by' ) : 0;
+            if ( $trashedByID > 0 )
+            {
+                $trashedBy = array( 'user_id' => $trashedByID, 'name' => self::userName( $trashedByID, '' ),
+                                    'via' => (string)$trashNode->attribute( 'trashed_via' ) );
+            }
+            else if ( isset( $context['records'][$objectID] ) )
             {
                 $entry = $context['records'][$objectID];
                 $trashedBy = array( 'user_id' => (int)$entry['user_id'],
@@ -382,6 +418,67 @@ class TrashList
                               'parent_trash_object_id' => $parentTrashObjectID );
         }
         return $items;
+    }
+
+    /**
+     * summary() on MongoDB, whose driver translates neither the NOT EXISTS subquery nor SUM( CASE ... ): two
+     * aggregations with the same counts. A trash document older than trashed_by counts as trashed_by 0.
+     *
+     * @param \eZDBInterface $db
+     * @param array $context
+     * @return array as summary()
+     */
+    protected static function summaryMongo( $db, array $context )
+    {
+        $group = array( '_id' => null, 'items' => array( '$sum' => 1 ), 'oldest' => array( '$min' => '$trashed' ) );
+        if ( !empty( $context['columns'] ) )
+            $group['recorded'] = array( '$sum' => array( '$cond' => array(
+                array( '$gt' => array( array( '$ifNull' => array( '$trashed_by', 0 ) ), 0 ) ), 1, 0 ) ) );
+        $totals = $db->aggregate( 'ezcontentobject_trash', array( array( '$group' => $group ) ) );
+        // removed directly: no trash document has the parent's node id
+        $top = $db->aggregate( 'ezcontentobject_trash', array(
+            array( '$lookup' => array( 'from' => 'ezcontentobject_trash', 'localField' => 'parent_node_id',
+                                       'foreignField' => 'node_id', 'as' => '_parent' ) ),
+            array( '$match' => array( '_parent' => array( '$size' => 0 ) ) ),
+            array( '$count' => 'top' ) ) );
+        $items = isset( $totals[0]['items'] ) ? (int)$totals[0]['items'] : 0;
+        $topCount = isset( $top[0]['top'] ) ? (int)$top[0]['top'] : 0;
+        $recorded = isset( $totals[0]['recorded'] ) ? (int)$totals[0]['recorded'] : 0;
+        return array( 'items' => $items, 'top' => $topCount, 'below' => $items - $topCount,
+                      'oldest' => $items > 0 ? (int)$totals[0]['oldest'] : false,
+                      'recorded' => $recorded + count( $context['records'] ) );
+    }
+
+    /**
+     * @param \eZDBInterface $db
+     * @return bool the MongoDB driver, which answers aggregate() for what its SQL translation cannot express
+     */
+    protected static function isMongo( $db )
+    {
+        return $db->databaseName() === 'mongo' && is_callable( array( $db, 'aggregate' ) );
+    }
+
+    /**
+     * The SQL condition for the trash rows below the path $pathString, answered from the index on path_string.
+     * SQLite does not use an index for LIKE (it compares case-insensitively), so it gets a range that holds exactly
+     * the strings that start with the path: "/1/2/43/" < path_string < "/1/2/430" ("0" follows "/"). The other
+     * engines get LIKE with a fixed prefix, which they answer from the index: a range is not safe there, because a
+     * locale collation (PostgreSQL with en_US.UTF-8) ignores the slashes when it compares.
+     *
+     * @param \eZDBInterface $db
+     * @param string $pathString "/1/2/43/"
+     * @return string|false false for a path that is not one
+     */
+    public static function belowCondition( $db, $pathString )
+    {
+        $pathString = (string)$pathString;
+        // \z, not $: $ also matches before a final line break
+        if ( !preg_match( '#^/([0-9]+/)+\z#', $pathString ) )
+            return false;
+        $path = $db->escapeString( $pathString );
+        if ( $db->databaseName() === 'sqlite' )
+            return "path_string > '$path' AND path_string < '" . $db->escapeString( substr( $pathString, 0, -1 ) . '0' ) . "'";
+        return "path_string LIKE '$path%' AND path_string <> '$path'";
     }
 
     /**
