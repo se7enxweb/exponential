@@ -2826,7 +2826,7 @@ ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
 111bb729184306f633c537fe44ee078c  doc/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/bc/6.0/preload.md
-24991962fbcc2eafb9ac71a80f58cbd4  doc/bc/6.0/rad-extension-points.md
+73b04a306d12240d33cd265d587db399  doc/bc/6.0/rad-extension-points.md
 611442352303aaa28764fab216c5ef09  doc/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
 c9437c052795bf1c29b8db5b1a73a8c0  doc/bc/6.0/redirect-query-and-image-alias-guards.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-3b8c3a1658b6f61b8376af85a621ddb5  doc/changelogs/6.0/6.0.15.md
+34d5d89005e0ce241eb4d8a8d562385a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3332,6 +3332,7 @@ cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 572d04f3da4c1377a06bd7c8c95f615b  doc/features/6.0/content-jobs.md
 f8fca1a0d5f829e22cf306b8fb492610  doc/features/6.0/content-limitation-handlers.md
+d46f1014a2be17e6a560d45416986a36  doc/features/6.0/cronjob-part-filter.md
 5dc9aef1305f6bb91f4dd0fdbb4fd038  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
@@ -3487,7 +3488,7 @@ a841ba0d4e6df12e066d8ac43bf433be  doc/guides/cronjobs.md
 16abc76337749d4e4334c2373b362366  doc/guides/deploying.md
 60946c27c4015c785d2c5b1d7c9106f3  doc/guides/drafts-and-pending.md
 89fc578ae0ff375a2ddbada72586b72a  doc/guides/extensions-page.md
-d66816a653e1d073775286ddd516fa19  doc/guides/extensions.md
+78f7787f49210097a21310ed1294757b  doc/guides/extensions.md
 9ab2a55cb8c3f5b50331448d91683c53  doc/guides/getting-started.md
 b53242f489a852760b7b824ee3e042a2  doc/guides/images/cronjobs/available-scripts.png
 2e5094f1511066d9fac842cb2464db9c  doc/guides/images/cronjobs/controls.png
@@ -5431,7 +5432,7 @@ cb0a99abf5054a55af10c6ba4e62600b  kernel/private/classes/commands/phar.php
 e6d562440b310189c2ad9ccccc9c47f7  kernel/private/classes/commands/preloadjob.php
 99d8b60f4b15df1dcd7f01c823003c66  kernel/private/classes/commands/publish_content.php
 a08a9297ae9c54487b7a2b06e63e6a08  kernel/private/classes/commands/resetuserpassword.php
-898926376d639f730120ce5e20c6eb9e  kernel/private/classes/commands/runcronjobs.php
+3a6e55fda49fc162f697680f63de8de1  kernel/private/classes/commands/runcronjobs.php
 28685c5ca337e0c7517f1ba62c70fbe1  kernel/private/classes/commands/solr.php
 4465a716b5fc1723bd7bcdba839111cf  kernel/private/classes/commands/systeminfo.php
 99a776cdd909256a5d8069ef603d7820  kernel/private/classes/commands/trashpurge.php
@@ -5951,9 +5952,9 @@ f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 fd65c2cce9e61492592c18344e029370  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
-22f3a8b2a4f28d5af415837082853bbc  kernel/setup/expradcatalogue.php
+f8a8b3ab728ec3dd7278d4ae8a0983e9  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
-6b36bb24853cdda7440edf906831bdc3  kernel/setup/expradsurvey.php
+783bac675b8d504c9d2a59e765dec068  kernel/setup/expradsurvey.php
 dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
 1f83c0a2d52102dcc25243247dca9d32  kernel/setup/expstaticcacherunner.php
 9bc458d96c3589dc82f294aca4d45a21  kernel/setup/exptemplateextensionwizard.php
@@ -6405,7 +6406,7 @@ fce5a3e3f0663f62cde1337a65d9ba06  settings/package.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-73861709907aeb4e2f015b18eb9a2796  settings/site.ini
+bba1d4ed837c96fbe9de6d67afa09a22  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7371,15 +7372,18 @@ ab47780f670ed2e74e5a7167326c415c  tests/tests/kernel/classes/rest/ezpRestHttpReq
 ad3e0ca4505542e922db4e4b23351cb9  tests/tests/kernel/classes/rest/ezpRestStatusResponseTest.php
 a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php
 5cabf4962c374801c48d9d37133de735  tests/tests/kernel/classes/runnable/CommandHelpersTest.php
+7972872e295718a8efa9ce3ffea7ddcd  tests/tests/kernel/classes/runnable/CronjobPartRunFilterTest.php
 2973ce3fd51cf4811b11def2cb6a2f0a  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
 4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 afa2082e1b51519a99944e89da43c447  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
 352cfc4000709b128a2a80cbea6cf8b7  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
-2beaf208438078d39f0f448ab74d46c8  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
+6160faa4ebe4dfe6ab8997151a1aab6c  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
 de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableExtensionPointsTest.php
 6b5a504ace7f81f831359ad296472b95  tests/tests/kernel/classes/runnable/RunnableTest.php
 57cea5c99d78dc76f0bba6f2c9845766  tests/tests/kernel/classes/runnable/ServicesTest.php
+9298e49c53a6f1db5d9d31bedb03e759  tests/tests/kernel/classes/runnable/fixtures/cronjobpartrun-none/site.ini
+4abcc61dd0cb6716e5e065194a98f2dc  tests/tests/kernel/classes/runnable/fixtures/cronjobpartrun/site.ini
 9b857db0b585f8663b50a1c2f5428eb1  tests/tests/kernel/classes/runnable/fixtures/moduleview_scope_probe.php
 79c911a18db2fd725a84abec3b804393  tests/tests/kernel/classes/runnable/fixtures/settings/site.ini
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
