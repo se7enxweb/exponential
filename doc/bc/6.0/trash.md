@@ -163,9 +163,14 @@ asked again on the next trash move, so a running Velocity worker picks the updat
 
 On SQLite run the two `ALTER TABLE ezcontentobject_trash ADD COLUMN trashed_by|trashed_via` lines of
 `update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql` once (a second run fails with "duplicate column name" and
-changes nothing). Oracle (the `ezoracle` extension, its own package) needs the same two columns:
+changes nothing), and the `CREATE INDEX IF NOT EXISTS ezcontentobject_trash__ezcobj_trash_trashed_by` line after
+them (`<table>__<index>` is the name `eZSQLiteSchema` gives the index of the `.dba`, so the database consistency check
+finds it; it can run again). Oracle (the `ezoracle` extension, its own package) needs the same two columns:
 `ALTER TABLE ezcontentobject_trash ADD ( trashed_by INTEGER DEFAULT 0 NOT NULL, trashed_via VARCHAR2(100) )`;
-`trashed_via` stays nullable there, because Oracle stores an empty string as NULL.
+`trashed_via` stays nullable there, because Oracle stores an empty string as NULL. The index is
+`CREATE INDEX ezcobj_trash_trashed_by ON ezcontentobject_trash ( trashed_by )`; the ezoracle update file
+`update/database/ezpublish/6.0/dbupdate-6.0.0-6.0.15-trash-columns.sql` adds the columns and the index, each only
+when missing.
 
 On MongoDB there is nothing to run: a collection has no columns, and the kernel writes `trashed_by` and `trashed_via`
 into every new trash document from the start. `hasTrashedByColumns()` asks the driver's schema (the shipped
@@ -241,14 +246,20 @@ the entries of the old file for rows without a `trashed_by`. For each item of th
 path (the trash rows among its ancestors, read once for the page), the parent state, the nodes below it (a count on
 the indexed `path_string`, `TrashList::belowCondition()`), the owner, last modifier, dates, languages and remaining
 locations. `summary()` and `userOptions()` count in SQL (`userOptions()` groups by `trashed_by`, which has the
-index `ezcobj_trash_trashed_by`). The class (`kernel/private/classes/services/trashlist.php`) also provides
+index `ezcobj_trash_trashed_by`); both count trash rows, so an object removed at two places counts twice, as it is
+listed twice. On MongoDB, whose driver translates neither the summary's `NOT EXISTS` nor `SUM( CASE ... )` nor
+`GROUP BY`, both come from aggregations with the same numbers (a document older than `trashed_by` counts as 0); the
+nodes below an item are counted through the driver's translation of the `LIKE`, and the trash rows among the
+ancestors through its `IN`. The class (`kernel/private/classes/services/trashlist.php`) also provides
 `classOptions()`, and `filters()`, `filterURI()` and `listParams()` for the URL filters.
 
 ### A large trash
 
 Measured on SQLite with synthetic trash rows (groups of one item and nine below it, pointing to published objects),
 as administrator, one page of 50 items, the PHP steps of the view without the template, for the filters none / by
-user / unknown. The scripts and the results are kept with the change; the times vary by about a fifth between runs.
+user / unknown; the times vary by about a fifth between runs. A second measurement on a copy of a real site's
+database (30,000 rows in groups of four, one page of 50, no filter) gave 2.5 s and 56 MB peak for the whole process
+before, 0.26 s and 12 MB after, the kernel included; the list query and its count were then the largest part.
 
 | Rows in the trash | Before | After (with the index) | Memory before | Memory after |
 |---|---|---|---|---|
@@ -281,7 +292,11 @@ php vendor/bin/phpunit tests/tests/kernel/classes/trash/eZContentObjectTrashReco
 `eZContentObjectTrashOldSchemaTest.php` is its counterpart for a database without the columns (a copy of a site's
 database from before the update; skipped on an updated one): moving to the trash, the file entry, fetching the row,
 the view's filters, restoring and purging. `TrashedByColumnsTest.php` needs no database: the schema and update
-files, `createFromNode()`, `currentVia()` and `definition()` before and after the update.
+files, `createFromNode()`, `currentVia()` and `definition()` before and after the update. `TrashListPagedTest.php`
+needs none either: `belowCondition()` on an in-memory SQLite table (exactly the rows below, not a sibling whose id
+starts with the same digits, answered from the index on `path_string`), and the summary and the user list on MongoDB
+against a stand-in connection, and with `EXP_TEST_MONGO_SCRATCH=<host>:<port>/<scratch or test database>` against a
+real server.
 
 The trash browser test matrix (list, remove, restore, empty; on Apache and Velocity; both admin designs; 960 px wide
 at scale 2) passes with the new page.
