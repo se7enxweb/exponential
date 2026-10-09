@@ -42,6 +42,38 @@ END
 $$;
 
 --
+-- ezcontentobject_trash.trashed_by and trashed_via: who moved an object to
+-- the trash (the user's content object id, 0 when not known) and from where
+-- ("web <siteaccess>" or "cli <script>").
+--
+-- The kernel writes both when content goes to the trash, in the same row and
+-- transaction as the rest of it, so without the columns moving content to the
+-- trash fails. They replace <VarDir>/trash/trashed.json, which was local to
+-- one web server and outside the database's transactions and backups.
+-- update/common/scripts/6.0/movetrashrecords.php copies what that file holds
+-- into the columns afterwards.
+--
+-- Added only when missing, so the block can run again.
+--
+
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.columns
+                    WHERE table_schema = current_schema()
+                      AND table_name = 'ezcontentobject_trash'
+                      AND column_name = 'trashed_by' ) THEN
+        ALTER TABLE ezcontentobject_trash ADD trashed_by integer DEFAULT 0 NOT NULL;
+    END IF;
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.columns
+                    WHERE table_schema = current_schema()
+                      AND table_name = 'ezcontentobject_trash'
+                      AND column_name = 'trashed_via' ) THEN
+        ALTER TABLE ezcontentobject_trash ADD trashed_via character varying(100) DEFAULT ''::character varying NOT NULL;
+    END IF;
+END
+$$;
+
+--
 -- Sequence names: <table>_s becomes <table>_<column>_seq.
 --
 -- The 6.0 kernel reads the id of the row it just inserted from

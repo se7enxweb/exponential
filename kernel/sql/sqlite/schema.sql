@@ -318,6 +318,8 @@ CREATE TABLE `ezcontentobject_trash` (
 ,  `sort_field` integer DEFAULT '1'
 ,  `sort_order` integer DEFAULT '1'
 ,  `trashed` integer NOT NULL DEFAULT '0'
+,  `trashed_by` integer NOT NULL DEFAULT '0'
+,  `trashed_via` varchar(100) NOT NULL DEFAULT ''
 ,  PRIMARY KEY (`node_id`)
 );
 CREATE TABLE `ezcontentobject_tree` (

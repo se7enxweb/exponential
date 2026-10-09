@@ -85,7 +85,18 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
                                          'trashed' => array( 'name' => 'Trashed',
                                                                   'datatype' => 'integer',
                                                                   'default' => 0,
-                                                                  'required' => true )
+                                                                  'required' => true ),
+                                         // who moved the object to the trash (user content object id, 0: not known)
+                                         'trashed_by' => array( 'name' => 'TrashedBy',
+                                                                'datatype' => 'integer',
+                                                                'default' => 0,
+                                                                'required' => true ),
+                                         // from where: "web <siteaccess>" or "cli <script>"
+                                         'trashed_via' => array( 'name' => 'TrashedVia',
+                                                                 'datatype' => 'string',
+                                                                 'default' => '',
+                                                                 'required' => true,
+                                                                 'max_length' => 100 )
                                           ),
 
                       'keys' => array( 'node_id' ),
@@ -136,7 +147,9 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
                       'remote_id' => $node->attribute( 'remote_id' ),
                       'is_hidden' => $node->attribute( 'is_hidden' ),
                       'is_invisible' => $node->attribute( 'is_invisible' ),
-                      'trashed' => time() );
+                      'trashed' => time(),
+                      'trashed_by' => (int)eZUser::currentUserID(),
+                      'trashed_via' => self::currentVia() );
 
         $trashNode = new eZContentObjectTrashNode( $row );
         return $trashNode;
@@ -152,7 +165,6 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
     function storeToTrash()
     {
         $this->store();
-        self::callTrashRecord( 'record', $this );
 
         $db = eZDB::instance();
         $db->begin();
@@ -204,10 +216,36 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
     }
 
     /**
-     * Who moved what to the trash (Exponential\Service\TrashRecord, doc/bc/6.0/trash.md). Loaded by path when
-     * the autoload array of a long-running worker predates the class; a failure never stops the trash move.
+     * Where a trash move comes from, for trashed_via: "web <siteaccess>" or "cli <script>" (for ezexec.php, the
+     * script it runs).
      *
-     * @param string $method record|forget
+     * @return string at most 100 characters
+     */
+    static function currentVia()
+    {
+        if ( PHP_SAPI === 'cli' && !isset( $_SERVER['REQUEST_URI'] ) )
+        {
+            $script = isset( $_SERVER['argv'][0] ) ? basename( (string)$_SERVER['argv'][0] ) : 'php';
+            // ezexec.php runs another script: name that one
+            if ( $script === 'ezexec.php' && isset( $_SERVER['argv'][1] ) )
+                $script = basename( (string)$_SERVER['argv'][1] );
+            $via = 'cli ' . $script;
+        }
+        else
+        {
+            $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '';
+            $via = trim( 'web ' . $access );
+        }
+        return function_exists( 'mb_substr' ) ? mb_substr( $via, 0, 100, 'UTF-8' ) : substr( $via, 0, 100 );
+    }
+
+    /**
+     * The entries of <VarDir>/trash/trashed.json, where who moved what to the trash was kept before the columns
+     * trashed_by and trashed_via existed (Exponential\Service\TrashRecord, doc/bc/6.0/trash.md): purging or
+     * restoring an object forgets its entry. Loaded by path when the autoload array of a long-running worker
+     * predates the class; a failure never stops the purge.
+     *
+     * @param string $method forget
      * @param mixed $argument
      */
     protected static function callTrashRecord( $method, $argument )
@@ -353,6 +391,9 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
      *   TrashedFrom, TrashedTo      timestamps, both inclusive
      *   ContentObjectIDList         only these objects (an empty array matches nothing)
      *   ExcludeContentObjectIDList  not these objects
+     *   TrashedBy                   moved to the trash by this user (content object id), or one of
+     *                               TrashedByFileObjectIDList (known only from <VarDir>/trash/trashed.json)
+     *   TrashedByUnknown            true: by nobody known, neither in trashed_by nor one of TrashedByFileObjectIDList
      *
      * @param array $params
      * @return string
@@ -374,6 +415,21 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
         }
         if ( isset( $params['ExcludeContentObjectIDList'] ) && is_array( $params['ExcludeContentObjectIDList'] ) && $params['ExcludeContentObjectIDList'] )
             $sql .= ' AND ' . $db->generateSQLINStatement( array_map( 'intval', $params['ExcludeContentObjectIDList'] ), 'ezcot.contentobject_id', true, true, 'int' );
+        $fileIDs = isset( $params['TrashedByFileObjectIDList'] ) && is_array( $params['TrashedByFileObjectIDList'] )
+                   ? array_map( 'intval', $params['TrashedByFileObjectIDList'] ) : array();
+        if ( isset( $params['TrashedBy'] ) && is_numeric( $params['TrashedBy'] ) )
+        {
+            $condition = 'ezcot.trashed_by = ' . (int)$params['TrashedBy'];
+            if ( $fileIDs )
+                $condition = '( ' . $condition . ' OR ' . $db->generateSQLINStatement( $fileIDs, 'ezcot.contentobject_id', false, true, 'int' ) . ' )';
+            $sql .= ' AND ' . $condition;
+        }
+        if ( !empty( $params['TrashedByUnknown'] ) )
+        {
+            $sql .= ' AND ezcot.trashed_by = 0';
+            if ( $fileIDs )
+                $sql .= ' AND ' . $db->generateSQLINStatement( $fileIDs, 'ezcot.contentobject_id', true, true, 'int' );
+        }
         return $sql;
     }
 
