@@ -5005,7 +5005,7 @@ f3b29307a8a38c5f06cffb143afde12f  kernel/classes/ezpackageinstallationhandler.ph
 281fb4c5c551758190a823df8e1c43ed  kernel/classes/ezpathelement.php
 a2852263baec56cf69eb8d53f12b2483  kernel/classes/ezpdfexport.php
 3d3da61017eaaab0308ec6ff06cd9c83  kernel/classes/ezpendingactions.php
-7721e7d2dac7739f842a37be95de8e50  kernel/classes/ezpersistentobject.php
+813c7ebab046138fa6ed0d7c08fa88c1  kernel/classes/ezpersistentobject.php
 0ce2c52159d20fbd3814673d3a78abc2  kernel/classes/ezpolicy.php
 79388fb542ea43277c1ff809aee45e48  kernel/classes/ezpolicylimitation.php
 fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
@@ -7159,7 +7159,7 @@ b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutO
 1a61ba02eb30739edcb683230c3cfc97  tests/tests/kernel/classes/eZPackageLicenseTest.php
 6855c387598fbee39d880905abac28cc  tests/tests/kernel/classes/eZPackageVersionTest.php
 7a21b3cc90e141e63b00372345c15fba  tests/tests/kernel/classes/eZPendingActionsTest.php
-1ac2f36bd00a7fd1bf0a9b93bf3c82d9  tests/tests/kernel/classes/eZPersistentObjectShortNameTest.php
+24550e9f3df4c845e43ccf1ecce61800  tests/tests/kernel/classes/eZPersistentObjectShortNameTest.php
 af2328d092a107a74a930bb217ed1d9e  tests/tests/kernel/classes/eZPhp85NoEffectCallsTest.php
 ac59faa36dd49a5a0b4751814db11085  tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php
 c9c4cb539a1a23f7edb9104a225c117c  tests/tests/kernel/classes/eZPolicySaveTemporaryTest.php
