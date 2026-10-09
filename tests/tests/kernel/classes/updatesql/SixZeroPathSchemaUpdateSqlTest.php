@@ -134,6 +134,7 @@ class SixZeroPathSchemaUpdateSqlTest extends PHPUnit\Framework\TestCase
     {
         $this->assertMatchesRegularExpression( '/`trashed` integer NOT NULL DEFAULT \'0\'/', self::read( 'kernel/sql/sqlite/schema.sql' ) );
         $this->assertStringContainsString( 'nor the', self::read( 'update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql' ) );
-        $this->assertStringNotContainsString( 'trashed', self::statements( 'update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql' ) );
+        // trashed_by and trashed_via are added there; trashed itself is not
+        $this->assertDoesNotMatchRegularExpression( '/\btrashed\b/', self::statements( 'update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql' ) );
     }
 }

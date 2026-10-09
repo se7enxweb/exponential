@@ -514,6 +514,8 @@ CREATE TABLE ezcontentobject_trash (
   sort_field int(11) default '1',
   sort_order int(11) default '1',
   trashed int(11) NOT NULL default '0',
+  trashed_by int(11) NOT NULL default '0',
+  trashed_via varchar(100) NOT NULL default '',
   PRIMARY KEY  (node_id),
   KEY ezcobj_trash_co_id (contentobject_id),
   KEY ezcobj_trash_depth (depth),

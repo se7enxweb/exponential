@@ -17,6 +17,23 @@ UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version';
 UPDATE ezsite_data SET value='1' WHERE name='ezpublish-release';
 
 --
+-- ezcontentobject_trash.trashed_by and trashed_via: who moved an object to
+-- the trash (the user's content object id, 0 when not known) and from where
+-- ("web <siteaccess>" or "cli <script>").
+--
+-- The kernel writes both when content goes to the trash, in the same row and
+-- transaction as the rest of it. Until they exist it stores the row without them
+-- and keeps writing the old file, so the order of code and update does not
+-- matter. They replace <VarDir>/trash/trashed.json, which was local to
+-- one web server and outside the database's transactions and backups.
+-- update/common/scripts/6.0/movetrashrecords.php copies what that file holds
+-- into the columns afterwards.
+--
+
+ALTER TABLE ezcontentobject_trash ADD COLUMN trashed_by integer NOT NULL DEFAULT 0;
+ALTER TABLE ezcontentobject_trash ADD COLUMN trashed_via varchar(100) NOT NULL DEFAULT '';
+
+--
 -- The pdf export carries its own footer wording.
 --
 -- Every page of every export used to read "Exponential PDF export", because

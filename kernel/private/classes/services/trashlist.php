@@ -11,7 +11,8 @@ namespace Exponential\Service;
 
 /**
  * What the trash view (content/trash) shows about each item, its filters and its summary line.
- * Who moved an item to the trash comes from TrashRecord; everything else is read from the trash rows,
+ * Who moved an item to the trash comes from the trash row (trashed_by, trashed_via), for items trashed before
+ * those columns existed from what TrashRecord's file still holds; everything else is read from the trash rows,
  * the archived object and the tree. Guide: doc/bc/6.0/trash.md
  *
  *   TrashList::filters( $viewParameters )        the filters in the URL: (trashed_by) (class) (from) (to)
@@ -94,20 +95,28 @@ class TrashList
     {
         $db = \eZDB::instance();
         $rows = array();
-        $result = $db->arrayQuery( 'SELECT node_id, parent_node_id, path_string, contentobject_id, trashed FROM ezcontentobject_trash' );
+        // all columns: before the database update has added trashed_by and trashed_via the view keeps working
+        $result = $db->arrayQuery( 'SELECT * FROM ezcontentobject_trash' );
         foreach ( is_array( $result ) ? $result : array() as $row )
             $rows[(int)$row['node_id']] = $row;
 
         $records = array();
-        $map = class_exists( 'Exponential\\Service\\TrashRecord' ) ? TrashRecord::all() : array();
-        if ( $map )
+        $map = null;
+        foreach ( $rows as $row )
         {
-            foreach ( $rows as $row )
+            if ( isset( $row['trashed_by'] ) && (int)$row['trashed_by'] > 0 )
             {
-                $entry = TrashRecord::entryFor( $map, $row['contentobject_id'], $row['node_id'], $row['trashed'] );
-                if ( $entry )
-                    $records[(int)$row['contentobject_id']] = $entry;
+                $records[(int)$row['contentobject_id']] = array( 'user_id' => (int)$row['trashed_by'], 'user_name' => '',
+                                                                 'via' => isset( $row['trashed_via'] ) ? (string)$row['trashed_via'] : '',
+                                                                 'source' => 'row' );
+                continue;
             }
+            // trashed before the columns existed: what the old file holds, read once and only when needed
+            if ( $map === null )
+                $map = class_exists( 'Exponential\\Service\\TrashRecord' ) ? TrashRecord::all() : array();
+            $entry = $map ? TrashRecord::entryFor( $map, $row['contentobject_id'], $row['node_id'], $row['trashed'] ) : null;
+            if ( $entry )
+                $records[(int)$row['contentobject_id']] = array_merge( $entry, array( 'source' => 'file' ) );
         }
         return array( 'rows' => $rows, 'records' => $records );
     }
@@ -126,17 +135,41 @@ class TrashList
             $params['TrashedFrom'] = (int)strtotime( $filters['from'] . ' 00:00:00' );
         if ( $filters['to'] )
             $params['TrashedTo'] = (int)strtotime( $filters['to'] . ' 23:59:59' );
-        if ( $filters['trashed_by'] === 'unknown' )
-            $params['ExcludeContentObjectIDList'] = array_keys( $context['records'] );
-        else if ( $filters['trashed_by'] )
+        // before the database update there is no column to filter on: everything known comes from the old file
+        if ( $filters['trashed_by'] && !\eZContentObjectTrashNode::hasTrashedByColumns() )
         {
             $ids = array();
             foreach ( $context['records'] as $objectID => $entry )
             {
-                if ( (int)$entry['user_id'] === (int)$filters['trashed_by'] )
+                if ( $filters['trashed_by'] === 'unknown' || (int)$entry['user_id'] === (int)$filters['trashed_by'] )
                     $ids[] = (int)$objectID;
             }
-            $params['ContentObjectIDList'] = $ids;
+            if ( $filters['trashed_by'] === 'unknown' )
+                $params['ExcludeContentObjectIDList'] = $ids;
+            else
+                $params['ContentObjectIDList'] = $ids;
+            return $params;
+        }
+        // the column in SQL; the few rows known only from the old file as a list of their objects
+        if ( $filters['trashed_by'] === 'unknown' )
+        {
+            $params['TrashedByUnknown'] = true;
+            $params['TrashedByFileObjectIDList'] = array();
+            foreach ( $context['records'] as $objectID => $entry )
+            {
+                if ( isset( $entry['source'] ) && $entry['source'] === 'file' )
+                    $params['TrashedByFileObjectIDList'][] = (int)$objectID;
+            }
+        }
+        else if ( $filters['trashed_by'] )
+        {
+            $params['TrashedBy'] = (int)$filters['trashed_by'];
+            $params['TrashedByFileObjectIDList'] = array();
+            foreach ( $context['records'] as $objectID => $entry )
+            {
+                if ( isset( $entry['source'] ) && $entry['source'] === 'file' && (int)$entry['user_id'] === (int)$filters['trashed_by'] )
+                    $params['TrashedByFileObjectIDList'][] = (int)$objectID;
+            }
         }
         return $params;
     }

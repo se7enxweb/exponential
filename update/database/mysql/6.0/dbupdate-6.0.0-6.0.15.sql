@@ -50,6 +50,45 @@ EXECUTE exp_trashed_stmt;
 DEALLOCATE PREPARE exp_trashed_stmt;
 
 --
+-- ezcontentobject_trash.trashed_by and trashed_via: who moved an object to
+-- the trash (the user's content object id, 0 when not known) and from where
+-- ("web <siteaccess>" or "cli <script>").
+--
+-- The kernel writes both when content goes to the trash, in the same row and
+-- transaction as the rest of it. Until they exist it stores the row without them
+-- and keeps writing the old file, so the order of code and update does not
+-- matter. They replace <VarDir>/trash/trashed.json, which was local to
+-- one web server and outside the database's transactions and backups.
+-- update/common/scripts/6.0/movetrashrecords.php copies what that file holds
+-- into the columns afterwards.
+--
+-- Added only when missing, the same way as trashed above, so the lines can run
+-- again.
+--
+
+SET @exp_trashed_by_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'ezcontentobject_trash'
+        AND COLUMN_NAME = 'trashed_by' ) = 0,
+    'ALTER TABLE ezcontentobject_trash ADD trashed_by int(11) NOT NULL DEFAULT ''0''',
+    'DO 0' );
+PREPARE exp_trashed_by_stmt FROM @exp_trashed_by_sql;
+EXECUTE exp_trashed_by_stmt;
+DEALLOCATE PREPARE exp_trashed_by_stmt;
+
+SET @exp_trashed_via_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'ezcontentobject_trash'
+        AND COLUMN_NAME = 'trashed_via' ) = 0,
+    'ALTER TABLE ezcontentobject_trash ADD trashed_via varchar(100) NOT NULL DEFAULT ''''',
+    'DO 0' );
+PREPARE exp_trashed_via_stmt FROM @exp_trashed_via_sql;
+EXECUTE exp_trashed_via_stmt;
+DEALLOCATE PREPARE exp_trashed_via_stmt;
+
+--
 -- The pdf export carries its own footer wording.
 --
 -- Every page of every export used to read "Exponential PDF export", because
