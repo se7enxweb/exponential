@@ -19,6 +19,8 @@
  *          unknown class (null) passes
  *  PN-14 - With the class filter enabled and no class listed, createNotificationEvent() gives
  *          content/notification/create false without the database
+ *  PN-15 - notifyRequested(): false, 0 and "0" mean no, anything else (null too) yes; eZContentFunctions passes
+ *          notify through it (not a (bool) cast) and notifies by default
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -366,5 +368,30 @@ class eZPublishWithoutNotificationTest extends PHPUnit\Framework\TestCase
         $this->listen( $asked );
         $this->assertNull( eZContentOperationCollection::createNotificationEvent( 990302, 1 ) );
         $this->assertSame( array( array( false, 990302, 1 ) ), $asked );
+    }
+
+    /** PN-15 */
+    public function testNotifyRequestedAndTheEZContentFunctionsPassIt()
+    {
+        foreach ( array( false, 0, '0' ) as $no )
+        {
+            $this->assertFalse( eZContentOperationCollection::notifyRequested( $no ), var_export( $no, true ) . ' means no' );
+        }
+        foreach ( array( true, 1, '1', null, '', 'false', array() ) as $yes )
+        {
+            $this->assertTrue( eZContentOperationCollection::notifyRequested( $yes ), var_export( $yes, true ) . ' means yes, as for the operation' );
+        }
+        // both methods pass notify through the same answer, not a (bool) cast that makes null a no
+        $source = file_get_contents( 'kernel/classes/ezcontentfunctions.php' );
+        $this->assertSame( 2, substr_count( $source, "'notify' => eZContentOperationCollection::notifyRequested( \$notify )" ) +
+                              substr_count( $source, "'notify'    => eZContentOperationCollection::notifyRequested( \$notify )" ) );
+        $this->assertStringNotContainsString( '(bool)$notify', $source );
+        foreach ( array( 'createAndPublishObject', 'updateAndPublishObject' ) as $method )
+        {
+            $parameter = ( new ReflectionMethod( 'eZContentFunctions', $method ) )->getParameters();
+            $last = end( $parameter );
+            $this->assertSame( 'notify', $last->getName() );
+            $this->assertTrue( $last->getDefaultValue(), "$method() notifies by default, as before" );
+        }
     }
 }

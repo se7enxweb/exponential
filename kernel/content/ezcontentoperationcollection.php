@@ -834,7 +834,7 @@ class eZContentOperationCollection
         // notification): the filter content/notification/create gets whether the publish operation asked for the
         // notification (its parameter notify, false for "Publish without notification") and the ids; only true
         // creates the event. false, 0 and "0" (a caller's or a stored memento's spelling of no) mean no.
-        $notify = !( $notify === false || $notify === 0 || $notify === '0' );
+        $notify = self::notifyRequested( $notify );
         // The class is looked up only when the class filter is on and lists classes
         $classOf = function () use ( $objectID )
         {
@@ -863,7 +863,7 @@ class eZContentOperationCollection
     /**
      * Whether a publication of the class $classIdentifier makes a notification event: always, unless
      * notification.ini [NotificationSettings] NotificationFilterByClassIdentifier is enabled; then only for the class
-     * identifiers in IncludeClasses[] (none when the list is empty). $classIdentifier may be a closure that gives the
+     * identifiers (or class IDs) in IncludeClasses[] (none when the list is empty). $classIdentifier may be a closure that gives the
      * identifier, called only when the list has to be read; a publication whose class is not known (null) is let
      * through, as before the filter.
      *
@@ -894,7 +894,33 @@ class eZContentOperationCollection
         {
             return true;
         }
-        return in_array( (string)$classIdentifier, $included, true );
+        $classIdentifier = (string)$classIdentifier;
+        if ( in_array( $classIdentifier, $included, true ) )
+        {
+            return true;
+        }
+        // A class ID in the list (IncludeClasses[]=16) names its class, as the ID and the identifier do elsewhere in
+        // the settings; without this it would match nothing and quietly stop every notification
+        foreach ( $included as $entry )
+        {
+            if ( ctype_digit( $entry ) && eZContentClass::classIdentifierByID( (int)$entry ) === $classIdentifier )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Whether the publish operation's parameter notify asks for the notification: false, 0 and "0" (a caller's or a
+     * stored memento's spelling of no) mean no; anything else, null and a missing parameter included, means yes.
+     *
+     * @param mixed $notify
+     * @return bool
+     */
+    static public function notifyRequested( $notify )
+    {
+        return !( $notify === false || $notify === 0 || $notify === '0' );
     }
 
     /*!

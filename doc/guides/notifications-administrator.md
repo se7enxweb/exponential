@@ -288,7 +288,8 @@ IncludeClasses[]=article
 IncludeClasses[]=file
 ```
 
-Every other class then counts as published without notification. The default (`disabled`) notifies for every class.
+Every other class then counts as published without notification. A class ID in the list (`IncludeClasses[]=16`) names
+its class as well. The default (`disabled`) notifies for every class.
 
 The whole story: [Publish without notification](../features/6.0/publish-without-notification.md).
 

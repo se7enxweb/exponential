@@ -85,7 +85,9 @@ class eZContentFunctions
      *                      - 'remote_id'        : The value for the remoteID  (optional)
      *                      - 'section_id'       : The value for the sectionID (optional)
      * @param bool $notify False publishes without notification (the publish operation's parameter notify): no
-     *                     notification event is made, as with "Publish without notification" in content/edit
+     *                     notification event is made, as with "Publish without notification" in content/edit. The
+     *                     default notifies, as every call without the argument did before it existed; false, 0 and
+     *                     "0" mean no (eZContentOperationCollection::notifyRequested())
      * @return eZContentObject|false An eZContentObject object if success, false otherwise; after the publish
      *                               operation ran, the object as it is now (published, its current version)
      */
@@ -163,7 +165,7 @@ class eZContentFunctions
 
                 $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $contentObject->attribute( 'id' ),
                                                                                              'version' => 1,
-                                                                                             'notify' => (bool)$notify ) );
+                                                                                             'notify' => eZContentOperationCollection::notifyRequested( $notify ) ) );
 
                 // The object instantiated above still says draft and version 1 of nothing published; the publish
                 // operation changed the stored one, so the caller gets that (status, current version, main node)
@@ -236,7 +238,8 @@ class eZContentFunctions
      * @param eZContentObject an eZContentObject object
      * @param array an array with the attributes to update
      * @static
-     * @param bool $notify False publishes without notification (the publish operation's parameter notify)
+     * @param bool $notify False publishes without notification (the publish operation's parameter notify); the
+     *                     default notifies, as before (eZContentOperationCollection::notifyRequested())
      * @return bool true if the object has been successfully updated, false otherwise
      */
     public static function updateAndPublishObject( eZContentObject $object, array $params, $notify = true )
@@ -331,7 +334,7 @@ class eZContentFunctions
 
         $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newVersion->attribute( 'contentobject_id' ),
                                                                                      'version'   => $newVersion->attribute( 'version' ),
-                                                                                     'notify'    => (bool)$notify ) );
+                                                                                     'notify'    => eZContentOperationCollection::notifyRequested( $notify ) ) );
 
         if( $operationResult['status'] == eZModuleOperationInfo::STATUS_CONTINUE )
             return true;
