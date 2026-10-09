@@ -206,6 +206,45 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 0750, $this->mode( $this->dir . '/plain' ) );
     }
 
+    /** FM-02: with a pair that does not match, what is written without a mode of its own keeps to both limits */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testAnUnmatchedPairKeepsPlainFilesInsideBothLimits()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits' );
+        }
+        define( 'EZP_DIR_MODE_MAX', 0750 );
+        define( 'EZP_FILE_MODE_MAX', 0600 );
+        $this->assertSame( 0067, eZFile::creationUmask() );
+        umask( 0 );
+        eZFile::applyCreationUmask();
+        file_put_contents( $this->dir . '/plain.txt', 'x' );
+        mkdir( $this->dir . '/plain' );
+        $this->assertSame( 0600, $this->mode( $this->dir . '/plain.txt' ), 'not 0640: the file limit is 0600' );
+        $this->assertSame( 0710, $this->mode( $this->dir . '/plain' ) );
+        $this->assertTrue( eZFile::create( 'x.txt', $this->dir . '/d', 'x' ) );
+        $this->assertSame( 0600, $this->mode( $this->dir . '/d/x.txt' ) );
+    }
+
+    /** FM-02: a file limit wider than the directory limit cannot widen a directory made without a mode of its own */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testAWiderFileLimitDoesNotWidenPlainDirectories()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits' );
+        }
+        define( 'EZP_DIR_MODE_MAX', 0700 );
+        define( 'EZP_FILE_MODE_MAX', 0666 );
+        umask( 0 );
+        eZFile::applyCreationUmask();
+        mkdir( $this->dir . '/plain' );
+        $this->assertSame( 0700, $this->mode( $this->dir . '/plain' ), 'not 0766' );
+    }
+
     /** FM-05 */
     #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
     #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
@@ -448,6 +487,23 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
             }
         }
         $this->assertSame( array(), $stale, 'moved to the helpers: lower or remove the entry in BYPASSES' );
+    }
+
+    /** FM-04: command line scripts without the .php ending are scanned too (bin/php/console made scripts 0755) */
+    public function testTheScannerReadsCommandLineScriptsWithoutAnEnding()
+    {
+        $files = expFileModeCalls::files( getcwd() );
+        $this->assertContains( 'bin/php/console', $files );
+        $this->assertContains( 'kernel/classes/ezpackage.php', $files );
+        $this->assertNotContains( 'bin/modfix.sh', $files );
+        $this->assertFalse( expFileModeCalls::isPhpScript( getcwd() . '/bin/linux/doxygen' ), 'a binary' );
+        $script = $this->dir . '/runme';
+        foreach ( array( "#!/usr/bin/env php\n<?php" => true, "#!/usr/bin/php8.5 -q\n" => true,
+                         "#!/bin/sh\nphp x" => false, "<?php\n" => false ) as $head => $isPhp )
+        {
+            file_put_contents( $script, $head );
+            $this->assertSame( $isPhp, expFileModeCalls::isPhpScript( $script ), $head );
+        }
     }
 
     /** FM-04 */

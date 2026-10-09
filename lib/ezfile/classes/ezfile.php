@@ -78,10 +78,11 @@ class eZFile
 
     /**
      * The umask to create files and directories with in place of umask( 0 ): 0 without limits (the mode asked for is
-     * the mode the file gets, as before); with them, the bits neither limit allows, so a file fopen() makes (0666) or
-     * a directory mkdir() makes stays inside the limits. A file mode limit narrower than the directory one without its
-     * search bits (0600 with 0750) holds for the files that get their mode set (fileMode()), while files written
-     * without a mode of their own get what the directory limit allows for files (0640).
+     * the mode the file gets, as before); with them, every bit except those both a file (read, write) and a directory
+     * (read, write, search) may have under the limits, so a file fopen() makes (0666) stays inside the file limit and a
+     * directory mkdir() makes (0777) inside the directory limit. For a matching pair (0750/0640, 0770/0660) that is
+     * the bits the directory limit forbids (0027); for another pair what both allow (0750/0600 gives 0067: files 0600,
+     * directories 0710).
      *
      * @param int $keep A umask whose bits stay set (the umask of the process, see applyCreationUmask())
      * @return int
@@ -94,7 +95,9 @@ class eZFile
         {
             return (int)$keep & 0777;
         }
-        return ( (int)$keep | ~( $fileLimit | $dirLimit ) ) & 0777;
+        // a file gets the read and write bits both limits allow, a directory also the search bits of its own limit
+        $allowed = ( $fileLimit & $dirLimit ) | ( $dirLimit & 0111 );
+        return ( (int)$keep | ~$allowed ) & 0777;
     }
 
     /**

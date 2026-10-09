@@ -40,8 +40,8 @@ define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothin
 - One constant is enough: `EZP_FILE_MODE_MAX=0640` alone gives directories 0750 (the search bit wherever reading is
   allowed), `EZP_DIR_MODE_MAX=0750` alone gives files 0640.
 - Set them as a pair whose file limit is the directory limit without the search bits (0750/0640, 0770/0660,
-  0700/0600). With a narrower file limit (0750/0600) the files that get their mode set keep to 0600, but files written
-  without a mode of their own get what the umask lets through for both, 0640.
+  0700/0600). With another pair the umask lets through only what both allow: 0750/0600 gives files 0600 and
+  directories 0710 (search, no listing for the group), also where the code asks for 0777.
 - They are constants, not settings, because they have to hold before the INI files are read (the INI cache, the
   autoload arrays, early log lines), and a security limit belongs to the configuration of the server, not to a
   setting an administrator can change in the admin interface.
@@ -77,7 +77,7 @@ find var -type f -exec chmod 0640 {} +
 | `eZFile::fileMode( $mode )` | `$mode` limited to `EZP_FILE_MODE_MAX` |
 | `eZDir::dirMode( $mode )` | `$mode` limited to `EZP_DIR_MODE_MAX` |
 | `eZFile::executableMode( $mode )` | `$mode` of a file that has to stay executable (a downloaded binary), limited by `EZP_DIR_MODE_MAX`, which keeps the execute bits it allows (0755 with 0750 gives 0750) |
-| `eZFile::creationUmask()` | The umask to write with in place of `umask( 0 )`: 0 without limits (as before), else the bits neither limit allows (0027 for 0750/0640) |
+| `eZFile::creationUmask()` | The umask to write with in place of `umask( 0 )`: 0 without limits (as before), else every bit the limits do not both allow (0027 for 0750/0640, 0067 for 0750/0600) |
 | `eZFile::applyCreationUmask()` | Called by `autoload.php` after `config.php` when a limit is set: adds those bits to the umask of the process, so `fopen()`, `file_put_contents()` and `touch()` stay inside the limits too. Under Velocity this holds for the whole worker |
 
 `eZDir::mkdir()` (and the parents of a recursive one), `eZDir::directoryPermission()`, `eZFile::create()`, `eZLog`,

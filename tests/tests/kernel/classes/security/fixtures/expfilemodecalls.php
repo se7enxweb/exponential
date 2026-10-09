@@ -212,11 +212,13 @@ class expFileModeCalls
     }
 
     /**
-     * The PHP files under PATHS, relative to $root, without vendor directories.
+     * The PHP files under PATHS, relative to $root, without vendor directories: *.php and the command line scripts
+     * without that ending whose first line runs PHP (bin/php/console).
      *
+     * @param string $root
      * @return string[]
      */
-    protected static function files( $root )
+    public static function files( $root )
     {
         $files = array();
         foreach ( self::PATHS as $path )
@@ -235,8 +237,8 @@ class expFileModeCalls
             foreach ( $iterator as $file )
             {
                 $relative = substr( $file->getPathname(), strlen( $root ) + 1 );
-                if ( $file->isFile() && substr( $relative, -4 ) === '.php' && strpos( $relative, '/vendor/' ) === false &&
-                     strpos( $relative, '/node_modules/' ) === false )
+                if ( $file->isFile() && ( substr( $relative, -4 ) === '.php' || self::isPhpScript( $file->getPathname() ) ) &&
+                     strpos( $relative, '/vendor/' ) === false && strpos( $relative, '/node_modules/' ) === false )
                 {
                     $files[] = $relative;
                 }
@@ -244,5 +246,27 @@ class expFileModeCalls
         }
         sort( $files );
         return $files;
+    }
+
+    /**
+     * Whether $path is a command line script without an ending whose first line runs PHP (#!/usr/bin/env php).
+     *
+     * @param string $path
+     * @return bool
+     */
+    public static function isPhpScript( $path )
+    {
+        if ( strpos( basename( $path ), '.' ) !== false )
+        {
+            return false;
+        }
+        $handle = @fopen( $path, 'rb' );
+        if ( !$handle )
+        {
+            return false;
+        }
+        $line = (string)fgets( $handle, 128 );
+        fclose( $handle );
+        return (bool)preg_match( '~^#!.*[\/\s]php[0-9.]*(\s|$)~', $line );
     }
 }

@@ -792,7 +792,7 @@ $runCommand = function( array $cmd, array $forwardArgs )
         }
         else
         {
-            if ( !is_executable( $scriptPath ) ) chmod( $scriptPath, 0755 );
+            if ( !is_executable( $scriptPath ) ) chmod( $scriptPath, eZFile::executableMode( 0755 ) );
             $parts = array( escapeshellarg( $cmd['binary'] ), escapeshellarg( $scriptPath ) );
         }
 
