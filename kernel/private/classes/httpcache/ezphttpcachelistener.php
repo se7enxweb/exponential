@@ -369,6 +369,10 @@ class ezpHttpCacheListener
             return 'status ' . $code;
         if ( !is_string( $html ) || $html === '' )
             return 'empty';
+        // request-shield in front marked the request as not for a cache (a made-up parameter or path,
+        // a method): answered, never stored -- random addresses cannot fill the cache.
+        if ( ( $_SERVER['REQUEST_SHIELD'] ?? '' ) === 'allow-uncached' )
+            return 'request-shield: not for a cache';
         // A request rule decided, or could decide another request for this
         // page otherwise (ezpRequestRuleKernel::keepOutOfSharedCaches())
         if ( !empty( $GLOBALS['ezpRequestRuleNoStore'] ) )
@@ -549,14 +553,22 @@ class ezpHttpCacheListener
             $contract->purgeTags( array( 'ez-all' ) );
             return;
         }
+        // As Ibexa's HTTP cache purges (AbstractSubscriber: getLocationTags(), getContentTags()), so a
+        // Varnish or CDN in front that follows its tags purges the same pages: each node's location,
+        // its children's lists and the pages relating to it; each object's content and the pages
+        // relating to it.
         $tags = array();
         foreach ( (array)$nodeList as $n )
         {
             $tags[] = 'l' . (int)$n;
             $tags[] = 'pl' . (int)$n;
+            $tags[] = 'rl' . (int)$n;
         }
         foreach ( (array)$objectList as $o )
+        {
             $tags[] = 'c' . (int)$o;
+            $tags[] = 'r' . (int)$o;
+        }
         // Blocks that run queries may show anything that changed.
         $tags[] = 'dq';
         $contract->purgeTags( array_values( array_unique( $tags ) ) );

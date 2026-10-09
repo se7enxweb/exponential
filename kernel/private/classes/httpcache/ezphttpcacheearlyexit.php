@@ -44,6 +44,8 @@ if ( PHP_SAPI !== 'cli' && !defined( 'EXP_HTTPCACHE_EARLY_EXIT_DONE' ) )
             'cookies' => $_COOKIE,
             'acceptEncoding' => $_SERVER['HTTP_ACCEPT_ENCODING'] ?? '',
             'ifNoneMatch' => $_SERVER['HTTP_IF_NONE_MATCH'] ?? null,
+            // request-shield, when it ran first: the page this request may be answered from.
+            'lookupUri' => $_SERVER['REQUEST_SHIELD_CACHE_LOOKUP'] ?? null,
         ) );
         if ( $response === null )
         {
