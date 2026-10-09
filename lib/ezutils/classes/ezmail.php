@@ -92,6 +92,15 @@ class eZMail
 
         if ( $ini->hasVariable( 'MailSettings', 'ContentType' ) )
             $this->setContentType( $ini->variable( 'MailSettings', 'ContentType' ) );
+
+        // One name for the mails of the whole site, instead of a setUserAgent() call before each of them
+        if ( $ini->hasVariable( 'MailSettings', 'UserAgent' ) )
+        {
+            $userAgent = $ini->variable( 'MailSettings', 'UserAgent' );
+            $userAgent = is_string( $userAgent ) ? trim( self::cleanHeaderValue( $userAgent ) ) : '';
+            if ( $userAgent !== '' )
+                $this->setUserAgent( $userAgent );
+        }
     }
 
     /*!
@@ -410,6 +419,10 @@ class eZMail
     {
         $agent = self::cleanHeaderValue( $agent );
         $this->Mail->setHeader( 'User-Agent', $agent );
+        // ezcMail writes its own User-Agent when it generates the headers (SMTP); ezpMail keeps this one instead.
+        // An extension may have put a plain ezcMail in its place, whose magic properties refuse a new one.
+        if ( $this->Mail instanceof ezpMail )
+            $this->Mail->userAgent = $agent;
         $this->UserAgent = $agent;
     }
 

@@ -22,7 +22,6 @@ class eZSendmailTransport extends eZMailTransport
     function sendMail( eZMail $mail )
     {
         $ini = eZINI::instance();
-        $sendmailOptions = '';
         $emailFrom = $mail->sender();
         $emailSender = isset( $emailFrom['email'] ) ? $emailFrom['email'] : false;
         if ( !$emailSender || ( is_countable( $emailSender ) && count( $emailSender) <= 0 ) )
@@ -32,13 +31,8 @@ class eZSendmailTransport extends eZMailTransport
         if ( !eZMail::validate( $emailSender ) )
             $emailSender = false;
 
-        $sendmailOptionsArray = $ini->variable( 'MailSettings', 'SendmailOptions' );
-        if( is_array($sendmailOptionsArray) )
-            $sendmailOptions = implode( ' ', $sendmailOptionsArray );
-        elseif( !is_string($sendmailOptionsArray) )
-            $sendmailOptions = $sendmailOptionsArray;
-        if ( $emailSender )
-            $sendmailOptions .= ' -f' . escapeshellarg( $emailSender );
+        $useEnvelopeSender = static::useEnvelopeSender();
+        $sendmailOptions = $this->sendmailOptions( $emailSender, $useEnvelopeSender );
 
         if( function_exists( 'mail' ) )
         {
@@ -72,7 +66,15 @@ class eZSendmailTransport extends eZMailTransport
                 $excludeHeaders[] = 'Bcc';
             }
 
+            // Without -f the MTA takes the envelope sender from the From header (msmtp --read-envelope-from), so a
+            // mail without a sender of its own gets one for its headers; the caller's mail is the same again afterwards.
+            $previousSender = $useEnvelopeSender ? null : self::ensureFromHeader( $mail );
             $extraHeaders = $mail->headerText( array( 'exclude-headers' => $excludeHeaders ) );
+            if ( $previousSender !== null )
+            {
+                $mail->From = $previousSender['From'];
+                $mail->Mail->from = $previousSender['from'];
+            }
 
             $returnedValue = mail( $receiverEmailText, $mail->subject(), $message, $extraHeaders, $sendmailOptions );
             if ( $returnedValue === false )
@@ -89,6 +91,82 @@ class eZSendmailTransport extends eZMailTransport
         }
 
         return false;
+    }
+
+    /**
+     * The options handed to sendmail: SendmailOptions[] of site.ini, and "-f <sender>" when $useEnvelopeSender.
+     *
+     * @param string|false $emailSender the address of the sender, false for none
+     * @param bool $useEnvelopeSender
+     * @return string
+     */
+    protected function sendmailOptions( $emailSender, $useEnvelopeSender = true )
+    {
+        $ini = eZINI::instance();
+        $sendmailOptions = '';
+        $sendmailOptionsArray = $ini->variable( 'MailSettings', 'SendmailOptions' );
+        if ( is_array( $sendmailOptionsArray ) )
+            $sendmailOptions = implode( ' ', $sendmailOptionsArray );
+        elseif ( !is_string( $sendmailOptionsArray ) )
+            $sendmailOptions = $sendmailOptionsArray;
+        if ( $emailSender && $useEnvelopeSender )
+            $sendmailOptions .= ' -f' . escapeshellarg( $emailSender );
+        return (string)$sendmailOptions;
+    }
+
+    /**
+     * Gives a mail without a sender of its own the first valid one of EmailSender and AdminEmail, written as
+     * "address" or as "Name <address>". A mail has a sender of its own when it has a sender address or a From extra
+     * header (eZMail::addExtraHeader( 'From', ... )), which is then left as it is. Nothing changes when neither
+     * setting is valid.
+     *
+     * @param eZMail $mail
+     * @return array|null the sender before ('From' => eZMail::$From, 'from' => ezcMail::$from) when it was changed,
+     *                    else null
+     */
+    protected static function ensureFromHeader( eZMail $mail )
+    {
+        $from = $mail->sender( false );
+        if ( is_array( $from ) && trim( (string)( $from['email'] ?? '' ) ) !== '' )
+            return null;
+        if ( is_array( $mail->ExtraHeaders ) )
+        {
+            foreach ( $mail->ExtraHeaders as $key => $header )
+            {
+                $name = is_array( $header ) && isset( $header['name'] ) ? $header['name'] : $key;
+                if ( is_string( $name ) && strcasecmp( trim( $name ), 'From' ) === 0 )
+                    return null;
+            }
+        }
+        $ini = eZINI::instance();
+        foreach ( array( 'EmailSender', 'AdminEmail' ) as $setting )
+        {
+            $text = $ini->hasVariable( 'MailSettings', $setting ) ? $ini->variable( 'MailSettings', $setting ) : '';
+            if ( !is_string( $text ) || trim( $text ) === '' )
+                continue;
+            eZMail::extractEmail( eZMail::cleanHeaderValue( $text ), $address, $name );
+            if ( is_string( $address ) && eZMail::validate( $address ) )
+            {
+                $previous = array( 'From' => $mail->From, 'from' => $mail->Mail->from );
+                $mail->setSenderText( $text );
+                return $previous;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Whether sendmail is told the envelope sender with -f (site.ini [MailSettings] SendmailEnvelopeSender, enabled
+     * unless set to disabled).
+     *
+     * @return bool
+     */
+    protected static function useEnvelopeSender()
+    {
+        $ini = eZINI::instance();
+        if ( !$ini->hasVariable( 'MailSettings', 'SendmailEnvelopeSender' ) )
+            return true;
+        return $ini->variable( 'MailSettings', 'SendmailEnvelopeSender' ) !== 'disabled';
     }
 }
 
