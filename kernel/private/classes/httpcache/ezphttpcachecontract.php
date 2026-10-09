@@ -1143,10 +1143,10 @@ class ezpHttpCacheContract
         {
             // request-shield in front (set cache-unknown-query hit-only) names the page without the
             // parameters no key holds: answered from it, if kept; never stored for this address (the
-            // listener sees the query is not allowed).
-            // Taken only when it names exactly this request's own parameters the key holds: a shield whose
-            // cache-query leaves out one of QueryStringParameters (page) would otherwise answer
-            // /news?page=2&x=7 with /news, and a value from anywhere else can name no other variant.
+            // listener sees the query is not allowed). Taken only when it names exactly this request's
+            // own parameters the key holds: a shield whose cache-query leaves out one of
+            // QueryStringParameters (page) would otherwise answer /news?page=2&x=7 with /news, and a
+            // value from anywhere else can name no other variant.
             $lookup = self::shieldLookupUri( $uri, $request['lookupUri'] ?? null );
             if ( $lookup === null || self::normalizeURI( $lookup ) !== self::normalizeURI( $this->keyedUri( $uri ) ) )
                 return $this->miss( 'query string' );

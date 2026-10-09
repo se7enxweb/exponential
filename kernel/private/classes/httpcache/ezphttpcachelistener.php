@@ -553,10 +553,10 @@ class ezpHttpCacheListener
             $contract->purgeTags( array( 'ez-all' ) );
             return;
         }
-        // As Ibexa's HTTP cache purges (AbstractSubscriber: getLocationTags(), getContentTags()), so a
-        // Varnish or CDN in front that follows its tags purges the same pages: each node's location,
-        // its children's lists and the pages relating to it; each object's content and the pages
-        // relating to it.
+        // The tags Ibexa's HTTP cache purges (AbstractSubscriber: getLocationTags(), getContentTags()):
+        // each node's location, its children's lists and the pages relating to it; each object's content
+        // and the pages relating to it. Only this cache's own entries are purged (nothing is sent to a
+        // proxy); no page of the kernel carries r or rl, an extension may (addTags()).
         $tags = array();
         foreach ( (array)$nodeList as $n )
         {
