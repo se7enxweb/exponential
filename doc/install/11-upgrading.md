@@ -339,8 +339,8 @@ adds the tables and columns of the line: the PDF export footer
 table `ezrss_export_opml_item`), the audit index (`expaudit_cursor`, `expaudit_event`, `expaudit_file`), bookmark
 folders (`expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority`), the e-mail preferences
 (`expmail_category`, `expmail_consent_log`, `expmail_pending`, `expmail_preference`, `expmail_suppression`) and who
-moved an object to the trash (`ezcontentobject_trash.trashed_by`, `trashed_via`; required before the new code moves
-content to the trash, then run `php update/common/scripts/6.0/movetrashrecords.php`, see
+moved an object to the trash (`ezcontentobject_trash.trashed_by`, `trashed_via`; until they exist the kernel keeps
+writing `<VarDir>/trash/trashed.json`, afterwards run `php update/common/scripts/6.0/movetrashrecords.php`, see
 [the trash view](../bc/6.0/trash.md#where-trashed-by-is-kept)).
 
 Apply it **once, whole, in order**. If the database already has a column, the statement fails and names it; skip only

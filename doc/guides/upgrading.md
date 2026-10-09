@@ -154,7 +154,7 @@ php update/common/scripts/6.0/createaudittables.php
 php update/common/scripts/6.0/movetrashrecords.php --remove-file
 ```
 
-Without `trashed_by` and `trashed_via` moving content to the trash fails; see
+Until `trashed_by` and `trashed_via` exist the kernel keeps writing `trashed.json`; see
 [the trash view](../bc/6.0/trash.md#where-trashed-by-is-kept).
 
 Check the version row (same query as at the top; expected `6.0.15stable` after this file).
