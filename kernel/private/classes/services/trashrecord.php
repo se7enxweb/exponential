@@ -169,8 +169,7 @@ class TrashRecord
             $userID = isset( $entry['user_id'] ) ? (int)$entry['user_id'] : 0;
             if ( $userID <= 0 )
                 continue;
-            $via = isset( $entry['via'] ) ? (string)$entry['via'] : '';
-            $via = function_exists( 'mb_substr' ) ? mb_substr( $via, 0, 100, 'UTF-8' ) : substr( $via, 0, 100 );
+            $via = \eZContentObjectTrashNode::cleanVia( isset( $entry['via'] ) ? (string)$entry['via'] : '' );
             if ( !$dryRun )
                 $db->query( 'UPDATE ezcontentobject_trash SET trashed_by = ' . $userID . ", trashed_via = '" . $db->escapeString( $via ) . "' "
                           . 'WHERE node_id = ' . (int)$row['node_id'] . ' AND trashed_by = 0' );
@@ -201,14 +200,8 @@ class TrashRecord
      */
     public static function columnsExist( $db )
     {
-        $rows = $db->arrayQuery( 'SELECT * FROM ezcontentobject_trash', array( 'limit' => 1 ) );
-        if ( !is_array( $rows ) )
-            return false;
-        if ( $rows )
-            return array_key_exists( 'trashed_by', $rows[0] ) && array_key_exists( 'trashed_via', $rows[0] );
-        // an empty trash: ask for the columns themselves
-        $probe = $db->arrayQuery( 'SELECT trashed_by, trashed_via FROM ezcontentobject_trash', array( 'limit' => 1 ) );
-        return is_array( $probe );
+        // the database's catalogue, never a query on the columns: one that fails stops the script
+        return \eZContentObjectTrashNode::hasTrashedByColumns( true );
     }
 
     /**

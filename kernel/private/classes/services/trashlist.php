@@ -135,6 +135,21 @@ class TrashList
             $params['TrashedFrom'] = (int)strtotime( $filters['from'] . ' 00:00:00' );
         if ( $filters['to'] )
             $params['TrashedTo'] = (int)strtotime( $filters['to'] . ' 23:59:59' );
+        // before the database update there is no column to filter on: everything known comes from the old file
+        if ( $filters['trashed_by'] && !\eZContentObjectTrashNode::hasTrashedByColumns() )
+        {
+            $ids = array();
+            foreach ( $context['records'] as $objectID => $entry )
+            {
+                if ( $filters['trashed_by'] === 'unknown' || (int)$entry['user_id'] === (int)$filters['trashed_by'] )
+                    $ids[] = (int)$objectID;
+            }
+            if ( $filters['trashed_by'] === 'unknown' )
+                $params['ExcludeContentObjectIDList'] = $ids;
+            else
+                $params['ContentObjectIDList'] = $ids;
+            return $params;
+        }
         // the column in SQL; the few rows known only from the old file as a list of their objects
         if ( $filters['trashed_by'] === 'unknown' )
         {
