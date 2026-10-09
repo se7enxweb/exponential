@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-174341431ad037895fc081b75a98146d  doc/changelogs/6.0/6.0.15.md
+b62696cca148bd425c30087644a1a53b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3884,7 +3884,7 @@ b837bb8f78e8b41765d74c2245edf6d6  doc/install/05-setup-wizard.md
 d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
 4f5a89d708dfeff88bb50227abd3d599  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
-14135918bd5d98cea3d5225382dafde8  doc/install/10-after-installing.md
+cd0c9bd0b0cf9023c5c81dcf3662ceba  doc/install/10-after-installing.md
 194f0353ff6ee7e056cb6177d66fd27e  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
 08f745b103ff5fc101954ae37d01e58c  doc/install/13-security-hardening.md
@@ -6342,7 +6342,7 @@ ad8065df2ea00f70b5e30b072ab72827  lib/ezutils/classes/ezoperationmemento.php
 1451d0c978604b5009244c5b63612641  lib/ezutils/classes/ezprocess.php
 062090dfa05bec0757d7ba2901de8788  lib/ezutils/classes/ezregexpvalidator.php
 f607c04ba265e18c3ddbd633162270bd  lib/ezutils/classes/ezremoteidutility.php
-1b6bbf11223c1f1af05c84e6a3a60c61  lib/ezutils/classes/ezsendmailtransport.php
+9f1db4169edbb509187997cebc76b147  lib/ezutils/classes/ezsendmailtransport.php
 8332652b485a80bf465c56d2d240dd63  lib/ezutils/classes/ezsmtptransport.php
 0db1d3279d37725c3a0bc60388c04861  lib/ezutils/classes/ezstringutils.php
 a8d1242d46bdb6161351fa3337aee753  lib/ezutils/classes/ezsys.php
@@ -6408,7 +6408,7 @@ fce5a3e3f0663f62cde1337a65d9ba06  settings/package.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-7abfd4ddf01e82a65dec30a52a4c1884  settings/site.ini
+448ae6fdd282bc0391d4df98849f4eff  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7859,7 +7859,7 @@ f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
 ad9b40230e54fa366826f27052a68264  tests/tests/lib/ezutils/eZModuleFunctionInfoTest.php
 4de84b483d83f06ae1d82c0bfacee32c  tests/tests/lib/ezutils/eZModuleTest.php
 b63b08251a27ea86e14255f2d343ba65  tests/tests/lib/ezutils/eZPHPCreatorRoundTripTest.php
-c9e5793f0d01f8c0b678bd5641b04966  tests/tests/lib/ezutils/eZSendmailEnvelopeSenderTest.php
+853e2b1329fe8ce4ae8a630a21c3bc04  tests/tests/lib/ezutils/eZSendmailEnvelopeSenderTest.php
 a46d1ff58bc1d58f91c2cbadffe983bf  tests/tests/lib/ezutils/eZSiteLogAndExpiryPathsTest.php
 295ccf384fbb67b358a39cf87d5b809d  tests/tests/lib/ezutils/eZSysInfoTest.php
 38b8261a40b5efcedacee8de80588e08  tests/tests/lib/ezutils/eZSysTest.php
@@ -7889,7 +7889,7 @@ f3a2a3b1a63a674704b84839c3f7870a  tests/tests/lib/ezutils/fixtures/engine_archiv
 42a1aa871e8743927795bebb0178fc9b  tests/tests/lib/ezutils/fixtures/engine_archive_roots.php
 5af0571f8641dc73f1be006a0ac65d6d  tests/tests/lib/ezutils/fixtures/fatal_user_error_child.php
 9f3c10075ebe68667bb847d0073e15aa  tests/tests/lib/ezutils/fixtures/sendmail_capture.php
-7961eb59dc31b64e437c302903d72e25  tests/tests/lib/ezutils/fixtures/sendmail_envelope_child.php
+466cc5fa8a69dfb41333ea86a577b8db  tests/tests/lib/ezutils/fixtures/sendmail_envelope_child.php
 9701747cd273b064a86365f34fc6090e  tests/tests/lib/ezutils/server/README.rst
 3815ba59cd32518a496671af5f546aed  tests/tests/lib/ezutils/server/nvh/index/feebsd_lighttpd_fastcgi_php53.php
 d5a3b79e8b4cd9983204272c12329340  tests/tests/lib/ezutils/server/nvh/index/linux_apache2216_mod_php533.php
