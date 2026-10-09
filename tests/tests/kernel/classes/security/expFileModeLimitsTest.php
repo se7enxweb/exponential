@@ -456,6 +456,17 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         exec( escapeshellarg( PHP_BINARY ) . ' -n -r ' . escapeshellarg( $code ) . ' 2>&1', $output, $status );
         $this->assertSame( 0, $status, implode( "\n", $output ) );
         $this->assertSame( 'plain ' . 0660 . ' ' . 0770, implode( "\n", $output ) );
+
+        // the repair queue alone: loading it needs nothing else (it is read out of the engine archive on its own and
+        // has to work when libraries are broken); the helpers are loaded when a mode is first asked for
+        $code = 'define( "EZP_DIR_MODE_MAX", 0750 ); require "lib/ezutils/classes/ezprepairqueue.php"; ' .
+                'echo class_exists( "eZFile", false ) ? "loaded" : "lazy", " ", ' .
+                'Closure::bind( function () { return ezpRepairQueue::dirMode( 0777 ); }, null, "ezpRepairQueue" )(), " ", ' .
+                'class_exists( "eZDir", false ) ? "loaded" : "missing";';
+        $output = array();
+        exec( escapeshellarg( PHP_BINARY ) . ' -n -r ' . escapeshellarg( $code ) . ' 2>&1', $output, $status );
+        $this->assertSame( 0, $status, implode( "\n", $output ) );
+        $this->assertSame( 'lazy ' . 0750 . ' loaded', implode( "\n", $output ) );
     }
 
     /** FM-04 */

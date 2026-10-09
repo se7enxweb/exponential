@@ -34,19 +34,53 @@
  * The key is used once: starting a repair removes it. State lives in var/repair/.
  */
 
-// Plain PHP, loaded by bin/php/exprepair.php and index.php ?exp_repair without the autoloader: the mode helpers are
-// loaded here
-if ( !class_exists( 'eZFile', false ) )
-    require_once dirname( __DIR__, 3 ) . '/lib/ezfile/classes/ezfile.php';
-if ( !class_exists( 'eZDir', false ) )
-    require_once dirname( __DIR__, 3 ) . '/lib/ezfile/classes/ezdir.php';
-
 class ezpRepairQueue
 {
     const SETTINGS = 'settings/override/exprepair.ini.append.php';
     const STATE = 'var/repair';
     const MAX_FAILURES = 5;
     const FAILURE_WINDOW = 900;
+
+    /**
+     * $mode within EZP_FILE_MODE_MAX (eZFile::fileMode()). This class is plain PHP, loaded without the autoloader
+     * (bin/php/exprepair.php, index.php ?exp_repair), so the helpers of lib/ezfile are loaded when they are first
+     * needed; a repair has to work even when they cannot be, and then the mode asked for is kept.
+     *
+     * @param int $mode
+     * @return int
+     */
+    private static function fileMode( $mode )
+    {
+        return self::loadModeHelpers() ? eZFile::fileMode( $mode ) : $mode;
+    }
+
+    /**
+     * $mode within EZP_DIR_MODE_MAX (eZDir::dirMode()); see fileMode().
+     *
+     * @param int $mode
+     * @return int
+     */
+    private static function dirMode( $mode )
+    {
+        return self::loadModeHelpers() ? eZDir::dirMode( $mode ) : $mode;
+    }
+
+    /**
+     * Loads eZFile and eZDir from the installation (next to this file, also inside the engine archive) unless they
+     * are loaded already.
+     *
+     * @return bool Whether both are available
+     */
+    private static function loadModeHelpers()
+    {
+        foreach ( array( 'eZFile' => 'ezfile.php', 'eZDir' => 'ezdir.php' ) as $class => $file )
+        {
+            $path = dirname( __DIR__, 3 ) . '/lib/ezfile/classes/' . $file;
+            if ( !class_exists( $class, false ) && is_file( $path ) )
+                require_once $path;
+        }
+        return class_exists( 'eZFile', false ) && class_exists( 'eZDir', false );
+    }
 
     /** @var array id => title, in order */
     public static $steps = array(
@@ -84,10 +118,10 @@ class ezpRepairQueue
               . 'Enabled=' . ( $s['Enabled'] ? 'true' : 'false' ) . "\nKeyHash=" . $s['KeyHash'] . "\n"
               . ( $s['Composer'] !== '' ? 'Composer=' . $s['Composer'] . "\n" : '' ) . "\n*/ ?>\n";
         if ( !is_dir( dirname( $file ) ) )
-            mkdir( dirname( $file ), eZDir::dirMode( 0775 ), true );
+            mkdir( dirname( $file ), self::dirMode( 0775 ), true );
         $before = self::settings();
         file_put_contents( $file, $text, LOCK_EX );
-        @chmod( $file, eZFile::fileMode( 0640 ) );
+        @chmod( $file, self::fileMode( 0640 ) );
 
         // Audit (doc/bc/6.0/audit.md, system.repair.queue): whether a key is set, never the key or its hash. The
         // audit may be one of the things missing here, so it is only asked for when its class can be loaded.
@@ -138,7 +172,7 @@ class ezpRepairQueue
         $d = self::root() . '/' . self::STATE;
         if ( !is_dir( $d ) )
         {
-            mkdir( $d, eZDir::dirMode( 0770 ), true );
+            mkdir( $d, self::dirMode( 0770 ), true );
             file_put_contents( "$d/.htaccess", "Require all denied\n" );
         }
         return $d;
