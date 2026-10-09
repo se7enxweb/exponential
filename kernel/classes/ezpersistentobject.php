@@ -150,7 +150,7 @@ class eZPersistentObject
             if( is_numeric( $key ) ) // $fields is not an associative array
             {
                 if ( array_key_exists( $val,  $fieldDefs ) &&
-                     array_key_exists( 'short_name', $fieldDefs[$val] ) )
+                     is_array( $fieldDefs[$val] ) && array_key_exists( 'short_name', $fieldDefs[$val] ) )
                 {
                     $short_fields_names[$key] = $fieldDefs[$val]['short_name'];
                 }
@@ -160,7 +160,7 @@ class eZPersistentObject
             else // $fields is an associative array
             {
                 if ( array_key_exists( $key,  $fieldDefs ) &&
-                     array_key_exists( 'short_name', $fieldDefs[$key] ) )
+                     is_array( $fieldDefs[$key] ) && array_key_exists( 'short_name', $fieldDefs[$key] ) )
                 {
                     $newkey = $fieldDefs[$key]['short_name'];
                 }
@@ -195,7 +195,8 @@ class eZPersistentObject
                 continue;
             }
             $shortName = $fieldDefinition['short_name'];
-            if ( !isset( $fields[$shortName] ) )
+            // A column that is NULL is renamed too (isset() alone would leave it under its short name)
+            if ( !isset( $fields[$shortName] ) && !( is_array( $fields ) && array_key_exists( $shortName, $fields ) ) )
             {
                 continue;
             }
@@ -739,7 +740,7 @@ class eZPersistentObject
                         else
                             $field_text_entry = $use_field_names[$key] . "=" . sprintf( '%d', $value );
                     }
-                    else if ( in_array( $use_field_names[$key], $doNotEscapeFields ) )
+                    else if ( in_array( $key, $doNotEscapeFields ) )
                     {
                         $field_text_entry = $use_field_names[$key] . "=" .  $changedValueFields[$key];
                     }
@@ -1047,6 +1048,7 @@ class eZPersistentObject
                 {
                     $sort_list = $def["sort"];
                 }
+                eZPersistentObject::replaceFieldsWithShortNames( $db, $fields, $sort_list );
                 if ( count( $sort_list ) > 0 )
                 {
                     $sort_text = " ORDER BY ";
@@ -1070,6 +1072,7 @@ class eZPersistentObject
                 $grouping_list = isset( $def["grouping"] ) ? $def["grouping"] : array();
                 if ( is_array( $grouping ) )
                     $grouping_list = $grouping;
+                eZPersistentObject::replaceFieldsWithShortNames( $db, $fields, $grouping_list );
                 if ( count( $grouping_list ) > 0 )
                 {
                     $grouping_text = " GROUP BY ";
@@ -1340,10 +1343,13 @@ class eZPersistentObject
             return 1;
         }
 
+        // Columns by their short names where the database uses them (Oracle), as in fetchObjectList()
+        eZPersistentObject::replaceFieldsWithShortNames( $db, $def['fields'], $conditions );
+        $orderColumn = eZPersistentObject::getShortAttributeName( $db, $def, $orderField );
         $cond_text = eZPersistentObject::conditionText( $conditions );
-        $rows = $db->arrayQuery( "SELECT MAX($orderField) AS $orderField FROM $table $cond_text" );
-        if ( count( $rows ) > 0 and isset( $rows[0][$orderField] ) )
-            return (int)$rows[0][$orderField] + 1;
+        $rows = $db->arrayQuery( "SELECT MAX($orderColumn) AS $orderColumn FROM $table $cond_text" );
+        if ( count( $rows ) > 0 and isset( $rows[0][$orderColumn] ) )
+            return (int)$rows[0][$orderColumn] + 1;
         else
             return 1;
     }
@@ -1399,10 +1405,24 @@ class eZPersistentObject
                                                       array( $order_id => $order_type ),
                                                       array( "length" => 2 ),
                                                       false );
+        // The rows come back with the long names; the UPDATEs below name the columns as the table does, by their
+        // short names where the database uses them (Oracle)
+        $columnKeys = $keys;
+        $columnRows = $rows;
+        if ( $db->useShortNames() && is_array( $columnRows ) )
+        {
+            eZPersistentObject::replaceFieldsWithShortNames( $db, $def['fields'], $columnKeys );
+            foreach ( $columnRows as &$columnRow )
+            {
+                eZPersistentObject::replaceFieldsWithShortNames( $db, $def['fields'], $columnRow );
+            }
+            unset( $columnRow );
+        }
+        $orderColumn = eZPersistentObject::getShortAttributeName( $db, $def, $order_id );
         if ( count( $rows ) == 2 )
         {
-            $swapSQL1 = eZPersistentObject::swapRow( $table, $keys, $order_id, $rows, 1, 0 );
-            $swapSQL2 = eZPersistentObject::swapRow( $table, $keys, $order_id, $rows, 0, 1 );
+            $swapSQL1 = eZPersistentObject::swapRow( $table, $columnKeys, $orderColumn, $columnRows, 1, 0 );
+            $swapSQL2 = eZPersistentObject::swapRow( $table, $columnKeys, $orderColumn, $columnRows, 0, 1 );
             $db->begin();
             $db->query( $swapSQL1 );
             $db->query( $swapSQL2 );
@@ -1416,8 +1436,8 @@ class eZPersistentObject
                                                          array( $order_id => $order_type ),
                                                          array( "length" => 1 ),
                                                          false );
-            $where_text = eZPersistentObject::conditionTextByRow( $keys, $rows[0] );
-            $db->query( "UPDATE $table SET $order_id='" . ( $tmp[0][$order_id] + $order_add ) .
+            $where_text = eZPersistentObject::conditionTextByRow( $columnKeys, $columnRows[0] );
+            $db->query( "UPDATE $table SET $orderColumn='" . ( $tmp[0][$order_id] + $order_add ) .
                         "'$where_text"  );
         }
     }
@@ -1527,6 +1547,8 @@ class eZPersistentObject
         foreach( $updateFields as $field => $value )
         {
             $fieldDef = $fields[ $field ];
+            // The column by its short name where the database uses them (Oracle), as in fetchObjectList()
+            $column = eZPersistentObject::getShortAttributeName( $db, $def, $field );
             $numericDataTypes = array( 'integer', 'float', 'double' );
             if ( strlen( $value ) == 0 &&
                  is_array( $fieldDef ) &&
@@ -1553,20 +1575,21 @@ class eZPersistentObject
             if ( $i > 0 )
                 $query .= ', ';
             if ( $valueBound )
-                $query .= $field . "=" . $value;
+                $query .= $column . "=" . $value;
             else
-                $query .= $field . "='" . $db->escapeString( $value ) . "'";
+                $query .= $column . "='" . $db->escapeString( $value ) . "'";
             ++$i;
         }
         $query .= ' WHERE ';
         $i = 0;
         foreach( $conditions as $conditionKey => $condition )
         {
+            $conditionColumn = eZPersistentObject::getShortAttributeName( $db, $def, $conditionKey );
             if ( $i > 0 )
                 $query .= ' AND ';
             if ( is_array( $condition ) )
             {
-                $query .= $conditionKey . ' IN (';
+                $query .= $conditionColumn . ' IN (';
                 $j = 0;
                 foreach( $condition as $conditionValue )
                 {
@@ -1578,7 +1601,7 @@ class eZPersistentObject
                 $query .= ')';
             }
             else
-                $query .= $conditionKey . "='" . $db->escapeString( $condition ) . "'";
+                $query .= $conditionColumn . "='" . $db->escapeString( $condition ) . "'";
             ++$i;
         }
         $db->query( $query );
@@ -1742,7 +1765,7 @@ class eZPersistentObject
     {
         $fields = $def['fields'];
 
-        if ( $db->useShortNames() && isset( $fields[$attrName] ) && array_key_exists( 'short_name', $fields[$attrName] ) && $fields[$attrName]['short_name'] )
+        if ( $db->useShortNames() && isset( $fields[$attrName] ) && is_array( $fields[$attrName] ) && array_key_exists( 'short_name', $fields[$attrName] ) && $fields[$attrName]['short_name'] )
             return $fields[$attrName]['short_name'];
 
         return $attrName;

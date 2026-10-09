@@ -174,7 +174,10 @@ class Convertezenumtoezselection extends \Exponential\Runnable\Command
 
             if ( !$preview )
             {
-                $db->query( "DELETE FROM ezenumobjectvalue WHERE contentobject_attribute_id=$objectAttributeID AND contentobject_attribute_version=$objectAttributeVersion" );
+                // through the definition, so the version column has its short name where the database uses one (Oracle)
+                \eZPersistentObject::removeObject( \eZEnumObjectValue::definition(),
+                                                   array( 'contentobject_attribute_id' => $objectAttributeID,
+                                                          'contentobject_attribute_version' => $objectAttributeVersion ) );
             }
 
             $script->iterate( $cli, $status, $text );
