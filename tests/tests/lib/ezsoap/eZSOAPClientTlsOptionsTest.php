@@ -169,7 +169,7 @@ class eZSOAPClientTlsOptionsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $restricted['messages'], 'cURL reads the file past open_basedir' );
 
         // without open_basedir a file that is not there is still reported
-        $missing = $this->runSubprocess( array(), array( 'options', $root . '/var/no-such-ca-file.pem' ) );
+        $missing = $this->runSubprocess( array( '-d', 'open_basedir=' ), array( 'options', $root . '/var/no-such-ca-file.pem' ) );
         $this->assertCount( 1, $missing['messages'] );
         $this->assertSame( 'error', $missing['messages'][0][0] );
         $this->assertStringContainsString( 'cannot be read', $missing['messages'][0][1] );

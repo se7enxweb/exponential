@@ -7813,7 +7813,7 @@ b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBP
 b078858df9972d3e704af87be75bc3b2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
 acbb9b3905b1d5cad1c75014265dec30  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
-b16f0f35c09559bbb97beac2cba4e959  tests/tests/lib/ezsoap/eZSOAPClientTlsOptionsTest.php
+963032d6576346fd84e1bdbabca76f9d  tests/tests/lib/ezsoap/eZSOAPClientTlsOptionsTest.php
 cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 e231512efb2176cef5ba4a4fd0320d57  tests/tests/lib/ezsoap/eZSOAPServerFunctionNameTest.php
 62590e69192025ffa6ffcce972f687d0  tests/tests/lib/ezsoap/ezsoapclient_test.php
