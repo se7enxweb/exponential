@@ -8,6 +8,7 @@
  *    itself, anything else (false, null, 1, 'yes') leaves it out. A single script run with --script is asked with
  *    the part '' and single true.
  *  - Listeners[]=cronjob/part/run@<callback> of [RunnableSettings] are attached for it.
+ *  - A listener that throws does not let the part run: the exception reaches the caller.
  *  - run() asks the filter after it has chosen the scripts and before the first one runs, and ends without error
  *    when the part is left out.
  *
@@ -106,6 +107,32 @@ class CronjobPartRunFilterTest extends PHPUnit\Framework\TestCase
         }
         $answer = true;
         $this->assertTrue( ezpTestPartRunPlainCronjobs::partMayRun( 'frequent', 'eng', array() ) );
+    }
+
+    /**
+     * A listener that throws must not let the part run: the exception reaches run(), which ends as for an exception
+     * in a cronjob script (exit code 1, before any script lock). A later listener is not asked.
+     */
+    public function testThrowingListenerDoesNotLetThePartRun()
+    {
+        $asked = false;
+        ezpEvent::getInstance()->attach( 'cronjob/part/run', function () {
+            throw new RuntimeException( 'stop switch unreadable' );
+        } );
+        ezpEvent::getInstance()->attach( 'cronjob/part/run', function ( $run ) use ( &$asked ) {
+            $asked = true;
+            return true;
+        } );
+        try
+        {
+            ezpTestPartRunPlainCronjobs::partMayRun( 'frequent', 'eng', array( 'notification.php' ) );
+            $this->fail( 'the exception of the listener reaches the caller' );
+        }
+        catch ( RuntimeException $e )
+        {
+            $this->assertSame( 'stop switch unreadable', $e->getMessage() );
+        }
+        $this->assertFalse( $asked, 'no listener after the one that threw is asked' );
     }
 
     public function testSettingsListenerIsAttached()

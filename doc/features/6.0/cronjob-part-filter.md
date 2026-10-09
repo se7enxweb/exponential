@@ -37,8 +37,17 @@ they are registered, each getting what the one before returned.
 A listener that cannot be called (its class is not autoloadable, for instance because the autoload arrays were not
 regenerated) is skipped and logged, and the part runs. Try a stop switch once before relying on it.
 
+A listener that throws ends the run as an exception in a cronjob script does: none of the part's scripts runs, the
+command line shows "An unexpected error has occurred", `var/log/error.log` has the message, and the exit code is 1.
+No script lock is held at that point, so the next run is not blocked.
+
+The notice of a part left out goes to standard error, also with `-q`, as the notice for a part without scripts does;
+the line `Running cronjob part '<part>'` (or `Running cronjob script '<file>'`) is printed before the filter is
+asked.
+
 The filter is asked after the scripts are chosen and before the first one starts, so a part left out takes no script
-lock and writes no audit record. `--list` is not affected.
+lock and writes no `system.cronjob.run` audit record; `runcronjobs.php` itself is recorded as `system.command.run`
+with exit code 0, as every command is. `--list` is not affected.
 
 `./console cron:<part>` and the cronjob page of the admin (**Setup > Cronjobs**) start `runcronjobs.php`, so the
 filter applies to them as well.
@@ -87,8 +96,8 @@ registered in an extension or a siteaccess.
 
 `CronjobPartRunFilterTest` (no database): without listeners every part runs; a listener gets the part, the
 siteaccess, the scripts and whether a single script runs, and can leave the part out; only `true` runs it; a
-listener in `[RunnableSettings] Listeners[]` is attached; `runcronjobs.php` asks the filter before the first script
-and ends without error when the part is left out.
+listener in `[RunnableSettings] Listeners[]` is attached; a listener that throws does not let the part run;
+`runcronjobs.php` asks the filter before the first script and ends without error when the part is left out.
 
 ## Related pages
 
