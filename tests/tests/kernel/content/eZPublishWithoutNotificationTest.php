@@ -14,6 +14,13 @@
  *  PN-10 - The content module has the function publish_without_notification, without limitations
  *  PN-11 - Every template that shows the button asks for the setting and the policy; the conflict pages offer it again
  *  PN-12 - The views pass the choice on to the conflict page
+ *  PN-13 - notificationIncludesClass(): every class while NotificationFilterByClassIdentifier is disabled; with it
+ *          enabled only the classes in IncludeClasses[] (none for an empty list, without looking the class up); an
+ *          unknown class (null) passes
+ *  PN-14 - With the class filter enabled and no class listed, createNotificationEvent() gives
+ *          content/notification/create false without the database
+ *  PN-15 - notifyRequested(): false, 0 and "0" mean no, anything else (null too) yes; eZContentFunctions passes
+ *          notify through it (not a (bool) cast) and notifies by default
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -316,5 +323,77 @@ class eZPublishWithoutNotificationTest extends PHPUnit\Framework\TestCase
                                            file_get_contents( 'kernel/private/classes/views/content/edit.php' ) );
         $this->assertStringContainsString( "\$tpl->setVariable( 'publish_without_notification', eZContentOperationCollection::publishWithoutNotification( 'PreviewPublishNotNotifyButton' ) );",
                                            file_get_contents( 'kernel/content/versionviewframe.php' ) );
+    }
+
+    /** PN-13 */
+    public function testTheClassFilter()
+    {
+        $asked = 0;
+        $article = function () use ( &$asked )
+        {
+            ++$asked;
+            return 'article';
+        };
+
+        // a site's own setting must not decide this: the setting missing, as in an installation without it
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', null );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', null );
+        $this->assertTrue( eZContentOperationCollection::notificationIncludesClass( 'folder' ), 'no setting: every class' );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', 'disabled' );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array( 'article' ) );
+        $this->assertTrue( eZContentOperationCollection::notificationIncludesClass( 'folder' ), 'disabled: every class' );
+        $this->assertTrue( eZContentOperationCollection::notificationIncludesClass( $article ) );
+        $this->assertSame( 0, $asked, 'disabled: the class is not looked up' );
+
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', 'enabled' );
+        $this->assertTrue( eZContentOperationCollection::notificationIncludesClass( 'article' ) );
+        $this->assertFalse( eZContentOperationCollection::notificationIncludesClass( 'folder' ) );
+        $this->assertFalse( eZContentOperationCollection::notificationIncludesClass( 'Article' ), 'identifiers are compared exactly' );
+        $this->assertTrue( eZContentOperationCollection::notificationIncludesClass( $article ) );
+        $this->assertSame( 1, $asked );
+        $this->assertTrue( eZContentOperationCollection::notificationIncludesClass( null ), 'an unknown class passes' );
+
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array( ' file ', '' ) );
+        $this->assertTrue( eZContentOperationCollection::notificationIncludesClass( 'file' ), 'entries are trimmed' );
+
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array() );
+        $this->assertFalse( eZContentOperationCollection::notificationIncludesClass( $article ), 'an empty list: no class' );
+        $this->assertFalse( eZContentOperationCollection::notificationIncludesClass( null ) );
+        $this->assertSame( 1, $asked, 'an empty list: the class is not looked up' );
+    }
+
+    /** PN-14 */
+    public function testTheClassFilterReachesTheFilterWithoutTheDatabase()
+    {
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', 'enabled' );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array() );
+        $asked = array();
+        $this->listen( $asked );
+        $this->assertNull( eZContentOperationCollection::createNotificationEvent( 990302, 1 ) );
+        $this->assertSame( array( array( false, 990302, 1 ) ), $asked );
+    }
+
+    /** PN-15 */
+    public function testNotifyRequestedAndTheEZContentFunctionsPassIt()
+    {
+        foreach ( array( false, 0, '0' ) as $no )
+        {
+            $this->assertFalse( eZContentOperationCollection::notifyRequested( $no ), var_export( $no, true ) . ' means no' );
+        }
+        foreach ( array( true, 1, '1', null, '', 'false', array() ) as $yes )
+        {
+            $this->assertTrue( eZContentOperationCollection::notifyRequested( $yes ), var_export( $yes, true ) . ' means yes, as for the operation' );
+        }
+        // both methods pass notify through the same answer, not a (bool) cast that makes null a no
+        $source = file_get_contents( 'kernel/classes/ezcontentfunctions.php' );
+        $this->assertSame( 2, preg_match_all( '/\x27notify\x27\s*=>\s*eZContentOperationCollection::notifyRequested\( \$notify \)/', $source ) );
+        $this->assertStringNotContainsString( '(bool)$notify', $source );
+        foreach ( array( 'createAndPublishObject', 'updateAndPublishObject' ) as $method )
+        {
+            $parameter = ( new ReflectionMethod( 'eZContentFunctions', $method ) )->getParameters();
+            $last = end( $parameter );
+            $this->assertSame( 'notify', $last->getName() );
+            $this->assertTrue( $last->getDefaultValue(), "$method() notifies by default, as before" );
+        }
     }
 }

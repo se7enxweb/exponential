@@ -822,8 +822,11 @@ class eZContentOperationCollection
 
      Creates the notification event (type ezpublish) of a published version, which the subtree handler turns into
      mails and digest items for the subscribers of its locations. $notify is the publish operation's parameter
-     notify (false for "Publish without notification"); the filter content/notification/create gets it and has the
-     last word. Only the ezpublish event is concerned: collaboration notifications (an approval) are made elsewhere.
+     notify (false for "Publish without notification"); with notification.ini [NotificationSettings]
+     NotificationFilterByClassIdentifier=enabled, a publication of a class missing from IncludeClasses[] counts as
+     without notification too (notificationIncludesClass()). The filter content/notification/create gets the result
+     and has the last word. Only the ezpublish event is concerned: collaboration notifications (an approval) are made
+     elsewhere.
      */
     static public function createNotificationEvent( $objectID, $versionNum, $notify = true )
     {
@@ -831,17 +834,93 @@ class eZContentOperationCollection
         // notification): the filter content/notification/create gets whether the publish operation asked for the
         // notification (its parameter notify, false for "Publish without notification") and the ids; only true
         // creates the event. false, 0 and "0" (a caller's or a stored memento's spelling of no) mean no.
-        $notify = !( $notify === false || $notify === 0 || $notify === '0' );
+        $notify = self::notifyRequested( $notify );
+        // The class is looked up only when the class filter is on and lists classes
+        $classOf = function () use ( $objectID )
+        {
+            $object = eZContentObject::fetch( (int)$objectID );
+            return $object instanceof eZContentObject ? (string)$object->attribute( 'class_identifier' ) : null;
+        };
+        $classLeftOut = $notify && !self::notificationIncludesClass( $classOf );
+        if ( $classLeftOut )
+        {
+            $notify = false;
+        }
         $create = ezpEvent::getInstance()->filter( 'content/notification/create', $notify, (int)$objectID, (int)$versionNum );
         if ( $create !== true )
         {
             eZDebug::writeDebug( "No notification event for object $objectID version $versionNum: " .
-                                 ( $notify === false ? 'published without notification' : 'a listener of content/notification/create left it out' ), __METHOD__ );
+                                 ( $notify === false ? ( $classLeftOut ? 'its class is not in notification.ini [NotificationSettings] IncludeClasses'
+                                                                       : 'published without notification' )
+                                                     : 'a listener of content/notification/create left it out' ), __METHOD__ );
             return;
         }
         $event = eZNotificationEvent::create( 'ezpublish', array( 'object' => $objectID,
                                                                    'version' => $versionNum ) );
         $event->store();
+    }
+
+    /**
+     * Whether a publication of the class $classIdentifier makes a notification event: always, unless
+     * notification.ini [NotificationSettings] NotificationFilterByClassIdentifier is enabled; then only for the class
+     * identifiers (or class IDs) in IncludeClasses[] (none when the list is empty). $classIdentifier may be a closure
+     * that gives the identifier, called only when the list has to be read; a publication whose class is not known
+     * (null) is let through, as before the filter.
+     *
+     * @param string|Closure|null $classIdentifier
+     * @return bool
+     */
+    static public function notificationIncludesClass( $classIdentifier )
+    {
+        $ini = eZINI::instance( 'notification.ini' );
+        if ( !$ini->hasVariable( 'NotificationSettings', 'NotificationFilterByClassIdentifier' ) ||
+             !in_array( strtolower( trim( (string)$ini->variable( 'NotificationSettings', 'NotificationFilterByClassIdentifier' ) ) ),
+                        array( 'enabled', 'true' ), true ) )
+        {
+            return true;
+        }
+        $included = $ini->hasVariable( 'NotificationSettings', 'IncludeClasses' ) ? $ini->variable( 'NotificationSettings', 'IncludeClasses' ) : array();
+        $included = array_values( array_filter( array_map( 'trim', is_array( $included ) ? $included : array() ), 'strlen' ) );
+        if ( !$included )
+        {
+            return false;
+        }
+        // only a closure or an invokable object: a class identifier such as "file" names a PHP function too
+        if ( is_object( $classIdentifier ) && is_callable( $classIdentifier ) )
+        {
+            $classIdentifier = $classIdentifier();
+        }
+        if ( $classIdentifier === null )
+        {
+            return true;
+        }
+        $classIdentifier = (string)$classIdentifier;
+        if ( in_array( $classIdentifier, $included, true ) )
+        {
+            return true;
+        }
+        // A class ID in the list (IncludeClasses[]=16) names its class, as the ID and the identifier do elsewhere in
+        // the settings; without this it would match nothing and quietly stop every notification
+        foreach ( $included as $entry )
+        {
+            if ( ctype_digit( $entry ) && eZContentClass::classIdentifierByID( (int)$entry ) === $classIdentifier )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Whether the publish operation's parameter notify asks for the notification: false, 0 and "0" (a caller's or a
+     * stored memento's spelling of no) mean no; anything else, null and a missing parameter included, means yes.
+     *
+     * @param mixed $notify
+     * @return bool
+     */
+    static public function notifyRequested( $notify )
+    {
+        return !( $notify === false || $notify === 0 || $notify === '0' );
     }
 
     /*!

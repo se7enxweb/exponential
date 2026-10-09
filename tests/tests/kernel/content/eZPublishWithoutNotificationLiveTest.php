@@ -9,6 +9,13 @@
  *  PL-03 - A publication held back at pre_publish (as an approval workflow holds it) and resumed from its memento the
  *          way the workflow cronjob resumes it keeps notify=false: published, no event
  *  PL-04 - The policy function: the administrator has content/publish_without_notification, the anonymous user not
+ *  PL-05 - With NotificationFilterByClassIdentifier enabled, a folder makes its event only when folder is in
+ *          IncludeClasses[]
+ *  PL-06 - eZContentFunctions::createAndPublishObject() returns the object as published (status, current version, main
+ *          node) and with notify false makes no event; updateAndPublishObject() takes notify as well
+ *  PL-07 - IncludeClasses[] takes a class ID as well as an identifier
+ *  PL-08 - eZContentFunctions with notify null notifies (as the publish operation does), with "0" not
+ *  PL-09 - Every test runs with the file mail transport, set in-process (never real mail)
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -49,6 +56,7 @@ class eZPublishWithoutNotificationLiveTest extends PHPUnit\Framework\TestCase
     private static $installation;
     private $previousUser;
     private $objectID = 0;
+    private $mailSettings = array();
 
     public static function setUpBeforeClass(): void
     {
@@ -59,6 +67,20 @@ class eZPublishWithoutNotificationLiveTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         chdir( self::$installation );
+        // A publication runs the workflows and listeners of the installation, and some send mail (a settings/override
+        // site.ini with Transport=sendmail outranks a siteaccess): the mail transport is the file transport for the
+        // whole test, set in-process, or the test refuses to run
+        $ini = eZINI::instance();
+        foreach ( array( 'Transport', 'FileTransportDirectory' ) as $name )
+        {
+            $this->mailSettings[$name] = $ini->hasVariable( 'MailSettings', $name ) ? $ini->variable( 'MailSettings', $name ) : null;
+        }
+        $ini->setVariable( 'MailSettings', 'Transport', 'file' );
+        $ini->setVariable( 'MailSettings', 'FileTransportDirectory', 'var/tmp/mail-publish-without-notification-test' );
+        if ( trim( $ini->variable( 'MailSettings', 'Transport' ) ) !== 'file' )
+        {
+            throw new RuntimeException( 'The mail transport is not the file transport: the test refuses to run.' );
+        }
         $this->previousUser = eZUser::currentUser();
         eZUser::setCurrentlyLoggedInUser( eZUser::fetch( self::ADMIN_ID ), self::ADMIN_ID, eZUser::NO_SESSION_REGENERATE );
     }
@@ -94,6 +116,19 @@ class eZPublishWithoutNotificationLiveTest extends PHPUnit\Framework\TestCase
         {
             eZUser::setCurrentlyLoggedInUser( $this->previousUser, $this->previousUser->attribute( 'contentobject_id' ), eZUser::NO_SESSION_REGENERATE );
         }
+        $ini = eZINI::instance();
+        foreach ( $this->mailSettings as $name => $value )
+        {
+            if ( $value === null )
+            {
+                $ini->removeSetting( 'MailSettings', $name );
+            }
+            else
+            {
+                $ini->setVariable( 'MailSettings', $name, $value );
+            }
+        }
+        $this->mailSettings = array();
     }
 
     private function events()
@@ -210,5 +245,108 @@ class eZPublishWithoutNotificationLiveTest extends PHPUnit\Framework\TestCase
                 ezpINIHelper::restoreINISettings();
             }
         }
+    }
+
+    /** PL-05 */
+    public function testTheClassFilter()
+    {
+        $this->newFolder( 'X1 notification class filter' );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', 'enabled' );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array( 'article' ) );
+        try
+        {
+            $published = $this->publish( 1 );
+            $this->assertSame( eZContentObject::STATUS_PUBLISHED, (int)$published->attribute( 'status' ) );
+            $this->assertSame( 0, $this->events(), 'folder is not in IncludeClasses: no event' );
+
+            ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array( 'article', 'folder' ) );
+            $newVersion = $published->createNewVersion();
+            $this->publish( (int)$newVersion->attribute( 'version' ) );
+            $this->assertSame( 1, $this->events(), 'folder is in IncludeClasses: the event is made' );
+        }
+        finally
+        {
+            ezpINIHelper::restoreINISettings();
+        }
+    }
+
+    /** PL-06 */
+    public function testCreateAndPublishObjectReturnsThePublishedObject()
+    {
+        if ( !eZContentClass::fetchByIdentifier( 'folder' ) instanceof eZContentClass )
+        {
+            $this->markTestSkipped( 'needs the folder class' );
+        }
+        $object = eZContentFunctions::createAndPublishObject( array( 'parent_node_id' => 2, 'class_identifier' => 'folder', 'creator_id' => self::ADMIN_ID,
+                                                                     'attributes' => array( 'name' => 'X1 createAndPublishObject without notification' ) ), false );
+        $this->assertInstanceOf( eZContentObject::class, $object );
+        $this->objectID = (int)$object->attribute( 'id' );
+        if ( (int)$this->fresh()->attribute( 'status' ) !== eZContentObject::STATUS_PUBLISHED )
+        {
+            $this->markTestSkipped( 'a workflow holds the publication back on this installation' );
+        }
+        $this->assertSame( eZContentObject::STATUS_PUBLISHED, (int)$object->attribute( 'status' ), 'the returned object says published' );
+        $this->assertSame( 1, (int)$object->attribute( 'current_version' ) );
+        $this->assertGreaterThan( 0, (int)$object->attribute( 'main_node_id' ), 'the returned object has its main node' );
+        $this->assertSame( 0, $this->events(), 'notify false: no event' );
+
+        $this->assertTrue( eZContentFunctions::updateAndPublishObject( $object, array( 'attributes' => array( 'name' => 'X1 updated without notification' ) ), false ) );
+        $this->assertSame( 2, (int)$this->fresh()->attribute( 'current_version' ) );
+        $this->assertSame( 0, $this->events(), 'updateAndPublishObject() with notify false: no event' );
+
+        $this->assertTrue( eZContentFunctions::updateAndPublishObject( $this->fresh(), array( 'attributes' => array( 'name' => 'X1 updated with notification' ) ) ) );
+        $this->assertSame( 1, $this->events(), 'without notify: the event is made' );
+    }
+
+    /** PL-07 */
+    public function testTheClassFilterTakesAClassID()
+    {
+        $this->newFolder( 'X1 notification class filter by ID' );
+        $folderID = (int)eZContentClass::classIDByIdentifier( 'folder' );
+        $this->assertGreaterThan( 0, $folderID );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', 'enabled' );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array( 'article', (string)$folderID ) );
+        try
+        {
+            $this->publish( 1 );
+            $this->assertSame( 1, $this->events(), 'the folder class named by its ID makes the event' );
+            $this->assertFalse( eZContentOperationCollection::notificationIncludesClass( 'user' ), 'another class still not' );
+        }
+        finally
+        {
+            ezpINIHelper::restoreINISettings();
+        }
+    }
+
+    /** PL-08 */
+    public function testCreateAndPublishObjectNotifiesForANullNotify()
+    {
+        if ( !eZContentClass::fetchByIdentifier( 'folder' ) instanceof eZContentClass )
+        {
+            $this->markTestSkipped( 'needs the folder class' );
+        }
+        // null is no spelling of no: the publish operation and createNotificationEvent() notify for it, and so do
+        // the eZContentFunctions methods (a (bool) cast made it false)
+        $object = eZContentFunctions::createAndPublishObject( array( 'parent_node_id' => 2, 'class_identifier' => 'folder', 'creator_id' => self::ADMIN_ID,
+                                                                     'attributes' => array( 'name' => 'X1 createAndPublishObject with a null notify' ) ), null );
+        $this->assertInstanceOf( eZContentObject::class, $object );
+        $this->objectID = (int)$object->attribute( 'id' );
+        if ( (int)$this->fresh()->attribute( 'status' ) !== eZContentObject::STATUS_PUBLISHED )
+        {
+            $this->markTestSkipped( 'a workflow holds the publication back on this installation' );
+        }
+        $this->assertSame( 1, $this->events(), 'createAndPublishObject() with notify null: the event is made' );
+
+        $this->assertTrue( eZContentFunctions::updateAndPublishObject( $this->fresh(), array( 'attributes' => array( 'name' => 'X1 updated with a null notify' ) ), null ) );
+        $this->assertSame( 2, $this->events(), 'updateAndPublishObject() with notify null: the event is made' );
+
+        $this->assertTrue( eZContentFunctions::updateAndPublishObject( $this->fresh(), array( 'attributes' => array( 'name' => 'X1 updated with notify "0"' ) ), '0' ) );
+        $this->assertSame( 2, $this->events(), 'updateAndPublishObject() with notify "0": no event' );
+    }
+
+    /** PL-09 */
+    public function testTheMailTransportIsTheFileTransport()
+    {
+        $this->assertSame( 'file', eZINI::instance()->variable( 'MailSettings', 'Transport' ), 'set in-process by setUp()' );
     }
 }
