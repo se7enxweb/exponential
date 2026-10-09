@@ -171,7 +171,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-714e6ec883054f8459b60b635c87595a  composer.json
+4aae7b43c2b61888dfb3952530bfafc1  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 f6ad517f79a04c94b5c756cea825b610  config.php-RECOMMENDED
@@ -2785,7 +2785,7 @@ f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 7c829017c001901d87afec4e42579df4  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 250a9d7e6948ddd176f5c6c54bb0febb  doc/bc/6.0/behaviour-changes-2026-09b.md
-0f857de0818fefb0bcf5859a7cc714be  doc/bc/6.0/behaviour-changes-2026-10.md
+4e5adfb93683ebf31ce4465e3f3d37ef  doc/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/bc/6.0/bookmark-folders.md
 d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
@@ -2826,7 +2826,7 @@ ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
 111bb729184306f633c537fe44ee078c  doc/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/bc/6.0/preload.md
-24991962fbcc2eafb9ac71a80f58cbd4  doc/bc/6.0/rad-extension-points.md
+73b04a306d12240d33cd265d587db399  doc/bc/6.0/rad-extension-points.md
 611442352303aaa28764fab216c5ef09  doc/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
 c9437c052795bf1c29b8db5b1a73a8c0  doc/bc/6.0/redirect-query-and-image-alias-guards.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4654ec1c04cc7f105ec0491a72299d27  doc/changelogs/6.0/6.0.15.md
+45073933c01c1c9152776b093843fc49  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3332,6 +3332,7 @@ cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 572d04f3da4c1377a06bd7c8c95f615b  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
+977eb4c63ccab369b83722869aa589fc  doc/features/6.0/cronjob-part-filter.md
 5dc9aef1305f6bb91f4dd0fdbb4fd038  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
@@ -3444,6 +3445,7 @@ f1b7156f5a50c09f2d0dad23f221a6d7  doc/features/6.0/rss-podcast-and-feed-list.md
 8785d9f2fbe68c9db7f2c8b6ca1c0266  doc/features/6.0/safe-redirects.md
 09d27a55a6abd2411d3ec208cbd7cc9c  doc/features/6.0/setup-wizard-and-editor-siteaccess.md
 c11e0c58bf623b60f5cd915641c2853f  doc/features/6.0/siteaccess-host-and-language-matching.md
+b08fb8d1cb8bcebb82e2daa8dd879324  doc/features/6.0/soap-client-tls.md
 f2e61c10e09e6bcc8b934feb95c4ad08  doc/features/6.0/sqlite-database.md
 b4237bb304d831cb1e2814f1830146a4  doc/features/6.0/static-cache-generator.md
 f6a29d2c690968846f5c87c97133e1e8  doc/features/6.0/store-dashboard.md
@@ -3487,7 +3489,7 @@ a841ba0d4e6df12e066d8ac43bf433be  doc/guides/cronjobs.md
 16abc76337749d4e4334c2373b362366  doc/guides/deploying.md
 60946c27c4015c785d2c5b1d7c9106f3  doc/guides/drafts-and-pending.md
 89fc578ae0ff375a2ddbada72586b72a  doc/guides/extensions-page.md
-d66816a653e1d073775286ddd516fa19  doc/guides/extensions.md
+78f7787f49210097a21310ed1294757b  doc/guides/extensions.md
 9ab2a55cb8c3f5b50331448d91683c53  doc/guides/getting-started.md
 b53242f489a852760b7b824ee3e042a2  doc/guides/images/cronjobs/available-scripts.png
 2e5094f1511066d9fac842cb2464db9c  doc/guides/images/cronjobs/controls.png
@@ -3882,7 +3884,7 @@ b837bb8f78e8b41765d74c2245edf6d6  doc/install/05-setup-wizard.md
 d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
 4f5a89d708dfeff88bb50227abd3d599  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
-14135918bd5d98cea3d5225382dafde8  doc/install/10-after-installing.md
+cd0c9bd0b0cf9023c5c81dcf3662ceba  doc/install/10-after-installing.md
 194f0353ff6ee7e056cb6177d66fd27e  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
 08f745b103ff5fc101954ae37d01e58c  doc/install/13-security-hardening.md
@@ -5431,7 +5433,7 @@ cb0a99abf5054a55af10c6ba4e62600b  kernel/private/classes/commands/phar.php
 e6d562440b310189c2ad9ccccc9c47f7  kernel/private/classes/commands/preloadjob.php
 99d8b60f4b15df1dcd7f01c823003c66  kernel/private/classes/commands/publish_content.php
 a08a9297ae9c54487b7a2b06e63e6a08  kernel/private/classes/commands/resetuserpassword.php
-898926376d639f730120ce5e20c6eb9e  kernel/private/classes/commands/runcronjobs.php
+3a6e55fda49fc162f697680f63de8de1  kernel/private/classes/commands/runcronjobs.php
 28685c5ca337e0c7517f1ba62c70fbe1  kernel/private/classes/commands/solr.php
 4465a716b5fc1723bd7bcdba839111cf  kernel/private/classes/commands/systeminfo.php
 99a776cdd909256a5d8069ef603d7820  kernel/private/classes/commands/trashpurge.php
@@ -5951,9 +5953,9 @@ f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 fd65c2cce9e61492592c18344e029370  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
-22f3a8b2a4f28d5af415837082853bbc  kernel/setup/expradcatalogue.php
+f8a8b3ab728ec3dd7278d4ae8a0983e9  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
-6b36bb24853cdda7440edf906831bdc3  kernel/setup/expradsurvey.php
+783bac675b8d504c9d2a59e765dec068  kernel/setup/expradsurvey.php
 dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
 1f83c0a2d52102dcc25243247dca9d32  kernel/setup/expstaticcacherunner.php
 9bc458d96c3589dc82f294aca4d45a21  kernel/setup/exptemplateextensionwizard.php
@@ -6239,7 +6241,7 @@ d73a83f7c7f486155ada0fde2a844de1  lib/ezsession/classes/ezpsessionhandler.php
 64646af1921464f785521bc911d8eb97  lib/ezsession/classes/ezpsessionhandlersymfony.php
 4ab523184135d95fbe1bd96b5964015b  lib/ezsession/classes/ezsession.php
 995cfd2eb1246294e6e921d401106f48  lib/ezsoap/classes/ezsoapbody.php
-148ccc8a49b48beb40c9516c87a432f2  lib/ezsoap/classes/ezsoapclient.php
+d13bbc3582dce07ac85b37200a6073a3  lib/ezsoap/classes/ezsoapclient.php
 4e0d0628ea5bc587e9595c5be5332418  lib/ezsoap/classes/ezsoapcodec.php
 17215522393f1ebac23399c6629cf0d3  lib/ezsoap/classes/ezsoapenvelope.php
 31d5f57e699456f8c2f5922cdab80c07  lib/ezsoap/classes/ezsoapfault.php
@@ -6340,7 +6342,7 @@ ad8065df2ea00f70b5e30b072ab72827  lib/ezutils/classes/ezoperationmemento.php
 1451d0c978604b5009244c5b63612641  lib/ezutils/classes/ezprocess.php
 062090dfa05bec0757d7ba2901de8788  lib/ezutils/classes/ezregexpvalidator.php
 f607c04ba265e18c3ddbd633162270bd  lib/ezutils/classes/ezremoteidutility.php
-9656a1bf4d20f9598a5f5b6600f59aff  lib/ezutils/classes/ezsendmailtransport.php
+9f1db4169edbb509187997cebc76b147  lib/ezutils/classes/ezsendmailtransport.php
 8332652b485a80bf465c56d2d240dd63  lib/ezutils/classes/ezsmtptransport.php
 0db1d3279d37725c3a0bc60388c04861  lib/ezutils/classes/ezstringutils.php
 a8d1242d46bdb6161351fa3337aee753  lib/ezutils/classes/ezsys.php
@@ -6406,7 +6408,7 @@ fce5a3e3f0663f62cde1337a65d9ba06  settings/package.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-8034d2e2aa50707bd62d9d2fa1f850e3  settings/site.ini
+51af9c88c1eb07dac27d10fa360a84b8  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7372,15 +7374,18 @@ ab47780f670ed2e74e5a7167326c415c  tests/tests/kernel/classes/rest/ezpRestHttpReq
 ad3e0ca4505542e922db4e4b23351cb9  tests/tests/kernel/classes/rest/ezpRestStatusResponseTest.php
 a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php
 5cabf4962c374801c48d9d37133de735  tests/tests/kernel/classes/runnable/CommandHelpersTest.php
+36e686c50b218ff33b8cfc6464ee3453  tests/tests/kernel/classes/runnable/CronjobPartRunFilterTest.php
 2973ce3fd51cf4811b11def2cb6a2f0a  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
 4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 afa2082e1b51519a99944e89da43c447  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
 352cfc4000709b128a2a80cbea6cf8b7  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
-2beaf208438078d39f0f448ab74d46c8  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
+6160faa4ebe4dfe6ab8997151a1aab6c  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
 de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableExtensionPointsTest.php
 6b5a504ace7f81f831359ad296472b95  tests/tests/kernel/classes/runnable/RunnableTest.php
 57cea5c99d78dc76f0bba6f2c9845766  tests/tests/kernel/classes/runnable/ServicesTest.php
+9298e49c53a6f1db5d9d31bedb03e759  tests/tests/kernel/classes/runnable/fixtures/cronjobpartrun-none/site.ini
+4abcc61dd0cb6716e5e065194a98f2dc  tests/tests/kernel/classes/runnable/fixtures/cronjobpartrun/site.ini
 9b857db0b585f8663b50a1c2f5428eb1  tests/tests/kernel/classes/runnable/fixtures/moduleview_scope_probe.php
 79c911a18db2fd725a84abec3b804393  tests/tests/kernel/classes/runnable/fixtures/settings/site.ini
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
@@ -7812,9 +7817,11 @@ b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBP
 b078858df9972d3e704af87be75bc3b2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
 acbb9b3905b1d5cad1c75014265dec30  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
+963032d6576346fd84e1bdbabca76f9d  tests/tests/lib/ezsoap/eZSOAPClientTlsOptionsTest.php
 cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 e231512efb2176cef5ba4a4fd0320d57  tests/tests/lib/ezsoap/eZSOAPServerFunctionNameTest.php
 62590e69192025ffa6ffcce972f687d0  tests/tests/lib/ezsoap/ezsoapclient_test.php
+46a9a897ab3719936f2e79d065ad765e  tests/tests/lib/ezsoap/fixtures/soap_client_tls_subprocess.php
 a42110e8e1698ffa85aa925d98b254b9  tests/tests/lib/ezsoap/suite.php
 3a2456958c8fdb63c88299a929e3a686  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
 c0be3d17b10801879ce3559488f18e5c  tests/tests/lib/eztemplate/eZTemplateCompiledInterpretedParityTest.php
@@ -7853,6 +7860,7 @@ f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
 ad9b40230e54fa366826f27052a68264  tests/tests/lib/ezutils/eZModuleFunctionInfoTest.php
 4de84b483d83f06ae1d82c0bfacee32c  tests/tests/lib/ezutils/eZModuleTest.php
 b63b08251a27ea86e14255f2d343ba65  tests/tests/lib/ezutils/eZPHPCreatorRoundTripTest.php
+853e2b1329fe8ce4ae8a630a21c3bc04  tests/tests/lib/ezutils/eZSendmailEnvelopeSenderTest.php
 a46d1ff58bc1d58f91c2cbadffe983bf  tests/tests/lib/ezutils/eZSiteLogAndExpiryPathsTest.php
 295ccf384fbb67b358a39cf87d5b809d  tests/tests/lib/ezutils/eZSysInfoTest.php
 38b8261a40b5efcedacee8de80588e08  tests/tests/lib/ezutils/eZSysTest.php
@@ -7881,6 +7889,8 @@ ef89659c0b3f7a1a06d873b5c6a4370f  tests/tests/lib/ezutils/ezphpcreator_regressio
 f3a2a3b1a63a674704b84839c3f7870a  tests/tests/lib/ezutils/fixtures/engine_archive_build.php
 42a1aa871e8743927795bebb0178fc9b  tests/tests/lib/ezutils/fixtures/engine_archive_roots.php
 5af0571f8641dc73f1be006a0ac65d6d  tests/tests/lib/ezutils/fixtures/fatal_user_error_child.php
+9f3c10075ebe68667bb847d0073e15aa  tests/tests/lib/ezutils/fixtures/sendmail_capture.php
+466cc5fa8a69dfb41333ea86a577b8db  tests/tests/lib/ezutils/fixtures/sendmail_envelope_child.php
 9701747cd273b064a86365f34fc6090e  tests/tests/lib/ezutils/server/README.rst
 3815ba59cd32518a496671af5f546aed  tests/tests/lib/ezutils/server/nvh/index/feebsd_lighttpd_fastcgi_php53.php
 d5a3b79e8b4cd9983204272c12329340  tests/tests/lib/ezutils/server/nvh/index/linux_apache2216_mod_php533.php

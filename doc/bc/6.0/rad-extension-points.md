@@ -10,7 +10,7 @@ to be discoverable only by reading the kernel.
 
 | | |
 |---|---|
-| What changed | `kernel/setup/expradcatalogue.php` (`expRADCatalogue::points()`) lists every extension point, and **Setup > RAD** is drawn from it: 64 extension points, 64 with a tool. |
+| What changed | `kernel/setup/expradcatalogue.php` (`expRADCatalogue::points()`) lists every extension point, and **Setup > RAD** is drawn from it: 70 extension points, 65 with a tool. |
 | Who is affected | Nobody is forced to change. Extension developers get one place to look. |
 | How to check | Open **Setup > RAD** (`/setup/rad`) in the admin. |
 | How to fix | Nothing to fix. Prefer a registered mechanism over a kernel class override (see **override** below). |
@@ -419,6 +419,21 @@ Something that runs on its own, on a schedule, outside any request.
 | Contract | `A script run by runcronjobs.php, with $cli and $sys available` |
 | Mechanism | directory |
 | Kernel | `runcronjobs.php` |
+
+### Cronjob part left out  
+*Tool:* none (the settings extension wizard writes `[Event] Listeners[]`, which the command line does not read)
+
+Something that decides whether a cronjob part runs at all, for example a stop switch while a release is deployed.
+runcronjobs.php asks the filter cronjob/part/run with the part, the siteaccess and the scripts before the first
+script starts; only true runs the part. Guide: [Leaving out a cronjob part](../../features/6.0/cronjob-part-filter.md).
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>listener.php` |
+| Registered by | site.ini [RunnableSettings] Listeners[]=cronjob/part/run@<callback> |
+| Contract | `A callable taking ( $run, $part, $siteaccess, $scripts, $single ) and returning true to run the part` |
+| Mechanism | ini |
+| Kernel | `kernel/private/classes/commands/runcronjobs.php` |
 
 ### Kernel event listener  
 *Tool:* `/setup/settingsextension`
