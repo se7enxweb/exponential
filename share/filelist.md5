@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-6f516612267caa98066254e25da34cac  doc/changelogs/6.0/6.0.15.md
+d862365aa1c11027c4b345d4c1bc9ab9  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3332,7 +3332,7 @@ cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 572d04f3da4c1377a06bd7c8c95f615b  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-d46f1014a2be17e6a560d45416986a36  doc/features/6.0/cronjob-part-filter.md
+977eb4c63ccab369b83722869aa589fc  doc/features/6.0/cronjob-part-filter.md
 5dc9aef1305f6bb91f4dd0fdbb4fd038  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
@@ -7374,7 +7374,7 @@ ab47780f670ed2e74e5a7167326c415c  tests/tests/kernel/classes/rest/ezpRestHttpReq
 ad3e0ca4505542e922db4e4b23351cb9  tests/tests/kernel/classes/rest/ezpRestStatusResponseTest.php
 a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php
 5cabf4962c374801c48d9d37133de735  tests/tests/kernel/classes/runnable/CommandHelpersTest.php
-7972872e295718a8efa9ce3ffea7ddcd  tests/tests/kernel/classes/runnable/CronjobPartRunFilterTest.php
+36e686c50b218ff33b8cfc6464ee3453  tests/tests/kernel/classes/runnable/CronjobPartRunFilterTest.php
 2973ce3fd51cf4811b11def2cb6a2f0a  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
 4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 afa2082e1b51519a99944e89da43c447  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
