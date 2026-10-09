@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 61b4fb7b104e2ddfa2c9cca803797202  autoload.php
-124628c005310f859dff17257ef99030  autoload/ezp_kernel.php
+fb48a7644a9acfcc8157d2a5d66414b0  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -2825,7 +2825,7 @@ ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
 111bb729184306f633c537fe44ee078c  doc/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/bc/6.0/preload.md
-69eb6edca88c9516b6d72cf4e3e7f993  doc/bc/6.0/rad-extension-points.md
+24991962fbcc2eafb9ac71a80f58cbd4  doc/bc/6.0/rad-extension-points.md
 611442352303aaa28764fab216c5ef09  doc/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
 c9437c052795bf1c29b8db5b1a73a8c0  doc/bc/6.0/redirect-query-and-image-alias-guards.md
@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-a7856b08d629358df9f682c2106d9f22  doc/changelogs/6.0/6.0.15.md
+be4b38d635c0ff183a4f95ad0706dc14  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3330,7 +3330,7 @@ cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 0efc0a33fb1492529cd85b8d230d76d5  doc/features/6.0/class-attribute-move-to-edge.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 572d04f3da4c1377a06bd7c8c95f615b  doc/features/6.0/content-jobs.md
-01afa969ada756afdd19555e9e98ace6  doc/features/6.0/content-limitation-handlers.md
+f8fca1a0d5f829e22cf306b8fb492610  doc/features/6.0/content-limitation-handlers.md
 5dc9aef1305f6bb91f4dd0fdbb4fd038  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
@@ -5493,7 +5493,7 @@ e34ec746f18ebc7f96baa69e69ca4148  kernel/private/classes/ezcontentobjectstatelan
 9c6f19a00ddaad6fde34c61189ce50e5  kernel/private/classes/ezpactiveextensions.php
 bdaf3dfbfa218e33a0ee681501a10ea3  kernel/private/classes/ezpasynchronouspublishingfilter.php
 c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.php
-9d339c1ff30b94569982bd0271147e74  kernel/private/classes/ezpcontentlimitation.php
+c1457427f51ffde711f777c6d5dd65c3  kernel/private/classes/ezpcontentlimitation.php
 8283e4f7982e9d1aff4c308f72dd9a18  kernel/private/classes/ezpcontentpublishingprocess.php
 dad70a135e50fcc3415d197dd961caad  kernel/private/classes/ezpcontentpublishingqueue.php
 483341cbf4649e24b6f15b0357bc5aee  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
@@ -5780,6 +5780,7 @@ d7c433860bc541a0a5a50a6797b353b8  kernel/private/interfaces/asynchronouspublishi
 0e92b9eaaa3392124bcdc74450a6ec63  kernel/private/interfaces/ezclusterfilehandlerinterface.php
 b8a0a5e5b01ca67765dd1b77d8662a61  kernel/private/interfaces/ezpautoloadoutput.php
 8722bad7c95cc66cb38e03fbb16a7f9d  kernel/private/interfaces/ezpcontentlimitationhandler.php
+0f57941ebc080cf4ce963364c4f6e61e  kernel/private/interfaces/ezpcontentlimitationsolrhandler.php
 948769637ef5e3623e6055a988de0348  kernel/private/interfaces/ezpcontentpublishingqueuereader.php
 4782a0104f204fc579d729a8d8e37a37  kernel/private/interfaces/ezpdatabasebasedclusterfilehandler.php
 2dce965518c756642f7cc59d65d66636  kernel/private/interfaces/ezpkernelhandler.php
@@ -5949,7 +5950,7 @@ f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 fd65c2cce9e61492592c18344e029370  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
-bce68c62930cac0cb74d05b53d0cd24d  kernel/setup/expradcatalogue.php
+22f3a8b2a4f28d5af415837082853bbc  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
 9d29ad5fc017910fd28b55a2431641c3  kernel/setup/expradsurvey.php
 dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
@@ -6835,14 +6836,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-68f5a8ea1af076264a7e39a9665518b4  share/translations/eng-US/translation.ts
+3f3b55814d6211599ff9358c94f3badc  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-f2d4a212119f3a737c74513e8a89e79a  share/translations/ger-DE/translation.ts
+b190852e432bf0ba5a52d13cc8127e21  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6855,7 +6856,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-b2698e9779ae0edb056f9cd7d52c10d9  share/translations/untranslated/translation.ts
+0e7388c02b6243d2e56c11e28e9c8751  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7344,6 +7345,7 @@ a18d90b5610abb3def710ebc7c9f49ba  tests/tests/kernel/classes/permissions/eZPolic
 7912afca659ccb05b5e7ee37e934c398  tests/tests/kernel/classes/permissions/eZPolicyPrefetchedAccessArrayTest.php
 7f5b329d15b658e33c4ac3f1fab1c5c2  tests/tests/kernel/classes/permissions/eZUserAccessEvaluationTest.php
 3e9f42058b135fcc91cc433dd711eafa  tests/tests/kernel/classes/permissions/expPermissionHooksTest.php
+1638ec984c3a39868ee672bb362b07de  tests/tests/kernel/classes/permissions/ezpContentLimitationSolrTest.php
 f72914cc79297e8160784638e10a6494  tests/tests/kernel/classes/permissions/ezpContentLimitationTest.php
 b56a3b9639c786b875f98c6f42c8a035  tests/tests/kernel/classes/permissions/fixtures/ezcontentpermissionsqltestdb.php
 192883639379d5fd3bab7183741db6df  tests/tests/kernel/classes/permissions/fixtures/modules/k1perm/module.php

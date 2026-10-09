@@ -26888,8 +26888,8 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>site.ini [RoleSettings] LimitationHandlers[&lt;limitation&gt;]=&lt;class&gt;; die Einschränkung kommt über den Filter module/functionlist ([Event] Listeners[]) zu einer Funktion</translation>
     </message>
     <message>
-        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</source>
-        <translation>implementiert ezpContentLimitationHandler (checkAccess() für Objekte, Knoten und Versionen, permissionSQL() für Fetches)</translation>
+        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches); ezpContentLimitationSolrHandler adds solrFilter() for searches that filter by the policies themselves (eZ Find)</source>
+        <translation>implementiert ezpContentLimitationHandler (checkAccess() für Objekte, Knoten und Versionen, permissionSQL() für Fetches); ezpContentLimitationSolrHandler ergänzt solrFilter() für Suchen, die selbst nach den Policies filtern (eZ Find)</translation>
     </message>
     <message>
         <source>rest.ini, through the rest provider registry</source>
