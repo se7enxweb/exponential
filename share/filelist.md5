@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-85e05e8f8ef492db3c458c79a2bd2ba9  doc/changelogs/6.0/6.0.15.md
+fdc63fdf090aacf4dc8cfb32cc9e0d95  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3444,6 +3444,7 @@ f1b7156f5a50c09f2d0dad23f221a6d7  doc/features/6.0/rss-podcast-and-feed-list.md
 8785d9f2fbe68c9db7f2c8b6ca1c0266  doc/features/6.0/safe-redirects.md
 09d27a55a6abd2411d3ec208cbd7cc9c  doc/features/6.0/setup-wizard-and-editor-siteaccess.md
 c11e0c58bf623b60f5cd915641c2853f  doc/features/6.0/siteaccess-host-and-language-matching.md
+30f67c4b7b0d7e8cc79c7bfdfe02bda5  doc/features/6.0/soap-client-tls.md
 f2e61c10e09e6bcc8b934feb95c4ad08  doc/features/6.0/sqlite-database.md
 b4237bb304d831cb1e2814f1830146a4  doc/features/6.0/static-cache-generator.md
 f6a29d2c690968846f5c87c97133e1e8  doc/features/6.0/store-dashboard.md
@@ -6239,7 +6240,7 @@ d73a83f7c7f486155ada0fde2a844de1  lib/ezsession/classes/ezpsessionhandler.php
 64646af1921464f785521bc911d8eb97  lib/ezsession/classes/ezpsessionhandlersymfony.php
 4ab523184135d95fbe1bd96b5964015b  lib/ezsession/classes/ezsession.php
 995cfd2eb1246294e6e921d401106f48  lib/ezsoap/classes/ezsoapbody.php
-148ccc8a49b48beb40c9516c87a432f2  lib/ezsoap/classes/ezsoapclient.php
+ed55b7778c033433215e51759879fe38  lib/ezsoap/classes/ezsoapclient.php
 4e0d0628ea5bc587e9595c5be5332418  lib/ezsoap/classes/ezsoapcodec.php
 17215522393f1ebac23399c6629cf0d3  lib/ezsoap/classes/ezsoapenvelope.php
 31d5f57e699456f8c2f5922cdab80c07  lib/ezsoap/classes/ezsoapfault.php
@@ -7812,6 +7813,7 @@ b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBP
 b078858df9972d3e704af87be75bc3b2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
 acbb9b3905b1d5cad1c75014265dec30  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
+a36eefc6de98c774f6dc38e029dc7014  tests/tests/lib/ezsoap/eZSOAPClientTlsOptionsTest.php
 cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 e231512efb2176cef5ba4a4fd0320d57  tests/tests/lib/ezsoap/eZSOAPServerFunctionNameTest.php
 62590e69192025ffa6ffcce972f687d0  tests/tests/lib/ezsoap/ezsoapclient_test.php
