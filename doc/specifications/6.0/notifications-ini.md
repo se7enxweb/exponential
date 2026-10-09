@@ -61,6 +61,7 @@ and its mail templates in `notification/handler/<id_string>/view/`. The collabor
 | `FileTransportDirectory` | empty (means `var/log/mail`) | The directory the `file` transport writes to. Not in the distribution file; added in this version, see [the upgrade notes](../../bc/6.0/notification-ui-and-commands.md). Relative to the installation root |
 | `EmailSender`, `AdminEmail` | empty, `nospam@ez.no` | Fallback sender, see above. Change `AdminEmail` on every installation |
 | `EmailReplyTo` | empty | Reply-to of mail made through `eZMail` defaults |
+| `UserAgent` | empty | The `User-Agent` header of every mail made through `eZMail`, notification mail included (ASCII only). Empty keeps `Exponential, Version <version>` (sendmail, file) and `Apache Zeta Components` (SMTP) |
 | `DebugSending`, `DebugReceiverEmail` | `disabled`, empty | When enabled, the sendmail and SMTP transports send every mail to `DebugReceiverEmail` instead of the real recipients. A safety net on a staging copy of a real site. Does not apply to the `file` transport |
 | `TransportServer`, `TransportPort`, `TransportConnectionType`, `TransportUser`, `TransportPassword`, `SenderHost` | empty, `25`, empty, empty, empty, `localhost` | SMTP connection |
 | `SendmailOptions[]`, `SendmailInsertUndisclosedRecipient` | none, `enabled` | Sendmail options; notification mail has its recipients in `Bcc` and `To: undisclosed-recipients:;` |
