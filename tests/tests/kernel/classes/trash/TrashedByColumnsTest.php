@@ -173,6 +173,45 @@ class TrashedByColumnsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * movetrashrecords.php may neither copy from nor remove a trashed.json that holds no JSON object (all() reads it
+     * as empty, so --remove-file would have deleted every entry); an entry without node_id or trashed matches no row
+     * and raises no warning.
+     */
+    public function testAnUnreadableFileIsRecognisedAndABrokenEntryMatchesNothing()
+    {
+        if ( !class_exists( 'Exponential\\Service\\TrashRecord' ) )
+            require_once self::$root . '/kernel/private/classes/services/trashrecord.php';
+        $file = tempnam( sys_get_temp_dir(), 'trashed' );
+        try
+        {
+            foreach ( array( '{"5":{"node_id":7,"trashed":1}}' => false, '{}' => false, '[]' => false, '' => false,
+                             '{"5":{"node_id":7,' => true, 'not json' => true, '"a string"' => true ) as $content => $unreadable )
+            {
+                file_put_contents( $file, (string)$content );
+                $this->assertSame( $unreadable, Exponential\Service\TrashRecord::isUnreadable( $file ), var_export( (string)$content, true ) );
+            }
+        }
+        finally
+        {
+            unlink( $file );
+        }
+        $this->assertFalse( Exponential\Service\TrashRecord::isUnreadable( $file ), 'no file: nothing to read, nothing wrong' );
+
+        $warnings = array();
+        set_error_handler( function ( $level, $message ) use ( &$warnings ) { $warnings[] = $message; return true; } );
+        try
+        {
+            $entry = Exponential\Service\TrashRecord::entryFor( array( '5' => array( 'user_id' => 14 ) ), 5, 7, 1 );
+        }
+        finally
+        {
+            restore_error_handler();
+        }
+        $this->assertNull( $entry );
+        $this->assertSame( array(), $warnings );
+    }
+
+    /**
      * Before the database update the table has no trashed_by and trashed_via: once hasTrashedByColumns() has found
      * that, definition() leaves them out, so the INSERT of a trash move and the SELECT of a trash row name only
      * columns that exist. With the columns (or not asked yet) they are in.
