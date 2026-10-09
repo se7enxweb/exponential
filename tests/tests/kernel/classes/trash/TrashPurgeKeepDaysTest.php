@@ -80,9 +80,20 @@ class TrashPurgeKeepDaysTest extends PHPUnit\Framework\TestCase
 
     public function testTheShippedSettingKeepsTheOldBehaviour()
     {
-        // settings/content.ini alone, whatever the overrides of this installation say
-        $shipped = new eZINI( 'content.ini', 'settings', null, false, false );
+        // settings/content.ini alone, whatever the overrides of this installation say (direct access: no
+        // settings/override, no siteaccess)
+        $shipped = new eZINI( 'content.ini', 'settings', null, false, null, true );
         $this->assertNull( expTestTrashpurgeKeepDays::keepDays( $shipped ) );
+    }
+
+    public function testAMissingSettingKeepsTheOldBehaviour()
+    {
+        // a content.ini without the setting (an installation's own copy from before 6.0.15); an instance of its own,
+        // so the shared one is left as it is
+        $ini = new eZINI( 'content.ini', 'settings', null, false, null, true );
+        $ini->removeSetting( 'TrashSettings', 'KeepItemsForDays' );
+        $this->assertFalse( $ini->hasVariable( 'TrashSettings', 'KeepItemsForDays' ) );
+        $this->assertNull( expTestTrashpurgeKeepDays::keepDays( $ini ) );
     }
 
     public function testTheCronjobPurgesWhatIsOldEnough()
