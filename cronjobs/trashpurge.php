@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Permanently delete all objects currently held in the trash
+ * @description Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepItemsForDays says)
  *
  * Trash purge cronjob
  *

@@ -82,6 +82,48 @@ content/trash/(sort_field)/trashed/(sort_order)/1
 The accepted values are those the view script checks (`kernel/private/classes/views/content/trash.php`); anything
 else falls back to the defaults.
 
+## Keeping items in the trash for a while
+
+The `trashpurge` cronjob part (`cronjobs/trashpurge.php`) empties the whole trash. To keep each item for a number of
+days instead, set:
+
+```ini
+# settings/override/content.ini.append.php
+[TrashSettings]
+KeepItemsForDays=90
+```
+
+The cronjob then purges only what has been in the trash for at least that many days, counted from the time it was
+trashed (the `trashed` column) back from the start of the run. Days are calendar days in the server's time zone: an
+item trashed exactly 90 days ago, to the second, is purged; across a change of daylight saving time the limit moves
+by an hour. Empty or `0`, the default, purges everything as before. A value that is not a whole number of days up to
+36500 (`90 days`, `-1`) purges nothing and reports an error on the command line and in the error log, so a typo
+cannot empty the trash. `bin/php/trashpurge.php` is not affected; give it `--trashed-days=<days>`. Both refuse an age
+so large that the date arithmetic overflows (it used to match every item, or a date that was not that many days
+back).
+
+The setting is read from `content.ini` as the siteaccess the cronjob runs for sees it: `runcronjobs.php -s
+<siteaccess>`, the siteaccess chosen under Setup > Cronjobs, or the default siteaccess without `-s`. A value in
+`settings/override/` applies to every siteaccess and wins over one in `settings/siteaccess/<name>/`; the trash is one
+for the whole database, so set it there. The cronjob reads the setting from the files, not from the INI cache: a
+value just added, in a new override file or on a server whose `config.php` turns off the INI modification checks,
+counts on the very next run without clearing the cache first.
+
+Items trashed before the `trashed` column existed (an upgrade from 5.x; the database update adds it with 0) count
+as trashed in 1970 and go on the first run. To keep them, give them a time first, for instance the upgrade:
+`UPDATE ezcontentobject_trash SET trashed = <timestamp> WHERE trashed = 0`. A site that kept the trash time in a
+table of its own (an extension that replaced `eZContentObjectTrashNode`) copies it into `trashed` the same way
+before switching.
+
+The cronjob part is not in any part of `cronjob.ini` by default; add it to one, for instance:
+
+```ini
+# settings/override/cronjob.ini.append.php
+[CronjobPart-trashpurge]
+Scripts[]
+Scripts[]=trashpurge.php
+```
+
 ## Upgrade notes
 
 ### Template overrides
