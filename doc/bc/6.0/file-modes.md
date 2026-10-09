@@ -44,7 +44,8 @@ define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothin
   directories 0710 (search, no listing for the group), also where the code asks for 0777.
 - They are constants, not settings, because they have to hold before the INI files are read (the INI cache, the
   autoload arrays, early log lines), and a security limit belongs to the configuration of the server, not to a
-  setting an administrator can change in the admin interface.
+  setting an administrator can change in the admin interface. Define them near the top of `config.php`, before
+  the HTTP cache early exit it includes at the end, which writes before the autoloader runs.
 - Where the web server and the command line scripts (cronjobs, `bin/php/*`) run as different users, they need a
   common group with write access: use `0770` / `0660`, and make the directories of `var/` belong to that group with
   the set-group-ID bit (`chgrp -R <group> var; find var -type d -exec chmod g+s {} +`), so everything either user
@@ -95,7 +96,11 @@ and the files `EZP_INI_FILE_PERMISSION` or 0777 within `EZP_FILE_MODE_MAX`, whic
 
 The umask belongs to the process. A server that runs requests in threads of one process (FrankenPHP in its threaded
 mode) shares it between them; the places that change it for a moment put it back, and what they set never allows
-more than the limits.
+more than the limits. Under Velocity the umask is set once in the server process when it loads `autoload.php` and
+every worker inherits it; the kernel runs from `dist/engine.phar` there, so rebuild it after updating.
+
+On Windows the modes only decide whether a file is read-only; a limit always leaves the owner write access, so
+nothing changes there.
 
 ## For extension and kernel code
 
