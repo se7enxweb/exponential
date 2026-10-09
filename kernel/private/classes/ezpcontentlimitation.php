@@ -211,10 +211,10 @@ class ezpContentLimitation
      * - A string: an SQL condition. It must be self-contained: quotes and parentheses balanced, and outside quoted
      *   strings no ";" and no comment ("--", "#", "/*"). So it cannot end the parentheses it is put in, or the
      *   statement. Values in it are the handler's to cast or escape.
-     * - An array with 'column' and 'values' (and optionally 'type' => 'int' (default) or 'string', 'not' => true):
-     *   "<column> IN ( ... )", the values cast to integers or escaped by the kernel. The column is a name or
-     *   table.name. No values matches nothing ("NOT IN" with no values: everything). A list of such arrays is
-     *   joined by AND.
+     * - An array with 'column' and 'values' (and optionally 'type' => 'int' (default) or 'string', 'not' => true, a
+     *   boolean): "<column> IN ( ... )", the values cast to integers or escaped by the kernel. The column is a name
+     *   or table.name. No values matches nothing ("NOT IN" with no values: everything). A 'not' that is no boolean
+     *   ('false', 1, 0) makes it no condition, so the policy gives no access. A list of such arrays is joined by AND.
      *
      * @param mixed $sql
      * @return string|false
@@ -241,7 +241,8 @@ class ezpContentLimitation
         {
             if ( !is_array( $condition ) || !isset( $condition['column'] ) || !is_string( $condition['column'] ) ||
                  !preg_match( '/^[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)?$/', $condition['column'] ) ||
-                 !isset( $condition['values'] ) || !is_array( $condition['values'] ) )
+                 !isset( $condition['values'] ) || !is_array( $condition['values'] ) ||
+                 !self::hasBooleanNot( $condition ) )
             {
                 return false;
             }
@@ -279,6 +280,19 @@ class ezpContentLimitation
             $parts[] = eZDB::instance()->generateSQLINStatement( array_values( array_unique( $literals ) ), $condition['column'], $not );
         }
         return '( ' . implode( ' AND ', $parts ) . ' )';
+    }
+
+    /**
+     * Whether the 'not' of a column or field condition is usable: left out (or null) for "only these", or a real
+     * boolean. Any other value ('false', 'true', 1, 0, an array) is refused, so that it can neither turn "only
+     * these" into "all but these" nor the other way round; the condition is then none and the policy gives no access.
+     *
+     * @param array $condition
+     * @return bool
+     */
+    protected static function hasBooleanNot( array $condition )
+    {
+        return !isset( $condition['not'] ) || is_bool( $condition['not'] );
     }
 
     /**
@@ -442,8 +456,7 @@ class ezpContentLimitation
             if ( !is_array( $condition ) || !isset( $condition['field'] ) || !is_string( $condition['field'] ) ||
                  !preg_match( '/^[A-Za-z_][A-Za-z0-9_]*$/', $condition['field'] ) ||
                  !isset( $condition['values'] ) || !is_array( $condition['values'] ) ||
-                 // only a real boolean inverts: 'not' => 'false' must not turn "only these" into "all but these"
-                 ( isset( $condition['not'] ) && !is_bool( $condition['not'] ) ) )
+                 !self::hasBooleanNot( $condition ) )
             {
                 return false;
             }

@@ -101,6 +101,10 @@ The example limits reading by region. The extension `myext` keeps the region of 
    // 'type' => 'string' escapes instead; 'not' => true writes NOT IN; a list of such arrays is joined by AND
    ```
 
+   `not` must be a real boolean. Any other value (`'false'`, `'true'`, `1`, `0`) would leave it open whether the
+   condition means "only these" or "all but these", so the condition is refused and the policy gives no access in
+   fetches, as in searches.
+
 4. Register both in `extension/myext/settings/site.ini.append.php`:
 
    ```ini
