@@ -10,8 +10,19 @@
  * @package tests
  */
 
+// Nothing may reach a real sendmail: the test hands this process a capturing sendmail_path, and without it nothing
+// is sent.
+if ( strpos( (string)ini_get( 'sendmail_path' ), 'sendmail_capture.php' ) === false )
+{
+    fwrite( STDERR, "sendmail_path is not the capturing script, nothing is sent\n" );
+    exit( 2 );
+}
+
 chdir( dirname( __DIR__, 5 ) );
 require 'autoload.php';
+// The transport of this tree, also where the autoloader maps classes to another checkout (a worktree whose vendor/
+// is a link)
+require_once 'lib/ezutils/classes/ezsendmailtransport.php';
 
 $ini = eZINI::instance();
 $ini->setVariable( 'MailSettings', 'Transport', 'sendmail' );

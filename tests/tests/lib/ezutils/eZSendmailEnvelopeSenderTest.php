@@ -46,6 +46,7 @@ class eZSendmailEnvelopeSenderTest extends PHPUnit\Framework\TestCase
     {
         file_put_contents( $this->captureFile, '' );
         $fixtures = __DIR__ . '/fixtures';
+        $this->assertFileExists( $fixtures . '/sendmail_capture.php' );
         $sendmail = escapeshellarg( PHP_BINARY ) . ' ' . escapeshellarg( $fixtures . '/sendmail_capture.php' ) . ' '
                   . escapeshellarg( $this->captureFile );
         $process = proc_open( array( PHP_BINARY, '-d', 'sendmail_path=' . $sendmail, '-d', 'display_errors=stderr',
