@@ -411,6 +411,36 @@ class eZSession
     }
 
     /**
+     * Sends the session cookie with this response when site.ini [Session] CookieAlwaysAddToHttpResponse is enabled
+     * (responseCookie()), and keeps the response out of shared caches: a response that carries a session id must
+     * never be stored by a proxy, CDN or the site's service worker and handed to the next visitor. Nothing happens,
+     * and nothing is sent, when the setting is off, no session runs or the headers have gone out.
+     *
+     * The cookie is not sent twice: when PHP already set it in this response (a session started or its id
+     * regenerated), only the cache headers are adjusted.
+     *
+     * @return bool whether the response carries the session cookie
+     */
+    static public function sendResponseCookie()
+    {
+        $cookie = self::responseCookie();
+        if ( $cookie === null )
+        {
+            return false;
+        }
+        $headers = headers_list();
+        if ( !self::listsCookie( $headers, $cookie['name'] ) )
+        {
+            setcookie( $cookie['name'], $cookie['value'], $cookie['options'] );
+        }
+        foreach ( self::privateCacheHeaders( $headers ) as $name => $value )
+        {
+            header( $name . ': ' . $value );
+        }
+        return true;
+    }
+
+    /**
      * The session cookie to send with every response, or null: only with site.ini [Session]
      * CookieAlwaysAddToHttpResponse enabled (disabled by default), a started session with an id and headers not sent.
      * PHP sends the session cookie when it starts a new session only; a load balancer that keeps a user on one server
@@ -422,12 +452,12 @@ class eZSession
      */
     static public function responseCookie()
     {
-        if ( !self::cookieOnEveryResponse() )
+        if ( !self::$hasStarted || !self::cookieOnEveryResponse() || headers_sent() )
         {
             return null;
         }
         $id = session_id();
-        if ( !self::$hasStarted || $id === '' || $id === false || headers_sent() )
+        if ( !is_string( $id ) || $id === '' )
         {
             return null;
         }
@@ -459,46 +489,146 @@ class eZSession
      */
     static public function sessionCookie( $name, $id, array $params, $now )
     {
-        $lifetime = isset( $params['lifetime'] ) ? (int)$params['lifetime'] : 0;
         return array( 'name' => (string)$name,
                       'value' => (string)$id,
-                      'options' => self::cookieOptions( $params, $lifetime > 0 ? (int)$now + $lifetime : 0 ) );
+                      'options' => self::cookieOptions( $params, $now ) );
     }
 
     /**
-     * The options of setcookie() for a cookie of the site beside the session cookie (is_logged_in): Secure and
-     * SameSite as the session cookie has them (cookieParams()), with $path and expires 0. Not HttpOnly: such a cookie
-     * holds no secret, and HTTP caches and the scripts of cached pages read it.
+     * The options of setcookie() for the is_logged_in cookie of HTTP caches: path, domain, lifetime, Secure and
+     * SameSite of the session cookie, so it is sent exactly where and as long as the session cookie is. Not HttpOnly:
+     * it holds no secret, and the scripts of cached pages (the service worker) read it.
      *
-     * @param string $path
+     * The parameters of the running session (session_get_cookie_params()) when one has started, else those it would
+     * start with (cookieParams()).
+     *
+     * @param array|null $params the session cookie parameters, null for those of this request
+     * @param int|null $now the time a lifetime counts from, null for now
      * @return array
      */
-    static public function siteCookieOptions( $path )
+    static public function siteCookieOptions( ?array $params = null, $now = null )
     {
-        $options = self::cookieOptions( self::cookieParams(), 0 );
-        $options['path'] = (string)$path;
+        if ( $params === null )
+        {
+            $params = self::$hasStarted ? session_get_cookie_params() : self::cookieParams();
+        }
+        $options = self::cookieOptions( $params, $now === null ? time() : (int)$now );
         $options['httponly'] = false;
-        unset( $options['domain'] );
         return $options;
     }
 
     /**
-     * setcookie() options from the session cookie parameters $params.
+     * Whether the response headers $headers (headers_list()) set the cookie $name already.
+     *
+     * @param array $headers
+     * @param string $name
+     * @return bool
+     */
+    static public function listsCookie( array $headers, $name )
+    {
+        $prefix = rawurlencode( (string)$name ) . '=';
+        foreach ( $headers as $header )
+        {
+            if ( preg_match( '/^Set-Cookie\s*:\s*(.*)$/is', (string)$header, $m ) && strncmp( $m[1], $prefix, strlen( $prefix ) ) === 0 )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * The headers that keep a response with the session cookie out of shared caches, from its headers $headers
+     * (headers_list()): Cache-Control made private (public, s-maxage and proxy-revalidate dropped, max-age and the
+     * rest kept for the browser) unless it is already private or no-store, and a Surrogate-Control (which a CDN
+     * obeys before Cache-Control) replaced by no-store.
+     *
+     * @param array $headers
+     * @return array name => value, only the headers to change
+     */
+    static public function privateCacheHeaders( array $headers )
+    {
+        $cacheControl = null;
+        $surrogate = false;
+        foreach ( $headers as $header )
+        {
+            $parts = explode( ':', (string)$header, 2 );
+            if ( count( $parts ) !== 2 )
+            {
+                continue;
+            }
+            $name = strtolower( trim( $parts[0] ) );
+            if ( $name === 'cache-control' )
+            {
+                $cacheControl = trim( $parts[1] );
+            }
+            else if ( $name === 'surrogate-control' )
+            {
+                $surrogate = true;
+            }
+        }
+        $result = array();
+        $private = self::privateCacheControl( $cacheControl === null ? '' : $cacheControl );
+        if ( $private !== $cacheControl )
+        {
+            $result['Cache-Control'] = $private;
+        }
+        if ( $surrogate )
+        {
+            $result['Surrogate-Control'] = 'no-store';
+        }
+        return $result;
+    }
+
+    /**
+     * $cacheControl as a private Cache-Control: unchanged when private or no-store already, else "private" in front
+     * of its directives without public, s-maxage and proxy-revalidate; "private, no-cache, must-revalidate" for none.
+     *
+     * @param string $cacheControl
+     * @return string
+     */
+    static public function privateCacheControl( $cacheControl )
+    {
+        $kept = array();
+        foreach ( explode( ',', (string)$cacheControl ) as $directive )
+        {
+            $directive = trim( $directive );
+            $token = strtolower( trim( explode( '=', $directive, 2 )[0] ) );
+            if ( $token === 'private' || $token === 'no-store' )
+            {
+                return $cacheControl;
+            }
+            if ( $directive !== '' && !in_array( $token, array( 'public', 's-maxage', 'proxy-revalidate' ), true ) )
+            {
+                $kept[] = $directive;
+            }
+        }
+        if ( !$kept )
+        {
+            $kept = array( 'no-cache', 'must-revalidate' );
+        }
+        return 'private, ' . implode( ', ', $kept );
+    }
+
+    /**
+     * setcookie() options from the session cookie parameters $params; a lifetime counts from $now, none gives a
+     * cookie that ends with the browser session (expires 0).
      *
      * @param array $params session_get_cookie_params()
-     * @param int $expires
+     * @param int $now
      * @return array
      */
-    static protected function cookieOptions( array $params, $expires )
+    static protected function cookieOptions( array $params, $now )
     {
-        $options = array( 'expires' => (int)$expires,
-                          'path' => isset( $params['path'] ) && $params['path'] !== '' ? $params['path'] : '/',
+        $lifetime = isset( $params['lifetime'] ) ? (int)$params['lifetime'] : 0;
+        $options = array( 'expires' => $lifetime > 0 ? (int)$now + $lifetime : 0,
+                          'path' => isset( $params['path'] ) && $params['path'] !== '' ? (string)$params['path'] : '/',
                           'domain' => isset( $params['domain'] ) ? (string)$params['domain'] : '',
                           'secure' => !empty( $params['secure'] ),
                           'httponly' => !empty( $params['httponly'] ) );
         if ( isset( $params['samesite'] ) && $params['samesite'] !== '' )
         {
-            $options['samesite'] = $params['samesite'];
+            $options['samesite'] = (string)$params['samesite'];
         }
         return $options;
     }
