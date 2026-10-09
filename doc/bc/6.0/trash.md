@@ -94,11 +94,17 @@ KeepItemsForDays=90
 ```
 
 The cronjob then purges only what has been in the trash for at least that many days, counted from the time it was
-trashed (the `trashed` column). Empty or `0`, the default, purges everything as before. A value that is not a whole
-number of days up to 36500 (`90 days`, `-1`) purges nothing and reports an error on the command line and in the
-error log, so a typo cannot empty the trash. `bin/php/trashpurge.php` is not affected; give it
-`--trashed-days=<days>`. Both refuse an age so large that the date arithmetic overflows (it used to match every
-item).
+trashed (the `trashed` column) back from the start of the run. Days are calendar days in the server's time zone: an
+item trashed exactly 90 days ago, to the second, is purged; across a change of daylight saving time the limit moves
+by an hour. Empty or `0`, the default, purges everything as before. A value that is not a whole number of days up to
+36500 (`90 days`, `-1`) purges nothing and reports an error on the command line and in the error log, so a typo
+cannot empty the trash. `bin/php/trashpurge.php` is not affected; give it `--trashed-days=<days>`. Both refuse an age
+so large that the date arithmetic overflows (it used to match every item, or a date that was not that many days
+back).
+
+The setting is read from `content.ini` of the siteaccess the cronjob runs for: `runcronjobs.php -s <siteaccess>`,
+the siteaccess chosen under Setup > Cronjobs, or the default siteaccess without `-s`. Set it in
+`settings/override/` so every siteaccess has the same value.
 
 Items trashed before the `trashed` column existed (an upgrade from 5.x; the database update adds it with 0) count
 as trashed in 1970 and go on the first run. To keep them, give them a time first, for instance the upgrade:

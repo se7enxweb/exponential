@@ -108,4 +108,31 @@ class TrashPurgeKeepDaysTest extends PHPUnit\Framework\TestCase
         $purge = new eZScriptTrashPurge( eZCLI::instance(), true );
         $this->assertFalse( $purge->run( 100, 0, 10000000000000 ) );
     }
+
+    public function testAnAgeThatOverflowsIntoThePastIsRefused()
+    {
+        // strtotime() wraps this many days round to a time about 133 years back, not 16 quadrillion days: the
+        // purge would have run against that date instead of refusing (a check for a future time does not see it)
+        $now = 1791500000;
+        $wrapped = strtotime( '-16606740002445557 days', $now );
+        $this->assertTrue( is_int( $wrapped ) && $wrapped < $now, 'the overflow this test is about still happens' );
+        $this->assertFalse( eZScriptTrashPurge::trashedBefore( 16606740002445557, $now ) );
+
+        $purge = new eZScriptTrashPurge( eZCLI::instance(), true );
+        $this->assertFalse( $purge->run( 100, 0, 16606740002445557 ) );
+    }
+
+    public function testTrashedBeforeIsThatManyDaysBack()
+    {
+        $now = 1791500000; // 2026-10-09
+        $this->assertNull( eZScriptTrashPurge::trashedBefore( null, $now ) );
+        $this->assertNull( eZScriptTrashPurge::trashedBefore( 0, $now ) );
+        $this->assertSame( strtotime( '-1 days', $now ), eZScriptTrashPurge::trashedBefore( 1, $now ) );
+        $this->assertSame( strtotime( '-36500 days', $now ), eZScriptTrashPurge::trashedBefore( 36500, $now ) );
+        // calendar days: across a change of daylight saving time an hour more or less than 90 * 86400 seconds
+        foreach ( array( 1791500000, 1774000000, 1800000000 ) as $at )
+            $this->assertEqualsWithDelta( 90 * 86400, $at - eZScriptTrashPurge::trashedBefore( 90, $at ), 3600 );
+        $this->assertFalse( eZScriptTrashPurge::trashedBefore( -5, $now ), 'a negative age is a future date' );
+        $this->assertFalse( eZScriptTrashPurge::trashedBefore( 'abc', $now ) );
+    }
 }
