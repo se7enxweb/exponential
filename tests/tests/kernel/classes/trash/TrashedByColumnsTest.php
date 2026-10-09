@@ -65,7 +65,19 @@ class TrashedByColumnsTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         $this->saved = array( 'argv' => isset( $_SERVER['argv'] ) ? $_SERVER['argv'] : null,
-                              'user' => isset( $GLOBALS['eZUserGlobalInstance_'] ) ? $GLOBALS['eZUserGlobalInstance_'] : null );
+                              'user' => isset( $GLOBALS['eZUserGlobalInstance_'] ) ? $GLOBALS['eZUserGlobalInstance_'] : null,
+                              'columns' => self::columnsFlag()->getValue() );
+        // these tests read no database: the columns count as found, whatever a live test before cached
+        self::columnsFlag()->setValue( null, true );
+    }
+
+    /** eZContentObjectTrashNode's cached answer of hasTrashedByColumns() */
+    private static function columnsFlag()
+    {
+        $flag = new ReflectionProperty( 'eZContentObjectTrashNode', 'trashedByColumns' );
+        if ( PHP_VERSION_ID < 80100 )
+            $flag->setAccessible( true );
+        return $flag;
     }
 
     protected function tearDown(): void
@@ -78,6 +90,7 @@ class TrashedByColumnsTest extends PHPUnit\Framework\TestCase
             unset( $GLOBALS['eZUserGlobalInstance_'] );
         else
             $GLOBALS['eZUserGlobalInstance_'] = $this->saved['user'];
+        self::columnsFlag()->setValue( null, $this->saved['columns'] );
     }
 
     private static function read( $file )
