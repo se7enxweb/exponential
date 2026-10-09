@@ -526,6 +526,17 @@ class expRADCatalogue
             'source' => 'runcronjobs.php',
             'tool'  => 'setup/cronjobs' ),
 
+        'cronjobpartfilter' => array(
+            'group' => 'workflow',
+            'title' => 'Cronjob part left out',
+            'what'  => 'Something that decides whether a cronjob part runs at all, for example a stop switch while a release is deployed. runcronjobs.php asks the filter cronjob/part/run with the part, the siteaccess and the scripts before the first script starts; only true runs the part.',
+            'where' => 'extension/<name>/classes/<name>listener.php',
+            'register' => 'site.ini [RunnableSettings] Listeners[]=cronjob/part/run@<callback>',
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'A callable taking ( $run, $part, $siteaccess, $scripts, $single ) and returning true to run the part' ),
+            'mechanism' => 'ini',
+            'source' => 'kernel/private/classes/commands/runcronjobs.php',
+            'tool'  => false ),
+
         'eventlistener' => array(
             'group' => 'workflow',
             'title' => 'Kernel event listener',
