@@ -151,6 +151,25 @@ class ezpHttpCacheContract
         return true;
     }
 
+    /**
+     * The address a request may be answered from when its own query is not
+     * cacheable: what request-shield names in REQUEST_SHIELD_CACHE_LOOKUP
+     * (set cache-unknown-query hit-only) -- the same path, only the query
+     * parameters a cache key holds. Taken only for the same path and without
+     * a fragment, so it can never name another page; null otherwise.
+     */
+    public static function shieldLookupUri( $uri, $lookup )
+    {
+        if ( !is_string( $lookup ) || $lookup === '' || $lookup[0] !== '/' || strpos( $lookup, '#' ) !== false )
+            return null;
+        $path = function ( $u ) {
+            $u = (string)$u;
+            $cut = strcspn( $u, '?#' );
+            return substr( $u, 0, $cut );
+        };
+        return $path( $uri ) === $path( $lookup ) ? $lookup : null;
+    }
+
     // ── Origin: the scheme and host the kernel sees ─────────────────────
 
     /**
@@ -1086,8 +1105,19 @@ class ezpHttpCacheContract
         $siteaccess = $this->resolveSiteAccess( $originHost, $request['uri'] ?? '/' );
         if ( !$this->cachesSiteAccess( $siteaccess ) )
             return $this->miss( 'siteaccess' );
-        if ( !$this->queryAllowed( $request['uri'] ?? '/' ) )
-            return $this->miss( 'query string' );
+        $uri = $request['uri'] ?? '/';
+        $viaShield = false;
+        if ( !$this->queryAllowed( $uri ) )
+        {
+            // request-shield in front (set cache-unknown-query hit-only) names the page without the
+            // parameters no key holds: answered from it, if kept; never stored for this address (the
+            // listener sees the query is not allowed).
+            $lookup = self::shieldLookupUri( $uri, $request['lookupUri'] ?? null );
+            if ( $lookup === null || !$this->queryAllowed( $lookup ) )
+                return $this->miss( 'query string' );
+            $uri = $lookup;
+            $viaShield = true;
+        }
         // Without the right cookie name a signed-in visitor looks anonymous,
         // so an unknown name is a miss, never a guess.
         $cookieName = $this->config['sessionCookie'][$siteaccess] ?? null;
@@ -1120,7 +1150,7 @@ class ezpHttpCacheContract
             $context = $record['ctx'];
         }
 
-        $key = $this->entryKey( $scheme, $host, $siteaccess, $request['uri'] ?? '/', $context );
+        $key = $this->entryKey( $scheme, $host, $siteaccess, $uri, $context );
         $entry = $this->loadEntry( $key );
         if ( !$entry )
             return null;
@@ -1134,7 +1164,7 @@ class ezpHttpCacheContract
         $headers = $meta['headers'];
         $headers['ETag'] = $etag;
         $headers['Age'] = (string)max( 0, (int)( microtime( true ) - $meta['created'] ) );
-        $headers['X-Exp-Cache'] = empty( $meta['stale'] ) ? 'HIT' : 'STALE';
+        $headers['X-Exp-Cache'] = ( empty( $meta['stale'] ) ? 'HIT' : 'STALE' ) . ( $viaShield ? ' (request-shield lookup)' : '' );
         $headers['Cache-Control'] = $userID === 0 ? 'public, max-age=300' : 'private, no-cache, must-revalidate';
         // Only the one TagHeader asks for, never one an older entry kept.
         unset( $headers['xkey'], $headers['Surrogate-Key'], $headers['Cache-Tag'] );

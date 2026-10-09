@@ -18,6 +18,8 @@
  *  HC-14 — MatchOrder, StaticMatch, DefaultAccess; what cannot be known before the kernel is null
  *  HC-15 — Scheme and host as the kernel works them out, behind a load balancer that ends TLS too
  *  HC-16 — A page of a URI-matched siteaccess stored behind a load balancer is found by the early exit and the web server
+ *  HC-17 — The purge tags go out in one header, and only when TagHeader names one
+ *  HC-18 — request-shield's lookup address: a request with a parameter no key holds is answered from the page without it, the same path only
  *
  * No database, no kernel: the contract is pure PHP by design.
  *
@@ -532,5 +534,34 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'Surrogate-Key', ezpHttpCacheContract::tagHeaderName( 'Surrogate-Key', 'enabled' ) );
         $this->assertSame( '', ezpHttpCacheContract::tagHeaderName( "x key\r\nX-Evil: 1" ), 'not a header name' );
         $this->assertSame( '', ezpHttpCacheContract::tagHeaderName( 'Content-Length' ), 'a framing header' );
+    }
+
+    /**
+     * HC-18: request-shield in front (set cache-unknown-query hit-only) names
+     * in REQUEST_SHIELD_CACHE_LOOKUP the page a request with a parameter no
+     * key holds may be answered from. The early exit takes it for the same
+     * path only; without it, or for another path, the query is a miss as before.
+     */
+    public function testAShieldLookupAnswersFromThePageWithoutTheParameter()
+    {
+        $c = $this->contract( array( 'queryParameters' => array( 'page' ) ) );
+        $this->storeAnonymous( $c, '/news', '<p>news</p>' );
+        $this->storeAnonymous( $c, '/news?page=2', '<p>news 2</p>' );
+
+        $this->assertNull( $c->serve( $this->request( '/news?x=7' ) ), 'without request-shield: a miss' );
+        $this->assertSame( 'query string', $c->lastReason );
+        $hit = $c->serve( array( 'lookupUri' => '/news' ) + $this->request( '/news?x=7' ) );
+        $this->assertSame( '<p>news</p>', $hit[2] ?? null, 'the page without the parameter' );
+        $this->assertSame( 'HIT (request-shield lookup)', $hit[1]['X-Exp-Cache'] ?? null, 'and says how it was found' );
+        $this->assertSame( 'HIT', $c->serve( $this->request( '/news' ) )[1]['X-Exp-Cache'] ?? null, 'a plain hit as before' );
+        $hit = $c->serve( array( 'lookupUri' => '/news?page=2' ) + $this->request( '/news?page=2&x=7' ) );
+        $this->assertSame( '<p>news 2</p>', $hit[2] ?? null, 'a parameter the key holds stays' );
+
+        $this->assertNull( $c->serve( array( 'lookupUri' => '/other' ) + $this->request( '/news?x=7' ) ), 'another path: never' );
+        $this->assertNull( $c->serve( array( 'lookupUri' => '/news?x=7' ) + $this->request( '/news?x=7' ) ), 'a lookup that is not allowed itself' );
+        $this->assertNull( $c->serve( array( 'lookupUri' => 'news' ) + $this->request( '/news?x=7' ) ), 'not an absolute path' );
+        $this->assertNull( $c->serve( array( 'lookupUri' => '/news#x' ) + $this->request( '/news?x=7' ) ), 'a fragment' );
+        $this->assertSame( '/news', ezpHttpCacheContract::shieldLookupUri( '/news?x=7#top', '/news' ) );
+        $this->assertNull( ezpHttpCacheContract::shieldLookupUri( '/news?x=7', null ) );
     }
 }
