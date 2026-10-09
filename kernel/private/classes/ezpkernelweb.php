@@ -485,24 +485,26 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
          */
         if ( $ini->variable( "SiteAccessSettings", "CheckValidity" ) !== 'true' )
         {
-            $wwwDir = eZSys::wwwDir();
-            // On host based site accesses this can be empty, causing the cookie to be set for the current dir,
-            // but we want it to be set for the whole eZ publish site
-            $cookiePath = $wwwDir != '' ? $wwwDir : '/';
-
+            // Path, domain, lifetime, Secure and SameSite of the session cookie, so it is sent wherever and as long as
+            // the session cookie is; readable by scripts (eZSession::siteCookieOptions())
             if ( eZUser::isCurrentUserRegistered() )
             {
                 // Only set the cookie if it doesnt exist. This way we are not constantly sending the set request in the headers.
-                if ( !isset( $_COOKIE['is_logged_in'] ) || $_COOKIE['is_logged_in'] !== 'true' )
+                // With the session cookie in every response (CookieAlwaysAddToHttpResponse) it goes along, so it lasts as long.
+                if ( !isset( $_COOKIE['is_logged_in'] ) || $_COOKIE['is_logged_in'] !== 'true' || eZSession::cookieOnEveryResponse() )
                 {
-                    setcookie( 'is_logged_in', 'true', 0, $cookiePath );
+                    setcookie( 'is_logged_in', 'true', eZSession::siteCookieOptions() );
                 }
             }
             else if ( isset( $_COOKIE['is_logged_in'] ) )
             {
-                setcookie( 'is_logged_in', false, 0, $cookiePath );
+                setcookie( 'is_logged_in', '', array( 'expires' => 1 ) + eZSession::siteCookieOptions() );
             }
         }
+
+        // site.ini [Session] CookieAlwaysAddToHttpResponse: the session cookie in every response, for a load balancer
+        // that keeps a user on one server by the session id; such a response is kept out of shared caches
+        eZSession::sendResponseCookie();
 
         if ( $this->module->exitStatus() == eZModule::STATUS_REDIRECT )
         {
