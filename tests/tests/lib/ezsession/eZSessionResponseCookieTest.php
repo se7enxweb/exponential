@@ -12,8 +12,8 @@
  *  SR-05 - siteCookieOptions(): path, domain, lifetime, Secure and SameSite of the session cookie, never HttpOnly
  *          (scripts of cached pages read is_logged_in); site.ini [Session] decides them as for the session cookie
  *  SR-06 - cookieParams() gives the parameters setCookieParams() sets and changes nothing
- *  SR-07 - A response with the session cookie is private: Cache-Control without public and s-maxage, the browser's
- *          max-age kept, a private or no-store one left as it is, Surrogate-Control no-store
+ *  SR-07 - A response with the session cookie is private: Cache-Control (all its lines) without public and s-maxage,
+ *          the browser's max-age kept, Surrogate-Control no-store, X-Accel-Expires 0
  *  SR-08 - The cookie is not set twice when PHP already set it in the response
  *  SR-09 - The kernel sends both cookies with these options
  *
@@ -181,15 +181,19 @@ class eZSessionResponseCookieTest extends PHPUnit\Framework\TestCase
                          '' => 'private, no-cache, must-revalidate',
                          'private, max-age=600' => 'private, max-age=600',
                          'no-store' => 'no-store',
-                         'public, no-store' => 'public, no-store' ) as $given => $expected )
+                         'public, no-store' => 'no-store',
+                         'public, private, s-maxage=60' => 'private' ) as $given => $expected )
         {
             $this->assertSame( $expected, eZSession::privateCacheControl( $given ), var_export( $given, true ) );
         }
 
-        $this->assertSame( array( 'Cache-Control' => 'private, max-age=60', 'Surrogate-Control' => 'no-store' ),
-                           eZSession::privateCacheHeaders( array( 'Content-Type: text/html', 'Cache-Control: no-cache',
-                                                                  'cache-control: public, max-age=60', 'Surrogate-Control: max-age=3600' ) ),
-                           'the last Cache-Control counts, as header() replaces it' );
+        $this->assertSame( array( 'Cache-Control' => 'private, max-age=60', 'Surrogate-Control' => 'no-store', 'X-Accel-Expires' => '0' ),
+                           eZSession::privateCacheHeaders( array( 'Content-Type: text/html', 'cache-control: public, max-age=60',
+                                                                  'Surrogate-Control: max-age=3600', 'X-Accel-Expires: 600' ) ),
+                           'the headers a CDN or proxy obeys before Cache-Control' );
+        $this->assertSame( array( 'Cache-Control' => 'no-store, max-age=60' ),
+                           eZSession::privateCacheHeaders( array( 'Cache-Control: no-store', 'Cache-Control: public, max-age=60' ) ),
+                           'several Cache-Control lines are read together, as a cache reads them: no-store is not lost' );
         $this->assertSame( array(), eZSession::privateCacheHeaders( array( 'Cache-Control: private, no-cache' ) ), 'nothing to change' );
         $this->assertSame( array( 'Cache-Control' => 'private, no-cache, must-revalidate' ), eZSession::privateCacheHeaders( array() ),
                            'none: private' );

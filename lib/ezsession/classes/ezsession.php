@@ -539,17 +539,17 @@ class eZSession
 
     /**
      * The headers that keep a response with the session cookie out of shared caches, from its headers $headers
-     * (headers_list()): Cache-Control made private (public, s-maxage and proxy-revalidate dropped, max-age and the
-     * rest kept for the browser) unless it is already private or no-store, and a Surrogate-Control (which a CDN
-     * obeys before Cache-Control) replaced by no-store.
+     * (headers_list()): Cache-Control made private (privateCacheControl(), from all its lines, as a cache reads them
+     * together), and the headers a proxy or CDN obeys before Cache-Control, when the response has them:
+     * Surrogate-Control no-store, X-Accel-Expires 0.
      *
      * @param array $headers
      * @return array name => value, only the headers to change
      */
     static public function privateCacheHeaders( array $headers )
     {
-        $cacheControl = null;
-        $surrogate = false;
+        $cacheControl = array();
+        $result = array();
         foreach ( $headers as $header )
         {
             $parts = explode( ':', (string)$header, 2 );
@@ -560,29 +560,30 @@ class eZSession
             $name = strtolower( trim( $parts[0] ) );
             if ( $name === 'cache-control' )
             {
-                $cacheControl = trim( $parts[1] );
+                $cacheControl[] = trim( $parts[1] );
             }
             else if ( $name === 'surrogate-control' )
             {
-                $surrogate = true;
+                $result['Surrogate-Control'] = 'no-store';
+            }
+            else if ( $name === 'x-accel-expires' )
+            {
+                $result['X-Accel-Expires'] = '0';
             }
         }
-        $result = array();
-        $private = self::privateCacheControl( $cacheControl === null ? '' : $cacheControl );
-        if ( $private !== $cacheControl )
+        $given = implode( ', ', $cacheControl );
+        $private = self::privateCacheControl( $given );
+        if ( count( $cacheControl ) !== 1 || $private !== $given )
         {
-            $result['Cache-Control'] = $private;
-        }
-        if ( $surrogate )
-        {
-            $result['Surrogate-Control'] = 'no-store';
+            $result = array( 'Cache-Control' => $private ) + $result;
         }
         return $result;
     }
 
     /**
-     * $cacheControl as a private Cache-Control: unchanged when private or no-store already, else "private" in front
-     * of its directives without public, s-maxage and proxy-revalidate; "private, no-cache, must-revalidate" for none.
+     * $cacheControl as a private Cache-Control: its directives without public, s-maxage and proxy-revalidate (which
+     * only shared caches read), with "private" in front unless it has private or no-store; "private, no-cache,
+     * must-revalidate" for none. max-age and the rest stay for the browser.
      *
      * @param string $cacheControl
      * @return string
@@ -590,24 +591,23 @@ class eZSession
     static public function privateCacheControl( $cacheControl )
     {
         $kept = array();
+        $private = false;
         foreach ( explode( ',', (string)$cacheControl ) as $directive )
         {
             $directive = trim( $directive );
             $token = strtolower( trim( explode( '=', $directive, 2 )[0] ) );
-            if ( $token === 'private' || $token === 'no-store' )
+            if ( $directive === '' || in_array( $token, array( 'public', 's-maxage', 'proxy-revalidate' ), true ) )
             {
-                return $cacheControl;
+                continue;
             }
-            if ( $directive !== '' && !in_array( $token, array( 'public', 's-maxage', 'proxy-revalidate' ), true ) )
-            {
-                $kept[] = $directive;
-            }
+            $private = $private || $token === 'private' || $token === 'no-store';
+            $kept[] = $directive;
         }
         if ( !$kept )
         {
-            $kept = array( 'no-cache', 'must-revalidate' );
+            return 'private, no-cache, must-revalidate';
         }
-        return 'private, ' . implode( ', ', $kept );
+        return ( $private ? '' : 'private, ' ) . implode( ', ', $kept );
     }
 
     /**
