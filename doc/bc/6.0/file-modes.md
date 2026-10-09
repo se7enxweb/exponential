@@ -33,8 +33,10 @@ define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothin
 
 - Write them as octal numbers with the leading 0 (`0750`) or as strings (`'0750'`, `'750'`). An integer above 0777
   written without the 0 (`750`) is read as 0750 too, but a smaller one cannot be told from an octal number: `440` is
-  0670. A value that is no mode (`'rwxr-x---'`, 0x1ff0) limits to the owner (0700 for directories, 0600 for files),
-  so the site keeps working and nothing is opened, and is reported once to the PHP error log.
+  0670. A value that is no mode (`'rwxr-x---'`, 0x1ff0, a float, an array) or a limit that would take rights from
+  the owner (anything without 0600 for files or 0700 for directories: `0` would make every new file 0000) is
+  ignored: the site behaves as without that constant, and the PHP error log says so once per process. Check the
+  error log after setting them.
 - One constant is enough: `EZP_FILE_MODE_MAX=0640` alone gives directories 0750 (the search bit wherever reading is
   allowed), `EZP_DIR_MODE_MAX=0750` alone gives files 0640.
 - Set them as a pair whose file limit is the directory limit without the search bits (0750/0640, 0770/0660,
@@ -44,8 +46,15 @@ define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothin
   autoload arrays, early log lines), and a security limit belongs to the configuration of the server, not to a
   setting an administrator can change in the admin interface.
 - Where the web server and the command line scripts (cronjobs, `bin/php/*`) run as different users, they need a
-  common group with write access: use `0770` / `0660` and put both users in the group. With one user for both, `0700`
-  / `0600` is the tightest choice. Some files are written by both, whoever comes first creates them: the lock and the
+  common group with write access: use `0770` / `0660`, and make the directories of `var/` belong to that group with
+  the set-group-ID bit (`chgrp -R <group> var; find var -type d -exec chmod g+s {} +`), so everything either user
+  creates gets that group. Putting the users in the group is not enough: a file gets the primary group of the user
+  who creates it, and root's (Velocity started as root, a cronjob as root) is `root`. Without the set-group-ID bit,
+  what root creates under `0770` / `0660` is `root:root` and the web server can neither read it nor write into it.
+  Directories made inside keep the bit (`mkdir()` inherits it). The umask of each process still narrows files written
+  without a mode of their own (`eZFile::create()`, a plain `file_put_contents()`): under the usual `0022` they get
+  `0640`, so the other user can read but not append to them, exactly as without the limits (`0644`); start both with
+  `umask 0007` if they have to. With one user for both, `0700` / `0600` is the tightest choice. Some files are written by both, whoever comes first creates them: the lock and the
   run log of the notification service, the SQL profile of the cache manager, the maintenance state, the content job
   store, the query cache. They used to be made writable for everybody (0666) for that reason; with `0750` / `0640` and
   two users, the second one can no longer write them (a notification run, for example, finds the lock busy). Run both
@@ -79,10 +88,10 @@ Uploads (`eZHTTPFile`), image variations (`eZImageHandler`, `image.ini ImagePerm
 cluster handlers and the static cache set the modes of `site.ini [FileSettings]` and `image.ini` through
 `eZFile::fileMode()` as well.
 
-The autoload generator created `var/autoload` with `EZP_INI_FILE_PERMISSION`, a file mode (0644), which left the
-directory without the search bit, and its files 0777. The directory is now created with a directory mode under the
-umask of the server, as before, and within `EZP_DIR_MODE_MAX`; the files with `EZP_INI_FILE_PERMISSION` or 0666,
-never executable.
+The autoload generator creates `var/autoload` with `EZP_INI_FILE_PERMISSION` where defined, a file mode (0644)
+that leaves the directory without the search bit, and its files 0777. Without the limits this stays exactly as it
+was. With them, the directory gets a directory mode (0777 under the umask of the server, within `EZP_DIR_MODE_MAX`)
+and the files `EZP_INI_FILE_PERMISSION` or 0777 within `EZP_FILE_MODE_MAX`, which takes the execute bits away.
 
 The umask belongs to the process. A server that runs requests in threads of one process (FrankenPHP in its threaded
 mode) shares it between them; the places that change it for a moment put it back, and what they set never allows
@@ -118,7 +127,14 @@ database directory. Narrow umasks they set on purpose (`umask( 0077 )` around a 
 
 `expFileModeLimitsTest` (security suite, no database): reading a limit; without limits nothing changes; with
 0750/0640 every directory, file, log, INI cache file and PHP cache file it creates stays inside them; one constant
-gives the other; a mistyped one limits to the owner and is reported; no code bypasses the helpers.
+gives the other; a mistyped one, or one that would take rights from the owner, is ignored and reported; without
+limits the autoload arrays and image variations get exactly the modes of before; no code bypasses the helpers.
+
+The mixed-user setup (Velocity as root, PHP-FPM as the site user) was checked in a sandbox, each user creating
+directories, files and logs through `eZDir::mkdir()`, `eZFile::create()`, `eZLog::write()` and a plain
+`file_put_contents()` and the other reading, appending to, writing into and replacing them: with `0770` / `0660` and
+set-group-ID directories the result is the same as without limits; without the set-group-ID bit, or with
+`0750` / `0640`, the site user can no longer write into what root created.
 
 ## Related pages
 

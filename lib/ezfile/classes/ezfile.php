@@ -35,21 +35,20 @@ class eZFile
     /**
      * The upper limit for the mode of the files the installation creates: the constant EZP_FILE_MODE_MAX (config.php);
      * with only EZP_DIR_MODE_MAX set, that limit without the search bits (0750 gives 0640); null without either (no
-     * limit, the modes asked for are used as before). See doc/bc/6.0/file-modes.md.
+     * limit, the modes asked for are used as before). A constant that is no usable limit counts as not set (see
+     * limitFromConstant()). See doc/bc/6.0/file-modes.md.
      *
      * @return int|null
      */
     static function fileModeLimit()
     {
-        if ( defined( 'EZP_FILE_MODE_MAX' ) )
+        $limit = self::limitFromConstant( 'EZP_FILE_MODE_MAX', 0600 );
+        if ( $limit !== null )
         {
-            return self::limitFromSettingFor( 'EZP_FILE_MODE_MAX', EZP_FILE_MODE_MAX, 0600 );
+            return $limit;
         }
-        if ( defined( 'EZP_DIR_MODE_MAX' ) )
-        {
-            return self::limitFromSettingFor( 'EZP_DIR_MODE_MAX', EZP_DIR_MODE_MAX, 0700 ) & 0666;
-        }
-        return null;
+        $dirLimit = self::limitFromConstant( 'EZP_DIR_MODE_MAX', 0700 );
+        return $dirLimit === null ? null : ( $dirLimit & 0666 );
     }
 
     /**
@@ -116,9 +115,10 @@ class eZFile
     /**
      * A mode from a constant or setting: an integer (0640) or a string of octal digits ("0640", "640"). An integer
      * above 0777 written without the leading 0 (750) is read as its octal digits; a smaller one cannot be told from
-     * an octal number (440 is 0670), so write the 0 or use a string. Anything else gives null.
+     * an octal number (440 is 0670), so write the 0 or use a string. Anything else (another type, a float, a
+     * negative number, more than three octal digits, "rwxr-x---") gives null.
      *
-     * @param int|string $value
+     * @param mixed $value
      * @return int|null
      */
     static function modeFromSetting( $value )
@@ -131,23 +131,33 @@ class eZFile
             }
             return preg_match( '/^[0-7]{3}$/', (string)$value ) ? octdec( (string)$value ) : null;
         }
-        $value = trim( (string)$value );
-        return preg_match( '/^0*([0-7]{1,3})$/', $value, $match ) ? octdec( $match[1] ) : null;
+        if ( !is_string( $value ) )
+        {
+            return null;
+        }
+        return preg_match( '/^0*([0-7]{1,3})$/', trim( $value ), $match ) ? octdec( $match[1] ) : null;
     }
 
     /**
-     * The limit the constant $name with $value sets; a value that is no mode gives $ownerOnly (rights for the owner
-     * only, so the site keeps working and nothing is opened) and is reported once to the PHP error log.
+     * The limit the constant $name sets, or null when it is not defined. A value that is no mode, or a limit that
+     * would take rights from the owner ($ownerBits: 0600 for files, 0700 for directories; 0 would leave every new
+     * file 0000), fails safe: it counts as not set, so the modes asked for are used as without the limits, and it is
+     * reported once per process to the PHP error log. Never a narrower limit than the owner's own rights, which could
+     * lock the site out of its own files.
      *
-     * @param string $name
-     * @param int|string $value
-     * @param int $ownerOnly
-     * @return int
+     * @param string $name EZP_FILE_MODE_MAX or EZP_DIR_MODE_MAX
+     * @param int $ownerBits The rights the owner must keep
+     * @return int|null
      */
-    static function limitFromSettingFor( $name, $value, $ownerOnly )
+    static function limitFromConstant( $name, $ownerBits )
     {
+        if ( !defined( $name ) )
+        {
+            return null;
+        }
+        $value = constant( $name );
         $mode = self::modeFromSetting( $value );
-        if ( $mode !== null )
+        if ( $mode !== null && ( $mode & $ownerBits ) === $ownerBits )
         {
             return $mode;
         }
@@ -155,10 +165,12 @@ class eZFile
         if ( !isset( $GLOBALS['eZFileModeLimitReported'][$name] ) )
         {
             $GLOBALS['eZFileModeLimitReported'][$name] = true;
-            error_log( "Exponential: $name in config.php is no file mode (" . var_export( $value, true ) . '); ' .
-                       sprintf( '%04o', $ownerOnly ) . ' is used. Write it as an octal number such as 0750.' );
+            error_log( "Exponential: $name in config.php is ignored, " .
+                       ( $mode === null ? 'it is no file mode (' . var_export( $value, true ) . ')' :
+                                          sprintf( '%04o takes rights from the owner (it needs at least %04o)', $mode, $ownerBits ) ) .
+                       '. Write it as an octal number such as ' . ( $ownerBits === 0700 ? '0750' : '0640' ) . '.' );
         }
-        return $ownerOnly;
+        return null;
     }
 
     /*!

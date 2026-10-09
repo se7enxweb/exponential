@@ -235,9 +235,10 @@ class eZAutoloadGenerator
             }
             else if ( !file_exists( $targetBasedir ) )
             {
-                // A directory, so a directory mode: EZP_INI_FILE_PERMISSION (a file mode, 0644) left it without the
-                // search bit. Under the umask of the server, as before, and within EZP_DIR_MODE_MAX
-                mkdir( $targetBasedir, eZDir::dirMode( 0777 ), true );
+                // Under the umask of the server and within EZP_DIR_MODE_MAX. Without the limits exactly as before
+                // (EZP_INI_FILE_PERMISSION where defined, else 0777); with them a directory mode, since
+                // EZP_INI_FILE_PERMISSION is a file mode (0644) and leaves the directory without its search bit
+                mkdir( $targetBasedir, eZDir::dirMode( defined( 'EZP_INI_FILE_PERMISSION' ) && eZDir::dirModeLimit() === null ? EZP_INI_FILE_PERMISSION : 0777 ), true );
             }
 
             $filename = $this->nameTable( $location );
@@ -250,8 +251,8 @@ class eZAutoloadGenerator
                  fwrite( $file, $data );
                  fwrite( $file, $this->dumpArrayEnd() );
                  fclose( $file );
-                 // Included PHP, never executable; within EZP_FILE_MODE_MAX
-                 chmod( $filePath, eZFile::fileMode( defined( 'EZP_INI_FILE_PERMISSION' ) ? EZP_INI_FILE_PERMISSION : 0666 ) );
+                 // Within EZP_FILE_MODE_MAX; without the limits exactly as before (EZP_INI_FILE_PERMISSION, else 0777)
+                 chmod( $filePath, eZFile::fileMode( defined( 'EZP_INI_FILE_PERMISSION' ) ? EZP_INI_FILE_PERMISSION : 0777 ) );
 
              }
              else

@@ -88,17 +88,19 @@ class eZDir
     /**
      * The upper limit for the mode of the directories the installation creates: the constant EZP_DIR_MODE_MAX
      * (config.php); with only EZP_FILE_MODE_MAX set, that limit with the search bits where it allows reading (0640
-     * gives 0750); null without either. See eZFile::fileModeLimit().
+     * gives 0750); null without either. A constant that is no usable limit counts as not set. See
+     * eZFile::fileModeLimit().
      *
      * @return int|null
      */
     static function dirModeLimit()
     {
-        if ( defined( 'EZP_DIR_MODE_MAX' ) )
+        $limit = eZFile::limitFromConstant( 'EZP_DIR_MODE_MAX', 0700 );
+        if ( $limit !== null )
         {
-            return eZFile::limitFromSettingFor( 'EZP_DIR_MODE_MAX', EZP_DIR_MODE_MAX, 0700 );
+            return $limit;
         }
-        $fileLimit = eZFile::fileModeLimit();
+        $fileLimit = eZFile::limitFromConstant( 'EZP_FILE_MODE_MAX', 0600 );
         // with only EZP_FILE_MODE_MAX: the search bit wherever reading is allowed (0640 gives 0750)
         return $fileLimit === null ? null : ( $fileLimit | ( ( $fileLimit & 0444 ) >> 2 ) );
     }

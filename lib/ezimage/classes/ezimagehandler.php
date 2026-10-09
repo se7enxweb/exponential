@@ -306,7 +306,7 @@ class eZImageHandler
             return true;
         $success = false;
         $oldmask = umask( eZFile::creationUmask() );
-        if ( !chmod( $filepath, eZFile::fileMode( $mode ) ) )
+        if ( !chmod( $filepath, eZFile::fileMode( octdec( $perm ) ) ) )
             eZDebug::writeError( "Chmod $perm $filepath failed", __METHOD__ );
         else
             $success = true;

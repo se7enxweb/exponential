@@ -7,7 +7,8 @@
  *          umask( 0 ); how a constant is read (0750, "0750", "00750", "750", 750 written without the 0, nonsense)
  *  FM-05 - With one constant only, the other limit follows from it (0640 for files gives 0750 for directories, 0750
  *          for directories gives 0640 for files)
- *  FM-06 - A constant that is no mode limits to the owner (0700 / 0600) instead of opening or locking out the site
+ *  FM-06 - A constant that is no mode, or a limit that takes rights from the owner (0, 0640 for directories), is
+ *          ignored (no limit, as without it) and reported once; never 0000
  *  FM-02 - With the limits, everything the installation creates stays inside them: directories (eZDir::mkdir(), its
  *          parents, StorageDirPermissions=0777), files (eZFile::create(), file_put_contents() under the umask set at
  *          start-up), logs (eZLog with LogFilePermissions=0666), the INI cache, PHP cache files (eZPHPCreator)
@@ -223,7 +224,7 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
     /** FM-06 */
     #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
     #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
-    public function testAMistypedConstantLimitsToTheOwner()
+    public function testAMistypedConstantIsIgnoredAndReported()
     {
         if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
         {
@@ -235,10 +236,16 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         $previousLog = ini_set( 'error_log', $log );
         try
         {
-            $this->assertSame( 0600, eZFile::fileModeLimit() );
-            $this->assertSame( 0700, eZDir::dirModeLimit() );
-            $this->assertSame( 0600, eZFile::fileMode( 0666 ) );
+            $this->assertNull( eZFile::fileModeLimit(), 'no limit, as without the constant' );
+            $this->assertNull( eZDir::dirModeLimit() );
+            $this->assertSame( 0666, eZFile::fileMode( 0666 ) );
+            $this->assertSame( 0777, eZDir::dirMode( 0777 ) );
+            $this->assertSame( 0, eZFile::creationUmask() );
+            umask( 0022 );
+            eZFile::applyCreationUmask();
+            $this->assertSame( 0022, umask(), 'the umask of the server is left alone' );
             eZFile::fileModeLimit();
+            eZDir::dirModeLimit();
         }
         finally
         {
@@ -246,7 +253,159 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         }
         $lines = file( $log, FILE_IGNORE_NEW_LINES );
         $this->assertCount( 2, $lines, 'each mistyped constant is reported once' );
-        $this->assertStringContainsString( 'EZP_FILE_MODE_MAX in config.php is no file mode', $lines[0] );
+        $this->assertStringContainsString( 'EZP_FILE_MODE_MAX in config.php is ignored, it is no file mode', $lines[0] );
+        $this->assertStringContainsString( 'EZP_DIR_MODE_MAX in config.php is ignored', $lines[1] );
+    }
+
+    /** FM-06 */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testALimitThatTakesRightsFromTheOwnerIsIgnored()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits' );
+        }
+        // 0 would make every new file 0000, '0640' a directory its owner cannot enter: never applied
+        define( 'EZP_FILE_MODE_MAX', 0 );
+        define( 'EZP_DIR_MODE_MAX', '0640' );
+        $log = $this->dir . '/php-error.log';
+        $previousLog = ini_set( 'error_log', $log );
+        try
+        {
+            $this->assertNull( eZFile::fileModeLimit() );
+            $this->assertNull( eZDir::dirModeLimit() );
+            $this->assertSame( 0, eZFile::creationUmask() );
+            $this->assertTrue( eZFile::create( 'x.txt', $this->dir . '/d', 'x' ) );
+            $this->assertSame( 0600, $this->mode( $this->dir . '/d/x.txt' ) & 0600, 'never 0000' );
+        }
+        finally
+        {
+            ini_set( 'error_log', $previousLog );
+        }
+        $log = file_get_contents( $log );
+        $this->assertStringContainsString( 'EZP_FILE_MODE_MAX in config.php is ignored, 0000 takes rights from the owner', $log );
+        $this->assertStringContainsString( 'EZP_DIR_MODE_MAX in config.php is ignored, 0640 takes rights from the owner', $log );
+    }
+
+    /** FM-06 */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testAnIgnoredConstantLeavesTheOtherInForce()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits' );
+        }
+        define( 'EZP_FILE_MODE_MAX', 0040 );
+        define( 'EZP_DIR_MODE_MAX', 0750 );
+        $previousLog = ini_set( 'error_log', $this->dir . '/php-error.log' );
+        try
+        {
+            $this->assertSame( 0640, eZFile::fileModeLimit(), 'from the directory limit, as if only that were set' );
+            $this->assertSame( 0750, eZDir::dirModeLimit() );
+        }
+        finally
+        {
+            ini_set( 'error_log', $previousLog );
+        }
+    }
+
+    /** FM-01 */
+    public function testAValueOfAnotherTypeIsNoModeAndRaisesNothing()
+    {
+        error_clear_last();
+        foreach ( array( array( 0750 ), 488.0, true, null, new stdClass() ) as $value )
+        {
+            $this->assertNull( eZFile::modeFromSetting( $value ), var_export( $value, true ) );
+        }
+        $this->assertNull( error_get_last() );
+    }
+
+    /** FM-03: without limits the autoload arrays are written with the modes of before */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testWithoutLimitsTheAutoloadArraysKeepTheirModes()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) || defined( 'EZP_INI_FILE_PERMISSION' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits or EZP_INI_FILE_PERMISSION' );
+        }
+        umask( 0022 );
+        $file = expFileModeAutoloadWriter::write( $this->dir . '/autoload' );
+        $this->assertSame( 0755, $this->mode( $this->dir . '/autoload' ), '0777 under the umask of the server' );
+        $this->assertSame( 0777, $this->mode( $file ), 'chmod 0777, as before' );
+    }
+
+    /** FM-03 */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testWithoutLimitsTheAutoloadArraysKeepEzpIniFilePermission()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) || defined( 'EZP_INI_FILE_PERMISSION' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits or EZP_INI_FILE_PERMISSION' );
+        }
+        define( 'EZP_INI_FILE_PERMISSION', 0751 );
+        umask( 0 );
+        $file = expFileModeAutoloadWriter::write( $this->dir . '/autoload' );
+        $this->assertSame( 0751, $this->mode( $this->dir . '/autoload' ), 'the directory with EZP_INI_FILE_PERMISSION, as before' );
+        $this->assertSame( 0751, $this->mode( $file ) );
+    }
+
+    /** FM-02 */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testWithLimitsTheAutoloadArraysStayInside()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) || defined( 'EZP_INI_FILE_PERMISSION' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits or EZP_INI_FILE_PERMISSION' );
+        }
+        define( 'EZP_INI_FILE_PERMISSION', 0644 );
+        define( 'EZP_DIR_MODE_MAX', 0750 );
+        umask( 0 );
+        eZFile::applyCreationUmask();
+        $file = expFileModeAutoloadWriter::write( $this->dir . '/autoload' );
+        $this->assertSame( 0750, $this->mode( $this->dir . '/autoload' ), 'a directory mode, not the file mode 0644' );
+        $this->assertSame( 0640, $this->mode( $file ) );
+    }
+
+    /** FM-03: without limits an image variation gets all of ImagePermissions, as before */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testWithoutLimitsAnImageGetsImagePermissionsAsBefore()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits' );
+        }
+        $image = $this->dir . '/x.png';
+        file_put_contents( $image, 'x' );
+        chmod( $image, 0600 );
+        ezpINIHelper::setINISetting( 'image.ini', 'FileSettings', 'ImagePermissions', '1664' );
+        $this->assertTrue( eZImageHandler::changeFilePermissions( $image ) );
+        clearstatcache();
+        $this->assertSame( 01664, fileperms( $image ) & 07777 );
+    }
+
+    /** FM-02 */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testWithLimitsAnImageStaysInside()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits' );
+        }
+        define( 'EZP_FILE_MODE_MAX', 0640 );
+        $image = $this->dir . '/x.png';
+        file_put_contents( $image, 'x' );
+        chmod( $image, 0600 );
+        ezpINIHelper::setINISetting( 'image.ini', 'FileSettings', 'ImagePermissions', '0666' );
+        $this->assertTrue( eZImageHandler::changeFilePermissions( $image ) );
+        $this->assertSame( 0640, $this->mode( $image ) );
+        $this->assertTrue( eZImageHandler::changeFilePermissions( $image ), 'nothing to change: no chmod' );
     }
 
     /** FM-08 */
@@ -316,5 +475,23 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
             umask( $oldUmask );
             chmod( $bin, eZFile::executableMode( 0755 ) );';
         $this->assertSame( array( 2, 4, 5, 7, 14, 15, 17, 18 ), expFileModeCalls::bypassesIn( $source ) );
+    }
+}
+
+/**
+ * Writes one autoload array into a directory of the test (eZAutoloadGenerator::writeAutoloadFiles() is protected).
+ */
+class expFileModeAutoloadWriter extends eZAutoloadGenerator
+{
+    /**
+     * @param string $dir The output directory, created by the generator
+     * @return string The path of the file written
+     */
+    public static function write( $dir )
+    {
+        $generator = new self( new ezpAutoloadGeneratorOptions( array( 'outputDir' => $dir ) ) );
+        $generator->autoloadArrays = array( self::MODE_EXTENSION => "'expFileModeX' => 'x.php',\n" );
+        $generator->writeAutoloadFiles();
+        return $dir . '/ezp_extension.php';
     }
 }
