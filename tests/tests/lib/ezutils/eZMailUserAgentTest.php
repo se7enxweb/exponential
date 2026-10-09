@@ -78,6 +78,17 @@ class eZMailUserAgentTest extends PHPUnit\Framework\TestCase
         $this->assertDoesNotMatchRegularExpression( '/^Bcc:/mi', $mail->Mail->generateHeaders() );
     }
 
+    public function testLineBreaksInTheMailPropertyDoNotStartAHeader()
+    {
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'UserAgent', '' );
+        $mail = new eZMail();
+        $mail->Mail->userAgent = "Portal\r\nBcc: someone@example.com";
+
+        $headers = $mail->Mail->generateHeaders();
+        $this->assertDoesNotMatchRegularExpression( '/^Bcc:/mi', $headers );
+        $this->assertSame( 'Portal Bcc: someone@example.com', self::userAgentIn( $headers ) );
+    }
+
     public function testEmptyValuesKeepTheSmtpDefault()
     {
         ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'UserAgent', "\x01\x02" );

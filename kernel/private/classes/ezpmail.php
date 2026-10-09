@@ -31,8 +31,10 @@ class ezpMail extends ezcMail
      */
     public function setHeader( $name, $value, $charset = 'us-ascii' )
     {
+        // The property is public: a value set on it directly gets the same line break cleaning as setUserAgent(),
+        // since ezcMail writes an us-ascii header as it is and a break would start a header of the caller's choosing
         if ( is_string( $this->userAgent ) && $this->userAgent !== '' && strcasecmp( $name, 'User-Agent' ) === 0 )
-            $value = $this->userAgent;
+            $value = eZMail::cleanHeaderValue( $this->userAgent );
         parent::setHeader( $name, $value, $charset );
     }
 
