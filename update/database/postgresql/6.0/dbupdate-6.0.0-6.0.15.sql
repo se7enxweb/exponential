@@ -47,8 +47,9 @@ $$;
 -- ("web <siteaccess>" or "cli <script>").
 --
 -- The kernel writes both when content goes to the trash, in the same row and
--- transaction as the rest of it, so without the columns moving content to the
--- trash fails. They replace <VarDir>/trash/trashed.json, which was local to
+-- transaction as the rest of it. Until they exist it stores the row without them
+-- and keeps writing the old file, so the order of code and update does not
+-- matter. They replace <VarDir>/trash/trashed.json, which was local to
 -- one web server and outside the database's transactions and backups.
 -- update/common/scripts/6.0/movetrashrecords.php copies what that file holds
 -- into the columns afterwards.

@@ -265,6 +265,20 @@ class eZContentObjectTrashRecordTest extends PHPUnit\Framework\TestCase
         $again = Exponential\Service\TrashRecord::moveToColumns( $db, false, $this->objectIDs );
         $this->assertSame( 0, $again['moved'], 'a second run changes nothing' );
 
+        // an entry that names no user: counted, so the numbers of movetrashrecords.php add up, and left at 0
+        $child = $this->objectIDs[1];
+        $childNode = eZContentObjectTrashNode::fetchByContentObjectID( $child );
+        $childNodeID = (int)$childNode->attribute( 'node_id' );
+        $db->query( "UPDATE ezcontentobject_trash SET trashed_by = 0, trashed_via = '' WHERE node_id = $childNodeID" );
+        $map = Exponential\Service\TrashRecord::all();
+        $map[(string)$child] = array( 'node_id' => $childNodeID, 'trashed' => (int)$childNode->attribute( 'trashed' ), 'user_id' => 0,
+                                      'user_name' => '', 'via' => 'cli test', 'recorded' => time() );
+        file_put_contents( Exponential\Service\TrashRecord::file(), json_encode( $map ) );
+        $stats = Exponential\Service\TrashRecord::moveToColumns( $db, false, array( $child ) );
+        $this->assertSame( array( 'entries' => 1, 'moved' => 0, 'kept' => 0, 'orphans' => 0, 'unknown' => 1 ), $stats );
+        $this->assertSame( 0, (int)eZContentObjectTrashNode::fetchByContentObjectID( $child )->attribute( 'trashed_by' ) );
+        eZContentObjectTrashNode::purgeForObject( $child );
+
         eZContentObjectTrashNode::purgeForObject( $grandchild );
         $this->assertArrayNotHasKey( (string)$grandchild, Exponential\Service\TrashRecord::all(), 'purging forgets the entry' );
     }

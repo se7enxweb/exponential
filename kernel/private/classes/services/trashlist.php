@@ -98,7 +98,7 @@ class TrashList
     public static function context()
     {
         $db = \eZDB::instance();
-        $columns = TrashRecord::columnsExist( $db );
+        $columns = \eZContentObjectTrashNode::hasTrashedByColumns();
         $records = array();
         $map = TrashRecord::all();
         if ( $map )
@@ -130,23 +130,24 @@ class TrashList
             $params['TrashedFrom'] = (int)strtotime( $filters['from'] . ' 00:00:00' );
         if ( $filters['to'] )
             $params['TrashedTo'] = (int)strtotime( $filters['to'] . ' 23:59:59' );
-        // the column in SQL; the few rows known only from the old file as a list of their objects
-        if ( $filters['trashed_by'] && empty( $context['columns'] ) )
+        // before the database update there is no column to filter on: everything known comes from the old file
+        $columns = isset( $context['columns'] ) ? (bool)$context['columns'] : \eZContentObjectTrashNode::hasTrashedByColumns();
+        if ( $filters['trashed_by'] && !$columns )
         {
-            // before the database update: only the old file knows anything
-            if ( $filters['trashed_by'] === 'unknown' )
-                $params['ExcludeContentObjectIDList'] = array_keys( $context['records'] );
-            else
+            $ids = array();
+            foreach ( $context['records'] as $objectID => $entry )
             {
-                $params['ContentObjectIDList'] = array();
-                foreach ( $context['records'] as $objectID => $entry )
-                {
-                    if ( (int)$entry['user_id'] === (int)$filters['trashed_by'] )
-                        $params['ContentObjectIDList'][] = (int)$objectID;
-                }
+                if ( $filters['trashed_by'] === 'unknown' || (int)$entry['user_id'] === (int)$filters['trashed_by'] )
+                    $ids[] = (int)$objectID;
             }
+            if ( $filters['trashed_by'] === 'unknown' )
+                $params['ExcludeContentObjectIDList'] = $ids;
+            else
+                $params['ContentObjectIDList'] = $ids;
+            return $params;
         }
-        else if ( $filters['trashed_by'] === 'unknown' )
+        // the column in SQL; the few rows known only from the old file as a list of their objects
+        if ( $filters['trashed_by'] === 'unknown' )
         {
             $params['TrashedByUnknown'] = true;
             $params['TrashedByFileObjectIDList'] = array();

@@ -171,7 +171,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-4aae7b43c2b61888dfb3952530bfafc1  composer.json
+7c6f5c4de4fdcc756b4b48834d3891eb  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 f6ad517f79a04c94b5c756cea825b610  config.php-RECOMMENDED
@@ -2785,7 +2785,7 @@ f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 7c829017c001901d87afec4e42579df4  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 250a9d7e6948ddd176f5c6c54bb0febb  doc/bc/6.0/behaviour-changes-2026-09b.md
-565085a75dab922fd5b95396db2cc982  doc/bc/6.0/behaviour-changes-2026-10.md
+2355575b53ef5460b9aa319da316f1bd  doc/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/bc/6.0/bookmark-folders.md
 d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
@@ -2838,7 +2838,7 @@ a466ef74bde1432f443d1b0f37c843bc  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
-2568f36006800ce29b0e043f2641ef35  doc/bc/6.0/trash.md
+118c26092581a41671d0b7c6b716c0e2  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f3132b1eaf51a8c816a7bc05ad909707  doc/changelogs/6.0/6.0.15.md
+0540fd1851f7342b95d25155d40f43e3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3537,7 +3537,7 @@ f2ef8cf9e7627ccdad13ebc6dd1d1c48  doc/guides/security-and-audit.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
 29fa6d0f4b651ad28fd12b2cbd199bd5  doc/guides/two-factor-login.md
 76caaadb12a9d05063f40cfeff955325  doc/guides/upgrade-check.md
-cc4df66961e8bc9ef1753881847c8a46  doc/guides/upgrading.md
+4a4b6997a3f7e4691e30d81eaefd6590  doc/guides/upgrading.md
 3021f8c1c3339b030c3e75dbd626d297  doc/guides/urls-and-aliases.md
 bad7f02a0224193a981336d961358c0f  doc/guides/workflows.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md
@@ -3885,13 +3885,13 @@ d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
 4f5a89d708dfeff88bb50227abd3d599  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
 1dec25f2dab17abac5489c048696af91  doc/install/10-after-installing.md
-4c091f26bc1108aa7de23ac01bf1304f  doc/install/11-upgrading.md
+ca1072dfabc7149d9495ecf02fa60e77  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
 08f745b103ff5fc101954ae37d01e58c  doc/install/13-security-hardening.md
 697395aba059076da8463bce457b9957  doc/install/14-migrating-from-4x.md
 e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
-339772e4c87ff4d4e6a33072f295baba  doc/install/17-migration-reference.md
+c16be8cb22d2ac62ecb044e4af371544  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/shop/classeshierarchy.html
@@ -4965,7 +4965,7 @@ e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
 b6cb39e28b248e080dc6f37c5c9ca9b9  kernel/classes/ezcontentobjectoperations.php
 06d8358599723d258d5c8246b2333ff1  kernel/classes/ezcontentobjecttranslation.php
-dd5b77789dec7cdb6635165a4bfbd458  kernel/classes/ezcontentobjecttrashnode.php
+438d7f8d3aef87964c33dce28aca6496  kernel/classes/ezcontentobjecttrashnode.php
 297bda5bea725298fb6fe77e78fcbda4  kernel/classes/ezcontentobjecttreenode.php
 8a81e1ff5086cf54d2af9b09489e199c  kernel/classes/ezcontentobjecttreenodeoperations.php
 2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
@@ -5544,8 +5544,8 @@ d831b71988f68ca14c9ccacb11ed32ba  kernel/private/classes/services/contentjobdeta
 d0693dcf25d6d8639c3579bd618844d9  kernel/private/classes/services/mailpreferencespage.php
 691b2b62e924bdef2a7010ea9b8e0960  kernel/private/classes/services/sessiongarbagecollector.php
 d3411a771db07379843c263813850cf0  kernel/private/classes/services/trash.php
-85dea0ef197e5664be927091f53dbba1  kernel/private/classes/services/trashlist.php
-3b73520ea1d1285752ccede91a3dd169  kernel/private/classes/services/trashrecord.php
+eafb49e069146d2d2e7de2de14ed884d  kernel/private/classes/services/trashlist.php
+fe83678e4d8716e0fc68dc4d95636930  kernel/private/classes/services/trashrecord.php
 bfc58e59d09c7c1fdadbb3449f289abe  kernel/private/classes/treemenu_functions.php
 874103f52c97395bb1704a3e40d2e245  kernel/private/classes/urlaliasfilters/ezurlaliasfilterappendnodeid.php
 2dc28861d9ea79d507d8cdf297b01ca3  kernel/private/classes/views/audit/alerts.php
@@ -7435,8 +7435,9 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
 45a11042cf23d383859f6cd2ff5e6d2a  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
-aca22031f4ea6214051f0719a3c57d73  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
-86d998011df2de2488f5e3ca970bcd56  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
+dabfc062ade252e4f52b051c893a73a8  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
+52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
+0a909c2ed4309301ba5e654a7be1d57c  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 23908179beefb9ebfcc66883726b8fe1  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
 68e7667ba121abeb9d36fd8d734c3249  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 5860e301a7bc07bf5415a8e7b57900d0  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
@@ -7994,7 +7995,7 @@ d15a1e6ead412a243d3acb16db52d655  update/common/scripts/5.4/cleanupfieldvaluerel
 895b419a0138eea6b196f43965f519b1  update/common/scripts/5.4/fixtrashedimagereferences.php
 bc079b0feeee78fa2200402accdda0bb  update/common/scripts/6.0/createapikeytable.php
 a6115918db1ff3743526d26ef7d794c9  update/common/scripts/6.0/createaudittables.php
-5c2afe383e3ec7e1e1626a57534f0173  update/common/scripts/6.0/movetrashrecords.php
+c52b4f8c03f179ac0c3c8b2ebaa5aa88  update/common/scripts/6.0/movetrashrecords.php
 a31b7f17bf452d571ea23b33e005831e  update/common/scripts/cleanup.php
 18d258c9c59f4e4e0b5d8d1361630f20  update/common/scripts/updatecontentobjectname.php
 76f81ca253757f0ca61d6c72915a1298  update/common/scripts/updatenbxmlcontents.php
@@ -8060,7 +8061,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-60ab7bb914080a54b021bb1b14221c79  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+011a183c90b6a5b2ca3820dac038bae8  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -8119,9 +8120,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-d714b7c931889962f7697ee8e9c87b84  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+974baa2a6fcd02d1922caf5dc270788d  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-a2cb08491038f9b3efe813f3258affff  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+3bf1f6d06f029ceaa1e28d4d05c4eaf8  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9e2db96d75614e14c654a873ac90fdd6  webdav.php

@@ -114,6 +114,26 @@ class TrashRecord
     }
 
     /**
+     * Whether the file is there but holds no JSON object (cut short, edited by hand): all() then reads it as empty,
+     * so nothing may be copied from it and it must not be removed.
+     *
+     * @param string|null $file default: file()
+     * @return bool
+     */
+    public static function isUnreadable( $file = null )
+    {
+        $file = $file === null ? self::file() : (string)$file;
+        if ( !is_file( $file ) )
+            return false;
+        $json = @file_get_contents( $file );
+        if ( $json === false )
+            return true;
+        if ( trim( $json ) === '' )
+            return false;
+        return !is_array( json_decode( $json, true ) );
+    }
+
+    /**
      * The entry for a trash row, or null when none was recorded for this very trash move.
      *
      * @param array $map from all()
@@ -127,7 +147,8 @@ class TrashRecord
         if ( !isset( $map[(string)(int)$objectID] ) )
             return null;
         $entry = $map[(string)(int)$objectID];
-        if ( !is_array( $entry ) || (int)$entry['node_id'] !== (int)$nodeID || (int)$entry['trashed'] !== (int)$trashed )
+        if ( !is_array( $entry ) || !isset( $entry['node_id'], $entry['trashed'] )
+             || (int)$entry['node_id'] !== (int)$nodeID || (int)$entry['trashed'] !== (int)$trashed )
             return null;
         return $entry;
     }
@@ -140,11 +161,12 @@ class TrashRecord
      * @param bool $dryRun count only, change nothing
      * @param int[]|null $objectIDs only the entries of these objects; null: all
      * @return array( 'entries' => int in the file, 'moved' => int rows given a trashed_by,
-     *                'kept' => int rows that had one already, 'orphans' => int entries without a matching row )
+     *                'kept' => int rows that had one already, 'orphans' => int entries without a matching row,
+     *                'unknown' => int rows whose entry names no user, left at trashed_by 0 )
      */
     public static function moveToColumns( $db, $dryRun = false, $objectIDs = null )
     {
-        $stats = array( 'entries' => 0, 'moved' => 0, 'kept' => 0, 'orphans' => 0 );
+        $stats = array( 'entries' => 0, 'moved' => 0, 'kept' => 0, 'orphans' => 0, 'unknown' => 0 );
         $map = self::all();
         if ( is_array( $objectIDs ) )
             $map = array_intersect_key( $map, array_flip( array_map( 'strval', array_map( 'intval', $objectIDs ) ) ) );
@@ -168,9 +190,11 @@ class TrashRecord
             }
             $userID = isset( $entry['user_id'] ) ? (int)$entry['user_id'] : 0;
             if ( $userID <= 0 )
+            {
+                $stats['unknown']++;
                 continue;
-            $via = isset( $entry['via'] ) ? (string)$entry['via'] : '';
-            $via = function_exists( 'mb_substr' ) ? mb_substr( $via, 0, 100, 'UTF-8' ) : substr( $via, 0, 100 );
+            }
+            $via = \eZContentObjectTrashNode::cleanVia( isset( $entry['via'] ) ? (string)$entry['via'] : '' );
             if ( !$dryRun )
                 $db->query( 'UPDATE ezcontentobject_trash SET trashed_by = ' . $userID . ", trashed_via = '" . $db->escapeString( $via ) . "' "
                           . 'WHERE node_id = ' . (int)$row['node_id'] . ' AND trashed_by = 0' );
@@ -201,47 +225,9 @@ class TrashRecord
      */
     public static function columnsExist( $db )
     {
-        // asked by every view of the trash: once per connection (a persistent worker asks again after its restart,
-        // which the deploy order includes), and from the catalogue of the engine, so that a database without the
-        // columns logs no failed query
-        $key = spl_object_id( $db );
-        if ( isset( self::$columnsExist[$key] ) )
-            return self::$columnsExist[$key];
-        $names = null;
-        switch ( $db->databaseName() )
-        {
-            case 'sqlite':
-                $names = array_column( (array)$db->arrayQuery( 'PRAGMA table_info(ezcontentobject_trash)' ), 'name' );
-                break;
-            case 'mysql':
-                $names = array_column( (array)$db->arrayQuery( 'SHOW COLUMNS FROM ezcontentobject_trash' ), 'Field' );
-                break;
-            case 'postgresql':
-                $names = array_column( (array)$db->arrayQuery( "SELECT column_name FROM information_schema.columns "
-                                                             . "WHERE table_schema = current_schema() AND table_name = 'ezcontentobject_trash'" ), 'column_name' );
-                break;
-            case 'oracle':
-                $names = array();
-                foreach ( (array)$db->arrayQuery( "SELECT column_name FROM user_tab_columns WHERE table_name = 'EZCONTENTOBJECT_TRASH'" ) as $row )
-                    $names[] = (string)reset( $row );
-                break;
-        }
-        if ( $names === null )
-        {
-            // another engine: a row of the trash tells, an empty trash is asked for the columns themselves
-            $rows = $db->arrayQuery( 'SELECT * FROM ezcontentobject_trash', array( 'limit' => 1 ) );
-            if ( is_array( $rows ) && $rows )
-                $names = array_keys( $rows[0] );
-            else
-                $names = is_array( $db->arrayQuery( 'SELECT trashed_by, trashed_via FROM ezcontentobject_trash', array( 'limit' => 1 ) ) )
-                         ? array( 'trashed_by', 'trashed_via' ) : array();
-        }
-        $names = array_map( 'strtolower', $names );
-        return self::$columnsExist[$key] = in_array( 'trashed_by', $names, true ) && in_array( 'trashed_via', $names, true );
+        // the database's catalogue, never a query on the columns: one that fails stops the script
+        return \eZContentObjectTrashNode::hasTrashedByColumns( true );
     }
-
-    /** @var array spl_object_id of the connection => bool, what columnsExist() found */
-    private static $columnsExist = array();
 
     /**
      * Where the trash move came from: "web <siteaccess>" or "cli <script>".
