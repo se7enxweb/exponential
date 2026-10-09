@@ -7441,7 +7441,7 @@ c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemp
 ea50143daead7aa1e955f23e52ba4112  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 23908179beefb9ebfcc66883726b8fe1  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
 68e7667ba121abeb9d36fd8d734c3249  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
-5860e301a7bc07bf5415a8e7b57900d0  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
+f1df3a6b0e8d4e048219c7ebb80ceaaf  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
 cec5fbb54ca85b64799fb51a87f5d380  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
 6fe8e87b68838aff774d60ef6241d38f  tests/tests/kernel/classes/urlalias/eZURLAliasMLHistoryLiveTest.php
 c18a432021e5a648ddcaaffb8177b9bb  tests/tests/kernel/classes/urlalias/eZURLAliasMLMongoStorePathTest.php
