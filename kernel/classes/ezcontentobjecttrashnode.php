@@ -303,7 +303,16 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
                         $names[] = isset( $column['name'] ) ? $column['name'] : '';
                     $rows = array( array( 'c' => count( array_intersect( array( 'trashed_by', 'trashed_via' ), $names ) ) ) );
                     break;
-                // others (MongoDB) have no fixed columns
+                case 'mongo':
+                    // a collection has no columns: the driver works from the .dba schema it ships with, which
+                    // declares them, and reads a document written before them with their defaults. Only a schema
+                    // that declares the table without them says no; none read at all keeps the documents' answer.
+                    $declared = is_callable( array( $db, 'declaredColumns' ) ) ? (array)$db->declaredColumns( 'ezcontentobject_trash' ) : array();
+                    $rows = array( array( 'c' => $declared
+                        ? count( array_intersect_key( array( 'trashed_by' => 1, 'trashed_via' => 1 ), $declared ) )
+                        : 2 ) );
+                    break;
+                // any other engine is taken to have them
             }
             if ( is_array( $rows ) )
                 $found = isset( $rows[0] ) && (int)reset( $rows[0] ) === 2;
@@ -370,6 +379,9 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
         $asObject         = ( isset( $params['AsObject']          ) )                         ? $params['AsObject']           : true;
         $objectNameFilter = ( isset( $params['ObjectNameFilter']  ) )                         ? $params['ObjectNameFilter']   : false;
         $sortBy           = ( isset( $params['SortBy']  ) && is_array( $params['SortBy']  ) ) ? $params['SortBy']              : array( array( 'name' ) );
+        // MongoDB cannot run the joins below: the same list from an aggregation
+        if ( eZDB::instance()->databaseName() === 'mongo' )
+            return self::trashListMongo( $params, $asCount, $offset, $limit, $asObject, $objectNameFilter, $sortBy );
         $trashed          = ( isset( $params['Trashed']  ) && is_int( $params['Trashed'] )  ) ? " AND trashed <= {$params['Trashed']}"   : '';
         $trashed         .= self::trashListFilterSQL( $params );
 
@@ -508,6 +520,234 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
                 $sql .= ' AND ' . $db->generateSQLINStatement( $fileIDs, 'ezcot.contentobject_id', true, true, 'int' );
         }
         return $sql;
+    }
+
+    /**
+     * trashList() on MongoDB, which has no joins: one aggregation over ezcontentobject_trash that looks up the
+     * object, its class, its name and its class name, with the same filters (trashListFilterMongo()), the same
+     * sort keys, offset and limit, and the same rows (the object's fields, then the trash row's, then the class
+     * and name columns). A trash row written before the columns trashed_by and trashed_via existed reads as
+     * trashed_by 0 and trashed_via '', as the SQL engines read the column defaults.
+     *
+     * The permission check is SQL generated from the policies: for a user whose content/read is limited it
+     * cannot be applied here, so such a user is shown no trash (and a warning is logged) rather than all of it.
+     * An AttributeFilter is refused the same way, so that nothing (an Empty, a purge) reaches more than asked.
+     *
+     * @param array $params
+     * @param bool $asCount
+     * @param int|bool $offset
+     * @param int|bool $limit
+     * @param bool $asObject
+     * @param string|bool $objectNameFilter
+     * @param array $sortBy
+     * @return array|int
+     */
+    protected static function trashListMongo( $params, $asCount, $offset, $limit, $asObject, $objectNameFilter, $sortBy )
+    {
+        $none = $asCount ? 0 : array();
+        $limitation = ( isset( $params['Limitation'] ) && is_array( $params['Limitation'] ) ) ? $params['Limitation'] : false;
+        $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
+        if ( $limitationList === false )
+            return $none;
+        if ( is_array( $limitationList ) && count( $limitationList ) > 0 )
+        {
+            eZDebug::writeWarning( 'The trash list cannot apply limited content/read policies on MongoDB: nothing is listed', __METHOD__ );
+            return $none;
+        }
+        if ( !empty( $params['AttributeFilter'] ) )
+        {
+            eZDebug::writeWarning( 'The trash list has no AttributeFilter on MongoDB: nothing is listed', __METHOD__ );
+            return $none;
+        }
+
+        // the name in the most prioritized language the object has, as eZContentLanguage::sqlFilter() picks it
+        $languageIDs = array();
+        $mask = 1;
+        foreach ( eZContentLanguage::prioritizedLanguages() as $language )
+        {
+            $languageIDs[] = (int)$language->attribute( 'id' );
+            $mask += (int)$language->attribute( 'id' );
+        }
+        $rank = array( '$let' => array(
+            'vars' => array( 'at' => array( '$indexOfArray' => array( $languageIDs, array( '$bitAnd' => array(
+                array( '$convert' => array( 'input' => '$language_id', 'to' => 'long', 'onError' => 0, 'onNull' => 0 ) ), ~1 ) ) ) ) ),
+            'in' => array( '$cond' => array( array( '$lt' => array( '$$at', 0 ) ), 1000000, '$$at' ) ) ) );
+
+        $pipeline = array();
+        $match = self::trashListFilterMongo( $params );
+        if ( $match )
+            $pipeline[] = array( '$match' => $match );
+        $pipeline[] = array( '$lookup' => array( 'from' => 'ezcontentobject', 'localField' => 'contentobject_id',
+                                                 'foreignField' => 'id', 'as' => '_obj' ) );
+        $pipeline[] = array( '$unwind' => '$_obj' );
+        $pipeline[] = array( '$match' => array( '$expr' => array( '$gt' => array( array( '$bitAnd' => array(
+            array( '$convert' => array( 'input' => '$_obj.language_mask', 'to' => 'long', 'onError' => 0, 'onNull' => 0 ) ), $mask ) ), 0 ) ) ) );
+        if ( isset( $params['ClassIDList'] ) && is_array( $params['ClassIDList'] ) && $params['ClassIDList'] )
+            $pipeline[] = array( '$match' => array( '_obj.contentclass_id' => array( '$in' => array_values( array_map( 'intval', $params['ClassIDList'] ) ) ) ) );
+        $pipeline[] = array( '$lookup' => array( 'from' => 'ezcontentclass', 'let' => array( 'cid' => '$_obj.contentclass_id' ),
+                                                 'pipeline' => array( array( '$match' => array( '$expr' => array( '$and' => array(
+                                                     array( '$eq' => array( '$id', '$$cid' ) ), array( '$eq' => array( '$version', 0 ) ) ) ) ) ),
+                                                     array( '$limit' => 1 ) ),
+                                                 'as' => '_cls' ) );
+        $pipeline[] = array( '$unwind' => '$_cls' );
+        $pipeline[] = array( '$lookup' => array( 'from' => 'ezcontentobject_name',
+                                                 'let' => array( 'oid' => '$contentobject_id', 'ver' => '$contentobject_version' ),
+                                                 'pipeline' => array( array( '$match' => array( '$expr' => array( '$and' => array(
+                                                     array( '$eq' => array( '$contentobject_id', '$$oid' ) ),
+                                                     array( '$eq' => array( '$content_version', '$$ver' ) ) ) ) ) ),
+                                                     array( '$addFields' => array( '_rank' => $rank ) ),
+                                                     array( '$sort' => array( '_rank' => 1 ) ),
+                                                     array( '$limit' => 1 ) ),
+                                                 'as' => '_name' ) );
+        $pipeline[] = array( '$unwind' => '$_name' );
+        if ( $objectNameFilter )
+        {
+            if ( $objectNameFilter == 'others' )
+            {
+                $letters = array();
+                $alphabet = eZAlphabetOperator::fetchAlphabet();
+                foreach ( is_array( $alphabet ) ? $alphabet : array() as $letter )
+                    $letters[] = new MongoDB\BSON\Regex( '^' . preg_quote( (string)$letter ), 'i' );
+                if ( $letters )
+                    $pipeline[] = array( '$match' => array( '_name.name' => array( '$nin' => $letters ) ) );
+            }
+            else
+                $pipeline[] = array( '$match' => array( '_name.name' => new MongoDB\BSON\Regex( '^' . preg_quote( (string)$objectNameFilter ), 'i' ) ) );
+        }
+
+        $db = eZDB::instance();
+        if ( $asCount )
+        {
+            $pipeline[] = array( '$count' => 'count' );
+            $rows = $db->aggregate( 'ezcontentobject_trash', $pipeline );
+            return is_array( $rows ) && isset( $rows[0]['count'] ) ? (int)$rows[0]['count'] : 0;
+        }
+
+        $sortStage = self::trashListSortMongo( $sortBy );
+        if ( isset( $sortStage['contentclass_name'] ) )
+            $pipeline[] = array( '$lookup' => array( 'from' => 'ezcontentclass_name',
+                                                     'let' => array( 'cid' => '$_obj.contentclass_id' ),
+                                                     'pipeline' => array( array( '$match' => array( '$expr' => array( '$and' => array(
+                                                         array( '$eq' => array( '$contentclass_id', '$$cid' ) ),
+                                                         array( '$eq' => array( '$contentclass_version', 0 ) ) ) ) ) ),
+                                                         array( '$addFields' => array( '_rank' => $rank ) ),
+                                                         array( '$sort' => array( '_rank' => 1 ) ),
+                                                         array( '$limit' => 1 ) ),
+                                                     'as' => '_cname' ) );
+        $pipeline[] = array( '$replaceRoot' => array( 'newRoot' => array( '$mergeObjects' => array(
+            '$_obj', '$$ROOT',
+            array( 'trashed_by' => array( '$ifNull' => array( '$trashed_by', 0 ) ),
+                   'trashed_via' => array( '$ifNull' => array( '$trashed_via', '' ) ),
+                   'class_serialized_name_list' => '$_cls.serialized_name_list',
+                   'class_identifier' => '$_cls.identifier',
+                   'name' => '$_name.name',
+                   'real_translation' => '$_name.real_translation' ) ) ) ) );
+        if ( isset( $sortStage['contentclass_name'] ) )
+            $pipeline[] = array( '$addFields' => array( 'contentclass_name' => array( '$ifNull' => array( array( '$first' => '$_cname.name' ), '' ) ) ) );
+        $pipeline[] = array( '$project' => array( '_id' => 0, '_obj' => 0, '_cls' => 0, '_name' => 0, '_cname' => 0 ) );
+        $pipeline[] = array( '$sort' => $sortStage );
+        if ( $offset > 0 )
+            $pipeline[] = array( '$skip' => (int)$offset );
+        if ( $limit > 0 )
+            $pipeline[] = array( '$limit' => (int)$limit );
+        $rows = $db->aggregate( 'ezcontentobject_trash', $pipeline );
+        if ( !is_array( $rows ) )
+            $rows = array();
+        if ( !$asObject )
+            return $rows;
+        $nodes = array();
+        foreach ( $rows as $row )
+            $nodes[] = new eZContentObjectTrashNode( $row );
+        return $nodes;
+    }
+
+    /**
+     * The filters of trashListFilterSQL() (and Trashed) as a MongoDB filter on ezcontentobject_trash. A row
+     * without trashed_by (written before the column existed) counts as trashed_by 0, the column's default.
+     *
+     * @param array $params
+     * @return array an empty array: no filter
+     */
+    public static function trashListFilterMongo( $params )
+    {
+        $and = array();
+        if ( isset( $params['Trashed'] ) && is_int( $params['Trashed'] ) )
+            $and[] = array( 'trashed' => array( '$lte' => $params['Trashed'] ) );
+        if ( isset( $params['TrashedFrom'] ) && is_int( $params['TrashedFrom'] ) )
+            $and[] = array( 'trashed' => array( '$gte' => $params['TrashedFrom'] ) );
+        if ( isset( $params['TrashedTo'] ) && is_int( $params['TrashedTo'] ) )
+            $and[] = array( 'trashed' => array( '$lte' => $params['TrashedTo'] ) );
+        if ( isset( $params['ContentObjectIDList'] ) && is_array( $params['ContentObjectIDList'] ) )
+        {
+            $ids = $params['ContentObjectIDList'] ? array_values( array_map( 'intval', $params['ContentObjectIDList'] ) ) : array( 0 );
+            $and[] = array( 'contentobject_id' => array( '$in' => $ids ) );
+        }
+        if ( isset( $params['ExcludeContentObjectIDList'] ) && is_array( $params['ExcludeContentObjectIDList'] ) && $params['ExcludeContentObjectIDList'] )
+            $and[] = array( 'contentobject_id' => array( '$nin' => array_values( array_map( 'intval', $params['ExcludeContentObjectIDList'] ) ) ) );
+        $fileIDs = isset( $params['TrashedByFileObjectIDList'] ) && is_array( $params['TrashedByFileObjectIDList'] )
+                   ? array_values( array_map( 'intval', $params['TrashedByFileObjectIDList'] ) ) : array();
+        if ( isset( $params['TrashedBy'] ) && is_numeric( $params['TrashedBy'] ) )
+        {
+            $condition = self::trashedByIsMongo( (int)$params['TrashedBy'] );
+            if ( $fileIDs )
+                $condition = array( '$or' => array( $condition, array( 'contentobject_id' => array( '$in' => $fileIDs ) ) ) );
+            $and[] = $condition;
+        }
+        if ( !empty( $params['TrashedByUnknown'] ) )
+        {
+            $and[] = self::trashedByIsMongo( 0 );
+            if ( $fileIDs )
+                $and[] = array( 'contentobject_id' => array( '$nin' => $fileIDs ) );
+        }
+        if ( !$and )
+            return array();
+        return count( $and ) === 1 ? $and[0] : array( '$and' => $and );
+    }
+
+    /**
+     * trashed_by = $userID on MongoDB: for 0 (nobody known) also a row without the field.
+     *
+     * @param int $userID
+     * @return array
+     */
+    protected static function trashedByIsMongo( $userID )
+    {
+        if ( $userID !== 0 )
+            return array( 'trashed_by' => $userID );
+        return array( '$or' => array( array( 'trashed_by' => 0 ), array( 'trashed_by' => array( '$exists' => false ) ) ) );
+    }
+
+    /**
+     * trashList()'s SortBy as a MongoDB sort on the rows trashListMongo() builds, with the sort keys and the
+     * directions of eZContentObjectTreeNode::createSortingSQLStrings() (a true or missing direction ascends),
+     * and the path when no key is known. Ties are broken by node id, so pages do not overlap.
+     *
+     * @param array $sortBy
+     * @return array field => 1|-1
+     */
+    public static function trashListSortMongo( $sortBy )
+    {
+        $fields = array( 'path' => 'path_string', 'path_string' => 'path_identification_string', 'published' => 'published',
+                         'modified' => 'modified', 'modified_subnode' => 'modified_subnode', 'section' => 'section_id',
+                         'node_id' => 'node_id', 'contentobject_id' => 'contentobject_id', 'depth' => 'depth',
+                         'class_identifier' => 'class_identifier', 'class_name' => 'contentclass_name', 'priority' => 'priority',
+                         'visibility' => 'is_invisible', 'name' => 'name', 'trashed' => 'trashed' );
+        if ( is_array( $sortBy ) && count( $sortBy ) > 1 && !is_array( $sortBy[0] ) )
+            $sortBy = array( $sortBy );
+        $sort = array();
+        foreach ( is_array( $sortBy ) ? $sortBy : array() as $entry )
+        {
+            if ( !is_array( $entry ) || !$entry || !is_scalar( $entry[0] ) || !isset( $fields[(string)$entry[0]] ) )
+                continue;
+            $field = $fields[(string)$entry[0]];
+            if ( !isset( $sort[$field] ) )
+                $sort[$field] = ( !array_key_exists( 1, $entry ) || $entry[1] ) ? 1 : -1;
+        }
+        if ( !$sort )
+            $sort['path_string'] = 1;
+        if ( !isset( $sort['node_id'] ) )
+            $sort['node_id'] = 1;
+        return $sort;
     }
 
     /**
