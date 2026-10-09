@@ -2838,7 +2838,7 @@ a466ef74bde1432f443d1b0f37c843bc  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
-16e62edfbf3737927d7e66e2e0cbf869  doc/bc/6.0/trash.md
+4bc7155727a182eebe7c400c79021457  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
@@ -7435,7 +7435,7 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
 45a11042cf23d383859f6cd2ff5e6d2a  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
-9c6ee4fdebe6d052ec16c177fb0b0d17  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
+0c3a9eef1ccc60f900297bc18f976872  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
 935a3def6becc46f294c5d5ff9ada7d3  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
 ea50143daead7aa1e955f23e52ba4112  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
