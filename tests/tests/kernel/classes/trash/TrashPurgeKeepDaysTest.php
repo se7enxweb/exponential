@@ -45,20 +45,37 @@ class TrashPurgeKeepDaysTest extends PHPUnit\Framework\TestCase
         expTestTrashpurgeKeepDays::$errors = array();
     }
 
+    /** @var string|null an override directory of this test, with a content.ini.append.php */
+    private $overrideDir = null;
+
     protected function tearDown(): void
     {
         ezpINIHelper::restoreINISettings();
+        if ( $this->overrideDir !== null )
+        {
+            eZINI::instance()->removeOverrideDir( 'trashpurgekeepdaystest', 'override' );
+            @unlink( $this->overrideDir . '/content.ini.append.php' );
+            @rmdir( $this->overrideDir );
+            $this->overrideDir = null;
+        }
     }
 
     /**
-     * Runs the cronjob part with KeepItemsForDays set to $value and returns the $keepDays its purge got.
+     * Runs the cronjob part with KeepItemsForDays set to $value in an override directory of its own (a file the
+     * INI cache has never seen, as when an administrator adds the setting) and returns the $keepDays its purge got.
      *
-     * @param mixed $value
+     * @param string $value
      * @return array
      */
     private function runWith( $value )
     {
-        ezpINIHelper::setINISetting( 'content.ini', 'TrashSettings', 'KeepItemsForDays', $value );
+        // the shared instance is read before the file exists, as a server that has been running a while has it
+        eZINI::instance( 'content.ini' );
+        $this->overrideDir = sys_get_temp_dir() . '/trashpurgekeepdays-' . getmypid() . '-' . mt_rand();
+        mkdir( $this->overrideDir );
+        file_put_contents( $this->overrideDir . '/content.ini.append.php',
+                           "<?php /* #?ini charset=\"utf-8\"?\n[TrashSettings]\nKeepItemsForDays=$value\n*/ ?>\n" );
+        eZINI::instance()->appendOverrideDir( $this->overrideDir, true, 'trashpurgekeepdaystest', 'override' );
         $part = new expTestTrashpurgeKeepDays();
         $part->run( array() );
         return expTestTrashpurgeKeepDays::$purges;
@@ -99,6 +116,15 @@ class TrashPurgeKeepDaysTest extends PHPUnit\Framework\TestCase
     public function testTheCronjobPurgesWhatIsOldEnough()
     {
         $this->assertSame( array( 90 ), $this->runWith( '90' ) );
+    }
+
+    public function testTheCronjobSeesASettingTheINICacheHasNot()
+    {
+        // A purge cannot be undone: a KeepItemsForDays just added (a new override file, or an edit on a server whose
+        // config.php turns off the INI modification checks) must count on the next run, not purge everything
+        $this->assertSame( array( 45 ), $this->runWith( '45' ) );
+        $this->assertNotSame( '45', eZINI::instance( 'content.ini' )->variable( 'TrashSettings', 'KeepItemsForDays' ),
+                              'the shared, cached instance does not know the new file' );
     }
 
     public function testTheCronjobPurgesEverythingWithoutAnAge()

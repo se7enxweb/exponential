@@ -105,7 +105,9 @@ back).
 The setting is read from `content.ini` as the siteaccess the cronjob runs for sees it: `runcronjobs.php -s
 <siteaccess>`, the siteaccess chosen under Setup > Cronjobs, or the default siteaccess without `-s`. A value in
 `settings/override/` applies to every siteaccess and wins over one in `settings/siteaccess/<name>/`; the trash is one
-for the whole database, so set it there.
+for the whole database, so set it there. The cronjob reads the setting from the files, not from the INI cache: a
+value just added, in a new override file or on a server whose `config.php` turns off the INI modification checks,
+counts on the very next run without clearing the cache first.
 
 Items trashed before the `trashed` column existed (an upgrade from 5.x; the database update adds it with 0) count
 as trashed in 1970 and go on the first run. To keep them, give them a time first, for instance the upgrade:

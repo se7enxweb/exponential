@@ -35,7 +35,7 @@ class Trashpurge extends \Exponential\Runnable\CronjobPart
                 ${$__name} = &$scope[$__name];
         unset( $__name );
 
-        $keepDays = static::keepDays( \eZINI::instance( 'content.ini' ) );
+        $keepDays = static::keepDays( $this->contentINI() );
         if ( $keepDays === false )
         {
             // A mistyped age must not empty the whole trash
@@ -44,6 +44,19 @@ class Trashpurge extends \Exponential\Runnable\CronjobPart
             return false;
         }
         return $this->purge( $keepDays );
+    }
+
+    /**
+     * content.ini as the siteaccess of this run sees it, read from the files rather than the INI cache: a purge
+     * cannot be undone, so a KeepItemsForDays just added (in a new override file, or on a server whose config.php
+     * turns off the INI modification checks) must count on the very next run instead of the cached "purge
+     * everything". One INI read per run.
+     *
+     * @return \eZINI
+     */
+    protected function contentINI()
+    {
+        return new \eZINI( 'content.ini', 'settings', null, false );
     }
 
     /**
