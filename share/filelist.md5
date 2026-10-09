@@ -6392,7 +6392,7 @@ f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 8a8e49a00953f44c55efc37738fa9532  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 f6d12f47055cf42fcfa55fd165ac42a4  settings/module.ini
-5ff4854b17fe7acd7fd80e6561f562ba  settings/notification.ini
+1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
 ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 fce5a3e3f0663f62cde1337a65d9ba06  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
@@ -7457,7 +7457,7 @@ d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMis
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
 7584758a4f40031bd44aedd755614046  tests/tests/kernel/content/eZContentOperationCollectionTest.php
 b460bd68c74256811a99815a5fe6b24d  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
-943780a455d6729bd3a43a57997df7f4  tests/tests/kernel/content/eZPublishWithoutNotificationTest.php
+5e5e8f579e9972bdb3388b9b5f3c5b9c  tests/tests/kernel/content/eZPublishWithoutNotificationTest.php
 6038765c0dc312d869a30b1a35df4518  tests/tests/kernel/content/ezcontentaction_hide_unhide_regression.php
 6b48683d4776f5ce58e025eb3e46b74b  tests/tests/kernel/content/ezcontentoperationcollection_test.php
 bf131682211b1591e71f19c7a02314d9  tests/tests/kernel/content/ezcontentoperationdelete_regression.php
