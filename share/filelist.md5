@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-fe4722bc7a7203e4db533d4a2c59bbb3  doc/changelogs/6.0/6.0.15.md
+4be5420fef743b2dc91eb23871709353  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3313,7 +3313,7 @@ c1e6f7140df76368c9e37c8e9cd04636  doc/features/5.4/event.txt
 a544b58ffc5373f62719eb86f5a2c284  doc/features/5.90/README.md
 b4be8467e14cc6acd7f41becc1a4879f  doc/features/5.90/event.md
 97524871fd5bd5de6d1bd178f1ba6a05  doc/features/6.0/about-and-package-pages.md
-aeb5dbdd484271dbae8fc766f407e5d2  doc/features/6.0/access-and-cache-filters.md
+8bccfb03586dc5373674e3741ad88699  doc/features/6.0/access-and-cache-filters.md
 b0b6c426b51f42b137bb4c40e11eb93e  doc/features/6.0/access-array-prefetch.md
 c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-directories.md
 8179e76efd7b989806870487ad25c732  doc/features/6.0/admin-content-tree-top-node.md
@@ -3428,7 +3428,7 @@ afec5a2b80e838f67a095f7657bed36d  doc/features/6.0/platform-nexus-starter.md
 9e77ed427c85349ff66f9ab6e00b9206  doc/features/6.0/platform-site-bundles.md
 77b6dcb702be5b7cb2f3197dd5c1aef1  doc/features/6.0/platform-sqlite-install.md
 bd00eb2e724c0f4f3612917275e79456  doc/features/6.0/preload-sites-view.md
-ebd82840498b076d9a1cd5689e50b64c  doc/features/6.0/publish-without-notification.md
+7fa66cfaa817deccf7e3293c09e6cb73  doc/features/6.0/publish-without-notification.md
 c9dcf54bb73bc03364866daf8021fbbc  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
@@ -3517,7 +3517,7 @@ a101a3bb9c015da9204c6718c2598563  doc/guides/images/maintenance/installation-run
 fe6be1787f910abc80987d58c54b2d16  doc/guides/mail-preferences-administrator.md
 f46af9cdee469946176953da2d241afc  doc/guides/mail-preferences-developer.md
 1f9793307d567a9779d98402c7ba398b  doc/guides/maintenance-mode.md
-2abecf66e0f380bbdddf4284d0bff816  doc/guides/notifications-administrator.md
+73cab0b4594928b4aa8343b0c9adf365  doc/guides/notifications-administrator.md
 934e5fac274514582acb8481191f0713  doc/guides/notifications-developer.md
 8b3b80adcdda951de281fd97a9475529  doc/guides/object-states.md
 f04c83c32d4598b6803721a36c8432d4  doc/guides/operating-a-site.md
@@ -4955,7 +4955,7 @@ f8a467c50f0d93034097d066a7dd5085  kernel/classes/ezcontentclassgroup.php
 4aa199d266bff7247f169c0c78168c88  kernel/classes/ezcontentclassname.php
 db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
-58369fa65f68c37ae7cfa64ddc06acaa  kernel/classes/ezcontentfunctions.php
+31424373e7979ffc5f7adbcb6c2c7893  kernel/classes/ezcontentfunctions.php
 e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
 9d2a107a92e87bb7bbc1bf52adf14f60  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
@@ -5234,7 +5234,7 @@ b7959d6a47645a1610274283d404c746  kernel/content/download.php
 753c6fb6e051f80440937bda433446df  kernel/content/edit.php
 c3727d36c3ba8cfee7f93cb050539b20  kernel/content/error.php
 1919c33c26497e0cca4962dd4216fed1  kernel/content/ezcontentfunctioncollection.php
-0a4c575367e7034f1e4142a349799bda  kernel/content/ezcontentoperationcollection.php
+a387c2503192d366d62ecd8bed67dbea  kernel/content/ezcontentoperationcollection.php
 6547d1af2360fb0c8cd643815945d308  kernel/content/ezcontentpublishingbehaviour.php
 3f2810a0bb3e5eaba2a795b0b4aa2079  kernel/content/function_definition.php
 bd08bbab6c3e91e233d973d4656c56c9  kernel/content/hide.php
@@ -6394,7 +6394,7 @@ f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 8a8e49a00953f44c55efc37738fa9532  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 f6d12f47055cf42fcfa55fd165ac42a4  settings/module.ini
-9e25842dc1d4d8e3e5daf095b22f707f  settings/notification.ini
+1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
 ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 fce5a3e3f0663f62cde1337a65d9ba06  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
@@ -7462,8 +7462,8 @@ d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMis
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
 7584758a4f40031bd44aedd755614046  tests/tests/kernel/content/eZContentOperationCollectionTest.php
-d55ebd31ecc35cf9d03445826c3a0cfd  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
-c950826e93a35f74242447efc36cea84  tests/tests/kernel/content/eZPublishWithoutNotificationTest.php
+b460bd68c74256811a99815a5fe6b24d  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
+5e5e8f579e9972bdb3388b9b5f3c5b9c  tests/tests/kernel/content/eZPublishWithoutNotificationTest.php
 6038765c0dc312d869a30b1a35df4518  tests/tests/kernel/content/ezcontentaction_hide_unhide_regression.php
 6b48683d4776f5ce58e025eb3e46b74b  tests/tests/kernel/content/ezcontentoperationcollection_test.php
 bf131682211b1591e71f19c7a02314d9  tests/tests/kernel/content/ezcontentoperationdelete_regression.php

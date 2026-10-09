@@ -42,6 +42,31 @@ offers it again when it was pressed before the conflict was found. Designs of ex
 
 (`PreviewPublishNotNotifyButton` in the version preview).
 
+## Notifications for some classes only
+
+A site that sends notifications for its articles and files but not for every folder, image or banner can name the
+classes whose publications make a notification event:
+
+```ini
+# settings/override/notification.ini.append.php
+[NotificationSettings]
+NotificationFilterByClassIdentifier=enabled
+IncludeClasses[]
+IncludeClasses[]=article
+IncludeClasses[]=file
+```
+
+The list takes class identifiers; an entry made of digits is taken as a class ID and names its class
+(`IncludeClasses[]=16`), so a list written with IDs does not quietly match nothing. Identifiers are compared exactly
+(`Article` is not `article`).
+
+With the setting enabled, a publication of any other class counts as published without notification: the filter
+`content/notification/create` gets `false`, and the subscriptions of its locations send nothing. With an empty list
+nothing makes an event. `disabled` (the default) notifies for every class. This is independent of the button: the
+button leaves out one version of any class, the class filter leaves out every version of the classes not listed.
+Approval (collaboration) notifications are not concerned. The class is looked up only when the filter is enabled and
+lists classes (`eZContentOperationCollection::notificationIncludesClass()`).
+
 ## What is left out, and what is not
 
 | Notification | Without notification |
@@ -81,6 +106,15 @@ eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $id, 'v
 `false`, `0` and `"0"` mean no; anything else, and a missing parameter, means yes. Every other caller of the
 operation (uploads, imports, the REST interface, the content jobs) is unchanged and notifies.
 
+`eZContentFunctions::createAndPublishObject( $params, $notify = true )` and
+`eZContentFunctions::updateAndPublishObject( $object, $params, $notify = true )` take the parameter as well, for
+imports and scripts that create or update content without telling the subscribers. Existing callers are unchanged:
+without the argument both notify, as they did before it existed, so a script or cronjob has to ask for `false` to stay
+silent. The value is read as the operation reads it (`eZContentOperationCollection::notifyRequested()`): `false`, `0`
+and `"0"` mean no, anything else (`null` too) yes. `createAndPublishObject()` returns
+the object as the publish operation left it (published, its current version and main node); before, it returned the
+object it had instantiated, which still said draft.
+
 Nothing is kept between requests: the answer comes from the setting, the request and the user each time, so the
 persistent workers of Velocity give every request its own answer.
 
@@ -89,9 +123,12 @@ persistent workers of Velocity give every request its own answer.
 - `eZPublishWithoutNotificationTest` (no database): the setting, the policy and the posted button
   (`publishWithoutNotification()`, `canPublishWithoutNotification()`), the operation definition, the filter getting
   `false`, the spellings of no, the asynchronous queue left out, the parameter passed on from a stored memento, the
-  button mapping, the policy function and the templates.
+  button mapping, the policy function and the templates, the class filter (`notificationIncludesClass()`), `notifyRequested()` and the
+  `eZContentFunctions` defaults.
 - `eZPublishWithoutNotificationLiveTest` (on an installation, skipped without one): `notify=false` publishes without
-  event, the next version with one; a publication resumed from a stored memento keeps `notify=false`.
+  event, the next version with one; a publication resumed from a stored memento keeps `notify=false`; the class
+  filter, also with a class ID; `createAndPublishObject()` and `updateAndPublishObject()` with `notify=false`, `null`
+  and `"0"`. The live tests set the file mail transport in-process and refuse to run without it.
 
 ## Related pages
 
