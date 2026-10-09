@@ -10,15 +10,15 @@
 namespace Exponential\Service;
 
 /**
- * Who moved an object to the trash, and from where. The kernel has no column for it, and a schema change
- * would have to reach every database engine, so it is kept in one small JSON file under the var directory:
+ * The file where who moved an object to the trash, and from where, was kept before the trash rows had the columns
+ * trashed_by and trashed_via. The kernel writes the columns now; this class reads what the file still holds, for
+ * the trash view and for update/common/scripts/6.0/movetrashrecords.php, which copies it into the columns:
  *
  *   <VarDir>/trash/trashed.json   { "<object id>": { node_id, trashed, user_id, user_name, via, recorded } }
  *
- * - Written by eZContentObjectTrashNode::storeToTrash(), the one place every trash move passes through
- *   (the admin's Delete, the content jobs, removeSubtrees() from scripts and cronjobs).
+ * - No longer written by the kernel; record() is kept for code that called it.
  * - Forgotten by eZContentObjectTrashNode::purgeForObject(), which runs on purge and on restore, so the
- *   file holds about as many entries as the trash holds objects.
+ *   file shrinks as the old trash goes.
  * - An entry counts only while it matches the trash row (same node id and trashed time); anything trashed
  *   before the recording started, or moved to the trash past storeToTrash(), has no entry and is "unknown".
  * - Written atomically (a temporary file renamed over the old one) under an exclusive lock; when root writes
@@ -39,6 +39,8 @@ class TrashRecord
 
     /**
      * Records that the current user moved this trash node's object to the trash.
+     *
+     * @deprecated the trash row carries it in trashed_by and trashed_via
      *
      * @param \eZContentObjectTrashNode $trashNode the row just stored
      * @return bool
@@ -131,22 +133,92 @@ class TrashRecord
     }
 
     /**
+     * Copies the entries of the file into the trash rows they belong to (same object, node id and trashed time)
+     * whose trashed_by is still 0. Rows that have a trashed_by keep it.
+     *
+     * @param \eZDBInterface $db
+     * @param bool $dryRun count only, change nothing
+     * @param int[]|null $objectIDs only the entries of these objects; null: all
+     * @return array( 'entries' => int in the file, 'moved' => int rows given a trashed_by,
+     *                'kept' => int rows that had one already, 'orphans' => int entries without a matching row )
+     */
+    public static function moveToColumns( $db, $dryRun = false, $objectIDs = null )
+    {
+        $stats = array( 'entries' => 0, 'moved' => 0, 'kept' => 0, 'orphans' => 0 );
+        $map = self::all();
+        if ( is_array( $objectIDs ) )
+            $map = array_intersect_key( $map, array_flip( array_map( 'strval', array_map( 'intval', $objectIDs ) ) ) );
+        $stats['entries'] = count( $map );
+        if ( !$map )
+            return $stats;
+        $rows = $db->arrayQuery( 'SELECT node_id, contentobject_id, trashed, trashed_by FROM ezcontentobject_trash' );
+        $matched = array();
+        if ( !$dryRun )
+            $db->begin();
+        foreach ( is_array( $rows ) ? $rows : array() as $row )
+        {
+            $entry = self::entryFor( $map, $row['contentobject_id'], $row['node_id'], $row['trashed'] );
+            if ( !$entry )
+                continue;
+            $matched[(string)(int)$row['contentobject_id']] = true;
+            if ( (int)$row['trashed_by'] > 0 )
+            {
+                $stats['kept']++;
+                continue;
+            }
+            $userID = isset( $entry['user_id'] ) ? (int)$entry['user_id'] : 0;
+            if ( $userID <= 0 )
+                continue;
+            $via = isset( $entry['via'] ) ? (string)$entry['via'] : '';
+            $via = function_exists( 'mb_substr' ) ? mb_substr( $via, 0, 100, 'UTF-8' ) : substr( $via, 0, 100 );
+            if ( !$dryRun )
+                $db->query( 'UPDATE ezcontentobject_trash SET trashed_by = ' . $userID . ", trashed_via = '" . $db->escapeString( $via ) . "' "
+                          . 'WHERE node_id = ' . (int)$row['node_id'] . ' AND trashed_by = 0' );
+            $stats['moved']++;
+        }
+        if ( !$dryRun )
+            $db->commit();
+        $stats['orphans'] = count( array_diff_key( $map, $matched ) );
+        return $stats;
+    }
+
+    /**
+     * Removes the file. The lock file stays: a process started before the update may still hold its lock.
+     *
+     * @return bool there is no file any more
+     */
+    public static function removeFile()
+    {
+        $file = self::file();
+        return !is_file( $file ) || @unlink( $file );
+    }
+
+    /**
+     * Whether the trash table has the columns trashed_by and trashed_via (the database update has run).
+     *
+     * @param \eZDBInterface $db
+     * @return bool
+     */
+    public static function columnsExist( $db )
+    {
+        $rows = $db->arrayQuery( 'SELECT * FROM ezcontentobject_trash', array( 'limit' => 1 ) );
+        if ( !is_array( $rows ) )
+            return false;
+        if ( $rows )
+            return array_key_exists( 'trashed_by', $rows[0] ) && array_key_exists( 'trashed_via', $rows[0] );
+        // an empty trash: ask for the columns themselves
+        $probe = $db->arrayQuery( 'SELECT trashed_by, trashed_via FROM ezcontentobject_trash', array( 'limit' => 1 ) );
+        return is_array( $probe );
+    }
+
+    /**
      * Where the trash move came from: "web <siteaccess>" or "cli <script>".
      *
      * @return string
      */
     public static function via()
     {
-        if ( PHP_SAPI === 'cli' && !isset( $_SERVER['REQUEST_URI'] ) )
-        {
-            $script = isset( $_SERVER['argv'][0] ) ? basename( (string)$_SERVER['argv'][0] ) : 'php';
-            // ezexec.php runs another script: name that one
-            if ( $script === 'ezexec.php' && isset( $_SERVER['argv'][1] ) )
-                $script = basename( (string)$_SERVER['argv'][1] );
-            return 'cli ' . $script;
-        }
-        $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '';
-        return trim( 'web ' . $access );
+        return \eZContentObjectTrashNode::currentVia();
     }
 
     /**

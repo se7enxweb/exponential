@@ -238,7 +238,7 @@ Read the first lines of a script, or its `--help`, before you run it. The script
 | 5.2 | `cleanupdfscache.php` | cache records in the DFS storage table |
 | 5.3 | `recreateimagesreferences.php`, `updatenodeassignmentparentremoteids.php` | missing image references, `parent_remote_id` of node assignments |
 | 5.4 | `cleanuntranslatablerelations.php`, `cleanupfieldvaluerelations.php`, `fixremovedezurlobjectlinks.php`, `fixtrashedimagereferences.php` | stale relations, links and image references |
-| 6.0 | `createaudittables.php` | the audit index tables of 6.0.15 (see [11.6](#116-from-any-60x-to-today)) |
+| 6.0 | `createaudittables.php`, `movetrashrecords.php` | the audit index tables of 6.0.15 (see [11.6](#116-from-any-60x-to-today)), who trashed what from `trashed.json` into the trash rows |
 | any | `cleanup.php`, `updatecontentobjectname.php`, `updatenbxmlcontents.php` | general clean-up, object names, non-breaking space encoding in XML content |
 
 ### Coming from a 5.x site on the Symfony stack
@@ -337,8 +337,11 @@ database that already has them as it is (SQLite needs none of them: [11.3](#the-
 adds the tables and columns of the line: the PDF export footer
 (`ezpdf_export.show_footer`, `footer_text`), OPML and podcast exports (`ezrss_export.opml_head`, `podcast_head`,
 table `ezrss_export_opml_item`), the audit index (`expaudit_cursor`, `expaudit_event`, `expaudit_file`), bookmark
-folders (`expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority`) and the e-mail preferences
-(`expmail_category`, `expmail_consent_log`, `expmail_pending`, `expmail_preference`, `expmail_suppression`).
+folders (`expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority`), the e-mail preferences
+(`expmail_category`, `expmail_consent_log`, `expmail_pending`, `expmail_preference`, `expmail_suppression`) and who
+moved an object to the trash (`ezcontentobject_trash.trashed_by`, `trashed_via`; required before the new code moves
+content to the trash, then run `php update/common/scripts/6.0/movetrashrecords.php`, see
+[the trash view](../bc/6.0/trash.md#where-trashed-by-is-kept)).
 
 Apply it **once, whole, in order**. If the database already has a column, the statement fails and names it; skip only
 that statement.
