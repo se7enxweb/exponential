@@ -646,7 +646,7 @@ where the database lacks it ([11.3](11-upgrading.md#the-612-72-and-73-directorie
 | `5.4/fixremovedezurlobjectlinks.php` | Removes orphaned `ezurl_object_link` rows | `--fix`, `--fetch-limit` |
 | `5.4/fixtrashedimagereferences.php` | Fixes image references of trashed content | `--dry-run`, `--iteration-sleep`, `--iteration-limit` |
 | `6.0/createaudittables.php` | Creates the `expaudit_*` tables on any engine and indexes the audit files; safe to repeat | `--dry-run`, `--no-index` |
-| `6.0/movetrashrecords.php` | Copies who trashed what from `<VarDir>/trash/trashed.json` into `ezcontentobject_trash.trashed_by` and `trashed_via`; safe to repeat; exit 2 when the file is kept | `--dry-run`, `--remove-file`, `-s <siteaccess>` |
+| `6.0/movetrashrecords.php` | Copies who trashed what from `<VarDir>/trash/trashed.json` into `ezcontentobject_trash.trashed_by` and `trashed_via`; safe to repeat; exit 2 when the file is kept, 1 when the columns are missing or the file holds no JSON object | `--dry-run`, `--remove-file`, `-s <siteaccess>` |
 
 ### bin/php: schema, data and conversion
 

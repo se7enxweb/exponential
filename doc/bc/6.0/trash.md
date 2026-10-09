@@ -139,9 +139,12 @@ outside the database's transactions and backups. Once the columns exist the kern
 - purging or restoring an object still removes its entry;
 - `update/common/scripts/6.0/movetrashrecords.php` copies the entries into the columns of their rows (rows that
   have a `trashed_by` keep it, so it can run again). `--dry-run` counts only; `--remove-file` deletes the file when
-  every entry has a trash row (exit status 2 when it keeps the file, 1 on an error, for instance when the columns are
-  missing). Run it once per var directory (`-s <siteaccess>` for a siteaccess with a var directory of its own); on a
-  cluster, on every web server.
+  every entry has a trash row (exit status 2 when it keeps the file, 1 on an error: the columns are missing, or the
+  file holds no JSON object, which is then neither copied nor removed). Run it once per var directory
+  (`-s <siteaccess>` for a siteaccess with a var directory of its own); on a cluster, on every web server.
+- It prints the entries in the file, the rows given a `trashed_by`, the rows that kept theirs, the entries without a
+  trash row (their objects were purged or restored, or trashed again since: they are left in the file, and with
+  them `--remove-file` keeps it) and the rows whose entry names no user (left at 0).
 - The file kept the user's name at the time; the columns keep the id. A user removed since shows as `#<id>`.
 
 ```bash
