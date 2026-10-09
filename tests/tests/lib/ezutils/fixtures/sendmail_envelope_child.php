@@ -1,0 +1,35 @@
+<?php
+/**
+ * Child process of eZSendmailEnvelopeSenderTest: sends one mail through eZSendmailTransport with
+ * SendmailEnvelopeSender set to the first argument ("-" removes the setting), when the second argument is a non-empty
+ * address that sender on the mail, and EmailSender set to the third argument (default site@example.com).
+ * SendmailOptions[] is -r bounce@example.com. sendmail_path points to sendmail_capture.php. Prints "sent" or "failed".
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @package tests
+ */
+
+chdir( dirname( __DIR__, 5 ) );
+require 'autoload.php';
+
+$ini = eZINI::instance();
+$ini->setVariable( 'MailSettings', 'Transport', 'sendmail' );
+if ( $argv[1] === '-' )
+    $ini->removeSetting( 'MailSettings', 'SendmailEnvelopeSender' );
+else
+    $ini->setVariable( 'MailSettings', 'SendmailEnvelopeSender', $argv[1] );
+$ini->setVariable( 'MailSettings', 'SendmailOptions', array( '-r', 'bounce@example.com' ) );
+$ini->setVariable( 'MailSettings', 'EmailSender', isset( $argv[3] ) ? $argv[3] : 'site@example.com' );
+$ini->setVariable( 'MailSettings', 'AdminEmail', 'admin@example.com' );
+$ini->setVariable( 'MailSettings', 'DebugSending', 'disabled' );
+
+$mail = new eZMail();
+if ( isset( $argv[2] ) && $argv[2] !== '' )
+    $mail->setSender( $argv[2], 'Editor' );
+$mail->addReceiver( 'reader@example.com' );
+$mail->setSubject( 'Envelope test' );
+$mail->setBody( 'Body' );
+
+$transport = new eZSendmailTransport();
+echo $transport->sendMail( $mail ) ? 'sent' : 'failed';
