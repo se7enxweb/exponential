@@ -99,6 +99,13 @@ Every kernel command, cronjob part and module view is now a class
 A missing `vendor/` directory now shows a page with a repair procedure instead of PHP's raw error output. See
 [repair from the browser](../../features/6.0/repair-from-the-browser.md) and [the repair page upgrade](repair.md).
 
+Since 9 October 2026, `eZSOAPClient` refuses a call over HTTPS when the PHP extension curl is not loaded: `send()`
+returns `0`, `ErrorString` says that HTTPS needs the PHP extension curl, and the error log has
+"No SOAP call to <server>: HTTPS needs the PHP extension curl, which is not loaded". Before, such a call went as plain
+text to the TLS port, which no HTTPS server answers with a SOAP response. Check with `php -m | grep curl` (and in the
+PHP of the web server) that curl is loaded wherever SOAP calls over HTTPS are made. Calls over HTTP are unchanged.
+See [SOAP calls over HTTPS](../../features/6.0/soap-client-tls.md).
+
 ## Related pages
 
 - [October 2026 chronicle](../../history/2026/2026-10.md)

@@ -105,7 +105,14 @@ class eZSOAPClient
     */
     function send( $request )
     {
-        if ( !$this->UseSSL || !in_array( "curl", get_loaded_extensions() ) )
+        // Over HTTPS only with cURL: without it the call used to go to the TLS port as plain text
+        if ( $this->UseSSL && !function_exists( 'curl_init' ) )
+        {
+            $this->ErrorString = '<b>Error:</b> eZSOAPClient::send() : a call over HTTPS needs the PHP extension curl.';
+            eZDebug::writeError( "No SOAP call to {$this->Server}: HTTPS needs the PHP extension curl, which is not loaded", __METHOD__ );
+            return 0;
+        }
+        if ( !$this->UseSSL )
         {
             if ( $this->Timeout != 0 )
             {
@@ -187,12 +194,11 @@ class eZSOAPClient
                     {
                         $headers[] = "Authorization: Basic " . base64_encode( $this->login() . ":" . $this->password() );
                     }
-                    curl_setopt( $ch, CURLOPT_URL, $URL );
-                    curl_setopt( $ch, CURLOPT_HEADER, 1 );
-                    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-                    curl_setopt( $ch, CURLOPT_POST, true );
-                    curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
-                    curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
+                    if ( !curl_setopt_array( $ch, $this->curlOptions( $URL, $payload, $headers ) ) )
+                    {
+                        $this->ErrorString = '<b>Error:</b> could not set the cURL options of the XML-SOAP with SSL call: ' . curl_error( $ch );
+                        return 0;
+                    }
                     unset( $rawResponse );
 
                     $rawResponse = curl_exec( $ch );
@@ -214,6 +220,98 @@ class eZSOAPClient
         $response->decodeStream( $request, $rawResponse );
 
         return $response;
+    }
+
+    /**
+     * The cURL options of a call over HTTPS to $URL with $payload and $headers. The server certificate is verified,
+     * also against the CA file of setCAFile() when one is set; setVerifyPeer( false ) turns the check off for this
+     * client and logs a warning on every call.
+     *
+     * @param string $URL
+     * @param string $payload
+     * @param string[] $headers
+     * @return array
+     */
+    protected function curlOptions( $URL, $payload, array $headers )
+    {
+        $options = array( CURLOPT_URL => $URL,
+                          CURLOPT_HEADER => 1,
+                          CURLOPT_RETURNTRANSFER => true,
+                          CURLOPT_POST => true,
+                          CURLOPT_POSTFIELDS => $payload,
+                          CURLOPT_HTTPHEADER => $headers,
+                          CURLOPT_SSL_VERIFYPEER => $this->VerifyPeer,
+                          CURLOPT_SSL_VERIFYHOST => $this->VerifyPeer ? 2 : 0 );
+        if ( $this->CAFile !== null )
+        {
+            $options[CURLOPT_CAINFO] = $this->CAFile;
+            // cURL reads the file past open_basedir, where is_readable() says false for a file it can read; it then
+            // reports a missing file itself, in the error of the call
+            if ( (string)ini_get( 'open_basedir' ) === '' && !is_readable( $this->CAFile ) )
+            {
+                eZDebug::writeError( "The CA file {$this->CAFile} for {$this->Server} cannot be read: the call fails the certificate check", __METHOD__ );
+            }
+        }
+        if ( !$this->VerifyPeer )
+        {
+            eZDebug::writeWarning( "The certificate of {$this->Server} is not verified (eZSOAPClient::setVerifyPeer( false )): " .
+                                   'anybody between this server and it can read and change the call. Set the CA file of its ' .
+                                   'certificate with setCAFile() instead.', __METHOD__ );
+        }
+        return $options;
+    }
+
+    /**
+     * Trusts the CA certificates in the file $path (PEM, an absolute path) for the certificate of an HTTPS server, for
+     * a server whose certificate an internal CA issued. cURL uses them in place of its CA bundle file; a CA directory
+     * compiled into cURL (such as /etc/ssl/certs) is still read. Anything that is not a non-empty string (null, false
+     * from a missing setting, '') sets no CA file, nor does a name with a NUL byte (reported).
+     *
+     * @param string|null|false $path
+     * @return void
+     */
+    function setCAFile( $path )
+    {
+        $this->CAFile = is_string( $path ) && trim( $path ) !== '' ? trim( $path ) : null;
+        // No file name has a NUL byte, and cURL would throw a ValueError for it in send()
+        if ( $this->CAFile !== null && strpos( $this->CAFile, "\0" ) !== false )
+        {
+            $this->CAFile = null;
+            eZDebug::writeError( "The CA file name for {$this->Server} contains a NUL byte: no CA file is set, the certificate is checked against the CA bundle", __METHOD__ );
+        }
+    }
+
+    /**
+     * The CA file set with setCAFile(), or null.
+     *
+     * @return string|null
+     */
+    function caFile()
+    {
+        return $this->CAFile;
+    }
+
+    /**
+     * Whether the certificate of an HTTPS server is verified (true by default). false turns the check off for this
+     * client only, and every call logs a warning: a server whose certificate cannot be checked can then be anyone in
+     * between. A CA file (setCAFile()) is the way to trust an internal certificate.
+     *
+     * @param bool $verify
+     * @return void
+     */
+    function setVerifyPeer( $verify )
+    {
+        $this->VerifyPeer = (bool)$verify;
+    }
+
+    /**
+     * Whether the certificate of an HTTPS server is verified.
+     *
+     * @return bool
+     */
+    function verifyPeer()
+    {
+        return $this->VerifyPeer;
     }
 
     /*!
@@ -270,6 +368,10 @@ class eZSOAPClient
     public $Login;
     /// HTTP password for HTTP authentification
     public $Password;
+    /// CA certificates (PEM file) to verify an HTTPS server against, or null for the system bundle
+    protected $CAFile = null;
+    /// Whether the certificate of an HTTPS server is verified
+    protected $VerifyPeer = true;
     private $UseSSL;
 }
 
