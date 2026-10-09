@@ -2838,7 +2838,7 @@ a466ef74bde1432f443d1b0f37c843bc  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
-4bc7155727a182eebe7c400c79021457  doc/bc/6.0/trash.md
+a8ede6f3df39692891beb77b81d79ce6  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1e15548af259738a25633e0f85a2d6b2  doc/changelogs/6.0/6.0.15.md
+9df611682b2131cd4796f1f1dac423ee  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5465,7 +5465,7 @@ dc719a252fd114722e74aa7688b82a44  kernel/private/classes/cronjobs/mailpreference
 4c544cdcf97cebb7d66fecf760c4941f  kernel/private/classes/cronjobs/session_gc.php
 596e9c1a1024cec60e2c4d733da6a565  kernel/private/classes/cronjobs/staticcache_cleanup.php
 d895189330ddae3a492bfbb6a7445468  kernel/private/classes/cronjobs/subtreeexpirycleanup.php
-51f70d3fcbb7bc6a57f554a516caa9a0  kernel/private/classes/cronjobs/trashpurge.php
+8164633f29279772106935c1ca8518fa  kernel/private/classes/cronjobs/trashpurge.php
 1eaffa661078a4042d2975258608e1a4  kernel/private/classes/cronjobs/unlock.php
 ad5a895259336ad06a47e6b4ce61f189  kernel/private/classes/cronjobs/unpublish.php
 c653e60e6b7e4b2c61357312f8918808  kernel/private/classes/cronjobs/updateviewcount.php
@@ -7435,7 +7435,7 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
 45a11042cf23d383859f6cd2ff5e6d2a  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
-0c3a9eef1ccc60f900297bc18f976872  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
+2cdb0ad8f51e15f030e8ca024863a522  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
 935a3def6becc46f294c5d5ff9ada7d3  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
 ea50143daead7aa1e955f23e52ba4112  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
