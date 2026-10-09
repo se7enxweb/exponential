@@ -137,8 +137,10 @@ another siteaccess, scheme or host.
 
 - **An edit, publish, move, hide or delete** — the view cache clear the kernel
   already does fires `content/cache`; with `ContentChangePurges=all` every page
-  goes, with `tags` the pages tagged with what changed. Scripts and cronjobs
-  purge too (`eZScript` attaches the listeners).
+  goes, with `tags` the pages tagged with what changed: as Ibexa's HTTP cache
+  purges, `l`, `pl` and `rl` of every node, `c` and `r` of every object (a
+  Varnish or CDN that follows Ibexa's tags purges the same pages). Scripts and
+  cronjobs purge too (`eZScript` attaches the listeners).
 - **Layout editor** — any successful write request to an `explayouts*` module
   purges every page. Layout blocks tag the page with every item they show and,
   for query blocks, `dq`, which every content change purges.
@@ -175,7 +177,34 @@ default; `tags` is for installations that know their templates.
 POST and other writes; responses other than 200; responses that set a cookie
 of their own; pages with a disallowed query string; pages whose template sets
 `cache_ttl=0`; siteaccesses not in `CachedSiteAccesses`, or found by a rule
-that cannot be known before the kernel; anything not a content view.
+that cannot be known before the kernel; anything not a content view; a request
+[request-shield](https://github.com/cjw-network/request-shield) in front
+marked as not for a cache (`REQUEST_SHIELD=allow-uncached`: a made-up path or
+parameter).
+
+## With request-shield in front
+
+[request-shield](https://github.com/cjw-network/request-shield) runs before
+`config.php` (`auto_prepend_file`, or the first line of `index.php`). Its
+HTTP cache stays off on Exponential 6 — this one is the page cache — and the
+two work together:
+
+- **Never kept:** a request request-shield marks `allow-uncached` (a path or
+  query parameter outside its cacheable definition) is answered and never
+  stored: random addresses cannot fill the cache (`X-Exp-Cache: BYPASS
+  (request-shield: not for a cache)`).
+- **Fewer keys:** with `cache-ignore utm_* gclid …` request-shield takes
+  tracking parameters out of `REQUEST_URI` before the early exit runs, so a
+  campaign link is the same entry as the page.
+- **Answered from the page without a made-up parameter:** with `set
+  cache-unknown-query hit-only` request-shield names, in
+  `REQUEST_SHIELD_CACHE_LOOKUP`, the address a request with a parameter no key
+  holds may be answered from. The early exit takes it for the same path only,
+  and only when its query is allowed itself (`X-Exp-Cache: HIT (request-shield
+  lookup)`); nothing is stored for the request's own address. Velocity answers
+  in its own process before PHP, so there it does not apply.
+- **Its statistics** read `X-Exp-Cache` (HIT, STALE, MISS, BYPASS): the
+  response times by hit and miss in its dashboard.
 
 ## Security
 
