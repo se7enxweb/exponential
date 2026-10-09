@@ -863,9 +863,9 @@ class eZContentOperationCollection
     /**
      * Whether a publication of the class $classIdentifier makes a notification event: always, unless
      * notification.ini [NotificationSettings] NotificationFilterByClassIdentifier is enabled; then only for the class
-     * identifiers (or class IDs) in IncludeClasses[] (none when the list is empty). $classIdentifier may be a closure that gives the
-     * identifier, called only when the list has to be read; a publication whose class is not known (null) is let
-     * through, as before the filter.
+     * identifiers (or class IDs) in IncludeClasses[] (none when the list is empty). $classIdentifier may be a closure
+     * that gives the identifier, called only when the list has to be read; a publication whose class is not known
+     * (null) is let through, as before the filter.
      *
      * @param string|Closure|null $classIdentifier
      * @return bool
