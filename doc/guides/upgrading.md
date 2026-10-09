@@ -145,11 +145,17 @@ Part B file and sets the version row back with
 mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 ```
 
-Then create the audit index tables once (the audit trail is on by default from 6.0.15):
+Then create the audit index tables once (the audit trail is on by default from 6.0.15), and copy who trashed what
+from `<VarDir>/trash/trashed.json` into the new columns `ezcontentobject_trash.trashed_by` and `trashed_via` (once
+per var directory, on every web server of a cluster):
 
 ```bash
 php update/common/scripts/6.0/createaudittables.php
+php update/common/scripts/6.0/movetrashrecords.php --remove-file
 ```
+
+Until `trashed_by` and `trashed_via` exist the kernel keeps writing `trashed.json`; see
+[the trash view](../bc/6.0/trash.md#where-trashed-by-is-kept).
 
 Check the version row (same query as at the top; expected `6.0.15stable` after this file).
 

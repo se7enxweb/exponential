@@ -19,7 +19,7 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
      */
     static function definition()
     {
-        return array( 'fields' => array( 'node_id' => array( 'name' => 'NodeID',
+        $definition = array( 'fields' => array( 'node_id' => array( 'name' => 'NodeID',
                                                              'datatype' => 'integer',
                                                              'default' => 0,
                                                              'required' => true ),
@@ -85,7 +85,18 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
                                          'trashed' => array( 'name' => 'Trashed',
                                                                   'datatype' => 'integer',
                                                                   'default' => 0,
-                                                                  'required' => true )
+                                                                  'required' => true ),
+                                         // who moved the object to the trash (user content object id, 0: not known)
+                                         'trashed_by' => array( 'name' => 'TrashedBy',
+                                                                'datatype' => 'integer',
+                                                                'default' => 0,
+                                                                'required' => true ),
+                                         // from where: "web <siteaccess>" or "cli <script>"
+                                         'trashed_via' => array( 'name' => 'TrashedVia',
+                                                                 'datatype' => 'string',
+                                                                 'default' => '',
+                                                                 'required' => true,
+                                                                 'max_length' => 100 )
                                           ),
 
                       'keys' => array( 'node_id' ),
@@ -110,6 +121,10 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
                                                       ),
                       'class_name' => 'eZContentObjectTrashNode',
                       'name' => 'ezcontentobject_trash' );
+        // before the database update has added them (see hasTrashedByColumns()), the row is stored and read without them
+        if ( self::$trashedByColumns === false )
+            unset( $definition['fields']['trashed_by'], $definition['fields']['trashed_via'] );
+        return $definition;
     }
 
     /**
@@ -136,7 +151,9 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
                       'remote_id' => $node->attribute( 'remote_id' ),
                       'is_hidden' => $node->attribute( 'is_hidden' ),
                       'is_invisible' => $node->attribute( 'is_invisible' ),
-                      'trashed' => time() );
+                      'trashed' => time(),
+                      'trashed_by' => (int)eZUser::currentUserID(),
+                      'trashed_via' => self::currentVia() );
 
         $trashNode = new eZContentObjectTrashNode( $row );
         return $trashNode;
@@ -151,8 +168,12 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
      */
     function storeToTrash()
     {
+        // without the columns (the database update has not run yet) the row is stored without them and who moved
+        // the object to the trash goes to the old file, from where movetrashrecords.php copies it after the update
+        $columns = self::hasTrashedByColumns();
         $this->store();
-        self::callTrashRecord( 'record', $this );
+        if ( !$columns )
+            self::callTrashRecord( 'record', $this );
 
         $db = eZDB::instance();
         $db->begin();
@@ -204,10 +225,104 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
     }
 
     /**
-     * Who moved what to the trash (Exponential\Service\TrashRecord, doc/bc/6.0/trash.md). Loaded by path when
-     * the autoload array of a long-running worker predates the class; a failure never stops the trash move.
+     * Where a trash move comes from, for trashed_via: "web <siteaccess>" or "cli <script>" (for ezexec.php, the
+     * script it runs).
      *
-     * @param string $method record|forget
+     * @return string at most 100 characters
+     */
+    static function currentVia()
+    {
+        if ( PHP_SAPI === 'cli' && !isset( $_SERVER['REQUEST_URI'] ) )
+        {
+            $script = isset( $_SERVER['argv'][0] ) ? basename( (string)$_SERVER['argv'][0] ) : 'php';
+            // ezexec.php runs another script: name that one
+            if ( $script === 'ezexec.php' && isset( $_SERVER['argv'][1] ) )
+                $script = basename( (string)$_SERVER['argv'][1] );
+            $via = 'cli ' . $script;
+        }
+        else
+        {
+            $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '';
+            $via = trim( 'web ' . $access );
+        }
+        return self::cleanVia( $via );
+    }
+
+    /**
+     * A value for trashed_via: printable ASCII, at most 100 characters. A script name in another encoding is no
+     * valid UTF-8, which PostgreSQL refuses (and a refused INSERT stops the transaction); in ASCII 100 characters
+     * are 100 bytes, which fits a column whose length counts bytes (Oracle) as well.
+     *
+     * @param string $via
+     * @return string
+     */
+    static function cleanVia( $via )
+    {
+        return substr( (string)preg_replace( '/[^\x20-\x7E]/', '?', (string)$via ), 0, 100 );
+    }
+
+    /**
+     * Whether ezcontentobject_trash has the columns trashed_by and trashed_via, which the database update adds
+     * (update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql). Until it has, definition() leaves them out, so
+     * moving content to the trash, the trash view and restoring keep working with the old table.
+     *
+     * Asked of the database's own catalogue, never by a query that could fail: a failed query inside a
+     * transaction stops the request. Once the columns are there the answer is kept for the rest of the
+     * process (a Velocity worker included); while they are missing it is asked again on the next call, so the
+     * update takes effect without a restart.
+     *
+     * @param bool $refresh ask again even when the columns were found before
+     * @return bool
+     */
+    public static function hasTrashedByColumns( $refresh = false )
+    {
+        if ( self::$trashedByColumns === true && !$refresh )
+            return true;
+        $found = true;
+        try
+        {
+            $db = eZDB::instance();
+            $rows = null;
+            switch ( $db->databaseName() )
+            {
+                case 'mysql':
+                    $rows = $db->arrayQuery( "SELECT COUNT(*) AS c FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() "
+                                           . "AND TABLE_NAME = 'ezcontentobject_trash' AND COLUMN_NAME IN ( 'trashed_by', 'trashed_via' )" );
+                    break;
+                case 'postgresql':
+                    $rows = $db->arrayQuery( "SELECT COUNT(*) AS c FROM information_schema.columns WHERE table_schema = current_schema() "
+                                           . "AND table_name = 'ezcontentobject_trash' AND column_name IN ( 'trashed_by', 'trashed_via' )" );
+                    break;
+                case 'oracle':
+                    $rows = $db->arrayQuery( "SELECT COUNT(*) AS c FROM user_tab_columns WHERE table_name = 'EZCONTENTOBJECT_TRASH' "
+                                           . "AND column_name IN ( 'TRASHED_BY', 'TRASHED_VIA' )" );
+                    break;
+                case 'sqlite':
+                    $names = array();
+                    foreach ( (array)$db->arrayQuery( 'PRAGMA table_info(ezcontentobject_trash)' ) as $column )
+                        $names[] = isset( $column['name'] ) ? $column['name'] : '';
+                    $rows = array( array( 'c' => count( array_intersect( array( 'trashed_by', 'trashed_via' ), $names ) ) ) );
+                    break;
+                // others (MongoDB) have no fixed columns
+            }
+            if ( is_array( $rows ) )
+                $found = isset( $rows[0] ) && (int)reset( $rows[0] ) === 2;
+        }
+        catch ( \Throwable $e )
+        {
+            eZDebug::writeError( $e->getMessage(), __METHOD__ );
+        }
+        self::$trashedByColumns = $found;
+        return $found;
+    }
+
+    /**
+     * The entries of <VarDir>/trash/trashed.json, where who moved what to the trash was kept before the columns
+     * trashed_by and trashed_via existed (Exponential\Service\TrashRecord, doc/bc/6.0/trash.md): purging or
+     * restoring an object forgets its entry. Loaded by path when the autoload array of a long-running worker
+     * predates the class; a failure never stops the purge.
+     *
+     * @param string $method forget, or record (while the columns are missing)
      * @param mixed $argument
      */
     protected static function callTrashRecord( $method, $argument )
@@ -353,6 +468,9 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
      *   TrashedFrom, TrashedTo      timestamps, both inclusive
      *   ContentObjectIDList         only these objects (an empty array matches nothing)
      *   ExcludeContentObjectIDList  not these objects
+     *   TrashedBy                   moved to the trash by this user (content object id), or one of
+     *                               TrashedByFileObjectIDList (known only from <VarDir>/trash/trashed.json)
+     *   TrashedByUnknown            true: by nobody known, neither in trashed_by nor one of TrashedByFileObjectIDList
      *
      * @param array $params
      * @return string
@@ -374,6 +492,21 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
         }
         if ( isset( $params['ExcludeContentObjectIDList'] ) && is_array( $params['ExcludeContentObjectIDList'] ) && $params['ExcludeContentObjectIDList'] )
             $sql .= ' AND ' . $db->generateSQLINStatement( array_map( 'intval', $params['ExcludeContentObjectIDList'] ), 'ezcot.contentobject_id', true, true, 'int' );
+        $fileIDs = isset( $params['TrashedByFileObjectIDList'] ) && is_array( $params['TrashedByFileObjectIDList'] )
+                   ? array_map( 'intval', $params['TrashedByFileObjectIDList'] ) : array();
+        if ( isset( $params['TrashedBy'] ) && is_numeric( $params['TrashedBy'] ) )
+        {
+            $condition = 'ezcot.trashed_by = ' . (int)$params['TrashedBy'];
+            if ( $fileIDs )
+                $condition = '( ' . $condition . ' OR ' . $db->generateSQLINStatement( $fileIDs, 'ezcot.contentobject_id', false, true, 'int' ) . ' )';
+            $sql .= ' AND ' . $condition;
+        }
+        if ( !empty( $params['TrashedByUnknown'] ) )
+        {
+            $sql .= ' AND ezcot.trashed_by = 0';
+            if ( $fileIDs )
+                $sql .= ' AND ' . $db->generateSQLINStatement( $fileIDs, 'ezcot.contentobject_id', true, true, 'int' );
+        }
         return $sql;
     }
 
@@ -454,6 +587,8 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
      */
     public static function fetchByContentObjectID( $contentObjectID, $asObject = true, $contentObjectVersion = false )
     {
+        // the columns this definition() reads
+        self::hasTrashedByColumns();
         $conds = array( 'contentobject_id' => $contentObjectID );
         if ( $contentObjectVersion !== false )
         {
@@ -467,6 +602,11 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
             $asObject
         );
     }
+
+    /**
+     * @var bool|null whether the trash table has trashed_by and trashed_via (hasTrashedByColumns()); null: not asked yet
+     */
+    protected static $trashedByColumns = null;
 
     /**
      * @var eZContentObjectTreeNode|int|null The current trash node's original parent in the node tree
