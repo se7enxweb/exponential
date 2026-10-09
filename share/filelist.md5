@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-bfa59277446ea076f09682394e89e985  doc/changelogs/6.0/6.0.15.md
+891e30c7fdaf2a9d1c839c008c991d24  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6235,7 +6235,7 @@ d73a83f7c7f486155ada0fde2a844de1  lib/ezsession/classes/ezpsessionhandler.php
 969e0f80c467e02f0e7a89af37cba0c7  lib/ezsession/classes/ezpsessionhandlerdb.php
 61ce52dbf3abdda928d0491e36033258  lib/ezsession/classes/ezpsessionhandlerphp.php
 64646af1921464f785521bc911d8eb97  lib/ezsession/classes/ezpsessionhandlersymfony.php
-3d52318fa77389816d7098ac835f277e  lib/ezsession/classes/ezsession.php
+4ab523184135d95fbe1bd96b5964015b  lib/ezsession/classes/ezsession.php
 995cfd2eb1246294e6e921d401106f48  lib/ezsoap/classes/ezsoapbody.php
 148ccc8a49b48beb40c9516c87a432f2  lib/ezsoap/classes/ezsoapclient.php
 4e0d0628ea5bc587e9595c5be5332418  lib/ezsoap/classes/ezsoapcodec.php
@@ -7803,7 +7803,7 @@ b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
 d72315fa9b3256a89308f3109ca900e0  tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php
 b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
 b078858df9972d3e704af87be75bc3b2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
-4371358acea777a4501b116c6a2c658d  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
+acbb9b3905b1d5cad1c75014265dec30  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
 cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 e231512efb2176cef5ba4a4fd0320d57  tests/tests/lib/ezsoap/eZSOAPServerFunctionNameTest.php
