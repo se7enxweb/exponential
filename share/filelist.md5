@@ -2807,7 +2807,7 @@ bb123c57c4c5ce0c7837aa827714a87c  doc/bc/6.0/ezoe-tinymce8.md
 d88ed154806689c479cf5a1a70587fa5  doc/bc/6.0/hardening.md
 fca17d35cfc097ff4b57c3c5c871b55a  doc/bc/6.0/http-caching.md
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/bc/6.0/http2-and-cache-warming.md
-46f5abffd259cd880e032cd8d1953acb  doc/bc/6.0/httpcache.md
+e2ea8974b7a7bcc97bc0fc2fccb03965  doc/bc/6.0/httpcache.md
 b4b2d3cf7a13a38b86ae1add01523e49  doc/bc/6.0/ini-save-file-permissions.md
 744e2ee1ba1dbc7018c79c78bf9dc28e  doc/bc/6.0/kickstartercli.md
 a6d977d642aa2384831b54248e80ecc6  doc/bc/6.0/locations-tab-paging-and-sorting.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-9df611682b2131cd4796f1f1dac423ee  doc/changelogs/6.0/6.0.15.md
+c7568db593d171c97f7424fb721f426a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5524,9 +5524,9 @@ b4c8b6bdaa165af37f563c5e39f0dad4  kernel/private/classes/ezptopologicalsortnode.
 ff87cb464a335a0d70234d2a35106203  kernel/private/classes/ezscriptclusterpurge.php
 93df9b90000e461d123cdcd6f817ecd9  kernel/private/classes/ezscripttrashpurge.php
 044350c27c47d06a339d22cba1c7638f  kernel/private/classes/global_functions.php
-522b50b091b13185412e16d45d5ba62a  kernel/private/classes/httpcache/ezphttpcachecontract.php
-efce851fd45df8e8213d371b6d7b6708  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
-1c471c77f69b09f71c42339afeb767aa  kernel/private/classes/httpcache/ezphttpcachelistener.php
+a711cdd2a59a7bde72dcfec9c67dd093  kernel/private/classes/httpcache/ezphttpcachecontract.php
+02d8fd5929eba35f5ad8ed31e4b86f3e  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
+060c4712179bc2c63cef1b3fa029e2fc  kernel/private/classes/httpcache/ezphttpcachelistener.php
 d31c1335c40060e29fd17d14eeff3e94  kernel/private/classes/requestrules/ezprequestcontext.php
 61dc81b6e01136bd7e9ce0ef279e6094  kernel/private/classes/requestrules/ezprequestrule.php
 29b4c67819c42d499210386b9e70d88d  kernel/private/classes/requestrules/ezprequestruleactions.php
@@ -7291,7 +7291,7 @@ cb5cb17b3fe0cc32bee0dd8f2fb6b7e4  tests/tests/kernel/classes/ezurl_test.php
 fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthentication_test.php
 6d55864478b562693e77197e4a5e94c1  tests/tests/kernel/classes/ezuserdiscountrule_test.php
 43a4eefe5f44077ad2e85271207b9890  tests/tests/kernel/classes/ezworkflowevent_regression.php
-2442100abcb5d79112b8ee34a03fb086  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
+1558264d29a8adb66c78df79759f3e0d  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 f6ecb43c903ad708479858b8bbb01746  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 28f13941e6a56ca4b6dba5757c6fadd0  tests/tests/kernel/classes/ini/command/IniCommandTest.php
 78c48749a30c2769a626984bf19d3074  tests/tests/kernel/classes/ini/command/IniMoveTest.php
