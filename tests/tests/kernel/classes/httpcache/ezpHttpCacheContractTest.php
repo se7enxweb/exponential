@@ -20,6 +20,10 @@
  *  HC-16 — A page of a URI-matched siteaccess stored behind a load balancer is found by the early exit and the web server
  *  HC-17 — The purge tags go out in one header, and only when TagHeader names one
  *  HC-18 — request-shield's lookup address: a request with a parameter no key holds is answered from the page without it, the same path only
+ *  HC-19 — request-shield's lookup is taken only when it names exactly the request's own parameters the key holds
+ *  HC-20 — A lookup is served an expired page as stale and never takes its refresh
+ *  HC-21 — The purged tags the state keeps are bounded; more purge every page
+ *  HC-22 — The listener stores nothing request-shield marks allow-uncached
  *
  * No database, no kernel: the contract is pure PHP by design.
  *
@@ -563,5 +567,97 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $c->serve( array( 'lookupUri' => '/news#x' ) + $this->request( '/news?x=7' ) ), 'a fragment' );
         $this->assertSame( '/news', ezpHttpCacheContract::shieldLookupUri( '/news?x=7#top', '/news' ) );
         $this->assertNull( ezpHttpCacheContract::shieldLookupUri( '/news?x=7', null ) );
+    }
+
+    /**
+     * HC-19: the lookup is taken only when it names exactly the request's own
+     * parameters the key holds. A shield whose cache-query leaves out one of
+     * QueryStringParameters, or a lookup naming other values, would answer a
+     * request with another variant of the page.
+     */
+    public function testAShieldLookupNeverNamesAnotherVariantOfThePage()
+    {
+        $c = $this->contract( array( 'queryParameters' => array( 'page', 'sort' ) ) );
+        $this->storeAnonymous( $c, '/news', '<p>news 1</p>' );
+        $this->storeAnonymous( $c, '/news?page=2', '<p>news 2</p>' );
+        $this->storeAnonymous( $c, '/news?page=2&sort=a', '<p>news 2 a</p>' );
+
+        $this->assertNull( $c->serve( array( 'lookupUri' => '/news' ) + $this->request( '/news?page=2&x=7' ) ), 'a parameter the key holds left out' );
+        $this->assertSame( 'query string', $c->lastReason );
+        $this->assertNull( $c->serve( array( 'lookupUri' => '/news?page=2' ) + $this->request( '/news?page=3&x=7' ) ), 'another value' );
+        $this->assertNull( $c->serve( array( 'lookupUri' => '/news?page=2' ) + $this->request( '/news?x=7' ) ), 'a parameter the request has not' );
+        $hit = $c->serve( array( 'lookupUri' => '/news?page=2&sort=a' ) + $this->request( '/news?sort=a&x=7&page=2' ) );
+        $this->assertSame( '<p>news 2 a</p>', $hit[2] ?? null, 'the same parameters in another order' );
+        $this->assertSame( 'private, max-age=300', $hit[1]['Cache-Control'] ?? null, 'a proxy in front keeps no made-up address either' );
+        $this->assertSame( 'public, max-age=300', $c->serve( $this->request( '/news?page=2' ) )[1]['Cache-Control'] ?? null, 'the page itself as before' );
+        $this->assertSame( '/news?page=2', $c->keyedUri( '/news?x=7&page=2#top' ) );
+    }
+
+    /**
+     * HC-20: a lookup never stores, so it must never become the request that
+     * renders an expired page again: it is served the page as stale, and the
+     * next request for the page itself refreshes it.
+     */
+    public function testAShieldLookupNeverTakesTheRefreshOfAnExpiredPage()
+    {
+        $c = $this->contract();
+        list( $key ) = $this->storeAnonymous( $c, '/news', '<p>news</p>' );
+        $meta = json_decode( file_get_contents( $this->metaFile( $key ) ), true );
+        $meta['created'] -= 3610;
+        file_put_contents( $this->metaFile( $key ), json_encode( $meta ) );
+
+        $hit = $c->serve( array( 'lookupUri' => '/news' ) + $this->request( '/news?x=7' ) );
+        $this->assertSame( 'STALE (request-shield lookup)', $hit[1]['X-Exp-Cache'] ?? null );
+        $this->assertNull( $c->serve( $this->request( '/news' ) ), 'the page itself renders it again' );
+        $this->assertSame( 'expired, refreshing', $c->lastReason );
+    }
+
+    /** HC-21: the purged tags the state keeps are bounded; more purge every page. */
+    public function testTooManyPurgedTagsPurgeEveryPage()
+    {
+        $c = $this->contract();
+        list( $key ) = $this->storeAnonymous( $c, '/page', 'body', array( 'ez-all', 'l2' ) );
+        usleep( 1000 );
+        $tags = array();
+        for ( $i = 0; $i <= ezpHttpCacheContract::MAX_PURGED_TAGS; $i++ )
+            $tags[] = 'rl' . ( 100000 + $i );
+        $state = $c->purgeTags( $tags );
+        $this->assertSame( array( 'ez-all' ), array_keys( $state['tags'] ) );
+        $this->assertNull( $c->loadEntry( $key ), 'every page is purged' );
+        $c->purgeTags( array( 'l9' ) );
+        $this->assertCount( 2, $c->state()['tags'], 'and the next purge adds to it as before' );
+    }
+
+    /**
+     * HC-22: the listener stores nothing request-shield marked allow-uncached;
+     * any other value, or none, leaves the decision as it was.
+     */
+    public function testTheListenerStoresNothingRequestShieldMarksAllowUncached()
+    {
+        require_once __DIR__ . '/../../../../../kernel/private/classes/httpcache/ezphttpcachelistener.php';
+        $reason = new ReflectionMethod( 'ezpHttpCacheListener', 'uncacheableReason' );
+        if ( PHP_VERSION_ID < 80100 )
+            $reason->setAccessible( true );
+        $saved = array( $_SERVER, $_POST, $GLOBALS['ezpRequestRuleNoStore'] ?? null, $GLOBALS['eZCurrentAccess'] ?? null );
+        try
+        {
+            $_SERVER['REQUEST_METHOD'] = 'GET';
+            $_POST = array();
+            unset( $GLOBALS['ezpRequestRuleNoStore'], $GLOBALS['eZCurrentAccess'], $_SERVER['REQUEST_SHIELD'] );
+            $this->assertNull( $reason->invoke( null, '<p>page</p>' ), 'without request-shield' );
+            $_SERVER['REQUEST_SHIELD'] = 'allow';
+            $this->assertNull( $reason->invoke( null, '<p>page</p>' ), 'allowed' );
+            $_SERVER['REQUEST_SHIELD'] = 'allow-uncached';
+            $this->assertSame( 'request-shield: not for a cache', $reason->invoke( null, '<p>page</p>' ) );
+            $this->assertSame( 'empty', $reason->invoke( null, '' ), 'the reasons before it come first, as before' );
+        }
+        finally
+        {
+            list( $_SERVER, $_POST ) = $saved;
+            if ( $saved[2] !== null )
+                $GLOBALS['ezpRequestRuleNoStore'] = $saved[2];
+            if ( $saved[3] !== null )
+                $GLOBALS['eZCurrentAccess'] = $saved[3];
+        }
     }
 }
