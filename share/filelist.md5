@@ -3330,7 +3330,7 @@ cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 0efc0a33fb1492529cd85b8d230d76d5  doc/features/6.0/class-attribute-move-to-edge.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 572d04f3da4c1377a06bd7c8c95f615b  doc/features/6.0/content-jobs.md
-13b36ead2b52f7ab6d1344c10e7a12ce  doc/features/6.0/content-limitation-handlers.md
+f8fca1a0d5f829e22cf306b8fb492610  doc/features/6.0/content-limitation-handlers.md
 5dc9aef1305f6bb91f4dd0fdbb4fd038  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
@@ -5493,7 +5493,7 @@ e34ec746f18ebc7f96baa69e69ca4148  kernel/private/classes/ezcontentobjectstatelan
 9c6f19a00ddaad6fde34c61189ce50e5  kernel/private/classes/ezpactiveextensions.php
 bdaf3dfbfa218e33a0ee681501a10ea3  kernel/private/classes/ezpasynchronouspublishingfilter.php
 c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.php
-91f5b5aa6ab3c5019ecb5169900bff18  kernel/private/classes/ezpcontentlimitation.php
+c1457427f51ffde711f777c6d5dd65c3  kernel/private/classes/ezpcontentlimitation.php
 8283e4f7982e9d1aff4c308f72dd9a18  kernel/private/classes/ezpcontentpublishingprocess.php
 dad70a135e50fcc3415d197dd961caad  kernel/private/classes/ezpcontentpublishingqueue.php
 483341cbf4649e24b6f15b0357bc5aee  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
@@ -7345,7 +7345,7 @@ a18d90b5610abb3def710ebc7c9f49ba  tests/tests/kernel/classes/permissions/eZPolic
 7912afca659ccb05b5e7ee37e934c398  tests/tests/kernel/classes/permissions/eZPolicyPrefetchedAccessArrayTest.php
 7f5b329d15b658e33c4ac3f1fab1c5c2  tests/tests/kernel/classes/permissions/eZUserAccessEvaluationTest.php
 3e9f42058b135fcc91cc433dd711eafa  tests/tests/kernel/classes/permissions/expPermissionHooksTest.php
-44950a4c7f2130f20e31917dd8152714  tests/tests/kernel/classes/permissions/ezpContentLimitationSolrTest.php
+1638ec984c3a39868ee672bb362b07de  tests/tests/kernel/classes/permissions/ezpContentLimitationSolrTest.php
 f72914cc79297e8160784638e10a6494  tests/tests/kernel/classes/permissions/ezpContentLimitationTest.php
 b56a3b9639c786b875f98c6f42c8a035  tests/tests/kernel/classes/permissions/fixtures/ezcontentpermissionsqltestdb.php
 192883639379d5fd3bab7183741db6df  tests/tests/kernel/classes/permissions/fixtures/modules/k1perm/module.php
