@@ -2,8 +2,10 @@
 /**
  * Child process of eZSendmailEnvelopeSenderTest: sends one mail through eZSendmailTransport with
  * SendmailEnvelopeSender set to the first argument ("-" removes the setting), when the second argument is a non-empty
- * address that sender on the mail, and EmailSender set to the third argument (default site@example.com).
- * SendmailOptions[] is -r bounce@example.com. sendmail_path points to sendmail_capture.php. Prints "sent" or "failed".
+ * address that sender on the mail, EmailSender set to the third argument (default site@example.com) and, when the
+ * fourth argument is not empty, a From extra header with it (eZMail::addExtraHeader()).
+ * SendmailOptions[] is -r bounce@example.com. sendmail_path points to sendmail_capture.php. Prints "sent" or "failed",
+ * with EZSENDMAIL_REPORT_SENDER=1 in the environment followed by a line with the mail's sender after sending (JSON).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -38,9 +40,14 @@ $ini->setVariable( 'MailSettings', 'DebugSending', 'disabled' );
 $mail = new eZMail();
 if ( isset( $argv[2] ) && $argv[2] !== '' )
     $mail->setSender( $argv[2], 'Editor' );
+if ( isset( $argv[4] ) && $argv[4] !== '' )
+    $mail->addExtraHeader( 'From', $argv[4] );
 $mail->addReceiver( 'reader@example.com' );
 $mail->setSubject( 'Envelope test' );
 $mail->setBody( 'Body' );
 
 $transport = new eZSendmailTransport();
 echo $transport->sendMail( $mail ) ? 'sent' : 'failed';
+// The sender of the mail after sending, as the caller sees it
+if ( getenv( 'EZSENDMAIL_REPORT_SENDER' ) === '1' )
+    echo "\n", json_encode( array( 'From' => $mail->sender( false ), 'from' => $mail->Mail->from === null ? null : $mail->Mail->from->email ) );
