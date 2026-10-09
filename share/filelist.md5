@@ -7438,7 +7438,7 @@ c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemp
 173c7582c0a9772090ad0f6f0e8cf2ca  tests/tests/kernel/classes/trash/TrashListMongoTest.php
 397cc60950363e47baa1ab8cbbcaafb9  tests/tests/kernel/classes/trash/TrashListPagedTest.php
 2cdb0ad8f51e15f030e8ca024863a522  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
-dabfc062ade252e4f52b051c893a73a8  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
+a2ac644b2f632bc8978f9753406fa288  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
 0a909c2ed4309301ba5e654a7be1d57c  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 23908179beefb9ebfcc66883726b8fe1  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
