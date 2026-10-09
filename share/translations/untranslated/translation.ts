@@ -23189,7 +23189,7 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches)</source>
+        <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches); ezpContentLimitationSolrHandler adds solrFilter() for searches that filter by the policies themselves (eZ Find)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

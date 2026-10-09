@@ -1197,6 +1197,7 @@ return array(
       'ezpContentLimitCriteria'                                      => 'kernel/private/api/content/criteria/limit.php',
       'ezpContentLimitation'                                         => 'kernel/private/classes/ezpcontentlimitation.php',
       'ezpContentLimitationHandler'                                  => 'kernel/private/interfaces/ezpcontentlimitationhandler.php',
+      'ezpContentLimitationSolrHandler'                              => 'kernel/private/interfaces/ezpcontentlimitationsolrhandler.php',
       'ezpContentList'                                               => 'kernel/private/api/content/list.php',
       'ezpContentLocation'                                           => 'kernel/private/api/content/location.php',
       'ezpContentLocationCriteria'                                   => 'kernel/private/api/content/criteria/location.php',
