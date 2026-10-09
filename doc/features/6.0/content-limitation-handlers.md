@@ -215,6 +215,7 @@ session of the other user is made. `expContentAccessReport::check()` gives the s
 | A kernel limitation of another function in a fetch (`Language`, `ParentClass`) | Left out of the SQL, as before. |
 | An exception thrown by `checkAccess()` or `permissionSQL()` | Denies (`false`, `1 = 0`) and is logged once per request; the request goes on. |
 | `permissionSQL()` answers with something other than `false`, a self-contained string or a column condition | The policy gives no access in fetches; logged once per request with the start of the answer. |
+| `solrFilter()` without a handler, for a handler without `ezpContentLimitationSolrHandler`, for a kernel limitation, a handler that returns `false`, throws or answers with no filter | `DENY_SOLR` (`( *:* -*:* )`): the policy gives no access in searches; logged once per request (a missing interface as a warning). |
 
 ## What changes for existing installations
 
@@ -250,16 +251,22 @@ class myExtLimitationHandler implements ezpContentLimitationSolrHandler
 ```
 
 The search extension calls `ezpContentLimitation::solrFilter( $limitation, $values, $userID )` for every
-limitation it does not know. It gets the filter in parentheses, to join with AND to the other limitations of the
-policy, or `false`: then the policy gives no access in the search, and the extension leaves it out. `false` comes
-back without a handler, for a handler that does not implement the interface, when it returns false or throws, and
-for an answer that is no filter:
+limitation that is not a kernel limitation (`ezpContentLimitation::isKernelLimitation()`; those it translates
+itself) and joins the answer with AND to the other limitations of the policy. The answer is always a filter in
+parentheses. When the policy gives no access in the search, it is `ezpContentLimitation::DENY_SOLR`, a filter that
+matches no document: without a handler, for a handler that does not implement the interface, when it returns false
+or throws, for a kernel limitation, and for an answer that is no filter:
 
 - A string must be self-contained: double quotes closed, parentheses balanced and never closed before they open,
-  no local parameters (`{!`), no NUL byte. Values in it are escaped with `ezpContentLimitation::solrValue()`.
+  range brackets (`[ ]`, `{ }`) closed and not nested, no local parameters (`{!`) and no nested query (`_query_`),
+  not even in quotes, no NUL byte. Values in it are escaped with `ezpContentLimitation::solrValue()`, which also
+  turns a value `AND`, `OR` or `NOT` into a term.
 - An array `array( 'field' => ..., 'values' => ..., 'not' => false )`, or a list of them joined by AND: the field
-  is a name of letters, digits and `_`, the values are scalars and not empty. No values matches nothing (with
-  `'not' => true`: everything).
+  is a name of letters, digits and `_`, the values are scalars in UTF-8 and not empty, `not` is a boolean if it is
+  given. No values matches nothing (with `'not' => true`: everything).
+
+The search extension must not leave the policy out instead of joining `DENY_SOLR`: eZ Find filters by nothing at
+all when no policy is left, so a user whose only policy has such a limitation would find everything.
 
 ## Limits
 
@@ -271,7 +278,9 @@ for an answer that is no filter:
   for the classes it guards.
 - A search engine that builds its own permission filter asks the handler only if the handler implements
   `ezpContentLimitationSolrHandler` and the search extension calls `ezpContentLimitation::solrFilter()` (see
-  [Searches](#searches)). One that does neither treats the limitation as it treats any it does not know.
+  [Searches](#searches)). eZ Find as released leaves a limitation it does not know out of the policy: until it calls
+  `solrFilter()`, a search shows a user with such a policy more than the policy allows. Disable the search for such
+  users, or keep the content guarded by the limitation out of the index, until the search extension is changed.
 - The `state/assign` policy (`eZContentObject::allowedAssignStateIDList()`) does not ask handlers yet.
 
 ## Settings
@@ -285,10 +294,11 @@ for an answer that is no filter:
 
 - `ezpContentLimitation` (`kernel/private/classes/ezpcontentlimitation.php`) makes the handler once per request
   (the request is told by `REQUEST_TIME_FLOAT`, the setting by a hash of `LimitationHandlers[]`; `resetCache()`
-  forgets both) and returns `false` or `1 = 0` without one. `sqlCondition()` checks or writes the condition of a
-  handler; `isKernelLimitation()` names the limitations the kernel keeps for itself. The exit signal of Velocity
-  passes through its `catch`.
-- The interface is `ezpContentLimitationHandler` (`kernel/private/interfaces/ezpcontentlimitationhandler.php`).
+  forgets both) and returns `false`, `1 = 0` or `DENY_SOLR` without one. `sqlCondition()` and `solrCondition()`
+  check or write the condition of a handler; `isKernelLimitation()` names the limitations the kernel keeps for
+  itself. The exit signal of Velocity passes through its `catch`.
+- The interfaces are `ezpContentLimitationHandler` (`kernel/private/interfaces/ezpcontentlimitationhandler.php`) and
+  `ezpContentLimitationSolrHandler` (`kernel/private/interfaces/ezpcontentlimitationsolrhandler.php`).
 - `eZModule::initialize()` (`lib/ezutils/classes/ezmodule.php`) passes the `$FunctionList` of every module through the
   filter `module/functionlist` (`eZModule::filterFunctionList()`): only when a listener is attached, once per module
   file, request and set of listeners (`ezpEvent::listenerIds()`), keeping what has the form of `module.php`.

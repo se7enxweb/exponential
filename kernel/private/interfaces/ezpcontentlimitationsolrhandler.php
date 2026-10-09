@@ -28,9 +28,9 @@ interface ezpContentLimitationSolrHandler extends ezpContentLimitationHandler
      * The filter is joined with AND to the other limitations of the same policy. The field names are those of the
      * search engine's index (eZ Find: eZSolr::getMetaFieldName()). Two forms are accepted:
      *
-     * - A string, put in parentheses by the kernel. It must be self-contained: quotes and parentheses balanced and
-     *   no local parameters ("{!"); otherwise the policy gives no access in searches. Values from the policy must be
-     *   escaped by the handler (ezpContentLimitation::solrValue()).
+     * - A string, put in parentheses by the kernel. It must be self-contained: quotes, parentheses and range brackets
+     *   balanced, no local parameters ("{!") and no nested query (_query_); otherwise the policy gives no access in
+     *   searches. Values from the policy must be escaped by the handler (ezpContentLimitation::solrValue()).
      * - array( 'field' => 'meta_section_id_si', 'values' => $values, 'not' => false ), or a list of such arrays
      *   joined by AND: the kernel writes the condition and escapes the values itself. The safer form wherever it is
      *   enough.
