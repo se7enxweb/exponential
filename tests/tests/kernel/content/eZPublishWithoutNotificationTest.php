@@ -335,6 +335,9 @@ class eZPublishWithoutNotificationTest extends PHPUnit\Framework\TestCase
             return 'article';
         };
 
+        // a site's own setting must not decide this: the setting missing, as in an installation without it
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', null );
+        ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', null );
         $this->assertTrue( eZContentOperationCollection::notificationIncludesClass( 'folder' ), 'no setting: every class' );
         ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'NotificationFilterByClassIdentifier', 'disabled' );
         ezpINIHelper::setINISetting( 'notification.ini', 'NotificationSettings', 'IncludeClasses', array( 'article' ) );
@@ -383,8 +386,7 @@ class eZPublishWithoutNotificationTest extends PHPUnit\Framework\TestCase
         }
         // both methods pass notify through the same answer, not a (bool) cast that makes null a no
         $source = file_get_contents( 'kernel/classes/ezcontentfunctions.php' );
-        $this->assertSame( 2, substr_count( $source, "'notify' => eZContentOperationCollection::notifyRequested( \$notify )" ) +
-                              substr_count( $source, "'notify'    => eZContentOperationCollection::notifyRequested( \$notify )" ) );
+        $this->assertSame( 2, preg_match_all( '/\x27notify\x27\s*=>\s*eZContentOperationCollection::notifyRequested\( \$notify \)/', $source ) );
         $this->assertStringNotContainsString( '(bool)$notify', $source );
         foreach ( array( 'createAndPublishObject', 'updateAndPublishObject' ) as $method )
         {
