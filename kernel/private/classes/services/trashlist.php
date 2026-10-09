@@ -178,6 +178,8 @@ class TrashList
     public static function summary( array $context )
     {
         $db = \eZDB::instance();
+        if ( self::isMongo( $db ) )
+            return self::summaryMongo( $db, $context );
         $totals = $db->arrayQuery( 'SELECT COUNT(*) AS items, MIN(trashed) AS oldest'
                                  . ( !empty( $context['columns'] ) ? ', SUM( CASE WHEN trashed_by > 0 THEN 1 ELSE 0 END ) AS recorded' : '' )
                                  . ' FROM ezcontentobject_trash' );
@@ -202,7 +204,17 @@ class TrashList
         if ( !empty( $context['columns'] ) )
         {
             $db = \eZDB::instance();
-            $result = $db->arrayQuery( 'SELECT trashed_by, COUNT(*) AS items FROM ezcontentobject_trash WHERE trashed_by > 0 GROUP BY trashed_by' );
+            if ( self::isMongo( $db ) )
+            {
+                // the driver translates no GROUP BY: the same count from a $group
+                $result = array();
+                foreach ( (array)$db->aggregate( 'ezcontentobject_trash', array(
+                              array( '$match' => array( 'trashed_by' => array( '$gt' => 0 ) ) ),
+                              array( '$group' => array( '_id' => '$trashed_by', 'items' => array( '$sum' => 1 ) ) ) ) ) as $row )
+                    $result[] = array( 'trashed_by' => $row['_id'], 'items' => $row['items'] );
+            }
+            else
+                $result = $db->arrayQuery( 'SELECT trashed_by, COUNT(*) AS items FROM ezcontentobject_trash WHERE trashed_by > 0 GROUP BY trashed_by' );
             foreach ( is_array( $result ) ? $result : array() as $row )
             {
                 $id = (int)$row['trashed_by'];
@@ -409,6 +421,44 @@ class TrashList
     }
 
     /**
+     * summary() on MongoDB, whose driver translates neither the NOT EXISTS subquery nor SUM( CASE ... ): two
+     * aggregations with the same counts. A trash document older than trashed_by counts as trashed_by 0.
+     *
+     * @param \eZDBInterface $db
+     * @param array $context
+     * @return array as summary()
+     */
+    protected static function summaryMongo( $db, array $context )
+    {
+        $group = array( '_id' => null, 'items' => array( '$sum' => 1 ), 'oldest' => array( '$min' => '$trashed' ) );
+        if ( !empty( $context['columns'] ) )
+            $group['recorded'] = array( '$sum' => array( '$cond' => array(
+                array( '$gt' => array( array( '$ifNull' => array( '$trashed_by', 0 ) ), 0 ) ), 1, 0 ) ) );
+        $totals = $db->aggregate( 'ezcontentobject_trash', array( array( '$group' => $group ) ) );
+        // removed directly: no trash document has the parent's node id
+        $top = $db->aggregate( 'ezcontentobject_trash', array(
+            array( '$lookup' => array( 'from' => 'ezcontentobject_trash', 'localField' => 'parent_node_id',
+                                       'foreignField' => 'node_id', 'as' => '_parent' ) ),
+            array( '$match' => array( '_parent' => array( '$size' => 0 ) ) ),
+            array( '$count' => 'top' ) ) );
+        $items = isset( $totals[0]['items'] ) ? (int)$totals[0]['items'] : 0;
+        $topCount = isset( $top[0]['top'] ) ? (int)$top[0]['top'] : 0;
+        $recorded = isset( $totals[0]['recorded'] ) ? (int)$totals[0]['recorded'] : 0;
+        return array( 'items' => $items, 'top' => $topCount, 'below' => $items - $topCount,
+                      'oldest' => $items > 0 ? (int)$totals[0]['oldest'] : false,
+                      'recorded' => $recorded + count( $context['records'] ) );
+    }
+
+    /**
+     * @param \eZDBInterface $db
+     * @return bool the MongoDB driver, which answers aggregate() for what its SQL translation cannot express
+     */
+    protected static function isMongo( $db )
+    {
+        return $db->databaseName() === 'mongo' && is_callable( array( $db, 'aggregate' ) );
+    }
+
+    /**
      * The SQL condition for the trash rows below the path $pathString, answered from the index on path_string.
      * SQLite does not use an index for LIKE (it compares case-insensitively), so it gets a range that holds exactly
      * the strings that start with the path: "/1/2/43/" < path_string < "/1/2/430" ("0" follows "/"). The other
@@ -422,7 +472,8 @@ class TrashList
     public static function belowCondition( $db, $pathString )
     {
         $pathString = (string)$pathString;
-        if ( !preg_match( '#^/([0-9]+/)+$#', $pathString ) )
+        // \z, not $: $ also matches before a final line break
+        if ( !preg_match( '#^/([0-9]+/)+\z#', $pathString ) )
             return false;
         $path = $db->escapeString( $pathString );
         if ( $db->databaseName() === 'sqlite' )
