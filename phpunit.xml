@@ -65,6 +65,7 @@
         -->
         <testsuite name="mongodb">
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMongoDBDeclaredDefaultTest.php</file>
         </testsuite>
 
         <!--

@@ -237,8 +237,34 @@ class expMongoDB extends eZDBInterface
      * wrong pages rather than an error anyone can see.
      *
      * Returns an array filter, or false when the clause cannot be translated.
+     *
+     * With $table, a comparison on a column the .dba declares NOT NULL with a
+     * default also decides documents that have no such field the way a SQL
+     * engine decides the default it holds there (declaredDefault(),
+     * withDeclaredDefault()).
+     *
+     * @param string $whereSql
+     * @param string|null $table the collection the clause is applied to
      */
-    private function parseWhereClause( $whereSql )
+    private function parseWhereClause( $whereSql, $table = null )
+    {
+        // a subquery run while the clause is read sets its own table
+        $previousTable = $this->WhereTable;
+        $this->WhereTable = $table;
+        try
+        {
+            return $this->parseWhereClauseOfTable( $whereSql );
+        }
+        finally
+        {
+            $this->WhereTable = $previousTable;
+        }
+    }
+
+    /** @var string|null the table of the clause parseWhereClause() is reading */
+    protected $WhereTable = null;
+
+    private function parseWhereClauseOfTable( $whereSql )
     {
         // MySQL's row-locking suffixes. lock() and unlock() on this driver are
         // already no-ops because MongoDB has no equivalent, so the suffix is
@@ -567,7 +593,8 @@ class expMongoDB extends eZDBInterface
             if ( $keyword === 'IN' )
             {
                 $values = $this->parseWhereValueList( $tokens, $i );
-                return $values === false ? false : array( $column => array( '$nin' => $values ) );
+                return $values === false ? false
+                    : $this->withDeclaredDefault( $column, array( '$nin' => $values ), 'NOT IN', $values );
             }
             if ( $keyword === 'LIKE' )
             {
@@ -582,7 +609,8 @@ class expMongoDB extends eZDBInterface
         {
             $i++;
             $values = $this->parseWhereValueList( $tokens, $i );
-            return $values === false ? false : array( $column => array( '$in' => $values ) );
+            return $values === false ? false
+                : $this->withDeclaredDefault( $column, array( '$in' => $values ), 'IN', $values );
         }
 
         // column LIKE '...'
@@ -619,17 +647,87 @@ class expMongoDB extends eZDBInterface
 
             switch ( $operator )
             {
-                case '=':  return array( $column => $value );
-                case '!=': return array( $column => array( '$ne' => $value ) );
-                case '<':  return array( $column => array( '$lt' => $value ) );
-                case '<=': return array( $column => array( '$lte' => $value ) );
-                case '>':  return array( $column => array( '$gt' => $value ) );
-                case '>=': return array( $column => array( '$gte' => $value ) );
+                case '=':  return $this->withDeclaredDefault( $column, $value, $operator, $value );
+                case '!=': return $this->withDeclaredDefault( $column, array( '$ne' => $value ), $operator, $value );
+                case '<':  return $this->withDeclaredDefault( $column, array( '$lt' => $value ), $operator, $value );
+                case '<=': return $this->withDeclaredDefault( $column, array( '$lte' => $value ), $operator, $value );
+                case '>':  return $this->withDeclaredDefault( $column, array( '$gt' => $value ), $operator, $value );
+                case '>=': return $this->withDeclaredDefault( $column, array( '$gte' => $value ), $operator, $value );
             }
             return false;
         }
 
         return false;
+    }
+
+    /**
+     * The filter for one comparison on a column, deciding documents without the field as a SQL engine decides
+     * the column's default.
+     *
+     * A SQL table gives every row every column; a row written before a column was added holds its default. A
+     * document written before then has no field at all, and MongoDB decides a missing field its own way:
+     * $eq, $in and the ranges never match it, $ne and $nin always do. So "trashed_by = 0" missed every document
+     * older than the column, and "trashed_by <> 0" listed them. For a column the .dba declares NOT NULL with a
+     * default, the missing field is matched exactly when the default satisfies the comparison. Every other
+     * column, a qualified name, and a clause without a known table keep the plain filter.
+     *
+     * @param string $column
+     * @param mixed $condition the MongoDB condition on the field
+     * @param string $operator =, !=, <, <=, >, >=, IN or NOT IN
+     * @param mixed $value the compared value, or the list for IN and NOT IN
+     * @return array
+     */
+    protected function withDeclaredDefault( $column, $condition, $operator, $value )
+    {
+        $plain = array( $column => $condition );
+        if ( $this->WhereTable === null )
+            return $plain;
+        $default = self::declaredDefault( $this->WhereTable, $column );
+        if ( $default === null )
+            return $plain;
+        $default = $default[0];
+
+        switch ( $operator )
+        {
+            case 'IN':
+            case 'NOT IN':
+                $found = false;
+                foreach ( (array)$value as $item )
+                {
+                    if ( self::compareSqlValues( $default, $item ) === 0 )
+                        $found = true;
+                }
+                $holds = $operator === 'IN' ? $found : !$found;
+                break;
+            default:
+                $comparison = self::compareSqlValues( $default, $value );
+                $holds = ( $operator === '=' && $comparison === 0 ) || ( $operator === '!=' && $comparison !== 0 )
+                      || ( $operator === '<' && $comparison < 0 ) || ( $operator === '<=' && $comparison <= 0 )
+                      || ( $operator === '>' && $comparison > 0 ) || ( $operator === '>=' && $comparison >= 0 );
+        }
+        // what MongoDB does with a missing field for this condition
+        $matchesMissing = $operator === '!=' || $operator === 'NOT IN';
+
+        if ( $holds && !$matchesMissing )
+            return array( '$or' => array( $plain, array( $column => array( '$exists' => false ) ) ) );
+        if ( !$holds && $matchesMissing )
+            return array( '$and' => array( $plain, array( $column => array( '$exists' => true ) ) ) );
+        return $plain;
+    }
+
+    /**
+     * Compares two values as SQL compares a column with a literal: as numbers when both are numbers, else as text.
+     *
+     * @param mixed $a
+     * @param mixed $b
+     * @return int -1, 0 or 1
+     */
+    static function compareSqlValues( $a, $b )
+    {
+        if ( is_numeric( $a ) && is_numeric( $b ) )
+            return ( (float)$a < (float)$b ) ? -1 : ( ( (float)$a > (float)$b ) ? 1 : 0 );
+        $result = strcmp( (string)$a, (string)$b );
+        return $result < 0 ? -1 : ( $result > 0 ? 1 : 0 );
     }
 
     /**
@@ -974,7 +1072,7 @@ class expMongoDB extends eZDBInterface
             // A clause the parser refuses must stop the statement. Treating it
             // as an empty filter would update every document in the
             // collection, which is far worse than not updating at all.
-            $filter = $this->parseWhereClause( $whereSql );
+            $filter = $this->parseWhereClause( $whereSql, $table );
             if ( $filter === false )
             {
                 $this->logError( 'expMongoDB::query UPDATE refused, its WHERE could not be translated: '
@@ -1145,7 +1243,7 @@ class expMongoDB extends eZDBInterface
         {
             $table    = trim( $m[1] );
             $whereSql = trim( $m[2] );
-            $filter = $this->parseWhereClause( $whereSql );
+            $filter = $this->parseWhereClause( $whereSql, $table );
             if ( $filter === false || empty( $filter ) )
             {
                 $this->logError( 'expMongoDB::query DELETE refused, its WHERE could not be translated: '
@@ -1209,7 +1307,7 @@ class expMongoDB extends eZDBInterface
             }
 
             $joinedWhere = $this->parseWhereClause(
-                preg_replace( '/\b' . preg_quote( $rightAlias, '/' ) . '\./', '', $whereSql ) );
+                preg_replace( '/\b' . preg_quote( $rightAlias, '/' ) . '\./', '', $whereSql ), $right );
             if ( $joinedWhere === false || empty( $joinedWhere ) )
             {
                 $this->logError( 'expMongoDB::query JOIN UPDATE refused, its WHERE could not be '
@@ -1367,7 +1465,7 @@ class expMongoDB extends eZDBInterface
             $aggregates = self::parseSelectAggregates( $selectClause );
             if ( $aggregates !== false )
             {
-                $filter = $whereSql !== '' ? $this->parseWhereClause( $whereSql ) : array();
+                $filter = $whereSql !== '' ? $this->parseWhereClause( $whereSql, $table ) : array();
                 if ( $filter === false )
                 {
                     $this->logError( 'expMongoDB::arrayQuery aggregate refused, its WHERE could not '
@@ -1396,7 +1494,7 @@ class expMongoDB extends eZDBInterface
                 $projection = []; // no projection = all fields
             }
 
-            $filter = $whereSql !== '' ? $this->parseWhereClause( $whereSql ) : array();
+            $filter = $whereSql !== '' ? $this->parseWhereClause( $whereSql, $table ) : array();
             if ( $filter === false )
             {
                 // Returning every document would render one page's content on
@@ -1440,11 +1538,33 @@ class expMongoDB extends eZDBInterface
             if ( $skipRows > 0 && !isset( $options['skip'] ) )
                 $options['skip'] = $skipRows;
 
+            // A named column the document lacks reads as the SQL engines read it: the declared default of a NOT
+            // NULL column (a document older than the column), else NULL. Without it the row had no such key.
+            $missing = array();
+            $columns = $projection ? self::declaredColumns( $table ) : array();
+            foreach ( array_keys( $projection ) as $column )
+            {
+                if ( $column === '_id' )
+                    continue;
+                if ( !isset( $columns[$column] ) )
+                    continue;
+                $default = self::declaredDefault( $table, $column );
+                $missing[$column] = $default === null ? null : $default[0];
+            }
+
             $result = [];
             try {
                 $cursor = $this->getClient()->selectCollection( $dbName, $table )->find( $filter, $options );
                 foreach ( $cursor as $doc )
-                    $result[] = $doc->getArrayCopy();
+                {
+                    $row = $doc->getArrayCopy();
+                    foreach ( $missing as $column => $default )
+                    {
+                        if ( !array_key_exists( $column, $row ) )
+                            $row[$column] = $default;
+                    }
+                    $result[] = $row;
+                }
             } catch ( Exception $e ) {
                 $this->logError( 'expMongoDB::arrayQuery SELECT failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
             }
@@ -2909,13 +3029,74 @@ class expMongoDB extends eZDBInterface
     static protected $NumericColumns = null;
 
     /**
-     * Read every .dba the installation ships and note the numeric columns.
+     * The columns of a table as the shipped .dba schema declares them, read
+     * together with numericColumns().
+     *
+     * A collection has no columns: a document written before a column was
+     * added to the schema simply has no such field, where a SQL table gives
+     * every row the column's default. The declared default is what lets the
+     * WHERE translation and the SELECT results treat a missing field as the
+     * SQL engines treat the column (see declaredDefault()).
+     *
+     * @param string $table
+     * @return array column => array( 'type' => string, 'not_null' => bool, 'default' => mixed|null )
+     */
+    static function declaredColumns( $table )
+    {
+        if ( self::$DeclaredColumns === null )
+        {
+            self::$DeclaredColumns = array();
+            if ( self::$NumericColumns === null )
+                self::$NumericColumns = self::loadNumericColumns();
+        }
+
+        return isset( self::$DeclaredColumns[$table] ) ? self::$DeclaredColumns[$table] : array();
+    }
+
+    /**
+     * The value a SQL engine gives a column of a row that never had it
+     * written: the declared default of a NOT NULL column, typed as the column
+     * is. Null when the column is not declared, may be NULL, or has no
+     * default - a missing field then stays missing.
+     *
+     * @param string $table
+     * @param string $column
+     * @return array|null array( value ), or null for none
+     */
+    static function declaredDefault( $table, $column )
+    {
+        if ( (string)$table === '' || strpos( (string)$column, '.' ) !== false )
+            return null;
+        $columns = self::declaredColumns( $table );
+        if ( !isset( $columns[$column] ) )
+            return null;
+        $field = $columns[$column];
+        if ( empty( $field['not_null'] ) || $field['default'] === null || $field['default'] === false )
+            return null;
+        $numeric = self::numericColumns( $table );
+        $default = $field['default'];
+        if ( isset( $numeric[$column] ) && is_numeric( $default ) )
+            $default = $numeric[$column] === 'int' ? (int)$default : (float)$default;
+        else if ( is_scalar( $default ) )
+            $default = (string)$default;
+        else
+            return null;
+        return array( $default );
+    }
+
+    /** @var array|null table => column => declaration, from the .dba files; null: not read yet */
+    static protected $DeclaredColumns = null;
+
+    /**
+     * Read every .dba the installation ships and note the numeric columns
+     * (and, for declaredColumns(), every column's declaration).
      * Done once per request; the files are plain PHP and stay in the opcode
      * cache.
      */
     static protected function loadNumericColumns()
     {
         $map = array();
+        $declared = array();
 
         $root = class_exists( 'eZSys' ) ? eZSys::rootDir() : '.';
         $files = array( $root . '/share/db_schema.dba' );
@@ -2931,7 +3112,8 @@ class expMongoDB extends eZDBInterface
 
         foreach ( $files as $file )
         {
-            if ( !is_readable( $file ) )
+            // without the schema class (the driver loaded on its own) there is nothing to read the files with
+            if ( !is_readable( $file ) || !class_exists( 'eZDbSchema' ) )
                 continue;
 
             $schema = eZDbSchema::readArray( $file );
@@ -2947,6 +3129,10 @@ class expMongoDB extends eZDBInterface
                 foreach ( $definition['fields'] as $column => $field )
                 {
                     $type = isset( $field['type'] ) ? strtolower( (string) $field['type'] ) : '';
+                    $declared[$tableName][$column] = array(
+                        'type'     => $type,
+                        'not_null' => !empty( $field['not_null'] ),
+                        'default'  => array_key_exists( 'default', (array)$field ) ? $field['default'] : null );
                     if ( in_array( $type, $integerTypes, true ) )
                         $map[$tableName][$column] = 'int';
                     elseif ( in_array( $type, $floatTypes, true ) )
@@ -2955,6 +3141,7 @@ class expMongoDB extends eZDBInterface
             }
         }
 
+        self::$DeclaredColumns = $declared;
         return $map;
     }
 

@@ -218,8 +218,26 @@ class TrashList
     public static function classOptions()
     {
         $db = \eZDB::instance();
-        $result = $db->arrayQuery( 'SELECT DISTINCT ezcontentobject.contentclass_id AS id FROM ezcontentobject_trash, ezcontentobject '
-                                 . 'WHERE ezcontentobject.id = ezcontentobject_trash.contentobject_id' );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // no joins on MongoDB: the objects in the trash first, then their classes
+            $objectIDs = array();
+            foreach ( (array)$db->arrayQuery( 'SELECT contentobject_id FROM ezcontentobject_trash' ) as $row )
+                $objectIDs[(int)$row['contentobject_id']] = (int)$row['contentobject_id'];
+            $result = array();
+            if ( $objectIDs )
+            {
+                $classIDs = array();
+                foreach ( (array)$db->arrayQuery( 'SELECT contentclass_id FROM ezcontentobject WHERE '
+                                                  . $db->generateSQLINStatement( array_values( $objectIDs ), 'id', false, true, 'int' ) ) as $row )
+                    $classIDs[(int)$row['contentclass_id']] = true;
+                foreach ( array_keys( $classIDs ) as $classID )
+                    $result[] = array( 'id' => $classID );
+            }
+        }
+        else
+            $result = $db->arrayQuery( 'SELECT DISTINCT ezcontentobject.contentclass_id AS id FROM ezcontentobject_trash, ezcontentobject '
+                                     . 'WHERE ezcontentobject.id = ezcontentobject_trash.contentobject_id' );
         $classes = array();
         foreach ( is_array( $result ) ? $result : array() as $row )
         {

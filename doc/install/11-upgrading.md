@@ -108,7 +108,7 @@ further: [14. from the 4.x line](14-migrating-from-4x.md), [15. from the 5.x leg
 | PostgreSQL | `update/database/postgresql/` | the same chain; the 5.4 step is `6.0/dbupdate-5.4-to-6.0.sql`, then `6.0/dbupdate-6.0.0-6.0.15.sql` |
 | SQLite | `update/database/sqlite/` | only `6.0/dbupdate-6.0.0-6.0.15.sql`: SQLite support starts with 6.0.1 |
 | Oracle | `extension/ezoracle/update/database/` (in the `ezoracle` extension): `ezpublish/` for the kernel chain, `ezoracle/` for the driver's own tables | the kernel chain up to 5.3 |
-| MongoDB | none | the MongoDB driver arrived in 6.0.14; the audit tables of 6.0.15 are created by `createaudittables.php` (below) |
+| MongoDB | none | the MongoDB driver arrived in 6.0.14; the audit tables of 6.0.15 are created by `createaudittables.php` (below); the trash fields `trashed_by` and `trashed_via` need no update ([trash](../bc/6.0/trash.md#where-trashed-by-is-kept)) |
 
 ### The 4.0 to 5.4 chain (MySQL file names; PostgreSQL has the same names)
 
@@ -196,7 +196,7 @@ its schema has always had the column and it has no sequences.
 | PostgreSQL | The 5.4 step is `6.0/dbupdate-5.4-to-6.0.sql`: the version rows, the wider `password_hash`, the `trashed` column and the sequence renames ([above](#the-612-72-and-73-directories)). Its guarded steps are `DO` blocks, which need PostgreSQL 9.0 or newer. The `digest` function of `pgcrypto` must exist in the database. |
 | SQLite | Each `ALTER TABLE` adds one column, because SQLite takes only one per statement, and SQLite has no `ADD COLUMN IF NOT EXISTS`: on a second run, every `ALTER TABLE` for a column that is already there fails ("duplicate column name"). Run the file once, after SQLite's online backup. |
 | Oracle | The `ezoracle` extension carries its own update files up to 5.3; apply them with your Oracle client. The 6.0.15 audit tables come from `createaudittables.php`. |
-| MongoDB | No SQL files. `createaudittables.php` creates the audit index collections through the driver's schema handler. |
+| MongoDB | No SQL files. `createaudittables.php` creates the audit index collections through the driver's schema handler. The trash documents get `trashed_by` and `trashed_via` when written, and an older one reads as their defaults, so `movetrashrecords.php` runs as on the other engines. |
 
 ## 11.4 From 3.10 to 5.3: the old chain
 

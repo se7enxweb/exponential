@@ -2838,7 +2838,7 @@ a466ef74bde1432f443d1b0f37c843bc  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
-a8ede6f3df39692891beb77b81d79ce6  doc/bc/6.0/trash.md
+8878f35dfbc5cbb0eb248df00350f351  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-9df611682b2131cd4796f1f1dac423ee  doc/changelogs/6.0/6.0.15.md
+011a018cc7a116fc50f9d7eeb1f19348  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3885,7 +3885,7 @@ d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
 4f5a89d708dfeff88bb50227abd3d599  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
 81b7d419eadc9f04f4dabfb8c9adb718  doc/install/10-after-installing.md
-ca1072dfabc7149d9495ecf02fa60e77  doc/install/11-upgrading.md
+c376342fb415dc3c6efc6d35be96b628  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
 08f745b103ff5fc101954ae37d01e58c  doc/install/13-security-hardening.md
 697395aba059076da8463bce457b9957  doc/install/14-migrating-from-4x.md
@@ -4965,7 +4965,7 @@ e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
 b6cb39e28b248e080dc6f37c5c9ca9b9  kernel/classes/ezcontentobjectoperations.php
 06d8358599723d258d5c8246b2333ff1  kernel/classes/ezcontentobjecttranslation.php
-438d7f8d3aef87964c33dce28aca6496  kernel/classes/ezcontentobjecttrashnode.php
+30bc105ea2aaf017162424214ac78aec  kernel/classes/ezcontentobjecttrashnode.php
 297bda5bea725298fb6fe77e78fcbda4  kernel/classes/ezcontentobjecttreenode.php
 8a81e1ff5086cf54d2af9b09489e199c  kernel/classes/ezcontentobjecttreenodeoperations.php
 2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
@@ -5544,7 +5544,7 @@ d831b71988f68ca14c9ccacb11ed32ba  kernel/private/classes/services/contentjobdeta
 d0693dcf25d6d8639c3579bd618844d9  kernel/private/classes/services/mailpreferencespage.php
 691b2b62e924bdef2a7010ea9b8e0960  kernel/private/classes/services/sessiongarbagecollector.php
 d3411a771db07379843c263813850cf0  kernel/private/classes/services/trash.php
-da76a751f12bab985e32e8d444175c8f  kernel/private/classes/services/trashlist.php
+e04170c0f2c7acea520a9176f9fa181f  kernel/private/classes/services/trashlist.php
 fe83678e4d8716e0fc68dc4d95636930  kernel/private/classes/services/trashrecord.php
 bfc58e59d09c7c1fdadbb3449f289abe  kernel/private/classes/treemenu_functions.php
 874103f52c97395bb1704a3e40d2e245  kernel/private/classes/urlaliasfilters/ezurlaliasfilterappendnodeid.php
@@ -6132,7 +6132,7 @@ bd88c41cc62b684db05cbded834a97c2  kernel/workflow/module.php
 c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
 50aecf6197a8dda65b5dcdd94d3aeff0  kickstart.ini--example
 29a9398e1ffaf0295240ff21451d1f16  kickstart.ini-dist
-118c96a23880d8c3436bc6c7bc7cb29e  lib/ezdb/classes/expmongodb.php
+d21f78ad9e8de0587449c133634a40d4  lib/ezdb/classes/expmongodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
 6a063f081a332b11b4d47e1c0e65ed1c  lib/ezdb/classes/ezdbinterface.php
 f6d3fcbe3d222d44c1b0709969765358  lib/ezdb/classes/ezdbquerycache.php
@@ -6358,7 +6358,7 @@ b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.ph
 72ac1e093ee82d6fbf003d4432240000  phpcs.xml.dist
 0fe18096d548766179c32bd7911c45f7  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-5c40ce2d907dcfa1ef0020250d34790e  phpunit.xml
+2e49b7d65c7026b6893d7e6b6810d1b4  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -7435,6 +7435,7 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
 45a11042cf23d383859f6cd2ff5e6d2a  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
+173c7582c0a9772090ad0f6f0e8cf2ca  tests/tests/kernel/classes/trash/TrashListMongoTest.php
 2cdb0ad8f51e15f030e8ca024863a522  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
 935a3def6becc46f294c5d5ff9ada7d3  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
@@ -7777,6 +7778,7 @@ a0cfc060f83bf5becb309e1ec1003f2f  tests/tests/lib/ezdb/ezdbinterface_test.php
 f725ee9eb15406052f599712365f5eee  tests/tests/lib/ezdb/ezmysqldb_fk_test.php
 718099f8062692e5235568da46de808e  tests/tests/lib/ezdb/ezpostgresqldb_test.php
 ba55080feee2e4a59cbc8ce872308cfb  tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php
+0776a915c6f47a378acf18d0001d5a29  tests/tests/lib/ezdb/mongodb/expMongoDBDeclaredDefaultTest.php
 b307dfd63335b4813a32196682897dc9  tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php
 142ff402084fc7f35411a44add7597ac  tests/tests/lib/ezdb/mongodb/sevenxMongoDBAdapterTest.php
 fb53daa907db9aed6712d715150412e5  tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php
