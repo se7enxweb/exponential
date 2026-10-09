@@ -362,6 +362,8 @@ class ezpContentLimitation
     {
         if ( is_string( $limitation ) && self::isKernelLimitation( $limitation ) )
         {
+            // forgets the messages of an earlier request first (Velocity), as handler() does
+            self::requestState();
             self::log( "The search engine asked for the filter of the limitation $limitation, which the kernel evaluates itself and the search engine has to translate; the policy gives no access in searches" );
             return self::DENY_SOLR;
         }

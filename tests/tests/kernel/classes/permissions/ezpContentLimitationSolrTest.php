@@ -400,6 +400,27 @@ class ezpContentLimitationSolrTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( array(), X1ContentLimitationSolrHandler::$asked );
         $this->assertStringContainsString( 'which the kernel evaluates itself', $this->logged() );
+
+        // a persistent worker (Velocity): the next request starts with no messages of the last one
+        $hadTime = array_key_exists( 'REQUEST_TIME_FLOAT', $_SERVER );
+        $time = $hadTime ? $_SERVER['REQUEST_TIME_FLOAT'] : null;
+        try
+        {
+            ezpContentLimitation::resetCache();
+            $_SERVER['REQUEST_TIME_FLOAT'] = 1000.25;
+            ezpContentLimitation::solrFilter( 'Section', array( '1' ), 14 );
+            $_SERVER['REQUEST_TIME_FLOAT'] = 2000.5;
+            ezpContentLimitation::solrFilter( 'Subtree', array( '1' ), 14 );
+            $this->assertStringNotContainsString( 'limitation Section', $this->logged() );
+            $this->assertStringContainsString( 'limitation Subtree', $this->logged() );
+        }
+        finally
+        {
+            if ( $hadTime )
+                $_SERVER['REQUEST_TIME_FLOAT'] = $time;
+            else
+                unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+        }
     }
 
     /**

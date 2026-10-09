@@ -260,7 +260,8 @@ or throws, for a kernel limitation, and for an answer that is no filter:
 - A string must be self-contained: double quotes closed, parentheses balanced and never closed before they open,
   range brackets (`[ ]`, `{ }`) closed and not nested, no local parameters (`{!`) and no nested query (`_query_`),
   not even in quotes, no NUL byte. Values in it are escaped with `ezpContentLimitation::solrValue()`, which also
-  turns a value `AND`, `OR` or `NOT` into a term.
+  turns a value `AND`, `OR` or `NOT` into a term. A filter that only excludes (`-field:x`) matches nothing inside its
+  parentheses: write `*:* -field:x`, or use the array form with `'not' => true`.
 - An array `array( 'field' => ..., 'values' => ..., 'not' => false )`, or a list of them joined by AND: the field
   is a name of letters, digits and `_`, the values are scalars in UTF-8 and not empty, `not` is a boolean if it is
   given. No values matches nothing (with `'not' => true`: everything).
