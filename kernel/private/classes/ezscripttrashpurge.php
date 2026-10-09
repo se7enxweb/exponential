@@ -86,7 +86,12 @@ class eZScriptTrashPurge
             $sleep = 1;
         }
 
-        $trashed = $trashedDays ? strtotime( "-{$trashedDays} days" ) : null;
+        $trashed = self::trashedBefore( $trashedDays );
+        if ( $trashed === false )
+        {
+            $this->cli->error( "Cannot purge items trashed at least $trashedDays days ago: the date is out of range." );
+            return false;
+        }
 
         if ( $this->memoryMonitoring )
         {
@@ -155,6 +160,31 @@ class eZScriptTrashPurge
         $this->monitor( "end" );
 
         return true;
+    }
+
+    /**
+     * The time before which an item must have been trashed to be purged: $trashedDays calendar days before $now.
+     *
+     * A huge number of days overflows the date arithmetic, into a future time (which matched every item) or into a
+     * past that is not that many days back; either is refused. Only a time within a day of $trashedDays * 86400
+     * seconds back is accepted (a change of daylight saving time moves it by an hour).
+     *
+     * @param int|null $trashedDays
+     * @param int|null $now null: time()
+     * @return int|null|false the timestamp; null for no age (purge everything); false for an age out of range
+     */
+    public static function trashedBefore( $trashedDays, $now = null )
+    {
+        if ( !$trashedDays )
+            return null;
+        if ( $now === null )
+            $now = time();
+        if ( !is_numeric( $trashedDays ) )
+            return false;
+        $trashed = strtotime( "-{$trashedDays} days", $now );
+        if ( !is_int( $trashed ) || $trashed >= $now || abs( ( $now - $trashed ) / 86400 - $trashedDays ) > 1 )
+            return false;
+        return $trashed;
     }
 
     /**

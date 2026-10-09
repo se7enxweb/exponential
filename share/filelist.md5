@@ -194,7 +194,7 @@ e20ee55d8e4145b71120496d30488c4f  cronjobs/old_drafts_cleanup.php
 aa234dc6fb17d7d982f024839ec93244  cronjobs/session_gc.php
 012a0c0f4b06f9a27e63cd82df736624  cronjobs/staticcache_cleanup.php
 4fa2ecae58c5274dcf8c431d52fe545d  cronjobs/subtreeexpirycleanup.php
-67ddfe86b3599435f781b66a10ee800e  cronjobs/trashpurge.php
+1eba32562285c143b04fb1acd0cc01da  cronjobs/trashpurge.php
 ea88af3289b73595b833d0e414df141c  cronjobs/unlock.php
 d6a12655e7923f82d5c3be692bd08c78  cronjobs/unpublish.php
 0fed158f2a51411f73df5b061bc88233  cronjobs/updateviewcount.php
@@ -2838,7 +2838,7 @@ a466ef74bde1432f443d1b0f37c843bc  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
-a66ac6f1dbdc7bbef53653c12e8fbda2  doc/bc/6.0/trash.md
+a8ede6f3df39692891beb77b81d79ce6  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
@@ -2993,7 +2993,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1ac8f5e3359bd501e9b0da1ddd2c3b5e  doc/changelogs/6.0/6.0.15.md
+9df611682b2131cd4796f1f1dac423ee  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3485,7 +3485,7 @@ ae51ddbb50c569eaadb6fcc5df178a2f  doc/guides/api-keys.md
 c5bc08dd00377761032a0fe460b3ef2a  doc/guides/content-history.md
 aac796c334e4b9e60764279755cd9dde  doc/guides/content-languages.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
-a841ba0d4e6df12e066d8ac43bf433be  doc/guides/cronjobs.md
+7c91f4538308c2f967bff457e0032616  doc/guides/cronjobs.md
 16abc76337749d4e4334c2373b362366  doc/guides/deploying.md
 60946c27c4015c785d2c5b1d7c9106f3  doc/guides/drafts-and-pending.md
 89fc578ae0ff375a2ddbada72586b72a  doc/guides/extensions-page.md
@@ -3884,7 +3884,7 @@ b837bb8f78e8b41765d74c2245edf6d6  doc/install/05-setup-wizard.md
 d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
 4f5a89d708dfeff88bb50227abd3d599  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
-1dec25f2dab17abac5489c048696af91  doc/install/10-after-installing.md
+81b7d419eadc9f04f4dabfb8c9adb718  doc/install/10-after-installing.md
 ca1072dfabc7149d9495ecf02fa60e77  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
 08f745b103ff5fc101954ae37d01e58c  doc/install/13-security-hardening.md
@@ -5465,7 +5465,7 @@ dc719a252fd114722e74aa7688b82a44  kernel/private/classes/cronjobs/mailpreference
 4c544cdcf97cebb7d66fecf760c4941f  kernel/private/classes/cronjobs/session_gc.php
 596e9c1a1024cec60e2c4d733da6a565  kernel/private/classes/cronjobs/staticcache_cleanup.php
 d895189330ddae3a492bfbb6a7445468  kernel/private/classes/cronjobs/subtreeexpirycleanup.php
-d7f348b88fced018d1fc4bcfa16bf36d  kernel/private/classes/cronjobs/trashpurge.php
+8164633f29279772106935c1ca8518fa  kernel/private/classes/cronjobs/trashpurge.php
 1eaffa661078a4042d2975258608e1a4  kernel/private/classes/cronjobs/unlock.php
 ad5a895259336ad06a47e6b4ce61f189  kernel/private/classes/cronjobs/unpublish.php
 c653e60e6b7e4b2c61357312f8918808  kernel/private/classes/cronjobs/updateviewcount.php
@@ -5522,7 +5522,7 @@ a4426106f9957b221c8245b2bb480881  kernel/private/classes/ezptemplateoverrides.ph
 0e365e531c5a5eda3f6f895ee50c1765  kernel/private/classes/ezptopologicalsort.php
 b4c8b6bdaa165af37f563c5e39f0dad4  kernel/private/classes/ezptopologicalsortnode.php
 ff87cb464a335a0d70234d2a35106203  kernel/private/classes/ezscriptclusterpurge.php
-588f79192dd3becef7f41d56d3da17bb  kernel/private/classes/ezscripttrashpurge.php
+93df9b90000e461d123cdcd6f817ecd9  kernel/private/classes/ezscripttrashpurge.php
 044350c27c47d06a339d22cba1c7638f  kernel/private/classes/global_functions.php
 522b50b091b13185412e16d45d5ba62a  kernel/private/classes/httpcache/ezphttpcachecontract.php
 efce851fd45df8e8213d371b6d7b6708  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
@@ -6369,7 +6369,7 @@ ec9655e7f954be8a85488968f79133ca  settings/audit.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
-f56832e59acff1c2cd02018cbc520220  settings/content.ini
+168eeb4065cd4d2b962259975cee92f3  settings/content.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
 bbef6be3b98786e0ac5391c2f9993b6f  settings/country.ini
 b3aab6034d6a8282e78783a10ae27b5a  settings/cronjob.ini
@@ -7435,6 +7435,7 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
 45a11042cf23d383859f6cd2ff5e6d2a  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
+2cdb0ad8f51e15f030e8ca024863a522  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
 935a3def6becc46f294c5d5ff9ada7d3  tests/tests/kernel/classes/trash/TrashedByColumnsTest.php
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
 ea50143daead7aa1e955f23e52ba4112  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php

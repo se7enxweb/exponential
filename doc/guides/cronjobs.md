@@ -344,8 +344,9 @@ whoever started it: see the [audit trail](../features/6.0/audit-trail.md).
 
 **Available but not activated** lists every `*.php` in the cronjob directories that no part names, with what it does
 and where it is. Nothing ever runs them. In a new installation these are, among others, `session_gc.php` (expired
-sessions), `old_drafts_cleanup.php`, `trashpurge.php` (empties the trash: only if you mean it),
-`staticcache_cleanup.php`, `subtreeexpirycleanup.php` and `updateviewcount.php`.
+sessions), `old_drafts_cleanup.php`, `trashpurge.php` (empties the trash, or with `content.ini [TrashSettings]
+KeepItemsForDays` only what is older), `staticcache_cleanup.php`, `subtreeexpirycleanup.php` and
+`updateviewcount.php`.
 
 To run one once, use the shell (section 13) with `--script=<file>`. To run it regularly, add it to a part: to an
 existing one, or to a part of its own so it gets its own schedule:
