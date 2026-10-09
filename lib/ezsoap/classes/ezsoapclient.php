@@ -245,7 +245,9 @@ class eZSOAPClient
         if ( $this->CAFile !== null )
         {
             $options[CURLOPT_CAINFO] = $this->CAFile;
-            if ( !is_readable( $this->CAFile ) )
+            // cURL reads the file past open_basedir, where is_readable() says false for a file it can read; it then
+            // reports a missing file itself, in the error of the call
+            if ( (string)ini_get( 'open_basedir' ) === '' && !is_readable( $this->CAFile ) )
             {
                 eZDebug::writeError( "The CA file {$this->CAFile} for {$this->Server} cannot be read: the call fails the certificate check", __METHOD__ );
             }
@@ -263,7 +265,7 @@ class eZSOAPClient
      * Trusts the CA certificates in the file $path (PEM, an absolute path) for the certificate of an HTTPS server, for
      * a server whose certificate an internal CA issued. cURL uses them in place of its CA bundle file; a CA directory
      * compiled into cURL (such as /etc/ssl/certs) is still read. Anything that is not a non-empty string (null, false
-     * from a missing setting, '') sets no CA file.
+     * from a missing setting, '') sets no CA file, nor does a name with a NUL byte (reported).
      *
      * @param string|null|false $path
      * @return void
@@ -271,6 +273,12 @@ class eZSOAPClient
     function setCAFile( $path )
     {
         $this->CAFile = is_string( $path ) && trim( $path ) !== '' ? trim( $path ) : null;
+        // No file name has a NUL byte, and cURL would throw a ValueError for it in send()
+        if ( $this->CAFile !== null && strpos( $this->CAFile, "\0" ) !== false )
+        {
+            $this->CAFile = null;
+            eZDebug::writeError( "The CA file name for {$this->Server} contains a NUL byte: no CA file is set, the certificate is checked against the CA bundle", __METHOD__ );
+        }
     }
 
     /**
