@@ -167,6 +167,22 @@ changes nothing). Oracle (the `ezoracle` extension, its own package) needs the s
 `ALTER TABLE ezcontentobject_trash ADD ( trashed_by INTEGER DEFAULT 0 NOT NULL, trashed_via VARCHAR2(100) )`;
 `trashed_via` stays nullable there, because Oracle stores an empty string as NULL.
 
+On MongoDB there is nothing to run: a collection has no columns, and the kernel writes `trashed_by` and `trashed_via`
+into every new trash document from the start. `hasTrashedByColumns()` asks the driver's schema (the shipped
+`share/db_schema.dba`, `expMongoDB::declaredColumns()`), which declares both. A document trashed before the change
+has no such fields; the driver reads and compares a missing field as the column's declared default, as a SQL table
+gives an old row the default (`trashed_by` 0, `trashed_via` ''), so the "unknown" filter finds those documents and
+`movetrashrecords.php` gives them the user its file names. The trash list and its count on MongoDB come from one
+aggregation (`eZContentObjectTrashNode::trashListMongo()`; the SQL list joins tables, which MongoDB cannot), with the
+same filters, sort keys and paging. Two differences: a user whose `content/read` is limited by policies is shown an
+empty trash (the policies are SQL; a warning is logged), and an `AttributeFilter` likewise lists nothing.
+
+| Engine | The columns come from |
+|---|---|
+| MySQL or MariaDB, PostgreSQL, SQLite | the database update `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` |
+| Oracle | the `ALTER TABLE` above |
+| MongoDB | nothing to run: new documents carry the fields, older ones read as the defaults |
+
 `trashed_via` holds printable ASCII only (anything else becomes `?`) and at most 100 characters, so it fits a
 column whose length counts bytes and never carries a byte sequence PostgreSQL refuses.
 
