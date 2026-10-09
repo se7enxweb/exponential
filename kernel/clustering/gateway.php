@@ -319,7 +319,10 @@ EOF;
 <h1>$message</h1>
 </body></html>
 EOF;
-                trigger_error( $message, E_USER_ERROR );
+                // stops the script as a fatal error does; index_cluster.php has no autoloader
+                if ( !class_exists( 'eZFatalUserError', false ) )
+                    require __DIR__ . '/../../lib/ezutils/classes/ezfatalusererror.php';
+                eZFatalUserError::raise( $message );
         }
     }
 

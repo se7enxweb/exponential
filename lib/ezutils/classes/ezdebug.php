@@ -626,7 +626,7 @@ class eZDebug
             {
                 if ( $label )
                     $string = "$label: $string";
-                trigger_error( $string, E_USER_ERROR );
+                eZFatalUserError::raise( $string );
             }
         }
         else
