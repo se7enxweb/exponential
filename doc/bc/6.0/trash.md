@@ -9,10 +9,10 @@ is who trashed an item, which is recorded from this version on.
 
 | | |
 |---|---|
-| What changed | Richer rows, a summary line, filters by user, type and date, sorting (since January 2024), and a record of who trashed each item in `<VarDir>/trash/trashed.json`. |
-| Who is affected | Editors (more information); overrides of `content/trash.tpl`; clustered installations (the record is per server). |
+| What changed | Richer rows, a summary line, filters by user, type and date, sorting (since January 2024), and a record of who trashed each item, in the columns `trashed_by` and `trashed_via` of `ezcontentobject_trash` (until 9 October 2026 in `<VarDir>/trash/trashed.json`). |
+| Who is affected | Editors (more information); overrides of `content/trash.tpl`; every installation runs the database update that adds the two columns (until then the kernel keeps the old file). |
 | How to check | Open `content/trash` in the admin; rows show **Date trashed** with "by &lt;user&gt;" or "by unknown". |
-| How to fix | Nothing required. An old template override keeps working without the details (see "Template overrides"). |
+| How to fix | Run the database update (see "Where "trashed by" is kept"), then `php update/common/scripts/6.0/movetrashrecords.php`. An old template override keeps working without the details (see "Template overrides"). |
 
 The admin designs that have the page are `design/admin` and `design/admin4`; `admin2` and `admin3` have no
 `trash.tpl` of their own and fall back to `design/admin`.
@@ -125,30 +125,69 @@ merge it with the shipped `design/admin/templates/content/trash.tpl` or `design/
 
 ### Where "trashed by" is kept
 
-The kernel has no column for it, and a schema change would have to reach all six database engines, so the record is
-one JSON file under the var directory:
+Since 9 October 2026 in the trash row itself, written in the same transaction as the rest of it:
 
-```
-<VarDir>/trash/trashed.json      e.g. var/site/trash/trashed.json
-{ "<object id>": { "node_id": 2245, "trashed": 1790949411, "user_id": 14, "user_name": "...",
-                   "via": "web admin", "recorded": 1790949411 } }
-```
+| Column | Content |
+|---|---|
+| `trashed_by` | the content object id of the user who moved the object to the trash; 0 when not known (rows from before 9 October 2026). A script run without a login records the anonymous user |
+| `trashed_via` | where the removal came from: `web <siteaccess>`, or `cli <script>` (for `ezexec.php`, the script it runs) |
 
-- **Written** by `eZContentObjectTrashNode::storeToTrash()`. Every trash move passes through it:
+- **Written** by `eZContentObjectTrashNode::createFromNode()`. Every trash move passes through it:
   `eZContentObjectTreeNode::removeNodeFromTree()` (called by `removeSubtrees()`, which the admin's delete, the
-  content jobs and scripts all use) creates the trash row there. Each node of a removed subtree gets its own entry.
-- **Forgotten** by `eZContentObjectTrashNode::purgeForObject()`, which runs when an object is purged and when it is
-  restored. The file therefore holds about as many entries as the trash holds objects.
-- **Valid only for the same trash move.** An entry counts while its `node_id` and `trashed` match the trash row.
-  Anything else is shown as unknown, never guessed.
-- **Atomic and safe for several writers.** An exclusive `flock()` on `trashed.json.lock`, then a temporary file
-  renamed over the old one. When root writes it (a CLI script, Velocity), the files are given to the owner and group
-  of the var directory, so the web server's user can write next.
-- **Never in the way.** A failure to record goes to the debug log and the trash move goes on. The hook loads the
-  class by path when the autoload array of a long-running worker predates it.
-- `via` is `web <siteaccess>`, or `cli <script>` (for `ezexec.php`, the script it runs).
+  content jobs and scripts all use) creates the trash row there. Each node of a removed subtree gets its own value.
+- **Gone with the row**: purging or restoring an object removes its trash row, and with it the record.
+- **The same on every web server**, in the database's backups, and readable with SQL.
 
-**Clusters:** the file is local to the server. On a cluster of web servers each node records its own trash moves.
+**The database update adds the columns.** Run the update of your engine
+(`update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, see the [upgrade guide](../../guides/upgrading.md)).
+The statements for the two columns are guarded on MySQL and PostgreSQL and can run again; on a database that
+applied an earlier copy of the file, later statements of the file fail on what exists, which is expected.
+**Setup > System upgrade** (`setup/systemupgrade`) lists the two columns as missing until then.
+
+Code and update can come in either order. Until the columns exist, `eZContentObjectTrashNode::hasTrashedByColumns()`
+says so and the kernel works with the old table: moving content to the trash stores the row without them and
+records who did it in `trashed.json` as before, and the trash view, its filter by user and restoring read the row
+without them. The next section's script copies what the file holds once the update has run. The check asks the
+database's catalogue (`information_schema`, `PRAGMA table_info`, `user_tab_columns`), never a query that could fail
+inside a transaction; once the columns are found the answer is kept for the process, while they are missing it is
+asked again on the next trash move, so a running Velocity worker picks the update up without a restart.
+
+On SQLite run the two `ALTER TABLE ezcontentobject_trash ADD COLUMN trashed_by|trashed_via` lines of
+`update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql` once (a second run fails with "duplicate column name" and
+changes nothing). Oracle (the `ezoracle` extension, its own package) needs the same two columns:
+`ALTER TABLE ezcontentobject_trash ADD ( trashed_by INTEGER DEFAULT 0 NOT NULL, trashed_via VARCHAR2(100) )`;
+`trashed_via` stays nullable there, because Oracle stores an empty string as NULL.
+
+`trashed_via` holds printable ASCII only (anything else becomes `?`) and at most 100 characters, so it fits a
+column whose length counts bytes and never carries a byte sequence PostgreSQL refuses.
+
+### What was recorded before: `trashed.json`
+
+Until 9 October 2026 the record was a JSON file under the var directory, `<VarDir>/trash/trashed.json`, one entry
+per object (`node_id`, `trashed`, `user_id`, `user_name`, `via`, `recorded`). It was local to one web server and
+outside the database's transactions and backups. Once the columns exist the kernel no longer writes it (before, it still does), but:
+
+- the trash view still reads it for rows whose `trashed_by` is 0, when the entry matches the row (same node id and
+  trashed time), so nothing recorded so far is lost before the copy;
+- purging or restoring an object still removes its entry;
+- `update/common/scripts/6.0/movetrashrecords.php` copies the entries into the columns of their rows (rows that
+  have a `trashed_by` keep it, so it can run again). `--dry-run` counts only; `--remove-file` deletes the file when
+  every entry has a trash row (exit status 2 when it keeps the file, 1 on an error: the columns are missing, or the
+  file holds no JSON object, which is then neither copied nor removed). Run it once per var directory
+  (`-s <siteaccess>` for a siteaccess with a var directory of its own); on a cluster, on every web server.
+- It prints the entries in the file, the rows given a `trashed_by`, the rows that kept theirs, the entries without a
+  trash row (their objects were purged or restored, or trashed again since: they are left in the file, and with
+  them `--remove-file` keeps it) and the rows whose entry names no user (left at 0).
+- The file kept the user's name at the time; the columns keep the id. A user removed since shows as `#<id>`.
+
+```bash
+php update/common/scripts/6.0/movetrashrecords.php --dry-run
+php update/common/scripts/6.0/movetrashrecords.php --remove-file
+php update/common/scripts/6.0/movetrashrecords.php -s othersite --remove-file
+```
+
+A site that recorded the user in a table of its own (an extension that replaced `eZContentObjectTrashNode`) copies
+it into `trashed_by` with SQL instead.
 
 ## For developers
 
@@ -159,9 +198,15 @@ one JSON file under the var directory:
 `ExcludeContentObjectIDList`. The IN lists go through `eZDBInterface::generateSQLINStatement()`, so engines with a
 limit on IN lists handle them.
 
-### The record: `Exponential\Service\TrashRecord`
+### The old record: `Exponential\Service\TrashRecord`
 
-`kernel/private/classes/services/trashrecord.php` reads and writes `trashed.json` as described above.
+`kernel/private/classes/services/trashrecord.php` reads `trashed.json` (`all()`, `entryFor()`), forgets entries
+(`forget()`), copies them into the columns (`moveToColumns()`, optionally for some objects only) and removes the file
+(`removeFile()`; the lock file stays). `columnsExist()` tells whether the database update has run. `record()`, which
+wrote the file, is deprecated; the kernel calls it only while the columns are missing; `via()` gives `eZContentObjectTrashNode::currentVia()`.
+
+The filter by user runs in SQL: `trashList()` takes `TrashedBy` (a user's content object id) and `TrashedByUnknown`,
+each with `TrashedByFileObjectIDList` for the rows known only from the old file.
 
 ### The presenter: `Exponential\Service\TrashList`
 
@@ -175,11 +220,18 @@ then builds the page from them. For each row, `describe()` works out the path, t
 
 `tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php` runs on the installation's own database (no
 test database). It creates a folder with a child and a grandchild under the media root, trashes it, and checks the
-records, the description, the filters and that purging forgets the record. Afterwards it purges everything it made.
+columns of the trash rows, the description, the filters, and that an entry of the old file is read, copied into its
+row and forgotten on purge. Afterwards it purges everything it made. It needs the columns `trashed_by` and
+`trashed_via`.
 
 ```bash
 php vendor/bin/phpunit tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 ```
+
+`eZContentObjectTrashOldSchemaTest.php` is its counterpart for a database without the columns (a copy of a site's
+database from before the update; skipped on an updated one): moving to the trash, the file entry, fetching the row,
+the view's filters, restoring and purging. `TrashedByColumnsTest.php` needs no database: the schema and update
+files, `createFromNode()`, `currentVia()` and `definition()` before and after the update.
 
 The trash browser test matrix (list, remove, restore, empty; on Apache and Velocity; both admin designs; 960 px wide
 at scale 2) passes with the new page.

@@ -2,10 +2,12 @@
 /**
  * Who moved an object to the trash, and what the trash view shows about it.
  *
- * eZContentObjectTrashNode::storeToTrash() records the current user, the trash row's node id and
- * time and where the removal came from (Exponential\Service\TrashRecord); purgeForObject() forgets
- * it again. Exponential\Service\TrashList describes each trash row for content/trash: the original
- * place with names, whether the parent still exists, the nodes below it, the filters.
+ * eZContentObjectTrashNode::createFromNode() writes the current user and where the removal came from into
+ * the trash row (trashed_by, trashed_via). What <VarDir>/trash/trashed.json holds from before those columns
+ * (Exponential\Service\TrashRecord) is still read for rows without a trashed_by, copied into the columns by
+ * moveToColumns(), and forgotten by purgeForObject(). Exponential\Service\TrashList describes each trash row
+ * for content/trash: the original place with names, whether the parent still exists, the nodes below it,
+ * the filters. Needs the columns trashed_by and trashed_via (update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql).
  *
  * These tests run against the installation's own database, with the kernel started once (eZScript,
  * the admin siteaccess): no test database. Each test creates a folder of its own below the media root
@@ -142,30 +144,17 @@ class eZContentObjectTrashRecordTest extends PHPUnit\Framework\TestCase
         return $nodes;
     }
 
-    /** Trashing records the user, the trash row and where it came from, for every node of the subtree. */
-    public function testTrashingRecordsWhoAndWhen()
+    /** Trashing writes the user and where it came from into the trash row of every node of the subtree. */
+    public function testTrashingStoresWhoAndWhereInTheRow()
     {
-        $before = time();
         $this->trash();
         $records = Exponential\Service\TrashRecord::all();
         foreach ( $this->trashNodes() as $objectID => $node )
         {
-            $this->assertArrayHasKey( (string)$objectID, $records, "object $objectID has a record" );
-            $entry = Exponential\Service\TrashRecord::entryFor( $records, $objectID, $node->attribute( 'node_id' ), $node->attribute( 'trashed' ) );
-            $this->assertIsArray( $entry, 'the record matches the trash row' );
-            $this->assertSame( $this->adminID, $entry['user_id'] );
-            $this->assertNotSame( '', $entry['user_name'] );
-            $this->assertStringStartsWith( 'cli ', $entry['via'] );
-            $this->assertGreaterThanOrEqual( $before, $entry['recorded'] );
+            $this->assertSame( $this->adminID, (int)$node->attribute( 'trashed_by' ), "object $objectID: trashed_by" );
+            $this->assertStringStartsWith( 'cli ', $node->attribute( 'trashed_via' ), "object $objectID: trashed_via" );
+            $this->assertArrayNotHasKey( (string)$objectID, $records, 'nothing is written to the old file' );
         }
-        // a record of another trash move of the same object does not count
-        $this->assertNull( Exponential\Service\TrashRecord::entryFor( $records, $this->objectIDs[0], $this->nodeIDs[0], 1 ) );
-
-        $file = Exponential\Service\TrashRecord::file();
-        $this->assertFileExists( $file );
-        $this->assertIsArray( json_decode( file_get_contents( $file ), true ), 'the store is valid JSON' );
-        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
-            $this->assertSame( fileowner( eZSys::varDirectory() ), fileowner( $file ), 'written by root, owned by the site user' );
     }
 
     /** The view's description: original place with names, parent state, nodes below, languages, who. */
@@ -228,6 +217,8 @@ class eZContentObjectTrashRecordTest extends PHPUnit\Framework\TestCase
         };
         $this->assertSame( $this->objectIDs, $mine( array( 'trashed_by' => (string)$this->adminID ) ) );
         $this->assertSame( array(), $mine( array( 'trashed_by' => 'unknown' ) ) );
+        $this->assertArrayHasKey( 'TrashedBy', Exponential\Service\TrashList::listParams( Exponential\Service\TrashList::filters( array( 'trashed_by' => (string)$this->adminID ) ), $context ),
+                                  'filtered in SQL, not by a list of every object' );
         $this->assertSame( $this->objectIDs, $mine( array( 'class' => (string)$folderClassID, 'from' => $today, 'to' => $today ) ) );
         $this->assertSame( array(), $mine( array( 'to' => date( 'Y-m-d', strtotime( '-2 days' ) ) ) ) );
 
@@ -236,14 +227,50 @@ class eZContentObjectTrashRecordTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '/(to)/' . $today, Exponential\Service\TrashList::filterURI( $filters ) );
     }
 
-    /** Restoring or purging forgets the record. */
-    public function testPurgeForgetsTheRecord()
+    /** A row trashed before the columns existed: the old file is read, copied into the row, and forgotten on purge. */
+    public function testOldRecordsAreReadMovedAndForgotten()
     {
         $this->trash();
         $grandchild = $this->objectIDs[2];
+        $node = eZContentObjectTrashNode::fetchByContentObjectID( $grandchild );
+        $nodeID = (int)$node->attribute( 'node_id' );
+        // as it was before the columns: no trashed_by in the row, an entry in the file
+        $db = eZDB::instance();
+        $db->query( "UPDATE ezcontentobject_trash SET trashed_by = 0, trashed_via = '' WHERE node_id = $nodeID" );
+        $node = eZContentObjectTrashNode::fetchByContentObjectID( $grandchild );
+        $this->assertTrue( Exponential\Service\TrashRecord::record( $node ) );
         $this->assertArrayHasKey( (string)$grandchild, Exponential\Service\TrashRecord::all() );
+
+        $context = Exponential\Service\TrashList::context();
+        $this->assertSame( $this->adminID, (int)$context['records'][$grandchild]['user_id'], 'the view reads the old file' );
+
+        $stats = Exponential\Service\TrashRecord::moveToColumns( $db, true, $this->objectIDs );
+        $this->assertSame( 1, $stats['moved'] );
+        $this->assertSame( 0, (int)eZContentObjectTrashNode::fetchByContentObjectID( $grandchild )->attribute( 'trashed_by' ), 'a dry run changes nothing' );
+
+        // only the test's own entries: the installation's other ones stay where they are
+        Exponential\Service\TrashRecord::moveToColumns( $db, false, $this->objectIDs );
+        $moved = eZContentObjectTrashNode::fetchByContentObjectID( $grandchild );
+        $this->assertSame( $this->adminID, (int)$moved->attribute( 'trashed_by' ), 'copied into the row' );
+        $this->assertStringStartsWith( 'cli ', $moved->attribute( 'trashed_via' ) );
+        $again = Exponential\Service\TrashRecord::moveToColumns( $db, false, $this->objectIDs );
+        $this->assertSame( 0, $again['moved'], 'a second run changes nothing' );
+
+        // an entry that names no user: counted, so the numbers of movetrashrecords.php add up, and left at 0
+        $child = $this->objectIDs[1];
+        $childNode = eZContentObjectTrashNode::fetchByContentObjectID( $child );
+        $childNodeID = (int)$childNode->attribute( 'node_id' );
+        $db->query( "UPDATE ezcontentobject_trash SET trashed_by = 0, trashed_via = '' WHERE node_id = $childNodeID" );
+        $map = Exponential\Service\TrashRecord::all();
+        $map[(string)$child] = array( 'node_id' => $childNodeID, 'trashed' => (int)$childNode->attribute( 'trashed' ), 'user_id' => 0,
+                                      'user_name' => '', 'via' => 'cli test', 'recorded' => time() );
+        file_put_contents( Exponential\Service\TrashRecord::file(), json_encode( $map ) );
+        $stats = Exponential\Service\TrashRecord::moveToColumns( $db, false, array( $child ) );
+        $this->assertSame( array( 'entries' => 1, 'moved' => 0, 'kept' => 0, 'orphans' => 0, 'unknown' => 1 ), $stats );
+        $this->assertSame( 0, (int)eZContentObjectTrashNode::fetchByContentObjectID( $child )->attribute( 'trashed_by' ) );
+        eZContentObjectTrashNode::purgeForObject( $child );
+
         eZContentObjectTrashNode::purgeForObject( $grandchild );
-        $this->assertArrayNotHasKey( (string)$grandchild, Exponential\Service\TrashRecord::all() );
-        $this->assertArrayHasKey( (string)$this->objectIDs[1], Exponential\Service\TrashRecord::all(), 'the others are kept' );
+        $this->assertArrayNotHasKey( (string)$grandchild, Exponential\Service\TrashRecord::all(), 'purging forgets the entry' );
     }
 }

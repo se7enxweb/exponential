@@ -3400,6 +3400,20 @@ $schema = array (
         'not_null' => '1',
         'default' => 0,
       ),
+      'trashed_by' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'trashed_via' =>
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
     ),
     'indexes' => 
     array (
