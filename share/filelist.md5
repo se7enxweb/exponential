@@ -2992,7 +2992,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-c1676188f08f4180154ed281da917f28  doc/changelogs/6.0/6.0.15.md
+b3c4542e50f9065e394d6054fe78680a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5005,7 +5005,7 @@ f3b29307a8a38c5f06cffb143afde12f  kernel/classes/ezpackageinstallationhandler.ph
 281fb4c5c551758190a823df8e1c43ed  kernel/classes/ezpathelement.php
 a2852263baec56cf69eb8d53f12b2483  kernel/classes/ezpdfexport.php
 3d3da61017eaaab0308ec6ff06cd9c83  kernel/classes/ezpendingactions.php
-8e32bdb4a112f9db4c69038409aa983f  kernel/classes/ezpersistentobject.php
+813c7ebab046138fa6ed0d7c08fa88c1  kernel/classes/ezpersistentobject.php
 0ce2c52159d20fbd3814673d3a78abc2  kernel/classes/ezpolicy.php
 79388fb542ea43277c1ff809aee45e48  kernel/classes/ezpolicylimitation.php
 fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
@@ -5373,7 +5373,7 @@ e85697cd70e202e65aa3c61d2e3c534e  kernel/private/classes/commands/cleanupversion
 bc4fa2a6653f14f1e1cc2b00b6880b52  kernel/private/classes/commands/clusterize.php
 35f47aee7929f5b015dbed274abae977  kernel/private/classes/commands/clusterpurge.php
 fc100209dee85f836a6d9ed383e3a0c1  kernel/private/classes/commands/collaborationsampledata.php
-a5b99b12c09892a2ce728f321bf8aaab  kernel/private/classes/commands/convertezenumtoezselection.php
+626c67a0b6cb1817b228aa37052b18a4  kernel/private/classes/commands/convertezenumtoezselection.php
 f12e48ebe5663a2c1f489acdd31489af  kernel/private/classes/commands/convertprice2multiprice.php
 21a07ab99816048c850eb65e8735a3c7  kernel/private/classes/commands/dfscleanup.php
 629cddb79ec70350f282b31fd6fe7387  kernel/private/classes/commands/expcontentjob.php
@@ -7159,6 +7159,7 @@ b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutO
 1a61ba02eb30739edcb683230c3cfc97  tests/tests/kernel/classes/eZPackageLicenseTest.php
 6855c387598fbee39d880905abac28cc  tests/tests/kernel/classes/eZPackageVersionTest.php
 7a21b3cc90e141e63b00372345c15fba  tests/tests/kernel/classes/eZPendingActionsTest.php
+24550e9f3df4c845e43ccf1ecce61800  tests/tests/kernel/classes/eZPersistentObjectShortNameTest.php
 af2328d092a107a74a930bb217ed1d9e  tests/tests/kernel/classes/eZPhp85NoEffectCallsTest.php
 ac59faa36dd49a5a0b4751814db11085  tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php
 c9c4cb539a1a23f7edb9104a225c117c  tests/tests/kernel/classes/eZPolicySaveTemporaryTest.php
@@ -7751,7 +7752,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 7ebd889c25aaa5abe2da1eb7814049cd  tests/tests/kernel/private/webdav/siteaccess/site.ini.append.php.replace
 5b1c01f8627cfce013a8da79b43212e1  tests/tests/kernel/private/webdav/wrappers.php
 7672ec3f2714756db70059a8fdabf898  tests/tests/kernel/search/ezsearchengine_regression.php
-a9ac4f63b0d44625488e08fe4b9dd733  tests/tests/kernel/suite.php
+a3ea1bdfc39cf79ebe3eeda15c967a85  tests/tests/kernel/suite.php
 859ec399542c1118723b6c217ff29a77  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 d0fbfd88dc279221eee85b97921f6add  tests/tests/lib/ezdb/eZDBInterfaceTest.php
 26547ca2016f597eb9d4165358c37787  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
