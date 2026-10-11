@@ -2850,7 +2850,7 @@ b3619f3dd7b2c0c98ea03f16cba624e4  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
-e9ab61145b872482b067b774cd075329  doc/bc/6.0/velocity-engines.md
+b683d5dc76501d30f8dbdc50039ee9a0  doc/bc/6.0/velocity-engines.md
 886acb7ce25be5416e143b161f5c0672  doc/bc/6.0/velocity-ondisk-layout.md
 e45848cf4009e8515ef6ed6775a40b07  doc/bc/6.0/view_full_security.md
 8fd6c3094d810e78dbd152f24c450ec9  doc/bc/6.0/yui-removal.md
@@ -3495,7 +3495,7 @@ c5bc08dd00377761032a0fe460b3ef2a  doc/guides/content-history.md
 aac796c334e4b9e60764279755cd9dde  doc/guides/content-languages.md
 677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
 7c91f4538308c2f967bff457e0032616  doc/guides/cronjobs.md
-16abc76337749d4e4334c2373b362366  doc/guides/deploying.md
+9ea97a05fa2a16e68fe3ddeaf00535b2  doc/guides/deploying.md
 60946c27c4015c785d2c5b1d7c9106f3  doc/guides/drafts-and-pending.md
 89fc578ae0ff375a2ddbada72586b72a  doc/guides/extensions-page.md
 78f7787f49210097a21310ed1294757b  doc/guides/extensions.md
@@ -4934,7 +4934,7 @@ a9ac5a2c24c07de96e640440ff067bd2  kernel/classes/expsetuplog.php
 25b7eece701f971da2d25487be392d0f  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 c748b14e37c7c23f4b66f5df522d253c  kernel/classes/expvelocityconfiglayout.php
-aca7d6f8ecb35eb8b3cf47240618e3e2  kernel/classes/expvelocitydeploy.php
+bc30ec29c2fd8f60f352661a435c28f5  kernel/classes/expvelocitydeploy.php
 97c4a5e65ab7359162ca848a16408f69  kernel/classes/expvelocityfrankenphp.php
 7c4ebba6437621654ba6ac7004296173  kernel/classes/expvelocityfrankenphpinstaller.php
 11c3dc6efe9cddcf26beb1b85c2a8b3a  kernel/classes/expvelocityphpserver.php
@@ -5460,7 +5460,7 @@ e418cf8846889816fde6983b02b7af7a  kernel/private/classes/commands/updateniceurls
 61cee88594b6ed5c262797d44458dec7  kernel/private/classes/commands/updatesearchindex.php
 8e4e6e811bc4b9185f908d59ead28563  kernel/private/classes/commands/velocity-router.php
 d6e5f5025713bfadd4389ddb1998a5e8  kernel/private/classes/commands/velocity-warmup.php
-8a43d6a0e0dbe84969cbf7a1a92758e4  kernel/private/classes/commands/velocity.php
+5f754b9d98901233ace6173f16a46ae4  kernel/private/classes/commands/velocity.php
 962a2d0f6f0b2cb408addc4c9f2c3055  kernel/private/classes/commands/verify_aliases.php
 765c9fcc3df5ced2b32cafe78efb3fd4  kernel/private/classes/commands/warm.php
 cbbe5f58bc358839404eee4aea3bd23a  kernel/private/classes/commands/webserver.php
@@ -6446,7 +6446,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-a704ffec8f9dcf54e7d74afa46424d9c  settings/velocity.ini
+042c3cd6efe032f28360cd185b1a835e  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
