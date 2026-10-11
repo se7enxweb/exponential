@@ -54,6 +54,12 @@
             <directory suffix="Test.php">tests/tests/kernel/private</directory>
         </testsuite>
 
+        <!-- the content finder (doc/features/6.0/content-finder.md): the input tests need nothing; the database
+             tests write, so they run only in a throwaway copy named by EXP_CONTENTFINDER_SANDBOX and skip elsewhere -->
+        <testsuite name="kernel-contentfinder">
+            <directory suffix="Test.php">tests/tests/kernel/contentfinder</directory>
+        </testsuite>
+
         <testsuite name="lib">
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>
