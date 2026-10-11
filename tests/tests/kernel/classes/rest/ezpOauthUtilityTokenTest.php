@@ -1,8 +1,9 @@
 <?php
 /**
  * Tests of how the REST layer finds the OAuth access token of a request (ezpOauthUtility::getToken()): the
- * Authorization header ("OAuth <token>", from HTTP_AUTHORIZATION), then the oauth_token query parameter, then the
- * oauth_token body parameter, in that order; other schemes and malformed tokens are not taken.
+ * Authorization header ("OAuth <token>" or "Bearer <token>", RFC 6750, from HTTP_AUTHORIZATION), then the oauth_token
+ * query parameter, then the oauth_token body parameter, in that order; other schemes, malformed tokens and personal
+ * API keys (expk_..., which expApiKeyRest takes) are not taken.
  *
  * The request is an ezpRestRequest built by the test and the header is set in $_SERVER and put back. No database.
  *
@@ -50,7 +51,9 @@ class ezpOauthUtilityTokenTest extends PHPUnit\Framework\TestCase
             'query before body'      => array( null, array( 'oauth_token' => 'fromquery' ), array( 'oauth_token' => 'frombody' ), 'fromquery' ),
             'body'                   => array( null, array(), array( 'oauth_token' => 'frombody' ), 'frombody' ),
             'basic scheme'           => array( 'Basic dXNlcjpwYXNz', array(), array(), null ),
-            'bearer scheme'          => array( 'Bearer abc123', array(), array(), null ),
+            'bearer scheme'          => array( 'Bearer abc123', array(), array(), 'abc123' ),
+            'bearer lower case'      => array( 'bearer abc123', array(), array(), 'abc123' ),
+            'bearer api key'         => array( 'Bearer expk_abcdefghijkl_' . str_repeat( 'a', 40 ), array(), array(), null ),
             'bad characters'         => array( 'OAuth abc-123', array(), array(), null ),
             'two tokens'             => array( 'OAuth abc def', array(), array(), null ),
             'bad header then query'  => array( 'Basic x', array( 'oauth_token' => 'q' ), array(), 'q' ),
