@@ -5455,7 +5455,7 @@ a08a9297ae9c54487b7a2b06e63e6a08  kernel/private/classes/commands/resetuserpassw
 e418cf8846889816fde6983b02b7af7a  kernel/private/classes/commands/updateniceurls.php
 61cee88594b6ed5c262797d44458dec7  kernel/private/classes/commands/updatesearchindex.php
 8e4e6e811bc4b9185f908d59ead28563  kernel/private/classes/commands/velocity-router.php
-acfb920b1358c1358948c0042ee8ea4a  kernel/private/classes/commands/velocity-warmup.php
+d6e5f5025713bfadd4389ddb1998a5e8  kernel/private/classes/commands/velocity-warmup.php
 8a43d6a0e0dbe84969cbf7a1a92758e4  kernel/private/classes/commands/velocity.php
 962a2d0f6f0b2cb408addc4c9f2c3055  kernel/private/classes/commands/verify_aliases.php
 765c9fcc3df5ced2b32cafe78efb3fd4  kernel/private/classes/commands/warm.php
