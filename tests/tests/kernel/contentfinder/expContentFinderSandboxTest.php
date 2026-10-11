@@ -23,6 +23,8 @@
  *  CS-12  remote ids and file paths match in their case, exactly and as a prefix, on every engine
  *  CS-13  the last part of a URL alias (or a shorter tail of it) finds the node, with the full path; an old address
  *         is listed as history when nothing current matches; rights per result
+ *  CS-14  a part of a URL alias (at least MinimumPartLength characters, words in order, any separator, any case)
+ *         finds the node; wildcards and quotes are text; the result cap; PartialAliasSearch=disabled; rights
  *
  * It runs on SQLite and, in a throwaway database named by EXP_CONTENTFINDER_SANDBOX_DATABASE as well, on MySQL or
  * MariaDB, PostgreSQL, Oracle and MongoDB (doc/features/6.0/content-finder.md, "Databases").
@@ -303,9 +305,11 @@ class expContentFinderSandboxTest extends PHPUnit\Framework\TestCase
             $this->assertSame( self::$seed['nodes']['article'], $result['matches'][0]['node_id'] );
             $this->assertFalse( $result['matches'][0]['history'] );
         }
-        // a tail that is not above it, and a part of an element, find nothing
+        // a tail that is not above it is no match of the last part; a part of an element is one only for the part
+        // search (CS-14)
         $this->assertSame( array(), $this->ids( 'no-such-folder/' . $last, 'urlalias' ) );
-        $this->assertSame( array(), $this->ids( substr( $last, 0, -1 ), 'urlalias' ) );
+        $result = $this->resultFor( substr( $last, 0, -1 ), $article, 'urlalias' );
+        $this->assertSame( 'urlalias_part', $result['matches'][0]['via'] );
 
         // a renamed object: its old address is history, listed and marked when nothing current has that name
         $object = $this->article( 'CF CS-13 old name ' . bin2hex( random_bytes( 3 ) ) );
@@ -322,6 +326,58 @@ class expContentFinderSandboxTest extends PHPUnit\Framework\TestCase
         // rights per result: a reader outside the subtree does not get it
         $this->signIn( 'cf_reader' );
         $this->assertSame( array(), $this->ids( basename( (string)eZContentObjectTreeNode::fetch( self::$seed['nodes']['secret'] )->urlAlias() ), 'urlalias' ) );
+    }
+
+    /** CS-14 */
+    public function testAPartOfAURLAlias()
+    {
+        $article = self::$seed['objects']['article'];
+        $alias = trim( self::$seed['urlalias']['article'], '/' );
+        // the seeded alias ends with cf-article: its part, in other case, with a space or an underscore for the dash
+        foreach ( array( 'f-articl', 'F-ARTICL', 'f-artic', 'cf artic', 'cf_artic' ) as $text )
+        {
+            $result = $this->resultFor( $text, $article, 'urlalias' );
+            $this->assertSame( 'urlalias_part', $result['matches'][0]['via'], $text );
+            $this->assertSame( $alias, $result['matches'][0]['value'], $text );
+            $this->assertSame( self::$seed['nodes']['article'], $result['matches'][0]['node_id'] );
+            $this->assertFalse( $result['matches'][0]['history'] );
+        }
+        // the words in their order, and only with a separator between them
+        $this->assertNotContains( $article, $this->ids( 'artic cf', 'urlalias' ) );
+        $this->assertNotContains( $article, $this->ids( 'cfartic', 'urlalias' ) );
+
+        // shorter than MinimumPartLength: nothing, with the hint
+        $found = $this->search( 'cf', 'urlalias' );
+        $this->assertSame( array(), $found['results'] );
+        $this->assertSame( 'alias_part_too_short', $found['notice'] );
+        $this->assertSame( '', $this->search( 'f-articl', 'urlalias' )['notice'] );
+
+        // wildcards and quotes are text: no LIKE wildcard matches, no SQL error; a backslash is refused
+        foreach ( array( '%%%', '___', 'c%e', 'cf_%', "art'icl", "x' OR '1'='1" ) as $text )
+        {
+            $found = $this->search( $text, 'urlalias' );
+            $this->assertSame( '', $found['input']['error'], $text );
+            $this->assertSame( array(), $found['results'], $text );
+        }
+        $this->assertSame( 'invalid', $this->search( 'art\\icl', 'urlalias' )['input']['error'] );
+
+        // the cap: at most ResultLimit objects, and the page says there were more
+        ezpINIHelper::setINISetting( 'contentfinder.ini', 'ContentFinderSettings', 'MinimumPartLength', 2 );
+        eZContentObject::clearCache();
+        $finder = new expContentFinder( 2 );
+        $found = $finder->search( 'me', 'urlalias' );
+        $this->assertCount( 2, $found['results'] );
+        $this->assertTrue( $found['truncated'] );
+
+        // switched off: no part search at all
+        ezpINIHelper::setINISetting( 'contentfinder.ini', 'ContentFinderSettings', 'PartialAliasSearch', 'disabled' );
+        $this->assertSame( array(), $this->ids( 'f-articl', 'urlalias' ) );
+        ezpINIHelper::restoreINISettings();
+
+        // rights per result: a reader outside the subtree does not get the secret one
+        $this->signIn( 'cf_reader' );
+        $this->assertSame( array(), $this->ids( 'f-secre', 'urlalias' ) );
+        $this->assertContains( $article, $this->ids( 'f-articl', 'urlalias' ) );
     }
 
     /** CS-03 */

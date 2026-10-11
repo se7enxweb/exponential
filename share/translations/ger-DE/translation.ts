@@ -59646,6 +59646,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>den letzten Teil des URL-Alias %alias (Knoten %id)</translation>
     </message>
     <message>
+        <source>an alias containing “%part” (%alias, node %id)</source>
+        <translation>einen Alias, der „%part“ enthält (%alias, Knoten %id)</translation>
+    </message>
+    <message>
+        <source>Enter at least %count characters to search by part of an alias.</source>
+        <translation>Geben Sie mindestens %count Zeichen ein, um nach einem Teil eines Alias zu suchen.</translation>
+    </message>
+    <message>
         <source>(an old address, kept as history)</source>
         <translation>(eine alte Adresse, als Verlauf aufbewahrt)</translation>
     </message>

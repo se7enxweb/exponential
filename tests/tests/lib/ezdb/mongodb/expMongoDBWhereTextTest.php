@@ -70,5 +70,14 @@ class expMongoDBWhereTextTest extends PHPUnit\Framework\TestCase
                            $this->where( "LOWER( login ) = '42'" ) );
         // another function stays refused
         $this->assertFalse( $this->where( "LENGTH( login ) = 5" ) );
+        // LOWER( column ) LIKE: the column's regex without case (the content finder's part of an alias)
+        $filter = $this->where( "LOWER( text ) LIKE '%test_pro!%duct%' ESCAPE '!' AND is_original = 1" );
+        $this->assertIsArray( $filter );
+        $regex = null;
+        array_walk_recursive( $filter, function ( $value ) use ( &$regex ) { if ( $value instanceof MongoDB\BSON\Regex ) $regex = $value; } );
+        $this->assertInstanceOf( 'MongoDB\\BSON\\Regex', $regex );
+        $this->assertSame( 'i', $regex->getFlags() );
+        $this->assertSame( 1, preg_match( '#' . $regex->getPattern() . '#i', 'my-Test-Pro%duct-x' ) );
+        $this->assertSame( 0, preg_match( '#' . $regex->getPattern() . '#i', 'my-test-product' ) );
     }
 }

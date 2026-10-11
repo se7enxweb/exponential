@@ -16,7 +16,7 @@
  *   // $found['results']: one description per object the user may see
  *
  * Every lookup is one indexed query (or an exact match on a short column) with a hard row limit: integers are cast,
- * texts escaped, prefixes are LIKE 'x%' with the wildcards escaped; never a LIKE '%x%'. The text is recognised by
+ * texts escaped, prefixes are LIKE 'x%' with the wildcards escaped; never a LIKE '%x%', but for the part of a URL alias (lookupURLAliasPart()). The text is recognised by
  * expContentFinderInput.
  *
  * Rights decide per result, through the kernel's own checks, so nobody sees more here than elsewhere: an object
@@ -140,7 +140,8 @@ class expContentFinder
     public function search( $text, $type = 'auto' )
     {
         $input = expContentFinderInput::parse( $text, $type );
-        $found = array( 'input' => $input, 'results' => array(), 'count' => 0, 'hidden' => 0, 'truncated' => false );
+        $this->notice = '';
+        $found = array( 'input' => $input, 'results' => array(), 'count' => 0, 'hidden' => 0, 'truncated' => false, 'notice' => '' );
         if ( $input['error'] !== '' )
             return $found;
 
@@ -170,6 +171,7 @@ class expContentFinder
                 $found['results'][] = $description;
         }
         $found['count'] = count( $found['results'] );
+        $found['notice'] = $this->notice;
         return $found;
     }
 
@@ -378,7 +380,157 @@ class expContentFinder
                                  'siteaccess' => $candidate['siteaccess'], 'prefix' => $candidate['prefix'] );
             return $hits;
         }
-        return $this->lookupURLAliasTail( $path );
+        $hits = $this->lookupURLAliasTail( $path );
+        return $hits ? $hits : $this->lookupURLAliasPart( $path );
+    }
+
+    /**
+     * The words of a part of an alias: the last element of the path, split at dashes, underscores and spaces, in
+     * lower case. Pure.
+     *
+     * @param string $path
+     * @return string[]
+     */
+    public static function aliasPartWords( $path )
+    {
+        $elements = array_values( array_filter( explode( '/', trim( (string)$path, '/' ) ), 'strlen' ) );
+        $last = $elements ? (string)end( $elements ) : '';
+        $lower = function_exists( 'mb_strtolower' ) ? mb_strtolower( $last, 'UTF-8' ) : strtolower( $last );
+        return array_values( array_filter( preg_split( '/[-_\s]+/u', $lower ), 'strlen' ) );
+    }
+
+    /**
+     * The LIKE pattern of a part of an alias (to be used on LOWER( text ) with ESCAPE '!'): the words in order,
+     * anything in front and behind, one character between them (the database narrows; partMatches() decides).
+     * Pure.
+     *
+     * @param string[] $words from aliasPartWords()
+     * @return string
+     */
+    public static function aliasPartPattern( array $words )
+    {
+        $escaped = array();
+        foreach ( $words as $word )
+            $escaped[] = strtr( (string)$word, array( '!' => '!!', '%' => '!%', '_' => '!_' ) );
+        return '%' . implode( '_', $escaped ) . '%';
+    }
+
+    /**
+     * Whether an alias element contains the words, in order, each separated by one dash, underscore or space,
+     * without case. Pure.
+     *
+     * @param string $text
+     * @param string[] $words
+     * @return bool
+     */
+    public static function partMatches( $text, array $words )
+    {
+        if ( !$words )
+            return false;
+        $quoted = array();
+        foreach ( $words as $word )
+            $quoted[] = preg_quote( (string)$word, '/' );
+        return (bool)preg_match( '/' . implode( '[-_ ]', $quoted ) . '/iu', (string)$text );
+    }
+
+    /**
+     * How close an alias element is to the words, null when it does not contain them (partMatches()). Pure.
+     *  0 the element is the words; 1 it starts with them as whole words; 2 it has them as whole words;
+     *  3 it starts with them, or has them at the start of a word; 4 they are inside a word
+     *
+     * @param string $text
+     * @param string[] $words
+     * @return int|null
+     */
+    public static function partRank( $text, array $words )
+    {
+        if ( !self::partMatches( $text, $words ) )
+            return null;
+        $quoted = array();
+        foreach ( $words as $word )
+            $quoted[] = preg_quote( (string)$word, '/' );
+        $words = implode( '[-_ ]', $quoted );
+        $text = (string)$text;
+        if ( preg_match( '/^' . $words . '$/iu', $text ) )
+            return 0;
+        if ( preg_match( '/^' . $words . '(?=[-_ ])/iu', $text ) )
+            return 1;
+        if ( preg_match( '/(?<=[-_ ])' . $words . '(?=[-_ ]|$)/iu', $text ) )
+            return 2;
+        if ( preg_match( '/(^|(?<=[-_ ]))' . $words . '/iu', $text ) )
+            return 3;
+        return 4;
+    }
+
+    /** @var string '' or why a lookup gave nothing although the text was taken (alias_part_too_short) */
+    protected $notice = '';
+
+    /**
+     * The very last resort for a URL alias, when the exact, siteaccess, prefix and last-part lookups found nothing:
+     * the alias elements that CONTAIN the text (the last element of the path; "test product" also finds
+     * test-product). contentfinder.ini PartialAliasSearch=enabled, at least MinimumPartLength characters (3).
+     * One LIKE '%...%' on LOWER( text ) of ezurlalias_ml, escaped, which reads the whole table; current entries
+     * first, history (marked) only when no current one contains it. Each match with its full path, one per node,
+     * at most ResultLimit + 1 (so the page can say there were more).
+     *
+     * @param string $path
+     * @return array
+     */
+    protected function lookupURLAliasPart( $path )
+    {
+        // a path (a text with a slash) is looked for as a path only; a part is one element
+        if ( self::setting( 'PartialAliasSearch', 'enabled' ) !== 'enabled' || strpos( trim( (string)$path, '/' ), '/' ) !== false )
+            return array();
+        $words = self::aliasPartWords( $path );
+        $minimum = self::bounded( self::setting( 'MinimumPartLength', 3 ), 1, 100, 3 );
+        $length = function_exists( 'mb_strlen' ) ? mb_strlen( implode( ' ', $words ), 'UTF-8' ) : strlen( implode( ' ', $words ) );
+        if ( !$words || $length < $minimum )
+        {
+            $this->notice = 'alias_part_too_short';
+            return array();
+        }
+        $db = eZDB::instance();
+        $like = "LOWER( text ) LIKE '" . $db->escapeString( self::aliasPartPattern( $words ) ) . "' ESCAPE '!'";
+        $wanted = $this->resultLimit + 1;
+        foreach ( array( true, false ) as $currentOnly )
+        {
+            $sql = 'SELECT id, parent, text, action, is_original, is_alias FROM ezurlalias_ml WHERE ' . $like
+                 . ( $currentOnly ? ' AND is_original = 1' : ' AND is_original = 0' );
+            // up to PartRowLimit rows, the closest matches first (partRank()); an alias row can outlive its node, so
+            // only the nodes that exist count towards the cap
+            $candidates = array();
+            foreach ( $this->rows( $sql, self::bounded( self::setting( 'PartRowLimit', 2000 ), 1, 100000, 2000 ) ) as $row )
+            {
+                $rank = self::partRank( (string)$row['text'], $words );
+                if ( $rank !== null && preg_match( '/^eznode:([0-9]+)$/', (string)$row['action'] ) )
+                    $candidates[] = array( $rank, strlen( (string)$row['text'] ), (int)$row['id'], $row );
+            }
+            sort( $candidates );
+            $hits = array();
+            $seen = array();
+            foreach ( $candidates as $candidate )
+            {
+                $row = $candidate[3];
+                preg_match( '/^eznode:([0-9]+)$/', (string)$row['action'], $m );
+                $nodeID = (int)$m[1];
+                if ( isset( $seen[$nodeID] ) )
+                    continue;
+                $seen[$nodeID] = true;
+                $tree = $this->rows( 'SELECT contentobject_id FROM ezcontentobject_tree WHERE node_id = ' . $nodeID, 1 );
+                if ( !$tree )
+                    continue;
+                $full = $this->aliasPathUpwards( (int)$row['parent'], array( (string)$row['text'] ), array() );
+                if ( $full === null )
+                    continue;
+                $hits[] = array( 'object_id' => (int)$tree[0]['contentobject_id'], 'via' => 'urlalias_part', 'value' => $full,
+                                 'node_id' => $nodeID, 'history' => !$currentOnly, 'part' => implode( ' ', $words ) );
+                if ( count( $hits ) >= $wanted )
+                    break;
+            }
+            if ( $hits )
+                return $hits;
+        }
+        return array();
     }
 
     /**
@@ -736,7 +888,8 @@ class expContentFinder
                         'version' => isset( $hit['version'] ) ? (int)$hit['version'] : 0,
                         'siteaccess' => isset( $hit['siteaccess'] ) ? (string)$hit['siteaccess'] : '',
                         'prefix' => isset( $hit['prefix'] ) ? (string)$hit['prefix'] : '',
-                        'history' => !empty( $hit['history'] ) );
+                        'history' => !empty( $hit['history'] ),
+                        'part' => isset( $hit['part'] ) ? (string)$hit['part'] : '' );
         switch ( $hit['via'] )
         {
             case 'object':
@@ -746,6 +899,7 @@ class expContentFinder
             case 'node_remote_id':
             case 'urlalias':
             case 'urlalias_tail':
+            case 'urlalias_part':
                 foreach ( $locations as $location )
                 {
                     if ( $location['node_id'] === $match['node_id'] )
