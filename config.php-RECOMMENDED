@@ -295,6 +295,23 @@
 // define( 'CUSTOM_LOG_ROTATE_FILES', 3 );
 
 /*
+   A FILE RUN AT THE START OF EVERY REQUEST
+   ----------------------------------------
+   index.php runs the file named in EXP_REQUEST_PREPEND_FILE at the start of
+   every request, after the settings and before the kernel. Under a persistent
+   application server such as Exponential Velocity this file (config.php) runs
+   once per worker, so code here cannot act on each request; that file can.
+   It is the place for a request filter in front of the site, for example
+   request-shield (https://github.com/cjw-network/request-shield). Name a file
+   only from here, never one the web server may write. Without the constant
+   nothing runs. Changing it needs a restart of a persistent server.
+   Example: request-shield under Velocity only (PHP_SAPI cli with its
+   Q_WebServer class), while its integration file exists:
+*/
+//if ( PHP_SAPI === 'cli' && class_exists( 'Q_WebServer', false ) && is_file( __DIR__ . '/var/request-shield/velocity-prepend.php' ) && !defined( 'EXP_REQUEST_PREPEND_FILE' ) )
+//    define( 'EXP_REQUEST_PREPEND_FILE', __DIR__ . '/var/request-shield/velocity-prepend.php' );
+
+/*
    ROLE-AWARE HTTP CACHE
    ---------------------
    Serves cached content views before the autoloader, INI or database load,
