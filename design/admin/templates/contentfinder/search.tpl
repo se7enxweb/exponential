@@ -55,6 +55,7 @@
     <div class="message-warning cf-none" role="alert"><h2>{if eq( $found.input.error, 'too_long' )}{'The text is too long.'|i18n( 'kernel/contentfinder' )}{else}{'This is not an id, path or URL the finder can look for.'|i18n( 'kernel/contentfinder' )}{/if}</h2></div>
     {elseif $found.count|eq( 0 )}
     <div class="message-warning cf-none" role="status"><h2>{'Nothing found, or you have no access to what was found.'|i18n( 'kernel/contentfinder' )}</h2></div>
+    {if $found.notice|eq( 'alias_part_too_short' )}<p class="cf-hint">{'Enter at least %count characters to search by part of an alias.'|i18n( 'kernel/contentfinder',, hash( '%count', ezini( 'ContentFinderSettings', 'MinimumPartLength', 'contentfinder.ini' ) ) )}</p>{/if}
     {else}
     <p>{'Objects found: %count.'|i18n( 'kernel/contentfinder',, hash( '%count', $found.count ) )}{if $found.truncated} {'Only the first %count are shown; enter a more exact text.'|i18n( 'kernel/contentfinder',, hash( '%count', $found.count ) )}{/if}</p>
     {foreach $found.results as $result}

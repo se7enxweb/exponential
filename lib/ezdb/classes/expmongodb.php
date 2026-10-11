@@ -562,6 +562,14 @@ class expMongoDB extends eZDBInterface
         $column = isset( $left['field'] ) ? $left['field'] : null;
         $token = $tokens[$i];
 
+        // LOWER( column ) LIKE '...' (a pattern in lower case): the column's regex, without case
+        if ( $column === null && !empty( $left['column'] ) && $token['type'] === 'keyword' && $token['value'] === 'LIKE' )
+        {
+            $i++;
+            $regex = $this->parseWhereLike( $tokens, $i, 'i' );
+            return $regex === false ? false : array( $left['column'] => $regex );
+        }
+
         // IN, LIKE and IS NULL read a column, never an expression.
         if ( $column === null && $token['type'] === 'keyword' )
             return false;
@@ -750,7 +758,7 @@ class expMongoDB extends eZDBInterface
             $function = strtoupper( $tokens[$i]['value'] ) === 'LOWER' ? '$toLower' : '$toUpper';
             $column = $tokens[$i + 2]['value'];
             $i += 4;
-            return array( 'expr' => array( $function => '$' . $column ), 'text' => true );
+            return array( 'expr' => array( $function => '$' . $column ), 'text' => true, 'column' => $column );
         }
 
         $start = $i;
@@ -890,7 +898,7 @@ class expMongoDB extends eZDBInterface
      * "LIKE 'a!%b%' ESCAPE '!'" (one character, as every SQL engine takes it)
      * makes the character after the escape character literal: here a %.
      */
-    protected function parseWhereLike( array $tokens, &$i )
+    protected function parseWhereLike( array $tokens, &$i, $flags = '' )
     {
         if ( $i >= count( $tokens ) || $tokens[$i]['type'] !== 'string' )
             return false;
@@ -929,7 +937,7 @@ class expMongoDB extends eZDBInterface
                 $regex .= preg_quote( $char );
         }
 
-        return new MongoDB\BSON\Regex( '^' . $regex . '$', '' );
+        return new MongoDB\BSON\Regex( '^' . $regex . '$', $flags );
     }
 
     /**

@@ -9,6 +9,7 @@
  *         goes in front (/site/showcase/test-product -> fit-healthy/showcase/test-product)
  *  CU-04  a page address matched by its host (no segment): the host's siteaccess's prefix goes in front
  *  CU-05  a bare alias: exactly first, then with each distinct prefix of the siteaccesses; each path once
+ *  CU-06  a part of an alias: its words, the escaped LIKE pattern, and the exact decision (order, separators, case)
  *
  * No database, no settings.
  *
@@ -83,6 +84,36 @@ class expContentFinderURLAliasTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'path' => 'bold-agency/about-us', 'siteaccess' => 'bold', 'prefix' => 'bold-agency' ), $candidates[1] );
         // a match that names no known siteaccess is ignored
         $this->assertSame( $this->paths( 'about-us' ), $this->paths( 'about-us', array( 'name' => 'nosuch', 'uri_part' => array() ) ) );
+    }
+
+    /** CU-06 */
+    public function testAPartOfAnAlias()
+    {
+        $this->assertSame( array( 'test', 'product' ), expContentFinder::aliasPartWords( 'Test Product' ) );
+        $this->assertSame( array( 'test', 'product' ), expContentFinder::aliasPartWords( 'showcase/test_-product/' ) );
+        $this->assertSame( array(), expContentFinder::aliasPartWords( ' - _ ' ) );
+        // the LIKE pattern: the words escaped with !, one character between them
+        $this->assertSame( '%test_product%', expContentFinder::aliasPartPattern( array( 'test', 'product' ) ) );
+        $this->assertSame( '%a!%b_c!!d%', expContentFinder::aliasPartPattern( array( 'a%b', 'c!d' ) ) );
+        $this->assertSame( '%!_x%', expContentFinder::aliasPartPattern( array( '_x' ) ) );
+        // the exact decision: in order, one separator between, any case
+        foreach ( array( 'test-product', 'Test_Product', 'my test product 2', 'TEST-PRODUCTS' ) as $text )
+            $this->assertTrue( expContentFinder::partMatches( $text, array( 'test', 'product' ) ), $text );
+        foreach ( array( 'testproduct', 'product-test', 'test--product', 'testXproduct' ) as $text )
+            $this->assertFalse( expContentFinder::partMatches( $text, array( 'test', 'product' ) ), $text );
+        $this->assertTrue( expContentFinder::partMatches( '100%-sure', array( '100%' ) ) );
+        $this->assertFalse( expContentFinder::partMatches( '1000-sure', array( '10%' ) ) );
+        $this->assertFalse( expContentFinder::partMatches( 'anything', array() ) );
+        // the closest first: the element itself, starting with it, whole words, at a word start, inside a word
+        $words = array( 'test' );
+        $this->assertSame( 0, expContentFinder::partRank( 'Test', $words ) );
+        $this->assertSame( 1, expContentFinder::partRank( 'test-product', $words ) );
+        $this->assertSame( 2, expContentFinder::partRank( 'a-test-product', $words ) );
+        $this->assertSame( 3, expContentFinder::partRank( 'testing', $words ) );
+        $this->assertSame( 3, expContentFinder::partRank( 'my-testing', $words ) );
+        $this->assertSame( 4, expContentFinder::partRank( 'nottest-article', $words ) );
+        $this->assertNull( expContentFinder::partRank( 'product', $words ) );
+        $this->assertSame( 1, expContentFinder::partRank( 'test-product-2', array( 'test', 'product' ) ) );
     }
 
     /** CU-05 */

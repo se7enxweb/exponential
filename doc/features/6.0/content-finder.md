@@ -74,9 +74,27 @@ order, until one resolves:
    lookup that may read `ezurlalias_ml` without an index (the `text_md5` step, when the text matches no stored
    text in its case).
 
+6. when that finds nothing either, and the text is one element (no slash): a **part** of an alias. `product`,
+   `test` and `test product` find `fit-healthy/showcase/test-product`. The text is split into words at dashes,
+   underscores and spaces; an alias element matches when it contains the words in that order with one dash,
+   underscore or space between them, without case. The query is one `LOWER( text ) LIKE '%…%' ESCAPE '!'` on
+   `ezurlalias_ml` (with `%`, `_` and `!` of the text escaped, so they are only themselves; on MongoDB a regular
+   expression without case), and the finder then checks every row exactly. Current entries are taken first; old
+   addresses (history) only when no current one matches, and marked. The closest matches come first: the element
+   itself, then elements starting with the words, then the words as whole words, then at the start of a word,
+   then inside a word; at most `PartRowLimit` elements (2000) are read, and at most `ResultLimit` objects shown
+   (the page says when there were more). **Found by** reads "an alias containing “product” (*full path*)".
+   A text shorter than `MinimumPartLength` (3 characters) is not searched as a part: the page says "Enter at
+   least 3 characters to search by part of an alias".
+
+   This is the one lookup that reads the whole alias table. Measured on a copy of a real installation's content
+   (2833 alias rows; `test` matches 1768 of them): SQLite 10 ms, MariaDB 61 ms, PostgreSQL 55 ms, MongoDB 95 ms,
+   reading every matching row. It runs only when nothing else matched; where the table is very large, switch it
+   off with `contentfinder.ini [ContentFinderSettings] PartialAliasSearch=disabled`.
+
 Each siteaccess's prefix is read from its own `site.ini`. **Found by** names the alias that resolved and, when a
-siteaccess or a prefix made the difference, which. These are exact lookups like the others, never a `LIKE`, and
-the rights decide per result as for every lookup.
+siteaccess or a prefix made the difference, which. Steps 1 to 5 are exact lookups, never a `LIKE`; for every
+step the rights decide per result as for every lookup.
 
 ### What is accepted
 
@@ -96,7 +114,7 @@ Every lookup is one query on an indexed column (or an exact match on a short one
 `ezcontentobject_version.id`, the `remote_id` of objects, nodes and trashed nodes, `eZURLAliasML::fetchNodeIDByPath()`,
 `ezimagefile.filepath`, and `filename` and `mime_type` of `ezbinaryfile` and `ezmedia`. Integers are cast, texts are
 escaped by the database; a prefix is `LIKE 'prefix%' ESCAPE '!'` with `%`, `_` and `!` in the text escaped. There
-is never a `LIKE '%text%'`. Remote ids and file paths match in their case on every engine: the database narrows
+is no other `LIKE '%text%'` than the part of an alias (step 6 above). Remote ids and file paths match in their case on every engine: the database narrows
 (MySQL's collations and SQLite's `LIKE` ignore case), and the finder then compares the stored value exactly.
 URL aliases are case-insensitive, as `eZURLAliasML` resolves them.
 
@@ -177,6 +195,10 @@ SiteAccessList[]
 ResultLimit=25
 # At most this many file rows per path or prefix (1 to 500)
 FileRowLimit=50
+# The part of an alias: enabled | disabled, the shortest part, the most alias elements read
+PartialAliasSearch=enabled
+MinimumPartLength=3
+PartRowLimit=2000
 ```
 
 The Setup entry is `menu.ini [Leftmenu_setup] Links[contentfinder]` (with `PolicyList_contentfinder[]=contentfinder/search`);
