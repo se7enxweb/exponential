@@ -50,6 +50,8 @@ class expAuditHook
         'commerce.order.delete' => 'remove',
         'commerce.order.item.remove' => 'remove',
         'commerce.order.status' => 'change',
+        'content.finder.action' => 'remove',
+        'content.finder.search' => 'read',
         'content.node.main' => 'assign',
         'content.node.priority' => 'sort',
         'content.node.section' => 'assign',

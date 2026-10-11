@@ -71,7 +71,7 @@ What it is made of:
 - **Channels and files.** Five channels: `content`, `access`, `system`, `commerce` (with `data`), and `read` for
   sampled reads, which is off by default. Each channel writes one file per UTC day,
   `var/<site>/log/audit/<channel>-<YYYY-MM-DD>.jsonl`, and starts a new part past `MaxFileSize`.
-- **141 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
+- **143 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
   `content.node.remove.*`). Extensions add their own branches. See the [event reference](#8-event-reference).
 - **A hash chain per channel**, daily signed checkpoints and signed archive manifests (HMAC-SHA-256 with a key that is
   generated on first use and never leaves `settings/override`).
@@ -1869,7 +1869,7 @@ generator. Columns: Sev. = severity; Default = shipped (`always` cannot be switc
 only with `Reads=enabled`).
 
 <!-- event-reference:start (generated from expAuditTaxonomy::registry() and the settings in effect on 2026-10-03; do not edit by hand) -->
-141 names (42 content, 37 access, 41 system, 12 commerce, 9 data); shipped default: 92 on, 23 off, 23 always, 3 sampled.
+143 names (44 content, 37 access, 41 system, 12 commerce, 9 data); shipped default: 94 on, 23 off, 23 always, 3 sampled.
 
 | Event | Fires when | Records (before → after; never) | Raised in | Verb | Sev. | Default | On here | Ch. | Written |
 |---|---|---|---|---|---|---|---|---|---|
@@ -1915,6 +1915,8 @@ only with `Reads=enabled`).
 | `content.node.view` | a node is viewed (Z6) | – (never the rendered page) | `views/content/view.php:run` | read | info | sampled | no | read | buffered |
 | `content.search.query` | a search is run (Z6) | – → phrase (truncated to 64 characters), hit count | `views/content/advancedsearch.php:run`, `views/content/search.php:run` | read | info | sampled | no | read | buffered |
 | `content.object.download` | a file attribute is downloaded | – | `views/content/download.php:run` | read | info | sampled | no | read | buffered |
+| `content.finder.search` | a search in the content finder (contentfinder/search) | – → type asked, types tried, text (truncated to 128 characters), results shown, results found but not shown | `views/contentfinder/search.php:audit` | read | info | on | yes | content | buffered |
+| `content.finder.action` | an action of the content finder is done or refused (move to trash, delete permanently, purge, remove a version); the kernel's removal events are its children | – → action, locations, children (refused: reason) | `contentfinder/expcontentfinderaction.php:execute`, `contentfinder/expcontentfinderaction.php:auditRefusal` | remove | notice | on | yes | content | buffered |
 | `access.session.login` | a user logs in `[user-login]` | – → session (hashed), handler (standard, ldap, …) (never the password) | `datatypes/ezuser/ezuser.php:loginSucceeded` | login | info | on | yes | access | at once |
 | `access.session.login.failed` | a login attempt fails `[user-failed-login]` | – → attempts, reason (never the password; the attempted login of an **unknown** user is always hashed, as it is often a password typed in the wrong field) | `datatypes/ezuser/ezuser.php:loginFailed` | login | notice | on | yes | access | at once |
 | `access.session.logout` | a user logs out | session → – | `datatypes/ezuser/ezuser.php:logoutCurrent` | logout | info | on | yes | access | at once |

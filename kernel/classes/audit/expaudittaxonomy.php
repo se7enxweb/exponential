@@ -42,7 +42,7 @@ class expAuditTaxonomy
 
     /**
      * The kernel's catalogue: name => severity, default (on | off | always | sampled), channel ('' = the channel
-     * of the file it describes). 135 names, generated from the catalogue tables of doc/bc/6.0/audit.md.
+     * of the file it describes). 143 names, generated from the catalogue tables of doc/bc/6.0/audit.md.
      *
      * @var array
      */
@@ -89,6 +89,8 @@ class expAuditTaxonomy
         'content.node.view' => array( 'severity' => 'info', 'default' => 'sampled', 'channel' => 'read' ),
         'content.search.query' => array( 'severity' => 'info', 'default' => 'sampled', 'channel' => 'read' ),
         'content.object.download' => array( 'severity' => 'info', 'default' => 'sampled', 'channel' => 'read' ),
+        'content.finder.search' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
+        'content.finder.action' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content' ),
         'access.session.login' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access' ),
         'access.session.login.failed' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
         'access.session.logout' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access' ),
