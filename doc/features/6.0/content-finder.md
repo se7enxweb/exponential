@@ -36,7 +36,7 @@ decides:
 | `var/site/storage/original/application/4c1b…e9.pdf` | the binary or media file of that name (and of that mime group) |
 | `var/site/storage/images/news/summer/` or `…/original/application/*` | every file below that prefix (up to the row limit) |
 | `d41d8cd98f00b204e9800998ecf8427e` (32 hexadecimal digits) | a remote id |
-| `News/Summer-party`, `/News/Summer-party/`, `https://www.example.com/News/Summer-party?x=1` | a URL alias (exactly; a siteaccess in front is tried without it) |
+| `News/Summer-party`, `/News/Summer-party/`, `https://www.example.com/News/Summer-party?x=1` | a URL alias or a page address (exactly; see "URL aliases and siteaccesses" below) |
 | any other word | a remote id and a URL alias |
 
 Choose a type in the selector to look the text up as that only: **Object id**, **Node id**, **Attribute id**,
@@ -48,6 +48,26 @@ identifier, datatype), the version and the language the match was in, and the fi
 An image is stored once per alias (`…_large.jpg`, `…_small.jpg`) and in every version that kept it; any of those
 paths finds it. A path to a file that is not referenced by an attribute (an orphan left in `var/storage`) finds
 nothing.
+
+### URL aliases and siteaccesses
+
+A siteaccess with `site.ini [SiteAccessSettings] PathPrefix` shows its pages without the prefix: the alias stored as
+`fit-healthy/showcase/test-product` is the page `/site/showcase/test-product` of the siteaccess `site` with
+`PathPrefix=fit-healthy`. The finder takes all three: a URL alias or a page address is tried, exactly and in this
+order, until one resolves:
+
+1. the path as typed;
+2. the path as a page address: the siteaccess the kernel matches for it (`eZSiteAccess::match()`: by its first
+   segment with URI matching, by the host of a full URL with host or host and URI matching), its segment taken off,
+   and that siteaccess's own `PathPrefix` put in front, as `eZURLAliasML` does (not when the path already starts
+   with it, nor when its first element is in `PathPrefixExclude[]`); then the same without the prefix;
+3. a first segment that names a siteaccess taken off, with that siteaccess's prefix in front, then without;
+4. the path with each distinct `PathPrefix` of the siteaccesses (`AvailableSiteAccessList[]` and
+   `RelatedSiteAccessList[]`) in front.
+
+Each siteaccess's prefix is read from its own `site.ini`. **Found by** names the alias that resolved and, when a
+siteaccess or a prefix made the difference, which. These are exact lookups like the others, never a `LIKE`, and
+the rights decide per result as for every lookup.
 
 ### What is accepted
 
