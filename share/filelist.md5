@@ -3000,7 +3000,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e1f4b9a7d6b2e9b79561e0cee28b324b  doc/changelogs/6.0/6.0.15.md
+dd8494cd0fad089e7eb7bf56e2b859ef  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3337,7 +3337,7 @@ cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 0efc0a33fb1492529cd85b8d230d76d5  doc/features/6.0/class-attribute-move-to-edge.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
-b865bb927b4511f17bac9d2c484fa1ed  doc/features/6.0/content-finder.md
+afe887ce6bcf749c43a914e461d6fc1f  doc/features/6.0/content-finder.md
 572d04f3da4c1377a06bd7c8c95f615b  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
 977eb4c63ccab369b83722869aa589fc  doc/features/6.0/cronjob-part-filter.md
@@ -4781,7 +4781,7 @@ db5aa167ba576c21ecdfa485db307355  kernel/classes/clusterfilehandlers/dbbackends/
 5554e1fd8ddbfa3851ad955e0a63272d  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 c7471429cdcbd497702ddc9bba9c6b3c  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
 6340aaf4bd8e29dcb7f0ede5321bd635  kernel/classes/confirmorderhandlers/ezdefaultconfirmorderhandler.php
-83fe7d21ed6c4f21135dbd640a03547d  kernel/classes/contentfinder/expcontentfinder.php
+13fdeb880189ec29e59a86db86a68eb0  kernel/classes/contentfinder/expcontentfinder.php
 bf8a04b58721225e1c5cace5e9a9eac4  kernel/classes/contentfinder/expcontentfinderaction.php
 db8e18e9eed33cc4220c3c547126753a  kernel/classes/contentfinder/expcontentfinderinput.php
 425f08718c9eaa601091079912f333bb  kernel/classes/contentjob/expcontentjob.php
@@ -7499,9 +7499,9 @@ bf131682211b1591e71f19c7a02314d9  tests/tests/kernel/content/ezcontentoperationd
 85bccb2e92c8d65e69480b468341abf7  tests/tests/kernel/content/ezpcontentpublishingbehaviour_test.php
 d6267bbd8f06997379c11c2c824ae8e0  tests/tests/kernel/content/suite.php
 3e91a48652849dad0b64342034350dc5  tests/tests/kernel/contentfinder/expContentFinderInputTest.php
-2095a7092820b48d9aae595872113d9e  tests/tests/kernel/contentfinder/expContentFinderSandboxTest.php
+8d1f5dc680c9d3a7cb5aebe741b7b45b  tests/tests/kernel/contentfinder/expContentFinderSandboxTest.php
 28b3cf9988aa4f1a515519723683b97d  tests/tests/kernel/contentfinder/expContentFinderURLAliasTest.php
-73f910472afd876914c680c63a757bcc  tests/tests/kernel/contentfinder/fixtures/expcontentfindertestfixtures.php
+c910ffc36b999dcfff1bacd990d75ffe  tests/tests/kernel/contentfinder/fixtures/expcontentfindertestfixtures.php
 a00a89408f5529c4e81370a6326ea69e  tests/tests/kernel/datatypes/eZDatatypeAbstract.php
 e0e0ffe408f59a1efe50e4dea3336f06  tests/tests/kernel/datatypes/eZDatatypeStringRoundTripTest.php
 3f3c01d63659373d1dc3e4e631373b20  tests/tests/kernel/datatypes/eZDatatypeValueObjectsTest.php
