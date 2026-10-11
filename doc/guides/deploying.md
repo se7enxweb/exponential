@@ -190,19 +190,20 @@ After you change a PHP class, an operator or an INI file, run:
 ./console exp:velocity deploy --kernel --allow-root-user    # a kernel class was added or renamed
 ```
 
-The dry run prints the thirteen steps, each marked `DRY`:
+The dry run prints the fourteen steps, each marked `DRY`:
 
 ```
-[ 1/13] DRY   extension autoloads: php bin/php/ezpgenerateautoloads.php -e -q
-[ 2/13] DRY   INI caches: php bin/php/ezcache.php --clear-tag=ini --allow-root-user
+[ 1/14] DRY   extension autoloads: php bin/php/ezpgenerateautoloads.php -e -q
+[ 2/14] DRY   INI caches: php bin/php/ezcache.php --clear-tag=ini --allow-root-user
 ...
-[ 8/13] DRY   reload PHP-FPM: systemctl reload <your pool's service>
-[ 9/13] DRY   restart Velocity: php bin/php/velocity.php restart
-[10/13] DRY   content cache ...
-[13/13] DRY   Velocity response cache: exp:velocity cache clear
+[ 8/14] DRY   PHP-FPM sees the new code: wait 11 s (no reload)  -- <pool>: OPcache revalidates every 10 s
+[ 9/14] DRY   restart Velocity: php bin/php/velocity.php restart
+[10/14] DRY   content cache ...
+[13/14] DRY   Velocity response cache: exp:velocity cache clear
+[14/14] DRY   warm-up requests: curl 2 URLs in the background
 ```
 
-A real run prints PASS, FAIL or SKIP and the time for each step, and stops at the first failure with exit status 1. The order matters: the caches that hold finished pages are cleared last, after PHP-FPM and Velocity run the new code, so a page rendered by old code is never cached again. Options: `--no-fpm` (Velocity only), `--no-velocity` (Apache only), `--no-autoload`, `--rebuild-phar`, `--packer` (also clear packed scripts and styles, when an `ezjscServer_*` function changed). Details and every step: [Deploying a PHP change](../bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
+A real run prints PASS, FAIL or SKIP and the time for each step, and stops at the first failure with exit status 1. The order matters: the caches that hold finished pages are cleared last, after PHP-FPM and Velocity run the new code, so a page rendered by old code is never cached again. PHP-FPM is reloaded only when its OPcache does not revalidate files by itself: a reload stalls every pool of that PHP version until its longest request ends, so the step waits for OPcache instead (`[DeploySettings] PhpFpmReload`). The last step requests `[DeploySettings] WarmUpURL[]` in the background, so the first visitor finds the caches built. Options: `--no-fpm` (Velocity only), `--fpm-reload` (reload anyway: php.ini or pool changed, files renamed), `--no-velocity` (Apache only), `--no-autoload`, `--rebuild-phar`, `--packer` (also clear packed scripts and styles, when an `ezjscServer_*` function changed). Details and every step: [Deploying a PHP change](../bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
 
 Edits to a template or a stylesheet need less: clear the caches without a restart.
 

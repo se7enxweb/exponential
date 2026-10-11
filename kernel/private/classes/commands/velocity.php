@@ -284,10 +284,11 @@ class Velocity extends \Exponential\Runnable\Command
             "              lib/ or autoload/ was added, removed or changed; --rebuild-phar: always)\n" .
             "  deploy     everything a PHP code change needs, in order, PASS/FAIL per step:\n" .
             "             extension autoloads, INI + template + template-override + translation\n" .
-            "             + design_base caches, reload PHP-FPM ([DeploySettings] PhpFpmService),\n" .
-            "             restart Velocity, and only then the content, exphttpcache, template-block\n" .
-            "             and response caches. Stops at the first step that fails.\n" .
-            "             --kernel (kernel autoloads too)  --no-autoload  --no-fpm  --no-velocity\n" .
+            "             + design_base caches, PHP-FPM (waits for OPcache to revalidate, or reloads\n" .
+            "             [DeploySettings] PhpFpmService), restart Velocity, and only then the content,\n" .
+            "             exphttpcache, template-block and response caches, then warm-up requests\n" .
+            "             ([DeploySettings] WarmUpURL[]). Stops at the first step that fails.\n" .
+            "             --kernel (kernel autoloads too)  --no-autoload  --no-fpm  --fpm-reload  --no-velocity\n" .
             "             --rebuild-phar  --packer (packed scripts + styles, with template-block)\n" .
             "             --dry-run (print the steps, do nothing)  --json\n" .
             "  kill       stop without asking, for a wedged worker\n" .
@@ -380,9 +381,9 @@ class Velocity extends \Exponential\Runnable\Command
             array( 'keep-global', 'siteaccess', 'login', 'password', 'engine', 'from' ),
             array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'logfiles', 'no-logfiles',
                    'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all',
-                   'rebuild-phar', 'kernel', 'dry-run', 'no-fpm', 'no-velocity', 'no-autoload', 'packer' ) );
+                   'rebuild-phar', 'kernel', 'dry-run', 'no-fpm', 'fpm-reload', 'no-velocity', 'no-autoload', 'packer' ) );
 
-        $options = $this->options( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][dry-run][no-fpm][no-velocity][no-autoload][packer]', '[command]',
+        $options = $this->options( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][dry-run][no-fpm][fpm-reload][no-velocity][no-autoload][packer]', '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person',
                    'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
                                   . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command',
@@ -397,7 +398,8 @@ class Velocity extends \Exponential\Runnable\Command
                    'rebuild-phar' => 'start, restart, graceful, deploy: rebuild the engine archive even when it is current',
                    'kernel' => 'deploy: regenerate the kernel autoload array too (kernel/ and lib/ only)',
                    'dry-run' => 'deploy: print the steps and what each would do, and do nothing',
-                   'no-fpm' => 'deploy: do not reload PHP-FPM',
+                   'no-fpm' => 'deploy: leave PHP-FPM alone (no reload, no wait)',
+                   'fpm-reload' => 'deploy: reload PHP-FPM even when its OPcache revalidates the files (php.ini or pool changed, files renamed)',
                    'no-velocity' => 'deploy: do not restart Velocity',
                    'no-autoload' => 'deploy: do not regenerate autoload arrays',
                    'packer' => 'deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block)' ),
@@ -481,7 +483,7 @@ class Velocity extends \Exponential\Runnable\Command
             }
             $velocity->forceEngineRebuild();
         }
-        foreach ( array( 'kernel', 'dry-run', 'no-fpm', 'no-velocity', 'no-autoload' ) as $deployOnly )
+        foreach ( array( 'kernel', 'dry-run', 'no-fpm', 'fpm-reload', 'no-velocity', 'no-autoload' ) as $deployOnly )
         {
             if ( !empty( $options[$deployOnly] ) && $verb !== 'deploy' )
             {
@@ -861,6 +863,7 @@ class Velocity extends \Exponential\Runnable\Command
                     'dry-run'      => !empty( $options['dry-run'] ),
                     'rebuild-phar' => !empty( $options['rebuild-phar'] ),
                     'packer'       => !empty( $options['packer'] ),
+                    'fpm-reload'   => !empty( $options['fpm-reload'] ),
                     'engine'       => count( $engineList ) === 1 ? $engineList[0] : '',
                 ), $printer );
                 if ( !$asJson )

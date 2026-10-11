@@ -62,10 +62,11 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 | 3 | INI caches | `php bin/php/ezcache.php --clear-tag=ini` |
 | 4 | template, template-override, translation and design_base caches | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, one id per call |
 | 5 | engine archive, when Velocity runs from one | `php bin/php/phar.php build`: rebuilt only when a file in `kernel/`, `lib/` or `autoload/` changed, every file parsed first |
-| 6 | reload PHP-FPM | `systemctl reload <[DeploySettings] PhpFpmService>` |
+| 6 | PHP-FPM: wait until its OPcache has revalidated the changed files (no reload), or reload it when that cannot be relied on | `sleep <revalidate_freq + 1>`, or `systemctl reload <[DeploySettings] PhpFpmService>` |
 | 7 | restart Velocity, when it is running | `exp:velocity restart` |
 | 8 | content, exphttpcache, ezjscore-packer (only with `--packer`) and template-block caches | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
 | 9 | Velocity's response cache | `exp:velocity cache clear` |
+| 10 | warm-up: `[DeploySettings] WarmUpURL[]` requested once each by a background process | `curl URL...` |
 
 **The order is the point.** The caches that hold rendered output (8 and 9)
 are cleared only after PHP-FPM and Velocity run the new code. Cleared before,
@@ -76,6 +77,30 @@ and the change looks as if it had not worked.
 fails step 5, before PHP-FPM or Velocity has been touched; a restart that does
 not come up leaves every cache as it was. The exit status is 1, and the steps
 not run are listed as `NOT RUN`.
+
+**PHP-FPM is reloaded only when it has to be** (`[DeploySettings]
+PhpFpmReload=auto`). A reload is not confined to this site: the master asks
+every child of every pool to finish its request and starts no new child until
+the last one has, for up to `process_control_timeout` (300 s on Plesk). Every
+request that arrives meanwhile, on any site of that PHP version, waits for the
+longest request still running. Measured on one host: an open 25 s event
+stream made the next page wait 22.4 s after a reload, and one with no stream
+of its own still waited 3.9 s for other sites' requests; a 135 s request
+elsewhere turned the waiting ones into 504s. When the pool's OPcache
+revalidates files (`opcache.validate_timestamps` on, `revalidate_freq` at
+most 60 s, read from `php-fpm -i` and the pool file), each changed PHP file
+is recompiled within `revalidate_freq` seconds anyway, so step 6 waits that
+long plus one second instead, and the rendered-output caches are still
+cleared only after it. `--fpm-reload` (or `PhpFpmReload=always`) reloads
+anyway: after a php.ini or pool change, a new PHP extension, or PHP files
+removed or renamed in place.
+
+**The first visitor after a deploy does not rebuild the caches.** Step 10
+requests each `[DeploySettings] WarmUpURL[]` once (one after the other, by a
+detached `curl`, without waiting for it): a front page and an admin login page
+per engine compile the page layouts and rebuild the INI, override,
+translation, design and packed-file caches before anyone asks, and several
+first visitors no longer all rebuild them at once.
 
 **design_base is always cleared.** It holds the list of design directories as
 it was when the extensions were last read, so after an extension is activated
@@ -92,7 +117,7 @@ server function returns has changed (an `ezjscServer_*` class, or the settings
 it reads); an edited `.js` or `.css` file gets a new packed file by itself,
 since the packed file's name carries the source files' time.
 
-Options: `--kernel`, `--no-autoload`, `--no-fpm`, `--no-velocity`,
+Options: `--kernel`, `--no-autoload`, `--no-fpm`, `--fpm-reload` (reload PHP-FPM even when its OPcache revalidates), `--no-velocity`,
 `--rebuild-phar` (rebuild the engine archive even when it is current),
 `--packer` (clear the packed scripts and styles, together with the template
 blocks), `--engine=<name>` (the engine to restart), `--dry-run`, `--json`.

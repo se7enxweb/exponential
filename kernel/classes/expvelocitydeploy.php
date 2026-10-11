@@ -27,12 +27,16 @@
  *   5  engine archive                  bin/php/phar.php build: rebuilt only when a file
  *                                      in kernel/, lib/ or autoload/ changed, and
  *                                      every file parsed first
- *   6  reload PHP-FPM                  systemctl reload <[DeploySettings] PhpFpmService>
+ *   6  PHP-FPM                         wait until its OPcache has revalidated the files
+ *                                      (no reload, see fpmRevalidateWait()), or
+ *                                      systemctl reload <[DeploySettings] PhpFpmService>
  *   7  restart Velocity                bin/php/velocity.php restart
  *   8  content, exphttpcache, ezjscore-packer (--packer) and template-block
  *      caches, one id per call; the packer only ever right before
  *      template-block
  *   9  Velocity's response cache
+ *  10  warm-up: [DeploySettings] WarmUpURL[] requested once each, in the
+ *      background
  *
  * The first step that fails stops the run, and nothing after it is done: a
  * kernel file that does not parse stops it before PHP-FPM or Velocity is
@@ -57,7 +61,8 @@ class expVelocityDeploy
     /**
      * @param expVelocity $velocity the engine to restart
      * @param array $options kernel, autoload, fpm, velocity (bool, default:
-     *        kernel false, the others true), dry-run, rebuild-phar, packer (bool),
+     *        kernel false, the others true), dry-run, rebuild-phar, packer,
+     *        fpm-reload (bool: reload PHP-FPM even when its OPcache revalidates),
      *        engine (string, passed on to the restart)
      * @param callable|null $printer function( array $step, int $number, int $count )
      */
@@ -67,6 +72,7 @@ class expVelocityDeploy
         $this->options = $options + array(
             'kernel' => false, 'autoload' => true, 'fpm' => true, 'velocity' => true,
             'dry-run' => false, 'rebuild-phar' => false, 'packer' => false, 'engine' => '',
+            'fpm-reload' => false,
         );
         $this->printer = $printer;
         $this->root = rtrim( eZSys::rootDir(), '/' );
@@ -127,7 +133,65 @@ class expVelocityDeploy
             },
         );
 
+        $steps[] = $this->warmUpStep();
+
         return $steps;
+    }
+
+    /**
+     * The warm-up step: after every cache has been cleared, the pages of
+     * [DeploySettings] WarmUpURL[] are requested once each, one after the
+     * other, by a detached background process, so the first visitor does not
+     * pay for compiling the templates and rebuilding the INI, override,
+     * translation, design and packed-file caches -- and several first
+     * visitors do not all rebuild the same caches at once. The deploy does
+     * not wait for it. Anonymous requests only (a login page compiles the
+     * admin's page layout, styles and scripts); a URL is requested as given.
+     *
+     * @return array
+     */
+    protected function warmUpStep()
+    {
+        $ini = eZINI::instance( 'velocity.ini' );
+        $urls = array();
+        if ( $ini->hasVariable( 'DeploySettings', 'WarmUpURL' ) )
+            foreach ( (array)$ini->variable( 'DeploySettings', 'WarmUpURL' ) as $url )
+                if ( preg_match( '@^https?://[^\s]+$@', trim( (string)$url ) ) )
+                    $urls[] = trim( (string)$url );
+        $step = array( 'id' => 'warm-up', 'label' => 'warm-up requests', 'skip' => '',
+                       'command' => 'curl ' . ( $urls ? count( $urls ) . ' URLs in the background' : '(no [DeploySettings] WarmUpURL[])' ) );
+        $curl = '';
+        foreach ( array( '/usr/bin/curl', '/bin/curl', '/usr/local/bin/curl' ) as $candidate )
+            if ( is_executable( $candidate ) )
+            {
+                $curl = $candidate;
+                break;
+            }
+        $setsid = is_executable( '/usr/bin/setsid' ) ? '/usr/bin/setsid' : ( is_executable( '/bin/setsid' ) ? '/bin/setsid' : '' );
+        if ( !$urls )
+            $step['skip'] = 'no [DeploySettings] WarmUpURL[]';
+        elseif ( $curl === '' || $setsid === '' )
+            $step['skip'] = 'needs curl and setsid';
+        $step['dry'] = function () use ( $urls ) { return implode( ' ', $urls ); };
+        $self = $this;
+        $step['run'] = function () use ( $self, $urls, $curl, $setsid ) {
+            // setsid -f: the request process is not this one's child, so the deploy ends at once
+            $command = array( $setsid, '-f', $curl, '-s', '-k', '--max-time', '180', '-A', 'Exponential deploy warm-up' );
+            foreach ( $urls as $url )
+            {
+                $command[] = '-o';
+                $command[] = '/dev/null';
+                $command[] = $url;
+            }
+            // every descriptor on /dev/null: a pipe would keep this process waiting until curl is done
+            $process = @proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'file', '/dev/null', 'w' ),
+                                                    2 => array( 'file', '/dev/null', 'w' ) ), $pipes, $self->rootDir() );
+            $code = is_resource( $process ) ? proc_close( $process ) : 127;
+            if ( $code !== 0 )
+                return array( false, 'could not start the warm-up (exit ' . $code . ')' );
+            return array( true, count( $urls ) . ' URLs requested in the background' );
+        };
+        return $step;
     }
 
     /**
@@ -293,6 +357,24 @@ class expVelocityDeploy
 
         list( $units, $note ) = $this->fpmServices();
         $step['command'] = $units ? 'systemctl reload ' . implode( ' ', $units ) : 'systemctl reload (none found)';
+
+        // A reload is not needed when the FPM's OPcache looks at the files itself: then the
+        // step waits until it has, and every pool of the master keeps serving.
+        $wait = $units ? $this->fpmRevalidateWait() : null;
+        if ( $wait !== null )
+        {
+            list( $seconds, $why ) = $wait;
+            $step['label'] = 'PHP-FPM sees the new code';
+            $step['command'] = $seconds > 0 ? 'wait ' . $seconds . ' s (no reload)' : 'nothing to wait for (no reload)';
+            $step['dry'] = function () use ( $why ) { return $why; };
+            $step['run'] = function () use ( $seconds, $why ) {
+                if ( $seconds > 0 )
+                    sleep( $seconds );
+                return array( true, 'not reloaded: ' . $why . ( $seconds > 0 ? '; waited ' . $seconds . ' s' : '' ) );
+            };
+            return $step;
+        }
+
         if ( !$units )
             $step['skip'] = $note;
         elseif ( function_exists( 'posix_geteuid' ) && posix_geteuid() !== 0 )
@@ -316,6 +398,118 @@ class expVelocityDeploy
             return array( true, 'reloaded ' . implode( ', ', $units ) . ' (' . $note . ')' );
         };
         return $step;
+    }
+
+    /**
+     * Whether the PHP-FPM step can do without a reload, and how long it then
+     * waits instead: [DeploySettings] PhpFpmReload (auto, always, never), or
+     * always with the option fpm-reload.
+     *
+     * A reload costs every site of the master, not only this one. SIGUSR2
+     * asks each child of every pool to finish its request, and the master
+     * starts no new child until the last has (process_control_timeout, 300 s
+     * on Plesk): a request that comes in meanwhile waits for the longest one
+     * running anywhere on that PHP version. Measured on alpha (#374): one
+     * open 25 s event stream made the next page wait 22.4 s after a reload,
+     * and a 135 s request on another pool turned waiting requests into 504s.
+     *
+     * With auto it is left out when the FPM's OPcache revalidates the files
+     * (opcache.validate_timestamps on, revalidate_freq at most 60 s, as read
+     * from the FPM binary and the pool files): every changed PHP file, the
+     * autoload arrays among them, is then recompiled within revalidate_freq
+     * seconds, and the step waits that long (plus one) before the caches of
+     * rendered output are cleared. Without OPcache nothing is waited for.
+     * What a reload is still needed for: a changed php.ini or pool file, a
+     * new PHP extension, PHP files removed or renamed in place (realpath
+     * cache) -- deploy --fpm-reload, or PhpFpmReload=always.
+     *
+     * @return array|null array( seconds to wait, why ), or null: reload
+     */
+    public function fpmRevalidateWait()
+    {
+        $ini = eZINI::instance( 'velocity.ini' );
+        $mode = $ini->hasVariable( 'DeploySettings', 'PhpFpmReload' )
+              ? strtolower( trim( (string)$ini->variable( 'DeploySettings', 'PhpFpmReload' ) ) ) : 'auto';
+        if ( !empty( $this->options['fpm-reload'] ) || $mode === 'always' )
+            return null;
+        if ( $mode === 'never' )
+            return array( 0, '[DeploySettings] PhpFpmReload=never' );
+
+        $pools = $this->fpmPoolFiles();
+        if ( !$pools )
+            return null;
+        $longest = 0;
+        $notes = array();
+        foreach ( $pools as $pool )
+        {
+            $opcache = $this->fpmOpcacheSettings( $pool );
+            if ( $opcache === null )
+                return null;    // not known: reload, as before
+            if ( !$opcache['enable'] )
+            {
+                $notes[] = basename( $pool ) . ': no OPcache';
+                continue;
+            }
+            if ( !$opcache['validate_timestamps'] || $opcache['revalidate_freq'] > 60 )
+                return null;
+            $longest = max( $longest, $opcache['revalidate_freq'] + 1 );
+            $notes[] = basename( $pool ) . ': OPcache revalidates every ' . $opcache['revalidate_freq'] . ' s';
+        }
+        return array( $longest, implode( ', ', $notes ) . ' (a reload holds every pool of the master until its longest request ends; --fpm-reload forces one)' );
+    }
+
+    /**
+     * The pool files the PHP-FPM step found for this installation (see fpmServices()).
+     *
+     * @return array
+     */
+    public function fpmPoolFiles()
+    {
+        list( $units, $note ) = $this->fpmServices();
+        if ( !$units || strpos( $note, 'auto: pool ' ) !== 0 )
+            return array();
+        return array_values( array_filter( array_map( 'trim', explode( ', ', substr( $note, strlen( 'auto: pool ' ) ) ) ) ) );
+    }
+
+    /**
+     * The OPcache settings a pool's children run with: the FPM binary's own
+     * (php-fpm -i), then the pool file's php_value / php_admin_value lines.
+     *
+     * @param string $pool pool configuration file
+     * @return array|null enable, validate_timestamps (bool), revalidate_freq (int), or null when unknown
+     */
+    public function fpmOpcacheSettings( $pool )
+    {
+        $binaries = array(
+            '@^(/opt/plesk/php/\d+\.\d+)/etc/php-fpm\.d/@' => '$1/sbin/php-fpm',
+            '@^/etc/php-fpm\.d/@'                          => '/usr/sbin/php-fpm',
+            '@^/etc/php/(\d+\.\d+)/fpm/pool\.d/@'          => '/usr/sbin/php-fpm$1',
+            '@^/etc/opt/remi/(php\d+)/php-fpm\.d/@'        => '/opt/remi/$1/root/usr/sbin/php-fpm',
+        );
+        $binary = '';
+        foreach ( $binaries as $pattern => $path )
+            if ( preg_match( $pattern, $pool, $m ) )
+            {
+                $binary = str_replace( '$1', $m[1] ?? '', $path );
+                break;
+            }
+        if ( $binary === '' || !is_executable( $binary ) )
+            return null;
+        list( $code, $lines ) = $this->runCommand( array( $binary, '-i' ) );
+        if ( $code !== 0 )
+            return null;
+        $values = array();
+        foreach ( $lines as $line )
+            if ( preg_match( '/^opcache\.(enable|validate_timestamps|revalidate_freq) => (\S+) => (\S+)/', $line, $m ) )
+                $values[$m[1]] = $m[3];
+        foreach ( preg_split( '/\r?\n/', (string)@file_get_contents( $pool ) ) as $line )
+            if ( preg_match( '/^\s*php_(?:admin_)?(?:value|flag)\[opcache\.(enable|validate_timestamps|revalidate_freq)\]\s*=\s*"?([^"\s;]+)/', $line, $m ) )
+                $values[$m[1]] = $m[2];
+        if ( !isset( $values['enable'], $values['validate_timestamps'], $values['revalidate_freq'] ) )
+            return null;
+        $on = function ( $v ) { return in_array( strtolower( $v ), array( '1', 'on', 'true', 'yes' ), true ); };
+        return array( 'enable' => $on( $values['enable'] ), 'validate_timestamps' => $on( $values['validate_timestamps'] ),
+                      'revalidate_freq' => (int)$values['revalidate_freq'] );
     }
 
     /**
@@ -496,6 +690,12 @@ class expVelocityDeploy
             return array( $code === 0 && !empty( $result['ok'] ), $message );
         };
         return $step;
+    }
+
+    /** @return string the installation root, for the step closures */
+    public function rootDir()
+    {
+        return $this->root;
     }
 
     /**
