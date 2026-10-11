@@ -89,7 +89,8 @@
             {/if}
         {/if}
         {if $pvf_can_export}
-            <a class="exp-btn" href={concat( 'package/export/', $package.name, $repo_suffix )|ezurl} title="{'Download the package as an .ezpkg file.'|i18n( 'design/admin/package' )}">{'Download'|i18n( 'design/admin/package' )}</a>
+            <a class="exp-btn" href={concat( 'package/export/', $package.name, $repo_suffix, '/(format)/xml' )|ezurl} title="{'Download the package as an .ezpkg file.'|i18n( 'design/admin/package' )}">{'Download'|i18n( 'design/admin/package' )}</a>
+            <a class="exp-btn" href={concat( 'package/export/', $package.name, $repo_suffix, '/(format)/json' )|ezurl} title="{'Download the package in the JSON format (package.json), as a .json.ezpkg file.'|i18n( 'design/admin/package' )}">{'Download as JSON'|i18n( 'design/admin/package' )}</a>
         {/if}
         {if and( $pvf_installable, $pvf_can_install, $package.is_installed )}
             <button class="exp-btn exp-btn-outline-danger" type="submit" name="UninstallButton" value="1">{'Uninstall'|i18n( 'design/admin/package')}</button>
@@ -142,6 +143,10 @@
     <div><dt>{'Released'|i18n( 'design/admin/package' )}</dt><dd>{if $package.release-timestamp}{$package.release-timestamp|l10n( shortdatetime )}{else}&ndash;{/if}</dd></div>
     <div><dt>{'Packaged'|i18n( 'design/admin/package' )}</dt><dd>{if $package.packaging-timestamp}{$package.packaging-timestamp|l10n( shortdatetime )}{if $package.packaging-host} &middot; {$package.packaging-host|wash}{/if}{else}&ndash;{/if}</dd></div>
     <div><dt>{'For Exponential'|i18n( 'design/admin/package' )}</dt><dd>{if $package.ezpublish-version}{$package.ezpublish-version|wash}{else}&ndash;{/if}</dd></div>
+    <div><dt>{'Format'|i18n( 'design/admin/package' )}</dt><dd>{if $package.format|eq( 'json' )}{'JSON (package.json)'|i18n( 'design/admin/package' )}{else}{'Classic XML (package.xml)'|i18n( 'design/admin/package' )}{/if}</dd></div>
+    {if $package.metadata|count}
+    <div><dt>{'Metadata'|i18n( 'design/admin/package' )}</dt><dd>{foreach $package.metadata as $key => $value}<code>{$key|wash}</code>: {$value|wash}{delimiter}<br />{/delimiter}{/foreach}</dd></div>
+    {/if}
     {if $card}
     <div><dt>{'Requires'|i18n( 'design/admin/package' )}</dt>
         <dd>{if $card.requires|count|eq( 0 )}{'Nothing'|i18n( 'design/admin/package' )}{else}<ul class="exp-deps">{foreach $card.requires as $require}<li{if $require.present|not} class="is-missing"{/if}>{if $require.present}<a href={concat( '/package/view/full/', $require.name )|ezurl}>{$require.name|wash}</a>{else}{$require.name|wash} ({'missing'|i18n( 'design/admin/package' )}){/if}{if $require.min_version|ne( '' )} <span class="exp-muted">&ge; {$require.min_version|wash}</span>{/if}</li>{/foreach}</ul>{/if}</dd></div>

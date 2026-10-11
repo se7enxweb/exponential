@@ -23,6 +23,14 @@ class eZPackage
     public $RepositoryInformation;
     public $PolicyCache;
     public $InstallData;
+    /**
+     * The serialization the package is stored in: 'xml' (package.xml, the default) or 'json' (package.json, see
+     * expPackageJson and doc/bc/6.0/package-json-format.md).
+     * @var string
+     */
+    public $Format = 'xml';
+    const FORMAT_XML = 'xml';
+    const FORMAT_JSON = 'json';
     const VERSION = '3.5.2';
     const DEVELOPMENT = false;
     const USE_CACHE = true;
@@ -109,7 +117,10 @@ class eZPackage
                                                     'obsoletes' => array(),
                                                     'conflicts' => array() ),
                            'install' => array(),
-                           'uninstall' => array() );
+                           'uninstall' => array(),
+                           // free key => value strings of the package (<metadata><entry key="...">value</entry></metadata>),
+                           // for tools that need to keep something with a package (keys are namespaced: "expai.provenance")
+                           'metadata' => array() );
         $this->PolicyCache = array();
         $this->InstallData = array();
         $this->Parameters = array_merge( $defaults, $parameters );
@@ -199,7 +210,8 @@ class eZPackage
                       'install', 'uninstall',
                       'licence', 'licence-info', 'state',
                       'ezpublish-version', 'ezpublish-named-version', 'packaging-timestamp',
-                      'packaging-host', 'packaging-packager' );
+                      'packaging-host', 'packaging-packager',
+                      'format', 'metadata' );
     }
 
     /*!
@@ -250,6 +262,10 @@ class eZPackage
                               'install_type',
                               'licence', 'state', 'settings-files' ) ) )
             return $this->Parameters[$attributeName];
+        else if ( $attributeName == 'format' )
+            return $this->Format;
+        else if ( $attributeName == 'metadata' )
+            return isset( $this->Parameters['metadata'] ) && is_array( $this->Parameters['metadata'] ) ? $this->Parameters['metadata'] : array();
         else if ( $attributeName == 'is_installed' )
             return $this->isInstalled;
         else if ( $attributeName == 'licence-info' )
@@ -511,6 +527,37 @@ class eZPackage
                                                   'email' => $email,
                                                   'changes' => $changes,
                                                   'release' => $release );
+    }
+
+    /**
+     * Sets a metadata entry of the package (stored in the definition as <metadata><entry key="...">). A value of
+     * null removes the entry. Keys are 1-100 characters of A-Z a-z 0-9 . _ : -, namespaced by the tool that
+     * writes them ("expai.ai-generated").
+     *
+     * @param string $key
+     * @param string|null $value
+     * @return bool false for a key that is not valid
+     */
+    function setMetadata( $key, $value )
+    {
+        if ( !is_string( $key ) || !preg_match( '/^[A-Za-z0-9._:-]{1,100}$/', $key ) )
+            return false;
+        if ( !isset( $this->Parameters['metadata'] ) || !is_array( $this->Parameters['metadata'] ) )
+            $this->Parameters['metadata'] = array();
+        if ( $value === null )
+            unset( $this->Parameters['metadata'][$key] );
+        else
+            $this->Parameters['metadata'][$key] = (string)$value;
+        return true;
+    }
+
+    /**
+     * @param string $key
+     * @return string|null a metadata entry of the package
+     */
+    function metadata( $key )
+    {
+        return isset( $this->Parameters['metadata'][$key] ) ? $this->Parameters['metadata'][$key] : null;
     }
 
     static function md5sum( $file )
@@ -1027,9 +1074,18 @@ class eZPackage
         {
             eZDir::mkdir( $path, false, true );
         }
-        $filePath = $path . '/' . eZPackage::definitionFilename();
-
-        $packageFileString = $this->toString();
+        // a package kept in the JSON format is stored as package.json (without checksums: its item files may
+        // still change; an export writes them)
+        if ( $this->Format === self::FORMAT_JSON )
+        {
+            $filePath = $path . '/' . eZPackage::definitionFilenameJSON();
+            $packageFileString = expPackageJson::encode( expPackageJson::envelope( $this->domStructure(), eZPackage::definitionFilename() ) );
+        }
+        else
+        {
+            $filePath = $path . '/' . eZPackage::definitionFilename();
+            $packageFileString = $this->toString();
+        }
         $result = $this->storeString( $filePath, $packageFileString );
 
         if ( $storeCache )
@@ -1048,21 +1104,29 @@ class eZPackage
         }
     }
 
-    /*!
-     Exports the package as a gzip compressed tarball to the directory \a $archivePath
-    */
-    function exportToArchive( $archivePath, $format = 'tar.gz' )
+    /**
+     * Exports the package as an archive (a gzip compressed tarball by default) to the file $archivePath.
+     *
+     * @param string $archivePath
+     * @param string $format the archive: tar.gz (= ezpkg), tar.bz2 or zip
+     * @param string|false $serialization 'xml' (package.xml and XML documents), 'json' (package.json and JSON
+     *        documents, with checksums, see expPackageJson) or false: as the package is stored
+     * @return string|false the archive path
+     */
+    function exportToArchive( $archivePath, $format = 'tar.gz', $serialization = false )
     {
         $format = strtolower( $format );
         $validFormats = array( 'tar.gz', 'tar.bz2', 'zip', 'ezpkg' );
         if ( !in_array( $format, $validFormats ) )
             $format = 'tar.gz';
+        if ( !in_array( $serialization, array( self::FORMAT_XML, self::FORMAT_JSON ), true ) )
+            $serialization = $this->Format;
 
         $temporaryExportPath = eZPackage::temporaryExportPath();
         $tempPath = $temporaryExportPath . '/' . $this->attribute( 'name' );
         $this->removeFiles( $tempPath );
 
-        // Create package temp dir and copy package's XML file there
+        // Create package temp dir and copy package's definition file there (in the format it is stored in)
         $this->storePackageFile( $tempPath, false );
 
         // Copy package's directories
@@ -1085,6 +1149,46 @@ class eZPackage
             if ( file_exists( $dir ) )
                 eZDir::copy( $dir, $destDir );
         }
+
+        // Another serialization than the stored one: the documents are converted into a second directory
+        $archiveSource = $tempPath;
+        $convertedPath = false;
+        $storedFormat = expPackageJson::directoryFormat( $tempPath );
+        if ( $storedFormat !== $serialization || $serialization === self::FORMAT_JSON )
+        {
+            $convertedPath = $temporaryExportPath . '/' . $this->attribute( 'name' ) . '-' . $serialization . '-' . bin2hex( random_bytes( 4 ) );
+            $report = expPackageJson::convertDirectory( $tempPath, $convertedPath, $serialization );
+            if ( !$report['ok'] )
+            {
+                eZDebug::writeError( 'Converting package ' . $this->attribute( 'name' ) . ' to ' . $serialization . ' failed: ' . implode( '; ', $report['errors'] ), __METHOD__ );
+                $this->removeFiles( $convertedPath );
+                $this->removeFiles( $tempPath );
+                return false;
+            }
+            $archiveSource = $convertedPath;
+        }
+
+        $result = self::archiveDirectory( $archiveSource, $archivePath, $format );
+        if ( $convertedPath )
+            $this->removeFiles( $convertedPath );
+        $this->removeFiles( $tempPath );
+        return $result;
+    }
+
+    /**
+     * Writes the files of a directory into an archive.
+     *
+     * @param string $tempPath the directory; its content is the top of the archive
+     * @param string $archivePath
+     * @param string $format tar.gz (= ezpkg), tar.bz2 or zip
+     * @return string|false the archive path
+     */
+    static function archiveDirectory( $tempPath, $archivePath, $format = 'tar.gz' )
+    {
+        $format = strtolower( $format );
+        $temporaryExportPath = eZPackage::temporaryExportPath();
+        if ( !is_dir( $temporaryExportPath ) )
+            eZDir::mkdir( $temporaryExportPath, false, true );
 
         // A file of its own for every export: ezcArchive::open() reads an existing file before truncate() empties
         // it, so a stale archive.tmp left by an export that ended early ("the checksum of the file ... is
@@ -1130,7 +1234,6 @@ class eZPackage
 
         unlink( $archiveTmpPath );
 
-        $this->removeFiles( $tempPath );
         return $archivePath;
     }
 
@@ -1199,8 +1302,10 @@ class eZPackage
             $archiveType = self::archiveTarType( $archiveName );
             $archive = ezcArchive::open( "compress.zlib://$archiveName", $archiveType, $archiveOptions );
 
+            // the definition in either format: package.xml (classic) or package.json (JSON format)
             $fileList = array();
             $fileList[] = eZPackage::definitionFilename();
+            $fileList[] = eZPackage::definitionFilenameJSON();
 
             // Search for the files we want to extract
             foreach( $archive as $entry )
@@ -1216,7 +1321,7 @@ class eZPackage
                 }
             }
 
-            $definitionFileName = eZDir::path( array( $archivePath, self::definitionFilename() ) );
+            $definitionFileName = self::definitionFilePath( $archivePath );
 
             $package = eZPackage::fetchFromFile( $definitionFileName );
 
@@ -1318,9 +1423,13 @@ class eZPackage
     /*!
      \return the file name for an exported archive of the current package
     */
-    function exportName()
+    function exportName( $serialization = false )
     {
-        return $this->attribute( 'name' ) . '-' . $this->attribute( 'version-number' ) . '-' . $this->attribute( 'release-number' ) . '.' . eZPackage::suffix();
+        if ( $serialization === false )
+            $serialization = $this->Format;
+        // the JSON format is an .ezpkg archive too (the content says which format it is); the name tells them apart
+        return $this->attribute( 'name' ) . '-' . $this->attribute( 'version-number' ) . '-' . $this->attribute( 'release-number' ) .
+               ( $serialization === self::FORMAT_JSON ? '.json' : '' ) . '.' . eZPackage::suffix();
     }
 
     /*!
@@ -1402,6 +1511,22 @@ class eZPackage
     */
     static function fetchDOMFromFile( $filename )
     {
+        // The JSON format (expPackageJson): a document named by its XML name is read from the JSON file of the
+        // same name when there is no XML file, and a file whose content is JSON is read as JSON. The handlers get
+        // the same DOM either way.
+        if ( !file_exists( $filename ) && preg_match( '/\.xml$/i', (string)$filename ) )
+        {
+            $jsonFilename = expPackageJson::jsonName( $filename );
+            if ( file_exists( $jsonFilename ) )
+                $filename = $jsonFilename;
+        }
+        if ( file_exists( $filename ) && ( preg_match( '/\.json$/i', (string)$filename ) || expPackageJson::isJSONFile( $filename ) ) )
+        {
+            $dom = expPackageJson::fetchDOMFromFile( $filename, $error );
+            if ( !$dom )
+                eZDebug::writeError( "The JSON package document $filename was not read: $error", __METHOD__ );
+            return $dom;
+        }
         if ( file_exists( $filename ) )
         {
             $dom = new DOMDocument( '1.0', 'utf-8' );
@@ -1441,6 +1566,7 @@ class eZPackage
         {
             return false;
         }
+        $package->Format = ( preg_match( '/\.json$/i', (string)$filename ) || expPackageJson::isJSONFile( $filename ) ) ? self::FORMAT_JSON : self::FORMAT_XML;
 
         return $package;
     }
@@ -1471,9 +1597,9 @@ class eZPackage
             $path = $packageRepository['path'];
 
             $path .= '/' . $packageName;
-            $filePath = $path . '/' . eZPackage::definitionFilename();
+            $filePath = eZPackage::definitionFilePath( $path );
 
-            if ( file_exists( $filePath ) )
+            if ( $filePath )
             {
                 $fileModification = filemtime( $filePath );
                 $package = false;
@@ -1487,6 +1613,8 @@ class eZPackage
                 if ( $package )
                 {
                     $package->setCurrentRepositoryInformation( $packageRepository );
+                    // the cache keeps the parameters only: the format is the definition file's
+                    $package->Format = basename( $filePath ) === eZPackage::definitionFilenameJSON() ? self::FORMAT_JSON : self::FORMAT_XML;
                 }
                 else
                 {
@@ -1628,6 +1756,31 @@ class eZPackage
     static function definitionFilename()
     {
         return 'package.xml';
+    }
+
+    /**
+     * @return string the name of the package definition file in the JSON format
+     */
+    static function definitionFilenameJSON()
+    {
+        return 'package.json';
+    }
+
+    /**
+     * The definition file of the package directory $directory: package.xml, else package.json.
+     *
+     * @param string $directory
+     * @return string|false
+     */
+    static function definitionFilePath( $directory )
+    {
+        foreach ( array( self::definitionFilename(), self::definitionFilenameJSON() ) as $name )
+        {
+            $path = $directory . '/' . $name;
+            if ( file_exists( $path ) )
+                return $path;
+        }
+        return false;
     }
 
     /*!
@@ -1839,8 +1992,8 @@ class eZPackage
                         $dirPath = $path . '/' . $file;
                         if ( !is_dir( $dirPath ) )
                             continue;
-                        $filePath = $dirPath . '/' . eZPackage::definitionFilename();
-                        if ( file_exists( $filePath ) )
+                        $filePath = eZPackage::definitionFilePath( $dirPath );
+                        if ( $filePath )
                         {
                             $fileModification = filemtime( $filePath );
                             $name = $file;
@@ -1851,6 +2004,8 @@ class eZPackage
                             if ( eZPackage::useCache() )
                             {
                                 $package = eZPackage::fetchFromCache( $dirPath, $fileModification, $cacheExpired );
+                                if ( $package )
+                                    $package->Format = basename( $filePath ) === eZPackage::definitionFilenameJSON() ? self::FORMAT_JSON : self::FORMAT_XML;
                             }
                             if ( !$package )
                             {
@@ -2108,8 +2263,17 @@ class eZPackage
         $installItems = $deduplicatedItems;
 
         $installResult = true;
+        $asDrafts = !empty( $installParameters['as_drafts'] );
         foreach ( $installItems as $item )
         {
+            // As drafts (doc/bc/6.0/package-json-format.md): only content objects are installed, as drafts; classes,
+            // extensions, settings, design files and scripts would change the site at once and are listed instead
+            if ( $asDrafts && $item['type'] !== 'ezcontentobject' )
+            {
+                $installParameters['skipped-items'][] = array( 'type' => $item['type'],
+                                                               'name' => isset( $item['filename'] ) && $item['filename'] ? $item['filename'] : ( isset( $item['name'] ) ? $item['name'] : '' ) );
+                continue;
+            }
             if ( !$this->installItem( $item, $installParameters ) )
             {
                 eZDebug::writeDebug( $item, 'item which failed installing' );
@@ -2121,7 +2285,8 @@ class eZPackage
                 }
             }
         }
-        if ( $installResult )
+        // drafts are not an installation: the package can be installed (or installed as drafts) again
+        if ( $installResult && !$asDrafts )
         {
             $this->setInstalled();
         }
@@ -2513,6 +2678,15 @@ class eZPackage
             $this->parseInstallTree( $installNode->getElementsByTagName( 'item' ), true );
         if ( $uninstallNode )
             $this->parseInstallTree( $uninstallNode->getElementsByTagName( 'item' ), false );
+
+        // Metadata: <metadata><entry key="...">value</entry></metadata>, a child of the root
+        $this->Parameters['metadata'] = array();
+        foreach ( ( new DOMXPath( $dom ) )->query( 'metadata/entry', $root ) as $entryNode )
+        {
+            $key = $entryNode->getAttribute( 'key' );
+            if ( $key !== '' )
+                $this->Parameters['metadata'][$key] = $entryNode->textContent;
+        }
 
         // Install data, as domStructure() writes it:
         // <install-data><data type="..."><element name="" value=""/><array name=""><element .../></array></data></install-data>
@@ -3039,6 +3213,20 @@ class eZPackage
                 }
             }
             $root->appendChild( $installDataNode );
+        }
+
+        // metadata (setMetadata()), only when there is any: a package without it is written as before
+        if ( !empty( $this->Parameters['metadata'] ) && is_array( $this->Parameters['metadata'] ) )
+        {
+            $metadataNode = $dom->createElement( 'metadata' );
+            foreach ( $this->Parameters['metadata'] as $key => $value )
+            {
+                $entryNode = $dom->createElement( 'entry' );
+                $entryNode->setAttribute( 'key', (string)$key );
+                $entryNode->appendChild( $dom->createTextNode( (string)$value ) );
+                $metadataNode->appendChild( $entryNode );
+            }
+            $root->appendChild( $metadataNode );
         }
 
         return $dom;

@@ -135,6 +135,11 @@ file** button (`ExportButton`) still posts to the package's page and does the sa
 gzip compressed tar (`<name>-<version>.ezpkg`) into your own export directory
 (`var/site/cache/packages/export<user id>/`, the cache directory of `site.ini [FileSettings] VarDir`), sent and removed again. The package itself is only read.
 
+**JSON** (a card) and **Download as JSON** (a package's page) send the same package in the JSON format
+(`package.json`, `<name>-<version>.json.ezpkg`); **Download** there is the classic format. The view parameter is
+`(format)/json` or `(format)/xml`. The package's page shows the format it is stored in. Both formats upload and
+install the same way; see [the JSON package format](../bc/6.0/package-json-format.md).
+
 The file is sent in pieces of 256 KiB, never read whole, after every output buffer of the page is closed. A
 `Range` header (`bytes=a-b`, `bytes=a-`, `bytes=-n`) gets `206 Partial Content`, a range beyond the end
 `416`. Under Exponential Velocity the engine collects a persistent worker's answer before it sends it, so a very
@@ -189,6 +194,12 @@ same archives.
 **Install package** and **Skip installation**. A package that is installed already says that installing again
 repeats every item. Each item is installed in turn; an item may ask how to handle a conflict (a class that exists,
 for instance) with its own step.
+
+The page also shows **what the install meets here**: every content object of the package looked up by its remote
+ID (new, existing, a conflict, or without its class). **Install as drafts** writes the content objects as drafts
+instead: nothing is published, an existing object gets a new draft (or is left alone), classes, settings and design
+files are not installed, and the result page links every draft for review. See
+[install as drafts](../bc/6.0/package-json-format.md#install-as-drafts).
 
 **Uninstall** opens `/package/uninstall/<name>`: what uninstalling removes from the site, content included, with
 **Uninstall package** and **Skip uninstallation**. Uninstalling cannot be undone.

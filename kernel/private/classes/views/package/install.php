@@ -84,6 +84,16 @@ class Install extends \Exponential\Runnable\ModuleView
         elseif ( $module->isCurrentAction( 'InstallPackage' ) )
         {
             $persistentData['doItemInstall'] = true;
+            // As drafts (doc/bc/6.0/package-json-format.md): content objects become drafts, nothing is published,
+            // the other items are not installed
+            if ( $module->hasActionParameter( 'AsDrafts' ) && $module->actionParameter( 'AsDrafts' ) )
+            {
+                $persistentData['as_drafts'] = true;
+                $persistentData['drafts_existing'] = $module->hasActionParameter( 'DraftsExisting' ) && $module->actionParameter( 'DraftsExisting' ) === 'skip' ? 'skip' : 'update';
+                $persistentData['drafts'] = array();
+                $persistentData['drafts-waiting'] = array();
+                $persistentData['skipped-items'] = array();
+            }
         }
         elseif ( $module->isCurrentAction( 'HandleError' ) )
         {
@@ -138,6 +148,8 @@ class Install extends \Exponential\Runnable\ModuleView
                 }
             }
             $tpl->setVariable( 'install_elements', $installElements );
+            // what the install would meet, by remote id (expPackageConflictReport)
+            $tpl->setVariable( 'conflict_report', \expPackageConflictReport::build( $package, 200 ) );
 
             $templateName = 'design:package/install.tpl';
         }
@@ -188,6 +200,13 @@ class Install extends \Exponential\Runnable\ModuleView
                 }
 
                 $installItem = $installItemArray[$currentItem];
+                if ( !empty( $persistentData['as_drafts'] ) && isset( $installItem['type'] ) && $installItem['type'] !== 'ezcontentobject' )
+                {
+                    $persistentData['skipped-items'][] = array( 'type' => $installItem['type'],
+                                                                'name' => !empty( $installItem['filename'] ) ? $installItem['filename'] : ( isset( $installItem['name'] ) ? $installItem['name'] : '' ) );
+                    $currentItem++;
+                    continue;
+                }
                 if ( !isset( $installItem['type'] ) )
                 {
                     $persistentData['error'] = array( 'error_code' => 'invalid_install_item',
@@ -327,6 +346,22 @@ class Install extends \Exponential\Runnable\ModuleView
                     }
                 }
             }
+        }
+
+        // Installed as drafts: not an installation of the package; the page lists the drafts to review
+        if ( $currentItem >= count( $installItemArray ) && !empty( $persistentData['as_drafts'] ) )
+        {
+            $http->removeSessionVariable( 'eZPackageInstallerData' );
+            $tpl->setVariable( 'package', $package );
+            $tpl->setVariable( 'install_elements', array() );
+            $tpl->setVariable( 'drafts_result', array( 'drafts' => isset( $persistentData['drafts'] ) ? $persistentData['drafts'] : array(),
+                                                       'waiting' => isset( $persistentData['drafts-waiting'] ) ? $persistentData['drafts-waiting'] : array(),
+                                                       'skipped' => isset( $persistentData['skipped-items'] ) ? $persistentData['skipped-items'] : array() ) );
+            $Result = array();
+            $Result['content'] = $tpl->fetch( 'design:package/install.tpl' );
+            $Result['path'] = array( array( 'url' => 'package/list', 'text' => \ezpI18n::tr( 'kernel/package', 'Packages' ) ),
+                                     array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/package', 'Installed as drafts' ) ) );
+            return $this->viewResult( $Result, null );
         }
 
         // Installation complete (all items are installed)

@@ -1017,6 +1017,10 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             $errorCode = false;
         }
 
+        // as drafts only content is written: templates, overrides and fetch aliases would change the site at once
+        if ( !empty( $installParameters['as_drafts'] ) )
+            return true;
+
         if ( !$this->installTemplates( $content->getElementsByTagName( 'template-list' )->item( 0 ),
                                        $package,
                                        $subdirectory,
@@ -1165,6 +1169,24 @@ class eZContentObjectPackageHandler extends eZPackageHandler
     {
         if ( !isset( $installParameters['suspended-nodes'] ) )
         {
+            return;
+        }
+        // Installed as drafts: a parent of the package is a draft too and has no node yet, and nothing may be
+        // published here. The drafts wait for it: listed in 'drafts-waiting' (installing the package again as
+        // drafts after the parent was published gives them their place).
+        if ( !empty( $installParameters['as_drafts'] ) )
+        {
+            foreach ( $installParameters['suspended-nodes'] as $parentNodeRemoteID => $entries )
+            {
+                foreach ( self::suspendedEntries( $entries ) as $suspendedNodeInfo )
+                {
+                    $installParameters['drafts-waiting'][] = array(
+                        'object_id' => isset( $suspendedNodeInfo['nodeinfo']['contentobject_id'] ) ? (int)$suspendedNodeInfo['nodeinfo']['contentobject_id'] : 0,
+                        'version' => isset( $suspendedNodeInfo['nodeinfo']['contentobject_version'] ) ? (int)$suspendedNodeInfo['nodeinfo']['contentobject_version'] : 0,
+                        'parent_remote_id' => (string)$parentNodeRemoteID );
+                }
+            }
+            $installParameters['suspended-nodes'] = array();
             return;
         }
         // Nodes already in the tree (own remote id, which 'parent_remote_id' holds):

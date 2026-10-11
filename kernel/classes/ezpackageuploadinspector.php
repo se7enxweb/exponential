@@ -228,7 +228,7 @@ class eZPackageUploadInspector
     {
         $limits += self::limits();
         $result = array( 'ok' => false, 'code' => null, 'path' => '', 'entries' => 0, 'bytes' => 0,
-                         'name' => '', 'vendor_dir' => '', 'summary' => '', 'version' => '' );
+                         'name' => '', 'vendor_dir' => '', 'summary' => '', 'version' => '', 'format' => eZPackage::FORMAT_XML );
         if ( !is_string( $archivePath ) || !is_file( $archivePath ) )
         {
             $result['code'] = 'no_file';
@@ -276,14 +276,29 @@ class eZPackageUploadInspector
             {
                 $result['entries']++;
                 $result['bytes'] += max( 0, (int)$entry->getSize() );
-                if ( $definitionXML === null && $entry->getPath() === eZPackage::definitionFilename() && $entry->getType() === ezcArchiveEntry::IS_FILE )
+                // package.xml, or package.json (the JSON format, read as the XML it mirrors)
+                if ( $definitionXML === null && $entry->getType() === ezcArchiveEntry::IS_FILE &&
+                     in_array( $entry->getPath(), array( eZPackage::definitionFilename(), eZPackage::definitionFilenameJSON() ), true ) )
                 {
                     if ( (int)$entry->getSize() > self::MAX_DEFINITION_SIZE )
                     {
                         $result['code'] = 'definition_malformed';
                         return $result;
                     }
-                    $definitionXML = self::currentEntryBytes( $archive );
+                    $definitionXML = self::currentEntryBytes( $archive, $entry->getPath() );
+                    if ( $entry->getPath() === eZPackage::definitionFilenameJSON() )
+                    {
+                        $result['format'] = eZPackage::FORMAT_JSON;
+                        $data = expPackageJson::decode( $definitionXML );
+                        try
+                        {
+                            $definitionXML = $data ? expPackageJson::toXMLString( $data ) : '';
+                        }
+                        catch ( InvalidArgumentException $e )
+                        {
+                            $definitionXML = '';
+                        }
+                    }
                 }
             }
         }
@@ -312,7 +327,7 @@ class eZPackageUploadInspector
     /**
      * The bytes of the archive's current entry, through a private temporary directory that is removed again.
      */
-    private static function currentEntryBytes( $archive )
+    private static function currentEntryBytes( $archive, $name = false )
     {
         $dir = eZDir::path( array( eZSys::cacheDirectory(), 'packages', 'inspect-' . bin2hex( random_bytes( 8 ) ) ) );
         eZDir::mkdir( $dir, false, true );
@@ -321,7 +336,7 @@ class eZPackageUploadInspector
         {
             if ( $archive->extractCurrent( $dir ) )
             {
-                $file = $dir . '/' . eZPackage::definitionFilename();
+                $file = $dir . '/' . ( $name ? $name : eZPackage::definitionFilename() );
                 $bytes = is_file( $file ) ? (string)file_get_contents( $file ) : '';
             }
         }
@@ -354,7 +369,7 @@ class eZPackageUploadInspector
             case 'too_large_unpacked': return ezpI18n::tr( 'kernel/package', 'The archive unpacks to more than %size.', false, array( '%size' => self::bytesText( $limits['max_unpacked_size'] ) ) );
             case 'unsafe_path': return ezpI18n::tr( 'kernel/package', 'The archive was refused: the entry "%path" points outside the package.', false, $path );
             case 'unsafe_type': return ezpI18n::tr( 'kernel/package', 'The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.', false, $path );
-            case 'no_definition': return ezpI18n::tr( 'kernel/package', 'The archive has no package.xml at its top, so it is not a package.' );
+            case 'no_definition': return ezpI18n::tr( 'kernel/package', 'The archive has no package.xml or package.json at its top, so it is not a package.' );
             case 'definition_malformed': return ezpI18n::tr( 'kernel/package', 'The package.xml of the archive is not a well formed package definition.' );
             case 'definition_no_name': return ezpI18n::tr( 'kernel/package', 'The package.xml of the archive names no package.' );
             case 'definition_incomplete': return ezpI18n::tr( 'kernel/package', 'The package.xml of the archive lacks its version or packaging information.' );

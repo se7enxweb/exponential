@@ -13601,6 +13601,130 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>Only the first megabyte is shown here; Download gives the whole file.</source>
         <translation>Hier wird nur das erste Megabyte gezeigt; Herunterladen liefert die ganze Datei.</translation>
     </message>
+    <message>
+        <source>Installed as drafts</source>
+        <translation>Als Entwürfe installiert</translation>
+    </message>
+    <message>
+        <source>%count drafts were written. Nothing was published: review each draft and publish it, or remove it.</source>
+        <translation>%count Entwürfe wurden geschrieben. Nichts wurde veröffentlicht: Prüfen Sie jeden Entwurf und veröffentlichen oder entfernen Sie ihn.</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Entwurf</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Was</translation>
+    </message>
+    <message>
+        <source>New object, draft</source>
+        <translation>Neues Objekt, Entwurf</translation>
+    </message>
+    <message>
+        <source>New draft of an existing object</source>
+        <translation>Neuer Entwurf eines vorhandenen Objekts</translation>
+    </message>
+    <message>
+        <source>Existing object left alone</source>
+        <translation>Vorhandenes Objekt unverändert gelassen</translation>
+    </message>
+    <message>
+        <source>%count drafts wait for a parent that is a draft of this package too. Publish the parent, then install the package as drafts again to give them their place.</source>
+        <translation>%count Entwürfe warten auf ein übergeordnetes Objekt, das ebenfalls ein Entwurf dieses Pakets ist. Veröffentlichen Sie es und installieren Sie das Paket dann erneut als Entwürfe, damit sie ihren Platz bekommen.</translation>
+    </message>
+    <message>
+        <source>As drafts only content objects are written. These items change the site at once and were left out; install the package normally to install them.</source>
+        <translation>Als Entwürfe werden nur Inhaltsobjekte geschrieben. Diese Elemente verändern die Site sofort und wurden ausgelassen; installieren Sie das Paket normal, um sie zu installieren.</translation>
+    </message>
+    <message>
+        <source>What the install meets here</source>
+        <translation>Was die Installation hier vorfindet</translation>
+    </message>
+    <message>
+        <source>%total content objects, by remote ID: %create new, %update existing (updated, or a new draft), %conflict conflicts, %error without their class.</source>
+        <translation>%total Inhaltsobjekte, nach Remote-ID: %create neu, %update vorhanden (aktualisiert oder ein neuer Entwurf), %conflict Konflikte, %error ohne ihre Klasse.</translation>
+    </message>
+    <message>
+        <source>Here</source>
+        <translation>Hier</translation>
+    </message>
+    <message>
+        <source>Exists</source>
+        <translation>Vorhanden</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>the remote ID is an object of the class %class</source>
+        <translation>die Remote-ID gehört zu einem Objekt der Klasse %class</translation>
+    </message>
+    <message>
+        <source>a location's node remote ID belongs to another object</source>
+        <translation>die Knoten-Remote-ID eines Ortes gehört zu einem anderen Objekt</translation>
+    </message>
+    <message>
+        <source>the class is neither installed nor in the package</source>
+        <translation>die Klasse ist weder installiert noch im Paket</translation>
+    </message>
+    <message>
+        <source>Install as drafts</source>
+        <translation>Als Entwürfe installieren</translation>
+    </message>
+    <message>
+        <source>Install the content objects as drafts</source>
+        <translation>Die Inhaltsobjekte als Entwürfe installieren</translation>
+    </message>
+    <message>
+        <source>Nothing is published and no published object is changed: each draft is reviewed and published by a person. Classes, settings, design files and extensions are not installed.</source>
+        <translation>Nichts wird veröffentlicht und kein veröffentlichtes Objekt geändert: Jeder Entwurf wird von einer Person geprüft und veröffentlicht. Klassen, Einstellungen, Design-Dateien und Erweiterungen werden nicht installiert.</translation>
+    </message>
+    <message>
+        <source>An object that exists already</source>
+        <translation>Ein bereits vorhandenes Objekt</translation>
+    </message>
+    <message>
+        <source>gets a new draft</source>
+        <translation>erhält einen neuen Entwurf</translation>
+    </message>
+    <message>
+        <source>is left alone</source>
+        <translation>bleibt unverändert</translation>
+    </message>
+    <message>
+        <source>My drafts</source>
+        <translation>Meine Entwürfe</translation>
+    </message>
+    <message>
+        <source>Download the package in the JSON format (package.json), as a .json.ezpkg file.</source>
+        <translation>Das Paket im JSON-Format (package.json) als .json.ezpkg-Datei herunterladen.</translation>
+    </message>
+    <message>
+        <source>Download as JSON</source>
+        <translation>Als JSON herunterladen</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>JSON (package.json)</source>
+        <translation>JSON (package.json)</translation>
+    </message>
+    <message>
+        <source>Classic XML (package.xml)</source>
+        <translation>Klassisches XML (package.xml)</translation>
+    </message>
+    <message>
+        <source>Metadata</source>
+        <translation>Metadaten</translation>
+    </message>
+    <message>
+        <source>an object of another class has this remote ID; left alone</source>
+        <translation>ein Objekt einer anderen Klasse hat diese Remote-ID; unverändert gelassen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -14123,6 +14247,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>You are not allowed to create packages (package/create).</source>
         <translation>Sie dürfen keine Pakete erstellen (package/create).</translation>
+    </message>
+    <message>
+        <source>Download the package in the JSON format (package.json), as a .json.ezpkg file.</source>
+        <translation>Das Paket im JSON-Format (package.json) als .json.ezpkg-Datei herunterladen.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
     </message>
 </context>
 <context>
@@ -60673,6 +60805,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>No file was uploaded, or it was larger than the server accepts (%size).</source>
         <translation>Es wurde keine Datei hochgeladen, oder sie war größer, als der Server annimmt (%size).</translation>
+    </message>
+    <message>
+        <source>Installed as drafts</source>
+        <translation>Als Entwürfe installiert</translation>
+    </message>
+    <message>
+        <source>The archive has no package.xml or package.json at its top, so it is not a package.</source>
+        <translation>Das Archiv hat oben keine package.xml oder package.json und ist daher kein Paket.</translation>
     </message>
 </context>
 <context>

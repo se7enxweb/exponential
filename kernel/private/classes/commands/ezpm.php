@@ -72,25 +72,33 @@ function helpExport()
 {
     $cli = eZCLI::instance();
     $cli->output( "export: Export a built package to a .ezpkg archive.\n" .
-                  "usage: export PACKAGE [-d DIRECTORY]\n" .
+                  "usage: export PACKAGE [-d DIRECTORY] [--format=xml|json]\n" .
                   "\n" .
                   "Options:\n" .
                   "  -d DIRECTORY   export the .ezpkg archive to DIRECTORY\n" .
-                  "  (no -d)        export the .ezpkg archive to the current directory\n"
+                  "  (no -d)        export the .ezpkg archive to the current directory\n" .
+                  "  --format=xml   the classic format: package.xml and XML documents (default for a classic package)\n" .
+                  "  --format=json  the JSON format: package.json and JSON documents with checksums, as\n" .
+                  "                 PACKAGE-VERSION-RELEASE.json.ezpkg (doc/bc/6.0/package-json-format.md)\n"
                   );
 }
 
 function helpInstall()
 {
     $cli = eZCLI::instance();
-    $cli->output( "install: Install an Exponential package.\n" .
-                  "usage: install PACKAGE [-d NODE_ID | --destination-node-id NODE_ID]\n" .
+    $cli->output( "install: Install an Exponential package (classic or JSON format).\n" .
+                  "usage: install PACKAGE [-d NODE_ID | --destination-node-id NODE_ID] [--as-drafts [--drafts-existing=update|skip]]\n" .
                   "\n" .
                   "PACKAGE is the name of the of package\n" .
                   "\n" .
                   "Options:\n" .
                   "  -d NODE_ID, --destination-node-id NODE_ID  install content objects under the given parent node ID\n" .
-                  "                                  (default is the root node, 2)\n"
+                  "                                  (default is the root node, 2)\n" .
+                  "  --as-drafts                     install the content objects as drafts: nothing is published, no\n" .
+                  "                                  published object is changed; other items (classes, settings,\n" .
+                  "                                  design, extensions) are not installed and are listed\n" .
+                  "  --drafts-existing=update|skip   as drafts: an object whose remote id exists gets a new draft\n" .
+                  "                                  (update, the default) or is left alone (skip)\n"
                   );
 }
 
@@ -100,7 +108,49 @@ function helpImport()
     $cli->output( "import: Import an Exponential package.\n" .
                   "usage: import PACKAGE_FILE\n" .
                   "\n" .
-                  "PACKAGE_FILE is the path to the .ezpkg package file\n"
+                  "PACKAGE_FILE is the path to the .ezpkg package file, in the classic or the JSON format\n" .
+                  "(the format is read from the archive's content)\n"
+                  );
+}
+
+function helpConvert()
+{
+    $cli = eZCLI::instance();
+    $cli->output( "convert: Convert a package between the classic XML and the JSON format.\n" .
+                  "usage: convert SOURCE TARGET [--to=json|xml]\n" .
+                  "\n" .
+                  "SOURCE  an .ezpkg archive or a package directory\n" .
+                  "TARGET  an archive (ending in .ezpkg, .tar.gz or .tgz) or a directory that does not exist yet\n" .
+                  "--to    the target format; default: the other format than the source's\n" .
+                  "\n" .
+                  "Every XML document of the package is converted (package.xml, the files of its items, object\n" .
+                  "files), every other file is copied as it is. A JSON package carries the SHA-256 of every file.\n"
+                  );
+}
+
+function helpValidate()
+{
+    $cli = eZCLI::instance();
+    $cli->output( "validate: Check a package in either format without importing it.\n" .
+                  "usage: validate SOURCE\n" .
+                  "\n" .
+                  "SOURCE  an .ezpkg archive, a package directory or the name of a package in the repository\n" .
+                  "\n" .
+                  "JSON documents against the JSON Schema share/package/schema/package-v1.json, every document as\n" .
+                  "XML, the definition as the kernel reads it, the documents the items name, the checksums.\n"
+                  );
+}
+
+function helpCheck()
+{
+    $cli = eZCLI::instance();
+    $cli->output( "check: What installing a package would meet here, by remote id (nothing is written).\n" .
+                  "usage: check PACKAGE [--all]\n" .
+                  "\n" .
+                  "Per content object: create (new remote id), update (exists), conflict (exists with another\n" .
+                  "class, or its node remote id belongs to another object), error (class missing); the parent of\n" .
+                  "every location (installed, in the package, missing); per class whether it exists.\n" .
+                  "--all lists every object, not only those that are not plain creates.\n"
                   );
 }
 
@@ -207,6 +257,9 @@ function helpHelp()
                   "   install\n" .
                   "   import\n" .
                   "   export\n" .
+                  "   convert\n" .
+                  "   validate\n" .
+                  "   check\n" .
                   "   add\n" .
                   "   set\n" .
                   "   delete (del, remove, rm)\n" .
@@ -242,7 +295,14 @@ function resetCommandItem()
                           'installtype' => false,
                           'version' => false,
                           'file' => false,
-                          'destination-node-id' => false );
+                          'destination-node-id' => false,
+                          // the JSON package format (doc/bc/6.0/package-json-format.md)
+                          'format' => false,
+                          'target' => false,
+                          'to' => false,
+                          'as-drafts' => false,
+                          'drafts-existing' => 'update',
+                          'all' => false );
     return $commandItem;
 }
 }
@@ -608,6 +668,7 @@ class Ezpm extends \Exponential\Runnable\Command
                     if ( !in_array( $commandItem['command'],
                                    array( 'help',
                                           'create', 'import', 'install', 'export',
+                                          'convert', 'validate', 'check',
                                           'add', 'set', 'delete',
                                           'list', 'info' ) ) )
                     {
@@ -644,6 +705,12 @@ class Ezpm extends \Exponential\Runnable\Command
                             helpList();
                         else if ( $helpTopic == 'info' )
                             helpInfo();
+                        else if ( $helpTopic == 'convert' )
+                            helpConvert();
+                        else if ( $helpTopic == 'validate' )
+                            helpValidate();
+                        else if ( $helpTopic == 'check' )
+                            helpCheck();
                         else
                             helpHelp();
                         exit();
@@ -704,18 +771,40 @@ class Ezpm extends \Exponential\Runnable\Command
                     }
                     else if ( $commandItem['command'] == 'install' )
                     {
-                        if ( $commandItem['name'] === false )
+                        if ( $arg === '--as-drafts' )
+                            $commandItem['as-drafts'] = true;
+                        else if ( preg_match( '#^--drafts-existing=(update|skip)$#', $arg, $matches ) )
+                            $commandItem['drafts-existing'] = $matches[1];
+                        else if ( $commandItem['name'] === false )
                             $commandItem['name'] = $arg;
                     }
                     else if ( $commandItem['command'] == 'export' )
                     {
-                        if ( $commandItem['name'] === false )
+                        if ( preg_match( '#^--format=(xml|json)$#', $arg, $matches ) )
+                            $commandItem['format'] = $matches[1];
+                        else if ( $commandItem['name'] === false )
                             $commandItem['name'] = $arg;
                         else if ( $arg == '-d' )
                         {
                             ++$i;
                             $commandItem['export-directory'] = $argv[$i];
                         }
+                    }
+                    else if ( $commandItem['command'] == 'convert' )
+                    {
+                        if ( preg_match( '#^--to=(xml|json)$#', $arg, $matches ) )
+                            $commandItem['to'] = $matches[1];
+                        else if ( $commandItem['name'] === false )
+                            $commandItem['name'] = $arg;
+                        else if ( $commandItem['target'] === false )
+                            $commandItem['target'] = $arg;
+                    }
+                    else if ( $commandItem['command'] == 'validate' || $commandItem['command'] == 'check' )
+                    {
+                        if ( $arg === '--all' )
+                            $commandItem['all'] = true;
+                        else if ( $commandItem['name'] === false )
+                            $commandItem['name'] = $arg;
                     }
                     else if ( $commandItem['command'] == 'delete' )
                     {
@@ -794,6 +883,30 @@ class Ezpm extends \Exponential\Runnable\Command
                 if ( !$commandItem['name'] )
                 {
                     helpInstall();
+                    exit( 1 );
+                }
+            }
+            else if ( $commandItem['command'] == 'convert' )
+            {
+                if ( !$commandItem['name'] || !$commandItem['target'] )
+                {
+                    helpConvert();
+                    exit( 1 );
+                }
+            }
+            else if ( $commandItem['command'] == 'validate' )
+            {
+                if ( !$commandItem['name'] )
+                {
+                    helpValidate();
+                    exit( 1 );
+                }
+            }
+            else if ( $commandItem['command'] == 'check' )
+            {
+                if ( !$commandItem['name'] )
+                {
+                    helpCheck();
                     exit( 1 );
                 }
             }
@@ -1205,8 +1318,25 @@ class Ezpm extends \Exponential\Runnable\Command
                                                 'user_id' => $userID,
                                                 'non-interactive' => true,
                                                 'language_map' => $package->defaultLanguageMap() );
+                    if ( $commandItem['as-drafts'] )
+                    {
+                        $installParameters['as_drafts'] = true;
+                        $installParameters['drafts_existing'] = $commandItem['drafts-existing'];
+                    }
                     $result = $package->install( $installParameters );
-                    if ( $result )
+                    if ( $result && $commandItem['as-drafts'] )
+                    {
+                        $cli->output( "Package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . " installed as drafts (nothing was published)" );
+                        foreach ( isset( $installParameters['drafts'] ) ? $installParameters['drafts'] : array() as $draft )
+                            $cli->output( sprintf( "  %-18s %-40s object %s version %s  %s", $draft['action'], $draft['remote_id'], $draft['object_id'],
+                                                   $draft['version'] === null ? '-' : $draft['version'], $draft['name'] ) );
+                        foreach ( isset( $installParameters['drafts-waiting'] ) ? $installParameters['drafts-waiting'] : array() as $waiting )
+                            $cli->output( "  waits for parent   object " . $waiting['object_id'] . " version " . $waiting['version'] .
+                                          ": parent node remote id " . $waiting['parent_remote_id'] . " is not published yet" );
+                        foreach ( isset( $installParameters['skipped-items'] ) ? $installParameters['skipped-items'] : array() as $skipped )
+                            $cli->output( "  not installed      " . $skipped['type'] . " " . $skipped['name'] . " (as drafts only content objects are written)" );
+                    }
+                    else if ( $result )
                     {
                         $cli->output( "Package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . " sucessfully installed" );
                     }
@@ -1262,7 +1392,8 @@ class Ezpm extends \Exponential\Runnable\Command
                         }
                         else
                         {
-                            $exportPath = $package->exportToArchive( $exportDirectory . \eZSys::fileSeparator() . $package->exportName() );
+                            $exportPath = $package->exportToArchive( $exportDirectory . \eZSys::fileSeparator() . $package->exportName( $commandItem['format'] ),
+                                                                     'tar.gz', $commandItem['format'] );
                             if ( $exportPath )
                             {
                                 $cli->output( "Package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . " exported to directory " . $cli->stylize( 'dir', $exportDirectory ) );
@@ -1277,7 +1408,7 @@ class Ezpm extends \Exponential\Runnable\Command
                     }
                     else
                     {
-                        $exportPath = $package->exportToArchive( $package->exportName() );
+                        $exportPath = $package->exportToArchive( $package->exportName( $commandItem['format'] ), 'tar.gz', $commandItem['format'] );
                         if ( $exportPath )
                         {
                             $cli->output( "Package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . " exported to file " . $cli->stylize( 'file', $exportPath ) );
@@ -1295,6 +1426,98 @@ class Ezpm extends \Exponential\Runnable\Command
                     $cli->error( "Could not locate package " . $cli->stylize( 'blue', $commandItem['name'] ) );
                     $script->setExitCode( 1 );
                     \expScriptStatus::instance()->fail();
+                }
+            }
+            else if ( $command == 'convert' )
+            {
+                $report = \expPackageJson::convert( $commandItem['name'], $commandItem['target'], $commandItem['to'] );
+                if ( $report['ok'] )
+                {
+                    $cli->output( "Converted " . $cli->stylize( 'file', $commandItem['name'] ) . " (" . $report['from'] . ") to " .
+                                  $cli->stylize( 'file', $report['target'] ) . " (" . $report['to'] . "): " . $report['documents'] . " documents, " .
+                                  $report['files'] . " other files" );
+                }
+                else
+                {
+                    $cli->error( "Could not convert " . $commandItem['name'] . ": " . implode( '; ', array_slice( $report['errors'], 0, 10 ) ) );
+                    $script->setExitCode( 1 );
+                    \expScriptStatus::instance()->fail();
+                }
+            }
+            else if ( $command == 'validate' )
+            {
+                $source = $commandItem['name'];
+                $work = false;
+                $dir = false;
+                if ( is_dir( $source ) )
+                    $dir = rtrim( $source, '/' );
+                else if ( is_file( $source ) )
+                {
+                    $work = \expPackageJson::workDirectory( 'validate' );
+                    if ( \expPackageJson::extractArchive( $source, $work . '/in', $error ) )
+                        $dir = $work . '/in';
+                    else
+                        $cli->error( $error );
+                }
+                else if ( $package = \eZPackage::fetch( $source ) )
+                    $dir = $package->path();
+                else
+                    $cli->error( "No archive, directory or package named " . $source );
+                $report = $dir ? \expPackageJson::validateDirectory( $dir ) : array( 'valid' => false, 'errors' => array(), 'warnings' => array() );
+                if ( $work )
+                    \eZDir::recursiveDelete( $work );
+                foreach ( $report['errors'] as $line )
+                    $cli->output( "  error    " . $line );
+                foreach ( $report['warnings'] as $line )
+                    $cli->output( "  warning  " . $line );
+                if ( $report['valid'] )
+                    $cli->output( "PASS " . $report['name'] . " (" . $report['format'] . "): " . $report['documents'] . " documents, " . $report['files'] . " files" );
+                else
+                {
+                    $cli->output( "FAIL " . $source . ": " . count( $report['errors'] ) . " error(s)" );
+                    $script->setExitCode( 1 );
+                    \expScriptStatus::instance()->fail();
+                }
+            }
+            else if ( $command == 'check' )
+            {
+                $package = \eZPackage::fetch( $commandItem['name'] );
+                if ( !$package )
+                {
+                    $cli->error( "Could not open package " . $cli->stylize( 'blue', $commandItem['name'] ) );
+                    $script->setExitCode( 1 );
+                    \expScriptStatus::instance()->fail();
+                }
+                else
+                {
+                    $report = \expPackageConflictReport::build( $package );
+                    foreach ( $report['classes'] as $class )
+                        $cli->output( sprintf( "  class  %-30s %s", $class['identifier'], $class['exists'] ? 'exists (id ' . $class['class_id'] . ')' : 'new' ) );
+                    foreach ( $report['objects'] as $row )
+                    {
+                        if ( !$commandItem['all'] && $row['action'] === 'create' )
+                        {
+                            $plainParents = true;
+                            foreach ( $row['locations'] as $location )
+                                if ( $location['parent'] === 'missing' )
+                                    $plainParents = false;
+                            if ( $plainParents )
+                                continue;
+                        }
+                        $where = array();
+                        foreach ( $row['locations'] as $location )
+                            $where[] = 'parent ' . ( $location['parent_remote_id'] !== '' ? $location['parent_remote_id'] : '(top)' ) . ': ' . $location['parent'] .
+                                       ( $location['node_of_other_object'] ? ', node remote id ' . $location['remote_id'] . ' belongs to another object' : '' );
+                        $cli->output( sprintf( "  %-8s %-40s %-20s %s%s", $row['action'], $row['remote_id'], $row['class_identifier'],
+                                               $row['exists'] ? 'object ' . $row['object_id'] . ' (' . $row['existing_class'] . ') ' : '',
+                                               implode( '; ', $where ) ) );
+                    }
+                    foreach ( $report['other_items'] as $item )
+                        $cli->output( "  item     " . $item['type'] . ' ' . $item['name'] );
+                    $counts = array();
+                    foreach ( $report['counts'] as $action => $n )
+                        $counts[] = "$n $action";
+                    $cli->output( $report['object_total'] . " content objects: " . implode( ', ', $counts ) );
                 }
             }
             else if ( $command == 'create' )

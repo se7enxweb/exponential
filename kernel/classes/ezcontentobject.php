@@ -6745,6 +6745,22 @@ class eZContentObject extends eZPersistentObject
         // Minimum install element is an object now.
 
         $contentObject = eZContentObject::fetchByRemoteID( $remoteID );
+        // Install as drafts ($options['as_drafts'], doc/bc/6.0/package-json-format.md): nothing is published and no
+        // published object, node or name is changed. A new object becomes an object with one draft (the active
+        // version of the package), an existing one gets a new draft version ($options['drafts_existing'] 'skip'
+        // leaves it alone). Every draft is listed in $options['drafts'].
+        $asDrafts = !empty( $options['as_drafts'] );
+        $existedBefore = (bool)$contentObject;
+        // an existing object of another class is a conflict: as drafts it is left alone (the classic install's
+        // choices for it, replace or new, change published content)
+        $classConflict = $asDrafts && $contentObject && (int)$contentObject->attribute( 'contentclass_id' ) !== (int)$contentClass->attribute( 'id' );
+        if ( $asDrafts && $contentObject && ( $classConflict || ( isset( $options['drafts_existing'] ) && $options['drafts_existing'] === 'skip' ) ) )
+        {
+            $options['drafts'][] = array( 'remote_id' => $remoteID, 'object_id' => (int)$contentObject->attribute( 'id' ),
+                                          'version' => null, 'name' => $name, 'action' => $classConflict ? 'conflict' : 'skipped' );
+            $retValue = true;
+            return $retValue;
+        }
         // Figure out initial language
         if ( !$initialLanguage ||
              !in_array( $initialLanguage, $importedLanguages ) )
@@ -6769,7 +6785,8 @@ class eZContentObject extends eZPersistentObject
             $firstVersion = false;
             $description = "Object '$name' already exists.";
 
-            $choosenAction = eZPackageHandler::errorChoosenAction( self::PACKAGE_ERROR_EXISTS,
+            $choosenAction = $asDrafts ? self::PACKAGE_UPDATE :
+                             eZPackageHandler::errorChoosenAction( self::PACKAGE_ERROR_EXISTS,
                                                                    $options, $description, $handlerType, false );
 
             switch( $choosenAction )
@@ -6822,21 +6839,42 @@ class eZContentObject extends eZPersistentObject
         $db = eZDB::instance();
         $db->begin();
 
-        if ( $alwaysAvailable )
+        // as drafts, an object that was there already keeps its section, mask and class until the draft is published
+        $changeObject = !( $asDrafts && $existedBefore );
+        if ( $alwaysAvailable && $changeObject )
         {
             // Make sure always available bit is set.
             $contentObject->setAttribute( 'language_mask', (int)$contentObject->attribute( 'language_mask' ) | 1 );
         }
 
-        $contentObject->setAttribute( 'section_id', $sectionID );
-        $contentObject->store();
+        if ( $changeObject )
+        {
+            $contentObject->setAttribute( 'section_id', $sectionID );
+            $contentObject->store();
+        }
         $activeVersion = false;
         $lastVersion = false;
         $versionListActiveVersion = $versionListNode->getAttribute( 'active_version' );
 
-        $contentObject->setAttribute( 'remote_id', $remoteID );
-        $contentObject->setAttribute( 'contentclass_id', $contentClass->attribute( 'id' ) );
-        $contentObject->store();
+        if ( $changeObject )
+        {
+            $contentObject->setAttribute( 'remote_id', $remoteID );
+            $contentObject->setAttribute( 'contentclass_id', $contentClass->attribute( 'id' ) );
+            $contentObject->store();
+        }
+
+        // as drafts: only the package's active version (else its last one) becomes a draft
+        $versionDOMNodes = array();
+        foreach ( $versionListNode->getElementsByTagName( 'version' ) as $versionDOMNode )
+            $versionDOMNodes[] = $versionDOMNode;
+        if ( $asDrafts && $versionDOMNodes )
+        {
+            $chosen = end( $versionDOMNodes );
+            foreach ( $versionDOMNodes as $versionDOMNode )
+                if ( $versionDOMNode->getAttributeNS( 'http://ez.no/ezobject', 'version' ) == $versionListActiveVersion )
+                    $chosen = $versionDOMNode;
+            $versionDOMNodes = array( $chosen );
+        }
 
         $sectionObject = eZSection::fetch( $sectionID );
         if ( $sectionObject instanceof eZSection )
@@ -6850,7 +6888,7 @@ class eZContentObject extends eZPersistentObject
 
         $options['language_array'] = $importedLanguages;
         $versionList = array();
-        foreach( $versionListNode->getElementsByTagName( 'version' ) as $versionDOMNode )
+        foreach( $versionDOMNodes as $versionDOMNode )
         {
             unset( $nodeList );
             $nodeList = array();
@@ -6887,6 +6925,15 @@ class eZContentObject extends eZPersistentObject
             }
             eZNodeAssignment::setNewMainAssignment( $contentObject->attribute( 'id' ), $lastVersion );
 
+            if ( $asDrafts )
+            {
+                $options['drafts'][] = array( 'remote_id' => $remoteID, 'object_id' => (int)$contentObject->attribute( 'id' ),
+                                              'version' => (int)$lastVersion, 'name' => $name,
+                                              'action' => $existedBefore ? 'draft_of_existing' : 'new_draft' );
+                $contentObject = eZContentObject::fetch( $contentObject->attribute( 'id' ) );
+                continue;
+            }
+
             eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $contentObject->attribute( 'id' ),
                                                                       'version' => $lastVersion ) );
 
@@ -6918,6 +6965,27 @@ class eZContentObject extends eZPersistentObject
         if ( !$activeVersion )
         {
             $activeVersion = $lastVersion;
+        }
+
+        if ( $asDrafts )
+        {
+            // the draft's translations without a name get the object's name; a published object is not touched
+            if ( !$existedBefore )
+            {
+                $contentObject->setAttribute( 'name', $name );
+                $contentObject->store();
+            }
+            $draft = $lastVersion !== false ? $contentObject->version( $lastVersion ) : null;
+            if ( $draft )
+            {
+                foreach ( (array)$draft->translations( false ) as $translation )
+                {
+                    if ( !$contentObject->name( $lastVersion, $translation ) )
+                        $contentObject->setName( $name, $lastVersion, $translation );
+                }
+            }
+            $db->commit();
+            return $contentObject;
         }
 
         /*

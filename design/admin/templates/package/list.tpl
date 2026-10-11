@@ -201,7 +201,8 @@
         <div class="exp-actions">
             <a class="exp-btn exp-btn-small" href={$view_uri|ezurl} aria-describedby="{$card_id|wash}-title">{'View'|i18n( 'design/admin/package/list' )}</a>
             {if $can_export}
-            <a class="exp-btn exp-btn-small" href={concat( '/package/export/', $card.name, '/', $card.repository_id )|ezurl} aria-describedby="{$card_id|wash}-title" title="{'Download the package as an .ezpkg file.'|i18n( 'design/admin/package/list' )}">{'Download'|i18n( 'design/admin/package/list' )}</a>
+            <a class="exp-btn exp-btn-small" href={concat( '/package/export/', $card.name, '/', $card.repository_id, '/(format)/xml' )|ezurl} aria-describedby="{$card_id|wash}-title" title="{'Download the package as an .ezpkg file.'|i18n( 'design/admin/package/list' )}">{'Download'|i18n( 'design/admin/package/list' )}</a>
+            <a class="exp-btn exp-btn-small" href={concat( '/package/export/', $card.name, '/', $card.repository_id, '/(format)/json' )|ezurl} aria-describedby="{$card_id|wash}-title" title="{'Download the package in the JSON format (package.json), as a .json.ezpkg file.'|i18n( 'design/admin/package/list' )}">{'JSON'|i18n( 'design/admin/package/list' )}</a>
             {/if}
         </div>
     </div>

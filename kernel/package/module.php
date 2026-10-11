@@ -53,7 +53,9 @@ $ViewList['export'] = array(
     'script' => 'export.php',
     'ui_context' => 'edit',
     'default_navigation_part' => 'ezsetupnavigationpart',
-    'params' => array( 'PackageName', 'RepositoryID' ) );
+    'params' => array( 'PackageName', 'RepositoryID' ),
+    // (format)/json: the JSON format (package.json), (format)/xml: the classic one; default as the package is stored
+    'unordered_params' => array( 'format' => 'Format' ) );
 
 $ViewList['view'] = array(
     'functions' => array( 'read' ),
@@ -101,7 +103,10 @@ $ViewList['install'] = array(
                                     'InstallPackageButton' => 'InstallPackage',
                                     'PackageStep' => 'PackageStep',
                                     'SkipPackageButton' => 'SkipPackage' ),
-    'post_action_parameters' => array( 'InstallPackage' => array( 'InstallerType' => 'InstallerType' ),
+    'post_action_parameters' => array( 'InstallPackage' => array( 'InstallerType' => 'InstallerType',
+                                                                  // install the content objects as drafts (doc/bc/6.0/package-json-format.md)
+                                                                  'AsDrafts' => 'AsDrafts',
+                                                                  'DraftsExisting' => 'DraftsExisting' ),
                                        'PackageStep' => array( 'InstallerType' => 'InstallerType',
                                                                'InstallStepID' => 'InstallStepID',
                                                                'PreviousStep' => 'PreviousStepButton',

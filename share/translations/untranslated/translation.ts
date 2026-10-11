@@ -10452,6 +10452,130 @@ You can also remove the package without uninstalling it from the package list.</
         <source>Only the first megabyte is shown here; Download gives the whole file.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Installed as drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count drafts were written. Nothing was published: review each draft and publish it, or remove it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New object, draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New draft of an existing object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Existing object left alone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count drafts wait for a parent that is a draft of this package too. Publish the parent, then install the package as drafts again to give them their place.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>As drafts only content objects are written. These items change the site at once and were left out; install the package normally to install them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What the install meets here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%total content objects, by remote ID: %create new, %update existing (updated, or a new draft), %conflict conflicts, %error without their class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the remote ID is an object of the class %class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a location's node remote ID belongs to another object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the class is neither installed nor in the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install as drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install the content objects as drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing is published and no published object is changed: each draft is reviewed and published by a person. Classes, settings, design files and extensions are not installed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An object that exists already</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>gets a new draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>is left alone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download the package in the JSON format (package.json), as a .json.ezpkg file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as JSON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>JSON (package.json)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic XML (package.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Metadata</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>an object of another class has this remote ID; left alone</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -10963,6 +11087,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>You are not allowed to create packages (package/create).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download the package in the JSON format (package.json), as a .json.ezpkg file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>JSON</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -51352,6 +51484,14 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No file was uploaded, or it was larger than the server accepts (%size).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installed as drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive has no package.xml or package.json at its top, so it is not a package.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -53,14 +53,17 @@ class Export extends \Exponential\Runnable\ModuleView
         // Building the archive is the only part that may fail with an exception; sending it and ending the request
         // stay outside the try: under Exponential Velocity eZExecution::cleanExit() ends a request by throwing,
         // and a catch around it would render the page on after the file.
-        $exportName = $package->exportName();
+        // (format)/json: the JSON format, (format)/xml: the classic one (doc/bc/6.0/package-json-format.md)
+        $format = isset( $Params['UserParameters']['format'] ) && in_array( $Params['UserParameters']['format'], array( \eZPackage::FORMAT_XML, \eZPackage::FORMAT_JSON ), true )
+                  ? $Params['UserParameters']['format'] : false;
+        $exportName = $package->exportName( $format );
         $fileName = false;
         try
         {
             $exportDirectory = \eZPackage::temporaryExportPath();
             if ( !is_dir( $exportDirectory ) )
                 \eZDir::mkdir( $exportDirectory, false, true );
-            $fileName = $package->exportToArchive( $exportDirectory . '/' . $exportName );
+            $fileName = $package->exportToArchive( $exportDirectory . '/' . $exportName, 'tar.gz', $format );
         }
         catch ( \Exception $e )
         {
@@ -74,6 +77,7 @@ class Export extends \Exponential\Runnable\ModuleView
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'data.export.package', array( 'object' => array( 'type' => 'package', 'id' => (string)$package->attribute( 'name' ) ),
                 'verb' => 'export', 'after' => array( 'name' => (string)$package->attribute( 'name' ), 'file' => (string)$exportName,
+                                                      'format' => $format ? $format : (string)$package->attribute( 'format' ),
                                                       'sha256' => hash_file( 'sha256', $fileName ) ) ) );
 
         header( 'X-Powered-By: ' . \ExponentialSDK::EDITION );

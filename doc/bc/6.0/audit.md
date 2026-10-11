@@ -2008,7 +2008,7 @@ only with `Reads=enabled`).
 | `commerce.currency.change` | currencies are created, changed or removed | code, rate → code, rate | `shop/classes/ezcurrencydata.php:removeCurrencyList`, `shop/classes/ezcurrencydata.php:store` | change | info | on | yes | commerce | buffered |
 | `commerce.discount.change` | discount groups or rules change | rule → rule | `ezdiscountrule.php:store`, `ezdiscountrule.php:removeByID`, `ezdiscountsubrule.php:store`, `ezdiscountsubrule.php:remove` | change | info | on | yes | commerce | buffered |
 | `data.export.csv` | content is exported as CSV | – → node, rows, columns | `commands/ezcsvexport.php:run`, `views/content/subitemsexport.php:run` | export | info | on | yes | commerce | buffered |
-| `data.export.package` | a package is exported | – → name, sha256 | `views/package/export.php:run` | export | info | on | yes | commerce | buffered |
+| `data.export.package` | a package is exported | – → name, file, format (xml or json), sha256 | `views/package/export.php:run` | export | info | on | yes | commerce | buffered |
 | `data.export.pdf` | a PDF export is generated | – | `views/content/pdf.php:contentPDFPassthrough` | export | info | off | no | commerce | buffered |
 | `data.import.csv` | CSV is imported | – → rows, created | `commands/ezcsvimport.php:run` | import | info | on | yes | commerce | buffered |
 | `data.import.dba` | a .dba file is imported | – → tables, rows | `commands/ezimportdbafile.php:run` | import | info | on | yes | commerce | buffered |

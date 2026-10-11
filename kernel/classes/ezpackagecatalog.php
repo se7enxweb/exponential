@@ -102,7 +102,7 @@ class eZPackageCatalog
         {
             if ( $name[0] === '.' )
                 continue;
-            if ( !is_file( $path . '/' . $name . '/' . eZPackage::definitionFilename() ) )
+            if ( !eZPackage::definitionFilePath( $path . '/' . $name ) )
             {
                 $result['orphans']++;
                 continue;

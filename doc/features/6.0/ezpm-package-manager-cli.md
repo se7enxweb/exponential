@@ -45,7 +45,8 @@ Global options (from `php ezpm.php help`):
 | `--logfiles` / `--no-logfiles` | Create log files, or not (default: not). |
 
 Commands: `create`, `add`, `set`, `delete`, `export`, `import`, `install`,
-`list`, `info`, `help`.
+`list`, `info`, `help`, and since October 2026 `convert`, `validate` and `check` for the JSON package format:
+`export --format=json`, `install --as-drafts`, see [the JSON package format](../../bc/6.0/package-json-format.md).
 
 ## Package a part of the content tree
 
@@ -133,6 +134,8 @@ What the installer does differently since July:
 
 ## Related pages
 
+- [The JSON package format](../../bc/6.0/package-json-format.md): `export --format=json`, `convert`, `validate`,
+  `check`, `install --as-drafts`
 - [A package installer that survives big packages](package-installer-batching.md) (the browser installer, June 2026)
 - [Look inside a package, compare it with your site, import single items](package-compare-and-import.md), [package licenses and versions](package-licenses-and-versions.md)
 - [Kickstarter CLI](kickstarter-cli.md) (installs a whole site from `kickstart.ini`), [install in one command](install-in-one-command.md), [clean install defaults](clean-install-defaults.md)

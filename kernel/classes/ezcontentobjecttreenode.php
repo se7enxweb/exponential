@@ -6816,6 +6816,10 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $remoteID = $contentNodeDOMNode->getAttribute( 'remote-id' );
         $parentNodeRemoteID = $contentNodeDOMNode->getAttribute( 'parent-node-remote-id' );
         $node = eZContentObjectTreeNode::fetchByRemoteID( $remoteID );
+        // Installed as drafts: an existing node is left as it is (the draft of its object keeps the node
+        // assignments of the published version)
+        if ( is_object( $node ) && !empty( $options['as_drafts'] ) )
+            return true;
         if ( is_object( $node ) )
         {
             $description = "Node with remote ID $remoteID already exists.";

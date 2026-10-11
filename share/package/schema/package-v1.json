@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/se7enxweb/exponential/main/share/package/schema/package-v1.json",
+  "title": "Exponential package document (JSON format 1.x)",
+  "description": "A document of an Exponential package in the JSON format: package.json (kind definition) or the JSON form of one of the package's XML documents (kind document). The XML is mirrored element for element in JsonML. Reference: doc/bc/6.0/package-json-format.md",
+  "type": "object",
+  "required": [ "format", "format-version", "kind", "root" ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "format": { "const": "exponential-package" },
+    "format-version": { "type": "string", "pattern": "^1\\.[0-9]+$" },
+    "kind": { "enum": [ "definition", "document" ] },
+    "source": {
+      "description": "The XML document this one mirrors, relative to the package directory (package.xml, ezcontentclass/class-article.xml ...).",
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(^|/)\\.\\.(/|$))[^\\\\\\u0000-\\u001f]+\\.xml$"
+    },
+    "checksums": {
+      "description": "package.json only: the SHA-256 (lower-case hex) of every other file of the package, by its path relative to the package directory.",
+      "type": "object",
+      "propertyNames": { "pattern": "^(?!/)(?!.*(^|/)\\.\\.(/|$))[^\\\\\\u0000-\\u001f]+$" },
+      "additionalProperties": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+    },
+    "root": { "$ref": "#/$defs/element" }
+  },
+  "$defs": {
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Za-z_][A-Za-z0-9._\\-]*(:[A-Za-z_][A-Za-z0-9._\\-]*)?$"
+    },
+    "attributes": {
+      "description": "The element's attributes, namespace declarations (xmlns, xmlns:prefix) first, in document order. Values are strings.",
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/name" },
+      "additionalProperties": { "type": "string" }
+    },
+    "element": {
+      "description": "[name, {attributes}?, child...]: an XML element in JsonML. The attributes object, when there is one, is the second item.",
+      "anyOf": [
+        {
+          "type": "array",
+          "minItems": 2,
+          "prefixItems": [ { "$ref": "#/$defs/name" }, { "$ref": "#/$defs/attributes" } ],
+          "items": { "$ref": "#/$defs/node" }
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "prefixItems": [ { "$ref": "#/$defs/name" } ],
+          "items": { "$ref": "#/$defs/node" }
+        }
+      ]
+    },
+    "special": {
+      "description": "[\"#comment\", text], [\"#cdata\", text], [\"#xml\", \"<rich text XML>\"] or [\"?target\", data].",
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        { "type": "string", "pattern": "^(#comment|#cdata|#xml|\\?[A-Za-z_][A-Za-z0-9._\\-]*)$" },
+        { "type": "string" }
+      ]
+    },
+    "node": {
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "#/$defs/special" },
+        { "$ref": "#/$defs/element" }
+      ]
+    }
+  }
+}
