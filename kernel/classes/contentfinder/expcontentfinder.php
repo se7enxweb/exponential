@@ -319,16 +319,22 @@ class expContentFinder
     protected function lookupRemoteID( $remoteID )
     {
         $db = eZDB::instance();
-        $quoted = "'" . $db->escapeString( (string)$remoteID ) . "'";
+        $remoteID = (string)$remoteID;
+        $quoted = "'" . $db->escapeString( $remoteID ) . "'";
         $hits = array();
-        foreach ( $this->rows( 'SELECT id FROM ezcontentobject WHERE remote_id = ' . $quoted, 2 ) as $row )
-            $hits[] = array( 'object_id' => (int)$row['id'], 'via' => 'object_remote_id', 'value' => $remoteID );
-        foreach ( $this->rows( 'SELECT contentobject_id, node_id FROM ezcontentobject_tree WHERE remote_id = ' . $quoted, 2 ) as $row )
-            $hits[] = array( 'object_id' => (int)$row['contentobject_id'], 'via' => 'node_remote_id', 'value' => $remoteID,
-                             'node_id' => (int)$row['node_id'] );
-        foreach ( $this->rows( 'SELECT contentobject_id, node_id FROM ezcontentobject_trash WHERE remote_id = ' . $quoted, 2 ) as $row )
-            $hits[] = array( 'object_id' => (int)$row['contentobject_id'], 'via' => 'trash_node', 'value' => $remoteID,
-                             'node_id' => (int)$row['node_id'] );
+        // the database finds, the exact comparison here decides: MySQL's collations compare without case (and
+        // without trailing spaces), the other engines do not; a remote id matches in its case everywhere
+        foreach ( $this->rows( 'SELECT id, remote_id FROM ezcontentobject WHERE remote_id = ' . $quoted, 2 ) as $row )
+            if ( (string)$row['remote_id'] === $remoteID )
+                $hits[] = array( 'object_id' => (int)$row['id'], 'via' => 'object_remote_id', 'value' => $remoteID );
+        foreach ( $this->rows( 'SELECT contentobject_id, node_id, remote_id FROM ezcontentobject_tree WHERE remote_id = ' . $quoted, 2 ) as $row )
+            if ( (string)$row['remote_id'] === $remoteID )
+                $hits[] = array( 'object_id' => (int)$row['contentobject_id'], 'via' => 'node_remote_id', 'value' => $remoteID,
+                                 'node_id' => (int)$row['node_id'] );
+        foreach ( $this->rows( 'SELECT contentobject_id, node_id, remote_id FROM ezcontentobject_trash WHERE remote_id = ' . $quoted, 2 ) as $row )
+            if ( (string)$row['remote_id'] === $remoteID )
+                $hits[] = array( 'object_id' => (int)$row['contentobject_id'], 'via' => 'trash_node', 'value' => $remoteID,
+                                 'node_id' => (int)$row['node_id'] );
         return $hits;
     }
 
@@ -512,8 +518,11 @@ class expContentFinder
         $condition = $prefix
             ? "filepath LIKE '" . $db->escapeString( expContentFinderInput::likePrefix( $path ) ) . "' ESCAPE '!'"
             : "filepath = '" . $db->escapeString( $path ) . "'";
+        // as for remote ids: the database narrows (MySQL and SQLite's LIKE ignore case), matches() decides in the case
+        // of the path, as the file system does
         foreach ( $this->rows( 'SELECT contentobject_attribute_id, filepath FROM ezimagefile WHERE ' . $condition, $this->rowLimit ) as $row )
-            $files[(int)$row['contentobject_attribute_id']][] = array( 'file' => (string)$row['filepath'], 'version' => null );
+            if ( self::matches( (string)$row['filepath'], $path, $prefix ) )
+                $files[(int)$row['contentobject_attribute_id']][] = array( 'file' => (string)$row['filepath'], 'version' => null );
 
         // storage/original/<group>/<name>: the binary and media files keep the name and the mime type
         if ( preg_match( '#^(.*/)?storage/original/([a-z0-9.+\-]+)(?:/([^/]*))?$#i', rtrim( $path, '/' ) . ( substr( $path, -1 ) === '/' ? '/' : '' ), $m ) )
@@ -531,11 +540,27 @@ class expContentFinder
                 {
                     $sql = 'SELECT contentobject_attribute_id, version, filename FROM ' . $table . ' WHERE ' . $nameCondition . $groupCondition;
                     foreach ( $this->rows( $sql, $this->rowLimit ) as $row )
-                        $files[(int)$row['contentobject_attribute_id']][] = array( 'file' => $storage . (string)$row['filename'], 'version' => (int)$row['version'] );
+                        if ( self::matches( (string)$row['filename'], $name, $prefix ) )
+                            $files[(int)$row['contentobject_attribute_id']][] = array( 'file' => $storage . (string)$row['filename'], 'version' => (int)$row['version'] );
                 }
             }
         }
         return $this->attributeHits( $files, 'file', $path . ( $prefix && substr( $path, -1 ) !== '/' ? '*' : '' ) );
+    }
+
+    /**
+     * Whether a stored value is the text looked for, in its case: equal, or (prefix) starting with it.
+     *
+     * @param string $stored
+     * @param string $text
+     * @param bool $prefix
+     * @return bool
+     */
+    public static function matches( $stored, $text, $prefix )
+    {
+        $stored = (string)$stored;
+        $text = (string)$text;
+        return $prefix ? strncmp( $stored, $text, strlen( $text ) ) === 0 : $stored === $text;
     }
 
     // ------------------------------------------------------------------ describe

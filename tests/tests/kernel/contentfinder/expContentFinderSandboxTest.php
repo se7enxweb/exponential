@@ -20,6 +20,10 @@
  *         own events as its children
  *  CS-10  each search is recorded as content.finder.search (user, type, value, results)
  *  CS-11  the finder answers only where the settings let it (SiteAccessList[], Enabled)
+ *  CS-12  remote ids and file paths match in their case, exactly and as a prefix, on every engine
+ *
+ * It runs on SQLite and, in a throwaway database named by EXP_CONTENTFINDER_SANDBOX_DATABASE as well, on MySQL or
+ * MariaDB, PostgreSQL, Oracle and MongoDB (doc/features/6.0/content-finder.md, "Databases").
  *
  * It WRITES to the database (content, users, roles; fixtures/expcontentfindertestfixtures.php), so it runs ONLY
  * in a throwaway copy of an installation with an SQLite database inside it, named by EXP_CONTENTFINDER_SANDBOX,
@@ -246,6 +250,34 @@ class expContentFinderSandboxTest extends PHPUnit\Framework\TestCase
             $result = $this->resultFor( $binary['path'], self::$seed['objects']['file'] );
             $this->assertSame( 'ezbinaryfile', $result['matches'][0]['rows'][0]['datatype'] );
             $this->assertContains( self::$seed['objects']['file'], $this->ids( dirname( $binary['path'] ) . '/*' ) );
+        }
+    }
+
+    /** CS-12 */
+    public function testRemoteIDsAndPathsMatchInTheirCaseOnEveryEngine()
+    {
+        // MySQL compares case-insensitively and SQLite's LIKE does too; PostgreSQL, Oracle and MongoDB do not
+        $article = self::$seed['objects']['article'];
+        $this->assertContains( $article, $this->ids( 'cf-article', 'remote' ) );
+        $this->assertSame( array(), $this->ids( 'CF-ARTICLE', 'remote' ) );
+        if ( !empty( self::$seed['files']['image'] ) )
+        {
+            $path = self::$seed['files']['image'][0]['path'];
+            $upper = 'var/' . strtoupper( substr( $path, 4 ) );
+            $this->assertSame( array(), $this->ids( $upper, 'file' ) );
+            $this->assertSame( array(), $this->ids( dirname( $upper ) . '/', 'file' ) );
+            $this->assertContains( self::$seed['objects']['image'], $this->ids( dirname( $path ) . '/', 'file' ) );
+        }
+        if ( !empty( self::$seed['files']['binary'] ) )
+        {
+            $path = self::$seed['files']['binary'][0]['path'];
+            $name = basename( $path );
+            // the stored name is hexadecimal: its letters are what changes case
+            $this->assertNotSame( strtoupper( $name ), $name );
+            $this->assertSame( array(), $this->ids( dirname( $path ) . '/' . strtoupper( $name ), 'file' ) );
+            if ( strtoupper( substr( $name, 0, 6 ) ) !== substr( $name, 0, 6 ) )
+                $this->assertSame( array(), $this->ids( dirname( $path ) . '/' . strtoupper( substr( $name, 0, 6 ) ) . '*', 'file' ) );
+            $this->assertContains( self::$seed['objects']['file'], $this->ids( dirname( $path ) . '/' . substr( $name, 0, 6 ) . '*', 'file' ) );
         }
     }
 

@@ -32,7 +32,9 @@ class expContentFinderTestFixtures
 {
     /**
      * Whether the current directory is a throwaway installation the tests may write to: EXP_CONTENTFINDER_SANDBOX
-     * names it, and its database is an SQLite file inside it.
+     * names it, and its database is an SQLite file inside it or, on another engine (MySQL/MariaDB, PostgreSQL,
+     * Oracle, MongoDB), a throwaway database named by EXP_CONTENTFINDER_SANDBOX_DATABASE as well: the database
+     * of the settings or, where a schema is a user (Oracle), the user.
      *
      * @return string '' when it is, else why not
      */
@@ -43,12 +45,31 @@ class expContentFinderTestFixtures
         if ( $sandbox === '' || realpath( $sandbox ) !== $cwd )
             return 'EXP_CONTENTFINDER_SANDBOX does not name the current directory (a throwaway copy of an installation)';
         $db = eZDB::instance();
-        if ( !$db || !$db->isConnected() || $db->databaseName() !== 'sqlite' )
-            return 'the database is not an SQLite copy';
-        $file = realpath( eZSQLite3DB::filePath( eZINI::instance()->variable( 'DatabaseSettings', 'Database' ) ) );
+        if ( !$db || !$db->isConnected() )
+            return 'no database connection';
+        $ini = eZINI::instance();
+        if ( $db->databaseName() !== 'sqlite' )
+        {
+            $named = (string)getenv( 'EXP_CONTENTFINDER_SANDBOX_DATABASE' );
+            $configured = array( (string)$ini->variable( 'DatabaseSettings', 'Database' ), (string)$ini->variable( 'DatabaseSettings', 'User' ) );
+            if ( $named === '' || !in_array( $named, $configured, true ) )
+                return 'the database is not an SQLite copy, and EXP_CONTENTFINDER_SANDBOX_DATABASE does not name it as a throwaway database';
+            return '';
+        }
+        $file = realpath( eZSQLite3DB::filePath( $ini->variable( 'DatabaseSettings', 'Database' ) ) );
         if ( $file === false || strpos( $file, $cwd . '/' ) !== 0 )
             return 'the database file is not inside the throwaway installation';
         return '';
+    }
+
+    /** @return int[] the content object attribute ids of an object (every version) */
+    protected static function attributeIDs( $objectID )
+    {
+        $ids = array();
+        $rows = eZDB::instance()->arrayQuery( 'SELECT id FROM ezcontentobject_attribute WHERE contentobject_id = ' . (int)$objectID );
+        foreach ( is_array( $rows ) ? $rows : array() as $row )
+            $ids[] = (int)$row['id'];
+        return $ids ? array_values( array_unique( $ids ) ) : array( 0 );
     }
 
     /** the first attribute identifier of a datatype in a class */
@@ -211,9 +232,10 @@ class expContentFinderTestFixtures
         {
             $image = self::object( 'cf-image', $openNode, 'image', self::name( 'image', 'CF Image' ) + array( $imageAttribute => 'cf-finder-image.gif|CF' ), $filesDir );
             $seed['objects']['image'] = (int)$image->attribute( 'id' );
-            $rows = $db->arrayQuery( 'SELECT f.filepath, f.contentobject_attribute_id FROM ezimagefile f, ezcontentobject_attribute a'
-                                   . ' WHERE a.id = f.contentobject_attribute_id AND a.contentobject_id = ' . (int)$image->attribute( 'id' ) );
-            foreach ( $rows as $row )
+            // single-table queries: the MongoDB driver translates no join
+            $rows = $db->arrayQuery( 'SELECT filepath, contentobject_attribute_id FROM ezimagefile WHERE '
+                                   . $db->generateSQLINStatement( self::attributeIDs( (int)$image->attribute( 'id' ) ), 'contentobject_attribute_id', false, true, 'int' ) );
+            foreach ( is_array( $rows ) ? $rows : array() as $row )
                 $seed['files']['image'][] = array( 'path' => $row['filepath'], 'attribute_id' => (int)$row['contentobject_attribute_id'] );
         }
         $fileAttribute = self::attribute( 'file', array( 'ezbinaryfile' ) );
@@ -221,9 +243,9 @@ class expContentFinderTestFixtures
         {
             $file = self::object( 'cf-file', $openNode, 'file', self::name( 'file', 'CF File' ) + array( $fileAttribute => 'cf-finder-file.txt' ), $filesDir );
             $seed['objects']['file'] = (int)$file->attribute( 'id' );
-            $rows = $db->arrayQuery( 'SELECT b.filename, b.mime_type, b.contentobject_attribute_id FROM ezbinaryfile b, ezcontentobject_attribute a'
-                                   . ' WHERE a.id = b.contentobject_attribute_id AND a.version = b.version AND a.contentobject_id = ' . (int)$file->attribute( 'id' ) );
-            foreach ( $rows as $row )
+            $rows = $db->arrayQuery( 'SELECT filename, mime_type, contentobject_attribute_id FROM ezbinaryfile WHERE version = ' . (int)$file->attribute( 'current_version' )
+                                   . ' AND ' . $db->generateSQLINStatement( self::attributeIDs( (int)$file->attribute( 'id' ) ), 'contentobject_attribute_id', false, true, 'int' ) );
+            foreach ( is_array( $rows ) ? $rows : array() as $row )
                 $seed['files']['binary'][] = array( 'path' => eZSys::storageDirectory() . '/original/' . eZBinaryFile::mimeGroup( $row['mime_type'] ) . '/' . $row['filename'],
                                                     'attribute_id' => (int)$row['contentobject_attribute_id'] );
         }
