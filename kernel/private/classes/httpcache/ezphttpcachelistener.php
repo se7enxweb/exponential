@@ -345,6 +345,12 @@ class ezpHttpCacheListener
         $headers = array( 'Content-Type' => 'text/html; charset=utf-8' );
         if ( method_exists( 'ezpKernelWeb', 'securityHeaders' ) )
             $headers += ezpKernelWeb::securityHeaders();
+        // Headers an extension decides per page (a content licence, for
+        // example) are kept with the page as well, so an answer from this
+        // cache carries them like the page the kernel rendered.
+        $filtered = ezpEvent::getInstance()->filter( 'httpcache/store/headers', $headers );
+        if ( is_array( $filtered ) )
+            $headers = $filtered;
         $contract->storeEntry( $key, 200, $headers, $body, $tags, $offsets, $ttl > 0 ? $ttl : null );
         if ( $user->isRegistered() )
             $contract->storeRecord( $user->id(), $context );
