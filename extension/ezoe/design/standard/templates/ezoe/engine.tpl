@@ -8,6 +8,33 @@
 {if $error}
     <div class="message-warning"><h2>{'This editor is not available.'|i18n( 'design/standard/ezoe' )}</h2></div>
 {/if}
+<table class="list ezoe-engines" cellspacing="0" summary="{'Editor engines'|i18n( 'design/standard/ezoe' )}">
+    <tr>
+        <th>{'Editor'|i18n( 'design/standard/ezoe' )}</th>
+        <th>{'Version'|i18n( 'design/standard/ezoe' )}</th>
+        <th>{'Description'|i18n( 'design/standard/ezoe' )}</th>
+        <th>{'Status'|i18n( 'design/standard/ezoe' )}</th>
+    </tr>
+    {foreach $details as $engine sequence array( 'bglight', 'bgdark' ) as $style}
+    <tr class="{$style}" data-engine="{$engine.identifier|wash}" data-status="{$engine.status|wash}">
+        <td>{$engine.label|wash} <code>{$engine.identifier|wash}</code></td>
+        <td>{$engine.version|wash}</td>
+        <td>{$engine.description|wash}</td>
+        <td>
+        {if eq( $engine.status, 'available' )}
+            {if eq( $engine.identifier, $resolved )}{'Available, in use now'|i18n( 'design/standard/ezoe' )}{else}{'Available'|i18n( 'design/standard/ezoe' )}{/if}
+        {elseif eq( $engine.status, 'unavailable' )}
+            {'Not available: its files are missing'|i18n( 'design/standard/ezoe' )}
+        {else}
+            {'Cannot be used: %reason'|i18n( 'design/standard/ezoe',, hash( '%reason', $engine.why ) )|wash}
+        {/if}
+        </td>
+    </tr>
+    {/foreach}
+</table>
+{if $switch_enabled}
+    <p>{'The edit form also has a button to switch to each of the other available editors.'|i18n( 'design/standard/ezoe' )}</p>
+{/if}
 <form method="post" action={'/ezoe/engine'|ezurl}>
     <div class="block">
         <label for="ezoe-engine">{'Editor for text fields'|i18n( 'design/standard/ezoe' )}</label>

@@ -227,6 +227,63 @@ class expOEEditorRegistryTest extends expOETestCase
         $this->assertSame( array(), $registries['ezoeengines']['broken'] );
     }
 
+    public function testDetailsListEveryRegisteredEngineWithVersionAndDescription()
+    {
+        $details = $this->details();
+        $this->assertSame( array_map( 'strval', array_keys( expOEEditor::registered() ) ), array_keys( $details ) );
+        $this->assertSame( 'available', $details['tinymce3']['status'] );
+        $this->assertSame( 'TinyMCE 3', $details['tinymce3']['label'] );
+        $this->assertMatchesRegularExpression( '/^3\.5(\.\d+)*$/', $details['tinymce3']['version'] );
+        $this->assertMatchesRegularExpression( '/^8\.\d+(\.\d+)*$/', $details['tinymce8']['version'] );
+        $this->assertNotSame( '', $details['tinymce3']['description'] );
+        $this->assertNotSame( '', $details['tinymce8']['description'] );
+        $this->assertSame( '', $details['tinymce3']['why'] );
+    }
+
+    public function testAnEngineFromAnExtensionShowsItsIniVersionAndDescription()
+    {
+        $this->ini( 'Engines', $this->savedEngines + array( 'third' => 'expOETestThirdEngine' ) );
+        $ini = eZINI::instance( 'ezoe.ini' );
+        $ini->setVariable( 'Engine_third', 'Version', '1.2.3' );
+        $ini->setVariable( 'Engine_third', 'Description', 'A third editor.' );
+        try
+        {
+            $third = $this->details()['third'];
+        }
+        finally
+        {
+            $ini->removeGroup( 'Engine_third' );
+        }
+        $this->assertSame( 'available', $third['status'] );
+        $this->assertSame( 'Third editor', $third['label'] );
+        $this->assertSame( '1.2.3', $third['version'] );
+        $this->assertSame( 'A third editor.', $third['description'] );
+    }
+
+    public function testDetailsShowEnginesThatCannotBeUsed()
+    {
+        $this->ini( 'Engines', $this->savedEngines + array( 'gone' => 'expOETestUnavailableEngine', 'missing' => 'expOETestNoSuchClass',
+                                                            'throws' => 'expOETestThrowingEngine' ) );
+        $details = $this->details();
+        $this->assertSame( 'unavailable', $details['gone']['status'] );
+        $this->assertSame( 'Gone', $details['gone']['label'], 'an unavailable engine still shows its name' );
+        $this->assertSame( 'broken', $details['missing']['status'] );
+        $this->assertSame( 'missing', $details['missing']['label'] );
+        $this->assertStringContainsString( 'does not exist', $details['missing']['why'] );
+        $this->assertSame( 'broken', $details['throws']['status'] );
+        $this->assertStringContainsString( 'cannot start', $details['throws']['why'] );
+        $this->assertArrayNotHasKey( 'gone', expOEEditor::engines(), 'details() never makes an engine selectable' );
+    }
+
+    /** @return array identifier => row of expOEEditor::details() */
+    protected function details()
+    {
+        $rows = array();
+        foreach ( expOEEditor::details() as $row )
+            $rows[$row['identifier']] = $row;
+        return $rows;
+    }
+
     protected function why( $id )
     {
         foreach ( expOEEditor::problems() as $p )

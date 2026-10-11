@@ -155,6 +155,57 @@ class expOEEditor
         return $labels;
     }
 
+    /**
+     * Every registered entry as the engine page shows it, the unusable ones included. An engine may add a
+     * version and a description with the optional methods version() and description() (expOEEditorEngineBase
+     * has both, reading [Engine_<id>] Version and Description); without them both are empty.
+     *
+     * @return array list of array( identifier, class, label, version, description, status, why ), status being
+     *               'available', 'unavailable' (the class works, its files are missing) or 'broken'
+     */
+    public static function details()
+    {
+        $engines  = self::engines();
+        $problems = array();
+        foreach ( self::$problems as $problem )
+            $problems[$problem['id']] = $problem['why'];
+
+        $details = array();
+        foreach ( self::registered() as $id => $class )
+        {
+            $id = (string) $id;
+            $engine = isset( $engines[$id] ) ? $engines[$id] : null;
+            $status = $engine ? 'available' : 'broken';
+            if ( !$engine && isset( $problems[$id] ) && preg_match( '/^[a-z0-9_]+$/', $id ) && class_exists( $class )
+                 && is_subclass_of( $class, 'expOEEditorEngine' ) )
+            {
+                // a class that works but says it is not available: still show its name and version
+                try
+                {
+                    $candidate = new $class();
+                    if ( $candidate->identifier() === $id && !$candidate->isAvailable() )
+                    {
+                        $engine = $candidate;
+                        $status = 'unavailable';
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                }
+            }
+            $details[] = array(
+                'identifier'  => $id,
+                'class'       => (string) $class,
+                'label'       => $engine ? ezpI18n::tr( 'design/standard/ezoe', $engine->label() ) : $id,
+                'version'     => $engine && method_exists( $engine, 'version' ) ? (string) $engine->version() : '',
+                'description' => $engine && method_exists( $engine, 'description' ) && (string) $engine->description() !== ''
+                                 ? ezpI18n::tr( 'design/standard/ezoe', (string) $engine->description() ) : '',
+                'status'      => $status,
+                'why'         => isset( $problems[$id] ) ? $problems[$id] : '' );
+        }
+        return $details;
+    }
+
     /** @return bool whether editors may choose their engine themselves (ezoe.ini [EditorSettings] EngineSwitch) */
     public static function switchEnabled()
     {

@@ -60,7 +60,8 @@ global `EditorEngine`, then `tinymce3`. An unknown, broken or unavailable choice
 
 A user chooses with:
 
-- the page `/ezoe/engine` (a select over the registry; needs the policy `ezoe/editor`);
+- the page `/ezoe/engine` (a table of every registered engine with its version, description and status, the ones
+  that cannot be used included, and a select over the available ones; needs the policy `ezoe/editor`);
 - the switch button below the editor (`EngineSwitch=enabled`);
 - the URL `/user/preferences/set/ezoe_engine/tinymce8`;
 - the remote service `expeditor::set` (POST `engine`; empty means the site default).
@@ -122,6 +123,8 @@ class myEditorEngine extends expOEEditorEngineBase
     public function label()      { return 'My editor'; }          // translated in design/standard/ezoe
     public function isAvailable() { return is_file( __DIR__ . '/../design/standard/javascript/my.js' ); }
     public function template()   { return 'design:content/datatype/edit/ezxmltext_myeditor.tpl'; }
+    public function version()    { return '1.0.0'; }               // optional, shown on /ezoe/engine
+    public function description() { return 'My own editor.'; }    // optional, translated in design/standard/ezoe
 }
 ```
 
@@ -144,6 +147,11 @@ The template receives `attribute`, `input_handler`, `attribute_base` and `editor
 its identifier, label, toolbar map, plugins and config. The engine now appears on `/ezoe/engine`, in the switch
 buttons, in `expeditor::engines` and in `setup/rad`. An engine that returns `''` from `template()` is rendered by the
 built-in TinyMCE 3 markup of `ezxmltext_ezoe.tpl`.
+
+`version()` and `description()` are optional (they are not part of `expOEEditorEngine`, so engines written before
+them keep working): `expOEEditor::details()` asks for them when an engine has them, and `expOEEditorEngineBase`
+answers both from `[Engine_<id>] Version` and `Description`. `/ezoe/engine` shows them with the status of each
+engine: available, not available (`isAvailable()` is false: its files are missing) or why it cannot be used.
 
 ## Browse tabs (embed and link dialogs)
 
@@ -182,11 +190,11 @@ and the INI values back.
 
 | File | Covers |
 |---|---|
-| `expOEEditorRegistryTest` | registry, resolution (preference, siteaccess, global), unknown / broken / unavailable engines, third engine, audit, setup/rad |
+| `expOEEditorRegistryTest` | registry, resolution (preference, siteaccess, global), unknown / broken / unavailable engines, third engine, the details (version, description, status) of every entry, audit, setup/rad |
 | `expOEEngineConfigTest` | each engine's template, toolbar map, plugins and config, shipped defaults, vendored TinyMCE 8 and its license, translations |
 | `expOEUploadRulesTest` | allowed and refused file names, the three check modes, the order of the check in the upload view |
 | `expOEViewsJsonTest` | every ezoe PHP file has no text before `<?php` or after `?>`, the module definition prints nothing, `ezoe/load` answers JSON with nothing in front of it, browse and bookmarks |
-| `expOEEngineViewTest` | the page `/ezoe/engine`: select, saving, reset, unknown engine, policy |
+| `expOEEngineViewTest` | the page `/ezoe/engine`: the table of engines, select, saving, reset, unknown engine, policy |
 | `expOEEditorServicesTest` | the `expeditor` services, their guards and the catalogue |
 | `expOERoundTripTest` | the XHTML of both editors gives the same XML; XML shown to an editor and saved again keeps its content |
 

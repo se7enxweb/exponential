@@ -18,6 +18,15 @@ class expOEEngineViewTest extends expOETestCase
         $this->assertStringContainsString( 'value="tinymce8"', $html );
     }
 
+    public function testThePageListsEveryEngineWithVersionAndStatus()
+    {
+        $html = $this->page();
+        $this->assertStringContainsString( 'class="list ezoe-engines"', $html );
+        $this->assertStringContainsString( 'data-engine="tinymce3" data-status="available"', $html );
+        $this->assertStringContainsString( 'data-engine="tinymce8"', $html );
+        $this->assertMatchesRegularExpression( '#<td>3\.5\.\d+</td>#', $html, 'the TinyMCE 3 version' );
+    }
+
     public function testThePageOffersTheSiteDefault()
     {
         $this->assertMatchesRegularExpression( '#<option value=""[^>]*>Default of this site \(TinyMCE [38]\)</option>#', $this->page() );

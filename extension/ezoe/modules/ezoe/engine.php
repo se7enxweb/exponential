@@ -2,7 +2,8 @@
 /**
  * ezoe/engine: the editor engine the current user edits with. A select over the registered engines
  * (ezoe.ini [EditorSettings] Engines[]), stored as the user preference ezoe_engine. The form is a POST
- * (checked by the form token); an empty choice goes back to the siteaccess default.
+ * (checked by the form token); an empty choice goes back to the siteaccess default. Above the form, a table
+ * lists every registered engine with its version, description and status, the ones that cannot be used too.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -27,6 +28,8 @@ if ( $Module->isCurrentAction( 'Save' ) )
 $preference = eZPreferences::value( expOEEditor::PREFERENCE );
 $tpl = eZTemplate::factory();
 $tpl->setVariable( 'engines', expOEEditor::labels() );
+$tpl->setVariable( 'details', expOEEditor::details() );
+$tpl->setVariable( 'switch_enabled', expOEEditor::switchEnabled() );
 $tpl->setVariable( 'preference', is_string( $preference ) ? $preference : '' );
 $tpl->setVariable( 'resolved', expOEEditor::resolve() );
 $tpl->setVariable( 'configured', expOEEditor::configuredEngine() );

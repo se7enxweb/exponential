@@ -21,6 +21,16 @@ class expOETinyMCE8Engine extends expOEEditorEngineBase
         return 'TinyMCE 8';
     }
 
+    public function version()
+    {
+        return self::tinyMCEVersion( dirname( __DIR__ ) . '/design/standard/' . self::SCRIPT );
+    }
+
+    public function description()
+    {
+        return 'The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.';
+    }
+
     public function isAvailable()
     {
         return is_file( dirname( __DIR__ ) . '/design/standard/' . self::SCRIPT );

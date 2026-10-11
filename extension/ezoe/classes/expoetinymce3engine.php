@@ -18,4 +18,14 @@ class expOETinyMCE3Engine extends expOEEditorEngineBase
     {
         return 'TinyMCE 3';
     }
+
+    public function version()
+    {
+        return self::tinyMCEVersion( dirname( __DIR__ ) . '/design/standard/javascript/tiny_mce.js' );
+    }
+
+    public function description()
+    {
+        return 'The Online Editor on TinyMCE 3.5, the editor of every installation.';
+    }
 }

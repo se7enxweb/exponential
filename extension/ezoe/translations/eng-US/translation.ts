@@ -135,6 +135,46 @@
         <translation>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</translation>
     </message>
     <message>
+        <source>Editor engines</source>
+        <translation>Editor engines</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Editor</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Available</translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation>Available, in use now</translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation>Not available: its files are missing</translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation>Cannot be used: %reason</translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation>The edit form also has a button to switch to each of the other available editors.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation>The Online Editor on TinyMCE 3.5, the editor of every installation.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</translation>
+    </message>
+    <message>
         <source>Switch to the new editor (TinyMCE 8)</source>
         <translation>Switch to the new editor (TinyMCE 8)</translation>
     </message>

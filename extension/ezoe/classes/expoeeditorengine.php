@@ -7,6 +7,9 @@
  * editor gets (user preference, then siteaccess, then the global default) and falls back to tinymce3 when the
  * choice is unknown or not available. Guide: doc/bc/6.0/ezoe-tinymce8.md
  *
+ * Optional: version() and description() (both returning a string) are shown on the page ezoe/engine when an
+ * engine has them; expOEEditorEngineBase answers both from [Engine_<identifier>] Version and Description.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package ezoe
