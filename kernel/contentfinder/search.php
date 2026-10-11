@@ -10,6 +10,7 @@
 
 // The code is in kernel/private/classes/views/contentfinder/search.php; this file is the entry point.
 // A server process started before the class existed (a Velocity worker) cannot load it: not available, no 500.
+/** @var array $Params the view parameters, set by eZModule when it includes this file */
 if ( !class_exists( 'Exponential\\View\\Kernel\\Contentfinder\\Search' ) || !class_exists( 'expContentFinder' ) )
     return $Params['Module']->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
 return \Exponential\View\Kernel\Contentfinder\Search::main( __FILE__, get_defined_vars() );
