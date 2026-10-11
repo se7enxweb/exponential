@@ -222,3 +222,4 @@ installation's content:
 |---|---|---|
 | SQLite | 3.34.1 | |
 | MySQL / MariaDB | MariaDB 10.5.29 | its collations compare without case: remote ids and file paths are compared exactly by the finder |
+| PostgreSQL | 13.23 | `LIKE` compares in case, as the finder does; URL aliases need `digest()` (pgcrypto), which the installer sets up |
