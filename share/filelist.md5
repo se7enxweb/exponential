@@ -7566,7 +7566,7 @@ d3aece307cd87977077761c98dcfa905  tests/tests/kernel/private/classes/ezpSiteAcce
 2000c194dcb439f91bf20cee50496582  tests/tests/kernel/private/classes/ezpSmallKernelHelpersTest.php
 f8bd96cb7671e92382f05210af3b11eb  tests/tests/kernel/private/classes/ezpTopologicalSortOrderTest.php
 ccedf985750dd7fe3adf44e8e474cdc3  tests/tests/kernel/private/contentapi/ezpContentCriteriaTest.php
-1f6099d45628709ed897b0bbdcb26655  tests/tests/kernel/private/expAdminViewsDebugCleanTest.php
+6b7f3234a135dd559ce03c87c04cd259  tests/tests/kernel/private/expAdminViewsDebugCleanTest.php
 b6b6e540825226d42728ede902f6b71e  tests/tests/kernel/private/ezp_api/ezpcontent_regression.php
 d99d278d87120c88f0d79c961fc6ccdc  tests/tests/kernel/private/ezp_api/suite.php
 4da85a88c01da664a6eee41080c9ed23  tests/tests/kernel/private/ezpautoloadgenerator_test.php
