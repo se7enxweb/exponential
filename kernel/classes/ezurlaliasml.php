@@ -1877,6 +1877,59 @@ class eZURLAliasML extends eZPersistentObject
      === ==== ====== =========== ==========
      \endcode
      */
+    /**
+     * The rows fetchByPath()'s join returns (e0_id, e0_link, e0_text ..., and for the last element e<n>_parent,
+     * e<n>_lang_mask, e<n>_action), read with single-table queries, one element at a time: each element under the
+     * link of the one before it, in the prioritised languages, compared by text_md5 as the join compares. For an
+     * engine that translates no join (MongoDB). At most 100 rows.
+     *
+     * @param eZDBInterface $db
+     * @param string[] $elements
+     * @return array
+     */
+    static protected function fetchPathRowsElementByElement( $db, array $elements )
+    {
+        $mask = 1;
+        foreach ( eZContentLanguage::prioritizedLanguages() as $language )
+            $mask += (int)$language->attribute( 'id' );
+        $partials = array( array( 'row' => array(), 'parent' => 0 ) );
+        $last = count( $elements ) - 1;
+        foreach ( $elements as $i => $element )
+        {
+            $md5 = md5( eZURLAliasML::strtolower( $element ) );
+            $next = array();
+            foreach ( $partials as $partial )
+            {
+                $rows = $db->arrayQuery( 'SELECT id, parent, lang_mask, text, action, link FROM ezurlalias_ml WHERE parent = ' . (int)$partial['parent']
+                                         . " AND text_md5 = '" . $db->escapeString( $md5 ) . "' AND lang_mask & " . (int)$mask . ' > 0' );
+                foreach ( is_array( $rows ) ? $rows : array() as $row )
+                {
+                    $pathRow = $partial['row'];
+                    $table = 'e' . $i;
+                    $pathRow[$table . '_id'] = $row['id'];
+                    $pathRow[$table . '_link'] = $row['link'];
+                    $pathRow[$table . '_text'] = $row['text'];
+                    if ( $i === $last )
+                    {
+                        $pathRow[$table . '_parent'] = $row['parent'];
+                        $pathRow[$table . '_lang_mask'] = $row['lang_mask'];
+                        $pathRow[$table . '_action'] = $row['action'];
+                    }
+                    $next[] = array( 'row' => $pathRow, 'parent' => (int)$row['link'] );
+                    if ( count( $next ) >= 100 )
+                        break 2;
+                }
+            }
+            if ( !$next )
+                return array();
+            $partials = $next;
+        }
+        $pathRows = array();
+        foreach ( $partials as $partial )
+            $pathRows[] = $partial['row'];
+        return $pathRows;
+    }
+
     static public function fetchByPath( $uriString, $glob = false )
     {
         $uriString = eZURLAliasML::cleanURL( $uriString );
@@ -1919,9 +1972,18 @@ class eZURLAliasML extends eZPersistentObject
             ++$i;
         }
         $elementOffset = $i - 1;
-        $query = "SELECT DISTINCT " . join( ", ", $selects ) . " FROM " . join( ", ", $tables ) . " WHERE " . join( " AND ", $conds );
-
-        $pathRows = $db->arrayQuery( $query );
+        if ( $db->databaseName() === 'mongo' && $glob === false )
+        {
+            // the MongoDB driver translates no join: the same rows, one element at a time
+            $pathRows = self::fetchPathRowsElementByElement( $db, $elements );
+        }
+        else
+        {
+            $query = "SELECT DISTINCT " . join( ", ", $selects ) . " FROM " . join( ", ", $tables ) . " WHERE " . join( " AND ", $conds );
+            $pathRows = $db->arrayQuery( $query );
+        }
+        if ( !is_array( $pathRows ) )
+            $pathRows = array();
         $elements = array();
         if ( count( $pathRows ) > 0 )
         {

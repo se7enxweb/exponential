@@ -1122,10 +1122,20 @@ class eZPersistentObject
 
             // Match stage
             $mongoFilter = [];
+            $mongoExpressions = [];
             if ( !empty( $conds ) && is_array( $conds ) )
             {
                 foreach ( $conds as $field => $value )
                 {
+                    // 'LOWER( login )' => 'admin' (eZUser::fetchByName(), fetchByEmail()): the field name would
+                    // be taken literally and match nothing; the text function runs in the server instead
+                    if ( !is_array( $value ) && is_string( $field )
+                         && preg_match( '/^\s*(LOWER|UPPER)\s*\(\s*([A-Za-z_][A-Za-z0-9_]*)\s*\)\s*$/i', $field, $function ) )
+                    {
+                        $mongoExpressions[] = [ '$eq' => [ [ strtoupper( $function[1] ) === 'LOWER' ? '$toLower' : '$toUpper' => '$' . $function[2] ],
+                                                           (string)$value ] ];
+                        continue;
+                    }
                     if ( is_array( $value ) )
                     {
                         $mongoFilter[$field] = $value;
@@ -1145,6 +1155,8 @@ class eZPersistentObject
                     }
                 }
             }
+            if ( $mongoExpressions )
+                $mongoFilter['$expr'] = count( $mongoExpressions ) === 1 ? $mongoExpressions[0] : [ '$and' => $mongoExpressions ];
             if ( !empty( $mongoFilter ) )
                 $pipeline[] = [ '$match' => $mongoFilter ];
 
