@@ -130,6 +130,26 @@ class VelocityWarmup extends \Exponential\Runnable\Command
         }
         unset($GLOBALS['expVelocityWarmup']);
 
+        // The response the renders built: their headers and status. A pool worker
+        // clears them after each request it serves, never before its first one, and
+        // the server's response state is not part of the statics snapshot, so every
+        // worker forked from this parent began its first request with the front
+        // page's headers already set: Cache-Control public, X-Exp-Cache MISS, the
+        // content license (Link rel="license", X-Content-License) and whatever else
+        // the page sent and the next one did not set again. A sign-in page or an
+        // access-denied answer went out with them (#366). Cleared here, the first
+        // request of a worker starts with no headers, as every later one does.
+        if (class_exists('Q_WebServer_State', false)) {
+            \Q_WebServer_State::clear();
+        }
+        if (class_exists('Q_Response', false) && method_exists('Q_Response', 'clear')) {
+            try { \Q_Response::clear(); } catch (\Throwable $e) {}
+        }
+        if (function_exists('header_remove')) {
+            @header_remove();
+        }
+        @http_response_code(200);
+
         // ── Undo the render's request footprint, keep everything else ─────────
         //
         // The pool takes its statics snapshot AFTER this script, so any eZ state the
