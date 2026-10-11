@@ -87,7 +87,9 @@ Every lookup is one query on an indexed column (or an exact match on a short one
 `ezcontentobject_version.id`, the `remote_id` of objects, nodes and trashed nodes, `eZURLAliasML::fetchNodeIDByPath()`,
 `ezimagefile.filepath`, and `filename` and `mime_type` of `ezbinaryfile` and `ezmedia`. Integers are cast, texts are
 escaped by the database; a prefix is `LIKE 'prefix%' ESCAPE '!'` with `%`, `_` and `!` in the text escaped. There
-is never a `LIKE '%text%'`.
+is never a `LIKE '%text%'`. Remote ids and file paths match in their case on every engine: the database narrows
+(MySQL's collations and SQLite's `LIKE` ignore case), and the finder then compares the stored value exactly.
+URL aliases are case-insensitive, as `eZURLAliasML` resolves them.
 
 At most `ResultLimit` objects (25) are described for one search, and at most `FileRowLimit` file rows (50) are read
 for one path or prefix; the page says when there were more.
@@ -198,3 +200,16 @@ The actor is the signed-in user, as for every audit event. See [the audit trail]
   nothing; `expContentFinderSandboxTest` writes content, users and roles (`fixtures/expcontentfindertestfixtures.php`),
   so it runs only in a throwaway copy of an installation named by `EXP_CONTENTFINDER_SANDBOX` and is skipped
   everywhere else.
+  On another engine than SQLite it also needs `EXP_CONTENTFINDER_SANDBOX_DATABASE`, naming the throwaway database
+  (the `Database` of the settings, or for Oracle the `User`). `expContentFinderURLAliasTest` needs nothing.
+
+## Databases
+
+Every lookup, the rights per result, the four actions and the audit records are tested on each engine below, with
+`--testsuite kernel-contentfinder` and an end-to-end browser check, in a throwaway database holding a copy of a real
+installation's content:
+
+| Engine | Version tested | Notes |
+|---|---|---|
+| SQLite | 3.34.1 | |
+| MySQL / MariaDB | MariaDB 10.5.29 | its collations compare without case: remote ids and file paths are compared exactly by the finder |
