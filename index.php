@@ -42,6 +42,14 @@ if ( isset( $_REQUEST['exp_repair'] ) )
 
 require 'autoload.php';
 
+// A file that config.php names in EXP_REQUEST_PREPEND_FILE runs at the start of every request, also in a
+// persistent worker, where config.php itself runs only once: the place for a request filter in front of the
+// site. Only config.php can name it, never a file the web server may write.
+if ( defined( 'EXP_REQUEST_PREPEND_FILE' ) && is_file( EXP_REQUEST_PREPEND_FILE ) )
+{
+    require EXP_REQUEST_PREPEND_FILE;
+}
+
 // On a development or test machine (EXP_ENV dev or test in config.env.php) PHP
 // errors are shown in the browser. Any other environment, or none, keeps the
 // display_errors setting of php.ini.
