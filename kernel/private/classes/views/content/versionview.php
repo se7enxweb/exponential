@@ -43,7 +43,7 @@ class Versionview extends \Exponential\Runnable\ModuleView
 
         // Will be sent from the content/edit page and should be kept
         // incase the user decides to continue editing.
-        $FromLanguage = htmlspecialchars( (string)( $Params['FromLanguage'] ?? '' ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+        $FromLanguage = htmlspecialchars( (string)( $scope['Params']['FromLanguage'] ?? '' ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
         if ( $http->hasPostVariable( 'BackButton' )  )
         {

@@ -163,10 +163,10 @@ class View extends \Exponential\Runnable\ModuleView
                 // write reason to debug
         //        $accessMessage = print_r($Params['ExtraParameters']['AccessList']['FunctionRequired'], true);
                 // Function required
-                if ( is_array( $Params['ExtraParameters']['AccessList'] ?? null ) )
+                if ( is_array( $scope['Params']['ExtraParameters']['AccessList'] ?? null ) )
                 {
                     $accessMessage = "Function required:\n";
-                    if ( is_array( $Params['ExtraParameters']['AccessList']['FunctionRequired'] ?? null ) )
+                    if ( is_array( $scope['Params']['ExtraParameters']['AccessList']['FunctionRequired'] ?? null ) )
                     {
                         foreach ( array_keys ( $Params['ExtraParameters']['AccessList']['FunctionRequired'] ) as $key )
                         {
@@ -174,7 +174,7 @@ class View extends \Exponential\Runnable\ModuleView
                         }
                     }
                     $accessMessage .= "Policies that didn't match:\n";
-                    if ( is_array( $Params['ExtraParameters']['AccessList']['PolicyList'] ?? null ) )
+                    if ( is_array( $scope['Params']['ExtraParameters']['AccessList']['PolicyList'] ?? null ) )
                     {
                         foreach ( $Params['ExtraParameters']['AccessList']['PolicyList'] as $policy )
                         {
@@ -200,10 +200,10 @@ class View extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'redirect_uri', $userRedirectURI );
         $tpl->setVariable( 'embed_content', $embedContent );
 
-        if ( is_array( $Params['ExtraParameters']['AccessList']['FunctionRequired'] ?? null ) and  ( $ini->variable( 'RoleSettings', 'ShowAccessDeniedReason' ) === "enabled" ) )
+        if ( is_array( $scope['Params']['ExtraParameters']['AccessList']['FunctionRequired'] ?? null ) and  ( $ini->variable( 'RoleSettings', 'ShowAccessDeniedReason' ) === "enabled" ) )
         {
-            $tpl->setVariable( 'module_required', $Params['ExtraParameters']['AccessList']['FunctionRequired']['Module'] ?? '' );
-            $tpl->setVariable( 'function_required', $Params['ExtraParameters']['AccessList']['FunctionRequired']['Function'] ?? '' );
+            $tpl->setVariable( 'module_required', $scope['Params']['ExtraParameters']['AccessList']['FunctionRequired']['Module'] ?? '' );
+            $tpl->setVariable( 'function_required', $scope['Params']['ExtraParameters']['AccessList']['FunctionRequired']['Function'] ?? '' );
         }
 
         $res = \eZTemplateDesignResource::instance();
