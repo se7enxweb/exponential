@@ -241,7 +241,9 @@ Hardening beyond that, from the strongest to the simplest:
    [Request rules](../bc/6.0/view_full_security.md).
 4. **Least privilege.** Give editors the roles they need, not Administrator. Policies that matter for security:
    `setup/setup` (settings), `setup/managecache`, `audit/read` and `audit/manage`, `mailpreferences/administrate` and
-   `mailpreferences/export`, `user/login` per siteaccess.
+   `mailpreferences/export`, `contentfinder/search` and `contentfinder/delete` (the
+   [content finder](../features/6.0/content-finder.md): find content by id or path, and trash or delete it from
+   there), `user/login` per siteaccess.
 5. **The setup wizard must stay closed.** After installation `settings/override/site.ini.append.php` carries
    `[SiteAccessSettings] CheckValidity=false`. While it is `true` (the shipped default), every request is sent to the
    setup wizard. Never set it back on a live site.

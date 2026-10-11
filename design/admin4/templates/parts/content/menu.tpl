@@ -18,6 +18,11 @@
 </div>
 {/if}
 
+{* The content finder box: only with contentfinder/search (doc/features/6.0/content-finder.md). *}
+{if ne( $ui_context, 'browse' )}
+{include uri='design:contentfinder/box.tpl'}
+{/if}
+
 {* DESIGN: Content END *}</div></div></div>
 {/if}
 </div>

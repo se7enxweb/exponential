@@ -14872,6 +14872,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>E-mail preferences</source>
         <translation>E-Mail-Einstellungen</translation>
     </message>
+    <message>
+        <source>Content finder</source>
+        <translation>Inhaltsfinder</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -59401,6 +59405,453 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
 You will need to change the class of the node by using the swap functionality.</source>
         <translation>Die Klasse wird von einem Knoten der obersten Ebene verwendet und kann nicht entfernt werden.
 Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentfinder</name>
+    <message>
+        <source>Content finder</source>
+        <translation>Inhaltsfinder</translation>
+    </message>
+    <message>
+        <source>Id, path or URL</source>
+        <translation>ID, Pfad oder URL</translation>
+    </message>
+    <message>
+        <source>Find content by an object, node, attribute or version id, a remote id, a URL alias or the path of a file.</source>
+        <translation>Inhalte nach Objekt-, Knoten-, Attribut- oder Versions-ID, Remote-ID, URL-Alias oder dem Pfad einer Datei finden.</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Finden</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>In den Papierkorb</translation>
+    </message>
+    <message>
+        <source>Delete permanently</source>
+        <translation>Endgültig löschen</translation>
+    </message>
+    <message>
+        <source>Purge from the trash</source>
+        <translation>Aus dem Papierkorb löschen</translation>
+    </message>
+    <message>
+        <source>Remove version</source>
+        <translation>Version entfernen</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Entwurf</translation>
+    </message>
+    <message>
+        <source>Archived</source>
+        <translation>Archiviert</translation>
+    </message>
+    <message>
+        <source>Rejected</source>
+        <translation>Abgelehnt</translation>
+    </message>
+    <message>
+        <source>Internal draft</source>
+        <translation>Interner Entwurf</translation>
+    </message>
+    <message>
+        <source>This action is not possible.</source>
+        <translation>Diese Aktion ist nicht möglich.</translation>
+    </message>
+    <message>
+        <source>%count nodes are below it; at most %limit can be removed here.</source>
+        <translation>Darunter liegen %count Knoten; hier können höchstens %limit entfernt werden.</translation>
+    </message>
+    <message>
+        <source>Object %id, %class.</source>
+        <translation>Objekt %id, %class.</translation>
+    </message>
+    <message>
+        <source>The object goes to the trash from every location listed here, with everything below them. It can be restored from the trash.</source>
+        <translation>Das Objekt kommt von allen hier aufgeführten Orten mit allem, was darunter liegt, in den Papierkorb. Es kann aus dem Papierkorb wiederhergestellt werden.</translation>
+    </message>
+    <message>
+        <source>The object is deleted from every location listed here, with everything below them. This cannot be undone: nothing goes to the trash.</source>
+        <translation>Das Objekt wird an allen hier aufgeführten Orten mit allem, was darunter liegt, gelöscht. Das lässt sich nicht rückgängig machen: nichts kommt in den Papierkorb.</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Knoten %id</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Hauptort</translation>
+    </message>
+    <message>
+        <source>%count nodes below it</source>
+        <translation>%count Knoten darunter</translation>
+    </message>
+    <message>
+        <source>nothing below it</source>
+        <translation>nichts darunter</translation>
+    </message>
+    <message>
+        <source>Locations: %locations. Nodes below them: %children. Versions of the object: %versions.</source>
+        <translation>Orte: %locations. Knoten darunter: %children. Versionen des Objekts: %versions.</translation>
+    </message>
+    <message>
+        <source>%count other objects relate to what is removed.</source>
+        <translation>%count andere Objekte verweisen auf das, was entfernt wird.</translation>
+    </message>
+    <message>
+        <source>The object is purged from the trash with all its %versions versions. This cannot be undone.</source>
+        <translation>Das Objekt wird mit allen %versions Versionen aus dem Papierkorb gelöscht. Das lässt sich nicht rückgängig machen.</translation>
+    </message>
+    <message>
+        <source>Node %id, trashed from</source>
+        <translation>Knoten %id, in den Papierkorb gelegt aus</translation>
+    </message>
+    <message>
+        <source>Version %version (%status, %language) is removed. This cannot be undone. The object keeps its other %count versions.</source>
+        <translation>Version %version (%status, %language) wird entfernt. Das lässt sich nicht rückgängig machen. Das Objekt behält seine anderen %count Versionen.</translation>
+    </message>
+    <message>
+        <source>I understand that this cannot be undone.</source>
+        <translation>Mir ist klar, dass sich das nicht rückgängig machen lässt.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Back to the finder</source>
+        <translation>Zurück zum Inhaltsfinder</translation>
+    </message>
+    <message>
+        <source>Nothing found, or you have no access to what was found.</source>
+        <translation>Nichts gefunden, oder Sie haben keinen Zugriff auf das Gefundene.</translation>
+    </message>
+    <message>
+        <source>You do not have the policies this action needs.</source>
+        <translation>Ihnen fehlen die Richtlinien, die diese Aktion braucht.</translation>
+    </message>
+    <message>
+        <source>You may not remove every location of this object and everything below it.</source>
+        <translation>Sie dürfen nicht alle Orte dieses Objekts und alles darunter entfernen.</translation>
+    </message>
+    <message>
+        <source>This object cannot go to the trash (it is a user or has users below it); it can only be deleted permanently.</source>
+        <translation>Dieses Objekt kann nicht in den Papierkorb (es ist ein Benutzer oder hat Benutzer darunter); es kann nur endgültig gelöscht werden.</translation>
+    </message>
+    <message>
+        <source>There are too many nodes below it for one removal here; remove it from the content structure, where a large removal runs in the background.</source>
+        <translation>Darunter liegen zu viele Knoten, um sie hier auf einmal zu entfernen; entfernen Sie es in der Inhaltsstruktur, wo eine große Entfernung im Hintergrund läuft.</translation>
+    </message>
+    <message>
+        <source>Something below it is waiting for approval; remove it once that is decided.</source>
+        <translation>Etwas darunter wartet auf Freigabe; entfernen Sie es, sobald darüber entschieden ist.</translation>
+    </message>
+    <message>
+        <source>This part of the content tree is being changed by a background job. Try again when the job is done.</source>
+        <translation>Dieser Teil des Inhaltsbaums wird gerade von einem Hintergrundauftrag geändert. Versuchen Sie es erneut, wenn der Auftrag fertig ist.</translation>
+    </message>
+    <message>
+        <source>The object is not in the trash.</source>
+        <translation>Das Objekt ist nicht im Papierkorb.</translation>
+    </message>
+    <message>
+        <source>This version cannot be removed: it is the published one, a workflow still holds it, or you may not remove it.</source>
+        <translation>Diese Version kann nicht entfernt werden: sie ist die veröffentlichte, ein Workflow hält sie noch, oder Sie dürfen sie nicht entfernen.</translation>
+    </message>
+    <message>
+        <source>The object changed after the confirmation page was shown. Check it again.</source>
+        <translation>Das Objekt hat sich geändert, nachdem die Bestätigungsseite angezeigt wurde. Prüfen Sie es erneut.</translation>
+    </message>
+    <message>
+        <source>Tick the box to confirm that this cannot be undone.</source>
+        <translation>Bestätigen Sie mit dem Häkchen, dass sich das nicht rückgängig machen lässt.</translation>
+    </message>
+    <message>
+        <source>An action can only be sent from a form of the finder.</source>
+        <translation>Eine Aktion kann nur aus einem Formular des Inhaltsfinders gesendet werden.</translation>
+    </message>
+    <message>
+        <source>The form has expired or did not come from this site. Open the finder again.</source>
+        <translation>Das Formular ist abgelaufen oder kam nicht von dieser Website. Öffnen Sie den Inhaltsfinder erneut.</translation>
+    </message>
+    <message>
+        <source>This is not an action of the finder.</source>
+        <translation>Das ist keine Aktion des Inhaltsfinders.</translation>
+    </message>
+    <message>
+        <source>The action failed. The error log has the details.</source>
+        <translation>Die Aktion ist fehlgeschlagen. Das Fehlerprotokoll enthält die Einzelheiten.</translation>
+    </message>
+    <message>
+        <source>The action was refused.</source>
+        <translation>Die Aktion wurde abgewiesen.</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Wartend</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Wiederholt</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>In Warteschlange</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Im Papierkorb</translation>
+    </message>
+    <message>
+        <source>Found by</source>
+        <translation>Gefunden über</translation>
+    </message>
+    <message>
+        <source>object id %id</source>
+        <translation>Objekt-ID %id</translation>
+    </message>
+    <message>
+        <source>the remote id of the object</source>
+        <translation>die Remote-ID des Objekts</translation>
+    </message>
+    <message>
+        <source>node id %id</source>
+        <translation>Knoten-ID %id</translation>
+    </message>
+    <message>
+        <source>the remote id of node %id</source>
+        <translation>die Remote-ID von Knoten %id</translation>
+    </message>
+    <message>
+        <source>node %id, which is in the trash</source>
+        <translation>Knoten %id, der im Papierkorb ist</translation>
+    </message>
+    <message>
+        <source>the URL alias %alias (node %id)</source>
+        <translation>den URL-Alias %alias (Knoten %id)</translation>
+    </message>
+    <message>
+        <source>version id %id (version %version)</source>
+        <translation>Versions-ID %id (Version %version)</translation>
+    </message>
+    <message>
+        <source>attribute id %id</source>
+        <translation>Attribut-ID %id</translation>
+    </message>
+    <message>
+        <source>the file path %path</source>
+        <translation>den Dateipfad %path</translation>
+    </message>
+    <message>
+        <source>Attribute %id (%identifier, %datatype), version %version, %language</source>
+        <translation>Attribut %id (%identifier, %datatype), Version %version, %language</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objekt-ID</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigentümer</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bereich</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Sprachen</translation>
+    </message>
+    <message>
+        <source>initial: %language</source>
+        <translation>ursprünglich: %language</translation>
+    </message>
+    <message>
+        <source>States</source>
+        <translation>Zustände</translation>
+    </message>
+    <message>
+        <source>Remote id</source>
+        <translation>Remote-ID</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Erstellt</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Current version</source>
+        <translation>Aktuelle Version</translation>
+    </message>
+    <message>
+        <source>Locations</source>
+        <translation>Orte</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Knoten-ID</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Pfad</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-Alias</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Verborgen</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Durch übergeordneten Knoten verborgen</translation>
+    </message>
+    <message>
+        <source>None: the object is in the trash.</source>
+        <translation>Keine: das Objekt ist im Papierkorb.</translation>
+    </message>
+    <message>
+        <source>No location you may read.</source>
+        <translation>Kein Ort, den Sie lesen dürfen.</translation>
+    </message>
+    <message>
+        <source>Versions</source>
+        <translation>Versionen</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Version id</source>
+        <translation>Versions-ID</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Ersteller</translation>
+    </message>
+    <message>
+        <source>No version you may read (content/versionread).</source>
+        <translation>Keine Version, die Sie lesen dürfen (content/versionread).</translation>
+    </message>
+    <message>
+        <source>Original path</source>
+        <translation>Ursprünglicher Pfad</translation>
+    </message>
+    <message>
+        <source>Trashed</source>
+        <translation>In den Papierkorb gelegt</translation>
+    </message>
+    <message>
+        <source>Trashed by</source>
+        <translation>In den Papierkorb gelegt von</translation>
+    </message>
+    <message>
+        <source>parent %id</source>
+        <translation>übergeordnet %id</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Recognise automatically</source>
+        <translation>Automatisch erkennen</translation>
+    </message>
+    <message>
+        <source>Attribute id</source>
+        <translation>Attribut-ID</translation>
+    </message>
+    <message>
+        <source>File path</source>
+        <translation>Dateipfad</translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation>In den Papierkorb gelegt</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>Endgültig gelöscht</translation>
+    </message>
+    <message>
+        <source>Purged from the trash</source>
+        <translation>Aus dem Papierkorb gelöscht</translation>
+    </message>
+    <message>
+        <source>Version removed</source>
+        <translation>Version entfernt</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>Objekt %id</translation>
+    </message>
+    <message>
+        <source>version %v</source>
+        <translation>Version %v</translation>
+    </message>
+    <message>
+        <source>The action was not done.</source>
+        <translation>Die Aktion wurde nicht ausgeführt.</translation>
+    </message>
+    <message>
+        <source>Search for</source>
+        <translation>Suchen nach</translation>
+    </message>
+    <message>
+        <source>Enter an object, node, attribute or version id, a remote id, a URL alias, a page URL, or the path or URL of a file below var/ (for example the path of an image). A path that ends with / or * finds every file below it. A number is tried as every kind of id.</source>
+        <translation>Geben Sie eine Objekt-, Knoten-, Attribut- oder Versions-ID, eine Remote-ID, einen URL-Alias, eine Seiten-URL oder den Pfad oder die URL einer Datei unter var/ ein (zum Beispiel den Pfad eines Bildes). Ein Pfad, der auf / oder * endet, findet alle Dateien darunter. Eine Zahl wird als jede Art von ID versucht.</translation>
+    </message>
+    <message>
+        <source>The text is too long.</source>
+        <translation>Der Text ist zu lang.</translation>
+    </message>
+    <message>
+        <source>This is not an id, path or URL the finder can look for.</source>
+        <translation>Das ist keine ID, kein Pfad und keine URL, nach der der Inhaltsfinder suchen kann.</translation>
+    </message>
+    <message>
+        <source>Objects found: %count.</source>
+        <translation>Gefundene Objekte: %count.</translation>
+    </message>
+    <message>
+        <source>Only the first %count are shown; enter a more exact text.</source>
+        <translation>Nur die ersten %count werden angezeigt; geben Sie einen genaueren Text ein.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Einrichtung</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bestätigen</translation>
     </message>
 </context>
 <context>

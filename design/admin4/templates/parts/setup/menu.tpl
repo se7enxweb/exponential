@@ -12,6 +12,7 @@
     'cache',              'Cache management'|i18n( 'design/admin/parts/setup/menu' ),
     'classes',            'Classes'|i18n( 'design/admin/parts/setup/menu' ),
     'collected',          'Collected information'|i18n( 'design/admin/parts/setup/menu' ),
+    'contentfinder',      'Content finder'|i18n( 'design/admin/parts/setup/menu' ),
     'extensions',         'Extensions'|i18n( 'design/admin/parts/setup/menu' ),
     'global_setting',     'Global settings'|i18n( 'design/admin/parts/setup/menu' ),
     'ini',                'Ini settings'|i18n( 'design/admin/parts/setup/menu' ),
