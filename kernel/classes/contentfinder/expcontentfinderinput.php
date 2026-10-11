@@ -168,6 +168,10 @@ class expContentFinderInput
                 break;
             case 'urlalias':
                 $value = self::urlAlias( $text );
+                // a full URL also names its host, which can choose the siteaccess (host matching)
+                $host = $value !== false ? self::urlHost( $text ) : '';
+                if ( $host !== '' )
+                    return array( array( 'type' => $type, 'value' => $value, 'host' => $host ) );
                 break;
             case 'file':
                 $value = self::filePath( $text );
@@ -251,6 +255,23 @@ class expContentFinderInput
                 return false;
         }
         return $text;
+    }
+
+    /**
+     * The host of a full http(s) URL, in lower case, without the port; '' for anything else.
+     *
+     * @param mixed $text
+     * @return string
+     */
+    public static function urlHost( $text )
+    {
+        $text = is_scalar( $text ) ? trim( (string)$text, self::SPACE ) : '';
+        if ( !preg_match( '#^https?://#i', $text ) )
+            return '';
+        $host = parse_url( $text, PHP_URL_HOST );
+        if ( !is_string( $host ) || !preg_match( '/^[a-z0-9.\-]{1,253}$/i', $host ) )
+            return '';
+        return strtolower( $host );
     }
 
     /**

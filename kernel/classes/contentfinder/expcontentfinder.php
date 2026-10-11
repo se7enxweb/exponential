@@ -42,6 +42,9 @@ class expContentFinder
     /** @var array class attribute id => identifier, this instance */
     protected $attributeIdentifiers = array();
 
+    /** @var array|null siteaccess => PathPrefix settings, this instance (siteAccessPrefixes()) */
+    protected $siteAccessPrefixes = null;
+
     /**
      * @param int|null $resultLimit default: contentfinder.ini [ContentFinderSettings] ResultLimit (1 to 100)
      * @param int|null $rowLimit default: FileRowLimit (1 to 500)
@@ -144,7 +147,7 @@ class expContentFinder
         $hits = array();
         foreach ( $input['queries'] as $query )
         {
-            foreach ( $this->lookup( $query['type'], $query['value'] ) as $hit )
+            foreach ( $this->lookup( $query['type'], $query['value'], isset( $query['host'] ) ? $query['host'] : '' ) as $hit )
             {
                 $objectID = (int)$hit['object_id'];
                 if ( $objectID <= 0 )
@@ -175,9 +178,10 @@ class expContentFinder
      *
      * @param string $type
      * @param mixed $value from expContentFinderInput
+     * @param string $host the host of a full URL (a URL alias query's 'host'), '' for none
      * @return array list of array( 'object_id', 'via', ... )
      */
-    public function lookup( $type, $value )
+    public function lookup( $type, $value, $host = '' )
     {
         switch ( $type )
         {
@@ -192,7 +196,7 @@ class expContentFinder
             case 'remote':
                 return $this->lookupRemoteID( (string)$value );
             case 'urlalias':
-                return $this->lookupURLAlias( (string)$value );
+                return $this->lookupURLAlias( (string)$value, (string)$host );
             case 'file':
                 return is_array( $value ) && isset( $value['path'] ) ? $this->lookupFile( (string)$value['path'], !empty( $value['prefix'] ) ) : array();
         }
@@ -329,33 +333,168 @@ class expContentFinder
     }
 
     /**
-     * A URL alias, exactly, resolved by eZURLAliasML; a path whose first element is a siteaccess is tried without it.
+     * A URL alias, exactly, resolved by eZURLAliasML. The text is tried as it is first; then as the page address of
+     * a siteaccess: the siteaccess the kernel would match for it (eZSiteAccess::match(): its URI segment taken off,
+     * by host with the host of a full URL), with that siteaccess's PathPrefix put in front (unless the path already
+     * starts with it or PathPrefixExclude names its first element); then with each other PathPrefix of the
+     * siteaccesses. Exact matches only, the first that resolves wins.
      *
      * @param string $path
+     * @param string $host the host of a full URL, '' for a path
      * @return array
      */
-    protected function lookupURLAlias( $path )
+    protected function lookupURLAlias( $path, $host = '' )
     {
-        $candidates = array( $path );
-        $elements = explode( '/', $path );
-        if ( count( $elements ) > 1 )
+        $siteAccesses = $this->siteAccessPrefixes();
+        $matched = null;
+        if ( class_exists( 'eZSiteAccess' ) )
         {
-            $ini = eZINI::instance();
-            $siteAccesses = $ini->hasVariable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) ? (array)$ini->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) : array();
-            if ( in_array( $elements[0], $siteAccesses, true ) )
-                $candidates[] = implode( '/', array_slice( $elements, 1 ) );
+            try
+            {
+                $match = eZSiteAccess::match( new eZURI( $path ), (string)$host, 80, '/index.php' );
+                if ( is_array( $match ) && isset( $match['name'] ) && isset( $siteAccesses[$match['name']] ) && empty( $match['unmatched'] ) )
+                    $matched = array( 'name' => (string)$match['name'],
+                                      'uri_part' => isset( $match['uri_part'] ) && is_array( $match['uri_part'] ) ? array_values( $match['uri_part'] ) : array() );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeWarning( 'Content finder: no siteaccess match for the path: ' . $e->getMessage(), __METHOD__ );
+            }
         }
-        foreach ( $candidates as $candidate )
+        foreach ( self::urlAliasCandidates( $path, $siteAccesses, $matched ) as $candidate )
         {
-            $nodeID = eZURLAliasML::fetchNodeIDByPath( $candidate );
+            $nodeID = eZURLAliasML::fetchNodeIDByPath( $candidate['path'] );
             if ( !$nodeID )
                 continue;
             $hits = array();
             foreach ( $this->rows( 'SELECT contentobject_id FROM ezcontentobject_tree WHERE node_id = ' . (int)$nodeID, 1 ) as $row )
-                $hits[] = array( 'object_id' => (int)$row['contentobject_id'], 'via' => 'urlalias', 'value' => $candidate, 'node_id' => (int)$nodeID );
+                $hits[] = array( 'object_id' => (int)$row['contentobject_id'], 'via' => 'urlalias', 'value' => $candidate['path'], 'node_id' => (int)$nodeID,
+                                 'siteaccess' => $candidate['siteaccess'], 'prefix' => $candidate['prefix'] );
             return $hits;
         }
         return array();
+    }
+
+    /**
+     * The PathPrefix and PathPrefixExclude[] of every siteaccess (AvailableSiteAccessList[], RelatedSiteAccessList[]),
+     * each read from that siteaccess's own site.ini; once per instance.
+     *
+     * @return array name => array( 'prefix' => without slashes, '' for none, 'exclude' => string[] )
+     */
+    protected function siteAccessPrefixes()
+    {
+        if ( $this->siteAccessPrefixes !== null )
+            return $this->siteAccessPrefixes;
+        $ini = eZINI::instance();
+        $names = array();
+        foreach ( array( 'AvailableSiteAccessList', 'RelatedSiteAccessList' ) as $list )
+            if ( $ini->hasVariable( 'SiteAccessSettings', $list ) )
+                $names = array_merge( $names, (array)$ini->variable( 'SiteAccessSettings', $list ) );
+        $this->siteAccessPrefixes = array();
+        foreach ( array_unique( array_filter( array_map( 'strval', $names ), 'strlen' ) ) as $name )
+        {
+            $prefix = '';
+            $exclude = array();
+            try
+            {
+                $saINI = eZSiteAccess::getIni( $name, 'site.ini' );
+                if ( $saINI->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) )
+                    $prefix = trim( (string)$saINI->variable( 'SiteAccessSettings', 'PathPrefix' ), '/' );
+                if ( $saINI->hasVariable( 'SiteAccessSettings', 'PathPrefixExclude' ) )
+                    $exclude = array_values( array_filter( array_map( function ( $item ) { return trim( (string)$item, '/' ); },
+                                                                      (array)$saINI->variable( 'SiteAccessSettings', 'PathPrefixExclude' ) ), 'strlen' ) );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeWarning( "Content finder: the settings of siteaccess $name: " . $e->getMessage(), __METHOD__ );
+            }
+            $this->siteAccessPrefixes[$name] = array( 'prefix' => $prefix, 'exclude' => $exclude );
+        }
+        return $this->siteAccessPrefixes;
+    }
+
+    /**
+     * The paths a URL alias text is tried as, in order, each once. Pure.
+     *
+     *  1. the path as it is;
+     *  2. with the matched siteaccess (eZSiteAccess::match() of the text): its URI segment taken off, its PathPrefix
+     *     put in front (prefixed()), then without the prefix;
+     *  3. a first segment that names a siteaccess taken off, that siteaccess's PathPrefix put in front, then without;
+     *  4. the path with each distinct PathPrefix of the siteaccesses in front.
+     *
+     * @param string $path without leading or trailing slashes
+     * @param array $siteAccesses from siteAccessPrefixes()
+     * @param array|null $matched array( 'name', 'uri_part' => string[] ) of the siteaccess the kernel matched, or null
+     * @return array list of array( 'path', 'siteaccess' => '' or the name, 'prefix' => '' or the PathPrefix used )
+     */
+    public static function urlAliasCandidates( $path, array $siteAccesses, $matched = null )
+    {
+        $path = trim( (string)$path, '/' );
+        $list = array();
+        $add = function ( $candidate, $siteAccess, $prefix ) use ( &$list ) {
+            $candidate = trim( $candidate, '/' );
+            if ( $candidate !== '' && !isset( $list[$candidate] ) )
+                $list[$candidate] = array( 'path' => $candidate, 'siteaccess' => (string)$siteAccess, 'prefix' => (string)$prefix );
+        };
+        $add( $path, '', '' );
+        $elements = explode( '/', $path );
+
+        $bySiteAccess = array();
+        if ( is_array( $matched ) && isset( $matched['name'] ) && isset( $siteAccesses[$matched['name']] ) )
+        {
+            $rest = $elements;
+            $part = isset( $matched['uri_part'] ) ? array_values( (array)$matched['uri_part'] ) : array();
+            if ( $part && count( $rest ) > count( $part )
+                 && strtolower( implode( '/', array_slice( $rest, 0, count( $part ) ) ) ) === strtolower( implode( '/', $part ) ) )
+                $rest = array_slice( $rest, count( $part ) );
+            $bySiteAccess[] = array( $matched['name'], implode( '/', $rest ) );
+        }
+        if ( count( $elements ) > 1 && isset( $siteAccesses[$elements[0]] ) )
+            $bySiteAccess[] = array( $elements[0], implode( '/', array_slice( $elements, 1 ) ) );
+        foreach ( $bySiteAccess as $item )
+        {
+            list( $name, $rest ) = $item;
+            $settings = $siteAccesses[$name];
+            $prefixed = self::prefixed( $rest, $settings['prefix'], $settings['exclude'] );
+            $add( $prefixed, $name, $prefixed !== $rest ? $settings['prefix'] : '' );
+            $add( $rest, $name, '' );
+        }
+
+        foreach ( $siteAccesses as $name => $settings )
+        {
+            if ( $settings['prefix'] === '' )
+                continue;
+            $prefixed = self::prefixed( $path, $settings['prefix'], $settings['exclude'] );
+            if ( $prefixed !== $path )
+                $add( $prefixed, $name, $settings['prefix'] );
+        }
+        return array_values( $list );
+    }
+
+    /**
+     * A path as a siteaccess with this PathPrefix stores it, as eZURLAliasML::translate() does: the prefix in front,
+     * unless the path already starts with it or its first element starts with an entry of PathPrefixExclude[].
+     *
+     * @param string $path
+     * @param string $prefix
+     * @param string[] $exclude
+     * @return string
+     */
+    public static function prefixed( $path, $prefix, array $exclude = array() )
+    {
+        $path = trim( (string)$path, '/' );
+        $prefix = trim( (string)$prefix, '/' );
+        if ( $prefix === '' )
+            return $path;
+        if ( preg_match( '#^' . preg_quote( $prefix, '#' ) . '(/.*)?$#i', $path ) )
+            return $path;
+        foreach ( $exclude as $item )
+        {
+            $item = trim( (string)$item, '/' );
+            if ( $item !== '' && preg_match( '#^' . preg_quote( $item, '#' ) . '(/.*)?$#i', $path ) )
+                return $path;
+        }
+        return $path === '' ? $prefix : $prefix . '/' . $path;
     }
 
     /**
@@ -482,7 +621,9 @@ class expContentFinder
     {
         $match = array( 'via' => $hit['via'], 'value' => is_scalar( $hit['value'] ) ? (string)$hit['value'] : '',
                         'node_id' => isset( $hit['node_id'] ) ? (int)$hit['node_id'] : 0, 'trash' => false, 'rows' => array(),
-                        'version' => isset( $hit['version'] ) ? (int)$hit['version'] : 0 );
+                        'version' => isset( $hit['version'] ) ? (int)$hit['version'] : 0,
+                        'siteaccess' => isset( $hit['siteaccess'] ) ? (string)$hit['siteaccess'] : '',
+                        'prefix' => isset( $hit['prefix'] ) ? (string)$hit['prefix'] : '' );
         switch ( $hit['via'] )
         {
             case 'object':

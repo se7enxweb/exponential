@@ -59638,6 +59638,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>den URL-Alias %alias (Knoten %id)</translation>
     </message>
     <message>
+        <source>with the path prefix %prefix of siteaccess %siteaccess</source>
+        <translation>mit dem Pfadpräfix %prefix des Siteaccess %siteaccess</translation>
+    </message>
+    <message>
+        <source>as a page of siteaccess %siteaccess</source>
+        <translation>als Seite des Siteaccess %siteaccess</translation>
+    </message>
+    <message>
         <source>version id %id (version %version)</source>
         <translation>Versions-ID %id (Version %version)</translation>
     </message>
