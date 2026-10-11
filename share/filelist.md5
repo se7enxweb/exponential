@@ -5288,9 +5288,9 @@ baa63921e8f05df178e0c58f546c8c59  kernel/content/urlalias.php
 1ad9bf77d1e4d16af32f03dad229b93f  kernel/content/versionview.php
 61582f8398dbe8ff525856b80ea0ffe7  kernel/content/versionviewframe.php
 10eb94a93da9521ceb319245f0a6243c  kernel/content/view.php
-52cd2582bcff720a463aba4c1d5bb3e1  kernel/contentfinder/action.php
+9347908f63def173d2ef2392a735b837  kernel/contentfinder/action.php
 a4eed9a7905fe1e626f082adbfc5b6cf  kernel/contentfinder/module.php
-fedd27c338fcf38b64a19baf2e43b689  kernel/contentfinder/search.php
+386d657fdc048599697b83d423c7bf9c  kernel/contentfinder/search.php
 26769ecf1f69fca7a10592eea1b17135  kernel/error/module.php
 49c653b7029afbd4ec85651acc7eba62  kernel/error/view.php
 747ed638d9ee58da9a9aa32a57638c6c  kernel/ezinfo/about.php
