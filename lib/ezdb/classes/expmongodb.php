@@ -634,7 +634,8 @@ class expMongoDB extends eZDBInterface
             if ( !in_array( $valueToken['type'], array( 'number', 'string' ), true ) )
                 return false;
             $i++;
-            $value = self::whereValue( $valueToken );
+            // a text function's result is compared as text: '42' stays a string
+            $value = !empty( $left['text'] ) ? (string)$valueToken['value'] : self::whereValue( $valueToken );
 
             if ( $column === null )
             {
@@ -741,6 +742,17 @@ class expMongoDB extends eZDBInterface
      */
     protected function parseWhereOperand( array $tokens, &$i )
     {
+        // LOWER( column ) and UPPER( column ), as eZUser::fetchByName() and fetchByEmail() compare: the text
+        // function in the server ($toLower, $toUpper), compared with the literal as text
+        if ( $i + 3 < count( $tokens ) && $tokens[$i]['type'] === 'ident' && in_array( strtoupper( $tokens[$i]['value'] ), array( 'LOWER', 'UPPER' ), true )
+             && $tokens[$i + 1]['type'] === '(' && $tokens[$i + 2]['type'] === 'ident' && $tokens[$i + 3]['type'] === ')' )
+        {
+            $function = strtoupper( $tokens[$i]['value'] ) === 'LOWER' ? '$toLower' : '$toUpper';
+            $column = $tokens[$i + 2]['value'];
+            $i += 4;
+            return array( 'expr' => array( $function => '$' . $column ), 'text' => true );
+        }
+
         $start = $i;
         $tree = $this->parseOperandBitOr( $tokens, $i );
         if ( $tree === false )
@@ -875,6 +887,8 @@ class expMongoDB extends eZDBInterface
     /**
      * A LIKE pattern as a regex. % and _ are SQL's wildcards; everything else
      * is quoted so a dot or a bracket in a path does not become a wildcard.
+     * "LIKE 'a!%b%' ESCAPE '!'" (one character, as every SQL engine takes it)
+     * makes the character after the escape character literal: here a %.
      */
     protected function parseWhereLike( array $tokens, &$i )
     {
@@ -884,12 +898,28 @@ class expMongoDB extends eZDBInterface
         $pattern = $tokens[$i]['value'];
         $i++;
 
+        $escape = null;
+        if ( $i < count( $tokens ) && $tokens[$i]['type'] === 'ident' && strtoupper( $tokens[$i]['value'] ) === 'ESCAPE' )
+        {
+            if ( $i + 1 >= count( $tokens ) || $tokens[$i + 1]['type'] !== 'string' || strlen( $tokens[$i + 1]['value'] ) !== 1 )
+                return false;
+            $escape = $tokens[$i + 1]['value'];
+            $i += 2;
+        }
+
         $regex = '';
         $length = strlen( $pattern );
         for ( $k = 0; $k < $length; $k++ )
         {
             $char = $pattern[$k];
-            if ( $char === '%' )
+            if ( $escape !== null && $char === $escape )
+            {
+                // a trailing escape character escapes nothing: SQL refuses it, so does this
+                if ( $k + 1 >= $length )
+                    return false;
+                $regex .= preg_quote( $pattern[++$k] );
+            }
+            elseif ( $char === '%' )
                 $regex .= '.*';
             elseif ( $char === '_' )
                 $regex .= '.';

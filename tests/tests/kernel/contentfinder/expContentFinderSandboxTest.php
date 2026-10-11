@@ -205,6 +205,10 @@ class expContentFinderSandboxTest extends PHPUnit\Framework\TestCase
                          array( 'node:' . $node, 'auto' ), array( 'https://www.example.invalid/' . self::$seed['urlalias']['article'], 'auto' ),
                          array( 'https://www.example.invalid/admin/content/view/full/' . $node, 'auto' ) ) as $case )
             $this->assertContains( $id, $this->ids( $case[0], $case[1] ), implode( ' as ', $case ) );
+        // the whole alias resolves as an alias (eZURLAliasML::fetchByPath()), not only by its last part
+        $result = $this->resultFor( self::$seed['urlalias']['article'], $id, 'urlalias' );
+        $this->assertSame( 'urlalias', $result['matches'][0]['via'] );
+        $this->assertSame( $node, (int)eZURLAliasML::fetchNodeIDByPath( self::$seed['urlalias']['article'] ) );
 
         $result = $this->resultFor( (string)$id, $id, 'object' );
         $this->assertSame( 'CF Article', $result['name'] );
