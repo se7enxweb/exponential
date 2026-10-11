@@ -1957,6 +1957,22 @@ class expVelocity
                 $webserver['idleWorkerTimeout'] = $idleTimeout;
         }
 
+        // [ServerSettings] StreamTimeout, StreamShare, MaxStreams, RetryWithin
+        // -> Q.webserver.*: how long a streaming response (Server-Sent Events)
+        // may run, how many workers streams may hold, and within how long a
+        // GET whose worker died is run again. Empty leaves the engine's own
+        // default; an engine without streaming ignores them.
+        foreach ( array( 'StreamTimeout' => 'streamTimeout', 'MaxStreams' => 'maxStreams',
+                         'RetryWithin' => 'retryWithin' ) as $iniName => $engineName )
+        {
+            $value = trim( (string)$this->setting( 'ServerSettings', $iniName, '' ) );
+            if ( $value !== '' && ctype_digit( $value ) )
+                $webserver[$engineName] = (int)$value;
+        }
+        $streamShare = trim( (string)$this->setting( 'ServerSettings', 'StreamShare', '' ) );
+        if ( $streamShare !== '' && is_numeric( $streamShare ) )
+            $webserver['streamShare'] = max( 0.0, min( 1.0, (float)$streamShare ) );
+
         // [ServerSettings] Zygote -> Q.webserver.zygote: fork later workers
         // from a process that never held a client connection, so a worker
         // forked under load does not keep visitors' TLS connections open.
