@@ -55193,4 +55193,15 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>kernel/contentfinder</name>
+    <message>
+        <source>Content finder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

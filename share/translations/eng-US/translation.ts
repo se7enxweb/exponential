@@ -61750,4 +61750,15 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The key "%name" is revoked. Requests with it are refused from now on.</translation>
     </message>
 </context>
+<context>
+    <name>kernel/contentfinder</name>
+    <message>
+        <source>Content finder</source>
+        <translation>Content finder</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+</context>
 </TS>
