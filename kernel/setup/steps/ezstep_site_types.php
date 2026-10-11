@@ -193,12 +193,23 @@ class eZStepSiteTypes extends eZStepInstaller
                                                                   'max_redirects' => 5 ) ) );
         // Note: Could be blocked by not allowing remote calls.
         error_clear_last();
-        $body = @file_get_contents( $url, false, $context );
+        // The response headers come from the stream's wrapper_data: PHP 8.0 to 8.3 have no
+        // http_get_last_response_headers(), and their local $http_response_header is only set
+        // when the function names it literally, which get_defined_vars() does not (and PHP 8.5
+        // deprecates the variable)
+        $body = false;
         $headers = array();
-        if ( function_exists( 'http_get_last_response_headers' ) )
+        $stream = @fopen( $url, 'rb', false, $context );
+        if ( $stream !== false )
+        {
+            $meta = stream_get_meta_data( $stream );
+            if ( isset( $meta['wrapper_data'] ) && is_array( $meta['wrapper_data'] ) )
+                $headers = $meta['wrapper_data'];
+            $body = @stream_get_contents( $stream );
+            fclose( $stream );
+        }
+        if ( !$headers && function_exists( 'http_get_last_response_headers' ) )
             $headers = (array)http_get_last_response_headers();
-        else
-            $headers = (array)( get_defined_vars()['http_response_header'] ?? array() );
 
         $status = 0;
         $expected = -1;

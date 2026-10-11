@@ -49,7 +49,7 @@ class expAdminViewsDebugCleanTest extends PHPUnit\Framework\TestCase
         // content/versionview/<id>/<version> without a language and FromLanguage passed null to htmlspecialchars()
         $source = file_get_contents( $this->root . '/kernel/private/classes/views/content/versionview.php' );
         $this->assertStringContainsString( 'htmlspecialchars( (string)$LanguageCode,', $source );
-        $this->assertStringContainsString( "htmlspecialchars( (string)( \$Params['FromLanguage'] ?? '' ),", $source );
+        $this->assertStringContainsString( "htmlspecialchars( (string)( \$scope['Params']['FromLanguage'] ?? '' ),", $source );
         $deprecations = array();
         set_error_handler( function ( $no, $str ) use ( &$deprecations ) { $deprecations[] = $str; return true; }, E_DEPRECATED );
         try
