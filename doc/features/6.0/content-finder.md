@@ -89,6 +89,7 @@ order, until one resolves:
 
    This is the one lookup that reads the whole alias table. Measured on a copy of a real installation's content
    (2833 alias rows; `test` matches 1768 of them): SQLite 10 ms, MariaDB 61 ms, PostgreSQL 55 ms, MongoDB 95 ms,
+   Oracle 287 ms,
    reading every matching row. It runs only when nothing else matched; where the table is very large, switch it
    off with `contentfinder.ini [ContentFinderSettings] PartialAliasSearch=disabled`.
 
@@ -245,4 +246,5 @@ installation's content:
 | SQLite | 3.34.1 | |
 | MySQL / MariaDB | MariaDB 10.5.29 | its collations compare without case: remote ids and file paths are compared exactly by the finder |
 | PostgreSQL | 13.23 | `LIKE` compares in case, as the finder does; URL aliases need `digest()` (pgcrypto), which the installer sets up |
+| Oracle | Oracle AI Database 26ai Free (23.26.3), with `extension/ezoracle` 2.3.5 | `LIKE … ESCAPE` and `LOWER()` as everywhere; no difference found |
 | MongoDB | 8.3.11 | through the driver: `LIKE … ESCAPE`, `LOWER( column )` (the user fetch) and URL alias paths (`eZURLAliasML::fetchByPath()`, one element at a time instead of the join) are translated; every finder query is a single-table one |
