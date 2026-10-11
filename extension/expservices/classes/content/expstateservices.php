@@ -14,7 +14,7 @@
 class expStateServices extends expContentServiceBase
 {
     public static $services = array(
-        'groups' => array( 'summary' => 'The state groups with their states', 'access' => array( 'state', 'administrate' ), 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'page of groups' ),
+        'groups' => array( 'summary' => 'The state groups with their states', 'access' => array( 'state', 'administrate' ), 'write' => false, 'ai' => true, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'page of groups' ),
         'groupCount' => array( 'summary' => 'Number of state groups', 'access' => array( 'state', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => '{count}' ),
         'group' => array( 'summary' => 'A state group by id or identifier, with its states', 'access' => array( 'state', 'administrate' ), 'write' => false, 'args' => array( 'group' => 'string' ), 'returns' => 'group' ),
         'states' => array( 'summary' => 'The states of a group in order', 'access' => array( 'state', 'administrate' ), 'write' => false, 'args' => array( 'group' => 'string' ), 'returns' => 'states' ),
@@ -23,7 +23,7 @@ class expStateServices extends expContentServiceBase
         'translations' => array( 'summary' => 'The names and descriptions of a state in every language', 'access' => array( 'state', 'administrate' ), 'write' => false, 'args' => array( 'state_id' => 'int' ), 'returns' => 'language => {name, description}' ),
         'groupTranslations' => array( 'summary' => 'The names and descriptions of a group in every language', 'access' => array( 'state', 'administrate' ), 'write' => false, 'args' => array( 'group' => 'string' ), 'returns' => 'language => {name, description}' ),
         'defaultState' => array( 'summary' => 'The first (default) state of a group', 'access' => array( 'state', 'administrate' ), 'write' => false, 'args' => array( 'group' => 'string' ), 'returns' => 'state' ),
-        'ofObject' => array( 'summary' => 'The states of an object', 'access' => array( 'content', 'read' ), 'write' => false, 'args' => array( 'object_id' => 'int' ), 'returns' => 'states' ),
+        'ofObject' => array( 'summary' => 'The states of an object', 'access' => array( 'content', 'read' ), 'write' => false, 'ai' => true, 'args' => array( 'object_id' => 'int' ), 'returns' => 'states' ),
         'allowedForObject' => array( 'summary' => 'The states the current user may assign to an object', 'access' => array( 'content', 'read' ), 'write' => false, 'args' => array( 'object_id' => 'int' ), 'returns' => 'states' ),
         'objects' => array( 'summary' => 'Objects (main nodes) in a state, paged', 'access' => array( 'content', 'read' ), 'write' => false, 'args' => array( 'state_id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'page of nodes' ),
         'objectCount' => array( 'summary' => 'Number of objects in a state', 'access' => array( 'state', 'administrate' ), 'write' => false, 'args' => array( 'state_id' => 'int' ), 'returns' => '{count}' ),

@@ -14,7 +14,7 @@ class expServicesCatalog extends expServiceBase
     const VERSION = '0.1.0';
 
     public static $services = array(
-        'catalog' => array( 'summary' => 'Every service of every domain: domain, method, summary, access, write, args, returns',
+        'catalog' => array( 'summary' => 'Every service of every domain: domain, method, summary, access, write, ai, args, returns',
             'access' => 'public', 'write' => false, 'args' => array( 'domain' => 'string' ),
             'returns' => 'list of service descriptors (optionally one domain)' ),
         'schema' => array( 'summary' => 'The services of one domain',
@@ -64,6 +64,8 @@ class expServicesCatalog extends expServiceBase
                 'summary' => isset( $decl['summary'] ) ? $decl['summary'] : '',
                 'access' => $access,
                 'write' => !empty( $decl['write'] ),
+                // offered to the assistant of expai (doc/service-tools.md of expai): 'ai' => true or array( 'summary' => '...' )
+                'ai' => !empty( $decl['ai'] ) && empty( $decl['write'] ),
                 'args' => isset( $decl['args'] ) ? $decl['args'] : array(),
                 'returns' => isset( $decl['returns'] ) ? $decl['returns'] : '',
                 'call' => 'ezjscore/call/exp' . $domain . '::' . $method . ( !empty( $decl['args'] ) ? '::<' . implode( '>::<', array_keys( $decl['args'] ) ) . '>' : '' ),

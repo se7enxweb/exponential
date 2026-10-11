@@ -13,7 +13,7 @@
 class expSectionServices extends expContentServiceBase
 {
     public static $services = array(
-        'list' => array( 'summary' => 'All sections', 'access' => array( 'section', 'view' ), 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'page of sections' ),
+        'list' => array( 'summary' => 'All sections', 'access' => array( 'section', 'view' ), 'write' => false, 'ai' => true, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'page of sections' ),
         'count' => array( 'summary' => 'Number of sections', 'access' => array( 'section', 'view' ), 'write' => false, 'args' => array(), 'returns' => '{count}' ),
         'get' => array( 'summary' => 'A section by id', 'access' => array( 'section', 'view' ), 'write' => false, 'args' => array( 'section_id' => 'int' ), 'returns' => 'section' ),
         'getByIdentifier' => array( 'summary' => 'A section by identifier', 'access' => array( 'section', 'view' ), 'write' => false, 'args' => array( 'identifier' => 'string' ), 'returns' => 'section' ),
@@ -24,7 +24,7 @@ class expSectionServices extends expContentServiceBase
         'assignable' => array( 'summary' => 'Sections the current user may assign', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'sections' ),
         'navigationParts' => array( 'summary' => 'The navigation parts a section can use', 'access' => array( 'section', 'view' ), 'write' => false, 'args' => array(), 'returns' => 'parts' ),
         'ofObject' => array( 'summary' => 'The section of an object', 'access' => array( 'content', 'read' ), 'write' => false, 'args' => array( 'object_id' => 'int' ), 'returns' => 'section' ),
-        'ofNode' => array( 'summary' => 'The section of a node', 'access' => array( 'content', 'read' ), 'write' => false, 'args' => array( 'node_id' => 'int' ), 'returns' => 'section' ),
+        'ofNode' => array( 'summary' => 'The section of a node', 'access' => array( 'content', 'read' ), 'write' => false, 'ai' => true, 'args' => array( 'node_id' => 'int' ), 'returns' => 'section' ),
         'create' => array( 'summary' => 'Creates a section. POST: name, identifier, navigation_part', 'access' => array( 'section', 'edit' ), 'write' => true, 'args' => array(), 'returns' => 'section' ),
         'update' => array( 'summary' => 'Changes a section (same POST fields)', 'access' => array( 'section', 'edit' ), 'write' => true, 'args' => array( 'section_id' => 'int' ), 'returns' => 'section' ),
         'remove' => array( 'summary' => 'Removes an unused section', 'access' => array( 'section', 'edit' ), 'write' => true, 'args' => array( 'section_id' => 'int' ), 'returns' => '{removed}' ),

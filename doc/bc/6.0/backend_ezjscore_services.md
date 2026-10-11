@@ -51,7 +51,7 @@ checks that the service is declared, calls it, and turns every exception into th
 
 | Call | Answers |
 |---|---|
-| `expservices::catalog[::<domain>]` | every service: domain, method, summary, access, write, args, returns, call |
+| `expservices::catalog[::<domain>]` | every service: domain, method, summary, access, write, ai, args, returns, call |
 | `expservices::schema::<domain>` | the services of one domain |
 | `expservices::service::<domain>::<method>` | one descriptor |
 | `expservices::domains` | the domains with their class and service count |
@@ -163,6 +163,19 @@ A request signed in by an API token needs POST but no form token (see "Authentic
 
 Helpers: `arg()`, `post()`, `paging()`/`pageOf()`, `ok()`, `page()`, `guard()`, `audit()`, `node()`, `can()`.
 Register the class in `ezjscore.ini.append.php`, run `php bin/php/ezpgenerateautoloads.php -e`.
+
+### One declaration, three channels
+
+The same declaration serves HTTP (`ezjscore/call/exp<domain>::<method>`), MCP (the tools `exp_svc_<domain>_<method>`
+that expmcp generates from the catalogue) and, when the service opts in, the assistant of the extension expai. A read
+service opts in with `'ai' => true`, or with `'ai' => array( 'summary' => '...' )` to give the model its own
+description; services are private to the assistant by default, and a service with `'write' => true` is never offered.
+The catalogue reports the flag as `ai`. The assistant calls the service in process as the logged-in editor, with the
+service's own `access` check, the policy `ezjscore/call` and expai's policy `expai/services` (limitation Domain);
+expai's data policy filters the answer. Opted in here: `expnode::childrenNames`, `childrenCount`, `breadcrumb`,
+`tree`, `latest`, `find`; `expsection::list`, `ofNode`; `expstate::groups`, `ofObject`; `exptags::roots`,
+`children`, `tree`, `search`, `ofnode`. A site can opt in more without code changes in `expai.ini [ServiceTools]`
+(see the documentation of expai, `doc/service-tools.md`).
 
 ### Testing a call
 

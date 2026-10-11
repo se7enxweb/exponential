@@ -6,6 +6,7 @@
  * Every service is declared in static::$services: method => array(
  *   'summary' => '...', 'access' => array( 'module', 'function' ) | 'public' | 'user',
  *   'write' => bool (POST + form token, audited), 'args' => array( name => 'int|string|bool|json|list' ),
+ *   'ai' => true | array( 'summary' => '...' ) (optional: a read service the assistant of expai may call),
  *   'returns' => '...' ).
  * Every service returns ok()/page(); expServiceException (400 args, 401 login, 403 denied, 404 not found,
  * 409 conflict, 422 invalid) becomes { ok: false, error: { code, message } } through invoke(), which the
