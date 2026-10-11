@@ -12073,6 +12073,38 @@ Note: The packages will not be uninstalled.</translation>
         <source>Choose which e-mail you get.</source>
         <translation>Choose which e-mail you get.</translation>
     </message>
+    <message>
+        <source>Syndication</source>
+        <translation>Syndication</translation>
+    </message>
+    <message>
+        <source>Export parts of the content tree as feeds, import the feeds of other sites</source>
+        <translation>Export parts of the content tree as feeds, import the feeds of other sites</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Debug output</translation>
+    </message>
+    <message>
+        <source>Debug redirection</source>
+        <translation>Debug redirection</translation>
+    </message>
+    <message>
+        <source>Template debug</source>
+        <translation>Template debug</translation>
+    </message>
+    <message>
+        <source>Inline template debug</source>
+        <translation>Inline template debug</translation>
+    </message>
+    <message>
+        <source>List of used templates</source>
+        <translation>List of used templates</translation>
+    </message>
+    <message>
+        <source>SQL debug output</source>
+        <translation>SQL debug output</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -12411,6 +12443,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>E-mail preferences</source>
         <translation>E-mail preferences</translation>
+    </message>
+    <message>
+        <source>Content finder</source>
+        <translation>Content finder</translation>
     </message>
 </context>
 <context>

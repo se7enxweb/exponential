@@ -14486,6 +14486,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Choose which e-mail you get.</source>
         <translation>Wählen Sie, welche E-Mails Sie erhalten.</translation>
     </message>
+    <message>
+        <source>Syndication</source>
+        <translation>Syndizierung</translation>
+    </message>
+    <message>
+        <source>Export parts of the content tree as feeds, import the feeds of other sites</source>
+        <translation>Teile des Inhaltsbaums als Feeds exportieren, Feeds anderer Seiten importieren</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>

@@ -11203,6 +11203,38 @@ Note: The packages will not be uninstalled.</source>
         <source>Store</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Syndication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export parts of the content tree as feeds, import the feeds of other sites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug redirection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inline template debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of used templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL debug output</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -11528,6 +11560,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>E-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content finder</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
