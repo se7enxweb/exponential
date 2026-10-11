@@ -60,7 +60,7 @@ Every JSON document is an envelope around the root element of the XML document i
                         ["text","Scale your fitness business with us"]
                     ],
                     ["ezobject:attribute",{"ezremote:identifier":"description","name":"Description","type":"ezxmltext"},
-                        ["#xml","<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"><paragraph>We help gym owners ...</paragraph></section>"]
+                        ["#xml","<section><paragraph>We help gym owners ...</paragraph></section>"]
                     ],
                     ["ezobject:attribute",{"ezremote:identifier":"image","name":"Image","type":"ezimage","image-file-key":"2f4d2aa580e85579751310ac32afc509","alternative-text":""}]
                 ]
