@@ -27,6 +27,7 @@
     {case match='node_remote_id'}{'the remote id of node %id'|i18n( 'kernel/contentfinder',, hash( '%id', $hit.node_id ) )}{/case}
     {case match='trash_node'}{'node %id, which is in the trash'|i18n( 'kernel/contentfinder',, hash( '%id', $hit.node_id ) )}{/case}
     {case match='urlalias'}{'the URL alias %alias (node %id)'|i18n( 'kernel/contentfinder',, hash( '%alias', $hit.value, '%id', $hit.node_id ) )|wash}{if $hit.prefix} {'with the path prefix %prefix of siteaccess %siteaccess'|i18n( 'kernel/contentfinder',, hash( '%prefix', $hit.prefix, '%siteaccess', $hit.siteaccess ) )|wash}{elseif $hit.siteaccess} {'as a page of siteaccess %siteaccess'|i18n( 'kernel/contentfinder',, hash( '%siteaccess', $hit.siteaccess ) )|wash}{/if}{/case}
+    {case match='urlalias_tail'}{'the last part of the URL alias %alias (node %id)'|i18n( 'kernel/contentfinder',, hash( '%alias', $hit.value, '%id', $hit.node_id ) )|wash}{if $hit.history} {'(an old address, kept as history)'|i18n( 'kernel/contentfinder' )}{/if}{/case}
     {case match='version'}{'version id %id (version %version)'|i18n( 'kernel/contentfinder',, hash( '%id', $hit.value, '%version', $hit.version ) )}{/case}
     {case match='attribute'}{'attribute id %id'|i18n( 'kernel/contentfinder',, hash( '%id', $hit.value ) )}{/case}
     {case match='file'}{'the file path %path'|i18n( 'kernel/contentfinder',, hash( '%path', $hit.value ) )|wash}{/case}

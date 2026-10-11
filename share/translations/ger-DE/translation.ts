@@ -59642,6 +59642,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>mit dem Pfadpräfix %prefix des Siteaccess %siteaccess</translation>
     </message>
     <message>
+        <source>the last part of the URL alias %alias (node %id)</source>
+        <translation>den letzten Teil des URL-Alias %alias (Knoten %id)</translation>
+    </message>
+    <message>
+        <source>(an old address, kept as history)</source>
+        <translation>(eine alte Adresse, als Verlauf aufbewahrt)</translation>
+    </message>
+    <message>
         <source>as a page of siteaccess %siteaccess</source>
         <translation>als Seite des Siteaccess %siteaccess</translation>
     </message>

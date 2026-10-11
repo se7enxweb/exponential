@@ -378,7 +378,94 @@ class expContentFinder
                                  'siteaccess' => $candidate['siteaccess'], 'prefix' => $candidate['prefix'] );
             return $hits;
         }
-        return array();
+        return $this->lookupURLAliasTail( $path );
+    }
+
+    /**
+     * The last resort for a URL alias: the alias elements whose own text is the last element of the path (as
+     * eZURLAliasML compares, without case), each verified upwards against the rest of the path, with its full path.
+     * Exact matches only: the text is looked up by the indexed text column, and only when that finds nothing by
+     * text_md5 (the md5 of the lower-case text, as the kernel stores it). History entries (old addresses) are listed
+     * only when nothing current matches, and marked.
+     *
+     * @param string $path
+     * @return array one hit per node, at most ResultLimit
+     */
+    protected function lookupURLAliasTail( $path )
+    {
+        $elements = array_values( array_filter( explode( '/', trim( (string)$path, '/' ) ), 'strlen' ) );
+        if ( !$elements )
+            return array();
+        $db = eZDB::instance();
+        $last = (string)end( $elements );
+        $lower = eZURLAliasML::strtolower( $last );
+        $columns = 'id, parent, text, action, is_original, is_alias';
+        $rows = $this->rows( "SELECT $columns FROM ezurlalias_ml WHERE text = '" . $db->escapeString( $last ) . "'", $this->rowLimit );
+        if ( !$rows && $lower !== $last )
+            $rows = $this->rows( "SELECT $columns FROM ezurlalias_ml WHERE text = '" . $db->escapeString( $lower ) . "'", $this->rowLimit );
+        if ( !$rows )
+            $rows = $this->rows( "SELECT $columns FROM ezurlalias_ml WHERE text_md5 = '" . $db->escapeString( md5( $lower ) ) . "'", $this->rowLimit );
+
+        $current = array();
+        $history = array();
+        foreach ( $rows as $row )
+        {
+            if ( eZURLAliasML::strtolower( (string)$row['text'] ) !== $lower || !preg_match( '/^eznode:([0-9]+)$/', (string)$row['action'], $m ) )
+                continue;
+            $nodeID = (int)$m[1];
+            $full = $this->aliasPathUpwards( (int)$row['parent'], array( (string)$row['text'] ), array_slice( $elements, 0, -1 ) );
+            if ( $full === null )
+                continue;
+            $isHistory = (int)$row['is_original'] === 0 && (int)$row['is_alias'] === 0;
+            if ( $isHistory && !isset( $history[$nodeID] ) )
+                $history[$nodeID] = array( 'path' => $full, 'history' => true );
+            else if ( !$isHistory && !isset( $current[$nodeID] ) )
+                $current[$nodeID] = array( 'path' => $full, 'history' => false );
+        }
+        $found = $current ? $current : $history;
+        $hits = array();
+        foreach ( array_slice( $found, 0, $this->resultLimit, true ) as $nodeID => $alias )
+        {
+            foreach ( $this->rows( 'SELECT contentobject_id FROM ezcontentobject_tree WHERE node_id = ' . (int)$nodeID, 1 ) as $row )
+                $hits[] = array( 'object_id' => (int)$row['contentobject_id'], 'via' => 'urlalias_tail', 'value' => $alias['path'],
+                                 'node_id' => (int)$nodeID, 'history' => $alias['history'] );
+        }
+        return $hits;
+    }
+
+    /**
+     * The full path of an alias element, read upwards from its parent; null when the elements above do not end with
+     * $tail (compared without case) or the chain is broken or deeper than 64.
+     *
+     * @param int $parentID
+     * @param string[] $path the elements found so far, top last
+     * @param string[] $tail the elements of the search text still to verify, in order
+     * @return string|null
+     */
+    protected function aliasPathUpwards( $parentID, array $path, array $tail )
+    {
+        for ( $depth = 0; $parentID > 0; $depth++ )
+        {
+            if ( $depth >= 64 )
+                return null;
+            $rows = $this->rows( 'SELECT parent, text, is_original FROM ezurlalias_ml WHERE id = ' . (int)$parentID, 20 );
+            if ( !$rows )
+                return null;
+            // the original entry of the element; any of its languages otherwise
+            usort( $rows, function ( $a, $b ) { return (int)$b['is_original'] - (int)$a['is_original']; } );
+            $row = $rows[0];
+            array_unshift( $path, (string)$row['text'] );
+            $parentID = (int)$row['parent'];
+        }
+        $start = count( $path ) - 1 - count( $tail );
+        if ( $start < 0 )
+            return null;
+        foreach ( $tail as $i => $element )
+        {
+            if ( eZURLAliasML::strtolower( $path[$start + $i] ) !== eZURLAliasML::strtolower( (string)$element ) )
+                return null;
+        }
+        return implode( '/', $path );
     }
 
     /**
@@ -648,7 +735,8 @@ class expContentFinder
                         'node_id' => isset( $hit['node_id'] ) ? (int)$hit['node_id'] : 0, 'trash' => false, 'rows' => array(),
                         'version' => isset( $hit['version'] ) ? (int)$hit['version'] : 0,
                         'siteaccess' => isset( $hit['siteaccess'] ) ? (string)$hit['siteaccess'] : '',
-                        'prefix' => isset( $hit['prefix'] ) ? (string)$hit['prefix'] : '' );
+                        'prefix' => isset( $hit['prefix'] ) ? (string)$hit['prefix'] : '',
+                        'history' => !empty( $hit['history'] ) );
         switch ( $hit['via'] )
         {
             case 'object':
@@ -657,6 +745,7 @@ class expContentFinder
             case 'node':
             case 'node_remote_id':
             case 'urlalias':
+            case 'urlalias_tail':
                 foreach ( $locations as $location )
                 {
                     if ( $location['node_id'] === $match['node_id'] )

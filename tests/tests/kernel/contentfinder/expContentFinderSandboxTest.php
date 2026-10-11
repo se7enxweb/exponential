@@ -21,6 +21,8 @@
  *  CS-10  each search is recorded as content.finder.search (user, type, value, results)
  *  CS-11  the finder answers only where the settings let it (SiteAccessList[], Enabled)
  *  CS-12  remote ids and file paths match in their case, exactly and as a prefix, on every engine
+ *  CS-13  the last part of a URL alias (or a shorter tail of it) finds the node, with the full path; an old address
+ *         is listed as history when nothing current matches; rights per result
  *
  * It runs on SQLite and, in a throwaway database named by EXP_CONTENTFINDER_SANDBOX_DATABASE as well, on MySQL or
  * MariaDB, PostgreSQL, Oracle and MongoDB (doc/features/6.0/content-finder.md, "Databases").
@@ -279,6 +281,43 @@ class expContentFinderSandboxTest extends PHPUnit\Framework\TestCase
                 $this->assertSame( array(), $this->ids( dirname( $path ) . '/' . strtoupper( substr( $name, 0, 6 ) ) . '*', 'file' ) );
             $this->assertContains( self::$seed['objects']['file'], $this->ids( dirname( $path ) . '/' . substr( $name, 0, 6 ) . '*', 'file' ) );
         }
+    }
+
+    /** CS-13 */
+    public function testTheLastPartOfAURLAlias()
+    {
+        $article = self::$seed['objects']['article'];
+        $alias = trim( self::$seed['urlalias']['article'], '/' );
+        $elements = explode( '/', $alias );
+        $this->assertGreaterThan( 1, count( $elements ), $alias );
+        $last = end( $elements );
+        foreach ( array( $last, strtoupper( $last ), implode( '/', array_slice( $elements, -2 ) ) ) as $text )
+        {
+            $result = $this->resultFor( $text, $article, 'urlalias' );
+            $this->assertSame( 'urlalias_tail', $result['matches'][0]['via'], $text );
+            $this->assertSame( $alias, $result['matches'][0]['value'], $text );
+            $this->assertSame( self::$seed['nodes']['article'], $result['matches'][0]['node_id'] );
+            $this->assertFalse( $result['matches'][0]['history'] );
+        }
+        // a tail that is not above it, and a part of an element, find nothing
+        $this->assertSame( array(), $this->ids( 'no-such-folder/' . $last, 'urlalias' ) );
+        $this->assertSame( array(), $this->ids( substr( $last, 0, -1 ), 'urlalias' ) );
+
+        // a renamed object: its old address is history, listed and marked when nothing current has that name
+        $object = $this->article( 'CF CS-13 old name ' . bin2hex( random_bytes( 3 ) ) );
+        $node = eZContentObjectTreeNode::fetch( (int)$object->attribute( 'main_node_id' ) );
+        $oldElements = explode( '/', trim( (string)$node->urlAlias(), '/' ) );
+        $oldLast = end( $oldElements );
+        $this->signIn( 'cf_editor' );
+        eZContentFunctions::updateAndPublishObject( $object, array( 'attributes' => $this->nameAttributes( 'CF CS-13 new name ' . bin2hex( random_bytes( 3 ) ) ) ) );
+        $this->signIn( 'admin' );
+        $result = $this->resultFor( $oldLast, $object->attribute( 'id' ), 'urlalias' );
+        $this->assertSame( 'urlalias_tail', $result['matches'][0]['via'] );
+        $this->assertTrue( $result['matches'][0]['history'] );
+        $this->assertStringEndsWith( '/' . $oldLast, $result['matches'][0]['value'] );
+        // rights per result: a reader outside the subtree does not get it
+        $this->signIn( 'cf_reader' );
+        $this->assertSame( array(), $this->ids( basename( (string)eZContentObjectTreeNode::fetch( self::$seed['nodes']['secret'] )->urlAlias() ), 'urlalias' ) );
     }
 
     /** CS-03 */

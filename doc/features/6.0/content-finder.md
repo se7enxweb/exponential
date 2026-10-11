@@ -65,6 +65,15 @@ order, until one resolves:
 4. the path with each distinct `PathPrefix` of the siteaccesses (`AvailableSiteAccessList[]` and
    `RelatedSiteAccessList[]`) in front.
 
+5. when none of these resolves: the **last part** of an alias. Every alias element whose own text is the last
+   element of the path (compared without case, as `eZURLAliasML` compares: by the indexed `text` column, and only
+   when that finds nothing by `text_md5`, the md5 of the lower-case text; never a `LIKE`), each checked upwards
+   against the rest of the path (`showcase/test-product` must have `showcase` right above). Every node found is
+   listed with its full path, up to `ResultLimit`; an old address kept as history is listed, and marked, only when
+   nothing current matches. **Found by** reads "the last part of the URL alias `<full path>`". This is the one
+   lookup that may read `ezurlalias_ml` without an index (the `text_md5` step, when the text matches no stored
+   text in its case).
+
 Each siteaccess's prefix is read from its own `site.ini`. **Found by** names the alias that resolved and, when a
 siteaccess or a prefix made the difference, which. These are exact lookups like the others, never a `LIKE`, and
 the rights decide per result as for every lookup.
