@@ -81,14 +81,22 @@ function solrPing( array $d )
     $endpoint = $base . '/solr/admin/info/system?wt=json';
     $ctx = stream_context_create( array( 'http' => array( 'timeout' => 5, 'ignore_errors' => true ),
                                          'ssl'  => array( 'verify_peer' => false, 'verify_peer_name' => false ) ) );
-    $body = @file_get_contents( $endpoint, false, $ctx );
+    // The response headers come from the stream's wrapper_data: PHP 8.0 to 8.3 have no
+    // http_get_last_response_headers(), and their local $http_response_header is only set when the
+    // function names it literally, which get_defined_vars() does not (PHP 8.5 deprecates the variable)
+    $stream = @fopen( $endpoint, 'rb', false, $ctx );
+    $body = false;
+    $responseHeaders = null;
+    if ( $stream !== false )
+    {
+        $meta = stream_get_meta_data( $stream );
+        $responseHeaders = $meta['wrapper_data'] ?? null;
+        $body = @stream_get_contents( $stream );
+        fclose( $stream );
+    }
     if ( $body === false )
         return array( 'reachable' => false, 'url' => $base, 'note' => 'no response from ' . $endpoint );
     $ok = false;
-    // PHP 8.5 deprecates the local $http_response_header in favour of http_get_last_response_headers()
-    $responseHeaders = function_exists( 'http_get_last_response_headers' )
-        ? http_get_last_response_headers()
-        : ( get_defined_vars()['http_response_header'] ?? null );
     if ( is_array( $responseHeaders ) )
         foreach ( $responseHeaders as $h )
             if ( preg_match( '#^HTTP/\S+\s+(\d+)#', $h, $m ) && (int)$m[1] < 500 )
