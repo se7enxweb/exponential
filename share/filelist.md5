@@ -3000,7 +3000,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-28a423dc59c2e2307d4b2665251374a3  doc/changelogs/6.0/6.0.15.md
+6d27e339fc3dade31fd6d69de9bf3c9b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3337,7 +3337,7 @@ cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 cac146de4b5f0d86456f750067463824  doc/features/6.0/cache-clear-rename-aside.md
 0efc0a33fb1492529cd85b8d230d76d5  doc/features/6.0/class-attribute-move-to-edge.md
 a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
-0f2f3a980aaa279804d3b01f49703e56  doc/features/6.0/content-finder.md
+fe002a1f2bb5300778c6ef9bb2a810f4  doc/features/6.0/content-finder.md
 572d04f3da4c1377a06bd7c8c95f615b  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
 977eb4c63ccab369b83722869aa589fc  doc/features/6.0/cronjob-part-filter.md
@@ -5019,7 +5019,7 @@ f3b29307a8a38c5f06cffb143afde12f  kernel/classes/ezpackageinstallationhandler.ph
 281fb4c5c551758190a823df8e1c43ed  kernel/classes/ezpathelement.php
 a2852263baec56cf69eb8d53f12b2483  kernel/classes/ezpdfexport.php
 3d3da61017eaaab0308ec6ff06cd9c83  kernel/classes/ezpendingactions.php
-813c7ebab046138fa6ed0d7c08fa88c1  kernel/classes/ezpersistentobject.php
+5f65d9d67be7e0c83002b86e9513dc6a  kernel/classes/ezpersistentobject.php
 0ce2c52159d20fbd3814673d3a78abc2  kernel/classes/ezpolicy.php
 79388fb542ea43277c1ff809aee45e48  kernel/classes/ezpolicylimitation.php
 fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
@@ -5053,7 +5053,7 @@ d5472916c1f931c0dec703689a6e41ef  kernel/classes/ezsslzone.php
 fc7fa34174c5cee8bc17b62a30b96e92  kernel/classes/eztipafriendrequest.php
 7abfc577ecaacc5617a7347c072b040d  kernel/classes/eztrigger.php
 1df62bdfdc3b3a179e8f4921852d9da9  kernel/classes/ezurlaliasfilter.php
-e69de198a99fa1c85aedae7e3d33a885  kernel/classes/ezurlaliasml.php
+e0442a03f1b5c7807d1e6643fcdcbabe  kernel/classes/ezurlaliasml.php
 9f512d42b59c1b80477a480600b3c506  kernel/classes/ezurlaliasquery.php
 d39772a202a0a6b5ee8dd80f7b9a3262  kernel/classes/ezurlwildcard.php
 600d29d9cf5862c89a4a6f4acdf683e4  kernel/classes/ezuserdiscountrule.php
@@ -6148,7 +6148,7 @@ bd88c41cc62b684db05cbded834a97c2  kernel/workflow/module.php
 c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
 50aecf6197a8dda65b5dcdd94d3aeff0  kickstart.ini--example
 29a9398e1ffaf0295240ff21451d1f16  kickstart.ini-dist
-d21f78ad9e8de0587449c133634a40d4  lib/ezdb/classes/expmongodb.php
+a9b370a322ec7ffbffe48e0514708d68  lib/ezdb/classes/expmongodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
 6a063f081a332b11b4d47e1c0e65ed1c  lib/ezdb/classes/ezdbinterface.php
 f6d3fcbe3d222d44c1b0709969765358  lib/ezdb/classes/ezdbquerycache.php
@@ -7499,7 +7499,7 @@ bf131682211b1591e71f19c7a02314d9  tests/tests/kernel/content/ezcontentoperationd
 85bccb2e92c8d65e69480b468341abf7  tests/tests/kernel/content/ezpcontentpublishingbehaviour_test.php
 d6267bbd8f06997379c11c2c824ae8e0  tests/tests/kernel/content/suite.php
 3e91a48652849dad0b64342034350dc5  tests/tests/kernel/contentfinder/expContentFinderInputTest.php
-021585987d822520aa59ce82570bb37e  tests/tests/kernel/contentfinder/expContentFinderSandboxTest.php
+b0d00cfda173a0e20b4ef1f46f3439ee  tests/tests/kernel/contentfinder/expContentFinderSandboxTest.php
 28b3cf9988aa4f1a515519723683b97d  tests/tests/kernel/contentfinder/expContentFinderURLAliasTest.php
 c910ffc36b999dcfff1bacd990d75ffe  tests/tests/kernel/contentfinder/fixtures/expcontentfindertestfixtures.php
 a00a89408f5529c4e81370a6326ea69e  tests/tests/kernel/datatypes/eZDatatypeAbstract.php
@@ -7802,6 +7802,7 @@ f725ee9eb15406052f599712365f5eee  tests/tests/lib/ezdb/ezmysqldb_fk_test.php
 ba55080feee2e4a59cbc8ce872308cfb  tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php
 0776a915c6f47a378acf18d0001d5a29  tests/tests/lib/ezdb/mongodb/expMongoDBDeclaredDefaultTest.php
 b307dfd63335b4813a32196682897dc9  tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php
+e3f904c8dd0b91a988bfbeed6aacbdb7  tests/tests/lib/ezdb/mongodb/expMongoDBWhereTextTest.php
 142ff402084fc7f35411a44add7597ac  tests/tests/lib/ezdb/mongodb/sevenxMongoDBAdapterTest.php
 fb53daa907db9aed6712d715150412e5  tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php
 d69d80eb919a41cca021cb8e9172bd2f  tests/tests/lib/ezdb/mongodb/stubs.php
