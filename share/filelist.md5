@@ -3000,7 +3000,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-180dff9d772900e6afb0891f1f9e857b  doc/changelogs/6.0/6.0.15.md
+ee072d8d4d88f831aaaffb5db50d2ec1  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4684,7 +4684,7 @@ eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation
 855e225a60e154204dde78feafe5d1b5  ezpublish.cron
 91b1aa0e8f21ce629c9cf29eef5a4569  favicon.ico
 787e52386898c555df83f32e70f5612a  index.js
-1c658584e082cf6b114ca0948f10f931  index.php
+3e8d1309e24bb550af0f10f35f232032  index.php
 5254b19223a98222ccaf6ad6034ae185  index_cluster.php
 d7260d2f11c2a1855ebd305856757023  index_rest.php
 43ca3553a2eae1bc7e02c5b6359d1bd6  index_treemenu.php
