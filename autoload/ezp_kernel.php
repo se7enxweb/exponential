@@ -1108,6 +1108,7 @@ return array(
       'expNotificationService'                                       => 'kernel/classes/expnotificationservice.php',
       'expPDFExportFile'                                             => 'kernel/classes/pdfexport/exppdfexportfile.php',
       'expPDFExportForm'                                             => 'kernel/classes/pdfexport/exppdfexportform.php',
+      'expNamePatternResolverInterface'                              => 'kernel/classes/expnamepatternresolverinterface.php',
       'expPDFExportGenerator'                                        => 'kernel/classes/pdfexport/exppdfexportgenerator.php',
       'expPDFExportInfo'                                             => 'kernel/classes/pdfexport/exppdfexportinfo.php',
       'expPackageConflictReport'                                     => 'kernel/classes/exppackageconflictreport.php',

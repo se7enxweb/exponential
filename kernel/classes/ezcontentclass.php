@@ -1558,8 +1558,9 @@ You will need to change the class of the node by using the swap functionality.' 
         {
             $length = self::CONTENT_OBJECT_NAME_MAX_LENGTH;
         }
-        $nameResolver = new eZNamePatternResolver( $contentObjectNamePattern, $contentObject, $version, $translation );
-        $contentObjectName = $nameResolver->resolveNamePattern( $length, $sequence );
+        // a resolver class named in the pattern ({ClassName}, content.ini [NamePatternSettings]) or the tokens.
+        // Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 95d86f5990), Copyright (C) Mugo Web, GPL v2
+        $contentObjectName = eZNamePatternResolver::resolve( $contentObjectNamePattern, $contentObject, $version, $translation, $length, $sequence );
 
         return $contentObjectName;
     }
@@ -1585,8 +1586,7 @@ You will need to change the class of the node by using the swap functionality.' 
         }
 
         $length = (int) eZINI::instance()->variable('URLTranslator', 'UrlAliasNameLimit');
-        $nameResolver = new eZNamePatternResolver( $urlAliasNamePattern, $contentObject, $version, $translation );
-        $urlAliasName = $nameResolver->resolveNamePattern( $length );
+        $urlAliasName = eZNamePatternResolver::resolve( $urlAliasNamePattern, $contentObject, $version, $translation, $length );
 
         return $urlAliasName;
     }

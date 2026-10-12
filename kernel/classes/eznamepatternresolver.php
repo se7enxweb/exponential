@@ -8,6 +8,7 @@
  * @version //autogentag//
  * @package kernel
  *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 95d86f5990), Copyright (C) Mugo Web, GPL v2
  */
 
 /**
@@ -133,20 +134,107 @@ class eZNamePatternResolver
         // Replace tokens with real values
         $objectName = $this->translatePattern();
 
+        return self::limitName( $objectName, $limit, $sequence );
+    }
+
+    /**
+     * $name shortened to $limit characters as the database counts them (0: FIELD_NAME_MAX_SIZE), ending in
+     * $sequence when it was shortened.
+     *
+     * @param string $name
+     * @param int|false $limit
+     * @param string $sequence
+     * @return string
+     */
+    public static function limitName( $name, $limit = 0, $sequence = '' )
+    {
         $db = eZDB::instance();
 
         $limit = $limit ?: self::FIELD_NAME_MAX_SIZE;
 
-        if ( $db->countStringSize( $objectName ) <= $limit )
+        if ( $db->countStringSize( $name ) <= $limit )
         {
-            return $objectName;
+            return $name;
         }
 
         return preg_replace(
             "/[\pZ\pC]+$/u",
             '',
-            $db->truncateString( $objectName, $limit, 'name', $sequence )
+            $db->truncateString( $name, $limit, 'name', $sequence )
         ). $sequence;
+    }
+
+    /**
+     * The name $namePattern gives $object: made by the resolver class the pattern names ("{ClassName}" at its
+     * start, see customResolver()) or, without one, from the attribute tokens as before. Either way no longer
+     * than $limit (see limitName()).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 95d86f5990), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param string $namePattern
+     * @param eZContentObject $object
+     * @param int|false $version
+     * @param string|false $translation
+     * @param int $limit
+     * @param string $sequence
+     * @return string
+     */
+    public static function resolve( $namePattern, eZContentObject $object, $version = false, $translation = false, $limit = 0, $sequence = '' )
+    {
+        $resolver = self::customResolver( $namePattern );
+        if ( $resolver !== null )
+        {
+            try
+            {
+                $name = $resolver->resolveNamePattern( $object, $version, $translation, $limit ?: false, $sequence );
+                if ( is_scalar( $name ) )
+                    return self::limitName( (string)$name, $limit, $sequence );
+                eZDebug::writeError( 'The name pattern resolver ' . get_class( $resolver ) . ' returned no text; the pattern is resolved without it', __METHOD__ );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeError( 'The name pattern resolver ' . get_class( $resolver ) . ' failed: ' . $e->getMessage() . '; the pattern is resolved without it', __METHOD__ );
+            }
+        }
+        $nameResolver = new self( $namePattern, $object, $version, $translation );
+        return $nameResolver->resolveNamePattern( $limit, $sequence );
+    }
+
+    /**
+     * The resolver class $namePattern names, or null. A pattern names one when it starts with a PHP class name in
+     * braces ("{myNameResolver}", optionally followed by more pattern text, which the class gets in its
+     * constructor). The class is used only when it is listed in content.ini [NamePatternSettings]
+     * ResolverClasses[], exists and implements expNamePatternResolverInterface; any other name is logged and
+     * null returned. No class is loaded or made from a name that is not listed.
+     *
+     * @param string $namePattern
+     * @return expNamePatternResolverInterface|null
+     */
+    public static function customResolver( $namePattern )
+    {
+        if ( !is_string( $namePattern ) || !preg_match( '/^\{([A-Za-z_][A-Za-z0-9_]*)\}/', $namePattern, $matches ) )
+            return null;
+        $className = $matches[1];
+
+        $ini = eZINI::instance( 'content.ini' );
+        $allowed = $ini->hasVariable( 'NamePatternSettings', 'ResolverClasses' ) ? $ini->variable( 'NamePatternSettings', 'ResolverClasses' ) : array();
+        if ( !is_array( $allowed ) || !in_array( $className, $allowed, true ) )
+        {
+            eZDebug::writeWarning( "The name pattern names the resolver class '$className', which is not listed in content.ini [NamePatternSettings] ResolverClasses[]; it is not used", __METHOD__ );
+            return null;
+        }
+        if ( !class_exists( $className ) )
+        {
+            eZDebug::writeError( "The name pattern resolver class '$className' does not exist; it is not used", __METHOD__ );
+            return null;
+        }
+        $reflection = new ReflectionClass( $className );
+        if ( !$reflection->implementsInterface( 'expNamePatternResolverInterface' ) || !$reflection->isInstantiable() )
+        {
+            eZDebug::writeError( "The name pattern resolver class '$className' does not implement expNamePatternResolverInterface; it is not used", __METHOD__ );
+            return null;
+        }
+        return new $className( (string)substr( $namePattern, strlen( $matches[0] ) ) );
     }
 
     /**
