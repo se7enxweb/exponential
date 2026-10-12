@@ -245,7 +245,7 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
         $params = array( 'SearchOffset' => $searchOffset,
                          'SearchLimit' => $searchLimit,
                          'SortArray' => array( 'published', 0 ), // Legacy search engine uses SortArray
-                         'SortBy' => array( 'published' => 'desc' ) // eZ Find search method implementation uses SortBy
+                         'SortBy' => self::searchSortBy() // eZ Find search method implementation uses SortBy
         );
 
         if ( self::hasPostValue( $http, 'SearchContentClassAttributeID' ) )
@@ -375,6 +375,38 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
                 return explode( ',', $value );
         }
         return array();
+    }
+
+    /**
+     * The sort order of search() for eZ Find: ezfind.ini [SearchSettings] SortBy[] (field => asc|desc, several
+     * fields in order), as eZ Find's own search reads it. ezjscore ships SortBy[published]=desc, the order
+     * search() always used; without the setting (no ezfind.ini at all, or an empty list) that order stays.
+     * An entry that is not a field name with asc or desc is left out with a warning.
+     *
+     * With thanks to Mugo Web: portions derived from LoveStack (mugoweb/ezpublish-legacy, commits 3d2d337b0d and
+     * 3af1ec3aee), Copyright (C) Mugo Web, GPL v2
+     *
+     * @return array
+     */
+    protected static function searchSortBy()
+    {
+        $default = array( 'published' => 'desc' );
+        $ini = eZINI::instance( 'ezfind.ini' );
+        if ( !$ini->hasVariable( 'SearchSettings', 'SortBy' ) )
+            return $default;
+        $sortBy = array();
+        foreach ( (array)$ini->variable( 'SearchSettings', 'SortBy' ) as $field => $order )
+        {
+            $order = strtolower( trim( (string)$order ) );
+            $field = trim( (string)$field );
+            if ( !preg_match( '#^[A-Za-z0-9_][A-Za-z0-9_./:-]*$#', $field ) || ( $order !== 'asc' && $order !== 'desc' ) )
+            {
+                eZDebug::writeWarning( "ezfind.ini [SearchSettings] SortBy: '$field' is not a field with asc or desc and is left out", __METHOD__ );
+                continue;
+            }
+            $sortBy[$field] = $order;
+        }
+        return $sortBy ? $sortBy : $default;
     }
 
     /**

@@ -85,6 +85,30 @@ tables and lists; double click an embed to edit its view, class, size and alignm
 [online editor TinyMCE 8](../features/6.0/online-editor-tinymce8.md),
 [ezoe upgrade notes](../bc/6.0/ezoe-tinymce8.md).
 
+### The order of search results in the editor's dialogs
+
+The search tab of the embed and link dialogs, and the relation search of the administration interface, use the
+ezjscore search (`ezjsc::search`). With eZ Find as the search engine, its results come in the order of
+`ezfind.ini [SearchSettings] SortBy[]`; ezjscore ships `SortBy[published]=desc`, newest first, the order these
+searches always had. To put the best matches first, for example:
+
+```ini
+# settings/override/ezfind.ini.append.php
+<?php /* #?ini charset="utf-8"?
+
+[SearchSettings]
+SortBy[]
+SortBy[score]=desc
+SortBy[published]=desc
+
+*/ ?>
+```
+
+Clear the INI cache afterwards. Each entry is a field of eZ Find's sort (`published`, `modified`, `score`, `name`,
+`class_identifier`, `path`, an attribute as `class/attribute`) with `asc` or `desc`; an entry that is not is left
+out with a warning. Without eZ Find (the built-in search), or without the setting, the order stays newest first.
+Nothing changes on an upgrade. With thanks to Mugo Web (LoveStack, commits `3d2d337b0d` and `3af1ec3aee`, 2025).
+
 ## 5. The sub-items table
 
 Open a folder that has children. The table below the node's view is the sub-items list.
