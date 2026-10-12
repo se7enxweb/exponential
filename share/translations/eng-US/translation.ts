@@ -58368,6 +58368,54 @@ You will need to change the class of the node by using the swap functionality.</
         <source>with the columns of %source: %columns</source>
         <translation>with the columns of %source: %columns</translation>
     </message>
+    <message>
+        <source>A download here has the newest %max of them; an export in the background has up to %background.</source>
+        <translation>A download here has the newest %max of them; an export in the background has up to %background.</translation>
+    </message>
+    <message>
+        <source>Download now</source>
+        <translation>Download now</translation>
+    </message>
+    <message>
+        <source>The file starts at once and is sent while it is read; %count events.</source>
+        <translation>The file starts at once and is sent while it is read; %count events.</translation>
+    </message>
+    <message>
+        <source>Export in the background</source>
+        <translation>Export in the background</translation>
+    </message>
+    <message>
+        <source>For a large filter: a background job writes the file (%count events), shows its progress and offers it here when it is done. Only you can download it; it is removed with the job after the days the content jobs are kept.</source>
+        <translation>For a large filter: a background job writes the file (%count events), shows its progress and offers it here when it is done. Only you can download it; it is removed with the job after the days the content jobs are kept.</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Start the export</source>
+        <translation>Start the export</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Started</translation>
+    </message>
+    <message>
+        <source>%done of %total</source>
+        <translation>%done of %total</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Download</translation>
+    </message>
+    <message>
+        <source>%count events</source>
+        <translation>%count events</translation>
+    </message>
+    <message>
+        <source>Background exports are not available here.</source>
+        <translation>Background exports are not available here.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/job</name>
@@ -58722,6 +58770,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Also for everything below this node</source>
         <translation>Also for everything below this node</translation>
+    </message>
+    <message>
+        <source>Open the result</source>
+        <translation>Open the result</translation>
     </message>
 </context>
 <context>
@@ -59292,6 +59344,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Legacy hook test</source>
         <translation>Legacy hook test</translation>
+    </message>
+    <message>
+        <source>Unknown export format %1.</source>
+        <translation>Unknown export format %1.</translation>
+    </message>
+    <message>
+        <source>You may not read the audit records (audit/read).</source>
+        <translation>You may not read the audit records (audit/read).</translation>
+    </message>
+    <message>
+        <source>You may not read the audit channel %1.</source>
+        <translation>You may not read the audit channel %1.</translation>
+    </message>
+    <message>
+        <source>Export %1 audit events of the channel %2 as %3</source>
+        <translation>Export %1 audit events of the channel %2 as %3</translation>
+    </message>
+    <message>
+        <source>Export %1 audit events as %2</source>
+        <translation>Export %1 audit events as %2</translation>
+    </message>
+    <message>
+        <source>%1 of %2 audit events</source>
+        <translation>%1 of %2 audit events</translation>
     </message>
 </context>
 <context>

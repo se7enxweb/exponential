@@ -65814,6 +65814,54 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>with the columns of %source: %columns</source>
         <translation>mit den Spalten von %source: %columns</translation>
     </message>
+    <message>
+        <source>A download here has the newest %max of them; an export in the background has up to %background.</source>
+        <translation>Ein Download hier enthält die neuesten %max davon; ein Export im Hintergrund bis zu %background.</translation>
+    </message>
+    <message>
+        <source>Download now</source>
+        <translation>Jetzt herunterladen</translation>
+    </message>
+    <message>
+        <source>The file starts at once and is sent while it is read; %count events.</source>
+        <translation>Die Datei beginnt sofort und wird gesendet, während sie gelesen wird; %count Ereignisse.</translation>
+    </message>
+    <message>
+        <source>Export in the background</source>
+        <translation>Im Hintergrund exportieren</translation>
+    </message>
+    <message>
+        <source>For a large filter: a background job writes the file (%count events), shows its progress and offers it here when it is done. Only you can download it; it is removed with the job after the days the content jobs are kept.</source>
+        <translation>Für einen großen Filter: Ein Hintergrundjob schreibt die Datei (%count Ereignisse), zeigt seinen Fortschritt und bietet sie hier an, sobald er fertig ist. Nur Sie können sie herunterladen; sie wird mit dem Job entfernt, wenn die Aufbewahrungszeit der Inhaltsjobs abgelaufen ist.</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Start the export</source>
+        <translation>Export starten</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestartet</translation>
+    </message>
+    <message>
+        <source>%done of %total</source>
+        <translation>%done von %total</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Herunterladen</translation>
+    </message>
+    <message>
+        <source>%count events</source>
+        <translation>%count Ereignisse</translation>
+    </message>
+    <message>
+        <source>Background exports are not available here.</source>
+        <translation>Exporte im Hintergrund sind hier nicht verfügbar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/job</name>
@@ -66168,6 +66216,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Also for everything below this node</source>
         <translation>Auch für alles unterhalb dieses Knotens</translation>
+    </message>
+    <message>
+        <source>Open the result</source>
+        <translation>Das Ergebnis öffnen</translation>
     </message>
 </context>
 <context>
@@ -66738,6 +66790,30 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Legacy hook test</source>
         <translation>Legacy-Hook-Test</translation>
+    </message>
+    <message>
+        <source>Unknown export format %1.</source>
+        <translation>Unbekanntes Exportformat %1.</translation>
+    </message>
+    <message>
+        <source>You may not read the audit records (audit/read).</source>
+        <translation>Sie dürfen die Audit-Einträge nicht lesen (audit/read).</translation>
+    </message>
+    <message>
+        <source>You may not read the audit channel %1.</source>
+        <translation>Sie dürfen den Audit-Kanal %1 nicht lesen.</translation>
+    </message>
+    <message>
+        <source>Export %1 audit events of the channel %2 as %3</source>
+        <translation>%1 Audit-Ereignisse des Kanals %2 als %3 exportieren</translation>
+    </message>
+    <message>
+        <source>Export %1 audit events as %2</source>
+        <translation>%1 Audit-Ereignisse als %2 exportieren</translation>
+    </message>
+    <message>
+        <source>%1 of %2 audit events</source>
+        <translation>%1 von %2 Audit-Ereignissen</translation>
     </message>
 </context>
 <context>

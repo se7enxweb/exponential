@@ -55091,6 +55091,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Workflow trigger change</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Unknown export format %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not read the audit records (audit/read).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not read the audit channel %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export %1 audit events of the channel %2 as %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export %1 audit events as %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 of %2 audit events</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -55754,6 +55778,54 @@ You will need to change the class of the node by using the swap functionality.</
         <source>with the columns of %source: %columns</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A download here has the newest %max of them; an export in the background has up to %background.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file starts at once and is sent while it is read; %count events.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export in the background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For a large filter: a background job writes the file (%count events), shows its progress and offers it here when it is done. Only you can download it; it is removed with the job after the days the content jobs are kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start the export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%done of %total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background exports are not available here.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -55783,6 +55855,13 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/job</name>
+    <message>
+        <source>Open the result</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
