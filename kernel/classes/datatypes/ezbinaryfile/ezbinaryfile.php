@@ -257,7 +257,9 @@ class eZBinaryFile extends eZPersistentObject
         }
         else
         {
-            eZDebug::writeWarning( "Mimetype $this->MimeType not supported for indexing", 'eZBinaryFile' );
+            // No text to extract from this type (a video, an image, an archive): the file is indexed by its
+            // name alone, as intended, so a notice and not a warning. A handler that is set but missing still warns.
+            eZDebug::writeNotice( "Mimetype $this->MimeType not supported for indexing", 'eZBinaryFile' );
         }
 
         return $metaData;
