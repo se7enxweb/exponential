@@ -109,6 +109,62 @@ Clear the INI cache afterwards. Each entry is a field of eZ Find's sort (`publis
 out with a warning. Without eZ Find (the built-in search), or without the setting, the order stays newest first.
 Nothing changes on an upgrade. With thanks to Mugo Web (LoveStack, commits `3d2d337b0d` and `3af1ec3aee`, 2025).
 
+### Custom tag controls
+
+For editors: click into a custom tag (a fact box, a quote, a strike-through ...) and a small bar appears on it:
+
+| Button | Keys | What it does |
+|---|---|---|
+| ▲ Move up | Alt+Shift+Up | moves a block custom tag above the block before it |
+| ▼ Move down | Alt+Shift+Down | moves it below the next block (a paragraph is added after it when it becomes the last one) |
+| ✎ Edit | Alt+Shift+E | opens the tag's dialog |
+| ✕ Remove | Alt+Shift+Delete | removes the tag and keeps its text |
+
+Backspace in an empty block custom tag removes it, and every block custom tag shows its name above it. A tag's
+dialog shows an example image when a design has `images/editor/custom_tags_thumbs/<name>.png`. The same works in
+TinyMCE 3, TinyMCE 8 (the bar is the tag's context toolbar; Ctrl+F9 reaches it from the keyboard) and Tiptap.
+Nothing of the bar or the labels is stored with the text.
+
+For administrators: new installations have it on. An upgraded site keeps today's editor until you switch it on:
+
+```ini
+# settings/override/ezoe.ini.append.php
+<?php /* #?ini charset="utf-8"?
+
+[EditorSettings]
+CustomTagControls=enabled
+
+*/ ?>
+```
+
+Then clear the INI cache and the packed scripts:
+`php bin/php/ezcache.php --clear-tag=ini --clear-id=ezjscore-packer --allow-root-user`.
+
+### Hidden custom tags
+
+A custom tag can stay in use without being offered for new text, for example a tag you are phasing out. List it
+in `content.ini`:
+
+```ini
+# settings/override/content.ini.append.php
+<?php /* #?ini charset="utf-8"?
+
+[CustomTagSettings]
+IsHidden[]=quote
+
+*/ ?>
+```
+
+The editors (TinyMCE 3, TinyMCE 8, Tiptap) leave it out of the custom tag list for a new tag. Where it is already in
+a text it is shown, rendered and saved as before, and its own dialog still opens with its name. None is hidden by
+default, so nothing changes on an upgrade. For developers: `eZOEXMLInput::hiddenCustomTags()`,
+`eZOEXMLInput::offeredCustomTags( $tags, $current )`, and the keys `hidden` and `preview` of
+`eZOEXMLInput::getCustomTagDefinitions()`.
+
+Both were rebuilt from LoveStack, Mugo Web's distribution of the same kernel, with thanks to Mugo Web (commits
+`63334f1681`, the custom_tags_controls plugin, 2019, and `e21ef46691`, 2019). The sub/sup dialog closing on OK
+(LoveStack commit `3a8c14bc0c`) was already part of Exponential's editor.
+
 ## 5. The sub-items table
 
 Open a folder that has children. The table below the node's view is the sub-items list.
@@ -264,6 +320,8 @@ A site with its own override of these templates is not affected.
 | `extension/ezautosave/settings/autosave.ini.append.php` | `[AutosaveSettings]` | `Interval` | `180` seconds | installation, siteaccess |
 | `extension/ezoe/settings/ezoe.ini` | `[EditorSettings]` | `EditorEngine` | `tinymce3` | installation, siteaccess, user preference `ezoe_engine` |
 | `extension/ezoe/settings/ezoe.ini` | `[EditorSettings]` | `EngineSwitch` | `disabled` | installation, siteaccess |
+| `extension/ezoe/settings/ezoe.ini` | `[EditorSettings]` | `CustomTagControls` | `disabled` (`enabled` in new installations) | installation, siteaccess |
+| `settings/content.ini` | `[CustomTagSettings]` | `IsHidden[]` | empty | installation, siteaccess |
 
 Change a value in `settings/override/` or `settings/siteaccess/<name>/`, never in the shipped file, then clear the
 INI cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
