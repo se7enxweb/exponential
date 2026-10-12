@@ -122,6 +122,14 @@
     <input class="button-disabled" type="submit" name="MoveNodeButton" value="{'Move'|i18n( 'design/admin/node/view/full' )}" title="{'You do not have permission to move this item to another location.'|i18n( 'design/admin/node/view/full' )}" disabled="disabled" />
 {/if}
 
+{* Copy button: content/copy (choose where the copy goes), offered with create access at the parent, as in the
+   context menu. Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 4d56593614), Copyright (C) Mugo Web, GPL v2. *}
+{if $node.parent.can_create}
+    <input class="button" type="submit" formaction={concat( 'content/copy/', $node.contentobject_id )|ezurl} value="{'Copy'|i18n( 'design/admin/node/view/full' )}" title="{'Copy this item to another location.'|i18n( 'design/admin/node/view/full' )}" />
+{else}
+    <input class="button-disabled" type="submit" value="{'Copy'|i18n( 'design/admin/node/view/full' )}" title="{'You do not have permission to copy this item.'|i18n( 'design/admin/node/view/full' )}" disabled="disabled" />
+{/if}
+
 {* Remove button. *}
 {if $node.can_remove}
     <input class="button" type="submit" name="ActionRemove" value="{'Remove'|i18n( 'design/admin/node/view/full' )}" title="{'Remove this item.'|i18n( 'design/admin/node/view/full' )}" />
