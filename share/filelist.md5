@@ -2809,13 +2809,13 @@ e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
 f8dec2dfb81fbb16a107d0bde08c230b  doc/bc/6.0/cli_cronjob_view_abstractions.md
-a97f241d85290c2fbece2d8f20d6c401  doc/bc/6.0/console-exp-ini.md
+f1ac6c4bdfb768a543907f1e85408ed8  doc/bc/6.0/console-exp-ini.md
 4fa2c2acfebf49a6d0606b3cfdadd05c  doc/bc/6.0/console.md
 d3d1f22911e860a16506696d3fee2cbb  doc/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/bc/6.0/content-object-fallback-locale.md
 d8273c8c2a7771814a70d343fcc4894b  doc/bc/6.0/debug-bar.md
 68ca2915c347f13a647afb19d14748d0  doc/bc/6.0/draft-edit-access.md
-3363c1727dc13ba26af5e714957046fa  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
+b0fbba2abe4abadee42e57cebb5388fd  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
 14c4b5bce1de1987b27c6063156cb566  doc/bc/6.0/exponentialsdk-and-exponential-cron.md
 e10cce7277e955eeea8f44d4e980b757  doc/bc/6.0/extensions-behaviour-changes.md
@@ -3555,7 +3555,7 @@ bb8d6835bd7b4751fd30540ba5bdf4c8  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
 a12c93d7fcd84b068005ed882df3810a  doc/guides/security-and-audit.md
 43dbd90e31972fef2826ebb622ab5c4d  doc/guides/sessions.md
-7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
+d6248fd6c8f6678c5868d0eb6023ea08  doc/guides/settings-page.md
 f52435ea65b9339e1191f8bbb8753638  doc/guides/system-information.md
 0336ade018fe7f75e7a16ce2eb7356c8  doc/guides/templates-and-design.md
 dc5f0aedab105f984fc1d7e71761f4eb  doc/guides/two-factor-login.md
@@ -4960,7 +4960,7 @@ a9ac5a2c24c07de96e640440ff067bd2  kernel/classes/expsetuplog.php
 ea1f5ed0f6fc16b6076cb12ed7599e93  kernel/classes/expsystemreport.php
 28af669e43f170c97eb589d4f920a469  kernel/classes/expsystemreportmask.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-97e28c32da28328a6d74e978a2ec14ee  kernel/classes/expvelocity.php
+20a51a18f94f7589a62449120a3f9a43  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 c748b14e37c7c23f4b66f5df522d253c  kernel/classes/expvelocityconfiglayout.php
 5936100316b019b80078d1c4cb56c07b  kernel/classes/expvelocitydeploy.php
@@ -5123,13 +5123,13 @@ de6ee012e09dea22e9071fcf98facb54  kernel/classes/ini/actions/expiniactionset.php
 92ce081f374b31ef211e5f7b946ab849  kernel/classes/ini/actions/expinicommandcontext.php
 59a5dae96b27a6605a7018a49f5f49fa  kernel/classes/ini/actions/expinimover.php
 eca28603526cd6bdc930b7bda0e841df  kernel/classes/ini/expinicorescopeprovider.php
-aed57cf7365279b3f9be7cbdeae8ad64  kernel/classes/ini/expinieditor.php
+0b24655601f607823adf98590f124404  kernel/classes/ini/expinieditor.php
 2c6ecc7a13c99ab318bd7d18e35f6ac1  kernel/classes/ini/expiniexception.php
 9df86dab0c4b68d885f549f9011f5e37  kernel/classes/ini/expiniextensionscopeprovider.php
 afa3bc5e5f85024055c95d966eae66f5  kernel/classes/ini/expinilocator.php
 ef30d890e9a3882c184908deb65a0c85  kernel/classes/ini/expiniscope.php
 791f73c66d5f3d38f3c495ec24d8e667  kernel/classes/ini/expiniscopeprovider.php
-50ca7e6eb28b436686867bfe582b2f34  kernel/classes/ini/expiniwriter.php
+4238fee0c9bcad7029d2912205fb1ee0  kernel/classes/ini/expiniwriter.php
 30cb5f5098055fcc4666e2f9f79fb95f  kernel/classes/ini/expiniwriteresult.php
 4494d34cb544eaa06c6cec9f370a0cf9  kernel/classes/ini/expsettingschain.php
 888d0894cde9f5326b118a519a03cee9  kernel/classes/ini/expsettingspage.php
@@ -6377,7 +6377,7 @@ b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
 bc562a9b40207fedd00c05e8e70c4fa6  lib/ezutils/classes/ezhttpfile.php
 e0d8ca296bb2d3d0968aa11679a8d064  lib/ezutils/classes/ezhttppersistence.php
 4547af114e3baa955a67f870d8b9167d  lib/ezutils/classes/ezhttptool.php
-d78fb828cc53bd2552a32dc9c4fb7cbf  lib/ezutils/classes/ezini.php
+21308ea33979fe64f0aec0f1cda67031  lib/ezutils/classes/ezini.php
 6ee94ad4b0549a535ff40c1dc5e9326d  lib/ezutils/classes/ezinputvalidator.php
 081fb5c82a7fe6ec4e9f97d6fd96c3fa  lib/ezutils/classes/ezintegervalidator.php
 cb5821291cb049256ae9d7b1f5089550  lib/ezutils/classes/ezmail.php
@@ -7960,6 +7960,7 @@ d5d9b75da5c18ad00128dcef87e06b52  tests/tests/lib/ezutils/eZFatalUserErrorTest.p
 3378e66c399d5c5780bf68e83863d413  tests/tests/lib/ezutils/eZHTTPToolRequestTest.php
 941837b4dbd18a37bcb019e8fb86fb9b  tests/tests/lib/ezutils/eZHTTPToolTest.php
 2c63f7f0a0f75b87643f8adc22d3d3f7  tests/tests/lib/ezutils/eZINIEnvironmentTest.php
+208adc421007bdc70e5de100efff76fb  tests/tests/lib/ezutils/eZINIIncludeTest.php
 e45dd6fcf44b971d6a9e2eac2bd4f1bc  tests/tests/lib/ezutils/eZINIParserAndAccessTest.php
 d4eef8f014d13e399e0aba17dbed3e77  tests/tests/lib/ezutils/eZINISaveFilePermissionsTest.php
 1420df2b74cc255fd0139ce4f50ba3a0  tests/tests/lib/ezutils/eZINITest.php
