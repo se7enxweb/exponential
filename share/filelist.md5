@@ -3009,7 +3009,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-3e4e128c053c12185b59df4450181d54  doc/changelogs/6.0/6.0.15.md
+97ed0b2326dce34601fe3b87e4de5423  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4885,7 +4885,7 @@ ddb7ea2df70d86d759cbb9f485513a82  kernel/classes/datatypes/ezuser/eztextfileuser
 190e03d3acc89794d927758dfc31c7cf  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
-4a9d741b0736a08d94dbb4f32628e5c6  kernel/classes/datatypes/ezuser/ezusertype.php
+bf982ba0fb7720262db598b3e5ae92c2  kernel/classes/datatypes/ezuser/ezusertype.php
 dc082dd96e41677e348d1721ead53183  kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php
 6f28916eecf5320908466643c3d75ae8  kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php
 2165581a04a9104b665395350c40188f  kernel/classes/datatypes/ezxmltext/ezxmloutputhandler.php
@@ -7171,6 +7171,7 @@ efe59a322e82b01b5d198f5ce4ac2d5c  tests/tests/kernel/classes/datatypes/eZMatrixA
 8b7725310f999cfd85ede73a60ca4f95  tests/tests/kernel/classes/datatypes/eZMultiOptionDatatypeTest.php
 3838e382720201da0ba10c1f69b0ff29  tests/tests/kernel/classes/datatypes/eZNumericDatatypesTest.php
 d3c199ef12933087e7bf07a63474ce7f  tests/tests/kernel/classes/datatypes/eZTextDatatypesTest.php
+cc71014b46954ff2444ae1742ce6663f  tests/tests/kernel/classes/datatypes/eZUserDatatypeDraftTest.php
 3dc0333408fb6ae63ad09e93427f72d5  tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php
 e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php
 062018e3e4d87a916782e66db435dacb  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
