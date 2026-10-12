@@ -3013,7 +3013,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-bb9039f1c32710dac4d78f0e13c7be3d  doc/changelogs/6.0/6.0.15.md
+d4abc27d61f869f2a56ab2aa4227dd05  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3507,7 +3507,7 @@ e6788c036282afd665d79ed6bb9c4d6d  doc/guides/benchmarking.md
 8f01bc44a84c119de29cd508fe41e05b  doc/guides/collected-information.md
 c5bc08dd00377761032a0fe460b3ef2a  doc/guides/content-history.md
 ca8f236019aaf4b164a601a6703b2d91  doc/guides/content-languages.md
-b637287d023b201c4188a35a49eec413  doc/guides/content-model-and-editing.md
+c8ab87aa91d7a0e71e2a5e05e24e11ce  doc/guides/content-model-and-editing.md
 8220e6a9471f3472469761366ea47979  doc/guides/cronjobs.md
 9ea97a05fa2a16e68fe3ddeaf00535b2  doc/guides/deploying.md
 60946c27c4015c785d2c5b1d7c9106f3  doc/guides/drafts-and-pending.md
@@ -4196,14 +4196,14 @@ b0f5bd88831c7033e2c72319ff3efaa5  extension/ezoe/TODO
 4976171ff2e48212bfe82cc1119d0018  extension/ezoe/classes/expoetinymce8engine.php
 a816b6bff7b91f94b91681927dd330eb  extension/ezoe/classes/expoeurlexception.php
 e1d52c075995457287ece4462015a16e  extension/ezoe/classes/expoeurlfetcher.php
-4c23a9e19cae5d4d9a92c33f630045c9  extension/ezoe/classes/ezoeserverfunctions.php
+b672085e6c59a8912a2e69f1c1931089  extension/ezoe/classes/ezoeserverfunctions.php
 d8765d028ea543e378067d65c0eac1bd  extension/ezoe/classes/runnable/views/ezoe/atd_rpc.php
 d7f679dbab7f1b6752c3dae71175c8c1  extension/ezoe/classes/runnable/views/ezoe/dialog.php
 0473e9fbd4329be2c8e9ba010b2f1925  extension/ezoe/classes/runnable/views/ezoe/embed_view.php
 b656555c61cf975c56958dd42d4718dd  extension/ezoe/classes/runnable/views/ezoe/load.php
 68a782c84a70af752905f917629fd3de  extension/ezoe/classes/runnable/views/ezoe/relations.php
 bcf0ee6ce97fa5471bb0400ade8de944  extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php
-0094bd5d9f9f73d0742050175de07d5d  extension/ezoe/classes/runnable/views/ezoe/tags.php
+95d661cb18c351075c98dddce6e3f443  extension/ezoe/classes/runnable/views/ezoe/tags.php
 06c0f7766ed774403f2f03b5560877d2  extension/ezoe/classes/runnable/views/ezoe/upload.php
 a215d5fc30b402fd3f2608e4272eafbe  extension/ezoe/design/standard/images/tango/bookmark-new.png
 ca0901b4491d61ced030d0c91b4185e3  extension/ezoe/design/standard/images/tango/document-open.png
@@ -4282,7 +4282,7 @@ b00450d636335e7be50d46d2c31cc5a0  extension/ezoe/design/standard/javascript/clas
 d0027fd6ba345a55c2fc441ad6f06107  extension/ezoe/design/standard/javascript/ezoe/ez_core.js
 1cadc41b99ed5f9429df682dacaf3386  extension/ezoe/design/standard/javascript/ezoe/ez_core_accordion.js
 1acc99b8f68da86f132c49c4de900a48  extension/ezoe/design/standard/javascript/ezoe/ez_core_animation.js
-48b1d9de8c18d1a964f054e57f4f2a09  extension/ezoe/design/standard/javascript/ezoe/popup_utils.js
+135cae081f48cc7ad80a7582868b3ff0  extension/ezoe/design/standard/javascript/ezoe/popup_utils.js
 8eb4b30b081652994d094437750f1fde  extension/ezoe/design/standard/javascript/ezoe/popup_validate.js
 751418d46d453e7c6b1a7fbd4e60fefa  extension/ezoe/design/standard/javascript/jquery.tinymce.js
 eff36a9433bccea2f3243b1465fe6fe3  extension/ezoe/design/standard/javascript/langs/en.js
@@ -4360,6 +4360,7 @@ b98bec73743c249187e0fa8f8311e3a3  extension/ezoe/design/standard/javascript/plug
 7aec7a3b9d4642fbf7bb3ef1ed8a7570  extension/ezoe/design/standard/javascript/plugins/example/langs/en_dlg.js
 405d190ae03384a9acb00533568b2cfd  extension/ezoe/design/standard/javascript/plugins/example_dependency/editor_plugin.js
 473878118b45efe326d335f992ff9943  extension/ezoe/design/standard/javascript/plugins/example_dependency/editor_plugin_src.js
+2bd847256fae9a7f15cb73ec10c60ade  extension/ezoe/design/standard/javascript/plugins/exp_customtag_controls/editor_plugin.js
 cc63922db2169a2679eb68ab48130854  extension/ezoe/design/standard/javascript/plugins/ezemotions/editor_plugin.js
 6aff929ff957ef5624b03bf1d0b09243  extension/ezoe/design/standard/javascript/plugins/ezemotions/emotions.htm
 857149e4dc23ae672045772da1aadf5d  extension/ezoe/design/standard/javascript/plugins/ezemotions/js/emotions.js
@@ -4578,6 +4579,7 @@ e333c93200a8c06d662a1e3844f920d0  extension/ezoe/design/standard/javascript/tiny
 cb81d4b0fe99e87177feab98928b03ba  extension/ezoe/design/standard/javascript/tiny_mce_src.js
 f6f99e0cc2da67ebcb7218dab14d19f3  extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.css
 9752da79d94c0d5f59aae8de4dd16ba8  extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js
+c1ce84f43cca13e73818c60ecbd47f61  extension/ezoe/design/standard/javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js
 90fdd47778a2ceaa16cb90854380761b  extension/ezoe/design/standard/javascript/tinymce8_ez/plugins/ezembed/plugin.js
 325eea8bd12ea96f8378201c898c8a95  extension/ezoe/design/standard/javascript/tinymce8_ez/plugins/ezlink/plugin.js
 fa225501cfea5802c6802d88add84da8  extension/ezoe/design/standard/javascript/tinymce8_ez/plugins/eztable/plugin.js
@@ -4585,6 +4587,7 @@ e760eb21f60892a1ef2298da7df313e5  extension/ezoe/design/standard/javascript/util
 579b2803ffca7953c50f53dcbef5df7e  extension/ezoe/design/standard/javascript/utils/form_utils.js
 51b9bfe349fe76204ac5b65254bbef6f  extension/ezoe/design/standard/javascript/utils/mctabs.js
 bfbaf5dc8058ff772afe2d87f4e82fbf  extension/ezoe/design/standard/javascript/utils/validate.js
+574b45660bb19c4e07830d83a1a8946f  extension/ezoe/design/standard/stylesheets/ezoe_customtags.css
 8dec2c6e25c073e1c3f42e96f64ed8bf  extension/ezoe/design/standard/stylesheets/skins/default/content.css
 0583c8091c8a39c8e0b23c2807050679  extension/ezoe/design/standard/stylesheets/skins/default/dialog.css
 33b2f2e08cc3ade5254fec64c4183558  extension/ezoe/design/standard/stylesheets/skins/default/img/buttons.png
@@ -4602,9 +4605,9 @@ ce63529c93d6f4be3747d350bd9b0435  extension/ezoe/design/standard/stylesheets/ski
 9e8448659afb5e65b225a562c0167d75  extension/ezoe/design/standard/stylesheets/skins/o2k7/ui.css
 02a164ba69ca7d9182047b24944e1d69  extension/ezoe/design/standard/stylesheets/skins/o2k7/ui_black.css
 f66b026fe40921b62c0b77798876760a  extension/ezoe/design/standard/stylesheets/skins/o2k7/ui_silver.css
-f16297f2d36cec002b85e8860273a54c  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl
+178f75dd2a0a580276bb5431cee6c261  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl
 38e700dfd11c287fa5f643682d7e5543  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl
-b1e5fe098e35ba7a34fc55bc91488b44  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl
+d24cf7da20d877daa1aeee46abfd2ce1  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl
 045d0b39a14a481c5a1adba061e2522f  extension/ezoe/design/standard/templates/content/datatype/view/ezxmltags/underline.tpl
 9863bdadb7a1227726fb97d738e888ba  extension/ezoe/design/standard/templates/ezoe/box_bookmarks.tpl
 73baaf2adee2354e62db9f8a10976db6  extension/ezoe/design/standard/templates/ezoe/box_browse.tpl
@@ -4630,7 +4633,7 @@ dfa391814d13abb4d6e955d848891365  extension/ezoe/design/standard/templates/ezoe/
 bd1c32178c2fe6f7942421586d0d6e8c  extension/ezoe/design/standard/templates/ezoe/merge_cells.tpl
 11e9a66a40aff029716246238ed91777  extension/ezoe/design/standard/templates/ezoe/popup_pagelayout.tpl
 2a63ca6512692561cfc2299867e314d7  extension/ezoe/design/standard/templates/ezoe/tag_anchor.tpl
-82cd12bcba43b2d7ba93b1f87685a190  extension/ezoe/design/standard/templates/ezoe/tag_custom.tpl
+50ac619750dae4936ca16806ae534613  extension/ezoe/design/standard/templates/ezoe/tag_custom.tpl
 d7619a0f9d791c23557e07704e01c3a7  extension/ezoe/design/standard/templates/ezoe/tag_embed_files.tpl
 a805dd216d1a5c7047bf1d596097aedf  extension/ezoe/design/standard/templates/ezoe/tag_embed_images.tpl
 e0220eeb728d3c22755c68ebb6ad12d1  extension/ezoe/design/standard/templates/ezoe/tag_embed_objects.tpl
@@ -4648,7 +4651,7 @@ f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
 fa78c13489b745a7ac8d722d12634244  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
-ae32ed3595f7a32e18c693d7686d43fa  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
+dae856cd7b3f91a83678140f224c8a11  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 ec9d0894a9b5155ca5bfa598488a5854  extension/ezoe/modules/ezoe/atd_rpc.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
 18f870446f4fbe17ed7e04874d42d544  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
@@ -4666,11 +4669,11 @@ b8d5ce9fbe686155ab349ca684d800d3  extension/ezoe/modules/ezoe/module.php
 18aa3b0427707e0f02b021decb450339  extension/ezoe/modules/ezoe/tags.php
 abf445fdf05324d71ca0e3321cc79370  extension/ezoe/modules/ezoe/upload.php
 6329b2b323a9945be004b2d8ab1ff3ce  extension/ezoe/settings/audit.ini.append.php
-0d102df1cc06d4600f9ae9ced1339306  extension/ezoe/settings/content.ini.append.php
+ddbd8bb6073d636e28f3a13a50dc0b05  extension/ezoe/settings/content.ini.append.php
 0d9ca8185059a2156f5f03e2ff6c8d6f  extension/ezoe/settings/debugbar.ini.append.php
-d7b4b65b023968056b7d4144b3b62248  extension/ezoe/settings/design.ini.append.php
+0ea023f7c14946314bd9378e2d852bbb  extension/ezoe/settings/design.ini.append.php
 fb62ab1a4f8fd741f07e8d2094e2c6df  extension/ezoe/settings/ezjscore.ini.append.php
-361de8f91595c0cc3691faea4d20e23e  extension/ezoe/settings/ezoe.ini
+19fac11424bc1d80713aaa627565813e  extension/ezoe/settings/ezoe.ini
 9319f1ac3f64704e50b2256afa058b92  extension/ezoe/settings/ezoe_attributes.ini
 f3cc73ac008d6dbc08c5be61fac64520  extension/ezoe/settings/ezxml.ini.append.php
 e51e2b0c9d84573797d5e4921625f2f7  extension/ezoe/settings/image.ini.append.php
@@ -4683,11 +4686,11 @@ f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
 89352618462fa235c9a4d73edfcde79a  extension/ezoe/translations/cze-CZ/translation.ts
 7a01cb19a8749a323545c01659a2ddba  extension/ezoe/translations/dan-DK/translation.ts
 78a42e2ad90b2c482030782011ab6e00  extension/ezoe/translations/dut-NL/translation.ts
-a830ee115e08901f435b608d5993243c  extension/ezoe/translations/eng-US/translation.ts
+93f125ed94c4c4c28c7e21806b296f6c  extension/ezoe/translations/eng-US/translation.ts
 a2513942156d811b6633ed45a77daeaa  extension/ezoe/translations/esl-ES/translation.ts
 bb5bd9726ef6de446fc6c037ac7cd59a  extension/ezoe/translations/fin-FI/translation.ts
 fa1dcd341369fc539d0a397f66e9aec7  extension/ezoe/translations/fre-FR/translation.ts
-14f7ce8126a74b105acf590739cee27a  extension/ezoe/translations/ger-DE/translation.ts
+996a08786fac3cb2ea1da6a22b38178a  extension/ezoe/translations/ger-DE/translation.ts
 27a456dec6d79d2cd1099446cf723ba6  extension/ezoe/translations/ita-IT/translation.ts
 83cb07d4be4e2d1cff883ca7d8b5d984  extension/ezoe/translations/jpn-JP/translation.ts
 eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation.ts
@@ -4696,7 +4699,7 @@ eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation
 2d1041a369218b69c7497cdfe94a712a  extension/ezoe/translations/rus-RU/translation.ts
 79cb4dd5f6a0d6d832a63dbe95aa7f42  extension/ezoe/translations/ser-SR/translation.ts
 442b8f5ff21eaf472a640c8ae88744c0  extension/ezoe/translations/swe-SE/translation.ts
-6d177b50c9fc19e7d636c4fd99a22018  extension/ezoe/translations/untranslated/translation.ts
+297e1ee3d8d9e1922797778a1d115935  extension/ezoe/translations/untranslated/translation.ts
 8d1d60689df854dd7cdff2bb0d921bd5  extension/ezoe/update/database/5.0/dbupdate-5.0.0-to-5.0.1.sql
 095a3ffdbaa76a73898ba20f893b9aad  ezpm.php
 855e225a60e154204dde78feafe5d1b5  ezpublish.cron
@@ -6038,7 +6041,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-7bb55510bf967dc9d95810c1a62ca2d6  kernel/setup/steps/ezstep_create_sites.php
+c9f5aac21d8b8ed44b07fe90438ffeaf  kernel/setup/steps/ezstep_create_sites.php
 3174823463cf9d0f9a18162ee233dc04  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -7077,6 +7080,7 @@ c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUse
 1045d4d1d9f875ee35726dfa45431264  tests/tests/extension/ezjscore/ezjscServerRouterPolicyTest.php
 d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
 be082c2cbbd69c12eee01261f6b2f622  tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php
+a56857590b9af32b6f4cfd20e9958443  tests/tests/extension/ezoe/expOECustomTagListTest.php
 b35407af9e2ca6ea1f275c2f3ebbb002  tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php
 9c2ff5a50c1feff03a2718dd04f3a755  tests/tests/extension/ezoe/expOEDialogAccessTest.php
 a4f08d5ac6c237ea03f696e86a6b5fc6  tests/tests/extension/ezoe/expOEEditorRegistryTest.php
@@ -7095,6 +7099,7 @@ fc96db66db0ea2664cf805a08fca8284  tests/tests/extension/ezoe/expOEEngineViewTest
 4d69e74b0fc9c3fa8fb53eaf079a9fde  tests/tests/extension/ezoe/expOEUrlFetcherTest.php
 982cbfcccf0ec493627b9b8f20f3d3dd  tests/tests/extension/ezoe/expOEViewsJsonTest.php
 9ed8f54e3c2ea5c50e0e31f4007ed15d  tests/tests/extension/ezoe/ezoeSpellCheckerPropertiesTest.php
+a1fc7b448e95e5b9f8256737a973c160  tests/tests/extension/ezoe/ezoeSpellcheckRpcRawInputTest.php
 9e12b292511466e7dbd49a30b818d4c4  tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
 8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
