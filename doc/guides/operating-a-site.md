@@ -217,6 +217,39 @@ What to remember:
 - **MySQL** and **PostgreSQL** are the usual production choices.
 - **Oracle** and **MongoDB** are supported; check the pages below before choosing them.
 
+For developers: a failed statement's error number is the database's own, in `$db->errorNumber()` and, with
+`$db->setErrorHandling( eZDB::ERROR_HANDLING_EXCEPTIONS )`, as `getCode()` of the `eZDBException` thrown, so code
+can tell a duplicate key from a missing table without reading the message:
+
+| Driver | Duplicate key | Missing table |
+|---|---|---|
+| MySQL, MariaDB | `1062` | `1146` |
+| PostgreSQL (the SQLSTATE, a string) | `'23505'` | `'42P01'` |
+| SQLite (the result code) | `19` | `1` |
+| Oracle (the ORA number) | `1` | `942` |
+| MongoDB (`errorNumber()` only; the driver answers `false`, it throws nothing) | `11000` | - |
+
+```php
+$db = eZDB::instance();
+$db->setErrorHandling( eZDB::ERROR_HANDLING_EXCEPTIONS );
+try
+{
+    $db->query( "INSERT INTO my_table ( id ) VALUES ( 1 )" );
+}
+catch ( eZDBException $e )
+{
+    if ( $e->getCode() === 1062 || $e->getCode() === '23505' )   // MySQL, PostgreSQL
+        { /* the row is there already */ }
+}
+$db->setErrorHandling( eZDB::ERROR_HANDLING_STANDARD );
+```
+
+The SQLite driver throws inside a transaction; outside one it answers `false` with `errorNumber()` set. Upgrade
+note: PostgreSQL's `errorNumber()` was `1` for every error and is the SQLSTATE now; with the exception handling,
+MySQL on PHP 8.1 and later throws `eZDBException` instead of PHP's `mysqli_sql_exception` (the standard handling
+is unchanged). Thanks to Mugo Web, whose LoveStack commit 3d18f47551 carried MySQL's error codes into the
+exceptions first.
+
 Depth: [SQLite database support](../features/6.0/sqlite-database.md), [SQLite 3 driver](../specifications/6.0/sqlite3-database-driver.md), [database drivers 16 to 30 September 2026](../specifications/6.0/database-drivers-2026-09.md), [SQLite and Oracle driver behaviour](../specifications/6.0/database-drivers-sqlite-oracle.md), [MongoDB support](../features/6.0/mongodb-database-support.md).
 
 ## 8. Read the logs

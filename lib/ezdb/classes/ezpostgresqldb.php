@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3d18f47551), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -86,6 +87,7 @@ class eZPostgreSQLDB extends eZDBInterface
             if ( $this->DBConnection )
             {
                 $this->IsConnected = true;
+                $this->setErrorVerbosity();
             }
             else
             {
@@ -122,6 +124,7 @@ class eZPostgreSQLDB extends eZDBInterface
             if ( $this->DBConnection )
             {
                 $this->IsConnected = true;
+                $this->setErrorVerbosity();
             }
             else
             {
@@ -594,22 +597,49 @@ class eZPostgreSQLDB extends eZDBInterface
         return $id;
     }
 
+    /**
+     * Asks the server for the SQLSTATE in every error message (libpq's verbose errors), so that setError() can
+     * make it the error number. The message keeps its usual form: setError() takes the code and the extra lines
+     * of the verbose form out again. libpq builds the message on the client, nothing more is sent.
+     */
+    protected function setErrorVerbosity()
+    {
+        if ( $this->DBConnection && function_exists( 'pg_set_error_verbosity' ) )
+            pg_set_error_verbosity( $this->DBConnection, PGSQL_ERRORS_VERBOSE );
+    }
+
+    /**
+     * The error of the last statement: ErrorNumber is its SQLSTATE, the five characters PostgreSQL names every error
+     * with ('23505' unique violation, '42P01' undefined table, '25P02' transaction aborted), and 1 when the message
+     * has none (an error of the client library); ErrorMessage the message in its usual form, without the code and
+     * the LOCATION and ... NAME lines of the verbose form.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3d18f47551), Copyright (C) Mugo Web, GPL v2
+     */
     function setError( )
     {
         if ( $this->DBConnection )
         {
-
-            $this->ErrorMessage = pg_last_error( $this->DBConnection );
-            if ( $this->ErrorMessage != '' )
-            {
-                $this->ErrorNumber = 1;
-            }
-            else
-            {
-                $this->ErrorNumber = 0;
-            }
-
+            $message = (string)pg_last_error( $this->DBConnection );
+            list( $this->ErrorNumber, $this->ErrorMessage ) = self::splitErrorMessage( $message );
         }
+    }
+
+    /**
+     * Splits a message of libpq into the SQLSTATE and the message as the default verbosity writes it.
+     *
+     * @param string $message
+     * @return array array( SQLSTATE, or 1 when the message has none, or 0 when it is empty; message )
+     */
+    static function splitErrorMessage( $message )
+    {
+        if ( $message === '' )
+            return array( 0, '' );
+        if ( !preg_match( '/^([A-Z]+):  ([0-9A-Z]{5}): /', $message, $m ) )
+            return array( 1, $message );
+        $message = $m[1] . ':  ' . substr( $message, strlen( $m[0] ) );
+        $message = preg_replace( '/^(?:LOCATION|SCHEMA NAME|TABLE NAME|COLUMN NAME|DATATYPE NAME|CONSTRAINT NAME):  .*(?:\n|$)/m', '', $message );
+        return array( $m[2], $message );
     }
 
     function escapeString( $str )

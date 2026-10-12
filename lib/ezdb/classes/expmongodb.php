@@ -4,6 +4,7 @@
  *
  * @copyright Copyright (C) 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3d18f47551), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package sevenx_mongodb
  */
@@ -963,6 +964,8 @@ class expMongoDB extends eZDBInterface
     {
         $dbName = $this->DB;
         $sql = trim( $sql );
+        // errorNumber()/errorMessage() describe this statement: a failure of the server below sets them again
+        $this->setError();
         $this->traceStatement( 'query: ' . $sql );
 
         // --- UPDATE table SET col=val [, col=val ...] WHERE conditions ---
@@ -1216,6 +1219,7 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
+                $this->recordDriverError( $e );
                 $this->logError( 'expMongoDB::query UPDATE failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
                 return false;
             }
@@ -1269,6 +1273,7 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
+                $this->recordDriverError( $e );
                 $this->logError( 'expMongoDB::query INSERT failed: ' . $e->getMessage()
                     . ' SQL: ' . substr( $sql, 0, 200 ) );
                 return false;
@@ -1294,6 +1299,7 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
+                $this->recordDriverError( $e );
                 $this->logError( 'expMongoDB::query DELETE failed: ' . $e->getMessage() );
                 return false;
             }
@@ -1374,6 +1380,7 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
+                $this->recordDriverError( $e );
                 $this->logError( 'expMongoDB::query JOIN UPDATE failed: ' . $e->getMessage()
                     . ' SQL: ' . substr( $sql, 0, 300 ) );
                 return false;
@@ -1390,6 +1397,7 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
+                $this->recordDriverError( $e );
                 $this->logError( 'expMongoDB::query TRUNCATE failed: ' . $e->getMessage()
                     . ' SQL: ' . substr( $sql, 0, 300 ) );
                 return false;
@@ -1407,6 +1415,7 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
+                $this->recordDriverError( $e );
                 $this->logError( 'expMongoDB::query DROP TABLE failed: ' . $e->getMessage()
                     . ' SQL: ' . substr( $sql, 0, 300 ) );
                 return false;
@@ -1444,6 +1453,7 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
+                $this->recordDriverError( $e );
                 $this->logError( 'expMongoDB::query CREATE TABLE failed: ' . $e->getMessage()
                     . ' SQL: ' . substr( $sql, 0, 300 ) );
                 return false;
@@ -2351,6 +2361,24 @@ class expMongoDB extends eZDBInterface
     {
         $this->ErrorMessage = '';
         $this->ErrorNumber  = 0;
+    }
+
+    /**
+     * Records the error of a statement the MongoDB server refused: ErrorNumber is the server's error code
+     * (11000 duplicate key, 26 namespace not found ...), as the other drivers record their own error numbers,
+     * ErrorMessage its message. A failure without a code (a statement this driver cannot translate) leaves 0.
+     * The driver reports failures by its return value (false), it throws no eZDBException.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3d18f47551), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param Throwable $e
+     */
+    function recordDriverError( $e )
+    {
+        if ( !$this->RecordError || !$e instanceof Throwable )
+            return;
+        $this->ErrorNumber = (int)$e->getCode();
+        $this->ErrorMessage = (string)$e->getMessage();
     }
 
     // -------------------------------------------------------------------------

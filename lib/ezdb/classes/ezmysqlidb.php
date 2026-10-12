@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3d18f47551), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -435,7 +436,23 @@ class eZMySQLiDB extends eZDBInterface
             }
 
             $profileStart = eZDBInterface::$SQLProfileOn === false ? 0 : microtime( true );
-            $result = mysqli_query( $connection, $sql );
+            if ( $this->errorHandling == eZDB::ERROR_HANDLING_EXCEPTIONS )
+            {
+                // With mysqli reporting errors as exceptions (PHP 8.1's default) a failed statement throws
+                // mysqli_sql_exception past this driver. Code that asked for the database's exceptions gets an
+                // eZDBException from the failure handling below instead, its code the MySQL error number, after
+                // the transaction is rolled back. The standard error handling is left as it was.
+                try
+                {
+                    $result = mysqli_query( $connection, $sql );
+                }
+                catch ( mysqli_sql_exception $e )
+                {
+                    $result = false;
+                }
+            }
+            else
+                $result = mysqli_query( $connection, $sql );
             if ( eZDBInterface::$SQLProfileOn !== false )
                 eZDBInterface::profileSQL( $sql, microtime( true ) - $profileStart );
             // A write makes the query cache's results for its tables stale.
@@ -443,7 +460,7 @@ class eZMySQLiDB extends eZDBInterface
                 eZDBQueryCache::noteWrite( $this, $sql );
 
             if ( $this->RecordError and !$result )
-                $this->setError();
+                $this->setError( $connection );
 
             if ( $this->OutputSQL )
             {
@@ -468,7 +485,9 @@ class eZMySQLiDB extends eZDBInterface
             }
             else
             {
-                $this->setError();
+                // The error of the connection the statement ran on: with a separate write server the slave
+                // connection setError() reads by default knows nothing of it, and the number was 0.
+                $this->setError( $connection );
                 $errorMessage = self::failedQueryMessage( '(' . $this->ErrorNumber . ') ' . $this->ErrorMessage, $sql );
                 eZDebug::writeError( $errorMessage, __CLASS__  );
                 // eZDebug writes errors to error.log itself (site.ini [DebugSettings]

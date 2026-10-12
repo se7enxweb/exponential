@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3d18f47551), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -1155,7 +1156,17 @@ class eZDBInterface
 
             eZDebug::writeError( 'Transaction in progress failed due to DB error, transaction was rollbacked. Transaction ID is ' . $transID . '.', 'eZDBInterface::commit ' . $transID );
 
+            // The error is the failed statement's, not the rollback's: a driver that clears its error state at
+            // every statement (Oracle) would otherwise report the rollback, and the exception below would carry
+            // no error number (eZDBException::getCode() is the driver's error number).
+            $errorNumber = $this->ErrorNumber;
+            $errorMessage = $this->ErrorMessage;
             $this->rollback();
+            if ( $errorNumber )
+            {
+                $this->ErrorNumber = $errorNumber;
+                $this->ErrorMessage = $errorMessage;
+            }
 
             if ( $this->errorHandling == eZDB::ERROR_HANDLING_EXCEPTIONS )
             {
@@ -1488,9 +1499,13 @@ class eZDBInterface
     }
 
     /**
-     * Returns the error number
+     * Returns the error number of the last failed statement, as the driver reports it: MySQL's error number
+     * (1062 duplicate entry, 1146 table missing), SQLite's result code (19 constraint, 1 for most others),
+     * Oracle's ORA number (1 unique constraint, 942 table missing), PostgreSQL's SQLSTATE, a string of five
+     * characters ('23505' unique violation, '42P01' table missing), MongoDB's server error code (11000 duplicate
+     * key). It is also the code of the eZDBException thrown for the statement (getCode()).
      *
-     * @return int
+     * @return int|string
      */
     function errorNumber()
     {
