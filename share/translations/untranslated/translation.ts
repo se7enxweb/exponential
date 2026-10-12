@@ -37826,22 +37826,6 @@ your account.</source>
         <source>(See &apos;%location&apos;)</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>design/standard/class/datatype </name>
-    <message>
-        <source>Max file size</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>design/standard/class/edit</name>
-    <message>
-        <source>Add to group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove from groups</source>
     <message>
         <source>Alternative text is required</source>
         <translation type="unfinished"></translation>
@@ -37858,6 +37842,22 @@ your account.</source>
         <source>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>design/standard/class/datatype </name>
+    <message>
+        <source>Max file size</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/class/edit</name>
+    <message>
+        <source>Add to group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove from groups</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -39437,6 +39437,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>ISBN %data_text</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>required</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -39453,10 +39457,6 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Preview</source>
-    <message>
-        <source>required</source>
-        <translation type="unfinished"></translation>
-    </message>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -50514,6 +50514,10 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Images of the type %1 are not accepted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>A keyword can be at most %1 characters long.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -50545,6 +50549,10 @@ your account.</source>
         <source>Invalid input.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>An alternative text is required for this image.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezbinaryfile</name>
@@ -50565,20 +50573,12 @@ your account.</source>
     <message>
         <source>Failed to store media file %filename. Please contact the site administrator.</source>
         <translation type="unfinished"></translation>
-    <message>
-        <source>An alternative text is required for this image.</source>
-        <translation type="unfinished"></translation>
-    </message>
     </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezxmltext</name>
     <message>
         <source>Wrong closing tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Images of the type %1 are not accepted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -42840,18 +42840,6 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Default Open Graph image</source>
         <translation>Standard-Open-Graph-Bild</translation>
     </message>
-</context>
-<context>
-    <name>design/standard/class/datatype </name>
-    <message>
-        <source>Max file size</source>
-        <translation>Maximale Dateigröße</translation>
-    </message>
-</context>
-<context>
-    <name>design/standard/class/edit</name>
-    <message>
-        <source>Input did not validate</source>
     <message>
         <source>Alternative text is required</source>
         <translation>Alternativtext ist erforderlich</translation>
@@ -42868,6 +42856,18 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</source>
         <translation>Leerzeichen, Tabulatoren und Zeilenumbrüche am Anfang und am Ende des Textes werden beim Speichern entfernt.</translation>
     </message>
+</context>
+<context>
+    <name>design/standard/class/datatype </name>
+    <message>
+        <source>Max file size</source>
+        <translation>Maximale Dateigröße</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/class/edit</name>
+    <message>
+        <source>Input did not validate</source>
         <translation>Eingabe konnte nicht validiert werden</translation>
     </message>
     <message>
@@ -44941,6 +44941,10 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
         <source>Browse to add an existing object</source>
         <translation>Durchsuchen, um ein vorhandenes Objekt hinzuzufügen</translation>
     </message>
+    <message>
+        <source>required</source>
+        <translation>erforderlich</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -44953,10 +44957,6 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     <name>design/standard/content/diff</name>
     <message>
         <source>Version</source>
-    <message>
-        <source>required</source>
-        <translation>erforderlich</translation>
-    </message>
         <translation type="obsolete">Version</translation>
     </message>
     <message>
@@ -58965,6 +58965,10 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <translation>Das Bild ist zu groß: %1 x %2 Pixel.</translation>
     </message>
     <message>
+        <source>Images of the type %1 are not accepted.</source>
+        <translation>Bilder vom Typ %1 werden nicht angenommen.</translation>
+    </message>
+    <message>
         <source>A keyword can be at most %1 characters long.</source>
         <translation>Ein Schlüsselwort darf höchstens %1 Zeichen lang sein.</translation>
     </message>
@@ -59005,10 +59009,6 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <translation>Die Beschreibung sollte kürzer als 155 Zeichen sein.</translation>
     </message>
     <message>
-        <source>Images of the type %1 are not accepted.</source>
-        <translation>Bilder vom Typ %1 werden nicht angenommen.</translation>
-    </message>
-    <message>
         <source>Name on creditcard not given</source>
         <translation>Der Name auf der Kreditkarte fehlt.</translation>
     </message>
@@ -59042,6 +59042,10 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <comment>Datatype name</comment>
         <translation>hCaptcha</translation>
     </message>
+    <message>
+        <source>An alternative text is required for this image.</source>
+        <translation>Für dieses Bild ist ein Alternativtext erforderlich.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezbinaryfile</name>
@@ -59054,10 +59058,6 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <name>kernel/classes/datatypes/ezimage</name>
     <message>
         <source>Failed to fetch Image Handler. Please contact the site administrator.</source>
-    <message>
-        <source>An alternative text is required for this image.</source>
-        <translation>Für dieses Bild ist ein Alternativtext erforderlich.</translation>
-    </message>
         <translation>Konnte Image-Handler nicht aufrufen. Bitte wenden Sie sich an den Administrator.</translation>
     </message>
 </context>
@@ -66883,14 +66883,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>%1 of %2 audit events</source>
         <translation>%1 von %2 Audit-Ereignissen</translation>
     </message>
-</context>
-<context>
-    <name>design/admin/dashboard</name>
-    <message>
-        <source>%active active in this siteaccess, %on_disk on disk</source>
-        <translation>%active in diesem Siteaccess aktiv, %on_disk im Dateisystem</translation>
-    </message>
-    <message>
     <message>
         <source>Location add</source>
         <translation>Ort hinzugefügt</translation>
@@ -66903,6 +66895,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Main location change</source>
         <translation>Hauptort geändert</translation>
     </message>
+</context>
+<context>
+    <name>design/admin/dashboard</name>
+    <message>
+        <source>%active active in this siteaccess, %on_disk on disk</source>
+        <translation>%active in diesem Siteaccess aktiv, %on_disk im Dateisystem</translation>
+    </message>
+    <message>
         <source>Here is what is happening on %site.</source>
         <translation>Das passiert gerade auf %site.</translation>
     </message>

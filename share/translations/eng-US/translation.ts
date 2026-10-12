@@ -39293,22 +39293,6 @@ your account.</translation>
         <source>Default Open Graph image</source>
         <translation>Default Open Graph image</translation>
     </message>
-</context>
-<context>
-    <name>design/standard/class/datatype </name>
-    <message>
-        <source>Max file size</source>
-        <translation>Max file size</translation>
-    </message>
-</context>
-<context>
-    <name>design/standard/class/edit</name>
-    <message>
-        <source>Add to group</source>
-        <translation>Add to group</translation>
-    </message>
-    <message>
-        <source>Remove from groups</source>
     <message>
         <source>Alternative text is required</source>
         <translation>Alternative text is required</translation>
@@ -39325,6 +39309,22 @@ your account.</translation>
         <source>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</source>
         <translation>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</translation>
     </message>
+</context>
+<context>
+    <name>design/standard/class/datatype </name>
+    <message>
+        <source>Max file size</source>
+        <translation>Max file size</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/class/edit</name>
+    <message>
+        <source>Add to group</source>
+        <translation>Add to group</translation>
+    </message>
+    <message>
+        <source>Remove from groups</source>
         <translation>Remove from groups</translation>
     </message>
     <message>
@@ -40923,6 +40923,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Browse to add an existing object</source>
         <translation>Browse to add an existing object</translation>
     </message>
+    <message>
+        <source>required</source>
+        <translation>required</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -40939,10 +40943,6 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Preview</source>
-    <message>
-        <source>required</source>
-        <translation>required</translation>
-    </message>
         <translation>Preview</translation>
     </message>
     <message>
@@ -52151,6 +52151,10 @@ your account.</translation>
         <translation>The image is too large: %1 x %2 pixels.</translation>
     </message>
     <message>
+        <source>Images of the type %1 are not accepted.</source>
+        <translation>Images of the type %1 are not accepted.</translation>
+    </message>
+    <message>
         <source>A keyword can be at most %1 characters long.</source>
         <translation>A keyword can be at most %1 characters long.</translation>
     </message>
@@ -52194,10 +52198,6 @@ your account.</translation>
         <source>Birthday</source>
         <comment>Datatype name</comment>
         <translation>Birthday</translation>
-    </message>
-    <message>
-        <source>Images of the type %1 are not accepted.</source>
-        <translation>Images of the type %1 are not accepted.</translation>
     </message>
     <message>
         <source>Cancer</source>
@@ -52293,6 +52293,10 @@ your account.</translation>
         <comment>Datatype name</comment>
         <translation>hCaptcha</translation>
     </message>
+    <message>
+        <source>An alternative text is required for this image.</source>
+        <translation>An alternative text is required for this image.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezbinaryfile</name>
@@ -52309,10 +52313,6 @@ your account.</translation>
     </message>
 </context>
 <context>
-    <message>
-        <source>An alternative text is required for this image.</source>
-        <translation>An alternative text is required for this image.</translation>
-    </message>
     <name>kernel/classes/datatypes/ezmedia</name>
     <message>
         <source>Failed to store media file %filename. Please contact the site administrator.</source>
@@ -59441,14 +59441,6 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%1 of %2 audit events</source>
         <translation>%1 of %2 audit events</translation>
     </message>
-</context>
-<context>
-    <name>design/admin/dashboard</name>
-    <message>
-        <source>%active active in this siteaccess, %on_disk on disk</source>
-        <translation>%active active in this siteaccess, %on_disk on disk</translation>
-    </message>
-    <message>
     <message>
         <source>Location add</source>
         <translation>Location add</translation>
@@ -59461,6 +59453,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Main location change</source>
         <translation>Main location change</translation>
     </message>
+</context>
+<context>
+    <name>design/admin/dashboard</name>
+    <message>
+        <source>%active active in this siteaccess, %on_disk on disk</source>
+        <translation>%active active in this siteaccess, %on_disk on disk</translation>
+    </message>
+    <message>
         <source>Here is what is happening on %site.</source>
         <translation>Here is what is happening on %site.</translation>
     </message>
