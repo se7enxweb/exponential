@@ -7,6 +7,9 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 9c931192e0), Copyright (C) Mugo Web, GPL v2
+ * (the audit records of added and removed locations and of main location changes).
  */
 
 /*!
@@ -1111,6 +1114,7 @@ class eZContentOperationCollection
         $db = eZDB::instance();
         $db->begin();
         $locationAdded = false;
+        $auditInserted = array();
         $node = eZContentObjectTreeNode::fetch( $nodeID );
         foreach ( $selectedNodeIDArray as $selectedNodeID )
         {
@@ -1135,6 +1139,7 @@ class eZContentOperationCollection
                     $insertedNode->sync();
 
                     $locationAdded = true;
+                    $auditInserted[] = (int)$insertedNode->attribute( 'node_id' );
                 }
             }
         }
@@ -1161,22 +1166,77 @@ class eZContentOperationCollection
             eZContentOperationCollection::registerSearchObject( $objectID );
         }
 
-        // Audit (doc/bc/6.0/audit.md, content.node.add)
-        if ( $locationAdded && class_exists( 'expAuditHook' ) )
-            expAuditHook::emit( 'content.node.add', function () use ( $object, $assignedNodes, $selectedNodeIDArray, $parentNodeIDArray ) {
-                $before = array();
-                foreach ( $assignedNodes as $n )
-                    $before[] = (int)$n->attribute( 'node_id' );
-                $after = array();
-                foreach ( (array)$object->assignedNodes() as $n )
-                    $after[] = (int)$n->attribute( 'node_id' );
-                $added = array_values( array_diff( expAuditHook::ids( $selectedNodeIDArray ), expAuditHook::ids( $parentNodeIDArray ) ) );
-                return array( 'object' => expAuditHook::object( $object ),
-                              'target' => array( 'type' => 'node', 'id' => implode( ',', $added ) ),
-                              'before' => array( 'locations' => $before ), 'after' => array( 'locations' => $after, 'parents' => $added ) );
-            } );
+        // Audit (doc/bc/6.0/audit.md, content.node.add; 4.x name location-assign): one record per added location,
+        // about the object, with the new node as the target (its id, parent and path)
+        if ( $auditInserted && class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.add' ) )
+            self::auditLocationsAdded( $objectID, $assignedNodes, $auditInserted );
 
         return array( 'status' => true );
+    }
+
+    /**
+     * Records content.node.add (4.x: location-assign) once per new location of an object: the object, the new node
+     * as the target (id, parent, path), the object's locations before and after, and its main node.
+     *
+     * @param int $objectID
+     * @param eZContentObjectTreeNode[] $nodesBefore the object's locations before the new ones were added
+     * @param int[] $newNodeIDs the new nodes
+     * @return string[] the event ids
+     */
+    static public function auditLocationsAdded( $objectID, array $nodesBefore, array $newNodeIDs )
+    {
+        $ids = array();
+        if ( !class_exists( 'expAuditHook' ) || !expAuditHook::on( 'content.node.add' ) )
+            return $ids;
+        $before = array();
+        foreach ( $nodesBefore as $n )
+            $before[] = (int)( is_object( $n ) ? $n->attribute( 'node_id' ) : $n );
+        foreach ( $newNodeIDs as $newNodeID )
+        {
+            $id = expAuditHook::emit( 'content.node.add', function () use ( $objectID, $before, $newNodeID ) {
+                $object = eZContentObject::fetch( (int)$objectID );
+                $after = array();
+                foreach ( $object ? (array)$object->assignedNodes( false ) : array() as $n )
+                    $after[] = (int)( is_array( $n ) ? $n['node_id'] : $n->attribute( 'node_id' ) );
+                $target = expAuditHook::node( (int)$newNodeID );
+                return array( 'object' => $object ? expAuditHook::object( $object ) : array( 'type' => 'object', 'id' => (int)$objectID ),
+                              'target' => $target,
+                              'before' => array( 'locations' => $before ),
+                              'after' => array( 'locations' => $after, 'node' => (int)$newNodeID,
+                                                'parent' => isset( $target['parent'] ) ? (int)$target['parent'] : null,
+                                                'main_node' => $object ? (int)$object->attribute( 'main_node_id' ) : null ) );
+            } );
+            if ( $id !== null )
+                $ids[] = $id;
+        }
+        return $ids;
+    }
+
+    /**
+     * Records content.node.main (4.x: main-node-update): the object's main location changed from $oldMainNodeID to
+     * $newMainNodeID, with the new main node's parent. $cause says why when it was not the editor's choice
+     * ("location-remove": the main location was removed and the next one took its place).
+     *
+     * @param int $objectID
+     * @param int $oldMainNodeID
+     * @param int $newMainNodeID
+     * @param int|null $newParentNodeID
+     * @param string|null $cause
+     * @return string|null the event id
+     */
+    static public function auditMainLocationChanged( $objectID, $oldMainNodeID, $newMainNodeID, $newParentNodeID = null, $cause = null )
+    {
+        if ( !class_exists( 'expAuditHook' ) || (int)$oldMainNodeID === (int)$newMainNodeID )
+            return null;
+        return expAuditHook::emit( 'content.node.main', function () use ( $objectID, $oldMainNodeID, $newMainNodeID, $newParentNodeID, $cause ) {
+            $target = expAuditHook::node( (int)$newMainNodeID );
+            $parent = $newParentNodeID !== null ? (int)$newParentNodeID : ( isset( $target['parent'] ) ? (int)$target['parent'] : null );
+            $after = array( 'main_node' => (int)$newMainNodeID, 'parent' => $parent );
+            if ( $cause !== null )
+                $after['cause'] = (string)$cause;
+            return array( 'object' => expAuditHook::object( (int)$objectID ), 'target' => $target,
+                          'before' => array( 'main_node' => (int)$oldMainNodeID ), 'after' => $after );
+        } );
     }
 
     /**
@@ -1194,6 +1254,7 @@ class eZContentOperationCollection
         $nodeAssignmentIdList = array();
         $objectIdList         = array();
         $auditRemoved         = array();
+        $auditOldMain         = array();
 
         $db = eZDB::instance();
         $db->begin();
@@ -1213,10 +1274,18 @@ class eZContentOperationCollection
             }
 
             if ( $nodeId == $node->attribute( 'main_node_id' ) )
+            {
                 $mainNodeChanged[$objectId] = 1;
+                $auditOldMain[$objectId] = (int)$nodeId;
+            }
             // Audit (doc/bc/6.0/audit.md, content.node.remove): described before it goes, recorded after the commit
+            // (4.x name location-remove; "main" says whether the removed location was the object's main one)
             if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.remove' ) )
-                $auditRemoved[] = eZContentObjectTreeNode::auditRemovalData( $node, eZContentObject::fetch( $objectId ), 'content.node.remove', array() );
+            {
+                $auditData = eZContentObjectTreeNode::auditRemovalData( $node, eZContentObject::fetch( $objectId ), 'content.node.remove', array() );
+                $auditData['before']['main'] = ( $nodeId == $node->attribute( 'main_node_id' ) );
+                $auditRemoved[] = $auditData;
+            }
             $node->removeThis();
 
             if ( !isset( $objectIdList[$objectId] ) )
@@ -1225,6 +1294,7 @@ class eZContentOperationCollection
 
         eZNodeAssignment::purgeByID( array_keys( $nodeAssignmentIdList ) );
 
+        $auditMainChanged = array();
         foreach ( array_keys( $mainNodeChanged ) as $objectId )
         {
             $allNodes = $objectIdList[$objectId]->assignedNodes();
@@ -1233,6 +1303,10 @@ class eZContentOperationCollection
             {
                 $mainNodeChanged[$objectId] = $allNodes[0];
                 eZContentObjectTreeNode::updateMainNodeID( $allNodes[0]->attribute( 'node_id' ), $objectId, false, $allNodes[0]->attribute( 'parent_node_id' ) );
+                // Audit (content.node.main, 4.x main-node-update): recorded after the commit
+                $auditMainChanged[$objectId] = array( $auditOldMain[$objectId],
+                                                      (int)$allNodes[0]->attribute( 'node_id' ),
+                                                      (int)$allNodes[0]->attribute( 'parent_node_id' ) );
             }
         }
 
@@ -1274,6 +1348,8 @@ class eZContentOperationCollection
 
         foreach ( $auditRemoved as $auditData )
             expAuditHook::emit( 'content.node.remove', $auditData );
+        foreach ( $auditMainChanged as $objectId => $change )
+            self::auditMainLocationChanged( $objectId, $change[0], $change[1], $change[2], 'location-remove' );
 
         return array( 'status' => true );
     }
@@ -1697,7 +1773,7 @@ class eZContentOperationCollection
      */
     static public function updateMainAssignment( $mainAssignmentID, $objectID, $mainAssignmentParentID )
     {
-        // Audit (doc/bc/6.0/audit.md, content.node.main)
+        // Audit (doc/bc/6.0/audit.md, content.node.main; 4.x name main-node-update)
         $auditOldMain = null;
         if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.main' ) )
         {
@@ -1705,11 +1781,8 @@ class eZContentOperationCollection
             $auditOldMain = $o ? (int)$o->attribute( 'main_node_id' ) : 0;
         }
         eZContentObjectTreeNode::updateMainNodeID( $mainAssignmentID, $objectID, false, $mainAssignmentParentID );
-        if ( $auditOldMain !== null && $auditOldMain != $mainAssignmentID )
-            expAuditHook::emit( 'content.node.main', function () use ( $objectID, $mainAssignmentID, $auditOldMain ) {
-                return array( 'object' => expAuditHook::object( $objectID ), 'target' => expAuditHook::node( $mainAssignmentID ),
-                              'before' => array( 'main_node' => $auditOldMain ), 'after' => array( 'main_node' => (int)$mainAssignmentID ) );
-            } );
+        if ( $auditOldMain !== null )
+            self::auditMainLocationChanged( $objectID, $auditOldMain, $mainAssignmentID, $mainAssignmentParentID ? (int)$mainAssignmentParentID : null );
         eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
         if ( !eZSearch::getEngine() instanceof eZSearchEngine )
         {

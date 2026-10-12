@@ -54,8 +54,8 @@ class expAuditTaxonomy
         'content.version.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content' ),
         'content.node.move' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.node.copy' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
-        'content.node.add' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
-        'content.node.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content' ),
+        'content.node.add' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content', 'label' => 'Location add' ),
+        'content.node.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'Location remove' ),
         'content.node.remove.trash' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content' ),
         'content.object.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content' ),
         'content.object.purge' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content' ),
@@ -66,7 +66,7 @@ class expAuditTaxonomy
         'content.node.swap' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.node.section' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.object.state' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
-        'content.node.main' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
+        'content.node.main' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content', 'label' => 'Main location change' ),
         'content.node.sort' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
         'content.node.priority' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
         'content.object.always_available' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
@@ -333,13 +333,16 @@ class expAuditTaxonomy
     }
 
     /**
-     * A readable label from a name: content.node.remove.trash -> "Node remove trash".
+     * A readable label from a name: content.node.remove.trash -> "Node remove trash". A catalogue entry with a
+     * label of its own uses it (content.node.add -> "Location add").
      *
      * @param string $name
      * @return string
      */
     public static function label( $name )
     {
+        if ( isset( self::$catalogue[$name]['label'] ) )
+            return self::$catalogue[$name]['label'];
         $parts = explode( '.', $name );
         array_shift( $parts );
         return ucfirst( str_replace( '_', ' ', implode( ' ', $parts ) ) );

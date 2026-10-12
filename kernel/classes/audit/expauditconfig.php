@@ -13,6 +13,9 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 9c931192e0), Copyright (C) Mugo Web, GPL v2
+ * (the old names location-assign, location-remove and main-node-update in the compatibility map).
  */
 
 class expAuditConfig
@@ -90,6 +93,9 @@ class expAuditConfig
                 'section-assign' => 'content.node.section',
                 'state-assign' => 'content.object.state',
                 'order-delete' => 'commerce.order.delete',
+                'location-assign' => 'content.node.add',
+                'location-remove' => 'content.node.remove',
+                'main-node-update' => 'content.node.main',
                 'user-password-change' => 'access.user.password.change',
                 'user-password-change-self' => 'access.user.password.change',
                 'user-password-change-self-fail' => 'access.user.password.change.failed',

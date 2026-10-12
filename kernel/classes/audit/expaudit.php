@@ -18,6 +18,9 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 9c931192e0), Copyright (C) Mugo Web, GPL v2
+ * (the attributes of the old names location-assign, location-remove and main-node-update).
  */
 
 class expAudit
@@ -494,6 +497,32 @@ class expAudit
                 case 'user-forgotpassword':
                     if ( array_key_exists( 'Email', $attrs ) && !array_key_exists( 'UserID', $attrs ) )
                         $name = 'access.user.password.reset.request';
+                    break;
+            }
+
+            // the location names and attributes LoveStack writes (mugoweb/ezpublish-legacy 9c931192e0): an added
+            // location, a removed one, a new main one; their files can be imported (AuditFileNames[])
+            switch ( $oldName )
+            {
+                case 'location-assign':
+                    $parents = $get( 'New Locations Parent Node ID Array' );
+                    $parents = $parents === null ? array() : ( is_array( $parents ) ? $parents : explode( ',', (string)$parents ) );
+                    $parents = array_values( array_filter( array_map( 'trim', array_map( 'strval', $parents ) ), 'strlen' ) );
+                    $data['after'] = array( 'parents' => array_map( $int, $parents ), 'main_node' => $int( $get( 'Main Node ID' ) ) );
+                    break;
+                case 'location-remove':
+                    $removed = $int( $get( 'Removed Node ID' ) );
+                    if ( $removed !== null )
+                        $attrs['Node ID'] = $removed;
+                    $wasMain = $get( 'Was main node' );
+                    $data['before'] = array( 'parent' => $int( $get( 'Parent Node ID' ) ),
+                                             'main' => $wasMain === null ? null : strcasecmp( trim( (string)$wasMain ), 'yes' ) === 0 );
+                    break;
+                case 'main-node-update':
+                    $newMain = $int( $get( 'New Main Node ID' ) );
+                    if ( $newMain !== null )
+                        $data['target'] = array( 'type' => 'node', 'id' => $newMain );
+                    $data['after'] = array( 'main_node' => $newMain, 'parent' => $int( $get( 'New Parent Node ID' ) ) );
                     break;
             }
 
@@ -1346,7 +1375,7 @@ class expAudit
 
     /**
      * @return bool Users may be looked up (eZUser is there, no fixed test context is set, and no setup run is
-     *         in progress: an installation has no user yet, and the database the settings name at that moment
+     *         in progress, here or in the process that started this command (EXP_SETUP_RUN): an installation has no user yet, and the database the settings name at that moment
      *         may be another one than the one being installed, which a lookup would try to connect to)
      */
     protected static function canLookUp()
@@ -1354,6 +1383,9 @@ class expAudit
         if ( !class_exists( 'eZUser' ) )
             return false;
         if ( class_exists( 'expSetupLog', false ) && expSetupLog::runId() !== null )
+            return false;
+        // a command a setup run started (expMaintenance::clearResponseCaches()), in a process of its own
+        if ( (string)getenv( 'EXP_SETUP_RUN' ) !== '' )
             return false;
         $config = expAuditConfig::get();
         return !isset( $config['context'] );
