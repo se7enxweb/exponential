@@ -823,6 +823,21 @@ class eZINI
                         break;
                     }
                 }
+                // The files of [Include ...] lines and the directories their patterns look in: one that is
+                // gone or changed (a directory changes when a file is added or removed) rebuilds the cache
+                if ( $data !== false && !empty( $data['includes'] ) )
+                {
+                    foreach ( $data['includes'] as $includedFile )
+                    {
+                        $fileTime = file_exists( $includedFile ) ? filemtime( $includedFile ) : false;
+                        if ( $fileTime === false || ( $fileTime > $cacheCreatedTime && $fileTime <= $currentTime ) )
+                        {
+                            $data = false;
+                            $this->reset();
+                            break;
+                        }
+                    }
+                }
                 eZDebug::accumulatorStop( 'ini_check_mtime' );
             }
         }
@@ -830,6 +845,7 @@ class eZINI
         if ( $data )// if we have cache data on this point, use it
         {
             $this->Charset = $data['charset'];
+            $this->IncludedFiles = isset( $data['includes'] ) ? $data['includes'] : array();
             $this->ModifiedBlockValues = array();
             if ( $placement )
                 $this->BlockValuesPlacement = $data['val'];
@@ -885,6 +901,7 @@ class eZINI
             'rev' => eZINI::CONFIG_CACHE_REV,
             'created' => date( 'c' ),
             'files' => $inputFiles,
+            'includes' => $this->IncludedFiles,
             'file' => $iniFile,
             'charset' => $this->Codec ? $this->Codec->RequestedOutputCharsetCode : $this->Charset,
             'val' => $data,
@@ -932,6 +949,9 @@ class eZINI
             fwrite( $fp, "'charset' => \"$this->Charset\",\n" );
 
         fwrite( $fp, "'files' => " . preg_replace( "@\n[\s]+@", '', var_export( $inputFiles, true ) ) . ",\n" );
+        // What [Include ...] lines read (files and the directories they look in), checked like 'files'
+        if ( $this->IncludedFiles )
+            fwrite( $fp, "'includes' => " . preg_replace( "@\n[\s]+@", '', var_export( $this->IncludedFiles, true ) ) . ",\n" );
         fwrite( $fp, "'file' => '$iniFile',\n" );
 
         fwrite( $fp, "'val' => " . preg_replace( "@\n[\s]+@", '', var_export( $data, true ) ) . ");" );
@@ -977,6 +997,8 @@ class eZINI
         {
             $this->LastParsedInputFiles = $inputFiles;
         }
+        $this->IncludedFiles = array();
+        $this->IncludeStack = array();
 
         foreach ( $inputFiles as $inputFile )
         {
@@ -1058,6 +1080,17 @@ class eZINI
                 $line = $regs[1];
             if ( trim( $line ) == '' )
                 continue;
+            // [Include <relative pattern>]: the settings of other files, read here (see parseIncludes()). The
+            // line ends the current group: the included files start their own groups, and settings after the
+            // line need a group header of their own. A direct-access instance (the INI editor) does not read
+            // them, so a save keeps the line as written and never copies included settings into this file.
+            if ( $line[0] === '[' && preg_match( "#^\[Include\s+(\S.*?)\s*\]\s*$#", $line, $includeMatch ) )
+            {
+                if ( !$this->DirectAccess )
+                    $this->parseIncludes( $file, $includeMatch[1], $placement );
+                $currentBlock = '';
+                continue;
+            }
             // check for new block
             if ( preg_match("#^\[(.+)\]\s*$#", $line, $newBlockNameArray ) )
             {
@@ -1872,6 +1905,17 @@ class eZINI
             if ( trim( $lineWithoutComment ) === '' )
                 continue;
 
+            // An [Include ...] line is kept as written: it is no group, it ends the group before it (as in
+            // parseFile()), and a save never removes it
+            if ( preg_match( "#^\[Include\s+(\S.*?)\s*\]\s*$#", $lineWithoutComment ) )
+            {
+                if ( $lastSection !== null )
+                    $sections[$lastSection]['end'] = $index - 1;
+                $lastSection = null;
+                $currentBlock = '';
+                continue;
+            }
+
             if ( preg_match( "#^\[(.+)\]\s*$#", $lineWithoutComment, $newBlockNameArray ) )
             {
                 if ( $lastSection !== null )
@@ -1999,6 +2043,87 @@ class eZINI
         $this->ModifiedBlockValues = array();
         $this->RoundTripData = array();
         $this->LastParsedInputFiles = array();
+        $this->IncludedFiles = array();
+    }
+
+    /**
+     * The files read through [Include <pattern>] lines in the last parse, and the directories their patterns
+     * look in (a file added there or removed changes the directory's time). They are recorded in the INI cache
+     * next to the input files, and with the file time check on a change to any of them rebuilds the cache, as
+     * a change to an input file does. Empty when no file uses an include, and for a direct-access instance
+     * (the INI editor), which keeps the lines as written and does not read the included files.
+     *
+     * @return array
+     */
+    public function includedFiles()
+    {
+        return $this->IncludedFiles;
+    }
+
+    /**
+     * Reads the files of an [Include <pattern>] line of $file: the pattern is relative to the directory of $file
+     * and may hold wildcards (glob: *, ?, [...]); the files are read in name order, each as if its settings stood
+     * at that place, and may include files of their own. A pattern that matches no file is a notice; a file that
+     * is already being read further up (a loop) is skipped with a warning, as is nesting deeper than
+     * INCLUDE_MAX_DEPTH.
+     *
+     * With thanks to Mugo Web: portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f7c382bc2b),
+     * Copyright (C) Mugo Web, GPL v2
+     *
+     * @param string $file the including file
+     * @param string $pattern the pattern as written
+     * @param bool|string $placement as parseFile()
+     */
+    protected function parseIncludes( $file, $pattern, $placement )
+    {
+        $dir = dirname( $file );
+        $fullPattern = ( $dir === '.' ? '' : $dir . '/' ) . ltrim( $pattern, '/' );
+        $patternDir = dirname( $fullPattern );
+        if ( !in_array( $patternDir, $this->IncludedFiles, true ) && is_dir( $patternDir ) )
+            $this->IncludedFiles[] = $patternDir;
+
+        $matches = glob( $fullPattern );
+        $matches = is_array( $matches ) ? array_values( array_filter( $matches, 'is_file' ) ) : array();
+        if ( !$matches )
+        {
+            eZDebug::writeNotice( "[Include $pattern] in '$file' matches no file", __METHOD__ );
+            return;
+        }
+        sort( $matches, SORT_STRING );
+
+        $self = realpath( $file );
+        $pushed = false;
+        if ( $self !== false && !in_array( $self, $this->IncludeStack, true ) )
+        {
+            $this->IncludeStack[] = $self;
+            $pushed = true;
+        }
+        if ( count( $this->IncludeStack ) > self::INCLUDE_MAX_DEPTH )
+        {
+            eZDebug::writeWarning( "[Include $pattern] in '$file' nests deeper than " . self::INCLUDE_MAX_DEPTH . " files and is not read", __METHOD__ );
+        }
+        else
+        {
+            // Each file names its own charset, which parseFile() takes over; the includer's comes back after
+            $charset = $this->Charset;
+            $codec = isset( $this->Codec ) ? $this->Codec : null;
+            foreach ( $matches as $includeFile )
+            {
+                $real = realpath( $includeFile );
+                if ( $real !== false && in_array( $real, $this->IncludeStack, true ) )
+                {
+                    eZDebug::writeWarning( "[Include $pattern] in '$file' would read '$includeFile' again, which includes it: skipped", __METHOD__ );
+                    continue;
+                }
+                if ( !in_array( $includeFile, $this->IncludedFiles, true ) )
+                    $this->IncludedFiles[] = $includeFile;
+                $this->parseFile( $includeFile, $placement );
+            }
+            $this->Charset = $charset;
+            $this->Codec = $codec;
+        }
+        if ( $pushed )
+            array_pop( $this->IncludeStack );
     }
 
     /*!
@@ -3030,6 +3155,15 @@ class eZINI
 
     /// Last set of parsed input files for non-placement parse.
     public $LastParsedInputFiles = array();
+
+    /// Files and directories the [Include ...] lines of the last parse depend on (see includedFiles()).
+    protected $IncludedFiles = array();
+
+    /// The chain of files whose [Include ...] lines are being read, real paths (recursion guard).
+    protected $IncludeStack = array();
+
+    /// How deep includes may nest.
+    const INCLUDE_MAX_DEPTH = 16;
 
 }
 

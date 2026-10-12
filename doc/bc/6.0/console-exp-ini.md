@@ -272,6 +272,10 @@ always agree.
   gets the owner and group of its settings directory.
 - **Atomic.** The file is written to a temporary file in the same directory, then renamed. If the file
   changed on disk after the command read it, the write is refused with exit 4.
+- **`[Include ...]` lines** (a settings file reading other files, see
+  [the settings page guide](../../guides/settings-page.md#splitting-a-large-settings-file-with-include-))
+  are kept as written. They are not expanded: `get`, `where` and `list` show the settings of the file itself,
+  and a new setting of the group before such a line goes into that group, above the line.
 - **Backups.** Before each write the file is copied to `var/backup/ini/<timestamp>/<path>`. Backup files
   are mode 0600, because they can hold secrets. `--no-backup` skips the copy.
 - **After a write**, the ini cache tag is cleared (what `exp:cache ini` and `ezcache.php --clear-tag=ini`

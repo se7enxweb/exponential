@@ -485,7 +485,9 @@ class expVelocity
             if ( !$stale )
             {
                 $created = strtotime( $data['created'] );
-                foreach ( (array)$data['files'] as $source )
+                // with the files and directories of [Include ...] lines (eZINI::includedFiles())
+                $sources = array_merge( (array)$data['files'], isset( $data['includes'] ) ? (array)$data['includes'] : array() );
+                foreach ( $sources as $source )
                 {
                     $path = ( $source !== '' && $source[0] === '/' ) ? $source : $root . '/' . $source;
                     clearstatcache( true, $path );

@@ -112,7 +112,7 @@ class expIniWriter
      * Analyses every line.
      *
      * @return array index => array( type, block, var, key, value, core, comment ); type is one of comment,
-     *               block, reset, plain, append, hash, other
+     *               block, include, reset, plain, append, hash, other
      */
     public function entries()
     {
@@ -142,7 +142,16 @@ class expIniWriter
                 $entries[$i] = $entry;
                 continue;
             }
-            if ( preg_match( "#^\[(.+)\]\s*$#", $core, $m ) )
+            if ( $core[0] === '[' && preg_match( "#^\[Include\s+(\S.*?)\s*\]\s*$#", $core, $m ) )
+            {
+                // [Include <pattern>] (eZINI::parseIncludes()): kept as written and never expanded here; it ends
+                // the block before it, as in eZINI::parseFile()
+                $block = '';
+                $entry['type'] = 'include';
+                $entry['block'] = '';
+                $entry['value'] = $m[1];
+            }
+            else if ( preg_match( "#^\[(.+)\]\s*$#", $core, $m ) )
             {
                 $block = trim( $m[1] );
                 $entry['type'] = 'block';
@@ -396,9 +405,9 @@ class expIniWriter
         $in = false;
         foreach ( $this->entries() as $i => $e )
         {
-            if ( $e['type'] === 'block' )
+            if ( $e['type'] === 'block' || $e['type'] === 'include' )
             {
-                $in = $e['block'] === $block;
+                $in = $e['type'] === 'block' && $e['block'] === $block;
                 if ( $in )
                     $pos = $i + 1;
                 continue;
@@ -424,13 +433,13 @@ class expIniWriter
         $headers = array();
         foreach ( $entries as $i => $e )
         {
-            if ( $e['type'] === 'block' )
+            if ( $e['type'] === 'block' || $e['type'] === 'include' )
                 $headers[] = $i;
         }
         $regions = array();
         foreach ( $headers as $n => $h )
         {
-            if ( $entries[$h]['block'] !== $block )
+            if ( $entries[$h]['type'] !== 'block' || $entries[$h]['block'] !== $block )
                 continue;
             if ( isset( $headers[$n + 1] ) )
             {

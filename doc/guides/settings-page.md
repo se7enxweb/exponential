@@ -166,10 +166,57 @@ MaskedNameList[]=Pin
 - Settings in `site.ini [eZINISettings] ReadonlySettingList[]` cannot be changed or removed.
 - Every form needs the session's form token, and the module needs the `settings` policy.
 
+## Splitting a large settings file with `[Include ...]`
+
+A settings file can read the settings of other files at one place in it. This keeps a long override file
+readable, or lets a deployment drop in one small file per topic:
+
+```ini
+# settings/override/site.ini.append.php
+<?php /* #?ini charset="utf-8"?
+
+[SiteSettings]
+SiteName=My site
+
+[Include site.ini.d/*.ini]
+
+*/ ?>
+```
+
+```ini
+# settings/override/site.ini.d/10-mail.ini
+[MailSettings]
+AdminEmail=webmaster@example.com
+```
+
+- The path is **relative to the file that has the line**, here `settings/override/`. Wildcards (`*`, `?`,
+  `[...]`) are allowed; the files are read in name order (`10-...` before `20-...`), each exactly where the
+  line stands, so a setting after the line wins over an included one, and one before it is overridden.
+- The line **ends the group before it**: every included file starts its own groups, and settings after the
+  line need a group header of their own.
+- Included files may include files of their own. A file that would be read again inside its own chain (a
+  loop) is skipped with a warning; a pattern that matches no file is a notice in the debug output.
+- Nothing changes for a file that has no such line. A group whose name only starts with "Include" (such as
+  `[IncludedFiles]`) is a group as before; the directive is `[Include` followed by a space and a pattern.
+- **Caches.** The included files are part of the INI cache: `php bin/php/ezcache.php --clear-tag=ini` (and the
+  INI step of `exp:velocity deploy`) picks up a change to them, as for any settings file. `config.php` turns the
+  file time check off, so on this installation a changed included file is seen after that clear; with the check
+  on, a changed, added or removed included file rebuilds the cache by itself. Velocity workers keep the
+  settings of their warm-up and see the change after `exp:velocity restart`.
+- **Editing.** This page, the classic settings editor and `exp:ini` show and change the settings of the file
+  itself: they do not open the included files, and a save keeps the `[Include ...]` line exactly as written
+  and never copies included settings into the file. Open the included file to change a setting that is there.
+  The "where does this value come from" list of this page reads the files of the load order themselves, so a
+  value set in an included file does not appear in that list.
+
+With thanks to Mugo Web, whose LoveStack distribution (mugoweb/ezpublish-legacy, commit `f7c382bc2b`, 2018)
+first offered this directive.
+
 ## Checking it yourself
 
 ```bash
 php vendor/bin/phpunit tests/tests/kernel/classes/expSettingsPageTest.php
+php vendor/bin/phpunit tests/tests/lib/ezutils/eZINIIncludeTest.php
 ```
 
 Expected: `OK (13 tests, ...)`. The tests need no database; they cover the chain, the masking and the checks of

@@ -48,6 +48,12 @@ Then a save:
 
 If any condition fails, the old serialiser writes the file as before.
 
+An `[Include <pattern>]` line (6.0.15, see
+[the settings page guide](../../guides/settings-page.md#splitting-a-large-settings-file-with-include-)) is kept
+as written by the round trip: it is not a section, it ends the section before it, and a full save never removes
+it. A direct-access instance does not read the included files, so their settings are never copied into the
+saved file.
+
 ## Fixes found in real use
 
 Two more bugs were fixed after testing on real files:

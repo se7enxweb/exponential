@@ -721,7 +721,7 @@ class expIniEditor
     {
         foreach ( $this->writer->entries() as $e )
         {
-            if ( in_array( $e['type'], array( 'block', 'reset', 'plain', 'append', 'hash' ), true ) )
+            if ( in_array( $e['type'], array( 'block', 'include', 'reset', 'plain', 'append', 'hash' ), true ) )
                 return false;
         }
         return true;
