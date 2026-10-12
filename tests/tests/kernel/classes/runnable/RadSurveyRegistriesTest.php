@@ -109,7 +109,7 @@ class RadSurveyRegistriesTest extends PHPUnit\Framework\TestCase
             {
                 $inSettings = isset( $settings[$registry['ini'] . '|' . $entry['section'] . '|' . $entry['variable'] . '|' . $entry['value']] );
                 $this->assertSame( $inSettings, $entry['counted'], $entry['section'] . ' ' . $entry['variable'] );
-                if ( !$inSettings )
+                if ( !$inSettings && $registry['in_total'] )
                     $added++;
                 // a class entry is always a setting already
                 // (a registry declared in rad.ini checks more than classes, and RadSurveyDeclaredRegistriesTest covers it)
