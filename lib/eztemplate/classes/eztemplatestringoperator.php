@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 4065ed16b3), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -395,7 +396,7 @@ class eZTemplateStringOperator
                 $operatorValue = str_replace(
                     array( '.', '@' ),
                     array( $dotText, $atText ),
-                    htmlspecialchars( $operatorValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
+                    htmlspecialchars( (string) $operatorValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
                 );
             } break;
 
@@ -490,7 +491,7 @@ class eZTemplateStringOperator
             $atText = addcslashes( $ini->variable( 'WashSettings', 'EmailAtText' ), "'" );
 
             $values[] = $parameters[0];
-            $code = "%output% = str_replace( array( '.', '@' ), array( '$dotText', '$atText' ), htmlspecialchars( %1%, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) );\n";
+            $code = "%output% = str_replace( array( '.', '@' ), array( '$dotText', '$atText' ), htmlspecialchars( (string) %1%, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) );\n";
         }
         /* JAVASCRIPT: Type is static, input is not static */
         else if ( ( $paramCount == 2 ) && isset( $staticValues[1] ) && ( $staticValues[1] == 'javascript' ) )
