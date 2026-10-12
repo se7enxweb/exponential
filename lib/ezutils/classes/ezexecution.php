@@ -293,21 +293,69 @@ class eZExecution
             return true;
         if ( class_exists( 'mysqli_sql_exception', false ) && $e instanceof mysqli_sql_exception )
         {
-            return in_array( (int) $e->getCode(), array(
-                1040, // too many connections
-                1044, // access denied to the database
-                1045, // access denied (user or password)
-                1049, // unknown database
-                1129, // host blocked after too many errors
-                1130, // host not allowed to connect
-                2002, // cannot connect (socket, refused)
-                2003, // cannot connect (TCP)
-                2005, // unknown host
-                2006, // server has gone away
-                2013, // lost connection during query
-            ), true );
+            return in_array( (int) $e->getCode(), self::mysqlUnavailableCodes(), true );
+        }
+        // A statement that failed because the connection went away: the drivers' eZDBException carries the
+        // driver's error number (MySQL with the exception error handling no longer lets mysqli_sql_exception through)
+        if ( class_exists( 'eZDBException', false ) && $e instanceof eZDBException )
+        {
+            $message = isset( $e->originalMessage ) ? (string)$e->originalMessage : (string)$e->getMessage();
+            return self::isDatabaseUnavailableCode( $e->getCode(), $message );
         }
         return false;
+    }
+
+    /**
+     * Whether a driver's error number means the database could not be reached or used at all:
+     *   - PostgreSQL (the SQLSTATE, a string): class 08 (connection exception), 57P01 to 57P03 (the server shuts
+     *     down or is starting), 53300 (too many connections)
+     *   - Oracle (the ORA number; told apart by the "ORA-" message): 1033, 1034, 1089, 3113, 3114, 3135, 12170,
+     *     12514, 12528, 12537, 12541, 12543
+     *   - MySQL/MariaDB: the numbers of mysqlUnavailableCodes()
+     *   - SQLite: 14 (cannot open the file), 26 (not a database)
+     * The ranges of MySQL (1000 and above) and SQLite (below 100) do not overlap; Oracle's numbers do overlap
+     * MySQL's, so they count only with an Oracle message.
+     *
+     * @param int|string $code
+     * @param string $message the driver's message
+     * @return bool
+     */
+    static public function isDatabaseUnavailableCode( $code, $message = '' )
+    {
+        // PostgreSQL's SQLSTATE is a string of five characters; the other drivers' numbers are integers
+        if ( is_string( $code ) && preg_match( '/^[0-9A-Z]{5}$/', $code ) )
+        {
+            return strncmp( $code, '08', 2 ) === 0 || in_array( $code, array( '57P01', '57P02', '57P03', '53300' ), true );
+        }
+        if ( !is_int( $code ) )
+            return false;
+        if ( strncmp( ltrim( (string)$message ), 'ORA-', 4 ) === 0 )
+        {
+            return in_array( $code, array( 1033, 1034, 1089, 3113, 3114, 3135, 12170, 12514, 12528, 12537, 12541, 12543 ), true );
+        }
+        return in_array( $code, self::mysqlUnavailableCodes(), true ) || in_array( $code, array( 14, 26 ), true );
+    }
+
+    /**
+     * The MySQL/MariaDB error numbers of a database that cannot be reached or used.
+     *
+     * @return int[]
+     */
+    static public function mysqlUnavailableCodes()
+    {
+        return array(
+            1040, // too many connections
+            1044, // access denied to the database
+            1045, // access denied (user or password)
+            1049, // unknown database
+            1129, // host blocked after too many errors
+            1130, // host not allowed to connect
+            2002, // cannot connect (socket, refused)
+            2003, // cannot connect (TCP)
+            2005, // unknown host
+            2006, // server has gone away
+            2013, // lost connection during query
+        );
     }
 
     /**
