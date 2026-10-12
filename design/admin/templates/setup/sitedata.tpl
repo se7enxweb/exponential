@@ -15,7 +15,7 @@
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
 <p>{'Site data are name and value pairs the installation and its extensions keep in the database, such as the version of the installed database schema. This list is read only.'|i18n( 'design/admin/setup/sitedata' )}</p>
-<p>{"Templates can read a row with fetch( 'content', 'site_data', hash( 'name', ... ) ) only when its name is listed in site.ini [SiteDataSettings] TemplateReadable[]."|i18n( 'design/admin/setup/sitedata' )}
+<p>{"Templates can read a row with fetch( 'content', 'site_data', hash( 'name', ... ) ) only when its name is listed in site.ini [SiteDataSettings] TemplateReadable[]."|i18n( 'design/admin/setup/sitedata' )}&nbsp;
 {if $template_readable|count|gt( 0 )}{'Listed now: %names.'|i18n( 'design/admin/setup/sitedata',, hash( '%names', $template_readable|implode( ', ' )|wash ) )}{else}{'No name is listed now.'|i18n( 'design/admin/setup/sitedata' )}{/if}</p>
 
 <form method="get" action={'/setup/sitedata'|ezurl} class="exp-sitedata-filter">
