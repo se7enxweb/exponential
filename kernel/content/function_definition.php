@@ -1295,6 +1295,17 @@ $FunctionList['reverse_related_objects_ids'] = array( 'name' => 'object',
                                                                'required' => false,
                                                                'default' => false ) ) );
 
+// One row of ezsite_data, read only, for the names of site.ini [SiteDataSettings] TemplateReadable[].
+// Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit a679a13176), Copyright (C) Mugo Web, GPL v2.
+$FunctionList['site_data'] = array( 'name' => 'site_data',
+                                    'operation_types' => array( 'read' ),
+                                    'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                                            'method' => 'fetchSiteData' ),
+                                    'parameter_type' => 'standard',
+                                    'parameters' => array( array( 'name' => 'name',
+                                                                  'type' => 'string',
+                                                                  'required' => true ) ) );
+
 $FunctionList['content_tree_menu_expiry'] = array( 'name' => 'content_tree_menu_expiry',
                                                    'operation_types' => array( 'read' ),
                                                    'call_method' => array( 'class' => 'eZContentFunctionCollection',

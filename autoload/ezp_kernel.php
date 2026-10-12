@@ -279,6 +279,7 @@ return array(
       'Exponential\\View\\Kernel\\Setup\\Settingstoolbar'            => 'kernel/private/classes/views/setup/settingstoolbar.php',
       'Exponential\\View\\Kernel\\Setup\\Setupmenu'                  => 'kernel/private/classes/views/setup/setupmenu.php',
       'Exponential\\View\\Kernel\\Setup\\Staticcachestream'          => 'kernel/private/classes/views/setup/staticcachestream.php',
+      'Exponential\\View\\Kernel\\Setup\\Sitedata'                   => 'kernel/private/classes/views/setup/sitedata.php',
       'Exponential\\View\\Kernel\\Setup\\Systemupgrade'              => 'kernel/private/classes/views/setup/systemupgrade.php',
       'Exponential\\View\\Kernel\\Setup\\Templatecreate'             => 'kernel/private/classes/views/setup/templatecreate.php',
       'Exponential\\View\\Kernel\\Setup\\Templateedit'               => 'kernel/private/classes/views/setup/templateedit.php',

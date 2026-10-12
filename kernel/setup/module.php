@@ -97,6 +97,14 @@ $ViewList["info"] = array(
     "default_navigation_part" => 'ezsetupnavigationpart',
     "params" => array( 'Mode' ) );
 
+// Setup > Site data: the rows of ezsite_data, read only (portions derived from LoveStack, commit 94b7b6c239)
+$ViewList['sitedata'] = array(
+    'functions' => array( 'system_info' ),
+    'script' => 'sitedata.php',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array(),
+    'unordered_params' => array( 'offset' => 'Offset', 'filter' => 'Filter' ) );
+
 $ViewList["rad"] = array(
     'functions' => array( 'setup' ),
     "script" => "rad.php",

@@ -1656,6 +1656,29 @@ class eZContentFunctionCollection
 
         return array( 'result' => $object->assignedNodeCount() );
     }
+
+    /**
+     * fetch( 'content', 'site_data', hash( 'name', ... ) ): one row of ezsite_data (eZSiteData, .value is its value),
+     * read only, and only for a name site.ini [SiteDataSettings] TemplateReadable[] lists. A name not listed or not
+     * stored gives false; asking for one not listed is a notice in the debug output.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit a679a13176), Copyright (C) Mugo Web, GPL v2.
+     *
+     * @param string $name
+     * @return array
+     */
+    static public function fetchSiteData( $name )
+    {
+        $name = is_scalar( $name ) ? trim( (string)$name ) : '';
+        if ( !eZSiteData::isTemplateReadable( $name ) )
+        {
+            eZDebug::writeNotice( "Site data '$name' is not readable from templates: list it in site.ini [SiteDataSettings] TemplateReadable[]",
+                                  __METHOD__ );
+            return array( 'result' => false );
+        }
+        $siteData = eZSiteData::fetchByName( $name );
+        return array( 'result' => $siteData instanceof eZSiteData ? $siteData : false );
+    }
 }
 }
 
