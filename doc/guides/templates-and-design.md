@@ -248,6 +248,20 @@ output. PHP code keeps using `eZSiteData::fetchByName()`, and `eZSiteData::creat
 in one call. This comes from LoveStack (mugoweb/ezpublish-legacy, commits `55029bd473` and `a679a13176`), with thanks
 to Mugo Web; Exponential adds the allow-list.
 
+## 10. Encoding a value for a URL: `rawurlencode` and `rawurldecode`
+
+`urlencode` turns a space into `+`, as a form does. For a part of a path, or a value that another system reads
+with RFC 3986 rules, use `rawurlencode`, which gives `%20`; `rawurldecode` is its reverse:
+
+```
+<a href={concat( '/search/', $term|rawurlencode )|ezurl}>{$term|wash}</a>
+{'x%20y%2Bz'|rawurldecode}   {* x y+z *}
+```
+
+Both are listed in `settings/template.ini [PHP] PHPOperatorList[]`, in every installation, new or upgraded;
+`urlencode` and `urldecode` are unchanged. The list is read-only from the settings page and from code, as it
+names PHP functions. With thanks to Mugo Web (LoveStack, commit `627004e5c4`).
+
 ## Related pages
 
 - [The content model and editing content](content-model-and-editing.md): the classes and attributes your templates show.
