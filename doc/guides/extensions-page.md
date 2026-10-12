@@ -95,6 +95,33 @@ fix changes the file but not what is loaded; the review says so.
 | A change does not show on the Velocity port | `./console exp:velocity restart` |
 | *Problems detected during autoload generation* | Two extensions declare the same class; remove or rename one |
 
+## 6. How many extensions: the dashboard, Info > About and the update dashboard
+
+All three take their figures from one count, `eZExtension::extensionCounts()`, and say what they count:
+
+| Page | Reads |
+|---|---|
+| Dashboard (admin4) and Info > About | "63 active in this siteaccess, 85 on disk" |
+| The update dashboard and its installed packages page | "85 Extensions on disk, 64 active in any siteaccess" |
+
+The kinds are `on_disk` (every directory of every extension root, `ExtensionDirectory` and
+`AdditionalExtensionDirectories`, each name once), `global` (`ActiveExtensions`), `here` (active in the current
+siteaccess, with its `ActiveAccessExtensions`, in loading order), `anywhere` (active in at least one siteaccess of
+`AvailableSiteAccessList`), `inactive` and `missing` (named in the settings, not on disk). So an extension that only
+the admin siteaccess switches on (expai, for example) counts on About under "active in this siteaccess" there, and on
+the update dashboard under "active in any siteaccess". An extension named in the settings but not on disk is listed
+under "Need attention" only.
+
+Info > About lists the `here` extensions in the loading order the kernel uses. Templates read the counts with
+`fetch( 'setup', 'extension_counts', hash( 'all_siteaccesses', true() ) )`; without `all_siteaccesses` the kinds
+that read every siteaccess's settings (`anywhere`, `inactive`) are left out, which keeps it at about half a
+millisecond.
+
+"Modified" on a card is the newest file time of the extension, kept for an hour in
+`<cache>/exp/extension-file-times.json` and walked again when the active extensions cache is cleared
+(`ezcache --clear-tag=ini`, `--clear-all`, `exp:velocity deploy`, a change on this page); the extension's own
+`extension.xml`, `ezinfo.php` and `composer.json` are looked at every time.
+
 ## For developers
 
 - View: `kernel/private/classes/views/setup/extensions.php` (thin); templates `design/admin{,4}/templates/setup/extensions.tpl`

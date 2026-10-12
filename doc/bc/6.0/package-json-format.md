@@ -148,6 +148,28 @@ php ezpm.php install mypackage --as-drafts [--drafts-existing=update|skip]
   exported in the format it is stored in. The page shows the package's format and its metadata.
 - **Upload** (`package/upload`) takes either format.
 - **Install** (`package/install/<name>`) shows what the install meets here (below) and offers **Install as drafts**.
+- **Validation** (from 2026-10-12): every upload is validated before it is imported (each document well formed, the
+  JSON documents against `share/package/schema/package-v1.json`, the checksums of `package.json`) and refused with
+  the list of what failed; **Validate** on a package's page runs the same check. The install page lists every object
+  with what the install does with it and where its main location goes.
+- **Install in the background**: the content job `packageinstall` installs with the wizard's choices as the
+  requesting user, suggested above `[ContentJobSettings] SynchronousLimit`; the package's page shows its progress
+  and lists the drafts when it is done ([content jobs](content-jobs.md#job-types-of-other-parts-of-the-kernel)).
+- **Contents browser**: JSON documents are listed by their kind (Package definition, Content object, Content class)
+  and shown as JSON or as the XML they mirror, an XML document as JSON too; a binary file as a card with its SHA-256
+  and whether it matches `package.json`.
+- **New package** chooses the format the package is kept in (Classic XML or JSON); a JSON package is converted in
+  place when the wizard finishes (`expPackageJson::convertInPlace()`).
+
+After every install as drafts (the admin's, `ezpm`, a background install) the kernel fires the notify event
+`package/install/drafts` (`eZPackage::notifyDraftsInstalled( $package, $result, $context )`), so an extension can mark
+or record the drafts:
+
+```ini
+# extension/myext/settings/site.ini.append.php
+[Event]
+Listeners[]=package/install/drafts@myExtPackageListener::draftsInstalled
+```
 
 ## What the install meets here
 

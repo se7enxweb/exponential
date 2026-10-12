@@ -121,6 +121,11 @@ Do these once on a new installation:
 
 Who may look: only the Administrator role holds the policies `audit/read` and `audit/manage`; give `audit/read` to an auditor role (optionally limited by channel) in step 2's way. A user without it sees no tab and a typed URL is refused and recorded as `access.permission.refused`.
 
+To hand records to an auditor, open **Export** with the console's filter: **Download now** streams the file at once,
+**Export in the background** writes a large filter to a file you download from the same page later. An extension
+with a channel of its own (Exponential Intelligence: the channel `ai`, every request to a model and every draft it
+wrote, never a prompt or an answer) adds its panel to the dashboard and its columns to the CSV.
+
 Depth: [the audit trail](../features/6.0/audit-trail.md), [audit event model](../specifications/6.0/audit-event-model.md), [audit reference (bc)](../bc/6.0/audit.md).
 
 ## 4. Debug output for your address only (5 minutes)

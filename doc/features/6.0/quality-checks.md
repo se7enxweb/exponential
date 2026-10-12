@@ -100,3 +100,24 @@ The job `php80` is the check for the oldest supported version, PHP 8.0 (the stoc
    until syndication and ezstarrating are released with their fixed declarations, which no PHP 8 can load today.
 
 The pre-commit hook and `make lint80` run the same syntax check on changed files when a PHP 8.0 binary is available.
+
+The dependency installs of the workflows run on the `main` branch, where the root package is `dev-main`. Its branch
+alias `"dev-main": "6.0.x-dev"` in `composer.json` (from 2026-10-12) lets a required package that names
+`se7enxweb/exponential` with a version constraint, such as expqueue's `^6.0.14`, resolve against it; without it the
+install stops with "could not be resolved".
+
+### Before you push
+
+The blocking checks of the Quality workflow look at the commits of the push, so they can be run on the committed
+`HEAD` before it leaves the machine:
+
+```sh
+git diff --name-only --diff-filter=AM origin/main..HEAD -- '*.php' | xargs -r -n1 php -l   # syntax of changed files
+php bin/php/checkmanifest.php --all                                                        # the file manifest
+for c in $(git rev-list --no-merges origin/main..HEAD); do
+    git log -1 --format=%B "$c" | sh .githooks/commit-msg /dev/stdin || echo "$c"
+done                                                                                       # the commit messages
+make phpstan                                                                               # needs make devtools
+```
+
+A failure here fails the workflow too. Code style stays a warning in CI.

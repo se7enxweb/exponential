@@ -346,6 +346,39 @@ which the server and every process it started are killed. Its workers stop at a
 point where they hold no APCu lock, so a request timeout no longer leaves the
 lock held and the server blocked on it (the cause of the 2026-10-07 hang).
 
+From engine 0.0.4.50 a stop also drains gracefully: each HTTP/2 connection is sent `GOAWAY` with its last stream,
+the streams up to it are answered in full and later ones are refused with `REFUSED_STREAM` so the client retries
+them; an idle HTTP/1.1 keep-alive connection is closed at once. A HEAD over HTTP/2 is answered with the GET's headers
+only, also from the response cache.
+
+## Streaming responses
+
+From engine 0.0.4.49 a persistent pool worker streams a response instead of collecting it whole: an answer with
+`X-Accel-Buffering: no` (the streamed audit export, for example) and Server-Sent Events (`Accept: text/event-stream`,
+used by Exponential Intelligence). Four settings in `settings/velocity.ini [ServerSettings]` are passed to the
+engine; all are empty by default, so the engine's own defaults apply:
+
+| Setting | Engine default | Meaning |
+|---|---|---|
+| `StreamTimeout` | 300 | Seconds a stream (or a request with `Accept: text/event-stream` before its first byte) may run instead of the 30 s request timeout; then it ends cleanly and an EventSource reconnects. 0: no limit. |
+| `StreamShare` | 0.25 | The share of `Workers` that open streams may hold at once (at least one). |
+| `MaxStreams` | (empty) | The same as a number of workers, used instead of `StreamShare` when above 0. Past the cap an event stream is answered 503 with `Retry-After`, so pages always keep the rest of the pool. |
+| `RetryWithin` | 10 | Seconds after a request reached its worker within which a GET whose worker died without answering is run again, once (never an event stream, never a response that had started). |
+
+```ini
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+StreamTimeout=120
+MaxStreams=8
+```
+
+Then `./console exp:velocity restart`. Each open stream holds one worker for its whole life, so keep the cap well
+below `Workers`.
+
+The warm-up clears the response it rendered (its headers and status) before the workers are forked, so the first
+request of each worker starts as empty as every later one (before 2026-10-11 it could carry the front page's
+headers).
+
 ## FrankenPHP
 
 ```bash
@@ -606,6 +639,9 @@ files the engine uses instead; `cache clear` succeeds with nothing to clear.
   linked, with who may open it (below). Other engines of the installation that
   are running are named in one line. A server that answers on another port
   than velocity.ini gives the engine (started by hand) is marked as such.
+  The box reads the process table once and sends its own server no health
+  check request (`expVelocity::status( false )`), so it adds no wait to the
+  page; `exp:velocity status` keeps the check.
 - **"Phar App Engine"** (the kernel archive, `EnginePhar`) is shown for the
   qbix engine only. The archive also runs on the other engines and servers
   (`EXP_ENGINE_PHAR`), but is not described there.

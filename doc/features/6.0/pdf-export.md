@@ -42,6 +42,8 @@ Japanese or Korean, point `Font` at a font that has them (a Noto CJK face, for i
 - Accents, dashes, euro signs, bullets and curly quotes survive the default font (see `OutputCharset` below).
 - Images are scaled down to fit the page instead of running off the paper.
 - Underlines under links are as long as the link.
+- An export with a table answers again on PHP 8: the table operator counted a boolean instead of its parameters,
+  which PHP 8 refuses with a `TypeError`, so `content/pdf` answered 500 (fixed 2026-10-12).
 
 ## Settings
 

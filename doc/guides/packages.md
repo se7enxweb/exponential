@@ -109,7 +109,12 @@ this page changes anything until a button is pressed.
 - **What it carries**: its content classes, content (install items and object files), extensions, settings files,
   other install items, and a table of its files by kind with their sizes.
 - **Changelog**, then **Package contents**: every file, filtered by kind and searched by path, paged, each viewable
-  (the first megabyte, XML pretty-printed, a content object summarised) and downloadable.
+  (the first megabyte, XML pretty-printed, a content object summarised) and downloadable. A JSON document is listed
+  by its kind (Package definition, Content object, Content class) and shown as JSON or as the XML it mirrors, an XML
+  document as JSON too; long lines wrap, with a **No wrap** switch. PNG, JPEG, GIF and WebP images are shown inline,
+  SVG only as text, any other binary as a card with its type, size, SHA-256 and whether it matches `package.json`.
+  The package's documents (its license) open here as well.
+- **Validate**: checks the package as an upload is checked (below) and shows what was checked, or every problem.
 
 An address that names a view mode without a template (`/package/view/nosuchmode/...`), a package name with a path
 in it (`..`, a slash) or a repository the storage does not have is answered with "not found".
@@ -166,8 +171,11 @@ press **Import package**. Before anything is written, the archive is inspected:
    gives a repository name;
 5. no package of that name exists in any repository.
 
-The page names the first rule that failed. When all hold, the package is extracted into its repository; a package
-with install items opens its install step next, any other its page.
+The page names the first rule that failed. Then the package itself is validated: each document well formed, the
+JSON documents of a [JSON package](../bc/6.0/package-json-format.md) against its schema, and the checksums of its
+`package.json`. A package that fails is refused with the list of what failed. When all hold, the package is
+extracted into its repository; a package with install items opens its install step next, any other its page, and
+both show the validation result until the next action on the package.
 
 The limits, with their defaults:
 
@@ -201,6 +209,15 @@ instead: nothing is published, an existing object gets a new draft (or is left a
 files are not installed, and the result page links every draft for review. See
 [install as drafts](../bc/6.0/package-json-format.md#install-as-drafts).
 
+The report lists every object with what the install does with it and where its main location goes (at the top,
+below a node here, below a node of the package, or below a missing one), with the counts of each.
+
+**Install in the background** runs the same install as a [content job](../bc/6.0/content-jobs.md) (`packageinstall`)
+as you, with the choices you made; the page suggests it for a package with more objects than
+`[ContentJobSettings] SynchronousLimit`. The package's page then shows the progress object by object and lists the
+drafts when it is done. An extension can react to every install as drafts through the event
+`package/install/drafts` ([the JSON package format](../bc/6.0/package-json-format.md#setup--packages)).
+
 **Uninstall** opens `/package/uninstall/<name>`: what uninstalling removes from the site, content included, with
 **Uninstall package** and **Skip uninstallation**. Uninstalling cannot be undone.
 
@@ -210,7 +227,8 @@ Both need `package/install` for the package's type (they asked for the policy fo
 
 **Create new package** opens `/package/create`: one tile per wizard your role may use (content object export,
 content class export, extension export, site style). The wizard asks for the parts, then name, summary, version,
-license and maintainer, and writes the package into `local`. Nothing on the site changes.
+license and maintainer, and the format the package is kept in (Classic XML or JSON), and writes the package into
+`local`. Nothing on the site changes.
 
 ## 9. Removing packages
 

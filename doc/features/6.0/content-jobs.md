@@ -4,7 +4,11 @@ This page is for editors and administrators who remove, copy or move big subtree
 one web request and could fail on the time limit, the memory limit or one enormous transaction. From 6.0.15 the admin
 offers to run it as a **content job**: a background worker that works in batches, takes a checkpoint after each batch,
 and resumes exactly where it stopped, even after a `kill -9`. Added 2026-10-02. Full guide, including how to add your
-own job type: [Content jobs](../../bc/6.0/content-jobs.md).
+own job type: [Content jobs](../../bc/6.0/content-jobs.md). Since 2026-10-12 the same engine also installs packages
+in the background (`packageinstall`) and writes large audit exports to a file (`auditexport`); see
+[Job types of other parts of the kernel](../../bc/6.0/content-jobs.md#job-types-of-other-parts-of-the-kernel). Queued
+work of extensions (Exponential Intelligence, for example) runs in the separate job queue
+[expqueue](extensions/expqueue.md).
 
 ## Run an operation as a job
 

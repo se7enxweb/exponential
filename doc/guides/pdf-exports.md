@@ -112,6 +112,7 @@ removed. Reloading never removes twice.
 | "The PDF templates wrote no file" | An override of `node/view/pdf.tpl` or `node/view/execute_pdf.tpl` failed. See `var/log/error.log` |
 | A stored PDF shows old content | Generated once keeps the file; press Regenerate, or switch to on the fly |
 | A large tree times out on the fly | Switch it to Generate once and regenerate it outside busy hours |
+| An export with a table answers 500 on PHP 8 (`TypeError` in `lib/ezpdf/classes/ezpdf.php`) | Fixed on 2026-10-12; update to the current 6.0.15 code ([PDF export](../features/6.0/pdf-export.md#what-was-repaired)) |
 
 ## For developers
 

@@ -228,6 +228,35 @@ request-shield off with `set mode off` (it still sets `REQUEST_SHIELD` on
 every request), not by removing the include, or a worker keeps the last
 request's `allow-uncached` and stores nothing until it is restarted.
 
+## Headers an extension adds to a page
+
+A page answered from this cache is assembled without the kernel, from the headers stored with it: the content type
+and the security headers. A header an extension adds for one page (a content license as `Link` and
+`X-Content-License`, for example) would be missing on every hit. From 2026-10-11 the listener passes the headers it
+is about to store through the filter event `httpcache/store/headers`; a listener returns them with its own added:
+
+```ini
+# extension/myext/settings/site.ini.append.php
+[Event]
+Listeners[]=httpcache/store/headers@myExtHttpCacheHeaders::filter
+```
+
+```php
+class myExtHttpCacheHeaders
+{
+    public static function filter( array $headers )
+    {
+        $headers['X-My-Header'] = 'value for this page';
+        return $headers;
+    }
+}
+```
+
+A listener that returns something other than an array is ignored. The headers are stored with the entry, so a hit
+carries them like the rendered page; keep them free of anything personal, because every visitor of the same
+permission context gets the same copy. Filter events are listed in
+[RAD extension points](rad-extension-points.md).
+
 ## Security
 
 - Keys and contexts are HMACs with a generated key (`secret`, 0600), never sent.

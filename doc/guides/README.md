@@ -78,7 +78,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Class groups](class-groups.md) | Every class group read with its classes and objects, what removing a group would remove known before it is ticked, a group removed safely | 15 minutes |
 | [Sections](sections.md) | Sections understood and seen on the redesigned pages, one created, content assigned to it, a role limited to it, a template overridden for it, an unused one removed, the usual problems solved | 30 minutes |
 | [Roles, policies and unactivated users](roles-and-policies.md) | Every role read with what it gives and to whom, its policies as sentences, a role built with limited policies and put in order by drag and drop, assigned to a group, and unfinished registrations activated, mailed again or removed | 25 minutes |
-| [Packages](packages.md) | Every repository and package read on Setup > Packages with its install state, size and dependencies, the installer's own packages recognised, a package downloaded, an upload checked before it is accepted, a package removed knowing what goes | 20 minutes |
+| [Packages](packages.md) | Every repository and package read on Setup > Packages with its install state, size and dependencies, the installer's own packages recognised, a package downloaded in the classic or the JSON format, an upload validated before it is accepted, a package installed in the background or as drafts, a package removed knowing what goes | 20 minutes |
 | [Classic menus](classic-menu-settings.md) | Whether Setup > Menus (classic) matters for your siteaccess or Layouts does, the four arrangements and what each lists, five recipes with their exact lines, classic menus drawn from templates of your own | 20 minutes |
 | [Sessions](sessions.md) | Who signed in recently and who is signed in now, the session handler understood, sessions searched, sorted and removed safely without signing yourself out | 15 minutes |
 | [Bookmarks](bookmarks.md) | Your bookmarks read grouped by folder with their state, found, ordered and paged, moved between folders by selecting or dragging, a folder renamed and removed knowing what happens to what is inside, the usual problems solved | 15 minutes |
@@ -110,6 +110,8 @@ You write and manage content in the administration interface.
    - [Online editor: TinyMCE 8](../features/6.0/online-editor-tinymce8.md)
    - [The trash: who deleted it and where it was](../features/6.0/trash-who-and-where.md)
    - [Large operations as content jobs](../features/6.0/content-jobs.md)
+   - [Exponential Intelligence](../features/6.0/extensions/expai.md): the writing assistant that writes drafts in the Intelligence tab, the edit form and Vector
+   - [Exponential Layouts](../bc/6.0/LAYOUTS.md): arranging pages from layouts, zones and blocks in the layout editor
    - [Object states](object-states.md): setting a stage such as In review or Approved on content
    - [PDF export](../features/6.0/pdf-export.md), [Translations and languages](../features/6.0/translations-and-languages.md), [Content languages](content-languages.md) (the guide)
    - [Your e-mail preferences](../features/6.0/mail-preferences.md): which e-mail you get, one-click unsubscribe, your data

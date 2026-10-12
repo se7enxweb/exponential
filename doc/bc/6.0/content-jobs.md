@@ -194,7 +194,7 @@ server cannot start a worker (`exec` disabled, the process limit reached): it st
 | `MaxAttempts` | 5 | worker starts without a finished batch before the job is failed |
 | `KeepDays` | 30 | finished jobs are removed after this many days |
 | `PhpBinary` | (empty) | the PHP command line binary for the worker |
-| `JobTypes[<name>]` | remove, copy, move, hide, reveal, section, state, addlocation, removelocation | the job types |
+| `JobTypes[<name>]` | remove, copy, move, hide, reveal, section, state, addlocation, removelocation, packageinstall, auditexport | the job types |
 
 The older `[RemoveSettings] MaxNodesRemoveSubtree` and `[CopySettings] MaxNodesCopySubtree` now only limit what
 may run "now"; with background jobs available a larger subtree becomes a job instead of being refused. They
@@ -224,6 +224,18 @@ tests are described in its test suite (`tests/tests/kernel/classes/contentjob/`)
 - **Cancel**: after the current batch. A cancelled remove leaves the rest in place; a cancelled copy leaves the
   partial copy and offers to remove it.
 - **The engine is missing or broken**: every view falls back to its old synchronous code, and logs the error.
+
+## Job types of other parts of the kernel
+
+Two job types outside the content tree use the same engine (store, worker, batches, checkpoint, progress page,
+resume), from 2026-10-12:
+
+| Type | Class | Started from | What it does |
+|---|---|---|---|
+| `packageinstall` | `expContentJobPackageInstall` | the install page of Setup > Packages, "Install in the background" | installs a package with the wizard's choices as the requesting user; the package's page shows the progress object by object and lists the drafts ([packages guide](../../guides/packages.md#7-installing-and-uninstalling)) |
+| `auditexport` | `expContentJobAuditExport` | the audit export page, "Export in the background" | writes the console's filter as CSV, JSON lines or JSON to a file next to the job, in batches of `BatchSize` x 100 records, up to `audit.ini [AuditConsoleSettings] MaxBackgroundExportRecords`; only the user who asked for it may download the file, which goes with the job when finished jobs are purged ([audit guide](audit.md#streaming-the-export)) |
+
+A job that names a page in `gui_return_url` opens it when it is done: the audit export returns to the export page with the file.
 
 ## Adding a job type
 

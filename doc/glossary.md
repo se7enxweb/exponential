@@ -22,6 +22,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **Apache**: the web server that can run the installation together with **PHP-FPM**. [Deploying](guides/deploying.md).
 - **attribute**: one field of a **content class**, typed by a **datatype**. [Content model](guides/content-model-and-editing.md).
 - **audit channel**: one of the five hash-chained streams of the **audit trail** (`content`, `access`, `system`, `commerce`, `read`). [Audit event model](specifications/6.0/audit-event-model.md).
+- **audit source**: a class an extension registers in `audit.ini [AuditSourceSettings] Sources[]` to show its own channel in the audit console (panel, links, charts, CSV columns). [Audit guide](bc/6.0/audit.md).
 - **audit trail**: a tamper-evident log of security-relevant events (sign-ins, content changes, settings writes, cache clears). [Audit trail](features/6.0/audit-trail.md), [event model](specifications/6.0/audit-event-model.md).
 - **autoload**: the generated class maps (`var/autoload`) that tell PHP where each class lives; regenerate with `php bin/php/ezpgenerateautoloads.php`. [Operating a site](guides/operating-a-site.md).
 
@@ -40,7 +41,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **cache block**: a template tag that caches the markup inside it; the Valkey variant is `{valkey-block}`. [Redis and Valkey caches](features/6.0/extensions/sevenx_valkey_cache.md).
 - **changelog**: the release notes of a version, in Added, Updated, Removed and Renamed lines. [6.0.15](changelogs/6.0/6.0.15.md), [extensions](changelogs/extensions/README.md).
 - **chronicle**: the month by month story of the history. [History](history/README.md).
-- **CI (continuous integration)**: the GitHub Actions workflow `.github/workflows/phpunit.yml` that runs the PHPUnit suites on PHP 8.1 to 8.5 for every change. [Continuous integration](specifications/6.0/continuous-integration.md).
+- **CI (continuous integration)**: the GitHub Actions workflows: `phpunit.yml` runs the PHPUnit suites on PHP 8.1 to 8.5, `quality.yml` checks syntax (also on PHP 8.0), the file manifest, commit messages, code style and PHPStan for every change. [Quality checks](features/6.0/quality-checks.md), [Continuous integration](specifications/6.0/continuous-integration.md).
 - **cjw_newsletter**: a complete newsletter system. [cjw_newsletter](features/6.0/extensions/cjw_newsletter.md).
 - **class**: see **content class**.
 - **classic**: see **admin**.
@@ -50,6 +51,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **console**: the command `./console`, which finds and runs every command of an installation (`exp:`, `bin:`, `cron:`, `ext:`). [Console](bc/6.0/console.md).
 - **consent log**: the record of every change of a person's e-mail preferences, with the time, the source, the exact text the person saw and the IP address; anonymised on erasure. [E-mail preferences](features/6.0/mail-preferences.md), [specification](specifications/6.0/mail-preferences.md).
 - **content class**: the definition of a kind of content (for example Article) as a list of **attributes**. [Content model](guides/content-model-and-editing.md).
+- **content finder**: Setup > Content finder and a box below the content structure: find the content behind an id, a remote id, a URL alias, a page address or a file path, and act on it within your rights. [Content finder](features/6.0/content-finder.md).
 - **content job**: a large remove, copy or move run in the background instead of one web request. [Content jobs](features/6.0/content-jobs.md).
 - **content object**: one piece of content, an instance of a **content class**, with versions and translations; it appears in the tree through one or more **nodes**. [Content model](guides/content-model-and-editing.md).
 - **content tree**: the hierarchy of **nodes** shown in the admin; node 1 is its root. [Content model](guides/content-model-and-editing.md).
@@ -79,7 +81,9 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **exp:ini**: the command that reads and writes **INI** settings in every scope. [exp:ini](features/6.0/exp-ini-command.md).
 - **exp_enhanced_link**: the extension that provides the enhanced link field type. [exp_enhanced_link](features/6.0/extensions/exp_enhanced_link.md).
 - **explayouts**: the extensions that bring layouts, blocks, zones and rules to the admin. [Exponential Layouts](bc/6.0/LAYOUTS.md), [explayouts_ui](features/6.0/extensions/explayouts_ui.md), [API specification](specifications/6.0/explayouts-ui-api.md).
+- **Exponential Intelligence** (expai): the writing assistant of the administration interface; it writes drafts as the editor, with the editor's permissions, and never publishes on its own. [expai](features/6.0/extensions/expai.md), [README](../README.md#exponential-intelligence-new).
 - **Exponential Platform**: the Symfony based product line (`bin/console`, `exponential:*` commands) that can run Exponential 6 through the **legacy bridge**. [Platform package map](specifications/6.0/platform-package-map.md), [command names](specifications/6.0/platform-console-commands.md).
+- **expqueue**: the job queue extension: priority classes, fair scheduling, retries and a dead letter, run by cron or a systemd worker, Setup > Job queue. [expqueue](features/6.0/extensions/expqueue.md).
 - **expservices**: the library of remote services built from **ezjscore** server functions. [Remote services](features/6.0/remote-services-expservices.md), [specification](specifications/6.0/expservices.md).
 - **expui** (Exponential UI): the JavaScript component layer (`exp::*`) that replaced YUI in the admin. [jQuery 4 and YUI removal](features/6.0/jquery4-and-yui-removal.md).
 - **extension**: a folder under `extension/` that adds settings, classes, modules, templates or designs; activated in `ActiveExtensions`. [Extension list](features/6.0/extension-list-and-downloads.md), [loading order](features/6.0/extension-loading-order.md).
@@ -135,6 +139,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## J
 
+- **job queue**: see **expqueue**; for large content operations see **content job**.
 - **jQuery 4**: the JavaScript library of the admin since October 2026. [jQuery 4 and YUI removal](features/6.0/jquery4-and-yui-removal.md).
 
 ## K
@@ -180,7 +185,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## P
 
-- **package**: a set of content, classes and design that can be exported and installed; also a Composer package. [ezpm](features/6.0/ezpm-package-manager-cli.md), [Platform package map](specifications/6.0/platform-package-map.md).
+- **package**: a set of content, classes and design that can be exported and installed, in the classic XML or the JSON format, validated on upload and installable in the background or as drafts; also a Composer package. [Packages](guides/packages.md), [JSON package format](bc/6.0/package-json-format.md), [ezpm](features/6.0/ezpm-package-manager-cli.md), [Platform package map](specifications/6.0/platform-package-map.md).
 - **page layout** (`pagelayout.tpl`): the outer template that wraps every page. [Templates and design](guides/templates-and-design.md).
 - **phar**: see **engine.phar**.
 - **PHP-FPM**: the PHP process manager that serves the site behind **Apache**. Reload the one that serves your site after a PHP change. [Deploying](guides/deploying.md).
@@ -202,6 +207,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **reCAPTCHA**: a captcha datatype. [recaptcha](features/6.0/extensions/recaptcha.md).
 - **recipe**: a Symfony Flex recipe that configures a package when it is installed. [sevenx-recipes](features/6.0/extensions/sevenx-recipes.md).
 - **Redis / Valkey**: servers that can hold the content view and INI caches. [Redis and Valkey caches](features/6.0/extensions/sevenx_valkey_cache.md).
+- **registry (rad.ini)**: a list an extension reads from its own settings or code (event listeners, cronjob parts, audit sources, editor engines), declared in `rad.ini` so Setup > RAD counts and checks its entries. [RAD extension surface](bc/6.0/rad-extension-surface.md).
 - **repair page**: the page that explains missing libraries and lets an administrator repair them. [Repair from the browser](features/6.0/repair-from-the-browser.md), [Repair](bc/6.0/repair.md).
 - **request rule**: a rule in `requestrules.ini` that allows or refuses a request by module, view and URL. [Request rules](features/6.0/request-rules.md), [securing content/view/full](bc/6.0/view_full_security.md).
 - **response cache (Velocity)**: the server's cache of rendered pages. [Response cache](features/6.0/velocity-response-cache.md).
@@ -215,6 +221,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **security defaults**: the settings that make a default installation safe without extra work (security headers, session cookie, login, served files, caching). [Security defaults](specifications/6.0/security-defaults-2026-09.md), [datatype and input hardening](specifications/6.0/datatype-input-hardening.md).
 - **seed data**: the tables and content a new installation starts with. [Installer logs and seed data](specifications/6.0/installer-logs-and-seed-data.md).
 - **setup wizard**: the browser installer. [Setup wizard](features/6.0/setup-wizard-and-editor-siteaccess.md).
+- **shared layout**: a **layout** that exists to be borrowed: a zone of another layout is linked to one of its zones and renders its blocks, so a header or footer is built once. [Shared layouts and linked zones](bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones).
 - **site package**: the content and design set installed at setup. [Clean install defaults](features/6.0/clean-install-defaults.md).
 - **siteaccess**: one way of reaching the site (by URL, host or port) with its own settings and design, such as `site` and `admin`. [Getting started](guides/getting-started.md), [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
 - **Smaller changes**: the section of a chronicle page that lists changes without a story of their own. [History](history/README.md).
@@ -245,6 +252,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 ## V
 
 - **Valkey**: see **Redis / Valkey**.
+- **Vector**: the workspace of threads of **Exponential Intelligence** (`expai/vector`): scope, plan and write modes, staged review, parallel runs and checkpoints. [expai](features/6.0/extensions/expai.md).
 - **Velocity**: the PHP application server bundled with Exponential, run with `exp:velocity`, recommended for every stage. [Velocity web server](features/6.0/velocity-web-server.md), [persistent workers](features/6.0/velocity-persistent-worker-server.md), [control panel](features/6.0/velocity-control-panel.md), [engine settings](specifications/6.0/velocity-engine-settings.md), [chronicle](history/velocity/README.md).
 - **version (content)**: one saved state of a content object (draft, published, archived). [Content model](guides/content-model-and-editing.md).
 - **view**: a function of a **module** reached by a URL; also the way a node is rendered (full, line, embed). [Module views as classes](specifications/6.0/runnable-commands-cronjobs-views.md), [Templates and design](guides/templates-and-design.md).

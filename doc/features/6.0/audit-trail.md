@@ -104,6 +104,20 @@ accept `Z` or `+HH:MM` offsets; without one they are UTC on the command line and
   engine. On an existing installation create them with
   `php update/common/scripts/6.0/createaudittables.php`.
 
+## Exports and the channels of extensions
+
+- **Export** (`audit/export`): the console's filter as CSV, JSON lines or JSON. **Download now** is streamed, so a
+  large filter starts at once on Apache and on Velocity alike; **Export in the background** runs the content job
+  `auditexport` and offers the file on the export page when it is done, only to the user who asked for it.
+- **Sources of extensions**: an extension that records its own events in a channel of its own registers a source
+  (`audit.ini [AuditSourceSettings] Sources[]`) and gets a dashboard panel, links, charts, event details and CSV
+  columns for that channel; the left menu leaves out a link into a channel the user may not read. Exponential
+  Intelligence records in the channel `ai` this way ([expai](extensions/expai.md)).
+- **Repeated records**: `exp:audit verify` names lines that repeat a record id (`repeated_ids`, written by forked
+  processes before 2026-10-12) as a notice; the index and the exports show each record once.
+
+Details: [the audit guide](../../bc/6.0/audit.md).
+
 ## Limits and good to know
 
 - The 4.x `eZAudit::writeAudit()` calls keep working; ten 4.x names map to the new event names.
