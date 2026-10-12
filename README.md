@@ -588,7 +588,7 @@ Exponential Platform DXP features improvements not found in Ibexa DXP OSS, one f
 
 # License
 
-Exponential is GNU GPLv2 licensed. You can no longer choose between the GNU GPLv2-or-later and the eZ Systems' eZ Publish Professional Licenses. The GNU GPLv2 gives you the right to use, modify and redistribute Exponential under certain conditions. The GNU GPLv2 license is distributed with the software, see the file LICENSE. It is also available at [https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
+Exponential is GNU GPLv2 licensed. You can no longer choose between the GNU GPLv2-or-later and the eZ Systems' eZ Publish Professional Licenses. The GNU GPLv2 gives you the right to use, modify and redistribute Exponential under certain conditions. The GNU GPLv2 license is distributed with the software, see the file LICENSE. It is also available at [https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
 
 
 Using Exponential under the terms of the GNU GPL is free of charge.
