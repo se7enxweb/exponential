@@ -42,6 +42,7 @@ rule below was checked against the code of this repository on 6 October 2026; th
 - [5. Search statistics](#5-search-statistics)
 - [6. Addresses and parameters of the pages](#6-addresses-and-parameters-of-the-pages)
 - [7. When something does not behave as expected](#7-when-something-does-not-behave-as-expected)
+- [8. Decoding and cleaning addresses: two optional settings](#8-decoding-and-cleaning-addresses-two-optional-settings)
 - [For developers](#for-developers)
 - [References](#references)
 
@@ -278,6 +279,49 @@ Unknown values fall back to the defaults. The forms, their field names and their
 | A wildcard does nothing | a URL alias matches the address first, or an older wildcard matches it; use **Try an address** |
 | The wildcard is refused with "The destination uses {2}" | the pattern has fewer `*` than the destination needs: add a `*` or remove the placeholder |
 
+## 8. Decoding and cleaning addresses: two optional settings
+
+Two settings of `site.ini [URLTranslator]` change how addresses are read and how new URL aliases are written. Both
+are off as shipped, on new installations and after an upgrade alike, so nothing changes until you switch them on.
+Both come from LoveStack, Mugo Web's distribution of the same kernel, with thanks (commits `f435c2f91e` and
+`7517c0e925`).
+
+```ini
+# settings/override/site.ini.append.php
+[URLTranslator]
+# decode the address of a request once instead of twice
+DecodeOnce=enabled
+# IRI aliases: treat the double quote as a reserved character
+TrailingCleanup=enabled
+```
+
+**DecodeOnce.** The address of a request is decoded when the request starts, and was decoded a second time when
+the kernel split it into module, view and parameters. An encoded `+` in a path therefore arrived as a space:
+`/(tag)/bar%2Bbar` gave the view parameter `tag` the value `bar bar`, and `%2525` became `%`. With
+`DecodeOnce=enabled` the address is decoded once: `bar+bar`, and `%2525` stays `%25`.
+
+- What an editor sees: nothing, unless a link was written with an encoded `+` or `%` in a view parameter or a path.
+- What an administrator checks before switching it on: links in templates or content that relied on the second
+  decoding (a parameter written as `a%2520b` to mean `a b`). URL aliases themselves are not affected: their text
+  never holds a `+` or `%` in the `urlalias` and `urlalias_compat` transformations, and on the demonstration
+  installation every one of its 696 node addresses resolves the same with the setting off and on.
+- Set it in `settings/override/site.ini.append.php`, not in a siteaccess: the address is read before the
+  siteaccess is known. It works the same under PHP-FPM and the Velocity engine, which hand the address to the
+  kernel as the browser sent it; the response cache keys are made from that address too, so they do not change.
+
+**TrailingCleanup.** With the IRI transformation (`TransformationGroup=urlalias_iri`, aliases that keep accents and
+other letters) the double quote was kept in an alias: an article named `Lecture "Storm surges"` got the alias
+`Lecture-"Storm-surges"`. With `TrailingCleanup=enabled` the double quote is a reserved character like `?` or `+`:
+it becomes a word separator, and separators, dots and `!` are stripped at the beginning and the end, so the alias
+is `Lecture-Storm-surges`. The `urlalias` and `urlalias_compat` transformations already drop the double quote and
+already strip `!`, dots and separators at the end, so for them the setting changes nothing.
+
+- What changes on an upgrade: nothing. Existing aliases stay as they are; an object gets the new alias when it is
+  published again (or when `bin/php/updateniceurls.php` rebuilds the aliases), and the old alias then stays as a
+  redirect to the new one, as with any renamed object.
+- On a copy of the demonstration installation's database switched to `urlalias_iri`, republishing every node
+  with the setting on changed 6 of 2942 aliases, all of them names with double quotes.
+
 ## For developers
 
 - A link within the site in one call: `eZURI::build( '/content/view/full/2' )` gives the path the `ezurl` template
@@ -286,6 +330,13 @@ Unknown values fall back to the defaults. The forms, their field names and their
   for a URL that goes into a header or a JSON answer. A link with a scheme (`https:`, `mailto:`) comes back as it
   is. Tested in `tests/tests/lib/ezutils/eZURIBuildTest.php`. With thanks to Mugo Web (LoveStack, commit
   `f2284944b2`).
+- `new eZURI( $uri, $decode = null )` and `setURIString( $uri, $fullInitialize = true, $decode = null )`: `true`
+  for a string that is URL encoded, `false` for decoded text, `null` (the default) to follow `DecodeOnce`
+  (decoded unless it is enabled). `eZURI::decodeOnce()` says whether it is enabled; `eZURI::decodeIRI()` and
+  `decodeURL()` decode as before. `eZCharTransform::trailingCleanup()` says whether `TrailingCleanup` is enabled.
+  Both settings are read on every call, so a Velocity worker sees a change after `--clear-tag=ini`. Tested in
+  `tests/tests/lib/ezutils/eZSysRequestURIDecodeOnceTest.php` and
+  `tests/tests/lib/ezi18n/eZCharTransformTrailingCleanupTest.php`.
 - The views are `\Exponential\View\Kernel\Url\ListView`, `\Exponential\View\Kernel\Search\Stats`,
   `\Exponential\View\Kernel\Content\UrlaliasGlobal` and `\Exponential\View\Kernel\Content\UrlaliasWildcard`
   (`kernel/private/classes/views/...`). Their static helpers (modes, orders, the search text, usage, the
