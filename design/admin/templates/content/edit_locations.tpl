@@ -135,9 +135,12 @@
     {* Visibility status after publishing. *}
     <td>
     <select {if $location_ui_enabled|not}disabled="disabled" {/if}name="FutureNodeHiddenState_{$Node:parent_node.node_id}">
-    <option value="unchanged">{'Unchanged'|i18n( 'design/admin/content/edit' )}</option>
-    <option value="visible"{if $Node:item.is_hidden|not} selected="selected"{/if}>{'Visible'|i18n( 'design/admin/content/edit' )}</option>
-    <option value="hidden"{if $Node:item.is_hidden} selected="selected"{/if}>{'Hidden'|i18n( 'design/admin/content/edit' )}</option>
+    {* An existing location keeps its visibility (Unchanged) unless the editor picks another; a new one starts
+       as its assignment says. Visible is never forced (EZP-26501; portions derived from LoveStack,
+       mugoweb/ezpublish-legacy, commit f1b7f056b4, Copyright (C) Mugo Web, GPL v2). *}
+    <option value="unchanged"{if or( $Node:item.node, $Node:item.is_hidden|not )} selected="selected"{/if}>{'Unchanged'|i18n( 'design/admin/content/edit' )}</option>
+    <option value="visible">{'Visible'|i18n( 'design/admin/content/edit' )}</option>
+    <option value="hidden"{if and( $Node:item.node|not, $Node:item.is_hidden )} selected="selected"{/if}>{'Hidden'|i18n( 'design/admin/content/edit' )}</option>
     </select>
     </td>
 
