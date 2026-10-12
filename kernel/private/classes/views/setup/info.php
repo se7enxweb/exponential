@@ -247,7 +247,23 @@ class Info extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'database_charset', $db->charset() );
         $tpl->setVariable( 'database_object', $db );
         $tpl->setVariable( 'php_loaded_extensions', get_loaded_extensions() );
-        $tpl->setVariable( 'autoload_functions', spl_autoload_functions() );
+        // As names: a closure (Exponential Velocity registers one) cannot be printed by the template, it becomes
+        // "{closure} <file>:<line>".
+        $autoloadFunctions = array();
+        foreach ( spl_autoload_functions() as $function )
+        {
+            if ( $function instanceof \Closure )
+            {
+                $reflection = new \ReflectionFunction( $function );
+                $function = '{closure}' . ( $reflection->getFileName()
+                    ? ' ' . \expSystemReportMask::paths( $reflection->getFileName(), $root ) . ':' . $reflection->getStartLine()
+                    : '' );
+            }
+            else if ( is_array( $function ) )
+                $function = ( is_object( $function[0] ) ? get_class( $function[0] ) : $function[0] ) . '::' . $function[1];
+            $autoloadFunctions[] = $function;
+        }
+        $tpl->setVariable( 'autoload_functions', $autoloadFunctions );
 
         // Workaround until ezcTemplate
         // The new system info class uses properties instead of attributes, so the
