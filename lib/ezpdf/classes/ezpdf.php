@@ -110,7 +110,7 @@ class eZPDF
             {
                 $operatorValue = '<ezGroup:callTable';
 
-                if ( count( $operatorParameters > 2 ) )
+                if ( count( $operatorParameters ) > 2 )
                 {
                     $tableSettings = $tpl->elementValue( $operatorParameters[2], $rootNamespace, $currentNamespace );
 
