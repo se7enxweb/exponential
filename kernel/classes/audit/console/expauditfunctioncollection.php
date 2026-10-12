@@ -7,6 +7,7 @@
  *   fetch( 'audit', 'event', hash( 'id', $id ) )
  *   fetch( 'audit', 'count', hash( 'name', 'access.session.login.failed', 'from', '2026-10-01' ) )
  *   fetch( 'audit', 'chain_status', hash( 'channel', 'access' ) )
+ *   fetch( 'audit', 'hidden_menu_links', hash( 'section', 'Leftmenu_audit' ) )
  *
  * Filters are the console's (expAuditQuery::normalise(); object and target also as hash( type, id )). Each checks
  * audit/read with its Channel limitation for the current user and returns an empty result, never an error, when
@@ -148,6 +149,22 @@ class expAuditFunctionCollection
             $states = array_values( array_filter( $states, function ( $s ) use ( $channel ) { return $s['channel'] === $channel; } ) );
         self::record( 'chain_status', array( 'channel' => $channel ?: null ), count( $states ) );
         return array( 'result' => $states );
+    }
+
+    /**
+     * fetch( 'audit', 'hidden_menu_links', hash( 'section', 'Leftmenu_audit' ) ): the keys of the left menu's links
+     * that lead to a channel the current user may not read (expAuditSourceRegistry::hiddenMenuLinks()), for
+     * design:parts/ini_menu.tpl's hidden_links.
+     *
+     * @param string|false $section menu.ini block
+     * @return array result => string[]
+     */
+    public static function fetchHiddenMenuLinks( $section = false )
+    {
+        if ( !class_exists( 'expAuditSourceRegistry' ) || !class_exists( 'expAuditConsole' ) )
+            return array( 'result' => array() );
+        $section = is_string( $section ) && preg_match( '/^[A-Za-z0-9_]+$/', $section ) ? $section : 'Leftmenu_audit';
+        return array( 'result' => expAuditSourceRegistry::hiddenMenuLinks( $section ) );
     }
 
     /**

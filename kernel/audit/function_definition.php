@@ -68,4 +68,10 @@ $FunctionList['can_read'] = array( 'name' => 'can_read',
     'parameter_type' => 'standard',
     'parameters' => array( array( 'name' => 'channel', 'type' => 'string', 'required' => false, 'default' => false ) ) );
 
+// The keys of the left menu's links that lead to a channel the user may not read (design:audit/menu.tpl)
+$FunctionList['hidden_menu_links'] = array( 'name' => 'hidden_menu_links',
+    'call_method' => array( 'class' => 'expAuditFunctionCollection', 'method' => 'fetchHiddenMenuLinks' ),
+    'parameter_type' => 'standard',
+    'parameters' => array( array( 'name' => 'section', 'type' => 'string', 'required' => false, 'default' => 'Leftmenu_audit' ) ) );
+
 ?>

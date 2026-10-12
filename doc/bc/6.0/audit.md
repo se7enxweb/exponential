@@ -194,7 +194,7 @@ events, Charts, Alerts and Export, plus Archives and Settings for `audit/manage`
 | **Event** | `audit/event/<id>` | One record in full: when (local and UTC), who, the request, object and target with links into the admin (node, object, user, role, job), before and after side by side, the parent, the children, the other events of the same request and job, and the chain position (prev, hash, whether the hash matches the record now). `/(format)/json` returns the line as it is in the file |
 | **Charts** | `audit/charts` | Events per day per channel, refusals and failures per day, logins against failed logins, top actors, top event names; the last 14 days (`/(days)/<n>`, up to 366), under the console's filters. Drawn in HTML/CSS, each chart with its numbers in a table. Needs the index |
 | **Alerts** | `audit/alerts` | The alerts that fired (`system.audit.alert`: rule, group, count, window, first and last matching events) and the rules in use with any problem. Read-only |
-| **Export** | `audit/export` | The console's current filter as CSV, JSON lines (the lines as written, so hashes can be checked) or JSON, at most `MaxExportRecords` records (a larger filter is cut and says so; `exp:audit export` has no limit). Recorded as `system.audit.export` with the sha256 of what was sent |
+| **Export** | `audit/export` | The console's current filter as CSV, JSON lines (the lines as written, so hashes can be checked) or JSON, at most `MaxExportRecords` records (a larger filter is cut and says so; `exp:audit export` has no limit). The CSV has the generic columns; filtered on the channel of an extension's source, also the columns that source declares (expai: provider, model, region, purpose, lane, tokens in and out, latency, status, fallback, cost), and the page names them. Recorded as `system.audit.export` with the sha256 of what was sent |
 | **Archives** (manage) | `audit/archives` | Per channel: live files (count, size, oldest), archives and manifests, each live file's verification state (intact, repaired, broken at line n, unchecked), the signing key id and fingerprint. Read-only: archiving and restoring are done by the cronjob part and `exp:audit` |
 | **Settings** (manage) | `audit/settings` | The effective audit.ini with the file each value comes from, secrets masked, keys as ids and fingerprints, the sinks and format handlers with what keeps them from working, the index state (tables, full-text kind, rows, lag). Read-only: write settings with `exp:ini` (see [4.9](#49-changing-settings)) |
 | **Recent** | `audit/recent` | The latest 100 events, all channels or `/(channel)/<name>`, with a chain line per channel |
@@ -202,9 +202,17 @@ events, Charts, Alerts and Export, plus Archives and Settings for `audit/manage`
 **Extensions' sources.** An active extension can register a source of the console
 (`[AuditSourceSettings] Sources[]`, see [3.5](#35-the-developer-api), "An extension's source in the console"). Its
 events then have a dashboard panel, a line of links on the console, recent, charts, alerts and export views, charts
-of their own, the extension's fields and links on `audit/event`, and an entry in this left menu. Without such an
-extension the views are exactly as described above. Exponential Intelligence (expai) is one: the channel `ai`, the
-panel "Exponential Intelligence" and the menu entries "AI events" and "EI: Log" (with `expai/log`).
+of their own, the extension's fields and links on `audit/event`, columns of its own in the CSV export of its channel,
+and an entry in this left menu. Without such an extension the views are exactly as described above. Exponential
+Intelligence (expai) is one: the channel `ai`, the panel "Exponential Intelligence" and the menu entries "AI events"
+and "EI: Log" (with `expai/log`).
+
+**The left menu follows the Channel limitation.** A link into a channel the user may not read under the `Channel`
+limitation of `audit/read` is left out of the menu, instead of offering a page the console refuses: a link whose
+address is an audit view filtered on a channel (`audit/console/(channel)/ai`), or one that menu.ini names with
+`AuditChannel_<key>=<channel>`. A user of audit/read limited to `content` and `access` therefore does not see "AI
+events". The template asks `fetch( 'audit', 'hidden_menu_links', hash( 'section', 'Leftmenu_audit' ) )`
+(`expAuditSourceRegistry::hiddenMenuLinks()`) and hands the keys to `design:parts/ini_menu.tpl` as `hidden_links`.
 
 **Console filters** are URL parameters, so every filtered view can be bookmarked and shared:
 
@@ -693,7 +701,7 @@ checkpoint) instead of waiting for `RotateAfter`.
 
 ### 3.4 Templates: fetch functions and the operator
 
-The `audit` module has five fetch functions. Each checks `audit/read` and its Channel limitation for the current
+The `audit` module has six fetch functions. Each checks `audit/read` and its Channel limitation for the current
 user and returns an empty result, never an error, when the user may not read. A template therefore cannot leak
 events. Use is recorded as `system.audit.read` once per request and fetch.
 
@@ -704,6 +712,7 @@ events. Use is recorded as `system.audit.read` once per request and fetch.
 | `event` | `id` | one record |
 | `chain_status` | `channel`, `verify` (false) | per channel: result, files, first break, verified at |
 | `can_read` | `channel` | whether the current user may read that channel (or any) |
+| `hidden_menu_links` | `section` (`Leftmenu_audit`) | the keys of that menu's links into a channel the current user may not read (for `parts/ini_menu.tpl`'s `hidden_links`) |
 
 The node view's Audit tab (`design/admin/templates/tabs/audit/node.tpl`) is a complete example:
 
@@ -883,6 +892,12 @@ class myExtAuditSource extends expAuditSourceBase
         return array( array( 'title' => 'Polls per day', 'series' => array( array( 'label' => 'votes', 'name' => 'content.myext_poll.vote' ),
                                                                             array( 'label' => 'closed', 'name' => 'content.myext_poll.close' ) ) ) );
     }
+
+    /** The CSV export of the channel: column => path of the value in the record, after the generic columns */
+    public function exportColumns()
+    {
+        return array( 'poll' => 'object.id', 'choice' => 'after.choice', 'votes' => 'after.votes' );
+    }
 }
 ```
 
@@ -920,6 +935,8 @@ read under the `Channel` limitation of `audit/read`):
 | `audit/recent`, `audit/alerts`, `audit/export` | the line of links; on alerts, a rule on the source's names shows the source under its event |
 | `audit/charts` | the line of links and one card per chart: a bar per series and day, the numbers in a table (left out when the page is filtered on another channel) |
 | `audit/event` | for a record of the source's channel, a card with the source's fields and links; the Object and Target lines link through `linkFor()` |
+| CSV export | `audit/export/(channel)/polls/(format)/csv` and `exp:audit export --channel=polls --format=csv`: the generic columns, then `exportColumns()` (a value that is not there is empty, a boolean 1 or 0, a list or a hash JSON); another channel and no channel filter keep the generic columns. The JSON and JSON lines exports carry every field anyway |
+| left menu | a link into the source's channel (`audit/console/(channel)/polls`, or one named with `AuditChannel_<key>=polls` in `[Leftmenu_audit]`) is left out for a user who may not read the channel |
 | `audit/settings` | a Sources card: identifier, label, channel, class and what keeps it from working (shown only when a source is registered) |
 | policies | the `Channel` limitation of `audit/read` lists every channel of `Channels[]`, an extension's named after its source |
 
@@ -930,6 +947,10 @@ Rules every source follows, enforced by `expAuditSourceRegistry`:
 - **Only links the user may follow.** The source checks its own policies (`hasPolicy( $module, $function )`); the
   console checks `audit/read` and the channel.
 - **Never throw into a view.** A source that throws is left out of that call and written to `error.log`.
+- **Export only safe columns.** `exportColumns()` names fields for a spreadsheet that is handed on: counts, codes,
+  identifiers, never a text a user typed, an answer, a key or a token. Column names are a-z, digits and `_` (at most
+  48), paths are ranks into the record (`after.usage.in`); a generic column's name, a malformed name or path is
+  dropped.
 - **Name fields so the privacy rules leave them.** A field whose name contains password, secret, token, salt,
   credential, privatekey or apikey is written as `[secret]` (`input_tokens` too): put counts under a neutral key
   (expai: `after.usage.in`, `after.usage.out`).

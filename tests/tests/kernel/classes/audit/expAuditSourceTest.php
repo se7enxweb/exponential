@@ -16,6 +16,11 @@
  *  AS-07 — an extension's branch routes its names into the source's channel, and the record lands in that
  *          channel's own file and chain; without the channel in Channels[] it falls back to DefaultChannel; the console shows the branch's own label
  *  AS-08 — audit/read's Channel limitation lists a channel an extension adds, named after its source
+ *  AS-09 — the CSV export of a source's channel has the generic columns, then the source's (cleaned: no generic
+ *          name, no malformed name or path), a missing value empty, a boolean 1/0, a list as JSON; another channel
+ *          and no channel filter keep the generic columns only
+ *  AS-10 — the audit menu leaves out a link into a channel the user may not read: an audit view filtered on the
+ *          channel, or a link menu.ini names with AuditChannel_<key>; nothing for a user who may read every channel
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -82,6 +87,12 @@ class expAuditSourceTestSource extends expAuditSourceBase
         return array( array( 'title' => 'Votes per day', 'series' => array( array( 'label' => 'votes', 'name' => 'content.audittest_poll.vote' ),
                                                                             array( 'label' => 'bad', 'name' => 'content.audittest_poll.vote*' ) ) ),
                       array( 'title' => 'Empty' ) );
+    }
+
+    public function exportColumns()
+    {
+        return array( 'votes' => 'after.votes', 'poll' => 'object.id', 'flags' => 'after.flags', 'open' => 'after.open', 'missing' => 'after.none',
+                      'name' => 'after.votes', 'Bad Name' => 'after.votes', 'query' => 'after.votes?x', 'up' => '../after', 7 => 'after.votes' );
     }
 }
 
@@ -275,5 +286,66 @@ class expAuditSourceTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'Test source', $values['tst'] );
         $this->assertSame( 'Content', $values['content'] );
         $this->assertCount( 6, $values );
+    }
+
+    /** AS-09 */
+    public function testExportColumnsOfTheSourceChannel()
+    {
+        $this->withSource();
+        $generic = array( 'time', 'id', 'channel', 'name', 'severity', 'result', 'reason', 'user_id', 'login', 'ip', 'object_type',
+                          'object_id', 'object_name', 'target_type', 'target_id', 'request', 'job', 'imported' );
+        $columns = expAuditSourceRegistry::exportColumns( 'tst', $generic );
+        $this->assertSame( array( 'votes' => 'after.votes', 'poll' => 'object.id', 'flags' => 'after.flags', 'open' => 'after.open', 'missing' => 'after.none' ), $columns,
+                           'a generic name, a malformed name or path are left out' );
+        $this->assertSame( array(), expAuditSourceRegistry::exportColumns( 'content', $generic ) );
+        $this->assertSame( array(), expAuditSourceRegistry::exportColumns( null, $generic ) );
+        $record = array( 'id' => 'r1', 'name' => 'content.audittest_poll.vote', 'channel' => 'tst', 'object' => array( 'type' => 'audittest_poll', 'id' => 12 ),
+                         'after' => array( 'votes' => 7, 'flags' => array( 'a', 'b' ), 'open' => false ) );
+        $this->assertSame( array( 'votes' => '7', 'poll' => '12', 'flags' => '["a","b"]', 'open' => '0', 'missing' => '' ),
+                           expAuditSourceRegistry::exportValues( $columns, $record ) );
+
+        $file = $this->dir . 'export.csv';
+        ( new expAuditExporter() )->export( array( $record + array( 'time' => '2026-10-12T00:00:00.000Z' ) ), 'csv', $file, array( 'channel' => 'tst' ) );
+        $lines = array_values( array_filter( explode( "\n", file_get_contents( $file ) ), 'strlen' ) );
+        $this->assertSame( array_merge( $generic, array( 'votes', 'poll', 'flags', 'open', 'missing' ) ), str_getcsv( $lines[0], ',', '"', '\\' ) );
+        $this->assertSame( array( '7', '12', '["a","b"]', '0', '' ), array_slice( str_getcsv( $lines[1], ',', '"', '\\' ), -5 ) );
+        foreach ( array( array( 'channel' => 'content' ), array() ) as $filters )
+        {
+            ( new expAuditExporter() )->export( array( $record ), 'csv', $file, $filters );
+            $this->assertSame( $generic, str_getcsv( strtok( file_get_contents( $file ), "\n" ), ',', '"', '\\' ) );
+        }
+    }
+
+    /** AS-10 */
+    public function testMenuLinksIntoAChannelTheUserMayNotRead()
+    {
+        $this->withSource();
+        $this->assertSame( 'tst', expAuditSourceRegistry::menuLinkChannel( 'audit/console/(channel)/tst' ) );
+        $this->assertSame( 'tst', expAuditSourceRegistry::menuLinkChannel( 'audit/recent/(name)/content.*/(channel)/tst/(limit)/20' ) );
+        $this->assertSame( '', expAuditSourceRegistry::menuLinkChannel( 'audit/console' ) );
+        $this->assertSame( '', expAuditSourceRegistry::menuLinkChannel( 'audittest/list/(channel)/tst' ), 'only an audit view' );
+
+        $ini = eZINI::instance( 'menu.ini' );
+        $saved = array();
+        foreach ( array( 'Links', 'AuditChannel_own' ) as $v )
+            $saved[$v] = $ini->hasVariable( 'Leftmenu_audittest', $v ) ? $ini->variable( 'Leftmenu_audittest', $v ) : null;
+        $ini->setVariable( 'Leftmenu_audittest', 'Links', array( 'console' => 'audit/console', 'events' => 'audit/console/(channel)/tst',
+                                                                 'content' => 'audit/console/(channel)/content', 'own' => 'audittest/list' ) );
+        $ini->setVariable( 'Leftmenu_audittest', 'AuditChannel_own', 'tst' );
+        try
+        {
+            $this->assertSame( array( 'events', 'own' ), expAuditSourceRegistry::hiddenMenuLinks( 'Leftmenu_audittest', array( 'content' ) ) );
+            $this->assertSame( array( 'content' ), expAuditSourceRegistry::hiddenMenuLinks( 'Leftmenu_audittest', array( 'tst' ) ) );
+            $this->assertSame( array(), expAuditSourceRegistry::hiddenMenuLinks( 'Leftmenu_audittest', null ), 'every channel: nothing hidden' );
+            $this->assertSame( array(), expAuditSourceRegistry::hiddenMenuLinks( 'Leftmenu_nosuchmenu', array( 'content' ) ) );
+        }
+        finally
+        {
+            foreach ( $saved as $v => $value )
+                if ( $value === null )
+                    $ini->removeSetting( 'Leftmenu_audittest', $v );
+                else
+                    $ini->setVariable( 'Leftmenu_audittest', $v, $value );
+        }
     }
 }

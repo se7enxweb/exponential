@@ -12,6 +12,8 @@
    and, with menu.ini [MenuAccessSettings] CheckViewAccess=enabled, its address itself, checked the way the
    kernel checks the request (fetch( 'user', 'can_open' )). A link the user cannot open is left out, or shown
    without a link with NoAccessLinks=disabled. A menu with no link left is left out.
+   * hidden_links : (optional) keys of links to leave out whatever the user may do (the audit menu passes
+     fetch( 'audit', 'hidden_menu_links' ): the links into channels the user may not read)
 *}
 
 {if is_unset( $ini_section )}
@@ -25,6 +27,10 @@
 
 {if is_unset( $i18n_hash )}
     {def $i18n_hash = hash()}
+{/if}
+
+{if is_unset( $hidden_links )}
+    {def $hidden_links = array()}
 {/if}
 
 {if $uri_string}
@@ -73,6 +79,7 @@
 
     {if $has_access}
         {foreach $ini_menu_url_list as $link_key => $link_url}
+            {if $hidden_links|contains( $link_key )}{continue}{/if}
             {if is_set( $name_list[ $link_key ] )}
                 {set $item_name = $name_list[$link_key]|d18n($i18n_section)}
             {else}

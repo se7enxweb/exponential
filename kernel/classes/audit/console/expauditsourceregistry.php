@@ -68,6 +68,47 @@ class expAuditSourceRegistry
     }
 
     /**
+     * The keys of a left menu's links (menu.ini [<section>] Links[<key>]) that lead to a channel the current user
+     * may not read under the Channel limitation of audit/read, so the menu leaves them out instead of offering a
+     * page the console refuses. A link leads to a channel when its address is an audit view filtered on it
+     * (audit/console/(channel)/ai), or when menu.ini names it: AuditChannel_<key>=<channel>. This is how an
+     * extension source's entries ("AI events") disappear for a user limited to other channels; it never needs the
+     * extension's name. A user who may read every channel (or none: the links' policies hide them) gets none.
+     *
+     * @param string $section menu.ini block, default Leftmenu_audit
+     * @param string[]|null|false $allowed expAuditConsole::allowedChannels(), false: the current user's
+     * @return string[] link keys
+     */
+    public static function hiddenMenuLinks( $section = 'Leftmenu_audit', $allowed = false )
+    {
+        if ( $allowed === false )
+            $allowed = class_exists( 'expAuditConsole' ) ? expAuditConsole::allowedChannels() : null;
+        if ( $allowed === null || !class_exists( 'eZINI' ) )
+            return array();
+        $ini = eZINI::instance( 'menu.ini' );
+        if ( !$ini->hasVariable( $section, 'Links' ) )
+            return array();
+        $hidden = array();
+        foreach ( (array)$ini->variable( $section, 'Links' ) as $key => $url )
+        {
+            $channel = $ini->hasVariable( $section, 'AuditChannel_' . $key ) ? trim( (string)$ini->variable( $section, 'AuditChannel_' . $key ) )
+                                                                             : self::menuLinkChannel( (string)$url );
+            if ( $channel !== '' && !expAuditConsole::channelAllowed( $channel, $allowed ) )
+                $hidden[] = (string)$key;
+        }
+        return $hidden;
+    }
+
+    /**
+     * @param string $url a menu link's address
+     * @return string the channel an audit view address is filtered on ('' for none)
+     */
+    public static function menuLinkChannel( $url )
+    {
+        return preg_match( '#^/?audit/[a-z_]+(?:/.*)?/\(channel\)/([^/]+)#', (string)$url, $m ) ? rawurldecode( $m[1] ) : '';
+    }
+
+    /**
      * The source that owns a channel.
      *
      * @param string $channel
@@ -204,47 +245,6 @@ class expAuditSourceRegistry
     }
 
     /**
-     * @param string $path
-     * @return bool a module/view path with view parameters: no scheme, no leading slash, no query, no fragment
-     */
-    public static function isPath( $path )
-    {
-        return is_string( $path ) && preg_match( '#^[A-Za-z0-9_]+(/[^/?\#\s]+)*/?$#', $path ) === 1 && strpos( $path, '://' ) === false
-               && strpos( $path, '..' ) === false;
-    }
-
-    /** Forgets the registry (tests, a settings change in the same process) */
-    public static function reset()
-    {
-        self::$sources = null;
-        self::$status = array();
-        self::$builtFor = null;
-    }
-
-    /**
-     * Runs a call of a source; a throw is logged and gives $default.
-     *
-     * @param string $id
-     * @param callable $call
-     * @param mixed $default
-     * @return mixed
-     */
-    protected static function call( $id, $call, $default )
-    {
-        try
-        {
-            return $call();
-        }
-        catch ( Throwable $e )
-        {
-            if ( class_exists( 'eZDebug' ) )
-                eZDebug::writeError( "audit source $id: " . get_class( $e ) . ': ' . $e->getMessage(), __METHOD__ );
-            return $default;
-        }
-    }
-
-
-    /**
      * The CSV columns of the source that owns a channel (expAuditSource::exportColumns()), cleaned: a name of a-z,
      * digits and _ (at most 48 characters) that is not one of the generic columns, a path of ranks into the record
      * (after.usage.in). Nothing for a channel without a working source, or for no channel.
@@ -294,6 +294,47 @@ class expAuditSourceRegistry
         }
         return $row;
     }
+
+    /**
+     * @param string $path
+     * @return bool a module/view path with view parameters: no scheme, no leading slash, no query, no fragment
+     */
+    public static function isPath( $path )
+    {
+        return is_string( $path ) && preg_match( '#^[A-Za-z0-9_]+(/[^/?\#\s]+)*/?$#', $path ) === 1 && strpos( $path, '://' ) === false
+               && strpos( $path, '..' ) === false;
+    }
+
+    /** Forgets the registry (tests, a settings change in the same process) */
+    public static function reset()
+    {
+        self::$sources = null;
+        self::$status = array();
+        self::$builtFor = null;
+    }
+
+    /**
+     * Runs a call of a source; a throw is logged and gives $default.
+     *
+     * @param string $id
+     * @param callable $call
+     * @param mixed $default
+     * @return mixed
+     */
+    protected static function call( $id, $call, $default )
+    {
+        try
+        {
+            return $call();
+        }
+        catch ( Throwable $e )
+        {
+            if ( class_exists( 'eZDebug' ) )
+                eZDebug::writeError( "audit source $id: " . get_class( $e ) . ': ' . $e->getMessage(), __METHOD__ );
+            return $default;
+        }
+    }
+
     /** @return array[] label, url: the links whose address is a module/view path */
     protected static function cleanLinks( $links )
     {
