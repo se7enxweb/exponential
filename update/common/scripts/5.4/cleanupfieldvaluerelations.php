@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 1bd250d4c6), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  */
 
@@ -134,6 +135,13 @@ else
 
 function processRelationListRow( array $row )
 {
+    // An attribute without data (data_text NULL or '') has no relations to clean; DOMDocument::loadXML()
+    // throws a ValueError for an empty string from PHP 8
+    if ( trim( (string)$row["data_text"] ) === '' )
+    {
+        return array();
+    }
+
     $db = eZDB::instance();
 
     $document = new DOMDocument( "1.0", "utf-8" );
