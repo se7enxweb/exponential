@@ -23,7 +23,7 @@ the code style and PHPStan with a hint.
 | `git commit` (pre-commit) | `php -l` with PHP 8.0, when `EXP_PHP80` names it, `php8.0` or `php80` is on the PATH, or `/opt/plesk/php/8.0/bin/php` exists | syntax of PHP 8.1 and later: enums, readonly properties, `never`, `new` in initializers, first-class callables, ... |
 | `git commit` (pre-commit) | `php bin/php/checkmanifest.php --staged` | a staged file whose checksum is missing or stale in `share/filelist.md5` |
 | `git commit` (pre-commit) | `php bin/php/checkcodestyle.php --staged` | a change that adds code style violations to a PHP file |
-| `git commit` (commit-msg) | subject format | a subject that does not start with `Added: `, `Updated: `, `Fixed: ` or `Removed: ` |
+| `git commit` (commit-msg) | subject format | a subject that does not start with `Added: `, `Updated: `, `Fixed: `, `Removed: ` or `Renamed: ` |
 | `git push` (pre-push) | PHPStan against `phpstan-baseline.neon` | a finding that is not in the baseline |
 
 Skip the hooks in an emergency with `git commit --no-verify` or `git push --no-verify`; CI runs the same checks.

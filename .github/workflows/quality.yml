@@ -66,7 +66,7 @@ jobs:
           for commit in $(git rev-list --no-merges ${{ steps.range.outputs.base }}..${{ steps.range.outputs.head }}); do
             git log -1 --format=%B "$commit" > "$RUNNER_TEMP/message"
             if ! sh .githooks/commit-msg "$RUNNER_TEMP/message" >/dev/null; then
-              echo "::error::Commit $(git log -1 --format='%h %s' "$commit") does not start with Added:, Updated:, Fixed: or Removed:"
+              echo "::error::Commit $(git log -1 --format='%h %s' "$commit") does not start with Added:, Updated:, Fixed:, Removed: or Renamed:"
               status=1
             fi
           done

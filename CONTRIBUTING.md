@@ -37,7 +37,10 @@ git checkout -b feature/your-feature
 
 2. Follow the [PSR standards](https://www.php-fig.org/psr/) and our [coding style](CODING_STYLE.md).
 
-3. Write clear, concise commit messages following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+3. Write clear, concise commit messages whose subject starts with what the change does: `Added: `, `Updated: `,
+   `Fixed: `, `Removed: ` or `Renamed: `, e.g. `Fixed: The redirect keeps the query string on the own host`. The
+   commit-msg hook of `.githooks/` (`make hooks`) and CI check it; see
+   [the quality checks](doc/features/6.0/quality-checks.md).
 
 4. Keep your pull request focused. If you have multiple contributions, submit multiple pull requests.
 
