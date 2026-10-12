@@ -7,7 +7,7 @@
 
 **Exponential 6.0.x specifically requires the php package manager called Composer to be installed and run the command `composer install;` run before Exponential can be used.**
 
-To install Exponential, first download the softare (this repository) and run composer install inside of the root Exponential 6.0.x installation directory.
+To install Exponential, first download the software (this repository) and run composer install inside of the root Exponential 6.0.x installation directory.
 To do this, you must first:
 
 1. Install Composer from [getcomposer.org](https://getcomposer.org/download/)
@@ -48,6 +48,28 @@ Exponential with a full complement of all popular and available php extensions i
 
 With PHP we require composer to install Exponential software and no other software required to run
 the application. This is an incredible improvement to the kernel (core) of Exponential.
+
+The 6.0.15 line also brings, among much else (the full list is in the
+[6.0.15 changelog](doc/changelogs/6.0/6.0.15.md)):
+
+- **[Exponential Intelligence](#exponential-intelligence-new)**, a writing assistant in the administration
+  interface that writes drafts, never publishes on its own, and works with hosted providers in the US or the EU or
+  with a model on your own server.
+- **[Exponential Layouts](#exponential-layouts-revolutionary)**, a visual page builder: layouts, zones and blocks
+  that editors arrange, and rules that decide which pages get them.
+- **A tamper-evident audit trail** with a console, charts, alerts, streamed and background exports, and channels of
+  extensions ([audit guide](doc/bc/6.0/audit.md)).
+- **The content finder** (Setup > Content finder): find the content behind an id, a remote id, a URL alias, a page
+  address or a file path, and act on it within your rights ([feature](doc/features/6.0/content-finder.md)).
+- **Content jobs and a job queue**: large removes, copies, moves, package installs and audit exports run in the
+  background ([content jobs](doc/bc/6.0/content-jobs.md)); the job queue `expqueue` runs the queued work of
+  extensions ([expqueue](doc/features/6.0/extensions/expqueue.md)).
+- **Packages end to end** on Setup > Packages: every upload validated, installs in the background or as drafts, a
+  JSON package format next to the classic one ([packages guide](doc/guides/packages.md),
+  [JSON format](doc/bc/6.0/package-json-format.md)).
+- **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
+  application server Exponential Velocity (suggested version 0.0.4.50, which answers HEAD over HTTP/2 with its
+  headers only and drains its connections when it stops).
 
 ## What does Exponential provide for end users building websites?
 
@@ -238,8 +260,11 @@ being loaded from its archive: rebuild it first.
 - (Optional) Web server. Used to deliver the website to the end user. Apache,
   Nginx, LiteSpeed, Caddy, IIS, lighttpd and others all work — or use the
   bundled **Exponential Velocity**, which needs nothing installed beyond PHP.
-- (Optional) Database server. Used to store website content (and application information)
-- Composer. Used to download Exponential software packages for installation, also notebly installs the required Zeta Components php libraries.
+- (Optional) Database server. Used to store website content (and application information). SQLite needs none;
+  MySQL/MariaDB, PostgreSQL, Oracle and MongoDB are supported too.
+- Composer. Used to download Exponential software packages for installation, also notably installs the required Zeta Components php libraries and the extensions listed in `composer.json`.
+- (Optional) For Exponential Intelligence: an API key of a hosted AI provider, or a local open-weight model on the
+  same server.
 - Computer to run the PHP website application.
 
 ## What version of PHP is required
@@ -276,11 +301,17 @@ Developer note: PHP 7 support can be regained at any time by reverting php8.1 sp
 - Support for highly available and scalable configurations (multi-server clusters)
 - XML handling and parsing library
 - SOAP communication library
-- Localisation and internationalisation libraries
+- Localization and internationalization libraries
 - Several other reusable libraries
 - SDK (software development kit)
   and full documentation
-- Support for the latest Image and Video File Formats (webp, webm, png, jpeg, etc)
+- A writing assistant for editors, Exponential Intelligence, that writes drafts only (see below)
+- A visual page builder, Exponential Layouts, with rules that map layouts to content (see below)
+- A tamper-evident audit trail with a console, alerts, exports and extension channels
+- A content finder that finds content by id, remote id, URL alias, page address or file path
+- Background content jobs and a job queue for large operations and queued work
+- Content packages in the classic or a JSON format, validated on upload, installed in the background or as drafts
+- An application server of its own, Exponential Velocity, next to Apache, Nginx and the others
 - plugin API with thousands of open-source extensions available, including:
     - content rating and commenting
     - landing page management
@@ -289,9 +320,146 @@ Developer note: PHP 7 support can be regained at any time by reverting php8.1 sp
     - in-site content editing
     - content geolocation
 
+# Exponential Intelligence (new!)
+
+**Exponential Intelligence is a writing assistant built into the administration interface.** Editors ask in plain
+language for new content or for changes ("write three short articles about our spring events under this folder",
+"rewrite the intro of this article, shorter"). The assistant looks up what it needs (class definitions, the current
+content, the content tree around it) and writes **drafts**, as the signed-in editor and with that editor's own
+permissions.
+
+It is the extension [`se7enxweb/expai`](https://github.com/se7enxweb/expai) (release
+[0.0.1.0](https://github.com/se7enxweb/expai/releases/tag/v0.0.1.0)), required in `composer.json` since 6.0.15, so
+every installation has it in `extension/expai`. It does nothing until you switch it on.
+
+## What it does for editors
+
+- **The Intelligence tab** on a node's full view: a conversation per user and node that shows each lookup and each
+  draft as a step, and lists the drafts it wrote with links to edit, view and discard them.
+- **In the edit form**: "Fill the fields" from a brief, actions per field (Write, Rewrite, Shorten, Translate,
+  Suggest), one-click presets (title, summary, meta description, keywords), an **Improve** menu on every text field,
+  and alt text for images from a vision model. Values go into the form for review; the online editors keep working.
+- **Vector**, a workspace of threads: scope, plan and write modes, a plan with a cost estimate for bulk work, staged
+  review of every change per field before anything is written, parallel runs of an approved plan, checkpoints to go
+  back to, live progress streamed to the browser, and **What changed** with revert for drafts written directly.
+- **Chains and translation sync** through the job queue `expqueue`: write, review, revise and translate in steps
+  with a human checkpoint; translations brought up to date after the source language changed.
+- **A dashboard** with cost, tokens, requests, drafts and limits, and the label "Exponential Intelligence" on every
+  version it wrote (My drafts, version views, edit forms, approval items).
+
+## Providers: hosted, in the EU, or on your own server
+
+- **Anthropic** (Claude), proven live.
+- **Any OpenAI-compatible service** through one adapter: Melious.ai (EU region, open-weight models, prices in EUR
+  converted with the ECB reference rates), Hugging Face, OpenRouter, Mistral and others.
+- **Local open-weight models** through Ollama on the loopback address, started, stopped and pulled from the
+  administration through a root-owned helper; the data never leaves the server.
+
+Only models that passed a live tool-calling **probe** (or are trusted by configuration) may write drafts.
+
+## Safety
+
+- **Drafts only.** It never publishes on its own. "Send for approval" runs the normal publish operation as the
+  editor, so an approval workflow holds the version for the approver.
+- **Permissions.** Every lookup and every draft runs with the editor's own content permissions; the assistant's
+  features are separate policies (`expai/write`, `expai/vector`, ...), held only by the Administrator role in a new
+  installation.
+- **Audit.** Every request, draft and state change is an event of the audit channel `ai` (actions and metadata,
+  never a prompt, an answer or a key), shown with its own panel and links in the audit console.
+- **Data policy.** Each provider states its region (`us`, `eu`, `local`) and retention; rules per section and content
+  class decide which content may go where, and every request records where it went. **EI: Summary** is one printable
+  page for a data protection officer.
+- **Costs you can cap.** A usage log with the estimated cost of every request, limits per user, day, month, site and
+  provider, and budgets for queued work.
+- **One switch.** `[AISettings] Enabled` turns it off everywhere at once, or per siteaccess, and a veto hook can
+  refuse a request with a reason.
+
+## How to enable it
+
+1. Activate it for the admin siteaccess(es): `ActiveAccessExtensions[]=expai` in each admin siteaccess's
+   `site.ini.append.php` (or `ActiveExtensions[]=expai` for all).
+2. Put the provider key into `settings/override/expai.ini.append.php` (`[AISettings] Enabled=true`, `ApiKey=...`),
+   never into a committed file.
+3. Create its tables: `php extension/expai/bin/php/expaischema.php --install -s <admin siteaccess>`.
+4. Give editors the policy `expai/write` (and `ezjscore/call`), regenerate the autoloads, clear the caches, and add
+   the cron parts `expqueue` and `expai`.
+5. Open a folder in the administration, choose the **Intelligence** tab and ask for something.
+
+Requirements: PHP 8.0 or later with `curl`, `dom`, `json` and `mbstring`; ezjscore and ezformtoken; expqueue for
+queued work. Read the [installation guide](https://github.com/se7enxweb/expai/blob/main/INSTALL.md), the
+[usage guide](https://github.com/se7enxweb/expai/blob/main/USAGE.md) and the
+[full documentation](https://github.com/se7enxweb/expai/blob/main/doc/index.md) (providers, data policy, Vector,
+security, configuration). A summary is in [doc/features/6.0/extensions/expai.md](doc/features/6.0/extensions/expai.md).
+
+# Exponential Layouts (Revolutionary)
+
+**Exponential Layouts is a visual page builder for Exponential.** It brings the Netgen Layouts concept to the
+Exponential kernel: a **layout** is a saved arrangement of **blocks** in **zones**, and a **rule** decides which
+pages get it, so editors rearrange pages without touching templates.
+
+## What it is
+
+- **Layouts, zones and blocks**, stored as drafts and published versions, so unfinished work is never visible to
+  visitors. Layout types (one to four columns, hero, sidebars, featured, mosaic and more) are defined in
+  `explayouts.ini`.
+- **Block definitions and handlers**: text, title, HTML, Markdown, image, button, card, list, grid, gallery, carousel,
+  tabs, accordion, map, video and more, with the standard blocks of `explayouts_standard`; a new block type is a
+  small handler class and a template in your own extension.
+- **Collections and queries**: a block gets its content by hand or from a query (children, subtree, siblings,
+  latest, relation lists, tags and pluggable query types), with hand-picked items pinned among dynamic ones.
+- **Rules** that map layouts to content: targets (a node, a subtree, a path or path prefix) and conditions
+  (siteaccess, content class, query parameter, time), evaluated by priority.
+- **Shared layouts with linked zones**: build a header, footer or prefooter once in a shared layout and link the
+  zone of every page layout to it; change it once and every page follows.
+- **The editor** at `/explayouts_ui_api/app`, a single-page application over a JSON API, and the **Layouts** tab of
+  the administration: dashboard, layout list, shared layouts, layout mappings (rules), import and transfer, the
+  template editor and setup. A "Layouts" tab on a node's view shows the layouts and rules that apply to it.
+
+## Why it matters
+
+- Editors build and change pages without template work.
+- Each part of a site gets its own layout by rule, per subtree, content class, siteaccess or campaign period.
+- Header, footer and other repeated parts are defined once and reused through shared layouts.
+- Layouts move between installations by export and import.
+
+## How to enable it
+
+The suite is required in `composer.json`, so every installation has it in `extension/`. The 7x multi-site installer
+packages set it up for the sites they install that use it. Otherwise follow the
+[installation checklist](doc/bc/6.0/LAYOUTS.md#installation-checklist): activate the extensions, create the
+`explayouts_*` tables from the extension's `sql/<engine>/schema.sql`, regenerate the autoloads, clear the caches,
+then create a layout and a rule. The README and INSTALL of each extension give its own settings and steps.
+
+The guide: [doc/bc/6.0/LAYOUTS.md](doc/bc/6.0/LAYOUTS.md). The repositories:
+[explayouts](https://github.com/se7enxweb/explayouts) (persistence, resolver, rendering, block handlers),
+[explayouts_core](https://github.com/se7enxweb/explayouts_core) (services),
+[explayouts_standard](https://github.com/se7enxweb/explayouts_standard) (standard blocks),
+[explayouts_ui](https://github.com/se7enxweb/explayouts_ui) (the Layouts tab),
+[explayouts_ui_api](https://github.com/se7enxweb/explayouts_ui_api) (the editor and its JSON API),
+[explayouts_api](https://github.com/se7enxweb/explayouts_api),
+[explayouts_site_api](https://github.com/se7enxweb/explayouts_site_api),
+[explayouts_content_browser](https://github.com/se7enxweb/explayouts_content_browser),
+[explayouts_content_browser_core](https://github.com/se7enxweb/explayouts_content_browser_core),
+[explayouts_content_browser_ui](https://github.com/se7enxweb/explayouts_content_browser_ui),
+[explayouts_relation_list_query](https://github.com/se7enxweb/explayouts_relation_list_query) and
+[explayouts_tags_query](https://github.com/se7enxweb/explayouts_tags_query). Their Composer packages are
+`se7enxweb/explayouts`, `se7enxweb/explayouts-core`, `se7enxweb/explayouts-ui` and so on.
+
 # Installation
 
 Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html](https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html)
+
+The shortest path needs only PHP and Composer (SQLite, no database server):
+
+```bash
+composer create-project se7enxweb/exponential exponential
+cd exponential
+php bin/php/console exp:install --random-password --url=http://localhost:8087
+php bin/php/console exp:velocity start --engine=php
+```
+
+Optional extensions that `composer.json` brings but leaves inactive, such as Exponential Intelligence and the job
+queue, are switched on afterwards; [doc/INSTALL.md](doc/INSTALL.md#10-after-installing) says how.
 
 # Issue tracker
 
