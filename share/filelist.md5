@@ -630,9 +630,9 @@ a77820185ce58c7a7adadcc0a0b33c3f  design/admin/templates/setup/modulewizard.tpl
 2f0092bdb8c874fac18b1843d638f94c  design/admin/templates/setup/preload.tpl
 4408424b2f4021ca4c3add703e6485d6  design/admin/templates/setup/preload_exp_style.tpl
 acba5347f613d48faca4e88a62fd02ae  design/admin/templates/setup/quick_settings.tpl
-385046ac4d7141fb487a0aa843bff0f9  design/admin/templates/setup/rad.tpl
+504e40987c6c596556ead9ce2dcf0ff9  design/admin/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin/templates/setup/rad_licence_select.tpl
-9f4cb4aa7806267d6d050e9f5d98c977  design/admin/templates/setup/radsurvey.tpl
+27efb8ae9f1f5d6bb9906ca4db35c6e2  design/admin/templates/setup/radsurvey.tpl
 c9ca59fc90071049bb4846b1154eb33f  design/admin/templates/setup/session.tpl
 abe32479171deb21e311e6e155e3281b  design/admin/templates/setup/session_confirmremove.tpl
 8d16bad9279ff015518461e6ae692951  design/admin/templates/setup/session_exp_style.tpl
@@ -1253,9 +1253,9 @@ a77820185ce58c7a7adadcc0a0b33c3f  design/admin4/templates/setup/modulewizard.tpl
 2f0092bdb8c874fac18b1843d638f94c  design/admin4/templates/setup/preload.tpl
 4408424b2f4021ca4c3add703e6485d6  design/admin4/templates/setup/preload_exp_style.tpl
 d86040c9bf9bb8a9d792a0c5f25b59fe  design/admin4/templates/setup/quick_settings.tpl
-385046ac4d7141fb487a0aa843bff0f9  design/admin4/templates/setup/rad.tpl
+504e40987c6c596556ead9ce2dcf0ff9  design/admin4/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin4/templates/setup/rad_licence_select.tpl
-9f4cb4aa7806267d6d050e9f5d98c977  design/admin4/templates/setup/radsurvey.tpl
+27efb8ae9f1f5d6bb9906ca4db35c6e2  design/admin4/templates/setup/radsurvey.tpl
 c9ca59fc90071049bb4846b1154eb33f  design/admin4/templates/setup/session.tpl
 abe32479171deb21e311e6e155e3281b  design/admin4/templates/setup/session_confirmremove.tpl
 8d16bad9279ff015518461e6ae692951  design/admin4/templates/setup/session_exp_style.tpl
@@ -2594,7 +2594,7 @@ bd6e09375a4ba8fb7f56980818d622be  design/standard/templates/setup/persistence.tp
 0612b56c79eebd0c2c1bd5331ef02dd9  design/standard/templates/setup/progress_bar.tpl
 e4a2519ba74195287ee2aacc895d4ba2  design/standard/templates/setup/quick_settings.tpl
 efeb4ba3b956e844fee092f5b6397480  design/standard/templates/setup/rad.tpl
-2aeb03de3823d14209e3cd112239902a  design/standard/templates/setup/radsurvey.tpl
+56d56defaf8b44c4baa4e0f323eb70fa  design/standard/templates/setup/radsurvey.tpl
 118be36b33fea3d47c3a984a3bb7fa7d  design/standard/templates/setup/registration_email.tpl
 1948fc4db75fc4c8fd7352367556386a  design/standard/templates/setup/session.tpl
 6e514250bd29d924a22c8a7f80e7a6d0  design/standard/templates/setup/session_no_db.tpl
@@ -2839,8 +2839,8 @@ ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
 111bb729184306f633c537fe44ee078c  doc/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/bc/6.0/preload.md
-73b04a306d12240d33cd265d587db399  doc/bc/6.0/rad-extension-points.md
-611442352303aaa28764fab216c5ef09  doc/bc/6.0/rad-extension-surface.md
+998c241668929913ca76c4904d270043  doc/bc/6.0/rad-extension-points.md
+e326933cb84ea3626bc494fa443c5318  doc/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
 c9437c052795bf1c29b8db5b1a73a8c0  doc/bc/6.0/redirect-query-and-image-alias-guards.md
 ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
@@ -5711,7 +5711,7 @@ d6ef79b10f229d2d4bb6c7789d43b935  kernel/private/classes/views/setup/modulewizar
 408e3d20b0597a7509cb1655b10251fd  kernel/private/classes/views/setup/preloadjob.php
 b4c36a3a2c20d279b73397f64fa84f05  kernel/private/classes/views/setup/preloadstream.php
 4536ce57bd4c30d9052871a86bbac3c1  kernel/private/classes/views/setup/rad.php
-0f795642dcc1f9b120f36cfea7adfb6b  kernel/private/classes/views/setup/radsurvey.php
+127b5fad7a520c47b614364c322b99b5  kernel/private/classes/views/setup/radsurvey.php
 3583977ee8f409cd3051fe984a8b2868  kernel/private/classes/views/setup/session.php
 332eecb4339e09c7bc833ce99cd812b4  kernel/private/classes/views/setup/settingsextension.php
 6ce1911d374543062b193afa10819dba  kernel/private/classes/views/setup/settingstoolbar.php
@@ -5982,9 +5982,9 @@ f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 fd65c2cce9e61492592c18344e029370  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
-f8a8b3ab728ec3dd7278d4ae8a0983e9  kernel/setup/expradcatalogue.php
+30e20c321a3d281d0decabb7e8a821ff  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
-415a725f309cd92f728fe0dc76aa5320  kernel/setup/expradsurvey.php
+bc258d0356ea711d371264c64229a511  kernel/setup/expradsurvey.php
 dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
 1f83c0a2d52102dcc25243247dca9d32  kernel/setup/expstaticcacherunner.php
 9bc458d96c3589dc82f294aca4d45a21  kernel/setup/exptemplateextensionwizard.php
@@ -6433,6 +6433,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
 9bc9f7cc6a5478119f3a150b1ce7d177  settings/querycache.ini
+240c7434ad10af55a94a4d5dca600812  settings/rad.ini
 744f63beb0a42c8ec1f29c355e81fd5c  settings/requestrules.ini
 02c2067bd8f1edecd60e16ea8a39e240  settings/rest.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
@@ -6871,14 +6872,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-e2b2dfa255091223ddb11f4aa0c191f2  share/translations/eng-US/translation.ts
+7d43339c7da593bb0f07ed401fdae796  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-5df4a695440be9b1dd210a96543a3113  share/translations/ger-DE/translation.ts
+dd45d39e0ca0ec695fdb7d58507b7e36  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6891,7 +6892,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-8b0036d23306449efc8588fc81becb50  share/translations/untranslated/translation.ts
+f40fc63e835d5c2308f4e9cebf933a0c  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7396,7 +7397,7 @@ e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPre
 786026da4135d9ca5173810226bbbd69  tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php
 94cef15579368cffdb3346797016694f  tests/tests/kernel/classes/radwizards/expModuleExtensionWizardTest.php
 90077aa03acd6d1efc2f870f94e20c8a  tests/tests/kernel/classes/radwizards/expModuleWizardTest.php
-68abb643985330a505f5503d74a9d34a  tests/tests/kernel/classes/radwizards/expRadSurveyHelpersTest.php
+986d8b15b60e45a148331310a7219966  tests/tests/kernel/classes/radwizards/expRadSurveyHelpersTest.php
 3ab10ee87df7947262044f0a1f2bd062  tests/tests/kernel/classes/radwizards/expRadWizardListsTest.php
 439fb99a6b841e5fe4b26659fb14b01b  tests/tests/kernel/classes/radwizards/expRadWizardTestHelper.php
 74e872122daba48572e05606bca781cc  tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php
@@ -7413,7 +7414,8 @@ a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPur
 4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 afa2082e1b51519a99944e89da43c447  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
-352cfc4000709b128a2a80cbea6cf8b7  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
+fa0cd590f16e91307c04d03e2ed48971  tests/tests/kernel/classes/runnable/RadSurveyDeclaredRegistriesTest.php
+78d750119967739f82033594197c9b83  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
 6160faa4ebe4dfe6ab8997151a1aab6c  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
 de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableExtensionPointsTest.php
 6b5a504ace7f81f831359ad296472b95  tests/tests/kernel/classes/runnable/RunnableTest.php
@@ -7421,6 +7423,8 @@ de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableEx
 9298e49c53a6f1db5d9d31bedb03e759  tests/tests/kernel/classes/runnable/fixtures/cronjobpartrun-none/site.ini
 4abcc61dd0cb6716e5e065194a98f2dc  tests/tests/kernel/classes/runnable/fixtures/cronjobpartrun/site.ini
 9b857db0b585f8663b50a1c2f5428eb1  tests/tests/kernel/classes/runnable/fixtures/moduleview_scope_probe.php
+96654662aa2f326c3c1e2069acfeab9c  tests/tests/kernel/classes/runnable/fixtures/radregistry/rad.ini
+1c6c28b42e0acc19cbc2c59ae3bcc917  tests/tests/kernel/classes/runnable/fixtures/radregistry/radfixture.ini
 79c911a18db2fd725a84abec3b804393  tests/tests/kernel/classes/runnable/fixtures/settings/site.ini
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 3b012276860b70c1bf74047f97abfcfb  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
