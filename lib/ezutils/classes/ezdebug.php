@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits fbbd333a85, e20570a7ad, b7832d110e, e39dde30ff), Copyright (C) Mugo Web, GPL v2
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 4065ed16b3), Copyright (C) Mugo Web, GPL v2
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
@@ -1827,13 +1828,13 @@ class eZDebug
                 $pre = ($bgclass != '' ? " class='$bgclass'" : '');
                 if ( $as_html )
                 {
-                    $label = htmlspecialchars( $label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+                    $label = htmlspecialchars( (string)$label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
                     $contents = '';
                     if ( extension_loaded( 'xdebug' ) && ( strncmp( self::XDEBUG_SIGNATURE, $debug['String'], strlen( self::XDEBUG_SIGNATURE ) ) === 0 ) )
                         $contents = substr( $debug['String'], strlen( self::XDEBUG_SIGNATURE ) );
                     else
-                        $contents = htmlspecialchars( $debug['String'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+                        $contents = htmlspecialchars( (string)$debug['String'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
                     echo "<tr class='$style'><td class='debugheader'$identifierText><b><span>$name:</span> $label</b></td>
                                     <td class='debugheader' style=\"text-align:right;\">$time</td></tr>
