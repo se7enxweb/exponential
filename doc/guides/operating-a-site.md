@@ -260,6 +260,12 @@ MySQL, PostgreSQL and Oracle, signed 64-bit for SQLite and MongoDB); `$db->clamp
 within that range, cuts a fraction off as `(int)` does and gives 0 for anything that is not a number. On for every
 installation; nothing to do on an upgrade. With thanks to Mugo Web (LoveStack, commit `3774a54ead`).
 
+Related objects are indexed with the object that points to them: the searchable fields of an object chosen in an
+object relation or relation list field are found when you search for the object that holds the field. The relation
+fields of that related object are left out, so indexing never follows a chain of relations. Exponential has worked
+this way since 2018 (see [relation indexing](../bc/5.90/relation_indexing.md)); LoveStack's commit `5c089f6250`
+does the same, so a site coming from LoveStack finds the same search results here.
+
 Depth: [SQLite database support](../features/6.0/sqlite-database.md), [SQLite 3 driver](../specifications/6.0/sqlite3-database-driver.md), [database drivers 16 to 30 September 2026](../specifications/6.0/database-drivers-2026-09.md), [SQLite and Oracle driver behaviour](../specifications/6.0/database-drivers-sqlite-oracle.md), [MongoDB support](../features/6.0/mongodb-database-support.md).
 
 ## 8. Read the logs
