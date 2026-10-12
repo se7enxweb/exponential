@@ -4,6 +4,7 @@
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit e39dde30ff), Copyright (C) Mugo Web, GPL v2
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
@@ -20,7 +21,8 @@
 class eZLog
 {
     const MAX_LOGROTATE_FILES = 3;
-    const MAX_LOGFILE_SIZE = 204800; // 200*1024
+    /// Without site.ini [FileSettings] LogFileMaxSize (and CUSTOM_LOG_MAX_FILE_SIZE): 2 MB, was 200 KB
+    const MAX_LOGFILE_SIZE = 2097152; // 2*1024*1024
 
     /*!
      \static
@@ -184,9 +186,45 @@ class eZLog
         }
     }
 
+    /**
+     * A whole number from site.ini [FileSettings], for the size of the log files (LogFileMaxSize, bytes) and
+     * how many rotated files are kept (LogFileRotateCount): used by maxLogSize() and maxLogrotateFiles() here
+     * and in eZDebug, after setMaxLogSize()/setLogrotateFiles() and the constants in config.php, which win.
+     *
+     * Read on every call, not kept: a siteaccess with settings of its own, or a persistent worker serving the
+     * next request, gets its own value. null while site.ini is not loaded yet (an early error), when the
+     * setting is missing, empty, not a whole number or below $min.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit e39dde30ff), Copyright (C) Mugo Web, GPL v2.
+     *
+     * @param string $variable LogFileMaxSize or LogFileRotateCount
+     * @param int $min the smallest value accepted
+     * @return int|null
+     */
+    public static function fileSetting( $variable, $min = 0 )
+    {
+        if ( !class_exists( 'eZINI', false ) || !eZINI::isLoaded() )
+            return null;
+        try
+        {
+            $ini = eZINI::instance();
+            if ( !$ini->hasVariable( 'FileSettings', $variable ) )
+                return null;
+            $value = trim( (string)$ini->variable( 'FileSettings', $variable ) );
+        }
+        catch ( Throwable $e )
+        {
+            return null;
+        }
+        if ( $value === '' || !ctype_digit( $value ) || (int)$value < $min )
+            return null;
+        return (int)$value;
+    }
+
     /*!
      \static
-     \return the maximum size for a log file in bytes.
+     \return the maximum size for a log file in bytes: setMaxLogSize(), else CUSTOM_LOG_MAX_FILE_SIZE,
+     else site.ini [FileSettings] LogFileMaxSize, else MAX_LOGFILE_SIZE.
     */
     static function maxLogSize()
     {
@@ -200,7 +238,8 @@ class eZLog
             self::setMaxLogSize( (int)CUSTOM_LOG_MAX_FILE_SIZE );
             return (int)CUSTOM_LOG_MAX_FILE_SIZE;
         }
-        return self::MAX_LOGFILE_SIZE;
+        $fromINI = self::fileSetting( 'LogFileMaxSize', 1 );
+        return $fromINI !== null ? $fromINI : self::MAX_LOGFILE_SIZE;
     }
 
     /*!
@@ -214,7 +253,8 @@ class eZLog
 
     /*!
      \static
-     \return the maximum number of logrotate files to keep.
+     \return the maximum number of logrotate files to keep: setLogrotateFiles(), else CUSTOM_LOG_ROTATE_FILES,
+     else site.ini [FileSettings] LogFileRotateCount, else MAX_LOGROTATE_FILES.
     */
     static function maxLogrotateFiles()
     {
@@ -228,7 +268,8 @@ class eZLog
             self::setLogrotateFiles( (int)CUSTOM_LOG_ROTATE_FILES );
             return (int)CUSTOM_LOG_ROTATE_FILES;
         }
-        return self::MAX_LOGROTATE_FILES;
+        $fromINI = self::fileSetting( 'LogFileRotateCount', 0 );
+        return $fromINI !== null ? $fromINI : self::MAX_LOGROTATE_FILES;
     }
 
     /*!

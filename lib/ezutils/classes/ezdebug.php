@@ -80,7 +80,8 @@ class eZDebug
     const OUTPUT_MESSAGE_SCREEN = 1;
     const OUTPUT_MESSAGE_STORE = 2;
 
-    const MAX_LOGFILE_SIZE = 204800; // 200*1024
+    /// Without site.ini [FileSettings] LogFileMaxSize (and EZPUBLISH_LOG_MAX_FILE_SIZE): 2 MB, was 200 KB
+    const MAX_LOGFILE_SIZE = 2097152; // 2*1024*1024
     const MAX_LOGROTATE_FILES = 3;
 
     /// Where the log files go unless setLogDirectory() names the log directory of the site
@@ -850,7 +851,8 @@ class eZDebug
             self::setMaxLogSize( (int)EZPUBLISH_LOG_MAX_FILE_SIZE );
             return (int)EZPUBLISH_LOG_MAX_FILE_SIZE;
         }
-        return self::MAX_LOGFILE_SIZE;
+        $fromINI = class_exists( 'eZLog' ) ? eZLog::fileSetting( 'LogFileMaxSize', 1 ) : null;
+        return $fromINI !== null ? $fromINI : self::MAX_LOGFILE_SIZE;
     }
 
     /*!
@@ -877,7 +879,8 @@ class eZDebug
             self::setLogrotateFiles( (int)EZPUBLISH_LOG_ROTATE_FILES );
             return (int)EZPUBLISH_LOG_ROTATE_FILES;
         }
-        return self::MAX_LOGROTATE_FILES;
+        $fromINI = class_exists( 'eZLog' ) ? eZLog::fileSetting( 'LogFileRotateCount', 0 ) : null;
+        return $fromINI !== null ? $fromINI : self::MAX_LOGROTATE_FILES;
     }
 
     /*!
