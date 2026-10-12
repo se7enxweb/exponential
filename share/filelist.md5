@@ -4752,7 +4752,7 @@ c1062d494013d680c96c7512ee918ed8  kernel/classes/audit/console/expauditsourcereg
 8cb24defd57484f9aa59934fc7481093  kernel/classes/audit/expaudit.php
 9c334e44176a6cfc7684970fafde7220  kernel/classes/audit/expauditalertrule.php
 6b1471b8c2c558afeee3d921fa52994a  kernel/classes/audit/expauditbuffer.php
-3c164e385d8fa6500b2558358149c6a7  kernel/classes/audit/expauditconfig.php
+808f32284a9b18a97f0b27b0ae7062d2  kernel/classes/audit/expauditconfig.php
 ebf3b87a6adfdca34f19f196d47cc270  kernel/classes/audit/expauditformathandler.php
 1d2c91acbcac5c2932a213d371ebbdec  kernel/classes/audit/expauditguard.php
 187b8cc3e063acfad1cbbbb4c13ff030  kernel/classes/audit/expauditjson.php
@@ -4801,7 +4801,7 @@ bf8a04b58721225e1c5cace5e9a9eac4  kernel/classes/contentfinder/expcontentfindera
 db8e18e9eed33cc4220c3c547126753a  kernel/classes/contentfinder/expcontentfinderinput.php
 43f2fbcfb2394fa2f27d3e38d07790e5  kernel/classes/contentjob/expcontentjob.php
 77a2ac26bda54acaa35d173f34de2ef3  kernel/classes/contentjob/expcontentjobaddlocation.php
-48f91c450aaea0c1f0d16d27b6006c33  kernel/classes/contentjob/expcontentjobauditexport.php
+33102b2333b2382990eab3558baa9998  kernel/classes/contentjob/expcontentjobauditexport.php
 e9f120e3d9554fb67d0e0335940e1a98  kernel/classes/contentjob/expcontentjobbatchtype.php
 493a5d6b7aaa989dcab9776561fc786a  kernel/classes/contentjob/expcontentjobcopysubtree.php
 11197a87d3480167cf11ca1e38113d9d  kernel/classes/contentjob/expcontentjobexception.php
@@ -6952,7 +6952,7 @@ f8e49cec6be93c26e7623ddc0a87ef79  tests/bin/ezptestrunner.php
 d01b9528e554acb15438d8db3918cd3a  tests/bin/lint_manifest.txt
 b92bb6d52f566d4ea1a0d01a8940e360  tests/bin/test_report_2026-02-21.txt
 5f0e6422e18bece875206a606cfe8003  tests/bin/tests/functional_tests.php
-bee91ae90e4189994ecd004a28840229  tests/bootstrap.php
+c704021f8ff30e8fd2c514e723d2d26d  tests/bootstrap.php
 29513a3dd65d617fb046ffdd009e895f  tests/compat/PHPUnit/TextUI/Configuration/Registry.php
 d56115c8242b3081672f63607aa69361  tests/runtests.php
 59b4689fb7226fd9c820b76ab68d979b  tests/settings/site.ini
@@ -7227,7 +7227,7 @@ d61e47486ee9a916d28189fd4e6aba6d  tests/tests/kernel/classes/eZSiteAccessSitePat
 68d772f3db6a9ae2a865ce3eb3a607e3  tests/tests/kernel/classes/eZSiteAccess_Test.php
 aec17c87e108b370bb8d629a55864026  tests/tests/kernel/classes/eZSiteDataTest.php
 d046fb97bcc75a96538b30760c09dde6  tests/tests/kernel/classes/eZSiteInstallerTest.php
-5c89d65c1b31e6809be92cb331bf6024  tests/tests/kernel/classes/eZSiteLogReadersTest.php
+31279262def09fb16f563fa72f1aef9e  tests/tests/kernel/classes/eZSiteLogReadersTest.php
 568f1e1165db3e325a038c64e9b911aa  tests/tests/kernel/classes/eZSubtreeNotificationRuleTest.php
 d46ed3e78e608bc03a8d009b6250ba0c  tests/tests/kernel/classes/eZURLAliasMLTest.php
 cff81497a83267ad5f42597bb6c66c5c  tests/tests/kernel/classes/eZURLTest.php
