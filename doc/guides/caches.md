@@ -104,6 +104,21 @@ Each group and each result notice shows the command for exactly the caches it cl
 **A page still shows the old version after clearing.** Clear Velocity's response cache, or wait a few seconds. If
 it is a settings change, restart Velocity.
 
+**The log says "Expiring all view cache".** A change touched so many pages that clearing each one would take
+longer than clearing them all: when the view caches of `site.ini [ContentSettings] CacheThreshold` nodes or more
+(default 250) are to be cleared, every view cache of the site is expired instead, and the next visits to every page
+render it again. The debug output then has one warning with the number of nodes, also in `var/log/warning.log`
+while debug output is on, or always with `[DebugSettings] AlwaysLog[]=warning`:
+
+```
+Expiring all view cache: the view cache of 312 nodes was to be cleared, which reaches site.ini [ContentSettings] CacheThreshold=250
+```
+
+A warning now and then after moving a large subtree or publishing an object many pages relate to is expected. If
+it appears for ordinary edits, look at the object's relations and at `viewcache.ini` (which nodes are cleared
+with it), or raise `CacheThreshold` in an override. Upgrading changes nothing but the level of the message (it was
+a debug message); thanks to Mugo Web for LoveStack commit f9691221a3, which made it a warning.
+
 **A cache is greyed out.** It is disabled in the settings (for example the SSL zones cache), so there is nothing to
 clear.
 

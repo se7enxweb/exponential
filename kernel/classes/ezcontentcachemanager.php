@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f9691221a3), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package kernel
  */
@@ -758,6 +759,24 @@ class eZContentCacheManager
     }
 
     /**
+     * The warning written when the view caches of so many nodes are to be cleared that all view caches are expired
+     * instead (site.ini [ContentSettings] CacheThreshold).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f9691221a3), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param int $nodeCount the number of nodes whose view cache was to be cleared
+     * @param int $cleanupValue the value compared with the threshold (eZContentCache::calculateCleanupValue())
+     * @return string
+     */
+    public static function cacheThresholdWarningText( $nodeCount, $cleanupValue )
+    {
+        $threshold = eZINI::instance()->variable( 'ContentSettings', 'CacheThreshold' );
+        return "Expiring all view cache: the view cache of $nodeCount nodes was to be cleared" .
+               ( (string)$cleanupValue !== (string)$nodeCount ? " (cleanup value $cleanupValue)" : '' ) .
+               ", which reaches site.ini [ContentSettings] CacheThreshold=$threshold";
+    }
+
+    /**
      * Clears view caches for an array of nodes.
      *
      * @param  array   $nodeList List of node IDs to clear
@@ -801,7 +820,9 @@ class eZContentCacheManager
         }
         else
         {
-            eZDebug::writeDebug( "Expiring all view cache since list of nodes({$cleanupValue}) exceeds site.ini\[ContentSettings]\CacheThreshold", __METHOD__ );
+            // A warning, not a debug message: clearing every view cache of the site makes the next visits slower
+            // everywhere, so the log says when a change was large enough to do it and how large it was
+            eZDebug::writeWarning( self::cacheThresholdWarningText( count( $nodeList ), $cleanupValue ), __METHOD__ );
             ezpEvent::getInstance()->notify( 'content/cache/all' );
             eZContentObject::expireAllViewCache();
         }
