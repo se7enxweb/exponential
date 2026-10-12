@@ -655,7 +655,7 @@ cc87581c7d24738f76f23db73a8006af  design/admin/templates/shop/archivelist.tpl
 973ed42413641cd99c9ebd85f0c3e702  design/admin/templates/shop/browse_discountproduct.tpl
 0397b15cfa71c96e50ce5b6796bc8e69  design/admin/templates/shop/confirmorder.tpl
 07c42c2970e42820e2bc6c9370b50628  design/admin/templates/shop/currencylist.tpl
-811bb29168f9d8724dc2461ae50a8826  design/admin/templates/shop/customerlist.tpl
+f3ff4a52597dcac54938b64e62c12c4f  design/admin/templates/shop/customerlist.tpl
 3d9ffc461b4a76d4b0b90c8c57fc5a49  design/admin/templates/shop/customerorderview.tpl
 eb0dc358e5f38db833d51e4e71f15114  design/admin/templates/shop/dashboard.tpl
 3cf3ef352b01ede7510bf19fe4265645  design/admin/templates/shop/discountgroup.tpl
@@ -1280,7 +1280,7 @@ cc87581c7d24738f76f23db73a8006af  design/admin4/templates/shop/archivelist.tpl
 973ed42413641cd99c9ebd85f0c3e702  design/admin4/templates/shop/browse_discountproduct.tpl
 0397b15cfa71c96e50ce5b6796bc8e69  design/admin4/templates/shop/confirmorder.tpl
 07c42c2970e42820e2bc6c9370b50628  design/admin4/templates/shop/currencylist.tpl
-811bb29168f9d8724dc2461ae50a8826  design/admin4/templates/shop/customerlist.tpl
+f3ff4a52597dcac54938b64e62c12c4f  design/admin4/templates/shop/customerlist.tpl
 3d9ffc461b4a76d4b0b90c8c57fc5a49  design/admin4/templates/shop/customerorderview.tpl
 eb0dc358e5f38db833d51e4e71f15114  design/admin4/templates/shop/dashboard.tpl
 3cf3ef352b01ede7510bf19fe4265645  design/admin4/templates/shop/discountgroup.tpl
@@ -7249,7 +7249,7 @@ be1aa0e87f92a94fba8582a57d54aca5  tests/tests/kernel/classes/eZRoleAssignmentSor
 2d3854eee9fdd39d64f775b25ee439ae  tests/tests/kernel/classes/eZRoleTest.php
 b3726da0cf9d0921445aa33e1c1c1991  tests/tests/kernel/classes/eZSectionFetchWithoutIdTest.php
 f54782a8f10898bc22d75eaf1c33d2de  tests/tests/kernel/classes/eZSectionTest.php
-ddf5c216ee867f7b0179e9d2cd3f0b61  tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php
+4191385b59cae3b5ac73a6da4acbf405  tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php
 d2b2aa97184624a1b60cebe09319e82a  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
 d61e47486ee9a916d28189fd4e6aba6d  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
 68d772f3db6a9ae2a865ce3eb3a607e3  tests/tests/kernel/classes/eZSiteAccess_Test.php
