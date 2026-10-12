@@ -14,11 +14,14 @@ $ViewList = array();
 $ViewList["copyright"] = array(
     "functions" => array( 'read' ),
     "script" => "copyright.php",
+    // Information about the installation: the Setup tab of the administration (without it, Content structure)
+    "default_navigation_part" => "ezsetupnavigationpart",
     "params" => array() );
 
 $ViewList["about"] = array(
     "functions" => array( 'read' ),
     "script" => "about.php",
+    "default_navigation_part" => "ezsetupnavigationpart",
     "params" => array() );
 
 $ViewList["is_alive"] = array(
