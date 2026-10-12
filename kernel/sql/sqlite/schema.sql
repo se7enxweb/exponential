@@ -1171,7 +1171,7 @@ CREATE INDEX "idx_ezcontentobject_trash_ezcobj_trash_p_node_id" ON "ezcontentobj
 CREATE INDEX "idx_ezcontentobject_trash_ezcobj_trash_path" ON "ezcontentobject_trash" (`path_string`);
 CREATE INDEX "idx_ezcontentobject_trash_ezcobj_trash_path_ident" ON "ezcontentobject_trash" (`path_identification_string`);
 CREATE INDEX "idx_ezcontentobject_trash_ezcobj_trash_trashed_by" ON "ezcontentobject_trash" (`trashed_by`);
-CREATE INDEX "idx_ezuser_ezuser_login" ON "ezuser" (`login`);
+CREATE UNIQUE INDEX "idx_ezuser_ezuser_login" ON "ezuser" (`login`);
 CREATE INDEX "idx_ezcollab_group_ezcollab_group_depth" ON "ezcollab_group" (`depth`);
 CREATE INDEX "idx_ezcollab_group_ezcollab_group_path" ON "ezcollab_group" (`path_string`);
 CREATE INDEX "idx_ezkeyword_ezkeyword_keyword" ON "ezkeyword" (`keyword`);

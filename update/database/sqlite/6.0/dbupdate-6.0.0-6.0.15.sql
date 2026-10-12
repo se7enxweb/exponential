@@ -358,3 +358,21 @@ CREATE TABLE IF NOT EXISTS expapikey (
 );
 CREATE UNIQUE INDEX IF NOT EXISTS expapikey_prefix ON expapikey ( key_prefix );
 CREATE INDEX IF NOT EXISTS expapikey_user ON expapikey ( user_id );
+
+--
+-- ezuser.login: one account per login.
+--
+-- A new installation has a unique index on ezuser.login from the kernel schema.
+-- On an upgrade this file does not add it: the statement fails on a database
+-- where two accounts have the same login. Add it with the command, which lists
+-- the duplicates first (also logins that differ only in case, which signing in
+-- cannot tell apart) and adds the index only when there are none:
+--
+--   ./console exp:user-login-check              (report, changes nothing)
+--   ./console exp:user-login-check --fix-index  (adds the index after a clean report)
+--
+-- What --fix-index runs on SQLite, in one transaction, keeping the name of the
+-- index the database has (ezuser_login or idx_ezuser_ezuser_login):
+--
+-- DROP INDEX ezuser_login;
+-- CREATE UNIQUE INDEX ezuser_login ON ezuser ( login );

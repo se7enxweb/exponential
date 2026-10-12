@@ -427,3 +427,20 @@ CREATE TABLE IF NOT EXISTS expapikey (
   UNIQUE KEY expapikey_prefix ( key_prefix ),
   KEY expapikey_user ( user_id )
 ) ENGINE=InnoDB;
+
+--
+-- ezuser.login: one account per login.
+--
+-- A new installation has the unique index ezuser_login from the kernel schema.
+-- On an upgrade this file does not add it: the statement fails on a database
+-- where two accounts have the same login, and then stops the rest of the file.
+-- Add it with the command, which lists the duplicates first and adds the index
+-- only when there are none:
+--
+--   ./console exp:user-login-check              (report, changes nothing)
+--   ./console exp:user-login-check --fix-index  (adds the index after a clean report)
+--
+-- What --fix-index runs on MySQL and MariaDB (the column's collation decides
+-- which logins are equal; as shipped it ignores case and trailing spaces):
+--
+-- ALTER TABLE ezuser DROP INDEX ezuser_login, ADD UNIQUE KEY ezuser_login ( login );

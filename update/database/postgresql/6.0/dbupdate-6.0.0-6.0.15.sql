@@ -558,3 +558,20 @@ BEGIN
     END IF;
 END
 $$;
+
+--
+-- ezuser.login: one account per login.
+--
+-- A new installation has the unique index ezuser_login from the kernel schema.
+-- On an upgrade this file does not add it: the statement fails on a database
+-- where two accounts have the same login. Add it with the command, which lists
+-- the duplicates first (also logins that differ only in case, which signing in
+-- cannot tell apart) and adds the index only when there are none:
+--
+--   ./console exp:user-login-check              (report, changes nothing)
+--   ./console exp:user-login-check --fix-index  (adds the index after a clean report)
+--
+-- What --fix-index runs on PostgreSQL, in one transaction:
+--
+-- DROP INDEX ezuser_login;
+-- CREATE UNIQUE INDEX ezuser_login ON ezuser ( login );
