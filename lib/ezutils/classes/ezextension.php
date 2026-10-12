@@ -757,24 +757,8 @@ class eZExtension
                 $version = $composer['version'];
         }
 
-        // Newest file modification time inside the extension tree
-        $fileList = array();
-        eZDir::recursiveList( $path, '', $fileList );
-
-        $mtime = 0;
-        foreach ( $fileList as $item )
-        {
-            if ( $item['type'] !== 'file' )
-                continue;
-
-            $filePath = eZDir::path( array( $path, $item['path'], $item['name'] ) );
-            if ( !@file_exists( $filePath ) )
-                continue;
-
-            $fileMtime = @filemtime( $filePath );
-            if ( $fileMtime > $mtime )
-                $mtime = $fileMtime;
-        }
+        // Newest file modification time inside the extension tree, kept for a while (see newestFileTime())
+        $mtime = self::newestFileTime( $path );
 
         if ( $mtime == 0 )
             $mtime = @filemtime( $path );
@@ -1110,12 +1094,130 @@ class eZExtension
     }
 
     /**
+     * Seconds the newest file time of an extension's tree is kept by newestFileTime().
+     */
+    const FILE_TIME_CACHE_SECONDS = 3600;
+
+    /**
+     * The kept newest file times as read during this request: array( request key, path => entry ).
+     *
+     * @var array|null
+     */
+    protected static $fileTimeCache = null;
+
+    /**
+     * The newest modification time of a file inside $path (0 for a tree without files).
+     *
+     * Walking the tree costs a stat of every file in it: 52 000 files and close to a second for the 85 extensions
+     * of an installation with a few large ones, and Setup > Extensions and Info > About asked it on every view.
+     * The walk is kept in <cache>/exp/extension-file-times.json for an hour (FILE_TIME_CACHE_SECONDS) and taken
+     * again before that when the active extensions cache is cleared (the expiry key active-extensions-cache: a
+     * deploy, ezcache --clear-tag=ini or --clear-all, a change on Setup > Extensions). A kept time is never older
+     * than the extension's own extension.xml, ezinfo.php or composer.json, which are looked at every time.
+     *
+     * @param string $path the extension's directory
+     * @param bool $refresh walk the tree now, whatever was kept
+     * @return int
+     */
+    public static function newestFileTime( $path, $refresh = false )
+    {
+        $path = rtrim( (string)$path, '/' );
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
+        $file = class_exists( 'eZSys' ) ? rtrim( (string)eZSys::cacheDirectory(), '/' ) . '/exp/extension-file-times.json' : '';
+        // read once per request: a long-running worker serves many and must see what others wrote meanwhile
+        if ( self::$fileTimeCache === null || self::$fileTimeCache[0] !== $request . '|' . $file )
+        {
+            $stored = $file !== '' && is_file( $file ) ? json_decode( (string)@file_get_contents( $file ), true ) : null;
+            self::$fileTimeCache = array( $request . '|' . $file, is_array( $stored ) ? $stored : array() );
+        }
+
+        $expiry = 0;
+        if ( class_exists( 'eZExpiryHandler' ) )
+        {
+            $handler = eZExpiryHandler::instance();
+            $expiry = $handler->hasTimestamp( 'active-extensions-cache' ) ? (int)$handler->timestamp( 'active-extensions-cache' ) : 0;
+        }
+
+        $now = time();
+        $entry = isset( self::$fileTimeCache[1][$path] ) ? self::$fileTimeCache[1][$path] : null;
+        if ( !$refresh && is_array( $entry ) && isset( $entry['mtime'], $entry['time'] )
+             && (int)$entry['time'] > $now - self::FILE_TIME_CACHE_SECONDS && (int)$entry['time'] <= $now
+             && (int)$entry['time'] >= $expiry )
+        {
+            $mtime = (int)$entry['mtime'];
+            foreach ( array( 'extension.xml', 'ezinfo.php', 'composer.json' ) as $name )
+            {
+                $own = is_file( "$path/$name" ) ? (int)@filemtime( "$path/$name" ) : 0;
+                if ( $own > $mtime )
+                    $mtime = $own;
+            }
+            return $mtime;
+        }
+
+        $fileList = array();
+        eZDir::recursiveList( $path, '', $fileList );
+        $mtime = 0;
+        foreach ( $fileList as $item )
+        {
+            if ( $item['type'] !== 'file' )
+                continue;
+            $fileMtime = @filemtime( eZDir::path( array( $path, $item['path'], $item['name'] ) ) );
+            if ( $fileMtime > $mtime )
+                $mtime = $fileMtime;
+        }
+
+        self::$fileTimeCache[1][$path] = array( 'mtime' => $mtime, 'time' => $now );
+        if ( $file !== '' )
+            self::storeFileTimes( $file, $path, self::$fileTimeCache[1][$path] );
+        return $mtime;
+    }
+
+    /**
+     * Puts one entry into the kept file times: read again, changed and written beside it and renamed, so a reader
+     * never sees half a file and another process's entries are kept. Given the owner of its directory when root
+     * writes it (Velocity runs as root, the web server as the site's user), writable by both.
+     *
+     * @param string $file
+     * @param string $path
+     * @param array $entry mtime, time
+     * @return void
+     */
+    protected static function storeFileTimes( $file, $path, array $entry )
+    {
+        $dir = dirname( $file );
+        if ( !is_dir( $dir ) && class_exists( 'eZDir' ) )
+            eZDir::mkdir( $dir, false, true );
+        if ( !is_writable( $dir ) )
+            return;
+        $stored = is_file( $file ) ? json_decode( (string)@file_get_contents( $file ), true ) : null;
+        $stored = is_array( $stored ) ? $stored : array();
+        $stored[$path] = $entry;
+        // entries of directories that are gone are dropped
+        foreach ( array_keys( $stored ) as $p )
+            if ( !is_dir( $p ) )
+                unset( $stored[$p] );
+        $temp = $file . '.' . getmypid() . '.tmp';
+        if ( @file_put_contents( $temp, json_encode( $stored ) ) === false )
+            return;
+        @chmod( $temp, class_exists( 'eZFile' ) ? eZFile::fileMode( 0664 ) : 0664 );
+        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 && ( $uid = @fileowner( $dir ) ) !== false )
+        {
+            @chown( $temp, $uid );
+            if ( ( $gid = @filegroup( $dir ) ) !== false )
+                @chgrp( $temp, $gid );
+        }
+        if ( !@rename( $temp, $file ) )
+            @unlink( $temp );
+    }
+
+    /**
      * Clears the active extensions in-memory cache
      * @return void
      */
     public static function clearActiveExtensionsMemoryCache()
     {
         self::$activeExtensionsCache = array();
+        self::$fileTimeCache = null;
     }
 
     /**
