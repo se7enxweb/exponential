@@ -11,7 +11,25 @@
 
 class expBookmarkServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'tree' => array( 'summary' => 'The whole bookmark tree of the current user in one call: nested folders (with depth, path, count of bookmarks inside) and the top level bookmarks', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'folders, bookmarks' ),
+        'rows' => array( 'summary' => 'The tree as one flat list in display order (folders before the bookmarks of their level); optionally only the content of a folder', 'access' => 'user', 'write' => false, 'args' => array( 'folder' => 'int' ), 'returns' => 'list of folder and bookmark rows with depth' ),
+        'folders' => array( 'summary' => 'The folders of the current user as a flat list, paged', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged folders' ),
+        'bookmarks' => array( 'summary' => 'The bookmarks, paged: all of them flat (the order of the content bookmarks fetch), or only those of one folder (0 is the top level)', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int', 'folder' => 'int' ), 'returns' => 'paged bookmarks' ),
+        'createFolder' => array( 'summary' => 'Create a folder (POST name, parent_id: 0 or missing is the top level)', 'access' => 'user', 'write' => true, 'args' => array( 'name' => 'string', 'parent_id' => 'int' ), 'returns' => 'folder' ),
+        'renameFolder' => array( 'summary' => 'Rename a folder (POST id, name)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'name' => 'string' ), 'returns' => 'folder' ),
+        'deleteFolder' => array( 'summary' => 'Delete a folder (POST id, delete_bookmarks): its bookmarks and folders move up one level; with delete_bookmarks everything inside is deleted', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'delete_bookmarks' => 'bool' ), 'returns' => 'id, removed' ),
+        'moveFolder' => array( 'summary' => 'Move a folder into another folder or to the top level (POST id, parent_id); 409 into itself or below itself', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'parent_id' => 'int' ), 'returns' => 'folder' ),
+        'moveBookmark' => array( 'summary' => 'Move a bookmark into a folder or to the top level (POST id, folder_id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'folder_id' => 'int' ), 'returns' => 'bookmark' ),
+        'place' => array( 'summary' => 'Put a folder or bookmark into a folder in front of another entry of the same kind (POST type folder|bookmark, id, parent_id, before_id; 0 is last)', 'access' => 'user', 'write' => true, 'args' => array( 'type' => 'string', 'id' => 'int', 'parent_id' => 'int', 'before_id' => 'int' ), 'returns' => 'type, id, parent_id' ),
+        'addBookmark' => array( 'summary' => 'Bookmark a node, optionally in a folder (POST node_id, folder_id)', 'access' => 'user', 'write' => true, 'args' => array( 'node_id' => 'int', 'folder_id' => 'int' ), 'returns' => 'bookmark' ),
+        'removeBookmark' => array( 'summary' => 'Remove a bookmark (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'id, removed' ),
+    );
 
     protected static function me()
     {
@@ -231,18 +249,3 @@ class expBookmarkServices extends expUsersBase
         return self::ok( array( 'id' => $id, 'removed' => true ) );
     }
 }
-
-expBookmarkServices::$services = expUsersBase::specs( array(
-    'tree' => array( 'The whole bookmark tree of the current user in one call: nested folders (with depth, path, count of bookmarks inside) and the top level bookmarks', 'user', 'r', '', 'folders, bookmarks' ),
-    'rows' => array( 'The tree as one flat list in display order (folders before the bookmarks of their level); optionally only the content of a folder', 'user', 'r', 'folder:int', 'list of folder and bookmark rows with depth' ),
-    'folders' => array( 'The folders of the current user as a flat list, paged', 'user', 'r', 'limit:int,offset:int', 'paged folders' ),
-    'bookmarks' => array( 'The bookmarks, paged: all of them flat (the order of the content bookmarks fetch), or only those of one folder (0 is the top level)', 'user', 'r', 'limit:int,offset:int,folder:int', 'paged bookmarks' ),
-    'createFolder' => array( 'Create a folder (POST name, parent_id: 0 or missing is the top level)', 'user', 'w', 'name:string,parent_id:int', 'folder' ),
-    'renameFolder' => array( 'Rename a folder (POST id, name)', 'user', 'w', 'id:int,name:string', 'folder' ),
-    'deleteFolder' => array( 'Delete a folder (POST id, delete_bookmarks): its bookmarks and folders move up one level; with delete_bookmarks everything inside is deleted', 'user', 'w', 'id:int,delete_bookmarks:bool', 'id, removed' ),
-    'moveFolder' => array( 'Move a folder into another folder or to the top level (POST id, parent_id); 409 into itself or below itself', 'user', 'w', 'id:int,parent_id:int', 'folder' ),
-    'moveBookmark' => array( 'Move a bookmark into a folder or to the top level (POST id, folder_id)', 'user', 'w', 'id:int,folder_id:int', 'bookmark' ),
-    'place' => array( 'Put a folder or bookmark into a folder in front of another entry of the same kind (POST type folder|bookmark, id, parent_id, before_id; 0 is last)', 'user', 'w', 'type:string,id:int,parent_id:int,before_id:int', 'type, id, parent_id' ),
-    'addBookmark' => array( 'Bookmark a node, optionally in a folder (POST node_id, folder_id)', 'user', 'w', 'node_id:int,folder_id:int', 'bookmark' ),
-    'removeBookmark' => array( 'Remove a bookmark (POST id)', 'user', 'w', 'id:int', 'id, removed' ),
-) );

@@ -10,7 +10,26 @@
 
 class expPreferencesServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'get' => array( 'summary' => 'One preference of the current user', 'access' => 'user', 'write' => false, 'args' => array( 'name' => 'string' ), 'returns' => 'name, value, exists' ),
+        'getMany' => array( 'summary' => 'Several preferences of the current user (comma separated names)', 'access' => 'user', 'write' => false, 'args' => array( 'names' => 'list' ), 'returns' => 'name => value' ),
+        'listAll' => array( 'summary' => 'All preferences of the current user, paged', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged name, value' ),
+        'byPrefix' => array( 'summary' => 'The preferences whose name starts with a prefix', 'access' => 'user', 'write' => false, 'args' => array( 'prefix' => 'string', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged name, value' ),
+        'exists' => array( 'summary' => 'Whether a preference is set', 'access' => 'user', 'write' => false, 'args' => array( 'name' => 'string' ), 'returns' => 'exists' ),
+        'count' => array( 'summary' => 'The number of preferences of the current user', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'count' ),
+        'set' => array( 'summary' => 'Set a preference (POST name, value)', 'access' => 'user', 'write' => true, 'args' => array( 'name' => 'string', 'value' => 'string' ), 'returns' => 'name, value' ),
+        'setMany' => array( 'summary' => 'Set up to 100 preferences (POST values JSON)', 'access' => 'user', 'write' => true, 'args' => array( 'values' => 'json' ), 'returns' => 'stored' ),
+        'remove' => array( 'summary' => 'Remove a preference (POST name)', 'access' => 'user', 'write' => true, 'args' => array( 'name' => 'string' ), 'returns' => 'removed' ),
+        'increment' => array( 'summary' => 'Add to a numeric preference (POST name, by)', 'access' => 'user', 'write' => true, 'args' => array( 'name' => 'string', 'by' => 'int' ), 'returns' => 'value' ),
+        'listOf' => array( 'summary' => 'The preferences of another user', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged name, value' ),
+        'getOf' => array( 'summary' => 'One preference of another user', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array( 'id' => 'int', 'name' => 'string' ), 'returns' => 'value' ),
+        'setOf' => array( 'summary' => 'Set a preference of another user (POST user, name, value)', 'access' => array( 'setup', 'administrate' ), 'write' => true, 'args' => array( 'user' => 'int', 'name' => 'string', 'value' => 'string' ), 'returns' => 'value' ),
+    );
 
     protected static function name( $name )
     {
@@ -157,19 +176,3 @@ class expPreferencesServices extends expUsersBase
         return self::ok( array( 'user' => (int)$user->attribute( 'contentobject_id' ), 'name' => $name, 'value' => $value ) );
     }
 }
-
-expPreferencesServices::$services = expUsersBase::specs( array(
-    'get' => array( 'One preference of the current user', 'user', 'r', 'name:string', 'name, value, exists' ),
-    'getMany' => array( 'Several preferences of the current user (comma separated names)', 'user', 'r', 'names:list', 'name => value' ),
-    'listAll' => array( 'All preferences of the current user, paged', 'user', 'r', 'limit:int,offset:int', 'paged name, value' ),
-    'byPrefix' => array( 'The preferences whose name starts with a prefix', 'user', 'r', 'prefix:string,limit:int,offset:int', 'paged name, value' ),
-    'exists' => array( 'Whether a preference is set', 'user', 'r', 'name:string', 'exists' ),
-    'count' => array( 'The number of preferences of the current user', 'user', 'r', '', 'count' ),
-    'set' => array( 'Set a preference (POST name, value)', 'user', 'w', 'name:string,value:string', 'name, value' ),
-    'setMany' => array( 'Set up to 100 preferences (POST values JSON)', 'user', 'w', 'values:json', 'stored' ),
-    'remove' => array( 'Remove a preference (POST name)', 'user', 'w', 'name:string', 'removed' ),
-    'increment' => array( 'Add to a numeric preference (POST name, by)', 'user', 'w', 'name:string,by:int', 'value' ),
-    'listOf' => array( 'The preferences of another user', 'setup/administrate', 'r', 'id:int,limit:int,offset:int', 'paged name, value' ),
-    'getOf' => array( 'One preference of another user', 'setup/administrate', 'r', 'id:int,name:string', 'value' ),
-    'setOf' => array( 'Set a preference of another user (POST user, name, value)', 'setup/administrate', 'w', 'user:int,name:string,value:string', 'value' ),
-) );

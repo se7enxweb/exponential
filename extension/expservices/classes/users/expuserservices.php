@@ -12,7 +12,55 @@
 
 class expUserServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'current' => array( 'summary' => 'The current user: id, name, groups, and the private data of oneself', 'access' => 'public', 'write' => false, 'args' => array(), 'returns' => 'user' ),
+        'fetch' => array( 'summary' => 'A user by content object id; login, e-mail and state only for oneself or users the caller may edit', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'user' ),
+        'byLogin' => array( 'summary' => 'A user by login name', 'access' => 'user', 'write' => false, 'args' => array( 'login' => 'string' ), 'returns' => 'user' ),
+        'byEmail' => array( 'summary' => 'A user by e-mail address, only when the caller may see that user\'s private data', 'access' => 'user', 'write' => false, 'args' => array( 'email' => 'string' ), 'returns' => 'user' ),
+        'exists' => array( 'summary' => 'Whether a login name is taken', 'access' => 'public', 'write' => false, 'args' => array( 'login' => 'string' ), 'returns' => 'exists' ),
+        'search' => array( 'summary' => 'Search users by login or name (2 characters or more)', 'access' => 'user', 'write' => false, 'args' => array( 'query' => 'string', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged users' ),
+        'listAll' => array( 'summary' => 'All users, paged', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged users' ),
+        'count' => array( 'summary' => 'The number of users', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'count' ),
+        'listByGroup' => array( 'summary' => 'The users directly in a user group (group node id), paged', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged users' ),
+        'loggedIn' => array( 'summary' => 'The users with an active session', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged users' ),
+        'loggedInCount' => array( 'summary' => 'Logged in registered and anonymous sessions', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'registered, anonymous' ),
+        'isOnline' => array( 'summary' => 'Whether a user has an active session', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'online' ),
+        'profile' => array( 'summary' => 'The content attributes of a user (not the account), oneself when no id', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'fields' ),
+        'updateProfile' => array( 'summary' => 'Update profile attributes of a user the caller may edit (POST id, fields JSON)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'fields' => 'json' ), 'returns' => 'updated' ),
+        'create' => array( 'summary' => 'Create a user in a group (POST group, login, email, password, fields, enabled, class)', 'access' => 'user', 'write' => true, 'args' => array( 'group' => 'int', 'login' => 'string', 'email' => 'string', 'password' => 'string', 'fields' => 'json', 'enabled' => 'bool', 'class' => 'string' ), 'returns' => 'user' ),
+        'remove' => array( 'summary' => 'Move a user to the trash (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'removed nodes' ),
+        'enable' => array( 'summary' => 'Enable an account (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'enabled' ),
+        'disable' => array( 'summary' => 'Disable an account and end its sessions (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'enabled' ),
+        'unlock' => array( 'summary' => 'Reset the failed login counter (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'failed_login_attempts' ),
+        'setPassword' => array( 'summary' => 'Set another user\'s password, ends their sessions (POST id, password)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'password' => 'string' ), 'returns' => 'changed' ),
+        'changeEmail' => array( 'summary' => 'Change the e-mail address of a user the caller may edit (POST id, email)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'email' => 'string' ), 'returns' => 'email' ),
+        'changeLogin' => array( 'summary' => 'Change the login name of a user the caller may edit (POST id, login)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'login' => 'string' ), 'returns' => 'login' ),
+        'loginInfo' => array( 'summary' => 'Login count, last visit, failed attempts, lock and online state', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'login info' ),
+        'lastVisit' => array( 'summary' => 'The last visit of a user', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'last_visit' ),
+        'settings' => array( 'summary' => 'Account settings: enabled and the maximum number of logins', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'is_enabled, max_login' ),
+        'setMaxLogin' => array( 'summary' => 'Change the maximum number of simultaneous logins (POST id, max_login)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'max_login' => 'int' ), 'returns' => 'max_login' ),
+        'validateLogin' => array( 'summary' => 'Check a login name against the validation rules and whether it is taken', 'access' => 'public', 'write' => false, 'args' => array( 'login' => 'string' ), 'returns' => 'valid, error, taken' ),
+        'validatePassword' => array( 'summary' => 'Check a password against the length rule', 'access' => 'public', 'write' => false, 'args' => array( 'password' => 'string' ), 'returns' => 'valid' ),
+        'passwordPolicy' => array( 'summary' => 'The password and e-mail rules of the site', 'access' => 'public', 'write' => false, 'args' => array(), 'returns' => 'min_length, generated_length, unique_email' ),
+        'generatePassword' => array( 'summary' => 'A generated password', 'access' => 'user', 'write' => false, 'args' => array( 'length' => 'int' ), 'returns' => 'password' ),
+        'rolesOf' => array( 'summary' => 'The roles a user has, directly and through groups', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'roles' ),
+        'groupsOf' => array( 'summary' => 'The groups a user is a member of', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'groups' ),
+        'effectivePolicies' => array( 'summary' => 'The effective module/function access of a user, paged', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'module, function, unlimited, policies' ),
+        'limitations' => array( 'summary' => 'The limited role assignments of a user', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'assignments, values' ),
+        'hasAccess' => array( 'summary' => 'Whether the current user has access to a module and function', 'access' => 'public', 'write' => false, 'args' => array( 'module' => 'string', 'function' => 'string' ), 'returns' => 'access, allowed' ),
+        'hasAccessOf' => array( 'summary' => 'Whether a given user has access to a module and function', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'id' => 'int', 'module' => 'string', 'function' => 'string' ), 'returns' => 'access, allowed' ),
+        'canNode' => array( 'summary' => 'The current user\'s rights on a node: read, edit, remove, create, move, hide, translate', 'access' => 'public', 'write' => false, 'args' => array( 'node' => 'int' ), 'returns' => 'rights' ),
+        'accessSummary' => array( 'summary' => 'The modules and functions the current user has any access to', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'module => functions' ),
+        'canLoginTo' => array( 'summary' => 'Whether a user may log in to a siteaccess', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'id' => 'int', 'siteaccess' => 'string' ), 'returns' => 'allowed' ),
+        'hashTypes' => array( 'summary' => 'The password hash types and the default', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'types, default' ),
+        'userClasses' => array( 'summary' => 'The content class identifiers of users and of user groups', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'user, group' ),
+        'anonymous' => array( 'summary' => 'The id of the anonymous user', 'access' => 'public', 'write' => false, 'args' => array(), 'returns' => 'id' ),
+    );
 
     public static function current( array $a = array() )
     {
@@ -535,48 +583,3 @@ class expUserServices extends expUsersBase
         return isset( $rows[0][$key] ) ? $rows[0][$key] : 0;
     }
 }
-
-expUserServices::$services = expUsersBase::specs( array(
-    'current' => array( 'The current user: id, name, groups, and the private data of oneself', 'public', 'r', '', 'user' ),
-    'fetch' => array( 'A user by content object id; login, e-mail and state only for oneself or users the caller may edit', 'user', 'r', 'id:int', 'user' ),
-    'byLogin' => array( 'A user by login name', 'user', 'r', 'login:string', 'user' ),
-    'byEmail' => array( 'A user by e-mail address, only when the caller may see that user\'s private data', 'user', 'r', 'email:string', 'user' ),
-    'exists' => array( 'Whether a login name is taken', 'public', 'r', 'login:string', 'exists' ),
-    'search' => array( 'Search users by login or name (2 characters or more)', 'user', 'r', 'query:string,limit:int,offset:int', 'paged users' ),
-    'listAll' => array( 'All users, paged', 'user', 'r', 'limit:int,offset:int', 'paged users' ),
-    'count' => array( 'The number of users', 'user', 'r', '', 'count' ),
-    'listByGroup' => array( 'The users directly in a user group (group node id), paged', 'user', 'r', 'group:int,limit:int,offset:int', 'paged users' ),
-    'loggedIn' => array( 'The users with an active session', 'setup/administrate', 'r', 'limit:int,offset:int', 'paged users' ),
-    'loggedInCount' => array( 'Logged in registered and anonymous sessions', 'setup/administrate', 'r', '', 'registered, anonymous' ),
-    'isOnline' => array( 'Whether a user has an active session', 'user', 'r', 'id:int', 'online' ),
-    'profile' => array( 'The content attributes of a user (not the account), oneself when no id', 'user', 'r', 'id:int', 'fields' ),
-    'updateProfile' => array( 'Update profile attributes of a user the caller may edit (POST id, fields JSON)', 'user', 'w', 'id:int,fields:json', 'updated' ),
-    'create' => array( 'Create a user in a group (POST group, login, email, password, fields, enabled, class)', 'user', 'w', 'group:int,login:string,email:string,password:string,fields:json,enabled:bool,class:string', 'user' ),
-    'remove' => array( 'Move a user to the trash (POST id)', 'user', 'w', 'id:int', 'removed nodes' ),
-    'enable' => array( 'Enable an account (POST id)', 'user', 'w', 'id:int', 'enabled' ),
-    'disable' => array( 'Disable an account and end its sessions (POST id)', 'user', 'w', 'id:int', 'enabled' ),
-    'unlock' => array( 'Reset the failed login counter (POST id)', 'user', 'w', 'id:int', 'failed_login_attempts' ),
-    'setPassword' => array( 'Set another user\'s password, ends their sessions (POST id, password)', 'user', 'w', 'id:int,password:string', 'changed' ),
-    'changeEmail' => array( 'Change the e-mail address of a user the caller may edit (POST id, email)', 'user', 'w', 'id:int,email:string', 'email' ),
-    'changeLogin' => array( 'Change the login name of a user the caller may edit (POST id, login)', 'user', 'w', 'id:int,login:string', 'login' ),
-    'loginInfo' => array( 'Login count, last visit, failed attempts, lock and online state', 'user', 'r', 'id:int', 'login info' ),
-    'lastVisit' => array( 'The last visit of a user', 'user', 'r', 'id:int', 'last_visit' ),
-    'settings' => array( 'Account settings: enabled and the maximum number of logins', 'user', 'r', 'id:int', 'is_enabled, max_login' ),
-    'setMaxLogin' => array( 'Change the maximum number of simultaneous logins (POST id, max_login)', 'user', 'w', 'id:int,max_login:int', 'max_login' ),
-    'validateLogin' => array( 'Check a login name against the validation rules and whether it is taken', 'public', 'r', 'login:string', 'valid, error, taken' ),
-    'validatePassword' => array( 'Check a password against the length rule', 'public', 'r', 'password:string', 'valid' ),
-    'passwordPolicy' => array( 'The password and e-mail rules of the site', 'public', 'r', '', 'min_length, generated_length, unique_email' ),
-    'generatePassword' => array( 'A generated password', 'user', 'r', 'length:int', 'password' ),
-    'rolesOf' => array( 'The roles a user has, directly and through groups', 'role/list', 'r', 'id:int', 'roles' ),
-    'groupsOf' => array( 'The groups a user is a member of', 'user', 'r', 'id:int', 'groups' ),
-    'effectivePolicies' => array( 'The effective module/function access of a user, paged', 'role/list', 'r', 'id:int,limit:int,offset:int', 'module, function, unlimited, policies' ),
-    'limitations' => array( 'The limited role assignments of a user', 'role/list', 'r', 'id:int', 'assignments, values' ),
-    'hasAccess' => array( 'Whether the current user has access to a module and function', 'public', 'r', 'module:string,function:string', 'access, allowed' ),
-    'hasAccessOf' => array( 'Whether a given user has access to a module and function', 'role/list', 'r', 'id:int,module:string,function:string', 'access, allowed' ),
-    'canNode' => array( 'The current user\'s rights on a node: read, edit, remove, create, move, hide, translate', 'public', 'r', 'node:int', 'rights' ),
-    'accessSummary' => array( 'The modules and functions the current user has any access to', 'user', 'r', '', 'module => functions' ),
-    'canLoginTo' => array( 'Whether a user may log in to a siteaccess', 'role/list', 'r', 'id:int,siteaccess:string', 'allowed' ),
-    'hashTypes' => array( 'The password hash types and the default', 'user', 'r', '', 'types, default' ),
-    'userClasses' => array( 'The content class identifiers of users and of user groups', 'user', 'r', '', 'user, group' ),
-    'anonymous' => array( 'The id of the anonymous user', 'public', 'r', '', 'id' ),
-) );

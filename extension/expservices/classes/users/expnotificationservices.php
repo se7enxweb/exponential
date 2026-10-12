@@ -11,7 +11,34 @@
 
 class expNotificationServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'settings' => array( 'summary' => 'Digest settings, subscription count and collaboration types of the current user', 'access' => array( 'notification', 'use' ), 'write' => false, 'args' => array(), 'returns' => 'digest, subscriptions, collaboration_types' ),
+        'digestTypes' => array( 'summary' => 'The digest types', 'access' => array( 'notification', 'use' ), 'write' => false, 'args' => array(), 'returns' => 'id, name' ),
+        'setDigest' => array( 'summary' => 'Set the digest settings (POST receive_digest, digest_type, day, time)', 'access' => array( 'notification', 'use' ), 'write' => true, 'args' => array( 'receive_digest' => 'bool', 'digest_type' => 'int', 'day' => 'string', 'time' => 'string' ), 'returns' => 'digest' ),
+        'subscriptions' => array( 'summary' => 'The nodes the current user is subscribed to, paged', 'access' => array( 'notification', 'use' ), 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged rules' ),
+        'subscriptionCount' => array( 'summary' => 'The number of subscriptions', 'access' => array( 'notification', 'use' ), 'write' => false, 'args' => array(), 'returns' => 'count' ),
+        'isSubscribed' => array( 'summary' => 'Whether the current user is subscribed to a node', 'access' => array( 'notification', 'use' ), 'write' => false, 'args' => array( 'node' => 'int' ), 'returns' => 'subscribed' ),
+        'subscribe' => array( 'summary' => 'Subscribe to a node and its subtree (POST node, use_digest)', 'access' => array( 'notification', 'use' ), 'write' => true, 'args' => array( 'node' => 'int', 'use_digest' => 'bool' ), 'returns' => 'rule' ),
+        'unsubscribe' => array( 'summary' => 'Unsubscribe from a node (POST node)', 'access' => array( 'notification', 'use' ), 'write' => true, 'args' => array( 'node' => 'int' ), 'returns' => 'subscribed' ),
+        'unsubscribeAll' => array( 'summary' => 'Remove all subscriptions of the current user (POST)', 'access' => array( 'notification', 'use' ), 'write' => true, 'args' => array(), 'returns' => 'removed' ),
+        'setDigestForSubscription' => array( 'summary' => 'Turn the digest on or off for one subscription (POST node, use_digest)', 'access' => array( 'notification', 'use' ), 'write' => true, 'args' => array( 'node' => 'int', 'use_digest' => 'bool' ), 'returns' => 'rule' ),
+        'collaborationTypes' => array( 'summary' => 'The collaboration notification types the current user receives', 'access' => array( 'notification', 'use' ), 'write' => false, 'args' => array(), 'returns' => 'types' ),
+        'subscribeCollaboration' => array( 'summary' => 'Receive notifications of a collaboration type (POST type)', 'access' => array( 'notification', 'use' ), 'write' => true, 'args' => array( 'type' => 'string' ), 'returns' => 'subscribed' ),
+        'unsubscribeCollaboration' => array( 'summary' => 'Stop receiving a collaboration type (POST type)', 'access' => array( 'notification', 'use' ), 'write' => true, 'args' => array( 'type' => 'string' ), 'returns' => 'subscribed' ),
+        'handlers' => array( 'summary' => 'The notification handlers', 'access' => array( 'notification', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'handler names' ),
+        'eventTypes' => array( 'summary' => 'The available notification event types', 'access' => array( 'notification', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'types' ),
+        'subscriptionsOf' => array( 'summary' => 'The subscriptions of a user', 'access' => array( 'notification', 'administrate' ), 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged rules' ),
+        'subscribeUser' => array( 'summary' => 'Subscribe a user to a node (POST user, node, use_digest)', 'access' => array( 'notification', 'administrate' ), 'write' => true, 'args' => array( 'user' => 'int', 'node' => 'int', 'use_digest' => 'bool' ), 'returns' => 'rule' ),
+        'unsubscribeUser' => array( 'summary' => 'Unsubscribe a user from a node (POST user, node)', 'access' => array( 'notification', 'administrate' ), 'write' => true, 'args' => array( 'user' => 'int', 'node' => 'int' ), 'returns' => 'subscribed' ),
+        'subscribers' => array( 'summary' => 'The users subscribed to a node', 'access' => array( 'notification', 'administrate' ), 'write' => false, 'args' => array( 'node' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged subscribers' ),
+        'events' => array( 'summary' => 'The notification events, newest first, paged', 'access' => array( 'notification', 'administrate' ), 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged events' ),
+        'queue' => array( 'summary' => 'The size of the notification queue', 'access' => array( 'notification', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'counts' ),
+    );
 
     protected static function exportRule( eZSubtreeNotificationRule $rule )
     {
@@ -263,27 +290,3 @@ class expNotificationServices extends expUsersBase
         return isset( $r[0]['c'] ) ? $r[0]['c'] : 0;
     }
 }
-
-expNotificationServices::$services = expUsersBase::specs( array(
-    'settings' => array( 'Digest settings, subscription count and collaboration types of the current user', 'notification/use', 'r', '', 'digest, subscriptions, collaboration_types' ),
-    'digestTypes' => array( 'The digest types', 'notification/use', 'r', '', 'id, name' ),
-    'setDigest' => array( 'Set the digest settings (POST receive_digest, digest_type, day, time)', 'notification/use', 'w', 'receive_digest:bool,digest_type:int,day:string,time:string', 'digest' ),
-    'subscriptions' => array( 'The nodes the current user is subscribed to, paged', 'notification/use', 'r', 'limit:int,offset:int', 'paged rules' ),
-    'subscriptionCount' => array( 'The number of subscriptions', 'notification/use', 'r', '', 'count' ),
-    'isSubscribed' => array( 'Whether the current user is subscribed to a node', 'notification/use', 'r', 'node:int', 'subscribed' ),
-    'subscribe' => array( 'Subscribe to a node and its subtree (POST node, use_digest)', 'notification/use', 'w', 'node:int,use_digest:bool', 'rule' ),
-    'unsubscribe' => array( 'Unsubscribe from a node (POST node)', 'notification/use', 'w', 'node:int', 'subscribed' ),
-    'unsubscribeAll' => array( 'Remove all subscriptions of the current user (POST)', 'notification/use', 'w', '', 'removed' ),
-    'setDigestForSubscription' => array( 'Turn the digest on or off for one subscription (POST node, use_digest)', 'notification/use', 'w', 'node:int,use_digest:bool', 'rule' ),
-    'collaborationTypes' => array( 'The collaboration notification types the current user receives', 'notification/use', 'r', '', 'types' ),
-    'subscribeCollaboration' => array( 'Receive notifications of a collaboration type (POST type)', 'notification/use', 'w', 'type:string', 'subscribed' ),
-    'unsubscribeCollaboration' => array( 'Stop receiving a collaboration type (POST type)', 'notification/use', 'w', 'type:string', 'subscribed' ),
-    'handlers' => array( 'The notification handlers', 'notification/administrate', 'r', '', 'handler names' ),
-    'eventTypes' => array( 'The available notification event types', 'notification/administrate', 'r', '', 'types' ),
-    'subscriptionsOf' => array( 'The subscriptions of a user', 'notification/administrate', 'r', 'id:int,limit:int,offset:int', 'paged rules' ),
-    'subscribeUser' => array( 'Subscribe a user to a node (POST user, node, use_digest)', 'notification/administrate', 'w', 'user:int,node:int,use_digest:bool', 'rule' ),
-    'unsubscribeUser' => array( 'Unsubscribe a user from a node (POST user, node)', 'notification/administrate', 'w', 'user:int,node:int', 'subscribed' ),
-    'subscribers' => array( 'The users subscribed to a node', 'notification/administrate', 'r', 'node:int,limit:int,offset:int', 'paged subscribers' ),
-    'events' => array( 'The notification events, newest first, paged', 'notification/administrate', 'r', 'limit:int,offset:int', 'paged events' ),
-    'queue' => array( 'The size of the notification queue', 'notification/administrate', 'r', '', 'counts' ),
-) );

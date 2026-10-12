@@ -10,7 +10,29 @@
 
 class expPolicyServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'fetch' => array( 'summary' => 'A policy with its limitations', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'policy' ),
+        'listOfRole' => array( 'summary' => 'The policies of a role, paged', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged policies' ),
+        'limitations' => array( 'summary' => 'The limitations of a policy, identifier => values', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'limitations' ),
+        'summary' => array( 'summary' => 'A policy as one line of text', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'text' ),
+        'add' => array( 'summary' => 'Add a policy to a role, validated against the module (POST role, module, function, limitations)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'role' => 'int', 'module' => 'string', 'function' => 'string', 'limitations' => 'json' ), 'returns' => 'policy' ),
+        'remove' => array( 'summary' => 'Remove a policy (POST id)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'removed' ),
+        'setLimitations' => array( 'summary' => 'Replace all limitations of a policy (POST id, limitations)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'limitations' => 'json' ), 'returns' => 'policy' ),
+        'addLimitation' => array( 'summary' => 'Add one limitation (POST id, identifier, values)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'identifier' => 'string', 'values' => 'list' ), 'returns' => 'policy' ),
+        'removeLimitation' => array( 'summary' => 'Remove one limitation (POST id, identifier)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'identifier' => 'string' ), 'returns' => 'policy' ),
+        'copy' => array( 'summary' => 'Copy a policy into another role (POST id, role)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'role' => 'int' ), 'returns' => 'policy' ),
+        'modules' => array( 'summary' => 'The modules a policy can name', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array(), 'returns' => 'module names' ),
+        'functions' => array( 'summary' => 'The functions of a module', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'module' => 'string' ), 'returns' => 'function names' ),
+        'availableLimitations' => array( 'summary' => 'The limitation identifiers of a module function', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'module' => 'string', 'function' => 'string' ), 'returns' => 'identifiers' ),
+        'limitationValues' => array( 'summary' => 'The values a limitation can take, paged', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'module' => 'string', 'function' => 'string', 'identifier' => 'string', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged value, name' ),
+        'ofModule' => array( 'summary' => 'The policies naming a module, over all roles', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'module' => 'string', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged policies' ),
+        'findByLimitation' => array( 'summary' => 'The policies with a limitation identifier and value', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'identifier' => 'string', 'value' => 'string', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged policies' ),
+    );
 
     protected static function policy( $id )
     {
@@ -201,22 +223,3 @@ class expPolicyServices extends expUsersBase
         return self::pageOf( $out, $a, 2, 3 );
     }
 }
-
-expPolicyServices::$services = expUsersBase::specs( array(
-    'fetch' => array( 'A policy with its limitations', 'role/view', 'r', 'id:int', 'policy' ),
-    'listOfRole' => array( 'The policies of a role, paged', 'role/view', 'r', 'id:int,limit:int,offset:int', 'paged policies' ),
-    'limitations' => array( 'The limitations of a policy, identifier => values', 'role/view', 'r', 'id:int', 'limitations' ),
-    'summary' => array( 'A policy as one line of text', 'role/view', 'r', 'id:int', 'text' ),
-    'add' => array( 'Add a policy to a role, validated against the module (POST role, module, function, limitations)', 'role/edit', 'w', 'role:int,module:string,function:string,limitations:json', 'policy' ),
-    'remove' => array( 'Remove a policy (POST id)', 'role/edit', 'w', 'id:int', 'removed' ),
-    'setLimitations' => array( 'Replace all limitations of a policy (POST id, limitations)', 'role/edit', 'w', 'id:int,limitations:json', 'policy' ),
-    'addLimitation' => array( 'Add one limitation (POST id, identifier, values)', 'role/edit', 'w', 'id:int,identifier:string,values:list', 'policy' ),
-    'removeLimitation' => array( 'Remove one limitation (POST id, identifier)', 'role/edit', 'w', 'id:int,identifier:string', 'policy' ),
-    'copy' => array( 'Copy a policy into another role (POST id, role)', 'role/edit', 'w', 'id:int,role:int', 'policy' ),
-    'modules' => array( 'The modules a policy can name', 'role/view', 'r', '', 'module names' ),
-    'functions' => array( 'The functions of a module', 'role/view', 'r', 'module:string', 'function names' ),
-    'availableLimitations' => array( 'The limitation identifiers of a module function', 'role/view', 'r', 'module:string,function:string', 'identifiers' ),
-    'limitationValues' => array( 'The values a limitation can take, paged', 'role/view', 'r', 'module:string,function:string,identifier:string,limit:int,offset:int', 'paged value, name' ),
-    'ofModule' => array( 'The policies naming a module, over all roles', 'role/view', 'r', 'module:string,limit:int,offset:int', 'paged policies' ),
-    'findByLimitation' => array( 'The policies with a limitation identifier and value', 'role/view', 'r', 'identifier:string,value:string,limit:int,offset:int', 'paged policies' ),
-) );

@@ -12,7 +12,39 @@
 
 class expRoleServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'listAll' => array( 'summary' => 'All roles, paged', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged roles' ),
+        'count' => array( 'summary' => 'The number of roles', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array(), 'returns' => 'count' ),
+        'fetch' => array( 'summary' => 'A role by id', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'role' ),
+        'view' => array( 'summary' => 'A role with its policies and assignments', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'role, policies, assignments' ),
+        'byName' => array( 'summary' => 'A role by name', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'name' => 'string' ), 'returns' => 'role' ),
+        'exists' => array( 'summary' => 'Whether a role name exists', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'name' => 'string' ), 'returns' => 'exists' ),
+        'policies' => array( 'summary' => 'The policies of a role, paged', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged policies' ),
+        'policyCount' => array( 'summary' => 'The number of policies of a role', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'count' ),
+        'assignments' => array( 'summary' => 'Who a role is assigned to, with limitations', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged assignments' ),
+        'assignmentsOf' => array( 'summary' => 'The roles assigned to a user or group object', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'object' => 'int' ), 'returns' => 'assignments' ),
+        'byLimitation' => array( 'summary' => 'Roles assigned with a limitation (Subtree/Section, value)', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'identifier' => 'string', 'value' => 'string' ), 'returns' => 'roles' ),
+        'create' => array( 'summary' => 'Create an empty role (POST name)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'name' => 'string' ), 'returns' => 'role' ),
+        'rename' => array( 'summary' => 'Rename a role (POST id, name)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'name' => 'string' ), 'returns' => 'role' ),
+        'copy' => array( 'summary' => 'Copy a role with its policies (POST id, optional name)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'name' => 'string' ), 'returns' => 'role' ),
+        'remove' => array( 'summary' => 'Remove a role (POST id, force when it is assigned)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'force' => 'bool' ), 'returns' => 'removed' ),
+        'draftCreate' => array( 'summary' => 'Start editing: create (or return) the draft of a role (POST id)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'draft role' ),
+        'draft' => array( 'summary' => 'The draft of a role', 'access' => array( 'role', 'edit' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'draft role' ),
+        'draftRename' => array( 'summary' => 'Rename the draft (POST id, name)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'name' => 'string' ), 'returns' => 'draft role' ),
+        'draftAddPolicy' => array( 'summary' => 'Add a policy to the draft (POST id, module, function, limitations JSON)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'module' => 'string', 'function' => 'string', 'limitations' => 'json' ), 'returns' => 'policy' ),
+        'draftRemovePolicy' => array( 'summary' => 'Remove a policy from the draft (POST id, policy)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int', 'policy' => 'int' ), 'returns' => 'draft role' ),
+        'draftDiscard' => array( 'summary' => 'Throw the draft away (POST id)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'draft_discarded' ),
+        'publish' => array( 'summary' => 'Publish the draft: it replaces the policies of the role (POST id)', 'access' => array( 'role', 'edit' ), 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'role' ),
+        'assign' => array( 'summary' => 'Assign a role to a user or group (POST id, object, limit subtree|section, limit_value)', 'access' => array( 'role', 'assign' ), 'write' => true, 'args' => array( 'id' => 'int', 'object' => 'int', 'limit' => 'string', 'limit_value' => 'string' ), 'returns' => 'assignments' ),
+        'unassign' => array( 'summary' => 'Remove an assignment (POST id, object, optional assignment id)', 'access' => array( 'role', 'assign' ), 'write' => true, 'args' => array( 'id' => 'int', 'object' => 'int', 'assignment' => 'int' ), 'returns' => 'assignments' ),
+        'assigned' => array( 'summary' => 'The objects (users, groups) a role is assigned to', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'objects' ),
+        'usersWith' => array( 'summary' => 'The users and groups holding a role', 'access' => array( 'role', 'view' ), 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged objects' ),
+    );
 
     protected static function draftOf( eZRole $role, $required = true )
     {
@@ -336,32 +368,3 @@ class expRoleServices extends expUsersBase
         return self::pageOf( $out, $a, 1, 2 );
     }
 }
-
-expRoleServices::$services = expUsersBase::specs( array(
-    'listAll' => array( 'All roles, paged', 'role/list', 'r', 'limit:int,offset:int', 'paged roles' ),
-    'count' => array( 'The number of roles', 'role/list', 'r', '', 'count' ),
-    'fetch' => array( 'A role by id', 'role/list', 'r', 'id:int', 'role' ),
-    'view' => array( 'A role with its policies and assignments', 'role/view', 'r', 'id:int', 'role, policies, assignments' ),
-    'byName' => array( 'A role by name', 'role/list', 'r', 'name:string', 'role' ),
-    'exists' => array( 'Whether a role name exists', 'role/list', 'r', 'name:string', 'exists' ),
-    'policies' => array( 'The policies of a role, paged', 'role/view', 'r', 'id:int,limit:int,offset:int', 'paged policies' ),
-    'policyCount' => array( 'The number of policies of a role', 'role/view', 'r', 'id:int', 'count' ),
-    'assignments' => array( 'Who a role is assigned to, with limitations', 'role/view', 'r', 'id:int,limit:int,offset:int', 'paged assignments' ),
-    'assignmentsOf' => array( 'The roles assigned to a user or group object', 'role/view', 'r', 'object:int', 'assignments' ),
-    'byLimitation' => array( 'Roles assigned with a limitation (Subtree/Section, value)', 'role/view', 'r', 'identifier:string,value:string', 'roles' ),
-    'create' => array( 'Create an empty role (POST name)', 'role/edit', 'w', 'name:string', 'role' ),
-    'rename' => array( 'Rename a role (POST id, name)', 'role/edit', 'w', 'id:int,name:string', 'role' ),
-    'copy' => array( 'Copy a role with its policies (POST id, optional name)', 'role/edit', 'w', 'id:int,name:string', 'role' ),
-    'remove' => array( 'Remove a role (POST id, force when it is assigned)', 'role/edit', 'w', 'id:int,force:bool', 'removed' ),
-    'draftCreate' => array( 'Start editing: create (or return) the draft of a role (POST id)', 'role/edit', 'w', 'id:int', 'draft role' ),
-    'draft' => array( 'The draft of a role', 'role/edit', 'r', 'id:int', 'draft role' ),
-    'draftRename' => array( 'Rename the draft (POST id, name)', 'role/edit', 'w', 'id:int,name:string', 'draft role' ),
-    'draftAddPolicy' => array( 'Add a policy to the draft (POST id, module, function, limitations JSON)', 'role/edit', 'w', 'id:int,module:string,function:string,limitations:json', 'policy' ),
-    'draftRemovePolicy' => array( 'Remove a policy from the draft (POST id, policy)', 'role/edit', 'w', 'id:int,policy:int', 'draft role' ),
-    'draftDiscard' => array( 'Throw the draft away (POST id)', 'role/edit', 'w', 'id:int', 'draft_discarded' ),
-    'publish' => array( 'Publish the draft: it replaces the policies of the role (POST id)', 'role/edit', 'w', 'id:int', 'role' ),
-    'assign' => array( 'Assign a role to a user or group (POST id, object, limit subtree|section, limit_value)', 'role/assign', 'w', 'id:int,object:int,limit:string,limit_value:string', 'assignments' ),
-    'unassign' => array( 'Remove an assignment (POST id, object, optional assignment id)', 'role/assign', 'w', 'id:int,object:int,assignment:int', 'assignments' ),
-    'assigned' => array( 'The objects (users, groups) a role is assigned to', 'role/view', 'r', 'id:int', 'objects' ),
-    'usersWith' => array( 'The users and groups holding a role', 'role/view', 'r', 'id:int,limit:int,offset:int', 'paged objects' ),
-) );

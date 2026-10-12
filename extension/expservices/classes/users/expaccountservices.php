@@ -12,7 +12,32 @@
 
 class expAccountServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'registrationOptions' => array( 'summary' => 'Whether registration is open and how it is verified', 'access' => 'public', 'write' => false, 'args' => array(), 'returns' => 'allowed, verification, rules' ),
+        'register' => array( 'summary' => 'Register a new account (POST login, email, password, fields)', 'access' => array( 'user', 'register' ), 'write' => true, 'args' => array( 'login' => 'string', 'email' => 'string', 'password' => 'string', 'fields' => 'json' ), 'returns' => 'created, needs_activation' ),
+        'activationKeyValid' => array( 'summary' => 'Whether an activation key is valid', 'access' => 'public', 'write' => false, 'args' => array( 'key' => 'string' ), 'returns' => 'valid' ),
+        'activate' => array( 'summary' => 'Activate an account with the key from the activation mail (POST key)', 'access' => array( 'user', 'login' ), 'write' => true, 'args' => array( 'key' => 'string' ), 'returns' => 'activated' ),
+        'forgotRequest' => array( 'summary' => 'Mail a password reset link, the same answer for known and unknown addresses (POST email)', 'access' => array( 'user', 'login' ), 'write' => true, 'args' => array( 'email' => 'string' ), 'returns' => 'requested' ),
+        'forgotKeyValid' => array( 'summary' => 'Whether a reset key is valid', 'access' => 'public', 'write' => false, 'args' => array( 'key' => 'string' ), 'returns' => 'valid' ),
+        'reset' => array( 'summary' => 'Set a new password with a reset key (POST key, password)', 'access' => array( 'user', 'login' ), 'write' => true, 'args' => array( 'key' => 'string', 'password' => 'string' ), 'returns' => 'reset' ),
+        'changePassword' => array( 'summary' => 'Change your password with the old one (POST old_password, new_password, confirm_password)', 'access' => 'user', 'write' => true, 'args' => array( 'old_password' => 'string', 'new_password' => 'string', 'confirm_password' => 'string' ), 'returns' => 'changed' ),
+        'changeEmail' => array( 'summary' => 'Change your e-mail address, confirmed with the password (POST password, email)', 'access' => 'user', 'write' => true, 'args' => array( 'password' => 'string', 'email' => 'string' ), 'returns' => 'email' ),
+        'me' => array( 'summary' => 'Your account: profile data, groups, role count', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'user' ),
+        'myRoles' => array( 'summary' => 'Your roles', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'roles' ),
+        'myGroups' => array( 'summary' => 'Your groups', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'groups' ),
+        'myLoginInfo' => array( 'summary' => 'Your login count, last visit and failed attempts', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'login info' ),
+        'updateMyProfile' => array( 'summary' => 'Update your own profile attributes (POST fields)', 'access' => 'user', 'write' => true, 'args' => array( 'fields' => 'json' ), 'returns' => 'updated' ),
+        'unactivated' => array( 'summary' => 'The accounts waiting for activation, paged', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged users' ),
+        'unactivatedCount' => array( 'summary' => 'The number of accounts waiting for activation', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array(), 'returns' => 'count' ),
+        'activateUser' => array( 'summary' => 'Activate an account by hand (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'activated' ),
+        'pendingResets' => array( 'summary' => 'The number of open password reset requests', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array(), 'returns' => 'count' ),
+        'cancelReset' => array( 'summary' => 'Cancel the open reset requests of a user (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'cancelled' ),
+    );
 
     /** Seconds a forgotten password or activation key stays usable through the services. */
     const KEY_LIFETIME = 86400;
@@ -328,25 +353,3 @@ class expAccountServices extends expUsersBase
         return self::ok( array( 'id' => $id, 'cancelled' => true ) );
     }
 }
-
-expAccountServices::$services = expUsersBase::specs( array(
-    'registrationOptions' => array( 'Whether registration is open and how it is verified', 'public', 'r', '', 'allowed, verification, rules' ),
-    'register' => array( 'Register a new account (POST login, email, password, fields)', 'user/register', 'w', 'login:string,email:string,password:string,fields:json', 'created, needs_activation' ),
-    'activationKeyValid' => array( 'Whether an activation key is valid', 'public', 'r', 'key:string', 'valid' ),
-    'activate' => array( 'Activate an account with the key from the activation mail (POST key)', 'user/login', 'w', 'key:string', 'activated' ),
-    'forgotRequest' => array( 'Mail a password reset link, the same answer for known and unknown addresses (POST email)', 'user/login', 'w', 'email:string', 'requested' ),
-    'forgotKeyValid' => array( 'Whether a reset key is valid', 'public', 'r', 'key:string', 'valid' ),
-    'reset' => array( 'Set a new password with a reset key (POST key, password)', 'user/login', 'w', 'key:string,password:string', 'reset' ),
-    'changePassword' => array( 'Change your password with the old one (POST old_password, new_password, confirm_password)', 'user', 'w', 'old_password:string,new_password:string,confirm_password:string', 'changed' ),
-    'changeEmail' => array( 'Change your e-mail address, confirmed with the password (POST password, email)', 'user', 'w', 'password:string,email:string', 'email' ),
-    'me' => array( 'Your account: profile data, groups, role count', 'user', 'r', '', 'user' ),
-    'myRoles' => array( 'Your roles', 'user', 'r', '', 'roles' ),
-    'myGroups' => array( 'Your groups', 'user', 'r', '', 'groups' ),
-    'myLoginInfo' => array( 'Your login count, last visit and failed attempts', 'user', 'r', '', 'login info' ),
-    'updateMyProfile' => array( 'Update your own profile attributes (POST fields)', 'user', 'w', 'fields:json', 'updated' ),
-    'unactivated' => array( 'The accounts waiting for activation, paged', 'role/list', 'r', 'limit:int,offset:int', 'paged users' ),
-    'unactivatedCount' => array( 'The number of accounts waiting for activation', 'role/list', 'r', '', 'count' ),
-    'activateUser' => array( 'Activate an account by hand (POST id)', 'user', 'w', 'id:int', 'activated' ),
-    'pendingResets' => array( 'The number of open password reset requests', 'role/list', 'r', '', 'count' ),
-    'cancelReset' => array( 'Cancel the open reset requests of a user (POST id)', 'user', 'w', 'id:int', 'cancelled' ),
-) );

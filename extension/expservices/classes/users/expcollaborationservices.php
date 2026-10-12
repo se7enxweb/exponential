@@ -11,7 +11,35 @@
 
 class expCollaborationServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'items' => array( 'summary' => 'The collaboration items of the current user, paged (status active|inactive|archive, is_read, group)', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int', 'status' => 'string', 'is_read' => 'bool', 'group' => 'int' ), 'returns' => 'paged items' ),
+        'itemCount' => array( 'summary' => 'The number of items, same filters', 'access' => 'user', 'write' => false, 'args' => array( 'status' => 'string', 'is_read' => 'bool', 'group' => 'int' ), 'returns' => 'count' ),
+        'summary' => array( 'summary' => 'Active, unread, archived and pending approval counts', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'counts' ),
+        'fetch' => array( 'summary' => 'One item, for participants', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'item' ),
+        'messages' => array( 'summary' => 'The messages of an item, paged', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged messages' ),
+        'messageCount' => array( 'summary' => 'The message and unread message count of an item', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'count, unread' ),
+        'addMessage' => array( 'summary' => 'Add a message to an item (POST item, text)', 'access' => 'user', 'write' => true, 'args' => array( 'item' => 'int', 'text' => 'string' ), 'returns' => 'message' ),
+        'participants' => array( 'summary' => 'The participants of an item with type and role', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'participants' ),
+        'markRead' => array( 'summary' => 'Mark an item read (POST item)', 'access' => 'user', 'write' => true, 'args' => array( 'item' => 'int' ), 'returns' => 'read' ),
+        'setActive' => array( 'summary' => 'Show or hide an item in the current user\'s list (POST item, active)', 'access' => 'user', 'write' => true, 'args' => array( 'item' => 'int', 'active' => 'bool' ), 'returns' => 'active' ),
+        'handlers' => array( 'summary' => 'The active collaboration handlers', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'identifiers' ),
+        'groups' => array( 'summary' => 'The collaboration groups of the current user', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged groups' ),
+        'groupInfo' => array( 'summary' => 'One collaboration group', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'group' ),
+        'groupItems' => array( 'summary' => 'The items of a group, paged', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged items' ),
+        'groupCreate' => array( 'summary' => 'Create a group (POST title, parent)', 'access' => 'user', 'write' => true, 'args' => array( 'title' => 'string', 'parent' => 'int' ), 'returns' => 'group' ),
+        'groupRename' => array( 'summary' => 'Rename a group (POST group, title)', 'access' => 'user', 'write' => true, 'args' => array( 'group' => 'int', 'title' => 'string' ), 'returns' => 'group' ),
+        'groupRemove' => array( 'summary' => 'Remove an empty group (POST group)', 'access' => 'user', 'write' => true, 'args' => array( 'group' => 'int' ), 'returns' => 'removed' ),
+        'moveToGroup' => array( 'summary' => 'Put an item in a group (POST item, group)', 'access' => 'user', 'write' => true, 'args' => array( 'item' => 'int', 'group' => 'int' ), 'returns' => 'item, group' ),
+        'pendingApprovals' => array( 'summary' => 'The approvals waiting for the current user', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged items' ),
+        'approvalStatus' => array( 'summary' => 'The state of an approval item and whether the current user may decide', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'state, can_decide' ),
+        'approve' => array( 'summary' => 'Approve a waiting item as an approver (POST item, comment)', 'access' => 'user', 'write' => true, 'args' => array( 'item' => 'int', 'comment' => 'string' ), 'returns' => 'approval state' ),
+        'deny' => array( 'summary' => 'Deny a waiting item as an approver (POST item, comment)', 'access' => 'user', 'write' => true, 'args' => array( 'item' => 'int', 'comment' => 'string' ), 'returns' => 'approval state' ),
+    );
 
     protected static function me()
     {
@@ -351,28 +379,3 @@ class expCollaborationServices extends expUsersBase
         return self::decide( false );
     }
 }
-
-expCollaborationServices::$services = expUsersBase::specs( array(
-    'items' => array( 'The collaboration items of the current user, paged (status active|inactive|archive, is_read, group)', 'user', 'r', 'limit:int,offset:int,status:string,is_read:bool,group:int', 'paged items' ),
-    'itemCount' => array( 'The number of items, same filters', 'user', 'r', 'status:string,is_read:bool,group:int', 'count' ),
-    'summary' => array( 'Active, unread, archived and pending approval counts', 'user', 'r', '', 'counts' ),
-    'fetch' => array( 'One item, for participants', 'user', 'r', 'id:int', 'item' ),
-    'messages' => array( 'The messages of an item, paged', 'user', 'r', 'id:int,limit:int,offset:int', 'paged messages' ),
-    'messageCount' => array( 'The message and unread message count of an item', 'user', 'r', 'id:int', 'count, unread' ),
-    'addMessage' => array( 'Add a message to an item (POST item, text)', 'user', 'w', 'item:int,text:string', 'message' ),
-    'participants' => array( 'The participants of an item with type and role', 'user', 'r', 'id:int', 'participants' ),
-    'markRead' => array( 'Mark an item read (POST item)', 'user', 'w', 'item:int', 'read' ),
-    'setActive' => array( 'Show or hide an item in the current user\'s list (POST item, active)', 'user', 'w', 'item:int,active:bool', 'active' ),
-    'handlers' => array( 'The active collaboration handlers', 'user', 'r', '', 'identifiers' ),
-    'groups' => array( 'The collaboration groups of the current user', 'user', 'r', 'limit:int,offset:int', 'paged groups' ),
-    'groupInfo' => array( 'One collaboration group', 'user', 'r', 'id:int', 'group' ),
-    'groupItems' => array( 'The items of a group, paged', 'user', 'r', 'id:int,limit:int,offset:int', 'paged items' ),
-    'groupCreate' => array( 'Create a group (POST title, parent)', 'user', 'w', 'title:string,parent:int', 'group' ),
-    'groupRename' => array( 'Rename a group (POST group, title)', 'user', 'w', 'group:int,title:string', 'group' ),
-    'groupRemove' => array( 'Remove an empty group (POST group)', 'user', 'w', 'group:int', 'removed' ),
-    'moveToGroup' => array( 'Put an item in a group (POST item, group)', 'user', 'w', 'item:int,group:int', 'item, group' ),
-    'pendingApprovals' => array( 'The approvals waiting for the current user', 'user', 'r', 'limit:int,offset:int', 'paged items' ),
-    'approvalStatus' => array( 'The state of an approval item and whether the current user may decide', 'user', 'r', 'id:int', 'state, can_decide' ),
-    'approve' => array( 'Approve a waiting item as an approver (POST item, comment)', 'user', 'w', 'item:int,comment:string', 'approval state' ),
-    'deny' => array( 'Deny a waiting item as an approver (POST item, comment)', 'user', 'w', 'item:int,comment:string', 'approval state' ),
-) );

@@ -47,6 +47,13 @@ class's `public static $services`:
 `ezjscServerRouter::call()` hands every class that extends `expServiceBase` to `expServiceBase::invoke()`, which
 checks that the service is declared, calls it, and turns every exception into the error envelope.
 
+Declare the list as the property's value in the class body, never by an assignment after the class
+(`expFooServices::$services = ...;`). A persistent Velocity worker puts the statics of a class it first loaded during a
+request back to their declared value before its next request, and `include_once` does not run such an assignment
+again: from the second request on, every service of the class answered "not declared" (404) on that worker, and the
+extension point survey listed them as missing. The ten users and access domains did this until 2026-10-12 (207
+services; `expUsersDeclarationsTest::testTheServicesSurviveAResetToTheDeclaredValue` guards it now).
+
 ### Discovery
 
 | Call | Answers |

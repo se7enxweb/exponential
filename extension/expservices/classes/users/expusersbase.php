@@ -7,6 +7,12 @@
  * 'public', 'user' or 'module/function', write is 'w' (POST + token, audited) or 'r', and args is
  * 'name:type,name:type' (type int|string|bool|json|list, the same as expServiceBase::arg()).
  *
+ * The domain classes declare their $services expanded, in the class body, and never assign them after the class:
+ * a persistent worker (Velocity) puts the statics of a class first loaded during a request back to their declared
+ * value before its next request, and include_once does not run such an assignment again (every service of the
+ * class then answered "not declared" from the second request of that worker on). specs() stays for lists built
+ * at run time.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices

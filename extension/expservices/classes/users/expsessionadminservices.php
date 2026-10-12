@@ -11,7 +11,29 @@
 
 class expSessionAdminServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'own' => array( 'summary' => 'The current session: user, started, cookie, short identifier', 'access' => 'public', 'write' => false, 'args' => array(), 'returns' => 'session' ),
+        'ownList' => array( 'summary' => 'The active sessions of the current user (other devices)', 'access' => 'user', 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged sessions' ),
+        'ownCount' => array( 'summary' => 'The number of active sessions of the current user', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'count' ),
+        'ownRemove' => array( 'summary' => 'End one of your own sessions (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'string' ), 'returns' => 'removed' ),
+        'ownRemoveOthers' => array( 'summary' => 'End all your sessions except this one (POST)', 'access' => 'user', 'write' => true, 'args' => array(), 'returns' => 'removed' ),
+        'regenerate' => array( 'summary' => 'Issue a new session key for this session (POST)', 'access' => 'user', 'write' => true, 'args' => array(), 'returns' => 'regenerated' ),
+        'listAll' => array( 'summary' => 'The active sessions of the installation, paged', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array( 'limit' => 'int', 'offset' => 'int', 'registered' => 'bool' ), 'returns' => 'paged sessions' ),
+        'byUser' => array( 'summary' => 'The sessions of a user', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array( 'id' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged sessions' ),
+        'count' => array( 'summary' => 'Active, expired and total sessions', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'active, expired, total' ),
+        'stats' => array( 'summary' => 'Registered and anonymous sessions and expired ones', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'registered, anonymous, expired' ),
+        'expiredCount' => array( 'summary' => 'The number of expired sessions', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'count' ),
+        'removeExpired' => array( 'summary' => 'Delete expired sessions (POST)', 'access' => array( 'setup', 'administrate' ), 'write' => true, 'args' => array(), 'returns' => 'removed' ),
+        'remove' => array( 'summary' => 'End a session by its identifier (POST id)', 'access' => array( 'setup', 'administrate' ), 'write' => true, 'args' => array( 'id' => 'string' ), 'returns' => 'removed' ),
+        'removeByUser' => array( 'summary' => 'End all sessions of a user but your own (POST id)', 'access' => array( 'setup', 'administrate' ), 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'removed' ),
+        'settings' => array( 'summary' => 'Session handler and timeouts', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'handler, timeouts' ),
+        'handler' => array( 'summary' => 'The session handler class and PHP save handler', 'access' => array( 'setup', 'administrate' ), 'write' => false, 'args' => array(), 'returns' => 'class, save_handler' ),
+    );
 
     protected static function sid( $key )
     {
@@ -196,22 +218,3 @@ class expSessionAdminServices extends expUsersBase
         return self::ok( array( 'class' => get_class( eZSession::getHandlerInstance() ), 'save_handler' => (string)ini_get( 'session.save_handler' ) ) );
     }
 }
-
-expSessionAdminServices::$services = expUsersBase::specs( array(
-    'own' => array( 'The current session: user, started, cookie, short identifier', 'public', 'r', '', 'session' ),
-    'ownList' => array( 'The active sessions of the current user (other devices)', 'user', 'r', 'limit:int,offset:int', 'paged sessions' ),
-    'ownCount' => array( 'The number of active sessions of the current user', 'user', 'r', '', 'count' ),
-    'ownRemove' => array( 'End one of your own sessions (POST id)', 'user', 'w', 'id:string', 'removed' ),
-    'ownRemoveOthers' => array( 'End all your sessions except this one (POST)', 'user', 'w', '', 'removed' ),
-    'regenerate' => array( 'Issue a new session key for this session (POST)', 'user', 'w', '', 'regenerated' ),
-    'listAll' => array( 'The active sessions of the installation, paged', 'setup/administrate', 'r', 'limit:int,offset:int,registered:bool', 'paged sessions' ),
-    'byUser' => array( 'The sessions of a user', 'setup/administrate', 'r', 'id:int,limit:int,offset:int', 'paged sessions' ),
-    'count' => array( 'Active, expired and total sessions', 'setup/administrate', 'r', '', 'active, expired, total' ),
-    'stats' => array( 'Registered and anonymous sessions and expired ones', 'setup/administrate', 'r', '', 'registered, anonymous, expired' ),
-    'expiredCount' => array( 'The number of expired sessions', 'setup/administrate', 'r', '', 'count' ),
-    'removeExpired' => array( 'Delete expired sessions (POST)', 'setup/administrate', 'w', '', 'removed' ),
-    'remove' => array( 'End a session by its identifier (POST id)', 'setup/administrate', 'w', 'id:string', 'removed' ),
-    'removeByUser' => array( 'End all sessions of a user but your own (POST id)', 'setup/administrate', 'w', 'id:int', 'removed' ),
-    'settings' => array( 'Session handler and timeouts', 'setup/administrate', 'r', '', 'handler, timeouts' ),
-    'handler' => array( 'The session handler class and PHP save handler', 'setup/administrate', 'r', '', 'class, save_handler' ),
-) );

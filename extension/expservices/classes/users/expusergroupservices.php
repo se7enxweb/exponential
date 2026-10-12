@@ -9,7 +9,33 @@
 
 class expUserGroupServices extends expUsersBase
 {
-    public static $services = array();
+    /**
+     * The services (expServiceBase), declared here rather than assigned after the class: a persistent worker
+     * (Velocity) puts the statics of a class loaded during a request back to their declared value before the
+     * next one, and an assignment after the class would not run again.
+     */
+    public static $services = array(
+        'root' => array( 'summary' => 'The users root node, the default placement and the group classes', 'access' => 'user', 'write' => false, 'args' => array(), 'returns' => 'node_id' ),
+        'tree' => array( 'summary' => 'The group tree below a node, to a depth (default the users root, depth 3)', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int', 'depth' => 'int' ), 'returns' => 'nested groups' ),
+        'fetch' => array( 'summary' => 'A user group by node id', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int' ), 'returns' => 'group' ),
+        'children' => array( 'summary' => 'The subgroups of a group, paged', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged groups' ),
+        'subgroupCount' => array( 'summary' => 'The number of subgroups', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int' ), 'returns' => 'count' ),
+        'path' => array( 'summary' => 'The path from the root to a group', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int' ), 'returns' => 'nodes' ),
+        'parent' => array( 'summary' => 'The parent group', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int' ), 'returns' => 'group' ),
+        'search' => array( 'summary' => 'Search groups by name', 'access' => 'user', 'write' => false, 'args' => array( 'query' => 'string', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged groups' ),
+        'members' => array( 'summary' => 'The users directly in a group, paged', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int', 'limit' => 'int', 'offset' => 'int' ), 'returns' => 'paged users' ),
+        'memberCount' => array( 'summary' => 'The number of users directly in a group', 'access' => 'user', 'write' => false, 'args' => array( 'group' => 'int' ), 'returns' => 'count' ),
+        'isMember' => array( 'summary' => 'Whether a user is directly in a group', 'access' => 'user', 'write' => false, 'args' => array( 'user' => 'int', 'group' => 'int' ), 'returns' => 'member' ),
+        'ofUser' => array( 'summary' => 'The groups of a user', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'groups' ),
+        'rolesOf' => array( 'summary' => 'The roles assigned to a group', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'group' => 'int' ), 'returns' => 'roles' ),
+        'create' => array( 'summary' => 'Create a group (POST parent, name, class, fields)', 'access' => 'user', 'write' => true, 'args' => array( 'parent' => 'int', 'name' => 'string', 'class' => 'string', 'fields' => 'json' ), 'returns' => 'group' ),
+        'rename' => array( 'summary' => 'Rename a group (POST group, name)', 'access' => 'user', 'write' => true, 'args' => array( 'group' => 'int', 'name' => 'string' ), 'returns' => 'group' ),
+        'remove' => array( 'summary' => 'Move a group to the trash (POST group, force for a group with children)', 'access' => 'user', 'write' => true, 'args' => array( 'group' => 'int', 'force' => 'bool' ), 'returns' => 'removed' ),
+        'addMember' => array( 'summary' => 'Add a user to a group, a new location (POST group, user)', 'access' => 'user', 'write' => true, 'args' => array( 'group' => 'int', 'user' => 'int' ), 'returns' => 'member' ),
+        'removeMember' => array( 'summary' => 'Remove a user from a group, never the last one (POST group, user)', 'access' => 'user', 'write' => true, 'args' => array( 'group' => 'int', 'user' => 'int' ), 'returns' => 'member' ),
+        'moveMember' => array( 'summary' => 'Move a user from one group to another (POST user, from, to)', 'access' => 'user', 'write' => true, 'args' => array( 'user' => 'int', 'from' => 'int', 'to' => 'int' ), 'returns' => 'from, to' ),
+        'addMembers' => array( 'summary' => 'Add up to 100 users to a group (POST group, users)', 'access' => 'user', 'write' => true, 'args' => array( 'group' => 'int', 'users' => 'list' ), 'returns' => 'added, skipped' ),
+    );
 
     protected static function rootNodeId()
     {
@@ -281,26 +307,3 @@ class expUserGroupServices extends expUsersBase
         return self::ok( array( 'added' => $done, 'skipped' => count( $ids ) - count( $done ) ) );
     }
 }
-
-expUserGroupServices::$services = expUsersBase::specs( array(
-    'root' => array( 'The users root node, the default placement and the group classes', 'user', 'r', '', 'node_id' ),
-    'tree' => array( 'The group tree below a node, to a depth (default the users root, depth 3)', 'user', 'r', 'group:int,depth:int', 'nested groups' ),
-    'fetch' => array( 'A user group by node id', 'user', 'r', 'group:int', 'group' ),
-    'children' => array( 'The subgroups of a group, paged', 'user', 'r', 'group:int,limit:int,offset:int', 'paged groups' ),
-    'subgroupCount' => array( 'The number of subgroups', 'user', 'r', 'group:int', 'count' ),
-    'path' => array( 'The path from the root to a group', 'user', 'r', 'group:int', 'nodes' ),
-    'parent' => array( 'The parent group', 'user', 'r', 'group:int', 'group' ),
-    'search' => array( 'Search groups by name', 'user', 'r', 'query:string,limit:int,offset:int', 'paged groups' ),
-    'members' => array( 'The users directly in a group, paged', 'user', 'r', 'group:int,limit:int,offset:int', 'paged users' ),
-    'memberCount' => array( 'The number of users directly in a group', 'user', 'r', 'group:int', 'count' ),
-    'isMember' => array( 'Whether a user is directly in a group', 'user', 'r', 'user:int,group:int', 'member' ),
-    'ofUser' => array( 'The groups of a user', 'user', 'r', 'id:int', 'groups' ),
-    'rolesOf' => array( 'The roles assigned to a group', 'role/list', 'r', 'group:int', 'roles' ),
-    'create' => array( 'Create a group (POST parent, name, class, fields)', 'user', 'w', 'parent:int,name:string,class:string,fields:json', 'group' ),
-    'rename' => array( 'Rename a group (POST group, name)', 'user', 'w', 'group:int,name:string', 'group' ),
-    'remove' => array( 'Move a group to the trash (POST group, force for a group with children)', 'user', 'w', 'group:int,force:bool', 'removed' ),
-    'addMember' => array( 'Add a user to a group, a new location (POST group, user)', 'user', 'w', 'group:int,user:int', 'member' ),
-    'removeMember' => array( 'Remove a user from a group, never the last one (POST group, user)', 'user', 'w', 'group:int,user:int', 'member' ),
-    'moveMember' => array( 'Move a user from one group to another (POST user, from, to)', 'user', 'w', 'user:int,from:int,to:int', 'from, to' ),
-    'addMembers' => array( 'Add up to 100 users to a group (POST group, users)', 'user', 'w', 'group:int,users:list', 'added, skipped' ),
-) );

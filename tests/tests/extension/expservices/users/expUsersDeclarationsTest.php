@@ -104,4 +104,24 @@ class expUsersDeclarationsTest extends expUsersTestCase
         foreach ( array( 'user', 'usergroup', 'role', 'policy', 'sessionadmin', 'preferences', 'notification', 'collaboration', 'account' ) as $d )
             $this->assertArrayHasKey( $d, $domains, $d );
     }
+
+    /**
+     * The services are the declared value of $services, not an assignment after the class: a persistent Velocity
+     * worker puts the statics of a class it loaded during a request back to their declared value before the next
+     * request, and include_once never runs such an assignment again (from the second request on every service of
+     * the class answered "not declared", and setup/radsurvey listed 207 remote services fewer on :8080).
+     */
+    public function testTheServicesSurviveAResetToTheDeclaredValue()
+    {
+        $total = 0;
+        foreach ( self::classes() as $class )
+        {
+            $property = new ReflectionProperty( $class, 'services' );
+            $this->assertSame( $class, $property->getDeclaringClass()->getName(), $class );
+            $this->assertSame( $class::$services, $property->getDefaultValue(), $class . ': the declared value is the list' );
+            $this->assertStringNotContainsString( $class . '::$services =', file_get_contents( ( new ReflectionClass( $class ) )->getFileName() ), $class );
+            $total += count( $property->getDefaultValue() );
+        }
+        $this->assertGreaterThanOrEqual( 207, $total );
+    }
 }
