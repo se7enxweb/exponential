@@ -7331,7 +7331,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 f6ecb43c903ad708479858b8bbb01746  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 28f13941e6a56ca4b6dba5757c6fadd0  tests/tests/kernel/classes/ini/command/IniCommandTest.php
 78c48749a30c2769a626984bf19d3074  tests/tests/kernel/classes/ini/command/IniMoveTest.php
-eb1ae762df6703f8f49d16c1c748ab64  tests/tests/kernel/classes/ini/command/RadSurveyIniCommandTest.php
+458cf0fcbc5b3ea89d75a4f9b85a86e2  tests/tests/kernel/classes/ini/command/RadSurveyIniCommandTest.php
 959060a9c19ac27983250250ac2ef1af  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/classes/iniactionfixture.php
 38ef8b1831a5630e0e5f2542f1de2b39  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/settings/ini.ini.append.php
 ca21dfc2294d263c74c7fc15e003d1ca  tests/tests/kernel/classes/ini/command/fixtures/iniroot.php
@@ -7418,8 +7418,8 @@ a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPur
 afa2082e1b51519a99944e89da43c447  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
 fa0cd590f16e91307c04d03e2ed48971  tests/tests/kernel/classes/runnable/RadSurveyDeclaredRegistriesTest.php
-78d750119967739f82033594197c9b83  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
-6160faa4ebe4dfe6ab8997151a1aab6c  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
+87a1cb864846f558789e2bdde576e9e8  tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php
+1a34054b72636dd98017f6767247b40c  tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php
 de6b4bfdf4ba9e1eef0710cf6a42f41f  tests/tests/kernel/classes/runnable/RunnableExtensionPointsTest.php
 6b5a504ace7f81f831359ad296472b95  tests/tests/kernel/classes/runnable/RunnableTest.php
 57cea5c99d78dc76f0bba6f2c9845766  tests/tests/kernel/classes/runnable/ServicesTest.php
