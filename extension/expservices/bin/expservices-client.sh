@@ -14,7 +14,7 @@
 #   post <service> [k=v ...] [-- arg ...]   write call: POST with the form token (field and header)
 #
 # Options (or environment)
-#   -u, --url URL      base URL, default $EXPSERVICES_URL or https://alpha.se7enx.com (add /siteaccess if the site needs it)
+#   -u, --url URL      base URL, default $EXPSERVICES_URL or http://localhost (add /siteaccess if the site needs it)
 #   -c, --jar FILE     cookie jar, default $EXPSERVICES_JAR or ${XDG_CACHE_HOME:-$HOME/.cache}/expservices/cookies.txt
 #   --raw              print the answer as received, do not unwrap or pretty print
 #   --limit N          page size for "page" (default 25)
@@ -31,7 +31,7 @@
 set -u
 set -o pipefail
 
-URL="${EXPSERVICES_URL:-https://alpha.se7enx.com}"
+URL="${EXPSERVICES_URL:-http://localhost}"
 JAR="${EXPSERVICES_JAR:-${XDG_CACHE_HOME:-$HOME/.cache}/expservices/cookies.txt}"
 API_TOKEN="${EXPSERVICES_TOKEN:-}"   # personal API token: bearer sign-in, no cookie and no form token
 RAW=0; LIMIT=25; MAX=1000; META=0; CURL_EXTRA=()

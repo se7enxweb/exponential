@@ -87,4 +87,86 @@ class ezpLiveInstallation
         if ( !is_dir( dirname( __DIR__, 2 ) . '/settings/siteaccess/' . $siteAccess ) )
             PHPUnit\Framework\TestCase::markTestSkipped( "needs the siteaccess '$siteAccess' of an installed site (settings/siteaccess/$siteAccess)" );
     }
+
+    /**
+     * The host name this installation is reached at from outside, for a test that fetches its own pages over HTTP:
+     * EXP_TEST_PUBLIC_HOST when set, else the host of the SiteURL of the default siteaccess ([SiteSettings]
+     * DefaultAccess). Empty when there is none, when it is an example or reserved name (example.com, .test,
+     * .invalid, localhost ...) or when it does not resolve. The host is installation data, never a value of the code.
+     *
+     * @return string host name without scheme, port or path; '' when unknown
+     */
+    public static function publicHost()
+    {
+        $host = trim( (string)getenv( 'EXP_TEST_PUBLIC_HOST' ) );
+        if ( $host !== '' )
+            return $host;
+        if ( self::unavailableReason() !== null )
+            return '';
+        try
+        {
+            $ini = eZINI::instance();
+            $default = $ini->hasVariable( 'SiteSettings', 'DefaultAccess' ) ? (string)$ini->variable( 'SiteSettings', 'DefaultAccess' ) : '';
+            $siteIni = $default !== '' ? eZSiteAccess::getIni( $default, 'site.ini' ) : $ini;
+            $url = $siteIni->hasVariable( 'SiteSettings', 'SiteURL' ) ? (string)$siteIni->variable( 'SiteSettings', 'SiteURL' ) : '';
+        }
+        catch ( Throwable $e )
+        {
+            return '';
+        }
+        $url = preg_replace( '#^[a-z][a-z0-9+.-]*://#i', '', trim( $url ) );
+        $host = strtolower( preg_replace( '#[/:?].*$#', '', $url ) );
+        if ( $host === '' || preg_match( '/(^|\.)(example\.(com|org|net)|localhost|test|invalid|example|local)$/', $host ) )
+            return '';
+        if ( !filter_var( $host, FILTER_VALIDATE_IP ) && gethostbyname( $host ) === $host )
+            return '';
+        return $host;
+    }
+
+    /**
+     * publicHost(), or skips the running test with how to name one.
+     *
+     * @return string
+     */
+    public static function publicHostOrSkip()
+    {
+        $host = self::publicHost();
+        if ( $host === '' )
+            PHPUnit\Framework\TestCase::markTestSkipped( 'needs the public host name of this installation: the SiteURL of the default siteaccess, or EXP_TEST_PUBLIC_HOST' );
+        return $host;
+    }
+
+    /**
+     * The web servers of this installation a live HTTP test runs against: https://<publicHost()>, and beside it
+     * Velocity on the HTTPS port of velocity.ini [ServerSettings] HTTPSPort when something answers there. Empty
+     * when publicHost() is.
+     *
+     * @return string[] base URLs without a trailing slash
+     */
+    public static function publicBases()
+    {
+        $host = self::publicHost();
+        if ( $host === '' )
+            return array();
+        $bases = array( 'https://' . $host );
+        try
+        {
+            $velocity = eZINI::instance( 'velocity.ini' );
+            $port = $velocity->hasVariable( 'ServerSettings', 'HTTPSPort' ) ? (int)$velocity->variable( 'ServerSettings', 'HTTPSPort' ) : 0;
+        }
+        catch ( Throwable $e )
+        {
+            $port = 0;
+        }
+        if ( $port > 0 && $port !== 443 )
+        {
+            $socket = @fsockopen( $host, $port, $errno, $errstr, 2 );
+            if ( $socket )
+            {
+                fclose( $socket );
+                $bases[] = 'https://' . $host . ':' . $port;
+            }
+        }
+        return $bases;
+    }
 }

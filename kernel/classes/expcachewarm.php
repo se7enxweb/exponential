@@ -182,7 +182,7 @@ class expCacheWarm
         if ( !function_exists( 'curl_multi_init' ) )
             return self::fail( 'the curl extension is required to warm in parallel' );
 
-        $host = isset( $options['host'] ) ? $options['host'] : 'alpha.se7enx.com';
+        $host = isset( $options['host'] ) ? $options['host'] : 'localhost';
         $base = isset( $options['base'] ) ? $options['base'] : 'http://127.0.0.1:8088';
         // Two, not eight.
         //

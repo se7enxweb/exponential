@@ -54,7 +54,7 @@ class Warm extends \Exponential\Runnable\Command
                 'json'        => 'Print the result as JSON.',
                 'verbose'     => 'Name every page that had to be rendered.',
                 'limit'       => 'Warm at most this many pages.',
-                'host'        => 'Host header to send (default: alpha.se7enx.com).',
+                'host'        => 'Host header to send (default: SiteURL of site.ini, with Velocity\'s HTTPS port).',
                 'base'        => 'Where to send them (default: http://127.0.0.1:8088).',
                 'concurrency' => 'How many at once (default: 8).',
             ) );
@@ -79,8 +79,8 @@ class Warm extends \Exponential\Runnable\Command
         // The Host header a browser actually sends, port and all.
         //
         // The response cache keys on host, path and encoding. A browser asking for
-        // https://alpha.se7enx.com:8080/site sends "alpha.se7enx.com:8080"; warming
-        // with "alpha.se7enx.com" fills a different entry, which nothing ever reads.
+        // https://www.example.com:8080/site sends "www.example.com:8080"; warming
+        // with "www.example.com" fills a different entry, which nothing ever reads.
         // The warmer then reports success while every visitor still pays the render --
         // measured at 1036ms for a page the cache could have answered in 3ms.
         $warmHost = isset( $options['host'] ) ? $options['host'] : '';
@@ -88,7 +88,7 @@ class Warm extends \Exponential\Runnable\Command
         {
             $siteIni = \eZINI::instance();
             $warmHost = $siteIni->hasVariable( 'SiteSettings', 'SiteURL' )
-                      ? (string)$siteIni->variable( 'SiteSettings', 'SiteURL' ) : 'alpha.se7enx.com';
+                      ? (string)$siteIni->variable( 'SiteSettings', 'SiteURL' ) : 'localhost';
 
             $velocityIni = \eZINI::instance( 'velocity.ini' );
             if ( $velocityIni->hasVariable( 'ServerSettings', 'HTTPSPort' ) )

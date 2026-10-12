@@ -534,7 +534,7 @@ class expVelocityFrankenPHP extends expVelocity
      * and never the qbix engine's [ServerSettings] Workers. Those are
      * processes, most of them idle in a dynamic pool; these are threads that
      * all run at once. Inheriting 590 of them on twelve cores made heavy load
-     * slower, not faster: measured on alpha (2026-09-26, two passes each), 64
+     * slower, not faster: measured on the demonstration server (2026-09-26, two passes each), 64
      * concurrent rendered pages did 16.0 req/s at 12-48 threads and 14.6 at
      * 96 or 590, and each page cost 233 ms of CPU at 12 threads against 290 at
      * 590. Twice the cores leaves room for threads waiting on the database.

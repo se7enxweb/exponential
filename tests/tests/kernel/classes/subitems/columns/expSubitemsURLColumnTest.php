@@ -45,7 +45,7 @@ class expSubitemsURLColumnTest extends expSubitemsColumnsTestCase
     /**
      * Every node has an alias in the column, never an empty cell: the node at the site root (it owns
      * the root element) shows "/", the content root its own alias when the root element is another's.
-     * On alpha that is node 89, "Fit & Healthy": its kernel url_alias is '' (reported empty by the list).
+     * On the demonstration server that is node 89, "Fit & Healthy": its kernel url_alias is '' (reported empty by the list).
      */
     public function testURLAliasIsNeverEmpty()
     {

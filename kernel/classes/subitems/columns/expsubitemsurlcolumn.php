@@ -26,7 +26,7 @@ class expSubitemsURLColumn extends expSubitemsFieldColumn
      * The kernel's url_alias is empty in two cases, and the column tells them apart from the
      * alias rows (ezurlalias_ml) instead of showing nothing:
      * - the node owns the root element (the row with parent 0 and text ''): it is the page at "/",
-     *   so the column shows "/" (on alpha: the front page node, "Fit & Healthy");
+     *   so the column shows "/" (on the demonstration server: the front page node, "Fit & Healthy");
      * - the node is [NodeSettings] RootNode, for which pathWithNames() always answers '': when the
      *   root element belongs to another node, the content root's own alias ("websites") is shown.
      */

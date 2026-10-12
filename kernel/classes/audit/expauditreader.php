@@ -165,7 +165,7 @@ class expAuditReader
      * The actor of a record in a few characters.
      *
      * @param array $r
-     * @return string "editor1(14)", "os:alpha", "-"
+     * @return string "editor1(14)", "os:www-data", "-"
      */
     public static function actorText( array $r )
     {

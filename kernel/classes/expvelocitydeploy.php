@@ -409,7 +409,7 @@ class expVelocityDeploy
      * asks each child of every pool to finish its request, and the master
      * starts no new child until the last has (process_control_timeout, 300 s
      * on Plesk): a request that comes in meanwhile waits for the longest one
-     * running anywhere on that PHP version. Measured on alpha (#374): one
+     * running anywhere on that PHP version. Measured on the demonstration server (#374): one
      * open 25 s event stream made the next page wait 22.4 s after a reload,
      * and a 135 s request on another pool turned waiting requests into 504s.
      *

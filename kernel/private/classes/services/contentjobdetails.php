@@ -239,7 +239,7 @@ class ContentJobDetails
     }
 
     /**
-     * "Velocity on web1, pid 123, as alpha" from the engine's server record { server, sapi, host, pid, user }.
+     * "Velocity on web1, pid 123, as www-data" from the engine's server record { server, sapi, host, pid, user }.
      *
      * @param array $s
      * @return string

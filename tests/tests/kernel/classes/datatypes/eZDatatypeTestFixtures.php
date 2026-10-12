@@ -7,7 +7,7 @@
  *    one fetches it by id) and whose store() lets the datatype store its content, counts the call and writes nothing.
  *  - eZDatatypeTestClassAttribute: a class attribute whose store() only counts calls.
  *  - eZDatatypeTestNoDatabase: put in place of the database while a test runs, when no other test has opened
- *    one, so a datatype that queries is noticed at once (it throws) instead of reaching alpha's database here
+ *    one, so a datatype that queries is noticed at once (it throws) instead of reaching the installation's database here
  *    and failing on CI, which has none.
  *  - eZDatatypeTestCase: the base class, which sets the working directory, keeps $_POST, the time zone and the
  *    database instance and puts them back.

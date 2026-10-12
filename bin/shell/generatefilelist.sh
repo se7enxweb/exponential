@@ -9,9 +9,10 @@
 # eZMD5::checkMD5Sums.
 #
 # IMPORTANT: Run from the directory that Apache/PHP-FPM uses as the document
-# root.  On this server, that is edit.alpha.example.com/, NOT alpha.example.com/,
-# because edit.alpha.example.com/ contains symlinks for most files and its own
-# .htaccess — PHP's cwd during a web request is edit.alpha.example.com/.
+# root.  Where a host has a document root of its own beside the installation,
+# e.g. edit.example.com/ next to www.example.com/, run it from that one when it
+# contains symlinks for most files and its own .htaccess — PHP's cwd during a
+# web request is that directory.
 #
 # Run with no arguments.  The defaults are the ones a release wants: everything
 # that is part of the installation is hashed, and everything that is not is left
@@ -22,7 +23,7 @@
 # can act on.
 #
 # Usage:
-#   cd /var/www/vhosts/example.com/doc/edit.alpha.example.com
+#   cd /var/www/example/edit.example.com
 #   bash bin/shell/generatefilelist.sh
 #   bash bin/shell/generatefilelist.sh --list      # what is being left out
 #   bash bin/shell/generatefilelist.sh --dry-run   # count without writing
@@ -162,7 +163,7 @@ for arg in "$@"; do
             echo "  so that hashes match exactly what PHP's md5_file() sees."
             echo
             echo "  Run from the Apache/PHP document root, e.g.:"
-            echo "    cd /var/www/vhosts/alpha.example.com/doc/edit.alpha.example.com"
+            echo "    cd /var/www/example/edit.example.com"
             echo "    bash bin/shell/generatefilelist.sh"
             echo
             echo "  With no arguments it does the right thing: everything that is"

@@ -4,7 +4,7 @@
 As a module::
 
     from expservices_client import Client, ServiceError
-    c = Client("https://alpha.se7enx.com")
+    c = Client("https://www.example.com")
     print(c.call("expsystem::version"))                 # read: returns the envelope's data
     c.login("editor", "secret")                         # session cookie is kept by the client
     for item in c.pages("expnode::children", 2):        # paged read: yields every item
@@ -23,7 +23,7 @@ As a command::
     expservices_client.py post <service> [k=v ...] [-- arg ...]
     expservices_client.py login <user> [password]      (password from EXPSERVICES_PASSWORD or asked)
 
-Environment: EXPSERVICES_URL (default https://alpha.se7enx.com), EXPSERVICES_JAR (cookie jar file, default
+Environment: EXPSERVICES_URL (default http://localhost), EXPSERVICES_JAR (cookie jar file, default
 ~/.cache/expservices/cookies.txt). Exit status: 0 ok, 1 service error, 2 transport error.
 """
 import getpass
@@ -51,7 +51,7 @@ class TransportError(Exception):
 
 
 class Client:
-    def __init__(self, base_url="https://alpha.se7enx.com", jar=None, timeout=30, verify=True, api_token=None):
+    def __init__(self, base_url="http://localhost", jar=None, timeout=30, verify=True, api_token=None):
         self.base = base_url.rstrip("/")
         self.timeout = timeout
         self.jar_path = jar
@@ -168,7 +168,7 @@ class Client:
 def main(argv=None):
     import argparse
     p = argparse.ArgumentParser(description="expservices client", add_help=True)
-    p.add_argument("--url", default=os.environ.get("EXPSERVICES_URL", "https://alpha.se7enx.com"))
+    p.add_argument("--url", default=os.environ.get("EXPSERVICES_URL", "http://localhost"))
     p.add_argument("--jar", default=os.environ.get("EXPSERVICES_JAR",
                    os.path.join(os.environ.get("XDG_CACHE_HOME", os.path.expanduser("~/.cache")), "expservices", "cookies.txt")))
     p.add_argument("--token", default=os.environ.get("EXPSERVICES_TOKEN"), help="personal API token (or EXPSERVICES_TOKEN)")

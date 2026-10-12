@@ -1617,7 +1617,9 @@ class expMongoDB extends eZDBInterface
         {
             $file = isset( $frame['file'] ) ? $frame['file'] : '';
             if ( strpos( $file, 'expmongodb.php' ) !== false ) continue;
-            $file  = str_replace( '/web/vh/alpha.se7enx.com/doc/mongodb.alpha.se7enx.com/', '', $file );
+            $root  = rtrim( class_exists( 'eZSys' ) ? (string)eZSys::rootDir() : (string)getcwd(), '/' ) . '/';
+            if ( $root !== '/' && strpos( $file, $root ) === 0 )
+                $file = substr( $file, strlen( $root ) );
             $line  = isset( $frame['line'] ) ? $frame['line'] : '?';
             $func  = ( isset( $frame['class'] ) ? $frame['class'] . '::' : '' ) . ( isset( $frame['function'] ) ? $frame['function'] : '' );
             $caller = "$file:$line ($func)";

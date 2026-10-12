@@ -30,7 +30,7 @@
  *  CJ-22 the mode: job always a job, now never (refused above NowLimit with code 413), auto = defaultMode(); kept with the job
  *  CJ-23 the job records where it was created and runs, the last batches, who cancelled and resumed it
  *  CJ-24 every type locks what it works on (subtree, or a target as a node lock); the selection types count without a database
- *  CJ-25 the state type per object, the state lists mocked (untestable on alpha: its only group, ez_lock, is internal): assign,
+ *  CJ-25 the state type per object, the state lists mocked (untestable on the demonstration server: its only group, ez_lock, is internal): assign,
  *        leave alone what has the state, skip with a warning what the user may not assign, once per object, idempotent
  *  CJ-26 a worker that cannot be started fails the job at once with the real reason and gives back its lock; resume takes it again
  *  CJ-27 a queued job no worker started within QueuedTimeout fails and stops blocking its subtree (not while a worker holds it)

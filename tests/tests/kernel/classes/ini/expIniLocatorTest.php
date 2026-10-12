@@ -144,7 +144,7 @@ class expIniLocatorTest extends PHPUnit\Framework\TestCase
         }
     }
 
-    /** LOC-06 on this installation: an extension that is present but not active (alpha's own settings extension) */
+    /** LOC-06 on this installation: an extension that is present but not active (the demonstration server's own settings extension) */
     public function testNotLoadedOnThisInstallation()
     {
         $file = expIniEngineTestFixtures::realRoot() . 'extension/sevenx_alpha_settings/settings/cronjob.ini.append.php';

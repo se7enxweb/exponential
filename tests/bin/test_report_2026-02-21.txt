@@ -1,6 +1,6 @@
 ────────────────────────────────────────────────────────────────────────────────
   eZScript Combined Test Runner — 2026-02-21 17:10:23
-  PHP: 8.5.3 | Root: /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com
+  PHP: 8.5.3 | Root: /var/www/example
   Functional filter: all
 ────────────────────────────────────────────────────────────────────────────────
 
@@ -98,7 +98,7 @@ TOTAL: 81 files   ✓ 80 PASS   ✗ 0 FAIL   ~ 1 SKIP
 
 ────────────────────────────────────────────────────────────────────────────────
   Functional Flow Tests — 2026-02-21 17:10:26
-  Filter: all | Root: /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com
+  Filter: all | Root: /var/www/example
 ────────────────────────────────────────────────────────────────────────────────
 
 ✓ PASS  [security] SQL column regex — clean names pass
@@ -112,21 +112,21 @@ TOTAL: 81 files   ✓ 80 PASS   ✗ 0 FAIL   ~ 1 SKIP
 ✓ PASS  [soap] eZSOAPParameter::setValue() persists on chained read
 ✓ PASS  [soap] eZSOAPHeader::addHeader() populates Headers array
 ✓ PASS  [soap] eZSOAPHeader::addHeader() supports multiple headers
-PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 230
+PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/example/bin/php/tests/functional_tests.php on line 230
 
-Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 230
+Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/example/bin/php/tests/functional_tests.php on line 230
 ✓ PASS  [preg] eZNamePatternResolver::extractTokens — pattern with tokens
-PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 240
+PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/example/bin/php/tests/functional_tests.php on line 240
 
-Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 240
+Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/example/bin/php/tests/functional_tests.php on line 240
 ✓ PASS  [preg] eZNamePatternResolver::extractTokens — empty pattern returns []
-PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 250
+PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/example/bin/php/tests/functional_tests.php on line 250
 
-Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 250
+Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/example/bin/php/tests/functional_tests.php on line 250
 ✓ PASS  [preg] eZNamePatternResolver::getIdentifiers — returns array for valid pattern
-PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 260
+PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/example/bin/php/tests/functional_tests.php on line 260
 
-Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 260
+Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/example/bin/php/tests/functional_tests.php on line 260
 ✓ PASS  [preg] eZNamePatternResolver::getIdentifiers — empty pattern returns []
 ✓ PASS  [preg] eZDiffTextEngine::createDifferenceObject — normal text does not crash
 ✓ PASS  [preg] preg_replace null coalesce pattern (isolated)

@@ -3158,7 +3158,7 @@ class expVelocity
         // Everything that can refuse a start is checked while the running
         // server is still up. This stopped first and rebuilt the engine
         // archive afterwards, so a rebuild that failed left no server at all
-        // (2026-09-24: about a minute of "can't connect" on alpha).
+        // (2026-09-24: about a minute of "can't connect" on the demonstration server).
         $ready = $this->ensureEngineArchive();
         if ( $ready !== true )
             return $this->result( false, $ready . ' -- the running server was left as it is', $this->status() );

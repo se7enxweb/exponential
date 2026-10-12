@@ -196,7 +196,7 @@ class eZINITest extends ezpTestCase
                  . "[TemplateSettings]\n"
                  . "#ShowUsedTemplates=enabled\n\n"
                  . "[FileSettings]\n"
-                 . "AllowedDeletionDirs[]=/var/www/vhosts/alpha.se7enx.com/doc/alpha.se7enx.com/var\n"
+                 . "AllowedDeletionDirs[]=/var/www/example/var\n"
                  . "VarDir=var/site\n\n"
                  . "[ExtensionSettings]\n"
                  . "ActiveExtensions[]=ezjscore\n"

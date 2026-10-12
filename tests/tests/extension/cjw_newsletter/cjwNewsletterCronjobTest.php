@@ -157,7 +157,7 @@ class cjwNewsletterCronjobTest extends cjwNewsletterTestCase
     {
         $edition = $this->newEdition();
         $cmd = 'php extension/cjw_newsletter/bin/php/createoutput.php --object_id=' . (int)$edition->attribute( 'id' )
-             . ' --object_version=1 --output_format_id=1 --current_hostname=alpha.se7enx.com --skin_name=default -s site --allow-root-user';
+             . ' --object_version=1 --output_format_id=1 --current_hostname=www.example.com --skin_name=default -s site --allow-root-user';
         $out = shell_exec( $cmd . ' 2>&1' );
         $this->assertNotFalse( strpos( (string)$out, 'a:' ) );
         $result = @unserialize( substr( $out, strpos( $out, 'a:' ) ) );

@@ -11,7 +11,7 @@
  * workflow cronjob never picks it up, and no content object (object 0), so no version is touched. Whatever the
  * test leaves behind is removed in tearDown(). No real process is cancelled, resumed or changed. Where there is no
  * installation (CI) the tests are skipped.
- * Run on alpha through ai/bin/one/run_alpha_db_heavy_command_one_at_a_time.sh.
+ * On a shared server run it on its own, one database-heavy command at a time.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

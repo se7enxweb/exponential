@@ -17,8 +17,8 @@ Type=sqlite3
 Continue=true
 Server=localhost
 Port=
-Database=xa_alpha
-User=xa_alpha
+Database=exponential
+User=exponential
 Password=
 Socket=
 
@@ -45,10 +45,10 @@ EditorAccess=editor
 AccessPort=8080
 AdminAccessPort=8081
 EditorAccessPort=8082
-AccessHostname=alpha.se7enx.com
-AdminAccessHostname=admin.alpha.se7enx.com
-EditorAccessHostname=edit.alpha.se7enx.com
-Database=xa_alpha
+AccessHostname=www.example.com
+AdminAccessHostname=admin.example.com
+EditorAccessHostname=edit.example.com
+Database=exponential
 DatabaseAction=remove
 
 [site_admin]

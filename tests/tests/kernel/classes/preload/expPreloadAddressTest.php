@@ -21,7 +21,7 @@
 
 class expPreloadAddressTest extends PHPUnit\Framework\TestCase
 {
-    /** alpha's own settings, with example hosts */
+    /** the demonstration server's own settings, with example hosts */
     private static function alpha( array $more = array() )
     {
         return new expPreloadAddress( $more + array(

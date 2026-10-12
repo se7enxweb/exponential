@@ -1,7 +1,8 @@
 <?php
 /**
  * Upload from a URL in the online editor: the address checks, the limits, the file checks and one real fetch of a
- * small public image served by this installation itself, which creates an image object under Media (node 43) that
+ * small public image served by this installation itself (its host from ezpLiveInstallation::publicHost(), the
+ * SiteURL of the default siteaccess or EXP_TEST_PUBLIC_HOST; skipped without one), which creates an image object under Media (node 43) that
  * is removed in tearDown. Live installation, no test database. The upload goes into a draft of the admin's own, as
  * from content/edit; a published version and someone else's draft are refused and nothing is created.
  *
@@ -16,7 +17,7 @@ require_once __DIR__ . '/expOETestCase.php';
 
 class expOEUrlFetcherTest extends expOETestCase
 {
-    const IMAGE_URL = 'https://alpha.se7enx.com/design/standard/images/32x32.gif';
+    const IMAGE_PATH = '/design/standard/images/32x32.gif';
 
     protected $objectIDs = array();
     protected $savedFromUrl = null;
@@ -186,7 +187,7 @@ class expOEUrlFetcherTest extends expOETestCase
         try
         {
             // the image is a few hundred bytes: use a larger public file of this installation
-            expOEUrlFetcher::fetch( 'https://alpha.se7enx.com/design/standard/images/exponential.png' );
+            expOEUrlFetcher::fetch( $this->siteUrl( '/design/standard/images/exponential.png' ) );
             $this->markTestSkipped( 'the public file is not larger than 1K' );
         }
         catch ( expOEUrlException $e )
@@ -273,12 +274,12 @@ class expOEUrlFetcherTest extends expOETestCase
         $this->ini( 'UploadFromUrl', 'disabled' );
         $this->assertFalse( expOEUrlFetcher::enabled() );
         $this->expectException( expOEUrlException::class );
-        expOEUrlFetcher::fetch( self::IMAGE_URL );
+        expOEUrlFetcher::fetch( $this->imageUrl() );
     }
 
     public function testARealFetchOfAPublicImageOfThisInstallation()
     {
-        $fetched = expOEUrlFetcher::fetch( self::IMAGE_URL );
+        $fetched = expOEUrlFetcher::fetch( $this->imageUrl() );
         try
         {
             $this->assertSame( '32x32.gif', $fetched['name'] );
@@ -337,7 +338,7 @@ class expOEUrlFetcherTest extends expOETestCase
         list( $container, $draft ) = $this->containerWithDraft( 'ezoe url upload test' );
 
         $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $draft, 'objects', '0' ),
-            array( 'uploadButton' => '1', 'uploadUrl' => self::IMAGE_URL, 'location' => '43', 'objectName' => 'ezoe url upload image ' . getmypid(), 'ContentObjectAttribute_image' => 'alt from url' ) );
+            array( 'uploadButton' => '1', 'uploadUrl' => $this->imageUrl(), 'location' => '43', 'objectName' => 'ezoe url upload image ' . getmypid(), 'ContentObjectAttribute_image' => 'alt from url' ) );
         $this->assertSame( 1, preg_match( '/selectByEmbedId\(\s*(\d+)\s*,\s*(\d+)\s*,\s*("(?:[^"\\\\]|\\\\.)*")\s*\)/', $out, $m ), $out );
         $this->objectIDs[] = (int) $m[1];
         $created = eZContentObject::fetch( (int) $m[1] );
@@ -360,7 +361,7 @@ class expOEUrlFetcherTest extends expOETestCase
         foreach ( array( (int) $container->attribute( 'current_version' ), $draft + 50 ) as $version )
         {
             $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $version, 'objects', '0' ),
-                array( 'uploadButton' => '1', 'uploadUrl' => self::IMAGE_URL, 'location' => '43', 'objectName' => 'ezoe url upload refused ' . getmypid() ) );
+                array( 'uploadButton' => '1', 'uploadUrl' => $this->imageUrl(), 'location' => '43', 'objectName' => 'ezoe url upload refused ' . getmypid() ) );
             $this->assertStringNotContainsString( 'selectByEmbedId', $out, "version $version" );
             $this->assertStringContainsString( 'ObjectVersion', $out, "version $version" );
         }
@@ -375,7 +376,7 @@ class expOEUrlFetcherTest extends expOETestCase
         list( $container, $draft ) = $this->containerWithDraft( 'ezoe url upload foreign draft', true );
         $before = (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c, ' . mt_rand() . ' AS nonce FROM ezcontentobject' )[0]['c'];
         $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $draft, 'objects', '0' ),
-            array( 'uploadButton' => '1', 'uploadUrl' => self::IMAGE_URL, 'location' => '43' ) );
+            array( 'uploadButton' => '1', 'uploadUrl' => $this->imageUrl(), 'location' => '43' ) );
         $this->assertStringNotContainsString( 'selectByEmbedId', $out );
         $this->assertStringContainsString( 'ObjectVersion', $out );
         $this->assertSame( $before, (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c, ' . mt_rand() . ' AS nonce FROM ezcontentobject' )[0]['c'] );
@@ -384,14 +385,16 @@ class expOEUrlFetcherTest extends expOETestCase
 
     public static function viewRefusals()
     {
-        return array( 'private address' => array( 'http://127.0.0.1/x.png' ), 'credentials' => array( 'http://u:p@alpha.se7enx.com/x.png' ),
-                      'ftp' => array( 'ftp://alpha.se7enx.com/x.png' ), 'not a url' => array( 'hello' ),
-                      'not an image' => array( 'https://alpha.se7enx.com/robots.txt.png' ), 'missing file' => array( 'https://alpha.se7enx.com/design/standard/images/no-such-file.gif' ) );
+        return array( 'private address' => array( 'http://127.0.0.1/x.png' ), 'credentials' => array( 'http://u:p@www.example.com/x.png' ),
+                      'ftp' => array( 'ftp://www.example.com/x.png' ), 'not a url' => array( 'hello' ),
+                      'not an image' => array( 'https://{site}/robots.txt.png' ), 'missing file' => array( 'https://{site}/design/standard/images/no-such-file.gif' ) );
     }
 
     #[PHPUnit\Framework\Attributes\DataProvider( 'viewRefusals' )]
     public function testTheUploadViewShowsTheServerErrorAndCreatesNothing( $url )
     {
+        if ( strpos( $url, '{site}' ) !== false )
+            $url = str_replace( 'https://{site}', $this->siteUrl( '' ), $url );
         list( $container, $draft ) = $this->containerWithDraft( 'ezoe url upload refusal' );
         $before = (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c FROM ezcontentobject' )[0]['c'];
         $out = $this->runView( 'upload', array( (string) $container->attribute( 'id' ), (string) $draft, 'objects', '0' ),
@@ -400,6 +403,18 @@ class expOEUrlFetcherTest extends expOETestCase
         $this->assertStringContainsString( 'color: red', $out, $out );
         $this->assertSame( $before, (int) eZDB::instance()->arrayQuery( 'SELECT COUNT(*) AS c FROM ezcontentobject' )[0]['c'] );
         $this->assertSame( array(), $this->leftovers() );
+    }
+
+    /** @return string https://<public host of this installation><path>; skips the test without one */
+    protected function siteUrl( $path )
+    {
+        return 'https://' . ezpLiveInstallation::publicHostOrSkip() . $path;
+    }
+
+    /** @return string the small public image of this installation */
+    protected function imageUrl()
+    {
+        return $this->siteUrl( self::IMAGE_PATH );
     }
 
     /** @return array files left in the temporary directory of the fetcher */

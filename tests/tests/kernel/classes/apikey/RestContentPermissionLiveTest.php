@@ -6,8 +6,8 @@
  * A throwaway user (...@restperm.example.invalid) with a narrow throwaway role: user/login, content/read of the test's
  * own folder, content/create of folders directly below its "allowed" subfolder, content/remove inside that subfolder.
  * It calls the REST interface with an OAuth token (a throwaway REST application, authorized by the user) and with
- * personal API keys. Every step runs on each server of APIKEY_LIVE_BASES (default https://alpha.se7enx.com and
- * https://alpha.se7enx.com:8080, Apache and Velocity). Everything is removed again: the content (below the test's
+ * personal API keys. Every step runs on each server of APIKEY_LIVE_BASES (default ezpLiveInstallation::publicBases():
+ * https://<public host> and, when Velocity answers there, its HTTPS port; Apache and Velocity). Everything is removed again: the content (below the test's
  * folder), the token, the application, the keys, the role and the user, also when a test fails or the set up stops
  * halfway. Their names carry the run id (start time and a random part), and each run first sweeps away what an earlier
  * crashed run left, older than an hour, matched by name prefix only (expRestLiveTestCleanup). No content outside the
@@ -85,7 +85,11 @@ class RestContentPermissionLiveTest extends expContentModelLiveTestCase
             self::markTestSkipped( 'needs curl' );
         if ( !class_exists( 'expRestContentPermission' ) )
             self::markTestSkipped( 'needs expRestContentPermission (Exponential 6.0.15)' );
-        static::$bases = array_filter( array_map( 'trim', explode( ',', getenv( 'APIKEY_LIVE_BASES' ) ?: 'https://alpha.se7enx.com,https://alpha.se7enx.com:8080' ) ) );
+        static::$bases = getenv( 'APIKEY_LIVE_BASES' )
+            ? array_values( array_filter( array_map( 'trim', explode( ',', getenv( 'APIKEY_LIVE_BASES' ) ) ) ) )
+            : ezpLiveInstallation::publicBases();
+        if ( !static::$bases )
+            self::markTestSkipped( 'needs the public host of this installation (SiteURL of the default siteaccess, EXP_TEST_PUBLIC_HOST or APIKEY_LIVE_BASES)' );
         static::$startedAt = time();
         static::$language = eZContentLanguage::topPriorityLanguage()->attribute( 'locale' );
 

@@ -73,7 +73,7 @@ class expContentLanguagesOverviewTest extends ezpTestCase
 
     public function testALanguageNoSiteListsButClassesUseIsPointedOut()
     {
-        // eng-GB on alpha before it was cleaned up: no object, six classes, and no admin siteaccess lists it
+        // eng-GB on the demonstration server before it was cleaned up: no object, six classes, and no admin siteaccess lists it
         $map = Translations::siteAccessLanguages( array( 'site' => array( 'eng-US' ), 'admin' => array( 'eng-US' ) ) );
         $row = $this->row( 8, 'eng-GB', 0, 6, array( 'map' => $map ) );
         $this->assertTrue( $row['unlisted'] );

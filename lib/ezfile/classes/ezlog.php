@@ -92,7 +92,7 @@ class eZLog
     /**
      * What a log line says the message came from: the request's full address for a web request
      * (scheme, host with its port when the client used one, path and query), e.g.
-     * https://alpha.se7enx.com:8080/admin/package/compare/slash_quotes, or the command line of a
+     * https://www.example.com:8080/admin/package/compare/slash_quotes, or the command line of a
      * command line script.
      *
      * A web request is recognised by its REQUEST_URI, not by the PHP SAPI: Velocity's workers are

@@ -31,6 +31,8 @@ class expFeedRunImportTest extends expCommerceTestCase
     /** Source folder with two child folders and an export of it; returns array( import id, destination node ) */
     protected function fixture( $active = 1 )
     {
+        // the public site's host, from its settings: the admin siteaccess's SiteURL is not a host that resolves
+        $site = ezpLiveInstallation::publicHostOrSkip();
         $src = $this->testFolder();
         for ( $i = 1; $i <= 2; $i++ )
             $this->createObject( $src, 'folder', array( 'name' => "Feed item $i " . uniqid() ) );
@@ -44,7 +46,6 @@ class expFeedRunImportTest extends expCommerceTestCase
             $item->setAttribute( 'description', 'name' );
             $item->store();
         }
-        $site = 'alpha.se7enx.com'; // the admin siteaccess's SiteURL is not a host that resolves
         $class = eZContentClass::fetchByIdentifier( 'folder' );
         $nameAttr = null;
         foreach ( $class->fetchAttributes() as $a )
