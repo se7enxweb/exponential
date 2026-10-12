@@ -82,6 +82,31 @@ command line scripts in `kernel/private/classes/commands/` (they declare global 
 `dfs_filter_iterator.php` (its iterator methods need tentative return types first). Raise the level or shrink the
 baseline in small separate changes, and regenerate it with `make phpstan-baseline`.
 
+## Tests that need a live server
+
+Some tests talk to a real database or web server. They read where it is from environment variables and skip with
+the variable's name when it is not set, so a plain `vendor/bin/phpunit` on a machine without those servers (a CI
+runner, a laptop) passes. No test carries a host name, an account or a password of its own.
+
+| Tests | Variables |
+| --- | --- |
+| `expMongoDBIntegrationTest`, `sevenxMongoDBIntegrationTest` (MongoDB part) | `EXP_TEST_MONGO_URI` (a `mongodb://` connection string), `EXP_TEST_MONGO_DATABASE` (default `exp`) |
+| `expMongoDBIntegrationTest`, `sevenxMongoDBIntegrationTest` (MySQL part) | `EXP_TEST_MYSQL_USER`, `EXP_TEST_MYSQL_PASSWORD`, `EXP_TEST_MYSQL_DATABASE`, `EXP_TEST_MYSQL_HOST` (default `localhost`), `EXP_TEST_MYSQL_PORT` (default 3306) |
+| `expMongoDBDeclaredDefaultTest`, `TrashListPagedTest` | `EXP_TEST_MONGO_SCRATCH` (`<host>:<port>/<database>`, a database whose name contains "scratch" or "test") |
+| Live HTTP tests (`ApiKeyLiveTest`, `RestContentPermissionLiveTest`, ...) | `EXP_TEST_PUBLIC_HOST` (else the host of the default siteaccess's `SiteURL`), `APIKEY_LIVE_BASES`, `APIKEY_LIVE_ADMIN_PASSWORD` |
+
+Pass a password through the environment, not on the command line, so it does not end up in the shell history or
+the process list, for example from a file only you can read:
+
+```sh
+EXP_TEST_MYSQL_PASSWORD="$(cat ~/.exp-test-mysql-password)" EXP_TEST_MYSQL_USER=test EXP_TEST_MYSQL_DATABASE=testdb \
+    php vendor/bin/phpunit tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php
+```
+
+A test run writes its own audit records into a directory under `var/tmp` (`tests/bootstrap.php`). A live test that
+checks what a web server recorded reads the site's audit directory, `expAuditConfig::siteLogDir()`, not
+`expAuditConfig::get()['logDir']`, which names the run's directory.
+
 ## CI
 
 `.github/workflows/quality.yml` runs on every push and pull request to `main`: PHP syntax of the changed files with
