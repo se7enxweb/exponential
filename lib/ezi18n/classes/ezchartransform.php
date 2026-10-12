@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 7517c0e925), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -402,11 +403,29 @@ class eZCharTransform
         return $text;
     }
 
+    /**
+     * Whether site.ini [URLTranslator] TrailingCleanup is enabled: the IRI URL alias cleanup then also treats the
+     * double quote as a reserved character, so it becomes a word separator and is stripped at the beginning and
+     * end like "!", dots and separators. Off (the shipped value): today's aliases. Read on every call, so a
+     * persistent worker sees a changed setting with the INI cache.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 7517c0e925), Copyright (C) Mugo Web, GPL v2
+     *
+     * @return bool
+     */
+    static function trailingCleanup()
+    {
+        $ini = eZINI::instance();
+        return $ini->hasVariable( 'URLTranslator', 'TrailingCleanup' )
+            && $ini->variable( 'URLTranslator', 'TrailingCleanup' ) === 'enabled';
+    }
+
     static function commandUrlCleanupIRI( $text, $charsetName )
     {
         // With IRI support we keep all characters except some reserved ones,
         // they are space, tab, ampersand, semi-colon, forward slash, colon, equal sign, question mark,
-        //          square brackets, parenthesis, plus.
+        //          square brackets, parenthesis, plus; with [URLTranslator] TrailingCleanup=enabled
+        //          also the double quote.
         //
         // Note: Spaces and tabs are turned into a dash to make it easier for people to
         //       paste urls from the system and have the whole url recognized
@@ -416,7 +435,8 @@ class eZCharTransform
         $prepost = " ." . $sepQ;
         if ( $sep != "-" )
             $prepost .= "-";
-        $text = preg_replace( array( "#[ \t\\\\%\#&;/:=?\[\]()+]+#",
+        $reserved = eZCharTransform::trailingCleanup() ? "#[ \t\\\\%\#&;/:=?\[\]()+\"]+#" : "#[ \t\\\\%\#&;/:=?\[\]()+]+#";
+        $text = preg_replace( array( $reserved,
                                      "#\.\.+#", # Remove double dots
                                      "#[{$sepQ}]+#", # Turn multiple separators into one
                                      "#^[{$prepost}]+|[!{$prepost}]+$#" ), # Strip "!", dots and separator from beginning/end
