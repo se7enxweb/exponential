@@ -142,6 +142,64 @@ On an installation without jobs `list` prints `No active or failed content jobs 
 `contentjobs` cronjob part restarts a worker whose process died. Depth: [content jobs](../features/6.0/content-jobs.md),
 [content jobs guide](../bc/6.0/content-jobs.md), [audit trail](../features/6.0/audit-trail.md) (every job is recorded).
 
+## 9. Required alternative text, trimmed text lines and names made by PHP
+
+These four options came to Exponential 6.0.15 from LoveStack, Mugo Web's distribution of the legacy kernel, with
+thanks to Mugo Web for the ideas and the original code. All of them are off until you switch them on, on new and
+upgraded installations alike, so nothing changes on an existing site by itself.
+
+### Alternative text is required (image fields)
+
+For editors: an image field whose class has the option switched on cannot be stored with an image but without an
+alternative text. The edit form marks the field **Alternative image text (required)** and answers
+*An alternative text is required for this image.* when it is empty. The same check applies in the online editor's
+upload dialog (also when the Tiptap engine uploads through it) and in the AJAX uploader of relation fields, which now
+has an **Alternative text** field for classes with an image attribute. An image field left empty needs no text.
+
+For administrators: **Setup > Classes**, edit the class, find the image attribute and tick
+**Alternative text is required**; click **OK**. The class view then shows *Alternative text is required: Yes*. The
+setting is stored in the class attribute's `data_int2` (the maximum file size stays in `data_int1`) and travels with
+the class in a package as `<alternative-text-required>1</alternative-text-required>`.
+
+Not covered: the generic file upload (`content/upload`, multi-upload) and imports create images without asking for
+a text; fill it in afterwards. The expai extension's *Missing alt text* list shows such images.
+
+### Trim the stored value (text line fields)
+
+For editors: with the option on, spaces, tabs and line breaks at the start and the end of a text line are removed
+when it is stored; space inside the text is kept. For administrators: edit the class, tick **Trim the stored value**
+on the text line attribute. It applies to the edit form, information collection, imports (`fromString()`) and the
+simple string insertion of uploads. Stored in `data_int2`; in a package `<trim>1</trim>`. Text stored before is left
+as it is until it is saved again.
+
+The class edit form sends a hidden marker with both checkboxes, so a design whose class edit template does not show
+an option leaves its value as it is.
+
+### Names made by a PHP class (developers)
+
+A class's **Object name pattern** or **URL alias name pattern** may start with a PHP class name in braces, for
+example `{myNameResolver}` or `{myNameResolver} <title>`. That class then makes the name. It must:
+
+1. be listed in `settings/content.ini` (an override) `[NamePatternSettings] ResolverClasses[]=myNameResolver`;
+2. implement `expNamePatternResolverInterface` (`kernel/classes/expnamepatternresolverinterface.php`): it is
+   constructed with the rest of the pattern after `{myNameResolver}` and its
+   `resolveNamePattern( $object, $version, $translation, $length, $sequence )` returns the name;
+3. be autoloadable (an extension's `classes/`, then `php bin/php/ezpgenerateautoloads.php -e`).
+
+A name that is not listed is never loaded or made: it is logged as a warning and the pattern is resolved from its
+attribute tokens as before. A listed class without the interface, or one that throws, is logged as an error and the
+tokens are used. The name is shortened to the usual limits (`[ContentSettings] ContentObjectNameLimit`,
+`[URLTranslator] UrlAliasNameLimit`). In PHP: `eZNamePatternResolver::resolve( $pattern, $object, ... )`.
+
+### Class filter default for fetches (template developers)
+
+`fetch( 'content', 'list', hash( 'parent_node_id', 2, 'class_filter_array', array( 'article' ) ) )` without
+`class_filter_type` ignores the array today. With `settings/content.ini [FetchSettings] DefaultClassFilterType=include`
+such a fetch lists only those classes (`exclude`: every class but those). It applies to `list`, `tree`,
+`list_count`, `tree_count` and `calendar`; a fetch that gives `class_filter_type` keeps it. Empty, the shipped value,
+keeps today's results. Switch it on only after checking the templates that rely on the array being ignored:
+`grep -rn "class_filter_array" design extension --include=*.tpl | grep -v class_filter_type`.
+
 ## Settings used in this guide
 
 | File | Block | Key | Default | Scope |
@@ -149,6 +207,8 @@ On an installation without jobs `list` prints `No active or failed content jobs 
 | `settings/content.ini` | `[DataTypeSettings]` | `AvailableDataTypes[]` | 35 datatypes | installation, siteaccess |
 | `settings/content.ini` | `[VersionManagement]` | `DefaultVersionHistoryLimit` | `10` | installation, siteaccess |
 | `settings/content.ini` | `[ContentJobSettings]` | `SynchronousLimit` | `50` nodes | installation, siteaccess |
+| `settings/content.ini` | `[NamePatternSettings]` | `ResolverClasses[]` | empty | installation, siteaccess |
+| `settings/content.ini` | `[FetchSettings]` | `DefaultClassFilterType` | empty (array ignored) | installation, siteaccess |
 | `extension/ezautosave/settings/autosave.ini.append.php` | `[AutosaveSettings]` | `Interval` | `180` seconds | installation, siteaccess |
 | `extension/ezoe/settings/ezoe.ini` | `[EditorSettings]` | `EditorEngine` | `tinymce3` | installation, siteaccess, user preference `ezoe_engine` |
 | `extension/ezoe/settings/ezoe.ini` | `[EditorSettings]` | `EngineSwitch` | `disabled` | installation, siteaccess |
