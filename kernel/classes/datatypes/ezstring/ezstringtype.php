@@ -20,6 +20,9 @@
   It uses the spare field data_text in a content object attribute for storing
   the attribute data.
 
+  The class attribute option "Trim the stored value" (TRIM_FIELD):
+  Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 6a5c7dd23e), Copyright (C) Mugo Web, GPL v2
+
 */
 
 
@@ -31,6 +34,9 @@ class eZStringType extends eZDataType
     const MAX_LEN_VARIABLE = '_ezstring_max_string_length_';
     const DEFAULT_STRING_FIELD = "data_text1";
     const DEFAULT_STRING_VARIABLE = "_ezstring_default_value_";
+    /// 1 when white space at the start and the end of the text is removed before it is stored (off, 0, by default)
+    const TRIM_FIELD = 'data_int2';
+    const TRIM_VARIABLE = '_ezstring_trim_';
 
     /*!
      Initializes with a string id and a description.
@@ -57,6 +63,32 @@ class eZStringType extends eZDataType
         if ( is_int( $value ) || is_float( $value ) )
             return (string)$value;
         return null;
+    }
+
+    /**
+     * Whether the class attribute removes the white space around the text before it is stored: the class
+     * attribute option "Trim the stored value", off by default.
+     *
+     * @param eZContentClassAttribute|null $classAttribute
+     * @return bool
+     */
+    static function isTrimEnabled( $classAttribute )
+    {
+        return $classAttribute instanceof eZContentClassAttribute && (int)$classAttribute->attribute( self::TRIM_FIELD ) === 1;
+    }
+
+    /**
+     * $string as the class attribute stores it: trimmed when the option is on, as given otherwise.
+     *
+     * @param eZContentClassAttribute|null $classAttribute
+     * @param string $string
+     * @return string
+     */
+    static function storedString( $classAttribute, $string )
+    {
+        if ( is_string( $string ) && self::isTrimEnabled( $classAttribute ) )
+            return trim( $string );
+        return $string;
     }
 
     /*!
@@ -190,7 +222,7 @@ class eZStringType extends eZDataType
             // Validation already refused a value that is not text; never store an array
             if ( $data === null )
                 return false;
-            $contentObjectAttribute->setAttribute( 'data_text', $data );
+            $contentObjectAttribute->setAttribute( 'data_text', self::storedString( $contentObjectAttribute->contentClassAttribute(), $data ) );
             return true;
         }
         return false;
@@ -206,7 +238,7 @@ class eZStringType extends eZDataType
             $dataText = self::postedString( $http, $base . "_ezstring_data_text_" . $contentObjectAttribute->attribute( "id" ) );
             if ( $dataText === null )
                 return false;
-            $collectionAttribute->setAttribute( 'data_text', $dataText );
+            $collectionAttribute->setAttribute( 'data_text', self::storedString( $contentObjectAttribute->contentClassAttribute(), $dataText ) );
             return true;
         }
         return false;
@@ -237,6 +269,7 @@ class eZStringType extends eZDataType
     {
         $result = array( 'errors' => array(),
                          'require_storage' => true );
+        $string = self::storedString( $objectAttribute->contentClassAttribute(), $string );
         $objectAttribute->setContent( $string );
         $objectAttribute->setAttribute( 'data_text', $string );
         return true;
@@ -314,6 +347,13 @@ class eZStringType extends eZDataType
             if ( $defaultValueValue !== null )
                 $classAttribute->setAttribute( self::DEFAULT_STRING_FIELD, $defaultValueValue );
         }
+        // "Trim the stored value": a checkbox, read only when the form says it shows it (a form without the
+        // option, such as another design's, leaves the setting as it is)
+        $trimName = $base . self::TRIM_VARIABLE . $classAttribute->attribute( 'id' );
+        if ( $http->hasPostVariable( $trimName . '_posted' ) )
+        {
+            $classAttribute->setAttribute( self::TRIM_FIELD, $http->hasPostVariable( $trimName ) ? 1 : 0 );
+        }
         return true;
     }
 
@@ -343,7 +383,7 @@ class eZStringType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
-        return $contentObjectAttribute->setAttribute( 'data_text', $string );
+        return $contentObjectAttribute->setAttribute( 'data_text', self::storedString( $contentObjectAttribute->contentClassAttribute(), $string ) );
     }
 
 
@@ -396,6 +436,13 @@ class eZStringType extends eZDataType
             $defaultStringNode->appendChild( $dom->createTextNode( $defaultString ) );
         }
         $attributeParametersNode->appendChild( $defaultStringNode );
+        // Only when on, so a package of a class without the option reads as before
+        if ( self::isTrimEnabled( $classAttribute ) )
+        {
+            $trimNode = $dom->createElement( 'trim' );
+            $trimNode->appendChild( $dom->createTextNode( '1' ) );
+            $attributeParametersNode->appendChild( $trimNode );
+        }
     }
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
@@ -407,6 +454,8 @@ class eZStringType extends eZDataType
         $defaultString = $defaultStringNode ? $defaultStringNode->textContent : '';
         $classAttribute->setAttribute( self::MAX_LEN_FIELD, $maxLength );
         $classAttribute->setAttribute( self::DEFAULT_STRING_FIELD, $defaultString );
+        $trimNode = $attributeParametersNode->getElementsByTagName( 'trim' )->item( 0 );
+        $classAttribute->setAttribute( self::TRIM_FIELD, $trimNode && trim( $trimNode->textContent ) === '1' ? 1 : 0 );
     }
 
     function diff( $old, $new, $options = false )
