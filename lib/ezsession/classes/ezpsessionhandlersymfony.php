@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 13ace6c9c8), Copyright (C) Mugo Web, GPL v2
  */
 
 
@@ -53,6 +55,11 @@ class ezpSessionHandlerSymfony extends ezpSessionHandler
 
         $sfHandler = $this->storage->getSaveHandler();
         ezpEvent::getInstance()->notify( 'session/destroy', array( $sessionId ) );
+        // The session of this request (a logout): the browser drops the cookie too
+        if ( $sessionId !== '' && $sessionId === session_id() )
+        {
+            eZSession::expireCookie();
+        }
         if ( method_exists( $sfHandler, 'destroy' ) )
         {
             return $sfHandler->destroy( $sessionId );

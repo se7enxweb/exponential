@@ -35,14 +35,26 @@ class Logout extends \Exponential\Runnable\ModuleView
         // Remove all temporary drafts
         \eZContentObject::cleanupAllInternalDrafts( $user->attribute( 'contentobject_id' ) );
 
+        // Read before the logout: it ends the session, and the session with it
+        $ini = \eZINI::instance();
+        $lastAccessURI = null;
+        if ( $ini->variable( 'UserSettings', 'RedirectOnLogoutWithLastAccessURI' ) == 'enabled' && $http->hasSessionVariable( 'LastAccessesURI', false ) )
+        {
+            $lastAccessURI = $http->sessionVariable( "LastAccessesURI" );
+        }
+
         $user->logoutCurrent();
 
-        $http->setSessionVariable( 'force_logout', 1 );
-
-        $ini = \eZINI::instance();
-        if ( $ini->variable( 'UserSettings', 'RedirectOnLogoutWithLastAccessURI' ) == 'enabled' && $http->hasSessionVariable( 'LastAccessesURI' ))
+        // Kept for code that reads it, but no session is opened again only to carry it: the logout removed the
+        // session and its cookie (eZSession::remove()), so none runs here unless something started a new one
+        if ( \eZSession::hasStarted() )
         {
-            $redirectURL = $http->sessionVariable( "LastAccessesURI" );
+            $http->setSessionVariable( 'force_logout', 1 );
+        }
+
+        if ( $lastAccessURI !== null )
+        {
+            $redirectURL = $lastAccessURI;
         }
         else
         {

@@ -8,6 +8,7 @@
  * @version //autogentag//
  * @package lib
  *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 13ace6c9c8), Copyright (C) Mugo Web, GPL v2
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit e56cb305f0), Copyright (C) Mugo Web, GPL v2
  */
 
@@ -558,6 +559,66 @@ class eZSession
     }
 
     /**
+     * The session cookie as it is sent to remove it: the session name, no value, expired (expires 1, Max-Age=0), with
+     * exactly the path, domain, Secure, HttpOnly and SameSite it was set with. Those are the parameters of the
+     * running session (session_get_cookie_params(), as start() set them from site.ini [Session]) when one has
+     * started, else the ones it would start with (cookieParams()). A browser only drops a cookie whose path and
+     * domain match, so these are never PHP's defaults.
+     *
+     * @return array array( 'name' => ..., 'value' => '', 'options' => array( ... ) )
+     */
+    static public function expiredCookie()
+    {
+        $params = self::$hasStarted || session_status() === PHP_SESSION_ACTIVE ? session_get_cookie_params() : self::cookieParams();
+        return array( 'name' => (string)session_name(),
+                      'value' => '',
+                      'options' => array( 'expires' => 1 ) + self::cookieOptions( $params, time() ) );
+    }
+
+    /**
+     * Sends expiredCookie() with this response, so the browser forgets the session cookie (logout, see remove() and
+     * the destroy() of the session handlers). Sent once: nothing happens when the response already removes it, or
+     * when the headers have gone out.
+     *
+     * @return bool whether the response removes the session cookie
+     */
+    static public function expireCookie()
+    {
+        $cookie = self::expiredCookie();
+        if ( self::listsExpiredCookie( headers_list(), $cookie['name'] ) )
+        {
+            return true;
+        }
+        if ( headers_sent() )
+        {
+            return false;
+        }
+        return setcookie( $cookie['name'], $cookie['value'], $cookie['options'] );
+    }
+
+    /**
+     * Whether the response headers $headers (headers_list()) remove the cookie $name: a Set-Cookie of it that has
+     * expired (Max-Age=0, as setcookie() writes an expiry in the past).
+     *
+     * @param array $headers
+     * @param string $name
+     * @return bool
+     */
+    static public function listsExpiredCookie( array $headers, $name )
+    {
+        $prefix = rawurlencode( (string)$name ) . '=';
+        foreach ( $headers as $header )
+        {
+            if ( preg_match( '/^Set-Cookie\s*:\s*(.*)$/is', (string)$header, $m ) && strncmp( $m[1], $prefix, strlen( $prefix ) ) === 0
+                 && preg_match( '/;\s*Max-Age=0\s*(;|$)/i', $m[1] ) )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Whether the response headers $headers (headers_list()) set the cookie $name already.
      *
      * @param array $headers
@@ -806,6 +867,11 @@ class eZSession
      * Removes the current session and resets session variables.
      * Note: implicit stops session as well!
      *
+     * The session ends for good (eZUser::logoutCurrent() calls this): the handler forgets its data (destroy()),
+     * nothing of it is written back at the end of the request, the browser is told to drop the session cookie
+     * (expireCookie(), with the parameters it was set with) and the id it sent is not used again in this request:
+     * a session started after this one, in the same request, gets a new id. The old id no longer signs anyone in.
+     *
      * @since 4.1
      * @return bool Depending on if session was removed.
      */
@@ -819,9 +885,37 @@ class eZSession
              return false;
         }
 
-        $result = self::getHandlerInstance()->destroy( session_id() );
+        $handler = self::getHandlerInstance();
+        $result = $handler->destroy( session_id() );
+
+        // A handler that only deletes what it stored (ezpSessionHandlerDB, a handler of a site's own) leaves PHP
+        // running the session, and the end of the request would write it back under the id that just ended. Closed
+        // without writing; Velocity, which runs sessions itself and has no session_abort(), destroys it instead.
+        // Symfony runs its session itself and ends it on its own logout.
+        if ( !$handler instanceof ezpSessionHandlerSymfony && session_status() === PHP_SESSION_ACTIVE )
+        {
+            $_SESSION = array();
+            @session_abort();
+            if ( session_status() === PHP_SESSION_ACTIVE )
+            {
+                session_destroy();
+            }
+        }
+
+        // The handlers do it in destroy(); this covers a handler of a site's own that does not (sent once)
+        self::expireCookie();
+
+        // The id the browser sent is not taken up again by a session started later in this request (the
+        // logout view stores a flag after logging out): PHP and Velocity read it from the cookie or keep it
+        $name = session_name();
+        unset( $_COOKIE[$name], $_POST[$name] );
+        if ( session_status() !== PHP_SESSION_ACTIVE && session_id() !== '' && !headers_sent() )
+        {
+            session_id( '' );
+        }
 
         self::$hasStarted = false;
+        self::$hasSessionCookie = false;
         self::$handlerInstance = null;
 
         return $result;

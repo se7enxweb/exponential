@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 13ace6c9c8), Copyright (C) Mugo Web, GPL v2
  */
 
 /** Abstract session handler class to extend
@@ -105,6 +107,11 @@ abstract class ezpSessionHandler
      *           eZDB $db
      *           string $sessionId
      *           string $escKey
+     *
+     * When $sessionId is the session of this request (a logout, eZSession::remove()), the handler also tells the
+     * browser to drop the session cookie: eZSession::expireCookie(), which sends it expired with the path, domain,
+     * Secure, HttpOnly and SameSite eZSession::start() set it with. eZSession::remove() does it as well for a
+     * handler that does not, and makes sure nothing of the session is written back afterwards.
      *
      * @param string $sessionId
      * @return bool

@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 13ace6c9c8), Copyright (C) Mugo Web, GPL v2
  */
 
 /** DB session handler class
@@ -147,6 +149,12 @@ class ezpSessionHandlerDB extends ezpSessionHandler
         eZSession::triggerCallback( 'destroy_pre', array( $db, $sessionId, $escKey ) );
         $db->query( "DELETE FROM ezsession WHERE session_key='$escKey'" );
         eZSession::triggerCallback( 'destroy_post', array( $db, $sessionId, $escKey ) );
+
+        // The session of this request (a logout): the browser drops the cookie too
+        if ( $sessionId !== '' && $sessionId === session_id() )
+        {
+            eZSession::expireCookie();
+        }
 
         return true;
     }

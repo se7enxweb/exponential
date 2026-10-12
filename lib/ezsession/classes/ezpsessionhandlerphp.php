@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 13ace6c9c8), Copyright (C) Mugo Web, GPL v2
  */
 
 /** PHP session handler class
@@ -50,10 +52,22 @@ class ezpSessionHandlerPHP extends ezpSessionHandler
         return false;
     }
 
+    /**
+     * Ends the session: its data and its file are gone, and for the session of this request the browser is told
+     * to drop the cookie, with the parameters it was set with (eZSession::expireCookie()).
+     */
     public function destroy( $sessionId )
     {
+        $current = $sessionId !== '' && $sessionId === session_id();
         $_SESSION = array();
-        session_destroy();
+        if ( session_status() === PHP_SESSION_ACTIVE )
+        {
+            session_destroy();
+        }
+        if ( $current )
+        {
+            eZSession::expireCookie();
+        }
 
         ezpEvent::getInstance()->notify( 'session/destroy', array( $sessionId ) );
         return true;

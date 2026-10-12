@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 13ace6c9c8), Copyright (C) Mugo Web, GPL v2
  */
 
 /*!
@@ -1478,8 +1480,9 @@ WHERE user_id = '" . $userID . "' AND
             self::cleanup();
         }
 
-        // give user new session id
-        eZSession::regenerate();
+        // The session ends: its data, its id and its cookie (with the parameters it was set with) are gone, and the
+        // id the browser sent no longer signs anyone in. A new id only would have kept the session's data.
+        eZSession::remove();
 
         // set the property used to prevent SSO from running again
         self::$userHasLoggedOut = true;
