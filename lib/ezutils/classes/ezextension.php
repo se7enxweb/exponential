@@ -1313,7 +1313,7 @@ class eZExtension
         $temp = $file . '.' . getmypid() . '.tmp';
         if ( @file_put_contents( $temp, json_encode( $stored ) ) === false )
             return;
-        @chmod( $temp, class_exists( 'eZFile' ) ? eZFile::fileMode( 0664 ) : 0664 );
+        @chmod( $temp, eZFile::fileMode( 0664 ) );
         if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 && ( $uid = @fileowner( $dir ) ) !== false )
         {
             @chown( $temp, $uid );
