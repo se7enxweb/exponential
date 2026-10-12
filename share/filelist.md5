@@ -3009,7 +3009,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-6fd3722bc1086073999cdbc5070579d8  doc/changelogs/6.0/6.0.15.md
+89e9815805baf1d7dc28c22903724818  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4776,7 +4776,7 @@ ac08764709aa5f761c437bad6387f14e  kernel/classes/audit/index/expauditindexer.php
 4caeea202db3132025dec92e62772329  kernel/classes/audit/index/expauditindexrow.php
 c0df4a0b1ea79fb60de5b74703365258  kernel/classes/audit/index/expauditindexschema.php
 d9587388a3c51e513b1e0c04e30f02a7  kernel/classes/audit/index/expauditindexsettings.php
-002ed728bbf83db85b6fee18ace28719  kernel/classes/audit/index/expauditquery.php
+e19e8b2fc9896799fd9df93952966a0b  kernel/classes/audit/index/expauditquery.php
 c8d50fea8a7a4a50364c9ef8272a20b2  kernel/classes/audit/sinks/expauditmailrecipients.php
 f093a43c45cbcd3d23562371733910f1  kernel/classes/audit/sinks/expauditmailsink.php
 e2c15d2e737dee9378e3ce28fd5aed05  kernel/classes/audit/sinks/expauditsinkbase.php
@@ -5586,7 +5586,7 @@ f0470b28d144fa1762036feefc421dca  kernel/private/classes/views/audit/alerts.php
 31e985323c3829b957ecfd876d6a82bd  kernel/private/classes/views/audit/archives.php
 2881311f835932520216e142235336b8  kernel/private/classes/views/audit/charts.php
 4971e8fbe5975ab1febc3076adfe15e6  kernel/private/classes/views/audit/console.php
-441e5be313678f776896131b83cc402c  kernel/private/classes/views/audit/dashboard.php
+877f4f2822ed24be791562a836b8a44d  kernel/private/classes/views/audit/dashboard.php
 31a18ba43dd246f02b331a78667e17cf  kernel/private/classes/views/audit/event.php
 803b9ef71867fac770e9656220daee94  kernel/private/classes/views/audit/export.php
 5161269dd20589a9b28194f5f2b65f75  kernel/private/classes/views/audit/recent.php
@@ -6351,7 +6351,7 @@ b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 d1fa2312d5760fff6537a61d1db773c3  lib/ezutils/classes/ezexecution.php
 72fc7a1f67f3eaa83336f9d5b48a0169  lib/ezutils/classes/ezexpiryhandler.php
-b4fd3b1bf4ed2cc65e987e4438a865c2  lib/ezutils/classes/ezextension.php
+4e076e2aad02f17416f0a319a1c6c529  lib/ezutils/classes/ezextension.php
 072c8aadc71992ed763c699b6999fda2  lib/ezutils/classes/ezfatalusererror.php
 9e4092daa80dcaa119d74d48870c65d1  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
 b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
@@ -7101,6 +7101,7 @@ e61d474519fd3ac4a0119ab85bfd7262  tests/tests/kernel/classes/audit/expAuditArchi
 95af044af3f1f9dc50a6897ecc483498  tests/tests/kernel/classes/audit/expAuditChainTest.php
 1f5e5b69cc51013e2858331f0fecd1e1  tests/tests/kernel/classes/audit/expAuditCompatTest.php
 9acdc9974331159e04b4cd16a3449bc5  tests/tests/kernel/classes/audit/expAuditConfigRootTest.php
+46fb76d6fffcec976840fb56880ca3d1  tests/tests/kernel/classes/audit/expAuditDashboardVolumeTest.php
 51126d93ab75f8038767dcbbad8124d3  tests/tests/kernel/classes/audit/expAuditExportStreamTest.php
 5d7b64fcd39bf8a43cfba87b13c65f49  tests/tests/kernel/classes/audit/expAuditFilterGuardReauthTest.php
 60138fd0b5b1dd34dd3e943a9c92326e  tests/tests/kernel/classes/audit/expAuditForkTest.php
@@ -7910,6 +7911,7 @@ e03fa9c077e0046cda4ed2e95139fa40  tests/tests/lib/ezutils/eZCLITest.php
 19b4b7676978ad54bccd376b846ad625  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
 cf18f00c422de9b9f4ab10201485831c  tests/tests/lib/ezutils/eZDebugMessagesTest.php
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
+d6114e4248b4221f06f138cb33e09dc2  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
 d5d9b75da5c18ad00128dcef87e06b52  tests/tests/lib/ezutils/eZFatalUserErrorTest.php
 3378e66c399d5c5780bf68e83863d413  tests/tests/lib/ezutils/eZHTTPToolRequestTest.php
 941837b4dbd18a37bcb019e8fb86fb9b  tests/tests/lib/ezutils/eZHTTPToolTest.php
