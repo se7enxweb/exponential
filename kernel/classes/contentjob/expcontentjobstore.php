@@ -338,7 +338,7 @@ class expContentJobStore
         if ( !self::validID( $id ) )
             return;
         $dir = self::directory();
-        foreach ( array( '.json', '.log', '.map', '.nodes.json', '.out', '.lock', '.run.lock' ) as $suffix )
+        foreach ( array( '.json', '.log', '.map', '.nodes.json', '.out', '.lock', '.run.lock', '.export' ) as $suffix )
             if ( is_file( "$dir/$id$suffix" ) )
                 @unlink( "$dir/$id$suffix" );
     }

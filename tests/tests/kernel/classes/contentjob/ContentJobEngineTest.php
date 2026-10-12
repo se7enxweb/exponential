@@ -469,7 +469,7 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
             }
         }
         expContentJob::$settings = null;
-        $this->assertSame( array( 'remove', 'copy', 'move', 'hide', 'reveal', 'section', 'state', 'addlocation', 'removelocation' ),
+        $this->assertSame( array( 'remove', 'copy', 'move', 'hide', 'reveal', 'section', 'state', 'addlocation', 'removelocation', 'packageinstall', 'auditexport' ),
                            array_keys( expContentJob::$defaults['JobTypes'] ) );
         foreach ( expContentJob::$defaults['JobTypes'] as $type => $class )
         {

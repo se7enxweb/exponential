@@ -54,7 +54,7 @@ class expContentJob
         'JobTypes' => array( 'remove' => 'expContentJobRemoveSubtree', 'copy' => 'expContentJobCopySubtree', 'move' => 'expContentJobMoveSubtree',
                              'hide' => 'expContentJobHideSubtree', 'reveal' => 'expContentJobRevealSubtree', 'section' => 'expContentJobSectionSubtree',
                              'state' => 'expContentJobStateSubtree', 'addlocation' => 'expContentJobAddLocation', 'removelocation' => 'expContentJobRemoveLocation',
-                             'packageinstall' => 'expContentJobPackageInstall' ),
+                             'packageinstall' => 'expContentJobPackageInstall', 'auditexport' => 'expContentJobAuditExport' ),
     );
 
     /** @var array the job's data, as stored */

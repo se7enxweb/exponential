@@ -33,6 +33,7 @@ class expAuditIndexSettings
             'AuditConsoleSettings/ReauthForManage' => 'disabled',
             'AuditConsoleSettings/ReauthMinutes' => '10',
             'AuditConsoleSettings/MaxExportRecords' => '100000',
+            'AuditConsoleSettings/MaxBackgroundExportRecords' => '1000000',
             'AuditPrivacySettings/PseudonymiseAfterDays' => '90',
         );
     }
@@ -46,7 +47,7 @@ class expAuditIndexSettings
 
     /**
      * @return array index (bool), batchSize, indexReads (bool), fullText (bool), keepDays, pageSize, reauth (bool),
-     *               reauthMinutes, maxExport, pseudonymiseAfterDays
+     *               reauthMinutes, maxExport, maxBackgroundExport, pseudonymiseAfterDays
      */
     public static function get()
     {
@@ -85,6 +86,7 @@ class expAuditIndexSettings
             'reauth' => $on( $v['AuditConsoleSettings/ReauthForManage'] ),
             'reauthMinutes' => max( 1, (int)$v['AuditConsoleSettings/ReauthMinutes'] ),
             'maxExport' => max( 1, (int)$v['AuditConsoleSettings/MaxExportRecords'] ),
+            'maxBackgroundExport' => max( 1, (int)$v['AuditConsoleSettings/MaxBackgroundExportRecords'] ),
             'pseudonymiseAfterDays' => max( 1, (int)$v['AuditPrivacySettings/PseudonymiseAfterDays'] ),
         );
     }

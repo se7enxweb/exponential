@@ -505,6 +505,9 @@ class Job extends \Exponential\Runnable\ModuleView
             return true;
         if ( self::canSeeAll( $user ) )
             return true;
+        // an audit export is about audit records, not content: its owner and content/jobs only
+        if ( $job->type() === 'auditexport' )
+            return false;
         $access = $user->hasAccessTo( 'content', $job->type() === 'copy' ? 'create' : 'remove' );
         return $access['accessWord'] === 'yes';
     }
@@ -627,6 +630,13 @@ class Job extends \Exponential\Runnable\ModuleView
                              'done_text' => $tr( 'The job is done.' ), 'open_text' => $tr( 'Open the node' ) );
             if ( !$redirectID && $firstID )
                 $redirectURL = 'content/view/full/' . $firstID;
+        }
+        // a job that is not about nodes names its own page (the audit export: audit/export with its filter)
+        $returnURL = (string) $job->get( 'gui_return_url' );
+        if ( $returnURL !== '' && preg_match( '#^[a-z][a-z0-9_]*/[A-Za-z0-9_()/%.:@-]*$#', $returnURL ) )
+        {
+            $redirectURL = $returnURL;
+            $labels['open_text'] = $tr( 'Open the result' );
         }
 
         return $labels + array(

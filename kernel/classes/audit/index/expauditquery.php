@@ -386,6 +386,61 @@ class expAuditQuery
     }
 
     /**
+     * The order of the index rows of a filter without the rows themselves: id and time_ms, newest first, from a
+     * position or after a row. A long export reads it in segments and the full rows by id (byIds()): the engine
+     * then sorts two narrow columns once per segment instead of every whole record once per page, which on SQLite
+     * made a page of 500 deep in a channel of 27,000 records cost 0.5 to 0.7 s (#393). After a row (keyset), rows
+     * written meanwhile at the top neither repeat nor shift the rest, as an OFFSET would.
+     *
+     * @param array $f
+     * @param string[]|null $channels
+     * @param int $offset rows to skip (only without $after)
+     * @param int $limit
+     * @param array|null $after array( time_ms, id ) of the last row already read
+     * @return array[]|null rows of id and time_ms; null when the database refused the query
+     */
+    public function orderedIds( array $f, ?array $channels, $offset, $limit, ?array $after = null )
+    {
+        $where = $this->where( $f, $channels );
+        if ( $after )
+        {
+            $t = (int)$after[0];
+            $id = "'" . $this->db->escapeString( (string)$after[1] ) . "'";
+            $where = '(' . $where . ') AND (time_ms < ' . $t . ' OR (time_ms = ' . $t . ' AND id < ' . $id . '))';
+            $offset = 0;
+        }
+        return expAuditIndexSchema::tryArrayQuery( $this->db, 'SELECT id, time_ms FROM ' . expAuditIndexSchema::EVENT . ' WHERE ' . $where
+                                                   . ' ORDER BY time_ms DESC, id DESC',
+                                                   array( 'offset' => max( 0, (int)$offset ), 'limit' => max( 1, (int)$limit ) ) );
+    }
+
+    /**
+     * Full index rows by id, in the order of the ids given; an id without a row (removed meanwhile) is left out.
+     *
+     * @param string[] $ids at most MAX_LIMIT
+     * @return array[]|null null when the database refused the query
+     */
+    public function byIds( array $ids )
+    {
+        if ( !$ids )
+            return array();
+        $db = $this->db;
+        $list = implode( ', ', array_map( function ( $id ) use ( $db ) { return "'" . $db->escapeString( (string)$id ) . "'"; },
+                                          array_slice( array_values( $ids ), 0, self::MAX_LIMIT ) ) );
+        $rows = expAuditIndexSchema::tryArrayQuery( $db, 'SELECT * FROM ' . expAuditIndexSchema::EVENT . ' WHERE id IN (' . $list . ')' );
+        if ( $rows === null )
+            return null;
+        $byId = array();
+        foreach ( $rows as $row )
+            $byId[(string)$row['id']] = $row;
+        $out = array();
+        foreach ( $ids as $id )
+            if ( isset( $byId[(string)$id] ) )
+                $out[] = $byId[(string)$id];
+        return $out;
+    }
+
+    /**
      * @param array $f
      * @param string[]|null $channels
      * @return int|null
