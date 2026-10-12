@@ -243,6 +243,57 @@ class expAuditSourceRegistry
         }
     }
 
+
+    /**
+     * The CSV columns of the source that owns a channel (expAuditSource::exportColumns()), cleaned: a name of a-z,
+     * digits and _ (at most 48 characters) that is not one of the generic columns, a path of ranks into the record
+     * (after.usage.in). Nothing for a channel without a working source, or for no channel.
+     *
+     * @param string|null $channel the export's channel filter
+     * @param string[] $taken the generic columns
+     * @return string[] column => path
+     */
+    public static function exportColumns( $channel, array $taken = array() )
+    {
+        $owner = self::forChannel( (string)$channel );
+        if ( !$owner )
+            return array();
+        list( $id, $source ) = $owner;
+        $out = array();
+        foreach ( (array)self::call( $id, function () use ( $source ) { return $source->exportColumns(); }, array() ) as $name => $path )
+            if ( is_string( $name ) && preg_match( '/^[a-z][a-z0-9_]{0,47}$/', $name ) && !in_array( $name, $taken, true )
+                 && is_string( $path ) && preg_match( '/^[a-z][A-Za-z0-9_]*(\.[A-Za-z0-9_]+){0,5}$/', $path ) )
+                $out[$name] = $path;
+        return $out;
+    }
+
+    /**
+     * The values of exportColumns() for one record: '' for a value that is not there, 1/0 for a boolean, JSON for a
+     * list or a hash.
+     *
+     * @param string[] $columns column => path
+     * @param array $record the record as written
+     * @return string[] column => value
+     */
+    public static function exportValues( array $columns, array $record )
+    {
+        $row = array();
+        foreach ( $columns as $name => $path )
+        {
+            $v = $record;
+            foreach ( explode( '.', $path ) as $rank )
+            {
+                if ( !is_array( $v ) || !array_key_exists( $rank, $v ) )
+                {
+                    $v = null;
+                    break;
+                }
+                $v = $v[$rank];
+            }
+            $row[$name] = $v === null ? '' : ( is_bool( $v ) ? ( $v ? '1' : '0' ) : ( is_scalar( $v ) ? (string)$v : expAuditJson::encode( $v ) ) );
+        }
+        return $row;
+    }
     /** @return array[] label, url: the links whose address is a module/view path */
     protected static function cleanLinks( $links )
     {

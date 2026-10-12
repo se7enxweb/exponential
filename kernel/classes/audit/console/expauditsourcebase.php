@@ -45,6 +45,12 @@ abstract class expAuditSourceBase implements expAuditSource
         return array();
     }
 
+    /** No columns of its own: the CSV export has the generic ones only */
+    public function exportColumns()
+    {
+        return array();
+    }
+
     /**
      * A console address with filters as view parameters: audit/console/(channel)/ai/(name)/system.expai.*
      *

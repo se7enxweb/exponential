@@ -1,5 +1,6 @@
 {* audit/export without a format: the choice of format for the current filter. Variables: filters, total, max,
-   console_url, urls (csv, jsonl, json => module/view path), audit_sources (audit/sources.tpl). *}
+   console_url, urls (csv, jsonl, json => module/view path), audit_sources (audit/sources.tpl), source_columns (label,
+   columns: the CSV columns the source of the filtered channel adds). *}
 {include uri='design:audit/style.tpl'}
 <div class="context-block au-view" id="exp-audit-export">
 
@@ -21,7 +22,7 @@
 {if gt( $total, $max )}<strong>{'Only the newest %max are exported here; exp:audit export has no limit.'|i18n( 'design/admin/audit',, hash( '%max', $max ) )}</strong>{/if}</p>
 
 <ul>
-    <li><a href={$urls.csv|ezurl}>{'CSV'|i18n( 'design/admin/audit' )}</a> &ndash; {'one row per event, for a spreadsheet'|i18n( 'design/admin/audit' )}</li>
+    <li><a href={$urls.csv|ezurl}>{'CSV'|i18n( 'design/admin/audit' )}</a> &ndash; {'one row per event, for a spreadsheet'|i18n( 'design/admin/audit' )}{if and( is_set( $source_columns ), $source_columns.columns|count )}; {'with the columns of %source: %columns'|i18n( 'design/admin/audit',, hash( '%source', $source_columns.label, '%columns', $source_columns.columns|implode( ', ' ) ) )|wash}{/if}</li>
     <li><a href={$urls.jsonl|ezurl}>{'JSON lines'|i18n( 'design/admin/audit' )}</a> &ndash; {'the records as written, one per line; their hashes can be checked'|i18n( 'design/admin/audit' )}</li>
     <li><a href={$urls.json|ezurl}>{'JSON'|i18n( 'design/admin/audit' )}</a> &ndash; {'the records as one array'|i18n( 'design/admin/audit' )}</li>
 </ul>

@@ -1,7 +1,8 @@
 <?php
 /**
  * The audit/export view (doc/bc/6.0/audit.md, "Views"): the records of the console's filter as a download, newest
- * first: /(format)/csv (one row per record, the index columns), /(format)/jsonl (the records as written, one per
+ * first: /(format)/csv (one row per record, the index columns; with (channel) also the columns the channel's source
+ * declares, expAuditSource::exportColumns()), /(format)/jsonl (the records as written, one per
  * line, so the hashes can be checked) or /(format)/json (one array). Without a format it shows the choice and how
  * many records the filter has. At most [AuditConsoleSettings] MaxExportRecords records; a larger filter is cut and
  * says so (exp:audit export has no limit). Policy audit/read with its Channel limitation. Recorded as
@@ -57,6 +58,9 @@ class Export extends \Exponential\Runnable\ModuleView
                 $urls[$f] = \expAuditConsole::url( 'audit/export', $raw, array( 'format' => $f ) );
             $tpl->setVariable( 'urls', $urls );
             $tpl->setVariable( 'audit_sources', \expAuditConsole::sourceLinks( 'audit/export', $raw, $allowed ) );
+            $owner = isset( $raw['channel'] ) ? \expAuditSourceRegistry::forChannel( $raw['channel'] ) : null;
+            $tpl->setVariable( 'source_columns', array( 'label' => $owner ? \expAuditSourceRegistry::status()[$owner[0]]['label'] : '',
+                                                        'columns' => isset( $raw['channel'] ) ? array_keys( \expAuditSourceRegistry::exportColumns( $raw['channel'], self::CSV_COLUMNS ) ) : array() ) );
             \expAuditConsole::recordRead( 'audit/export', $raw, $total );
             return \expAuditConsole::result( $tpl->fetch( 'design:audit/export.tpl' ), \ezpI18n::tr( 'design/admin/audit', 'Export' ) );
         }
@@ -79,8 +83,10 @@ class Export extends \Exponential\Runnable\ModuleView
             hash_update( $hash, $s );
             fwrite( $out, $s );
         };
+        // an export of one channel: the columns its source declares follow the generic ones
+        $extra = $format === 'csv' && isset( $raw['channel'] ) ? \expAuditSourceRegistry::exportColumns( $raw['channel'], self::CSV_COLUMNS ) : array();
         if ( $format === 'csv' )
-            $emit( "\xEF\xBB\xBF" . self::csvLine( self::CSV_COLUMNS ) );
+            $emit( "\xEF\xBB\xBF" . self::csvLine( array_merge( self::CSV_COLUMNS, array_keys( $extra ) ) ) );
         elseif ( $format === 'json' )
             $emit( "[\n" );
         $count = 0;
@@ -97,6 +103,11 @@ class Export extends \Exponential\Runnable\ModuleView
                     $line = array();
                     foreach ( self::CSV_COLUMNS as $c )
                         $line[] = isset( $v[$c] ) ? $v[$c] : '';
+                    if ( $extra )
+                    {
+                        $record = json_decode( (string)$row['record'], true );
+                        $line = array_merge( $line, array_values( \expAuditSourceRegistry::exportValues( $extra, is_array( $record ) ? $record : array() ) ) );
+                    }
                     $emit( self::csvLine( $line ) );
                 }
                 elseif ( $format === 'jsonl' )

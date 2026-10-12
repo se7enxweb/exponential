@@ -13,7 +13,8 @@
  * The files read are the live channel files and the imported 4.x records (<LogDir>/imported/), newest first. The
  * console and exp:audit search use the index when it exists (expAuditQuery); this is the path without it.
  *
- * Export formats: jsonl (one record per line, as written), csv (the main columns), bundle (a directory with
+ * Export formats: jsonl (one record per line, as written), csv (the main columns, and with a channel filter the
+ * columns its source declares, expAuditSource::exportColumns()), bundle (a directory with
  * records.jsonl and manifest.json: count, sha256 of the records, the filters, key_id and an HMAC with the active
  * signing key, so the receiver can check it came from this installation unchanged).
  *
@@ -346,7 +347,7 @@ class expAuditExporter
     {
         $format = strtolower( (string)$format );
         if ( $format === 'csv' )
-            $bytes = $this->csv( $records );
+            $bytes = $this->csv( $records, $filters );
         else
         {
             $bytes = '';
@@ -383,15 +384,23 @@ class expAuditExporter
         return $result;
     }
 
-    /** @return string The records as CSV */
-    protected function csv( array $records )
+    /**
+     * @param array[] $records
+     * @param array $filters with a channel whose source declares columns (expAuditSource::exportColumns()), they
+     *                       follow the generic ones
+     * @return string The records as CSV
+     */
+    protected function csv( array $records, array $filters = array() )
     {
+        $generic = array( 'time', 'id', 'channel', 'name', 'severity', 'result', 'reason', 'user_id', 'login', 'ip', 'object_type',
+                          'object_id', 'object_name', 'target_type', 'target_id', 'request', 'job', 'imported' );
+        $extra = isset( $filters['channel'] ) && is_string( $filters['channel'] ) && class_exists( 'expAuditSourceRegistry' )
+                 ? expAuditSourceRegistry::exportColumns( $filters['channel'], $generic ) : array();
         $h = fopen( 'php://memory', 'w+b' );
-        fputcsv( $h, array( 'time', 'id', 'channel', 'name', 'severity', 'result', 'reason', 'user_id', 'login', 'ip', 'object_type',
-                            'object_id', 'object_name', 'target_type', 'target_id', 'request', 'job', 'imported' ), ',', '"', '\\' );
+        fputcsv( $h, array_merge( $generic, array_keys( $extra ) ), ',', '"', '\\' );
         foreach ( $records as $r )
         {
-            fputcsv( $h, array(
+            fputcsv( $h, array_merge( array(
                 isset( $r['time'] ) ? $r['time'] : '', isset( $r['id'] ) ? $r['id'] : '', isset( $r['channel'] ) ? $r['channel'] : '', $r['name'],
                 isset( $r['severity'] ) ? $r['severity'] : '', isset( $r['result'] ) ? $r['result'] : '', isset( $r['reason'] ) ? $r['reason'] : '',
                 isset( $r['actor']['user_id'] ) ? $r['actor']['user_id'] : '', isset( $r['actor']['login'] ) ? $r['actor']['login'] : '',
@@ -400,7 +409,7 @@ class expAuditExporter
                 isset( $r['object']['name'] ) ? $r['object']['name'] : '',
                 isset( $r['target']['type'] ) ? $r['target']['type'] : '', isset( $r['target']['id'] ) ? ( is_scalar( $r['target']['id'] ) ? $r['target']['id'] : json_encode( $r['target']['id'] ) ) : '',
                 isset( $r['request']['id'] ) ? $r['request']['id'] : '', isset( $r['job'] ) ? $r['job'] : '', !empty( $r['imported'] ) ? '1' : '',
-            ), ',', '"', '\\' );
+            ), $extra ? array_values( expAuditSourceRegistry::exportValues( $extra, $r ) ) : array() ), ',', '"', '\\' );
         }
         rewind( $h );
         $csv = stream_get_contents( $h );

@@ -6,7 +6,8 @@
  *   Sources[myext]=myExtAuditSource
  * The views ask every registered source that works here (problem() is '') and whose channel the user may read:
  * the dashboard shows its panel, the console, recent, charts, alerts and export views its links, the charts view its
- * series, an event of its channel its fields and links, the settings view its state. A source that is not
+ * series, an event of its channel its fields and links, the CSV export of its channel its columns, the settings
+ * view its state. The audit left menu leaves out a link into a channel the user may not read. A source that is not
  * registered, or whose extension is not active, changes nothing. Extend expAuditSourceBase, which answers every
  * method with "nothing". Guide: doc/bc/6.0/audit.md ("An extension's source in the console").
  *
@@ -76,4 +77,16 @@ interface expAuditSource
      * @return array[] title, series (label, name)
      */
     public function charts();
+
+    /**
+     * The source's own columns in the CSV export of its channel (audit/export/(channel)/<channel>/(format)/csv and
+     * exp:audit export --channel=<channel> --format=csv), after the generic ones. Each is a column name and the
+     * path of its value in the record ('after.provider', 'after.usage.in'); a value that is not there is empty, a
+     * list or a hash is written as JSON. Only fields that are safe to hand out in a spreadsheet: never a text a
+     * user typed, an answer, a key or a token. The JSON and JSON lines exports carry every field anyway.
+     *
+     * @return string[] column => path (a-z, digits and _ ; at most 48 characters; a generic column's name is
+     *                  left out)
+     */
+    public function exportColumns();
 }
