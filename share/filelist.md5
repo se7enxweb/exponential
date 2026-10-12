@@ -704,7 +704,7 @@ d941c9c9f890a8617a6ddfc1dde32325  design/admin/templates/url/edit.tpl
 a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
 f7a30c302abe5ead88aeec1589d26138  design/admin/templates/user/edit.tpl
 e7729d83b6d2d3e108c251e3364cf009  design/admin/templates/user/exp_style.tpl
-94f6a4ca5186b066b15d67a418eb3a1b  design/admin/templates/user/login.tpl
+acfdb567bcfd07bcf50f2fe69d0c2b38  design/admin/templates/user/login.tpl
 4d5329c1f77dd014bb6074f0454361d1  design/admin/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin/templates/user/preferences_confirm.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin/templates/user/register.tpl
@@ -1327,7 +1327,7 @@ d941c9c9f890a8617a6ddfc1dde32325  design/admin4/templates/url/edit.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 f7a30c302abe5ead88aeec1589d26138  design/admin4/templates/user/edit.tpl
 e7729d83b6d2d3e108c251e3364cf009  design/admin4/templates/user/exp_style.tpl
-db9fe9a68ae459d0404e90b409e57040  design/admin4/templates/user/login.tpl
+df4cd88ac1e56b6dcc0b0a9b012213ff  design/admin4/templates/user/login.tpl
 2e4789e7e2e4e9ee6f5f607b9bf9da5b  design/admin4/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin4/templates/user/preferences_confirm.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin4/templates/user/register.tpl
@@ -2702,7 +2702,7 @@ d3aa2dac933f392cec76ea64428870fc  design/standard/templates/subitems/columns/tea
 8fed480075e1cb0c1366c23707ddae17  design/standard/templates/toolbar/full/create_object.tpl
 73d86715bd43d0240ca0a150585e1edb  design/standard/templates/toolbar/full/drafts.tpl
 0e3628ae2601f77591e34b560862a3cf  design/standard/templates/toolbar/full/link.tpl
-67ce2f6fe404ee07714f48fb4850763c  design/standard/templates/toolbar/full/login.tpl
+77cf1cb078b37d41fe4c09547cab67e5  design/standard/templates/toolbar/full/login.tpl
 66f3e929eb4c167d8a790d49b45c7291  design/standard/templates/toolbar/full/node_list.tpl
 8185d76e17b2a7d04084df66f3d9c729  design/standard/templates/toolbar/full/notification.tpl
 aed700cf156cf69ac750303b6bc8d451  design/standard/templates/toolbar/full/preferred_currency.tpl
@@ -2731,7 +2731,7 @@ e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 2554c5f3a60f7013a82f4cbdc73c1fc1  design/standard/templates/user/edit.tpl
 05c54fc072951df5123bdf0acc95c4d3  design/standard/templates/user/forgotpassword.tpl
 0593c48408782b956ece5a87bb080492  design/standard/templates/user/forgotpasswordmail.tpl
-effa7088aa8aaca0475eecbfe46e32a8  design/standard/templates/user/login.tpl
+971ebbbcaf4b518149832ec6385cbf83  design/standard/templates/user/login.tpl
 012058cf37cb560202e58cd45c3e6d46  design/standard/templates/user/password.tpl
 eca5d5ed39fdf3334394887dad070c6e  design/standard/templates/user/password_changed_mail.tpl
 0df6c6679df5971b6ce443d1bd0fe421  design/standard/templates/user/preferences_confirm.tpl
@@ -2798,7 +2798,7 @@ d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXP
 d215eaca3e19242c3854c77ee4780c26  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 dcabda3cab27ad614f666edb308127ad  doc/bc/6.0/audit.md
-a99fa839dacf98976b08968d924afa59  doc/bc/6.0/backend_ezjscore_services.md
+e8465b9099e38bb4731675ba1ea462c2  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 250a9d7e6948ddd176f5c6c54bb0febb  doc/bc/6.0/behaviour-changes-2026-09b.md
 7bfb8544a431f1470b8eee7a36bb7578  doc/bc/6.0/behaviour-changes-2026-10.md
@@ -3547,7 +3547,7 @@ ab52cfafedf9a2c28390bf0f5adf7b6f  doc/guides/packages.md
 f5c7d03721608109d841867836f390c9  doc/guides/pdf-exports.md
 69eb92f94dbfcc89c1bd3f868d578068  doc/guides/preloading-caches.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
-5a7bde298cd3b3eb7329db6460fd4743  doc/guides/roles-and-policies.md
+2439094a2727351a8dc10cc3e39546d0  doc/guides/roles-and-policies.md
 bb8d6835bd7b4751fd30540ba5bdf4c8  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
 23dbdeb41b11f9880c7d4a528e439759  doc/guides/security-and-audit.md
@@ -4141,10 +4141,10 @@ ac3dd65ba7ed3f9a5b14ff27ebdd4746  extension/ezjscore/classes/ezjscjavascriptopti
 4ae024dfdc50fd1c7bb7931f5e82df25  extension/ezjscore/classes/ezjscserverfunctionsjs.php
 6f13a2277478c637ee2eac9ed933e320  extension/ezjscore/classes/ezjscserverfunctionsnode.php
 dbea24715af6c5d5d6b1d551aa97dbca  extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php
-7f0fe804e1378e0bb7d4206fa01ba9fe  extension/ezjscore/classes/ezjscserverrouter.php
-884df8372458d55f4849c836bf18b227  extension/ezjscore/classes/runnable/views/ezjscore/call.php
+b6a8d8c527a374f1927de93c35dc44d0  extension/ezjscore/classes/ezjscserverrouter.php
+0b7357fc4247a78ec1191aec9e22c235  extension/ezjscore/classes/runnable/views/ezjscore/call.php
 5f0855ec31d8b38c3d4291064fce4ea3  extension/ezjscore/classes/runnable/views/ezjscore/hello.php
-256a1617bd3a9e2be222a52f87af5399  extension/ezjscore/classes/runnable/views/ezjscore/run.php
+753289e9642d922f358a89b1e4d31da7  extension/ezjscore/classes/runnable/views/ezjscore/run.php
 e508de5f04fd71f04d1d4ce30045b933  extension/ezjscore/design/standard/javascript/LICENSE-jquery-migrate.txt
 c43692f7b18388dbe40eb34dae75d165  extension/ezjscore/design/standard/javascript/LICENSE-jquery-ui.txt
 de877aa6d744cc160ff41c26a8e4811f  extension/ezjscore/design/standard/javascript/LICENSE-jquery.txt
@@ -4169,7 +4169,7 @@ dd9ea2c4abeb36e89c5120deddce6dd0  extension/ezjscore/modules/ezjscore/hello.php
 b89ef61ec84f55e7c56dc26e74b2a3cd  extension/ezjscore/modules/ezjscore/module.php
 2fad95830ab020747ea347b82f413dd0  extension/ezjscore/modules/ezjscore/run.php
 cd79b07cce2bbd4e295736ff7c4d9bea  extension/ezjscore/settings/design.ini.append.php
-662ea3df5c75c81e0506df69803123e1  extension/ezjscore/settings/ezjscore.ini
+82157c177c59ca32a2f73d8cec7499f7  extension/ezjscore/settings/ezjscore.ini
 a13eb1cb59361c9f259aa92f7a3b995b  extension/ezjscore/settings/module.ini.append.php
 803fb7c7b02e4b4f5e0e74db69a7c361  extension/ezjscore/settings/rad.ini.append.php
 fee06f2ddf43dbeb28034854e48a0505  extension/ezjscore/settings/site.ini.append.php
@@ -4943,6 +4943,7 @@ f33944dda86f2612b983e1d72273dccc  kernel/classes/expnamepatternresolverinterface
 a1dd3f07f9038f8b1741e1ea5f24aa57  kernel/classes/exppackagejson.php
 c558703233869e8b7789a6a6179b31c9  kernel/classes/exppasswordpolicy.php
 cadc65b1b3cc8e2459058bcc7eeb2840  kernel/classes/expphar.php
+757793bfb95c663bf2f51744c3184b70  kernel/classes/exppolicyomitlist.php
 b607c67490219f43e8a2cf31d600700e  kernel/classes/exppreloadaddress.php
 bc3a9ffed07c0eb20d4b6237ee51f3b3  kernel/classes/exppreloadhistory.php
 52b8efefdc8c0619d5d22782e8d8721f  kernel/classes/exppreloadjob.php
@@ -4960,7 +4961,7 @@ c748b14e37c7c23f4b66f5df522d253c  kernel/classes/expvelocityconfiglayout.php
 7fd7e6d025cf7ea88211886fcdf2ba8d  kernel/classes/expvelocityfrankenphp.php
 7c4ebba6437621654ba6ac7004296173  kernel/classes/expvelocityfrankenphpinstaller.php
 47063de8eb0264a026b9b448b0c1ead3  kernel/classes/expvelocityphpserver.php
-09e9dc70a834dd21ce8f66886a92258c  kernel/classes/expviewaccess.php
+b42226f735d68e3b8b78875311b214fb  kernel/classes/expviewaccess.php
 d9da1ddbb238a9634bbd835247adbc64  kernel/classes/ezaudit.php
 6235fea69dfbb9e5d965e4879d7203db  kernel/classes/ezbasket.php
 a8480946c345cbdba00cf4aa5f283a34  kernel/classes/ezbinaryfilehandler.php
@@ -5405,7 +5406,7 @@ b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/int
 7b075fff6b1e2111d3f2b9f83e59c705  kernel/private/classes/commands/accesscheck.php
 637c34664ef032d92963815921a3581e  kernel/private/classes/commands/adddefaultstates.php
 34ae68be04b0972a488a71f656800e6a  kernel/private/classes/commands/audit.php
-d53b7dccb94ddb3425c6c7a3487d3b95  kernel/private/classes/commands/benchmark.php
+df1aec24f996ce857e8b868c9b68fa5f  kernel/private/classes/commands/benchmark.php
 43642656977307db78e5f248b9f465ff  kernel/private/classes/commands/cache.php
 392d445c33107bea4824fd5775c8a4d9  kernel/private/classes/commands/changelog2xmltext.php
 2e11e2860b0c8481d96e36bd7b002a52  kernel/private/classes/commands/checkclasses.php
@@ -5548,7 +5549,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 28b56f2df1290892158aedc26b81b0c8  kernel/private/classes/ezpkernelredirect.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 ddec744dfff68595b33fab3f301af457  kernel/private/classes/ezpkerneltreemenu.php
-17b7f5aa4e9215027690ffd9b1ff48d1  kernel/private/classes/ezpkernelweb.php
+a575dc06c0441715ec3e83b2397e05cf  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 c40373eb533e1704ca522996e35b8e1e  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -7064,6 +7065,7 @@ a26c7abb7aa53e9ce49166a23824422d  tests/tests/extension/expservices/users/expNot
 b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUserServicesTest.php
 1d8e114d714c6cc4edbaaf7d046993bc  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
+1045d4d1d9f875ee35726dfa45431264  tests/tests/extension/ezjscore/ezjscServerRouterPolicyTest.php
 d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
 ec8572119e27a0e1b8b1dd9112ffed40  tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php
 b35407af9e2ca6ea1f275c2f3ebbb002  tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php
@@ -7268,6 +7270,7 @@ c3c626e3450b8775e3ca74608825e7db  tests/tests/kernel/classes/expImageUploadValid
 a53d3582d9c819892459edabc3a01176  tests/tests/kernel/classes/expLoveStackCheckTest.php
 6c208dc24a08e5be39ccb166fd888223  tests/tests/kernel/classes/expLoveStackFixture.php
 05a73385f01378bb23461a9bfdfdfbc9  tests/tests/kernel/classes/expPDFExportTest.php
+3bdd28bd003091155ce34cc6c77145e9  tests/tests/kernel/classes/expPolicyOmitListTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 a1c1e7b69c803d8c1e3d120f932a664c  tests/tests/kernel/classes/expRoleGrantCheckTest.php
 e50cb342005e0cdae8e05cb08cea964d  tests/tests/kernel/classes/expRolePagesTest.php
