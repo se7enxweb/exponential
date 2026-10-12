@@ -322,7 +322,7 @@ a450bce071a004b4b9a65c4de328a16e  design/admin/templates/audit/alerts.tpl
 b1445fb43f6ad5b27a3b2f424c96abdf  design/admin/templates/audit/archives.tpl
 c9aa37ff8dea94504339c0a8c98e5ba5  design/admin/templates/audit/charts.tpl
 a71387bdfb9637e8802396c09ad4506a  design/admin/templates/audit/console.tpl
-b4b00757c43dd7560ece6667cb04082a  design/admin/templates/audit/dashboard.tpl
+5fdce1b0a4110f50667bcbfc2303d384  design/admin/templates/audit/dashboard.tpl
 6ffb2a03beac13405a536f2d8fca3d5f  design/admin/templates/audit/event.tpl
 e32177811ea5b4bae3de7a757bc62ca1  design/admin/templates/audit/export.tpl
 e30412269e3a1949f8e0be42fab23608  design/admin/templates/audit/menu.tpl
@@ -6879,14 +6879,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-1d8e99d58a2c277456f1778b0578a3b7  share/translations/eng-US/translation.ts
+2b26ef58f5095e5a77bc362c8dc706e8  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-469b274ae0cb27ca2071660e922b13cc  share/translations/ger-DE/translation.ts
+3ae1003aae53edd6aad6941ae8d74d3d  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6899,7 +6899,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-9ff40e840fa0707168e956c54a8631fd  share/translations/untranslated/translation.ts
+70c9bf468056de2404045dc4a7d4e3b0  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
