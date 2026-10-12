@@ -280,6 +280,12 @@ Unknown values fall back to the defaults. The forms, their field names and their
 
 ## For developers
 
+- A link within the site in one call: `eZURI::build( '/content/view/full/2' )` gives the path the `ezurl` template
+  operator gives (index file and, for a siteaccess in the URL, its name in front), `eZURI::build( $url, true )` the
+  absolute URL with scheme and host. Like `ezurl` the result is escaped for HTML; pass a third argument `false`
+  for a URL that goes into a header or a JSON answer. A link with a scheme (`https:`, `mailto:`) comes back as it
+  is. Tested in `tests/tests/lib/ezutils/eZURIBuildTest.php`. With thanks to Mugo Web (LoveStack, commit
+  `f2284944b2`).
 - The views are `\Exponential\View\Kernel\Url\ListView`, `\Exponential\View\Kernel\Search\Stats`,
   `\Exponential\View\Kernel\Content\UrlaliasGlobal` and `\Exponential\View\Kernel\Content\UrlaliasWildcard`
   (`kernel/private/classes/views/...`). Their static helpers (modes, orders, the search text, usage, the

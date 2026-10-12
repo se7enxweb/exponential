@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f2284944b2), Copyright (C) Mugo Web, GPL v2
  */
 
 /**
@@ -595,6 +597,27 @@ class eZURI
         }
 
         return new eZURI( $uri );
+    }
+
+    /**
+     * Builds a link to $url within the site, as the ezurl template operator does: the index
+     * directory and the siteaccess of the current request (URI access) are put in front, and
+     * with $full the scheme and host as well. $url itself is not changed.
+     *
+     * A link with a scheme (https:, mailto:) or a protocol-relative one (//host) is given back
+     * as it is, as ezurl does. The result is escaped for HTML like ezurl's; pass
+     * $htmlEscape = false for a URL that goes into a header (a redirect) or a JSON answer.
+     *
+     * @param string $url a path within the site, with or without the leading slash
+     * @param bool $full true for an absolute URL (scheme and host), false for a path
+     * @param bool $htmlEscape false to get the URL without HTML escaping
+     * @return string
+     */
+    public static function build( string $url, bool $full = false, bool $htmlEscape = true ): string
+    {
+        $href = $url;
+        self::transformURI( $href, false, $full ? 'full' : 'relative', $htmlEscape );
+        return (string)$href;
     }
 
     /**
