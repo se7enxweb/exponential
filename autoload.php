@@ -160,6 +160,15 @@ if ( !class_exists( 'ezpAutoloader', false ) )
         /** null = not looked at yet, false = no archive, array = what it holds */
         protected static $ezpPharFiles = null;
 
+        /** true once the tests autoload is on (enableTests(), or EZP_AUTOLOAD_TESTS in config.php) */
+        protected static $ezpTestsEnabled = false;
+
+        /** the tests directories read by enableTests(): real path => number of classes */
+        protected static $ezpTestsDirectories = array();
+
+        /** the classes of those directories: class name => real path of the file */
+        protected static $ezpTestsDirectoryClasses = array();
+
         public static function autoload( $className )
         {
             if ( self::$ezpClasses === null )
@@ -173,7 +182,10 @@ if ( !class_exists( 'ezpAutoloader', false ) )
                     $ezpExtensionClasses = require __DIR__ . '/var/autoload/ezp_extension.php';
                 }
 
-                if ( file_exists( __DIR__ . '/var/autoload/ezp_tests.php' ) )
+                // The test array (ezpgenerateautoloads.php -s) only where tests run: a site never needs a test case,
+                // a fixture or a stand-in of a test bootstrap, so its requests do not get them
+                if ( ( self::$ezpTestsEnabled || ( defined( 'EZP_AUTOLOAD_TESTS' ) && EZP_AUTOLOAD_TESTS ) )
+                     && file_exists( __DIR__ . '/var/autoload/ezp_tests.php' ) )
                 {
                     $ezpTestClasses = require __DIR__ . '/var/autoload/ezp_tests.php';
                 }
@@ -240,6 +252,83 @@ if ( !class_exists( 'ezpAutoloader', false ) )
                     require( __DIR__ . "/" . $ezpRelativePath );
                 }
             }
+            else if ( isset( self::$ezpTestsDirectoryClasses[$className] ) )
+            {
+                require( self::$ezpTestsDirectoryClasses[$className] );
+            }
+        }
+
+        /**
+         * Turns on the tests autoload of this process: the test array var/autoload/ezp_tests.php
+         * (ezpgenerateautoloads.php -s) and, with $directory, the classes declared under that tests directory, read
+         * there and then (eZAutoloadGenerator::testsClassMap()), so a class added to it a moment ago is found without
+         * generating anything. The runtime arrays leave every tests/ out (ezp_extension.php, ezp_override.php); this
+         * is how test cases, fixtures and mock servers of an extension load. The kernel's PHPUnit bootstrap calls it,
+         * ezexec.php calls it for a script inside a tests/ directory (enableTestsFor()), and the bootstrap of an
+         * extension's own suite calls it with its tests directory. A class of the arrays wins over one of a
+         * directory; of two directories the first registered wins. Run from the installation root.
+         *
+         * @param string|null $directory a tests directory, e.g. extension/foo/tests
+         * @return int the number of classes found in $directory (0 without one, or when it was read before)
+         */
+        public static function enableTests( $directory = null )
+        {
+            if ( !self::$ezpTestsEnabled )
+            {
+                self::$ezpTestsEnabled = true;
+                // rebuilt with the test array at the next class
+                self::$ezpClasses = null;
+            }
+            if ( $directory === null )
+            {
+                return 0;
+            }
+            $realDirectory = realpath( $directory );
+            if ( $realDirectory === false || !is_dir( $realDirectory ) || isset( self::$ezpTestsDirectories[$realDirectory] ) )
+            {
+                return 0;
+            }
+            $classes = eZAutoloadGenerator::testsClassMap( $realDirectory );
+            self::$ezpTestsDirectories[$realDirectory] = count( $classes );
+            self::$ezpTestsDirectoryClasses += $classes;
+            return count( $classes );
+        }
+
+        /**
+         * Turns on the tests autoload for a script that lies in a tests/ directory (or below one), as ezexec.php runs
+         * the script tests of an extension: with that directory, or for the kernel's own tests/ with the test array
+         * alone. Anything else is left as it is.
+         *
+         * @param string $scriptFile
+         * @return string|null the tests directory, or null when the script is not inside one
+         */
+        public static function enableTestsFor( $scriptFile )
+        {
+            $path = realpath( $scriptFile );
+            if ( $path === false )
+            {
+                return null;
+            }
+            $root = realpath( __DIR__ );
+            for ( $dir = dirname( $path ); $dir !== $root && dirname( $dir ) !== $dir; $dir = dirname( $dir ) )
+            {
+                if ( basename( $dir ) === 'tests' )
+                {
+                    self::enableTests( $dir === $root . DIRECTORY_SEPARATOR . 'tests' ? null : $dir );
+                    return $dir;
+                }
+            }
+            return null;
+        }
+
+        /**
+         * The tests directories enableTests() has read: real path => number of classes.
+         *
+         * @return array
+         */
+        public static function testsDirectories()
+        {
+            return self::$ezpTestsDirectories;
         }
 
         /**

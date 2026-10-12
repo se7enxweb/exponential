@@ -54,6 +54,11 @@ class Ezexec extends \Exponential\Runnable\Command
         if ( !file_exists( $scriptFile ) )
             $script->shutdown( 1, "Could not execute the script '$scriptFile', file was not found" );
 
+        // A script test (extension/foo/tests/bar_test.php) finds the classes of its tests directory and the test
+        // array, which the runtime arrays leave out
+        if ( method_exists( 'ezpAutoloader', 'enableTestsFor' ) )
+            \ezpAutoloader::enableTestsFor( $scriptFile );
+
         $retCode = include( $scriptFile );
 
         if ( $retCode != 1 )

@@ -365,7 +365,8 @@ class eZAutoloadGenerator
      *    classes (eZDB, eZINI, ...), which would otherwise become extension classes and kernel overrides;
      *  - tests/ and Tests/ of a Composer package vendored inside the extension (vendor/<vendor>/<package>/tests):
      *    test cases and fixtures of that package, never runtime classes, and not in its Composer autoloader either.
-     * Each rule names the directory itself: tests_old/, testsuite/ or a file tests.php stay in.
+     * Each rule names the directory itself: tests_old/, testsuite/ or a file tests.php stay in. Test classes load
+     * through the tests autoload instead (ezpAutoloader::enableTests(), testsClassMap()).
      *
      * @param array $extraExcludeDirs
      * @return array
@@ -407,6 +408,36 @@ class eZAutoloadGenerator
     {
         $realPath = realpath( $path );
         return preg_quote( $realPath !== false ? $realPath : $path, '@' );
+    }
+
+    /**
+     * The classes declared under a tests directory, for the tests autoload (ezpAutoloader::enableTests()): class
+     * name => real path of the file. Nothing is written. The directory is read the way the test array (-s) reads
+     * it: every PHP file, the directories buildFileList() always skips left out, a class of the kernel array (a
+     * stand-in a test bootstrap defines for eZDB, eZINI, ...) or one declared twice not taken. Run it from the
+     * installation root, where the kernel array is found.
+     *
+     * @param string $directory
+     * @return array
+     */
+    public static function testsClassMap( $directory )
+    {
+        $realDirectory = realpath( $directory );
+        if ( $realDirectory === false || !is_dir( $realDirectory ) )
+            return array();
+
+        $generator = new static( new ezpAutoloadGeneratorOptions( array( 'writeFiles' => false ) ) );
+        $files = $generator->buildFileList( $realDirectory );
+        if ( !is_array( $files ) )
+            return array();
+
+        $classes = array();
+        foreach ( $generator->getClassFileList( $files, self::MODE_TESTS ) as $class => $file )
+        {
+            // getClassFileList() doubles the namespace separator for the PHP source it writes
+            $classes[str_replace( '\\\\', '\\', $class )] = $file;
+        }
+        return $classes;
     }
 
     /**

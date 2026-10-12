@@ -22,6 +22,12 @@
 // ── 1. Composer autoloader ────────────────────────────────────────────────────
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// The test array var/autoload/ezp_tests.php (ezpgenerateautoloads.php -s), which the site itself does not load
+if ( class_exists( 'ezpAutoloader', false ) && method_exists( 'ezpAutoloader', 'enableTests' ) )
+{
+    ezpAutoloader::enableTests();
+}
+
 // PHPUnit 11 isolated-process child processes use the PHPUNIT_COMPOSER_INSTALL
 // constant to locate vendor/autoload.php.  When tests are run via
 // tests/runtests.php (rather than vendor/bin/phpunit), the constant is never

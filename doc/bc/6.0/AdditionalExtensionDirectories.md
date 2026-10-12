@@ -205,9 +205,14 @@ The only difference is that a package may live in any configured root.
 `bin/php/ezpgenerateautoloads.php` and `eZAutoloadGenerator` walk every configured root the same way they walk
 `extension/*`:
 
-- `var/autoload/ezp_extension.php` has the classes of all roots.
-- `var/autoload/ezp_override.php` has the kernel overrides of all roots.
-- `var/autoload/ezp_tests.php` has the test classes of all roots.
+- `var/autoload/ezp_extension.php` has the classes of all roots, without the `tests/` of a package and without the
+  `tests/` and `Tests/` of a Composer package vendored inside one (`vendor/<vendor>/<package>/tests`).
+- `var/autoload/ezp_override.php` has the kernel overrides of all roots, without those directories either.
+- `var/autoload/ezp_tests.php` has the test classes of all roots. It is loaded only where tests run: by the kernel's
+  PHPUnit bootstrap, by `ezexec.php` for a script inside a `tests/` directory and wherever
+  `ezpAutoloader::enableTests()` is called (`EZP_AUTOLOAD_TESTS` in `config.php` loads it everywhere).
+  `ezpAutoloader::enableTests( 'extension/foo/tests' )` also reads the classes of that directory on the spot, so an
+  extension's own suite or script tests find their test cases, fixtures and mock servers without any array.
 - Adding, moving or removing a package needs no `composer dump-autoload`; `vendor/autoload.php` is not touched.
 - Class-based overrides (`[ClassSettings]`, workflow handlers, datatypes, operators) keep working, because
   `autoloads/*.php` is collected from every root.

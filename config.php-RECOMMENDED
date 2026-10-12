@@ -65,6 +65,18 @@
 
 
 /*
+    TEST CLASSES
+    ------------
+    The test array var/autoload/ezp_tests.php (bin/php/ezpgenerateautoloads.php -s)
+    is loaded only where tests run: by the kernel's PHPUnit bootstrap, by
+    ezexec.php for a script inside a tests/ directory, and wherever
+    ezpAutoloader::enableTests() is called. Set to true to load it in every
+    request and script, as before Exponential 6.0.15.
+*/
+//define( 'EZP_AUTOLOAD_TESTS', false );
+
+
+/*
     Set EZP_INI_FILE_PERMISSION constant to the permissions you want the INI
     cache files (var/cache/ini) to have; the default is 0644. This setting also
     applies to generated autoload files. It no longer applies to settings files

@@ -5,8 +5,8 @@
  * comments in it ignored; the tests/ of every extension and of every package vendored in one left out of the
  * extension and kernel override arrays, also under a relative extension root, and only that directory, never
  * tests_old/), which declarations become entries (classes, interfaces, traits and enums, namespaced or not, never
- * "Foo::class" or an anonymous class), duplicates and kernel classes refused with a warning, the written file and
- * the option checks.
+ * "Foo::class" or an anonymous class), duplicates and kernel classes refused with a warning, the written file, the
+ * option checks and the tests autoload (eZAutoloadGenerator::testsClassMap(), ezpAutoloader::enableTests()).
  *
  * No database. The extension lives under var/tmp and is removed in tearDown(); the autoload files are written only
  * there.
@@ -283,6 +283,35 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         sort( $files );
         $this->assertSame( array( "$p/classes/keep.php", "$p/vendor/acme/tool/src/Tool.php", "$p/vendor/acme/tool/src/tests/Inner.php",
                                   "$p/vendor/acme/tool/tests_data/Data.php", "$p/vendor/tests/x/y.php" ), $files );
+    }
+
+    public function testTestsClassMapReadsATestsDirectoryWithoutWriting()
+    {
+        $p = $this->name;
+        $this->file( 'tests/bootstrap.php', "<?php\nclass eZDB {}\nclass {$p}Fixture {}\n" );
+        $this->file( 'tests/unit/ns.php', "<?php\nnamespace K1\\{$p};\nclass MockServer {}\n" );
+        $this->file( 'tests/templates/skip.php', "<?php\nclass {$p}InTemplates {}\n" );
+        $tests = realpath( "$this->dir/$p/tests" );
+        $map = eZAutoloadGenerator::testsClassMap( "$this->dir/$p/tests" );
+        $this->assertSame( array( "K1\\{$p}\\MockServer" => "$tests/unit/ns.php", "{$p}Fixture" => "$tests/bootstrap.php" ), $map,
+                           'real paths, one backslash, no kernel class (eZDB), the directories always skipped left out' );
+        $this->assertSame( array(), eZAutoloadGenerator::testsClassMap( "$this->dir/$p/nothing" ) );
+        $this->assertFalse( is_dir( "$this->dir/$p/tests/autoload" ) );
+    }
+
+    public function testTheTestsAutoloadFindsTheClassesOfATestsDirectory()
+    {
+        $p = $this->name;
+        $this->file( 'tests/support/helper.php', "<?php\nclass {$p}TestHelper { const OK = 1; }\n" );
+        $this->file( 'tests/unit/bar_test.php', "<?php\nreturn 1;\n" );
+        $this->assertFalse( class_exists( "{$p}TestHelper" ), 'not in the runtime arrays' );
+        $tests = ezpAutoloader::enableTestsFor( "$this->dir/$p/tests/unit/bar_test.php" );
+        $this->assertSame( realpath( "$this->dir/$p/tests" ), $tests );
+        $this->assertSame( 1, ezpAutoloader::testsDirectories()[$tests] );
+        $this->assertTrue( class_exists( "{$p}TestHelper" ) );
+        $this->assertSame( 0, ezpAutoloader::enableTests( "$this->dir/$p/tests" ), 'read once' );
+        $this->assertNull( ezpAutoloader::enableTestsFor( "$this->dir/$p/tests.php" ) );
+        $this->assertNull( ezpAutoloader::enableTestsFor( 'kernel/private/classes/ezautoloadgenerator.php' ) );
     }
 
     public function testExtensionGivenByAnAbsolutePath()
