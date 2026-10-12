@@ -277,7 +277,16 @@ class eZUserType extends eZDataType
             // No "draft" for version 1 to avoid regression for existing code creating new users.
             if ( $contentObjectAttribute->attribute( 'version' ) == '1' )
             {
+                // The account may exist only as a draft (content() made it from data_text): storing it creates
+                // the ezuser row, and it needs its ezuser_setting row as the default account above gets one,
+                // or signing in fails
+                $userID = $contentObjectAttribute->attribute( 'contentobject_id' );
+                $isNewAccount = !eZUser::fetch( $userID ) instanceof eZUser;
                 $user->store();
+                if ( $isNewAccount )
+                {
+                    self::createSettingIfMissing( $userID );
+                }
                 $contentObjectAttribute->setContent( $user );
             }
 
@@ -340,6 +349,12 @@ class eZUserType extends eZDataType
                 }
             }
             $user->store();
+            // A draft published for an account that had no ezuser row yet creates the account; it needs its
+            // ezuser_setting row like any new account
+            if ( !isset( $stored[0] ) )
+            {
+                self::createSettingIfMissing( $contentObjectAttribute->attribute( 'contentobject_id' ) );
+            }
             $contentObjectAttribute->setContent( $user );
 
             // Clear draft info
@@ -455,8 +470,14 @@ class eZUserType extends eZDataType
         //Looking for a "draft" and loading its content
         $serializedDraft = $contentObjectAttribute->attribute( 'data_text' );
 
-        // Without an ezuser row there is no account to apply the draft to;
-        // the typed updateUserDraft() raised a TypeError on null
+        // A draft for an account that has no ezuser row yet is shown on a new, unsaved account, so the edit form
+        // keeps the login and e-mail address that were entered. Without a draft there is no account: content()
+        // stays null and storeObjectAttribute() creates the default one together with its ezuser_setting row.
+        if ( !empty( $serializedDraft ) && !$user instanceof eZUser && $this->unserializeDraft( $serializedDraft ) )
+        {
+            $user = eZUser::create( $userID );
+        }
+
         if ( !empty( $serializedDraft ) && $user instanceof eZUser )
         {
             $user = $this->updateUserDraft( $user, $serializedDraft );
@@ -759,6 +780,21 @@ class eZUserType extends eZDataType
             $userData = array_merge( array( $userData[0], $email ), $tail );
         }
         return $userData;
+    }
+
+    /**
+     * Creates the ezuser_setting row of a new account, enabled, unless it has one: an account without that row
+     * cannot sign in.
+     *
+     * @param int $userID
+     */
+    private static function createSettingIfMissing( $userID )
+    {
+        if ( !eZUserSetting::fetch( $userID ) instanceof eZUserSetting )
+        {
+            $userSetting = eZUserSetting::create( $userID, 1 );
+            $userSetting->store();
+        }
     }
 
     /*!
