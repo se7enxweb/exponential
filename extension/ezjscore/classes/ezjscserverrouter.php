@@ -28,6 +28,8 @@
 //
 // ## END COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 //
+// Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit aa307a7ff3), Copyright (C) Mugo Web, GPL v2
+//
 
 /*
   Perfoms calls to custom functions or templates depending on arguments and ini settings
@@ -55,10 +57,15 @@ class ezjscServerRouter
      * @param array $arguments
      * @param bool $requireIniGroupe Make sure this is true if $arguments comes from user input
      * @param bool $checkFunctionExistence
+     * @param string|null $refusal set to why null was returned: 'invalid' (arguments, ini group or
+     *                    function), 'access' (the Functions[] policy check failed) or 'policy-required'
+     *                    (the same, for a group with RequirePolicy=enabled, which ezjscore/call answers
+     *                    with 403); null when an instance is returned
      * @return ezjscServerRouter|null
      */
-    public static function getInstance( $arguments, $requireIniGroupe = true, $checkFunctionExistence = false )
+    public static function getInstance( $arguments, $requireIniGroupe = true, $checkFunctionExistence = false, &$refusal = null )
     {
+        $refusal = 'invalid';
         if ( !is_array( $arguments ) || !isset( $arguments[1] ) )
         {
             // return null if arguments are invalid
@@ -70,6 +77,7 @@ class ezjscServerRouter
         $isTemplateFunction = false;
         $permissionFunctions = false;
         $permissionPrFunction = false;
+        $requirePolicy = false;
         $ezjscoreIni = eZINI::instance( 'ezjscore.ini' );
 
         if ( $ezjscoreIni->hasGroup( 'ezjscServer_' . $callClassName ) )
@@ -84,6 +92,17 @@ class ezjscServerRouter
            // check permissions
            if ( $ezjscoreIni->hasVariable( 'ezjscServer_' . $callClassName, 'Functions' ) )
                 $permissionFunctions = $ezjscoreIni->variable( 'ezjscServer_' . $callClassName, 'Functions' );
+
+           // RequirePolicy: not set, Functions[] is checked as always; disabled, Functions[] is
+           // not checked (the upgrade default of ezjscnode); enabled, it is checked and a refusal
+           // is reported as 'policy-required'
+           if ( $ezjscoreIni->hasVariable( 'ezjscServer_' . $callClassName, 'RequirePolicy' ) )
+           {
+                $requirePolicy = $ezjscoreIni->variable( 'ezjscServer_' . $callClassName, 'RequirePolicy' );
+                if ( $requirePolicy === 'disabled' )
+                    $permissionFunctions = false;
+                $requirePolicy = $requirePolicy === 'enabled';
+           }
 
            // check permissions
            if ( $ezjscoreIni->hasVariable( 'ezjscServer_' . $callClassName, 'PermissionPrFunction' ) )
@@ -107,13 +126,35 @@ class ezjscServerRouter
 
         if ( $permissionFunctions !== false )
         {
-            if ( !self::hasAccess( $permissionFunctions, ( $permissionPrFunction ? $functionName : null ) ) )
+            if ( !static::hasAccess( $permissionFunctions, ( $permissionPrFunction ? $functionName : null ) ) )
             {
+                $refusal = $requirePolicy ? 'policy-required' : 'access';
                 return null;
             }
         }
 
+        $refusal = null;
         return new ezjscServerRouter( $className, $functionName, $arguments, $isTemplateFunction );
+    }
+
+    /**
+     * The HTTP status ezjscore/call answers with for the refusals getInstance() reported, one per
+     * call (null for a call that was accepted): 403 when there was at least one call and every one
+     * was refused by a server function with RequirePolicy=enabled, else 200.
+     *
+     * @param array $refusals
+     * @return int
+     */
+    public static function refusedStatus( array $refusals )
+    {
+        if ( !$refusals )
+            return 200;
+        foreach ( $refusals as $refusal )
+        {
+            if ( $refusal !== 'policy-required' )
+                return 200;
+        }
+        return 403;
     }
 
     /**

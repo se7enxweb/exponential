@@ -128,6 +128,15 @@ caller's own tokens: id, name, a hint (the first characters), created, last used
 the user (`eZUser::hasAccessTo`; a limited policy passes the check, and the service then checks the object, e.g. `canRead()`
 of a node). A missing login answers 401, a missing policy 403.
 
+A classic server function (an `[ezjscServer_<name>]` block of `ezjscore.ini`) is guarded by its `Functions[]`, checked
+against the `ezjscore/call` policy with the `FunctionList` limitation. `RequirePolicy` sets how: not set, `Functions[]`
+is checked and a refused call is answered with its error text in a 200 answer, as before; `disabled`, it is not
+checked; `enabled`, it is checked and a request whose calls are all refused is answered with 403. `ezjscnode` ships
+with `Functions[]=ezjscnode` and `RequirePolicy=disabled`; new installations write `enabled` (see
+[Roles and policies](../../guides/roles-and-policies.md), section 8). `ezjscServerRouter::getInstance()` reports why
+it returned null in an optional fourth argument (`invalid`, `access`, `policy-required`). The idea of guarding
+`ezjscnode` by a policy comes from Mugo Web's LoveStack distribution (commit `aa307a7ff3`), with thanks.
+
 ### Paging
 
 Services that list take `limit` and `offset` arguments (`expsystem::phpextensions::10::20` is 10 items from 20).

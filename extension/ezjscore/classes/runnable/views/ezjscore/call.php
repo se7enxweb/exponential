@@ -28,6 +28,8 @@
  *   Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  *   MA 02110-1301, USA.
  *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit aa307a7ff3), Copyright (C) Mugo Web, GPL v2
+ *
  *
  * ## END COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
  *
@@ -160,10 +162,25 @@ class Call extends \Exponential\Runnable\ModuleView
 
 
         // prepare calls
+        $refusals = array();
         foreach( $callList as $call )
         {
-            $temp = \ezjscServerRouter::getInstance( explode( '::', $call ), true, true );
+            $refusal = null;
+            $temp = \ezjscServerRouter::getInstance( explode( '::', $call ), true, true, $refusal );
             $callFnList[] = $temp === null ? $call : $temp;
+            $refusals[] = $refusal;
+        }
+
+        // every call refused by a server function with RequirePolicy=enabled: 403, as the policy
+        // system answers elsewhere (other refusals keep the error text in a 200 answer)
+        // (method_exists: a Velocity worker started before refusedStatus() was added keeps 200)
+        if ( method_exists( '\ezjscServerRouter', 'refusedStatus' ) && \ezjscServerRouter::refusedStatus( $refusals ) === 403 )
+        {
+            header( $_SERVER['SERVER_PROTOCOL'] . ' 403 Forbidden' );
+            $response = array( 'error_text' => 'Access denied', 'content' => '' );
+            echo \ezjscAjaxContent::autoEncode( $response, $contentType );
+            \eZExecution::cleanExit();
+            return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
         $callFnListCount = count( $callFnList ) -1;
