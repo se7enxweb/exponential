@@ -266,7 +266,13 @@ class expAuditQuery
             if ( substr( $f['name'], -2 ) === '.*' )
             {
                 $prefix = substr( $f['name'], 0, -2 );
-                $c[] = '(name = ' . $q( $prefix ) . ' OR name LIKE ' . $q( str_replace( '_', '\\_', $prefix ) . '.%' ) . ( $this->likeEscape() ) . ')';
+                $like = 'name LIKE ' . $q( str_replace( '_', '\\_', $prefix ) . '.%' ) . ( $this->likeEscape() );
+                // SQLite's LIKE is without case and cannot use the (binary) name index: every record of the period
+                // was read (280 ms for 100 000). The same rows by a range of the index, "." to "/" being adjacent
+                // in a binary order, with the LIKE kept for the meaning; other engines plan the LIKE themselves.
+                if ( $this->type === 'sqlite' )
+                    $like = '(name >= ' . $q( $prefix . '.' ) . ' AND name < ' . $q( $prefix . '/' ) . ' AND ' . $like . ')';
+                $c[] = '(name = ' . $q( $prefix ) . ' OR ' . $like . ')';
             }
             else
                 $c[] = 'name = ' . $q( $f['name'] );

@@ -121,6 +121,31 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         return $data;
     }
 
+    /**
+     * The records per channel of today and of the whole period, summed from the per-day counts of the period
+     * (expAuditQuery::perDay() by channel), which the volume chart reads anyway. Two groupings of their own scanned
+     * the whole table by the channel index on SQLite: half a second each with 240 000 records.
+     *
+     * @param array $perDay day (Y-m-d) => channel => n
+     * @param string $today today's day, Y-m-d
+     * @return array array( today: channel => n, period: channel => n )
+     */
+    public static function channelTotals( array $perDay, $today )
+    {
+        $todayBy = array();
+        $weekBy = array();
+        foreach ( $perDay as $day => $counts )
+            foreach ( (array)$counts as $channel => $n )
+            {
+                $weekBy[$channel] = ( isset( $weekBy[$channel] ) ? $weekBy[$channel] : 0 ) + (int)$n;
+                if ( (string)$day === (string)$today )
+                    $todayBy[$channel] = ( isset( $todayBy[$channel] ) ? $todayBy[$channel] : 0 ) + (int)$n;
+            }
+        arsort( $todayBy );
+        arsort( $weekBy );
+        return array( $todayBy, $weekBy );
+    }
+
     /** @return int epoch ms of the start of today, local time */
     protected static function todayMs()
     {
@@ -184,8 +209,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
             $days[$i]['pct'] = round( 100 * $d['n'] / $max, 1 );
 
         $channels = array();
-        $todayBy = array_column( $q->groupCount( array( 'channel' ), $today, $allowed, 20 ), 'n', 'channel' );
-        $weekBy = array_column( $q->groupCount( array( 'channel' ), $week, $allowed, 20 ), 'n', 'channel' );
+        list( $todayBy, $weekBy ) = self::channelTotals( $perDay, date( 'Y-m-d' ) );
         $names = array_unique( array_merge( array_keys( $weekBy ), array_keys( $todayBy ) ) );
         usort( $names, function ( $a, $b ) {
             $ia = array_search( $a, self::CHANNEL_ORDER, true );
