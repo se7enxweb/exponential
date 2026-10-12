@@ -118,7 +118,7 @@
 <p class="context-information a4-node-meta">
     <span title="{$object.modified|l10n( 'datetime' )}">{'Modified'|i18n( 'design/admin/node/view/full' )} {$object.modified|l10n( 'shortdatetime' )}{if $object.current.creator} {'by'|i18n( 'design/admin/node/view/full' )} <a href={$object.current.creator.main_node.url_alias|ezurl}>{$object.current.creator.name|wash}</a>{/if}</span>
     {if $object.published}<span title="{$object.published|l10n( 'datetime' )}">{'Published'|i18n( 'design/admin/node/view/full' )} {$object.published|l10n( 'shortdate' )}</span>{/if}
-    <span>{'Version'|i18n( 'design/admin/node/view/full' )} {$object.current_version}</span>
+    <span class="exp-object-version" data-object-id="{$object.id}">{'Version'|i18n( 'design/admin/node/view/full' )} <span class="exp-object-version-number">{$object.current_version}</span></span>
     {if $section}<span>{$section.name|wash}</span>{/if}
     <button type="button" class="a4-copy" data-a4-copy="{$node.node_id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}">{'Node'|i18n( 'design/admin/node/view/full' )} {$node.node_id}</button>
     <button type="button" class="a4-copy" data-a4-copy="{$object.id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}">{'Object'|i18n( 'design/admin/node/view/full' )} {$object.id}</button>
