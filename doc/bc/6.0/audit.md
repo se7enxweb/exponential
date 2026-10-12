@@ -457,6 +457,15 @@ content    INTACT    2 records in 1 file, 2026-10-03T00:04:03.820Z to 2026-10-03
 system     INTACT    13 records in 1 file, 2026-10-03T00:04:03.822Z to 2026-10-03T00:05:22.619Z
 ```
 
+A channel whose files repeat a record id says how many records are distinct, with a `repeated_ids` notice per file
+(not a break: the repeats are chained like every other line; see [Repeated records](#repeated-records)):
+
+```
+$ ./console exp:audit verify --channel=content --allow-root-user
+content    INTACT    41295 records in 9 files, 2026-10-02T23:28:16.227Z to 2026-10-12T14:26:18.609Z, 10 checkpoint(s) matched, 27652 distinct (13643 repeated)
+           notice: content-2026-10-04.jsonl: repeated_ids (2322 line(s) repeat a record id written before in this file; the index and the exports keep the first)
+```
+
 A broken chain prints `BROKEN` with the first break (file, line, kind) and exits 1. The kinds are explained in
 [5.3](#53-the-hash-chain-and-what-verification-finds). `checkpoint` writes a signed anchor now (the cronjob part
 writes one a day):
@@ -1137,6 +1146,33 @@ and records `system.audit.chain.broken` once. Full-text search is FTS5 with the 
 everywhere else (and for terms under three characters). Imported records (`<LogDir>/imported/`) are indexed
 without a chain check. Reads are indexed only with `IndexReads=enabled`.
 
+#### Repeated records
+
+The index holds one row per record id (`id` is its primary key), so a line that repeats an id already indexed is read
+and left out. Before 2026-10-12 (#396) a process forked with records still in its buffer (`pcntl_fork()`: the content
+job tests' workers, the asynchronous publisher, a worker forked after its parent recorded something) wrote its copy
+of the parent's buffer and open parent events too, so the same records went into the channel again, once per child,
+each time with a new `seq`, `prev` and `hash`. The repeated lines are part of the chain (verify says INTACT and
+counts them, see [Verifying](#verifying)), so they stay in the files: removing them would break the chain. The
+index, the console, its counts, charts and alerts, the web export and `exp:audit export` (which leaves a repeated id
+out the same way) all show each record once.
+
+On the reference installation (2026-10-12): every repeat was in the content channel, 13 643 lines repeating 1 692
+ids, all written by PHPUnit runs of the content job tests (records `content.job.create`/`resume` of the test
+process, repeated by each forked worker), on 10-04 (2 322), 10-05 (5 107), 10-06 (4 414) and 10-12 (1 800). The
+files held 41 295 content lines, 27 652 distinct, and the index 27 652 rows: nothing was missing. Every other
+channel matched day by day; `read` is not indexed (`IndexReads=disabled`).
+
+Since #396 `expAudit` remembers the process its buffer belongs to. A forked child starts with an empty buffer, no
+open parents and no failed records of its parent, and a request id (and `request.pid`) of its own; it keeps the job,
+the run and the parent stack, so its records still name the job and the parent event they work for. The parent
+writes its records once.
+
+To compare files and index per channel and day, count the distinct ids of the files (not their lines) against
+`SELECT channel, COUNT(*) FROM expaudit_event GROUP BY channel`; a difference other than `read` and the few records
+written since the last index run is a real gap, and `exp:audit reindex --incremental` (idempotent: ids already in
+the index are skipped) fills it.
+
 Size on the reference installation: about 0.8 to 1.1 KB per record in the files. Plan for about 1.2 KB per row in the index.
 
 | Events per day | Index rows after 2 years | Index | Live files (90 days) | Archives (2 years, gzip about 1:8) |
@@ -1219,6 +1255,7 @@ class (a sink, a branch) always needs a Velocity restart. Every write to audit.i
 | Nothing is recorded at all | `Audit=disabled` somewhere (the dashboard says "Audit is switched off"; `system.audit.disable` was recorded) | `exp:ini where audit.ini/AuditSettings/Audit`, remove the override |
 | Nothing recorded, `error.log` says "writing the audit channel …" or `AUDIT-UNWRITTEN` lines | LogDir not writable (owner, mode, full disk) | fix ownership (`chown -R <site user>: var/<site>/log/audit`, dirs 0770, files 0640) or free space. The `AUDIT-UNWRITTEN` lines hold the records that could not be written |
 | Records from Apache but not from Velocity (:8080) | the workers predate the audit classes (every hook is guarded by `class_exists`) | restart Velocity |
+| The files have more lines than the console has events; `verify` says `N distinct (M repeated)` | lines that repeat a record id, written by forked processes before #396 ([Repeated records](#repeated-records)) | nothing to do: the index and the exports show each record once; the lines stay, they are part of the chain |
 | The console misses the newest events, or charts are empty | the index is behind (cronjob part not running) or its tables are missing | `exp:audit reindex --incremental`; `createaudittables.php`; check cron |
 | Dashboard: "The audit cronjob part has not run for over an hour" | no crontab line, or the group that holds `audit.php` is not run | add `runcronjobs.php frequent` (or `audit`) to the crontab |
 | `verify` says BROKEN | a file was changed after it was written (see the kind) | do not repair; follow [4.4](#44-verify-and-restore) |
@@ -1519,6 +1556,9 @@ the file even if the request then dies. Past `MaxEvents`/`MaxBytes` the buffer f
 `system.audit.overflow` once. Commands, cronjobs and content job workers also flush every `FlushInterval` seconds.
 A failed append keeps the records for one more try at the end. If that fails too, each record becomes an
 `AUDIT-UNWRITTEN <channel> <json>` line in error.log, so no record is lost silently.
+The buffer, the open parents and the failed records belong to the process that collected them: a child forked with
+`pcntl_fork()` drops its copy of them on its first event, flush or reset, and gets a request id of its own, so only
+the parent writes them ([Repeated records](#repeated-records)).
 
 ### 5.6 The index tables
 
@@ -2205,7 +2245,7 @@ The acceptance tests of the design (Z9), run at the end of the work on 2026-10-0
 
 ### 9.1 Tests
 
-`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: **115 tests, 6 015 assertions, OK** (2026-10-12, run as root: as the site user the settings-write tests cannot create their directory under a root-owned `var/tmp/ini-tests`, and the journald test needs root; earlier runs: one marked risky:
+`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: **119 tests, 6 049 assertions, OK** (2026-10-12, run as root: as the site user the settings-write tests cannot create their directory under a root-owned `var/tmp/ini-tests`, and the journald test needs root; earlier runs: one marked risky:
 `testWriteFailureNeverThrows` deliberately replaces the error handler to provoke a write failure).
 
 | Test class | Tests | Covers |
@@ -2214,6 +2254,7 @@ The acceptance tests of the design (Z9), run at the end of the work on 2026-10-0
 | `expAuditChainTest` | 9 | genesis, linked day files, size rotation, concurrent appends (B2), tamper cases T0–T8 |
 | `expAuditPrivacyTest` | 7 | every field × full/truncate/hash/off, /24 and /48, secret paths, unknown logins hashed (B5) |
 | `expAuditBufferTest` | 7 | exception, exit, cleanExit, fatal error, 1 000 Velocity requests in one worker (B4) |
+| `expAuditForkTest` | 4 | a forked child writes only its own records and leaves its parent's open parents and buffer to the parent, also when it only exits; repeated ids verify intact, are counted, and the export gives each once (AF-01–AF-04) |
 | `expAuditCompatTest` | 7 | the 15 4.x names, HashKey never kept, keys, ownership, settings writes (B3) |
 | `expAuditHookTest` | 5 | every catalogue name has a hook point; off names build nothing; verbs; the bridge (live database) |
 | `expAuditIndexTest` | 10 | schema, incremental index, crash between batch and cursor, rebuild = incremental, search, pseudonymisation, fetch functions (live database, test channels) |
