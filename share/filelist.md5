@@ -462,7 +462,7 @@ a395c5339b5d6c8f5b559dda2a6c91c3  design/admin/templates/error/parts/formtoken_s
 5d35317c921d3787c8da593f097cc2f4  design/admin/templates/error/shop/2.tpl
 f40a458ba972853fe21fbbda1945fcac  design/admin/templates/error/shop/3.tpl
 895dc97b57a6a8945b10dc5460e9778d  design/admin/templates/error/shop/4.tpl
-90e6ddaa72aaea191baae32716a79ad7  design/admin/templates/ezinfo/about.tpl
+c8feeaf96cdca74d667c50887f824ef9  design/admin/templates/ezinfo/about.tpl
 945b0c68fbd406d6ec38921360f6ed30  design/admin/templates/ezinfo/copyright.tpl
 91dc046ee37d161132a0893ecca92c6d  design/admin/templates/infocollection_validation.tpl
 fa73d3e3be3e3b0d90f4e5c3f0340763  design/admin/templates/infocollector/collectionlist.tpl
@@ -1014,7 +1014,7 @@ db0a467b3a14be193f73dd75ae59cc51  design/admin4/templates/content/collectedinfo/
 517963f41482cb0a69c7e0b299d93130  design/admin4/templates/content/collectedinfo/poll.tpl
 4322d2f3acc8559393b5e8b3cb9c1486  design/admin4/templates/content/confirmtranslationremove.tpl
 32d88ab2a738e82b768e0a75436d653e  design/admin4/templates/content/create_languages.tpl
-ec37056acc445ff8f43f40b0c9293acb  design/admin4/templates/content/dashboard.tpl
+f34f6a8f7c56f6fab9c15f5889be993b  design/admin4/templates/content/dashboard.tpl
 2c9bb4841ab199dd4ede1d9193f7c8f4  design/admin4/templates/content/datatype/edit/ezdate.tpl
 a2b1f1227859c749295ad9ee14ef4602  design/admin4/templates/content/datatype/edit/ezdatetime.tpl
 496306b3d94af123f35a29bd7992fe6c  design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
@@ -1084,7 +1084,7 @@ f329d8c69c3381cf8dce37043ad2604b  design/admin4/templates/error/parts/formtoken.
 5d35317c921d3787c8da593f097cc2f4  design/admin4/templates/error/shop/2.tpl
 f40a458ba972853fe21fbbda1945fcac  design/admin4/templates/error/shop/3.tpl
 895dc97b57a6a8945b10dc5460e9778d  design/admin4/templates/error/shop/4.tpl
-90e6ddaa72aaea191baae32716a79ad7  design/admin4/templates/ezinfo/about.tpl
+c8feeaf96cdca74d667c50887f824ef9  design/admin4/templates/ezinfo/about.tpl
 945b0c68fbd406d6ec38921360f6ed30  design/admin4/templates/ezinfo/copyright.tpl
 91dc046ee37d161132a0893ecca92c6d  design/admin4/templates/infocollection_validation.tpl
 019c33807c694c6e645e60144030cdee  design/admin4/templates/infocollector/confirmremoval.tpl
@@ -3009,7 +3009,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-89e9815805baf1d7dc28c22903724818  doc/changelogs/6.0/6.0.15.md
+6e2aaf2b667ccdb6f634fded063e5623  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5649,7 +5649,7 @@ e88eae5e2e444bc3a85ebc168aa3cd39  kernel/private/classes/views/content/view.php
 0520f2817efb98ce7dd70e0b48858d5e  kernel/private/classes/views/contentfinder/action.php
 d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/search.php
 3c85cc654f1547ef154550533cf6353c  kernel/private/classes/views/error/view.php
-5b93b97bc4e87108308011f4ae05eb0f  kernel/private/classes/views/ezinfo/about.php
+00ed4a0bd7250e2a7210393a563f6ba1  kernel/private/classes/views/ezinfo/about.php
 bb1ec8ba0c555192359eb58e004d8b65  kernel/private/classes/views/ezinfo/copyright.php
 cf544b983924d800e72fd6e275e038f1  kernel/private/classes/views/ezinfo/isalive.php
 3b901e9ff289d1edc6c0769091caec04  kernel/private/classes/views/infocollector/collectionlist.php
@@ -6000,9 +6000,9 @@ dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
 f7657a2d39889bcc63f9e9a9ed72ec17  kernel/setup/ezsetup.php
 939f6afaaeeb8425b5a6cd2117ace549  kernel/setup/ezsetup_summary.php
 b3d46bd1c3ea5767a9ffcb90f8b22061  kernel/setup/ezsetupcommon.php
-d7f76dbc5ed159b784b553311ca04f50  kernel/setup/ezsetupfunctioncollection.php
+2cc094be7b28a40e02c4a26551349727  kernel/setup/ezsetupfunctioncollection.php
 bb28247ab31d642b7cd2b0e6edd23fa0  kernel/setup/ezsetuptests.php
-84b492286d3e384632715f1672f9b4ec  kernel/setup/function_definition.php
+f1466d6777923a9b8cec139b55ffd8e4  kernel/setup/function_definition.php
 7183ac0ed7562b87665665a2daad4b6f  kernel/setup/handlerextension.php
 f74e53f9425a012b53f82f9d23c7306c  kernel/setup/info.php
 041d133355eda95b9fbdb57620982207  kernel/setup/kerneloverride.php
@@ -6351,7 +6351,7 @@ b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 d1fa2312d5760fff6537a61d1db773c3  lib/ezutils/classes/ezexecution.php
 72fc7a1f67f3eaa83336f9d5b48a0169  lib/ezutils/classes/ezexpiryhandler.php
-4e076e2aad02f17416f0a319a1c6c529  lib/ezutils/classes/ezextension.php
+a2097ffa7692cbebd7013da6bab38bcb  lib/ezutils/classes/ezextension.php
 072c8aadc71992ed763c699b6999fda2  lib/ezutils/classes/ezfatalusererror.php
 9e4092daa80dcaa119d74d48870c65d1  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
 b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
@@ -6879,14 +6879,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-2b26ef58f5095e5a77bc362c8dc706e8  share/translations/eng-US/translation.ts
+6e5fcf5ff67976259c709b8a94002725  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-3ae1003aae53edd6aad6941ae8d74d3d  share/translations/ger-DE/translation.ts
+8ba3c296dcfae180842ee12527bd1e3f  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6899,7 +6899,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-70c9bf468056de2404045dc4a7d4e3b0  share/translations/untranslated/translation.ts
+7011557d6950ad331ed823c35eadd80c  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7911,6 +7911,7 @@ e03fa9c077e0046cda4ed2e95139fa40  tests/tests/lib/ezutils/eZCLITest.php
 19b4b7676978ad54bccd376b846ad625  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
 cf18f00c422de9b9f4ab10201485831c  tests/tests/lib/ezutils/eZDebugMessagesTest.php
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
+e0df258f6fc60a3fcb7ac21bfd0511b1  tests/tests/lib/ezutils/eZExtensionCountsTest.php
 d6114e4248b4221f06f138cb33e09dc2  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
 d5d9b75da5c18ad00128dcef87e06b52  tests/tests/lib/ezutils/eZFatalUserErrorTest.php
 3378e66c399d5c5780bf68e83863d413  tests/tests/lib/ezutils/eZHTTPToolRequestTest.php
