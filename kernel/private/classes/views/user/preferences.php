@@ -74,6 +74,23 @@ class Preferences extends \Exponential\Runnable\ModuleView
         else
         {
             \eZDebug::writeWarning( "Skipped the preference write for '$key': the request came with Sec-Fetch-Site '$secFetchSite'", 'user/preferences' );
+            // #389 an address opened directly (typed, a bookmark: 'none') or from another site does not change the
+            // preference behind the visitor's back, and does not end on an unrelated page either: it asks. The
+            // answer is a POST from this site (same-origin, with the form token of ezformtoken), which writes.
+            if ( $function !== 'set_and_exit' && $_SERVER['REQUEST_METHOD'] === 'GET' && is_string( $key ) && trim( $key ) !== ''
+                 && !\eZUser::currentUser()->isAnonymous() )
+            {
+                $back = array_slice( $Params['Parameters'], 3 );
+                $back = implode( '/', array_filter( $back, 'is_string' ) );
+                $tpl = \eZTemplate::factory();
+                $tpl->setVariable( 'preference_key', (string)$key );
+                $tpl->setVariable( 'preference_value', (string)$value );
+                $tpl->setVariable( 'redirect_uri', $back !== '' ? '/' . $back : '' );
+                $Result = array();
+                $Result['content'] = $tpl->fetch( 'design:user/preferences_confirm.tpl' );
+                $Result['path'] = array( array( 'url' => false, 'text' => \ezpI18n::tr( 'design/standard/user/preferences', 'Change a preference' ) ) );
+                return $this->viewResult( $Result, $Result );
+            }
         }
 
         // For use by ajax calls
