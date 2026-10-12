@@ -7,7 +7,7 @@ the overview cards, the detailed parts below them, the report for a support requ
 It is written for administrators and for whoever supports a site. Every check, field and path below was checked
 against the code (`kernel/classes/expsystemreport.php`, `kernel/classes/expsystemreportmask.php`,
 `kernel/private/classes/views/setup/info.php`, `kernel/private/classes/commands/systeminfo.php`). The figures quoted
-are from the demonstration server (alpha.se7enx.com) on 6 October 2026, read-only.
+are from the demonstration server on 6 October 2026, read-only.
 
 [Guides](README.md) · Related guides: [Deploying](deploying.md), [Operating a site](operating-a-site.md),
 [Cronjobs](cronjobs.md), [Security and audit](security-and-audit.md)
@@ -60,7 +60,7 @@ The blue banner (orange under Velocity) names the server that answered this requ
 
 The badge on the right repeats the PHP version and SAPI (`fpm-fcgi`, `cli`, `frankenphp`, `cli-server`).
 
-On alpha on 6 October 2026, Apache answered with PHP 8.5.11 `fpm-fcgi`, `memory_limit` 4999M, OPcache on with its
+On the demonstration server on 6 October 2026, Apache answered with PHP 8.5.11 `fpm-fcgi`, `memory_limit` 4999M, OPcache on with its
 statistics hidden; Velocity answered with PHP 8.5.11 `cli`, `memory_limit` 4828M, OPcache on with a hit rate, and
 `opcache.file_update_protection` 0.
 
@@ -111,8 +111,8 @@ read as it is) and the modification time of a non-empty `var/log/cronjob*.log`.
 
 A card with a failure or a warning among its checks has a red or amber edge and badge.
 
-**OPcache "statistics not available".** Plesk can put `opcache_get_status` in `disable_functions` for a domain (on
-alpha it is set in the pool configuration). The cache works; only its figures cannot be read from PHP. The page
+**OPcache "statistics not available".** Plesk can put `opcache_get_status` in `disable_functions` for a domain (on the
+demonstration server it is set in the pool configuration). The cache works; only its figures cannot be read from PHP. The page
 used to say "not installed" there. Velocity reads them because its PHP has no such setting.
 
 ## 5. The detailed parts
@@ -165,7 +165,7 @@ Health: 9 ok, 0 warnings, 0 failures, 1 notes
 ```
 
 **Download as JSON** adds every fact the cards are made from (`facts`) and how many milliseconds each part took to
-read (`facts.ms`; about 10 ms in all on alpha). **Copy report as text** copies the same text to the clipboard; it is
+read (`facts.ms`; about 10 ms in all on the demonstration server). **Copy report as text** copies the same text to the clipboard; it is
 shown only with JavaScript, and selects the text for copying by hand where the clipboard is not available.
 
 ## 7. What is never shown

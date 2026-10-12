@@ -7,7 +7,7 @@ get the same answer from a shell.
 It is for administrators who are about to upgrade, and for anyone who wants to know whether the files or the
 database of an installation have drifted from the release. Every figure below was checked against the code
 (`kernel/private/classes/views/setup/systemupgrade.php`, `kernel/private/classes/expfileconsistencyreport.php`,
-`kernel/private/classes/expschemaconsistencyreport.php`) on the demonstration server (alpha.se7enx.com) on
+`kernel/private/classes/expschemaconsistencyreport.php`) on the demonstration server on
 6 October 2026, under Apache with PHP-FPM and under Velocity.
 
 [Guides](README.md) · Related: [Upgrading](upgrading.md), [The file manifest](../features/6.0/file-consistency-check.md),

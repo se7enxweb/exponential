@@ -61,26 +61,26 @@ A mail about published content (the subject and text are the standard template; 
 
 ```text
 To: undisclosed-recipients:;
-Subject: Article "NOTTEST first article" was published [alpha.se7enx.com - NOTTEST UI folder]
+Subject: Article "NOTTEST first article" was published [example.com - NOTTEST UI folder]
 From: Graham Brookins <info@se7enx.com>
 Bcc: nottest-ui@nottest.invalid
 Content-Type: text/plain; charset=utf-8
-Message-ID: <node.21950.eznotification@alpha.se7enx.com>
-In-Reply-To: <node.21931.eznotification@alpha.se7enx.com>
+Message-ID: <node.21950.eznotification@example.com>
+In-Reply-To: <node.21931.eznotification@example.com>
 
-This email is to inform you that a new item has been published at alpha.se7enx.com.
+This email is to inform you that a new item has been published at example.com.
 The item can be viewed by using the URL below.
 
 NOTTEST first article - Graham Brookins
-http://alpha.se7enx.com/websites/nottest-ui-folder3/nottest-first-article
+http://example.com/websites/nottest-ui-folder3/nottest-first-article
 
 
 If you do not want to continue receiving these notifications,
 change your settings at:
-http://alpha.se7enx.com/notification/settings
+http://example.com/notification/settings
 
 --
-alpha.se7enx.com notification system
+example.com notification system
 ```
 
 The subject names the class, the title and the place; the sender is the author. The recipients are in `Bcc`, so no
@@ -91,10 +91,10 @@ mail programs group the mails of one place into a thread.
 A digest (the items of the day, each in the form the class template gives them):
 
 ```text
-Subject: [alpha.se7enx.com] Digest for Sunday October 04 2026 10:40:33 pm
+Subject: [example.com] Digest for Sunday October 04 2026 10:40:33 pm
 Bcc: nottest-ui@nottest.invalid
 
-This digest email is to inform you on new items at alpha.se7enx.com.
+This digest email is to inform you on new items at example.com.
 
 NOTTEST digest example
 
@@ -106,17 +106,17 @@ Title:  NOTTEST digest example
 A collaboration mail (an approval that waits for you):
 
 ```text
-Subject: [alpha.se7enx.com] Approval of "Sample: Editorial guidelines" awaits your  attention
+Subject: [example.com] Approval of "Sample: Editorial guidelines" awaits your  attention
 Bcc: anna.sample@example.invalid
 
-This email is to inform you that "Sample: Editorial guidelines" awaits your attention at alpha.se7enx.com.
+This email is to inform you that "Sample: Editorial guidelines" awaits your attention at example.com.
 The publishing process has been halted and it is up to you to decide if it should continue or stop.
 The approval can be viewed by using the URL below.
-http://alpha.se7enx.com/collaboration/item/full/63
+http://example.com/collaboration/item/full/63
 
 If you do not want to continue receiving these notifications,
 change your settings at:
-http://alpha.se7enx.com/notification/settings
+http://example.com/notification/settings
 ```
 
 These mails were made on a test installation and written to files; none was sent.

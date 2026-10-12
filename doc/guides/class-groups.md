@@ -6,7 +6,7 @@ wanted to keep.
 
 It is for administrators who maintain the content model. Every figure below was checked against the code
 (`kernel/private/classes/views/class/grouplist.php` and `removegroup.php`) on the demonstration server
-(alpha.se7enx.com) on 6 October 2026.
+on 6 October 2026.
 
 [Guides](README.md) · Related: [The content model and editing content](content-model-and-editing.md),
 [Admin list paging](../features/6.0/admin-list-paging.md)

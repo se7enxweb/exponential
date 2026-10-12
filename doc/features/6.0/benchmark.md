@@ -251,8 +251,8 @@ The only writes are compiled templates and a fixture template in a directory of 
 
 ```
   target                 url    n   min  median   p90   p99   max    sd  req/s  err  status  bytes  cache
-  alpha.se7enx.com       /     40  7.51    10.7  18.0  29.7  30.1  5.31    307    0  200:40  16.6k  HIT:40
-  alpha.se7enx.com:8080  /     40  1.16    2.55  3.44  4.17  4.35  0.69   1110    0  200:40  15.3k  HIT:40
+  www.example.com        /     40  7.51    10.7  18.0  29.7  30.1  5.31    307    0  200:40  16.6k  HIT:40
+  www.example.com:8080   /     40  1.16    2.55  3.44  4.17  4.35  0.69   1110    0  200:40  15.3k  HIT:40
 ```
 
 - Times are milliseconds, measured by curl itself for each request (from the start of the request until the last

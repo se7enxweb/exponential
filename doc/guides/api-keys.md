@@ -10,7 +10,7 @@ It is written for three readers. **Site users** who want a key for their own scr
 build on the REST interface or extend it read sections 9 and 10. Security notes and troubleshooting (sections 11 and
 12) are for everyone.
 
-Every command and answer below was run against the demonstration server (alpha.se7enx.com, Apache with PHP-FPM on
+Every command and answer below was run against the demonstration server (Apache with PHP-FPM on
 port 443 and Velocity on 8080) on 5 October 2026 with throwaway accounts, which were removed afterwards. Keys,
 addresses and host names are shortened or replaced by documentation values (`example.com`, `203.0.113.0/24`).
 

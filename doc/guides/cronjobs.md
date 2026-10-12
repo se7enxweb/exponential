@@ -8,7 +8,7 @@ scheduled at all.
 
 It is written for administrators who look after a site and for developers who add cronjob scripts. Read sections 1
 to 3 first; after that every section stands on its own. Every option, setting and path below was checked against
-the code, and every output is real: it was printed on the demonstration server (alpha.se7enx.com) on 5 October
+the code, and every output is real: it was printed on the demonstration server on 5 October
 2026, read-only. The screenshots are of the same page, at a width of 1500 pixels in the light mode of the admin4
 design; nothing was run, stopped or cleared to make them.
 
@@ -277,7 +277,7 @@ Each card shows, from the top:
   output goes wherever the crontab line sends it).
 - **Shell command**: the command that runs the part now, from the installation root, with the PHP binary of the
   page and the site chosen above, for example
-  `cd /var/www/vhosts/alpha.se7enx.com/doc/alpha.se7enx.com && /opt/plesk/php/8.5/bin/php runcronjobs.php -s site infrequent`.
+  `cd /var/www/example && /opt/plesk/php/8.5/bin/php runcronjobs.php -s site infrequent`.
   **Copy** puts it on the clipboard (*The command is on the clipboard.*). Unlike a crontab line it does not send the
   output to `/dev/null`, so whoever pastes it sees what the job says.
 - **Scripts (n)**, folded to one line of names. Opened, each script with what it does (the `@description` tag of its
@@ -390,7 +390,7 @@ below would be added to it.*
 installation's own root and PHP binary, for the site chosen when the page was drawn:
 
 ```
-17 * * * * cd /var/www/vhosts/alpha.se7enx.com/doc/alpha.se7enx.com && /opt/plesk/php/8.5/bin/php runcronjobs.php -s site infrequent >/dev/null 2>&1
+17 * * * * cd /var/www/example && /opt/plesk/php/8.5/bin/php runcronjobs.php -s site infrequent >/dev/null 2>&1
 ```
 
 **Copy the suggested entries** copies them all. Nothing adds them for you. The schedule of each line is
@@ -428,7 +428,7 @@ runs a single script (`--script=session_gc.php`) schedules no part.
 The real crontab of the demonstration server's root user holds one line of this installation:
 
 ```
-* * * * * cd /var/www/vhosts/alpha.se7enx.com/doc/alpha.se7enx.com && /opt/plesk/php/8.5/bin/php runcronjobs.php -q publishing >> var/log/cronjob-publishing.log 2>&1 # exponential static cache and search index after publishing (sevenx_alpha_settings)
+* * * * * cd /var/www/example && /opt/plesk/php/8.5/bin/php runcronjobs.php -q publishing >> var/log/cronjob-publishing.log 2>&1 # exponential static cache and search index after publishing (the demonstration site's own settings extension)
 ```
 
 The page reads it as the part `publishing`, *Every minute*.

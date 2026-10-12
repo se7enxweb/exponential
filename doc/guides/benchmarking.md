@@ -9,7 +9,7 @@ runs or two machines without fooling yourself, and what to do when a number look
 It is written for operators who tune a site and for developers who want to know what a change costs. Read sections
 1 to 3 first; after that every section stands on its own. Every command, option and default below was checked
 against the code, and every output is real: it was printed by the commands on the demonstration server
-(alpha.se7enx.com, 12 CPUs, shared with other work at a load of 5 to 11) on 5 October 2026, read-only, with long
+(12 CPUs, shared with other work at a load of 5 to 11) on 5 October 2026, read-only, with long
 lines shortened where marked.
 
 [Guides](README.md) · Feature reference: [Benchmark: exp:benchmark](../features/6.0/benchmark.md) · In the
@@ -167,7 +167,7 @@ response cache, `BYPASS:20` that every request passed it by, `-` that the server
 ### 4.4 Two servers back to back: Apache and Velocity
 
 ```bash
-./console exp:benchmark --compare=https://alpha.se7enx.com,https://alpha.se7enx.com:8080 --runs=40 --warmup=5 \
+./console exp:benchmark --compare=https://www.example.com,https://www.example.com:8080 --runs=40 --warmup=5 \
     --save=var/benchmark/ab.json --allow-root-user
 ```
 
@@ -177,30 +177,30 @@ same database. The output (the round lines left out):
 ```
 exp:benchmark http  6 URL(s) x 2 server(s), 40 requests each, concurrency 4, warm-up 5, warm, tool curl  (installed: ab)
   saved: var/benchmark/ab.json
-  http mode, web.my.se7enx.com, PHP 8.5.11, 2026-10-05T19:30:26-07:00
+  http mode, web.example.com, PHP 8.5.11, 2026-10-05T19:30:26-07:00
   php-cli, OPcache off, Xdebug off, 12 CPUs, load 9.59, commit 3a5029891e
   times in milliseconds; req/s counts successful requests; sd = standard deviation
   target                 url                                  n   min  median   p90   p99   max    sd  req/s  err  status  bytes  cache
   ---------------------  ----------------------------------  --  ----  ------  ----  ----  ----  ----  -----  ---  ------  -----  ------
-  alpha.se7enx.com       /                                   40  7.51    10.7  18.0  29.7  30.1  5.31    307    0  200:40  16.6k  HIT:40
-  alpha.se7enx.com:8080  /                                   40  1.16    2.55  3.44  4.17  4.35  0.69   1110    0  200:40  15.3k  HIT:40
-  alpha.se7enx.com       /fitness                            40  6.53    8.65  10.9  13.2  13.4  1.59    415    0  200:40  11.9k  HIT:40
-  alpha.se7enx.com:8080  /fitness                            40  0.85    1.38  1.80  2.62  2.85  0.39   2260    0  200:40  11.2k  HIT:40
-  alpha.se7enx.com       /workout                            40  7.06    9.62  12.0  13.5  14.1  1.53    379    0  200:40  11.4k  HIT:40
-  alpha.se7enx.com:8080  /workout                            40  0.63    1.27  2.12  2.40  2.45  0.45   2157    0  200:40  10.8k  HIT:40
-  alpha.se7enx.com       /fit-healthy-site-info              40  7.48    10.5  15.7  16.5  16.5  2.66    333    0  200:40   9.7k  HIT:40
-  alpha.se7enx.com:8080  /fit-healthy-site-info              40  0.72    1.84  2.71  3.05  3.13  0.61   1671    0  200:40   9.2k  HIT:40
-  alpha.se7enx.com       /content/search?SearchText=fitness  40   285     334   396   407   409  32.8   11.3    0  200:40  11.1k  -
-  alpha.se7enx.com:8080  /content/search?SearchText=fitness  40  1.01    2.06  3.73  4.16  4.17  0.98   1302    0  200:40  10.6k  HIT:40
-  alpha.se7enx.com       /admin/user/login                   40  35.8    43.6  51.6  55.5  55.8  4.94   87.1    0  200:40   7.9k  -
-  alpha.se7enx.com:8080  /admin/user/login                   40  34.2    39.9  49.6  92.6   101  12.3   87.9    0  200:40   7.9k  -
+  www.example.com        /                                   40  7.51    10.7  18.0  29.7  30.1  5.31    307    0  200:40  16.6k  HIT:40
+  www.example.com:8080   /                                   40  1.16    2.55  3.44  4.17  4.35  0.69   1110    0  200:40  15.3k  HIT:40
+  www.example.com        /fitness                            40  6.53    8.65  10.9  13.2  13.4  1.59    415    0  200:40  11.9k  HIT:40
+  www.example.com:8080   /fitness                            40  0.85    1.38  1.80  2.62  2.85  0.39   2260    0  200:40  11.2k  HIT:40
+  www.example.com        /workout                            40  7.06    9.62  12.0  13.5  14.1  1.53    379    0  200:40  11.4k  HIT:40
+  www.example.com:8080   /workout                            40  0.63    1.27  2.12  2.40  2.45  0.45   2157    0  200:40  10.8k  HIT:40
+  www.example.com        /fit-healthy-site-info              40  7.48    10.5  15.7  16.5  16.5  2.66    333    0  200:40   9.7k  HIT:40
+  www.example.com:8080   /fit-healthy-site-info              40  0.72    1.84  2.71  3.05  3.13  0.61   1671    0  200:40   9.2k  HIT:40
+  www.example.com        /content/search?SearchText=fitness  40   285     334   396   407   409  32.8   11.3    0  200:40  11.1k  -
+  www.example.com:8080   /content/search?SearchText=fitness  40  1.01    2.06  3.73  4.16  4.17  0.98   1302    0  200:40  10.6k  HIT:40
+  www.example.com        /admin/user/login                   40  35.8    43.6  51.6  55.5  55.8  4.94   87.1    0  200:40   7.9k  -
+  www.example.com:8080   /admin/user/login                   40  34.2    39.9  49.6  92.6   101  12.3   87.9    0  200:40   7.9k  -
 
   A/B, measured back to back (B/A below 1 means B is faster for the median, above 1 more req/s):
   url                                 A                 B                      A median  B median    B/A  A req/s  B req/s      B/A
-  /                                   alpha.se7enx.com  alpha.se7enx.com:8080      10.7      2.55  x0.24      307     1110    x3.61
-  /fitness                            alpha.se7enx.com  alpha.se7enx.com:8080      8.65      1.38  x0.16      415     2260    x5.45
-  /content/search?SearchText=fitness  alpha.se7enx.com  alpha.se7enx.com:8080       334      2.06  x0.01     11.3     1302  x114.90
-  /admin/user/login                   alpha.se7enx.com  alpha.se7enx.com:8080      43.6      39.9  x0.91     87.1     87.9    x1.01
+  /                                   www.example.com   www.example.com:8080       10.7      2.55  x0.24      307     1110    x3.61
+  /fitness                            www.example.com   www.example.com:8080       8.65      1.38  x0.16      415     2260    x5.45
+  /content/search?SearchText=fitness  www.example.com   www.example.com:8080        334      2.06  x0.01     11.3     1302  x114.90
+  /admin/user/login                   www.example.com   www.example.com:8080       43.6      39.9  x0.91     87.1     87.9    x1.01
   (two rows of the A/B table left out)
 ```
 
@@ -212,17 +212,17 @@ compares a cache with a render, not two engines. The admin login page is never c
 The same pages rendered, past every response cache:
 
 ```bash
-./console exp:benchmark --compare=https://alpha.se7enx.com,https://alpha.se7enx.com:8080 --url=/ --url=/fitness \
+./console exp:benchmark --compare=https://www.example.com,https://www.example.com:8080 --url=/ --url=/fitness \
     --cold --runs=20 --warmup=2 --allow-root-user
 ```
 
 ```
   target                 url        n   min  median   p90   p99   max    sd  req/s  err  status  bytes  cache
   ---------------------  --------  --  ----  ------  ----  ----  ----  ----  -----  ---  ------  -----  ---------
-  alpha.se7enx.com       /         20   139     158   193   206   208  19.4   20.3    0  200:20  16.9k  BYPASS:20
-  alpha.se7enx.com:8080  /         20   196     258  2014  2046  2049   652   7.02    0  200:20  15.2k  BYPASS:20
-  alpha.se7enx.com       /fitness  20  77.7    94.2   113   126   128  12.6   35.1    0  200:20  12.0k  BYPASS:20
-  alpha.se7enx.com:8080  /fitness  20   103     131   149   157   158  16.3   25.8    0  200:20  11.2k  BYPASS:20
+  www.example.com        /         20   139     158   193   206   208  19.4   20.3    0  200:20  16.9k  BYPASS:20
+  www.example.com:8080   /         20   196     258  2014  2046  2049   652   7.02    0  200:20  15.2k  BYPASS:20
+  www.example.com        /fitness  20  77.7    94.2   113   126   128  12.6   35.1    0  200:20  12.0k  BYPASS:20
+  www.example.com:8080   /fitness  20   103     131   149   157   158  16.3   25.8    0  200:20  11.2k  BYPASS:20
 ```
 
 Here the order is the other way round: rendering, Apache was faster in this run. And the Velocity row of `/` has a
@@ -284,7 +284,7 @@ layout blocks renders them in the page layout); then the menu page with the larg
 runs only the named probes. Output on the demonstration server:
 
 ```
-  kernel mode, web.my.se7enx.com, PHP 8.5.11, 2026-10-05T19:38:55-07:00
+  kernel mode, web.example.com, PHP 8.5.11, 2026-10-05T19:38:55-07:00
   php-cli, OPcache off, Xdebug off, 12 CPUs, load 11.63, commit 38e10264bf
   probe           n   min  median   p90   p99   max    sd  ops/s  err  mem peak  note
   -------------  --  ----  ------  ----  ----  ----  ----  -----  ---  --------  ----------------------------------------------
@@ -344,7 +344,7 @@ that ratio is what section 13 compares.
 
 ```
 exp:benchmark micro  30 measured and 3 warm-up iterations per probe, PHP 8.5.11, OPcache off
-  micro mode, web.my.se7enx.com, PHP 8.5.11, 2026-10-05T19:33:47-07:00
+  micro mode, web.example.com, PHP 8.5.11, 2026-10-05T19:33:47-07:00
   php-cli, OPcache off, Xdebug off, 12 CPUs, load 5.55, commit ec5699e4d1
   times in milliseconds per iteration; ops/s at the median; x calib = median / calibration loop median (9.359 ms, drift -7.8 %)
   probe               n   ops   min  median   p90   p99   max    sd    ops/s  x calib  err  note
@@ -416,7 +416,7 @@ saved run again in any format.
     "xdebug": false,
     "os": "Linux 5.14.0-687.5.3.el9_8.x86_64",
     "arch": "x86_64",
-    "machine": "web.my.se7enx.com",
+    "machine": "web.example.com",
     "cpus": 12,
     "load": 5.55,
     "exponential": "6.0.15stable",
@@ -526,11 +526,11 @@ between:
   against var/benchmark/before.json: 13 regression(s), threshold 15 %, noise floor 1.0 ms
   row                                                   metric  baseline   now   change
   ----------------------------------------------------  ------  --------  ----  -------  ---------
-  https://alpha.se7enx.com /fitness                     median      8.65  12.4   +43.6%  REGRESSED
-  https://alpha.se7enx.com /fitness                     p95         12.5  18.6   +48.8%  REGRESSED
-  https://alpha.se7enx.com /fitness                     rps          415   284   -31.6%  REGRESSED
-  https://alpha.se7enx.com:8080 /fitness                p95         2.21  4.78  +116.3%  REGRESSED
-  https://alpha.se7enx.com:8080 /workout                median      1.27  2.77  +117.8%  REGRESSED
+  https://www.example.com /fitness                      median      8.65  12.4   +43.6%  REGRESSED
+  https://www.example.com /fitness                      p95         12.5  18.6   +48.8%  REGRESSED
+  https://www.example.com /fitness                      rps          415   284   -31.6%  REGRESSED
+  https://www.example.com:8080 /fitness                 p95         2.21  4.78  +116.3%  REGRESSED
+  https://www.example.com:8080 /workout                 median      1.27  2.77  +117.8%  REGRESSED
   ...
   FAIL: slower than the baseline
 ```
@@ -650,10 +650,10 @@ measure them on your own site before you decide:
 
 The demonstration server's guided tour shows a speed card after the Velocity stop: "The same pages, Apache and
 Velocity". The administration dashboard of the same server shows the same numbers with a **Measure again** button.
-Both belong to the demonstration site's own extension (`sevenx_alpha_settings`), which is not shipped with
+Both belong to the demonstration site's own settings extension, which is not shipped with
 Exponential; they are described here because they are the most visible use of `exp:benchmark`.
 
-What they show: for each page of `showcase.ini [SpeedSettings] Pages[]` (on alpha: the front page, a landing page
+What they show: for each page of `showcase.ini [SpeedSettings] Pages[]` (on the demonstration server: the front page, a landing page
 built from layouts, the recipe list and the tour itself), the median time through Apache (`ApacheBase`) and through
 Velocity (`VelocityBase`), once **cached** (a warm run, `BenchmarkRequests=20` requests per page and server) and once
 **rendered** (a `--cold` run, `BenchmarkColdRequests=8`), and Apache's time divided by Velocity's. Under the table:

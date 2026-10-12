@@ -16,7 +16,7 @@ skipped. A Velocity worker lives for hours, and its "request start" is the time 
 afterwards (the caches regenerated after a deploy or a cache clear) counted as too new for the whole life of the
 worker, and was compiled again on every include.
 
-Measured on the alpha installation: the cache served 2.7% of the includes under Velocity against 97% under PHP-FPM, and
+Measured on the demonstration server: the cache served 2.7% of the includes under Velocity against 97% under PHP-FPM, and
 a rendered page cost 644 ms of CPU against 166 ms.
 
 ## What changed

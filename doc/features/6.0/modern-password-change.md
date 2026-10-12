@@ -89,7 +89,7 @@ comparison runs in constant time (`hash_equals`). When the stamps differ, the se
   `eZUser::purgeUserCacheByUserId()` also invalidates the file in OPcache. A change made through the site therefore
   reaches every worker of that server at once. A change made on the console (`resetuserpassword.php`, a script)
   reaches a web server's other sessions when that server's OPcache revalidates (`opcache.revalidate_freq`; 10
-  seconds on alpha's Apache, at once on Velocity).
+  seconds on the demonstration server's Apache, at once on Velocity).
 - When `[UserSettings] UpdateHash` re-hashes a password at sign-in (after a change of `HashType`), the user's other
   sessions are signed out once, because the stored hash has changed.
 

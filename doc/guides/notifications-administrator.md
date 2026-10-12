@@ -189,7 +189,7 @@ Time event at 2026-10-05 06:00:00.
 PASS: 13 event(s) handled, 13 removed, 0 kept for a digest, 0 message(s) to 0 recipient(s), 61 ms.
 
 $ ./console exp:notification:run --dry-run --at="2026-10-05 09:00" --mail-file-dir=var/tmp/notification-mail/doc2
-  would send "[alpha.se7enx.com] Digest for Sunday October 04 2026 10:40:33 pm" to 1 recipient(s): n***@nottest.invalid
+  would send "[example.com] Digest for Sunday October 04 2026 10:40:33 pm" to 1 recipient(s): n***@nottest.invalid
 PASS: dry run, 1 event(s) handled, 1 message(s) would be sent, 0 event(s) would be kept for a digest.
 
 $ ./console exp:notification:run --at="2026-10-05 09:00" --mail-file-dir=var/tmp/notification-mail/doc2

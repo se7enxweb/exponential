@@ -8,8 +8,8 @@ redirect target through `ezpKernelWeb::appendRequestQuery()`.
 | Redirect target | Query of the request |
 |---|---|
 | relative (`/content/view/full/2`) | kept |
-| absolute on the own host (`https://alpha.se7enx.com/a`, also with a port such as `:8080`) | kept |
-| another host, also another host-matched siteaccess (`https://edit.alpha.se7enx.com/...`) | dropped |
+| absolute on the own host (`https://www.example.com/a`, also with a port such as `:8080`) | kept |
+| another host, also another host-matched siteaccess (`https://edit.example.com/...`) | dropped |
 | protocol-relative (`//host/a`) or another scheme (`ftp:`, `mailto:`) | dropped unless it names the own host |
 
 The own host is the host of the request (`eZSys::hostname()`, which honours the first `X-Forwarded-Host` behind a proxy,

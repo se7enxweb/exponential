@@ -121,7 +121,7 @@ default sort of `eZPolicyLimitationValue`). The objects are built from them as f
 turn them into the array are the same, and a policy whose own limitation has the assignment's identifier is built by
 `limitationList()` as before.
 
-On alpha (SQLite) every user, every user or group with a role of its own, and throwaway roles with a policy of every
+On the demonstration server (SQLite) every user, every user or group with a role of its own, and throwaway roles with a policy of every
 limitation kind were built both ways, by the code before the change and by this one, and compared with `===`:
 31 subjects, all identical. The throwaway roles carried Class, Section, Owner, Group, Node, Subtree, Language, a
 state group, ParentOwner, ParentGroup, ParentClass, ParentDepth, SiteAccess, a limitation of an extension (as
@@ -130,7 +130,7 @@ values out of order and repeated, a temporary editing copy of a policy, unlimite
 policies; they were assigned plainly, for 40 subtrees and for sections, to a user, to groups, to a nested group and
 together with the groups of the anonymous user.
 
-| Built on alpha (SQLite, PHP 8.5), query cache off, fastest of 5 builds | Before: queries, time | Now: queries, time |
+| Built on the demonstration server (SQLite, PHP 8.5), query cache off, fastest of 5 builds | Before: queries, time | Now: queries, time |
 |---|---|---|
 | Administrator (1 role) | 3, 0.2 ms | 3, 0.2 ms |
 | Anonymous (1 role) | 27, 1.3 ms | 4, 1.6 ms |

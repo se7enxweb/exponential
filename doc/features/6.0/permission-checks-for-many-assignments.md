@@ -12,7 +12,7 @@ setting that turns the shorter permission condition off.
 | What changed | `eZContentObject::checkAccess()` and `canCreateClassList()` load the locations of an object once per call instead of once per policy. The content fetches merge the read policies that differ only in the subtree their role is assigned for and leave out those that cannot give access to a fetched node. |
 | Measured | For a member of 120 teamrooms (1,203 read policies): checking read access to an article took 120 queries and 27.8 ms, now 1 query and 1.0 ms; the create menu of a folder 601 queries and about 100 ms, now 2 queries and 2 ms; listing the children of a folder 24.4 ms, now 1.2 ms. |
 | Fixed | On SQLite every content fetch of a user with 1,000 read policies or more failed ("Expression tree is too large") and returned nothing. Long OR chains are now written in groups, so thousands of policies or subtrees stay below the limit. |
-| Checked | On alpha, for every user, the read policies of every role and six throwaway users covering every limitation kind: 3,294 fetches, 28,224 access checks and 2,712 create lists give the same answers as before (see [Checked on alpha](#checked-on-alpha)). |
+| Checked | On the demonstration server, for every user, the read policies of every role and six throwaway users covering every limitation kind: 3,294 fetches, 28,224 access checks and 2,712 create lists give the same answers as before (see [Checked on the demonstration server](#checked-on-the-demonstration-server)). |
 | Result | The same answers: `checkAccess()` and `canCreateClassList()` compare the same locations, the fetches return the same nodes. |
 | Setting | `site.ini [RoleSettings] PermissionSQLOptimization=enabled` (default); `disabled` ORs every read policy into the fetch condition as before. |
 | Who must act | Nobody. |
@@ -121,9 +121,9 @@ path lookup of a fetch of children 0.03 ms.
 These are local numbers without a network. With MySQL or PostgreSQL on a server of its own the queries that are saved
 weigh more, each a round trip; how the planner of each database treats a long OR condition was not measured here.
 
-## Checked on alpha
+## Checked on the demonstration server
 
-The fetches, access checks and create lists of every user on alpha (one disabled user left out: a disabled user is
+The fetches, access checks and create lists of every user on the demonstration server (one disabled user left out: a disabled user is
 anonymous for every request), of the read policies of every role on their own, and of six throwaway users were
 computed with the code before the change, with the change as first submitted and with the change as it is now. The
 throwaway users cover every limitation kind: a member role of 5 read, 3 create and 2 edit policies assigned for 120
@@ -145,7 +145,7 @@ nothing are now consistent with that user's tree fetches. The first submission l
 the throwaway users that they may not read (the subtrees of a merged policy without parentheses), and hid nodes from
 the role with a `Class` limitation without values.
 
-Figures on alpha (SQLite, PHP 8.5, 330 nodes), median of 5, queries of one call:
+Figures on the demonstration server (SQLite, PHP 8.5, 330 nodes), median of 5, queries of one call:
 
 | Call | User | Before | Now |
 |---|---|---|---|

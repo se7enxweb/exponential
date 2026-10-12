@@ -9,7 +9,7 @@ problems people run into.
 
 It is written for administrators and site builders. Read sections 1 and 2 first; after that every section stands on
 its own. Every setting, button and command below was checked against the code of Exponential 6.0, and every number
-shown is real: it was read on the demonstration server (alpha.se7enx.com) on 5 October 2026. Nothing in this guide
+shown is real: it was read on the demonstration server on 5 October 2026. Nothing in this guide
 was tried out by adding or removing a language on that server, because removing a language is not something to
 practise on content people use; section 9 shows how to try it safely.
 

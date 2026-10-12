@@ -25,7 +25,7 @@ Run the two test classes on an installation:
 php vendor/bin/phpunit tests/tests/kernel/classes/mailpreferences/
 ```
 
-Expected on alpha, 2026-10-04: `OK (45 tests, 660 assertions)`. The tests force the file transport in their own process, use
+Expected on the demonstration server, 2026-10-04: `OK (45 tests, 660 assertions)`. The tests force the file transport in their own process, use
 only addresses on the reserved `.invalid` domain and remove what they create. Without an installation (the GitHub
 workflow) they are skipped. LAW-24 posts to the site's own web server; it is skipped when the server cannot be reached. MPH-09 posts to the
 site's web server and to Velocity (`velocity.ini [ServerSettings] HTTPSPort`) when it runs.

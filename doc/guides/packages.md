@@ -129,7 +129,7 @@ A package is an installer source when at least one of these holds:
 | A site package the setup wizard offers | Its type is `site`; the setup wizard lists every site package |
 | Required by another installer source | An installer source requires it (`<require type="ezpackage">`), directly or through others |
 
-On alpha this marks `sevenx_classes`, `sevenx_multisite` and `sevenx_multisite_democontent`. The card has a blue
+On the demonstration server this marks `sevenx_classes`, `sevenx_multisite` and `sevenx_multisite_democontent`. The card has a blue
 edge, the package's page says why, and a removal of one needs the box "I understand that ... installer source(s)
 will be deleted" ticked as well.
 

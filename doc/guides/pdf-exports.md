@@ -7,7 +7,7 @@ an export, and what to do when a PDF is empty or will not generate.
 It is for administrators who hand out content as a PDF (a handbook, a product sheet, a recipe collection). Every
 figure and message below was checked against the code (`kernel/private/classes/views/pdf/list.php`,
 `kernel/private/classes/views/pdf/edit.php`, `kernel/classes/pdfexport/*.php`, `kernel/classes/ezpdfexport.php`)
-on the demonstration server (alpha.se7enx.com) on 6 October 2026, on Apache with PHP-FPM and on FrankenPHP.
+on the demonstration server on 6 October 2026, on Apache with PHP-FPM and on FrankenPHP.
 
 [Guides](README.md) · Related: [Templates and design](templates-and-design.md),
 [Paging, sorting and page sizes](../features/6.0/admin-list-paging.md), [Safe redirects](../features/6.0/safe-redirects.md)

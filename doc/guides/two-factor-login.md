@@ -63,9 +63,9 @@ Try it on one siteaccess first: activate the extension as an access extension of
 `LoginHandler` lines in that siteaccess's `site.ini.append.php`. Remember that `settings/override` outranks a
 siteaccess: mail sent from the test siteaccess still uses the global `[MailSettings] Transport`.
 
-## On alpha
+## On the demonstration server
 
-Two-step sign-in is on at alpha.se7enx.com since 6 October 2026, as opt-in: the extension is active, the login
+Two-step sign-in is on at the demonstration server since 6 October 2026, as opt-in: the extension is active, the login
 handler is `sevenxUser2fa` then `standard`, the user class has the field *Two-step sign-in* (`two_factor`), every role that signs
 in (Member, Editor and the custom editor role; Administrator has all) has `user2fa/setup` and
 `user2fa/verify`, and the secrets are encrypted with a key in

@@ -7,7 +7,7 @@ feed reader gets nothing or an import brings nothing in.
 It is for administrators who publish feeds or podcasts and for operators who keep imports running. Every figure
 and message below was checked against the code (`kernel/private/classes/views/rss/list.php`,
 `kernel/classes/ezrssexport.php`, `kernel/classes/ezrssimport.php`, `kernel/private/classes/cronjobs/rssimport.php`
-and `kernel/private/classes/views/rss/feed.php`) on the demonstration server (alpha.se7enx.com) on 6 October 2026.
+and `kernel/private/classes/views/rss/feed.php`) on the demonstration server on 6 October 2026.
 
 [Guides](README.md) · Related: [RSS: Apple Podcasts feeds, a paged feed list and safer exports](../features/6.0/rss-podcast-and-feed-list.md),
 [OPML exports](../bc/6.0/opml.md), [Cronjobs](cronjobs.md)

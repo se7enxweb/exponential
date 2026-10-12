@@ -6,7 +6,7 @@ and on Exponential Velocity, and the commands that do the same from a shell.
 
 It is written for administrators. Everything below was checked against the code (`kernel/classes/expcachecatalogue.php`,
 `kernel/classes/expcachemanager.php`, `kernel/private/classes/views/setup/cache.php`) and tried on the
-demonstration server (alpha.se7enx.com) on 6 October 2026, clearing only the template block cache and the image
+demonstration server on 6 October 2026, clearing only the template block cache and the image
 aliases.
 
 [Guides](README.md) · Related guides: [System information](system-information.md),
@@ -65,7 +65,7 @@ The column says when each cache was last cleared and, from the audit trail, by w
 
 - **The audit trail** (`system.cache.clear`) records every clear: through this page, Setup > System information,
   `./console exp:cache` and `bin/php/ezcache.php` (one record per run, so also the clears of
-  `exp:velocity deploy`). A shell is named by its operating system user (`os:root`, `os:alpha`). A run that clears
+  `exp:velocity deploy`). A shell is named by its operating system user (`os:root`, `os:www-data`). A run that clears
   nothing (`--list-ids`, `--list-tags`, an unknown id) writes no record; if the record cannot be written, the
   caches are cleared anyway and a warning goes to stderr.
 - The page reads it once per view: one query of the audit index (the newest 200 clears) and the end of the newest
@@ -83,7 +83,7 @@ The column says when each cache was last cleared and, from the audit trail, by w
 - **INI and settings** (`global_ini`, `ini`, `active_extensions`, `sslzones`): a running Velocity has read the
   settings into memory. After clearing them, run `./console exp:velocity restart --allow-root-user`.
 - **Content, templates and the HTTP cache**: Velocity's response cache can still answer a page made before the
-  clear, for its lifetime (a few seconds on alpha). Clear it with the button or `./console exp:velocity cache clear`.
+  clear, for its lifetime (a few seconds on the demonstration server). Clear it with the button or `./console exp:velocity cache clear`.
 - **OPcache and APCu** belong to the server process that answered; the other server keeps its own.
 
 ## 5. From a shell

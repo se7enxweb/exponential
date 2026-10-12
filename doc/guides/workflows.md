@@ -11,7 +11,7 @@ sections 1 and 4 first; after that every section stands on its own. Every field,
 checked against the code (`kernel/classes/ezworkflowprocess.php`, `kernel/classes/eztrigger.php`,
 `kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php`, `kernel/private/classes/cronjobs/workflow.php` and
 `kernel/private/classes/views/workflow/processlist.php`), and the screenshots are of the demonstration server
-(alpha.se7enx.com) on 5 October 2026, with the sample approvals of `exp:collaborationsampledata` waiting. Nothing was
+on 5 October 2026, with the sample approvals of `exp:collaborationsampledata` waiting. Nothing was
 cancelled or resumed to make them.
 
 [Guides](README.md) · Related guide: [Cronjobs](cronjobs.md) · Feature reference:

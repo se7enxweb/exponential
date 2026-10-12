@@ -10,7 +10,7 @@ It is written for administrators who run upgrades, imports and repairs on a live
 after that every section stands on its own. Every option, field and path below was checked against the code
 (`kernel/classes/expmaintenance.php`, `kernel/private/classes/views/setup/maintenance.php`,
 `kernel/private/classes/commands/maintenance.php`, the front controllers). The outputs are real: printed on the
-demonstration server (alpha.se7enx.com) on 5 October 2026 by the commands shown, read-only. The screenshots are of
+demonstration server on 5 October 2026 by the commands shown, read-only. The screenshots are of
 the same page in the light mode of the admin4 design; the "in maintenance" pictures were rendered from the page's
 template with a sample state, because the demonstration site was never taken offline to make this guide. The
 viewer's address in them is the documentation address 203.0.113.10.
@@ -123,7 +123,7 @@ connection. While the file does not exist, the cost is one `is_file()` call per 
 - **A shell, just in case**: for a planned window, keep a terminal open in the installation directory. Section 15
   shows the one command that ends maintenance whatever else is wrong.
 - **Who is affected**: everyone who reaches a front controller of this installation, through every web server that
-  serves it. On alpha that is Apache on ports 80 and 443 and Velocity on 8080; the state file is shared, so both go
+  serves it. On the demonstration server that is Apache on ports 80 and 443 and Velocity on 8080; the state file is shared, so both go
   offline and come back together.
 
 ## 3. The page at a glance
@@ -258,7 +258,7 @@ The page's **From a shell** section lists the three commands with Copy buttons:
 
 ![The commands that do the same from a shell](images/maintenance/shell.png)
 
-The options, from `php bin/php/maintenance.php --help` on alpha:
+The options, from `php bin/php/maintenance.php --help` on the demonstration server:
 
 ```text
 Usage: bin/php/maintenance.php [OPTION]... [ACTION]
@@ -284,7 +284,7 @@ What differs from the page:
 | `by` in the marker | Your login | Not set |
 | A wrong `--until` | Cannot happen | `--until: "..." is not a time (30m, 2h, or a date and time)`, exit code 1 |
 
-`status` prints the state. With maintenance off, as on alpha while this guide was written:
+`status` prints the state. With maintenance off, as on the demonstration server while this guide was written:
 
 ```text
 $ php bin/php/maintenance.php status --allow-root-user
@@ -337,7 +337,7 @@ Things to know:
 The page visitors get is a self-contained HTML file with placeholders:
 
 - the first active extension's `errors/maintenance.html` (found when maintenance is switched on, and stored in the
-  marker as `page`); on alpha that is `extension/sevenx_themes_media/errors/maintenance.html`;
+  marker as `page`); on the demonstration server that is `extension/sevenx_themes_media/errors/maintenance.html`;
 - otherwise the kernel's `share/maintenance.html`.
 
 `expMaintenance::page()` fills these placeholders:

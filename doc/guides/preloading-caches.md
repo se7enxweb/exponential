@@ -58,7 +58,7 @@ else from the form reaches a command line. The command is started with an argume
 ## 2. What a run warms, and on which server
 
 A run requests each page at the **address of the site**: `SiteURL` of the siteaccess, with the prefix that selects the
-siteaccess on that host (section 4). The server that answers that address renders the page: on alpha, Apache with
+siteaccess on that host (section 4). The server that answers that address renders the page: on the demonstration server, Apache with
 PHP-FPM.
 
 - The page view cache (`var/<var dir>/cache/content`), the image aliases (`var/<var dir>/storage/images`) and the

@@ -73,7 +73,7 @@ language). The list shows the name in the language of the admin, which is the sa
 ## Cost
 
 A page costs the same few queries whatever its size and however many assignments the role has: the page of
-assignments, their objects, their main nodes, the nodes of their Subtree limitations, and the counts. On alpha, a role
+assignments, their objects, their main nodes, the nodes of their Subtree limitations, and the counts. On the demonstration server, a role
 with 114 assignments took 106 queries to draw `role/view` before and takes 10 now, for a page of 50.
 
 Nothing is kept between requests, so the pages behave the same on PHP-FPM and on Exponential Velocity's persistent
