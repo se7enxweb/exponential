@@ -60,7 +60,7 @@
         {/if}
     {/foreach}
     <tr class="{$Customers.sequence}">
-        <td class="name"><a href={concat( '/shop/customerorderview/', $Customers.user_id, '/', $Customers.email|rawurlencode )|ezurl}>{$Customers.account_name|wash}</a></td> {* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2 *}
+        <td class="name"><a href={concat( '/shop/customerorderview/', $Customers.user_id, '/', $Customers.email )|ezurl}>{$Customers.account_name|wash}</a></td>
         <td class="number" align="right">{$order_count_text}</td>
         <td class="number" align="right">{$sum_ex_vat_text}</td>
         <td class="number" align="right">{$sum_inc_vat_text}</td>

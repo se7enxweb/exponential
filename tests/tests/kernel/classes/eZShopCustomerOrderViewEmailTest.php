@@ -15,16 +15,17 @@
 
 class eZShopCustomerOrderViewEmailTest extends PHPUnit\Framework\TestCase
 {
-    /** every template of the kernel designs that links to shop/customerorderview */
+    /**
+     * every template of the kernel designs that links to shop/customerorderview with an order's address; the
+     * customer list is not among them, eZOrder::customerList() gives its addresses urlencode()d already
+     */
     private static $templates = array(
         'design/standard/templates/shop/orderlist.tpl',
         'design/admin/templates/shop/orderlist.tpl',
         'design/admin/templates/shop/archivelist.tpl',
-        'design/admin/templates/shop/customerlist.tpl',
         'design/admin/templates/shop/dashboard.tpl',
         'design/admin4/templates/shop/orderlist.tpl',
         'design/admin4/templates/shop/archivelist.tpl',
-        'design/admin4/templates/shop/customerlist.tpl',
         'design/admin4/templates/shop/dashboard.tpl',
     );
 
@@ -55,6 +56,20 @@ class eZShopCustomerOrderViewEmailTest extends PHPUnit\Framework\TestCase
             $decodedOnce = urldecode( $segment );                 // DecodeOnce=enabled
             $this->assertSame( $address, \Exponential\View\Kernel\Shop\Customerorderview::emailFromURL( $decodedTwice ), $address );
             $this->assertSame( $address, \Exponential\View\Kernel\Shop\Customerorderview::emailFromURL( $decodedOnce ), $address );
+        }
+    }
+
+    /** the customer list's links: eZOrder::customerList() urlencode()s the address, the template adds nothing */
+    public function testCustomerListAddressSurvivesTheRequestDecoding()
+    {
+        $root = dirname( __DIR__, 4 );
+        foreach ( array( 'design/admin/templates/shop/customerlist.tpl', 'design/admin4/templates/shop/customerlist.tpl' ) as $template )
+            $this->assertStringNotContainsString( '$Customers.email|rawurlencode', file_get_contents( $root . '/' . $template ), $template );
+        foreach ( self::$addresses as $address )
+        {
+            $segment = urlencode( $address );
+            $this->assertSame( $address, \Exponential\View\Kernel\Shop\Customerorderview::emailFromURL( urldecode( urldecode( $segment ) ) ), $address );
+            $this->assertSame( $address, \Exponential\View\Kernel\Shop\Customerorderview::emailFromURL( urldecode( $segment ) ), $address );
         }
     }
 
