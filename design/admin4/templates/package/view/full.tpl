@@ -92,6 +92,8 @@
             <a class="exp-btn" href={concat( 'package/export/', $package.name, $repo_suffix, '/(format)/xml' )|ezurl} title="{'Download the package as an .ezpkg file.'|i18n( 'design/admin/package' )}">{'Download'|i18n( 'design/admin/package' )}</a>
             <a class="exp-btn" href={concat( 'package/export/', $package.name, $repo_suffix, '/(format)/json' )|ezurl} title="{'Download the package in the JSON format (package.json), as a .json.ezpkg file.'|i18n( 'design/admin/package' )}">{'Download as JSON'|i18n( 'design/admin/package' )}</a>
         {/if}
+        {* the package's validation: every document and, in the JSON format, the schema and the checksums *}
+        <button class="exp-btn" type="submit" name="ValidateButton" value="1" title="{'Check every document of the package and, in the JSON format, the schema and the checksums.'|i18n( 'design/admin/package' )}">{'Validate'|i18n( 'design/admin/package' )}</button>
         {if and( $pvf_installable, $pvf_can_install, $package.is_installed )}
             <button class="exp-btn exp-btn-outline-danger" type="submit" name="UninstallButton" value="1">{'Uninstall'|i18n( 'design/admin/package')}</button>
         {/if}
@@ -121,6 +123,56 @@
 </div>
 {/if}
 
+
+{if first_set( $package_validation, false() )}
+{include uri='design:package/validation.tpl' validation=$package_validation validation_title=$package_validation_title}
+{/if}
+
+{* the background installs of this package (content jobs, content/job/<id>), newest first *}
+{if first_set( $package_jobs, array() )|count}
+<section class="exp-section" aria-labelledby="package-jobs-title">
+<div class="exp-section-head"><h2 class="exp-h2" id="package-jobs-title">{'Background installs'|i18n( 'design/admin/package' )}</h2></div>
+{foreach $package_jobs as $job}
+<div class="exp-panel" data-job="{$job.id|wash}" data-job-state="{$job.state|wash}">
+    <p><strong>{$job.description|wash}</strong> &middot; <a href={concat( 'content/job/', $job.id )|ezurl}>{'Job page'|i18n( 'design/admin/package' )}</a></p>
+    <p class="exp-meta">{switch match=$job.state}
+        {case match='queued'}{'Waiting for its worker'|i18n( 'design/admin/package' )}{/case}
+        {case match='running'}{'Running'|i18n( 'design/admin/package' )}{/case}
+        {case match='done'}{'Done'|i18n( 'design/admin/package' )}{/case}
+        {case match='failed'}{'Failed'|i18n( 'design/admin/package' )}{/case}
+        {case}{$job.state|wash}{/case}
+        {/switch}: {'%done of %total content objects (%percent %)'|i18n( 'design/admin/package',, hash( '%done', $job.progress.done, '%total', $job.progress.total, '%percent', $job.progress.percent ) )}
+        &middot; {'Started'|i18n( 'design/admin/package' )} {$job.created|l10n( shortdatetime )}{if $job.finished} &middot; {'Finished'|i18n( 'design/admin/package' )} {$job.finished|l10n( shortdatetime )}{/if}</p>
+    <progress max="100" value="{$job.progress.percent|wash}" aria-label="{'Progress'|i18n( 'design/admin/package' )}">{$job.progress.percent|wash} %</progress>
+    {if $job.error}<p class="exp-feedback is-bad" role="alert">{$job.error|wash}</p>{/if}
+    {if and( $job.state|eq( 'done' ), is_set( $job.result.drafts ) )}
+    <p class="exp-feedback is-ok" role="status">{'%count drafts were written. Nothing was published: review each draft and publish it, or remove it.'|i18n( 'design/admin/package',, hash( '%count', $job.result.drafts|count ) )}</p>
+    {if $job.result.drafts|count}
+    <div class="exp-table-wrap">
+    <table class="exp-table">
+        <tr><th>{'Draft'|i18n( 'design/admin/package' )}</th><th>{'Remote ID'|i18n( 'design/admin/package' )}</th><th>{'What'|i18n( 'design/admin/package' )}</th></tr>
+        {foreach $job.result.drafts as $draft max 50}
+        <tr>
+            <td>{if $draft.version}<a href={concat( 'content/versionview/', $draft.object_id, '/', $draft.version )|ezurl}>{$draft.name|wash}</a>{else}{$draft.name|wash}{/if}</td>
+            <td><code>{$draft.remote_id|wash}</code></td>
+            <td>{switch match=$draft.action}
+                {case match='new_draft'}{'New object, draft'|i18n( 'design/admin/package' )}{/case}
+                {case match='draft_of_existing'}{'New draft of an existing object'|i18n( 'design/admin/package' )}{/case}
+                {case match='conflict'}<strong>{'Conflict'|i18n( 'design/admin/package' )}</strong>{/case}
+                {case}{'Existing object left alone'|i18n( 'design/admin/package' )}{/case}
+                {/switch}</td>
+        </tr>
+        {/foreach}
+    </table>
+    </div>
+    {if $job.result.drafts|count|gt( 50 )}<p class="exp-muted">{'The first 50 of %count drafts; all of them are in My drafts.'|i18n( 'design/admin/package',, hash( '%count', $job.result.drafts|count ) )}</p>{/if}
+    {/if}
+    {if $job.result.waiting|count}<p class="exp-muted">{'%count drafts wait for a parent that is a draft of this package too. Publish the parent, then install the package as drafts again to give them their place.'|i18n( 'design/admin/package',, hash( '%count', $job.result.waiting|count ) )}</p>{/if}
+    {/if}
+</div>
+{/foreach}
+</section>
+{/if}
 <section class="exp-section" aria-labelledby="package-details-title">
 <div class="exp-section-head"><h2 class="exp-h2" id="package-details-title">{'Details'|i18n( 'design/admin/package' )}</h2></div>
 <div class="exp-panel">
@@ -282,9 +334,17 @@
                     <span class="pvf-viewer-meta">
                         <span class="pvf-kind pvf-kind-{$viewed.kind|wash}">{cond( is_set( $kindLabels[$viewed.kind] ), $kindLabels[$viewed.kind], $viewed.kind )|wash}</span>
                         <span class="pvf-size" title="{$viewed.size|wash} B">{$viewed.size|si( byte )}</span>
+                        {if is_set( $viewed.checksum )}<span class="pvf-checksum" data-checksum="{$viewed.checksum|wash}">{switch match=$viewed.checksum}{case match='match'}{'Matches package.json'|i18n('design/admin/package')}{/case}{case match='mismatch'}<strong>{'Does not match package.json: the file was changed after the package was written'|i18n('design/admin/package')}</strong>{/case}{case}{/case}{/switch}</span>{/if}
                     </span>
                 </div>
                 <div class="pvf-viewer-actions">
+                    {* a document in either format (XML and JSON are 1:1, doc/bc/6.0/package-json-format.md) *}
+                    {if is_set( $viewed.format )}
+                    <span class="pvf-format" data-format="{$viewed.format|wash}">{if $viewed.format|eq( 'json' )}JSON{else}XML{/if}{if $viewed.format|ne( $viewed.native )} ({'converted'|i18n('design/admin/package')}){/if}</span>
+                    {if $viewed.format|eq( 'json' )}<a class="pvf-link-button" data-as="xml" href={$ContentsBrowser.url_as_xml|ezurl}>{'View as XML'|i18n('design/admin/package')}</a>
+                    {else}<a class="pvf-link-button" data-as="json" href={$ContentsBrowser.url_as_json|ezurl}>{'View as JSON'|i18n('design/admin/package')}</a>{/if}
+                    {/if}
+                    {if $ContentsBrowser.viewed_content}<button type="button" class="pvf-link-button" data-wrap-toggle="1" aria-pressed="false" onclick="var b=this,p=b.closest('.pvf-viewer').querySelectorAll('pre.pvf-code'),on=b.getAttribute('aria-pressed')!=='true';for(var i=0;i<p.length;i++){ldelim}p[i].classList.toggle('pvf-nowrap',on);{rdelim}b.setAttribute('aria-pressed',on?'true':'false');">{'No wrap'|i18n('design/admin/package')}</button>{/if}
                     <a class="pvf-link-button" href={concat( 'package/viewfile/', $package.name, '/', $viewed.index, $repo_suffix )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
                     <a class="pvf-link-button" href={$ContentsBrowser.url_close|ezurl}>{'Close'|i18n('design/admin/package')}</a>
                 </div>
@@ -312,11 +372,21 @@
                 {if $ContentsBrowser.viewed_object.more_objects|gt(0)}
                 <p class="pvf-note">{'+ %count more object(s) in the same file'|i18n('design/admin/package',,hash('%count', $ContentsBrowser.viewed_object.more_objects))}</p>
                 {/if}
-            {elseif $viewed.kind|eq('image')}
-                <div class="pvf-image"><img src={concat( 'package/viewfile/', $package.name, '/', $viewed.index, $repo_suffix )|ezurl} alt="{$viewed.path|wash}" /></div>
-            {else}
-                <pre class="pvf-code">{$ContentsBrowser.viewed_content|wash}</pre>
+                {* the document itself, below its summary *}
+                <h3 class="pvf-language">{'Document'|i18n('design/admin/package')}</h3>
+                <pre class="pvf-code" data-document-format="{first_set( $viewed.format, '' )|wash}">{$ContentsBrowser.viewed_content|wash}</pre>
                 {if and( is_set( $viewed.truncated ), $viewed.truncated )}<p class="pvf-note">{'Only the first megabyte is shown here; Download gives the whole file.'|i18n( 'design/admin/package' )}</p>{/if}
+            {elseif and( first_set( $viewed.media, '' )|eq( 'image' ), $viewed.inline )}
+                <div class="pvf-image" data-media="image"><img src={concat( 'package/viewfile/', $package.name, '/', $viewed.index, $repo_suffix )|ezurl} alt="{$viewed.path|wash}" /></div>
+                {include uri='design:package/view/file_card.tpl' file=$viewed}
+            {elseif and( first_set( $viewed.media, 'binary' )|ne( 'text' ), first_set( $viewed.media, 'binary' )|ne( 'svg' ) )}
+                {* not text: never shown as text; what it is, and a download *}
+                {include uri='design:package/view/file_card.tpl' file=$viewed}
+            {else}
+                {if first_set( $viewed.media, '' )|eq( 'svg' )}<p class="pvf-note">{'An SVG image may carry script, so it is shown as text here; Download gives the file.'|i18n( 'design/admin/package' )}</p>{/if}
+                <pre class="pvf-code" data-document-format="{first_set( $viewed.format, '' )|wash}">{$ContentsBrowser.viewed_content|wash}</pre>
+                {if and( is_set( $viewed.truncated ), $viewed.truncated )}<p class="pvf-note">{'Only the first megabyte is shown here; Download gives the whole file.'|i18n( 'design/admin/package' )}</p>{/if}
+                {if first_set( $viewed.as_error, '' )|ne( '' )}<p class="pvf-note">{'The document could not be shown in the other format: %error'|i18n( 'design/admin/package',, hash( '%error', $viewed.as_error ) )}</p>{/if}
             {/if}
             </div>
         </div>

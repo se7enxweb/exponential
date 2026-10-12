@@ -24,13 +24,18 @@ class expPackageConflictReport
     /**
      * @param eZPackage $package
      * @param int $limit the most objects listed (the counts cover all)
-     * @return array objects (rows), classes (rows), counts (action => n), skipped_items (drafts: what is not installed)
+     * @return array objects (rows, each with the parent state of its main location), classes (rows), counts (action => n),
+     *               parents (parent state => locations), other_items
      */
     static function build( eZPackage $package, $limit = 5000 )
     {
         $report = array( 'package' => (string)$package->attribute( 'name' ), 'format' => (string)$package->attribute( 'format' ),
                          'objects' => array(), 'classes' => array(), 'other_items' => array(),
-                         'counts' => array( 'create' => 0, 'update' => 0, 'conflict' => 0, 'error' => 0 ), 'object_total' => 0 );
+                         'counts' => array( 'create' => 0, 'update' => 0, 'conflict' => 0, 'error' => 0 ), 'object_total' => 0,
+                         // where the locations of the package's objects go, by the state of their parent: top (below
+                         // the node the install is given), installed (a node here), in_package (a node of the package),
+                         // missing (neither: the location waits or is left out)
+                         'parents' => array( 'top' => 0, 'installed' => 0, 'in_package' => 0, 'missing' => 0 ) );
         $packageClasses = array();
         $packageNodes = array();
         $objectNodes = array();
@@ -96,6 +101,7 @@ class expPackageConflictReport
             $row = array( 'remote_id' => $remoteID, 'name' => $objectNode->getAttribute( 'name' ),
                           'class_identifier' => $classIdentifier, 'class' => $classState,
                           'exists' => (bool)$existing, 'object_id' => $existing ? (int)$existing->attribute( 'id' ) : null,
+                          'node_id' => $existing && $existing->attribute( 'main_node_id' ) ? (int)$existing->attribute( 'main_node_id' ) : null,
                           'existing_class' => $existing ? (string)$existing->attribute( 'class_identifier' ) : null,
                           'current_version' => $existing ? (int)$existing->attribute( 'current_version' ) : null,
                           'modified' => $existing ? (int)$existing->attribute( 'modified' ) : null,
@@ -126,6 +132,9 @@ class expPackageConflictReport
                                              'node_exists' => (bool)$node,
                                              'node_of_other_object' => $node && ( !$existing || $nodeObjectID !== (int)$existing->attribute( 'id' ) ),
                                              'parent' => $parent );
+                ++$report['parents'][$parent];
+                if ( !isset( $row['parent'] ) || $assignment->getAttribute( 'is-main-node' ) === '1' )
+                    $row['parent'] = $parent;
             }
             if ( $classState === 'missing' )
                 $row['action'] = 'error';

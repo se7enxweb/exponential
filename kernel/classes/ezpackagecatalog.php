@@ -575,7 +575,7 @@ class eZPackageCatalog
         $objectFiles = 0;
         foreach ( $files as $file )
         {
-            $kind = $file['kind'] === 'unknown-xml' ? eZPackageFileBrowser::resolvedKind( $package, $file ) : $file['kind'];
+            $kind = in_array( $file['kind'], array( 'unknown-xml', 'unknown-json' ), true ) ? eZPackageFileBrowser::resolvedKind( $package, $file ) : $file['kind'];
             if ( !isset( $kinds[$kind] ) )
                 $kinds[$kind] = array( 'files' => 0, 'bytes' => 0 );
             $kinds[$kind]['files']++;

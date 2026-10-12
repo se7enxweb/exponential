@@ -83,6 +83,7 @@ class Install extends \Exponential\Runnable\ModuleView
         }
         elseif ( $module->isCurrentAction( 'InstallPackage' ) )
         {
+            $http->removeSessionVariable( 'eZPackageValidation' );
             $persistentData['doItemInstall'] = true;
             // As drafts (doc/bc/6.0/package-json-format.md): content objects become drafts, nothing is published,
             // the other items are not installed
@@ -94,6 +95,10 @@ class Install extends \Exponential\Runnable\ModuleView
                 $persistentData['drafts-waiting'] = array();
                 $persistentData['skipped-items'] = array();
             }
+            // In the background (expContentJobPackageInstall): the wizard's steps as always, the install in a content job
+            $persistentData['background'] = $module->hasActionParameter( 'Background' ) && $module->actionParameter( 'Background' )
+                                            && class_exists( 'expContentJobPackageInstall' ) && \expContentJobPackageInstall::available();
+            $persistentData['background_items'] = array();
         }
         elseif ( $module->isCurrentAction( 'HandleError' ) )
         {
@@ -149,7 +154,18 @@ class Install extends \Exponential\Runnable\ModuleView
             }
             $tpl->setVariable( 'install_elements', $installElements );
             // what the install would meet, by remote id (expPackageConflictReport)
-            $tpl->setVariable( 'conflict_report', \expPackageConflictReport::build( $package, 200 ) );
+            $conflictReport = \expPackageConflictReport::build( $package, 200 );
+            $tpl->setVariable( 'conflict_report', $conflictReport );
+            // a background install where the content jobs are there; suggested above their synchronous limit
+            $backgroundAvailable = class_exists( 'expContentJobPackageInstall' ) && \expContentJobPackageInstall::available();
+            $tpl->setVariable( 'background_available', $backgroundAvailable );
+            $tpl->setVariable( 'background_suggested', $backgroundAvailable && $conflictReport['object_total'] > (int)\expContentJob::setting( 'SynchronousLimit' ) );
+            // the package's validation (package/upload, or Validate on its page), kept until the next action on it
+            $uploadValidation = $http->hasSessionVariable( 'eZPackageValidation' ) ? $http->sessionVariable( 'eZPackageValidation' ) : null;
+            if ( is_array( $uploadValidation ) && isset( $uploadValidation['package'] ) && $uploadValidation['package'] === (string)$package->attribute( 'name' ) )
+            {
+                $tpl->setVariable( 'upload_validation', $uploadValidation );
+            }
 
             $templateName = 'design:package/install.tpl';
         }
@@ -227,7 +243,14 @@ class Install extends \Exponential\Runnable\ModuleView
 
                 try
                 {
-                    $result = $package->installItem( $installItem, $persistentData );
+                    // in the background the job installs the item (deferred here, see below)
+                    if ( !empty( $persistentData['background'] ) )
+                    {
+                        $persistentData['background_items'][] = $currentItem;
+                        $result = true;
+                    }
+                    else
+                        $result = $package->installItem( $installItem, $persistentData );
                 }
                 catch ( \Exception $e )
                 {
@@ -329,7 +352,14 @@ class Install extends \Exponential\Runnable\ModuleView
             {
                 $persistentData['doItemInstall'] = true;
                 $installItem = $installItemArray[$currentItem];
-                $result = $package->installItem( $installItem, $persistentData );
+                // in the background the job installs the item (deferred here, see below)
+                if ( !empty( $persistentData['background'] ) )
+                {
+                    $persistentData['background_items'][] = $currentItem;
+                    $result = true;
+                }
+                else
+                    $result = $package->installItem( $installItem, $persistentData );
                 if ( !$result )
                 {
                     $templateName = "design:package/install_error.tpl";
@@ -348,10 +378,47 @@ class Install extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // In the background (the content job 'packageinstall', expContentJobPackageInstall): the wizard collected every
+        // choice and deferred every item; the job installs them as this user, and the package page shows its progress
+        if ( $currentItem >= count( $installItemArray ) && !empty( $persistentData['background'] ) )
+        {
+            $http->removeSessionVariable( 'eZPackageInstallerData' );
+            $job = false;
+            $jobError = '';
+            try
+            {
+                $job = \expContentJob::create( 'packageinstall', array( 'package' => (string)$package->attribute( 'name' ),
+                                                                        'items' => isset( $persistentData['background_items'] ) ? $persistentData['background_items'] : array(),
+                                                                        'install' => \expContentJobPackageInstall::installParameters( $persistentData ),
+                                                                        'mode' => 'job' ), \eZUser::currentUser() );
+                $job->spawn();
+                $job->reload();
+            }
+            catch ( \expContentJobException $e )
+            {
+                $jobError = $e->getMessage();
+            }
+            $tpl->setVariable( 'package', $package );
+            $tpl->setVariable( 'install_elements', array() );
+            $tpl->setVariable( 'background_job', $job ? $job->toArray() : false );
+            $tpl->setVariable( 'background_error', $jobError );
+            $Result = array();
+            $Result['content'] = $tpl->fetch( 'design:package/install.tpl' );
+            $Result['path'] = array( array( 'url' => 'package/list', 'text' => \ezpI18n::tr( 'kernel/package', 'Packages' ) ),
+                                     array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/package', 'Install in the background' ) ) );
+            return $this->viewResult( $Result, null );
+        }
+
         // Installed as drafts: not an installation of the package; the page lists the drafts to review
         if ( $currentItem >= count( $installItemArray ) && !empty( $persistentData['as_drafts'] ) )
         {
             $http->removeSessionVariable( 'eZPackageInstallerData' );
+            // package/install/drafts (eZPackage::notifyDraftsInstalled()): a listener records or marks the drafts
+            \eZPackage::notifyDraftsInstalled( $package, array( 'drafts' => isset( $persistentData['drafts'] ) ? $persistentData['drafts'] : array(),
+                                                                 'waiting' => isset( $persistentData['drafts-waiting'] ) ? $persistentData['drafts-waiting'] : array(),
+                                                                 'skipped' => isset( $persistentData['skipped-items'] ) ? $persistentData['skipped-items'] : array(),
+                                                                 'ok' => true ),
+                                               array( 'user_id' => (int)\eZUser::currentUserID(), 'via' => 'web' ) );
             $tpl->setVariable( 'package', $package );
             $tpl->setVariable( 'install_elements', array() );
             $tpl->setVariable( 'drafts_result', array( 'drafts' => isset( $persistentData['drafts'] ) ? $persistentData['drafts'] : array(),

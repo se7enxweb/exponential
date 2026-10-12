@@ -862,6 +862,55 @@ class expPackageJson
         }
     }
 
+    /**
+     * Converts a stored package directory to the format $to in place (the package wizard's format choice): the
+     * converted copy is written first and replaces the directory only when the conversion succeeded.
+     *
+     * @param string $dir the package's directory (eZPackage::path())
+     * @param string $to 'json' or 'xml'
+     * @return array report of convertDirectory()
+     */
+    static function convertInPlace( $dir, $to )
+    {
+        $dir = rtrim( (string)$dir, '/' );
+        if ( self::directoryFormat( $dir ) === $to )
+            return array( 'ok' => true, 'from' => $to, 'to' => $to, 'documents' => 0, 'files' => 0, 'errors' => array() );
+        $work = self::workDirectory( 'in-place' );
+        try
+        {
+            $report = self::convertDirectory( $dir, $work . '/out', $to );
+            if ( !$report['ok'] )
+                return $report;
+            $old = $dir . '.converting-' . bin2hex( random_bytes( 4 ) );
+            if ( !@rename( $dir, $old ) )
+            {
+                $report['ok'] = false;
+                $report['errors'][] = 'could not move ' . $dir . ' aside';
+                return $report;
+            }
+            if ( !@rename( $work . '/out', $dir ) )
+            {
+                eZDir::copy( $work . '/out', dirname( $dir ), false, true );
+                @rename( dirname( $dir ) . '/out', $dir );
+            }
+            if ( !is_file( $dir . '/' . ( $to === 'json' ? self::DEFINITION_JSON : self::DEFINITION_XML ) ) )
+            {
+                // the converted copy did not arrive: the package stays as it was
+                eZDir::recursiveDelete( $dir );
+                @rename( $old, $dir );
+                $report['ok'] = false;
+                $report['errors'][] = 'could not put the converted package in place';
+                return $report;
+            }
+            eZDir::recursiveDelete( $old );
+            return $report;
+        }
+        finally
+        {
+            eZDir::recursiveDelete( $work );
+        }
+    }
+
     // ---------------------------------------------------------------------------------------------------------
     // Validation and equivalence
     // ---------------------------------------------------------------------------------------------------------

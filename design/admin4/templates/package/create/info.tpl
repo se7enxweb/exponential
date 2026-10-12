@@ -29,6 +29,15 @@
             <input id="PackageVersion" class="box" type="text" name="PackageVersion" value="{$persistent_data.version|wash}" />
     </div>
 
+    {* The format the package is kept in (doc/bc/6.0/package-json-format.md); either is downloadable in both *}
+    <div class="block">
+            <label for="PackageFormat">{'Format'|i18n('design/admin/package')}</label>
+            <select id="PackageFormat" class="box" name="PackageFormat">
+                <option value="xml"{if first_set( $persistent_data.format, 'xml' )|ne( 'json' )} selected="selected"{/if}>{'Classic XML (package.xml)'|i18n('design/admin/package')}</option>
+                <option value="json"{if first_set( $persistent_data.format, 'xml' )|eq( 'json' )} selected="selected"{/if}>{'JSON (package.json)'|i18n('design/admin/package')}</option>
+            </select>
+    </div>
+
     {* The license is a strict choice from package.ini [LicenseSettings]; the server refuses
        any other value. The link and description below follow the chosen option. *}
     <div class="block package-licence">

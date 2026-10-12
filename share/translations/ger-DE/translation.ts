@@ -13725,6 +13725,174 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>an object of another class has this remote ID; left alone</source>
         <translation>ein Objekt einer anderen Klasse hat diese Remote-ID; unverändert gelassen</translation>
     </message>
+    <message>
+        <source>Locations: %top at the top (below the node you choose next), %installed below a node that is here, %in_package below a node of the package, %missing below a node that is neither (they wait or are left out).</source>
+        <translation>Orte: %top oben (unter dem Knoten, den Sie als Nächstes wählen), %installed unter einem Knoten, der hier ist, %in_package unter einem Knoten des Pakets, %missing unter einem Knoten, der keines von beiden ist (sie warten oder werden ausgelassen).</translation>
+    </message>
+    <message>
+        <source>Parent</source>
+        <translation>Übergeordnet</translation>
+    </message>
+    <message>
+        <source>At the top</source>
+        <translation>Oben</translation>
+    </message>
+    <message>
+        <source>A node here</source>
+        <translation>Ein Knoten hier</translation>
+    </message>
+    <message>
+        <source>A node of the package</source>
+        <translation>Ein Knoten des Pakets</translation>
+    </message>
+    <message>
+        <source>Missing</source>
+        <translation>Fehlt</translation>
+    </message>
+    <message>
+        <source>Validation on upload</source>
+        <translation>Prüfung beim Hochladen</translation>
+    </message>
+    <message>
+        <source>Validation</source>
+        <translation>Prüfung</translation>
+    </message>
+    <message>
+        <source>Install in the background</source>
+        <translation>Im Hintergrund installieren</translation>
+    </message>
+    <message>
+        <source>The install runs in the background: %description. The package page and the job page show its progress; nothing waits for this page.</source>
+        <translation>Die Installation läuft im Hintergrund: %description. Die Paketseite und die Auftragsseite zeigen ihren Fortschritt; nichts wartet auf diese Seite.</translation>
+    </message>
+    <message>
+        <source>Progress on the package page</source>
+        <translation>Fortschritt auf der Paketseite</translation>
+    </message>
+    <message>
+        <source>Job page</source>
+        <translation>Auftragsseite</translation>
+    </message>
+    <message>
+        <source>The background install could not be started: %error</source>
+        <translation>Die Installation im Hintergrund konnte nicht gestartet werden: %error</translation>
+    </message>
+    <message>
+        <source>The next steps ask the same questions; then a background job installs the package, as you, and this page does not wait for it. The package page shows its progress. Suggested for a package with more than %limit content objects.</source>
+        <translation>Die nächsten Schritte stellen dieselben Fragen; dann installiert ein Hintergrundauftrag das Paket in Ihrem Namen, und diese Seite wartet nicht darauf. Die Paketseite zeigt den Fortschritt. Empfohlen für ein Paket mit mehr als %limit Inhaltsobjekten.</translation>
+    </message>
+    <message>
+        <source>Checked %time</source>
+        <translation>Geprüft %time</translation>
+    </message>
+    <message>
+        <source>Valid: %documents documents and %files files checked.</source>
+        <translation>Gültig: %documents Dokumente und %files Dateien geprüft.</translation>
+    </message>
+    <message>
+        <source>The checksums of package.json match every file.</source>
+        <translation>Die Prüfsummen von package.json stimmen mit jeder Datei überein.</translation>
+    </message>
+    <message>
+        <source>package.json lists no checksums, so the files could not be compared with them.</source>
+        <translation>package.json enthält keine Prüfsummen, daher konnten die Dateien nicht damit verglichen werden.</translation>
+    </message>
+    <message>
+        <source>The classic format carries no checksums; every document was read as XML.</source>
+        <translation>Das klassische Format enthält keine Prüfsummen; jedes Dokument wurde als XML gelesen.</translation>
+    </message>
+    <message>
+        <source>Not valid: %count errors.</source>
+        <translation>Nicht gültig: %count Fehler.</translation>
+    </message>
+    <message>
+        <source>Check every document of the package and, in the JSON format, the schema and the checksums.</source>
+        <translation>Jedes Dokument des Pakets prüfen und, im JSON-Format, das Schema und die Prüfsummen.</translation>
+    </message>
+    <message>
+        <source>Validate</source>
+        <translation>Prüfen</translation>
+    </message>
+    <message>
+        <source>Background installs</source>
+        <translation>Installationen im Hintergrund</translation>
+    </message>
+    <message>
+        <source>Waiting for its worker</source>
+        <translation>Wartet auf seinen Worker</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Läuft</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fertig</translation>
+    </message>
+    <message>
+        <source>%done of %total content objects (%percent %)</source>
+        <translation>%done von %total Inhaltsobjekten (%percent %)</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestartet</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Beendet</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fortschritt</translation>
+    </message>
+    <message>
+        <source>The first 50 of %count drafts; all of them are in My drafts.</source>
+        <translation>Die ersten 50 von %count Entwürfen; alle stehen unter Meine Entwürfe.</translation>
+    </message>
+    <message>
+        <source>converted</source>
+        <translation>umgewandelt</translation>
+    </message>
+    <message>
+        <source>View as XML</source>
+        <translation>Als XML ansehen</translation>
+    </message>
+    <message>
+        <source>View as JSON</source>
+        <translation>Als JSON ansehen</translation>
+    </message>
+    <message>
+        <source>An SVG image may carry script, so it is shown as text here; Download gives the file.</source>
+        <translation>Ein SVG-Bild kann Skript enthalten und wird hier daher als Text gezeigt; Herunterladen liefert die Datei.</translation>
+    </message>
+    <message>
+        <source>The document could not be shown in the other format: %error</source>
+        <translation>Das Dokument konnte nicht im anderen Format gezeigt werden: %error</translation>
+    </message>
+    <message>
+        <source>No wrap</source>
+        <translation>Nicht umbrechen</translation>
+    </message>
+    <message>
+        <source>Checksum</source>
+        <translation>Prüfsumme</translation>
+    </message>
+    <message>
+        <source>Matches package.json</source>
+        <translation>Stimmt mit package.json überein</translation>
+    </message>
+    <message>
+        <source>Does not match package.json: the file was changed after the package was written</source>
+        <translation>Stimmt nicht mit package.json überein: die Datei wurde geändert, nachdem das Paket geschrieben wurde</translation>
+    </message>
+    <message>
+        <source>Not listed (a classic package, or package.json lists no checksum for it)</source>
+        <translation>Nicht aufgeführt (ein klassisches Paket, oder package.json enthält keine Prüfsumme dafür)</translation>
+    </message>
+    <message>
+        <source>This file is not text, so it is not shown here; Download gives it.</source>
+        <translation>Diese Datei ist kein Text und wird hier daher nicht gezeigt; Herunterladen liefert sie.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -60813,6 +60981,62 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The archive has no package.xml or package.json at its top, so it is not a package.</source>
         <translation>Das Archiv hat oben keine package.xml oder package.json und ist daher kein Paket.</translation>
+    </message>
+    <message>
+        <source>The package %packagename did not pass the validation and was not imported:</source>
+        <translation>Das Paket %packagename hat die Prüfung nicht bestanden und wurde nicht importiert:</translation>
+    </message>
+    <message>
+        <source>Install in the background</source>
+        <translation>Im Hintergrund installieren</translation>
+    </message>
+    <message>
+        <source>Validation</source>
+        <translation>Prüfung</translation>
+    </message>
+    <message>
+        <source>Validation on upload</source>
+        <translation>Prüfung beim Hochladen</translation>
+    </message>
+    <message>
+        <source>The package %1 does not exist.</source>
+        <translation>Das Paket %1 existiert nicht.</translation>
+    </message>
+    <message>
+        <source>You may not install packages (package/install).</source>
+        <translation>Sie dürfen keine Pakete installieren (package/install).</translation>
+    </message>
+    <message>
+        <source>The node %1 chosen for the package's content does not exist.</source>
+        <translation>Der für den Inhalt des Pakets gewählte Knoten %1 existiert nicht.</translation>
+    </message>
+    <message>
+        <source>Install the package %1 as drafts (%2 content objects)</source>
+        <translation>Das Paket %1 als Entwürfe installieren (%2 Inhaltsobjekte)</translation>
+    </message>
+    <message>
+        <source>Install the package %1 (%2 content objects)</source>
+        <translation>Das Paket %1 installieren (%2 Inhaltsobjekte)</translation>
+    </message>
+    <message>
+        <source>The package %1 does not exist (any more).</source>
+        <translation>Das Paket %1 existiert nicht (mehr).</translation>
+    </message>
+    <message>
+        <source>%1 of %2 content objects</source>
+        <translation>%1 von %2 Inhaltsobjekten</translation>
+    </message>
+    <message>
+        <source>The install of item %1 (%2) failed: %3</source>
+        <translation>Die Installation des Elements %1 (%2) ist fehlgeschlagen: %3</translation>
+    </message>
+    <message>
+        <source>%1 drafts written</source>
+        <translation>%1 Entwürfe geschrieben</translation>
+    </message>
+    <message>
+        <source>Installed</source>
+        <translation>Installiert</translation>
     </message>
 </context>
 <context>

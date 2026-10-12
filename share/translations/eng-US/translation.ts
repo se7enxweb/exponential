@@ -11412,6 +11412,174 @@ You can also remove the package without uninstalling it from the package list.</
         <source>an object of another class has this remote ID; left alone</source>
         <translation>an object of another class has this remote ID; left alone</translation>
     </message>
+    <message>
+        <source>Locations: %top at the top (below the node you choose next), %installed below a node that is here, %in_package below a node of the package, %missing below a node that is neither (they wait or are left out).</source>
+        <translation>Locations: %top at the top (below the node you choose next), %installed below a node that is here, %in_package below a node of the package, %missing below a node that is neither (they wait or are left out).</translation>
+    </message>
+    <message>
+        <source>Parent</source>
+        <translation>Parent</translation>
+    </message>
+    <message>
+        <source>At the top</source>
+        <translation>At the top</translation>
+    </message>
+    <message>
+        <source>A node here</source>
+        <translation>A node here</translation>
+    </message>
+    <message>
+        <source>A node of the package</source>
+        <translation>A node of the package</translation>
+    </message>
+    <message>
+        <source>Missing</source>
+        <translation>Missing</translation>
+    </message>
+    <message>
+        <source>Validation on upload</source>
+        <translation>Validation on upload</translation>
+    </message>
+    <message>
+        <source>Validation</source>
+        <translation>Validation</translation>
+    </message>
+    <message>
+        <source>Install in the background</source>
+        <translation>Install in the background</translation>
+    </message>
+    <message>
+        <source>The install runs in the background: %description. The package page and the job page show its progress; nothing waits for this page.</source>
+        <translation>The install runs in the background: %description. The package page and the job page show its progress; nothing waits for this page.</translation>
+    </message>
+    <message>
+        <source>Progress on the package page</source>
+        <translation>Progress on the package page</translation>
+    </message>
+    <message>
+        <source>Job page</source>
+        <translation>Job page</translation>
+    </message>
+    <message>
+        <source>The background install could not be started: %error</source>
+        <translation>The background install could not be started: %error</translation>
+    </message>
+    <message>
+        <source>The next steps ask the same questions; then a background job installs the package, as you, and this page does not wait for it. The package page shows its progress. Suggested for a package with more than %limit content objects.</source>
+        <translation>The next steps ask the same questions; then a background job installs the package, as you, and this page does not wait for it. The package page shows its progress. Suggested for a package with more than %limit content objects.</translation>
+    </message>
+    <message>
+        <source>Checked %time</source>
+        <translation>Checked %time</translation>
+    </message>
+    <message>
+        <source>Valid: %documents documents and %files files checked.</source>
+        <translation>Valid: %documents documents and %files files checked.</translation>
+    </message>
+    <message>
+        <source>The checksums of package.json match every file.</source>
+        <translation>The checksums of package.json match every file.</translation>
+    </message>
+    <message>
+        <source>package.json lists no checksums, so the files could not be compared with them.</source>
+        <translation>package.json lists no checksums, so the files could not be compared with them.</translation>
+    </message>
+    <message>
+        <source>The classic format carries no checksums; every document was read as XML.</source>
+        <translation>The classic format carries no checksums; every document was read as XML.</translation>
+    </message>
+    <message>
+        <source>Not valid: %count errors.</source>
+        <translation>Not valid: %count errors.</translation>
+    </message>
+    <message>
+        <source>Check every document of the package and, in the JSON format, the schema and the checksums.</source>
+        <translation>Check every document of the package and, in the JSON format, the schema and the checksums.</translation>
+    </message>
+    <message>
+        <source>Validate</source>
+        <translation>Validate</translation>
+    </message>
+    <message>
+        <source>Background installs</source>
+        <translation>Background installs</translation>
+    </message>
+    <message>
+        <source>Waiting for its worker</source>
+        <translation>Waiting for its worker</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Running</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Done</translation>
+    </message>
+    <message>
+        <source>%done of %total content objects (%percent %)</source>
+        <translation>%done of %total content objects (%percent %)</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Started</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Finished</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progress</translation>
+    </message>
+    <message>
+        <source>The first 50 of %count drafts; all of them are in My drafts.</source>
+        <translation>The first 50 of %count drafts; all of them are in My drafts.</translation>
+    </message>
+    <message>
+        <source>converted</source>
+        <translation>converted</translation>
+    </message>
+    <message>
+        <source>View as XML</source>
+        <translation>View as XML</translation>
+    </message>
+    <message>
+        <source>View as JSON</source>
+        <translation>View as JSON</translation>
+    </message>
+    <message>
+        <source>An SVG image may carry script, so it is shown as text here; Download gives the file.</source>
+        <translation>An SVG image may carry script, so it is shown as text here; Download gives the file.</translation>
+    </message>
+    <message>
+        <source>The document could not be shown in the other format: %error</source>
+        <translation>The document could not be shown in the other format: %error</translation>
+    </message>
+    <message>
+        <source>No wrap</source>
+        <translation>No wrap</translation>
+    </message>
+    <message>
+        <source>Checksum</source>
+        <translation>Checksum</translation>
+    </message>
+    <message>
+        <source>Matches package.json</source>
+        <translation>Matches package.json</translation>
+    </message>
+    <message>
+        <source>Does not match package.json: the file was changed after the package was written</source>
+        <translation>Does not match package.json: the file was changed after the package was written</translation>
+    </message>
+    <message>
+        <source>Not listed (a classic package, or package.json lists no checksum for it)</source>
+        <translation>Not listed (a classic package, or package.json lists no checksum for it)</translation>
+    </message>
+    <message>
+        <source>This file is not text, so it is not shown here; Download gives it.</source>
+        <translation>This file is not text, so it is not shown here; Download gives it.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -53470,6 +53638,62 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The archive has no package.xml or package.json at its top, so it is not a package.</source>
         <translation>The archive has no package.xml or package.json at its top, so it is not a package.</translation>
+    </message>
+    <message>
+        <source>The package %packagename did not pass the validation and was not imported:</source>
+        <translation>The package %packagename did not pass the validation and was not imported:</translation>
+    </message>
+    <message>
+        <source>Install in the background</source>
+        <translation>Install in the background</translation>
+    </message>
+    <message>
+        <source>Validation</source>
+        <translation>Validation</translation>
+    </message>
+    <message>
+        <source>Validation on upload</source>
+        <translation>Validation on upload</translation>
+    </message>
+    <message>
+        <source>The package %1 does not exist.</source>
+        <translation>The package %1 does not exist.</translation>
+    </message>
+    <message>
+        <source>You may not install packages (package/install).</source>
+        <translation>You may not install packages (package/install).</translation>
+    </message>
+    <message>
+        <source>The node %1 chosen for the package's content does not exist.</source>
+        <translation>The node %1 chosen for the package's content does not exist.</translation>
+    </message>
+    <message>
+        <source>Install the package %1 as drafts (%2 content objects)</source>
+        <translation>Install the package %1 as drafts (%2 content objects)</translation>
+    </message>
+    <message>
+        <source>Install the package %1 (%2 content objects)</source>
+        <translation>Install the package %1 (%2 content objects)</translation>
+    </message>
+    <message>
+        <source>The package %1 does not exist (any more).</source>
+        <translation>The package %1 does not exist (any more).</translation>
+    </message>
+    <message>
+        <source>%1 of %2 content objects</source>
+        <translation>%1 of %2 content objects</translation>
+    </message>
+    <message>
+        <source>The install of item %1 (%2) failed: %3</source>
+        <translation>The install of item %1 (%2) failed: %3</translation>
+    </message>
+    <message>
+        <source>%1 drafts written</source>
+        <translation>%1 drafts written</translation>
+    </message>
+    <message>
+        <source>Installed</source>
+        <translation>Installed</translation>
     </message>
 </context>
 <context>

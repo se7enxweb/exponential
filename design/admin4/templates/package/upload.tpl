@@ -20,7 +20,7 @@
     <p><strong>{'The package was not imported.'|i18n('design/admin/package')}</strong></p>
     <ul>
     {foreach $error_list as $error}
-        <li>{$error.description|wash}</li>
+        <li>{$error.description|wash}{if is_set( $error.details )}<ul class="exp-validation-errors">{foreach $error.details as $detail}<li><code>{$detail|wash}</code></li>{/foreach}</ul>{/if}</li>
     {/foreach}
     </ul>
 </div>

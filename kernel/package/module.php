@@ -63,7 +63,9 @@ $ViewList['view'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'single_post_actions' => array( 'InstallButton' => 'Install',
                                     'UninstallButton' => 'Uninstall',
-                                    'ExportButton' => 'Export' ),
+                                    'ExportButton' => 'Export',
+                                    // the package's validation (expPackageJson::validateDirectory()), shown on the page
+                                    'ValidateButton' => 'Validate' ),
     'params' => array( 'ViewMode', 'PackageName', 'RepositoryID' ) );
 
 // package/viewfile/<PackageName>/<FileIndex>: one raw file out of a package's own directory (the
@@ -106,7 +108,9 @@ $ViewList['install'] = array(
     'post_action_parameters' => array( 'InstallPackage' => array( 'InstallerType' => 'InstallerType',
                                                                   // install the content objects as drafts (doc/bc/6.0/package-json-format.md)
                                                                   'AsDrafts' => 'AsDrafts',
-                                                                  'DraftsExisting' => 'DraftsExisting' ),
+                                                                  'DraftsExisting' => 'DraftsExisting',
+                                                                  // install in the background, as a content job (expContentJobPackageInstall)
+                                                                  'Background' => 'Background' ),
                                        'PackageStep' => array( 'InstallerType' => 'InstallerType',
                                                                'InstallStepID' => 'InstallStepID',
                                                                'PreviousStep' => 'PreviousStepButton',

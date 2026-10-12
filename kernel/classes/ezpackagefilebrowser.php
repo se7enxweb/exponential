@@ -63,6 +63,8 @@ class eZPackageFileBrowser
             return 'simplefile';
         if ( $topDir === 'documents' )
             return 'document';
+        if ( $ext === 'json' )
+            return 'unknown-json'; // a document of the JSON format (doc/bc/6.0/package-json-format.md), resolved by peekJSONKind()
         if ( $ext !== 'xml' )
             return 'other';
         return 'unknown-xml'; // resolved by peekXMLKind() once the caller has the package to read the file from
@@ -117,13 +119,178 @@ class eZPackageFileBrowser
         return $real;
     }
 
-    /** The file's real kind, resolving 'unknown-xml' from fileKind() by actually reading it (peekXMLKind()); every other kind is already final. */
+    /** The file's real kind, resolving 'unknown-xml' and 'unknown-json' from fileKind() by actually reading it (peekXMLKind(), peekJSONKind()); every other kind is already final. */
     static function resolvedKind( eZPackage $package, array $fileRow )
     {
-        if ( $fileRow['kind'] !== 'unknown-xml' )
+        if ( $fileRow['kind'] !== 'unknown-xml' && $fileRow['kind'] !== 'unknown-json' )
             return $fileRow['kind'];
         $real = self::filePath( $package, $fileRow['path'] );
-        return $real !== false ? self::peekXMLKind( $real ) : 'other';
+        if ( $real === false )
+            return 'other';
+        return $fileRow['kind'] === 'unknown-json' ? self::peekJSONKind( $real ) : self::peekXMLKind( $real );
+    }
+
+    /**
+     * A JSON document's kind, by the element its "root" mirrors (the JSON format keeps the XML document as JsonML,
+     * so the first string of "root" is the XML root element): a cheap peek at the first bytes, as peekXMLKind().
+     * package.json is 'package'; a .json file that is not a document of the format is 'other'.
+     */
+    static function peekJSONKind( $realPath )
+    {
+        $sample = @file_get_contents( $realPath, false, null, 0, 4096 );
+        if ( $sample === false || !preg_match( '/"root"\s*:\s*\[\s*"([^"]+)"/', $sample, $matches ) )
+            return 'other';
+        $element = '<' . $matches[1] . ' ';
+        return self::peekXMLKindOfSample( $element );
+    }
+
+    /** The kind of a sample of XML text (peekXMLKind() without the file). */
+    static function peekXMLKindOfSample( $sample )
+    {
+        if ( preg_match( '/<(?:\w+:)?content-class[\s>]/', $sample ) )
+            return 'class';
+        if ( preg_match( '/<(?:\w+:)?content-object[\s>]/', $sample )
+             || preg_match( '/<(?:\w+:)?object-list[\s>]/', $sample )
+             || preg_match( '/<(?:\w+:)?object[\s>]/', $sample ) )
+            return 'object';
+        if ( preg_match( '/<(?:\w+:)?package[\s>]/', $sample ) )
+            return 'package';
+        return 'other';
+    }
+
+    /** @return bool whether a file row is a document of a package (the definition, a class or an object item) */
+    static function isDocument( array $fileRow )
+    {
+        return in_array( $fileRow['kind'], array( 'class', 'object', 'package' ), true );
+    }
+
+    /**
+     * A document's text in either format, the two being 1:1 (doc/bc/6.0/package-json-format.md): a JSON document
+     * as it is (JSON) or as the XML it mirrors (XML); an XML document pretty-printed (XML) or as the JSON format
+     * would write it (JSON). Anything else is returned as it is.
+     *
+     * @param string $bytes the file's content
+     * @param string $path the file's path in the package (its name tells the format; the JSON source names the XML)
+     * @param string $as 'xml' or 'json'
+     * @return array text, format (the one shown), native (the file's own), error ('' or why the other format failed)
+     */
+    static function documentText( $bytes, $path, $as )
+    {
+        $native = strtolower( (string)pathinfo( $path, PATHINFO_EXTENSION ) ) === 'json' ? 'json' : 'xml';
+        $as = in_array( $as, array( 'xml', 'json' ), true ) ? $as : $native;
+        $out = array( 'text' => (string)$bytes, 'format' => $native, 'native' => $native, 'error' => '' );
+        if ( $as === $native )
+        {
+            if ( $native === 'xml' )
+                $out['text'] = self::prettyPrintXML( $bytes );
+            return $out;
+        }
+        if ( $native === 'json' )
+        {
+            $dom = expPackageJson::toDOM( (string)$bytes, $error );
+            if ( !$dom )
+            {
+                $out['error'] = (string)$error;
+                return $out;
+            }
+            $out['text'] = self::prettyPrintXML( $dom->saveXML() );
+            $out['format'] = 'xml';
+            return $out;
+        }
+        $dom = new DOMDocument( '1.0', 'utf-8' );
+        if ( !@$dom->loadXML( (string)$bytes ) || !$dom->documentElement )
+        {
+            $out['error'] = 'not well-formed XML';
+            $out['text'] = self::prettyPrintXML( $bytes );
+            return $out;
+        }
+        $out['text'] = expPackageJson::encode( expPackageJson::envelope( $dom, (string)$path ) );
+        $out['format'] = 'json';
+        return $out;
+    }
+
+
+    /** the largest image shown inline (bigger ones are a download) */
+    const INLINE_IMAGE_MAX_BYTES = 10485760;
+
+    /**
+     * What a file is, by its content (never by its name alone): an image a browser shows safely (png, jpeg, gif,
+     * webp: 'image'), an SVG (markup that may carry script: 'svg', shown as escaped text or downloaded, never
+     * inline), text (UTF-8 without NUL bytes: 'text', which XML and JSON are), or anything else ('binary': a card
+     * and a download, never dumped as text). The MIME type from fileinfo when it is there, else from the magic bytes.
+     *
+     * @param string $realPath
+     * @return array media (image|svg|text|binary), mime, inline (whether package/viewfile shows it inline)
+     */
+    static function sniff( $realPath )
+    {
+        $head = (string)@file_get_contents( $realPath, false, null, 0, 8192 );
+        $mime = '';
+        if ( class_exists( 'finfo', false ) )
+        {
+            // the finfo object is freed with the variable (finfo_close() is deprecated as of PHP 8.5)
+            $finfo = new finfo( FILEINFO_MIME_TYPE );
+            $mime = (string)@$finfo->file( $realPath );
+        }
+        $magic = array( "\x89PNG\r\n\x1a\n" => 'image/png', "\xFF\xD8\xFF" => 'image/jpeg', 'GIF87a' => 'image/gif', 'GIF89a' => 'image/gif' );
+        $byMagic = '';
+        foreach ( $magic as $bytes => $type )
+            if ( strncmp( $head, $bytes, strlen( $bytes ) ) === 0 )
+                $byMagic = $type;
+        if ( substr( $head, 0, 4 ) === 'RIFF' && substr( $head, 8, 4 ) === 'WEBP' )
+            $byMagic = 'image/webp';
+        $images = array( 'image/png', 'image/jpeg', 'image/gif', 'image/webp' );
+        // an image only when its bytes say so (fileinfo and the magic agree, or the magic alone without fileinfo)
+        if ( $byMagic !== '' && ( $mime === '' || $mime === $byMagic ) )
+            return array( 'media' => 'image', 'mime' => $byMagic, 'inline' => (int)@filesize( $realPath ) <= self::INLINE_IMAGE_MAX_BYTES );
+        $isText = $head === '' || ( strpos( $head, "\0" ) === false && preg_match( '//u', self::cutUTF8( $head ) ) === 1 );
+        if ( $isText && ( $mime === 'image/svg+xml' || preg_match( '/^\s*(<\?xml[^>]*>\s*)?(<!--.*?-->\s*)*(<!DOCTYPE svg[^>]*>\s*)?<svg[\s>]/is', $head ) ) )
+            return array( 'media' => 'svg', 'mime' => 'image/svg+xml', 'inline' => false );
+        if ( $isText )
+            return array( 'media' => 'text', 'mime' => $mime !== '' && strpos( $mime, 'text/' ) === 0 || in_array( $mime, array( 'application/json', 'application/xml' ), true ) ? $mime : 'text/plain', 'inline' => false );
+        return array( 'media' => 'binary', 'mime' => $mime !== '' && !in_array( $mime, $images, true ) ? $mime : 'application/octet-stream', 'inline' => false );
+    }
+
+    /** $bytes without an UTF-8 sequence cut off at its end (a sample of a file stops anywhere) */
+    private static function cutUTF8( $bytes )
+    {
+        for ( $i = 1; $i <= 3 && $i <= strlen( $bytes ); ++$i )
+        {
+            $byte = ord( $bytes[strlen( $bytes ) - $i] );
+            if ( $byte < 0x80 )
+                break;
+            if ( $byte >= 0xC0 )
+                return substr( $bytes, 0, strlen( $bytes ) - $i );
+        }
+        return $bytes;
+    }
+
+    /**
+     * Whether a file matches the checksum package.json lists for it: 'match', 'mismatch', or 'none' (a classic
+     * package, a package.json without checksums, or a file it does not list).
+     *
+     * @param eZPackage $package
+     * @param string $relativePath
+     * @param string $sha256 the file's own
+     * @return string
+     */
+    static function checksumState( eZPackage $package, $relativePath, $sha256 )
+    {
+        $definition = rtrim( (string)$package->path(), '/' ) . '/package.json';
+        if ( !is_file( $definition ) )
+            return 'none';
+        $data = expPackageJson::decode( (string)file_get_contents( $definition ) );
+        if ( !is_array( $data ) || !isset( $data['checksums'][$relativePath] ) )
+            return 'none';
+        return $data['checksums'][$relativePath] === $sha256 ? 'match' : 'mismatch';
+    }
+    /** The XML of a document file in either format (for objectItemSummary()), or '' when it has none. */
+    static function documentXML( $bytes, $path )
+    {
+        if ( strtolower( (string)pathinfo( $path, PATHINFO_EXTENSION ) ) !== 'json' )
+            return (string)$bytes;
+        $dom = expPackageJson::toDOM( (string)$bytes );
+        return $dom ? (string)$dom->saveXML() : '';
     }
 
     /**

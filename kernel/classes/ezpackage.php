@@ -2290,7 +2290,47 @@ class eZPackage
         {
             $this->setInstalled();
         }
+        if ( $asDrafts )
+        {
+            self::notifyDraftsInstalled( $this, array( 'drafts' => isset( $installParameters['drafts'] ) ? $installParameters['drafts'] : array(),
+                                                       'waiting' => isset( $installParameters['drafts-waiting'] ) ? $installParameters['drafts-waiting'] : array(),
+                                                       'skipped' => isset( $installParameters['skipped-items'] ) ? $installParameters['skipped-items'] : array(),
+                                                       'ok' => (bool)$installResult ),
+                                         array( 'user_id' => isset( $installParameters['user_id'] ) ? (int)$installParameters['user_id'] : (int)eZUser::currentUserID(),
+                                                'via' => eZSys::isShellExecution() ? 'cli' : 'web' ) );
+        }
         return $installResult;
+    }
+
+    /**
+     * The event package/install/drafts, after a package was installed as drafts (eZPackage::install() with as_drafts,
+     * the admin's install as drafts, a background install): ezpEvent::notify( 'package/install/drafts',
+     * array( $package, $result, $context ) ). $result: drafts (rows: action, remote_id, object_id, version, name),
+     * waiting, skipped, ok; $context: user_id, via (web, cli, background) and, for a background install, job.
+     * A listener is configured as any other, site.ini [Event] Listeners[]=package/install/drafts@<Class::method>.
+     * [Event] Listeners[] is attached for web requests only; for the command line and background installs the
+     * listeners of this one event are attached here, so a listener hears every install as drafts.
+     *
+     * @param eZPackage $package
+     * @param array $result
+     * @param array $context
+     */
+    static function notifyDraftsInstalled( eZPackage $package, array $result, array $context = array() )
+    {
+        $event = ezpEvent::getInstance();
+        $name = 'package/install/drafts';
+        if ( !$event->hasListeners( $name ) && !self::$DraftsListenersAttached )
+        {
+            self::$DraftsListenersAttached = true;
+            $listeners = eZINI::instance()->hasVariable( 'Event', 'Listeners' ) ? eZINI::instance()->variable( 'Event', 'Listeners' ) : array();
+            foreach ( is_array( $listeners ) ? array_unique( $listeners ) : array() as $listener )
+            {
+                $parts = explode( '@', trim( (string)$listener ), 2 );
+                if ( count( $parts ) === 2 && trim( $parts[0] ) === $name && trim( $parts[1] ) !== '' )
+                    $event->attach( $name, trim( $parts[1] ) );
+            }
+        }
+        $event->notify( $name, array( $package, $result, $context ) );
     }
 
     function uninstallItem( $item, &$uninstallParameters )
@@ -3626,6 +3666,8 @@ class eZPackage
 
 
     public $isInstalled = false;
+    /** @var bool the listeners of package/install/drafts were attached for the command line (notifyDraftsInstalled()) */
+    private static $DraftsListenersAttached = null;
     /// \privatesection
     /// All interal data
     public $Parameters;

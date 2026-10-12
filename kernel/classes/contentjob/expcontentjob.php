@@ -53,7 +53,8 @@ class expContentJob
         'NowLimit' => 1000,
         'JobTypes' => array( 'remove' => 'expContentJobRemoveSubtree', 'copy' => 'expContentJobCopySubtree', 'move' => 'expContentJobMoveSubtree',
                              'hide' => 'expContentJobHideSubtree', 'reveal' => 'expContentJobRevealSubtree', 'section' => 'expContentJobSectionSubtree',
-                             'state' => 'expContentJobStateSubtree', 'addlocation' => 'expContentJobAddLocation', 'removelocation' => 'expContentJobRemoveLocation' ),
+                             'state' => 'expContentJobStateSubtree', 'addlocation' => 'expContentJobAddLocation', 'removelocation' => 'expContentJobRemoveLocation',
+                             'packageinstall' => 'expContentJobPackageInstall' ),
     );
 
     /** @var array the job's data, as stored */

@@ -53,11 +53,27 @@ class View extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
 
 
+        // The package's validation (expPackageJson::validateDirectory(): every document well-formed and, in the JSON
+        // format, valid against the schema; the checksums of package.json). Validate (POST ValidateButton) runs it and
+        // redirects back here (after the POST the page is a plain GET: a reload does not post again); the report is kept
+        // in the session (eZPackageValidation, as package/upload keeps the validation of an upload) and shown on this
+        // package's pages until the next action on it.
+        $http = \eZHTTPTool::instance();
+        if ( $module->isCurrentAction( 'Validate' ) )
+        {
+            $report = \expPackageJson::validateDirectory( $package->path() );
+            $report['checksums'] = $report['format'] === \eZPackage::FORMAT_JSON && !in_array( 'package.json has no checksums', $report['warnings'], true );
+            $http->setSessionVariable( 'eZPackageValidation', array( 'package' => (string)$package->attribute( 'name' ), 'source' => 'validate', 'at' => time() ) + $report );
+            return $this->viewResult( null, $module->redirectToView( 'view', $repositoryID !== false ? array( 'full', $packageName, $repositoryID ) : array( 'full', $packageName ) ) );
+        }
         if ( $module->isCurrentAction( 'Export' ) )
         {
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->run( 'export', $repositoryID !== false ? array( $packageName, $repositoryID ) : array( $packageName ) ) );
         }
-        else if ( $module->isCurrentAction( 'Install' ) )
+        // the next action on the package ends the validation shown with it
+        if ( $module->isCurrentAction( 'Install' ) || $module->isCurrentAction( 'Uninstall' ) )
+            $http->removeSessionVariable( 'eZPackageValidation' );
+        if ( $module->isCurrentAction( 'Install' ) )
         {
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->redirectToView( 'install', array( $packageName ) ) );
         }
@@ -72,6 +88,23 @@ class View extends \Exponential\Runnable\ModuleView
 
         $tpl->setVariable( 'package_name', $packageName );
         $tpl->setVariable( 'repository_id', $repositoryID );
+
+        $validation = $http->hasSessionVariable( 'eZPackageValidation' ) ? $http->sessionVariable( 'eZPackageValidation' ) : false;
+        if ( !is_array( $validation ) || !isset( $validation['package'] ) || $validation['package'] !== (string)$package->attribute( 'name' ) )
+            $validation = false;
+        $tpl->setVariable( 'package_validation', $validation );
+        $tpl->setVariable( 'package_validation_title', $validation && $validation['source'] === 'upload'
+                                                           ? \ezpI18n::tr( 'kernel/package', 'Validation on upload' ) : \ezpI18n::tr( 'kernel/package', 'Validation' ) );
+
+
+        // the background installs of this package (content jobs 'packageinstall'), with their progress
+        $jobs = array();
+        if ( $viewMode === 'full' && class_exists( 'expContentJobPackageInstall' ) )
+        {
+            foreach ( \expContentJobPackageInstall::jobsOfPackage( $packageName, 5 ) as $job )
+                $jobs[] = $job->toArray();
+        }
+        $tpl->setVariable( 'package_jobs', $jobs );
 
         // The package contents browser (package/view/full only): every file the package's own directory
         // carries, paginated and filtered, kernel-only code (eZPackageFileBrowser) with no dependency on
@@ -115,6 +148,8 @@ class View extends \Exponential\Runnable\ModuleView
                     $url .= '/(limit)/' . $state['limit'];
                 if ( $state['offset'] === 'last' || $state['offset'] > 0 )
                     $url .= '/(offset)/' . $state['offset'];
+                if ( isset( $state['as'] ) && $state['as'] !== '' && $state['file'] >= 0 )
+                    $url .= '/(as)/' . $state['as'];
                 if ( $state['file'] >= 0 )
                     $url .= '/(file)/' . $state['file'];
                 return $url;
@@ -130,7 +165,7 @@ class View extends \Exponential\Runnable\ModuleView
                 // A changed filter always starts on the first page: an old offset means nothing against a
                 // newly filtered list
                 $applied = $http->hasGetVariable( 'BrowseApply' );
-                $state = $normalise( $get( 'BrowseType', '' ), $get( 'BrowseSearch', '' ), $get( 'BrowseLimit', '50' ),
+                $state = array( 'as' => '' ) + $normalise( $get( 'BrowseType', '' ), $get( 'BrowseSearch', '' ), $get( 'BrowseLimit', '50' ),
                                      $applied ? 0 : $get( 'BrowseOffset', 0 ), $applied ? -1 : $get( 'BrowseView', -1 ) );
                 // Not $module->redirectTo(): the kernel adds the request's query string to every module
                 // redirect, and these very fields would then send the next request back here, for ever.
@@ -149,6 +184,8 @@ class View extends \Exponential\Runnable\ModuleView
                 isset( $userParameters['offset'] ) ? $userParameters['offset'] : 0,
                 isset( $userParameters['file'] ) ? $userParameters['file'] : -1
             );
+            // (as)/xml or (as)/json: a document shown in the other format of the two (they are 1:1)
+            $state['as'] = isset( $userParameters['as'] ) && in_array( $userParameters['as'], array( 'xml', 'json' ), true ) ? $userParameters['as'] : '';
             $typeFilter = $state['type'];
             $search = $state['search'];
 
@@ -169,14 +206,37 @@ class View extends \Exponential\Runnable\ModuleView
                     $viewedFile['index'] = $viewIndex;
                     $viewedFile['kind'] = \eZPackageFileBrowser::resolvedKind( $package, $viewedFile );
                     $realPath = \eZPackageFileBrowser::filePath( $package, $viewedFile['path'] );
-                    if ( $realPath !== false && $viewedFile['kind'] !== 'image' )
+                    // what the file is, by its content (eZPackageFileBrowser::sniff()): an image is shown through
+                    // package/viewfile, text (XML, JSON, ...) on the page, anything else (and an SVG, which may carry
+                    // script) as a card with its type, size, SHA-256 and checksum state and a download
+                    if ( $realPath !== false )
+                    {
+                        $sniff = \eZPackageFileBrowser::sniff( $realPath );
+                        $viewedFile['media'] = $sniff['media'];
+                        $viewedFile['mime'] = $sniff['mime'];
+                        $viewedFile['inline'] = $sniff['inline'];
+                        $viewedFile['sha256'] = (string)hash_file( 'sha256', $realPath );
+                        $viewedFile['checksum'] = \eZPackageFileBrowser::checksumState( $package, $viewedFile['path'], $viewedFile['sha256'] );
+                    }
+                    if ( $realPath !== false && in_array( $viewedFile['media'], array( 'text', 'svg' ), true ) )
                     {
                         // at most 1 MB is shown on the page; the whole file is a download
                         $bytes = (string)@file_get_contents( $realPath, false, null, 0, 1048576 );
                         $viewedFile['truncated'] = (int)$viewedFile['size'] > strlen( $bytes );
-                        $viewedContent = \eZPackageFileBrowser::prettyPrintXML( $bytes );
+                        if ( \eZPackageFileBrowser::isDocument( $viewedFile ) )
+                        {
+                            // a document in its own format or, (as), in the other one (JSON documents of the JSON
+                            // format, XML documents of the classic one)
+                            $document = \eZPackageFileBrowser::documentText( $bytes, $viewedFile['path'], $state['as'] );
+                            $viewedContent = $document['text'];
+                            $viewedFile['format'] = $document['format'];
+                            $viewedFile['native'] = $document['native'];
+                            $viewedFile['as_error'] = $document['error'];
+                        }
+                        else
+                            $viewedContent = \eZPackageFileBrowser::prettyPrintXML( $bytes );
                         if ( $viewedFile['kind'] === 'object' )
-                            $viewedObject = \eZPackageFileBrowser::objectItemSummary( $bytes );
+                            $viewedObject = \eZPackageFileBrowser::objectItemSummary( \eZPackageFileBrowser::documentXML( $bytes, $viewedFile['path'] ) );
                     }
                     elseif ( $realPath === false )
                     {
@@ -190,7 +250,7 @@ class View extends \Exponential\Runnable\ModuleView
             // arithmetic it has no operators for. The current page's own offset is the one from $page
             // (already clamped, 'last' resolved), so Close and View stay on the page being looked at.
             $limitInt = $page['limit'] === 'all' ? max( 1, $page['total_filtered'] ) : max( 1, (int)$page['limit'] );
-            $here = array( 'type' => $typeFilter, 'search' => $search, 'limit' => (string)$state['limit'], 'offset' => (int)$page['offset'], 'file' => -1 );
+            $here = array( 'type' => $typeFilter, 'search' => $search, 'limit' => (string)$state['limit'], 'offset' => (int)$page['offset'], 'file' => -1, 'as' => '' );
 
             $ContentsBrowser = array(
                 'files' => $page['files'],
@@ -210,6 +270,8 @@ class View extends \Exponential\Runnable\ModuleView
                 'url_next' => $browseURL( array( 'offset' => $page['offset'] + $limitInt ) + $here ),
                 'url_last' => $browseURL( array( 'offset' => 'last' ) + $here ),
                 'url_close' => $browseURL( $here ),
+                'url_as_xml' => $viewIndex >= 0 ? $browseURL( array( 'file' => $viewIndex, 'as' => 'xml' ) + $here ) : '',
+                'url_as_json' => $viewIndex >= 0 ? $browseURL( array( 'file' => $viewIndex, 'as' => 'json' ) + $here ) : '',
             );
             foreach ( $ContentsBrowser['files'] as &$fileRow )
                 $fileRow['url_view'] = $browseURL( array( 'file' => (int)$fileRow['index'] ) + $here );

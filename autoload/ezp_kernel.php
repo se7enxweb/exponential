@@ -1016,6 +1016,7 @@ return array(
       'expContentJobHideSubtree'                                     => 'kernel/classes/contentjob/expcontentjobhidesubtree.php',
       'expContentJobLock'                                            => 'kernel/classes/contentjob/expcontentjoblock.php',
       'expContentJobMoveSubtree'                                     => 'kernel/classes/contentjob/expcontentjobmovesubtree.php',
+      'expContentJobPackageInstall'                                  => 'kernel/classes/contentjob/expcontentjobpackageinstall.php',
       'expContentJobRemoveLocation'                                  => 'kernel/classes/contentjob/expcontentjobremovelocation.php',
       'expContentJobRemoveSubtree'                                   => 'kernel/classes/contentjob/expcontentjobremovesubtree.php',
       'expContentJobRevealSubtree'                                   => 'kernel/classes/contentjob/expcontentjobrevealsubtree.php',

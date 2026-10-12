@@ -69,9 +69,24 @@ class Upload extends \Exponential\Runnable\ModuleView
                 }
                 else
                 {
+                    // the package's own validation before anything is imported (expPackageJson::validateDirectory():
+                    // every document well-formed and, in the JSON format, against the schema; the checksums of
+                    // package.json): a package that fails it is refused with what failed
+                    $validation = self::validate( $packageFilename );
+                    if ( !$validation['valid'] )
+                    {
+                        $errorList[] = array( 'description' => \ezpI18n::tr( 'kernel/package', 'The package %packagename did not pass the validation and was not imported:', false,
+                                                                             array( '%packagename' => $packageName ) ),
+                                              'details' => array_slice( $validation['errors'], 0, 20 ) );
+                    }
+                }
+                if ( !$errorList )
+                {
                     $package = \eZPackage::import( $packageFilename, $packageName );
                     if ( $package instanceof \eZPackage )
                     {
+                        // the validation is shown on this package's next pages (install, view) until the next action on it
+                        \eZHTTPTool::instance()->setSessionVariable( 'eZPackageValidation', array( 'package' => (string)$package->attribute( 'name' ), 'source' => 'upload', 'at' => time() ) + $validation );
                         // the repository the vendor names (import() reads the package back by path, as "local")
                         $viewParameters = array( 'full', $package->attribute( 'name' ) );
                         if ( $inspection['vendor_dir'] !== 'local' )
@@ -118,6 +133,30 @@ class Upload extends \Exponential\Runnable\ModuleView
                                         'text' => \ezpI18n::tr( 'kernel/package', 'Upload' ) ) );
 
         return $this->viewResult( $Result, null );
+    }
+
+    /**
+     * The validation of an uploaded archive: extracted into a private work directory (removed again) and checked
+     * with expPackageJson::validateDirectory().
+     *
+     * @param string $archive
+     * @return array valid, errors, warnings, format, documents, files, checksums (whether package.json lists them)
+     */
+    public static function validate( $archive )
+    {
+        $work = \expPackageJson::workDirectory( 'upload-validate' );
+        try
+        {
+            if ( !\expPackageJson::extractArchive( $archive, $work . '/pkg', $error ) )
+                return array( 'valid' => false, 'errors' => array( (string)$error ), 'warnings' => array(), 'format' => '', 'documents' => 0, 'files' => 0, 'checksums' => false );
+            $report = \expPackageJson::validateDirectory( $work . '/pkg' );
+            $report['checksums'] = $report['format'] === \eZPackage::FORMAT_JSON && !in_array( 'package.json has no checksums', $report['warnings'], true );
+            return $report;
+        }
+        finally
+        {
+            \eZDir::recursiveDelete( $work );
+        }
     }
 }
 

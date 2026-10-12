@@ -10576,6 +10576,174 @@ You can also remove the package without uninstalling it from the package list.</
         <source>an object of another class has this remote ID; left alone</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Locations: %top at the top (below the node you choose next), %installed below a node that is here, %in_package below a node of the package, %missing below a node that is neither (they wait or are left out).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At the top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A node here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A node of the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validation on upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install in the background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The install runs in the background: %description. The package page and the job page show its progress; nothing waits for this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Progress on the package page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The background install could not be started: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The next steps ask the same questions; then a background job installs the package, as you, and this page does not wait for it. The package page shows its progress. Suggested for a package with more than %limit content objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checked %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valid: %documents documents and %files files checked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The checksums of package.json match every file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>package.json lists no checksums, so the files could not be compared with them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The classic format carries no checksums; every document was read as XML.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not valid: %count errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check every document of the package and, in the JSON format, the schema and the checksums.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background installs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for its worker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%done of %total content objects (%percent %)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first 50 of %count drafts; all of them are in My drafts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>converted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View as XML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View as JSON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An SVG image may carry script, so it is shown as text here; Download gives the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The document could not be shown in the other format: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No wrap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checksum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Matches package.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Does not match package.json: the file was changed after the package was written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not listed (a classic package, or package.json lists no checksum for it)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This file is not text, so it is not shown here; Download gives it.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -51492,6 +51660,62 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The archive has no package.xml or package.json at its top, so it is not a package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package %packagename did not pass the validation and was not imported:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install in the background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validation on upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package %1 does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not install packages (package/install).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The node %1 chosen for the package's content does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install the package %1 as drafts (%2 content objects)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install the package %1 (%2 content objects)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package %1 does not exist (any more).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 of %2 content objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The install of item %1 (%2) failed: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 drafts written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

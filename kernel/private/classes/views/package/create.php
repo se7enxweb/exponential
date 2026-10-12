@@ -149,6 +149,13 @@ class Create extends \Exponential\Runnable\ModuleView
             else
             {
                 $creator->finalize( $package, $http, $persistentData );
+                // kept in the JSON format when the wizard's package information step chose it
+                if ( $package && isset( $persistentData['format'] ) && $persistentData['format'] === \eZPackage::FORMAT_JSON )
+                {
+                    $converted = \expPackageJson::convertInPlace( $package->path(), \eZPackage::FORMAT_JSON );
+                    if ( !$converted['ok'] )
+                        \eZDebug::writeError( 'The package ' . $package->attribute( 'name' ) . ' stays in the XML format: ' . implode( '; ', $converted['errors'] ), __METHOD__ );
+                }
                 $package->setAttribute( 'is_active', true );
                 $http->removeSessionVariable( 'eZPackageCreatorData' . $creatorID );
                 if ( $package )

@@ -57,17 +57,14 @@ class Viewfile extends \Exponential\Runnable\ModuleView
             \eZExecution::cleanExit();
         }
 
-        $kind = \eZPackageFileBrowser::resolvedKind( $package, $fileRow );
-        $mimeMap = array(
-            'png' => 'image/png', 'jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg',
-            'gif' => 'image/gif', 'webp' => 'image/webp', 'svg' => 'image/svg+xml',
-        );
-        $ext = strtolower( (string)pathinfo( $fileRow['path'], PATHINFO_EXTENSION ) );
-        // Every kind but a real image is offered as data, never as a type a browser would try to render
-        // as markup or execute - an .xml/.txt item included, even though this same file is shown
-        // pretty-printed as text on the contents browser page itself.
-        $image = $kind === 'image' && isset( $mimeMap[$ext] );
-        $type = $image ? $mimeMap[$ext] : 'application/octet-stream';
+        // What the file is by its content (eZPackageFileBrowser::sniff(), not its name): only a png, jpeg, gif or
+        // webp image up to INLINE_IMAGE_MAX_BYTES is sent inline with its own type; everything else - an SVG
+        // (markup that may carry script), an .xml/.json/.txt item, any other binary - is an attachment of type
+        // application/octet-stream, never a type a browser would render as markup or execute. Every answer carries
+        // X-Content-Type-Options: nosniff (eZPackageDownload).
+        $sniff = \eZPackageFileBrowser::sniff( $realPath );
+        $image = $sniff['media'] === 'image' && $sniff['inline'];
+        $type = $image ? $sniff['mime'] : 'application/octet-stream';
 
         // A package is uploaded content: an SVG in it may carry script. Inside the browser's <img> it never
         // runs, but opened directly under the admin's own origin it would; the sandbox stops that.

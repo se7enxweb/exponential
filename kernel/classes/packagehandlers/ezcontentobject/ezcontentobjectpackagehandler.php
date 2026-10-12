@@ -1104,6 +1104,9 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             ++$i;
             if ( class_exists( 'expScriptStatus' ) )
                 expScriptStatus::instance()->update( 'Installing content objects', $i, $objectCount );
+            // the caller's own progress (a background install, expPackageInstallJob): ( objects done, objects in all )
+            if ( isset( $installParameters['progress'] ) && is_callable( $installParameters['progress'] ) )
+                call_user_func( $installParameters['progress'], $i, $objectCount );
 
             // Commit the package-install transaction in batches so a huge object
             // package does not hold database locks for the entire install.
@@ -1135,7 +1138,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             }
             else
             {
-                $remoteID = substr( $objectNode->getAttribute( 'filename' ), 7, 32 );
+                // object-<remote id>.xml: a remote id of any length (not only the 32 characters of an md5)
+                $remoteID = preg_replace( '/^object-(.*)\.(xml|json)$/', '$1', (string)$objectNode->getAttribute( 'filename' ) );
             }
 
             // Begin from the object that we started from in the previous cycle
