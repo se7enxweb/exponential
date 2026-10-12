@@ -3009,7 +3009,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-6e2aaf2b667ccdb6f634fded063e5623  doc/changelogs/6.0/6.0.15.md
+3fc5da91c04347b5eee27f290c62711f  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5316,7 +5316,7 @@ a4eed9a7905fe1e626f082adbfc5b6cf  kernel/contentfinder/module.php
 747ed638d9ee58da9a9aa32a57638c6c  kernel/ezinfo/about.php
 11b8f46cd2bdd9cb3742c7f03fe7ea86  kernel/ezinfo/copyright.php
 c152f6675c301c8fd5c910ae9a9773a9  kernel/ezinfo/isalive.php
-712d4c791202d8423c7d46496999adc0  kernel/ezinfo/module.php
+e34ce35f82b5312316715004749f0ecc  kernel/ezinfo/module.php
 42a06bec0f984c57616ac14674db2282  kernel/infocollector/collectionlist.php
 acdc84f993248814496960cacaecdd6c  kernel/infocollector/export.php
 c7fe8fbd2c4e807aac5af9e4530b6625  kernel/infocollector/ezinfocollectorfunctioncollection.php
