@@ -312,7 +312,7 @@ e7edb5e01af46f5995d1f9429f305724  design/admin/stylesheets/content.css
 d5a3589152af07aa3d6cb3f0b025bec6  design/admin/stylesheets/setup-extensions.css
 245e1a328067085da235258aef9db2a8  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
-2aa91891f1e95c45c9769bf288396e39  design/admin/stylesheets/theme/rounded.css
+a29149b517fa70cf3b43a635b58ead49  design/admin/stylesheets/theme/rounded.css
 4c5d17d9e5889a0f8907ad075f34c3d9  design/admin/stylesheets/visual-templateview.css
 51b12c9efcb649950dae2f832c6782e1  design/admin/templates/ajaxuploader/browse.tpl
 2a971a019be83d646f3bd5f5b5f82105  design/admin/templates/ajaxuploader/location.tpl
@@ -805,7 +805,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin3/images/view-fullscreen.png
 e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin3/javascript/ezadmin_menubar.js
 3f136a30325263ad29db88d477207887  design/admin3/stylesheets/pagelayout.css
 5d3b68fdb809c73a6d8dc464e33c61ec  design/admin3/stylesheets/responsive.css
-4bde3e94769e7b0e2a3b4ccbfe04a563  design/admin3/stylesheets/theme/rounded.css
+d4ae8e476c5e52ca52eee57cc934f79c  design/admin3/stylesheets/theme/rounded.css
 c7ddd314fedef247c31ae61c9a38e4fe  design/admin3/templates/content/browse_current_node.tpl
 bc7937dac73f716b532f14b62505ed0d  design/admin3/templates/content/browse_mode_list.tpl
 861bd3ca689c1348cbf47d40c4d980ef  design/admin3/templates/content/browse_mode_thumbnail.tpl
@@ -945,7 +945,7 @@ e7edb5e01af46f5995d1f9429f305724  design/admin4/stylesheets/content.css
 d5a3589152af07aa3d6cb3f0b025bec6  design/admin4/stylesheets/setup-extensions.css
 245e1a328067085da235258aef9db2a8  design/admin4/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin4/stylesheets/theme/modalwindow.css
-4bde3e94769e7b0e2a3b4ccbfe04a563  design/admin4/stylesheets/theme/rounded.css
+d4ae8e476c5e52ca52eee57cc934f79c  design/admin4/stylesheets/theme/rounded.css
 4c5d17d9e5889a0f8907ad075f34c3d9  design/admin4/stylesheets/visual-templateview.css
 51b12c9efcb649950dae2f832c6782e1  design/admin4/templates/ajaxuploader/browse.tpl
 2a971a019be83d646f3bd5f5b5f82105  design/admin4/templates/ajaxuploader/location.tpl
