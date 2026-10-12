@@ -9,7 +9,7 @@ packaging and documentation are listed apart, and version bumps and merge commit
 entry links its commit.
 
 The release notes of Exponential itself are in [changelogs 6.0](../6.0/6.0.15.md) (6.0.0 to 6.0.15). Which version of
-each package the current line requires is in the [6.0.15 changelog](../6.0/6.0.15.md#required-packages-root-composerjson-2026-10-01-to-2026-10-02).
+each package the current line requires is in the [6.0.15 changelog](../6.0/6.0.15.md#required-packages-root-composerjson-2026-10-01-to-2026-10-02) and, for the changes of 10 to 12 October 2026, [its newest table](../6.0/6.0.15.md#required-packages-root-composerjson-2026-10-10-to-2026-10-12).
 
 ## How to find the version you run
 
@@ -34,6 +34,8 @@ Replace `eztags` with the extension you look at.
 | enhancedezbinaryfile | v4.4.4 | [release notes](enhancedezbinaryfile.md) |
 | enhancedselection2 | 2.1.7 | [release notes](enhancedselection2.md) |
 | exp_enhanced_link | v1.0.4 | [release notes](exp_enhanced_link.md) |
+| expai (Exponential Intelligence) | v0.0.1.0 | [in its repository](https://github.com/se7enxweb/expai/tree/main/doc/changelog) |
+| expqueue | v0.1.0 | [in its repository](https://github.com/se7enxweb/expqueue/tree/main/doc/changelog) |
 | explayouts_ui | v1.3.6 | [release notes](explayouts_ui.md) |
 | explayouts_ui_api | v1.3.7 | [release notes](explayouts_ui_api.md) |
 | ezautosave | v6.0.8 | [release notes](ezautosave.md) |
@@ -78,7 +80,7 @@ Replace `eztags` with the extension you look at.
 
 | Package | Latest release | Release notes |
 |---|---|---|
-| exponential-velocity (Exponential Velocity) | v0.0.4.42 | [release notes](exponential-velocity.md) |
+| exponential-velocity (Exponential Velocity) | v0.0.4.50 | [release notes](exponential-velocity.md) |
 
 ## Platform packages
 

@@ -6,6 +6,23 @@ Releases of the Velocity web server engine, newest first. The engine is the Comp
 
 Three tags have no release page: `v0.0.4.21`, `v0.0.4.22` and `v0.0.4.26` (their builds did not produce a usable artifact; they are still installable versions on Packagist, so move to the next version above them). Releases are published only for a tag that has a section in the engine's changelog.
 
+## Releases after v0.0.4.42
+
+The releases from v0.0.4.43 on are described in full on
+[GitHub Releases](https://github.com/se7enxweb/exponential-velocity/releases). Exponential 6.0.15 suggests
+`~0.0.4.50` (`composer require se7enxweb/exponential-velocity:~0.0.4.50`).
+
+| Release | Date | What it brings |
+|---|---|---|
+| [v0.0.4.50](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.50) | 2026-10-12 | A HEAD over HTTP/2 is answered with its headers only (one `HEADERS` frame, the GET's headers) and from the response cache; a streamed answer to a HEAD ends at its head; the server's own HTTP/1.1 answers to a HEAD carry no body; a stop drains gracefully (`GOAWAY` per HTTP/2 connection, idle keep-alive connections closed at once) |
+| [v0.0.4.49](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.49) | 2026-10-12 | Streaming responses from persistent pool workers (`streamTimeout`, `streamShare`, `maxStreams`, `retryWithin`; set from Exponential in [velocity.ini](../../bc/6.0/velocity-engines.md#streaming-responses)) |
+| [v0.0.4.48](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.48) | 2026-10-11 | The full Docker images load `event` after `sockets` |
+| [v0.0.4.47](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.47) | 2026-10-09 | A key a script adds to `$_SERVER` ends with its request |
+| [v0.0.4.46](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.46) | 2026-10-08 | A stop is bounded and leaves nothing behind; a file read through the compat wrapper is read whole |
+| [v0.0.4.45](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.45) | 2026-10-06 | `Q.webserver.fallback` serves the file it names |
+| [v0.0.4.44](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.44) | 2026-10-06 | Forwarded protocol headers are honored only from trusted proxies ([trusted proxies](../../bc/6.0/trusted-proxies.md)) |
+| [v0.0.4.43](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.43) | 2026-10-05 | The Logs panel follows the log with a byte cursor, handles rotation and shows its live or paused state |
+
 ## v0.0.4.42 (2026-09-30)
 
 Persistent workers report each request's own start time and read sessions without a warning; `uwebserver` becomes a small static file server with a GNU command line, safe defaults and four security reviews; the packages install the shell as `vc-qshell`.
