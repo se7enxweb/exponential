@@ -58165,6 +58165,14 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%n problems</translation>
     </message>
     <message>
+        <source>1 address</source>
+        <translation>1 address</translation>
+    </message>
+    <message>
+        <source>1 problem</source>
+        <translation>1 problem</translation>
+    </message>
+    <message>
         <source>%n spooled</source>
         <translation>%n spooled</translation>
     </message>

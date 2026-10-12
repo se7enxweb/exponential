@@ -21,8 +21,9 @@
 .au-view ul.au-list { list-style: none; margin: 0 0 .5em; padding: 0; }
 .au-view ul.au-list li { display: flex; justify-content: space-between; gap: .6em; padding: .15em 0; border-bottom: 1px solid var(--au-line); font-size: .92em; }
 .au-view ul.au-list li:last-child { border-bottom: 0; }
-.au-view ul.au-list li > :first-child { overflow-wrap: anywhere; min-width: 0; }
+.au-view ul.au-list li > :first-child { overflow-wrap: break-word; min-width: min-content; }
 .au-view ul.au-list .au-n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.au-view ul.au-list .au-n.au-wrap { white-space: normal; text-align: right; }
 .au-view .au-warnbox { padding: .45em .7em; border-radius: var(--au-radius); background: var(--au-bad-bg); color: var(--au-bad); margin: 0 0 .6em; }
 .au-view .au-hintbox { padding: .45em .7em; border-radius: var(--au-radius); background: var(--au-warn-bg); color: var(--au-warn); margin: 0 0 .6em; }
 .au-view .au-cmd { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85em; background: var(--au-soft); border: 1px solid var(--au-line); border-radius: var(--au-radius); padding: .4em .6em; margin: .3em 0; overflow-wrap: anywhere; }
@@ -121,11 +122,11 @@
         {if $alerts.problems}<div class="au-figure"><strong><span class="au-result failed">{$alerts.problems}</span></strong><span>{'rules with a problem'|i18n( 'design/admin/audit' )}</span></div>{/if}
     </div>
     {if $alerts.recent|count}
-    <ul class="au-list">{foreach $alerts.recent as $a}<li><span><span class="au-result {if array( 'critical', 'alert', 'emergency' )|contains( $a.severity )}failed{else}refused{/if}">{$a.severity|wash}</span> <a href={concat( 'audit/event/', $a.id )|ezurl}><code>{$a.rule|wash}</code></a></span><span class="au-sub au-n">{$a.count} &middot; {$a.time|wash}</span></li>{/foreach}</ul>
+    <ul class="au-list">{foreach $alerts.recent as $a}<li><span><span class="au-result {if array( 'critical', 'alert', 'emergency' )|contains( $a.severity )}failed{else}refused{/if}">{$a.severity|wash}</span> <a href={concat( 'audit/event/', $a.id )|ezurl}><code title="{$a.rule|wash}">{$a.rule|wash|explode( '_' )|implode( '_<wbr>' )}</code></a></span><span class="au-sub au-n">{$a.count} &middot; {$a.time|wash}</span></li>{/foreach}</ul>
     {else}<p class="au-note">{'No alert has fired.'|i18n( 'design/admin/audit' )}</p>{/if}
     {if $alerts.recipients|count}
     <p class="au-sub">{'Alert mail recipients'|i18n( 'design/admin/audit' )}</p>
-    <ul class="au-list">{foreach $alerts.recipients as $r}<li><code>{$r.name|wash}</code><span class="au-n">{'%n addresses'|i18n( 'design/admin/audit',, hash( '%n', $r.count ) )}{if $r.problems} &middot; <span class="au-result failed">{'%n problems'|i18n( 'design/admin/audit',, hash( '%n', $r.problems ) )}</span>{/if}</span></li>{/foreach}</ul>
+    <ul class="au-list">{foreach $alerts.recipients as $r}<li><code>{$r.name|wash|explode( '_' )|implode( '_<wbr>' )}</code><span class="au-n">{if eq( $r.count, 1 )}{'1 address'|i18n( 'design/admin/audit' )}{else}{'%n addresses'|i18n( 'design/admin/audit',, hash( '%n', $r.count ) )}{/if}{if $r.problems} &middot; <span class="au-result failed">{if eq( $r.problems, 1 )}{'1 problem'|i18n( 'design/admin/audit' )}{else}{'%n problems'|i18n( 'design/admin/audit',, hash( '%n', $r.problems ) )}{/if}</span>{/if}</span></li>{/foreach}</ul>
     <p class="au-cmd">./console exp:audit alerts recipients</p>
     {/if}
 </section>
@@ -188,7 +189,7 @@
     {else}<p class="au-hintbox">{'tables missing'|i18n( 'design/admin/audit' )}</p>{/if}
     {if $operations.archives|count}
     <p class="au-sub">{'Archives'|i18n( 'design/admin/audit' )}</p>
-    <ul class="au-list">{foreach $operations.archives as $a}<li><span>{$a.channel|wash}{if $a.due} <span class="au-result refused">{'archive due'|i18n( 'design/admin/audit' )}</span>{/if}</span><span class="au-sub au-n">{'oldest live %live, last archive %archive'|i18n( 'design/admin/audit',, hash( '%live', cond( $a.oldest_live, $a.oldest_live, '-' ), '%archive', cond( $a.last_archive, $a.last_archive, '-' ) ) )|wash} &middot; {$a.live_days}/{$a.archive_days} d</span></li>{/foreach}</ul>
+    <ul class="au-list">{foreach $operations.archives as $a}<li><span>{$a.channel|wash}{if $a.due} <span class="au-result refused">{'archive due'|i18n( 'design/admin/audit' )}</span>{/if}</span><span class="au-sub au-n au-wrap">{'oldest live %live, last archive %archive'|i18n( 'design/admin/audit',, hash( '%live', cond( $a.oldest_live, $a.oldest_live, '-' ), '%archive', cond( $a.last_archive, $a.last_archive, '-' ) ) )|wash} &middot; {$a.live_days}/{$a.archive_days} d</span></li>{/foreach}</ul>
     {/if}
     {if $operations.sinks|count}
     <p class="au-sub">{'Sinks'|i18n( 'design/admin/audit' )}</p>

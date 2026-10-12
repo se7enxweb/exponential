@@ -55767,6 +55767,22 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>design/admin/audit</name>
     <message>
+        <source>1 address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>channel</source>
         <translation type="unfinished"></translation>
     </message>

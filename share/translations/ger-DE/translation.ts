@@ -65611,6 +65611,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>%n Probleme</translation>
     </message>
     <message>
+        <source>1 address</source>
+        <translation>1 Adresse</translation>
+    </message>
+    <message>
+        <source>1 problem</source>
+        <translation>1 Problem</translation>
+    </message>
+    <message>
         <source>%n spooled</source>
         <translation>%n zwischengespeichert</translation>
     </message>
