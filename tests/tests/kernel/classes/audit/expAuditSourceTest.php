@@ -195,7 +195,10 @@ class expAuditSourceTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'Votes per day', $charts[0]['title'] );
         $this->assertSame( array( array( 'label' => 'votes', 'name' => 'content.audittest_poll.vote' ) ), $charts[0]['series'], 'a malformed pattern is left out' );
 
-        $panels = expAuditSourceRegistry::panels( new expAuditQuery(), null, array( 'today_ms' => 0, 'week_ms' => 0 ) );
+        // the test source's dashboard does not query, so a query object without a database will do: the test then
+        // also runs where no database is configured
+        $q = ( new ReflectionClass( 'expAuditQuery' ) )->newInstanceWithoutConstructor();
+        $panels = expAuditSourceRegistry::panels( $q, null, array( 'today_ms' => 0, 'week_ms' => 0 ) );
         $this->assertCount( 1, $panels );
         $p = $panels[0];
         $this->assertSame( array( 'identifier', 'label', 'channel', 'figures', 'lists', 'links', 'note' ), array_keys( $p ) );

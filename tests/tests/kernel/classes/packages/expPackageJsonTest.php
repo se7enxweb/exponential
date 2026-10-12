@@ -35,12 +35,11 @@ class expPackageJsonTest extends PHPUnit\Framework\TestCase
 </ezremote:object>
 ';
 
-    public static function setUpBeforeClass(): void
-    {
-        chdir( dirname( __DIR__, 5 ) );
-        // the export directory names the current user, which registers the kernel's handlers once: before the tests
-        eZPackage::temporaryExportPath();
-    }
+    /** @var bool */
+    private $hadUser;
+
+    /** @var eZUser|null */
+    private $user;
 
     protected function setUp(): void
     {
@@ -48,12 +47,21 @@ class expPackageJsonTest extends PHPUnit\Framework\TestCase
         expPackageJson::resetCache();
         $this->dir = 'var/tmp/phpunit-package-json-' . getmypid() . '-' . mt_rand();
         mkdir( $this->dir, 0775, true );
+        // the export directory (eZPackage::temporaryExportPath(), used by archiveDirectory()) names the current
+        // user: an anonymous user of its own keeps that lookup away from the database
+        $this->hadUser = array_key_exists( 'eZUserGlobalInstance_', $GLOBALS );
+        $this->user = $this->hadUser ? $GLOBALS['eZUserGlobalInstance_'] : null;
+        $GLOBALS['eZUserGlobalInstance_'] = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'j1anonymous' ) );
     }
 
     protected function tearDown(): void
     {
         if ( $this->dir && is_dir( $this->dir ) )
             eZDir::recursiveDelete( $this->dir );
+        if ( $this->hadUser )
+            $GLOBALS['eZUserGlobalInstance_'] = $this->user;
+        else
+            unset( $GLOBALS['eZUserGlobalInstance_'] );
     }
 
     private function roundTrip( $xml )
