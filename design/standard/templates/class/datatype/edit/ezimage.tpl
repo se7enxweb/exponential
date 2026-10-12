@@ -3,3 +3,9 @@
 <label>{'Max file size'|i18n( 'design/standard/class/datatype ')}:</label>
 <input type="text" name="ContentClass_ezimage_max_filesize_{$class_attribute.id}" value="{$class_attribute.data_int1|wash}" size="5" maxlength="5" />&nbsp;MB
 </div>
+
+{* Alternative text is required. *}
+<div class="block">
+<input type="hidden" name="ContentClass_ezimage_alt_text_required_{$class_attribute.id}_posted" value="1" />
+<label for="ContentClass_ezimage_alt_text_required_{$class_attribute.id}"><input type="checkbox" id="ContentClass_ezimage_alt_text_required_{$class_attribute.id}" name="ContentClass_ezimage_alt_text_required_{$class_attribute.id}" value="1"{if $class_attribute.data_int2|eq( 1 )} checked="checked"{/if} title="{'Editors cannot store an image in this field without an alternative text.'|i18n( 'design/standard/class/datatype' )|wash}" />&nbsp;{'Alternative text is required'|i18n( 'design/standard/class/datatype' )}</label>
+</div>

@@ -107,6 +107,14 @@
         <source>Upload the file</source>
         <translation>Upload the file</translation>
     </message>
+    <message>
+        <source>Alternative text</source>
+        <translation>Alternative text</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>required</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/classlist</name>
@@ -39285,6 +39293,22 @@ your account.</translation>
     </message>
     <message>
         <source>Remove from groups</source>
+    <message>
+        <source>Alternative text is required</source>
+        <translation>Alternative text is required</translation>
+    </message>
+    <message>
+        <source>Editors cannot store an image in this field without an alternative text.</source>
+        <translation>Editors cannot store an image in this field without an alternative text.</translation>
+    </message>
+    <message>
+        <source>Trim the stored value</source>
+        <translation>Trim the stored value</translation>
+    </message>
+    <message>
+        <source>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</source>
+        <translation>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</translation>
+    </message>
         <translation>Remove from groups</translation>
     </message>
     <message>
@@ -40899,6 +40923,10 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Preview</source>
+    <message>
+        <source>required</source>
+        <translation>required</translation>
+    </message>
         <translation>Preview</translation>
     </message>
     <message>
@@ -52265,6 +52293,10 @@ your account.</translation>
     </message>
 </context>
 <context>
+    <message>
+        <source>An alternative text is required for this image.</source>
+        <translation>An alternative text is required for this image.</translation>
+    </message>
     <name>kernel/classes/datatypes/ezmedia</name>
     <message>
         <source>Failed to store media file %filename. Please contact the site administrator.</source>

@@ -65,8 +65,8 @@ eZOEPopupUtils.settings.browseClassGenerator = function( n, hasImage ){
 
                 <!-- Next two attributes are image specific  -->
                 <tr>
-                    <td class="column1"><label id="alttextlabel" for="objectAltText">{'Alternative text'|i18n('design/standard/ezoe')}</label></td>
-                    <td colspan="2"><input id="objectAltText" name="ContentObjectAttribute_image" size="53" type="text" value="" title="{'Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.'|i18n('design/standard/ezoe/wai')}" /></td>
+                    <td class="column1"><label id="alttextlabel" for="objectAltText">{'Alternative text'|i18n('design/standard/ezoe')}{if $image_alt_text_required} ({'required'|i18n('design/standard/ezoe')}){/if}</label></td>
+                    <td colspan="2"><input id="objectAltText" name="ContentObjectAttribute_image" size="53" type="text" value=""{if $image_alt_text_required} aria-required="true"{/if} title="{'Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.'|i18n('design/standard/ezoe/wai')}" /></td>
                 </tr>
                 <tr>
                     <td class="column1"><label id="captionlabel" for="objectCaption">{'Caption'|i18n('design/standard/ezoe')}</label></td>

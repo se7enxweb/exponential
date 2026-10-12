@@ -3,6 +3,12 @@
     <fieldset>
         <legend>{"Step 2/3: Choose a location for the new '%class' object"|i18n( 'design/admin/ajaxuploader', '', hash( '%class', $class.name|wash() ) )}</legend>
         <p>{'<em>%file</em> has successfully been uploaded.'|i18n( 'design/admin/ajaxupload', '', hash( '%file', $file.original_filename|wash() ) )}</p>
+        {if $alt_text_field}
+        <p class="ajaxuploader-alternative-text">
+            <label for="UploadAlternativeText">{'Alternative text'|i18n( 'design/admin/ajaxuploader' )}{if $alt_text_required} ({'required'|i18n( 'design/admin/ajaxuploader' )}){/if}:</label>
+            <input type="text" class="halfbox{if $alt_text_required} input-required{/if}" id="UploadAlternativeText" name="UploadAlternativeText" value="" size="60"{if $alt_text_required} aria-required="true"{/if} />
+        </p>
+        {/if}
         <p>{"Please choose a location for the '%class' object that is going to be created from it."|i18n( 'design/admin/ajaxuploader', '', hash( '%class', $class.name|wash() ) )}</p>
         <div class="ajaxuploader-browse">
             {include uri="design:ajaxuploader/browse.tpl" browse_start=$browse_start class=$class browse=$browse default_parent_node=$default_parent_node}

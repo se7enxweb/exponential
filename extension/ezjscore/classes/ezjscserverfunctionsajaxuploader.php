@@ -193,6 +193,10 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         $tpl->setVariable( 'browse_start', $defaultParentNode->attribute( 'parent' ) );
         $tpl->setVariable( 'default_parent_node', $defaultParentNode );
         $tpl->setVariable( 'browse', $browseItems );
+        // An alternative text field for a class with an image attribute, marked when the class requires the text
+        $altTextRequired = eZImageType::classAltTextRequired( $class );
+        $tpl->setVariable( 'alt_text_field', $altTextRequired !== null );
+        $tpl->setVariable( 'alt_text_required', $altTextRequired === true );
         // json_encode and url encode the HTML to be able to get it in the
         // JavaScript code. see eZAjaxUploader::delegateWindowEvents()
         return json_encode(
@@ -353,6 +357,67 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
 
 
     /**
+     * Refuses the upload when the class the file becomes requires an alternative text for its image and the
+     * location form gave none (the class attribute option "Alternative text is required"). Called before the
+     * uploaded file is used, so the form can be sent again with the text. $altText is set to the posted text.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit a28863d9c0), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param ezpAjaxUploaderHandlerInterface $handler
+     * @param string $file the uploaded file, fetched to the local file system
+     * @param string $altText
+     * @throw RuntimeException when an alternative text is required and none was given
+     */
+    private static function checkAlternativeText( $handler, $file, &$altText )
+    {
+        $http = eZHTTPTool::instance();
+        $altText = $http->hasPostVariable( 'UploadAlternativeText' ) ? $http->postVariable( 'UploadAlternativeText' ) : '';
+        $altText = is_scalar( $altText ) ? trim( (string)$altText ) : '';
+        try
+        {
+            $class = $handler->getContentClass( eZMimeType::findByFileContents( $file ) );
+        }
+        catch ( Exception $e )
+        {
+            // createObject() reports a file that cannot become an object
+            return;
+        }
+        if ( $class instanceof eZContentClass && eZImageType::classAltTextRequired( $class ) &&
+             !eZImageType::validateImageAltText( $altText ) )
+        {
+            throw new RuntimeException( ezpI18n::tr( 'kernel/classes/datatypes', 'An alternative text is required for this image.' ) );
+        }
+    }
+
+    /**
+     * Gives the image attributes of the new $contentObject the alternative text of the location form.
+     *
+     * @param eZContentObject $contentObject
+     * @param string $altText
+     */
+    private static function storeAlternativeText( $contentObject, $altText )
+    {
+        if ( !$contentObject instanceof eZContentObject || $altText === '' )
+            return;
+        $stored = false;
+        foreach ( $contentObject->dataMap() as $attribute )
+        {
+            if ( $attribute->attribute( 'data_type_string' ) !== eZImageType::DATA_TYPE_STRING || !$attribute->hasContent() )
+                continue;
+            $content = $attribute->attribute( 'content' );
+            $content->setAttribute( 'alternative_text', $altText );
+            $content->store( $attribute );
+            $stored = true;
+        }
+        if ( $stored )
+        {
+            // the object was published before the text was set: index and view caches see it now
+            eZSearch::addObject( $contentObject, true );
+            eZContentCacheManager::clearContentCacheIfNeeded( $contentObject->attribute( 'id' ) );
+        }
+    }
+
+    /**
      * Creates the object from the uploaded file and displays the preview of it
      *
      * @param array $args
@@ -387,6 +452,7 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         }
         else
         {
+            self::checkAlternativeText( $handler, $file, $altText );
             $tmpFile = eZSys::cacheDirectory() . '/' .
                         eZINI::instance()->variable( 'FileSettings', 'TemporaryDir' ) . '/' .
                         str_replace(
@@ -403,6 +469,7 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
             $http->postVariable( 'UploadLocation', false ),
             $http->postVariable( 'UploadName', '' )
         );
+        self::storeAlternativeText( $contentObject, $altText );
         unlink( $tmpFile );
 
         $tpl = eZTemplate::factory();

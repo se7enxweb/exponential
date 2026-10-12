@@ -207,6 +207,14 @@ class Upload extends \Exponential\Runnable\ModuleView
                     //post pattern: ContentObjectAttribute_attribute-identifier
                     $base = 'ContentObjectAttribute_'. $key;
                     $postVar = trim( $http->postVariable( $base, '' ) );
+                    // The class attribute option "Alternative text is required" (Portions derived from LoveStack,
+                    // mugoweb/ezpublish-legacy, commit a28863d9c0, Copyright (C) Mugo Web, GPL v2): the new object
+                    // is removed again below, as for any other refused value
+                    if ( $attr->attribute( 'data_type_string' ) === 'ezimage' && \eZImageType::isAltTextRequired( $attr ) &&
+                         !\eZImageType::validateImageAltText( $postVar ) )
+                    {
+                        throw new \InvalidArgumentException( \ezpI18n::tr( 'kernel/classes/datatypes', 'An alternative text is required for this image.' ) );
+                    }
                     if ( $postVar !== '' )
                     {
                         switch ( $attr->attribute( 'data_type_string' ) )
@@ -394,6 +402,19 @@ class Upload extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'related_contentobjects', $relatedObjects );
         $tpl->setVariable( 'grouped_related_contentobjects', $groupedRelatedObjects );
         $tpl->setVariable( 'content_type', $contentType );
+        // Whether the class an image upload creates (upload.ini [CreateSettings] MimeClassMap[image]) requires an
+        // alternative text for its image attribute, for the label of the dialog's field
+        $altTextRequired = false;
+        if ( $contentType === 'images' )
+        {
+            $uploadIni = \eZINI::instance( 'upload.ini' );
+            $mimeClassMap = $uploadIni->variable( 'CreateSettings', 'MimeClassMap' );
+            if ( isset( $mimeClassMap['image'] ) )
+            {
+                $altTextRequired = (bool)\eZImageType::classAltTextRequired( $mimeClassMap['image'] );
+            }
+        }
+        $tpl->setVariable( 'image_alt_text_required', $altTextRequired );
 
         $contentTypeCase = ucfirst( $contentType );
         if ( $contentIni->hasVariable( 'RelationGroupSettings', $contentTypeCase . 'ClassList' ) )

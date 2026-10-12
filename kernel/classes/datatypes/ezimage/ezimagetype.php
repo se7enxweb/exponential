@@ -18,12 +18,18 @@
 
   \note The method initializeObjectAttribute was removed in 3.8, the new
         storage technique removes the need to have it.
+
+  The class attribute option "Alternative text is required" (ALT_TEXT_REQUIRED_FIELD):
+  Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit a28863d9c0), Copyright (C) Mugo Web, GPL v2
 */
 
 class eZImageType extends eZDataType
 {
     const FILESIZE_FIELD = 'data_int1';
     const FILESIZE_VARIABLE = '_ezimage_max_filesize_';
+    /// 1 when the alternative text of an image is required (off, 0, by default)
+    const ALT_TEXT_REQUIRED_FIELD = 'data_int2';
+    const ALT_TEXT_REQUIRED_VARIABLE = '_ezimage_alt_text_required_';
     const DATA_TYPE_STRING = "ezimage";
 
     public function __construct()
@@ -351,7 +357,82 @@ class eZImageType extends eZDataType
                 'The size of the uploaded file exceeds the limit set for this site: %1 bytes.' ), $maxSize );
             return eZInputValidator::STATE_INVALID;
         }
+
+        // The class attribute can require an alternative text: checked when the field keeps or gets an image
+        if ( self::isAltTextRequired( $classAttribute ) &&
+             ( $canFetchResult == eZHTTPFile::UPLOADEDFILE_OK || !empty( $original['is_valid'] ) ) )
+        {
+            $altTextName = $base . "_data_imagealttext_" . $contentObjectAttribute->attribute( "id" );
+            // A form without the field keeps the stored text, which then counts
+            $altText = $http->hasPostVariable( $altTextName ) ?
+                       $http->postVariable( $altTextName ) :
+                       $tmpImgObj->attribute( 'alternative_text' );
+            if ( !self::validateImageAltText( $altText ) )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                    'An alternative text is required for this image.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
+        }
         return eZInputValidator::STATE_ACCEPTED;
+    }
+
+    /**
+     * Whether the class attribute (or the class attribute of the content object attribute) requires an
+     * alternative text for its image: the class attribute option "Alternative text is required", off by default.
+     *
+     * @param eZContentClassAttribute|eZContentObjectAttribute|null $attribute
+     * @return bool
+     */
+    public static function isAltTextRequired( $attribute )
+    {
+        if ( $attribute instanceof eZContentObjectAttribute )
+            $attribute = $attribute->contentClassAttribute();
+        if ( !$attribute instanceof eZContentClassAttribute )
+            return false;
+        return (int)$attribute->attribute( self::ALT_TEXT_REQUIRED_FIELD ) === 1;
+    }
+
+    /**
+     * Whether $altText counts as an alternative text: a string with more than white space.
+     *
+     * @param mixed $altText
+     * @return bool
+     */
+    public static function validateImageAltText( $altText )
+    {
+        if ( !is_scalar( $altText ) )
+            return false;
+        return trim( (string)self::cleanAlternativeText( (string)$altText ) ) !== '';
+    }
+
+    /**
+     * What the image attributes of $class say about alternative text, for the upload dialogs: null when the
+     * class has no image (ezimage) attribute, true when one of them requires an alternative text, false otherwise.
+     * With $attributeIdentifier only that attribute is looked at.
+     *
+     * @param eZContentClass|string|int|null $class a class, its identifier or its id
+     * @param string|false $attributeIdentifier
+     * @return bool|null
+     */
+    public static function classAltTextRequired( $class, $attributeIdentifier = false )
+    {
+        if ( is_numeric( $class ) )
+            $class = eZContentClass::fetch( (int)$class );
+        else if ( is_string( $class ) && $class !== '' )
+            $class = eZContentClass::fetchByIdentifier( $class );
+        if ( !$class instanceof eZContentClass )
+            return null;
+        $required = null;
+        foreach ( $class->dataMap() as $identifier => $classAttribute )
+        {
+            if ( $classAttribute->attribute( 'data_type_string' ) !== self::DATA_TYPE_STRING )
+                continue;
+            if ( $attributeIdentifier !== false && $identifier !== $attributeIdentifier )
+                continue;
+            $required = $required || self::isAltTextRequired( $classAttribute );
+        }
+        return $required;
     }
 
     private static function validateImageFileExtension($filename)
@@ -676,6 +757,16 @@ class eZImageType extends eZDataType
 
     function fetchClassAttributeHTTPInput( $http, $base, $classAttribute )
     {
+        // "Alternative text is required": a checkbox, read only when the form says it shows it (a form
+        // without the option, such as another design's, leaves the setting as it is)
+        $altTextChanged = false;
+        $altTextRequiredName = $base . self::ALT_TEXT_REQUIRED_VARIABLE . $classAttribute->attribute( 'id' );
+        if ( $http->hasPostVariable( $altTextRequiredName . '_posted' ) )
+        {
+            $classAttribute->setAttribute( self::ALT_TEXT_REQUIRED_FIELD, $http->hasPostVariable( $altTextRequiredName ) ? 1 : 0 );
+            $altTextChanged = true;
+        }
+
         $filesizeName = $base . self::FILESIZE_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $filesizeName ) )
         {
@@ -685,7 +776,7 @@ class eZImageType extends eZDataType
             $classAttribute->setAttribute( self::FILESIZE_FIELD, $filesizeValue );
             return true;
         }
-        return false;
+        return $altTextChanged;
     }
 
     function customObjectAttributeHTTPAction( $http, $action, $contentObjectAttribute, $parameters )
@@ -753,6 +844,13 @@ class eZImageType extends eZDataType
         $maxSizeNode->appendChild( $dom->createTextNode( $maxSize ) );
         $maxSizeNode->setAttribute( 'unit-size', 'mega' );
         $attributeParametersNode->appendChild( $maxSizeNode );
+        // Only when on, so a package of a class without the option reads as before
+        if ( self::isAltTextRequired( $classAttribute ) )
+        {
+            $altTextNode = $dom->createElement( 'alternative-text-required' );
+            $altTextNode->appendChild( $dom->createTextNode( '1' ) );
+            $attributeParametersNode->appendChild( $altTextNode );
+        }
     }
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
@@ -761,6 +859,8 @@ class eZImageType extends eZDataType
         $sizeNode = $attributeParametersNode->getElementsByTagName( 'max-size' )->item( 0 );
         $maxSize = $sizeNode ? $sizeNode->textContent : 0;
         $classAttribute->setAttribute( self::FILESIZE_FIELD, $maxSize );
+        $altTextNode = $attributeParametersNode->getElementsByTagName( 'alternative-text-required' )->item( 0 );
+        $classAttribute->setAttribute( self::ALT_TEXT_REQUIRED_FIELD, $altTextNode && trim( $altTextNode->textContent ) === '1' ? 1 : 0 );
     }
 
 

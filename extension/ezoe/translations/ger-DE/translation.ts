@@ -1364,6 +1364,10 @@ Benötigen Sie hierzu weitere Informationen?</translation>
         <source>Please enter a valid http or https address without user name and password.</source>
         <translation>Bitte eine gültige http- oder https-Adresse ohne Benutzername und Passwort eingeben.</translation>
     </message>
+    <message>
+        <source>required</source>
+        <translation>erforderlich</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

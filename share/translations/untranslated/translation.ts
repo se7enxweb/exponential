@@ -107,6 +107,14 @@
         <source>Upload the file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Alternative text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/classlist</name>
@@ -37818,6 +37826,22 @@ your account.</source>
     </message>
     <message>
         <source>Remove from groups</source>
+    <message>
+        <source>Alternative text is required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editors cannot store an image in this field without an alternative text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trim the stored value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</source>
+        <translation type="unfinished"></translation>
+    </message>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -39413,6 +39437,10 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Preview</source>
+    <message>
+        <source>required</source>
+        <translation type="unfinished"></translation>
+    </message>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -50521,6 +50549,10 @@ your account.</source>
     <message>
         <source>Failed to store media file %filename. Please contact the site administrator.</source>
         <translation type="unfinished"></translation>
+    <message>
+        <source>An alternative text is required for this image.</source>
+        <translation type="unfinished"></translation>
+    </message>
     </message>
 </context>
 <context>

@@ -3,3 +3,8 @@
     <label>{'Max file size'|i18n( 'design/standard/class/datatype' )}:</label>
     <p>{$class_attribute.data_int1|wash}&nbsp;MB</p>
 </div>
+
+<div class="block">
+    <label>{'Alternative text is required'|i18n( 'design/standard/class/datatype' )}:</label>
+    <p>{if $class_attribute.data_int2|eq( 1 )}{'Yes'|i18n( 'design/standard/class/datatype' )}{else}{'No'|i18n( 'design/standard/class/datatype' )}{/if}</p>
+</div>

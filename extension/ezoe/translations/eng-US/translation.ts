@@ -1332,6 +1332,10 @@ Do you want more information about this issue?</translation>
         <source>Please enter a valid http or https address without user name and password.</source>
         <translation>Please enter a valid http or https address without user name and password.</translation>
     </message>
+    <message>
+        <source>required</source>
+        <translation>required</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

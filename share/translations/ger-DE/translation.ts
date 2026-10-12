@@ -111,6 +111,14 @@
         <source>Upload the file</source>
         <translation>Datei hochladen</translation>
     </message>
+    <message>
+        <source>Alternative text</source>
+        <translation>Alternativtext</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>erforderlich</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/classlist</name>
@@ -42832,6 +42840,22 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <name>design/standard/class/edit</name>
     <message>
         <source>Input did not validate</source>
+    <message>
+        <source>Alternative text is required</source>
+        <translation>Alternativtext ist erforderlich</translation>
+    </message>
+    <message>
+        <source>Editors cannot store an image in this field without an alternative text.</source>
+        <translation>Redakteure können in diesem Feld kein Bild ohne Alternativtext speichern.</translation>
+    </message>
+    <message>
+        <source>Trim the stored value</source>
+        <translation>Gespeicherten Wert trimmen</translation>
+    </message>
+    <message>
+        <source>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</source>
+        <translation>Leerzeichen, Tabulatoren und Zeilenumbrüche am Anfang und am Ende des Textes werden beim Speichern entfernt.</translation>
+    </message>
         <translation>Eingabe konnte nicht validiert werden</translation>
     </message>
     <message>
@@ -44917,6 +44941,10 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     <name>design/standard/content/diff</name>
     <message>
         <source>Version</source>
+    <message>
+        <source>required</source>
+        <translation>erforderlich</translation>
+    </message>
         <translation type="obsolete">Version</translation>
     </message>
     <message>
@@ -59014,6 +59042,10 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <name>kernel/classes/datatypes/ezimage</name>
     <message>
         <source>Failed to fetch Image Handler. Please contact the site administrator.</source>
+    <message>
+        <source>An alternative text is required for this image.</source>
+        <translation>Für dieses Bild ist ein Alternativtext erforderlich.</translation>
+    </message>
         <translation>Konnte Image-Handler nicht aufrufen. Bitte wenden Sie sich an den Administrator.</translation>
     </message>
 </context>
