@@ -27,6 +27,27 @@ class eZUserType extends eZDataType
                                   'serialize_supported' => true ) );
     }
 
+    /**
+     * A copy of a user object into a new object (content/copy) does not take the original's draft along: the
+     * draft holds the original account's login, e-mail address and password hash, and the copy, which has no
+     * account yet, would show it and make it its own account on publishing. A new version or translation of the
+     * same object keeps it.
+     *
+     * @param eZContentObjectAttribute $contentObjectAttribute
+     * @param int|null $currentVersion
+     * @param eZContentObjectAttribute|null $originalContentObjectAttribute
+     */
+    function initializeObjectAttribute( $contentObjectAttribute, $currentVersion, $originalContentObjectAttribute )
+    {
+        if ( $originalContentObjectAttribute instanceof eZContentObjectAttribute &&
+             (int)$originalContentObjectAttribute->attribute( 'contentobject_id' ) !== (int)$contentObjectAttribute->attribute( 'contentobject_id' ) &&
+             (string)$contentObjectAttribute->attribute( 'data_text' ) !== '' )
+        {
+            $contentObjectAttribute->setAttribute( 'data_text', '' );
+            $contentObjectAttribute->setContent( null );
+        }
+    }
+
     /*!
      Delete stored object attribute
     */
@@ -262,12 +283,12 @@ class eZUserType extends eZDataType
         $user = $contentObjectAttribute->content();
         if ( !( $user instanceof eZUser ) )
         {
-            // create a default user account
+            // create a default user account. Its setting row is made once: a row that exists already (an account
+            // an administrator disabled, or one pending activation) keeps its is_enabled, where storing a new
+            // setting row over it enabled the account again
             $user = eZUser::create( $contentObjectAttribute->attribute( "contentobject_id" ) );
             $userID = $contentObjectAttribute->attribute( "contentobject_id" );
-            $isEnabled = 1;
-            $userSetting = eZUserSetting::create( $userID, $isEnabled );
-            $userSetting->store();
+            self::createSettingIfMissing( $userID );
 
             $user->store();
             $contentObjectAttribute->setContent( $user );
@@ -279,11 +300,27 @@ class eZUserType extends eZDataType
             {
                 // The account may exist only as a draft (content() made it from data_text): storing it creates
                 // the ezuser row, and it needs its ezuser_setting row as the default account above gets one,
-                // or signing in fails
+                // or signing in fails. Telling a new account from a stored one takes one lookup of the ezuser row by
+                // its primary key: the eZUser in hand does not say whether it was read or made, and the first version
+                // is stored only while the account is being created
                 $userID = $contentObjectAttribute->attribute( 'contentobject_id' );
                 $isNewAccount = !eZUser::fetch( $userID ) instanceof eZUser;
+                $hasLogin = trim( (string)$user->attribute( 'login' ) ) !== '';
+                if ( $isNewAccount && $hasLogin )
+                {
+                    // A new account takes a login (and, where they must be unique, an e-mail address) that no other
+                    // account has, also when it comes from a draft rather than from the form that checked them
+                    $conflict = self::accountConflict( $userID, $user->attribute( 'login' ), $user->attribute( 'email' ) );
+                    if ( $conflict !== null )
+                    {
+                        eZDebug::writeError( "The account of user object $userID is not created: $conflict", __METHOD__ );
+                        $contentObjectAttribute->setAttribute( 'data_text', '' );
+                        $contentObjectAttribute->setContent( null );
+                        return;
+                    }
+                }
                 $user->store();
-                if ( $isNewAccount )
+                if ( $isNewAccount && $hasLogin )
                 {
                     self::createSettingIfMissing( $userID );
                 }
@@ -348,14 +385,32 @@ class eZUserType extends eZDataType
                     eZDebug::writeError( 'E-mail address change: ' . $e->getMessage(), __METHOD__ );
                 }
             }
-            $user->store();
-            // A draft published for an account that had no ezuser row yet creates the account; it needs its
-            // ezuser_setting row like any new account
-            if ( !isset( $stored[0] ) )
+            $userID = (int)$contentObjectAttribute->attribute( 'contentobject_id' );
+            $hasLogin = trim( (string)$user->attribute( 'login' ) ) !== '';
+            $isNewAccount = !isset( $stored[0] ) && $hasLogin;
+            // A draft published for an account that had no ezuser row yet creates the account. Its login and
+            // e-mail address were checked by the form when the draft was made, but the draft may be older than
+            // an account that took them since, or not come from that form at all (a copy of another user's
+            // object carried its draft): it is not applied when another account has them
+            $conflict = $isNewAccount ? self::accountConflict( $userID, $user->attribute( 'login' ), $user->attribute( 'email' ) ) : null;
+            if ( $conflict !== null )
             {
-                self::createSettingIfMissing( $contentObjectAttribute->attribute( 'contentobject_id' ) );
+                eZDebug::writeError( "The draft of the account of user object $userID is not applied: $conflict", __METHOD__ );
+                $contentObjectAttribute->setContent( null );
             }
-            $contentObjectAttribute->setContent( $user );
+            else
+            {
+                // without an ezuser row a draft without a login makes no account (eZUser::store() stored a login of
+                // blanks)
+                if ( isset( $stored[0] ) || $hasLogin )
+                    $user->store();
+                // the new account needs its ezuser_setting row like any new account
+                if ( $isNewAccount )
+                {
+                    self::createSettingIfMissing( $userID );
+                }
+                $contentObjectAttribute->setContent( $user );
+            }
 
             // Clear draft info
             $contentObjectAttribute->setAttribute( 'data_text', '' );
@@ -400,11 +455,32 @@ class eZUserType extends eZDataType
             return null;
         foreach ( array( 'login', 'password_hash', 'email', 'password_hash_type' ) as $field )
         {
+            // true/false are scalars too, but no field of an account is one
             if ( !property_exists( $draft, $field ) ||
-                 ( $draft->$field !== null && !is_scalar( $draft->$field ) ) )
+                 ( $draft->$field !== null && ( !is_scalar( $draft->$field ) || is_bool( $draft->$field ) ) ) )
+                return null;
+        }
+        // The hash type is one eZUser knows (eZUser::PASSWORD_HASH_*), as setInformation() writes it. A plaintext
+        // "hash" is the password itself: a draft carries one only on a site that stores passwords that way
+        // ([UserSettings] HashType=plaintext), never on any other, where it would set a password nobody chose
+        if ( $draft->password_hash_type !== null )
+        {
+            if ( !is_numeric( $draft->password_hash_type ) || (string)(int)$draft->password_hash_type !== (string)$draft->password_hash_type ||
+                 eZUser::passwordHashTypeName( (int)$draft->password_hash_type ) === null )
+                return null;
+            if ( (int)$draft->password_hash_type === eZUser::PASSWORD_HASH_PLAINTEXT && eZUser::hashType() !== eZUser::PASSWORD_HASH_PLAINTEXT )
                 return null;
         }
         return $draft;
+    }
+
+    /**
+     * @return bool The draft can make an account that is not stored yet: it is one, with a login
+     */
+    private function isAccountDraft( $serializedDraft )
+    {
+        $draft = $this->unserializeDraft( $serializedDraft );
+        return $draft !== null && trim( (string)$draft->login ) !== '';
     }
 
     /**
@@ -473,7 +549,7 @@ class eZUserType extends eZDataType
         // A draft for an account that has no ezuser row yet is shown on a new, unsaved account, so the edit form
         // keeps the login and e-mail address that were entered. Without a draft there is no account: content()
         // stays null and storeObjectAttribute() creates the default one together with its ezuser_setting row.
-        if ( !empty( $serializedDraft ) && !$user instanceof eZUser && $this->unserializeDraft( $serializedDraft ) )
+        if ( !empty( $serializedDraft ) && !$user instanceof eZUser && $this->isAccountDraft( $serializedDraft ) )
         {
             $user = eZUser::create( $userID );
         }
@@ -783,18 +859,55 @@ class eZUserType extends eZDataType
     }
 
     /**
-     * Creates the ezuser_setting row of a new account, enabled, unless it has one: an account without that row
-     * cannot sign in.
+     * Creates the ezuser_setting row of a new account unless it has one: an account without that row cannot sign
+     * in. An existing row is never changed, so an account an administrator disabled, or one waiting for its
+     * activation, stays disabled.
+     *
+     * A new row is enabled, as the default account of storeObjectAttribute() always was: the user/register
+     * operation decides about activation after the object exists (sendActivationEmail() disables this row and
+     * stores the account key, [UserSettings] VerifyUserType), and user/activate enables it. An account that has an
+     * account key already is waiting for that activation and gets a disabled row.
      *
      * @param int $userID
+     * @return bool A row was created
      */
     private static function createSettingIfMissing( $userID )
     {
-        if ( !eZUserSetting::fetch( $userID ) instanceof eZUserSetting )
+        if ( eZUserSetting::fetch( $userID ) instanceof eZUserSetting )
+            return false;
+        $isEnabled = eZUserAccountKey::fetchByUserID( $userID ) instanceof eZUserAccountKey ? 0 : 1;
+        $userSetting = eZUserSetting::create( $userID, $isEnabled );
+        $userSetting->store();
+        return true;
+    }
+
+    /**
+     * Why a new account with this login and e-mail address cannot be stored for user object $userID: another
+     * account has the login, or the e-mail address where addresses must be unique, the checks
+     * validateObjectAttributeHTTPInput() makes on the form.
+     *
+     * @param int $userID
+     * @param string|null $login
+     * @param string|null $email
+     * @return string|null The reason, or null when the account can be stored
+     */
+    private static function accountConflict( $userID, $login, $email )
+    {
+        $login = (string)$login;
+        if ( trim( $login ) !== '' )
         {
-            $userSetting = eZUserSetting::create( $userID, 1 );
-            $userSetting->store();
+            $byLogin = eZUser::fetchByName( $login );
+            if ( $byLogin instanceof eZUser && (int)$byLogin->attribute( 'contentobject_id' ) !== (int)$userID )
+                return 'the login is taken by user ' . (int)$byLogin->attribute( 'contentobject_id' );
         }
+        $email = trim( (string)$email );
+        if ( $email !== '' && ( eZUser::authenticationMatch() & eZUser::AUTHENTICATE_EMAIL ) && eZUser::requireUniqueEmail() )
+        {
+            $byEmail = eZUser::fetchByEmail( $email );
+            if ( $byEmail instanceof eZUser && (int)$byEmail->attribute( 'contentobject_id' ) !== (int)$userID )
+                return 'the e-mail address is taken by user ' . (int)$byEmail->attribute( 'contentobject_id' );
+        }
+        return null;
     }
 
     /*!
