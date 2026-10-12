@@ -360,21 +360,32 @@ class eZAutoloadGenerator
      * Builds the file list for extension classes / kernel overrides across
      * all configured extension roots.
      *
+     * Left out of every package, besides the directories buildFileList() always skips:
+     *  - tests/ of the extension: its test cases, fixtures and the stand-ins a test bootstrap defines for kernel
+     *    classes (eZDB, eZINI, ...), which would otherwise become extension classes and kernel overrides;
+     *  - tests/ and Tests/ of a Composer package vendored inside the extension (vendor/<vendor>/<package>/tests):
+     *    test cases and fixtures of that package, never runtime classes, and not in its Composer autoloader either.
+     * Each rule names the directory itself: tests_old/, testsuite/ or a file tests.php stay in.
+     *
      * @param array $extraExcludeDirs
      * @return array
      */
     protected function buildExtensionFileList( array $extraExcludeDirs )
     {
         $files = array();
+        $dirSep = preg_quote( DIRECTORY_SEPARATOR, '@' );
         foreach ( $this->collectExtensionPackages() as $packagePath )
         {
-            // buildFileList() reports the files under the real path of the package, so the tests/ exclusion is
-            // anchored there too: with a relative extension root (the default "extension") it never matched, and
-            // the stubs of a test bootstrap (eZDB, eZINI, ...) became extension classes and kernel overrides
-            $realPackagePath = realpath( $packagePath );
-            $testsBase = $realPackagePath !== false ? $realPackagePath : $packagePath;
+            // buildFileList() reports the files under the real path of the package, so the exclusions are anchored
+            // there too: with a relative extension root (the default "extension") an expression built from the path
+            // as given never matched. A package whose path does not resolve lists no files (buildFileList() returns
+            // false for it), so it is skipped instead of getting an expression that could only match by accident.
+            if ( realpath( $packagePath ) === false )
+                continue;
+            $base = self::exclusionBase( $packagePath );
             $extraExcludeExtensionDirs = $extraExcludeDirs;
-            $extraExcludeExtensionDirs[] = '@^' . preg_quote( $testsBase, '@' ) . preg_quote( DIRECTORY_SEPARATOR, '@' ) . 'tests@';
+            $extraExcludeExtensionDirs[] = "@^{$base}{$dirSep}tests($|{$dirSep})@";
+            $extraExcludeExtensionDirs[] = "@^{$base}{$dirSep}vendor{$dirSep}[^{$dirSep}]+{$dirSep}[^{$dirSep}]+{$dirSep}(tests|Tests)($|{$dirSep})@";
             $packageFiles = $this->buildFileList( $packagePath, $extraExcludeExtensionDirs );
             if ( is_array( $packageFiles ) )
             {
@@ -382,6 +393,20 @@ class eZAutoloadGenerator
             }
         }
         return $files;
+    }
+
+    /**
+     * The start of an exclusion expression for the files under $path: its real path, under which buildFileList()
+     * reports the files, quoted for an expression delimited by "@". Where the path does not resolve, the path as
+     * given, quoted as well; buildFileList() lists no files there, so the expression cannot match anything wrongly.
+     *
+     * @param string $path
+     * @return string
+     */
+    protected static function exclusionBase( $path )
+    {
+        $realPath = realpath( $path );
+        return preg_quote( $realPath !== false ? $realPath : $path, '@' );
     }
 
     /**
@@ -424,13 +449,13 @@ class eZAutoloadGenerator
         // make sure ezcBaseFile::findRecursive and the exclusion filters we pass to it
         // work correctly on systems with another file seperator than the forward slash
         $sanitisedBasePath = DIRECTORY_SEPARATOR == '/' ? $path : strtr( $path, DIRECTORY_SEPARATOR, '/' );
-        $dirSep = preg_quote( DIRECTORY_SEPARATOR );
+        $dirSep = preg_quote( DIRECTORY_SEPARATOR, '@' );
 
         // The files are found under the real path of the base (buildFileList() resolves it), so
         // the exclusions are anchored there too: with an extension given by a relative path
         // (ezpgenerateautoloads.php extension/foo) neither .autoloadignore nor --exclude matched
-        $realExcludeBase = realpath( $path );
-        $excludeBase = $realExcludeBase !== false ? preg_quote( $realExcludeBase, '@' ) : $sanitisedBasePath;
+        // (the path as given, quoted, where it does not resolve: buildFileList() lists nothing there)
+        $excludeBase = self::exclusionBase( $path );
 
         $extraExcludeDirs = array();
         if ( $excludeDirs !== false and is_array( $excludeDirs ) )
@@ -510,7 +535,7 @@ class eZAutoloadGenerator
         $path = realpath( $path );
         if ( $path === false )
             return false;
-        $dirSep = preg_quote( DIRECTORY_SEPARATOR );
+        $dirSep = preg_quote( DIRECTORY_SEPARATOR, '@' );
         $exclusionFilter = array( "@^{$path}{$dirSep}(var|settings|benchmarks|bin|autoload|port_info|update|templates|tmp|UnitTest|lib{$dirSep}ezc)($|{$dirSep})@" );
 
         if ( !empty( $extraFilter ) and is_array( $extraFilter ) )

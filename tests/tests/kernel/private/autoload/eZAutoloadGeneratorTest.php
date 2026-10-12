@@ -2,10 +2,11 @@
 /**
  * eZAutoloadGenerator (bin/php/ezpgenerateautoloads.php) on an extension made for the test: the run mode chosen by
  * the options, which files are scanned (tests, settings and the .autoloadignore entries left out, blank lines and
- * comments in it ignored; the tests/ of every extension left out of the extension and kernel override arrays, also
- * under a relative extension root), which declarations become entries (classes, interfaces, traits and enums,
- * namespaced or not, never "Foo::class" or an anonymous class), duplicates and kernel classes refused with a warning,
- * the written file and the option checks.
+ * comments in it ignored; the tests/ of every extension and of every package vendored in one left out of the
+ * extension and kernel override arrays, also under a relative extension root, and only that directory, never
+ * tests_old/), which declarations become entries (classes, interfaces, traits and enums, namespaced or not, never
+ * "Foo::class" or an anonymous class), duplicates and kernel classes refused with a warning, the written file and
+ * the option checks.
  *
  * No database. The extension lives under var/tmp and is removed in tearDown(); the autoload files are written only
  * there.
@@ -242,6 +243,46 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
             $files = $generator->files();
             $this->assertSame( array( "$this->name/classes/keep.php" ), $files[$mode], "mode $mode" );
         }
+    }
+
+    public function testOnlyTheTestsDirectoryItselfIsLeftOut()
+    {
+        $p = $this->name;
+        $this->file( 'classes/keep.php', "<?php\nclass {$p}Keep {}\n" );
+        $this->file( 'tests/unit/FooTest.php', "<?php\nclass {$p}FooTest {}\n" );
+        $this->file( 'tests_old/old.php', "<?php\nclass {$p}Old {}\n" );
+        $this->file( 'testsuite/suite.php', "<?php\nclass {$p}Suite {}\n" );
+        $this->file( 'tests.php', "<?php\nclass {$p}TestsFile {}\n" );
+        $this->file( 'classes/tests/helper.php', "<?php\nclass {$p}Helper {}\n" );
+        foreach ( array( eZAutoloadGenerator::MODE_EXTENSION, eZAutoloadGenerator::MODE_KERNEL_OVERRIDE ) as $mode )
+        {
+            $generator = $this->generator( array( 'basePath' => $this->dir ) );
+            $generator->setMode( $mode );
+            $generator->roots = array( $this->dir );
+            $files = $generator->files()[$mode];
+            sort( $files );
+            $this->assertSame( array( "$p/classes/keep.php", "$p/classes/tests/helper.php", "$p/tests.php",
+                                      "$p/tests_old/old.php", "$p/testsuite/suite.php" ), $files, "mode $mode" );
+        }
+    }
+
+    public function testTestsOfAPackageVendoredInAnExtensionAreLeftOut()
+    {
+        $p = $this->name;
+        $this->file( 'classes/keep.php', "<?php\nclass {$p}Keep {}\n" );
+        $this->file( 'vendor/acme/tool/src/Tool.php', "<?php\nnamespace Acme\\Tool;\nclass Tool {}\n" );
+        $this->file( 'vendor/acme/tool/src/tests/Inner.php', "<?php\nnamespace Acme\\Tool\\tests;\nclass Inner {}\n" );
+        $this->file( 'vendor/acme/tool/tests/ToolTest.php', "<?php\nnamespace Acme\\Tool\\Tests;\nclass ToolTest {}\n" );
+        $this->file( 'vendor/acme/tool/Tests/Fixtures/Fixture.php', "<?php\nnamespace Acme\\Tool\\Tests\\Fixtures;\nclass Fixture {}\n" );
+        $this->file( 'vendor/acme/tool/tests_data/Data.php', "<?php\nnamespace Acme\\Tool;\nclass Data {}\n" );
+        $this->file( 'vendor/tests/x/y.php', "<?php\nclass {$p}VendorNamedTests {}\n" );
+        $generator = $this->generator( array( 'basePath' => $this->dir ) );
+        $generator->setMode( eZAutoloadGenerator::MODE_EXTENSION );
+        $generator->roots = array( $this->dir );
+        $files = $generator->files()[eZAutoloadGenerator::MODE_EXTENSION];
+        sort( $files );
+        $this->assertSame( array( "$p/classes/keep.php", "$p/vendor/acme/tool/src/Tool.php", "$p/vendor/acme/tool/src/tests/Inner.php",
+                                  "$p/vendor/acme/tool/tests_data/Data.php", "$p/vendor/tests/x/y.php" ), $files );
     }
 
     public function testExtensionGivenByAnAbsolutePath()
