@@ -10,6 +10,7 @@
  *
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f2284944b2), Copyright (C) Mugo Web, GPL v2
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f435c2f91e), Copyright (C) Mugo Web, GPL v2
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 4065ed16b3), Copyright (C) Mugo Web, GPL v2
  */
 
 /**
@@ -259,6 +260,10 @@ class eZURI
      */
     public function setURIString( $uri, $fullInitialize = true, $decode = null )
     {
+        // No request URI yet (the command line before eZSys is set up): an empty one
+        if ( $uri === null )
+            $uri = '';
+
         if ( strlen( $uri ) > 0 and
              $uri[0] == '/' )
             $uri = substr( $uri, 1 );
@@ -694,6 +699,11 @@ class eZURI
         if ( $href === null )
         {
             $href = '';
+        }
+        else if ( is_scalar( $href ) )
+        {
+            // A number (ezurl of a node id) is read character by character below
+            $href = (string)$href;
         }
 
         if ( preg_match( "#^[a-zA-Z0-9]+:#", $href ) || substr( $href, 0, 2 ) == '//' )
