@@ -9,6 +9,7 @@
  * @package lib
  *
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f2284944b2), Copyright (C) Mugo Web, GPL v2
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f435c2f91e), Copyright (C) Mugo Web, GPL v2
  */
 
 /**
@@ -74,11 +75,46 @@ class eZURI
      * Initializes with the URI string $uri. The URI string is split on / into an array.
      *
      * @param string $uri the URI to use
+     * @param bool|null $decode true: $uri is URL encoded and is decoded; false: $uri is decoded text already;
+     *                          null (default): decoded unless site.ini [URLTranslator] DecodeOnce is enabled
+     *                          (see decodeOnce())
      * @return void
     */
-    public function __construct( $uri )
+    public function __construct( $uri, $decode = null )
     {
-        $this->setURIString( $uri );
+        $this->setURIString( $uri, true, $decode );
+    }
+
+    /**
+     * Whether site.ini [URLTranslator] DecodeOnce is enabled. eZSys::requestURI() is URL decoded already, and by
+     * default every eZURI decodes its string again, so "/(foo)/bar%2Bbar" arrives as "bar bar" instead of
+     * "bar+bar". With DecodeOnce=enabled an eZURI takes its string as decoded text unless it is made with
+     * $decode = true, and the request URI is decoded once. Off (the shipped value): today's double decoding.
+     *
+     * The value is read on every call (the request URI is set up before the siteaccess is known, so the setting
+     * belongs in settings/override, not in a siteaccess).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit f435c2f91e), Copyright (C) Mugo Web, GPL v2
+     *
+     * @return bool
+     */
+    public static function decodeOnce()
+    {
+        $ini = eZINI::instance();
+        return $ini->hasVariable( 'URLTranslator', 'DecodeOnce' )
+            && $ini->variable( 'URLTranslator', 'DecodeOnce' ) === 'enabled';
+    }
+
+    /**
+     * Converts a decoded path string from UTF-8 to the internal encoding, as decodeIRI() does after decoding.
+     *
+     * @param string $str
+     * @return string
+     */
+    protected static function convertIRI( $str )
+    {
+        $codec = eZTextCodec::instance( 'utf-8' );
+        return $codec->convertString( $str );
     }
 
     /**
@@ -218,15 +254,18 @@ class eZURI
      *
      * @param string $uri
      * @param boolean $fullInitialize
+     * @param bool|null $decode true: $uri is URL encoded; false: decoded already; null: see __construct()
      * @return void
      */
-    public function setURIString( $uri, $fullInitialize = true )
+    public function setURIString( $uri, $fullInitialize = true, $decode = null )
     {
         if ( strlen( $uri ) > 0 and
              $uri[0] == '/' )
             $uri = substr( $uri, 1 );
 
-        $uri = eZURI::decodeIRI( $uri );
+        if ( $decode === null )
+            $decode = !self::decodeOnce();
+        $uri = $decode ? eZURI::decodeIRI( $uri ) : eZURI::convertIRI( $uri );
 
         $this->URI = $uri;
         $this->URIArray = explode( '/', $uri );
@@ -275,8 +314,8 @@ class eZURI
         {
             $this->UserArray = array();
         }
-        // No convertFilterString() here: decodeIRI() above already decoded the whole URI, the namefilter with
-        // it, into the internal charset. Decoding the namefilter again would turn an encoded "+" or "%" in it
+        // No convertFilterString() here: the whole URI, the namefilter with it, is decoded into the internal
+        // charset already (decodeIRI() above, or eZSys::requestURI() with DecodeOnce). Decoding the namefilter again would turn an encoded "+" or "%" in it
         // into something else.
     }
 
