@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3774a54ead), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package kernel
  */
@@ -85,6 +86,8 @@ class eZSearchEngine implements ezpSearchEngine
             $translationsByClassAttribute[(int) $attributeRow->attribute( 'contentclassattribute_id' )][] = $attributeRow;
         }
 
+        // The integer of a numeric word is kept within the range of the integer_value column (clampInteger())
+        $db = eZDB::instance();
         eZContentObject::recursionProtectionStart();
         foreach ( $currentVersion->contentObjectAttributes() as $attribute )
         {
@@ -115,7 +118,7 @@ class eZSearchEngine implements ezpSearchEngine
                     // Split text on whitespace
                     if ( is_numeric( trim( $text ) ) )
                     {
-                        $integerValue = (int) $text;
+                        $integerValue = $db->clampInteger( $text );
                     }
                     else
                     {
@@ -327,8 +330,7 @@ class eZSearchEngine implements ezpSearchEngine
             $indexWord = $indexArray[$i]['Word'];
             $contentClassAttributeID = $indexArray[$i]['ContentClassAttributeID'];
             $identifier = $indexArray[$i]['identifier'];
-            $integerValue = min( $indexArray[$i]['integer_value'], eZDBInterface::MAX_INT );
-            $integerValue = max( $integerValue, eZDBInterface::MIN_INT );
+            $integerValue = $db->clampInteger( $indexArray[$i]['integer_value'] );
             $wordID = $wordIDArray[$indexWord];
 
             if ( isset( $indexArray[$i+1] ) )

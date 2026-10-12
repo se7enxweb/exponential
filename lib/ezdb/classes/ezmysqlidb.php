@@ -25,6 +25,18 @@ class eZMySQLiDB extends eZDBInterface
     const RELATION_FOREIGN_KEY_BIT = 32;
 
     /**
+     * The range of an INT column (int(11) in the kernel schema): signed 32-bit (eZDBInterface::clampInteger()).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3774a54ead), Copyright (C) Mugo Web, GPL v2
+     *
+     * @var int
+     */
+    const MAX_INT = 2147483647;
+
+    /** @var int see MAX_INT */
+    const MIN_INT = -2147483648;
+
+    /**
      * Create a new eZMySQLiDB object and connects to the database backend.
      *
      * @param array $parameters

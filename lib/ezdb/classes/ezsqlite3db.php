@@ -116,6 +116,19 @@ class eZSQLite3DB extends eZDBInterface
     const STORAGE_DIRECTORY = 'var/storage/sqlite3';
 
     /**
+     * The range of an integer column: SQLite stores INTEGER as a signed 64-bit number, the range of a PHP
+     * integer here (eZDBInterface::clampInteger()).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3774a54ead), Copyright (C) Mugo Web, GPL v2
+     *
+     * @var int
+     */
+    const MAX_INT = PHP_INT_MAX;
+
+    /** @var int see MAX_INT */
+    const MIN_INT = PHP_INT_MIN;
+
+    /**
      * The file a DatabaseSettings Database value names: an absolute path as
      * it is (a Doctrine/SQLite URL bridged in), ":memory:", or a name in
      * STORAGE_DIRECTORY.

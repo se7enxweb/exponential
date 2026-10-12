@@ -143,18 +143,62 @@ class eZDBInterface
     const SERVER_SLAVE = 2;
 
     /**
-     * Maximal value for int columns
+     * Maximal value for int columns. A driver whose integer columns hold more (SQLite, MongoDB) has its own
+     * value; read it as $db::MAX_INT, or use clampInteger().
      *
      * @var int
      */
     const MAX_INT = 2147483647;
 
     /**
-     * Minimal value for int columns
+     * Minimal value for int columns, see MAX_INT
      *
      * @var int
      */
     const MIN_INT = -2147483648;
+
+    /**
+     * $value as an integer that an integer column of this database can hold: a number above MAX_INT of the
+     * driver becomes MAX_INT, one below MIN_INT becomes MIN_INT, a fraction is cut off, and a value that is not
+     * a number becomes 0. A number written as a float ("1e30") is compared before it is turned into an integer,
+     * so it never wraps around.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3774a54ead), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param mixed $value
+     * @return int
+     */
+    public function clampInteger( $value )
+    {
+        $max = static::MAX_INT;
+        $min = static::MIN_INT;
+        if ( is_bool( $value ) )
+            return (int)$value;
+        if ( is_string( $value ) )
+            $value = trim( $value );
+        if ( !is_int( $value ) )
+        {
+            if ( !is_numeric( $value ) )
+                return 0;
+            if ( is_string( $value ) && preg_match( '/^[+-]?[0-9]+$/', $value ) )
+            {
+                // Digits only: PHP stops at PHP_INT_MAX / PHP_INT_MIN, so the cast is exact or at the limit
+                $value = (int)$value;
+            }
+            else
+            {
+                $float = (float)$value;
+                if ( is_nan( $float ) )
+                    return 0;
+                if ( $float >= (float)$max )
+                    return $max;
+                if ( $float <= (float)$min )
+                    return $min;
+                $value = (int)$float;
+            }
+        }
+        return max( $min, min( $max, $value ) );
+    }
 
     /**
      * Creates a new eZDBInterface object and connects to the database backend.

@@ -22,6 +22,18 @@
 class eZPostgreSQLDB extends eZDBInterface
 {
     /**
+     * The range of an integer column: signed 32-bit (eZDBInterface::clampInteger()).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3774a54ead), Copyright (C) Mugo Web, GPL v2
+     *
+     * @var int
+     */
+    const MAX_INT = 2147483647;
+
+    /** @var int see MAX_INT */
+    const MIN_INT = -2147483648;
+
+    /**
      * Creates a new eZPostgreSQLDB object and connects to the database.
      *
      * @param array $parameters

@@ -17,6 +17,19 @@
 
 class expMongoDB extends eZDBInterface
 {
+    /**
+     * The range of an integer field: MongoDB stores a PHP integer as a signed 64-bit number (int64), so the
+     * range of a PHP integer here (eZDBInterface::clampInteger()).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3774a54ead), Copyright (C) Mugo Web, GPL v2
+     *
+     * @var int
+     */
+    const MAX_INT = PHP_INT_MAX;
+
+    /** @var int see MAX_INT */
+    const MIN_INT = PHP_INT_MIN;
+
     var $databaseName = "";
 
     /** @var string Last error message (cleared on each successful operation) */

@@ -51,6 +51,11 @@
             <directory suffix="Test.php">tests/tests/kernel/datatypes</directory>
         </testsuite>
 
+        <!-- the built-in search engine (kernel/search); the database tests roll back what they write -->
+        <testsuite name="kernel-search">
+            <directory suffix="Test.php">tests/tests/kernel/search</directory>
+        </testsuite>
+
         <!-- kernel/private (REST, console commands, kernel helpers); the older *_test.php files there are not run -->
         <testsuite name="kernel-private">
             <directory suffix="Test.php">tests/tests/kernel/private</directory>

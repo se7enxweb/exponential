@@ -250,6 +250,16 @@ MySQL on PHP 8.1 and later throws `eZDBException` instead of PHP's `mysqli_sql_e
 is unchanged). Thanks to Mugo Web, whose LoveStack commit 3d18f47551 carried MySQL's error codes into the
 exceptions first.
 
+### Numbers in the built-in search index
+
+The built-in search engine stores each word of a text with its value as a number, so that a search can filter on
+numbers. A very large number in a text field (a 20-digit order number, `1e30`) no longer breaks indexing on MySQL
+or PostgreSQL: it is stored as the largest number the column holds, and the object is indexed with all its other
+words. Each driver knows the range of its integer columns, `$db::MAX_INT` and `$db::MIN_INT` (signed 32-bit for
+MySQL, PostgreSQL and Oracle, signed 64-bit for SQLite and MongoDB); `$db->clampInteger( $value )` gives a value
+within that range, cuts a fraction off as `(int)` does and gives 0 for anything that is not a number. On for every
+installation; nothing to do on an upgrade. With thanks to Mugo Web (LoveStack, commit `3774a54ead`).
+
 Depth: [SQLite database support](../features/6.0/sqlite-database.md), [SQLite 3 driver](../specifications/6.0/sqlite3-database-driver.md), [database drivers 16 to 30 September 2026](../specifications/6.0/database-drivers-2026-09.md), [SQLite and Oracle driver behaviour](../specifications/6.0/database-drivers-sqlite-oracle.md), [MongoDB support](../features/6.0/mongodb-database-support.md).
 
 ## 8. Read the logs
