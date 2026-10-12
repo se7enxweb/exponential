@@ -6,7 +6,8 @@
  *  CT-01 - The content types are the shipped ones (objects, images, files) and the relation groups of content.ini
  *  CT-02 - Anything else, a path, a dot, another case or "auto" itself, is no content type
  *  CT-03 - ezoe/upload and ezoe/relations check the content type before it goes into the path of a template;
- *          ezoe/relations checks it after "auto" was resolved
+ *          ezoe/relations checks it after "auto" was resolved; ezoe/upload accepts "auto" only for an upload,
+ *          which posts to ezoe/upload/<object>/<version>/auto/1 and renders no template
  *  LO-01 - ezoe/load reads the EmbedID through Relations::parseEmbedId() and starts without an embedded object
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -71,8 +72,11 @@ class expOEContentTypeAndLoadTest extends PHPUnit\Framework\TestCase
     public function testTheViewsCheckTheContentTypeBeforeTheTemplatePath()
     {
         $upload = $this->source( 'upload' );
-        $check = strpos( $upload, 'if ( !Dialog::isContentType( $contentType ) )' );
+        $check = strpos( $upload, 'if ( !( $isUploadRequest && $contentType === \'auto\' ) && !Dialog::isContentType( $contentType ) )' );
         $this->assertNotFalse( $check );
+        $this->assertNotFalse( strpos( $upload, '$isUploadRequest = $forcedUpload || \\eZHTTPTool::instance()->hasPostVariable( \'uploadButton\' );' ) );
+        // what the dialogs, TinyMCE 8 and Tiptap post to
+        $this->assertStringContainsString( "'/auto/1'", file_get_contents( 'extension/ezoe/design/standard/templates/ezoe/upload_images.tpl' ) );
         $this->assertLessThan( strpos( $upload, "'design:ezoe/upload_' . \$contentType" ), $check );
         $this->assertLessThan( strpos( $upload, '$http->hasPostVariable( \'uploadButton\' )' ), $check );
 

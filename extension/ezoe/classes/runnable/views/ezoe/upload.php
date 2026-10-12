@@ -64,8 +64,11 @@ class Upload extends \Exponential\Runnable\ModuleView
            \eZExecution::cleanExit();
         }
 
-        // The content type goes into the path of the template (design:ezoe/upload_<type>.tpl): a known one only
-        if ( !Dialog::isContentType( $contentType ) )
+        // The content type goes into the path of the template (design:ezoe/upload_<type>.tpl): a known one only.
+        // The upload itself posts to ezoe/upload/<object>/<version>/auto/1 (the dialogs, TinyMCE 8, Tiptap) and
+        // ends before any template is used, so "auto" is accepted for an upload
+        $isUploadRequest = $forcedUpload || \eZHTTPTool::instance()->hasPostVariable( 'uploadButton' );
+        if ( !( $isUploadRequest && $contentType === 'auto' ) && !Dialog::isContentType( $contentType ) )
         {
            echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid or missing parameter: %parameter', null, array( '%parameter' => 'ContentType' ) );
            \eZExecution::cleanExit();
