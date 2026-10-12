@@ -285,7 +285,6 @@ The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647
 - [ ] `exp:audit status` shows every chain intact, `frequent` cronjob runs, alert recipients are right
 - [ ] Debug output only for your own address, with an expiry
 - [ ] Two-factor on for administrators
-- [ ] `exp:user-login-check` reports every login belongs to one account, and the login index is unique
 
 ## Related pages
 

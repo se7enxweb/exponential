@@ -21,3 +21,7 @@ var
 # a -k run here wrote 1029 entries, every one of them inside .claude/worktrees.
 # The entry is a pattern matched from the root, so the dot is escaped.
 \.claude
+#
+# .devtools holds the CI tooling (PHPStan, phpcs) and its caches; PHPStan writes generated
+# container classes there, which a -k run otherwise maps as kernel classes.
+\.devtools
