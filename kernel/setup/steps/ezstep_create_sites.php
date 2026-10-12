@@ -66,6 +66,11 @@ class eZStepCreateSites extends eZStepInstaller
                                       'bccie_overview', 'syndication' );
 
     /**
+     * Node view tabs of the editor siteaccess before its access extensions' tabs (see editorAdditionalTabs()).
+     */
+    const EDITOR_ADDITIONAL_TABS = array( 'roles', 'policies', 'eztags', 'authors' );
+
+    /**
      * The Admin UI siteaccess (extension exp_adminui, design adminui): made from the admin siteaccess whenever the
      * extension is in the installation, reached by URI only (/adminui), never given a host or port of its own.
      */
@@ -467,6 +472,64 @@ class eZStepCreateSites extends eZStepInstaller
         }
     }
 
+    /**
+     * The node view tabs of the editor siteaccess (admininterface.ini [WindowControlsSettings] AdditionalTabs[]): the
+     * editor's own list, then the tabs its access extensions declare in their own settings. The editor's list
+     * starts with an empty AdditionalTabs[], and an access extension's settings are read before the siteaccess's,
+     * so without this an access extension copied from the admin siteaccess (expai) would be switched on without
+     * its tabs. Global extensions are read after the siteaccess and add their tabs themselves.
+     *
+     * @param array $accessExtensions ActiveAccessExtensions[] of the editor siteaccess (a copy of the admin's)
+     * @param string $extensionRoot the extension directory of the installation
+     * @return array tab identifiers, each once, in order
+     */
+    static function editorAdditionalTabs( array $accessExtensions, $extensionRoot = 'extension' )
+    {
+        $tabs = self::EDITOR_ADDITIONAL_TABS;
+        foreach ( self::extensionAdditionalTabs( $accessExtensions, $extensionRoot ) as $tab )
+        {
+            if ( !in_array( $tab, $tabs, true ) )
+                $tabs[] = $tab;
+        }
+        return $tabs;
+    }
+
+    /**
+     * The AdditionalTabs[] that extensions declare in their own settings/admininterface.ini(.append.php), in the
+     * order of the extension list, each once. An extension without the file, or not in the installation, adds none.
+     *
+     * @param array $extensions extension names
+     * @param string $extensionRoot the extension directory of the installation
+     * @return array
+     */
+    static function extensionAdditionalTabs( array $extensions, $extensionRoot = 'extension' )
+    {
+        $tabs = array();
+        $root = rtrim( (string)$extensionRoot, '/' );
+        foreach ( $extensions as $extension )
+        {
+            $extension = trim( (string)$extension );
+            if ( $extension === '' || !preg_match( '#^[A-Za-z0-9_.-]+$#', $extension ) || strpos( $extension, '..' ) !== false )
+                continue;
+            $dir = $root . '/' . $extension . '/settings';
+            foreach ( array( 'admininterface.ini', 'admininterface.ini.append', 'admininterface.ini.append.php' ) as $file )
+            {
+                if ( !is_file( $dir . '/' . $file ) )
+                    continue;
+                $ini = new eZINI( $file, $dir, null, false, null, true );
+                if ( !$ini->hasVariable( 'WindowControlsSettings', 'AdditionalTabs' ) )
+                    continue;
+                foreach ( (array)$ini->variable( 'WindowControlsSettings', 'AdditionalTabs' ) as $tab )
+                {
+                    $tab = trim( (string)$tab );
+                    if ( $tab !== '' && !in_array( $tab, $tabs, true ) )
+                        $tabs[] = $tab;
+                }
+            }
+        }
+        return $tabs;
+    }
+
     function createEditorSiteAccess( $adminSiteaccessName, $editorSiteaccessName )
     {
         $adminDir = "settings/siteaccess/$adminSiteaccessName";
@@ -506,7 +569,10 @@ class eZStepCreateSites extends eZStepInstaller
         $toolbar->setVariable( 'Toolbar_admin_right', 'Tool', array( 'admin_bookmarks', 'admin_current_user', 'admin_preferences' ) );
         $toolbar->setVariable( 'Toolbar_admin_developer', 'Tool', array() );
         $interface = new eZINI( 'admininterface.ini.append.php', $editorDir, null, null, null, true, true );
-        $interface->setVariable( 'WindowControlsSettings', 'AdditionalTabs', array( 'roles', 'policies', 'eztags', 'authors' ) );
+        $accessExtensions = $site->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
+            ? (array)$site->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) : array();
+        $interface->setVariable( 'WindowControlsSettings', 'AdditionalTabs',
+                                 self::editorAdditionalTabs( $accessExtensions, eZExtension::baseDirectory() ) );
         $interface->setVariable( 'WindowControlsSettings', 'HiddenTabs', array( 'layouts' ) );
         return $menu->save( false, false, false, false, true, true )
             && $toolbar->save( false, false, false, false, true, true )
