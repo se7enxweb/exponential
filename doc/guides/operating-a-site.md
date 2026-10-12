@@ -259,6 +259,7 @@ Where to look first:
 | What | Where | How |
 |---|---|---|
 | PHP and application errors | `var/log/error.log`, `var/log/debug.log` | `tail -n 50 var/log/error.log` |
+| PHP deprecations (code that a later PHP version will refuse) | `var/log/deprecated.log` | `sort var/log/deprecated.log \| uniq -c \| sort -rn \| head` |
 | Cronjob output | `var/log/` and, for jobs started from the browser, `cronjobs/output.log` and `cronjobs/error.log` in the siteaccess var directory | **Setup > Cronjobs**, section *Output* |
 | Installer | `var/log/kickstart.log` (passwords masked) | `tail -n 50 var/log/kickstart.log` |
 | Who did what (logins, content changes, permission changes) | the audit trail | `php bin/php/audit.php status --allow-root-user` |
@@ -272,6 +273,36 @@ php bin/php/audit.php verify --allow-root-user
 ```
 
 Expected output of `status`: `Audit: enabled` and one line per channel (`content`, `access`, `system`, ...) ending in `intact`. To see more in the page itself while you investigate, set `DebugOutput=enabled` in `settings/override/site.ini.append.php` block `[DebugSettings]`, reload the page, and switch it off again; never leave it on in production. Depth: [Audit trail](../features/6.0/audit-trail.md), [audit event model](../specifications/6.0/audit-event-model.md), [debug output improvements](../features/6.0/debug-output-improvements.md).
+
+### PHP deprecations and log file sizes
+
+PHP 8 reports a deprecation for every use of something a later PHP version removes, often the same one many times
+in one page. They have a log of their own, `var/log/deprecated.log`, with each distinct message written once per
+request; they are not kept in memory or listed in the debug output, which only counts them (the `depr` value of the
+[debug bar](../bc/6.0/debug-bar.md#the-pinned-bar), and the warning count). For a developer the file is the list of
+what to fix before the next PHP upgrade; for an administrator a page with debug output on needs less memory.
+
+```ini
+# settings/override/site.ini.append.php
+[DebugSettings]
+# enabled (default): deprecations go to deprecated.log; disabled: they are warnings, as before 6.0.15
+DeprecatedLog=enabled
+# Also write them while debug output is off (production): add the level to the list
+AlwaysLog[]=deprecated
+```
+
+Developers write one of their own with `eZDebug::writeDeprecated( 'Use newThing() instead', __METHOD__ )`.
+
+Every log file (error.log, warning.log, deprecated.log, storage.log, the cronjob logs ...) is rotated when it is
+larger than `site.ini [FileSettings] LogFileMaxSize` (default 2097152 bytes, 2 MB) into `.1`, `.2`, `.3`;
+`LogFileRotateCount` (default 3) is how many are kept, 0 turns the rotation off. With the defaults a log takes at
+most 8 MB on disk. The constants `EZPUBLISH_LOG_MAX_FILE_SIZE`, `CUSTOM_LOG_MAX_FILE_SIZE` and their `*_ROTATE_FILES`
+in `config.php` still win over these settings.
+
+Upgrading: both are on after the upgrade. Log files are rotated at 2 MB instead of 200 KB (set
+`LogFileMaxSize=204800` for the old size), and deprecations no longer appear in `warning.log` or the debug list
+(set `DeprecatedLog=disabled` for the old behavior). Both build on work by Mugo Web in LoveStack (commits
+e39dde30ff, fbbd333a85, e20570a7ad, b7832d110e), with thanks.
 
 Remove expired sessions and old versions regularly if you do not run the matching cron parts:
 

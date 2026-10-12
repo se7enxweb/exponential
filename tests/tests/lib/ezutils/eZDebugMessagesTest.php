@@ -253,7 +253,7 @@ class eZDebugMessagesTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( 'Warning', $this->debug->messageName( eZDebug::LEVEL_WARNING ) );
         $this->assertSame( 'TimingPoint', $this->debug->messageName( eZDebug::LEVEL_TIMING_POINT ) );
-        $this->assertCount( 6, $this->debug->messageTypes() );
+        $this->assertCount( 7, $this->debug->messageTypes() );
         $this->assertSame( eZDebug::SHOW_ALL, eZDebug::showTypes() );
         $this->assertNotEquals( 0, eZDebug::showMessage( eZDebug::SHOW_ERROR ) );
         eZDebug::showTypes( eZDebug::SHOW_ERROR );

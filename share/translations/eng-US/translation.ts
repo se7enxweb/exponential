@@ -57258,6 +57258,14 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%count err</translation>
     </message>
     <message>
+        <source>%count depr</source>
+        <translation>%count depr</translation>
+    </message>
+    <message>
+        <source>PHP deprecations, written to deprecated.log</source>
+        <translation>PHP deprecations, written to deprecated.log</translation>
+    </message>
+    <message>
         <source>Page summary</source>
         <translation>Page summary</translation>
     </message>

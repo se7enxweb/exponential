@@ -64700,6 +64700,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>%count Fehler</translation>
     </message>
     <message>
+        <source>%count depr</source>
+        <translation>%count veraltet</translation>
+    </message>
+    <message>
+        <source>PHP deprecations, written to deprecated.log</source>
+        <translation>PHP-Hinweise auf veraltete Funktionen, in deprecated.log geschrieben</translation>
+    </message>
+    <message>
         <source>Page summary</source>
         <translation>Zusammenfassung der Seite</translation>
     </message>

@@ -313,6 +313,14 @@ The summary in the bar shows the request at a glance; each value opens its tab:
 | peak memory | Memory | `Thresholds[memory_mb]` (else 50 % / 80 % of `memory_limit`) |
 | templates used (only with `ShowUsedTemplates`) | Templates | `Thresholds[templates]` |
 | warnings, errors | Messages (filtered to that level) | any warning is amber, any error red |
+| deprecations (`3 depr`) | Messages | any deprecation is amber |
+
+PHP deprecations are only counted in the bar: with `site.ini [DebugSettings] DeprecatedLog=enabled` (the default)
+each distinct message is written once per request to `var/log/deprecated.log`, and none is kept in memory or listed
+in the Messages tab. They are still part of the warning count of the page (the "Some general warnings occurred" box
+of `DisplayDebugWarnings`). The Settings tab switches `DeprecatedLog` ("Deprecations to deprecated.log"); off,
+deprecations are warnings again, listed one by one. See
+[Deprecations and log sizes](../../guides/operating-a-site.md#php-deprecations-and-log-file-sizes).
 
 The levels come from `expDebugBarSummary` when it is loaded, so the thresholds in `debugbar.ini` apply; otherwise
 the report's own defaults.

@@ -110,12 +110,14 @@ final class ezpRestDebug
                          'warning' => eZDebug::LEVEL_WARNING,
                          'error' => eZDebug::LEVEL_ERROR,
                          'debug' => eZDebug::LEVEL_DEBUG,
-                         'strict' => eZDebug::LEVEL_STRICT );
+                         'strict' => eZDebug::LEVEL_STRICT,
+                         'deprecated' => eZDebug::LEVEL_DEPRECATED );
         $debugSettings['always-log'] = array();
         foreach ( $logMap as $name => $level )
         {
             $debugSettings['always-log'][$level] = in_array( $name, $logList );
         }
+        $debugSettings['deprecated-log'] = ( $ini->hasVariable( 'DebugSettings', 'DeprecatedLog' ) && $ini->variable( 'DebugSettings', 'DeprecatedLog' ) === 'disabled' ) ? 'disabled' : 'enabled';
         eZDebug::updateSettings( $debugSettings );
     }
 

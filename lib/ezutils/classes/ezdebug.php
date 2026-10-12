@@ -4,6 +4,7 @@
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits fbbd333a85, e20570a7ad, b7832d110e, e39dde30ff), Copyright (C) Mugo Web, GPL v2
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
@@ -63,6 +64,8 @@ class eZDebug
     const LEVEL_TIMING_POINT = 4;
     const LEVEL_DEBUG = 5;
     const LEVEL_STRICT = 6;
+    /// PHP deprecations (E_DEPRECATED, E_USER_DEPRECATED) and writeDeprecated(): written to deprecated.log, counted, not kept for the report
+    const LEVEL_DEPRECATED = 7;
 
     const SHOW_NOTICE = 1; // 1 << (EZ_LEVEL_NOTICE - 1)
     const SHOW_WARNING = 2; // 1 << (EZ_LEVEL_WARNING - 1)
@@ -70,7 +73,8 @@ class eZDebug
     const SHOW_TIMING_POINT = 8; // 1 << (EZ_LEVEL_TIMING_POINT - 1)
     const SHOW_DEBUG = 16; // 1 << (EZ_LEVEL_DEBUG - 1)
     const SHOW_STRICT = 32; // 1 << (EZ_LEVEL_STRICT - 1)
-    const SHOW_ALL = 63; // EZ_SHOW_NOTICE | EZ_SHOW_WARNING | EZ_SHOW_ERROR | EZ_SHOW_TIMING_POINT | EZ_SHOW_DEBUG | EZ_SHOW_STRICT
+    const SHOW_DEPRECATED = 64; // 1 << (EZ_LEVEL_DEPRECATED - 1)
+    const SHOW_ALL = 127; // EZ_SHOW_NOTICE | EZ_SHOW_WARNING | EZ_SHOW_ERROR | EZ_SHOW_TIMING_POINT | EZ_SHOW_DEBUG | EZ_SHOW_STRICT | SHOW_DEPRECATED
 
     const HANDLE_NONE = 0;
     const HANDLE_FROM_PHP = 1;
@@ -107,7 +111,8 @@ class eZDebug
                                       self::LEVEL_WARNING => array(),
                                       self::LEVEL_ERROR => array(),
                                       self::LEVEL_DEBUG => array(),
-                                      self::LEVEL_STRICT => array() );
+                                      self::LEVEL_STRICT => array(),
+                                      self::LEVEL_DEPRECATED => array() );
 
         $this->OutputFormat = array( self::LEVEL_NOTICE => array( "color" => "green",
                                                                'style' => 'notice',
@@ -132,7 +137,11 @@ class eZDebug
                                      self::LEVEL_STRICT => array( "color" => "purple",
                                                               'style' => 'strict',
                                                               'xhtml-identifier' => 'ezdebug-first-strict',
-                                                              'name' => 'Strict' ) );
+                                                              'name' => 'Strict' ),
+                                     self::LEVEL_DEPRECATED => array( 'color' => 'gray',
+                                                              'style' => 'deprecated',
+                                                              'xhtml-identifier' => 'ezdebug-first-deprecated',
+                                                              'name' => 'Deprecated' ) );
         $this->LogFiles = array( self::LEVEL_NOTICE => array( "var/log/",
                                                            "notice.log" ),
                                  self::LEVEL_WARNING => array( "var/log/",
@@ -142,31 +151,37 @@ class eZDebug
                                  self::LEVEL_DEBUG => array( "var/log/",
                                                           "debug.log" ),
                                  self::LEVEL_STRICT => array( 'var/log/',
-                                                           'strict.log' ) );
+                                                           'strict.log' ),
+                                 self::LEVEL_DEPRECATED => array( 'var/log/',
+                                                           'deprecated.log' ) );
         $this->MessageTypes = array( self::LEVEL_NOTICE,
                                      self::LEVEL_WARNING,
                                      self::LEVEL_ERROR,
                                      self::LEVEL_TIMING_POINT,
                                      self::LEVEL_DEBUG,
-                                     self::LEVEL_STRICT );
+                                     self::LEVEL_STRICT,
+                                     self::LEVEL_DEPRECATED );
         $this->MessageNames = array( self::LEVEL_NOTICE => 'Notice',
                                      self::LEVEL_WARNING => 'Warning',
                                      self::LEVEL_ERROR => 'Error',
                                      self::LEVEL_TIMING_POINT => 'TimingPoint',
                                      self::LEVEL_DEBUG => 'Debug',
-                                     self::LEVEL_STRICT => 'Strict' );
+                                     self::LEVEL_STRICT => 'Strict',
+                                     self::LEVEL_DEPRECATED => 'Deprecated' );
         $this->LogFileEnabled = array( self::LEVEL_NOTICE => true,
                                        self::LEVEL_WARNING => true,
                                        self::LEVEL_ERROR => true,
                                        self::LEVEL_TIMING_POINT => true,
                                        self::LEVEL_DEBUG => true,
-                                       self::LEVEL_STRICT => true );
+                                       self::LEVEL_STRICT => true,
+                                       self::LEVEL_DEPRECATED => true );
         $this->AlwaysLog = array( self::LEVEL_NOTICE => false,
                                   self::LEVEL_WARNING => false,
                                   self::LEVEL_ERROR => true, // Error is on by default, due to its importance
                                   self::LEVEL_TIMING_POINT => false,
                                   self::LEVEL_DEBUG => false,
-                                  self::LEVEL_STRICT => false );
+                                  self::LEVEL_STRICT => false,
+                                  self::LEVEL_DEPRECATED => false );
         $this->GlobalLogFileEnabled = true;
         if ( isset( $GLOBALS['eZDebugLogFileEnabled'] ) )
         {
@@ -196,11 +211,25 @@ class eZDebug
                                       self::LEVEL_WARNING => array(),
                                       self::LEVEL_ERROR => array(),
                                       self::LEVEL_DEBUG => array(),
-                                      self::LEVEL_STRICT => array() );
+                                      self::LEVEL_STRICT => array(),
+                                      self::LEVEL_DEPRECATED => array() );
         $this->TimeAccumulatorList = array();
         $this->TimeAccumulatorGroupList = array();
         $this->topReportsList = array();
         $this->bottomReportsList = array();
+        self::resetDeprecations();
+    }
+
+    /**
+     * Forgets the deprecations of the request so far: their count and which messages were written
+     * (writeDeprecated()). The web kernel calls it when a request starts, so a persistent worker whose
+     * warm-up saw deprecations still writes them in its requests.
+     *
+     * @return void
+     */
+    static function resetDeprecations()
+    {
+        unset( $GLOBALS['eZDebugDeprecatedCount'], $GLOBALS['eZDebugDeprecatedSeen'] );
     }
 
     /*!
@@ -389,7 +418,13 @@ class eZDebug
         if ( !( error_reporting() & $errno ) ) // respect PHP error_reporting levels
             return true;
         if ( !eZDebug::isDebugEnabled() )
-            return;
+        {
+            // With debug output off a PHP deprecation is still written when site.ini [DebugSettings]
+            // AlwaysLog[]=deprecated asks for it (and deprecated.log is in use); nothing else is.
+            $isDeprecation = ( $errno === E_DEPRECATED || $errno === E_USER_DEPRECATED );
+            if ( !$isDeprecation || !eZDebug::isDeprecatedLogEnabled() || !eZDebug::alwaysLogMessage( self::LEVEL_DEPRECATED ) )
+                return;
+        }
         $str = "$errstr in $errfile on line $errline";
         if ( empty( $GLOBALS['eZDebugPHPErrorNames'] ) )
         {
@@ -438,10 +473,15 @@ class eZDebug
             case 'E_CORE_WARNING':
             case 'E_COMPILE_WARNING':
             case 'E_USER_WARNING':
+            {
+                $this->writeWarning( $str, 'PHP: ' . $errname );
+            } break;
+
             case 'E_DEPRECATED':
             case 'E_USER_DEPRECATED':
             {
-                $this->writeWarning( $str, 'PHP: ' . $errname );
+                // deprecated.log, once per message and request (a warning, as before, with DeprecatedLog=disabled)
+                $this->writeDeprecated( $str, 'PHP: ' . $errname );
             } break;
 
             case 'E_NOTICE':
@@ -591,6 +631,103 @@ class eZDebug
         {
             $debug->write( $string, self::LEVEL_WARNING, $label, $backgroundClass, $alwaysLog );
         }
+    }
+
+    /**
+     * Writes a deprecation: PHP's E_DEPRECATED and E_USER_DEPRECATED (errorHandler()), or code that calls it.
+     *
+     * Deprecations used to be warnings, and PHP 8 raises many of them, often the same one hundreds of times in
+     * a request: every one was kept in memory for the debug report and listed in it. With site.ini
+     * [DebugSettings] DeprecatedLog=enabled (the default) a deprecation is written to var/log/deprecated.log
+     * instead, each distinct message once per request, and only counted: deprecatedCount(), the debug bar's
+     * summary, and the warning count (eZDebugWarningCount) it always was part of. Nothing is kept for the
+     * report. With DeprecatedLog=disabled it is a warning, as before.
+     *
+     * It is written while debug output is on, or with AlwaysLog[]=deprecated also while it is off.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits fbbd333a85, e20570a7ad, b7832d110e),
+     * Copyright (C) Mugo Web, GPL v2.
+     *
+     * @param mixed $string the message; an array or object is dumped
+     * @param string $label where it came from
+     * @param string $backgroundClass
+     * @return void
+     */
+    static function writeDeprecated( $string, $label = "", $backgroundClass = "" )
+    {
+        if ( !eZDebug::isDeprecatedLogEnabled() )
+        {
+            eZDebug::writeWarning( $string, $label, $backgroundClass );
+            return;
+        }
+
+        $alwaysLog = eZDebug::alwaysLogMessage( self::LEVEL_DEPRECATED );
+        $enabled = eZDebug::isDebugEnabled();
+        if ( !$alwaysLog and !$enabled )
+            return;
+
+        $show = eZDebug::showMessage( self::SHOW_DEPRECATED );
+        if ( !$alwaysLog and !$show )
+            return;
+
+        if ( is_object( $string ) || is_array( $string ) )
+            $string = eZDebug::dumpVariable( $string );
+        $string = (string)$string;
+
+        // Counted every time, as a deprecation and, as before, as a warning
+        if ( !isset( $GLOBALS['eZDebugDeprecatedCount'] ) )
+            $GLOBALS['eZDebugDeprecatedCount'] = 0;
+        ++$GLOBALS['eZDebugDeprecatedCount'];
+        $GLOBALS['eZDebugWarning'] = true;
+        if ( !isset( $GLOBALS['eZDebugWarningCount'] ) )
+            $GLOBALS['eZDebugWarningCount'] = 0;
+        ++$GLOBALS['eZDebugWarningCount'];
+
+        // Written once per message and request. Kept in $GLOBALS, which a persistent worker (Velocity) gives
+        // back as it was before the request, so nothing is carried into the next one; reset() empties it too.
+        $key = md5( $label . "\0" . $string );
+        if ( isset( $GLOBALS['eZDebugDeprecatedSeen'][$key] ) )
+            return;
+        $GLOBALS['eZDebugDeprecatedSeen'][$key] = true;
+
+        $debug = eZDebug::instance();
+        if ( $debug->HandleType == self::HANDLE_TO_PHP )
+        {
+            // If we get here only because of $alwaysLog we should not trigger a PHP error
+            if ( $enabled and $show )
+            {
+                if ( $label )
+                    $string = "$label: $string";
+                trigger_error( $string, E_USER_DEPRECATED );
+            }
+        }
+        else
+        {
+            // write() keeps no LEVEL_DEPRECATED entry for the report; it only writes the file
+            $debug->write( $string, self::LEVEL_DEPRECATED, $label, $backgroundClass, $alwaysLog );
+        }
+    }
+
+    /**
+     * How many deprecations this request wrote (or would have, but for the once-per-message rule), see
+     * writeDeprecated(). 0 with DeprecatedLog=disabled: they are warnings then.
+     *
+     * @return int
+     */
+    static function deprecatedCount()
+    {
+        return isset( $GLOBALS['eZDebugDeprecatedCount'] ) ? (int)$GLOBALS['eZDebugDeprecatedCount'] : 0;
+    }
+
+    /**
+     * Whether deprecations go to deprecated.log (site.ini [DebugSettings] DeprecatedLog, passed in by
+     * updateSettings() as 'deprecated-log'); true until the settings say otherwise.
+     *
+     * @return bool
+     */
+    static function isDeprecatedLogEnabled()
+    {
+        return !isset( $GLOBALS['eZDebugDeprecatedLog'] ) || $GLOBALS['eZDebugDeprecatedLog'];
     }
 
     /*!
@@ -783,6 +920,7 @@ class eZDebug
             case self::LEVEL_DEBUG:
             case self::LEVEL_TIMING_POINT:
             case self::LEVEL_STRICT:
+            case self::LEVEL_DEPRECATED:
                 break;
 
             default:
@@ -799,7 +937,8 @@ class eZDebug
             $fileName = $files[$verbosityLevel];
         if ( $this->MessageOutput & self::OUTPUT_MESSAGE_STORE or $alwaysLog )
         {
-            if ( ! eZDebug::isLogOnlyEnabled() and $enabled )
+            // A deprecation is only written to its log file, never kept for the report (writeDeprecated())
+            if ( ! eZDebug::isLogOnlyEnabled() and $enabled and $verbosityLevel !== self::LEVEL_DEPRECATED )
             {
                 $ip = eZSys::clientIP();
                 if ( !$ip )
@@ -1286,6 +1425,12 @@ class eZDebug
         if ( isset( $settings['log-only'] ) )
         {
             $GLOBALS['eZDebugLogOnly'] = ( $settings['log-only'] == 'enabled' );
+        }
+
+        // site.ini [DebugSettings] DeprecatedLog: deprecations to deprecated.log (enabled), or as warnings (disabled)
+        if ( isset( $settings['deprecated-log'] ) )
+        {
+            $GLOBALS['eZDebugDeprecatedLog'] = is_bool( $settings['deprecated-log'] ) ? $settings['deprecated-log'] : ( $settings['deprecated-log'] !== 'disabled' );
         }
 
         $GLOBALS['eZDebugAllowedByIP'] = ( isset( $settings['debug-by-ip'] ) && $settings['debug-by-ip'] ) ? self::isAllowedByCurrentIP( $settings['debug-ip-list'] ) : true;

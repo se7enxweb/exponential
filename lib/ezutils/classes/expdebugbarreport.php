@@ -3,6 +3,7 @@
  * File containing the expDebugBarReport class
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit fbbd333a85), Copyright (C) Mugo Web, GPL v2
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */
@@ -192,6 +193,8 @@ class expDebugBarReport
             'warnings'  => $messages['counts']['warning'],
             'errors'    => $messages['counts']['error'],
             'notices'   => $messages['counts']['notice'],
+            // Written to deprecated.log and counted only, never listed with the messages (eZDebug::writeDeprecated())
+            'deprecations' => eZDebug::deprecatedCount(),
             'levels'    => array(),
         );
 
@@ -484,6 +487,11 @@ class expDebugBarReport
                           self::t( '%count warn', array( '%count' => $s['warnings'] ) ), self::t( 'Warnings' ) );
         $chips[] = array( 'messages', 'errors', $s['errors'] > 0 ? 'high' : 'ok',
                           self::t( '%count err', array( '%count' => $s['errors'] ) ), self::t( 'Errors' ) );
+        // PHP deprecations: only their number, the messages are in deprecated.log (site.ini DeprecatedLog)
+        $deprecations = isset( $s['deprecations'] ) ? (int)$s['deprecations'] : 0;
+        $chips[] = array( 'messages', 'deprecations', $deprecations > 0 ? 'warn' : 'ok',
+                          self::t( '%count depr', array( '%count' => $deprecations ) ),
+                          self::t( 'PHP deprecations, written to deprecated.log' ) );
 
         $html = '<span class="exp-debug-summary" role="group" aria-label="' . self::h( 'Page summary' ) . '">';
         foreach ( $chips as $chip )

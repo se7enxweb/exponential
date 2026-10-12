@@ -55957,6 +55957,17 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/standard/debugbar</name>
+    <message>
+        <source>%count depr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP deprecations, written to deprecated.log</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>design/admin/setup/sitedata</name>
     <message>
         <source>Site data (%count)</source>

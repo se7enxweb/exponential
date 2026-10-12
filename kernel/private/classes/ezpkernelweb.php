@@ -243,6 +243,8 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         if ( $ini->variable( 'RegionalSettings', 'Debug' ) === 'enabled' )
             eZLocale::setIsDebugEnabled( true );
 
+        // Each request writes its own deprecations to deprecated.log, once per message
+        eZDebug::resetDeprecations();
         eZDebug::setHandleType( eZDebug::HANDLE_FROM_PHP );
 
         $GLOBALS['eZGlobalRequestURI'] = eZSys::serverVariable( 'REQUEST_URI' );

@@ -62,12 +62,31 @@ if ( !function_exists( 'eZDebugAlwaysLogLevels' ) )
                 'warning' => eZDebug::LEVEL_WARNING,
                 'error' => eZDebug::LEVEL_ERROR,
                 'debug' => eZDebug::LEVEL_DEBUG,
-                'strict' => eZDebug::LEVEL_STRICT
+                'strict' => eZDebug::LEVEL_STRICT,
+                'deprecated' => eZDebug::LEVEL_DEPRECATED
             ) as $name => $level )
         {
             $alwaysLog[$level] = is_array( $logList ) && in_array( $name, $logList );
         }
         return $alwaysLog;
+    }
+}
+
+if ( !function_exists( 'eZDebugDeprecatedLogSetting' ) )
+{
+    /**
+     * site.ini [DebugSettings] DeprecatedLog for eZDebug::updateSettings() ('deprecated-log'): 'enabled'
+     * writes PHP deprecations to deprecated.log, once per message and request, 'disabled' keeps them warnings.
+     * enabled when the setting is missing.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit fbbd333a85), Copyright (C) Mugo Web, GPL v2.
+     *
+     * @param eZINI $ini site.ini
+     * @return string 'enabled' or 'disabled'
+     */
+    function eZDebugDeprecatedLogSetting( $ini )
+    {
+        return ( $ini->hasVariable( 'DebugSettings', 'DeprecatedLog' ) && $ini->variable( 'DebugSettings', 'DeprecatedLog' ) === 'disabled' ) ? 'disabled' : 'enabled';
     }
 }
 
@@ -92,6 +111,7 @@ if ( !function_exists( 'eZUpdateDebugSettings' ) )
                     array(
                         'debug-enabled' => false,
                         'always-log' => eZDebugAlwaysLogLevels( eZINI::instance()->variable( 'DebugSettings', 'AlwaysLog' ) ),
+                        'deprecated-log' => eZDebugDeprecatedLogSetting( eZINI::instance() ),
                     )
                 );
                 return null;
@@ -105,6 +125,7 @@ if ( !function_exists( 'eZUpdateDebugSettings' ) )
                         array( 'enabled', 'enabled', 'disabled', 'enabled' )
                     );
                 $settings['always-log'] = eZDebugAlwaysLogLevels( $logList );
+                $settings['deprecated-log'] = eZDebugDeprecatedLogSetting( eZINI::instance() );
                 eZDebug::updateSettings( $settings );
                 return null;
         }
