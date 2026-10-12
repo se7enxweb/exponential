@@ -3009,7 +3009,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-32e7059fb9d504c20ff5d8d1269437a0  doc/changelogs/6.0/6.0.15.md
+4cc9fffb87837c87ce7b37d3ac0049f1  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6023,7 +6023,7 @@ e4ff6934b21338c7a03ea332852402d5  kernel/setup/radsurvey.php
 dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-dc24f3be321ae69a866fd9632ecf9294  kernel/setup/steps/ezstep_create_sites.php
+7bb55510bf967dc9d95810c1a62ca2d6  kernel/setup/steps/ezstep_create_sites.php
 3174823463cf9d0f9a18162ee233dc04  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -7452,6 +7452,7 @@ c8f42593fb63a6e7e3de2de5029d8368  tests/tests/kernel/classes/security/fixtures/e
 7e6b4523a39875330fdd94382fd0f3d8  tests/tests/kernel/classes/setup/AutoloadGeneratorOptionsTest.php
 4159402cb6f2996b0958f022dabe3050  tests/tests/kernel/classes/setup/EditorSiteaccessDefaultTest.php
 b26468a072e87640022ee9fe0bbb360e  tests/tests/kernel/classes/setup/EditorSiteaccessModulesTest.php
+728b364a823ae2d29c689cdff5b1c557  tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php
 f2423dc1a4140e9f8bb33a822575aec8  tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php
 84a806754eee94940f2ff8fab608690f  tests/tests/kernel/classes/setup/KickstarterFailureReasonTest.php
 b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php
