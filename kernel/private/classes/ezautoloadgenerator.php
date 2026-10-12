@@ -426,7 +426,7 @@ class eZAutoloadGenerator
         if ( $realDirectory === false || !is_dir( $realDirectory ) )
             return array();
 
-        $generator = new static( new ezpAutoloadGeneratorOptions( array( 'writeFiles' => false ) ) );
+        $generator = new self( new ezpAutoloadGeneratorOptions( array( 'writeFiles' => false ) ) );
         $files = $generator->buildFileList( $realDirectory );
         if ( !is_array( $files ) )
             return array();
