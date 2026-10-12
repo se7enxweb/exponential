@@ -262,10 +262,31 @@ class eZContentFunctionCollection
         return $result;
     }
 
+    /**
+     * The class filter type a fetch uses: $classFilterType when it gives one, otherwise, when it gives a class
+     * filter array, content.ini [FetchSettings] DefaultClassFilterType (include or exclude; empty, the default,
+     * keeps the type unset, so the array is ignored as before).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 9c0ff40a78), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param string|false $classFilterType
+     * @param array|false $classFilterArray
+     * @return string|false
+     */
+    static public function classFilterType( $classFilterType, $classFilterArray )
+    {
+        if ( $classFilterType || empty( $classFilterArray ) )
+            return $classFilterType;
+        $ini = eZINI::instance( 'content.ini' );
+        $default = $ini->hasVariable( 'FetchSettings', 'DefaultClassFilterType' ) ? $ini->variable( 'FetchSettings', 'DefaultClassFilterType' ) : '';
+        return in_array( $default, array( 'include', 'exclude' ), true ) ? $default : $classFilterType;
+    }
+
     static public function calendar( $parentNodeID, $offset, $limit, $depth, $depthOperator,
                                $classID, $attribute_filter, $extended_attribute_filter, $class_filter_type, $class_filter_array,
                                $groupBy, $mainNodeOnly, $ignoreVisibility, $limitation )
     {
+        $class_filter_type = self::classFilterType( $class_filter_type, $class_filter_array );
         $treeParameters = array( 'Offset' => $offset,
                                  'Limit' => $limit,
                                  'Limitation' => $limitation,
@@ -314,6 +335,7 @@ class eZContentFunctionCollection
                               $classID, $attribute_filter, $extended_attribute_filter, $class_filter_type, $class_filter_array,
                               $groupBy, $mainNodeOnly, $ignoreVisibility, $limitation, $asObject, $objectNameFilter, $loadDataMap = null )
     {
+        $class_filter_type = self::classFilterType( $class_filter_type, $class_filter_array );
         $treeParameters = array( 'Offset' => $offset,
                                  'OnlyTranslated' => $onlyTranslated,
                                  'Language' => $language,
@@ -374,6 +396,7 @@ class eZContentFunctionCollection
                                    $ignoreVisibility, $limitation, $mainNodeOnly, $extendedAttributeFilter, $objectNameFilter )
     {
         $childrenCount = null;
+        $class_filter_type = self::classFilterType( $class_filter_type, $class_filter_array );
 
         if ( is_numeric( $parentNodeID ) or is_array( $parentNodeID ) )
         {
