@@ -83,15 +83,14 @@ function getThirdPartySoftware( $pathToFile )
 
 if ( !function_exists( 'getExtensionsInfo' ) ) {
 /*!
-  Returns active extentions info in run-time
+  Returns the info of the extensions active in this siteaccess (eZExtension::extensionLists() 'here': ActiveExtensions,
+  this siteaccess's ActiveAccessExtensions and those switched on at run time, found on disk, in loading order), the
+  same extensions the dashboard and the update dashboard count as active in this siteaccess
 */
 function getExtensionsInfo()
 {
-    $siteINI = eZINI::instance();
-    $selectedExtensionArray       = $siteINI->variable( 'ExtensionSettings', "ActiveExtensions" );
-    $selectedAccessExtensionArray = $siteINI->variable( 'ExtensionSettings', "ActiveAccessExtensions" );
-    $selectedExtensions           = array_merge( $selectedExtensionArray, $selectedAccessExtensionArray );
-    $selectedExtensions           = array_unique( $selectedExtensions );
+    $lists = eZExtension::extensionLists( null, false );
+    $selectedExtensions = $lists['here'];
     $result = array();
     foreach ( $selectedExtensions as $extension )
     {
@@ -348,6 +347,7 @@ class About extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'third_party_software', $thirdPartySoftware );
         $tpl->setVariable( 'extensions', $extensions );
         $tpl->setVariable( 'extension_rows', $extensionRows );
+        $tpl->setVariable( 'extension_counts', \eZExtension::extensionCounts( null, false ) );
         $tpl->setVariable( 'third_party_rows', array_values( $thirdPartyRows ) );
         $tpl->setVariable( 'extension_sort', array( 'field'     => $sortBy,
                                                     'direction' => $sortDirection,

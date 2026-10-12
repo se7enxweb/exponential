@@ -123,7 +123,10 @@
                 {* the database and the extensions are system information (setup/info) *}
                 {if $can.info}
                 <dt>{'Database'|i18n( 'design/admin/dashboard' )}</dt><dd>{ezini( 'DatabaseSettings', 'DatabaseImplementation' )|wash}</dd>
-                <dt>{'Extensions'|i18n( 'design/admin/dashboard' )}</dt><dd>{$extensions|count}</dd>
+                {* counted as on Info > About and the update dashboard (eZExtension::extensionCounts()) *}
+                {def $extension_counts = fetch( 'setup', 'extension_counts' )}
+                <dt>{'Extensions'|i18n( 'design/admin/dashboard' )}</dt><dd>{'%active active in this siteaccess, %on_disk on disk'|i18n( 'design/admin/dashboard',, hash( '%active', $extension_counts.here, '%on_disk', $extension_counts.on_disk ) )}</dd>
+                {undef $extension_counts}
                 {/if}
             </dl>
             {if or( $can.info, $can.cache, $can.upgrade )}

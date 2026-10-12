@@ -7896,8 +7896,8 @@
         <translation>Website</translation>
     </message>
     <message>
-        <source>extensions loaded</source>
-        <translation>extensions loaded</translation>
+        <source>extensions active in this siteaccess, %on_disk on disk</source>
+        <translation>extensions active in this siteaccess, %on_disk on disk</translation>
     </message>
     <message>
         <source>third-party components</source>
@@ -59380,6 +59380,10 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>design/admin/dashboard</name>
+    <message>
+        <source>%active active in this siteaccess, %on_disk on disk</source>
+        <translation>%active active in this siteaccess, %on_disk on disk</translation>
+    </message>
     <message>
         <source>Here is what is happening on %site.</source>
         <translation>Here is what is happening on %site.</translation>

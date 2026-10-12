@@ -9587,8 +9587,8 @@
         <translation>Website</translation>
     </message>
     <message>
-        <source>extensions loaded</source>
-        <translation>Erweiterungen geladen</translation>
+        <source>extensions active in this siteaccess, %on_disk on disk</source>
+        <translation>Erweiterungen in diesem Siteaccess aktiv, %on_disk im Dateisystem</translation>
     </message>
     <message>
         <source>third-party components</source>
@@ -66826,6 +66826,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 </context>
 <context>
     <name>design/admin/dashboard</name>
+    <message>
+        <source>%active active in this siteaccess, %on_disk on disk</source>
+        <translation>%active in diesem Siteaccess aktiv, %on_disk im Dateisystem</translation>
+    </message>
     <message>
         <source>Here is what is happening on %site.</source>
         <translation>Das passiert gerade auf %site.</translation>

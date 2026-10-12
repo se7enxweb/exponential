@@ -7476,7 +7476,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>extensions loaded</source>
+        <source>extensions active in this siteaccess, %on_disk on disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -55878,6 +55878,13 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/admin/content/job</name>
     <message>
         <source>Open the result</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard</name>
+    <message>
+        <source>%active active in this siteaccess, %on_disk on disk</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

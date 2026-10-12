@@ -11,6 +11,7 @@
      extension_rows    one per extension: position, identifier, name, description, version,
                        license, url, copyright, author, includes; all plain text
      extension_sort    hash( 'field', 'direction', 'opposite' ) for parts/sortheader.tpl
+     extension_counts  eZExtension::extensionCounts(): on_disk, global, here (the rows), missing
 
    The styles are in stylesheets/ezinfo.css. The license text is a legal notice and is shown
    as it is. *}
@@ -39,7 +40,7 @@
 <div class="ezinfo-intro">
     <ul class="ezinfo-summary">
         <li class="ezinfo-summary-version"><span>{$label_version|wash}</span> <strong>{$ezinfo|wash}</strong></li>
-        <li><strong>{$extension_rows|count}</strong> {'extensions loaded'|i18n( 'design/admin/ezinfo/about' )}</li>
+        <li><strong>{$extension_rows|count}</strong> {'extensions active in this siteaccess, %on_disk on disk'|i18n( 'design/admin/ezinfo/about',, hash( '%on_disk', $extension_counts.on_disk ) )}</li>
         <li><strong>{$third_party_count}</strong> {'third-party components'|i18n( 'design/admin/ezinfo/about' )}</li>
         <li class="ezinfo-summary-license">GNU GPL v2</li>
     </ul>
