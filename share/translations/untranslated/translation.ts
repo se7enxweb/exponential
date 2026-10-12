@@ -8807,6 +8807,18 @@
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy this item to another location.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You do not have permission to copy this item.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -11872,6 +11884,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Content finder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -52089,6 +52105,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>File %1 lists no files. Copy it from the Exponential release this installation runs.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Site data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -55151,6 +55171,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%1 of %2 audit events</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Location add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main location change</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -55921,6 +55953,73 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/admin/dashboard</name>
     <message>
         <source>%active active in this siteaccess, %on_disk on disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/sitedata</name>
+    <message>
+        <source>Site data (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site data are name and value pairs the installation and its extensions keep in the database, such as the version of the installed database schema. This list is read only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates can read a row with fetch( 'content', 'site_data', hash( 'name', ... ) ) only when its name is listed in site.ini [SiteDataSettings] TemplateReadable[].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listed now: %names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No name is listed now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A whole name, or * for any characters (ezpublish-*).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Readable in templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No site data matches the filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no site data.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

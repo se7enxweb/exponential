@@ -10459,7 +10459,7 @@
     </message>
     <message>
         <source>Copy</source>
-        <translation type="obsolete">Kopieren</translation>
+        <translation>Kopieren</translation>
     </message>
     <message>
         <source>Create a copy of &lt;%child_name&gt;.</source>
@@ -11584,6 +11584,14 @@
     <message>
         <source>locations</source>
         <translation>Positionen</translation>
+    </message>
+    <message>
+        <source>Copy this item to another location.</source>
+        <translation>Dieses Element an einen anderen Ort kopieren.</translation>
+    </message>
+    <message>
+        <source>You do not have permission to copy this item.</source>
+        <translation>Sie haben keine Berechtigung, dieses Element zu kopieren.</translation>
     </message>
 </context>
 <context>
@@ -15191,6 +15199,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Content finder</source>
         <translation>Inhaltsfinder</translation>
+    </message>
+    <message>
+        <source>Site data</source>
+        <translation>Site-Daten</translation>
     </message>
 </context>
 <context>
@@ -61448,6 +61460,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>File %1 lists no files. Copy it from the Exponential release this installation runs.</source>
         <translation>Die Datei %1 führt keine Dateien auf. Kopieren Sie sie aus dem Exponential-Release, mit dem diese Installation läuft.</translation>
     </message>
+    <message>
+        <source>Site data</source>
+        <translation>Site-Daten</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -66867,6 +66883,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>%active in diesem Siteaccess aktiv, %on_disk im Dateisystem</translation>
     </message>
     <message>
+    <message>
+        <source>Location add</source>
+        <translation>Ort hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Location remove</source>
+        <translation>Ort entfernt</translation>
+    </message>
+    <message>
+        <source>Main location change</source>
+        <translation>Hauptort geändert</translation>
+    </message>
         <source>Here is what is happening on %site.</source>
         <translation>Das passiert gerade auf %site.</translation>
     </message>
@@ -69897,6 +69925,73 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/sitedata</name>
+    <message>
+        <source>Site data (%count)</source>
+        <translation>Site-Daten (%count)</translation>
+    </message>
+    <message>
+        <source>Site data are name and value pairs the installation and its extensions keep in the database, such as the version of the installed database schema. This list is read only.</source>
+        <translation>Site-Daten sind Paare aus Name und Wert, die die Installation und ihre Erweiterungen in der Datenbank ablegen, etwa die Version des installierten Datenbankschemas. Diese Liste kann nur gelesen werden.</translation>
+    </message>
+    <message>
+        <source>Templates can read a row with fetch( 'content', 'site_data', hash( 'name', ... ) ) only when its name is listed in site.ini [SiteDataSettings] TemplateReadable[].</source>
+        <translation>Templates können einen Eintrag mit fetch( 'content', 'site_data', hash( 'name', ... ) ) nur lesen, wenn sein Name in site.ini [SiteDataSettings] TemplateReadable[] aufgeführt ist.</translation>
+    </message>
+    <message>
+        <source>Listed now: %names.</source>
+        <translation>Derzeit aufgeführt: %names.</translation>
+    </message>
+    <message>
+        <source>No name is listed now.</source>
+        <translation>Derzeit ist kein Name aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alle anzeigen</translation>
+    </message>
+    <message>
+        <source>A whole name, or * for any characters (ezpublish-*).</source>
+        <translation>Ein vollständiger Name oder * für beliebige Zeichen (ezpublish-*).</translation>
+    </message>
+    <message>
+        <source>Site data</source>
+        <translation>Site-Daten</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>Readable in templates</source>
+        <translation>In Templates lesbar</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>No site data matches the filter.</source>
+        <translation>Keine Site-Daten passen zum Filter.</translation>
+    </message>
+    <message>
+        <source>There is no site data.</source>
+        <translation>Es gibt keine Site-Daten.</translation>
     </message>
 </context>
 </TS>

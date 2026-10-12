@@ -9371,6 +9371,18 @@
         <source>locations</source>
         <translation>locations</translation>
     </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copy</translation>
+    </message>
+    <message>
+        <source>Copy this item to another location.</source>
+        <translation>Copy this item to another location.</translation>
+    </message>
+    <message>
+        <source>You do not have permission to copy this item.</source>
+        <translation>You do not have permission to copy this item.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -12755,6 +12767,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Content finder</source>
         <translation>Content finder</translation>
+    </message>
+    <message>
+        <source>Site data</source>
+        <translation>Site data</translation>
     </message>
 </context>
 <context>
@@ -54066,6 +54082,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>File %1 lists no files. Copy it from the Exponential release this installation runs.</source>
         <translation>File %1 lists no files. Copy it from the Exponential release this installation runs.</translation>
     </message>
+    <message>
+        <source>Site data</source>
+        <translation>Site data</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -59421,6 +59441,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%active active in this siteaccess, %on_disk on disk</translation>
     </message>
     <message>
+    <message>
+        <source>Location add</source>
+        <translation>Location add</translation>
+    </message>
+    <message>
+        <source>Location remove</source>
+        <translation>Location remove</translation>
+    </message>
+    <message>
+        <source>Main location change</source>
+        <translation>Main location change</translation>
+    </message>
         <source>Here is what is happening on %site.</source>
         <translation>Here is what is happening on %site.</translation>
     </message>
@@ -62462,6 +62494,73 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Cancel</source>
         <translation>Cancel</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/sitedata</name>
+    <message>
+        <source>Site data (%count)</source>
+        <translation>Site data (%count)</translation>
+    </message>
+    <message>
+        <source>Site data are name and value pairs the installation and its extensions keep in the database, such as the version of the installed database schema. This list is read only.</source>
+        <translation>Site data are name and value pairs the installation and its extensions keep in the database, such as the version of the installed database schema. This list is read only.</translation>
+    </message>
+    <message>
+        <source>Templates can read a row with fetch( 'content', 'site_data', hash( 'name', ... ) ) only when its name is listed in site.ini [SiteDataSettings] TemplateReadable[].</source>
+        <translation>Templates can read a row with fetch( 'content', 'site_data', hash( 'name', ... ) ) only when its name is listed in site.ini [SiteDataSettings] TemplateReadable[].</translation>
+    </message>
+    <message>
+        <source>Listed now: %names.</source>
+        <translation>Listed now: %names.</translation>
+    </message>
+    <message>
+        <source>No name is listed now.</source>
+        <translation>No name is listed now.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Show all</translation>
+    </message>
+    <message>
+        <source>A whole name, or * for any characters (ezpublish-*).</source>
+        <translation>A whole name, or * for any characters (ezpublish-*).</translation>
+    </message>
+    <message>
+        <source>Site data</source>
+        <translation>Site data</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Value</translation>
+    </message>
+    <message>
+        <source>Readable in templates</source>
+        <translation>Readable in templates</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>No site data matches the filter.</source>
+        <translation>No site data matches the filter.</translation>
+    </message>
+    <message>
+        <source>There is no site data.</source>
+        <translation>There is no site data.</translation>
     </message>
 </context>
 </TS>
