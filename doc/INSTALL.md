@@ -73,7 +73,7 @@ Apache/nginx with PHP-FPM ([section 8](#8-serve-the-site-web-server-https-and-pe
 |---|---|
 | Version | **PHP 8.0 to 8.5**. `composer.json` declares `^8.0` (and accepts later 8.x). PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux 9, Rocky Linux 9) runs Exponential under Apache or PHP-FPM. Use the newest PHP your system offers. See [PHP 8.0 support](bc/6.0/php-8.0-support.md). |
 | Exponential Velocity | needs **PHP 8.1** or later and the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). |
-| Release tags | `v6.0.8` to `v6.0.14` require PHP 8.1; on PHP 8.0 install the 6.0.15 line (`dev-main`) until its tag is published. |
+| Release tags | `v6.0.8` to `v6.0.14` require PHP 8.1; on PHP 8.0 install the 6.0.15 line (`dev-main`, which Composer also knows as `6.0.x-dev`) until its tag is published. |
 | 64-bit PHP | needed for more than 30 languages (`composer.json`, `suggest`). |
 | `memory_limit` | at least `64M` (setup check `memory_limit`). Restart the web server or PHP-FPM after editing `php.ini`. |
 | `max_execution_time` | at least `30` seconds (setup check `execution_time`). |
@@ -165,7 +165,7 @@ The first line names the version, for example `console (Exponential) 6.0.15stabl
 or later add it with:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.44
+composer require se7enxweb/exponential-velocity:~0.0.4.50
 ```
 
 ## 4. Choose an install method
@@ -684,6 +684,39 @@ More: [SQLite database support](features/6.0/sqlite-database.md),
    `php bin/php/ezpgenerateautoloads.php -e` (`-k` for the kernel).
 6. **Back up** the database and `var/storage`, `settings/override`, `settings/siteaccess`
    ([Operating a site](guides/operating-a-site.md#6-back-up-and-restore)).
+7. **Optional: the job queue and Exponential Intelligence.** `composer.json` brings the job queue `expqueue` and
+   the writing assistant `expai` into `extension/`, both inactive. To use them:
+
+   ```ini
+   # settings/override/site.ini.append.php: the job queue, for every siteaccess
+   [ExtensionSettings]
+   ActiveExtensions[]=expqueue
+   ```
+
+   ```ini
+   # settings/siteaccess/<each admin siteaccess>/site.ini.append.php: the assistant, for the administration only
+   [ExtensionSettings]
+   ActiveAccessExtensions[]=expai
+   ```
+
+   ```bash
+   ./console ext:expqueue:install-schema
+   php extension/expai/bin/php/expaischema.php --install -s admin
+   php bin/php/ezpgenerateautoloads.php -e
+   php bin/php/console exp:velocity deploy --packer    # or clear the caches and reload PHP-FPM
+   ```
+
+   Put the provider key into `settings/override/expai.ini.append.php` (`[AISettings] Enabled=true`, `ApiKey=...`;
+   never into version control), give editors the policy `expai/write`, and add two cron lines, both with the admin
+   siteaccess because expai is active there only:
+
+   ```
+   * * * * *   cd /path/to/installation && php runcronjobs.php -q -s admin expqueue
+   */5 * * * * cd /path/to/installation && php runcronjobs.php -q -s admin expai
+   ```
+
+   What they do and every further step: [Exponential Intelligence](features/6.0/extensions/expai.md) and
+   [the job queue](features/6.0/extensions/expqueue.md).
 
 Then continue with the guides:
 

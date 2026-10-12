@@ -117,7 +117,7 @@ Velocity is no longer required: it moved to `"suggest"`, because it needs PHP 8.
 after the installation:
 
 ```sh
-composer require se7enxweb/exponential-velocity:~0.0.4.42
+composer require se7enxweb/exponential-velocity:~0.0.4.50
 ```
 
 | Package | Declares | Blocks 8.0 |

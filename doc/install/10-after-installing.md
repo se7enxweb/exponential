@@ -820,8 +820,26 @@ declare in `extension.xml`, which cannot fix every case (it does not reorder acr
   backup copy ([Extension loading order](../features/6.0/extension-loading-order.md)).
 
 Check the effective value of a setting with `php bin/php/console exp:ini get <file>/<Block>/<Key> --allow-root-user`
-after every change of order. The installed versions, licences and websites are listed on the about page
-(`/ezinfo/about`). Building and releasing extensions of your own: [Extensions](../guides/extensions.md).
+after every change of order. The installed versions, licenses and websites are listed on the about page
+(`/ezinfo/about`), which counts the extensions active in the current siteaccess and those on disk (for example "63 active in this
+siteaccess, 85 on disk"), the same figures as the dashboard. Building and releasing extensions of your own:
+[Extensions](../guides/extensions.md).
+
+**The job queue and Exponential Intelligence.** `expqueue` and `expai` are on disk after `composer install` and
+inactive until you switch them on:
+
+1. `ActiveExtensions[]=expqueue` in `settings/override/site.ini.append.php` (the queue must be active wherever jobs
+   are queued and run), then `./console ext:expqueue:install-schema`.
+2. `ActiveAccessExtensions[]=expai` in the `site.ini.append.php` of **each** admin siteaccess (or
+   `ActiveExtensions[]=expai` for all), then `php extension/expai/bin/php/expaischema.php --install -s <admin siteaccess>`.
+3. The provider key in `settings/override/expai.ini.append.php` (mode 0640, never committed):
+   `[AISettings] Enabled=true` and `ApiKey=...`, or a local model ([local models](https://github.com/se7enxweb/expai/blob/main/doc/local-models.md)).
+4. Autoloads, caches and `exp:velocity deploy --packer` as above; the policy `expai/write` for editors.
+5. Cron, both with the admin siteaccess when expai is active there only:
+   `* * * * * ... php runcronjobs.php -q -s <admin siteaccess> expqueue` and
+   `*/5 * * * * ... php runcronjobs.php -q -s <admin siteaccess> expai`.
+
+Details: [Exponential Intelligence](../features/6.0/extensions/expai.md), [the job queue](../features/6.0/extensions/expqueue.md).
 
 ## 10.14 Multi-language sites
 

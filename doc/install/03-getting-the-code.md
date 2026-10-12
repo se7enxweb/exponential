@@ -65,6 +65,11 @@ requirement your PHP does not meet:
 
 No published tag accepts PHP 8.0: on PHP 8.0, take `main` until a tag of the 6.0.15 line exists.
 
+`composer.json` gives `main` the branch alias `6.0.x-dev` (`"extra": { "branch-alias": { "dev-main": "6.0.x-dev" } }`).
+Installed from `main`, the root package is then version `6.0.x-dev` as well as `dev-main`, so a package that
+requires `se7enxweb/exponential` with a version constraint such as `^6.0.14` (expqueue does) resolves against it.
+Without the alias `dev-main` satisfies no version constraint and such an install stops with "could not be resolved".
+
 ## 3.2 Three ways to get the code
 
 ### A. composer create-project
@@ -209,10 +214,10 @@ suggests it rather than requires it, because it needs PHP 8.1 (`"php": ">=8.1"`)
 names:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.44
+composer require se7enxweb/exponential-velocity:~0.0.4.50
 ```
 
-`~0.0.4.44` accepts every later `0.0.4.x` release (`>=0.0.4.44 <0.0.5.0`), so Composer installs the newest of them.
+`~0.0.4.50` accepts every later `0.0.4.x` release (`>=0.0.4.50 <0.0.5.0`), so Composer installs the newest of them.
 The last position of a Velocity version counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...), so a version sort, not a name
 sort, finds the newest.
 
@@ -267,6 +272,13 @@ ActiveExtensions[]=ezfind
 ```
 
 Then clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`), and restart Velocity if it serves the site.
+
+Two packages of `composer.json` arrive inactive on purpose and are switched on when you want them: the job queue
+`se7enxweb/expqueue` (`extension/expqueue`, [expqueue](../features/6.0/extensions/expqueue.md)) and Exponential
+Intelligence, the writing assistant of the administration, `se7enxweb/expai` (`extension/expai`,
+[expai](../features/6.0/extensions/expai.md)). Both need tables of their own and a cron line; the assistant also a
+provider key in `settings/override/expai.ini.append.php`. [Section 10.13](10-after-installing.md#1013-extension-management)
+has the steps.
 
 `composer.json`'s `suggest` block lists further extensions with a sentence each: `ezsi`, `ezscriptmonitor`, `ezfind`,
 `ezauthorize`, `bcurlaliaswithdash`, `sevenx_valkey`, `sevenx_valkey_cache`, `ezownerchange`, `adminaid`, `ezpm` and
