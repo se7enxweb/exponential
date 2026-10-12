@@ -20729,6 +20729,14 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/setup/info</name>
     <message>
+        <source>Sizes were measured at %time, within %seconds seconds, and are shown for %minutes minutes; a size marked ≥ was cut short.</source>
+        <translation>Sizes were measured at %time, within %seconds seconds, and are shown for %minutes minutes; a size marked ≥ was cut short.</translation>
+    </message>
+    <message>
+        <source>Measure again</source>
+        <translation>Measure again</translation>
+    </message>
+    <message>
         <source>System information</source>
         <translation>System information</translation>
     </message>

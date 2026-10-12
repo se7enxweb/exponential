@@ -26,7 +26,9 @@ are from the demonstration server (alpha.se7enx.com) on 6 October 2026, read-onl
 - **Download report (.txt)**, **Download as JSON** and **Copy report as text** give the same report for a support
   request. Passwords, keys, tokens, session ids, credentials in addresses and full server paths are never in it.
 - **Measure sizes** (`/setup/info/sizes`) adds the size of `var/`, of each cache directory and of a database on a
-  server; it reads every file, within three seconds.
+  server. Measuring reads every file of `var/` once (the cache directories are counted in the same walk), within ten
+  seconds; the result is kept for ten minutes in `var/<site>/cache/exp/system-report-sizes-<key>.json` and shared by
+  Apache's PHP-FPM and Velocity, so the page says when it was measured. **Measure again** measures anew.
 - `./console exp:system:info [--json] [--sizes] --allow-root-user` prints the report of the command-line PHP and
   exits 1 when a check fails.
 
@@ -37,7 +39,7 @@ Setup > System information, or `/setup/info` in the administration siteaccess. T
 | Address | What it gives |
 |---|---|
 | `/setup/info` | The page |
-| `/setup/info/sizes` | The page, with directory and database sizes measured |
+| `/setup/info/sizes` | The page, with directory and database sizes (measured at most ten minutes ago) |
 | `/setup/info/report` | The report as a text file (`exponential-system-information-<date>.txt`) |
 | `/setup/info/json` | The report as JSON |
 | `/setup/info/php` | `phpinfo()` of the server process, without its request and environment |
@@ -207,7 +209,8 @@ the banner before comparing.
 **The OPcache hit rate under Velocity is low.** A worker that started minutes ago has compiled every file once;
 the rate rises as it serves. The check ignores it under Velocity.
 
-**Sizes say "measured on request".** Open Measure sizes. A size marked "≥" was cut short by the three-second budget.
+**Sizes say "measured on request".** Open Measure sizes. A size marked "≥" was cut short by the ten-second budget.
+**Sizes look old.** They are kept for ten minutes, whichever server measured them; Measure again measures anew.
 
 **The cronjob check warns though cron runs.** Cron runs that write neither to `var/log/cronjob*.log` nor through
 Setup > Cronjobs are not seen. Send their output to `var/log/cronjob-<part>.log`.

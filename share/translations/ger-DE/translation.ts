@@ -23573,6 +23573,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/setup/info</name>
     <message>
+        <source>Sizes were measured at %time, within %seconds seconds, and are shown for %minutes minutes; a size marked ≥ was cut short.</source>
+        <translation>Die Größen wurden um %time gemessen, innerhalb von %seconds Sekunden, und werden %minutes Minuten lang angezeigt; eine mit ≥ markierte Größe wurde vorzeitig abgebrochen.</translation>
+    </message>
+    <message>
+        <source>Measure again</source>
+        <translation>Erneut messen</translation>
+    </message>
+    <message>
         <source>System information</source>
         <translation>Systeminformationen</translation>
     </message>

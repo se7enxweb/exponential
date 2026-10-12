@@ -38,8 +38,14 @@ class Info extends \Exponential\Runnable\ModuleView
         $this->phpInfoMode( $mode );
 
         // The facts, the health checks and the cards: one read-only report (expSystemReport), shared with
-        // ./console exp:system:info. Directory and database sizes are only measured on request (/sizes).
-        $report = \expSystemReport::gather( array( 'sizes' => $mode === 'sizes', 'translate' => true ) );
+        // ./console exp:system:info. Directory and database sizes are only shown on request (/sizes), from the
+        // measurement every server of the installation shares for ten minutes (expSystemReport::measuredSizes());
+        // the "Measure again" button (RefreshSizesButton) measures anew.
+        $refreshSizes = $mode === 'sizes' && \eZHTTPTool::instance()->hasPostVariable( 'RefreshSizesButton' );
+        \eZDebug::accumulatorStart( 'setup_info_report', 'System information', 'report' );
+        $report = \expSystemReport::gather( array( 'sizes' => $mode === 'sizes', 'sizes_cache' => true, 'refresh' => $refreshSizes,
+                                                   'translate' => true ) );
+        \eZDebug::accumulatorStop( 'setup_info_report' );
 
         // setup/info/report and setup/info/json: the report as a file, and the request ends there.
         $this->reportDownload( $mode, $report );
@@ -62,16 +68,24 @@ class Info extends \Exponential\Runnable\ModuleView
         $systemReport = $report->toArray();
         $systemReport['text'] = $report->toText();
         $systemReport['sizes'] = $mode === 'sizes';
+        $reportFacts = $report->facts();
+        $systemReport['sizes_time'] = !empty( $reportFacts['sizes_time'] ) ? date( 'Y-m-d H:i:s', (int)$reportFacts['sizes_time'] ) : '';
+        $systemReport['sizes_minutes'] = (int)( \expSystemReport::SIZES_CACHE_SECONDS / 60 );
+        $systemReport['sizes_seconds'] = (int)\expSystemReport::SIZES_BUDGET;
         $tpl->setVariable( 'system_report', $systemReport );
 
+        \eZDebug::accumulatorStart( 'setup_info_system_info', 'System information', 'systemInfo' );
         $this->systemInfo( $info, $e, $systemInfo, $phpAcceleratorInfo );
+        \eZDebug::accumulatorStop( 'setup_info_system_info' );
 
         // The web server's name and version when this page is served by Exponential
         // Velocity's own server. The engine inside it is Qbix, and the Qbix names it
         // still reports (SERVER_SOFTWARE "QbixServer/1.5.0", the upstream base it is
         // built on) say nothing about which release is running: that is the fork's
         // release line, v0.0.4.x, plus the build. One place, used by every box below.
+        \eZDebug::accumulatorStart( 'setup_info_webserver_info', 'System information', 'webserverInfo' );
         $this->webserverInfo( $velocityBrand, $velocityEngineNames, $webserverInfo, $engine, $m );
+        \eZDebug::accumulatorStop( 'setup_info_webserver_info' );
 
         // The site. [SiteSettings] SiteURL is a setting, written once at installation:
         // an installation made from the command line (the kickstarter) has no host to
@@ -79,7 +93,9 @@ class Info extends \Exponential\Runnable\ModuleView
         // is where this siteaccess and the public site actually are, worked out for
         // this request (scheme, host, port, siteaccess path); the setting follows,
         // flagged when it is empty or a loopback name, as mails and feeds use it.
+        \eZDebug::accumulatorStart( 'setup_info_site_info', 'System information', 'siteInfo' );
         $this->siteInfo( $tpl );
+        \eZDebug::accumulatorStop( 'setup_info_site_info' );
 
         $tpl->setVariable( 'ezpublish_version', \ExponentialSDK::version() . " (" . \ExponentialSDK::alias() . ")" );
         $tpl->setVariable( 'ezpublish_extensions', \eZExtension::activeExtensions() );
@@ -92,30 +108,40 @@ class Info extends \Exponential\Runnable\ModuleView
         // means, and whether an edited kernel file has any effect at all. That is not
         // something a person -- or an agent reading this page to find its bearings --
         // should have to deduce from a path in an error message.
+        \eZDebug::accumulatorStart( 'setup_info_engine_source_info', 'System information', 'engineSourceInfo' );
         $this->engineSourceInfo( $engineInfo, $engineServer, $velocityBrand );
+        \eZDebug::accumulatorStop( 'setup_info_engine_source_info' );
 
         // When the engine runs from the archive: which one, when it was built, its version and its files.
+        \eZDebug::accumulatorStart( 'setup_info_engine_archive_in_use', 'System information', 'engineArchiveInUse' );
         $this->engineArchiveInUse( $engineInfo );
+        \eZDebug::accumulatorStop( 'setup_info_engine_archive_in_use' );
 
         // Whether the archive was built from what is on disk now. A mismatch is not an
         // error -- the archive only has to carry the classes it carries -- but it is
         // the first thing worth knowing when an edit to a kernel file appears to do
         // nothing.
+        \eZDebug::accumulatorStart( 'setup_info_engine_archive_check', 'System information', 'engineArchiveCheck' );
         $this->engineArchiveCheck( $engineInfo, $engineServer );
+        \eZDebug::accumulatorStop( 'setup_info_engine_archive_check' );
 
         // The two caches PHP keeps in shared memory, whatever serves the page: the
         // opcode cache (compiled scripts) and APCu (data). Both belong to the process
         // that answered this request -- a php-fpm pool, a Qbix server and its forked
         // workers, a FrankenPHP process and its threads -- so a command-line script,
         // another pool or another engine has its own, with other figures.
+        \eZDebug::accumulatorStart( 'setup_info_php_caches_info', 'System information', 'phpCachesInfo' );
         $this->phpCachesInfo( $stats, $tpl, $canFlushCaches );
+        \eZDebug::accumulatorStop( 'setup_info_php_caches_info' );
 
         // The Velocity engine this page is being served by, in detail: its role, its
         // address, the views it answers itself and who may open them. A site runs one
         // engine; the others of this installation that happen to be running as well
         // -- a test setup -- are only named, in one line. Under Apache, php-fpm or a
         // server exp:velocity does not know, there is no such box.
+        \eZDebug::accumulatorStart( 'setup_info_velocity_server_info', 'System information', 'velocityServerInfo' );
         $this->velocityServerInfo( $velocityBrand, $view, $engine, $velocityEngineNames, $tpl );
+        \eZDebug::accumulatorStop( 'setup_info_velocity_server_info' );
 
         // The response cache in front of this installation, when a Qbix server runs it.
         //
@@ -126,23 +152,33 @@ class Info extends \Exponential\Runnable\ModuleView
         // running server actually uses -- including the defaults it filled in for
         // anything the configuration left out, which the configuration file cannot
         // show. Velocity, a hand-written server.json and a preset all end up here.
+        \eZDebug::accumulatorStart( 'setup_info_response_cache_info', 'System information', 'responseCacheInfo' );
         $this->responseCacheInfo( $info, $key, $file, $e, $stats, $tpl );
+        \eZDebug::accumulatorStop( 'setup_info_response_cache_info' );
 
         // The role-aware HTTP cache (settings/httpcache.ini). Its hits are answered
         // before the kernel boots, so this is the one place that shows them.
+        \eZDebug::accumulatorStart( 'setup_info_http_cache_info', 'System information', 'httpCacheInfo' );
         $this->httpCacheInfo( $canFlushCaches, $http, $stats, $when, $n, $tpl );
+        \eZDebug::accumulatorStop( 'setup_info_http_cache_info' );
 
         // Database queries: the SQL query cache (eZDBQueryCache, settings/querycache.ini)
         // and the SQL profile of recent requests (eZDBInterface::profileSQL(),
         // var/tmp/sql_profile.on). See doc/bc/6.0/sql-query-cache.md.
         // SQL engines only; the MongoDB driver keeps its own profile.
+        \eZDebug::accumulatorStart( 'setup_info_sql_profile_info', 'System information', 'sqlProfileInfo' );
         $this->sqlProfileInfo( $db, $canFlushCaches, $http, $when, $tpl, $m, $n );
+        \eZDebug::accumulatorStop( 'setup_info_sql_profile_info' );
 
         // The template variables of the earlier page: engine, web server, database, PHP extensions and settings.
+        \eZDebug::accumulatorStart( 'setup_info_page_variables', 'System information', 'pageVariables' );
         $this->pageVariables( $tpl, $engineInfo, $webserverInfo, $db, $systemInfo );
+        \eZDebug::accumulatorStop( 'setup_info_page_variables' );
 
         $Result = array();
+        \eZDebug::accumulatorStart( 'setup_info_template', 'System information', 'template' );
         $Result['content'] = $tpl->fetch( "design:setup/info.tpl" );
+        \eZDebug::accumulatorStop( 'setup_info_template' );
         $Result['path'] = array( array( 'url' => false,
                                         'text' => \ezpI18n::tr( 'kernel/setup', 'System information' ) ) );
 

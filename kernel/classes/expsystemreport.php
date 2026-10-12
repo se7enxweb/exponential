@@ -16,7 +16,9 @@
  *    Velocity, FrankenPHP, PHP's built-in server or the command line), PHP and its limits, OPcache and APCu as this
  *    process sees them, the database, storage, caches, cronjobs, mail, locale, debug settings and the extensions.
  *    It only reads: nothing is written, cleared or started. Sizes of directories and of a database on a server are
- *    only measured when asked for (option 'sizes'), within a time budget.
+ *    only measured when asked for (option 'sizes'), within a time budget. With 'sizes_cache' (Setup > System
+ *    information) they come from one measurement shared by every process, kept for SIZES_CACHE_SECONDS in
+ *    <cache>/exp/system-report-sizes-<key>.json (the one file this class writes), and measured again with 'refresh'.
  *  - Everything else works on that array of facts and is pure: cards() for the page, checks() for the health
  *    checks with what to do, toArray() and toText() for the report. The tests build facts by hand
  *    (tests/tests/kernel/classes/expSystemReportTest.php), so no database is needed.
@@ -35,6 +37,11 @@ class expSystemReport
     const REQUIRED_EXTENSIONS = 'ctype,dom,iconv,json,libxml,mbstring,pcre,session,simplexml,spl,xml,zlib';
     /** PHP extensions a site normally needs (images, http, intl, the caches) */
     const RECOMMENDED_EXTENSIONS = 'curl,fileinfo,intl,xsl,Zend OPcache,apcu';
+
+    /** How long a measurement of the sizes is reused (option 'sizes_cache'), in seconds */
+    const SIZES_CACHE_SECONDS = 600;
+    /** The time budget of one shared measurement of the sizes, in seconds; what is not counted by then is marked */
+    const SIZES_BUDGET = 10.0;
 
     /** The end of security support of each PHP branch (php.net/supported-versions) */
     protected static $phpSupportEnds = array(
@@ -68,7 +75,8 @@ class expSystemReport
     /**
      * The report of this process.
      *
-     * @param array $options 'sizes' => bool, 'database' => bool (default true), 'translate' => bool
+     * @param array $options 'sizes' => bool, 'database' => bool (default true), 'translate' => bool,
+     *        'sizes_cache' => bool (the sizes of the shared measurement, see measuredSizes()), 'refresh' => bool
      * @return expSystemReport
      */
     public static function gather( array $options = array() )
@@ -87,10 +95,14 @@ class expSystemReport
      */
     public static function collect( array $options = array() )
     {
-        $options += array( 'sizes' => false, 'database' => true, 'budget' => 3.0 );
+        $options += array( 'sizes' => false, 'database' => true, 'budget' => 3.0, 'sizes_cache' => false, 'refresh' => false );
         $root = class_exists( 'eZSys' ) ? rtrim( (string)eZSys::rootDir(), '/' ) : rtrim( (string)getcwd(), '/' );
         $facts = array( 'root' => $root, 'time' => time(), 'sizes' => (bool)$options['sizes'], 'errors' => array(), 'ms' => array() );
         $deadline = microtime( true ) + (float)$options['budget'];
+        // With the shared measurement the parts read without sizes, and its figures are put in afterwards.
+        $shared = $options['sizes'] && $options['sizes_cache'];
+        if ( $shared )
+            $options['sizes'] = false;
         $parts = array(
             'exponential' => function () { return self::collectExponential(); },
             'site'        => function () { return self::collectSite(); },
@@ -111,6 +123,10 @@ class expSystemReport
         foreach ( $parts as $name => $read )
         {
             $start = microtime( true );
+            // Each part is an accumulator of the debug output too (group "System report"), so a slow page says which.
+            $debug = class_exists( 'eZDebug', false );
+            if ( $debug )
+                eZDebug::accumulatorStart( 'system_report_' . $name, 'System report', $name );
             try
             {
                 $facts[$name] = $read();
@@ -120,9 +136,169 @@ class expSystemReport
                 $facts[$name] = array();
                 $facts['errors'][$name] = get_class( $e ) . ': ' . $e->getMessage();
             }
+            if ( $debug )
+                eZDebug::accumulatorStop( 'system_report_' . $name );
             $facts['ms'][$name] = round( ( microtime( true ) - $start ) * 1000, 1 );
         }
+        if ( $shared )
+        {
+            $start = microtime( true );
+            try
+            {
+                self::applySizes( $facts, self::measuredSizes( $facts, !empty( $options['refresh'] ) ) );
+            }
+            catch ( Throwable $e )
+            {
+                $facts['errors']['sizes'] = get_class( $e ) . ': ' . $e->getMessage();
+            }
+            $facts['ms']['sizes'] = round( ( microtime( true ) - $start ) * 1000, 1 );
+        }
         return $facts;
+    }
+
+    /**
+     * The sizes of var/, of each cache directory and of a database on a server, from one measurement that every
+     * process of the installation shares (Apache's PHP-FPM and Velocity alike) and reuses for SIZES_CACHE_SECONDS.
+     *
+     * Measuring reads every file of var/ (about 100 000 here, a few seconds, three times as long under Velocity),
+     * which made setup/info/sizes slow on every view. The cache directories inside var/ are counted in the same
+     * walk instead of being read a second time. The measurement has SIZES_BUDGET seconds; a figure not complete by
+     * then is marked as cut short, as before.
+     *
+     * @param array $facts what the parts of collect() read (storage, caches, database)
+     * @param bool $refresh measure now, whatever the stored measurement
+     * @return array time, cached (bool), var_size, var_counted_all, dirs (name => bytes|null), database_size, ms
+     */
+    public static function measuredSizes( array $facts, $refresh = false )
+    {
+        $var = isset( $facts['storage']['var'] ) ? (string)$facts['storage']['var'] : '';
+        $cache = isset( $facts['storage']['cache'] ) ? (string)$facts['storage']['cache'] : '';
+        // A siteaccess with another var directory or another database has a measurement of its own.
+        $database = isset( $facts['database'] ) && is_array( $facts['database'] ) ? $facts['database'] : array();
+        $key = md5( implode( '|', array( (string)$facts['root'], $var, $cache,
+            isset( $database['engine'] ) ? (string)$database['engine'] : '', isset( $database['server'] ) ? (string)$database['server'] : '',
+            isset( $database['port'] ) ? (string)$database['port'] : '', isset( $database['name'] ) ? (string)$database['name'] : '' ) ) );
+        $file = self::sizesCacheFile( $key );
+
+        if ( !$refresh && $file !== '' && is_file( $file ) )
+        {
+            $stored = json_decode( (string)@file_get_contents( $file ), true );
+            if ( is_array( $stored ) && isset( $stored['key'], $stored['time'] ) && $stored['key'] === $key
+                 && (int)$stored['time'] > time() - self::SIZES_CACHE_SECONDS && (int)$stored['time'] <= time() )
+            {
+                $stored['cached'] = true;
+                return $stored;
+            }
+        }
+
+        $start = microtime( true );
+        $deadline = $start + self::SIZES_BUDGET;
+        $sizes = array( 'key' => $key, 'time' => time(), 'var_size' => null, 'var_counted_all' => true, 'dirs' => array(),
+                        'database_size' => null, 'ms' => 0 );
+
+        if ( !empty( $facts['database']['connected'] ) && class_exists( 'eZDB' ) )
+            $sizes['database_size'] = self::serverDatabaseSize( eZDB::instance(), (string)$facts['database']['engine'] );
+
+        $varReal = $var !== '' && is_dir( $var ) ? ( realpath( $var ) ?: $var ) : '';
+        $cacheReal = $cache !== '' && is_dir( $cache ) ? ( realpath( $cache ) ?: $cache ) : '';
+        $entries = array();
+        if ( $cacheReal !== '' )
+            foreach ( (array)@scandir( $cacheReal ) as $entry )
+                if ( $entry !== '.' && $entry !== '..' && is_dir( $cacheReal . '/' . $entry ) )
+                    $entries[] = $entry;
+        $inside = $varReal !== '' && $cacheReal !== '' && strpos( $cacheReal . '/', rtrim( $varReal, '/' ) . '/' ) === 0;
+
+        if ( $varReal !== '' )
+        {
+            $size = self::directorySize( $varReal, $deadline, $inside ? $cacheReal : '' );
+            $sizes['var_size'] = $size['bytes'];
+            $sizes['var_counted_all'] = $size['complete'];
+            if ( $inside )
+                foreach ( $entries as $entry )
+                    $sizes['dirs'][$entry] = $size['complete'] ? ( isset( $size['entries'][$entry] ) ? $size['entries'][$entry] : 0 ) : null;
+        }
+        if ( !$inside )
+        {
+            foreach ( $entries as $entry )
+            {
+                $sizes['dirs'][$entry] = null;
+                if ( microtime( true ) < $deadline )
+                {
+                    $size = self::directorySize( $cacheReal . '/' . $entry, $deadline );
+                    $sizes['dirs'][$entry] = $size['complete'] ? $size['bytes'] : null;
+                }
+            }
+        }
+        $sizes['ms'] = round( ( microtime( true ) - $start ) * 1000, 1 );
+
+        if ( $file !== '' )
+        {
+            $directory = dirname( $file );
+            if ( !is_dir( $directory ) && class_exists( 'eZDir' ) )
+                eZDir::mkdir( $directory, false, true );
+            // Written beside it and renamed, so a reader never sees half a file, whichever user wrote it last.
+            $temporary = $file . '.' . getmypid() . '.tmp';
+            if ( @file_put_contents( $temporary, json_encode( $sizes ) ) !== false && !@rename( $temporary, $file ) )
+                @unlink( $temporary );
+        }
+        $sizes['cached'] = false;
+        return $sizes;
+    }
+
+    /**
+     * Where the shared measurement of the sizes is kept: <cache>/exp/system-report-sizes-<key>.json, one per var
+     * directory and database; '' without eZSys.
+     *
+     * @param string $key what measuredSizes() keys the measurement by
+     * @return string
+     */
+    public static function sizesCacheFile( $key )
+    {
+        return class_exists( 'eZSys' ) ? rtrim( (string)eZSys::cacheDirectory(), '/' ) . '/exp/system-report-sizes-' . substr( (string)$key, 0, 12 ) . '.json' : '';
+    }
+
+    /**
+     * Puts a measurement of measuredSizes() into the facts, as if the parts had measured it.
+     *
+     * @param array $facts
+     * @param array $sizes
+     */
+    protected static function applySizes( array &$facts, array $sizes )
+    {
+        $facts['sizes'] = true;
+        $facts['sizes_time'] = (int)$sizes['time'];
+        $facts['sizes_cached'] = !empty( $sizes['cached'] );
+        $facts['sizes_ms'] = (float)$sizes['ms'];
+        if ( isset( $facts['storage'] ) && is_array( $facts['storage'] ) )
+        {
+            $facts['storage']['var_size'] = $sizes['var_size'];
+            $facts['storage']['var_counted_all'] = (bool)$sizes['var_counted_all'];
+        }
+        if ( isset( $facts['database'] ) && is_array( $facts['database'] ) && !isset( $facts['database']['size'] )
+             && $sizes['database_size'] !== null )
+            $facts['database']['size'] = (int)$sizes['database_size'];
+        if ( isset( $facts['caches']['dirs'] ) && is_array( $facts['caches']['dirs'] ) )
+            foreach ( array_keys( $facts['caches']['dirs'] ) as $entry )
+                $facts['caches']['dirs'][$entry] = isset( $sizes['dirs'][$entry] ) ? (int)$sizes['dirs'][$entry] : null;
+    }
+
+    /**
+     * The size of a database on a server (MySQL, PostgreSQL), null for any other engine.
+     *
+     * @param eZDBInterface $db
+     * @param string $engine eZDBInterface::databaseName()
+     * @return int|null
+     */
+    protected static function serverDatabaseSize( $db, $engine )
+    {
+        $engine = strtolower( (string)$engine );
+        if ( $engine === 'mysql' )
+            $rows = $db->arrayQuery( 'SELECT SUM(data_length + index_length) AS size FROM information_schema.tables WHERE table_schema = DATABASE()' );
+        elseif ( $engine === 'postgresql' )
+            $rows = $db->arrayQuery( 'SELECT pg_database_size(current_database()) AS size' );
+        else
+            return null;
+        return isset( $rows[0]['size'] ) ? (int)$rows[0]['size'] : null;
     }
 
     protected static function ini( $block, $name, $default = null, $file = 'site.ini' )
@@ -469,16 +645,8 @@ class expSystemReport
             if ( is_file( $file ) )
                 $facts['size'] = (int)filesize( $file );
         }
-        elseif ( $withSize && $engine === 'mysql' )
-        {
-            $rows = $db->arrayQuery( 'SELECT SUM(data_length + index_length) AS size FROM information_schema.tables WHERE table_schema = DATABASE()' );
-            $facts['size'] = isset( $rows[0]['size'] ) ? (int)$rows[0]['size'] : null;
-        }
-        elseif ( $withSize && $engine === 'postgresql' )
-        {
-            $rows = $db->arrayQuery( 'SELECT pg_database_size(current_database()) AS size' );
-            $facts['size'] = isset( $rows[0]['size'] ) ? (int)$rows[0]['size'] : null;
-        }
+        elseif ( $withSize )
+            $facts['size'] = self::serverDatabaseSize( $db, $engine );
         return $facts;
     }
 
@@ -531,11 +699,15 @@ class expSystemReport
      *
      * @param string $dir
      * @param float $deadline microtime
-     * @return array bytes, files, complete
+     * @param string $split a directory inside $dir: the bytes of each directory in it are added up as well
+     *        ('entries'), in the same walk
+     * @return array bytes, files, complete, entries (name => bytes, with $split)
      */
-    public static function directorySize( $dir, $deadline )
+    public static function directorySize( $dir, $deadline, $split = '' )
     {
-        $result = array( 'bytes' => 0, 'files' => 0, 'complete' => true );
+        $result = array( 'bytes' => 0, 'files' => 0, 'complete' => true, 'entries' => array() );
+        $prefix = $split !== '' ? rtrim( $split, '/' ) . '/' : '';
+        $prefixLength = strlen( $prefix );
         if ( !is_dir( $dir ) )
             return array( 'bytes' => null, 'files' => 0, 'complete' => true );
         try
@@ -550,7 +722,19 @@ class expSystemReport
                     break;
                 }
                 if ( !$file->isLink() && $file->isFile() )
-                    $result['bytes'] += $file->getSize();
+                {
+                    $bytes = $file->getSize();
+                    $result['bytes'] += $bytes;
+                    if ( $prefixLength > 0 )
+                    {
+                        $path = $file->getPathname();
+                        if ( strncmp( $path, $prefix, $prefixLength ) === 0 && ( $slash = strpos( $path, '/', $prefixLength ) ) !== false )
+                        {
+                            $entry = substr( $path, $prefixLength, $slash - $prefixLength );
+                            $result['entries'][$entry] = ( isset( $result['entries'][$entry] ) ? $result['entries'][$entry] : 0 ) + $bytes;
+                        }
+                    }
+                }
             }
         }
         catch ( Exception $e )

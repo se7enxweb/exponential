@@ -5,7 +5,8 @@
    The facts come from expSystemReport ($system_report, masked: no secret and no full server path), shared with
    ./console exp:system:info. The figures belong to the process that answered: Apache's PHP-FPM pool and
    Exponential Velocity each have their own PHP, OPcache and settings. Sizes of var/, the cache directories and a
-   database on a server are measured only on request (setup/info/sizes). The page itself changes nothing; the
+   database on a server are shown only on request (setup/info/sizes), from a measurement kept for ten minutes and
+   repeated by "Measure again" (RefreshSizesButton). The page itself changes nothing; the
    buttons of the HTTP cache, the query cache and the SQL profile post to it and need setup/managecache.
 
    The same file is in design/admin and design/admin4. The styling is setup/info_exp_style.tpl, scoped to
@@ -57,12 +58,13 @@
     <a class="exp-btn" href={'/setup/info/json'|ezurl}>{'Download as JSON'|i18n( 'design/admin/setup/info' )}</a>
     {if $si.sizes}
         <a class="exp-btn" href={'/setup/info'|ezurl}>{'Without sizes (faster)'|i18n( 'design/admin/setup/info' )}</a>
+        <form method="post" action={'/setup/info/sizes'|ezurl} class="exp-sysinfo-form"><button type="submit" class="exp-btn" name="RefreshSizesButton" value="1">{'Measure again'|i18n( 'design/admin/setup/info' )}</button></form>
     {else}
         <a class="exp-btn" href={'/setup/info/sizes'|ezurl}>{'Measure sizes'|i18n( 'design/admin/setup/info' )}</a>
     {/if}
     <span class="exp-status-text" id="exp-sysinfo-copy-status" role="status" aria-live="polite"></span>
     <p class="exp-meta">{'Generated %time.'|i18n( 'design/admin/setup/info',, hash( '%time', $si.generated|wash ) )}
-    {if $si.sizes}{'Sizes were measured for this view, within three seconds; a size marked ≥ was cut short.'|i18n( 'design/admin/setup/info' )}{else}{'Sizes of var/, the cache directories and a database on a server are measured only on request, as that reads every file.'|i18n( 'design/admin/setup/info' )}{/if}</p>
+    {if $si.sizes}{'Sizes were measured at %time, within %seconds seconds, and are shown for %minutes minutes; a size marked ≥ was cut short.'|i18n( 'design/admin/setup/info',, hash( '%time', $si.sizes_time|wash, '%seconds', $si.sizes_seconds|wash, '%minutes', $si.sizes_minutes|wash ) )}{else}{'Sizes of var/, the cache directories and a database on a server are measured only on request, as that reads every file.'|i18n( 'design/admin/setup/info' )}{/if}</p>
 </div>
 
 {* Health checks *}

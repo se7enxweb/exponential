@@ -15,6 +15,7 @@
  *  SR-10 - Checks are sorted fail, warn, note, ok; the summary counts them
  *  SR-11 - Cards name the server that answered and its worker model; Apache and Velocity differ
  *  SR-12 - The report, its JSON and its text carry no secret and no installation path
+ *  SR-13 - One walk of a directory also adds up each directory of a directory inside it (var/ and its caches)
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -289,5 +290,44 @@ class expSystemReportTest extends PHPUnit\Framework\TestCase
         $this->assertStringStartsWith( "Exponential system information\n", $text );
         $this->assertStringContainsString( 'Answered by: Apache + PHP-FPM', $text );
         $this->assertStringContainsString( 'local_thing', $text );
+    }
+
+    /** SR-13 */
+    public function testOneWalkCountsTheCacheDirectories()
+    {
+        $dir = getcwd() . '/var/tmp/exp-system-report-test-' . getmypid();
+        $files = array( 'storage/a.bin' => 100, 'cache/template/b.php' => 30, 'cache/template/sub/c.php' => 20,
+                        'cache/ini/d.php' => 7, 'cache/loose.txt' => 5 );
+        foreach ( $files as $file => $bytes )
+        {
+            if ( !is_dir( dirname( "$dir/$file" ) ) )
+                mkdir( dirname( "$dir/$file" ), 0777, true );
+            file_put_contents( "$dir/$file", str_repeat( 'x', $bytes ) );
+        }
+        mkdir( "$dir/cache/empty" );
+        try
+        {
+            $size = expSystemReport::directorySize( $dir, microtime( true ) + 30, "$dir/cache" );
+            $this->assertTrue( $size['complete'] );
+            $this->assertSame( 162, $size['bytes'] );
+            $this->assertSame( array( 'ini' => 7, 'template' => 50 ), $this->sorted( $size['entries'] ) );
+            // without a directory to split, the same total and no entries, as before
+            $plain = expSystemReport::directorySize( $dir, microtime( true ) + 30 );
+            $this->assertSame( 162, $plain['bytes'] );
+            $this->assertSame( array(), $plain['entries'] );
+        }
+        finally
+        {
+            foreach ( array_keys( $files ) as $file )
+                unlink( "$dir/$file" );
+            foreach ( array( 'cache/template/sub', 'cache/template', 'cache/ini', 'cache/empty', 'cache', 'storage', '' ) as $sub )
+                rmdir( rtrim( "$dir/$sub", '/' ) );
+        }
+    }
+
+    protected function sorted( array $a )
+    {
+        ksort( $a );
+        return $a;
     }
 }
