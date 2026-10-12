@@ -640,7 +640,7 @@ abe32479171deb21e311e6e155e3281b  design/admin/templates/setup/session_confirmre
 8d16bad9279ff015518461e6ae692951  design/admin/templates/setup/session_exp_style.tpl
 a3001e8403813ba5acb316875ebeb771  design/admin/templates/setup/session_no_db.tpl
 03037f03445873102ed6b55da278b065  design/admin/templates/setup/settingsextension.tpl
-6f56b2a9de818236504c885d76af524a  design/admin/templates/setup/sitedata.tpl
+10f371603bc76f18887f58a0a321b681  design/admin/templates/setup/sitedata.tpl
 e989b7b92aaf1aba935ef8882fe7c159  design/admin/templates/setup/systemupgrade.tpl
 4571fd7dc2b6bd6b089f5fcd5d7d4066  design/admin/templates/setup/systemupgrade_exp_style.tpl
 c5b7bf41f5cd6537f657854141ca6e49  design/admin/templates/setup/templateoperator.tpl
@@ -1265,7 +1265,7 @@ abe32479171deb21e311e6e155e3281b  design/admin4/templates/setup/session_confirmr
 8d16bad9279ff015518461e6ae692951  design/admin4/templates/setup/session_exp_style.tpl
 a3001e8403813ba5acb316875ebeb771  design/admin4/templates/setup/session_no_db.tpl
 03037f03445873102ed6b55da278b065  design/admin4/templates/setup/settingsextension.tpl
-6f56b2a9de818236504c885d76af524a  design/admin4/templates/setup/sitedata.tpl
+10f371603bc76f18887f58a0a321b681  design/admin4/templates/setup/sitedata.tpl
 e989b7b92aaf1aba935ef8882fe7c159  design/admin4/templates/setup/systemupgrade.tpl
 4571fd7dc2b6bd6b089f5fcd5d7d4066  design/admin4/templates/setup/systemupgrade_exp_style.tpl
 c5b7bf41f5cd6537f657854141ca6e49  design/admin4/templates/setup/templateoperator.tpl
