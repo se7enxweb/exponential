@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 75cbb1daa2), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -651,7 +652,8 @@ EOT;
 
     function createPostVarsFromImageButtons()
     {
-        foreach ( array_keys( $_POST ) as $key )
+        // $_POST is null when something emptied it that way; array_keys( null ) is a TypeError from PHP 8
+        foreach ( array_keys( is_array( $_POST ) ? $_POST : array() ) as $key )
         {
             if ( substr( $key, -2 ) == '_x' )
             {
