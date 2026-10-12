@@ -689,7 +689,8 @@ class expRADSurvey
      * registry the kernel does not know - an extension's providers, tools, job types - is counted and checked like
      * the kernel's own, without the kernel naming the extension.
      *
-     * A later file replaces a single value of an earlier one and adds to an array. A key listed without its block,
+     * A later file replaces a single value of an earlier one and adds to an array; a line "Key[]" without a value
+     * empties the array first, as eZINI reads it (iniResets()). A key listed without its block,
      * a block without a Title, or one that names neither Ini, Section and Entries[] nor List is kept with a
      * problem, so that the page shows it as broken instead of leaving it out.
      *
@@ -707,6 +708,7 @@ class expRADSurvey
         {
             if ( $file['ini'] !== 'rad.ini' || !self::isActiveOrigin( $file['origin'] ) )
                 continue;
+            $resets = self::fileMemo( 'iniresets', $file['path'], array( __CLASS__, 'iniResets' ) );
             foreach ( self::fileMemo( 'ini', $file['path'], array( __CLASS__, 'parseIni' ) ) as $section => $variables )
             {
                 if ( !isset( $origins[$section] ) )
@@ -716,6 +718,13 @@ class expRADSurvey
                     if ( substr( $variable, -2 ) === '[]' )
                     {
                         $bare = substr( $variable, 0, -2 );
+                        // "Registries[]" on its own empties the list, as eZINI does: what earlier files (and the
+                        // lines above it in this one) gave is dropped, the values after it are kept
+                        if ( isset( $resets[$section][$variable] ) )
+                        {
+                            $blocks[$section][$bare] = array();
+                            $values = array_slice( $values, $resets[$section][$variable] );
+                        }
                         foreach ( $values as $value )
                             if ( is_string( $value ) && $value !== '' )
                                 $blocks[$section][$bare][] = $value;
@@ -1515,6 +1524,54 @@ class expRADSurvey
         }
 
         return $parsed;
+    }
+
+    /**
+     * Where an ini file empties an array: a line "Key[]" without a value, which eZINI reads as "forget what
+     * anything before said about this array". parseIni() keeps the values of a variable in order but not where
+     * such a line stood, so this tells it: for each reset, how many values the file gave the variable above its
+     * last reset line (the ones it drops along with the earlier files').
+     *
+     * @param string $path
+     * @return array section => "Key[]" => number of the variable's values before its last reset line
+     */
+    public static function iniResets( $path )
+    {
+        if ( !is_file( $path ) || !is_readable( $path ) || filesize( $path ) > 2097152 )
+            return array();
+        $contents = file_get_contents( $path );
+        if ( $contents === false )
+            return array();
+
+        $resets  = array();
+        $counts  = array();
+        $section = '';
+        foreach ( preg_split( '/\r\n|\r|\n/', $contents ) as $line )
+        {
+            $line = trim( $line );
+            if ( $line === '' || $line[0] === '#' || $line[0] === ';' )
+                continue;
+            if ( $line[0] === '[' && substr( $line, -1 ) === ']' )
+            {
+                $section = substr( $line, 1, -1 );
+                continue;
+            }
+            if ( $section === '' )
+                continue;
+            $equals = strpos( $line, '=' );
+            if ( $equals === false )
+            {
+                // the same lines parseIni() takes for a reset
+                if ( preg_match( '/^[A-Za-z][A-Za-z0-9_]*\[\]$/', $line ) )
+                    $resets[$section][$line] = isset( $counts[$section][$line] ) ? $counts[$section][$line] : 0;
+                continue;
+            }
+            $variable = trim( substr( $line, 0, $equals ) );
+            if ( substr( $variable, -2 ) === '[]' && preg_match( '/^[A-Za-z][A-Za-z0-9_]*\[\]$/', $variable ) )
+                $counts[$section][$variable] = ( isset( $counts[$section][$variable] ) ? $counts[$section][$variable] : 0 ) + 1;
+        }
+
+        return $resets;
     }
 
     /**
