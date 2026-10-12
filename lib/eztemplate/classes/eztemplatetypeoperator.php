@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit e828c54709), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -315,16 +316,11 @@ class eZTemplateTypeOperator
         {
             case $this->IsClassName:
             {
-                if ( count( $operatorParameters ) == 1 )
-                {
-                    $className = $tpl->elementValue( $operatorParameters[0], $rootNamespace, $currentNamespace, $placement );
-                    $value = strtolower( get_class( $value ) ) == strtolower( $className );
-                }
-                else
-                {
-                    $className = $tpl->elementValue( $operatorParameters[0], $rootNamespace, $currentNamespace, $placement );
-                    $value = strtolower( get_class( $tpl->elementValue( $operatorParameters[1], $rootNamespace, $currentNamespace, $placement ) ) ) == strtolower( $className );
-                }
+                // As in the compiled code: a value that is not an object is of no class (get_class() of a
+                // non-object throws a TypeError from PHP 8)
+                $className = $tpl->elementValue( $operatorParameters[0], $rootNamespace, $currentNamespace, $placement );
+                $operand = count( $operatorParameters ) == 1 ? $value : $tpl->elementValue( $operatorParameters[1], $rootNamespace, $currentNamespace, $placement );
+                $value = is_object( $operand ) && strtolower( get_class( $operand ) ) == strtolower( (string)$className );
             } break;
             case $this->IsSetName:
             {
@@ -392,12 +388,13 @@ class eZTemplateTypeOperator
                                                count( $operatorParameters ),
                                                1 );
                     $operand = $tpl->elementValue( $operatorParameters[0], $rootNamespace, $currentNamespace, $placement );
-                    $value = strtolower( get_class( $operand ) );
                 }
                 else
                 {
-                    $value = strtolower( get_class( $value ) );
+                    $operand = $value;
                 }
+                // '' for a value that is not an object, as in the compiled code
+                $value = is_object( $operand ) ? strtolower( get_class( $operand ) ) : '';
             } break;
         }
     }
