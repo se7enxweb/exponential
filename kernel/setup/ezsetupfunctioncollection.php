@@ -69,6 +69,15 @@ class eZSetupFunctionCollection
     {
         return array( 'result' => ExponentialSDK::EDITION );
     }
+
+    /**
+     * The extension counts of eZExtension::extensionCounts(): on_disk, global, here, anywhere, inactive, missing.
+     * Without $allSiteAccesses the kinds that read every siteaccess's settings (anywhere, inactive) are null.
+     */
+    function fetchExtensionCounts( $allSiteAccesses = false )
+    {
+        return array( 'result' => eZExtension::extensionCounts( null, $allSiteAccesses ? null : false ) );
+    }
 }
 }
 

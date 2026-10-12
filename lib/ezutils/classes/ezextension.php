@@ -717,6 +717,120 @@ class eZExtension
         return $foundType;
     }
 
+    /**
+     * The extensions of the installation by kind: the one definition every page that counts extensions uses
+     * (the admin dashboard, Info > About, the update dashboard), so the same word means the same number everywhere.
+     *
+     *  - on_disk:  every directory in the extension roots (ExtensionDirectory and AdditionalExtensionDirectories),
+     *              each name once, active or not
+     *  - global:   ActiveExtensions found on disk: active in every siteaccess
+     *  - here:     active in the current siteaccess and found on disk: ActiveExtensions, this siteaccess's
+     *              ActiveAccessExtensions and those switched on at run time, in loading order
+     *  - anywhere: active in at least one siteaccess and found on disk: ActiveExtensions and the
+     *              ActiveAccessExtensions of every siteaccess in AvailableSiteAccessList
+     *  - inactive: on disk, active in no siteaccess
+     *  - missing:  named in ActiveExtensions or an ActiveAccessExtensions, but not on disk
+     *
+     * Names are the directory names on disk (an active 'adminaid' is listed as 'AdminAid').
+     *
+     * @param eZINI|null $siteINI the current siteaccess's site.ini (default: eZINI::instance())
+     * @param array|false|null $accessLists siteaccess => its ActiveAccessExtensions; null reads them from the
+     *        site.ini of every siteaccess in AvailableSiteAccessList, false leaves out the kinds that need them
+     *        ('anywhere' and 'inactive' are then null, 'missing' covers this siteaccess only)
+     * @return array kind => list of extension names (null for a kind left out)
+     */
+    public static function extensionLists( eZINI|null $siteINI = null, array|false|null $accessLists = null ) : array
+    {
+        if ( $siteINI === null )
+            $siteINI = eZINI::instance();
+
+        // on disk: a later root wins for a name, as in extensionPath()
+        $onDisk = array();
+        foreach ( self::extensionRootDirectories( $siteINI ) as $root )
+        {
+            $root = rtrim( $root, '/\\' );
+            if ( $root === '' || !is_dir( $root ) )
+                continue;
+            foreach ( scandir( $root ) as $entry )
+            {
+                if ( $entry === '' || $entry[0] === '.' || !is_dir( $root . '/' . $entry ) )
+                    continue;
+                $onDisk[strtolower( $entry )] = $entry;
+            }
+        }
+
+        $resolve = function ( array $names, array &$missing ) use ( $onDisk )
+        {
+            $found = array();
+            foreach ( $names as $name )
+            {
+                $name = trim( (string)$name );
+                if ( $name === '' )
+                    continue;
+                $key = strtolower( $name );
+                if ( isset( $onDisk[$key] ) )
+                    $found[$onDisk[$key]] = true;
+                else
+                    $missing[$name] = true;
+            }
+            return array_keys( $found );
+        };
+
+        $missing = array();
+        $global = $resolve( (array)$siteINI->variable( 'ExtensionSettings', 'ActiveExtensions' ), $missing );
+        // activeExtensions() gives the loading order (ExtensionOrdering) and adds the extensions switched on at run time
+        $here = $resolve( self::activeExtensions( false, $siteINI ), $missing );
+
+        $anywhere = null;
+        $inactive = null;
+        if ( $accessLists !== false )
+        {
+            if ( $accessLists === null )
+            {
+                $accessLists = array();
+                $siteAccesses = array_unique( array_filter( (array)$siteINI->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) ) );
+                foreach ( $siteAccesses as $siteAccess )
+                {
+                    $accessINI = class_exists( 'eZSiteAccess' ) ? eZSiteAccess::getIni( $siteAccess, 'site.ini' ) : null;
+                    if ( $accessINI instanceof eZINI && $accessINI->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' ) )
+                        $accessLists[$siteAccess] = (array)$accessINI->variable( 'ExtensionSettings', 'ActiveAccessExtensions' );
+                }
+            }
+            $names = array_merge( $global, $here );
+            foreach ( $accessLists as $list )
+                $names = array_merge( $names, (array)$list );
+            $anywhere = $resolve( $names, $missing );
+            $inactive = array_values( array_diff( array_values( $onDisk ), $anywhere ) );
+        }
+
+        $onDiskList = array_values( $onDisk );
+        natcasesort( $onDiskList );
+        if ( $inactive !== null )
+            natcasesort( $inactive );
+
+        return array( 'on_disk'  => array_values( $onDiskList ),
+                      'global'   => $global,
+                      'here'     => $here,
+                      'anywhere' => $anywhere,
+                      'inactive' => $inactive === null ? null : array_values( $inactive ),
+                      'missing'  => array_keys( $missing ) );
+    }
+
+    /**
+     * How many extensions there are of each kind of extensionLists(): kind => count (null for a kind left out).
+     *
+     * @param eZINI|null $siteINI
+     * @param array|false|null $accessLists
+     * @return array
+     */
+    public static function extensionCounts( eZINI|null $siteINI = null, array|false|null $accessLists = null ) : array
+    {
+        $counts = array();
+        foreach ( self::extensionLists( $siteINI, $accessLists ) as $kind => $list )
+            $counts[$kind] = $list === null ? null : count( $list );
+        return $counts;
+    }
+
     /*!
      \static
      Read extension information. Returns extension information array

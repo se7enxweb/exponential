@@ -73,4 +73,13 @@ $FunctionList['edition'] = array( 'name' => 'edition',
                                                           'method' => 'fetchEdition' ),
                                   'parameter_type' => 'standard',
                                   'parameters' => array( ) );
+$FunctionList['extension_counts'] = array( 'name' => 'extension_counts',
+                                           'operation_types' => array( 'read' ),
+                                           'call_method' => array( 'class' => 'eZSetupFunctionCollection',
+                                                                   'method' => 'fetchExtensionCounts' ),
+                                           'parameter_type' => 'standard',
+                                           'parameters' => array( array( 'name' => 'all_siteaccesses',
+                                                                         'type' => 'bool',
+                                                                         'required' => false,
+                                                                         'default' => false ) ) );
 ?>
