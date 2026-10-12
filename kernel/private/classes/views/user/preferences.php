@@ -80,7 +80,7 @@ class Preferences extends \Exponential\Runnable\ModuleView
             if ( $function !== 'set_and_exit' && $_SERVER['REQUEST_METHOD'] === 'GET' && is_string( $key ) && trim( $key ) !== ''
                  && !\eZUser::currentUser()->isAnonymous() )
             {
-                $back = array_slice( $Params['Parameters'], 3 );
+                $back = array_slice( $scope['Params']['Parameters'], 3 );
                 $back = implode( '/', array_filter( $back, 'is_string' ) );
                 $tpl = \eZTemplate::factory();
                 $tpl->setVariable( 'preference_key', (string)$key );

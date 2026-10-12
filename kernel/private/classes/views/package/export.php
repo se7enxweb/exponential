@@ -54,8 +54,8 @@ class Export extends \Exponential\Runnable\ModuleView
         // stay outside the try: under Exponential Velocity eZExecution::cleanExit() ends a request by throwing,
         // and a catch around it would render the page on after the file.
         // (format)/json: the JSON format, (format)/xml: the classic one (doc/bc/6.0/package-json-format.md)
-        $format = isset( $Params['UserParameters']['format'] ) && in_array( $Params['UserParameters']['format'], array( \eZPackage::FORMAT_XML, \eZPackage::FORMAT_JSON ), true )
-                  ? $Params['UserParameters']['format'] : false;
+        $format = isset( $scope['Params']['UserParameters']['format'] ) && in_array( $scope['Params']['UserParameters']['format'], array( \eZPackage::FORMAT_XML, \eZPackage::FORMAT_JSON ), true )
+                  ? $scope['Params']['UserParameters']['format'] : false;
         $exportName = $package->exportName( $format );
         $fileName = false;
         try
