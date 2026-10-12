@@ -2,6 +2,7 @@
 /**
  * The code of kernel/content/urlalias.php, moved into a class (#207 stage 1). The file kernel/content/urlalias.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 89a5a73877), Copyright (C) Mugo Web, GPL v2
  */
 /*
  * The original header of kernel/content/urlalias.php:
@@ -73,7 +74,7 @@ class Urlalias extends \Exponential\Runnable\ModuleView
                 $filter->prepare();
             }
             $infoCode = "feedback-removed-all";
-            \ezpEvent::getInstance()->notify( 'content/cache', array( array( $NodeID ) ) );
+            \ezpEvent::getInstance()->notify( 'content/cache', array( array( (int)$NodeID ), array( (int)$node->attribute( 'contentobject_id' ) ) ) );
         }
         else if ( $Module->isCurrentAction( 'RemoveAlias' ) )
         {
@@ -93,7 +94,7 @@ class Urlalias extends \Exponential\Runnable\ModuleView
                     }
                 }
                 $infoCode = "feedback-removed";
-                \ezpEvent::getInstance()->notify( 'content/cache', array( array( $NodeID ) ) );
+                \ezpEvent::getInstance()->notify( 'content/cache', array( array( (int)$NodeID ), array( (int)$node->attribute( 'contentobject_id' ) ) ) );
             }
         }
         else if ( $Module->isCurrentAction( 'NewAlias' ) )
@@ -175,7 +176,7 @@ class Urlalias extends \Exponential\Runnable\ModuleView
                         $infoCode = "feedback-alias-created";
                     }
                     $aliasText = false;
-                    \ezpEvent::getInstance()->notify( 'content/cache', array( array( $NodeID ) ) );
+                    \ezpEvent::getInstance()->notify( 'content/cache', array( array( (int)$NodeID ), array( (int)$node->attribute( 'contentobject_id' ) ) ) );
                 }
             }
         }

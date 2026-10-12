@@ -84,6 +84,14 @@ without a part name; the page shows them as a part called **global** (label *Glo
 what they are. On the demonstration server the global part holds the five kernel scripts plus the sitemap scripts two
 extensions append to it.
 
+One of them, `hide.php`, hides content whose date has passed: for each class in `content.ini [HideSettings]
+HideDateAttributeList[]` (class identifier and date attribute) below the nodes of `RootNodeList[]`. It hides each
+node as **Hide** in the administration does, and also tells the search engine, so hidden content stops being found
+in search engines that keep the visibility in their index (eZ Find, Solr); the built-in search engine checks the
+visibility when it searches. The cache event it sends (`content/cache`) gives listeners the node ids and the
+object ids, so a listener that purges an HTTP cache by object finds them. With thanks to Mugo Web (LoveStack,
+commits `3298b53584`, `89a5a73877`).
+
 Every script takes a lock of its own while it runs (`eZMutex`, keyed by the script file), whether it was started as
 part of a part, on its own with `--script`, from the crontab or from the page. A second run of the same script while
 the first holds the lock prints `Cronjob part locked by other process: <pid>` and skips it. A lock older than
