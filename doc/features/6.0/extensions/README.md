@@ -28,6 +28,8 @@ step (tables, policies, keys).
 
 | Extension | What it is |
 |---|---|
+| [expai](expai.md) | Exponential Intelligence, the writing assistant of the administration (drafts only) |
+| [explayouts suite](../../../bc/6.0/LAYOUTS.md) | Exponential Layouts: layouts, zones, blocks, rules and shared layouts (the guide) |
 | [explayouts_ui](explayouts_ui.md) | the Layouts admin screens |
 | [explayouts_ui_api](explayouts_ui_api.md) | the layout editor |
 | [ezautosave](ezautosave.md) | draft autosave |
@@ -77,6 +79,7 @@ step (tables, policies, keys).
 | [AdminAid](AdminAid.md) | administrator helper |
 | [ezjscore](ezjscore.md) | JavaScript core and packer |
 | [ezmbpaex](ezmbpaex.md) | password expiry |
+| [expqueue](expqueue.md) | the job queue for background work of extensions |
 | [ezupdate](ezupdate.md) | updates and packages |
 | [git_manager](git_manager.md) | git dashboard and backups |
 | [sevenx_authentication_2fa](sevenx_authentication_2fa.md) | two-factor and social login |
