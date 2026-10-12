@@ -2,6 +2,7 @@
 /**
  * The code of kernel/shop/customerorderview.php, moved into a class (#207 stage 1). The file kernel/shop/customerorderview.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2
  */
 /*
  * The original header of kernel/shop/customerorderview.php:
@@ -37,7 +38,7 @@ class Customerorderview extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
 
-        $Email = urldecode( $Email );
+        $Email = self::emailFromURL( $Email );
         $productList = \eZOrder::productList( $CustomerID, $Email );
         $orderList = \eZOrder::orderList( $CustomerID, $Email );
 
@@ -55,6 +56,23 @@ class Customerorderview extends \Exponential\Runnable\ModuleView
         $Result['path'] = $path;
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * The customer's e-mail address from the path of shop/customerorderview/<user id>/<address>. The links
+     * rawurlencode() the address, and the request URI is already decoded (twice, or once with [URLTranslator]
+     * DecodeOnce=enabled), so it is not decoded again here: a third urldecode() turned "a+b@example.com" into
+     * "a b@example.com". An address has no spaces, so a space is a "+" that one decoding too many changed (an
+     * unencoded link, or the default double decoding).
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param string|null $email the Email view parameter
+     * @return string
+     */
+    public static function emailFromURL( $email )
+    {
+        return str_replace( ' ', '+', (string)$email );
     }
 }
 

@@ -49,7 +49,7 @@
 	{$Order:item.created|l10n(shortdatetime)}
 	</td>
 	<td class="{$Order:sequence}">
-    <a href={concat("/shop/customerorderview/",$Order:item.user_id,"/",$Order:item.account_email)|ezurl}>{$Order:item.account_name|wash}</a>
+    <a href={concat("/shop/customerorderview/",$Order:item.user_id,"/",$Order:item.account_email|rawurlencode)|ezurl}>{$Order:item.account_name|wash}</a> {* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2 *}
 	</td>
 	<td class="{$Order:sequence}">
 	{$Order:item.total_ex_vat|l10n(currency)}

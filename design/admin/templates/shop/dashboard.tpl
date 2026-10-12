@@ -261,7 +261,7 @@
 {foreach $d.waiting as $o}
 <tr{if $o.overdue} class="overdue"{/if}>
     <td><a href={concat( '/shop/orderview/', $o.id, '/' )|ezurl}>#{$o.order_nr}</a><div class="sd-note">{$o.created|l10n( 'shortdatetime' )}</div></td>
-    <td><a href={concat( '/shop/customerorderview/', $o.user_id, '/', $o.email )|ezurl}>{$o.customer|wash}</a></td>
+    <td><a href={concat( '/shop/customerorderview/', $o.user_id, '/', $o.email|rawurlencode )|ezurl}>{$o.customer|wash}</a></td> {* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2 *}
     <td class="nw"><span class="sd-dot g-{$o.status_group}"></span>{$o.status_name|wash}</td>
     <td>{if $o.wait_days|gt( 0 )}{'%count days'|i18n( $ctx, , hash( '%count', $o.wait_days ) )}{else}{'%count hours'|i18n( $ctx, , hash( '%count', $o.wait_hours ) )}{/if}{if $o.overdue} <span class="sd-tag bad">{'too long'|i18n( $ctx )}</span>{/if}</td>
     <td class="num">{$o.total|l10n( 'currency', $d.format[$o.currency].locale, $d.format[$o.currency].symbol )}</td>
@@ -281,7 +281,7 @@
 <tr>
     <td><a href={concat( '/shop/orderview/', $o.id, '/' )|ezurl}>#{$o.order_nr}</a></td>
     <td>{$o.created|l10n( 'shortdatetime' )}</td>
-    <td><a href={concat( '/shop/customerorderview/', $o.user_id, '/', $o.email )|ezurl}>{$o.customer|wash}</a></td>
+    <td><a href={concat( '/shop/customerorderview/', $o.user_id, '/', $o.email|rawurlencode )|ezurl}>{$o.customer|wash}</a></td>
     <td><span class="sd-dot {if $o.is_archived}sa{else}g-{$o.status_group}{/if}"></span>{$o.status_name|wash}{if $o.is_archived} <span class="sd-tag">{'archived'|i18n( $ctx )}</span>{/if}</td>
     <td class="num">{$o.total|l10n( 'currency', $d.format[$o.currency].locale, $d.format[$o.currency].symbol )}</td>
 </tr>

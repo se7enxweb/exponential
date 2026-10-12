@@ -49,7 +49,7 @@
     {if is_null($Orders.item.account_name)}
         <s><i>{'( removed )'|i18n( 'design/admin/shop/orderlist' )}</i></s>
     {else}
-        <a href={concat( '/shop/customerorderview/', $Orders.item.user_id, '/', $Orders.item.account_email )|ezurl}>{$Orders.item.account_name|wash}</a>
+        <a href={concat( '/shop/customerorderview/', $Orders.item.user_id, '/', $Orders.item.account_email|rawurlencode )|ezurl}>{$Orders.item.account_name|wash}</a> {* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2 *}
     {/if}
     </td>
     
