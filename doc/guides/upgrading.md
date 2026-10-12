@@ -23,6 +23,28 @@ historic spelling on purpose.) Expected: a value such as `5.4.0` or `6.0.14`.
 | 3.10 up to 5.3 | Part A, then B |
 | 5.4.0 or 5.90 (2017.08 and later) | Part B |
 | 6.0.0 up to 6.0.14, or an earlier checkout of the 6.0.15 line | Part C |
+| `lovestack` (LoveStack, Mugo Web's distribution of the same kernel, `mugoweb/ezpublish-legacy`) | [Coming from LoveStack](#coming-from-lovestack), then Part C |
+
+### Coming from LoveStack
+
+LoveStack shares its origin with Exponential, and its databases are close to Exponential's. One read-only command
+lists what such a site brings along and what to do with each item:
+
+```bash
+./console exp:lovestack check --allow-root-user          # add --json for a machine-readable report
+```
+
+It reads the database and the settings and writes nothing. Each line is marked:
+
+| Mark | Meaning |
+|---|---|
+| `FOUND` | something to do; the line below it says what (for example the version row `lovestack`, the `legacy_2018` extension, `[Session] SameSite` to rename to `CookieSameSite`, `image.ini [ValidUploadFormats] MIMEList[]` to rename to `[ImageUploadSettings] AllowedMIMETypes[]`) |
+| `info` | present, and Exponential works with it as it is: LoveStack's `db-schema-version` row is kept as a record, its unique index on `ezuser.login` and its `data_text NOT NULL DEFAULT ''` column can stay (Exponential stores an empty string there, never NULL), settings that Exponential reads under the same name |
+| `clear` | not present |
+| `unknown` | the database engine does not tell (MongoDB has no indexes or columns to read) |
+
+It ends with `OK` (exit code 0) when nothing needs to be done, or `NEEDS ATTENTION` (exit code 1).
+
 
 ## Step 1: back up, always
 
