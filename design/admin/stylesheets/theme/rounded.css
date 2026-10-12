@@ -174,12 +174,12 @@ a.show-hide-tabs
     overflow: visible;
     width: auto;
     text-decoration: none;
-    background: url('../../images/3/sprite.png') no-repeat 1px -62px;
+    background: url('../../images/3/sprite.png') no-repeat 1px -118px; /* swapped: the icon shows the state the tabs are in */
 }
 
-a#maincontent-hide
+a#maincontent-hide /* the icon of the other state */
 {
-    background: url('../../images/3/sprite.png') no-repeat 1px -118px;
+    background: url('../../images/3/sprite.png') no-repeat 1px -62px;
 }
 
 a.show-hide-tabs:hover
