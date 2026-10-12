@@ -84,6 +84,21 @@ class eZStringType extends eZDataType
      * @param string $string
      * @return string
      */
+    /**
+     * The class attribute of $attribute, or null for an object that has none (a caller's own minimal attribute
+     * object, as in an import): such a value is then stored as given.
+     *
+     * @param mixed $attribute
+     * @return eZContentClassAttribute|null
+     */
+    static function classAttributeOf( $attribute )
+    {
+        if ( !is_object( $attribute ) || !method_exists( $attribute, 'contentClassAttribute' ) )
+            return null;
+        $classAttribute = $attribute->contentClassAttribute();
+        return $classAttribute instanceof eZContentClassAttribute ? $classAttribute : null;
+    }
+
     static function storedString( $classAttribute, $string )
     {
         if ( is_string( $string ) && self::isTrimEnabled( $classAttribute ) )
@@ -269,7 +284,7 @@ class eZStringType extends eZDataType
     {
         $result = array( 'errors' => array(),
                          'require_storage' => true );
-        $string = self::storedString( $objectAttribute->contentClassAttribute(), $string );
+        $string = self::storedString( self::classAttributeOf( $objectAttribute ), $string );
         $objectAttribute->setContent( $string );
         $objectAttribute->setAttribute( 'data_text', $string );
         return true;
@@ -383,7 +398,7 @@ class eZStringType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
-        return $contentObjectAttribute->setAttribute( 'data_text', self::storedString( $contentObjectAttribute->contentClassAttribute(), $string ) );
+        return $contentObjectAttribute->setAttribute( 'data_text', self::storedString( self::classAttributeOf( $contentObjectAttribute ), $string ) );
     }
 
 
