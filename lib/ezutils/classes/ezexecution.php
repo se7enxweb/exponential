@@ -195,6 +195,15 @@ class eZExecution
             set_exception_handler( array('eZExecution', 'defaultExceptionHandler') );
             self::$shutdownHandle = true;
         }
+        else if ( self::currentExceptionHandler() === null )
+        {
+            // A persistent worker (Exponential Velocity) takes away the exception handler a request installed once the
+            // request has ended, while the flag above lives on in this class's statics: without this every request
+            // after the first one of a worker had no handler, and an uncaught exception got the server's own error
+            // page and no line in error.log. Installed again only when no handler is in place, so a handler that
+            // other code installed after this one stays.
+            set_exception_handler( array('eZExecution', 'defaultExceptionHandler') );
+        }
 
         // Needed by the error handler, since the current directory is lost when
         // the callback function eZExecution::uncleanShutdownHandler is called.
@@ -206,6 +215,19 @@ class eZExecution
         {
             self::$eZDocumentRoot = getcwd();
         }
+    }
+
+    /**
+     * The exception handler in place, read without changing it (a handler is pushed and popped again, so PHP's
+     * stack of handlers is as it was).
+     *
+     * @return callable|null null when none is installed
+     */
+    static public function currentExceptionHandler()
+    {
+        $current = set_exception_handler( static function ( $e ) {} );
+        restore_exception_handler();
+        return $current;
     }
 
     /**
