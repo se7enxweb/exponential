@@ -3013,7 +3013,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-d4abc27d61f869f2a56ab2aa4227dd05  doc/changelogs/6.0/6.0.15.md
+1408a5a648784591202454b86695efeb  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6196,7 +6196,7 @@ cba91a38a19dd20520328d582d9d9228  lib/ezdb/classes/ezdbtool.php
 c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
 31faf16a40f407c32b6c7b0b2102b5ec  lib/ezdb/classes/eznulldb.php
-3924e09fa7d24fa149b733ab2e123fee  lib/ezdb/classes/ezpostgresqldb.php
+1a6057447c813267a1ca86be58c9e6ba  lib/ezdb/classes/ezpostgresqldb.php
 1dd77dd264bb62e626b4443b4fd54f28  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 8e9010beaa4d355d60448ef5c507ea6c  lib/ezdbschema/classes/ezdbschema.php
@@ -6367,7 +6367,7 @@ b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
 0ee9cef26c3240f827773cafd53d87b6  lib/ezutils/classes/ezdatetimevalidator.php
-5d4ab2a67dd8aac73c4715adb5338e9c  lib/ezutils/classes/ezdebug.php
+a906eec91818c9acc43833387b64410e  lib/ezutils/classes/ezdebug.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 91f66ad66a917e16e269c4ffda5b6417  lib/ezutils/classes/ezexecution.php
 72fc7a1f67f3eaa83336f9d5b48a0169  lib/ezutils/classes/ezexpiryhandler.php
@@ -6406,7 +6406,7 @@ ead255df95cadecdc810d3576eeddf2f  lib/ezutils/classes/ezsysinfo.php
 b8345b4eff8fc3873c7e157c12e39cf6  lib/ezutils/classes/eztexttool.php
 fde5977c704d8f50c0edf07dc1021ac7  lib/ezutils/classes/eztimestamp.php
 d1430e6d3fe0292c03f024139ffc91f7  lib/ezutils/classes/eztrustedproxy.php
-27b2cfd6171e09053e9111e700532469  lib/ezutils/classes/ezuri.php
+557b35e30799013acfe77393ef4e5a5d  lib/ezutils/classes/ezuri.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 7dabbf7f2463e9e1009df77ab6598adc  lib/phpcompat.php
@@ -7879,6 +7879,7 @@ f41f1ce2427c94f00213bc3ba51685cf  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 d0fbfd88dc279221eee85b97921f6add  tests/tests/lib/ezdb/eZDBInterfaceTest.php
 26547ca2016f597eb9d4165358c37787  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 afa76fb7b9aaa0a1aaaea775252c6dcc  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
+d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
 e4ebfd52c61c72bae807a524e773a520  tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php
@@ -7967,6 +7968,7 @@ e03fa9c077e0046cda4ed2e95139fa40  tests/tests/lib/ezutils/eZCLITest.php
 9e267a84dd2291afb44623aacd3ebe39  tests/tests/lib/ezutils/eZDebugDeprecatedTest.php
 19b4b7676978ad54bccd376b846ad625  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
 d673c9d26918f6ad1e90008332f95a8e  tests/tests/lib/ezutils/eZDebugMessagesTest.php
+0954197c4970b48489c62b41ead45f74  tests/tests/lib/ezutils/eZDebugReportNullLabelTest.php
 4b13614a9750900ddd1d2071456fe6fd  tests/tests/lib/ezutils/eZExecutionDatabaseUnavailableTest.php
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 e0df258f6fc60a3fcb7ac21bfd0511b1  tests/tests/lib/ezutils/eZExtensionCountsTest.php
@@ -7999,6 +8001,7 @@ f456335943fc0aade2512be73fe79b5a  tests/tests/lib/ezutils/eZSysRequestURIDecodeO
 186e663c92c550ded58b636d4ed22d79  tests/tests/lib/ezutils/eZURIElementsTest.php
 e6ad2c9ac436d848b4359433b0380402  tests/tests/lib/ezutils/eZURIFilterStringTest.php
 6178821ce5542ce0e1358dbd29b28957  tests/tests/lib/ezutils/eZURITest.php
+597f832fb4aeff9c45d6232873b1a391  tests/tests/lib/ezutils/eZURITransformURIEscapeNullTest.php
 40005d9e868e02bfbd2cae8d1e693583  tests/tests/lib/ezutils/eZURITransformURINullTest.php
 ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 fa6bba7b528e860298cc6d4538c5c00e  tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php
