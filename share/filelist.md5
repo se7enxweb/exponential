@@ -524,7 +524,7 @@ dec1ddc6f7d1582a29734c2b3abfbdca  design/admin/templates/package/upload.tpl
 5eecf3f879aa02cedec156cd4b6ffb6b  design/admin/templates/package/view/contents_pager.tpl
 bfbc906e2b6cad9169d1b3e23f148b20  design/admin/templates/package/view/file_card.tpl
 af46a950a91555aad32cb5f618995f19  design/admin/templates/package/view/files.tpl
-3bc947d5fc4f16fbf25ab840489519d9  design/admin/templates/package/view/full.tpl
+5d30dd61d1857e0eb4ddce1e4e211f25  design/admin/templates/package/view/full.tpl
 f8ca49e9ca11f9c274e375cd0ea3aad4  design/admin/templates/page_copyright.tpl
 fda9299f029c731efb3f2a7d8cae2fe8  design/admin/templates/page_head_script.tpl
 4dc8123e40e1467fe497e4e4b40de00b  design/admin/templates/page_head_style.tpl
@@ -705,6 +705,7 @@ f7a30c302abe5ead88aeec1589d26138  design/admin/templates/user/edit.tpl
 e7729d83b6d2d3e108c251e3364cf009  design/admin/templates/user/exp_style.tpl
 94f6a4ca5186b066b15d67a418eb3a1b  design/admin/templates/user/login.tpl
 4d5329c1f77dd014bb6074f0454361d1  design/admin/templates/user/password.tpl
+334a71e0270b253897c94e074acd0559  design/admin/templates/user/preferences_confirm.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin/templates/user/register.tpl
 693d1d198fd16f0c6b455e10582be512  design/admin/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin/templates/user/success.tpl
@@ -1099,7 +1100,7 @@ e6a3c2f8012b44d7d40ee02614debd4b  design/admin4/templates/navigator/alphabetical
 43081b08baebac3fc125b6b899ce31cd  design/admin4/templates/node/removenode.tpl
 42e4cfd87cd347933de08e94a4fd83d6  design/admin4/templates/node/removeobject.tpl
 05da260b91f2f49d37a5a39b3afd0e7b  design/admin4/templates/node/top_node_full.tpl
-9e4a0e94135732df9bedbfcd670170b9  design/admin4/templates/node/view/a4_full_body.tpl
+ede38c106779677ff5277d001eabff2c  design/admin4/templates/node/view/a4_full_body.tpl
 ea465bb76b53128ff5a195583ce942a2  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin4/templates/node/view/browse_thumbnail.tpl
@@ -1147,7 +1148,7 @@ dec1ddc6f7d1582a29734c2b3abfbdca  design/admin4/templates/package/upload.tpl
 5eecf3f879aa02cedec156cd4b6ffb6b  design/admin4/templates/package/view/contents_pager.tpl
 bfbc906e2b6cad9169d1b3e23f148b20  design/admin4/templates/package/view/file_card.tpl
 af46a950a91555aad32cb5f618995f19  design/admin4/templates/package/view/files.tpl
-3bc947d5fc4f16fbf25ab840489519d9  design/admin4/templates/package/view/full.tpl
+5d30dd61d1857e0eb4ddce1e4e211f25  design/admin4/templates/package/view/full.tpl
 13fb5dd9c5fb7cc9d11d9cd98968d23c  design/admin4/templates/page_copyright.tpl
 9385d7d3cbfac44f1bd302e6945d610d  design/admin4/templates/page_head_script.tpl
 7aaaffcf82c9b045d8a8249c79fede29  design/admin4/templates/page_head_style.tpl
@@ -1327,6 +1328,7 @@ f7a30c302abe5ead88aeec1589d26138  design/admin4/templates/user/edit.tpl
 e7729d83b6d2d3e108c251e3364cf009  design/admin4/templates/user/exp_style.tpl
 db9fe9a68ae459d0404e90b409e57040  design/admin4/templates/user/login.tpl
 2e4789e7e2e4e9ee6f5f607b9bf9da5b  design/admin4/templates/user/password.tpl
+334a71e0270b253897c94e074acd0559  design/admin4/templates/user/preferences_confirm.tpl
 171cc65f2edc2d155b23ebe57a759e1f  design/admin4/templates/user/register.tpl
 693d1d198fd16f0c6b455e10582be512  design/admin4/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin4/templates/user/success.tpl
@@ -2731,6 +2733,7 @@ e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 effa7088aa8aaca0475eecbfe46e32a8  design/standard/templates/user/login.tpl
 012058cf37cb560202e58cd45c3e6d46  design/standard/templates/user/password.tpl
 eca5d5ed39fdf3334394887dad070c6e  design/standard/templates/user/password_changed_mail.tpl
+0df6c6679df5971b6ce443d1bd0fe421  design/standard/templates/user/preferences_confirm.tpl
 b2e53172a5cdde6341ac4e5ad2d03163  design/standard/templates/user/register.tpl
 ed5856b59fd9402bdad145c9c129582b  design/standard/templates/user/register_user_not_valid.tpl
 c4e5053f070003e786c1929d062da852  design/standard/templates/user/registrationapproved.tpl
@@ -5670,7 +5673,7 @@ fe427288af444ba71c54f5bd857f788c  kernel/private/classes/views/notification/sett
 5f3184dd1488e66a52d6a34e92d5db80  kernel/private/classes/views/package/list.php
 a1b1fe230818d5f7c0ec7c0b0d911029  kernel/private/classes/views/package/uninstall.php
 43476676ca9eb841860e84c08ee8c8ae  kernel/private/classes/views/package/upload.php
-bef4eff725ac2e21bb434f5500ff961c  kernel/private/classes/views/package/view.php
+bf046fa5ad68d3b478dd9590c269ed06  kernel/private/classes/views/package/view.php
 023110b9f050fa9ccfb7bd155804801b  kernel/private/classes/views/package/viewfile.php
 98bc4a7e6f41761e0632a7234c37a304  kernel/private/classes/views/pdf/edit.php
 7e78daf791479f44bf902e733a4b9a67  kernel/private/classes/views/pdf/list.php
@@ -5778,7 +5781,7 @@ a86c32c292a6686cc1a40f0d8dac6df8  kernel/private/classes/views/user/edit.php
 8f26834de574e7fc29e03ffb5df66d2d  kernel/private/classes/views/user/login.php
 f78f5a9b4365087a08e196ebde0ba8b1  kernel/private/classes/views/user/logout.php
 d407061c56d24d97e47bb1d720fe70b7  kernel/private/classes/views/user/password.php
-7c8075a41620c63e241b5c1e3578afe9  kernel/private/classes/views/user/preferences.php
+6fef54ed92045b6e442f0a6c000eda8a  kernel/private/classes/views/user/preferences.php
 6658ff0515f348cadfd0da2df9f4d6b8  kernel/private/classes/views/user/register.php
 15ff684909ba08e97c297c40efe2787f  kernel/private/classes/views/user/setting.php
 2b3122f91f4329be67df94bbef523d31  kernel/private/classes/views/user/success.php
