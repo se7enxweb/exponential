@@ -368,8 +368,13 @@ class eZAutoloadGenerator
         $files = array();
         foreach ( $this->collectExtensionPackages() as $packagePath )
         {
+            // buildFileList() reports the files under the real path of the package, so the tests/ exclusion is
+            // anchored there too: with a relative extension root (the default "extension") it never matched, and
+            // the stubs of a test bootstrap (eZDB, eZINI, ...) became extension classes and kernel overrides
+            $realPackagePath = realpath( $packagePath );
+            $testsBase = $realPackagePath !== false ? $realPackagePath : $packagePath;
             $extraExcludeExtensionDirs = $extraExcludeDirs;
-            $extraExcludeExtensionDirs[] = '@^' . preg_quote( $packagePath, '@' ) . preg_quote( DIRECTORY_SEPARATOR, '@' ) . 'tests@';
+            $extraExcludeExtensionDirs[] = '@^' . preg_quote( $testsBase, '@' ) . preg_quote( DIRECTORY_SEPARATOR, '@' ) . 'tests@';
             $packageFiles = $this->buildFileList( $packagePath, $extraExcludeExtensionDirs );
             if ( is_array( $packageFiles ) )
             {
