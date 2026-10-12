@@ -194,7 +194,7 @@ events, Charts, Alerts and Export, plus Archives and Settings for `audit/manage`
 | **Event** | `audit/event/<id>` | One record in full: when (local and UTC), who, the request, object and target with links into the admin (node, object, user, role, job), before and after side by side, the parent, the children, the other events of the same request and job, and the chain position (prev, hash, whether the hash matches the record now). `/(format)/json` returns the line as it is in the file |
 | **Charts** | `audit/charts` | Events per day per channel, refusals and failures per day, logins against failed logins, top actors, top event names; the last 14 days (`/(days)/<n>`, up to 366), under the console's filters. Drawn in HTML/CSS, each chart with its numbers in a table. Needs the index |
 | **Alerts** | `audit/alerts` | The alerts that fired (`system.audit.alert`: rule, group, count, window, first and last matching events) and the rules in use with any problem. Read-only |
-| **Export** | `audit/export` | The console's current filter as CSV, JSON lines (the lines as written, so hashes can be checked) or JSON, at most `MaxExportRecords` records (a larger filter is cut and says so; `exp:audit export` has no limit). The CSV has the generic columns; filtered on the channel of an extension's source, also the columns that source declares (expai: provider, model, region, purpose, lane, tokens in and out, latency, status, fallback, cost), and the page names them. Recorded as `system.audit.export` with the sha256 of what was sent |
+| **Export** | `audit/export` | The console's current filter as CSV, JSON lines (the lines as written, so hashes can be checked) or JSON. The page says how many records the filter has before anything starts. **Download now**: at most `MaxExportRecords` records (a larger filter is cut and says so, header `X-Exp-Audit-Export-Cut`), streamed: the file starts at once and is sent while it is read, on Apache and on Velocity alike ([Streaming the export](#streaming-the-export)). **Export in the background**: a content job (`auditexport`) writes the same bytes to a file, up to `MaxBackgroundExportRecords`, shows its progress on `content/job/<id>` and then offers the file on the export page (`audit/export/(download)/<id>`, only to the user who asked for it). The CSV has the generic columns; filtered on the channel of an extension's source, also the columns that source declares (expai: provider, model, region, purpose, lane, tokens in and out, latency, status, fallback, cost), and the page names them. Recorded as `system.audit.export` with the sha256 of what was sent (a background export when its file is complete, with `via` background and the job) |
 | **Archives** (manage) | `audit/archives` | Per channel: live files (count, size, oldest), archives and manifests, each live file's verification state (intact, repaired, broken at line n, unchecked), the signing key id and fingerprint. Read-only: archiving and restoring are done by the cronjob part and `exp:audit` |
 | **Settings** (manage) | `audit/settings` | The effective audit.ini with the file each value comes from, secrets masked, keys as ids and fingerprints, the sinks and format handlers with what keeps them from working, the index state (tables, full-text kind, rows, lag). Read-only: write settings with `exp:ini` (see [4.9](#49-changing-settings)) |
 | **Recent** | `audit/recent` | The latest 100 events, all channels or `/(channel)/<name>`, with a chain line per channel |
@@ -1253,6 +1253,43 @@ Content jobs show no measurable difference. To go further:
 - Big indexes: `KeepDays` shorter than `ArchiveDays`, `IndexReads=disabled`, `BatchSize` up for faster catch-up.
 - Put LogDir on local disk, and ArchiveDir elsewhere.
 
+#### Streaming the export
+
+The download of `audit/export` is sent while it is read (`expAuditExportStream`, #393), so a large filter starts
+downloading at once and never holds the whole file in memory:
+
+- **Reading.** The first page of 500 comes from the console's own page (with the records of the live files that are
+  not indexed yet, on top), the rest by position in the same order: the ordered ids of the index in segments of
+  10,000 (`expAuditQuery::orderedIds()`, after the last id read), then the full rows 500 at a time by id
+  (`byIds()`). The export used OFFSET pages of 500 before, and each made the database sort every whole record of the
+  filter again: on SQLite 0.5–0.7 s a page, 35 s for 27,000 records. The bytes are the same as before for the same
+  filter. MongoDB, or a database that refuses that SQL, keeps the OFFSET pages. The SQL query cache is switched off
+  while an export reads, so its pages do not fill the cache.
+- **Sending.** `Content-Type`, `Content-Disposition: attachment`, `Cache-Control: private, no-store`,
+  `X-Content-Type-Options: nosniff`, no `Content-Length`, and `X-Accel-Buffering: no`: Exponential Velocity (0.0.4.49
+  and later) streams a response with that header from its pool workers instead of collecting it, and a proxy in
+  front does not hold it either. The output buffers are ended and the first piece (the CSV header line) is flushed at
+  once, then every 64 KB. The session is closed first (`eZSession::stop()`), so the user's other pages do not wait.
+- **In the background.** Above `MaxExportRecords`, or whenever a file is wanted later, "Export in the background"
+  starts the content job `auditexport` (`expContentJobAuditExport`, content.ini `JobTypes[auditexport]`). It writes
+  `var/<site>/jobs/content/<id>.export` (site user, 0660, no web access) in batches of `BatchSize` × 100 records,
+  keeping the stream's state and the file's length in its checkpoint: a job resumed after a crash cuts what the last
+  batch wrote after its checkpoint and writes it again. The job page shows the progress and opens the export page
+  when it is done; the file is removed with the job (`KeepDays`). The download of the file is streamed the same way
+  and recorded as `system.audit.read` with the job.
+
+Measured on the reference installation (channel `content`, 26,889 records up to a fixed time, CSV of 7.7 MB):
+
+| | before | after |
+|---|---|---|
+| Apache + PHP-FPM (:443), first byte / total | 0.75 s / 38.3 s | 0.45 s / 3.3 s |
+| Velocity (:8080), first byte / total | 504 after 30.6 s | see below |
+| reading and formatting only (CLI), time / peak memory | 36.4 s / 130 MB | 2.9 s / 22 MB |
+| background job (6 batches of 5,000) | – | 4 s, peak 18.9 MB |
+
+The output is byte for byte the same as before for a CSV of 528 records (`ai` channel, with its source columns), of
+4,390 records as CSV, JSON lines and JSON, and of the 26,889 records; the background file of the same filter too.
+
 ### 4.12 Privacy and GDPR tasks
 
 (This describes what the audit does. It is not legal advice. Document it in your own record of processing.)
@@ -1542,6 +1579,10 @@ Velocity's workers are persistent, so several things work differently from PHP-F
 - The bridge's listeners are attached once per worker (a second attach replaces the first), so an event is never
   recorded twice.
 - 1 000 requests in one worker were tested: no record carried another request's id.
+- The export's download sends `X-Accel-Buffering: no`, so a pool worker streams it as it is written (Velocity
+  0.0.4.49 and later; under `streamTimeout`, not the 30 s `requestTimeout` that made it a 504 before). The view never
+  wraps the download and `eZExecution::cleanExit()` in a `catch`: under Velocity `cleanExit()` throws to end the
+  request, and a caught exception would append the page to the file.
 
 ### 5.10 Failure modes
 
@@ -1984,7 +2025,7 @@ section summarises it. Change values in an override, never in that file ([4.9](#
 | `[AuditRotationSettings]` | defaults for the channel blocks; `VerifyBeforeArchive`, `VerifyAfterArchive`, `RotateAfter` (00:15) | |
 | `[AuditArchiveSettings]` | `ArchiveDir`, `FormatHandlers[]`, `Level[]`, `FileMode` (0440), `DirMode` (0750) | |
 | `[AuditIndexSettings]` | `Index`, `BatchSize` (2000), `IndexReads` (disabled), `FullText`, `KeepDays` (730) | |
-| `[AuditConsoleSettings]` | `PageSize` (50), `MaxExportRecords` (100000), `ReauthForManage` (disabled), `ReauthMinutes` (10) | the password again before manage actions ([3.1](#31-who-may-see-what-the-policies)) |
+| `[AuditConsoleSettings]` | `PageSize` (50), `MaxExportRecords` (100000), `MaxBackgroundExportRecords` (1000000), `ReauthForManage` (disabled), `ReauthMinutes` (10) | the password again before manage actions ([3.1](#31-who-may-see-what-the-policies)); the largest download and background export ([Streaming the export](#streaming-the-export)) |
 | `[AuditCompatSettings]` | `Map[]`, `UnmappedAsLegacy`, `LegacyFiles` (disabled: also write the 4.x text files) | |
 | `[AuditBridgeSettings]` | `Bridge[<ezpEvent>]=<name>` | [3.5](#35-the-developer-api) |
 
@@ -2182,6 +2223,7 @@ The acceptance tests of the design (Z9), run at the end of the work on 2026-10-0
 | `expAuditImportTest` | 1 | both 4.x header forms, re-import skipped, the legacy manifest (E4) |
 | `expAuditFilterGuardReauthTest` | 9 | name patterns, malformed filters find nothing, the time rule, `--query`, `OnWriteFailure=refuse` (the guard, a settings write, an admin POST), `ReauthForManage` (AG-01–AG-09; live database, throwaway log directories) |
 | `expAuditMailRecipientsTest` | 8 | every recipient kind against the live database (temporary users and groups, removed afterwards) |
+| `expAuditExportStreamTest` | 7 | the streamed export (EX-01–EX-07): the same bytes as the OFFSET loop before #393 for CSV, JSON lines and JSON over several pages and cut by a limit, batch by batch through its state, with unindexed records on top; ordered ids and rows by id; the query cache off while reading; the background job's file, a crash between a batch and its checkpoint, only the owner downloads (live database, test channels) |
 | `expAuditSourceTest` | 8 | the console's sources (AS-01–AS-08): none registered changes nothing, a source of its own channel, what keeps one out, view paths only, a source that throws, the Channel limitation, a branch routed into the source's channel, the policy limitation lists it |
 
 Also `tests/tests/kernel/classes/expViewAccessTest.php` (the dashboard permission fix): 14 tests, 68 assertions, OK
@@ -2388,13 +2430,14 @@ configurations, and the generated event reference ([section 9](#9-proof)).
 
 Fixed since this list was first written: `exp:audit search --query` ([3.3](#33-the-command-expaudit)), malformed name
 patterns refused, one time rule for `--from`/`--to`, the password re-entry `ReauthForManage`
-([3.1](#31-who-may-see-what-the-policies)) and `OnWriteFailure=refuse` ([4.13](#413-when-the-audit-cannot-write)).
+([3.1](#31-who-may-see-what-the-policies)) and `OnWriteFailure=refuse` ([4.13](#413-when-the-audit-cannot-write)), and
+the console's export, which took 35 s for a channel of 27,000 records, timed out on Velocity and could not run a
+larger filter in the background ([Streaming the export](#streaming-the-export), 2026-10-12).
 
 Found while writing this guide. Each was checked on the reference installation:
 
 | Issue | Effect | Until it is fixed |
 |---|---|---|
-| The console's export cuts at `MaxExportRecords` instead of running larger exports in the background | large exports from the browser are incomplete (it says so) | `exp:audit export` has no limit |
 | The archives and settings views and the alerts view are read-only (no "Archive now", no acknowledge, no settings form) | these actions are done on the command line | `exp:audit archive/restore/key`, `exp:ini set audit.ini/…` |
 
 ## Related pages

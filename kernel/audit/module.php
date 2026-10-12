@@ -63,7 +63,7 @@ $ViewList['export'] = array(
     'script' => 'export.php',
     'functions' => array( 'read' ),
     'params' => array(),
-    'unordered_params' => array_merge( $auditFilterParams, array( 'format' => 'Format' ) ) );
+    'unordered_params' => array_merge( $auditFilterParams, array( 'format' => 'Format', 'download' => 'Download' ) ) );
 
 $ViewList['archives'] = array(
     'default_navigation_part' => 'expauditnavigationpart',
