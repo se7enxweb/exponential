@@ -15,9 +15,14 @@
  *          the total once, and an InTotal=disabled registry adds nothing to it
  *  RD-05 — The event sweep finds events announced on a variable or under a variable name (package/install/drafts,
  *          content/pre_rendering)
+ *  RD-06 — A line "Registries[]" without a value in a later file empties the list, as eZINI reads it: the earlier
+ *          files' registries and the lines above it in the same file are dropped, the ones after it kept (also for
+ *          Sections[] in a block); a file that only adds keeps the others (fixtures/radregistry-reset)
+ *  RD-07 — ezjscore and ezoe declare their registries in their own rad.ini.append.php: the survey's code names
+ *          neither, the registries are declared by them, read only from active extensions, and nothing is broken
  *
  * Reads the live installation's classes and settings for RD-04 and RD-05; RD-01 to RD-03 read the fixture files
- * in fixtures/radregistry. No test database.
+ * in fixtures/radregistry, RD-06 those in fixtures/radregistry-reset. No test database.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -147,5 +152,59 @@ class RadSurveyDeclaredRegistriesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'filter', $events['httpcache/store/headers']['kind'] );
         $this->assertSame( 'notify', $events['package/install/drafts']['kind'] );
         $this->assertArrayNotHasKey( 'notifications/initialized', $events, 'a notify() of a class of its own is no event' );
+    }
+
+    /** RD-06 */
+    public function testAResetLineEmptiesTheList()
+    {
+        $dir = 'tests/tests/kernel/classes/runnable/fixtures/radregistry-reset';
+        $later = array( 'path' => $dir . '/later.ini.append.php', 'ini' => 'rad.ini', 'origin' => 'override' );
+        $added = array( 'path' => $dir . '/added.ini.append.php', 'ini' => 'rad.ini', 'origin' => 'override' );
+        $first = array( 'path' => $dir . '/rad.ini', 'ini' => 'rad.ini', 'origin' => 'kernel' );
+
+        $this->assertSame( array( 'radreset_first', 'radreset_second', 'radreset_fourth' ),
+                           array_keys( expRADSurvey::declaredRegistryDescriptors( array( $first, $added ) ) ), 'a list without a reset adds' );
+
+        $descriptors = expRADSurvey::declaredRegistryDescriptors( array( $first, $later, $added ) );
+        $this->assertSame( array( 'radreset_third', 'radreset_fourth' ), array_keys( $descriptors ),
+                           'the reset drops the earlier file\'s registries and the line above it, and keeps what follows it' );
+        $this->assertSame( array( 'Action_*' ), $descriptors['radreset_third']['sections'], 'a reset of Sections[] inside a block too' );
+        $this->assertSame( array(), $descriptors['radreset_third']['problems'] );
+
+        $this->assertSame( array( 'RegistrySettings' => array( 'Registries[]' => 1 ), 'Registry_radreset_third' => array( 'Sections[]' => 1 ) ),
+                           expRADSurvey::iniResets( $dir . '/later.ini.append.php' ) );
+        $this->assertSame( array( 'RegistrySettings' => array( 'Registries[]' => 0 ) ), expRADSurvey::iniResets( $dir . '/rad.ini' ) );
+        $this->assertSame( array(), expRADSurvey::iniResets( $dir . '/added.ini.append.php' ) );
+        $this->assertSame( array(), expRADSurvey::iniResets( $dir . '/no-such-file.ini' ) );
+    }
+
+    /** RD-07 */
+    public function testEzjscoreAndEzoeDeclareTheirRegistries()
+    {
+        ezpLiveInstallation::requireOrSkip();
+        $this->assertArrayNotHasKey( 'ezjscserver', expRADSurvey::registryDescriptors(), 'the survey no longer names ezjscore' );
+        $this->assertArrayNotHasKey( 'ezoeengines', expRADSurvey::registryDescriptors(), 'nor ezoe' );
+        $survey = expRADSurvey::survey();
+        $registries = $survey['registries'];
+        foreach ( array( 'ezjscserver' => 'ezjscore', 'ezoeengines' => 'ezoe' ) as $key => $extension )
+        {
+            if ( !expRADSurvey::isActiveOrigin( $extension ) )
+            {
+                $this->assertArrayNotHasKey( $key, $registries, $extension . ' is not active' );
+                continue;
+            }
+            $this->assertTrue( $registries[$key]['declared'], $key );
+            $this->assertSame( $extension, $registries[$key]['origin'], $key );
+            $this->assertSame( array(), $registries[$key]['broken'], $key );
+            $this->assertSame( array(), array_filter( $registries[$key]['entries'], function ( $e ) { return !expRADSurvey::isActiveOrigin( $e['origin'] ); } ),
+                               $key . ': only the settings of active extensions' );
+        }
+        if ( isset( $registries['ezjscserver'] ) )
+        {
+            $this->assertContains( 'expSubitemsServerFunctions', array_column( $registries['ezjscserver']['entries'], 'value' ) );
+            $this->assertArrayHasKey( 'expservices', $registries, 'the remote services are still read from the server functions' );
+        }
+        if ( isset( $registries['ezoeengines'] ) )
+            $this->assertContains( 'tinymce3', array_column( $registries['ezoeengines']['entries'], 'name' ) );
     }
 }

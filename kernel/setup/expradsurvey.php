@@ -634,17 +634,6 @@ class expRADSurvey
                 'ini'       => 'ini.ini',
                 'section'   => 'IniCommandSettings',
                 'variables' => array( 'Actions' => 'expIniAction', 'ScopeProviders' => 'expIniScopeProvider' ) ),
-            'ezjscserver'     => array(
-                'title'     => 'Server functions of ezjscore',
-                'ini'       => 'ezjscore.ini',
-                'section'   => '/^ezjscServer_(.+)$/',
-                'variables' => array( 'Class' => '' ) ),
-            // The online editor's engines (extension/ezoe/settings/ezoe.ini [EditorSettings] Engines[<id>]=<class>)
-            'ezoeengines'     => array(
-                'title'     => 'Online editor engines',
-                'ini'       => 'ezoe.ini',
-                'section'   => 'EditorSettings',
-                'variables' => array( 'Engines' => 'expOEEditorEngine' ) ),
             // The Exp Debug bar's settings and presets (settings/debugbar.ini and every extension's
             // debugbar.ini.append.php). Their entries name no class, so they are added to the total once.
             'debugbar'        => array(

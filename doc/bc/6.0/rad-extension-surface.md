@@ -2494,12 +2494,26 @@ the subitems table, the content job types, an extension's AI providers or queue 
 **Registries** (`setup/radsurvey/(show)/registries`) lists every entry of every registry, checks it, and adds the
 entries that are not already counted as settings to the total that `setup/rad` shows.
 
-The kernel's own registries (subitems columns, content job types, `exp:ini`, the server functions of ezjscore and
-their remote services, the online editor's engines, the debug bar, the audit) are built into
+The kernel's own registries (subitems columns, content job types, `exp:ini`, the debug bar, the audit) are built into
 `kernel/setup/expradsurvey.php`. Every other registry is **declared in rad.ini**, so that the kernel never has to
 name an extension: `settings/rad.ini` holds the kernel's declarations and describes the format, and an extension adds
 its own in `extension/<name>/settings/rad.ini.append.php`. Only the declarations of active extensions are read, and
-a declared registry reads the settings of active extensions only, since the others are not in force.
+a declared registry reads the settings of active extensions only, since the others are not in force. The two
+extensions shipped inside the kernel repository declare theirs the same way: ezjscore its server functions
+(`extension/ezjscore/settings/rad.ini.append.php`, key `ezjscserver`; the survey still derives the **remote services
+(expservices)** from that registry's classes) and ezoe the online editor's engines
+(`extension/ezoe/settings/rad.ini.append.php`, key `ezoeengines`). With ezjscore or ezoe inactive their registry is
+not listed, since their settings are not in force then.
+
+Since #390 (2026-10-12) the headline of `setup/rad` and every group in the total are the same as when the two were
+built in (4734 on the reference installation, on :443 and :8080). One count moved on purpose: the server functions
+are 91 instead of 92, because the `[ezjscServer_ezflow]` block of the inactive extension ezflow is no longer read
+(it was a setting already and added nothing to the total).
+
+**A reset line empties the list.** As everywhere in the settings, a line `Registries[]` without a value (and the same
+for `Sections[]` in a block) forgets what earlier files said, and the lines above it in the same file:
+`settings/rad.ini` starts with one, an extension never does, or it would drop the kernel's registries and every other
+extension's that came before it. Before #390 the survey added the values after such a line to the earlier ones.
 
 ```ini
 [RegistrySettings]
@@ -2553,6 +2567,8 @@ Declared on this installation:
 | Declared by | Registries |
 | --- | --- |
 | kernel (`settings/rad.ini`) | event listeners (`site.ini [Event] Listeners[]`, `[RunnableSettings] Listeners[]`), cronjob part scripts (listed, not added), audit console sources (`audit.ini [AuditSourceSettings] Sources[]`) |
+| ezjscore | server functions (`ezjscore.ini [ezjscServer_<name>] Class=`), and from them the remote services (expservices) |
+| ezoe | online editor engines (`ezoe.ini [EditorSettings] Engines[<id>]=`, implementing `expOEEditorEngine`; tinymce3, tinymce8, and exp_oe_tiptap's tiptap) |
 | expai | provider types, providers, models, batch APIs, lanes, tools, web search providers, MCP servers, MCP bridge tools (listed, not added), service tools (listed, not added), chains, chain steps, field actions, presets, request appliers, diff segmenters, panel sections and panes, history repositories, data policy rules, request veto rules |
 | expqueue | job types, the priority class of each job type (listed, not added), priority classes, resources, commands |
 | expmcp | tools, tools of the in-process bridge (listed, not added), tool profiles, the tools the profiles name (listed, not added), allowlists (listed, not added) |

@@ -209,10 +209,13 @@ class expOEEditorRegistryTest extends expOETestCase
     {
         if ( !class_exists( 'expRADSurvey' ) )
             $this->markTestSkipped( 'The survey is not loaded' );
-        $descriptors = expRADSurvey::registryDescriptors();
+        // declared by ezoe itself (extension/ezoe/settings/rad.ini.append.php), not built into the survey
+        $descriptors = expRADSurvey::declaredRegistryDescriptors();
         $this->assertArrayHasKey( 'ezoeengines', $descriptors );
+        $this->assertSame( 'ezoe', $descriptors['ezoeengines']['origin'] );
         $this->assertSame( 'ezoe.ini', $descriptors['ezoeengines']['ini'] );
         $this->assertSame( 'expOEEditorEngine', $descriptors['ezoeengines']['variables']['Engines'] );
+        $this->assertArrayNotHasKey( 'ezoeengines', expRADSurvey::registryDescriptors() );
     }
 
     public function testSetupRadListsBothEngines()
