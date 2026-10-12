@@ -187,6 +187,32 @@ To see it again, clear the template cache. Fix it in the operator's `namedParame
 `'default' => ...`. Nothing changes on an upgrade except the new warning, with thanks to Mugo Web, whose LoveStack
 commit 0bb0bac618 brought the idea.
 
+### Edit links in the list of used templates
+
+With `[TemplateSettings] ShowUsedTemplates=enabled` the debug output lists the templates of the page, each with an
+"Edit" icon that opens the template in **Setup > Templates** (`visual/templateedit`) of the current siteaccess. On a
+public siteaccess that editor is usually not where you want to edit; `[DebugSettings] UsedTemplateEditUrl` sets the
+link, as a `sprintf()` format:
+
+| Placeholder | Is |
+|---|---|
+| `%1$s` | the address of `visual/templateedit` in the current siteaccess followed by the template file |
+| `%2$s` | the current siteaccess |
+| `%3$s` | the template file, for example `design/standard/templates/node/view/full.tpl` |
+
+```ini
+# settings/override/site.ini.append.php
+[DebugSettings]
+# empty (the default): %1$s/(siteAccess)/%2$s, the link the list always had
+# open the template in the administration interface's editor instead:
+UsedTemplateEditUrl=/admin/visual/templateedit/%3$s/(siteAccess)/%2$s
+```
+
+Expected: reload a page with debug output on; the "Edit" icons of the list point at
+`/admin/visual/templateedit/design/.../template.tpl/(siteAccess)/<siteaccess>`. A format `sprintf()` cannot use
+(a `%4$s`, a stray `%`) gives the usual link and a warning. Upgrading changes nothing: the setting is empty.
+This follows LoveStack commit fb20bee0d2 by Mugo Web, with thanks.
+
 ## 8. Switch the administration interface to admin4
 
 `admin4` is a complete admin design with a light and a dark mode that does not need `admin3`, `admin2` or `admin` to be present. Set it for the admin siteaccess only:

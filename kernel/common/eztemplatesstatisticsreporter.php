@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit fb20bee0d2), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package kernel
  */
@@ -57,7 +58,7 @@ class eZTemplatesStatisticsReporter
             eZURI::transformURI( $templateOverrideFunction );
 
             $std_base = eZTemplateDesignResource::designSetting( 'standard' );
-            $wwwDir = htmlspecialchars( eZSys::wwwDir(), ENT_COMPAT, 'UTF-8' );
+            $wwwDir = htmlspecialchars( (string)eZSys::wwwDir(), ENT_COMPAT, 'UTF-8' );
             $editIconFile = "$wwwDir/design/$std_base/images/edit.gif";
             $overrideIconFile = "$wwwDir/design/$std_base/images/override-template.gif";
 
@@ -65,6 +66,8 @@ class eZTemplatesStatisticsReporter
             $j = 0;
 
             $currentSiteAccess = $GLOBALS['eZCurrentAccess']['name'];
+
+            $editUrlFormat = self::templateEditUrlFormat();
         }
 
         $templatesUsageStatistics = eZTemplate::templatesUsageStatistics();
@@ -104,6 +107,9 @@ class eZTemplatesStatisticsReporter
 
                     $templateEditURI = $templateEditFunction . '/' . $templateFileName;
                     $templateOverrideURI = $templateOverrideFunction . '/' . $actualTemplateName;
+                    $templateEditLink = $editUrlFormat === false
+                        ? "$templateEditURI/(siteAccess)/$currentSiteAccess"
+                        : self::templateEditUrl( $editUrlFormat, $templateEditURI, $currentSiteAccess, $templateFileName );
 
                     $actualTemplateNameOutput = ( $actualTemplateName == $requestedTemplateName ) ? "<em>&lt;No override&gt;</em>" : $actualTemplateName;
 
@@ -112,7 +118,7 @@ class eZTemplatesStatisticsReporter
                            "<td><a href=\"$requestedTemplateViewURI\">$requestedTemplateName</a></td>" .
                            "<td>$actualTemplateNameOutput</td>" .
                            "<td>$templateFileName</td>" .
-                           "<td><a href=\"$templateEditURI/(siteAccess)/$currentSiteAccess\"><img src=\"$editIconFile\" width=\"$iconSizeX\" height=\"$iconSizeY\" alt=\"Edit template\" title=\"Edit template\"></a></td>".
+                           "<td><a href=\"$templateEditLink\"><img src=\"$editIconFile\" width=\"$iconSizeX\" height=\"$iconSizeY\" alt=\"Edit template\" title=\"Edit template\"></a></td>".
                            "<td><a href=\"$templateOverrideURI/(siteAccess)/$currentSiteAccess\"><img src=\"$overrideIconFile\" width=\"$iconSizeX\" height=\"$iconSizeY\" alt=\"Override template\" title=\"Override template\"></a></td></tr>" );
 
                     $j++;
@@ -138,6 +144,48 @@ class eZTemplatesStatisticsReporter
         }
 
         return $stats;
+    }
+
+    /**
+     * site.ini [DebugSettings] UsedTemplateEditUrl, the sprintf() format of the "Edit" links, or false when it is
+     * empty or not set: then the links are the ones the list always had, <editor>/<file>/(siteAccess)/<siteaccess>.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit fb20bee0d2), Copyright (C) Mugo Web, GPL v2
+     *
+     * @return string|false
+     */
+    static function templateEditUrlFormat()
+    {
+        $ini = eZINI::instance();
+        if ( !$ini->hasVariable( 'DebugSettings', 'UsedTemplateEditUrl' ) )
+            return false;
+        $format = trim( (string)$ini->variable( 'DebugSettings', 'UsedTemplateEditUrl' ) );
+        return $format === '' ? false : $format;
+    }
+
+    /**
+     * The "Edit" link of a template by the format of site.ini [DebugSettings] UsedTemplateEditUrl, HTML-escaped:
+     * %1$s the template editor's address with the template file, %2$s the siteaccess, %3$s the template file.
+     * A format sprintf() refuses (a placeholder beyond %3$s, a stray %) gives the link the list always had.
+     *
+     * @param string $format
+     * @param string $templateEditURI the address of visual/templateedit followed by the template file
+     * @param string $siteAccess
+     * @param string $templateFileName
+     * @return string
+     */
+    static function templateEditUrl( $format, $templateEditURI, $siteAccess, $templateFileName )
+    {
+        try
+        {
+            $url = sprintf( $format, $templateEditURI, $siteAccess, $templateFileName );
+        }
+        catch ( \Throwable $e )
+        {
+            eZDebug::writeWarning( 'site.ini [DebugSettings] UsedTemplateEditUrl is not a usable sprintf() format: ' . $e->getMessage(), __METHOD__ );
+            $url = "$templateEditURI/(siteAccess)/$siteAccess";
+        }
+        return htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
     }
 }
 
