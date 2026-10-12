@@ -6,6 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3d18f47551), Copyright (C) Mugo Web, GPL v2
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 1bd250d4c6), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -656,7 +657,11 @@ class eZPostgreSQLDB extends eZDBInterface
 
     function escapeString( $str )
     {
-        $str = str_replace("\0", '', $str);
+        // As the MySQLi and SQLite3 drivers do: null is an empty string (PHP 8.1 deprecates passing null
+        // to str_replace() and pg_escape_string())
+        if ( $str === null )
+            return '';
+        $str = str_replace("\0", '', (string)$str);
         $str = pg_escape_string( $this->DBConnection, $str );
         return $str;
     }
