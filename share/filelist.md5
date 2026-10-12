@@ -18,7 +18,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 1bc8d08bda60c234dded6cb03b90dfba  Makefile
 0442deef4137baaa1430142ee1e0498c  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
-26d77b2f0f19dd7dcabbd13ce9fc9ea6  autoload.php
+7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
 cb77f1418845d9d0604e0ff8beacab39  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
@@ -174,7 +174,7 @@ b974dde24700fd18ba9d30714509893a  composer.dev.json
 a8e29d189b3f15ecdb9e86a77df629ba  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
-e5186dd8675f36123f26290aeb6e967c  config.php-RECOMMENDED
+a63e9a2939aca762a90ee6158afc2a22  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
 61d291489da4f9b45b694496ab0a7289  cronjobs/basket_cleanup.php
 239cd3f0ef83b344abc63672ba39a9d6  cronjobs/cachecleanup.php
@@ -2788,7 +2788,7 @@ ef64aacab3749199176823b6f77f0728  doc/bc/5.4/changes-5.4.txt
 8a4010370ef872c3d529faa9c3f42642  doc/bc/5.90/password_length.md
 8e4e20228b74a840e621adb208d674d9  doc/bc/5.90/php7.md
 cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
-809978fe6b82a3bfe88811c4d46e54c5  doc/bc/6.0/AdditionalExtensionDirectories.md
+80fe50b87915a03608f4e2717961df7b  doc/bc/6.0/AdditionalExtensionDirectories.md
 2101e0b2a39e88c630d7c237ef66285b  doc/bc/6.0/EXT_SORT_ORDERS.md
 8cc3cc35cb4dad8d96700c8dbd171d85  doc/bc/6.0/ICONS.md
 94f95a803fffdb657972e1a81769e82f  doc/bc/6.0/LAYOUTS.md
@@ -5423,7 +5423,7 @@ a93bf1a0898ca2833b305741a26cf259  kernel/private/classes/commands/ezconvert2isbn
 4d3aade813d0aed447452cffc4b3bfd5  kernel/private/classes/commands/ezconvertmysqltabletype.php
 05356d1475259b3f7061df0487b45d82  kernel/private/classes/commands/ezcsvexport.php
 18add8594b891bf7928757281fccbfa0  kernel/private/classes/commands/ezcsvimport.php
-5b9963332715d14c62d364cf8a9bd99a  kernel/private/classes/commands/ezexec.php
+0860e49398463d31eddabb6f7c66a590  kernel/private/classes/commands/ezexec.php
 e4bdd03011a504efb91017215c8252c9  kernel/private/classes/commands/ezflowupgrade.php
 b135bbc01de771422887742ef3b653dd  kernel/private/classes/commands/ezgeneratetranslationcache.php
 71d14f05fe88e42d27f2b70e56b1d80c  kernel/private/classes/commands/ezimportdbafile.php
@@ -5520,7 +5520,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 330a3389deaa6670e6677eaf993b9a73  kernel/private/classes/expcontentaccessreport.php
 7006dcb750cb36c53efb10d3cd301720  kernel/private/classes/expfileconsistencyreport.php
 405bb8762d0eb09c3cab1b207bfe2e5c  kernel/private/classes/expschemaconsistencyreport.php
-6e8f5255f51673dbdde5317078695bc8  kernel/private/classes/ezautoloadgenerator.php
+32604d16db0fd8f4affdfd9a84a57532  kernel/private/classes/ezautoloadgenerator.php
 7642907aab26669358d257577baedeab  kernel/private/classes/ezcontentobjectstate.php
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php
 00e0da11d764b55e34ca0f7094fe1c96  kernel/private/classes/ezcontentobjectstategrouplanguage.php
@@ -6950,7 +6950,7 @@ f8e49cec6be93c26e7623ddc0a87ef79  tests/bin/ezptestrunner.php
 d01b9528e554acb15438d8db3918cd3a  tests/bin/lint_manifest.txt
 b92bb6d52f566d4ea1a0d01a8940e360  tests/bin/test_report_2026-02-21.txt
 5f0e6422e18bece875206a606cfe8003  tests/bin/tests/functional_tests.php
-86eee1245d701c306d83a66f2c2fca79  tests/bootstrap.php
+bee91ae90e4189994ecd004a28840229  tests/bootstrap.php
 29513a3dd65d617fb046ffdd009e895f  tests/compat/PHPUnit/TextUI/Configuration/Registry.php
 d56115c8242b3081672f63607aa69361  tests/runtests.php
 59b4689fb7226fd9c820b76ab68d979b  tests/settings/site.ini
@@ -7584,7 +7584,7 @@ ca73bee703a0441de0ebd3f1c8fabc1a  tests/tests/kernel/datatypes/ezxmltext/ezxmlte
 739656787b2bc25621d90a4b2c48c5e9  tests/tests/kernel/datatypes/ezxmltext/handlers/input/ezsimplifiedxmlinputparser_regression.php
 bf4805eef66167c3d4a3a93b22e382b3  tests/tests/kernel/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput_regression.php
 20e4366dd2d283c394b1ec6f50294dd9  tests/tests/kernel/datatypes/suite.php
-dd6d4c34b7a8fffd46436923851d517d  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
+7d433742c2df5b0ba02948a6f228f0e8  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 e2866895244944ed9c19f75a4b7d748f  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
 0133feca9084b5d356221439d79d6841  tests/tests/kernel/private/classes/ezpExtensionInfoTest.php
