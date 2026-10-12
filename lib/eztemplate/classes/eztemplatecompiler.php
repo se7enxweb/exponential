@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 0bb0bac618), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -2943,6 +2944,20 @@ END;
                 $operatorParameters = array_splice( $operatorParameters, 1 );
                 $operatorNameText = $php->thisVariableText( $operatorName, 0, 0, false );
                 $operatorParametersText = $php->thisVariableText( $operatorParameters, 23, 0, false );
+
+                // A parameter the template leaves out and the operator has no default value for: said once per
+                // operator and parameter when the template is compiled; the compiled code does not check it again.
+                foreach ( $tpl->operatorParametersWithoutDefault( $operatorName, $operatorParameters ) as $parameterName )
+                {
+                    $warningKey = $operatorName . "\0" . $parameterName;
+                    if ( isset( $resourceData['operator-default-warnings'][$warningKey] ) )
+                        continue;
+                    $resourceData['operator-default-warnings'][$warningKey] = true;
+                    $templateName = isset( $resourceData['template-name'] ) ? (string)$resourceData['template-name'] : '';
+                    $tpl->warning( 'eZTemplateOperatorElement',
+                                   eZTemplate::operatorParameterWithoutDefaultText( $operatorName, $parameterName ) .
+                                   ( $templateName !== '' ? " (compiling $templateName)" : '' ) );
+                }
 
                 $operatorHint = eZTemplateCompiler::operatorHint( $tpl, $operatorName );
                 if ( isset( $operatorHint['output'] ) and $operatorHint['output'] )

@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 0bb0bac618), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//
  * @package lib
  */
@@ -1362,11 +1363,19 @@ class eZTemplate
                     if ( !$checkExistance )
                         $this->warning( "eZTemplateOperatorElement", "Parameter '$parameterName' ($i) missing",
                                         $placement );
-                    $namedParameters[$parameterName] = $parameterType["default"];
+                }
+                if ( array_key_exists( 'default', $parameterType ) )
+                {
+                    $namedParameters[$parameterName] = $parameterType['default'];
                 }
                 else
                 {
-                    $namedParameters[$parameterName] = $parameterType["default"];
+                    // An operator whose namedParameterList() gives no default for a parameter the template left out.
+                    // A compiled template was told so when it was compiled (eZTemplateCompiler), it calls this
+                    // with $placement false and is not told again on every run.
+                    $namedParameters[$parameterName] = null;
+                    if ( !$checkExistance && $placement !== false )
+                        $this->warnOperatorParameterWithoutDefault( $operatorName, $parameterName, $placement );
                 }
             }
             else
@@ -1445,6 +1454,76 @@ class eZTemplate
         if ( !empty( $attrs ) )
             $txt .= "." . implode( ".", $attrs );
         return $txt;
+    }
+
+    /**
+     * The warning for an operator parameter that the template left out and the operator gives no default value for,
+     * "Operator '<op>' has no default value for parameter '<name>'".
+     *
+     * Interpreted templates: written once per operator and parameter in a request, however often the operator runs
+     * (an operator in a loop would otherwise fill the debug output). The list of those already written is per request:
+     * reset() empties it, and a persistent worker (Velocity) that keeps the template object finds it empty again at
+     * the next request (it is keyed by the request's start time). Compiled templates are warned when they are compiled,
+     * see eZTemplateCompiler::generateVariableDataCode().
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 0bb0bac618), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param string $operatorName
+     * @param string $parameterName
+     * @param array|false $placement
+     * @return bool true when the warning was written now, false when it was written before in this request
+     */
+    function warnOperatorParameterWithoutDefault( $operatorName, $parameterName, $placement = false )
+    {
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
+        if ( !is_array( $this->OperatorDefaultWarnings ) || $this->OperatorDefaultWarnings['request'] !== $request )
+            $this->OperatorDefaultWarnings = array( 'request' => $request, 'seen' => array() );
+        $key = $operatorName . "\0" . $parameterName;
+        if ( isset( $this->OperatorDefaultWarnings['seen'][$key] ) )
+            return false;
+        $this->OperatorDefaultWarnings['seen'][$key] = true;
+        $this->warning( 'eZTemplateOperatorElement', self::operatorParameterWithoutDefaultText( $operatorName, $parameterName ),
+                        $placement );
+        return true;
+    }
+
+    /**
+     * The text of the warning for an operator parameter without a default value.
+     *
+     * @param string $operatorName
+     * @param string $parameterName
+     * @return string
+     */
+    static function operatorParameterWithoutDefaultText( $operatorName, $parameterName )
+    {
+        return "Operator '$operatorName' has no default value for parameter '$parameterName'";
+    }
+
+    /**
+     * The parameters that a use of operator $operatorName leaves out and that the operator gives no default value
+     * for, by the same rule processOperator() fills them in: a parameter is left out when its element list is
+     * missing, empty or void.
+     *
+     * @param string $operatorName
+     * @param array $operatorParameters the parameter element lists of the use, as processOperator() gets them
+     * @return string[] the parameter names
+     */
+    function operatorParametersWithoutDefault( $operatorName, $operatorParameters )
+    {
+        $missing = array();
+        $i = 0;
+        foreach ( $this->operatorParameterList( $operatorName ) as $parameterName => $parameterType )
+        {
+            if ( ( !isset( $operatorParameters[$i] ) or
+                   !isset( $operatorParameters[$i][0] ) or
+                   $operatorParameters[$i][0] == eZTemplate::TYPE_VOID ) and
+                 is_array( $parameterType ) and !array_key_exists( 'default', $parameterType ) )
+            {
+                $missing[] = $parameterName;
+            }
+            ++$i;
+        }
+        return $missing;
     }
 
     /*!
@@ -2343,6 +2422,7 @@ class eZTemplate
 
         $this->TemplatesUsageStatistics = array();
         $this->TemplateFetchList = array();
+        $this->OperatorDefaultWarnings = null;
     }
 
     /*!
@@ -2827,6 +2907,14 @@ class eZTemplate
 
    public $MaxLevelWarning;
    public $TemplateFetchList;
+
+    /**
+     * The operator parameters without a default value already warned about in this request, see
+     * warnOperatorParameterWithoutDefault(): array( 'request' => start time, 'seen' => array( key => true ) ) or null.
+     *
+     * @var array|null
+     */
+    public $OperatorDefaultWarnings = null;
 }
 
 ?>

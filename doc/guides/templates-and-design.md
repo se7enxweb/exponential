@@ -169,6 +169,24 @@ When a page is wrong, work down this list:
 | The page does not change after an edit | Clear by what you changed: [Operating a site, part 2](operating-a-site.md). A changed stylesheet also needs the template-block cache cleared; see that guide. |
 | Stale pages for a while | Content view cache: `php bin/php/cache.php clear --tag=content --allow-root-user`. |
 
+### An operator parameter without a default value
+
+A template operator lists its parameters with a default value for each one a template may leave out. When an
+operator (often one of your own extension) gives no default for a parameter and a template leaves it out, the
+operator gets `null` for it and the debug output says which operator and which parameter:
+
+```
+Warning: eZTemplate:eZTemplateOperatorElement @ design/site/templates/full/article.tpl:12[4]
+Operator 'my_operator' has no default value for parameter 'length'
+```
+
+The warning is written once per operator and parameter in a request, however often the operator runs. A compiled
+template (`[TemplateSettings] TemplateCompile=enabled`, the default) is warned once, when it is compiled, with
+`(compiling <template>)` after the text; running the compiled template does not check again, so it costs nothing.
+To see it again, clear the template cache. Fix it in the operator's `namedParameterList()`: give the parameter a
+`'default' => ...`. Nothing changes on an upgrade except the new warning, with thanks to Mugo Web, whose LoveStack
+commit 0bb0bac618 brought the idea.
+
 ## 8. Switch the administration interface to admin4
 
 `admin4` is a complete admin design with a light and a dark mode that does not need `admin3`, `admin2` or `admin` to be present. Set it for the admin siteaccess only:
