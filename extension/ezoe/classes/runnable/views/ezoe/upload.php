@@ -36,6 +36,20 @@ class Upload extends \Exponential\Runnable\ModuleView
         $object->addContentObjectRelation( (int)$newObjectID, (int)$versionNumber, 0, \eZContentObject::RELATION_EMBED );
     }
 
+    /**
+     * A text field of the upload form: '' when it is missing or not a text (sent as name[], an array), so a
+     * malformed form is answered like an empty field instead of with a TypeError (HTTP 500).
+     *
+     * @param \eZHTTPTool $http
+     * @param string $name
+     * @return string
+     */
+    public static function postString( $http, $name )
+    {
+        $value = $http->hasPostVariable( $name ) ? $http->postVariable( $name ) : '';
+        return is_string( $value ) || is_int( $value ) || is_float( $value ) ? (string) $value : '';
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -128,7 +142,7 @@ class Upload extends \Exponential\Runnable\ModuleView
             // enforced here, not only in the browser: a request can skip the dialog
             $sentName = isset( $_FILES['fileName']['name'] ) ? (string) $_FILES['fileName']['name'] : '';
             // "From a URL": the server fetches the file, a chosen file from the computer wins
-            $uploadUrl = $sentName === '' ? trim( (string) $http->postVariable( 'uploadUrl', '' ) ) : '';
+            $uploadUrl = $sentName === '' ? trim( self::postString( $http, 'uploadUrl' ) ) : '';
             $fetched = false;
             if ( $uploadUrl !== '' )
             {
@@ -160,14 +174,14 @@ class Upload extends \Exponential\Runnable\ModuleView
             $location = false;
             if ( $http->hasPostVariable( 'location' ) )
             {
-                $location = $http->postVariable( 'location' );
+                $location = self::postString( $http, 'location' );
                 if ( $location === 'auto' || trim( $location ) === '' ) $location = false;
             }
 
             $objectName = '';
             if ( $http->hasPostVariable( 'objectName' ) )
             {
-                $objectName = trim( $http->postVariable( 'objectName' ) );
+                $objectName = trim( self::postString( $http, 'objectName' ) );
             }
 
             try
@@ -209,7 +223,7 @@ class Upload extends \Exponential\Runnable\ModuleView
                 {
                     //post pattern: ContentObjectAttribute_attribute-identifier
                     $base = 'ContentObjectAttribute_'. $key;
-                    $postVar = trim( $http->postVariable( $base, '' ) );
+                    $postVar = trim( self::postString( $http, $base ) );
                     // The class attribute option "Alternative text is required" (Portions derived from LoveStack,
                     // mugoweb/ezpublish-legacy, commit a28863d9c0, Copyright (C) Mugo Web, GPL v2): the new object
                     // is removed again below, as for any other refused value
