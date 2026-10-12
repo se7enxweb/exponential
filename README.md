@@ -289,11 +289,14 @@ Developer note: PHP 7 support can be regained at any time by reverting php8.1 sp
 - Multi-site support
 - Multimedia support with automatic image conversion and scaling
 - RSS feeds
+- ATOM feeds
+- iTunes RSS feeds
+- OPML feeds
 - Contact forms
-- Built in webshop
+- Advanced e-Commerce Stores (Built in)
 - Flexible workflow management system
 - Full support for Unicode
-- Template engine
+- Extendable Template engine
 - A headless CRUD REST API
 - Database abstraction layer supporting MariaDB, MySQL, SQLite, PostgreSQL, Oracle and MongoDB
 - MVC architecture
@@ -496,15 +499,15 @@ You can support this project and it's community by making a donation of what eve
 
 If we have helped you and you would like to support the project with a subscription of financial support you may. This is what helps us deliver more new features and improvements to the software. Support Exponential with a subscription today!
 
-A wide range of donation options avaialble at [sponsor.se7enx.com](https://sponsor.se7enx.com), [paypal.com/paypalme/7xweb](https://www.paypal.com/paypalme/7xweb) and [github.com/sponsors/se7enxweb](https://github.com/sponsors/se7enxweb)
+A wide range of donation options available at [sponsor.se7enx.com](https://sponsor.se7enx.com), [paypal.com/paypalme/7xweb](https://www.paypal.com/paypalme/7xweb) and [github.com/sponsors/se7enxweb](https://github.com/sponsors/se7enxweb)
 
-# What is eZ Platform?
+# What was eZ Platform?
 
-eZ Platform was Exponential's technological successor before being abandoned by Ibexa. eZ Platform is a highly extensible, pure Content Managment Platform built upon the ideals core to Symfony. It provides the same flexible content model at it's core like Exponential, and has a growing amount of additional features outside the traditional CMS scope provided by means of "Bundles" extending it.
+eZ Platform was eZ Publish's technological successor before being abandoned by Ibexa. eZ Platform was a highly extensible, pure Content Management Platform built upon the ideals core to Symfony. It provides the same flexible content model at it's core like Exponential, and has a growing amount of additional features outside the traditional CMS scope provided by means of "Bundles" extending it.
 
 It is built on top of the full Symfony Framework, giving developers access to "standard" tools for rapid web & application development.
 
-eZ Platform in some users view suffered a slow road to a stable datatype compatability with existing custom implementations of Exponential. Today all of these conserns are now gone with a solid choice left leaving both Exponential Platform and eZ Platform as serious contenders to be carefully considered. [Netgen's Media Website Core software](https://github.com/netgen/media-site) represents a much more modern eZ Platform core powered by Ibexa OSS. If your going to choose; Choose wisely.
+eZ Platform in some users view suffered a slow road to a stable datatype compatibility with existing custom implementations of Exponential. Today all of these concerns are now gone with a solid choice left leaving both Exponential Platform and eZ Platform as serious contenders to be carefully considered. [Netgen's Media Website Core software](https://github.com/netgen/media-site) represents a much more modern eZ Platform core powered by Ibexa OSS. If your going to choose; Choose wisely.
 
 Further reading on the archived: [https://ezplatform.com/](http://web.archive.org/web/20200328165348/https://ezplatform.com/)
 
